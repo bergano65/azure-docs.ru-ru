@@ -9,12 +9,12 @@ ms.date: 11/06/2017
 ms.topic: conceptual
 ms.service: azure-monitor
 ms.subservice: ''
-ms.openlocfilehash: 64a7a52d39fcac87bdc49b9d36e80d453557bc5b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 6ea8f4e591399e23b103871da115dbb937227ca9
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58002271"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58850688"
 ---
 # <a name="monitor-your-azure-services-in-grafana"></a>Мониторинг служб Azure в Grafana
 Теперь можно отслеживать службы Azure и приложения из [Grafana](https://grafana.com/) с помощью [подключаемого модуля источника данных Azure Monitor](https://grafana.com/plugins/grafana-azure-monitor-datasource). Подключаемый модуль собирает данные производительности приложения, собранные Azure Monitor, включая различные журналы и метрики. Затем эти данные можно отобразить на панели мониторинга Grafana.
@@ -47,13 +47,13 @@ ms.locfileid: "58002271"
 
 7. Получите общедоступный IP-адрес сервера Grafana, вернитесь к списку ресурсов и выберите **Общедоступный IP-адрес**.
 
-## <a name="log-in-to-grafana"></a>Вход в Grafana
+## <a name="sign-in-to-grafana"></a>Войдите в Grafana
 
 1. Используя IP-адрес сервера, откройте страницу входа *http://\<IP-адрес\>:3000* или *\<DNSName>\:3000* в браузере. Хотя по умолчанию используется порт 3000, обратите внимание, что вы можете выбрать другой порт во время установки. Должна отобразиться созданная страница входа для сервера Grafana.
 
     ![Экран входа в Grafana](./media/grafana-plugin/grafana-login-screen.png)
 
-2. Войдите с помощью имени пользователя *admin* и пароля администратора сервера Grafana, созданных ранее. Если вы используете локальную настройку, пароль по умолчанию будет *admin*. При первом входе в систему его нужно будет изменить.
+2. Войдите, используя имя пользователя *администратора* и пароля администратора сервера Grafana, созданную ранее. Если вы используете локальную настройку, пароль по умолчанию будет *admin*. При первом входе в систему его нужно будет изменить.
 
 ## <a name="configure-data-source-plugin"></a>Настройка подключаемого модуля источника данных
 
@@ -167,5 +167,5 @@ Usage
 2. На странице группы ресурсов щелкните **Удалить**, в текстовом поле введите **Grafana** и выберите **Удалить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Обзор метрик в Microsoft Azure](../../azure-monitor/platform/data-collection.md)
+* [Обзор метрик в Microsoft Azure](data-platform.md)
 

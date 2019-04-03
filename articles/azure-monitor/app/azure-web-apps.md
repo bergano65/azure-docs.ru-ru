@@ -9,12 +9,12 @@ ms.service: application-insights
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: mbullwin
-ms.openlocfilehash: 7386f6bd92143cf3fb7b37725900425f99371cd0
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: 9d121146924eb153227e35d608a3c6c33aae31a1
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58804998"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58862613"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Мониторинг производительности Службы приложений Azure
 
@@ -99,7 +99,7 @@ ms.locfileid: "58804998"
 * Выберите **параметры** > ** ** приложения параметры ***
    * В разделе "Параметры приложения" добавьте новую **имя параметра приложения** и **значение**:
 
-     Имя: `APPINSIGHTS_JAVASCRIPT_ENABLED`.
+     Имя: `APPINSIGHTS_JAVASCRIPT_ENABLED`
 
      Значение: `true`
 
@@ -118,7 +118,7 @@ ms.locfileid: "58804998"
 * Выберите **параметры** > **параметры приложения**
    * В разделе "Параметры приложения" добавьте новую **имя параметра приложения** и **значение**:
 
-     Имя: `APPINSIGHTS_JAVASCRIPT_ENABLED`
+     name. `APPINSIGHTS_JAVASCRIPT_ENABLED`
 
      Значение: `false`
 
@@ -322,7 +322,7 @@ $app = Set-AzureRmWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Re
 > Приложений Java и Node.js. поддерживаются только в службах приложений Azure с помощью инструментирование вручную на основе пакета SDK и поэтому не применяются указанные ниже действия для этих сценариев.
 
 1. Убедитесь, что выполняется мониторинг приложения с помощью `ApplicationInsightsAgent`.
-    * Убедитесь, что "ApplicationInsightsAgent_EXTENSION_AGENT приложения параметру присвоено значение «~ 2».
+    * Убедитесь, что `ApplicationInsightsAgent_EXTENSION_VERSION` приложение установлено в значение «~ 2».
 2. Убедитесь, что приложение соответствует требованиям для отслеживания.
     * Перейдите к `https://yoursitename.scm.azurewebsites.net/ApplicationInsights`
 
@@ -353,10 +353,10 @@ $app = Set-AzureRmWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Re
 Последние сведения о агент/расширение Application Insights, извлечь [заметки о выпуске](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/app-insights-web-app-extensions-releasenotes.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-
-* [Запуск профилировщика в живом приложении](../../azure-monitor/app/profiler.md).
+* [Запуск профилировщика в живом приложении](../app/profiler.md).
 * [Функции Azure.](https://github.com/christopheranderson/azure-functions-app-insights-sample) Отслеживайте функции Azure с помощью Application Insights.
-* [Включите отправку данных диагностики Azure](../../azure-monitor/platform/diagnostics-extension-to-application-insights.md) в Application Insights.
-* [Отслеживайте метрики состояния службы](../../azure-monitor/platform/data-collection.md), чтобы убедиться, что служба доступна и отвечает на запросы.
-* [Получайте уведомления](../../azure-monitor/platform/alerts-overview.md) при возникновении операционных событий или превышении пороговых значений метрик.
-* [Настройте веб-тесты доступности](../../azure-monitor/app/monitor-web-app-availability.md), чтобы получать уведомления о сбоях в работе сайта.
+* [Включите отправку данных диагностики Azure](../platform/diagnostics-extension-to-application-insights.md) в Application Insights.
+* [Отслеживайте метрики состояния службы](../platform/data-platform.md), чтобы убедиться, что служба доступна и отвечает на запросы.
+* [Получайте уведомления](../platform/alerts-overview.md) при возникновении операционных событий или превышении пороговых значений метрик.
+* Используйте [расширение Application Insights для приложений JavaScript и веб-страниц](javascript.md), чтобы получать данные телеметрии клиентов из браузеров, которые используются для открытия веб-страницы.
+* [Настройте веб-тесты доступности](monitor-web-app-availability.md), чтобы получать уведомления о сбоях в работе сайта.

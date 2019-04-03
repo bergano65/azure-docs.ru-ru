@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e6623e18fa319066f121dced551dcada133ebd5
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 9cd9f6112cbca78b323e0a14818b06f891a3f673
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58479535"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58862893"
 ---
 # <a name="enforce-azure-ad-password-protection-for-windows-server-active-directory"></a>применение защиты паролем Azure AD для Windows Server Active Directory
 
@@ -83,16 +83,6 @@ ms.locfileid: "58479535"
 Развертывание защиты пароля Azure AD в лесу Active Directory требует регистрации этого леса в Azure AD. Каждая служба прокси-сервера, который развертывается также должны регистрироваться в Azure AD. Эти операции регистрации леса и прокси-сервера связаны с конкретным клиентом Azure AD, который неявно определяется учетные данные, которые используются во время регистрации.
 
 В лесу Active Directory и все развернутые прокси-сервера службы в рамках леса должны быть зарегистрированы с помощью того же клиента. Имеет лесу Active Directory или любой другой службы прокси-сервера, то есть лес, регистрируемой в другой каталог Azure AD версии клиента не поддерживается. Признаки неправильной конфигурацией развертывания включают невозможность загрузки политики паролей.
-
-## <a name="license-requirements"></a>Требования лицензий
-
-Возможности список глобальных паролей применяются ко всем пользователям Azure AD.
-
-Пользовательский список запрещенных паролей требует лицензий Azure AD Basic.
-
-Защита паролем Azure AD для Windows Server Active Directory требует наличия лицензий Azure AD Premium.
-
-Дополнительные сведения о лицензировании см. в разделе [цены на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 
 ## <a name="download"></a>Download (Скачать)
 

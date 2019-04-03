@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/01/2019
 ms.author: apimpm
-ms.openlocfilehash: a8566e41934b5d78d8be60b385ea4148e1cb60c3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 78efcefa7df99dfa3386dcdf19aafa47d7b9fab1
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58087046"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58884519"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
@@ -114,7 +114,7 @@ ms.locfileid: "58087046"
 | * / 3443                     | Входящий трафик            | TCP                | ApiManagement / VIRTUAL_NETWORK       | Конечная точка управления для портала Azure и PowerShell         | Внешний и внутренний  |
 | * / 80, 443                  | Исходящие           | TCP                | VIRTUAL_NETWORK / Storage             | **Зависимость от службы хранилища Azure**                             | Внешний и внутренний  |
 | * / 80, 443                  | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureActiveDirectory | Приложения Azure Active Directory (где применяется)                   | Внешний и внутренний  |
-| * / 1433                     | Исходящие           | TCP                | VIRTUAL_NETWORK / SQL                 | **Доступ к конечным точкам службы SQL Azure**                           | Внешний и внутренний  |
+| * / 1433                     | Исходящие           | TCP                | VIRTUAL_NETWORK / SQL                 | **Доступ к конечным точкам Azure SQL**                           | Внешний и внутренний  |
 | * / 5672                     | Исходящие           | TCP                | VIRTUAL_NETWORK / EventHub            | Зависимость для политики ведения журнала концентратора событий и агента мониторинга | Внешний и внутренний  |
 | * / 445                      | Исходящие           | TCP                | VIRTUAL_NETWORK / Storage             | Зависимость для общей папки Azure для GIT                      | Внешний и внутренний  |
 | * / 1886                     | Исходящие           | TCP                | VIRTUAL_NETWORK — INTERNET            | Необходимо опубликовать сведения о работоспособности в службе "Работоспособность ресурсов"          | Внешний и внутренний  |
@@ -136,7 +136,7 @@ ms.locfileid: "58087046"
 
     | Среда Azure | Конечные точки                                                                                                                                                                                                                                                                                                                                                              |
     |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | Azure Public      | <ul><li>prod.warmpath.msftcloudes.com;</li><li>shoebox2.metrics.nsatc.net;</li><li>prod3.metrics.nsatc.net;</li><li>prod3-black.prod3.metrics.nsatc.net;</li><li>prod3-red.prod3.metrics.nsatc.net.</li><li>prod.warm.ingestion.msftcloudes.com</li><li>`azure region`.warm.ingestion.msftcloudes.com где `East US 2` является eastus2.warm.ingestion.msftcloudes.com</li></ul> |
+    | Azure Public      | <ul><li>prod.warmpath.msftcloudes.com;</li><li>shoebox2.metrics.nsatc.net;</li><li>prod3.metrics.nsatc.net;</li><li>prod3-black.prod3.metrics.nsatc.net;</li><li>prod3-red.prod3.metrics.nsatc.net.</li><li>prod.warm.ingestion.msftcloudes.com</li><li>`azure region`.warm.ingestion.msftcloudes.com where `East US 2` is eastus2.warm.ingestion.msftcloudes.com</li></ul> |
     | Azure Government  | <ul><li>fairfax.warmpath.usgovcloudapi.net;</li><li>shoebox2.metrics.nsatc.net;</li><li>prod3.metrics.nsatc.net.</li></ul>                                                                                                                                                                                                                                                |
     | Azure для Китая       | <ul><li>mooncake.warmpath.chinacloudapi.cn;</li><li>shoebox2.metrics.nsatc.net;</li><li>prod3.metrics.nsatc.net.</li></ul>                                                                                                                                                                                                                                                |
 
@@ -146,7 +146,7 @@ ms.locfileid: "58087046"
 
 + **Портал Azure Diagnostics.** Включает поток журналов диагностики на портале Azure при использовании расширения управления API внутри виртуальной сети; требуется исходящий доступ к `dc.services.visualstudio.com` на порте 443. Это помогает в устранении неполадок, которые могут возникнуть при использовании расширения.
 
-+ **Принудительное туннелирование трафика брандмауэра в локальной среде, с помощью Express Route или сетевой виртуальный модуль**: В типовой клиентской конфигурации — определить собственный основной маршрут (0.0.0.0/0), который направляет весь трафик из службы управления API делегировать подсети потока через брандмауэр на локальном или виртуальный сетевой модуль. Этот поток трафика неизменно прерывает подключение к службе управления API Azure, так как исходящий трафик или блокируется локально, или преобразуется с помощью NAT в нераспознаваемый набор адресов, которые больше не относятся к различным конечным точкам Azure. Решение необходимо сделать несколько вещей:
++ **Принудительное туннелирование трафика брандмауэра в локальной среде, с помощью Express Route или сетевой виртуальный модуль**: В типовой клиентской конфигурации — определить собственный основной маршрут (0.0.0.0/0), который направляет весь трафик из службы управления API делегировать подсети, проходят через брандмауэр подключения к локальным или виртуальным сетевым устройством. Этот поток трафика неизменно прерывает подключение к службе управления API Azure, так как исходящий трафик или блокируется локально, или преобразуется с помощью NAT в нераспознаваемый набор адресов, которые больше не относятся к различным конечным точкам Azure. Решение необходимо сделать несколько вещей:
 
   * Включите конечные точки службы в подсети, в которой развернута служба управления API. [Конечные точки службы] [ ServiceEndpoints] необходимо включить для Azure Sql, службе хранилища Azure, концентратору событий Azure и служебной шины Azure. Включение конечных точек, непосредственно из службы управления API позволяет использовать в магистральной сети Microsoft Azure, предоставляя оптимальную маршрутизацию трафика службы делегированного подсети, к этим службам. Если вы используете конечные точки службы с Принудительное туннелирование управления Api, указанных выше служб Azure, трафик не будет принудительно туннелируется. Другие, принудительно трафика зависимостей службы управления API туннелируется и не может быть утерян или службе управления API будет работать неправильно.
     
@@ -194,10 +194,10 @@ Azure резервирует некоторые IP-адреса в каждой 
 
 
 ## <a name="related-content"> </a>Связанная информация
-* [Подключение типа "сеть — сеть" и многосайтовое подключение (через VPN-туннель IPsec/IKE)](../vpn-gateway/vpn-gateway-about-vpngateways.md#s2smulti)
-* [Подключение виртуальных сетей из различных моделей развертывания с использованием PowerShell](../vpn-gateway/vpn-gateway-connect-different-deployment-models-powershell.md)
-* [Как использовать инспектор API для трассировки вызовов в службе управления API Azure](api-management-howto-api-inspector.md)
-* [Виртуальная сеть Azure: часто задаваемые вопросы](../virtual-network/virtual-networks-faq.md)
+* [Подключение виртуальной сети к серверной части с помощью VPN-шлюза](../vpn-gateway/vpn-gateway-about-vpngateways.md#s2smulti)
+* [Подключение виртуальных сетей из разных моделей развертывания](../vpn-gateway/vpn-gateway-connect-different-deployment-models-powershell.md)
+* [Как использовать инспектор API для трассировки вызовов в Azure API Management](api-management-howto-api-inspector.md)
+* [Часто задаваемые вопросы о виртуальной сети](../virtual-network/virtual-networks-faq.md)
 * [Теги служб](../virtual-network/security-overview.md#service-tags)
 
 [api-management-using-vnet-menu]: ./media/api-management-using-with-vnet/api-management-menu-vnet.png

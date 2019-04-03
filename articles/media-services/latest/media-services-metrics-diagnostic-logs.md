@@ -13,18 +13,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/05/2019
 ms.author: juliako
-ms.openlocfilehash: 4252b0f26ef3c02216a41dde5d2e1cb5ea0efd6a
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 23c87ae92a0f22b4a1a31c054df730af2efc07d1
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57556396"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58848046"
 ---
 # <a name="monitor-media-services-metrics-and-diagnostic-logs"></a>Отслеживание метрик службы мультимедиа и журналы диагностики
 
 [Azure Monitor](../../azure-monitor/overview.md) включает мониторинг метрик и журналов диагностики, которые помогут вам понять, как выполняемых приложений. Все данные, собранные Azure Monitor, помещаются в одну из двух основных типов, метрик и журналов. Можно отслеживать журналы диагностики служб мультимедиа и создавать оповещения и уведомления для сбора метрик и журналов. Вы можете визуализировать и анализировать данные метрик с помощью [обозревателя метрик](../../azure-monitor/platform/metrics-getting-started.md). Вы можете отправить журналы в [хранилища Azure](https://azure.microsoft.com/services/storage/), потоковая передача журналов в [концентраторов событий](https://azure.microsoft.com/services/event-hubs/)и экспортировать их в службу [Log Analytics](https://azure.microsoft.com/services/log-analytics/), или использовать сторонние службы.
 
-Подробный обзор см. в разделе [метрик Azure Monitor](../../azure-monitor/platform/data-collection.md) и [журналов диагностики Azure Monitor](../../azure-monitor/platform/diagnostic-logs-overview.md).
+Подробный обзор см. в разделе [метрик Azure Monitor](../../azure-monitor/platform/data-platform.md) и [журналов диагностики Azure Monitor](../../azure-monitor/platform/diagnostic-logs-overview.md).
 
 В этом разделе обсуждаются в настоящее время доступна [метрики службы носителя](#media-services-metrics) и [журналов диагностики службы мультимедиа](#media-services-diagnostic-logs).
 

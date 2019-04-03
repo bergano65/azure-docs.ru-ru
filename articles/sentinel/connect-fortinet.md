@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 3/6/2019
 ms.author: rkarlin
-ms.openlocfilehash: 2164969de4198d381a5c7a5f5ab73128a67ccbda
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: 6c4bfbf67e45284f8f21166543228a821074b3b9
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58576851"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58883222"
 ---
 # <a name="connect-your-fortinet-appliance"></a>Подключение устройства Fortinet 
 
@@ -135,7 +135,7 @@ ms.locfileid: "58576851"
    - syslog-ng: `sudo bash -c "printf 'filter f_local4_oms { facility(local4); };\n  destination security_oms { tcp(\"127.0.0.1\" port(25226)); };\n  log { source(src); filter(f_local4_oms); destination(security_oms); };\n\nfilter f_msg_oms { match(\"Fortinet\" value(\"MESSAGE\")); };\n  destination security_msg_oms { tcp(\"127.0.0.1\" port(25226)); };\n  log { source(src); filter(f_msg_oms); destination(security_msg_oms); };' > /etc/syslog-ng/security-config-omsagent.conf"`
       
      Перезапустите управляющую программу Syslog: `sudo service syslog-ng restart`
-1. Если оба этих команд результаты без ошибок, проверьте см. в разделе, если поступают журналы в Log Analytics. Отображаются все события, передаваемые из этих устройств в необработанном виде в Log Analytics в разделе `CommonSecurityLog ` типа.
+1. Если оба этих команд результаты без ошибок, проверьте см. в разделе, если поступают журналы в Log Analytics. Отображаются все события, передаваемые из этих устройств в необработанном виде в Log Analytics в разделе `CommonSecurityLog` типа.
 1. Чтобы проверить, при возникновении ошибок или если журналы не поступающих, найдите `tail /var/opt/microsoft/omsagent/<workspace id>/log/omsagent.log`
 1. Убедитесь, что размер по умолчанию сообщения системного журнала ограничена 2048 байт (2 КБ). Если журналы имеют слишком большую длину, обновите security_events.conf, с помощью следующей команды: `message_length_limit 4096`
 6. Для соответствующей схемы в Log Analytics можно использовать для событий, Fortinet, поиск **CommonSecurityLog**.

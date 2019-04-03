@@ -1,5 +1,5 @@
 ---
-title: Использование шаблона для создания рабочего пространства
+title: Использовать шаблон Azure Resource Manager для создания рабочей области
 titleSuffix: Azure Machine Learning service
 description: Узнайте, как использовать шаблон Azure Resource Manager для создания нового рабочего пространства Службы машинного обучения Azure.
 services: machine-learning
@@ -8,17 +8,18 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: larryfr
 author: Blackmist
-ms.date: 02/11/2019
-ms.openlocfilehash: 2b5ee1b5079f22985b03aaafac30c11a10a3c8f0
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.date: 04/02/2019
+ms.custom: seoapril2019
+ms.openlocfilehash: 7349998325e56d5ebb78de5ca30c0127f09102aa
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57850083"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58883196"
 ---
-# <a name="create-an-azure-machine-learning-service-workspace-by-using-a-template"></a>Создание рабочего пространства Службы машинного обучения Azure с помощью шаблона
+# <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning-service"></a>Использовать шаблон Azure Resource Manager для создания рабочей области для службы машинного обучения Azure
 
-В этой статье вы изучите несколько способов создания рабочего пространства Службы машинного обучения Azure с помощью шаблонов Azure Resource Manager. 
+В этой статье вы изучите несколько способов создания рабочего пространства Службы машинного обучения Azure с помощью шаблонов Azure Resource Manager. Шаблон Resource Manager позволяет легко создать все ресурсы в отдельной скоординированной операции. Шаблон представляет собой документ JSON, в котором определены необходимые для развертывания ресурсы. Также здесь можно указать параметры развертывания. Эти параметры позволят предоставить входные значения при использовании шаблона.
 
 Узнайте подробнее [о развертывании приложения с помощью шаблона диспетчера ресурсов Azure](../../azure-resource-manager/resource-group-template-deploy.md).
 
@@ -30,9 +31,7 @@ ms.locfileid: "57850083"
 
 ## <a name="resource-manager-template"></a>Шаблон Resource Manager
 
-Шаблон Resource Manager позволяет легко создать все ресурсы в отдельной скоординированной операции. Шаблон представляет собой документ JSON, в котором определены необходимые для развертывания ресурсы. Также здесь можно указать параметры развертывания. Эти параметры позволят предоставить входные значения при использовании шаблона.
-
-Чтобы создать рабочее пространство Службы машинного обучения Azure и связанные ресурсы Azure, выполните следующее.
+Чтобы создать рабочую область службы машинного обучения Azure и связанных ресурсов Azure можно использовать следующий шаблон Resource Manager:
 
 ```json
 {
@@ -183,8 +182,8 @@ ms.locfileid: "57850083"
 
 Дополнительные сведения о шаблонах вы найдете в следующих статьях.
 
-* [Шаблоны диспетчера ресурсов Azure](../../azure-resource-manager/resource-group-authoring-templates.md)
-* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../../azure-resource-manager/resource-group-template-deploy.md)
+* [Создание шаблонов Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md)
+* [Развертывание ресурсов с использованием шаблонов Azure Resource Manager](../../azure-resource-manager/resource-group-template-deploy.md)
 * [Типы ресурсов Microsoft.MachineLearningServices](https://docs.microsoft.com/azure/templates/microsoft.machinelearningservices/allversions)
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 31a800e851eb8a2f533cc8170856b16cd43c21cf
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2a8ae3ab71b258d92d9761cc813b168717e44d82
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57850723"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878015"
 ---
 # <a name="lead-management-instructions-for-azure-table"></a>Инструкции по управлению интересами для Хранилища таблиц Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "57850723"
 
     ![Шаги по созданию учетной записи хранения Azure](./media/cloud-partner-portal-lead-management-instructions-azure-table/azurestoragecreate.png)
 
-4.  Скопируйте строку подключения учетной записи хранения для ключа и вставьте ее в поле **Строка подключения к учетной записи хранилища** на Портале Cloud Partner. Пример строки подключения: `DefaultEndpointsProtocol=https;AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.windows.net `
+4.  Скопируйте строку подключения учетной записи хранения для ключа и вставьте ее в поле **Строка подключения к учетной записи хранилища** на Портале Cloud Partner. Например, строка подключения `DefaultEndpointsProtocol=https;AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.windows.net`
     
     ![Ключ к хранилищу Azure](./media/cloud-partner-portal-lead-management-instructions-azure-table/azurestoragekeys.png)
 
@@ -90,7 +90,7 @@ ms.locfileid: "57850723"
 
      ![Выбор пользовательского значения для имени таблицы Azure](./media/cloud-partner-portal-lead-management-instructions-azure-table/msflow-getentities-table-name.png)
 
-   - **Запрос фильтра** — если щелкнуть это поле, во всплывающем окне отобразится значок "Получение времени в прошлом". Выберите **Время в прошлом**, чтобы использовать эту метку времени для фильтрации запроса. Кроме того, данную функцию можно вставить в поле `gt datetime'@{body('Get_past_time')}'`.
+   - **Запрос фильтра** — если щелкнуть это поле, во всплывающем окне отобразится значок "Получение времени в прошлом". Выберите **Время в прошлом**, чтобы использовать эту метку времени для фильтрации запроса. Кроме того эту функцию можно вставить в поле: `gt datetime'@{body('Get_past_time')}'`
 
      ![Настройка функции запроса фильтра](./media/cloud-partner-portal-lead-management-instructions-azure-table/msflow-getentities-filterquery.png)
 
@@ -148,4 +148,4 @@ ms.locfileid: "57850723"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Настройка получения сведений о потенциальных клиентах](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads)
+[Настройка потенциальных клиентов](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads)

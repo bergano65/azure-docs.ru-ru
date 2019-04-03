@@ -1,25 +1,25 @@
 ---
 title: Общие сведения о центре безопасности Azure для рекомендаций по обеспечению безопасности Интернета вещей предварительной версии | Документация Майкрософт
 description: Дополнительные сведения о концепции рекомендации по обеспечению безопасности и их использовании в центре безопасности Azure для Интернета вещей.
-services: ascforiot
+services: asc-for-iot
+ms.service: ascforiot
 documentationcenter: na
 author: mlottner
 manager: barbkess
 editor: ''
 ms.assetid: 02ced504-d3aa-4770-9d10-b79f80af366c
-ms.service: ascforiot
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/24/2019
 ms.author: mlottner
-ms.openlocfilehash: 9204bf864ca915baaf6d107ef3586bcd02ed9fef
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 3364ff6bcf824e5f7d925fdb6d0826d5c3c32369
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58754823"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58862256"
 ---
 # <a name="security-recommendations"></a>Рекомендации по обеспечению безопасности
 

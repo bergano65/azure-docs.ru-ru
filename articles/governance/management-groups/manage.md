@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.date: 02/20/2019
 ms.author: rithorn
 ms.topic: conceptual
-ms.openlocfilehash: f9e9bf51d50863f2e37a2f579c2db0edcfeca634
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: f75686d19a468983a6b0ce68eb4a456e00c90eeb
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58801780"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58881058"
 ---
 # <a name="manage-your-resources-with-management-groups"></a>Управление ресурсами с помощью групп управления
 
@@ -330,7 +330,7 @@ az account management-group update --name 'Contoso' --parent-id '/providers/Micr
 
 Пример использования этого пути является при назначении новое назначение роли для группы управления в PowerShell
 
-```powershell-interactive
+```azurepowershell-interactive
 New-AzRoleAssignment -Scope "/providers/Microsoft.Management/managementGroups/Contoso"
 ```
 
@@ -345,7 +345,7 @@ GET https://management.azure.com/providers/Microsoft.Management/managementgroups
 Дополнительные сведения о группах управления:
 
 - [Создание групп управления для организации ресурсов Azure](create.md)
-- [Изменение, удаление групп управления и управление ими](manage.md)
+- [Как изменить, удалить или управлять группами управления](manage.md)
 - [Просмотр групп управления в модуле ресурсов Azure PowerShell](/powershell/module/az.resources#resources)
 - [Просмотр групп управления в REST API](/rest/api/resources/managementgroups)
 - [Просмотр групп управления в Azure CLI](/cli/azure/account/management-group)

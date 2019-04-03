@@ -1,23 +1,23 @@
 ---
-title: .NET SDK. Операции управления учетными записями в Azure Data Lake Storage 1-го поколения | Документы Майкрософт
+title: Пакет SDK для .NET. Начало работы с Gen1 хранилища Озера данных Azure | Документация Майкрософт
 description: Используйте пакет .NET SDK для Azure Data Lake Storage 1-го поколения, чтобы выполнять операции управления учетными записями в Azure Data Lake Storage 1-го поколения
 services: data-lake-store
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.assetid: ea57d5a9-2929-4473-9d30-08227912aba7
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: 2ed9f534c0eb27601243428f8e4b9d95db5d16b0
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
-ms.translationtype: HT
+ms.author: twooley
+ms.openlocfilehash: 8ab051d49e7ed67e642ef656dfb382ed07763ed2
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46123918"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58879715"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-net-sdk"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием .NET SDK
 > [!div class="op_single_selector"]
@@ -31,7 +31,7 @@ ms.locfileid: "46123918"
 
 Дополнительные сведения о том, как выполнять операции управления данными в Data Lake Storage 1-го поколения с помощью .NET SDK, см. в статье [Операции файловой системы в Data Lake Storage 1-го поколения с использованием пакета SDK для .NET SDK](data-lake-store-data-operations-net-sdk.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * **Visual Studio 2013, 2015 или 2017**. В инструкциях ниже используется Visual Studio 2017.
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -53,8 +53,8 @@ ms.locfileid: "46123918"
    2. На вкладке **Диспетчер пакетов NuGet** в поле **Источник пакета** выберите **nuget.org** и установите флажок **Включить предварительные выпуски**.
    3. Найдите и установите следующие пакеты NuGet:
 
-      * `Microsoft.Azure.Management.DataLake.Store`. В этом руководстве используется предварительная версия 2.1.3.
-      * `Microsoft.Rest.ClientRuntime.Azure.Authentication`. В этом руководстве используется версия 2.2.12.
+      * `Microsoft.Azure.Management.DataLake.Store` — В этом руководстве используется Предварительная версия 2.1.3.
+      * `Microsoft.Rest.ClientRuntime.Azure.Authentication` — В этом руководстве используется версия 2.2.12.
 
         ![Добавление источника NuGet](./media/data-lake-store-get-started-net-sdk/data-lake-store-install-nuget-package.png "Создание учетной записи Azure Data Lake")
    4. Закройте **диспетчер пакетов NuGet**.
@@ -101,8 +101,8 @@ ms.locfileid: "46123918"
 
 ## <a name="authentication"></a>Authentication
 
-* Дополнительные сведения о проверке подлинности пользователей в приложении см. в статье [Проверка подлинности пользователей в Data Lake Storage 1-го поколения с использованием .NET SDK](data-lake-store-end-user-authenticate-net-sdk.md).
-* Дополнительные сведения о проверке подлинности между службами в приложении см. в статье [Проверка подлинности между службами в Data Lake Storage 1-го поколения с использованием .NET SDK](data-lake-store-service-to-service-authenticate-net-sdk.md).
+* Дополнительные сведения о проверке подлинности пользователей в приложении см. в статье [Аутентификация пользователей в Data Lake Store с помощью пакета SDK для .NET](data-lake-store-end-user-authenticate-net-sdk.md).
+* Дополнительные сведения о проверке подлинности между службами в приложении см. в статье [Аутентификация между службами в Data Lake Store с помощью пакета SDK для .NET](data-lake-store-service-to-service-authenticate-net-sdk.md).
 
 ## <a name="create-client-object"></a>Создание клиентского объекта
 В следующем фрагменте кода создается объект клиента учетной записи Data Lake Storage 1-го поколения, который используется для выдачи запросов управления учетной записью для службы, таких как создание учетной записи, удаление учетной записи и т. д.
@@ -142,8 +142,8 @@ ms.locfileid: "46123918"
     _adlsClient.Account.Delete(_resourceGroupName, _adlsAccountName);
 
 ## <a name="see-also"></a>См. также
-* [Операции файловой системы в Data Lake Storage 1-го поколения c использованием SDK для .NET](data-lake-store-data-operations-net-sdk.md)
-* [Справочник по Data Lake Storage 1-го поколения для .NET SDK](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
+* [Операции файловой системы в поколение 1 хранилища Озера данных с помощью пакета SDK для .NET](data-lake-store-data-operations-net-sdk.md)
+* [Справочник по SDK .NET Gen1 хранилища Озера данных](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
 
-## <a name="next-steps"></a>Дополнительная информация
-* [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
+## <a name="next-steps"></a>Дальнейшие действия
+* [Защита данных в поколение 1 хранилища Озера данных](data-lake-store-secure-data.md)

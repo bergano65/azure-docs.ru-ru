@@ -8,12 +8,12 @@ ms.author: kasparks
 ms.service: advisor
 ms.topic: article
 ms.date: 01/29/2019
-ms.openlocfilehash: 6ffe051c019184d5ce1a32af50dbf3e7faa06675
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
-ms.translationtype: HT
+ms.openlocfilehash: 42627649145b568b2b25411d182e5a36cdb025b0
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55490317"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58881194"
 ---
 # <a name="improve-availability-of-your-application-with-azure-advisor"></a>Повышение уровня доступности приложения с использованием Помощника по Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "55490317"
 
 ## <a name="configure-your-vpn-gateway-to-active-active-for-connection-resiliency"></a>Настройте VPN-шлюз на режим "активный — активный" для устойчивости подключения
 
-В этой настройке оба экземпляра VPN-шлюза установят туннели S2S VPN локальному VPN-устройству. Когда событие запланированного обслуживания или незапланированное событие происходит с одним экземпляром шлюза, трафик автоматически переключается на другой активный туннель IPsec. Помощник по Azure будет идентифицировать VPN-шлюзы, которые не настроены на режим "активный — активный", и предложит настроить их для обеспечения высокой доступности.
+В конфигурации активный активный оба экземпляра VPN-шлюза будут устанавливать VPN-туннелей S2S VPN-устройство локальной. Когда событие запланированного обслуживания или незапланированное событие происходит с одним экземпляром шлюза, трафик автоматически переключается на другой активный туннель IPsec. Помощник по Azure будет идентифицировать VPN-шлюзы, которые не настроены на режим "активный — активный", и предложит настроить их для обеспечения высокой доступности.
 
 ## <a name="how-to-access-high-availability-recommendations-in-advisor"></a>Как получить доступ к рекомендациям по высокой доступности в Advisor
 
@@ -72,11 +72,11 @@ ms.locfileid: "55490317"
 
 2.  На панели мониторинга Помощника выберите вкладку **Высокий уровень доступности**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о рекомендациях Помощника см. в следующих разделах.
 * [Общие сведения об Azure Advisor](advisor-overview.md)
-* [Приступая к работе с Azure Advisor](advisor-get-started.md)
+* [Начало работы с Помощником](advisor-get-started.md)
 * [Рекомендации Azure Advisor по затратам](advisor-cost-recommendations.md)
 * [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md)
 * [Рекомендации Azure Advisor по безопасности](advisor-security-recommendations.md)

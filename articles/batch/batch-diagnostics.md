@@ -15,17 +15,17 @@ ms.workload: big-compute
 ms.date: 12/05/2018
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: 368e1f6b9501c677eca1cf80d24a06c0a6533e86
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: 349896a7114fba83d852b8bc066f4f7eb0a070ba
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56817360"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58850303"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Метрики, оповещения и журналы пакетной службы для диагностики и мониторинга
 
  
-В этой статье описывается, как выполнять мониторинг учетной записи пакетной службы с помощью функций [Azure Monitor](../azure-monitor/overview.md). Azure Monitor собирает [метрики](../azure-monitor/platform/data-collection.md#metrics) и [журналы диагностики](../azure-monitor/platform/diagnostic-logs-overview.md) для ресурсов в учетной записи пакетной службы. Эти данные можно собирать и использовать разными способами. Они позволяют выполнять мониторинг и диагностику проблем для учетной записи пакетной службы. Вы также можете настроить [метрики оповещений](../azure-monitor/platform/alerts-overview.md), чтобы получать уведомления о достижении определенных значений. 
+В этой статье описывается, как выполнять мониторинг учетной записи пакетной службы с помощью функций [Azure Monitor](../azure-monitor/overview.md). Azure Monitor собирает [метрики](../azure-monitor/platform/data-platform-metrics.md) и [журналы диагностики](../azure-monitor/platform/diagnostic-logs-overview.md) для ресурсов в учетной записи пакетной службы. Эти данные можно собирать и использовать разными способами. Они позволяют выполнять мониторинг и диагностику проблем для учетной записи пакетной службы. Вы также можете настроить [метрики оповещений](../azure-monitor/platform/alerts-overview.md), чтобы получать уведомления о достижении определенных значений. 
 
 ## <a name="batch-metrics"></a>Метрики пакетной службы
 

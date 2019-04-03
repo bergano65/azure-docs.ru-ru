@@ -1,21 +1,21 @@
 ---
-title: Advanced Threat Protection для службы хранилища Azure
+title: Расширенная защита от угроз для службы хранилища Azure
 description: Настройка службы "Расширенная защита от угроз" для службы хранилища Azure позволяет выявлять аномалии в операциях учетной записи и получать уведомления о потенциально вредоносных попытках доступа к учетной записи.
 services: storage
 author: rmatchoro
 ms.service: storage
 ms.topic: article
-ms.date: 03/14/2019
+ms.date: 04/02/2019
 ms.author: monhaber
 ms.manager: shaik
-ms.openlocfilehash: b2e51b11e2d79d7f35d6b24df4ba5492ecf9a5c4
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 48fdf277f47b1e4abc8e3d7f7222d5b99a248b55
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58133235"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58850721"
 ---
-# <a name="advanced-threat-protection-for-azure-storage"></a>Advanced Threat Protection для службы хранилища Azure
+# <a name="advanced-threat-protection-for-azure-storage"></a>Расширенная защита от угроз для службы хранилища Azure
 
 Advanced Threat Protection для службы хранилища Azure предоставляет дополнительный уровень аналитики безопасности, которая выявляет подозрительные и потенциально опасные попытки получить доступ к или воспользоваться учетные записи хранения. Этот уровень защиты позволяет устранять угрозы без необходимости в экспертных знаниях по безопасности или в управлении системами мониторинга безопасности. 
 
@@ -51,6 +51,24 @@ Advanced Threat Protection для службы хранилища Azure прин
 
 Использование шаблона Azure Resource Manager для развертывания учетной записи хранения Azure с помощью Advanced Threat Protection с поддержкой.
 Дополнительные сведения см. в разделе [учетной записи хранения с Advanced Threat Protection](https://azure.microsoft.com/resources/templates/201-storage-advanced-threat-protection-create/).
+
+### <a name="using-azure-policy"></a>На основе политики Azure
+
+Используйте политику Azure, чтобы включить Advanced Threat Protection в учетных записях хранения в определенной группе ресурсов или подписку.
+
+1. Обед Azure **политика — определения** страницы.
+
+1. Поиск **развертывания Advanced Threat Protection в учетных записях хранения** политики.
+
+     ![Поиск политики](./media/storage-advanced-threat-protection/storage-atp-policy-definitions.png)
+  
+1. Выберите группу ресурсов или подписку Azure.
+
+    ![Выберите подписку или группу](./media/storage-advanced-threat-protection/storage-atp-policy2.png)
+
+1. Назначьте политику.
+
+    ![Страница определения политики](./media/storage-advanced-threat-protection/storage-atp-policy1.png)
 
 ### <a name="using-rest-api"></a>Использование интерфейса REST API
 Команды Rest API для создания, обновления или получить параметры Advanced Threat Protection для определенной учетной записи хранения.

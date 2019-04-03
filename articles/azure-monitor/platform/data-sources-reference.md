@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/12/2018
 ms.author: johnkem
 ms.subservice: ''
-ms.openlocfilehash: 02b4b2efb447e3ba8c45caa378268ec402b5c3e7
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: c703f735f59a8425c2a14641781f482a6e2d1c78
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56002011"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58848542"
 ---
 # <a name="consume-monitoring-data-from-azure"></a>Использование данных мониторинга из Azure
 
@@ -46,9 +46,9 @@ ms.locfileid: "56002011"
 | Оповещения о метриках Application Insights | Уведомления | Application Insights | <ul><li>**Веб-перехватчик**: [оповещения Application Insights](../../azure-monitor/app/alerts.md)</li></ul> |
 | Веб-тесты Application Insights | Уведомления | Application Insights | <ul><li>**Веб-перехватчик**: [оповещения Application Insights](../../azure-monitor/app/alerts.md)</li></ul> |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте больше о [метриках Azure Monitor](data-collection.md).
+- Узнайте больше о [метриках Azure Monitor](data-platform.md).
 - Узнайте больше о [журнале действий Azure](activity-logs-overview.md).
 - Узнайте больше о [журналах диагностики Azure](diagnostic-logs-overview.md).
 

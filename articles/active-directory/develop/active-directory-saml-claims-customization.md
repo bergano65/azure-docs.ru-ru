@@ -13,47 +13,61 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/20/2018
+ms.date: 04/03/2019
 ms.author: celested
-ms.reviewer: luleon, jeedes
+ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23ce02bd35d9cd4afd881ec276fabb0720b61c09
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: c6fe74852824c10d24729f785e5e33a17b793161
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57444044"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878576"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Практическое руководство: Настройка утверждений, выпущенных в токене SAML для корпоративных приложений
 
-Сегодня Azure Active Directory (Azure AD) поддерживает единый вход в большинстве корпоративных приложений, включая предварительно интегрированные приложения в коллекции приложений Azure AD, а также пользовательских приложениях. Когда пользователь проходит аутентификацию для приложения в Azure AD с помощью протокола SAML 2.0, Azure AD отправляет токен в приложение (через запрос HTTP POST). Затем приложение проверяет и использует маркер для входа пользователя вместо запроса имени пользователя и пароля. Эти маркеры SAML содержат элементы информации о пользователе, которые называются "утверждениями".
+В настоящее время Azure Active Directory (Azure AD) поддерживает единый вход (SSO) в большинстве корпоративных приложений, включая предварительно интегрированные в коллекции приложений Azure AD, а также пользовательские приложения приложения. Когда пользователь проходит аутентификацию для приложения в Azure AD с помощью протокола SAML 2.0, Azure AD отправляет токен в приложение (через запрос HTTP POST). Затем приложение проверяет и использует маркер для входа пользователя вместо запроса имени пользователя и пароля. Эти маркеры SAML содержат элементы информации о пользователе, известный как *утверждений*.
 
 *Утверждение* представляет собой информацию, предложенную поставщиком удостоверений, о пользователе в составе токена, выпущенного для этого пользователя. В [токене SAML](https://en.wikipedia.org/wiki/SAML_2.0)эти данные обычно содержит оператор атрибута SAML. А уникальный идентификатор пользователя, как правило, представлен в субъекте SAML, который также называют идентификатором имени.
 
-По умолчанию Azure AD выпускает токен SAML для приложения, которое содержит утверждение NameIdentifier, с указанием имени пользователя (также называемого именем участника-пользователя) в Azure AD. Это значение обеспечивает уникальную идентификацию пользователя. Маркер SAML включает также дополнительные утверждения, содержащие адрес электронной почты, имя и фамилию пользователя.
+По умолчанию, Azure AD выпускает маркер SAML для приложения, которое содержит `NameIdentifier` утверждения с указанием имени пользователя (также известный как имя участника-пользователя) в Azure AD, который может идентифицировать пользователя. Маркер SAML включает также дополнительные утверждения, содержащие адрес электронной почты, имя и фамилию пользователя.
 
-Чтобы просмотреть или изменить утверждения, выданные приложению в токене SAML, откройте приложение на портале Azure. Затем установите флажок **Просмотреть и изменить все другие атрибуты пользователей** в разделе **Атрибуты пользователя** приложения.
+Чтобы просмотреть или изменить утверждения, выданные приложению в токене SAML, откройте приложение на портале Azure. Затем откройте **атрибуты пользователя и утверждения** раздел.
 
-![Раздел "Атрибуты пользователя"][1]
+![В разделе атрибутов пользователя & утверждений](./media/active-directory-saml-claims-customization/sso-saml-user-attributes-claims.png)
 
 Изменение утверждений, выданных в маркере SAML, может потребоваться по двум основным причинам:
+
+* Приложению требуется `NameIdentifier` или NameID выдает что-то отличное от имени пользователя (или имя участника-пользователя), хранящиеся в Azure AD.
 * Приложение требует другого набора URI утверждений или значений утверждений.
-* Приложение развернуто таким образом, что утверждение NameIdentifier должно содержать данные, отличные от имени пользователя (также называемого именем участника-пользователя), которое хранится в Azure AD.
 
-Вы можете изменять в утверждении любые значения, используемые по умолчанию. Выберите строку утверждения в таблице атрибутов токена SAML. При этом откроется раздел **Изменить атрибут**, и вы сможете изменить имя утверждения, значение и пространство имен, связанное с утверждением.
+## <a name="editing-nameid"></a>Изменение идентификатора имени
 
-![Изменение атрибута пользователя][2]
+Изменение идентификатора имени (значение идентификатора имени):
 
-С помощью контекстного меню, которое открывается при нажатии значка **...**, можно удалить утверждения (кроме утверждения NameIdentifier). А с помощью кнопки **Добавить атрибут** также можно добавить новые утверждения.
+1. Откройте **имя значение идентификатора** страницы.
+1. Выберите атрибут или преобразования, которые необходимо применить к атрибуту. При необходимости можно указать формат, в который он утверждение NameID иметь.
 
-![Изменение атрибута пользователя][3]
+   ![Изменить значение идентификатора имени (идентификатора имени)](./media/active-directory-saml-claims-customization/saml-sso-manage-user-claims.png)
 
-## <a name="editing-the-nameidentifier-claim"></a>Редактирование утверждения NameIdentifier
+### <a name="nameid-format"></a>Формат идентификатора имени
 
-Чтобы решить проблему, связанную с тем, что приложение было развернуто с указанием другого имени пользователя, выберите раскрывающийся список **Идентификатор пользователя** в разделе **Атрибуты пользователя**. Это действие выводит диалоговое окно с несколькими различными параметрами:
+Если запрос SAML содержит элемент политики идентификатора имени определенного формата, Azure AD будет поддерживать формата, в запросе.
 
-![Изменение атрибута пользователя][4]
+Если в запросе SAML не содержит элемент, для политики идентификатора имени, Azure AD будет выдавать NameID в формате, указанную вами. Если формат не задан в Azure AD будет использовать исходный формат по умолчанию, связанные с выбранным источником утверждения.
+
+Из **формат идентификатора имени Выбор** раскрывающемся списке можно выбрать один из следующих вариантов.
+
+| Формат идентификатора имени | ОПИСАНИЕ |
+|---------------|-------------|
+| **значение по умолчанию** | Azure AD будет использовать исходный формат по умолчанию. |
+| **Постоянный** | Azure AD будет использовать постоянный формат идентификатора имени. |
+| **EmailAddress** | Azure AD будет использовать EmailAddress в качестве формата NameID. |
+| **Не указано** | Azure AD будет использовать не указано в качестве формата идентификатора имени. |
+| **Промежуточный** | Несохраняемым будет использоваться в Azure AD как формат идентификатора имени. |
+
+Дополнительные сведения об атрибуте политики идентификатора имени см. в разделе [протокол SAML](single-sign-on-saml-protocol.md).
 
 ### <a name="attributes"></a>Атрибуты
 
@@ -62,102 +76,61 @@ ms.locfileid: "57444044"
 | ИМЯ | ОПИСАНИЕ |
 |------|-------------|
 | Email | Адрес электронной почты пользователя |
-| userprincipalName | Имя участника-пользователя (UPN) этого пользователя |
+| userprincipalName | Имя участника-пользователя (UPN) пользователя |
 | onpremisessamaccount | Имя учетной записи SAM, синхронизированное из локального Azure AD |
-| objectID | ObjectID пользователя в Azure AD |
-| EmployeeID | EmployeeID пользователя |
+| objectid | Идентификатор объекта пользователя в Azure AD |
+| employeeid | EmployeeID пользователя |
 | Расширения каталогов | Расширения каталогов, [синхронизированные из локальной Active Directory с помощью синхронизации Azure AD Connect](../hybrid/how-to-connect-sync-feature-directory-extensions.md) |
 | Атрибуты расширения 1–15 | Локальные атрибуты расширения, используемые для расширения схемы Azure AD |
 
-### <a name="transformations"></a>Преобразования
+Дополнительные сведения см. в разделе [3 таблицы: Допустимые значения Идентификаторов для одного источника](active-directory-claims-mapping.md#table-3-valid-id-values-per-source).
 
-Также можно использовать специальные функции преобразования утверждений.
+### <a name="special-claims---transformations"></a>Специальные утверждения - преобразования
+
+Можно также использовать функции преобразования утверждений.
 
 | Функция | ОПИСАНИЕ |
 |----------|-------------|
-| **ExtractMailPrefix()** | Удаляет суффикс домена из адреса электронной почты, имени учетной записи SAM или имени участника-пользователя. В таком случае будет извлекаться только первая часть передаваемого имени пользователя (например, joe_smith вместо joe_smith@contoso.com). |
-| **join()** | Присоединяет атрибут к проверенному домену. Если выбранное значение идентификатора пользователя имеет домен, он извлечет имя пользователя для добавления выбранного проверенного домена. Например, если в качестве значения идентификатора пользователя вы выберите адрес электронной почты (joe_smith@contoso.com), а в качестве проверенного домена выберите contoso.onmicrosoft.com, то в результате получите joe_smith@contoso.onmicrosoft.com. |
+| **ExtractMailPrefix()** | Удаляет суффикса домена из адреса электронной почты или имя участника-пользователя. В таком случае будет извлекаться только первая часть передаваемого имени пользователя (например, joe_smith вместо joe_smith@contoso.com). |
+| **функция JOIN()** | Присоединяет атрибут к проверенному домену. Если выбранное значение идентификатора пользователя имеет домен, он извлечет имя пользователя для добавления выбранного проверенного домена. Например, если в качестве значения идентификатора пользователя вы выберите адрес электронной почты (joe_smith@contoso.com), а в качестве проверенного домена выберите contoso.onmicrosoft.com, то в результате получите joe_smith@contoso.onmicrosoft.com. |
 | **ToLower()** | Преобразует символы выбранного атрибута в символы нижнего регистра. |
 | **ToUpper()** | Преобразует символы выбранного атрибута в символы верхнего регистра. |
 
-## <a name="adding-claims"></a>Добавление утверждений
+## <a name="adding-application-specific-claims"></a>Добавление утверждения для конкретного приложения
 
-При добавлении утверждения можно указать имя атрибута (которое не обязательно соответствует шаблону URI согласно спецификации SAML). Задайте значение любого атрибута пользователя, который хранится в каталоге или использовать постоянное значение как статические запись для всех пользователей в вашей организации.
+Чтобы добавить утверждения для конкретного приложения:
 
-![Добавление атрибута пользователя][7]
+1. В **атрибуты пользователя и утверждения**выберите **добавить новое утверждение** открыть **управляет утверждениями пользователя** страницы.
+1. Введите **имя** утверждений. Значение не должно строго соответствовать шаблону URL, в спецификации SAML. Если вам требуется шаблон URI, который можно поместить в **пространства имен** поля.
+1. Выберите **источника** где утверждение будет извлечь его значение. Можно выбрать атрибут пользователя из раскрывающегося списка атрибут источника или применить преобразование к атрибуту пользователя до его введения в качестве утверждения.
 
-Например, необходимо отправить имя подразделения организации, к которому принадлежит пользователь (возьмем отдел продаж), в виде утверждения. Введите имя утверждения, ожидаемое приложением, а затем выберите значение **user.department**.
+### <a name="application-specific-claims---transformations"></a>Утверждения для конкретного приложения - преобразования
 
-> [!NOTE]
-> Если для заданного пользователя нет сохраненного значения выбранного атрибута, это утверждение не будет выпущено в маркере.
+Можно также использовать функции преобразования утверждений.
 
-> [!TIP]
-> Значения **user.onpremisesecurityidentifier** и **user.onpremisesamaccountname** поддерживаются только при синхронизации данных пользователя из локального каталога Active Directory с помощью [инструмента Azure AD Connect](../hybrid/whatis-hybrid-identity.md).
+| Функция | ОПИСАНИЕ |
+|----------|-------------|
+| **ExtractMailPrefix()** | Удаляет суффикса домена из адреса электронной почты или имя участника-пользователя. В таком случае будет извлекаться только первая часть передаваемого имени пользователя (например, joe_smith вместо joe_smith@contoso.com). |
+| **функция JOIN()** | Создает новое значение путем объединения двух атрибутов. При необходимости можно использовать разделитель между двумя атрибутами. |
+| **ToLower()** | Преобразует символы выбранного атрибута в символы нижнего регистра. |
+| **ToUpper()** | Преобразует символы выбранного атрибута в символы верхнего регистра. |
+| **CONTAINS()** | Выводит атрибут или константу, если входные данные соответствуют указанному значению. В противном случае можно указать другой выход, если совпадения нет.<br/>Например, если вы хотите выдавать утверждения, где значение — адрес электронной почты пользователя, если он содержит домен "@contoso.com«, в противном случае нужно вывести имя участника-пользователя. Для этого следует настроить следующие значения:<br/>*Параметр 1(input)*: user.email<br/>*Значение*: "@contoso.com"<br/>Параметр 2 (вывод): user.email<br/>Параметр 3 (выходные данные, если нет совпадений): user.userprincipalname |
+| **EndWith()** | Выводит атрибут или константа, если входные данные с указанным значением. В противном случае можно указать другой выход, если совпадения нет.<br/>Например если вы хотите выдавать утверждения, где значение — employeeid пользователя, если employeeid заканчивается «000», в противном случае нужно вывести атрибут расширения. Для этого следует настроить следующие значения:<br/>*Параметр 1(input)*: параметром user.employeeid<br/>*Value* (Значение): "000"<br/>Параметр 2 (вывод): параметром user.employeeid<br/>Параметр 3 (выходные данные, если нет совпадений): атрибут user.extensionattribute1 |
+| **StartWith()** | Выводит атрибут или константа, если входные данные начинается с указанного значения. В противном случае можно указать другой выход, если совпадения нет.<br/>Например если вы хотите выдавать утверждения, где значение — employeeid пользователя, если страна начинается с «США», в противном случае нужно вывести атрибут расширения. Для этого следует настроить следующие значения:<br/>*Параметр 1(input)*: user.country<br/>*Value* (Значение): «США»<br/>Параметр 2 (вывод): параметром user.employeeid<br/>Параметр 3 (выходные данные, если нет совпадений): атрибут user.extensionattribute1 |
+| **Extract() - после сопоставления** | Возвращает подстроку после его совпадает с указанным значением.<br/>Например если значение элемента input «Finance_BSimon», соответствующее значение — «Finance_», а затем выходные данные утверждения — «BSimon». |
+| **Extract() - до соответствия** | Возвращает подстроку, пока не будет соответствовать указанному значению.<br/>Например если значение элемента input «BSimon_US», соответствующее значение — «_US», а затем выходные данные утверждения — «BSimon». |
+| **Extract() - между совпадающими** | Возвращает подстроку, пока не будет соответствовать указанному значению.<br/>Например если значение элемента input «Finance_BSimon_US», первое совпадающее значение — «Finance_», второе значение сопоставления — «_US», а затем выходные данные утверждения — «BSimon». |
+| **ExtractAlpha() - префикс** | Возвращает префикс алфавитном часть строки.<br/>Например если значение элемента input «BSimon_123», он возвращает «BSimon». |
+| **ExtractAlpha() - суффикс** | Возвращает суффикс алфавитном часть строки.<br/>Например если значение элемента input «123_Simon», он возвращает «BSimon». |
+| **ExtractNumeric() - префикс** | Возвращает префикс числовой части строки.<br/>Например если значение элемента input «123_BSimon», он возвращает «123». |
+| **ExtractNumeric() - суффикс** | Возвращает числовой суффикс часть строки.<br/>Например если значение элемента input «BSimon_123», он возвращает «123». |
+| **IfEmpty()** | Выводит атрибут или константа, если входные данные — null или пустым.<br/>Например, если требуется направить вывод атрибут, хранящиеся в extensionattribute, если для данного пользователя столбец employeeid является пустым. Для этого следует настроить следующие значения:<br/>Параметр 1(input): параметром user.employeeid<br/>Параметр 2 (вывод): атрибут user.extensionattribute1<br/>Параметр 3 (выходные данные, если нет совпадений): параметром user.employeeid |
+| **IfNotEmpty()** | Выводит атрибут или константа, если входные данные не равен null или пуст.<br/>Например, если требуется направить вывод атрибут хранится в extensionattribute Если employeeid для данного пользователя не является пустым. Для этого следует настроить следующие значения:<br/>Параметр 1(input): параметром user.employeeid<br/>Параметр 2 (вывод): атрибут user.extensionattribute1 |
 
-## <a name="restricted-claims"></a>Утверждения с ограниченным доступом
-
-В SAML существует ряд утверждений с ограниченным доступом. Если добавить эти утверждения, то Azure AD не будет их отправлять. Ниже приведен набор утверждений SAML с ограниченным доступом.
-
-    | Тип утверждения (URI) |
-    | ------------------- |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/expiration |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/expired |
-    | http://schemas.microsoft.com/identity/claims/accesstoken |
-    | http://schemas.microsoft.com/identity/claims/openid2_id |
-    | http://schemas.microsoft.com/identity/claims/identityprovider |
-    | http://schemas.microsoft.com/identity/claims/objectidentifier |
-    | http://schemas.microsoft.com/identity/claims/puid |
-    | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier[MR1] |
-    | http://schemas.microsoft.com/identity/claims/tenantid |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod |
-    | http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/groups |
-    | http://schemas.microsoft.com/claims/groups.link |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/role |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/wids |
-    | http://schemas.microsoft.com/2014/09/devicecontext/claims/iscompliant |
-    | http://schemas.microsoft.com/2014/02/devicecontext/claims/isknown |
-    | http://schemas.microsoft.com/2012/01/devicecontext/claims/ismanaged |
-    | http://schemas.microsoft.com/2014/03/psso |
-    | http://schemas.microsoft.com/claims/authnmethodsreferences |
-    | http://schemas.xmlsoap.org/ws/2009/09/identity/claims/actor |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/samlissuername |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/confirmationkey |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/primarygroupsid |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid |
-    | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/authorizationdecision |
-    | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/authentication |
-    | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/sid |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/denyonlyprimarygroupsid |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/denyonlyprimarysid |
-    | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/denyonlysid |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/denyonlywindowsdevicegroup |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdeviceclaim |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsfqbnversion |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/windowssubauthority |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsuserclaim |
-    | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/x500distinguishedname |
-    | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid |
-    | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/spn |
-    | http://schemas.microsoft.com/ws/2008/06/identity/claims/ispersistent |
-    | http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier |
-    | http://schemas.microsoft.com/identity/claims/scope |
+Если вам нужны дополнительные преобразования, отправить свои идеи в [форуме обратной связи в Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=160599) под *приложения SaaS* категории.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Управление приложениями с помощью Azure Active Directory](../manage-apps/what-is-application-management.md)
-* [Настройка федеративного единого входа для приложения не из коллекции](../manage-apps/configure-federated-single-sign-on-non-gallery-applications.md)
-* [Устранение неполадок единого входа на основе SAML](howto-v1-debug-saml-sso-issues.md)
-
-<!--Image references-->
-[1]: ./media/active-directory-saml-claims-customization/user-attribute-section.png
-[2]: ./media/active-directory-saml-claims-customization/edit-claim-name-value.png
-[3]: ./media/active-directory-saml-claims-customization/delete-claim.png
-[4]: ./media/active-directory-saml-claims-customization/user-identifier.png
-[5]: ./media/active-directory-saml-claims-customization/extractemailprefix-function.png
-[6]: ./media/active-directory-saml-claims-customization/join-function.png
-[7]: ./media/active-directory-saml-claims-customization/add-attribute.png
+* [Управление приложениями в Azure AD](../manage-apps/what-is-application-management.md)
+* [Настройка единого входа для приложений, которых нет в коллекции приложений Azure AD](../manage-apps/configure-federated-single-sign-on-non-gallery-applications.md)
+* [Устранение неполадок на основе SAML единого входа](howto-v1-debug-saml-sso-issues.md)

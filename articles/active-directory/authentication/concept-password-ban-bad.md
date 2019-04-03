@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 795abcadb1cee7599665f7bc3b8e0d3e08a3da05
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: cc2c125df2e3455b0e90919dbca92fe497a4b1b7
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58369077"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58884352"
 ---
 # <a name="eliminate-bad-passwords-in-your-organization"></a>Исключение неправильных паролей в организации
 
@@ -100,14 +100,17 @@ ms.locfileid: "58369077"
 [contoso] + [blank] = [f] + [9] + [!] = 5 баллов. Если данный пароль имеет по крайней мере 5 баллов, его примут.
 
    > [!IMPORTANT]
-   > Обратите внимание, что алгоритм запрещенных паролей вместе с глобальным списком может и действительно изменится в любое время в Azure на основе текущего анализа и исследования безопасности. Для локальной службы агента контроллера домена обновленные алгоритмы вступят в силу только после переустановки программного обеспечения агента контроллера домена.
+   > Обратите внимание, что алгоритм запрещенных паролей вместе с глобальным списком может и действительно изменится в любое время в Azure на основе текущего анализа и исследования безопасности. Для службы агента локального контроллера домена обновленные алгоритмы будет действовать только после переустановить программное обеспечение агента DC.
 
 ## <a name="license-requirements"></a>Требования лицензий
 
 |   | Защита паролей Azure AD с помощью списка глобально заблокированных паролей | Защита паролей Azure AD с помощью настраиваемого списка заблокированных паролей|
 | --- | --- | --- |
-| Только пользователи облака | Azure AD уровня "Бесплатный" | Azure AD Basic |
+| Только пользователи облака | Azure AD уровня "Бесплатный" | Azure AD Premium (P1 или P2) |
 | Пользователи, синхронизированные с локальным сервером Windows Server Active Directory | Azure AD Premium (P1 или P2) | Azure AD Premium (P1 или P2) |
+
+> [!NOTE]
+> Локальных пользователей Windows Server Active Directory, которые не синхронизированы с Azure Active Directory также воспользоваться преимуществами защиты пароля Azure AD в зависимости от существующих лицензионных для синхронизированных пользователей.
 
 Дополнительные сведения о лицензировании, включая расходы, можно найти на [сайте с ценами на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 
@@ -120,4 +123,4 @@ ms.locfileid: "58369077"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка пользовательского списка заблокированных паролей](howto-password-ban-bad.md)
-* [Развертывание предварительной версии защиты паролем Azure AD](howto-password-ban-bad-on-premises-deploy.md)
+* [Включение Azure AD пароль защиты агенты локально](howto-password-ban-bad-on-premises-deploy.md)

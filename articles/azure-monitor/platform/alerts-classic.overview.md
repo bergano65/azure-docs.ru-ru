@@ -7,12 +7,12 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 12/29/2018
 ms.author: robb
-ms.openlocfilehash: 3b6ddd99d7b198cdc5274b2944a723e68864bd4f
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 0d91e12de075ee6efebe39fd5ab582d4998046f9
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57993042"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58847852"
 ---
 # <a name="what-are-classic-alerts-in-microsoft-azure"></a>Что такое классические оповещения в Microsoft Azure?
 
@@ -88,14 +88,14 @@ ms.locfileid: "57993042"
 ## <a name="next-steps"></a>Дальнейшие действия
 Изучите правила создания оповещений и ознакомьтесь с их настройкой с помощью следующих средств:
 
-* Узнайте больше о [метриках](../../azure-monitor/platform/data-collection.md).
+* Узнайте больше о [метриках](data-platform.md).
 * Настройте [оповещения метрик на портале Azure](alerts-classic-portal.md).
 * Настройте [классические оповещения метрик с помощью PowerShell](alerts-classic-portal.md).
 * Настройте [классические оповещения метрик с помощью интерфейса командной строки](alerts-classic-portal.md).
 * Настройте [классические оповещения метрик с помощью REST API Azure Monitor](https://msdn.microsoft.com/library/azure/dn931945.aspx).
-* Узнайте больше о [журнале действий](../../azure-monitor/platform/activity-logs-overview.md).
-* Настройте [оповещения журнала действий на портале Azure](../../azure-monitor/platform/activity-log-alerts.md).
+* Узнайте больше о [журнале действий](activity-logs-overview.md).
+* Настройте [оповещения журнала действий на портале Azure](activity-log-alerts.md).
 * Настройте [оповещения журнала действий с помощью Resource Manager](alerts-activity-log.md).
-* Просмотрите [схему webhook оповещений журнала действий](../../azure-monitor/platform/activity-log-alerts-webhook.md).
-* Дополнительные сведения о [группах действий](../../azure-monitor/platform/action-groups.md).
-* Настройте [новые оповещения](../../azure-monitor/platform/alerts-metric.md).
+* Просмотрите [схему webhook оповещений журнала действий](activity-log-alerts-webhook.md).
+* Дополнительные сведения о [группах действий](action-groups.md).
+* Настройте [новые оповещения](alerts-metric.md).

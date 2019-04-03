@@ -3,21 +3,21 @@ title: 'REST API: Начало работы с Gen1 хранилища Озер�
 description: Используйте Azure Data Lake Storage 1-го поколения и REST API WebHDFS, чтобы выполнять операции управления учетными записями в Data Lake Storage 1-го поколения
 services: data-lake-store
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.assetid: 57ac6501-cb71-4f75-82c2-acc07c562889
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: b2c4d38462cf617d8417b269d47a8c1bb0c266c3
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.author: twooley
+ms.openlocfilehash: 97fe33309f36cd7545f8c9d6c2d34671641caa1f
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57530132"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58880174"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-rest-api"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием REST API
 > [!div class="op_single_selector"]
@@ -75,6 +75,6 @@ ms.locfileid: "57530132"
 * [Операции файловой системы в Data Lake Storage 1-го поколения c использованием REST API](data-lake-store-data-operations-rest-api.md).
 
 ## <a name="see-also"></a>См. также
-* [Справочник по REST API для Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/rest/api/datalakestore/)
-* [Приложения больших данных с открытым исходным кодом, которые работают с Azure Data Lake Storage Gen1](data-lake-store-compatible-oss-other-applications.md)
+* [Справочник по API REST в поколение 1 хранилища Озера данных Azure](https://docs.microsoft.com/rest/api/datalakestore/)
+* [Откройте исходные данные больших приложений, совместимых с Gen1 хранилища Озера данных Azure](data-lake-store-compatible-oss-other-applications.md)
 

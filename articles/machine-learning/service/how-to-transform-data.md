@@ -6,22 +6,22 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.author: cforbe
-author: cforbe
+ms.author: sihhu
+author: MayMSFT
 manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 12a914b2cdef0a40493dac1a539cf0c2a7703093
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: d2bd271557ae0deefeb12a2dc7343c46fbd35363
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57999813"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58847611"
 ---
 # <a name="transform-data-with-the-azure-machine-learning-data-prep-sdk"></a>Преобразование данных с помощью пакета SDK для подготовки данных машинного обучения Azure
 
-В этой статье вы узнаете, различных методов загрузки данных с помощью пакета SDK Azure Machine Learning данных подготовки. Пакет SDK предоставляет функции, которые упрощают добавление столбцов и отфильтровать ненужные строки или столбцы добавить отсутствующие значения. Справочная документация для пакета SDK см. в разделе [Обзор](https://aka.ms/data-prep-sdk).
+В этой статье вы узнаете, различные способы преобразования данных с помощью пакета SDK Azure Machine Learning данных подготовки. Пакет SDK предоставляет функции, которые упрощают добавление столбцов и отфильтровать ненужные строки или столбцы добавить отсутствующие значения. Справочная документация для пакета SDK см. в разделе [Обзор](https://aka.ms/data-prep-sdk).
 
 В этом практическом руководстве показаны примеры для выполнения следующих задач:
 

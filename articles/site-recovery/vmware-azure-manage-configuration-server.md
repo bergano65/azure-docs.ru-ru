@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 02/12/2018
 ms.author: ramamill
-ms.openlocfilehash: d8b0d78d33c0780b05ac6f4bd8a21c6423d801f4
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 93e05390d28b9e9998d84935417121696d2963cc
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58445065"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58877233"
 ---
 # <a name="manage-the-configuration-server-for-vmware-vm-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления виртуальных машин VMware
 
@@ -65,7 +65,7 @@ ms.locfileid: "58445065"
 
 1. После [входа](#access-configuration-server) выберите **Управление учетными данными виртуальной машины**.
 2. Щелкните **Добавить учетные данные виртуальной машины**.
-    ![добавить-учетные-данные-мобильности](media/vmware-azure-manage-configuration-server/add-mobility-credentials.png)
+    ![Добавление мобильности credentials](media/vmware-azure-manage-configuration-server/add-mobility-credentials.png)
 3. Введите новые учетные данные и щелкните **Добавить**.
 
 Учетные данные также можно добавить с помощью CSPSConfigtool.exe.
@@ -148,7 +148,7 @@ ms.locfileid: "58445065"
 
 1. В хранилище перейдите в **Управление** > **Site Recovery Infrastructure (Инфраструктура Site Recovery)** > **Серверы конфигурации**.
 2. Если обновление доступно, то в строке **Версия агента** > появится ссылка.
-    ![Обновление](./media/vmware-azure-manage-configuration-server/update2.png).
+    ![Блокировка изменений](./media/vmware-azure-manage-configuration-server/update2.png)
 3. Скачайте файл установщика обновлений на сервер конфигурации.
 
     ![Блокировка изменений](./media/vmware-azure-manage-configuration-server/update1.png)
@@ -252,7 +252,7 @@ ProxyPassword="Password"
     `$fabric = Get-AzureRmSiteRecoveryFabric -FriendlyName <name of your configuration server>`
 6. Удалите сервер конфигурации.
 
-    `Remove-AzureRmSiteRecoveryFabric -Fabric $fabric [-Force] `
+    `Remove-AzureRmSiteRecoveryFabric -Fabric $fabric [-Force]`
 
 > [!NOTE]
 > Параметр **-Force** в командлете Remove-AzureRmSiteRecoveryFabric можно использовать для принудительного удаления сервера конфигурации.

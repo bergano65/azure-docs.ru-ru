@@ -1,7 +1,7 @@
 ---
-title: Мониторинг моделей с помощью Application Insights
+title: Настройка Azure Application Insights для моделей машинного Обучения монитора
 titleSuffix: Azure Machine Learning service
-description: Использование Application Insights для мониторинга веб-служб, развернутых с помощью Службы машинного обучения Azure.
+description: Мониторинг веб-служб, развернутых с помощью службы машинного обучения Azure с помощью Azure Application Insights
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: marthalc
 author: marthalc
-ms.date: 1/07/2019
-ms.custom: seodec18
-ms.openlocfilehash: 32dc55927f614a91c390a417595b7a00c16e9386
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 04/02/2019
+ms.custom: seoapril2019
+ms.openlocfilehash: 2e481a388d8cbd6baf66b95c74449396b2e70f7d
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57847955"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58885508"
 ---
 # <a name="monitor-your-azure-machine-learning-models-with-application-insights"></a>Мониторинг моделей машинного обучения в Azure с помощью Application Insights
 
@@ -36,7 +36,7 @@ ms.locfileid: "57847955"
 * Обученная модель машинного обучения для развертывания в службе Azure Kubernetes (AKS) или в экземпляре контейнера Azure (ACI). Если у вас ее нет, см. руководство по [обучению модели классификации изображений](tutorial-train-models-with-aml.md).
 
 
-## <a name="enable-and-disable-from-the-sdk"></a>Включение и отключение с помощью пакета SDK
+## <a name="use-sdk-to-configure"></a>Используйте пакет SDK для настройки 
 
 ### <a name="update-a-deployed-service"></a>Обновление развернутой службы
 1. Найдите службу в рабочей области. Значение `ws` обозначает имя рабочей области.
@@ -77,7 +77,7 @@ ms.locfileid: "57847955"
 <service_name>.update(enable_app_insights=False)
 ```
     
-## <a name="enable-and-disable-in-the-portal"></a>Включение и отключение с помощью портала
+## <a name="use-portal-to-configure"></a>Настройка с помощью портала
 
 Вы можете включить или отключить Azure Application Insights на портале Azure.
 
@@ -85,15 +85,15 @@ ms.locfileid: "57847955"
 
 1. На вкладке **Развертывания** выберите службу, для которой требуется включить Application Insights.
 
-   [![Список служб на вкладке "Развертывания"](media/how-to-enable-app-insights/Deployments.PNG)](./media/how-to-enable-app-insights/Deployments.PNG#lightbox)
+   [![Lв данном документе служб на вкладку "Развертывание"](media/how-to-enable-app-insights/Deployments.PNG)](./media/how-to-enable-app-insights/Deployments.PNG#lightbox)
 
 3. Выберите **Изменить**
 
-   [![Кнопка "Изменить"](media/how-to-enable-app-insights/Edit.PNG)](./media/how-to-enable-app-insights/Edit.PNG#lightbox)
+   [![EКнопка DIT](media/how-to-enable-app-insights/Edit.PNG)](./media/how-to-enable-app-insights/Edit.PNG#lightbox)
 
 4. В разделе **Дополнительные параметры** установите флажок **Включить диагностику AppInsights**.
 
-   [![Установленный флажок для включения диагностики](media/how-to-enable-app-insights/AdvancedSettings.png)](./media/how-to-enable-app-insights/AdvancedSettings.png#lightbox)
+   [![Sвыделенные флажок включения диагностики](media/how-to-enable-app-insights/AdvancedSettings.png)](./media/how-to-enable-app-insights/AdvancedSettings.png#lightbox)
 
 1. Чтобы применить изменение, в верхней части экрана выберите **Изменить**. 
 
@@ -101,11 +101,11 @@ ms.locfileid: "57847955"
 1. Откройте рабочую область на [портале Azure](https://portal.azure.com).
 1. Откройте **Развертывания**, затем выберите службу и щелкните **Изменить**.
 
-   [![Нажмите кнопку "Изменить"](media/how-to-enable-app-insights/Edit.PNG)](./media/how-to-enable-app-insights/Edit.PNG#lightbox).
+   [![USE "Изменить"](media/how-to-enable-app-insights/Edit.PNG)](./media/how-to-enable-app-insights/Edit.PNG#lightbox)
 
 1. В разделе **Дополнительные параметры** снимите флажок **Включить диагностику AppInsights**. 
 
-   [![Снятый флажок включения диагностики](media/how-to-enable-app-insights/uncheck.png)](./media/how-to-enable-app-insights/uncheck.png#lightbox)
+   [![Cинструкциями флажок включения диагностики](media/how-to-enable-app-insights/uncheck.png)](./media/how-to-enable-app-insights/uncheck.png#lightbox)
 
 1. Чтобы применить изменение, в верхней части экрана выберите **Изменить**. 
  
@@ -119,12 +119,12 @@ ms.locfileid: "57847955"
 
 1. Выберите вкладку **Обзор**, чтобы увидеть базовый набор метрик для своей службы.
 
-   [![Обзор](media/how-to-enable-app-insights/overview.png)](./media/how-to-enable-app-insights/overview.png#lightbox)
+   [![OОбзор миграции](media/how-to-enable-app-insights/overview.png)](./media/how-to-enable-app-insights/overview.png#lightbox)
 
 3. Чтобы выполнить поиск в пользовательских трассировках, выберите **Аналитика**.
 4. В разделе схемы выберите **Трассировки**. Затем выберите **Запуск**, чтобы выполнить запрос. Данные будут отображаться в формате таблицы и сопоставляться с пользовательскими вызовами в файле оценки. 
 
-   [![Пользовательские трассировки](media/how-to-enable-app-insights/logs.png)](./media/how-to-enable-app-insights/logs.png#lightbox)
+   [![Cпользовательские трассировки](media/how-to-enable-app-insights/logs.png)](./media/how-to-enable-app-insights/logs.png#lightbox)
 
 Дополнительные сведения об использовании службы Application Insights см. в статье [Что такое Azure Application Insights?](../../azure-monitor/app/app-insights-overview.md)
     
@@ -138,6 +138,4 @@ ms.locfileid: "57847955"
 ## <a name="next-steps"></a>Дальнейшие действия
 Также данные можно собирать с моделей в рабочей среде. Ознакомьтесь со статьей [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md). 
 
-
-## <a name="other-references"></a>Прочие ссылки
-* [Azure Monitor для контейнеров](https://docs.microsoft.com/azure/monitoring/monitoring-container-insights-overview?toc=%2fazure%2fmonitoring%2ftoc.json)
+Также прочитайте [Azure Monitor для контейнеров](https://docs.microsoft.com/azure/monitoring/monitoring-container-insights-overview?toc=%2fazure%2fmonitoring%2ftoc.json).

@@ -3,33 +3,33 @@ title: Проверка подлинности пользователей в Azu
 description: Узнайте, как реализовать проверку подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory и .NET SDK
 services: data-lake-store
 documentationcenter: ''
-author: nitinme
+author: twooley
 manager: cgronlun
 editor: cgronlun
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: 62b7e293468a8b92f22ee1a5fd5b38cd15cfafbf
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
+ms.author: twooley
+ms.openlocfilehash: 78a290d8136f8804e853d36a9bc95571625ed89c
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53261540"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58876774"
 ---
 # <a name="end-user-authentication-with-azure-data-lake-storage-gen1-using-net-sdk"></a>Проверка подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью .NET SDK
 > [!div class="op_single_selector"]
-> * [С использованием Java](data-lake-store-end-user-authenticate-java-sdk.md)
-> * [Использование пакета SDK для .NET](data-lake-store-end-user-authenticate-net-sdk.md)
+> * [Использование Java](data-lake-store-end-user-authenticate-java-sdk.md)
+> * [Использование пакета .NET SDK](data-lake-store-end-user-authenticate-net-sdk.md)
 > * [Использование Python](data-lake-store-end-user-authenticate-python.md)
-> * [Использование REST API](data-lake-store-end-user-authenticate-rest-api.md)
+> * [Использование интерфейса REST API](data-lake-store-end-user-authenticate-rest-api.md)
 > 
 >  
 
 В этой статье описывается, как использовать пакет SDK для .NET для проверки подлинности пользователей с помощью Azure Data Lake Storage 1-го поколения. См. дополнительные сведения о [проверке подлинности между службами в Data Lake Storage 1-го поколения с помощью .NET SDK](data-lake-store-service-to-service-authenticate-net-sdk.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * **Visual Studio 2013, 2015 или 2017**. В инструкциях ниже используется Visual Studio 2017.
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -55,8 +55,8 @@ ms.locfileid: "53261540"
    2. На вкладке **Диспетчер пакетов NuGet** в поле **Источник пакета** выберите **nuget.org** и установите флажок **Включить предварительные выпуски**.
    3. Найдите и установите следующие пакеты NuGet:
 
-      * `Microsoft.Azure.Management.DataLake.Store`. В этом руководстве используется предварительная версия 2.1.3.
-      * `Microsoft.Rest.ClientRuntime.Azure.Authentication`. В этом руководстве используется версия 2.2.12.
+      * `Microsoft.Azure.Management.DataLake.Store` — В этом руководстве используется Предварительная версия 2.1.3.
+      * `Microsoft.Rest.ClientRuntime.Azure.Authentication` — В этом руководстве используется версия 2.2.12.
 
         ![Добавление источника NuGet](./media/data-lake-store-get-started-net-sdk/data-lake-store-install-nuget-package.png "Создание учетной записи Azure Data Lake")
    4. Закройте **диспетчер пакетов NuGet**.
@@ -109,9 +109,9 @@ ms.locfileid: "53261540"
 * Если вы не хотите использовать свой домен Azure AD и идентификатор клиента приложения, необходимо создать собственное приложение Azure AD и использовать идентификатор клиента Azure AD, идентификатор клиента и URI перенаправления этого приложения. Инструкции см. в статье [Создание приложения Active Directory для проверки подлинности пользователей в Data Lake Storage 1-го поколения](data-lake-store-end-user-authenticate-using-active-directory.md).
 
   
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы узнали, как использовать проверку подлинности пользователей, чтобы реализовать проверку подлинности в Data Lake Storage 1-го поколения с помощью .NET SDK. Дополнительные сведения об использовании пакета .NET SDK для работы с Azure Data Lake Storage 1-го поколения см. в следующих статьях.
 
-* [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
-* [Операции с данными в Data Lake Storage 1-го поколения c использованием SDK для .NET](data-lake-store-data-operations-net-sdk.md)
+* [Начало работы с Gen1 хранилища Озера данных с помощью пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
+* [Операции с данными в поколение 1 хранилища Озера данных с помощью пакета SDK для .NET](data-lake-store-data-operations-net-sdk.md)
 

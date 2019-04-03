@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/25/2019
-ms.openlocfilehash: 64829cad24d7f436b8539659dc1f0c6ef6ed4da4
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.openlocfilehash: 00658b650cdc0b1752bb9f2f205420018c1d6edd
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57404779"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58881789"
 ---
 # <a name="delete-activity-in-azure-data-factory"></a>Действие Delete в Фабрике данных Azure
 
-С помощью действия Delete в Фабрике данных Azure можно удалять файлы или папки из локальных или облачных хранилищ. Это действие используется для очистки или архивации ненужных файлов.
+Удалить действие в фабрике данных Azure можно использовать для удаления файлов или папок из локального хранилища сохраняет или облачных хранилищ хранилище. Это действие используется для очистки или архивации ненужных файлов.
 
 > [!WARNING]
 > Удаленные файлы и папки нельзя восстановить. Учитывайте это при использовании действия Delete для удаления файлов или папок.
@@ -41,9 +41,9 @@ ms.locfileid: "57404779"
 
 ## <a name="supported-data-stores"></a>Поддерживаемые хранилища данных
 
--   [хранилище BLOB-объектов Azure](connector-azure-blob-storage.md)
+-   [Хранилище больших двоичных объектов Azure](connector-azure-blob-storage.md)
 -   [Хранилище Azure Data Lake Gen1](connector-azure-data-lake-store.md)
--   [Хранилище Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md)
+-   [Хранилище Azure Data Lake Gen2](connector-azure-data-lake-storage.md)
 
 ### <a name="file-system-data-stores"></a>Хранилища данных файловых систем
 
@@ -573,4 +573,4 @@ Root/<br/>&nbsp;&nbsp;&nbsp;&nbsp;Folder_A_1/<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 Дополнительные сведения о перемещении файлов в фабрике данных Azure.
 
--   [Инструмент копирования данных в Фабрике данных Azure](copy-data-tool.md)
+-   [Инструмент копирования данных в фабрике данных Azure](copy-data-tool.md)

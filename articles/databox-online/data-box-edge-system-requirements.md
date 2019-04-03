@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 03/22/2019
+ms.date: 04/02/2019
 ms.author: alkohli
-ms.openlocfilehash: 125ad28f049662ae6d91c61bb5ee79c1c1428af5
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: 720f4433c1e7b0d271e5729236f439c92a84687e
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58401759"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58884658"
 ---
 # <a name="azure-data-box-edge-system-requirements"></a>Требования к системе Azure Edge поле данных
 
@@ -86,10 +86,14 @@ Azure IoT Edge обеспечивает исходящее подключени�
 | https://\*.azurecr.io                     | Реестры личных и сторонних контейнеров (необязательно) |   |
 | https://\*.azure-devices.net              | Политика доступа Центра Интернета вещей (обязательно)                             |   |
 
+### <a name="url-patterns-for-azure-government"></a>Шаблоны URL-адресов для Azure для государственных организаций
+
+[!INCLUDE [Azure Government URL patterns for firewall](../../includes/data-box-edge-gateway-gov-url-patterns-firewall.md)]
+
 ## <a name="internet-bandwidth"></a>Пропускная способность Интернета
 
 [!INCLUDE [Internet bandwidth](../../includes/data-box-edge-gateway-internet-bandwidth.md)]
 
 ## <a name="next-step"></a>Дальнейшие действия
 
-- [Руководство. Подготовка к развертыванию Azure Data Box Edge (предварительная версия)](data-box-Edge-deploy-prep.md)
+- [Развертывание в Edge поле данных Azure](data-box-edge-deploy-prep.md)

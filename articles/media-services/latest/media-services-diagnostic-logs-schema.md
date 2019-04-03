@@ -13,18 +13,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/20/2019
 ms.author: juliako
-ms.openlocfilehash: 225bc4368d2a87fa5fef3f74624fd10f42dc7c97
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 394370738bc7996a221300540e68404986d91310
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57556366"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58850627"
 ---
 # <a name="diagnostic-logs-schemas"></a>Схемы для журналов диагностики
 
 [Azure Monitor](../../azure-monitor/overview.md) включает мониторинг метрик и журналов диагностики, которые помогут вам понять, как выполняемых приложений. Можно отслеживать журналы диагностики служб мультимедиа и создавать оповещения и уведомления для сбора метрик и журналов. Вы можете отправить журналы в [хранилища Azure](https://azure.microsoft.com/services/storage/), потоковая передача журналов в [концентраторов событий](https://azure.microsoft.com/services/event-hubs/)и экспортировать их в службу [Log Analytics](https://azure.microsoft.com/services/log-analytics/), или использовать сторонние службы.
 
-Подробные сведения см. в разделе [метрик Azure Monitor](../../azure-monitor/platform/data-collection.md) и [журналов диагностики Azure Monitor](../../azure-monitor/platform/diagnostic-logs-overview.md).
+Подробные сведения см. в разделе [метрик Azure Monitor](../../azure-monitor/platform/data-platform.md) и [журналов диагностики Azure Monitor](../../azure-monitor/platform/diagnostic-logs-overview.md).
 
 В этой статье описывается схемы журналов диагностики службы мультимедиа.
 

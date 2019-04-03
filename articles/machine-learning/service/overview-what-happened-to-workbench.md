@@ -11,12 +11,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 01/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 5ff065816e287e0d4e37cdea9a7770c9ff806520
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 22615d07e69d707c90e3ff9bda83bfa6f0852996
+ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57890752"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58360290"
 ---
 # <a name="what-happened-to-azure-machine-learning-workbench"></a>Что случилось с Azure Machine Learning Workbench?
 
@@ -40,7 +40,7 @@ ms.locfileid: "57890752"
 + Новый, более функциональный <a href="https://aka.ms/aml-sdk" target="_blank">пакет SDK</a> для Python.
 + Обновленное и дополненное [расширение интерфейса командной строки Azure](reference-azure-machine-learning-cli.md) для машинного обучения
 
-Переработанная [архитектура](concept-azure-machine-learning-architecture.md) для упрощения использования. Вместо нескольких ресурсов Azure и учетных записей требуется только [рабочая область Машинного обучения Azure](concept-azure-machine-learning-architecture.md#workspace). Новые рабочие области можно быстро создать на [портале Azure](quickstart-get-started.md). Рабочая область позволяет нескольким пользователя хранить целевые объекты вычислений для обучения и развертывания, экспериментов с моделями, образов Docker, развернутых моделей и т. д.
+Переработанная [архитектура](concept-azure-machine-learning-architecture.md) для упрощения использования. Вместо нескольких ресурсов Azure и учетных записей требуется только [рабочая область Машинного обучения Azure](concept-azure-machine-learning-architecture.md#workspace). Новые рабочие области можно быстро создать на [портале Azure]((setup-create-workspace.md#portal). Рабочая область позволяет нескольким пользователя хранить целевые объекты вычислений для обучения и развертывания, экспериментов с моделями, образов Docker, развернутых моделей и т. д.
 
 Текущий выпуск предоставляет обновленные и улучшенные клиенты для работы с интерфейсом командной строки и пакетом SDK, но само классическое приложение Workbench является устаревшим. В рабочей области панели мониторинга на портале Azure можно управлять экспериментами. Дополнительные сведения см. [здесь](how-to-track-experiments.md#view-the-experiment-in-the-azure-portal). Используйте панель мониторинга, чтобы просматривать историю эксперимента, управлять целевыми объектами вычислений, подключенными к рабочей области, управлять моделями и образами Docker и даже развертывать веб-службы.
 
@@ -50,7 +50,7 @@ ms.locfileid: "57890752"
 
 С 9 января 2019 г. прекращается поддержка Azure Machine Learning Workbench, Экспериментирования в Машинном обучении Azure, учетных записей Управления моделями, а также соответствующего интерфейса командной строки и пакета SDK. 
 
-Все новейшие возможности доступны при использовании нового <a href="https://aka.ms/aml-sdk" target="_blank">пакета SDK</a>, [интерфейса командной строки](reference-azure-machine-learning-cli.md) и [портала](quickstart-get-started.md).
+Все новейшие возможности доступны при использовании нового <a href="https://aka.ms/aml-sdk" target="_blank">пакета SDK</a>, [интерфейса командной строки](reference-azure-machine-learning-cli.md) и [портала](setup-create-workspace.md#portal).
 
 ## <a name="what-about-run-histories"></a>Что будет с журналами выполнения?
 
@@ -81,7 +81,7 @@ ms.locfileid: "57890752"
 run = exp.submit(source_directory = script_folder, script = 'train.py', run_config = run_config_system_managed)
 ```
 
-Узнайте, как приступить к работе [в среде Python с помощью основного пакета SDK](quickstart-create-workspace-with-python.md) или [с помощью портала Azure](quickstart-get-started.md).
+[Создайте рабочую область](setup-create-workspace.md#portal), чтобы приступить к работе.
 
 ## <a name="what-about-my-registered-models-and-images"></a>Что будет с уже зарегистрированными моделями и образами?
 
@@ -121,6 +121,6 @@ run = exp.submit(source_directory = script_folder, script = 'train.py', run_conf
 
 Обзор службы см. в статье [Что такое служба машинного обучения Azure](overview-what-is-azure-ml.md).
 
-Краткое руководство, показывающее, как создать рабочую область, создать проект, выполнить скрипт и просмотреть журнал выполнения скрипта с помощью последней версии службы "Машинное обучение Azure", см. в статье [Начало работы со службой "Машинное обучение Azure"](quickstart-get-started.md).
+Сведения о том, как выполнить скрипт и просмотреть журнал выполнения скрипта с помощью последней версии службы "Машинное обучение Azure", см. в статье о [начале работы со службой "Машинное обучение Azure"](quickstart-run-cloud-notebook.md).
 
 Для более глубокого понимания этого рабочего процесса изучите [полное руководство](tutorial-train-models-with-aml.md), содержащее подробные инструкции для обучения и развертывания моделей с помощью Службы машинного обучения Azure. 

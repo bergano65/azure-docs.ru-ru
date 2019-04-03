@@ -1,31 +1,31 @@
 ---
 title: Оповещения руководство по безопасности для центра безопасности Azure для Интернета вещей Preview | Документация Майкрософт
 description: Узнайте о оповещения системы безопасности и рекомендуемые действия по исправлению, использование центра безопасности Azure для службы и возможности Интернета вещей.
-services: ascforiot
+services: asc-for-iot
+ms.service: ascforiot
 documentationcenter: na
 author: mlottner
 manager: barbkess
 editor: ''
 ms.assetid: a5c25cba-59a4-488b-abbe-c37ff9b151f9
-ms.service: ascforiot
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/24/2019
 ms.author: mlottner
-ms.openlocfilehash: 987bfa0da190bd2bd29634b46b5f06ff4dc1cc19
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: f3ae69cb6c8e2a60488b4f1ff3df1bb8ab0c04ea
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58755105"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58861984"
 ---
 # <a name="azure-security-center-for-iot-security-alerts"></a>Центр безопасности Azure и оповещения системы безопасности Интернета вещей
 
 > [!IMPORTANT]
 > Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Предварительная версия предоставляется без соглашения об уровне обслуживания. Мы не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Центр безопасности Azure (ASC) для Интернета вещей постоянно анализирует решения Интернета вещей с помощью расширенной аналитики и аналитики угроз, чтобы оповещать вас о вредоносных действиях.
 Кроме того можно создать настраиваемые оповещения на основе сведений устройства ожидаемого поведения.
@@ -95,4 +95,4 @@ ms.locfileid: "58755105"
 
 - [Обзор](overview.md)
 - [Доступ к данным безопасности](how-to-security-data-access.md)
-- [Исследовать устройство](how-to-investigate-device.md)
+- [Исследование устройства](how-to-investigate-device.md)

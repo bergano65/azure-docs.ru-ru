@@ -16,19 +16,19 @@ ms.workload: iaas-sql-server
 ms.date: 03/07/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: a7c6bea1c45cfe704bcff9ad2d4e47a30a9780cb
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 210043eaaf09fb601fe01c33cc1a53c9146bf859
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57439627"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58848250"
 ---
 # <a name="automated-patching-for-sql-server-in-azure-virtual-machines-resource-manager"></a>Автоматическая установка исправлений SQL Server на виртуальных машинах Azure (Resource Manager)
 > [!div class="op_single_selector"]
 > * [Resource Manager](virtual-machines-windows-sql-automated-patching.md)
 > * [Классический](../sqlclassic/virtual-machines-windows-classic-sql-automated-patching.md)
 
-При автоматической установке исправлений на виртуальных машинах Azure с SQL Server задается период обслуживания. Установка автоматических обновлений возможна только в этот период обслуживания. Для SQL Server это ограничение гарантирует, что системные обновления и связанные с ними перезапуски происходить в наиболее удобное время для базы данных. 
+При автоматической установке исправлений на виртуальных машинах Azure с SQL Server задается период обслуживания. Установка автоматических обновлений возможна только в этот период обслуживания. Для SQL Server это ограничение гарантирует, что системные обновления и связанные с ними перезапуски системы будут происходить в наиболее удобное для базы данных время. 
 
 > [!IMPORTANT]
 > Устанавливаются только те обновления ОС Windows, которые помечены как **Важные**. Другие обновления SQL Server (например, накопительные обновления) нужно устанавливать вручную. 
@@ -105,11 +105,11 @@ ms.locfileid: "57439627"
 ## <a name="configuration-with-powershell"></a>Настройка с помощью PowerShell
 После подготовки виртуальной машины SQL используйте PowerShell для настройки автоматической установки исправлений.
 
-В следующем примере для настройки автоматической установки исправлений на существующей виртуальной машине SQL Server используется PowerShell. Команда **AzureRM.Compute\New-AzVMSqlServerAutoPatchingConfig** настраивает новый период обслуживания для автоматизированного обновления.
+В следующем примере для настройки автоматической установки исправлений на существующей виртуальной машине SQL Server используется PowerShell. **New AzVMSqlServerAutoPatchingConfig** команда настраивает новый период обслуживания для автоматических обновлений.
 
     $vmname = "vmname"
     $resourcegroupname = "resourcegroupname"
-    $aps = AzureRM.Compute\New-AzVMSqlServerAutoPatchingConfig -Enable -DayOfWeek "Thursday" -MaintenanceWindowStartingHour 11 -MaintenanceWindowDuration 120  -PatchCategory "Important"
+    $aps = New-AzVMSqlServerAutoPatchingConfig -Enable -DayOfWeek "Thursday" -MaintenanceWindowStartingHour 11 -MaintenanceWindowDuration 120  -PatchCategory "Important"
 
     Set-AzVMSqlServerExtension -AutoPatchingSettings $aps -VMName $vmname -ResourceGroupName $resourcegroupname
 
@@ -127,7 +127,7 @@ ms.locfileid: "57439627"
 
 Установка и настройка агента SQL Server IaaS занимают несколько минут.
 
-Чтобы отключить автоматизированную установку исправлений, выполните тот же сценарий без параметра **-Enable** в командлете **AzureRM.Compute\New-AzVMSqlServerAutoPatchingConfig**. Отсутствие параметра **-Enable** означает, что функцию нужно отключить.
+Чтобы отключить автоматизированную установку исправлений, выполните тот же сценарий без **-включить** параметр **New AzVMSqlServerAutoPatchingConfig**. Отсутствие параметра **-Enable** означает, что функцию нужно отключить.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Сведения о других доступных задачах автоматизации см. в разделе [Расширение агента IaaS для SQL Server](virtual-machines-windows-sql-server-agent-extension.md).

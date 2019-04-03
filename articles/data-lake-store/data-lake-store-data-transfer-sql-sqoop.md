@@ -3,21 +3,21 @@ title: Копирование данных между Azure Data Lake Storage 1-
 description: Сведения о копировании данных между базой данных SQL Azure и Azure Data Lake Storage 1-го поколения с помощью Sqoop.
 services: data-lake-store
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.assetid: 3f914b2a-83cc-4950-b3f7-69c921851683
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: 958171a8d1091254588aef250406b968009eb968
-ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
-ms.translationtype: HT
+ms.author: twooley
+ms.openlocfilehash: 7d3283b03d15278d1f7fd42a72b154dab1a442b4
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44391748"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878539"
 ---
 # <a name="copy-data-between-azure-data-lake-storage-gen1-and-azure-sql-database-using-sqoop"></a>Копирование данных между Azure Data Lake Storage 1-го поколения и базой данных SQL Azure с помощью Sqoop
 Узнайте, как с помощью Apache Sqoop импортировать и экспортировать данные между Базой данных SQL Azure и Azure Data Lake Storage 1-го поколения.
@@ -27,7 +27,7 @@ ms.locfileid: "44391748"
 
 [Apache Sqoop](https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html) — это средство, предназначенное для передачи данных между реляционными базами данных и репозиторием больших данных, например Azure Data Lake Storage 1-го поколения. Его можно использовать для импорта данных из системы управления реляционными базами данных (RDBMS), такой как База данных SQL Azure, в Azure Data Lake Storage 1-го поколения. Затем данные можно преобразовать и проанализировать с помощью рабочих нагрузок больших данных, а после этого экспортировать их обратно в RDBMS. В этом учебнике в качестве реляционной базы данных для импорта и экспорта используется база данных SQL Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Перед началом работы с этой статьей необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -92,7 +92,7 @@ ms.locfileid: "44391748"
     Например,
 
 
-        sqoop-import --connect "jdbc:sqlserver://mysqoopserver.database.windows.net:1433;username=nitinme@mysqoopserver;password=<password>;database=mysqoopdatabase" --table Table1 --target-dir adl://myadlsg1store.azuredatalakestore.net/Sqoop/SqoopImportTable1
+        sqoop-import --connect "jdbc:sqlserver://mysqoopserver.database.windows.net:1433;username=twooley@mysqoopserver;password=<password>;database=mysqoopdatabase" --table Table1 --target-dir adl://myadlsg1store.azuredatalakestore.net/Sqoop/SqoopImportTable1
 
 1. Убедитесь, что данные были переданы в учетную запись Data Lake Storage 1-го поколения. Выполните следующую команду:
 
@@ -118,7 +118,7 @@ ms.locfileid: "44391748"
     Например,
 
 
-        sqoop-export --connect "jdbc:sqlserver://mysqoopserver.database.windows.net:1433;username=nitinme@mysqoopserver;password=<password>;database=mysqoopdatabase" --table Table2 --export-dir adl://myadlsg1store.azuredatalakestore.net/Sqoop/SqoopImportTable1 --input-fields-terminated-by ","
+        sqoop-export --connect "jdbc:sqlserver://mysqoopserver.database.windows.net:1433;username=twooley@mysqoopserver;password=<password>;database=mysqoopdatabase" --table Table2 --export-dir adl://myadlsg1store.azuredatalakestore.net/Sqoop/SqoopImportTable1 --input-fields-terminated-by ","
 
 1. Убедитесь, что данные были отправлены в таблицу базы данных SQL. С помощью [SQL Server Management Studio](../sql-database/sql-database-connect-query-ssms.md) или Visual Studio подключитесь к базе данных SQL Azure, а затем выполните следующий запрос.
 
@@ -138,7 +138,7 @@ ms.locfileid: "44391748"
 Сведения о настройке производительности задания Sqoop для копирования данных в Data Lake Storage 1-го поколения см. в записи блога, посвященной [производительности Sqoop](https://blogs.msdn.microsoft.com/bigdatasupport/2015/02/17/sqoop-job-performance-tuning-in-hdinsight-hadoop/).
 
 ## <a name="see-also"></a>См. также
-* [Копирование данных из больших двоичных объектов хранилища Azure в хранилище озера данных](data-lake-store-copy-data-azure-storage-blob.md)
-* [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
-* [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
-* [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Копирование данных из больших двоичных объектов хранилища Azure в поколение 1 хранилища Озера данных](data-lake-store-copy-data-azure-storage-blob.md)
+* [Защита данных в поколение 1 хранилища Озера данных](data-lake-store-secure-data.md)
+* [Использование Azure Data Lake Analytics с Gen1 хранилища Озера данных](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Использование Azure HDInsight с Gen1 хранилища Озера данных](data-lake-store-hdinsight-hadoop-use-portal.md)

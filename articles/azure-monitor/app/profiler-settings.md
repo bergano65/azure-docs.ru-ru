@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 08/06/2018
 ms.author: cweining
-ms.openlocfilehash: 8c9fba14bd3f7d3b55a245f8e647f0eae1f8ef83
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 9603c45443c6339a127f977600eeff2ba57a283f
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58118431"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58884165"
 ---
 # <a name="configure-application-insights-profiler"></a>Настройка Application Insights Profiler
 
@@ -39,6 +39,9 @@ ms.locfileid: "58118431"
 В зависимости от настроек Среды службы приложений Azure, вызов, проверяющий состояние агентов, может быть заблокирован. На этой панели может отображаться сообщение о том, что агент не работает, даже если он запущен. Чтобы удостовериться в этом, проверьте состояние веб-задания для приложения. Если верны все значения параметров приложения и в приложении установлено расширение сайта Application Insights, средство Profiler работает. Если приложение получает достаточный объем трафика, в списке должны отобразиться последние сеансы профилирования.
 
 ## <a id="profileondemand"></a> Запуск профилировщика вручную
+
+### <a name="minimum-requirements"></a>Минимальные требования 
+Пользователь может вручную запустить сеанс профилировщика им требуется как минимум «запись» на своей роли для компонента Application Insights. В большинстве случаев вы получаете доступ автоматически и дополнительных действий не требуется. Если у вас возникают проблемы, роль области подписку для добавления бы роль «Участник компонента Application Insights». [Узнайте больше об управлении доступом роли со службой мониторинга Azure](https://docs.microsoft.com/en-us/azure/azure-monitor/app/resources-roles-access-control).
 
 Вы можете запустить средство Profiler вручную одним щелчком. Предположим, вы выполняете веб-тест производительности. Чтобы понять, как работает ваше веб-приложение под нагрузкой, вам потребуются трассировки. Очень важна возможность контролировать время записи трассировок, так как вам известно, когда будет выполняться нагрузочный тест. Однако это время может не совпадать с интервалом случайной выборки.
 
@@ -122,7 +125,7 @@ ms.locfileid: "58118431"
     ![Проверка обновлений для расширения][check-for-extension-update]
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Профилирование приложений в рабочей среде Azure с помощью Application Insights Profiler](profiler-overview.md?toc=/azure/azure-monitor/toc.json)
+[Включить Profiler и просмотреть трассировку](profiler-overview.md?toc=/azure/azure-monitor/toc.json)
 
 [profiler-on-demand]: ./media/profiler-settings/Profiler-on-demand.png
 [configure-profiler-entry]: ./media/profiler-settings/configure-profiler-entry.png

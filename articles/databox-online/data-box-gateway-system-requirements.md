@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: article
-ms.date: 03/25/2019
+ms.date: 04/02/2019
 ms.author: alkohli
-ms.openlocfilehash: 0d898c8d2273c431967603c36c8ff9d0dd8b4b7b
-ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
+ms.openlocfilehash: cac451634bfa357784f9fd3d3a24e06ef3a4ee19
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58417859"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58881772"
 ---
 # <a name="azure-data-box-gateway-system-requirements"></a>Требования к системе Azure шлюз поле данных
 
@@ -48,7 +48,7 @@ ms.locfileid: "58417859"
 
 ## <a name="supported-virtualization-platforms-for-device"></a>Поддерживаемые платформы виртуализации для устройства
 
-| **Операционная система и (или) платформа**  |**Версии**   |**Примечания**  |
+| **Операционная система**  |**Версии**   |**Примечания**  |
 |---------|---------|---------|
 |Hyper-V.  |  2012 R2 <br> 2016  |         |
 |VMware ESXi     | 6,0 <br> 6,5 <br> 6.7       |Средства VMware не поддерживаются.         |
@@ -85,11 +85,15 @@ ms.locfileid: "58417859"
 
 [!INCLUDE [URL patterns for firewall](../../includes/data-box-edge-gateway-url-patterns-firewall.md)]
 
+### <a name="url-patterns-for-azure-government"></a>Шаблоны URL-адресов для Azure для государственных организаций
+
+[!INCLUDE [Azure Government URL patterns for firewall](../../includes/data-box-edge-gateway-gov-url-patterns-firewall.md)]
+
 ## <a name="internet-bandwidth"></a>Пропускная способность Интернета
 
 [!INCLUDE [Internet bandwidth](../../includes/data-box-edge-gateway-internet-bandwidth.md)]
 
 ## <a name="next-step"></a>Дальнейшие действия
 
-* [Tutorial: Prepare to deploy Azure Data Box Gateway (Preview)](data-box-gateway-deploy-prep.md) (Руководство. Подготовка к развертыванию шлюза Azure Data Box)
+* [Развертывание шлюза для Azure Data Box](data-box-gateway-deploy-prep.md)
 

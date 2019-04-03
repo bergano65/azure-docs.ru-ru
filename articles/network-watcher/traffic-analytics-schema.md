@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/26/2019
 ms.author: vinigam
-ms.openlocfilehash: 922e01c26a2cfe24c8b8a32bb8037d9b3b3384c6
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 246c5256f56fd0b891d4e7d642c421b1e340fc6d
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58109126"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58879341"
 ---
 # <a name="schema-and-data-aggregation-in-traffic-analytics"></a>Схема и данные агрегирование в аналитике трафика
 
@@ -120,7 +120,7 @@ ms.locfileid: "58109126"
 1. ExternalPublic - один из IP-адреса принадлежит к виртуальной сети Azure не сообщается как вредоносный в ASC веб-каналы, которые аналитики трафика использует для обработки интервала между несмотря на то другой IP-адрес, общедоступный IP-адрес, который не находится в Azure " FlowIntervalStartTime_t» и «FlowIntervalEndTime_t». 
 1. MaliciousFlow - одна из IP-адреса принадлежит виртуальной сети azure во время другой IP-адрес — это общедоступный IP-адрес, который не находится в Azure и сообщается как вредоносный в ASC веб-каналы, которые аналитики трафика использует для обработки интервала между» FlowIntervalStartTime_t» и «FlowIntervalEndTime_t». 
 1. UnknownPrivate - одна из IP-адреса принадлежит виртуальной сети Azure во время другой IP-адрес принадлежит диапазон частных IP-адрес, как определено в RFC 1918 и не могут быть сопоставлены с аналитикой трафика клиента сайта или виртуальной сети Azure.
-1. Unknown — не удалось сопоставить либо IP-адресов в потоки в топологии клиента в Azure, а также локальных (узел).
+1. Unknown — не удается отобразить либо IP-адреса в потоки в топологии клиента в Azure также локальный (сайт).
 
 ### <a name="next-steps"></a>Следующие шаги
 Чтобы получить ответы на часто задаваемые вопросы, см. в разделе [трафик аналитики часто задаваемые вопросы о](traffic-analytics-faq.md) сведения о функциональных возможностях см. в разделе [документация по аналитике трафика](traffic-analytics.md)

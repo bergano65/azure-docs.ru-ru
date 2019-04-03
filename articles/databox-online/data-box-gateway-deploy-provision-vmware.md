@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: tutorial
-ms.date: 01/28/2019
+ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 604f135cc3dffdb9ac6533826eff6926ad5467df
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 85992224edd10c0a0f233de9f6274cc77e109b22
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56117754"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58517785"
 ---
-# <a name="tutorial-provision-azure-data-box-gateway-in-vmware-preview"></a>Руководство по Подготовка Шлюза Azure Data Box в VMware (предварительная версия)
+# <a name="tutorial-provision-azure-data-box-gateway-in-vmware"></a>Руководство по Подготовка Шлюза Azure Data Box в VMware
 
 ## <a name="overview"></a>Обзор
 
@@ -32,8 +32,6 @@ ms.locfileid: "56117754"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-> [!IMPORTANT]
-> - Шлюз Data Box доступен в качестве предварительной версии. Изучите [Дополнительные условия использования Предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем заказывать и развертывать это решение.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -75,7 +73,7 @@ ms.locfileid: "56117754"
 
 * Доступ к главной системе под управлением VMware ESXi Server 6.0, 6.5 или 6.7. Главная система должна быть в состоянии выделить указанный ниже объем ресурсов для виртуального устройства:
  
-  * Не менее 4 ядер.
+  * Минимум четыре виртуальных процессора.
   * Не менее 8 ГБ ОЗУ. 
   * Один сетевой интерфейс, подключенный к сети с маршрутизацией трафика в Интернет.
   * Диск ОС на 250 ГБ.
@@ -91,7 +89,7 @@ ms.locfileid: "56117754"
 
 2. Войдите на сервер ESXi через браузер по этому URL-адресу: `https://<IP address of the ESXi server>`. Чтобы создать виртуальную машину, требуются права администратора.
 
-   ![](./media/data-box-gateway-deploy-provision-vmware/image1.png)
+   ![Страница входа](./media/data-box-gateway-deploy-provision-vmware/image1.png)
   
 3. Отправьте файл VMDK на сервер ESXi. В области навигатора выберите **Storage** (Хранилище).
 
@@ -104,67 +102,67 @@ ms.locfileid: "56117754"
    
 5. Щелкните правой кнопкой мыши и выберите пункт **Browse Datastore** (Обзор хранилища данных).
 
-   ![](./media/data-box-gateway-deploy-provision-vmware/image3.png)
+   ![Обзор хранилища данных](./media/data-box-gateway-deploy-provision-vmware/image3.png)
 
 6. Отобразится окно **Datastore Browser** (Браузер хранилища данных).
 
-   ![](./media/data-box-gateway-deploy-provision-vmware/image4.png)
+   ![Браузер хранилища данных](./media/data-box-gateway-deploy-provision-vmware/image4.png)
 
 7. На панели инструментов щелкните значок **Создание каталога**, чтобы создать папку. Укажите имя папки и запишите его. Это имя будет использоваться позднее при создании виртуальной машины (рекомендуется). Выберите **Create directory** (Создание каталога).
 
-   ![](./media/data-box-gateway-deploy-provision-vmware/image5.png)
+   ![Создание каталога](./media/data-box-gateway-deploy-provision-vmware/image5.png)
 
 8. На панели слева в окне **Datastore Browser** (Браузер хранилища данных) появится новая папка. Щелкните значок **Отправка** **и выберите Upload File** (Отправить файл).
 
-    ![](./media/data-box-gateway-deploy-provision-vmware/image6.png)
+    ![Отправка файла](./media/data-box-gateway-deploy-provision-vmware/image6.png)
 
 9. Найдите скачанные VMDK-файлы и укажите их. Вы увидите два файла. Выберите файл для передачи.
 
-    ![](./media/data-box-gateway-deploy-provision-vmware/image7.png)
+    ![Выбор файла для передачи](./media/data-box-gateway-deploy-provision-vmware/image7.png)
 
 10. Щелкните **Открыть**. Начнется передача файла VMDK в указанное хранилище данных. Отправка файла может занять несколько минут.
 11. По завершении передачи файл появится в созданной папке в хранилище данных. Теперь в то же хранилище данных необходимо передать второй VMDK-файл. После отправки оба файла объединяются в один. Затем в каталоге появится один файл.
 
-    ![](./media/data-box-gateway-deploy-provision-vmware/image8.png)
+    ![Объединение двух VMDK-файлов в один файл](./media/data-box-gateway-deploy-provision-vmware/image8.png)
 
 12. Вернитесь в окно клиента vSphere. В области навигатора выберите **Virtual Machines** (Виртуальные машины). В области справа выберите **Create/Register VM** (Создать или зарегистрировать виртуальную машину).
 
-    ![](./media/data-box-gateway-deploy-provision-vmware/image9.png)
+    ![Создание и регистрация виртуальной машины](./media/data-box-gateway-deploy-provision-vmware/image9.png)
 
 13. Появится **новая виртуальная машина**. В разделе выбора типа создания выберите **Create a new virtual machine** (Создание виртуальной машины), а затем щелкните **Далее**.
-    ![](./media/data-box-gateway-deploy-provision-vmware/image10.png)
+    ![Страница "Выбор типа создания"](./media/data-box-gateway-deploy-provision-vmware/image10.png)
 
 14. На странице **Select a Name and OS Name and Location** (Выбор имени, имени ОС и расположения) укажите **имя** виртуальной машины. Имя должно соответствовать имени папки (рекомендуется), указанному ранее на шаге 7. В качестве **семейства версий гостевой ОС** выберите Windows, а в качестве **версии гостевой ОС** — Microsoft Windows Server 2016 (64-разрядная версия). Щелкните **Далее**.
 
-    ![](./media/data-box-gateway-deploy-provision-vmware/image11.png)
+    ![Страница "Выбор имени, имени ОС и расположения"](./media/data-box-gateway-deploy-provision-vmware/image11.png)
 
 15. На странице **Select storage** (Выбор хранилища) выберите хранилище данных, которое будет использоваться для подготовки виртуальной машины. Щелкните **Далее**.
 
-    ![](./media/data-box-gateway-deploy-provision-vmware/image12.png)
-16. На странице **Customize settings** (Настройка параметров) задайте параметру **CPU** (ЦП) значение 4, **Memory** (Память) — значение 8192 МБ (или больше), **Hard disk 1** (Жесткий диск 1) — 2 ТБ (или больше). Выберите **жесткий диск SCSI**, который нужно добавить. В этом случае это — LSI Logic SAS. **Статические диски с интегрированной средой разработки не поддерживаются.** **Жесткий диск 1** является виртуальным диском данных. Обратите внимание, что после подготовки диск нельзя сжать.
+    ![Страница "Выбор хранилища"](./media/data-box-gateway-deploy-provision-vmware/image12.png)
+16. На странице **Customize settings** (Настройка параметров) задайте параметру **CPU** (ЦП) значение 4, **Memory** (Память) — значение 8192 МБ (или больше), **Hard disk 1** (Жесткий диск 1) — 2 ТБ (или больше). Выберите **жесткий диск SCSI**, который нужно добавить. В этом случае это — LSI Logic SAS. **Статические диски с интегрированной средой разработки не поддерживаются.** **Жесткий диск 1** является виртуальным диском данных. Обратите внимание, что после завершения подготовки в дальнейшем сжатие диска станет невозможным. Попытка сжать диск приведет к потере всех локальных данных на устройстве. 
 
-    ![](./media/data-box-gateway-deploy-provision-vmware/image13.png)
+    ![Страница "Настройка параметров"](./media/data-box-gateway-deploy-provision-vmware/image13.png)
 
     На этой же странице щелкните **Add hard disk** (Добавить жесткий диск), а затем выберите **Existing hard disk** (Имеющийся жесткий диск). Выберите VMDK-файл в хранилище данных. В результате добавится диск операционной системы. 
 
-     ![](./media/data-box-gateway-deploy-provision-vmware/image14.png)
+     Страница "Настройка параметров"[](./media/data-box-gateway-deploy-provision-vmware/image14.png)
 
     Прокрутите вниз, пока не увидите **New Hard Disk** (Новый жесткий диск), и разверните его для просмотра параметров. Задайте для **узла виртуального устройства** значение **IDE controller 0** (Контроллер 0 IDE).
 
-     ![](./media/data-box-gateway-deploy-provision-vmware/image15.png)
+     ![Страница "Настройка параметров"](./media/data-box-gateway-deploy-provision-vmware/image15.png)
 
 17. (Необязательно.) *Выполните этот шаг, только если вы используете VMware ESXi Server 6.7*. На странице **Настройка параметров** щелкните **Параметры виртуальной машины**. Щелкните **Варианты загрузки > Встроенное ПО** и выберите **BIOS**. По умолчанию установлено значение EFI. Щелкните **Далее**.
 
-    ![](./media/data-box-gateway-deploy-provision-vmware/image15a.png)
+    ![Настройка параметров страницы, если используется VMware ESXi Server 6.7](./media/data-box-gateway-deploy-provision-vmware/image15a.png)
 
 18. На странице **Ready to Complete** (Все готово к выполнению) проверьте все параметры, связанные с новой виртуальной машиной. Убедитесь, что ЦП имеет 4 ядра, память — 8192 МБ, для сетевого интерфейса задано значение 1, а для жесткого диска 2 — значение IDE controller 0 (Контроллер 0 IDE). Нажмите кнопку **Готово**
    
-    ![](./media/data-box-gateway-deploy-provision-vmware/image16.png)
-    ![](./media/data-box-gateway-deploy-provision-vmware/image17.png)
+    ![Страница "Готово к завершению"](./media/data-box-gateway-deploy-provision-vmware/image16.png)
+    ![Ready to Complete page](./media/data-box-gateway-deploy-provision-vmware/image17.png)
 
 Теперь виртуальная машина подготовлена. Появится уведомление, и новая виртуальная машина будет добавлена в список виртуальных машин.
 
-![](./media/data-box-gateway-deploy-provision-vmware/image17.png)
+![Новая виртуальная машина, добавленная в список виртуальных машин](./media/data-box-gateway-deploy-provision-vmware/image17.png)
 
 Следующий шаг — включение этой виртуальной машины и получение IP-адреса.
 
@@ -178,23 +176,23 @@ ms.locfileid: "56117754"
 #### <a name="to-start-the-virtual-device"></a>Запуск виртуального устройства
 1. Запустите виртуальное устройство. В области справа выберите устройство из списка виртуальных машин и щелкните правой кнопкой мыши, чтобы открыть контекстное меню. Выберите **Power** (Питание), а затем — **Power on** (Включить). Виртуальная машина включится. Сведения о состоянии можно просмотреть на нижней панели веб-клиента.
 
-    ![](./media/data-box-gateway-deploy-provision-vmware/image19.png)
+    ![Питание виртуального устройства](./media/data-box-gateway-deploy-provision-vmware/image19.png)
 
 2. Выберите виртуальную машину еще раз. Щелкните правой кнопкой мыши и выберите **Консоль**, а затем — **Открыть в новом окне**.
 
-    ![](./media/data-box-gateway-deploy-provision-vmware/image20.png)
+    ![Открытие консоли виртуального устройства](./media/data-box-gateway-deploy-provision-vmware/image20.png)
 
 3. В новом окне откроется консоль виртуальной машины. 
 
-    ![](./media/data-box-gateway-deploy-provision-vmware/image21.png)
+    ![Консоль виртуального устройства](./media/data-box-gateway-deploy-provision-vmware/image21.png)
 
 4. После запуска устройства наведите курсор на вкладку в верхней средней части окна консоли и щелкните ее. Выберите **Guest OS (Гостевая ОС) > Send keys (Отправить ключи) > CTRL+ALT+DEL**. Это позволит разблокировать виртуальную машину.
 
-   ![](./media/data-box-gateway-deploy-provision-vmware/image22.png)
+   ![Разблокировка виртуального устройства](./media/data-box-gateway-deploy-provision-vmware/image22.png)
 
-5. Укажите пароль для входа на компьютер. Пароль по умолчанию — Password1.
+5. Укажите пароль для входа на компьютер. Пароль по умолчанию — *Password1*.
 
-   ![](./media/data-box-gateway-deploy-provision-vmware/image23.png)
+   ![Ввод пароля виртуального устройства](./media/data-box-gateway-deploy-provision-vmware/image23.png)
 
 6. Шаги 5–7 применяются только при загрузке в среде без DHCP. Если вы работаете в среде DHCP, пропустите эти шаги и перейдите к шагу 8. Если устройство загружено в среде без DHCP, появится соответствующее сообщение: **Используйте командлет Set-HcsIPAddress для настройки сети**. 
    
@@ -206,14 +204,14 @@ ms.locfileid: "56117754"
 
 9. По завершении начальной установки и загрузки устройства отобразится текст его баннера. Для управления устройством запишите IP-адрес и URL-адрес, отображающиеся в тексте баннера. Этот IP-адрес используется для подключения к пользовательскому веб-интерфейсу виртуального устройства, а также для выполнения локальной установки и активации.
 
-   ![](./media/data-box-gateway-deploy-provision-vmware/image24.png)
+   ![Текст на баннере и URL-адрес подключения для виртуального устройства](./media/data-box-gateway-deploy-provision-vmware/image24.png)
 
 Если устройство не соответствует минимальным требованиям к конфигурации, в тексте баннера отобразится сообщение об ошибке (см. ниже). Потребуется изменить конфигурацию устройства и привести его ресурсы в соответствие с минимальными требованиями. Затем можно выполнить перезапуск и установить подключение к устройству. Минимальные требования к конфигурации см. в разделе о [проверке главной системы на соответствие минимальным требованиям к виртуальному устройству](#check-the-host-system).
 
-<!---If you face any other error during the initial configuration using the local web UI, refer to the following workflows:
+При возникновении любой другой ошибки во время начальной настройки с помощью локального веб-интерфейса см. сведения о соответствующих рабочих процессах.
 
-* Run diagnostic tests to [troubleshoot web UI setup](storsimple-ova-web-ui-admin.md#troubleshoot-web-ui-setup-errors).
-* [Generate log package and view log files](storsimple-ova-web-ui-admin.md#generate-a-log-package).-->
+- [Выполнение диагностических тестов для устранения неполадок с настройкой пользовательского веб-интерфейса](data-box-gateway-troubleshoot.md#run-diagnostics).
+- [Создайте пакет журнала и просмотрите файлы журнала](data-box-gateway-troubleshoot.md#collect-support-package).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

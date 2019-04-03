@@ -12,12 +12,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/10/2018
 ms.author: mbaldwin
-ms.openlocfilehash: 823eebeddb64c15ef20d103f2f9290c800753f1a
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.openlocfilehash: 0f8aafce4c4feeed742504db84664e4dfd472ca6
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57404767"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58884148"
 ---
 # <a name="azure-key-vault-throttling-guidance"></a>Руководство по регулированию хранилища ключей Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "57404767"
 
 ## <a name="how-to-throttle-your-app-in-response-to-service-limits"></a>Регулирование приложения в ответ на ограничения служб
 
-Ниже приведены **рекомендации** по регулированию приложения.
+Ниже приведены **рекомендации** следует реализовать во время регулирования службы:
 - Сократите число операций на один запрос.
 - Уменьшите частоту запросов.
 - Избегайте немедленных повторных попыток. 
@@ -115,7 +115,7 @@ ms.locfileid: "57404767"
 ```
 
 
-Использование этого кода в приложении клиента C\# (другой микрослужбе клиента веб-API, приложении MVC ASP.NET, или даже приложения Xamarin C\#) является очень простим. В следующем примере показан способ, как это сделать с помощью класса HttpClient.
+Используя этот код в клиенте C\# приложения прост. В следующем примере показан способ, как это сделать с помощью класса HttpClient.
 
 ```csharp
 public async Task<Cart> GetCartItems(int page)

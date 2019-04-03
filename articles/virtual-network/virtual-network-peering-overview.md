@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/21/2019
 ms.author: jdial
-ms.openlocfilehash: e32bc2f4697b5ac32993a5da66e5c38cb7add03f
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: 3488e8501b0b9bea83bfcce5085d42b6476d3ed2
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58200588"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58880429"
 ---
 # <a name="virtual-network-peering"></a>Пиринг между виртуальными сетями
 
@@ -92,7 +92,7 @@ ms.locfileid: "58200588"
 
 За входящий и исходящий трафик по пиринговой связи между виртуальными сетями взимается номинальная плата. Дополнительные сведения о пиринговой связи виртуальных сетей и ценах на глобальную пиринговую связь между ними см. на [странице цен](https://azure.microsoft.com/pricing/details/virtual-network).
 
-Транзит шлюзов — это свойство пиринга, которое позволяет виртуальной сети использовать VPN-шлюз в одноранговой виртуальной сети для распределенных подключений или подключений типа "виртуальная сеть — виртуальная сеть". За трафик, проходящий через удаленный шлюз в этом сценарии, начисляется [плата (за шлюз VPN)](https://azure.microsoft.com/pricing/details/vpn-gateway/). [Плата за пиринг между виртуальными сетями](https://azure.microsoft.com/pricing/details/virtual-network) не начисляется. Например, если в сети VNetA установлен VPN-шлюз для локальных подключений, а сеть VNetB подключена к VNetA по пиринговой связи с соответствующими настроенными свойствами, то за трафик из VNetB в локальную сеть начисляется плата только за объем исходящих данных, исходя из цен на VPN-шлюз. Плата за пиринговую связь между виртуальными сетями не начисляется. Узнайте, как [настроить транзит VPN-шлюзов для пиринговой связи между виртуальными сетями](../vpn-gateway/vpn-gateway-peering-gateway-transit.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+Транзит шлюзов — это свойство пиринга, которое позволяет виртуальной сети использовать VPN-шлюз в одноранговой виртуальной сети для распределенных подключений или подключений типа "виртуальная сеть — виртуальная сеть". За трафик, проходящий через удаленный шлюз в этом сценарии, начисляется [плата (за шлюз VPN)](https://azure.microsoft.com/pricing/details/vpn-gateway/). [Плата за пиринг между виртуальными сетями](https://azure.microsoft.com/pricing/details/virtual-network) не начисляется. Например VNetA имеет VPN-шлюза для подключения к локальным ресурсам, VNetB является одноранговой для VNetA для соответствующего свойства, настроенные трафик из VNetB-локально только оплачивается объем исходящих данных на стоимость VPN-шлюзов. Плата за пиринговую связь между виртуальными сетями не начисляется. Узнайте, как [настроить транзит VPN-шлюзов для пиринговой связи между виртуальными сетями](../vpn-gateway/vpn-gateway-peering-gateway-transit.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -100,9 +100,9 @@ ms.locfileid: "58200588"
 
     |Модель развертывания Azure             | Подписка  |
     |---------                          |---------|
-    |Обе — диспетчер ресурсов              |[Та же](tutorial-connect-virtual-networks-portal.md)|
+    |Обе — диспетчер ресурсов              |[Аналогично](tutorial-connect-virtual-networks-portal.md)|
     |                                   |[Разные](create-peering-different-subscriptions.md)|
-    |Одна — диспетчер ресурсов, вторая — классическая  |[Та же](create-peering-different-deployment-models.md)|
+    |Одна — диспетчер ресурсов, вторая — классическая  |[Аналогично](create-peering-different-deployment-models.md)|
     |                                   |[Разные](create-peering-different-deployment-models-subscriptions.md)|
 
 * См. сведения о создании [звездообразной топологии сети](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?toc=%2fazure%2fvirtual-network%2ftoc.json).

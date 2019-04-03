@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/28/2018
 ms.author: spelluru
-ms.openlocfilehash: ebff47dc4007ab265b43d32c9f956eb73d5ba1ac
-ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.openlocfilehash: bd62624406adb006fdcd7d59f72db3fb5e1848a0
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57213421"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58848573"
 ---
 # <a name="azure-relay-metrics-in-azure-monitor-preview"></a>Метрики ретранслятора Azure в Azure Monitor (предварительная версия)
 Метрики Azure Relay предоставляют состояние ресурсов в подписке Azure. Используя обширный набор данных метрик, можно оценить общую работоспособность ресурсов ретранслятора не только на уровне пространства имен, но также и на уровне сущности. Эти статистические данные могут быть важны, так как они позволяют отслеживать состояние ретранслятора Azure. Кроме того, метрики могут помочь в устранении первопричин проблем без необходимости обращения в службу поддержки Azure.
@@ -31,7 +31,7 @@ Azure Monitor предоставляет унифицированный поль
 
 ## <a name="access-metrics"></a>Доступ к метрикам
 
-Azure Monitor предоставляет несколько способов доступа к метрикам. Вы можете использовать [портал Azure](https://portal.azure.com), интерфейсы API Azure Monitor (REST и .NET), а также решения для анализа, например Operation Management Suite и Центры событий. Дополнительные сведения см. в разделе [Мониторинг данных, собранных Azure Monitor](../azure-monitor/platform/data-collection.md).
+Azure Monitor предоставляет несколько способов доступа к метрикам. Вы можете использовать [портал Azure](https://portal.azure.com), интерфейсы API Azure Monitor (REST и .NET), а также решения для анализа, например Operation Management Suite и Центры событий. Дополнительные сведения см. в разделе [Мониторинг данных, собранных Azure Monitor](../azure-monitor/platform/data-platform.md).
 
 Метрики включены по умолчанию, и вы можете получить доступ к данным за последние 30 дней. Если необходимо хранить данные метрик в течение длительного периода времени, вы можете архивировать их в учетную запись хранения Azure. Для настройки используйте [параметры диагностики](../azure-monitor/platform/diagnostic-logs-overview.md#diagnostic-settings) в Azure Monitor.
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9a1bb630c14ef504cb60a6847643a60f1cc90a1
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 60ce66b079942944176540826c7f3e7a91b070d2
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58368653"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58861868"
 ---
 # <a name="azure-ad-password-protection-agent-version-history"></a>журнал выпуска версий агента защиты паролем Azure AD
 
@@ -26,6 +26,9 @@ ms.locfileid: "58368653"
 
 * Исправьте ошибки незначительные опечатка в сообщениях журнала событий
 * Обновление до окончательной версии общей доступности лицензионное соглашение
+
+> [!NOTE]
+> Построение 1.2.125.0 — построение общедоступной версии. Благодарим вас еще раз, чтобы все предоставила отзывы от продукта!
 
 ## <a name="121160"></a>1.2.116.0
 
@@ -133,4 +136,4 @@ ms.locfileid: "58368653"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Развертывание защиты паролем Azure AD (предварительная версия)](howto-password-ban-bad-on-premises-deploy.md)
+[Развертывание защиты паролем Azure AD](howto-password-ban-bad-on-premises-deploy.md)

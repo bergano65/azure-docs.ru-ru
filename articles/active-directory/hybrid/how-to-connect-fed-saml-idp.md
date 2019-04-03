@@ -14,12 +14,12 @@ ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b5eb46b845bebbb81dce6aadb9d97af08955df3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: a1870137505b3d00ee6ed31595050908c970c444
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58096951"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878100"
 ---
 #  <a name="use-a-saml-20-identity-provider-idp-for-single-sign-on"></a>Использование поставщика удостоверений (IdP) SAML 2.0 для единого входа
 
@@ -209,15 +209,18 @@ ms.locfileid: "58096951"
 
 
 1. Подключитесь к каталогу Azure AD в качестве администратора клиента: Connect-MsolService.
-2.  Создайте субъекта-пользователя: ` New-MsolUser
-        -UserPrincipalName elwoodf1@contoso.com
-        -ImmutableId ABCDEFG1234567890
-        -DisplayName "Elwood Folk"
-        -FirstName Elwood 
-        -LastName Folk 
-        -AlternateEmailAddresses "Elwood.Folk@contoso.com" 
-        -LicenseAssignment "samlp2test:ENTERPRISEPACK" 
-        -UsageLocation "US" ` 
+2.  Создание нового субъекта-пользователя:
+    ```powershell
+    New-MsolUser
+      -UserPrincipalName elwoodf1@contoso.com
+      -ImmutableId ABCDEFG1234567890
+      -DisplayName "Elwood Folk"
+      -FirstName Elwood 
+      -LastName Folk 
+      -AlternateEmailAddresses "Elwood.Folk@contoso.com" 
+      -LicenseAssignment "samlp2test:ENTERPRISEPACK" 
+      -UsageLocation "US" 
+    ```
 
 Дополнительные сведения об извлечении с помощью New-MsolUser см. в разделе [https://technet.microsoft.com/library/dn194096.aspx](https://technet.microsoft.com/library/dn194096.aspx).
 
@@ -277,4 +280,4 @@ ms.locfileid: "58096951"
 
 - [Управление службами федерации Active Directory и их настройка с помощью Azure AD Connect](how-to-connect-fed-management.md)
 - [Список совместимости с федерацией Azure AD](how-to-connect-fed-compatibility.md)
-- [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md)
+- [Azure AD Connect выборочной установки](how-to-connect-install-custom.md)

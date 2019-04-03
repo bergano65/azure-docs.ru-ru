@@ -9,20 +9,20 @@ ms.reviewer: jasonwhowell
 ms.assetid: c1c74e5e-3e4a-41ab-9e3f-e9085da1d315
 ms.topic: conceptual
 ms.date: 06/20/2017
-ms.openlocfilehash: 5d10d4d603312b3c75760a5d7c17a9028ddecea8
-ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
-ms.translationtype: HT
+ms.openlocfilehash: 59a52b2aeb83732a608f1fcf5bc4de907d25dfd1
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54401221"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58885032"
 ---
 # <a name="extend-u-sql-scripts-with-r-code-in-azure-data-lake-analytics"></a>Расширение возможностей сценариев U-SQL c кодом R в Azure Data Lake Analytics
 
 В следующих примерах представлены основные шаги по развертыванию кода R:
 * Используйте инструкцию `REFERENCE ASSEMBLY`, чтобы включить расширения R для скрипта U-SQL.
-* Используйте операцию ` REDUCE` для разделения входных данных в ключе.
+* Используйте `REDUCE` операции для разделения входных данных для ключа.
 * Расширения R для U-SQL включают встроенное средство редукции (`Extension.R.Reducer`), которое выполняет код R в каждой назначенной ему вершине. 
-* Передача данных между U-SQL и R с использованием выделенных именованных таблиц данных `inputFromUSQL` и `outputToUSQL ` соответственно. Имена идентификаторов входной и выходной таблицы данных исправлены (то есть пользователи не могут изменить эти предопределенные имена идентификаторов входной и выходной таблицы данных).
+* Использованием выделенных именованных данных `inputFromUSQL` и `outputToUSQL` соответственно для передачи данных между U-SQL и R. входных данных и выходной таблицы, являются фиксированными имена идентификаторов (то есть пользователи не могут изменить эти предопределенные имена входных данных и выходной таблицы идентификаторы).
 
 ## <a name="embedding-r-code-in-the-u-sql-script"></a>Внедрение кода R в скрипт U-SQL
 
@@ -93,7 +93,7 @@ ms.locfileid: "54401221"
 ### <a name="datatypes"></a>Типы данных
 * Строковые и числовые столбцы из U-SQL преобразуются без изменений между таблицей данных на R и U-SQL [поддерживаемые типы: `double`, `string`, `bool`, `integer`, `byte`].
 * Тип данных `Factor` не поддерживается в U-SQL.
-* Тип `byte[]` должен быть сериализован как строка `string` в кодировке Base64.
+* `byte[]` должен быть сериализован как с кодировкой base64 `string`.
 * После создания в U-SQL входной таблицы данных R или установки для параметра средства редукции `stringsAsFactors: true` значения true строки U-SQL можно преобразовать в коэффициенты кода R.
 
 ### <a name="schemas"></a>Схемы
@@ -206,7 +206,7 @@ ms.locfileid: "54401221"
 
     OUTPUT @RScriptOutput TO @OutputFileModelSummary USING Outputters.Tsv();
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
-* [Разработка сценариев U-SQL с помощью средств озера данных для Visual Studio.](data-lake-analytics-data-lake-tools-get-started.md)
+* [Разработка скриптов U-SQL, с помощью средств Data Lake для Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
 * [Использование оконных функций U-SQL для заданий в службе аналитики озера данных Azure](data-lake-analytics-use-window-functions.md)

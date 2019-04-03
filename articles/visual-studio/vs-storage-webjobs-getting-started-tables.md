@@ -12,12 +12,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
-ms.openlocfilehash: c708c396911badb7c7ce5df2497aaba47cb7defe
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: a9a4475465fefb01ec53e6e0eb814f9b8f192a1b
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51243766"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58850211"
 ---
 # <a name="getting-started-with-azure-storage-azure-webjob-projects"></a>Начало работы со службой хранилища Azure (проекты веб-заданий Azure)
 [!INCLUDE [storage-try-azure-tools-tables](../../includes/storage-try-azure-tools-tables.md)]
@@ -25,7 +25,7 @@ ms.locfileid: "51243766"
 ## <a name="overview"></a>Обзор
 Эта статья содержит примеры кода C#, в которых показано, как использовать пакет SDK для веб-заданий Azure версии 1.x со службой хранилища таблиц Azure. В примерах кода используется [пакет SDK для веб-заданий](https://github.com/Azure/azure-webjobs-sdk/wiki) версии 1.x.
 
-В службе хранилища таблиц Azure можно хранить большие объемы структурированных данных. Эта служба — хранилище данных NoSQL, которое принимает вызовы внутри и снаружи облака Azure с проверкой подлинности. Таблицы Azure идеально подходят для хранения нереляционных структурированных данных.  Дополнительные сведения см. в разделе [Приступая к работе с хранилищем таблиц Azure с помощью .NET](../cosmos-db/table-storage-how-to-use-dotnet.md#create-a-table).
+В службе хранилища таблиц Azure можно хранить большие объемы структурированных данных. Эта служба — хранилище данных NoSQL, которое принимает вызовы внутри и снаружи облака Azure с проверкой подлинности. Таблицы Azure идеально подходят для хранения нереляционных структурированных данных.  Дополнительные сведения см. в разделе [Приступая к работе с хранилищем таблиц Azure с помощью .NET](../cosmos-db/tutorial-develop-table-dotnet.md#create-a-table).
 
 В некоторых фрагментах кода демонстрируется использование атрибута **Table** в функциях, вызванных вручную, т. е. без использования атрибутов активации.
 
@@ -144,6 +144,6 @@ ms.locfileid: "51243766"
 ## <a name="related-topics-covered-by-the-queues-how-to-article"></a>Связанные разделы, которые описаны в практическом руководстве по работе с очередями
 Дополнительную информацию об управлении обработкой таблиц, которая инициируется сообщением очереди, а также несвязанные с обработкой таблиц сценарии применения пакета SDK для веб-заданий см. в статье [Приступая к работе с подключенными службами хранилища очередей Azure и Visual Studio (проекты веб-заданий)](../storage/vs-storage-webjobs-getting-started-queues.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье предоставлены примеры кода обработки обычных сценариев для работы с таблицами Azure. Дополнительная информация об использовании веб-заданий Azure и пакета SDK для веб-заданий доступна в [ресурсах с документацией по веб-заданиям Azure](https://go.microsoft.com/fwlink/?linkid=390226).
 

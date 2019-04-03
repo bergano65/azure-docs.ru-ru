@@ -12,12 +12,12 @@ ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: bb45062697b113b676f85381f0653c14ac8c0c67
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.openlocfilehash: 785948c78b2b8205c4bebe2d68b62f6de7254d94
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58621236"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58863140"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Ведение журналов метрик и диагностики Базы данных SQL Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "58621236"
 Дополнительные сведения о метриках и категориях журналов, поддерживаемых различными службами Azure, см. в следующих статьях:
 
 - [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md)
-- [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md)
+- [Обзор журналов диагностики Azure](../azure-monitor/platform/diagnostic-logs-overview.md)
 
 В этой статье приведены рекомендации, которые помогут включить диагностическую телеметрию для баз данных SQL Azure, эластичных пулов и управляемых экземпляров. Из статьи вы узнаете, как настроить Аналитику SQL Azure в качестве инструмента мониторинга для просмотра диагностических данных телеметрии базы данных.
 
@@ -69,10 +69,15 @@ ms.locfileid: "58621236"
 | [DatabaseWaitStatistics.](#database-wait-statistics-dataset) Содержит статистику по значениям времени ожидания различных типов для базы данных. | Yes | Нет  |
 | [Время ожидания.](#time-outs-dataset) Содержит сведения о превышении времени ожидания в базе данных. | Yes | Нет  |
 | [Блоки.](#blockings-dataset) Содержит сведения о событиях блокировки в базе данных. | Yes | Нет  |
+| [Взаимоблокировки](#deadlocks-dataset): Содержит сведения о событиях взаимоблокировки в базе данных. | Yes | Нет  |
+| [AutomaticTuning](#automatic-tuning-dataset): Содержит сведения о рекомендаций по автоматической настройке в базе данных. | Yes | Нет  |
 | [SQLInsights.](#intelligent-insights-dataset) Содержит сведения Intelligent Insights о производительности. Дополнительные сведения см. в статье об [Intelligent Insights](sql-database-intelligent-insights.md). | Yes | Yes |
 
 > [!IMPORTANT]
 > Пулы эластичных баз данных и управляемых экземпляров имеют свой собственный отдельный диагностики телеметрии из баз данных, которые они содержат. Это важно отметить как данные телеметрии диагностики настраивается отдельно для каждого из этих ресурсов, как описано ниже.
+
+> [!NOTE]
+> Журналы аудита и безопасности SQLSecurityAuditEvents нельзя включить в параметрах диагностики базы данных. Чтобы включить потоковую передачу журнала аудита, см. в разделе [Настройка аудита базы данных](sql-database-auditing.md#subheading-2), и [журналы в журналах Azure Monitor и концентраторов событий аудита](https://blogs.msdn.microsoft.com/sqlsecurity/2018/09/13/sql-audit-logs-in-azure-log-analytics-and-azure-event-hubs/).
 
 ## <a name="azure-portal"></a>Портал Azure
 
@@ -131,12 +136,12 @@ ms.locfileid: "58621236"
 1. Выберите целевой ресурс для потоковой передачи диагностических данных: **Архивировать в учетной записи хранения**, **Передать в концентратор событий** или **Отправить в Log Analytics**.
 1. Для стандартного мониторинга на основе событий установите следующие флажки для данных телеметрии журнала диагностики базы данных: **SQLInsights**, **AutomaticTuning**, **QueryStoreRuntimeStatistics**, **QueryStoreWaitStatistics**, **Errors**, **DatabaseWaitStatistics**, **Timeouts**, **Blocks** и **Deadlocks**.
 1. Для расширенного поминутного мониторинга установите флажок **AllMetrics**.
-   ![Настройка диагностики для одной, в составе пула или экземпляре базы данных](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-sql-selection.png)
+   ![Настройка диагностики для отдельных баз данных, баз данных в пуле или баз данных экземпляра](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-sql-selection.png)
 1. Щелкните **Сохранить**.
 1. Повторите эти шаги для каждой базы данных, которые вы хотите отслеживать.
 
 > [!NOTE]
-> Журналы аудита безопасности нельзя включить в настройках диагностики базы данных. Чтобы включить потоковую передачу журнала аудита, см. в разделе [Настройка аудита базы данных](sql-database-auditing.md#subheading-2), и [журналы в журналах Azure Monitor и концентраторов событий аудита](https://blogs.msdn.microsoft.com/sqlsecurity/2018/09/13/sql-audit-logs-in-azure-log-analytics-and-azure-event-hubs/).
+> Журналы аудита и безопасности SQLSecurityAuditEvents нельзя включить в параметрах диагностики базы данных. Чтобы включить потоковую передачу журнала аудита, см. в разделе [Настройка аудита базы данных](sql-database-auditing.md#subheading-2), и [журналы в журналах Azure Monitor и концентраторов событий аудита](https://blogs.msdn.microsoft.com/sqlsecurity/2018/09/13/sql-audit-logs-in-azure-log-analytics-and-azure-event-hubs/).
 > [!TIP]
 > Повторите эти шаги для каждой Базы данных SQL Azure, которую вы хотите отслеживать.
 
@@ -193,7 +198,7 @@ ms.locfileid: "58621236"
 1. Введите имя настройки для вашей собственной ссылки.
 1. Выберите целевой ресурс для потоковой передачи диагностических данных: **Архивировать в учетной записи хранения**, **Передать в концентратор событий** или **Отправить в Log Analytics**.
 1. Установите флажки для телеметрии диагностики базы данных: **SQLInsights**, **QueryStoreRuntimeStatistics**, **QueryStoreWaitStatistics** и **Ошибки**.
-   ![Настройка диагностики для экземпляра базы данных](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-mi-selection.png)
+   ![Настройка диагностики для баз данных экземпляра](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-mi-selection.png)
 1. Щелкните **Сохранить**.
 1. Повторите эти шаги для каждого экземпляра базы данных, которые вы хотите отслеживать.
 
@@ -349,8 +354,8 @@ ms.locfileid: "58621236"
 
 Выполнив потоковую передачу выбранных данных в Центры событий, вы становитесь на один шаг ближе к включению дополнительных сценариев мониторинга. Центры событий выступают в качестве "двери" для конвейера событий. После сбора данных в концентраторе событий их можно преобразовывать и сохранять с помощью поставщика аналитики в реальном времени или адаптера хранения. Центры событий отделяют производство потока событий от потребления этих событий. Таким образом потребители событий могут получать доступ к событиям по собственному расписанию. Дополнительные сведения о Центрах событий см. в следующих статьях:
 
-- [Что такое Центры событий?](../event-hubs/event-hubs-what-is-event-hubs.md)
-- [Начало работы с Центрами событий](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
+- [Что такое концентраторы событий Azure?](../event-hubs/event-hubs-what-is-event-hubs.md)
+- [Приступая к работе с Центрами событий](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
 
 Потоковые метрики в Центрах событий можно использовать для следующих целей:
 
@@ -703,11 +708,11 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 Чтобы научиться включать ведение журнала и узнать, какие метрики и категории журналов поддерживаются различными службами Azure, ознакомьтесь со следующими статьями:
 
 - [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md)
-- [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md)
+- [Обзор журналов диагностики Azure](../azure-monitor/platform/diagnostic-logs-overview.md)
 
 Дополнительные сведения о Центрах событий см. в статье:
 
 - [Что такое Центры событий Azure?](../event-hubs/event-hubs-what-is-event-hubs.md)
-- [Начало работы с Центрами событий](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
+- [Приступая к работе с Центрами событий](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
 
 Дополнительные сведения о службе хранилища Azure см. в разделе о том, [как скачивать метрики и журналы диагностики из хранилища](../storage/blobs/storage-quickstart-blobs-dotnet.md#download-the-sample-application).

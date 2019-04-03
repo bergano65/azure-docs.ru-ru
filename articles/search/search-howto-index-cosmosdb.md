@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: dceabc799e187f3af56588d5a9008e5cdca517c0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 019945c48342238a1caa7611bdff6d06fd1e2bd9
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57864462"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58883400"
 ---
 # <a name="how-to-index-cosmos-db-using-an-azure-search-indexer"></a>Как индексировать Cosmos DB с помощью индексатора поиска Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "57864462"
 
 Можно использовать [портала](#cosmos-indexer-portal), API REST или пакета SDK для .NET для индексирования Cosmos содержимого. Индексатор поиска Azure Cosmos DB может просканировать [Azure Cosmos элементы](https://docs.microsoft.com/azure/cosmos-db/databases-containers-items#azure-cosmos-items) через эти протоколы:
 
-* [API SQL](https://docs.microsoft.com/azure/cosmos-db/sql-api-query-reference); 
+* [API-интерфейс SQL](https://docs.microsoft.com/azure/cosmos-db/sql-api-query-reference) 
 * [MongoDB API](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction) (поиск Azure для этого API поддерживается в общедоступной предварительной версии)  
 
 > [!Note]
@@ -61,7 +61,7 @@ ms.locfileid: "57864462"
 
 + **Имя** имя объекта источника данных. После создания вы можете его для других рабочих нагрузок.
 
-+ **Учетная запись Cosmos DB** должен быть строкой подключения первичного или вторичного из Cosmos DB с `AccountEdpointPoint` и `AccountKey`. Учетная запись определяет ли данные приводятся как SQL API или API MongoDB
++ **Учетная запись Cosmos DB** должен быть строкой подключения первичного или вторичного из Cosmos DB с `AccountEndpoint` и `AccountKey`. Учетная запись определяет ли данные приводятся как SQL API или API MongoDB
 
 + **База данных** является существующей базы данных из учетной записи. 
 
@@ -172,7 +172,7 @@ ms.locfileid: "57864462"
 | Поле   | ОПИСАНИЕ |
 |---------|-------------|
 | **name** | Обязательный элемент. Выберите любое имя для представления объектом источника данных. |
-|**type**| Обязательный элемент. Этот параметр должен содержать значение `documentdb`. |
+|**Тип**| Обязательный элемент. Этот параметр должен содержать значение `documentdb`. |
 |**credentials** | Обязательный элемент. Должен быть строкой подключения Cosmos DB.<br/>Для коллекций SQL строки подключения, в следующем формате: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/>Для коллекций MongoDB добавьте **типа API = MongoDb** строку подключения:<br/>`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если вы укажете номер порта, служба поиска Azure не сможет индексировать базу данных Azure Cosmos DB.|
 | **container** | содержит следующие элементы: <br/>**name**. Обязательный элемент. Укажите идентификатор коллекции базы данных для индексирования.<br/>**query**. Необязательный элемент. Можно указать запрос на сведение произвольного документа JSON в неструктурированную схему, индексируемую поиском Azure.<br/>Для коллекций MongoDB запросы не поддерживаются. |
 | **dataChangeDetectionPolicy** | (рекомендуется). Ознакомьтесь с разделом [Индексация измененных документов](#DataChangeDetectionPolicy).|

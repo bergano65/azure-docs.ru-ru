@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 05/22/2017
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: ba64ecc334d93c8ff973345cfd10ed12436d3fb6
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 000495ab84990f15885c254b472be7863c75da58
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55813914"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58877522"
 ---
 # <a name="run-tasks-under-user-accounts-in-batch"></a>Выполнение задач с учетными записями пользователей в пакетной службе
 
@@ -30,9 +30,9 @@ ms.locfileid: "55813914"
 
 В пакетной службе Azure доступны два типа учетных записей пользователей:
 
-- **Автоматические учетные записи пользователей.** Это встроенные учетные записи пользователей, создаваемые пакетной службой автоматически. По умолчанию задачи выполняются с автоматической учетной записью пользователя. Вы можете настроить спецификацию автоматических пользователей для задачи, чтобы указать, с какой учетной записью задача должна выполняться. Спецификация автоматических пользователей позволяет указать уровень прав и область автоматической учетной записи пользователя для выполнения задачи. 
+- **Учетные записи пользователей автоматически.** Это встроенные учетные записи пользователей, создаваемые пакетной службой автоматически. По умолчанию задачи выполняются с автоматической учетной записью пользователя. Вы можете настроить спецификацию автоматических пользователей для задачи, чтобы указать, с какой учетной записью задача должна выполняться. Спецификация автоматических пользователей позволяет указать уровень прав и область автоматической учетной записи пользователя для выполнения задачи. 
 
-- **Именованная учетная запись пользователя.** При создании пула можно указать одну или несколько именованных учетных записей пользователей. Каждая учетная запись пользователя создается на каждом узле кластера. Помимо имени учетной записи указывается ее пароль и уровень прав, а также закрытый ключ SSH для пулов Linux. При добавлении задачи можно указать именованную учетную запись пользователя, с которой должна выполняться эта задача.
+- **Учетная запись пользователя с именем.** При создании пула можно указать одну или несколько именованных учетных записей пользователей. Каждая учетная запись пользователя создается на каждом узле кластера. Помимо имени учетной записи указывается ее пароль и уровень прав, а также закрытый ключ SSH для пулов Linux. При добавлении задачи можно указать именованную учетную запись пользователя, с которой должна выполняться эта задача.
 
 > [!IMPORTANT] 
 > В пакетной службе версии 2017-01-01.4.0 введено критическое изменение, требующее обновления кода для вызова этой версии. Если вы переносите код из более ранней версии пакетной службы, имейте ввиду, что свойство **runElevated** больше не поддерживается в клиентских библиотеках пакетной службы или REST API. Используйте новое свойство задачи **userIdentity** для указания уровня прав. В разделе [Обновление кода для использования последней версии клиентской библиотеки пакетной службы](#update-your-code-to-the-latest-batch-client-library) приведены краткие инструкции по обновлению кода для пакетной службы в случае, если используется одна из клиентских библиотек.
@@ -314,7 +314,7 @@ task.UserIdentity = new UserIdentity(AdminUserAccountName);
 |---------------------------------------|------------------------------------------------------------------------------------------------------------------|
 | `CloudTask.RunElevated = true;`       | `CloudTask.UserIdentity = new UserIdentity(new AutoUserSpecification(elevationLevel: ElevationLevel.Admin));`    |
 | `CloudTask.RunElevated = false;`      | `CloudTask.UserIdentity = new UserIdentity(new AutoUserSpecification(elevationLevel: ElevationLevel.NonAdmin));` |
-| Свойство `CloudTask.RunElevated` не указано | Обновление не требуется.                                                                                               |
+| `CloudTask.RunElevated` Не указан | Обновление не требуется.                                                                                               |
 
 ### <a name="batch-java"></a>Java для пакетной службы
 
@@ -322,17 +322,17 @@ task.UserIdentity = new UserIdentity(AdminUserAccountName);
 |-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
 | `CloudTask.withRunElevated(true);`        | `CloudTask.withUserIdentity(new UserIdentity().withAutoUser(new AutoUserSpecification().withElevationLevel(ElevationLevel.ADMIN));`    |
 | `CloudTask.withRunElevated(false);`       | `CloudTask.withUserIdentity(new UserIdentity().withAutoUser(new AutoUserSpecification().withElevationLevel(ElevationLevel.NONADMIN));` |
-| Свойство `CloudTask.withRunElevated` не указано | Обновление не требуется.                                                                                                                     |
+| `CloudTask.withRunElevated` Не указан | Обновление не требуется.                                                                                                                     |
 
 ### <a name="batch-python"></a>Python для пакетной службы
 
 | Если в коде используется…                      | Замените его на…                                                                                                                       |
 |-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| `run_elevated=True`                       | `user_identity=user`, where <br />`user = batchmodels.UserIdentity(`<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`auto_user=batchmodels.AutoUserSpecification(`<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`elevation_level=batchmodels.ElevationLevel.admin)) `                |
-| `run_elevated=False`                      | `user_identity=user`, where <br />`user = batchmodels.UserIdentity(`<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`auto_user=batchmodels.AutoUserSpecification(`<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`elevation_level=batchmodels.ElevationLevel.nonadmin)) `             |
-| Свойство `run_elevated` не указано | Обновление не требуется.                                                                                                                                  |
+| `run_elevated=True`                       | `user_identity=user`, где <br />`user = batchmodels.UserIdentity(`<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`auto_user=batchmodels.AutoUserSpecification(`<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`elevation_level=batchmodels.ElevationLevel.admin))`                |
+| `run_elevated=False`                      | `user_identity=user`, где <br />`user = batchmodels.UserIdentity(`<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`auto_user=batchmodels.AutoUserSpecification(`<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`elevation_level=batchmodels.ElevationLevel.nonadmin))`             |
+| `run_elevated` Не указан | Обновление не требуется.                                                                                                                                  |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Исчерпывающий обзор пакетной службы см. в статье [Разработка решений для крупномасштабных параллельных вычислений с использованием пакетной службы](batch-api-basics.md).

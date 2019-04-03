@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 07a8195969df7ad7afd2bfe2e9124b07144d48cb
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: 136b9141ccccfedf8d37fa0832b0673495d82417
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58284788"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58846543"
 ---
 # <a name="how-to-connect-and-sign-on-to-an-azure-virtual-machine-running-windows"></a>Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее
 Чтобы запустить сеанс удаленного рабочего стола, на портале Azure нажмите кнопку **Подключиться** на рабочем столе Windows. Сначала подключитесь к виртуальной машине, а затем войдите в систему.
@@ -56,7 +56,9 @@ ms.locfileid: "58284788"
 
 ## <a name="connect-to-the-virtual-machine-using-powershell"></a>Подключение к виртуальной машине с помощью PowerShell
 
-Если вы используете PowerShell и у вас установлен модуль AzureRM, вы также можете установить подключение с помощью командлета `Get-AzRemoteDesktopFile`, как показано ниже.
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
+Если вы используете PowerShell и установить модуль Azure PowerShell можно также подключиться с помощью `Get-AzRemoteDesktopFile` командлет, как показано ниже.
 
 Этот пример немедленно устанавливает RDP-подключение с отображением аналогичных инструкций, как показано выше.
 

@@ -12,12 +12,12 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 203d81f3d4872b249103429dde3fcac365fa5753
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: cf163b2b01b4205a4a3d2123263988998130c42a
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58483392"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58848384"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 
@@ -343,11 +343,11 @@ ms.locfileid: "58483392"
 
 | API | ОПИСАНИЕ |
 | --- | --- |
-| New-AzSqlDatabaseInstanceFailoverGroup |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
-| Set-AzSqlDatabaseInstanceFailoverGroup |Изменяет конфигурацию группы отработки отказа.|
-| Get-AzSqlDatabaseInstanceFailoverGroup |Возвращает конфигурацию группы отработки отказа.|
-| Switch-AzSqlDatabaseInstanceFailoverGroup |Запускает отработку отказа группы отработки отказа на сервер-получатель.|
-| Remove-AzSqlDatabaseInstanceFailoverGroup | Удаляет группу отработки отказа.|
+| New-AzureRmSqlDatabaseInstanceFailoverGroup |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
+| Set-AzureRmSqlDatabaseInstanceFailoverGroup |Изменяет конфигурацию группы отработки отказа.|
+| Get-AzureRmSqlDatabaseInstanceFailoverGroup |Возвращает конфигурацию группы отработки отказа.|
+| Switch-AzureRmSqlDatabaseInstanceFailoverGroup |Запускает отработку отказа группы отработки отказа на сервер-получатель.|
+| Remove-AzureRmSqlDatabaseInstanceFailoverGroup | Удаляет группу отработки отказа.|
 
 ### <a name="rest-api-manage-sql-database-failover-groups-with-single-and-pooled-databases"></a>REST API: Управление группами отработки отказа базы данных SQL с отдельными базами данных или с базами данных в составе пула
 

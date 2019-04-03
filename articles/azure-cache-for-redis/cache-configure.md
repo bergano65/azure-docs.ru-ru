@@ -14,12 +14,12 @@ ms.tgt_pltfrm: cache
 ms.workload: tbd
 ms.date: 08/22/2017
 ms.author: yegu
-ms.openlocfilehash: 5e4fc40a9b6cfc945670bcd497d4b13af61f2f2f
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: 6bf42406c97ccb67251a14a7a963d3da2e01dbb4
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56817768"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58849970"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Настройка кэша Azure для Redis
 В этом разделе описаны конфигурации, доступные для экземпляров кэша Azure для Redis. В этом разделе также описывается конфигурация сервера Redis по умолчанию для экземпляров кэша Azure для Redis.
@@ -356,7 +356,7 @@ ms.locfileid: "56817768"
 
 ### <a name="diagnostics"></a>Диагностика
 
-По умолчанию в Azure Monitor метрики кэша [хранятся в течение 30 дней](../azure-monitor/platform/data-collection.md#metrics), а затем удаляются. Чтобы сохранить метрики кэша дольше, чем на 30 дней, щелкните **Диагностика**, чтобы [настроить учетную запись хранения](cache-how-to-monitor.md#export-cache-metrics), используемую для хранения диагностических данных кэша.
+По умолчанию в Azure Monitor метрики кэша [хранятся в течение 30 дней](../azure-monitor/platform/data-platform-metrics.md), а затем удаляются. Чтобы сохранить метрики кэша дольше, чем на 30 дней, щелкните **Диагностика**, чтобы [настроить учетную запись хранения](cache-how-to-monitor.md#export-cache-metrics), используемую для хранения диагностических данных кэша.
 
 >[!NOTE]
 >В дополнение к архивированию метрик кэша в хранилище, вы также можете [выполнять их потоковую передачу в концентратор событий или отправку в Azure Monitor журналы](../azure-monitor/platform/stream-monitoring-data-event-hubs.md).

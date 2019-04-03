@@ -14,27 +14,27 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/02/2017
 ms.author: suhuruli
-ms.openlocfilehash: 8f0470b10589ecbbc9e2c98e8d3445435e7f8ed4
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 2f00636da2b29e7815569a683fdf51c6a4e3b0e0
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58668829"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58880305"
 ---
 # <a name="debug-your-java-service-fabric-application-using-eclipse"></a>Отладка приложения Java Service Fabric с помощью Eclipse
 > [!div class="op_single_selector"]
 > * [Visual Studio и CSharp](service-fabric-debugging-your-application.md) 
-> * [Eclipse и Java](service-fabric-debugging-your-application-java.md)
+> * [/ Eclipse на Java](service-fabric-debugging-your-application-java.md)
 > 
 
 1. Запустите кластер локальной разработки, выполнив действия, описанные в статье [Настройка среды разработки Service Fabric](service-fabric-get-started-linux.md).
 
-2. Обновите файл entryPoint.sh службы, которую необходимо отладить, таким образом, чтобы он запускал процесс Java с параметрами удаленной отладки. Этот файл можно найти в следующем расположении: ``ApplicationName\ServiceNamePkg\Code\entrypoint.sh``. Для отладки в этом примере задается порт 8001.
+2. Обновите файл entryPoint.sh службы, которую необходимо отладить, таким образом, чтобы он запускал процесс Java с параметрами удаленной отладки. Этот файл можно найти в следующем расположении: `ApplicationName\ServiceNamePkg\Code\entrypoint.sh`. Для отладки в этом примере задается порт 8001.
 
     ```sh
     java -Xdebug -Xrunjdwp:transport=dt_socket,address=8001,server=y,suspend=n -Djava.library.path=$LD_LIBRARY_PATH -jar myapp.jar
     ```
-3. Обновите манифест приложения, задав для отлаживаемой службы число экземпляров или реплик, равное 1. Эта настройка позволяет избежать конфликтов для порта, используемого для отладки. Например, для служб без отслеживания состояния, задайте ``InstanceCount="1"``, а для служб с отслеживанием состояния задайте целевые и минимальные размеры набора реплик, равные 1, следующим образом: `` TargetReplicaSetSize="1" MinReplicaSetSize="1"``.
+3. Обновите манифест приложения, задав для отлаживаемой службы число экземпляров или реплик, равное 1. Эта настройка позволяет избежать конфликтов для порта, используемого для отладки. Например, для служб без отслеживания состояния, задайте `InstanceCount="1"`, а для служб с отслеживанием состояния задайте целевые и минимальные размеры набора реплик, равные 1, следующим образом: `TargetReplicaSetSize="1" MinReplicaSetSize="1"`.
 
 4. Разверните приложения.
 
@@ -46,7 +46,7 @@ ms.locfileid: "58668829"
    ```
 6.  Установите точки останова на требуемых точках и запустите отладку приложения.
 
-При сбое приложения можно также включить функцию coredumps. Выполните ``ulimit -c`` в оболочке. Если возвращается 0, то функция coredumps не включена. Чтобы функция coredumps работала без ограничений, выполните следующую команду: ``ulimit -c unlimited``. Состояние функции можно проверить с помощью команды ``ulimit -a``.  Если требуется обновить путь создания coredump, выполните следующую команду: ``echo '/tmp/core_%e.%p' | sudo tee /proc/sys/kernel/core_pattern``. 
+При сбое приложения можно также включить функцию coredumps. Выполните `ulimit -c` в оболочке. Если возвращается 0, то функция coredumps не включена. Чтобы функция coredumps работала без ограничений, выполните следующую команду: `ulimit -c unlimited`. Состояние функции можно проверить с помощью команды `ulimit -a`.  Если требуется обновить путь создания coredump, выполните следующую команду: `echo '/tmp/core_%e.%p' | sudo tee /proc/sys/kernel/core_pattern`. 
 
 ### <a name="next-steps"></a>Дальнейшие действия
 

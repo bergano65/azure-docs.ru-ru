@@ -1,31 +1,31 @@
 ---
 title: Центр безопасности Azure для Интернета вещей необходимых компонентов предварительной версии | Документация Майкрософт
 description: Сведения о все необходимое, чтобы приступить к работе с центром безопасности Azure для необходимых компонентов службы Интернета вещей.
-services: ascforiot
+services: asc-for-iot
+ms.service: ascforiot
 documentationcenter: na
 author: mlottner
 manager: barbkess
 editor: ''
 ms.assetid: 790cbcb7-1340-4cc1-9509-7b262e7c3181
-ms.service: ascforiot
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/26/2019
 ms.author: mlottner
-ms.openlocfilehash: 5293fe6a8d4a8a44a89890af1c259e2b4b2b7827
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: f09d768c0c6c1d351f737b053da9fd3282867099
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58755088"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58861695"
 ---
 # <a name="azure-security-center-for-iot-prerequisites"></a>Центр безопасности Azure для Интернета вещей необходимых компонентов
 
 > [!IMPORTANT]
 > Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Предварительная версия предоставляется без соглашения об уровне обслуживания. Мы не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В этой статье приводится объяснение различных стандартных блоков из центр безопасности Azure (ASC) для Интернета вещей службы, необходимые для начала и основные понятия для понимания службы. 
 
@@ -33,7 +33,7 @@ ms.locfileid: "58755088"
 
 - Уровень "стандартный центр Интернета вещей"
     - Роли RBAC **владельца** уровня привилегий 
-- [Рабочая область log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) 
+- [Рабочая область Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) 
 - Центр безопасности Azure (рекомендуется)
     - Хотя использование центра безопасности Azure является только рекомендацией и не является обязательным, без него, нельзя просматривать ресурсы Azure в центре Интернета вещей. 
  
@@ -52,7 +52,7 @@ ASC для Интернета вещей в настоящее время под
 
 Проверьте расположение вашего центра Интернета вещей для проверки доступности службы, перед началом работы. 
 
-1. Откройте центр Интернета вещей. 
+1. Откройте Центр Интернета вещей. 
 2. Нажмите **Обзор**. 
 3. Убедитесь в местоположение, указанное совпадает с одним из [поддерживаемые регионы службы](#supported-service-regions). 
 

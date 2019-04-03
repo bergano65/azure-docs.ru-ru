@@ -15,18 +15,20 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/29/2019
 ms.author: magoedte
-ms.openlocfilehash: 2bae96c1c87a4bbb44c006ed628ee8019ab2635c
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: cd10c503c6e65f68d063deb5f8a537fc9f3c9f0f
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58671379"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58846327"
 ---
 # <a name="azure-monitor-dependency-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Azure монитор зависимостей для Windows
 
 Функция схемы в Azure Monitor для виртуальных машин получает данные от Microsoft Dependency Agent. Расширение виртуальной машины агента зависимостей виртуальной Машины Azure для Windows, публикации и поддерживается корпорацией Майкрософт. Расширение устанавливает агент зависимостей на виртуальных машинах Azure. В этом документе описаны поддерживаемые платформы, конфигурации и параметры развертывания для расширения виртуальной машины агента зависимостей виртуальной Машины Azure для Windows.
 
 ## <a name="prerequisites"></a>Технические условия
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ### <a name="operating-system"></a>Операционная система
 
@@ -130,11 +132,11 @@ JSON для расширения виртуальной машины можно 
 
 ## <a name="powershell-deployment"></a>Развертывание с помощью PowerShell
 
-`Set-AzureRmVMExtension` Команда может использоваться для развертывания расширения виртуальной машины агента зависимостей на существующей виртуальной машины. Перед выполнением команды необходимо сохранить открытые и закрытые конфигурации в хэш-таблице PowerShell. 
+`Set-AzVMExtension` Команда может использоваться для развертывания расширения виртуальной машины агента зависимостей на существующей виртуальной машины. Перед выполнением команды необходимо сохранить открытые и закрытые конфигурации в хэш-таблице PowerShell. 
 
 ```powershell
 
-Set-AzureRmVMExtension -ExtensionName "Microsoft.Azure.Monitoring.DependencyAgent" `
+Set-AzVMExtension -ExtensionName "Microsoft.Azure.Monitoring.DependencyAgent" `
     -ResourceGroupName "myResourceGroup" `
     -VMName "myVM" `
     -Publisher "Microsoft.Azure.Monitoring.DependencyAgent" `
@@ -150,7 +152,7 @@ Set-AzureRmVMExtension -ExtensionName "Microsoft.Azure.Monitoring.DependencyAgen
 Данные о состоянии развертывания расширения можно получить на портале Azure, а также с помощью модуля Azure PowerShell. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду в модуле Azure PowerShell.
 
 ```powershell
-Get-AzureRmVMExtension -ResourceGroupName myResourceGroup -VMName myVM -Name myExtensionName
+Get-AzVMExtension -ResourceGroupName myResourceGroup -VMName myVM -Name myExtensionName
 ```
 
 Выходные данные выполнения расширения регистрируются в файле, расположенном в следующем каталоге:

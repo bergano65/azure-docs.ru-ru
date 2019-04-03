@@ -3,21 +3,21 @@ title: Регистрация данных из Azure Data Lake Storage 1-го �
 description: Регистрация данных из Azure Data Lake Storage 1-го поколения в каталоге данных Azure
 services: data-lake-store,data-catalog
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.assetid: 3294d91e-a723-41b5-9eca-ace0ee408a4b
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: bc9d6f8f078860000d7a2a38bf4aa1ce00ff450e
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.author: twooley
+ms.openlocfilehash: fd887560c0011fb1ec2141e33f02f7e3d8a39c81
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57533462"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58877890"
 ---
 # <a name="register-data-from-azure-data-lake-storage-gen1-in-azure-data-catalog"></a>Регистрация данных из Azure Data Lake Storage 1-го поколения в каталоге данных Azure
 В этой статье вы узнаете, как интегрировать Azure Data Lake Storage 1-го поколения со службой "Каталог данных Azure", чтобы в организации можно было обнаруживать данные с помощью интеграции с каталогом данных. Дополнительные сведения о каталогизации данных см. в статье [Каталог данных Azure](../data-catalog/data-catalog-what-is-data-catalog.md). Чтобы понять, в каких сценариях можно использовать каталог данных, см. статью [Типичные сценарии каталога данных Azure](../data-catalog/data-catalog-common-scenarios.md).
@@ -74,10 +74,10 @@ ms.locfileid: "57533462"
      ![Поиск данных в каталоге](./media/data-lake-store-with-data-catalog/search-data-in-catalog.png "Поиск данных в каталоге")
 1. Теперь можно выполнять такие операции, как добавление аннотаций и документации к данным. Дополнительные сведения см. по следующим ссылкам.
 
-    * [Создание заметок к источникам данных](../data-catalog/data-catalog-how-to-annotate.md)
-    * [Создание документации по источникам данных](../data-catalog/data-catalog-how-to-documentation.md)
+    * [Комментарии к источникам данных в каталоге данных](../data-catalog/data-catalog-how-to-annotate.md)
+    * [Документации по источникам данных в каталоге данных](../data-catalog/data-catalog-how-to-documentation.md)
 
 ## <a name="see-also"></a>См. также
-* [Создание заметок к источникам данных](../data-catalog/data-catalog-how-to-annotate.md)
-* [Создание документации по источникам данных](../data-catalog/data-catalog-how-to-documentation.md)
-* [Интеграция Data Lake Storage 1-го поколения c другими службами Azure](data-lake-store-integrate-with-other-services.md)
+* [Комментарии к источникам данных в каталоге данных](../data-catalog/data-catalog-how-to-annotate.md)
+* [Документации по источникам данных в каталоге данных](../data-catalog/data-catalog-how-to-documentation.md)
+* [Интеграция Gen1 хранилища Озера данных с другими службами Azure](data-lake-store-integrate-with-other-services.md)

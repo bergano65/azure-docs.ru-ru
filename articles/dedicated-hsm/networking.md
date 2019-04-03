@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: barclayn
-ms.openlocfilehash: aed0eb6ba4cdaa57d282ac4484e0c27c0697afb5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d6672827a87fbb949237d51310f1a9febc192ff2
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58083136"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58886355"
 ---
 # <a name="azure-dedicated-hsm-networking"></a>Сеть для выделенного устройства HSM Azure
 
@@ -60,7 +60,7 @@ ms.locfileid: "58083136"
 
 ### <a name="site-to-site-vpn"></a>VPN-подключение "сеть-сеть"
 
-Виртуальная частная сеть типа "сеть — сеть" обеспечивает безопасный обмен данными между выделенными устройствами HSM на платформе Azure и локальными ИТ-ресурсами. Причина этого заключается в наличии функции резервного копирования для локальных ресурсов HSM и необходимости подключения между ними для выполнения резервного копирования.
+Виртуальная частная сеть типа "сеть — сеть" обеспечивает безопасный обмен данными между выделенными устройствами HSM на платформе Azure и локальными ИТ-ресурсами. Причин для этого наличие функции резервного копирования для аппаратного модуля безопасности в локальных и необходимости подключения между ними для выполнения резервного копирования.
 
 ## <a name="connecting-virtual-networks"></a>Подключение виртуальных сетей
 
@@ -89,7 +89,7 @@ ms.locfileid: "58083136"
 
 - [Часто задаваемые вопросы](faq.md)
 - [Возможности поддержки](supportability.md)
-- [Высокая доступность](high-availability.md)
+- [высокую доступность;](high-availability.md)
 - [Физическая безопасность](physical-security.md)
 - [Мониторинг](monitoring.md)
 - [Архитектура развертывания](deployment-architecture.md)

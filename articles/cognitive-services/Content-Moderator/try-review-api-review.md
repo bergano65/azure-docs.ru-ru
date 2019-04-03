@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: sajagtap
-ms.openlocfilehash: beadbfc09526f738ba90252787b5b0910a2f7163
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 254269ccedc92b9dfc164cc4665a8a8513682773
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58755368"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58882026"
 ---
 # <a name="create-human-reviews-rest"></a>Создание пользовательской проверки (REST)
 
@@ -149,7 +149,7 @@ ms.locfileid: "58755368"
 
 ![Получение результатов в консоли "Review - Create" (Проверка — создание)](images/test-drive-review-3.PNG)
   
-Нажмите кнопку **Отправить**. Если операция прошла успешно, **состояние ответа** — `200 OK`и **содержимое ответа** поле отображает сведения о проверке в формате JSON, как в следующем:
+Нажмите кнопку **Отправить**. Если операция прошла успешно, **состояние ответа** — `200 OK`и **содержимое ответа** отображаются сведения о проверке в формате JSON, как показано ниже:
 
 ```json
 {  
@@ -186,7 +186,7 @@ ms.locfileid: "58755368"
 
 Запишите следующие поля в ответе:
 
-- **состояние**
+- **status**
 - **reviewerResultTags**: Она отображается, если команда пользовательской проверки вручную добавлены теги (показано **createdBy** поля).
 - **metadata**. Это показывает, теги, которые изначально были добавлены во время проверки, прежде чем изменения команда пользовательской проверки.
 

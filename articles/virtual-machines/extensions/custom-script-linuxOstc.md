@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: danis
-ms.openlocfilehash: 8638b788762a56813c622c0abffe2a8eae3c70c2
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: fe3803b7dc75ab13831a5e42d4b1a96f5aa894e5
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57437111"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58882435"
 ---
 # <a name="use-the-azure-custom-script-extension-version-1-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 1 на виртуальных машинах Linux
 
@@ -133,11 +133,11 @@ ms.locfileid: "57437111"
 
 ### <a name="property-value-details"></a>Сведения о значениях свойств
 
-* `fileUris`: (необязательное, массив строк) список URI скриптов.
-* `enableInternalDNSCheck`: (необязательное, логическое) по умолчанию имеет значение True; установите значение False, чтобы отключить проверку DNS.
-* `commandToExecute`: (необязательное, строка) выполняемый скрипт точки входа.
-* `storageAccountName`: (необязательное, строка) имя учетной записи хранения.
-* `storageAccountKey`: (необязательное, строка) ключ доступа для учетной записи хранения.
+* `fileUris`: (необязательный, строковый массив) список uri из скриптов
+* `enableInternalDNSCheck`: (необязательный, логическое значение) по умолчанию имеет значение True, значение False для отключения проверки DNS.
+* `commandToExecute`: (необязательный, строка) сценарий точки входа для выполнения
+* `storageAccountName`: (необязательный, строка) имя учетной записи хранения
+* `storageAccountKey`: (необязательный, строка) ключ доступа учетной записи хранения
 
 Следующие значения можно задавать либо в открытых, либо в защищенных параметрах. Их нельзя указывать в параметрах этих типов одновременно.
 
@@ -296,8 +296,7 @@ az vm extension set
 
 1. Enable — означает момент запуска команды.
 1. Download — относится к скачиванию пакета расширения CustomScript из Azure, а не файлов скрипта, указанных в fileUris.
-1. Вы также можете посмотреть, какой файл журнала он записывает: `/var/log/azure/Microsoft.OSTCExtensions.CustomScriptForLinux/1.5.2.2/extension.log
-`
+1. Можно также просмотреть файл журнала записываются для `/var/log/azure/Microsoft.OSTCExtensions.CustomScriptForLinux/1.5.2.2/extension.log`
 
 Далее нужно проверить файл журнала, имеющий следующий формат:
 

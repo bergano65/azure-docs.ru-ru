@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12cbd9bebf001eb902147175c89b5d7ce49e8449
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 108ead982529d2ac6549cceffd9d2177ab6456bf
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58487241"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58863188"
 ---
 # <a name="azure-ad-password-protection-troubleshooting"></a>Устранение неполадок с функцией защиты паролей Azure AD
 
@@ -44,7 +44,13 @@ ms.locfileid: "58487241"
 
 ## <a name="the-proxy-service-can-receive-calls-from-dc-agents-in-the-domain-but-is-unable-to-communicate-with-azure"></a>Служба прокси-сервера может принимать вызовы от агентов на контроллер домена в домене, но не сможет обмениваться данными с Azure
 
-Убедитесь, на компьютере прокси-сервер имеет подключение к конечным точкам, перечисленные в [требования к развертыванию](howto-password-ban-bad-on-premises-deploy.md).
+1. Убедитесь, на компьютере прокси-сервер имеет подключение к конечным точкам, перечисленные в [требования к развертыванию](howto-password-ban-bad-on-premises-deploy.md).
+
+1. Убедитесь, что леса и все прокси-сервера регистрации серверов в том же клиенте Azure.
+
+   Это можно проверить, выполнив `Get-AzureADPasswordProtectionProxy` и `Get-AzureADPasswordProtectionDCAgent` командлеты PowerShell, затем сравнить `AzureTenant` каждого элемента, возвращаемый элемент. Для правильной работы они должны совпадать в рамках леса, для всех агентов DC и прокси-серверы.
+
+   Если существует условие несоответствие регистрации клиента Azure, это можно исправить, запустив `Register-AzureADPasswordProtectionProxy` и/или `Register-AzureADPasswordProtectionForest` командлеты PowerShell, при необходимости используйте учетные данные из того же клиента Azure для всех регистраций.
 
 ## <a name="the-dc-agent-is-unable-to-encrypt-or-decrypt-password-policy-files-and-other-state"></a>Агенту контроллера домена не удалось зашифровать или расшифровать файлы политики паролей и других состояниях
 
@@ -146,6 +152,6 @@ ms.locfileid: "58487241"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Часто задаваемые вопросы о функции защиты паролей Azure AD](howto-password-ban-bad-on-premises-faq.md)
+[Часто задаваемые вопросы для защиты паролей Azure AD](howto-password-ban-bad-on-premises-faq.md)
 
 Для получения дополнительной информации о глобальном и пользовательском запрещенных списках паролей см. статью [Запрет неверных паролей в организации](concept-password-ban-bad.md).

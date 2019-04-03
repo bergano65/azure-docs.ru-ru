@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 02/15/2019
+ms.date: 03/28/2019
 ms.author: sukumari
 ms.reviewer: azmetadata
-ms.openlocfilehash: 7c5e979f399a487d29138b57d1fc4ee2c77622ff
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: c3e2102b5794fb3770b1c77e241320fa7d2222c7
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58445488"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58850786"
 ---
 # <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
@@ -219,7 +219,7 @@ curl -H Metadata:true "http://169.254.169.254/metadata/instance?api-version=2018
     "resourceGroupName": "myrg",
     "sku": "5-6",
     "subscriptionId": "xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-    "tags": "",
+    "tags": "Department:IT;Environment:Prod;Role:WorkerRole",
     "version": "7.1.1902271506",
     "vmId": "13f56399-bd52-4150-9748-7190aae1ff21",
     "vmScaleSetName": "",
@@ -296,7 +296,7 @@ Invoke-RestMethod -Headers @{"Metadata"="true"} -URI http://169.254.169.254/meta
     "resourceGroupName": "myrg",
     "sku": "5-6",
     "subscriptionId": "xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-    "tags": "",
+    "tags": "Department:IT;Environment:Test;Role:WebRole",
     "version": "7.1.1902271506",
     "vmId": "13f56399-bd52-4150-9748-7190aae1ff21",
     "vmScaleSetName": "",
@@ -514,12 +514,33 @@ curl -H Metadata:true "http://169.254.169.254/metadata/instance/compute/azEnviro
 AZUREPUBLICCLOUD
 ```
 
+### <a name="getting-the-tags-for-the-vm"></a>Получение тегов для виртуальной Машины
+
+Вы назначили теги к виртуальным машинам Azure, чтобы логически упорядочивать их в классификации. Теги, назначаемый виртуальной Машине можно получить с помощью запроса ниже.
+
+**Запрос**
+
+```bash
+curl -H Metadata:true "http://169.254.169.254/metadata/instance/compute/tags?api-version=2018-10-01&format=text"
+```
+
+**Ответ**
+
+```text
+Department:IT;Environment:Test;Role:WebRole
+```
+
+> [!NOTE]
+> Теги, разделенных точкой с запятой. Если средство синтаксического анализа записывается программным способом извлечения тегов, имен и значений тегов не должна содержать точку с запятой, чтобы средство синтаксического анализа для правильной работы.
+
 ### <a name="validating-that-the-vm-is-running-in-azure"></a>Проверка того, что виртуальная машина запущена в Azure
 
  Поставщикам Marketplace часто нужно гарантировать, что их программное обеспечение лицензируется только для запуска из Azure. Им требуется знать, если кто-то скопирует виртуальный жесткий диск в локальную среду. Обращение к службе метаданных экземпляров позволит поставщикам Marketplace получить подписанные данные, гарантированно поступающие из Azure.
- **Запрос**
+
  > [!NOTE]
 > Необходимо установить jq.
+
+ **Запрос**
 
  ```bash
   # Get the signature

@@ -10,12 +10,12 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 04/11/2018
 ms.author: rangv
-ms.openlocfilehash: ebdc90dc35f891ea1811ce81c5bdc1b937c58a5c
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 0db28fb8016176bdd66e5406a6f1c0a18cc5c3e8
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57529258"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58847592"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-nodejs"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)
 
@@ -24,7 +24,6 @@ ms.locfileid: "57529258"
 В этом учебнике описано, как начать работу с устройством Raspberry Pi под управлением Raspbian. Также вы узнаете, как можно легко подключать устройства к облаку с помощью [Центра Интернета вещей Azure](about-iot-hub.md). Примеры для Windows 10 IoT Базовая представлены в [Центре разработки для Windows](https://www.windowsondevices.com/).
 
 Нет начального набора? Используйте [онлайн-симулятор Raspberry Pi](iot-hub-raspberry-pi-web-simulator-get-started.md). Или купите новый комплект [здесь](https://azure.microsoft.com/develop/iot/starter-kits).
-
 
 ## <a name="what-you-do"></a>Что нужно сделать
 
@@ -87,7 +86,7 @@ ms.locfileid: "57529258"
 
    > [!WARNING]
    > Используйте ссылку выше, чтобы скачать ZIP-файл образа `raspbian-2017-07-5`. Последняя версия образа Raspbian имеет некоторые известные проблемы с Wiring-Pi Node, которые могут привести к сбою при выполнении дальнейших шагов.
- 
+
    2. Извлеките образ ОС Raspbian в папку на компьютере.
 
 2. Установите ОС Raspbian на карту microSD.
@@ -160,26 +159,26 @@ ms.locfileid: "57529258"
 ### <a name="clone-sample-application-and-install-the-prerequisite-packages"></a>Клонирование примера приложения и установка пакетов необходимых компонентов
 
 1. Используйте один из следующих SSH-клиентов для подключения к Raspberry Pi с главного компьютера:
-   
+
    **Пользователи Windows**
   
    a. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows. 
 
    2. Скопируйте IP-адрес устройства Pi и вставьте его в поле для имени узла (или для IP-адреса), а затем выберите тип подключения SSH.
-   
+
    ![PuTTy](./media/iot-hub-raspberry-pi-kit-node-get-started/7_putty-windows.png)
-   
+
    **Пользователи MAC и Ubuntu**
-   
+
    Используйте SSH-клиент, встроенный в Ubuntu или macOS. Возможно, для подключения устройства Pi по протоколу SSH потребуется выполнить `ssh pi@<ip address of pi>`.
 
    > [!NOTE] 
    > Имя пользователя по умолчанию — `pi`, а пароль — `raspberry`.
 
 2. Установите Node.js и NPM на устройстве Pi.
-   
+
    Сначала проверьте версии Node.js. 
-   
+
    ```bash
    node -v
    ```
@@ -203,6 +202,7 @@ ms.locfileid: "57529258"
    cd iot-hub-node-raspberrypi-client-app
    sudo npm install
    ```
+
    > [!NOTE] 
    >В зависимости от сетевого подключения процесс установки может занять несколько минут.
 
@@ -238,8 +238,14 @@ ms.locfileid: "57529258"
 
 ![Выходные данные — данные датчика, отправленные с Raspberry Pi в Центр Интернета вещей](./media/iot-hub-raspberry-pi-kit-node-get-started/8_run-output.png)
 
+## <a name="read-the-messages-received-by-your-hub"></a>Читать сообщения, отправляемые в центр
+
+— Это один из способов отслеживать сообщения, отправляемые в центр Интернета вещей с устройства с помощью средств Интернета вещей Azure для Visual Studio Code. Дополнительные сведения см. в разделе [использование средств Интернета вещей Azure для Visual Studio Code для отправки и получения сообщений между устройством и центром Интернета вещей](iot-hub-vscode-iot-toolkit-cloud-device-messaging.md).
+
+Дополнительные способы обработки данных, отправленные устройством перейдите к следующему разделу.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы запустили пример приложения, чтобы собрать данные датчика и отправить их в Центр Интернета вещей. Сведения о том, как просматривать сообщения, отправляемые Raspberry Pi в Центр Интернета вещей, или отправлять сообщения на устройство Raspberry Pi, см. в статье [Обмен сообщениями между устройством и Центром Интернета вещей с помощью расширения набора средств Центра Интернета вещей Azure для Visual Studio Code](iot-hub-vscode-iot-toolkit-cloud-device-messaging.md).
+Вы запустили пример приложения, чтобы собрать данные датчика и отправить их в Центр Интернета вещей.
 
 [!INCLUDE [iot-hub-get-started-next-steps](../../includes/iot-hub-get-started-next-steps.md)]

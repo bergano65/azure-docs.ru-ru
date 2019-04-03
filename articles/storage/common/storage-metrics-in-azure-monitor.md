@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 09/05/2017
 ms.author: fryu
 ms.subservice: common
-ms.openlocfilehash: a5ebd50b3a5fe3b611bae28db98979eee40f9490
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 4be52fbc6d9fb01ac3cd3c0954042c35b45bbf23
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57899032"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58884369"
 ---
 # <a name="azure-storage-metrics-in-azure-monitor"></a>Метрики службы хранилища Azure в Azure Monitor
 
@@ -284,9 +284,9 @@ Azure Monitor предоставляет [пакета SDK для .NET](https://
 
 Идентификатор ресурса представляет собой уникальный идентификатор ресурса в Azure. При использовании REST API Azure Monitor для считывания определений метрик или их значений необходимо использовать идентификатор ресурса для ресурса, который вы планируете использовать. Шаблон идентификатора ресурса имеет следующий формат:
 
-`
+```
 /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
-`
+```
 
 С помощью Azure Monitor хранилище предоставляет метрики на уровне учетной записи хранения и уровне службы. Например, вы можете извлечь метрики только хранилища BLOB-объектов. Каждый уровень имеет свой собственный идентификатор ресурса, который используется для получения метрик только этого уровня.
 
@@ -294,34 +294,38 @@ Azure Monitor предоставляет [пакета SDK для .NET](https://
 
 Ниже рассматривается формат указания идентификатора ресурса для учетной записи хранения.
 
-`
+```
 /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{storageAccountName}
-`
+```
 
 ### <a name="resource-id-for-the-storage-services"></a>Идентификатор ресурса для служб хранилища
 
 Ниже рассматривается формат указания идентификатора ресурса для каждой службы хранилища.
 
-* Идентификатор ресурса службы BLOB-объектов: `
+* Идентификатор ресурса службы BLOB-объектов
+```
 /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{storageAccountName}/blobServices/default
-`
-* Идентификатор ресурса службы таблиц: `
+```
+* Идентификатор ресурса службы таблиц
+```
 /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{storageAccountName}/tableServices/default
-`
-* Идентификатор ресурса службы очередей: `
+```
+* Идентификатор ресурса службы очередей
+```
 /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{storageAccountName}/queueServices/default
-`
-* Идентификатор ресурса файловой службы: `
+```
+* Идентификатор ресурса службы файлов
+```
 /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{storageAccountName}/fileServices/default
-`
+```
 
 ### <a name="resource-id-in-azure-monitor-rest-api"></a>Идентификатор ресурса в REST API Azure Monitor
 
 Ниже приведен шаблон, используемый при вызове REST API Azure Monitor.
 
-`
+```
 GET {resourceId}/providers/microsoft.insights/metrics?{parameters}
-`
+```
 
 ## <a name="capacity-metrics"></a>Метрики емкости
 Значения метрик емкости отправляются в Azure Monitor каждый час. Значения обновляются каждый день. Интервал времени определяет интервал, за который представлены значения метрик. Поддерживаемый интервал времени для всех метрик емкости — один час (PT1H).
@@ -402,15 +406,15 @@ GET {resourceId}/providers/microsoft.insights/metrics?{parameters}
 
 ## <a name="faq"></a>Часто задаваемые вопросы
 
-**Поддерживается ли классическая учетная запись хранения в новых метриках?**
+**Поддерживает ли новые метрики классической учетной записи хранения?**
 
 Нет, новые метрики Azure Monitor поддерживаются только в учетных записях хранения Azure Resource Manager. Если метрики требуется использовать в учетных записях службы хранения, необходимо выполнить миграцию в учетную запись хранения Azure Resource Manager. См. статью [Поддерживаемый платформой перенос ресурсов IaaS из классической модели в модель Azure Resource Manager](https://docs.microsoft.com/azure/virtual-machines/windows/migration-classic-resource-manager-overview).
 
-**Поддерживает ли служба хранилища Microsoft Azure метрики для управляемых и неуправляемых дисков?**
+**Поддерживает ли хранилище Azure метрики для управляемых дисков или неуправляемые диски?**
 
 Нет, служба вычислений Azure поддерживает метрики на дисках. Дополнительные сведения см. в [этой статье](https://azure.microsoft.com/blog/per-disk-metrics-managed-disks/).
 
-**Как сопоставить и перенести классические метрики, используя новые метрики?**
+**Как сопоставить и перенос классической метрик с помощью новых метрик?**
 
 См. дополнительные сведения о [сопоставлении и переносе метрик службы хранилища Azure](./storage-metrics-migration.md).
 

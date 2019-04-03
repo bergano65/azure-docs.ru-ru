@@ -8,15 +8,14 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/14/2018
 ms.author: raynew
-ms.openlocfilehash: 500986478e554a3a114d11ee4b25ea40b5decd97
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: ea5495867d5f453db014e000e01d533d049dc628
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58004129"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58849596"
 ---
 # <a name="manage-and-monitor-backed-up-sql-server-databases"></a>Мониторинг резервных копий баз данных SQL Server и управление ими
-
 
 В этой статье описаны распространенные задачи, для мониторинга баз данных SQL Server, запущенных на виртуальной машине Azure (VM) и, резервные копии создаются на архивации служб восстановления Azure и управления ими хранилища с [Azure Backup](backup-overview.md) службы. Вы узнаете, как мониторинг заданий и оповещений, остановить и возобновить защиту базы данных, выполнения заданий резервного копирования и Отмена регистрации виртуальной Машины из резервных копий.
 
@@ -113,6 +112,7 @@ ms.locfileid: "58004129"
 * разностная резервная копия;
 * Резервное копирование журналов
 
+Вам нужно указать длительность хранения для полных резервных копий только для копирования, диапазон хранения для других типов резервных копий автоматически присваивается 30 дней от текущего времени. <br/>
 Дополнительные сведения см. в разделе [типы резервного копирования SQL Server](backup-architecture.md#sql-server-backup-types).
 
 ## <a name="unregister-a-sql-server-instance"></a>Отмена регистрации экземпляра SQL Server

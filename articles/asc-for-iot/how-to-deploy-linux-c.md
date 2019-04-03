@@ -1,25 +1,25 @@
 ---
 title: Руководство по установке и развертывании C ОС Linux агент центра безопасности Azure для Интернета вещей предварительной версии | Документация Майкрософт
 description: Сведения об установке агента IoT в центре безопасности Azure в 32-разрядных и 64-разрядной Linux.
-services: ascforiot
+services: asc-for-iot
+ms.service: ascforiot
 documentationcenter: na
 author: mlottner
 manager: barbkess
 editor: ''
 ms.assetid: 3ccf2aec-106a-4d2c-8079-5f3e8f2afdcb
-ms.service: ascforiot
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/28/2019
 ms.author: mlottner
-ms.openlocfilehash: 147813ae096114b4dfc1a20d2e0a70639aa82445
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 0089fd1af6576f9bcdebe4b7f270a573205dea82
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58754436"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58861944"
 ---
 # <a name="deploy-azure-security-center-for-iot-c-based-security-agent-for-linux"></a>Развертывание центра безопасности для безопасности на основе Интернета вещей C агента для Linux
 
@@ -33,7 +33,7 @@ ms.locfileid: "58754436"
 > [!div class="checklist"]
 > * Install
 > * Проверка развертывания
-> * Удаление агента
+> * Удаление агента.
 > * Устранение неполадок 
 
 ## <a name="prerequisites"></a>Технические условия
@@ -46,38 +46,38 @@ ms.locfileid: "58754436"
 
 ## <a name="installation"></a>Установка 
 
-Чтобы установить и развернуть агент безопасности, сделайте следующее:
+Чтобы установить и развернуть агент безопасности, сделайте следующее.
 
 
-1. Скачать последнюю версию на локальный компьютер из [Github](https://aka.ms/iot-security-github-c).
+1. На сайте [GitHub](https://aka.ms/iot-security-github-c) скачайте самую последнюю версию на свой компьютер.
 
-1. Извлеките содержимое пакета и перейдите к _/Install_ папки.
+1. Извлеките содержимое пакета и перейдите в папку _/Install_.
 
-1. Добавьте работающей разрешения для **InstallSecurityAgent скрипт** путем выполнения следующего:
+1. Добавьте права на выполнение к **скрипту InstallSecurityAgent**, выполнив следующую команду:
     
    ```
    chmod +x InstallSecurityAgent.sh
    ```
 
-1. Далее выполните: 
+1. Затем выполните приведенную ниже команду: 
 
    ```
    ./InstallSecurityAgent.sh -aui <authentication identity> -aum <authentication method> -f <file path> -hn <host name> -di <device id> -i
    ```
    
-   См. в разделе [Настройка проверки подлинности](concept-security-agent-authentication-methods.md) Дополнительные сведения о параметрах проверки подлинности.
+   Дополнительные сведения о параметрах проверки подлинности см. в [этой статье](concept-security-agent-authentication-methods.md).
 
 Скрипт выполняет следующее:
 
 1. Установка необходимых компонентов.
 
-2. Добавляет пользователя службы (с помощью интерактивного входа в систему отключены).
+2. Добавление пользователя службы (с отключенным интерактивным входом).
 
-3. Устанавливает агент в качестве **управляющей программы** -предполагается, что устройство использует **systemd** для управления службами.
+3. Установка агента в качестве **управляющей программы** (предполагается, что устройство использует **systemd** для управления службой).
 
-4. Настраивает агент с предоставленными параметрами проверки подлинности. 
+4. Настройка агента с предоставленными параметрами проверки подлинности. 
 
-Для получения дополнительной поддержки, запустите скрипт с параметром – help: 
+Для получения дополнительной справки запустите скрипт с параметром –help: 
     
     ./InstallSecurityAgent.sh --help
 
@@ -88,14 +88,14 @@ ms.locfileid: "58754436"
     ./InstallSecurityAgent.sh -–uninstall
 
 ## <a name="troubleshooting"></a>Устранение неполадок
-Проверьте состояние развертывания, выполнив:
+Проверьте состояние развертывания, выполнив следующую команду:
 
     systemctl status ASCIoTAgent.service
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Чтение ASC для службы Интернета вещей [Обзор](overview.md)
-- Дополнительные сведения о ASC для Интернета вещей [архитектуры](architecture.md)
-- Включить [службы](quickstart-onboard-iot-hub.md)
-- Чтение [часто задаваемые вопросы](resources-frequently-asked-questions.md)
-- Понять [оповещения системы безопасности](concept-security-alerts.md)
+- Просмотрите [обзор](overview.md) службы ASC для Интернета вещей.
+- Ознакомьтесь с дополнительными сведениями об [архитектуре](architecture.md) ASC для Интернета вещей.
+- Включите [службу](quickstart-onboard-iot-hub.md).
+- Просмотрите [часто задаваемые вопросы](resources-frequently-asked-questions.md).
+- Ознакомьтесь со сведениями об [оповещениях безопасности](concept-security-alerts.md).

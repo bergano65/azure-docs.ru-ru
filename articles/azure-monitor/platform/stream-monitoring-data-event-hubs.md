@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: johnkem
 ms.subservice: ''
-ms.openlocfilehash: 549ec74514ff03e06ff25893d3fa865f179470e9
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: ab439eb77113c53ab046256dd8d448a18b63f887
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56870692"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58850071"
 ---
 # <a name="stream-azure-monitoring-data-to-an-event-hub-for-consumption-by-an-external-tool"></a>Потоковая передача данных мониторинга Azure в концентратор событий для потребления внешним инструментом
 
@@ -70,10 +70,10 @@ ms.locfileid: "56870692"
 ## <a name="azure-resource-metrics-and-diagnostics-logs"></a>Метрики ресурсов Azure и журналы диагностики
 
 Ресурсы Azure создают два вида данных мониторинга:
-1. [Журналы диагностики ресурсов](./../../azure-monitor/platform/diagnostic-logs-overview.md).
-2. [Метрики](../../azure-monitor/platform/data-collection.md)
+1. [Журналы диагностики ресурсов](diagnostic-logs-overview.md).
+2. [Метрики](data-platform.md)
 
-Оба типа данных отправляются в концентратор событий с использованием параметра диагностики ресурсов. [Следуя этому руководству](./../../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md), задайте параметр диагностики в каждом ресурсе, для которого вы хотите собирать журналы.
+Оба типа данных отправляются в концентратор событий с использованием параметра диагностики ресурсов. [Следуя этому руководству](diagnostic-logs-stream-event-hubs.md), задайте параметр диагностики в каждом ресурсе, для которого вы хотите собирать журналы.
 
 > [!TIP]
 > Вы можете использовать службу "Политика Azure", чтобы для каждого ресурса в определенной области всегда настраивался параметр диагностики. Для этого [используйте эффект DeployIfNotExists в правиле политики](../../governance/policy/concepts/definition-structure.md#policy-rule).

@@ -3,21 +3,21 @@ title: Интеграция Azure Data Lake Storage 1-го поколения с
 description: Принципы интеграции Azure Data Lake Storage 1-го поколения с другими службами Azure
 documentationcenter: ''
 services: data-lake-store
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.assetid: 48a5d1f4-3850-4c22-bbc4-6d1d394fba8a
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: e377a29167ace21e021568f3c65cefd1098d1dab
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
-ms.translationtype: HT
+ms.author: twooley
+ms.openlocfilehash: e28863f9980d6403bef1f88de01b7a9b5271b444
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46127156"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58879311"
 ---
 # <a name="integrating-azure-data-lake-storage-gen1-with-other-azure-services"></a>Интеграция Azure Data Lake Storage 1-го поколения с другими службами Azure
 Azure Data Lake Storage 1-го поколения можно использовать вместе с другими службами Azure для охвата более широкого диапазона сценариев. В следующей статье перечислены службы, с которыми может интегрироваться Data Lake Storage 1-го поколения.
@@ -27,9 +27,9 @@ Azure Data Lake Storage 1-го поколения можно использов�
 
 Инструкции по подготовке кластера HDInsight с Data Lake Storage 1-го поколения озера данных см. в следующих статьях.
 
-* [Создание кластеров HDInsight, использующих Data Lake Storage 1-го поколения, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
-* [Создание кластеров HDInsight, использующих Data Lake Storage 1-го как хранилище по умолчанию, с помощью Azure PowerShell](data-lake-store-hdinsight-hadoop-use-powershell-for-default-storage.md)
-* [Создание кластеров HDInsight, использующих с Data Lake Storage 1-го поколения как дополнительное хранилище, с помощью Azure PowerShell](data-lake-store-hdinsight-hadoop-use-powershell.md)
+* [Подготовка кластера HDInsight с Gen1 хранилища Озера данных с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Подготовка кластера HDInsight с Gen1 хранилища Озера данных в качестве хранилища по умолчанию, с помощью Azure PowerShell](data-lake-store-hdinsight-hadoop-use-powershell-for-default-storage.md)
+* [Подготовка кластера HDInsight с Gen1 хранилища Озера данных в качестве дополнительного хранилища, с помощью Azure PowerShell](data-lake-store-hdinsight-hadoop-use-powershell.md)
 
 ## <a name="use-data-lake-storage-gen1-with-azure-data-lake-analytics"></a>Использование Data Lake Storage 1-го поколения с Azure Data Lake Analytics
 [Аналитика озера данных Azure](../data-lake-analytics/data-lake-analytics-overview.md) позволяет работать с большими данными в облачных масштабах. Она динамически подготавливает ресурсы и позволяет выполнять аналитические операции с терабайтами и даже эксабайтами данных, которые могут храниться в разных поддерживаемых источниках данных, одним из которых является Data Lake Storage 1-го поколения. Azure Data Lake Analytics оптимизирована для работы с Data Lake Storage 1-го поколения, благодаря чему обеспечивается наивысший уровень производительности, пропускной способности и параллелизации для рабочих нагрузок больших данных.
@@ -66,7 +66,7 @@ Power BI можно использовать, чтобы импортирова�
 Azure Data Lake Storage 1-го поколения можно использовать для архивации и сбора данных, полученных центрами событий Azure. Дополнительные сведения см. в статье [Запись данных из центров событий с помощью Data Lake Storage 1-го поколения](data-lake-store-archive-eventhub-capture.md).
 
 ## <a name="see-also"></a>См. также
-* [Обзор Azure Data Lake Storage Gen1](data-lake-store-overview.md)
-* [Начало работы с Data Lake Storage 1-го поколения с помощью портала Azure](data-lake-store-get-started-portal.md)
-* [Начало работы с Data Lake Storage 1-го поколения с помощью PowerShell](data-lake-store-get-started-powershell.md)  
+* [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
+* [Начало работы с Gen1 хранилища Озера данных с помощью портала](data-lake-store-get-started-portal.md)
+* [Начало работы с Gen1 хранилища Озера данных с помощью PowerShell](data-lake-store-get-started-powershell.md)  
 

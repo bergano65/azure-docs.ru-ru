@@ -1,5 +1,5 @@
 ---
-title: Руководство. Модерация видео и расшифровок речи с использованием .NET — Content Moderator
+title: Руководство по Модерация видео и расшифровок речи с использованием .NET — Content Moderator
 titlesuffix: Azure Cognitive Services
 description: В этом руководстве содержатся сведения о создании решения модерации видео и расшифровок с использованием автоматизированной модерации и создания проверок человеком в процессе.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.subservice: content-moderator
 ms.topic: tutorial
 ms.date: 03/11/2019
 ms.author: pafarley
-ms.openlocfilehash: 504f79186eb69fb6e6c23c1a0cd9dfd7584bb128
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: fc49081c765834a0ed0e5199923606ced7daa081
+ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57904343"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58522083"
 ---
-# <a name="tutorial-video-and-transcript-moderation"></a>Руководство. Модерация видео и расшифровок речи
+# <a name="tutorial-video-and-transcript-moderation"></a>Руководство по Модерация видео и расшифровок речи
 
 В этом руководстве содержатся сведения о создании полного решения для модерации видео и расшифровок с использованием автоматизированной модерации и создания проверок с вовлечением в процесс человека.
 
@@ -234,7 +234,7 @@ ms.locfileid: "57904343"
 `CreateVideoReviewInContentModerator()` вызывает несколько методов для выполнения следующих задач:
 
 > [!NOTE]
-> В консольном приложении для создания эскизов используется библиотека [FFmpeg](https://ffmpeg.org/). Эти эскизы (изображения) соответствуют меткам времени кадра в [выходных данных модерации видео](#sample-video-moderation-response).
+> В консольном приложении для создания эскизов используется библиотека [FFmpeg](https://ffmpeg.org/). Эти эскизы (изображения) соответствуют меткам времени кадра в выходных данных модерации видео.
 
 |Задача|Методы|Файл|
 |-|-|-|

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/01/2019
 ms.author: brkhande
-ms.openlocfilehash: bce4946b62e3678f7fa8d5f7f6431441cc00b252
-ms.sourcegitcommit: 09bb15a76ceaad58517c8fa3b53e1d8fec5f3db7
+ms.openlocfilehash: 6c0aa42cc22d22431d7d0270aca52e089046cb01
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58762843"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58847748"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Установка исправлений операционной системы Windows в кластере Service Fabric
 
@@ -325,7 +325,7 @@ RebootRequired | true — требовалась перезагрузка<br> f
 
 В. **Сколько времени уходит на исправление узла?**
 
-О. Установка исправлений на узел может занять от нескольких минут (например, [обновления определений для Защитника Windows](https://www.microsoft.com/wdsi/definitions)) до нескольких часов (например, [накопительные обновления Windows](https://www.catalog.update.microsoft.com/Search.aspx?q=windows%20server%20cumulative%20update)). Время, необходимое для исправления узла, главным образом, зависит от 
+О. Установка исправлений на узел может занять от нескольких минут (например, [обновления определений для Защитника Windows](https://www.microsoft.com/en-us/wdsi/definitions)) до нескольких часов (например, [накопительные обновления Windows](https://www.catalog.update.microsoft.com/Search.aspx?q=windows%20server%20cumulative%20update)). Время, необходимое для исправления узла, главным образом, зависит от 
  - размера обновлений;
  - числа обновлений, которые должны быть применены за данный период;
  - времени, необходимого для установки обновлений, перезагрузки узла (при необходимости) и завершения действий по установке после перезагрузки;

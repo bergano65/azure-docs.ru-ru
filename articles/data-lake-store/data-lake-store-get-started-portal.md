@@ -3,26 +3,26 @@ title: Начало работы с ADLS 1-го поколения с помощ
 description: Использование портала Azure для создания учетной записи ADLS 1-го поколения и выполнения базовых операций в этой учетной записи.
 services: data-lake-store
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.author: nitinme
-ms.openlocfilehash: a99d8a265cdc72b6bd1dd45ab670f514d828f808
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.author: twooley
+ms.openlocfilehash: e021d8c056028c03ac71d2a27c9128272f374da6
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58005704"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58883587"
 ---
 # <a name="get-started-with-azure-data-lake-storage-gen1-using-the-azure-portal"></a>Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure
 
 > [!div class="op_single_selector"]
-> * [Портал](data-lake-store-get-started-portal.md)
+> * [Microsoft Azure](data-lake-store-get-started-portal.md)
 > * [PowerShell](data-lake-store-get-started-powershell.md)
-> * [Интерфейс командной строки Azure](data-lake-store-get-started-cli-2.0.md)
+> * [Инфраструктура CLI Azure](data-lake-store-get-started-cli-2.0.md)
 >
 > 
 
@@ -123,8 +123,8 @@ ms.locfileid: "58005704"
 ![Удаление учетной записи Data Lake Storage 1-го поколения](./media/data-lake-store-get-started-portal/ADL.Delete.Account.png "Удаление учетной записи Data Lake Storage 1-го поколения")
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Использование Azure Data Lake Storage 1-го поколения для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md) 
-* [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
-* [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
-* [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Использовать Gen1 хранилища Озера данных Azure для потребностей больших данных](data-lake-store-data-scenarios.md) 
+* [Защита данных в поколение 1 хранилища Озера данных](data-lake-store-secure-data.md)
+* [Использование Azure Data Lake Analytics с Gen1 хранилища Озера данных](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Использование Azure HDInsight с Gen1 хранилища Озера данных](data-lake-store-hdinsight-hadoop-use-portal.md)
 

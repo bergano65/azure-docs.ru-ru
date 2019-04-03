@@ -10,12 +10,12 @@ ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 11/06/2018
 ms.author: aschhab
-ms.openlocfilehash: e16b523a366cabd04a5f12441874aa60460d508f
-ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.openlocfilehash: 175d5d5d4495986c29b75427a325088c14279e17
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57213984"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58849660"
 ---
 # <a name="azure-service-bus-metrics-in-azure-monitor-preview"></a>Метрики служебной шины Azure в Azure Monitor (предварительная версия)
 
@@ -28,7 +28,7 @@ Azure Monitor предоставляет унифицированный поль
 
 ## <a name="access-metrics"></a>Доступ к метрикам
 
-Azure Monitor предоставляет несколько способов доступа к метрикам. Вы можете либо доступ к метрикам через [портала Azure](https://portal.azure.com), или использовать интерфейсы API Azure Monitor (REST и .NET) и решения для анализа таких как журналы Azure Monitor и концентраторов событий. Дополнительные сведения см. в разделе [Мониторинг данных, собранных Azure Monitor](../azure-monitor/platform/data-collection.md).
+Azure Monitor предоставляет несколько способов доступа к метрикам. Вы можете либо доступ к метрикам через [портала Azure](https://portal.azure.com), или использовать интерфейсы API Azure Monitor (REST и .NET) и решения для анализа таких как журналы Azure Monitor и концентраторов событий. Дополнительные сведения см. в разделе [метрики в Azure Monitor](../azure-monitor/platform/data-platform-metrics.md).
 
 Метрики включены по умолчанию, и вы можете получить доступ к данным за последние 30 дней. Если необходимо хранить данные метрик в течение длительного периода времени, вы можете архивировать их в учетную запись хранения Azure. Это значение задается в [параметрах диагностики](../azure-monitor/platform/diagnostic-logs-overview.md#diagnostic-settings) Azure Monitor.
 

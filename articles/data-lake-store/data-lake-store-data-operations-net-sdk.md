@@ -3,20 +3,20 @@ title: Пакет SDK для .NET. Операции файловой систе�
 description: Выполнение операций файловой системы в Data Lake Storage 1-го поколения, таких как создание папок и т. д., с помощью пакета SDK для .NET.
 services: data-lake-store
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: 0a6cfc5ca9a0b788075f4472649a6e1bcdf87637
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.author: twooley
+ms.openlocfilehash: 02091f1b650e3e9932f9924bf36a5841861d3b1e
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58119502"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58876961"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-storage-gen1-using-net-sdk"></a>Операции файловой системы в Azure Data Lake Storage 1-го поколения с использованием пакета SDK для .NET
 > [!div class="op_single_selector"]
@@ -59,8 +59,8 @@ ms.locfileid: "58119502"
    2. На вкладке **Диспетчер пакетов NuGet** в поле **Источник пакета** выберите **nuget.org** и установите флажок **Включить предварительные выпуски**.
    3. Найдите и установите следующие пакеты NuGet:
 
-      * `Microsoft.Azure.DataLake.Store` — в этом руководстве используется версия 1.0.0.
-      * `Microsoft.Rest.ClientRuntime.Azure.Authentication` — в этом руководстве используется версия 2.3.1.
+      * `Microsoft.Azure.DataLake.Store` — В этом руководстве используется версия 1.0.0.
+      * `Microsoft.Rest.ClientRuntime.Azure.Authentication` — В этом руководстве используется версия 2.3.1.
     
       Закройте **диспетчер пакетов NuGet**.
 
@@ -174,12 +174,12 @@ ms.locfileid: "58119502"
 
 ## <a name="samples"></a>Примеры
 Ниже приведено несколько примеров использования пакета SDK для файловой системы Data Lake Storage 1-го поколения.
-* [Базовый пример на сайте GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-get-started/tree/master/AdlsSDKGettingStarted)
-* [Расширенный пример на сайте GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-samples)
+* [Базовый пример на GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-get-started/tree/master/AdlsSDKGettingStarted)
+* [Расширенный пример на GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-samples)
 
 ## <a name="see-also"></a>См. также
-* [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
-* [Библиотеки Azure Data Lake Store для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
+* [Начало работы с Gen1 хранилища Озера данных с помощью пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
+* [Справочник по SDK .NET Gen1 хранилища Озера данных](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
+* [Защита данных в поколение 1 хранилища Озера данных](data-lake-store-secure-data.md)

@@ -1,25 +1,25 @@
 ---
 title: Установка Windows центра безопасности Azure для Интернета вещей агент предварительной версии | Документация Майкрософт
 description: Дополнительные сведения об установке центра безопасности Azure для Интернета вещей агент на 32-разрядная или 64-разрядных устройствах Windows.
-services: ascforiot
+services: asc-for-iot
+ms.service: ascforiot
 documentationcenter: na
 author: mlottner
 manager: barbkess
 editor: ''
 ms.assetid: 2cf6a49b-5d35-491f-abc3-63ec24eb4bc2
-ms.service: ascforiot
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/19/2019
 ms.author: mlottner
-ms.openlocfilehash: 7e3cb1f44711a8eedb248320db8bce5dfd0eaf0c
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: b45d64f56653ad6d0baabef4a63351ef14f24c42
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58754602"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58861961"
 ---
 # <a name="deploy-an-azure-security-center-for-iot-c-based-security-agent-for-windows"></a>Развертывание в центр безопасности Azure для IoT C#-основе security agent для Windows
 
@@ -33,12 +33,12 @@ ms.locfileid: "58754602"
 > [!div class="checklist"]
 > * Install
 > * Проверка развертывания
-> * Удаление агента
+> * Удаление агента.
 > * Устранение неполадок 
 
 ## <a name="prerequisites"></a>Технические условия
 
-Для других платформ и flavours агента, см. в разделе [выберите агент защиты](how-to-deploy-agent.md).
+Сведения о других платформах и версиях агентов см. в [этой статье](how-to-deploy-agent.md).
 
 1. Права локального администратора на компьютере, которым вы хотите установить на. 
 
@@ -46,16 +46,16 @@ ms.locfileid: "58754602"
 
 ## <a name="installation"></a>Установка 
 
-Чтобы установить агент безопасности, сделайте следующее:
+Чтобы установить агент безопасности, сделайте следующее.
 
 1. Для установки ASC для Интернета вещей Windows C# агента на устройстве, загрузите последнюю версию на компьютер от ASC для Интернета вещей [репозиторий GitHub](https://github.com/Azure/Azure-IoT-Security-Agent-CS).
 
-2. Извлеките содержимое пакета и перейдите к папке/Install /.
+2. Извлеките содержимое пакета и перейдите в папку /Install.
 
 3. Откройте Windows PowerShell от имени администратора. 
-    1. Добавьте разрешения на выполнение скрипта InstallSecurityAgent, выполнив ```Unblock-File .\InstallSecurityAgent.ps1```
+    1. Добавьте права на выполнение к скрипту InstallSecurityAgent, выполнив следующую команду ```Unblock-File .\InstallSecurityAgent.ps1```.
     
-        и выполните:
+        Затем выполните приведенную ниже команду:
 
     ```
     .\InstallSecurityAgent.ps1 -Install -aui <authentication identity> -aum <authentication method> -f <file path> -hn <host name> -di <device id> -cl <certificate location kind>
@@ -67,32 +67,32 @@ ms.locfileid: "58754602"
     .\InstallSecurityAgent.ps1 -Install -aui Device -aum SymmetricKey -f c:\Temp\Key.txt -hn MyIotHub.azure-devices.net -di Mydevice1 -cl store
     ```
     
-    См. в разделе [Настройка проверки подлинности](concept-security-agent-authentication-methods.md) Дополнительные сведения о параметрах проверки подлинности.
+    Дополнительные сведения о параметрах проверки подлинности см. в [этой статье](concept-security-agent-authentication-methods.md).
 
 Скрипт выполняет следующее:
 
 - Установка необходимых компонентов.
 
-- Добавляет пользователя службы (с помощью интерактивного входа в систему отключены).
+- Добавление пользователя службы (с отключенным интерактивным входом).
 
-- Устанавливает агент в качестве **Системная служба**.
+- Установка агента в качестве **системной службы**.
 
-- Настраивает агент с параметрами предоставленный проверки подлинности.
+- Настройка агента с предоставленными параметрами проверки подлинности.
 
 
-Для получения дополнительных сведений используйте команду Get-Help в PowerShell <br>Пример Get-Help.  
+Для получения дополнительной справки выполните команду Get-Help в PowerShell <br>Ниже приведен пример команды Get-Help:  
     ```Get-Help .\InstallSecurityAgent.ps1```
 
-### <a name="verify-deployment-status"></a>Проверьте состояние развертывания
+### <a name="verify-deployment-status"></a>Проверка состояния развертывания
 
-- Проверьте состояние агента развертывания, выполнив:<br>
+- Проверьте состояние развертывания агента, выполнив следующую команду:<br>
     ```sc.exe query "ASC IoT Agent" ```
 
 ### <a name="uninstall-the-agent"></a>Удаление агента
 
-Чтобы удалить агент:
+Чтобы удалить агент, сделайте следующее:
 
-1. Выполните следующий сценарий PowerShell с **-режим** параметру присвоить **удаления**.  
+1. Запустите следующий скрипт PowerShell с параметром **-mode**, для которого задано значение **Uninstall**.  
 
     ```
     .\InstallSecurityAgent.ps1 -Uninstall
@@ -100,9 +100,9 @@ ms.locfileid: "58754602"
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-Если агент не запускается, включите ведение журнала (Ведение журнала является *off* по умолчанию) для получения дополнительных сведений.
+Если агент не запускается, включите ведение журнала (по умолчанию ведение журнала *отключено*), чтобы просмотреть дополнительные сведения.
 
-Чтобы включить ведение журнала:
+Чтобы включить ведение журнала, сделайте следующее:
 
 1. Откройте файл конфигурации (General.config) для редактирования в редакторе стандартный файл.
 
@@ -116,9 +116,9 @@ ms.locfileid: "58754602"
    ```
 
     > [!NOTE]
-    > Мы рекомендуем включить ведение журнала **off** после завершения устранения неполадок. Оставив ведения журнала **на** увеличения журнала файла размера и использования данных. 
+    > Мы рекомендуем **отключить** ведение журнала после устранения неполадок. Если оставить ведение журнала **включенным**, размер файла журнала и использование данных увеличится. 
 
-1. Перезапустите агент, выполнив следующие PowerShell или командной строки:
+1. Перезапустите агент, выполнив следующую команду в PowerShell или командной строке.
 
     **PowerShell**
      ```
@@ -133,14 +133,14 @@ ms.locfileid: "58754602"
      sc.exe start "ASC IoT Agent" 
      ```
 
-1. Просмотрите файл журнала, Дополнительные сведения о сбое.
+1. Дополнительные сведения о сбое можно просмотреть в файле журнала.
 
    Расположение файла журнала: `%WinDir%/System32/IoTAgentLog.log`
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Чтение ASC для службы Интернета вещей [Обзор](overview.md)
-- Дополнительные сведения о ASC для Интернета вещей [архитектуры](architecture.md)
-- Включить [службы](quickstart-onboard-iot-hub.md)
-- Чтение [часто задаваемые вопросы](resources-frequently-asked-questions.md)
-- Понять [оповещения](concept-security-alerts.md)
+- Просмотрите [обзор](overview.md) службы ASC для Интернета вещей.
+- Ознакомьтесь с дополнительными сведениями об [архитектуре](architecture.md) ASC для Интернета вещей.
+- Включите [службу](quickstart-onboard-iot-hub.md).
+- Просмотрите [часто задаваемые вопросы](resources-frequently-asked-questions.md).
+- Ознакомьтесь со сведениями об [оповещениях](concept-security-alerts.md).

@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 03/29/2018
 ms.author: magoedte
 ms.subservice: ''
-ms.openlocfilehash: 599b1d3f522a0f287736808cce88163f1ef7f28f
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: a2f90c52823664df5fdc71c55220cc660c2f68e3
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58755801"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878151"
 ---
 # <a name="manage-usage-and-costs-for-log-analytics-in-azure-monitor"></a>Управление потреблением и затраты для Log Analytics в Azure Monitor
 
@@ -66,7 +66,7 @@ ms.locfileid: "58755801"
 
 1. В рабочей области на панели слева выберите пункт **Usage and estimated costs** (Использование и ожидаемые затраты).
 2. В верхней части страницы **Usage and estimated costs** (Использование и ожидаемые затраты) для выбранной рабочей области щелкните **Управление объемом данных**. 
-3. По умолчанию для ежедневного ограничения установлено значение **Выкл**. Щелкните **Вкл.**, чтобы включить его, а затем настройте лимит для объема данных (ГБ/день).<br><br> ![Настройка ограничения сбора данных в Log Analytics](media/manage-cost-storage/set-daily-volume-cap-01.png)
+3. По умолчанию для ежедневного ограничения установлено значение **Выкл**. Щелкните **Вкл.**, чтобы включить его, а затем настройте лимит для объема данных (ГБ/день).<br><br> ![Log Analytics Настройка ограничения сбора данных](media/manage-cost-storage/set-daily-volume-cap-01.png)
 
 ### <a name="alert-when-daily-cap-reached"></a>Оповещение при достижении ежедневного ограничения
 Когда достигнуто ограничение сбора данных, на портале Azure отображается соответствующее сообщение. Однако, возможно, вы управляете операционными проблемами, требующими немедленного внимания, иным образом.  Чтобы получать оповещение, вы можете создать новое правило генерации оповещений в Azure Monitor.  Дополнительные сведения см. в статье [Создание и просмотр оповещений, а также управление ими с помощью Azure Monitor — интерфейс оповещений (предварительная версия)](alerts-metric.md).      
@@ -92,7 +92,7 @@ ms.locfileid: "58755801"
  
 1. В рабочей области на панели слева выберите пункт **Usage and estimated costs** (Использование и ожидаемые затраты).
 2. В верхней части страницы **Usage and estimated costs** (Использование и ожидаемые затраты) щелкните **Управление объемом данных**.
-5. В области воспользуйтесь ползунком, чтобы увеличить или уменьшить количество дней, а затем нажмите кнопку **ОК**.  Если вы используете уровень *Бесплатный*, то вы не сможете изменить срок хранения данных. Необходимо перейти на платный уровень, чтобы управлять этим параметром.<br><br> ![Изменение параметра хранения данных рабочей области](media/manage-cost-storage/manage-cost-change-retention-01.png)
+5. В области воспользуйтесь ползунком, чтобы увеличить или уменьшить количество дней, а затем нажмите кнопку **ОК**.  Если вы используете уровень *Бесплатный*, то вы не сможете изменить срок хранения данных. Необходимо перейти на платный уровень, чтобы управлять этим параметром.<br><br> ![Изменение параметров хранения данных рабочей области](media/manage-cost-storage/manage-cost-change-retention-01.png)
 
 ## <a name="legacy-pricing-tiers"></a>Устаревшие ценовые категории
 
@@ -110,7 +110,7 @@ ms.locfileid: "58755801"
 2. На панели рабочей области в разделе **Общие** щелкните **Ценовая категория**.  
 
 3. В разделе **Ценовая категория** выберите ценовую категорию и щелкните **Выбрать**.  
-    ![Выбранный ценовой план](media/manage-cost-storage/workspace-pricing-tier-info.png)
+    ![Выбрать ценовой план.](media/manage-cost-storage/workspace-pricing-tier-info.png)
 
 Если вы хотите переместить свое рабочее пространство в текущий ценовой уровень, необходимо изменить ценовую модель мониторинга подписки в Azure Monitor, что изменит ценовой уровень всех рабочих пространств в этой подписке. Дополнительные сведения см. в этой [статье](usage-estimated-costs.md#moving-to-the-new-pricing-model).
 
@@ -122,7 +122,7 @@ ms.locfileid: "58755801"
 ## <a name="troubleshooting-why-log-analytics-is-no-longer-collecting-data"></a>Почему Log Analytics больше не собирает данные
 Если вы используете устаревшую бесплатную ценовую категорию и отправили больше 500 МБ данных за день, сбор данных останавливается до конца дня. Достижение ежедневного ограничения является распространенной причиной, по которой Log Analytics прекращает сбор данных или по которой данные отсутствуют.  Log Analytics создает событие типа "Операция", когда сбор данных начинается и останавливается. Выполните следующий запрос в поле поиска, чтобы проверить, достигнут ли лимит и отсутствуют ли данные: 
 
-`Operation | where OperationCategory == 'Data Collection Status' `
+`Operation | where OperationCategory == 'Data Collection Status'`
 
 При остановке сбора данных параметр OperationStatus принимает значение Warning. При начале сбора данных параметр OperationStatus принимает значение Succeeded. В следующей таблице описаны причины, по которым сбор данных останавливается, и приведены рекомендуемые действия, чтобы его возобновить:  
 
@@ -186,9 +186,11 @@ ms.locfileid: "58755801"
 
 Для просмотра **размер** оплачиваемых событий, обрабатываемых на каждом компьютере, используйте `_BilledSize` свойство ([_billedsize.md # свойства журнала стандарта](learn more)) который предоставляет размер в байтах:
 
-`union withsource = tt * 
+```
+union withsource = tt * 
 | where _IsBillable == true 
-| summarize Bytes=sum(_BilledSize) by  Computer | sort by Bytes nulls last `
+| summarize Bytes=sum(_BilledSize) by  Computer | sort by Bytes nulls last
+```
 
 `_IsBillable` Свойство указывает, будет ли данные, полученные взиматься плата ([_isbillable # log-standard-properties.md](Learn more).)
 
@@ -205,26 +207,32 @@ ms.locfileid: "58755801"
 
 Чтобы счетчики оплачиваемых типов данных отправляли данные на конкретный компьютер, выполните такой запрос:
 
-`union withsource = tt *
+```
+union withsource = tt *
 | where Computer == "computer name"
 | where _IsBillable == true 
-| summarize count() by tt | sort by count_ nulls last `
+| summarize count() by tt | sort by count_ nulls last
+```
 
 ### <a name="data-volume-by-azure-resource-resource-group-or-subscription"></a>Объем данных в зависимости от ресурсов Azure, группу ресурсов или подписку
 
 Для данных из узлов, размещенных в Azure можно получить **размер** оплачиваемых событий, которые принимаются __на каждом компьютере__, использовать `_ResourceId` свойство, которое предоставляет полный путь к ресурсу ([ log-standard-properties.md #_resourceid](learn more)):
 
-`union withsource = tt * 
+```
+union withsource = tt * 
 | where _IsBillable == true 
-| summarize Bytes=sum(_BilledSize) by _ResourceId | sort by Bytes nulls last `
+| summarize Bytes=sum(_BilledSize) by _ResourceId | sort by Bytes nulls last
+```
 
 Для данных из узлов, размещенных в Azure можно получить **размер** оплачиваемых событий, которые принимаются __каждой подписки Azure__, синтаксический анализ `_ResourceId` свойство как:
 
-`union withsource = tt * 
+```
+union withsource = tt * 
 | where _IsBillable == true 
 | parse tolower(_ResourceId) with "/subscriptions/" subscriptionId "/resourcegroups/" 
     resourceGroup "/providers/" provider "/" resourceType "/" resourceName   
-| summarize Bytes=sum(_BilledSize) by subscriptionId | sort by Bytes nulls last `
+| summarize Bytes=sum(_BilledSize) by subscriptionId | sort by Bytes nulls last
+```
 
 Изменение `subscriptionId` для `resourceGroup` покажет том оплачиваемые данные, полученные по Azure resouurce группы. 
 
@@ -295,7 +303,8 @@ ms.locfileid: "58755801"
 
 Чтобы просмотреть количество отдельных узлов службы автоматизации, выполните такой запрос:
 
-` ConfigurationData 
+```
+ ConfigurationData 
  | where (ConfigDataType == "WindowsServices" or ConfigDataType == "Software" or ConfigDataType =="Daemons") 
  | extend lowComputer = tolower(Computer) | summarize by lowComputer 
  | join (
@@ -303,7 +312,8 @@ ms.locfileid: "58755801"
        | where SCAgentChannel == "Direct"
        | extend lowComputer = tolower(Computer) | summarize by lowComputer, ComputerEnvironment
  ) on lowComputer
- | summarize count() by ComputerEnvironment | sort by ComputerEnvironment asc`
+ | summarize count() by ComputerEnvironment | sort by ComputerEnvironment asc
+```
 
 ## <a name="create-an-alert-when-data-collection-is-higher-than-expected"></a>Создание оповещения для превышенного объема сбора данных
 
@@ -330,7 +340,7 @@ ms.locfileid: "58755801"
 - Для параметра **Определение условия оповещения** укажите свою рабочую область Log Analytics в качестве целевого ресурса.
 - Для **критериев оповещения** укажите следующее:
    - для **названия сигнала** выберите значение **Пользовательский поиск по журналам**;
-   - **поисковому запросу** — `union withsource = $table Usage | where QuantityUnit == "MBytes" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true | extend Type = $table | summarize DataGB = sum((Quantity / 1024)) by Type | where DataGB > 100`;
+   - **Поисковый запрос** для `union withsource = $table Usage | where QuantityUnit == "MBytes" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true | extend Type = $table | summarize DataGB = sum((Quantity / 1024)) by Type | where DataGB > 100`
    - **логика оповещений** должна быть **основана на** *числе результатов*, а значение **условия** должно быть *больше* **порогового значения** *0*;
    - укажите **период времени** *1440* минут, а для **частоты оповещений** задайте каждые *60* минут, так как данные об использовании обновляются раз в час.
 - В разделе **Определение сведений об оповещении** задайте такие значения:
@@ -344,7 +354,7 @@ ms.locfileid: "58755801"
 - Для параметра **Определение условия оповещения** укажите свою рабочую область Log Analytics в качестве целевого ресурса.
 - Для **критериев оповещения** укажите следующее:
    - для **названия сигнала** выберите значение **Пользовательский поиск по журналам**;
-   - **поисковому запросу** — `union withsource = $table Usage | where QuantityUnit == "MBytes" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true | extend Type = $table | summarize EstimatedGB = sum(((Quantity * 8) / 1024)) by Type | where EstimatedGB > 100`;
+   - **Поисковый запрос** для `union withsource = $table Usage | where QuantityUnit == "MBytes" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true | extend Type = $table | summarize EstimatedGB = sum(((Quantity * 8) / 1024)) by Type | where EstimatedGB > 100`
    - **логика оповещений** должна быть **основана на** *числе результатов*, а значение **условия** должно быть *больше* **порогового значения** *0*;
    - укажите **период времени** *180* минут, а для **частоты оповещений** задайте каждые *60* минут, так как данные об использовании обновляются один раз в час.
 - В разделе **Определение сведений об оповещении** задайте такие значения:

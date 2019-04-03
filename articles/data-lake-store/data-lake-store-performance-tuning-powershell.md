@@ -4,19 +4,19 @@ description: Советы по повышению производительно
 services: data-lake-store
 documentationcenter: ''
 author: stewu
-manager: jhubbard
+manager: mtillman
 editor: cgronlun
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2018
 ms.author: stewu
-ms.openlocfilehash: 318f2b550e19f4b7f56a7b8cc592d34644dca644
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: 1c554b0eee844a632e6412b6f8a285c7a2573326
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56235608"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58885321"
 ---
 # <a name="performance-tuning-guidance-for-using-powershell-with-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для использования PowerShell с Azure Data Lake Storage 1-го поколения
 
@@ -94,9 +94,9 @@ ms.locfileid: "56235608"
 
 * **Ошибки регулирования**. При слишком высоком уровне параллелизма могут возникнуть ошибки регулирования. При этом необходимо уменьшить уровень параллелизма или обратиться к нам.
 
-## <a name="next-steps"></a>Дополнительная информация
-* [Использование Azure Data Lake Storage 1-го поколения для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md) 
-* [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
-* [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
-* [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
+## <a name="next-steps"></a>Дальнейшие действия
+* [Использовать Gen1 хранилища Озера данных Azure для потребностей больших данных](data-lake-store-data-scenarios.md) 
+* [Защита данных в поколение 1 хранилища Озера данных](data-lake-store-secure-data.md)
+* [Использование Azure Data Lake Analytics с Gen1 хранилища Озера данных](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Использование Azure HDInsight с Gen1 хранилища Озера данных](data-lake-store-hdinsight-hadoop-use-portal.md)
 

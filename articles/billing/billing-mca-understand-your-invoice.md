@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/19/2019
 ms.author: banders
-ms.openlocfilehash: e5dc8ac0716e194dd0949e2e270346ee338a792a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: ee6317f61f95b19effd64308b88f53c027582b63
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57839735"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58883015"
 ---
 # <a name="understand-terms-on-your-microsoft-customer-agreement-invoice"></a>Значение терминов в счете клиента соглашение Microsoft
 
@@ -49,7 +49,7 @@ You are invoiced on a monthly basis. You can find out which day of the month you
 | АБОНЕНТСКИЙ number |Необязательный номер заказа на покупку, присваиваемый вами для отслеживания |
 | Номер счета |Номер счета уникальный, созданный корпорацией Майкрософт, используется для отслеживания |
 | Дата выставления счета |Дата создания счета, обычно пяти до 12 дней после конца цикла выставления счетов. Вы можете проверить Дата счета в выставления счетов свойства профиля.|
-| Условия оплаты |Как вы платите за счет корпорации Майкрософт. *В течение 30 дней* означает, что оплата с помощью проверки или проводной передачи в течение 30 дней после выставления счета. |
+| Условия оплаты |Как вы платите за счет корпорации Майкрософт. *В течение 30 дней* означает, что плата взимается в течение 30 дней после выставления счета. |
 
 ### <a name="billing-summary"></a>Сводка по выставлению счетов
 

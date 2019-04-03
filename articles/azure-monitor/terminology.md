@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/18/2019
 ms.author: bwren
-ms.openlocfilehash: 3557aa4236904a3654d40337e391fbcaa5486894
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: 8f645f7d569546a8362d0149806a2b4636567fd0
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56430918"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58847989"
 ---
 # <a name="azure-monitor-naming-and-terminology-changes"></a>Изменения терминологии и именования Azure Monitor
 Недавно в Azure Monitor были внесены значительные изменения, а также произошло слияние различных служб, для того чтобы упростить мониторинг для клиентов Azure. В этой статье описываются недавние изменения имени и терминологии в документации Azure Monitor.
@@ -26,7 +26,7 @@ ms.locfileid: "56430918"
 Чтобы лучше описать службу Azure Monitor и ее различные компоненты после слияния различных служб в Azure Monitor, мы делаем следующий шаг, изменяя терминологию в нашей документации. 
 
 ### <a name="log-analytics"></a>Log Analytics
-Данные журнала Azure Monitor по-прежнему хранятся в рабочей области Log Analytics, собираются и анализируются той же службой, но мы меняем термин _Log Analytics_ во многих местах на _журналы Azure Monitor_. Этот термин отражает ее роль и обеспечивает лучшую согласованность [метрики в Azure Monitor](platform/data-collection.md).
+Данные журнала Azure Monitor по-прежнему хранятся в рабочей области Log Analytics, собираются и анализируются той же службой, но мы меняем термин _Log Analytics_ во многих местах на _журналы Azure Monitor_. Этот термин отражает ее роль и обеспечивает лучшую согласованность [метрики в Azure Monitor](platform/data-platform-metrics.md).
 
 Термин _log analytics_ теперь в первую очередь применяется к странице на портале Azure, которая используется для записи и выполнения запросов, а также для анализа данных журнала. Это функциональный эквивалент [обозревателя метрик](platform/metrics-charts.md), который является страницей на портале Azure, используемой для анализа данных метрик.
 
@@ -59,7 +59,7 @@ Log Analytics и Application Insights были объединены в Azure Mon
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [обзором Azure Monitor](overview.md), в котором описаны его различные компоненты и функции.
 - Дополнительные сведения о [перемещении портала OMS](../log-analytics/log-analytics-oms-portal-transition.md).

@@ -1,25 +1,25 @@
 ---
 title: Основные сведения о центре безопасности Azure для архитектуре решения Интернета вещей предварительной версии | Документация Майкрософт
 description: Дополнительные сведения о поток данных в центре безопасности Azure для службы Интернета вещей.
-services: ascforiot
+services: asc-for-iot
+ms.service: ascforiot
 documentationcenter: na
 author: mlottner
 manager: barbkess
 editor: ''
 ms.assetid: 2cf6a49b-5d35-491f-abc3-63ec24eb4bc2
-ms.service: ascforiot
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/24/2019
 ms.author: mlottner
-ms.openlocfilehash: d70be919fa829401b4a415db626a3cee0713753b
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: a0eb459391da65f8d0e2ae251809805924d07ad1
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58754983"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58862371"
 ---
 # <a name="azure-security-center-for-iot-architecture"></a>Центр безопасности Azure для архитектуры Интернета вещей
 
@@ -27,7 +27,7 @@ ms.locfileid: "58754983"
 
 > [!IMPORTANT]
 > Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Предварительная версия предоставляется без соглашения об уровне обслуживания. Мы не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="asc-for-iot-components"></a>ASC для компонентов Интернета вещей
 

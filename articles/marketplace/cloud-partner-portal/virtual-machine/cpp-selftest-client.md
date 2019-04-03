@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 6cfe9b61d9bbb088e827386b2195bba21333937e
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: ae01b0fb088035240e670c16d4d457d8abda1bfa
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58649092"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58848930"
 ---
 # <a name="create-a-self-test-client-to-pre-validate-an-azure-virtual-machine-image"></a>Создание клиента самопроверки для предварительной проверки образа виртуальной машины Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "58649092"
 API самопроверки содержит одну конечную точку, которая поддерживает только метод POST.  Она имеет следующую структуру:
 
 ```
-Uri:             https:\//isvapp.azurewebsites.net/selftest-vm
+Uri:             https://isvapp.azurewebsites.net/selftest-vm
 Method:          Post
 Request Header:  Content-Type: “application/json”
 Authorization:   “Bearer xxxx-xxxx-xxxx-xxxxx”
@@ -357,7 +357,7 @@ Response:
 
 ### <a name="to-create-and-get-a-token-using-c35"></a>Создание и получение маркера с помощью C#
 
-Чтобы получить через Auth0 маркеры для любых авторизованных приложений, выполните запрос POST к конечной точке [https://soamtenant.auth0.com/oauth/token](https://soamtenant.auth0.com/oauth/token) с полезными данными в следующем формате:
+Чтобы запросить Auth0 маркеры для каких-либо авторизованных приложений, выполните операцию POST с помощью https:\//soamtenant.auth0.com/oauth/token конечной точки с полезными данными в следующем формате:
 
 ```csharp
 string clientId = "Your Application Id";
@@ -380,7 +380,7 @@ var token = JObject.Parse(content)["access_token"];
 
 ### <a name="to-create-and-get-a-token-using-powershell"></a>Создание и получение маркера с помощью PowerShell
 
-Чтобы получить через Auth0 маркеры для любых авторизованных приложений, выполните запрос POST к конечной точке [https://soamtenant.auth0.com/oauth/token](https://soamtenant.auth0.com/oauth/token) с полезными данными в следующем формате:
+Чтобы запросить Auth0 маркеры для каких-либо авторизованных приложений, выполните операцию POST с помощью https:\//soamtenant.auth0.com/oauth/token конечной точки с полезными данными в следующем формате:
 
 ```powershell
 $clientId = "Application Id of AD Client APP";

@@ -1,31 +1,31 @@
 ---
 title: Часто задаваемые вопросы о центре безопасности Azure для Интернета вещей Preview | Документация Майкрософт
 description: Найдите ответы на часто задаваемые вопросы о центре безопасности Azure для службы и возможности Интернета вещей.
-services: ASCforiot
+services: asc-for-iot
+ms.service: ASCforiot
 documentationcenter: na
 author: mlottner
 manager: barbkess
 editor: ''
 ms.assetid: 97fda6c2-1ecb-491f-b48d-41788bd7e0d3
-ms.service: ASCforiot
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/25/2019
 ms.author: mlottner
-ms.openlocfilehash: dab30a03ff73664fde4e5377794d3ae00625af93
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: cd9e77e09e2a2fd5fe1108e98da028d26fc623c7
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58755329"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58863055"
 ---
 # <a name="azure-security-center-for-iot-frequently-asked-questions"></a>Центр безопасности Azure для Интернета вещей часто задаваемые вопросы  
 
 > [!IMPORTANT]
 > Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Предварительная версия предоставляется без соглашения об уровне обслуживания. Мы не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Статья содержит список часто задаваемых вопросов и ответов о центре безопасности Azure (ASC) для Интернета вещей. 
 

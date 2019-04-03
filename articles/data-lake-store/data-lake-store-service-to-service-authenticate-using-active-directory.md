@@ -1,27 +1,27 @@
 ---
-title: Аутентификация между службами в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory | Документы Майкрософт
+title: 'Проверки подлинности в службе: Поколение 1 хранилища Озера данных Azure с Azure Active Directory | Документация Майкрософт'
 description: Узнайте, как реализовать аутентификацию между службами в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory.
 services: data-lake-store
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
-ms.author: nitinme
-ms.openlocfilehash: 2ec5d469ba0708288881be3d905b492aa8aa4da6
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
-ms.translationtype: HT
+ms.author: twooley
+ms.openlocfilehash: a7fdcf396f586a65efa17e489d002f1c8847a193
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49956621"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58884998"
 ---
 # <a name="service-to-service-authentication-with-azure-data-lake-storage-gen1-using-azure-active-directory"></a>Аутентификация между службами в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory
 > [!div class="op_single_selector"]
 > * [Аутентификация пользователей](data-lake-store-end-user-authenticate-using-active-directory.md)
-> * [Аутентификация между службами](data-lake-store-service-to-service-authenticate-using-active-directory.md)
+> * [Взаимодействие между службами](data-lake-store-service-to-service-authenticate-using-active-directory.md)
 > 
 >  
 
@@ -34,10 +34,10 @@ Azure Data Lake Storage 1-го поколения (ADLS 1-го поколени�
 
 Из этой статьи вы узнаете, как создать **веб-приложение Azure AD для аутентификации между службами**. Инструкции по настройке приложения Azure AD для аутентификации пользователей см. в статье [Аутентификация пользователей в Data Lake Storage 1-го поколения с помощью Azure Active Directory](data-lake-store-end-user-authenticate-using-active-directory.md).
 
-## <a name="prerequisites"></a>Предварительные требования
-* Подписка Azure. Ознакомьтесь с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/).
+## <a name="prerequisites"></a>Технические условия
+* Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
-## <a name="step-1-create-an-active-directory-web-application"></a>Шаг 1. Создание веб-приложения Active Directory
+## <a name="step-1-create-an-active-directory-web-application"></a>Шаг 1. Создание веб-приложения Active Directory
 
 Создайте и настройте веб-приложение Azure AD для аутентификации между службами в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory. Инструкции см. в разделе [Создание приложения Azure AD](../active-directory/develop/howto-create-service-principal-portal.md).
 
@@ -45,14 +45,14 @@ Azure Data Lake Storage 1-го поколения (ADLS 1-го поколени�
 
 ![Создание веб-приложения](./media/data-lake-store-authenticate-using-active-directory/azure-active-directory-create-web-app.png "Создание веб-приложения")
 
-## <a name="step-2-get-application-id-authentication-key-and-tenant-id"></a>Шаг 2. Получение идентификатора приложения, ключа проверки подлинности и идентификатора клиента
+## <a name="step-2-get-application-id-authentication-key-and-tenant-id"></a>Шаг 2. Получение идентификатора приложения, ключ проверки подлинности и идентификатор клиента
 При программном входе необходимо указывать идентификатор приложения. Если приложение работает с использованием собственных учетных данных, потребуется также ключ проверки подлинности.
 
 * Инструкции о том, как получить идентификатор приложения и ключ проверки подлинности (который также называется секретом клиента) для приложения, см. в разделе [Получение идентификатора приложения и ключа проверки подлинности](../active-directory/develop/howto-create-service-principal-portal.md#get-application-id-and-authentication-key).
 
 * Инструкции о том, как получить код клиента, см. в разделе [Получение идентификатора клиента](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-id).
 
-## <a name="step-3-assign-the-azure-ad-application-to-the-azure-data-lake-storage-gen1-account-file-or-folder"></a>Шаг 3. Назначение приложения Azure AD файлу или папке в учетной записи Azure Data Lake Storage 1-го поколения
+## <a name="step-3-assign-the-azure-ad-application-to-the-azure-data-lake-storage-gen1-account-file-or-folder"></a>Шаг 3. Назначение приложения Azure AD Gen1 хранилища Озера данных Azure учетной записи файла или папки
 
 
 1. Выполните вход на [портал Azure](https://portal.azure.com). Откройте учетную запись Data Lake Storage 1-го поколения, которую необходимо связать с ранее созданным приложением Azure Active Directory.
@@ -85,7 +85,7 @@ Azure Data Lake Storage 1-го поколения (ADLS 1-го поколени�
 > 
 >
 
-## <a name="step-4-get-the-oauth-20-token-endpoint-only-for-java-based-applications"></a>Шаг 4. Получение конечной точки маркера OAuth 2.0 (только для приложений на основе Java)
+## <a name="step-4-get-the-oauth-20-token-endpoint-only-for-java-based-applications"></a>Шаг 4. Получение конечной точки маркера OAuth 2.0 (только для приложений на основе Java)
 
 1. Войдите на [портал Azure](https://portal.azure.com) и щелкните "Active Directory" в области слева.
 
@@ -99,12 +99,12 @@ Azure Data Lake Storage 1-го поколения (ADLS 1-го поколени�
 
     ![Конечная точка маркера OAuth](./media/data-lake-store-authenticate-using-active-directory/oauth-token-endpoint-1.png "OAuth token endpoint")   
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье мы создали веб-приложение Azure AD и собрали сведения, необходимые в клиентских приложениях, создаваемых с помощью пакетов SDK для .NET, Java, Python, REST API и др. Из следующих статей вы узнаете, как с помощью собственного веб-приложения Azure AD проходить аутентификацию в Data Lake Storage 1-го поколения, а затем выполнить другие операции в хранилище.
 
-* [Аутентификация между службами в Data Lake Storage 1-го поколения с помощью Java](data-lake-store-service-to-service-authenticate-java.md)
-* [Аутентификация между службами в Data Lake Storage 1-го поколения с помощью пакета SDK для .NET](data-lake-store-service-to-service-authenticate-net-sdk.md)
-* [Аутентификация между службами в Data Lake Storage 1-го поколения с помощью Python](data-lake-store-service-to-service-authenticate-python.md)
-* [Аутентификация между службами в Data Lake Storage 1-го поколения с помощью REST API](data-lake-store-service-to-service-authenticate-rest-api.md)
+* [Служба служба проверки подлинности с Gen1 хранилища Озера данных с помощью Java](data-lake-store-service-to-service-authenticate-java.md)
+* [Служба служба проверки подлинности с Gen1 хранилища Озера данных с помощью пакета SDK для .NET](data-lake-store-service-to-service-authenticate-net-sdk.md)
+* [Служба служба проверки подлинности с Gen1 хранилища Озера данных с помощью Python](data-lake-store-service-to-service-authenticate-python.md)
+* [Служба служба проверки подлинности с Gen1 хранилища Озера данных с помощью REST API](data-lake-store-service-to-service-authenticate-rest-api.md)
 
 

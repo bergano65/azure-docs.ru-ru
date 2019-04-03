@@ -3,8 +3,8 @@ title: Безопасность сети в Azure Data Lake Storage 1-го по�
 description: Общие сведения об интеграции с виртуальной сети с Azure Data Lake Storage 1-го поколения
 services: data-lake-store
 documentationcenter: ''
-author: nitinme
-manager: jhubbard
+author: twooley
+manager: mtillman
 editor: cgronlun
 ms.service: data-lake-store
 ms.devlang: na
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 10/09/2018
 ms.author: elsung
-ms.openlocfilehash: 362129b4ccd0e46b6ffc682e7232c62c196ef334
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: 7d6c826df2a509ffb378809e3682073bd5ab1301
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58652135"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58880599"
 ---
 # <a name="virtual-network-integration-for-azure-data-lake-storage-gen1"></a>Интеграция с виртуальной сетью для Azure Data Lake Storage 1-го поколения
 

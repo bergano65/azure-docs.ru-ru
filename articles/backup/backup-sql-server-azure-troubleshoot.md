@@ -8,18 +8,18 @@ ms.service: backup
 ms.topic: article
 ms.date: 03/13/2019
 ms.author: anuragm
-ms.openlocfilehash: e5565e257e511203043c84e499712cc6a0a78c3f
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: d8cbae679552cce8df29410ad8a477801abd4ff1
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58286022"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58847454"
 ---
 # <a name="troubleshoot-back-up-sql-server-on-azure"></a>Устранении неполадок резервного копирования SQL Server в Azure
 
 В этой статье приведены сведения об устранении неполадок для защиты виртуальных машин SQL Server в Azure (предварительная версия).
 
-## <a name="feature-consideration-and-limitations"></a>Функция рекомендации и ограничения
+## <a name="feature-consideration-and-limitations"></a>Рекомендации и ограничения касательно функций
 
 Чтобы просмотреть рассмотрения функцию, см. в статье [резервного копирования о SQL Server на виртуальных машинах Azure](backup-azure-sql-database.md#feature-consideration-and-limitations).
 
@@ -98,12 +98,18 @@ ms.locfileid: "58286022"
 |---|---|---|
 | Restore failed as the database could not be brought offline. (Не удалось выполнить восстановление, так как база данных не может быть отключена.) | При восстановлении целевая база данных должна быть отключена. Azure Backup не может переносить эти данные в автономном режиме. | Используйте дополнительные сведения в меню ошибок портала Azure, чтобы сузить круг возможных причин проблемы. Дополнительные сведения см. в [документации по SQL](https://docs.microsoft.com/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms). |
 
-
 ###  <a name="usererrorcannotfindservercertificatewiththumbprint"></a>UserErrorCannotFindServerCertificateWithThumbprint
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | Cannot find the server certificate with thumbprint on the target. (Не удается найти сертификат сервера с отпечатком на целевом сервере.) | База данных Master в экземпляре среды назначения не имеет действительного отпечатка шифрования. | Импортируйте действительный отпечаток сертификата, используемый в исходном экземпляре, в целевой экземпляр. |
+
+### <a name="usererrorrestorenotpossiblebecauselogbackupcontainsbulkloggedchanges"></a>UserErrorRestoreNotPossibleBecauseLogBackupContainsBulkLoggedChanges
+
+| Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
+|---|---|---|
+| Для восстановления резервной копии журнала содержит изменения с неполным протоколированием. Он не может использоваться для остановки в произвольный момент времени согласно рекомендациям по SQL. | Если база данных находится в режиме восстановления журнала массового, данные между транзакции с неполным протоколированием и далее журнала транзакций невозможно восстановить. | Выберите другую точку во времени для восстановления. [Подробнее](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms186229(v=sql.105))
+
 
 ## <a name="registration-failures"></a>Ошибки регистрации
 
