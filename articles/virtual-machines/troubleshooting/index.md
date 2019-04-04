@@ -1,19 +1,24 @@
 ---
 layout: LandingPage
 description: Сведения об устранении неполадок с развертыванием виртуальных машин.
-title: "Документация по устранению неполадок с виртуальными машинами Azure\_| Документация Майкрософт"
+title: Документация по устранению неполадок с виртуальными машинами Azure | Документация Майкрософт
 services: virtual-machines
 author: genlin
 manager: jeconnoc
-ms.assetid: null
+ms.assetid: ''
 ms.service: virtual-machines
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: landing-page
 ms.date: 10/3/2018
 ms.author: genli
+ms.openlocfilehash: 1fdf195e5d02c9264bf24d9cf3ac8b1a47ed850b
+ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56878036"
 ---
-
 # <a name="troubleshooting-azure-virtual-machines"></a>Устранение неполадок с виртуальными машинами Azure
 
 - Ошибки выделения ресурсов

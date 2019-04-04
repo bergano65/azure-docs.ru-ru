@@ -1,6 +1,6 @@
 ---
 title: Документация по Azure Power BI Embedded. Руководства и справочник по API | Документация Майкрософт
-description: "Узнайте, как внедрять в приложения визуализации данных и интерактивные отчеты Power\_BI. Руководства, справочники по API и другие документы."
+description: Узнайте, как внедрять в приложения визуализации данных и интерактивные отчеты Power BI. Руководства, справочники по API и другие документы.
 services: power-bi-embedded
 author: markingmyname
 ms.author: maghan
@@ -9,8 +9,13 @@ layout: LandingPage
 ms.service: power-bi-embedded
 ms.topic: landing-page
 ms.date: 07/31/2018
+ms.openlocfilehash: 8c7ee917234891123392a7954bf704e1ff2a70e1
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58447817"
 ---
-
 # <a name="power-bi-embedded-documentation"></a>Документация по Power BI Embedded
 
 Узнайте, как добавлять в приложения визуализации данных и интерактивные отчеты с помощью Power BI Embedded. В руководствах, справочниках по API и другой документации показано, как можно легко внедрять в приложения отчеты и панели мониторинга Power BI.
