@@ -1,6 +1,6 @@
 ---
-title: Определение технического профиля OpenId Connect в пользовательской политике в Azure Active Directory B2C | Документация Майкрософт
-description: Определите технический профиль OpenId Connect в пользовательской политике в Azure Active Directory B2C.
+title: Определения технического профиля на OpenId Connect в настраиваемую политику в Azure Active Directory B2C | Документация Майкрософт
+description: Определите Технический профиль на OpenId Connect в настраиваемую политику в Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
 manager: daveba
@@ -10,14 +10,14 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 730d32fd5b9451c2b4edfe0fb1e50c06c2156815
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: a13ca362bf08b86297641061992f0820f0b624c5
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55159477"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916773"
 ---
-# <a name="define-a-openid-connect-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля OpenId Connect в пользовательской политике в Azure Active Directory B2C
+# <a name="define-an-openid-connect-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определения технического профиля на OpenId Connect в настраиваемую политику Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
@@ -73,7 +73,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 
 ## <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательно | ОПИСАНИЕ |
+| Атрибут | Обязательно для заполнения | ОПИСАНИЕ |
 | --------- | -------- | ----------- |
 | client_id | Yes | Идентификатор приложения поставщика удостоверений. |
 | IdTokenAudience | Нет  | Аудитория id_token. Если указан, Azure AD B2C проверяет, содержится ли маркер в утверждении, возвращаемом поставщиком удостоверений, и соответствует ли он указанному. |
@@ -92,7 +92,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 
 Элемент **CryptographicKeys** содержит следующий атрибут:
 
-| Атрибут | Обязательно | ОПИСАНИЕ |
+| Атрибут | Обязательно для заполнения | ОПИСАНИЕ |
 | --------- | -------- | ----------- |
 | client_secret | Yes | Секрет клиента приложения поставщика удостоверений. Ключ шифрования является обязательным, только если для метаданных **response_types** задано значение `code`. В этом случае Azure AD B2C выполняет другой вызов для обмена кода авторизации на маркер доступа. Если для метаданных задано значение `id_token`, можно опустить криптографический ключ.  |  
 
@@ -104,9 +104,9 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 
 Примеры:
 
-- [Azure Active Directory B2C. Добавление учетной записи Майкрософт (MSA) в качестве поставщика удостоверений с помощью пользовательских политик](active-directory-b2c-custom-setup-msa-idp.md)
-- [Azure Active Directory B2C. Выполнение входа с помощью учетных записей Azure AD](active-directory-b2c-setup-aad-custom.md)
-- [Azure Active Directory B2C. Предоставление пользователям возможности входить в мультитенантный поставщик удостоверений Azure AD с помощью пользовательских политик](active-directory-b2c-setup-commonaad-custom.md)
+- [Добавить учетную запись Майкрософт (MSA) в качестве поставщика удостоверений с помощью пользовательских политик](active-directory-b2c-custom-setup-msa-idp.md)
+- [Вход с помощью учетных записей Azure AD](active-directory-b2c-setup-aad-custom.md)
+- [Пользователи должны входить поставщик удостоверений несколькими клиентами Azure AD, с помощью пользовательских политик](active-directory-b2c-setup-commonaad-custom.md)
 
  
 

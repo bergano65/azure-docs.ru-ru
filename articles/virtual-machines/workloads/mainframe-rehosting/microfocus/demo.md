@@ -1,21 +1,18 @@
 ---
-title: Настройка BankDemo CICS Micro фокус для 4.0 Micro фокус Enterprise Developer в Azure | Документация Майкрософт
-description: Запустите приложение BankDemo Micro фокус в Azure, чтобы узнать, как использовать Micro Focus Enterprise Server и Enterprise Developer.
-services: virtual-machines-linux
-documentationcenter: ''
-author: njray
-manager: edprice
-editor: edprice
-tags: ''
-keywords: ''
-ms.openlocfilehash: 733649c2b7f27ec5e80cb77adba708a158fb2c22
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+title: Настройка BankDemo CICS Micro фокус для Micro фокус Enterprise Developer 4.0 на виртуальных машинах Azure
+description: Запустите приложение BankDemo Micro фокус на виртуальных машинах Azure (ВМ), чтобы узнать, как использовать Micro Focus Enterprise Server и Enterprise Developer.
+author: sread
+ms.date: 04/02/2019
+ms.topic: article
+ms.service: multiple
+ms.openlocfilehash: be94cf0367f93f14249239fce5e09c8635a01136
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58099473"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58892489"
 ---
-# <a name="set-up-micro-focus-cics-bankdemo-for-micro-focus-enterprise-developer-40-in-azure"></a>Настройка BankDemo CICS Micro фокус для 4.0 Micro фокус Enterprise Developer в Azure
+# <a name="set-up-micro-focus-cics-bankdemo-for-micro-focus-enterprise-developer-40-on-azure"></a>Настройка BankDemo CICS Micro фокус для 4.0 Micro фокус Enterprise Developer в Azure
 
 При настройке Micro фокус Enterprise Server 4.0 и 4.0 Enterprise Developer в Azure, вы можете проверить развертывания рабочих нагрузок IBM z/OS. В этой статье показано, как настроить BankDemo CICS, пример приложения, входящий в состав Enterprise Developer.
 
@@ -23,7 +20,7 @@ CICs — это система управления сведения клиен�
 
 ## <a name="prerequisites"></a>Технические условия
 
-- Виртуальная машина с [Enterprise Developer](set-up-micro-focus-on-azure.md). Имейте в виду, что корпоративный разработчик имеет полный экземпляр Enterprise Server на нем для целей разработки и тестирования. Это экземпляр сервера Enterprise, используемого для получения демоверсии.
+- Виртуальная машина с [Enterprise Developer](set-up-micro-focus-azure.md). Имейте в виду, что корпоративный разработчик имеет полный экземпляр Enterprise Server на нем для целей разработки и тестирования. Это экземпляр сервера Enterprise, используемого для получения демоверсии.
 
 - [Выпуск SQL Server 2017 Express](https://www.microsoft.com/sql-server/sql-server-editions-express). Скачайте и установите его на виртуальной Машине Enterprise Developer. Enterprise Server требуется база данных для управления областей CICS и BankDemo приложение также использует базу данных SQL Server с именем BANKDEMO. В этой демонстрации предполагается, что вы используете SQL Server Express для обеих баз данных. При установке выберите базовой установки.
 
@@ -269,9 +266,10 @@ CICs — это система управления сведения клиен�
 
 Поздравляем! Теперь при запуске приложения CICS в Azure с помощью Micro Focus Enterprise Server.
 
-## <a name="learn-more"></a>Подробнее
+## <a name="next-steps"></a>Дальнейшие действия
 
+- [Запуск Enterprise Server в контейнерах Docker в Azure](run-enterprise-server-container.md)
 - [Переход с мэйнфреймов - портала](https://blogs.msdn.microsoft.com/azurecat/2018/11/16/mainframe-migration-to-azure-portal/)
 - [Виртуальные машины](https://docs.microsoft.com/azure/virtual-machines/linux/overview)
 - [Устранение неполадок](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/)
-- [Мифы о больших ЭВМ к миграции в Azure](https://azure.microsoft.com/resources/demystifying-mainframe-to-azure-migration/en-us/)
+- [Основные сведения о переносе приложений для мейнфреймов в Azure](https://azure.microsoft.com/resources/demystifying-mainframe-to-azure-migration/en-us/)

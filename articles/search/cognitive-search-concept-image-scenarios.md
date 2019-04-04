@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 9e4b9d8cf3300f977824f95aeb14a614d8897abd
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: f1491d6b87816dfc70e94e01653567bda101d045
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56430273"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916977"
 ---
 #  <a name="how-to-process-and-extract-information-from-images-in-cognitive-search-scenarios"></a>Обработка и извлечение информации из изображений в сценариях когнитивного поиска
 
@@ -34,7 +34,7 @@ ms.locfileid: "56430273"
 
 | Параметр конфигурации | ОПИСАНИЕ |
 |--------------------|-------------|
-| imageAction   | Установите значение none, чтобы не выполнять какие-либо действия при обнаружении внедренных изображений или файлов изображений. <br/>Установите значение generateNormalizedImages, чтобы создать массив нормализованных изображений в рамках открытия документа.<br/>Установите значение generateNormalizedImagePerPage, чтобы создать массив нормализованных изображений, в котором для PDF-файлов источника данных каждая из страниц отображается как одно выходное изображение.  Функциональность ничем не отличается от значения generateNormalizedImages в типах файлов, отличных от PDF.<br/>Для любого значения параметра, которое отличается от "none", изображения будут отображаться в поле *normalized_images*. <br/>Значение по умолчанию — none. Эта конфигурация используется только для источников данных BLOB-объектов, если для параметра dataToExtract задано значение contentAndMetadata. |
+| imageAction   | Установите значение none, чтобы не выполнять какие-либо действия при обнаружении внедренных изображений или файлов изображений. <br/>Установите значение generateNormalizedImages, чтобы создать массив нормализованных изображений в рамках открытия документа.<br/>Установите значение generateNormalizedImagePerPage, чтобы создать массив нормализованных изображений, в котором для PDF-файлов источника данных каждая из страниц отображается как одно выходное изображение.  Функциональность ничем не отличается от значения generateNormalizedImages в типах файлов, отличных от PDF.<br/>Для любого значения параметра, которое отличается от "none", изображения будут отображаться в поле *normalized_images*. <br/>Значение по умолчанию — none. Эта конфигурация используется только для источников данных BLOB-объектов, если для параметра dataToExtract задано значение contentAndMetadata. <br/>Более 1000 изображений будут извлечены из данного документа. Если существует более чем на 1000 изображений в документе, будут извлекаться первые 1000 и будет создано предупреждение. |
 |  normalizedImageMaxWidth | Максимальная ширина (в пикселях) для созданного нормализованного изображения. Значение по умолчанию — 2000.|
 |  normalizedImageMaxHeight | Максимальная высота (в пикселях) для созданных нормализованных изображений. Значение по умолчанию — 2000.|
 
@@ -109,7 +109,7 @@ ms.locfileid: "56430273"
 
 Типичный сценарий предусматривает создание одной строки, содержащей все содержимое файла (текст и текст, полученный из изображения), следующим образом:  
 
-1. [Извлеките normalized_images](#get-normalized-images).
+1. [Извлеките normalized_images](#get-normalized-images)
 1. Запустите навык OCR, используя `"/document/normalized_images"` как входные данные.
 1. Объедините текстовое представление и изображения с необработанным текстом, извлеченные из файла. Можно использовать навык [слияния текста](cognitive-search-skill-textmerger.md) для объединения обоих фрагментов текста в одну большую строку.
 
@@ -219,8 +219,8 @@ ms.locfileid: "56430273"
 
 ## <a name="see-also"></a>См. также
 + [Создание индексатора (REST)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
-+ [Анализ навыков изображения](cognitive-search-skill-image-analysis.md)
++ [Анализ изображения навыков](cognitive-search-skill-image-analysis.md)
 + [Навык OCR](cognitive-search-skill-ocr.md)
-+ [Навык объединения текста](cognitive-search-skill-textmerger.md)
-+ [Определение набора навыков](cognitive-search-defining-skillset.md)
-+ [Сопоставление обогащенных полей](cognitive-search-output-field-mapping.md)
++ [Текст слияния навыков](cognitive-search-skill-textmerger.md)
++ [Как определить набор навыков](cognitive-search-defining-skillset.md)
++ [Как сопоставить Обогащенные поля](cognitive-search-output-field-mapping.md)

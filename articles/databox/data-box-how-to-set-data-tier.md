@@ -8,18 +8,21 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 01/10/2019
 ms.author: alkohli
-ms.openlocfilehash: bb1d6c5bd51fcfe35127c2f6d8dd6a80b727c45f
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 44fa81ddf6b0892c6d900fd065589b3d6ac5a0bd
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58517153"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905568"
 ---
 # <a name="use-azure-data-box-to-send-data-to-appropriate-azure-storage-blob-tier"></a>Использование Azure Data Box для отправки данных на соответствующий уровень большого двоичного объекта в службе хранилища Azure
 
 Служба Azure Data Box перемещает большие объемы данных в Azure, отправляя вам специальное устройство хранения. Заполните устройство данными и верните его. Данные из Data Box отправляются на уровень хранилища по умолчанию, связанный с учетной записью хранения. Затем вы можете переместить данные на другой уровень хранилища.
 
 В этой статье описывается, как отправленные на Data Box данные можно переместить на горячий, холодный или архивный уровень большого двоичного объекта.  
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="choose-the-correct-storage-tier-for-your-data"></a>Выбор правильного уровня хранилища для данных
 
@@ -58,7 +61,7 @@ ms.locfileid: "58517153"
 
 2. Войдите в Azure PowerShell. 
 
-   `Login-AzureRmAccount`  
+   `Login-AzAccount`  
 
 3. Определите переменные для учетной записи хранения, ключа доступа, контейнера и контекста хранилища.
 
@@ -66,12 +69,12 @@ ms.locfileid: "58517153"
     $StorageAccountName = "<enter account name>"
     $StorageAccountKey = "<enter account key>"
     $ContainerName = "<enter container name>"
-    $ctx = New-AzureStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
+    $ctx = New-AzStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
     ```
 
 4. Получите все большие двоичные объекты в контейнере.
 
-    `$blobs = Get-AzureStorageBlob -Container "<enter container name>" -Context $ctx`
+    `$blobs = Get-AzStorageBlob -Container "<enter container name>" -Context $ctx`
  
 5. Настроите архивный уровень для всех больших двоичных объектов в контейнере.
 
@@ -91,7 +94,7 @@ ms.locfileid: "58517153"
     Major  Minor  Build  Revision
     -----  -----  -----  --------
     5      1      17763  134
-    PS C:\WINDOWS\system32> Login-AzureRmAccount
+    PS C:\WINDOWS\system32> Login-AzAccount
 
     Account          : gus@contoso.com
     SubscriptionName : MySubscription
@@ -102,8 +105,8 @@ ms.locfileid: "58517153"
     PS C:\WINDOWS\system32> $StorageAccountName = "mygpv2storacct"
     PS C:\WINDOWS\system32> $StorageAccountKey = "mystorageacctkey"
     PS C:\WINDOWS\system32> $ContainerName = "test"
-    PS C:\WINDOWS\system32> $ctx = New-AzureStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
-    PS C:\WINDOWS\system32> $blobs = Get-AzureStorageBlob -Container "test" -Context $ctx
+    PS C:\WINDOWS\system32> $ctx = New-AzStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
+    PS C:\WINDOWS\system32> $blobs = Get-AzStorageBlob -Container "test" -Context $ctx
     PS C:\WINDOWS\system32> Foreach ($blob in $blobs) {
     >> $blob.ICloudBlob.SetStandardBlobTier("Archive")
     >> }

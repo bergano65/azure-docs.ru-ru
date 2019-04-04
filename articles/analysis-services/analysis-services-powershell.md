@@ -8,12 +8,12 @@ ms.topic: reference
 ms.date: 12/19/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 177d74a54e4ab4de698cbb63091656cc8b584e2b
-ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
+ms.openlocfilehash: 1f9c30f1c914f6c8d42967e014d967ba0d5b85cc
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "57010690"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58893849"
 ---
 # <a name="manage-azure-analysis-services-with-powershell"></a>Управление службами Azure Analysis Services с помощью PowerShell
 
@@ -36,14 +36,14 @@ ms.locfileid: "57010690"
 |Командлет|ОПИСАНИЕ| 
 |------------|-----------------| 
 |[Get-AzAnalysisServicesServer](/powershell/module/az.analysisservices/get-azanalysisservicesserver)|Возвращает сведения об экземпляре сервера.|  
-|[New-AzAnalysisServicesServer](/powershell/module/az.analysisservices/new-azanalysisservicesserver)|Создает экземпляр сервера.|   
+|[Новый AzAnalysisServicesServer](/powershell/module/az.analysisservices/new-azanalysisservicesserver)|Создает экземпляр сервера.|   
 |[Новый AzAnalysisServicesFirewallConfig](/powershell/module/az.analysisservices/new-azanalysisservicesfirewallconfig)|Создает настройки брандмауэра служб Analysis Services.|   
-|[New-AzAnalysisServicesFirewallRule](/powershell/module/az.analysisservices/new-azanalysisservicesfirewallrule)|Создает правило брандмауэра служб Analysis Services.|   
+|[Новый AzAnalysisServicesFirewallRule](/powershell/module/az.analysisservices/new-azanalysisservicesfirewallrule)|Создает правило брандмауэра служб Analysis Services.|   
 |[Remove-AzAnalysisServicesServer](/powershell/module/az.analysisservices/remove-azanalysisservicesserver)|Удаляет экземпляр сервера.|  
 |[Resume-AzAnalysisServicesServer](/powershell/module/az.analysisservices/resume-azanalysisservicesserver)|Возобновляет работу экземпляра сервера.|  
 |[Приостановка AzAnalysisServicesServer](/powershell/module/az.analysisservices/suspend-azanalysisservicesserver)|Приостанавливает работу экземпляра сервера.| 
 |[Set-AzAnalysisServicesServer](/powershell/module/az.analysisservices/set-azanalysisservicesserver)|Изменяет экземпляр сервера.|   
-|[Test-AzAnalysisServicesServer](/powershell/module/az.analysisservices/test-azanalysisservicesserver)|Проверяет существование экземпляра сервера.| 
+|[AzAnalysisServicesServer теста](/powershell/module/az.analysisservices/test-azanalysisservicesserver)|Проверяет существование экземпляра сервера.| 
 
 ## <a name="server-management-operations"></a>Операции управления сервером
 
@@ -51,9 +51,9 @@ ms.locfileid: "57010690"
 
 |Командлет|ОПИСАНИЕ| 
 |------------|-----------------| 
-|[Add-AzAnalysisServicesAccount](/powershell/module/az.analysisservices/add-AzAnalysisServicesaccount)|Добавляет учетную запись, прошедшую аутентификацию и используемую для запросов командлета к серверу Azure Analysis Services.| 
+|[Добавить AzAnalysisServicesAccount](/powershell/module/az.analysisservices/add-AzAnalysisServicesaccount)|Добавляет учетную запись, прошедшую аутентификацию и используемую для запросов командлета к серверу Azure Analysis Services.| 
 |[AzAnalysisServicesInstance экспорта](/powershell/module/az.analysisservices/export-AzAnalysisServicesinstancelog)|Экспорт журналов из экземпляра сервера служб Analysis Services в текущего зарегистрированного в среде как указано в команде Add-AzAnalysisServicesAccount|  
-|[Restart-AzAnalysisServicesInstance](/powershell/module/az.analysisservices/restart-AzAnalysisServicesinstance)|Перезапускает экземпляр сервера служб Analysis Services в среде выполнившего вход; указанный в команде Add-AzAnalysisServicesAccount.|  
+|[Перезапуск AzAnalysisServicesInstance](/powershell/module/az.analysisservices/restart-AzAnalysisServicesinstance)|Перезапускает экземпляр сервера служб Analysis Services в среде выполнившего вход; указанный в команде Add-AzAnalysisServicesAccount.|  
 |[AzAnalysisServicesInstance синхронизации](/powershell/module/az.analysisservices/restart-AzAnalysisServicesinstance)|Синхронизирует указанной базы данных на указанном экземпляре сервера служб Analysis Services ко всем экземплярам горизонтальное масштабирование запросов в текущего зарегистрированного в среде как указано в команде Add-AzAnalysisServicesAccount|  
 
 ## <a name="database-operations"></a>Операции с базой данных
@@ -66,19 +66,19 @@ ms.locfileid: "57010690"
 |Командлет|ОПИСАНИЕ|
 |------------|-----------------| 
 |[Add-RoleMember](https://docs.microsoft.com/powershell/module/sqlserver/Add-RoleMember)|Добавление участника в роль базы данных.| 
-|[Backup-ASDatabase](https://docs.microsoft.com/powershell/module/sqlserver/backup-asdatabase)|Архивация базы данных Analysis Services.|  
+|[BACKUP-ASDatabase](https://docs.microsoft.com/powershell/module/sqlserver/backup-asdatabase)|Архивация базы данных Analysis Services.|  
 |[Remove-RoleMember](https://docs.microsoft.com/powershell/module/sqlserver/remove-rolemember)|Удаление участника из роли базы данных.|   
 |[Invoke-ASCmd](https://docs.microsoft.com/powershell/module/sqlserver/invoke-ascmd)|Выполнение сценария TMSL.|
-|[Invoke-ProcessASDatabase](https://docs.microsoft.com/powershell/module/sqlserver/invoke-processasdatabase)|Обработка базы данных.|  
+|[Invoke ProcessASDatabase](https://docs.microsoft.com/powershell/module/sqlserver/invoke-processasdatabase)|Обработка базы данных.|  
 |[Invoke-ProcessPartition](https://docs.microsoft.com/powershell/module/sqlserver/invoke-processpartition)|Обработка секции.| 
 |[Invoke-ProcessTable](https://docs.microsoft.com/powershell/module/sqlserver/invoke-processtable)|Обработка таблицы.|  
 |[Merge-Partition](https://docs.microsoft.com/powershell/module/sqlserver/merge-partition)|Объединение секции.|  
-|[Restore-ASDatabase](https://docs.microsoft.com/powershell/module/sqlserver/restore-asdatabase)|Восстановление базы данных Analysis Services.| 
+|[RESTORE-ASDatabase](https://docs.microsoft.com/powershell/module/sqlserver/restore-asdatabase)|Восстановление базы данных Analysis Services.| 
   
 
 ## <a name="related-information"></a>Связанные сведения
 
-* [Скачивание модуля PowerShell SQL Server](https://docs.microsoft.com/sql/ssms/download-sql-server-ps-module)   
+* [Загрузка модуля PowerShell для SQL Server](https://docs.microsoft.com/sql/ssms/download-sql-server-ps-module)   
 * [Скачивание SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)   
 * [Модуль SqlServer в коллекции PowerShell](https://www.powershellgallery.com/packages/SqlServer)    
-* [Tabular Model Programming for Compatibility Level 1200 and higher](https://msdn.microsoft.com/library/mt712541.aspx) (Программирование табличной модели для уровня совместимости 1200 и более высокого)
+* [Программирование табличных моделей с уровнем совместимости 1200 и выше](/sql/analysis-services/tabular-model-programming-compatibility-level-1200/tabular-model-programming-for-compatibility-level-1200)

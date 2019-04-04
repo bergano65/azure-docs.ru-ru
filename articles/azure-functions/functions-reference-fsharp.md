@@ -12,12 +12,12 @@ ms.devlang: fsharp
 ms.topic: reference
 ms.date: 10/09/2018
 ms.author: syclebsc
-ms.openlocfilehash: e7e4e898142d6f9d1a93e91c1f1476ff81fc7d3c
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 981ffce34c56f4becee2ed0c72da72baa220e395
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56734665"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58894361"
 ---
 # <a name="azure-functions-f-developer-reference"></a>Справочник разработчика F# по Функциям Azure
 
@@ -115,7 +115,7 @@ let Run(req: HttpRequestMessage) =
 ```
 
 ## <a name="cancellation-token"></a>Токен отмены
-Если функция должна правильно обрабатывать завершение работы, ей можно присвоить аргумент [`CancellationToken`](https://msdn.microsoft.com/library/system.threading.cancellationtoken.aspx). При этом можно использовать `async`. Например:
+Если функция должна правильно обрабатывать завершение работы, ей можно присвоить аргумент [`CancellationToken`](/dotnet/api/system.threading.cancellationtoken). При этом можно использовать `async`. Например:
 
 ```fsharp
 let Run(req: HttpRequestMessage, token: CancellationToken)
@@ -285,18 +285,18 @@ let mylog(log: ILogger, text: string) =
 Пути, передаваемые в директиве `#load`, определены относительно расположения вашего файла `.fsx`.
 
 * `#load "logger.fsx"` загружает файл, расположенный в папке функции.
-* `#load "package\logger.fsx"` загружает файл, расположенный в папке `package`, которая содержится в папке функции.
-* `#load "..\shared\mylogger.fsx"` загружает файл, расположенный в папке `shared` на том же уровне, что и папка функции, то есть непосредственно в разделе `wwwroot`.
+* `#load "package\logger.fsx"` загружает файл, расположенный в `package` папку в папке функции.
+* `#load "..\shared\mylogger.fsx"` загружает файл, расположенный в `shared` папку на том же уровне, что и папка функции, то есть непосредственно под `wwwroot`.
 
 Директива `#load` работает только с файлами `.fsx` (скрипт F#), а не с файлами `.fs`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Для получения дополнительных сведений см. следующие ресурсы:
 
-* [Руководство по F#](/dotnet/articles/fsharp/index)
-* [Best Practices for Azure Functions](functions-best-practices.md) (Рекомендации по Функциям Azure)
+* [F#Руководство по](/dotnet/articles/fsharp/index)
+* [Рекомендации по Функциям Azure](functions-best-practices.md)
 * [Справочник разработчика по функциям Azure](functions-reference.md)
-* [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
-* [Тестирование Функций Azure](functions-test-a-function.md)
-* [Масштабирование Функций Azure](functions-scale.md)
+* [Триггеры функций Azure и привязки](functions-triggers-bindings.md)
+* [Тестирование функций Azure](functions-test-a-function.md)
+* [Масштабирование функций Azure](functions-scale.md)
 

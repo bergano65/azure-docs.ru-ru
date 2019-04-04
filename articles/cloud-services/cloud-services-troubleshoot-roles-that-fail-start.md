@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
-ms.openlocfilehash: a73559e233f647d5bf0812a5acdf5e19f05b0858
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: d2daae2a3317d3b48748262d87ab8d7f7e13f2b0
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51255427"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918422"
 ---
 # <a name="troubleshoot-cloud-service-roles-that-fail-to-start"></a>Устранение неполадок, если роли облачной службы не запускаются
 Ниже приведены некоторые распространенные проблемы и решения на случай, если роли облачной службы Azure не запускаются.
@@ -75,8 +75,8 @@ ms.locfileid: "51255427"
 Если перейти на веб-сайт, отобразятся более точные сообщения об ошибках.
 
 * Ошибка сервера в приложении «/».
-* Описание: произошло необработанное исключение во время выполнения текущего веб-запроса. Чтобы получить дополнительную информацию об ошибке и ее источнике в коде, изучите трассировку стека.
-* Сведения об исключении: System.IO.FIleNotFoundException: не удалось загрузить файл, сборку Microsoft.WindowsAzure.StorageClient, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf856ad364e35 или какую-то их зависимость. Системе не удается найти указанный файл.
+* Описание: Произошло необработанное исключение во время выполнения текущего веб-запроса. Чтобы получить дополнительную информацию об ошибке и ее источнике в коде, изучите трассировку стека.
+* Сведения об исключении: System.IO.FIleNotFoundException: Не удалось загрузить файл или сборку "Microsoft.WindowsAzure.StorageClient, Version = 1.1.0.0, Culture = neutral, PublicKeyToken = 31bf856ad364e35" или одну из ее зависимостей. Системе не удается найти указанный файл.
 
 Например: 
 
@@ -96,7 +96,7 @@ ms.locfileid: "51255427"
 7. Когда роль запускается, в браузере Internet Explorer отображается подробная информация об ошибке. Для более подробной диагностики вы можете использовать также стандартные средства устранения неполадок Windows.
 
 ## <a name="diagnose-issues-by-using-intellitrace"></a>Диагностика неполадок с помощью IntelliTrace
-Для рабочих ролей и веб-ролей, которые используют платформу .NET Framework 4, можно использовать функцию [EnterpriseIntelliTrace](https://msdn.microsoft.com/library/dd264915.aspx), доступную в Microsoft Visual Studio Enterprise.
+Для рабочих ролей и веб-ролей, которые используют платформу .NET Framework 4, можно использовать функцию [EnterpriseIntelliTrace](/visualstudio/debugger/intellitrace), доступную в Microsoft Visual Studio Enterprise.
 
 Чтобы развернуть службу с активной функцией IntelliTrace, выполните следующие действия.
 
@@ -122,7 +122,7 @@ ms.locfileid: "51255427"
 
 Убедившись, что все ошибки исправлены, вы можете развернуть службу, не устанавливая флажок **Включить IntelliTrace для ролей .NET 4** .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите дополнительные [статьи об устранении неполадок](https://azure.microsoft.com/documentation/articles/?tag=top-support-issue&product=cloud-services) в облачных службах.
 
 Чтобы узнать, как устранять неполадки ролей облачной службы с помощью диагностических данных компьютеров Azure PaaS, см. [серию статей в блоге Кевина Уильямсона](https://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx).

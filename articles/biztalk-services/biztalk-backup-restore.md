@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: 6dc3fb97c912aa9ac66e3d40a8a0318a6938905c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: ee86b9aa2d920668cf036f3e8f8634e9289e8913
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51230297"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916875"
 ---
-# <a name="biztalk-services-backup-and-restore"></a>Службы BizTalk: резервное копирование и восстановление
+# <a name="biztalk-services-backup-and-restore"></a>Службы BizTalk. Архивация и восстановление
 
 > [!INCLUDE [BizTalk Services is being retired, and replaced with Azure Logic Apps](../../includes/biztalk-services-retirement.md)]
 
@@ -34,7 +34,7 @@ ms.locfileid: "51230297"
 
 
 ## <a name="before-you-begin"></a>Перед началом работы
-* Резервное копирование и восстановление доступны не во всех выпусках. Ознакомьтесь со статьей [Службы BizTalk: диаграмма выпусков](biztalk-editions-feature-chart.md).
+* Резервное копирование и восстановление доступны не во всех выпусках. См. в разделе [службы BizTalk: Диаграмма выпусков](biztalk-editions-feature-chart.md).
 * Содержимое резервной копии может быть восстановлено как в исходную, так и в новую службу BizTalk. Перед восстановлением службы BizTalk под тем же именем необходимо удалить существующую службу BizTalk, и это имя должно быть доступно. После удаления службы BizTalk может понадобиться больше времени, чем хотелось бы, для освобождения этого имени. Если вы не можете ждать освобождения этого имени, выполните восстановление в новую службу BizTalk.
 * Службы BizTalk можно восстанавливать только в выпуски того же или более высокого уровня. Восстановление служб BizTalk в выпуски более низкого уровня, из которых выполнялось резервное копирование, не поддерживается.
   
@@ -42,14 +42,14 @@ ms.locfileid: "51230297"
 * Чтобы обеспечить непрерывность, применяются контрольные номера EDI. Если сообщения обрабатываются после последнего резервного копирования, восстановление такого содержимого может привести к созданию повторяющихся контрольных номеров.
 * Если в пакете имеются активные сообщения, запустите обработку пакета **перед** резервным копированием. При создании резервной копии (запланированной или по требованию) сообщения в пакетах не сохраняются. 
   
-    **Если на момент начала резервного копирования в пакете присутствуют активные сообщения, они не копируются и будут утрачены.**
-* Необязательно. Остановите все операции управления на портале BizTalk.
+    **Если создается резервная копия с активными сообщениями в пакете, эти сообщения не архивируются и будут утрачены.**
+* Необязательно: На портале служб BizTalk остановите все операции управления.
 
 ## <a name="create-a-backup"></a>Создание резервной копии
-Резервное копирование может выполняться в любое время — вы полностью управляете этим процессом. Для создания резервной копии используйте руководство [REST API for Managing BizTalk Services on Azure](https://msdn.microsoft.com/library/azure/dn232347.aspx) (REST API для управления службами BizTalk в Azure).
+Резервное копирование может выполняться в любое время — вы полностью управляете этим процессом. Для создания резервной копии используйте руководство [REST API for Managing BizTalk Services on Azure](/previous-versions/azure/reference/dn232347(v=azure.100)) (REST API для управления службами BizTalk в Azure).
 
 ## <a name="restore"></a>восстановление;
-Для восстановления резервной копии используйте руководство [REST API for Managing BizTalk Services on Azure](https://msdn.microsoft.com/library/azure/dn232347.aspx) (REST API для управления службами BizTalk в Azure).
+Для восстановления резервной копии используйте руководство [REST API for Managing BizTalk Services on Azure](/previous-versions/azure/reference/dn232347(v=azure.100)) (REST API для управления службами BizTalk в Azure).
 
 ### <a name="postrestore"></a>Действия после восстановления из резервной копии
 Восстановленные службы BizTalk всегда имеют статус **Приостановлено** . В этом состоянии можно вносить любые изменения в конфигурацию до того, как новая среда будет переведена в рабочий режим, включая следующие изменения.
@@ -69,7 +69,7 @@ ms.locfileid: "51230297"
 </tr> 
 <tr>
 <td colspan="2">
- <strong>Портал служб BizTalk Azure</strong></td>
+ <strong>Портал служб Azure BizTalk</strong></td>
 </tr> 
 <tr>
 <td>Конфигурация и среда выполнения</td> 
@@ -132,18 +132,18 @@ ms.locfileid: "51230297"
 </table>
 
 ## <a name="next"></a>Далее
-Чтобы создать службы BizTalk Azure, перейдите к статье [Создание служб BizTalk с помощью портала Azure](https://go.microsoft.com/fwlink/p/?LinkID=302280). Чтобы приступить к созданию приложений, перейдите по ссылке [Службы BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=235197).
+Чтобы создать службы BizTalk Azure, перейдите к статье [службы BizTalk: Подготовка](https://go.microsoft.com/fwlink/p/?LinkID=302280). Чтобы приступить к созданию приложений, перейдите по ссылке [Службы BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=235197).
 
 ## <a name="see-also"></a>См. также
 * [Резервное копирование службы BizTalk](https://go.microsoft.com/fwlink/p/?LinkID=325584)
 * [Восстановление службы BizTalk из резервной копии](https://go.microsoft.com/fwlink/p/?LinkID=325582)
-* [Службы BizTalk. Диаграмма выпусков Developer, Basic, Standard и Premium](https://go.microsoft.com/fwlink/p/?LinkID=302279)
-* [Создание служб BizTalk с помощью портала Azure](https://go.microsoft.com/fwlink/p/?LinkID=302280)
-* [Службы BizTalk. Диаграмма состояния подготовки](https://go.microsoft.com/fwlink/p/?LinkID=329870)
-* [Службы BizTalk: вкладки «Панель мониторинга», «Монитор» и «Масштаб»](https://go.microsoft.com/fwlink/p/?LinkID=302281)
-* [Службы BizTalk: регулирование](https://go.microsoft.com/fwlink/p/?LinkID=302282)
-* [Службы BizTalk: имя и ключ издателя](https://go.microsoft.com/fwlink/p/?LinkID=303941)
-* [Как приступить к работе с пакетом SDK для служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=302335)
+* [Службы BizTalk. Developer, Basic, Standard и Premium диаграмма выпусков](https://go.microsoft.com/fwlink/p/?LinkID=302279)
+* [Службы BizTalk. Подготовка](https://go.microsoft.com/fwlink/p/?LinkID=302280)
+* [Службы BizTalk. Схема состояний подготовки](https://go.microsoft.com/fwlink/p/?LinkID=329870)
+* [Службы BizTalk. Вкладки панели мониторинга, мониторинг и масштабирование](https://go.microsoft.com/fwlink/p/?LinkID=302281)
+* [Службы BizTalk. Регулирование](https://go.microsoft.com/fwlink/p/?LinkID=302282)
+* [Службы BizTalk. Имя издателя и ключ издателя](https://go.microsoft.com/fwlink/p/?LinkID=303941)
+* [Инструкции запуска с помощью пакета SDK служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=302335)
 
 [BackupStatus]: ./media/biztalk-backup-restore/status-last-backup.png
 [Restore]: ./media/biztalk-backup-restore/restore-ui.png

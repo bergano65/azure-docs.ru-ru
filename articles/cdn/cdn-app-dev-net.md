@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 5379586355ece98af6295236d6cbd09cb31c742b
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: 838c76e6a383b61ff465f3ed7506af34c8cd01d4
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38454470"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916620"
 ---
 # <a name="get-started-with-azure-cdn-development"></a>Приступая к разработке для Azure CDN
 > [!div class="op_single_selector"]
@@ -28,7 +28,7 @@ ms.locfileid: "38454470"
 > 
 > 
 
-С помощью [библиотеки Azure CDN для .NET](https://msdn.microsoft.com/library/mt657769.aspx) можно автоматизировать создание профилей и конечных точек CDN и управление ими.  В этом руководстве описывается создание простого консольного приложения .NET, которое демонстрирует некоторые из доступных операций.  Данный учебник не содержит подробных сведений о всех аспектах библиотеки Azure CDN для .NET.
+С помощью [библиотеки Azure CDN для .NET](/dotnet/api/overview/azure/cdn) можно автоматизировать создание профилей и конечных точек CDN и управление ими.  В этом руководстве описывается создание простого консольного приложения .NET, которое демонстрирует некоторые из доступных операций.  Данный учебник не содержит подробных сведений о всех аспектах библиотеки Azure CDN для .NET.
 
 Для работы с этим руководством требуется Visual Studio 2015.  [Visual Studio Community 2015](https://www.visualstudio.com/products/visual-studio-community-vs.aspx) .
 
@@ -335,10 +335,10 @@ private static void PromptDeleteCdnProfile(CdnManagementClient cdn)
 
 ![Завершение программы](./media/cdn-app-dev-net/cdn-program-running-2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Чтобы просмотреть описываемый в этом руководстве готовый проект, [скачайте пример](https://code.msdn.microsoft.com/Azure-CDN-Management-1f2fba2c).
 
-Чтобы найти дополнительную документацию по библиотеке управления Azure CDN для .NET, воспользуйтесь [справкой на сайте MSDN](https://msdn.microsoft.com/library/mt657769.aspx).
+Чтобы найти дополнительную документацию по библиотеке управления Azure CDN для .NET, воспользуйтесь [справкой на сайте MSDN](/dotnet/api/overview/azure/cdn).
 
 Управление ресурсами CDN с помощью [PowerShell](cdn-manage-powershell.md).
 

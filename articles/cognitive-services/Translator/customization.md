@@ -3,19 +3,19 @@ title: Настройка перевода — API перевода текст�
 titlesuffix: Azure Cognitive Services
 description: Используйте Microsoft Translator Hub для создания собственной системы машинного перевода с нужными вам терминами и стилем.
 services: cognitive-services
-author: Jann-Skotdal
+author: v-pawal
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 02/21/2019
 ms.author: v-jansko
-ms.openlocfilehash: e66387a904f0026eb862178b19fd1b005212d674
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: b9a182da0ce03bf3964b6da30f1ed68de38c8141
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58124020"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918235"
 ---
 # <a name="customize-your-text-translations"></a>Настройка переводов текста
 
@@ -66,4 +66,4 @@ Custom Translator позволяет создавать нейронные си�
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Настройка системы с учетом особенностей языка с помощью Custom Translator](https://aka.ms/CustomTranslatorDocs)
+> [Настройка с помощью пользовательских Translator системы настраиваемый язык](https://aka.ms/CustomTranslatorDocs)

@@ -7,12 +7,12 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 03/21/2019
 ms.author: danlep
-ms.openlocfilehash: 3e7e292f36296ce09af89f03e8b154b57e18b55c
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 2ea85b2b04600708381423e16408ba34b1e27566
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58370004"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904905"
 ---
 # <a name="set-environment-variables"></a>Настройка переменных среды
 
@@ -25,6 +25,8 @@ ms.locfileid: "58370004"
 *MinLength*. Минимальное количество учитываемых знаков в слове. Если увеличить это значение, скрипт будет пропускать самые распространенные слова, например of и the.
 
 Если нужно передать секреты в качестве переменных среды, служба "Экземпляры контейнеров Azure" поддерживает [безопасные значения](#secure-values) для контейнеров Windows и Linux.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="azure-cli-example"></a>Пример для Azure CLI
 
@@ -141,7 +143,7 @@ Azure:\
 
 Чтобы установить переменные среды при запуске контейнера на портале Azure, укажите их на странице **Конфигурация** при создании контейнера.
 
-При развертывании с помощью портала на данный момент вы не можете указать более трех переменных и должны ввести их в таком формате: `"variableName":"value"`
+При развертывании с помощью портала, вы в настоящее время составляет три переменные и их необходимо ввести в следующем формате: `"variableName":"value"`
 
 Чтобы увидеть пример, запустите [aci-wordcount] [ aci-wordcount] контейнер с *NumWords* и *MinLength* переменные.
 
@@ -255,6 +257,6 @@ my-secret-value
 [az-container-show]: /cli/azure/container#az-container-show
 [azure-cli-install]: /cli/azure/
 [azure-instance-log]: /powershell/module/az.containerinstance/get-azcontainerinstancelog
-[azure-powershell-install]: /powershell/azure/azurerm/install-Az-ps
+[azure-powershell-install]: /powershell/azure/install-Az-ps
 [new-Azcontainergroup]: /powershell/module/az.containerinstance/new-azcontainergroup
 [portal]: https://portal.azure.com

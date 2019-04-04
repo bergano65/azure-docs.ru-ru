@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 2/7/2019
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: 034beeaaebb86786106f7884fc147ff15167538e
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: ad3b5a1d684c500eff3d20832d7aa290a13849b9
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58480725"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918643"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Планирование развертывания службы синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -172,7 +172,7 @@ ms.locfileid: "58480725"
 **Версия агента 5.0.2.0**   
 Дедупликация данных поддерживается в томах с включенным распределением по уровням в облаке в Windows Server 2016 и Windows Server 2019. Включив дедупликацию в томе с включенным распределением по уровням в облаке, вы можете кэшировать больше файлов локально без выделения дополнительного объема памяти.
 
-**Windows Server 2012 R2 или более ранняя версия агента**  
+**Windows Server 2012 R2 или более старые версии агента**  
 Для томов без распределения по уровням облака служба синхронизации файлов Azure поддерживает включение дедупликации данных Windows Server.
 
 ### <a name="distributed-file-system-dfs"></a>Распределенная файловая система (DFS)
@@ -278,6 +278,8 @@ ms.locfileid: "58480725"
 | Восточная Азия           | Юго-Восточная Азия     |
 | Восточная часть США             | Запад США            |
 | Восток США 2           | Центральный регион США         |
+| Центральная Корея       | Южная Корея        |
+| Южная Корея         | Центральная Корея      |
 | Северная Европа        | Западная Европа        |
 | Центрально-северная часть США    | Центрально-южная часть США   |
 | Южная Индия         | Центральная Индия      |
@@ -291,8 +293,8 @@ ms.locfileid: "58480725"
 [!INCLUDE [storage-sync-files-agent-update-policy](../../../includes/storage-sync-files-agent-update-policy.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Параметры брандмауэра и прокси-сервера Синхронизации файлов Azure](storage-sync-files-firewall-and-proxy.md)
+* [Рассмотрим параметры брандмауэра и прокси-сервера](storage-sync-files-firewall-and-proxy.md)
 * [Планирование развертывания службы файлов Azure](storage-files-planning.md)
-* [Как развернуть службу файлов Azure](storage-files-deployment-guide.md)
-* [Как развернуть службу синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md)
+* [Развертывание файлов Azure](storage-files-deployment-guide.md)
+* [Развертывание Синхронизации файлов Azure](storage-sync-files-deployment-guide.md)
 * [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)

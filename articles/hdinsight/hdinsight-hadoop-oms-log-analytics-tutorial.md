@@ -9,16 +9,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: hrasheed
-ms.openlocfilehash: b7e0dba70d7f3a201c5f3491f0bc906977fbf229
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.openlocfilehash: 399a6bcb6e0bfd0edaddca471ba2c8e0802d3394
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56886457"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904786"
 ---
 # <a name="use-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Журналы использования Azure Monitor для мониторинга кластеров HDInsight
 
-Узнайте, как включить журналы Azure Monitor для мониторинга операций кластера Hadoop в HDInsight и как добавить создаст решение для мониторинга.
+Узнайте, как включить журналы Azure Monitor для мониторинга операций кластера Hadoop в HDInsight и как добавить решение для мониторинга HDInsight.
 
 [Журналы Azure Monitor](../log-analytics/log-analytics-overview.md) — это служба в Azure Monitor, которая отслеживает облачные и локальные среды, чтобы поддерживать уровень их доступности и производительности. Она собирает данные, формируемые ресурсами в облачных и локальных средах, а также другими средствами мониторинга, и на их основе предоставляет аналитические сведения для нескольких источников.
 

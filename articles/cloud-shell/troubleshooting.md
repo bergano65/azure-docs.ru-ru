@@ -14,16 +14,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/24/2018
 ms.author: damaerte
-ms.openlocfilehash: ad389cfaa92ad487fad8b7ecb6feac40324572f0
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.openlocfilehash: eb7deacc068661ca9a4f473ee2d36b7d4464c81c
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56100573"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905517"
 ---
 # <a name="troubleshooting--limitations-of-azure-cloud-shell"></a>Устранение неполадок и ограничения в Azure Cloud Shell
 
 Ниже описаны решения известных проблем в Azure Cloud Shell.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="general-troubleshooting"></a>Общие действия по устранению неполадок
 
@@ -39,7 +41,7 @@ ms.locfileid: "56100573"
 
 ### <a name="storage-dialog---error-403-requestdisallowedbypolicy"></a>Диалоговое окно хранилища. Ошибка: 403 RequestDisallowedByPolicy
 
-- **Подробности:** создание учетной записи хранилища с помощью Cloud Shell завершается ошибкой из-за политики Azure, установленной администратором. Сообщение об ошибке содержит следующие сведения: `The resource action 'Microsoft.Storage/storageAccounts/write' is disallowed by one or more policies.`
+- **Подробности:** создание учетной записи хранилища с помощью Cloud Shell завершается ошибкой из-за политики Azure, установленной администратором. Содержит сообщение об ошибке: `The resource action 'Microsoft.Storage/storageAccounts/write' is disallowed by one or more policies.`
 - **Решение**. Обратитесь к администратору Azure с просьбой удалить или обновить политику Azure, которая отклоняет создание хранилища.
 
 ### <a name="storage-dialog---error-400-disallowedoperation"></a>Диалоговое окно хранилища. Ошибка: 400 DisallowedOperation
@@ -74,7 +76,7 @@ ms.locfileid: "56100573"
 > Виртуальные машины Azure должны иметь общедоступный IP-адрес.
 
 - **Подробности:** из-за параметров брандмауэра Windows по умолчанию для WinRM может появиться следующее сообщение об ошибке: `Ensure the WinRM service is running. Remote Desktop into the VM for the first time and ensure it can be discovered.`.
-- **Решение**.  Запустите `Enable-AzureRmVMPSRemoting`, чтобы включить на целевом компьютере все аспекты удаленного взаимодействия PowerShell.
+- **Решение**.  Запустите `Enable-AzVMPSRemoting`, чтобы включить на целевом компьютере все аспекты удаленного взаимодействия PowerShell.
 
 ### <a name="dir-does-not-update-the-result-in-azure-drive"></a>`dir` не обновляет результат на диске Azure
 

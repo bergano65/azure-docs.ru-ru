@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/18/2018
 ms.author: damaerte
-ms.openlocfilehash: 5b4f9715e47483fa64840c521620bec79f3041cd
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1fc9883e0ea35c384c3bfc83e76b8eded48cbcba
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58106412"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905075"
 ---
 # <a name="quickstart-for-powershell-in-azure-cloud-shell"></a>Краткое руководство по использованию PowerShell в Azure Cloud Shell
 
@@ -36,7 +36,7 @@ ms.locfileid: "58106412"
 
    ![](media/quickstart-powershell/shell-icon.png)
 
-2. Выберите среду PowerShell из раскрывающегося списка, и вы перейдете к диску Azure `(Azure:)`.
+2. Выберите среду PowerShell из раскрывающегося списка и будет находиться в диск Azure `(Azure:)`
 
    ![](media/quickstart-powershell/environment-ps.png)
 
@@ -68,7 +68,7 @@ MyResourceGroup         MyVM2       eastus   Standard_DS2_v2_Promo  Windows    S
     PS Azure:\> dir
     ```
 
- 2. Переход к предпочитаемой подписке с помощью команды `cd`.
+ 2. `cd` Переход к предпочитаемой подписке
 
     ```azurepowershell-interactive
     PS Azure:\> cd MySubscriptionName
@@ -267,7 +267,7 @@ mywebapp3       Running  MyResourceGroup3   {mywebapp3.azurewebsites.net...   So
 
 ### <a name="using-ssh"></a>Использование SSH
 
-Следуйте инструкциям из [этой статьи](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-powershell), чтобы создать конфигурацию виртуальной машины с помощью командлетов AzureRM.
+Следуйте инструкциям [здесь](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-powershell) для создания новой конфигурации виртуальной Машины с помощью командлетов Azure PowerShell.
 Прежде чем вызвать `New-AzVM` для запуска развертывания, добавьте открытый ключ SSH в конфигурацию виртуальной машины.
 Новая виртуальная машина будет содержать открытый ключ в расположении `~\.ssh\authorized_keys`. Это позволит запускать на виртуальной машине сеансы SSH без учетных данных.
 
@@ -292,7 +292,7 @@ ssh azureuser@MyVM.Domain.Com
 
 На диске `Azure` введите команду `Get-AzCommand`, чтобы вывести контекстные команды Azure.
 
-Кроме того, вы всегда можете ввести команду `Get-Command *azurerm* -Module AzureRM.*`, чтобы узнать доступные команды Azure.
+Кроме того, вы всегда можете ввести команду `Get-Command *az* -Module Az.*`, чтобы узнать доступные команды Azure.
 
 ## <a name="install-custom-modules"></a>Установка пользовательских модулей
 

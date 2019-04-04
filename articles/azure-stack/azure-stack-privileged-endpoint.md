@@ -15,12 +15,12 @@ ms.date: 01/25/2019
 ms.author: mabrigg
 ms.reviewer: fiseraci
 ms.lastreviewed: 01/25/2019
-ms.openlocfilehash: 9eb2e8ddde13783eabf3d82173e6a2fa75ec2b06
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: ef75b161bcdb9e1b9658612b783dff46d1fa2502
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58082676"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58484344"
 ---
 # <a name="using-the-privileged-endpoint-in-azure-stack"></a>Использование привилегированной конечной точки в Azure Stack
 
@@ -53,7 +53,7 @@ ms.locfileid: "58082676"
 
     - В интегрированной системе выполните указанную ниже команду из сеанса Windows PowerShell с повышенными правами, чтобы добавить PEP в качестве доверенного узла на защищенную виртуальную машину, работающую на узле жизненного цикла оборудования, или на рабочую станцию с привилегированным доступом.
 
-      ```PowerShell
+      ```powershell
         winrm s winrm/config/client '@{TrustedHosts="<IP Address of Privileged Endpoint>"}'
       ```
     - Если вы используете ASDK, войдите на узел комплекта разработки.
@@ -61,7 +61,7 @@ ms.locfileid: "58082676"
 2. Откройте сеанс Windows PowerShell на защищенной виртуальной машине, работающей на узле жизненного цикла оборудования, или на рабочей станции с привилегированным доступом. Выполните следующие команды для создания удаленного сеанса на виртуальной машине, на которой размещается привилегированная конечная точка.
  
    - В интегрированной системе:
-     ```PowerShell
+     ```powershell
        $cred = Get-Credential
 
        Enter-PSSession -ComputerName <IP_address_of_ERCS> `
@@ -70,7 +70,7 @@ ms.locfileid: "58082676"
      Параметр `ComputerName` может быть IP-адресом или DNS-именем одной из виртуальных машин, на которой размещена привилегированная конечная точка. 
    - При использовании ASDK:
      
-     ```PowerShell
+     ```powershell
        $cred = Get-Credential
 
        Enter-PSSession -ComputerName azs-ercs01 `
@@ -113,7 +113,7 @@ ms.locfileid: "58082676"
 
 Например, чтобы получить список параметров для определенного командлета, следует выполнить приведенную ниже команду.
 
-```PowerShell
+```powershell
     Get-Command <cmdlet_name> -Syntax
 ```
 
@@ -125,7 +125,7 @@ ms.locfileid: "58082676"
 
     – В интегрированной системе выполните указанную ниже команду из сеанса Windows PowerShell с повышенными правами, чтобы добавить PEP в качестве доверенного узла на защищенную виртуальную машину, работающую на узле жизненного цикла оборудования, или на рабочую станцию с привилегированным доступом.
 
-      ```PowerShell
+      ```powershell
         winrm s winrm/config/client '@{TrustedHosts="<IP Address of Privileged Endpoint>"}'
       ```
     - Если вы используете ASDK, войдите на узел комплекта разработки.
@@ -133,7 +133,7 @@ ms.locfileid: "58082676"
 2. Откройте сеанс Windows PowerShell на защищенной виртуальной машине, работающей на узле жизненного цикла оборудования, или на рабочей станции с привилегированным доступом. Выполните следующие команды для создания удаленного сеанса на виртуальной машине, на которой размещается привилегированная конечная точка.
  
    - В интегрированной системе:
-     ```PowerShell
+     ```powershell
        $cred = Get-Credential
 
        $session = New-PSSession -ComputerName <IP_address_of_ERCS> `
@@ -142,7 +142,7 @@ ms.locfileid: "58082676"
      Параметр `ComputerName` может быть IP-адресом или DNS-именем одной из виртуальных машин, на которой размещена привилегированная конечная точка. 
    - При использовании ASDK:
      
-     ```PowerShell
+     ```powershell
       $cred = Get-Credential
 
       $session = New-PSSession -ComputerName azs-ercs01 `
@@ -154,7 +154,7 @@ ms.locfileid: "58082676"
      - **Пароль**. Введите пароль, который использовался во время установки учетной записи администратора домена AzureStackAdmin.
 
 3. Импорт сеанса привилегированной конечной точки на локальный компьютер
-    ```PowerShell 
+    ```powershell 
         Import-PSSession $session
     ```
 4. Теперь можно использовать выполнение нажатием клавиши TAB и запускать сценарии обычным образом в локальным сеансе PowerShell, располагая всеми функциями и командлетами привилегированной конечной точки и не снижая уровень безопасности Azure Stack. Вот и все!

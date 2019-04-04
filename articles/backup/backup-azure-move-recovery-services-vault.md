@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: sogup
-ms.openlocfilehash: 0bc1ab0586d1a591464711fb0652f81fb082e6c3
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: 7745f986c6e9ba22258f51f9329444b8232762e1
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58199250"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905772"
 ---
 # <a name="move-a-recovery-services-vault-across-azure-subscriptions-and-resource-groups-limited-public-preview"></a>Перемещение хранилища Служб восстановления между подписками Azure и группами ресурсов (ограниченная общедоступная предварительная версия)
 
@@ -21,6 +21,8 @@ ms.locfileid: "58199250"
 
 > [!NOTE]
 > Чтобы переместить в хранилище служб восстановления и связанные с ней ресурсы в другую группу ресурсов, вы должны сначала [зарегистрировать подписку по источника](#register-the-source-subscription-to-move-your-recovery-services-vault).
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites-for-moving-a-vault"></a>Предварительные требования для перемещения хранилища
 
@@ -50,24 +52,24 @@ ms.locfileid: "58199250"
 1. Вход в учетную запись Azure
 
    ```
-   Connect-AzureRmAccount
+   Connect-AzAccount
    ```
 
 2. Выберите подписку, которую нужно зарегистрировать.
 
    ```
-   Get-AzureRmSubscription –SubscriptionName "Subscription Name" | Select-AzureRmSubscription
+   Get-AzSubscription –SubscriptionName "Subscription Name" | Select-AzSubscription
    ```
 3. Зарегистрируйте эту подписку.
 
    ```
-   Register-AzureRmProviderFeature -ProviderNamespace Microsoft.RecoveryServices -FeatureName RecoveryServicesResourceMove
+   Register-AzProviderFeature -ProviderNamespace Microsoft.RecoveryServices -FeatureName RecoveryServicesResourceMove
    ```
 
 4. Выполните команду следующую команду.
 
    ```
-   Register-AzureRmResourceProvider -ProviderNamespace Microsoft.RecoveryServices
+   Register-AzResourceProvider -ProviderNamespace Microsoft.RecoveryServices
    ```
 
 Подождите 30 минут, чтобы получить разрешение для подписки, прежде чем приступать к операции перемещения с помощью портала Azure или PowerShell.
@@ -137,18 +139,18 @@ ms.locfileid: "58199250"
 
 ## <a name="use-powershell-to-move-a-vault"></a>Перемещение хранилища с помощью PowerShell
 
-Чтобы переместить хранилище Служб восстановления в другую группу ресурсов, используйте командлет `Move-AzureRMResource`. Для `Move-AzureRMResource` требуется указать имя и тип ресурса. Эти данные можно получить, выполнив командлет `Get-AzureRmRecoveryServicesVault`.
+Чтобы переместить хранилище Служб восстановления в другую группу ресурсов, используйте командлет `Move-AzResource`. `Move-AzResource` требуется имя ресурса и тип ресурса. Эти данные можно получить, выполнив командлет `Get-AzRecoveryServicesVault`.
 
 ```
 $destinationRG = "<destinationResourceGroupName>"
-$vault = Get-AzureRmRecoveryServicesVault -Name <vaultname> -ResourceGroupName <vaultRGname>
-Move-AzureRmResource -DestinationResourceGroupName $destinationRG -ResourceId $vault.ID
+$vault = Get-AzRecoveryServicesVault -Name <vaultname> -ResourceGroupName <vaultRGname>
+Move-AzResource -DestinationResourceGroupName $destinationRG -ResourceId $vault.ID
 ```
 
 Чтобы переместить ресурсы в другую подписку, добавьте параметр `-DestinationSubscriptionId`.
 
 ```
-Move-AzureRmResource -DestinationSubscriptionId "<destinationSubscriptionID>" -DestinationResourceGroupName $destinationRG -ResourceId $vault.ID
+Move-AzResource -DestinationSubscriptionId "<destinationSubscriptionID>" -DestinationResourceGroupName $destinationRG -ResourceId $vault.ID
 ```
 
 После выполнения указанных выше командлетов вам будет предложено подтвердить перемещение указанных ресурсов. Чтобы подтвердить, введите **Y**. После успешной проверки начнется перемещение ресурса.

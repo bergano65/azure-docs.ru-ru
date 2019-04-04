@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2016
 ms.author: timlt
-ms.openlocfilehash: 40e91b4ba7ee62976b49975769bd1d1e656525f2
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
-ms.translationtype: HT
+ms.openlocfilehash: b3660901c86dd644369e6d1913e825cbd5ea316b
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54328874"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918473"
 ---
 # <a name="managing-azure-cloud-services-using-azure-automation"></a>Управление облачными службами Azure с помощью службы автоматизации Azure
 В этом руководстве будет представлена служба автоматизации Azure и способы ее использования для упрощения управления облачными службами Azure.
@@ -32,16 +32,16 @@ ms.locfileid: "54328874"
 Уменьшите операционные затраты и освободите ИТ-сотрудников и специалистов по разработке и операциям для работы над повышением бизнес-ценности ПО и автоматизации задач управления облаком в службе автоматизации Azure.
 
 ## <a name="how-can-azure-automation-help-manage-azure-cloud-services"></a>Как служба автоматизации Azure помогает управлять облачными службами Azure?
-Облачными службами Azure можно управлять в службе автоматизации Azure, используя командлеты PowerShell, доступные в разделе [Инструменты Azure PowerShell](https://msdn.microsoft.com/library/azure/jj156055.aspx). Служба автоматизации Azure предоставляет командлеты PowerShell облачных служб Azure в готовом виде, чтобы вы могли выполнять все задачи управления облачными службами, не выходя из службы. Вы также можете связать эти командлеты в службе автоматизации Azure с командлетами для других служб Azure, чтобы автоматизировать сложные задачи в службах Azure и системах сторонних производителей.
+Облачными службами Azure можно управлять в службе автоматизации Azure, используя командлеты PowerShell, доступные в разделе [Инструменты Azure PowerShell](/powershell/). Служба автоматизации Azure предоставляет командлеты PowerShell облачных служб Azure в готовом виде, чтобы вы могли выполнять все задачи управления облачными службами, не выходя из службы. Вы также можете связать эти командлеты в службе автоматизации Azure с командлетами для других служб Azure, чтобы автоматизировать сложные задачи в службах Azure и системах сторонних производителей.
 
 В некоторых примерах используется служба автоматизации Azure для управления облачными службами Azure, включая следующее:
 
-* [непрерывное развертывание облачной службы всякий раз, когда в хранилище BLOB-объектов Azure обновляется CSCFG- или CSPKG-файл;](https://gallery.technet.microsoft.com/scriptcenter/Continuous-Deployment-of-A-eeebf3a6)
-* [параллельная перезагрузка экземпляров облачной службы, по одному домену обновления за раз.](https://gallery.technet.microsoft.com/scriptcenter/Reboot-Cloud-Service-PaaS-b337a06d)
+* [Непрерывное развертывание облачной службы всякий раз, когда в хранилище BLOB-объектов Azure обновляется cscfg- или cspkg-файл](https://gallery.technet.microsoft.com/scriptcenter/Continuous-Deployment-of-A-eeebf3a6)
+* [Перезагрузка экземпляров облачной службы в параллельном режиме, одному домену обновления за раз](https://gallery.technet.microsoft.com/scriptcenter/Reboot-Cloud-Service-PaaS-b337a06d)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда вы познакомились с основами службы автоматизации Azure и способах ее использования для управления облачными службами Azure, пройдите по ссылкам, чтобы получить дополнительные сведения о службе автоматизации Azure.
 
 * [Обзор службы автоматизации Azure](../automation/automation-intro.md)
 * [Мой первый Runbook](../automation/automation-first-runbook-graphical.md)
-* [План обучения работе со службой автоматизации Azure](https://azure.microsoft.com/documentation/learning-paths/automation/)
+* [Карта обучения Azure автоматизации](https://azure.microsoft.com/documentation/learning-paths/automation/)

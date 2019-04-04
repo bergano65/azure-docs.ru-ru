@@ -12,12 +12,12 @@ ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 785948c78b2b8205c4bebe2d68b62f6de7254d94
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.openlocfilehash: 3004f073100b45de25655fc6dee6a96c90612c46
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58863140"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905209"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Ведение журналов метрик и диагностики Базы данных SQL Azure
 
@@ -64,14 +64,14 @@ ms.locfileid: "58863140"
 | :------------------- | ----- | ----- |
 | [Все метрики.](#all-metrics) Сведения о проценте использования DTU и ЦП, ограничении DTU и ЦП, проценте чтения физических данных, проценте записей в журнал, проценте успешных, неудачных или заблокированных подключений брандмауэра, проценте сеансов, проценте рабочих ролей, хранилище, проценте хранилища и проценте хранилища XTP. | Yes | Нет  |
 | [QueryStoreRuntimeStatistics.](#query-store-runtime-statistics) Сведения о статистике выполнения запросов, такие как данные об использовании ЦП и длительность запросов. | Yes | Yes |
-| [QueryStoreWaitStatistics.](#query-store-wait-statistics) Сведения о статистике ожидания (чего ожидали запросы), например CPU (ЦП), LOG (журнал) и LOCKING (блокировка). | Yes | Yes |
-| [Ошибки.](#errors-dataset) Сведения об ошибках SQL в базе данных. | Yes | Yes |
-| [DatabaseWaitStatistics.](#database-wait-statistics-dataset) Содержит статистику по значениям времени ожидания различных типов для базы данных. | Yes | Нет  |
-| [Время ожидания.](#time-outs-dataset) Содержит сведения о превышении времени ожидания в базе данных. | Yes | Нет  |
-| [Блоки.](#blockings-dataset) Содержит сведения о событиях блокировки в базе данных. | Yes | Нет  |
+| [QueryStoreWaitStatistics.](#query-store-wait-statistics) Содержит сведения о статистике ожидания запросов (что ожидали запросы) например, ЦП, ЖУРНАЛ и БЛОКИРОВКУ. | Yes | Yes |
+| [Ошибки.](#errors-dataset) Содержит сведения об ошибках SQL в базе данных. | Yes | Yes |
+| [DatabaseWaitStatistics.](#database-wait-statistics-dataset) Содержит сведения о времени, в базу данных, потраченное на ожидание ожидания различных типов. | Yes | Нет  |
+| [Время ожидания.](#time-outs-dataset) Содержит сведения о времени ожидания в базе данных. | Yes | Нет  |
+| [Блоки.](#blockings-dataset) Содержит сведения о блокирующих событиях в базе данных. | Yes | Нет  |
 | [Взаимоблокировки](#deadlocks-dataset): Содержит сведения о событиях взаимоблокировки в базе данных. | Yes | Нет  |
-| [AutomaticTuning](#automatic-tuning-dataset): Содержит сведения о рекомендаций по автоматической настройке в базе данных. | Yes | Нет  |
-| [SQLInsights.](#intelligent-insights-dataset) Содержит сведения Intelligent Insights о производительности. Дополнительные сведения см. в статье об [Intelligent Insights](sql-database-intelligent-insights.md). | Yes | Yes |
+| [AutomaticTuning](#automatic-tuning-dataset): Содержит сведения о рекомендаций по автоматической настройке для базы данных. | Yes | Нет  |
+| [SQLInsights.](#intelligent-insights-dataset) Содержит Intelligent Insights в производительности для базы данных. Дополнительные сведения см. в статье об [Intelligent Insights](sql-database-intelligent-insights.md). | Yes | Yes |
 
 > [!IMPORTANT]
 > Пулы эластичных баз данных и управляемых экземпляров имеют свой собственный отдельный диагностики телеметрии из баз данных, которые они содержат. Это важно отметить как данные телеметрии диагностики настраивается отдельно для каждого из этих ресурсов, как описано ниже.

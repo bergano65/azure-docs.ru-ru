@@ -3,19 +3,19 @@ title: Переход на API перевода текстов версии 3
 titlesuffix: Azure Cognitive Services
 description: Узнайте, как перейти с API перевода текстов версии 2 на версию 3.
 services: cognitive-services
-author: Jann-Skotdal
+author: v-pawal
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: 1857cd7c4fe6102f94487dbb2cc5ad5c43c18f99
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: d3ffdcb79a56bf2f9f4a6eb192293bbc6bab7dab
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58101182"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916722"
 ---
 # <a name="translator-text-api-v2-to-v3-migration"></a>Переход с API перевода текстов версии 2 на версию 3
 
@@ -45,10 +45,10 @@ ms.locfileid: "58101182"
 |:----------- |:-------------|
 | `Translate`     | [Translate](reference/v3-0-translate.md)          |
 | `TranslateArray`      | [Translate](reference/v3-0-translate.md)        |
-| `GetLanguageNames`      | [Языки](reference/v3-0-languages.md)         |
-| `GetLanguagesForTranslate`     | [Языки](reference/v3-0-languages.md)       |
-| `GetLanguagesForSpeak`      | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech)         |
-| `Speak`     | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech)          |
+| `GetLanguageNames`      | [Languages](reference/v3-0-languages.md)         |
+| `GetLanguagesForTranslate`     | [Languages](reference/v3-0-languages.md)       |
+| `GetLanguagesForSpeak`      | [Служба распознавания речи Microsoft](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech)         |
+| `Speak`     | [Служба распознавания речи Microsoft](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech)          |
 | `Detect`     | [Detect](reference/v3-0-detect.md)         |
 | `DetectArray`     | [Detect](reference/v3-0-detect.md)         |
 | `AddTranslation`     | Компонент больше не поддерживается.       |
@@ -65,7 +65,7 @@ ms.locfileid: "58101182"
 
 Метод Languages не требует проверки подлинности. Чтобы просмотреть все сведения о языке для версии 3 в формате JSON, перейдите по следующей ссылке:
 
-[https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation,dictionary,transliteration](https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation,dictionary,transliteration)
+[https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation, словарь, транслитерации](https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation,dictionary,transliteration)
 
 ## <a name="authentication-key"></a>Ключ проверки подлинности
 
@@ -112,7 +112,7 @@ Microsoft Translator V3 имеет такую же модель ценообра
 > 
 > Центр Microsoft Translator будет прекращена 30 апреля 2019 г. [Просмотреть сведения о важных миграции и даты](https://www.microsoft.com/translator/business/hub/).   
 
-По умолчанию служба Microsoft Translator версии 3 использует технологию нейронного машинного перевода. Поэтому она не может использоваться центром Microsoft Translator Hub. Translator Hub поддерживает только устаревший статистический машинный перевод. Функцию перевода с использованием нейронных сетей можно настроить с помощью пользовательского переводчика. [Узнайте больше о настройке нейронного машинного перевода](custom-translator/overview.md)
+По умолчанию служба Microsoft Translator версии 3 использует технологию нейронного машинного перевода. Поэтому она не может использоваться центром Microsoft Translator Hub. Translator Hub поддерживает только устаревший статистический машинный перевод. Функцию перевода с использованием нейронных сетей можно настроить с помощью пользовательского переводчика. [Дополнительные сведения о настройке нейронный машинный перевод](custom-translator/overview.md)
 
 Нейронный перевод с помощью API перевода текста версии 3 не поддерживает стандартные категории (SMT, speech, tech, generalnn).
 
@@ -142,9 +142,9 @@ Microsoft Translator V3 имеет такую же модель ценообра
 
 * [Политика конфиденциальности Майкрософт](https://privacy.microsoft.com/privacystatement)
 * [Юридическая информация о платформе Microsoft Azure](https://azure.microsoft.com/support/legal)
-* [Условия служб Online Services](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31)
+* [Условия использования служб Online](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [API перевода текстов версии 3.0](reference/v3-0-reference.md)
+> [Ознакомьтесь с документацией по версии 3.0](reference/v3-0-reference.md)

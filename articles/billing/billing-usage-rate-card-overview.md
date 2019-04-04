@@ -16,12 +16,12 @@ ms.workload: billing
 ms.date: 5/10/2018
 ms.author: erikre
 ms.custom: seodec18
-ms.openlocfilehash: cd1688cd9d3d19242800b04e7e29c8875879cffc
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.openlocfilehash: 99772579fd28b0880d497abb038fb25fd2a6139e
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351581"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918218"
 ---
 # <a name="use-azure-billing-apis-to-programmatically-get-insight-into-your-azure-usage"></a>Использование API выставления счетов Azure для программного получения ценных сведений об использовании Azure
 Используйте API выставления счетов Azure для извлечения данных об использовании и ресурсах в предпочитаемые средства анализа данных. API использования ресурсов и RateCard в Azure позволяют точно прогнозировать расходы и управлять ими. Интерфейсы API реализованы в виде поставщика ресурсов и относятся к семейству API, предоставляемых Azure Resource Manager.  
@@ -36,7 +36,7 @@ ms.locfileid: "58351581"
 > Эта функция находится на первом этапе предварительной версии, поэтому для нее может не обеспечиваться обратная совместимость. Сейчас она недоступна для определенных предложений подписки (не поддерживаются EA, CSP, AIO), а также в Azure для Германии.
 
 ## <a name="azure-resource-usage-api-preview"></a>API использования ресурсов Azure (предварительная версия)
-Применяйте [API использования ресурсов](https://msdn.microsoft.com/library/azure/mt219003) Azure для получения оценочных данных об уровне потребления Azure. API включает в себя следующие функции:
+Применяйте [API использования ресурсов](/previous-versions/azure/reference/mt219003(v=azure.100)) Azure для получения оценочных данных об уровне потребления Azure. API включает в себя следующие функции:
 
 * **Управление доступом на основе ролей Azure**. Настройте политики доступа на [портале Azure](https://portal.azure.com) или с помощью [командлетов Azure PowerShell](/powershell/azure/overview), чтобы указать, какие пользователи или приложения могут получить доступ к данным об использовании в рамках подписки. Вызывающие объекты должны использовать стандартные маркеры Azure Active Directory для проверки подлинности. Добавьте вызывающий объект в роль читателя счетов, читателя, владельца или участника, чтобы получить доступ к данным об использовании для конкретной подписки Azure.
 * **Hourly or Daily Aggregations** (Агрегирование по часам или по дням) — вызывающие объекты могут указать, требуется ли получать данные об использовании Azure сегментами за каждый час или за каждый день. По умолчанию используется получение сегментов за каждый день.
@@ -45,7 +45,7 @@ ms.locfileid: "58351581"
 * **Использование для разных видов предложений.** Данные об использовании доступны для таких видов предложений, как оплата по мере использования, MSDN, денежные обязательства, денежный кредит и EA, кроме [CSP](https://docs.microsoft.com/azure/cloud-solution-provider/billing/azure-csp-invoice#retrieve-usage-data-for-a-specific-subscription).
 
 ## <a name="azure-resource-ratecard-api-preview"></a>API RateCard по ресурсам Azure (предварительная версия)
-Используйте [API RateCard по ресурсам Azure](https://msdn.microsoft.com/library/azure/mt219005) для получения списка доступных ресурсов Azure, а также примерной стоимости каждого из них. API включает в себя следующие функции:
+Используйте [API RateCard по ресурсам Azure](/previous-versions/azure/reference/mt219005(v=azure.100)) для получения списка доступных ресурсов Azure, а также примерной стоимости каждого из них. API включает в себя следующие функции:
 
 * **Управление доступом на основе ролей Azure**. Настройте политики доступа на [портале Azure](https://portal.azure.com) или с помощью [командлетов Azure PowerShell](/powershell/azure/overview), чтобы указать, какие пользователи или приложения могут получить доступ к данным RateCard. Вызывающие объекты должны использовать стандартные маркеры Azure Active Directory для проверки подлинности. Добавьте вызывающий объект в роль читателя, владельца или участника, чтобы получить доступ к данным об использовании для конкретной подписки Azure.
 * **Поддержка оплаты по мере использования, MSDN, денежных обязательств, денежного кредита, EA и [CSP](https://docs.microsoft.com/azure/cloud-solution-provider/billing/azure-csp-pricelist#get-prices-by-using-the-azure-rate-card) не поддерживается.** Этот API предоставляет сведения о тарифах Azure на уровне предложений.  Вызывающий объект этого API должен передать сведения о предложении, чтобы получить информацию о ресурсах и тарифы. Так как в рамках EA действуют специальные тарифы для каждой регистрации, в настоящее время мы не можем предоставить сведения о тарифах для EA.
@@ -67,7 +67,7 @@ ms.locfileid: "58351581"
 * Вы можете ознакомиться с примерами кода в GitHub:
   * [Пример кода API счетов](https://go.microsoft.com/fwlink/?linkid=845124)
 
-  * [Пример кода API использования](https://github.com/Azure-Samples/billing-dotnet-usage-api)
+  * [Пример кода API использования ресурсов](https://github.com/Azure-Samples/billing-dotnet-usage-api)
 
   * [Пример кода API RateCard](https://github.com/Azure-Samples/billing-dotnet-ratecard-api)
 

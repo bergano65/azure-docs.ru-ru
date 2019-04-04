@@ -9,16 +9,19 @@ ms.topic: conceptual
 ms.date: 12/26/2018
 ms.author: lyrana
 ms.custom: seodec18
-ms.openlocfilehash: 725f95797de0a4d4e6240be4d42cf8a196d94889
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.openlocfilehash: 72155799971760e9ddc93746dceafb1ea554d88b
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54118597"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905313"
 ---
 # <a name="create-and-manage-role-assignments-in-azure-digital-twins"></a>Создание назначений ролей и управление ими в Azure Digital Twins
 
 Для управления доступом к ресурсам в Azure Digital Twins используется управление доступом на основе ролей ([RBAC](./security-role-based-access-control.md)).
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="role-assignments-overview"></a>Обзор назначений ролей
 
@@ -36,7 +39,7 @@ ms.locfileid: "54118597"
 
 В таблице ниже описывается каждый атрибут.
 
-| Атрибут | ИМЯ | Обязательно | type | ОПИСАНИЕ |
+| Атрибут | ИМЯ | Обязательно для заполнения | type | ОПИСАНИЕ |
 | --- | --- | --- | --- | --- |
 | roleId | Идентификатор определения роли | Yes | Строка | Уникальный идентификатор необходимого назначения ролей. Поиск определения ролей и их идентификаторов с помощью запроса API или проверки таблицы ниже. |
 | objectId | Идентификатор объекта | Yes | Строка | Идентификатор Azure Active Directory, идентификатор объекта субъекта-службы или доменное имя. Чему или кому назначается роль. Назначение ролей должно быть отформатировано в соответствии со связанным типом. Для objectIdType `DomainName` свойство objectId должно начинаться со знака `“@”`. |
@@ -83,8 +86,8 @@ Azure Digital Twins поддерживает полное функциониро
 Получив идентификатор приложения, выполните следующие команды PowerShell.
 
 ```shell
-Login-AzureRmAccount
-Get-AzureRmADServicePrincipal -ApplicationId  <ApplicationId>
+Login-AzAccount
+Get-AzADServicePrincipal -ApplicationId  <ApplicationId>
 ```
 
 Пользователь с ролью **Администратор** может затем назначить роль администратора пространства для пользователя, создав аутентифицированный запрос HTTP POST в URL-адресе.
@@ -160,7 +163,7 @@ YOUR_MANAGEMENT_API_URL/system/roles
 YOUR_MANAGEMENT_API_URL/roleassignments/check?userId=YOUR_USER_ID&path=YOUR_PATH&accessType=YOUR_ACCESS_TYPE&resourceType=YOUR_RESOURCE_TYPE
 ```
 
-| **Значение параметра** | **Обязательный** |  **Тип** |  **Описание** |
+| **Значение параметра** | **Обязательно для заполнения** |  **type** |  **ОПИСАНИЕ** |
 | --- | --- | --- | --- |
 | YOUR_USER_ID |  Истина | Строка |   Свойство objectId для objectIdType идентификатора пользователя. |
 | YOUR_PATH | Истина | Строка |   Выбранный путь для проверки доступа. |
@@ -274,7 +277,7 @@ YOUR_MANAGEMENT_API_URL/roleassignments
    }
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Подробнее об управлении доступом на основе ролей Azure Digital Twins см. в статье [Подключение к API и аутентификация](./security-authenticating-apis.md).
 

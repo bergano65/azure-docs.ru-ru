@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: sogup
-ms.openlocfilehash: 1f96c47e993e9b3d123972aba8eefc54b1d5cdfa
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: 56c75840ca3114af40a2c843e2107f850bbff51a
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58652677"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905976"
 ---
 # <a name="get-improved-backup-and-restore-performance-with-azure-backup-instant-restore-capability"></a>Улучшенное резервное копирование и восстановление с помощью функции мгновенного восстановления Azure Backup
 
@@ -28,6 +28,7 @@ ms.locfileid: "58652677"
 * Поддерживает диски Standard SSD вместе с дисков стандартных жестких ДИСКОВ и дисков SSD уровня "премиум".
 *   Возможность использования оригинальных учетных записей хранения (для каждого диска) при восстановлении неуправляемой виртуальной машины. Эта возможность есть, даже когда виртуальная машина имеет диски, распределенные между учетными записями хранения. Таким образом ускоряется восстановление для самых разных конфигураций виртуальных машин.
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="whats-new-in-this-feature"></a>Новые возможности в этом компоненте
 
@@ -74,9 +75,9 @@ ms.locfileid: "58652677"
 > С помощью PowerShell Az версии 1.6.0 и более поздние версии вы можете обновить срок хранения моментальных снимков мгновенное восстановление в политике, с помощью PowerShell
 
 ```powershell
-PS C:\> $bkpPol = Get-AzureRmRecoveryServicesBackupProtectionPolicy -WorkloadType "AzureVM"
+PS C:\> $bkpPol = Get-AzRecoveryServicesBackupProtectionPolicy -WorkloadType "AzureVM"
 $bkpPol.SnapshotRetentionInDays=5
-PS C:\> Set-AzureRmRecoveryServicesBackupProtectionPolicy -policy $bkpPol
+PS C:\> Set-AzRecoveryServicesBackupProtectionPolicy -policy $bkpPol
 ```
 Срок хранения моментальных снимков по умолчанию для каждой политики составляет 2 дней. Пользователь может изменить значение от 1 и более 5 дней. Для еженедельного политик сохранения моментального снимка является фиксированной в 5 дней.
 

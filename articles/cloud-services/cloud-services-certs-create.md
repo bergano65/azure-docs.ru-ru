@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2017
 ms.author: jeconnoc
-ms.openlocfilehash: b2e87b2855ac1d76fe2ad544c17c33bfa14f635a
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 4ca26c7b8fbfebbce8cfcb9915a7db12e5ad2352
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55812384"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918677"
 ---
 # <a name="certificates-overview-for-azure-cloud-services"></a>Общие сведения о сертификатах для облачных служб Azure
 Сертификаты используются в Azure для облачных служб ([сертификаты службы](#what-are-service-certificates)), а также для аутентификации с помощью службы управления API ([сертификаты управления](#what-are-management-certificates)). В этой статье приводится общий обзор этих двух типов сертификатов, а также описывается процесс их [создания](#create) и развертывания в Azure.
@@ -69,7 +69,7 @@ ms.locfileid: "55812384"
 Существует два простых способа создания сертификатов в Windows: с помощью служебной программы `makecert.exe` или службы IIS.
 
 ### <a name="makecertexe"></a>Makecert.exe
-Эта программа устарела и в данном документе не описывается. Дополнительные сведения см. в [этой статье в библиотеке MSDN](https://msdn.microsoft.com/library/windows/desktop/aa386968).
+Эта программа устарела и в данном документе не описывается. Дополнительные сведения см. в [этой статье в библиотеке MSDN](/windows/desktop/SecCrypto/makecert).
 
 ### <a name="powershell"></a>PowerShell
 ```powershell
@@ -94,7 +94,7 @@ Export-Certificate -Type CERT -Cert $cert -FilePath .\my-cert-file.cer
 ### <a name="linux"></a>Linux
 В [этой](../virtual-machines/linux/mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) статье рассматривается создание сертификатов с использованием SSH.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Передача сертификата службы на портал Azure](cloud-services-configure-ssl-certificate-portal.md).
 
 Передайте на портал Azure [сертификат API управления](../azure-api-management-certs.md).

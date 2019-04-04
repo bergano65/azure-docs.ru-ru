@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: jeconnoc
-ms.openlocfilehash: ec3952f2bb0b4180f5c72d948d1835a903152f0d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0a2e2a3d817140a6ab15dab0093b4025a3bfd76c
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58181832"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916662"
 ---
 # <a name="common-cloud-service-startup-tasks"></a>Стандартные задачи запуска в облачной службе
 В этой статье приведены некоторые примеры стандартных задач запуска, которые можно выполнить в облачной службе. С помощью задач запуска вы можете выполнять различные операции перед запуском роли. Это может быть установка компонента, регистрация компонентов COM, установка разделов реестра или запуск длительного процесса. 
@@ -68,12 +68,12 @@ ms.locfileid: "58181832"
 
 Рекомендуется проверять **errorlevel** после вызова *AppCmd.exe*. Это легко сделать, если создать программу-оболочку вызова *AppCmd.exe* в *CMD-файле*. При обнаружении известного ответа **errorlevel** его можно пропустить или вернуть.
 
-Значения errorlevel, возвращаемые *AppCmd.exe*, перечислены в файле winerror.h. Кроме того, их можно просмотреть на сайте [MSDN](https://msdn.microsoft.com/library/windows/desktop/ms681382.aspx).
+Значения errorlevel, возвращаемые *AppCmd.exe*, перечислены в файле winerror.h. Кроме того, их можно просмотреть на сайте [MSDN](/windows/desktop/Debug/system-error-codes--0-499-).
 
 ### <a name="example-of-managing-the-error-level"></a>Пример управления уровнем ошибок
 Этот пример добавляет раздел сжатия и запись сжатия для JSON в файл *Web.config* с обработкой ошибок и ведением журнала.
 
-Здесь показаны соответствующие разделы файла [ServiceDefinition.csdef], которые включают в себя присвоение атрибуту [executionContext](https://msdn.microsoft.com/library/azure/gg557552.aspx#Task) значения `elevated`. Так *AppCmd.exe* предоставляются достаточные разрешения для изменения параметров в файле *Web.config*:
+Здесь показаны соответствующие разделы файла [ServiceDefinition.csdef], которые включают в себя присвоение атрибуту [executionContext](/previous-versions/azure/reference/gg557552(v=azure.100)#Task) значения `elevated`. Так *AppCmd.exe* предоставляются достаточные разрешения для изменения параметров в файле *Web.config*:
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -293,7 +293,7 @@ REM   Exit the batch file with ERRORLEVEL 0.
 EXIT /b 0
 ```
 
-Обратиться к папке локального хранилища можно из пакета SDK для Azure с помощью метода [GetLocalResource](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getlocalresource.aspx).
+Обратиться к папке локального хранилища можно из пакета SDK для Azure с помощью метода [GetLocalResource](/previous-versions/azure/reference/ee772845(v=azure.100)).
 
 ```csharp
 string localStoragePath = Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment.GetLocalResource("StartupLocalStorage").RootPath;
@@ -507,14 +507,14 @@ EXIT %ERRORLEVEL%
 [Создайте и разверните](cloud-services-how-to-create-deploy-portal.md) свой пакет облачной службы.
 
 [ServiceDefinition.csdef]: cloud-services-model-and-package.md#csdef
-[Task]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
+[Задача]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
 [Startup]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
 [Runtime]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
-[Environment]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
-[Variable]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
+[Среда]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
+[Переменная]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
-[EndPoints]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Endpoints
+[Конечные точки]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Endpoints
 [LocalStorage]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalStorage
 [LocalResources]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalResources
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue

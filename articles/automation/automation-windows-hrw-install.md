@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 09/17/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d0a32f45326eb307bc31d10f4efb842d811a38c3
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 7c6d8fbe54d89fc587c8841b8983d7fdcba29b7d
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57842517"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916468"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Windows
 
@@ -134,9 +134,9 @@ Add-HybridRunbookWorker –GroupName <String> -EndPoint <Url> -Token <String>
 
 Модули runbook могут использовать любые из действий и командлетов, которые определены в модулях, установленных в вашей среде службы автоматизации Azure. Эти модули не развертываются на локальных компьютерах автоматически, поэтому их необходимо устанавливать вручную. Исключением является модуль Azure, который устанавливается по умолчанию и предоставляет доступ к командлетам для всех служб и действий службы автоматизации Azure.
 
-Так как главной целью функции гибридной рабочей роли Runbook является управление локальными ресурсами, вам могут потребоваться модули, которые поддерживают эти ресурсы. Сведения об установке модулей Windows PowerShell см. в [этой статье](https://msdn.microsoft.com/library/dd878350.aspx). 
+Так как главной целью функции гибридной рабочей роли Runbook является управление локальными ресурсами, вам могут потребоваться модули, которые поддерживают эти ресурсы. Сведения об установке модулей Windows PowerShell см. в [этой статье](/powershell/developer/windows-powershell). 
 
-Устанавливаемые модули должны находиться в расположении, указанном в переменной среды **PSModulePath**, чтобы гибридная рабочая роль автоматически импортировала их. Дополнительные сведения см. в статье об [изменении пути установки PSModulePath](https://msdn.microsoft.com/library/dd878326%28v=vs.85%29.aspx).
+Устанавливаемые модули должны находиться в расположении, указанном в переменной среды **PSModulePath**, чтобы гибридная рабочая роль автоматически импортировала их. Дополнительные сведения см. в статье об [изменении пути установки PSModulePath](/powershell/developer/windows-powershell).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

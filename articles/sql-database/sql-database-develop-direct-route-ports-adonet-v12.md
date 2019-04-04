@@ -11,13 +11,13 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: sstein
 manager: craigg
-ms.date: 11/07/2018
-ms.openlocfilehash: 96b6b4866b17e15f544a10124d07e651d747b58b
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.date: 04/03/2019
+ms.openlocfilehash: ddb115370c62371e769ef98e0031f7e0379bafbf
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57306448"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916178"
 ---
 # <a name="ports-beyond-1433-for-adonet-45"></a>Порты для ADO.NET 4.5, отличные от порта 1433
 
@@ -43,11 +43,11 @@ ms.locfileid: "57306448"
 
 1. ADO.NET 4.5 (или более поздней версии) инициирует краткое взаимодействие с облаком Azure и получает динамически указанный номер порта.
 
-   * Диапазон для динамического назначения номера порта: 11000–11999 или 14000–14999.
+   * Номер порта — в диапазоне от 11000 – 11999.
 2. Затем ADO.NET подключается к серверу базы данных SQL напрямую, с без промежуточного слоя.
 3. Запросы отправляются непосредственно в базу данных, а результаты возвращаются клиенту.
 
-Убедитесь, что диапазоны портов 11000–11999 и 14000–14999 на клиентском компьютере Azure доступны для взаимодействия клиента ADO.NET 4.5 с Базой данных SQL.
+Убедитесь, что диапазоны портов из 11000 – 11999 на клиентском компьютере Azure будут доступны для взаимодействия клиента ADO.NET 4.5 с базой данных SQL.
 
 * В частности, порты в этом диапазоне должны оставаться свободными от других исходящих ошибок.
 * На виртуальной машине Azure параметрами порта управляет **брандмауэр Windows в режиме повышенной безопасности** .
@@ -83,7 +83,7 @@ ms.locfileid: "57306448"
 
 * [Список версий протокола TDS](http://www.freetds.org/userguide/tdshistory.htm)
 * [Общие сведения о разработке базы данных SQL](sql-database-develop-overview.md)
-* [Брандмауэр базы данных SQL Azure](sql-database-firewall-configure.md)
-* [How to: Настройка правил брандмауэра в Базе данных SQL](sql-database-configure-firewall-settings.md)
+* [Брандмауэр Базы данных SQL Azure](sql-database-firewall-configure.md)
+* [Практическое руководство: Настройка параметров брандмауэра для базы данных SQL](sql-database-configure-firewall-settings.md)
 
 

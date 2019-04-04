@@ -12,18 +12,21 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/11/2019
 ms.author: tomfitz
-ms.openlocfilehash: 5c8ec54df0d578c6d12524a4128b9cc54e6464a0
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: f79518b26752d581d6360a3b770e8a5cba293fd7
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57781907"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904939"
 ---
 # <a name="understand-the-structure-and-syntax-of-azure-resource-manager-templates"></a>Описание структуры и синтаксиса шаблонов Azure Resource Manager
 
 В этой статье описана структура шаблона Azure Resource Manager. Статья содержит информацию о разных разделах шаблона и свойствах, которые доступны в этих разделах. Шаблон состоит из JSON и выражений, на основе которых можно создавать значения для развертывания.
 
 Эта статья предназначена для пользователей, имеющих некоторый опыт работы с шаблонами Resource Manager. Он предоставляет подробные сведения о структуре и синтаксисе шаблона. Общие сведения о создании шаблона, см. в разделе [создание первого шаблона Azure Resource Manager](resource-manager-create-first-template.md).
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="template-format"></a>Формат шаблона
 
@@ -44,14 +47,14 @@ ms.locfileid: "57781907"
 
 | Имя элемента | Обязательно для заполнения | ОПИСАНИЕ |
 |:--- |:--- |:--- |
-| $schema |Yes |Расположение файла схемы JSON, который описывает версию языка шаблона.<br><br> Для развертывания групп ресурсов используйте `https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#`<br><br>Для развертывания подписки используйте `https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#` |
+| $schema |Yes |Расположение файла схемы JSON, который описывает версию языка шаблона.<br><br> Для развертываний групп ресурсов используйте следующую команду: `https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#`<br><br>Для развертывания подписки используйте следующую команду: `https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#` |
 | contentVersion |Yes |Версия шаблона (например, 1.0.0.0). Для этого элемента можно предоставить любое значение. Это значение позволяет задокументировать важные изменения в шаблоне. При развертывании ресурсов с помощью шаблона это значение позволяет убедиться в том, что используется нужный шаблон. |
 | apiProfile |Нет  | Версия API, который служит в качестве коллекцию версий API для типов ресурсов. Используйте это значение, чтобы избежать необходимости указания версии API для каждого ресурса в шаблоне. При указании профиля версии API и не указать версию API для типа ресурса, диспетчер ресурсов использует версию API для этого типа ресурса, который определен в профиле.<br><br>Свойство профиля API особенно полезна при развертывании шаблона в разных средах, таких как Azure Stack и глобальной среде Azure. Используйте версию API, профиль, чтобы убедиться в том, что шаблон автоматически использует версии, поддерживаемые в обеих средах. Список текущего профиля версии API и ресурсов, заданных в профиле версии API, см. в разделе [профиль API](https://github.com/Azure/azure-rest-api-specs/tree/master/profile).<br><br>Дополнительные сведения см. в разделе [отслеживания версий, с помощью профилей API](templates-cloud-consistency.md#track-versions-using-api-profiles). |
 | [parameters](#parameters) |Нет  |Значения, которые предоставляются при выполнении развертывания для настройки развертывания ресурсов. |
 | [variables](#variables) |Нет  |Значения, используемые в виде фрагментов JSON в шаблоне для упрощения выражений на языке шаблона. |
-| [Функции](#functions) |Нет  |Определяемые пользователем функции, доступные в шаблоне. |
-| [resources](#resources) |Yes |Типы ресурсов, которые развертываются или обновляются в группе ресурсов или подписке. |
-| [Выходные данные](#outputs) |Нет  |Значения, возвращаемые после развертывания. |
+| [functions](#functions) |Нет  |Определяемые пользователем функции, доступные в шаблоне. |
+| [ресурсов](#resources) |Yes |Типы ресурсов, которые развертываются или обновляются в группе ресурсов или подписке. |
+| [outputs](#outputs) |Нет  |Значения, возвращаемые после развертывания. |
 
 Каждый элемент содержит свойства, которые можно задать. В этой статье подробнее описаны разделы шаблона.
 
@@ -267,8 +270,8 @@ ms.locfileid: "57781907"
 
 |Шаблон  |ОПИСАНИЕ  |
 |---------|---------|
-|[Использование параметров с функциями для определения значений по умолчанию](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/parameterswithfunctions.json) | Демонстрирует, как можно применить функции шаблонов при определении значений по умолчанию для параметров. Шаблон не развертывает ресурсы. Он только создает значения параметров и возвращает их. |
-|[Объект параметров](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/parameterobject.json) | Демонстрирует использование объекта в качестве параметра. Шаблон не развертывает ресурсы. Он только создает значения параметров и возвращает их. |
+|[Использование параметров с функциями для значения по умолчанию](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/parameterswithfunctions.json) | Демонстрирует, как можно применить функции шаблонов при определении значений по умолчанию для параметров. Шаблон не развертывает ресурсы. Он только создает значения параметров и возвращает их. |
+|[Объект параметра](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/parameterobject.json) | Демонстрирует использование объекта в качестве параметра. Шаблон не развертывает ресурсы. Он только создает значения параметров и возвращает их. |
 
 ## <a name="variables"></a>Переменные
 
@@ -370,8 +373,8 @@ ms.locfileid: "57781907"
 
 |Шаблон  |ОПИСАНИЕ  |
 |---------|---------|
-| [variable definitions](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/variables.json) | Демонстрирует различные типы переменных. Шаблон не развертывает ресурсы. При его помощи только создаются и возвращаются значения переменных. |
-| [configuration variable](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/variablesconfigurations.json) | Демонстрирует использование переменной, определяющей значения конфигурации. Шаблон не развертывает ресурсы. При его помощи только создаются и возвращаются значения переменных. |
+| [определения переменных](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/variables.json) | Демонстрирует различные типы переменных. Шаблон не развертывает ресурсы. При его помощи только создаются и возвращаются значения переменных. |
+| [переменная конфигурации](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/variablesconfigurations.json) | Демонстрирует использование переменной, определяющей значения конфигурации. Шаблон не развертывает ресурсы. При его помощи только создаются и возвращаются значения переменных. |
 | [network security rules](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.json) и [parameter file](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.parameters.json) | Отвечает за создание массива в правильном формате для назначения правил безопасности в группе безопасности сети. |
 
 
@@ -667,9 +670,9 @@ ms.locfileid: "57781907"
 
 Для вложенного ресурса задается тип `databases`, но его полным типом ресурса является `Microsoft.Sql/servers/databases`. `Microsoft.Sql/servers/` не указывается, так как предполагается из типа родительского ресурса. Дочернему ресурсу присваивается имя `exampledatabase`, но его полное имя включает в себя имя родительского ресурса. `exampleserver` не указывается, так как предполагается из родительского ресурса.
 
-Формат типа дочернего ресурса: `{resource-provider-namespace}/{parent-resource-type}/{child-resource-type}`
+Имеет формат типа дочернего ресурса: `{resource-provider-namespace}/{parent-resource-type}/{child-resource-type}`
 
-Формат имени дочернего ресурса: `{parent-resource-name}/{child-resource-name}`
+Используется следующий формат имени дочернего ресурса: `{parent-resource-name}/{child-resource-name}`
 
 Однако нет необходимости определять базу данных на сервере. Дочерний ресурс можно определить на верхнем уровне. Этот подход можно использовать, если родительский ресурс не развертывается в том же шаблоне или требуется использовать `copy` для создания нескольких дочерних ресурсов. В этом случае нужно указать полный тип ресурса и добавить в имя дочернего ресурса имя родительского ресурса.
 
@@ -698,7 +701,7 @@ ms.locfileid: "57781907"
 
 Например: 
 
-`Microsoft.Compute/virtualMachines/myVM/extensions/myExt` — правильно, `Microsoft.Compute/virtualMachines/extensions/myVM/myExt` — неправильно.
+`Microsoft.Compute/virtualMachines/myVM/extensions/myExt` правильно `Microsoft.Compute/virtualMachines/extensions/myVM/myExt` неверны
 
 ## <a name="outputs"></a>outputs
 

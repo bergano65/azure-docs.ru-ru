@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 3e217e0e3367c6e1200567f589749fec9e626da8
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: 5f9cd5edfb360da507320306314e67ac61503132
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56817462"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916841"
 ---
 # <a name="managing-azure-automation-data"></a>Управление данными службы автоматизации Azure
 Эта статья содержит несколько разделов об управлении средой службы автоматизации Azure.
@@ -45,17 +45,17 @@ ms.locfileid: "56817462"
 При удалении учетной записи службы автоматизации в Microsoft Azure все объекты в ней удаляются, включая модули Runbook, модули, параметры, конфигурации, задания и ресурсы. Объекты нельзя восстановить после удаления учетной записи.  Можно использовать следующую информацию, чтобы создать резервную копию содержимого учетной записи службы автоматизации перед его удалением. 
 
 ### <a name="runbooks"></a>Модули Runbook
-Модули Runbook можно экспортировать в файлы сценариев с помощью портала Azure или командлета [Get-AzureAutomationRunbookDefinition](https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azureautomationrunbookdefinition) в Windows PowerShell.  Эти файлы сценариев можно импортировать в другую учетную запись службы автоматизации, как описано в разделе [Создание или импорт модуля Runbook](https://msdn.microsoft.com/library/dn643637.aspx).
+Модули Runbook можно экспортировать в файлы сценариев с помощью портала Azure или командлета [Get-AzureAutomationRunbookDefinition](https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azureautomationrunbookdefinition) в Windows PowerShell.  Эти файлы сценариев можно импортировать в другую учетную запись службы автоматизации, как описано в разделе [Создание или импорт модуля Runbook](/previous-versions/azure/dn643637(v=azure.100)).
 
 ### <a name="integration-modules"></a>Модули интеграции
 Модули интеграции нельзя экспортировать из службы автоматизации Azure.  Необходимо обеспечить, чтобы они были доступны за пределами учетной записи службы автоматизации.
 
 ### <a name="assets"></a>Активы
-Нельзя экспортировать [ресурсы](https://msdn.microsoft.com/library/dn939988.aspx) из службы автоматизации Azure.  Используя портал Azure, вам необходимо записать сведения о переменных, учетных данных, сертификатах, подключениях и расписаниях.  Затем необходимо вручную создать все ресурсы, используемые модулями Runbook, которые импортируются в другую службу автоматизации.
+Нельзя экспортировать [ресурсы](/previous-versions/azure/dn939988(v=azure.100)) из службы автоматизации Azure.  Используя портал Azure, вам необходимо записать сведения о переменных, учетных данных, сертификатах, подключениях и расписаниях.  Затем необходимо вручную создать все ресурсы, используемые модулями Runbook, которые импортируются в другую службу автоматизации.
 
 Вы можете использовать [командлеты Azure](https://docs.microsoft.com/powershell/module/azurerm.automation#automation) , чтобы получить информацию о незашифрованных ресурсах и либо сохранить ее для дальнейшего использования, либо создать эквивалентные ресурсы в другой учетной записи службы автоматизации.
 
-С помощью командлетов нельзя получить значение зашифрованных переменных или поле пароля учетных данных.  Если вы не знаете этих значений, то их можно получить из модуля Runbook с помощью действий [Get-AutomationVariable](https://msdn.microsoft.com/library/dn940012.aspx) и [Get-AutomationPSCredential](https://msdn.microsoft.com/library/dn940015.aspx).
+С помощью командлетов нельзя получить значение зашифрованных переменных или поле пароля учетных данных.  Если вы не знаете этих значений, то их можно получить из модуля Runbook с помощью действий [Get-AutomationVariable](/previous-versions/azure/dn940012(v=azure.100)) и [Get-AutomationPSCredential](/previous-versions/azure/dn940015(v=azure.100)).
 
 Нельзя экспортировать сертификаты из службы автоматизации Azure.  Необходимо обеспечить, чтобы все сертификаты были доступны за пределами Azure.
 

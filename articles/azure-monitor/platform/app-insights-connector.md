@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: magoedte
-ms.openlocfilehash: 4e91e193b3980901e7778a8826989e729517a29a
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: aa1bb62e762925dcb5a0ee37b71602094e768137
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58481762"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905704"
 ---
 # <a name="application-insights-connector-management-solution-deprecated"></a>Решение по управлению Соединителем Application Insights (устарело)
 
@@ -42,6 +42,9 @@ ms.locfileid: "58481762"
 - визуализировать данные приложения с перспективами в поиске по журналам;
 - сводить данные из Log Analytics в приложении Application Insights на портале Azure.
 
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 ## <a name="connected-sources"></a>Подключенные источники
 
 В отличие от большинства других решений Log Analytics, данные для соединителя Application Insights не собираются агентами. Все данные, используемые решением, поступают непосредственно из Azure.
@@ -51,7 +54,7 @@ ms.locfileid: "58481762"
 | [Агенты Windows](../../azure-monitor/platform/agent-windows.md) | Нет  | Решение не собирает сведения из агентов Windows. |
 | [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет  | Решение не собирает сведения из агентов Linux. |
 | [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | Нет  | Решение не собирает сведения из агентов в подключенной группе управления SCOM. |
-| [Учетная запись хранения Azure](collect-azure-metrics-logs.md) | Нет  | Решение не собирает сведения из службы хранилища Azure. |
+| [Учетная запись хранения Azure.](collect-azure-metrics-logs.md) | Нет  | Решение не собирает сведения из службы хранилища Azure. |
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -94,11 +97,11 @@ ms.locfileid: "58481762"
 Панель мониторинга содержит колонки, приведенные в таблице. В каждой колонке содержится максимум 10 элементов, соответствующих таким указанным критериям, как область действия и диапазон времени. Вы можете выполнить поиск по журналам, в результате которого возвращаются все записи, если щелкнуть заголовок колонки или **Показать все** в ее нижней части.
 
 
-| **Столбец** | **Описание** |
+| **столбец** | **ОПИСАНИЕ** |
 | --- | --- |
-| Applications — Number of applications | Указывает число приложений в ресурсах приложения. Кроме того, приводятся имена приложений и количество записей приложений в каждом из них. Щелкните количество, чтобы выполнить поиск по журналам: <code>ApplicationInsights &#124; summarize AggregatedValue = sum(SampledCount) by ApplicationName</code>. <br><br>  Щелкните имя приложения, чтобы выполнить поиск по журналам для приложения, в котором показаны записи приложения для каждого узла, записи по типам телеметрии и все данные по типам (в зависимости от последнего дня). |
-| Data Volume — Hosts sending data | Показывает число узлов компьютера, которые отправляют данные. Здесь также приводятся узлы компьютера и количество записей для каждого узла. Щелкните количество, чтобы выполнить поиск по журналам: <code>ApplicationInsights &#124; summarize AggregatedValue = sum(SampledCount) by Host</code>. <br><br> Щелкните имя компьютера, чтобы выполнить поиск по журналам для узла, в котором показаны записи приложения для каждого узла, записи по типам телеметрии и все данные по типам (в зависимости от последнего дня). |
-| Availability — Webtest results | Показывает кольцевую диаграмму с результатами веб-тестов, в которой указано, положительные они или отрицательные. Щелкните диаграмму, чтобы выполнить поиск по журналам: <code>ApplicationInsights &#124; where TelemetryType == "Availability" &#124; summarize AggregatedValue = sum(SampledCount) by AvailabilityResult</code>. <br><br> Результаты показывают количество пройденных и непройденных тестов. Показывает все веб-приложения с трафиком за последнюю минуту. Щелкните имя приложения, чтобы просмотреть поиск по журналам с подробными сведениями о непройденных веб-тестах. |
+| Applications — Number of applications | Указывает число приложений в ресурсах приложения. Кроме того, приводятся имена приложений и количество записей приложений в каждом из них. Щелкните количество, чтобы выполнить поиск по журналам <code>ApplicationInsights &#124; summarize AggregatedValue = sum(SampledCount) by ApplicationName</code> <br><br>  Щелкните имя приложения, чтобы выполнить поиск по журналам для приложения, в котором показаны записи приложения для каждого узла, записи по типам телеметрии и все данные по типам (в зависимости от последнего дня). |
+| Data Volume — Hosts sending data | Показывает число узлов компьютера, которые отправляют данные. Здесь также приводятся узлы компьютера и количество записей для каждого узла. Щелкните количество, чтобы выполнить поиск по журналам <code>ApplicationInsights &#124; summarize AggregatedValue = sum(SampledCount) by Host</code> <br><br> Щелкните имя компьютера, чтобы выполнить поиск по журналам для узла, в котором показаны записи приложения для каждого узла, записи по типам телеметрии и все данные по типам (в зависимости от последнего дня). |
+| Availability — Webtest results | Показывает кольцевую диаграмму с результатами веб-тестов, в которой указано, положительные они или отрицательные. Щелкните диаграмму, чтобы выполнить поиск по журналам <code>ApplicationInsights &#124; where TelemetryType == "Availability" &#124; summarize AggregatedValue = sum(SampledCount) by AvailabilityResult</code> <br><br> Результаты показывают количество пройденных и непройденных тестов. Показывает все веб-приложения с трафиком за последнюю минуту. Щелкните имя приложения, чтобы просмотреть поиск по журналам с подробными сведениями о непройденных веб-тестах. |
 | Server Requests — Requests per hour | Показывает график запросов сервера в час для различных приложений. Наведите указатель мыши на линию на диаграмме, чтобы просмотреть 3 приложения, получающие наибольшее количество запросов на определенный момент времени. Кроме того, отображает список приложений, получающих запросы, и число запросов за выбранный период. <br><br>Щелкните диаграмму, чтобы выполнить поиск по журналам для <code>ApplicationInsights &#124; where TelemetryType == "Request" &#124; summarize AggregatedValue = sum(SampledCount) by ApplicationName, bin(TimeGenerated, 1h)</code>, после чего отобразится график с подробными сведениями о количестве запросов сервера в час для различных приложений. <br><br> Щелкните приложение в списке, чтобы выполнить поиск по журналам для <code>ApplicationInsights &#124; where ApplicationName == "yourapplicationname" and TelemetryType == "Request" and iff(isnotnull(toint(RequestSuccess)), RequestSuccess == false, RequestSuccess == "false") == true</code>, после чего отобразится список запросов, диаграммы для запросов за период времени и длительность запросов, а также список кодов ответов на запросы.   |
 | Failures — Failed requests per hour | Показывает график со сведениями о количестве невыполненных запросов приложения в час. Наведите указатель мыши на диаграмму, чтобы просмотреть 3 приложения с наибольшим количеством невыполненных запросов на определенный момент времени. Кроме того, отображает список приложений и сведения о количестве невыполненных запросов для каждого из них. Щелкните диаграмму, чтобы выполнить поиск по журналам для <code>ApplicationInsights &#124; where TelemetryType == "Request" and iff(isnotnull(toint(RequestSuccess)), RequestSuccess == false, RequestSuccess == "false") == true &#124; summarize AggregatedValue = sum(SampledCount) by ApplicationName, bin(TimeGenerated, 1h)</code>, после чего отобразится график с подробными сведениями о невыполненных запросах приложения. <br><br>Щелкните элемент в списке, чтобы выполнить поиск по журналам для <code>ApplicationInsights &#124; where ApplicationName == "yourapplicationname" and TelemetryType == "Request" and iff(isnotnull(toint(RequestSuccess)), RequestSuccess == false, RequestSuccess == "false") == true</code>, после чего отобразятся невыполненные запросы, диаграммы с невыполненными запросами за период времени и длительность запросов, а также список кодов ответов на невыполненные запросы. |
 | Exceptions — Exceptions per hour | Показывает график со сведениями о количестве исключений в час. Наведите указатель мыши на диаграмму, чтобы просмотреть 3 приложения с наибольшим количеством исключений на определенный момент времени. Кроме того, отображает список приложений и сведения о количестве исключений для каждого из них. Щелкните диаграмму, чтобы выполнить поиск по журналам для <code>ApplicationInsights &#124; where TelemetryType == "Exception" &#124; summarize AggregatedValue = sum(SampledCount) by ApplicationName, bin(TimeGenerated, 1h)</code>, после чего отобразится график с подробными сведениями об исключениях. <br><br>Щелкните элемент в списке, чтобы выполнить поиск по журналам для <code>ApplicationInsights &#124; where ApplicationName == "yourapplicationname" and TelemetryType == "Exception"</code>, после чего отобразится список исключений, диаграммы с исключениями на определенный момент времени и невыполненные запросы, а также список типов исключений.  |
@@ -280,25 +283,25 @@ $Subscription_workspace = "Workspace Subscription Name"
 $ResourceGroup_workspace = "Workspace ResourceGroup"
 $Workspace = "Workspace Name"
 
-Connect-AzureRmAccount
-Set-AzureRmContext -SubscriptionId $Subscription_app
-$AIApp = Get-AzureRmApplicationInsights -ResourceGroupName $ResourceGroup_app -Name $Application 
-Set-AzureRmContext -SubscriptionId $Subscription_workspace
-Remove-AzureRmOperationalInsightsDataSource -WorkspaceName $Workspace -ResourceGroupName $ResourceGroup_workspace -Name $AIApp.Id
+Connect-AzAccount
+Set-AzContext -SubscriptionId $Subscription_app
+$AIApp = Get-AzApplicationInsights -ResourceGroupName $ResourceGroup_app -Name $Application 
+Set-AzContext -SubscriptionId $Subscription_workspace
+Remove-AzOperationalInsightsDataSource -WorkspaceName $Workspace -ResourceGroupName $ResourceGroup_workspace -Name $AIApp.Id
 ```
 
 Благодаря использованию следующего скрипта PowerShell, который запускает вызов API REST, вы можете получить список приложений. 
 
 ```powershell
-Connect-AzureRmAccount
+Connect-AzAccount
 $Tenant = "TenantId"
 $Subscription_workspace = "Workspace Subscription Name"
 $ResourceGroup_workspace = "Workspace ResourceGroup"
 $Workspace = "Workspace Name"
 $AccessToken = "AAD Authentication Token" 
 
-Set-AzureRmContext -SubscriptionId $Subscription_workspace
-$LAWorkspace = Get-AzureRmOperationalInsightsWorkspace -ResourceGroupName $ResourceGroup_workspace -Name $Workspace
+Set-AzContext -SubscriptionId $Subscription_workspace
+$LAWorkspace = Get-AzOperationalInsightsWorkspace -ResourceGroupName $ResourceGroup_workspace -Name $Workspace
 
 $Headers = @{
     "Authorization" = "Bearer $($AccessToken)"

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: 05327c05594d38caf5e3d54f8a13eaaaac3588ec
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f5ffd1a9d0e7ff515b0819bb678bf0263f53e0d2
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58097446"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918779"
 ---
 # <a name="create-biztalk-services-using-the-azure-portal"></a>Создание служб BizTalk с помощью портала Azure
 
@@ -39,8 +39,8 @@ ms.locfileid: "58097446"
 
 ## <a name="post-provisioning-steps"></a>Действия после подготовки
 * [Установка сертификата на локальном компьютере](#InstallCert)
-* [Добавление готового сертификата для рабочей среды](#AddCert)
-* [Извлечение пространства имен контроля доступа](#ACS)
+* [Добавление сертификата в готовый к выпуску](#AddCert)
+* [Получить пространство имен Access Control](#ACS)
 
 #### <a name="InstallCert"></a>Установка сертификата на локальном компьютере
 
@@ -59,16 +59,16 @@ ms.locfileid: "58097446"
 Значения Access Control можно использовать в любом приложении. При создании служб BizTalk это пространство имен Access Control управляет проверкой подлинности при развертывании службы BizTalk. Для изменения подписки или управления пространством имен выберите **ACTIVE DIRECTORY** в левой области навигации, а затем выберите ваше пространство имен. Параметры перечислены на панели задач.
 
 Если щелкнуть **Управление** , откроется портал управления доступом. На портале управления службы контроля доступа служба BizTalk использует **идентификаторы службы**:  
-![Идентификаторы службы ACS на портале управления доступом][ACSServiceIdentities]
+![Идентификаторы службы ACS доступ управления портала управления][ACSServiceIdentities]
 
 Идентификатор службы Access Control — это набор учетных данных, позволяющих приложениям или клиентам проходить проверку подлинности непосредственно в службе Access Control и получать токен.
 
 > [!IMPORTANT]
-> Служба BizTalk использует значение **Владелец** в качестве идентификатора службы по умолчанию и значение **Пароль**. Если вместо значения пароля используется значение симметричного ключа, может возникнуть следующая ошибка:<br/><br/>*Could not connect to the Access Control Management Service account with the specified credentials*
+> Служба BizTalk использует значение **Владелец** в качестве идентификатора службы по умолчанию и значение **Пароль**. Если вместо значения пароля используется значение симметричного ключа, может возникнуть следующая ошибка:<br/><br/>*Не удалось подключиться к учетной записи службы контроля доступа с помощью указанных учетных данных*
 > 
 > 
 
-[Управление пространством имен ACS](https://msdn.microsoft.com/library/azure/hh674478.aspx) приведены некоторые правила и рекомендации.
+[Управление пространством имен ACS](/previous-versions/azure/azure-services/hh674478(v=azure.100)) приведены некоторые правила и рекомендации.
 
 ## <a name="requirements-explained"></a>Пояснение требований
 Эти требования не применяются к выпуску Free Edition.
@@ -93,8 +93,8 @@ ms.locfileid: "58097446"
 <br/><br/>
 При создании службы BizTalk можно использовать существующий сервер SQL Server Azure, базу данных SQL Azure или автоматически создать новый сервер или базу данных.
 <br/><br/>
-Масштаб базы данных SQL настраивается автоматически. Обычно для службы BizTalk достаточно масштаба по умолчанию. Изменение масштаба может повлиять на цену. См. статью о <a HREF="https://go.microsoft.com/fwlink/p/?LinkID=234930">стоимости услуг Azure</a>
-.<br/><br/>
+Масштаб базы данных SQL настраивается автоматически. Обычно для службы BizTalk достаточно масштаба по умолчанию. Изменение масштаба может повлиять на цену. См. в разделе <a HREF="https://go.microsoft.com/fwlink/p/?LinkID=234930"> учетные записи и выставление счетов в базе данных Azure SQL</a>
+<br/><br/>
 <strong>Примечания</strong>
 <br/>
 <ul>
@@ -132,7 +132,7 @@ ms.locfileid: "58097446"
 <td>
 При создании службы BizTalk Azure также создается URL-адрес HTTPS-узла, включающий имя службы BizTalk. Этот URL-адрес автоматически конфигурируется для использования самозаверяющего сертификата исключительно для разработки. На рабочем этапе вам потребуется личный SSL-сертификат.
 <br/><br/>
-<strong>Важные сведения об SSL-сертификате</strong>
+<strong>Сведения о сертификате важно SSL</strong>
 
 <ul>
 <li>Сертификат должен иметь срок действия менее 5 лет.</li>
@@ -168,13 +168,13 @@ ms.locfileid: "58097446"
 После создания службы BizTalk ознакомьтесь со статьей [службы BizTalk: Вкладки панели мониторинга, мониторинг и масштабирование](biztalk-dashboard-monitor-scale-tabs.md). Служба BizTalk готова для использования в приложениях. Чтобы приступить к созданию приложений, перейдите по ссылке [Службы BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=235197).
 
 ## <a name="see-also"></a>См. также
-* [Службы BizTalk. Диаграмма выпусков](biztalk-editions-feature-chart.md)<br/>
+* [Службы BizTalk. Таблица выпусков](biztalk-editions-feature-chart.md)<br/>
 * [Службы BizTalk. Диаграмма состояния](biztalk-service-state-chart.md)<br/>
-* [Службы BizTalk. Резервное копирование и восстановление](biztalk-backup-restore.md)<br/>
+* [Службы BizTalk. Архивация и восстановление](biztalk-backup-restore.md)<br/>
 * [Службы BizTalk. Регулирование](biztalk-throttling-thresholds.md)<br/>
 * [Службы BizTalk. Имя издателя и ключ издателя](biztalk-issuer-name-issuer-key.md)<br/>
-* [Как приступить к работе с пакетом SDK для служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
-* [гибридных подключений](integration-hybrid-connection-overview.md)
+* [Инструкции запуска с помощью пакета SDK служб BizTalk Azure](https://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
+* [через гибридные подключения](integration-hybrid-connection-overview.md)
 
 [NewBizTalkService]: ./media/biztalk-provision-services/WABS_NewBizTalkService.png
 [NEWButton]: ./media/biztalk-provision-services/WABS_New.png

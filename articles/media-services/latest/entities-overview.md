@@ -9,15 +9,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/30/2019
+ms.date: 04/02/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 6bf0efd6994315d56e7b1b2447ffed9154cf5ee5
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: a5ab0b25a2a2db764854982b1a6801ce4f857dda
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58804876"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58891962"
 ---
 # <a name="developing-with-media-services-v3-apis"></a>Разработка с использованием служб мультимедиа версии 3 API-интерфейсов
 
@@ -47,7 +47,7 @@ ms.locfileid: "58804876"
 
 Операции с пометкой `x-ms-long-running-operation` в службах мультимедиа Azure [swagger файлы](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2018-07-01/streamingservice.json) длинные выполняющиеся операции. 
 
-Дополнительные сведения о том, как отслеживание асинхронных операций Azure, см. в разделе [асинхронных операций](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations#monitor-status-of-operation)
+Дополнительные сведения о том, как отслеживание асинхронных операций Azure, см. в разделе [асинхронных операций](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations#monitor-status-of-operation).
 
 Службы мультимедиа доступны следующие долго выполняющейся операции:
 
@@ -65,7 +65,6 @@ ms.locfileid: "58804876"
 * Запуск конечной точки потоковой передачи
 * Остановить конечную точку потоковой передачи
 * Масштабирование конечной точки потоковой передачи
-
 
 ## <a name="filtering-ordering-paging-of-media-services-entities"></a>Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа
 
@@ -356,4 +355,4 @@ while (currentPage.NextPageLink != null)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
+[Stream файла](stream-files-dotnet-quickstart.md)

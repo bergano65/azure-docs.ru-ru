@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: article
 ms.date: 03/13/2019
 ms.author: anuragm
-ms.openlocfilehash: d8cbae679552cce8df29410ad8a477801abd4ff1
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.openlocfilehash: db204c0e881200f667484daf4348c336f94a0ce7
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58847454"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916694"
 ---
 # <a name="troubleshoot-back-up-sql-server-on-azure"></a>Устранении неполадок резервного копирования SQL Server в Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "58847454"
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | This SQL database does not support the requested backup type. (Эта база данных SQL не поддерживает запрашиваемый тип резервного копирования.) | Возникает, когда модель восстановления базы данных не разрешает запрашиваемый тип резервного копирования. Ошибка может произойти в следующих ситуациях: <br/><ul><li>База данных, использующая простую модель восстановления, не позволяет создавать резервные копии журналов.</li><li>Разностные резервные копии и резервные копии журналов не допускаются для базы данных Master.</li></ul>Дополнительные сведения см. в статье [Модели восстановления (SQL Server)](https://docs.microsoft.com/sql/relational-databases/backup-restore/recovery-models-sql-server). | Если резервная копия журнала базы данных завершилась сбоем в простой модели восстановления, попробуйте один из следующих вариантов:<ul><li>Если база данных находится в режиме простого восстановления, отключите резервные копии журналов.</li><li>Используйте [документацию SQL](https://docs.microsoft.com/sql/relational-databases/backup-restore/view-or-change-the-recovery-model-of-a-database-sql-server), чтобы изменить модель восстановления базы данных на модель с полным или не полным протоколированием. </li><li> Если вы не хотите изменять модель восстановления, и у вас есть стандартная политика резервного копирования нескольких баз данных, которую нельзя изменить, игнорируйте ошибку. Полные и разностные резервные копии будут работать по расписанию. Резервные копии журналов будут пропущены, что ожидаемо в этом случае.</li></ul>Если это база данных Master, и вы настроили разностное резервное копирование или резервное копирование журналов, выполните одно из следующих действий:<ul><li>Используйте портал, чтобы изменить расписание политики резервного копирования для базы данных Master, на полное копирование.</li><li>Если у вас есть стандартная политика резервного копирования нескольких баз данных, которую нельзя изменить, игнорируйте ошибку. Ваше полное резервное копирование будет работать по расписанию. Разностное резервное копирование или резервное копирование журналов не произойдет, что ожидаемо в этом случае.</li></ul> |
-| Operation canceled as a conflicting operation was already running on the same database. (Операция отменена, так как конфликтная операция уже выполняется в одной базе данных.) | См. [запись в блоге о резервных копиях и ограничениях восстановления](https://blogs.msdn.microsoft.com/arvindsh/2008/12/30/concurrency-of-full-differential-and-log-backups-on-the-same-database), которые запускаются одновременно.| [Используйте SQL Server Management Studio (SSMS) для мониторинга заданий резервного копирования.](manage-monitor-sql-database-backup.md) Если конфликтная операция завершится сбоем, перезапустите ее.|
+| Operation canceled as a conflicting operation was already running on the same database. (Операция отменена, так как конфликтная операция уже выполняется в одной базе данных.) | См. [запись в блоге о резервных копиях и ограничениях восстановления](https://blogs.msdn.microsoft.com/arvindsh/2008/12/30/concurrency-of-full-differential-and-log-backups-on-the-same-database), которые запускаются одновременно.| [Используйте SQL Server Management Studio (SSMS) для мониторинга задания резервного копирования.](manage-monitor-sql-database-backup.md) Если конфликтная операция завершится сбоем, перезапустите ее.|
 
 ### <a name="usererrorsqlpodoesnotexist"></a>UserErrorSQLPODoesNotExist
 
@@ -67,7 +67,7 @@ ms.locfileid: "58847454"
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
-| Azure Backup is not able to connect to the SQL instance. (Azure Backup не может подключиться к экземпляру SQL.) | Служба Azure Backup не может подключиться к экземпляру SQL. | Используйте дополнительные сведения в меню ошибок портала Azure, чтобы сузить круг возможных причин проблемы. Дополнительные сведения см. в статье [Устранение неполадок при соединении с компонентом SQL Server Database Engine](https://docs.microsoft.com/sql/database-engine/configure-windows/troubleshoot-connecting-to-the-sql-server-database-engine).<br/><ul><li>Если параметры SQL по умолчанию не позволяют выполнять удаленные подключения, измените их. Чтобы изменить параметры, см. следующие ссылки.<ul><li>[https://msdn.microsoft.com/library/bb326495.aspx](https://msdn.microsoft.com/library/bb326495.aspx)</li><li>[https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-2-database-engine-error](https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-2-database-engine-error)</li><li>[https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-53-database-engine-error](https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-53-database-engine-error)</li></ul></li></ul><ul><li>Если есть проблемы со входом, перейдите по ссылкам ниже, чтобы их исправить:<ul><li>[https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-18456-database-engine-error](https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-18456-database-engine-error)</li><li>[https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-18452-database-engine-error](https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-18452-database-engine-error)</li></ul></li></ul> |
+| Azure Backup is not able to connect to the SQL instance. (Azure Backup не может подключиться к экземпляру SQL.) | Служба Azure Backup не может подключиться к экземпляру SQL. | Используйте дополнительные сведения в меню ошибок портала Azure, чтобы сузить круг возможных причин проблемы. Дополнительные сведения см. в статье [Устранение неполадок при соединении с компонентом SQL Server Database Engine](https://docs.microsoft.com/sql/database-engine/configure-windows/troubleshoot-connecting-to-the-sql-server-database-engine).<br/><ul><li>Если параметры SQL по умолчанию не позволяют выполнять удаленные подключения, измените их. Ознакомьтесь со следующими статьями, сведения об изменении настроек.<ul><li>[MSSQLSERVER_-1](/previous-versions/sql/sql-server-2016/bb326495(v=sql.130))</li><li>[MSSQLSERVER_2](/sql/relational-databases/errors-events/mssqlserver-2-database-engine-error)</li><li>[MSSQLSERVER_53](/sql/relational-databases/errors-events/mssqlserver-53-database-engine-error)</li></ul></li></ul><ul><li>Если есть проблемы со входом, перейдите по ссылкам ниже, чтобы их исправить:<ul><li>[MSSQLSERVER_18456](/sql/relational-databases/errors-events/mssqlserver-18456-database-engine-error)</li><li>[MSSQLSERVER_18452](/sql/relational-databases/errors-events/mssqlserver-18452-database-engine-error)</li></ul></li></ul> |
 
 ### <a name="usererrorparentfullbackupmissing"></a>UserErrorParentFullBackupMissing
 
@@ -169,7 +169,8 @@ ms.locfileid: "58847454"
   * Отключение виртуальной Машины в течение продолжительного периода из-за которой истек срок действия на нем конфигурации расширения
   * Виртуальная машина удаляется, а другой виртуальной Машине была создана с тем же именем и в той же группе ресурсов, что удаленной виртуальной Машины
   * Один из узлов группы Доступности не получили полной резервной копии конфигурации, это может произойти во время регистрации группы доступности в хранилище, или когда добавляется новый узел  <br>
-    В приведенных выше сценариях рекомендуется активировать повторно зарегистрировать операцию на виртуальной Машине. Этот параметр доступен только через PowerShell и скоро станет доступна на портале Azure.
+   
+В приведенных выше сценариях рекомендуется активировать повторно зарегистрировать операцию на виртуальной Машине. Этот параметр доступен только через PowerShell и скоро станет доступна на портале Azure.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -3,19 +3,19 @@ title: Метод транслитерации в API перевода текс�
 titlesuffix: Azure Cognitive Services
 description: Использование метода транслитерации в API перевода текстов
 services: cognitive-services
-author: Jann-Skotdal
+author: v-pawal
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: a0fcd7159be075f0e311e9a242d389dca62f4a37
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 97a2318b7aa3591193108a8a061a15ec5692fac5
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55859626"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918626"
 ---
 # <a name="translator-text-api-30-transliterate"></a>API перевода текстов 3.0: Transliterate
 
@@ -60,7 +60,7 @@ https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
   <th width="20%">Заголовки</th>
   <th>ОПИСАНИЕ</th>
   <tr>
-    <td>_Один заголовок_<br/>_авторизации_</td>
+    <td>_По одному разрешению_<br/>_Верхний колонтитул_</td>
     <td>*Обязательный заголовок запроса*.<br/>См. [описание доступных способов аутентификации](./v3-0-reference.md#authentication).</td>
   </tr>
   <tr>
@@ -165,7 +165,7 @@ https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
 
 В следующем примере показано преобразование двух строк на японском языке в транслитерацию японского текста латиницей.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
+# [<a name="curl"></a>curl](#tab/curl)
 
 Полезные данные JSON для запроса в этом примере:
 

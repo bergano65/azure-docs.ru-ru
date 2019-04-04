@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: crdun
-ms.openlocfilehash: 67bf0499b6dcf4257380f601c802723b2993a092
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 29efa963a254913e3d4744ade1d161c5c8ce42e4
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57771486"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58893356"
 ---
 # <a name="create-a-xamarinandroid-app"></a>Создание приложения Xamarin.Android
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "57771486"
 Для работы с данным руководством вам потребуется:
 
 * Активная учетная запись Azure. Если у вас еще нет учетной записи, зарегистрируйтесь для использования пробной версии Azure и получите до 10 бесплатных мобильных приложений. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
-* Visual Studio с Xamarin. Инструкции см. в статье об [установке и настройке Visual Studio и Xamarin](https://msdn.microsoft.com/library/mt613162.aspx).
+* Visual Studio с Xamarin. Инструкции см. в статье об [установке и настройке Visual Studio и Xamarin](/visualstudio/cross-platform/setup-and-install).
 
 ## <a name="create-an-azure-mobile-app-backend"></a>Создание серверной части мобильного приложения Azure
 Чтобы создать серверную часть мобильного приложения, выполните указанные ниже действия.
@@ -71,8 +71,8 @@ ms.locfileid: "57771486"
 Обратите внимание, что все пакеты поддержки, на которые содержатся ссылки в проекте Android, должны быть одной версии. [Пакет NuGet для мобильных приложений Azure](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) имеет зависимость `Xamarin.Android.Support.CustomTabs` для платформы Android, поэтому если в проекте используются пакеты поддержки более новой версии, во избежание конфликтов необходимо установить требуемую версию пакета.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Включение автономной синхронизации для мобильного приложения Xamarin.Android](app-service-mobile-xamarin-android-get-started-offline-data.md)
-* [Добавление аутентификации в приложение](app-service-mobile-xamarin-android-get-started-users.md)
+* [Добавление автономной синхронизации в приложение](app-service-mobile-xamarin-android-get-started-offline-data.md)
+* [Добавьте в приложения проверку подлинности](app-service-mobile-xamarin-android-get-started-users.md)
 * [Добавление push-уведомлений в приложение Xamarin.Android](app-service-mobile-xamarin-android-get-started-push.md)
 * [Использование управляемого клиента для мобильных приложений Azure](app-service-mobile-dotnet-how-to-use-client-library.md)
 

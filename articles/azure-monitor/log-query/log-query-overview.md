@@ -7,12 +7,12 @@ ms.service: log-analytics
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: bwren
-ms.openlocfilehash: 6ed3a98282221d5ac148e88b6646bfaa4da768be
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: dcac701f3c1b6d64a7017c31679c019b91103ba2
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58446430"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904735"
 ---
 # <a name="analyze-log-data-in-azure-monitor"></a>Анализ данных журнала в Azure Monitor
 
@@ -20,20 +20,15 @@ ms.locfileid: "58446430"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="log-queries"></a>Запросы журнала
 
 Чтобы получить данные журнала из Azure Monitor, требуется запрос по журналам.  Чтобы указать нужные данные, используйте запрос, независимо от того, что вы делаете: [анализируете данные на портале](portals.md), [настраиваете правило генерации оповещений](../platform/alerts-metric.md) для уведомления о конкретном состоянии или получаете данные с помощью [API журналов Azure Monitor](https://dev.loganalytics.io/).  В этой статье описываются запросы по журналам в Azure Monitor и предоставляются основные сведения, которые необходимо знать перед их созданием.
 
-
-
 ## <a name="where-log-queries-are-used"></a>Использование запросов к журналу
 
-
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-
 Ниже приведены различные способы, что будет использовать запросы в Azure Monitor:
-
 
 - **Портал.** На [портале Azure](portals.md) можно выполнять интерактивный анализ данных журнала.  Так вы можете изменить запрос и анализировать результаты в различных форматах и визуализациях.  
 - **Правила генерации оповещений.** [Правила генерации оповещений](../platform/alerts-overview.md) заранее выявляют проблемы с данными в рабочей области.  Каждое правило генерации оповещений основано на поиске по журналам, который автоматически выполняется через определенные интервалы.  Результаты проверяются, чтобы определить, следует ли создавать оповещение.
@@ -41,8 +36,8 @@ ms.locfileid: "58446430"
 - **Представления.**  Вы можете создавать визуализации данных, которые добавлены на панели мониторинга пользователя, с помощью [конструктора представлений](../platform/view-designer.md).  Запросы к журналам предоставляют данные, используемые [плитками](../platform/view-designer-tiles.md) и [элементами визуализации](../platform/view-designer-parts.md) в каждом просмотре.  
 
 - **Экспорт.**  Когда вы экспортируете данные из Azure Monitor в Excel или [Power BI](../platform/powerbi.md), вы создаете запрос по журналам для определения экспортируемых данных.
-- **PowerShell.** Позволяет выполнять скрипт PowerShell из командной строки или модуль runbook службы автоматизации Azure, который использует [Get-AzOperationalInsightsSearchResults](/powershell/module/azurerm.operationalinsights/get-azurermoperationalinsightssearchresults) для получения данных журналов из Azure Monitor.  Для этого командлета требуется запрос, чтобы определить извлекаемые данные.
-- **API журналов Azure Monitor.**  [API журналов Azure Monitor](../platform/alerts-overview.md) позволяет любому клиенту REST API извлекать данные журнала из рабочей области.  Запрос API включает запрос, который выполняется в Azure Monitor, чтобы определить извлекаемые данные.
+- **PowerShell.** Позволяет выполнять скрипт PowerShell из командной строки или модуль runbook службы автоматизации Azure, который использует [Get-AzOperationalInsightsSearchResults](/powershell/module/az.operationalinsights/get-azoperationalinsightssearchresults) для получения данных журналов из Azure Monitor.  Для этого командлета требуется запрос, чтобы определить извлекаемые данные.
+- **Журналы API Azure Monitor.**  [API журналов Azure Monitor](../platform/alerts-overview.md) позволяет любому клиенту REST API извлекать данные журнала из рабочей области.  Запрос API включает запрос, который выполняется в Azure Monitor, чтобы определить извлекаемые данные.
 
 ![Поиск по журналам](media/log-query-overview/queries-overview.png)
 

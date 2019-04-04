@@ -3,19 +3,19 @@ title: Фильтр ненормативной лексики — API пере�
 titlesuffix: Azure Cognitive Services
 description: Используйте фильтр ненормативной лексики в API перевода текстов.
 services: cognitive-services
-author: Jann-Skotdal
+author: v-pawal
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 02/21/2019
 ms.author: v-jansko
-ms.openlocfilehash: ab54f34dbdbda5af94c6ebc2bc8c1818ebf3d601
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: bd7a05f2f597d1882293387e5aac8e4d7367d051
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56729888"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916637"
 ---
 # <a name="add-profanity-filtering-with-the-translator-text-api"></a>Добавление фильтра ненормативной лексики в API перевода текстов
 
@@ -34,4 +34,4 @@ ms.locfileid: "56729888"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
-> [Применение фильтра ненормативной лексики с помощью вызова API переводчика](reference/v3-0-translate.md)
+> [Применить фильтрацию с помощью вызова API перевода ненормативной лексики](reference/v3-0-translate.md)

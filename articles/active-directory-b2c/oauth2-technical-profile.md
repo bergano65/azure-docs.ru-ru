@@ -1,6 +1,6 @@
 ---
-title: Определение технического профиля OAuth2 в пользовательской политике в Azure Active Directory B2C | Документация Майкрософт
-description: Определение технического профиля OAuth2 в пользовательской политике в Azure Active Directory B2C.
+title: Определить OAuth2 технического профиля в настраиваемую политику в Azure Active Directory B2C | Документация Майкрософт
+description: Определите OAuth2 технического профиля в настраиваемую политику в Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
 manager: daveba
@@ -10,14 +10,14 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 86682525ae5246f9335e64e7dd3a812eaaf3c273
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: fde556c60f823f4bd287ca5672503158c7292f51
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55157726"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918932"
 ---
-# <a name="define-a-oauth2-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля OAuth2 в пользовательской политике в Azure Active Directory B2C
+# <a name="define-an-oauth2-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определить OAuth2 технического профиля в настраиваемую политику Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
@@ -76,7 +76,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 
 ## <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательно | ОПИСАНИЕ |
+| Атрибут | Обязательно для заполнения | ОПИСАНИЕ |
 | --------- | -------- | ----------- |
 | client_id | Yes | Идентификатор приложения поставщика удостоверений. |
 | IdTokenAudience | Нет  | Аудитория id_token. Если этот параметр задан, Azure AD B2C проверяет, содержится ли маркер в утверждении, которое возвращает поставщик удостоверений, и соответствует ли маркер заданному параметру. |
@@ -100,7 +100,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 
 Элемент **CryptographicKeys** содержит следующий атрибут:
 
-| Атрибут | Обязательно | ОПИСАНИЕ |
+| Атрибут | Обязательно для заполнения | ОПИСАНИЕ |
 | --------- | -------- | ----------- |
 | client_secret | Yes | Секрет клиента приложения поставщика удостоверений. Ключ шифрования является обязательным, только если для метаданных **response_types** задано значение `code`. В этом случае Azure AD B2C выполняет другой вызов для обмена кода авторизации на маркер доступа. Если для метаданных задано значение `id_token`, криптографический ключ можно не указывать.  |  
 
@@ -112,7 +112,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 
 Примеры:
 
-- [Добавление Google+ в качестве поставщика удостоверений OAuth2 с помощью пользовательских политик](active-directory-b2c-custom-setup-goog-idp.md)
+- [Добавление Google + в качестве поставщика удостоверений OAuth2 с помощью пользовательских политик](active-directory-b2c-custom-setup-goog-idp.md)
 
 
 

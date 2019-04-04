@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/18/2016
 ms.author: ccompy
-ms.openlocfilehash: 584b9d67808e75222d832f045e5d3f93fbb326ae
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 9d659262195fef0cc6871bac409dd5914b70f401
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58105096"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916127"
 ---
 # <a name="create-and-manage-hybrid-connections"></a>Создание гибридных подключений и управление ими
 
@@ -50,7 +50,7 @@ ms.locfileid: "58105096"
 > 
 
 ## <a name="CreateHybridConnection"></a>Создание гибридного подключения
-Гибридное подключение может быть создано с помощью функции [гибридных подключений к Службе приложений Azure](../app-service/app-service-hybrid-connections.md) **или** с использованием [REST API служб BizTalk](https://msdn.microsoft.com/library/azure/dn232347.aspx). 
+Гибридное подключение может быть создано с помощью функции [гибридных подключений к Службе приложений Azure](../app-service/app-service-hybrid-connections.md) **или** с использованием [REST API служб BizTalk](/previous-versions/azure/reference/dn232347(v=azure.100)). 
 
 <!-- **To create Hybrid Connections using Web Apps**, see [Connect Azure Web Apps to an On-Premises Resource](../app-service-web/web-sites-hybrid-connection-get-started.md). You can also install the Hybrid Connection Manager (HCM) from your web app, which is the preferred method.  -->
 
@@ -118,8 +118,8 @@ You can also download the Hybrid Connection Manager MSI file and copy the file t
 [Обзор гибридных подключений](integration-hybrid-connection-overview.md)
 
 ## <a name="see-also"></a>См. также
-[REST API для управления службами BizTalk в Microsoft Azure](https://msdn.microsoft.com/library/azure/dn232347.aspx)  
-[Службы BizTalk. Диаграмма выпусков](biztalk-editions-feature-chart.md)  
+[REST API для управления службами BizTalk в Microsoft Azure](/previous-versions/azure/reference/dn232347(v=azure.100))  
+[Службы BizTalk. Таблица выпусков](biztalk-editions-feature-chart.md)  
 [Создание службы BizTalk](biztalk-provision-services.md)  
 [Службы BizTalk. Вкладки панели мониторинга, мониторинг и масштабирование](biztalk-dashboard-monitor-scale-tabs.md)
 

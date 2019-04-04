@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 02/26/2018
 ms.author: sethm
 ms.custom: include file
-ms.openlocfilehash: cd64bdabc2b7b34687296c855c27882925d80f63
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 9d6b54027adcf2b12c6ca4081a11208a31f620e8
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58124415"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58919345"
 ---
 В следующей таблице перечислены квоты и ограничения для [Центров событий Azure](https://azure.microsoft.com/services/event-hubs/). См. сведения о [ценах на Центры событий](https://azure.microsoft.com/pricing/details/event-hubs/).
 
 | Ограничение | Область | Примечания | Значение |
 | --- | --- | --- | --- |
-| Число пространств имен Центров событий на подписку |Подписка |- |1000 |
+| Число пространств имен Центров событий на подписку |Подписка |- |100 |
 | Число концентраторов событий на пространство имен |Пространство имен |Последующие запросы на создание нового концентратора событий будут отклонены. |10 |
 | Число разделов на концентратор событий |Сущность |- |32 |
 | Число групп потребителей на концентратор событий |Сущность |- |20 |

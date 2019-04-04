@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/18/2016
 ms.author: ccompy
-ms.openlocfilehash: 18e65fc51f99aa19162daa3f6e5b9b7012214f64
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 347ea75673336574f7517f2f7d0c802b0ed16560
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57765549"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918303"
 ---
 # <a name="hybrid-connections-overview"></a>Обзор гибридных подключений
 
@@ -91,11 +91,11 @@ ms.locfileid: "57765549"
 | 80, 443 |Эти порты используются для запросов данных в Azure. Если порты 9352 и 5671 недоступны, *то* в качестве резервных портов для обмена данными и управления используются порты 80 и 443.<br/><br/>Разрешите внешние подключения к этим портам. <br/><br/>**Примечание.** Не рекомендуется использовать эти резервные порты вместо других TCP-портов. HTTP/WebSocket используется в качестве протокола вместо собственного TCP-протокола для каналов данных. Это может привести к снижению производительности. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Создание гибридных подключений и управление ими](integration-hybrid-connection-create-manage.md)
+[Создание и управление ими гибридных подключений](integration-hybrid-connection-create-manage.md)
 
 ## <a name="see-also"></a>См. также
-[REST API для управления службами BizTalk в Microsoft Azure](https://msdn.microsoft.com/library/azure/dn232347.aspx)  
-[Службы BizTalk. Диаграмма выпусков](biztalk-editions-feature-chart.md)  
+[REST API для управления службами BizTalk в Microsoft Azure](/previous-versions/azure/reference/dn232347(v=azure.100))  
+[Службы BizTalk. Таблица выпусков](biztalk-editions-feature-chart.md)  
 [Создание службы BizTalk](biztalk-provision-services.md)  
 [Службы BizTalk. Вкладки панели мониторинга, мониторинг и масштабирование](biztalk-dashboard-monitor-scale-tabs.md)  
 

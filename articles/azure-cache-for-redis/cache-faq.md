@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2017
 ms.author: yegu
-ms.openlocfilehash: ddeaec9adc28fa5037a0fc01363e3ad6b78ceeef
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.openlocfilehash: 65e8553969aa92848b1c4496724a7b7754b5d659
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56234362"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58895602"
 ---
 # <a name="azure-cache-for-redis-faq"></a>Вопросы и ответы по кэшу Azure для Redis
 Ответы на часто задаваемые вопросы, шаблоны и рекомендации по поводу кэша Azure для Redis.
@@ -69,7 +69,7 @@ ms.locfileid: "56234362"
 * [Какие факторы следует учитывать при использовании общих команд Redis?](#what-are-some-of-the-considerations-when-using-common-redis-commands)
 * [Как измерить и протестировать производительность моего кэша?](#how-can-i-benchmark-and-test-the-performance-of-my-cache)
 * [Важные сведения о росте пула потоков ThreadPool](#important-details-about-threadpool-growth)
-* [Включение сборки мусора сервера для увеличения пропускной способности на стороне клиента при использовании StackExchange.Redis](#enable-server-gc-to-get-more-throughput-on-the-client-when-using-stackexchangeredis)
+* [Включение сборки мусора сервера для получения более высокой пропускной способности на стороне клиента при использовании StackExchange.Redis](#enable-server-gc-to-get-more-throughput-on-the-client-when-using-stackexchangeredis)
 * [Рекомендации по производительности для подключений](#performance-considerations-around-connections)
 
 ## <a name="monitoring-and-troubleshooting-faqs"></a>Часто задаваемые вопросы о мониторинге и устранении неполадок
@@ -135,7 +135,7 @@ ms.locfileid: "56234362"
 
 | Ценовой уровень | Размер | Ядра ЦП | Доступная пропускная способность | Единица измерения — 1 КБ | Единица измерения — 1 КБ |
 | --- | --- | --- | --- | --- | --- |
-| **Размеры кэша уровня Стандартный** | | |**Мегабит в секунду (Мбит/с) или Мегабайт в секунду (МБ/с)** |**Запросов в секунду (без SSL)** |**Запросов в секунду (с SSL)** |
+| **Размеры кэша уровня стандартный** | | |**Мегабит в секунду (МБ/с) или мегабайт в секунду (МБ/с)** |**Запросов в секунду (RPS) без SSL** |**Запросов в секунду (SSL)** |
 | C0 |250 МБ |Совмещаемая блокировка |100 / 12,5 |15 000 |7500 |
 | C1 |1 GB |1 |500 / 62,5 |38 000 |20 720 |
 | C2 |2,5 ГБ |2 |500 / 62,5 |41 000 |37 000 |
@@ -143,7 +143,7 @@ ms.locfileid: "56234362"
 | C4 |13 ГБ |2 |500 / 62,5 |60 000 |55 000 |
 | C5 |26 ГБ |4. |1,000 / 125 |102 000 |93 000 |
 | C6 |53 ГБ |8 |2,000 / 250 |126 000 |120 000 |
-| **Размеры кэша уровня Премиум** | |**Число ядер ЦП на сегмент** | **Мегабит в секунду (Мбит/с) или Мегабайт в секунду (МБ/с)** |**Запросов в секунду (без SSL) для каждого сегмента** |**Запросов в секунду (с SSL) для каждого сегмента** |
+| **Размеры кэша уровня "премиум"** | |**Число ядер ЦП на сегмент** | **Мегабит в секунду (МБ/с) или мегабайт в секунду (МБ/с)** |**Запросов в секунду (RPS) без SSL, на сегмент** |**Запросов в секунду (SSL), на сегмент** |
 | P1 |6 ГБ |2 |1,500 / 187.5 |180,000 |172 000 |
 | P2 |13 ГБ |4. |3,000 / 375 |350 000 |341 000 |
 | P3 |26 ГБ |4. |3,000 / 375 |350 000 |341 000 |
@@ -173,8 +173,8 @@ ms.locfileid: "56234362"
 
 Дополнительные сведения о рекомендациях по использованию кэша Azure для Redis с другими облаками см. в следующих ссылках.
 
-- [Azure Government Databases – Azure Cache for Redis](../azure-government/documentation-government-services-database.md#azure-cache-for-redis) (Базы данных Azure для государственных организаций – кэш Azure для Redis)
-- [Azure China Cloud – Azure Cache for Redis](https://www.azure.cn/home/features/redis-cache/) (Облако Azure для Китая – кэш Redis для Azure)
+- [Базы данных Azure для государственных организаций — кэш Azure для Redis](../azure-government/documentation-government-services-database.md#azure-cache-for-redis)
+- [Облако Azure China — кэш Azure для Redis](https://www.azure.cn/home/features/redis-cache/)
 - [Microsoft Azure для Германии](https://azure.microsoft.com/overview/clouds/germany/)
 
 Сведения об использовании кэша Azure для Redis с помощью PowerShell в облаке Azure для государственных организаций, Azure для Китая или Microsoft Azure – Германия см. в статье [How to connect to other clouds – Azure Cache for Redis PowerShell](cache-howto-manage-redis-cache-powershell.md#how-to-connect-to-other-clouds) (Подключение к другим облакам – Управление кэшем Azure для Redis с использованием Azure PowerShell).
@@ -269,7 +269,7 @@ StackExchange.Redis имеет много параметров. В этом ра
 >
 > `session.save_path = "tcp://mycache.redis.cache.windows.net:6379?auth=<url encoded primary or secondary key here>";`
 >
-> Если ключ не кодирован в URL-адресе, то может отобразиться сообщение об исключении, подобное этому: `Failed to parse session.save_path`
+> Если ключ не является URL-кодированием, появляется исключение сообщение следующего содержания: `Failed to parse session.save_path`
 >
 >
 
@@ -392,7 +392,7 @@ StackExchange.Redis имеет много параметров. В этом ра
   > В этом элементе конфигурации задается параметр *per-core*. Например, если у вас 4-ядерный компьютер и вы хотите установить для параметра minIOThreads значение 200 во время выполнения, то можно использовать `<processModel minIoThreads="50"/>`.
   >
 
-* За пределами ASP.NET и веб-сайтов Azure global.asax используйте API [ThreadPool.SetMinThreads (...)](https://msdn.microsoft.com/library/system.threading.threadpool.setminthreads.aspx) .
+* За пределами ASP.NET и веб-сайтов Azure global.asax используйте API [ThreadPool.SetMinThreads (...)](/dotnet/api/system.threading.threadpool.setminthreads#System_Threading_ThreadPool_SetMinThreads_System_Int32_System_Int32_) .
 
   > [!NOTE]
   > Значение, указанное в этом API, — это глобальный параметр, который влияет на весь домен приложения. Если у вас 4-ядерный компьютер и вам нужно установить для параметров minWorkerThreads и minIOThreads значение 50 на ЦП во время выполнения, используется ThreadPool.SetMinThreads (200, 200).
@@ -402,9 +402,9 @@ StackExchange.Redis имеет много параметров. В этом ра
 ### <a name="enable-server-gc-to-get-more-throughput-on-the-client-when-using-stackexchangeredis"></a>Включение сборки мусора сервера для получения более высокой пропускной способности на стороне клиента при использовании StackExchange.Redis
 Включение сборки мусора сервера может оптимизировать работу клиента и улучшить производительность и пропускную способность при использовании StackExchange.Redis. Дополнительные сведения о сборке мусора сервера и о том, как ее включить, можно найти в следующих статьях:
 
-* [Включение сборки мусора сервера](https://msdn.microsoft.com/library/ms229357.aspx)
-* [Основные сведения о сборке мусора](https://msdn.microsoft.com/library/ee787088.aspx)
-* [Сборка мусора и производительность](https://msdn.microsoft.com/library/ee851764.aspx)
+* [Включение сборки Мусора сервера](/dotnet/framework/configure-apps/file-schema/runtime/gcserver-element)
+* [Основы сборки мусора](/dotnet/standard/garbage-collection/fundamentals)
+* [Сборка мусора и производительность](/dotnet/standard/garbage-collection/performance)
 
 
 ### <a name="performance-considerations-around-connections"></a>Рекомендации по производительности для подключений
@@ -467,13 +467,13 @@ StackExchange.Redis имеет много параметров. В этом ра
 Дополнительные сведения о начале работы с кэшем Redis для Azure см. в статьях [Краткое руководство. Использование кэша Azure для Redis с приложениями .NET](cache-dotnet-how-to-use-azure-redis-cache.md) и [Документация по кэшу Azure для Redis](index.md).
 
 ### <a name="managed-cache-service"></a>Управляемая служба кэша
-[Использование управляемой службы кэша было прекращено 30 ноября 2016 г.](https://azure.microsoft.com/blog/azure-managed-cache-and-in-role-cache-services-to-be-retired-on-11-30-2016/)
+[Управляемой службы кэша было прекращено 30 ноября 2016 г.](https://azure.microsoft.com/blog/azure-managed-cache-and-in-role-cache-services-to-be-retired-on-11-30-2016/)
 
-Архив документации можно найти на [этой странице](https://msdn.microsoft.com/library/azure/dn386094.aspx).
+Архив документации можно найти на [этой странице](/previous-versions/azure/azure-services/dn386094(v=azure.100)).
 
 ### <a name="in-role-cache"></a>Кэш в роли
-[Использование службы кэша роли было прекращено 30 ноября 2016 г.](https://azure.microsoft.com/blog/azure-managed-cache-and-in-role-cache-services-to-be-retired-on-11-30-2016/)
+[Кэша роли было прекращено 30 ноября 2016 г.](https://azure.microsoft.com/blog/azure-managed-cache-and-in-role-cache-services-to-be-retired-on-11-30-2016/)
 
-Архив документации можно найти на [этой странице](https://msdn.microsoft.com/library/azure/dn386103.aspx).
+Архив документации можно найти на [этой странице](/previous-versions/azure/azure-services/dn386103(v=azure.100)).
 
 ["minIoThreads" configuration setting]: https://msdn.microsoft.com/library/vstudio/7w2sway1(v=vs.100).aspx

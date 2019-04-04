@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 11/14/2018
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 69a3032ee96accdbafb32c96f4e9f3c89a0b3458
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: d30a5ca0910c5ceebb38dec7b4cdbffd9b3cf27e
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57539502"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916790"
 ---
 # <a name="persist-job-and-task-data-to-azure-storage-with-the-batch-file-conventions-library-for-net"></a>Сохранение данных заданий и задач в службе хранилища Azure с помощью библиотеки соглашений о пакетных файлах для .NET
 
@@ -110,7 +110,7 @@ await taskOutputStorage.SaveAsync(TaskOutputKind.TaskOutput, "frame_full_res.jpg
 await taskOutputStorage.SaveAsync(TaskOutputKind.TaskPreview, "frame_low_res.jpg");
 ```
 
-Параметр `kind` метода [TaskOutputStorage](https://msdn.microsoft.com/library/microsoft.azure.batch.conventions.files.taskoutputstorage.aspx).[ SaveAsync](https://msdn.microsoft.com/library/microsoft.azure.batch.conventions.files.taskoutputstorage.saveasync.aspx) классифицирует сохраненные файлы. Существует четыре стандартных типа [TaskOutputKind] [net_taskoutputkind]: `TaskOutput`, `TaskPreview`, `TaskLog` и `TaskIntermediate.`. Также можно определить пользовательские категории выходных данных.
+Параметр `kind` метода [TaskOutputStorage](/dotnet/api/microsoft.azure.batch.conventions.files.taskoutputstorage).[ SaveAsync](/dotnet/api/microsoft.azure.batch.conventions.files.taskoutputstorage.saveasync#overloads) классифицирует сохраненные файлы. Существует четыре стандартных типа [TaskOutputKind] [net_taskoutputkind]: `TaskOutput`, `TaskPreview`, `TaskLog` и `TaskIntermediate.`. Также можно определить пользовательские категории выходных данных.
 
 Эти типы позволяют указать тип выходных данных, отображаемых в списке, когда вы запрашиваете у пакетной службы сохраненные выходные данные какой-либо определенной задачи. Другими словами, при выводе списка выходных данных их можно отфильтровать по одному из типов выходных данных. Например, "Выдайте мне версию *preview* выходных данных для задачи *109*". Дополнительные сведения о выводе списка и извлечении выходных данных приведены далее, в разделе "Извлечение выходных данных" этой статьи.
 

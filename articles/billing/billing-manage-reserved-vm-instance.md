@@ -13,18 +13,21 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/22/2019
 ms.author: banders
-ms.openlocfilehash: 0f6e0f3795e0e6d25f7443473c5911995597ca14
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: 1edc15261520d1c2cbf9bf85a62249826edc045b
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58648645"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904447"
 ---
 # <a name="manage-reservations-for-azure-resources"></a>Управление резервированиями для ресурсов Azure
 
 После покупки резервирования для Azure, может потребоваться применить резервирование к другой подписке, изменение прав на управление резервированием, или изменить область резервирования. Вы также можете разделить резервирование на два, чтобы применить некоторые купленные экземпляры к другой подписке.
 
 Если вы приобрели зарезервированные экземпляры виртуальных машин Azure, можно изменить параметр оптимизации для резервирования. Скидка на резервирование может применяться к виртуальным машинам в одной и той же серии. Кроме того, можно зарезервировать ресурсы центра обработки данных для определенного размера виртуальной машины.
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="change-the-scope-for-a-reservation"></a>Изменение области для резервирования
 
@@ -70,25 +73,25 @@ ms.locfileid: "58648645"
 
     ```powershell
     # Get the reservation orders you have access to
-    Get-AzureRmReservationOrder
+    Get-AzReservationOrder
     ```
 
 2. Получите сведения о резервировании.
 
     ```powershell
-    Get-AzureRmReservation -ReservationOrderId a08160d4-ce6b-4295-bf52-b90a5d4c96a0 -ReservationId b8be062a-fb0a-46c1-808a-5a844714965a
+    Get-AzReservation -ReservationOrderId a08160d4-ce6b-4295-bf52-b90a5d4c96a0 -ReservationId b8be062a-fb0a-46c1-808a-5a844714965a
     ```
 
 3. Разделите резервирование на две части и распределите экземпляры.
 
     ```powershell
     # Split the reservation. The sum of the reservations, the quantity, must equal the total number of instances in the reservation that you're splitting.
-    Split-AzureRmReservation -ReservationOrderId a08160d4-ce6b-4295-bf52-b90a5d4c96a0 -ReservationId b8be062a-fb0a-46c1-808a-5a844714965a -Quantity 3,2
+    Split-AzReservation -ReservationOrderId a08160d4-ce6b-4295-bf52-b90a5d4c96a0 -ReservationId b8be062a-fb0a-46c1-808a-5a844714965a -Quantity 3,2
     ```
 4. Чтобы изменить область, выполните следующую команду.
 
     ```powershell
-    Update-AzureRmReservation -ReservationOrderId a08160d4-ce6b-4295-bf52-b90a5d4c96a0 -ReservationId 5257501b-d3e8-449d-a1ab-4879b1863aca -AppliedScopeType Single -AppliedScope /subscriptions/15bb3be0-76d5-491c-8078-61fe3468d414
+    Update-AzReservation -ReservationOrderId a08160d4-ce6b-4295-bf52-b90a5d4c96a0 -ReservationId 5257501b-d3e8-449d-a1ab-4879b1863aca -AppliedScopeType Single -AppliedScope /subscriptions/15bb3be0-76d5-491c-8078-61fe3468d414
     ```
 
 ## <a name="cancellations-and-exchanges"></a>Отмена и обмен
@@ -96,7 +99,7 @@ ms.locfileid: "58648645"
 В зависимости от типа резервирования его можно отменить или обменять. Дополнительные сведения см. в разделах об отмене и обмене в следующих статьях:
 
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](..//virtual-machines/windows/prepay-reserved-vm-instances.md#cancellations-and-exchanges)
-- [Предварительная оплата программного обеспечения SUSE в резервированиях Azure](../virtual-machines/linux/prepay-suse-software-charges.md#cancellation-and-exchanges-not-allowed)
+- [Предварительная оплата планов программного обеспечения SUSE в резервировании Azure](../virtual-machines/linux/prepay-suse-software-charges.md#cancellation-and-exchanges-not-allowed)
 - [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../sql-database/sql-database-reserved-capacity.md#cancellations-and-exchanges)
 
 ## <a name="change-optimize-setting-for-reserved-vm-instances"></a>Изменение параметра оптимизации для зарезервированных экземпляров виртуальной машины
@@ -128,17 +131,17 @@ ms.locfileid: "58648645"
 Купите план обслуживания:
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../virtual-machines/windows/prepay-reserved-vm-instances.md)
 - [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../sql-database/sql-database-reserved-capacity.md)
-- [Предоплата ресурсов Azure Cosmos DB с зарезервированной емкостью Azure Cosmos DB](../cosmos-db/cosmos-db-reserved-capacity.md)
+- [Предоплата для ресурсов Azure Cosmos DB с емкостью защищены в Azure Cosmos DB](../cosmos-db/cosmos-db-reserved-capacity.md)
 
 Приобрести план программного обеспечения:
 - [Оплатите Red Hat планы программного обеспечения из Azure резервирования](../virtual-machines/linux/prepay-rhel-software-charges.md)
-- [Предварительная оплата программного обеспечения SUSE в резервированиях Azure](../virtual-machines/linux/prepay-suse-software-charges.md)
+- [Предварительная оплата планов программного обеспечения SUSE в резервировании Azure](../virtual-machines/linux/prepay-suse-software-charges.md)
 
 Понимание, скидок и использования.
-- [Сведения о применении скидки к зарезервированному экземпляру виртуальной машины Azure](billing-understand-vm-reservation-charges.md)
+- [Сведения о применении скидки на резервирование виртуальных Машин](billing-understand-vm-reservation-charges.md)
 - [Сведения о применении скидки план программного обеспечения Red Hat Enterprise Linux](../billing/billing-understand-rhel-reservation-charges.md)
 - [Сведения о применении скидки на программное обеспечение SUSE Linux Enterprise](../billing/billing-understand-suse-reservation-charges.md)
-- [Сведения о применении скидки на другие резервирования](billing-understand-reservation-charges.md)
-- [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
-- [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
-- [Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров Azure](billing-reserved-instance-windows-software-costs.md)
+- [Сведения о применении другие скидки резервирования](billing-understand-reservation-charges.md)
+- [Общие сведения об использовании резервирования для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
+- [Общие сведения об использовании резервирования о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
+- [Затраты на программное обеспечение Windows, не входит в состав резервирования](billing-reserved-instance-windows-software-costs.md)

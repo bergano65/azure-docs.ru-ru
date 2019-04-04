@@ -1,19 +1,17 @@
 ---
 title: Micro сред разработки и тестирования фокус в Azure | Документация Майкрософт
 description: Повторное размещение вашей IBM z/OS рабочих нагрузок мэйнфреймов с помощью Micro Focus решений на виртуальных машинах (ВМ) Azure.
-services: virtual-machines-linux
-documentationcenter: ''
 author: njray
-manager: edprice
-editor: edprice
-tags: ''
-keywords: ''
-ms.openlocfilehash: 23a650698f8484e3ed8f033331693484c2e02fac
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.author: sread
+ms.date: 04/02/2019
+ms.topic: article
+ms.service: multiple
+ms.openlocfilehash: d83b4c89d0f37e2217974d6d1ed32ac73d8fa4df
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56740577"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58893782"
 ---
 # <a name="micro-focus-devtest-environments-on-azure"></a>Micro сред разработки и тестирования фокус в Azure
 
@@ -25,5 +23,6 @@ Micro Focus обеспечивает повторное размещение р�
 
 **Дальнейшие действия**
 
-- [Установка Micro Focus Enterprise Server 4.0 и Enterprise Developer 4.0 в Azure](./set-up-micro-focus-on-azure.md)
+- [Установка Micro Focus Enterprise Server 4.0 и Enterprise Developer 4.0 в Azure](./set-up-micro-focus-azure.md)
 - [Настройка BankDemo CICS Micro фокус для 4.0 Micro фокус Enterprise Developer в Azure](./demo.md)
+- [Запуск Enterprise Server в контейнерах Docker в Azure](./run-enterprise-server-container.md)

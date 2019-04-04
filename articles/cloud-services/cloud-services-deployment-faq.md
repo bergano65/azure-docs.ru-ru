@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: adaed4c7af1d325f85d6fc349ac9a4faf73c1169
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 08d74f866fe28a4c424ba504795b4a22f09785ca
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58078826"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916263"
 ---
 # <a name="deployment-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы развертывания для облачных служб Azure: Часто задаваемые вопросы (FAQ)
 
@@ -70,7 +70,7 @@ ms.locfileid: "58078826"
  
 - Развертывание с помощью REST API.
 
-    Чтобы обойти это ограничение при развертывании с помощью API REST управления службами, укажите URL-адрес SAS хранилища больших двоичных объектов, которое будет работать с классической учетной записью хранения и учетной записью хранения Azure Resource Manager. Дополнительные сведения о свойстве PackageUrl см. [здесь](https://msdn.microsoft.com/library/azure/ee460813.aspx).
+    Чтобы обойти это ограничение при развертывании с помощью API REST управления службами, укажите URL-адрес SAS хранилища больших двоичных объектов, которое будет работать с классической учетной записью хранения и учетной записью хранения Azure Resource Manager. Дополнительные сведения о свойстве PackageUrl см. [здесь](/previous-versions/azure/reference/ee460813(v=azure.100)).
   
 - Развертывание с помощью [портала Azure](https://portal.azure.com).
 

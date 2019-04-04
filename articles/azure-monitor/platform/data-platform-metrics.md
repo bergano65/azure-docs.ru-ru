@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
-ms.openlocfilehash: 487f70e4055f16c56092f2f970d2a34238e7febe
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.openlocfilehash: 1027398a1a7f790adedf6c7eebed44a8db501b8a
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58851991"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905041"
 ---
 # <a name="metrics-in-azure-monitor"></a>Метрики в Azure Monitor
 
@@ -39,7 +39,7 @@ ms.locfileid: "58851991"
 | Предупреждение | Настройка [правила оповещения метрики](alerts-metric.md) , отправляет уведомление или принимает [автоматизированное действие](action-groups.md) когда значение метрики достигает порогового значения. |
 | Автоматизация |  Используйте [автомасштабирования](autoscale-overview.md) для увеличения или уменьшения ресурсов с учетом значение метрики, пересекает пороговое значение. |
 | экспорт. | [Направлять метрики в журналы](diagnostic-logs-stream-log-store.md) для анализа данных в метрики Azure Monitor вместе с данными в журналах Azure Monitor и для хранения значения метрик дольше, чем 93 дня.<br>Stream метрики для [концентратора событий](stream-monitoring-data-event-hubs.md) маршрута к внешним системам. |
-| Получение | Доступ из командной строки с помощью значения метрик [командлеты PowerShell](https://docs.microsoft.com/powershell/module/azurerm.insights/?view=azurermps-6.7.0)<br>Доступ к значения метрик из пользовательского приложения с помощью [REST API](rest-api-walkthrough.md).<br>Доступ к значения метрик из командной строки с помощью [CLI](/azure/monitor/metrics). |
+| Получение | Доступ из командной строки с помощью значения метрик [командлеты PowerShell](https://docs.microsoft.com/powershell/module/az.applicationinsights)<br>Доступ к значения метрик из пользовательского приложения с помощью [REST API](rest-api-walkthrough.md).<br>Доступ к значения метрик из командной строки с помощью [CLI](/azure/monitor/metrics). |
 | Архив | [Архивация](..//learn/tutorial-archive-data.md) журнала производительности и работоспособности ресурса в целях соответствия требованиям, аудита или автономной отчетности. |
 
 

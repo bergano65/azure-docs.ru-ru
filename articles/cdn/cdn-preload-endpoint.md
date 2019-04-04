@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/12/2018
 ms.author: magattus
-ms.openlocfilehash: d2dc8ad1e4b7e429dc758a96e49aa4825ae108e5
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
-ms.translationtype: HT
+ms.openlocfilehash: 0d34985c8d83e8adad43aeec36ead939d8b22132
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49091323"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918371"
 ---
 # <a name="pre-load-assets-on-an-azure-cdn-endpoint"></a>Предварительная загрузка ресурсов на конечной точке CDN Azure
 [!INCLUDE [cdn-verizon-only](../../includes/cdn-verizon-only.md)]
@@ -49,9 +49,9 @@ ms.locfileid: "49091323"
    > [!TIP]
    > После ввода текста появятся дополнительные текстовые поля **Путь к содержимому**, что позволит сформировать список из нескольких ресурсов. Чтобы удалить ресурсы из списка, щелкните многоточие (...), а затем выберите **Удалить**.
    > 
-   > В качестве пути нужно указать относительный URL-адрес, который соответствует приведенному ниже [регулярному выражению](https://msdn.microsoft.com/library/az24scfc.aspx):  
-   > - загрузка отдельного файла по пути `^(?:\/[a-zA-Z0-9-_.%=\u0020]+)+$`;  
-   > - загрузка отдельного файла с помощью строки запроса `^(?:\?[-_a-zA-Z0-9\/%:;=!,.\+'&\u0020]*)?$`. 
+   > В качестве пути нужно указать относительный URL-адрес, который соответствует приведенному ниже [регулярному выражению](/dotnet/standard/base-types/regular-expression-language-quick-reference):  
+   > - Загрузка отдельного файла по пути: `^(?:\/[a-zA-Z0-9-_.%=\u0020]+)+$`  
+   > - Загрузку отдельного файла с помощью строки запроса: `^(?:\?[-_a-zA-Z0-9\/%:;=!,.\+'&\u0020]*)?$` 
    > 
    > Каждый актив должен иметь собственный путь, поэтому подстановочные знаки при предварительной загрузке ресурсов использовать нельзя.
    > 
@@ -68,6 +68,6 @@ ms.locfileid: "49091323"
 
 ## <a name="see-also"></a>См. также
 * [Очистка конечной точки сети CDN Azure](cdn-purge-endpoint.md)
-* [Справочник по API REST CDN Azure. Предварительная загрузка содержимого конечной точки](https://docs.microsoft.com/rest/api/cdn/endpoints/loadcontent)
-* [Справочник по API REST CDN Azure. Очистка содержимого конечной точки](https://docs.microsoft.com/rest/api/cdn/endpoints/purgecontent)
+* [Справочник по CDN REST API Azure: Предварительная загрузка содержимого конечной точки](https://docs.microsoft.com/rest/api/cdn/endpoints/loadcontent)
+* [Справочник по CDN REST API Azure: Очистить содержимое из конечной точки](https://docs.microsoft.com/rest/api/cdn/endpoints/purgecontent)
 

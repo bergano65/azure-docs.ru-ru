@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 8/6/2018
 ms.author: trinadhk
-ms.openlocfilehash: f5695da01752d701e1b688700580982f2d2e6154
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
-ms.translationtype: HT
+ms.openlocfilehash: acf71ae6f37ab6ea32d9cdd0ac06f297b00fba2e
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54827420"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918575"
 ---
 # <a name="questions-about-the-azure-backup-agent"></a>Вопросы об агенте службы Azure Backup
 В этой статье содержатся ответы на часто задаваемые вопросы, которые помогут вам быстро ознакомиться с компонентами агента службы Azure Backup. В некоторых ответах приведены ссылки на статьи, содержащие более подробные сведения. Кроме того, их также можно задать на [форуме для обсуждений](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
@@ -116,10 +116,10 @@ ms.locfileid: "54827420"
 Если переименовать сервер, остановятся все настроенные процессы резервного копирования. Зарегистрируйте новое имя сервера в хранилище службы архивации. После регистрации нового имени в хранилище сначала выполняется операция *полного* резервного копирования. Если вам нужно восстановить резервные копии данных из хранилища со старым именем сервера, установите флажок [**Другой сервер**](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine) в мастере **восстановления данных**.
 
 ### <a name="what-is-the-maximum-file-path-length-that-can-be-specified-in-backup-policy-using-azure-backup-agent-br"></a>Какой максимальной длины может быть путь к файлу, определяемый в политике резервного копирования Azure с помощью агента службы архивации Azure? <br/>
-Агент службы архивации Azure использует NTFS. Длина [пути к файлам ограничивается настройками API Windows](https://msdn.microsoft.com/library/aa365247.aspx#fully_qualified_vs._relative_paths). Если длина пути к файлам превышает длину, разрешенную API Windows, сделайте резервную копию родительской папки или дискового накопителя.  
+Агент службы архивации Azure использует NTFS. Длина [пути к файлам ограничивается настройками API Windows](/windows/desktop/FileIO/naming-a-file#fully_qualified_vs._relative_paths). Если длина пути к файлам превышает длину, разрешенную API Windows, сделайте резервную копию родительской папки или дискового накопителя.  
 
 ### <a name="what-characters-are-allowed-in-file-path-of-azure-backup-policy-using-azure-backup-agent-br"></a>Какие символы можно использовать в пути к файлу, определяемом в политике резервного копирования Azure с помощью агента службы архивации Azure? <br>
- Агент службы архивации Azure использует NTFS. Поэтому, указывая файлы, можно использовать [символы, которые поддерживаются в NTFS](https://msdn.microsoft.com/library/aa365247.aspx#naming_conventions) . 
+ Агент службы архивации Azure использует NTFS. Поэтому, указывая файлы, можно использовать [символы, которые поддерживаются в NTFS](/windows/desktop/FileIO/naming-a-file#naming_conventions) . 
  
 ### <a name="i-receive-the-warning-azure-backups-have-not-been-configured-for-this-server-even-though-i-configured-a-backup-policy-br"></a>Отображается предупреждение "Служба архивации Azure для этого сервера не настроена", хотя политика архивации была настроена. <br/>
 Это предупреждение появляется, если параметры расписания резервного копирования, сохраненные на локальном сервере, не совпадают с параметрами в хранилище службы архивации. Восстановление сервера или параметров до известного рабочего состояния может привести к потере синхронизации между расписаниями. Если вы получили это предупреждение, [повторно настройте политику резервного копирования](backup-azure-manage-windows-server.md) и выберите команду **Запустить архивацию сейчас** , чтобы заново синхронизировать локальный сервер с Azure.

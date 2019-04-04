@@ -13,17 +13,17 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 63f26c8a4a0a9195083386b18c0fff9439428bf0
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: b2c665de94750c4c6f41bda47960fdb9ba17e819
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57546200"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905636"
 ---
-# <a name="move-data-from-a-odata-source-using-azure-data-factory"></a>Перемещение данных из источника OData с помощью фабрики данных Azure
+# <a name="move-data-from-an-odata-source-using-azure-data-factory"></a>Перемещение данных из OData источника, с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1](data-factory-odata-connector.md)
-> * [Версия 2 (текущая)](../connector-odata.md)
+> * [версия 1](data-factory-odata-connector.md)
+> * [Версия 2 (текущий)](../connector-odata.md)
 
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе OData в службе "Фабрика данных Azure" версии 2](../connector-odata.md).
@@ -218,7 +218,7 @@ ms.locfileid: "57546200"
 }
 ```
 
-**Связанная служба хранилища Azure**
+**Связанная служба хранилища Azure:**
 
 ```json
 {
@@ -232,7 +232,7 @@ ms.locfileid: "57546200"
 }
 ```
 
-**Входной набор данных OData**
+**Входной набор данных OData:**
 
 Если параметру external присвоить значение true, фабрика данных воспримет этот набор данных как внешний и созданный не в результате какого-либо действия в этой службе.
 
@@ -264,7 +264,7 @@ ms.locfileid: "57546200"
 
 Указывать **path** в определении набора данных необязательно.
 
-**Выходной набор данных BLOB-объекта Azure**
+**Выходной набор данных BLOB-объектов Azure**
 
 Данные записываются в новый большой двоичный объект каждый час (frequency: hour, interval: 1). Путь к папке BLOB-объекта вычисляется динамически на основе времени начала обрабатываемого среза. В пути к папке используется год, месяц, день и час времени начала.
 
@@ -324,7 +324,7 @@ ms.locfileid: "57546200"
 }
 ```
 
-**Действие копирования в конвейере с OData в качестве источника и большим двоичным объектом в качестве приемника**
+**Действие копирования в конвейере с OData источник и приемник больших двоичных объектов:**
 
 Конвейер содержит действие копирования, которое использует входной и выходной наборы данных и выполняется каждый час. В определении JSON конвейера для типа **source** установлено значение **RelationalSource**, а для типа **sink** — значение **BlobSink**. SQL-запрос, заданный для свойства **query** , выбирает самые последние (новейшие) данные из источника OData.
 

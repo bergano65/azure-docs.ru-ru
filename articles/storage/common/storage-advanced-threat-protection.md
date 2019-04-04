@@ -5,15 +5,15 @@ services: storage
 author: rmatchoro
 ms.service: storage
 ms.topic: article
-ms.date: 04/02/2019
+ms.date: 04/03/2019
 ms.author: monhaber
 ms.manager: shaik
-ms.openlocfilehash: 48fdf277f47b1e4abc8e3d7f7222d5b99a248b55
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.openlocfilehash: 78338ece1bc70d8410bd71183a34aaf1a52f2d1b
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58850721"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904123"
 ---
 # <a name="advanced-threat-protection-for-azure-storage"></a>Расширенная защита от угроз для службы хранилища Azure
 
@@ -22,8 +22,8 @@ Advanced Threat Protection для службы хранилища Azure пред
 При возникновении ошибки в действии, активируются оповещения безопасности.  Эти оповещения системы безопасности интегрированы с [центра безопасности](https://azure.microsoft.com/services/security-center/), а также отправляются по электронной почте администраторам подписки с подробными сведениями о подозрительном действии и рекомендации о том, как определить причину и устранить угрозы.
 
 > [!NOTE]
-> * Advanced Threat Protection для службы хранилища Azure в настоящее время доступна только для хранилища BLOB-объектов. 
-> * Сведения о новой модели ценообразования доступны в [центра безопасности](https://docs.microsoft.com/azure/security-center/security-center-pricing) цены на страницы, включая параметр в течение пробного периода в течение первых 30 дней бесплатно. 
+> * Advanced Threat Protection для службы хранилища Azure в настоящее время доступна только для хранилища BLOB-объектов.
+> * Информация о ценах, включая бесплатную 30-дневной пробной, см. в разделе [странице с ценами на Центр безопасности Azure]( https://azure.microsoft.com/en-us/pricing/details/security-center/).
 > * ATP для компонента службы хранилища Azure сейчас недоступна в Azure для государственных организаций и независимых облачных регионов.
 
 Advanced Threat Protection для службы хранилища Azure принимает журналы диагностики, чтения, записи и запросов на удаление в хранилище BLOB-объектов для обнаружения угроз. Для изучения оповещения из Advanced Threat Protection, можно просмотреть связанные системы хранения данных, с помощью журнала службы аналитики хранилища. Дополнительные сведения см. в разделе Практическое [настроить ведение журнала аналитики хранилища](storage-monitor-storage-account.md#configure-logging).
@@ -80,7 +80,7 @@ Advanced Threat Protection для службы хранилища Azure прин
 
 Используйте следующие командлеты PowerShell:
 
-  * [Расширенная защита от угроз](https://docs.microsoft.com/powershell/module/az.security/enable-azsecurityadvancedthreatprotection)
+  * [Включить Advanced Threat Protection](https://docs.microsoft.com/powershell/module/az.security/enable-azsecurityadvancedthreatprotection)
   * [Получить Advanced Threat Protection.](https://docs.microsoft.com/powershell/module/az.security/get-azsecurityadvancedthreatprotection)
   * [Отключить расширенную защиту от угроз](https://docs.microsoft.com/powershell/module/az.security/disable-azsecurityadvancedthreatprotection)
 

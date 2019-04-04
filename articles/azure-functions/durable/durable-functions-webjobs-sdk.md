@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
-ms.openlocfilehash: e8473ece2ed08798836dc66067e1ce042924f469
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: df12639aaafaf3df7ae2b755d635d4fba83d846e
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57431261"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905099"
 ---
 # <a name="how-to-run-durable-functions-as-webjobs"></a>Как выполнять устойчивых функций веб-заданий
 
@@ -33,7 +33,7 @@ ms.locfileid: "57431261"
 
 * [Начало работы с пакетом SDK WebJobs](../../app-service/webjobs-sdk-get-started.md)
 * [Создание первой функции с помощью Visual Studio](../functions-create-your-first-function-visual-studio.md)
-* [Цепочки функций в устойчивых функциях — пример последовательности Hello](durable-functions-sequence.md)
+* [Устойчивые функции](durable-functions-sequence.md)
 
 Чтобы выполнить действия, описанные в этой статье, сделайте следующее:
 
@@ -132,8 +132,8 @@ static void Main(string[] args)
 Пакет SDK для веб-заданий не поддерживает следующие возможности Функций Azure:
 
 * [Атрибут FunctionName](#functionname-attribute)
-* [триггером HTTP](#http-trigger)
-* [API управления HTTP устойчивых функций](#http-management-api)
+* [Триггер HTTP](#http-trigger)
+* [API управления устойчивых функций HTTP](#http-management-api)
 
 ### <a name="functionname-attribute"></a>Атрибут FunctionName
 
@@ -218,50 +218,60 @@ while (true)
 
 ## <a name="webjobs-sdk-3x"></a>Пакет SDK для веб-заданий версии 3.x
 
-В этой статье объясняется, как в процессе разработки проекта веб-заданий SDK 2.x. Если вы разрабатываете проект веб-заданий SDK 3.x, этот раздел поможет вам понять различия.
+В этой статье объясняется, как в процессе разработки проекта веб-заданий SDK 2.x. Если вы разрабатываете [веб-заданий SDK 3.x](../../app-service/webjobs-sdk-get-started.md) проекта, этот раздел поможет вам понять различия.
 
 Основное изменение появился является использование .NET Core вместо .NET Framework. Создание проекта веб-заданий SDK 3.x, инструкции одинаковы, со следующими исключениями:
 
-1. Создайте консольное приложение .NET Core. В Visual Studio **новый проект** выберите **.NET Core** > **консольное приложение (.NET Core)**. Файл проекта указывает, что `TargetFramework` является `netcoreapp2.0`.
+1. Создайте консольное приложение .NET Core. В Visual Studio **новый проект** выберите **.NET Core** > **консольное приложение (.NET Core)**. Файл проекта указывает, что `TargetFramework` является `netcoreapp2.x`.
 
-1. Выберите предварительную версию пакета SDK для веб-заданий 3.x от следующих пакетов:
+1. Выбор версии пакета SDK для веб-заданий 3.x от следующих пакетов:
 
     * `Microsoft.Azure.WebJobs.Extensions`
+    * `Microsoft.Azure.WebJobs.Extensions.Storage`
     * `Microsoft.Azure.WebJobs.Logging.ApplicationInsights`
 
-1. Получение строки подключения и ключ инструментирования Application Insights из *appsettings.json* файла с помощью конфигурации платформы .NET Core. Изменение `Main` код метода для этого. Ниже приведен пример:
+1. Задайте строку подключения к хранилищу и ключ инструментирования Application Insights в *appsettings.json* файла с помощью конфигурации платформы .NET Core. Ниже приведен пример:
+
+    ```json
+        {
+            "AzureWebJobsStorage": "<replace with storage connection string>",
+            "APPINSIGHTS_INSTRUMENTATIONKEY": "<replace with Application Insights instrumentation key>"
+        }
+    ```
+
+1. Изменение `Main` код метода для этого. Ниже приведен пример:
 
    ```cs
    static void Main(string[] args)
    {
-       var builder = new ConfigurationBuilder()
-           .SetBasePath(Directory.GetCurrentDirectory())
-           .AddJsonFile("appsettings.json");
+        var hostBuilder = new HostBuilder()
+            .ConfigureWebJobs(config =>
+            {
+                config.AddAzureStorageCoreServices();
+                config.AddAzureStorage();
+                config.AddTimers();
+                config.AddDurableTask(options =>
+                {
+                    options.HubName = "MyTaskHub";
+                    options.AzureStorageConnectionStringName = "AzureWebJobsStorage";
+                });
+            })
+            .ConfigureLogging((context, logging) =>
+            {
+                logging.AddConsole();
+                logging.AddApplicationInsights(config =>
+                {
+                    config.InstrumentationKey = context.Configuration["APPINSIGHTS_INSTRUMENTATIONKEY"];
+                });
+            })
+            .UseConsoleLifetime();
 
-       var appSettingsConfig = builder.Build();
+        var host = hostBuilder.Build();
 
-       using (var loggerFactory = new LoggerFactory())
-       {
-           var config = new JobHostConfiguration();
-
-           config.DashboardConnectionString = "";
-           config.StorageConnectionString =
-               appSettingsConfig.GetConnectionString("AzureWebJobsStorage");
-           var instrumentationKey =
-               appSettingsConfig["APPINSIGHTS_INSTRUMENTATIONKEY"];
-
-           config.LoggerFactory = loggerFactory
-               .AddApplicationInsights(instrumentationKey, null)
-               .AddConsole();
-
-           config.UseTimers();
-           config.UseDurableTask(new DurableTaskExtension
-           {
-               HubName = "MyTaskHub",
-           });
-           var host = new JobHost(config);
-           host.RunAndBlock();
-       }
+        using (host)
+        {
+            host.Run();
+        }
    }
    ```
 

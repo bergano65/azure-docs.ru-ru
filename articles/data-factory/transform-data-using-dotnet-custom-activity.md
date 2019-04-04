@@ -11,17 +11,17 @@ ms.date: 11/26/2018
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: 1c02a30800e86c7b32524fb9cdba7dacf3bba9c7
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: ea409d6705d0146e9cb32ba11e6b785cf527739c
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58652099"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904582"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1](v1/data-factory-use-custom-activities.md)
+> * [версия 1](v1/data-factory-use-custom-activities.md)
 > * [Текущая версия](transform-data-using-dotnet-custom-activity.md)
 
 Существует два типа действий, которые можно использовать в конвейере фабрики данных Azure.
@@ -356,7 +356,7 @@ Activity Error section:
   - Пакет NuGet Microsoft.Azure.Management.DataFactories больше не требуется.
   - Скомпилируйте код, передайте исполняемый файл и зависимости в службу хранилища Azure и укажите путь к ним в свойстве `folderPath`.
 
-Полный пример того, как повторно создать комплексную библиотеку DLL и конвейер, которые описаны в статье [Использование настраиваемых действий в конвейере фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/v1/data-factory-use-custom-activities) для фабрики данных версии 1, в формате настраиваемого действия фабрики данных версии 2: [пример настраиваемого действия фабрики данных](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/ADFv2CustomActivitySample).
+Полный пример того, как повторно создать комплексную библиотеку DLL и конвейер, которые описаны в статье [Использование настраиваемых действий в конвейере фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/v1/data-factory-use-custom-activities) для фабрики данных версии 1, в формате настраиваемого действия фабрики данных версии 2: [пример настраиваемого действия фабрики данных](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/ADFv2CustomActivitySample).
 
 ## <a name="auto-scaling-of-azure-batch"></a>Автомасштабирование пакетной службы Azure
 
@@ -387,5 +387,5 @@ $TargetDedicated=min(maxNumberofVMs,pendingTaskSamples);
 * [Действие MapReduce](transform-data-using-hadoop-map-reduce.md)
 * [Действие потоковой передачи Hadoop](transform-data-using-hadoop-streaming.md)
 * [Действие Spark](transform-data-using-spark.md)
-* [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](transform-data-using-machine-learning.md)
+* [Действие выполнения пакета обучения компьютера](transform-data-using-machine-learning.md)
 * [Действие хранимой процедуры](transform-data-using-stored-procedure.md)

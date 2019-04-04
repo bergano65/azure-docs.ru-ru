@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 01/22/2019
 ms.author: mabrigg
 ms.lastreviewed: 01/22/2019
-ms.openlocfilehash: 4fb2a398baa306cf9303284526bb43cd7f778441
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: a66217641c833061d4626b7d393fd3cdd0fd56cc
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56734631"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58483615"
 ---
 # <a name="replace-a-physical-disk-in-azure-stack"></a>Замена физического диска в Azure Stack
 
@@ -55,20 +55,20 @@ ms.locfileid: "56734631"
  После замены диска можно отслеживать состояние работоспособности виртуального диска и ход выполнения задания восстановления с помощью привилегированной конечной точки. Выполните следующие шаги с любого компьютера с сетевым подключением к привилегированной конечной точке.
 
 1. Откройте сеанс Windows PowerShell и подключитесь к привилегированной конечной точке.
-    ```PowerShell
+    ```powershell
         $cred = Get-Credential
         Enter-PSSession -ComputerName <IP_address_of_ERCS>`
           -ConfigurationName PrivilegedEndpoint -Credential $cred
     ``` 
   
 2. Выполните следующую команду, чтобы просмотреть состояние работоспособности виртуального диска:
-    ```PowerShell
+    ```powershell
         Get-VirtualDisk -CimSession s-cluster
     ```
    ![Выходные данные команды PowerShell Get-VirtualDisk](media/azure-stack-replace-disk/GetVirtualDiskOutput.png)
 
 3. Чтобы просмотреть текущее состояние задания хранилища, выполните следующую команду:
-    ```PowerShell
+    ```powershell
         Get-VirtualDisk -CimSession s-cluster | Get-StorageJob
     ```
       ![Выходные данные команды PowerShell Get-StorageJob](media/azure-stack-replace-disk/GetStorageJobOutput.png)
@@ -76,6 +76,6 @@ ms.locfileid: "56734631"
 ## <a name="troubleshoot-virtual-disk-repair"></a>Устранение неисправностей виртуального диска
 
 Если задание восстановления виртуального диска не отвечает, выполните следующую команду, чтобы перезапустить задание:
-  ```PowerShell
+  ```powershell
         Get-VirtualDisk -CimSession s-cluster | Repair-VirtualDisk
   ``` 
