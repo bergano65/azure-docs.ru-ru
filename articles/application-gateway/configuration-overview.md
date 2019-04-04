@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: absha
-ms.openlocfilehash: 371d15f59c091f7ac38d36bfe3de5f4b31e4482c
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.openlocfilehash: 40c5444a54f4e483a9dcacb958c18f66da45019a
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58629636"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58906129"
 ---
 # <a name="application-gateway-configuration-overview"></a>Общие сведения о конфигурации шлюза приложений
 
@@ -21,6 +21,9 @@ ms.locfileid: "58629636"
 ![Блок-схема компонентов приложения шлюза](./media/configuration-overview/configuration-overview1.png)
 
 Этот образ показано приложение, имеющее три прослушиватели. Первые два — многосайтовые прослушиватели для `http://acme.com/*` и `http://fabrikam.com/*`, соответственно. Оба прослушивать порт 80. Третий — базовый прослушиватель, который имеет завершение end-to-end Secure Sockets Layer (SSL).
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -136,11 +139,11 @@ Azure также резервирует 5 IP-адресов в каждой по
 Поддержка протокола HTTP/2 доступна для клиентов, подключающихся к прослушивателям шлюза приложений только. Подключение, для пулов тыловых серверов, по протоколу HTTP/1.1. Поддержка HTTP/2 отключена по умолчанию. В следующем фрагменте кода Azure PowerShell показано, как для этого:
 
 ```azurepowershell
-$gw = Get-AzureRmApplicationGateway -Name test -ResourceGroupName hm
+$gw = Get-AzApplicationGateway -Name test -ResourceGroupName hm
 
 $gw.EnableHttp2 = $true
 
-Set-AzureRmApplicationGateway -ApplicationGateway $gw
+Set-AzApplicationGateway -ApplicationGateway $gw
 ```
 
 #### <a name="websocket-support"></a>Поддержка WebSocket
@@ -343,4 +346,4 @@ Set-AzureRmApplicationGateway -ApplicationGateway $gw
 
 - [Создание шлюза приложений на портале Azure](quick-create-portal.md)
 - [Создание шлюза приложений с помощью PowerShell](quick-create-powershell.md)
-- [Создание шлюза приложений с помощью Azure CLI](quick-create-cli.md)
+- [Создание шлюза приложений с помощью интерфейса командной строки Azure](quick-create-cli.md)

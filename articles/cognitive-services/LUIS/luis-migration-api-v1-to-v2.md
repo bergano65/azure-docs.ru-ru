@@ -1,7 +1,7 @@
 ---
 title: Переход с API версии 1 на API версии 2
 titleSuffix: Azure Cognitive Services
-description: Конечная точка версии 1 и разработка API понимания переданы являются устаревшими. Используйте это руководство, чтобы перейти на API конечных точек и разработки версии 2.
+description: Конечная точка версии 1 и разработка API понимания языка являются устаревшими. Используйте это руководство, чтобы перейти на API конечных точек и разработки версии 2.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 03/11/2019
+ms.date: 04/02/2019
 ms.author: diberry
-ms.openlocfilehash: 7496142b1c762ce0a7afa96a1a94dd3026351cc9
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 9eb73db6f641d3a5f5bb82901bd12ea291eada58
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58087930"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58894087"
 ---
 # <a name="api-v1-to-v2-migration-guide-for-luis-apps"></a>Руководство по переходу с API версии 1 на API версии 2 для приложений на основе LUIS
 API-интерфейсы [конечных точек](https://aka.ms/v1-endpoint-api-docs) и [разработки](https://aka.ms/v1-authoring-api-docs) версии 1 объявлены устаревшими. Используйте это руководство, чтобы перейти на API [конечных точек](https://aka.ms/luis-endpoint-apis) и [разработки](https://aka.ms/luis-authoring-apis) версии 2. 
@@ -134,7 +134,7 @@ API ключей конечных точек подписок устарели, 
 
 
 ## <a name="sample-renamed-to-suggest"></a>"Пример" переименован в "предложение"
-LUIS предлагает высказывания из существующих [высказываний конечных точек](luis-how-to-review-endoint-utt.md), которые могут улучшить модель. В предыдущей версии предложения назывались **примерами**. В новой версии "примеры" называются **предложениями**. На веб-сайте LUIS это называется **[Просмотрами высказываний конечных точек](luis-how-to-review-endoint-utt.md)**.
+LUIS предлагает высказывания из существующих [высказываний конечных точек](luis-how-to-review-endpoint-utterances.md), которые могут улучшить модель. В предыдущей версии предложения назывались **примерами**. В новой версии "примеры" называются **предложениями**. На веб-сайте LUIS это называется **[Просмотрами высказываний конечных точек](luis-how-to-review-endpoint-utterances.md)**.
 
 | версия | маршрут |
 |--|--|

@@ -15,12 +15,12 @@ ms.date: 03/11/2019
 ms.author: mabrigg
 ms.custom: mvc
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: e6afea414ed632dead97a4b9adc7c623e48bd7ef
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 5e93a8fbcd603e5c52141a2a883bd7371ee50221
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57766705"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58445354"
 ---
 # <a name="quickstart-create-a-linux-server-virtual-machine-by-using-powershell-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины с сервером Linux с помощью PowerShell в Azure Stack
 
@@ -384,7 +384,7 @@ New-AzureRmVM `
 
 ## <a name="connect-to-the-virtual-machine"></a>Подключение к виртуальной машине
 
-Развернув виртуальную машину, настройте подключение по протоколу SSH к этой виртуальной машине. Получите общедоступный IP-адрес виртуальной машины, выполнив команду [Get-AzureRmPublicIPAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress?view=azurermps-4.3.1).
+Развернув виртуальную машину, настройте подключение по протоколу SSH к этой виртуальной машине. Получите общедоступный IP-адрес виртуальной машины, выполнив команду [Get-AzureRmPublicIPAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress).
 
 ```powershell
 Get-AzureRmPublicIpAddress -ResourceGroupName myResourceGroup | Select IpAddress
@@ -420,7 +420,7 @@ apt-get -y install nginx
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Очистите ресурсы, которые вам больше не нужны. Используйте команду [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup?view=azurermps-4.3.1), чтобы удалить эти ресурсы. Чтобы удалить группу ресурсов и все ресурсы в ней, выполните следующую команду:
+Очистите ресурсы, которые вам больше не нужны. Используйте команду [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup), чтобы удалить эти ресурсы. Чтобы удалить группу ресурсов и все ресурсы в ней, выполните следующую команду:
 
 ```powershell
 Remove-AzureRmResourceGroup -Name myResourceGroup

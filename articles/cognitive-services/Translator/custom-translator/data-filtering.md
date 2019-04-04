@@ -2,19 +2,19 @@
 title: Фильтрация данных. Пользовательский переводчик
 titleSuffix: Azure Cognitive Services
 description: При отправке документов, которые будут использоваться для обучения пользовательской системы, документы проходят ряд этапов по обработке и фильтрации для подготовки к обучению.
-author: jann-skotdal
+author: v-pawal
 manager: christw
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: v-jansko
 ms.topic: conceptual
-ms.openlocfilehash: 195c39562e36000597d04bb760741ec7f40203c8
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 0871cb7e4dcbe8cf71f35f174137396bde607c54
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57844679"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916116"
 ---
 # <a name="data-filtering"></a>Фильтрация данных
 
@@ -49,9 +49,9 @@ ms.locfileid: "57844679"
 
 ## <a name="unescaped-xml-tags"></a>Неэкранированные теги XML
 Фильтрация преобразует неэкранированные теги в экранированные:
-* `&lt;` превращается в `&amp;lt;`;
-* `&gt;` превращается в `&amp;gt;`;
-* `&amp;` превращается в `&amp;amp;`.
+* `&lt;` становится `&amp;lt;`
+* `&gt;` становится `&amp;gt;`
+* `&amp;` становится `&amp;amp;`
 
 ## <a name="invalid-characters"></a>Недопустимые знаки
 Пользовательский переводчик удаляет предложения, содержащие символ Юникода U+FFFD. Символ U+FFFD указывает на сбой преобразования кодировки.

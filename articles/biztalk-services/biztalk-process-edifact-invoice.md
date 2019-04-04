@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: integration
 ms.date: 05/31/2016
 ms.author: deonhe
-ms.openlocfilehash: 5eb9740bdd0543556265f54a1a37b632f79ac861
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 7093be36e34785d4153c257d411128efe463dee1
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57550128"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918966"
 ---
-# <a name="tutorial-process-edifact-invoices-using-azure-biztalk-services"></a>Руководство. Обработка счетов EDIFACT с помощью служб BizTalk Azure
+# <a name="tutorial-process-edifact-invoices-using-azure-biztalk-services"></a>Руководство по Обработка счетов EDIFACT с помощью служб BizTalk Azure
 
 > [!INCLUDE [BizTalk Services is being retired, and replaced with Azure Logic Apps](../../includes/biztalk-services-retirement.md)]
 
@@ -55,9 +55,9 @@ ms.locfileid: "57550128"
 В этом руководстве мы воспользуемся очередями служебной шины для отправки счета из Contoso в Northwind, а также для получения подтверждения от Northwind. Эти очереди могут быть созданы с помощью клиентского приложения, которое доступно для загрузки и включено в пакет примера, используемого в этом руководстве.  
 
 ## <a name="prerequisites"></a>Технические условия
-* Вам понадобится пространство имен служебной шины. Инструкции по созданию пространства имен, см. в разделе [How To: Создание или изменение пространства имен службы служебной шины](https://msdn.microsoft.com/library/azure/hh674478.aspx). Предположим, вы уже подготовили пространство имен служебной шины с именем **edifactbts**.
+* Вам понадобится пространство имен служебной шины. Инструкции по созданию пространства имен, см. в разделе [How To: Создание или изменение пространства имен службы служебной шины](/previous-versions/azure/azure-services/hh674478(v=azure.100)). Предположим, вы уже подготовили пространство имен служебной шины с именем **edifactbts**.
 * Необходимо подписаться на службы BizTalk. В этом руководстве давайте предположим, что у вас есть подписка на службы BizTalk с именем **contosowabs**.
-* Зарегистрируйте ее на портале служб BizTalk. Ознакомьтесь со статьей [Регистрация и обновление развертывания службы BizTalk на портале служб BizTalk](https://msdn.microsoft.com/library/hh689837.aspx).
+* Зарегистрируйте ее на портале служб BizTalk. Ознакомьтесь со статьей [Регистрация и обновление развертывания службы BizTalk на портале служб BizTalk](/previous-versions/azure/hh689837(v=azure.100)).
 * Необходимо установить Visual Studio.
 * Необходимо установить пакет SDK для служб BizTalk. Вы можете скачать пакет SDK здесь: [https://go.microsoft.com/fwlink/?LinkId=235057](https://go.microsoft.com/fwlink/?LinkId=235057)  
 

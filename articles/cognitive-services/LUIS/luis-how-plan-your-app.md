@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/02/2019
 ms.author: diberry
-ms.openlocfilehash: d0c5ba41bc636479407e7580fa686fe1bba91612
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 9d54cff81f39f41b60800e9b33f3b4da1a735d85
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55873205"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58893441"
 ---
 # <a name="plan-your-luis-app-with-subject-domain-intents-and-entities"></a>Планирование приложения LUIS с предметной областью, намерениями и сущностями
 
@@ -47,9 +47,9 @@ ms.locfileid: "55873205"
 
 При определении сущностей, которые будут использоваться в приложении, имейте в виду, что для отражения связей между типами объектов существуют разные типы сущностей. [Сущности в LUIS](luis-concept-entity-types.md) предоставляют больше сведений о различных типах.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-После обучения и публикации приложения, а также когда оно получит выражения конечной точки, следует реализовать усовершенствования прогнозирования с помощью [активного обучения](luis-how-to-review-endoint-utt.md), [списков фраз](luis-concept-feature.md) и [шаблонов](luis-concept-patterns.md). 
+После обучения и публикации приложения, а также когда оно получит выражения конечной точки, следует реализовать усовершенствования прогнозирования с помощью [активного обучения](luis-how-to-review-endpoint-utterances.md), [списков фраз](luis-concept-feature.md) и [шаблонов](luis-concept-patterns.md). 
 
 
 * Краткое руководство по созданию приложения LUIS см. в статье [Quickstart: Use prebuilt Home automation app](luis-get-started-create-app.md) (Краткое руководство. Использование предварительно созданного приложения для домашней автоматизации)

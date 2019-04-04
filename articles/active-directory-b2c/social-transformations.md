@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 52ec7c83b4070a4c38963b3ab12f58f923fa889d
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.openlocfilehash: 53608654392d7efb73b6dadac14f01a94bb035a7
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55562633"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58893526"
 ---
 # <a name="social-accounts-claims-transformations"></a>Преобразования утверждений учетных записей социальных сетей
 
@@ -38,7 +38,7 @@ ms.locfileid: "55562633"
 
 ## <a name="createalternativesecurityid"></a>CreateAlternativeSecurityId
 
-Создает представление JSON свойства alternativeSecurityId пользователя, которое можно использовать в вызовах Azure Active Directory. Дополнительные сведения см. в описании [схемы AlternativeSecurityId](https://msdn.microsoft.com/library/azure/ad/graph/api/entity-and-complex-type-reference#AlternativeSecurityIdType).
+Создает представление JSON свойства alternativeSecurityId пользователя, которое можно использовать в вызовах Azure Active Directory. Дополнительные сведения см. в описании [схемы AlternativeSecurityId](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#AlternativeSecurityIdType).
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
@@ -81,7 +81,7 @@ ms.locfileid: "55562633"
 В приведенном ниже примере новое удостоверение социальной сети связывается с существующей учетной записью. Чтобы связать новое удостоверение социальной сети с существующей учетной записью, выполните следующие действия:
 1. В технических профилях **AAD-UserReadUsingAlternativeSecurityId** и **AAD-UserReadUsingObjectId** выведите утверждение пользователя **alternativeSecurityIds**.
 1. Попросите пользователя выполнить вход с помощью одного из поставщиков удостоверений, которые не связаны с этим пользователем.
-1. Выполните преобразование утверждений **CreateAlternativeSecurityId**, чтобы создать новый тип утверждения **alternativeSecurityId** с именем `AlternativeSecurityId2`.
+1. С помощью **CreateAlternativeSecurityId** преобразования, утверждений создайте **alternativeSecurityId** тип с именем утверждения `AlternativeSecurityId2`
 1. Вызовите преобразование утверждений **AddItemToAlternativeSecurityIdCollection**, чтобы добавить утверждение **AlternativeSecurityId2** к существующему утверждению **AlternativeSecurityIds**.
 1. Сохраните утверждение **alternativeSecurityIds** в учетной записи пользователя.
 

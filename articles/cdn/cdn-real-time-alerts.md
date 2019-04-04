@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 51dce1680be5f5f4387c2ba02827195bcdbe9b48
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: e20161147aa16456e31aff2bd3cc6337c3690e89
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "22998329"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58917861"
 ---
 # <a name="real-time-alerts-in-microsoft-azure-cdn"></a>Оповещения в режиме реального времени в сети CDN Microsoft Azure
 [!INCLUDE [cdn-premium-feature](../../includes/cdn-premium-feature.md)]
@@ -65,7 +65,7 @@ ms.locfileid: "22998329"
    > 
 8. Создайте **выражение** для мониторинга, выбрав значения параметров **Метрика**, **Оператор** и **Триггер**.
    
-   * Для параметра **Метрика** выберите тип условия, по которому следует осуществлять мониторинг.  **Bandwidth Mbps** (Пропускная способность в Мбит/с) — это объем использования пропускной способности в мегабитах в секунду.  **Всего подключений** — число одновременных подключений HTTP к нашим пограничным серверам.  Определения различных состояний кэша и кодов состояния см. в разделах [Azure CDN Cache Status Codes](https://msdn.microsoft.com/library/mt759237.aspx) (Коды состояния кэша в сети Azure CDN) и [Azure CDN HTTP Status Codes](https://msdn.microsoft.com/library/mt759238.aspx) (Коды состояний HTTP в сети Azure CDN).
+   * Для параметра **Метрика** выберите тип условия, по которому следует осуществлять мониторинг.  **Bandwidth Mbps** (Пропускная способность в Мбит/с) — это объем использования пропускной способности в мегабитах в секунду.  **Всего подключений** — число одновременных подключений HTTP к нашим пограничным серверам.  Определения различных состояний кэша и кодов состояния см. в разделах [Azure CDN Cache Status Codes](/previous-versions/azure/mt759237(v=azure.100)) (Коды состояния кэша в сети Azure CDN) и [Azure CDN HTTP Status Codes](/previous-versions/azure/mt759238(v=azure.100)) (Коды состояний HTTP в сети Azure CDN).
    * **Оператор** — математический оператор, который устанавливает связь между метрикой и значением триггера.
    * **Значение триггера** — пороговое значение, которое должно быть достигнуто для отправки уведомления.
      
@@ -107,7 +107,7 @@ ms.locfileid: "22998329"
     > 
 13. Нажмите кнопку **Сохранить** , чтобы сохранить конфигурацию оповещений.  Если вы установили флажок **Alert Enabled** (Оповещение включено) на шаге 5, оповещение активно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Ознакомьтесь со статьей [Статистика в реальном времени в сети CDN Microsoft Azure](cdn-real-time-stats.md).
 * Дополнительные сведения о [расширенных HTTP-отчетах](cdn-advanced-http-reports.md).
 * [Анализ вариантов использования CDN Azure](cdn-analyze-usage-patterns.md).

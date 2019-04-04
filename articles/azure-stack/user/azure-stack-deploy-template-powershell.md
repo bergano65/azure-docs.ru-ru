@@ -16,12 +16,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 7af06347dd1ca5a3e7e27e5db4849b5540b106b9
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: d71df99096e58b3ac7adc920b91891b9a50cd6f7
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55250016"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58479587"
 ---
 # <a name="deploy-a-template-to-azure-stack-using-powershell"></a>Развертывание шаблонов в Azure Stack с помощью PowerShell
 
@@ -40,7 +40,7 @@ ms.locfileid: "55250016"
 2. Откройте командную строку PowerShell с повышенными привилегиями.
 3. Замените `username` и `password` в приведенном ниже скрипте своим именем пользователя и паролем, а затем запустите скрипт.
 
-    ```PowerShell
+    ```powershell
     # Set deployment variables
     $myNum = "001" # Modify this per deployment
     $RGName = "myRG$myNum"

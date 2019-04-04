@@ -3,19 +3,19 @@ title: Метод Translate в API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: Использование метода Translate в API перевода текстов.
 services: cognitive-services
-author: Jann-Skotdal
+author: v-pawal
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: 4f6c420ab76462818fb17308d062cc9d881af7df
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 8533a5b2a974af3bd426e9b70ba298534b0365f7
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58091041"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58917521"
 ---
 # <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Translate
 
@@ -86,7 +86,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>allowFallback</td>
-    <td><em>Необязательный параметр.</em><br/>Указывает, что службе разрешено выполнять возврат к общей системе, если пользовательская система не существует. Возможные значения: <code>true</code> (по умолчанию) или <code>false</code>.<br/><br/><code>allowFallback=false</code> указывает, что для перевода должны использоваться только те обученные для <code>category</code> системы, которые указаны в запросе. Если для перевода с языка X на язык Y требуется связывание с помощью переходного языка E, все системы в цепочке (X->E и E->Y) должны быть пользовательскими и в одной и той же категории. Если система с определенной категорией не найдена, запрос вернет код состояния 400. <code>allowFallback=true</code> указывает, что службе разрешено выполнять возврат к общей системе, если пользовательская система не существует.
+    <td><em>Необязательный параметр.</em><br/>Указывает, что службе разрешено выполнять возврат к общей системе, если пользовательская система не существует. Возможные значения: <code>true</code> (по умолчанию) или <code>false</code>.<br/><br/><code>allowFallback=false</code> Указывает, что перевод следует использовать только системы, обучить <code>category</code> указанный в запросе. Если для перевода с языка X на язык Y требуется связывание с помощью переходного языка E, все системы в цепочке (X->E и E->Y) должны быть пользовательскими и в одной и той же категории. Если система с определенной категорией не найдена, запрос вернет код состояния 400. <code>allowFallback=true</code> Указывает, что служба может использовать в качестве резервной общую систему при пользовательской системы не существует.
 </td>
   </tr>
 </table> 
@@ -97,7 +97,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   <th width="20%">Заголовки</th>
   <th>ОПИСАНИЕ</th>
   <tr>
-    <td>_Один заголовок_<br/>_авторизации_</td>
+    <td>_По одному разрешению_<br/>_Верхний колонтитул_</td>
     <td><em>Обязательный заголовок запроса</em>.<br/>См. [описание доступных способов аутентификации](./v3-0-reference.md#authentication).</td>
   </tr>
   <tr>
@@ -165,7 +165,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
     Границы предложения включены только тогда, когда параметр запроса `includeSentenceLength` имеет значение `true`.
 
-  * `sourceText`: объект с одним свойством строки `text`, который возвращает оригинальный текст в скрипте по умолчанию исходного языка. `sourceText` свойство присутствует только в том случае, если входные данные выражаются в сценарии, который не является обычным для этого языка. Например, если входные данные были на арабском языке, но написаны латинским алфавитом, тогда параметр `sourceText.text` вернет текст на арабском языке, преобразованным в арабский сценарий.
+  * `sourceText`: объект с одним свойством строки `text`, который возвращает оригинальный текст в скрипте по умолчанию исходного языка. `sourceText` свойство присутствует только в том случае, если входные данные выражается в скрипт, который не является обычным сценарием для языка. Например, если входные данные были на арабском языке, но написаны латинским алфавитом, тогда параметр `sourceText.text` вернет текст на арабском языке, преобразованным в арабский сценарий.
 
 Примеры ответов JSON приведены в [этом разделе](#examples).
 
@@ -233,7 +233,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 В этом примере показано, как перевести одно предложение с английского языка на упрощенный китайский.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
+# [<a name="curl"></a>curl](#tab/curl)
 
 ```
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'Hello, what is your name?'}]"
@@ -259,7 +259,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 В этом примере показано, как перевести одно предложение с английского языка на упрощенный китайский. В запросе не указан язык ввода. Вместо этого используется автоматическое определение исходного языка.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
+# [<a name="curl"></a>curl](#tab/curl)
 
 ```
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=zh-Hans" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'Hello, what is your name?'}]"
@@ -285,7 +285,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 Давайте расширим предыдущий пример, добавив метод транслитерации. В следующем запросе используется китайский текст, написанный латинским алфавитом.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
+# [<a name="curl"></a>curl](#tab/curl)
 
 ```
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=zh-Hans&toScript=Latn" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'Hello, what is your name?'}]"
@@ -316,7 +316,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 Одновременный перевод нескольких строк — это просто вопрос задания массива строк в тексте запроса.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
+# [<a name="curl"></a>curl](#tab/curl)
 
 ```
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'Hello, what is your name?'}, {'Text':'I am fine, thank you.'}]"
@@ -345,7 +345,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 В этом примере показано, как перевести одинаковый оригинальный текст на несколько языков в одном запросе.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
+# [<a name="curl"></a>curl](#tab/curl)
 
 ```
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans&to=de" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'Hello, what is your name?'}]"
@@ -403,7 +403,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 Например: 
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
+# [<a name="curl"></a>curl](#tab/curl)
 
 ```
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&profanityAction=Marked" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'This is a fucking good idea.'}]"
@@ -425,7 +425,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 Сравнение:
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
+# [<a name="curl"></a>curl](#tab/curl)
 
 ```
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&profanityAction=Marked&profanityMarker=Tag" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'This is a fucking good idea.'}]"
@@ -456,7 +456,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 Пример запроса приведен ниже.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
+# [<a name="curl"></a>curl](#tab/curl)
 
 ```
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans&textType=html" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'<div class=\"notranslate\">This will not be translated.</div><div>This will be translated.</div>'}]"
@@ -480,7 +480,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 Чтобы получить сведения о выравнивании, укажите параметр `includeAlignment=true` в строке запроса.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
+# [<a name="curl"></a>curl](#tab/curl)
 
 ```
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=fr&includeAlignment=true" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'The answer lies in machine translation.'}]"
@@ -518,7 +518,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 Чтобы получать сведения о длине предложения в исходном тексте и переводе, укажите параметр `includeSentenceLength=true` в строке запроса.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
+# [<a name="curl"></a>curl](#tab/curl)
 
 ```
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=fr&includeSentenceLength=true" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'The answer lies in machine translation. The best machine translation technology cannot always provide translations tailored to a site or users like a human. Simply copy and paste a code snippet anywhere.'}]"

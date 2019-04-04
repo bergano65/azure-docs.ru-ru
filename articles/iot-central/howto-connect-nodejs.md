@@ -1,6 +1,6 @@
 ---
 title: Подключение универсального клиентского приложения Node.js к Azure IoT Central | Документация Майкрософт
-description: Вы узнаете, как разработчик устройства может подключать универсальное устройство Node.js к приложению Azure IoT Central.
+description: Как разработчик устройств как подключиться к Azure IoT Central приложения универсальные устройства Node.js.
 author: dominicbetts
 ms.author: dobett
 ms.date: 02/04/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 4d2701f078a26c22f52aebd0ef562dd60eaca923
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 4c04d9dbaf0065f2e68182c9ad84181845dee3e9
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58097980"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905330"
 ---
 # <a name="connect-a-generic-client-application-to-your-azure-iot-central-application-nodejs"></a>Подключение универсального клиентского приложения к приложению Azure IoT Central (Node.js)
 
@@ -28,11 +28,11 @@ ms.locfileid: "58097980"
 
 ## <a name="create-a-device-template"></a>Создание шаблона устройства
 
-В приложении Azure IoT Central требуется шаблон устройства со следующими определенными измерениями и свойствами устройства.
+В приложении Azure IoT Central вам потребуется шаблон устройства с помощью измерений, свойства устройства, параметры и команды:
 
 ### <a name="telemetry-measurements"></a>Измерения телеметрии
 
-Добавьте следующие данные телеметрии на странице **Measurements** (Измерения).
+Добавьте следующие данные телеметрии на **измерения** страницы:
 
 | Отображаемое имя | Имя поля  | Units | Min | Max | Число десятичных знаков |
 | ------------ | ----------- | ----- | --- | --- | -------------- |
@@ -41,59 +41,77 @@ ms.locfileid: "58097980"
 | Давление     | pressure    | кПа   | 80  | 110 | 0              |
 
 > [!NOTE]
->   Данные телеметрии передаются в формате чисел с плавающей запятой.
+> Данные телеметрии передаются в формате чисел с плавающей запятой.
 
-Введите имена полей из таблицы в шаблон устройства. Если имена полей не совпадают с именами свойств, указанными в коде для соответствующего устройства, данные телеметрии в приложении не отображаются.
+Введите имена полей из таблицы в шаблон устройства. Если имена полей не совпадают имена свойств в соответствующий код устройства, невозможно отобразить данные телеметрии в приложении.
 
 ### <a name="state-measurements"></a>Измерения состояния
 
-Добавьте следующие данные состояния на странице **Measurements** (Измерения).
+Добавьте следующее состояние на **измерения** страницы:
 
 | Отображаемое имя | Имя поля  | Значение 1 | Отображаемое имя | Значение 2 | Отображаемое имя |
 | ------------ | ----------- | --------| ------------ | ------- | ------------ | 
 | Режим вентилятора     | fanmode     | 1       | Выполнение      | 0       | Остановлено      |
 
 > [!NOTE]
->   Для измерения состояния используется строковый тип данных.
+> Для измерения состояния используется строковый тип данных.
 
-Введите имена полей из таблицы в шаблон устройства. Если имена полей не совпадают с именами свойств, указанными в коде для соответствующего устройства, данные состояния в приложении не отображаются.
+Введите имена полей из таблицы в шаблон устройства. Если имена полей не совпадают имена свойств в соответствующий код устройства, состояние невозможно отобразить в приложении.
 
 ### <a name="event-measurements"></a>Измерения событий
 
-Добавьте следующие данные событий на странице **Measurements** (Измерения).
+Добавьте следующее событие на **измерения** страницы:
 
 | Отображаемое имя | Имя поля  | Уровень серьезности |
 | ------------ | ----------- | -------- |
 | Перегрев  | overheat    | Ошибка    |
 
 > [!NOTE]
->   Для измерения событий используется строковый тип данных.
+> Для измерения событий используется строковый тип данных.
 
 ### <a name="device-properties"></a>Свойства устройства
 
-Добавьте следующие свойства устройства на **странице свойств**.
+Добавьте следующие свойства устройства на **свойства** страницы:
 
 | Отображаемое имя        | Имя поля        | Тип данных |
 | ------------------- | ----------------- | --------- |
 | Серийный номер       | SerialNumber      | текст      |
 | Производитель устройства | manufacturer      | текст      |
 
-Введите имена полей из таблицы в шаблон устройства. Если имена полей не совпадают с именами свойств, указанными в коде для соответствующего устройства, приложение не сможет отображать значения свойств устройства.
+Введите имена полей из таблицы в шаблон устройства. Если имена полей не совпадают имена свойств в соответствующий код устройства, свойства невозможно отобразить в приложении.
 
 ### <a name="settings"></a>Параметры
 
-Добавьте следующие **числовые** параметры на **странице параметров**.
+Добавьте следующий **номер** параметры на **параметры** страницы:
 
 | Отображаемое имя    | Имя поля     | Units | Десятичные знаки | Min | Max  | Initial |
 | --------------- | -------------- | ----- | -------- | --- | ---- | ------- |
 | Скорость вращения вентилятора       | fanSpeed       | Об/мин   | 0        | 0   | 3000 | 0       |
 | Установить температуру | setTemperature | F     | 0        | 20  | 200  | 80      |
 
-Введите имена полей из таблицы в шаблон устройства. Если имена полей не совпадают с именами свойств, указанными в коде для соответствующего устройства, устройство не сможет получать значения свойств.
+Введите имена полей из таблицы в шаблон устройства. Если имена полей не совпадают имена свойств в соответствующий код устройства, устройство не может принимать значение параметра.
+
+### <a name="commands"></a>Команды
+
+Добавьте следующую команду на **команды** страницы:
+
+| Отображаемое имя    | Имя поля     | Default Timeout (Время ожидания по умолчанию) | Тип данных |
+| --------------- | -------------- | --------------- | --------- |
+| Обратный отсчет       | обратный отсчет      | 30              | number    |
+
+Добавьте следующее поле ввода обратного отсчета команды:
+
+| Отображаемое имя    | Имя поля     | Тип данных | Значение |
+| --------------- | -------------- | --------- | ----- |
+| Отсчет от      | countFrom      | number    | 10    |
+
+Введите имена полей именно так, как показано в таблицах в шаблон устройства. Если имена полей не совпадают имена свойств в соответствующий код устройства, устройство не может обработать команду.
 
 ## <a name="add-a-real-device"></a>Добавление реального устройства
 
-В приложении Azure IoT Central добавьте реальное устройство из созданного шаблона приложения и запишите строку подключения к устройству. Пошаговые инструкции по подключению приложения Node.js к IoT Central см. в разделах [Создание строки подключения для реального устройства из приложения](tutorial-add-device.md#generate-connection-string) и [Подготовка клиентского кода](tutorial-add-device.md#prepare-the-client-code) руководства по добавлению устройства.
+В приложении Azure IoT Central добавьте реального устройства шаблон устройства, созданный в предыдущем разделе.
+
+Затем выполните инструкции из учебника «Добавить устройство», чтобы [создать строку подключения для реального устройства](tutorial-add-device.md#generate-connection-string). Использовать эту строку подключения в следующем разделе:
 
 ### <a name="create-a-nodejs-application"></a>Создание приложения Node.js
 
@@ -129,12 +147,9 @@ ms.locfileid: "58097980"
     var client = clientFromConnectionString(connectionString);
     ```
 
-    > [!NOTE]
-    > Azure IoT Central перешел с помощью службы подготовки устройств Azure IoT Hub (DPS) для всех подключений устройств, выполните следующие инструкции, чтобы [Получение строки подключения устройства](concepts-connectivity.md#get-a-connection-string) и продолжите выполнение оставшейся части руководства. Подробные инструкции см. в разделе [Подготовка клиентского кода](tutorial-add-device.md#prepare-the-client-code) руководства по добавлению устройств.
+    Обновить заполнитель `{your device connection string}` с [строки подключения устройства](tutorial-add-device.md#generate-connection-string). В этом примере инициализируется `targetTemperature` до нуля, можно использовать значение из "двойника" устройства или текущего чтения с устройства.
 
-    Замените заполнитель `{your device connection string}` строкой подключения к устройству. В этом примере мы инициализируем `targetTemperature` до нуля. При необходимости можно использовать текущие данные с устройства или значение из двойника устройства. 
-
-1. Для отправки данных телеметрии, состояния и событий в приложение Azure IoT Central необходимо добавить в файл следующую функцию:
+1. Чтобы отправить данные телеметрии, состояние и измерения событий приложение Azure IoT Central, добавьте следующую функцию в файл:
 
     ```javascript
     // Send device measurements.
@@ -143,9 +158,9 @@ ms.locfileid: "58097980"
       var humidity = 70 + (Math.random() * 10);
       var pressure = 90 + (Math.random() * 5);
       var fanmode = 0;
-      var data = JSON.stringify({ 
-        temperature: temperature, 
-        humidity: humidity, 
+      var data = JSON.stringify({
+        temperature: temperature,
+        humidity: humidity,
         pressure: pressure,
         fanmode: (temperature > 25) ? "1" : "0",
         overheat: (temperature > 35) ? "ER123" : undefined });
@@ -159,13 +174,9 @@ ms.locfileid: "58097980"
 1. Для отправки свойств устройства в приложение Azure IoT Central необходимо добавить в файл следующую функцию:
 
     ```javascript
-    // Send device properties.
-    function sendDeviceProperties(twin) {
-      var properties = {
-        serialNumber: '123-ABC',
-        manufacturer: 'Contoso'
-      };
-      twin.properties.reported.update(properties, (err) => console.log(`Sent device properties; ` +
+    // Send device reported properties.
+    function sendDeviceProperties(twin, properties) {
+      twin.properties.reported.update(properties, (err) => console.log(`Sent device properties: ${JSON.stringify(properties)}; ` +
         (err ? `error: ${err.toString()}` : `status: success`)));
     }
     ```
@@ -223,7 +234,41 @@ ms.locfileid: "58097980"
     }
     ```
 
-1. Добавьте следующее, чтобы установить подключение к Azure IoT Central и подключить функции в клиентском коде:
+1. Добавьте следующий код для обработки обратного отсчета команды, отправленные из приложения IoT Central:
+
+    ```javascript
+    // Handle countdown command
+    function onCountdown(request, response) {
+      console.log('Received call to countdown');
+
+      var countFrom = (typeof(request.payload.countFrom) === 'number' && request.payload.countFrom < 100) ? request.payload.countFrom : 10;
+
+      response.send(200, (err) => {
+        if (err) {
+          console.error('Unable to send method response: ' + err.toString());
+        } else {
+          client.getTwin((err, twin) => {
+            function doCountdown(){
+              if ( countFrom >= 0 ) {
+                var patch = {
+                  countdown:{
+                    value: countFrom
+                  }
+                };
+                sendDeviceProperties(twin, patch);
+                countFrom--;
+                setTimeout(doCountdown, 2000 );
+              }
+            }
+
+            doCountdown();
+          });
+        }
+      });
+    }
+    ```
+
+1. Добавьте следующий код, чтобы завершить подключение к Azure IoT Central, и присоедините функции в клиентском коде:
 
     ```javascript
     // Handle device connection to Azure IoT Central.
@@ -232,6 +277,9 @@ ms.locfileid: "58097980"
         console.log(`Device could not connect to Azure IoT Central: ${err.toString()}`);
       } else {
         console.log('Device successfully connected to Azure IoT Central');
+
+        // Create handler for countdown command
+        client.onDeviceMethod('countdown', onCountdown);
 
         // Send telemetry measurements to Azure IoT Central every 1 second.
         setInterval(sendTelemetry, 1000);
@@ -242,7 +290,12 @@ ms.locfileid: "58097980"
             console.log(`Error getting device twin: ${err.toString()}`);
           } else {
             // Send device properties once on device start up.
-            sendDeviceProperties(twin);
+            var properties = {
+              serialNumber: '123-ABC',
+              manufacturer: 'Contoso'
+            };
+            sendDeviceProperties(twin, properties);
+
             // Apply device settings and handle changes to device settings.
             handleSettings(twin);
           }
@@ -268,16 +321,18 @@ node connectedAirConditionerAdv.js
 
     ![Просмотр телеметрии](media/howto-connect-nodejs/viewtelemetry.png)
 
-* Просматривать значения свойств устройства, отправленные из устройства, на странице **Свойства**. Обновление плитки устройства-свойства при успешном выполнении подключения.
+* Просматривать значения свойств устройства, отправленные из устройства, на странице **Свойства**. Обновление плитки устройства-свойства при подключении устройства:
 
     ![Просмотр свойств устройства](media/howto-connect-nodejs/viewproperties.png)
 
-* Задавать скорость вращения вентилятора и целевую температуру на странице **Параметры**. Значения параметров синхронизации, если подключение установлено успешно.
+* Задайте вентилятор скорость и целевой температуры с **параметры** страницы:
 
     ![Установка скорости вращения вентилятора](media/howto-connect-nodejs/setfanspeed.png)
 
+* Вызывает команду обратного отсчета от **команды** страницы:
+
+    ![Вызовите команду обратного отсчета](media/howto-connect-nodejs/callcountdown.png)
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы узнали, как подключить универсальное клиентское приложение Node.js к Azure IoT Central, а значит вы готовы к следующему шагу.
-* [Подготовка и подключение Raspberry Pi](howto-connect-raspberry-pi-python.md)
-<!-- Next how-tos in the sequence -->
+Теперь, когда вы узнали, как соединиться с универсального клиента Node.js приложение Azure IoT Central, мы предлагаем — Узнайте, как [Подготовка и подключение устройства Raspberry Pi](howto-connect-raspberry-pi-python.md).

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/21/2019
 ms.author: cbrooks
 ms.subservice: common
-ms.openlocfilehash: c475fc4d958044413ae7566c027c0e796f1d699a
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 27ba1a1b5fbc0c7533da3634ec8a435468704c33
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58486399"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58906095"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -241,7 +241,7 @@ ms.locfileid: "58486399"
 
 Чтобы предоставить доступ из вашей локальной сети к учетной записи хранения в правиле IP-сети, необходимо определить IP-адреса для Интернета, которые используются в вашей сети. За помощью обращайтесь к администратору сети.
 
-Для подключения своей сети к сети Azure можно использовать [ExpressRoute](/azure/expressroute/expressroute-introduction). В этом случае для каждого канала настраивается два общедоступных IP-адреса. Их можно найти в Microsoft Edge и подключаться к службам Майкрософт (например, к службе хранилища Azure) с помощью [общедоступного пиринга Azure](/azure/expressroute/expressroute-circuit-peerings). Чтобы разрешить взаимодействие со службой хранилища Azure, создайте правила IP-сети для общедоступных IP-адресов ваших цепей. Чтобы найти общедоступные IP-адреса цепей ExpressRoute, [отправьте запрос ExpressRoute в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) на портале Azure.
+Если вы используете [ExpressRoute](/azure/expressroute/expressroute-introduction) для локальной среды, для общедоступного пиринга или пиринга Майкрософт, то вам необходимо определить используемые IP-адреса NAT. Для общедоступного пиринга в каждом канале ExpressRoute по умолчанию используется два IP-адреса NAT для трафика служб Azure, когда он входит в основную магистральную сеть Microsoft Azure. Для пиринга Майкрософт используются IP-адреса NAT, предоставленные клиентом или поставщиком услуг. Чтобы разрешить доступ к ресурсам служб, необходимо разрешить эти общедоступные IP-адреса в настройках брандмауэра IP-адресов ресурсов. Чтобы найти IP-адреса канала ExpressRoute для общедоступного пиринга, [отправьте запрос по ExpressRoute в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) через портал Azure. Узнайте больше о [NAT для общедоступного пиринга и пиринга Майкрософт](/azure/expressroute/expressroute-nat#nat-requirements-for-azure-public-peering).
 
 ### <a name="managing-ip-network-rules"></a>Управление правилами IP-сети
 
@@ -361,7 +361,7 @@ ms.locfileid: "58486399"
 
 ### <a name="storage-analytics-data-access"></a>Доступ к данным аналитики хранилища
 
-В некоторых случаях доступ для чтения журналов диагностики и метрик нужно получать за пределами сети. Вы можете предоставить исключения из правил сети, чтобы разрешить доступ на чтение к файлам журналов учетной записи хранения, таблицам метрик или к обоим ресурсам. Дополнительные сведения о работе с аналитикой хранилища см. в [этой статье](/azure/storage/storage-analytics).
+В некоторых случаях доступ для чтения журналов диагностики и метрик нужно получать за пределами сети. Вы можете предоставить исключения из правил сети, чтобы разрешить доступ на чтение к файлам журналов учетной записи хранения, таблицам метрик или к обоим ресурсам. [Дополнительные сведения о работе с аналитикой хранилища.](/azure/storage/storage-analytics)
 
 ### <a name="managing-exceptions"></a>Управление исключениями
 

@@ -10,22 +10,22 @@ ms.topic: conceptual
 ms.date: 05/06/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: b03e02a783245459fa28126b73eac2459f6aad67
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: 62846fe744e7295f58902481400ce91770c916da
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55182852"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58893101"
 ---
 # <a name="manage-user-data-in-azure-active-directory-b2c"></a>Управление пользовательскими данными в Azure Active Directory B2C
 
- В этой статье описано, как управлять пользовательскими данными в Azure Active Directory (Azure AD) B2C с помощью операций, предоставляемых [API Graph Azure Active Directory](https://msdn.microsoft.com/library/azure/ad/graph/api/api-catalog). Управление пользовательскими данными позволяет удалять данные или экспортировать их из журналов аудита.
+ В этой статье описано, как управлять пользовательскими данными в Azure Active Directory (Azure AD) B2C с помощью операций, предоставляемых [API Graph Azure Active Directory](/previous-versions/azure/ad/graph/api/api-catalog). Управление пользовательскими данными позволяет удалять данные или экспортировать их из журналов аудита.
 
 [!INCLUDE [gdpr-intro-sentence.md](../../includes/gdpr-intro-sentence.md)]
 
 ## <a name="delete-user-data"></a>Удаление пользовательских данных
 
-Пользовательские данные хранятся в каталоге Azure AD B2C и журналах аудита. Все пользовательские данные аудита сохраняются в Azure AD B2C в течение 30 дней. Если вы хотите удалить данные пользователя в течение этого периода, можно использовать операцию [Удалить пользователя](https://msdn.microsoft.com/library/azure/ad/graph/api/users-operations#DeleteUser). Операция удаления требуется для каждого из клиентов Azure AD B2C, где могут храниться данные. 
+Пользовательские данные хранятся в каталоге Azure AD B2C и журналах аудита. Все пользовательские данные аудита сохраняются в Azure AD B2C в течение 30 дней. Если вы хотите удалить данные пользователя в течение этого периода, можно использовать операцию [Удалить пользователя](/previous-versions/azure/ad/graph/api/users-operations#DeleteUser). Операция удаления требуется для каждого из клиентов Azure AD B2C, где могут храниться данные. 
 
 Каждому пользователю в Azure AD B2C назначается идентификатор объекта. Это однозначный идентификатор, позволяющий удалить пользовательские данные в Azure AD B2C. В зависимости от архитектуры идентификатор объекта может использоваться как полезный идентификатор корреляции в других службах, например базах данных для финансовых и маркетинговых сведений, а также для управления отношениями с клиентами. 
 
@@ -56,7 +56,7 @@ ms.locfileid: "55182852"
 3. Приложение извлекает действия аудита для пользователя. API Graph Azure AD предоставляет приложению данные о событии.
 4. Приложение объединяет данные и предоставляет их пользователю.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. дополнительные сведения об [управлении доступом пользователей к приложению](manage-user-access.md).
 

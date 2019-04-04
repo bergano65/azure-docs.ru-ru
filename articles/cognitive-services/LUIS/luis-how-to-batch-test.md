@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/02/2019
 ms.author: diberry
-ms.openlocfilehash: 973a82e97bc9770c30e791512b13e4c57a4c5bca
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 4d29602581531e9e42edbf4e00eca810757a8a99
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56116904"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58895738"
 ---
 # <a name="batch-testing-with-a-set-of-example-utterances"></a>Пакетное тестирование с помощью набора примеров высказываний
 
@@ -96,11 +96,11 @@ ms.locfileid: "56116904"
 
 Два зеленых раздела на диаграмме означают соответствие ожидаемому прогнозированию.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если тестирование показывает, что приложение LUIS не распознает правильные намерения и сущности, вы можете повысить производительность приложения LUIS, пометив дополнительные высказывания или добавив компоненты. 
 
-* я[Label suggested utterances with LUIS](luis-how-to-review-endoint-utt.md) (Пометка предлагаемых высказываний в LUIS) 
-* [Use features to improve your LUIS app's performance](luis-how-to-add-features.md) (Использование функций для повышения производительности приложения LUIS) 
-* [Understand batch testing with this tutorial](luis-tutorial-batch-testing.md) (Общие сведения о пакетном тестировании в этом руководстве)
+* [Метка предлагаемые фразы с помощью LUIS](luis-how-to-review-endpoint-utterances.md) 
+* [Использование функций для повышения производительности приложения LUIS](luis-how-to-add-features.md) 
+* [Понять пакетное тестирование с помощью этого руководства](luis-tutorial-batch-testing.md)
 * [Learn batch testing concepts](luis-concept-batch-test.md) (Общие сведения о принципах пакетного тестирования)

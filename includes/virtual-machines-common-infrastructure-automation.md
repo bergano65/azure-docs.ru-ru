@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: d8ada53082b0ccc95d472b43a0ae2ff63cd76a3e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 5f1774e02a34b60a8a6e936b62905a0a27ccfb85
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58125273"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58891075"
 ---
 # <a name="use-infrastructure-automation-tools-with-virtual-machines-in-azure"></a>Использование средств автоматизации инфраструктуры на виртуальных машинах в Azure
 Средства автоматизации, как правило, позволяют быстро и согласованно создавать виртуальные машины Azure в нужном масштабе, а также управлять ими. Существует множество средств и решений, которые помогают полностью автоматизировать жизненный цикл развертывания и администрирования инфраструктуры Azure. В этой статье приведены сведения о некоторых средствах автоматизации инфраструктуры Azure. Обычно их используют с такими целями:
@@ -53,7 +53,7 @@ ms.locfileid: "58125273"
 
 
 ## <a name="cloud-init"></a>Cloud-init
-[Пакет cloud-init](https://cloudinit.readthedocs.io) — широко используемое средство, используемое для настройки виртуальной машины Linux при ее первой загрузке. Вы можете использовать cloud-init для установки пакетов, записи файлов или настройки пользователей и параметров безопасности. Так как cloud-init вызывается при начальной загрузке, к вашей конфигурации не нужно применять какие-либо дополнительные действия или агентов.  Дополнительные сведения о том, как правильно отформатировать файлы, `#cloud-config`, см. на [сайте документации по cloud-init](http://cloudinit.readthedocs.io/en/latest/topics/format.html#cloud-config-data).  Файлы `#cloud-config` — это текстовые файлы, закодированные в формате base64.
+[Пакет cloud-init](https://cloudinit.readthedocs.io) — широко используемое средство, используемое для настройки виртуальной машины Linux при ее первой загрузке. Вы можете использовать cloud-init для установки пакетов, записи файлов или настройки пользователей и параметров безопасности. Так как cloud-init вызывается при начальной загрузке, к вашей конфигурации не нужно применять какие-либо дополнительные действия или агентов.  Дополнительные сведения о том, как правильно отформатировать файлы, `#cloud-config`, см. на [сайте документации по cloud-init](http://cloudinit.readthedocs.io/en/latest/topics/format.html#cloud-config-data).  `#cloud-config` Это текстовые файлы в кодировке base64.
 
 Кроме того, cloud-init работает с разными дистрибутивами. Например, для установки пакета не используется **apt-get install** или **yum install**. Вместо этого можно определить список пакетов для установки. Файл cloud-init автоматически использует собственный инструмент управления пакетами из выбранного дистрибутива.
 
@@ -69,7 +69,7 @@ ms.locfileid: "58125273"
 
 Дополнительные сведения о cloud-init в Azure:
 
-- [Поддержка cloud-init для виртуальных машин Linux в Azure](../articles/virtual-machines/linux/using-cloud-init.md)
+- [Поддержка Cloud-init для виртуальных машин Linux в Azure](../articles/virtual-machines/linux/using-cloud-init.md)
 - [Руководство по автоматизации настройки виртуальных машин при помощи cloud-init](../articles/virtual-machines/linux/tutorial-automate-vm-deployment.md)
 
 
@@ -80,7 +80,7 @@ ms.locfileid: "58125273"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Краткое руководство по настройке требуемого состояния](https://msdn.microsoft.com/powershell/dsc/quickstart)
+- [Краткое руководство по настройке требуемого состояния](https://msdn.microsoft.com/powershell/dsc/quickstarts/website-quickstart)
 - [Настройка опрашивающего веб-сервера DSC](https://msdn.microsoft.com/powershell/dsc/pullserver)
 - [Начало работы с настройкой требуемого состояния (DSC) для Linux](https://msdn.microsoft.com/powershell/dsc/lnxgettingstarted)
 

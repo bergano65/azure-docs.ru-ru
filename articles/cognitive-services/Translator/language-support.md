@@ -3,19 +3,19 @@ title: 'API перевода текстов: поддерживаемые язы
 titleSuffix: Azure Cognitive Services
 description: Список естественных языков, поддерживаемых API перевода текстов.
 services: cognitive-services
-author: Jann-Skotdal
+author: v-pawal
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/21/2019
 ms.author: v-jansko
-ms.openlocfilehash: d98922937781fd169d34881fa67a6b5746d06df7
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 62a4493204fdc09dbd48b1463e5558fabf9c7c40
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58882470"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918048"
 ---
 # <a name="language-and-region-support-for-the-translator-text-api"></a>Поддержка языков и регионов в API перевода текстов
 
@@ -314,6 +314,6 @@ API перевода текстов поддерживает следующие 
 
 ## <a name="access-the-list-on-the-microsoft-translator-website"></a>Доступ к списку через веб-сайт Microsoft Translator
 
-Для быстрого получения представления о поддержке языков на веб-сайте Microsoft Translator представлены все языки, поддерживаемые API-интерфейсами перевода текста и распознавания речи. Этот список не содержит техническую информацию для разработчиков, например коды языков.
+Чтобы быстро получить представление о поддержке языков, на веб-сайте API перевода текстов Microsoft представлены все языки, поддерживаемые в API перевода текстов и распознавания речи. Этот список не содержит техническую информацию для разработчиков, например коды языков.
 
 [Список языков, см. в разделе](https://www.microsoft.com/translator/languages.aspx)

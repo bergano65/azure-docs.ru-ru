@@ -8,18 +8,16 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/28/2019
 ms.author: richrund
-ms.openlocfilehash: f37c8290defa5e7c9baa3b705393aba376936fd8
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.openlocfilehash: 5c348adea0847929b37d1b61f024859b1d634fe7
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58539383"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58903409"
 ---
 # <a name="manage-log-analytics-workspace-in-azure-monitor-using-powershell"></a>Управление рабочей областью Log Analytics в Azure Monitor с помощью PowerShell
 
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-
-Можно использовать [командлеты Log Analytics PowerShell](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/) для выполнения различных операций в рабочей области Log Analytics в Azure Monitor в командной строке или в скрипте.  Примеры задач, которые можно выполнять с помощью PowerShell.
+Можно использовать [командлеты Log Analytics PowerShell](https://docs.microsoft.com/powershell/module/az.operationalinsights/) для выполнения различных операций в рабочей области Log Analytics в Azure Monitor в командной строке или в скрипте.  Примеры задач, которые можно выполнять с помощью PowerShell.
 
 * Создание рабочей области
 * Добавление или удаление решения
@@ -33,10 +31,12 @@ ms.locfileid: "58539383"
 * Добавление агента Log Analytics в виртуальную машину Azure
 * Настройка Log Analytics для индексирования данных, собранных системой диагностики Azure
 
-Эта статья содержит два примера кода, иллюстрирующих некоторые доступные в PowerShell функции.  Сведения о других функциях см. в [справочнике по командлетам PowerShell Log Analytics](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/).
+Эта статья содержит два примера кода, иллюстрирующих некоторые доступные в PowerShell функции.  Сведения о других функциях см. в [справочнике по командлетам PowerShell Log Analytics](https://docs.microsoft.com/powershell/module/az.operationalinsights/).
 
 > [!NOTE]
 > Компонент Log Analytics раньше назывался Operational Insights, поэтому именно такое имя используется в командлетах.
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Технические условия
 Эти примеры работают с версии 1.0.0 или более поздней версии модуля Az.OperationalInsights.
@@ -272,5 +272,5 @@ Remove-AzOperationalInsightsStorageInsight -ResourceGroupName $workspace.Resourc
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Дополнительные сведения об использовании PowerShell для настройки Log Analytics см. в [описании командлетов PowerShell Log Analytics](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/).
+* Дополнительные сведения об использовании PowerShell для настройки Log Analytics см. в [описании командлетов PowerShell Log Analytics](https://docs.microsoft.com/powershell/module/az.operationalinsights/).
 

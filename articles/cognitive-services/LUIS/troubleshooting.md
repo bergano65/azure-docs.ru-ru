@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 03/21/2019
 ms.author: diberry
-ms.openlocfilehash: aed7d4fedd4781eac8c127744e5fe93fb054b99d
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 672c9d43007f954d870f8195bcad63d9cee69523
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58369723"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58894463"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
@@ -88,7 +88,7 @@ ms.locfileid: "58369723"
 
 Непредвиденные результаты прогнозирования, полученные при запросе, основаны на состоянии опубликованной модели. Чтобы скорректировать модель, потребуется изменить ее, обучить и опубликовать повторно. 
 
-Начните корректировку модели с [активного обучения](luis-how-to-review-endoint-utt.md).
+Начните корректировку модели с [активного обучения](luis-how-to-review-endpoint-utterances.md).
 
 Можно удалить результаты недетерминированного обучения. Для этого настройте [API параметров версии приложения](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) для использования всех данных обучения.
 
@@ -240,7 +240,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 #### <a name="resolve-issue-in-luis"></a>Устранение проблемы в LUIS
 Выполните передачу требуемого речевого фрагмента в LUIS из [конечной точки LUIS ](luis-get-started-create-app.md#query-the-endpoint-with-a-different-utterance). Если произошла ошибка, устраните ее в LUIS таким образом, чтобы предотвратить ее повторное появление. Ниже перечислены распространенные ошибки.
 
-* `Out of call volume quota. Quota will be replenished in <time>.`. Данная ошибка указывает о необходимости изменения ключа разработки на [ключ конечной точки](luis-how-to-azure-subscription.md) или изменения [уровней службы](luis-how-to-azure-subscription.md#change-pricing-tier). 
+* `Out of call volume quota. Quota will be replenished in <time>.` — Эта проблема указывает, либо при необходимости изменять ключ разработчика для [ключа конечной точки](luis-how-to-azure-subscription.md) или вам нужно изменить [уровни служб](luis-how-to-azure-subscription.md#change-pricing-tier). 
 
 #### <a name="resolve-issue-in-azure-bot-service"></a>Устранение ошибок в службе Azure Bot
 
@@ -296,10 +296,10 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 Включено создание дополнительных [API маршрутов](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/authoring-routes.md).
 
 Видеоролики:
-* [Build 2018: серия "Пятница с Azure". Cognitive Services и Интеллектуальная служба распознавания речи (LUIS)](https://channel9.msdn.com/Shows/Azure-Friday/At-Build-2018-Cognitive-Services-Language-LUIS/player)
-* [Build 2018: канал об искусственном интеллекте. Новые возможности службы "Распознавание речи"](https://channel9.msdn.com/Shows/AI-Show/Whats-New-with-Language-Understanding-Service-LUIS/player)
-* [Build 2018. Интеллектуальные функции ботов, функции распознавания речи и рекомендации по использованию NLU](https://channel9.msdn.com/events/Build/2018/BRK3208)
-* [ Build 2018. Обновления LUIS](https://channel9.msdn.com/events/Build/2018/THR3118/player)
+* [Azure Friday на 2018 сборки: Cognitive Services — языка (LUIS)](https://channel9.msdn.com/Shows/Azure-Friday/At-Build-2018-Cognitive-Services-Language-LUIS/player)
+* [Демонстрация AI сборки 2018 г. — новые возможности служба анализа языка](https://channel9.msdn.com/Shows/AI-Show/Whats-New-with-Language-Understanding-Service-LUIS/player)
+* [Конференции Build 2018 - Bot аналитики речи и возможности NLU советы и рекомендации](https://channel9.msdn.com/events/Build/2018/BRK3208)
+* [Build 2018 - ЛУИС обновлений](https://channel9.msdn.com/events/Build/2018/THR3118/player)
 
 Проекты:
 * Пример [бота Contoso Cafe](https://github.com/botbuilderbuild2018/build2018demo) (исходный код на GitHub)
@@ -307,5 +307,5 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительную информацию о LUIS см. в следующих ресурсах:
-* [Вопросы Stack Overflow, помеченные LUIS](https://stackoverflow.com/questions/tagged/luis)
-* [Форум MSDN, посвященный Интеллектуальной службе распознавания речи (LUIS)](https://social.msdn.microsoft.com/forums/azure/home?forum=LUIS)
+* [Вопросы переполнения стека, с тегами с помощью LUIS](https://stackoverflow.com/questions/tagged/luis)
+* [Основные сведения о Intelligent языка MSDN (LUIS) форум по службам](https://social.msdn.microsoft.com/forums/azure/home?forum=LUIS)

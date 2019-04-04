@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 04/01/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 57a97d76a864a644426296cf24401b2210709d39
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: 5ddae616f81052e005210310e2d28b1bc10512ab
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58805811"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58906214"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -1432,11 +1432,11 @@ ms.locfileid: "58805811"
 > | Действие | Microsoft.ContainerService/managedClusters/resetServicePrincipalProfile/action | Сброс профиля субъекта-службы управляемого кластера. |
 > | Действие | Microsoft.ContainerService/managedClusters/upgradeprofiles/read | Возвращает профиль обновления кластера. |
 > | Действие | Microsoft.ContainerService/managedClusters/write | Создание нового управляемого кластера или обновление имеющегося. |
-> | Действие | Microsoft.ContainerService/openShiftClusters/delete | Удаление кластера Open Shift |
-> | Действие | Microsoft.ContainerService/openShiftClusters/read | Получение кластера Open Shift |
+> | Действие | Microsoft.ContainerService/openShiftClusters/delete | Удалить кластер Open Shift |
+> | Действие | Microsoft.ContainerService/openShiftClusters/read | Получить кластер Open Shift |
 > | Действие | Microsoft.ContainerService/openShiftClusters/write | Создание нового кластера Open Shift или обновление имеющегося |
 > | Действие | Microsoft.ContainerService/openShiftManagedClusters/delete | Удаление управляемого кластера Open Shift |
-> | Действие | Microsoft.ContainerService/openShiftManagedClusters/read | Получение управляемого кластера Open Shift |
+> | Действие | Microsoft.ContainerService/openShiftManagedClusters/read | Получить управляемый кластер Open Shift |
 > | Действие | Microsoft.ContainerService/openShiftManagedClusters/write | Создание нового управляемого кластера Open Shift или обновление имеющегося |
 > | Действие | Microsoft.ContainerService/operations/read | Выводит список операций, доступных в поставщике ресурсов Microsoft.ContainerService. |
 > | Действие | Microsoft.ContainerService/register/action | Регистрирует подписку в поставщике ресурсов Microsoft.ContainerService. |
@@ -1855,9 +1855,9 @@ ms.locfileid: "58805811"
 > | Действие | Microsoft.DataMigration/locations/operationResults/read | Получение состояния длительной операции, связанной с ответом 202 (принято) |
 > | Действие | Microsoft.DataMigration/locations/operationStatuses/read | Получение состояния длительной операции, связанной с ответом 202 (принято) |
 > | Действие | Microsoft.DataMigration/register/action | Регистрация подписки в поставщике Azure Database Migration Service. |
-> | Действие | Microsoft.DataMigration/services/addWorker/action | Добавляет работника DMS доступен сотрудникам службы |
+> | Действие | Microsoft.DataMigration/services/addWorker/action | Добавляет рабочую роль DMS в список доступных рабочих ролей службы. |
 > | Действие | Microsoft.DataMigration/services/checkStatus/action | Проверка развертывания и выполнения службы. |
-> | Действие | Microsoft.DataMigration/services/configureWorker/action | Настраивает DMS исполнителя, который доступен работников службы |
+> | Действие | Microsoft.DataMigration/services/configureWorker/action | Настраивает рабочую роль DMS для списка доступных рабочих ролей службы. |
 > | Действие | Microsoft.DataMigration/services/delete | Удаление ресурса и всех его дочерних элементов. |
 > | Действие | Microsoft.DataMigration/services/projects/accessArtifacts/action | Создание URL-адреса для операций GET и PUT с артефактами проекта. |
 > | Действие | Microsoft.DataMigration/services/projects/delete | Удаление ресурса и всех его дочерних элементов. |
@@ -1873,7 +1873,7 @@ ms.locfileid: "58805811"
 > | Действие | Microsoft.DataMigration/services/projects/tasks/write | Запуск задач Azure Database Migration Service. |
 > | Действие | Microsoft.DataMigration/services/projects/write | Запуск задач Azure Database Migration Service. |
 > | Действие | Microsoft.DataMigration/services/read | Считывание сведений о ресурсах. |
-> | Действие | Microsoft.DataMigration/services/removeWorker/action | Удаляет DMS исполнителя, который доступен работников службы |
+> | Действие | Microsoft.DataMigration/services/removeWorker/action | Удаляет рабочую роль DMS из списка доступных ролей службы. |
 > | Действие | Microsoft.DataMigration/services/slots/delete | Удаление ресурса и всех его дочерних элементов. |
 > | Действие | Microsoft.DataMigration/services/slots/read | Считывание сведений о ресурсах. |
 > | Действие | Microsoft.DataMigration/services/slots/write | Создание или обновление ресурсов и их свойств. |
@@ -5902,4 +5902,4 @@ ms.locfileid: "58805811"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Пользовательские роли для ресурсов Azure](custom-roles.md)
-- [Встроенные роли управления доступом на основе ролей в Azure](built-in-roles.md)
+- [Встроенные роли для ресурсов Azure](built-in-roles.md)

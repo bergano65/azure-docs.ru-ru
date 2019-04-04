@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/04/2017
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 6be2a2d6febfe927cadbdeb12dc91b0e103d6ac4
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 41c3db1c9a7295d939aa34a36f86c0dfa9fecd91
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58094632"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58891452"
 ---
 # <a name="azure-active-directory-b2c-use-custom-attributes-in-a-custom-profile-edit-policy"></a>Azure Active Directory B2C использование настраиваемых атрибутов в пользовательской политике изменения профиля
 
@@ -296,7 +296,7 @@ Azure AD B2C расширяет набор атрибутов, хранящих�
 
 ## <a name="reference"></a>Справочные материалы
 
-Дополнительные сведения о свойствах расширения см. в статье [Directory schema extensions | Graph API concepts](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-directory-schema-extensions) (Расширения схемы каталогов | Концепции API Graph).
+Дополнительные сведения о свойствах расширения см. в статье [Directory schema extensions | Graph API concepts](/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-directory-schema-extensions) (Расширения схемы каталогов | Концепции API Graph).
 
 > [!NOTE]
 > * **TechnicalProfile** — это тип элемента или функция, определяющая имя, метаданные и протокол конечной точки. **TechnicalProfile** детализирует обмен утверждениями, которые выполняет платформа Identity Experience Framework. При вызове этой функции на шаге оркестрации или из другого **TechnicalProfile** вызывающий объект указывает **InputClaims** и **OutputClaims** в качестве параметров.  

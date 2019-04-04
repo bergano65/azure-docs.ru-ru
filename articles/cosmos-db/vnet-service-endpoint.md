@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 4e609bf6d96fa9cc3f2dc179157ecd27178608f9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 672c62c440708f8e949d67d545bee2179c6066b2
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57860369"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58894941"
 ---
 # <a name="access-azure-cosmos-db-from-virtual-networks-vnet"></a>Доступ к Azure Cosmos DB из виртуальных сетей
 
@@ -55,9 +55,12 @@ ms.locfileid: "57860369"
 ### <a name="are-service-endpoints-available-for-all-vnets"></a>Доступны ли конечные точки служб для всех виртуальных сетей?
 Нет, только виртуальные сети Azure Resource Manager могут использовать конечную точку службы. Классические виртуальные сети не поддерживают конечные точки службы.
 
+### <a name="can-i-accept-connections-from-within-public-azure-datacenters-when-service-endpoint-access-is-enabled-for-azure-cosmos-db"></a>Можно ли принимать подключения из общедоступных центров данных Azure, если для Azure Cosmos DB включен доступ через конечную точку службы?  
+Это необходимо, только если требуется, чтобы к учетной записи Azure Cosmos DB могли получать доступ другие службы Azure, такие как фабрика данных Azure, поиск Azure или любые службы, развернутые в данном регионе Azure.
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Получение доступа к ресурсам Azure Cosmos DB из виртуальных сетей](how-to-configure-vnet-service-endpoint.md)
-* [How-to configure IP firewall for your Azure Cosmos account](how-to-configure-firewall.md) (Инструкции по настройке брандмауэра IP-адресов для учетной записи Azure Cosmos)
+* [Как ограничить доступ к учетной записи Azure Cosmos с подсетями в виртуальных сетях](how-to-configure-vnet-service-endpoint.md)
+* [Настройка брандмауэра IP-адресов для учетной записи Azure Cosmos](how-to-configure-firewall.md)
 

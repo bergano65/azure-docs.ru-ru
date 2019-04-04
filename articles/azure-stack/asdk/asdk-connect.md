@@ -16,12 +16,12 @@ ms.date: 02/12/2019
 ms.author: jeffgilb
 ms.reviewer: knithinc
 ms.lastreviewed: 10/25/2018
-ms.openlocfilehash: 42b67ae9b715670f1a0c6e0fed004487a52817d3
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 31025582516198bdfe9da9312bae33852986a423
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56206486"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58884862"
 ---
 # <a name="connect-to-the-asdk"></a>Подключение к пакету ASDK
 
@@ -69,7 +69,7 @@ VPN-подключение поддерживается в развертыва�
 
 Чтобы создать VPN-подключение к пакету ASDK, откройте PowerShell с правами администратора на локальном компьютере под управлением Windows. Затем выполните следующий скрипт (обновите значения IP-адреса и пароля для своей среды):
 
-```PowerShell
+```powershell
 # Change directories to the default Azure Stack tools directory
 cd C:\AzureStack-Tools-master
 
@@ -109,9 +109,9 @@ Add-AzsVpnConnection `
 
   Подключитесь к экземпляру Azure Stack, используя один из следующих двух способов:  
 
-  * Использование команды `Connect-AzsVpn `:
+  * Использование команды `Connect-AzsVpn`:
       
-    ```PowerShell
+    ```powershell
     Connect-AzsVpn `
       -Password $Password
     ```

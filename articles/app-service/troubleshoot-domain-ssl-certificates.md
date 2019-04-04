@@ -15,18 +15,21 @@ ms.topic: article
 ms.date: 03/01/2019
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: c316176094f6d9b8b45b812acaad04ad37f4bce2
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 8ae6c9d5238f2853a12c20edfd3dba6d3f529b2c
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58449125"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905823"
 ---
 # <a name="troubleshoot-domain-and-ssl-certificate-problems-in-azure-app-service"></a>Устранение неполадок с доменами и SSL-сертификатами в Службе приложений Azure
 
 Эта статья содержит сведения о распространенных проблемах, которые могут возникнуть при настройке домена или SSL-сертификата для веб-приложений Azure в Службе приложений Azure. Кроме того, здесь описаны возможные причины этих проблем и способы их устранения.
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **Получить поддержку**.
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="certificate-problems"></a>Проблемы сертификата
 
@@ -314,7 +317,7 @@ ms.locfileid: "58449125"
 
 **Можно ли перенести домена из одной подписки в другую подписку?**
 
-Вы можете переместить домен в другую подписку или группу ресурсов с помощью [Move-AzureRmResource](https://docs.microsoft.com/powershell/module/AzureRM.Resources/Move-AzureRmResource) командлета PowerShell.
+Вы можете переместить домен в другую подписку или группу ресурсов с помощью [AzResource перемещения](https://docs.microsoft.com/powershell/module/az.Resources/Move-azResource) командлета PowerShell.
 
 **Как управлять пользовательского домена при отсутствии в данный момент приложение службы приложений Azure?**
 

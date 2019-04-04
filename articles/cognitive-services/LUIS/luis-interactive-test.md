@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: d8456595e244237a0fd92fae82a43a878ad41080
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 51c6a58567b35c9b8486d8634b0bed1af7218994
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55857674"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58893631"
 ---
 # <a name="test-your-luis-app-in-the-luis-portal"></a>Тестирование приложения LUIS на портале LUIS
 <a name="train-your-app"></a>
@@ -108,7 +108,7 @@ ms.locfileid: "55857674"
 3. На открывшейся панели **Published** (Опубликовано) щелкните ссылку **[Дополнительные параметры](#additional-settings-in-test-panel)**.
 
 4. Во всплывающем диалоговом окне введите ключ службы **проверки орфографии Bing**. 
-    ![Ввод ключа службы проверки орфографии Bing](./media/luis-how-to-interactive-test/interactive-with-spell-check-service-key.png)
+    ![Введите ключ службы проверки орфографии Bing](./media/luis-how-to-interactive-test/interactive-with-spell-check-service-key.png)
 
 5. Введите запрос с орфографическими ошибками, например `book flite to seattle`, и нажмите клавишу ВВОД. Неправильно написанное слово `flite` заменяется в запросе, отправляемом в LUIS, и в итоговом JSON отображается исходный запрос в виде `query` и исправленное написание в запросе в виде `alteredQuery`.
 
@@ -128,9 +128,9 @@ ms.locfileid: "55857674"
 ## <a name="batch-testing"></a>Пакетное тестирование
 Ознакомьтесь с [принципами](luis-concept-batch-test.md) пакетного тестирования и узнайте, [как](luis-how-to-batch-test.md) протестировать пакет высказываний.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если тестирование показывает, что приложение LUIS не распознает правильные намерения и сущности, вы можете повысить точность приложения LUIS путем пометки дополнительных высказываний или добавления функций. 
 
-* [Label suggested utterances with LUIS](luis-how-to-review-endoint-utt.md) (Пометка предлагаемых высказываний в LUIS) 
-* [Use features to improve your LUIS app's performance](luis-how-to-add-features.md) (Использование функций для повышения производительности приложения LUIS) 
+* [Метка предлагаемые фразы с помощью LUIS](luis-how-to-review-endpoint-utterances.md) 
+* [Использование функций для повышения производительности приложения LUIS](luis-how-to-add-features.md) 

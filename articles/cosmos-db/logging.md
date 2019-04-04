@@ -7,18 +7,21 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: d75eb87bff812589e4d3a3a14079ddaaf368a588
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: 8839d7ea93bcb205b1900e63d3ab98394e72cd75
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259777"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904871"
 ---
 # <a name="diagnostic-logging-in-azure-cosmos-db"></a>Журнал ведения диагностики в Azure Cosmos DB 
 
 Когда вы начнете использовать одну или несколько баз данных Azure Cosmos DB, вам может потребоваться отследить, как и когда осуществляется доступ к вашим базам данных. В этой статье представлен обзор всех журналов, доступных на платформе Azure, Вы узнаете, как включить ведение журнала диагностики для мониторинга и отправки журналов для [хранилища Azure](https://azure.microsoft.com/services/storage/), как потоковая передача журналов в [концентраторов событий](https://azure.microsoft.com/services/event-hubs/)и как экспортировать журналы, чтобы [ЖурналыAzureMonitor](https://azure.microsoft.com/services/log-analytics/).
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="logs-available-in-azure"></a>Журналы, доступные в Azure
 
@@ -132,7 +135,7 @@ ms.locfileid: "58259777"
 Запустите сеанс Azure PowerShell и войдите в учетную запись Azure, используя следующую команду:  
 
 ```powershell
-Connect-AzureRmAccount
+Connect-AzAccount
 ```
 
 Во всплывающем окне браузера введите имя пользователя и пароль учетной записи Azure. Azure PowerShell получает все подписки, связанные с этой учетной записью, и по умолчанию использует первую из них.
@@ -140,13 +143,13 @@ Connect-AzureRmAccount
 Если у вас есть несколько подписок, возможно, вам придется указать подписку, которая использовалась для создания хранилища ключей Azure. Чтобы увидеть подписки для своей учетной записи, введите следующую команду:
 
 ```powershell
-Get-AzureRmSubscription
+Get-AzSubscription
 ```
 
 Затем укажите подписку, связанную с учетной записью Azure Cosmos DB, данные которой будут регистрироваться. Для этого введите следующую команду:
 
 ```powershell
-Set-AzureRmContext -SubscriptionId <subscription ID>
+Set-AzContext -SubscriptionId <subscription ID>
 ```
 
 > [!NOTE]
@@ -162,7 +165,7 @@ Set-AzureRmContext -SubscriptionId <subscription ID>
 Чтобы упростить управление, в этом руководстве мы будем использовать ту же группу ресурсов, которая содержит базу данных Azure Cosmos DB. При необходимости замените значения **ContosoResourceGroup**, **contosocosmosdblogs** и **Центрально-северная часть США** своими:
 
 ```powershell
-$sa = New-AzureRmStorageAccount -ResourceGroupName ContosoResourceGroup `
+$sa = New-AzStorageAccount -ResourceGroupName ContosoResourceGroup `
 -Name contosocosmosdblogs -Type Standard_LRS -Location 'North Central US'
 ```
 
@@ -175,15 +178,15 @@ $sa = New-AzureRmStorageAccount -ResourceGroupName ContosoResourceGroup `
 Задайте в качестве имени учетной записи Azure Cosmos DB переменную **account**, где **ResourceName** — это имя учетной записи Azure Cosmos DB.
 
 ```powershell
-$account = Get-AzureRmResource -ResourceGroupName ContosoResourceGroup `
+$account = Get-AzResource -ResourceGroupName ContosoResourceGroup `
 -ResourceName contosocosmosdb -ResourceType "Microsoft.DocumentDb/databaseAccounts"
 ```
 
 ### <a id="enable"></a>Включение ведения журналов
-Чтобы включить ведение журнала для Azure Cosmos DB, используйте командлет `Set-AzureRmDiagnosticSetting` с переменными для новой учетной записи хранения, учетной записью хранения Azure Cosmos DB и категорией, для которой нужно включить ведение журнала. Выполните следующую команду, установив для флага **-Enabled** значение **$true**.
+Чтобы включить ведение журнала для Azure Cosmos DB, используйте командлет `Set-AzDiagnosticSetting` с переменными для новой учетной записи хранения, учетной записью хранения Azure Cosmos DB и категорией, для которой нужно включить ведение журнала. Выполните следующую команду, установив для флага **-Enabled** значение **$true**.
 
 ```powershell
-Set-AzureRmDiagnosticSetting  -ResourceId $account.ResourceId -StorageAccountId $sa.Id -Enabled $true -Categories DataPlaneRequests
+Set-AzDiagnosticSetting  -ResourceId $account.ResourceId -StorageAccountId $sa.Id -Enabled $true -Categories DataPlaneRequests
 ```
 
 Выходные данные команды должны выглядеть следующим образом:
@@ -221,7 +224,7 @@ Set-AzureRmDiagnosticSetting  -ResourceId $account.ResourceId -StorageAccountId 
 При необходимости можно также задать политику хранения для журналов, например политику, в соответствии с которой старые журналы автоматически удаляются. Например, задайте политику хранения, установив для флага **-RetentionEnabled** значение **$true**, а для параметра **-RetentionInDays** значение **90**, чтобы автоматически удалять журналы, которые хранятся более 90 дней.
 
 ```powershell
-Set-AzureRmDiagnosticSetting -ResourceId $account.ResourceId`
+Set-AzDiagnosticSetting -ResourceId $account.ResourceId`
  -StorageAccountId $sa.Id -Enabled $true -Categories DataPlaneRequests`
   -RetentionEnabled $true -RetentionInDays 90
 ```
@@ -238,7 +241,7 @@ Set-AzureRmDiagnosticSetting -ResourceId $account.ResourceId`
 Чтобы получить список всех больших двоичных объектов в этом контейнере, введите следующее:
 
 ```powershell
-Get-AzureStorageBlob -Container $container -Context $sa.Context
+Get-AzStorageBlob -Container $container -Context $sa.Context
 ```
 
 Выходные данные команды должны выглядеть следующим образом:
@@ -257,7 +260,7 @@ Name              : resourceId=/SUBSCRIPTIONS/<subscription-ID>/RESOURCEGROUPS/C
 /MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/CONTOSOCOSMOSDB/y=2017/m=09/d=28/h=19/m=00/PT1H.json
 ```
 
-Как видно из этих выходных данных, имена больших двоичных объектов соответствуют соглашению об именовании: `resourceId=/SUBSCRIPTIONS/<subscription-ID>/RESOURCEGROUPS/<resource group name>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<Database Account Name>/y=<year>/m=<month>/d=<day of month>/h=<hour>/m=<minute>/filename.json`
+Как видно из этих выходных данных, большие двоичные объекты имеют соглашения об именовании: `resourceId=/SUBSCRIPTIONS/<subscription-ID>/RESOURCEGROUPS/<resource group name>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<Database Account Name>/y=<year>/m=<month>/d=<day of month>/h=<hour>/m=<minute>/filename.json`
 
 Для значений даты и времени используется время в формате UTC.
 
@@ -273,13 +276,13 @@ New-Item -Path 'C:\Users\username\ContosoCosmosDBLogs'`
 Затем выведите список всех больших двоичных объектов.  
 
 ```powershell
-$blobs = Get-AzureStorageBlob -Container $container -Context $sa.Context
+$blobs = Get-AzStorageBlob -Container $container -Context $sa.Context
 ```
 
-Чтобы загрузить большие двоичные объекты в папку назначения, передайте этот список с помощью команды `Get-AzureStorageBlobContent`:
+Чтобы загрузить большие двоичные объекты в папку назначения, передайте этот список с помощью команды `Get-AzStorageBlobContent`:
 
 ```powershell
-$blobs | Get-AzureStorageBlobContent `
+$blobs | Get-AzStorageBlobContent `
  -Destination 'C:\Users\username\ContosoCosmosDBLogs'
 ```
 
@@ -290,27 +293,27 @@ $blobs | Get-AzureStorageBlobContent `
 * Если у вас есть несколько баз данных и вы хотите скачать журналы только для одной базы данных с именем **CONTOSOCOSMOSDB3**, используйте команду:
 
     ```powershell
-    Get-AzureStorageBlob -Container $container `
+    Get-AzStorageBlob -Container $container `
      -Context $sa.Context -Blob '*/DATABASEACCOUNTS/CONTOSOCOSMOSDB3
     ```
 
 * Если у вас есть несколько групп ресурсов и вы хотите загрузить журналы только для одной из них, используйте команду `-Blob '*/RESOURCEGROUPS/<resource group name>/*'`.
 
     ```powershell
-    Get-AzureStorageBlob -Container $container `
+    Get-AzStorageBlob -Container $container `
     -Context $sa.Context -Blob '*/RESOURCEGROUPS/CONTOSORESOURCEGROUP3/*'
     ```
 * Если вы хотите загрузить все журналы за июль 2017 г., используйте команду `-Blob '*/year=2017/m=07/*'`.
 
     ```powershell
-    Get-AzureStorageBlob -Container $container `
+    Get-AzStorageBlob -Container $container `
      -Context $sa.Context -Blob '*/year=2017/m=07/*'
     ```
 
 Вы также можете выполнить следующие команды:
 
-* Чтобы запросить сведения о состоянии параметров диагностики для ресурса базы данных, выполните команду `Get-AzureRmDiagnosticSetting -ResourceId $account.ResourceId`.
-* Чтобы отключить ведение журнала категории **DataPlaneRequests** для ресурса учетной записи базы данных, выполните команду `Set-AzureRmDiagnosticSetting -ResourceId $account.ResourceId -StorageAccountId $sa.Id -Enabled $false -Categories DataPlaneRequests`.
+* Чтобы запросить сведения о состоянии параметров диагностики для ресурса базы данных, выполните команду `Get-AzDiagnosticSetting -ResourceId $account.ResourceId`.
+* Чтобы отключить ведение журнала категории **DataPlaneRequests** для ресурса учетной записи базы данных, выполните команду `Set-AzDiagnosticSetting -ResourceId $account.ResourceId -StorageAccountId $sa.Id -Enabled $false -Categories DataPlaneRequests`.
 
 
 Большие двоичные объекты, возвращаемые в каждом из этих запросов, хранятся как текст в формате JSON, как показано в следующем коде.
@@ -437,8 +440,8 @@ $blobs | Get-AzureStorageBlobContent `
 
 | Поле или свойство службы хранилища Azure | Azure Monitor регистрирует свойство | ОПИСАНИЕ |
 | --- | --- | --- |
-| **time** | **TimeGenerated** | Дата и время (UTC) выполнения операции. |
-| **resourceId** | **Ресурс** | Учетная запись Azure Cosmos DB, для которой включены журналы.|
+| **Twitter в режиме реального** | **TimeGenerated** | Дата и время (UTC) выполнения операции. |
+| **ResourceId** | **Ресурс** | Учетная запись Azure Cosmos DB, для которой включены журналы.|
 | **category** | **Категория** | Для журналов Azure Cosmos DB единственным доступным значением является **DataPlaneRequests**. |
 | **operationName** | **OperationName** | Имя операции. В качестве значения можно использовать любую из следующих операций: Create, Update, Read, ReadFeed, Delete, Replace, Execute, SqlQuery, Query, JSQuery, Head, HeadFeed или Upsert.   |
 | **properties** | Недоступно | Содержимое этого поля описано в строках, приведенных ниже. |
@@ -450,7 +453,7 @@ $blobs | Get-AzureStorageBlobContent `
 | **clientIpAddress** | **clientIpAddress_s** | IP-адрес клиента. |
 | **requestCharge** | **requestCharge_s** | Количество ЕЗ, которые используются при операции. |
 | **collectionRid** | **collectionId_s** | Уникальный идентификатор коллекции.|
-| **duration** | **duration_s** | Длительность операции в тактах. |
+| **длительность** | **duration_s** | Длительность операции в тактах. |
 | **requestLength** | **requestLength_s** | Длина запроса в байтах. |
 | **responseLength** | **responseLength_s** | Длина ответа в байтах.|
 | **resourceTokenUserRid** | **resourceTokenUserRid_s** | Это свойство должно быть заполнено, если [маркеры ресурсов](https://docs.microsoft.com/azure/cosmos-db/secure-access-to-data#resource-tokens) используются для проверки подлинности. Значение указывает на идентификатор ресурса пользователя. |
@@ -460,6 +463,6 @@ $blobs | Get-AzureStorageBlobContent `
 - Чтобы понять, как включать ведение журнала, и узнать, какие метрики и категории журналов поддерживаются различными службами Azure, ознакомьтесь со статьями [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md) и [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
 - Прочтите эти статьи, чтобы узнать о концентраторах событий:
    - [Что такое Центры событий Azure?](../event-hubs/event-hubs-what-is-event-hubs.md)
-   - [Начало работы с Центрами событий](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
+   - [Приступая к работе с Центрами событий](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
 - Ознакомьтесь с разделом [Скачивание больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-dotnet.md#download-blobs).
 - Чтение [общие принципы по журналам в Azure Monitor журналы](../log-analytics/log-analytics-log-search-new.md).

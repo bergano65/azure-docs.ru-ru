@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/22/2019
 ms.author: cwatson
-ms.openlocfilehash: 9eba59bcdc9974519fc1ed37078a205eff28f116
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: fe0d0f0baa2b3d1c08e871541dce1511e00f7f87
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58653235"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58917062"
 ---
 # <a name="understand-how-the-red-hat-linux-enterprise-software-reservation-plan-discount-is-applied-for-azure"></a>Сведения о применении скидки план программного обеспечения Red Hat Linux Enterprise для Azure
 
@@ -158,12 +158,12 @@ ms.locfileid: "58653235"
 
 Дополнительные сведения о резервировании см. в следующих статьях:
 
-- [Общие сведения об Azure Reserved VM Instances](billing-save-compute-costs-reservations.md)
+- [Что такое резервирования для Azure](billing-save-compute-costs-reservations.md)
 - [Оплатите Red Hat планы программного обеспечения с помощью Azure резервирований](../virtual-machines/linux/prepay-rhel-software-charges.md)
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../virtual-machines/windows/prepay-reserved-vm-instances.md)
 - [Управление резервирования для Azure](billing-manage-reserved-vm-instance.md)
-- [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
-- [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
+- [Общие сведения об использовании резервирования для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
+- [Общие сведения об использовании резервирования о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
 

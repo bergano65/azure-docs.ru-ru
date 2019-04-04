@@ -14,12 +14,12 @@ ms.date: 03/22/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 10/22/2018
-ms.openlocfilehash: 0ebd17eca363d7fc02daeb851bb24b8d1d307efc
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: bd5e5a3b6fa72698f04969219b1db3cdb0bde3a5
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58339607"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58486705"
 ---
 # <a name="connect-azure-stack-to-azure-using-azure-expressroute"></a>Подключение Azure Stack к Azure с помощью Azure ExpressRoute
 
@@ -232,7 +232,7 @@ Azure ExpressRoute позволяет переносить локальные с
 1. Войдите в систему главного компьютера Azure Stack с помощью учетной записи администратора.
 1. Вставьте и измените приведенный ниже сценарий PowerShell. Замените `your administrator password` на пароль администратора, а затем выполните сценарий в интегрированной среде сценариев PowerShell с повышенными правами. Этот сценарий возвращает **адрес EBGP**.
 
-   ```PowerShell
+   ```powershell
    cd \AzureStack-Tools-master\connect
    Import-Module .\AzureStack.Connect.psm1
    $Password = ConvertTo-SecureString "your administrator password" `
@@ -250,7 +250,7 @@ Azure ExpressRoute позволяет переносить локальные с
 
    Выполните следующий сценарий в интегрированной среде сценариев PowerShell с повышенными правами.
 
-   ```PowerShell
+   ```powershell
    $ExtBgpNat = 'External BGPNAT address'
    $IntBgpNat = 'Internal IP address'
 
@@ -599,7 +599,7 @@ route-map VNET-ONLY permit 10
 
 По умолчанию Windows Server 2016 не разрешает получение ICMP-пакетов через брандмауэр. Для каждой виртуальной машины, которая используется для проверки связи, необходимо разрешить получение ICMP-пакетов. Чтобы создать правило брандмауэра для ICMP, выполните следующий командлет в окне PowerShell с повышенными привилегиями.
 
-```PowerShell
+```powershell
 # Create ICMP firewall rule.
 New-NetFirewallRule `
   –DisplayName “Allow ICMPv4-In” `

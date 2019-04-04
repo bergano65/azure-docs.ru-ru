@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: e9b9522de6b2c54dc794b00100ffe358296ecfdd
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: eb20630533735fb46ea7743be75448329281938a
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "22997909"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916569"
 ---
 # <a name="real-time-stats-in-microsoft-azure-cdn"></a>Статистика в реальном времени в сети CDN Microsoft Azure
 [!INCLUDE [cdn-premium-feature](../../includes/cdn-premium-feature.md)]
@@ -62,7 +62,7 @@ ms.locfileid: "22997909"
 На диаграмме **Коды состояний** показана частота возникновения определенных кодов HTTP-ответов за выбранный период времени.
 
 > [!TIP]
-> Описание каждого параметра кода состояния HTTP см. в разделе [Azure CDN HTTP Status Codes](https://msdn.microsoft.com/library/mt759238.aspx) (Коды состояний HTTP в сети Azure CDN).
+> Описание каждого параметра кода состояния HTTP см. в разделе [Azure CDN HTTP Status Codes](/previous-versions/azure/mt759238(v=azure.100)) (Коды состояний HTTP в сети Azure CDN).
 > 
 > 
 
@@ -76,7 +76,7 @@ ms.locfileid: "22997909"
 На диаграмме **Состояния кэша** показана частота возникновения определенных типов состояний кэша за выбранный период времени. 
 
 > [!TIP]
-> Описание каждого параметра кода состояния кэша см. в разделе [Azure CDN Cache Status Codes](https://msdn.microsoft.com/library/mt759237.aspx) (Коды состояний кэша в сети Azure CDN).
+> Описание каждого параметра кода состояния кэша см. в разделе [Azure CDN Cache Status Codes](/previous-versions/azure/mt759237(v=azure.100)) (Коды состояний кэша в сети Azure CDN).
 > 
 > 
 
@@ -89,7 +89,7 @@ ms.locfileid: "22997909"
 
 На этой диаграмме показано количество подключений, установленных с пограничными серверами. Подключение устанавливается при каждом запросе к ресурсу, который проходит через сеть CDN.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Получение уведомлений с помощью [оповещения в режиме реального времени в Azure CDN](cdn-real-time-alerts.md)
 * Дополнительные сведения о [расширенных HTTP-отчетах](cdn-advanced-http-reports.md).
 * [Анализ вариантов использования CDN Azure](cdn-analyze-usage-patterns.md).

@@ -7,14 +7,14 @@ ms.author: mamccrea
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 12/06/2018
+ms.date: 4/2/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9d5a0cf9fa4f9ad8b5a673cd2420416f92edda91
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
-ms.translationtype: HT
+ms.openlocfilehash: 4ecea8864a565997b8df119d870e7efee8448143
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53994986"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58892234"
 ---
 # <a name="azure-stream-analytics-on-iot-edge"></a>Azure Stream Analytics в IoT Edge
  
@@ -44,12 +44,14 @@ ASA развертывает задания Edge на устройства с п
 
 ### <a name="installation-instructions"></a>Инструкции по установке
 В следующей таблице приведены основные действия. Дополнительные сведения см. в следующих разделах.
+
 |      |Шаг   | Примечания   |
 | ---   | ---   |  ---      |
 | 1   | **Создание контейнера хранилища**   | Контейнеры хранилища используются для сохранения определения задания, доступ к которому можно получить с устройств IoT. <br>  Любой имеющийся контейнер хранилища можно использовать повторно.     |
-| 2   | **Создание задания Edge ASA**   |  Создайте новое задание, выберите **Edge** в качестве **среды размещения**. <br> Создание этих заданий и управление ими осуществляется из облака, а выполняются они на ваших устройствах IoT Edge.     |
+| 2   | **Создание задания edge ASA**   |  Создайте новое задание, выберите **Edge** в качестве **среды размещения**. <br> Создание этих заданий и управление ими осуществляется из облака, а выполняются они на ваших устройствах IoT Edge.     |
 | 3   | **Настройка среды IoT Edge на ваших устройствах**   | Инструкции для [Windows](https://docs.microsoft.com/azure/iot-edge/quickstart) или [Linux](https://docs.microsoft.com/azure/iot-edge/quickstart-linux).          |
 | 4.   | **Развертывание ASA на ваших устройствах IoT Edge**   |  Определение задания ASA экспортируется в контейнер хранилища, созданный ранее.       |
+
 Вы можете выполнить инструкции из [этого пошагового руководства](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics), чтобы развернуть свое первое задание ASA в IoT Edge. Следующее видео поможет вам понять процесс выполнения задания Stream Analytics на устройстве IoT Edge:  
 
 
@@ -123,16 +125,16 @@ IoT Edge предоставляет способ декларативно мар
 
 ```json
 {
-"routes": {                                              
-    "sensorToAsa":   "FROM /messages/modules/tempSensor/* INTO BrokeredEndpoint(\"/modules/ASA/inputs/temperature\")",
-    "alertsToCloud": "FROM /messages/modules/ASA/* INTO $upstream", 
-    "alertsToReset": "FROM /messages/modules/ASA/* INTO BrokeredEndpoint(\"/modules/tempSensor/inputs/control\")" 
+    "routes": {
+        "sensorToAsa":   "FROM /messages/modules/tempSensor/* INTO BrokeredEndpoint(\"/modules/ASA/inputs/temperature\")",
+        "alertsToCloud": "FROM /messages/modules/ASA/* INTO $upstream",
+        "alertsToReset": "FROM /messages/modules/ASA/* INTO BrokeredEndpoint(\"/modules/tempSensor/inputs/control\")"
+    }
 }
-}   
 
 ```
 В этом примере показаны маршруты для сценария, описанного на рисунке ниже. Он содержит задание Edge с именем **ASA**, ввод с именем **temperature** и вывод с именем **alert**.
-![Схема примера маршрутизации сообщений](media/stream-analytics-edge/edge-message-routing-example.png)
+![Пример схемы маршрутизации сообщений](media/stream-analytics-edge/edge-message-routing-example.png)
 
 В этом примере определяются следующие маршруты:
 - Каждое сообщение из **tempSensor** отправляется в модуль с именем **ASA** и ввод с именем **temperature**.
@@ -142,7 +144,7 @@ IoT Edge предоставляет способ декларативно мар
 
 ## <a name="technical-information"></a>Технические сведения
 ### <a name="current-limitations-for-iot-edge-jobs-compared-to-cloud-jobs"></a>Текущие ограничения заданий IoT Edge в сравнении с облачными заданиями
-Целью является обеспечение соответствия между заданиями IoT Edge и облачными заданиями. Большинство функций языка запросов SQL уже поддерживаются.
+Целью является обеспечение соответствия между заданиями IoT Edge и облачными заданиями. Поддерживаются большинство функций языка запросов SQL, позволяя выполнять ту же логику на Edge Интернета вещей и облачным.
 Тем не менее для заданий Edge пока не поддерживаются следующие компоненты:
 * Определяемые пользователем функции (UDF) в JavaScript. Определяемые пользователем функции доступны в [C# для заданий IoT Edge](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-edge-csharp-udf) (предварительная версия).
 * Определяемые пользователем статистические функции (UDA).
@@ -150,14 +152,6 @@ IoT Edge предоставляет способ декларативно мар
 * Использование более 14 статических выражений за один шаг.
 * Формат AVRO для входных и выходных данных. На данный момент поддерживаются только форматы CSV и JSON.
 * Следующие операторы SQL:
-    * геопространственные операторы:
-        * CreatePoint;
-        * CreatePolygon;
-        * CreateLineString;
-        * ST_DISTANCE;
-        * ST_WITHIN;
-        * ST_OVERLAPS;
-        * ST_INTERSECTS.
     * PARTITION BY;
     * GetMetadataPropertyValue.
 
@@ -213,12 +207,12 @@ ASA в IoT Edge доступна в качестве образов Windows и L
 За дополнительной помощью обращайтесь на [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Что такое Azure IoT Edge (предварительная версия)](https://docs.microsoft.com/azure/iot-edge/how-iot-edge-works)
-* [Deploy Azure Stream Analytics as an IoT Edge module - preview](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics) (Развертывание Azure Stream Analytics в качестве модуля IoT Edge (предварительная версия))
+* [Дополнительные сведения об Azure Iot Edge](https://docs.microsoft.com/azure/iot-edge/how-iot-edge-works)
+* [ASA в IoT Edge учебника](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics)
 * [Разработка заданий Edge Stream Analytics с помощью средств Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio-edge-jobs)
-* [Сведения о реализации CI/CD для Stream Analytics с использованием API-интерфейсов](stream-analytics-cicd-api.md)
+* [Реализация CI/CD для Stream Analytics с использованием API-интерфейсов](stream-analytics-cicd-api.md)
 
 <!--Link references-->
 [stream.analytics.developer.guide]: ../stream-analytics-developer-guide.md

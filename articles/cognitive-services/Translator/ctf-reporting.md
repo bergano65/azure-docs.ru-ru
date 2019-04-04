@@ -3,19 +3,19 @@ title: Отчеты на платформе для совместного пер
 titlesuffix: Azure Cognitive Services
 description: Как использовать отчеты на платформе для совместного перевода CTF.
 services: cognitive-services
-author: Jann-Skotdal
+author: v-pawal
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: v-jansko
-ms.openlocfilehash: a2f8a9c5ceaac6209391df17f4ec08027991382b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: da321aa2a4db441fa5bb51e4986d00889cb7482d
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58123425"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58917402"
 ---
 # <a name="how-to-use-collaborative-translation-framework-ctf-reporting"></a>Как использовать отчеты на платформе для совместного перевода CTF
 
@@ -116,7 +116,7 @@ API отчетов платформы для совместного перево
 > [!NOTE]
 > Квота будет корректироваться, чтобы обеспечить распределение ресурсов между всеми пользователями.
 
-**Примеры кода в GitHub**
+**Просмотр примеров кода на GitHib**
 * [C#](https://github.com/MicrosoftTranslator/Documentation-Code-TextAPI/blob/master/ctf/ctf-getusertranslationcounts-example-csharp.md)
 * [PHP](https://github.com/MicrosoftTranslator/Documentation-Code-TextAPI/blob/master/ctf/ctf-getusertranslationcounts-example-php.md)
 
@@ -153,7 +153,7 @@ API отчетов платформы для совместного перево
 | значение| **Необязательный**. Строка, представляющая код языка для перевода текста.|
 | minRating| **Необязательный**. Целочисленное значение, представляющее минимальную оценку качества для переведенного текста. Допустимое значение — от -10 до 10. Значение по умолчанию — 1.|
 | maxRating| **Необязательный**. Целочисленное значение, представляющее максимальную оценку качества для переведенного текста. Допустимое значение — от -10 до 10. Значение по умолчанию — 1.|
-| user| **Необязательный. Строка, которая используется для фильтрации результата на основе инициатора отправки**|
+| user| **Необязательный элемент. Строку, которая используется для фильтрации результатов, в зависимости от инициатора отправки**|
 | category| **Необязательный**. Строка, содержащая категорию (домен) перевода. Этот параметр поддерживает только общий параметр по умолчанию.|
 | minDateUtc| **Необязательный**. Дата, с которой вы хотите получить переводы. Дата должна быть в формате UTC.|
 | maxDateUtc| **Необязательный**. Дата, до которой вы хотите получить переводы. Дата должна быть в формате UTC.|
@@ -189,6 +189,6 @@ API отчетов платформы для совместного перево
 > [!NOTE]
 > Квота будет корректироваться, чтобы обеспечить распределение ресурсов между всеми пользователями.
 
-**Примеры кода в GitHub**
+**Просмотр примеров кода на GitHib**
 * [C#](https://github.com/MicrosoftTranslator/Documentation-Code-TextAPI/blob/master/ctf/ctf-getusertranslations-example-csharp.md)
 * [PHP](https://github.com/MicrosoftTranslator/Documentation-Code-TextAPI/blob/master/ctf/ctf-getusertranslations-example-php.md)

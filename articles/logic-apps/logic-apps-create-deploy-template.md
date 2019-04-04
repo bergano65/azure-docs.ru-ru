@@ -10,193 +10,185 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.assetid: 85928ec6-d7cb-488e-926e-2e5db89508ee
 ms.date: 10/18/2016
-ms.openlocfilehash: 3d32b180f7d841c36f8ae03aa94956c6da00c6fe
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 624539557b0bf57e9d919a3a46337f1cf93a4f07
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57883446"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58894240"
 ---
 # <a name="create-azure-resource-manager-templates-for-deploying-logic-apps"></a>Создание шаблонов Azure Resource Manager для развертывания приложений логики
 
-После создания приложения логики на его основе можно создать шаблон Azure Resource Manager.
-Таким образом вы сможете легко развернуть приложение логики в любой среде или группе ресурсов, где это может потребоваться.
-Дополнительные сведения о шаблонах Resource Manager см. в статьях [Создание шаблонов диспетчера ресурсов Azure](../azure-resource-manager/resource-group-authoring-templates.md) и [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md).
+При создании приложения логики, вы можете развернуть в определение приложения логики [шаблона Azure Resource Manager](../azure-resource-manager/resource-group-overview.md). Затем можно использовать этот шаблон для автоматизации развертывания, определяя ресурсы и параметры, которые нужно использовать для развертывания и предоставления значений параметров через [файл параметров](../azure-resource-manager/resource-group-template-deploy.md#parameter-files).
+Таким образом, вы можете развернуть приложения логики более просто и в любой среде или группе ресурсов Azure необходимо. 
 
-## <a name="logic-app-deployment-template"></a>Шаблон развертывания приложения логики
+Azure Logic Apps предоставляет [шаблон Azure Resource Manager готовых logic apps](https://github.com/Azure/azure-quickstart-templates/blob/master/101-logic-app-create/azuredeploy.json) что можно повторно использовать, не только для создания приложений логики, но также для определения ресурсов и параметров для развертывания. Вы можете использовать этот шаблон для собственных бизнес-сценариев или настроить его в соответствии со своими требованиями. Дополнительные сведения о [Resource Manager структура и синтаксис шаблона](../azure-resource-manager/resource-group-authoring-templates.md). Свойства и синтаксис JSON см. в разделе о [типах ресурсов Microsoft.Logic](/azure/templates/microsoft.logic/allversions).
 
-Приложение логики состоит из трех основных компонентов:
+Дополнительные сведения о шаблонах Azure Resource Manager см. в статьях:
 
-* **Ресурс приложения логики**. Содержит такие сведения, как тарифный план, расположение и определение рабочего процесса.
-* **Определение рабочего процесса**. Описывает этапы рабочего процесса приложения логики и способ выполнения рабочего процесса обработчиком Logic Apps.
-Это определение можно просмотреть в окне **Представление кода** приложения логики.
-В ресурсе приложения логики это определение можно найти в свойстве `definition`.
-* **Подключения**. Отдельные ресурсы для безопасного хранения метаданных, связанных со всеми подключениями соединителя, таких как строка подключения и маркер доступа.
-Эти ресурсы указываются в разделе `parameters` ресурса приложения логики.
+* [Создание шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md)
+* [Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком](../azure-resource-manager/templates-cloud-consistency.md)
 
-Вы можете просмотреть все эти компоненты имеющихся приложений логики с помощью таких инструментов, как [обозреватель ресурсов Azure](http://resources.azure.com). Свойства и синтаксис JSON см. в разделе о [типах ресурсов Microsoft.Logic](/azure/templates/microsoft.logic/allversions).
+## <a name="logic-app-structure"></a>Структура приложения логики
 
-Чтобы создать шаблон для приложения логики, который можно использовать для развертываний групп ресурсов, необходимо определить ресурсы и при необходимости параметризовать их.
-Например, если развертывание осуществляется в тестовой, рабочей среде или в среде разработки, то скорее всего в каждой из этих сред потребуется использовать различные строки подключения к базе данных SQL.
-Или выполнить развертывания в разных подписках или группах ресурсов.  
+Определение приложения логики имеет следующие основные разделы, которые можно просмотреть, переключение с «представления конструктора», «view code» или с помощью средства, такие как [обозревателя ресурсов Azure](http://resources.azure.com). Определения приложений логики используйте Javascript Object Notation (JSON), поэтому Дополнительные сведения о синтаксисе JSON и свойствах см. в разделе [типов ресурсов Microsoft.Logic](/azure/templates/microsoft.logic/allversions).
 
-## <a name="create-a-logic-app-deployment-template"></a>Создание шаблона развертывания приложения логики
+* **Ресурс приложения логики**. Описание сведений, таких как расположение приложения логики или регион, тарифный план и определение рабочего процесса.
 
-Самый простой способ создать допустимый шаблон развертывания приложения логики — это воспользоваться [инструментами Visual Studio для приложений логики](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md#prerequisites).
-Инструменты Visual Studio создают допустимый шаблон развертывания, который можно использовать в разных подписках или расположениях.
+* **Определение рабочего процесса**. Описывает приложение логики триггеров, действий и работы рабочего процесса с помощью службы Azure Logic Apps. В представлении кода вы найдете определения рабочего процесса в `definition` разделе.
 
-При создании шаблона для развертывания приложения логики могут быть полезными и некоторые другие инструменты.
-Его можно создать вручную, используя указанные выше ресурсы и настроив требуемые параметры.
-Также можно использовать модуль PowerShell для [создания шаблона приложения логики](https://github.com/jeffhollan/LogicAppTemplateCreator) . Этот модуль с открытым исходным кодом оценивает приложение логики и все подключения, используемые в этом приложении, а затем создает ресурсы шаблона с необходимыми параметрами для развертывания.
-Например, если приложение логики получает сообщение из очереди служебной шины Azure и добавляет данные в базу данных SQL Azure, то инструмент сохраняет всю логику оркестрации и параметризует строки подключения SQL и служебной шины, чтобы их можно было настроить во время развертывания.
+* **Подключения**. Если вы используете управляемые соединители в приложении логики `$connections` раздел ссылается на другие ресурсы для безопасного хранения метаданных об этих соединений между свое приложение логики и других систем или служб, таких как строки подключения и маркеры доступа. В определение приложения логики, ссылки на эти подключения отображаются внутри определения приложения логики `parameters` раздел.
 
-> [!NOTE]
-> Подключения должны относиться к той же группе ресурсов, что и приложение логики.
->
->
+Для создания шаблона приложения логики, можно использовать с развертываний групп ресурсов Azure, необходимо определить ресурсы и при необходимости параметризовать. Например, если развертывание осуществляется в тестовой, рабочей среде или в среде разработки, то скорее всего в каждой из этих сред потребуется использовать различные строки подключения к базе данных SQL.
+Или выполнить развертывания в разных подписках или группах ресурсов.
 
-### <a name="install-the-logic-app-template-powershell-module"></a>Установка модуля PowerShell для шаблона приложения логики
-Проще всего установить модуль через [коллекцию PowerShell](https://www.powershellgallery.com/packages/LogicAppTemplate/0.1) с использованием команды `Install-Module -Name LogicAppTemplate`.  
+## <a name="create-logic-app-deployment-templates"></a>Создание шаблонов для развертывания приложений логики
 
-Также можно установить модуль PowerShell вручную:
+Самый простой способ создать шаблон развертывания допустимый логики приложения используйте Visual Studio и средства Azure Logic Apps для расширения Visual Studio. Загружая приложения логики на портале Azure в Visual Studio, получить шаблон развертывания допустимый, который можно использовать с любой подписки Azure и расположения. Кроме того загружаются в приложение логики автоматически параметризует определение приложения логики, которое внедрено в шаблоне.
+Дополнительные сведения о создании и управлении ими приложений логики в Visual Studio, см. в разделе [создания приложений логики с помощью Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md) и [управление приложениями логики в Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md).
 
-1. Скачайте последний выпуск [модуля для создания шаблона приложения логики](https://github.com/jeffhollan/LogicAppTemplateCreator/releases).  
-2. Извлеките содержимое папки в папку модуля PowerShell (обычно это `%UserProfile%\Documents\WindowsPowerShell\Modules`).
+Кроме Visual Studio или создание шаблона, а необходимые параметры, следуя инструкциям в этом разделе вручную, можно также использовать [модуль PowerShell для создания шаблонов приложений логики](https://github.com/jeffhollan/LogicAppTemplateCreator). Этот модуль с открытым исходным кодом сначала вычисляет, приложение логики и все подключения, которые использует приложение логики. Затем модуль создает ресурсы шаблона с необходимыми параметрами для развертывания. Например предположим, что у вас есть приложение логики, которое получает сообщение из очереди служебной шины Azure и добавляет данные в базе данных Azure SQL. Средство модуль сохраняет всю логику оркестрации и параметризует строки подключения SQL и служебной шины, таким образом, вы можете задать эти значения во время развертывания.
 
-Чтобы модуль поддерживал любой маркер доступа клиента или подписки, рекомендуется использовать программу командной строки [ARMClient](https://github.com/projectkudu/ARMClient).  В этой [записи блога](https://blog.davidebbo.com/2015/01/azure-resource-manager-client.html) программа ARMClient рассматривается подробней.
+> [!IMPORTANT]
+> Подключения должны существовать в той же группе ресурсов Azure, что приложение логики.
+> Для модуля PowerShell для работы с любой Azure клиента и подписки доступа, использования маркеров модуль с помощью [клиентского средства Azure Resource Manager](https://github.com/projectkudu/ARMClient). Дополнительные сведения см. в этом [статьи о средстве клиента Azure Resource Manager](https://blog.davidebbo.com/2015/01/azure-resource-manager-client.html) программа ARMClient рассматривается более подробно.
 
-### <a name="generate-a-logic-app-template-by-using-powershell"></a>Создание шаблона приложения логики с помощью PowerShell
+### <a name="install-powershell-module-for-logic-app-templates"></a>Установите модуль PowerShell для шаблонов приложений логики
+
+Самый простой способ установить модуль из [коллекции PowerShell](https://www.powershellgallery.com/packages/LogicAppTemplate/0.1), используйте следующую команду:
+
+`Install-Module -Name LogicAppTemplate`
+
+Можно также вручную установить модуль PowerShell:
+
+1. Загрузите последнюю версию [создания шаблона приложения логики](https://github.com/jeffhollan/LogicAppTemplateCreator/releases).
+
+1. Извлечение папки в папку модуля PowerShell, как правило, это `%UserProfile%\Documents\WindowsPowerShell\Modules`.
+
+### <a name="generate-logic-app-template---powershell"></a>Создание шаблона приложения логики — PowerShell
+
 После установки PowerShell можно создать шаблон, используя следующую команду:
 
 `armclient token $SubscriptionId | Get-LogicAppTemplate -LogicApp MyApp -ResourceGroup MyRG -SubscriptionId $SubscriptionId -Verbose | Out-File C:\template.json`
 
-`$SubscriptionId` — это идентификатор подписки Azure. Эта строка сначала получает маркер доступа через программу ARMClient, затем передает его по конвейеру в сценарий PowerShell и создает шаблон в JSON-файл.
+`$SubscriptionId` идентификатор подписки Azure. Эта строка сначала получает маркер доступа через программу ARMClient, затем передает его по конвейеру в сценарий PowerShell и создает шаблон в JSON-файл.
 
-## <a name="add-parameters-to-a-logic-app-template"></a>Добавление параметров для шаблона приложения логики
-После создания шаблона приложения логики можно добавлять или изменять любые дополнительные параметры. Например, если определение включает идентификатор ресурса в функции Azure или вложенном рабочем процессе, где планируется одно развертывание, можно добавить дополнительные ресурсы для шаблона и при необходимости параметризовать идентификаторы. То же касается и ссылок на пользовательские интерфейсы API или конечные точки Swagger, которые будут развернуты в каждой группе ресурсов.
+## <a name="parameters-in-logic-app-templates"></a>Параметры в шаблоны приложений логики
 
-### <a name="add-references-for-dependent-resources-to-visual-studio-deployment-templates"></a>Добавление ссылок на зависимые ресурсы в шаблоны развертывания Visual Studio
+После создания шаблона приложения логики, можно добавлять и редактировать все необходимые параметры. Шаблон содержит несколько `parameters` раздела, например: 
 
-Если нужно, чтобы приложение логики ссылалось на зависимые ресурсы, вы можете использовать [функции шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-functions) в шаблоне развертывания приложения логики. Например, приложение логики может ссылаться на определенную функцию Azure или учетную запись интеграции, которая должна автоматически развертываться вместе с приложением логики. Здесь приводятся рекомендации по использованию параметров в шаблоне развертывания, которые позволят конструктору Logic App правильно их отображать. 
+* Определение рабочего процесса приложения логики имеет свой собственный [ `parameters` разделе](../logic-apps/logic-apps-workflow-definition-language.md#parameters) где можно определить все параметры, которые использует ваше приложение логики для приема входных данных во время развертывания.
 
-Параметры приложений логики можно использовать в следующих типах триггеров и действий.
+* Шаблон Resource Manager имеет свой собственный [ `parameters` разделе](../azure-resource-manager/resource-group-authoring-templates.md#parameters), отдельно от приложения логики `parameters` раздел. Например: 
 
-*   Дочерний рабочий процесс
-*   Приложение-функция
-*   Вызов APIM
-*   URL-адрес API среды выполнения
-*   Путь для подключения к API.
+  [!INCLUDE [logic-deploy-parameters](../../includes/app-service-logic-deploy-parameters.md)]
 
-Вы также можете использовать функции шаблонов: parameters, variables, resourceId, concat и т. п. Например, этот пример кода может заменить идентификатор ресурса функции Azure:
+Например предположим, определение приложения логики, ссылается на идентификатор ресурса, представляющий функцию Azure или рабочего процесса приложения логики вложенные, и вы хотите развернуть этот идентификатор ресурса, вместе с приложением логики, как одно развертывание. Вы можете добавить этот идентификатор в качестве ресурса в шаблоне и параметризовать этим идентификатором. Этот же подход можно использовать для ссылки на пользовательские конечные точки API-интерфейсы или OpenAPI (прежнее название — «Swagger»), которые требуется развернуть с каждой группой ресурсов Azure.
 
-```
-"parameters":{
-    "functionName": {
+При использовании параметров в шаблоне развертывания, выполните в этом руководстве, чтобы конструктор приложений логики правильное отображение этих параметров.
+
+* Используйте параметры только в эти триггеры и действия:
+
+  * Приложение функции Azure
+  * Вложенные или дочерние рабочего процесса приложения логики
+  * Вызов API управления
+  * URL-адрес API среды выполнения
+  * Путь для подключения к API.
+
+* При определении параметров, убедитесь, что необходимо предоставить значения по умолчанию с помощью `defaultValue` значение свойства, например:
+
+  ```json
+  "parameters": {
+     "IntegrationAccount": {
         "type":"string",
-        "minLength":1,
-        "defaultValue":"<FunctionName>"
-    }
+        "minLength": 1,
+        "defaultValue": "/subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource=group-name>/providers/Microsoft.Logic/integrationAccounts/<integration-account-name>"
+     }
+  },
+  ```
+
+* Для защиты или сокрытия сведений в шаблонах, Защитите свои параметры. Дополнительные сведения о [способ использования защищенной параметров](../logic-apps/logic-apps-securing-a-logic-app.md#secure-parameters-workflow).
+
+Ниже приведен пример, в котором показано, как можно параметризовать действие «Отправить сообщение» служебной шины Azure:
+
+```json
+"Send_message": {
+   "type": "ApiConnection",
+   "inputs": {
+      "host": {
+         "connection": {
+            "name": "@parameters('$connections')['servicebus']['connectionId']"
+         },
+         // If the `host.runtimeUrl` property appears in your template, 
+         // you can remove this property, which is optional, for example:
+         "runtimeUrl": {}
+      },
+      "method": "POST",
+      "path": "[concat('/@{encodeURIComponent(''', parameters('<Azure-Service-Bus-queue-name>'), ''')}/messages')]",
+      "body": {
+         "ContentData": "@{base64(triggerBody())}"
+      },
+      "queries": {
+         "systemProperties": "None"
+      }
+   },
+   "runAfter": {}
 },
 ```
 
-А так вы можете использовать параметры:
+### <a name="reference-dependent-resources"></a>Ссылок на зависимые ресурсы
 
+Если приложение логики требуются ссылки на зависимые ресурсы, вы можете использовать [функции шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-template-functions.md) в шаблоне развертывания приложения логики. Например предположим, требуется, чтобы приложение логики, чтобы ссылаться на функцию Azure или учетную запись интеграции с определениями для партнеров, соглашений и другие артефакты, которые нужно развернуть вместе с приложением логики.
+Можно использовать функции шаблонов диспетчера ресурсов, такие как `parameters`, `variables`, `resourceId`, `concat`, и т. д.
+
+Ниже приведен пример, в котором показано, как вы можете заменить идентификатор ресурса для функции Azure с помощью определения этих параметров:
+
+``` json
+"parameters": {
+   "<Azure-function-name>": {
+      "type": "string",
+      "minLength": 1,
+      "defaultValue": "<Azure-function-name>"
+   }
+},
 ```
+
+Вот, как использовать эти параметры при указании ссылки на функции Azure:
+
+```json
 "MyFunction": {
-    "type": "Function",
-    "inputs": {
-        "body":{},
-        "function":{
-            "id":"[resourceid('Microsoft.Web/sites/functions','functionApp',parameters('functionName'))]"
-        }
-    },
-    "runAfter":{}
-}
+   "type": "Function",
+   "inputs": {
+      "body": {},
+      "function": {
+         "id":"[resourceid('Microsoft.Web/sites/functions','<Azure-Functions-app-name>', parameters('<Azure-function-name>'))]"
+      }
+   },
+   "runAfter": {}
+},
 ```
-В качестве другого примера можно параметризовать операцию отправки сообщений в служебной шине:
 
-```
-"Send_message": {
-    "type": "ApiConnection",
-        "inputs": {
-            "host": {
-                "connection": {
-                    "name": "@parameters('$connections')['servicebus']['connectionId']"
-                }
-            },
-            "method": "post",
-            "path": "[concat('/@{encodeURIComponent(''', parameters('queueuname'), ''')}/messages')]",
-            "body": {
-                "ContentData": "@{base64(triggerBody())}"
-            },
-            "queries": {
-                "systemProperties": "None"
-            }
-        },
-        "runAfter": {}
-    }
-```
-> [!NOTE] 
-> Параметр host.runtimeUrl является необязательным, его можно удалить из шаблона.
-> 
+## <a name="add-logic-app-to-resource-group-project"></a>Добавление логики приложения в проект группы ресурсов
 
+Если у вас есть существующий проект группы ресурсов Azure, можно добавить свое приложение логики на этот проект, используя окно "Структура JSON". Рядом с созданным ранее приложением логики можно добавить новые приложения.
 
-> [!NOTE] 
-> Чтобы конструктор Logic App мог работать с этими параметрами, ему нужно предоставить значения по умолчанию, например так:
-> 
-> ```
-> "parameters": {
->     "IntegrationAccount": {
->     "type":"string",
->     "minLength":1,
->     "defaultValue":"/subscriptions/<subscriptionID>/resourceGroups/<resourceGroupName>/providers/Microsoft.Logic/integrationAccounts/<integrationAccountName>"
->     }
-> },
-> ```
+1. В обозревателе решений откройте файл `<template>.json`.
 
-## <a name="add-your-logic-app-to-an-existing-resource-group-project"></a>Добавление приложения логики в существующий проект группы ресурсов
+2. Из **представление** меню, выберите **Other Windows** > **структура JSON**.
 
-Если у вас уже есть проект группы ресурсов, вы можете добавить в него приложение логики в окне "Структура JSON". Рядом с созданным ранее приложением логики можно добавить новые приложения.
+3. Чтобы добавить ресурс в файл шаблона, выберите **добавить ресурс** в верхней части окна структуры JSON. Также можно щелкнуть правой кнопкой мыши **ресурсы** в окне "Структура JSON", а затем выбрать пункт **Добавить новый ресурс**.
 
-1. Откройте файл `<template>.json` .
+   ![Окно "Структура JSON"](./media/logic-apps-create-deploy-template/jsonoutline.png)
 
-2. Откройте окно "Структура JSON", открыв меню **Вид** > **Другие окна** > **Структура JSON**.
-
-3. Чтобы добавить ресурс в файл шаблона, щелкните **добавить ресурс** в верхней части окна "Структура JSON". Также можно щелкнуть правой кнопкой мыши **ресурсы** в окне "Структура JSON", а затем выбрать пункт **Добавить новый ресурс**.
-
-    ![Окно "Структура JSON"](./media/logic-apps-create-deploy-template/jsonoutline.png)
-    
 4. В диалоговом окне **Добавление ресурса** найдите и выберите **Приложение логики**. Присвойте имя приложению логики и выберите **Добавить**.
 
-    ![Добавление ресурса](./media/logic-apps-create-deploy-template/addresource.png)
+   ![Добавление ресурса](./media/logic-apps-create-deploy-template/addresource.png)
 
+## <a name="get-support"></a>Получение поддержки
 
-## <a name="deploy-a-logic-app-template"></a>Развертывание шаблона приложения логики
+Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 
-Шаблон можно развернуть, используя любые инструменты, включая PowerShell, REST API, [Azure DevOps Azure Pipelines](#team-services), а также функцию развертывания шаблона на портале Azure.
-Кроме того, для сохранения значений параметров рекомендуется создать [файл параметров](../azure-resource-manager/resource-group-template-deploy.md#parameter-files).
-Узнайте, как [развертывать ресурсы с помощью шаблонов Azure Resource Manager и PowerShell](../azure-resource-manager/resource-group-template-deploy.md) или [развертывать ресурсы с помощью шаблонов Azure Resource Manager и портала Azure](../azure-resource-manager/resource-group-template-deploy-portal.md).
+## <a name="next-steps"></a>Дальнейшие действия
 
-### <a name="authorize-oauth-connections"></a>Авторизация подключений OAuth
-
-После развертывания приложение логики будет полноценно работать с допустимыми параметрами.
-Но чтобы создать допустимый маркер доступа, необходимо авторизовать подключения OAuth.
-Чтобы разрешить подключения OAuth, откройте приложение логики в конструкторе приложений логики и авторизуйте эти подключения. Или, если выполняется автоматизированное развертывание, можно использовать сценарий, предоставляющий разрешение на каждое подключение OAuth.
-На GitHub есть пример сценария в проекте [LogicAppConnectionAuth](https://github.com/logicappsio/LogicAppConnectionAuth) .
-
-<a name="team-services"></a>
-## <a name="azure-devops-azure-pipelines"></a>Azure DevOps Azure Pipelines
-
-При развертывании среды и управлении ею часто используется средство Azure Pipelines в Azure DevOps и шаблон развертывания приложения логики. Azure DevOps содержит задачу [развертывания группы ресурсов Azure](https://github.com/Microsoft/azure-pipelines-tasks/tree/master/Tasks/AzureResourceGroupDeploymentV2), которую можно добавить в любую сборку или конвейер выпуска. Для авторизации развертывания требуется [субъект-служба](https://blogs.msdn.microsoft.com/visualstudioalm/2015/10/04/automating-azure-resource-group-deployment-using-a-service-principal-in-visual-studio-online-buildrelease-management/). При ее наличии можно создать конвейер выпуска.
-
-1. Для создания пустого конвейера в Azure Pipelines выберите **Пусто**.
-
-    ![Создание пустого конвейера][1]
-
-2. Выберите для этого любые ресурсы. Лучше всего подойдет шаблон приложения логики, созданный вручную или в процессе сборки.
-3. Добавьте задачу **развертывания группы ресурсов Azure** .
-4. Настройте использование [субъекта-службы](https://blogs.msdn.microsoft.com/visualstudioalm/2015/10/04/automating-azure-resource-group-deployment-using-a-service-principal-in-visual-studio-online-buildrelease-management/)и добавьте ссылку на файлы шаблона и параметров шаблона.
-5. При необходимости выполните соответствующие действия в процессе выпуска для других сред, автоматических тестов или механизмов утверждения.
-
-<!-- Image References -->
-[1]: ./media/logic-apps-create-deploy-template/emptyreleasedefinition.png
+> [!div class="nextstepaction"]
+> [Развертывание шаблонов приложений логики](../logic-apps/logic-apps-create-deploy-azure-resource-manager-templates.md)

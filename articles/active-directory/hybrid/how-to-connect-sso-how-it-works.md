@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/14/2018
+ms.date: 04/02/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5217f21449efeb2086770f040fb781765ea819eb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 813ab2a349ba843e9f41675234e395470bef9740
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58083943"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58896131"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-technical-deep-dive"></a>Простой единый вход Azure Active Directory: Подробное техническое руководство
 
@@ -39,15 +39,12 @@ ms.locfileid: "58083943"
 
 Простой единый вход включается с помощью Azure AD Connect, как показано [здесь](how-to-connect-sso-quick-start.md). При включении функции выполняются следующие действия:
 
-- В каждом лесу AD в локальной службе Active Directory (AD) создается учетная запись компьютера с именем `AZUREADSSOACC` (представляет Azure AD).
-- С помощью Azure AD безопасным образом предоставляется ключ расшифровки Kerberos учетной записи компьютера. При наличии нескольких лесов AD каждый из них будет иметь свой собственный ключ расшифровки Kerberos.
-- Кроме того, создаются два имени субъектов-служб (SPN) Kerberos, представляющие URL-адреса, используемые при входе в Azure AD.
-
->[!NOTE]
-> Учетная запись компьютера и имена участников-служб Kerberos создаются в каждом лесу AD, который синхронизируется с Azure AD (с помощью Azure AD Connect) и для пользователей которого должен иметься простой единый вход. Переместите учетную запись `AZUREADSSOACC` компьютера в подразделение (OU), где хранятся другие учетные записи компьютеров, чтобы управлять им таким же образом и избежать удаления.
+- Учетной записи компьютера (`AZUREADSSOACC`) создается в вашей локальной Active Directory (AD) в каждом лесу AD, который синхронизируется с Azure AD (с помощью Azure AD Connect).
+- Кроме того для использования во время процесса входа в Azure AD создаются несколько имен участников службы Kerberos (SPN).
+- С помощью Azure AD безопасным образом предоставляется ключ расшифровки Kerberos учетной записи компьютера. При наличии нескольких лесов AD, каждая учетная запись компьютера будет иметь свой собственный уникальный ключ расшифровки Kerberos.
 
 >[!IMPORTANT]
->Настоятельно рекомендуется, чтобы вы [меняли ключ расшифровки Kerberos](how-to-connect-sso-faq.md#how-can-i-roll-over-the-kerberos-decryption-key-of-the-azureadssoacc-computer-account) для учетной записи компьютера `AZUREADSSOACC` хотя бы раз в 30 дней.
+> `AZUREADSSOACC` Учетная запись компьютера должна быть обеспечены надежной защитой по соображениям безопасности. Управление учетной записью компьютера можно только "Администраторы домена". Убедитесь, что делегирование Kerberos на учетную запись компьютера отключена. Store учетной записи компьютера в подразделение (OU) где они безопасны от случайных удалений. Ключ расшифровки Kerberos учетной записи компьютера, также должны рассматриваться как конфиденциальные. Настоятельно рекомендуется, чтобы вы [меняли ключ расшифровки Kerberos](how-to-connect-sso-faq.md#how-can-i-roll-over-the-kerberos-decryption-key-of-the-azureadssoacc-computer-account) для учетной записи компьютера `AZUREADSSOACC` хотя бы раз в 30 дней.
 
 После завершения настройки функция простого входа в Azure AD работает так же, как любая другая функция входа, использующая встроенную проверку подлинности Windows (IWA).
 

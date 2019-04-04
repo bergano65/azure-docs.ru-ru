@@ -11,12 +11,12 @@ ms.service: azure-stack
 ms.reviewer: thoroet
 manager: femila
 ms.lastreviewed: 03/07/2019
-ms.openlocfilehash: 47cc7d9f09b7fb22cf99ad010f1dc75e6388c314
-ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.openlocfilehash: 23cc0f03c41801de944eb9938d4cd15896d1745e
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57731922"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58482187"
 ---
 # <a name="prepare-for-extension-host-for-azure-stack"></a>Подготовка хост-процесса для расширений для Azure Stack
 
@@ -47,13 +47,13 @@ ms.locfileid: "57731922"
 1. Откройте сеанс PowerShell с повышенными правами на узле жизненного цикла аппаратного обеспечения или рабочей станции управления Azure Stack.
 2. Запустите следующий командлет, чтобы установить инструмент проверки готовности Azure Stack.
 
-    ```PowerShell  
+    ```powershell  
     Install-Module -Name Microsoft.AzureStack.ReadinessChecker
     ```
 
 3. Выполните следующий сценарий, чтобы создать нужную структуру папки:
 
-    ```PowerShell  
+    ```powershell  
     New-Item C:\Certificates -ItemType Directory
 
     $directories = 'ACSBlob','ACSQueue','ACSTable','Admin Portal','ARM Admin','ARM Public','KeyVault','KeyVaultInternal','Public Portal', 'Admin extension host', 'Public extension host'
@@ -69,7 +69,7 @@ ms.locfileid: "57731922"
 4. Поместите имеющиеся сертификаты, которые вы сейчас используете в Azure Stack, в соответствующие каталоги. Например, поместите сертификат **ARM администратора** в папку `Arm Admin`. Затем поместите только что созданные сертификаты размещения в каталоги `Admin extension host` и `Public extension host`.
 5. Чтобы запустить проверку сертификата, выполните следующий командлет:
 
-    ```PowerShell  
+    ```powershell  
     $pfxPassword = Read-Host -Prompt "Enter PFX Password" -AsSecureString 
 
     Start-AzsReadinessChecker -CertificatePath c:\certificates -pfxPassword $pfxPassword -RegionName east -FQDN azurestack.contoso.com -IdentitySystem AAD
@@ -86,7 +86,7 @@ ms.locfileid: "57731922"
 2. Откройте интегрированную среду сценариев PowerShell, чтобы выполнить следующие блоки сценария.
 3. Импортируйте сертификат для конечной точки размещения администратора.
 
-    ```PowerShell  
+    ```powershell  
 
     $CertPassword = read-host -AsSecureString -prompt "Certificate Password"
 
@@ -104,7 +104,7 @@ ms.locfileid: "57731922"
     }
     ```
 4. Импортируйте сертификат для конечной точки размещения.
-    ```PowerShell  
+    ```powershell  
     $CertPassword = read-host -AsSecureString -prompt "Certificate Password"
 
     $CloudAdminCred = Get-Credential -UserName <Privileged endpoint credentials> -Message "Enter the cloud domain credentials to access the privileged endpoint."
@@ -142,7 +142,7 @@ ms.locfileid: "57731922"
 
 Есть две новые конечные точки, которые необходимо опубликовать через брандмауэр. Выделенные IP-адреса из пула общедоступных виртуальных IP-адресов можно получить, используя следующий код, который должен выполняться с помощью [привилегированной конечной точки среды](https://docs.microsoft.com/azure/azure-stack/azure-stack-privileged-endpoint) Azure Stack.
 
-```PowerShell
+```powershell
 # Create a PEP Session
 winrm s winrm/config/client '@{TrustedHosts= "<IpOfERCSMachine>"}'
 $PEPCreds = Get-Credential
@@ -173,7 +173,7 @@ Remove-PSSession -Session $PEPSession
 
 #### <a name="sample-output"></a>Пример выходных данных
 
-```PowerShell
+```powershell
 Can access AZS DNS
 The IP for the Admin Extension Host is: *.adminhosting.\<region>.\<fqdn> - is: xxx.xxx.xxx.xxx
 The Record to be added in the DNS zone: Type A, Name: *.adminhosting.\<region>.\<fqdn>, Value: xxx.xxx.xxx.xxx

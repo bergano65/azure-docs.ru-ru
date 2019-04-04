@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: diberry
-ms.openlocfilehash: b7788cc6854b477e8aab9e9df82ed2b54a3bdfe2
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
-ms.translationtype: HT
+ms.openlocfilehash: ca9b08cdccd43a093ca8b5001d3e30be0e5258b5
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/03/2019
-ms.locfileid: "58884573"
+ms.locfileid: "58894684"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -81,7 +81,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 1. [Запустите контейнер](##run-the-container-with-docker-run) с необходимыми настройками _input mount_ и выставления счетов. Доступны дополнительные [примеры](luis-container-configuration.md#example-docker-run-commands) команды `docker run`. 
 1. Выполните [запрос конечной точки прогнозирования контейнера](#query-the-containers-prediction-endpoint). 
 1. Завершив работу с контейнером, [импортируйте журналы конечной точки](#import-the-endpoint-logs-for-active-learning) из выходного подключения на портале LUIS и [остановите](#stop-the-container) контейнер.
-1. Воспользуйтесь средствами [активного обучения](luis-how-to-review-endoint-utt.md) на портале LUIS или страницей **просмотра фраз конечной точки** для улучшения приложения.
+1. Воспользуйтесь средствами [активного обучения](luis-how-to-review-endpoint-utterances.md) на портале LUIS или страницей **просмотра фраз конечной точки** для улучшения приложения.
 
 Приложение, выполняющееся в контейнере, изменить нельзя. Чтобы изменить приложение в контейнере, необходимо изменить его в службе LUIS с помощью портала [LUIS](https://www.luis.ai) или [API разработки](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f) LUIS. Затем выполните обучение и (или) публикацию, скачайте новый пакет и снова запустите контейнер.
 
@@ -244,7 +244,7 @@ ApiKey={ENDPOINT_KEY}
 Доступны дополнительные [примеры](luis-container-configuration.md#example-docker-run-commands) команды `docker run`. 
 
 > [!IMPORTANT]
-> Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
+> Для выполнения контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
 > Значение ApiKey содержит **ключ**, который можно получить на странице параметров ключей и конечной точки на портале LUIS или на странице ключей ресурса Интеллектуальной службы распознавания речи Azure.  
 
 [!INCLUDE [Running multiple containers on the same host](../../../includes/cognitive-services-containers-run-multiple-same-host.md)]
@@ -268,7 +268,7 @@ ApiKey={ENDPOINT_KEY}
 |`timezoneOffset`|number|Параметр timezoneOffset позволяет [изменить часовой пояс](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity), используемый предварительно созданной сущностью datetimeV2.|
 |`verbose`|Логическое|Возвращает все намерения и их оценки, если задано значение true. По умолчанию задано значение false, при котором возвращается только верхнее намерение.|
 |`staging`|Логическое|Возвращает запрос из результатов промежуточной среды, если задано значение true. |
-|`log`|Логическое|Записывает запросы в журнал, который затем можно использовать для [активного обучения](luis-how-to-review-endoint-utt.md). Значение по умолчанию — true.|
+|`log`|Логическое|Записывает запросы в журнал, который затем можно использовать для [активного обучения](luis-how-to-review-endpoint-utterances.md). Значение по умолчанию — true.|
 
 ### <a name="query-published-app"></a>Запрос опубликованного приложения
 

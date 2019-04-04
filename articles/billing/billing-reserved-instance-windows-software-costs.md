@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/30/2019
 ms.author: banders
-ms.openlocfilehash: d500e26f5701e59dacfd5f09f6eaf88c5ced74e6
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: 340cba65a1faac247678cd187f106157ba566f3e
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58648526"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918728"
 ---
 # <a name="software-costs-not-included-with-azure-reserved-vm-instances"></a>Затраты на программное обеспечение, которые не включены в стоимость экземпляров Azure Reserved Virtual Machine Instances
 
-Если не применяется Преимущество гибридного использования Azure для зарезервированных экземпляров виртуальных машин, плата будет взиматься за единицы измерения программного обеспечения (см. раздел ниже).
+Если не применяется Преимущество гибридного использования Azure для своих экземпляров зарезервированной виртуальной машины, плата за единицы измерения программного обеспечения, приведенные в следующем разделе.
 
 ## <a name="windows-software-meters-not-included-in-reservation-cost"></a>Единицы измерения программного обеспечения Windows, не учитываемые в затратах на резервирование
 
@@ -66,7 +66,7 @@ ms.locfileid: "58648526"
 
 ## <a name="rates-for-azure-meters"></a>Ставки для единиц измерения Azure
 
-Стоимость каждой из этих единиц измерения можно узнать с помощью API Azure RateCard. Сведения о том, как узнать тарифы на единицы измерения в Azure, см. в статье [Get price and metadata information for resources used in an Azure subscription](https://msdn.microsoft.com/library/azure/mt219004) (Получение сведений о ценах и метаданных для ресурсов, используемых в подписке Azure).
+Стоимость каждой из этих единиц измерения можно узнать с помощью API Azure RateCard. Сведения о том, как узнать тарифы на единицы измерения в Azure, см. в статье [Get price and metadata information for resources used in an Azure subscription](/previous-versions/azure/reference/mt219004(v=azure.100)) (Получение сведений о ценах и метаданных для ресурсов, используемых в подписке Azure).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о резервировании для Azure, см. в разделе со следующими статьями:
@@ -74,9 +74,9 @@ ms.locfileid: "58648526"
 - [Что такое резервирования для Azure?](billing-save-compute-costs-reservations.md)
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../virtual-machines/windows/prepay-reserved-vm-instances.md)
 - [Управление резервирования для Azure](billing-manage-reserved-vm-instance.md)
-- [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](billing-understand-vm-reservation-charges.md)
-- [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
-- [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
+- [Сведения о применении скидки на резервирование](billing-understand-vm-reservation-charges.md)
+- [Общие сведения об использовании резервирования для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
+- [Общие сведения об использовании резервирования о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
 

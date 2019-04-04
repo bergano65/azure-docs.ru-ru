@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 3/21/2019
 ms.author: victorh
-ms.openlocfilehash: 1d0506179f9f0044f9f05edd3395d2677310c2d0
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 4f0800dfd264059e1dc8aac32a54f216f777647f
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337123"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905721"
 ---
 # <a name="azure-dns-faq"></a>Вопросы и ответы об Azure DNS
 
@@ -80,7 +80,7 @@ Azure DNS поддерживает только размещение "стати
 
 ### <a name="does-azure-dns-support-zone-transfers-axfrixfr"></a>Поддерживает ли Azure DNS передачу зон (AXFR-IXFR)?
 
-№ Сейчас Azure DNS не поддерживает передачу зон. Зоны DNS можно [импортировать в Azure DNS с помощью Azure CLI](dns-import-export.md). Затем записями DNS можно управлять с помощью [портала управления Azure DNS](dns-operations-recordsets-portal.md), нашего [REST API](https://docs.microsoft.com/powershell/module/azurerm.dns), [пакета SDK](dns-sdk.md), [командлетов PowerShell](dns-operations-recordsets.md) или [программы командной строки](dns-operations-recordsets-cli.md).
+№ Сейчас Azure DNS не поддерживает передачу зон. Зоны DNS можно [импортировать в Azure DNS с помощью Azure CLI](dns-import-export.md). Затем записями DNS можно управлять с помощью [портала управления Azure DNS](dns-operations-recordsets-portal.md), нашего [REST API](https://docs.microsoft.com/powershell/module/az.dns), [пакета SDK](dns-sdk.md), [командлетов PowerShell](dns-operations-recordsets.md) или [программы командной строки](dns-operations-recordsets-cli.md).
 
 Функция передачи зон отслеживается в очереди невыполненной работы Azure DNS. Вы можете воспользоваться нашим сайтом для отзывов, чтобы [поддержать эту функцию](https://feedback.azure.com/forums/217313-networking/suggestions/12925503-extend-azure-dns-to-support-zone-transfers-so-it-c).
 
@@ -116,10 +116,10 @@ Azure DNS поддерживает только размещение "стати
 
 ### <a name="what-resources-are-supported-as-targets-for-alias-record-sets"></a>Какие ресурсы поддерживаются в качестве целевых объектов для наборов записей псевдонимов?
 
-- **Выберите ресурс общедоступного IP-адреса из набора DNS-записей A/AAAA**. Можно создать набор записей A/AAAA и сделать его набором записей псевдонимов, указывающим на ресурс общедоступного IP-адреса.
-- **Выберите профиль диспетчера трафика из набора DNS-записей A/AAAA/CNAME**. Можно выбрать CNAME профиля диспетчера трафика из набора DNS-записей CNAME. Например, contoso.trafficmanager.net. Теперь также можно выбрать профиль диспетчера трафика, который имеет внешние конечные точки из наборов записей A или AAAA в зоне DNS.
+- **Выберите ресурс общедоступного IP-адрес в DNS набора записей A/AAAA.** Можно создать набор записей A/AAAA и сделать его набором записей псевдонимов, указывающим на ресурс общедоступного IP-адреса.
+- **Выберите профиль диспетчера трафика в набор записей DNS A/AAAA/CNAME.** Можно выбрать CNAME профиля диспетчера трафика из набора DNS-записей CNAME. Например, contoso.trafficmanager.net. Теперь также можно выбрать профиль диспетчера трафика, который имеет внешние конечные точки из наборов записей A или AAAA в зоне DNS.
 - **Выберите конечную точку Azure доставки содержимого сети (CDN)**. Это полезно при создании статических веб-сайтов, с помощью службы хранилища Azure и Azure CDN.
-- **Выберите другой набор DNS-записей в пределах той же зоны**. Записи псевдонимов могут ссылаться на другие наборы записей того же типа. Например, вы можете иметь набор записей DNS CNAME, как псевдоним для другого набора записей CNAME того же типа. Такой подход полезен в том случае, если вы хотите, чтобы некоторые наборы записей были псевдонимами, а некоторые ими не были.
+- **Укажите другой набор записей DNS в этой зоне.** Записи псевдонимов могут ссылаться на другие наборы записей того же типа. Например, вы можете иметь набор записей DNS CNAME, как псевдоним для другого набора записей CNAME того же типа. Такой подход полезен в том случае, если вы хотите, чтобы некоторые наборы записей были псевдонимами, а некоторые ими не были.
 
 ### <a name="can-i-create-and-update-alias-records-from-the-azure-portal"></a>Можно ли создавать и изменять записи псевдонимов на портале Azure?
 
@@ -149,7 +149,7 @@ Azure DNS поддерживает только размещение "стати
 
 Чтобы настроить совместное размещение, изменение записи NS для домена указать серверы доменных имен обоих поставщиков. Сервер доменных имен (NS) записывает элемент управления, для домена которого поставщики получают запросы DNS. Эти записи NS можно изменить в Azure DNS, в другом поставщике и в родительской зоне. Родительская зона обычно настраивается с помощью регистратора доменных имен. Дополнительные сведения о делегировании DNS см. в разделе [Делегирование зон DNS с помощью Azure DNS](dns-domain-delegation.md).
 
-Кроме того, убедитесь, что записи DNS для домена синхронизированы между обоими поставщиками DNS. Сейчас Azure DNS не поддерживает передачу зон DNS. Необходимо синхронизировать записи DNS с помощью [портала управления Azure DNS](dns-operations-recordsets-portal.md), [REST API](https://docs.microsoft.com/powershell/module/azurerm.dns), [пакета SDK](dns-sdk.md), [командлетов PowerShell](dns-operations-recordsets.md) или [программы командной строки](dns-operations-recordsets-cli.md).
+Кроме того, убедитесь, что записи DNS для домена синхронизированы между обоими поставщиками DNS. Сейчас Azure DNS не поддерживает передачу зон DNS. Необходимо синхронизировать записи DNS с помощью [портала управления Azure DNS](dns-operations-recordsets-portal.md), [REST API](https://docs.microsoft.com/powershell/module/az.dns), [пакета SDK](dns-sdk.md), [командлетов PowerShell](dns-operations-recordsets.md) или [программы командной строки](dns-operations-recordsets-cli.md).
 
 ### <a name="do-i-have-to-delegate-my-domain-to-all-four-azure-dns-name-servers"></a>Мне следует делегировать мой домен на все четыре DNS-сервера Azure?
 

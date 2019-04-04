@@ -7,14 +7,14 @@ author: Juliako
 manager: femila
 ms.service: media-services
 ms.topic: article
-ms.date: 03/30/2019
+ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: d775fff16380ebe08159123aa9e6084055a5be8d
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 73ceb0a92b97e90b1fdb0c5562d623505e86b870
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/03/2019
-ms.locfileid: "58877573"
+ms.locfileid: "58891591"
 ---
 # <a name="embed-video-indexer-widgets-into-your-applications"></a>Внедрение мини-приложений Индексатора видео в приложения
 
@@ -30,7 +30,7 @@ ms.locfileid: "58877573"
 
 |ИМЯ|Определение|ОПИСАНИЕ|
 |---|---|---|
-|widgets|Строки, разделенные запятыми.|Позволяет управлять аналитическими сведениями, которые нужно преобразовать для просмотра. <br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,search` преобразует для просмотра в пользовательском интерфейсе только аналитические сведения о людях и торговых марках.<br/>Доступные значения: people, keywords, annotations, brands, sentiments, transcript, search.<br/>Не поддерживается с помощью URL-адреса, если используется version=2.<br/><br/>**Примечание.** Параметр URL-адреса **widgets** не поддерживается, если используется **version=2**. |
+|widgets|Строки, разделенные запятыми.|Позволяет управлять аналитическими сведениями, которые нужно преобразовать для просмотра. <br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,search` преобразует для просмотра в пользовательском интерфейсе только аналитические сведения о людях и торговых марках.<br/>Доступные значения: people, keywords, annotations, brands, sentiments, transcript, search.<br/>Не поддерживается с помощью URL-адреса, если используется version=2.<br/><br/>**Примечание.** Param URL-адрес мини-приложения не поддерживается в версии 2. |
 
 ### <a name="player-widget"></a>Мини-приложение Player
 
@@ -254,4 +254,4 @@ URL-адрес внедрения будет выглядеть так:
 
 Сведения о том, как просматривать и редактировать аналитические сведения в Индексаторе видео, см. в [этой](video-indexer-view-edit.md) статье.
 
-Кроме того, ознакомьтесь с [Индексатором видео codepen](https://codepen.io/videoindexer/pen/eGxebZ).
+Кроме того, ознакомьтесь с [индексатора видео CodePen](https://codepen.io/videoindexer/pen/eGxebZ).

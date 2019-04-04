@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/21/2018
 ms.author: magattus
-ms.openlocfilehash: ee64b4cbfd024c91b226736bc8cac0b9b33f964e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 7edf0a9f8d4eb4c01b6d80fd82a1061b6cbb1e35
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58170400"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918558"
 ---
 # <a name="using-azure-cdn-with-sas"></a>Использование Azure CDN с SAS
 
@@ -86,10 +86,11 @@ https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-07-29&
    ```
    $1?sv=2017-07-29&ss=b&srt=c&sp=r&se=2027-12-19T17:35:58Z&st=2017-12-19T09:35:58Z&spr=https&sig=kquaXsAuCLXomN7R00b8CYM13UpDbAHcsRfGOW3Du1M%3D
    ```
-   ![Правило переопределения URL-адресов CDN — слева](./media/cdn-sas-storage-support/cdn-url-rewrite-rule.png)
-   ![Правило переопределения URL-адресов CDN — справа](./media/cdn-sas-storage-support/cdn-url-rewrite-rule-option-4.png)
+   ![Переопределения URL-адресов CDN правило — слева](./media/cdn-sas-storage-support/cdn-url-rewrite-rule.png)
+   ![переопределения URL-адресов CDN правило — справа](./media/cdn-sas-storage-support/cdn-url-rewrite-rule-option-4.png)
 
-2. После того, как новое правило станет активным, к файлам в указанном контейнере конечной точки CDN сможет получить доступ любой желающий, даже без маркера SAS в URL-адресе. Используется следующий формат: `https://<endpoint hostname>.azureedge.net/<container>/<file>`.
+2. После того, как новое правило станет активным, к файлам в указанном контейнере конечной точки CDN сможет получить доступ любой желающий, даже без маркера SAS в URL-адресе. Ниже приведен формат:
+   `https://<endpoint hostname>.azureedge.net/<container>/<file>`
  
    Например:    
    `https://sasstoragedemo.azureedge.net/container1/demo.jpg`
@@ -124,8 +125,8 @@ https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-07-29&
    ```
    $1&sv=2017-07-29&ss=b&srt=c&sp=r&se=2027-12-19T17:35:58Z&st=2017-12-19T09:35:58Z&spr=https&sig=kquaXsAuCLXomN7R00b8CYM13UpDbAHcsRfGOW3Du1M%3D
    ```
-   ![Правило переопределения URL-адресов CDN — слева](./media/cdn-sas-storage-support/cdn-url-rewrite-rule.png)
-   ![Правило переопределения URL-адресов CDN — справа](./media/cdn-sas-storage-support/cdn-url-rewrite-rule-option-4.png)
+   ![Переопределения URL-адресов CDN правило — слева](./media/cdn-sas-storage-support/cdn-url-rewrite-rule.png)
+   ![переопределения URL-адресов CDN правило — справа](./media/cdn-sas-storage-support/cdn-url-rewrite-rule-option-4.png)
 
 3. При обновлении SAS не забудьте обновить и правило переопределения URL-адресов, указав новый маркер SAS. 
 
@@ -137,13 +138,13 @@ https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-07-29&
 | --- | --- |
 | Начало | Время, когда Azure CDN сможет обращаться к файлу большого двоичного объекта. Из-за разницы в показаниях часов (когда сигнал времени поступает в разное время для различных компонентов) установите время на 15 минут раньше, если вы хотите, чтобы ресурс был доступен немедленно. |
 | End | Время, после которого Azure CDN больше не сможет обращаться к файлу большого двоичного объекта. Ранее кэшированные файлы в Azure CDN по-прежнему будут доступны. Чтобы управлять временем окончания срока действия файла, установите соответствующее время для маркера безопасности Azure CDN либо очистите ресурс. |
-| Разрешенные IP-адреса | Необязательный элемент. Если вы используете **Azure CDN от Verizon**, примените параметр диапазонов, указанных на странице [Azure CDN from Verizon Edge Server IP Ranges](https://msdn.microsoft.com/library/mt757330.aspx) (Диапазоны IP-адресов пограничного сервера Azure CDN от Verizon). Если вы используете **Azure CDN от Akamai**, нельзя задать параметр диапазонов IP-адресов, так как они не являются статичными.|
+| Разрешенные IP-адреса | Необязательный элемент. Если вы используете **Azure CDN от Verizon**, примените параметр диапазонов, указанных на странице [Azure CDN from Verizon Edge Server IP Ranges](/azure/cdn/cdn-pop-list-api) (Диапазоны IP-адресов пограничного сервера Azure CDN от Verizon). Если вы используете **Azure CDN от Akamai**, нельзя задать параметр диапазонов IP-адресов, так как они не являются статичными.|
 | Разрешенные протоколы | Протоколы, разрешенные для запроса, сделанного с помощью SAS учетной записи. Рекомендуется использовать параметр HTTPS.|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о SAS доступны в следующих статьях:
 - [Использование подписанных URL-адресов (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
-- [Подписанные URL-адреса. Часть 2: Создание и использование подписанного URL-адреса с помощью хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-shared-access-signature-part-2)
+- [Подписанные URL-адреса. Часть 2. Создание и использование подписанного URL-адреса с помощью хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-shared-access-signature-part-2)
 
 Дополнительные сведения о настройке аутентификации на основе маркеров см. в разделе [Защита ресурсов сети доставки содержимого Azure с помощью аутентификации на основе маркеров](https://docs.microsoft.com/azure/cdn/cdn-token-auth).

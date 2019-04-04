@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/03/2018
 ms.author: hrasheed
-ms.openlocfilehash: 6dee4ac7cb863a08e9046b16189e7f4a7b04b810
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: 38f86bd19c85440fbad0e7fd56a3dd9ba836c7b8
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58201676"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58903308"
 ---
 # <a name="use-apache-phoenix-with-linux-based-apache-hbase-clusters-in-hdinsight"></a>Использование Apache Phoenix с кластерами Apache HBase под управлением Linux в HDInsight
 Из этой статьи вы узнаете, как использовать [Apache Phoenix](https://phoenix.apache.org/) в Azure HDInsight, а также как использовать SQLLine. Дополнительные сведения о Phoenix см. в статье [Phoenix за 15 минут или меньше](https://phoenix.apache.org/Phoenix-in-15-minutes-or-less.html). Сведения о грамматике Phoenix см. в статье [Грамматика Apache Phoenix](https://phoenix.apache.org/language/index.html).
@@ -34,7 +34,7 @@ ms.locfileid: "58201676"
 
 При подключении к кластеру HBase необходимо подключиться к одной из виртуальных машин [Apache ZooKeeper](https://zookeeper.apache.org/). Каждый кластер HDInsight содержит три виртуальных машины Zookeeper.
 
-**Получение имени узла Zookeeper**
+**Для получения имени узла ZooKeeper**
 
 1. Откройте [Apache Ambari](https://ambari.apache.org/), перейдя по адресу **https://\<имя кластера\>.azurehdinsight.net**.
 2. Чтобы войти в систему, введите имя пользователя (кластера) HTTP и пароль.
@@ -47,7 +47,7 @@ ms.locfileid: "58201676"
 
 2. В SSH используйте следующие команды для запуска SQLLine:
 
-        cd /usr/hdp/current/phoenix/bin
+        cd /usr/hdp/current/phoenix-client/bin
         ./sqlline.py <ZOOKEEPER SERVER FQDN>:2181:/hbase-unsecure
 3. Чтобы создать таблицу HBase и вставить данные, выполните следующие команды:
 
