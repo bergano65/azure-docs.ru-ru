@@ -3,19 +3,19 @@ title: Метод Languages в API перевода текстов
 titlesuffix: Azure Cognitive Services
 description: Используйте метод Languages в API перевода текстов.
 services: cognitive-services
-author: Jann-Skotdal
+author: v-pawal
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: 45baf915ffbc2723d3ed5b4c4dcd96b583a12802
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 1713a05590f389a6de70d72e8d62237c7521d808
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58122409"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58915770"
 ---
 # <a name="translator-text-api-30-languages"></a>API перевода текстов 3.0: Languages
 
@@ -67,11 +67,11 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
 
 С помощью параметра `scope` клиент может указать, какие группы языков его интересуют.
 
-* Параметр `scope=translation` предоставляет поддерживаемые языки для перевода текста с одного языка на другой язык;
+* `scope=translation` содержит языки, поддерживаемые для перевода текста с одного языка на другой язык;
 
-* параметр `scope=transliteration` предоставляет возможности для преобразования текста на одном языке из одного сценария в другой;
+* `scope=transliteration` предоставляет возможности для преобразования текста в одном языке из одного скрипта в другой сценарий.
 
-* параметр `scope=dictionary` предоставляет языковые пары, для которых `Dictionary` операции возвращают данные.
+* `scope=dictionary` предоставляет языковых пар, для которого `Dictionary` операции возвращают данные.
 
 Клиент может получить одновременно несколько групп, предоставив нужные имена в виде списка с запятыми в роли разделителей. Например, `scope=translation,transliteration,dictionary` возвращает поддерживаемые языки для всех групп.
 
@@ -93,7 +93,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
 
 Для каждого свойства существуют следующие значения.
 
-* Свойство `translation`
+* `translation` property
 
   Значение свойства `translation` представляет собой словарь (ключ, значение) пары. Каждый ключ является языковым тегом BCP-47. Ключ идентифицирует язык, с которого или на который текст может быть переведен. Значение, связанное с ключом, является JSON-объектом со свойствами, которые описывают язык.
 
@@ -101,7 +101,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
 
   * `nativeName`: отображаемое собственное имя языка в языковом стандарте.
 
-  * `dir`: направление письма на этом языке, где `rtl` означает "справа налево", а `ltr` — "слева направо".
+  * `dir`: направление письма на этом языке, где `ltr` означает "справа налево", а  — "слева направо".
 
   Пример.
           
@@ -119,7 +119,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
   }
   ```
 
-* Свойство `transliteration`
+* `transliteration` property
 
   Значение свойства `transliteration` представляет собой словарь (ключ, значение) пары. Каждый ключ является языковым тегом BCP-47. Ключ идентифицирует язык, для которого текст может быть преобразован из одного сценария в другой. Значение, связанное с ключом, является JSON-объектом со свойствами, которые описывают язык и его поддерживаемые сценарии.
 
@@ -135,7 +135,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
 
     * `nativeName`: отображаемое собственное имя языка в языковом стандарте.
 
-    * `dir`: направление письма на этом языке, где `rtl` означает "справа налево", а `ltr` — "слева направо".
+    * `dir`: направление письма на этом языке, где `ltr` означает "справа налево", а  — "слева направо".
 
     * `toScripts`: список сценариев, доступных для преобразования текста. Каждый элемент списка `toScripts` имеет свойства `code`, `name`, `nativeName` и `dir`, как описано выше.
 
@@ -184,7 +184,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
   }
   ```
 
-* Свойство `dictionary`
+* `dictionary` property
 
   Значение свойства `dictionary` представляет собой словарь (ключ, значение) пары. Каждый ключ является языковым тегом BCP-47. Ключ идентифицирует язык, для которого доступны альтернативные и обратные переводы. Значение — это JSON-объект, описывающий язык исходного и целевого языков с возможными переводами.
 
@@ -192,7 +192,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
 
   * `nativeName`: отображаемое собственное имя языка в языковом стандарте.
 
-  * `dir`: направление письма на этом языке, где `rtl` означает "справа налево", а `ltr` — "слева направо".
+  * `dir`: направление письма на этом языке, где `ltr` означает "справа налево", а  — "слева направо".
 
   * `translations`: список языков с альтернативными переводами и примерами запросов, выраженными на языке источника. Каждый элемент списка `translations` содержит следующие свойства.
 
@@ -200,7 +200,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
 
     * `nativeName`: отображаемое собственное имя целевого языка в языковом стандарте.
 
-    * `dir`: направление письма на этом языке, где `rtl` означает "справа налево", а `ltr` — "слева направо".
+    * `dir`: направление письма на этом языке, где `ltr` означает "справа налево", а  — "слева направо".
     
     * `code`: код языка, определяющий целевой язык.
 
@@ -281,7 +281,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
 
 В следующем примере показано, как получить список языков, поддерживаемых для перевода текста.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
+# [<a name="curl"></a>curl](#tab/curl)
 
 ```
 curl "https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation"

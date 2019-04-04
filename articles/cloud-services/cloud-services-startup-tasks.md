@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: jeconnoc
-ms.openlocfilehash: 6601eba90f3c3644d418ddd0a74746e1a12bcbd3
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
-ms.translationtype: HT
+ms.openlocfilehash: 59bfa83ab3432adb7a4df5112367f87014a0b292
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39007785"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58917623"
 ---
 # <a name="how-to-configure-and-run-startup-tasks-for-a-cloud-service"></a>Как настроить и выполнить задачи запуска для облачной службы
 С помощью задач запуска вы можете выполнять различные операции перед запуском роли. Это может быть установка компонента, регистрация компонентов COM, установка разделов реестра или запуск длительного процесса.
@@ -50,13 +50,13 @@ ms.locfileid: "39007785"
    * **Фоновые** задачи (background) и задачи **переднего плана** (foreground) запускаются асинхронно, параллельно с задачей запуска.  
      
      > [!WARNING]
-     > Службы IIS могут не быть полностью настроены на этапе выполнения задач запуска в процессе запуска, поэтому данные, относящиеся к роли, могут быть недоступны. Для задач запуска, требующих данные, относящиеся к роли, следует использовать [Microsoft.WindowsAzure.ServiceRuntime.RoleEntryPoint.OnStart](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstart.aspx).
+     > Службы IIS могут не быть полностью настроены на этапе выполнения задач запуска в процессе запуска, поэтому данные, относящиеся к роли, могут быть недоступны. Для задач запуска, требующих данные, относящиеся к роли, следует использовать [Microsoft.WindowsAzure.ServiceRuntime.RoleEntryPoint.OnStart](/previous-versions/azure/reference/ee772851(v=azure.100)).
      > 
      > 
 3. Запускается процесс размещения роли и в IIS создается сайт.
-4. Вызывается метод [Microsoft.WindowsAzure.ServiceRuntime.RoleEntryPoint.OnStart](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstart.aspx) .
+4. Вызывается метод [Microsoft.WindowsAzure.ServiceRuntime.RoleEntryPoint.OnStart](/previous-versions/azure/reference/ee772851(v=azure.100)) .
 5. Экземпляр помечается как **Готов** , и трафик перенаправляется в него.
-6. Вызывается метод [Microsoft.WindowsAzure.ServiceRuntime.RoleEntryPoint.Run](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) .
+6. Вызывается метод [Microsoft.WindowsAzure.ServiceRuntime.RoleEntryPoint.Run](/previous-versions/azure/reference/ee772746(v=azure.100)) .
 
 ## <a name="example-of-a-startup-task"></a>Пример задачи запуска
 Задачи запуска определяются в файле [ServiceDefinition.csdef], в элементе **Task**. Атрибут **commandLine** задает имя и параметры пакетного файла запуска или команды консоли. Атрибут **executionContext** задает уровень привилегий задачи запуска, а атрибут **taskType** указывает, каким образом будет выполняться задача.
@@ -99,10 +99,10 @@ EXIT /B 0
 
 **executionContext** — задает уровень привилегий для задачи запуска. Уровень привилегий может быть ограничен или повышен:
 
-* **limited**  
-  Задача запуска выполняется с теми же привилегиями, что и роль. Если атрибут **executionContext** элемента [Среда выполнения] также имеет значение **limited**, то используются привилегии пользователя.
+* **Limited**  
+   Задача запуска выполняется с теми же привилегиями, что и роль. Если атрибут **executionContext** элемента [Runtime] также имеет значение **limited**, то используются привилегии пользователя.
 * **elevated**  
-  Задача запуска выполняется с привилегиями администратора. Это позволяет задачам запуска устанавливать программы, вносить изменения в конфигурацию IIS, вносить изменения в реестр и выполнять другие административные задачи без увеличения уровня привилегий самой роли.  
+   Задача запуска выполняется с привилегиями администратора. Это позволяет задачам запуска устанавливать программы, вносить изменения в конфигурацию IIS, вносить изменения в реестр и выполнять другие административные задачи без увеличения уровня привилегий самой роли.  
 
 > [!NOTE]
 > Уровень привилегий задачи запуска не обязательно должен совпадать с уровнем привилегий роли.
@@ -111,7 +111,7 @@ EXIT /B 0
 
 **taskType** — указывает способ выполнения задачи запуска.
 
-* **Простые**  
+* **Простой**  
   Задачи выполняются синхронно, поочередно и в порядке, указанном в файле [ServiceDefinition.csdef] . Если одна задача запуска **simple** завершается **errorlevel**, равным нулю, выполняется следующая задача запуска **simple**. Если больше нет задач запуска **simple** для выполнения, запускается сама роль.   
   
   > [!NOTE]
@@ -121,14 +121,14 @@ EXIT /B 0
   
     Чтобы убедиться, что пакетный файл завершается нулевым **errorlevel**, выполните команду `EXIT /B 0` в конце обработки пакетного файла.
 * **background**  
-  Задачи выполняются асинхронно, параллельно с запуском роли.
-* **переднего плана**  
-  Задачи выполняются асинхронно, параллельно с запуском роли. Основное различие между задачами **foreground** и **background** состоит в том, что задача **foreground** не разрешает перезапуск или завершение работы роли до завершения задачи. Задачи **background** не имеют этого ограничения.
+   Задачи выполняются асинхронно, параллельно с запуском роли.
+* **Передний план**  
+   Задачи выполняются асинхронно, параллельно с запуском роли. Основное различие между задачами **foreground** и **background** состоит в том, что задача **foreground** не разрешает перезапуск или завершение работы роли до завершения задачи. Задачи **background** не имеют этого ограничения.
 
 ## <a name="environment-variables"></a>Переменные среды
 Переменные среды — это способ передачи информации в задачу запуска. Например, можно передать путь к большому двоичному объекту, содержащему программу для установки, или номера портов, которые будет использовать роль, или параметры для управления функциями задачи запуска.
 
-Существует два типа переменных среды для задачи запуска: статические переменные среды и переменные среды на основе членов класса [RoleEnvironment] . Оба они находятся в разделе [Среда] файла [ServiceDefinition.csdef] и используют элемент [Variable] и атрибут **name**.
+Существует два типа переменных среды для задачи запуска: статические переменные среды и переменные среды на основе членов класса [RoleEnvironment] . Оба они находятся в разделе [Environment] файла [ServiceDefinition.csdef] и используют элемент [Variable] и атрибут **name**.
 
 Статические переменные среды используют атрибут **value** элемента [Variable] . В примере выше создается переменная среды **MyVersionNumber**, которая имеет статическое значение **1.0.0.0**. Другим примером может служить создание переменной среды **StagingOrProduction**, которой можно вручную присвоить значение **staging** или **production**, чтобы выполнять различные действия запуска в зависимости от значения переменной среды **StagingOrProduction**.
 
@@ -155,16 +155,16 @@ EXIT /B 0
 </Startup>
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как выполнять некоторые [стандартные задачи запуска](cloud-services-startup-tasks-common.md) с помощью облачной службы.
 
 [Упакуйте](cloud-services-model-and-package.md) облачную службу.  
 
 [ServiceDefinition.csdef]: cloud-services-model-and-package.md#csdef
-[Task]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
-[Startup]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
+[Задача]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
+[Запуск]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
 [Среда выполнения]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
 [Среда]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
-[Variable]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
+[Переменная]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx

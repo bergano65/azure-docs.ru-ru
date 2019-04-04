@@ -14,17 +14,17 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: jeconnoc
-ms.openlocfilehash: aa62db0948ffa036b37736477b872d694d14836b
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: a2eff2ca2e72ad263e3e23d0827e7603bca3fdcb
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57762617"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58917482"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
 ## <a name="overview"></a>Обзор
-Это руководство описывает, как создавать многоуровневое приложение .NET с внешним ASP.NET MVC и как развернуть его в [облачной службе Azure](cloud-services-choose-me.md). Приложение использует [базу данных Azure SQL](https://msdn.microsoft.com/library/azure/ee336279), [службу BLOB-объектов Azure](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) и [службу очередей Azure](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern). Можно [загрузить проект Visual Studio](https://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4) из галереи кода MSDN.
+Это руководство описывает, как создавать многоуровневое приложение .NET с внешним ASP.NET MVC и как развернуть его в [облачной службе Azure](cloud-services-choose-me.md). Приложение использует [базу данных Azure SQL](/previous-versions/azure/ee336279(v=azure.100)), [службу BLOB-объектов Azure](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) и [службу очередей Azure](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern). Можно [загрузить проект Visual Studio](https://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4) из галереи кода MSDN.
 
 В руководстве показано, как строить и запускать приложение локально, как разворачивать его в Azure и запускать в облаке и как создавать его с нуля. Можно начать с построения с нуля и затем выполнить шаги по тестированию и развертыванию по желанию.
 
@@ -81,7 +81,7 @@ ms.locfileid: "57762617"
 6. Если вы используете Visual Studio 2015 или более поздней версии, измените строку подключения SQL Server в файле приложения *Web.config* в проекте ContosoAdsWeb и в файле *ServiceConfiguration.Local.cscfg* проекта ContosoAdsCloudService. В каждом файле измените (localdb)\v11.0 на (localdb)\MSSQLLocalDB.
 7. Для запуска приложения нажмите сочетание клавиш CTRL+F5.
 
-    Когда запускаете локально проект облачной службы, Visual Studio автоматически вызывает *эмулятор вычислений* Azure и *эмулятор хранилища* Azure. Эмулятор хранилища использует ресурсы компьютера для эмуляции сред рабочей и веб-ролей. Эмулятор хранилища использует базу данных [SQL Server Express LocalDB](https://msdn.microsoft.com/library/hh510202.aspx) для эмуляции работы хранилища Azure в облаке.
+    Когда запускаете локально проект облачной службы, Visual Studio автоматически вызывает *эмулятор вычислений* Azure и *эмулятор хранилища* Azure. Эмулятор хранилища использует ресурсы компьютера для эмуляции сред рабочей и веб-ролей. Эмулятор хранилища использует базу данных [SQL Server Express LocalDB](/sql/database-engine/configure-windows/sql-server-2016-express-localdb) для эмуляции работы хранилища Azure в облаке.
 
     При первом запуске проекта облачной службы, запуск эмулятора займет порядка одной минуты. После завершения работы эмулятора стандартный браузер открывается с домашней страницей приложения.
 
@@ -178,7 +178,7 @@ ms.locfileid: "57762617"
 
     Когда облачная служба и учетная запись хранения находятся в разных центрах обработки данных (различных областях), увеличивается задержка и вам потребуется оплачивать пропускную способность за пределами центра обработки данных. Пропускная способность в рамках центра обработки данных предоставляется бесплатно.
 
-    Территориальные группы Azure обеспечивают механизм для минимизации расстояния между ресурсами в центре обработки данных, что позволяет уменьшить задержку. В этом учебнике территориальные группы не используются. Дополнительные сведения см. в разделе о [создании территориальной группы в Azure](https://msdn.microsoft.com/library/azure/gg715317.aspx).
+    Территориальные группы Azure обеспечивают механизм для минимизации расстояния между ресурсами в центре обработки данных, что позволяет уменьшить задержку. В этом учебнике территориальные группы не используются. Дополнительные сведения см. в разделе о [создании территориальной группы в Azure](/previous-versions/azure/reference/gg715317(v=azure.100)).
 7. Нажмите кнопку **Создать**.
 
     ![Новая учетная запись хранения](./media/cloud-services-dotnet-get-started/newstorage.png)
@@ -549,7 +549,7 @@ queueClient.DefaultRequestOptions.RetryPolicy = new LinearRetry(TimeSpan.FromSec
 imagesQueue = queueClient.GetQueueReference("images");
 ```
 
-Большая часть кода контроллера обычна для работы с моделью данных Entity Framework с использованием класса DbContext. Исключением является метод `Create` HttpPost, который отправляет файл и сохраняет его в хранилище больших двоичных объектов. Связыватель модели предоставляет объект [HttpPostedFileBase](https://msdn.microsoft.com/library/system.web.httppostedfilebase.aspx) для метода.
+Большая часть кода контроллера обычна для работы с моделью данных Entity Framework с использованием класса DbContext. Исключением является метод `Create` HttpPost, который отправляет файл и сохраняет его в хранилище больших двоичных объектов. Связыватель модели предоставляет объект [HttpPostedFileBase](/dotnet/api/system.web.httppostedfilebase) для метода.
 
 ```csharp
 [HttpPost]
@@ -775,7 +775,7 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 
 Для получения дополнительных сведений см. следующие ресурсы:
 
-* [Облачные службы Azure. Часть 1: введение](https://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
-* [Управление облачными службами](cloud-services-how-to-manage-portal.md)
+* [Azure Cloud Services часть 1. Общие сведения](https://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
+* [Как управлять облачными службами](cloud-services-how-to-manage-portal.md)
 * [Хранилище Azure](https://docs.microsoft.com/azure/storage/)
 * [Как выбрать поставщика облачных служб](https://azure.microsoft.com/overview/choosing-a-cloud-service-provider/)

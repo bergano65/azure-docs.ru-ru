@@ -1,17 +1,11 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 1d6daf9805737294fb5bf0e9f4e48a3c7cfbb98e
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56731843"
 documentType: LandingData
 title: Документация по API перевода текстов
 metadata:
-  title: Документация по API перевода текстов. Краткие руководства, учебные материалы и справочник по API Azure Cognitive Services | Документация Майкрософт
-  description: Узнайте, как использовать API перевода текстов для перевода текста на несколько языков.
+  title: 'Документация по API перевода текстов. Краткие руководства, учебные материалы и справочник по API Azure Cognitive Services | Документация Майкрософт'
+  description: 'Узнайте, как использовать API перевода текстов для перевода текста на несколько языков.'
   services: cognitive-services
-  author: Jann-Skotdal
+  author: v-pawal
   manager: Chris.Wendt
   ms.service: cognitive-services
   ms.tgt_pltfrm: na
@@ -20,87 +14,87 @@ metadata:
   ms.date: 02/21/2019
   ms.author: v-jansko
 abstract:
-  description: "\"Перевод текстов\" — это облачная служба машинного перевода, позволяющая переводить текст практически в реальном времени путем простого вызова REST API. В этом API используются современные технологии нейронного машинного перевода, а также статистического машинного перевода. Custom Translator — это расширение API перевода текстов, которое позволяет создавать системы нейронного перевода. Настраиваемые системы перевода можно использовать для перевода текста с помощью API перевода текстов или <a href=\"https://docs.microsoft.com/azure/cognitive-services/speech-service/\">служб распознавания речи Microsoft</a>. Список поддерживаемых языков как для нейронного, так и для статистического машинного перевода можно найти <a href=\"languages.md\">здесь</a>."
+  description: '"Перевод текстов" — это облачная служба машинного перевода, позволяющая переводить текст практически в реальном времени путем простого вызова REST API. В этом API используются современные технологии нейронного машинного перевода, а также статистического машинного перевода. Custom Translator — это расширение API перевода текстов, которое позволяет создавать системы нейронного перевода. Настраиваемые системы перевода можно использовать для перевода текста с помощью API перевода текстов или <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/">служб распознавания речи Microsoft</a>. Список поддерживаемых языков как для нейронного, так и для статистического машинного перевода можно найти <a href="languages.md">здесь</a>.'
 sections:
-- items:
-  - type: list
-    style: cards
-    className: cardsM
-    columns: 3
+  - items:
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 3
+        items:
+          - href: /azure/cognitive-services/translator/translator-info-overview
+            html: <p>Сведения об API перевода текстов</p>
+            image:
+              src: ../media/index/i_overview.svg
+            title: Что собой представляет API перевода текстов?
+          - href: /azure/cognitive-services/translator/custom-translator/overview
+            html: <p>Сведения о Custom Translator</p>
+            image:
+              src: ../media/index/i_overview.svg
+            title: Что такое Custom Translator?
+          - href: /azure/cognitive-services/translator/custom-translator/quickstart-build-deploy-custom-model
+            html: '<p>Узнайте, как приступить к работе с Custom Translator</p>'
+            image:
+              src: ../media/index/i_get-started.svg
+            title: Краткое руководство по Custom Translator
+  - title: 5-минутные руководства по началу работы
     items:
-    - href: /azure/cognitive-services/translator/translator-info-overview
-      html: <p>Сведения об API перевода текстов</p>
-      image:
-        src: ../media/index/i_overview.svg
-      title: Что собой представляет API перевода текстов?
-    - href: /azure/cognitive-services/translator/custom-translator/overview
-      html: <p>Сведения о Custom Translator</p>
-      image:
-        src: ../media/index/i_overview.svg
-      title: Что такое Custom Translator?
-    - href: /azure/cognitive-services/translator/custom-translator/quickstart-build-deploy-custom-model
-      html: <p>Узнайте, как приступить к работе с Custom Translator</p>
-      image:
-        src: ../media/index/i_get-started.svg
-      title: Краткое руководство по Custom Translator
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: 'Начало работы с API перевода текстов:'
-  - type: table
-    style: dataMatrix
-    columns:
-    - image:
-        src: media/index/logo_csharp.svg
-      title: C#
-    - image:
-        src: media/index/logo_java.svg
-      title: Java
-    - image:
-        src: media/index/logo_nodejs.svg
-      title: Node.js
-    - image:
-        src: media/index/logo_python.svg
-      title: Python
-    - image:
-        src: media/index/logo_go.svg
-      title: Go
-    rows:
-    - title: Перевод текста с одного языка на другой
-      values:
-      - href: quickstart-csharp-translate
-      - href: quickstart-java-translate
-      - href: quickstart-nodejs-translate
-      - href: quickstart-python-translate
-      - href: quickstart-go-translate
-    - title: Преобразование текста из одного скрипта в другой
-      values:
-      - href: quickstart-csharp-transliterate
-      - href: quickstart-java-transliterate
-      - href: quickstart-nodejs-transliterate
-      - href: quickstart-python-transliterate
-      - href: quickstart-go-transliterate
-    - title: Определение языка текста
-      values:
-      - href: quickstart-csharp-detect
-      - href: quickstart-java-detect
-      - href: quickstart-nodejs-detect
-      - href: quickstart-python-detect
-      - href: quickstart-go-detect
-    - title: Получение вариантов перевода и их использование
-      values:
-      - href: quickstart-csharp-dictionary
-      - href: quickstart-java-dictionary
-      - href: quickstart-nodejs-dictionary
-      - href: quickstart-python-dictionary
-      - href: quickstart-go-dictionary
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: 'Как разрабатывать приложения с использованием API перевода текстов:'
-  - type: paragraph
-    text: <a href="tutorial-wpf-translation-csharp.md">Написание приложения WPF для API перевода текстов с использованием C#</a>
-- title: Справочные материалы
-  items:
-  - type: paragraph
-    text: <p><a href="reference/v3-0-reference.md">Справочник по API</a></p>
+      - type: paragraph
+        text: 'Начало работы с API перевода текстов:'
+      - type: table
+        style: dataMatrix
+        columns:
+          - image:
+              src: media/index/logo_csharp.svg
+            title: 'C#'
+          - image:
+              src: media/index/logo_java.svg
+            title: Java
+          - image:
+              src: media/index/logo_nodejs.svg
+            title: Node.js
+          - image:
+              src: media/index/logo_python.svg
+            title: Python
+          - image:
+              src: media/index/logo_go.svg
+            title: Go
+        rows:
+          - title: Перевод текста с одного языка на другой
+            values:
+              - href: quickstart-csharp-translate
+              - href: quickstart-java-translate
+              - href: quickstart-nodejs-translate
+              - href: quickstart-python-translate
+              - href: quickstart-go-translate
+          - title: Преобразование текста из одного скрипта в другой
+            values:
+              - href: quickstart-csharp-transliterate
+              - href: quickstart-java-transliterate
+              - href: quickstart-nodejs-transliterate
+              - href: quickstart-python-transliterate
+              - href: quickstart-go-transliterate
+          - title: Определение языка текста
+            values:
+              - href: quickstart-csharp-detect
+              - href: quickstart-java-detect
+              - href: quickstart-nodejs-detect
+              - href: quickstart-python-detect
+              - href: quickstart-go-detect
+          - title: Получение вариантов перевода и их использование
+            values:
+              - href: quickstart-csharp-dictionary
+              - href: quickstart-java-dictionary
+              - href: quickstart-nodejs-dictionary
+              - href: quickstart-python-dictionary
+              - href: quickstart-go-dictionary
+  - title: Пошаговые руководства
+    items:
+      - type: paragraph
+        text: 'Как разрабатывать приложения с использованием API перевода текстов:'
+      - type: paragraph
+        text: '<a href="tutorial-wpf-translation-csharp.md">Написание приложения WPF для службы "Перевод текстов" на C#</a>'
+  - title: Справочные материалы
+    items:
+      - type: paragraph
+        text: <p><a href="reference/v3-0-reference.md">Справочник по API</a></p>

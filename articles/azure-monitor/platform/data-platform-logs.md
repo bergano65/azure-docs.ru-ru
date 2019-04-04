@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 0203/26/2019
 ms.author: bwren
-ms.openlocfilehash: 990aad4df05a9cc765baa965da2293d51a19e705
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.openlocfilehash: a7271aa3faf438b42319f8c2c297c6e39baab92e
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58852034"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904157"
 ---
 # <a name="logs-in-azure-monitor"></a>Журналы в Azure Monitor
 
@@ -46,7 +46,7 @@ ms.locfileid: "58852034"
 | Анализ | Используйте [Log Analytics](../log-query/get-started-portal.md) на портале Azure для записи [журнал запросов](../log-query/log-query-overview.md) и интерактивного анализа данных журнала с помощью мощных средств анализа обозревателя данных.<br>Используйте [консоль аналитики Application Insights](../app/analytics.md) на портале Azure для написания запросов к журналу и интерактивного анализа данных журнала из Application Insights. |
 | Визуализация | Результаты запроса к просмотру в виде таблицы или диаграммы, чтобы закрепить [мониторинга Azure](../../azure-portal/azure-portal-dashboards.md).<br>Создание [книги](../app/usage-workbooks.md) для объединения с несколькими наборами данных в виде интерактивного отчета. <br>Экспортировать результаты запроса в [Power BI](powerbi.md), чтобы можно было использовать разные типы визуализации и делиться этими результатами с пользователями за пределами Azure.<br>Экспортировать результаты запроса, чтобы [Grafana](grafana-plugin.md) повысить эффективность его панелей мониторинга и объединить с другими источниками данных.|
 | Предупреждение | Настраивать [правила оповещения журнала](alerts-log.md), которые отправляют уведомления или выполняют [автоматические действия](action-groups.md), когда результаты запроса соответствуют определенному результату.<br>Настройка [правила оповещения метрики](alerts-metric-logs.md) на определенных журналов журнала данных, извлекаемых в виде метрик. |
-| Получение | Доступ к результатов запроса журнала из командной строки с помощью [Azure CLI](/azure/ext/log-analytics/monitor/log-analytics).<br>Доступ к результатов запроса журнала из командной строки с помощью [командлеты PowerShell](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/?view=azurermps-6.8.1).<br>Доступ к результатов запроса журнала из пользовательского приложения с помощью [REST API](https://dev.loganalytics.io/). |
+| Получение | Доступ к результатов запроса журнала из командной строки с помощью [Azure CLI](/azure/ext/log-analytics/monitor/log-analytics).<br>Доступ к результатов запроса журнала из командной строки с помощью [командлеты PowerShell](https://docs.microsoft.com/powershell/module/az.operationalinsights).<br>Доступ к результатов запроса журнала из пользовательского приложения с помощью [REST API](https://dev.loganalytics.io/). |
 | экспорт. | Создание рабочего процесса для извлечения данных журнала и скопируйте его в внешнее расположение с помощью [Logic Apps](~/articles/logic-apps/index.yml). |
 
 

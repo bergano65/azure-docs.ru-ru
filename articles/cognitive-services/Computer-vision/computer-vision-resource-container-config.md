@@ -8,21 +8,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 02/08/2019
+ms.date: 04/01/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 5adb2a3c2a443e6c77c315935e0729cf8728e8cd
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: db33ce748928b954f5447a82550c6ecde2188abf
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56308797"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58877131"
 ---
 # <a name="configure-recognize-text-docker-containers"></a>Настройка контейнера Распознавания текста в Docker
 
 Среда выполнения контейнера **Распознавание текста** настраивается с помощью аргументов команды `docker run`. Контейнер поддерживает несколько обязательных и несколько необязательных параметров. Доступны несколько [примеров](#example-docker-run-commands) этой команды. Для конкретного контейнера настраиваются входные параметры выставления счетов. 
-
-Параметры контейнера применяются [иерархически](#hierarchical-settings) и настраиваются через [переменные среды](#environment-variable-settings) или [аргументы командной строки](#command-line-argument-settings) Docker.
 
 ## <a name="configuration-settings"></a>Параметры конфигурации
 
@@ -49,9 +47,9 @@ ms.locfileid: "56308797"
 
 Этот параметр можно найти в следующем месте.
 
-* Портал Azure: "Обзор" **API компьютерного зрения**, помеченный `Endpoint`
+* Портал Azure: **Компьютерное зрение** Обзор, с меткой `Endpoint`
 
-|Обязательно| ИМЯ | Тип данных | ОПИСАНИЕ |
+|Обязательно для заполнения| ИМЯ | Тип данных | ОПИСАНИЕ |
 |--|------|-----------|-------------|
 |Да| `Billing` | Строка | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0` |
 
@@ -83,10 +81,6 @@ ms.locfileid: "56308797"
 |-------|------|-----------|-------------|
 |Не разрешено| `Input` | Строка | Контейнеры API компьютерного зрения не используют этот элемент.|
 |Необязательно| `Output` | Строка | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
-
-## <a name="hierarchical-settings"></a>Иерархические параметры
-
-[!INCLUDE [Container shared configuration hierarchical settings](../../../includes/cognitive-services-containers-configuration-shared-hierarchical-settings.md)]
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
@@ -120,7 +114,7 @@ ms.locfileid: "56308797"
   ApiKey={BILLING_KEY} 
   ```
 
-### <a name="logging-example-with-command-line-arguments"></a>Пример настройки ведения журнала через аргументы командной строки
+### <a name="logging-example"></a>Пример журнала 
 
   ```
   docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
@@ -128,20 +122,9 @@ ms.locfileid: "56308797"
   Eula=accept \
   Billing={BILLING_ENDPOINT_URI} \
   ApiKey={BILLING_KEY} \
-  Logging:Console:LogLevel=Information
+  Logging:Console:LogLevel:Default=Information
   ```
 
-### <a name="logging-example-with-environment-variable"></a>Пример настройки ведения журнала с помощью переменной среды
-
-  ```
-  SET Logging:Console:LogLevel=Information
-  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
-  containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text \
-  Eula=accept \
-  Billing={BILLING_ENDPOINT_URI} \
-  ApiKey={BILLING_KEY}
-  ```
-
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Изучите статью об [установке и запуске контейнеров](computer-vision-how-to-install-containers.md).

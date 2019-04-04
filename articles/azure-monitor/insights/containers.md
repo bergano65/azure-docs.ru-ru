@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/28/2019
 ms.author: magoedte
-ms.openlocfilehash: 5eec77084e104f7bd541405e2ef18e5a178e869c
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: fbc9e0f8e7dfda86b5c53e28aa3aa3b733bb9600
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/03/2019
-ms.locfileid: "58877794"
+ms.locfileid: "58905761"
 ---
 # <a name="container-monitoring-solution-in-azure-monitor"></a>Решение для мониторинга контейнеров в Azure Monitor
 
@@ -192,7 +192,7 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
 
 * [установить агент Log Analytics для Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) непосредственно на каждом узле OpenShift;  
 * [включить расширение виртуальной машины Log Analytics](../../azure-monitor/learn/quick-collect-azurevm.md) на каждом узле OpenShift, размещенном в Azure;  
-* установить агент Log Analytics как набор daemon-set для OpenShift.  
+* Установка агента Log Analytics как OpenShift набора daemon-set  
 
 В этом разделе описаны действия, которые необходимо выполнить для установки агента Log Analytics как набора daemon-set для OpenShift.  
 

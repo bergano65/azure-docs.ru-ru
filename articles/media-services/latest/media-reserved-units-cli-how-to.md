@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 03/21/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 3f0d3c5748afaac2544232fc1ff84316d9eb7347
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.openlocfilehash: 0dcfa4e7cd792f61d1620a57330f87c5c86e6c9f
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351071"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58915702"
 ---
 # <a name="scaling-media-processing"></a>Масштабирование при обработке мультимедиа
 
@@ -47,7 +47,7 @@ ms.locfileid: "58351071"
 > [!NOTE]
 > Для заданий анализа аудио и видео, которые активируют Службы мультимедиа версии 3 или Индексатор видео, настоятельно рекомендуется подготовить к работе вашу учетную запись с помощью 10 единиц MRU S3. Если вам требуется более 10 единиц MRU S3, отправьте запрос в службу поддержки с помощью [портала Azure](https://portal.azure.com/).
 >
-> В настоящее время нельзя использовать портал Azure для управления ресурсами других v3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref), или одного из поддерживаемых [пакеты SDK](developers-guide.md).
+> В настоящее время нельзя использовать портал Azure для управления ресурсами других v3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](developers-guide.md).
 
 ## <a name="prerequisites"></a>Технические условия 
 
@@ -67,7 +67,7 @@ az account set mru -n amsaccount -g amsResourceGroup --count 10 --type S3
 
 ## <a name="billing"></a>Выставление счетов
 
-Плата взимается за число MRU, их тип и период времени, в течение которого MRU инициируются в вашей учетной записи. Плата взимается независимо от запуска любого задания. Подробное описание см. в разделе часто задаваемых вопросов на странице [цен на службы мультимедиа](https://azure.microsoft.com/pricing/details/media-services/).   
+Плата взымается в зависимости от количества минут, подготовленных зарезервированных единиц мультимедиа в вашей учетной записи. Это происходит независимо от ли любой заданий, работающих в вашей учетной записи. Подробное описание см. в разделе часто задаваемых вопросов на странице [цен на службы мультимедиа](https://azure.microsoft.com/pricing/details/media-services/).   
 
 ## <a name="next-step"></a>Дальнейшие действия
 
@@ -76,4 +76,4 @@ az account set mru -n amsaccount -g amsResourceGroup --count 10 --type S3
 ## <a name="see-also"></a>См. также
 
 * [Квоты и ограничения](limits-quotas-constraints.md)
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)
+* [Инфраструктура CLI Azure](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)

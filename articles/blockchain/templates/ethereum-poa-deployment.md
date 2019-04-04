@@ -10,14 +10,16 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: brendal
 manager: vamelech
-ms.openlocfilehash: 50d24fd41a0a933d9cfec37477773463a918ca0a
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 5a693fef2f77471f799bec46f149ff19d6edca80
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57549074"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905925"
 ---
 # <a name="ethereum-proof-of-authority-consortium"></a>Консорциум PoA в Ethereum
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="overview"></a>Обзор
 [Это решение](https://portal.azure.com/?pub_source=email&pub_status=success#create/microsoft-azure-blockchain.azure-blockchain-ethereumethereum-poa-consortium) позволяет упростить развертывание и настройку сети Ethereum для консорциума PoA с несколькими участниками, а также управление ею при минимальных знаниях об Azure и Ethereum.
@@ -218,7 +220,7 @@ Authentication type (Тип проверки подлинности)|Метод 
 Группа ресурсов|Группа ресурсов, куда будет развертываться сеть консорциума.||Нет данных
 Расположение|Регион Azure для группы ресурсов.||Нет данных
 
-Ниже приведен пример развертывания: ![колонка "Основы"](./media/ethereum-poa-deployment/basic-blade.png)
+Ниже приведен пример развертывания: ![колонка "Основные"](./media/ethereum-poa-deployment/basic-blade.png)
 
 #### <a name="deployment-regions"></a>Регионы развертывания
 
@@ -235,7 +237,7 @@ Authentication type (Тип проверки подлинности)|Метод 
   Четвертый регион|Четвертый регион развертывания сети консорциума (отображается только в том случае, если для количества регионов указано значение 4)|Все разрешенные регионы Azure|Нет данных
   Пятый регион|Пятый регион развертывания сети консорциума (отображается только в том случае, если для количества регионов указано значение 5)|Все разрешенные регионы Azure|Нет данных
 
-Ниже приведен пример развертывания: ![развертывание регионов](./media/ethereum-poa-deployment/deployment-regions.png)
+Ниже приведен пример развертывания: ![области развертывания](./media/ethereum-poa-deployment/deployment-regions.png)
 
 #### <a name="network-size-and-performance"></a>Размер и производительность сети
 
@@ -250,7 +252,7 @@ Authentication type (Тип проверки подлинности)|Метод 
   Validator node storage performance (Производительность хранилища узлов проверяющих элементов управления)|Тип управляемых дисков, на которых развернуты узлы проверяющих элементов управления.|SSD: ценовая категория "Стандартный" или "Премиум"|SSD (цен. категория "Стандартный")
   Validator node virtual machine size (Размер виртуальной машины узла проверяющего элемента управления)|Размер виртуальной машины, используемой для узлов проверяющих элементов управления.|Standard A (Стандартный А), Standard D (Стандартный D), Standard D-v2 (Стандартный D-v2), Standard F series (Стандартный серии F), Standard DS (Стандартный DS) и Standard FS (Стандартный FS)|Standard D1 V2 (Стандартный D1 v2)
 
-[Сведения о ценах на хранилище](https://azure.microsoft.com/pricing/details/managed-disks/)
+[Сведения о ценах — хранилище](https://azure.microsoft.com/pricing/details/managed-disks/)
 
 [Сведения о ценах на виртуальную машину](https://azure.microsoft.com/pricing/details/virtual-machines/windows/)
 
@@ -262,7 +264,7 @@ Authentication type (Тип проверки подлинности)|Метод 
   D2_v3|SSD (цен. категория "Стандартный")|средняя|средняя|средняя
   F16s|SSD (цен. категория "Премиум")|высокий|высокий|низкая
 
-Ниже приведен пример развертывания: ![размер и производительность сети](./media/ethereum-poa-deployment/network-size-and-performance.png)
+Ниже приведен пример развертывания: ![размера и производительности сети](./media/ethereum-poa-deployment/network-size-and-performance.png)
 
 #### <a name="ethereum-settings"></a>Параметры Ethereum
 
@@ -281,7 +283,7 @@ Admin Ethereum Address (Адрес администратора Ethereum)|Адр
 Период возобновления блока (с)|Частота, при которой будут созданы пустые блоки, когда в сети нет транзакций. Более высокая частота будет способствовать более высокой скорости завершения с увеличенной стоимостью на хранение.|Любое числовое|15
 Transaction Permission Contract (Контракт разрешения транзакций) ("Расширенные параметры" = "Включить")|Байт-код контракта разрешения транзакций. Ограничивает развертывание смарт-контрактов и выполнение в список разрешенных Ethereum учетных записей.|Contract bytecode (Байт-код контракта)|Нет данных
 
-Ниже приведен пример развертывания: ![параметры Ethereum](./media/ethereum-poa-deployment/ethereum-settings.png)
+Ниже приведен пример развертывания: ![ethereum параметры](./media/ethereum-poa-deployment/ethereum-settings.png)
 
 #### <a name="monitoring"></a>Мониторинг
 
@@ -298,7 +300,7 @@ Transaction Permission Contract (Контракт разрешения тран�
 Первичный ключ существующая log analytics (подключение к существующим журналам Azure Monitor = присоединиться к существующей)|Первичный ключ, используемый для подключения в существующий экземпляр журналы Azure Monitor||Нет данных
 
 
-Ниже приведен пример развертывания: ![Azure Monitor](./media/ethereum-poa-deployment/azure-monitor.png)
+Ниже приведен пример развертывания: ![azure monitor](./media/ethereum-poa-deployment/azure-monitor.png)
 
 #### <a name="summary"></a>Сводка
 
@@ -395,7 +397,7 @@ $MyGatewayName = $splitValue[8]
 
 ## $otherGatewayResourceid tells me what the subscription and VNet GatewayName are
 $OtherGatewayName = $OtherGatewayResourceId.Split('/')[8]
-$Subscription=Select-AzureRmSubscription -SubscriptionId $MySubscriptionid
+$Subscription=Select-AzSubscription -SubscriptionId $MySubscriptionid
 
 ## create a PSVirtualNetworkGateway instance for the gateway I want to connect to
 $OtherGateway=New-Object Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
@@ -405,10 +407,10 @@ $OtherGateway.GatewayType = "Vpn"
 $OtherGateway.VpnType = "RouteBased"
 
 ## get a PSVirtualNetworkGateway instance for my gateway
-$MyGateway = Get-AzureRmVirtualNetworkGateway -Name $MyGatewayName -ResourceGroupName $MyResourceGroup
+$MyGateway = Get-AzVirtualNetworkGateway -Name $MyGatewayName -ResourceGroupName $MyResourceGroup
 
 ## create the connection
-New-AzureRmVirtualNetworkGatewayConnection -Name $ConnectionName -ResourceGroupName $MyResourceGroup -VirtualNetworkGateway1 $MyGateway -VirtualNetworkGateway2 $OtherGateway -Location $MyGateway.Location -ConnectionType Vnet2Vnet -SharedKey $SharedKey -EnableBgp $True
+New-AzVirtualNetworkGatewayConnection -Name $ConnectionName -ResourceGroupName $MyResourceGroup -VirtualNetworkGateway1 $MyGateway -VirtualNetworkGateway2 $OtherGateway -Location $MyGateway.Location -ConnectionType Vnet2Vnet -SharedKey $SharedKey -EnableBgp $True
 ```
 
 ### <a name="service-monitoring"></a>Мониторинг службы
