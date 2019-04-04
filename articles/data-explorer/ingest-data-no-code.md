@@ -1,21 +1,21 @@
 ---
-title: Руководство. Прием данных журнала диагностики и действий в Azure Data Explorer без необходимости писать код
+title: Руководство по Прием данных журнала диагностики и действий в Azure Data Explorer без необходимости писать код
 description: В этом руководстве описано, как принимать данные в Azure Data Explorer без необходимости писать код, а также как создавать к ним запросы.
 services: data-explorer
 author: orspod
-ms.author: v-orspod
+ms.author: orspodek
 ms.reviewer: jasonh
 ms.service: data-explorer
 ms.topic: tutorial
 ms.date: 3/14/2019
-ms.openlocfilehash: 422813c1ddb77aa11195d3021484744839c4e3bf
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 5d6b595b442b645f57454e317e6535645f643598
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57994336"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58756845"
 ---
-# <a name="tutorial-ingest-data-in-azure-data-explorer-without-one-line-of-code"></a>Руководство. Прием данных в Azure Data Explorer без необходимости писать код
+# <a name="tutorial-ingest-data-in-azure-data-explorer-without-one-line-of-code"></a>Руководство по Прием данных в Azure Data Explorer без необходимости писать код
 
 Из этого руководства вы узнаете, как принимать данные из журналов диагностики и действий в кластер Azure Data Explorer без необходимости писать код. Этот простой метод приема позволяет вам оперативно начать отправку запросов в Azure Data Explorer для анализа данных.
 

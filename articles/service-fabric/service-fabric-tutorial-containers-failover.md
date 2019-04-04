@@ -4,7 +4,7 @@ description: В этом руководстве вы узнаете, как вы
 services: service-fabric
 documentationcenter: ''
 author: suhuruli
-manager: timlt
+manager: chackdan
 editor: suhuruli
 tags: servicefabric
 keywords: Docker, контейнеры, микрослужбы, Service Fabric, Azure
@@ -16,14 +16,14 @@ ms.workload: na
 ms.date: 09/12/2017
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: f5ac1c53a97fc2a3749582c5f48b967e3ce0c2c4
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0a3edac7638d8b63086482cdecf8d74bde426c35
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58104273"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58665633"
 ---
-# <a name="tutorial-demonstrate-fail-over-and-scaling-of-container-services-with-service-fabric"></a>Руководство. Демонстрация отработки отказа и масштабирования служб контейнеров в Service Fabric
+# <a name="tutorial-demonstrate-fail-over-and-scaling-of-container-services-with-service-fabric"></a>Руководство по Демонстрация отработки отказа и масштабирования служб контейнеров в Service Fabric
 
 Это руководство представляет собой первую часть цикла. В нем вы узнаете, как обрабатывается отработка отказа в приложениях-контейнерах Service Fabric. Кроме того, вы научитесь масштабировать контейнеры. Изучив это руководство, вы:
 

@@ -3,17 +3,17 @@ title: Краткое руководство. Прием данных с пом�
 description: В этом кратком руководстве описано, как принимать (загружать) данные в Azure Data Explorer с помощью пакета SDK .NET Standard.
 services: data-explorer
 author: orspod
-ms.author: v-orspod
+ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 11/18/2018
-ms.openlocfilehash: 0197ae8077a00111e005e5686efcd2597b995bcb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 327ab46b01e15b77e675e052dbfe8b3453b566a6
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58007036"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58757122"
 ---
 # <a name="quickstart-ingest-data-using-the-azure-data-explorer-net-standard-sdk-preview"></a>Краткое руководство. Прием данных с помощью пакета SDK .NET Standard для Azure Data Explorer (предварительная версия)
 

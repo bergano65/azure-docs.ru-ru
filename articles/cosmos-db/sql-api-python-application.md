@@ -8,12 +8,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 02/23/2017
 ms.author: sngun
-ms.openlocfilehash: 2830772dd69ac94c2b8373936665b9445f9f5f10
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 24426a4249934af1d85f43552617cda7c1d7e172
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57431212"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58883893"
 ---
 # <a name="build-a-python-flask-web-application-using-azure-cosmos-db"></a>Создание веб-приложения Python Flask с использованием Azure Cosmos DB
 
@@ -417,7 +417,7 @@ def vote():
     ![Результаты публикации приложений Bottle, Flask и Django в службе приложений](./media/sql-api-python-application/python-published-app-services.png)
 
     > [!Tip] 
-    > Если веб-страница не появляется или появляется сообщение "Невозможно отобразить эту страницу ввиду того, что произошла внутренняя ошибка сервера", откройте файл web.config в Kudo и в разделе system.webServer добавьте ` <httpErrors errorMode="Detailed"></httpErrors>`, а затем обновите страницу. После этого в браузере будут выведены подробные сведения об ошибке. 
+    > Если веб-страница не появляется или появляется сообщение "Невозможно отобразить эту страницу ввиду того, что произошла внутренняя ошибка сервера", откройте файл web.config в Kudo и в разделе system.webServer добавьте `<httpErrors errorMode="Detailed"></httpErrors>`, а затем обновите страницу. После этого в браузере будут выведены подробные сведения об ошибке. 
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 Если это первое приложение Python, которое вы запускаете на компьютере, убедитесь, что следующие папки (или эквивалентные расположения установки) включены в переменную PATH:

@@ -3,17 +3,17 @@ title: Краткое руководство. Визуализация данн�
 description: В этом кратком руководстве описано, как использовать один из трех способов визуализации данных в Power BI — использование соединителя Power BI для Azure Data Explorer.
 services: data-explorer
 author: orspod
-ms.author: v-orspod
+ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 11/14/2018
-ms.openlocfilehash: de920a9addf9d2053a3c101c6b1f9a2c1a2feb27
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ca3e68f3ef039f86957e47e22df48922498c292f
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58106752"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58754734"
 ---
 # <a name="quickstart-visualize-data-using-the-azure-data-explorer-connector-for-power-bi"></a>Краткое руководство. Визуализация данных с помощью соединителя Azure Data Explorer для Power BI
 

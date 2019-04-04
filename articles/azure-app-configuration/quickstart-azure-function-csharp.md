@@ -14,12 +14,12 @@ ms.tgt_pltfrm: Azure Functions
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: 22ec05660682f000d8bc3b9780732d5adf9b5c24
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 9b0c48b3a3fb3a1b4e4fbe94a368297823a86778
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58226714"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58579586"
 ---
 # <a name="quickstart-create-an-azure-function-with-app-configuration"></a>Краткое руководство. Создание функции Azure с использованием службы "Конфигурация приложений"
 
@@ -45,13 +45,19 @@ ms.locfileid: "58226714"
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу конфигураций приложений
 
-1. Откройте файл *Function1.cs* и добавьте ссылку на поставщик конфигурации .NET Core для службы "Конфигурация приложений".
+1. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами NuGet**. На вкладке **Обзор** найдите и добавьте в проект следующие пакеты NuGet. Если вы не можете их найти, установите флажок **Включить предварительные выпуски**.
+
+    ```
+    Microsoft.Extensions.Configuration.AzureAppConfiguration 1.0.0 preview or later
+    ```
+
+2. Откройте файл *Function1.cs* и добавьте ссылку на поставщик конфигурации .NET Core для службы "Конфигурация приложений".
 
     ```csharp
     using Microsoft.Extensions.Configuration.AzureAppConfiguration;
     ```
 
-2. Измените метод `Run`, чтобы использовать службу "Конфигурация приложений", путем вызова `builder.AddAzureAppConfiguration()`.
+3. Измените метод `Run`, чтобы использовать службу "Конфигурация приложений", путем вызова `builder.AddAzureAppConfiguration()`.
 
     ```csharp
     public static async Task<IActionResult> Run(
