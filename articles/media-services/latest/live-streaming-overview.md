@@ -11,20 +11,22 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 03/25/2019
+ms.date: 04/03/2019
 ms.author: juliako
-ms.openlocfilehash: ab8d4fb9b46573d58fd93fc5121a4fc1918cc69d
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: ad8e84d84665b20bfff53cf09473bc8bce9760d8
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58879392"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916042"
 ---
 # <a name="live-streaming-with-azure-media-services-v3"></a>Потоковая трансляция в Службах мультимедиа Azure версии 3
 
 Службы мультимедиа Azure дают возможность предоставлять клиентам события прямой трансляции в облаке Azure. Для потоковой передачи событий прямой трансляции с помощью Служб мультимедиа вам потребуются:  
 
 - камера для записи события;<br/>Чтобы установить оборудование, ознакомьтесь с записью блога [Simple and portable event video gear setup]( https://link.medium.com/KNTtiN6IeT) (Настройка простого портативного оборудования для сьемки).
+
+    Если у вас нет доступа к камере, средства, такие как [Telestream Wirecast](http://www.telestream.net/wirecast/overview.htm) можно использовать создания динамического веб-канала из видеофайла.
 - Динамический видеокодировщик, преобразующий сигналы с камеры (или другого устройства, например ноутбука) в исходный поток, который передается в Службы мультимедиа. этот поток может содержать сигналы, связанные с рекламой, например метки SCTE-35;<br/>Список рекомендуемых кодировщиков потоковой трансляции см. в [этой статье](recommended-on-premises-live-encoders.md). Ознакомьтесь также с записью блога [Live streaming production with OBS](https://link.medium.com/ttuwHpaJeT) (Потоковая трансляция с помощью OBS).
 - компоненты Служб мультимедиа, которые дают возможность принимать, просматривать, упаковывать, записывать, шифровать и транслировать события в реальном времени непосредственно клиентам или в сеть доставки содержимого (CDN) для дальнейшего распространения.
 

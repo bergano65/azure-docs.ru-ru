@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: 81401d95b9c40f16a6e593d61b79f5c2d647c0c5
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 38d8bdfcba48d2080b434ebec192b41f3663ae6a
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58518836"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58895213"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
 
@@ -80,7 +80,7 @@ static void Main(string[] args)
 
 | Свойство | Параметр разработки |
 | ------------- | ------------- |
-| `Tracing.ConsoleLevel` | `TraceLevel.Verbose` — чтобы увеличить выходные данные журнала. |
+| `Tracing.ConsoleLevel` | `TraceLevel.Verbose` Чтобы максимально увеличить выходные данные журнала. |
 | `Queues.MaxPollingInterval`  | Низкое значение для обеспечения немедленного запуска методов очереди.  |
 | `Singleton.ListenerLockPeriod` | 15 секунд для ускорения последовательной разработки. |
 
@@ -130,7 +130,7 @@ static void Main()
 
 В версии 3. *x*, ограничение числа подключений по умолчанию использует бесконечный подключений. Если по некоторым причинам вам нужно изменить это ограничение, можно использовать [ `MaxConnectionsPerServer` ](/dotnet/api/system.net.http.winhttphandler.maxconnectionsperserver) свойство [ `WinHttpHandler` ](/dotnet/api/system.net.http.winhttphandler) класса.
 
-В версии 2. *x*, контролировать количество одновременных подключений к узлу с помощью [ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit) API. 2. *x*, следует увеличить это значение по умолчанию, равное 2 перед запуском узла веб-заданий.
+В версии 2. *x*, контролировать количество одновременных подключений к узлу с помощью [ServicePointManager.DefaultConnectionLimit](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit#System_Net_ServicePointManager_DefaultConnectionLimit) API. 2. *x*, следует увеличить это значение по умолчанию, равное 2 перед запуском узла веб-заданий.
 
 Все исходящие HTTP-запросы, сделанные из функции с помощью `HttpClient` проходить через `ServicePointManager`. После достижения значения, заданного `DefaultConnectionLimit`, `ServicePointManager` запускает постановка в очередь запросов перед их отправкой. Предположим, что для ограничения `DefaultConnectionLimit` установлено значение 2 и код включает 1000 HTTP-запросов. Первоначально в ОС разрешено только два запроса. Остальные 998 поставлены в очередь, пока не появится место для них. Это значит, ваши `HttpClient` может истечь, поскольку были внесены запроса, но запрос никогда не был отправлен в ОС на конечный сервер. Таким образом, вы можете столкнуться с поведением, которое не имеет смысла: локальному клиенту `HttpClient` потребуется 10 секунд, чтобы выполнить запрос, но служба будет возвращать каждый запрос за 200 мс. 
 
@@ -369,7 +369,7 @@ class Program
 Можно настроить следующие привязки:
 
 * [Триггер Azure CosmosDB](#azure-cosmosdb-trigger-configuration-version-3x)
-* [Триггер концентратора событий](#event-hubs-trigger-configuration-version-3x)
+* [Триггер Центров событий](#event-hubs-trigger-configuration-version-3x)
 * Триггер хранилища очередей
 * [Привязки SendGrid](#sendgrid-binding-configuration-version-3x)
 * [Триггер служебной шины](#service-bus-trigger-configuration-version-3x)
@@ -849,7 +849,7 @@ public static void RemoveItem([QueueTrigger("remove-item")] string message)
 
 Версия 3. *x* пакета SDK использует фильтры, встроенные в .NET Core. Класс `LogCategories` позволяет определить категории для конкретных функций, триггеров или пользователей. Он также определяет фильтры для состояний конкретного узла, например `Startup` и `Results`. Это позволяет точно настроить выходные данные журнала. Если в определенных категориях не найдено совпадение, фильтр возвращается к значению `Default` при принятии решения о фильтрации сообщения.
 
-Добавьте в `LogCategories` следующий оператор:
+`LogCategories` требует следующего оператор using:
 
 ```cs
 using Microsoft.Azure.WebJobs.Logging; 
@@ -1010,9 +1010,9 @@ config.LoggerFactory = new LoggerFactory()
 
 В этой статье предоставлены фрагменты кода, показывающие, как для обработки обычных сценариев для работы с пакетом SDK веб-заданий. Полные примеры см. на странице с примерами [azure-webjobs-sdk-samples](https://github.com/Azure/azure-webjobs-sdk-samples).
 
-[ExecutionContext]: https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions/Extensions/Core/ExecutionContext.cs
-[TelemetryClient]: /dotnet/api/microsoft.applicationinsights.telemetryclient
-[ConfigureServices]: /dotnet/api/microsoft.extensions.hosting.hostinghostbuilderextensions.configureservices
-[ITelemetryInitializer]: /dotnet/api/microsoft.applicationinsights.extensibility.itelemetryinitializer
-[TelemetryConfiguration]: /dotnet/api/microsoft.applicationinsights.extensibility.telemetryconfiguration
+[«ExecutionContext»]: https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions/Extensions/Core/ExecutionContext.cs
+[«TelemetryClient»]: /dotnet/api/microsoft.applicationinsights.telemetryclient
+[«ConfigureServices»]: /dotnet/api/microsoft.extensions.hosting.hostinghostbuilderextensions.configureservices
+[«ITelemetryInitializer»]: /dotnet/api/microsoft.applicationinsights.extensibility.itelemetryinitializer
+[«Конфигурацией TelemetryConfiguration»]: /dotnet/api/microsoft.applicationinsights.extensibility.telemetryconfiguration
 [«JobHostConfiguration»]: https://github.com/Azure/azure-webjobs-sdk/blob/v2.x/src/Microsoft.Azure.WebJobs.Host/JobHostConfiguration.cs

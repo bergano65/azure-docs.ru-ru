@@ -8,18 +8,16 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/18/2019
 ms.custom: seodec18
-ms.openlocfilehash: 43947413f061ec8b366392b676e848ebf5e6484e
-ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
+ms.openlocfilehash: 994ccf292a4215624d4222fe13ca9ac25c863368
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57570119"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58895872"
 ---
-# <a name="authenticate-stream-analytics-to-azure-data-lake-storage-gen1-using-managed-identities-preview"></a>Аутентификация заданий Azure Stream Analytics с помощью управляемых удостоверений для вывода данных в Azure Data Lake Storage 1-го поколения (предварительная версия)
+# <a name="authenticate-stream-analytics-to-azure-data-lake-storage-gen1-using-managed-identities"></a>Проверка подлинности Stream Analytics для Gen1 хранилища Озера данных Azure с помощью управляемых удостоверений
 
 Azure Stream Analytics поддерживает аутентификацию с помощью управляемого удостоверения для вывода данных в Azure Data Lake Storage (ADLS) 1-го поколения. Удостоверение — это зарегистрированное в Azure Active Directory управляемое приложение, представляющее данное задание Stream Analytics и используемое для аутентификации в целевом ресурсе. Управляемые удостоверения устраняют ограничения пользовательских методов аутентификации, такие как необходимость повторной аутентификации из-за изменения пароля или после истечения срока действия пользовательских токенов (каждые 90 дней). Кроме того, управляемые удостоверения позволяют автоматизировать развертывания заданий Stream Analytics, которые выводят данные в Azure Data Lake Storage 1-го поколения.
-
-Ознакомьтесь с записью блога о [восьми новых возможностях Azure Stream Analytics](https://azure.microsoft.com/blog/eight-new-features-in-azure-stream-analytics/), чтобы зарегистрироваться для использования этой предварительной версии и получить подробные сведения о новых возможностях.
 
 В этой статье показано три способа включения управляемого удостоверения для задания Azure Stream Analytics, которое выводит данные в Azure Data Lake Storage 1-го поколения: с помощью портала Azure (развертывания шаблона Azure Resource Manager) и средств Azure Stream Analytics для Visual Studio.
 
@@ -27,11 +25,11 @@ Azure Stream Analytics поддерживает аутентификацию с 
 
 ## <a name="azure-portal"></a>Портал Azure
 
-1. Начните с создания задания Stream Analytics или открытия имеющегося задания на портале Azure. В строке меню, расположенной в левой части экрана, выберите **Managed Identity (preview)** (Управляемое удостоверение (предварительная версия)) в разделе **Настройка**.
+1. Начните с создания задания Stream Analytics или открытия имеющегося задания на портале Azure. В строке меню, расположенный в левой части экрана, выберите **управляемое удостоверение** каталоге **Настройка**.
 
-   ![Настройка управляемого удостоверения Stream Analytics предварительной версии](./media/stream-analytics-managed-identities-adls/stream-analytics-managed-identity-preview.png)
+   ![Настройка Stream Analytics управляемого удостоверения](./media/stream-analytics-managed-identities-adls/stream-analytics-managed-identity-preview.png)
 
-2. В окне, которое отобразится справа, выберите **Use System-assigned Managed Identity (preview)** (Использовать назначаемое системой управляемое удостоверение (предварительная версия)). Нажмите кнопку **Сохранить** субъекту-службе для идентификации и задание Stream Analytics в Azure Active Directory. Жизненным циклом нового удостоверения будет управлять Azure. При удалении задания Stream Analytics Azure автоматически удаляет связанное удостоверение (то есть субъект-службу).
+2. Выберите **назначенный системой использование управляемого удостоверения** из окна, которое отображается в правой части. Нажмите кнопку **Сохранить** субъекту-службе для идентификации и задание Stream Analytics в Azure Active Directory. Жизненным циклом нового удостоверения будет управлять Azure. При удалении задания Stream Analytics Azure автоматически удаляет связанное удостоверение (то есть субъект-службу).
 
    Если конфигурация сохраняется, идентификатор объекта (OID) субъекта-службы отображается в качестве идентификатора субъекта, как показано ниже:
 
@@ -39,7 +37,7 @@ Azure Stream Analytics поддерживает аутентификацию с 
  
    Субъект-служба имеет то же имя, что и задание Stream Analytics. Например, если имя задания — **MyASAJob**, имя созданного субъекта-службы будет также **MyASAJob**.
 
-3. В окне свойств выходных данных в приемнике выходных данных ADLS 1-го поколения щелкните раскрывающийся список режима аутентификации, а затем выберите **Managed Identity (preview)** (Управляемое удостоверение (предварительная версия)).
+3. В окне свойств выходных данных в приемник выходных данных ADLS Gen1, нажмите кнопку раскрывающегося списка и выберите режим проверки подлинности ** управляемое удостоверение **.
 
 4. Укажите остальные свойства. Дополнительные сведения о создании выходных данных для ADLS см. в статье [Потоковая передача данных из большого двоичного объекта службы хранилища Azure в Data Lake Storage 1-го поколения с помощью Azure Stream Analytics](../data-lake-store/data-lake-store-stream-analytics.md). Закончив, нажмите кнопку **Сохранить**.
 
@@ -131,7 +129,7 @@ Azure Stream Analytics поддерживает аутентификацию с 
               }
    ```
   
-   **Пример ответа задания**
+   **Пример задания ответа**
 
    ```json
    {
@@ -183,6 +181,6 @@ Azure Stream Analytics поддерживает аутентификацию с 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Создание выходных данных Data Lake Store с помощью Stream Analytics](../data-lake-store/data-lake-store-stream-analytics.md)
+* [Создание выходных данных Data lake Store с помощью stream analytics](../data-lake-store/data-lake-store-stream-analytics.md)
 * [Локальное тестирование запросов Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools-local-run.md)
-* [Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)](stream-analytics-live-data-local-testing.md) 
+* [Реальные данные теста локально с помощью инструментов Azure Stream Analytics для Visual Studio](stream-analytics-live-data-local-testing.md) 

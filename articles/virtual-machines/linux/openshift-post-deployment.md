@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 02/02/2019
 ms.author: haroldw
-ms.openlocfilehash: bc7a49aa143400387afcd59d5b9307d82a028486
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: cf3a3ca1f751ce9eed5ee5c5397c1d9c864a1dd6
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58098667"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58903681"
 ---
 # <a name="post-deployment-tasks"></a>Задачи, выполняемые после развертывания
 
@@ -184,7 +184,7 @@ sudo systemctl restart origin-master
 Существует три способа добавить агент Log Analytics в OpenShift:
 - установить агент Log Analytics для Linux непосредственно на каждом узле OpenShift;
 - Включение расширения виртуальной Машины Azure Monitor на каждом узле OpenShift
-- установить агент Log Analytics как набор daemon-set для OpenShift.
+- Установка агента Log Analytics как OpenShift набора daemon-set
 
 Полные инструкции можно найти здесь: https://docs.microsoft.com/azure/log-analytics/log-analytics-containers#configure-a-log-analytics-agent-for-red-hat-openshift.
 
@@ -263,7 +263,7 @@ ansible-playbook /usr/share/ansible/openshift-ansible/playbooks/byo/openshift-cl
 -e openshift_hosted_logging_storage_kind=dynamic
 ```
 
-**Платформа контейнеров OpenShift 3.9 и более поздних версий**
+**Платформа контейнеров OpenShift 3.9 и более поздние версии**
 
 ```bash
 ansible-playbook /usr/share/ansible/openshift-ansible/playbooks/openshift-metrics/config.yml \
@@ -287,7 +287,7 @@ ansible-playbook ~/openshift-ansible/playbooks/byo/openshift-cluster/openshift-l
 -e openshift_hosted_logging_storage_kind=dynamic
 ```
 
-**OKD 3.9 и более поздних версий**
+**OKD 3.9 и более поздние версии**
 
 ```bash
 ansible-playbook ~/openshift-ansible/playbooks/byo/openshift-cluster/openshift-metrics.yml \
@@ -314,7 +314,7 @@ ansible-playbook /usr/share/ansible/openshift-ansible/playbooks/byo/openshift-cl
 -e openshift_logging_install_logging=True
 ```
 
-**Платформа контейнеров OpenShift 3.9 и более поздних версий**
+**Платформа контейнеров OpenShift 3.9 и более поздние версии**
 
 ```bash
 ansible-playbook /usr/share/ansible/openshift-ansible/playbooks/openshift-metrics/config.yml \
@@ -334,7 +334,7 @@ ansible-playbook ~/openshift-ansible/playbooks/byo/openshift-cluster/openshift-l
 -e openshift_logging_install_logging=True
 ```
 
-**OKD 3.9 и более поздних версий**
+**OKD 3.9 и более поздние версии**
 
 ```bash
 ansible-playbook ~/openshift-ansible/playbooks/byo/openshift-cluster/openshift-metrics.yml \
@@ -351,5 +351,5 @@ Open Service Broker для Azure (OSBA) позволяет подготавли�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Overview](https://docs.openshift.com/container-platform) (Обзор)
-- [Начало работы с OKD](https://docs.okd.io/latest)
+- [Приступая к работе с помощью платформы контейнеров OpenShift](https://docs.openshift.com/container-platform)
+- [Приступая к работе с OKD](https://docs.okd.io/latest)

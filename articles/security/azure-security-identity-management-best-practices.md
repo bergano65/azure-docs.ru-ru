@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/17/2018
 ms.author: barclayn
-ms.openlocfilehash: bf5143c3c0c75bc37f6981c6d995339e41baa4c4
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: f872c61ad0597d2307cd244668fdfc258f7a45cb
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56112111"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58895692"
 ---
 # <a name="azure-identity-management-and-access-control-security-best-practices"></a>Рекомендации по обеспечению безопасности за счет управления удостоверениями и контроля доступа Azure
 
@@ -116,7 +116,7 @@ ms.locfileid: "56112111"
 **Вариант 1**. [Включение Многофакторной идентификации путем изменения состояния пользователя](../active-directory/authentication/howto-mfa-userstates.md).   
 **Преимущество**. Это традиционный метод применения двухфакторной проверки подлинности. Он работает в [службе многофакторной идентификации Azure в облаке и на сервере многофакторной идентификации Azure](../active-directory/authentication/concept-mfa-whichversion.md). Использование этого метода требует, чтобы пользователи выполняли двухфакторную проверку подлинности при каждом входе в учетную запись, и переопределяет политики условного доступа.
 
-**Вариант 2**. [Включение Многофакторной идентификации с политикой условного доступа](../active-directory/authentication/howto-mfa-getstarted.md#enable-multi-factor-authentication-with-conditional-access).   
+**Вариант 2**. [Включение Многофакторной идентификации с политикой условного доступа](../active-directory/authentication/howto-mfa-getstarted.md).
 **Преимущество**. Этот вариант позволяет запрашивать двухфакторную проверку подлинности при определенных условиях с помощью [условного доступа](../active-directory/active-directory-conditional-access-azure-portal.md). Это может быть вход пользователей из разных расположений, с недоверенных устройств или приложений, которые считаются опасными. Определение конкретных условий, в которых следует требовать двухфакторную проверку подлинности, позволяет избежать постоянных обращений к пользователю.
 
 Это наиболее гибкий способ включить двухфакторную проверку подлинности для пользователей. Включение политики условного доступа работает только для Azure MFA в облаке и является компонентом уровня "Премиум" в Azure AD. Дополнительные сведения об этом методе можно найти в статье [Развертывание облачной службы многофакторной идентификации Azure](../active-directory/authentication/howto-mfa-getstarted.md).
@@ -183,21 +183,21 @@ ms.locfileid: "56112111"
 
 [Обеспечение отдельных учетных записей пользователей и перенаправление почты для глобальных учетных записей администратора](../active-directory/users-groups-roles/directory-admin-roles-secure.md)  
 
-[Проверка того, что пароли административных учетных записей недавно изменялись](../active-directory/users-groups-roles/directory-admin-roles-secure.md#ensure-the-passwords-of-administrative-accounts-have-recently-changed)  
+[Убедитесь, что пароли административных учетных записей был недавно изменен](../active-directory/users-groups-roles/directory-admin-roles-secure.md#ensure-the-passwords-of-administrative-accounts-have-recently-changed)  
 
 [Включение синхронизации хэша паролей](../active-directory/users-groups-roles/directory-admin-roles-secure.md#turn-on-password-hash-synchronization)  
 
-[Настройка принудительного прохождения многофакторной идентификации для пользователей во всех привилегированных ролях, а также пользователей важных учетных записей](../active-directory/users-groups-roles/directory-admin-roles-secure.md#require-multi-factor-authentication-mfa-for-users-in-all-privileged-roles-as-well-as-exposed-users)  
+[Требовать многофакторную проверку подлинности для пользователей во всех привилегированных ролях, а также раскрытых пользователей](../active-directory/users-groups-roles/directory-admin-roles-secure.md#require-multi-factor-authentication-mfa-for-users-in-all-privileged-roles-as-well-as-exposed-users)  
 
 [Получение оценки безопасности Office 365 (если используется Office 365)](../active-directory/users-groups-roles/directory-admin-roles-secure.md#obtain-your-office-365-secure-score-if-using-office-365)  
 
-[Ознакомление с руководством по обеспечению безопасности и соответствия Office 365 (при использовании Office 365)](../active-directory/users-groups-roles/directory-admin-roles-secure.md#review-the-office-365-security-and-compliance-guidance-if-using-office-365)  
+[Ознакомление с руководством по обеспечению безопасности и соответствия Office 365 (при использовании Office 365)](../active-directory/users-groups-roles/directory-admin-roles-secure.md#review-the-office-365-security-and-compliance-guidance-if-using-office-365)  
 
-[Настройка мониторинга активности в Office 365 (при использовании Office 365)](../active-directory/users-groups-roles/directory-admin-roles-secure.md#configure-office-365-activity-monitoring-if-using-office-365)  
+[Настройка мониторинга активности в Office 365 (при использовании Office 365)](../active-directory/users-groups-roles/directory-admin-roles-secure.md#configure-office-365-activity-monitoring-if-using-office-365)  
 
 [Определение владельцев плана реагирования на инциденты или чрезвычайные ситуации](../active-directory/users-groups-roles/directory-admin-roles-secure.md#establish-incidentemergency-response-plan-owners)  
 
-[Защита локальных привилегированных учетных записей](../active-directory/users-groups-roles/directory-admin-roles-secure.md#turn-on-password-hash-synchronization)
+[Безопасные локальных привилегированных учетных записей](../active-directory/users-groups-roles/directory-admin-roles-secure.md#turn-on-password-hash-synchronization)
 
 Если не уделять должное внимание защите привилегированного доступа, может оказаться, что привилегированные роли назначаются слишком большому количеству пользователей, которые становятся все более уязвимыми для атак. Злоумышленники, в том числе киберпреступники, часто совершают атаки на учетные записи администраторов и другие объекты привилегированного доступа, чтобы получить доступ к конфиденциальным данным и системам путем кражи учетных данных.
 

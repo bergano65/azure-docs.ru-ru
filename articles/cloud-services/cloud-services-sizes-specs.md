@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 07/18/2017
 ms.author: jeconnoc
-ms.openlocfilehash: a2af7ffde336016ae89a1ab03d753ed11b901e05
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.openlocfilehash: 5c4ad5c200bd2e49f3c472d82ad030c6a8f2478d
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55818708"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918269"
 ---
 # <a name="sizes-for-cloud-services"></a>Размеры для облачных служб
 В этом разделе описаны доступные размеры и параметры для экземпляров ролей облачных служб (веб-ролей и рабочих ролей). Здесь также предоставлены рекомендации по развертыванию, которые нужно учитывать при планировании использования этих ресурсов. Каждому размеру присвоен идентификатор, который вы поместите в [файл определения службы](cloud-services-model-and-package.md#csdef). Цены за каждый размер доступны на [этой](https://azure.microsoft.com/pricing/details/cloud-services/) странице.
@@ -59,16 +59,16 @@ ms.locfileid: "55818708"
 
 | Семейство SKU | ACU/число ядер |
 | --- | --- |
-| [ExtraSmall](#a-series) |50 |
-| [Small-ExtraLarge](#a-series) |100 |
-| [A5–7](#a-series) |100 |
-| [A8-A11](#a-series) |225* |
+| [Очень малый](#a-series) |50 |
+| [Малый ExtraLarge](#a-series) |100 |
+| [A5 – 7](#a-series) |100 |
+| [A8 – A11](#a-series) |225* |
 | [A v2](#av2-series) |100 |
 | [D](#d-series) |160 |
-| [D v2](#dv2-series) |160–190* |
+| [D версии 2](#dv2-series) |160–190* |
 | [D v3](#dv3-series) |160–190* |
 | [E v3](#ev3-series) |160–190* |
-| [G](#g-series) |180–240* |
+| [G.](#g-series) |180–240* |
 | [H](#h-series) |290–300* |
 
 Единицы ACU, помеченные * , основаны на технологии Intel® Turbo для увеличения частоты ЦП и значительного повышения производительности. Степень увеличения производительности может различаться в зависимости от размера виртуальной машины, рабочей нагрузки и других рабочих нагрузок, выполняющихся на том же узле.
@@ -213,12 +213,12 @@ Cведения и рекомендации по использованию эт
 >
 
 ## <a name="get-a-list-of-sizes"></a>Получение списка размеров
-Чтобы получить список размеров, можно использовать PowerShell или REST API. Интерфейс REST API описан [здесь](https://msdn.microsoft.com/library/azure/dn469422.aspx). Ниже представлена команда PowerShell, которая позволяет вывести список всех доступных размеров для облачных служб. 
+Чтобы получить список размеров, можно использовать PowerShell или REST API. Интерфейс REST API описан [здесь](/previous-versions/azure/reference/dn469422(v=azure.100)). Ниже представлена команда PowerShell, которая позволяет вывести список всех доступных размеров для облачных служб. 
 
 ```powershell
 Get-AzureRoleSize | where SupportedByWebWorkerRoles -eq $true | select InstanceSize, RoleSizeLabel
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [лимитах, квотах и ограничениях подписки и службы Azure](../azure-subscription-service-limits.md).
 * Узнайте больше об использовании [размеров виртуальных машин, оптимизированных для высокопроизводительных вычислений,](../virtual-machines/windows/sizes-hpc.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) для рабочих нагрузок HPC.

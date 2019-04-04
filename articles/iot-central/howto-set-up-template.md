@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 1306b97ce7fcf2cd429be31bc99d022de53805d6
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: 602c7385b252daa7db22bd47f43afec3ad072263
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259866"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904208"
 ---
 # <a name="set-up-a-device-template-new-ui-design"></a>Настройка шаблона устройства (новый дизайн пользовательского интерфейса)
 
@@ -197,8 +197,8 @@ ms.locfileid: "58259866"
    ![Форма настройки расположения с подробными сведениями о расположении](./media/howto-set-up-template/locationcloudproperty2.png)
 
    Для добавления расположения существует два поддерживаемых формата:
-   - **расположение в виде адреса**;
-   - **расположение в виде координат**.
+   - **Расположение в виде адреса**
+   - **Расположение, что координаты**
 
 4. Щелкните **Сохранить**. Оператор может обновить значение расположения в **Device Explorer**.
 
@@ -280,4 +280,6 @@ ms.locfileid: "58259866"
 Вы узнали, как настраивать шаблон устройства в приложении Azure IoT Central, а значит вы готовы к следующему шагу:
 
 > [!div class="nextstepaction"]
-> [Создание версии шаблона нового устройства](howto-version-devicetemplate.md)
+> [Создать новую версию шаблона устройства](howto-version-devicetemplate.md)
+> [подключение устройства MXChip IoT DevKit к приложению Azure IoT Central](howto-connect-devkit.md)
+> [подключения универсального клиентскому приложению в Azure Приложения центра Интернета вещей (Node.js)](howto-connect-nodejs.md)

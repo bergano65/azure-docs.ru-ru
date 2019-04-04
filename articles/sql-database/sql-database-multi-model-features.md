@@ -12,12 +12,12 @@ ms.author: jovanpop
 ms.reviewer: ''
 manager: craigg
 ms.date: 12/17/2018
-ms.openlocfilehash: f3bb6fa93a96adcd2c1995b6874aa0b36b2ce320
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 4351017cc1848e29cca038f82fd96548ae3492e0
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57884529"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58892472"
 ---
 # <a name="multi-model-capabilities-of-azure-sql-database"></a>Возможности при использовании нескольких моделей в службе "База данных SQL Azure"
 
@@ -29,7 +29,7 @@ ms.locfileid: "57884529"
 Вам следует рассмотреть возможность использования множества моделей возможности базы данных SQL Azure в следующих случаях:
 - У вас есть некоторые сведения или структур, которые являются лучше подходит для модели NoSQL и вы не хотите использовать отдельную базу данных NoSQL.
 - Большую часть данных подходит для реляционной модели, и вам нужно моделировать некоторые части данных в стиле NoSQL.
-- Вы хотите использовать широкие возможности языка Transact-SQL для запроса и анализа реляционных и данных NoSQL и интегрировать его с помощью различных средств и прикладные, можно использовать язык SQL.
+- Вы хотите использовать широкие возможности языка Transact-SQL для запроса и анализа реляционных и данных NoSQL и интегрировать его с помощью различных средств и приложений, использующих язык SQL.
 - Вы хотите применить функции базы данных, таких как [технологии in-memory](sql-database-in-memory.md) повысить производительность вашей аналитической или обработка вашего strucutres данных NoSQL, использовать [репликации транзакций](sql-database-managed-instance-transactional-replication.md) или [реплики для чтения](sql-database-read-scale-out.md) создать копию данных в другом месте и разгрузки некоторые аналитических рабочих нагрузок базы данных-источника.
 
 ## <a name="overview"></a>Обзор
@@ -142,5 +142,5 @@ CREATE TABLE Collection (
 
 * [Обработка Graph](https://docs.microsoft.com/sql/relational-databases/graphs/sql-graph-overview)
 * [Данные JSON](https://docs.microsoft.com/sql/relational-databases/json/json-data-sql-server)
-* [Пространственные данные (SQL Server)](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-data-sql-server)
-* [XML-данные (SQL Server)](https://docs.microsoft.com/sql/relational-databases/xml/xml-data-sql-server)
+* [Пространственная поддержка](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-data-sql-server)
+* [XML-данных](https://docs.microsoft.com/sql/relational-databases/xml/xml-data-sql-server)

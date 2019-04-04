@@ -1,7 +1,7 @@
 ---
 title: Экспорт и удаление данных
 titleSuffix: Azure Cognitive Services
-description: Интеллектуальная служба распознавания речи (LUIS) сохраняет клиентское содержимое для своей работы. При этом пользователи LUIS могут полностью управлять просмотром, экспортом и удалением своих данных. Это можно сделать с помощью веб-портала LUIS или программных API LUIS.
+description: Удаление данных клиента для обеспечения конфиденциальности и соответствия требованиям.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -9,47 +9,85 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 01/23/2019
+ms.date: 04/02/2019
 ms.author: diberry
-ms.openlocfilehash: add526d8c09d2aa557ddd645e9016cb9c3b225a3
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: eb125133138c6de173fdeb90024a9e5d961a929d
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56328203"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58895162"
 ---
 # <a name="export-and-delete-your-customer-data-in-language-understanding-luis-in-cognitive-services"></a>Экспорт и удаление данных клиентов в Интеллектуальной службе распознавания речи (LUIS) в Cognitive Services
 
+Удаление данных клиента для обеспечения конфиденциальности и соответствия требованиям. 
+
 ## <a name="summary-of-customer-data-request-features"></a>Сводка о возможностях запроса данных клиента
-Интеллектуальная служба распознавания речи (LUIS) сохраняет клиентское содержимое для своей работы. При этом пользователи LUIS могут полностью управлять просмотром, экспортом и удалением своих данных. Это можно сделать с помощью [веб-портала](luis-reference-regions.md) LUIS или [программных API-интерфейсов LUIS](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f).
+Интеллектуальная служба распознавания речи (LUIS) сохраняет клиентское содержимое для своей работы. При этом пользователи LUIS могут полностью управлять просмотром, экспортом и удалением своих данных. Это можно сделать с помощью веб-LUIS [портала](luis-reference-regions.md) или [LUIS разработки (также известный как программные) API-интерфейсы](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f).
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
 
 Клиентское содержимое хранится в зашифрованном виде в региональном хранилище Microsoft Azure и включает в себя следующее:
 
 - Содержимое учетных записей пользователей, собранное при регистрации.
-- Учебные данные, необходимые для построения моделей (т. е. намерения и сущности).
-- Запросы пользователей, записанные в журнал во время выполнения для помощи в улучшении пользовательских моделей.
+- Обучающие данные, необходимые для создания моделей
+- Журнал запросов пользователя, используемых [активное Обучение](luis-concept-review-endpoint-utterances.md) в целях улучшения модели
   - Пользователи могут отключить ведение журнала запросов, добавив `&log=false` к запросу. Дополнительные сведения см. [здесь](troubleshooting.md#how-can-i-disable-the-logging-of-utterances).
 
 ## <a name="deleting-customer-data"></a>Удаление данных клиента
-Пользователи LUIS могут полностью контролировать удаление любого пользовательского содержимого либо через веб-портал LUIS, либо с помощью программных API-интерфейсов LUIS. В следующей таблице представлены ссылки, помогающие освоить оба способа:
+LUIS пользователи имеют полный доступ для удаления любой пользователь, содержимого, с помощью LUIS веб-портала или API-интерфейсы LUIS разработки (также известен как программным способом). В следующей таблице представлены ссылки, помогающие освоить оба способа:
 
-| | **Учетная запись пользователя** | **Приложения** | **Фразы** | **Запросы конечных пользователей** |
+| | **Учетная запись пользователя** | **Приложение** | **Пример Utterance(s)** | **Запросы конечных пользователей** |
 | --- | --- | --- | --- | --- |
-| **Портал** | [Ссылка](luis-how-to-account-settings.md) | [Ссылка](luis-how-to-start-new-app.md#delete-app) | [Ссылка](luis-how-to-start-new-app.md#delete-app) | [Ссылка](luis-how-to-start-new-app.md#delete-app) |
+| **Microsoft Azure** | [Ссылка](luis-concept-data-storage.md#delete-an-account) | [Ссылка](luis-how-to-start-new-app.md#delete-app) | [Ссылка](luis-concept-data-storage.md#utterances-in-an-intent) | [Фразы продолжительностью активное обучение](luis-how-to-review-endpoint-utterances.md#disable-active-learning)<br>[Журнал фразы](luis-concept-data-storage.md#disable-logging-utterances) |
 | **Интерфейсы API** | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c4c) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c39) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0b) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/58b6f32139e2bb139ce823c9) |
 
 
 ## <a name="exporting-customer-data"></a>Экспорт данных клиента
-Пользователи LUIS имеют полный доступ к просмотру данных на портале, но их необходимо экспортировать с помощью программных API-интерфейсов LUIS. В следующей таблице представлены ссылки, которые помогают экспортировать данные через программные API-интерфейсы LUIS:
+LUIS пользователи имеют полный доступ для просмотра данных на портале, однако он должен быть экспортирован через API LUIS разработки (также известный как программный). В следующей таблице приведены ссылки, помогая Экспорт данных с помощью LUIS разработки (также известный как программный) API-интерфейсы:
 
-| | **Учетная запись пользователя** | **Приложения** | **Фразы** | **Запросы конечных пользователей** |
+| | **Учетная запись пользователя** | **Приложение** | **Utterance(s)** | **Запросы конечных пользователей** |
 | --- | --- | --- | --- | --- |
 | **Интерфейсы API** | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c48) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0a) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36) |
 
+## <a name="location-of-active-learning"></a>Расположение активное обучение
 
-## <a name="next-steps"></a>Дополнительная информация
+Чтобы включить [активное Обучение](luis-how-to-review-endpoint-utterances.md#enable-active-learning), зарегистрированные фразы пользователей, полученных в опубликованных конечных точек LUIS, хранятся в следующих географических расположений Azure:
+
+* [Европа](#europe)
+* [Австралия](#australia)
+* [США](#united-states)
+
+За исключением активное обучение данных (см. ниже), следует за LUIS [по использованию хранилища данных для региональных служб](http://azuredatacentermap.azurewebsites.net/). 
+
+### <a name="europe"></a>Европа
+
+[Eu.luis.ai](https://eu.luis.ai) портала и Европе разработки (также известный как программные API-интерфейсы) размещаются в географическом регионе Azure в Европе. Портал eu.luis.ai и Европе разработки (также известный как программные API-интерфейсы) поддерживает развертывание конечных точек для следующих географических расположений Azure:
+
+* Европа
+* Франция
+* Великобритания
+
+При развертывании на этих географических расположений Azure, фразы, полученных от конечной точки, от конечных пользователей приложения будут храниться в регионе Azure по Европе для активное обучение. Вы можете отключить активное обучение, см. в разделе [отключить активное Обучение](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Для управления хранимых фразы, см. в разделе [удалить utterance](luis-how-to-review-endpoint-utterances.md#delete-utterance). 
+
+### <a name="australia"></a>Австралия
+
+[Au.luis.ai](https://au.luis.ai) портала и Австралии разработки (также известный как программные API-интерфейсы) размещаются в географическом регионе Azure в Австралии. Портал au.luis.ai и Австралии разработки (также известный как программные API-интерфейсы) поддерживает развертывание конечных точек для следующих географических расположений Azure:
+
+* Австралия
+
+При развертывании на этих географических расположений Azure, фразы, полученных от конечной точки, от конечных пользователей приложения будут храниться в регионе Azure в Австралии для активное обучение. Вы можете отключить активное обучение, см. в разделе [отключить активное Обучение](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Для управления хранимых фразы, см. в разделе [удалить utterance](luis-how-to-review-endpoint-utterances.md#delete-utterance). 
+
+### <a name="united-states"></a>США
+
+[Luis.ai](https://www.luis.ai) портала и United States разработки (также известный как программные API-интерфейсы) размещаются в географическом регионе США Azure. Портал luis.ai и United States разработки (также известный как программные API-интерфейсы) поддерживает развертывание конечных точек для следующих географических расположений Azure:
+
+* Географических расположений Azure, не поддерживаемые Европа или создания регионах Австралии
+
+При развертывании на этих географических расположений Azure, фразы, полученных от конечной точки, от конечных пользователей приложения будут храниться в географическом регионе США Azure для активное обучение. Вы можете отключить активное обучение, см. в разделе [отключить активное Обучение](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Для управления хранимых фразы, см. в разделе [удалить utterance](luis-how-to-review-endpoint-utterances.md#delete-utterance). 
+
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Справочник по регионам LUIS](./luis-reference-regions.md)
+> [Справочник по области LUIS](./luis-reference-regions.md)

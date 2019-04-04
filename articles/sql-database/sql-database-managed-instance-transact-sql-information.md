@@ -12,12 +12,12 @@ ms.author: jovanpop
 ms.reviewer: carlrab, bonova
 manager: craigg
 ms.date: 03/13/2019
-ms.openlocfilehash: b044a7c2b3122fcbce44ae2e45198f57f6a87260
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.openlocfilehash: b633c6a8ccbf9f29b93314bb9391215031d523eb
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58541287"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58893067"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server
 
@@ -31,7 +31,7 @@ ms.locfileid: "58541287"
 - [Безопасность](#security), включая различия в [аудите](#auditing), [сертификатах](#certificates), [учетных данных](#credential), [поставщиках служб шифрования](#cryptographic-providers), [именах входа и пользователях](#logins--users), [ключе службы и главном ключе службы](#service-key-and-service-master-key).
 - [Конфигурация](#configuration), включая различия в [расширении буферного пула](#buffer-pool-extension), [параметрах сортировки](#collation), [уровнях совместимости](#compatibility-levels), [зеркальном отображении базы данных](#database-mirroring), [параметрах базы данных](#database-options), [агенте SQL Server](#sql-server-agent), [параметрах таблицы](#tables).
 - [Функциональные возможности](#functionalities), включая [BULK INSERT или OPENROWSET](#bulk-insert--openrowset), [среды CLR](#clr), [DBCC](#dbcc), [распределенные транзакции](#distributed-transactions), [расширенные события](#extended-events), [внешние библиотеки](#external-libraries), [файловый поток и FileTable](#filestream-and-filetable), [полнотекстовый семантический поиск](#full-text-semantic-search), [связанные службы](#linked-servers), [PolyBase](#polybase), [репликацию](#replication), [инструкцию RESTORE](#restore-statement), [Service Broker](#service-broker), [хранимые процедуры, функции и триггеры](#stored-procedures-functions-triggers).
-- [Функции с другим поведением в управляемых экземплярах](#Changes).
+- [Функции с другим поведением в управляемых экземплярах](#Changes)
 - [Временные ограничения и известные проблемы](#Issues)
 
 ## <a name="availability"></a>Доступность
@@ -40,10 +40,10 @@ ms.locfileid: "58541287"
 
 [Высокий уровень доступности](sql-database-high-availability.md) встроен в Управляемый экземпляр, и пользователи не могут им управлять. Следующие инструкции не поддерживаются:
 
-- [CREATE ENDPOINT … FOR DATABASE_MIRRORING](https://docs.microsoft.com/sql/t-sql/statements/create-endpoint-transact-sql);
-- [CREATE AVAILABILITY GROUP](https://docs.microsoft.com/sql/t-sql/statements/create-availability-group-transact-sql);
-- [ALTER AVAILABILITY GROUP](https://docs.microsoft.com/sql/t-sql/statements/alter-availability-group-transact-sql);
-- [DROP AVAILABILITY GROUP](https://docs.microsoft.com/sql/t-sql/statements/drop-availability-group-transact-sql);
+- [СОЗДАНИЕ КОНЕЧНОЙ ТОЧКИ... ЕСЛИ УКАЗАН АРГУМЕНТ DATABASE_MIRRORING](https://docs.microsoft.com/sql/t-sql/statements/create-endpoint-transact-sql)
+- [СОЗДАНИЕ ГРУППЫ ДОСТУПНОСТИ](https://docs.microsoft.com/sql/t-sql/statements/create-availability-group-transact-sql)
+- [ALTER AVAILABILITY GROUP](https://docs.microsoft.com/sql/t-sql/statements/alter-availability-group-transact-sql)
+- [DROP AVAILABILITY GROUP](https://docs.microsoft.com/sql/t-sql/statements/drop-availability-group-transact-sql)
 - предложение [SET HADR](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-hadr) инструкции [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql).
 
 ### <a name="backup"></a>Azure Backup
@@ -52,10 +52,10 @@ ms.locfileid: "58541287"
 
 - С помощью Управляемого экземпляра вы можете выполнить резервное копирование базы данных экземпляра только в учетную запись хранения BLOB-объектов Azure.
   - Поддерживается только `BACKUP TO URL`.
-  - `FILE`, `TAPE` и устройства резервного копирования не поддерживаются.  
+  - `FILE`, `TAPE`, и устройства резервного копирования не поддерживаются.  
 - Большинство общих параметров `WITH` поддерживаются:
-  - `COPY_ONLY` является обязательным параметром.
-  - `FILE_SNAPSHOT` не поддерживается.
+  - `COPY_ONLY` является обязательным
+  - `FILE_SNAPSHOT` Не поддерживается
   - Параметры ленты: `REWIND`, `NOREWIND`, `UNLOAD` и `NOUNLOAD` не поддерживаются.
   - Параметры журналов: `NORECOVERY`, `STANDBY` и `NO_TRUNCATE` не поддерживаются.
 
@@ -94,16 +94,16 @@ ms.locfileid: "58541287"
 
 Дополнительные сведения можно найти в разделе   
 
-- [CREATE SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql)  
-- [ALTER SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
+- [СОЗДАНИЕ АУДИТА СЕРВЕРА](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql)  
+- [ALTER SERVER AUDIT](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
 - [Аудит](https://docs.microsoft.com/sql/relational-databases/security/auditing/sql-server-audit-database-engine)
 
 ### <a name="certificates"></a>Сертификаты
 
 Управляемый экземпляр не может получить доступ к общим папкам и папкам Windows, поэтому действуют следующие ограничения.
 
-- Операции `CREATE FROM`/`BACKUP TO` с файлом не поддерживаются для сертификатов.
-- Операции `CREATE`/`BACKUP` с сертификатом из `FILE`/`ASSEMBLY` не поддерживаются. Невозможно использовать файлы закрытых ключей.  
+- `CREATE FROM`/`BACKUP TO` файл не поддерживается для сертификатов
+- `CREATE`/`BACKUP` сертификат от `FILE` / `ASSEMBLY` не поддерживается. Невозможно использовать файлы закрытых ключей.  
 
 См. статьи [Инструкция CREATE CERTIFICATE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-certificate-transact-sql) и [BACKUP CERTIFICATE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/backup-certificate-transact-sql).  
   
@@ -156,7 +156,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
   - Ограничения администратора Active Directory в отношении управляемого экземпляра:
 
-    - Учетную запись администратора Azure AD, используемую для настройки управляемого экземпляра, невозможно применять для создания субъекта сервера (имени для входа) Azure AD в управляемом экземпляре. Необходимо создать первый субъект сервера (имя для входа) Azure AD с помощью учетной записи SQL Server — `sysadmin`. Это временное ограничение, которое будет устранено, как только субъекты сервера (имена для входа) Azure AD станут общедоступными. При попытке использования учетной записи администратора Azure AD для создания имени для входа отобразится следующая ошибка: `Msg 15247, Level 16, State 1, Line 1 User does not have permission to perform this action.`
+    - Учетную запись администратора Azure AD, используемую для настройки управляемого экземпляра, невозможно применять для создания субъекта сервера (имени для входа) Azure AD в управляемом экземпляре. Необходимо создать первый субъект сервера (имя для входа) Azure AD с помощью учетной записи SQL Server — `sysadmin`. Это временное ограничение, которое будет устранено, как только субъекты сервера (имена для входа) Azure AD станут общедоступными. Если вы попытаетесь использовать учетную запись администратора Azure AD, чтобы создать имя входа, вы увидите следующую ошибку: `Msg 15247, Level 16, State 1, Line 1 User does not have permission to perform this action.`
       - В настоящее время первое имя для входа Azure AD, создаваемое в базе данных master, должно быть создано с помощью стандартной учетной записи SQL Server (а не учетной записи Azure AD). Это должно быть имя для входа `sysadmin`, которое нужно создать с помощью синтаксиса [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) FROM EXTERNAL PROVIDER. После выпуска общедоступной версии это ограничение будет снято и начальное имя для входа Azure AD сможет создавать администратор Active Directory для управляемого экземпляра.
     - Платформа DACFx (экспорт и импорт), используемая с SQL Server Management Studio (SSMS) или SqlPackage, не поддерживается для имен для входа Azure AD. Это ограничение будет устранено, как только субъекты сервера (имена для входа) Azure AD станут общедоступными.
     - Использование субъектов сервера (имен для входа) Azure AD с SSMS:
@@ -208,7 +208,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Зеркальное отображение базы данных не поддерживается.
 
-- Параметры `ALTER DATABASE SET PARTNER` и `SET WITNESS` не поддерживаются.
+- `ALTER DATABASE SET PARTNER` и `SET WITNESS` параметры не поддерживаются.
 - `CREATE ENDPOINT … FOR DATABASE_MIRRORING` не поддерживается.
 
 Дополнительные сведения см. в статьях [Зеркальное отображение базы данных ALTER DATABASE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-database-mirroring) и [CREATE ENDPOINT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-endpoint-transact-sql).
@@ -226,13 +226,13 @@ WITH PRIVATE KEY (<private_key_options>)
 Ниже приведены ограничения `CREATE DATABASE`:
 
 - Невозможно определить файлы и файловые группы.  
-- Параметр `CONTAINMENT` не поддерживается.  
-- Параметры `WITH` не поддерживаются.  
+- `CONTAINMENT` параметр не поддерживается.  
+- `WITH`параметры не поддерживаются.  
    > [!TIP]
    > Чтобы обойти эту проблему, используйте `ALTER DATABASE` после `CREATE DATABASE`, чтобы задать параметры базы данных для добавления файлов или задать вложение.  
 
-- Параметр `FOR ATTACH` не поддерживается.
-- Параметр `AS SNAPSHOT OF` не поддерживается.
+- `FOR ATTACH` параметр не поддерживается
+- `AS SNAPSHOT OF` параметр не поддерживается
 
 Дополнительные сведения см. в статье [CREATE DATABASE (SQL Server Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-database-sql-server-transact-sql).
 
@@ -324,8 +324,8 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Управляемый экземпляр не может получить доступ к общим папкам и папкам Windows, поэтому файлы необходимо импортировать из хранилища BLOB-объектов Azure.
 
-- Во время импорта файлов из хранилища BLOB-объектов Azure `DATASOURCE` является обязательным в команде `BULK INSERT`. См. статью [BULK INSERT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql).
-- При считывании содержимого файла из хранилища BLOB-объектов Azure `DATASOURCE` является обязательным в функции `OPENROWSET`. См. статью [OPENROWSET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/openrowset-transact-sql).
+- `DATASOURCE` требуется в `BULK INSERT` команды во время импорта файлов из хранилища BLOB-объектов Azure. См. статью [BULK INSERT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql).
+- `DATASOURCE` требуется в `OPENROWSET` работать при считывании содержимого файла из хранилища BLOB-объектов Azure. См. статью [OPENROWSET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/openrowset-transact-sql).
 
 ### <a name="clr"></a>Среда CLR
 
@@ -388,8 +388,8 @@ WITH PRIVATE KEY (<private_key_options>)
 
 - Транзакции записи между несколькими экземплярами не поддерживаются.
 - `sp_dropserver` поддерживается для удаления связанного сервера. См. статью [sp_dropserver (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-dropserver-transact-sql).
-- Функцию `OPENROWSET` можно использовать для выполнения запросов только в экземплярах SQL Server (управляемом, локальном или на виртуальных машинах). См. статью [OPENROWSET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/openrowset-transact-sql).
-- Функцию `OPENDATASOURCE` можно использовать для выполнения запросов только в экземплярах SQL Server (управляемом, локальном или на виртуальных машинах). В качестве поставщика поддерживаются только значения `SQLNCLI`, `SQLNCLI11` и `SQLOLEDB`. Например, `SELECT * FROM OPENDATASOURCE('SQLNCLI', '...').AdventureWorks2012.HumanResources.Employee`. См. статью [OPENDATASOURCE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/opendatasource-transact-sql).
+- `OPENROWSET` функция может использоваться для выполнения запросов только на экземплярах SQL Server (управляемом, в локальной среде или на виртуальных машинах). См. статью [OPENROWSET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/openrowset-transact-sql).
+- `OPENDATASOURCE` функция может использоваться для выполнения запросов только на экземплярах SQL Server (управляемом, в локальной среде или на виртуальных машинах). В качестве поставщика поддерживаются только значения `SQLNCLI`, `SQLNCLI11` и `SQLOLEDB`. Например, `SELECT * FROM OPENDATASOURCE('SQLNCLI', '...').AdventureWorks2012.HumanResources.Employee`. См. статью [OPENDATASOURCE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/opendatasource-transact-sql).
 
 ### <a name="polybase"></a>PolyBase
 
@@ -411,26 +411,26 @@ WITH PRIVATE KEY (<private_key_options>)
   - `RESTORE LOG ONLY`
   - `RESTORE REWINDONLY ONLY`
 - Источник  
-  - `FROM URL` (хранилище BLOB-объектов) — единственный поддерживаемый параметр.
-  - `FROM DISK`/`TAPE` или устройство резервного копирования не поддерживаются.
+  - `FROM URL` (Хранилище больших двоичных объектов) — единственный поддерживаемый параметр.
+  - `FROM DISK`/`TAPE`или устройство резервного копирования не поддерживается.
   - Резервные наборы данных не поддерживаются.
-- Параметры `WITH` не поддерживаются (`DIFFERENTIAL`, `STATS` и т. д.).
-- `ASYNC RESTORE` — восстановление продолжится даже в случае разрыва соединения с клиентом. При разрыве соединения можно проверить представление `sys.dm_operation_status` о состоянии операции восстановления (также как и для СОЗДАНИЯ и УДАЛЕНИЯ базы данных). См. статью [sys.dm_operation_status (база данных SQL Azure)](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database).  
+- `WITH` параметры не поддерживаются (No `DIFFERENTIAL`, `STATS`и т. д.)
+- `ASYNC RESTORE` — Восстановление продолжится даже в случае разрыва соединения с клиентом. При разрыве соединения можно проверить представление `sys.dm_operation_status` о состоянии операции восстановления (также как и для СОЗДАНИЯ и УДАЛЕНИЯ базы данных). См. статью [sys.dm_operation_status (база данных SQL Azure)](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database).  
 
 Следующие параметры базы данных задаются или переопределяются и не могут быть потом изменены:  
 
-- `NEW_BROKER` (если брокер не включен в BAK-файле).  
-- `ENABLE_BROKER` (если брокер не включен в BAK-файле).  
-- `AUTO_CLOSE=OFF` (если база данных в BAK-файле содержит `AUTO_CLOSE=ON`).  
-- `RECOVERY FULL` (если база данных в BAK-файле содержит модель восстановления `SIMPLE` или `BULK_LOGGED`).
+- `NEW_BROKER` (если брокер не включен в BAK-файле)  
+- `ENABLE_BROKER` (если брокер не включен в BAK-файле)  
+- `AUTO_CLOSE=OFF` (если базы данных в BAK-файле `AUTO_CLOSE=ON`)  
+- `RECOVERY FULL` (если базы данных в BAK-файле `SIMPLE` или `BULK_LOGGED` режиме восстановления)
 - Добавляется оптимизированная для операций в памяти файловая группа, которой присваивается имя XTP, если она не содержится в исходном BAK-файле.  
 - Любая имеющаяся файловая группа, оптимизированная для операций в памяти, переименовывается на XTP.  
-- Параметры `SINGLE_USER` и `RESTRICTED_USER` преобразуются в `MULTI_USER`.
+- `SINGLE_USER` и `RESTRICTED_USER` параметры преобразуются в `MULTI_USER`
 
 Ограничения:  
 
-- Файлы `.BAK`, содержащие несколько резервных наборов данных, невозможно восстановить.
-- Файлы `.BAK`, содержащие несколько файлов журнала, невозможно восстановить.
+- `.BAK` Невозможно восстановить файлы, содержащие несколько резервных наборов данных.
+- `.BAK` Невозможно восстановить файлы, содержащие несколько файлов журнала.
 - Восстановление завершится со сбоем, если BAK-файл содержит данные `FILESTREAM`.
 - Резервные копии, содержащие базы данных с активными выполняющимися в памяти объектами, сейчас восстановить невозможно.  
 - Резервные копии, содержащие базы данных, в которых когда-либо хранились выполняющиеся в памяти объекты, сейчас восстановить невозможно.
@@ -442,9 +442,9 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Компонент Service Broker между экземплярами не поддерживается:
 
-- `sys.routes` — обязательный компонент: выберите адрес из sys.routes. Адрес должен быть ЛОКАЛЬНЫМ для каждого маршрута. См. статью [sys.routes (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-routes-transact-sql).
-- `CREATE ROUTE`. `CREATE ROUTE` можно использовать только с локальным (`LOCAL`) адресом `ADDRESS`. См. статью [CREATE ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-route-transact-sql).
-- `ALTER ROUTE`. Невозможно выполнить `ALTER ROUTE` со значением `ADDRESS`, отличным от `LOCAL`. См. статью [ALTER ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-route-transact-sql).  
+- `sys.routes` — Обязательный компонент: выберите адрес из sys.routes. Адрес должен быть ЛОКАЛЬНЫМ для каждого маршрута. См. статью [sys.routes (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-routes-transact-sql).
+- `CREATE ROUTE` — нельзя использовать `CREATE ROUTE` с `ADDRESS` отличное от `LOCAL`. См. статью [CREATE ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-route-transact-sql).
+- `ALTER ROUTE` не удается `ALTER ROUTE` с `ADDRESS` отличное от `LOCAL`. См. статью [ALTER ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-route-transact-sql).  
 
 ### <a name="stored-procedures-functions-triggers"></a>Хранимые процедуры, функции и триггеры
 
@@ -457,21 +457,21 @@ WITH PRIVATE KEY (<private_key_options>)
   - `remote proc trans`
 - `sp_execute_external_scripts` не поддерживается. См. раздел [Примеры](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql#examples).
 - `xp_cmdshell` не поддерживается. См. раздел [xp_cmdshell (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql).
-- `Extended stored procedures` не поддерживаются, включая `sp_addextendedproc`  и `sp_dropextendedproc`. См. статью [Основные расширенные хранимые процедуры (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/general-extended-stored-procedures-transact-sql)
-- `sp_attach_db`, `sp_attach_single_file_db` и `sp_detach_db` не поддерживаются. См. статьи [sp_attach_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-db-transact-sql), [sp_attach_single_file_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-single-file-db-transact-sql) и [sp_detach_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-detach-db-transact-sql).
+- `Extended stored procedures` не поддерживаются, включая `sp_addextendedproc` и `sp_dropextendedproc`. См. статью [Основные расширенные хранимые процедуры (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/general-extended-stored-procedures-transact-sql)
+- `sp_attach_db`, `sp_attach_single_file_db`, и `sp_detach_db` не поддерживаются. См. статьи [sp_attach_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-db-transact-sql), [sp_attach_single_file_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-single-file-db-transact-sql) и [sp_detach_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-detach-db-transact-sql).
 
 ## <a name="Changes"></a> Изменения в поведении
 
 Следующие переменные, функции и представления возвращают различные результаты:
 
-- `SERVERPROPERTY('EngineEdition')` возвращает значение 8. Это свойство уникально идентифицирует управляемый экземпляр. См. статью [SERVERPROPERTY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/serverproperty-transact-sql).
-- `SERVERPROPERTY('InstanceName')` возвращает значение NULL, так как концепция экземпляра в том виде, в котором она существует в SQL Server, не применяется к управляемому экземпляру. См. статью [SERVERPROPERTY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/serverproperty-transact-sql).
-- `@@SERVERNAME` возвращает полное DNS-имя с возможностью подключения, например my-managed-instance.wcus17662feb9ce98.database.windows.net. См. статью [@SERVERNAME](https://docs.microsoft.com/sql/t-sql/functions/servername-transact-sql).  
-- `SYS.SERVERS` — возвращает полное DNS-имя с возможностью подключения, такое как `myinstance.domain.database.windows.net` для свойств name и data_source. См. статью [sys.servers (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-servers-transact-sql).
-- `@@SERVICENAME` возвращает значение NULL, так как концепция службы в том виде, в котором она существует в SQL Server, не применяется к управляемому экземпляру. См. статью [@SERVICENAME](https://docs.microsoft.com/sql/t-sql/functions/servicename-transact-sql).
+- `SERVERPROPERTY('EngineEdition')` Возвращает значение 8. Это свойство уникально идентифицирует управляемый экземпляр. См. статью [SERVERPROPERTY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/serverproperty-transact-sql).
+- `SERVERPROPERTY('InstanceName')` Возвращает значение NULL, так как концепция экземпляра, так как он существует для SQL Server не применяется к управляемому экземпляру. См. статью [SERVERPROPERTY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/serverproperty-transact-sql).
+- `@@SERVERNAME` Возвращает полное DNS-имя с возможностью, например, my-managed-instance.wcus17662feb9ce98.database.windows.net. См. статью [@SERVERNAME](https://docs.microsoft.com/sql/t-sql/functions/servername-transact-sql).  
+- `SYS.SERVERS` — Возвращает полное DNS-имя, такое как `myinstance.domain.database.windows.net` для свойства «name» и «источник_данных». См. статью [sys.servers (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-servers-transact-sql).
+- `@@SERVICENAME` Возвращает значение NULL, так как существует понятие службы, когда оно не применяется SQL Server в управляемый экземпляр для. См. статью [@SERVICENAME](https://docs.microsoft.com/sql/t-sql/functions/servicename-transact-sql).
 - `SUSER_ID` поддерживается. Возвращает значение NULL, если имя для входа Azure AD не содержится в sys.syslogins. См. статью [Идентификатор SUSER_ID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-id-transact-sql).  
 - `SUSER_SID` не поддерживается. Возвращает неверные данные (временная известная проблема). См. статью [SUSER_SID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-sid-transact-sql).
-- `GETDATE()` и другие встроенные функции даты и времени всегда возвращают время в часовом поясе UTC. См. статью [GETDATE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/getdate-transact-sql).
+- `GETDATE()` и другие функции встроенных даты и времени всегда возвращают время в часовом поясе UTC. См. статью [GETDATE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/getdate-transact-sql).
 
 ## <a name="Issues"></a> Известные проблемы и ограничения
 
@@ -500,7 +500,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ### <a name="incorrect-configuration-of-sas-key-during-database-restore"></a>Неправильная конфигурация ключа SAS во время восстановления базы данных
 
-`RESTORE DATABASE`, читающая BAK-файл, может постоянно выполнять повторные попытки читать BAK-файл и возвращать ошибку после длительного периода времени, если подписанный URL-адрес в `CREDENTIAL` неверен. Выполните инструкцию RESTORE HEADERONLY перед восстановлением базы данных, чтобы убедиться в правильности ключа SAS.
+`RESTORE DATABASE` читающий BAK-файле может постоянно выполнять повторные попытки читать BAK-файл и возвращать ошибку после длительного периода времени, если подпись общего доступа в `CREDENTIAL` неверен. Выполните инструкцию RESTORE HEADERONLY перед восстановлением базы данных, чтобы убедиться в правильности ключа SAS.
 Удалите начальный символ `?` из ключа SAS, созданного на портале Azure.
 
 ### <a name="tooling"></a>Инструментарий

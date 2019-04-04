@@ -3,19 +3,19 @@ title: Метод BreakSentence в API перевода текстов
 titlesuffix: Azure Cognitive Services
 description: Использование метода BreakSentence в API перевода текстов.
 services: cognitive-services
-author: Jann-Skotdal
+author: v-pawal
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: 8aa726d8a00e76c1b4311140a433e6c7e476dc50
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 3a9c2ae0eee3e282dddff812da2fed07787328b7
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55884908"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58916297"
 ---
 # <a name="translator-text-api-30-breaksentence"></a>API перевода текстов 3.0: BreakSentence
 
@@ -56,7 +56,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
   <th width="20%">Заголовки</th>
   <th>ОПИСАНИЕ</th>
   <tr>
-    <td>_Один заголовок_<br/>_авторизации_</td>
+    <td>_По одному разрешению_<br/>_Верхний колонтитул_</td>
     <td>*Обязательный заголовок запроса*.<br/>См. [описание доступных способов аутентификации](./v3-0-reference.md#authentication).</td>
   </tr>
   <tr>
@@ -172,7 +172,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 В следующем примере демонстрируется получение границ для одного предложения. Язык предложения автоматически определяется службой.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
+# [<a name="curl"></a>curl](#tab/curl)
 
 ```
 curl -X POST "https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'How are you? I am fine. What did you do today?'}]"

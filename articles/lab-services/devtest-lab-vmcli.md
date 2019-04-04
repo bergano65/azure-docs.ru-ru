@@ -11,37 +11,58 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/17/2018
+ms.date: 04/02/2019
 ms.author: spelluru
-ms.openlocfilehash: ccf9b08856fcc652e3ad4b2b31587d43d7ef9cca
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
-ms.translationtype: HT
+ms.openlocfilehash: 48a30ef86cdb10b540ffe1231294542ccff87255
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46995961"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58895636"
 ---
 # <a name="create-and-manage-virtual-machines-with-devtest-labs-using-the-azure-cli"></a>Создание виртуальных машин и управление ими с DevTest Labs с использованием Azure CLI
-В этом кратком руководстве описан процесс создания, запуска, подключения, обновления и очистки виртуальной машины для разработки в лаборатории. 
+Это краткое руководство поможет вам создание, запуск, подключение, обновление и очистка на машине разработки в лаборатории. 
 
 Перед началом работы
 
 * Если лаборатория еще не создана, ознакомьтесь с инструкциями в [этой статье](devtest-lab-create-lab.md).
 
-* [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli). Перед началом выполните команду az login, чтобы создать подключение к Azure. 
+* [Установка Azure CLI](/cli/azure/install-azure-cli). Перед началом выполните команду az login, чтобы создать подключение к Azure. 
 
 ## <a name="create-and-verify-the-virtual-machine"></a>Создание и проверка виртуальной машины 
-Создайте виртуальную машину с проверкой подлинности по протоколу SSH из образа в Marketplace.
+Перед выполнением команд связанных DevTest Labs, устанавливается соответствующий контекст Azure с помощью `az account set` команды:
+
+```azurecli
+az account set --subscription 11111111-1111-1111-1111-111111111111
+```
+
+Команда для создания виртуальной машины: `az lab vm create`. Группу ресурсов для лаборатории, имя лабораторной и имя виртуальной машины — обязательные. Остальные аргументы зависят от типа виртуальной машины.
+
+Следующая команда создает образ на базе Windows из рынке Azure. Имя образа совпадает, который будет отображаться при создании виртуальной машины с помощью портала Azure. 
+
+```azurecli
+az lab vm create --resource-group DtlResourceGroup --lab-name MyLab --name 'MyTestVm' --image "Visual Studio Community 2017 on Windows Server 2016 (x64)" --image-type gallery --size 'Standard_D2s_v3’ --admin-username 'AdminUser' --admin-password 'Password1!'
+```
+
+Следующая команда создает виртуальную машину на основе пользовательского образа в лаборатории:
+
+```azurecli
+az lab vm create --resource-group DtlResourceGroup --lab-name MyLab --name 'MyTestVm' --image "My Custom Image" --image-type custom --size 'Standard_D2s_v3' --admin-username 'AdminUser' --admin-password 'Password1!'
+```
+
+**Тип изображения** аргумент было изменено с **коллекции** для **пользовательских**. Имя изображения соответствует, отображаемые при создании виртуальной машины на портале Azure.
+
+Следующая команда создает виртуальную Машину из образа marketplace с помощью ssh проверка подлинности:
+
 ```azurecli
 az lab vm create --lab-name sampleLabName --resource-group sampleLabResourceGroup --name sampleVMName --image "Ubuntu Server 16.04 LTS" --image-type gallery --size Standard_DS1_v2 --authentication-type  ssh --generate-ssh-keys --ip-configuration public 
 ```
-> [!NOTE]
-> Укажите имя **группы ресурсов лаборатории** в качестве значения параметра --resource-group.
->
 
-Если необходимо создать виртуальную машину с помощью формулы, воспользуйтесь параметром --formula команды [az lab vm create](https://docs.microsoft.com/cli/azure/lab/vm#az-lab-vm-create).
+Можно также создать виртуальные машины, на основе формул, задав **тип изображения** параметр **формула**. Если вам необходимо выбрать конкретной виртуальной сети для виртуальной машины, используйте **имя виртуальной сети** и **подсети** параметров. Дополнительные сведения см. в разделе [создать az lab vm](/cli/azure/lab/vm#az-lab-vm-create).
 
+## <a name="verify-that-the-vm-is-available"></a>Убедитесь, что виртуальная машина доступна.
+Используйте `az lab vm show` команду, чтобы убедиться, что виртуальная машина доступна, перед запуском и подключиться к нему. 
 
-Убедитесь, что виртуальная машина доступна.
 ```azurecli
 az lab vm show --lab-name sampleLabName --name sampleVMName --resource-group sampleResourceGroup --expand 'properties($expand=ComputeVm,NetworkInterface)' --query '{status: computeVm.statuses[0].displayStatus, fqdn: fqdn, ipAddress: networkInterface.publicIpAddress}'
 ```
@@ -54,21 +75,20 @@ az lab vm show --lab-name sampleLabName --name sampleVMName --resource-group sam
 ```
 
 ## <a name="start-and-connect-to-the-virtual-machine"></a>Запуск виртуальной машины и подключение к ней
-Запустите виртуальную машину.
+Например, следующая команда запускает виртуальную Машину:
+
 ```azurecli
 az lab vm start --lab-name sampleLabName --name sampleVMName --resource-group sampleLabResourceGroup
 ```
-> [!NOTE]
-> Укажите имя **группы ресурсов лаборатории** в качестве значения параметра --resource-group.
->
 
-Подключитесь к виртуальной машине по протоколу [SSH](../virtual-machines/linux/mac-create-ssh-keys.md) или через [удаленный рабочий стол](../virtual-machines/windows/connect-logon.md).
+Подключение к виртуальной Машине: [SSH](../virtual-machines/linux/mac-create-ssh-keys.md) или [удаленного рабочего стола](../virtual-machines/windows/connect-logon.md).
 ```bash
 ssh userName@ipAddressOrfqdn 
 ```
 
 ## <a name="update-the-virtual-machine"></a>Обновление виртуальной машины
-Примените артефакты к виртуальной машине.
+В следующем примере команды применяет артефакты к виртуальной Машине:
+
 ```azurecli
 az lab vm apply-artifacts --lab-name  sampleLabName --name sampleVMName  --resource-group sampleResourceGroup  --artifacts @/artifacts.json
 ```
@@ -115,7 +135,8 @@ az lab vm show --lab-name sampleLabName --name sampleVMName --resource-group sam
 ```
 
 ## <a name="stop-and-delete-the-virtual-machine"></a>Остановка и удаление виртуальной машины    
-Остановите виртуальную машину.
+В следующем примере команды останавливает виртуальную Машину.
+
 ```azurecli
 az lab vm stop --lab-name sampleLabName --name sampleVMName --resource-group sampleResourceGroup
 ```
@@ -125,4 +146,5 @@ az lab vm stop --lab-name sampleLabName --name sampleVMName --resource-group sam
 az lab vm delete --lab-name sampleLabName --name sampleVMName --resource-group sampleResourceGroup
 ```
 
-[!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
+## <a name="next-steps"></a>Дальнейшие действия
+См. в следующих материалах: [Документация по Azure CLI для Azure DevTest Labs](/cli/azure/lab?view=azure-cli-latest). 

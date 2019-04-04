@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 12/18/2018
 ms.author: diberry
-ms.openlocfilehash: 4465488dc02568932e839d3234bdb672d59e6804
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 5abc2026362e19b406b34a4321e766c3229cc0b4
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58089851"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58894190"
 ---
 # <a name="authoring-and-endpoint-user-access"></a>Доступ пользователей к возможностям разработки и конечным точкам
 Доступ к возможностям разработки предоставляется владельцам и участникам совместной работы. В частных приложениях доступ к конечным точкам имеют владельцы и участники совместной работы. В общедоступных приложениях доступ к конечным точкам имеют все пользователи с учетной записью LUIS и идентификаторами общедоступных приложений. 
@@ -35,7 +35,7 @@ ms.locfileid: "58089851"
 |Предоставление к приложению общего доступа|Если приложение является общедоступным, запросить его может любой пользователь с ключом разработки или ключом конечной точки.|
 |Изменение модели|
 |Опубликовать|
-|Проверка высказываний конечной точки для [активного обучения](luis-how-to-review-endoint-utt.md)|
+|Проверка высказываний конечной точки для [активного обучения](luis-how-to-review-endpoint-utterances.md)|
 |Обучение|
 
 ## <a name="access-to-endpoint"></a>Доступ к конечной точке
@@ -44,7 +44,7 @@ ms.locfileid: "58089851"
 
 ![Предоставление к приложению общего доступа](./media/luis-concept-security/set-application-as-public.png)
 
-|[Частная конечная точка](#private-app-endpoint-security)|[Общедоступная конечная точка](#public-app-endpoint-access)|
+|[Частной конечной точки](#private-app-endpoint-security)|[Общедоступная конечная точка](#public-app-endpoint-access)|
 |:--|:--|
 |Доступна владельцу и участникам совместной работы|Доступна владельцу, участникам совместной работы и всем, кому известен идентификатор приложения|
 

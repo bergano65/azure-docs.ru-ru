@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: raynew
-ms.openlocfilehash: 1824c0a4c129fa5612c990447a13aef6b230e71f
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 520f30b5fabebf299b5407a502b76d7d30850bfd
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58310172"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904888"
 ---
 # <a name="about-recovery-plans"></a>Сведения о планах восстановления
 
@@ -84,7 +84,7 @@ ms.locfileid: "58310172"
 
 ## <a name="watch-the-video"></a>Просмотреть видео
 
-Просмотрите видео с кратким примером отработки отказа "одним щелчком" для двухуровневого приложения WordPress.
+Просмотрите краткий пример видео, демонстрирующее при отработке отказа на щелчком для 2 уровневого приложения WordPress.
     
 > [!VIDEO https://channel9.msdn.com/Series/Azure-Site-Recovery/One-click-failover-of-a-2-tier-WordPress-application-using-Azure-Site-Recovery/player]
 

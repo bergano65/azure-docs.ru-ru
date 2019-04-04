@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/14/2016
 ms.author: jeconnoc
-ms.openlocfilehash: 4adc6ef6e7dd445eea3fd567072a995e3ac07dda
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 8b521ebe869210b66ac3b3efeebda873f7c0e50b
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57539638"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918167"
 ---
 # <a name="enable-communication-for-role-instances-in-azure"></a>Включение обмена данными между экземплярами роли в Azure
 Ролей облачной службы взаимодействуют через внутренние и внешние подключения. Внешние подключения называются **входными конечными точками**, а внутренние подключения — **внутренними конечными точками**. В этом разделе описывается изменение [определения службы](cloud-services-model-and-package.md#csdef) для создания конечных точек.
 
 ## <a name="input-endpoint"></a>Входная конечная точка
-Входная конечная точка используется, когда необходимо предоставить порт вовне. Необходимо указать тип протокола и порт конечной точки, которые затем применяются для внешнего и внутреннего портов конечной точки. Если требуется, для конечной точки можно указать другой внутренний порт с помощью атрибута [localPort](https://msdn.microsoft.com/library/azure/gg557552.aspx#InputEndpoint).
+Входная конечная точка используется, когда необходимо предоставить порт вовне. Необходимо указать тип протокола и порт конечной точки, которые затем применяются для внешнего и внутреннего портов конечной точки. Если требуется, для конечной точки можно указать другой внутренний порт с помощью атрибута [localPort](/previous-versions/azure/reference/gg557552(v=azure.100)#InputEndpoint).
 
 Входная конечная точка может использовать следующие протоколы: **http, https, tcp, udp**.
 
@@ -96,7 +96,7 @@ ms.locfileid: "57539638"
 > 
 > 
 
-Для получения экземпляров роли можно использовать свойство [Instances](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.role.instances.aspx) . Сначала используйте [CurrentRoleInstance](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.currentroleinstance.aspx), чтобы вернуть ссылку на текущий экземпляр роли, а затем используйте свойство [Role](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleinstance.role.aspx), чтобы вернуть ссылку на саму роль.
+Для получения экземпляров роли можно использовать свойство [Instances](/previous-versions/azure/reference/ee741904(v=azure.100)) . Сначала используйте [CurrentRoleInstance](/previous-versions/azure/reference/ee741907(v=azure.100)), чтобы вернуть ссылку на текущий экземпляр роли, а затем используйте свойство [Role](/previous-versions/azure/reference/ee741918(v=azure.100)), чтобы вернуть ссылку на саму роль.
 
 При программном подключении к экземпляру роли с помощью пакета SDK для .NET сравнительно легко получить доступ к информации о конечной точке. Например, после подключения к среде определенной роли можно получить порт определенной конечной точки с помощью этого кода:
 
@@ -111,7 +111,7 @@ int port = RoleEnvironment.CurrentRoleInstance.InstanceEndpoints["StandardWeb"].
 > 
 > 
 
-Чтобы определить номер порта внутренней конечной точки экземпляра роли, можно использовать свойство [InstanceEndpoints](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleinstance.instanceendpoints.aspx) , чтобы вернуть объект Dictionary, содержащий имена конечных точек и их IP-адреса и порты. Свойство [IPEndpoint](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleinstanceendpoint.ipendpoint.aspx) возвращает IP-адрес и порт указанной конечной точкой. Свойство **PublicIPEndpoint** возвращает порт для конечной точки с балансировкой нагрузки. Часть IP-адреса в свойстве **PublicIPEndpoint** не используется.
+Чтобы определить номер порта внутренней конечной точки экземпляра роли, можно использовать свойство [InstanceEndpoints](/previous-versions/azure/reference/ee741917(v=azure.100)) , чтобы вернуть объект Dictionary, содержащий имена конечных точек и их IP-адреса и порты. Свойство [IPEndpoint](/previous-versions/azure/reference/ee741919(v=azure.100)) возвращает IP-адрес и порт указанной конечной точкой. Свойство **PublicIPEndpoint** возвращает порт для конечной точки с балансировкой нагрузки. Часть IP-адреса в свойстве **PublicIPEndpoint** не используется.
 
 Вот пример, в котором выполняется итерация экземпляров роли.
 
@@ -368,7 +368,7 @@ namespace WorkerRole1
 </ServiceDefinition>
 ```
 
-Справочник по схеме XML для элементов, используемых выше, можно найти [здесь](https://msdn.microsoft.com/library/azure/gg557551.aspx).
+Справочник по схеме XML для элементов, используемых выше, можно найти [здесь](/previous-versions/azure/reference/gg557551(v=azure.100)).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительная информация о [модели](cloud-services-model-and-package.md)облачной службы

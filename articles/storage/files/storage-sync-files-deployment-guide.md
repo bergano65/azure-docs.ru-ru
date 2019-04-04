@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: eeb9765cfd6242ecdc14dd59dd9b5337cc56c597
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: a5d6f7757b5a4a5a2048c9822c4f52bee6d19bfe
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58481221"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905126"
 ---
 # <a name="deploy-azure-file-sync"></a>Развертывание Синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -47,7 +47,7 @@ ms.locfileid: "58481221"
 ## <a name="prepare-windows-server-to-use-with-azure-file-sync"></a>Подготовка сервера Windows к работе со службой синхронизации файлов Azure
 Для каждого сервера, который вы собираетесь использовать с функцией "Синхронизация файлов Azure", включая каждый узел сервера в отказоустойчивом кластере, отключите **конфигурацию усиленной безопасности Internet Explorer**. Это необходимо только при начальной регистрации на сервере. Конфигурацию можно включить повторно после регистрации сервера.
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# [<a name="portal"></a>Microsoft Azure](#tab/azure-portal)
 1. Откройте диспетчер сервера.
 2. Щелкните **Локальный сервер**:  
     ![Элемент "Локальный сервер" в левой части пользовательского интерфейса диспетчера сервера](media/storage-sync-files-deployment-guide/prepare-server-disable-IEESC-1.PNG)
@@ -56,7 +56,7 @@ ms.locfileid: "58481221"
 4. В диалоговом окне **Конфигурация усиленной безопасности Internet Explorer** установите переключатель **Выкл.** в разделе **Администраторы** и **Пользователи**.  
     ![Всплывающее окно "Конфигурация усиленной безопасности Internet Explorer" с установленным переключателем "Выкл."](media/storage-sync-files-deployment-guide/prepare-server-disable-IEESC-3.png)
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# [<a name="powershell"></a>PowerShell](#tab/azure-powershell)
 Чтобы отключить конфигурацию усиленной безопасности Internet Explorer, выполните следующую команду PowerShell с повышенными правами:
 
 ```powershell
@@ -82,7 +82,7 @@ Stop-Process -Name iexplore -ErrorAction SilentlyContinue
 > [!Note]
 > Служба синхронизации хранилища унаследовала разрешения на доступ от подписки и группы ресурсов, в которую она была развернута. Рекомендуется тщательно проверить, кому предоставлен доступ. Сущности с доступом на запись могут начать синхронизацию новых наборов файлов с серверов, зарегистрированных в этой службе синхронизации хранилища, и вызвать отправку потока данных в доступное для них хранилище Azure.
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# [<a name="portal"></a>Microsoft Azure](#tab/azure-portal)
 Чтобы развернуть службу синхронизации хранилища, перейдите к статье [портала Azure](https://portal.azure.com/), нажмите кнопку *создать ресурс* и выполните поиск службы синхронизации файлов Azure. В результатах поиска выберите **Служба синхронизации файлов Azure**, а затем щелкните **Создать**, чтобы открыть вкладку **Развертывание службы синхронизации хранилища**.
 
 В открывшейся области введите следующие сведения:
@@ -94,7 +94,7 @@ Stop-Process -Name iexplore -ErrorAction SilentlyContinue
 
 По завершении выберите **Создать**, чтобы развернуть службу синхронизации хранилища.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# [<a name="powershell"></a>PowerShell](#tab/azure-powershell)
 Перед взаимодействием с командлетами управления функции "Синхронизация файлов Azure" вам необходимо будет импортировать библиотеку DLL и создать контекст управления этой функции. Это необходимо, так как командлеты управления функции "Синхронизация файлов Azure" еще не входят в состав модулей Azure PowerShell.
 
 > [!Note]  
@@ -158,7 +158,7 @@ Login-AzureRmStorageSync `
     -Location $region
 ```
 
-После создания контекста Синхронизации файлов Azure с командлетом `Login-AzureR,StorageSync` можно создать службу синхронизации хранилища. Обязательно замените `<my-storage-sync-service>` нужным именем службы синхронизации хранилища.
+После создания контекста Синхронизации файлов Azure с командлетом `Login-AzureRmStorageSync` можно создать службу синхронизации хранилища. Обязательно замените `<my-storage-sync-service>` нужным именем службы синхронизации хранилища.
 
 ```powershell
 $storageSyncName = "<my-storage-sync-service>"
@@ -170,7 +170,7 @@ New-AzureRmStorageSyncService -StorageSyncServiceName $storageSyncName
 ## <a name="install-the-azure-file-sync-agent"></a>Установка агента службы синхронизации файлов Azure
 Агент службы синхронизации файлов Azure — это скачиваемый пакет, позволяющий синхронизировать Windows Server с общим файловым ресурсом Azure. 
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# [<a name="portal"></a>Microsoft Azure](#tab/azure-portal)
 Его можно скачать в [Центре загрузки Майкрософт](https://go.microsoft.com/fwlink/?linkid=858257). После скачивания дважды щелкните пакет MSI, чтобы начать установку агента службы синхронизации файлов Azure.
 
 > [!Important]  
@@ -182,7 +182,7 @@ New-AzureRmStorageSyncService -StorageSyncServiceName $storageSyncName
 
 По завершении установки агента службы синхронизации файлов Azure пользовательский интерфейс регистрации сервера запустится автоматически. Перед регистрацией установите службу синхронизации хранилища. В разделе ниже ознакомьтесь со сведениями о создании службы синхронизации хранилища.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# [<a name="powershell"></a>PowerShell](#tab/azure-powershell)
 Выполните следующий код PowerShell, чтобы загрузить соответствующую версию агента Синхронизации файлов Azure для своей ОС и установите ее в своей системе.
 
 > [!Important]  
@@ -228,7 +228,7 @@ Remove-Item -Path ".\StorageSyncAgent.exe", ".\afstemp" -Recurse -Force
 > [!Note]
 > При регистрации сервера используются ваши учетные данные Azure для создания отношения доверия между службой синхронизации хранилища и сервером Windows Server, но впоследствии сервер создает и использует собственное удостоверение, действительное, пока он остается зарегистрированным и пока действительным является текущий маркер SAS (SAS хранилища). Новый маркер SAS нельзя выдать серверу после сбоя его регистрации. Таким образом, исключается способность сервера получать доступ к файловым ресурсам Azure и любая синхронизация становится невозможной.
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# [<a name="portal"></a>Microsoft Azure](#tab/azure-portal)
 После установки агента службы синхронизации файлов Azure пользовательский интерфейс регистрации сервера запустится автоматически. Если нет, его можно открыть вручную из расположения файла: C:\Program Files\Azure\StorageSyncAgent\ServerRegistration.exe. После открытия пользовательского интерфейса регистрации сервера выберите **Вход**, чтобы приступить к работе.
 
 После входа в систему вам будет предложено ввести следующие сведения:
@@ -241,7 +241,7 @@ Remove-Item -Path ".\StorageSyncAgent.exe", ".\afstemp" -Recurse -Force
 
 Выбрав соответствующую информацию, выберите **Зарегистрировать**, чтобы завершить регистрацию сервера. В рамках процесса регистрации будет запрошен дополнительный вход.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# [<a name="powershell"></a>PowerShell](#tab/azure-powershell)
 ```powershell
 $registeredServer = Register-AzureRmStorageSyncServer -StorageSyncServiceName $storageSyncName
 ```
@@ -256,7 +256,7 @@ $registeredServer = Register-AzureRmStorageSyncServer -StorageSyncServiceName $s
 > [!Important]  
 > В группе синхронизации можно внести изменения в любую облачную конечную точку или конечную точку сервера в группе синхронизации и синхронизировать файлы в другие конечные точки. Если вы вносите изменения непосредственно в облачную конечную точку (общий файловый ресурс Azure), эти изменения сначала должны быть определены заданием обнаружения изменений службы "Синхронизация файлов Azure". Задание обнаружения изменений инициируется для облачной конечной точки каждые 24 часа. Дополнительные сведения см. в статье [Часто задаваемые вопросы о службе файлов Azure](storage-files-faq.md#afs-change-detection).
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# [<a name="portal"></a>Microsoft Azure](#tab/azure-portal)
 Чтобы создать группу синхронизации, на [портале Azure](https://portal.azure.com/) перейдите к службе синхронизации хранилища и выберите **+Группа синхронизации**:
 
 ![Создание группы синхронизации на портале Azure](media/storage-sync-files-deployment-guide/create-sync-group-1.png)
@@ -268,7 +268,7 @@ $registeredServer = Register-AzureRmStorageSyncServer -StorageSyncServiceName $s
 - **Учетная запись хранения**. Если выбрать **Выберите учетную запись хранения**, отобразится другая область. В ней можно выбрать учетную запись хранения с файловым ресурсом Azure, с которым нужно синхронизироваться.
 - **Файловый ресурс Azure**. Имя синхронизируемого файлового ресурса Azure.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# [<a name="powershell"></a>PowerShell](#tab/azure-powershell)
 Чтобы создать группу синхронизации, выполните следующую команду PowerShell. Замените `<my-sync-group>` нужным именем группы синхронизации.
 
 ```powershell
@@ -318,7 +318,7 @@ New-AzureRmStorageSyncCloudEndpoint `
 ## <a name="create-a-server-endpoint"></a>Создание конечной точки сервера
 Конечная точка сервера представляет собой определенное расположение на зарегистрированном сервере, например папку в томе сервера. Конечная точка сервера должна представлять собой путь на зарегистрированном сервере (а не на установленном ресурсе), а для распределения по уровням облака путь должен располагаться в несистемном томе. Запоминающее устройство, подключаемое к сети (NAS), не поддерживается.
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# [<a name="portal"></a>Microsoft Azure](#tab/azure-portal)
 Чтобы добавить конечную точку сервера, перейдите к созданной группе синхронизации и выберите **Добавить конечную точку сервера**.
 
 ![Добавление новой конечной точки сервера в области группы синхронизации](media/storage-sync-files-deployment-guide/create-sync-group-2.png)
@@ -332,7 +332,7 @@ New-AzureRmStorageSyncCloudEndpoint `
 
 Выберите **Создать**, чтобы добавить конечную точку сервера. Теперь ваши файлы будут синхронизироваться по всем общим файловым ресурсам Azure и Windows Server. 
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# [<a name="powershell"></a>PowerShell](#tab/azure-powershell)
 Выполните следующие команды PowerShell для создания конечной точки сервера и замените `<your-server-endpoint-path>` и `<your-volume-free-space>` нужными значениями.
 
 ```powershell
@@ -415,6 +415,6 @@ else {
 Дополнительные сведения см. в статье [Azure File Sync interop with Distributed File System (DFS)](storage-sync-files-planning.md#distributed-file-system-dfs) (Взаимодействие службы "Синхронизация файлов Azure" с распределенной файловой системой (DFS)).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Добавление и удаление конечных точек сервера службы синхронизации файлов Azure](storage-sync-files-server-endpoint.md)
-- [Регистрация и отмена регистрации сервера в службе синхронизации файлов Azure (предварительная версия)](storage-sync-files-server-registration.md)
+- [Добавить или удалить конечную точку сервера синхронизации файлов Azure](storage-sync-files-server-endpoint.md)
+- [Регистрация или Отмена регистрации сервера в службе синхронизации файлов Azure](storage-sync-files-server-registration.md)
 - [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)

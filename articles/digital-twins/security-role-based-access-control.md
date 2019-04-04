@@ -8,12 +8,12 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 12/27/2018
 ms.author: lyrana
-ms.openlocfilehash: 2d437f3fd96c38bebac52d6bb9dacf2c01b20a3c
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: bfc73a71a0ccda5c135e6a740d6f63bd37522a9b
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58443692"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904276"
 ---
 # <a name="role-based-access-control-in-azure-digital-twins"></a>Управление доступом на основе ролей в Azure Digital Twins
 
@@ -67,7 +67,7 @@ RBAC может использоваться разработчиком для �
 В следующих статьях справочной документации описаны:
 
 - Функции командлета [Get-AzureADUser](https://docs.microsoft.com/powershell/module/azuread/get-azureaduser?view=azureadps-2.0).
-- Функции командлета [Get-AzureRmADServicePrincipal](https://docs.microsoft.com/powershell/module/azurerm.resources/get-azurermadserviceprincipal).
+- Функции командлета [Get-AzureRmADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/get-azadserviceprincipal).
 - [Краткое руководство: настройка среды разработки](../active-directory/develop/quickstart-create-new-tenant.md).
 
 ## <a name="role-assignments"></a>Назначения ролей

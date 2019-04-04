@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 03/22/2019
 ms.author: diberry
-ms.openlocfilehash: efe50533a03551a673583265e107263d79cff90a
-ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
+ms.openlocfilehash: 6e37466145af58a52a86a08a2a873e406c99b9e5
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58418692"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58895551"
 ---
 # <a name="entity-types-and-their-purposes-in-luis"></a>Типы сущностей и их задачи в LUIS
 
@@ -88,15 +88,15 @@ LUIS предлагает множество типов сущностей. Вы
 
 |Прошедшая машинное обучение|Можно пометить|Учебник|Пример<br>Ответ|Тип сущности|Назначение|
 |--|--|--|--|--|--|
-|✔|✔|[✔](luis-tutorial-composite-entity.md)|[✔](luis-concept-data-extraction.md#composite-entity-data)|[**Составная**](#composite-entity)|Группа сущностей независимо от типа сущности.|
-|✔|✔|[✔](luis-quickstart-intent-and-hier-entity.md)|[✔](luis-concept-data-extraction.md#hierarchical-entity-data)|[**Иерархическая**](#hierarchical-entity)|Группа простых сущностей.|
-|||[✔](luis-quickstart-intent-and-list-entity.md)|[✔](luis-concept-data-extraction.md#list-entity-data)|[**Список**](#list-entity)|Список элементов и их синонимов, извлеченных в результате поиска точных совпадений.|
-|Смешанная||[✔](luis-tutorial-pattern.md)|[✔](luis-concept-data-extraction.md#patternany-entity-data)|[**Pattern.any**](#patternany-entity)|Сущность, конец которой определить довольно сложно.|
-|||[✔](luis-tutorial-prebuilt-intents-entities.md)|[✔](luis-concept-data-extraction.md#prebuilt-entity-data)|[**Предварительно созданная**](#prebuilt-entity)|Уже обученная для извлечения различных видов данных.|
+|✔|✔|[✔](luis-tutorial-composite-entity.md)|[✔](luis-concept-data-extraction.md#composite-entity-data)|[**Составной**](#composite-entity)|Группа сущностей независимо от типа сущности.|
+|✔|✔|[✔](luis-quickstart-intent-and-hier-entity.md)|[✔](luis-concept-data-extraction.md#hierarchical-entity-data)|[**Иерархическая сущность**](#hierarchical-entity)|Группа простых сущностей.|
+|||[✔](luis-quickstart-intent-and-list-entity.md)|[✔](luis-concept-data-extraction.md#list-entity-data)|[**список**](#list-entity)|Список элементов и их синонимов, извлеченных в результате поиска точных совпадений.|
+|Смешанная||[✔](luis-tutorial-pattern.md)|[✔](luis-concept-data-extraction.md#patternany-entity-data)|[**Pattern.Any**](#patternany-entity)|Сущность, конец которой определить довольно сложно.|
+|||[✔](luis-tutorial-prebuilt-intents-entities.md)|[✔](luis-concept-data-extraction.md#prebuilt-entity-data)|[**Предварительно созданные**](#prebuilt-entity)|Уже обученная для извлечения различных видов данных.|
 |||[✔](luis-quickstart-intents-regex-entity.md)|[✔](luis-concept-data-extraction.md#regular-expression-entity-data)|[**Регулярное выражение**](#regular-expression-entity)|Использует регулярное выражение для сравнения текста.|
 |✔|✔|[✔](luis-quickstart-primary-and-secondary-data.md)|[✔](luis-concept-data-extraction.md#simple-entity-data)|[**Простая**](#simple-entity)|Содержит единое понятие в слове или фразе.|
 
-В примерах высказываний для каждого намерения следует помечать только сущности, прошедшие машинное обучение. Прошедшие машинное обучение сущности лучше всего работают после тестирования с помощью [запросов конечной точки](luis-concept-test.md#endpoint-testing) и [проверки высказываний конечной точки](luis-how-to-review-endoint-utt.md). 
+В примерах высказываний для каждого намерения следует помечать только сущности, прошедшие машинное обучение. Прошедшие машинное обучение сущности лучше всего работают после тестирования с помощью [запросов конечной точки](luis-concept-test.md#endpoint-testing) и [проверки высказываний конечной точки](luis-how-to-review-endpoint-utterances.md). 
 
 Сущности Pattern.Any необходимо помечать в примерах [шаблонов](luis-how-to-model-intent-pattern.md), а не в примерах намерений пользователя. 
 
@@ -116,8 +116,8 @@ LUIS предлагает множество типов сущностей. Вы
 
 ![составная сущность](./media/luis-concept-entities/composite-entity.png)
 
-[Руководство](luis-tutorial-composite-entity.md)<br>
-[Пример ответа JSON для сущности](luis-concept-data-extraction.md#composite-entity-data)<br>
+[Учебник](luis-tutorial-composite-entity.md)<br>
+[Пример ответа JSON для сущностей](luis-concept-data-extraction.md#composite-entity-data)<br>
 
 ## <a name="hierarchical-entity"></a>Иерархическая сущность
 
@@ -138,8 +138,8 @@ LUIS предлагает множество типов сущностей. Вы
 
 ![иерархическая сущность](./media/luis-concept-entities/hierarchical-entity.png)
 
-[Руководство](luis-quickstart-intent-and-hier-entity.md)<br>
-[Пример ответа JSON для сущности](luis-concept-data-extraction.md#hierarchical-entity-data)<br>
+[Учебник](luis-quickstart-intent-and-hier-entity.md)<br>
+[Пример ответа JSON для сущностей](luis-concept-data-extraction.md#hierarchical-entity-data)<br>
 
 ### <a name="roles-versus-hierarchical-entities"></a>Сравнение ролей и иерархических сущностей
 
@@ -157,8 +157,8 @@ LUIS предлагает множество типов сущностей. Вы
 
 ![сущность списка](./media/luis-concept-entities/list-entity.png)
 
-[Руководство](luis-quickstart-intent-and-list-entity.md)<br>
-[Пример ответа JSON для сущности](luis-concept-data-extraction.md#list-entity-data)
+[Учебник](luis-quickstart-intent-and-list-entity.md)<br>
+[Пример ответа JSON для сущностей](luis-concept-data-extraction.md#list-entity-data)
 
 ## <a name="patternany-entity"></a>Сущность Pattern.any
 
@@ -167,8 +167,8 @@ Patterns.any — это местозаполнитель переменной �
 Сущность оптимальна для данных в таких случаях.
 
 * Конечную часть сущности можно спутать с оставшимся текстом высказывания. 
-[Руководство](luis-tutorial-pattern.md)<br>
-[Пример ответа JSON для сущности](luis-concept-data-extraction.md#patternany-entity-data)
+[Учебник](luis-tutorial-pattern.md)<br>
+[Пример ответа JSON для сущностей](luis-concept-data-extraction.md#patternany-entity-data)
 
 **Пример**  
 В клиентском приложении для поиска книг по названию сущность pattern.any извлекает полное название. Высказывание шаблона, использующее сущность pattern.any для поиска книги, — `Was {BookTitle} written by an American this year[?]`. 
@@ -194,8 +194,8 @@ Patterns.any — это местозаполнитель переменной �
 
 ![Предварительно созданная сущность Number](./media/luis-concept-entities/number-entity.png)
 
-[Руководство](luis-tutorial-prebuilt-intents-entities.md)<br>
-[Пример ответа JSON для сущности](luis-concept-data-extraction.md#prebuilt-entity-data)
+[Учебник](luis-tutorial-prebuilt-intents-entities.md)<br>
+[Пример ответа JSON для сущностей](luis-concept-data-extraction.md#prebuilt-entity-data)
 
 Некоторые из этих предварительно созданных сущностей определены в проекте [Recognizers-Text](https://github.com/Microsoft/Recognizers-Text) с открытым исходным кодом. Если в настоящее время определенный язык и региональные параметры или сущность не поддерживается, примите участие в добавлении материалов в проект. 
 
@@ -242,8 +242,8 @@ Patterns.any — это местозаполнитель переменной �
 
 ![Сущность регулярного выражения](./media/luis-concept-entities/regex-entity.png)
 
-[Руководство](luis-quickstart-intents-regex-entity.md)<br>
-[Пример ответа JSON для сущности](luis-concept-data-extraction.md#regular-expression-entity-data)<br>
+[Учебник](luis-quickstart-intents-regex-entity.md)<br>
+[Пример ответа JSON для сущностей](luis-concept-data-extraction.md#regular-expression-entity-data)<br>
 
 ## <a name="simple-entity"></a>Простая сущность 
 
@@ -255,7 +255,7 @@ Patterns.any — это местозаполнитель переменной �
 
 ![простая сущность](./media/luis-concept-entities/simple-entity.png)
 
-[Руководство](luis-quickstart-primary-and-secondary-data.md)<br/>
+[Учебник](luis-quickstart-primary-and-secondary-data.md)<br/>
 [Пример ответа для сущности](luis-concept-data-extraction.md#simple-entity-data)<br/>
 
 ## <a name="entity-limits"></a>Ограничения сущностей
