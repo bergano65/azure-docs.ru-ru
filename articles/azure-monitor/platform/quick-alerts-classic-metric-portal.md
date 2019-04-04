@@ -9,18 +9,18 @@ ms.date: 02/08/2018
 ms.author: ancav
 ms.custom: mvc
 ms.subservice: alerts
-ms.openlocfilehash: dcce5e424a5f14cb8f36582635383b0a8ba86caa
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: f8b9db47684a6dd78302f094d8e670da4a61ab2c
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54472268"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58849811"
 ---
 # <a name="receive-a-notification-when-a-metric-value-meets-a-condition"></a>Получение уведомлений при выполнении условия в значении метрики
 
 Azure Monitor предоставляет доступ к метрикам многим ресурсам Azure. Эти метрики передают значения производительности и работоспособности этих ресурсов. Во многих случаях значения метрик могут указывать, что с ресурсом возникла проблема. Вы можете создать оповещения метрик, чтобы отслеживать ненормальное поведение и получать уведомления при его возникновении. Это краткое руководство содержит сведения по созданию приложения логики, созданию задания и визуализации метрик для приложения логики. Здесь также описаны сведения о создании оповещений и получении уведомлений о метриках для ресурса приложения логики.
 
-Дополнительные сведения о метриках и оповещениях метрик см. в статьях [Обзор метрик в Microsoft Azure](../../azure-monitor/platform/data-collection.md) и [Что такое оповещения в Microsoft Azure?](./alerts-overview.md). 
+Дополнительные сведения о метриках и оповещениях метрик см. в статьях [Обзор метрик в Microsoft Azure](data-platform.md) и [Что такое оповещения в Microsoft Azure?](alerts-overview.md). 
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 

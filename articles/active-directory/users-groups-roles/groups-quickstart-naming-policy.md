@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f2219e038d3432807c81246256873a1ecb2cd9b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d4105fa17041c7cefd1387d1ee50c177b8c55fc9
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58093479"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58651292"
 ---
 # <a name="quickstart-naming-policy-for-groups-in-azure-active-directory"></a>Краткое руководство. Политика именования для групп в Azure Active Directory
 
@@ -38,14 +38,18 @@ ms.locfileid: "58093479"
 1. Запустите приложение Windows PowerShell от имени администратора.
 2. Удалите все предыдущие версии AzureADPreview.
   
-   ```
+
+   ```powershell
    Uninstall-Module AzureADPreview
    ```
+
 3. Установите последнюю версию AzureADPreview.
   
-   ```
+
+   ```powershell
    Install-Module AzureADPreview
    ```
+
    При появлении запроса на доступ к ненадежному репозиторию введите **Y** (Да). Установка нового модуля может занять несколько минут.
 
 ## <a name="set-up-naming-policy"></a>Настройка политики именования
@@ -56,10 +60,12 @@ ms.locfileid: "58093479"
 
 2. Выполните следующие команды, чтобы подготовить среду к выполнению командлетов.
   
-   ```
+
+   ```powershell
    Import-Module AzureADPreview
    Connect-AzureAD
    ```
+
    На открывшемся экране **Вход в учетную запись** введите учетную запись администратора и пароль, чтобы подключиться к службе, затем выберите **Войти**.
 
 3. Чтобы создать параметры группы для этого клиента, выполните инструкции в статье [Настройка параметров групп с помощью командлетов Azure Active Directory](groups-settings-cmdlets.md).
@@ -68,35 +74,46 @@ ms.locfileid: "58093479"
 
 1. Просмотрите текущие параметры политики именования.
   
+
+   ```powershell
+   $Setting = Get-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | Where-Object -Property DisplayName -Value "Group.Unified" -EQ).id
    ```
-   $Setting = Get-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id
-   ```
+
   
 2. Отобразите на экране текущие параметры групп.
   
-   ```
+
+   ```powershell
    $Setting.Values
    ```
+
   
+
 ### <a name="step-3-set-the-naming-policy-and-any-custom-blocked-words"></a>Шаг 3. Установка политики именований и любых настраиваемых запрещенных слов
 
 1. Задайте префиксы и суффиксы имен групп в PowerShell для Azure AD. Для правильной работы функции включите [имя_группы] в параметр.
   
-   ```
+
+   ```powershell
    $Setting["PrefixSuffixNamingRequirement"] =“GRP_[GroupName]_[Department]"
    ```
+
   
 2. Задайте настраиваемые запрещенные слова. В следующем примере показано, как можно добавить собственные настраиваемые слова.
   
-   ```
+
+   ```powershell
    $Setting["CustomBlockedWordsList"]=“Payroll,CEO,HR"
    ```
+
   
 3. Сохраните параметры новой политики, чтобы она вступила в действие, как показано в следующем примере.
   
+
+   ```powershell
+   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | Where-Object -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
    ```
-   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
-   ```
+
   
 Вот и все. Вы настроили политику именования и добавили настраиваемые запрещенные слова.
 
@@ -104,20 +121,25 @@ ms.locfileid: "58093479"
 
 1. Удалите префиксы и суффиксы имен групп в PowerShell для Azure AD.
   
-   ```
+
+   ```powershell
    $Setting["PrefixSuffixNamingRequirement"] =""
    ```
+
   
 2. Удалите настраиваемые запрещенные слова
   
-   ```
+
+   ```powershell
    $Setting["CustomBlockedWordsList"]=""
    ```
+
   
 3. Сохраните параметры.
   
-   ```
-   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
+
+   ```powershell
+   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | Where-Object -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
    ```
 
 ## <a name="next-steps"></a>Дополнительная информация

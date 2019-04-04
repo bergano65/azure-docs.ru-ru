@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 02/20/2019
 ms.author: jingwang
-ms.openlocfilehash: 6c182b4f8de96429f52e8c396503f7a89c5347ec
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 835e0153039ecc3bb93fb7aa9b5007c205ec503e
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57871787"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58793889"
 ---
 # <a name="quickstart-create-a-data-factory-and-pipeline-using-net-sdk"></a>Краткое руководство. Создание фабрики данных и конвейера с помощью пакета SDK .NET
 
@@ -36,12 +36,15 @@ ms.locfileid: "57871787"
 [!INCLUDE [data-factory-quickstart-prerequisites](../../includes/data-factory-quickstart-prerequisites.md)] 
 
 ### <a name="visual-studio"></a>Visual Studio
+
 В этом руководстве используется Visual Studio 2017. Вы также можете использовать Visual Studio 2013 или 2015.
 
 ### <a name="azure-net-sdk"></a>Пакет Azure SDK для .NET
+
 Скачайте и установите [пакет Azure SDK для .NET](https://azure.microsoft.com/downloads/) на компьютер.
 
 ## <a name="create-an-application-in-azure-active-directory"></a>Создание приложения в Azure Active Directory
+
 Следуйте инструкциям из разделов [этой статьи](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application), чтобы выполнить следующие задачи: 
 
 1. **Создайте приложение Azure Active Directory**. Создайте приложение в Azure Active Directory, которое представляет приложение .NET, создаваемое в этом руководстве. В качестве URL-адреса входа можно указать фиктивный URL-адрес, как показано в статье (`https://contoso.org/exampleapp`).
@@ -64,7 +67,7 @@ ms.locfileid: "57871787"
 1. Выберите **Инструменты** -> **Диспетчер пакетов NuGet** -> **Консоль диспетчера пакетов**.
 2. В **консоли диспетчера пакетов** выполните следующие команды, чтобы установить пакеты. Дополнительные сведения см. в документации по пакету NuGet [Microsoft.Azure.Management.DataFactory](https://www.nuget.org/packages/Microsoft.Azure.Management.DataFactory/).
 
-    ```
+    ```powershell
     Install-Package Microsoft.Azure.Management.DataFactory
     Install-Package Microsoft.Azure.Management.ResourceManager
     Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
@@ -408,6 +411,7 @@ Press any key to exit...
 ```
 
 ## <a name="verify-the-output"></a>Проверка выходных данных
+
 Конвейер автоматически создает выходную папку в контейнере больших двоичных объектов adftutorial. Затем он копирует файл emp.txt из входной папки в выходную. 
 
 1. На странице контейнера **adftutorial** на портале Azure нажмите кнопку **Обновить**, чтобы появилась папка output. 
@@ -419,6 +423,7 @@ Press any key to exit...
     ![Обновить](media/quickstart-create-data-factory-dot-net/output-file.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
+
 Чтобы программно удалить фабрики данных, добавьте следующие строки кода в программу: 
 
 ```csharp
@@ -427,4 +432,5 @@ Press any key to exit...
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Перейдите к [руководствам](tutorial-copy-data-dot-net.md), чтобы узнать об использовании фабрики данных в различных сценариях. 

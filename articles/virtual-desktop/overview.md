@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: overview
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: 4443d71d5c0b84ac7dbc18129338229c40323d2c
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: f922f940f6c579c8710dadec29b365e7cf4c7938
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58401051"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58577192"
 ---
 # <a name="what-is-windows-virtual-desktop-preview"></a>Общие сведения о Виртуальном рабочем столе Windows (предварительная версия) 
 
@@ -72,7 +72,7 @@ ms.locfileid: "58401051"
   
 Требования к виртуальным машинам Azure, созданным для Виртуального рабочего стола Windows, следующие:
 
-* [Стандартное присоединение к домену](https://docs.microsoft.com/microsoft-desktop-optimization-pack/appv-v4/domain-joined-and-non-domain-joined-clients) или [гибридное присоединение к AD](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan). Виртуальные машины не могут быть присоединены к Azure AD.
+* [Стандартное присоединение к домену](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-comparison) или [гибридное присоединение к AD](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan). Виртуальные машины не могут быть присоединены к Azure AD.
 * Использование одного из следующих поддерживаемых образов ОС:
   * Windows 10 Корпоративная с поддержкой нескольких сеансов
   * Windows Server 2016

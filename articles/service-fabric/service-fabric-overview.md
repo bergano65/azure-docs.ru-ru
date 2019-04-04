@@ -3,8 +3,8 @@ title: Обзор Service Fabric в Azure | Документация Майкр
 description: Обзор Service Fabric, где приложения составляются из нескольких микрослужб для обеспечения масштабирования и отказоустойчивости. Service Fabric — это платформа для распределенных систем, используемая для создания надежных и легко управляемых масштабируемых облачных приложений.
 services: service-fabric
 documentationcenter: .net
-author: msfussell
-manager: timlt
+author: athinanthny
+manager: chackdan
 editor: masnider
 ms.assetid: bbcc652a-a790-4bc4-926b-e8cd966587c0
 ms.service: service-fabric
@@ -13,14 +13,14 @@ ms.topic: overview
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/20/2017
-ms.author: msfussell
+ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 4e686d314c1b6550c2c782e9a1e1dc681ff154e1
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.openlocfilehash: 71b87f975d856e20bd3934258c50be54e06254ef
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58539689"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58666398"
 ---
 # <a name="overview-of-azure-service-fabric"></a>Общие сведения о Service Fabric
 Azure Service Fabric — это платформа распределенных систем, которая дает возможность не только легко упаковывать и развертывать масштабируемые надежные микрослужбы и контейнеры, но и управлять ими. Service Fabric также позволяет устранить значительные трудности, возникающие при разработке облачных собственных приложений и управлении ими. Получая гарантированную масштабируемость, надежность и управляемость, разработчики и администраторы могут сосредоточиться на реализации критически важных и ресурсоемких рабочих нагрузок вместо того, чтобы тратить силы на решение сложных проблем с инфраструктурой. Service Fabric — это принципиально новая платформа, позволяющая создавать облачные высококлассные приложения уровня 1, выполняющиеся в контейнерах, и управлять ими.

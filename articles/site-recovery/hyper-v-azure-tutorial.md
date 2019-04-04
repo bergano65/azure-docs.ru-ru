@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 03/18/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 5a7161d05b153a556cce20ec4f4d0cbbfdf1d2d1
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 2201a8017f82517f287cc0b73346a90eaa2408a4
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58315510"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58877726"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Настройка аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "58315510"
 
 Это третье руководство в серии. В этом руководстве предполагается, что вы уже выполнили задачи в предыдущих руководствах:
 
-1. [Подготовка Azure](tutorial-prepare-azure.md).
+1. [Подготовка Azure](tutorial-prepare-azure.md)
 2. [Подготовка локальных серверов Hyper-V](tutorial-prepare-on-premises-hyper-v.md)
 
 Перед началом работы полезно [изучить архитектуру](concepts-hyper-v-to-azure-architecture.md) для этого сценария аварийного восстановления.
@@ -87,17 +87,17 @@ Azure Site Recovery извлечет метаданные с сервера Hype
 
 1. Извлеките файлы из AzureSiteRecoveryProvider.exe, выполнив следующую команду:
 
-    ``AzureSiteRecoveryProvider.exe /x:. /q``
+    `AzureSiteRecoveryProvider.exe /x:. /q`
  
     Файлы будут извлечены в локальный каталог.
  
-2.  Запустите ``.\setupdr.exe /i ``
+2.  Run (Запустить) `.\setupdr.exe /i`
 
     Результаты будут записаны в журнал %Programdata%\ASRLogs\DRASetupWizard.log.
 
 3.  Зарегистрируйте сервер с помощью этой команды:
 
-``cd  C:\Program Files\Microsoft Azure Site Recovery Provider\DRConfigurator.exe" /r /Friendlyname "FriendlyName of the Server" /Credentials "path to where the credential file is saved" ``
+`cd  C:\Program Files\Microsoft Azure Site Recovery Provider\DRConfigurator.exe" /r /Friendlyname "FriendlyName of the Server" /Credentials "path to where the credential file is saved"`
  
 
 ## <a name="set-up-the-target-environment"></a>Настройка целевой среды
@@ -140,4 +140,4 @@ Site Recovery проверяет наличие одной или несколь
    Ход выполнения действия **включения защиты** можно отслеживать, выбрав **Задания** > **Задания Azure Site Recovery**. После завершения задания **Завершение подготовки защиты** начальная репликация завершается, а виртуальная машина готова к отработке отказа.
 
 ## <a name="next-steps"></a>Дополнительная информация
-[Run a disaster recovery drill to Azure](tutorial-dr-drill-azure.md) (Выполнение отработки аварийного восстановления в Azure)
+[Выполнение отработки аварийного восстановления](tutorial-dr-drill-azure.md)

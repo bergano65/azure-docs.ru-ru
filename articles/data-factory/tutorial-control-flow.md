@@ -12,14 +12,15 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: shlo
-ms.openlocfilehash: d2f892941f9d37dd3d74afe17d7952b404dc709f
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 9a03094683a973db16aa949f0610bc7f9914be45
+ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57551642"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58649226"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ветвления и создание цепочки действий в конвейере фабрики данных
+
 В этом руководстве создается конвейер фабрики данных, который демонстрирует некоторые функции потока управления. Этот конвейер просто копирует данные из контейнера в хранилище BLOB-объектов Azure в другой контейнер в той же учетной записи хранения. Если действие копирования завершается успешно, нужно отправить подробную информацию об успешной операции копирования (например, количество записанных данных) по электронной почте. Если произошел сбой действия копирования, необходимо отправить данные об ошибке копирования (например, сообщение об ошибке) по электронной почте. В этом руководстве вы научитесь передавать параметры.
 
 Общий обзор сценария: ![Обзор](media/tutorial-control-flow/overview.png)
@@ -56,6 +57,7 @@ ms.locfileid: "57551642"
     John|Doe
     Jane|Doe
     ```
+
 2. При помощи таких средств, как [обозреватель службы хранилища Azure](https://storageexplorer.com/), создайте контейнер **adfv2branch** и отправьте в него файл **input.txt**.
 
 ## <a name="create-visual-studio-project"></a>Создание проекта Visual Studio
@@ -73,7 +75,7 @@ ms.locfileid: "57551642"
 1. Выберите **Инструменты** -> **Диспетчер пакетов NuGet** -> **Консоль диспетчера пакетов**.
 2. В **консоли диспетчера пакетов** выполните следующие команды, чтобы установить пакеты. Дополнительные сведения см. в документации по пакету NuGet [Microsoft.Azure.Management.DataFactory](https://www.nuget.org/packages/Microsoft.Azure.Management.DataFactory/).
 
-    ```
+    ```powershell
     Install-Package Microsoft.Azure.Management.DataFactory
     Install-Package Microsoft.Azure.Management.ResourceManager
     Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
@@ -139,6 +141,7 @@ ms.locfileid: "57551642"
     ```
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
+
 Создайте функцию CreateOrUpdateDataFactory в файле Program.cs:
 
 ```csharp
@@ -173,6 +176,7 @@ Factory df = CreateOrUpdateDataFactory(client);
 ```
 
 ## <a name="create-an-azure-storage-linked-service"></a>Создание связанной службы хранилища Azure
+
 Создайте функцию StorageLinkedServiceDefinition в файле Program.cs:
 
 ```csharp
@@ -188,6 +192,7 @@ static LinkedServiceResource StorageLinkedServiceDefinition(DataFactoryManagemen
     return linkedService;
 }
 ```
+
 Добавьте следующий код, создающий **связанную службу хранилища Azure**, в метод **Main**. Дополнительные сведения о свойствах связанных служб BLOB-объектов Azure см. в [этом разделе](connector-azure-blob-storage.md#linked-service-properties).
 
 ```csharp
@@ -199,6 +204,7 @@ client.LinkedServices.CreateOrUpdate(resourceGroup, dataFactoryName, storageLink
 В этом разделе создайте два набора данных: для источника и приемника. 
 
 ### <a name="create-a-dataset-for-source-azure-blob"></a>Создание набора данных для исходного большого двоичного объекта Azure
+
 Добавьте следующий код, который создает **набор данных большого двоичного объекта Azure**, в метод **Main**. Дополнительные сведения о свойствах набора данных больших двоичных объектов Azure см. в [этом разделе](connector-azure-blob-storage.md#dataset-properties).
 
 Задайте набор данных, представляющий исходные данные в большом двоичном объекте Azure. Этот набор данных большого двоичного объекта относится к связанной службе хранилища Azure, созданной на предыдущем шаге, и описывает следующее:
@@ -258,6 +264,7 @@ client.Datasets.CreateOrUpdate(resourceGroup, dataFactoryName, blobSinkDatasetNa
 ```
 
 ## <a name="create-a-c-class-emailrequest"></a>Создание класса C# с именем EmailRequest
+
 В проекте C# создайте класс с именем **EmailRequest**. Он определяет свойства, которые конвейер отправляет в тексте запроса при отправке электронной почты. В этом руководстве конвейер отправляет четыре свойства из конвейера по адресу электронной почты:
 
 - **Сообщение**: текст сообщения электронной почты. В случае успешного копирования это свойство содержит сведения о выполнении (количество записанных данных). В случае сбоя копирования это свойство содержит сведения об ошибке.
@@ -289,10 +296,13 @@ client.Datasets.CreateOrUpdate(resourceGroup, dataFactoryName, blobSinkDatasetNa
         }
     }
 ```
+
 ## <a name="create-email-workflow-endpoints"></a>Создание конечных точек рабочего процесса электронной почты
+
 Чтобы инициировать отправку сообщения электронной почты, используйте [Logic Apps](../logic-apps/logic-apps-overview.md) для определения рабочего процесса. Сведения о создании рабочего процесса приложения логики см. в статье [Создание первого рабочего процесса приложения логики для автоматизации процессов между облачными приложениями и облачными службами](../logic-apps/quickstart-create-first-logic-app-workflow.md). 
 
 ### <a name="success-email-workflow"></a>Рабочий процесс успешной отправки сообщения электронной почты 
+
 Создайте рабочий процесс приложения логики с именем `CopySuccessEmail`. Определите триггер рабочего процесса `When an HTTP request is received` и добавьте действие `Office 365 Outlook – Send an email`.
 
 ![Рабочий процесс успешной отправки сообщения электронной почты](media/tutorial-control-flow/success-email-workflow.png)
@@ -318,6 +328,7 @@ client.Datasets.CreateOrUpdate(resourceGroup, dataFactoryName, blobSinkDatasetNa
     "type": "object"
 }
 ```
+
 Это соответствует классу **EmailRequest**, созданному в предыдущем разделе. 
 
 В конструкторе приложений логики запрос должен выглядеть следующим образом:
@@ -336,6 +347,7 @@ https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/path
 ```
 
 ## <a name="fail-email-workflow"></a>Рабочий процесс сбоя отправки сообщения электронной почты 
+
 Клонируйте действие **CopySuccessEmail** и создайте еще один рабочий процесс Logic Apps **CopyFailEmail**. В триггере запроса действие `Request Body JSON schema` такое же. Просто измените формат электронной почты, например `Subject`, чтобы настроить процесс сбоя отправки сообщения электронной почты. Вот пример: 
 
 ![Конструктор приложения логики. Рабочий процесс сбоя отправки сообщения электронной почты](media/tutorial-control-flow/fail-email-workflow.png)
@@ -356,7 +368,9 @@ https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/path
 //Fail Request Url
 https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=000000
 ```
+
 ## <a name="create-a-pipeline"></a>Создание конвейера
+
 Добавьте следующий код, создающий конвейер с действием копирования и свойством dependsOn, в метод Main. В этом руководстве конвейер содержит одно действие: операцию копирования, которая принимает набор данных большого двоичного объекта в качестве источника и другой набор данных большого двоичного объекта в качестве приемника. После завершения действия копирования (успех или сбой) вызываются разные задачи электронной почты.
 
 В этом конвейере используются следующие функции:
@@ -440,12 +454,15 @@ static PipelineResource PipelineDefinition(DataFactoryManagementClient client)
             return resource;
         }
 ```
+
 Добавьте следующий код, создающий конвейер, в метод **Main**:
 
 ```
 client.Pipelines.CreateOrUpdate(resourceGroup, dataFactoryName, pipelineName, PipelineDefinition(client));
 ```
+
 ### <a name="parameters"></a>Параметры
+
 В первой части нашего конвейера определяются параметры. 
 
 - Параметр sourceBlobContainer в конвейере использует исходный набор данных большого двоичного объекта.
@@ -461,7 +478,9 @@ Parameters = new Dictionary<string, ParameterSpecification>
         { "receiver", new ParameterSpecification { Type = ParameterType.String } }
     },
 ```
+
 ### <a name="web-activity"></a>Веб-действие
+
 Веб-действие разрешает выполнять вызов любой конечной точки REST. Дополнительные сведения о действиях см. в статье [Веб-действие в фабрике данных Azure](control-flow-web-activity.md). Этот конвейер использует веб-действие для вызова рабочего процесса электронной почты Logic Apps. Вы создаете два веб-действия: вызывающие рабочий процесс **CopySuccessEmail** и **CopyFailWorkFlow**.
 
 ```csharp
@@ -481,6 +500,7 @@ Parameters = new Dictionary<string, ParameterSpecification>
             }
         }
 ```
+
 В свойстве Url вставьте конечные точки URL-адреса запроса из соответствующего рабочего процесса Logic Apps. В свойстве Body передайте экземпляр класса EmailRequest. Запрос сообщения электронной почты содержит следующие свойства.
 
 - Сообщение — передает значение `@{activity('CopyBlobtoBlob').output.dataWritten`. Обращается к свойству предыдущего действия копирования и передает значение dataWritten. В случае сбоя передает выходные данные ошибки вместо `@{activity('CopyBlobtoBlob').error.message`.
@@ -491,6 +511,7 @@ Parameters = new Dictionary<string, ParameterSpecification>
 Этот код создает зависимость действия на основе предыдущей успешной операции копирования.
 
 ## <a name="create-a-pipeline-run"></a>Создание конвейера
+
 Добавьте в метод **Main** следующий код, **активирующий выполнение конвейера**.
 
 ```csharp
@@ -508,6 +529,7 @@ Console.WriteLine("Pipeline run ID: " + runResponse.RunId);
 ```
 
 ## <a name="main-class"></a>Класс Main 
+
 Итоговый метод Main должен выглядеть следующим образом. Создайте и запустите программу для запуска конвейера.
 
 ```csharp
@@ -539,6 +561,7 @@ Console.WriteLine("Pipeline run ID: " + runResponse.RunId);
 ```
 
 ## <a name="monitor-a-pipeline-run"></a>Мониторинг выполнения конвейера
+
 1. Добавьте следующий код в метод **Main**, чтобы постоянно проверять состояние выполнения конвейера до завершения копирования данных.
 
     ```csharp
@@ -578,6 +601,7 @@ Console.WriteLine("Pipeline run ID: " + runResponse.RunId);
     ```
 
 ## <a name="run-the-code"></a>Выполнение кода
+
 Создайте и запустите приложение, а затем проверьте выполнение конвейера.
 Консоль выведет ход выполнения создания фабрики данных, связанной службы, наборов данных, конвейера и выполнения конвейера. Затем она проверяет состояние выполнения конвейера. Дождитесь появления сведений о действии копирования с размером записанных и прочитанных данных. Затем воспользуйтесь такими средствами, как обозреватель службы хранилища Azure, чтобы проверить, скопирован ли большой двоичный объект в outputBlobPath из inputBlobPath, как указано в переменных.
 
@@ -734,6 +758,7 @@ Press any key to exit...
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 В этом руководстве вы выполнили следующие шаги: 
 
 > [!div class="checklist"]

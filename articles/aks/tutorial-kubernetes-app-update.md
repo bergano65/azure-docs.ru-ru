@@ -2,20 +2,20 @@
 title: Руководство по Kubernetes в Azure. Обновление приложения
 description: В этом руководстве по Службе Azure Kubernetes (AKS) вы узнаете, как обновить имеющееся развертывание приложения для AKS с помощью новой версии кода приложения.
 services: container-service
-author: iainfoulds
+author: zr-msft
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 12/19/2018
-ms.author: iainfou
+ms.author: zarhoads
 ms.custom: mvc
-ms.openlocfilehash: cefbd4f16902b3a6816ebb4e818a81b18ba00d54
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 5415778713261fbb3e57695573c8486cb32da781
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57995564"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58756121"
 ---
-# <a name="tutorial-update-an-application-in-azure-kubernetes-service-aks"></a>Руководство. Обновление приложения в Службе Azure Kubernetes (AKS)
+# <a name="tutorial-update-an-application-in-azure-kubernetes-service-aks"></a>Руководство по Обновление приложения в Службе Azure Kubernetes (AKS)
 
 После развертывания приложения в Kubernetes его можно обновить, указав новый образ контейнера или версию образа. Обновление выполняется поэтапно, поэтому одновременно обновляется только часть развертывания. Такое поэтапное обновление позволяет приложению продолжать работать во время обновления. Оно также обеспечивает механизм отката на случай, если произойдет сбой развертывания.
 
