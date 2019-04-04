@@ -21,7 +21,7 @@ items:
     displayName: workspace
     href: quickstart-run-cloud-notebook.md
   - name: Эксперимент с использованием локального сервера записных книжек
-    displayName: workspace install sdk
+    displayName: workspace, install, sdk
     href: quickstart-run-local-notebook.md
 - name: Учебники
   items:
@@ -41,7 +41,7 @@ items:
       displayName: automl, automated, auto ml,
       href: tutorial-auto-train-models.md
 - name: Примеры
-  displayName: example, examples, jupyter, azure notebooks, python, notebook, github
+  displayName: example, examples, Jupyter, azure notebooks, python, notebook, GitHub
   href: samples-notebooks.md
 - name: Основные понятия
   items:
@@ -54,6 +54,9 @@ items:
   - name: Управление моделями
     displayName: deploy, deployment
     href: concept-model-management-and-deployment.md
+  - name: Интерпретируемость модели
+    displayName: explainability
+    href: machine-learning-interpretability-explainability.md
   - name: Ускорение с использованием FPGA
     href: concept-accelerate-with-fpgas.md
   - name: Конвейеры машинного обучения
@@ -81,20 +84,20 @@ items:
   - name: Настройка среды разработки 
     items:
     - name: Настройка сред разработки
-      displayName: local, remote, azure notebooks, notebook, jupyter, dsvm, Databricks, ADB
+      displayName: local, remote, azure notebooks, notebook, Jupyter, dsvm, Databricks, ADB
       href: how-to-configure-environment.md
     - name: Расширение Visual Studio Code
-      displayName: Visual Studio Code, vscode, tools, ai, vs
+      displayName: Visual Studio Code, VSCode, tools, ai, vs
       items:
       - name: Начало работы
         href: how-to-vscode-tools.md
       - name: Обучение и развертывание
         href: how-to-vscode-train-deploy.md
   - name: Работа с данными
-    displayName: data prep, etl, elt, data preparation
+    displayName: data prep, ETL, ELT, data preparation
     items:
     - name: Изучение и подготовка данных
-      displayName: data prep, etl, elt, data preparation
+      displayName: data prep, ETL, ELT, data preparation
       items:
       - name: Загрузка данных
         href: how-to-load-data.md
@@ -108,7 +111,7 @@ items:
   - name: Обучение моделей
     items:
     - name: Настройка сред обучения
-      displayName: compute target, dsvm, Data Science Virtual Machine, local, cluster, aci, container instance, Databricks, data lake, lake, hdi, hdinsights
+      displayName: compute target, dsvm, Data Science Virtual Machine, local, cluster, ACI, container instance, Databricks, data lake, lake, HDI, HDInsight
       href: how-to-set-up-training-targets.md
     - name: Создание средств оценки при обучении модели
       href: how-to-train-ml-models.md
@@ -169,7 +172,7 @@ items:
     displayName: cli extension command line command-line az ci/cd automate automated
     href: reference-azure-machine-learning-cli.md
   - name: Экспорт и удаление данных
-    displayName: gdpr
+    displayName: GDPR
     href: how-to-export-delete-data.md
 - name: Справочные материалы
   items:
@@ -196,14 +199,16 @@ items:
   - name: Известные проблемы
     displayName: bugs errors troubleshoot
     href: resource-known-issues.md
-  - name: Получение поддержки
-    href: support-for-aml-services.md
+  - name: Форум пользователей
+    href: https://aka.ms/aml-forum-service
+  - name: Переполнение стека
+    href: https://stackoverflow.com/questions/tagged/azure-machine-learning
   - name: Сравнить наши продукты Машинного обучения
     href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning
     maintainContext: true
-ms.openlocfilehash: 4b38742208ad88b8dd1eeff8cce0d0055294ec12
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.openlocfilehash: cbe10e172a66e7bf43baa3a96900b244b8eb733c
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58862936"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918745"

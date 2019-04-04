@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/07/2017
 ms.author: ergreenl
-ms.openlocfilehash: 5cfcbba58b4e4416a2f1a56adcbe21eeacb15a85
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: fbd876ad46342dec7e2e73b92d3aafbd37cc205b
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55152172"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58892302"
 ---
 # <a name="how-to-decide-if-azure-ad-domain-services-is-right-for-your-use-case"></a>Как определить, подходят ли вам доменные службы Azure AD
 Доменные службы Azure AD позволяют развертывать рабочие нагрузки в службах инфраструктуры Azure, не заботясь об обслуживании инфраструктуры удостоверений в Azure. Эта управляемая служба отличается от типичного развертывания Windows Server Active Directory, требующего самостоятельного развертывания и администрирования. Она проста в развертывании и обеспечивает автоматическое отслеживание работоспособности и исправление проблем. Мы постоянно с данную службу, чтобы добавить поддержку наиболее распространенных сценариев развертывания.
@@ -34,23 +34,23 @@ ms.locfileid: "55152172"
 ## <a name="compare-azure-ad-domain-services-to-diy-ad-domain-in-azure"></a>Сравнение доменных служб Azure AD и самостоятельно развернутого домена AD в Azure
 Следующая таблица поможет выбрать между использованием доменных служб Azure AD и управлением инфраструктурой AD в Azure.
 
-| **Компонент** | **Доменные службы Azure AD** | **Самостоятельное развертывание AD на виртуальных машинах Azure** |
+| **Функция** | **Доменные службы Azure AD** | **Самостоятельное развертывание AD на виртуальных машинах Azure** |
 | --- |:---:|:---:|
 | [**Управляемая служба**](active-directory-ds-comparison.md#managed-service) |**&#x2713;** |**&#x2715;** |
 | [**Защищенные развернутые службы**](active-directory-ds-comparison.md#secure-deployments) |**&#x2713;** |Администратор должен обеспечить безопасное развертывание. |
 | [**Сервер DNS**](active-directory-ds-comparison.md#dns-server) | **&#x2713;** (управляемая служба) |**&#x2713;** |
-| [**Domain or Enterprise administrator privileges**](active-directory-ds-comparison.md#domain-or-enterprise-administrator-privileges) |**&#x2715;** |**&#x2713;** |
+| [**Права администратора домена или предприятия**](active-directory-ds-comparison.md#domain-or-enterprise-administrator-privileges) |**&#x2715;** |**&#x2713;** |
 | [**Присоединение к домену**](active-directory-ds-comparison.md#domain-join) |**&#x2713;** |**&#x2713;** |
 | [**Аутентификация в домене с помощью NTLM и Kerberos**](active-directory-ds-comparison.md#domain-authentication-using-ntlm-and-kerberos) |**&#x2713;** |**&#x2713;** |
 | [**Ограниченное делегирование Kerberos**](active-directory-ds-comparison.md#kerberos-constrained-delegation)|на основе ресурсов|на основе ресурсов и на основе учетных записей|
 | [**Структура пользовательских подразделений**](active-directory-ds-comparison.md#custom-ou-structure) |**&#x2713;** |**&#x2713;** |
 | [**Расширения схемы**](active-directory-ds-comparison.md#schema-extensions) |**&#x2715;** |**&#x2713;** |
-| [**Отношения доверия между доменом AD и лесом**](active-directory-ds-comparison.md#ad-domain-or-forest-trusts) |**&#x2715;** |**&#x2713;** |
-| [**LDAP read**](active-directory-ds-comparison.md#ldap-read) |**&#x2713;** |**&#x2713;** |
-| [**Защищенный протокол LDAP (LDAPS)**](active-directory-ds-comparison.md#secure-ldap) |**&#x2713;** |**&#x2713;** |
-| [**LDAP write**](active-directory-ds-comparison.md#ldap-write) |**&#x2715;** |**&#x2713;** |
-| [**Group Policy**](active-directory-ds-comparison.md#group-policy) |**&#x2713;** |**&#x2713;** |
-| [**Географически распределенные развертывания**](active-directory-ds-comparison.md#geo-dispersed-deployments) |**&#x2715;** |**&#x2713;** |
+| [**Отношения доверия с доменом AD и лесом**](active-directory-ds-comparison.md#ad-domain-or-forest-trusts) |**&#x2715;** |**&#x2713;** |
+| [**Чтение LDAP**](active-directory-ds-comparison.md#ldap-read) |**&#x2713;** |**&#x2713;** |
+| [**Защищенный LDAP (LDAPS)**](active-directory-ds-comparison.md#secure-ldap) |**&#x2713;** |**&#x2713;** |
+| [**Записи LDAP**](active-directory-ds-comparison.md#ldap-write) |**&#x2715;** |**&#x2713;** |
+| [**Групповая политика**](active-directory-ds-comparison.md#group-policy) |**&#x2713;** |**&#x2713;** |
+| [**Географически распределенных развертываний**](active-directory-ds-comparison.md#geo-dispersed-deployments) |**&#x2715;** |**&#x2713;** |
 
 #### <a name="managed-service"></a>Управляемая служба
 Доменами доменных служб Azure AD управляет корпорация Майкрософт. Вам не нужно беспокоиться об установке исправлений и обновлений, мониторинге, архивации и обеспечении доступности домена. Эти задачи управления предлагаются как услуга Microsoft Azure для ваших управляемых доменов.
@@ -115,9 +115,9 @@ ms.locfileid: "55152172"
 >
 >
 
-Корпорация Майкрософт опубликовала [рекомендации по развертыванию Windows Server Active Directory на виртуальных машинах Azure](https://msdn.microsoft.com/library/azure/jj156090.aspx) , чтобы облегчить самостоятельные установки.
+Корпорация Майкрософт опубликовала [рекомендации по развертыванию Windows Server Active Directory на виртуальных машинах Azure](/windows-server/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100) , чтобы облегчить самостоятельные установки.
 
 ## <a name="related-content"></a>Похожий контент
-* [Возможности доменных служб Azure AD](active-directory-ds-features.md)
-* [Сценарии развертывания доменных служб Azure AD](active-directory-ds-scenarios.md)
-* [Рекомендации по развертыванию Windows Server Active Directory на виртуальных машинах Azure](https://msdn.microsoft.com/library/azure/jj156090.aspx)
+* [Свойства — доменные службы Azure AD](active-directory-ds-features.md)
+* [Сценарии развертывания - доменных служб Azure AD](active-directory-ds-scenarios.md)
+* [Рекомендации по развертыванию Windows Server Active Directory на виртуальных машинах Azure](/windows-server/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100)

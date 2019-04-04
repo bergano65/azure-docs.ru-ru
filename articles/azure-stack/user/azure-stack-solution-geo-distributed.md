@@ -15,12 +15,12 @@ ms.date: 01/14/2019
 ms.author: mabrigg
 ms.reviewer: anajod
 ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 3df5bd177dfd88e74a8dbc72dd1966a18a61d0f8
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2c2b0d022c81dffe5e98932c22b9707eb10b7e63
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57860590"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58481728"
 ---
 # <a name="tutorial-create-a-geo-distributed-app-solution-with-azure-and-azure-stack"></a>Руководство. Создание решения для географически распределенного приложения с помощью Azure и Azure Stack
 
@@ -123,7 +123,7 @@ ms.locfileid: "57860590"
 
 ### <a name="create-web-app-deployment-in-both-clouds"></a>Создание развертывания веб-приложений в обоих облаках
 
-1.  Измените файл **WebApplication.csproj**: Выберите **Runtimeidentifier** и добавьте **win10-х64**. (См. документацию по [автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd)).
+1.  Измените файл **WebApplication.csproj**: Выберите Runtimeidentifier и добавьте **win10-х64**. (См. документацию по [автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd)).
 
     ![Alt text](media/azure-stack-solution-geo-distributed/image3.png)
 
@@ -472,7 +472,7 @@ Azure DevOps и Azure DevOps Server предоставляют конвейер 
 
 Файл закрытого ключа создается с помощью OpenSSL. Чтобы экспортировать сертификат в PFX-файл, выполните приведенную ниже команду, заменив заполнители *<private-key-file>* и *<merged-certificate-file>* путями закрытого ключа и файлом объединения сертификатов соответственно.
 
-```PowerShell
+```powershell
 openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-certificate-file>
 ```
 
