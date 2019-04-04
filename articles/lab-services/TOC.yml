@@ -149,6 +149,8 @@ items:
         href: devtest-lab-import-vm.md
       - name: Запуск или остановка работы виртуальной машины с помощью PowerShell либо CLI
         href: use-command-line-start-stop-virtual-machines.md
+      - name: Запуск виртуальных машин с помощью модулей runbook службы автоматизации
+        href: start-machines-use-automation-runbooks.md
     - name: Использование сред в лаборатории
       items:
       - name: Создание среды
@@ -157,6 +159,10 @@ items:
         href: devtest-lab-configure-use-public-environments.md
       - name: Создание среды с кластером Service Fabric
         href: create-environment-service-fabric-cluster.md
+      - name: Подключение среды к виртуальной сети в лаборатории
+        href: connect-environment-lab-virtual-network.md
+      - name: Интеграция сред с конвейером CI/CD в Azure DevOps
+        href: integrate-environments-devops-pipeline.md
     - name: Безопасный доступ к лабораториям
       items:
       - name: Добавление владельцев и пользователей лаборатории
@@ -242,7 +248,7 @@ items:
     - name: Интерфейс командной строки
       href: /cli/azure/lab
     - name: PowerShell
-      href: /powershell/module/azurerm.devtestlabs/#devtest_labs
+      href: /powershell/module/az.devtestlabs
     - name: REST API
       href: https://docs.microsoft.com/rest/api/dtl/
     - name: Шаблон Resource Manager
@@ -271,9 +277,9 @@ items:
       href: https://azure.microsoft.com/resources/videos/index/?services=devtest-lab
     - name: Часто задаваемые вопросы
       href: devtest-lab-faq.md
-ms.openlocfilehash: 4c96945c5e7a0aed52d3148c7dbf084a8d8b9f29
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: bee44d9ce7378bd48960c47ed9be9c7f53e23110
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58651179"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58886681"

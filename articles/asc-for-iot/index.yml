@@ -1,16 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 6a2d2825e382a6cda8a1fc04fd223e700cf8d284
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58757341"
 documentType: LandingData
 title: Документация по предварительной версии Центра безопасности Azure для Интернета вещей
 metadata:
-  title: Документация по предварительной версии Центра безопасности Azure для Интернета вещей. Руководства и краткие инструкции | Документация Майкрософт
+  title: "Документация по предварительной версии Центра безопасности Azure для Интернета вещей. Руководства и краткие инструкции\_| Документация Майкрософт"
   meta.description: Azure Security Center for IoT unifies your security management and enables advanced threat protection across your IoT solution.
-  services: ascforiot
+  services: asc-for-iot
   author: mlottner
   manager: barbkess
   ms.service: ascforiot
@@ -20,48 +14,48 @@ metadata:
   ms.date: 03/26/19
   ms.author: barbkess
 abstract:
-  description: Предварительная версия Центра безопасности Azure (ASC) для Интернета поможет составить четкое представление о кибербезопасности в масштабах всего решения Интернета вещей. Получите подробные и достоверные сведения о безопасности всех своих ресурсов, связанных с Azure. Параметры быстрого развертывания и полная интеграция с двойниками модулей Центра Интернета вещей предоставляют широкий спектр возможностей настройки и упрощают интеграцию с используемыми средствами управления устройствами. 
+  description: "Предварительная версия Центра безопасности Azure (ASC) для Интернета поможет составить четкое представление о кибербезопасности в масштабах всего решения Интернета вещей. Получите подробные и достоверные сведения о безопасности всех своих ресурсов, связанных с Azure. Параметры быстрого развертывания и полная интеграция с двойниками модулей Центра Интернета вещей предоставляют широкий спектр возможностей настройки и упрощают интеграцию с используемыми средствами управления устройствами.\_"
 sections:
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: Узнайте, как включить в Центре Интернета вещей ASC для Интернета вещей, установить ASC для агентов Интернета вещей и получить представление о данных и потенциальных угрозах.
-  - type: list
-    style: icon48
+  - title: 5-минутные руководства по началу работы
     items:
-    - image:
-        src: media/index/deploy.svg
-      text: Включение ASC для Интернета вещей
-      href: /azure/asc-for-iot/quickstart-onboard-iot-hub
-    - image:
-        src: media/index/get-started.svg
-      text: Начало работы с ASC для Интернета вещей
-      href: /azure/asc-for-iot/getting-started
-- title: Практические руководства
-  items:
-  - type: paragraph
-    text: Узнайте, как определить политики безопасности, защитить устройства от вредоносных действий и реагировать на предупреждения и инциденты безопасности.
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: 'Узнайте, как включить в Центре Интернета вещей ASC для Интернета вещей, установить ASC для агентов Интернета вещей и получить представление о данных и потенциальных угрозах.'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: media/index/deploy.svg
+            text: Включение ASC для Интернета вещей
+            href: /azure/asc-for-iot/quickstart-onboard-iot-hub
+          - image:
+              src: media/index/get-started.svg
+            text: Начало работы с ASC для Интернета вещей
+            href: /azure/asc-for-iot/getting-started
+  - title: Практические руководства
     items:
-    - html: <a href="/azure/asc-for-iot/how-to-investigate-device">Обнаружение угроз с помощью ASC для Интернета вещей</a>
-- title: Развитие навыков с помощью Microsoft Learn
-  items:
-  - type: list
-    style: cards
-    className: cardsFTitle
+      - type: paragraph
+        text: 'Узнайте, как определить политики безопасности, защитить устройства от вредоносных действий и реагировать на предупреждения и инциденты безопасности.'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/azure/asc-for-iot/how-to-investigate-device">Обнаружение угроз с помощью ASC для Интернета вещей</a>
+  - title: Развитие навыков с помощью Microsoft Learn
     items:
-    - title: Общие сведения о системе безопасности в Azure
-      href: https://docs.microsoft.com/learn/azure
-      image:
-        src: media/index/tutorial.svg
-        href: https://docs.microsoft.com/learn/azure
-  - type: paragraph
-    text: <a href="/learn/browse/?term=security">Другие интерактивные руководства</a>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: list
+        style: cards
+        className: cardsFTitle
+        items:
+          - title: Общие сведения о системе безопасности в Azure
+            href: 'https://docs.microsoft.com/learn/azure'
+            image:
+              src: media/index/tutorial.svg
+              href: 'https://docs.microsoft.com/learn/azure'
+      - type: paragraph
+        text: <a href="/learn/browse/?term=security">Другие интерактивные руководства</a>
+  - title: Справочные материалы
     items:
-    - html: <a href="https://azure.microsoft.com/updates/?product=iotsecurity">Обновления службы</a>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - html: '<a href="https://azure.microsoft.com/updates/?product=iotsecurity">Обновления службы</a>'

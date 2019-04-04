@@ -2,10 +2,16 @@
 layout: HubPage
 hide_bc: true
 title: Документация по Microsoft Azure
-description: 'Узнайте, как создавать мощные приложения и управлять ими с помощью облачных служб Microsoft Azure. Получение документации, примеров кода, руководств и пр.'
+description: Узнайте, как создавать мощные приложения и управлять ими с помощью облачных служб Microsoft Azure. Получение документации, примеров кода, руководств и пр.
 ms.topic: hub-page
 featureFlags:
-  - clicktale
+- clicktale
+ms.openlocfilehash: 97fd2ffd22f4a4c883d284a2d2db060cd1c2121c
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878678"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -106,9 +112,9 @@ featureFlags:
                                                     <li><a class="barLink" href="/azure/monitoring-and-diagnostics/">Azure Monitor</a></li>
                                                     <li><a class="barLink" href="/azure/application-insights/">Azure Application Insights</a></li>
                                                     <li><a class="barLink" href="/azure/cost-management/">Управление затратами Azure</a></li>
-                                                    <li><a class="barLink" href="/azure/backup/">Azure Backup</a></li>
+                                                    <li><a class="barLink" href="/azure/backup/">Служба архивации Azure</a></li>
                                                     <li><a class="barLink" href="/azure/site-recovery/">Azure Site Recovery</a></li>
-                                                    <li><a class="barLink" href="/azure/migrate/">Миграция Azure</a></li>
+                                                    <li><a class="barLink" href="/azure/migrate/">Служба "Миграция Azure"</a></li>
                                                     <li><a class="barLink" href="/azure/governance/policy/">Политика Azure</a></li>
                                                 </ul>
                                             </div>
@@ -198,15 +204,15 @@ Go</a>
                                                 <ul class="noBullet">
                                                     <li><a class="barLink" href="/azure/cosmos-db/">Azure Cosmos DB</a></li>
                                                 </ul>
-                                                <h4>Служба хранилища</h4>
+                                                <h4>Хранилище</h4>
                                                 <ul class="noBullet">
                                                     <li><a class="barLink" href="/azure/storage/">Хранилище BLOB-объектов</a></li>
                                                 </ul>
                                                 <h4>Решения ИИ и Cognitive Services</h4>
                                                 <ul class="noBullet">
-                                                    <li><a class="barLink" href="/azure/machine-learning/">Машинное обучение</a></li>
+                                                    <li><a class="barLink" href="/azure/machine-learning/">Машинное обучение </a></li>
                                                     <li><a class="barLink" href="/azure/cognitive-services/">Cognitive Services</a></li>
-                                                    <li><a class="barLink" href="/azure/notebooks/">Azure Notebooks</a>;</li>
+                                                    <li><a class="barLink" href="/azure/notebooks/">Azure Notebook</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -223,7 +229,7 @@ Go</a>
                                                     <li>
                                                         <a class="barLink" href="/cli/azure">
                                                             <img src="media/index/azure_dev-7.svg" alt="">
-Azure CLI </a>
+Инфраструктура CLI Azure </a>
                                                     </li>
                                                     <li>
                                                         <a class="barLink" href="/powershell/azure/overview">
@@ -1619,6 +1625,12 @@ Azure DevOps Projects </a>
                                                 <p>Azure Sentinel</p>
                                             </a>
                                         </li>
+                                        <li>
+                                            <a href="/azure/asc-for-iot/">
+                                                <img src="media/index/asc-for-iot.svg" alt="" />
+                                                <p>Центр безопасности Azure для Интернета вещей</p>
+                                            </a>
+                                        </li>
                                     </ul>
                                     <h3>Удостоверение</h3>
                                     <ul>
@@ -2328,7 +2340,7 @@ Azure DevOps Projects </a>
                         </ul>
                     </li>
                     <li>
-                        <a href="#storage">Служба хранилища</a>
+                        <a href="#storage">Хранилище</a>
                         <ul id="storage" class="cardsA">
                             <li>
                                 <a href="/azure/storage/">
@@ -2341,7 +2353,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Служба хранилища</h3>
+                                                    <h3>Хранилище</h3>
                                                     <p>Надежное облачное хранилище с высоким уровнем доступности и широким масштабированием.</p>
                                                 </div>
                                             </div>
@@ -2599,7 +2611,7 @@ Azure DevOps Projects </a>
                         </ul>
                     </li>
                     <li>
-                        <a href="#web">Веб-приложения</a>
+                        <a href="#web">Web</a>
                         <ul id="web" class="cardsA">
                             <li>
                                 <a href="/azure/app-service-web">
@@ -4843,6 +4855,25 @@ Azure DevOps Projects </a>
                                     </div>
                                 </a>
                             </li>
+                            <li>
+                                <a href="/azure/asc-for-iot/">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage">
+                                                        <img src="media/index/asc-for-iot.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Центр безопасности Azure для Интернета вещей</h3>
+                                                    <p>Узнайте, как унифицировать управление безопасностью и расширить защиту от угроз для решений Интернета вещей.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -5583,7 +5614,7 @@ Azure DevOps Projects </a>
                         </ul>
                     </li>
                     <li>
-                        <a href="#media">Мультимедиа</a>
+                        <a href="#media">Служба мультимедиа</a>
                         <ul id="media" class="cardsA">
                             <li>
                                 <a href="/azure/media-services/">
@@ -5910,7 +5941,7 @@ Azure DevOps Projects </a>
                 <a href="#sdkstools">Пакеты SDK и инструменты</a>
                 <ul id="sdkstools">
                     <li>
-                        <a href="#sdkstools-all">Все</a>
+                        <a href="#sdkstools-all">все</a>
                         <ul id="sdkstools-all" class="cardsF">
                             <li>
                                 <div class="container">
@@ -6068,7 +6099,7 @@ Azure REST API </h3>
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-Azure CLI </h3>
+Инфраструктура CLI Azure </h3>
                                                 <p>
                                                     <a href="/cli/azure">Начало работы</a>
                                                 </p>
@@ -6121,10 +6152,10 @@ Azure CLI </h3>
                                                     <a href="/visualstudio/azure/">Visual Studio</a>
                                                 </h3>
                                                 <p>
-                                                    <a href="https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=navigation+cta&utm_content=download+vs2017">Загрузки для Windows</a>
+                                                    <a href="https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=navigation+cta&utm_content=download+vs2017">Скачать для Windows</a>
                                                 </p>
                                                  <p>
-                                                    <a href="https://visualstudio.microsoft.com/vs/mac/">Загрузка для Mac</a>
+                                                    <a href="https://visualstudio.microsoft.com/vs/mac/">Скачать для Mac</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -6151,10 +6182,10 @@ Azure CLI </h3>
                                                     <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions">Функции Azure</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage">Служба хранилища</a>
+                                                    <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage">Хранилище</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb">Cosmos DB</a>
+                                                    <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb">База данных Cosmos</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -6177,10 +6208,10 @@ Docker </h3>
                                                     <a href="/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker">Средства Visual Studio для Docker</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017">Загрузка для Visual Studio</a>
+                                                    <a href="https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017">Скачать для Visual Studio</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=780681">Загрузка для Visual Studio Code</a>
+                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=780681">Скачать для Visual Studio Code</a>
                                                 </p>
                                                 <p>
                                                     <a href="https://go.microsoft.com/fwlink/?LinkId=780682">Скачать для Azure DevOps</a>
@@ -6209,7 +6240,7 @@ Docker </h3>
                                                     <a href="https://docs.microsoft.com/java/azure/java-azure-tools">IntelliJ и Eclipse</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://code.visualstudio.com/docs/languages/java">Visual Studio Code</a>
+                                                    <a href="https://code.visualstudio.com/docs/languages/java">Visual Studio Code.</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -6233,7 +6264,7 @@ Docker </h3>
                                                     <a href="https://docs.microsoft.com/visualstudio/python/python-in-visual-studio">Visual Studio</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://code.visualstudio.com/docs/languages/python">Visual Studio Code</a>
+                                                    <a href="https://code.visualstudio.com/docs/languages/python">Visual Studio Code.</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -6256,7 +6287,7 @@ Azure Resource Manager </h3>
                                                     <a href="https://docs.microsoft.com/azure/azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy">Visual Studio</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-visual-studio-code">Visual Studio Code</a>
+                                                    <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-visual-studio-code">Visual Studio Code.</a>
                                                 </p>
                                                 <p>
                                                     <a href="https://azure.microsoft.com/resources/templates/">Примеры шаблонов</a>
@@ -6280,19 +6311,19 @@ Azure Resource Manager </h3>
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="https://storageexplorer.com">Обозреватель службы хранилища Azure</a>
+                                                    <a href="https://storageexplorer.com">Обозреватель хранилищ</a>
                                                 </h3>
                                                 <p>
                                                     <a href="/azure/vs-azure-tools-storage-manage-with-storage-explorer">Начало работы</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=722418">Загрузка для Linux</a>
+                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=722418">Скачать для Linux</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=708342">Загрузка для Mac</a>
+                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=708342">Скачать для Mac</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=708343">Загрузки для Windows</a>
+                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=708343">Скачать для Windows</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -6312,16 +6343,16 @@ Azure Resource Manager </h3>
                                                 <h3>
 Пакет SDK и инструменты для Service Fabric </h3>
                                                 <p>
-                                                    <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started">Загрузки для Windows</a>
+                                                    <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started">Скачать для Windows</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux">Загрузка для Linux</a>
+                                                    <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux">Скачать для Linux</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-mac">Загрузка для Mac OS X</a>
+                                                    <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-mac">Скачать для Mac OS X</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-cli">Загрузка интерфейса командной строки Service Fabric</a>
+                                                    <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-cli">Скачать интерфейс командной строки Service Fabric </a>
                                                 </p>
                                             </div>
                                         </div>
@@ -6341,10 +6372,10 @@ Azure Resource Manager </h3>
                                                 <h3>
 Средства SQL </h3>
                                                 <p>
-                                                    <a href="/sql/azure-data-studio/download">Azure Data Studio<sup>Предварительная версия</sup></a>
+                                                    <a href="/sql/azure-data-studio/download">Azure Data Studio <sup>Предварительная версия</sup></a>
                                                 </p>
                                                 <p>
-                                                    <a href="/sql/ssms/download-sql-server-management-studio-ssms">SQL Server Management Studio (SSMS)</a>
+                                                    <a href="/sql/ssms/download-sql-server-management-studio-ssms">SQL Server Management Studio (SSMS);</a>
                                                 </p>                                            <p>
                                                     <a href="/sql/ssdt/download-sql-server-data-tools-ssdt">SQL Server Data Tools (SSDT)</a>
                                                 </p>

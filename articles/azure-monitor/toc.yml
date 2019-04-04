@@ -64,17 +64,17 @@ items:
     href: azure-management.md
   - name: Непрерывный мониторинг
     href: continuous-monitoring.md
-  - name: Анализ данных журналов
+  - name: Платформа данных
     items:
-    - name: Запросы журнала
-      href: log-query/log-query-overview.md
-    - name: Просмотр и анализ данных с помощью порталов
-      href: log-query/portals.md
-  - name: Данные мониторинга
+    - name: Обзор
+      href: platform/data-platform.md
+    - name: Метрики
+      href: platform/data-platform-metrics.md
+    - name: Журналы
+      href: platform/data-platform-logs.md
+  - name: Источники данных
     items:
-    - name: Метрики и журналы
-      href: platform/data-collection.md
-    - name: Источники данных
+    - name: Сводка источников данных
       href: platform/data-sources.md
     - name: Источники данных Azure
       href: platform/data-sources-reference.md
@@ -86,14 +86,20 @@ items:
       href: platform/data-ingestion-time.md
     - name: Сбор пользовательских метрик в хранилище метрик
       href: platform/metrics-custom-overview.md
-    - name: Защита данных
-      items:
-      - name: Данные журнала
-        href: platform/data-security.md
-      - name: Обработка персональных данных
-        href: platform/personal-data-mgmt.md
-      - name: Сбор и хранение данных приложений
-        href: app/data-retention-privacy.md
+  - name: Анализ данных журналов
+    items:
+    - name: Запросы журнала
+      href: log-query/log-query-overview.md
+    - name: Просмотр и анализ данных с помощью порталов
+      href: log-query/portals.md
+  - name: Защита данных
+    items:
+    - name: Данные журнала
+      href: platform/data-security.md
+    - name: Обработка персональных данных
+      href: platform/personal-data-mgmt.md
+    - name: Сбор и хранение данных приложений
+      href: app/data-retention-privacy.md
   - name: Аналитика
     items:
     - name: Application Insights
@@ -128,6 +134,8 @@ items:
       href: platform/alerts-unified-log.md
     - name: оповещения журнала действий;
       href: platform/activity-log-alerts.md
+    - name: Общая схема оповещений
+      href: platform/alerts-common-schema.md
   - name: Визуализируйте данные
     href: visualizations.md
   - name: Интеграция с партнерскими решениями
@@ -180,8 +188,6 @@ items:
           href: learn/quick-create-workspace-posh.md
       - name: Удаление рабочей области
         href: platform/delete-workspace.md
-      - name: Управление рабочей областью
-        href: platform/manage-access.md
       - name: Архитектура для поставщиков служб
         href: platform/service-providers.md
   - name: Сбор данных
@@ -341,6 +347,8 @@ items:
           href: app/annotations.md
         - name: ApplicationInsights.config
           href: app/configuration-with-applicationinsights-config.md
+        - name: Отладчик моментальных снимков
+          href: app/snapshot-debugger.md
       - name: Приложения Java
         items:
         - name: 'веб-приложений:'
@@ -434,6 +442,8 @@ items:
         href: platform/collect-azure-metrics-logs.md
       - name: Данные диагностики и журнала из службы хранилища Azure
         href: platform/azure-storage-iis-table.md
+      - name: Ресурсы Azure PaaS
+        href: platform/collect-azurepass-posh.md
       - name: Корреляция пользовательских источников данных
         href: app/custom-data-correlation.md
     - name: Сбор пользовательских данных
@@ -460,10 +470,10 @@ items:
         href: platform/archive-diagnostic-logs.md
       - name: Отправка журналов диагностики в Log Analytics
         href: platform/diagnostic-logs-stream-log-store.md
-      - name: Потоковая передача данных о ресурсах Azure в концентратор событий
-        href: platform/stream-monitoring-data-event-hubs.md
       - name: Потоковая передача журналов действий в Центры событий
         href: platform/activity-logs-stream-event-hubs.md
+      - name: Отправка журналов и метрик в концентратор событий
+        href: platform/stream-monitoring-data-event-hubs.md
       - name: Отправка журналов диагностики в концентратор событий
         href: platform/diagnostic-logs-stream-event-hubs.md
       - name: Соединитель Application Insights
@@ -650,9 +660,8 @@ items:
   - name: Визуализируйте данные
     items:
     - name: Views
+      href: platform/view-designer.md
       items:
-      - name: «Просмотреть конструктор»
-        href: platform/view-designer.md
       - name: Справочник по плиткам
         href: platform/view-designer-tiles.md
       - name: Справочник по элементам визуализации
@@ -807,6 +816,8 @@ items:
           href: platform/action-groups.md
         - name: Дополнительные сведения о схеме веб-перехватчика
           href: platform/activity-log-alerts-webhook.md
+        - name: Определения общей схемы оповещений
+          href: platform/alerts-common-schema-definitions.md
         - name: Поведение оповещений SMS
           href: platform/alerts-sms-behavior.md
         - name: Ограничение частоты создания оповещений
@@ -978,9 +989,9 @@ items:
   - name: Azure PowerShell
     items:
     - name: Мониторинг
-      href: /powershell/module/azurerm.insights
+      href: /powershell/module/az.applicationinsights
     - name: Журналы
-      href: /powershell/module/azurerm.operationalinsights
+      href: /powershell/module/az.operationalinsights
   - name: REST API
     items:
     - name: Мониторинг
@@ -1056,9 +1067,9 @@ items:
     href: https://stackoverflow.com/search?q=monitoring
   - name: Примеры кода
     href: https://azure.microsoft.com/resources/samples/?service=monitor
-ms.openlocfilehash: 48ea888b5c21bc2c689d93684b4dbae7eaee1ed8
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.openlocfilehash: 9c0f17f113b7940f83e3d3b5b2161fe9f88c01ac
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58629435"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58886647"
