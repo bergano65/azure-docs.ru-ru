@@ -8,16 +8,19 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: asgang
-ms.openlocfilehash: b378f77874b1ebef243836c101fa71a53f4775d1
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 1c278d810df7e5ba8701529a59987c9bb16fa40c
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58517757"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59044131"
 ---
 # <a name="exclude-disks-from-replication-of-azure-vms-to-azure-using-azure-powershell"></a>Исключение дисков из репликации виртуальных машин в Azure с помощью Azure PowerShell
 
 В этой статье описано, как исключать диски при репликации виртуальных машин Azure. Благодаря этому можно оптимизировать использование пропускной способности при репликации или же ресурсы целевой стороны, используемые такими дисками. Сейчас эта возможность предоставляется только с помощью Azure PowerShell.
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -25,8 +28,8 @@ ms.locfileid: "58517757"
 
 - Вам должны быть понятны [архитектура и компоненты сценария](azure-to-azure-architecture.md).
 - [Ознакомьтесь](azure-to-azure-support-matrix.md) с требованиями поддержки для всех компонентов.
-- Требуется модуль AzureRm PowerShell 5.7.0 или более поздней версии. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azureps-cmdlets-docs).
-- Ваше хранилище Служб восстановления уже создано и защита виртуальных машин выполнялась по крайней мере один раз. Если нет, выполните это с помощью документации, описанной [здесь](azure-to-azure-powershell.md) 
+- Среда Azure PowerShell `Az` модуля. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
+- Ваше хранилище Служб восстановления уже создано и защита виртуальных машин выполнялась по крайней мере один раз. Если не выполните его с помощью документации, упомянутой [здесь](azure-to-azure-powershell.md).
 
 ## <a name="why-exclude-disks-from-replication"></a>Зачем исключать диски из репликации
 Исключение дисков из репликации часто бывает необходимо:
@@ -46,7 +49,7 @@ ms.locfileid: "58517757"
 
 ```azurepowershell
 # Get details of the virtual machine
-$VM = Get-AzureRmVM -ResourceGroupName "A2AdemoRG" -Name "AzureDemoVM"
+$VM = Get-AzVM -ResourceGroupName "A2AdemoRG" -Name "AzureDemoVM"
 
 Write-Output $VM     
 ```
@@ -85,7 +88,7 @@ $DataDisk1VhdURI = $VM.StorageProfile.DataDisks[0].Vhd
 ```azurepowershell
 
 #Get the resource group that the virtual machine must be created in when failed over.
-$RecoveryRG = Get-AzureRmResourceGroup -Name "a2ademorecoveryrg" -Location "West US 2"
+$RecoveryRG = Get-AzResourceGroup -Name "a2ademorecoveryrg" -Location "West US 2"
 
 #Specify replication properties for each disk of the VM that is to be replicated (create disk replication configuration)
 
@@ -94,7 +97,7 @@ $OSdiskId =  $vm.StorageProfile.OsDisk.ManagedDisk.Id
 $RecoveryOSDiskAccountType = $vm.StorageProfile.OsDisk.ManagedDisk.StorageAccountType
 $RecoveryReplicaDiskAccountType =  $vm.StorageProfile.OsDisk.ManagedDisk.StorageAccountType
 
-$OSDiskReplicationConfig = New-AzureRmRecoveryServicesAsrAzureToAzureDiskReplicationConfig -ManagedDisk -LogStorageAccountId $EastUSCacheStorageAccount.Id `
+$OSDiskReplicationConfig = New-AzRecoveryServicesAsrAzureToAzureDiskReplicationConfig -ManagedDisk -LogStorageAccountId $EastUSCacheStorageAccount.Id `
          -DiskId $OSdiskId -RecoveryResourceGroupId  $RecoveryRG.ResourceId -RecoveryReplicaDiskAccountType  $RecoveryReplicaDiskAccountType `
          -RecoveryTargetDiskAccountType $RecoveryOSDiskAccountType
 
@@ -105,7 +108,7 @@ $datadiskId2  = $vm.StorageProfile.DataDisks[1].ManagedDisk.id
 $RecoveryReplicaDiskAccountType =  $vm.StorageProfile.DataDisks[1]. StorageAccountType
 $RecoveryTargetDiskAccountType = $vm.StorageProfile.DataDisks[1]. StorageAccountType
 
-$DataDisk2ReplicationConfig  = New-AzureRmRecoveryServicesAsrAzureToAzureDiskReplicationConfig -ManagedDisk -LogStorageAccountId $CacheStorageAccount.Id `
+$DataDisk2ReplicationConfig  = New-AzRecoveryServicesAsrAzureToAzureDiskReplicationConfig -ManagedDisk -LogStorageAccountId $CacheStorageAccount.Id `
          -DiskId $datadiskId2 -RecoveryResourceGroupId  $RecoveryRG.ResourceId -RecoveryReplicaDiskAccountType  $RecoveryReplicaDiskAccountType `
          -RecoveryTargetDiskAccountType $RecoveryTargetDiskAccountType
 
@@ -115,7 +118,7 @@ $datadiskId3  = $vm.StorageProfile.DataDisks[2].ManagedDisk.id
 $RecoveryReplicaDiskAccountType =  $vm.StorageProfile.DataDisks[2]. StorageAccountType
 $RecoveryTargetDiskAccountType = $vm.StorageProfile.DataDisks[2]. StorageAccountType
 
-$DataDisk3ReplicationConfig  = New-AzureRmRecoveryServicesAsrAzureToAzureDiskReplicationConfig -ManagedDisk -LogStorageAccountId $CacheStorageAccount.Id `
+$DataDisk3ReplicationConfig  = New-AzRecoveryServicesAsrAzureToAzureDiskReplicationConfig -ManagedDisk -LogStorageAccountId $CacheStorageAccount.Id `
          -DiskId $datadiskId3 -RecoveryResourceGroupId  $RecoveryRG.ResourceId -RecoveryReplicaDiskAccountType  $RecoveryReplicaDiskAccountType `
          -RecoveryTargetDiskAccountType $RecoveryTargetDiskAccountType
 

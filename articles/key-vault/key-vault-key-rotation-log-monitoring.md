@@ -13,18 +13,16 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: barclayn
-ms.openlocfilehash: 68fd33dc3e9def11f72b7aec14f83f86b8bb74d0
-ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.openlocfilehash: fb3300a45f905eb57fcc4880269e4a9bed9dac0c
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/24/2019
-ms.locfileid: "56749718"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59045991"
 ---
 # <a name="set-up-azure-key-vault-with-key-rotation-and-auditing"></a>Настройка смены ключей и аудита в Azure Key Vault
 
 ## <a name="introduction"></a>Общие сведения
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Получив хранилище ключей, вы можете использовать его для хранения ключей и секретов. В приложениях больше не нужно сохранять ключи и секреты. При необходимости их можно получить из хранилища. Хранилище ключей позволяет обновлять ключи и секреты, не затрагивая работу приложения, который открывает разнообразные возможности для управления секретами и ключ.
 
@@ -39,6 +37,8 @@ ms.locfileid: "56749718"
 
 > [!NOTE]
 > В этой статье не приведено подробное описание начальной настройки хранилища ключей. Дополнительные сведения см. в статье [Что такое хранилище ключей Azure?](key-vault-overview.md) Инструкции кросс платформенного интерфейса командной строки, см. в разделе [Управление хранилищем ключей с помощью Azure CLI](key-vault-manage-with-cli2.md).
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="set-up-key-vault"></a>Настройка хранилища ключей
 
@@ -166,6 +166,9 @@ var sec = kv.GetSecretAsync(<SecretID>).Result.Value;
 
 ## <a name="key-rotation-using-azure-automation"></a>Смена ключей с помощью службы автоматизации Azure
 
+> [!IMPORTANT]
+> Модули Runbook службы автоматизации Azure по-прежнему требуется использовать `AzureRM` модуля.
+
 Теперь вы готовы настроить смену значения, которые хранятся в виде секретов Key Vault. Можно сменить несколькими способами:
 
 - Как часть вручную
@@ -210,7 +213,7 @@ try
     $servicePrincipalConnection=Get-AutomationConnection -Name $connectionName         
 
     "Logging in to Azure..."
-    Connect-AzAccount `
+    Connect-AzureRmAccount `
         -ServicePrincipal `
         -TenantId $servicePrincipalConnection.TenantId `
         -ApplicationId $servicePrincipalConnection.ApplicationId `
@@ -235,12 +238,12 @@ $VaultName = <keyVaultName>
 $SecretName = <keyVaultSecretName>
 
 #Key name. For example key1 or key2 for the storage account
-New-AzStorageAccountKey -ResourceGroupName $RGName -Name $StorageAccountName -KeyName "key2" -Verbose
-$SAKeys = Get-AzStorageAccountKey -ResourceGroupName $RGName -Name $StorageAccountName
+New-AzureRmStorageAccountKey -ResourceGroupName $RGName -Name $StorageAccountName -KeyName "key2" -Verbose
+$SAKeys = Get-AzureRmStorageAccountKey -ResourceGroupName $RGName -Name $StorageAccountName
 
 $secretvalue = ConvertTo-SecureString $SAKeys[1].Value -AsPlainText -Force
 
-$secret = Set-AzKeyVaultSecret -VaultName $VaultName -Name $SecretName -SecretValue $secretvalue
+$secret = Set-AzureRmKeyVaultSecret -VaultName $VaultName -Name $SecretName -SecretValue $secretvalue
 ```
 
 В области редактора выберите **область тестирования** для тестирования сценария. Когда скрипт выполняется без ошибок, вы можете выбрать **публикации**, и затем можно применить расписания для runbook в области конфигурации модуля runbook.

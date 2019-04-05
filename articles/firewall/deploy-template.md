@@ -8,12 +8,12 @@ ms.service: firewall
 ms.topic: article
 ms.date: 12/01/2018
 ms.author: victorh
-ms.openlocfilehash: a15ffa23b64f944d8b2c088113bcc29443ce6873
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.openlocfilehash: e0fbec8b22993345114d8d6642e42095191d0b37
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54038965"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59046280"
 ---
 # <a name="deploy-azure-firewall-using-a-template"></a>Развертывание Брандмауэра Azure с помощью шаблона
 
@@ -25,11 +25,14 @@ ms.locfileid: "54038965"
 
 Дополнительные сведения о брандмауэре Azure см. в разделе [Руководство по развертыванию и настройке службы "Брандмауэр Azure" с помощью портала Azure](tutorial-firewall-deploy-portal.md).
 
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="use-the-template-to-deploy-azure-firewall"></a>Использование шаблона для развертывания брандмауэра Azure
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-**Установка и развертывание брандмауэра Azure с помощью шаблона**
+**Установка и развертывание брандмауэра Azure с помощью шаблона:**
 
 1. Перейдите к шаблону по ссылке [https://github.com/Azure/azure-quickstart-templates/tree/master/101-azurefirewall-sandbox](https://github.com/Azure/azure-quickstart-templates/tree/master/101-azurefirewall-sandbox).
    
@@ -56,16 +59,16 @@ ms.locfileid: "54038965"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-При необходимости группу ресурсов, брандмауэр и все связанные ресурсы можно удалить с помощью команды PowerShell [​​Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup). Чтобы удалить группу ресурсов с именем *MyResourceGroup*, выполните следующее. 
+Когда они больше не нужны, можно удалить группу ресурсов, брандмауэра и все связанные ресурсы, выполнив [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) команду PowerShell. Чтобы удалить группу ресурсов с именем *MyResourceGroup*, выполните следующее. 
 
 ```azurepowershell-interactive
-Remove-AzureRmResourceGroup -Name MyResourceGroup
+Remove-AzResourceGroup -Name MyResourceGroup
 ```
 Не удаляйте группу ресурсов и брандмауэр, если планируете перейти к изучению руководства по отслеживанию брандмауэра. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Также вы можете изучить журналы брандмауэра Azure.
 
 > [!div class="nextstepaction"]
-> [Руководство. Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)
+> [Руководство по Журналы брандмауэра Azure](./tutorial-diagnostics.md)
