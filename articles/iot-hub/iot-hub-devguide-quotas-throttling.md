@@ -3,17 +3,17 @@ title: Общие сведения о квотах и регулировании
 description: Руководство разработчика. Описание квот, применимых к Центру Интернета вещей, и ожидаемого поведения регулирования.
 author: robinsh
 manager: philmea
-ms.author: robin.shahan
+ms.author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 09/05/2018
-ms.openlocfilehash: d27b1ae05205d5b9c19b99733a3fa647a7f69c58
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: 14c563fda48bc7c54dcce1e1ccbfba716b6c73ad
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58499199"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59049609"
 ---
 # <a name="reference---iot-hub-quotas-and-throttling"></a>Руководство. Квоты и регулирование в Центре Интернета вещей
 

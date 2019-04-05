@@ -14,17 +14,17 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/16/2018
 ms.author: aljo
-ms.openlocfilehash: 7490287a56a4cd1fe72e843e2666d171bb9b6729
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 52623183139be2b8ac6b12d3adca64e72de932d3
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58665308"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59050328"
 ---
 # <a name="create-a-service-fabric-cluster-using-azure-resource-manager"></a>Создание кластера Service Fabric с помощью Azure Resource Manager 
 > [!div class="op_single_selector"]
 > * [Azure Resource Manager](service-fabric-cluster-creation-via-arm.md)
-> * [портал Azure](service-fabric-cluster-creation-via-portal.md)
+> * [Портал Azure](service-fabric-cluster-creation-via-portal.md)
 >
 >
 
@@ -34,6 +34,9 @@ ms.locfileid: "58665308"
 
 Перед созданием рабочего кластера для запуска производственных рабочих нагрузок мы рекомендуем сначала ознакомиться с [контрольным списком готовности рабочей среды](service-fabric-production-readiness-checklist.md).
 
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="prerequisites"></a>Технические условия 
 В этой статье для развертывания кластера используйте модули Azure CLI или Service Fabric RM для PowerShell:
 
@@ -41,16 +44,16 @@ ms.locfileid: "58665308"
 * [Azure CLI версии 2.0 и выше][azure-CLI]
 
 Найти справочную документацию для модулей Service Fabric можно здесь:
-* [AzureRM.ServiceFabric](https://docs.microsoft.com/powershell/module/azurerm.servicefabric)
-* [az SF CLI module](https://docs.microsoft.com/cli/azure/sf?view=azure-cli-latest)
+* [Az.ServiceFabric](https://docs.microsoft.com/powershell/module/az.servicefabric)
+* [модуль CLI AZ SF](https://docs.microsoft.com/cli/azure/sf?view=azure-cli-latest)
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure
 
 Перед выполнением любой из команд в этой статье нужно выполнить вход в Azure.
 
 ```powershell
-Connect-AzureRmAccount
-Set-AzureRmContext -SubscriptionId <subscriptionId>
+Connect-AzAccount
+Set-AzContext -SubscriptionId <subscriptionId>
 ```
 
 ```azurecli
@@ -71,7 +74,7 @@ az account set --subscription $subscriptionId
 Следующая команда позволяет создать кластеры Windows или Linux (нужно указать соответствующую ОС). Команды PowerShell или CLI также сохраняют сертификат в указанную папку *CertificateOutputFolder*, но сначала нужно убедиться, что папка для сертификатов уже создана. Команда принимает и другие параметры (например, номер SKU виртуальной машины).
 
 > [!NOTE]
-> Следующая команда PowerShell работает только с версией PowerShell для Azure Resource Manager выше 6.1. Чтобы узнать текущую версию PowerShell для Azure Resource Manager, выполните команду PowerShell "Get-Module AzureRM". Если нужно обновить версию PowerShell для Azure Resource Manager, щелкните [эту ссылку](/powershell/azure/azurerm/install-azurerm-ps). 
+> Следующая команда PowerShell работает только с помощью Azure PowerShell `Az` модуля. Чтобы проверить текущую версию версии PowerShell Azure Resource Manager, выполните следующую команду PowerShell «Get-Module Az». Если нужно обновить версию PowerShell для Azure Resource Manager, щелкните [эту ссылку](/powershell/azure/install-Az-ps). 
 >
 >
 
@@ -89,7 +92,7 @@ $vmuser="myadmin"
 $os="WindowsServer2016DatacenterwithContainers"
 $certOutputFolder="c:\certificates"
 
-New-AzureRmServiceFabricCluster -ResourceGroupName $resourceGroupName -Location $resourceGroupLocation -CertificateOutputFolder $certOutputFolder -CertificatePassword $certpassword -CertificateSubjectName $CertSubjectName -OS $os -VmPassword $vmpassword -VmUserName $vmuser
+New-AzServiceFabricCluster -ResourceGroupName $resourceGroupName -Location $resourceGroupLocation -CertificateOutputFolder $certOutputFolder -CertificatePassword $certpassword -CertificateSubjectName $CertSubjectName -OS $os -VmPassword $vmpassword -VmUserName $vmuser
 ```
 
 Развертывание кластера с помощью Azure CLI:
@@ -143,7 +146,7 @@ $certOutputFolder="c:\certificates"
 $parameterFilePath="c:\mytemplates\mytemplateparm.json"
 $templateFilePath="c:\mytemplates\mytemplate.json"
 
-New-AzureRmServiceFabricCluster -ResourceGroupName $resourceGroupName -CertificateOutputFolder $certOutputFolder -CertificatePassword $certpassword -CertificateSubjectName $CertSubjectName -TemplateFile $templateFilePath -ParameterFile $parameterFilePath 
+New-AzServiceFabricCluster -ResourceGroupName $resourceGroupName -CertificateOutputFolder $certOutputFolder -CertificatePassword $certpassword -CertificateSubjectName $CertSubjectName -TemplateFile $templateFilePath -ParameterFile $parameterFilePath 
 ```
 
 Развертывание кластера с помощью Azure CLI:
@@ -167,7 +170,7 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
 
 Создайте кластер, используя следующую команду, если уже имеется сертификат, который нужно использовать для защиты кластера.
 
-Если это подписанный ЦС сертификат, который также используется в других целях, рекомендуется предоставить отдельную группу ресурсов, специально для хранилища ключей. Рекомендуется поместить хранилище ключей в собственной группе ресурсов. Так вы сможете удалять группы ресурсов для вычислений и хранения, включая группу ресурсов, в которой размещен кластер Service Fabric, без потери ключей и секретов. **Группа ресурсов с хранилищем ключей *должна находиться в том же регионе*, что и кластер, который ее использует**.
+Если это подписанный ЦС сертификат, который также используется в других целях, рекомендуется предоставить отдельную группу ресурсов, специально для хранилища ключей. Рекомендуется поместить хранилище ключей в собственной группе ресурсов. Так вы сможете удалять группы ресурсов для вычислений и хранения, включая группу ресурсов, в которой размещен кластер Service Fabric, без потери ключей и секретов. **Группа ресурсов с хранилищем ключей *должна находиться в том же регионе*, что и кластер, который ее использует.**
 
 ### <a name="use-the-default-five-node-one-node-type-template-that-ships-in-the-module"></a>Использование шаблона по умолчанию с типом для одного или пяти узлов, который поставляется в модуле
 Используемый шаблон доступен в [примерах Azure для Windows](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Windows-1-NodeTypes-Secure-NSG) и [Ubuntu](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Ubuntu-1-NodeTypes-Secure).
@@ -184,7 +187,7 @@ $vmpassword=("Password!4321" | ConvertTo-SecureString -AsPlainText -Force)
 $vmuser="myadmin"
 $os="WindowsServer2016DatacenterwithContainers"
 
-New-AzureRmServiceFabricCluster -ResourceGroupName $resourceGroupName -Location $resourceGroupLocation -KeyVaultResourceGroupName $vaultResourceGroupName -KeyVaultName $vaultName -CertificateFile C:\MyCertificates\chackocertificate3.pfx -CertificatePassword $certPassword -OS $os -VmPassword $vmpassword -VmUserName $vmuser 
+New-AzServiceFabricCluster -ResourceGroupName $resourceGroupName -Location $resourceGroupLocation -KeyVaultResourceGroupName $vaultResourceGroupName -KeyVaultName $vaultName -CertificateFile C:\MyCertificates\chackocertificate3.pfx -CertificatePassword $certPassword -OS $os -VmPassword $vmpassword -VmUserName $vmuser 
 ```
 
 Развертывание кластера с помощью Azure CLI:
@@ -237,7 +240,7 @@ $parameterFilePath="c:\mytemplates\mytemplateparm.json"
 $templateFilePath="c:\mytemplates\mytemplate.json"
 $certificateFile="C:\MyCertificates\chackonewcertificate3.pem"
 
-New-AzureRmServiceFabricCluster -ResourceGroupName $resourceGroupName -Location $resourceGroupLocation -TemplateFile $templateFilePath -ParameterFile $parameterFilePath -KeyVaultResourceGroupName $vaultResourceGroupName -KeyVaultName $vaultName -CertificateFile $certificateFile -CertificatePassword $certPassword
+New-AzServiceFabricCluster -ResourceGroupName $resourceGroupName -Location $resourceGroupLocation -TemplateFile $templateFilePath -ParameterFile $parameterFilePath -KeyVaultResourceGroupName $vaultResourceGroupName -KeyVaultName $vaultName -CertificateFile $certificateFile -CertificatePassword $certPassword
 ```
 
 Развертывание кластера с помощью Azure CLI:
@@ -264,13 +267,13 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
 Развертывание кластера с помощью PowerShell:
 
 ```powershell
-Set-AzureRmKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -EnabledForDeployment
+Set-AzKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -EnabledForDeployment
 
 $parameterFilePath="c:\mytemplates\mytemplate.json"
 $templateFilePath="c:\mytemplates\mytemplateparm.json"
 $secretID="https://test1.vault.azure.net:443/secrets/testcertificate4/55ec7c4dc61a462bbc645ffc9b4b225f"
 
-New-AzureRmServiceFabricCluster -ResourceGroupName $resourceGroupName -SecretIdentifier $secretId -TemplateFile $templateFilePath -ParameterFile $parameterFilePath 
+New-AzServiceFabricCluster -ResourceGroupName $resourceGroupName -SecretIdentifier $secretId -TemplateFile $templateFilePath -ParameterFile $parameterFilePath 
 ```
 
 Развертывание кластера с помощью Azure CLI:
@@ -292,7 +295,7 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
 Синтаксис и свойства JSON, используемые в шаблоне, доступны в справочнике по шаблону [Microsoft.ServiceFabric/clusters](/azure/templates/microsoft.servicefabric/clusters).
 
 <!-- Links -->
-[azure-powershell]:https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps
+[azure-powershell]:https://docs.microsoft.com/powershell/azure/install-Az-ps
 [azure-CLI]:https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest
 [service-fabric-cluster-security]: service-fabric-cluster-security.md
 [customize-your-cluster-template]: service-fabric-cluster-creation-create-template.md
