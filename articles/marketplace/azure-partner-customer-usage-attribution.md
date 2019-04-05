@@ -9,12 +9,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 11/17/2018
 ms.author: yijenj
-ms.openlocfilehash: 9becc7bacf1b2263f41d4cfb7b9cf3957063b230
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: 078815185ddb6018a394401f57f7557ac3aedb73
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58649584"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59050158"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -31,6 +31,9 @@ ms.locfileid: "58649584"
 Однозначного соответствия примитивов использования клиента предназначен для нового развертывания и не поддерживает добавление тегов существующие ресурсы, которые уже были развернуты.
 
 Однозначного соответствия примитивов использования клиента необходим для [приложения Azure](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/azure-applications/cpp-azure-app-offer): опубликованные предложения шаблона решения в Azure Marketplace.
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="use-resource-manager-templates"></a>Использование шаблонов Resource Manager
 Многие решения партнеров развертываются в подписке клиента с помощью шаблонов Resource Manager. Если у вас есть шаблон Resource Manager, которая доступна в Azure Marketplace, на сайте GitHub, а также краткое руководство, процесс внесения изменений в шаблон, чтобы включить однозначного соответствия примитивов использования клиента следует очень легко.
@@ -223,12 +226,12 @@ Param(
 
 # Get the correlationId of the pid deployment
 
-$correlationId = (Get-AzureRmResourceGroupDeployment -ResourceGroupName
+$correlationId = (Get-AzResourceGroupDeployment -ResourceGroupName
 $resourceGroupName -Name "pid-$guid").correlationId
 
 # Find all deployments with that correlationId
 
-$deployments = Get-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName | Where-Object{$_.correlationId -eq $correlationId}
+$deployments = Get-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName | Where-Object{$_.correlationId -eq $correlationId}
 
 # Find all deploymentOperations in a deployment by name
 # PowerShell doesn't surface outputResources on the deployment
@@ -239,7 +242,7 @@ foreach ($deployment in $deployments){
 # Get deploymentOperations by deploymentName
 # then the resourceId for any create operation
 
-($deployment | Get-AzureRmResourceGroupDeploymentOperation | Where-Object{$_.properties.provisioningOperation -eq "Create" -and $_.properties.targetResource.resourceType -ne "Microsoft.Resources/deployments"}).properties.targetResource.id
+($deployment | Get-AzResourceGroupDeploymentOperation | Where-Object{$_.properties.provisioningOperation -eq "Create" -and $_.properties.targetResource.resourceType -ne "Microsoft.Resources/deployments"}).properties.targetResource.id
 
 }
 ```
@@ -313,19 +316,19 @@ foreach ($deployment in $deployments){
 
 ## <a name="faq"></a>Часто задаваемые вопросы
 
-**Зачем добавлять GUID в шаблон?**
+**Что такое преимущество добавив идентификатор GUID в шаблон?**
 
 Корпорация Майкрософт предоставляет партнерам с представлением клиентских развертываний своих решений и insights от их influenced использования. Корпорация Майкрософт и партнер могут использовать эту информацию, чтобы обеспечить более плотное взаимодействие между отделами продаж. Корпорация Майкрософт и партнер также могут использовать эти данные для оценки влияния отдельных партнеров на рост и развитие Azure.
 
-**Можно ли изменить добавленный ранее GUID?**
+**После добавления идентификатора GUID, можно его изменить?**
 
 Да, клиент или партнер по реализации может изменять шаблон, удалять GUID или указывать другой GUID. Мы рекомендуем, что партнеры заранее описания роли ресурса и идентификатор GUID для своих клиентов и партнеров, для предотвращения удаления или изменения на идентификатор GUID. Изменение GUID влияет только на новые развертывания и ресурсы, но не затрагивает уже существующие.
 
-**Можно ли отслеживать шаблоны, развертываемые из репозитория сторонних производителей, например GitHub?**
+**Можно ли отслеживать шаблоны, развертываемые из репозитория GitHub сторонних производителей?**
 
 Да. Данные о потреблении будут отслеживаться, если в шаблоне на момент развертывания указан GUID. Партнеры должны иметь профиль на портале cpp, чтобы зарегистрировать GUID, используемый для развертывания за пределами Azure Marketplace.
 
-**Получает ли клиент отчеты?**
+**Получает клиент также reporting?**
 
 Клиенты могут отслеживать потребление отдельных ресурсов или определенных клиентом групп ресурсов на портале управления Azure.
 
@@ -333,7 +336,7 @@ foreach ($deployment in $deployments){
 
 Этот новый метод привязки развертывания и данных об использовании к решению партнера дает возможность связать решение партнера с данными об использовании ресурсов Azure. DPOR предназначен для связывания партнера, предоставляющего услуги консультирования (системный интегратор) или управления (поставщик управляемых служб), с подпиской Azure клиента.
 
-**В чем заключается преимущество использования формы генератора GUID хранилища Azure?**
+**Что такое преимущество использования формы генератор GUID хранилища Azure?**
 
 Форма генератора GUID хранилища Azure гарантированно создает уникальный идентификатор требуемого формата. Кроме того, если используются какие-либо методы отслеживания плоскости данных хранилища Azure, вы можете использовать один и тот же уникальный идентификатор для отслеживания плоскости управления Marketplace. Это позволяет использовать единый унифицированный уникальный идентификатор для определения принадлежности участника, без поддержки отдельных GUID.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: da027e492633ba3e4da912c2c45b2432fd217576
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: c3ef6ff73366ae3017e1126de16153195576a1a8
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58802965"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59048715"
 ---
 # <a name="get-compliance-data-of-azure-resources"></a>Получить данные о соответствии ресурсов Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "58802965"
 > [!WARNING]
 > Если состояние соответствия указывается как **не зарегистрирован**, убедитесь, что **Microsoft.PolicyInsights** зарегистрирован поставщик ресурсов и что у пользователя есть соответствующие права доступа на основе ролей для управления () Разрешения RBAC), как описано в разделе [RBAC в политике Azure](../overview.md#rbac-permissions-in-azure-policy).
 
-[!INCLUDE [az-powershell-update](../../../../includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
 ## <a name="evaluation-triggers"></a>Триггеры оценки
 
@@ -56,8 +56,8 @@ ms.locfileid: "58802965"
 
 В каждом универсальном коде ресурса (URI) REST API есть переменные, которые необходимо заменить собственными значениями:
 
-- `{YourRG}` — замените это значение именем своей группы ресурсов.
-- `{subscriptionId}` — замените это значение идентификатором своей подписки.
+- `{YourRG}` — Замените на имя своей группы ресурсов
+- `{subscriptionId}` -Замените идентификатор подписки
 
 Сканирование поддерживает оценку ресурсов в подписке или группе ресурсов. Запустите сканирование для области через команду **POST** REST API, используя следующие структуры универсального кода ресурса (URI):
 
@@ -79,7 +79,7 @@ ms.locfileid: "58802965"
 https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/asyncOperationResults/{ResourceContainerGUID}?api-version=2018-07-01-preview
 ```
 
-`{ResourceContainerGUID}` создается для запрошенной области статически. Если эта область уже выполняет проверку по требованию, новое сканирование не запускается. Вместо этого новому запросу для проверки состояния предоставляется тот же URI, указанные в свойстве **Location** (`{ResourceContainerGUID}`). Команда **GET** REST API, отправленная на URI, указанный в свойстве **Location**, возвращает состояние **202 — принято**, пока продолжается выполнение оценки. Когда оценочное сканирование завершается, возвращается состояние **200 — ОК**. Вот пример текста в формате JSON, который передается в ответе после завершения проверки:
+`{ResourceContainerGUID}` статически создается для области, запрошенной. Если эта область уже выполняет проверку по требованию, новое сканирование не запускается. Вместо этого новому запросу для проверки состояния предоставляется тот же URI, указанные в свойстве **Location** (`{ResourceContainerGUID}`). Команда **GET** REST API, отправленная на URI, указанный в свойстве **Location**, возвращает состояние **202 — принято**, пока продолжается выполнение оценки. Когда оценочное сканирование завершается, возвращается состояние **200 — ОК**. Вот пример текста в формате JSON, который передается в ответе после завершения проверки:
 
 ```json
 {

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: kumud
-ms.openlocfilehash: 85dd3cca081d492bfeefa3e8ea0d143c9c37af8f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c2821890408e38d0d2be730da10b7926d77697d4
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58007946"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59048305"
 ---
 # <a name="performance-considerations-for-traffic-manager"></a>Рекомендации по безопасности для диспетчера трафика
 
@@ -46,7 +46,7 @@ ms.locfileid: "58007946"
 
     SolveDNS включает разные средства для повышения производительности. Средство DNS Comparison показывает, сколько времени занимает разрешение DNS-имени, в том числе в сравнении с другими поставщиками служб DNS.
 
-* [WebSitePulse](https://www.websitepulse.com/help/tools.php)
+* [Это WebSitePulse](https://www.websitepulse.com/help/tools.php)
 
     Одно из самых простых средств — это WebSitePulse. Введите URL-адрес, чтобы просмотреть время разрешения DNS, первый байт, последний байт и другую статистику производительности. Вы можете выбрать одно из трех тестовых расположений. В этом примере при первом запуске поиск DNS выполняется за 0,204 с.
 
@@ -56,7 +56,7 @@ ms.locfileid: "58007946"
 
     ![pulse2](./media/traffic-manager-performance-considerations/traffic-manager-web-site-pulse2.png)
 
-* [CA App Synthetic Monitor](https://asm.ca.com/en/checkit.php)
+* [Монитор приложений синтетический ЦС](https://asm.ca.com/en/checkit.php)
 
     Ранее известная как средство Watch мыши проверки веб-сайтов, этот сайт показано время разрешения DNS из нескольких географических регионах одновременно. Введите URL-адрес, чтобы узнать время разрешения DNS, время подключения и скорость для нескольких расположений. С помощью этого теста можно узнать, какая размещенная служба возвращается для разных расположений во всем мире.
 
@@ -66,21 +66,21 @@ ms.locfileid: "58007946"
 
     Это средство отображает статистику производительности для каждого элемента веб-страницы. На вкладке "Page Analysis" (Анализ страницы) показано время (в %), затраченное на поиск DNS.
 
-* [What's My DNS?](https://www.whatsmydns.net/)
+* [Что такое моей DNS?](https://www.whatsmydns.net/)
 
     На этом сайте выполняется поиск DNS в 20 географических расположениях, результаты которого отображаются на карте.
 
-* [Dig Web Interface](https://www.digwebinterface.com)
+* [Получить веб-интерфейс](https://www.digwebinterface.com)
 
     На этом сайте отображается подробная информация о DNS, включая записи CNAME и A. Установите флажки "Colorize output" (Выделить цветом выходные данные) и "Stats" (Статистика), а для "Nameservers" (Имена серверов) выберите значение "All" (Все).
 
 ## <a name="next-steps"></a>Следующие шаги
 
-[О методах маршрутизации трафика в диспетчере трафика](traffic-manager-routing-methods.md)
+[Методы маршрутизации трафика диспетчером трафика](traffic-manager-routing-methods.md)
 
 [Проверка параметров диспетчера трафика](traffic-manager-testing-settings.md)
 
-[Операции с диспетчером трафика (справочник по REST API)](https://go.microsoft.com/fwlink/?LinkId=313584)
+[Операции с диспетчером трафика (Справочник по API REST)](https://go.microsoft.com/fwlink/?LinkId=313584)
 
-[Командлеты для диспетчера трафика Azure](https://docs.microsoft.com/powershell/module/azurerm.trafficmanager)
+[Командлеты диспетчера трафика Azure](https://docs.microsoft.com/powershell/module/az.trafficmanager)
 

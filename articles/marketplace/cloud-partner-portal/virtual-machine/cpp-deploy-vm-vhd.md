@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 11/30/2018
 ms.author: pbutlerm
-ms.openlocfilehash: a5b4e0465e83dec5620954998db329e7902fb59c
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: f37ab1b9eef5be4aff6e5f8aecebc3688592f040
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58106055"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59046688"
 ---
 # <a name="deploy-a-vm-from-your-vhds"></a>Развертывание виртуальной машины из дисков VHD
 
@@ -29,16 +29,17 @@ ms.locfileid: "58106055"
 
 Дополнительные сведения об образах виртуальных машин см. в следующих записях блога:
 
-- [Образ виртуальной машины](https://azure.microsoft.com/blog/vm-image-blog-post/)
-- [Запись блога о способах использования PowerShell при работе с образами виртуальных машин](https://azure.microsoft.com/blog/vm-image-powershell-how-to-blog-post/)
+- [Образ виртуальной Машины](https://azure.microsoft.com/blog/vm-image-blog-post/)
+- [PowerShell образ виртуальной Машины «Как»](https://azure.microsoft.com/blog/vm-image-powershell-how-to-blog-post/)
 
+[!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
 ## <a name="prerequisite-install-the-necessary-tools"></a>Предварительные требования: установка необходимых инструментов
 
 Если это еще не сделано, установите Azure PowerShell и Azure CLI, выполнив инструкции в следующих статьях:
 
-- [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps)
-- [Установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
+- [Установите Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps)
+- [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
 
 
 ## <a name="deployment-steps"></a>Шаги по развертыванию
@@ -52,26 +53,26 @@ ms.locfileid: "58106055"
 После развертывания виртуальной машины вы сможете [сертифицировать образ своей виртуальной машины](./cpp-certify-vm.md).
 
 1. Нажмите кнопку **Создать** и выполните поиск по запросу **Развертывание шаблона**, а затем выберите **Build your own template in Editor** (Создать собственный шаблон в редакторе).  <br/>
-   ![Создание шаблона развертывания VHD на портале Azure](./media/publishvm_021.png)
+   ![Создание шаблона развертывания виртуального жесткого диска на портале Azure](./media/publishvm_021.png)
 
 1. Скопируйте этот [шаблон JSON](./cpp-deploy-json-template.md) и вставьте его в редактор, а затем щелкните **Сохранить**. <br/>
-   ![Сохранение шаблона развертывания VHD на портале Azure](./media/publishvm_022.png)
+   ![Сохранение шаблона развертывания виртуального жесткого диска на портале Azure](./media/publishvm_022.png)
 
 1. Укажите значения параметров на страницах свойств **Настраиваемое развертывание**.
 
    <table> <tr> <td valign="top"> <img src="./media/publishvm_023.png" alt="Custom deployment property page 1"> </td> <td valign="top"> <img src="./media/publishvm_024.png" alt="Custom deployment property page 2"> </td> </tr> </table> <br/> 
 
-   |  **Параметр**              |   **Описание**                                                            |
+   |  **Параметр**              |   **ОПИСАНИЕ**                                                            |
    |  -------------              |   ---------------                                                            |
    | User Storage Account Name (Имя учетной записи хранения)   | Имя учетной записи хранения, в которой находится обобщенный виртуальный жесткий диск                    |
    | User Storage Container Name (Имя контейнера хранилища пользователя) | Имя контейнера, в котором находится обобщенный виртуальный жесткий диск                          |
    | DNS Name for Public IP (DNS-имя для общедоступного IP-адреса)      | DNS-имя общедоступного IP-адреса                                                           |
    | Admin User Name (Имя администратора)             | Имя пользователя учетной записи администратора для новой виртуальной машины                                  |
    | Пароль администратора              | Пароль учетной записи администратора для новой виртуальной машины                                  |
-   | тип ОС;                     | Операционная система виртуальной машины: `Windows` \| `Linux`                                    |
+   | тип ОС;                     | Операционная система виртуальной Машины: `Windows` \| `Linux`                                    |
    | Идентификатор подписки             | Идентификатор выбранной подписки                                      |
    | Расположение                    | Географическое расположение развертывания                                        |
-   | Размер виртуальной машины                     | [Размер виртуальной машины Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes), например `Standard_A2` |
+   | Размер виртуальной машины                     | [Размер виртуальной Машины Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes), например `Standard_A2` |
    | Имя общедоступного IP-адреса      | Имя общедоступного IP-адреса                                               |
    | Имя виртуальной машины                     | Имя новой виртуальной машины                                                           |
    | имя виртуальной сети;        | Имя виртуальной сети, используемой виртуальной машиной                                   |

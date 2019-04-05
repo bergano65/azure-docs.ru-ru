@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 5d1b2718b360a55d9b1510bcfcb2ddb6492e2830
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: e2ffda3141462d19557af3af26c117ee505c40ab
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57436754"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59047353"
 ---
 # <a name="suspend-and-reactivate-messaging-entities-disable"></a>Приостановка и повторная активация сущностей обмена сообщениями (отключение)
 
@@ -34,6 +34,8 @@ ms.locfileid: "57436754"
 
 Портал позволяет отключать очереди только полностью. Также можно отключить операции отправки и получения по отдельности, используя API служебной шины [NamespaceManager](/dotnet/api/microsoft.servicebus.namespacemanager) в пакете SDK для .NET Framework, или с помощью шаблона Azure Resource Manager через Azure CLI или Azure PowerShell.
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="suspension-states"></a>Состояния приостановки
 
 Для очереди можно установить следующие состояния.
@@ -48,11 +50,11 @@ ms.locfileid: "57436754"
 Перечисление [EntityStatus](/dotnet/api/microsoft.servicebus.messaging.entitystatus) также определяет набор переходных состояний, которые могут устанавливаться только системой. В следующем примере показана команда PowerShell для отключения очереди. Команда повторной активации эквивалентна установке значения **Active** для параметра `Status`.
 
 ```powershell
-$q = Get-AzureRmServiceBusQueue -ResourceGroup mygrp -NamespaceName myns -QueueName myqueue
+$q = Get-AzServiceBusQueue -ResourceGroup mygrp -NamespaceName myns -QueueName myqueue
 
 $q.Status = "Disabled"
 
-Set-AzureRmServiceBusQueue -ResourceGroup mygrp -NamespaceName myns -QueueName myqueue -QueueObj $q
+Set-AzServiceBusQueue -ResourceGroup mygrp -NamespaceName myns -QueueName myqueue -QueueObj $q
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: hrasheed
-ms.openlocfilehash: 501f215ae3daf24db6307b4f8afb0c7d3271d8a5
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: 2c64019ae667ff4a2ce0694ffc4a9cd69b9116b3
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58361869"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59048925"
 ---
 # <a name="migrating-to-azure-resource-manager-based-development-tools-for-hdinsight-clusters"></a>Переход к средствам разработки на основе Azure Resource Manager для кластеров HDInsight
 
@@ -32,28 +32,28 @@ ms.locfileid: "58361869"
 
 Ниже приведены основные команды для работы с HDInsight посредством классического Azure CLI:
 
-* `azure hdinsight cluster create` — создает кластер HDInsight;
-* `azure hdinsight cluster delete` — удаляет кластер HDInsight;
-* `azure hdinsight cluster show` — отображает информацию о существующем кластере;
-* `azure hdinsight cluster list` — выдает список кластеров HDInsight для подписки Azure.
+* `azure hdinsight cluster create` — Создает кластер HDInsight
+* `azure hdinsight cluster delete` — Удаляет кластер HDInsight
+* `azure hdinsight cluster show` — Отображение сведений о существующем кластере
+* `azure hdinsight cluster list` — содержит список кластеров HDInsight для подписки Azure
 
 Проверить, какие параметры и переключатели доступны для каждой команды, позволяет переключатель `-h` .
 
 ### <a name="new-commands"></a>Новые команды
 В диспетчере ресурсов Azure появились следующие команды:
 
-* `azure hdinsight cluster resize` — динамически изменяет количество рабочих узлов в кластере;
-* `azure hdinsight cluster enable-http-access` — обеспечивает HTTPs-доступ к кластеру (по умолчанию включен);
-* `azure hdinsight cluster disable-http-access` — отключает HTTPs-доступ к кластеру;
-* `azure hdinsight script-action` — предоставляет команды для создания действий сценариев в кластере и управления этими действиями;
-* `azure hdinsight config` — предоставляет команды для создания файла конфигурации, который можно использовать с командой `hdinsight cluster create` для предоставления сведений о конфигурации.
+* `azure hdinsight cluster resize` — динамически изменяет количество рабочих узлов в кластере
+* `azure hdinsight cluster enable-http-access` — обеспечивает HTTPs-доступ к кластеру (на по умолчанию)
+* `azure hdinsight cluster disable-http-access` — Отключает HTTPs-доступ к кластеру
+* `azure hdinsight script-action` — предоставляет команды для создания и управления действия скрипта в кластере
+* `azure hdinsight config` — предоставляет команды для создания файла конфигурации, который может использоваться с `hdinsight cluster create` команду, чтобы указать сведения о конфигурации.
 
 ### <a name="deprecated-commands"></a>Устаревшие команды
 При использовании команд `azure hdinsight job` для отправки заданий в кластер HDInsight эти команды недоступны в списке команд диспетчера ресурсов. Если задания из сценариев необходимо отправлять в HDInsight программными средствами, используйте API REST, предоставляемый в HDInsight. Дополнительные сведения об отправке заданий с использованием API REST см. в следующих документах:
 
-* [Выполнение заданий MapReduce с помощью cURL с использованием Hadoop в HDInsight](hadoop/apache-hadoop-use-mapreduce-curl.md)
-* [Выполнение запросов Hive в Apache Hadoop в HDInsight с использованием REST](hadoop/apache-hadoop-use-hive-curl.md)
-* [Выполнение заданий Pig с помощью REST с использованием Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-pig-curl.md)
+* [Выполнение заданий MapReduce с Hadoop в HDInsight с помощью cURL](hadoop/apache-hadoop-use-mapreduce-curl.md)
+* [Выполнения запросов Apache Hive с Apache Hadoop в HDInsight с помощью cURL](hadoop/apache-hadoop-use-hive-curl.md)
+* [Выполнение заданий Apache Pig с Apache Hadoop в HDInsight с помощью cURL](hadoop/apache-hadoop-use-pig-curl.md)
 
 Сведения о других методах интерактивного выполнения Apache Hadoop MapReduce, Apache Hive и Apache Pig см. в статьях [Использование MapReduce в HDInsight](hadoop/hdinsight-use-mapreduce.md), [Обзор Apache Hive и HiveQL в Azure HDInsight](hadoop/hdinsight-use-hive.md) и [Использование Apache Pig с Apache Hadoop в HDInsight](hadoop/hdinsight-use-pig.md).
 
@@ -61,17 +61,17 @@ ms.locfileid: "58361869"
 **Создание кластера**
 
 * Старая команда (ASM) — `azure hdinsight cluster create myhdicluster --location northeurope --osType linux --storageAccountName mystorage --storageAccountKey <storagekey> --storageContainer mycontainer --userName admin --password mypassword --sshUserName sshuser --sshPassword mypassword`
-* Новая команда — `azure hdinsight cluster create myhdicluster -g myresourcegroup --location northeurope --osType linux --clusterType hadoop --defaultStorageAccountName mystorage --defaultStorageAccountKey <storagekey> --defaultStorageContainer mycontainer --userName admin -password mypassword --sshUserName sshuser --sshPassword mypassword`
+* Команда New- `azure hdinsight cluster create myhdicluster -g myresourcegroup --location northeurope --osType linux --clusterType hadoop --defaultStorageAccountName mystorage --defaultStorageAccountKey <storagekey> --defaultStorageContainer mycontainer --userName admin -password mypassword --sshUserName sshuser --sshPassword mypassword`
 
 **Удаление кластера**
 
 * Старая команда (ASM) — `azure hdinsight cluster delete myhdicluster`
-* Новая команда — `azure hdinsight cluster delete mycluster -g myresourcegroup`
+* Команда New- `azure hdinsight cluster delete mycluster -g myresourcegroup`
 
 **Получение списка кластеров**
 
 * Старая команда (ASM) — `azure hdinsight cluster list`
-* Новая команда — `azure hdinsight cluster list`
+* Команда New- `azure hdinsight cluster list`
 
 > [!NOTE]  
 > Для команды списка при добавлении `-g` к группе ресурсов возвращаются только кластеры, входящие в указанную группу ресурсов.
@@ -79,7 +79,7 @@ ms.locfileid: "58361869"
 **Отображение данных кластера**
 
 * Старая команда (ASM) — `azure hdinsight cluster show myhdicluster`
-* Новая команда — `azure hdinsight cluster show myhdicluster -g myresourcegroup`
+* Команда New- `azure hdinsight cluster show myhdicluster -g myresourcegroup`
 
 ## <a name="migrating-azure-powershell-to-azure-resource-manager"></a>Переход с Azure PowerShell на диспетчер ресурсов Azure
 Общие сведения об Azure PowerShell в режиме Azure Resource Manager (ARM) см. в статье [Управление ресурсами с помощью Azure PowerShell](../powershell-azure-resource-manager.md).
@@ -88,13 +88,13 @@ ms.locfileid: "58361869"
 
 Перед использованием командлетов HDInsight необходимо подключиться к учетной записи Azure и создать новую группу ресурсов:
 
-* [Подключение AzAccount](/powershell/module/az.accounts/connect-azaccount)
+* [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount)
 * [New-AzResourceGroup](https://msdn.microsoft.com/library/mt603739.aspx)
 
 ### <a name="renamed-cmdlets"></a>Переименованные командлеты
 Получение списка командлетов HDInsight ASM в консоли Windows PowerShell:
 
-    help *azurermhdinsight*
+    help *azurehdinsight*
 
 В следующей таблице перечислены командлеты ASM и их имена в режиме диспетчера ресурсов:
 
@@ -131,7 +131,7 @@ ms.locfileid: "58361869"
 ### <a name="new-cmdlets"></a>Новые командлеты
 Ниже перечислены новые командлеты, доступные только в режиме диспетчера ресурсов. 
 
-**Командлеты, связанные с действиями сценариев:**
+**Командлеты связаны с действиями сценариев:**
 
 * **Get-AzHDInsightPersistedScriptAction**: Возвращает список сохраняемых действий сценария для кластера, упорядоченный в хронологическом порядке, или получает сведения об указанном сохраняемом действии сценария. 
 * **Get-AzHDInsightScriptActionHistory**: Возвращает журнал действий сценария для кластера, перечисленных в обратном хронологическом порядке, или получает сведения о действии сценария, выполненном ранее. 
@@ -141,12 +141,12 @@ ms.locfileid: "58361869"
 
 Дополнительные сведения об использовании см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).
 
-**Командлеты, связанные с идентификатором кластера:**
+**Кластеров с удостоверением командлетов:**
 
 * **Add-AzHDInsightClusterIdentity**: Добавляет идентификатор кластера в объект конфигурации кластера, чтобы кластер HDInsight мог получать доступ к Azure Data Lake Storage. См. статью [Создание кластера HDInsight с Data Lake Storage с помощью Azure PowerShell](../data-lake-store/data-lake-store-hdinsight-hadoop-use-powershell.md).
 
 ### <a name="examples"></a>Примеры
-**Создать кластер**
+**Создание кластера**
 
 Старая команда (ASM): 
 
@@ -180,7 +180,7 @@ ms.locfileid: "58361869"
         -SshCredential $sshCredentials
 
 
-**Удалить кластер**
+**Удаление кластера**
 
 Старая команда (ASM):
 

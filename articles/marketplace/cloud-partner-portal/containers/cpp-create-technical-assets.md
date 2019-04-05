@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 56de300a95d750957494865f9871127b2a9c8283
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
-ms.translationtype: HT
+ms.openlocfilehash: 5a7531be73a872d9c088a0bf02a8686f947c220a
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50980370"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59047370"
 ---
 # <a name="prepare-your-container-technical-assets"></a>Подготовка технических ресурсов для контейнера
 
@@ -46,15 +46,15 @@ ms.locfileid: "50980370"
 Выберите одну или обе следующие среды сценариев, которые понадобятся вам при управлении образом контейнера:
 
 -   [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview)
--   [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure)
+-   [Инфраструктура CLI Azure](https://docs.microsoft.com/cli/azure)
 
 Кроме того, мы рекомендуем добавить следующие инструменты в среду разработки:
 
--   [Azure Storage Explorer;](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
--   [Visual Studio Code](https://code.visualstudio.com/)
-    *   Расширение: [Инструменты Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools).
-    *   Расширение: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify).
-    *   Расширение: [Prettify JSON](https://marketplace.visualstudio.com/items?itemName=mohsen1.prettify-json).
+-   [обозреватель хранилищ Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
+-   [Visual Studio Code.](https://code.visualstudio.com/)
+    *   Расширение: [Средства Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
+    *   Расширение: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
+    *   Расширение: [Prettify JSON](https://marketplace.visualstudio.com/items?itemName=mohsen1.prettify-json)
 
 Мы также предлагаем проверить доступные средства на странице [Средства для разработчиков Azure](https://azure.microsoft.com/tools/) и, если вы используете Visual Studio, на странице [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
@@ -64,6 +64,6 @@ ms.locfileid: "50980370"
 - Настройте ОС виртуальной машины, размер виртуальной машины, открываемые порты и любые присоединенные диски данных.
 - Установите приложение и другое программное обеспечение, необходимое для вашего предложения. Например, программное обеспечение базы данных, программное обеспечение сторонних производителей или пользовательское приложение.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Создание предложения контейнера](./cpp-create-offer.md)
+[Создайте предложение контейнера](./cpp-create-offer.md)

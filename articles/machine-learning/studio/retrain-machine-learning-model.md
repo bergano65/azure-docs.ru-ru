@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 02/14/2019
-ms.openlocfilehash: ea73c16687d393cd1e61c4aee83fbf74cc4ae9a7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 903f2700ad127c9bcc69e69ee125ba62fccf52e0
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58108126"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59051637"
 ---
 # <a name="retrain-and-deploy-a-machine-learning-model"></a>Повторное обучение и развертывание модели машинного обучения
 
@@ -28,6 +28,8 @@ ms.locfileid: "58108126"
 1. Развертывание **переобучающей веб-службы**.
 1. Обучение новой модели с помощью этой **переобучающей веб-службы**.
 1. Обновление существующего **прогнозного эксперимента** для использования новой модели.
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="deploy-the-retraining-web-service"></a>Разверните переобучающую веб-службу.
 
@@ -130,15 +132,15 @@ ms.locfileid: "58108126"
 
 ### <a name="sign-in-to-azure-resource-manager"></a>Вход в Azure Resource Manager
 
-Прежде всего войдите в учетную запись Azure, выполнив в среде PowerShell командлет [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount).
+Во-первых, войдите учетную запись Azure в среде PowerShell с помощью [Connect AzAccount](/powershell/module/az.profile/connect-azaccount) командлета.
 
 ### <a name="get-the-web-service-definition-object"></a>Получение объекта определения веб-службы
 
-Теперь получите объект определения веб-службы, вызвав командлет [Get-AzureRmMlWebService](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/get-azurermmlwebservice).
+Затем получите объект определения веб-службы путем вызова [Get AzMlWebService](https://docs.microsoft.com/powershell/module/az.machinelearning/get-azmlwebservice) командлета.
 
-    $wsd = Get-AzureRmMlWebService -Name 'RetrainSamplePre.2016.8.17.0.3.51.237' -ResourceGroupName 'Default-MachineLearning-SouthCentralUS'
+    $wsd = Get-AzMlWebService -Name 'RetrainSamplePre.2016.8.17.0.3.51.237' -ResourceGroupName 'Default-MachineLearning-SouthCentralUS'
 
-Для определения имени группы ресурсов существующей веб-службы выполните командлет Get-AzureRmMlWebService без каких-либо параметров, чтобы отобразились веб-службы в подписке. Найдите необходимую веб-службу и посмотрите ее идентификатор. Имя группы ресурсов — это четвертый элемент в идентификаторе, который следует сразу за элементом *resourceGroups* . В следующем примере имя группы ресурсов — Default-MachineLearning-SouthCentralUS.
+Чтобы определить имя группы ресурсов существующей веб-службы, выполните командлет Get-AzMlWebService без параметров для отображения веб-служб в вашей подписке. Найдите необходимую веб-службу и посмотрите ее идентификатор. Имя группы ресурсов — это четвертый элемент в идентификаторе, который следует сразу за элементом *resourceGroups* . В следующем примере имя группы ресурсов — Default-MachineLearning-SouthCentralUS.
 
     Properties : Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebServicePropertiesForGraph
     Id : /subscriptions/<subscription ID>/resourceGroups/Default-MachineLearning-SouthCentralUS/providers/Microsoft.MachineLearning/webServices/RetrainSamplePre.2016.8.17.0.3.51.237
@@ -153,9 +155,9 @@ ms.locfileid: "58108126"
 
 ### <a name="export-the-web-service-definition-object-as-json"></a>Экспорт объекта определения веб-службы в формате JSON
 
-Чтобы изменить определение обученной модели для использования новой соответствующей модели, необходимо сначала выполнить командлет [Export-AzureRmMlWebService](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/export-azurermmlwebservice). Это позволит экспортировать определение в JSON-файл.
+Чтобы изменить определение обученной модели для использования обученной модели, необходимо сначала использовать [AzMlWebService экспорта](https://docs.microsoft.com/powershell/module/az.machinelearning/export-azmlwebservice) и экспортировать его в файл формата JSON.
 
-    Export-AzureRmMlWebService -WebService $wsd -OutputFile "C:\temp\mlservice_export.json"
+    Export-AzMlWebService -WebService $wsd -OutputFile "C:\temp\mlservice_export.json"
 
 ### <a name="update-the-reference-to-the-ilearner-blob"></a>Обновление ссылки на большой двоичный объект ilearner
 
@@ -176,19 +178,19 @@ ms.locfileid: "58108126"
 
 ### <a name="import-the-json-into-a-web-service-definition-object"></a>Импорт JSON-файла в объект определения веб-службы
 
-Используйте командлет [Import-AzureRmMlWebService](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/import-azurermmlwebservice), чтобы преобразовать измененный JSON-файл обратно в объект определения веб-службы, который можно использовать для обновления прогнозного эксперимента.
+Используйте [AzMlWebService импорта](https://docs.microsoft.com/powershell/module/az.machinelearning/import-azmlwebservice) для преобразования измененного JSON-файла обратно в объект определения веб-службы, который можно использовать для обновления прогнозного эксперимента.
 
-    $wsd = Import-AzureRmMlWebService -InputFile "C:\temp\mlservice_export.json"
+    $wsd = Import-AzMlWebService -InputFile "C:\temp\mlservice_export.json"
 
 ### <a name="update-the-web-service"></a>Обновление веб-службы
 
-Наконец, используйте командлет [Update-AzureRmMlWebService](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/update-azurermmlwebservice), чтобы обновить прогнозный эксперимент.
+Наконец, используйте [AzMlWebService обновления](https://docs.microsoft.com/powershell/module/az.machinelearning/update-azmlwebservice) командлет для обновления прогнозного эксперимента.
 
-    Update-AzureRmMlWebService -Name 'RetrainSamplePre.2016.8.17.0.3.51.237' -ResourceGroupName 'Default-MachineLearning-SouthCentralUS'
+    Update-AzMlWebService -Name 'RetrainSamplePre.2016.8.17.0.3.51.237' -ResourceGroupName 'Default-MachineLearning-SouthCentralUS'
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как управлять веб-службами или отслеживать несколько экспериментов, см. в следующих статьях:
 
-* [Обзор портала веб-служб](manage-new-webservice.md)
-* [Управление итерациями экспериментов](manage-experiment-iterations.md)
+* [Знакомство с порталом веб-служб](manage-new-webservice.md)
+* [Управление итерациями эксперимента](manage-experiment-iterations.md)

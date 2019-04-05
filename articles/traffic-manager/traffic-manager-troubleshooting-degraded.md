@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/03/2017
 ms.author: genli
-ms.openlocfilehash: 6f539cb905c0ed401816c7f223918a1416f95d6c
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: f01dfe78d5d5e322258b0ee98cec314f9afe33c0
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58312280"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59050651"
 ---
 # <a name="troubleshooting-degraded-state-on-azure-traffic-manager"></a>Устранение неполадок, связанных со сбоем диспетчера трафика
 
@@ -43,7 +43,7 @@ ms.locfileid: "58312280"
 
 * [Fiddler](https://www.telerik.com/fiddler)
 * [curl](https://curl.haxx.se/)
-* [wget](http://gnuwin32.sourceforge.net/packages/wget.htm).
+* [wget](http://gnuwin32.sourceforge.net/packages/wget.htm)
 
 Кроме того, для просмотра ответа HTTP можно воспользоваться вкладкой "Сеть" средств отладки F12 в Internet Explorer.
 
@@ -80,16 +80,16 @@ public class TrustAllCertsPolicy : ICertificatePolicy {
 
 ## <a name="next-steps"></a>Следующие шаги
 
-[О методах маршрутизации трафика в диспетчере трафика](traffic-manager-routing-methods.md)
+[Методы маршрутизации трафика диспетчером трафика](traffic-manager-routing-methods.md)
 
 [Что такое диспетчер трафика](traffic-manager-overview.md)
 
 [Облачные службы](https://go.microsoft.com/fwlink/?LinkId=314074)
 
-[службе приложений Azure](https://azure.microsoft.com/documentation/services/app-service/web/)
+[Служба приложений Azure](https://azure.microsoft.com/documentation/services/app-service/web/)
 
-[Операции с диспетчером трафика (справочник по REST API)](https://go.microsoft.com/fwlink/?LinkId=313584)
+[Операции с диспетчером трафика (Справочник по API REST)](https://go.microsoft.com/fwlink/?LinkId=313584)
 
 [Командлеты для диспетчера трафика Azure][1]
 
-[1]: https://docs.microsoft.com/powershell/module/azurerm.trafficmanager
+[1]: https://docs.microsoft.com/powershell/module/az.trafficmanager

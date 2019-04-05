@@ -13,16 +13,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: jdial
-ms.openlocfilehash: 64a1693907dbf144aa34f5c35ae925af74d2cb34
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: 65948b1de3a972687e738b011acf3542073db277
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58803229"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59046996"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Часто задаваемые вопросы по Аналитике трафика Azure
 
 В этой статье приведены многие из наиболее часто задаваемых вопросов о решении "Аналитика трафика" в службе "Наблюдатель за сетями Azure".
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="what-are-the-prerequisites-to-use-traffic-analytics"></a>Что необходимо для работы с Аналитикой трафика?
 
@@ -51,11 +54,11 @@ ms.locfileid: "58803229"
         
 Чтобы проверить роли, назначенные пользователю для подписки:
 
-1. Войдите в Azure с помощью команды **Login-AzureRmAccount**. 
+1. Войдите в Azure с помощью **AzAccount входа**. 
 
-2. Выберите необходимую подписку, используя команду **Select-AzureRmSubscription**. 
+2. Выберите подписку, необходимо с помощью **AzSubscription выберите**. 
 
-3. Чтобы получить список всех ролей, назначенных соответствующему пользователю, используйте команду **Get-AzureRmRoleAssignment -SignInName [адрес электронной почты пользователя] -IncludeClassicAdministrators**. 
+3. Чтобы получить список всех ролей, назначенных указанному пользователю, используйте **Get AzRoleAssignment - SignInName [адрес электронной почты для пользователя] - IncludeClassicAdministrators**. 
 
 Если вы не видите выходные данные, обратитесь к соответствующему администратору подписки, чтобы получить доступ к запуску команд. Дополнительные сведения см. в статье [Управление доступом на основе ролей с помощью Azure PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell).
 
@@ -139,8 +142,8 @@ ms.locfileid: "58803229"
 Чтобы запись данных о потоках выполнялась правильно, необходимо зарегистрировать поставщика Microsoft.Insights. Если вы не знаете точно, зарегистрирован ли поставщик Microsoft.Insights в вашей подписке, укажите идентификатор вместо заменителя *xxxxx-xxxxx-xxxxxx-xxxx* в команде ниже и выполните такие команды в PowerShell:
 
 ```powershell-interactive
-**Select-AzureRmSubscription** -SubscriptionId xxxxx-xxxxx-xxxxxx-xxxx
-**Register-AzureRmResourceProvider** -ProviderNamespace Microsoft.Insights
+**Select-AzSubscription** -SubscriptionId xxxxx-xxxxx-xxxxxx-xxxx
+**Register-AzResourceProvider** -ProviderNamespace Microsoft.Insights
 ```
 
 ## <a name="i-have-configured-the-solution-why-am-i-not-seeing-anything-on-the-dashboard"></a>Решение настроено. Почему на панели мониторинга не отображается соответствующее содержимое?
@@ -170,13 +173,13 @@ ms.locfileid: "58803229"
 
 ## <a name="can-i-configure-traffic-analytics-using-powershell-or-an-azure-resource-manager-template-or-client"></a>Можно ли настроить решение "Аналитика трафика" с помощью PowerShell, шаблона или клиента Azure Resource Manager?
 
-Вы можете настроить решение "Аналитика трафика" с помощью Windows PowerShell, начиная с версии 6.2.1. Чтобы настроить ведение журнала потоков и решение "Аналитика трафика" для определенной NSG с помощью командлета Set, ознакомьтесь со статьей о [Set-AzureRmNetworkWatcherConfigFlowLog](https://docs.microsoft.com/powershell/module/azurerm.network/set-azurermnetworkwatcherconfigflowlog). Чтобы получить журналы потоков и состояние аналитики трафика для определенной NSG, ознакомьтесь со статьей о [Get-AzureRmNetworkWatcherFlowLogStatus](https://docs.microsoft.com/powershell/module/azurerm.network/get-azurermnetworkwatcherflowlogstatus).
+Вы можете настроить решение "Аналитика трафика" с помощью Windows PowerShell, начиная с версии 6.2.1. Чтобы настроить ведение журнала потоков и аналитики трафика для определенной группы безопасности сети с помощью командлета Set, см. в разделе [AzNetworkWatcherConfigFlowLog набора](https://docs.microsoft.com/powershell/module/az.network/set-aznetworkwatcherconfigflowlog). Ведение журнала потоков и состояние аналитики трафика для определенной группы безопасности сети см. в статье [Get-AzNetworkWatcherFlowLogStatus](https://docs.microsoft.com/powershell/module/az.network/get-aznetworkwatcherflowlogstatus).
 
 В настоящее время вы не можете использовать шаблон Azure Resource Manager для настройки решения "Аналитика трафика".
 
 Чтобы настроить решение "Аналитика трафика" с помощью клиента Azure Resource Manager, см. следующие примеры.
 
-**Пример командлета Set:**
+**Пример набора командлетов.**
 ```
 #Requestbody parameters
 $TAtargetUri ="/subscriptions/<NSG subscription id>/resourceGroups/<NSG resource group name>/providers/Microsoft.Network/networkSecurityGroups/<name of NSG>"
@@ -217,7 +220,7 @@ $apiversion = "2016-09-01"
 armclient login
 armclient post "https://management.azure.com/subscriptions/<NSG subscription id>/resourceGroups/<network watcher resource group name>/providers/Microsoft.Network/networkWatchers/<network watcher name>/configureFlowlog?api-version=${apiversion}" $requestBody
 ```
-**Пример командлета Get:**
+**Получите пример командлета:**
 ```
 #Requestbody parameters
 $TAtargetUri ="/subscriptions/<NSG subscription id>/resourceGroups/<NSG resource group name>/providers/Microsoft.Network/networkSecurityGroups/<NSG name>"
@@ -269,7 +272,7 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
         
 ### <a name="keyboard-navigation-at-any-stage"></a>Навигация с помощью клавиатуры на любом этапе
     
-- Клавиша `Esc` позволяет свернуть развернутый элемент.
+- `Esc` Сворачивает развернутый элемент.
 - Клавиша `Up arrow` работает так же, как `Esc`. Клавиша `Down arrow` работает так же, как `Enter`.
 - Клавиши `Shift+Plus` позволяют увеличить масштаб, а `Shift+Minus` — уменьшить его.
 

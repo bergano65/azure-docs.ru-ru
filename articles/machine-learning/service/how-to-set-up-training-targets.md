@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: ec509fc8957d20f95123e9f0f645c3e9b6e832f2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d75deaca7ce052d40274f1f57a8f6603a3ecdfd2
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58122375"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59046161"
 ---
 # <a name="set-up-compute-targets-for-model-training"></a>Настройка целевых объектов вычислений для обучения моделей
 
@@ -90,8 +90,8 @@ ms.locfileid: "58122375"
 Чтобы настроить эти целевые объекты вычислений, используйте следующие разделы.
 
 * [Локальный компьютер](#local)
-* [Вычислительная среда Машинного обучения Azure](#amlcompute)
-* [Удаленные виртуальные машины](#vm)
+* [Вычислительная среда Машинного обучения Azure;](#amlcompute)
+* [Удаленным виртуальным машинам](#vm)
 * [Azure HDInsight](#hdinsight)
 
 
@@ -118,7 +118,10 @@ ms.locfileid: "58122375"
 
 #### <a name="run-based-creation"></a>Создание при запуске
 
-Вы можете создать Вычислительную среду Машинного обучения Azure в качестве целевого объекта вычислений во время выполнения. Вычислительная среда создается автоматически для запуска. Кластер масштабируется до количества **max_nodes**, которое вы указали в конфигурации запуска. Эта среда автоматически удаляется после завершения выполнения запуска.
+Вы можете создать Вычислительную среду Машинного обучения Azure в качестве целевого объекта вычислений во время выполнения. Вычислительная среда создается автоматически для запуска. Эта среда автоматически удаляется после завершения выполнения запуска. 
+
+> [!NOTE]
+> Чтобы указать максимальное количество узлов для использования, обычно устанавливается `node_count` до числа узлов. Сейчас (04/04/2019) ошибку, которая препятствует работе. Чтобы обойти это ограничение, используйте `amlcompute._cluster_max_node_count` свойства конфигурации при запуске. Например, `run_config.amlcompute._cluster_max_node_count = 5`.
 
 > [!IMPORTANT]
 > Функция создания Вычислительной среды Машинного обучения Azure при запуске в настоящее время находится в предварительной версии. Не применяйте создание при запуске, если вы используете автоматическую настройку гиперпараметров или автоматическое машинное обучение. Чтобы использовать настройку гиперпараметров или автоматическое машинное обучение, создайте [постоянный целевой объект вычислений](#persistent) вместо этого.
@@ -415,8 +418,8 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 ## <a name="notebook-examples"></a>Примеры записных книжек
 
 Посмотрите примеры обучения различных целевых объектов вычислений в следующих записных книжках.
-* [how-to-use-azureml/training](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training)
-* [tutorials/img-classification-part1-training.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/img-classification-part1-training.ipynb)
+* [практические-в-использование azureml обучения](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training)
+* [учебники по/img классификации part1-training.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/img-classification-part1-training.ipynb)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
@@ -425,4 +428,4 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 * [Руководство по обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md). В нем используется управляемый целевой объект вычислений для обучения модели.
 * После обучения модели узнайте о [способах и расположениях развертывания моделей](how-to-deploy-and-where.md).
 * Обзор справочника по пакету SDK [класса RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.runconfiguration?view=azure-ml-py).
-* [Securely run experiments and inferencing inside an Azure Virtual Network](how-to-enable-virtual-network.md) (Безопасное выполнение экспериментов и формирование выводов внутри виртуальной сети Azure)
+* [Использовать службы машинного обучения Azure с виртуальными сетями Azure](how-to-enable-virtual-network.md)

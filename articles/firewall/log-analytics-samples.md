@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: article
 ms.date: 2/15/2019
 ms.author: victorh
-ms.openlocfilehash: 21309060b7b4a93d798c444bd96bc21c62693a54
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 3f329d3dd4af1faef8f77d08db655cc7d6ef79fd
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57534009"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59051824"
 ---
 # <a name="azure-firewall-log-analytics-samples"></a>Примеры анализа журналов Azure брандмауэра
 
@@ -40,7 +40,7 @@ ms.locfileid: "57534009"
 
 ![Данные журнала правил сети]( ./media/log-analytics-samples/azurefirewall-networkrulelogstats.png)
 
-Брандмауэр Azure регистрирует данные в разделе AzureDiagnostics с категорией **AzureFirewallApplicationRule** или **AzureFirewallApplicationRule**. Подробные сведения сохраняются в поле msg_s. С помощью оператора [parse](https://docs.microsoft.com/azure/kusto/query/parseoperator) мы можем извлечь важные свойства из поля msg_s. Приведенные ниже запросы позволяют извлечь сведения по обеим категориям.
+Брандмауэр Azure регистрирует данные ниже AzureDiagnostics с категорией как **AzureFirewallApplicationRule** или **AzureFirewallNetworkRule**. Подробные сведения сохраняются в поле msg_s. С помощью оператора [parse](https://docs.microsoft.com/azure/kusto/query/parseoperator) мы можем извлечь важные свойства из поля msg_s. Приведенные ниже запросы позволяют извлечь сведения по обеим категориям.
 
 ## <a name="application-rules-log-data-query"></a>Запрос к данным из журнала правил приложений
 

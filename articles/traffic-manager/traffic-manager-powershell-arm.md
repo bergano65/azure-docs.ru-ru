@@ -11,16 +11,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: kumud
-ms.openlocfilehash: 2b480df0100690a7a5064044d435a34845516fa6
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 2ce2e2b35d731c3edfed931d158b420e66ed5620
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57442109"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59045753"
 ---
 # <a name="using-powershell-to-manage-traffic-manager"></a>Использование PowerShell для управления диспетчером трафика
 
 Azure Resource Manager представляет собой предпочтительный интерфейс управления для служб в Azure. Профилями диспетчера трафика Azure можно управлять с помощью интерфейсов API и инструментов на основе Azure Resource Manager.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="resource-model"></a>Модель ресурсов
 
@@ -36,7 +38,7 @@ Azure Resource Manager представляет собой предпочтит�
 
 В данных инструкциях используется Microsoft Azure PowerShell. В следующей статье объясняется, как установить и настроить Azure PowerShell:
 
-* [Как установить и настроить Azure PowerShell](/powershell/azure/overview)
+* [Установка и настройка Azure PowerShell](/powershell/azure/overview)
 
 Для приведенных в этой статье примеров предполагается, что у вас уже есть группа ресурсов. Чтобы создать группу ресурсов, выполните следующую команду:
 
@@ -253,10 +255,10 @@ Set-AzTrafficManagerEndpoint -TrafficManagerEndpoint $endpoint
 
 ### <a name="example-1-enabling-and-disabling-a-traffic-manager-profile"></a>Пример 1 Включение и отключение профиля диспетчера трафика
 
-Для включения профиля диспетчера трафика используйте командлет `Enable-AzureRmTrafficManagerProfile`. Профиль можно указать с помощью объекта профиля. Объект профиля можно передать по конвейеру или с помощью параметра -TrafficManagerProfile. В этом примере мы укажем профиль с помощью имени профиля и имени группы ресурсов.
+Для включения профиля диспетчера трафика используйте командлет `Enable-AzTrafficManagerProfile`. Профиль можно указать с помощью объекта профиля. Объект профиля можно передать по конвейеру или с помощью параметра -TrafficManagerProfile. В этом примере мы укажем профиль с помощью имени профиля и имени группы ресурсов.
 
 ```powershell
-Enable-AzureRmTrafficManagerProfile -Name MyProfile -ResourceGroupName MyResourceGroup
+Enable-AzTrafficManagerProfile -Name MyProfile -ResourceGroupName MyResourceGroup
 ```
 
 Отключение профиля диспетчера трафика:
@@ -269,13 +271,13 @@ Disable-AzTrafficManagerProfile -Name MyProfile -ResourceGroupName MyResourceGro
 
 ### <a name="example-2-enabling-and-disabling-a-traffic-manager-endpoint"></a>Пример 2 Включение и отключение конечной точки диспетчера трафика
 
-Для включения конечной точки диспетчера трафика используйте командлет `Enable-AzureRmTrafficManagerEndpoint`. Задать конечную точку можно двумя способами:
+Для включения конечной точки диспетчера трафика используйте командлет `Enable-AzTrafficManagerEndpoint`. Задать конечную точку можно двумя способами:
 
 1. С помощью объекта TrafficManagerEndpoint, передаваемого через конвейер, или с помощью параметра -TrafficManagerEndpoint.
 2. С помощью имени конечной точки, ее типа, имени профиля и имени группы ресурсов:
 
 ```powershell
-Enable-AzureRmTrafficManagerEndpoint -Name MyEndpoint -Type AzureEndpoints -ProfileName MyProfile -ResourceGroupName MyRG
+Enable-AzTrafficManagerEndpoint -Name MyEndpoint -Type AzureEndpoints -ProfileName MyProfile -ResourceGroupName MyRG
 ```
 
 Аналогичным образом можно отключить конечную точку диспетчера трафика:
@@ -323,4 +325,4 @@ Get-AzTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG | Remove-AzT
 
 [Мониторинг диспетчера трафика](traffic-manager-monitoring.md)
 
-[Рекомендации по безопасности для диспетчера трафика](traffic-manager-performance-considerations.md)
+[Вопросы производительности диспетчера трафика](traffic-manager-performance-considerations.md)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/01/2016
 ms.author: mlearned
-ms.openlocfilehash: cc9e2e09da572dc4260dcc0e20a8a1846ae17320
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: a2a730e2c3ca466a2705f053d7db0db12d7941da
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58894155"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59047335"
 ---
 # <a name="continuous-integration-in-azure-devops-services-using-azure-resource-group-deployment-projects"></a>Непрерывная интеграция в Azure DevOps Services с использованием проектов развертывания группы ресурсов Azure
 Чтобы развернуть шаблон Azure, выполните задачи на разных этапах. Сборка, тестирование, копирование в Azure (также называется «Staging») и развертывание шаблона. Существует два разных способа развертывания шаблонов в Azure DevOps Services. Оба метода обеспечивают одинаковые результаты, поэтому выберите самый оптимальный для своего рабочего процесса.
@@ -28,6 +28,8 @@ ms.locfileid: "58894155"
 2. Добавьте несколько шагов сборки Azure DevOps Services, на каждом из которых выполняется одна задача этапа.
 
 В этой статье показаны оба варианта. Преимущество первого варианта заключается в запуске того же сценария, который использовался разработчиками в Visual Studio. Это обеспечивает согласованность на протяжении всего жизненного цикла. Второй вариант предлагает удобную альтернативу в виде встроенного сценария. Обе процедуры предполагают, что проект развертывания Visual Studio записан после изменения в Azure DevOps Services.
+
+[!INCLUDE [updated-for-az](../includes/updated-for-az.md)]
 
 ## <a name="copy-artifacts-to-azure"></a>Копирование артефактов в Azure
 Независимо от сценария при наличии артефактов, требуемых для развертывания шаблона, необходимо предоставить Azure Resource Manager доступ к ним. Эти артефакты могут включить такие файлы:
@@ -87,7 +89,7 @@ ms.locfileid: "58894155"
       
       Для сценариев Azure PowerShell:
       
-      `Get-AzureRmSubscription`
+      `Get-AzSubscription`
       
       Для интерфейса командной строки Azure:
       

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 11/29/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 4223f9ec3bfaeacf7843508b13b5b5d81474311f
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
-ms.translationtype: HT
+ms.openlocfilehash: a25418f30225184424011527def468d0d3909563
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53196324"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59045702"
 ---
 # <a name="create-certificates-for-azure-key-vault"></a>Создание сертификатов для Azure Key Vault
 
@@ -32,11 +32,14 @@ ms.locfileid: "53196324"
 Для выполнения этой работы можно использовать новую или имеющуюся группу ресурсов Azure.  В приведенных ниже сведениях используется первый вариант.
 
 
+
+[!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
+
 ## <a name="create-the-certificate"></a>Создание сертификата
 
 Измените и выполните следующий скрипт Azure Powershell для создания файла сертификата (PFX) в локальной папке.  Необходимо заменить значения для следующих параметров:
 
-|  **Параметр**        |   **Описание**                                                               |
+|  **Параметр**        |   **ОПИСАНИЕ**                                                               |
 |  -------------        |   ---------------                                                               |
 | `$certroopath` | Локальная папка для сохранения PFX-файла  |
 | `$location`    | Одно из стандартных географических расположений Azure  |
@@ -82,7 +85,7 @@ ms.locfileid: "53196324"
 
 Скопируйте содержимое [шаблона развертывания хранилища ключей](./cpp-key-vault-deploy-template.md) в файл на локальном компьютере. (В приведенном ниже примере скрипта этот ресурс находится здесь: `C:\certLocation\keyvault.json`.)  Измените и выполните следующий скрипт Azure Powershell для создания экземпляра Azure Key Vault и связанной группы ресурсов.  Необходимо заменить значения для следующих параметров:
 
-|  **Параметр**        |   **Описание**                                                               |
+|  **Параметр**        |   **ОПИСАНИЕ**                                                               |
 |  -------------        |   ---------------                                                               |
 | `$postfix`            | Произвольная числовая строка, добавляемая в конце идентификаторов развертывания                     |
 | `$rgName`             | Имя создаваемой группы ресурсов Azure                                        |
@@ -130,7 +133,7 @@ ms.locfileid: "53196324"
         $id = $accountSelected.Id
                               
         Write-Host "User $id Selected"
-        $myobjectId=(Get-AzureRmADUser -Mail $id)[0].Id
+        $myobjectId=(Get-AzADUser -Mail $id)[0].Id
       }
       catch
       {
@@ -181,9 +184,9 @@ ms.locfileid: "53196324"
      Write-Host "-----------------------------------" 
     
     # Create key vault and configure access
-    New-AzureRmResourceGroupDeployment -Name "kvdeploy$postfix" -ResourceGroupName $rgName -TemplateFile $kvTemplateJson -keyVaultName $kvname -tenantId $mytenantId -objectId $myobjectId
+    New-AzResourceGroupDeployment -Name "kvdeploy$postfix" -ResourceGroupName $rgName -TemplateFile $kvTemplateJson -keyVaultName $kvname -tenantId $mytenantId -objectId $myobjectId
     
-    Set-AzureRmKeyVaultAccessPolicy -VaultName $kvname -ObjectId $myobjectId -PermissionsToKeys all -PermissionsToSecrets all 
+    Set-AzKeyVaultAccessPolicy -VaultName $kvname -ObjectId $myobjectId -PermissionsToKeys all -PermissionsToSecrets all 
         
 ```
 
@@ -216,6 +219,6 @@ ms.locfileid: "53196324"
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Далее следует [развернуть виртуальную машину из образа ВМ пользователя](./cpp-deploy-vm-user-image.md).

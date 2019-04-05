@@ -14,26 +14,29 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/19/2018
 ms.author: aljo
-ms.openlocfilehash: feea57122d805ae065278458f90afbc960221a9d
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: d5aa09f3ff899766e6eb6d1784e4417f7b48eac0
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58670257"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59049903"
 ---
 # <a name="service-fabric-networking-patterns"></a>Схемы сетевых подключений Service Fabric
 Кластер Azure Service Fabric можно интегрировать с другими сетевыми компонентами Azure. В этой статье показано, как создавать кластеры, использующие следующие компоненты:
 
-- [существующая виртуальная сеть или подсеть](#existingvnet);
-- [статический общедоступный IP-адрес](#staticpublicip);
-- [подсистема балансировки нагрузки только для внутреннего использования](#internallb);
-- [внутренняя и внешняя подсистемы балансировки нагрузки](#internalexternallb).
+- [Существующая виртуальная сеть или подсеть](#existingvnet)
+- [Статический общедоступный IP-адрес](#staticpublicip)
+- [Подсистема балансировки нагрузки только для внутреннего использования](#internallb)
+- [Внутренняя и внешняя подсистемы балансировки нагрузки](#internalexternallb)
 
 Service Fabric выполняется в стандартном масштабируемом наборе виртуальных машин. Любые функции, которые можно использовать в масштабируемом наборе виртуальных машин, можно также использовать и в кластере Service Fabric. Сетевые компоненты шаблонов Azure Resource Manager для масштабируемых наборов виртуальных машин и Service Fabric идентичны. После развертывания в существующей виртуальной сети легко внедрить другие сетевые компоненты, такие как Azure ExpressRoute, VPN-шлюз Azure, группа безопасности сети и пиринговая виртуальная сеть.
 
 Служба Service Fabric является уникальной среди других сетевых компонентов в одном аспекте. [Портал Azure](https://portal.azure.com) при внутренней обработке использует поставщик ресурсов Service Fabric, чтобы выполнять вызовы к кластеру для получения сведений об узлах и приложениях. Для работы поставщика ресурсов Service Fabric требуется открытый входящий доступ к HTTP-порту шлюза (по умолчанию — порт 19080) на конечной точке управления. [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) использует конечную точку управления для управления кластером. Поставщик ресурсов Service Fabric также использует этот порт для запроса сведений о вашем кластере, отображаемых на портале Azure. 
 
 Если порт 19080 недоступен поставщику ресурсов Service Fabric, то на портале вы увидите сообщение, например *Nodes Not Found* (Узлы не найдены), и список узлов и приложений будет пуст. Если вы хотите видеть сведения о кластере на портале Azure, то ваша подсистема балансировки нагрузки должна предоставлять общедоступный IP-адрес, а группа безопасности сети должна разрешать входящий трафик через порт 19080. Если в вашей конфигурации эти требования не выполнены, то портал Azure не будет отображать состояние кластера.
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="templates"></a>Шаблоны
 
@@ -51,7 +54,7 @@ Service Fabric выполняется в стандартном масштаби
 Статический общедоступный IP-адрес обычно является выделенным ресурсом, управление которым осуществляется отдельно от виртуальной машины или машин, которым он назначен. Он подготавливается в выделенной группе сетевых ресурсов (в отличие от самой группы ресурсов кластера Service Fabric). Создайте статический общедоступный IP-адрес staticIP1 в той же группе ресурсов ExistingRG с помощью портала Azure или PowerShell.
 
 ```powershell
-PS C:\Users\user> New-AzureRmPublicIpAddress -Name staticIP1 -ResourceGroupName ExistingRG -Location westus -AllocationMethod Static -DomainNameLabel sfnetworking
+PS C:\Users\user> New-AzPublicIpAddress -Name staticIP1 -ResourceGroupName ExistingRG -Location westus -AllocationMethod Static -DomainNameLabel sfnetworking
 
 Name                     : staticIP1
 ResourceGroupName        : ExistingRG
@@ -166,8 +169,8 @@ DnsSettings              : {
 6. Разверните шаблон.
 
     ```powershell
-    New-AzureRmResourceGroup -Name sfnetworkingexistingvnet -Location westus
-    New-AzureRmResourceGroupDeployment -Name deployment -ResourceGroupName sfnetworkingexistingvnet -TemplateFile C:\SFSamples\Final\template\_existingvnet.json
+    New-AzResourceGroup -Name sfnetworkingexistingvnet -Location westus
+    New-AzResourceGroupDeployment -Name deployment -ResourceGroupName sfnetworkingexistingvnet -TemplateFile C:\SFSamples\Final\template\_existingvnet.json
     ```
 
     После развертывания ваша виртуальная сеть должна содержать виртуальные машины нового масштабируемого набора. А тип узла масштабируемого набора виртуальных машин должен отображать существующие виртуальную сеть и подсеть. Вы также можете подключиться по протоколу удаленного рабочего стола (RDP) к виртуальной машине, которая уже была размещена в виртуальной сети, и проверить связь с виртуальными машинами нового масштабируемого набора:
@@ -276,13 +279,13 @@ DnsSettings              : {
 8. Разверните шаблон.
 
     ```powershell
-    New-AzureRmResourceGroup -Name sfnetworkingstaticip -Location westus
+    New-AzResourceGroup -Name sfnetworkingstaticip -Location westus
 
-    $staticip = Get-AzureRmPublicIpAddress -Name staticIP1 -ResourceGroupName ExistingRG
+    $staticip = Get-AzPublicIpAddress -Name staticIP1 -ResourceGroupName ExistingRG
 
     $staticip
 
-    New-AzureRmResourceGroupDeployment -Name deployment -ResourceGroupName sfnetworkingstaticip -TemplateFile C:\SFSamples\Final\template\_staticip.json -existingStaticIPResourceGroup $staticip.ResourceGroupName -existingStaticIPName $staticip.Name -existingStaticIPDnsFQDN $staticip.DnsSettings.Fqdn
+    New-AzResourceGroupDeployment -Name deployment -ResourceGroupName sfnetworkingstaticip -TemplateFile C:\SFSamples\Final\template\_staticip.json -existingStaticIPResourceGroup $staticip.ResourceGroupName -existingStaticIPName $staticip.Name -existingStaticIPDnsFQDN $staticip.DnsSettings.Fqdn
     ```
 
 После развертывания вы можете увидеть, что подсистема балансировки нагрузки привязана к общедоступному статическому IP-адресу из другой группы ресурсов. Конечная точка подключения клиента Service Fabric и конечная точка [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) указывают на полное доменное имя DNS-сервера статического IP-адреса.
@@ -346,7 +349,7 @@ DnsSettings              : {
                 ],
     ```
 
-5. Измените параметр `frontendIPConfigurations` подсистемы балансировки нагрузки: вместо `publicIPAddress` укажите подсеть и `privateIPAddress`. `privateIPAddress` использует предварительно определенный статический внутренний IP-адрес. Чтобы использовать динамический IP-адрес, удалите элемент `privateIPAddress` и измените значение параметра `privateIPAllocationMethod` на **Dynamic**.
+5. Измените параметр `frontendIPConfigurations` подсистемы балансировки нагрузки: вместо `publicIPAddress` укажите подсеть и `privateIPAddress`. `privateIPAddress` использует предопределенные статический внутренний IP-адрес. Чтобы использовать динамический IP-адрес, удалите элемент `privateIPAddress` и измените значение параметра `privateIPAllocationMethod` на **Dynamic**.
 
     ```json
                 "frontendIPConfigurations": [
@@ -378,9 +381,9 @@ DnsSettings              : {
 7. Разверните шаблон.
 
     ```powershell
-    New-AzureRmResourceGroup -Name sfnetworkinginternallb -Location westus
+    New-AzResourceGroup -Name sfnetworkinginternallb -Location westus
 
-    New-AzureRmResourceGroupDeployment -Name deployment -ResourceGroupName sfnetworkinginternallb -TemplateFile C:\SFSamples\Final\template\_internalonlyLB.json
+    New-AzResourceGroupDeployment -Name deployment -ResourceGroupName sfnetworkinginternallb -TemplateFile C:\SFSamples\Final\template\_internalonlyLB.json
     ```
 
 После развертывания подсистема балансировки нагрузки будет использовать частный статический IP-адрес 10.0.0.250. Если в этой виртуальной сети имеется другая виртуальная машина, то можно перейти к внутренней конечной точке [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md). Обратите внимание, что она подключается к одному из узлов, управляемых подсистемой балансировки нагрузки.
@@ -595,9 +598,15 @@ DnsSettings              : {
 7. Разверните шаблон.
 
     ```powershell
-    New-AzureRmResourceGroup -Name sfnetworkinginternalexternallb -Location westus
+    New-AzResourceGroup -Name sfnetworkinginternalexternallb -Location westus
 
-    New-AzureRmResourceGroupDeployment -Name deployment -ResourceGroupName sfnetworkinginternalexternallb -TemplateFile C:\SFSamples\Final\template\_internalexternalLB.json
+    New-AzResourceGroupDeployment -Name deployment -ResourceGroupName sfnetworkinginternalexternallb -TemplateFile C:\SFSamples\Final\template\_internalexternalLB.json
+    ```
+
+После развертывания вы увидите две подсистемы балансировки нагрузки в группе ресурсов. Изучив их подробнее, вы увидите общедоступный IP-адрес и конечные точки управления (порты 19000 и 19080), назначенные общедоступному IP-адресу. А также можно увидеть статический внутренний IP-адрес и конечную точку приложения (порт 80), назначенные внутренней подсистеме балансировки нагрузки. При этом обе подсистемы балансировки нагрузки используют один внутренний пул масштабируемого набора виртуальных машин.
+
+## <a name="next-steps"></a>Дальнейшие действия
+[Создание кластера](service-fabric-cluster-creation-via-arm.md) ternalLB.json
     ```
 
 После развертывания вы увидите две подсистемы балансировки нагрузки в группе ресурсов. Изучив их подробнее, вы увидите общедоступный IP-адрес и конечные точки управления (порты 19000 и 19080), назначенные общедоступному IP-адресу. А также можно увидеть статический внутренний IP-адрес и конечную точку приложения (порт 80), назначенные внутренней подсистеме балансировки нагрузки. При этом обе подсистемы балансировки нагрузки используют один внутренний пул масштабируемого набора виртуальных машин.

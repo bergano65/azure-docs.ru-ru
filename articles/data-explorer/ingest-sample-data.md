@@ -1,19 +1,18 @@
 ---
 title: Прием демонстрационных данных в обозреватель данных Azure
 description: Узнайте, как принять (загрузить) демонстрационные данные о погоде в обозреватель данных Azure.
-services: data-explorer
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 2ebbe3434f032b38c33ec7b82e445532836f78c9
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: e80322cda671e2145cf3e65aa1457f1fa1827737
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58758481"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59050634"
 ---
 # <a name="ingest-sample-data-into-azure-data-explorer"></a>Прием демонстрационных данных в обозреватель данных Azure
 
@@ -24,7 +23,7 @@ ms.locfileid: "58758481"
 
 ## <a name="prerequisites"></a>Технические условия
 
-[Тестовый кластер и база данных](create-cluster-database-portal.md)
+[Проверка кластера и базы данных](create-cluster-database-portal.md)
 
 ## <a name="ingest-data"></a>Прием данных
 
@@ -58,10 +57,10 @@ ms.locfileid: "58758481"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Краткое руководство Запрос данных в Azure Data Explorer](web-query-data.md)
+> [Краткое руководство. Запрос данных в Azure Data Explorer](web-query-data.md)
 
 > [!div class="nextstepaction"]
 > [Написание запросов](write-queries.md)
 
 > [!div class="nextstepaction"]
-> [Прием данных в обозреватель данных Azure](ingest-data-overview.md)
+> [Прием данных в обозревателе данных Azure](ingest-data-overview.md)

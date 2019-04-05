@@ -10,12 +10,12 @@ ms.service: active-directory
 ms.subservice: msi
 manager: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5592ee7f3c4b5f55785100ceff09659aa437cb6
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: d524f5f58e7381dd89f36c5d2821e6911ed9ec15
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58578583"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59045463"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -37,10 +37,10 @@ ms.locfileid: "58578583"
 
 Чтобы настроить управляемые удостоверения для виртуальных машин Azure (в регионах, где они доступны), см. следующий список.
 
-- [портал Azure](qs-configure-portal-windows-vm.md)
+- [Портал Azure](qs-configure-portal-windows-vm.md)
 - [PowerShell](qs-configure-powershell-windows-vm.md)
-- [Интерфейс командной строки Azure](qs-configure-cli-windows-vm.md)
-- [Шаблоны диспетчера ресурсов Azure](qs-configure-template-windows-vm.md)
+- [Инфраструктура CLI Azure](qs-configure-cli-windows-vm.md)
+- [Шаблоны Azure Resource Manager](qs-configure-template-windows-vm.md)
 - [REST](qs-configure-rest-vm.md)
 
 ### <a name="azure-virtual-machine-scale-sets"></a>Масштабируемые наборы виртуальных машин Azure
@@ -52,10 +52,10 @@ ms.locfileid: "58578583"
 
 Чтобы настроить управляемые удостоверения для масштабируемых наборов виртуальных машин Azure (в регионах, где они доступны), см. следующий список.
 
-- [портал Azure](qs-configure-portal-windows-vm.md)
+- [Портал Azure](qs-configure-portal-windows-vm.md)
 - [PowerShell](qs-configure-powershell-windows-vm.md)
-- [Интерфейс командной строки Azure](qs-configure-cli-windows-vm.md)
-- [Шаблоны диспетчера ресурсов Azure](qs-configure-template-windows-vm.md)
+- [Инфраструктура CLI Azure](qs-configure-cli-windows-vm.md)
+- [Шаблоны Azure Resource Manager](qs-configure-template-windows-vm.md)
 - [REST](qs-configure-rest-vm.md)
 
 ### <a name="azure-app-service"></a>Служба приложений Azure
@@ -67,8 +67,8 @@ ms.locfileid: "58578583"
 
 Чтобы настроить управляемые удостоверения для Службы приложений Azure (в регионах, где они доступны), см. следующий список.
 
-- [портал Azure](/azure/app-service/overview-managed-identity#using-the-azure-portal)
-- [Интерфейс командной строки Azure](/azure/app-service/overview-managed-identity#using-the-azure-cli)
+- [Портал Azure](/azure/app-service/overview-managed-identity#using-the-azure-portal)
+- [Инфраструктура CLI Azure](/azure/app-service/overview-managed-identity#using-the-azure-cli)
 - [Azure PowerShell](/azure/app-service/overview-managed-identity#using-azure-powershell)
 - [Шаблон Azure Resource Manager](/azure/app-service/overview-managed-identity#using-an-azure-resource-manager-template)
 
@@ -93,8 +93,8 @@ ms.locfileid: "58578583"
 
 Чтобы настроить управляемые удостоверения для Функций Azure (в регионах, где они доступны), см. следующий список.
 
-- [портал Azure](/azure/app-service/overview-managed-identity#using-the-azure-portal)
-- [Интерфейс командной строки Azure](/azure/app-service/overview-managed-identity#using-the-azure-cli)
+- [Портал Azure](/azure/app-service/overview-managed-identity#using-the-azure-portal)
+- [Инфраструктура CLI Azure](/azure/app-service/overview-managed-identity#using-the-azure-cli)
 - [Azure PowerShell](/azure/app-service/overview-managed-identity#using-azure-powershell)
 - [Шаблон Azure Resource Manager](/azure/app-service/overview-managed-identity#using-an-azure-resource-manager-template)
 
@@ -107,7 +107,7 @@ ms.locfileid: "58578583"
 
 Чтобы настроить управляемые удостоверения для Logic Apps (в регионах, где они доступны), см. следующий список.
 
-- [портал Azure](/azure/logic-apps/create-managed-service-identity#azure-portal)
+- [Портал Azure](/azure/logic-apps/create-managed-service-identity#azure-portal)
 - [Шаблон Azure Resource Manager](/azure/app-service/overview-managed-identity)
 
 ### <a name="azure-data-factory-v2"></a>Фабрика данных Azure версии 2
@@ -119,10 +119,10 @@ ms.locfileid: "58578583"
 
 Чтобы настроить управляемые удостоверения для Фабрики данных Azure версии 2 (в регионах, где они доступны), см. следующий список.
 
-- [портал Azure](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity)
+- [Портал Azure](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity)
 - [PowerShell](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-powershell)
 - [REST](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-rest-api)
-- [Пакет SDK](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-sdk)
+- [SDK](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-sdk)
 
 ### <a name="azure-api-management"></a>Cлужба управления Azure API 
 
@@ -144,7 +144,7 @@ ms.locfileid: "58578583"
 
 Чтобы настроить управляемые удостоверения для Экземпляров контейнеров Azure (в регионах, где они доступны), см. следующий список.
 
-- [Интерфейс командной строки Azure](~/articles/container-instances/container-instances-managed-identity.md)
+- [Инфраструктура CLI Azure](~/articles/container-instances/container-instances-managed-identity.md)
 - [Шаблон Azure Resource Manager](~/articles/container-instances/container-instances-managed-identity.md#enable-managed-identity-using-resource-manager-template)
 - [YAML](~/articles/container-instances/container-instances-managed-identity.md#enable-managed-identity-using-yaml-file)
 
@@ -177,7 +177,7 @@ ms.locfileid: "58578583"
 | Azure для Германии |  `https://vault.microsoftazure.de` | Доступна |
 | Azure China 21Vianet | `https://vault.azure.cn` | Доступна |
 
-## <a name="azure-data-lake"></a>Azure Data Lake; 
+### <a name="azure-data-lake"></a>Azure Data Lake; 
 
 | Облако | Идентификатор ресурса | Status |
 |--------|------------|--------|
@@ -186,7 +186,7 @@ ms.locfileid: "58578583"
 | Azure для Германии |   | Недоступно |
 | Azure China 21Vianet |  | Недоступно |
 
-## <a name="azure-sql"></a>Azure SQL 
+### <a name="azure-sql"></a>Azure SQL 
 
 | Облако | Идентификатор ресурса | Status |
 |--------|------------|--------|
@@ -195,7 +195,7 @@ ms.locfileid: "58578583"
 | Azure для Германии | `https://database.cloudapi.de/` | Доступна |
 | Azure China 21Vianet | `https://database.chinacloudapi.cn/` | Доступна |
 
-## <a name="azure-event-hubs"></a>Центры событий Azure
+### <a name="azure-event-hubs"></a>Центры событий Azure
 
 | Облако | Идентификатор ресурса | Status |
 |--------|------------|--------|
@@ -204,7 +204,7 @@ ms.locfileid: "58578583"
 | Azure для Германии |   | Недоступно |
 | Azure China 21Vianet |  | Недоступно |
 
-## <a name="azure-service-bus"></a>Azure Service Bus
+### <a name="azure-service-bus"></a>Azure Service Bus
 
 | Облако | Идентификатор ресурса | Status |
 |--------|------------|--------|
@@ -213,7 +213,7 @@ ms.locfileid: "58578583"
 | Azure для Германии |   | Недоступно |
 | Azure China 21Vianet |  | Недоступно |
 
-## <a name="azure-storage"></a>Хранилище Azure
+### <a name="azure-storage"></a>Хранилище Azure
 
 | Облако | Идентификатор ресурса | Status |
 |--------|------------|--------|

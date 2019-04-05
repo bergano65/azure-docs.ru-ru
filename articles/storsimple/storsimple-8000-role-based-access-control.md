@@ -14,18 +14,20 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/11/2017
 ms.author: alkohli
-ms.openlocfilehash: be0c1611856a1fa68d20696c32b5fadcd8572004
-ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
+ms.openlocfilehash: a79753a897a62e194a759c23a9c0acc45c5f36c1
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58793617"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59049478"
 ---
 # <a name="role-based-access-control-for-storsimple"></a>Управление доступом на основе ролей для StorSimple
 
 В этой статье содержится краткое описание использования управления доступом на основе ролей (RBAC) в Azure для устройства StorSimple. RBAC предлагает точное управление доступом для Azure. Вместо предоставления всем неограниченного доступа используйте RBAC, чтобы назначить пользователям StorSimple только те права доступа, которые необходимы им для выполнения заданий. Общие сведения об управлении доступом в Azure см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../role-based-access-control/overview.md).
 
 Эта статья относится к устройствам StorSimple серии 8000 с обновлением 3.0 или более поздней версии на портале Azure.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="rbac-roles-for-storsimple"></a>Роли RBAC для StorSimple
 
@@ -46,14 +48,14 @@ RBAC можно назначить на основе ролей. Роли пре
 
 2. Войдите в Azure.
 
-    `Connect-AzureRmAccount`
+    `Connect-AzAccount`
 
 3. Экспортируйте роль "Читатель" в качестве шаблона JSON на компьютер.
 
     ```powershell
-    Get-AzureRMRoleDefinition -Name "Reader"
+    Get-AzRoleDefinition -Name "Reader"
 
-    Get-AzureRMRoleDefinition -Name "Reader" | ConvertTo-Json | Out-File C:\ssrbaccustom.json
+    Get-AzRoleDefinition -Name "Reader" | ConvertTo-Json | Out-File C:\ssrbaccustom.json
     ```
 
 4. Откройте JSON-файл в Visual Studio. Обратите внимание, что типичная роль RBAC состоит из трех основных разделов: **Actions**, **NotActions** и **AssignableScopes**.
@@ -62,7 +64,7 @@ RBAC можно назначить на основе ролей. Роли пре
 
     Чтобы просмотреть все доступные и зарегистрированные в подписке поставщики ресурсов, используйте PowerShell.
 
-    `Get-AzureRMResourceProvider`
+    `Get-AzResourceProvider`
 
     Вы также можете проверить все доступные командлеты PowerShell для управления поставщиками ресурсов.
 
@@ -102,7 +104,7 @@ RBAC можно назначить на основе ролей. Роли пре
 
 6. Импортируйте пользовательскую роль RBAC обратно в среду.
 
-    `New-AzureRMRoleDefinition -InputFile "C:\ssrbaccustom.json"`
+    `New-AzRoleDefinition -InputFile "C:\ssrbaccustom.json"`
 
 
 Эта роль должна отобразиться в списке ролей в колонке **Управление доступом**.
@@ -114,7 +116,7 @@ RBAC можно назначить на основе ролей. Роли пре
 ### <a name="sample-output-for-custom-role-creation-via-the-powershell"></a>Пример выходных данных для создания пользовательской роли через PowerShell
 
 ```powershell
-Connect-AzureRmAccount
+Connect-AzAccount
 ```
 
 ```Output
@@ -127,7 +129,7 @@ CurrentStorageAccount :
 ```
 
 ```powershell
-Get-AzureRMRoleDefinition -Name "Reader"
+Get-AzRoleDefinition -Name "Reader"
 ```
 
 ```Output
@@ -141,8 +143,8 @@ AssignableScopes : {/}
 ```
 
 ```powershell
-Get-AzureRMRoleDefinition -Name "Reader" | ConvertTo-Json | Out-File C:\ssrbaccustom.json
-New-AzureRMRoleDefinition -InputFile "C:\ssrbaccustom.json"
+Get-AzRoleDefinition -Name "Reader" | ConvertTo-Json | Out-File C:\ssrbaccustom.json
+New-AzRoleDefinition -InputFile "C:\ssrbaccustom.json"
 ```
 
 ```Output

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/31/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: bbda2a16e57f3907ef2910b17ed3c744d2d1ec3e
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 328edac78624c192ee139c40fe0ed1853423c639
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58487861"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59051374"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Устранение неполадок службы синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -116,14 +116,14 @@ Reset-StorageSyncServer
 ```powershell
 Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.PowerShell.Cmdlets.dll"
 # Get the server endpoint id based on the server endpoint DisplayName property
-Get-AzureRmStorageSyncServerEndpoint `
+Get-AzStorageSyncServerEndpoint `
     -SubscriptionId mysubguid `
     -ResourceGroupName myrgname `
     -StorageSyncServiceName storagesvcname `
     -SyncGroupName mysyncgroup
 
 # Update the free space percent policy for the server endpoint
-Set-AzureRmStorageSyncServerEndpoint `
+Set-AzStorageSyncServerEndpoint `
     -Id serverendpointid `
     -CloudTiering true `
     -VolumeFreeSpacePercent 60
@@ -164,12 +164,12 @@ Set-AzureRmStorageSyncServerEndpoint `
 Эта ошибка возникает, если при создании облачной конечной точки вы указали общий файловый ресурс Azure, содержащий некоторые данные. Задание перечисления изменений, которое проверяет на наличие изменений в общем файловом ресурсе Azure, должно завершиться до синхронизации файлов между конечными точками облака и сервера. Время завершения задания зависит от размера пространства имен в общем файловом ресурсе Azure. После завершения задания перечисления изменений работоспособность конечной точки сервера должна обновиться.
 
 ### <a id="broken-sync"></a>Как выполнить мониторинг работоспособности синхронизации?
-# <a name="portaltabportal1"></a>[Портал](#tab/portal1)
+# [<a name="portal"></a>Microsoft Azure](#tab/portal1)
 Внутри каждой группы синхронизации можно детализировать ее отдельные конечные точки сервера, чтобы просмотреть состояние последних завершенных сеансов синхронизации. Зеленый столбец работоспособности и значение 0 для параметра "Несинхронизирующиеся файлы" означает, что синхронизация работает должным образом. Если же это не так, ознакомьтесь с приведенным ниже списком распространенных ошибок синхронизации, а также со сведениями о том, как обработать файлы, которые не синхронизируются. 
 
 ![Снимок экрана портала Azure](media/storage-sync-files-troubleshoot/portal-sync-health.png)
 
-# <a name="servertabserver"></a>[Сервер](#tab/server)
+# [<a name="server"></a>сервер;](#tab/server)
 Перейдите в журналы телеметрии сервера, которые можно найти в средстве "Просмотр событий": `Applications and Services Logs\Microsoft\FileSync\Agent\Telemetry`. Событие 9102 соответствует завершенному сеансу синхронизации. Для получения последнего состояния синхронизации найдите последнее событие с идентификатором 9102. SyncDirection сообщит вам предназначение этого сеанса: передача или загрузка. Если результат HResult равен 0, сеанс синхронизации завершился успешно. Другой результат HResult означает, что во время синхронизации произошла ошибка. Ознакомьтесь со списком распространенных ошибок ниже. Если значение PerItemErrorCount больше 0, это означает, что некоторые файлы или папки не синхронизировались должным образом. Результат HResult может быть равен 0, а результат PerItemErrorCount при этом — больше 0.
 
 Ниже приведен пример успешной отправки. Для краткости ниже перечислены только некоторые из значений, содержащиеся в каждом событии 9102. 
@@ -201,10 +201,10 @@ TransferredFiles: 0, TransferredBytes: 0, FailedToTransferFiles: 0, FailedToTran
 ---
 
 ### <a name="how-do-i-monitor-the-progress-of-a-current-sync-session"></a>Как отслеживать ход выполнения текущего сеанса синхронизации?
-# <a name="portaltabportal1"></a>[Портал](#tab/portal1)
+# [<a name="portal"></a>Microsoft Azure](#tab/portal1)
 В своей группе синхронизации перейдите в соответствующую конечную точку сервера и просмотрите раздел "Действие синхронизации" — вы увидите количество отправленных или загруженных файлов в текущем сеансе синхронизации. Обратите внимание, что это состояние будет отложено примерно на 5 минут, и если ваш сеанс синхронизации можно завершить в течение этого периода, об этом может не быть уведомлений на портале. 
 
-# <a name="servertabserver"></a>[Сервер](#tab/server)
+# [<a name="server"></a>сервер;](#tab/server)
 Просмотрите последнее событие 9302 в журнале телеметрии на сервере (в средстве "Просмотр событий" перейдите в папку Applications and Services Logs\Microsoft\FileSync\Agent\Telemetry). Это событие указывает состояние текущего сеанса синхронизации. TotalItemCount обозначает количество файлов, которые нужно синхронизировать, AppliedItemCount — количество файлов, которые были синхронизированы к настоящему времени, а PerItemErrorCount — количество файлов, синхронизация которых завершилась сбоем (сведения о том, как исправить эту проблему, см. ниже).
 
 ```
@@ -219,14 +219,14 @@ PerItemErrorCount: 1006.
 ---
 
 ### <a name="how-do-i-know-if-my-servers-are-in-sync-with-each-other"></a>Как узнать, синхронизируются ли серверы между собой?
-# <a name="portaltabportal1"></a>[Портал](#tab/portal1)
+# [<a name="portal"></a>Microsoft Azure](#tab/portal1)
 Для каждого сервера в данной группе синхронизации проверьте следующее:
 - Метки времени последней попытки синхронизации для отправки и загрузки не устарели.
 - Состояние отправки и загрузки имеет зеленый цвет.
 - В поле "Действие синхронизации" нет файлов для синхронизации или их очень мало.
 - В поле "Несинхронизирующиеся файлы" для отправки и загрузки стоит значение 0.
 
-# <a name="servertabserver"></a>[Сервер](#tab/server)
+# [<a name="server"></a>сервер;](#tab/server)
 Просмотрите завершенные сеансы синхронизации, которые отмечены событиями 9102 в журнале событий телеметрии для каждого сервера (в средстве "Просмотр событий" перейдите в `Applications and Services Logs\Microsoft\FileSync\Agent\Telemetry`). 
 
 1. Вы можете проверить успешное завершение последних сеансов отправки и загрузки на заданном сервере. Для этого проверьте, чтобы для параметров HResult и PerItemErrorCount для отправки и загрузки стояло значение 0 (поле SyncDirection указывает тип заданного сеанса: отправка или загрузка). Обратите внимание, что если вы не видите недавно завершенного сеанса синхронизации, скорее всего, он выполняется в настоящий момент, чего с большой вероятностью можно ожидать, если вы только что добавили или изменили большой объем данных.
@@ -278,7 +278,7 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x800704c7 |
 | **HRESULT (десятичное число)** | -2147023673 | 
 | **Строка ошибки** | ERROR_CANCELLED |
-| **Требуются действия по исправлению** | Нет  |
+| **Нужны никакие дополнительные действия** | Нет  |
 
 Сеансы синхронизации могут завершиться ошибкой по разным причинам, включая перезапуск или обновление сервера, моментальные снимки VSS и т. д. Хотя эта ошибка выглядит так, будто требуются последующие действия, лучше проигнорировать ее, если только она не исчезнет в течение нескольких часов.
 
@@ -289,7 +289,7 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80072ee7 |
 | **HRESULT (десятичное число)** | -2147012889 | 
 | **Строка ошибки** | WININET_E_NAME_NOT_RESOLVED |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 [!INCLUDE [storage-sync-files-bad-connection](../../../includes/storage-sync-files-bad-connection.md)]
 
@@ -300,7 +300,7 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80c8004c |
 | **HRESULT (десятичное число)** | -2134376372 |
 | **Строка ошибки** | ECS_E_USER_REQUEST_THROTTLED |
-| **Требуются действия по исправлению** | Нет  |
+| **Нужны никакие дополнительные действия** | Нет  |
 
 Никаких действий не требуется, сервер предпримет новую попытку. Если эта ошибка будет сохраняться более нескольких часов, создайте запрос в службу поддержки.
 
@@ -311,14 +311,14 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80c8305f |
 | **HRESULT (десятичное число)** | -2134364065 |
 | **Строка ошибки** | ECS_E_CANNOT_ACCESS_EXTERNAL_STORAGE_ACCOUNT |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 Эта ошибка возникает из-за того, что агент службы "Синхронизация файлов Azure" не может получить доступ к общему файловому ресурсу Azure, что может быть связано с тем, что этого ресурса или учетной записи хранения, где он размещен, больше нет. Вы можете устранить эту ошибку, выполнив следующие шаги:
 
-1. [Проверьте наличие учетной записи хранения.](#troubleshoot-storage-account)
-2. [Убедитесь, что в учетной записи хранения нет каких-либо правил сети.](#troubleshoot-network-rules)
-3. [Проверьте наличие общего файлового ресурса Azure.](#troubleshoot-azure-file-share)
-4. [Убедитесь, что служба "Синхронизация файлов Azure" имеет доступ к учетной записи хранения.](#troubleshoot-rbac)
+1. [Убедитесь, что учетная запись хранения существует.](#troubleshoot-storage-account)
+2. [Установите этот флажок, чтобы убедиться, что учетная запись хранения не содержит какие-либо правила сети.](#troubleshoot-network-rules)
+3. [Убедитесь, что существует файловый ресурс Azure.](#troubleshoot-azure-file-share)
+4. [Убедитесь, что служба синхронизации файлов Azure имеет доступ к учетной записи хранения.](#troubleshoot-rbac)
 
 <a id="-2134364064"></a><a id="cannot-resolve-storage"></a>**Не удалось разрешить имя используемой учетной записи хранения.**  
 
@@ -327,15 +327,15 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80C83060 |
 | **HRESULT (десятичное число)** | -2134364064 |
 | **Строка ошибки** | ECS_E_STORAGE_ACCOUNT_NAME_UNRESOLVED |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 1. Убедитесь, что вы можете разрешить DNS-имя хранилища с сервера.
 
     ```powershell
     Test-NetConnection -ComputerName <storage-account-name>.file.core.windows.net -Port 443
     ```
-2. [Проверьте наличие учетной записи хранения.](#troubleshoot-storage-account)
-3. [Убедитесь, что в учетной записи хранения нет каких-либо правил сети.](#troubleshoot-network-rules)
+2. [Убедитесь, что учетная запись хранения существует.](#troubleshoot-storage-account)
+3. [Установите этот флажок, чтобы убедиться, что учетная запись хранения не содержит какие-либо правила сети.](#troubleshoot-network-rules)
 
 <a id="-1906441138"></a>**Сбой синхронизации из-за проблемы с базой данных синхронизации.**  
 
@@ -344,7 +344,7 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x8e5e044e |
 | **HRESULT (десятичное число)** | -1906441138 |
 | **Строка ошибки** | JET_errWriteConflict |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 Эта ошибка появляется, если есть проблема с внутренней базой данных, используемой службой "Синхронизация файлов Azure". Создайте запрос в службу поддержки, и мы свяжемся с вами, чтобы решить эту проблему.
 
@@ -355,7 +355,7 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80C8306B |
 | **HRESULT (десятичное число)** | -2134364053 |
 | **Строка ошибки** | ECS_E_AGENT_VERSION_BLOCKED |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 Эта ошибка возникает, если установленная на сервере версия агента Синхронизации файлов Azure не поддерживается. Чтобы устранить эту проблему, [обновите]( https://docs.microsoft.com/azure/storage/files/storage-files-release-notes#upgrade-paths) до [поддерживаемой версии агента]( https://docs.microsoft.com/azure/storage/files/storage-files-release-notes#supported-versions).
 
@@ -366,7 +366,7 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80c8603e |
 | **HRESULT (десятичное число)** | -2134351810 |
 | **Строка ошибки** | ECS_E_AZURE_STORAGE_SHARE_SIZE_LIMIT_REACHED |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 Эта ошибка возникает, если достигнут предельный размер хранилища общего файлового ресурса Azure, что может произойти, если для этого ресурса применяется квота или использование превышает установленные лимиты. Дополнительные сведения см. в статье [Целевые показатели масштабируемости и производительности службы файлов Azure](storage-files-scale-targets.md).
 
@@ -392,12 +392,12 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80c86030 |
 | **HRESULT (десятичное число)** | -2134351824 |
 | **Строка ошибки** | ECS_E_AZURE_FILE_SHARE_NOT_FOUND |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 Эта ошибка возникает, когда общий файловый ресурс Azure недоступен. Чтобы устранить ошибку, сделайте следующее:
 
-1. [Проверьте наличие учетной записи хранения.](#troubleshoot-storage-account)
-2. [Проверьте наличие общего файлового ресурса Azure.](#troubleshoot-azure-file-share)
+1. [Убедитесь, что учетная запись хранения существует.](#troubleshoot-storage-account)
+2. [Убедитесь, что существует файловый ресурс Azure.](#troubleshoot-azure-file-share)
 
 Если файловый ресурс Azure удален, создайте файловый ресурс и повторно создайте группу синхронизации. 
 
@@ -408,7 +408,7 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80C83076 |
 | **HRESULT (десятичное число)** | -2134364042 |
 | **Строка ошибки** | ECS_E_SYNC_BLOCKED_ON_SUSPENDED_SUBSCRIPTION |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 Эта ошибка возникает, когда использование подписки Azure приостановлено. Синхронизация будет восстановлена после восстановления подписки Azure. Дополнительные сведения см. в статье [Почему подписка Azure отключена и как активировать ее повторно?](../../billing/billing-subscription-become-disable.md)
 
@@ -419,12 +419,12 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80c8306c |
 | **HRESULT (десятичное число)** | -2134364052 |
 | **Строка ошибки** | ECS_E_MGMT_STORAGEACLSNOTSUPPORTED |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 Эта ошибка возникает, когда файловый ресурс Azure недоступен из-за брандмауэра учетной записи хранения или если учетная запись хранения принадлежит виртуальной сети. Служба "Синхронизация файлов Azure" еще не поддерживает эту функцию. Чтобы устранить ошибку, сделайте следующее:
 
-1. [Проверьте наличие учетной записи хранения.](#troubleshoot-storage-account)
-2. [Убедитесь, что в учетной записи хранения нет каких-либо правил сети.](#troubleshoot-network-rules)
+1. [Убедитесь, что учетная запись хранения существует.](#troubleshoot-storage-account)
+2. [Установите этот флажок, чтобы убедиться, что учетная запись хранения не содержит какие-либо правила сети.](#troubleshoot-network-rules)
 
 Удалите эти правила, чтобы устранить проблему. 
 
@@ -435,7 +435,7 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80c80219 |
 | **HRESULT (десятичное число)** | -2134375911 |
 | **Строка ошибки** | ECS_E_SYNC_METADATA_WRITE_LOCK_TIMEOUT |
-| **Требуются действия по исправлению** | Нет  |
+| **Нужны никакие дополнительные действия** | Нет  |
 
 Эта ошибка обычно разрешается самостоятельно. Причины ее появления:
 
@@ -451,7 +451,7 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x800b0109 |
 | **HRESULT (десятичное число)** | -2146762487 |
 | **Строка ошибки** | CERT_E_UNTRUSTEDROOT |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 Эта ошибка может возникнуть, если ваша организация использует прокси-сервер с завершающим действием SSL или вредоносный объект перехватывает трафик между вашим сервером и службой "Синхронизация файлов Azure". Если вы уверены, что это ожидаемое поведение (потому что ваша организация использует прокси-сервер с завершающим действием SSL), можно пропустить проверку сертификата с переопределением реестра.
 
@@ -476,7 +476,7 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80072ee2 |
 | **HRESULT (десятичное число)** | -2147012894 |
 | **Строка ошибки** | WININET_E_TIMEOUT |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 [!INCLUDE [storage-sync-files-bad-connection](../../../includes/storage-sync-files-bad-connection.md)]
 
@@ -487,7 +487,7 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80c80300 |
 | **HRESULT (десятичное число)** | -2134375680 |
 | **Строка ошибки** | ECS_E_SERVER_CREDENTIAL_NEEDED |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 Эта ошибка может быть вызвана следующими причинами.
 
@@ -505,8 +505,8 @@ PerItemErrorCount: 1006.
 
     ```powershell
     Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.PowerShell.Cmdlets.dll"
-    Login-AzureRmStorageSync -SubscriptionID <guid> -TenantID <guid>
-    Reset-AzureRmStorageSyncServerCertificate -SubscriptionId <guid> -ResourceGroupName <string> -StorageSyncServiceName <string>
+    Login-AzStorageSync -SubscriptionID <guid> -TenantID <guid>
+    Reset-AzStorageSyncServerCertificate -SubscriptionId <guid> -ResourceGroupName <string> -StorageSyncServiceName <string>
     ```
 
 <a id="-1906441711"></a><a id="-2134375654"></a><a id="doesnt-have-enough-free-space"></a>**Недостаточно места на томе, где расположена конечная точка сервера.**  
@@ -516,12 +516,12 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x8e5e0211 |
 | **HRESULT (десятичное число)** | -1906441711 |
 | **Строка ошибки** | JET_errLogDiskFull |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 | | |
 | **HRESULT** | 0x80c8031a |
 | **HRESULT (десятичное число)** | -2134375654 |
 | **Строка ошибки** | ECS_E_NOT_ENOUGH_LOCAL_STORAGE |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 Эта ошибка возникает, если недостаточно места на томе. Эта ошибка обычно возникает из-за того, что файлы за пределами конечной точки сервера используют пространство на томе. Освободите место на томе, добавив дополнительные конечные точки сервера, переместив файлы на другой том или увеличив размер тома, на котором установлена конечная точка сервера.
 
@@ -532,7 +532,7 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80c8300f |
 | **HRESULT (десятичное число)** | -2134364145 |
 | **Строка ошибки** | ECS_E_REPLICA_NOT_READY |
-| **Требуются действия по исправлению** | Нет  |
+| **Нужны никакие дополнительные действия** | Нет  |
 
 Эта ошибка возникает, потому что изменения в общем файловом ресурсе Azure осуществляются напрямую и продолжается их обнаружение. Синхронизация начнется после завершения обнаружения изменений.
 
@@ -545,17 +545,17 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80c8023b |
 | **HRESULT (десятичное число)** | -2134364145 |
 | **Строка ошибки** | ECS_E_SYNC_METADATA_KNOWLEDGE_SOFT_LIMIT_REACHED |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 | | |
 | **HRESULT** | 0x80c8021c |
 | **HRESULT (десятичное число)** | -2134375908 |
 | **Строка ошибки** | ECS_E_SYNC_METADATA_KNOWLEDGE_LIMIT_REACHED |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 | | |
 | **HRESULT** | 0x80c80253 |
 | **HRESULT (десятичное число)** | -2134375853 |
 | **Строка ошибки** | ECS_E_TOO_MANY_PER_ITEM_ERRORS |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 В случаях, когда много ошибок синхронизации на файл, сеансы синхронизации могут завершаться сбоем. <!-- To troubleshoot this state, see [Troubleshooting per file/directory sync errors]().-->
 
@@ -569,7 +569,7 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80c80019 |
 | **HRESULT (десятичное число)** | -2134376423 |
 | **Строка ошибки** | ECS_E_SYNC_INVALID_PATH |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 Проверьте наличие пути в локальном томе NTFS, и чтобы он не являлся точкой повторного анализа или имеющейся конечной точкой сервера.
 
@@ -580,7 +580,7 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80C80277 |
 | **HRESULT (десятичное число)** | -2134375817 |
 | **Строка ошибки** | ECS_E_INCOMPATIBLE_FILTER_VERSION |
-| **Требуются действия по исправлению** | Yes |
+| **Нужны никакие дополнительные действия** | Yes |
 
 Эта ошибка возникает из-за того, что загруженная версия драйвера фильтра для распределения по уровням в облаке (StorageSync.sys) несовместима со службой агента синхронизации хранилища (FileSyncSvc). Если агент службы "Синхронизация файлов Azure" был обновлен, перезапустите сервер, чтобы завершить установку. Если ошибка продолжает возникать, удалите агент, перезапустите сервер и переустановите агент службы "Синхронизация файлов Azure".
 
@@ -591,7 +591,7 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80c8004b |
 | **HRESULT (десятичное число)** | -2134376373 |
 | **Строка ошибки** | ECS_E_SERVICE_UNAVAILABLE |
-| **Требуются действия по исправлению** | Нет  |
+| **Нужны никакие дополнительные действия** | Нет  |
 
 Эта ошибка возникает, так как служба "Синхронизация файлов Azure" недоступна. Когда служба снова станет доступной, эта ошибка устранится автоматически.
 
@@ -602,20 +602,20 @@ PerItemErrorCount: 1006.
 | **HRESULT** | 0x80c8020e |
 | **HRESULT (десятичное число)** | -2134375922 |
 | **Строка ошибки** | ECS_E_SYNC_METADATA_WRITE_LEASE_LOST |
-| **Требуются действия по исправлению** | Нет  |
+| **Нужны никакие дополнительные действия** | Нет  |
 
 Эта ошибка возникает из-за внутренней проблемы с базой данных синхронизации. При повторной синхронизации службы "Синхронизация файлов Azure" эта ошибка устранится автоматически. Если эта ошибка сохраняется в течение продолжительного периода времени, создайте запрос в службу поддержки, и мы свяжемся с вами, чтобы решить эту проблему.
 
 ### <a name="common-troubleshooting-steps"></a>Распространенные действия по устранению неполадок
 <a id="troubleshoot-storage-account"></a>**Проверьте наличие учетной записи хранения.**  
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# [<a name="portal"></a>Microsoft Azure](#tab/azure-portal)
 1. Перейдите в группу синхронизации в службе синхронизации хранилища.
 2. В группе синхронизации выберите облачную конечную точку.
 3. Обратите внимание на имя общего файлового ресурса Azure в открытой области.
 4. Выберите учетную запись хранения, на которую есть ссылка. Если переход по ссылке завершится ошибкой, значит связанная учетная запись хранения была удалена.
     ![Снимок экрана с областью сведений об облачной конечной точке и ссылкой на учетную запись хранения.](media/storage-sync-files-troubleshoot/file-share-inaccessible-1.png)
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# [<a name="powershell"></a>PowerShell](#tab/azure-powershell)
 ```powershell
 # Variables for you to populate based on your configuration
 $agentPath = "C:\Program Files\Azure\StorageSyncAgent"
@@ -666,7 +666,7 @@ if ($resourceGroups -notcontains $resourceGroup) {
 # the following command creates an AFS context 
 # it enables subsequent AFS cmdlets to be executed with minimal 
 # repetition of parameters or separate authentication 
-Login-AzureRmStorageSync `
+Login-AzStorageSync `
     –SubscriptionId $subID `
     -ResourceGroupName $resourceGroup `
     -TenantId $tenantID `
@@ -676,7 +676,7 @@ Login-AzureRmStorageSync `
 # exists.
 $syncServices = [System.String[]]@()
 
-Get-AzureRmStorageSyncService -ResourceGroupName $resourceGroup | ForEach-Object {
+Get-AzStorageSyncService -ResourceGroupName $resourceGroup | ForEach-Object {
     $syncServices += $_.DisplayName
 }
 
@@ -687,7 +687,7 @@ if ($storageSyncServices -notcontains $syncService) {
 # Check to make sure the provided Sync Group exists
 $syncGroups = [System.String[]]@()
 
-Get-AzureRmStorageSyncGroup -ResourceGroupName $resourceGroup -StorageSyncServiceName $syncService | ForEach-Object {
+Get-AzStorageSyncGroup -ResourceGroupName $resourceGroup -StorageSyncServiceName $syncService | ForEach-Object {
     $syncGroups += $_.DisplayName
 }
 
@@ -696,7 +696,7 @@ if ($syncGroups -notcontains $syncGroup) {
 }
 
 # Get reference to cloud endpoint
-$cloudEndpoint = Get-AzureRmStorageSyncCloudEndpoint `
+$cloudEndpoint = Get-AzStorageSyncCloudEndpoint `
     -ResourceGroupName $resourceGroup `
     -StorageSyncServiceName $storageSyncService `
     -SyncGroupName $syncGroup
@@ -713,12 +713,12 @@ if ($storageAccount -eq $null) {
 ---
 
 <a id="troubleshoot-network-rules"></a>**Убедитесь, что в учетной записи хранения нет каких-либо правил сети.**  
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# [<a name="portal"></a>Microsoft Azure](#tab/azure-portal)
 1. В левой области учетной записи хранения выберите **Брандмауэры и виртуальные сети**.
 2. В учетной записи хранения должен быть выбран переключатель **разрешения доступа из всех сетей**.
-    ![Снимок экрана с отключенными правилами брандмауэра и виртуальных сетей учетной записи хранения](media/storage-sync-files-troubleshoot/file-share-inaccessible-2.png)
+    ![Снимок экрана, показывающий правил учетной записи хранения сети и брандмауэра отключена.](media/storage-sync-files-troubleshoot/file-share-inaccessible-2.png)
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# [<a name="powershell"></a>PowerShell](#tab/azure-powershell)
 ```powershell
 if ($storageAccount.NetworkRuleSet.DefaultAction -ne 
     [Microsoft.Azure.Commands.Management.Storage.Models.PSNetWorkRuleDefaultActionEnum]::Allow) {
@@ -729,14 +729,14 @@ if ($storageAccount.NetworkRuleSet.DefaultAction -ne
 ---
 
 <a id="troubleshoot-azure-file-share"></a>**Проверьте наличие общего файлового ресурса Azure.**  
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# [<a name="portal"></a>Microsoft Azure](#tab/azure-portal)
 1. Щелкните **Обзор** в таблице содержания слева, чтобы вернуться на главную страницу учетной записи хранения.
 2. Выберите **Файлы** для просмотра списка общих файловых ресурсов.
 3. Проверьте, что файловый ресурс, на который ссылается облачная конечная точка, отображается в списке файловых ресурсов (это должно быть отмечено на шаге 1 выше).
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# [<a name="powershell"></a>PowerShell](#tab/azure-powershell)
 ```powershell
-$fileShare = Get-AzureStorageShare -Context $storageAccount.Context | Where-Object {
+$fileShare = Get-AzStorageShare -Context $storageAccount.Context | Where-Object {
     $_.Name -eq $cloudEndpoint.StorageAccountShareName -and
     $_.IsSnapshot -eq $false
 }
@@ -748,7 +748,7 @@ if ($fileShare -eq $null) {
 ---
 
 <a id="troubleshoot-rbac"></a>**Убедитесь, что служба "Синхронизация файлов Azure" имеет доступ к учетной записи хранения.**  
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# [<a name="portal"></a>Microsoft Azure](#tab/azure-portal)
 1. Щелкните **Управление доступом (IAM)** в таблице содержимого слева.
 1. Щелкните вкладку **Назначение ролей** и откройте список пользователей и приложений (*субъекты-службы*), имеющих доступ к вашей учетной записи хранения.
 1. Проверьте наличие **гибридной службы "Синхронизация файлов"** в списке с ролью **модуля чтения и доступа к данным**. 
@@ -761,7 +761,7 @@ if ($fileShare -eq $null) {
     - В поле **Роль** выберите **Модуль чтения и доступ к данным**.
     - В поле **выбора** введите фразу **Hybrid File Sync Service**, выберите роль и нажмите кнопку **Сохранить**.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# [<a name="powershell"></a>PowerShell](#tab/azure-powershell)
 ```powershell    
 $foundSyncPrincipal = $false
 Get-AzRoleAssignment -Scope $storageAccount.Id | ForEach-Object { 
@@ -906,6 +906,6 @@ New-FsrmFileScreen -Path "E:\AFSdataset" -Description "Filter unsupported charac
 
 ## <a name="see-also"></a>См. также
 - [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)
-- [Часто задаваемые вопросы о службе "Файлы Azure"](storage-files-faq.md)
+- [Ответы на вопросы о службе файлов Azure](storage-files-faq.md)
 - [Устранение неполадок службы файлов Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md)
 - [Устранение неполадок службы файлов Azure в Linux](storage-troubleshoot-linux-file-connection-problems.md)

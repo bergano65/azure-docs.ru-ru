@@ -1,19 +1,18 @@
 ---
 title: Прием данных в обозревателе данных Azure
 description: Сведения о различных способах приема данных в обозревателе данных Azure.
-services: data-explorer
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
-ms.date: 2/18/2019
-ms.openlocfilehash: e2dd67b7b8e7eaac1b823c044fe3d345ce7e8c7b
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.date: 02/18/2019
+ms.openlocfilehash: 6c9cb7282ba9d99ea643bbd023d876b8fbe3904c
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58755771"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59045600"
 ---
 # <a name="azure-data-explorer-data-ingestion"></a>Прием данных в обозревателе данных Azure
 
@@ -67,7 +66,7 @@ Kusto предоставляет клиентский пакет SDK, с пом�
 
 * [ПАКЕТ SDK .NET](/azure/kusto/api/netfx/about-the-sdk)
 
-* [пакет SDK для Java](/azure/kusto/api/java/kusto-java-client-library)
+* [Пакет SDK для Java](/azure/kusto/api/java/kusto-java-client-library)
 
 * [Пакет SDK для Node](/azure/kusto/api/node/kusto-node-client-library)
 
@@ -91,10 +90,10 @@ Kusto предоставляет клиентский пакет SDK, с пом�
 
 | Метод | Latency |
 | --- | --- |
-| **Встроенный прием** | Немедленно |
+| **Встроенный приема** | Немедленно |
 | **Прием из запроса** | Время запроса + время обработки |
 | **Прием из хранилища** | Время загрузки + время обработки |
-| **Прием с постановкой в очередь** | Время пакетной обработки + время обработки |
+| **В очереди приема** | Время пакетной обработки + время обработки |
 | |
 
 Время обработки зависит от размера данных. Обработка занимает меньше нескольких секунд. Время пакетной обработки по умолчанию — 5 минут.
@@ -142,22 +141,22 @@ Kusto предоставляет клиентский пакет SDK, с пом�
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Прием данных из концентратора событий в Azure Data Explorer](ingest-data-event-hub.md)
+> [Прием данных из концентратора событий в Azure Data Explorer](ingest-data-event-hub.md)
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Прием больших двоичных объектов Azure в Azure Data Explorer благодаря подписке на уведомления службы "Сетка событий Azure"](ingest-data-event-grid.md)
+> [Прием данных, используя подписку сетки событий в обозреватель данных Azure](ingest-data-event-grid.md)
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Прием данных из Kafka в Azure Data Explorer](ingest-data-kafka.md)
+> [Прием данных из Kafka в Azure Data Explorer](ingest-data-kafka.md)
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Прием данных с помощью библиотеки Python в Azure Data Explorer](python-ingest-data.md)
+> [Прием данных с помощью библиотеки Python в Azure Data Explorer](python-ingest-data.md)
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Прием данных с помощью библиотеки Node в Azure Data Explorer](node-ingest-data.md)
+> [Прием данных с помощью библиотеки Node в Azure Data Explorer](node-ingest-data.md)
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Прием данных с помощью пакета SDK .NET Standard для Azure Data Explorer (предварительная версия)](net-standard-ingest-data.md)
+> [Прием данных с помощью пакета SDK .NET Standard для Azure Data Explorer (предварительная версия)](net-standard-ingest-data.md)
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Прием данных из Logstash в Azure Data Explorer](ingest-data-logstash.md)
+> [Прием данных из Logstash в Azure Data Explorer](ingest-data-logstash.md)

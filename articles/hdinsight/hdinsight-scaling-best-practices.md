@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: ashish
-ms.openlocfilehash: cae0c97cb3084b0578f277852d646c199d1e2313
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: d2eaab80abed6615f46ef190bae56b8a70db2888
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58316258"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59050685"
 ---
 # <a name="scale-hdinsight-clusters"></a>Масштабирование кластеров HDInsight
 
@@ -22,17 +22,20 @@ HDInsight обеспечивает гибкость, предоставляя в
 
 Например, при пакетной обработке раз в день или месяц можно увеличить масштаб кластера HDInsight за несколько минут до запуска запланированного события, чтобы обеспечить достаточный объем памяти и вычислительной мощности ЦП.  Позже после обработки, когда кластер HDInsight не требует интенсивного использования, можно уменьшить его масштаб для меньшего количества рабочих узлов.
 
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="utilities-to-scale-clusters"></a>Служебные программы, масштабирование кластеров
 
 Корпорация Майкрософт предоставляет следующие служебные программы для масштабирования кластеров:
 
 |Служебная программа | ОПИСАНИЕ|
 |---|---|
-|[PowerShell Az](https://docs.microsoft.com/powershell/azure/new-azureps-module-az)|[SET-AzHDInsightClusterSize](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) - ClusterName \<имя кластера > - TargetInstanceCount \<NewSize >|
-|[PowerShell AzureRM](https://docs.microsoft.com/powershell/azure/azurerm/overview) |[SET-AzureRmHDInsightClusterSize](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) - ClusterName \<имя кластера > - TargetInstanceCount \<NewSize >|
-|[Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)|[Изменение размера AZ hdinsight](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) --группы ресурсов \<группы ресурсов >--имя \<имя кластера >--счетчик целевых экземпляров \<NewSize >|
+|[PowerShell Az](https://docs.microsoft.com/powershell/azure)|[SET-AzHDInsightClusterSize](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) - ClusterName \<имя кластера > - TargetInstanceCount \<NewSize >|
+|[PowerShell AzureRM](https://docs.microsoft.com/powershell/azure/azurerm) |[SET-AzureRmHDInsightClusterSize](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) - ClusterName \<имя кластера > - TargetInstanceCount \<NewSize >|
+|[Инфраструктура CLI Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)|[Изменение размера AZ hdinsight](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) --группы ресурсов \<группы ресурсов >--имя \<имя кластера >--счетчик целевых экземпляров \<NewSize >|
 |[Классический Azure CLI](hdinsight-administer-use-command-line.md)|Изменение размера кластера Azure hdinsight \<Имя_кластера > \<счетчик целевых экземпляров >|
-|[портал Azure](https://portal.azure.com)|Откройте панель кластера HDInsight, выберите **размер кластера** в меню слева, а затем на панели размер кластера, введите количество рабочих узлов и выберите Save.|  
+|[Портал Azure](https://portal.azure.com)|Откройте панель кластера HDInsight, выберите **размер кластера** в меню слева, а затем на панели размер кластера, введите количество рабочих узлов и выберите Save.|  
 
 ![Изменение масштаба кластера](./media/hdinsight-scaling-best-practices/scale-cluster-blade.png)
 
@@ -151,7 +154,7 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode get
 ![Безопасный режим отключен](./media/hdinsight-scaling-best-practices/safe-mode-off.png)
 
 > [!NOTE]  
-> Требуется параметр `-D`, так как в HDInsight файловой системой по умолчанию является служба хранилища Azure или Azure Data Lake Storage. Параметр `-D` указывает, что команды выполняются в локальной файловой системе HDFS.
+> Требуется параметр `-D`, так как в HDInsight файловой системой по умолчанию является служба хранилища Azure или Azure Data Lake Storage. `-D` Указывает, что команды выполняются локальной файловой системе HDFS.
 
 Затем можно просмотреть отчет, в котором содержатся дополнительные сведения о состоянии HDFS:
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 02/11/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: f582ef8cca3c36bad40f14026aea1ad422b6106f
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: fd8eecbd20446bfde8d3a7467e2982398c3b8c19
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56668570"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59044969"
 ---
 # <a name="initiate-a-storage-account-failover-preview"></a>Инициация отработки отказа учетной записи хранения (предварительная версия)
 
@@ -23,6 +23,8 @@ ms.locfileid: "56668570"
 
 > [!WARNING]
 > Отработка отказа учетной записи обычно приводит к потере некоторых данных. Чтобы понять влияние данных и последствия отработки отказа учетной записи, обратитесь к статье [Understand the account failover process](storage-disaster-recovery-guidance.md#understand-the-account-failover-process) (Понимание процесса отработки отказа учетной записи).
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -35,7 +37,7 @@ ms.locfileid: "56668570"
 
 При запуске отработки отказа учетной записи для вашей учетной записи хранения записи DNS для дополнительной конечной точки обновляются таким образом, чтобы дополнительная конечная точка становилась основной конечной точкой. Убедитесь, что понимаете возможные последствия для вашей учетной записи хранения, прежде чем начать отработку отказа.
 
-Чтобы оценить возможный объем потери данных, прежде чем начать отработку отказа, проверьте свойство **Время последней синхронизации** с помощью командлета PowerShell `Get-AzureRmStorageAccount` и добавьте параметр `-IncludeGeoReplicationStats`. Затем проверьте свойство `GeoReplicationStats` для вашей учетной записи. 
+Чтобы оценить возможный объем потери данных, прежде чем начать отработку отказа, проверьте свойство **Время последней синхронизации** с помощью командлета PowerShell `Get-AzStorageAccount` и добавьте параметр `-IncludeGeoReplicationStats`. Затем проверьте свойство `GeoReplicationStats` для вашей учетной записи. 
 
 После отработки отказа тип вашей учетной записи хранения автоматически преобразуется в локально избыточное хранилище (LRS) в новом основном регионе. Вы можете снова включить геоизбыточное хранилище (GRS) или геоизбыточное хранилище с доступом для чтения (RA-GRS) для вашего аккаунта. Обратите внимание, что преобразование в тип репликации из LRS на GRS или RA-GRS влечет за собой дополнительные затраты. Дополнительные сведения см. на странице [Сведения о стоимости пропускной способности](https://azure.microsoft.com/pricing/details/bandwidth/). 
 
@@ -104,6 +106,6 @@ az storage account failover \ --name accountName
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Disaster recovery and storage account failover (preview) in Azure Storage](storage-disaster-recovery-guidance.md) (Аварийное восстановление и отработка отказа учетной записи хранения (предварительная версия) в службе хранилища Azure)
+- [Аварийное восстановление и учетной записи отработка отказа (Предварительная версия) в службе хранилища Azure](storage-disaster-recovery-guidance.md)
 - [Проектирование высокодоступных приложений с использованием RA-GRS](storage-designing-ha-apps-with-ragrs.md)
-- [Руководство Создание высокодоступного приложения с помощью хранилища BLOB-объектов](../blobs/storage-create-geo-redundant-storage.md). 
+- [Руководство по Создание высокодоступного приложения с помощью хранилища BLOB-объектов](../blobs/storage-create-geo-redundant-storage.md) 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/14/2018
 ms.author: cherylmc
-ms.openlocfilehash: 6924d4eca52bfab8c90e7787bb8849b47df064db
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: e323a8d71bbffd1d29ad793dff7b5b4a072b6979
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58112268"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59046128"
 ---
 # <a name="configure-a-vnet-to-vnet-connection-classic"></a>Настройка подключения между виртуальными сетями (классическая модель)
 
@@ -29,16 +29,18 @@ ms.locfileid: "58112268"
 В этой статье описывается, как создать подключение VPN-шлюза между виртуальными сетями. Виртуальные сети могут относиться к одному или разным регионам и к одной или разным подпискам. Приведенные в этой статье инструкции относятся к классической модели развертывания и порталу Azure. Эту конфигурацию также можно создать с помощью разных средств или моделей развертывания, выбрав вариант из следующего списка:
 
 > [!div class="op_single_selector"]
-> * [портал Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
+> * [Портал Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
 > * [PowerShell](vpn-gateway-vnet-vnet-rm-ps.md)
-> * [Интерфейс командной строки Azure](vpn-gateway-howto-vnet-vnet-cli.md)
-> * [Портал Azure (классический)](vpn-gateway-howto-vnet-vnet-portal-classic.md)
-> * [Подключение с использованием разных моделей развертывания — портал Azure](vpn-gateway-connect-different-deployment-models-portal.md)
-> * [Подключение с использованием разных моделей развертывания — PowerShell](vpn-gateway-connect-different-deployment-models-powershell.md)
+> * [Инфраструктура CLI Azure](vpn-gateway-howto-vnet-vnet-cli.md)
+> * [Портал Azure (классическая модель)](vpn-gateway-howto-vnet-vnet-portal-classic.md)
+> * [Подключение разных моделей развертывания — портал Azure](vpn-gateway-connect-different-deployment-models-portal.md)
+> * [Подключение разных моделей развертывания — PowerShell](vpn-gateway-connect-different-deployment-models-powershell.md)
 >
 >
 
 ![Схема подключения между виртуальными сетями](./media/vpn-gateway-howto-vnet-vnet-portal-classic/v2vclassic.png)
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="about-vnet-to-vnet-connections"></a>О подключениях "виртуальная сеть — виртуальная сеть"
 
@@ -116,13 +118,13 @@ ms.locfileid: "58112268"
 Расположение. Запад США<br>
 Подсеть шлюза: 10.41.1.0/27
 
-**При создании виртуальных сетей необходимо учитывать следующие параметры:**
+**При создании виртуальных сетей, имейте в виду следующие параметры:**
 
 * **Адресное пространство виртуальной сети.** На странице "Адресное пространство виртуальной сети" укажите диапазон адресов, который вы хотите использовать для виртуальной сети. Это динамические IP-адреса, которые будут назначаться виртуальным машинам и другим экземплярам ролей, развертываемым в этой виртуальной сети.<br>Выбранные адресные пространства не должны пересекаться с адресными пространствами других виртуальных сетей или локальных расположений, к которым будет подключена виртуальная сеть.
 
 * **Расположение** — при создании виртуальную сеть можно связать с расположением Azure (регионом). Например, если вы хотите, чтобы ваши виртуальные машины разворачивались в виртуальной сети, которая физически расположена в западной части США, выберите это расположение. Нельзя изменить расположение, связанное с виртуальной сетью, после ее создания.
 
-**После создания виртуальных сетей можно добавить следующие параметры:**
+**После создания виртуальных сетей, можно добавить следующие параметры:**
 
 * **Адресное пространство.** Дополнительное адресное пространство не является обязательным для этой конфигурации, но его можно добавить после создания виртуальной сети.
 
@@ -219,19 +221,19 @@ ms.locfileid: "58112268"
 2. Откройте консоль PowerShell с повышенными правами и подключитесь к своей учетной записи. Для подключения используйте следующий пример кода:
 
    ```powershell
-   Connect-AzureRmAccount
+   Connect-AzAccount
    ```
 
    Просмотрите подписки учетной записи.
 
    ```powershell
-   Get-AzureRmSubscription
+   Get-AzSubscription
    ```
 
    При наличии нескольких подписок выберите подписку, которую вы хотите использовать.
 
    ```powershell
-   Select-AzureRmSubscription -SubscriptionName "Replace_with_your_subscription_name"
+   Select-AzSubscription -SubscriptionName "Replace_with_your_subscription_name"
    ```
 
    Затем воспользуйтесь следующим командлетом, чтобы добавить подписку Azure в PowerShell для классической модели развертывания.

@@ -11,12 +11,12 @@ author: msmimart
 manager: daveba
 ms.reviewer: sasubram
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 543c19d41cee55a309b5345af4f811c60b82a613
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 5e5a8d46f67553cc10bd9cdb31cf64511858948f
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56178980"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59046501"
 ---
 # <a name="azure-active-directory-b2b-collaboration-invitation-redemption"></a>Активация приглашения службы совместной работы Azure Active Directory B2B
 
@@ -56,14 +56,14 @@ ms.locfileid: "56178980"
 
 ## <a name="terms-of-use"></a>Условия использования
 
-Условия использования можно показывать гостевому пользователю во время начальной активации с помощью функции "Условия использования" Azure AD. В Azure Active Directory эту функцию можно найти в разделе **Управление** > **Организационные связи** > **Условия использования** или в разделе **Безопасность** > **Условный доступ** > **Условия использования**. Дополнительные сведения см. в разделе [Функция "Условия использования" в Azure AD](../governance/active-directory-tou.md).
+Условия использования можно показывать гостевому пользователю во время начальной активации с помощью функции "Условия использования" Azure AD. В Azure Active Directory эту функцию можно найти в разделе **Управление** > **Организационные связи** > **Условия использования** или в разделе **Безопасность** > **Условный доступ** > **Условия использования**. Дополнительные сведения см. в разделе [Функция "Условия использования" в Azure AD](../conditional-access/terms-of-use.md).
 
 ![Снимок экрана с новыми условиями использования](media/redemption-experience/organizational-relationships-terms-of-use.png) 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
-- [Add Azure Active Directory B2B collaboration users in the Azure portal](add-users-administrator.md) (Добавление пользователей службы совместной работы Azure Active Directory B2B на портале Azure)
-- [How do information workers add B2B collaboration users to Azure Active Directory?](add-users-information-worker.md) (Как информационные работники могут добавить пользователей для совместной работы B2B в Azure Active Directory)
+- [Что такое служба совместной работы Azure AD B2B](what-is-b2b.md)
+- [Добавление пользователей службы совместной работы B2B на портале Azure](add-users-administrator.md)
+- [Как информационные работники могут добавить пользователей службы совместной работы B2B в Azure Active Directory?](add-users-information-worker.md)
 - [Добавление пользователей службы совместной работы Azure Active Directory B2B с помощью PowerShell](customize-invitation-api.md#powershell)
-- [Leave an organization as a guest user](leave-the-organization.md) (Выход гостевого пользователя из организации)
+- [Выход гостевого пользователя из организации](leave-the-organization.md)

@@ -3,18 +3,18 @@ title: Приступая к работе с удостоверением и д�
 description: Сведения о создании удостоверения модуля и обновлении двойника модуля с помощью портала и .NET.
 author: robinsh
 manager: philmea
-ms.author: robin.shahan
+ms.author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 04/26/2018
-ms.openlocfilehash: f323eb777d98a812ead8dd8ac78ee3d6b36a748a
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: d5ac2291f9be6fc8f8d702ec390acf02d5ad9d0f
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57545826"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59051654"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-using-the-portal-and-net-device"></a>Начало работы с удостоверением модуля Центра Интернета вещей и двойником модуля с использованием портала и устройства .NET
 

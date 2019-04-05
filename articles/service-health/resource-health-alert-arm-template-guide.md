@@ -6,12 +6,12 @@ ms.author: stbaron
 ms.topic: conceptual
 ms.service: service-health
 ms.date: 9/4/2018
-ms.openlocfilehash: de5419bbfa5a364cb570651fd4d57d7560e4aafd
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: afa89fc90552c7ccba1fcea0945ee223d0096be4
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58663440"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59047523"
 ---
 # <a name="configure-resource-health-alerts-using-resource-manager-templates"></a>Настройка оповещений о работоспособности ресурсов с помощью шаблонов Resource Manager
 
@@ -22,30 +22,32 @@ ms.locfileid: "58663440"
 > [!NOTE]
 > Оповещения о работоспособности ресурса сейчас доступны в предварительной версии.
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="prerequisites"></a>Технические условия
 
 Чтобы следовать инструкциям на этой странице, необходимо заранее сделать следующее:
 
-1. Настроить [модуль Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps) (`AzureRm`).
+1. Необходимо установить [модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps)
 2. [Создать или повторно использовать группу действий](../azure-monitor/platform/action-groups.md), настроенную на уведомление.
 
 ## <a name="instructions"></a>Указания
 1. С помощью PowerShell войдите в Azure с помощью учетной записи и выберите нужную подписку.
 
-        Login-AzureRmAccount
-        Select-AzureRmSubscription -Subscription <subscriptionId>
+        Login-AzAccount
+        Select-AzSubscription -Subscription <subscriptionId>
 
-    > С помощью командлета `Get-AzureRmSubscription` можно перечислить подписки, к которым у вас есть доступ.
+    > С помощью командлета `Get-AzSubscription` можно перечислить подписки, к которым у вас есть доступ.
 
 2. Найдите полный идентификатор Azure Resource Manager для вашей группы действий и сохраните его:
 
-        (Get-AzureRmActionGroup -ResourceGroupName <resourceGroup> -Name <actionGroup>).Id
+        (Get-AzActionGroup -ResourceGroupName <resourceGroup> -Name <actionGroup>).Id
 
 3. Создайте шаблон Resource Manager для оповещения службы "Работоспособность ресурсов" в виде файла `resourcehealthalert.json` ([подробности см. ниже](#resource-manager-template-for-resource-health-alerts)) и сохраните его:
 
 4. Создайте развертывание Azure Resource Manager с помощью этого шаблона:
 
-        New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName <resourceGroup> -TemplateFile <path\to\resourcehealthalert.json>
+        New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName <resourceGroup> -TemplateFile <path\to\resourcehealthalert.json>
 
 5. Вам будет предложено ввести имя оповещения и идентификатор ресурса группы действий, скопированные ранее:
 
@@ -162,7 +164,7 @@ ms.locfileid: "58663440"
 ],
 ```
 
-Например: `"/subscriptions/d37urb3e-ed41-4670-9c19-02a1d2808ff9/resourcegroups/myRG/providers/microsoft.compute/virtualmachines/myVm"`
+Например:  `"/subscriptions/d37urb3e-ed41-4670-9c19-02a1d2808ff9/resourcegroups/myRG/providers/microsoft.compute/virtualmachines/myVm"`
 
 > Чтобы получить эту строку, перейдите на портал Azure и посмотрите на URL-адрес в разделе ресурса Azure.
 
@@ -427,7 +429,7 @@ ms.locfileid: "58663440"
 
 Дополнительная информация о службе "Работоспособность ресурсов".
 -  [Обзор службы "Работоспособность ресурсов Azure"](Resource-health-overview.md)
--  [Типы ресурсов и проверок работоспособности, доступные в службе работоспособности ресурсов Azure](resource-health-checks-resource-types.md)
+-  [Типы ресурсов и проверок работоспособности, доступные в Работоспособности ресурсов Azure](resource-health-checks-resource-types.md)
 
 Создание оповещений службы "Работоспособность служб":
--  [Создание оповещений журнала действий для уведомлений службы](../azure-monitor/platform/alerts-activity-log-service-notifications.md) 
+-  [Настройка оповещений о работоспособности службы](../azure-monitor/platform/alerts-activity-log-service-notifications.md) 

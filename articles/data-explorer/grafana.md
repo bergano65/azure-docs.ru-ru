@@ -1,19 +1,18 @@
 ---
-title: Визуализация данных из Azure Data Explorer в Grafana
+title: Визуализация данных с помощью обозревателя данных Azure с помощью Grafana
 description: Из этого практического руководства вы узнаете, как настроить Azure Data Explorer в качестве источника данных для Grafana и как визуализировать данные из примера кластера.
-services: data-explorer
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 12/05/2018
-ms.openlocfilehash: c77475c052ab3ce74563aba6e4c75a50c7e41bcc
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 188cb310cfc13fe2fc41ba3e01deb01068c0184d
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58758262"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59048322"
 ---
 # <a name="visualize-data-from-azure-data-explorer-in-grafana"></a>Визуализация данных из Azure Data Explorer в Grafana
 
@@ -211,4 +210,4 @@ ms.locfileid: "58758262"
 
 [Написание запросов для обозревателя данных Azure](write-queries.md)
 
-[Руководство. Визуализация данных из обозревателя данных Azure в Power BI](visualize-power-bi.md)
+[Руководство по Визуализация данных с помощью обозревателя данных Azure в Power BI](visualize-power-bi.md)

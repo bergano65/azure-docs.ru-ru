@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 03/31/2019
 ms.author: rimman
-ms.openlocfilehash: 850c8af3e3dd696ce0e84b9c553d6f1617deb3de
-ms.sourcegitcommit: 09bb15a76ceaad58517c8fa3b53e1d8fec5f3db7
+ms.openlocfilehash: 72ec8332a3363d5336fb84b3390d5e44ced0b2e5
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58762979"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59047331"
 ---
 # <a name="request-units-in-azure-cosmos-db"></a>Единицы запросов в базе данных Azure Cosmos DB
 
@@ -71,6 +71,7 @@ Azure Cosmos DB поддерживает многие интерфейсы API, 
 * Подробнее о [глобальном масштабировании подготовленной пропускной способности](scaling-throughput.md).
 * Подробнее о [подготовке пропускной способности для контейнера Azure Cosmos](how-to-provision-container-throughput.md).
 * Подробнее о [подготовке пропускной способности для базы данных Azure Cosmos](how-to-provision-database-throughput.md).
+* Узнайте, как [найти затраты единиц запросов для операции](find-request-unit-charge.md).
 * Узнайте, как [Оптимизируйте затраты подготовленной пропускной способности в Azure Cosmos DB](optimize-cost-throughput.md).
 * Узнайте, как [оптимизировать операции чтения и записи стоимости в Azure Cosmos DB](optimize-cost-reads-writes.md).
 * Узнайте, как [оптимизировать стоимость запроса в Azure Cosmos DB](optimize-cost-queries.md).

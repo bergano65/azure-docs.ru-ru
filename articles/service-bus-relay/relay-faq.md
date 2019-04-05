@@ -14,16 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/21/2018
 ms.author: spelluru
-ms.openlocfilehash: e30e8c94547ac0f9106a69f1e99cf9a7c03abea5
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
-ms.translationtype: HT
+ms.openlocfilehash: 2433f4b3563cc8b301d1815cccf5ab24406e8662
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43695903"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59045583"
 ---
 # <a name="azure-relay-faqs"></a>Часто задаваемые вопросы о ретрансляторе Azure
 
 В этой статье содержатся ответы на некоторые часто задаваемые вопросы о [ретрансляторе Azure](https://azure.microsoft.com/services/service-bus/). Общие сведения о расценках и поддержке Azure см. на странице [часто задаваемых вопросов о поддержке Azure](https://azure.microsoft.com/support/faq/).
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="general-questions"></a>Общие вопросы
 ### <a name="what-is-azure-relay"></a>Что такое ретранслятор Azure?
@@ -111,13 +114,13 @@ ms.locfileid: "43695903"
 
 ```azurepowershell-interactive
 # Create a new resource group in the target subscription.
-Select-AzureRmSubscription -SubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff'
-New-AzureRmResourceGroup -Name 'targetRG' -Location 'East US'
+Select-AzSubscription -SubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff'
+New-AzResourceGroup -Name 'targetRG' -Location 'East US'
 
 # Move the namespace from the source subscription to the target subscription.
-Select-AzureRmSubscription -SubscriptionId 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
-$res = Find-AzureRmResource -ResourceNameContains mynamespace -ResourceType 'Microsoft.ServiceBus/namespaces'
-Move-AzureRmResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff' -ResourceId $res.ResourceId
+Select-AzSubscription -SubscriptionId 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+$res = Find-AzResource -ResourceNameContains mynamespace -ResourceType 'Microsoft.ServiceBus/namespaces'
+Move-AzResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff' -ResourceId $res.ResourceId
 ```
 
 ## <a name="troubleshooting"></a>Устранение неполадок
@@ -130,10 +133,10 @@ Move-AzureRmResource -DestinationResourceGroupName 'targetRG' -DestinationSubscr
 ### <a name="is-it-possible-to-whitelist-relay-endpoints"></a>Можно ли добавить конечные точки ретрансляции в список разрешений?
 Да. Клиент ретрансляции устанавливает подключения к службе ретрансляции Azure, используя полные доменные имена. Пользователи могут добавить запись для `*.servicebus.windows.net` в брандмауэры, поддерживающие добавление в список разрешений DNS.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Создание пространства имен](relay-create-namespace-portal.md)
-* [Приступая к работе с .NET](relay-hybrid-connections-dotnet-get-started.md)
-* [Приступая к работе с Node](relay-hybrid-connections-node-get-started.md)
+* [Начало работы с .NET](relay-hybrid-connections-dotnet-get-started.md)
+* [Начало работы с узлом](relay-hybrid-connections-node-get-started.md)
 
 [Pricing overview]: https://azure.microsoft.com/pricing/details/service-bus/
 [Relay exceptions]: relay-exceptions.md

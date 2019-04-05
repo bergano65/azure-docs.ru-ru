@@ -7,16 +7,18 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 02/28/2019
 ms.author: mayg
-ms.openlocfilehash: 325cd0d2f52405ae1cbf463f6335c8738317ea1f
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 10bec01a3b90776c8dd8c32a74ba7754264da131
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58878712"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59050141"
 ---
 # <a name="manage-the-configuration-server-for-physical-server-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления физических серверов
 
 При использовании службы [Azure Site Recovery](site-recovery-overview.md) для аварийного восстановления физических серверов в Azure настраивается локальный сервер конфигурации. Сервер конфигурации координирует обмен данными между локальными компьютерами и Azure, а также управляет репликацией данных. В этой статье перечислены распространенные задачи управления сервером конфигурации после его развертывания.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -265,28 +267,28 @@ ProxyPassword="Password"
 
 ## <a name="delete-or-unregister-a-configuration-server-powershell"></a>Отмена регистрации или удаление сервера конфигурации (PowerShell)
 
-1. [Установите](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps) модуль Azure PowerShell.
+1. [Установите](https://docs.microsoft.com/powershell/azure/install-Az-ps) модуль Azure PowerShell.
 2. Войдите в свою учетную запись Azure с помощью следующей команды.
     
-    `Connect-AzureRmAccount`
+    `Connect-AzAccount`
 3. Выберите подписку, в которой находится хранилище.
 
-     `Get-AzureRmSubscription –SubscriptionName <your subscription name> | Select-AzureRmSubscription`
+     `Get-AzSubscription –SubscriptionName <your subscription name> | Select-AzSubscription`
 3.  Теперь настройте контекст хранилища.
     
     ```powershell
-    $Vault = Get-AzureRmRecoveryServicesVault -Name <name of your vault>
-    Set-AzureRmSiteRecoveryVaultSettings -ARSVault $Vault
+    $Vault = Get-AzRecoveryServicesVault -Name <name of your vault>
+    Set-AzSiteRecoveryVaultSettings -ARSVault $Vault
     ```
 4. Выберите сервер конфигурации.
 
-    `$Fabric = Get-AzureRmSiteRecoveryFabric -FriendlyName <name of your configuration server>`
+    `$Fabric = Get-AzSiteRecoveryFabric -FriendlyName <name of your configuration server>`
 6. Удалите сервер конфигурации.
 
-    `Remove-AzureRmSiteRecoveryFabric -Fabric $Fabric [-Force]`
+    `Remove-AzSiteRecoveryFabric -Fabric $Fabric [-Force]`
 
 > [!NOTE]
-> Параметр **-Force** в Remove-AzureRmSiteRecoveryFabric можно использовать для принудительного удаления сервера конфигурации.
+> **-Принудительно** параметр в Remove-AzSiteRecoveryFabric можно использовать для принудительного удаления сервера конфигурации.
 
 ## <a name="renew-ssl-certificates"></a>Обновление SSL-сертификатов
 На сервере конфигурации есть встроенный веб-сервер, который координирует действия службы Mobility Service, серверов обработки и главных целевых серверов, подключенных к этому серверу конфигурации. Веб-сервер использует SSL-сертификат для аутентификации клиентов. Срок действия этого сертификата составляет три года, его можно обновить в любое время.

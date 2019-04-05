@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 02/25/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: f0963e7f558de7b591576a49a74750d6697d7127
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 87499c1b71e243fe976e436b525e0150689d3aa1
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58486074"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59051195"
 ---
 # <a name="disaster-recovery-and-storage-account-failover-preview-in-azure-storage"></a>Аварийное восстановление и отработка отказа учетной записи хранения (предварительная версия) в службе хранилища Azure
 
@@ -22,6 +22,9 @@ ms.locfileid: "58486074"
 Служба хранилища Azure поддерживает отработку отказа (предварительная версия) для учетных записей геоизбыточного хранилища. Отработка отказа учетной записи позволяет инициировать процесс отработки отказа для учетной записи хранения в тех случаях, когда основная конечная точка становится недоступной. Отработка отказа преобразует вторичную конечную точку в основную конечную точку учетной записи хранения. Когда отработка отказа завершится, клиенты смогут записывать данные в новую основную конечную точку.
 
 В этой статье описываются концепции и процессы, применимые для отработки отказа учетной записи, а также обсуждается подготовка учетной записи хранения для восстановления, позволяющая снизить негативное влияние на клиентов. Сведения о том, как запустить отработку отказа учетной записи (предварительная версия) с помощью портала Azure или PowerShell, вы найдете в [этой статье](storage-initiate-account-failover.md).
+
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="choose-the-right-redundancy-option"></a>Выбор правильного уровня избыточности
 
@@ -122,14 +125,14 @@ ms.locfileid: "58486074"
 Чтобы зарегистрироваться для использования предварительной версии, выполните в PowerShell следующую команду. Обязательно замените заполнитель в скобках реальным идентификатором подписки:
 
 ```powershell
-Connect-AzureRmAccount -SubscriptionId <subscription-id>
-Register-AzureRmProviderFeature -FeatureName CustomerControlledFailover -ProviderNamespace Microsoft.Storage
+Connect-AzAccount -SubscriptionId <subscription-id>
+Register-AzProviderFeature -FeatureName CustomerControlledFailover -ProviderNamespace Microsoft.Storage
 ```
 
 Подтверждение регистрации для предварительного просмотра может потребовать 1–2 дня. Чтобы проверить подтверждение регистрации, выполните следующую команду:
 
 ```powershell
-Get-AzureRmProviderFeature -FeatureName CustomerControlledFailover -ProviderNamespace Microsoft.Storage
+Get-AzProviderFeature -FeatureName CustomerControlledFailover -ProviderNamespace Microsoft.Storage
 ```
 
 ### <a name="additional-considerations"></a>Дополнительные замечания 
@@ -176,6 +179,6 @@ Get-AzureRmProviderFeature -FeatureName CustomerControlledFailover -ProviderName
 
 ## <a name="see-also"></a>См. также
 
-* [Initiate a storage account failover (preview)](storage-initiate-account-failover.md) (Запуск отработки отказа учетной записи (предварительная версия))
+* [Запуск отработки отказа учетной записи (Предварительная версия)](storage-initiate-account-failover.md)
 * [Проектирование высокодоступных приложений с использованием RA-GRS](storage-designing-ha-apps-with-ragrs.md)
-* [Руководство Создание высокодоступного приложения с помощью хранилища BLOB-объектов](../blobs/storage-create-geo-redundant-storage.md). 
+* [Руководство по Создание высокодоступного приложения с помощью хранилища BLOB-объектов](../blobs/storage-create-geo-redundant-storage.md) 

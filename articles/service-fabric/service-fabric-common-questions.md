@@ -14,16 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/18/2017
 ms.author: chackdan
-ms.openlocfilehash: 3dd2518c23f2cd323d7c3b2b46465e4144c1ba1a
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: f75236c826584d742fe3163a2fdac29c4030bf66
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58665327"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59045804"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Распространенные вопросы о Service Fabric
 
 Пользователи задают множество схожих вопросов о возможностях и использовании Service Fabric. В этом документе приведены ответы на многие из этих вопросов.
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="cluster-setup-and-management"></a>Настройка кластера и управление им
 
@@ -108,13 +111,13 @@ ms.locfileid: "58665327"
 
 ### <a name="what-are-the-directories-and-processes-that-i-need-to-exclude-when-running-an-anti-virus-program-in-my-cluster"></a>Какие каталоги и процессы необходимо исключить при запуске антивирусной программы в кластере?
 
-| **Исключаемые при проверке антивирусной программой каталоги** |
+| **Антивирусные Исключаемые каталоги** |
 | --- |
 | Program Files\Microsoft Service Fabric |
 | FabricDataRoot (из конфигурации кластера) |
 | FabricLogRoot (из конфигурации кластера) |
 
-| **Исключаемые при проверке антивирусной программой процессы** |
+| **Антивирусные исключенные процессы** |
 | --- |
 | Fabric.exe |
 | FabricHost.exe |
@@ -133,7 +136,7 @@ ms.locfileid: "58665327"
 Ниже приведены средства для того, чтобы ваше приложение получило учетные данные для аутентификации в KeyVault:
 
 О. Во время задания сборки и упаковки вы можете внедрить сертификат в пакет данных приложения Service Fabric и использовать его для аутентификации в KeyVault.
-B. Для узлов масштабируемого набора виртуальных машин с поддержкой MSI можно разработать простой PowerShell SetupEntryPoint для приложения Service Fabric, чтобы получить [маркер доступа из конечной точки MSI](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [получить секреты из хранилища ключей](https://docs.microsoft.com/powershell/module/azurerm.keyvault/Get-AzureKeyVaultSecret)
+B. Для узлов масштабируемого набора виртуальных машин с поддержкой MSI можно разработать простой PowerShell SetupEntryPoint для приложения Service Fabric, чтобы получить [маркер доступа из конечной точки MSI](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [получить секреты из хранилища ключей](https://docs.microsoft.com/powershell/module/az.keyvault/Get-AzureKeyVaultSecret)
 
 ## <a name="application-design"></a>Проектирование приложений
 
@@ -189,4 +192,4 @@ Reliable Services обычно состоит из нескольких разд
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Ознакомьтесь с [основными понятиями Service Fabric](service-fabric-technical-overview.md) и [рекомендациями по использованию платформы](service-fabric-best-practices-overview.md).
+Дополнительные сведения о [ключевые понятия Service Fabric](service-fabric-technical-overview.md) и [рекомендации](service-fabric-best-practices-overview.md) льдом Fabric concepts](service-fabric-technical-overview.md) и [советы и рекомендации](service-fabric-best-practices-overview.md)

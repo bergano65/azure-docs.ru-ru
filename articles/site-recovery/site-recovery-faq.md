@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 3/18/2019
 ms.author: raynew
-ms.openlocfilehash: 018368d28dd34787046ae655a98527aede28603f
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 231533f9609a4cf8cc11bedf88aafdfd37d1cb7e
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58313374"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59050124"
 ---
 # <a name="azure-site-recovery-frequently-asked-questions-faq"></a>Azure Site Recovery: вопросы и ответы
 В этой статье приведены часто задаваемые вопросы об Azure Site Recovery. 
@@ -36,8 +36,8 @@ ms.locfileid: "58313374"
 ### <a name="what-do-i-need-in-hyper-v-to-orchestrate-replication-with-site-recovery"></a>Что нужно в Hyper-V для управления репликацией с помощью Site Recovery?
 Требования для сервера узла Hyper-V зависят от сценария развертывания. Ознакомьтесь с предварительными требованиями к Hyper-V:
 
-* [Репликация виртуальных машин Hyper-V в Azure (без использования VMM)](site-recovery-hyper-v-site-to-azure.md)
-* [Репликация виртуальных машин Hyper-V в Azure (с помощью VMM)](site-recovery-vmm-to-azure.md)
+* [Репликация виртуальных машин Hyper-V (без VMM) в Azure](site-recovery-hyper-v-site-to-azure.md)
+* [Репликация виртуальных машин Hyper-V (с VMM) в Azure](site-recovery-vmm-to-azure.md)
 * [Репликация виртуальных машин Hyper-V в дополнительный центр обработки данных](site-recovery-vmm-to-vmm.md)
 * Если вы выполняете репликацию на вторичный центр обработки данных, прочтите о [поддерживаемых гостевых операционных системах для виртуальных машин Hyper-V](https://technet.microsoft.com/library/mt126277.aspx).
 * При репликации в Azure служба Site Recovery поддерживает все гостевые операционные системы на виртуальной машине, [поддерживаемые Azure](https://technet.microsoft.com/library/cc794868%28v=ws.10%29.aspx).
@@ -107,8 +107,8 @@ Azure Site Recovery реплицирует данные в учетную зап
 ### <a name="can-i-automate-site-recovery-scenarios-with-an-sdk"></a>Можно ли автоматизировать сценарии Site Recovery с помощью пакета SDK?
 Да. Рабочие процессы службы Site Recovery можно автоматизировать с помощью интерфейса REST API, PowerShell или пакета SDK для Azure. Ниже перечислены сценарии развертывания Site Recovery с помощью PowerShell, которые поддерживаются в настоящее время.
 
-* [Репликация виртуальных машин Hyper-V из облаков VMM в Azure с помощью PowerShell (модель Resource Manager)](hyper-v-vmm-powershell-resource-manager.md)
-* [Репликация виртуальных машин Hyper-V (без VMM) в Azure с помощью PowerShell (модель Resource Manager)](hyper-v-azure-powershell-resource-manager.md)
+* [Репликация виртуальных машин Hyper-V из облаков VMM в Azure PowerShell Resource Manager](hyper-v-vmm-powershell-resource-manager.md)
+* [Репликация виртуальных машин Hyper-V без VMM в Azure PowerShell для Resource Manager](hyper-v-azure-powershell-resource-manager.md)
 * [Репликация из VMware в Azure с помощью PowerShell для Resource Manager](vmware-azure-disaster-recovery-powershell.md)
 
 ### <a name="if-i-replicate-to-azure-what-kind-of-storage-account-or-managed-disk-do-i-need"></a>При репликации в Azure, укажите тип учетной записи хранения или управляемый диск необходимо?
@@ -138,8 +138,8 @@ Azure Site Recovery реплицирует данные в учетную зап
 ### <a name="can-i-throttle-bandwidth-allotted-for-hyper-v-replication-traffic"></a>Можно ли регулировать пропускную способность, выделенную для трафика репликации Hyper-V?
 Да. Дополнительные сведения о регулировании пропускной способности можно прочитать в приведенных ниже статьях о развертывании.
 
-* [Планирование ресурсов для репликации виртуальных машин VMware и физических серверов](site-recovery-plan-capacity-vmware.md)
-* [Запуск планировщика ресурсов Hyper-V для Site Recovery](site-recovery-capacity-planning-for-hyper-v-replication.md)
+* [Планирование емкости для репликации виртуальных машин VMware и физических серверов](site-recovery-plan-capacity-vmware.md)
+* [Планирование емкости для репликации виртуальных машин Hyper-V в Azure](site-recovery-capacity-planning-for-hyper-v-replication.md)
 
 ## <a name="failover"></a>Отработка отказа
 ### <a name="if-im-failing-over-to-azure-how-do-i-access-the-azure-virtual-machines-after-failover"></a>Как получить доступ к виртуальным машинам Azure после отработки отказа в Azure?
@@ -153,7 +153,7 @@ Azure Site Recovery реплицирует данные в учетную зап
 Можно активировать незапланированную отработку отказа на дополнительном сайте. Для отработки отказа службе Site Recovery не требуется подключение на основном сайте.
 
 ### <a name="is-failover-automatic"></a>Отработка отказа выполняется автоматически?
-Отработка отказа не выполняется автоматически. Чтобы активировать ее, необходимо щелкнуть в соответствующем месте на портале или воспользоваться [Site Recovery PowerShell](/powershell/module/azurerm.siterecovery) . Восстановление размещения — простое действие, которое выполняется на портале Site Recovery.
+Отработка отказа не выполняется автоматически. Чтобы активировать ее, необходимо щелкнуть в соответствующем месте на портале или воспользоваться [Site Recovery PowerShell](/powershell/module/az.recoveryservices) . Восстановление размещения — простое действие, которое выполняется на портале Site Recovery.
 
 Чтобы автоматизировать выполнение этих процедур, можно использовать локальное решение Orchestrator или Operations Manager для обнаружения сбоя виртуальной машины, а затем активировать отработку отказа, используя пакет SDK.
 

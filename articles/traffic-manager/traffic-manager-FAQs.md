@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/26/2019
 ms.author: kumud
-ms.openlocfilehash: c26117bf298d5fe7fd8a14e0aa2b14834e412328
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 6086c182763885b62f28ab093be2a7f3f8282b8a
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58009933"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59046314"
 ---
 # <a name="traffic-manager-frequently-asked-questions-faq"></a>Диспетчер трафика Azure: вопросы и ответы
 
@@ -309,7 +309,7 @@ IP-адреса для связи с конечной точкой можно у
 
 ### <a name="how-do-i-determine-the-current-health-of-each-endpoint"></a>Как определить текущую работоспособность каждой конечной точки?
 
-На портале управления Azure отображается текущее состояние мониторинга для каждой конечной точки, а также всего профиля. Эти сведения также можно получить с помощью [REST API](https://msdn.microsoft.com/library/azure/mt163667.aspx) отслеживания трафика, [командлетов PowerShell](https://docs.microsoft.com/powershell/module/azurerm.trafficmanager) и [кроссплатформенного интерфейса командной строки Azure](../cli-install-nodejs.md).
+На портале управления Azure отображается текущее состояние мониторинга для каждой конечной точки, а также всего профиля. Эти сведения также можно получить с помощью [REST API](https://msdn.microsoft.com/library/azure/mt163667.aspx) отслеживания трафика, [командлетов PowerShell](https://docs.microsoft.com/powershell/module/az.trafficmanager) и [кроссплатформенного интерфейса командной строки Azure](../cli-install-nodejs.md).
 
 Azure Monitor может использоваться для отслеживания работоспособности конечных точек и просмотра их визуального представления. Дополнительные сведения об использовании Azure Monitor см. в статье [Обзор метрик в Microsoft Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-metrics).
 

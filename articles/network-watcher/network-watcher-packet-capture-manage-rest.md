@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: 49a703164b302443d8b50ba950cf23b8601cb599
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 614c3e1831680fff50058cd5192449f8e6e28179
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58480708"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59049802"
 ---
 # <a name="manage-packet-captures-with-azure-network-watcher-using-azure-rest-api"></a>Управление записью пакетов с помощью Наблюдателя за сетями Azure и Azure REST API
 
 > [!div class="op_single_selector"]
-> - [портал Azure](network-watcher-packet-capture-manage-portal.md)
+> - [Портал Azure](network-watcher-packet-capture-manage-portal.md)
 > - [PowerShell](network-watcher-packet-capture-manage-powershell.md)
-> - [Интерфейс командной строки Azure](network-watcher-packet-capture-manage-cli.md)
+> - [Инфраструктура CLI Azure](network-watcher-packet-capture-manage-cli.md)
 > - [Azure REST API](network-watcher-packet-capture-manage-rest.md)
 
 Возможность записи пакетов Наблюдателя за сетями позволяет создавать сеансы записи для отслеживания входящего и исходящего трафика виртуальной машины. Для сеанса записи предоставляются фильтры, которые позволяют убедиться, что записывается только требуемый трафик. Записи пакетов помогают выявить аномалии в работе сети по факту или заранее. Они также помогают выполнять сбор сетевой статистики, получать сведения о сетевых вторжениях, выполнять отладку передачи данных между клиентом и сервером и многое другое. Так как запись пакетов активируется удаленно, ее не нужно запускать вручную. К тому же она сразу выполняется на требуемой виртуальной машине, что также позволяет сэкономить ценное время.
@@ -39,6 +39,9 @@ ms.locfileid: "58480708"
 - [**Запуск записи пакета**](#start-packet-capture)
 - [**Прекращение записи пакета**](#stop-packet-capture)
 - [**Удаление записи пакета**](#delete-packet-capture)
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -60,7 +63,7 @@ armclient login
 
 В приведенном ниже коде нужно указать переменные.
 
-- **subscriptionId** — идентификатор подписки. Его можно получить с помощью командлета **Get-AzureRMSubscription**.
+- **subscriptionId** -идентификатор подписки также можно получить с помощью **Get AzSubscription** командлета.
 - **resourceGroupName** — имя группы ресурсов, в которой содержатся виртуальные машины.
 
 ```powershell

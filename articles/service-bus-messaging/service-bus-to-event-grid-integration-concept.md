@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: aschhab
-ms.openlocfilehash: 8c33418a8de4510bd8e45487c2f97bd204750dec
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 9df321980db3a2481f0d8cc007546822fea46f9e
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58485105"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59049852"
 ---
 # <a name="azure-service-bus-to-event-grid-integration-overview"></a>Общие сведения об интеграции служебной шины Azure со службой "Сетка событий"
 
@@ -34,6 +34,9 @@ ms.locfileid: "58485105"
 * Подписка на службу "Сетка событий" для пространства имен служебной шины. Эта подписка необходима для получения из службы "Сетка событий" уведомления о том, что существуют сообщения, ожидающие действий. Типичными подписчиками могут быть компоненты Logic Apps службы приложений Azure или решения "Функции Azure" либо веб-перехватчики, связанные с веб-приложением. Следовательно, подписчики обрабатывают сообщения. 
 
 ![19][]
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ### <a name="verify-that-you-have-contributor-access"></a>Проверка наличия доступа с правами участника
 Перейдите к пространству имен служебной шины, выберите **Управление доступом (IAM)** и перейдите на вкладку **Назначение ролей**. Убедитесь, что у вас есть доступ участника к пространству имен. 
@@ -152,20 +155,20 @@ az eventgrid event-subscription create --resource-id $namespaceid --name “<YOU
 
 ## <a name="powershell-instructions"></a>Инструкции по работе в среде PowerShell
 
-Убедитесь в наличии Azure PowerShell. [Скачайте установщик](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps). Нажмите клавиши **Windows+X** и откройте новую консоль PowerShell с разрешениями администратора. В качестве альтернативы можно использовать командную оболочку на портале Azure.
+Убедитесь в наличии Azure PowerShell. [Скачайте установщик](https://docs.microsoft.com/powershell/azure/install-Az-ps). Нажмите клавиши **Windows+X** и откройте новую консоль PowerShell с разрешениями администратора. В качестве альтернативы можно использовать командную оболочку на портале Azure.
 
 ```powershell-interactive
-Connect-AzureRmAccount
+Connect-AzAccount
 
-Select-AzureRmSubscription -SubscriptionName "<YOUR SUBSCRIPTION NAME>"
+Select-AzSubscription -SubscriptionName "<YOUR SUBSCRIPTION NAME>"
 
 # This might be installed already
-Install-Module AzureRM.ServiceBus
+Install-Module Az.ServiceBus
 
-$NSID = (Get-AzureRmServiceBusNamespace -ResourceGroupName "<YOUR RESOURCE GROUP NAME>" -Na
+$NSID = (Get-AzServiceBusNamespace -ResourceGroupName "<YOUR RESOURCE GROUP NAME>" -Na
 mespaceName "<YOUR NAMESPACE NAME>").Id
 
-New-AzureRmEVentGridSubscription -EventSubscriptionName “<YOUR EVENT GRID SUBSCRIPTION NAME (CAN BE ANY NOT EXISTING)>” -ResourceId $NSID -Endpoint "<YOUR FUNCTION URL>” -SubjectEndsWith “<YOUR SERVICE BUS SUBSCRIPTION NAME>”
+New-AzEVentGridSubscription -EventSubscriptionName “<YOUR EVENT GRID SUBSCRIPTION NAME (CAN BE ANY NOT EXISTING)>” -ResourceId $NSID -Endpoint "<YOUR FUNCTION URL>” -SubjectEndsWith “<YOUR SERVICE BUS SUBSCRIPTION NAME>”
 ```
 
 Здесь вы можете просмотреть остальные параметры установки или выполнить тестирование поступления событий.

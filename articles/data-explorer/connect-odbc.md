@@ -1,19 +1,18 @@
 ---
 title: Подключение в обозреватель данных Azure с помощью ODBC
 description: В этом практическом руководстве вы узнаете, как настроить подключение ODBC в обозреватель данных Azure, а затем использовать это подключение для визуализации данных с помощью Tableau.
-services: data-explorer
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 02/21/2019
-ms.openlocfilehash: 0ec1c2f4fc412ca6c81e179d0ad22f781b896357
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: d01c825e50e30e3545a0d47e432835c658d677af
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58757621"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59043887"
 ---
 # <a name="connect-to-azure-data-explorer-with-odbc"></a>Подключение в обозреватель данных Azure с помощью ODBC
 
@@ -103,4 +102,4 @@ Open Database Connectivity ([ODBC](/sql/odbc/reference/odbc-overview)) — ши�
 
 [Написание запросов для обозревателя данных Azure](write-queries.md)
 
-[Руководство. Визуализация данных из обозревателя данных Azure в Power BI](visualize-power-bi.md)
+[Руководство по Визуализация данных с помощью обозревателя данных Azure в Power BI](visualize-power-bi.md)

@@ -8,17 +8,16 @@ services: site-recovery
 ms.date: 03/21/2019
 ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: cdb8fe5deb71c014f7e0af01d070e5004d8c9994
-ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
+ms.openlocfilehash: 4237e259d1ba9cb826d89eba212b6931d933626d
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58418800"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59051926"
 ---
 # <a name="common-questions---vmware-to-azure-replication"></a>Часто задаваемые вопросы о репликации из VMware в Azure
 
 В этой статье приведены ответы на часто задаваемые вопросы, которые возникают при развертывании аварийного восстаовления локальных виртуальных машин VMware в Azure. Если после прочтения статьи у вас возникли какие-либо вопросы, вы можете задать их на [форуме, посвященном службам восстановления Azure](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr).
-
 
 ## <a name="general"></a>Общие сведения
 ### <a name="how-is-site-recovery-priced"></a>Как образуются цены на Site Recovery?
@@ -323,7 +322,7 @@ Site Recovery имеет сертификаты ISO 27001:2013, 27018, HIPAA, DP
 Среда Azure разработана для обеспечения отказоустойчивости. Служба Site Recovery рассчитана на отработку отказа в дополнительный центр обработки данных Azure в соответствии с соглашением об уровне обслуживания Azure. Когда происходит отработка отказа, Azure обеспечивает хранение метаданных и хранилищ в географическом регионе, выбранном для хранилища.
 
 ### <a name="is-failover-automatic"></a>Отработка отказа выполняется автоматически?
-[Отработка отказа](site-recovery-failover.md) не выполняется автоматически. Инициировать отработку отказа одним щелчком на портале или воспользоваться [PowerShell](/powershell/module/azurerm.siterecovery) для активации отработки отказа.
+[Отработка отказа](site-recovery-failover.md) не выполняется автоматически. Инициировать отработку отказа одним щелчком на портале или воспользоваться [PowerShell](/powershell/module/az.recoveryservices) для активации отработки отказа.
 
 ### <a name="can-i-fail-back-to-a-different-location"></a>Можно ли выполнить восстановление размещения в другое расположение?
 Да, если отработка отказа выполнена в Azure, можно восстановить размещение в другом расположении, если изначальное расположение недоступно. [Узнайте больше](concepts-types-of-failback.md#alternate-location-recovery-alr).

@@ -1,19 +1,18 @@
 ---
-title: Анализ временных рядов в службе Azure Data Explorer
-description: 'Сведения об анализе временных рядов в службе Azure Data Explorer '
-services: data-explorer
+title: Анализ данных временных рядов, с помощью обозревателя данных Azure
+description: Узнайте, как анализ данных временных рядов в облаке с помощью обозревателя данных Azure.
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 10/30/2018
-ms.openlocfilehash: 6a77e399e4de6ec41e74d1e5b9f9f518126958c2
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 496c033e3df096cdada2b3facba3e73092ffd755
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58756767"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59051501"
 ---
 # <a name="time-series-analysis-in-azure-data-explorer"></a>Анализ временных рядов в службе Azure Data Explorer
 
@@ -58,10 +57,10 @@ demo_make_series1
 ```
 
 - С помощью оператора [`make-series`](/azure/kusto/query/make-seriesoperator) создайте набор из трех временных рядов, где:
-    - `num=count()`: временной ряд трафика.
-    - `range(min_t, max_t, 1h)`: временной ряд создается по 1-часовым ячейкам в указанном диапазоне времени (самые старые и самые новые метки времени записей таблицы).
-    - `default=0`: укажите метод заполнения отсутствующих ячеек для создания регулярных временных рядов. Также можно использовать [`series_fill_const()`](/azure/kusto/query/series-fill-constfunction), [`series_fill_forward()`](/azure/kusto/query/series-fill-forwardfunction), [`series_fill_backward()`](/azure/kusto/query/series-fill-backwardfunction) и [`series_fill_linear()`](/azure/kusto/query/series-fill-linearfunction) для изменений.
-    - `byOsVer`: секционирование по ОС.
+    - `num=count()`: временные ряды трафика
+    - `range(min_t, max_t, 1h)`: создания временных рядов в ячейках 1-часовой период (старые и новые метки времени записей в таблице)
+    - `default=0`: Укажите метод, используемый для отсутствующих ячеек для создания регулярных временных рядов. Также можно использовать [`series_fill_const()`](/azure/kusto/query/series-fill-constfunction), [`series_fill_forward()`](/azure/kusto/query/series-fill-forwardfunction), [`series_fill_backward()`](/azure/kusto/query/series-fill-backwardfunction) и [`series_fill_linear()`](/azure/kusto/query/series-fill-linearfunction) для изменений.
+    - `byOsVer`: разделения по ОС
 - Фактическая структура данных во временных рядах представляет собой числовой массив агрегированных значений по каждой ячейке времени. Мы используем `render timechart` для визуализации.
 
 В приведенной выше таблице есть три секции. Мы можем создать отдельные временные ряды для каждой версии операционной системы — Windows 10 (красный), 7 (синий) и 8.1 (зеленый), как показано на графике:
@@ -79,7 +78,7 @@ demo_make_series1
 - Существует две универсальные функции фильтрации.
     - [`series_fir()`](/azure/kusto/query/series-firfunction). Применение фильтра FIR. Используется для простого вычисления скользящего среднего и дифференциации временных рядов для обнаружения изменений.
     - [`series_iir()`](/azure/kusto/query/series-iirfunction). Применение фильтра IIR. Используется для экспоненциального сглаживания и вычисления кумулятивной суммы.
-- Можно расширить временной ряд функцией `Extend` путем добавления в запрос нового ряда скользящих средних с размером в 5 ячеек (с именем *ma_num*):
+- `Extend` временные ряды, задается путем добавления скользящее среднее ряд размер 5 ячеек (с именем *ma_num*) в запрос:
 
 ```kusto
 let min_t = toscalar(demo_make_series1 | summarize min(TimeStamp));

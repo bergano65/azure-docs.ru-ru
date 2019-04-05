@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: c0e953434e947703308ff8d796107838df8cc979
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 74c33d73f15c4edf63a02ea5c9a0cdcad88bb68c
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57437320"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59049751"
 ---
 # <a name="contoso-migration-rebuild-an-on-premises-app-to-azure"></a>Миграция Contoso. Повторное создание локального приложения в Azure
 
@@ -22,24 +22,27 @@ ms.locfileid: "57437320"
 Это документ из цикла статей о том, как вымышленная компания Contoso переносит локальные ресурсы в облако Microsoft Azure. В статьях этого цикла содержатся общие сведения и сценарии развертывания, в которых проиллюстрирована настройка инфраструктуры миграции, оценка пригодности локальных ресурсов для миграции и выполнение различных типов миграции. Сценарии становятся все более сложными. Со временем мы добавим другие статьи.
 
 
-**Статья** | **Дополнительные сведения** | **Состояние**
+**Статья** | **Сведения** | **Status**
 --- | --- | ---
-[Статья 1. Общие сведения](contoso-migration-overview.md) | Предоставляет общие сведения о стратегии миграции Contoso, цикле статей и примерах приложений, которые мы используем. | Доступна
-[Статья 2. Развертывание инфраструктуры миграции в Contoso](contoso-migration-infrastructure.md) | Здесь рассказывается о том, как Contoso готовит свою локальную инфраструктуру Azure для миграции. Для всех сценариев миграции Contoso используется одна и та же инфраструктура. | Доступна
-[Статья 3. Доступ к локальным ресурсам](contoso-migration-assessment.md)  | В этой статье рассказывается, как компания Contoso выполняет оценку своего локального двухуровневого приложения SmartHotel360 в VMware. Для оценки виртуальных машин приложения компания Contoso использует службу [Миграция Azure](migrate-overview.md). Для оценки базы данных SQL Server приложения используется [помощник по миграции баз данных](https://docs.microsoft.com/sql/dma/dma-overview?view=sql-server-2017). | Доступна
-[Статья 4. Повторное размещение приложения на виртуальных машинах Azure и в управляемом экземпляре базы данных SQL](contoso-migration-rehost-vm-sql-managed-instance.md) | Здесь демонстрируется, как Contoso выполняет процесс миграции приложения SmartHotel360 в Azure по методу lift-and-shift. Contoso переносит интерфейсную ВМ приложения с помощью [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview). Базу данных приложения она переносит в управляемый экземпляр SQL с помощью [Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview). | Доступна
+[Статья 1. Обзор](contoso-migration-overview.md) | Предоставляет общие сведения о стратегии миграции Contoso, цикле статей и примерах приложений, которые мы используем. | Доступна
+[Статья 2. Развертывание инфраструктуры Azure](contoso-migration-infrastructure.md) | Здесь рассказывается о том, как Contoso готовит свою локальную инфраструктуру Azure для миграции. Для всех сценариев миграции Contoso используется одна и та же инфраструктура. | Доступна
+[Статья 3. Оценка локальных ресурсов](contoso-migration-assessment.md)  | В этой статье рассказывается, как компания Contoso выполняет оценку своего локального двухуровневого приложения SmartHotel360 в VMware. Для оценки виртуальных машин приложения компания Contoso использует службу [Миграция Azure](migrate-overview.md). Для оценки базы данных SQL Server приложения используется [помощник по миграции баз данных](https://docs.microsoft.com/sql/dma/dma-overview?view=sql-server-2017). | Доступна
+[Статья 4. Повторное размещение приложения в Azure виртуальные машины и управляемого экземпляра SQL](contoso-migration-rehost-vm-sql-managed-instance.md) | Здесь демонстрируется, как Contoso выполняет процесс миграции приложения SmartHotel360 в Azure по методу lift-and-shift. Contoso переносит интерфейсную ВМ приложения с помощью [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview). Базу данных приложения она переносит в управляемый экземпляр SQL с помощью [Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview). | Доступна
 [Статья 5. Повторное размещение приложения на виртуальных машинах Azure](contoso-migration-rehost-vm.md) | В этой статье рассказывается, как компания Contoso переносит виртуальные машины приложения SmartHotel360, используя только Site Recovery. | Доступна
-[Статья 6. Повторное размещение приложения на виртуальных машинах Azure и в группах доступности SQL Server AlwaysOn](contoso-migration-rehost-vm-sql-ag.md) | Здесь показан выполняемый в Contoso процесс миграции приложения SmartHotel360. Contoso использует Site Recovery для переноса ВМ приложений и службы миграции баз данных для миграции базы данных приложения в кластер SQL Server, защищенный группой доступности AlwaysOn. | Доступна
-[Статья 7. Перенос приложения компании Contoso: повторное размещение локального приложения Linux на виртуальных машинах Azure](contoso-migration-rehost-linux-vm.md) | Здесь показано, как компания Contoso осуществляет миграцию приложения Linux osTicket по методу lift-and-shift на виртуальные машины Azure с помощью Site Recovery | Доступна
-[Статья 8. Миграция в компании Contoso. Повторное размещение локального приложения Linux в виртуальных машинах Azure и MySQL в Azure](contoso-migration-rehost-linux-vm-mysql.md) | В этой статье рассказывается, как компания Contoso выполняет миграцию приложения Linux osTicket на виртуальные машины Azure с помощью Site Recovery и миграцию базы данных приложения в экземпляр Azure MySQL Server с помощью MySQL Workbench. | Доступна
-[Статья 9. Рефакторинг приложения для веб-приложений Azure и базы данных SQL Azure](contoso-migration-refactor-web-app-sql.md) | В статье демонстрируется, как Contoso переносит приложение SmartHotel360 в веб-приложение Azure, а базу данных приложения — в экземпляр SQL Server Azure. | Доступна
-[Статья 10. Рефакторинг приложения Linux для веб-приложений Azure и MySQL в Azure](contoso-migration-refactor-linux-app-service-mysql.md) | В статье демонстрируется, как Contoso переносит приложение osTicket для Linux в веб-приложения Azure на нескольких сайтах, интегрированных с GitHub для непрерывной поставки. База данных приложения переносится в экземпляр Azure MySQL. | Доступна
-[Статья 11. Рефакторинг Team Foundation Server в Azure DevOps Services](contoso-migration-tfs-vsts.md) | В этой статье показано, как Contoso выполняет миграцию локального развертывания Team Foundation Server (TFS) путем его переноса в Azure DevOps Services в Azure. | Доступна
-[Статья 12. Повторное проектирование приложения для использования контейнеров Azure и базы данных SQL](contoso-migration-rearchitect-container-sql.md) | В статье демонстрируется, как Contoso переносит и перепроектирует приложение SmartHotel в Azure. Специалисты компании перепроектируют веб-уровень приложения в контейнер Windows и переносят базу данных приложения в Базу данных SQL Azure. | Доступна
+[Статья 6. Повторное размещение приложения на виртуальных машинах Azure и SQL Server, группа доступности AlwaysOn](contoso-migration-rehost-vm-sql-ag.md) | Здесь показан выполняемый в Contoso процесс миграции приложения SmartHotel360. Contoso использует Site Recovery для переноса ВМ приложений и службы миграции баз данных для миграции базы данных приложения в кластер SQL Server, защищенный группой доступности AlwaysOn. | Доступна
+[Статья 7. Повторное размещение приложения Linux на виртуальных машинах Azure](contoso-migration-rehost-linux-vm.md) | Здесь показано, как компания Contoso осуществляет миграцию приложения Linux osTicket по методу lift-and-shift на виртуальные машины Azure с помощью Site Recovery | Доступна
+[Статья 8. Повторное размещение приложения Linux на виртуальных машинах Azure и Azure MySQL Server](contoso-migration-rehost-linux-vm-mysql.md) | В этой статье рассказывается, как компания Contoso выполняет миграцию приложения Linux osTicket на виртуальные машины Azure с помощью Site Recovery и миграцию базы данных приложения в экземпляр Azure MySQL Server с помощью MySQL Workbench. | Доступна
+[Статья 9. Рефакторинг приложения в базе данных веб-приложений Azure и Azure SQL](contoso-migration-refactor-web-app-sql.md) | В статье демонстрируется, как Contoso переносит приложение SmartHotel360 в веб-приложение Azure, а базу данных приложения — в экземпляр SQL Server Azure. | Доступна
+[Статья 10. Рефакторинг приложения Linux для веб-приложений Azure и Azure MySQL](contoso-migration-refactor-linux-app-service-mysql.md) | В статье демонстрируется, как Contoso переносит приложение osTicket для Linux в веб-приложения Azure на нескольких сайтах, интегрированных с GitHub для непрерывной поставки. База данных приложения переносится в экземпляр Azure MySQL. | Доступна
+[Статья 11. Рефакторинг TFS в службах Azure DevOps](contoso-migration-tfs-vsts.md) | В этой статье показано, как Contoso выполняет миграцию локального развертывания Team Foundation Server (TFS) путем его переноса в Azure DevOps Services в Azure. | Доступна
+[Статья 12. Перепроектирование приложения контейнеры Azure и базы данных SQL](contoso-migration-rearchitect-container-sql.md) | В статье демонстрируется, как Contoso переносит и перепроектирует приложение SmartHotel в Azure. Специалисты компании перепроектируют веб-уровень приложения в контейнер Windows и переносят базу данных приложения в Базу данных SQL Azure. | Доступна
 Статья 13. Повторное создание приложения в Azure | В статье демонстрируется, как Contoso повторно создает свое приложение SmartHotel, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Azure Kubernetes, Функции Azure, Cognitive Services и Cosmos DB. | Эта статья
 [Статья 14. Масштабирование миграции в Azure](contoso-migration-scale.md) | Ознакомившись с вариантами сочетаний миграции, компания Contoso готовится к полномасштабной миграции в Azure. | Доступна
 
 В этой статье рассказывается, как Contoso выполняет миграцию двухуровневого приложения Windows. Приложение .NET SmartHotel360 работает на виртуальных машинах VMware в Azure. Это приложение с открытым исходным кодом, и если вы хотите использовать его, загрузите его с [GitHub](https://github.com/Microsoft/SmartHotel360-Backend).
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="business-drivers"></a>Бизнес-факторы
 
@@ -93,7 +96,7 @@ ms.locfileid: "57437320"
 
 Специалисты Contoso оценивают предлагаемый дизайн, составляя список плюсов и минусов.
 
-**Рассмотрение** | **Дополнительные сведения**
+**Рассматриваемый вопрос** | **Сведения**
 --- | ---
 **Преимущества** | Использование PaaS и бессерверных решений для полного развертывания значительно сокращает время управления со стороны Contoso.<br/><br/> Переход на архитектуру микрослужб позволяет Contoso легко расширять свое решение со временем.<br/><br/> Новая функциональность может быть подключена к Интернету, не нарушая ни одной из имеющихся баз кода решений.<br/><br/> Веб-приложение будет настроено с несколькими экземплярами, гарантируя отсутствие единой точки отказа.<br/><br/> Чтобы приложение могло обработать разные объемы трафика, включается автоматическое масштабирование.<br/><br/> В связи с переходом к службам PaaS компания Contoso может снять с учета устаревшие решения под управлением операционной системы Windows Server 2008 R2.<br/><br/> CosmosDB имеет встроенную отказоустойчивость, которой не требуется конфигурация Contoso. Это означает, что уровень данных больше не является единой точкой отказа.
 **Недостатки** | По сравнению с другими вариантами миграции контейнеры более сложные. Для Contoso длительное изучение может стать проблемой.  Новый уровень сложности контейнеров представляет большую ценность, несмотря на длительное время, которое требуется на их изучение.<br/><br/> Рабочей группе в Contoso необходимо будет заполнить пробелы в знаниях, чтобы разобраться с Azure, контейнерами и микрослужбами приложения и обеспечить их обслуживание.<br/><br/> Компания Contoso не полностью реализовала DevOps для всего решения. Специалистам компании нужно подумать об этом при развертывании служб в AKS, Функциях и Службе приложений.
@@ -112,22 +115,22 @@ ms.locfileid: "57437320"
 
 ### <a name="azure-services"></a>Службы Azure
 
-**Служба** | **Описание** | **Стоимость**
+**Service** | **ОПИСАНИЕ** | **Стоимость**
 --- | --- | ---
 [AKS](https://docs.microsoft.com/sql/dma/dma-overview?view=ssdt-18vs2017) | Упрощает развертывание, администрирование и использование Kubernetes. Предоставляет полностью управляемую службу оркестрации контейнеров Kubernetes.  | AKS — это бесплатная служба.  Вы платите только за виртуальные машины, связанное хранилище и потребляемые сетевые ресурсы. [Узнайте больше](https://azure.microsoft.com/pricing/details/kubernetes-service/).
 [Функции Azure](https://azure.microsoft.com/services/functions/) | Ускорьте процесс разработки с помощью управляемых событиями и независимыми от сервера вычислительных средств. Выполняйте масштабирование по необходимости.  | Платите только за использованные ресурсы. Плата по плану начисляется в зависимости от потребления ресурсов и числа выполнений в секунду. [Узнайте больше](https://azure.microsoft.com/pricing/details/functions/).
 [Реестр контейнеров Azure](https://azure.microsoft.com/services/container-registry/) | Хранит образы для всех типов развертываний контейнеров. | Стоимость зависит от функций, типа хранилища и длительности использования. [Узнайте больше](https://azure.microsoft.com/pricing/details/container-registry/).
-[службе приложений Azure](https://azure.microsoft.com/services/app-service/containers/) | Оперативно создавайте, развертывайте и масштабируйте веб-приложения, мобильные приложения и приложения API на любой платформе. | Плата за план службы приложений начисляется посекундно. [Узнайте больше](https://azure.microsoft.com/pricing/details/app-service/windows/).
+[Служба приложений Azure](https://azure.microsoft.com/services/app-service/containers/) | Оперативно создавайте, развертывайте и масштабируйте веб-приложения, мобильные приложения и приложения API на любой платформе. | Плата за план службы приложений начисляется посекундно. [Узнайте больше](https://azure.microsoft.com/pricing/details/app-service/windows/).
 
 ## <a name="prerequisites"></a>Технические условия
 
 Ниже приведены действия компании Contoso, необходимые для этого сценария.
 
-**Требования** | **Дополнительные сведения**
+**Требования** | **Сведения**
 --- | ---
 **Подписка Azure.** | Компания Contoso уже создала подписки (это описывается в одной из предыдущих статей этой серии). Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/pricing/free-trial/).<br/><br/> Если вы создаете бесплатную учетную запись, вы являетесь администратором своей подписки и можете выполнять любые действия.<br/><br/> Если вы используете существующую подписку, в которой не являетесь администратором, администратор должен назначить вам права владельца или участника.
 **Инфраструктура Azure** | [Узнайте, как](contoso-migration-infrastructure.md) компания Contoso настраивает инфраструктуру Azure.
-**Предварительные требования для разработчика** | Contoso необходимы следующие средства на рабочей станции разработчика:<br/><br/> - [Выпуск Visual Studio Community 2017. Версия 15.5](https://www.visualstudio.com/)<br/><br/> включенная рабочая нагрузка .NET;<br/><br/> [Git](https://git-scm.com/)<br/><br/> [Azure PowerShell](https://azure.microsoft.com/downloads/)<br/><br/> [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)<br/><br/> [Docker CE (Windows 10) или Docker EE (Windows Server)](https://docs.docker.com/docker-for-windows/install/), настроенные на использование контейнеров Windows.
+**Необходимые условия для разработчика** | Contoso необходимы следующие средства на рабочей станции разработчика:<br/><br/> - [Выпуск Visual Studio Community 2017. Версия 15.5](https://www.visualstudio.com/)<br/><br/> включенная рабочая нагрузка .NET;<br/><br/> [Git](https://git-scm.com/)<br/><br/> [Azure PowerShell](https://azure.microsoft.com/downloads/)<br/><br/> [Инфраструктура CLI Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)<br/><br/> [Docker CE (Windows 10) или Docker EE (Windows Server)](https://docs.docker.com/docker-for-windows/install/), настроенные на использование контейнеров Windows.
 
 
 
@@ -175,7 +178,7 @@ ms.locfileid: "57437320"
 
     ![AKS](./media/contoso-migration-rebuild/aks3.png)
 
-5. В интегрированном терминале PowerShell необходимо войти в Azure с помощью команды Connect-AzureRmAccount. Дополнительные сведения о начале работы с PowerShell см. в [этой статье](https://docs.microsoft.com/powershell/azure/get-started-azureps).
+5. В окне PowerShell интегрированного терминала входе в Azure с помощью команды Connect-AzAccount. Дополнительные сведения о начале работы с PowerShell см. в [этой статье](https://docs.microsoft.com/powershell/azure/get-started-azureps).
 
     ![AKS](./media/contoso-migration-rebuild/aks4.png)
 
@@ -204,7 +207,7 @@ ms.locfileid: "57437320"
 
 11. Специалисты компании выполняют следующую команду для запуска панели мониторинга Kubernetes: 
 
-    **az aks browse --resource-group ContosoRG --name smarthotelakseus2**
+    **Обзор AZ aks — группа ресурсов ContosoRG--smarthotelakseus2 имя**
 
 12. На вкладке браузера откроется панель мониторинга. Это туннельное подключение, использующее Azure CLI. 
 

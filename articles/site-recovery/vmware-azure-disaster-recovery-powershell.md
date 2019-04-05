@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.date: 11/27/2018
 ms.topic: conceptual
 ms.author: sutalasi
-ms.openlocfilehash: aa8292aac82f478422f9214c26d974825872eed6
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: d70f2b2f0afb99263eaefe1122dba565231d978c
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58226341"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59046934"
 ---
 # <a name="set-up-disaster-recovery-of-vmware-vms-to-azure-with-powershell"></a>Настройка аварийного восстановления виртуальных машин VMware в Azure с помощью PowerShell
 
@@ -28,32 +28,35 @@ ms.locfileid: "58226341"
 > - Создание учетных записей для хранения данных репликации и репликация виртуальных машин.
 > - Выполнение отработки отказа. Настройка параметров отработки отказа, выполнение параметров для репликации виртуальных машин.
 
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы:
 
 - Вам должны быть понятны [архитектура и компоненты сценария](vmware-azure-architecture.md).
 - [Ознакомьтесь](site-recovery-support-matrix-to-azure.md) с требованиями поддержки для всех компонентов.
-- Требуется модуль AzureRm PowerShell версии 5.0.1 или более поздней версии. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azureps-cmdlets-docs).
+- У вас есть Azure PowerShell `Az` модуля. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="log-into-azure"></a>Вход на портал Azure
 
-Войдите в подписку Azure, используя командлет Connect-AzureRmAccount:
+Войдите в свою подписку Azure, используя командлет Connect-AzAccount:
 
 ```azurepowershell
-Connect-AzureRmAccount
+Connect-AzAccount
 ```
-Выберите подписку Azure, в которую нужно реплицировать виртуальные машины VMware. Используйте командлет Get-AzureRmSubscription, чтобы получить список подписок Azure, к которым у вас есть доступ. Выберите необходимую подписку Azure, выполнив командлет Select-AzureRmSubscription.
+Выберите подписку Azure, в которую нужно реплицировать виртуальные машины VMware. Используйте командлет Get-AzSubscription, чтобы получить список подписок Azure, которые у вас есть доступ к. Выберите подписку Azure для работы с помощью командлета Select-AzSubscription.
 
 ```azurepowershell
-Select-AzureRmSubscription -SubscriptionName "ASR Test Subscription"
+Select-AzSubscription -SubscriptionName "ASR Test Subscription"
 ```
 ## <a name="set-up-a-recovery-services-vault"></a>Настройка хранилища служб восстановления
 
 1. Создайте группу ресурсов, в которой будет создано хранилище служб восстановления. В следующем примере группа ресурсов VMwareDRtoAzurePS создана в регионе "Восточная Азия".
 
    ```azurepowershell
-   New-AzureRmResourceGroup -Name "VMwareDRtoAzurePS" -Location "East Asia"
+   New-AzResourceGroup -Name "VMwareDRtoAzurePS" -Location "East Asia"
    ```
    ```
    ResourceGroupName : VMwareDRtoAzurePS
@@ -66,7 +69,7 @@ Select-AzureRmSubscription -SubscriptionName "ASR Test Subscription"
 2. Создайте хранилище служб восстановления. В следующем примере хранилище служб восстановления VMwareDRToAzurePs создано в регионе "Восточная Азия", в группе ресурсов, созданной на предыдущем шаге.
 
    ```azurepowershell
-   New-AzureRmRecoveryServicesVault -Name "VMwareDRToAzurePs" -Location "East Asia" -ResourceGroupName "VMwareDRToAzurePs"
+   New-AzRecoveryServicesVault -Name "VMwareDRToAzurePs" -Location "East Asia" -ResourceGroupName "VMwareDRToAzurePs"
    ```
    ```
    Name              : VMwareDRToAzurePs
@@ -82,10 +85,10 @@ Select-AzureRmSubscription -SubscriptionName "ASR Test Subscription"
 
    ```azurepowershell
    #Get the vault object by name and resource group and save it to the $vault PowerShell variable 
-   $vault = Get-AzureRmRecoveryServicesVault -Name "VMwareDRToAzurePS" -ResourceGroupName "VMwareDRToAzurePS"
+   $vault = Get-AzRecoveryServicesVault -Name "VMwareDRToAzurePS" -ResourceGroupName "VMwareDRToAzurePS"
 
    #Download vault registration key to the path C:\Work
-   Get-AzureRmRecoveryServicesVaultSettingsFile -SiteRecovery -Vault $Vault -Path "C:\Work\"
+   Get-AzRecoveryServicesVaultSettingsFile -SiteRecovery -Vault $Vault -Path "C:\Work\"
    ```
    ```
    FilePath
@@ -102,7 +105,7 @@ Select-AzureRmSubscription -SubscriptionName "ASR Test Subscription"
 Задайте контекст хранилища с помощью командлета Set-ASRVaultContext. После этого последующие операции Azure Site Recovery в сеансе PowerShell будут выполняться в контексте выбранного хранилища.
 
 > [!TIP]
-> Модуль PowerShell для Azure Site Recovery (модуль AzureRm.RecoveryServices.SiteRecovery) поставляется с удобными псевдонимами для большинства командлетов. Командлеты в модуле имеют вид *\<Операция>-**AzureRmRecoveryServicesAsr**\<объект>* и поддерживают эквивалентные псевдонимы вида *\<Операция>-**ASR**\<Объект>*. В этой статье для более удобного чтения используется псевдонимы командлетов.
+> Модуль PowerShell для Azure Site Recovery (модуль Az.RecoveryServices) поставляется с удобными псевдонимами для большинства командлетов. Командлеты в модуле имеют вид  *\<операция >-**AzRecoveryServicesAsr**\<объекта >* и поддерживают эквивалентные псевдонимы вида  *\< Операция >-**ASR**\<объекта >*. В этой статье для более удобного чтения используется псевдонимы командлетов.
 
 В следующем примере данные хранилища из переменной $vault используется для указания контекста хранилища для сеанса PowerShell.
 
@@ -115,11 +118,11 @@ Select-AzureRmSubscription -SubscriptionName "ASR Test Subscription"
    VMwareDRToAzurePs VMwareDRToAzurePs Microsoft.RecoveryServices vaults
    ```
 
-Вместо командлета Set-ASRVaultContext также можно использовать командлет Import-AzureRmRecoveryServicesAsrVaultSettingsFile для задания контекста хранилища. Укажите путь, по которому расположен файл ключа регистрации хранилища в виде параметра -path для командлета Import-AzureRmRecoveryServicesAsrVaultSettingsFile. Например: 
+В качестве альтернативы в командлет Set-ASRVaultContext то также применять командлет Import-AzRecoveryServicesAsrVaultSettingsFile задать контекст хранилища. Укажите путь, по которому расположен файл ключа регистрации хранилища как параметр - path в командлет Import-AzRecoveryServicesAsrVaultSettingsFile. Например: 
 
    ```azurepowershell
-   Get-AzureRmRecoveryServicesVaultSettingsFile -SiteRecovery -Vault $Vault -Path "C:\Work\"
-   Import-AzureRmRecoveryServicesAsrVaultSettingsFile -Path "C:\Work\VMwareDRToAzurePs_2017-11-23T19-52-34.VaultCredentials"
+   Get-AzRecoveryServicesVaultSettingsFile -SiteRecovery -Vault $Vault -Path "C:\Work\"
+   Import-AzRecoveryServicesAsrVaultSettingsFile -Path "C:\Work\VMwareDRToAzurePs_2017-11-23T19-52-34.VaultCredentials"
    ```
 Последующих разделах данной статьи предполагается, контекст хранилища для операций Azure Site Recovery уже задан.
 
@@ -321,11 +324,11 @@ Errors           : {}
 
 ```azurepowershell
 
-$PremiumStorageAccount = New-AzureRmStorageAccount -ResourceGroupName "VMwareDRToAzurePs" -Name "premiumstorageaccount1" -Location "East Asia" -SkuName Premium_LRS
+$PremiumStorageAccount = New-AzStorageAccount -ResourceGroupName "VMwareDRToAzurePs" -Name "premiumstorageaccount1" -Location "East Asia" -SkuName Premium_LRS
 
-$LogStorageAccount = New-AzureRmStorageAccount -ResourceGroupName "VMwareDRToAzurePs" -Name "logstorageaccount1" -Location "East Asia" -SkuName Standard_LRS
+$LogStorageAccount = New-AzStorageAccount -ResourceGroupName "VMwareDRToAzurePs" -Name "logstorageaccount1" -Location "East Asia" -SkuName Standard_LRS
 
-$ReplicationStdStorageAccount= New-AzureRmStorageAccount -ResourceGroupName "VMwareDRToAzurePs" -Name "replicationstdstorageaccount1" -Location "East Asia" -SkuName Standard_LRS
+$ReplicationStdStorageAccount= New-AzStorageAccount -ResourceGroupName "VMwareDRToAzurePs" -Name "replicationstdstorageaccount1" -Location "East Asia" -SkuName Standard_LRS
 ```
 
 ## <a name="replicate-vmware-vms"></a>Репликация виртуальных машин VMware
@@ -355,10 +358,10 @@ $ReplicationStdStorageAccount= New-AzureRmStorageAccount -ResourceGroupName "VMw
 ```azurepowershell
 
 #Get the target resource group to be used
-$ResourceGroup = Get-AzureRmResourceGroup -Name "VMwareToAzureDrPs"
+$ResourceGroup = Get-AzResourceGroup -Name "VMwareToAzureDrPs"
 
 #Get the target virtual network to be used
-$RecoveryVnet = Get-AzureRmVirtualNetwork -Name "ASR-vnet" -ResourceGroupName "asrrg" 
+$RecoveryVnet = Get-AzVirtualNetwork -Name "ASR-vnet" -ResourceGroupName "asrrg" 
 
 #Get the protection container mapping for replication policy named ReplicationPolicy
 $PolicyMap  = Get-ASRProtectionContainerMapping -ProtectionContainer $ProtectionContainer | where PolicyFriendlyName -eq "ReplicationPolicy"
@@ -444,7 +447,7 @@ Errors           : {}
    #Test failover of Win2K12VM1 to the test virtual network "V2TestNetwork"
 
    #Get details of the test failover virtual network to be used
-   TestFailovervnet = Get-AzureRmVirtualNetwork -Name "V2TestNetwork" -ResourceGroupName "asrrg" 
+   TestFailovervnet = Get-AzVirtualNetwork -Name "V2TestNetwork" -ResourceGroupName "asrrg" 
 
    #Start the test failover operation
    $TFOJob = Start-ASRTestFailoverJob -ReplicationProtectedItem $ReplicatedVM1 -AzureVMNetworkId $TestFailovervnet.Id -Direction PrimaryToRecovery
@@ -487,4 +490,4 @@ Errors           : {}
 2. После успешной отработки отказа можно зафиксировать эту операцию и настроить обратную репликацию из Azure в локальное расположение VMware.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Узнайте, как автоматизировать дополнительные задачи, используя [Справочник по PowerShell для Azure Site Recovery](https://docs.microsoft.com/powershell/module/AzureRM.RecoveryServices.SiteRecovery).
+Узнайте, как автоматизировать дополнительные задачи, используя [Справочник по PowerShell для Azure Site Recovery](https://docs.microsoft.com/powershell/module/Az.RecoveryServices).

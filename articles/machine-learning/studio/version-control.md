@@ -9,15 +9,17 @@ ms.topic: conceptual
 author: xiaoharper
 ms.author: amlstudiodocs
 ms.date: 10/27/2016
-ms.openlocfilehash: ff7aa1ab8972b6cbb891a67b1065044b48f1cfa3
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 046afaa0e83fa572d6cd43a3717707892b25af69
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58446225"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59051875"
 ---
 # <a name="application-lifecycle-management-in-azure-machine-learning-studio"></a>Управление жизненным циклом приложений в студии машинного обучения Azure
 Студия машинного обучения Azure — это средство для разработки экспериментов машинного обучения и их применения на базе облачной платформы Azure. Это решение позволяет объединить в рамках одной платформы возможности Visual Studio IDE и масштабируемой облачной службы. Студия машинного обучения Azure поддерживает стандартные методы управления жизненным циклом приложения (ALM) — от управления версиями разных ресурсов до автоматического выполнения и развертывания. В этой статье рассматриваются некоторые возможности и подходы.
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="versioning-experiment"></a>Управление версиями эксперимента
 Для управления версиями экспериментов рекомендуется использовать один из двух способов. Вы можете воспользоваться встроенным журналом выполнения или экспортировать эксперимент в файл формата JSON для внешнего управления. У каждого подхода есть свои преимущества и недостатки.
@@ -73,7 +75,7 @@ ms.locfileid: "58446225"
 Для получения аналогичного результата также можно создать несколько идентичных конечных точек веб-службы и обновить различные версии файла iLearner с помощью конечной точки. В [этой статье](create-models-and-endpoints-with-powershell.md) подробно описано, как это сделать.
 
 ### <a name="new-web-service"></a>Новая веб-служба
-При создании новой веб-службы на основе Azure Resource Manager конструкция конечной точки недоступна. Вместо этого можно создать файлы WSD (определение веб-службы) в формате JSON из прогнозного эксперимента с помощью командлета PowerShell [Export-AmlWebServiceDefinitionFromExperiment](https://github.com/hning86/azuremlps#export-amlwebservicedefinitionfromexperiment) или [*Export-AzureRmMlWebservice*](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/export-azurermmlwebservice) из уже развернутой веб-службы на основе Resource Manager.
+При создании новой веб-службы на основе Azure Resource Manager конструкция конечной точки недоступна. Вместо этого можно создать файлы (WSD определение) веб-службы, в формате JSON из прогнозного эксперимента с помощью [Export-AmlWebServiceDefinitionFromExperiment](https://github.com/hning86/azuremlps#export-amlwebservicedefinitionfromexperiment) командлета PowerShell или с помощью [ *Экспорта AzMlWebservice* ](https://docs.microsoft.com/powershell/module/az.machinelearning/export-azmlwebservice) командлета PowerShell, развернутых на основе Resource Manager веб-службы.
 
 Экспортированный и обработанный с помощью системы управления версиями файл WSD можно развернуть как новую веб-службу в другом плане веб-службы и другом регионе Azure. Но убедитесь, что вы указали правильную конфигурацию учетной записи хранения, а также идентификатор нового плана веб-службы. Чтобы применить исправление в других файлах iLearner, можно изменить файл WSD, обновить ссылку на расположение обученной модели и развернуть его в качестве новой веб-службы.
 

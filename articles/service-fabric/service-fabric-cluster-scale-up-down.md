@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/12/2019
 ms.author: aljo
-ms.openlocfilehash: f201ac1f0ea5a4bc07e8c052e7653194140e8759
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 400e4653800d445506d4854e70034a707dcc4629
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58669373"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59049187"
 ---
 # <a name="scale-a-cluster-in-or-out"></a>увеличение или уменьшение масштаба кластера;
 
@@ -27,6 +27,9 @@ ms.locfileid: "58669373"
 > Этот раздел перед масштабированием
 
 Масштабирование вычислительных ресурсов источника рабочей нагрузки вашего приложения требует преднамеренного планирования. Для разворачивания рабочей среды почти всегда требуется больше часа, поэтому необходимо знать уровень рабочей нагрузки и ее бизнес-контекст. Если вы никогда раньше этого не делали, рекомендуется прочитать и разобраться с [рекомендациями по планированию загрузки кластера Service Fabric](service-fabric-cluster-capacity.md), прежде чем продолжить чтение оставшейся части этого документа. Эта рекомендация заключается в том, чтобы избежать непреднамеренных проблем с LiveSite, а также рекомендуется успешно протестировать операции, которые вы решите выполнить в нерабочей среде. В любое время вы можете [сообщить о производственных проблемах или запросить платную поддержку Azure](service-fabric-support.md#report-production-issues-or-request-paid-support-for-azure). В этой статье описываются операции масштабирования для инженеров, выделенных для выполнения этих операций, которые обладают соответствующим контекстом, но вы должны понять, какие операции подходят для вашего случая использования, и принять решение. Здесь речь идет о ресурсах для масштабирования (ЦП, хранилище, память), выборе направления масштабирования (вертикальное или горизонтальное) и операций для выполнения (шаблоны развертывания ресурсов, портал, PowerShell/CLI).
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="scale-a-service-fabric-cluster-in-or-out-using-auto-scale-rules-or-manually"></a>Масштабирование кластера Service Fabric с помощью правил автомасштабирования или вручную
 Наборы масштабирования виртуальных машин относятся к вычислительным ресурсам Azure. Их можно использовать для развертывания коллекции виртуальных машин и управления ею как набором. Каждый тип узла, определенный в кластере Service Fabric, настроен как отдельный набор масштабирования виртуальных машин. Каждый тип узла поддерживает возможность независимого масштабирования, имеет разные наборы открытых портов и собственные метрики емкости. Дополнительные сведения о его в [типы узлов Service Fabric](service-fabric-cluster-nodetypes.md) документа. Так как типы узлов Service Fabric в вашем кластере состоят из масштабируемых наборов виртуальных машин на сервере, необходимо настроить правила автомасштабирования для каждого узла типа/масштабируемого набора виртуальных машин.
@@ -42,9 +45,9 @@ ms.locfileid: "58669373"
 Чтобы получить список масштабируемых наборов виртуальных машин в составе кластера, выполните следующие командлеты:
 
 ```powershell
-Get-AzureRmResource -ResourceGroupName <RGname> -ResourceType Microsoft.Compute/VirtualMachineScaleSets
+Get-AzResource -ResourceGroupName <RGname> -ResourceType Microsoft.Compute/VirtualMachineScaleSets
 
-Get-AzureRmVmss -ResourceGroupName <RGname> -VMScaleSetName <virtual machine scale set name>
+Get-AzVmss -ResourceGroupName <RGname> -VMScaleSetName <virtual machine scale set name>
 ```
 
 ## <a name="set-auto-scale-rules-for-the-node-typevirtual-machine-scale-set"></a>Настройка правил автомасштабирования для узла типа/масштабируемого набора виртуальных машин
@@ -79,10 +82,10 @@ Get-AzureRmVmss -ResourceGroupName <RGname> -VMScaleSetName <virtual machine sca
 Следующий код получает масштабируемый набор по имени и увеличивает значение **емкости** масштабируемого набора на 1.
 
 ```powershell
-$scaleset = Get-AzureRmVmss -ResourceGroupName SFCLUSTERTUTORIALGROUP -VMScaleSetName nt1vm
+$scaleset = Get-AzVmss -ResourceGroupName SFCLUSTERTUTORIALGROUP -VMScaleSetName nt1vm
 $scaleset.Sku.Capacity += 1
 
-Update-AzureRmVmss -ResourceGroupName $scaleset.ResourceGroupName -VMScaleSetName $scaleset.Name -VirtualMachineScaleSet $scaleset
+Update-AzVmss -ResourceGroupName $scaleset.ResourceGroupName -VMScaleSetName $scaleset.Name -VirtualMachineScaleSet $scaleset
 ```
 
 Этот код задает значение 6 для емкости.
@@ -192,7 +195,7 @@ else
 }
 ```
 
-В коде **sfctl** ниже следующая команда используется для получения значений **имени узла** последнего созданного узла: `sfctl node list --query "sort_by(items[*], &name)[-1].name"`
+В **sfctl** кода ниже, следующая команда используется для получения **имя узла** значение последнего созданного узла: `sfctl node list --query "sort_by(items[*], &name)[-1].name"`
 
 ```azurecli
 # Inform the node that it is going to be removed
@@ -220,10 +223,10 @@ sfctl node remove-state --node-name _nt1vm_5
 Теперь, когда узел Service Fabric удален из кластера, можно свернуть масштабируемый набор виртуальных машин. В приведенном ниже примере емкость масштабируемого набора уменьшается на 1.
 
 ```powershell
-$scaleset = Get-AzureRmVmss -ResourceGroupName SFCLUSTERTUTORIALGROUP -VMScaleSetName nt1vm
+$scaleset = Get-AzVmss -ResourceGroupName SFCLUSTERTUTORIALGROUP -VMScaleSetName nt1vm
 $scaleset.Sku.Capacity -= 1
 
-Update-AzureRmVmss -ResourceGroupName SFCLUSTERTUTORIALGROUP -VMScaleSetName nt1vm -VirtualMachineScaleSet $scaleset
+Update-AzVmss -ResourceGroupName SFCLUSTERTUTORIALGROUP -VMScaleSetName nt1vm -VirtualMachineScaleSet $scaleset
 ```
 
 Этот код задает значение 5 для емкости.
@@ -260,7 +263,7 @@ az vmss scale -g sfclustertutorialgroup -n nt1vm --new-capacity 5
 
 * [Планирование емкости кластера](service-fabric-cluster-capacity.md)
 * [Обновления кластера](service-fabric-cluster-upgrade.md)
-* [Секционирование служб с отслеживанием состояния для максимального масштабирования](service-fabric-concepts-partitioning.md)
+* [Секции службы с отслеживанием состояния для максимального масштабирования](service-fabric-concepts-partitioning.md)
 
 <!--Image references-->
 [BrowseServiceFabricClusterResource]: ./media/service-fabric-cluster-scale-up-down/BrowseServiceFabricClusterResource.png

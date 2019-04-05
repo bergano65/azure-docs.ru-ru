@@ -10,12 +10,12 @@ ms.subservice: bing-image-search
 ms.topic: troubleshooting
 ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: a6d5d7b3ab83c8e405c6866562b4095434b9acff
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 20b8dbcae36555baf3913ab160575a631e204dd9
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57539026"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59049433"
 ---
 # <a name="frequently-asked-questions-faq-about-the-bing-image-search-api"></a>Часто задаваемые вопросы об API Bing для поиска изображений
 
@@ -25,11 +25,11 @@ ms.locfileid: "57539026"
 
 В ответах от API Bing для поиска изображений могут появляться следующие заголовки:
 
-|||
-|-|-|
-|`X-MSEdge-ClientID`|Уникальный идентификатор, назначенный пользователю службой Bing.|
-|`BingAPIs-Market`|Рынок, использованный для выполнения запроса.|
-|`BingAPIs-TraceId`|Запись журнала на сервере API Bing для этого запроса (для службы поддержки).|
+| `Attribute`         | `Description` |
+| ------------------- | ------------- |
+| `X-MSEdge-ClientID` |Уникальный идентификатор, назначенный пользователю службой Bing. |
+| `BingAPIs-Market`   |Рынок, использованный для выполнения запроса. |
+| `BingAPIs-TraceId`  |Запись журнала на сервере API Bing для этого запроса (для службы поддержки). |
 
 Особенно важно сохранить идентификатор клиента и вернуть его с последующими запросами. При этом в процессе поиска будет использоваться прошлый контекст в ранжировании результатов поиска, обеспечивая согласованность пользовательского интерфейса.
 
@@ -65,4 +65,4 @@ ms.locfileid: "57539026"
 
 ## <a name="see-also"></a>См. также
 
- [Stack Overflow: Cognitive Services](https://stackoverflow.com/questions/tagged/bing-api)
+ [Stack Overflow. Cognitive Services](https://stackoverflow.com/questions/tagged/bing-api)

@@ -14,18 +14,21 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: f5c4f8d2c9cec4372ef5de70485d45ab33e022de
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.openlocfilehash: 323e5d63b5f8566d570dfd47323fcf12f7c6b28b
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55099402"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59051586"
 ---
 # <a name="diagnose-on-premises-connectivity-via-vpn-gateways"></a>Диагностика локальных подключений через VPN-шлюзы
 
 VPN-шлюз Azure позволяет создать гибридное решение, устраняющее необходимость в безопасном подключении между локальной сетью и виртуальной сетью Azure. Ваши требования являются уникальными, как и выбираемое локальное VPN-устройство. В настоящее время Azure поддерживает [несколько VPN-устройств](../vpn-gateway/vpn-gateway-about-vpn-devices.md#devicetable), которые постоянно проверяются совместно с поставщиками устройств. Просмотрите параметры конфигурации устройства перед началом настройки локального VPN-устройства. VPN-шлюз Azure настраивается с помощью набора [поддерживаемых параметров IPsec](../vpn-gateway/vpn-gateway-about-vpn-devices.md#ipsec), которые используются для установления подключений. В данный момент нет какого-либо способа указать или выбрать определенное сочетание параметров IPsec для VPN-шлюза Azure. Для успешного установления подключения между локальной средой и Azure параметры локального VPN-устройства должны соответствовать параметрам IPsec, предписанным VPN-шлюзом Azure. Если параметры неправильные, подключение будет утрачено. Сейчас устранение этих неполадок является нетривиальным, и на выявление и устранение проблемы обычно требуется несколько часов.
 
 С помощью функции устранения неполадок Наблюдателя за сетями Azure можно диагностировать проблемы шлюза и подключений и за несколько минут получить достаточно информации, чтобы принять обоснованное решение для устранения проблемы.
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="scenario"></a>Сценарий
 
@@ -34,7 +37,7 @@ VPN-шлюз Azure позволяет создать гибридное реше
 1. Шлюз виртуальной сети — VPN-шлюз в Azure.
 1. Шлюз локальной сети — представление [локального VPN-шлюза (FortiGate)](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md#LocalNetworkGateway) в облаке Azure.
 1. Подключение типа "сеть — сеть" (на основе маршрута) — [подключение между VPN-шлюзом и локальным маршрутизатором](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#createconnection).
-1. [Configuring FortiGate](https://github.com/Azure/Azure-vpn-config-samples/blob/master/Fortinet/Current/Site-to-Site_VPN_using_FortiGate.md) (Настройка FortiGate)
+1. [Настройка FortiGate](https://github.com/Azure/Azure-vpn-config-samples/blob/master/Fortinet/Current/Site-to-Site_VPN_using_FortiGate.md)
 
 Подробные пошаговые инструкции по настройке конфигурации "сеть — сеть" см. в статье: [Создание подключения типа "сеть — сеть" на портале Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md).
 
@@ -42,7 +45,7 @@ VPN-шлюз Azure позволяет создать гибридное реше
 
 ### <a name="ike-phase-1-setup"></a>Этап 1 настройки протокола IKE
 
-| **Свойство** | **PolicyBased** | **Стандартный или высокопроизводительный VPN-шлюз с маршрутизацией на основе маршрутов** |
+| **Свойство** | **На основе политик** | **RouteBased и стандартный или высокопроизводительный VPN-шлюза** |
 | --- | --- | --- |
 | Версия IKE |IKEv1 |IKEv2 |
 | Группа Диффи — Хелмана |Группа 2 (1024 бита) |Группа 2 (1024 бита) |
@@ -57,7 +60,7 @@ VPN-шлюз Azure позволяет создать гибридное реше
 
 ## <a name="troubleshooting-using-azure-network-watcher"></a>Устранение неполадок с помощью Наблюдателя за сетями Azure
 
-Чтобы диагностировать подключение, подключитесь к Azure PowerShell и выполните командлет `Start-AzureRmNetworkWatcherResourceTroubleshooting`. Дополнительные сведения об использовании этого командлета см. в статье [Устранение неполадок шлюза виртуальной сети и подключений с помощью Наблюдателя за сетями Azure и PowerShell](network-watcher-troubleshoot-manage-powershell.md). Для завершения командлетом этой операции может потребоваться несколько минут.
+Чтобы диагностировать подключение, подключитесь к Azure PowerShell и выполните командлет `Start-AzNetworkWatcherResourceTroubleshooting`. Дополнительные сведения об использовании этого командлета см. в статье [Устранение неполадок шлюза виртуальной сети и подключений с помощью Наблюдателя за сетями Azure и PowerShell](network-watcher-troubleshoot-manage-powershell.md). Для завершения командлетом этой операции может потребоваться несколько минут.
 
 После выполнения командлета можно перейти к расположению хранения, указанному в командлете, чтобы получить подробную информацию о проблеме и просмотреть журналы. Наблюдатель за сетями Azure создает ZIP-папку, которая содержит приведенные ниже файлы.
 
@@ -109,7 +112,7 @@ Error: On-premises device rejected Quick Mode settings. Check values.
 | IkePolicyMismatch | У однорангового шлюза имеются политики IKE, которые не поддерживаются в Azure. | Yes|
 | WfpParse Error | Ошибка при анализе журнала WFP. |Yes|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Научитесь проверять подключения VPN-шлюза с помощью PowerShell и службы автоматизации Azure, ознакомившись с разделом [Мониторинг VPN-шлюзов с помощью средства устранения неполадок наблюдателя за сетями Azure](network-watcher-monitor-with-azure-automation.md).
 

@@ -14,15 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/19/2018
 ms.author: rkarlin
-ms.openlocfilehash: 3282afb87672ba25294e65ea1474a9e06df03362
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 7e26dc37c5c4f85e3db634bd961bf9308e418a03
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57871068"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59045770"
 ---
 # <a name="gain-tenant-wide-visibility-for-azure-security-center"></a>Получение видимости в пределах клиента в центре безопасности Azure
 В этой статье приведены сведения по началу работы, а также описаны действия, которые помогут максимально увеличить преимущества от использования центра безопасности Azure. Выполнив эти действия, вы получите сведения о всех подписках Azure, связанных с клиентом Azure Active Directory, а также сможете эффективно управлять системой безопасности организации, одновременно настроив соответствующие политики в нескольких подписках.
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="management-groups"></a>Группы управления
 Группы управления Azure предоставляют возможность эффективно управлять доступом к группам подписок, их политиками и отчетами, а также всей средой Azure за счет выполнения действий в корневой группе управления. Каждому клиенту Azure AD присваивается одна группа управления верхнего уровня, которая называется корневой. Эта группа встроена в иерархию, чтобы в нее входили все группы управления и подписки. Она позволяет применять глобальные политики и назначения ролей RBAC на уровне каталогов. 
@@ -191,5 +194,5 @@ ms.locfileid: "57871068"
 > [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](security-center-monitoring.md)
 
 > [!div class="nextstepaction"]
-> [Управление оповещениями безопасности в центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md)
+> [Управлять и реагировать на оповещения системы безопасности в центре безопасности Azure](security-center-managing-and-responding-alerts.md)
 

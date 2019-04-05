@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: rajanaki
-ms.openlocfilehash: 6e1a9b2fd34d915716225c6a1bda6e0371a510a9
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: 67eb01ad596393c9095d72670e61b8c09776c588
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58438841"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59049240"
 ---
 # <a name="automatic-update-of-the-mobility-service-in-azure-to-azure-replication"></a>Автоматическое обновление службы Mobility Service в репликации из Azure в Azure
 
@@ -21,6 +21,9 @@ Azure Site Recovery использует месячную периодичнос
 
 Как упоминалось в [Azure в Azure аварийного восстановления архитектура](azure-to-azure-architecture.md), служба Mobility service устанавливается на всех виртуальных машинах Azure (ВМ) для которых включена репликация, при репликации виртуальных машин из одного региона Azure в другой. При использовании автоматического обновления, каждый новый выпуск обновляет расширение службы мобильности.
  
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="how-automatic-updates-work"></a>Работы автоматического обновления
 
 При использовании Site Recovery для управления обновлениями, она развертывает глобального runbook (используется службами Azure) с помощью учетной записи службы автоматизации, созданный в той же подписке, что и хранилище. Каждое хранилище использует учетную запись службы автоматизации. Модуль runbook проверяет для каждой виртуальной Машины в хранилище active автоматического обновления и обновляет расширение службы мобильности, если доступна более новая версия.
@@ -342,7 +345,7 @@ $JobsFailedToStart = 0
 $JobsTimedOut = 0
 $Header = @{}
 
-$AzureRMProfile = Get-Module -ListAvailable -Name AzureRM.Profile | Select Name, Version, Path
+$AzureRMProfile = Get-Module -ListAvailable -Name Az.Accounts | Select Name, Version, Path
 $AzureRmProfileModulePath = Split-Path -Parent $AzureRMProfile.Path
 Add-Type -Path (Join-Path $AzureRmProfileModulePath "Microsoft.IdentityModel.Clients.ActiveDirectory.dll")
 

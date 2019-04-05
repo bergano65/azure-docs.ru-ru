@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-industrialiot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: da11d4977cc998c9fccb3628a44e45db95c7d977
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 9b1dee8ea43d01825449cb6010fbfa62e4715cff
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58759648"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59047268"
 ---
 # <a name="deploy-opc-twin-to-an-existing-project"></a>Развертывание OPC Двойника в существующий проект
 
@@ -30,10 +30,7 @@ OPC Двойник модуля выполняется в IoT Edge и предо
 
 ## <a name="prerequisites"></a>Технические условия
 
-> [!NOTE]
-> Примечание. Из-за зависимости от модуля AzureRM развертывания в настоящее время поддерживается только в Windows.
-
-Убедитесь, что у вас есть PowerShell и [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-1.1.0) установлены расширения.   Если вы этого не сделали еще, клонируйте этот репозиторий GitHub.  Откройте командную строку или терминала и выполните:
+Убедитесь, что у вас есть PowerShell и [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) установлены расширения.   Если вы этого не сделали еще, клонируйте этот репозиторий GitHub.  Откройте командную строку или терминала и выполните:
 
 ```bash
 git clone --recursive https://github.com/Azure/azure-iiot-components 
@@ -143,4 +140,4 @@ cd azure-iiot-components
 Теперь, когда вы узнали, как развернуть OPC Двойника в существующий проект, вот мы предлагаем:
 
 > [!div class="nextstepaction"]
-> [Безопасный обмен данными клиента OPC и OPC PLC ](howto-opc-vault-deploy-existing-client-plc-communication.md)
+> [Безопасный обмен данными клиента OPC и PLC OPC ](howto-opc-vault-deploy-existing-client-plc-communication.md)

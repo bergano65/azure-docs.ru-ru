@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/13/2018
 ms.author: aljo
-ms.openlocfilehash: 534335b15d61d1e411ec2e7fb96123eb4701878e
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: 0038de621a02a2edf3198686e1f2fc88fb917d9c
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57315284"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59050243"
 ---
 # <a name="add-or-remove-certificates-for-a-service-fabric-cluster-in-azure"></a>Добавление и удаление сертификатов для кластера Service Fabric в Azure
 Рекомендуется ознакомиться с тем, как Service Fabric использует сертификаты X.509, и просмотреть раздел [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md). Необходимо понять, что такое сертификат кластера и для чего он используется, прежде чем продолжить.
@@ -33,6 +33,9 @@ Service Fabric позволяет указать в дополнение к се
 > 
 > 
 
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="add-a-secondary-cluster-certificate-using-the-portal"></a>Добавление дополнительного сертификата кластера с помощью портала
 Дополнительный сертификат кластера невозможно добавить с помощью портала Azure. Используйте для этого Azure PowerShell. Данная процедура рассмотрена далее в этом документе.
 
@@ -45,7 +48,7 @@ Service Fabric позволяет указать в дополнение к се
 
 ## <a name="add-a-secondary-certificate-using-resource-manager-powershell"></a>Добавление дополнительного сертификата с помощью PowerShell для Resource Manager
 > [!TIP]
-> Теперь стало удобнее и проще добавлять дополнительные сертификаты, используя командлет [Add-AzureRmServiceFabricClusterCertificate](/powershell/module/azurerm.servicefabric/add-azurermservicefabricclustercertificate). Остальные инструкции в этом разделе выполнять не обязательно.  Также вам не нужен шаблон, который ранее использовался для создания и развертывания кластера при работе с командлетом [Add-AzureRmServiceFabricClusterCertificate](/powershell/module/azurerm.servicefabric/add-azurermservicefabricclustercertificate).
+> Теперь стало лучше и проще добавлять дополнительные сертификаты, используя [AzServiceFabricClusterCertificate добавить](/powershell/module/az.servicefabric/add-azservicefabricclustercertificate) командлета. Остальные инструкции в этом разделе выполнять не обязательно.  Кроме того, вы не обязательно шаблона, который изначально использовался для создания и развертывания кластера при использовании [AzServiceFabricClusterCertificate добавить](/powershell/module/az.servicefabric/add-azservicefabricclustercertificate) командлета.
 
 В этих инструкциях предполагается, что у вас есть опыт работы с Resource Manager, вы развернули хотя бы один кластер Service Fabric с помощью шаблона Resource Manager и у вас есть шаблон, который использовался для настройки этого кластера. Предполагается также, что вы уверенно используете JSON.
 
@@ -58,7 +61,7 @@ Service Fabric позволяет указать в дополнение к се
 
 Для удобства выполнения инструкций пример 5-VM-1-NodeTypes-Secure_Step2.JSON содержит все изменения, которые мы будем вносить. Этот пример доступен в репозитории [git-repo](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/Cert%20Rollover%20Sample).
 
-**Обязательные шаги**
+**Убедитесь, что выполнены все этапы**
 
 1. Откройте шаблон Resource Manager, который использовался для развертывания кластера. (Если вы скачали пример из указанного выше репозитория, воспользуйтесь файлом 5-VM-1-NodeTypes-Secure_Step1.JSON для развертывания защищенного кластера, а затем откройте этот шаблон.)
 
@@ -195,19 +198,19 @@ Service Fabric позволяет указать в дополнение к се
 - Войдите со своей учетной записью Azure и выберите конкретную подписку Azure. Это важный шаг для пользователей, имеющих доступ к нескольким подпискам Azure.
 
 ```powershell
-Connect-AzureRmAccount
-Select-AzureRmSubscription -SubscriptionId <Subscription ID> 
+Connect-AzAccount
+Select-AzSubscription -SubscriptionId <Subscription ID> 
 
 ```
 
 Проверьте шаблон перед его развертыванием. Используйте группу ресурсов, в которой развернут кластер.
 
 ```powershell
-Test-AzureRmResourceGroupDeployment -ResourceGroupName <Resource Group that your cluster is currently deployed to> -TemplateFile <PathToTemplate>
+Test-AzResourceGroupDeployment -ResourceGroupName <Resource Group that your cluster is currently deployed to> -TemplateFile <PathToTemplate>
 
 ```
 
-Разверните шаблон в группу ресурсов. Используйте группу ресурсов, в которой развернут кластер. Выполните команду New-AzureRmResourceGroupDeployment. Не нужно указывать режим, так как по умолчанию используется **добавочный**режим.
+Разверните шаблон в группу ресурсов. Используйте группу ресурсов, в которой развернут кластер. Выполните команду New-AzResourceGroupDeployment. Не нужно указывать режим, так как по умолчанию используется **добавочный**режим.
 
 > [!NOTE]
 > Если задан полный режим, то вы можете случайно удалить ресурсы, которые находятся не в шаблоне. Поэтому не используйте этот режим данном сценарии.
@@ -215,7 +218,7 @@ Test-AzureRmResourceGroupDeployment -ResourceGroupName <Resource Group that your
 > 
 
 ```powershell
-New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName <Resource Group that your cluster is currently deployed to> -TemplateFile <PathToTemplate>
+New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName <Resource Group that your cluster is currently deployed to> -TemplateFile <PathToTemplate>
 ```
 
 Ниже приведен заполненный пример той же команды PowerShell.
@@ -225,7 +228,7 @@ $ResourceGroup2 = "chackosecure5"
 $TemplateFile = "C:\GitHub\Service-Fabric\ARM Templates\Cert Rollover Sample\5-VM-1-NodeTypes-Secure_Step2.json"
 $TemplateParmFile = "C:\GitHub\Service-Fabric\ARM Templates\Cert Rollover Sample\5-VM-1-NodeTypes-Secure.parameters_Step2.json"
 
-New-AzureRmResourceGroupDeployment -ResourceGroupName $ResourceGroup2 -TemplateParameterFile $TemplateParmFile -TemplateUri $TemplateFile -clusterName $ResourceGroup2
+New-AzResourceGroupDeployment -ResourceGroupName $ResourceGroup2 -TemplateParameterFile $TemplateParmFile -TemplateUri $TemplateFile -clusterName $ResourceGroup2
 
 ```
 
@@ -288,7 +291,7 @@ Get-ServiceFabricClusterHealth
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об управлении кластерами доступны в следующих статьях.
 
-* [Обновление кластера Service Fabric](service-fabric-cluster-upgrade.md)
+* [Процесс обновления кластера Service Fabric и ожидания от вас](service-fabric-cluster-upgrade.md)
 * [Настройка доступа на основе ролей для клиентов](service-fabric-cluster-security-roles.md)
 
 <!--Image references-->

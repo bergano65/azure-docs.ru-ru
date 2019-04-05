@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a4bebbda528f7ed6d7bee6ce77c744c6349d0bd
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: d81797f0d1e7f72842c3a5a127756b99bdc93992
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56190897"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59047812"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-edigitalresearch"></a>Руководство. Интеграция Azure Active Directory с eDigitalResearch
 
@@ -35,7 +35,7 @@ ms.locfileid: "56190897"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с eDigitalResearch, вам потребуется:
 
@@ -59,7 +59,7 @@ ms.locfileid: "56190897"
 ## <a name="adding-edigitalresearch-from-the-gallery"></a>Добавление eDigitalResearch из коллекции.
 Чтобы настроить интеграцию eDigitalResearch с Azure AD, необходимо добавить приложение eDigitalResearch из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить eDigitalResearch из коллекции, сделайте следующее:**
+**Чтобы добавить eDigitalResearch из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
@@ -89,7 +89,7 @@ ms.locfileid: "56190897"
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя eDigitalResearch](#create-a-edigitalresearch-test-user)** требуется для того, чтобы в eDigitalResearch существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Создание тестового пользователя eDigitalResearch](#create-an-edigitalresearch-test-user)**  — требуется для создания пользователя Britta Simon в eDigitalResearch, связанного с одноименным пользователем в Azure AD.
 1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
 1. **[Проверьте единый вход](#test-single-sign-on)**, чтобы убедиться в корректной работе конфигурации.
 
@@ -97,7 +97,7 @@ ms.locfileid: "56190897"
 
 В этом разделе мы включим на портале Azure единый вход Azure AD и настроим его в приложении eDigitalResearch.
 
-**Чтобы настроить единый вход Azure AD в eDigitalResearch, сделайте следующее:**
+**Чтобы настроить Azure AD единого входа в eDigitalResearch, выполните следующие действия.**
 
 1. На портале Azure на странице интеграции с приложением **eDigitalResearch** щелкните **Единый вход**.
 
@@ -113,7 +113,7 @@ ms.locfileid: "56190897"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<company-name>.edigitalresearch.com`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company-name>.edigitalresearch.com/login/consume`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company-name>.edigitalresearch.com/login/consume`
 
     > [!NOTE] 
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки eDigitalResearch](https://www.maruedr.com/contact).
@@ -143,7 +143,7 @@ ms.locfileid: "56190897"
 
    ![Создание тестового пользователя Azure AD][100]
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия.**
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
@@ -167,9 +167,9 @@ ms.locfileid: "56190897"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
   
-### <a name="create-a-edigitalresearch-test-user"></a>Создание тестового пользователя eDigitalResearch
+### <a name="create-an-edigitalresearch-test-user"></a>Создание тестового пользователя eDigitalResearch
 
 Цель этого раздела — создать пользователя с именем Britta Simon в приложении eDigitalResearch. 
 
@@ -184,7 +184,7 @@ ms.locfileid: "56190897"
 
 ![Назначение роли пользователя][200] 
 
-**Чтобы назначить пользователя Britta Simon в eDigitalResearch, сделайте следующее:**
+**Чтобы назначить пользователя Britta Simon в eDigitalResearch, выполните следующие действия.**
 
 1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
 

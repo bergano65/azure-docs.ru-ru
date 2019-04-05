@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: article
 ms.date: 04/02/2019
 ms.author: anroth
-ms.openlocfilehash: 78ca1d7ceb9086e0d589f904b24b967d36b079a0
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: 1ee6edbf49bbcd2014afcf29ed3b737168a3b5bc
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58895619"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59046076"
 ---
 # <a name="use-your-model-with-the-prediction-api"></a>Использование модели с помощью API-интерфейса прогнозирования
 
@@ -45,7 +45,7 @@ ms.locfileid: "58895619"
 ![Вкладка "производительность" отображается с красным прямоугольником вокруг URL-адрес прогноза, для использования в файл изображения и значения прогноза ключа.](./media/use-prediction-api/prediction-api-info.png)
 
 > [!TIP]
-> Ваш __прогноза ключ__ также можно найти в [портал Azure](https://portal.azure.com) странице для компьютерного зрения Azure настраиваемого ресурса, связанного с проектом, в разделе __ключи__ колонке.
+> Ваш __прогноза ключ__ также можно найти в [портала Azure](https://portal.azure.com) странице для компьютерного зрения Azure настраиваемого ресурса, связанного с проектом, в разделе __ключи__ колонке.
 
 В этом руководстве, необходимо использовать локальный образ, поэтому скопируйте URL-адрес в разделе **при наличии файла изображения** во временную папку. Скопируйте соответствующий __прогноза ключ__ также значение.
 
