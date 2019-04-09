@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 03/26/2019
+ms.date: 04/05/2019
 ms.author: tulasim
-ms.openlocfilehash: 97da0608781c286e685fd70dd7be37192dd3c9fd
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: 671d76b6c0a5a2cdac5797668fb0e5651b5823e0
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58580416"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59281749"
 ---
 # <a name="add-a-secured-sharepoint-data-source-to-your-knowledge-base"></a>Добавление знаний защищенного источника данных Sharepoint
 
@@ -57,7 +57,7 @@ ms.locfileid: "58580416"
 
 ### <a name="active-directory-manager-grant-file-read-access-to-qna-maker"></a>Диспетчер Active directory: предоставлять доступ на чтение файла QnA Maker
 
-Диспетчер Active Directory (не диспетчер QnA Maker) необходимо предоставить доступ к QnA Maker, доступ к ресурсу Sharepoint, выбрав [эту ссылку](https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=id_token&scope=files.read%20openid%20profile&client_id=c2c11949-e9bb-4035-bda8-59542eb907a6&redirect_uri=https%3A%2F%2Fwww.qnamaker.ai%3A%2FCreate&state=68) Чтобы авторизовать приложение QnA Maker портала Sharepoint enterprise для чтения файлов разрешения. 
+Диспетчер Active Directory (не диспетчер QnA Maker) необходимо предоставить доступ к QnA Maker, доступ к ресурсу Sharepoint, выбрав [эту ссылку](https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=id_token&scope=Files.Read%20Files.Read.All%20Sites.Read.All%20User.Read%20User.ReadBasic.All%20profile%20openid%20email&client_id=c2c11949-e9bb-4035-bda8-59542eb907a6&redirect_uri=https%3A%2F%2Fwww.qnamaker.ai%3A%2FCreate&state=68) Чтобы авторизовать приложение QnA Maker портала Sharepoint enterprise для чтения файлов разрешения. 
 
 ![Диспетчер Azure Active Directory предоставляет разрешение в интерактивном режиме](../media/add-sharepoint-datasources/aad-manager-grants-permission-interactively.png)
 
@@ -96,22 +96,22 @@ The Active Directory manager will get a pop-up window requesting permissions to 
 1. Select **YES** in the pop-up confirmation windows. 
 
     ![Grant required permissions](../media/add-sharepoint-datasources/grant-required-permissions.png)
-
-### Grant access from the Azure Active Directory admin center
-
-1. The Active Directory manager signs in to the Azure portal and opens **[Enterprise applications](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps)**. 
-
-1. Search for `QnAMakerPortalSharepoint` the select the QnA Maker app. 
-
-    [![Search for QnAMakerPortalSharepoint in Enterprise apps list](../media/add-sharepoint-datasources/search-enterprise-apps-for-qna-maker.png)](../media/add-sharepoint-datasources/search-enterprise-apps-for-qna-maker.png#lightbox)
-
-1. Under **Security**, go to **Permissions**. Select **Grant admin consent for Organization**. 
-
-    [![Select authenticated user for Active Directory Admin](../media/add-sharepoint-datasources/grant-aad-permissions-to-enterprise-app.png)](../media/add-sharepoint-datasources/grant-aad-permissions-to-enterprise-app.png#lightbox)
-
-1. Select a Sign-On account with permissions to grant permissions for the Active Directory. 
-
 -->
+### <a name="grant-access-from-the-azure-active-directory-admin-center"></a>Предоставление доступа в центре администрирования Azure Active Directory
+
+1. Диспетчер Active Directory выполняет вход на портал Azure и открывает  **[корпоративные приложения](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps)**. 
+
+1. Поиск `QnAMakerPortalSharepoint` выберите нужное приложение QnA Maker. 
+
+    [![SПоиск QnAMakerPortalSharepoint в списке корпоративных приложений](../media/add-sharepoint-datasources/search-enterprise-apps-for-qna-maker.png)](../media/add-sharepoint-datasources/search-enterprise-apps-for-qna-maker.png#lightbox)
+
+1. В разделе **безопасности**, перейдите в меню **разрешения**. Выберите **предоставления согласия администратора организации**. 
+
+    [![SВыберите проверку подлинности пользователя для администратора Active Directory](../media/add-sharepoint-datasources/grant-aad-permissions-to-enterprise-app.png)](../media/add-sharepoint-datasources/grant-aad-permissions-to-enterprise-app.png#lightbox)
+
+1. Выберите учетную запись единого входа с разрешениями на предоставление разрешений для Active Directory. 
+
+
   
 <!--
 
@@ -174,4 +174,4 @@ Use the **@microsoft.graph.downloadUrl** from the previous section as the `fileu
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Совместная работа над вашей базы знаний](collaborate-knowledge-base.md)
+> [Совместная работа с базой знаний](collaborate-knowledge-base.md)

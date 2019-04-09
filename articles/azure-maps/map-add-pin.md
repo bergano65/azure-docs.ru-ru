@@ -9,19 +9,19 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: a4d1a54e94b3228c64352bf08cd8cc69820a5e2d
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
-ms.translationtype: MT
+ms.openlocfilehash: 3225ae919e221935b6d8a52e20d943d2178f6a47
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58500055"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59056857"
 ---
 # <a name="add-a-symbol-layer-to-a-map"></a>Добавление слоя символов на карту
 
-В этой статье показано, как точки данных из источника могут преобразоваться для просмотра в виде слоя символов на карте. Слои символов отображаются с помощью WebGL и поддерживают значительно больше точек данных, чем маркеры HTML, но не поддерживают традиционные элементы CSS и HTML для стилизации.  
+В этой статье показано, как точки данных из источника могут преобразоваться для просмотра в виде слоя символов на карте. Символ слои подготавливаются к просмотру с помощью WebGL и поддерживает гораздо более крупных наборов точек, чем маркеры HTML, но не поддерживают традиционные элементы CSS и HTML для установки стиля.  
 
 > [!TIP]
-> Слои символов по умолчанию отображают координаты всех геометрических объектов в источнике данных. Чтобы отображать в слое только геометрические объекты, присвойте параметру `filter` для этого слоя значение `['==', '$type', 'Point']`.
+> Слои символов по умолчанию отображают координаты всех геометрических объектов в источнике данных. Чтобы ограничить на уровне, таким образом, чтобы он отображает только точка geometry компоненты набора `filter` свойства слоя, чтобы `['==', ['geometry-type'], 'Point']` или `['any', ['==', ['geometry-type'], 'Point'], ['==', ['geometry-type'], 'MultiPoint']]` Если вы хотите включить также MultiPoint функции.
 
 ## <a name="add-a-symbol-layer"></a>Добавление слоя символов
 
@@ -34,14 +34,14 @@ ms.locfileid: "58500055"
 
 В третьем блоке кода создается [прослушиватель событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) и обновляются координаты точки по щелчку мыши с помощью метода [setCoordinates](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.shape?view=azure-iot-typescript-latest) класса Shape.
 
-В [слое символов](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest) данные на основе точек в оболочке [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) преобразовываются для просмотра в качестве символов на карте с помощью текста или значков.  Источник данных, прослушиватель событий щелчка и слой символов создаются и добавляются на карту с помощью функции [прослушивателя событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events). Это обеспечивает отображение точек только после полной загрузки карты.
+В [слое символов](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest) данные на основе точек в оболочке [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) преобразовываются для просмотра в качестве символов на карте с помощью текста или значков.  Создаются и добавляются на карту в пределах источника данных, щелкните прослушиватель событий и на уровне символов `ready` [прослушиватель событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) функции, чтобы обеспечить отображение точку после загружен и можно получить доступ к карте.
 
 > [!TIP]
 > По умолчанию для производительности слои символ оптимизировать отрисовку символы, скрывая символы, которые перекрываются. При изменении масштаба в скрытые символы становятся видимыми. Чтобы отключить эту функцию и отобразить все символы все время, установите `allowOverlap` свойство `iconOptions` вариантов для `true`.
 
 ## <a name="add-a-custom-icon-to-a-symbol-layer"></a>Добавление пользовательского значка в слой символов
 
-Слои символов преобразовываются для просмотра с помощью WebGL. Таким образом, все ресурсы (например, образы значков) необходимо загрузить в контекст WebGL. В этом примере показано, как добавить пользовательский значок символа в ресурсы карты, а затем использовать его для отображения точечных данных с помощью пользовательского символа на карте. Свойство `textField` слоя символа требует указания выражения. В этом случае мы хотим отображения температуры свойства компонента точки, как текстовое значение. Это можно сделать с помощью выражения `['get', 'temperature']`. 
+Слои символов преобразовываются для просмотра с помощью WebGL. Таким образом, все ресурсы (например, образы значков) необходимо загрузить в контекст WebGL. В этом примере показано, как добавить пользовательский значок для сопоставления ресурсов, а затем использовать его для подготовки к просмотру точки данных с помощью custom-символ на карте. Свойство `textField` слоя символа требует указания выражения. В этом случае мы хотим отображения свойства температуры, но так как он является числом, он должен быть преобразован в строку. Кроме того, мы хотим добавьте к нему «° F». Выражение может использоваться для этого; `['concat', ['to-string', ['get', 'temperature']], '°F']`. 
 
 <br/>
 
@@ -62,21 +62,21 @@ ms.locfileid: "58500055"
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [SymbolLayer class](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest) (Класс SymbolLayer)
+> [SymbolLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
-> [SymbolLayerOptions interface](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.symbollayeroptions?view=azure-iot-typescript-latest) (Интерфейс SymbolLayerOptions)
+> [SymbolLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.symbollayeroptions?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
-> [IconOptions interface](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.iconoptions?view=azure-iot-typescript-latest) (Интерфейс IconOptions)
+> [IconOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.iconoptions?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
-> [TextOptions interface](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.textoptions?view=azure-iot-typescript-latest) (Интерфейс TextOptions)
+> [TexTOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.textoptions?view=azure-iot-typescript-latest)
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Добавление всплывающего окна](./map-add-popup.md)
+> [Добавление контекстного меню](./map-add-popup.md)
 
 > [!div class="nextstepaction"]
 > [Добавление фигуры](./map-add-shape.md)
@@ -85,4 +85,4 @@ ms.locfileid: "58500055"
 > [Добавление слоя пузырьков](./map-add-bubble-layer.md)
 
 > [!div class="nextstepaction"]
-> [Добавление слоя пузырьков на карту](./map-add-bubble-layer.md)
+> [Добавить за принятие HTML](./map-add-bubble-layer.md)

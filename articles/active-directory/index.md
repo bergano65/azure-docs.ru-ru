@@ -11,12 +11,12 @@ ms.topic: landing-page
 ms.date: 01/24/2019
 ms.author: barbkess
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3ad12ac45a90edc5b3d9be0dc78786ef01a0f04
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 352050f4bd53188a420f75607677d88ebc081505
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337839"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59051041"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -155,33 +155,33 @@ ms.locfileid: "58337839"
                                                     <div class="cardText">
                                                         <h3><a href="manage-apps/index.yml">Управление приложениями</a></h3>
                                                         <p>
-                                                            <a href="manage-apps/what-is-single-sign-on.md">Что собой представляет единый вход</a><br>
+                                                            <a href="manage-apps/what-is-single-sign-on.md">Что собой представляет единый вход?</a><br>
                                                             <a href="manage-apps/configure-single-sign-on-portal.md">Настройка единого входа</a><br>
-                                                            <a href="manage-apps/application-proxy.md">Application Proxy для локальных приложений</a><br>
+                                                            <a href="manage-apps/application-proxy.md">Прокси приложения для локальных приложений</a><br>
                                                             <a href="manage-apps/index.yml"><i>Дополнительные сведения &gt;</i></a>
                                                         </p>
                                                         <br><br>
-                                                        <h3><a href="authentication/index.yml">Проверка подлинности</a></h3>
+                                                        <h3><a href="authentication/index.yml">Authentication</a></h3>
                                                         <p>
                                                             <a href="authentication/concept-mfa-howitworks.md">Принцип работы. Многофакторная идентификация Azure</a><br>
-                                                            <a href="authentication/concept-sspr-howitworks.md">Самостоятельный сброс пароля в Azure AD для ИТ-специалистов</a><br>
-                                                            <a href="authentication/concept-password-ban-bad.md">Защита паролей Azure AD</a><br>
+                                                            <a href="authentication/concept-sspr-howitworks.md">Самостоятельный сброс пароля в Azure AD</a><br>
+                                                            <a href="authentication/concept-password-ban-bad.md">Защита паролей Azure AD</a><br>
                                                             <a href="authentication/index.yml"><i>Дополнительные сведения &gt;</i></a>
                                                             </p>
                                                         <br><br>
-                                                        <h3><a href="b2b/index.yml">Категория "бизнес-бизнес" (B2B)</a></h3>
+                                                        <h3><a href="b2b/index.yml">Категория "бизнес — бизнес" (B2B)</a></h3>
                                                         <p>
-                                                            <a href="b2b/what-is-b2b.md">Что собой представляет Azure AD B2B</a><br>
+                                                            <a href="b2b/what-is-b2b.md">Что собой представляет Azure AD B2B?</a><br>
                                                             <a href="b2b/add-users-administrator.md">Добавление гостевых пользователей на портале</a><br>
                                                             <a href="b2b/o365-external-user.md">Общий доступ в Office 365 и B2B</a><br>
                                                             <a href="b2b/index.yml"><i>Дополнительные сведения &gt;</i></a>
                                                             </p>
                                                         <br><br>
-                                                        <h3><a href="/azure/active-directory-b2c/index">Категория "бизнес-потребитель" (B2C)</a></h3>
+                                                        <h3><a href="/azure/active-directory-b2c/index">Категория "бизнес — потребитель" (B2C)</a></h3>
                                                         <p>
-                                                            <a href="/azure/active-directory-b2c/active-directory-b2c-overview">Что собой представляет Azure AD B2C</a><br>
+                                                            <a href="/azure/active-directory-b2c/active-directory-b2c-overview">Что собой представляет Azure AD B2C?</a><br>
                                                             <a href="/azure/active-directory-b2c/tutorial-create-tenant">Создание клиента Azure AD B2C</a><br>
-                                                            <a href="/azure/active-directory-b2c/active-directory-b2c-get-started-custom">Пользовательские политики в Azure AD B2C</a><br>
+                                                            <a href="/azure/active-directory-b2c/active-directory-b2c-get-started-custom">Пользовательские политики в Azure AD B2C</a><br>
                                                             <a href="/azure/active-directory-b2c/index"><i>Дополнительные сведения &gt;</i></a>
                                                         </p>
                                                         <br><br>
@@ -197,7 +197,7 @@ ms.locfileid: "58337839"
                                                     <div class="cardText">
                                                         <h3><a href="conditional-access/index.yml">Условный доступ</a></h3>
                                                         <p>
-                                                            <a href="conditional-access/overview.md">Что собой представляет условный доступ</a><br>
+                                                            <a href="conditional-access/overview.md">Что такое условный доступ?</a><br>
                                                             <a href="conditional-access/app-based-mfa.md">Требование многофакторной проверки подлинности для конкретных приложений</a><br>
                                                             <a href="conditional-access/location-condition.md">Условия на основе расположения</a><br>
                                                             <a href="conditional-access/index.yml"><i>Дополнительные сведения &gt;</i></a>
@@ -213,7 +213,7 @@ ms.locfileid: "58337839"
                                                         <br><br>
                                                         <h3><a href="devices/index.yml">Управление устройствами</a></h3>
                                                         <p>
-                                                            <a href="devices/overview.md">Что собой представляет управление устройствами</a><br>
+                                                            <a href="devices/overview.md">Что собой представляет управление устройством?</a><br>
                                                             <a href="devices/hybrid-azuread-join-plan.md">Планирование гибридного присоединения к Azure AD</a><br>
                                                             <a href="devices/azureadjoin-plan.md">Планирование присоединения к Azure AD</a><br>
                                                             <a href="devices/index.yml"><i>Дополнительные сведения &gt;</i></a><br>
@@ -237,15 +237,15 @@ ms.locfileid: "58337839"
                                             <div class="cardPadding">
                                                 <div class="card">
                                                     <div class="cardText">
-                                                        <h3><a href="users-groups-roles/index.yml">Корпоративные пользователи</a></h3>
+                                                        <h3><a href="users-groups-roles/index.yml">Пользователи Enterprise</a></h3>
                                                         <p>
                                                             <a href="users-groups-roles/groups-create-rule.md">Создание динамической группы</a><br>
                                                             <a href="users-groups-roles/groups-settings-v2-cmdlets.md">PowerShell для групп Azure AD</a><br>
-                                                            <a href="users-groups-roles/directory-service-limits-restrictions.md">Лимиты и ограничения службы Azure AD</a><br>
+                                                            <a href="users-groups-roles/directory-service-limits-restrictions.md">Ограничения службы Azure AD</a><br>
                                                             <a href="users-groups-roles/index.yml"><i>Дополнительные сведения &gt;</i></a>
                                                         </p>
                                                         <br><br>
-                                                        <h3><a href="hybrid/index.yml">Интеграция локальных каталогов с Azure Active Directory</a></h3>
+                                                        <h3><a href="hybrid/index.yml">Гибридная идентификация</a></h3>
                                                         <p>
                                                             <a href="hybrid/whatis-hybrid-identity.md">Что собой представляет гибридная идентификация</a><br>
                                                             <a href="hybrid/how-to-connect-sso.md">Единый вход с использованием Azure AD Connect</a><br>
@@ -257,13 +257,13 @@ ms.locfileid: "58337839"
                                                         <p>
                                                             <a href="governance/create-access-review.md">Создание проверки доступа</a><br>
                                                             <a href="governance/perform-access-review.md">Запуск проверки доступа</a><br>
-                                                            <a href="governance/active-directory-tou.md">Применение функции "Условия использования"</a><br>
+                                                            <a href="conditional-access/terms-of-use.md">Применение функции "Условия использования"</a><br>
                                                             <a href="governance/index.yml"><i>Дополнительные сведения &gt;</i></a>
                                                         </p>
                                                         <br><br>
                                                         <h3><a href="identity-protection/index.yml">Защита идентификации</a></h3>
                                                         <p>
-                                                            <a href="identity-protection/overview.md">Что собой представляет защита идентификации</a><br>
+                                                            <a href="identity-protection/overview.md">Что собой представляет защита идентификации?</a><br>
                                                             <a href="identity-protection/quickstart-sign-in-risk-policy.md">Блокировка доступа при обнаружении риска для безопасности сеанса</a><br>
                                                             <a href="identity-protection/howto-unblock-user.md">Как разблокировать пользователей</a><br>
                                                             <a href="identity-protection/index.yml"><i>Дополнительные сведения &gt;</i></a>
@@ -297,7 +297,7 @@ ms.locfileid: "58337839"
                                                         <h3><a href="reports-monitoring/index.yml">Отчеты и мониторинг</a></h3>
                                                         <p>
                                                             <a href="reports-monitoring/concept-audit-logs.md">Журналы аудита</a><br>
-                                                            <a href="reports-monitoring/concept-sign-ins.md">Журналы действий входа</a><br>
+                                                            <a href="reports-monitoring/concept-sign-ins.md">Журналы входа</a><br>
                                                             <a href="reports-monitoring/reference-sign-ins-error-codes.md">Справочник по кодам ошибок при входе</a><br>
                                                             <a href="reports-monitoring/index.yml"><i>Дополнительные сведения &gt;</i></a>
                                                         </p>

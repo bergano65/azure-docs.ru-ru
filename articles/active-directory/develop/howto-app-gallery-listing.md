@@ -13,19 +13,21 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/15/2019
+ms.date: 04/08/2019
 ms.author: celested
 ms.reviewer: elisol, bryanla
-ms.custom: aaddev
+ms.custom: aaddev, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4cda09a6b407621e595b0cb8ed9103b1fbbd5cc5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1b5ec950a91f3ed0099873e40c7235a9d59f0cb2
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58097963"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59283585"
 ---
-# <a name="how-to-list-your-application-in-the-azure-active-directory-application-gallery"></a>Практическое руководство: Добавление приложения в коллекцию приложений Azure Active Directory
+# <a name="how-to-list-your-application-in-the-azure-active-directory-application-gallery"></a>Практическое руководство. Добавление приложения в коллекцию приложений Azure Active Directory
+
+В этой статье показано, как включить приложение в коллекции приложений Azure AD, реализовать единый вход (SSO) и управления списка.
 
 ## <a name="what-is-the-azure-ad-application-gallery"></a>Что такое коллекция приложений Azure AD?
 
@@ -36,7 +38,7 @@ ms.locfileid: "58097963"
 - Нашим общим клиентам предлагается пошаговое руководство по настройке.
 - Клиенты, которые пользуются SCIM, могут использовать подготовку для того же приложения.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 - Федеративные приложения (Open ID и SAML/WS-Fed) должны поддерживать модель SaaS, чтобы попасть в коллекцию Azure AD. Приложения из корпоративной коллекции должны поддерживать несколько конфигураций клиента, а не какую-либо конкретную конфигурацию.
 
@@ -121,7 +123,7 @@ ms.locfileid: "58097963"
 
 ![Клиент запросил потока приложения](./media/howto-app-gallery-listing/customer-request.png)
 
-## <a name="timelines"></a>График выполнения процессов
+## <a name="timelines"></a>Временные шкалы
 
 Процесс включения приложения SAML 2.0 или WS-Fed в коллекцию занимает 7–10 рабочих дней.
 

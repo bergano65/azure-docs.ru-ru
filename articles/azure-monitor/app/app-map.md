@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: a42eb7b57319df7de4c5277cdcdd93eb777f376c
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.openlocfilehash: 11f7bb69ed408adf87d62a4af1aa4bd87e70bd6d
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58622116"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59009201"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -36,7 +36,7 @@ ms.locfileid: "58622116"
 
 Вы увидите все данные топологии на нескольких уровнях компонентов, связанных с приложением. Компонентами могут быть различные ресурсы Application Insights или различные роли в одном ресурсе. Схема приложений находит компоненты, отслеживая HTTP-вызовы зависимостей, выполняемые между серверами, на которых установлен пакет SDK для Application Insights. 
 
-В этом интерфейсе сначала осуществляется последовательное обнаружение компонентов. При первой загрузке схемы приложения активируется набор запросов, который позволяет обнаружить компоненты, относящиеся к этому компоненту. Возле кнопки в верхнем левом углу будет обновляться число компонентов приложения по мере их обнаружения. 
+В этом интерфейсе сначала осуществляется последовательное обнаружение компонентов. При первой загрузке схему сопоставления приложений, активируется набор запросов, позволяет обнаружить компоненты, относящиеся к этому компоненту. Возле кнопки в верхнем левом углу будет обновляться число компонентов приложения по мере их обнаружения. 
 
 Если вы нажмете кнопку "Обновить компоненты сопоставления", схема обновится со всеми компонентами, обнаруженными до этого момента. В зависимости от сложности приложения загрузка может занять минуту.
 
@@ -109,7 +109,8 @@ namespace CustomInitializer.Telemetry
             if (string.IsNullOrEmpty(telemetry.Context.Cloud.RoleName))
             {
                 //set custom role name here
-                telemetry.Context.Cloud.RoleName = "RoleName";
+                telemetry.Context.Cloud.RoleName = "Custom RoleName";
+                telemetry.Context.Cloud.RoleInstance = "Custom RoleInstance"
             }
         }
     }
@@ -185,6 +186,32 @@ appInsights.context.addTelemetryInitializer((envelope) => {
 });
 ```
 
+### <a name="understanding-cloudrolename-within-the-context-of-the-application-map"></a>Основные сведения о Cloud.RoleName в контексте схему сопоставления приложений
+
+Как далеко, как продумать Cloud.RoleName может быть полезным, рассмотрим схему сопоставления приложений с несколькими Cloud.RoleNames присутствует:
+
+![Снимок экрана со схемой приложения](media/app-map/cloud-rolename.png)
+
+В схеме приложения выше все имена в зеленые прямоугольники являются Cloud.RoleName/role значения для различных аспектов этого конкретного распределенного приложения. Поэтому для этого приложения его ролей состоят из: `Authentication`, `acmefrontend`, `Inventory Management`, `Payment Processing Worker Role`. 
+
+В случае этого приложения каждый из них `Cloud.RoleNames` также представляет другой уникальный ресурс Application Insights с собственными ключами инструментирования. Так как владелец этого приложения имеет доступ к каждому из этих четырех разрозненных ресурсов Application Insights, схема сопоставления приложений — возможность Сшивать карту базовые связи.
+
+Для [официальные определения](https://github.com/Microsoft/ApplicationInsights-dotnet/blob/39a5ef23d834777eefdd72149de705a016eb06b0/Schema/PublicSchema/ContextTagKeys.bond#L93):
+
+```
+   [Description("Name of the role the application is a part of. Maps directly to the role name in azure.")]
+    [MaxStringLength("256")]
+    705: string      CloudRole = "ai.cloud.role";
+    
+    [Description("Name of the instance where the application is running. Computer name for on-premises, instance name for Azure.")]
+    [MaxStringLength("256")]
+    715: string      CloudRoleInstance = "ai.cloud.roleInstance";
+```
+
+Кроме того могут оказаться полезными для сценариев, где Cloud.RoleName сообщает проблема находится где-то в веб-интерфейса, но можно запустить веб-интерфейса на нескольких серверах с балансировкой нагрузки, возможность подробного в слое глубже Cloud.RoleInstance с помощью запросов Kusto и зная, если проблема влияет на все web серверов/экземпляры интерфейса, или только один может быть крайне важно.
+
+Сценарии, где может потребоваться переопределить значение для Cloud.RoleInstance может быть, если ваше приложение работает в контейнерной среде, где необходимо знать отдельного сервера может оказаться достаточно информации, чтобы найти данной неисправности.
+
 Дополнительные сведения о переопределении свойства cloud_RoleName с помощью инициализаторов телеметрии см. в [этом разделе](api-filtering-sampling.md#add-properties-itelemetryinitializer).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
@@ -211,4 +238,4 @@ appInsights.context.addTelemetryInitializer((envelope) => {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Корреляция данных телеметрии в Application Insights](https://docs.microsoft.com/azure/application-insights/application-insights-correlation)
+* [Основные сведения о корреляции](https://docs.microsoft.com/azure/application-insights/application-insights-correlation)

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/31/2019
 ms.author: mjbrown
 ms.custom: seodec18
-ms.openlocfilehash: 9625cb75bcae60f7f6eb2bae61e73066520037fc
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 22b03417495625ef70650a015530d6f56b32fd4f
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58878285"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59283653"
 ---
 # <a name="sql-language-reference-for-azure-cosmos-db"></a>Справочник по языку SQL для Azure Cosmos DB 
 
@@ -481,7 +481,7 @@ ORDER BY <sort_specification>
   
  **Унарные операторы:**  
   
-|**ИМЯ**|**Оператор**|**Сведения**|  
+|**Название**|**Оператор**|**Сведения**|  
 |-|-|-|  
 |**арифметические операции**|+<br /><br /> -|Возвращает числовое значение.<br /><br /> Выполняет побитовую операцию. Возвращает отрицательное числовое значение.|  
 |**Побитовое**|~|Дополнение. Возвращает дополнение числового значения.|  
@@ -489,31 +489,31 @@ ORDER BY <sort_specification>
   
  **Бинарные операторы:**  
   
-|**ИМЯ**|**Оператор**|**Сведения**|  
+|**Название**|**Оператор**|**Сведения**|  
 |-|-|-|  
 |**арифметические операции**|+<br /><br /> -<br /><br /> *<br /><br /> /<br /><br /> %|Сложение.<br /><br /> Вычитание.<br /><br /> Умножение.<br /><br /> Деление.<br /><br /> Модуляция.|  
 |**Побитовое**|&#124;<br /><br /> &<br /><br /> ^<br /><br /> <<<br /><br /> >><br /><br /> >>>|Битовый OR.<br /><br /> Битовый AND.<br /><br /> Битовый XOR.<br /><br /> Сдвиг влево.<br /><br /> Сдвиг вправо.<br /><br /> Сдвиг вправо с заполнением нулями.|  
-|**Логический**|**И**<br /><br /> **Или**|Логическое умножение. Возвращает значение **true**, если оба аргумента имеют значение **true**. В противном случае возвращает **false**.<br /><br /> Дизъюнкция. Возвращает значение **true**, если любой из аргументов имеет значение **true**. В противном случае возвращает **false**.|  
+|**Логический**|**AND**<br /><br /> **ИЛИ**|Логическое умножение. Возвращает значение **true**, если оба аргумента имеют значение **true**. В противном случае возвращает **false**.<br /><br /> Дизъюнкция. Возвращает значение **true**, если любой из аргументов имеет значение **true**. В противном случае возвращает **false**.|  
 |**Сравнение**|**=**<br /><br /> **!=, <>**<br /><br /> **>**<br /><br /> **>=**<br /><br /> **<**<br /><br /> **<=**<br /><br /> **??**|Равно. Возвращает значение **true**, если оба аргумента равны. В противном случае возвращает **false**.<br /><br /> Не равно. Возвращает значение **true**, если оба аргумента не равны. В противном случае возвращает **false**.<br /><br /> Больше. Возвращает значение **true**, если первый аргумент больше второго. В противном случае возвращает **false**.<br /><br /> Больше или равно. Возвращает значение **true**, если первый аргумент больше второго или равен ему. В противном случае возвращает **false**.<br /><br /> Меньше. Возвращает значение **true**, если первый аргумент меньше второго. В противном случае возвращает **false**.<br /><br /> Меньше или равно. Возвращает значение **true**, если первый аргумент меньше второго или равен ему. В противном случае возвращает **false**.<br /><br /> Слияние. Возвращает второй аргумент, если первый аргумент имеет значение **undefined**.|  
 |**Строка**|**&#124;&#124;**|Объединение. Возвращает объединение обоих аргументов.|  
   
  **Тернарные операторы**  
 
-|**ИМЯ**|**Оператор**|**Сведения**| 
+|**Название**|**Оператор**|**Сведения**| 
 |-|-|-|  
 |Тернарный оператор|?|Возвращает второй аргумент, если первый аргумент принимает значение **true**. В противном случае возвращает третий аргумент.|  
 
   
  **Упорядочение значений для сравнения**  
   
-|**type**|**Порядок значений**|  
+|**Тип**|**Порядок значений**|  
 |-|-|  
 |**Не определено**|Невозможно сравнить.|  
-|**Null**|Доступное значение: **Null**|  
-|**Number**|Натуральное вещественное число.<br /><br /> Отрицательное значение бесконечности меньше любого другого числового значения.<br /><br /> Положительное значение бесконечности больше любого другого числового значения. Значение **NaN** невозможно сравнить. При сравнение с **NaN** возвращается значение **undefined**.|  
+|**NULL**|Доступное значение: **Null**|  
+|**Номер**|Натуральное вещественное число.<br /><br /> Отрицательное значение бесконечности меньше любого другого числового значения.<br /><br /> Положительное значение бесконечности больше любого другого числового значения. Значение **NaN** невозможно сравнить. При сравнение с **NaN** возвращается значение **undefined**.|  
 |**Строка**|Лексикографический порядок.|  
-|**Массив,**|Не поддерживает упорядочивание, но равнозначные.|  
-|**Объект.**|Не поддерживает упорядочивание, но равнозначные.|  
+|**Массив**|Не поддерживает упорядочивание, но равнозначные.|  
+|**Объект**|Не поддерживает упорядочивание, но равнозначные.|  
   
  **Примечания**  
   
@@ -534,15 +534,15 @@ ORDER BY <sort_specification>
   
  **Поддерживаемые скалярные типы данных:**  
   
-|**type**|**Порядок значений**|  
+|**Тип**|**Порядок значений**|  
 |-|-|  
 |**Не определено**|Доступное значение: **undefined**|  
-|**Null**|Доступное значение: **Null**|  
-|**Логическое**|Доступные значения: **false**, **true**|  
-|**Number**|Число с плавающей запятой двойной точности, стандарт IEEE 754.|  
+|**NULL**|Доступное значение: **Null**|  
+|**Логический**|Доступные значения: **false**, **true**|  
+|**Номер**|Число с плавающей запятой двойной точности, стандарт IEEE 754.|  
 |**Строка**|Последовательности из нуля или более знаков Юникода. Строки необходимо заключить в одинарные или двойные кавычки.|  
-|**Массив,**|Последовательность из нуля или более элементов. Каждый элемент может иметь значение любого скалярного типа данных (за исключением типа "Неопределенное").|  
-|**Объект.**|Неупорядоченный набор из нуля или более пар "имя — значение". Имя является строкой Юникода. Значение может иметь любой скалярный тип данных (за исключением типа **Неопределенное**).|  
+|**Массив**|Последовательность из нуля или более элементов. Каждый элемент может иметь значение любого скалярного типа данных (за исключением типа "Неопределенное").|  
+|**Объект**|Неупорядоченный набор из нуля или более пар "имя — значение". Имя является строкой Юникода. Значение может иметь любой скалярный тип данных (за исключением типа **Неопределенное**).|  
   
  **Синтаксис**  
   
@@ -618,7 +618,7 @@ ORDER BY <sort_specification>
   
   Допускаются следующие escape-последовательности:  
   
-|**Escape-последовательность**|**ОПИСАНИЕ**|**Символ Юникода**|  
+|**Escape-последовательность**|**Описание**|**Символ Юникода**|  
 |-|-|-|  
 |\\'|Апостроф (')|U+0027|  
 |\\"|Кавычки (")|U+0022|  
@@ -676,7 +676,7 @@ ORDER BY <sort_specification>
 ##  <a name="bk_built_in_functions"></a>Встроенные функции  
  Cosmos DB предоставляет множество встроенных функций SQL. Ниже перечислены их категории.  
   
-|Функция|ОПИСАНИЕ|  
+|Функция|Описание|  
 |--------------|-----------------|  
 |[Математические функции](#bk_mathematical_functions)|Математические функции выполняют вычисление, которое обычно основано на входных значениях, предоставляемых в форме аргументов, и возвращают числовое значение.|  
 |[Функции проверки типа](#bk_type_checking_functions)|Функции проверки типа позволяют проверять тип выражения в запросах SQL.|  
@@ -722,13 +722,13 @@ ABS (<numeric_expression>)
   В приведенном ниже примере показаны результаты применения функции ABS к трем различным числам.  
   
 ```  
-SELECT ABS(-1), ABS(0), ABS(1)  
+SELECT ABS(-1) AS abs1, ABS(0) AS abs2, ABS(1) AS abs3 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{$1: 1, $2: 0, $3: 1}]  
+[{abs1: 1, abs2: 0, abs3: 1}]  
 ```  
   
 ####  <a name="bk_acos"></a> ACOS  
@@ -755,13 +755,13 @@ ACOS(<numeric_expression>)
   Пример ниже возвращает значение функции ACOS от –1.  
   
 ```  
-SELECT ACOS(-1)  
+SELECT ACOS(-1) AS acos 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": 3.1415926535897931}]  
+[{"acos": 3.1415926535897931}]  
 ```  
   
 ####  <a name="bk_asin"></a> ASIN  
@@ -788,13 +788,13 @@ ASIN(<numeric_expression>)
   Пример ниже возвращает значение функции ASIN от –1.  
   
 ```  
-SELECT ASIN(-1)  
+SELECT ASIN(-1) AS asin  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": -1.5707963267948966}]  
+[{"asin": -1.5707963267948966}]  
 ```  
   
 ####  <a name="bk_atan"></a> ATAN  
@@ -821,13 +821,13 @@ ATAN(<numeric_expression>)
   Пример ниже возвращает значение функции ASIN от указанного значения.  
   
 ```  
-SELECT ATAN(-45.01)  
+SELECT ATAN(-45.01) AS atan  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": -1.5485826962062663}]  
+[{"atan": -1.5485826962062663}]  
 ```  
   
 ####  <a name="bk_atn2"></a> ATN2  
@@ -854,13 +854,13 @@ ATN2(<numeric_expression>, <numeric_expression>)
   В примере ниже вычисляется ATN2 для указанных компонентов x и y.  
   
 ```  
-SELECT ATN2(35.175643, 129.44)  
+SELECT ATN2(35.175643, 129.44) AS atn2  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": 1.3054517947300646}]  
+[{"atn2": 1.3054517947300646}]  
 ```  
   
 ####  <a name="bk_ceiling"></a> CEILING  
@@ -887,13 +887,13 @@ CEILING (<numeric_expression>)
   В примере ниже показаны положительные числовые, отрицательные и нулевые значения функции CEILING.  
   
 ```  
-SELECT CEILING(123.45), CEILING(-123.45), CEILING(0.0)  
+SELECT CEILING(123.45) AS c1, CEILING(-123.45) AS c2, CEILING(0.0) AS c3  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{$1: 124, $2: -123, $3: 0}]  
+[{c1: 124, c2: -123, c3: 0}]  
 ```  
   
 ####  <a name="bk_cos"></a> COS  
@@ -920,13 +920,13 @@ COS(<numeric_expression>)
   В примере ниже вычисляется COS указанного угла.  
   
 ```  
-SELECT COS(14.78)  
+SELECT COS(14.78) AS cos  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": -0.59946542619465426}]  
+[{"cos": -0.59946542619465426}]  
 ```  
   
 ####  <a name="bk_cot"></a> COT  
@@ -953,13 +953,13 @@ COT(<numeric_expression>)
   В примере ниже вычисляется COT указанного угла.  
   
 ```  
-SELECT COT(124.1332)  
+SELECT COT(124.1332) AS cot  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": -0.040311998371148884}]  
+[{"cot": -0.040311998371148884}]  
 ```  
   
 ####  <a name="bk_degrees"></a> DEGREES  
@@ -986,13 +986,13 @@ DEGREES (<numeric_expression>)
   Следующий пример возвращает число градусов в угле, равном PI/2 радиан.  
   
 ```  
-SELECT DEGREES(PI()/2)  
+SELECT DEGREES(PI()/2) AS degrees  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": 90}]  
+[{"degrees": 90}]  
 ```  
   
 ####  <a name="bk_floor"></a> FLOOR  
@@ -1019,13 +1019,13 @@ FLOOR (<numeric_expression>)
   В примере ниже показаны положительные числовые, отрицательные и нулевые значения функции FLOOR.  
   
 ```  
-SELECT FLOOR(123.45), FLOOR(-123.45), FLOOR(0.0)  
+SELECT FLOOR(123.45) AS fl1, FLOOR(-123.45) AS fl2, FLOOR(0.0) AS fl3  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{$1: 123, $2: -124, $3: 0}]  
+[{fl1: 123, fl2: -124, fl3: 0}]  
 ```  
   
 ####  <a name="bk_exp"></a> EXP  
@@ -1060,25 +1060,25 @@ EXP (<numeric_expression>)
   В примере ниже объявляется переменная и возвращается значение экспоненты указанной переменной (10).  
   
 ```  
-SELECT EXP(10)  
+SELECT EXP(10) AS exp  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{$1: 22026.465794806718}]  
+[{exp: 22026.465794806718}]  
 ```  
   
  Пример ниже возвращает значение экспоненты от натурального логарифма 20 и натуральный логарифм экспоненты 20. Так как эти функции обратные, в обоих случаях возвращается значение 20 (после округления до плавающей запятой).  
   
 ```  
-SELECT EXP(LOG(20)), LOG(EXP(20))  
+SELECT EXP(LOG(20)) AS exp1, LOG(EXP(20)) AS exp2  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{$1: 19.999999999999996, $2: 20}]  
+[{exp1: 19.999999999999996, exp2: 20}]  
 ```  
   
 ####  <a name="bk_log"></a> LOG  
@@ -1117,25 +1117,25 @@ LOG (<numeric_expression> [, <base>])
   В примере ниже объявляется переменная и возвращается значение логарифма указанной переменной (10).  
   
 ```  
-SELECT LOG(10)  
+SELECT LOG(10) AS log  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{$1: 2.3025850929940459}]  
+[{log: 2.3025850929940459}]  
 ```  
   
  В примере ниже вычисляется логарифм экспоненты числа.  
   
 ```  
-SELECT EXP(LOG(10))  
+SELECT EXP(LOG(10)) AS expLog  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{$1: 10.000000000000002}]  
+[{expLog: 10.000000000000002}]  
 ```  
   
 ####  <a name="bk_log10"></a> LOG10  
@@ -1166,13 +1166,13 @@ LOG10 (<numeric_expression>)
   В примере ниже объявляется переменная и возвращается значение LOG10 указанной переменной (100).  
   
 ```  
-SELECT LOG10(100)  
+SELECT LOG10(100) AS log10 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{$1: 2}]  
+[{log10: 2}]  
 ```  
   
 ####  <a name="bk_pi"></a> PI  
@@ -1199,13 +1199,13 @@ PI ()
   Пример ниже возвращает значение PI.  
   
 ```  
-SELECT PI()  
+SELECT PI() AS pi 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": 3.1415926535897931}]  
+[{"pi": 3.1415926535897931}]  
 ```  
   
 ####  <a name="bk_power"></a> POWER  
@@ -1236,13 +1236,13 @@ POWER (<numeric_expression>, <y>)
   В следующем примере показано возведение числа в третью степень (куб числа).  
   
 ```  
-SELECT POWER(2, 3), POWER(2.5, 3)  
+SELECT POWER(2, 3) AS pow1, POWER(2.5, 3) AS pow2  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{$1: 8, $2: 15.625}]  
+[{pow1: 8, pow2: 15.625}]  
 ```  
   
 ####  <a name="bk_radians"></a> RADIANS  
@@ -1269,18 +1269,18 @@ RADIANS (<numeric_expression>)
   В примере ниже берется несколько углов в качестве входных данных и возвращаются их соответствующие значения в радианах.  
   
 ```  
-SELECT RADIANS(-45.01), RADIANS(-181.01), RADIANS(0), RADIANS(0.1472738), RADIANS(197.1099392)  
+SELECT RADIANS(-45.01) AS r1, RADIANS(-181.01) AS r2, RADIANS(0) AS r3, RADIANS(0.1472738) AS r4, RADIANS(197.1099392) AS r5  
 ```  
   
  Результирующий набор:  
   
 ```  
 [{  
-       "$1": -0.7855726963226477,  
-       "$2": -3.1592204790349356,  
-       "$3": 0,  
-       "$4": 0.0025704127119236249,  
-       "$5": 3.4402174274458375  
+       "r1": -0.7855726963226477,  
+       "r2": -3.1592204790349356,  
+       "r3": 0,  
+       "r4": 0.0025704127119236249,  
+       "r5": 3.4402174274458375  
    }]  
 ```  
   
@@ -1308,13 +1308,13 @@ ROUND(<numeric_expression>)
   В примере ниже положительные и отрицательные числа округляются до ближайшего целого.  
   
 ```  
-SELECT ROUND(2.4), ROUND(2.6), ROUND(2.5), ROUND(-2.4), ROUND(-2.6)  
+SELECT ROUND(2.4) AS r1, ROUND(2.6) AS r2, ROUND(2.5) AS r3, ROUND(-2.4) AS r4, ROUND(-2.6) AS r5  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{$1: 2, $2: 3, $3: 3, $4: -2, $5: -3}]  
+[{r1: 2, r2: 3, r3: 3, r4: -2, r5: -3}]  
 ```  
   
 ####  <a name="bk_sign"></a> SIGN  
@@ -1341,13 +1341,13 @@ SIGN(<numeric_expression>)
   Пример ниже возвращает значения SIGN для чисел от –2 до 2.  
   
 ```  
-SELECT SIGN(-2), SIGN(-1), SIGN(0), SIGN(1), SIGN(2)  
+SELECT SIGN(-2) AS s1, SIGN(-1) AS s2, SIGN(0) AS s3, SIGN(1) AS s4, SIGN(2) AS s5  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{$1: -1, $2: -1, $3: 0, $4: 1, $5: 1}]  
+[{s1: -1, s2: -1, s3: 0, s4: 1, s5: 1}]  
 ```  
   
 ####  <a name="bk_sin"></a> SIN  
@@ -1374,13 +1374,13 @@ SIN(<numeric_expression>)
   В примере ниже вычисляется синус указанного угла.  
   
 ```  
-SELECT SIN(45.175643)  
+SELECT SIN(45.175643) AS sin  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": 0.929607286611012}]  
+[{"sin": 0.929607286611012}]  
 ```  
   
 ####  <a name="bk_sqrt"></a> SQRT  
@@ -1407,13 +1407,13 @@ SQRT(<numeric_expression>)
   Пример ниже возвращает квадратный корень для чисел 1–3.  
   
 ```  
-SELECT SQRT(1), SQRT(2.0), SQRT(3)  
+SELECT SQRT(1) AS s1, SQRT(2.0) AS s2, SQRT(3) AS s3  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{$1: 1, $2: 1.4142135623730952, $3: 1.7320508075688772}]  
+[{s1: 1, s2: 1.4142135623730952, s3: 1.7320508075688772}]  
 ```  
   
 ####  <a name="bk_square"></a> SQUARE  
@@ -1440,13 +1440,13 @@ SQUARE(<numeric_expression>)
   Пример ниже возвращает квадраты для чисел 1–3.  
   
 ```  
-SELECT SQUARE(1), SQUARE(2.0), SQUARE(3)  
+SELECT SQUARE(1) AS s1, SQUARE(2.0) AS s2, SQUARE(3) AS s3  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{$1: 1, $2: 4, $3: 9}]  
+[{s1: 1, s2: 4, s3: 9}]  
 ```  
   
 ####  <a name="bk_tan"></a> TAN  
@@ -1473,13 +1473,13 @@ TAN (<numeric_expression>)
   Пример ниже вычисляет тангенс от PI()/2.  
   
 ```  
-SELECT TAN(PI()/2);  
+SELECT TAN(PI()/2) AS tan 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": 16331239353195370 }]  
+[{"tan": 16331239353195370 }]  
 ```  
   
 ####  <a name="bk_trunc"></a> TRUNC  
@@ -1506,13 +1506,13 @@ TRUNC(<numeric_expression>)
   В примере ниже положительные и отрицательные числа усекаются до ближайшего целого значения.  
   
 ```  
-SELECT TRUNC(2.4), TRUNC(2.6), TRUNC(2.5), TRUNC(-2.4), TRUNC(-2.6)  
+SELECT TRUNC(2.4) AS t1, TRUNC(2.6) AS t2, TRUNC(2.5) AS t3, TRUNC(-2.4) AS t4, TRUNC(-2.6) AS t5  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{$1: 2, $2: 2, $3: 2, $4: -2, $5: -2}]  
+[{t1: 2, t2: 2, t3: 2, t4: -2, t5: -2}]  
 ```  
   
 ###  <a name="bk_type_checking_functions"></a> Функции проверки типа  
@@ -1549,19 +1549,19 @@ IS_ARRAY(<expression>)
   
 ```  
 SELECT   
- IS_ARRAY(true),   
- IS_ARRAY(1),  
- IS_ARRAY("value"),  
- IS_ARRAY(null),  
- IS_ARRAY({prop: "value"}),   
- IS_ARRAY([1, 2, 3]),  
- IS_ARRAY({prop: "value"}.prop2)  
+ IS_ARRAY(true) AS isArray1,   
+ IS_ARRAY(1) AS isArray2,  
+ IS_ARRAY("value") AS isArray3,  
+ IS_ARRAY(null) AS isArray4,  
+ IS_ARRAY({prop: "value"}) AS isArray5,   
+ IS_ARRAY([1, 2, 3]) AS isArray6,  
+ IS_ARRAY({prop: "value"}.prop2) AS isArray7  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1":false,"$2":false,"$3":false,"$4":false,"$5":false,"$6":true,"$7":false}]
+[{"isArray1":false,"isArray2":false,"isArray3":false,"isArray4":false,"isArray5":false,"isArray6":true,"isArray7":false}]
 ```  
   
 ####  <a name="bk_is_bool"></a> IS_BOOL  
@@ -1589,19 +1589,19 @@ IS_BOOL(<expression>)
   
 ```  
 SELECT   
-    IS_BOOL(true),   
-    IS_BOOL(1),  
-    IS_BOOL("value"),   
-    IS_BOOL(null),  
-    IS_BOOL({prop: "value"}),   
-    IS_BOOL([1, 2, 3]),  
-    IS_BOOL({prop: "value"}.prop2)  
+    IS_BOOL(true) AS isBool1,   
+    IS_BOOL(1) AS isBool2,  
+    IS_BOOL("value") AS isBool3,   
+    IS_BOOL(null) AS isBool4,  
+    IS_BOOL({prop: "value"}) AS isBool5,   
+    IS_BOOL([1, 2, 3]) AS isBool6,  
+    IS_BOOL({prop: "value"}.prop2) AS isBool7  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1":true,"$2":false,"$3":false,"$4":false,"$5":false,"$6":false,"$7":false}]
+[{"isBool1":true,"isBool2":false,"isBool3":false,"isBool4":false,"isBool5":false,"isBool6":false,"isBool7":false}]
 ```  
   
 ####  <a name="bk_is_defined"></a> IS_DEFINED  
@@ -1628,13 +1628,13 @@ IS_DEFINED(<expression>)
   В примере ниже проверяется наличие свойства в указанном документе JSON. Первый пример возвращает значение true, так как присутствует значение "a", но второй возвращает значение false, так как значение "b" отсутствует.  
   
 ```  
-SELECT IS_DEFINED({ "a" : 5 }.a), IS_DEFINED({ "a" : 5 }.b)  
+SELECT IS_DEFINED({ "a" : 5 }.a) AS isDefined1, IS_DEFINED({ "a" : 5 }.b) AS isDefined2 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1":true,"$2":false}]  
+[{"isDefined1":true,"isDefined2":false}]  
 ```  
   
 ####  <a name="bk_is_null"></a> IS_NULL  
@@ -1662,19 +1662,19 @@ IS_NULL(<expression>)
   
 ```  
 SELECT   
-    IS_NULL(true),   
-    IS_NULL(1),  
-    IS_NULL("value"),   
-    IS_NULL(null),  
-    IS_NULL({prop: "value"}),   
-    IS_NULL([1, 2, 3]),  
-    IS_NULL({prop: "value"}.prop2)  
+    IS_NULL(true) AS isNull1,   
+    IS_NULL(1) AS isNull2,  
+    IS_NULL("value") AS isNull3,   
+    IS_NULL(null) AS isNull4,  
+    IS_NULL({prop: "value"}) AS isNull5,   
+    IS_NULL([1, 2, 3]) AS isNull6,  
+    IS_NULL({prop: "value"}.prop2) AS isNull7  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1":false,"$2":false,"$3":false,"$4":true,"$5":false,"$6":false,"$7":false}]
+[{"isNull1":false,"isNull2":false,"isNull3":false,"isNull4":true,"isNull5":false,"isNull6":false,"isNull7":false}]
 ```  
   
 ####  <a name="bk_is_number"></a> IS_NUMBER  
@@ -1702,19 +1702,19 @@ IS_NUMBER(<expression>)
   
 ```  
 SELECT   
-    IS_NUMBER(true),   
-    IS_NUMBER(1),  
-    IS_NUMBER("value"),   
-    IS_NUMBER(null),  
-    IS_NUMBER({prop: "value"}),   
-    IS_NUMBER([1, 2, 3]),  
-    IS_NUMBER({prop: "value"}.prop2)  
+    IS_NUMBER(true) AS isNum1,   
+    IS_NUMBER(1) AS isNum2,  
+    IS_NUMBER("value") AS isNum3,   
+    IS_NUMBER(null) AS isNum4,  
+    IS_NUMBER({prop: "value"}) AS isNum5,   
+    IS_NUMBER([1, 2, 3]) AS isNum6,  
+    IS_NUMBER({prop: "value"}.prop2) AS isNum7  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1":false,"$2":true,"$3":false,"$4":false,"$5":false,"$6":false,"$7":false}]  
+[{"isNum1":false,"isNum2":true,"isNum3":false,"isNum4":false,"isNum5":false,"isNum6":false,"isNum7":false}]  
 ```  
   
 ####  <a name="bk_is_object"></a> IS_OBJECT  
@@ -1742,19 +1742,19 @@ IS_OBJECT(<expression>)
   
 ```  
 SELECT   
-    IS_OBJECT(true),   
-    IS_OBJECT(1),  
-    IS_OBJECT("value"),   
-    IS_OBJECT(null),  
-    IS_OBJECT({prop: "value"}),   
-    IS_OBJECT([1, 2, 3]),  
-    IS_OBJECT({prop: "value"}.prop2)  
+    IS_OBJECT(true) AS isObj1,   
+    IS_OBJECT(1) AS isObj2,  
+    IS_OBJECT("value") AS isObj3,   
+    IS_OBJECT(null) AS isObj4,  
+    IS_OBJECT({prop: "value"}) AS isObj5,   
+    IS_OBJECT([1, 2, 3]) AS isObj6,  
+    IS_OBJECT({prop: "value"}.prop2) AS isObj7  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1":false,"$2":false,"$3":false,"$4":false,"$5":true,"$6":false,"$7":false}]
+[{"isObj1":false,"isObj2":false,"isObj3":false,"isObj4":false,"isObj5":true,"isObj6":false,"isObj7":false}]
 ```  
   
 ####  <a name="bk_is_primitive"></a> IS_PRIMITIVE  
@@ -1782,19 +1782,19 @@ IS_PRIMITIVE(<expression>)
   
 ```  
 SELECT   
-           IS_PRIMITIVE(true),   
-           IS_PRIMITIVE(1),  
-           IS_PRIMITIVE("value"),   
-           IS_PRIMITIVE(null),  
-           IS_PRIMITIVE({prop: "value"}),   
-           IS_PRIMITIVE([1, 2, 3]),  
-           IS_PRIMITIVE({prop: "value"}.prop2)  
+           IS_PRIMITIVE(true) AS isPrim1,   
+           IS_PRIMITIVE(1) AS isPrim2,  
+           IS_PRIMITIVE("value") AS isPrim3,   
+           IS_PRIMITIVE(null) AS isPrim4,  
+           IS_PRIMITIVE({prop: "value"}) AS isPrim5,   
+           IS_PRIMITIVE([1, 2, 3]) AS isPrim6,  
+           IS_PRIMITIVE({prop: "value"}.prop2) AS isPrim7  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": true, "$2": true, "$3": true, "$4": true, "$5": false, "$6": false, "$7": false}]  
+[{"isPrim1": true, "isPrim2": true, "isPrim3": true, "isPrim4": true, "isPrim5": false, "isPrim6": false, "isPrim7": false}]  
 ```  
   
 ####  <a name="bk_is_string"></a> IS_STRING  
@@ -1822,19 +1822,19 @@ IS_STRING(<expression>)
   
 ```  
 SELECT   
-       IS_STRING(true),   
-       IS_STRING(1),  
-       IS_STRING("value"),   
-       IS_STRING(null),  
-       IS_STRING({prop: "value"}),   
-       IS_STRING([1, 2, 3]),  
-       IS_STRING({prop: "value"}.prop2)  
+       IS_STRING(true) AS isStr1,   
+       IS_STRING(1) AS isStr2,  
+       IS_STRING("value") AS isStr3,   
+       IS_STRING(null) AS isStr4,  
+       IS_STRING({prop: "value"}) AS isStr5,   
+       IS_STRING([1, 2, 3]) AS isStr6,  
+       IS_STRING({prop: "value"}.prop2) AS isStr7  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1":false,"$2":false,"$3":true,"$4":false,"$5":false,"$6":false,"$7":false}] 
+[{"isStr1":false,"isStr2":false,"isStr3":true,"isStr4":false,"isStr5":false,"isStr6":false,"isStr7":false}] 
 ```  
   
 ###  <a name="bk_string_functions"></a> Строковые функции  
@@ -1875,13 +1875,13 @@ CONCAT(<str_expr>, <str_expr> [, <str_expr>])
   Пример ниже возвращает объединенную строку указанных значений.  
   
 ```  
-SELECT CONCAT("abc", "def")  
+SELECT CONCAT("abc", "def") AS concat  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": "abcdef"}  
+[{"concat": "abcdef"}  
 ```  
   
 ####  <a name="bk_contains"></a> CONTAINS  
@@ -1908,13 +1908,13 @@ CONTAINS(<str_expr>, <str_expr>)
   Пример ниже проверяет, содержит ли строка "abc"вхождения "ab" и "d".  
   
 ```  
-SELECT CONTAINS("abc", "ab"), CONTAINS("abc", "d")  
+SELECT CONTAINS("abc", "ab") AS c1, CONTAINS("abc", "d") AS c2 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": true, "$2": false}]  
+[{"c1": true, "c2": false}]  
 ```  
   
 ####  <a name="bk_endswith"></a> ENDSWITH  
@@ -1941,13 +1941,13 @@ ENDSWITH(<str_expr>, <str_expr>)
   Пример ниже возвращает строки "abc", в конце которых есть "b" и "bc".  
   
 ```  
-SELECT ENDSWITH("abc", "b"), ENDSWITH("abc", "bc")  
+SELECT ENDSWITH("abc", "b") AS e1, ENDSWITH("abc", "bc") AS e2 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": false, "$2": true}]  
+[{"e1": false, "e2": true}]  
 ```  
   
 ####  <a name="bk_index_of"></a> INDEX_OF  
@@ -1974,13 +1974,13 @@ INDEX_OF(<str_expr>, <str_expr>)
   Пример ниже возвращает индекс различных подстрок в строке "abc".  
   
 ```  
-SELECT INDEX_OF("abc", "ab"), INDEX_OF("abc", "b"), INDEX_OF("abc", "c")  
+SELECT INDEX_OF("abc", "ab") AS i1, INDEX_OF("abc", "b") AS i2, INDEX_OF("abc", "c") AS i3 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": 0, "$2": 1, "$3": -1}]  
+[{"i1": 0, "i2": 1, "i3": -1}]  
 ```  
   
 ####  <a name="bk_left"></a> LEFT  
@@ -2011,13 +2011,13 @@ LEFT(<str_expr>, <num_expr>)
   Пример ниже возвращает левую часть строки "abc" для значений различной длины.  
   
 ```  
-SELECT LEFT("abc", 1), LEFT("abc", 2)  
+SELECT LEFT("abc", 1) AS l1, LEFT("abc", 2) AS l2 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": "a", "$2": "ab"}]  
+[{"l1": "a", "l2": "ab"}]  
 ```  
   
 ####  <a name="bk_length"></a> LENGTH  
@@ -2044,13 +2044,13 @@ LENGTH(<str_expr>)
   Пример ниже возвращает длину строки.  
   
 ```  
-SELECT LENGTH("abc")  
+SELECT LENGTH("abc") AS len 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": 3}]  
+[{"len": 3}]  
 ```  
   
 ####  <a name="bk_lower"></a> LOWER  
@@ -2077,13 +2077,13 @@ LOWER(<str_expr>)
   Ниже представлен пример использования функции LOWER в запросе.  
   
 ```  
-SELECT LOWER("Abc")  
+SELECT LOWER("Abc") AS lower
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": "abc"}]  
+[{"lower": "abc"}]  
   
 ```  
   
@@ -2111,13 +2111,13 @@ LTRIM(<str_expr>)
   Ниже представлен пример использования функции LTRIM в запросе.  
   
 ```  
-SELECT LTRIM("  abc"), LTRIM("abc"), LTRIM("abc   ")  
+SELECT LTRIM("  abc") AS l1, LTRIM("abc") AS l2, LTRIM("abc   ") AS l3 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": "abc", "$2": "abc", "$3": "abc   "}]  
+[{"l1": "abc", "l2": "abc", "l3": "abc   "}]  
 ```  
   
 ####  <a name="bk_replace"></a> REPLACE  
@@ -2144,13 +2144,13 @@ REPLACE(<str_expr>, <str_expr>, <str_expr>)
   Ниже представлен пример использования функции REPLACE в запросе.  
   
 ```  
-SELECT REPLACE("This is a Test", "Test", "desk")  
+SELECT REPLACE("This is a Test", "Test", "desk") AS replace 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": "This is a desk"}]  
+[{"replace": "This is a desk"}]  
 ```  
   
 ####  <a name="bk_replicate"></a> REPLICATE  
@@ -2184,13 +2184,13 @@ REPLICATE(<str_expr>, <num_expr>)
   Ниже представлен пример использования функции REPLICATE в запросе.  
   
 ```  
-SELECT REPLICATE("a", 3)  
+SELECT REPLICATE("a", 3) AS replicate  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": "aaa"}]  
+[{"replicate": "aaa"}]  
 ```  
   
 ####  <a name="bk_reverse"></a> REVERSE  
@@ -2217,13 +2217,13 @@ REVERSE(<str_expr>)
   Ниже представлен пример использования функции REVERSE в запросе.  
   
 ```  
-SELECT REVERSE("Abc")  
+SELECT REVERSE("Abc") AS reverse  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": "cbA"}]  
+[{"reverse": "cbA"}]  
 ```  
   
 ####  <a name="bk_right"></a> RIGHT  
@@ -2254,13 +2254,13 @@ RIGHT(<str_expr>, <num_expr>)
   Пример ниже возвращает правую часть строки "abc" для значений различной длины.  
   
 ```  
-SELECT RIGHT("abc", 1), RIGHT("abc", 2)  
+SELECT RIGHT("abc", 1) AS r1, RIGHT("abc", 2) AS r2 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": "c", "$2": "bc"}]  
+[{"r1": "c", "r2": "bc"}]  
 ```  
   
 ####  <a name="bk_rtrim"></a> RTRIM  
@@ -2287,13 +2287,13 @@ RTRIM(<str_expr>)
   Ниже представлен пример использования функции RTRIM в запросе.  
   
 ```  
-SELECT RTRIM("  abc"), RTRIM("abc"), RTRIM("abc   ")  
+SELECT RTRIM("  abc") AS r1, RTRIM("abc") AS r2, RTRIM("abc   ") AS r3  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": "   abc", "$2": "abc", "$3": "abc"}]  
+[{"r1": "   abc", "r2": "abc", "r3": "abc"}]  
 ```  
   
 ####  <a name="bk_startswith"></a> STARTSWITH  
@@ -2320,13 +2320,13 @@ STARTSWITH(<str_expr>, <str_expr>)
   Пример ниже проверяет, начинается ли строка "abc" с "b" и "a".  
   
 ```  
-SELECT STARTSWITH("abc", "b"), STARTSWITH("abc", "a")  
+SELECT STARTSWITH("abc", "b") AS s1, STARTSWITH("abc", "a") AS s2  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": false, "$2": true}]  
+[{"s1": false, "s2": true}]  
 ```  
 
   ####  <a name="bk_stringtoarray"></a> StringToArray  
@@ -2738,13 +2738,13 @@ SUBSTRING(<str_expr>, <num_expr>, <num_expr>)
   Пример ниже возвращает подстроку "abc", которая начинается с 1 и имеет длину в 1 знак.  
   
 ```  
-SELECT SUBSTRING("abc", 1, 1)  
+SELECT SUBSTRING("abc", 1, 1) AS substring  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": "b"}]  
+[{"substring": "b"}]  
 ```  
 ####  <a name="bk_tostring"></a> ToString  
  Возвращает строковое представление скалярного выражения. 
@@ -2770,14 +2770,21 @@ ToString(<expr>)
   В следующем примере демонстрируется поведение ToString с различными типами.   
   
 ```  
-SELECT ToString(1.0000), ToString("Hello World"), ToString(NaN), ToString(Infinity),
-ToString(IS_STRING(ToString(undefined))), IS_STRING(ToString(0.1234), ToString(false), ToString(undefined))
+SELECT 
+    ToString(1.0000) AS str1, 
+    ToString("Hello World") AS str2, 
+    ToString(NaN) AS str3, 
+    ToString(Infinity) AS str4,
+    ToString(IS_STRING(ToString(undefined))) AS str5, 
+    ToString(0.1234) AS str6, 
+    ToString(false) AS str7, 
+    ToString(undefined) AS str8
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": "1", "$2": "Hello World", "$3": "NaN", "$4": "Infinity", "$5": "false", "$6": true, "$7": "false"}]  
+[{"str1": "1", "str2": "Hello World", "str3": "NaN", "str4": "Infinity", "str5": "false", "str6": "0.1234", "str7": "false"}]  
 ```  
  Для следующих входных данных:
 ```  
@@ -2845,13 +2852,13 @@ TRIM(<str_expr>)
   Ниже представлен пример использования функции TRIM в запросе.  
   
 ```  
-SELECT TRIM("   abc"), TRIM("   abc   "), TRIM("abc   "), TRIM("abc")   
+SELECT TRIM("   abc") AS t1, TRIM("   abc   ") AS t2, TRIM("abc   ") AS t3, TRIM("abc") AS t4
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": "abc", "$2": "abc", "$3": "abc", "$4": "abc"}]  
+[{"t1": "abc", "t2": "abc", "t3": "abc", "t4": "abc"}]  
 ``` 
 ####  <a name="bk_upper"></a> UPPER  
  Возвращает строковое выражение после преобразования символов нижнего регистра в верхний.  
@@ -2877,13 +2884,13 @@ UPPER(<str_expr>)
   Ниже представлен пример использования функции UPPER в запросе.  
   
 ```  
-SELECT UPPER("Abc")  
+SELECT UPPER("Abc") AS upper  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": "ABC"}]  
+[{"upper": "ABC"}]  
 ```  
   
 ###  <a name="bk_array_functions"></a> Функции массивов  
@@ -2918,13 +2925,13 @@ ARRAY_CONCAT (<arr_expr>, <arr_expr> [, <arr_expr>])
   В примере ниже показано, как объединить два массива.  
   
 ```  
-SELECT ARRAY_CONCAT(["apples", "strawberries"], ["bananas"])  
+SELECT ARRAY_CONCAT(["apples", "strawberries"], ["bananas"]) AS arrayConcat 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": ["apples", "strawberries", "bananas"]}]  
+[{"arrayConcat": ["apples", "strawberries", "bananas"]}]  
 ```  
   
 ####  <a name="bk_array_contains"></a> ARRAY_CONTAINS  
@@ -2960,32 +2967,32 @@ ARRAY_CONTAINS (<arr_expr>, <expr> [, bool_expr])
   
 ```  
 SELECT   
-           ARRAY_CONTAINS(["apples", "strawberries", "bananas"], "apples"),  
-           ARRAY_CONTAINS(["apples", "strawberries", "bananas"], "mangoes")  
+           ARRAY_CONTAINS(["apples", "strawberries", "bananas"], "apples") AS b1,  
+           ARRAY_CONTAINS(["apples", "strawberries", "bananas"], "mangoes") AS b2  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": true, "$2": false}]  
+[{"b1": true, "b2": false}]  
 ```  
 
  В примере ниже показано, как проверить частичное совпадение JSON в массиве с помощью функции ARRAY_CONTAINS.  
   
 ```  
 SELECT  
-    ARRAY_CONTAINS([{"name": "apples", "fresh": true}, {"name": "strawberries", "fresh": true}], {"name": "apples"}, true), 
-    ARRAY_CONTAINS([{"name": "apples", "fresh": true}, {"name": "strawberries", "fresh": true}], {"name": "apples"}),
-    ARRAY_CONTAINS([{"name": "apples", "fresh": true}, {"name": "strawberries", "fresh": true}], {"name": "mangoes"}, true) 
+    ARRAY_CONTAINS([{"name": "apples", "fresh": true}, {"name": "strawberries", "fresh": true}], {"name": "apples"}, true) AS b1, 
+    ARRAY_CONTAINS([{"name": "apples", "fresh": true}, {"name": "strawberries", "fresh": true}], {"name": "apples"}) AS b2,
+    ARRAY_CONTAINS([{"name": "apples", "fresh": true}, {"name": "strawberries", "fresh": true}], {"name": "mangoes"}, true) AS b3 
 ```  
   
  Результирующий набор:  
   
 ```  
 [{
-  "$1": true,
-  "$2": false,
-  "$3": false
+  "b1": true,
+  "b2": false,
+  "b3": false
 }] 
 ```  
   
@@ -3013,13 +3020,13 @@ ARRAY_LENGTH(<arr_expr>)
   В примере ниже показано, как получить длину массива с помощью функции ARRAY_LENGTH.  
   
 ```  
-SELECT ARRAY_LENGTH(["apples", "strawberries", "bananas"])  
+SELECT ARRAY_LENGTH(["apples", "strawberries", "bananas"]) AS len  
 ```  
   
  Результирующий набор:  
   
 ```  
-[{"$1": 3}]  
+[{"len": 3}]  
 ```  
   
 ####  <a name="bk_array_slice"></a> ARRAY_SLICE  
@@ -3055,13 +3062,13 @@ ARRAY_SLICE (<arr_expr>, <num_expr> [, <num_expr>])
   
 ```  
 SELECT   
-           ARRAY_SLICE(["apples", "strawberries", "bananas"], 1),  
-           ARRAY_SLICE(["apples", "strawberries", "bananas"], 1, 1),
-           ARRAY_SLICE(["apples", "strawberries", "bananas"], -2, 1),
-           ARRAY_SLICE(["apples", "strawberries", "bananas"], -2, 2),
-           ARRAY_SLICE(["apples", "strawberries", "bananas"], 1, 0),
-           ARRAY_SLICE(["apples", "strawberries", "bananas"], 1, 1000),
-           ARRAY_SLICE(["apples", "strawberries", "bananas"], 1, -100)      
+           ARRAY_SLICE(["apples", "strawberries", "bananas"], 1) AS s1,  
+           ARRAY_SLICE(["apples", "strawberries", "bananas"], 1, 1) AS s2,
+           ARRAY_SLICE(["apples", "strawberries", "bananas"], -2, 1) AS s3,
+           ARRAY_SLICE(["apples", "strawberries", "bananas"], -2, 2) AS s4,
+           ARRAY_SLICE(["apples", "strawberries", "bananas"], 1, 0) AS s5,
+           ARRAY_SLICE(["apples", "strawberries", "bananas"], 1, 1000) AS s6,
+           ARRAY_SLICE(["apples", "strawberries", "bananas"], 1, -100) AS s7      
   
 ```  
   
@@ -3069,13 +3076,13 @@ SELECT
   
 ```  
 [{  
-           "$1": ["strawberries", "bananas"],   
-           "$2": ["strawberries"],
-           "$3": ["strawberries"],  
-           "$4": ["strawberries", "bananas"], 
-           "$5": [],
-           "$6": ["strawberries", "bananas"],
-           "$7": [] 
+           "s1": ["strawberries", "bananas"],   
+           "s2": ["strawberries"],
+           "s3": ["strawberries"],  
+           "s4": ["strawberries", "bananas"], 
+           "s5": [],
+           "s6": ["strawberries", "bananas"],
+           "s7": [] 
 }]  
 ```  
  
@@ -3236,13 +3243,13 @@ ST_ISVALID(<spatial_expr>)
   По спецификации GeoJSON для многоугольника последняя пара координат должна совпадать с первой, чтобы фигура стала замкнутой. Точки внутри многоугольника должны указываться в порядке против часовой стрелки. Если точки указаны в порядке по часовой стрелке, то многоугольник представляет регион, расположенный снаружи от него.  
   
 ```  
-SELECT ST_ISVALID({ "type": "Point", "coordinates": [31.9, -132.8] })  
+SELECT ST_ISVALID({ "type": "Point", "coordinates": [31.9, -132.8] }) AS b 
 ```  
   
  Результирующий набор:  
   
 ```  
-[{ "$1": false }]  
+[{ "b": false }]  
 ```  
   
 ####  <a name="bk_st_isvaliddetailed"></a> ST_ISVALIDDETAILED  
@@ -3251,7 +3258,7 @@ SELECT ST_ISVALID({ "type": "Point", "coordinates": [31.9, -132.8] })
  **Синтаксис**  
   
 ```  
-ST_ISVALID(<spatial_expr>)  
+ST_ISVALIDDETAILED(<spatial_expr>)  
 ```  
   
  **Аргументы**  
@@ -3272,14 +3279,14 @@ ST_ISVALID(<spatial_expr>)
 SELECT ST_ISVALIDDETAILED({   
   "type": "Polygon",   
   "coordinates": [[ [ 31.8, -5 ], [ 31.8, -4.7 ], [ 32, -4.7 ], [ 32, -5 ] ]]  
-})  
+}) AS b  
 ```  
   
  Результирующий набор:  
   
 ```  
 [{  
-  "$1": {   
+  "b": {   
     "valid": false,   
     "reason": "The Polygon input is not valid because the start and end points of the ring number 1 are not the same. Each ring of a polygon must have the same start and end points."   
   }  

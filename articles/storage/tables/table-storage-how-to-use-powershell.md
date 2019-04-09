@@ -5,15 +5,15 @@ services: cosmos-db
 author: roygara
 ms.service: cosmos-db
 ms.topic: article
-ms.date: 03/27/2019
+ms.date: 04/04/2019
 ms.author: rogarana
 ms.subservice: cosmosdb-table
-ms.openlocfilehash: bb8f0fd98296d0cc4de1596480988b154a731d41
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
-ms.translationtype: MT
+ms.openlocfilehash: c5491683a74321e370044cd6eb270cc34bbbce6a
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58540233"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59056414"
 ---
 # <a name="perform-azure-table-storage-operations-with-azure-powershell"></a>Выполнение операций в хранилище таблиц Azure с помощью Azure PowerShell 
 [!INCLUDE [storage-table-cosmos-db-tip-include](../../../includes/storage-table-cosmos-db-langsoon-tip-include.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "58540233"
 
 В этом практическом руководстве показано, как создать учетную запись службы хранилища Azure в новой группе ресурсов, чтобы вы могли легко удалить ее при необходимости. Вы можете использовать существующую учетную запись хранения.
 
-Для работы примеров модулей Az PowerShell `Az.Storage (1.1.3 or greater)` и `Az.Resources (1.2.0 or greater)`. В окне PowerShell выполните `Get-Module -ListAvailable Az*`, чтобы найти версию. Если версия не отображается или нужно установить обновление, ознакомьтесь со статьей [Install and configure Azure PowerShell](/powershell/azure/install-az-ps) (Установка и настройка Azure PowerShell).
+Для работы примеров модулей Az PowerShell `Az.Storage (1.1.0 or greater)` и `Az.Resources (1.2.0 or greater)`. В окне PowerShell выполните `Get-Module -ListAvailable Az*`, чтобы найти версию. Если версия не отображается или нужно установить обновление, ознакомьтесь со статьей [Install and configure Azure PowerShell](/powershell/azure/install-az-ps) (Установка и настройка Azure PowerShell).
 
 > [!IMPORTANT]
 > Для использования этой функции Azure от PowerShell требуется установленный модуль `Az`. Текущая версия AzureRmStorageTable несовместим с более старой модуля AzureRM.
@@ -158,7 +158,7 @@ Remove-AzResourceGroup -Name $resourceGroup
 
 Дополнительные сведения см. в следующих статьях:
 
-* [Командлеты PowerShell для службы хранилища](/powershell/module/az.storage#storage)
+* [Командлеты PowerShell службы хранилища](/powershell/module/az.storage#storage)
 
 * [Работа с таблицами Azure из PowerShell - версии 2.0 модуль AzureRmStorageTable PS](https://paulomarquesc.github.io/working-with-azure-storage-tables-from-powershell)
 

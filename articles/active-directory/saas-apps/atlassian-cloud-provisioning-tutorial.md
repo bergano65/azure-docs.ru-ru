@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка Atlassian Cloud для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка Atlassian Cloud для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Atlassian Cloud.
 services: active-directory
 documentationcenter: ''
@@ -13,75 +13,70 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/03/2019
+ms.date: 03/27/2019
 ms.author: v-ant
-ms.openlocfilehash: ff6a111663df5d7e7f4f517446084ef75b009e59
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: f4e76121f7815702270d6601413ff7a4c2c25839
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58092707"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59056985"
 ---
-# <a name="tutorial-configure-atlassian-cloud-for-automatic-user-provisioning"></a>Руководство. Настройка Atlassian Cloud для автоматической подготовки пользователей
+# <a name="tutorial-configure-atlassian-cloud-for-automatic-user-provisioning"></a>Руководство по Настройка Atlassian Cloud для автоматической подготовки пользователей
 
-Цель данного учебника — продемонстрировать действия, выполняемые в Atlassian Cloud и Azure Active Directory (Azure AD) для настройки Azure AD настроить автоматическую подготовку и отмену подготовки пользователей и групп в Atlassian Cloud. 
+Цель данного учебника — продемонстрировать действия, выполняемые в Atlassian Cloud и Azure Active Directory (Azure AD) для настройки Azure AD настроить автоматическую подготовку и отмену подготовки пользователей и групп в Atlassian Cloud.
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
-> 
+>
 > Сейчас этот соединитель доступен в общедоступной предварительной версии. Дополнительные сведения о общие Microsoft Azure условия использования предварительных версий функций, см. в разделе [дополнительным условиям использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="prerequisites"></a>Технические условия
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-*   клиент Azure AD;
-*   [Клиент Atlassian Cloud](https://www.atlassian.com/licensing/cloud)
-*   Учетная запись пользователя в Atlassian Cloud с правами администратора.
+* клиент Azure AD;
+* [Клиент Atlassian Cloud](https://www.atlassian.com/licensing/cloud)
+* Учетная запись пользователя в Atlassian Cloud с правами администратора.
 
 > [!NOTE]
 > Интеграция подготовки Azure AD зависит от **Atlassian Cloud SCIM API**, доступного для команд Atlassian Cloud.
 
-## <a name="adding-atlassian-cloud-from-the-gallery"></a>Добавление Atlassian Cloud из коллекции
+## <a name="add-atlassian-cloud-from-the-gallery"></a>Добавление Atlassian Cloud из коллекции
+
 Прежде чем настроить Atlassian Cloud для автоматической подготовки пользователей в Azure AD, необходимо добавить Atlassian Cloud из коллекции приложений Azure AD в список управляемых приложений SaaS.
 
 **Чтобы добавить Atlassian Cloud из коллекции приложений Azure AD, выполните следующие действия:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. В  **[портала Azure](https://portal.azure.com)**, на панели навигации слева выберите **Azure Active Directory**.
 
-    ![Кнопка Azure Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите к элементу **Корпоративные приложения** > **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Раздел "Корпоративные приложения"][2]
-    
-3. Чтобы добавить Atlassian Cloud, щелкните **новое приложение** кнопку в верхней части диалогового окна.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Кнопка "Создать приложение"][3]
+3. Чтобы добавить новое приложение, выберите **новое приложение** кнопку в верхней части области.
 
-4. В поле поиска введите **Atlassian Cloud**.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Подготовка Atlassian Cloud](./media/atlassian-cloud-provisioning-tutorial/app-search.png)
+4. В поле поиска введите **Atlassian Cloud**выберите **Atlassian Cloud** в панели результатов и нажмите кнопку **добавить** кнопку, чтобы добавить это приложение.
 
-5. В области результатов выберите **Atlassian Cloud**, а затем нажмите кнопку **добавить** кнопку, чтобы добавить Atlassian Cloud в список приложений SaaS.
-
-    ![Подготовка Atlassian Cloud](./media/atlassian-cloud-provisioning-tutorial/app-create.png)
-
-    ![Подготовка Atlassian Cloud](./media/atlassian-cloud-provisioning-tutorial/app-instance.png)
+    ![Atlassian Cloud в списке результатов](common/search-new-app.png)
 
 ## <a name="assigning-users-to-atlassian-cloud"></a>Назначение пользователей в Atlassian Cloud
 
-В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая "назначение". В контексте автоматической подготовки синхронизированы будут только те пользователи и группы, которые были "назначены" приложению в Azure AD. 
+Azure Active Directory используется концепция, называемая *назначения* для определения, какие пользователи должны получать доступ к выбранным приложениям. В контексте автоматической подготовки пользователей синхронизируются только те пользователи и группы, которые были назначены приложению в Azure AD.
 
 Перед настройкой и включением автоматической подготовки пользователей, следует решить, какие пользователи или группы в Azure AD требуется доступ к Atlassian Cloud. Сделав это, можно назначить этих пользователей и групп, к Atlassian Cloud, следуя инструкциям ниже:
 
-*   [Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
+* [Назначение пользователя или группы корпоративному приложению](../manage-apps/assign-user-or-group-access-portal.md)
 
 ### <a name="important-tips-for-assigning-users-to-atlassian-cloud"></a>Важные рекомендации по назначению пользователей в Atlassian Cloud
 
-*   Рекомендуется один назначенный пользователем Azure AD Atlassian Cloud для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
+* Рекомендуется один назначенный пользователем Azure AD Atlassian Cloud для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
-*   При назначении пользователя в Atlassian Cloud, необходимо выбрать действительную роль конкретного приложения (если доступно) в диалоговом окне назначения. Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя в Atlassian Cloud, необходимо выбрать действительную роль конкретного приложения (если доступно) в диалоговом окне назначения. Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
 
 ## <a name="configuring-automatic-user-provisioning-to-atlassian-cloud"></a>Настройка автоматической подготовки пользователей в Atlassian Cloud 
 
@@ -92,14 +87,16 @@ ms.locfileid: "58092707"
 
 ### <a name="to-configure-automatic-user-provisioning-for-atlassian-cloud-in-azure-ad"></a>Настройка автоматической подготовки пользователей для Atlassian Cloud в Azure AD.
 
-1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory > Корпоративные приложения > Все приложения**.
+1. Войдите в [портала Azure](https://portal.azure.com) и выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **Atlassian Cloud**.
 
-2. В списке приложений SaaS выберите Atlassian Cloud.
- 
-    ![Подготовка Atlassian Cloud](./media/atlassian-cloud-provisioning-tutorial/application-instance-search.png)
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
+2. В списке приложений выберите **Atlassian Cloud**.
+
+    ![Ссылка на Atlassian Cloud в списке приложений](common/all-applications.png)
 
 3. Выберите вкладку **Подготовка**.
-    
+
     ![Подготовка Atlassian Cloud](./media/atlassian-cloud-provisioning-tutorial/provisioning-tab.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
@@ -108,20 +105,20 @@ ms.locfileid: "58092707"
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **секретный токен** учетной записи приложения Atlassian Cloud. Примеры этих значений:
 
-   * В **URL-адрес клиента** поле «Заливка» конечная точка конкретного клиента, получаемых от Atlassian, как описано на шаге 6. Например: **https://api.atlassian.com/scim/directory/{directoryId}**
+   * В **URL-адрес клиента** поле «Заливка» конечная точка конкретного клиента, получаемых от Atlassian, как описано на шаге 6. Например: `https://api.atlassian.com/scim/directory/{directoryId}`.
 
    * В поле **маркер секрета** введите маркер секрета, как описано в шаге 6.
 
 6. Перейдите к [Manager организации Atlassian](https://admin.atlassian.com) **> Подготовка пользователей** и щелкнуть **создать токен**. Копировать **базовый URL-адрес каталога** и **маркера носителя** для **URL-адрес клиента** и **секретный токен** поля соответственно.
 
     ![Atlassian Cloud Подготовка](./media/atlassian-cloud-provisioning-tutorial/secret-token-1.png) ![Atlassian Cloud Подготовка](./media/atlassian-cloud-provisioning-tutorial/secret-token-2.png)
-    
+
     ![Подготовка Atlassian Cloud](./media/atlassian-cloud-provisioning-tutorial/secret-token-3.png)
 
 7. После заполнения полей, указанных в шаге 5, щелкните **проверить подключение** и убедиться, что Azure AD может подключиться к Atlassian Cloud. Если подключение отсутствует, убедитесь, что учетная запись Atlassian Cloud имеет разрешения администратора и повторите попытку.
 
     ![Подготовка Atlassian Cloud](./media/atlassian-cloud-provisioning-tutorial/test-connection.png)
-    
+
 8. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
 
     ![Подготовка Atlassian Cloud](./media/atlassian-cloud-provisioning-tutorial/notification.png)
@@ -158,7 +155,6 @@ ms.locfileid: "58092707"
 
     ![Подготовка Atlassian Cloud](./media/atlassian-cloud-provisioning-tutorial/save.png)
 
-
 После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. Можно использовать **сведения о синхронизации** раздел, чтобы отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов, которых зафиксированы все действия, выполняемые службой Atlassian Cloud подготовки Azure AD о подготовке.
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../manage-apps/check-status-user-account-provisioning.md).
@@ -176,7 +172,7 @@ ms.locfileid: "58092707"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 
 <!--Image references-->
 [1]: ./media/atlassian-cloud-provisioning-tutorial/tutorial-general-01.png

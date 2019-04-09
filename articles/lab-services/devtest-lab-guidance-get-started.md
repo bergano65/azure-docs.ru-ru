@@ -1,5 +1,5 @@
 ---
-title: Начало работы со службой Azure DevTest Labs
+title: Популярные сценарии использования Azure DevTest Labs
 description: Эта статья содержит основные сценарии по использованию Azure DevTest Labs и два пути, общие для начала использования службы в вашей организации.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -13,14 +13,14 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
-ms.openlocfilehash: 219697451174811fab7880ba0d5930ba85edf8fb
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: 8736ba4c24ac4c8f8d84345028d1cadfdef38697
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58803805"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59272394"
 ---
-# <a name="get-started-with-using-azure-devtest-labs"></a>Начало работы со службой Azure DevTest Labs
+# <a name="popular-scenarios-for-using-azure-devtest-labs"></a>Популярные сценарии использования Azure DevTest Labs
 В зависимости от потребностей предприятия DevTest Labs можно настроить для соответствия различным требованиям.  В этой статье рассматриваются популярные сценарии. Каждый сценарий посвящен вопросам, перевести в режим с помощью DevTest Labs и ресурсы для использования для реализации этих сценариев.  
 
 - Рабочие столы для разработки

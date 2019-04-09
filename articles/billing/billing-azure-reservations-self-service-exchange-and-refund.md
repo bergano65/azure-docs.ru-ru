@@ -11,29 +11,31 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/28/2019
+ms.date: 04/5/2019
 ms.author: banders
-ms.openlocfilehash: 229b5a0948a81c9b5d78dd49f304e7b6891f95ee
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: aa1a218fbf0bc7eacac65b50e4ee1f86791e2b3b
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58653252"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59281987"
 ---
 # <a name="self-service-exchanges-and-refunds-for-azure-reservations"></a>Обмен самообслуживания и возмещения для резервирования Azure
 
 Резервирование Azure обеспечивают необходимую гибкость для удовлетворения изменяющихся потребностей. Можно организовать обмен резервирование для другой резервирования того же типа. Резервирование, вплоть до 50 000 ДОЛЛ. США в год, можно также возврат, если он больше не нужен.
+
+Самообслуживания exchange "и" Отмена возможность недоступна для US Government клиентов с соглашением Enterprise. Поддерживаются другие типы подписки для государственных организаций США, включая оплату по мере использования и CSP.
 
 ## <a name="exchange-an-existing-reserved-instance"></a>Exchange существующий зарезервированный экземпляр
 
 Можно организовать обмен резервировании с три простых шага в [портала Azure](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade).
 
 1. Выберите резервирование, которые вы хотите возмещение и нажмите кнопку **Exchange**.  
-    ![Пример изображение резервирования для возврата ](./media/billing-azure-reservations-self-service-exchange-and-refund/exchange-refund-return.png)
+    ![Пример изображение резервирования для возврата](./media/billing-azure-reservations-self-service-exchange-and-refund/exchange-refund-return.png)
 2. Выберите продукт виртуальной Машины, который вы хотите приобрести и введите количество. Убедитесь, что новая сумма покупки больше, чем возвращаемого значения общего количества. [Определить подходящий размер, до приобретения](../virtual-machines/windows/prepay-reserved-vm-instances.md#determine-the-right-vm-size-before-you-buy).  
-    ![Пример изображение продукта виртуальной Машины приобретается в комплекте с exchange ](./media/billing-azure-reservations-self-service-exchange-and-refund/exchange-refund-select-purchase.png)
+    ![Пример изображение продукта виртуальной Машины приобретается в комплекте с exchange](./media/billing-azure-reservations-self-service-exchange-and-refund/exchange-refund-select-purchase.png)
 3. Просмотрите и завершения транзакции.  
-    ![Пример изображение продукта приобретается в комплекте с exchange, выполнив возврат виртуальной Машины ](./media/billing-azure-reservations-self-service-exchange-and-refund/exchange-refund-confirm-exchange.png)
+    ![Пример изображение продукта приобретается в комплекте с exchange, выполнив возврат виртуальной Машины](./media/billing-azure-reservations-self-service-exchange-and-refund/exchange-refund-confirm-exchange.png)
 
 Чтобы возмещение резервирование, перейдите в раздел **сведения о резервировании** и нажмите кнопку **возмещение**.
 
@@ -83,11 +85,11 @@ Money добавляется денежных обязательств для о
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об управлении резервированием см. в разделе [Управление резервированиями в Azure](billing-manage-reserved-vm-instance.md).
-- Дополнительные сведения о резервировании в Azure см. в следующих статьях.
-    - [Основные сведения о резервировании в Azure](billing-save-compute-costs-reservations.md)
-    - [Управление резервированиями в Azure](billing-manage-reserved-vm-instance.md)
-    - [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](billing-understand-vm-reservation-charges.md)
-    - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
-    - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
-    - [Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров Azure](billing-reserved-instance-windows-software-costs.md)
-    - [Приобретение зарезервированных экземпляров Azure](/partner-center/azure-reservations)
+- Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
+    - [Общие сведения об Azure Reserved VM Instances](billing-save-compute-costs-reservations.md)
+    - [Управление резервирования в Azure](billing-manage-reserved-vm-instance.md)
+    - [Сведения о применении скидки на резервирование](billing-understand-vm-reservation-charges.md)
+    - [Общие сведения об использовании резервирования для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
+    - [Общие сведения об использовании резервирования о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
+    - [Затраты на программное обеспечение Windows, не входит в состав резервирования](billing-reserved-instance-windows-software-costs.md)
+    - [Azure резервирования в программе поставщика облачных решений (CSP) партнер Center](/partner-center/azure-reservations)

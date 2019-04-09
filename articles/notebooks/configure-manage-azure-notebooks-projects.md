@@ -6,19 +6,19 @@ documentationcenter: ''
 author: kraigb
 manager: douge
 ms.assetid: 35dd6ff1-a14a-4a2e-b173-6d8467de3e89
-ms.service: azure
+ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/25/2019
 ms.author: kraigb
-ms.openlocfilehash: b4d40f011b9a9e69953496fbdb0dc63ffc8a5027
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: d1f94c5fd774b51f57da2885d1ccd8eb909cd3c0
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57774563"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59268013"
 ---
 # <a name="manage-and-configure-projects"></a>Администрирование и настройка проектов
 
@@ -95,10 +95,10 @@ ms.locfileid: "57774563"
 
 | Тип элемента | ОПИСАНИЕ | Поведение команды |
 | --- | --- | --- |
-| **Записная книжка** | Записная книжка Jupyter | Отображает всплывающее окно, в котором нужно указать имя файла и язык записной книжки. |
+| **Заметки** | Записная книжка Jupyter | Отображает всплывающее окно, в котором нужно указать имя файла и язык записной книжки. |
 | **Папка** | Вложенная папка | Создает редактируемое поле в списке файлов проекта, в которое следует ввести имя папки. |
 | **Пустой файл** | Файл, в котором можно хранить любое содержимое, например текст, данные, и т. д. | Создает редактируемое поле в списке файлов проекта, в которое следует ввести имя файла. |
-| **Markdown** | Файл Markdown. | Создает редактируемое поле в списке файлов проекта, в которое следует ввести имя файла. |
+| **Разметка Markdown** | Файл Markdown. | Создает редактируемое поле в списке файлов проекта, в которое следует ввести имя файла. |
 
 ### <a name="upload-files"></a>Отправка файлов
 
@@ -220,7 +220,7 @@ cat .nb.log
 !cat .nb.log
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [How to: Work with project data files](work-with-project-data-files.md) (Руководство. Работа с файлами данных проекта)
-- [Access cloud data in a notebook](access-data-resources-jupyter-notebooks.md) (Доступ к облачным данным в записной книжке)
+- [Практическое руководство: Работа с файлами данных проекта](work-with-project-data-files.md)
+- [Доступ к облачным данным в записной книжке](access-data-resources-jupyter-notebooks.md)

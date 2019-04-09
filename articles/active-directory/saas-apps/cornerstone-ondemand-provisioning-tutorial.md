@@ -13,91 +13,83 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/31/2018
+ms.date: 03/27/2019
 ms.author: v-ant
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a24945cae273e072d3be314a66248674e25fe287
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 9d17a3c81784d56c6fcad7c7608559abf732882a
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56198870"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59057937"
 ---
-# <a name="tutorial-configure-cornerstone-ondemand-for-automatic-user-provisioning"></a>Руководство. Настройка Cornerstone OnDemand для автоматической подготовки пользователей
-
+# <a name="tutorial-configure-cornerstone-ondemand-for-automatic-user-provisioning"></a>Руководство по Настройка Cornerstone OnDemand для автоматической подготовки пользователей
 
 В этом руководстве показаны шаги, которые необходимо выполнить в Cornerstone OnDemand и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отзыва пользователей и групп в Cornerstone OnDemand.
-
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-*   клиент Azure AD;
-*   Клиент Cornerstone OnDemand
-*   учетная запись пользователя в Cornerstone OnDemand с разрешениями администратора.
-
+* клиент Azure AD;
+* Клиент Cornerstone OnDemand
+* учетная запись пользователя в Cornerstone OnDemand с разрешениями администратора.
 
 > [!NOTE]
 > Интеграция подготовки Azure AD зависит от [веб-службы Cornerstone OnDemand](https://help.csod.com/help/csod_0/Content/Resources/Documents/WebServices/CSOD_-_Summary_of_Web_Services_v20151106.pdf), которая доступна командам Cornerstone OnDemand.
 
 ## <a name="adding-cornerstone-ondemand-from-the-gallery"></a>Добавление Cornerstone OnDemand из коллекции
+
 Перед настройки Cornerstone OnDemand для автоматической подготовки пользователей в Azure AD необходимо добавить Cornerstone OnDemand из коллекции приложений Azure AD в список управляемых приложений SaaS.
 
 **Чтобы добавить Cornerstone OnDemand из коллекции приложений Azure AD, выполните следующие действия:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка Azure Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите к элементу **Корпоративные приложения** > **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Раздел "Корпоративные приложения"][2]
-    
-3. Чтобы добавить Cornerstone OnDemand, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Кнопка "Создать приложение"][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-4. В поле поиска введите **Cornerstone OnDemand**.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Подготовка Cornerstone OnDemand](./media/cornerstone-ondemand-provisioning-tutorial/AppSearch.png)
+4. В поле поиска введите **Cornerstone OnDemand**, выберите **Cornerstone OnDemand** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-5. В области результатов выберите **Cornerstone OnDemand** и нажмите кнопку **Добавить**, чтобы добавить это приложение в список приложений SaaS.
-
-    ![Подготовка Cornerstone OnDemand](./media/cornerstone-ondemand-provisioning-tutorial/AppSearchResults.png)
-
-    ![Подготовка Cornerstone OnDemand](./media/cornerstone-ondemand-provisioning-tutorial/AppCreation.png)
+    ![Cornerstone OnDemand в списке результатов](common/search-new-app.png)
 
 ## <a name="assigning-users-to-cornerstone-ondemand"></a>Назначение пользователей в Cornerstone OnDemand
 
-В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая "назначение". В контексте автоматической подготовки синхронизированы будут только те пользователи и группы, которые были "назначены" приложению в Azure AD. 
+В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая "назначение". В контексте автоматической подготовки синхронизированы будут только те пользователи и группы, которые были "назначены" приложению в Azure AD.
 
 Перед настройкой и включением автоматической подготовки пользователей нужно решить, какие пользователи или группы в Azure AD должны иметь доступ к Cornerstone OnDemand. Когда этот вопрос будет решен, эти пользователи и группы можно будет назначить приложению Cornerstone OnDemand, следуя приведенным ниже указаниям:
 
-*   [Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
+* [Назначение пользователя или группы корпоративному приложению](../manage-apps/assign-user-or-group-access-portal.md)
 
 ### <a name="important-tips-for-assigning-users-to-cornerstone-ondemand"></a>Важные рекомендации по назначению пользователей в Cornerstone OnDemand
 
-*   Рекомендуется назначить одного пользователя Azure AD в Cornerstone OnDemand для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
+* Рекомендуется назначить одного пользователя Azure AD в Cornerstone OnDemand для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
-*   При назначении пользователя в Cornerstone OnDemand в диалоговом окне назначения необходимо выбрать действительную роль для конкретного приложения (если доступно). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя в Cornerstone OnDemand в диалоговом окне назначения необходимо выбрать действительную роль для конкретного приложения (если доступно). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
 
 ## <a name="configuring-automatic-user-provisioning-to-cornerstone-ondemand"></a>Настройка автоматической подготовки пользователей в Cornerstone OnDemand
 
 В этом разделе описывается, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей или групп в Cornerstone OnDemand на основе назначений в Azure AD.
 
-
 ### <a name="to-configure-automatic-user-provisioning-for-cornerstone-ondemand-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей в Cornerstone OnDemand:
 
+1. Войдите в [портала Azure](https://portal.azure.com) и выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **Cornerstone OnDemand**.
 
-1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory > Корпоративные приложения > Все приложения**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. Выберите Cornerstone OnDemand из списка приложений SaaS.
- 
-    ![Подготовка Cornerstone OnDemand](./media/cornerstone-ondemand-provisioning-tutorial/Successcenter2.png)
+2. В списке приложений выберите **Cornerstone OnDemand**.
+
+    ![Ссылка на Cornerstone OnDemand в списке приложений](common/all-applications.png)
 
 3. Выберите вкладку **Подготовка**.
 
@@ -109,11 +101,11 @@ ms.locfileid: "56198870"
 
 5. В разделе **Учетные данные администратора** введите **учетные данные**, **пароль администратора** и **домен** своей учетной записи Cornerstone OnDemand.
 
-    *   В поле **Имя администратора** укажите имя учетной записи администратора (домен\пользователь) в клиенте Cornerstone OnDemand. Пример: contoso\admin.
+    * В поле **Имя администратора** укажите имя учетной записи администратора (домен\пользователь) в клиенте Cornerstone OnDemand. Пример: contoso\admin.
 
-    *   В поле **Пароль администратора** введите пароль, соответствующий имени пользователя администратора.
+    * В поле **Пароль администратора** введите пароль, соответствующий имени пользователя администратора.
 
-    *   В поле **Домен** введите URL-адрес веб-службы клиента Cornerstone OnDemand. Пример: если служба расположена в `https://ws-[corpname].csod.com/feed30/clientdataservice.asmx`, то доменом Contoso будет `https://ws-contoso.csod.com/feed30/clientdataservice.asmx`. Дополнительные сведения о том, как получить URL-адрес веб-службы, приведены [здесь](https://help.csod.com/help/csod_0/Content/Resources/Documents/WebServices/CSOD_Web_Services_-_User-OU_Technical_Specification_v20160222.pdf).
+    * В поле **Домен** введите URL-адрес веб-службы клиента Cornerstone OnDemand. Пример: если служба расположена в `https://ws-[corpname].csod.com/feed30/clientdataservice.asmx`, то доменом Contoso будет `https://ws-contoso.csod.com/feed30/clientdataservice.asmx`. Дополнительные сведения о том, как получить URL-адрес веб-службы, приведены [здесь](https://help.csod.com/help/csod_0/Content/Resources/Documents/WebServices/CSOD_Web_Services_-_User-OU_Technical_Specification_v20160222.pdf).
 
 6. После заполнения поля, указанного в шаге 5, нажмите кнопку **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к Cornerstone OnDemand. Если установить подключение не удалось, убедитесь, что у учетной записи Cornerstone OnDemand есть разрешения администратора и попробуйте еще раз.
 
@@ -147,25 +139,24 @@ ms.locfileid: "56198870"
 
     ![Подготовка Cornerstone OnDemand](./media/cornerstone-ondemand-provisioning-tutorial/Save.png)
 
-
 После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов о подготовке, в которых зафиксированы все действия, выполняемые с приложением Cornerstone OnDemand службой подготовки Azure AD.
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../manage-apps/check-status-user-account-provisioning.md).
+
 ## <a name="connector-limitations"></a>Ограничения соединителя
 
 * Атрибут **Position** в Cornerstone OnDemand ожидает значение, соответствующее ролям на портале Cornerstone OnDemand. Список допустимых значений **Position** можно получить, выбрав **"Edit User Record" (Изменить запись пользователя) > "Organization Structure" (структура организации) > "Position" (Позиция)** на портале Cornerstone OnDemand.
+
     ![Подготовка в Cornerstone OnDemand: изменение пользователя](./media/cornerstone-ondemand-provisioning-tutorial/UserEdit.png) ![Подготовка в Cornerstone OnDemand: позиция](./media/cornerstone-ondemand-provisioning-tutorial/UserPosition.png) ![Подготовка в Cornerstone OnDemand: список позиций](./media/cornerstone-ondemand-provisioning-tutorial/PostionId.png)
-    
+
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
+## <a name="next-steps"></a>Дальнейшие действия
 
-
-## <a name="next-steps"></a>Дополнительная информация
-
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 
 <!--Image references-->
 [1]: ./media/cornerstone-ondemand-provisioning-tutorial/tutorial_general_01.png

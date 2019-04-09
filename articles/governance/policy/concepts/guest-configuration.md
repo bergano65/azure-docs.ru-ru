@@ -1,7 +1,6 @@
 ---
 title: Узнайте, как аудит содержимого виртуальной машины
 description: Узнайте, как служба "Политика Azure" использует гостевую конфигурацию для аудита параметров на виртуальной машине Azure.
-services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 03/18/2019
@@ -9,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 045339ec0a725359593797bda172a2e93f7c2890
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: c11d6519986cf7a0e70d1fe004ef527c3df247d5
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58339029"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59277735"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
@@ -57,9 +56,9 @@ Register-AzResourceProvider -ProviderNamespace 'Microsoft.GuestConfiguration'
 
 В следующей таблице перечислены локальные средства, используемые в поддерживаемых операционных системах:
 
-|Операционная система|Инструмент проверки|Примечания|
+|Операционная система|Инструмент проверки|Notes|
 |-|-|-|
-| Windows|[Конфигурация требуемого состояния Майкрософт](/powershell/dsc) версии 2| |
+|Windows|[Конфигурация требуемого состояния Майкрософт](/powershell/dsc) версии 2| |
 |Linux|[Chef InSpec](https://www.chef.io/inspec/)| Ruby и Python устанавливаются с помощью расширения гостевой конфигурации. |
 
 ### <a name="validation-frequency"></a>Частота проверки
@@ -70,12 +69,12 @@ Register-AzResourceProvider -ProviderNamespace 'Microsoft.GuestConfiguration'
 
 В следующей таблице перечислены операционные системы, поддерживаемые в образах Azure:
 
-|ИЗДАТЕЛЬ|ИМЯ|Версии|
+|Издатель|Название|Версии|
 |-|-|-|
-|Canonical|Сервер Ubuntu|14.04, 16.04, 18.04|
+|Канонический|Сервер Ubuntu|14.04, 16.04, 18.04|
 |Credativ|Debian|8, 9|
-|Microsoft|Windows Server|2012 Datacenter, Datacenter 2012 R2, 2016 Datacenter, Datacenter 2019 г.|
-|Microsoft|Клиент Windows|Windows 10|
+|Корпорация Майкрософт|Windows Server|2012 Datacenter, Datacenter 2012 R2, 2016 Datacenter, Datacenter 2019 г.|
+|Корпорация Майкрософт|Клиент Windows|Windows 10|
 |OpenLogic|CentOS|7.3, 7.4, 7.5|
 |Red Hat|Red Hat Enterprise Linux.|7.4, 7.5|
 |SUSE|SLES|12 с пакетом обновления 3|

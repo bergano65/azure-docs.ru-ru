@@ -11,12 +11,12 @@ ms.author: prasantp
 author: prasanthpul
 ms.date: 12/3/2018
 ms.custom: seodec18
-ms.openlocfilehash: 349f2c4eea743c3e44e492dfa76be4a70f2c37d6
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: 33a93aa01499beb978f616f633588ba75e4b62a3
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58362031"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59259190"
 ---
 # <a name="onnx-and-azure-machine-learning-create-and-deploy-interoperable-ai-models"></a>ONNX и Машинное обучение Azure: создание и развертывание моделей ИИ с возможностью взаимодействия
 
@@ -28,15 +28,16 @@ ms.locfileid: "58362031"
 Чтобы помочь вам добиться этих целей, корпорация Майкрософт реализовала поддержку ONNX во всех своих продуктах, включая Azure и Windows.  
 
 ## <a name="why-choose-onnx"></a>Для чего нужен ONNX?
+
 ONNX дает совместимость, которая позволяет быстрее запускать хорошие идеи в производство. Благодаря ONNX специалисты по обработке и анализу данных могут выбирать для своей работы предпочитаемую платформу. А разработчикам он позволяет тратить меньше времени на подготовку моделей к производству и развертывание в облаке и Edge.  
 
-Модели ONNX можно создавать из самых разных платформ, включая PyTorch, Chainer, Microsoft Cognitive Toolkit (CNTK), MXNet и ML.Net, TensorFlow, Keras, SciKit-Learn и другие.
+Можно создавать модели ONNX из многих платформ, включая PyTorch, Chainer, MXNet, ML.Net, TensorFlow, Keras, SciKit-Learn, Microsoft Cognitive Toolkit и многое другое.
 
 Также имеется экосистема средств для визуализации и ускорения моделей ONNX. Для распространенных сценариев доступен также ряд предварительно обученных моделей ONNX.
 
 [Модели ONNX можно развертывать](#deploy) в облако с помощью Машинного обучения Azure и среды выполнения ONNX. С помощью [Windows ML](https://docs.microsoft.com/windows/ai/) их можно также развертывать на устройствах Windows 10. В сообществе ONNX существуют также конвертеры для развертывания на другие платформы. 
 
-[![ONNX блок-схема обучения, преобразователи типов и развертывания](media/concept-onnx/onnx.png) ](./media/concept-onnx/onnx.png#lightbox)
+[![ONNX блок-схема обучение, преобразователи типов и развертывание](media/concept-onnx/onnx.png)](./media/concept-onnx/onnx.png#lightbox)
 
 ## <a name="get-onnx-models"></a>Получение моделей ONNX
 
@@ -53,11 +54,11 @@ ONNX дает совместимость, которая позволяет бы
 |Платформа модели|Пример или средство преобразования|
 |-----|-------|
 |PyTorch|[Записная книжка Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/PytorchOnnxExport.ipynb)|
-|Microsoft&nbsp;Cognitive&nbsp;Toolkit&nbsp;(CNTK)|[Записная книжка Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/CntkOnnxExport.ipynb)|
-|TensorFlow|[Преобразователь tensorflow-onnx](https://github.com/onnx/tensorflow-onnx)|
+|TensorFlow|[преобразователь tensorflow onnx](https://github.com/onnx/tensorflow-onnx)|
 |Chainer|[Записная книжка Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/ChainerOnnxExport.ipynb)|
 |MXNet|[Записная книжка Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/MXNetONNXExport.ipynb)|
 |Keras, ScitKit-Learn, CoreML<br/>XGBoost и libSVM|[WinMLTools](https://docs.microsoft.com/windows/ai/convert-model-winmltools)|
+|Microsoft&nbsp;Cognitive&nbsp;Toolkit|[Записная книжка Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/CntkOnnxExport.ipynb)|
 
 Актуальный список поддерживаемых платформ и преобразователей см. на [сайте с руководствами ONNX](https://github.com/onnx/tutorials).
 
@@ -144,6 +145,9 @@ results = session.run([], {"input1": indata1, "input2": indata2})
    image.wait_for_creation(show_output = True)
    ```
 
+   > [!TIP]
+   > В предыдущем примере используется образ по умолчанию, предоставляемых службой машинного обучения Azure. Также можно использовать пользовательский образ. Дополнительные сведения см. в разделах о настройке и регистрации образа в статье [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md#configureimage).
+
    Файл `score.py` содержит логику оценки и должен быть добавлен в образ. Этот файл используется для запуска модели в образе. Инструкции по созданию сценария оценки см. в этом [руководстве](tutorial-deploy-models-with-aml.md#create-scoring-script). Пример файла для модели ONNX см. ниже:
 
    ```python
@@ -204,9 +208,9 @@ results = session.run([], {"input1": indata1, "input2": indata2})
 Узнайте больше об ONNX или поддержите проект:
 + [Веб-сайт проекта ONNX](https://onnx.ai)
 
-+ [Код ONNX в GitHub](https://github.com/onnx/onnx)
++ [ONNX код на GitHub](https://github.com/onnx/onnx)
 
 Узнайте больше о среде выполнения ONNX или поддержите проект:
-+ [Репозиторий GitHub для среды выполнения ONNX](https://github.com/Microsoft/onnxruntime)
++ [Репозиторий GitHub ONNX среды выполнения](https://github.com/Microsoft/onnxruntime)
 
 

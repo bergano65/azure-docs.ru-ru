@@ -1,6 +1,6 @@
 ---
-title: Решение для анализа сетей Azure в Log Analytics | Документация Майкрософт
-description: Решение для анализа сетей Azure можно использовать в Log Analytics для просмотра журналов групп безопасности сети Azure и шлюза приложений Azure.
+title: Решение для анализа сетей Azure в Azure Monitor | Документация Майкрософт
+description: Решение для анализа сетей Azure можно использовать в Azure Monitor для просмотра журналов групп безопасности сети Azure и шлюза приложений Azure.
 services: log-analytics
 documentationcenter: ''
 author: richrundmsft
@@ -13,25 +13,25 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 06/21/2018
 ms.author: richrund
-ms.openlocfilehash: b1bcaa3a6246a97f15cbd249040844602f03a7b1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0a5d886558e72ef24b03a49750ed75cf7130bf08
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58107565"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006388"
 ---
-# <a name="azure-networking-monitoring-solutions-in-log-analytics"></a>Решения для мониторинга сетей Azure в Log Analytics
+# <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Решения в Azure Monitor для мониторинга сетей Azure
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Log Analytics предлагает следующие решения для мониторинга сетей.
+Azure Monitor предлагает следующие решения для мониторинга сетей:
 * Монитор производительности сети (NPM):
     * отслеживание работоспособности сети.
 * Анализ шлюзов приложений Azure для проверки:
     * журналы шлюза приложений Azure;
     * метрику шлюза приложений Azure.
 * Решения для отслеживания и аудита сетевой активности в облачной сети.
-    * [Анализ трафика](https://docs.microsoft.com/azure/networking/network-monitoring-overview#traffic-analytics). 
+    * [Аналитика трафика](https://docs.microsoft.com/azure/networking/network-monitoring-overview#traffic-analytics) 
     * Анализ групп безопасности сети Azure
 
 ## <a name="network-performance-monitor-npm"></a>Монитор производительности сети
@@ -46,15 +46,15 @@ Log Analytics предлагает следующие решения для мо
 
 ## <a name="azure-application-gateway-and-network-security-group-analytics"></a>Шлюз приложений Azure и анализ групп безопасности сети
 Чтобы использовать эти решения, выполните следующие действия.
-1. Добавьте решение по управлению в Log Analytics.
-2. Включите диагностику для аналитики журналов в рабочей области Log Analytics. Необязательно записывать журналы в хранилище BLOB-объектов Azure.
+1. Добавить решение по управлению в Azure Monitor и
+2. Включите диагностику для диагностики в рабочую область Log Analytics в Azure Monitor. Необязательно записывать журналы в хранилище BLOB-объектов Azure.
 
 Диагностику и соответствующее решение можно включить как для одного, так и для обоих компонентов (шлюз приложений и группы безопасности сети).
 
 Если не включить ведение журналов диагностики для определенного типа ресурсов, но установить решение, то колонки панели мониторинга для этого ресурса будут пустыми, а также появится сообщение об ошибке.
 
 > [!NOTE]
-> В январе 2017 г. поддерживаемый способ отправки журналов из шлюзов приложений и групп безопасности сети в Log Analytics был изменен. Если отобразится устаревшее решение **Анализ сетевой активности Azure (не рекомендуется)**, то выполните действия, описанные в разделе [Миграция из устаревшего решения для анализа сетевой активности](#migrating-from-the-old-networking-analytics-solution).
+> В январе 2017 г поддерживаемый способ отправки журналов из шлюзов приложений и групп безопасности сети к рабочей области Log Analytics изменены. Если отобразится устаревшее решение **Анализ сетевой активности Azure (не рекомендуется)**, то выполните действия, описанные в разделе [Миграция из устаревшего решения для анализа сетевой активности](#migrating-from-the-old-networking-analytics-solution).
 >
 >
 
@@ -68,7 +68,7 @@ Log Analytics предлагает следующие решения для мо
 | Таблицы Azure |  |  |&#8226; |  |  |при входе |
 
 
-## <a name="azure-application-gateway-analytics-solution-in-log-analytics"></a>Решение для анализа шлюзов приложений Azure в Log Analytics
+## <a name="azure-application-gateway-analytics-solution-in-azure-monitor"></a>Azure решение для анализа шлюзов приложений в Azure Monitor
 
 ![Символ "Аналитика службы приложений Azure"](media/azure-networking-analytics/azure-analytics-symbol.png)
 
@@ -86,23 +86,23 @@ Log Analytics предлагает следующие решения для мо
 ### <a name="install-and-configure-the-solution"></a>Установка и настройка решения
 Установите и настройте решение для анализа шлюзов приложений Azure, выполнив следующие указания:
 
-1. Включите решение для анализа шлюзов приложений Azure из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureAppGatewayAnalyticsOMS?tab=Overview) или выполните инструкции из статьи [Добавление решений для управления Azure Log Analytics в рабочую область](../../azure-monitor/insights/solutions.md).
+1. Включите решение для анализа шлюзов приложений Azure из [Azure marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureAppGatewayAnalyticsOMS?tab=Overview) или используя процесс, описанный в [решения добавьте Azure Monitor из коллекции решений](../../azure-monitor/insights/solutions.md).
 2. Включите ведение журнала диагностики для [шлюзов приложений](../../application-gateway/application-gateway-diagnostics.md), для которых требуется выполнять мониторинг.
 
 #### <a name="enable-azure-application-gateway-diagnostics-in-the-portal"></a>Включение диагностики шлюза приложений Azure на портале
 
-1. На портале Azure перейдите к ресурсу шлюза приложений, который необходимо отслеживать.
-2. Выберите *Журналы диагностики*, чтобы открыть следующую страницу:
+1. На портале Azure перейдите к ресурсу шлюза приложений необходимо отслеживать.
+2. Выберите *журналы диагностики* чтобы открыть следующую страницу.
 
    ![снимок экрана: ресурс шлюза приложений Azure](media/azure-networking-analytics/log-analytics-appgateway-enable-diagnostics01.png)
-3. Щелкните *Включить диагностику*, чтобы открыть следующую страницу:
+3. Нажмите кнопку *включить диагностику* чтобы открыть следующую страницу.
 
    ![снимок экрана: ресурс шлюза приложений Azure](media/azure-networking-analytics/log-analytics-appgateway-enable-diagnostics02.png)
-4. Чтобы включить диагностику, нажмите кнопку *Вкл.* в разделе *Состояние*.
-5. Установите флажок *Send to Log Analytics* (Отправить в Log Analytics).
-6. Выберите существующую рабочую область Log Analytics или создайте новую.
-7. В разделе **Журнал** установите флажки для всех типов журналов, которые необходимо собирать.
-8. Щелкните *Сохранить*, чтобы включить ведение журнала диагностики в Log Analytics.
+4. Чтобы включить диагностику, щелкните *на* под *состояние*.
+5. Установите флажок для *отправить в Log Analytics*.
+6. Выберите существующую рабочую область Log Analytics или создайте рабочую область.
+7. Установите флажок в разделе **журнала** для каждого типа журнала для сбора.
+8. Нажмите кнопку *Сохранить* активировать ведение журнала диагностики в Azure Monitor.
 
 #### <a name="enable-azure-network-diagnostics-using-powershell"></a>Включение диагностики сети Azure с помощью PowerShell
 
@@ -139,7 +139,7 @@ Set-AzDiagnosticSetting -ResourceId $gateway.ResourceId  -WorkspaceId $workspace
 На любой из страниц поиска журналов можно просмотреть результаты по времени, подробные результаты и историю поиска журналов. Для сужения области результатов выполните фильтрацию по аспектам.
 
 
-## <a name="azure-network-security-group-analytics-solution-in-log-analytics"></a>Решение для анализа групп безопасности сети Azure в Log Analytics
+## <a name="azure-network-security-group-analytics-solution-in-azure-monitor"></a>Решение для анализа групп безопасности сети Azure в Azure Monitor
 
 ![Символ "Аналитика групп безопасности сетей Azure"](media/azure-networking-analytics/azure-analytics-symbol.png)
 
@@ -157,7 +157,7 @@ Set-AzDiagnosticSetting -ResourceId $gateway.ResourceId  -WorkspaceId $workspace
 ### <a name="install-and-configure-the-solution"></a>Установка и настройка решения
 Установите и настройте решение для анализа сетей Azure, выполнив следующие указания:
 
-1. Включите решение для анализа групп безопасности сети Azure из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureNSGAnalyticsOMS?tab=Overview) или выполните инструкции из статьи [Добавление решений для управления Azure Log Analytics в рабочую область](../../azure-monitor/insights/solutions.md).
+1. Включите решение для анализа групп безопасности сети Azure из [Azure marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureNSGAnalyticsOMS?tab=Overview) или используя процесс, описанный в [решения добавьте Azure Monitor из коллекции решений](../../azure-monitor/insights/solutions.md).
 2. Включите ведение журнала диагностики для ресурсов [групп безопасности сети](../../virtual-network/virtual-network-nsg-manage-log.md), для которых требуется выполнять мониторинг.
 
 ### <a name="enable-azure-network-security-group-diagnostics-in-the-portal"></a>Включение диагностики групп безопасности сети Azure на портале
@@ -205,17 +205,17 @@ Set-AzDiagnosticSetting -ResourceId $nsg.ResourceId  -WorkspaceId $workspaceId -
 На любой из страниц поиска журналов можно просмотреть результаты по времени, подробные результаты и историю поиска журналов. Для сужения области результатов выполните фильтрацию по аспектам.
 
 ## <a name="migrating-from-the-old-networking-analytics-solution"></a>Миграция из устаревшего решения для анализа сетевой активности
-В январе 2017 г. поддерживаемый способ отправки журналов из шлюзов приложений Azure и групп безопасности сети Azure в Log Analytics был изменен. Эти изменения обеспечивают следующие преимущества:
-+ Журналы записываются непосредственно в Log Analytics без необходимости использования учетной записи хранения.
-+ Меньше задержка между моментом создания журналов и их доступностью в Log Analytics.
+В январе 2017 г поддерживаемый способ отправки журналов из шлюзов приложений Azure и групп безопасности сети Azure к рабочей области Log Analytics изменены. Эти изменения обеспечивают следующие преимущества:
++ Журналы записываются непосредственно в Azure Monitor без необходимости использования учетной записи хранения
++ Меньше задержка между моментом создания журналов и к ним будут доступны в Azure Monitor
 + Меньше этапов настройки.
 + Общий формат для всех типов системы диагностики Azure.
 
 Чтобы использовать обновленные решения, выполните следующие действия:
 
-1. [Настройте непосредственную отправку данных диагностики из шлюзов приложений Azure в Log Analytics](#enable-azure-application-gateway-diagnostics-in-the-portal).
-2. [Настройте непосредственную отправку данных диагностики из групп безопасности сети Azure в Log Analytics](#enable-azure-network-security-group-diagnostics-in-the-portal).
-2. Включите решения для *анализа шлюзов приложений Azure* и *анализа групп безопасности сети Azure*, как описано в статье [Добавление решений для управления Log Analytics](../../azure-monitor/insights/solutions.md).
+1. [Настройка диагностики для отправляться непосредственно в Azure Monitor из шлюзов приложений Azure](#enable-azure-application-gateway-diagnostics-in-the-portal)
+2. [Настройка диагностики отправку непосредственно в Azure Monitor групп безопасности сети Azure](#enable-azure-network-security-group-diagnostics-in-the-portal)
+2. Включить *анализа шлюзов приложений Azure* и *анализ групп безопасности сети Azure* решения, используя процесс, описанный в [решений для добавления Azure Monitor Коллекция решений](solutions.md)
 3. Обновите все сохраненные запросы, панели мониторинга и оповещения, чтобы использовать новый тип данных.
    + Тип меняется на AzureDiagnostics. Параметр ResourceType можно использовать для фильтрации по журналам сети.
 
@@ -228,7 +228,7 @@ Set-AzDiagnosticSetting -ResourceId $nsg.ResourceId  -WorkspaceId $workspaceId -
    + Для любого поля, имя которого содержит суффикс \_s, \_d или \_g, переведите первый знак в нижний регистр.
    + Для любого поля, имя которого содержит суффикс \_o, данные разбиваются на отдельные поля на основе имен вложенных полей.
 4. Удалите устаревшее решение *Анализ сетевой активности Azure (не рекомендуется)*.
-   + Если используется PowerShell, то выполните следующую команду: `Set-AzureOperationalInsightsIntelligencePack -ResourceGroupName <resource group that the workspace is in> -WorkspaceName <name of the log analytics workspace> -IntelligencePackName "AzureNetwork" -Enabled $false`
+   + Если вы используете PowerShell, используйте `Set-AzureOperationalInsightsIntelligencePack -ResourceGroupName <resource group that the workspace is in> -WorkspaceName <name of the log analytics workspace> -IntelligencePackName "AzureNetwork" -Enabled $false`
 
 Данные, собранные до этого изменения, не отображаются в новом решении. Эти данные по-прежнему можно запрашивать с помощью старых имен типов и полей.
 
@@ -236,4 +236,4 @@ Set-AzDiagnosticSetting -ResourceId $nsg.ResourceId  -WorkspaceId $workspaceId -
 [!INCLUDE [log-analytics-troubleshoot-azure-diagnostics](../../../includes/log-analytics-troubleshoot-azure-diagnostics.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Используйте [поиск по журналам в Log Analytics](../../azure-monitor/log-query/log-query-overview.md) для просмотра подробных данных диагностики Azure.
+* Используйте [журнал запросов в Azure Monitor](../log-query/log-query-overview.md) для просмотра подробных данных диагностики Azure.

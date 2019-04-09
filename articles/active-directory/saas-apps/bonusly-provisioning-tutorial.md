@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка Bonusly для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Учебник. Настройка Bonusly для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Сведения о настройке Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в Bonusly.
 services: active-directory
 documentationcenter: ''
@@ -17,20 +17,20 @@ ms.date: 03/27/2019
 ms.author: v-wingf-msft
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4ad0ee590572dbc92e67be9f84ffc65afc3e8473
-ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
-ms.translationtype: HT
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59056968"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59278740"
 ---
-# <a name="tutorial-configure-bonusly-for-automatic-user-provisioning"></a>Руководство по Настройка Bonusly для автоматической подготовки пользователей
+# <a name="tutorial-configure-bonusly-for-automatic-user-provisioning"></a>Учебник. Настройка Bonusly для автоматической подготовки пользователей
 
 В этом руководстве описаны шаги, которые нужно выполнить в Bonusly и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отзыва пользователей и групп в Bonusly.
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
@@ -128,7 +128,7 @@ ms.locfileid: "59056968"
 
     ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/EmailNotification.png)
 
-10. Выберите команду **Сохранить**.
+10. Нажмите кнопку **Сохранить**.
 
 11. В разделе **Сопоставления** выберите **Synchronize Azure Active Directory Users to Bonusly** (Синхронизировать пользователей Azure Active Directory с Bonusly).
 

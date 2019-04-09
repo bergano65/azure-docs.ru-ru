@@ -2,18 +2,18 @@
 title: Конструктивные шаблоны таблиц в службе хранилища Azure | Документация Майкрософт
 description: Использование шаблонов для решений для службы таблиц Azure.
 services: storage
-author: MarkMcGeeAtAquent
+author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 04/23/2018
-ms.author: sngun
+ms.date: 04/08/2019
+ms.author: tamram
 ms.subservice: tables
-ms.openlocfilehash: f2f4fb04ac483f7716c0b7a0fb1f87843d8b817f
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: a428abd95f955a16d03c4ab86f05644f6db65da5
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57995303"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59271634"
 ---
 # <a name="table-design-patterns"></a>Шаблоны для разработки таблиц
 В этой статье приводится описание некоторых шаблонов, которые подходят для использования с решениями для службы таблиц. Кроме того, вы увидите практическое решение ряда проблем и сможете выбрать компромиссный вариант из предлагаемых в других статьях о разработке для хранилища таблиц. На следующей схеме показаны связи между различными шаблонами.  
@@ -71,8 +71,8 @@ ms.locfileid: "57995303"
 ### <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 При реализации данного шаблона можно принять во внимание следующие шаблоны и рекомендации:  
 
-* [Шаблон вторичного индекса в разных разделах;](#inter-partition-secondary-index-pattern)
-* [Шаблон составного ключа;](#compound-key-pattern)
+* [Шаблон вторичного индекса в разных разделах](#inter-partition-secondary-index-pattern)
+* [Шаблон составного ключа](#compound-key-pattern)
 * Транзакции группы сущностей
 * [Работа с разными типами сущностей](#working-with-heterogeneous-entity-types)
 
@@ -125,9 +125,9 @@ ms.locfileid: "57995303"
 ### <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 При реализации данного шаблона можно принять во внимание следующие шаблоны и рекомендации:  
 
-* [Шаблон для согласованных транзакций;](#eventually-consistent-transactions-pattern)  
-* [Шаблон вторичного индекса внутри раздела;](#intra-partition-secondary-index-pattern)  
-* [Шаблон составного ключа;](#compound-key-pattern)  
+* [Шаблон для согласованных транзакций](#eventually-consistent-transactions-pattern)  
+* [Шаблон вторичного индекса внутри раздела](#intra-partition-secondary-index-pattern)  
+* [Шаблон составного ключа](#compound-key-pattern)  
 * Транзакции группы сущностей  
 * [Работа с разными типами сущностей](#working-with-heterogeneous-entity-types)  
 
@@ -197,7 +197,7 @@ ms.locfileid: "57995303"
 * Создание сущностей индексов в одном разделе с сущностями сотрудников.  
 * Создание сущностей индексов в отдельном разделе или таблице.  
 
-<u>Вариант 1. Использование хранилища BLOB-объектов</u>  
+<u>Вариант #1. Использование хранилища BLOB-объектов</u>  
 
 В этом случае вы создаете большой двоичный объект для каждой уникальной фамилии, а затем в каждом таком объекте сохраняете список значений **PartitionKey** (отдел) и **RowKey** (идентификатор сотрудника) для сотрудников с этой фамилией. При добавлении или удалении сотрудника следует убедиться, что содержимое соответствующего большого двоичного объекта согласовано с сущностями сотрудников.  
 
@@ -249,8 +249,8 @@ ms.locfileid: "57995303"
 ### <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 При реализации данного шаблона можно принять во внимание следующие шаблоны и рекомендации:  
 
-* [Шаблон составного ключа;](#compound-key-pattern)  
-* [Шаблон для согласованных транзакций;](#eventually-consistent-transactions-pattern)  
+* [Шаблон составного ключа](#compound-key-pattern)  
+* [Шаблон для согласованных транзакций](#eventually-consistent-transactions-pattern)  
 * Транзакции группы сущностей  
 * [Работа с разными типами сущностей](#working-with-heterogeneous-entity-types)  
 
@@ -263,7 +263,7 @@ ms.locfileid: "57995303"
 ![Сущность отдела и сущность сотрудника](media/storage-table-design-guide/storage-table-design-IMAGE16.png)
 
 ### <a name="solution"></a>Решение
-Вместо хранения данных в двух отдельных сущностях денормализуйте данные и сохраните копию со сведениями о руководителе в сущности отдела. Например:   
+Вместо хранения данных в двух отдельных сущностях денормализуйте данные и сохраните копию со сведениями о руководителе в сущности отдела. Например:  
 
 ![Сущность отдела](media/storage-table-design-guide/storage-table-design-IMAGE17.png)
 
@@ -281,7 +281,7 @@ ms.locfileid: "57995303"
 ### <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 При реализации данного шаблона можно принять во внимание следующие шаблоны и рекомендации:  
 
-* [Шаблон составного ключа;](#compound-key-pattern)  
+* [Шаблон составного ключа](#compound-key-pattern)  
 * Транзакции группы сущностей  
 * [Работа с разными типами сущностей](#working-with-heterogeneous-entity-types)
 
@@ -327,7 +327,7 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 
 * Транзакции группы сущностей  
 * [Работа с разными типами сущностей](#working-with-heterogeneous-entity-types)  
-* [Шаблон для согласованных транзакций;](#eventually-consistent-transactions-pattern)  
+* [Шаблон для согласованных транзакций](#eventually-consistent-transactions-pattern)  
 
 ## <a name="log-tail-pattern"></a>Шаблон для заключительного фрагмента журнала
 Извлечение *n* сущностей, недавно добавленных в раздел, с помощью значения **RowKey** , выполняющего сортировку по дате и времени в обратном порядке.  
@@ -362,7 +362,7 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 ### <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 При реализации данного шаблона можно принять во внимание следующие шаблоны и рекомендации:  
 
-* [Анти-шаблон, предусматривающий добавление в начало или конец;](#prepend-append-anti-pattern)  
+* [Добавить в начало / append антишаблон](#prepend-append-anti-pattern)  
 * [Извлечение сущностей.](#retrieving-entities)  
 
 ## <a name="high-volume-delete-pattern"></a>Шаблон для удаления больших объемов сущностей
@@ -480,8 +480,8 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 ### <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 При реализации данного шаблона можно принять во внимание следующие шаблоны и рекомендации:  
 
-* [Шаблон для согласованных транзакций;](#eventually-consistent-transactions-pattern)  
-* [Шаблон для масштабных сущностей.](#wide-entities-pattern)
+* [Шаблон для согласованных транзакций](#eventually-consistent-transactions-pattern)  
+* [Шаблон для масштабных сущностей](#wide-entities-pattern)
 
 <a name="prepend-append-anti-pattern"></a>
 
@@ -512,8 +512,8 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 ### <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 При реализации данного шаблона можно принять во внимание следующие шаблоны и рекомендации:  
 
-* [Шаблон составного ключа;](#compound-key-pattern)  
-* [Шаблон для заключительного фрагмента журнала;](#log-tail-pattern)  
+* [Шаблон составного ключа](#compound-key-pattern)  
+* [Шаблон для заключительного фрагмента журнала](#log-tail-pattern)  
 * [Изменение сущностей.](#modifying-entities)  
 
 ## <a name="log-data-anti-pattern"></a>Анти-шаблон для данных журнала
@@ -583,27 +583,25 @@ var query = (from employee in employeeQuery
             employee.RowKey.CompareTo("B") >= 0 &&
             employee.RowKey.CompareTo("C") < 0
             select employee).AsTableQuery();
+            
 var employees = query.Execute();  
 ```
 
 Обратите внимание на то, каким образом в запросе указываются свойства **RowKey** и **PartitionKey** для обеспечения максимального быстродействия.  
 
-В следующем примере кода показана эквивалентная функциональность с использованием плавного API (дополнительные сведения о плавных API см. в разделе [Best Practices for Designing a Fluent API](https://visualstudiomagazine.com/articles/2013/12/01/best-practices-for-designing-a-fluent-api.aspx) (Советы и рекомендации по разработке плавного API)).  
+В следующем образце кода показана эквивалентная функциональность без использования синтаксиса LINQ:  
 
 ```csharp
-TableQuery<EmployeeEntity> employeeQuery = new TableQuery<EmployeeEntity>().Where(
-    TableQuery.CombineFilters(
-    TableQuery.CombineFilters(
-        TableQuery.GenerateFilterCondition(
-    "PartitionKey", QueryComparisons.Equal, "Sales"),
-    TableOperators.And,
-    TableQuery.GenerateFilterCondition(
-    "RowKey", QueryComparisons.GreaterThanOrEqual, "B")
-),
-TableOperators.And,
-TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.LessThan, "C")
-    )
-);
+TableQuery<EmployeeEntity> employeeQuery = 
+    new TableQuery<EmployeeEntity>().Where(
+        TableQuery.CombineFilters(
+            TableQuery.CombineFilters(
+                TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Sales"),
+                TableOperators.And,
+                TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.GreaterThanOrEqual, "B")),
+            TableOperators.And,
+            TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.LessThan, "C")));
+            
 var employees = employeeTable.ExecuteQuery(employeeQuery);  
 ```
 
@@ -622,36 +620,31 @@ var employees = employeeTable.ExecuteQuery(employeeQuery);
 Клиентская библиотека хранилища может автоматически обрабатывать маркеры продолжения при возвращении сущностей из службы таблиц. В следующем примере кода C# клиентская библиотека хранилища автоматически обрабатывает маркеры продолжения в случае их возвращения службой таблиц в ответе.  
 
 ```csharp
-string filter = TableQuery.GenerateFilterCondition(
-        "PartitionKey", QueryComparisons.Equal, "Sales");
-TableQuery<EmployeeEntity> employeeQuery =
-        new TableQuery<EmployeeEntity>().Where(filter);
+string filter = TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Sales");
+TableQuery<EmployeeEntity> employeeQuery = new TableQuery<EmployeeEntity>().Where(filter);
 
 var employees = employeeTable.ExecuteQuery(employeeQuery);
 foreach (var emp in employees)
 {
-        ...
+    // ...
 }  
 ```
 
 Следующий код C# обрабатывает маркеры продолжения явным образом.  
 
 ```csharp
-string filter = TableQuery.GenerateFilterCondition(
-        "PartitionKey", QueryComparisons.Equal, "Sales");
-TableQuery<EmployeeEntity> employeeQuery =
-        new TableQuery<EmployeeEntity>().Where(filter);
+string filter = TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Sales");
+TableQuery<EmployeeEntity> employeeQuery = new TableQuery<EmployeeEntity>().Where(filter);
 
 TableContinuationToken continuationToken = null;
-
 do
 {
-        var employees = employeeTable.ExecuteQuerySegmented(
-        employeeQuery, continuationToken);
+    var employees = employeeTable.ExecuteQuerySegmented(employeeQuery, continuationToken);
     foreach (var emp in employees)
     {
-    ...
+        // ...
     }
+    
     continuationToken = employees.ContinuationToken;
 } while (continuationToken != null);  
 ```
@@ -677,16 +670,15 @@ employeeQuery.TakeCount = 50;
 Одна сущность может иметь до 255 свойств и быть размером не более 1 МБ. При выполнении запроса к таблице и извлечении сущностей может потребоваться только часть свойств, а передача данных будет осуществляться только при необходимости (для сокращения времени задержки и снижения затрат). Проекции на стороне сервера можно использовать для передачи только необходимых свойств. В следующем примере показано извлечение только свойства **Email** (вместе с **PartitionKey**, **RowKey**, **Timestamp** и **ETag**) из сущностей, выбранных запросом.  
 
 ```csharp
-string filter = TableQuery.GenerateFilterCondition(
-        "PartitionKey", QueryComparisons.Equal, "Sales");
+string filter = TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Sales");
 List<string> columns = new List<string>() { "Email" };
 TableQuery<EmployeeEntity> employeeQuery =
-        new TableQuery<EmployeeEntity>().Where(filter).Select(columns);
+    new TableQuery<EmployeeEntity>().Where(filter).Select(columns);
 
 var entities = employeeTable.ExecuteQuery(employeeQuery);
 foreach (var e in entities)
 {
-        Console.WriteLine("RowKey: {0}, EmployeeEmail: {1}", e.RowKey, e.Email);
+    Console.WriteLine("RowKey: {0}, EmployeeEmail: {1}", e.RowKey, e.Email);
 }  
 ```
 
@@ -719,7 +711,7 @@ foreach (var e in entities)
 <tr>
 <th>PartitionKey</th>
 <th>RowKey</th>
-<th>Timestamp</th>
+<th>Метка времени</th>
 <th></th>
 </tr>
 <tr>
@@ -731,8 +723,8 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
-<th>Email</th>
+<th>Возраст</th>
+<th>Электронное письмо</th>
 </tr>
 <tr>
 <td></td>
@@ -751,8 +743,8 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
-<th>Email</th>
+<th>Возраст</th>
+<th>Электронное письмо</th>
 </tr>
 <tr>
 <td></td>
@@ -788,8 +780,8 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
-<th>Email</th>
+<th>Возраст</th>
+<th>Электронное письмо</th>
 </tr>
 <tr>
 <td></td>
@@ -811,7 +803,7 @@ foreach (var e in entities)
 <tr>
 <th>PartitionKey</th>
 <th>RowKey</th>
-<th>Timestamp</th>
+<th>Метка времени</th>
 <th></th>
 </tr>
 <tr>
@@ -824,8 +816,8 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
-<th>Email</th>
+<th>Возраст</th>
+<th>Электронное письмо</th>
 </tr>
 <tr>
 <td>Employee</td>
@@ -846,8 +838,8 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
-<th>Email</th>
+<th>Возраст</th>
+<th>Электронное письмо</th>
 </tr>
 <tr>
 <td>Employee</td>
@@ -870,7 +862,7 @@ foreach (var e in entities)
 <th>EmployeeCount</th>
 </tr>
 <tr>
-<td>Department</td>
+<td>Отдел</td>
 <td></td>
 <td></td>
 </tr>
@@ -887,8 +879,8 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
-<th>Email</th>
+<th>Возраст</th>
+<th>Электронное письмо</th>
 </tr>
 <tr>
 <td>Employee</td>
@@ -921,31 +913,29 @@ foreach (var e in entities)
 Вторым вариантом является использование типа **DynamicTableEntity** (контейнер свойств) вместо конкретного типа сущности POCO. Этот вариант способен повысить производительность, так как не нужно выполнять сериализацию и десериализацию сущности в типы .NET. В следующем примере кода C# показано извлечение нескольких сущностей различных типов из таблицы и возврат всех сущностей в качестве экземпляров **DynamicTableEntity**. После этого в примере используется свойство **EntityType** для определения типа каждой сущности.  
 
 ```csharp
-string filter = TableQuery.CombineFilters(
-    TableQuery.GenerateFilterCondition("PartitionKey",
-    QueryComparisons.Equal, "Sales"),
-    TableOperators.And,
+string filter =
     TableQuery.CombineFilters(
-    TableQuery.GenerateFilterCondition("RowKey",
-                    QueryComparisons.GreaterThanOrEqual, "B"),
+        TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Sales"),
         TableOperators.And,
-        TableQuery.GenerateFilterCondition("RowKey",
-        QueryComparisons.LessThan, "F")
-    )
-);
+        TableQuery.CombineFilters(
+            TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.GreaterThanOrEqual, "B"),
+            TableOperators.And,
+            TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.LessThan, "F")));
+        
 TableQuery<DynamicTableEntity> entityQuery =
     new TableQuery<DynamicTableEntity>().Where(filter);
+    
 var employees = employeeTable.ExecuteQuery(entityQuery);
 
 IEnumerable<DynamicTableEntity> entities = employeeTable.ExecuteQuery(entityQuery);
 foreach (var e in entities)
 {
-EntityProperty entityTypeProperty;
-if (e.Properties.TryGetValue("EntityType", out entityTypeProperty))
-{
-    if (entityTypeProperty.StringValue == "Employee")
+    EntityProperty entityTypeProperty;
+    if (e.Properties.TryGetValue("EntityType", out entityTypeProperty))
     {
-        // Use entityTypeProperty, RowKey, PartitionKey, Etag, and Timestamp
+        if (entityTypeProperty.StringValue == "Employee")
+        {
+            // use entityTypeProperty, RowKey, PartitionKey, Etag, and Timestamp
         }
     }
 }  
@@ -958,42 +948,43 @@ if (e.Properties.TryGetValue("EntityType", out entityTypeProperty))
 ```csharp
 EntityResolver<TableEntity> resolver = (pk, rk, ts, props, etag) =>
 {
-
-        TableEntity resolvedEntity = null;
-        if (props["EntityType"].StringValue == "Department")
-        {
+    TableEntity resolvedEntity = null;
+    if (props["EntityType"].StringValue == "Department")
+    {
         resolvedEntity = new DepartmentEntity();
-        }
-        else if (props["EntityType"].StringValue == "Employee")
-        {
+    }
+    else if (props["EntityType"].StringValue == "Employee")
+    {
         resolvedEntity = new EmployeeEntity();
-        }
-        else throw new ArgumentException("Unrecognized entity", "props");
+    }
+    else 
+    {
+        throw new ArgumentException("Unrecognized entity", "props");
+    }
 
-        resolvedEntity.PartitionKey = pk;
-        resolvedEntity.RowKey = rk;
-        resolvedEntity.Timestamp = ts;
-        resolvedEntity.ETag = etag;
-        resolvedEntity.ReadEntity(props, null);
-        return resolvedEntity;
+    resolvedEntity.PartitionKey = pk;
+    resolvedEntity.RowKey = rk;
+    resolvedEntity.Timestamp = ts;
+    resolvedEntity.ETag = etag;
+    resolvedEntity.ReadEntity(props, null);
+    return resolvedEntity;
 };
 
-string filter = TableQuery.GenerateFilterCondition(
-        "PartitionKey", QueryComparisons.Equal, "Sales");
-TableQuery<DynamicTableEntity> entityQuery =
-        new TableQuery<DynamicTableEntity>().Where(filter);
+string filter = TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Sales");
+        
+TableQuery<DynamicTableEntity> entityQuery = new TableQuery<DynamicTableEntity>().Where(filter);
 
 var entities = employeeTable.ExecuteQuery(entityQuery, resolver);
 foreach (var e in entities)
 {
-        if (e is DepartmentEntity)
-        {
-    ...
-        }
-        if (e is EmployeeEntity)
-        {
-    ...
-        }
+    if (e is DepartmentEntity)
+    {
+        // ...
+    }
+    else if (e is EmployeeEntity)
+    {
+        // ...
+    }
 }  
 ```
 
@@ -1001,19 +992,17 @@ foreach (var e in entities)
 Чтобы удалить тип сущности, его не нужно знать. Однако при вставке тип сущности всегда известен. Чтобы обновить сущность, не зная ее тип и не используя класс сущности POCO, можно воспользоваться типом **DynamicTableEntity**. Следующий пример кода извлекает одну сущность и проверяет свойство **EmployeeCount** перед его обновлением.  
 
 ```csharp
-TableResult result =
-        employeeTable.Execute(TableOperation.Retrieve(partitionKey, rowKey));
+TableResult result = employeeTable.Execute(TableOperation.Retrieve(partitionKey, rowKey));
 DynamicTableEntity department = (DynamicTableEntity)result.Result;
 
 EntityProperty countProperty;
-
 if (!department.Properties.TryGetValue("EmployeeCount", out countProperty))
 {
-        throw new
-        InvalidOperationException("Invalid entity, EmployeeCount property not found.");
+    throw new InvalidOperationException("Invalid entity, EmployeeCount property not found.");
 }
+
 countProperty.Int32Value += 1;
-employeeTable.Execute(TableOperation.Merge(department));  
+employeeTable.Execute(TableOperation.Merge(department));
 ```
 
 ## <a name="controlling-access-with-shared-access-signatures"></a>Управление доступом с помощью подписей общего доступа
@@ -1038,23 +1027,20 @@ employeeTable.Execute(TableOperation.Merge(department));
 ```csharp
 private static void ManyEntitiesQuery(CloudTable employeeTable, string department)
 {
-        string filter = TableQuery.GenerateFilterCondition(
-        "PartitionKey", QueryComparisons.Equal, department);
-        TableQuery<EmployeeEntity> employeeQuery =
-        new TableQuery<EmployeeEntity>().Where(filter);
+    string filter = TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, department);
+    TableQuery<EmployeeEntity> employeeQuery = new TableQuery<EmployeeEntity>().Where(filter);
 
-        TableContinuationToken continuationToken = null;
-
-        do
-        {
-        var employees = employeeTable.ExecuteQuerySegmented(
-                employeeQuery, continuationToken);
-        foreach (var emp in employees)
+    TableContinuationToken continuationToken = null;
+    do
     {
-        ...
-    }
+        var employees = employeeTable.ExecuteQuerySegmented(employeeQuery, continuationToken);
+        foreach (var emp in employees)
+        {
+            // ...
+        }
+        
         continuationToken = employees.ContinuationToken;
-        } while (continuationToken != null);
+    } while (continuationToken != null);
 }  
 ```
 
@@ -1063,22 +1049,20 @@ private static void ManyEntitiesQuery(CloudTable employeeTable, string departmen
 ```csharp
 private static async Task ManyEntitiesQueryAsync(CloudTable employeeTable, string department)
 {
-        string filter = TableQuery.GenerateFilterCondition(
-        "PartitionKey", QueryComparisons.Equal, department);
-        TableQuery<EmployeeEntity> employeeQuery =
-        new TableQuery<EmployeeEntity>().Where(filter);
-        TableContinuationToken continuationToken = null;
-
-        do
-        {
-        var employees = await employeeTable.ExecuteQuerySegmentedAsync(
-                employeeQuery, continuationToken);
+    string filter = TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, department);
+    TableQuery<EmployeeEntity> employeeQuery = new TableQuery<EmployeeEntity>().Where(filter);
+    
+    TableContinuationToken continuationToken = null;
+    do
+    {
+        var employees = await employeeTable.ExecuteQuerySegmentedAsync(employeeQuery, continuationToken);
         foreach (var emp in employees)
         {
-            ...
+            // ...
         }
+    
         continuationToken = employees.ContinuationToken;
-            } while (continuationToken != null);
+    } while (continuationToken != null);
 }  
 ```
 
@@ -1094,24 +1078,24 @@ private static async Task ManyEntitiesQueryAsync(CloudTable employeeTable, strin
 Можно вставлять, обновлять и удалять сущности в асинхронном режиме. В следующем примере кода C# показан простой синхронный метод вставки или замены сущности сотрудника.  
 
 ```csharp
-private static void SimpleEmployeeUpsert(CloudTable employeeTable,
-        EmployeeEntity employee)
+private static void SimpleEmployeeUpsert(
+    CloudTable employeeTable,
+    EmployeeEntity employee)
 {
-        TableResult result = employeeTable
-        .Execute(TableOperation.InsertOrReplace(employee));
-        Console.WriteLine("HTTP Status: {0}", result.HttpStatusCode);
+    TableResult result = employeeTable.Execute(TableOperation.InsertOrReplace(employee));
+    Console.WriteLine("HTTP Status: {0}", result.HttpStatusCode);
 }  
 ```
 
 Этот код можно легко изменить, чтобы обновление выполнялось в асинхронном режиме, как показано ниже.  
 
 ```csharp
-private static async Task SimpleEmployeeUpsertAsync(CloudTable employeeTable,
-        EmployeeEntity employee)
+private static async Task SimpleEmployeeUpsertAsync(
+    CloudTable employeeTable,
+    EmployeeEntity employee)
 {
-        TableResult result = await employeeTable
-        .ExecuteAsync(TableOperation.InsertOrReplace(employee));
-        Console.WriteLine("HTTP Status: {0}", result.HttpStatusCode);
+    TableResult result = await employeeTable.ExecuteAsync(TableOperation.InsertOrReplace(employee));
+    Console.WriteLine("HTTP Status: {0}", result.HttpStatusCode);
 }  
 ```
 
@@ -1125,6 +1109,6 @@ private static async Task SimpleEmployeeUpsertAsync(CloudTable employeeTable,
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Моделирование отношений](table-storage-design-modeling.md)
-- [Проектирование запросов](table-storage-design-for-query.md)
-- [Шифрование данных таблиц](table-storage-design-encrypt-data.md)
-- [Проектирование изменения данных](table-storage-design-for-modification.md)
+- [Разработка для запросов](table-storage-design-for-query.md)
+- [Шифрование данных таблицы](table-storage-design-encrypt-data.md)
+- [Разработка для изменения данных](table-storage-design-for-modification.md)

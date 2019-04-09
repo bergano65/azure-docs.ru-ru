@@ -5,17 +5,17 @@ keywords: powershell dsc, desired state configuration, powershell dsc для azu
 services: automation
 ms.service: automation
 ms.subservice: dsc
-author: DCtheGeek
-ms.author: dacoulte
+author: bobbytreed
+ms.author: robreed
 ms.date: 08/21/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: b82457d8a7ce70ecfde32ba625ef610a3772213c
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: 64588829cec964e52dcb44465869e0090f36f9f1
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54432197"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59278628"
 ---
 # <a name="composing-dsc-configurations-in-azure-automation-state-configuration-dsc-using-composite-resources"></a>Составление конфигураций DSC в службе "Настройка состояния службы автоматизации Azure" с помощью составных ресурсов
 
@@ -32,17 +32,17 @@ ms.locfileid: "54432197"
 1. На странице **Учетная запись автоматизации** в разделе **Управление конфигурацией** выберите **Настройка состояния (DSC)**.
 1. На странице **Настройка состояния (DSC)** выберите вкладку **Конфигурации** или **Составленные конфигурации**, а затем в меню в верхней части страницы выберите пункт **Составление конфигурации**.
 1. В шаге **Основы** укажите имя новой конфигурации (обязательно), а затем щелкните в любом месте строки каждого составного ресурса, который следует включить в конфигурацию. Нажмите кнопку **Далее** или щелкните шаг **Исходный код**. Для последующих шагов мы выбрали составные ресурсы **PSExecutionPolicy** и **RenameAndDomainJoin**.
-   ![Снимок экрана: шаг "Основы" на странице составления конфигурации](./media/compose-configurationwithcompositeresources/compose-configuration-basics.png)
+   ![Снимок экрана шаге basics части страницы конфигурации compose](./media/compose-configurationwithcompositeresources/compose-configuration-basics.png)
 1. В шаге **Исходный код** показано, как выглядит составленная из выбранных составных ресурсов конфигурация. Вы можете увидеть, как объединяются все параметры и как они передаются в составной ресурс. Просмотрев новый исходный код, нажмите кнопку **Далее** или щелкните шаг **Параметры**.
-   ![Снимок экрана: шаг "Исходный код" на странице составления конфигурации](./media/compose-configurationwithcompositeresources/compose-configuration-sourcecode.png)
+   ![Снимок экрана исходного кода страницы конфигурации compose](./media/compose-configurationwithcompositeresources/compose-configuration-sourcecode.png)
 1. В шаге **Параметры** можно указать параметры для каждого составного ресурса. Если у параметра есть описание, оно приводится рядом с полем параметра. Если поле содержит параметр типа **PSCredential**, в раскрывающемся списке приводятся объекты **учетных данных**, имеющиеся в текущей учетной записи службы автоматизации. Кроме того, доступен пункт **+ Добавить учетные данные**. Указав все обязательные параметры, щелкните **Сохранить и скомпилировать**.
-   ![Снимок экрана: шаг "Параметры" на странице составления конфигурации](./media/compose-configurationwithcompositeresources/compose-configuration-parameters.png)
+   ![Снимок экрана параметров страницы конфигурации compose](./media/compose-configurationwithcompositeresources/compose-configuration-parameters.png)
 
 После сохранения новой конфигурации она отправляется на компиляцию. Состояние задания компиляции можно просмотреть так же, как для любой импортируемой конфигурации. Дополнительные сведения см. в разделе [Просмотр задания компиляции](automation-dsc-getting-started.md#viewing-a-compilation-job).
 
 После успешного завершения компиляции новая конфигурация появляется на вкладке **Составленные конфигурации**. После того как она становится доступна на этой вкладке, ее можно назначить управляемому узлу, выполнив инструкции в разделе [Переназначение узла другой конфигурации](automation-dsc-getting-started.md#reassigning-a-node-to-a-different-node-configuration).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы приступить к работе со службой "Настройка состояния службы автоматизации Azure", см. сведения в [этой статье](automation-dsc-getting-started.md).
 - Дополнительные сведения о подключении узлов см. в статье [Подключение компьютеров для управления с помощью Azure Automation DSC](automation-dsc-onboarding.md).

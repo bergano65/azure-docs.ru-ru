@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/08/2018
 ms.author: cynthn
-ms.openlocfilehash: dbf614f9749039b054e1134df31334a6248e2b78
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 24cff3a2ec4d0bed7a030ca430eaa698eb4a7325
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55981406"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59278774"
 ---
 # <a name="create-a-virtual-machine-scale-set-that-uses-availability-zones"></a>Создание масштабируемого набора Azure, который использует зоны доступности
 
@@ -45,7 +45,7 @@ ms.locfileid: "55981406"
 
 ### <a name="zone-balancing"></a>Балансировка зоны
 
-И наконец, для масштабируемых наборов, развернутых в нескольких зонах, также можно выбрать между вариантом наилучшей балансировки зон и строгой балансировки зон. Масштабируемый набор считается сбалансированным, если каждая зона имеет одинаковое количество виртуальных машин или +\\- 1 VM во всех остальных зонах для набора шкалы. Например: 
+И наконец, для масштабируемых наборов, развернутых в нескольких зонах, также можно выбрать между вариантом наилучшей балансировки зон и строгой балансировки зон. Масштабируемый набор считается сбалансированным, если каждая зона имеет одинаковое количество виртуальных машин или +\\- 1 VM во всех остальных зонах для набора шкалы. Например:
 
 - Масштабируемый набор с 2 виртуальными машинами в зоне 1, 3 виртуальными машинами в зоне 2 и 3 виртуальными машинами в зоне 3 считается сбалансированным. Существует только одна зона с различным количеством виртуальных машин, и она только на 1 меньше, чем в других зонах. 
 - Масштабируемый набор с 1 виртуальной машиной в зоне 1, 3 виртуальными машинами в зоне 2 и 3 виртуальными машинами в зоне 3 считается несбалансированным. Зона 1 имеет на 2 виртуальные машины меньшее, чем зоны 2 и 3.
@@ -64,10 +64,10 @@ ms.locfileid: "55981406"
 
 Чтобы использовать зоны доступности, масштабируемый набор должен быть создан в [поддерживаемом регионе Azure](../availability-zones/az-overview.md#regions-that-support-availability-zones). Вы можете создать масштабируемый набор, использующий зоны доступности, с помощью одного из следующих методов:
 
-- [портал Azure](#use-the-azure-portal)
-- Инфраструктура CLI Azure
+- [портале Azure](#use-the-azure-portal)
+- Azure CLI
 - [Azure PowerShell](#use-azure-powershell)
-- [Шаблоны диспетчера ресурсов Azure](#use-azure-resource-manager-templates)
+- [Шаблоны Azure Resource Manager](#use-azure-resource-manager-templates)
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure
 
@@ -94,7 +94,7 @@ az vmss create \
     --zones 1
 ```
 
-Полный пример однозонного масштабируемого набора и сетевых ресурсов см. в этом [примере сценария CLI](https://github.com/Azure/azure-docs-cli-python-samples/blob/master/virtual-machine-scale-sets/create-single-availability-zone/create-single-availability-zone.sh.).
+Полный пример однозонного масштабируемого набора и сетевых ресурсов см. в этом [примере сценария CLI](https://github.com/Azure/azure-docs-cli-python-samples/blob/master/virtual-machine-scale-sets/create-single-availability-zone/create-single-availability-zone.sh).
 
 ### <a name="zone-redundant-scale-set"></a>Масштабируемый набор, избыточный между зонами
 
@@ -219,6 +219,6 @@ New-AzVmss `
 
 Полный пример масштабируемого набора, избыточного между зонами, и сетевых ресурсов см. в этом [примере шаблона Resource Manager](https://github.com/Azure/vm-scale-sets/blob/master/preview/zones/multizone.json).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания масштабируемого набора в зоне доступности см. статьи [Развертывание приложения в масштабируемых наборах виртуальных машин](tutorial-install-apps-cli.md) или [Обзор автомасштабирования с помощью масштабируемых наборов виртуальных машин Azure](tutorial-autoscale-cli.md).

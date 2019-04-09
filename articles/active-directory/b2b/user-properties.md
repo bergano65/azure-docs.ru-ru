@@ -1,27 +1,27 @@
 ---
-title: Свойства пользователя службы совместной работы B2B — Azure Active Directory | Документация Майкрософт
-description: Свойства пользователя службы совместной работы Azure Active Directory B2B можно настраивать.
+title: Свойства службы B2B пользователь — Azure Active Directory на виртуальной машине | Документация Майкрософт
+description: Azure Active Directory B2B гостевого пользователя и состояния до и после активации приглашения
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 02/12/2019
+ms.date: 04/08/2019
 ms.author: mimart
 author: msmimart
 manager: daveba
 ms.reviewer: sasubram
-ms.custom: it-pro, seo-update-azuread-jan
+ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 791dcfadf1db6cae48bee5c926f75e454c88fc55
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.openlocfilehash: 4d4466e4ac7a4e818da6332254e3094eccbaf2b4
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58294660"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59257609"
 ---
 # <a name="properties-of-an-azure-active-directory-b2b-collaboration-user"></a>Свойства пользователя службы совместной работы Azure Active Directory B2B
 
-В Azure Active Directory B2B (бизнес — бизнес) пользователем службы совместной работы называется пользователь с гостевой учетной записью (UserType = Guest). Обычно такой пользователь является представителем партнерской организации и по умолчанию имеет ограниченные права в каталоге приглашающей организации.
+В этой статье описываются свойства и состояния объекта гостевого пользователя B2B в Azure Active Directory (Azure AD) до и после активации приглашения. Пользователем совместной работы (B2B) бизнес бизнес Azure AD — это пользователь с UserType = Guest. Обычно такой пользователь является представителем партнерской организации и по умолчанию имеет ограниченные права в каталоге приглашающей организации.
 
 В зависимости от потребностей приглашающей организации пользователь службы совместной работы Azure AD B2B может пребывать в одном из следующих состояний учетной записи.
 
@@ -105,6 +105,6 @@ ms.locfileid: "58294660"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
-* [Основные сведения о токенах пользователей в службе совместной работы Azure Active Directory B2B](user-token.md)
-* [Сопоставление утверждений пользователя службы совместной работы B2B в Azure Active Directory](claims-mapping.md)
+* [Что такое служба совместной работы Azure AD B2B](what-is-b2b.md)
+* [Маркеры пользователя службы совместной работы B2B](user-token.md)
+* [Сопоставление утверждений пользователя службы совместной работы B2B](claims-mapping.md)

@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 03/21/2019
+ms.date: 04/04/2019
 ms.author: juliako
-ms.openlocfilehash: a6746fa193331aff66b8726da1cb3afe49fdc9bf
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
-ms.translationtype: MT
+ms.openlocfilehash: de5432c4e04fb0cfaf0517426fe9ee9da2a57b37
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351566"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59058090"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -37,6 +37,8 @@ ms.locfileid: "58351566"
 ## <a name="march-2019"></a>Марта 2019 г.
 
 Динамическая упаковка теперь поддерживает Dolby Atmos. Дополнительные сведения см. в разделе [аудиокодеки поддерживаются динамической упаковкой](dynamic-packaging-overview.md#audio-codecs-supported-by-dynamic-packaging).
+
+Теперь можно указать список фильтров активов или учетной записи, которые относятся к вашей указатель потоковой передачи. Дополнительные сведения см. в разделе [связать фильтры с указатель потоковой передачи](filters-concept.md#associate-filters-with-streaming-locator).
 
 ## <a name="february-2019"></a>Февраль 2019 г.
 
@@ -67,47 +69,47 @@ ms.locfileid: "58351566"
 
 ### <a name="new-commands"></a>Новые команды
 
-- [az ams account](https://docs.microsoft.com/cli/azure/ams/account?view=azure-cli-latest)
-- [az ams account-filter](https://docs.microsoft.com/cli/azure/ams/account-filter?view=azure-cli-latest)
-- [az ams asset](https://docs.microsoft.com/cli/azure/ams/asset?view=azure-cli-latest)
+- [AZ учетной записи ams](https://docs.microsoft.com/cli/azure/ams/account?view=azure-cli-latest)
+- [Учетная запись ams AZ-фильтра](https://docs.microsoft.com/cli/azure/ams/account-filter?view=azure-cli-latest)
+- [AZ ams активов](https://docs.microsoft.com/cli/azure/ams/asset?view=azure-cli-latest)
 - [az ams asset-filter](https://docs.microsoft.com/cli/azure/ams/asset-filter?view=azure-cli-latest)
 - [az ams content-key-policy](https://docs.microsoft.com/cli/azure/ams/content-key-policy?view=azure-cli-latest)
-- [az ams job](https://docs.microsoft.com/cli/azure/ams/job?view=azure-cli-latest)
+- [Задание AZ ams](https://docs.microsoft.com/cli/azure/ams/job?view=azure-cli-latest)
 - [az ams live-event](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest)
-- [az ams live-output](https://docs.microsoft.com/cli/azure/ams/live-output?view=azure-cli-latest)
+- [ams AZ live-output](https://docs.microsoft.com/cli/azure/ams/live-output?view=azure-cli-latest)
 - [az ams streaming-endpoint](https://docs.microsoft.com/cli/azure/ams/streaming-endpoint?view=azure-cli-latest)
-- [az ams streaming-locator](https://docs.microsoft.com/cli/azure/ams/streaming-locator?view=azure-cli-latest)
+- [AZ ams указатель потоковой передачи-](https://docs.microsoft.com/cli/azure/ams/streaming-locator?view=azure-cli-latest)
 - [az ams account mru](https://docs.microsoft.com/cli/azure/ams/account/mru?view=azure-cli-latest) позволяет управлять зарезервированными единицами мультимедиа. Дополнительные сведения см. в статье [Масштабирование при обработке мультимедиа](media-reserved-units-cli-how-to.md).
 
 ### <a name="new-features-and-breaking-changes"></a>Новые функции и критические изменения
 
 #### <a name="asset-commands"></a>Команды для ресурсов
 
-- Добавлены аргументы ```--storage-account``` и ```--container```.
+- ```--storage-account``` и ```--container``` добавлены аргументы.
 - Добавлены значения по умолчанию для времени истечения срока действия (23 часа от текущего момента) и разрешений (чтение) в команду ```az ams asset get-sas-url```.
 
 #### <a name="job-commands"></a>Команды для заданий
 
-- Добавлены аргументы ```--correlation-data``` и ```--label```.
-- Аргумент ```--output-asset-names``` переименован в ```--output-assets```. Теперь он принимает список ресурсов, разделенных пробелами, в формате assetName=label. Ресурс без метки можно передать следующим образом: assetName=.
+- ```--correlation-data``` и ```--label``` аргументов, добавляемых
+- ```--output-asset-names``` переименован в ```--output-assets```. Теперь он принимает список ресурсов, разделенных пробелами, в формате assetName=label. Ресурс без метки можно передать следующим образом: assetName=.
 
 #### <a name="streaming-locator-commands"></a>Команды для потокового указателя
 
-- Базовая команда ```az ams streaming locator``` заменена на ```az ams streaming-locator```.
-- Добавлены аргументы ```--streaming-locator-id``` и ```--alternative-media-id support```.
-- Обновлен аргумент ```--content-keys argument```.
-- Аргумент ```--content-policy-name``` переименован в ```--content-key-policy-name```.
+- ```az ams streaming locator``` Базовая команда заменены ```az ams streaming-locator```.
+- ```--streaming-locator-id``` и ```--alternative-media-id support``` добавлены аргументы.
+- ```--content-keys argument``` Аргумент обновлены.
+- ```--content-policy-name``` переименован в ```--content-key-policy-name```.
 
 #### <a name="streaming-policy-commands"></a>Команды для политики потоковой передачи
 
-- Базовая команда ```az ams streaming policy``` заменена на ```az ams streaming-policy```.
+- ```az ams streaming policy``` Базовая команда заменены ```az ams streaming-policy```.
 - Добавлена поддержка параметров шифрования в ```az ams streaming-policy create```.
 
 #### <a name="transform-commands"></a>Команды преобразования
 
-- Аргумент ```--preset-names``` заменен на ```--preset```. Теперь можно одновременно задавать только один вывод/набор параметров (для добавления дополнительных нужно запустить команду ```az ams transform output add```). Также можно задать пользовательский параметр StandardEncoderPreset, указав путь к пользовательскому файлу JSON.
-- ```az ams transform output remove``` теперь можно выполнять путем передачи выходного индекса для удаления.
-- Аргументы ```--relative-priority, --on-error, --audio-language and --insights-to-extract``` добавлены в команды ```az ams transform create``` и ```az ams transform output add```.
+- ```--preset-names``` Аргумент заменены ```--preset```. Теперь можно одновременно задавать только один вывод/набор параметров (для добавления дополнительных нужно запустить команду ```az ams transform output add```). Также можно задать пользовательский параметр StandardEncoderPreset, указав путь к пользовательскому файлу JSON.
+- ```az ams transform output remove``` может выполняться путем передачи индексом выходных данных для удаления.
+- ```--relative-priority, --on-error, --audio-language and --insights-to-extract``` аргументов, добавляемых в ```az ams transform create``` и ```az ams transform output add``` команд.
 
 ## <a name="october-2018---ga"></a>Октябрь 2018 г. Общедоступная версия
 

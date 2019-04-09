@@ -10,14 +10,14 @@ ms.topic: article
 ms.date: 02/05/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: f79ecd96b15ff4ff96a3bb93061f0c9d7598191f
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 849bcfe2b5ee177d06b8e4cf62fd29459d2e59ce
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58338163"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59278400"
 ---
-# <a name="tutorial-register-an-application-in-azure-active-directory-b2c"></a>Руководство. Зарегистрировать приложение в Azure Active Directory B2C
+# <a name="tutorial-register-an-application-in-azure-active-directory-b2c"></a>Учебник. Зарегистрировать приложение в Azure Active Directory B2C
 
 Чтобы [приложения](active-directory-b2c-apps.md) могли взаимодействовать с Azure Active Directory (Azure AD) B2C, их нужно зарегистрировать в клиенте, которым вы управляете. В этом руководстве показано, как зарегистрировать веб-приложение с помощью портала Azure.
 
@@ -29,7 +29,7 @@ ms.locfileid: "58338163"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 Если вы еще не создали собственный [клиент Azure AD B2C](tutorial-create-tenant.md), создайте его сейчас. Вы можете использовать имеющийся клиент Azure Active Directory B2C.
 
@@ -48,7 +48,7 @@ ms.locfileid: "58338163"
 
 ## <a name="create-a-client-secret"></a>Создание секрета клиента
 
-Если вы обмениваете код приложения на маркер, вам нужно создать секрет приложения.
+Если приложение обменивается кодом для маркера, необходимо создать секрет приложения.
 
 1. Выберите **Ключи** и щелкните **Создать ключ**.
 2. Чтобы представить ключ, нажмите **Сохранить**. Запишите значение параметра **Ключ приложения**. Это значение используется в качестве секрета приложения в коде приложения.
@@ -62,4 +62,4 @@ ms.locfileid: "58338163"
 > * Создание секрета клиента
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание потоков пользователей в Azure Active Directory B2C ](tutorial-create-user-flows.md)
+> [Создание потоков пользователей в Azure Active Directory B2C](tutorial-create-user-flows.md)

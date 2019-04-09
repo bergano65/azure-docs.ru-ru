@@ -12,14 +12,14 @@ ms.workload: ''
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 02/07/2019
+ms.date: 03/27/2019
 ms.author: pbutlerm
-ms.openlocfilehash: fd51a9f70d60219a9429ff66d6f1d404391f6fb0
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: f537a43f5d4d0431e1659daa258e0c1453f2295b
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57446715"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59010589"
 ---
 # <a name="azure-and-appsource-marketplace-offers"></a>Предложения Azure и AppSource Marketplace
 
@@ -29,7 +29,7 @@ ms.locfileid: "57446715"
 
 > [!VIDEO https://channel9.msdn.com/Events/Build/2018/BRK2513/player]
 
-**Сборка приложений и служб для Azure Marketplace и AppSource — Build 2018**
+**Создание приложений и служб для Azure Marketplace и AppSource - сборки 2018 г.**
 
 Дополнительные сведения об этих магазинах marketplace см. в статье [Руководство по публикации в Azure Marketplace и AppSource](../marketplace-publishers-guide.md).
 
@@ -52,16 +52,16 @@ ms.locfileid: "57446715"
 
 |                Тип предложения                |  Marketplace  |   ОПИСАНИЕ                                                           |
 |                ----------                |  -----------  |   -----------                                                           |
-| [Приложение Azure](./azure-applications/cpp-azure-app-offer.md) | Таблицы Azure | Решение представляет собой одну или несколько виртуальных машин, необязательный пользовательский код Azure, развернутый с помощью шаблона Azure Resource Manger.  Развертывание может осуществляться клиентом через шаблон решения или под управлением издателя. Этот тип используется для предоставления большей гибкости, чем предоставлена типом предложения виртуальной машины.  |
+| [Приложения Azure](./azure-applications/cpp-azure-app-offer.md) | Таблицы Azure | Решение представляет собой одну или несколько виртуальных машин, необязательный пользовательский код Azure, развернутый с помощью шаблона Azure Resource Manger.  Развертывание может осуществляться клиентом через шаблон решения или под управлением издателя. Этот тип используется для предоставления большей гибкости, чем предоставлена типом предложения виртуальной машины.  |
 | [Консультационная услуга](./consulting-services/cloud-partner-portal-consulting-services-publishing-offer.md) | Оба варианта | Квалифицированные консультанты Microsoft могут размещать свои доменные службы на Azure Marketplace или в AppSource.  Их опыт помогает клиентам оценивать свои проблемы, а также создавать и развертывать правильные решения для достижения своих бизнес-целей.  |
 | [Контейнер](./containers/cpp-containers-offer.md)  | Таблицы Azure | Решение — это образ контейнера Docker, предоставляемый в качестве экземпляра службы на основе Kubernetes или контейнера Azure. |
 | [Dynamics 365 Business Central](../cloud-partner-portal-orig/cpp-business-central-offer.md) | AppSource | Пакет, расширяющий систему планирования ресурсов предприятия (ERP) и систему управления бизнесом. |
-| [Dynamics 365 for Customer Engagement](./dyn365ce/cpp-customer-engagement-offer.md) | AppSource | Пакет, расширяющий систему управления ресурсами клиента (CRM) с помощью модулей продаж, обслуживания, обслуживания проектов и выездного обслуживания.  |
-| [Dynamics 365 for Finance and Operations](../cloud-partner-portal-orig/cpp-dynamics-365-operations-offer.md) | AppSource | Пакет, расширяющий службу планирования ресурсов предприятия (ERP), которая поддерживает расширенное управление финансами, операциями, производством и цепочкой поставок. |
+| [Dynamics 365 for Customer Engagement](./dyn365ce/cpp-customer-engagement-offer.md) | AppSource | Пакет, который расширяет этот клиент system management (CRM) ресурсов, через продаж, службы, службы проектов и модули службы поля  |
+| [Dynamics 365 for Finance and Operations.](../cloud-partner-portal-orig/cpp-dynamics-365-operations-offer.md) | AppSource | Пакет, который расширяет этот управления ресурсами предприятия (ERP) служба, которая поддерживает дополнительные финансовые операции, производство и управление логистическими цепочками |
 | [Модуль IoT Edge](./iot-edge-module/cpp-offer-process-parts.md) | Таблицы Azure | Docker-совместимый контейнер, работающий на устройстве IoT Edge.  Он содержит небольшие вычислительные модули, которые используют комбинации пользовательского кода, других служб Azure и сторонних служб. |
-| [Приложение Power BI](./power-bi/cpp-power-bi-offer.md) | AppSource | Пакет, который использует потоки данных для подключения отчетов и панелей мониторинга к данным в общем хранилище данных. |
-| [Приложение SaaS](./saas-app/cpp-saas-offer.md) | Таблицы Azure | Решение — это подписка по модели "программное обеспечение как услуга", управляемая издателем, пользователи которого входят в систему через настраиваемый интерфейс, использующий Azure Active Directory. |
-| [Виртуальная машина](./virtual-machine/cpp-virtual-machine-offer.md)  | Таблицы Azure  | Решение содержится в одной виртуальной машине, развернутой по подписке клиента.  |
+| [Приложение Power BI](./power-bi/cpp-power-bi-offer.md) | AppSource | Приложение Power BI, который упаковывает настраиваемое содержимое Power BI, включая наборы данных, отчеты и панели мониторинга |
+| [Приложение SaaS](./saas-app/cpp-saas-offer.md) | Таблицы Azure | Решением является программного обеспечения как службы подписки, управляемой поставщиком, какие пользователи входят через настраиваемый интерфейс, который использует Azure Active Directory. |
+| [Виртуальная машина.](./virtual-machine/cpp-virtual-machine-offer.md)  | Таблицы Azure  | Решение содержится в одной виртуальной машине, развернутой по подписке клиента.  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |   |   |
 
 Дополнительные сведения см. в статье [Руководство по публикации разных типов предложений](../publisher-guide-by-offer-type.md).
@@ -69,4 +69,4 @@ ms.locfileid: "57446715"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об общих операциях, которые можно выполнять с предложениями marketplace, и об их общих технических атрибутах и ресурсах см. в статье [Manage Azure and AppSource Marketplace offers](./manage-offers/cpp-manage-offers.md) (Управление предложениями Azure и AppSource Marketplace).
+Вы узнаете об основных операциях, которые можно выполнять на предложения marketplace распространенные технические характеристики и их ресурсы в этой статье [управление предложениями](./manage-offers/cpp-manage-offers.md).

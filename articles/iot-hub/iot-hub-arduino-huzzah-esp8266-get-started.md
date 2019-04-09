@@ -1,20 +1,20 @@
 ---
 title: Подключение Feather HUZZAH ESP8266 к Центру Интернета вещей Azure в облаке | Документация Майкрософт
 description: Узнайте, как настроить и подключить плату Adafruit Feather HUZZAH ESP8266 к Центру Интернета вещей Azure и передавать с нее данные в облако Azure.
-author: rangv
-manager: nasing
+author: wesmc7777
+manager: philmea
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
-ms.author: rangv
-ms.openlocfilehash: 82e31c498c6148454a5790a6eb4b82e3a2300a92
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.author: wesmc
+ms.openlocfilehash: 928860cd9b6493200ed8a14b7654f6a6f32c45d5
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58847068"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59259394"
 ---
 # <a name="connect-adafruit-feather-huzzah-esp8266-to-azure-iot-hub-in-the-cloud"></a>Подключение Adafruit Feather HUZZAH ESP8266 к Центру Интернета вещей Azure в облаке
 
@@ -128,7 +128,7 @@ ms.locfileid: "58847068"
    sudo usermod -a -G <group-owner-name> <username>
    ```
 
-   `<group-owner-name>` — это имя владельца группы, полученное на предыдущем этапе. `<username>` — это имя пользователя Ubuntu.
+   `<group-owner-name>` — Это имя владельца группы, полученный на предыдущем шаге. `<username>` — имя пользователя Ubuntu.
 
 3. Чтобы изменения стали видны, выйдите из Ubuntu и войдите снова.
 

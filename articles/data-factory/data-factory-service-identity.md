@@ -9,14 +9,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/20/2019
+ms.date: 04/08/2019
 ms.author: jingwang
-ms.openlocfilehash: 3663526dc32b0a607c9fca3d7c76496bfb5566f4
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 3c1bb38eb12ce77d172257706cd458cebda4bd8c
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57549154"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59260754"
 ---
 # <a name="managed-identity-for-data-factory"></a>Управляемое удостоверение для Фабрики данных
 
@@ -46,7 +46,7 @@ ms.locfileid: "57549154"
 
 - [Создание управляемого удостоверения, с помощью PowerShell](#generate-managed-identity-using-powershell)
 - [Создание управляемого удостоверения, с помощью REST API](#generate-managed-identity-using-rest-api)
-- Создание управляемого удостоверения, с помощью шаблона Azure Resource Manager
+- [Создание управляемого удостоверения, с помощью шаблона Azure Resource Manager](#generate-managed-identity-using-an-azure-resource-manager-template)
 - [Создание управляемого удостоверения, с помощью пакета SDK](#generate-managed-identity-using-sdk)
 
 >[!NOTE]
@@ -156,11 +156,11 @@ client.Factories.CreateOrUpdate(resourceGroup, dataFactoryName, dataFactory);
 
 ### <a name="retrieve-managed-identity-using-azure-portal"></a>Получение управляемого удостоверения, с помощью портала Azure
 
-Вы найдете сведения управляемого удостоверения на портале Azure -> фабрики данных "->" Параметры "->" Свойства:
+Вы найдете сведения управляемого удостоверения на портале Azure -> фабрики данных "->" Свойства:
 
-- ИДЕНТИФИКАТОР УДОСТОВЕРЕНИЯ СЛУЖБЫ
-- КЛИЕНТ УДОСТОВЕРЕНИЯ СЛУЖБЫ
-- **ИДЕНТИФИКАТОР ПРИЛОЖЕНИЯ УДОСТОВЕРЕНИЯ СЛУЖБЫ** > скопируйте это значение.
+- Идентификатор объекта управляемого удостоверения
+- Клиент управляемого удостоверения
+- **Управляемый идентификатор приложения удостоверения** > скопируйте это значение
 
 ![Получение управляемого удостоверения](media/data-factory-service-identity/retrieve-service-identity-portal.png)
 
@@ -192,6 +192,6 @@ Type                  : ServicePrincipal
 См. следующие разделы, которые вводят, когда и как использовать фабрику данных управляемого удостоверения:
 
 - [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md)
-- [Копирование данных в Azure Data Lake Storage Gen1 и из него с помощью фабрики данных Azure](connector-azure-data-lake-store.md)
+- [Копирование данных в Azure Data Lake Store, с помощью управляемых удостоверений для проверки подлинности ресурсов Azure](connector-azure-data-lake-store.md)
 
 См. в разделе [удостоверений, управляемых Azure ресурсы Обзор](/azure/active-directory/managed-identities-azure-resources/overview) для основан на дополнительные сведения об управляемых удостоверений для ресурсов Azure, какая фабрика данных управляемого удостоверения. 

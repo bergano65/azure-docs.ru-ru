@@ -7,15 +7,15 @@ ms.service: azure-resource-manager
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/04/2019
+ms.date: 04/05/2019
 ms.author: rithorn
 ms.topic: conceptual
-ms.openlocfilehash: 928cb790bd97270870618534a73316bba5eeb070
-ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
-ms.translationtype: HT
+ms.openlocfilehash: 2dd2a6e071533deef47a6482bfb9ed92953864ba
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59057444"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59259820"
 ---
 # <a name="create-management-groups-for-resource-organization-and-management"></a>Создание групп управления для упорядочения ресурсов и управления ими
 
@@ -50,7 +50,7 @@ ms.locfileid: "59057444"
 
 ### <a name="create-in-powershell"></a>Создание в PowerShell
 
-В PowerShell используйте командлет New-AzManagementGroup:
+С помощью PowerShell, используйте [New AzManagementGroup](/powershell/module/az.resources/new-azmanagementgroup) командлет, чтобы создать новую группу управления.
 
 ```azurepowershell-interactive
 New-AzManagementGroup -GroupName 'Contoso'
@@ -58,20 +58,39 @@ New-AzManagementGroup -GroupName 'Contoso'
 
 **GroupName** — уникальный создаваемый идентификатор. Этот идентификатор используется в других командах для ссылки на эту группу, и его нельзя будет изменить позже.
 
-Если нужно, чтобы для группы управления на портале отображалось другое имя, следует добавить параметр **DisplayName** со строкой. Например, если нужно создать группу управления с именем (GroupName) Contoso и отображаемым именем (DisplayName) "Группа Contoso", необходимо использовать следующий командлет:
+Если требуется использовать другое имя на портале Azure в группу управления, добавьте **DisplayName** параметра. Например чтобы создать группу управления с GroupName компании Contoso и отображаемое имя «Группа Contoso», используйте следующий командлет:
 
 ```azurepowershell-interactive
-New-AzManagementGroup -GroupName 'Contoso' -DisplayName 'Contoso Group' -ParentId '/providers/Microsoft.Management/managementGroups/ContosoTenant'
+New-AzManagementGroup -GroupName 'Contoso' -DisplayName 'Contoso Group'
 ```
 
-Используйте параметр **ParentId**, чтобы создать эту группу управления под другим управлением.
+В приведенных выше примерах новой группы управления создается в корневую группу управления. Чтобы указать другой группе управления в качестве родительского элемента, используйте **ParentId** параметра.
+
+```azurepowershell-interactive
+$parentGroup = Get-AzManagementGroup -GroupName Contoso
+New-AzManagementGroup -GroupName 'ContosoSubGroup' -ParentId $parentGroup.id
+```
 
 ### <a name="create-in-azure-cli"></a>Создание в Azure CLI
 
-В Azure CLI используется команда az account management-group create.
+С помощью Azure CLI, используйте [создания группы управления в учетной записи az](/cli/azure/account/management-group?view=azure-cli-latest#az-account-management-group-create) команду, чтобы создать новую группу управления.
 
 ```azurecli-interactive
-az account management-group create --name 'Contoso'
+az account management-group create --name Contoso
+```
+
+**Имя** — это уникальный идентификатор, который создается. Этот идентификатор используется в других командах для ссылки на эту группу, и его нельзя будет изменить позже.
+
+Если требуется использовать другое имя на портале Azure в группу управления, добавьте **отображаемое имя** параметра. Например чтобы создать группу управления с GroupName компании Contoso и отображаемое имя «Группа Contoso», используйте следующую команду:
+
+```azurecli-interactive
+az account management-group create --name Contoso --display-name 'Contoso Group'
+```
+
+В приведенных выше примерах новой группы управления создается в корневую группу управления. Чтобы указать другой группе управления в качестве родительского элемента, используйте **родительского** параметр и укажите имя родительской группы.
+
+```azurecli-interactive
+az account management-group create --name ContosoSubGroup --parent Contoso
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

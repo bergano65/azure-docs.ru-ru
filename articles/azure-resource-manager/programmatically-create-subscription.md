@@ -2,23 +2,21 @@
 title: Программное создание подписок Azure Enterprise | Документация Майкрософт
 description: Узнайте, как программно создавать дополнительные подписки Azure Enterprise или Azure "Enterprise — разработка и тестирование".
 services: azure-resource-manager
-author: adpick
-manager: adpick
-editor: ''
+author: tfitzmac
 ms.assetid: ''
 ms.service: azure-resource-manager
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/05/2018
-ms.author: adpick
-ms.openlocfilehash: 1b772fdbda8e58db9414e09ef3ef7c98fc9f86b8
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
-ms.translationtype: HT
+ms.date: 04/05/2019
+ms.author: tomfitz
+ms.openlocfilehash: 93df0c196d78a4685ff82108354b82a07d67695d
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55486985"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59256929"
 ---
 # <a name="programmatically-create-azure-enterprise-subscriptions-preview"></a>Программное создание подписок Azure Enterprise (предварительная версия)
 
@@ -28,11 +26,11 @@ ms.locfileid: "55486985"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
-У вас должна быть роль владельца или участника в учетной записи регистрации, которая будет создана в рамках подписки. Получить эти роли можно двумя способами:
+Необходимо иметь роли "Владелец" для создания подписок в учетной записи регистрации. Получить эти роли можно двумя способами:
 
-* Администратор регистрации [может назначить роль владельца учетной записи](https://ea.azure.com/helpdocs/addNewAccount) (требуется вход в систему обязательно), что сделает вас владельцем учетной записи регистрации. Следуйте инструкциям из приглашения, полученного по электронной почте, чтобы вручную создать начальную подписку. Подтвердите владение учетной записью и вручную создайте начальную подписку EA, прежде чем переходить к следующему шагу. Просто добавить учетную запись в регистрацию недостаточно.
+* Администратор регистрации может [сделать вы владелец учетной записи](https://ea.azure.com/helpdocs/addNewAccount) (требуется вход) чему вы владельцем учетной записи регистрации. Следуйте инструкциям из приглашения, полученного по электронной почте, чтобы вручную создать начальную подписку. Подтвердите владение учетной записью и вручную создайте начальную подписку EA, прежде чем переходить к следующему шагу. Просто добавить учетную запись в регистрацию недостаточно.
 
 * Текущий владелец учетной записи регистрации может [предоставить вам права доступа](grant-access-to-create-subscription.md). Аналогично, если вы хотите использовать субъект-службу для создания подписки EA, необходимо [предоставить возможность создания подписки на нее](grant-access-to-create-subscription.md).
 
@@ -42,7 +40,7 @@ ms.locfileid: "55486985"
 
 Чтобы выполнить следующие команды, войдите в *домашний каталог* владельца учетной записи, в котором по умолчанию создаются подписки.
 
-# <a name="resttabrest"></a>[REST](#tab/rest)
+# [<a name="rest"></a>REST](#tab/rest)
 
 Запрос на вывод списка всех учетных записей регистрации.
 
@@ -75,7 +73,7 @@ GET https://management.azure.com/providers/Microsoft.Billing/enrollmentAccounts?
 }
 ```
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# [<a name="powershell"></a>PowerShell](#tab/azure-powershell)
 
 Используйте командлет [Get-AzEnrollmentAccount](/powershell/module/az.billing/get-azenrollmentaccount), чтобы вывести список всех учетных записей регистрации, к которым у вас есть доступ.
 
@@ -91,7 +89,7 @@ ObjectId                               | PrincipalName
 4cd2fcf6-xxxx-xxxx-xxxx-xxxxxxxxxxxx   | BillingPlatformTeam@contoso.com
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# [<a name="azure-cli"></a>Инфраструктура CLI Azure](#tab/azure-cli)
 
 Используйте [команду Get-EnrollmentAccount](https://aka.ms/EASubCreationPublicPreviewCLI), чтобы вывести список всех учетных записей регистрации, к которым у вас есть доступ.
 
@@ -132,7 +130,7 @@ az billing enrollment-account list
 
 В следующем примере создается запрос на создание подписки *Dev Team Subscription* и предложения подписки *MS-AZR-0017P* (обычная подписка EA). Используется учетная запись регистрации `747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx` (значение заполнителя, GUID), которая является учетной записью регистрации для SignUpEngineering@contoso.com. Этот пример также при необходимости добавляет двух пользователей в качестве владельцев (RBAC) для подписки.
 
-# <a name="resttabrest"></a>[REST](#tab/rest)
+# [<a name="rest"></a>REST](#tab/rest)
 
 Используйте `id` из `enrollmentAccount` в пути запроса для создания подписки.
 
@@ -153,7 +151,7 @@ POST https://management.azure.com/providers/Microsoft.Billing/enrollmentAccounts
 }
 ```
 
-| Имя элемента  | Обязательно | type   | ОПИСАНИЕ                                                                                               |
+| Имя элемента  | Обязательно для заполнения | type   | ОПИСАНИЕ                                                                                               |
 |---------------|----------|--------|-----------------------------------------------------------------------------------------------------------|
 | `displayName` | Нет       | Строка | Отображаемое имя подписки. Если нет — ему присваивается имя предложения, например "Microsoft Azure Enterprise".                                 |
 | `offerType`   | Yes      | Строка | Предложение подписки. Доступны два варианта предложения EA: [MS-AZR-0017P](https://azure.microsoft.com/pricing/enterprise-agreement/) (для использования в рабочей среде) и [MS-AZR-0148P](https://azure.microsoft.com/offers/ms-azr-0148p/) (для разработки и тестирования, должен быть [включен с помощью портала EA](https://ea.azure.com/helpdocs/DevOrTestOffer)).                |
@@ -161,7 +159,7 @@ POST https://management.azure.com/providers/Microsoft.Billing/enrollmentAccounts
 
 В ответе возвращается объект `subscriptionOperation` для отслеживания. После завершения создания подписки объект `subscriptionOperation` вернет объект `subscriptionLink` с идентификатором подписки.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# [<a name="powershell"></a>PowerShell](#tab/azure-powershell)
 
 Чтобы использовать эту предварительную версию модуля, сначала установите ее с помощью командлета `Install-Module Az.Subscription -AllowPrerelease`. Чтобы убедиться в том, что `-AllowPrerelease` работает, установите последнюю версию PowerShellGet из статьи [Получение модуля PowerShellGet](/powershell/gallery/installing-psget).
 
@@ -171,7 +169,7 @@ POST https://management.azure.com/providers/Microsoft.Billing/enrollmentAccounts
 New-AzSubscription -OfferType MS-AZR-0017P -Name "Dev Team Subscription" -EnrollmentAccountObjectId 747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx -OwnerObjectId <userObjectId>,<servicePrincipalObjectId>
 ```
 
-| Имя элемента  | Обязательно | type   | ОПИСАНИЕ                                                                                               |
+| Имя элемента  | Обязательно для заполнения | type   | ОПИСАНИЕ                                                                                               |
 |---------------|----------|--------|-----------------------------------------------------------------------------------------------------------|
 | `Name` | Нет       | Строка | Отображаемое имя подписки. Если нет — ему присваивается имя предложения, например "Microsoft Azure Enterprise".                                 |
 | `OfferType`   | Yes      | Строка | Предложение подписки. Доступны два варианта предложения EA: [MS-AZR-0017P](https://azure.microsoft.com/pricing/enterprise-agreement/) (для использования в рабочей среде) и [MS-AZR-0148P](https://azure.microsoft.com/offers/ms-azr-0148p/) (для разработки и тестирования, должен быть [включен с помощью портала EA](https://ea.azure.com/helpdocs/DevOrTestOffer)).                |
@@ -182,7 +180,7 @@ New-AzSubscription -OfferType MS-AZR-0017P -Name "Dev Team Subscription" -Enroll
 
 Полный список параметров приведен в разделе о [New-AzSubscription](/powershell/module/az.subscription.preview).
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# [<a name="azure-cli"></a>Инфраструктура CLI Azure](#tab/azure-cli)
 
 Чтобы использовать эту предварительную версию расширения, сначала установите ее с помощью команды `az extension add --name subscription`.
 
@@ -192,7 +190,7 @@ New-AzSubscription -OfferType MS-AZR-0017P -Name "Dev Team Subscription" -Enroll
 az account create --offer-type "MS-AZR-0017P" --display-name "Dev Team Subscription" --enrollment-account-object-id "747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx" --owner-object-id "<userObjectId>","<servicePrincipalObjectId>"
 ```
 
-| Имя элемента  | Обязательно | type   | ОПИСАНИЕ                                                                                               |
+| Имя элемента  | Обязательно для заполнения | type   | ОПИСАНИЕ                                                                                               |
 |---------------|----------|--------|-----------------------------------------------------------------------------------------------------------|
 | `display-name` | Нет       | Строка | Отображаемое имя подписки. Если нет — ему присваивается имя предложения, например "Microsoft Azure Enterprise".                                 |
 | `offer-type`   | Yes      | Строка | Предложение подписки. Доступны два варианта предложения EA: [MS-AZR-0017P](https://azure.microsoft.com/pricing/enterprise-agreement/) (для использования в рабочей среде) и [MS-AZR-0148P](https://azure.microsoft.com/offers/ms-azr-0148p/) (для разработки и тестирования, должен быть [включен с помощью портала EA](https://ea.azure.com/helpdocs/DevOrTestOffer)).                |
@@ -213,7 +211,7 @@ az account create --offer-type "MS-AZR-0017P" --display-name "Dev Team Subscript
 - Пользователи, которые не являются владельцами учетной записи, но были добавлены в учетную запись регистрации с помощью RBAC, не могут создавать подписки, используя центр учетных записей.
 - Невозможно выбрать клиент для создания подписки. Подписка всегда создается в домашнем клиенте владельца учетной записи. Чтобы переместить подписку в другой клиент, ознакомьтесь с [изменением подписки клиента](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Создание подписок с помощью .NET: [пример кода на сайте GitHub](https://github.com/Azure-Samples/create-azure-subscription-dotnet-core).
 * После создания подписки можно предоставить эту возможность для других пользователей и субъектов-служб. Дополнительные сведения см. статье [Предоставление доступа к созданию подписок Azure Enterprise (предварительная версия)](grant-access-to-create-subscription.md).

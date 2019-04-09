@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 1edc2587ef8680f60082bf6271b73d30184f331b
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
-ms.translationtype: MT
+ms.openlocfilehash: 52f74bb3cb9e460fc5c572079355f47b4b0bf0a3
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58521250"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59010453"
 ---
 # <a name="what-is-text-to-speech"></a>Что такое преобразования текста в речь?
 
@@ -38,7 +38,7 @@ ms.locfileid: "58521250"
 
 | Вариант использования  | SDK | REST |
 |----------|-----|------|
-| Преобразования текста в речь. | Нет  | Yes |
+| Преобразования текста в речь. | Yes | Yes |
 | Передача наборов данных для адаптации голоса. | Нет  | Да\* |
 | Создание и управление ими голосовых моделей шрифта. | Нет  | Да\* |
 | Создание и управление ими голоса шрифта развертываний. | Нет  | Да\* |
@@ -54,27 +54,34 @@ ms.locfileid: "58521250"
 
 Мы предлагаем краткие руководства предназначены для запуска кода в менее чем за 10 минут. Эта таблица содержит список озвучивания текста кратких руководств, упорядоченных по языка.
 
-| Быстрый запуск | платформа | Справочник по API |
+| Краткое руководство (REST) | платформа | Справочник по API |
 |------------|----------|---------------|
 | [C#, .NET Core](quickstart-dotnet-text-to-speech.md) | Windows, macOS, Linux | [Обзор](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
 | [Node.js](quickstart-nodejs-text-to-speech.md) | Окно, macOS, Linux | [Обзор](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
 | [Python](quickstart-python-text-to-speech.md) | Окно, macOS, Linux | [Обзор](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
+
+| Краткое руководство (SDK) | платформа | Справочник по API |
+|------------|----------|---------------|
+| [C#, .NET Framework](quickstart-text-to-speech-dotnet-windows.md) |  Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C++](quickstart-text-to-speech-cpp-windows.md) |  Windows | [Обзор](https://aka.ms/csspeech/cppref) |
+| [C++](quickstart-text-to-speech-cpp-linux.md) | Linux | [Обзор](https://aka.ms/csspeech/cppref) |
 
 ## <a name="sample-code"></a>Пример кода
 
 Пример кода для преобразования текста в речь доступен на сайте GitHub. Эти примеры охватывают преобразование текста в речь в наиболее популярных языков программирования.
 
 * [Примеры преобразования текста в речь (REST)](https://github.com/Azure-Samples/Cognitive-Speech-TTS)
+* [Примеры преобразования текста в речь (SDK)](https://github.com/Azure-Samples/cognitive-services-speech-sdk)
 
 ## <a name="reference-docs"></a>Справочная документация
 
-* [пакет SDK для службы "Речь"](speech-sdk-reference.md);
+* [Пакет SDK для распознавания речи](speech-sdk-reference.md)
 * [Пакет SDK для речевых устройств](speech-devices-sdk.md)
-* [REST API: Преобразование речи в текст](rest-speech-to-text.md)
+* [REST API: Преобразование речи в текст.](rest-speech-to-text.md)
 * [REST API: Преобразование текста в речь](rest-text-to-speech.md)
-* [REST API: Пакетное транскрибирование и настройка](https://westus.cris.ai/swagger/ui/index)
+* [REST API: Расшифровка дикторского текста для пакетной службы и их настройка](https://westus.cris.ai/swagger/ui/index)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Получение бесплатной подписки на службу "Речь"](get-started.md).
-* [Создание настраиваемого голоса](how-to-customize-voice-font.md)
+* [Получить подписку служб free речи](get-started.md)
+* [Создайте настраиваемые голоса](how-to-customize-voice-font.md)

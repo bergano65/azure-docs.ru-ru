@@ -1,16 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 52a18203e5c6973822f52a65364ae2786913d4f0
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58803856"
 documentType: LandingData
 title: Документация по Службам мультимедиа Azure
 metadata:
-  document_id: 
-  title: Документация по Службам мультимедиа Azure | Документация Майкрософт
-  meta.description: Azure Media Services is a cloud-based platform that enables you to build solutions that achieve broadcast-quality video streaming, enhance accessibility and distribution, analyze content, and much more.
+  document_id: null
+  title: "Документация по Службам мультимедиа Azure\_| Документация Майкрософт"
+  meta.description: 'Azure Media Services is a cloud-based platform that enables you to build solutions that achieve broadcast-quality video streaming, enhance accessibility and distribution, analyze content, and much more.'
   services: media-services
   author: juliako
   manager: femila
@@ -21,36 +15,36 @@ metadata:
   ms.date: 03/11/2019
   ms.author: juliako
 abstract:
-  description: Службы мультимедиа Azure — это облачная платформа, которая позволяет создавать решения для кодирования видео с высоким разрешением и потоковой передачи видео в высоком качестве на любое современное устройство. С помощью Индексатора видео в Службах мультимедиа версии 3 также можно извлекать аналитические сведения из видео- и аудиофайлов, используя предустановки анализатора Служб мультимедиа версии 3. Если вам нужны более подробные аналитические сведения, используйте непосредственно Индексатор видео.
+  description: "Службы мультимедиа Azure\_— это облачная платформа для рабочих процессов, связанных с мультимедиа, которая позволяет создавать решения, требующие кодирования, упаковки, защиты содержимого и прямой трансляции. Службы мультимедиа Azure легко интегрируются с Azure CDN для масштабирования доставки с помощью служб CDN от Akamai и Verizon, благодаря чему пользователи могут выбрать правильное решение в соответствии со своими потребностями, в том числе для распределения нагрузки в сетях CDN. Индексатор видео Служб мультимедиа Azure позволяет извлекать метаданные и аналитические сведения с помощью технологий искусственного интеллекта (ИИ) со стандартными предустановками анализатора видео и звука. Вы можете легко улучшить точность, обучив предоставленные модели ИИ со своим содержимым с помощью API Индексатора видео."
 sections:
-- items:
-  - type: list
-    style: cards
-    className: cardsM
-    columns: 2
-    items:
-    - href: /azure/media-services/latest/
-      html: <p>Кодируйте, упаковывайте и защищайте содержимое, а также выполняйте потоковую передачу видео по запросу, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии 3.</p>
-      image:
-        src: /azure/media-services/latest/media/index/AMSIcons-encoding.svg
-      title: Службы мультимедиа Azure, версия 3
-    - href: /azure/media-services/previous/
-      html: <p>В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. </p>
-      image:
-        src: 
-      title: Службы мультимедиа Azure, версия 2 (прежняя версия)
-    - href: /azure/cdn/
-      html: <p>Кэшируйте статические объекты и ускоряйте передачу динамического содержимого, которое нельзя кэшировать, с помощью CDN.</p>
-      image:
-        src: /azure/cdn/media/index/cdn.svg
-      title: CDN
-    - href: http://amp.azure.net/libs/amp/latest/docs/index.html
-      html: <p>Воспроизводите мультимедийное содержимое из Служб мультимедиа Microsoft Azure в разных браузерах и на разных устройствах.</p>
-      image:
-        src: /azure/media-services/latest/media/index/AMSIcons-Player.svg
-      title: Проигрыватель мультимедиа Azure
-    - href: /azure/media-services/video-indexer/
-      html: <p>Извлекайте аналитические сведения из видео- и аудиофайлов с помощью Индексатора видео.</p>
-      image:
-        src: media/index/AMSIcons-media_analytics.svg
-      title: Индексатор видео
+  - items:
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 2
+        items:
+          - href: /azure/media-services/latest/
+            html: "<p>Кодируйте, упаковывайте и защищайте содержимое, а также выполняйте потоковую передачу видео по запросу, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии\_3.</p>"
+            image:
+              src: /azure/media-services/latest/media/index/AMSIcons-encoding.svg
+            title: "Службы мультимедиа Azure, версия\_3"
+          - href: /azure/media-services/previous/
+            html: "<p>Кодирование, упаковка, защита и другие возможности. Это устаревшая служба, но она еще обслуживается. Клиентам рекомендуется мигрировать на платформу \"Службы мультимедиа\" версии\_3, в которую добавляются новые функции и улучшения.</p>"
+            image:
+              src: null
+            title: "Службы мультимедиа Azure, версия\_2 (прежняя версия)"
+          - href: /azure/cdn/
+            html: <p>Используйте возможности Azure CDN для выполнения потоковой передачи содержимого в масштабе с помощью служб от Akamai и Verizon или для распределения нагрузки в сетях CDN.</p>
+            image:
+              src: /azure/cdn/media/index/cdn.svg
+            title: CDN
+          - href: 'http://amp.azure.net/libs/amp/latest/docs/index.html'
+            html: <p>Воспроизводите мультимедийное содержимое из Служб мультимедиа Microsoft Azure в разных браузерах и на разных устройствах.</p>
+            image:
+              src: /azure/media-services/latest/media/index/AMSIcons-Player.svg
+            title: Проигрыватель мультимедиа Azure
+          - href: /azure/media-services/video-indexer/
+            html: <p>Извлекайте аналитические сведения из видео- и аудиофайлов с помощью Индексатора видео.</p>
+            image:
+              src: media/index/AMSIcons-media_analytics.svg
+            title: Индексатор видео Служб мультимедиа Azure

@@ -9,19 +9,19 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 895f6ce728ce608184bf6f68be3b73d5dc384d79
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: 7f1379bbd3a52b364efc5e4c47612e645fa119ed
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52893358"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59057002"
 ---
 # <a name="add-a-bubble-layer-to-a-map"></a>Добавление слоя пузырьков на карту
 
 В этой статье показано, как точки данных из источника могут преобразоваться для просмотра в виде слоя пузырьков на карте. Слои пузырьков преобразовывают точки в круги на карте с помощью фиксированного значения радиуса в пикселях. 
 
 > [!TIP]
-> Слои пузырьков по умолчанию отображают координаты всех геометрических объектов в источнике данных. Чтобы отображать в слое только геометрические объекты, присвойте параметру `filter` для этого слоя значение `['==', '$type', 'Point']`.
+> Слои пузырьков по умолчанию отображают координаты всех геометрических объектов в источнике данных. Чтобы ограничить на уровне, таким образом, чтобы он отображает только точка geometry компоненты набора `filter` свойства слоя, чтобы `['==', ['geometry-type'], 'Point']` или `['any', ['==', ['geometry-type'], 'Point'], ['==', ['geometry-type'], 'MultiPoint']]` Если вы хотите включить также MultiPoint функции.
 
 ## <a name="add-a-bubble-layer"></a>Добавление слоя пузырьков
 
@@ -60,7 +60,7 @@ ms.locfileid: "52893358"
 <iframe height='700' scrolling='no' title='Параметры слоя пузырьков' src='//codepen.io/azuremaps/embed/eQxbGm/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/eQxbGm/'>Параметры слоя пузырьков</a> от Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

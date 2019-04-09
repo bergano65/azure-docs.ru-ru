@@ -17,12 +17,12 @@ ms.author: celested
 ms.reviewer: hirsin
 ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17c9ef471ca1536f928ca5ae2fe4f55e8e2b3424
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 4b94004aa4b4834be80c13a044fcf7eb0023b6f7
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58878423"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59259870"
 ---
 # <a name="azure-active-directory-access-tokens"></a>Маркеры доступа в Azure Active Directory
 
@@ -148,7 +148,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEps
 
 ## <a name="validating-tokens"></a>Проверка маркеров
 
-Для проверки id_token или access_token приложение должно проверить подпись и утверждения маркера. Чтобы проверить маркеры доступа, приложению также следует проверить издателя, аудиторию и маркеры подписывания. Они должны проверяться на соответствие значениям в документе обнаружения OpenID. Например, версия документа для любых клиентов находится в [https://login.microsoftonline.com/common/.well-known/openid-configuration](https://login.microsoftonline.com/common/.well-known/openid-configuration). 
+Для проверки id_token или access_token приложение должно проверить подпись и утверждения маркера. Чтобы проверить маркеры доступа, приложению также следует проверить издателя, аудиторию и маркеры подписывания. Они должны проверяться на соответствие значениям в документе обнаружения OpenID. Например, зависящие от клиента версия документа находится в [ https://login.microsoftonline.com/common/.well-known/openid-configuration ](https://login.microsoftonline.com/common/.well-known/openid-configuration). 
 
 ПО промежуточного слоя Azure AD содержит встроенные возможности для проверки маркеров доступа. Вы можете найти пример для выбранного вами языка в нашем наборе [примеров](https://docs.microsoft.com/azure/active-directory/active-directory-code-samples). Чтобы получить дополнительные сведения о том, как явно проверить токен JWT, изучите [пример проверки JWT вручную](https://github.com/Azure-Samples/active-directory-dotnet-webapi-manual-jwt-validation). 
 
@@ -173,14 +173,14 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEps
 
 Azure AD может в любой момент времени подписать маркер идентификации с использованием любой пары открытого и закрытого ключей из определенного набора пар. Azure AD периодически изменяет возможный набор ключей, поэтому при создании приложения необходимо обеспечить автоматическую обработку подобных изменений ключей. Рекомендуем проверять наличие обновлений открытых ключей, которые использует служба Azure AD, каждые 24 часа.
 
-Данные ключа подписи, необходимые для проверки подписи, можно найти в документе метаданных OpenID Connect по ссылке:
+Вы можете получить данные ключа подписи необходимо проверить подпись с помощью [документ метаданных OpenID Connect](v2-protocols-oidc.md#fetch-the-openid-connect-metadata-document) расположенный:
 
 ```
-https://login.microsoftonline.com/common/.well-known/openid-configuration
+https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration
 ```
 
 > [!TIP]
-> Попробуйте ввести этот [URL-адрес](https://login.microsoftonline.com/common/.well-known/openid-configuration) в браузере.
+> Попробуйте ввести этот [URL-адрес](https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration) в браузере.
 
 Документ метаданных:
 
@@ -190,7 +190,9 @@ https://login.microsoftonline.com/common/.well-known/openid-configuration
 > [!NOTE]
 > Конечная точка версии 1.0 возвращает оба утверждения `x5t` и `kid`, в то время как конечная точка версии 2.0 отправляет только утверждение `kid`. В будущем мы рекомендуем использовать утверждение `kid` для проверки маркера.
 
-Выполнение проверки подписи выходит за рамки этого документа. Если вам требуется помощь в этом вопросе, воспользуйтесь всевозможными библиотеками с открытым исходным кодом.
+Выполнение проверки подписи выходит за рамки этого документа. Если вам требуется помощь в этом вопросе, воспользуйтесь всевозможными библиотеками с открытым исходным кодом.  Тем не менее платформа Microsoft Identity имеет один маркер подписи расширения к стандартам - настраиваемые ключи подписывания.  
+
+Если приложение поддерживает настраиваемые ключи подписывания, в результате использования [сопоставления заявок](active-directory-claims-mapping.md) функцию, необходимо добавить `appid` параметр, содержащий идентификатор приложения для получения запроса `jwks_uri` указывает на приложение ключа подписывания сведения, которые следует использовать для проверки. Например: `https://login.microsoftonline.com/{tenant}/.well-known/openid-configuration?appid=6731de76-14a6-49ae-97bc-6eba6914391e` содержит `jwks_uri` из `https://login.microsoftonline.com/{tenant}/discovery/keys?appid=6731de76-14a6-49ae-97bc-6eba6914391e`.
 
 ### <a name="claims-based-authorization"></a>Авторизация на основе утверждений
 

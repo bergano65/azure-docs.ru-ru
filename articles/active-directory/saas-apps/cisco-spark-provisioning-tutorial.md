@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка Cisco Spark для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Учебник. Настройка Cisco Spark для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: В этой статье описано, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Cisco Spark.
 services: active-directory
 documentationcenter: ''
@@ -8,67 +8,60 @@ writer: zhchia
 manager: beatrizd
 ms.assetid: d4ca2365-6729-48f7-bb7f-c0f5ffe740a3
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/12/2018
+ms.date: 03/27/2019
 ms.author: v-wingf
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8fd7145be5f82a90acced0f02e35f6c8880dbcad
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 77dab6ad0480bc1565c219766d17211995dcfc20
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58120403"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59278418"
 ---
-# <a name="tutorial-configure-cisco-spark-for-automatic-user-provisioning"></a>Руководство. Настройка Cisco Spark для автоматической подготовки пользователей
-
+# <a name="tutorial-configure-cisco-spark-for-automatic-user-provisioning"></a>Учебник. Настройка Cisco Spark для автоматической подготовки пользователей
 
 В этом руководстве описаны шаги, которые нужно выполнить в Cisco Spark и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отмены подготовки пользователей.
-
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
-*   клиент Azure AD;
-*   Клиент Cisco Spark
-*   Учетная запись пользователя Cisco Spark с разрешениями администратора
-
+* клиент Azure AD;
+* Клиент Cisco Spark
+* Учетная запись пользователя Cisco Spark с разрешениями администратора
 
 > [!NOTE]
 > Интеграция подготовки Azure AD зависит от [веб-службы Cisco Spark](https://developer.webex.com/getting-started.html), которая доступна командам разработчиков в Cisco Spark.
 
 ## <a name="adding-cisco-spark-from-the-gallery"></a>Добавление Cisco Spark из коллекции
+
 Перед началом настройки Cisco Spark для автоматической подготовки пользователей с помощью Azure AD необходимо добавить Cisco Spark в список управляемых приложений SaaS из коллекции приложений Azure AD.
 
-**Чтобы добавить Cisco Spark из коллекции приложений Azure AD, выполните следующие действия.**
+**Чтобы добавить Cisco Spark из коллекции приложений Azure AD, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка Azure Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите к элементу **Корпоративные приложения** > **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Раздел "Корпоративные приложения"][2]
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить Cisco Spark, нажмите кнопку **Новое приложение** в верхней части диалогового окна.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Создать приложение"][3]
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Cisco Spark**.
+4. В поле поиска введите **Cisco Spark**, выберите **Cisco Spark** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Подготовка Cisco Spark](./media/cisco-spark-provisioning-tutorial/AppSearch.png)
-
-5. Чтобы добавить это приложение в список приложений SaaS, выберите **Cisco Spark** на панели результатов и нажмите кнопку **Добавить**.
-
-    ![Подготовка Cisco Spark](./media/cisco-spark-provisioning-tutorial/AppSearchResults.png)
-
-    ![Подготовка Cisco Spark](./media/cisco-spark-provisioning-tutorial/AppCreation.png)
+    ![Cisco Spark в списке результатов](common/search-new-app.png)
 
 ## <a name="assigning-users-to-cisco-spark"></a>Назначение пользователей в Cisco Spark
 
@@ -76,27 +69,27 @@ ms.locfileid: "58120403"
 
 Перед настройкой и включением автоматической подготовки пользователей, определите, каким пользователям или группам Azure AD необходим доступ к Cisco Spark. После этого, выполнив следующие действия, этих пользователей можно назначить приложению Cisco Spark.
 
-*   [Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
+* [Назначение пользователя или группы корпоративному приложению](../manage-apps/assign-user-or-group-access-portal.md)
 
 ### <a name="important-tips-for-assigning-users-to-cisco-spark"></a>Важные советы по назначению пользователей в Cisco Spark
 
-*   Для проверки конфигурации автоматической подготовки пользователей в Cisco Spark, рекомендуется назначить одного пользователя Azure AD. Дополнительные пользователи могут быть назначены позднее.
+* Для проверки конфигурации автоматической подготовки пользователей в Cisco Spark, рекомендуется назначить одного пользователя Azure AD. Дополнительные пользователи могут быть назначены позднее.
 
-*   Перед тем, как определить пользователей Cisco Spark, в диалоговом окне им необходимо указать действительную роль для конкретного приложения (если она доступна). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* Перед тем, как определить пользователей Cisco Spark, в диалоговом окне им необходимо указать действительную роль для конкретного приложения (если она доступна). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
 
 ## <a name="configuring-automatic-user-provisioning-to-cisco-spark"></a>Настройка автоматической подготовки пользователей в Cisco Spark
 
 В этом разделе описывается, как настроить службу подготовки Azure AD для создания, обновления и отключения пользователей и групп Cisco Spark, на основании назначения пользователей в Azure AD.
 
-
 ### <a name="to-configure-automatic-user-provisioning-for-cisco-spark-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей Cisco Spark в Azure AD, выполните следующие действия.
 
+1. Войдите в [портала Azure](https://portal.azure.com) и выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **Cisco Spark**.
 
-1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory > Корпоративные приложения > Все приложения**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений SaaS выберите Cisco Spark.
+2. Из списка приложений выберите **Cisco Spark**.
 
-    ![Подготовка Cisco Spark](./media/cisco-spark-provisioning-tutorial/Successcenter2.png)
+    ![Ссылка на Cisco Spark в списке приложений](common/all-applications.png)
 
 3. Выберите вкладку **Подготовка**.
 
@@ -108,19 +101,27 @@ ms.locfileid: "58120403"
 
 5. В разделе **Учетные данные администратора** укажите **URL-адрес клиента** и **Секретный токен** учетной записи Cisco Spark.
 
-    *   В поле **URL-адрес клиента** укажите URL-адрес API SCIM Cisco Spark, который соответствует `https://api.ciscospark.com/v1/scim/[Tenant ID]/`, где `[Tenant ID]` — буквенно-цифровая строка, как описанная в шаге 6.
+    ![Подготовка Cisco Spark](./media/cisco-spark-provisioning-tutorial/secrettoken1.png)
 
-    *   В поле **Секретный токен** введите секретный токен, как описано в шаге 6.
+    * В поле **URL-адрес клиента** укажите URL-адрес API SCIM Cisco Spark, который соответствует `https://api.ciscospark.com/v1/scim/[Tenant ID]/`, где `[Tenant ID]` — буквенно-цифровая строка, как описанная в шаге 6.
 
-1. Чтобы узнать **Идентификатор клиента** и **Секретный токен** учетной записи Cisco Spark, используйте учетную запись администратора для входа на [веб-сайт для разработчиков Cisco Spark](https://developer.webex.com/). Действия, которые необходимо выполнить после входа в систему.
+    * В поле **Секретный токен** введите секретный токен, как описано в шаге 6.
+
+6. Чтобы узнать **Идентификатор клиента** и **Секретный токен** учетной записи Cisco Spark, используйте учетную запись администратора для входа на [веб-сайт для разработчиков Cisco Spark](https://developer.webex.com/). Действия, которые необходимо выполнить после входа в систему.
+
    * Перейдите на страницу [Начало работы](https://developer.webex.com/getting-started.html)
-   * Прокрутите страницу вниз до раздела [Проверка подлинности](https://developer.webex.com/getting-started.html#authentication)
-     ![Cisco Spark Authentication Token](./media/cisco-spark-provisioning-tutorial/SecretToken.png) (Токен проверки подлинности Cisco Spark)
+
+   * Прокрутите вниз до раздела [разделе проверки подлинности](https://developer.webex.com/getting-started.html#authentication)
+  
+    ![Маркер проверки подлинности Cisco Spark](./media/cisco-spark-provisioning-tutorial/SecretToken.png)
+
    * Буквенно-цифровая строка в этом поле является **Секретным токеном**. Скопируйте ее в буфер обмена
+
    * Перейдите на страницу [Get My Own Details](https://developer.webex.com/endpoint-people-me-get.html) (Получить сведения о своей учетной записи)
        * Убедитесь, что режим тестирования включен
        * Напечатайте слово "Bearer" (Носитель), затем ПРОБЕЛ, а затем вставьте секретный токен в поле "Проверка подлинности" раздела ![Cisco Spark Authentication Token](./media/cisco-spark-provisioning-tutorial/GetMyDetails.png) (Токен проверки подлинности Cisco Spark)
        * Нажмите кнопку "Выполнить"
+
    * В тексте ответа справа **Идентификатор клиента** отобразится как "orgId".
 
      ```json
@@ -136,7 +137,7 @@ ms.locfileid: "58120403"
      }
      ```
 
-1. После заполнения полей, указанных в шаге 5, щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к Cisco Spark. Если установить подключение не удалось, убедитесь, что учетная запись Cisco Spark обладает разрешением администратора, и повторите попытку.
+7. После заполнения полей, указанных в шаге 5, щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к Cisco Spark. Если установить подключение не удалось, убедитесь, что учетная запись Cisco Spark обладает разрешением администратора, и повторите попытку.
 
     ![Подготовка Cisco Spark](./media/cisco-spark-provisioning-tutorial/TestConnection.png)
 
@@ -144,7 +145,7 @@ ms.locfileid: "58120403"
 
     ![Подготовка Cisco Spark](./media/cisco-spark-provisioning-tutorial/EmailNotification.png)
 
-9. Выберите команду **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 
 10. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Cisco Spark**.
 
@@ -168,7 +169,6 @@ ms.locfileid: "58120403"
 
     ![Подготовка Cisco Spark](./media/cisco-spark-provisioning-tutorial/Save.png)
 
-
 После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. Сведения из раздела **Сведения о синхронизации** можно использовать для отслеживания хода выполнения синхронизации и перехода по ссылкам для просмотра отчетов о подготовке, в которых зафиксированы все действия, выполняемые службой подготовки Azure AD в Cisco Spark.
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../manage-apps/check-status-user-account-provisioning.md).
@@ -182,10 +182,9 @@ ms.locfileid: "58120403"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 
 <!--Image references-->
 [1]: ./media/cisco-spark-provisioning-tutorial/tutorial_general_01.png

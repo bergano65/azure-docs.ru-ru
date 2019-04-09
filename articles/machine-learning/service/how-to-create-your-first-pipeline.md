@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 01/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1ace13b8802c86b3ad40725554c698851ff421b0
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: cc561bd88c18788be3ed1b9aef8a6a985af8a6f2
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58360526"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59278553"
 ---
 # <a name="create-and-run-a-machine-learning-pipeline-by-using-azure-machine-learning-sdk"></a>Создание и запуск конвейера машинного обучения с помощью пакета SDK для машинного обучения Azure
 
@@ -28,13 +28,15 @@ ms.locfileid: "58360526"
 
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию службы машинного обучения Azure](https://aka.ms/AMLFree).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 * [Настройте среду разработки](how-to-configure-environment.md) для установки пакета SDK для Машинного обучения Azure.
 
 * Создайте [рабочую область Машинного обучения Azure](how-to-configure-environment.md#workspace) для хранения всех ресурсов конвейера. 
 
   ```python
+  from azureml.core import Workspace
+  
   ws = Workspace.create(
      name = '<workspace-name>',
      subscription_id = '<subscription-id>',
@@ -91,7 +93,7 @@ blob_input_data = DataReference(
     path_on_datastore="20newsgroups/20news.pkl")
 ```
 
-Промежуточные данные (или выходные данные шага) представляет объект [PipelineData](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py). `output_data1` создается как выходные данные шага и используется в качестве входных данных одного шага или нескольких последующих шагов. `PipelineData` представляет зависимость данных между шагами и неявно определяет порядок выполнения шагов в конвейере.
+Промежуточные данные (или выходные данные шага) представляет объект [PipelineData](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py). `output_data1` создается как выходные данные шага и использовать в качестве входных данных из одного или нескольких последующих шагов. `PipelineData` Представляет зависимость данных между шагами и создает заказ неявного выполнения конвейера.
 
 ```python
 output_data1 = PipelineData(
@@ -111,13 +113,15 @@ output_data1 = PipelineData(
 
 * Вычислительная среда Машинного обучения Azure;
 * Azure Databricks 
-* Аналитика озера данных Azure
+* Azure Data Lake Analytics
 
 ### <a name="azure-machine-learning-compute"></a>Вычислительная среда Машинного обучения Azure;
 
 Для выполнения шагов конвейера можно создать вычислительную среду Машинного обучения Azure.
 
 ```python
+from azureml.core.compute import ComputeTarget, AmlCompute
+
 compute_name = "aml-compute"
  if compute_name in ws.compute_targets:
     compute_target = ws.compute_targets[compute_name]

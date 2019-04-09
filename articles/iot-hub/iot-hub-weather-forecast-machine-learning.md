@@ -1,21 +1,21 @@
 ---
 title: Прогнозирование погоды с помощью машинного обучения Azure на основе данных Центра Интернета вещей | Документация Майкрософт
 description: Используйте машинное обучение Azure, чтобы прогнозировать вероятность дождя на основе данных о температуре и влажности, которые собираются от датчиков в Центре Интернета вещей.
-author: rangv
-manager: ''
+author: robinsh
+manager: philmea
 keywords: Прогнозирование погоды с помощью машинного обучения
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
-ms.author: rangv
-ms.openlocfilehash: 7fdd2a96044acdae223243d751bfcffb7a99da78
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.author: robinsh
+ms.openlocfilehash: a203018cb1a27c17b9c7162b50a380f9edae2e60
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57534265"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59273198"
 ---
 # <a name="weather-forecast-using-the-sensor-data-from-your-iot-hub-in-azure-machine-learning"></a>Прогнозирование погоды в машинном обучении Azure с помощью данных от датчиков Центра Интернета вещей
 
@@ -51,14 +51,14 @@ ms.locfileid: "57534265"
 
 1. Откройте [страницу модели прогнозирования погоды](https://gallery.cortanaintelligence.com/Experiment/Weather-prediction-model-1).
 1. Щелкните **Открыть в Studio** в Студии машинного обучения Microsoft Azure.
-   ![Открытая страница модели прогнозирования погоды в коллекции Cortana Intelligence](media/iot-hub-weather-forecast-machine-learning/2_weather-prediction-model-in-cortana-intelligence-gallery.png)
+   ![Откройте страницу модели прогнозирования погоды в коллекции Cortana Intelligence](media/iot-hub-weather-forecast-machine-learning/2_weather-prediction-model-in-cortana-intelligence-gallery.png)
 1. Щелкните **Run** (Запуск), чтобы проверить действия модели. Выполнение этого шага может занять до 2 минут.
-   ![Открытая модель прогнозирования погоды в Студии машинного обучения Azure](media/iot-hub-weather-forecast-machine-learning/3_open-weather-prediction-model-in-azure-machine-learning-studio.png)
+   ![Откройте модель прогнозирования погоды в студии машинного обучения Azure](media/iot-hub-weather-forecast-machine-learning/3_open-weather-prediction-model-in-azure-machine-learning-studio.png)
 1. Щелкните действие **SET UP WEB SERVICE** (Настроить веб-службу)  > **Predictive Web Service** (Прогнозная веб-служба).
-   ![Развертывание модели прогнозирования погоды в Студии машинного обучения Azure](media/iot-hub-weather-forecast-machine-learning/4-deploy-weather-prediction-model-in-azure-machine-learning-studio.png)
+   ![Развертывание модели прогнозирования погоды в студии машинного обучения Azure](media/iot-hub-weather-forecast-machine-learning/4-deploy-weather-prediction-model-in-azure-machine-learning-studio.png)
 1. На схеме перетащите модуль **Web service input** (Вход веб-службы) куда-нибудь поближе к модулю **Score Model** (Оценка модели).
 1. Соедините между собой модули **Web service input** (Вход веб-службы) и **Score Model** (Оценка модели).
-   ![Соединение модулей в Студии машинного обучения Azure](media/iot-hub-weather-forecast-machine-learning/13_connect-modules-azure-machine-learning-studio.png)
+   ![Соединение модулей в студии машинного обучения Azure](media/iot-hub-weather-forecast-machine-learning/13_connect-modules-azure-machine-learning-studio.png)
 1. Щелкните **RUN** (Запуск), чтобы проверить действия модели.
 1. Щелкните **DEPLOY WEB SERVICE** (Развернуть веб-службу), чтобы преобразовать эту модель в веб-службу.
 1. На панели мониторинга модели скачайте **Excel 2010 or earlier workbook** (Книга Excel 2010 или более ранних версий) для действия **REQUEST/RESPONSE** (Запрос — ответ).
@@ -163,7 +163,7 @@ ms.locfileid: "57534265"
 
    Замените значение `[YourOutputAlias]` значением псевдонима выходных данных задания.
 
-1. Выберите команду **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 ### <a name="run-the-stream-analytics-job"></a>Выполнение задания Stream Analytics
 

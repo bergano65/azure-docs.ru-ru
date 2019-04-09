@@ -5,21 +5,21 @@ services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
-ms.date: 03/18/2018
+ms.date: 04/08/2019
 ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: 8a7694f3a94f9bda7dc905fabbd7adf0e4b7d0f5
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: c4e87e365e11084a7088522f64abef238d04b715
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59047183"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59271490"
 ---
 # <a name="common-questions---hyper-v-to-azure-disaster-recovery"></a>Часто задаваемые вопросы. Аварийное восстановление Hyper-V в Azure
 
 В этой статье приведены ответы на часто задаваемые вопросы, которые возникают при репликации локальных виртуальных машин Hyper-V в Azure. 
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общее
 
 ### <a name="how-is-site-recovery-priced"></a>Как образуются цены на Site Recovery?
 Ознакомьтесь со сведениями о [расценках на Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
@@ -27,7 +27,7 @@ ms.locfileid: "59047183"
 ### <a name="how-do-i-pay-for-azure-vms"></a>Как оплачивается использование виртуальных машин Azure?
 Во время репликации данные реплицируются в хранилище Azure, и вы не платите за любые изменения виртуальной машины. При выполнении отработки отказа в Azure служба Site Recovery автоматически создаст виртуальные машины IaaS Azure. После этого вам будет выставлен счет за вычислительные ресурсы, использованные в Azure.
 
-## <a name="azure"></a>Таблицы Azure
+## <a name="azure"></a>Azure
 
 ### <a name="what-do-i-need-in-azure"></a>Что нужно в Azure?
 Требуется подписка Azure, хранилище служб восстановления, учетная запись хранения и виртуальная сеть. Хранилище, учетная запись хранения и сеть должны находиться в одном регионе.

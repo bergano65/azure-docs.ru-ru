@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка Pingboard для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка Pingboard для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в Pingboard.
 services: active-directory
 documentationcenter: ''
@@ -13,30 +13,30 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/19/2017
+ms.date: 03/27/2019
 ms.author: asmalser
 ms.reviewer: asmalser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e36d0985aee53f2a7f701f9bf7887ae26a426b68
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: d2ab7f58c3061044583baf9db73e193966d7d4eb
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56203749"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59058386"
 ---
 # <a name="tutorial-configure-pingboard-for-automatic-user-provisioning"></a>Руководство по Настройка Pingboard для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure Active Directory (Azure AD) в Pingboard.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
-*   клиент Azure AD;
-*   [учетная запись Pro](https://pingboard.com/pricing) клиента Pingboard; 
-*   учетная запись пользователя в Pingboard с разрешениями администратора. 
+* клиент Azure AD;
+* [учетная запись Pro](https://pingboard.com/pricing) клиента Pingboard;
+* учетная запись пользователя в Pingboard с разрешениями администратора.
 
-> [!NOTE] 
+> [!NOTE]
 > Интеграция подготовки Azure AD зависит от [API Pingboard](https://pingboard.docs.apiary.io/#), доступного для вашей учетной записи.
 
 ## <a name="assign-users-to-pingboard"></a>Назначение пользователей в Pingboard
@@ -69,16 +69,16 @@ ms.locfileid: "56203749"
 1. Для параметра **Режим подготовки к работе** выберите значение **Автоматически**.
 
     ![Подготовка Pingboard](./media/pingboard-provisioning-tutorial/pingboardazureprovisioning.png)
-    
+
 1. В разделе **Учетные данные администратора** выполните следующие действия.
 
     a. В поле **URL-адрес клиента** введите `https://your_domain.pingboard.com/scim/v2`, заменив ваш_домен фактическим именем домена.
 
-    б) Войдите в [Pingboard](https://pingboard.com/) с помощью учетной записи администратора.
+    2. Войдите в [Pingboard](https://pingboard.com/) с помощью учетной записи администратора.
 
     c. Выберите **Add-Ons** > **Integrations** > **Azure Active Directory** (Надстройки > Интеграции > Azure Active Directory).
 
-    4.3. Перейдите на вкладку **Configure** (Настройка) и выберите **Enable user provisioning from Azure** (Включить подготовку пользователей из Azure).
+    d. Перейдите на вкладку **Configure** (Настройка) и выберите **Enable user provisioning from Azure** (Включить подготовку пользователей из Azure).
 
     д. Скопируйте маркер из поля **OAuth Bearer Token** (Токен носителя OAuth) и введите его в поле **Secret Token** (Токен секрета).
 
@@ -86,7 +86,7 @@ ms.locfileid: "56203749"
 
 1. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки. Установите флажок под полем.
 
-1. Щелкните **Сохранить**. 
+1. Щелкните **Сохранить**.
 
 1. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Pingboard**.
 
@@ -102,6 +102,6 @@ ms.locfileid: "56203749"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Managing user account provisioning for enterprise apps in the Azure portal](../manage-apps/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 * [Настройка единого входа](pingboard-tutorial.md)

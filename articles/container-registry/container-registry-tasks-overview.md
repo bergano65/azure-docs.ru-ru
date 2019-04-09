@@ -7,12 +7,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: danlep
-ms.openlocfilehash: 89b48175d7707458cd92916f6b26e298163a7416
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.openlocfilehash: b97db09c477a940ca36129316613f5ceb4eb13b1
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58915934"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59256198"
 ---
 # <a name="automate-os-and-framework-patching-with-acr-tasks"></a>Автоматизация установки исправлений ОС и платформы с помощью службы "Задачи ACR"
 
@@ -78,7 +78,7 @@ ms.locfileid: "58915934"
 > [!NOTE]
 > Обновление базовых образов активирует сборки, если базовые образы и образы приложения находятся в одном и том же реестре контейнеров Azure или базовые образы расположены в общедоступном репозитории Центра Docker.
 
-## <a name="multi-step-tasks"></a>Многошаговых задач
+## <a name="multi-step-tasks"></a>Многошаговые задачи
 
 Многошаговых задач обеспечивают задач на основе шаг определения и выполнения для создания, тестирования и исправления образы контейнеров в облаке. Шаги задач определяют отдельный образ контейнера сборки и перемещения контейнеров. Они также могут определять выполнение одного или нескольких контейнеров, причем каждый шаг использует контейнер в качестве среды выполнения.
 
@@ -97,10 +97,9 @@ ms.locfileid: "58915934"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Когда вы будете готовы автоматизировать внесение исправлений ОС и платформы путем выполнения сборок образов контейнера в облаке, ознакомьтесь с тремя руководствами по службе "Задачи ACR".
+Когда вы будете готовы для автоматизации операционной системы и установки исправлений framework путем создания образов контейнеров в облаке, ознакомьтесь с трех частей [серии руководств задачи ACR](container-registry-tutorial-quick-task.md).
 
-> [!div class="nextstepaction"]
-> [Создание образов контейнеров в облаке с реестром контейнеров Azure](container-registry-tutorial-quick-task.md)
+При необходимости установите [расширение Docker для Visual Studio Code](https://code.visualstudio.com/docs/azure/docker) и [учетной записи Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) расширения для работы с вашей реестров контейнеров Azure. По запросу и отправка образов в реестр контейнеров Azure или выполнение ACR, в Visual Studio Code.
 
 <!-- LINKS - External -->
 [base-alpine]: https://hub.docker.com/_/alpine/

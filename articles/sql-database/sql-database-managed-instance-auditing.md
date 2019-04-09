@@ -13,20 +13,20 @@ author: vainolo
 ms.author: arib
 ms.reviewer: vanto
 manager: craigg
-ms.date: 02/07/2019
-ms.openlocfilehash: d283cfa18d31e360aed78ae5262c5416f94c0676
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 04/08/2019
+ms.openlocfilehash: fc8b300cea714ee44f826a78ce8c7a10c1443414
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58086060"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59282123"
 ---
 # <a name="get-started-with-azure-sql-database-managed-instance-auditing"></a>Начало работы с аудитом управляемого экземпляра Базы данных SQL Azure
 
 [Аудит управляемого экземпляра](sql-database-managed-instance.md) позволяет отслеживать события базы данных и записывать их в журнал аудита в учетной записи хранения Azure. Аудит также дает следующие возможности:
 
 - Аудит может помочь вам соблюсти требования нормативов, проанализировать работу с базой данных и получить представление о расхождениях и аномалиях, которые могут указывать на бизнес-проблемы или предполагаемые нарушения безопасности.
-- Средства аудита способствуют соблюдению стандартов соответствия, но не гарантируют их выполнение. Дополнительную информацию о программах Azure, поддерживающих проверку соблюдения стандартов, см. в [Центре управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/compliance/).
+- Средства аудита способствуют соблюдению стандартов соответствия, но не гарантируют их выполнение. Дополнительные сведения о Azure программ, поддерживающих проверку соблюдения стандартов, см. в разделе [Центр управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/compliance/) где можно найти актуальный список сертификатов соответствия базы данных SQL.
 
 ## <a name="set-up-auditing-for-your-server-to-azure-storage"></a>Настройка аудита для сервера в службе хранилища Azure
 
@@ -60,7 +60,7 @@ ms.locfileid: "58086060"
 
         ![Кнопка свойств контейнера больших двоичных объектов](./media/sql-managed-instance-auditing/4_container_properties_button.png)
 
-     1. Скопируйте URL-адрес контейнера, щелкнув значок копирования, и сохраните этот URL-адрес (например, в Блокноте) для дальнейшего использования. URL-адрес контейнера должен иметь формат `https://<StorageName>.blob.core.windows.net/<ContainerName>`.
+     1. Скопируйте URL-адрес контейнера, щелкнув значок копирования, и сохраните этот URL-адрес (например, в Блокноте) для дальнейшего использования. Формат URL-адрес контейнера должен быть `https://<StorageName>.blob.core.windows.net/<ContainerName>`
 
         ![Копирование URL-адреса контейнера больших двоичных объектов](./media/sql-managed-instance-auditing/5_container_copy_name.png)
 
@@ -141,8 +141,8 @@ ms.locfileid: "58086060"
 
 1. <a id="createspec"></a>После настройки контейнера больших двоичных объектов как целевого объекта для журналов аудита создайте спецификацию аудита сервера или аудита базы данных, как это делается для SQL Server:
 
-   - [Руководство по созданию спецификации T-SQL для аудита сервера](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-specification-transact-sql)
-   - [Руководство по созданию спецификации T-SQL для аудита базы данных](https://docs.microsoft.com/sql/t-sql/statements/create-database-audit-specification-transact-sql)
+   - [Создать структуру T-SQL для спецификации аудита сервера](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-specification-transact-sql)
+   - [Создать структуру T-SQL для спецификации аудита базы данных](https://docs.microsoft.com/sql/t-sql/statements/create-database-audit-specification-transact-sql)
 
 1. Включите аудит сервера, созданный на шаге 6:
 
@@ -154,9 +154,9 @@ ms.locfileid: "58086060"
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Различия между аудитом отдельных баз данных, эластичных пулов и управляемых экземпляров в Базе данных SQL Azure и баз данных в SQL Server](#auditing-differences-between-databases-in-azure-sql-database-and-databases-in-sql-server)
-- [CREATE SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql)
-- [ALTER SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
+- [Аудит различия между отдельных баз данных эластичного пула, s и управляемых экземпляров в базе данных SQL Azure и баз данных в SQL Server](#auditing-differences-between-databases-in-azure-sql-database-and-databases-in-sql-server)
+- [СОЗДАНИЕ АУДИТА СЕРВЕРА](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql)
+- [ALTER SERVER AUDIT](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
 
 ## <a name="set-up-auditing-for-your-server-to-event-hub-or-azure-monitor-logs"></a>Настройка аудита для сервера, чтобы журналы концентратора событий или Azure Monitor
 
@@ -187,8 +187,8 @@ ms.locfileid: "58086060"
 
 9. Создайте спецификацию аудита сервера или спецификацию аудита базы данных, как для обычного сервера SQL Server.
 
-   - [Руководство по созданию спецификации T-SQL для аудита сервера](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-specification-transact-sql)
-   - [Руководство по созданию спецификации T-SQL для аудита базы данных](https://docs.microsoft.com/sql/t-sql/statements/create-database-audit-specification-transact-sql)
+   - [Создать структуру T-SQL для спецификации аудита сервера](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-specification-transact-sql)
+   - [Создать структуру T-SQL для спецификации аудита базы данных](https://docs.microsoft.com/sql/t-sql/statements/create-database-audit-specification-transact-sql)
 
 10. Включите аудит сервера, созданного на шаге 8:
  
@@ -237,12 +237,12 @@ ms.locfileid: "58086060"
 - Новый синтаксис `TO EXTERNAL MONITOR` предоставляется для обеспечения цели журналы даже концентратора и Azure Monitor.
 - Синтаксис `TO FILE` **не поддерживается**, так как База данных SQL не может использовать файловые ресурсы Windows.
 - Параметр завершения работы **не поддерживается**.
-- Значение 0 для `queue_delay` **не поддерживается**.
+- `queue_delay` 0 — **не поддерживается**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Полный список методов использования журналов аудита см. в статье о [начале работы с аудитом базы данных SQL](sql-database-auditing.md).
-- Дополнительную информацию о программах Azure, поддерживающих проверку соблюдения стандартов, см. в [Центре управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/compliance/).
+- Дополнительные сведения о Azure программ, поддерживающих проверку соблюдения стандартов, см. в разделе [Центр управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/compliance/) где можно найти актуальный список сертификатов соответствия базы данных SQL.
 
 <!--Image references-->
 
