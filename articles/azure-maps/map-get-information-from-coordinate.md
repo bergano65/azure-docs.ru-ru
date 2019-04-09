@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 9ab6d9708843cda492795b92b6fb5f58bd7a9154
-ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
+ms.openlocfilehash: 50f906a9d8a0dc19f5eb47bef4cb68f4703f020f
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57571428"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59256062"
 ---
 # <a name="get-information-from-a-coordinate"></a>Получение сведений на основе координат
 
@@ -29,11 +29,11 @@ ms.locfileid: "57571428"
 
 В приведенном выше коде первым блоком кода создает объект карты и задает способ проверки подлинности, использовать ключ подписки. См. инструкции по [созданию карты](./map-create.md).
 
-Второй блок кода создает **SubscriptionKeyCredentialPolicy** для проверки подлинности HTTP-запросов для службы карт Azure с помощью ключа подписки. Затем **atlas.service.MapsURL.newPipeline()** принимает **SubscriptionKeyCredential** политики и создает [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-iot-typescript-latest) экземпляра. **SearchURL** представляет URL-адрес для службы карт Azure [поиска](https://docs.microsoft.com/rest/api/maps/search) операций.
+Второй блок кода создает `SubscriptionKeyCredentialPolicy` для проверки подлинности HTTP-запросов для службы карт Azure с помощью ключа подписки. Затем `atlas.service.MapsURL.newPipeline()` принимает `SubscriptionKeyCredential` политики и создает [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-iot-typescript-latest) экземпляра. `searchURL` Представляет URL-адрес для службы карт Azure [поиска](https://docs.microsoft.com/rest/api/maps/search) операций.
 
 Третий блок кода, обновляет стиль курсор мыши на указатель и создает [всплывающее окно](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest#open) объекта. См. инструкции по [добавлению всплывающего окна на карту](./map-add-popup.md).
 
-Четвертый блок кода добавляет щелчка кнопкой мыши [прослушиватель событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events). При активации, он создает запрос поиска с координаты точки, которую щелкнул пользователь. Затем он использует модуль службы [getSearchAddressReverse](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.searchurl?view=azure-iot-typescript-latest#searchaddressreverse-aborter--geojson-position--searchaddressreverseoptions-) метод для запроса [получить API обратного поиска адреса](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) для адреса координат. Коллекция компонентов GeoJSON из ответа извлекается с помощью **geojson.getFeatures()** метод.
+Четвертый блок кода добавляет щелчка кнопкой мыши [прослушиватель событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events). При активации, он создает запрос поиска с координаты точки, которую щелкнул пользователь. Затем он использует модуль службы [getSearchAddressReverse](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.searchurl?view=azure-iot-typescript-latest#searchaddressreverse-aborter--geojson-position--searchaddressreverseoptions-) метод для запроса [получить API обратного поиска адреса](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) для адреса координат. Коллекция компонентов GeoJSON из ответа извлекается с помощью `geojson.getFeatures()` метод.
 
 Пятый блок кода устанавливает содержимое всплывающего окна HTML для отображения адреса ответа для выбранной координат положения.
 
@@ -59,10 +59,10 @@ ms.locfileid: "57571428"
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest);
+> [Сопоставление](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
-> [Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest)
+> [Всплывающее окно](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest)
 
 Полные примеры кода см. в следующих статьях:
 

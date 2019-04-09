@@ -4,16 +4,16 @@ description: Узнайте, как получать большие наборы
 services: resource-graph
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 02/26/2019
+ms.date: 04/01/2019
 ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: ef61314ae124668fc8970e6d68a0f927bdf771bc
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
-ms.translationtype: MT
+ms.openlocfilehash: 40aa8ca0ebfcc8eb5b686143960af1441768622a
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56889041"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59058397"
 ---
 # <a name="working-with-large-azure-resource-data-sets"></a>Работа с большими наборами данных ресурса Azure
 
@@ -63,7 +63,7 @@ Search-AzGraph -Query "project name | order by name asc" -Skip 10
 
 ## <a name="paging-results"></a>Разбиение результатов по страницам
 
-Если необходимо разбить результирующий набор на меньшие наборы записей для обработки или если он превышает максимально допустимое значение возвращаемых записей, _5000_, используйте разбиение на страницы. [REST API](/rest/api/azureresourcegraph/resources/resources) **QueryResponse** предоставляет значения, указывающие, что набор результатов разбит на **resultTruncated** и **$skipToken**.
+Если это необходимо разбить результирующий набор на меньшие наборы записей для обработки или так как результирующий набор превышает максимально допустимое значение _1000_ вернул записей, использовать разбиение по страницам. [REST API](/rest/api/azureresourcegraph/resources/resources) **QueryResponse** предоставляет значения, указывающие, что набор результатов разбит на **resultTruncated** и **$skipToken**.
 **resultTruncated** является логическим значением, которое оповещает потребителя, если существуют дополнительные записи, которые не возвращаются в ответе. Это условие также можно определить, когда свойство **count** меньше, чем свойство **totalRecords**. **totalRecords** определяет, сколько записей соответствует запросу.
 
 Когда свойство **resultTruncated** равно **true**, свойство **$skipToken** задается в ответе. Это значение используется с теми же значениями запроса и подписки для получения следующего набора записей, который соответствует запросу.

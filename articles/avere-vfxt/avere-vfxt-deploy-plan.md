@@ -6,12 +6,12 @@ ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: v-erkell
-ms.openlocfilehash: 3212befac60e3677c0b556825560cc548df42969
-ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
-ms.translationtype: MT
+ms.openlocfilehash: 46978d19a0789bb43e861ca89661aa5b78eb4ec7
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56990991"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59056730"
 ---
 # <a name="plan-your-avere-vfxt-system"></a>Планирование системы Avere vFXT
 
@@ -130,6 +130,17 @@ ms.locfileid: "56990991"
 
 * Если вы создадите виртуальную сеть или подсеть, контроллеру кластера будет назначен общедоступный IP-адрес.
 * При выборе существующей виртуальной сети и подсети контроллер кластера будет иметь только частные IP-адреса. 
+
+## <a name="vm-access-roles"></a>Роли виртуальных Машин доступ 
+
+Azure использует [управление доступом на основе ролей](../role-based-access-control/index.yml) (RBAC) для авторизации кластера виртуальных машин для выполнения определенных задач. Например контроллер кластера должна авторизации для создания и настройки виртуальных машин узла кластера. Узлы кластера необходимо иметь возможность назначить или переназначить IP-адреса узлов кластера.
+
+Для виртуальных машин vFXT Avere используются две встроенные роли Azure: 
+
+* Контроллер кластера использует встроенную роль [Avere участник](../role-based-access-control/built-in-roles.md#avere-contributor). 
+* Узлы кластера используют встроенную роль [Avere оператор](../role-based-access-control/built-in-roles.md#avere-operator)
+
+Если вам нужно настроить доступ роли для Avere vFXT компонентов, необходимо определить собственную роль и назначьте его виртуальным машинам во время их создания. Нельзя использовать шаблон развертывания в Azure Marketplace. Обратитесь в службу поддержки Майкрософт и поддержки, открыв запрос в службу на портале Azure, как описано в разделе [помощь с вашей системой](avere-vfxt-open-ticket.md). 
 
 ## <a name="next-step-understand-the-deployment-process"></a>Следующий шаг: ознакомление с процессом развертывания
 

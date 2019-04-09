@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: container-service
 ms.date: 12/03/2018
 ms.author: iainfou
-ms.openlocfilehash: 841e00825b243d883303121022918efd51397f04
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 54c8e44685bb69e845c819b0c2846b188a771d71
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58757436"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878236"
 ---
 # <a name="preview---create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-using-the-azure-cli"></a>Предварительный просмотр - Создание и настройка кластера службы Azure Kubernetes (AKS) для использования виртуальных узлов, с помощью Azure CLI
 
@@ -47,7 +47,7 @@ Microsoft.ContainerInstance  Registered
 az provider register --namespace Microsoft.ContainerInstance
 ```
 
-## <a name="regional-availability-limitations"></a>Ограничения по регионам
+## <a name="regional-availability"></a>Доступ по регионам
 
 Для развертывания на узле виртуального поддерживаются следующие регионы:
 
@@ -162,13 +162,7 @@ az aks create \
 
 Через несколько минут выполнение команды завершается и отображаются сведения о кластере в формате JSON.
 
-## <a name="enable-virtual-nodes"></a>Включение виртуальных узлов
-
-Для обеспечения дополнительной функциональности соединитель виртуальных узлов использует расширение Azure CLI. Перед включением соединителя виртуальных узлов сначала установите расширение с помощью команды [az extension add][az-extension-add]:
-
-```azurecli-interactive
-az extension add --source https://aksvnodeextension.blob.core.windows.net/aks-virtual-node/aks_virtual_node-0.2.0-py2.py3-none-any.whl
-```
+## <a name="enable-virtual-nodes-addon"></a>Включить дополнительный компонент виртуальных узлов
 
 Чтобы включить виртуальные узлы, теперь используйте команду [az aks enable-addons][az-aks-enable-addons]. В следующем примере используется подсеть с именем *myVirtualNodeSubnet*, созданная на предыдущем шаге:
 
@@ -179,6 +173,11 @@ az aks enable-addons \
     --addons virtual-node \
     --subnet-name myVirtualNodeSubnet
 ```
+> [!NOTE]
+> Если появляется ошибка о не найден виртуальный узел, может потребоваться установить его расширение интерфейса командной строки 
+> ```azurecli-interactive
+> az extension add --source https://aksvnodeextension.blob.core.windows.net/aks-virtual-node/aks_virtual_node-0.2.0-py2.py3-none-any.whl
+> ```
 
 ## <a name="connect-to-the-cluster"></a>Подключение к кластеру
 

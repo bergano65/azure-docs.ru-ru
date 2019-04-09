@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 56580454753ae6af60f5f8c51d9504f813f91e97
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.openlocfilehash: ffd2afd66c108f9eef690d641d9c4cbc85e9d609
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58540131"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59256096"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Использование библиотеки Map Control в службе Azure Maps
 
@@ -30,8 +30,8 @@ ms.locfileid: "58540131"
     a. Используйте размещенную на глобальном уровне версию CDN веб-пакета SDK Azure Maps, добавив конечные точки URL-адреса в таблицу стилей и источник сценария в элементе `<head>` файла.
 
     ```HTML
-    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=2" type="text/css">
-    <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=2"></script>
+    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
     ```
 
     2. Кроме того, загрузите исходный код веб-пакета SDK Azure Maps локально с помощью пакета NPM [azure-maps-control](https://www.npmjs.com/package/azure-maps-control) и разместите его в приложении. Этот пакет также включает определения TypeScript.
@@ -102,7 +102,7 @@ ms.locfileid: "58540131"
     </script>
     ```
 
-    См. в разделе [проверки подлинности с помощью Azure Maps](azure-maps-authentication.md) для получения дополнительных сведений.
+    Дополнительные сведения см. в разделе [проверки подлинности с помощью Azure Maps](azure-maps-authentication.md) для получения дополнительных сведений.
 
 6. При необходимости возможно добавление следующих элементов метатега в заголовок вашей страницы.
 
@@ -114,7 +114,7 @@ ms.locfileid: "58540131"
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     ```
 
-7. Сборка вашего HTML-файла должна выглядеть следующим образом.
+7. Окончательная сборка свой HTML-файл должен выглядеть примерно как следующий код:
 
     ```HTML
     <!DOCTYPE html>
@@ -131,8 +131,8 @@ ms.locfileid: "58540131"
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
-        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=2" type="text/css">
-        <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=2"></script>
+        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
+        <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
 
         <style>
             html, body {
@@ -164,7 +164,7 @@ ms.locfileid: "58540131"
     </html>
     ```
 
-8. Откройте файл в веб-браузере и вы увидите готовую для просмотра карту. Он должен выглядеть примерно так:
+8. Откройте файл в веб-браузере и вы увидите готовую для просмотра карту. Он должен выглядеть аналогично следующему коду:
 
     <iframe height="700" style="width: 100%;" scrolling="no" title="Использование элемента управления картой" src="//codepen.io/azuremaps/embed/yZpEYL/?height=557&theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
 Просмотрите перо <a href='https://codepen.io/azuremaps/pen/yZpEYL/'>How to use the map control</a> (Использование элемента управления картой) с помощью Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
@@ -175,7 +175,7 @@ ms.locfileid: "58540131"
 Узнайте, как создавать и взаимодействовать с картой:
 
 > [!div class="nextstepaction"]
-> [Create a map](map-create.md) (Создание карты)
+> [Создание карты](map-create.md)
 
 Узнайте, как изменить стиль карты:
 

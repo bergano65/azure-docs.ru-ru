@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: update-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 04/01/2019
+ms.date: 04/04/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: dc0c516ce9dc3a13474cefc61b6634dbeea0fce0
-ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
-ms.translationtype: MT
+ms.openlocfilehash: 76cd877380090ccad8b2f7b7dbe79957e0eab5bb
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58793664"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59056683"
 ---
 # <a name="manage-pre-and-post-scripts-preview"></a>Управление сценариями предварительного и последующего выполнения (предварительная версия)
 
@@ -67,6 +67,23 @@ ms.locfileid: "58793664"
 Если вам нужен другой тип объекта, вы можете привести его к другому типу с помощью собственной логики runbook.
 
 Помимо стандартных параметров модуля Runbook, у вас есть еще один дополнительный параметр. **SoftwareUpdateConfigurationRunContext**. Этот параметр представляет собой строку JSON. Если он настроен для сценария предварительного или последующего выполнения, строка автоматически передается при развертывании обновлений. Параметр содержит сведения о развертывании обновлений, отбираемые из выходных данных [API SoftwareUpdateconfigurations](/rest/api/automation/softwareupdateconfigurations/getbyname#updateconfiguration). Доступные в этой переменной свойства представлены в таблице ниже.
+
+## <a name="stopping-a-deployment"></a>Остановка развертывания
+
+Если вы хотите остановить развертывание, на основе сценария Pre необходимо [throw](automation-runbook-execution.md#throw) исключение. Если исключение не создается, развертывания и сценарий после будут по-прежнему работать. [Пример модуля runbook](https://gallery.technet.microsoft.com/Update-Management-Run-6949cc44?redir=0) в галерее показано, как это можно сделать. Ниже приведен фрагмент кода из этого модуля.
+
+```powershell
+#In this case, we want to terminate the patch job if any run fails.
+#This logic might not hold for all cases - you might want to allow success as long as at least 1 run succeeds
+foreach($summary in $finalStatus)
+{
+    if ($summary.Type -eq "Error")
+    {
+        #We must throw in order to fail the patch deployment.  
+        throw $summary.Summary
+    }
+}
+```
 
 ### <a name="softwareupdateconfigurationruncontext-properties"></a>Свойства SoftwareUpdateConfigurationRunContext
 
@@ -231,6 +248,17 @@ if ($summary.Type -eq "Error")
 }
 ```
 
+## <a name="abort-patch-deployment"></a>Прервать развертывание исправлений
+
+Если скрипт pre возвращает ошибку, можно прервать развертывания. Чтобы сделать это, необходимо выполнить [throw](/powershell/module/microsoft.powershell.core/about/about_throw) ошибка в скрипте для любую логику, которая бы приводят к сбою.
+
+```powershell
+if (<My custom error logic>)
+{
+    #Throw an error to fail the patch deployment.  
+    throw "There was an error, abort deployment"
+}
+```
 ## <a name="known-issues"></a>Известные проблемы
 
 * Для сценариев предварительного и последующего выполнения нельзя передавать параметры, содержащие объекты или массивы. При такой попытке модуль Runbook возвратит ошибку.
@@ -240,5 +268,5 @@ if ($summary.Type -eq "Error")
 Ознакомьтесь с руководством ниже, чтобы узнать, как управлять обновлениями для виртуальных машин Windows.
 
 > [!div class="nextstepaction"]
-> [Устранение неполадок при изменениях в среде](automation-tutorial-update-management.md)
+> [Управление обновлениями и исправлениями для виртуальных машин Azure под управлением Windows](automation-tutorial-update-management.md)
 
