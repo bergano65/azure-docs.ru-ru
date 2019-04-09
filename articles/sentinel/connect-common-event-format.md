@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/26/2019
+ms.date: 04/02/2019
 ms.author: rkarlin
-ms.openlocfilehash: f19afeb3ac984427458dd23085c9c6d9e69e3e3a
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 2117a139de52643f7cdbc6d054f46e5fb8ec0a77
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58884216"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59005599"
 ---
 # <a name="connect-your-external-solution-using-common-event-format"></a>Подключите решение внешнего с использованием Cef
 
@@ -80,14 +80,14 @@ Azure Sentinel можно подключиться с внешним решен�
             
             2. Скачайте и установите [файл конфигурации security_events](https://aka.ms/asi-syslog-config-file-linux) , предназначенный для настройки агента системного журнала на порт 25226. `sudo wget -O /etc/opt/microsoft/omsagent/{0}/conf/omsagent.d/security_events.conf "https://aka.ms/syslog-config-file-linux"` Где {0} следует заменить на идентификатор GUID рабочей области.
             
-            1. Перезапустите управляющую программу системного журнала `sudo service rsyslog restart`
-             
+            1. Перезапустите управляющую программу системного журнала `sudo service rsyslog restart`<br> Дополнительные сведения см. в разделе [rsyslog документации](https://www.rsyslog.com/doc/v8-stable/tutorials/tls_cert_summary.html)
+           
           - Если вы выбрали syslog-ng:
 
               1. Сообщите управляющую программу Syslog для прослушивания по помещению local_4 и отправлять сообщения системного журнала агента Azure Sentinel с помощью порт 25226. `sudo bash -c "printf 'filter f_local4_oms { facility(local4); };\n  destination security_oms { tcp(\"127.0.0.1\" port(25226)); };\n  log { source(src); filter(f_local4_oms); destination(security_oms); };' > /etc/syslog-ng/security-config-omsagent.conf"`
               2. Скачайте и установите [файл конфигурации security_events](https://aka.ms/asi-syslog-config-file-linux) , предназначенный для настройки агента системного журнала на порт 25226. `sudo wget -O /etc/opt/microsoft/omsagent/{0}/conf/omsagent.d/security_events.conf "https://aka.ms/syslog-config-file-linux"` Где {0} следует заменить на идентификатор GUID рабочей области.
 
-              3. Перезапустите управляющую программу системного журнала `sudo service syslog-ng restart`
+              3. Перезапустите управляющую программу системного журнала `sudo service syslog-ng restart` <br>Дополнительные сведения см. в разделе [syslog-ng документации](https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.16/mutual-authentication-using-tls/2)
       2. Перезапустите агент системного журнала с помощью следующей команды: `sudo /opt/microsoft/omsagent/bin/service_control restart [{workspace GUID}]`
       1. Убедитесь, что ошибки в журнале агента, выполнив следующую команду: `tail /var/opt/microsoft/omsagent/log/omsagent.log`
 

@@ -1,15 +1,15 @@
 ---
 author: msmbaldwin
-ms.service: key-vault
+ms.service: storage
 ms.topic: include
-ms.date: 01/31/2019
+ms.date: 03/15/2019
 ms.author: mbaldwin
-ms.openlocfilehash: d8e33113ca9f0886a4cef1c8f9acb855b32c2973
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: b242bda524c747b28453061c797afde02cf6f455
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "58115217"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59007626"
 ---
 ## <a name="preventative"></a>Профилактическая категория
 
@@ -34,7 +34,7 @@ ms.locfileid: "58115217"
 
 | Атрибут безопасности | Да/нет | Примечания|
 |---|---|--|
-| Поддержка мониторинга Azure (Log Analytics, App Insights и т. д.)| Yes | Доступные метрики Azure Monitor теперь регистрирует начальной предварительной версии |
+| Azure Monitor поддержки (Log analytics, Application insights, и т.д.)| Yes | Доступные метрики Azure Monitor теперь регистрирует начальной предварительной версии |
 
 ## <a name="iam-support"></a>Поддержка IAM
 
@@ -55,4 +55,4 @@ ms.locfileid: "58115217"
 
 | Атрибут безопасности | Да/нет | Примечания|
 |---|---|--|
-| Поддержка управления конфигурацией (управление версиями конфигурации и т. д.)| Yes | Поддерживает управление версиями поставщика ресурсов через API-интерфейсы Azure Resource Manager |
+| Поддержка конфигурации management (Управление версиями конфигурации и т. д.)| Yes | Поддерживает управление версиями поставщика ресурсов через API-интерфейсы Azure Resource Manager |

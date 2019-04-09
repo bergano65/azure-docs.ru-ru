@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 02/20/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15b37c4845526227799173b09f468701954fc7b5
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 6ecbac8af86c3c2c76b7710eb61f71481b86291b
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58449324"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59009875"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-virtual-machine-scale-using-a-template"></a>Настройка управляемого удостоверения для ресурсов Azure в масштабируемом виртуальной машины Azure с помощью шаблона
 
@@ -60,7 +60,7 @@ ms.locfileid: "58449324"
 
 В этом разделе вы узнаете, как включить и отключить управляемое удостоверение, назначаемое системой, с помощью шаблона Azure Resource Manager.
 
-### <a name="enable-system-assigned-managed-identity-during-creation-the-creation-of-a-virtual-machines-scale-set-or-a-existing-virtual-machine-scale-set"></a>Включение управляемого удостоверения, назначаемого системой, для нового или существующего масштабируемого набора виртуальных машин
+### <a name="enable-system-assigned-managed-identity-during-creation-the-creation-of-a-virtual-machines-scale-set-or-an-existing-virtual-machine-scale-set"></a>Включить назначенный системой управляемого удостоверения во время создания Создание масштабируемого набора виртуальных машин или имеющийся масштабируемый набор виртуальных машин
 
 1. После входа в Azure локально или через портал Azure используйте учетную запись, связанную с подпиской Azure, которая содержит масштабируемый набор виртуальных машин.
 2. Чтобы включить управляемое удостоверение, назначаемое системой, загрузите шаблон в редактор, найдите интересующий ресурс `Microsoft.Compute/virtualMachinesScaleSets` в разделе ресурсов и добавьте свойство `identity` на том же уровне, что и свойство `"type": "Microsoft.Compute/virtualMachinesScaleSets"`. Используйте следующий синтаксис:

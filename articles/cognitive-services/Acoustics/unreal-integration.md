@@ -10,19 +10,19 @@ ms.subservice: acoustics
 ms.topic: how-to
 ms.date: 03/20/2019
 ms.author: kegodin
-ms.openlocfilehash: 0baaf31386e1155dee6ca2bbfda6827ca3fc36fe
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: c6baa9f8330338c1e5fdc9ee0b5a8cc8b344e871
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58313453"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006482"
 ---
 # <a name="project-acoustics-unreal-and-wwise-integration"></a>Unreal шума и интеграции Wwise проекта
 В этом практическом руководстве шаги подробные интеграции пакета проекта шума подключаемого модуля в существующих Unreal и Wwise игр проект. 
 
 Требования к программному обеспечению:
-* [Unreal Engine](https://www.unrealengine.com/) 4.21
-* [AudioKinetic Wwise](https://www.audiokinetic.com/products/wwise/) 2018.1. +
+* [Unreal Engine](https://www.unrealengine.com/) 4.20 или 4.21
+* [AudioKinetic Wwise](https://www.audiokinetic.com/products/wwise/) 2018.1.\*
 * [Подключаемый модуль Wwise для Unreal](https://www.audiokinetic.com/library/?source=UE4&id=index.html)
   * Если вы используете прямая интеграция пакета SDK Wwise вместо того чтобы использовать подключаемые модули Wwise Unreal, обратитесь к проекта шума Unreal подключаемого модуля и изменить вызовы Wwise API.
 
@@ -39,17 +39,17 @@ ms.locfileid: "58313453"
 1. Установка подключаемого модуля mixer Wwise шума проекта
 2. (Re) разверните Wwise игры. Этот шаг распространяет mixer подключаемый модуль в проект игр.
 3. Добавьте проект шума Unreal подключаемый модуль в игру
-4. Расширить функциональные возможности элемента Wwise Unreal подключаемого модуля
+4. Расширение функциональных возможностей подключаемого модуля Unreal для Wwise
 5. Создайте игру и проверьте, что включен Python
 6. Настройка проекта Wwise для использования шума проекта
 7. Настройка аудио в Unreal
 
 ## <a name="1-install-the-project-acoustics-mixer-plugin"></a>1. Установка подключаемого модуля mixer шума проекта
-* Откройте средство запуска Wwise, затем в **подключаемые модули** в списке **установить новые подключаемые модули**выберите **добавить каталог**. 
+* Откройте средство запуска Wwise, а затем на вкладке **Plugins** (Подключаемые модули) в разделе **Install New Plugins** (Установка новых подключаемых модулей) выберите **Add From Directory** (Добавить из каталога). 
 
     ![Снимок экрана установки подключаемого модуля в Wwise запуска](media/wwise-install-new-plugin.png)
 
-* Выберите `AcousticsWwisePlugin\ProjectAcoustics` каталог, который был включен в загруженный пакет. Он содержит пакет Wwise mixer подключаемого модуля.
+* Выберите каталог `AcousticsWwisePlugin\ProjectAcoustics`, содержащийся в скачанном пакете. Он содержит пакет Wwise mixer подключаемого модуля.
 
 * Wwise установит подключаемый модуль. Шума проекта теперь должны отображаться в списке установленных подключаемых модулей в Wwise.
 ![Снимок экрана из Wwise установлено список подключаемых модулей, после установки шума проекта](media/unreal-integration-post-mixer-plugin-install.png)
@@ -59,7 +59,7 @@ ms.locfileid: "58313453"
 
 * **Подключаемый модуль ядра:** Если у вас установлен в качестве игры подключаемого модуля в проекте Unreal C++ Wwise, пропустите этот шаг. Если он установлен как подключаемый модуль ядра, например так, как Unreal проекта развертывания только Wwise схемы с помощью наших mixer подключаемого модуля, не сложнее. Создать фиктивный пустой проект Unreal C++, закройте его, если открывается редактор Unreal и выполните остальные процедуры развертывания Wwise в этот фиктивный проект. Затем скопируйте развернутой Wwise подключаемого модуля.
  
-* Из средства запуска Wwise, нажмите кнопку **Unreal Engine** , а затем выберите в меню "гамбургер" рядом с полем **последние проекты Unreal Engine** и выберите **найти проект**. Откройте проект Unreal свою игру `.uproject` файл.
+* В средстве запуска Wwise перейдите на вкладку **Unreal Engine**, а затем щелкните меню с тремя полосками рядом с разделом **Recent Unreal Engine Projects** (Последние проекты Unreal Engine) и выберите **Browse for project** (Поиск проекта). Откройте проект Unreal свою игру `.uproject` файл.
 
     ![Снимок экрана из Wwise запуска в Unreal вкладку](media/wwise-unreal-tab.png)
 
@@ -74,15 +74,15 @@ ms.locfileid: "58313453"
 
 * Убедитесь, вы видите `Wwise` вместе с папкой `ProjectAcoustics` папки. Он содержит подключаемый модуль Wwise вместе с двоичными файлами для подключаемого модуля mixer, (re-) развернутому на шаге 2 выше.
 
-## <a name="4-extend-wwises-unreal-plugin-functionality"></a>4. Расширить функциональные возможности элемента Wwise Unreal подключаемого модуля
+## <a name="4-extend-wwises-unreal-plugin-functionality"></a>4. Расширение функциональных возможностей подключаемого модуля Unreal для Wwise
 * Проект шума Unreal подключаемого модуля требуется дополнительное поведение следует предоставлять из подключаемого модуля Wwise Unreal API на [эти рекомендации](https://www.audiokinetic.com/library/?source=UE4&id=using__initialsetup.html). Мы включили пакетный файл для автоматизации установки исправлений процедуры. 
-* Внутри `Plugins\ProjectAcoustics\Resources`, запустите `PatchWwise.bat`. Приведенном ниже примере используется наш пример проекта AcousticsGame.
+* В `Plugins\ProjectAcoustics\Resources` выполните файл `PatchWwise.bat`. Приведенном ниже примере используется наш пример проекта AcousticsGame.
 
     ![Снимок экрана: обозреватель Windows окно выделение предоставленный сценарий для исправления Wwise](media/patch-wwise-script.png)
 
 * Если у вас нет установленного пакета SDK DirectX, вам потребуется закомментировать строку, содержащую DXSDK_DIR в `[UProject]\Plugins\Wwise\Source\AkAudio\AkAudio.Build.cs`
 
-    ![Снимок экрана редактора кода, показывающий DXSDK в комментарий](media/directx-sdk-comment.png)
+    ![Снимок экрана с редактором кода — комментирование строки DXSDK](media/directx-sdk-comment.png)
 
 ## <a name="5-build-game-and-check-python-is-enabled"></a>5. Создайте игру и проверьте, что включен Python
 

@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 06/25/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dc3a32f9fb2755fc164c33a6759d0130ac7ddad5
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: cafb3c97befd64cc6413a2eefa5e5baa9e01bf93
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58445758"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59009588"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-virtual-machine-scale-set-using-rest-api-calls"></a>Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью вызовов REST API
 
@@ -88,14 +88,14 @@ ms.locfileid: "58445758"
    PUT https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2018-06-01 HTTP/1.1
    ```
 
-   **Заголовки запроса**
+   **Заголовки запросов**
 
    |Заголовок запроса  |ОПИСАНИЕ  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
    |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. | 
 
-   **Текст запроса**
+   **Тело запроса**
 
    ```JSON
     {
@@ -160,7 +160,7 @@ ms.locfileid: "58445758"
     }  
    ```  
 
-### <a name="enable-system-assigned-managed-identity-on-a-existing-virtual-machine-scale-set"></a>Включение управляемого удостоверения, назначаемого системой, в существующем масштабируемом наборе виртуальных машин
+### <a name="enable-system-assigned-managed-identity-on-an-existing-virtual-machine-scale-set"></a>Включение управляемого удостоверения, назначаемого системой, в существующем масштабируемом наборе виртуальных машин
 
 Чтобы включить управляемое удостоверение, назначаемое системой, в существующем масштабируемом наборе виртуальных машин, нужно получить маркер доступа, а затем воспользоваться CURL для вызова конечной точки REST Resource Manager для изменения типа удостоверения.
 
@@ -183,14 +183,14 @@ ms.locfileid: "58445758"
    PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2018-06-01 HTTP/1.1
    ```
 
-   **Заголовки запроса**
+   **Заголовки запросов**
 
    |Заголовок запроса  |ОПИСАНИЕ  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
    |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. | 
 
-   **Текст запроса**
+   **Тело запроса**
 
    ```JSON
     {
@@ -206,7 +206,7 @@ ms.locfileid: "58445758"
 
    API версии `2018-06-01` хранит управляемые удостоверения, назначаемые пользователем, в значении `userAssignedIdentities` в формате словаря в отличие от значения `identityIds` в формате массива, используемого в API версии `2017-12-01`.
    
-   **API версии 2018-06-01**
+   **API ВЕРСИИ 2018-06-01**
 
    ```bash
    curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2018-06-01' -X PATCH -d '{"identity":{"type":"SystemAssigned,UserAssigned", "userAssignedIdentities":{"/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1":{},"/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID2":{}}}}' -H "Content-Type: application/json" -H Authorization:"Bearer <ACCESS TOKEN>"
@@ -216,14 +216,14 @@ ms.locfileid: "58445758"
    PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2018-06-01 HTTP/1.1
    ```
 
-   **Заголовки запроса**
+   **Заголовки запросов**
 
    |Заголовок запроса  |ОПИСАНИЕ  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
    |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. |
  
-   **Текст запроса**
+   **Тело запроса**
 
    ```JSON
     {
@@ -240,7 +240,7 @@ ms.locfileid: "58445758"
     }
    ```
    
-   **API версии 2017-12-01**
+   **API ВЕРСИИ 2017-12-01**
 
    ```bash
    curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2017-12-01' -X PATCH -d '{"identity":{"type":"SystemAssigned,UserAssigned", "identityIds":["/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1","/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID2"]}}' -H "Content-Type: application/json" -H Authorization:"Bearer <ACCESS TOKEN>"
@@ -250,14 +250,14 @@ ms.locfileid: "58445758"
    PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2017-12-01 HTTP/1.1
    ```
 
-   **Заголовки запроса**
+   **Заголовки запросов**
 
    |Заголовок запроса  |ОПИСАНИЕ  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
    |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. | 
 
-   **Текст запроса**
+   **Тело запроса**
 
    ```JSON
     {
@@ -294,14 +294,14 @@ ms.locfileid: "58445758"
    PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2018-06-01 HTTP/1.1
    ```
 
-   **Заголовки запроса**
+   **Заголовки запросов**
 
    |Заголовок запроса  |ОПИСАНИЕ  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
    |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. | 
 
-   **Текст запроса**
+   **Тело запроса**
 
    ```JSON
     {
@@ -341,7 +341,7 @@ ms.locfileid: "58445758"
 
 5. Создайте масштабируемый набор виртуальных машин, используя CURL для вызова конечной точки REST Azure Resource Manager. Приведенный ниже пример создает в группе ресурсов *myResourceGroup* масштабируемый набор виртуальных машин *myVMSS* с управляемым удостоверением, назначаемым пользователем, `ID1` в соответствии со значением `"identity":{"type":"UserAssigned"}` в тексте запроса. Замените `<ACCESS TOKEN>` значением, полученным на предыдущем шаге при запросе маркера доступа носителя, а вместо `<SUBSCRIPTION ID>` укажите значение, подходящее для вашей среды.
  
-   **API версии 2018-06-01**
+   **API ВЕРСИИ 2018-06-01**
 
    ```bash   
    curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2018-06-01' -X PUT -d '{"sku":{"tier":"Standard","capacity":3,"name":"Standard_D1_v2"},"location":"eastus","identity":{"type":"UserAssigned","userAssignedIdentities":{"/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1":{}}},"properties":{"overprovision":true,"virtualMachineProfile":{"storageProfile":{"imageReference":{"sku":"2016-Datacenter","publisher":"MicrosoftWindowsServer","version":"latest","offer":"WindowsServer"},"osDisk":{"caching":"ReadWrite","managedDisk":{"storageAccountType":"Standard_LRS"},"createOption":"FromImage"}},"osProfile":{"computerNamePrefix":"myVMSS","adminUsername":"azureuser","adminPassword":"myPassword12"},"networkProfile":{"networkInterfaceConfigurations":[{"name":"myVMSS","properties":{"primary":true,"enableIPForwarding":true,"ipConfigurations":[{"name":"myVMSS","properties":{"subnet":{"id":"/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVnet/subnets/mySubnet"}}}]}}]}},"upgradePolicy":{"mode":"Manual"}}}' -H "Content-Type: application/json" -H "Authorization: Bearer <ACCESS TOKEN>"
@@ -351,14 +351,14 @@ ms.locfileid: "58445758"
    PUT https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2018-06-01 HTTP/1.1
    ```
 
-   **Заголовки запроса**
+   **Заголовки запросов**
 
    |Заголовок запроса  |ОПИСАНИЕ  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
    |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. | 
 
-   **Текст запроса**
+   **Тело запроса**
 
    ```JSON
     {
@@ -428,7 +428,7 @@ ms.locfileid: "58445758"
     }
    ```   
 
-   **API версии 2017-12-01**
+   **API ВЕРСИИ 2017-12-01**
 
    ```bash   
    curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2017-12-01' -X PUT -d '{"sku":{"tier":"Standard","capacity":3,"name":"Standard_D1_v2"},"location":"eastus","identity":{"type":"UserAssigned","identityIds":["/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1"]},"properties":{"overprovision":true,"virtualMachineProfile":{"storageProfile":{"imageReference":{"sku":"2016-Datacenter","publisher":"MicrosoftWindowsServer","version":"latest","offer":"WindowsServer"},"osDisk":{"caching":"ReadWrite","managedDisk":{"storageAccountType":"Standard_LRS"},"createOption":"FromImage"}},"osProfile":{"computerNamePrefix":"myVMSS","adminUsername":"azureuser","adminPassword":"myPassword12"},"networkProfile":{"networkInterfaceConfigurations":[{"name":"myVMSS","properties":{"primary":true,"enableIPForwarding":true,"ipConfigurations":[{"name":"myVMSS","properties":{"subnet":{"id":"/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVnet/subnets/mySubnet"}}}]}}]}},"upgradePolicy":{"mode":"Manual"}}}' -H "Content-Type: application/json" -H "Authorization: Bearer <ACCESS TOKEN>"
@@ -438,14 +438,14 @@ ms.locfileid: "58445758"
    PUT https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2017-12-01 HTTP/1.1
    ```
 
-   **Заголовки запроса**
+   **Заголовки запросов**
 
    |Заголовок запроса  |ОПИСАНИЕ  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
    |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. |
  
-   **Текст запроса**
+   **Тело запроса**
 
    ```JSON
     {
@@ -533,7 +533,7 @@ ms.locfileid: "58445758"
    GET https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>/providers/Microsoft.Compute/virtualMachineScaleSets/<VMSS NAME>?api-version=2018-06-01 HTTP/1.1
    ```
 
-   **Заголовки запроса**
+   **Заголовки запросов**
 
    |Заголовок запроса  |ОПИСАНИЕ  |
    |---------|---------|
@@ -544,7 +544,7 @@ ms.locfileid: "58445758"
 
    Следующий пример задает управляемое удостоверение, назначаемое пользователем, `ID1` для масштабируемого набора виртуальных машин *myVMSS* в группе ресурсов *myResourceGroup*.  Замените `<ACCESS TOKEN>` значением, полученным на предыдущем шаге при запросе маркера доступа носителя, а вместо `<SUBSCRIPTION ID>` укажите значение, подходящее для вашей среды.
 
-   **API версии 2018-06-01**
+   **API ВЕРСИИ 2018-06-01**
 
    ```bash
    curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2018-12-01' -X PATCH -d '{"identity":{"type":"userAssigned", "userAssignedIdentities":{"/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1":{}}}}' -H "Content-Type: application/json" -H Authorization:"Bearer <ACCESS TOKEN>"
@@ -554,14 +554,14 @@ ms.locfileid: "58445758"
    PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2018-12-01 HTTP/1.1
    ```
 
-   **Заголовки запроса**
+   **Заголовки запросов**
 
    |Заголовок запроса  |ОПИСАНИЕ  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
    |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. | 
 
-   **Текст запроса**
+   **Тело запроса**
 
    ```JSON
     {
@@ -576,7 +576,7 @@ ms.locfileid: "58445758"
     }
    ``` 
     
-   **API версии 2017-12-01**
+   **API ВЕРСИИ 2017-12-01**
 
    ```bash
    curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2017-12-01' -X PATCH -d '{"identity":{"type":"userAssigned", "identityIds":["/subscriptions/<SUBSCRIPTION ID>/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1"]}}' -H "Content-Type: application/json" -H Authorization:"Bearer <ACCESS TOKEN>"
@@ -586,14 +586,14 @@ ms.locfileid: "58445758"
    PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2017-12-01 HTTP/1.1
    ```
 
-   **Заголовки запроса**
+   **Заголовки запросов**
 
    |Заголовок запроса  |ОПИСАНИЕ  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
    |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. | 
 
-   **Текст запроса**
+   **Тело запроса**
 
    ```JSON
     {
@@ -608,7 +608,7 @@ ms.locfileid: "58445758"
 
 5. Если для масштабируемого набора виртуальных машин задано управляемое удостоверение, назначаемое пользователем или назначаемого системой, сделайте следующее.
    
-   **API версии 2018-06-01**
+   **API ВЕРСИИ 2018-06-01**
 
    Добавьте управляемое удостоверение, назначаемое пользователем, в значение словаря `userAssignedIdentities`.
 
@@ -622,14 +622,14 @@ ms.locfileid: "58445758"
    PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2018-06-01 HTTP/1.1
    ```
 
-   **Заголовки запроса**
+   **Заголовки запросов**
 
    |Заголовок запроса  |ОПИСАНИЕ  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
    |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. | 
 
-   **Текст запроса**
+   **Тело запроса**
 
    ```JSON
     {
@@ -647,7 +647,7 @@ ms.locfileid: "58445758"
     }
    ```
 
-   **API версии 2017-12-01**
+   **API ВЕРСИИ 2017-12-01**
 
    При добавлении нового управляемого удостоверения, назначаемого пользователем, сохраните управляемые удостоверения, назначаемые пользователем, которые вы хотите оставить в значении массива `identityIds`.
 
@@ -661,14 +661,14 @@ ms.locfileid: "58445758"
    PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2017-12-01 HTTP/1.1
    ```
 
-    **Заголовки запроса**
+    **Заголовки запросов**
 
    |Заголовок запроса  |ОПИСАНИЕ  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
    |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. | 
 
-   **Текст запроса**
+   **Тело запроса**
 
    ```JSON
     {
@@ -700,7 +700,7 @@ ms.locfileid: "58445758"
    GET https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>/providers/Microsoft.Compute/virtualMachineScaleSets/<VMSS NAME>?api-version=2018-06-01 HTTP/1.1
    ```
 
-   **Заголовки запроса**
+   **Заголовки запросов**
 
    |Заголовок запроса  |ОПИСАНИЕ  |
    |---------|---------|
@@ -710,7 +710,7 @@ ms.locfileid: "58445758"
     
    Например, если для масштабируемого набора виртуальных машин заданы управляемые удостоверения, назначаемые пользователем, `ID1` и `ID2`, и требуется оставить только `ID1`, сохранив при этом управляемое удостоверение, назначаемое системой.
 
-   **API версии 2018-06-01**
+   **API ВЕРСИИ 2018-06-01**
 
    К управляемому удостоверению, назначаемому пользователем, которое требуется удалить, необходимо добавить `null`.
 
@@ -722,14 +722,14 @@ ms.locfileid: "58445758"
    PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2018-06-01 HTTP/1.1
    ```
 
-   **Заголовки запроса**
+   **Заголовки запросов**
 
    |Заголовок запроса  |ОПИСАНИЕ  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
    |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. | 
 
-   **Текст запроса**
+   **Тело запроса**
 
    ```JSON
     {
@@ -742,7 +742,7 @@ ms.locfileid: "58445758"
     }
    ```
 
-   **API версии 2017-12-01**
+   **API ВЕРСИИ 2017-12-01**
 
    В массиве `identityIds` оставьте только те управляемые удостоверения, назначаемые пользователем, которые вы хотите сохранить.
 
@@ -754,14 +754,14 @@ ms.locfileid: "58445758"
    PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2017-12-01 HTTP/1.1
    ```
 
-   **Заголовки запроса**
+   **Заголовки запросов**
 
    |Заголовок запроса  |ОПИСАНИЕ  |
    |---------|---------|
    |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
    |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. | 
 
-   **Текст запроса**
+   **Тело запроса**
 
    ```JSON
     {
@@ -784,14 +784,14 @@ curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroup
 PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2018-06-01 HTTP/1.1
 ```
 
-**Заголовки запроса**
+**Заголовки запросов**
 
 |Заголовок запроса  |ОПИСАНИЕ  |
 |---------|---------|
 |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
 |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. | 
 
-**Текст запроса**
+**Тело запроса**
 
 ```JSON
 {
@@ -811,14 +811,14 @@ curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroup
 PATCH https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myVMSS?api-version=2018-06-01 HTTP/1.1
 ```
 
-**Заголовки запроса**
+**Заголовки запросов**
 
 |Заголовок запроса  |ОПИСАНИЕ  |
 |---------|---------|
 |*Content-Type*     | Обязательный элемент. Задайте значение `application/json`.        |
 |*Авторизация*     | Обязательный элемент. Задайте допустимый маркер доступа для `Bearer`. | 
 
-**Текст запроса**
+**Тело запроса**
 
 ```JSON
 {

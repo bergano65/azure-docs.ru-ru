@@ -69,7 +69,7 @@ ms.locfileid: "58519091"
 - https://enterpriseregistration.windows.net
 - https://login.microsoftonline.com
 - https://device.login.microsoftonline.com
-- https://autologon.microsoftazuread-sso.com (если вы используете или планируете использовать простой единый вход).
+- [https://autologon.microsoftazuread-sso.com](https://autologon.microsoftazuread-sso.com)(если вы используете или планируете использовать простой единый вход).
 
 Если организации требуется доступ к Интернету через исходящий прокси-сервер, то начиная с Windows 10 версии 1709 можно [настроить параметры прокси-сервера на компьютере с помощью объекта групповой политики (GPO)](https://blogs.technet.microsoft.com/netgeeks/2018/06/19/winhttp-proxy-settings-deployed-by-gpo/). Если компьютер работает под управлением версии ОС, предшествующей Windows 10 версии 1709, необходимо реализовать автоматическое обнаружение веб-прокси (WPAD), чтобы обеспечить регистрацию устройств в Azure AD для компьютеров с Windows 10. 
 

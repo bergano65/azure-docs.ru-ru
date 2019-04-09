@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 03/18/2019
+ms.date: 04/03/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: dbb50ba703221c28576b4c3614c77bbac7eeabb9
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
-ms.translationtype: MT
+ms.openlocfilehash: 9d4661f6c975265ec710b29a8a05cc7ef41b4011
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58519125"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59057427"
 ---
 # <a name="runbook-execution-in-azure-automation"></a>Выполнение модуля Runbook в службе автоматизации Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "58519125"
 |Мониторинг файла или папки с модулем Runbook|гибридный компонент Runbook Worker|Используйте [задачу "Наблюдатель"](automation-watchers-tutorial.md) на гибридной рабочей роли Runbook|
 |Ресурсоемкий сценарий|гибридный компонент Runbook Worker| Песочницы Azure имеют [ограничения на ресурсы](../azure-subscription-service-limits.md#automation-limits)|
 |Использование модулей с определенными требованиями| гибридный компонент Runbook Worker|Ниже приведены некоторые примеры.</br> **WinSCP** — зависимость от winscp.exe. </br> **IISAdministration** — необходимо включить IIS.|
-|Установка модуля, для которого требуется установщик|гибридный компонент Runbook Worker|Модули для песочницы должны поддерживать выполнение XCopy|
+|Установка модуля, для которого требуется установщик|гибридный компонент Runbook Worker|Модули для "песочницы" должно быть отображается|
 |Использование модулей Runbook или модулей, для которых требуется платформа .NET Framework, отличная от 4.7.2|гибридный компонент Runbook Worker|В песочницах службы автоматизации установлена платформа .NET Framework 4.7.2, и ее невозможно обновить|
 |Сценарии, требующие повышения прав|гибридный компонент Runbook Worker|"Песочницы" не допускают повышение прав. Чтобы решить эту проблему, используйте гибридной рабочей роли Runbook, и можно отключить контроль учетных Записей и использование `Invoke-Command` при запуске команды требуется повышение прав|
 |Сценарии, требующие доступа к инструментарию WMI|гибридный компонент Runbook Worker|Заданий, выполняемых в "песочницах" облаке [не имеют доступ к WMI](#device-and-application-characteristics)|
@@ -246,9 +246,9 @@ function Get-ContosoFiles
 3. На странице для выбранного модуля Runbook щелкните плитку **Задания**.
 4. Щелкните одно из заданий в списке, и вы сможете просмотреть сведения о нем и выходные данные на странице сведений о задании модуля Runbook.
 
-## <a name="retrieving-job-status-using-windows-powershell"></a>Получение состояния задания с помощью Windows PowerShell
+## <a name="retrieving-job-status-using-powershell"></a>Получение состояния задания с помощью PowerShell
 
-Чтобы получить сведения о созданных для модуля Runbook заданиях и о конкретном задании, воспользуйтесь командлетом [Get-AzureRmAutomationJob](https://docs.microsoft.com/powershell/module/azurerm.automation/get-azurermautomationjob). Если запустить модуль Runbook с помощью Windows PowerShell, то команда [Start-AzureRmAutomationRunbook](https://docs.microsoft.com/powershell/module/azurerm.automation/start-azurermautomationrunbook) вернет результирующее задание. Получить выходные данные задания можно с помощью команды [Get-AzureRmAutomationJobOutput](https://docs.microsoft.com/powershell/module/azurerm.automation/get-azurermautomationjoboutput).
+Чтобы получить сведения о созданных для модуля Runbook заданиях и о конкретном задании, воспользуйтесь командлетом [Get-AzureRmAutomationJob](https://docs.microsoft.com/powershell/module/azurerm.automation/get-azurermautomationjob). Если запустить модуль runbook с помощью PowerShell [Start-AzureRmAutomationRunbook](https://docs.microsoft.com/powershell/module/azurerm.automation/start-azurermautomationrunbook), то он возвращает результирующее задание. Получить выходные данные задания можно с помощью команды [Get-AzureRmAutomationJobOutput](https://docs.microsoft.com/powershell/module/azurerm.automation/get-azurermautomationjoboutput).
 
 Приведенные ниже примеры команд получают сведения о последнем задании для примера runbook и отображают его состояние, значения параметров runbook, а также выходные данные этого задания.
 
@@ -285,11 +285,30 @@ foreach($item in $output)
 
 ```powershell-interactive
 $SubID = "00000000-0000-0000-0000-000000000000"
-$rg = "ResourceGroup01"
-$AutomationAccount = "MyAutomationAccount"
-$JobResourceID = "/subscriptions/$subid/resourcegroups/$rg/providers/Microsoft.Automation/automationAccounts/$AutomationAccount/jobs"
+$AutomationResourceGroupName = "MyResourceGroup"
+$AutomationAccountName = "MyAutomationAccount"
+$RunbookName = "MyRunbook"
+$StartTime = (Get-Date).AddDays(-1)
+$JobActivityLogs = Get-AzureRmLog -ResourceGroupName $AutomationResourceGroupName -StartTime $StartTime `
+                                | Where-Object {$_.Authorization.Action -eq "Microsoft.Automation/automationAccounts/jobs/write"}
 
-Get-AzureRmLog -ResourceId $JobResourceID -MaxRecord 1 | Select Caller
+$JobInfo = @{}
+foreach ($log in $JobActivityLogs)
+{
+    # Get job resource
+    $JobResource = Get-AzureRmResource -ResourceId $log.ResourceId
+
+    if ($JobInfo[$log.SubmissionTimestamp] -eq $null -and $JobResource.Properties.runbook.name -eq $RunbookName)
+    { 
+        # Get runbook
+        $Runbook = Get-AzureRmAutomationJob -ResourceGroupName $AutomationResourceGroupName -AutomationAccountName $AutomationAccountName `
+                                            -Id $JobResource.Properties.jobId | ? {$_.RunbookName -eq $RunbookName}
+
+        # Add job information to hash table
+        $JobInfo.Add($log.SubmissionTimestamp, @($Runbook.RunbookName,$Log.Caller, $JobResource.Properties.jobId))
+    }
+}
+$JobInfo.GetEnumerator() | sort key -Descending | Select-Object -First 1
 ```
 
 ## <a name="fair-share"></a>доли

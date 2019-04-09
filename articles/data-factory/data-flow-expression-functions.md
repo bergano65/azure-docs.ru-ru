@@ -7,12 +7,12 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/15/2019
-ms.openlocfilehash: d7f44ace1625b9859eb8914f15526cf98fe883bc
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 74b22f194e7af000dbd8b53ec95dbbff2c5c588a
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58878372"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59010538"
 ---
 # <a name="mapping-data-flow-data-transformation-expressions"></a>Выражения преобразования потока данных для сопоставления данных
 
@@ -509,7 +509,7 @@ Escape-символом является ''. Если escape-символ пре
 <code>log</code>
 ==============================
 <code><b>log(<i>&lt;value1&gt;</i> : number, [<i>&lt;value2&gt;</i> : number]) => double</b></code><br/><br/>
-Вычисляет значение логарифма. Необязательный базовый может быть иначе предоставляемый число Эйлера, если используется
+Вычисляет значение логарифма. Необязательный базовый может быть иначе предоставляемый номером постоянную Эйлера, если используется
 * ``log(100, 10) -> 2``
 *********************************
 <code>log10</code>

@@ -7,12 +7,12 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/30/2019
-ms.openlocfilehash: 18d8a0e231e8b4dbe33911dd6267966674366904
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 6ce27ba699ae766ed4d2428f67d91379464bb9f1
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56734495"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006141"
 ---
 # <a name="azure-data-factory-mapping-data-flow-exists-transformation"></a>Существующее преобразование сопоставления потока данных Фабрики данных Azure
 
@@ -25,3 +25,10 @@ ms.locfileid: "56734495"
 Чтобы выполнить сравнение значений для потока данных между 1 и 2 потоками существующего преобразования, необходимо выбрать второй источник.
 
 Из 1 и 2 источника выберите столбец, значения которого необходимо проверить на существование или отсутствие.
+
+## <a name="multiple-exists-conditions"></a>Несколько существует условия
+
+Рядом с каждой строки в столбец условия для существует, вы найдете + входа доступны при наведении указателя мыши над достичь строки. Это позволит добавить несколько строк для условий Exists.
+
+## <a name="next-steps"></a>Дальнейшие действия
+

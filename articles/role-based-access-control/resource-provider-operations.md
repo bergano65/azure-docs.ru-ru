@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 04/01/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 5ddae616f81052e005210310e2d28b1bc10512ab
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
-ms.translationtype: MT
+ms.openlocfilehash: a6da0a92e99cbfe49bdebfb33dfaab91e2411acc
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58906214"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59010742"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -5066,7 +5066,7 @@ ms.locfileid: "58906214"
 > | Действие | Microsoft.Sql/servers/importExportOperationResults/read | Получение выполняемых операций импорта и экспорта. |
 > | Действие | Microsoft.Sql/servers/interfaceEndpointProfiles/delete | Удаляет профиль определенной конечной точки интерфейса |
 > | Действие | Microsoft.Sql/servers/interfaceEndpointProfiles/read | Возвращает свойства для профиля указанной конечной точки интерфейса |
-> | Действие | Microsoft.Sql/servers/interfaceEndpointProfiles/write | Создает профиль конечной точки интерфейса с указанными параметрами либо обновляет свойства или теги указанной конечной точки интерфейса |
+> | Действие | Microsoft.Sql/servers/interfaceEndpointProfiles/write | Создает профиль конечной точки интерфейса с указанными параметрами или обновление свойств или тегов для указанного интерфейса конечной точки |
 > | Действие | Microsoft.Sql/servers/jobAgents/delete | Удаляет агент задания базы данных SQL Azure |
 > | Действие | Microsoft.Sql/servers/jobAgents/read | Получает агент задания базы данных SQL Azure |
 > | Действие | Microsoft.Sql/servers/jobAgents/write | Создает или изменяет агент задания базы данных SQL Azure |

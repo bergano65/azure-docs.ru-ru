@@ -15,21 +15,21 @@ ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: celested
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4ed50dc3d0588f817117f388c8aea83211fd199
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: ff314e0bbf548c96c4f652213cdea21f86ed1125
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56189690"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006110"
 ---
 # <a name="how-to-configure-a-new-multi-tenant-application"></a>Настройка нового мультитенантного приложения
 
 Ниже приведен список рекомендуемых статей с дополнительными сведениями о мультитенантных приложениях.
 
 - Получите общее представление о том, [что собой представляет мультитенантное приложение](https://docs.microsoft.com/azure/active-directory/develop/active-directory-dev-glossary#multi-tenant-application).
-- Получите общее представление о [настройке мультитенантности в приложении](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications).
+- Получите общее представление о [настройке мультитенантности в приложении](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-convert-app-to-be-multi-tenant).
 - Ознакомьтесь с пошаговым руководством по [использованию платформы согласия Azure AD для реализации согласия](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications), необходимого для мультитенантных приложений.
 - Узнайте подробнее [о процедуре настройки и кодирования мультитенантного приложения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview), включая регистрацию, использование простой конечной точки, предоставление согласия пользователя и администратора, реализацию более сложных многоуровневых сценариев.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [StackOverflow в AzureAD](https://stackoverflow.com/questions/tagged/azure-active-directory)

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: traffic-manager
 ms.date: 04/26/2018
 ms.author: kumud
-ms.openlocfilehash: 4991be7ecb252001245a0bcde8551d8432b0794b
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: db84de194832180b8e153cf6aa7e6c9fab5e6d61
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55998507"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59010181"
 ---
 # <a name="route-traffic-for-high-availability-of-applications-using-azure-powershell"></a>Маршрутизация трафика для обеспечения высокого уровня доступности приложений с помощью Azure PowerShell
 
@@ -52,13 +52,13 @@ Remove-AzResourceGroup -Name myResourceGroup2
 | Команда | Примечания |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup)  | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [New-AzAppServicePlan](/powershell/module/az.websites/new-azappserviceplan) | Создает план службы приложений. Это как ферма сервера для веб-приложения Azure. |
+| [Новый AzAppServicePlan](/powershell/module/az.websites/new-azappserviceplan) | Создает план службы приложений. Это как ферма сервера для веб-приложения Azure. |
 | [New-AzWebApp](/powershell/module/az.websites/new-azwebapp) | Создает веб-приложение Azure в плане службы приложений. |
-| [Set-AzResource](/powershell/module/az.resources/new-azresource) | Создает веб-приложение Azure в плане службы приложений. |
+| [SET-AzResource](/powershell/module/az.resources/new-azresource) | Создает веб-приложение Azure в плане службы приложений. |
 | [New-AzTrafficManagerProfile](/powershell/module/az.trafficmanager/new-aztrafficmanagerprofile) | Создает профиль диспетчера трафика Azure. |
-| [New-AzTrafficManagerEndpoint](/powershell/module/az.trafficmanager/new-aztrafficmanagerendpoint) | Добавляет конечную точку в профиль диспетчера трафика Azure. |
+| [New-AzTrafficManagerEndpoint](/powershell/module/az.trafficmanager/new-aztrafficmanagerendpoint) | Добавление конечной точки в профиль диспетчера трафика Azure. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
 

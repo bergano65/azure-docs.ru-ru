@@ -1,19 +1,19 @@
 ---
 title: Подключение Raspberry Pi к Центру Интернета вещей Azure с помощью С | Документация Майкрософт
 description: Узнайте, как подключить компьютер Raspberry Pi к Центру Интернета вещей Azure и передавать данные на платформу облака Azure.
-author: rangv
+author: wesmc7777
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: c
 ms.topic: conceptual
 ms.date: 02/14/2019
-ms.author: rangv
-ms.openlocfilehash: 2b23725a4bccf753bbe7231202133771e5aaa614
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.author: wesmc
+ms.openlocfilehash: 3b09d9d484c6f17ee591dee9b7202a62502462ef
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58847197"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59268430"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-c"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (C)
 
@@ -153,7 +153,7 @@ ms.locfileid: "58847197"
    
    ![PuTTy](./media/iot-hub-raspberry-pi-kit-node-get-started/7_putty-windows.png)
    
-   **Пользователи MAC и Ubuntu**
+   **Пользователи Mac и Ubuntu**
    
    Используйте SSH-клиент, встроенный в Ubuntu или macOS. Возможно, для подключения устройства Pi по протоколу SSH потребуется выполнить `ssh pi@<ip address of pi>`.
    > [!NOTE]

@@ -4,14 +4,14 @@ description: Шаги по развертыванию кластера Avere vFX
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: conceptual
-ms.date: 02/20/2019
+ms.date: 04/05/2019
 ms.author: v-erkell
-ms.openlocfilehash: 7dbfc39075bb42b1ec13823849eb769e117ddd4a
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
-ms.translationtype: MT
+ms.openlocfilehash: 7ded66c29f12b8f68746726ca6c126bffbc51f0d
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57409692"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59056611"
 ---
 # <a name="deploy-the-vfxt-cluster"></a>Развертывание кластера vFXT
 
@@ -28,21 +28,20 @@ ms.locfileid: "57409692"
 
 Перед запуском шаблона создания убедитесь, что у вас есть следующие необходимые компоненты:  
 
-1. [Новая подписка](avere-vfxt-prereqs.md#create-a-new-subscription).
-1. [Разрешения владельца подписки](avere-vfxt-prereqs.md#configure-subscription-owner-permissions).
-1. [Квота для кластера vFXT](avere-vfxt-prereqs.md#quota-for-the-vfxt-cluster).
-1. [Настраиваемые роли доступа](avere-vfxt-prereqs.md#create-access-roles). Создайте роль, которая будет назначаться узлам кластера, для управления доступом на основе ролей. Вы можете также создать настраиваемую роль доступа для контроллеров кластера, но большинство пользователей выбирает стандартную роль владельца, которая предоставляет на контроллере привилегии уровня владельца группы ресурсов. См. дополнительные сведения о [встроенных ролях для ресурсов Azure](../role-based-access-control/built-in-roles.md#owner).
+1. [Новая подписка](avere-vfxt-prereqs.md#create-a-new-subscription)
+1. [Разрешения владельца подписки](avere-vfxt-prereqs.md#configure-subscription-owner-permissions)
+1. [Квота для кластера vFXT](avere-vfxt-prereqs.md#quota-for-the-vfxt-cluster)
 1. [Конечная точка службы хранилища (при необходимости)](avere-vfxt-prereqs.md#create-a-storage-service-endpoint-in-your-virtual-network-if-needed) — обязательный для развертывает использование существующей виртуальной сети и Создание хранилища BLOB-объектов
 
 Дополнительные сведения о шагах развертывания кластера и планировании см. в статьях [Plan your Avere vFXT system](avere-vfxt-deploy-plan.md) (Планирование системы Avere vFXT) и [Avere vFXT for Azure - deployment overview](avere-vfxt-deploy-overview.md) (Общие сведения о развертывании Avere vFXT для Azure).
 
 ## <a name="create-the-avere-vfxt-for-azure"></a>Создание кластера Avere vFXT для Azure
 
-Найдите на портале Azure нужный шаблон создания, выполнив поиск по строке Avere и выбрав Avere vFXT for ARM Deployment (Развертывание Avere vFXT для ARM). 
+Доступ к шаблону создания на портале Azure, выполнив поиск Avere и выбрав «Avere vFXT для шаблона Azure ARM». 
 
-![В окне браузера отображается портал Azure с выделенными элементами "Создать > Marketplace > Все". На странице "Все" в поле поиска введен термин "avere", а второй результат, Avere vFXT ARM Deployment (Развертывание Avere vFXT для ARM), выделен красным прямоугольником.](media/avere-vfxt-template-choose.png)
+![В окне браузера отображается портал Azure с выделенными элементами "Создать > Marketplace > Все". Во всем, что страница, поля поиска содержит термин «avere» и второй результат «Avere vFXT для шаблона Azure ARM» собраны в red, чтобы выделить его.](media/avere-vfxt-template-choose.png)
 
-Прочитав сведения на странице развертывания Avere vFXT для ARM, щелкните **Создать**, чтобы приступить к работе. 
+После прочтения сведения о vFXT Avere для страницы шаблона ARM в Azure, щелкните **создать** начинается. 
 
 ![Сайт Azure Marketplace, где отображается первая страница шаблона развертывания](media/avere-vfxt-deploy-first.png)
 
@@ -69,14 +68,6 @@ ms.locfileid: "57409692"
 
 * **Password** (Пароль) или **SSH public key** (Открытый ключ SSH) — в зависимости выбранного типа проверки подлинности в следующих полях нужно предоставить открытый ключ RSA или пароль. Эти учетные данные используются в сочетании с указанным выше именем пользователя.
 
-* **Avere cluster create role ID** (Идентификатор роли для создания кластера Avere). Это поле позволяет указать роль контроллера кластера для контроля доступа. По умолчанию здесь выбирается встроенная роль [Владелец](../role-based-access-control/built-in-roles.md#owner). Права владельца для контроллера кластера ограничены группой ресурсов кластера. 
-
-  Необходимо использовать глобальный уникальный идентификатор, соответствующий этой роли. Для варианта по умолчанию (Владелец) используется идентификатор GUID 8e3af657-a8ff-443c-a75c-2fe8c4bcb635. Чтобы найти идентификатор GUID для пользовательской роли, используйте следующую команду: 
-
-  ```azurecli
-  az role definition list --query '[*].{roleName:roleName, name:name}' -o table --name 'YOUR ROLE NAME'
-  ```
-
 * **Subscription** (Подписка). Выберите подписку для Avere vFXT. 
 
 * **Группа ресурсов**. Выберите существующую пустую группу ресурсов для кластера Avere vFXT или щелкните "Создать" и введите имя новой группы ресурсов. 
@@ -97,10 +88,6 @@ ms.locfileid: "57409692"
 * **Avere vFXT cluster node count** (Количество узлов кластера Avere vFXT). Выберите количество узлов, которое вы намерены использовать в кластере. Допускаются значения в диапазоне от трех до двенадцати узлов. 
 
 * **Cluster administration password** (Пароль для администрирования кластера). Создайте пароль для администрирования кластера. Этот пароль будет использоваться с именем пользователя ```admin``` для входа на панель управления кластером, где доступны функции мониторинга и настройки кластера.
-
-* **Avere cluster operations role** (Роль операций кластера Avere). Укажите имя роли контроля доступа для узлов кластера. Это та пользовательская роль, которую вы создали на предыдущем шаге. 
-
-  Пример из раздела [Создание роли доступа для узла кластера](avere-vfxt-prereqs.md#create-the-cluster-node-access-role) сохраняет файл с именем ```avere-operator.json``` и присваивает соответствующей роли имя ```avere-operator```.
 
 * **Avere vFXT cluster name** (Имя кластера Avere vFXT). Присвойте кластеру уникальное имя. 
 
@@ -138,7 +125,7 @@ ms.locfileid: "57409692"
 
 ![Третья страница шаблона развертывания, проверка параметров](media/avere-vfxt-deploy-3.png)
 
-На четвертой странице нажмите кнопку **Create** (Создать), чтобы принять условия использования и создать кластер Avere vFXT для Azure. 
+На странице 4, введите все необходимые контактные сведения и нажмите кнопку **создать** кнопку, чтобы принять условия и создать vFXT Avere для кластера Azure. 
 
 ![Четвертая страница шаблона развертывания с описанием условий и кнопкой создания](media/avere-vfxt-deploy-4.png)
 

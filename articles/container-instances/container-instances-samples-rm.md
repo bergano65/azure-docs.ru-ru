@@ -7,12 +7,12 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 03/07/2019
 ms.author: danlep
-ms.openlocfilehash: bf9f2be8a0854a6968f3be6bfdaf3a59fc81dc76
-ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.openlocfilehash: 3d73d05c64f4b4867c69a15089c19ab8c320b9a8
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57728972"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006478"
 ---
 # <a name="azure-resource-manager-templates-for-azure-container-instances"></a>Шаблоны Azure Resource Manager для службы "Экземпляры контейнеров Azure"
 
@@ -24,8 +24,8 @@ ms.locfileid: "57728972"
 
 | | |
 |-|-|
-| **Приложения** ||
-| [Wordpress][app-wp] | Создает веб-сайт WordPress и его базу данных MySQL в экземпляре контейнера. Содержимое сайта WordPress и база данных MySQL сохраняются в общей папке Azure. |
+| **ПРИЛОЖЕНИЯ** ||
+| [WordPress][app-wp] | Создает веб-сайта WordPress и его базы данных MySQL в группе контейнеров. Содержимое сайта WordPress и база данных MySQL сохраняются в общей папке Azure. Также создается шлюз приложений для предоставления доступа к общедоступной сети для WordPress. |
 | [MS NAV с SQL Server и IIS][app-nav] | Развертывает один контейнер Windows с полнофункциональной автономной средой Dynamics NAV или Dynamics 365 Business Central. |
 | **Тома** ||
 | [emptyDir][vol-emptydir] | Развертывает два контейнера Linux, совместно использующих том emptyDir. |

@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/01/2018
+ms.date: 03/27/2019
 ms.author: v-ant
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa740a558015b28e6d3fa7245c9041dc4167f832
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 6d8fedb372fb245b7bc35cb440bd758336ab2a68
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58110364"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59057631"
 ---
 # <a name="tutorial-configure-bluejeans-for-automatic-user-provisioning"></a>Руководство по Настройка BlueJeans для автоматической подготовки пользователей
 
@@ -34,53 +34,48 @@ ms.locfileid: "58110364"
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
-*   клиент Azure AD;
-*   включенный клиент BlueJeans с планом [My Company](https://www.BlueJeans.com/pricing) или более высокого уровня;
-*   учетная запись пользователя в BlueJeans с разрешениями администратора.
+* клиент Azure AD;
+* включенный клиент BlueJeans с планом [My Company](https://www.BlueJeans.com/pricing) или более высокого уровня;
+* учетная запись пользователя в BlueJeans с разрешениями администратора.
 
 > [!NOTE]
 > Интеграция подготовки в Azure AD зависит от [API BlueJeans](https://BlueJeans.github.io/developer), доступного для команд BlueJeans, использующих план "Стандартный" или более высокого уровня.
 
 ## <a name="adding-bluejeans-from-the-gallery"></a>Добавление BlueJeans из коллекции
+
 Перед настройкой BlueJeans для автоматической подготовки пользователей в Azure AD необходимо добавить BlueJeans из коллекции приложений Azure AD в список управляемых приложений SaaS.
 
-**Чтобы добавить BlueJeans из коллекции приложений Azure AD, выполните следующие действия:**
+**Чтобы добавить BlueJeans из коллекции приложений Azure AD, выполните следующие действия.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. В  **[портала Azure](https://portal.azure.com)**, на панели навигации слева выберите **Azure Active Directory**.
 
-    ![Кнопка Azure Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите к элементу **Корпоративные приложения** > **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Раздел "Корпоративные приложения"][2]
-    
-3. Чтобы добавить BlueJeans, в верхней части диалогового окна нажмите кнопку **Новое приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Кнопка "Создать приложение"][3]
+3. Чтобы добавить новое приложение, выберите **новое приложение** кнопку в верхней части области.
 
-4. В поле поиска введите **BlueJeans**.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Подготовка BlueJeans](./media/bluejeans-provisioning-tutorial/BluejeansAppSearch.png)
+4. В поле поиска введите **BlueJeans**выберите **BlueJeans** в панели результатов, а затем выберите **добавить** кнопку, чтобы добавить это приложение.
 
-5. В области результатов выберите **BlueJeans** и нажмите кнопку **Добавить**, чтобы добавить это приложение в список приложений SaaS.
+    ![BlueJeans в списке результатов](common/search-new-app.png)
 
-    ![Подготовка BlueJeans](./media/bluejeans-provisioning-tutorial/BluejeansAppSearchResults.png)
-
-    ![Подготовка BlueJeans](./media/bluejeans-provisioning-tutorial/BluejeansAppCreate.png)
-    
 ## <a name="assigning-users-to-bluejeans"></a>Назначение пользователей в BlueJeans
 
 В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая "назначение". В контексте автоматической подготовки синхронизированы будут только те пользователи и группы, которые были "назначены" приложению в Azure AD.
 
 Перед настройкой и включением автоматической подготовки пользователей нужно решить, какие пользователи или группы в Azure AD должны иметь доступ к BlueJeans. Когда этот вопрос будет решен, этих пользователей и (или) группы можно будет назначить приложению BlueJeans, следуя приведенным ниже указаниям:
 
-*   [Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
+* [Назначение пользователя или группы корпоративному приложению](../manage-apps/assign-user-or-group-access-portal.md)
 
 ### <a name="important-tips-for-assigning-users-to-bluejeans"></a>Важные рекомендации по назначению пользователей в BlueJeans
 
-*   Рекомендуем назначить одного пользователя Azure AD в BlueJeans для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
+* Рекомендуем назначить одного пользователя Azure AD в BlueJeans для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
-*   При назначении пользователя в BlueJeans в диалоговом окне назначения необходимо выбрать действительную роль для конкретного приложения (при доступности). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя в BlueJeans в диалоговом окне назначения необходимо выбрать действительную роль для конкретного приложения (при доступности). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
 
 ## <a name="configuring-automatic-user-provisioning-to-bluejeans"></a>Настройка автоматической подготовки пользователей в BlueJeans
 
@@ -91,11 +86,13 @@ ms.locfileid: "58110364"
 
 ### <a name="to-configure-automatic-user-provisioning-for-bluejeans-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей в BlueJeans:
 
-1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory > Корпоративные приложения > Все приложения**.
+1. Войдите в [портала Azure](https://portal.azure.com) и выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **BlueJeans**.
 
-2. В списке приложений SaaS выберите BlueJeans.
- 
-    ![Подготовка BlueJeans](./media/bluejeans-provisioning-tutorial/Bluejeans2.png)
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
+2. Из списка приложений выберите **BlueJeans**.
+
+    ![Ссылка на BlueJeans в списке приложений](common/all-applications.png)
 
 3. Выберите вкладку **Подготовка**.
 
@@ -158,9 +155,10 @@ ms.locfileid: "58110364"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 
 <!--Image references-->
+
 [1]: ./media/bluejeans-provisioning-tutorial/tutorial_general_01.png
 [2]: ./media/bluejeans-tutorial/tutorial_general_02.png
 [3]: ./media/bluejeans-tutorial/tutorial_general_03.png

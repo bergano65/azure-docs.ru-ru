@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: cb0d04e46834530c8fea29ef79a2156caabeeeff
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: f9cadfcf0c027f4aec4f9d4928872709ee7d3e99
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58202373"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59008981"
 ---
 # <a name="example-add-synonyms-for-azure-search-in-c"></a>Пример: Добавление синонимов в Поиск Azure на C#
 
@@ -37,7 +37,7 @@ ms.locfileid: "58202373"
 
 * [Visual Studio](https://www.visualstudio.com/downloads/)
 * [Служба поиска Azure](search-create-service-portal.md)
-* [Библиотека Microsoft.Azure.Search .NET](https://aka.ms/search-sdk)
+* [Библиотека библиотеки Microsoft.Azure.Search .NET](https://aka.ms/search-sdk)
 * [Использование службы поиска Azure в приложении .NET](https://docs.microsoft.com/azure/search/search-howto-dotnet-sdk)
 
 ## <a name="overview"></a>Обзор
@@ -168,11 +168,11 @@ Name: Roach Motel       Category: Budget        Tags: [motel, budget]
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Самый простой способ очистки после приведен, удалив группу ресурсов, содержащую службу поиска Azure. Теперь можно удалить группу ресурсов вместе со всем ее содержимым без возможности восстановления. На портале имя группы ресурсов находится на странице "Обзор" службы "Поиск Azure".
+Самый простой способ очистки после в качестве примера можно, удалив группу ресурсов, содержащую службу поиска Azure. Теперь можно удалить группу ресурсов вместе со всем ее содержимым без возможности восстановления. На портале имя группы ресурсов находится на странице "Обзор" службы "Поиск Azure".
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этом примере показано [API REST для синонимов](https://aka.ms/rgm6rq) в C# код, чтобы создать и опубликовать правила сопоставления и затем вызывать карты синонимов в запрос. См. дополнительные сведения о [пакете SDK для .NET ](https://docs.microsoft.com/dotnet/api/microsoft.azure.search) и [REST API](https://docs.microsoft.com/rest/api/searchservice/).
 
 > [!div class="nextstepaction"]
-> [Как использовать синонимы в Поиске Azure](search-synonyms.md)
+> [Как использовать синонимы в поиске Azure](search-synonyms.md)

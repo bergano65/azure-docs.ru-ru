@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 3/6/2019
 ms.author: victorh
-ms.openlocfilehash: f7d1c5bc54d909d1a948123839d95e1ee1158a5c
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 4410dd9e61fe5b585ca5b245dbf33dbf8c38e701
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58444818"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59010232"
 ---
 # <a name="autoscaling-and-zone-redundant-application-gateway-public-preview"></a>Автоматическое масштабирование и шлюз приложений, избыточный между зонами (общедоступная предварительная версия)
 
@@ -29,6 +29,9 @@ ms.locfileid: "58444818"
 > SKU автоматического масштабирования и шлюза приложений, избыточного между зонами, на данный момент доступен в общедоступной предварительной версии. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ![](./media/application-gateway-autoscaling-zone-redundant/application-gateway-autoscaling-zone-redundant.png)
+
+> [!NOTE]
+> Автоматическое масштабирование и шлюз приложений, избыточные в пределах зоны SKU теперь поддерживает [стандартную пробу работоспособности](https://docs.microsoft.com/azure/application-gateway/application-gateway-probe-overview#default-health-probe) автоматически наблюдения за работоспособностью всех ресурсов в пуле серверной части и удалять все ресурсы, признанные неработоспособными из пула. Будут получены пробы работоспособности по умолчанию автоматически настроены для всех этих серверных систем для которых вы не настроили какой-либо настройки пользовательской пробы. Дополнительные сведения см. в разделе [проверки работоспособности в шлюзе приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-probe-overview).
 
 ## <a name="feature-comparison-between-v1-sku-and-v2-sku"></a>Сравнение возможностей v1 SKU и v2 SKU
 
@@ -76,6 +79,6 @@ ms.locfileid: "58444818"
 |Интеграция Наблюдателя за сетями|Не поддерживается в общедоступной предварительной версии.|
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Создание автоматически масштабируемого, избыточного в пределах зоны шлюза приложений с зарезервированным виртуальным IP-адресом с помощью Azure PowerShell](tutorial-autoscale-ps.md)
+- [Создание автоматического масштабирования, шлюз избыточных приложений зоны с помощью зарезервированного виртуального IP-адреса, с помощью Azure PowerShell](tutorial-autoscale-ps.md)
 - Дополнительные сведения о [шлюзе приложений](overview.md).
 - Дополнительные сведения о [брандмауэре Azure](../firewall/overview.md).

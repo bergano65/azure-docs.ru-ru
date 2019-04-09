@@ -1,25 +1,26 @@
 ---
-title: Руководство. Настройка Zscaler три для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка Zscaler три для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Zscaler три.
 services: active-directory
 documentationcenter: ''
 author: zchia
 writer: zchia
 manager: beatrizd-msft
-ms.assetid: na
+ms.assetid: 385a1153-0f47-4e41-8f44-da1b49d7629e
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/03/2019
+ms.date: 03/27/2019
 ms.author: v-ant-msft
-ms.openlocfilehash: afb80f54c2354f65054d8d53b93add6ed5ffa63e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: ed158ae825ec8aac24a57eb0f5a986b2124b66fb
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58099956"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59057801"
 ---
 # <a name="tutorial-configure-zscaler-three-for-automatic-user-provisioning"></a>Руководство по Настройка Zscaler три для автоматической подготовки пользователей
 
@@ -27,46 +28,41 @@ ms.locfileid: "58099956"
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../active-directory-saas-app-provisioning.md).
-> 
+>
 > Сейчас этот соединитель доступен в общедоступной предварительной версии. Дополнительные сведения о общие Microsoft Azure условия использования предварительных версий функций, см. в разделе [дополнительным условиям использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="prerequisites"></a>Технические условия
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
-*   клиент Azure AD;
-*   Zscaler три клиента
-*   Учетную запись пользователя в трех Zscaler с разрешениями администратора.
+* клиент Azure AD;
+* Zscaler три клиента
+* Учетную запись пользователя в трех Zscaler с разрешениями администратора.
 
 > [!NOTE]
 > Интеграция подготовки Azure AD использует три API SCIM Zscaler, доступного для Zscaler три разработчика для учетных записей с пакет предприятия.
 
 ## <a name="adding-zscaler-three-from-the-gallery"></a>Добавление Zscaler Three из коллекции
+
 Перед настройкой трех Zscaler для автоматической подготовки пользователей в Azure AD, необходимо добавить три Zscaler из коллекции приложений Azure AD, в список управляемых приложений SaaS.
 
 **Чтобы добавить три Zscaler из коллекции приложений Azure AD, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка Azure Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите к элементу **Корпоративные приложения** > **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Раздел "Корпоративные приложения"][2]
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить Zscaler три, щелкните **новое приложение** кнопку в верхней части диалогового окна.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Создать приложение"][3]
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Zscaler три**.
+4. В поле поиска введите **Zscaler Three**, выберите **Zscaler Three** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Zscaler трех подготовки](./media/zscaler-three-provisioning-tutorial/app-search.png)
-
-5. В области результатов выберите **Zscaler три**, а затем нажмите кнопку **добавить** кнопку, чтобы добавить Zscaler три в список приложений SaaS.
-
-    ![Zscaler трех подготовки](./media/zscaler-three-provisioning-tutorial/app-search-results.png)
-
-    ![Zscaler трех подготовки](./media/zscaler-three-provisioning-tutorial/app-creation.png)
+    ![Zscaler Three в списке результатов](common/search-new-app.png)
 
 ## <a name="assigning-users-to-zscaler-three"></a>Назначение пользователей в Zscaler три
 
@@ -74,13 +70,13 @@ ms.locfileid: "58099956"
 
 Перед настройкой и включением автоматической подготовки пользователей, следует решить, какие пользователи или группы в Azure AD требуется доступ к Zscaler три. Сделав это, можно назначить этих пользователей и групп для трех Zscaler, следуя инструкциям ниже:
 
-*   [Назначение корпоративному приложению пользователя или группы](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
+* [Назначение пользователя или группы корпоративному приложению](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
 
 ### <a name="important-tips-for-assigning-users-to-zscaler-three"></a>Важные рекомендации по назначению пользователей в Zscaler три
 
-*   Рекомендуется одного пользователя Azure AD назначается три Zscaler для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
+* Рекомендуется одного пользователя Azure AD назначается три Zscaler для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
-*   При назначении пользователя в трех Zscaler, необходимо выбрать действительную роль конкретного приложения (если доступно) в диалоговом окне назначения. Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя в трех Zscaler, необходимо выбрать действительную роль конкретного приложения (если доступно) в диалоговом окне назначения. Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
 
 ## <a name="configuring-automatic-user-provisioning-to-zscaler-three"></a>Настройка автоматической подготовки пользователей для Zscaler три
 
@@ -91,11 +87,13 @@ ms.locfileid: "58099956"
 
 ### <a name="to-configure-automatic-user-provisioning-for-zscaler-three-in-azure-ad"></a>Настройка автоматической подготовки пользователей для Zscaler три в Azure AD.
 
-1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory > Корпоративные приложения > Все приложения**.
+1. Войдите в [портала Azure](https://portal.azure.com) и выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **Zscaler три**.
 
-2. В списке приложений SaaS выберите три Zscaler.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Zscaler трех подготовки](./media/zscaler-three-provisioning-tutorial/app-instance-search.png)
+2. Из списка приложений выберите **Zscaler Three**.
+
+    ![Ссылка на Zscaler три в списке приложений](common/all-applications.png)
 
 3. Выберите вкладку **Подготовка**.
 
@@ -111,16 +109,16 @@ ms.locfileid: "58099956"
 
     ![Zscaler трех подготовки](./media/zscaler-three-provisioning-tutorial/secret-token-1.png)
 
-    Щелкните **настроить SAML** открыть **конфигурации SAML** параметры. 
+    Щелкните **настроить SAML** открыть **конфигурации SAML** параметры.
 
     ![Zscaler трех подготовки](./media/zscaler-three-provisioning-tutorial/secret-token-2.png)
-    
+
     Выберите **подготовки Enable SCIM-Based** извлекаемого **базовый URL-адрес** и **маркера носителя**, затем сохраните параметры. Копировать **базовый URL-адрес** для **URL-адрес клиента** и **маркера носителя** для **секретный токен** на портале Azure.
 
 7. После заполнения полей, указанных в шаге 5, щелкните **проверить подключение** и убедиться, что Azure AD может подключиться к Zscaler три. Если подключение отсутствует, убедитесь, что учетная Zscaler три запись имеет разрешения администратора и повторите попытку.
 
     ![Zscaler трех подготовки](./media/zscaler-three-provisioning-tutorial/test-connection.png)
-    
+
 8. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
 
     ![Zscaler трех подготовки](./media/zscaler-three-provisioning-tutorial/notification.png)
@@ -168,7 +166,7 @@ ms.locfileid: "58099956"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
+* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
 
 <!--Image references-->
 [1]: ./media/zscaler-three-provisioning-tutorial/tutorial-general-01.png

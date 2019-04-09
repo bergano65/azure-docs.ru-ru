@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 02/26/2019
-ms.openlocfilehash: fdf2d3aeea32beba0b8e95c1816a80140d7cf6be
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: 5a4e6819eeff2a2c8efaf3807c38cc06f7c35002
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56958921"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006690"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-mariadb"></a>Сведения об использовании конечных точек службы и правил виртуальной сети для Базы данных Azure для MariaDB
 
@@ -106,6 +106,8 @@ ms.locfileid: "56958921"
 
 Для базы данных Azure для MariaDB правила виртуальной сети имеют следующие ограничения.
 
+- Веб-приложения можно сопоставить с частным IP-адресом в виртуальной сети или подсети. Даже если конечные точки службы включены в определенной виртуальной сети или подсети, при подключении из веб-приложения к серверу в качестве источника будет использоваться открытый IP-адрес Azure, виртуальная сеть или подсеть. Возможность подключения к сети из веб-приложения на сервере, где правила брандмауэра виртуальной сети, необходимо разрешить Azure services для доступа к серверу, на сервере.
+
 - В брандмауэре для базы данных Azure для MariaDB каждое правило виртуальной сети ссылается на подсеть. Все подсети, на которые есть ссылки, должны размещаться в том же географическом регионе, где размещена база данных Azure для MariaDB.
 
 - Каждый сервер базы данных Azure для MariaDB может использовать до 128 записей ACL для любой виртуальной сети.
@@ -138,7 +140,7 @@ ms.locfileid: "56958921"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Статьи о создании правил виртуальной сети см. по следующим ссылкам:
-- [Создание правил виртуальной сети базы данных Azure для MariaDB и управление ими на портале Azure](howto-manage-vnet-portal.md)
+- [Создание и управление ими базы данных Azure для правила виртуальной сети MariaDB, с помощью портала Azure](howto-manage-vnet-portal.md)
  
 <!--
 - [Create and manage Azure Database for MariaDB VNet rules using Azure CLI](howto-manage-vnet-using-cli.md)

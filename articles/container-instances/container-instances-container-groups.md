@@ -6,15 +6,15 @@ author: dlepow
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: article
-ms.date: 03/20/2018
+ms.date: 03/20/2019
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 8724bd7e13b0d8607ad5a6814b27c8c06681f331
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: f4bbea8acd447a731cf5c56f9876baf9183735ea
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58202016"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59005534"
 ---
 # <a name="container-groups-in-azure-container-instances"></a>Группы контейнеров в службе "Экземпляры контейнеров Azure"
 
@@ -41,7 +41,9 @@ ms.locfileid: "58202016"
 
 ## <a name="deployment"></a>Развертывание
 
-Ниже приведены два распространенных способа развертывания многоконтейнерной группы: использовать [шаблона Resource Manager] [ resource-manager template] или [yaml-файл][yaml-file]. Используйте шаблон Resource Manager, когда необходимо развернуть ресурсы дополнительных служб Azure (например, [файловых ресурсов Azure][azure-files]) во время развертывании экземпляров контейнера. Из-за своей природе более наглядный формат YAML yaml-файл рекомендуется, если развертывание включает только экземпляры контейнеров.
+Ниже приведены два распространенных способа развертывания многоконтейнерной группы: использовать [шаблона Resource Manager] [ resource-manager template] или [yaml-файл][yaml-file]. Шаблон Resource Manager рекомендуется в том случае, если необходимо развернуть ресурсы дополнительных служб Azure (например, [файловых ресурсов Azure][azure-files]) при развертывании экземпляров контейнера. Из-за своей природе более наглядный формат YAML yaml-файл рекомендуется, если развертывание включает только экземпляры контейнеров.
+
+Чтобы сохранить конфигурацию группы контейнеров, можно экспортировать конфигурацию в файл YAML с помощью команды Azure CLI [az контейнер экспорта][az-container-export]. Экспорт позволяет хранить требуемых конфигураций групп контейнеров в системе управления версиями для «конфигурация как код». Или вы можете использовать экспортированный файл в качестве отправной точки при разработке новой конфигурации в YAML-файле.
 
 ## <a name="resource-allocation"></a>Выделение ресурсов
 
@@ -110,3 +112,4 @@ ms.locfileid: "58202016"
 [azure-files]: container-instances-volume-azure-files.md
 [virtual-network]: container-instances-vnet.md
 [gpus]: container-instances-gpu.md
+[az-container-export]: /cli/azure/container#az-container-export

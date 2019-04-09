@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: how-to
-ms.date: 03/21/2019
+ms.date: 04/03/2019
 ms.author: helohr
-ms.openlocfilehash: fb107d9e48db5a9809ceb7ffcbac09550279f12d
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: d22fffcb792227b4d0805abd005d8c050cb97248
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58485872"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006199"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Подготовка и настройка главного образа VHD
 
@@ -260,7 +260,7 @@ OneDrive — обычно устанавливается для каждого �
 ```batch
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v RemoteAppLogoffTimeLimit /t REG_DWORD /d 0 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v fResetBroken /t REG_DWORD /d 1 /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v MaxConnectionTime /t REG_DWORD /d 600000 /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v MaxConnectionTime /t REG_DWORD /d 10800000 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v RemoteAppLogoffTimeLimit /t REG_DWORD /d 0 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v MaxDisconnectionTime /t REG_DWORD /d 5000 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v MaxIdleTime /t REG_DWORD /d 7200000 /f
@@ -369,7 +369,7 @@ remove CorporateWerServer* from Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\W
 Теперь, когда у вас есть образ, можно создать или обновить пулы узлов. Дополнительные сведения о том, как создавать и обновлять пулы узлов, см. в разделе со следующими статьями:
 
 - [Создание пула узлов с помощью шаблона Azure Resource Manager](create-host-pools-arm-template.md)
-- [Руководство Создание пула узла с помощью Azure Marketplace](create-host-pools-azure-marketplace.md)
-- [Создание пула узла с помощью PowerShell](create-host-pools-powershell.md)
+- [Руководство по Создание пула узлов с помощью Azure Marketplace](create-host-pools-azure-marketplace.md)
+- [Создание пула узлов с помощью PowerShell](create-host-pools-powershell.md)
 - [Настройка общей папки профиля пользователя в пуле узлов](create-host-pools-user-profile.md)
-- [Настройка метода балансировки нагрузки виртуальный рабочий стол Windows](configure-host-pool-load-balancing.md)
+- [Настройка метода балансировки нагрузки Виртуального рабочего стола Windows](configure-host-pool-load-balancing.md)

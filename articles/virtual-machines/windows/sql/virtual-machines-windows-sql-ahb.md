@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 02/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: bc3e2955049188b0794367d5391762f5eb50b1c0
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
-ms.translationtype: MT
+ms.openlocfilehash: c0d659d983e62cd2a85c0d6768c54e5a1d9e9217
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58850190"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59005794"
 ---
 # <a name="how-to-change-the-licensing-model-for-a-sql-server-virtual-machine-in-azure"></a>Изменение модели лицензирования для виртуальной машины SQL Server в Azure
 В этой статье описывается процесс, позволяющий изменить модель лицензирования для виртуальной машины SQL Server в Azure с помощью нового поставщика ресурсов виртуальной машины SQL **Microsoft.SqlVirtualMachine**. Существуют две модели для виртуальной машины (VM), где размещен SQL Server — по мере использования, лицензирования и использовать собственную лицензию (BYOL). Теперь вы можете изменить выбранную модель лицензирования для виртуальной машины SQL Server, используя PowerShell или интерфейс командной строки Azure. 
@@ -35,12 +35,17 @@ ms.locfileid: "58850190"
 
 ## <a name="remarks"></a>Примечания
 
- - Возможность преобразования модели лицензирования в данный момент доступна только для тех клиентов, которые начали работу с образом виртуальной Машины SQL Server с оплатой по мере использования. Если же начать работу с образом с использованием собственной лицензии с портала, вы не сможете преобразовать этот образ для оплаты по мере использования.
  - Клиенты CSP могут использовать преимущества AHB, сначала развернув виртуальную машину с оплатой по мере использования, а затем преобразовав ее для использования собственной лицензии. 
- - В настоящее время эта возможность включена только для установок общедоступного облака.
  - При регистрации пользовательского образа виртуальной Машины SQL Server с поставщиком ресурсов, укажите тип лицензии = «AHUB». При этом лицензии введите как пустой либо указав «PAYG» приведет к регистрации переход на другой. 
+ 
+## <a name="limitations"></a>Ограничения
+
+ - Возможность преобразования модели лицензирования в данный момент доступна только для тех клиентов, которые начали работу с образом виртуальной Машины SQL Server с оплатой по мере использования. Если же начать работу с образом с использованием собственной лицензии с портала, вы не сможете преобразовать этот образ для оплаты по мере использования.
+  - В настоящее время Изменение модели лицензирования, поддерживается только для виртуальных машин, развернутых с помощью модели Resource Manager. Виртуальные машины, развернутые с помощью классической модели не поддерживаются. 
+   - В настоящее время Изменение модели лицензирования доступна только для установок общедоступного облака.
 
 ## <a name="prerequisites"></a>Технические условия
+
 Для использования поставщика ресурсов виртуальной машины SQL требуется расширение SQL IaaS. Таким образом, чтобы продолжить использование поставщика ресурсов виртуальной машины SQL, вам потребуется следующее:
 - [Подписка Azure](https://azure.microsoft.com/free/).
 - [Программы Software assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default). 
@@ -231,9 +236,9 @@ Get-Module -ListAvailable -Name Azure -Refresh
 
 Дополнительные сведения см. в следующих статьях: 
 
-* [Обзор SQL Server на виртуальных машинах Windows](virtual-machines-windows-sql-server-iaas-overview.md).
-* [Вопросы и ответы по SQL Server на виртуальных машинах Windows](virtual-machines-windows-sql-server-iaas-faq.md).
-* [Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure](virtual-machines-windows-sql-server-pricing-guidance.md)
-* [Заметки о выпуске SQL Server на виртуальных машинах Windows](virtual-machines-windows-sql-server-iaas-release-notes.md).
+* [Обзор SQL Server на виртуальной Машине Windows](virtual-machines-windows-sql-server-iaas-overview.md)
+* [SQL Server на часто задаваемые вопросы о виртуальной Машине Windows](virtual-machines-windows-sql-server-iaas-faq.md)
+* [SQL Server на виртуальной Машине Windows, выбору ценовой категории](virtual-machines-windows-sql-server-pricing-guidance.md)
+* [SQL Server на заметки о выпуске виртуальной Машины Windows](virtual-machines-windows-sql-server-iaas-release-notes.md)
 
 

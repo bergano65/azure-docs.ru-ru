@@ -10,14 +10,14 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/25/2019
+ms.date: 04/04/2019
 ms.author: tomfitz
-ms.openlocfilehash: e74b9b5c8347c7348c4da27b80d00daa091b826f
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
-ms.translationtype: MT
+ms.openlocfilehash: a5350befd8d0fb1582606554314d909f7fec04c5
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58521098"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59058770"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -133,6 +133,7 @@ ms.locfileid: "58521098"
 * Azure Database Migration Service
 * Azure Databricks
 * Брандмауэр Azure
+* Служба Azure Kubernetes (AKS)
 * Служба "Миграция Azure"
 * Azure NetApp Files
 * Сертификаты. Сертификаты службы приложений можно перемещать, но для переданных сертификатов действуют [ограничения](#app-service-limitations).
@@ -143,7 +144,6 @@ ms.locfileid: "58521098"
 * Рабочие среды для разработчиков
 * Dynamics LCS.
 * ExpressRoute
-* Служба Kubernetes
 * Службы лабораторий — Labs аудитории нельзя переместить в новую группу ресурсов или подписку. DevTest Labs можно переместить в новую группу ресурсов в той же подписке, но не для всех подписок.
 * Управляемые приложения
 * Microsoft Genomics
@@ -159,7 +159,7 @@ ms.locfileid: "58521098"
 * [Ограничения для виртуальных машин](#virtual-machines-limitations)
 * [Ограничения для виртуальных сетей](#virtual-networks-limitations)
 * [Ограничения службы приложений](#app-service-limitations)
-* [Ограничения сертификатов службы приложений](#app-service-certificate-limitations)
+* [Ограничения Сертификатов службы приложений](#app-service-certificate-limitations)
 * [Ограничения классического развертывания](#classic-deployment-limitations)
 * [Ограничения служб восстановления](#recovery-services-limitations)
 * [Ограничения HDInsight](#hdinsight-limitations)
@@ -180,8 +180,8 @@ ms.locfileid: "58521098"
 * Найдите группу ресурсов со схемой именования `AzureBackupRG_<location of your VM>_1`, например AzureBackupRG_westus2_1.
 * Затем на портале Azure щелкните "Показать скрытые типы".
 * В PowerShell используйте командлет `Get-AzResource -ResourceGroupName AzureBackupRG_<location of your VM>_1`
-* В CLI используйте команду `az resource list -g AzureBackupRG_<location of your VM>_1`.
-* Найдите ресурс с типом `Microsoft.Compute/restorePointCollections` и шаблоном именования `AzureBackup_<name of your VM that you're trying to move>_###########`.
+* Если в CLI, используйте `az resource list -g AzureBackupRG_<location of your VM>_1`
+* Найдите ресурс с типом `Microsoft.Compute/restorePointCollections` с шаблоном именования `AzureBackup_<name of your VM that you're trying to move>_###########`
 * Удалите этот ресурс. Эта операция удаляет только точки мгновенного восстановления, но не данные резервных копий в хранилище.
 * По завершении удаления вы сможете перенести виртуальную машину. Хранилище и виртуальную машину можно переместить в целевую подписку. После перемещения можно продолжить резервное копирование без потери данных.
 * Сведения о перемещении хранилищ служб восстановления для резервного копирования см. в разделе [Ограничения служб восстановления](#recovery-services-limitations).

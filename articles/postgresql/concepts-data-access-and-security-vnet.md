@@ -6,12 +6,12 @@ ms.author: mbolz
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/20/2018
-ms.openlocfilehash: f5c42b73b0452392cdd2a06619722b3f7de2cc27
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: 83d16071cbcac4199db9f3757121f9811db49727
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56417488"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006339"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-postgresql"></a>Использование конечных точек службы и правил виртуальной сети для Базы данных Azure для PostgreSQL
 
@@ -107,6 +107,8 @@ ms.locfileid: "56417488"
 
 Для Базы данных Azure для PostgreSQL правила виртуальной сети имеют следующие ограничения:
 
+- Веб-приложения можно сопоставить с частным IP-адресом в виртуальной сети или подсети. Даже если конечные точки службы включены в определенной виртуальной сети или подсети, при подключении из веб-приложения к серверу в качестве источника будет использоваться открытый IP-адрес Azure, виртуальная сеть или подсеть. Возможность подключения к сети из веб-приложения на сервере, где правила брандмауэра виртуальной сети, необходимо разрешить Azure services для доступа к серверу, на сервере.
+
 - В брандмауэре для Базы данных Azure для PostgreSQL каждое правило виртуальной сети ссылается на подсеть. Все такие упомянутые подсети должны размещаться в том же географическом регионе, где размещена База данных Azure для PostgreSQL.
 
 - Каждый сервер Базы данных Azure для PostgreSQL может использовать до 128 записей ACL для любой заданной виртуальной сети.
@@ -137,10 +139,10 @@ ms.locfileid: "56417488"
 - [Виртуальные сети Azure][vm-virtual-network-overview]
 - [Конечные точки служб виртуальной сети][vm-virtual-network-service-endpoints-overview-649d]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Статьи о создании правил виртуальной сети см. по следующим ссылкам:
-- [Create and manage Azure Database for PostgreSQL VNet service endpoints and VNet rules by using the Azure portal](howto-manage-vnet-using-portal.md) (Создание конечных точек службы виртуальной сети Базы данных Azure для PostgreSQL и правил виртуальной сети с использованием портала Azure)
-- [Create and manage Azure Database for PostgreSQL VNet service endpoints using Azure CLI](howto-manage-vnet-using-cli.md) (Создание конечных точек службы виртуальной сети Базы данных Azure для PostgreSQL и правил виртуальной сети с использованием интерфейса командной строки Azure)
+- [Создание и управление ими базы данных Azure для правил виртуальной сети PostgreSQL с помощью портала Azure](howto-manage-vnet-using-portal.md)
+- [Создание и управление ими базы данных Azure для правил виртуальной сети PostgreSQL с помощью Azure CLI](howto-manage-vnet-using-cli.md)
 
 
 <!-- Link references, to text, Within this same GitHub repo. -->

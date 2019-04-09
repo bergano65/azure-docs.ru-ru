@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/12/2017
 ms.author: magoedte
-ms.openlocfilehash: 5a619b768d61875a03e53a613dfb9a3fb01dd7aa
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.openlocfilehash: d086b6f844deb06d98edec8d8ec0f5670d84f066
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58540184"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006266"
 ---
 # <a name="collect-azure-service-logs-and-metrics-into-log-analytics-workspace-in-azure-monitor"></a>Сбор журналов службы Azure и метрик в рабочей области Log Analytics в Azure Monitor
 
@@ -32,7 +32,7 @@ ms.locfileid: "58540184"
 
 | Service                 | Тип ресурса                           | Журналы        | Метрики     | Решение |
 | --- | --- | --- | --- | --- |
-| Шлюзы приложений    | Microsoft.Network/applicationGateways   | Диагностика | Диагностика | [Анализ шлюзов приложений Azure](../../azure-monitor/insights/azure-networking-analytics.md#azure-application-gateway-analytics-solution-in-log-analytics) |
+| Шлюзы приложений    | Microsoft.Network/applicationGateways   | Диагностика | Диагностика | [Анализ шлюзов приложений Azure](../insights/azure-networking-analytics.md#azure-application-gateway-analytics-solution-in-azure-monitor) |
 | Application Insights    |                                         | Соединитель   | Соединитель   | [Соединитель Application Insights](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/) (предварительная версия) |
 | Учетные записи службы автоматизации     | Microsoft.Automation/AutomationAccounts | Диагностика |             | [Дополнительные сведения](../../automation/automation-manage-send-joblogs-log-analytics.md)|
 | Учетные записи пакетной службы          | Microsoft.Batch/batchAccounts           | Диагностика | Диагностика | |
@@ -42,20 +42,20 @@ ms.locfileid: "58540184"
 | Data Lake Store         | Microsoft.DataLakeStore/accounts        | Диагностика |             | |
 | пространство имен концентратора событий;     | Microsoft.EventHub/namespaces           | Диагностика | Диагностика | |
 | Центры Интернета вещей;                | Microsoft.Devices/IotHubs               |             | Диагностика | |
-| Key Vault               | Microsoft.KeyVault/vaults               | Диагностика |             | [Анализ Key Vault](../../azure-monitor/insights/azure-key-vault.md) |
+| Key Vault               | Microsoft.KeyVault/vaults               | Диагностика |             | [Анализ Key Vault](../insights/azure-key-vault.md) |
 | Балансировщики нагрузки          | Microsoft.Network/loadBalancers         | Диагностика |             |  |
 | Logic Apps              | Microsoft.Logic/workflows <br> Microsoft.Logic/integrationAccounts | Диагностика | Диагностика | |
-| группы сетевой безопасности; | Microsoft.Network/networksecuritygroups | Диагностика |             | [Анализ групп безопасности сети Azure](../../azure-monitor/insights/azure-networking-analytics.md#azure-network-security-group-analytics-solution-in-log-analytics) |
-| Хранилища восстановления         | Microsoft.RecoveryServices/vaults       |             |             | [Служба анализа служб восстановления Azure (предварительная версия)](https://github.com/krnese/AzureDeploy/blob/master/OMS/MSOMS/Solutions/recoveryservices/)|
+| группы сетевой безопасности; | Microsoft.Network/networksecuritygroups | Диагностика |             | [Анализ групп безопасности сети Azure](../insights/azure-networking-analytics.md#azure-network-security-group-analytics-solution-in-azure-monitor) |
+| Хранилища восстановления         | Microsoft.RecoveryServices/vaults       |             |             | [Служб восстановления Azure Analytics (Предварительная версия)](https://github.com/krnese/AzureDeploy/blob/master/OMS/MSOMS/Solutions/recoveryservices/)|
 | Службы поиска         | Microsoft.Search/searchServices         | Диагностика | Диагностика | |
-| Пространство имен служебной шины   | Microsoft.ServiceBus/namespaces         | Диагностика | Диагностика | [Служба анализа служебной шины (предварительная версия)](https://github.com/Azure/azure-quickstart-templates/tree/master/oms-servicebus-solution)|
-| Service Fabric          |                                         | Хранилище     |             | [Анализ Service Fabric (предварительная версия)](../../service-fabric/service-fabric-diagnostics-oms-setup.md) |
-| SQL (версия 12)               | Microsoft.Sql/servers/databases <br> Microsoft.Sql/servers/elasticPools |             | Диагностика | [Службы анализа SQL Azure (предварительная версия)](../../azure-monitor/insights/azure-sql.md) |
-| Хранилище                 |                                         |             | Скрипт      | [Служба анализа службы хранилища Azure (предварительная версия)](https://github.com/Azure/azure-quickstart-templates/tree/master/oms-azure-storage-analytics-solution) |
+| Пространство имен служебной шины   | Microsoft.ServiceBus/namespaces         | Диагностика | Диагностика | [Служба анализа служебной шины (Предварительная версия)](https://github.com/Azure/azure-quickstart-templates/tree/master/oms-servicebus-solution)|
+| Service Fabric          |                                         | Хранилище     |             | [Аналитика Service Fabric (Предварительная версия)](../../service-fabric/service-fabric-diagnostics-oms-setup.md) |
+| SQL (версия 12)               | Microsoft.Sql/servers/databases <br> Microsoft.Sql/servers/elasticPools |             | Диагностика | [Службы анализа SQL Azure (предварительная версия)](../insights/azure-sql.md) |
+| Хранилище                 |                                         |             | Скрипт      | [Аналитика службы хранилища Azure (Предварительная версия)](https://github.com/Azure/azure-quickstart-templates/tree/master/oms-azure-storage-analytics-solution) |
 | Виртуальные машины        | Microsoft.Compute/virtualMachines       | Добавочный номер   | Добавочный номер <br> Диагностика  | |
 | Масштабируемые наборы виртуальных машин | Microsoft.Compute/virtualMachines <br> Microsoft.Compute/virtualMachineScaleSets/virtualMachines |             | Диагностика | |
 | Фермы веб-серверов        | Microsoft.Web/serverfarms               |             | Диагностика | |
-| Веб-сайты               | Microsoft.Web/sites <br> Microsoft.Web/sites/slots |             | Диагностика | [Служба анализа веб-приложений Azure (предварительная версия)](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-web-apps-analytics) |
+| Веб-сайты               | Microsoft.Web/sites <br> Microsoft.Web/sites/slots |             | Диагностика | [Анализ веб-приложений Azure (предварительная версия)](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-web-apps-analytics) |
 
 
 > [!NOTE]

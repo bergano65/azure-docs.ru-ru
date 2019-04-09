@@ -1,6 +1,6 @@
 ---
 title: Действия веб-перехватчика для правил оповещений журнала в службе оповещений Azure
-description: В этой статье описывается, как правило генерации оповещений журнала, в котором используется Log Analytics или Application Insights, передает данные в виде веб-перехватчика HTTP, и приводятся сведения о возможных вариантах настройки.
+description: В этой статье описывается, как для правила генерации оповещений журнала с помощью log analytics рабочей области или application insights, передает данные в виде веб-перехватчика HTTP и сведения о вариантах настройки возможных.
 author: msvijayn
 services: monitoring
 ms.service: azure-monitor
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: a592dc150d535df775a62c157f76f327b54240fd
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: 2307fa985c88608d80400c8951c47b9f20caa1dc
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58496094"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006633"
 ---
 # <a name="webhook-actions-for-log-alert-rules"></a>Действия веб-перехватчика для правил оповещений журнала
 При [создании оповещения в Azure](alerts-log.md) можно [настроить конфигурацию с помощью групп действий](action-groups.md) для выполнения одного или нескольких действий.  В этой статье описываются различные доступные действия веб-перехватчика и сведения о том, как настроить пользовательский веб-перехватчик на основе JSON.
@@ -202,5 +202,5 @@ ms.locfileid: "58496094"
 - [Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor](alerts-log.md)
 - Создание [групп действий в Azure](action-groups.md) и управление ими
 - Дополнительные сведения об [Application Insights](../../azure-monitor/app/analytics.md)
-- Дополнительные сведения о [Log Analytics](../../azure-monitor/log-query/log-query-overview.md). 
+- Дополнительные сведения о [журнал запросов](../log-query/log-query-overview.md). 
 

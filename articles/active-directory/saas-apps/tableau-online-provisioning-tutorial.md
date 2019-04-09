@@ -1,28 +1,29 @@
 ---
-title: Руководство. Настройка Tableau Online для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка Tableau Online для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в Tableau Online.
 services: active-directory
 documentationcenter: ''
 author: zchia
 writer: zchia
 manager: beatrizd-msft
-ms.assetid: na
+ms.assetid: 0be9c435-f9a1-484d-8059-e578d5797d8e
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/30/2018
+ms.date: 03/27/2019
 ms.author: v-wingf-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ed8bae32cb8d0680b1f9aa66f26407c3313ea06
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: f732eebd410a6b52a21a46925a29bf4676f7c8cb
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58077825"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59057495"
 ---
-# <a name="tutorial-configure-tableau-online-for-automatic-user-provisioning"></a>Руководство. Настройка Tableau Online для автоматической подготовки пользователей
+# <a name="tutorial-configure-tableau-online-for-automatic-user-provisioning"></a>Руководство по Настройка Tableau Online для автоматической подготовки пользователей
 
 В этом руководстве описаны шаги, которые необходимо выполнить в Tableau Online и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отзыва пользователей и групп в Tableau Online.
 
@@ -43,29 +44,23 @@ ms.locfileid: "58077825"
 ## <a name="adding-tableau-online-from-the-gallery"></a>Добавление Tableau Online из коллекции.
 Перед настройкой Tableau Online для автоматической подготовки пользователей в Azure AD необходимо добавить Tableau Online из коллекции приложений Azure AD в список управляемых приложений SaaS.
 
-**Чтобы добавить Tableau Online из коллекции приложений Azure AD, сделайте следующее.**
+**Чтобы добавить Tableau Online из коллекции приложений Azure AD, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка Azure Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите к элементу **Корпоративные приложения** > **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Раздел "Корпоративные приложения"][2]
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить Tableau Online, в верхней части диалогового окна нажмите кнопку **Новое приложение**.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Создать приложение"][3]
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Tableau Online**.
+4. В поле поиска введите **Tableau Online**выберите **Tableau Online** на панели результатов и нажмите **добавить** кнопку, чтобы добавить это приложение.
 
-    ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/AppSearch.png)
-
-5. В области результатов выберите **Tableau Online** и нажмите кнопку **Добавить**, чтобы добавить это приложение в список приложений SaaS.
-
-    ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/AppSearchResults.png)
-
-    ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/AppCreation.png)
+    ![Tableau Online в списке результатов](common/search-new-app.png)
 
 ## <a name="assigning-users-to-tableau-online"></a>Назначение пользователей в приложении Tableau Online
 
@@ -73,7 +68,7 @@ ms.locfileid: "58077825"
 
 Перед настройкой и включением автоматической подготовки пользователей необходимо решить, какие пользователи или группы в Azure AD будут иметь доступ к Tableau Online. После этого пользователей и (или) группы можно будет назначить приложению Tableau Online, следуя приведенным ниже указаниям.
 
-*   [Назначение корпоративному приложению пользователя или группы](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
+*   [Назначение пользователя или группы корпоративному приложению](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
 
 ### <a name="important-tips-for-assigning-users-to-tableau-online"></a>Важные советы по назначению пользователей в приложении Tableau Online
 
@@ -90,11 +85,13 @@ ms.locfileid: "58077825"
 
 ### <a name="to-configure-automatic-user-provisioning-for-tableau-online-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей в Tableau Online, сделайте следующее.
 
-1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory > Корпоративные приложения > Все приложения**.
+1. Войдите в [портала Azure](https://portal.azure.com) и выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **Tableau Online**.
 
-2. Из списка приложений SaaS выберите Tableau Online.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/AppInstanceSearch.png)
+2. В списке приложений выберите **Tableau Online**.
+
+    ![Ссылка на Tableau Online в списке приложений](common/all-applications.png)
 
 3. Выберите вкладку **Подготовка**.
 
@@ -116,13 +113,16 @@ ms.locfileid: "58077825"
 
 6. После входа в учетную запись администратора Tableau Online значения для **домена** и **URL-адреса содержимого** можно извлечь из URL-адреса страницы администратора.
 
-    *   Скопировать **домен** для учетной записи Tableau Online можно из этой части URL-адреса: ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/DomainUrlPart.png)
+    * Скопировать **домен** для учетной записи Tableau Online можно из этой части URL-адреса:
 
-    *   Скопировать **URL-адрес содержимого** для учетной записи Tableau Online можно из этого раздела и во время ее настройки определить значение. В этом примере используется значение "contoso": ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/ContentUrlPart.png)
+        ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/DomainUrlPart.png)
+
+    * Скопировать **URL-адрес содержимого** для учетной записи Tableau Online можно из этого раздела и во время ее настройки определить значение. В этом примере используется значение "contoso":
+
+        ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/ContentUrlPart.png)
 
         > [!NOTE]
-        > Ваш **домен** может отличаться от приведенного здесь. 
-
+        > Ваш **домен** может отличаться от приведенного здесь.
 
 7. После заполнения полей, указанных на шаге 5, щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к Tableau Online. Если установить подключение не удалось, убедитесь, что у учетной записи Tableau Online есть разрешения администратора, и повторите попытку.
 
@@ -132,35 +132,35 @@ ms.locfileid: "58077825"
 
     ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/EmailNotification.png)
 
-10. Выберите команду **Сохранить**.
+9. Выберите команду **Сохранить**.
 
-11. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Tableau Online**.
+10. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Tableau Online**.
 
     ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/UserMappings.png)
 
-12. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в Tableau Online. Атрибуты, выбранные как свойства **Matching**, используются для сопоставления учетных записей пользователей в Tableau Online для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в Tableau Online. Атрибуты, выбранные как свойства **Matching**, используются для сопоставления учетных записей пользователей в Tableau Online для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
     ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/UserAttributeMapping.png)
 
-13. В разделе **Сопоставления** выберите **Синхронизировать группы Azure Active Directory с Tableau Online**.
+12. В разделе **Сопоставления** выберите **Синхронизировать группы Azure Active Directory с Tableau Online**.
 
     ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/GroupMappings.png)
 
-14. В разделе **Сопоставление атрибутов** просмотрите атрибуты группы, которые синхронизированы из Azure AD в Tableau Online. Атрибуты, выбранные как свойства **Matching**, используются для сопоставления учетных записей пользователей в Tableau Online для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+13. В разделе **Сопоставление атрибутов** просмотрите атрибуты группы, которые синхронизированы из Azure AD в Tableau Online. Атрибуты, выбранные как свойства **Matching**, используются для сопоставления учетных записей пользователей в Tableau Online для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
     ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/GroupAttributeMapping.png)
 
-15. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
+14. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
-16. Чтобы включить службу подготовки Azure AD для Tableau Online, измените значение параметра **Состояние подготовки** на **Включено** в разделе **Параметры**.
+15. Чтобы включить службу подготовки Azure AD для Tableau Online, измените значение параметра **Состояние подготовки** на **Включено** в разделе **Параметры**.
 
     ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/ProvisioningStatus.png)
 
-17. Определите пользователей или группы для подготовки в Tableau Online, выбрав нужные значения в поле **Область** раздела **Параметры**.
+16. Определите пользователей или группы для подготовки в Tableau Online, выбрав нужные значения в поле **Область** раздела **Параметры**.
 
     ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/ScopeSync.png)
 
-18. Когда будете готовы выполнить подготовку, нажмите кнопку **Сохранить**.
+17. Когда будете готовы выполнить подготовку, нажмите кнопку **Сохранить**.
 
     ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/SaveProvisioning.png)
 
@@ -173,10 +173,9 @@ ms.locfileid: "58077825"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 
 <!--Image references-->
 [1]: ./media/tableau-online-provisioning-tutorial/tutorial_general_01.png

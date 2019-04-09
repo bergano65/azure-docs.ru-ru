@@ -5,14 +5,14 @@ author: msmbaldwin
 ms.service: security
 ms.topic: article
 ms.author: mbaldwin
-ms.date: 03/15/2019
+ms.date: 04/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: d6c1438fa70a1e8520ecb2a98dfb4d74d2818ffc
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
-ms.translationtype: MT
+ms.openlocfilehash: 33011a419c8c966fc59b769106aaff428b2a0709
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58286182"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59057682"
 ---
 # <a name="enable-azure-disk-encryption-for-linux-iaas-vms"></a>Включение шифрования дисков Azure для виртуальных машин IaaS под управлением Linux 
 
@@ -42,13 +42,13 @@ ms.locfileid: "58286182"
 
 Используйте команду [az vm encryption enable](/cli/azure/vm/encryption#az-vm-encryption-enable), чтобы включить шифрование на работающей виртуальной машине IaaS в Azure.
 
-- **Шифрование работающей виртуальной машины:**
+- **Зашифруйте работающей виртуальной Машине.**
 
      ```azurecli-interactive
      az vm encryption enable --resource-group "MyVirtualMachineResourceGroup" --name "MySecureVM" --disk-encryption-keyvault "MySecureVault" --volume-type [All|OS|Data]
      ```
 
-- **Шифрование работающей виртуальной машины с использованием KEK:**
+- **Шифровать работающей виртуальной Машине, используя ключ шифрования КЛЮЧЕЙ:**
 
      ```azurecli-interactive
      az vm encryption enable --resource-group "MyVirtualMachineResourceGroup" --name "MySecureVM" --disk-encryption-keyvault  "MySecureVault" --key-encryption-key "MyKEK_URI" --key-encryption-keyvault "MySecureVaultContainingTheKEK" --volume-type [All|OS|Data]
@@ -133,7 +133,7 @@ ms.locfileid: "58286182"
 | Параметр | ОПИСАНИЕ |
 | --- | --- |
 | vmName | Имя виртуальной машины для выполнения операции шифрования. |
-| keyVaultName | Имя хранилища ключей, в которое будет передан ключ BitLocker. Его можно получить с помощью командлета `(Get-AzKeyVault -ResourceGroupName <MyKeyVaultResourceGroupName>). Vaultname` или команды Azure CLI `az keyvault list --resource-group "MyKeyVaultResourceGroupName"`.|
+| keyVaultName | Имя хранилища ключей, в которое будет передан ключ BitLocker. Его можно получить с помощью командлета `(Get-AzKeyVault -ResourceGroupName <MyKeyVaultResourceGroupName>). Vaultname` или команду Azure CLI `az keyvault list --resource-group "MyKeyVaultResourceGroupName"`|
 | keyVaultResourceGroup | Имя группы ресурсов, содержащей хранилище ключей.|
 |  keyEncryptionKeyURL | URL-адрес ключа шифрования ключей, который используется для шифрования созданного ключа BitLocker. Это необязательный параметр, если выбрать **nokek** из раскрывающегося списка UseExistingKek. Если из раскрывающегося списка UseExistingKek выбрано значение **kek**, то потребуется ввести значение _keyEncryptionKeyURL_. |
 | volumeType | Тип тома, для которого будет выполняться шифрование. Допустимые значения: _OS_, _Data_ и _All_. 
@@ -144,7 +144,7 @@ ms.locfileid: "58286182"
 
 
 ## <a name="encrypt-virtual-machine-scale-sets"></a>Шифрование масштабируемых наборов виртуальных машин
-[Масштабируемые наборы виртуальных машин Azure](../virtual-machine-scale-sets/overview.md) позволяют создавать и администрировать группы идентичных виртуальных машин с балансировкой нагрузки. Число экземпляров виртуальных машин может автоматически увеличиваться или уменьшаться в зависимости от спроса или по определенному расписанию. Выполняйте шифрование масштабируемых наборов виртуальных машин с помощью CLI или Azure PowerShell.
+[Масштабируемые наборы виртуальных машин Azure](../virtual-machine-scale-sets/overview.md) позволяют создавать и администрировать группы идентичных виртуальных машин с балансировкой нагрузки. Число экземпляров виртуальных машин может автоматически увеличиваться или уменьшаться в зависимости от спроса или по определенному расписанию. Используйте CLI или Azure PowerShell для шифрования масштабируемых наборов виртуальных машин. На виртуальных машинах Linux масштабируемых наборов поддерживается только для шифрования дисков данных.
 
 Пример пакетного файла для шифрования дисков данных масштабируемого набора Linux можно найти на сайте [Github](https://github.com/Azure-Samples/azure-cli-samples/tree/master/disk-encryption/vmss). Этот пример создает группу ресурсов и масштабируемый набор Linux, подключает диск данных размером 5 ГБ и шифрует этот масштабируемый набор виртуальных машин.
 
@@ -152,14 +152,14 @@ ms.locfileid: "58286182"
 
 Используйте [az vmss encryption enable](/cli/azure/vmss/encryption#az-vmss-encryption-enable), чтобы включить шифрование в масштабируемом наборе виртуальных машин Windows. Если для масштабируемого набора задана политика обновления вручную, запустите шифрование с помощью команды [az vmss update-instances](/cli/azure/vmss#az-vmss-update-instances). Группа ресурсов, виртуальная машина и хранилище ключей должны быть уже созданы в качестве необходимых компонентов. 
 
--  **Шифрование работающего масштабируемого набора виртуальных машин**:
+-  **Шифрование выполняющегося масштабируемого набора виртуальных машин**
     ```azurecli-interactive
-    az vmss encryption enable --resource-group "MyVMScaleSetResourceGroup" --name "MySecureVmss" --disk-encryption-keyvault "MySecureVault" 
+    az vmss encryption enable --resource-group "MyVMScaleSetResourceGroup" --name "MySecureVmss" --volume-type DATA --disk-encryption-keyvault "MySecureVault"
     ```
 
--  **Шифрование работающего масштабируемого набора виртуальных машин с использованием ключа шифрования ключей для упаковки ключа**:
+-  **Выполняющегося масштабируемого набора виртуальных машин с помощью ключа шифрования КЛЮЧЕЙ ключ шифрования**
      ```azurecli-interactive
-     az vmss encryption enable --resource-group "MyVMScaleSetResourceGroup" --name "MySecureVmss" --disk-encryption-keyvault "MySecureVault" --key-encryption-key "MyKEK" --key-encryption-keyvault "MySecureVault" 
+     az vmss encryption enable --resource-group "MyVMScaleSetResourceGroup" --name "MySecureVmss" --volume-type DATA --disk-encryption-keyvault "MySecureVault" --key-encryption-key "MyKEK" --key-encryption-keyvault "MySecureVault"
      ```
 
     >[!NOTE]
@@ -189,7 +189,7 @@ ms.locfileid: "58286182"
       $KeyVault = Get-AzKeyVault -VaultName $KeyVaultName -ResourceGroupName $KVRGname;
       $DiskEncryptionKeyVaultUrl = $KeyVault.VaultUri;
       $KeyVaultResourceId = $KeyVault.ResourceId;
-      Set-AzVmssDiskEncryptionExtension -ResourceGroupName $VMSSRGname -VMScaleSetName $VmssName -DiskEncryptionKeyVaultUrl $diskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $KeyVaultResourceId;
+      Set-AzVmssDiskEncryptionExtension -ResourceGroupName $VMSSRGname -VMScaleSetName $VmssName -VolumeType Data -DiskEncryptionKeyVaultUrl $diskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $KeyVaultResourceId;
       ```
 
 -  **Шифрование выполняемого масштабируемого набора виртуальных машин с использованием ключа шифрования ключей для упаковки ключа**.
@@ -203,7 +203,7 @@ ms.locfileid: "58286182"
       $DiskEncryptionKeyVaultUrl = $KeyVault.VaultUri;
       $KeyVaultResourceId = $KeyVault.ResourceId;
       $KeyEncryptionKeyUrl = (Get-AzKeyVaultKey -VaultName $KeyVaultName -Name $keyEncryptionKeyName).Key.kid;
-      Set-AzVmssDiskEncryptionExtension -ResourceGroupName $VMSSRGname -VMScaleSetName $VmssName -DiskEncryptionKeyVaultUrl $diskEncryptionKeyVaultUrl  -DiskEncryptionKeyVaultId $KeyVaultResourceId -KeyEncryptionKeyUrl $KeyEncryptionKeyUrl -KeyEncryptionKeyVaultId $KeyVaultResourceId;
+      Set-AzVmssDiskEncryptionExtension -ResourceGroupName $VMSSRGname -VMScaleSetName $VmssName -VolumeType Data -DiskEncryptionKeyVaultUrl $diskEncryptionKeyVaultUrl  -DiskEncryptionKeyVaultId $KeyVaultResourceId -KeyEncryptionKeyUrl $KeyEncryptionKeyUrl -KeyEncryptionKeyVaultId $KeyVaultResourceId;
       ```
 
     >[!NOTE]
@@ -225,9 +225,9 @@ ms.locfileid: "58286182"
 
 Для шифрования или расшифровки масштабируемых наборов виртуальных машин Linux используйте шаблоны Azure Resource Manager и приведенные ниже инструкции:
 
-- [Включите шифрование в масштабируемом наборе виртуальных машин Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-vmss-linux).
-- [Разверните масштабируемый набор виртуальных машин Linux с помощью Jumpbox и включите шифрование в этом масштабируемом наборе Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-linux-jumpbox).
-- [Отключите шифрование в масштабируемом наборе виртуальных машин Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-vmss-linux).
+- [Включение шифрования для масштабируемого набора виртуальных машин Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-vmss-linux)
+- [Развертывание виртуальной Машины масштабируемый набор виртуальных машин Linux с основной виртуальной машины и включите шифрование в масштабируемом наборе виртуальных Машин Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-linux-jumpbox)
+- [Отключение шифрования на масштабируемый набор виртуальных Машин Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-vmss-linux)
 
      1. Нажмите кнопку **Развернуть в Azure**.
      2. Заполните обязательные поля, а затем согласитесь с условиями.
@@ -257,7 +257,7 @@ ms.locfileid: "58286182"
 ### <a name="bkmk_EFAPSH"> </a> Использование параметра EncryptFormatAll с Azure CLI
 Используйте команду [az vm encryption enable](/cli/azure/vm/encryption#az-vm-encryption-enable), чтобы включить шифрование на работающей виртуальной машине IaaS в Azure.
 
--  **Шифрование работающей виртуальной машины с использованием параметра EncryptFormatAll:**
+-  **Шифрование с помощью EncryptFormatAll работающей виртуальной Машины:**
 
      ```azurecli-interactive
      az vm encryption enable --resource-group "MyVirtualMachineResourceGroup" --name "MySecureVM" --disk-encryption-keyvault "MySecureVault" --encrypt-format-all
@@ -340,13 +340,13 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 
 В отличие от синтаксиса Powershell, интерфейс командной строки (CLI) не требует предоставления уникальной версии последовательности при включении шифрования. CLI автоматически создает и использует свое собственное уникальное значение версии последовательности.
 
--  **Шифрование томов данных работающей виртуальной машины:**
+-  **Шифровать тома данных, работающей виртуальной машины:**
 
      ```azurecli-interactive
      az vm encryption enable --resource-group "MyVirtualMachineResourceGroup" --name "MySecureVM" --disk-encryption-keyvault "MySecureVault" --volume-type "Data"
      ```
 
-- **Шифрование томов данных работающей виртуальной машины с использованием KEK:**
+- **Шифровать тома данных, работающей виртуальной машины с помощью ключа шифрования КЛЮЧЕЙ:**
 
      ```azurecli-interactive
      az vm encryption enable --resource-group "MyVirtualMachineResourceGroup" --name "MySecureVM" --disk-encryption-keyvault  "MySecureVault" --key-encryption-key "MyKEK_URI" --key-encryption-keyvault "MySecureVaultContainingTheKEK" --volume-type "Data"
@@ -414,4 +414,4 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
-> [Включение шифрования дисков Azure для виртуальных машин Windows IaaS](azure-security-disk-encryption-windows.md)
+> [Включить шифрование дисков Azure для Windows](azure-security-disk-encryption-windows.md)

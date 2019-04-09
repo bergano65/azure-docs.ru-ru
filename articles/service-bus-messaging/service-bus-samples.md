@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/13/2019
 ms.author: aschhab
-ms.openlocfilehash: 7b34233e10c5d622b598d35c6eb136b88daf8eb6
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2da6e46ad4866ad624ff6bc8aa61a96e41568ca2
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57880166"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006554"
 ---
 # <a name="service-bus-messaging-samples"></a>Примеры обмена сообщениями с помощью служебной шины
 В этих примерах демонстрируются ключевые возможности [обмена сообщениями служебной шины](https://azure.microsoft.com/services/service-bus/). В настоящее время примеры можно найти в следующих местах:
@@ -27,7 +27,7 @@ ms.locfileid: "57880166"
 | Язык программирования | Расположение пакета SDK и примеры |
 | -------------------- | ----------------------- |
 | .NET, Java и управления | https://github.com/Azure/azure-service-bus/ |
-| Node.js | https://github.com/Azure/azure-sdk-for-js/tree/master/packages/%40azure/servicebus/data-plane/examples |
+| Node.js | https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/servicebus/service-bus/samples |
 | Python | https://github.com/Azure/azure-sdk-for-python/tree/master/azure-servicebus |
 
 ## <a name="service-bus-explorer"></a>Service Bus Explorer
@@ -38,6 +38,6 @@ ms.locfileid: "57880166"
 
 Принципиальные сведения о служебной шине см. в следующих статьях:
 
-* [Основные сведения об обмене сообщениями через служебную шину](service-bus-messaging-overview.md)
+* [Обзор обмена сообщениями служебной шины](service-bus-messaging-overview.md)
 * [Архитектура служебной шины](service-bus-architecture.md)
 

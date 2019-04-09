@@ -1,31 +1,31 @@
 ---
 title: Доступ к данным с помощью центра безопасности Azure для Интернета вещей Preview | Документация Майкрософт
 description: Узнайте о способах доступа к данным, оповещения и рекомендации по безопасности при использовании центра безопасности Azure для Интернета вещей.
-services: ascforiot
+services: asc-for-iot
+ms.service: ascforiot
 documentationcenter: na
 author: mlottner
 manager: barbkess
 editor: ''
 ms.assetid: fbd96ddd-cd9f-48ae-836a-42aa86ca222d
-ms.service: ascforiot
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/25/2019
 ms.author: mlottner
-ms.openlocfilehash: 510ee9bdefe87c1fab40e58bb715f2a8cce936b7
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 0788a62de701cb85a65c7053006e28cf4fffe5cb
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58758525"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58862596"
 ---
 # <a name="access-your-security-data"></a>Доступ к данным безопасности 
 
 > [!IMPORTANT]
 > Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Предварительная версия предоставляется без соглашения об уровне обслуживания. Мы не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Центр безопасности Azure (ASC) для Интернета вещей сохраняет оповещения системы безопасности, рекомендаций и необработанной безопасности данных (Если вы решили сохранить) в рабочей области Log Analytics.
 
@@ -48,7 +48,7 @@ ms.locfileid: "58758525"
 
 Оповещения системы безопасности, хранятся в _AzureSecurityOfThings.SecurityAlert_ таблицы в рабочей области Log Analytics, настроенной для ASC решения Интернета вещей.
 
-ןנוהמסעאגכום ряд полезных запросов, которые помогут начать изучение оповещений системы безопасности.
+ןנוהמסעאגכום ряд полезных запросов, которые помогут начать изучение оповещений системы безопасности.
 
 ### <a name="sample-records"></a>Пример записи
 

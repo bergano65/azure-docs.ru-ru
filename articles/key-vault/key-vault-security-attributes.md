@@ -1,5 +1,5 @@
 ---
-title: Атрибуты безопасности для Azure Key Vault
+title: Атрибуты безопасности для хранилища ключей Azure
 description: Контрольный список общих атрибутов безопасности для оценки службы Azure Key Vault
 services: key-vault
 documentationcenter: ''
@@ -7,29 +7,20 @@ author: msmbaldwin
 manager: barbkess
 ms.service: key-vault
 ms.topic: conceptual
-ms.date: 01/31/2019
+ms.date: 04/03/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 1df710b256715cab9650e6d141a3dd187be41cfd
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: 32aa111c45835883cd779fc40946b89139af6ea5
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56109528"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59004692"
 ---
-# <a name="security-attributes-for-azure-key-vault"></a>Атрибуты безопасности для Azure Key Vault
+# <a name="security-attributes-for-azure-key-vault"></a>Атрибуты безопасности для хранилища ключей Azure
 
-Средства безопасности интегрированы в каждом аспекте служб Azure. В этой статье рассматриваются атрибуты безопасности, встроенные в Azure Key Vault. Атрибут безопасности — это качество или функция служб Azure, которая позволяет службам предотвращать, обнаруживать уязвимости безопасности или реагировать на них.
+Средства безопасности интегрированы в каждом аспекте службы Azure. В этой статье описываются наиболее распространенные атрибуты безопасности, встроенные в хранилище ключей Azure. 
 
-Атрибуты безопасности разделены на следующие категории:
-* профилактическая;
-* сегментация сети;
-* Обнаружение
-* поддержка управления удостоверениями и доступом;
-* журнал аудита;
-* управление доступом (если используется);
-* управление конфигурацией (если используется).
-
-В каждой категории определяется, используется атрибут или нет (да/нет). Для некоторых служб атрибут может не применяться, это отображается как "Недоступно". Кроме того, может быть также предоставлена заметка или ссылка на дополнительную информацию об атрибуте.
+[!INCLUDE [Security Attributes Header](../../includes/security-attributes-header.md)]
 
 
-[!INCLUDE [security-attributes-key-vault](../../includes/security-attributes-key-vault.md)]
+[!INCLUDE [Security Attributes for Key Vault](../../includes/security-attributes-key-vault.md)]

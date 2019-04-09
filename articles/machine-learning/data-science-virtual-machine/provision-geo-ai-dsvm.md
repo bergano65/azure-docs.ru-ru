@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/05/2018
 ms.author: gokuma
-ms.openlocfilehash: c4b178cc7e0604f38e4da25452a3bad01f8145de
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: dde9b71c3615a592f8c08e040c5e9ba7bc756bd6
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57858152"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59008844"
 ---
 # <a name="provision-a-geo-artificial-intelligence-virtual-machine-on-azure"></a>Подготовка виртуальной машины для обработки геоданных средствами ИИ в Azure 
 
@@ -42,14 +42,14 @@ Geo-DSVM содержит несколько средств искусствен
 
 1. Перейдите к списку виртуальных машин на [портале Azure](https://ms.portal.azure.com/#create/microsoft-ads.geodsvmwindows).
 2. В нижней части страницы нажмите кнопку **Создать**. Откроется мастер.
-![create-geo-ai-dsvm](./media/provision-geo-ai-dsvm/Create-Geo-AI.png)
+![Создание geo-ai-dsvm](./media/provision-geo-ai-dsvm/Create-Geo-AI.png)
 3. Мастеру, который используется для создания Geo-DSVM, требуются **входные данные** для всех **четырех шагов**, перечисленных в правой части этого рисунка. Ниже приведено описание входных данных, необходимых для настройки на каждом из шагов.
 
 
 
    - **Основы**
 
-      1. **Имя**. Имя создаваемого сервера для обработки и анализа данных.
+      1. **Имя.** Имя создаваемого сервера для обработки и анализа данных.
 
       2. **Имя пользователя**. Идентификатор учетной записи администратора.
 
@@ -87,7 +87,7 @@ Geo-DSVM уже содержит предустановленную настол
 
 ![ArcGIS-Free-Trial](./media/provision-geo-ai-dsvm/ArcGIS-Free-Trial.png)
 
-После регистрации для получения платной или бесплатной пробной учетной записи ArcGIS можно авторизовать ArcGIS Pro для вашей учетной записи, следуя инструкциям из [документации по началу работы с ArcGIS Pro](https://www.esri.com/library/brochures/getting-started-with-arcgis-pro.pdf). 
+После регистрации для любой платной или бесплатной пробной учетной записи ArcGIS можно авторизовать ArcGIS Pro для своей учетной записи, следуя инструкциям в [Приступая к работе с ArcGIS Pro](https://www.esri.com/library/brochures/getting-started-with-arcgis-pro.pdf). 
 
 После входа в ArcGIS Pro для настольных ПК с вашей учетной записью ArcGIS можно будет приступить к использованию средств обработки и анализа данных, которые установлены и настроены на виртуальной машине для проектов геопространственной аналитики и машинного обучения.
 
@@ -95,4 +95,4 @@ Geo-DSVM уже содержит предустановленную настол
 
 Начните работу с виртуальной машиной с искусственным интеллектом для обработки и анализа геоданных, следуя рекомендациям в этих статьях:
 
-* [Use the Geo AI Data Science VM](use-geo-ai-dsvm.md) (Использование виртуальной машины для обработки и анализа геоданных средствами ИИ)
+* [Использование Geo AI Data Science VM](use-geo-ai-dsvm.md)

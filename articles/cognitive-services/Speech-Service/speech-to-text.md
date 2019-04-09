@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 6400e3d3fa7f0317ff927f2931e705365a450770
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 9e6bc1264e668ba5c6593ce36e721f54e685c391
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58520672"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59008498"
 ---
 # <a name="what-is-speech-to-text"></a>Что такое речи в текст
 
@@ -52,7 +52,7 @@ ms.locfileid: "58520672"
 | Быстрый запуск | платформа | Справочник по API |
 |------------|----------|---------------|
 | [C#, .NET Core](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-dotnetcore-windows) |  Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [C#, .NET framework](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-dotnet-windows) |  Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C#, .NET Framework](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-dotnet-windows) |  Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
 | [C#, УНИВЕРСАЛЬНОЙ ПЛАТФОРМЫ WINDOWS](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-uwp) |  Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
 | [C++](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-cpp-windows) |  Windows | [Обзор](https://aka.ms/csspeech/cppref)|
 | [C++](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-cpp-linux) | Linux | [Обзор](https://aka.ms/csspeech/cppref) |
@@ -69,12 +69,12 @@ ms.locfileid: "58520672"
 
 После того, как у вас будет возможность использовать службы речи, просмотрите наше руководство, которое научит вас распознавать намерения из речи с помощью пакета SDK для распознавания речи и LUIS.
 
-* [Руководство Распознавание намерений в речи с помощью пакета SDK для распознавания речи и LUIS, C#](how-to-recognize-intents-from-speech-csharp.md)
+* [Руководство по Распознавание намерений из речи с помощью пакета SDK для распознавания речи и LUIS,C#](how-to-recognize-intents-from-speech-csharp.md)
 
 Пример кода для Speech SDK доступен на сайте GitHub. В этих примерах рассматриваются сценарии общего характера, такие как чтение аудио из файла или потока, непрерывное и одиночное распознавание, а также работа с пользовательскими моделями.
 
 * [Примеры преобразования речи в текст (SDK)](https://github.com/Azure-Samples/cognitive-services-speech-sdk)
-* [Примеры транскрибирования с помощью Пакетной службы (REST)](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/batch)
+* [Расшифровка дикторского текста для примеров пакетной службы (REST)](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/batch)
 
 ## <a name="customization"></a>Настройка
 
@@ -84,7 +84,7 @@ ms.locfileid: "58520672"
 |-------|-------------|
 | [Акустическая модель](how-to-customize-acoustic-models.md) | Создание пользовательской акустической модели полезна в том случае, если ваши приложения, средства или устройств используются в конкретной среде, как в автомобиль или фабрики с условиями определенной записи. В качестве примера можно привести речь с акцентом, наличие фонового шума или использование определенного микрофона для записи. |
 | [Языковая модель](how-to-customize-language-model.md) | Создайте модель пользовательского языка для улучшения расшифровка дикторского текста для отраслевого лексикона и грамматики, например медицинских терминология или жаргоне ИТ. |
-| [Модель произношения](how-to-customize-pronunciation.md) | Используя модель пользовательского произношения, вы можете определить фонетическую и отображаемую форму слова или термина. Это удобно для обработки настраиваемых терминов, например имен продуктов или аббревиатур. Все, что требуется для начала работы — это файл с записями произношения (простой TXT-файл). |
+| [Произношение модели](how-to-customize-pronunciation.md) | Используя модель пользовательского произношения, вы можете определить фонетическую и отображаемую форму слова или термина. Это удобно для обработки настраиваемых терминов, например имен продуктов или аббревиатур. Все, что требуется для начала работы — это файл с записями произношения (простой TXT-файл). |
 
 > [!NOTE]
 > Параметры настройки зависят от языка и языкового стандарта (см. в разделе [поддерживаемые языки](supported-languages.md)).
@@ -101,13 +101,13 @@ ms.locfileid: "58520672"
 
 ## <a name="reference-docs"></a>Справочная документация
 
-* [пакет SDK для службы "Речь"](speech-sdk-reference.md);
+* [Пакет SDK для распознавания речи](speech-sdk-reference.md)
 * [Пакет SDK для речевых устройств](speech-devices-sdk.md)
-* [REST API: Преобразование речи в текст](rest-speech-to-text.md)
+* [REST API: Преобразование речи в текст.](rest-speech-to-text.md)
 * [REST API: Преобразование текста в речь](rest-text-to-speech.md)
-* [REST API: Пакетное транскрибирование и настройка](https://westus.cris.ai/swagger/ui/index)
+* [REST API: Расшифровка дикторского текста для пакетной службы и их настройка](https://westus.cris.ai/swagger/ui/index)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Получите ключ подписки для Служб речи бесплатно](get-started.md)
-* [Получить Speech SDK](speech-sdk.md)
+* [Получите ключ подписки Speech Services бесплатно](get-started.md)
+* [Получение пакета SDK для службы "Речь"](speech-sdk.md)

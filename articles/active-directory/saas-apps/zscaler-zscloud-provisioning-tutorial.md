@@ -6,22 +6,23 @@ documentationcenter: ''
 author: zchia
 writer: zchia
 manager: beatrizd-msft
-ms.assetid: na
+ms.assetid: a752be80-d3ef-45d1-ac8f-4fb814c07b07
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/03/2019
+ms.date: 03/27/2019
 ms.author: v-ant-msft
-ms.openlocfilehash: 3f7fcd59bafe5619a1ef411bf81a6b8c3431f22c
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: 8962f0cf79a8e4874018021b1f9009cf3dad844e
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58087420"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59058532"
 ---
-# <a name="tutorial-configure-zscaler-zscloud-for-automatic-user-provisioning"></a>Руководство. Настройка Zscaler ZSCloud для автоматической подготовки пользователей
+# <a name="tutorial-configure-zscaler-zscloud-for-automatic-user-provisioning"></a>Руководство по Настройка Zscaler ZSCloud для автоматической подготовки пользователей
 
 Цель данного учебника — продемонстрировать действия, выполняемые в Zscaler ZSCloud и Azure Active Directory (Azure AD) для настройки Azure AD настроить автоматическую подготовку и отмену подготовки пользователей и групп в Zscaler ZSCloud.
 
@@ -34,39 +35,34 @@ ms.locfileid: "58087420"
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
-*   клиент Azure AD;
-*   Клиент Zscaler ZSCloud
-*   Учетную запись пользователя в Zscaler ZSCloud с разрешениями администратора.
+* клиент Azure AD;
+* Клиент Zscaler ZSCloud
+* Учетную запись пользователя в Zscaler ZSCloud с разрешениями администратора.
 
 > [!NOTE]
 > Интеграция подготовки Azure AD зависит от Zscaler ZSCloud SCIM API, которая доступна разработчикам Zscaler ZSCloud для учетных записей с помощью пакета Enterprise.
 
 ## <a name="adding-zscaler-zscloud-from-the-gallery"></a>Добавление Zscaler ZSCloud из коллекции
+
 Перед настройкой Zscaler ZSCloud для автоматической подготовки пользователей в Azure AD, необходимо добавить Zscaler ZSCloud из коллекции приложений Azure AD в список управляемых приложений SaaS.
 
 **Чтобы добавить Zscaler ZSCloud из коллекции приложений Azure AD, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка Azure Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите к элементу **Корпоративные приложения** > **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Раздел "Корпоративные приложения"][2]
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить Zscaler ZSCloud, щелкните **новое приложение** кнопку в верхней части диалогового окна.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Создать приложение"][3]
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Zscaler ZSCloud**.
+4. В поле поиска введите **Zscaler ZSCloud**, выберите **Zscaler ZSCloud** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Zscaler ZSCloud Подготовка](./media/zscaler-zscloud-provisioning-tutorial/appsearch.png)
-
-5. В области результатов выберите **Zscaler ZSCloud**, а затем нажмите кнопку **добавить** кнопку, чтобы добавить Zscaler ZSCloud в список приложений SaaS.
-
-    ![Zscaler ZSCloud Подготовка](./media/zscaler-zscloud-provisioning-tutorial/appsearchresults.png)
-
-    ![Zscaler ZSCloud Подготовка](./media/zscaler-zscloud-provisioning-tutorial/appcreation.png)
+    ![Zscaler ZSCloud в списке результатов](common/search-new-app.png)
 
 ## <a name="assigning-users-to-zscaler-zscloud"></a>Назначение пользователей в Zscaler ZSCloud
 
@@ -74,13 +70,13 @@ ms.locfileid: "58087420"
 
 Перед настройкой и включением автоматической подготовки пользователей, следует решить, какие пользователи или группы в Azure AD требуется доступ к Zscaler ZSCloud. Сделав это, можно назначить этих пользователей и групп в Zscaler ZSCloud, следуя инструкциям ниже:
 
-*   [Назначение корпоративному приложению пользователя или группы](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
+* [Назначение пользователя или группы корпоративному приложению](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
 
 ### <a name="important-tips-for-assigning-users-to-zscaler-zscloud"></a>Важные рекомендации по назначению пользователей в Zscaler ZSCloud
 
-*   Рекомендуется один назначенный пользователем Azure AD Zscaler ZSCloud для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
+* Рекомендуется один назначенный пользователем Azure AD Zscaler ZSCloud для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
-*   При назначении пользователя в Zscaler ZSCloud, необходимо выбрать действительную роль конкретного приложения (если доступно) в диалоговом окне назначения. Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя в Zscaler ZSCloud, необходимо выбрать действительную роль конкретного приложения (если доступно) в диалоговом окне назначения. Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
 
 ## <a name="configuring-automatic-user-provisioning-to-zscaler-zscloud"></a>Настройка автоматической подготовки пользователей в Zscaler ZSCloud
 
@@ -91,11 +87,13 @@ ms.locfileid: "58087420"
 
 ### <a name="to-configure-automatic-user-provisioning-for-zscaler-zscloud-in-azure-ad"></a>Настройка автоматической подготовки пользователей для Zscaler ZSCloud в Azure AD.
 
-1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory > Корпоративные приложения > Все приложения**.
+1. Войдите в [портала Azure](https://portal.azure.com) и выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **Zscaler ZSCloud**.
 
-2. В списке приложений SaaS выберите Zscaler ZSCloud.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Zscaler ZSCloud Подготовка](./media/zscaler-zscloud-provisioning-tutorial/appinstancesearch.png)
+2. В списке приложений выберите **Zscaler ZSCloud**.
+
+    ![Ссылка на Zscaler ZSCloud в списке приложений](common/all-applications.png)
 
 3. Выберите вкладку **Подготовка**.
 
@@ -107,20 +105,20 @@ ms.locfileid: "58087420"
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **секретный токен** учетной Zscaler ZSCloud, как описано на шаге 6.
 
-6. Для получения **URL-адрес клиента** и **секретный токен**, перейдите к **Администрирование > Параметры проверки подлинности** в Zscaler ZSCloud пользовательского интерфейса портала и щелкнуть  **SAML** под **тип проверки подлинности**. 
+6. Для получения **URL-адрес клиента** и **секретный токен**, перейдите к **Администрирование > Параметры проверки подлинности** в Zscaler ZSCloud пользовательского интерфейса портала и щелкнуть  **SAML** под **тип проверки подлинности**.
 
     ![Zscaler ZSCloud Подготовка](./media/zscaler-zscloud-provisioning-tutorial/secrettoken1.png)
 
-    Щелкните **настроить SAML** открыть **конфигурации SAML** параметры. 
+    Щелкните **настроить SAML** открыть **конфигурации SAML** параметры.
 
     ![Zscaler ZSCloud Подготовка](./media/zscaler-zscloud-provisioning-tutorial/secrettoken2.png)
-    
+
     Выберите **подготовки Enable SCIM-Based** извлекаемого **базовый URL-адрес** и **маркера носителя**, затем сохраните параметры. Копировать **базовый URL-адрес** для **URL-адрес клиента** и **маркера носителя** для **секретный токен** на портале Azure.
 
 7. После заполнения полей, указанных в шаге 5, щелкните **проверить подключение** и убедиться, что Azure AD может подключиться к Zscaler ZSCloud. Если подключение отсутствует, убедитесь, что учетная запись Zscaler ZSCloud имеет разрешения администратора и повторите попытку.
 
     ![Zscaler ZSCloud Подготовка](./media/zscaler-zscloud-provisioning-tutorial/testconnection.png)
-    
+
 8. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
 
     ![Zscaler ZSCloud Подготовка](./media/zscaler-zscloud-provisioning-tutorial/Notification.png)
@@ -168,7 +166,7 @@ ms.locfileid: "58087420"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
+* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
 
 <!--Image references-->
 [1]: ./media/zscaler-zscloud-provisioning-tutorial/tutorial-general-01.png

@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: glenga
-ms.openlocfilehash: a5acc65609b7d8387eca0ec4e091bf823d9d1d67
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: dcd6d907fec3d7f2cc0c8d5c06fdec28125154c1
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58402700"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59009552"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -147,7 +147,7 @@ Writing C:\myfunctions\myMyFunctionProj\.vscode\extensions.json
 Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 ```
 
-`func init` поддерживает следующие параметры, которые подходят только для версии 2.x, если не указано иное:
+`func init` поддерживает следующие параметры, которые имеют версию только для версии 2.x, в том случае, если не указано иное.
 
 | Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
@@ -203,9 +203,9 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 
 Эти значения параметров приложения-функции также могут считываться в коде как переменные среды. Дополнительные сведения см. в разделе о переменных среды в этих справочниках для определенного языка:
 
-* [Предкомпилированный код C#](functions-dotnet-class-library.md#environment-variables)
-* [Скрипт C# (CSX)](functions-reference-csharp.md#environment-variables)
-* [Скрипт F# (FSX)](functions-reference-fsharp.md#environment-variables)
+* [C#предварительно скомпилированные](functions-dotnet-class-library.md#environment-variables)
+* [Скрипт C# (.csx)](functions-reference-csharp.md#environment-variables)
+* [F#скрипт (расширение fsx)](functions-reference-fsharp.md#environment-variables)
 * [Java](functions-reference-java.md#environment-variables)
 * [JavaScript](functions-reference-node.md#environment-variables)
 
@@ -305,7 +305,7 @@ func host start
 
 Команда `host` требуется только в версии 1.x.
 
-`func host start` имеет указанные ниже параметры.
+`func host start` поддерживает следующие параметры:
 
 | Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
@@ -397,7 +397,7 @@ curl --request POST -H "Content-Type:application/json" --data '{"input":"sample 
 
 Вы также можете вызвать функцию напрямую с помощью `func run <FunctionName>` и предоставить входные данные для нее. Эта команда аналогична выполнению функции с помощью вкладки **Тест** на портале Azure.
 
-`func run` имеет указанные ниже параметры.
+`func run` поддерживает следующие параметры:
 
 | Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
@@ -472,7 +472,7 @@ func deploy
 | Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
 | **`--registry`** | Имя реестра Docker, в который вошел текущий пользователь. |
-| **`--platform`** | Платформа размещения для приложения-функции. Допустимые параметры: `kubernetes`. |
+| **`--platform`** | Платформа размещения для приложения-функции. Допустимые значения: `kubernetes` |
 | **`--name`** | Имя приложения-функции. |
 | **`--max`**  | При необходимости задает максимальное число экземпляров приложения-функции, в которые будет выполняться развертывание. |
 | **`--min`**  | При необходимости задает минимальное число экземпляров приложения-функции, в которые будет выполняться развертывание. |
@@ -485,8 +485,8 @@ func deploy
 
 <!-- LINKS -->
 
-[Основные инструменты службы "Функции Azure"]: https://www.npmjs.com/package/azure-functions-core-tools
-[портале Azure]: https://portal.azure.com 
+[Основных инструментов функций Azure]: https://www.npmjs.com/package/azure-functions-core-tools
+[Портал Azure]: https://portal.azure.com 
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows
 [«FUNCTIONS_WORKER_RUNTIME»]: functions-app-settings.md#functions_worker_runtime
 [«AzureWebJobsStorage»]: functions-app-settings.md#azurewebjobsstorage
