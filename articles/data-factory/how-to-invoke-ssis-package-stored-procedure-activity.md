@@ -3,7 +3,7 @@ title: Запуск в Azure пакета SQL Server Integration Services с п�
 description: Из этой статьи вы узнаете, как в конвейере Фабрики данных Azure запустить пакет SQL Server Integration Services (SSIS) с помощью действия хранимой процедуры.
 services: data-factory
 documentationcenter: ''
-author: linda33wj
+author: swinarko
 manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: ''
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/17/2018
-ms.author: jingwang
-ms.openlocfilehash: 1cff60e6134e08e4b9e59a9f69ec09700cca1814
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.author: sawinark
+ms.openlocfilehash: b71a954da746ba04aeaa0797c13bf2c81838179d
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58098752"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59256300"
 ---
 # <a name="run-an-ssis-package-with-the-stored-procedure-activity-in-azure-data-factory"></a>Запуск в Фабрике данных Azure пакета SQL Server Integration Services с помощью действия хранимой процедуры
 В этой статье описывается, как запустить пакет SQL Server Integration Services (SSIS) в конвейере Фабрики данных Azure с помощью действия хранимой процедуры. 
@@ -176,7 +176,7 @@ ms.locfileid: "58098752"
     $DataFactoryName = "ADFTutorialFactory";
     ```
 
-5. Чтобы создать фабрику данных, выполните следующую команду **AzDataFactoryV2 набора** командлет, используя свойства Location и ResourceGroupName из переменной $ResGrp: 
+5. Чтобы создать фабрику данных, выполните следующий командлет **Set-AzDataFactoryV2**, используя свойства Location и ResourceGroupName из переменной $ResGrp. 
     
     ```powershell       
     $DataFactory = Set-AzDataFactoryV2 -ResourceGroupName $ResGrp.ResourceGroupName -Location $ResGrp.Location -Name $dataFactoryName 
@@ -217,7 +217,7 @@ ms.locfileid: "58098752"
 
 2. В **Azure PowerShell** перейдите в папку **C:\ADF\RunSSISPackage**.
 
-3. Запустите **AzDataFactoryV2LinkedService набора** командлет, чтобы создать связанную службу: **AzureSqlDatabaseLinkedService**. 
+3. Выполните командлет **Set-AzDataFactoryV2LinkedService**, чтобы создать связанную службу. **AzureSqlDatabaseLinkedService**. 
 
     ```powershell
     Set-AzDataFactoryV2LinkedService -DataFactoryName $DataFactory.DataFactoryName -ResourceGroupName $ResGrp.ResourceGroupName -Name "AzureSqlDatabaseLinkedService" -File ".\AzureSqlDatabaseLinkedService.json"
