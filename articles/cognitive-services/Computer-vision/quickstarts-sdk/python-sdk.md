@@ -10,51 +10,51 @@ ms.subservice: computer-vision
 ms.topic: quickstart
 ms.date: 02/28/2019
 ms.author: pafarley
-ms.openlocfilehash: 23db6f889e2ca4266b7e3566c18cf9a85d4062a8
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 16844f60f03e2bf488450797f43915462df08064
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58517561"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904922"
 ---
 # <a name="azure-cognitive-services-computer-vision-sdk-for-python"></a>Пакет SDK Компьютерного зрения Cognitive Services Azure для Python
 
-Служба API компьютерного зрения предоставляет разработчикам доступ к расширенным алгоритмам обработки изображений и возврата данных. Алгоритмы Компьютерного зрения анализируют содержимое изображений по-разному, в зависимости от интересующих вас визуальных компонентов. 
+Служба API компьютерного зрения предоставляет разработчикам доступ к расширенным алгоритмам обработки изображений и возврата данных. Алгоритмы Компьютерного зрения анализируют содержимое изображений по-разному, в зависимости от интересующих вас визуальных компонентов.
 
 * [Анализ изображения](#analyze-an-image)
-* [Получение списка предметных областей](#get-subject-domain-list).
-* [Анализ изображений по области](#analyze-an-image-by-domain).
-* [Получение текстового описания изображений](#get-text-description-of-an-image).
-* [Получение рукописных текстов изображений](#get-text-from-image).
-* [Создание эскизов](#generate-thumbnail).
+* [Получение списка предметных областей](#get-subject-domain-list)
+* [Анализ изображений по области](#analyze-an-image-by-domain)
+* [Получение текстового описания изображений](#get-text-description-of-an-image)
+* [Получение рукописных текстов изображений](#get-text-from-image)
+* [Создание эскизов](#generate-thumbnail)
 
 Дополнительные сведения об этой службе см. в статье [Что собой представляет компьютерное зрение][computervision_docs].
 
 Ищете дополнительную документацию?
 
 * [Справочная документация по пакету SDK](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision)
-* [Документация по Компьютерному зрению](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)
+* [Документация по Компьютерному зрению Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Python 3.6+][python]
-* Бесплатный [ключ API компьютерного зрения][computervision_resource] и соответствующий регион. Эти значения понадобятся при создании экземпляра клиентского объекта [ComputerVisionAPI][ref_computervisionclient]. Получить справку можно с помощью одного из указанных ниже методов. 
+* Бесплатный [ключ Компьютерного зрения][computervision_resource] и соответствующая конечная точка. Эти значения понадобятся при создании экземпляра клиентского объекта [ComputerVisionClient][ref_computervisionclient]. Получить справку можно с помощью одного из указанных ниже методов.
 
 ### <a name="if-you-dont-have-an-azure-subscription"></a>Если у вас нет подписки Azure
 
-Создайте бесплатный ключ, действительный на протяжении 7 дней, с помощью **[пробной][computervision_resource]** версии службы Компьютерного зрения. Когда ключ будет создан, скопируйте его, а также имя региона. Они понадобятся вам, чтобы [создать клиент](#create-client).
+Создайте бесплатный ключ, действительный на протяжении 7 дней, с помощью **[пробной][computervision_resource]** версии службы Компьютерного зрения. Когда ключ будет создан, скопируйте его, а также имя конечной точки. Они понадобятся вам, чтобы [создать клиент](#create-client).
 
 После создания ключа сохраните следующие значения:
 
-* Значение ключа: строка из 32 символов в формате `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`. 
-* Регион ключа: поддомен URL-адреса конечной точки (https://**westcentralus**.api.cognitive.microsoft.com).
+* Значение ключа: строка из 32 символов в формате `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
+* Ключевая конечная точка: URL-адрес базовой конечной точки https://westcentralus.api.cognitive.microsoft.com
 
 ### <a name="if-you-have-an-azure-subscription"></a>Если у вас есть подписка Azure
 
-Самый простой способ создать ресурс в подписке — использовать следующую команду [Azure CLI][azure_cli]. Она создает ключ Cognitive Service, который может использоваться во многих когнитивных службах. Вам нужно выбрать _существующее_ имя группы ресурсов, например my-cogserv-group, и новое название ресурса Компьютерного зрения, такого как my-computer-vision-resource. 
+Самый простой способ создать ресурс в подписке — использовать следующую команду [Azure CLI][azure_cli]. Она создает ключ Cognitive Service, который может использоваться во многих когнитивных службах. Вам нужно выбрать _существующее_ имя группы ресурсов, например my-cogserv-group, и новое название ресурса Компьютерного зрения, такого как my-computer-vision-resource.
 
 ```Bash
-RES_REGION=westeurope 
+RES_REGION=westeurope
 RES_GROUP=<resourcegroup-name>
 ACCT_NAME=<computervision-account-name>
 
@@ -92,31 +92,31 @@ pip install azure-cognitiveservices-vision-computervision
 
 ## <a name="authentication"></a>Authentication
 
-После создания ресурса Компьютерного зрения вам потребуется его **регион** и один из его **ключей учетной записи**, чтобы создать экземпляр клиентского объекта.
+После создания ресурса Компьютерного зрения вам потребуется его **конечная точка** и один из его **ключей учетной записи**, чтобы создать экземпляр клиентского объекта.
 
-Используйте эти значения при создании экземпляра клиентского объекта [ComputerVisionAPI][ref_computervisionclient]. 
+Эти значения понадобятся при создании экземпляра клиентского объекта [ComputerVisionClient][ref_computervisionclient].
 
 Например, используйте терминал Bash для установки переменных среды.
 
 ```Bash
-ACCOUNT_REGION=<resourcegroup-name>
+ACCOUNT_ENDPOINT=<resourcegroup-name>
 ACCT_NAME=<computervision-account-name>
 ```
 
-### <a name="for-azure-subscription-users-get-credentials-for-key-and-region"></a>Если вы пользователь подписки Azure, получите учетные данные для ключа и региона
+### <a name="for-azure-subscription-users-get-credentials-for-key-and-endpoint"></a>Если вы пользователь подписки Azure, получите учетные данные для ключа и конечной точки
 
-Если вы не помните свой регион и ключ, можно использовать следующий метод их поиска. Если вам нужно создать ключ и регион, можно использовать метод [владельца подписки Azure](#if-you-have-an-azure-subscription) или [пользователя без подписки Azure](#if-you-dont-have-an-azure-subscription).
+Если вы не помните свой регион и конечную точку, можно использовать следующий метод их поиска. Если вам нужно создать ключ и конечную точку, можно использовать метод [владельца подписки Azure](#if-you-have-an-azure-subscription) или [пользователя без подписки Azure](#if-you-dont-have-an-azure-subscription).
 
-Используйте фрагмент приведенной ниже команды [Azure CLI][cloud_shell], чтобы заполнить две переменные среды **регионом** учетной записи Компьютерного зрения и одним из ее **ключей** (эти значения также можно найти на [портале Azure][azure_portal]). Фрагмент кода отформатирован для оболочки Bash.
+Используйте фрагмент приведенной ниже команды [Azure CLI][cloud_shell], чтобы заполнить две переменные среды **конечной точкой** учетной записи Компьютерного зрения и одним из ее **ключей** (эти значения также можно найти на [портале Azure][azure_portal]). Фрагмент кода отформатирован для оболочки Bash.
 
 ```Bash
 RES_GROUP=<resourcegroup-name>
 ACCT_NAME=<computervision-account-name>
 
-export ACCOUNT_REGION=$(az cognitiveservices account show \
+export ACCOUNT_ENDPOINT=$(az cognitiveservices account show \
     --resource-group $RES_GROUP \
     --name $ACCT_NAME \
-    --query location \
+    --query endpoint \
     --output tsv)
 
 export ACCOUNT_KEY=$(az cognitiveservices account keys list \
@@ -129,28 +129,28 @@ export ACCOUNT_KEY=$(az cognitiveservices account keys list \
 
 ### <a name="create-client"></a>Создание клиента
 
-Получите регион и ключ из переменных среды, затем создайте объект клиента [ComputerVisionAPI][ref_computervisionclient].  
+Получите конечную точку и ключ из переменных среды, затем создайте объект клиента [ComputerVisionClient][ref_computervisionclient].
 
 ```Python
-from azure.cognitiveservices.vision.computervision import ComputerVisionAPI
+from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes
 from msrest.authentication import CognitiveServicesCredentials
 
-# Get region and key from environment variables
+# Get endpoint and key from environment variables
 import os
-region = os.environ['ACCOUNT_REGION']
+endpoint = os.environ['ACCOUNT_ENDPOINT']
 key = os.environ['ACCOUNT_KEY']
 
 # Set credentials
 credentials = CognitiveServicesCredentials(key)
 
 # Create client
-client = ComputerVisionAPI(region, credentials)
+client = ComputerVisionClient(endpoint, credentials)
 ```
 
 ## <a name="examples"></a>Примеры
 
-Для любой из следующих задач требуется объект клиента [ComputerVisionAPI][ref_computervisionclient].
+Для любой из следующих задач требуется объект клиента [ComputerVisionClient][ref_computervisionclient].
 
 ### <a name="analyze-an-image"></a>Анализ изображения
 
@@ -178,7 +178,7 @@ for x in models.models_property:
 
 ### <a name="analyze-an-image-by-domain"></a>Анализ изображений по области
 
-Анализировать изображение по предметной области можно с помощью функции [`analyze_image_by_domain`][ref_computervisionclient_analyze_image_by_domain]. Получите [список поддерживаемых предметных областей](#get-subject-domain-list), чтобы использовать правильные имена областей.  
+Анализировать изображение по предметной области можно с помощью функции [`analyze_image_by_domain`][ref_computervisionclient_analyze_image_by_domain]. Получите [список поддерживаемых предметных областей](#get-subject-domain-list), чтобы использовать правильные имена областей.
 
 ```Python
 # type of prediction
@@ -216,7 +216,7 @@ for caption in analysis.captions:
 
 ### <a name="get-text-from-image"></a>Получение текста из изображения
 
-Из изображения можно получить любой текст: рукописный или печатный. Для этого нужно вызвать два разных метода пакета SDK: [`recognize_text`][ref_computervisionclient_recognize_text] и [`get_text_operation_result`][ref_computervisionclient_get_text_operation_result]. Метод recognize_text выполняется асинхронно. Прежде чем извлекать текстовые данные, необходимо проверить результаты вызова get_text_operation_result на то, завершил ли выполнение [`TextOperationStatusCodes`][ref_computervision_model_textoperationstatuscodes]. Результаты включают текст, а также координаты ограничительной рамки для текста. 
+Из изображения можно получить любой текст: рукописный или печатный. Для этого нужно вызвать два разных метода пакета SDK: [`recognize_text`][ref_computervisionclient_recognize_text] и [`get_text_operation_result`][ref_computervisionclient_get_text_operation_result]. Метод recognize_text выполняется асинхронно. Прежде чем извлекать текстовые данные, необходимо проверить результаты вызова get_text_operation_result на то, завершил ли выполнение [`TextOperationStatusCodes`][ref_computervision_model_textoperationstatuscodes]. Результаты включают текст, а также координаты ограничительной рамки для текста.
 
 ```Python
 # import models
@@ -238,13 +238,14 @@ idLocation = len(operationLocation) - numberOfCharsInOperationId
 operationId = operationLocation[idLocation:]
 
 # SDK call
-while result.status in ['NotStarted', 'Running']:
-    time.sleep(1)
+while True:
     result = client.get_text_operation_result(operationId)
+    if result.status not in ['NotStarted', 'Running']:
+        break
+    time.sleep(1)
 
 # Get data
 if result.status == TextOperationStatusCodes.succeeded:
-
     for line in result.recognition_result.lines:
         print(line.text)
         print(line.bounding_box)
@@ -252,13 +253,13 @@ if result.status == TextOperationStatusCodes.succeeded:
 
 ### <a name="generate-thumbnail"></a>Создание эскизов
 
-Создать эскиз изображения (в формате JPG) можно с помощью [`generate_thumbnail`][ref_computervisionclient_generate_thumbnail]. Необязательно создавать эскиз в тех же пропорциях, что и исходное изображение. 
+Создать эскиз изображения (в формате JPG) можно с помощью [`generate_thumbnail`][ref_computervisionclient_generate_thumbnail]. Необязательно создавать эскиз в тех же пропорциях, что и исходное изображение.
 
 Чтобы использовать этот пример, установите **Pillow**.
 
 ```bash
 pip install Pillow
-``` 
+```
 
 После установки Pillow используйте этот пакет в следующем примере кода, чтобы создать эскиз.
 
@@ -285,7 +286,7 @@ image.save('thumbnail.jpg')
 
 ### <a name="general"></a>Общие сведения
 
-При взаимодействии с клиентским объектом [ComputerVisionAPI][ref_computervisionclient] с помощью пакета SDK для Python используется класс [`ComputerVisionErrorException`][ref_computervision_computervisionerrorexception] для возврата ошибок. Ошибки, возвращаемые службой, соответствуют тем же кодам состояния HTTP, которые возвращаются для запросов REST API.
+При взаимодействии с клиентским объектом [ComputerVisionClient][ref_computervisionclient] с помощью пакета SDK для Python используется класс [`ComputerVisionErrorException`][ref_computervision_computervisionerrorexception] для возврата ошибок. Ошибки, возвращаемые службой, соответствуют тем же кодам состояния HTTP, которые возвращаются для запросов REST API.
 
 Например, при попытке проанализировать изображение с неверным ключом будет возвращена ошибка `401`. В следующем фрагменте кода [ошибка][ref_httpfailure] корректно обрабатывается путем перехвата исключения и отображения дополнительной информации об этой ошибке.
 
@@ -304,14 +305,14 @@ try:
         print(caption.confidence)
 except HTTPFailure as e:
     if e.status_code == 401:
-        print("Error unauthorized. Make sure your key and region are correct.")
+        print("Error unauthorized. Make sure your key and endpoint are correct.")
     else:
         raise
 ```
 
 ### <a name="handle-transient-errors-with-retries"></a>Обработка временных ошибок с помощью повторных вызовов
 
-При работе с клиентом [ComputerVisionAPI][ref_computervisionclient] вы можете столкнуться с временными сбоями, вызванными [ограничениями скорости][computervision_request_units], применяемыми службой, или другими временными проблемами, такими как отказ сети. Для получения дополнительной информации об обработке этих типов сбоев ознакомьтесь со статьей [Шаблон повторов][azure_pattern_retry] в руководстве по конструктивным шаблонам облачных решений и соответствующим [шаблоном автоматического выключения][azure_pattern_circuit_breaker].
+При работе с клиентом [ComputerVisionClient][ref_computervisionclient] вы можете столкнуться с временными сбоями, вызванными [ограничениями скорости][computervision_request_units], применяемыми службой, или другими временными проблемами, такими как отказ сети. Для получения дополнительной информации об обработке этих типов сбоев ознакомьтесь со статьей [Шаблон повторов][azure_pattern_retry] в руководстве по конструктивным шаблонам облачных решений и соответствующим [шаблоном автоматического выключения][azure_pattern_circuit_breaker].
 
 ### <a name="more-sample-code"></a>Больше примеров кода
 

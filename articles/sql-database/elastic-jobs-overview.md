@@ -12,12 +12,12 @@ ms.author: srinia
 ms.reviewer: sstein
 manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: aa4fff24620ffd74393d549f1888bdf0e1cb0224
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 62efee57f3663f1dad0446da659de16d2800bf75
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57773585"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59264426"
 ---
 # <a name="create-configure-and-manage-elastic-jobs"></a>Создание, настройка и управление заданиями обработки эластичных баз данных
 
@@ -76,6 +76,8 @@ ms.locfileid: "57773585"
 
 Чтобы ресурсы не перегружались при работе с базами данных в эластичном пуле SQL, задания можно настроить для ограничения количества баз данных, в которых может одновременно работать задание.
 
+Задать количество одновременных баз данных, задание выполняется, установив `sp_add_jobstep` хранимой процедуры `@max_parallelism` параметр в T-SQL, или `Add-AzSqlElasticJobStep -MaxParallelism` в PowerShell.
+
 ## <a name="best-practices-for-creating-jobs"></a>Рекомендации по созданию заданий
 
 ### <a name="idempotent-scripts"></a>Идемпотентные сценарии
@@ -96,5 +98,5 @@ IF NOT EXIST (some_object)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Создание заданий обработки эластичных баз данных и управление ими с помощью PowerShell](elastic-jobs-powershell.md)
-- [Use Transact-SQL (T-SQL) to create and manage Elastic Database Jobs](elastic-jobs-tsql.md) (Создание заданий обработки эластичных БД и управление ими с использованием Transact-SQL (T-SQL))
+- [Создание и управление ими заданий обработки эластичных БД с помощью PowerShell](elastic-jobs-powershell.md)
+- [Создание и управление ими заданий обработки эластичных БД с помощью Transact-SQL (T-SQL)](elastic-jobs-tsql.md)

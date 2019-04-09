@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.reviewer: mbullwin
 ms.author: cithomas
-ms.openlocfilehash: ea7f2e730b4963016d221705ba8c9356efffa858
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.openlocfilehash: 9d5e25e0fd00f9c0635009f684e79336d58b7b4a
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58905279"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59263769"
 ---
 # <a name="applicationinsightsloggerprovider-for-net-core-ilogger-logs"></a>ApplicationInsightsLoggerProvider for .NET Core ILogger logs
 
@@ -208,10 +208,10 @@ public class Startup
 1. Предыдущий поставщик не было поддержки из [областей](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.2#log-scopes). В новый поставщик свойства из области автоматически добавляется в качестве пользовательских свойств для собранных данных телеметрии.
 2. Теперь можно записать журналы гораздо выше в конвейер запуска приложения. Например, Теперь можно записать журналы из классов программа и запуска.
 3. С помощью нового поставщика которая выполняется на уровне платформы, сам. Фильтрация журналов поставщику Application Insights можно выполнить в точно так же, как и для других поставщиков, включая встроенные поставщики, такие как консоли отладки и так далее. Можно также применять же фильтры для нескольких поставщиков.
-4. [Рекомендуется](https://github.com/aspnet/Announcements/issues/255) в Asp.Net Core (начиная с версии 2.0) способ включения поставщиков ведения журнала — с помощью методов расширения ILoggingBuilder в `Program.cs` сам.
+4. [Рекомендуется](https://github.com/aspnet/Announcements/issues/255) в ASP.NET Core (начиная с версии 2.0) способ включения поставщиков ведения журнала — с помощью методов расширения ILoggingBuilder в `Program.cs` сам.
 
 > [!Note]
-Новый поставщик доступен для приложений, предназначенных для `NETSTANDARD2.0` или более поздней версии. Если приложение предназначено для более старых версиях .NET Core, таких как .NET Core 1.1 или для платформы .NET Framework, по-прежнему использовать старый поставщик.
+> Новый поставщик доступен для приложений, предназначенных для `NETSTANDARD2.0` или более поздней версии. Если приложение предназначено для более старых версиях .NET Core, таких как .NET Core 1.1 или для платформы .NET Framework, по-прежнему использовать старый поставщик.
 
 ## <a name="console-application"></a>Консольное приложение
 

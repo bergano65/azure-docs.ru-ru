@@ -1,13 +1,18 @@
 ---
-title: "Обзор примера схемы рабочей нагрузки ASE или SQL на основе ISO\_27001"
-description: "Обзор и описание архитектуры примера схемы рабочей нагрузки Среды службы приложений или Базы данных SQL на основе ISO\_27001."
-services: blueprints
+title: Обзор примера схемы рабочей нагрузки ASE или SQL на основе ISO 27001
+description: Обзор и описание архитектуры примера схемы рабочей нагрузки Среды службы приложений или Базы данных SQL на основе ISO 27001.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 03/14/2019
-ms.topic: conceptual
+ms.topic: sample
 ms.service: blueprints
 manager: carmonm
+ms.openlocfilehash: b17b07124cf4491a6c58e9be2b10f958e29217ee
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59264936"
 ---
 # <a name="overview-of-the-iso-27001-app-service-environmentsql-database-workload-blueprint-sample"></a>Обзор примера схемы рабочей нагрузки Среды службы приложений или Базы данных SQL на основе ISO 27001
 

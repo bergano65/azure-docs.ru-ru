@@ -3,17 +3,17 @@ title: Сведения об архитектуре Azure IoT Central | Доку
 description: В этой статье описаны ключевые понятия, связанные с архитектурой Azure IoT Central.
 author: dominicbetts
 ms.author: dobett
-ms.date: 11/30/2017
+ms.date: 03/26/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: timlt
-ms.openlocfilehash: 564ea3efe35a1054b8c905cff4b7f4c739cc9216
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
-ms.translationtype: HT
+ms.openlocfilehash: 4f4b917808f4973dc83294391f58d7e0e2d01c4c
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50156380"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59260958"
 ---
 # <a name="azure-iot-central-architecture"></a>Архитектура Azure IoT Central
 
@@ -96,6 +96,6 @@ Azure IoT Central использует хранилище временных р�
 
 Оболочка пользовательского интерфейса — это современное приложение HTML5 на основе браузера, которое быстро реагирует на запросы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы изучили архитектуру Azure IoT Central, рекомендуется узнать о [подключении устройств](concepts-connectivity.md) в Azure IoT Central.

@@ -1,7 +1,6 @@
 ---
 title: Получение данных о соответствии политике
 description: Соответствие определяется оценками и действиями Политики Azure. Узнайте о том, как получить подробные сведения о соответствии.
-services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 02/01/2019
@@ -9,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: c3ef6ff73366ae3017e1126de16153195576a1a8
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: 84ed1632a61ae097bd2e187de4766dfc50f2503f
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59048715"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59263786"
 ---
 # <a name="get-compliance-data-of-azure-resources"></a>Получить данные о соответствии ресурсов Azure
 
@@ -91,12 +90,12 @@ https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.
 
 В назначении ресурс **не соответствует требованиям**, если он не соответствует правилам политики или инициативы. В следующей таблице показано, как действуют разные политики в сочетании с оценкой условий для определения итогового состояния соответствия.
 
-| Состояние ресурса | Результат | Оценка политики | Состояние соответствия |
+| Состояние ресурса | Эффект | Оценка политики | Состояние соответствия |
 | --- | --- | --- | --- |
-| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | Истина | Не соответствует |
-| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | Ложь | Соответствует |
-| Создать | Audit, AuditIfNotExist\* | Истина | Не соответствует |
-| Создать | Audit, AuditIfNotExist\* | Ложь | Соответствует |
+| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | Да | Не соответствует |
+| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | False | Совместимый |
+| Создать | Audit, AuditIfNotExist\* | Да | Не соответствует |
+| Создать | Audit, AuditIfNotExist\* | False | Совместимый |
 
 \*Для эффектов Append, DeployIfNotExist и AuditIfNotExist требуется, чтобы оператор IF имел значение TRUE.
 Эффекты также требуют, чтобы условие существования FALSE было несоответствующим. Когда установлено значение TRUE, условие IF запускает оценку условия существования для связанных ресурсов.
@@ -122,7 +121,7 @@ _Общее количество ресурсов_ определяется ка
 
 ![Пример политики соответствия с странице нормативных требований](../media/getting-compliance-data/simple-compliance.png)
 
-## <a name="portal"></a>Microsoft Azure
+## <a name="portal"></a>Портал
 
 На портале Azure можно ознакомиться с процессом визуализации и оценки состояния соответствия в вашей среде. На странице **Политика** параметр **Обзор** предоставляет сведения о соответствии для доступных областей в рамках соответствия для политик и инициатив. В дополнение к состоянию соответствия и числу на каждое назначение, в нем содержится диаграмма, отображающая соответствие за последние семь дней.
 На странице **Соответствие** содержится большая часть этой информации (за исключением диаграммы), а также предоставляются дополнительные возможности фильтрации и сортировки.
@@ -148,7 +147,7 @@ _Общее количество ресурсов_ определяется ка
 
 Если ресурс определен как **несовместимые**, существует множество возможных причин. Чтобы определить причину, ресурс — **несовместимые** или изменение ответственность, см. в статье [определить несоответствия](./determine-non-compliance.md).
 
-## <a name="command-line"></a>Команда
+## <a name="command-line"></a>Командная строка
 
 Те же сведения, которые доступны на портале, можно получить с помощью REST API (включая [ARMClient](https://github.com/projectkudu/ARMClient)) или Azure PowerShell. Дополнительные сведения об REST API см. в справочнике по [Policy Insights](/rest/api/policy-insights/). На страницах справки по REST API есть зеленая кнопка "Попробовать" для каждой операции, которую можно опробовать непосредственно в браузере.
 

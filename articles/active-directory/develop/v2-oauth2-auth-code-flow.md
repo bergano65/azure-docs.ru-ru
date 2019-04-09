@@ -1,6 +1,6 @@
 ---
-title: Поток кода авторизации OAuth 2.0 в Azure AD | Документация Майкрософт
-description: Построение веб-приложений с помощью реализации протокола проверки подлинности OAuth 2.0 в Azure AD.
+title: Платформа Microsoft identity и поток кода авторизации OAuth | Azure
+description: Создание веб-приложений с помощью платформы удостоверений Microsoft реализации протокола проверки подлинности OAuth 2.0.
 services: active-directory
 documentationcenter: ''
 author: CelesteDG
@@ -12,20 +12,20 @@ ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 03/24/2019
+ms.topic: conceptual
+ms.date: 04/05/2019
 ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0350db37e13101d315937840fdcf3d9900e214d5
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: cc7feb77830fe8312cc2b48ffdb2c1af0abfb4b8
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58880271"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59263525"
 ---
-# <a name="v20-protocols---oauth-20-authorization-code-flow"></a>Протоколы версии 2.0 — поток кода авторизации OAuth 2.0
+# <a name="microsoft-identity-platform-and-oauth-20-authorization-code-flow"></a>Платформа Microsoft identity и потока кода авторизации OAuth 2.0
 
 [!INCLUDE [active-directory-develop-applies-v2](../../../includes/active-directory-develop-applies-v2.md)]
 
@@ -34,7 +34,7 @@ ms.locfileid: "58880271"
 > [!NOTE]
 > Не все сценарии и компоненты Azure Active Directory поддерживаются конечной точкой версии 2.0. Чтобы определить, следует ли вам использовать конечную точку 2.0, ознакомьтесь с [ограничениями версии 2.0](active-directory-v2-limitations.md).
 
-Описание потока кода авторизации OAuth 2.0 см. в [разделе 4.1 спецификации OAuth 2.0](https://tools.ietf.org/html/rfc6749). Он используется для проверки подлинности и авторизации большинства типов приложений, в том числе [веб-приложений](v2-app-types.md#web-apps) и [изначально установленных приложений](v2-app-types.md#mobile-and-native-apps). Этот поток обеспечивает для приложений безопасное получение маркеров доступа. Они позволяют использовать ресурсы, защищенные при помощи конечной точки версии 2.0. 
+Описание потока кода авторизации OAuth 2.0 см. в [разделе 4.1 спецификации OAuth 2.0](https://tools.ietf.org/html/rfc6749). Он используется для проверки подлинности и авторизации большинства типов приложений, в том числе [веб-приложений](v2-app-types.md#web-apps) и [изначально установленных приложений](v2-app-types.md#mobile-and-native-apps). Этот поток обеспечивает для приложений безопасное получение маркеров доступа. Они позволяют использовать ресурсы, защищенные при помощи конечной точки версии 2.0.
 
 ## <a name="protocol-diagram"></a>Схема протокола
 

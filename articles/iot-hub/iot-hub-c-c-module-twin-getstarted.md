@@ -8,12 +8,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 06/25/2018
 ms.author: menchi
-ms.openlocfilehash: 853dc443a994601e3900ed16da534254f6af07db
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.openlocfilehash: 2642d956d94a0a685d6586be1a7b0446e94f1042
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54452460"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59264443"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-using-c-backend-and-c-device"></a>Приступая к работе с удостоверением Центра Интернета вещей и двойником модуля с использованием серверной части и устройства C
 
@@ -176,9 +176,9 @@ int main(void)
 
 В этом разделе объясняется, как создать приложение C на имитированном устройстве, которое обновляет сообщаемые свойства двойника модуля.
 
-1. **Получите строку подключения модуля**. Войдите на [портал Azure](https://portal.azure.com). Перейдите к Центру Интернета вещей и щелкните "Устройства IoT". Найдите устройство myFirstDevice, откройте его, и вы увидите, что модуль myFirstModule успешно создан. Скопируйте строку подключения модуля. Она понадобится на следующем шаге.
+1. **Получите строку подключения модуля**. Войдите на [портал Azure](https://portal.azure.com). Перейдите к Центру Интернета вещей и щелкните "Устройства IoT". Найдите устройство myFirstDevice, откройте его и вы увидите, что модуль myFirstModule успешно создан. Скопируйте строку подключения модуля. Она понадобится на следующем шаге.
 
-    ![Сведения о модуле на портале Azure](./media/iot-hub-csharp-csharp-module-twin-getstarted/module-detail.JPG)
+    ![Сведения о модуле на портале Azure](./media/iot-hub-c-c-module-twin-getstarted/module-detail.png)
 
 2. **Создайте приложение UpdateModuleTwinReportedProperties**. В начало файла **Program.cs** добавьте следующие инструкции `using`:
 
@@ -371,9 +371,9 @@ int main(void)
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы продолжить знакомство с Центром Интернета вещей и изучить другие сценарии Интернета вещей, см. следующие ресурсы:
 
-* [Начало работы с управлением устройствами (Node)](iot-hub-node-node-device-management-get-started.md)
-* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
+* [Приступая к работе с управлением устройствами](iot-hub-node-node-device-management-get-started.md)
+* [Приступая к работе с IoT Edge](../iot-edge/tutorial-simulate-device-linux.md)

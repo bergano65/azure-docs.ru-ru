@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настроить для автоматической подготовки пользователей Azure Active Directory с MerchLogix | Документация Майкрософт
+title: Учебник. Настроить для автоматической подготовки пользователей Azure Active Directory с MerchLogix | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в MerchLogix.
 services: active-directory
 documentationcenter: ''
@@ -17,20 +17,20 @@ ms.date: 03/27/2019
 ms.author: zhchia
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c8fecc5232b26c98c4027174454cf29b81b0ee41
-ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
-ms.translationtype: HT
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59058124"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59263608"
 ---
-# <a name="tutorial-configure-merchlogix-for-automatic-user-provisioning"></a>Руководство по Настроить MerchLogix для автоматической подготовки пользователей
+# <a name="tutorial-configure-merchlogix-for-automatic-user-provisioning"></a>Учебник. Настроить MerchLogix для автоматической подготовки пользователей
 
 Цель данного учебника — продемонстрировать действия, выполняемые в MerchLogix и Azure Active Directory (Azure AD) для настройки Azure AD для автоматической подготовки и отзыва пользователей и групп в MerchLogix.
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -105,7 +105,7 @@ ms.locfileid: "59058124"
 
 7. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
 
-8. Выберите команду **Сохранить**.
+8. Нажмите кнопку **Сохранить**.
 
 9. В разделе **сопоставления** выберите **синхронизировать пользователей Azure Active Directory с MerchLogix**.
 

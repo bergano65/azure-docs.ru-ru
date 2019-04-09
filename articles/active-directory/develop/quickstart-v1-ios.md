@@ -18,12 +18,12 @@ ms.author: celested
 ms.custom: aaddev
 ms.reviewer: brandwe
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 53efe44f17f174073ea5ed39f94c9dc8078a9779
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 9d986ccbf92192c1fb7375e9db1fb398ed86a829
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56206775"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58879970"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из приложения iOS
 
@@ -113,12 +113,12 @@ ms.locfileid: "56206775"
 1. В проекте QuickStart откройте файл `settings.plist`.
 1. Замените значения элементов в соответствующем разделе на значения, указанные на портале Azure. Ваш код будет ссылаться на эти значения при каждом использовании ADAL.
     * `tenant` — это домен вашего клиента Azure AD, например contoso.onmicrosoft.com.
-    * Для `clientId` укажите скопированный на портале идентификатор клиента приложения.
+    * `clientId` — это идентификатор клиента приложения, скопированный с портала.
     * `redirectUri` — это URL-адрес перенаправления, зарегистрированный на портале.
 
 ## <a name="step-4-use-adal-to-get-tokens-from-azure-ad"></a>Шаг 4. Использование ADAL для получения маркеров из Azure AD
 
-Основной принцип ADAL состоит в том, что каждый раз, когда вашему приложению необходим маркер доступа, оно будет просто вызывать сompletionBlock `+(void) getToken : `, а библиотека ADAL сделает все остальное.
+Основной принцип ADAL состоит в том, что каждый раз, когда вашему приложению необходим маркер доступа, оно будет просто вызывать сompletionBlock `+(void) getToken :`, а библиотека ADAL сделает все остальное.
 
 1. В проекте `QuickStart` откройте `GraphAPICaller.m` и найдите комментарий "`// TODO: getToken for generic Web API flows. Returns a token with no additional parameters provided.`" вверху.
 
@@ -259,5 +259,5 @@ ms.locfileid: "56206775"
 
 Теперь можно приступить к изучению других сценариев. Мы рекомендуем ознакомиться со следующими.
 
-* [Безопасность веб-API с Azure AD для Node.JS](quickstart-v1-nodejs-webapi.md)
+* [Защита веб-API Node.JS с помощью Azure AD](quickstart-v1-nodejs-webapi.md)
 * См. раздел [Включение единого входа в нескольких приложениях iOS с помощью ADAL](howto-v1-enable-sso-ios.md).  

@@ -5,19 +5,19 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 04/01/2019
-ms.openlocfilehash: 21408f87c4446ebad4092cb982179c7d78ea9e32
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.date: 04/05/2019
+ms.openlocfilehash: b5e0336a290090ed6bd7f5af508e691677780a80
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58847760"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59265294"
 ---
 # <a name="create-and-manage-read-replicas-from-the-azure-cli"></a>Создание и управление ими чтения реплик с помощью Azure CLI
 
 В этой статье вы узнаете, как создавать и управлять ими чтения реплик в базе данных Azure для PostgreSQL с помощью Azure CLI. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
 - [Сервер службы "База данных Azure для PostgreSQL"](quickstart-create-server-up-azure-cli.md) в качестве главного.
 
 [!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
@@ -44,12 +44,12 @@ ms.locfileid: "58847760"
 
 ## <a name="create-a-read-replica"></a>Создание реплики чтения
 
-Для команды `az mysql server replica create` обязательны указанные ниже параметры.
+[Az postgres server реплике создайте](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-create) команды необходимо задать следующие параметры:
 
-| Параметр | Пример значения | ОПИСАНИЕ  |
+| Настройка | Пример значения | Описание  |
 | --- | --- | --- |
 | resource-group | myresourcegroup |  Группа ресурсов, в которой будут создаваться на сервер-реплику.  |
-| name | mydemoserver реплики | Имя нового сервера реплики, который создается. |
+| имя | mydemoserver реплики | Имя нового сервера реплики, который создается. |
 | source-server | mydemoserver | Имя или ресурса идентификатор существующего главного сервера для репликации из. |
 
 ```azurecli-interactive
@@ -64,14 +64,14 @@ az postgres server replica create --name mydemoserver-replica --source-server my
 > Прежде чем изменить параметры конфигурации на главном сервере, установите на каждой реплике такие же или более высокие значения. Это позволит реплике справляться с нагрузкой, соответствующей новым параметрам главного сервера.
 
 ## <a name="list-replicas"></a>Список реплик
-Можно просмотреть список реплик главного сервера.
+Список реплик главного сервера можно просмотреть с помощью [список реплик az postgres server](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-list) команды.
 
 ```azurecli-interactive
-az postgres server replica stop --server-name mydemoserver --resource-group myresourcegroup 
+az postgres server replica list --server-name mydemoserver --resource-group myresourcegroup 
 ```
 
 ## <a name="stop-replication-to-a-replica-server"></a>Остановка репликации на сервер-реплику
-Вы можете остановить репликацию между главным сервером и репликой чтения.
+Вы можете остановить репликацию между главным и чтения реплик с помощью [az postgres server реплике прекращают](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-stop) команды.
 
 Остановленную репликацию отменить невозможно. Реплика чтения становится отдельным сервером, который поддерживает операции чтения и записи. Это сервер нельзя снова преобразовать в реплику.
 
@@ -80,7 +80,7 @@ az postgres server replica stop --name mydemoserver-replica --resource-group myr
 ```
 
 ## <a name="delete-a-master-or-replica-server"></a>Удаление сервера или основная реплика
-Чтобы удалить сервер или основная реплика, используйте ту же команду для удаления отдельной базы данных Azure для сервера PostgreSQL. 
+Чтобы удалить сервер или основная реплика, используйте [az postgres server delete](/cli/azure/postgres/server?view=azure-cli-latest#az-postgres-server-delete) команды.
 
 При удалении главного сервера репликация всех реплик чтения останавливается. Реплики чтения становятся автономными серверами, которые начинают поддерживать операции чтения и записи.
 

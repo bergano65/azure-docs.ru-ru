@@ -5,23 +5,27 @@ author: yzhong94
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 1/30/2019
+ms.date: 01/30/2019
 ms.author: yizhon
-ms.openlocfilehash: e5b075a457c646eb03810b2c51af1a1181ee96ed
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: 8e36cee9857c00fcb618a8491595432fb0fd60fd
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56670269"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59264579"
 ---
 # <a name="develop-for-android-things-platform-using-azure-iot-sdks"></a>Разработка на платформе Android Things с помощью пакетов SDK для Интернета вещей Azure
-[Пакеты SDK для Центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks) обеспечивают поддержку первого уровня для популярных платформ (Windows, Linux, OSX, MBED) и мобильных платформ (Android и iOS).  Как часть наших обязательств по расширению выбора и гибкости развертываний в Центре Интернета вещей пакет SDK для Java также поддерживает платформу [Android Things](https://developer.android.com/things/).  Разработчики могут пользоваться преимуществами операционной системы Android Things на стороне устройства, используя [Центр Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/about-iot-hub) в качестве центрального концентратора сообщений, который масштабируется до миллионов одновременно подключенных устройств. 
+
+[Пакеты SDK для Центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks) обеспечивают поддержку первого уровня для популярных платформ (Windows, Linux, OSX, MBED) и мобильных платформ (Android и iOS).  Как часть наших обязательств по расширению выбора и гибкости развертываний в Центре Интернета вещей пакет SDK для Java также поддерживает платформу [Android Things](https://developer.android.com/things/).  Разработчики могут пользоваться преимуществами операционной системы Android Things на стороне устройства, используя [Центр Интернета вещей Azure](about-iot-hub.md) в качестве центрального концентратора сообщений, который масштабируется до миллионов одновременно подключенных устройств.
 
 В этом руководстве описано, как создать приложение на стороне устройства на платформе Android Things при помощи пакета SDK Java для Центра Интернета вещей Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
+
 * Оборудование, поддерживаемое платформой Android Things, под управлением операционной системы Android Things.  Чтобы выполнить инструкции по установке операционной системы Android Things, см. документацию по Android Things [здесь](https://developer.android.com/things/get-started/kits#flash-at).  Убедитесь, что устройство под управлением Android Things подключено к Интернету и подключены все необходимые дополнительные устройства, например, клавиатура, дисплей и мышь.  В этом руководстве используется Raspberry Pi 3.
+
 * Последняя версия [Android Studio](https://developer.android.com/studio/).
+
 * Последняя версия [Git](https://git-scm.com/).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
@@ -34,7 +38,7 @@ ms.locfileid: "56670269"
 
 Устройство должно быть зарегистрировано в Центре Интернета вещей, прежде чем оно сможет подключиться. В этом кратком руководстве для регистрации имитируемого устройства используется Azure Cloud Shell.
 
-1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы добавить расширение CLI Центра Интернета вещей и создать удостоверение устройства. 
+1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы добавить расширение CLI Центра Интернета вещей и создать удостоверение устройства.
 
    **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
@@ -45,7 +49,7 @@ ms.locfileid: "56670269"
     az iot hub device-identity create --hub-name YourIoTHubName --device-id MyAndroidThingsDevice
     ```
 
-2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:  **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
+2. Выполните следующие команды в Azure Cloud Shell, чтобы получить *строки подключения устройства* для зарегистрированного устройства. Замените `YourIoTHubName` под именем вы выберите для центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyAndroidThingsDevice --output table
@@ -58,19 +62,28 @@ ms.locfileid: "56670269"
     Это значение понадобится позже в рамках этого краткого руководства.
 
 ## <a name="building-an-android-things-application"></a>Создание приложения Android Things
-1.  Первым шагом в создании приложения Android Things является подключение к устройствам Android Things.  Подключите устройство Android Things к дисплею, а затем настройте подключение к Интернету.  Для Android Things предоставляется [документация](https://developer.android.com/things/get-started/kits) по подключению к Wi-Fi.  После подключения к Интернету запишите IP-адрес, указанный в разделе Networks (Сети).
-2.  Подключитесь к устройству Android Things с помощью средства [Android Debug Bridge](https://developer.android.com/studio/command-line/adb) с использованием записанного ранее IP-адреса.  Еще раз проверьте подключение, выполнив следующую команду в окне терминала.  Устройства должны отображаться с состоянием connected (подключено).
-    ```
-    adb devices
-    ```
-3.  Скачайте наш пример для Android или Android Things из [репозитория](https://github.com/Azure-Samples/azure-iot-samples-java) или используйте Git.
-    ```
-    git clone https://github.com/Azure-Samples/azure-iot-samples-java.git
-    ```
-4.  В Android Studio откройте проект Android, находящийся в папке \azure-iot-samples-java\iot-hub\Samples\device\AndroidSample.
-5.  Откройте файл gradle.properties и замените Device_connection_string строкой подключения устройства, записанной ранее.
-6.  Щелкните Run — Debug (Запуск — отладка) и выберите устройство Android Things, чтобы развернуть на нем этот код.
-7.  После успешного запуска приложения вы увидите, что оно запущено на вашем устройстве Android Things.  Этот пример приложения отправляет случайно сгенерированные показатели температуры.
+
+1. Первым шагом в создании приложения Android Things является подключение к устройствам Android Things. Подключите устройство Android Things к дисплею, а затем настройте подключение к Интернету. Для Android Things предоставляется [документация](https://developer.android.com/things/get-started/kits) по подключению к Wi-Fi. После подключения к Интернету запишите IP-адрес, указанный в разделе Networks (Сети).
+
+2. Подключитесь к устройству Android Things с помощью средства [Android Debug Bridge](https://developer.android.com/studio/command-line/adb) с использованием записанного ранее IP-адреса. Еще раз проверьте подключение, выполнив следующую команду в окне терминала. Вы должны увидеть ваши устройства, перечисленные как «подключено».
+
+   ```
+   adb devices
+   ```
+
+3. Скачайте наш пример для Android или Android Things из [репозитория](https://github.com/Azure-Samples/azure-iot-samples-java) или используйте Git.
+
+   ```
+   git clone https://github.com/Azure-Samples/azure-iot-samples-java.git
+   ```
+
+4. В Android Studio откройте проект Android, находящийся в папке \azure-iot-samples-java\iot-hub\Samples\device\AndroidSample.
+
+5. Откройте файл gradle.properties и замените Device_connection_string строкой подключения устройства, записанной ранее.
+ 
+6. Щелкните Run — Debug (Запуск — отладка) и выберите устройство Android Things, чтобы развернуть на нем этот код.
+
+7. После успешного запуска приложения вы увидите, что оно запущено на вашем устройстве Android Things. Этот пример приложения отправляет случайно сгенерированные показатели температуры.
 
 ## <a name="read-the-telemetry-from-your-hub"></a>Чтение данных телеметрии из концентратора
 
@@ -78,8 +91,7 @@ ms.locfileid: "56670269"
 
 Выполните следующие команды в Azure Cloud Shell, заменив `YourIoTHubName` на имя вашего центра Интернета вещей:
 
-```
-azurecli-interactive
+```azurecli-interactive
 az iot hub monitor-events --device-id MyAndroidThingsDevice --hub-name YourIoTHubName
 ```
 
@@ -91,4 +103,4 @@ az iot hub monitor-events --device-id MyAndroidThingsDevice --hub-name YourIoTHu
 
 * Дополнительные сведения о том, как управлять подключениями и надежным обменом сообщениями с помощью пакетов SDK центра Интернета вещей, см. в [этой статье](iot-hub-reliability-features-in-sdks.md).
 * Дополнительные сведения см. в статье [Разработка для мобильных устройств с помощью пакетов SDK для Центра Интернета вещей Azure](iot-hub-how-to-develop-for-mobile-devices.md).
-* [Поддержка платформ пакетов SDK для устройств Azure IoT](iot-hub-device-sdk-platform-support.md)
+* [Поддержка платформы Azure SDK Интернета вещей](iot-hub-device-sdk-platform-support.md)

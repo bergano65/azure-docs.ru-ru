@@ -5,19 +5,19 @@ services: iot-central
 ms.service: iot-central
 author: viv-liu
 ms.author: viviali
-ms.date: 12/4/2018
+ms.date: 03/26/2019
 ms.topic: conceptual
 manager: peterpr
-ms.openlocfilehash: 6133a7441459072d0c7da1841161da563a28aa31
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 246c9ad8ab3083c1b847c1c25230a7193a8192e3
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56730330"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59263576"
 ---
 # <a name="build-the-iot-central-device-bridge-to-connect-other-iot-clouds-to-iot-central"></a>Создание моста устройства IoT Central для подключения других облаков Интернета вещей к IoT Central
 
-*Эта статья предназначена для администраторов.*
+*Этот раздел относится к администраторам.*
 
 Мост устройства IoT Central — это решение с открытым кодом, которое подключает облака Sigfox, Particle, The Things Network и другие к вашему приложению IoT Central. Вы можете напрямую использовать возможности IoT Central с помощью моста устройства IoT Central, независимо от того, используете ли вы устройства отслеживания ресурсов, подключенные к глобальной сети с низким энергопотреблением Sigfox, устройства контроля качества воздуха в Particle Device Cloud или же устройства контроля влажности почвы в TTN. Мост устройства подключает другие облака Интернета вещей к IoT Central, переадресовывая данные, отправляемые устройствами другим облакам через приложение IoT Central. В своем приложении IoT Central вы можете создавать правила и запускать аналитику по этим данным, создавать рабочие процессы в приложениях Microsoft Flow и Azure Logic, экспортировать эти данные и т. д. Получить [мост устройства IoT Central](https://aka.ms/iotcentralgithubdevicebridge) можно на сайте GitHub.
 
@@ -26,7 +26,7 @@ ms.locfileid: "56730330"
 -   Приложение-функция Azure.
 -   Учетная запись хранения Azure
 -   План потребления
--   Хранилище ключей Azure
+-   Хранилище Azure Key Vault
 
 Приложения-функции — это важная часть моста устройства. Оно получает запросы HTTP POST от других платформ Интернета вещей или любых настраиваемых платформ с помощью простой интеграции веб-перехватчика. Мы представили примеры подключения к облакам Sigfox, Particle и TTN. Вы можете легко расширить это решение, чтобы подключиться к пользовательскому облаку Интернета вещей, если ваша платформа может отправлять запросы HTTP POST в приложение-функцию.
 Приложение-функция преобразует данные в формат, принимаемый IoT Central, и пересылает их с помощью API DPS.
@@ -45,4 +45,4 @@ ms.locfileid: "56730330"
 Теперь, когда вы научились создавать мост устройства IoT Central, можно перейти к следующему шагу:
 
 > [!div class="nextstepaction"]
-> [Управление устройствами](howto-manage-devices.md)
+> [Управляйте своими устройствами](howto-manage-devices.md)

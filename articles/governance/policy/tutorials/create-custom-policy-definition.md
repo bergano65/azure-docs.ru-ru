@@ -8,12 +8,12 @@ ms.date: 02/12/2019
 ms.topic: tutorial
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: ddda2a8bf1fab4e4c48c647237617d8f705f0561
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: 79b99532f5fb38123b03d2a39b7c9c6364e9f636
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56112097"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58802276"
 ---
 # <a name="create-a-custom-policy-definition"></a>Создание определения пользовательской политики
 
@@ -56,7 +56,7 @@ ms.locfileid: "56112097"
 
 Есть много способов определить свойства ресурса Azure. В этом руководстве мы рассмотрим каждый способ:
 
-- шаблоны диспетчера ресурсов;
+- Шаблоны диспетчера ресурсов
   - экспорт существующего ресурса;
   - процедура создания;
   - шаблоны быстрого запуска (GitHub);
@@ -72,7 +72,7 @@ ms.locfileid: "56112097"
 Простейший способ узнать свойства ресурса — изучить существующий ресурс аналогичного типа. Ресурсы, которые уже настроены на соответствие политике, также подойдут для этой цели.
 Откроем страницу **Скрипт автоматизации** такого ресурса (раздел **Параметры** на портале Azure).
 
-![Страница "Скрипт автоматизации"](../media/create-custom-policy-definition/automation-script.png)
+![Страница "Экспорт шаблона" на существующем ресурсе](../media/create-custom-policy-definition/automation-script.png)
 
 Если открыть эту страницу для учетной записи хранения, отобразится примерно такой шаблон:
 

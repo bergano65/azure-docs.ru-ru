@@ -1,28 +1,28 @@
 ---
 title: Перенос баз знаний с помощью QnA Maker
 titleSuffix: Azure Cognitive Services
-description: Переместите базы знаний, созданные с помощью QnA Maker, в новую базу знаний.
+description: Чтобы перенести базу знаний, необходимо экспортировать одну базы знаний, а затем импортировать ее в другую базу знаний.
 services: cognitive-services
 author: tulasim88
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 02/13/2019
+ms.date: 04/08/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: e91f41633bf6cf6581c237e7634150a5b92746a7
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.openlocfilehash: eac5e43c69cc09c5945316827a35f729c158d47a
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245921"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59264324"
 ---
 # <a name="migrate-a-knowledge-base-using-export-import"></a>Миграция базы знаний с помощью экспорта и импорта
 
 Чтобы перенести базу знаний, необходимо экспортировать одну базы знаний, а затем импортировать ее в другую базу знаний. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Необходимые компоненты
 
 * Перед началом работы создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Настройте новую [службу QnA Maker](../How-To/set-up-qnamaker-service-azure.md).
@@ -48,10 +48,10 @@ ms.locfileid: "56245921"
    ![Импорт базы знаний](../media/qnamaker-how-to-migrate-kb/Import.png)
 
 1. **Проверьте** новую базу знаний с помощью панели "Тестирование". Узнайте, как [проверить базу знаний](../How-To/test-knowledge-base.md).
-1. **Опубликуйте** базу знаний. Узнайте, как [опубликовать базу знаний](../How-To/publish-knowledge-base.md).
+1. **Опубликуйте** базу знаний. Узнайте, как [опубликовать базу знаний](../Quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base).
 1. Конечную точку можно использовать в коде приложения или бота. Сведения о [создании бота QnA](../Tutorials/create-qna-bot.md).
 
-    ![Значения QnA Maker](../media/qnamaker-tutorials-create-bot/qnamaker-settings-kbid-key.PNG)
+    ![Значения QnA Maker](../media/qnamaker-how-to-migrate-kb/qnamaker-settings-kbid-key.png)
 
     На этом этапе все содержимое базы знаний, вопросы, ответы и метаданные, а также имена исходных файлов и URL-адреса будут импортированы в новую базу знаний. 
 
@@ -60,7 +60,7 @@ ms.locfileid: "56245921"
 
 Возможность переноса журналов чатов не предусмотрена, так как новая база знаний использует для хранения журналов чатов Application Insights. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Редактирование базы знаний](../How-To/edit-knowledge-base.md)
