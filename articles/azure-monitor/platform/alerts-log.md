@@ -1,5 +1,5 @@
 ---
-title: Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor
+title: Создание, просмотр и управление ими с помощью Azure Monitor оповещения журнала | Документация Майкрософт
 description: Использование Azure Monitor для авторизации, просмотра и управления правилами генерации оповещений журнала в Azure.
 author: msvijayn
 services: azure-monitor
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: f26c8e670855513995463ffaaf7e49a8e00e35fa
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d3285a6b2aa09dd78bbb63c384bd1f65c17034ff
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57873797"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006952"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor
 
@@ -23,10 +23,10 @@ ms.locfileid: "57873797"
 - Критерии: определенное условие или логика в сигнале, которые должны вызывать действие.
 - Действие: конкретный вызов, отправленный получателю уведомления — электронное сообщение, текстовое сообщение, веб-перехватчик и т. д.
 
-Термин **оповещения журнала**, который используется для описания оповещений, где сигналом является пользовательский запрос, основан на [Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md) или [Application Insights](../../azure-monitor/app/analytics.md). Дополнительные сведения о функциях, терминологии и типах см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](../../azure-monitor/platform/alerts-unified-log.md).
+Термин **оповещений журнала** для описания оповещений, в которых сигналом выступает запроса по журналам в [рабочей области Log Analytics](../learn/tutorial-viewdata.md) или [Application Insights](../app/analytics.md). Дополнительные сведения о функциях, терминологии и типах см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](alerts-unified-log.md).
 
 > [!NOTE]
-> Распространенные данные журнала из [Azure Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md) теперь также доступны на платформе метрик в Azure Monitor. Более подробную информацию см. в статье [Create Metric Alerts for Logs in Azure Monitor](../../azure-monitor/platform/alerts-metric-logs.md) (Создание оповещений метрик для журналов в Azure Monitor).
+> Данных популярных журналов из [рабочую область Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md) теперь также доступна на платформе метрик в Azure Monitor. Более подробную информацию см. в статье [Create Metric Alerts for Logs in Azure Monitor](alerts-metric-logs.md) (Создание оповещений метрик для журналов в Azure Monitor).
 
 ## <a name="managing-log-alerts-from-the-azure-portal"></a>Управление оповещениями журнала на портале Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "57873797"
 
    > [!NOTE]
    > 
-   > Списки интерфейса оповещений могут импортировать запрос аналитических данных как тип сигнала — **Log (Saved Query)** (Журнал (сохраненный запрос)), как показано на приведенном выше изображении. Таким образом, пользователи могут усовершенствовать ваш запрос в Analytics, а затем сохранить его для дальнейшего использования в оповещениях. Дополнительные сведения о сохранении запросов см. в статьях об [использовании поиска по журналам в Log Analytics](../../azure-monitor/log-query/log-query-overview.md) или [совместном использовании запроса аналитических данных Application Insights](../../azure-monitor/log-query/log-query-overview.md).
+   > Списки интерфейса оповещений могут импортировать запрос аналитических данных как тип сигнала — **Log (Saved Query)** (Журнал (сохраненный запрос)), как показано на приведенном выше изображении. Чтобы пользователи могли усовершенствовать ваш запрос в Analytics и затем сохранить их для дальнейшего использования в оповещениях - Дополнительные сведения о сохранении запросов см. в [с помощью запроса журнала в Azure Monitor](../log-query/log-query-overview.md) или [общий запрос в аналитике application insights ](../log-query/log-query-overview.md).
 
 1. *Оповещения журналов.* После выбора запрос для оповещения можно указать в поле **Search Query** (Поисковой запрос). Если синтаксис запроса неверен, в поле отображается ошибка, выделенная красным цветом. Если синтаксис запроса верен, появятся исторические данные указанного запроса для справки в виде графика с возможностью настройки временного интервала от последних шести часов до последней недели.
 
@@ -119,19 +119,19 @@ ms.locfileid: "57873797"
     > Правила генерации оповещений журнала включают пользовательскую логику на основе запросов, предоставляемых пользователями, и, как следствие, не имеют разрешенного состояния. Из-за чего каждый раз,когда выполняются условия, указанные в правиле генерации оповещений журнала, создается оповещение.
 
 1. Нажмите кнопку **​​Управление правилами** на верхней панели, чтобы перейти к разделу управления правилами, в котором перечислены все созданные правила оповещений, включая отключенные оповещения.
-    ![Управление правилами генерации оповещений](media/alerts-log/manage-alert-rules.png)
+    ![ управление правилами генерации оповещений](media/alerts-log/manage-alert-rules.png)
 
 ## <a name="managing-log-alerts-using-azure-resource-template"></a>Управление оповещениями журнала с помощью шаблона ресурсов Azure
 
 Оповещения журналов в Azure Monitor связаны с типом ресурса `Microsoft.Insights/scheduledQueryRules/`. Дополнительные сведения о данном типе ресурса приведены в разделе [Scheduled Query Rules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) (Правила запланированных запросов). Оповещения журналов для Application Insights или Log Analytics можно создать с помощью [API правил запланированных запросов](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/).
 
 > [!NOTE]
-> Управлять оповещениями журналов для Log Analytics также можно с помощью устаревшего [API оповещений Log Analytics](../../azure-monitor/platform/api-alerts.md), а также устаревших шаблонов [сохраненных поисковых запросов и оповещений Log Analytics](../../azure-monitor/insights/solutions-resources-searches-alerts.md). Дополнительные сведения об использовании нового API ScheduledQueryRules см. в статье [Switch to new API for Log Analytics Alerts](alerts-log-api-switch.md) (Переход на API для оповещений журнала).
+> Управлять оповещениями журналов для Log Analytics также можно с помощью устаревшего [API оповещений Log Analytics](api-alerts.md), а также устаревших шаблонов [сохраненных поисковых запросов и оповещений Log Analytics](../insights/solutions-resources-searches-alerts.md). Дополнительные сведения об использовании нового API ScheduledQueryRules см. в статье [Switch to new API for Log Analytics Alerts](alerts-log-api-switch.md) (Переход на API для оповещений журнала).
 
 
 ### <a name="sample-log-alert-creation-using-azure-resource-template"></a>Создание примера оповещения журнала с помощью шаблона ресурсов Azure
 
-Ниже приведена структура для шаблона ресурсов на основе [создания правил запланированных запросов](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/createorupdate) с использованием стандартного запроса поиска по журналам из [количества типов результатов оповещений журнала](../../azure-monitor/platform/alerts-unified-log.md#number-of-results-alert-rules), содержащего пример набора данных в качестве переменных.
+Ниже приведена структура для шаблона ресурсов на основе [создания правил запланированных запросов](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/createorupdate) с использованием стандартного запроса поиска по журналам из [количества типов результатов оповещений журнала](alerts-unified-log.md#number-of-results-alert-rules), содержащего пример набора данных в качестве переменных.
 
 ```json
 {
@@ -316,7 +316,7 @@ API правил запланированных запросов в Azure Monito
 
 
 > [!NOTE]
-> Управлять оповещениями журналов для Log Analytics также можно с помощью устаревшего [API оповещений Log Analytics](../../azure-monitor/platform/api-alerts.md), а также устаревших шаблонов [сохраненных поисковых запросов и оповещений Log Analytics](../../azure-monitor/insights/solutions-resources-searches-alerts.md). Дополнительные сведения об использовании нового API ScheduledQueryRules см. в статье [Switch to new API for Log Analytics Alerts](alerts-log-api-switch.md) (Переход на API для оповещений журнала).
+> Управлять оповещениями журналов для Log Analytics также можно с помощью устаревшего [API оповещений Log Analytics](api-alerts.md), а также устаревших шаблонов [сохраненных поисковых запросов и оповещений Log Analytics](../insights/solutions-resources-searches-alerts.md). Дополнительные сведения об использовании нового API ScheduledQueryRules см. в статье [Switch to new API for Log Analytics Alerts](alerts-log-api-switch.md) (Переход на API для оповещений журнала).
 
 Оповещения журнала в настоящее время не выделенной команды PowerShell или интерфейса командной строки; но как показано ниже можно использовать с помощью командлета PowerShell Azure Resource Manager для примера выше шаблона ресурсов (sampleScheduledQueryRule.json) в разделе Resource шаблона:
 
@@ -335,4 +335,4 @@ On successful operation, 201 will be returned to state new alert rule creation o
 * Learn about [Log Alerts in Azure Alerts](../../azure-monitor/platform/alerts-unified-log.md)
 * Understand [Webhook actions for log alerts](../../azure-monitor/platform/alerts-log-webhook.md)
 * Learn more about [Application Insights](../../azure-monitor/app/analytics.md)
-* Learn more about [Log Analytics](../../azure-monitor/log-query/log-query-overview.md).
+* Learn more about [log queries](../log-query/log-query-overview.md).

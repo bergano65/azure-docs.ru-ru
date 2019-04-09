@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: shared-capabilities
 author: georgewallace
 ms.author: gwallace
-ms.date: 03/22/2019
+ms.date: 04/04/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d99c6b419ee201be50e74849cd95a332845f5b73
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.openlocfilehash: 483f9092d29fc40937ed9d54510269af2af30872
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623173"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59008652"
 ---
 # <a name="scheduling-a-runbook-in-azure-automation"></a>Создание расписания для Runbook в службе автоматизации Azure
 
@@ -156,6 +156,9 @@ Register-AzureRmAutomationScheduledRunbook –AutomationAccountName $automationA
 1. На портале Azure в учетной записи службы автоматизации выберите **Расписания** в разделе **Общие ресурсы** в левой части экрана.
 2. Щелкните имя расписания, чтобы открыть область подробных сведений.
 3. Задайте значение **Нет** для параметра **Включено**.
+
+> [!NOTE]
+> Если вы хотите отключить расписание, которое имеет время начала в прошлом, необходимо изменить дату начала во время в будущем, прежде чем сохранить его.
 
 ### <a name="to-disable-a-schedule-with-powershell"></a>Отключение расписания с помощью PowerShell
 

@@ -8,15 +8,15 @@ services: search
 ms.service: search
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/22/2019
+ms.date: 04/04/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: d7084a42f64234cff4e5e2742ed3d27a3fd00e1e
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: f4a0cba18f27c9cabfc03d1934469e6899c5cd18
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58652303"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59010419"
 ---
 # <a name="monitor-resource-consumption-and-query-activity-in-azure-search"></a>Мониторинг использования ресурсов и обработки запросов в Поиске Azure
 
@@ -60,9 +60,9 @@ ms.locfileid: "58652303"
 
 | Ресурс | Область использования |
 |----------|----------|
-| [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) | Зарегистрированные события и метрики запросов в соответствии с одной из приведенных ниже схем связаны с событиями пользователей в вашем приложении. Это единственное решение, которое учитывает действия пользователя или сигналы, сопоставляя события поиска, инициированного пользователем, в отличие от фильтра запросов, отправляемого кодом приложения. Чтобы использовать этот подход, скопируйте и вставьте код инструментирования в исходные файлы, чтобы передавать сведения о запросах в Application Insights. Дополнительные сведения см. в статье [Что такое аналитика поискового трафика?](search-traffic-analytics.md) |
-| [Журналы Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview) | Зарегистрированные события и метрики запросов в соответствии с одной из указанных ниже схем. События записываются в рабочую область Log Analytics. Можно выполнять запросы к рабочей области, чтобы получить подробные сведения из журнала. Дополнительные сведения см. в разделе [приступить к работе с журналами Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-viewdata) |
-| [Хранилище BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview) | Зарегистрированные события и метрики запросов в соответствии с одной из указанных ниже схем. События записываются в контейнер больших двоичных объектов и хранятся в JSON-файлах. Используйте редактор JSON, чтобы просмотреть содержимое такого файла.|
+| [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) | Зарегистрированные события и метрики запросов, на основе схем ниже соотносятся с событиями пользователя в приложении. Это единственное решение, которое учитывает действия пользователя или сигналы, сопоставляя события поиска, инициированного пользователем, в отличие от фильтра запросов, отправляемого кодом приложения. Чтобы использовать этот подход, скопируйте и вставьте код инструментирования в исходные файлы, чтобы передавать сведения о запросах в Application Insights. Дополнительные сведения см. в статье [Что такое аналитика поискового трафика?](search-traffic-analytics.md) |
+| [Журналы Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview) | Зарегистрированные события и метрики запросов, на указанные ниже схемы в основе. События записываются в рабочую область Log Analytics. Можно выполнять запросы к рабочей области, чтобы получить подробные сведения из журнала. Дополнительные сведения см. в разделе [приступить к работе с журналами Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-viewdata) |
+| [Хранилище BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview) | Зарегистрированные события и метрики запросов, на указанные ниже схемы в основе. События записываются в контейнер больших двоичных объектов и хранятся в JSON-файлах. Используйте редактор JSON, чтобы просмотреть содержимое такого файла.|
 | [Концентратор событий](https://docs.microsoft.com/azure/event-hubs/) | Зарегистрированные события и метрики запросов в соответствии со схемами, описанными в этой статье. Выберите этот вариант в качестве альтернативной службы сбора данных для очень больших журналов. |
 
 Журналы Azure Monitor и хранилище BLOB-объектов доступны как бесплатные Общая служба, таким образом, чтобы его можно опробовать бесплатно в течение времени существования подписки Azure. Вы можете бесплатно зарегистрироваться в Application Insights и использовать это решение до тех пор, пока размер данных приложения находится в заданных пределах (чтобы узнать больше, перейдите на [страницу цен](https://azure.microsoft.com/pricing/details/monitor/)).
@@ -96,7 +96,7 @@ ms.locfileid: "58652303"
 * insights-logs-operationlogs: для поиска журналов трафика
 * insights-metrics-pt1m: для метрик
 
-Создаваемые контейнеры отобразятся в хранилище BLOB-объектов через один час. Для каждого часа и каждого контейнера создается один большой двоичный объект. 
+**Создаваемые контейнеры отобразятся в хранилище BLOB-объектов через один час. Для каждого часа и каждого контейнера создается один большой двоичный объект.**
 
 Для просмотра этих файлов можно использовать [Visual Studio Code](#download-and-open-in-visual-studio-code) или другой редактор JSON. 
 
@@ -169,7 +169,7 @@ resourceId=/subscriptions/<subscriptionID>/resourcegroups/<resourceGroupName>/pr
 REST API Поиска Azure и пакет SDK для .NET Поиска Azure обеспечивают программный доступ к метрикам служб, данным индекса и индексаторов, а также количеству документов.
 
 * [Получение статистики службы](/rest/api/searchservice/get-service-statistics)
-* [Получение статистики индексов](/rest/api/searchservice/get-index-statistics)
+* [Получение статистических данных индекса](/rest/api/searchservice/get-index-statistics)
 * [Подсчет документов](/rest/api/searchservice/count-documents)
 * [Получение состояния индексатора](/rest/api/searchservice/get-indexer-status)
 

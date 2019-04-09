@@ -6,12 +6,12 @@ ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 01/29/2019
 ms.author: v-erkell
-ms.openlocfilehash: bc91b052d3d69924af9afeb012c0ebb5be01dfbf
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
+ms.openlocfilehash: be9205fdf7fec0661d7382ed0d1bedf47487b15e
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55745560"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59058056"
 ---
 # <a name="manage-the-avere-vfxt-cluster"></a>Управление кластером Avere vFXT
 
@@ -98,7 +98,7 @@ vfxt.py является программой командной строки д
 * имя группы ресурсов для кластера, а также для ресурсов сети и хранилища, если их группа ресурсов отличается;
 * расположение кластера;
 * сеть и подсеть кластера; 
-* роль доступа к узлу кластера; 
+* Роль доступа узла кластера (использовать встроенную роль [Avere оператор](../role-based-access-control/built-in-roles.md#avere-operator))
 * пароль администратора и IP-адрес для управления кластером; 
 * количество узлов, которые необходимо добавить (1, 2 или 3);
 * тип экземпляра узла и значения размера кэша. 
@@ -113,7 +113,7 @@ vfxt.py является программой командной строки д
    --add-nodes --nodes NODE_COUNT \
    --management-address CLUSTER_IP --admin-password ADMIN_PASSWORD \
    --instance-type TYPE --node-cache-size SIZE \
-   --azure-role ROLE_NAME \
+   --azure-role "Avere Operator" \
    --log ~/vfxt.log
 ```
 
@@ -187,7 +187,7 @@ vfxt.py --cloud-type azure --from-environment --destroy --resource-group GROUPNA
 
 ### <a name="delete-additional-cluster-resources-from-the-azure-portal"></a>Удаление дополнительных кластерных ресурсов на портале Azure
 
-Если вы создали дополнительные ресурсы специально для кластера vFXT, может потребоваться удалить их в процессе удаления кластера. Не следует уничтожать элементы, которые содержат нужные данные, или какие-либо элементы, которые используются совместно с другими проектами.
+Если вы создали дополнительные ресурсы специально для кластера vFXT, может потребоваться удалить их в процессе удаления кластера. Не уничтожайте элементы, которые содержат нужные данные, или все элементы, которые являются общими с другими проектами.
 
 Помимо удаления узлов кластера рекомендуется удалить такие компоненты: 
 

@@ -5,14 +5,14 @@ author: msmbaldwin
 ms.service: security
 ms.topic: article
 ms.author: mbaldwin
-ms.date: 03/15/2019
+ms.date: 03/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9ce1bb6df0a4c062ee41d2a58adf1b7fc93d9805
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: 896553890252572e4b5524d047893953b78a4ba1
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58286250"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59010097"
 ---
 # <a name="azure-disk-encryption-prerequisites"></a>Предварительные требования для шифрования дисков Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "58286250"
 ## <a name="bkmk_OSs"></a> Поддерживаемые операционные системы
 Шифрование дисков Azure поддерживается в приведенных ниже операционных системах.
 
-- Версии Windows Server: Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 и Windows Server 2016.
+- Версии Windows Server: Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 и более версиях Windows, находящихся в коллекции Azure.
   - Для Windows Server 2008 R2 перед включением шифрования в Azure требуется установить .NET Framework 4.5. Установите его из Центра обновления Windows вместе с необязательным обновлением Microsoft .NET Framework 4.5.2 для Windows Server 2008 R2 для 64-разрядных систем ([KB2901983](https://support.microsoft.com/kb/2901983)).    
 - Версии клиентов Windows: клиент Windows 8 и клиент Windows 10.
 - Шифрование дисков Azure поддерживается только для определенных дистрибутивов и версий серверов Linux из коллекции Azure. Список поддерживаемых сейчас версий см. в статье [Шифрование дисков Azure: часто задаваемые вопросы](azure-security-disk-encryption-faq.md#bkmk_LinuxOSSupport).
@@ -50,7 +50,7 @@ ms.locfileid: "58286250"
 
 ## <a name="bkmk_GPO"></a> Сетевые подключения и групповая политика
 
-**Чтобы использовать функцию шифрования дисков Azure, конфигурация конечной точки сети виртуальной машины IaaS должна соответствовать приведенным ниже требованиям:**
+**Чтобы использовать функцию шифрования дисков Azure, конфигурация конечной точки виртуальной машины IaaS должна соответствовать приведенным ниже требованиям.**
   - Виртуальная машина IaaS должна иметь возможность подключиться к конечной точке Azure Active Directory \[login.microsoftonline.com\], чтобы получить маркер для подключения к хранилищу ключей.
   - Для записи ключей шифрования в ваше хранилище ключей виртуальная машина IaaS должна иметь возможность подключиться к конечной точке хранилища ключей.
   - Виртуальная машина IaaS должна иметь возможность подключиться к конечной точке службы хранилища Azure, в которой размещен репозиторий расширений Azure, и к учетной записи хранения Azure, в которой размещены VHD-файлы.
@@ -301,8 +301,8 @@ ms.locfileid: "58286250"
  
 ## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
-> [Включение шифрования дисков Azure для виртуальных машин Windows IaaS](azure-security-disk-encryption-windows.md)
+> [Включить шифрование дисков Azure для Windows](azure-security-disk-encryption-windows.md)
 
 > [!div class="nextstepaction"]
-> [Включение шифрование дисков Azure для Linux](azure-security-disk-encryption-linux.md)
+> [Включить шифрование дисков Azure для Linux](azure-security-disk-encryption-linux.md)
 

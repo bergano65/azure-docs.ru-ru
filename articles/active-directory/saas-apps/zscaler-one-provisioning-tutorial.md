@@ -1,25 +1,26 @@
 ---
-title: Руководство. Настройка Zscaler One для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка Zscaler One для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Zscaler One.
 services: active-directory
 documentationcenter: ''
 author: zchia
 writer: zchia
 manager: beatrizd-msft
-ms.assetid: na
+ms.assetid: 72f6ba2b-73ed-420a-863a-aff672f26fa3
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/03/2019
+ms.date: 03/27/2019
 ms.author: v-ant-msft
-ms.openlocfilehash: d5eab2d22656b0ff322712ff7dc36f78d6078ed5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 26448d5056e58cf1110e825ad04c5123fca20684
+ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58085394"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59058430"
 ---
 # <a name="tutorial-configure-zscaler-one-for-automatic-user-provisioning"></a>Руководство по Настройка Zscaler One для автоматической подготовки пользователей
 
@@ -27,46 +28,42 @@ ms.locfileid: "58085394"
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../active-directory-saas-app-provisioning.md).
-> 
+>
+
 > Сейчас этот соединитель доступен в общедоступной предварительной версии. Дополнительные сведения о общие Microsoft Azure условия использования предварительных версий функций, см. в разделе [дополнительным условиям использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="prerequisites"></a>Технические условия
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
-*   клиент Azure AD;
-*   Клиент Zscaler One
-*   Учетную запись пользователя в Zscaler One с разрешениями администратора.
+* клиент Azure AD;
+* Клиент Zscaler One
+* Учетную запись пользователя в Zscaler One с разрешениями администратора.
 
 > [!NOTE]
 > Интеграция подготовки Azure AD зависит от Zscaler One SCIM API, которая доступна разработчикам Zscaler One для учетных записей с пакет предприятия.
 
 ## <a name="adding-zscaler-one-from-the-gallery"></a>Добавление Zscaler One из коллекции
+
 Перед настройкой Zscaler One для автоматической подготовки пользователей в Azure AD, необходимо добавить Zscaler One из коллекции приложений Azure AD, в список управляемых приложений SaaS.
 
 **Чтобы добавить Zscaler One из коллекции приложений Azure AD, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка Azure Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите к элементу **Корпоративные приложения** > **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Раздел "Корпоративные приложения"][2]
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить Zscaler One, щелкните **новое приложение** кнопку в верхней части диалогового окна.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Создать приложение"][3]
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Zscaler One**.
+4. В поле поиска введите **Zscaler One**, выберите **Zscaler One** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Zscaler One Подготовка](./media/zscaler-one-provisioning-tutorial/app-search.png)
-
-5. В области результатов выберите **Zscaler One**, а затем нажмите кнопку **добавить** кнопку, чтобы добавить Zscaler One в список приложений SaaS.
-
-    ![Zscaler One Подготовка](./media/zscaler-one-provisioning-tutorial/app-search-results.png)
-
-    ![Zscaler One Подготовка](./media/zscaler-one-provisioning-tutorial/app-creation.png)
+    ![Zscaler One в списке результатов](common/search-new-app.png)
 
 ## <a name="assigning-users-to-zscaler-one"></a>Назначение пользователей в Zscaler One
 
@@ -74,13 +71,13 @@ ms.locfileid: "58085394"
 
 Перед настройкой и включением автоматической подготовки пользователей, следует решить, какие пользователи или группы в Azure AD требуется доступ к Zscaler One. Сделав это, можно назначить этих пользователей и групп в Zscaler One, следуя инструкциям ниже:
 
-*   [Назначение корпоративному приложению пользователя или группы](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
+* [Назначение пользователя или группы корпоративному приложению](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
 
 ### <a name="important-tips-for-assigning-users-to-zscaler-one"></a>Важные рекомендации по назначению пользователей в Zscaler One
 
-*   Рекомендуется одного пользователя Azure AD, назначается для тестирования конфигурации автоматической подготовки пользователей в Zscaler One. Дополнительные пользователи и/или группы можно назначить позднее.
+* Рекомендуется одного пользователя Azure AD, назначается для тестирования конфигурации автоматической подготовки пользователей в Zscaler One. Дополнительные пользователи и/или группы можно назначить позднее.
 
-*   При назначении пользователя в Zscaler One, необходимо выбрать действительную роль конкретного приложения (если доступно) в диалоговом окне назначения. Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя в Zscaler One, необходимо выбрать действительную роль конкретного приложения (если доступно) в диалоговом окне назначения. Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
 
 ## <a name="configuring-automatic-user-provisioning-to-zscaler-one"></a>Настройка автоматической подготовки пользователей в Zscaler One
 
@@ -91,11 +88,13 @@ ms.locfileid: "58085394"
 
 ### <a name="to-configure-automatic-user-provisioning-for-zscaler-one-in-azure-ad"></a>Настройка автоматической подготовки пользователей для Zscaler One в Azure AD.
 
-1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory > Корпоративные приложения > Все приложения**.
+1. Войдите в [портала Azure](https://portal.azure.com) и выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **Zscaler One**.
 
-2. В списке приложений SaaS выберите Zscaler One.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Zscaler One Подготовка](./media/zscaler-one-provisioning-tutorial/app-instance-search.png)
+2. Из списка приложений выберите **Zscaler One**.
+
+    ![Ссылка на Zscaler One в списке приложений](common/all-applications.png)
 
 3. Выберите вкладку **Подготовка**.
 
@@ -107,20 +106,20 @@ ms.locfileid: "58085394"
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **секретный токен** учетной Zscaler One, как описано на шаге 6.
 
-6. Для получения **URL-адрес клиента** и **секретный токен**, перейдите к **Администрирование > Параметры проверки подлинности** в Zscaler One пользовательского интерфейса портала и щелкнуть  **SAML** под **тип проверки подлинности**. 
+6. Для получения **URL-адрес клиента** и **секретный токен**, перейдите к **Администрирование > Параметры проверки подлинности** в Zscaler One пользовательского интерфейса портала и щелкнуть  **SAML** под **тип проверки подлинности**.
 
     ![Zscaler One Подготовка](./media/zscaler-one-provisioning-tutorial/secret-token-1.png)
-    
-    Щелкните **настроить SAML** открыть **конфигурации SAML** параметры. 
+
+    Щелкните **настроить SAML** открыть **конфигурации SAML** параметры.
 
     ![Zscaler One Подготовка](./media/zscaler-one-provisioning-tutorial/secret-token-2.png)
-    
+
     Выберите **подготовки Enable SCIM-Based** извлекаемого **базовый URL-адрес** и **маркера носителя**, затем сохраните параметры. Копировать **базовый URL-адрес** для **URL-адрес клиента** и **маркера носителя** для **секретный токен** на портале Azure.
 
 7. После заполнения полей, указанных в шаге 5, щелкните **проверить подключение** и убедиться, что Azure AD может подключиться к Zscaler One. Если подключение отсутствует, убедитесь, что учетная Zscaler One запись имеет разрешения администратора и повторите попытку.
 
     ![Zscaler One Подготовка](./media/zscaler-one-provisioning-tutorial/test-connection.png)
-    
+
 8. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
 
     ![Zscaler One Подготовка](./media/zscaler-one-provisioning-tutorial/notification.png)
@@ -168,7 +167,7 @@ ms.locfileid: "58085394"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
+* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
 
 <!--Image references-->
 [1]: ./media/zscaler-one-provisioning-tutorial/tutorial-general-01.png

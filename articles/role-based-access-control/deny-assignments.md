@@ -15,12 +15,12 @@ ms.date: 03/13/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: fff213c8d1a408bf96e385f2097a5ef30dcc05d2
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 497571a65510f806d7d7994c9dc37f9a00b65a5f
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57992092"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006721"
 ---
 # <a name="understand-deny-assignments-for-azure-resources"></a>Запрет назначений для ресурсов Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "57992092"
 В этой статье описывается, как определять запреты назначений.
 
 > [!NOTE]
-> В настоящее время единственным способом, вы можете добавить собственные запретить назначения — с помощью Azure чертежей. Дополнительные сведения см. в разделе [защитить новые ресурсы с помощью блокировки ресурсов Azure чертежей](../governance/blueprints/tutorials/protect-new-resources.md).
+> В настоящее время единственный способ добавить собственный запрет назначений обеспечивает — использовать Azure Blueprints. Дополнительные сведения см. в статье о [защите новых ресурсов с помощью блокировок ресурсов Azure Blueprints](../governance/blueprints/tutorials/protect-new-resources.md).
 
 ## <a name="deny-assignment-properties"></a>Свойства запретов назначений
 
@@ -56,12 +56,12 @@ ms.locfileid: "57992092"
 
 ## <a name="system-defined-principal"></a>Субъект System-Defined
 
-Для поддержки запретов назначений используется субъект **System-Defined**. Этот субъект представляет всех пользователей, группы, субъекты-службы и управляемые удостоверения в каталоге Azure AD. Если идентификатор субъекта имеет нулевое значение GUID (`00000000-0000-0000-0000-000000000000`), а тип субъекта — `SystemDefined`, субъект представляет все субъекты. `SystemDefined` можно сочетать с `ExcludePrincipals`, чтобы запретить все субъекты, кроме некоторых пользователей. Для `SystemDefined` действуют следующие ограничения:
+Для поддержки запретов назначений используется субъект **System-Defined**. Этот субъект представляет всех пользователей, группы, субъекты-службы и управляемые удостоверения в каталоге Azure AD. Если идентификатор субъекта имеет нулевое значение GUID (`00000000-0000-0000-0000-000000000000`), а тип субъекта — `SystemDefined`, субъект представляет все субъекты. `SystemDefined` можно сочетать с `ExcludePrincipals` Запрет всех участников, кроме некоторых пользователей. `SystemDefined` имеет следующие ограничения:
 
 - Может использоваться только в `Principals` и не может использоваться в `ExcludePrincipals`.
-- Для параметра `Principals[i].Type` нужно задать значение `SystemDefined`.
+- `Principals[i].Type` Нужно задать значение `SystemDefined`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Вывод списка запретов назначений для ресурсов Azure с помощью REST API](deny-assignments-rest.md)
+* [Просмотр запрещающих назначений для ресурсов Azure с помощью портала Azure](deny-assignments-portal.md)
 * [Общие сведения об определениях ролей для ресурсов Azure](role-definitions.md)

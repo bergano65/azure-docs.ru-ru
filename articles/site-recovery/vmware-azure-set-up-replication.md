@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: sutalasi
-ms.openlocfilehash: 4f558d8d1e5e4e743e6d44cca1a804b3e5898b30
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
-ms.translationtype: MT
+ms.openlocfilehash: 18dc7ea513d1e3787dbd38b1ab687be607a79f8b
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58443421"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006816"
 ---
 # <a name="configure-and-manage-replication-policies-for-vmware-disaster-recovery-to-azure"></a>Настройка и администрирование политик репликации для аварийного восстановления VMware в Azure
 Из этой статьи вы узнаете, как настроить политику репликации при репликации виртуальных машин VMware в Azure с помощью [Azure Site Recovery](site-recovery-overview.md).
@@ -45,7 +45,7 @@ ms.locfileid: "58443421"
 1. Выберите **управление** > **инфраструктура Site Recovery** > **политики репликации**.
 2. Выберите политику репликации, который вы хотите изменить.
 3. Нажмите кнопку **изменение параметров**и изменить поля RPO/восстановления порогового значения точки хранения часов/согласованные моментального снимка частота при необходимости.
-4. Если вы хотите отключить создание точек согласованности приложения, выберите значение в раскрывающемся списке элемента, описанной «Off» **согласованные периодичность создания моментальных снимков**.
+4. Если вы хотите отключить создание точек согласованности приложения, выберите значение в раскрывающемся списке поля «Off» **согласованные периодичность создания моментальных снимков**.
 5. Выберите команду **Сохранить**. Политики должны обновляться в течение 30 – 60 секунд.
 
 ## <a name="disassociate-or-delete-a-replication-policy"></a>Отмена связи или удаление политики репликации

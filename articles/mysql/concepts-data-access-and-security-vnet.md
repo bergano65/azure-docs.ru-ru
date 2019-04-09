@@ -7,12 +7,12 @@ manager: jhubbard
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 08/20/2018
-ms.openlocfilehash: aef55660d07c8923a82baf7f8b6320abf3ccdd1d
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.openlocfilehash: 37cc8192cc5934cf967ad9b9c62614d0b4503fb4
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56430222"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006601"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-mysql"></a>Использование конечных точек службы и правил виртуальной сети для базы данных Azure для MySQL
 
@@ -108,6 +108,8 @@ ms.locfileid: "56430222"
 
 Для базы данных Azure для MySQL правила виртуальной сети имеют следующие ограничения:
 
+- Веб-приложения можно сопоставить с частным IP-адресом в виртуальной сети или подсети. Даже если конечные точки службы включены в определенной виртуальной сети или подсети, при подключении из веб-приложения к серверу в качестве источника будет использоваться открытый IP-адрес Azure, виртуальная сеть или подсеть. Возможность подключения к сети из веб-приложения на сервере, где правила брандмауэра виртуальной сети, необходимо разрешить Azure services для доступа к серверу, на сервере.
+
 - В брандмауэре для базы данных Azure для MySQL каждое правило виртуальной сети ссылается на подсеть. Все такие упомянутые подсети должны размещаться в том же географическом регионе, где размещена база данных Azure для MySQL.
 
 - Каждый сервер базы данных Azure для MySQL может использовать до 128 записей ACL для любой заданной виртуальной сети.
@@ -138,10 +140,10 @@ ms.locfileid: "56430222"
 - [Виртуальные сети Azure][vm-virtual-network-overview]
 - [Конечные точки служб виртуальной сети][vm-virtual-network-service-endpoints-overview-649d]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Статьи о создании правил виртуальной сети см. по следующим ссылкам:
-- [Создание правил виртуальной сети базы данных Azure для MySQL и управление ими на портале Azure](howto-manage-vnet-using-portal.md)
-- [Создание правил виртуальной сети базы данных Azure для MySQL и управление ими с помощью Azure CLI](howto-manage-vnet-using-cli.md)
+- [Создание и управление ими базы данных Azure для правила виртуальной сети MySQL, с помощью портала Azure](howto-manage-vnet-using-portal.md)
+- [Создание и управление ими базы данных Azure для правила виртуальной сети MySQL, с помощью Azure CLI](howto-manage-vnet-using-cli.md)
 
 <!-- Link references, to text, Within this same GitHub repo. -->
 [arm-deployment-model-568f]: ../azure-resource-manager/resource-manager-deployment-model.md

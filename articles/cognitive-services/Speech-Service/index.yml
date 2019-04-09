@@ -1,16 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: c68bf4cf8bcc50069f3741ac0f1746363c1f82ac
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57861814"
 documentType: LandingData
 title: Документация по службе "Речь"
 metadata:
-  title: Документация по службе "Речь". Руководства, краткие инструкции и справочник по API
+  title: 'Документация по службе "Речь". Руководства, краткие инструкции и справочник по API'
   titleSuffix: Azure Cognitive Services
-  description: Служба "Речь" упрощает для разработчиков добавление в приложения эффективных голосовых функций. В примерах демонстрируются элементы управления и построения диалога с помощью голосовых команд, диалоги с применением естественной речи, транскрибирование речи и средства диктовки, а также перевод речи.
+  description: 'Служба "Речь" упрощает для разработчиков добавление в приложения эффективных голосовых функций. В примерах демонстрируются элементы управления и построения диалога с помощью голосовых команд, диалоги с применением естественной речи, транскрибирование речи и средства диктовки, а также перевод речи.'
   services: cognitive-services
   author: nitinme
   manager: cgronlun
@@ -24,235 +18,232 @@ metadata:
   ms.author: erhopf
   ms.custom: seodec18
 abstract:
-  description: Узнайте, как использовать службу "Речь" и пакет SDK для службы "Речь", чтобы добавить речевые функции в свои приложения. Пакет SDK для службы распознавания речи можно использовать для добавления в свои приложения функций <i>преобразования речи в текст</i> (распознавание речи), <i>определения намерений</i>, <i>перевода</i> и <i>преобразования текста в речь</i>. В состав службы "Речь" также входят интерфейсы REST API, которые работают с любым языком программирования, поддерживающим HTTP-запросы.
+  description: "Узнайте, как использовать службу \"Речь\" и пакет SDK для службы \"Речь\", чтобы добавить речевые функции в свои приложения. Пакет SDK для службы распознавания речи можно использовать для добавления в свои приложения функций <i>преобразования речи в текст</i> (распознавание речи), <i>определения намерений</i>, <i>перевода</i> и <i>преобразования текста в речь</i>. В состав службы \"Речь\" также входят интерфейсы REST\_API, которые работают с любым языком программирования, поддерживающим HTTP-запросы."
 sections:
-- items:
-  - type: list
-    style: cards
-    className: cardsM
-    columns: 3
+  - items:
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 3
+        items:
+          - href: /azure/cognitive-services/speech-service/overview
+            html: <p>Ознакомьтесь со службой "Речь" в Azure.</p>
+            image:
+              src: ../media/index/i_overview.svg
+            title: Что такое служба "Речь"?
+          - href: /azure/cognitive-services/speech-service/get-started
+            html: <p>Зарегистрируйтесь для использования бесплатной версии.</p>
+            image:
+              src: ../media/index/i_get-started.svg
+            title: Регистрация для использования службы "Речь"
+          - href: /azure/cognitive-services/speech-service/speech-devices-sdk
+            html: <p>Изучите справочник по оборудованию с поддержкой речевых функций.</p>
+            image:
+              src: ../media/index/i_guidelines.svg
+            title: Пакет SDK для речевых устройств
+  - title: 5-минутные руководства по началу работы
     items:
-    - href: /azure/cognitive-services/speech-service/overview
-      html: <p>Ознакомьтесь со службой "Речь" в Azure.</p>
-      image:
-        src: ../media/index/i_overview.svg
-      title: Что такое служба "Речь"?
-    - href: /azure/cognitive-services/speech-service/get-started
-      html: <p>Зарегистрируйтесь для использования бесплатной версии.</p>
-      image:
-        src: ../media/index/i_get-started.svg
-      title: Регистрация для использования службы "Речь"
-    - href: /azure/cognitive-services/speech-service/speech-devices-sdk
-      html: <p>Изучите справочник по оборудованию с поддержкой речевых функций.</p>
-      image:
-        src: ../media/index/i_guidelines.svg
-      title: Пакет SDK для речевых устройств
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: Узнайте, как скачать, установить и использовать пакет SDK, щелкнув ссылку в виде стрелки <img src="media/index/link.jpg" height="15" width="15"></img>.
-  - type: table
-    style: dataMatrix
-    columns:
-    - image:
-        src: media/index/uwp.jpg
-    - image:
-        src: media/index/logo_csharp.svg
-    - image:
-        src: media/index/logo_cplusplus.svg
-    - image:
-        src: media/index/logo_netcore.svg
-    - image:
-        src: https://docs.microsoft.com/media/logos/logo_unity.svg
-    - image:
-        src: media/index/logo_java.jpg
-    - image:
-        src: media/index/logo_python.svg
-    - image:
-        src: media/index/logo_objc.jpg
-    - image:
-        src: media/index/logo_nodejs.svg
-    - image:
-        src: media/index/logo_js.svg
-    - image:
-        src: media/index/logo_rest.svg
-    rows:
-    - title: Windows 10 (x64)
-      values:
-      - href: quickstart-csharp-uwp
-      - href: quickstart-csharp-windows
-      - href: quickstart-cpp-windows
-      - href: quickstart-csharp-dotnetcore-windows
-      - href: quickstart-csharp-unity
-      - href: quickstart-java-jre
-      - href: quickstart-python
-      - href: 
-      - href: quickstart-js-node
-      - href: 
-    - title: Windows 10 (x86)
-      values:
-      - href: quickstart-csharp-uwp
-      - href: quickstart-csharp-windows
-      - href: quickstart-cpp-windows
-      - href: quickstart-csharp-dotnetcore-windows
-      - href: quickstart-csharp-unity
-      - href: 
-      - href: quickstart-python
-      - href: 
-      - href: quickstart-js-node
-      - href: 
-    - title: Linux (x64)
-      values:
-      - href: 
-      - href: 
-      - href: quickstart-cpp-linux
-      - href: quickstart-csharp-dotnetcore-windows
-      - href: 
-      - href: quickstart-java-jre
-      - href: quickstart-python
-      - href: 
-      - href: quickstart-js-node
-      - href: 
-    - title: Linux (x86)
-      values:
-      - href: 
-      - href: 
-      - href: quickstart-cpp-linux
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: quickstart-js-node
-      - href: 
-    - title: Android (ARM 32/64)
-      values:
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: quickstart-csharp-unity
-      - href: quickstart-java-android
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-    - title: Android (x86/x64)
-      values:
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: quickstart-csharp-unity
-      - href: quickstart-java-android
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-    - title: iOS (ARM64)
-      values:
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: quickstart-objectivec-ios
-      - href: 
-      - href: 
-    - title: macOS (x64)
-      values:
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: quickstart-python
-      - href: 
-      - href: quickstart-js-node
-      - href: 
-    - title: Пакеты SDK для устройств (ARM32)
-      values:
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: speech-devices-sdk
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-    - title: "\"Обзор\""
-      values:
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: quickstart-js-browser
-    - title: REST
-      values:
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: rest-apis
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: Узнайте, как разрабатывать приложения с использованием службы "Речь".
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: 'Узнайте, как скачать, установить и использовать пакет SDK, щелкнув ссылку в виде стрелки <img src="media/index/link.jpg" height="15" width="15"></img>.'
+      - type: table
+        style: dataMatrix
+        columns:
+          - image:
+              src: media/index/uwp.jpg
+          - image:
+              src: media/index/logo_csharp.svg
+          - image:
+              src: media/index/logo_cplusplus.svg
+          - image:
+              src: media/index/logo_netcore.svg
+          - image:
+              src: 'https://docs.microsoft.com/media/logos/logo_unity.svg'
+          - image:
+              src: media/index/logo_java.jpg
+          - image:
+              src: media/index/logo_python.svg
+          - image:
+              src: media/index/logo_objc.jpg
+          - image:
+              src: media/index/logo_nodejs.svg
+          - image:
+              src: media/index/logo_js.svg
+          - image:
+              src: media/index/logo_rest.svg
+        rows:
+          - title: "Windows\_10 (x64)"
+            values:
+              - href: quickstart-csharp-uwp
+              - href: quickstart-csharp-windows
+              - href: quickstart-cpp-windows
+              - href: quickstart-csharp-dotnetcore-windows
+              - href: quickstart-csharp-unity
+              - href: quickstart-java-jre
+              - href: quickstart-python
+              - href: null
+              - href: quickstart-js-node
+              - href: null
+          - title: "Windows\_10 (x86)"
+            values:
+              - href: quickstart-csharp-uwp
+              - href: quickstart-csharp-windows
+              - href: quickstart-cpp-windows
+              - href: quickstart-csharp-dotnetcore-windows
+              - href: quickstart-csharp-unity
+              - href: null
+              - href: quickstart-python
+              - href: null
+              - href: quickstart-js-node
+              - href: null
+          - title: Linux (x64)
+            values:
+              - href: null
+              - href: null
+              - href: quickstart-cpp-linux
+              - href: quickstart-csharp-dotnetcore-windows
+              - href: null
+              - href: quickstart-java-jre
+              - href: quickstart-python
+              - href: null
+              - href: quickstart-js-node
+              - href: null
+          - title: Linux (x86)
+            values:
+              - href: null
+              - href: null
+              - href: quickstart-cpp-linux
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: quickstart-js-node
+              - href: null
+          - title: Android (ARM 32/64)
+            values:
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: quickstart-csharp-unity
+              - href: quickstart-java-android
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+          - title: Android (x86/x64)
+            values:
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: quickstart-csharp-unity
+              - href: quickstart-java-android
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+          - title: iOS (ARM64)
+            values:
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: quickstart-objectivec-ios
+              - href: null
+              - href: null
+          - title: macOS (x64)
+            values:
+              - href: null
+              - href: null
+              - href: quickstart-cpp-macos
+              - href: quickstart-csharp-dotnetcore-windows
+              - href: null
+              - href: quickstart-java-jre
+              - href: quickstart-python
+              - href: quickstart-objective-c-macos
+              - href: quickstart-js-node
+              - href: null
+          - title: Пакеты SDK для устройств (ARM32)
+            values:
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: speech-devices-sdk
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+          - title: '"Обзор"'
+            values:
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: quickstart-js-browser
+          - title: REST
+            values:
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: null
+              - href: rest-apis
+  - title: Пошаговые руководства
     items:
-    - html: <a href="speech-to-text-sample.md">Преобразование речи в текст</a><br/>
-    - html: <a href="intent.md">Распознавание намерений говорящего</a><br/>
-    - html: <a href="translation.md">Перевод</a>
-- title: Примеры
-  items:
-  - type: paragraph
-    text: Примеры для службы "Речь" можно найти на сайте GitHub.
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: 'Узнайте, как разрабатывать приложения с использованием службы "Речь".'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="speech-to-text-sample.md">Преобразование речи в текст (SR)</a><br/>
+          - html: <a href="intent.md">Распознавание намерений</a><br/>
+          - html: <a href="translation.md">Перевод</a>
+          - html: <a href="quickstart-text-to-speech-dotnet-windows.md">Преобразование текста в речь</a><br/>
+  - title: Примеры
     items:
-    - html: <a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk">Примеры для пакета SDK для служб</a><br/>
-    - html: <a href="https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK">Примеры для пакета SDK для устройств</a><br/>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: paragraph
+        text: Примеры для службы "Речь" можно найти на сайте GitHub.
+      - type: list
+        style: unordered
+        items:
+          - html: '<a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk">Примеры пакета SDK для служб</a><br/>'
+          - html: '<a href="https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK">Примеры пакета SDK для устройств</a><br/>'
+  - title: Справочные материалы
     items:
-    - title: Справочник по пакету SDK
-      html: >
-        <p><a href="https://aka.ms/csspeech/csharpref">API C# (UWP, .NET и Unity)</a></p>
-
-        <p><a href="https://aka.ms/csspeech/cppref">API C++</a></p>
-
-        <p><a href="https://aka.ms/csspeech/javaref">API Java</a></p>
-
-        <p><a href="https://aka.ms/csspeech/pythonref">API Python</a></p>
-
-        <p><a href="https://aka.ms/csspeech/objectivecref">API Objective-C</a></p>
-
-        <p><a href="https://aka.ms/csspeech/javascriptref">API JavaScript</a></p>
-    - title: REST API
-      html: >
-        <p><a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis">REST API</a></p>
-    - title: PowerShell
-      html: >
-        <p><a href=https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>
-    - title: Интерфейс командной строки
-      html: <p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Интерфейс командной строки Azure</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Справочник по пакету SDK
+            html: |
+              <p><a href="https://aka.ms/csspeech/csharpref">API C# (UWP, .NET и Unity)</a></p>
+              <p><a href="https://aka.ms/csspeech/cppref">API C++</a></p>
+              <p><a href="https://aka.ms/csspeech/javaref">API Java</a></p>
+              <p><a href="https://aka.ms/csspeech/pythonref">API Python</a></p>
+              <p><a href="https://aka.ms/csspeech/objectivecref">API Objective-C</a></p>
+              <p><a href="https://aka.ms/csspeech/javascriptref">API JavaScript</a></p>
+          - title: REST API
+            html: |
+              <p><a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis">REST API</a></p>
+          - title: PowerShell
+            html: |
+              <p><a href=https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>
+          - title: Интерфейс командной строки
+            html: |
+              <p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Инфраструктура CLI Azure</a></p>

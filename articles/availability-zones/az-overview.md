@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/19/2019
+ms.date: 04/02/2019
 ms.author: cynthn
 ms.custom: mvc I am an ITPro and application developer, and I want to protect (use Availability Zones) my applications and data against data center failure (to build Highly Available applications).
-ms.openlocfilehash: 3d4b0b143b41daca376aecc64cf734fadcc94faa
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 557757fc4d99fe57ad545e9d2eebcce61ddb3a8f
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58226578"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59268727"
 ---
 # <a name="what-are-availability-zones-in-azure"></a>Что такое Зоны доступности в Azure?
 Зоны доступности являются предложением, обеспечивающим высокий уровень доступности и защищающим приложения и данные от сбоев центров обработки данных. Зоны доступности — уникальные физические расположения в пределах одного региона Azure. Каждая зона состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. Чтобы обеспечить отказоустойчивость, во всех включенных регионах используются минимум три отдельные зоны. Физическое разделение зон доступности в пределах региона защищает приложения и данные от сбоев центров обработки данных. Избыточные между зонами службы реплицируют приложения и данные в зонах доступности, чтобы обеспечить защиту от возникновения единых точек отказа. Благодаря зонам доступности Azure предлагает наилучшее в отрасли соглашение об уровне обслуживания с гарантией времени непрерывной работы 99,99 % для виртуальных машин. В полном [соглашении об уровне обслуживания Azure](https://azure.microsoft.com/support/legal/sla/virtual-machines/) поясняется гарантированная доступность Azure в целом.
@@ -45,6 +45,7 @@ ms.locfileid: "58226578"
 - Центральная Франция
 - Северная Европа
 - Юго-Восточная Азия 
+- Южная часть соединенного Королевства&#42;
 - Западная Европа
 - Западный регион США 2
 
@@ -57,8 +58,8 @@ ms.locfileid: "58226578"
 - Виртуальные машины Windows
 - Масштабируемые наборы виртуальных машин Microsoft Azure
 - Управляемые диски
-- Load Balancer
-- Общедоступный IP-адрес
+- Load Balancer стандартный&#42;
+- Стандартный общедоступный IP-адрес&#42;
 - Хранилище, избыточное между зонами
 - База данных SQL
 - Центры событий;
@@ -66,6 +67,8 @@ ms.locfileid: "58226578"
 - VPN-шлюз
 - ExpressRoute
 - Шлюз приложений (предварительная версия)
+
+&#42;Ресурсы, созданные в Южная часть соединенного Королевства, прежде чем 25 марта 2019 скоро будут преобразовываться в быть избыточные в пределах зоны. Ресурсы, созданные после 25 марта 2019 г. будет избыточным сразу.
 
 ## <a name="services-resiliency"></a>Устойчивость службы
 Все службы управления Azure разрабатывались устойчивость от сбоев на уровне региона. В спектр сбоев один или несколько сбоев зоны доступности в пределах региона имеют меньшего радиуса сбоя, по сравнению с сбоя всего региона. Azure можно восстановить из уровня зоны сбоя служб управления внутри области или из другой регион Azure. Azure выполняет критические обслуживания одной зоны по очереди в пределах региона, чтобы избежать ошибок, влияющих на ресурсы клиента, развернутых в зонах доступности в пределах региона.
@@ -77,15 +80,15 @@ ms.locfileid: "58226578"
 ## <a name="get-started-with-availability-zones"></a>Приступая к работе с зонами доступности
 - [Создание виртуальной машины](../virtual-machines/windows/create-portal-availability-zone.md)
 - [Добавление управляемого диска с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md#add-an-empty-data-disk-to-a-virtual-machine)
-- [Создание избыточного между зонами масштабируемого набора виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md)
-- [Распределение нагрузки виртуальных машин по зонам с помощью службы Load Balancer уровня "Стандартный" с избыточным между зонами внешним интерфейсом](../load-balancer/load-balancer-standard-public-zone-redundant-cli.md).
-- [Распределение нагрузки виртуальных машин в пределах зоны с помощью Load Balancer уровня "Стандартный" с зональным внешним интерфейсом](../load-balancer/load-balancer-standard-public-zonal-cli.md).
+- [Создание зоны избыточных виртуальных машин масштабируемого набора](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md)
+- [Балансировка нагрузки виртуальных машин по зонам с помощью стандартных подсистемы балансировки нагрузки с внешним интерфейсом, избыточные в пределах зоны](../load-balancer/load-balancer-standard-public-zone-redundant-cli.md)
+- [Балансировка нагрузки виртуальных машин в пределах зоны с помощью стандартных подсистемы балансировки нагрузки с зональным внешним интерфейсом](../load-balancer/load-balancer-standard-public-zonal-cli.md)
 - [Хранилище, избыточное между зонами](../storage/common/storage-redundancy-zrs.md)
 - [База данных SQL](../sql-database/sql-database-high-availability.md#zone-redundant-configuration)
 - [Географическое аварийное восстановление в Центрах событий](../event-hubs/event-hubs-geo-dr.md#availability-zones)
-- [Географическое аварийное восстановление в служебной шине](../service-bus-messaging/service-bus-geo-dr.md#availability-zones)
+- [Географическое аварийное восстановление в Служебной шине](../service-bus-messaging/service-bus-geo-dr.md#availability-zones)
 - [Создание шлюза виртуальной сети, избыточного между зонами](../vpn-gateway/create-zone-redundant-vnet-gateway.md)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Шаблоны быстрого запуска](https://aka.ms/azqs)

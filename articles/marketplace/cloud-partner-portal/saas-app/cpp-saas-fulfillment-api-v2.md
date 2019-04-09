@@ -12,16 +12,16 @@ ms.workload: ''
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 02/27/2019
+ms.date: 03/28/2019
 ms.author: pbutlerm
-ms.openlocfilehash: 6d18adfaec965d858bdcb1f74ebcea89f57eea39
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 437009079c1bebe3694aaa26f945bd726b3c9fb9
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58878032"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59010578"
 ---
-# <a name="saas-fulfillment-api"></a>Выполнение SaaS API
+# <a name="saas-fulfillment-apis-version-2"></a>SaaS реализации API-интерфейсов версии 2 
 
 В этой статье подробно API, который включает независимые поставщики программного обеспечения (ISV) интегрировать свои приложения SaaS с Azure Marketplace. Этот API позволяет приложениям независимых поставщиков программного обеспечения для участия в всех коммерческих включена каналов: direct, осуществляемое партнерами (торгового посредника) и поле под руководством.  Этот API является обязательным для списка могут быть частью транзакции SaaS предложения в Azure Marketplace.
 
@@ -73,14 +73,34 @@ ms.locfileid: "58878032"
 
 Подписки попадает в эту ситуацию, в ответ на запрос явные клиента или в ответ на неуплаты сборам. От независимых поставщиков программного обеспечения ожидается, что данные клиента сохраняется для восстановления по запросу в течение минимум X дней и затем удаляется. 
 
+
 ## <a name="api-reference"></a>Справочник по API
 
-В данном разделе описываются SaaS *подписки API* и *операций API*.
+В данном разделе описываются SaaS *подписки API* и *операций API*.  Значение `api-version` параметр версии 2 API-интерфейсов является `2018-08-31`.  
+
+
+### <a name="parameter-and-entity-definitions"></a>Определения параметров и сущности
+
+В следующей таблице перечислены определения общих параметров и сущности, используемые интерфейсы API для выполнения.
+
+|     Параметр/субъекта     |     Определение                         |
+|     ----------------     |     ----------                         |
+| `subscriptionId`         | Идентификатор GUID для ресурсов SaaS  |
+| `name`                   | Понятное имя, предоставленных клиентом для данного ресурса |
+| `publisherId`            | Уникальный строковый идентификатор, автоматически создается для каждого издателя, например «conotosocorporation» |
+| `offerId`                | Уникальный строковый идентификатор, автоматически создается для каждого предложения, например «contosooffer1»  |
+| `planId`                 | Уникальный строковый идентификатор, автоматически создается для каждого плана или номер sku, например «contosobasicplan» |
+| `operationId`            | Идентификатор GUID для определенной операции  |
+|  `action`                | Действие, выполняемое для ресурса, либо `subscribe`, `unsubscribe`, `suspend`, `reinstate`, или `changePlan`  |
+|   |   |
+
+Глобальные уникальные идентификаторы ([идентификаторы GUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)) являются числами 128-разрядный (32 шестнадцатеричном формате), которые обычно формируется автоматически. 
 
 
 ### <a name="subscription-api"></a>API подписки
 
 Данная подписка API поддерживает следующие операции HTTPS: **Получить**, **Post**, **Patch**, и **удалить**.
+
 
 #### <a name="list-subscriptions"></a>Список подписок
 
@@ -106,34 +126,37 @@ ms.locfileid: "58878032"
 *Коды ответов:*
 
 Код: 200<br>
-На основании маркера get auth издателя и соответствующих подписок для предложений издателя.<br> Полезные данные ответа:<br>
+На основе authN токена, получите издателя и соответствующих подписок для предложений издателя.<br> Полезные данные ответа:<br>
 
 ```json
 {
-  "subscriptions": [
+  [
       {
-          "id": "",
-          "name": "CloudEndure for Production use",
-          "publisherId": "cloudendure",
-          "offerId": "ce-dr-tier2",
+          "id": "<guid>",
+          "name": "Contoso Cloud Solution",
+          "publisherId": "contoso",
+          "offerId": "cont-cld-tier2",
           "planId": "silver",
           "quantity": "10",
           "beneficiary": { // Tenant for which SaaS subscription is purchased.
-              "tenantId": "cc906b16-1991-4b6d-a5a4-34c66a5202d7"
+              "tenantId": "<guid>"
           },
           "purchaser": { // Tenant that purchased the SaaS subscription. These could be different for reseller scenario
-              "tenantId": "0396833b-87bf-4f31-b81c-c67f88973512"
+              "tenantId": "<guid>"
           },
           "allowedCustomerOperations": [
               "Read" // Possible Values: Read, Update, Delete.
           ], // Indicates operations allowed on the SaaS subscription. For CSP initiated purchases, this will always be Read.
           "sessionMode": "None", // Possible Values: None, DryRun (Dry Run indicates all transactions run as Test-Mode in the commerce stack)
-          "status": "Subscribed" // Indicates the status of the operation. [Provisioning, Subscribed, Suspended, Unsubscribed]
+          "saasSubscriptionStatus": "Subscribed" // Indicates the status of the operation. [Provisioning, Subscribed, Suspended, Unsubscribed]
       }
   ],
   "continuationToken": ""
 }
 ```
+
+Маркер продолжения появятся только в том случае, если существуют дополнительные «страницы» планов для извлечения. 
+
 
 Код: 403 <br>
 Не авторизовано. Не указан. маркер проверки подлинности является недопустимым, или запрос пытается получить доступ к приобретения, который не принадлежит текущему пользователю. 
@@ -174,22 +197,22 @@ ms.locfileid: "58878032"
 *Коды ответов:*
 
 Код: 200<br>
-Получает из идентификатора подписки saas<br> Полезные данные ответа:<br>
+Получает из идентификатора подписки SaaS<br> Полезные данные ответа:<br>
 
 ```json
 Response Body:
 { 
         "id":"",
-        "name":"CloudEndure for Production use",
-        "publisherId": "cloudendure",
-        "offerId": "ce-dr-tier2",
+        "name":"Contoso Cloud Solution",
+        "publisherId": "contoso",
+        "offerId": "cont-cld-tier2",
         "planId": "silver",
         "quantity": "10"",
           "beneficiary": { // Tenant for which SaaS subscription is purchased.
-              "tenantId": "cc906b16-1991-4b6d-a5a4-34c66a5202d7"
+              "tenantId": "<guid>"
           },
           "purchaser": { // Tenant that purchased the SaaS subscription. These could be different for reseller scenario
-              "tenantId": "0396833b-87bf-4f31-b81c-c67f88973512"
+              "tenantId": "<guid>"
           },
         "allowedCustomerOperations": ["Read"], // Indicates operations allowed on the SaaS subscription. For CSP initiated purchases, this will always be Read.
         "sessionMode": "None", // Dry Run indicates all transactions run as Test-Mode in the commerce stack
@@ -240,25 +263,23 @@ Response Body:
 Код: 200<br>
 Получение списка доступных планов для клиента.<br>
 
+Текст ответа:
+
 ```json
-Response Body:
-[{
-    "planId": "silver",
-    "displayName": "Silver",
-    "isPrivate": false
-},
 {
-    "planId": "silver-private",
-    "displayName": "Silver-private",
-    "isPrivate": true
-}]
+    "plans": [{
+        "planId": "Platinum001",
+        "displayName": "Private platinum plan for Contoso",
+        "isPrivate": true
+    }]
+}
 ```
 
 Код: 404<br>
 Не найдено<br> 
 
 Код: 403<br>
-Не авторизовано. Не указан. маркер проверки подлинности является недопустимым или запрос пытается получить доступ к приобретения, который не принадлежит текущему пользователю. <br> 
+Не авторизовано. Не указан. маркер проверки подлинности является недопустимым, или запрос пытается получить доступ к приобретения, который не принадлежит текущему пользователю. <br> 
 
 Код: 500<br>
 Внутренняя ошибка сервера<br>
@@ -301,12 +322,12 @@ Response Body:
 ```json
 Response body:
 {
-    "subscriptionId": "cd9c6a3a-7576-49f2-b27e-1e5136e57f45",  
-    "subscriptionName": "My Saas application",
-    "offerId": "ce-dr-tier2",
+    "subscriptionId": "<guid>",  
+    "subscriptionName": "Contoso Cloud Solution",
+    "offerId": "cont-cld-tier2",
     "planId": "silver",
     "quantity": "20",
-    "operationId": " be750acb-00aa-4a02-86bc-476cbe66d7fa"  
+    "operationId": "<guid>"  
 }
 ```
 
@@ -348,7 +369,7 @@ Response body:
 |  ---------------   |  ---------------  |
 |  Content-Type      | `application/json`  |
 |  x-ms-requestid    | Уникальное строковое значение для отслеживания запроса от клиента, желательно GUID. Если это значение не указано, оно создается случайным образом и возвращается в заголовке ответа.  |
-|  x-ms-correlationid  | Уникальное строковое значение для операции на стороне клиента. Это значение позволяет сопоставить все события клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
+|  x-ms-correlationid  | Уникальное строковое значение для операции на стороне клиента. Эта строка сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
 |  authorization     |  Токен носителя token (JWT) JSON web |
 
 *Запрос:*
@@ -511,7 +532,7 @@ Request Body:
 
 Обновление подписки с помощью указанных значений.
 
-**Исправление:<br> `https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>/operation/<operationId>?api-version=<ApiVersion>`**
+**Исправление:<br> `https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>/operations/<operationId>?api-version=<ApiVersion>`**
 
 *Параметры запроса:*
 
@@ -534,15 +555,15 @@ Request Body:
 
 ```json
 {
-    "planId": "",
-    "quantity": "",
+    "planId": "cont-cld-tier2",
+    "quantity": "44",
     "status": "Success"    // Allowed Values: Success/Failure. Indicates the status of the operation.
 }
 ```
 
 *Коды ответов:*
 
-Код: 200<br> Вызов для информирования о завершении операции на стороне независимых поставщиков программного обеспечения. Например это может быть изменение рабочих мест и планов.
+Код: 200<br> Вызов для информирования о завершении операции на стороне независимых поставщиков программного обеспечения. Например этот ответ могут сигнализировать о изменение рабочих мест и планов.
 
 Код: 404<br>
 Не найдено
@@ -551,7 +572,7 @@ Request Body:
 Неправильный запрос проверки ошибок
 
 Код: 403<br>
-Не авторизовано. Не указан. маркер проверки подлинности является недопустимым или запрос пытается получить доступ к приобретения, который не принадлежит текущему пользователю.
+Не авторизовано. Не указан. маркер проверки подлинности является недопустимым, или запрос пытается получить доступ к приобретения, который не принадлежит текущему пользователю.
 
 Код: 409<br>
 Конфликт. Например новая транзакция уже выполняется
@@ -597,11 +618,11 @@ Request Body:
 
 ```json
 [{
-    "id": "be750acb-00aa-4a02-86bc-476cbe66d7fa",  
-    "activityId": "be750acb-00aa-4a02-86bc-476cbe66d7fa",
-    "subscriptionId": "cd9c6a3a-7576-49f2-b27e-1e5136e57f45",
-    "offerId": "ce-dr-tier2",
-    "publisherId": "cloudendure",  
+    "id": "<guid>",  
+    "activityId": "<guid>",
+    "subscriptionId": "<guid>",
+    "offerId": "cont-cld-tier2",
+    "publisherId": "contoso",  
     "planId": "silver",
     "quantity": "20",
     "action": "Convert",
@@ -634,7 +655,7 @@ Request Body:
 
 #### <a name="get-operation-status"></a>Получить состояние операции
 
-Позволяет отслеживать состояние операции активированные async (Subscribe и Unsubscribe/изменить план).
+Позволяет отслеживать состояние указанного активированные асинхронной операции (Subscribe и Unsubscribe/изменить план).
 
 **Получить:<br> `https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId>/operations/<operationId>?api-version=<ApiVersion>`**
 
@@ -653,23 +674,23 @@ Request Body:
 |  x-ms-correlationid |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
 |  authorization     | Токен носителя JSON Web Token (JWT).  |
 
-*Коды ответов:* Код: 200<br> Получает список всех ожидающих операций SaaS<br>
+*Коды ответов:* Код: 200<br> Возвращает указанный ожидающей операции SaaS<br>
 Полезные данные ответа:
 
 ```json
 Response body:
-[{
-    "id  ": "be750acb-00aa-4a02-86bc-476cbe66d7fa",
-    "activityId": "be750acb-00aa-4a02-86bc-476cbe66d7fa",
-    "subscriptionId":"cd9c6a3a-7576-49f2-b27e-1e5136e57f45",
-    "offerId": "ce-dr-tier2",
-    "publisherId": "cloudendure",  
+{
+    "id  ": "<guid>",
+    "activityId": "<guid>",
+    "subscriptionId":"<guid>",
+    "offerId": "cont-cld-tier2",
+    "publisherId": "contoso",  
     "planId": "silver",
     "quantity": "20",
     "action": "Convert",
     "timeStamp": "2018-12-01T00:00:00",
     "status": "NotStarted"
-}]
+}
 
 ```
 
@@ -700,11 +721,11 @@ Response body:
 
 ```json
 {
-    "operationId": "be750acb-00aa-4a02-86bc-476cbe66d7fa",
-    "activityId": "be750acb-00aa-4a02-86bc-476cbe66d7fa",
-    "subscriptionId":"cd9c6a3a-7576-49f2-b27e-1e5136e57f45",
-    "offerId": "ce-dr-tier2",
-    "publisherId": "cloudendure",
+    "operationId": "<guid>",
+    "activityId": "<guid>",
+    "subscriptionId":"<guid>",
+    "offerId": "cont-cld-tier2",
+    "publisherId": "contoso",
     "planId": "silver",
     "quantity": "20"  ,
     "action": "Activate",   // Activate/Delete/Suspend/Reinstate/Change[new]  
@@ -713,14 +734,12 @@ Response body:
 
 ```
 
-<!-- Review following, might not be needed when this publishes -->
-
 
 ## <a name="mock-api"></a>Макет API
 
-Чтобы помочь вам приступить к работе с разработкой приложений, особенно для создания прототипов и тестирования проектов можно использовать наш макет API. 
+Можно использовать наш макет API помогут вам приступить к работе с разработкой приложений, особенно создания прототипов и тестирование проектов. 
 
-Конечная точка узла: https://marketplaceapi.microsoft.com/api Версия API: 2018-09-15 без проверки подлинности требуется образец Uri: https://marketplaceapi.microsoft.com/api/saas/subscriptions?api-version=2018-09-15
+Конечная точка узла: `https://marketplaceapi.microsoft.com/api` Версия API: `2018-09-15` Проверка подлинности не обязательно пример Uri: `https://marketplaceapi.microsoft.com/api/saas/subscriptions?api-version=2018-09-15`
 
 Любой из вызовов API в этой статье может быть сделан для конечной точки макет узла. Вы сможете получить фиктивные данные назад в качестве отклика.
 
