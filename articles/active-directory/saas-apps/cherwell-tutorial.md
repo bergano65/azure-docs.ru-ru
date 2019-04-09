@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b8a7cd69c7b8d8f44d059fd15718e3493875e20
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: fffaa266a29a500f27759adb7526d1aa6d61ccd0
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57894450"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58915243"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cherwell"></a>Руководство по Интеграция Azure Active Directory с Cherwell
 
@@ -51,7 +51,7 @@ ms.locfileid: "57894450"
 
 Чтобы настроить интеграцию Cherwell с Azure AD, необходимо добавить Cherwell из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Cherwell из коллекции, выполните следующие действия.**
+**Чтобы добавить Cherwell из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -108,7 +108,7 @@ ms.locfileid: "57894450"
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<companyname>.cherwellondemand.com/cherwellclient`.
 
     > [!NOTE]
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь к [группе поддержки Cherwell](https://csm.cherwell.com/contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь к [группе поддержки Cherwell](https://cherwellsupport.com/CherwellPortal). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -149,7 +149,7 @@ ms.locfileid: "57894450"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

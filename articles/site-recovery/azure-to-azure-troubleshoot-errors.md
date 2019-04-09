@@ -6,28 +6,28 @@ author: sujayt
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 11/27/2018
+ms.date: 04/08/2019
 ms.author: sujayt
-ms.openlocfilehash: 34f207b3c82ada0cb20152bb71ae900f5de132cb
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: c7c91a2cf9a25d0a5a4aeed6621e89f9c7cc18f0
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58878321"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59269628"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-issues"></a>Устранение неполадок репликации виртуальных машин из Azure в Azure
 
 В этой статье описаны распространенные проблемы в Azure Site Recovery, которые возникают при репликации и восстановлении виртуальных машин Azure из одного региона в другой, и способы их устранения. Дополнительные сведения о поддерживаемых конфигурациях см. в статье [Azure Site Recovery support matrix for replicating from Azure to Azure](site-recovery-support-matrix-azure-to-azure.md) (Матрица поддержки Azure Site Recovery для репликации виртуальных машин из Azure в Azure).
 
 ## <a name="list-of-errors"></a>Список ошибок
-- **[Проблемы с квотами ресурсов Azure (код ошибки 150097)](#azure-resource-quota-issues-error-code-150097)** 
-- **[Доверенные корневые сертификаты (код ошибки 151066)](#trusted-root-certificates-error-code-151066)** 
-- **[Исходящие подключения для Site Recovery (код ошибки 151195)](#issue-1-failed-to-register-azure-virtual-machine-with-site-recovery-151195-br)** 
+- **[Проблемы с квотами ресурсов Azure (код ошибки 150097)](#azure-resource-quota-issues-error-code-150097)**
+- **[Доверенные корневые сертификаты (код ошибки 151066)](#trusted-root-certificates-error-code-151066)**
+- **[Исходящие подключения для Site Recovery (код ошибки 151195)](#issue-1-failed-to-register-azure-virtual-machine-with-site-recovery-151195-br)**
 
 ## <a name="azure-resource-quota-issues-error-code-150097"></a>Проблемы с квотами ресурсов Azure (код ошибки 150097)
 Чтобы создать виртуальные машины Azure в целевой области, которую планируется использовать в качестве региона аварийного восстановления, необходимо настроить подписку. Кроме того, подписка должна иметь достаточную квоту для создания виртуальных машин определенного размера. По умолчанию Site Recovery выбирает тот же размер для целевой виртуальной машины, что и для исходной. Если соответствующий размер не поддерживается, автоматически выбирается ближайший возможный. Если подходящий размер, поддерживающий конфигурацию исходной виртуальной машины, отсутствует, появится следующее сообщение об ошибке:
 
-**Код ошибки** | **Возможные причины** | **Рекомендации**
+**Код ошибки** | **Возможные причины** | **Рекомендация**
 --- | --- | ---
 150097<br></br>**Сообщение**. Не удалось включить репликацию для виртуальной машины "Имя ВМ". | — Создание виртуальных машин в расположении целевой области может быть запрещено в идентификаторе подписки.</br></br>— Создание виртуальных машин определенных размеров в расположении целевой области может быть запрещено или не иметь достаточную квоту в идентификаторе подписки.</br></br>— Подходящий размер целевой виртуальной машины, соответствующий количеству сетевых адаптеров исходной виртуальной машины (2), не удалось найти для идентификатора подписки в расположении целевой области.| Сведения о том, как в подписке разрешить создание виртуальных машин необходимых размеров в целевом расположении, см. в статье [Запросы на увеличение квоты ядер Resource Manager](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request). После включения повторите неудавшуюся операцию.
 
@@ -45,7 +45,7 @@ ms.locfileid: "58878321"
 151066<br></br>**Сообщение**. Сбой при выполнении настройки Site Recovery. | Необходимые доверенные корневые сертификаты, используемые для авторизации и проверки подлинности, отсутствуют на компьютере. | — На виртуальной машине под управлением Windows должны быть доверенные корневые сертификаты. Дополнительные сведения см. в статье [Настройка доверенных корневых сертификатов и запрещенных сертификатов](https://technet.microsoft.com/library/dn265983.aspx).<br></br>— Для виртуальных машин под управлением Linux следуйте указаниям по доверенным корневым сертификатам, опубликованным распространителем версий операционной системы Linux.
 
 ### <a name="fix-the-problem"></a>Устранение проблемы
-** Windows**
+**Windows**
 
 Установите все последние обновления Windows на виртуальной машине, чтобы на компьютере присутствовали все доверенные корневые сертификаты. При работе в отключенной среде следуйте стандартной процедуре обновления Windows в вашей организации, чтобы получить сертификаты. Если необходимые сертификаты отсутствуют на виртуальной машине, вызовы к службе Site Recovery завершатся ошибкой по соображениям безопасности.
 
@@ -97,29 +97,29 @@ ms.locfileid: "58878321"
 
 8.  Проверьте, были ли созданы для сертификатов хэши субъектов в виде символических ссылок.
 
-    - Команда
+    - Command
 
       ``# ls -l | grep Baltimore``
 
-    - Выходные данные
+    - Вывод:
 
       ``lrwxrwxrwx 1 root root   29 Jan  8 09:48 3ad48a91.0 -> Baltimore_CyberTrust_Root.pem
       -rw-r--r-- 1 root root 1303 Jun  5  2014 Baltimore_CyberTrust_Root.pem``
 
-    - Команда
+    - Command
 
       ``# ls -l | grep VeriSign_Class_3_Public_Primary_Certification_Authority_G5``
 
-    - Выходные данные
+    - Вывод:
 
       ``-rw-r--r-- 1 root root 1774 Jun  5  2014 VeriSign_Class_3_Public_Primary_Certification_Authority_G5.pem
       lrwxrwxrwx 1 root root   62 Jan  8 09:48 facacbc6.0 -> VeriSign_Class_3_Public_Primary_Certification_Authority_G5.pem``
 
-    - Команда
+    - Command
 
       ``# ls -l | grep DigiCert_Global_Root``
 
-    - Выходные данные
+    - Вывод:
 
       ``lrwxrwxrwx 1 root root   27 Jan  8 09:48 399e7759.0 -> DigiCert_Global_Root_CA.pem
       -rw-r--r-- 1 root root 1380 Jun  5  2014 DigiCert_Global_Root_CA.pem``
@@ -139,11 +139,11 @@ ms.locfileid: "58878321"
 
 14. Убедитесь в наличии файлов.  
 
-    - Команда
+    - Command
 
       ``# ls -l 653b494a.0 b204d74a.0 3513523f.0``
 
-    - Выходные данные
+    - Вывод:
 
       ``-rw-r--r-- 1 root root 1774 Jan  8 09:52 3513523f.0
       -rw-r--r-- 1 root root 1303 Jan  8 09:52 653b494a.0
@@ -159,7 +159,7 @@ ms.locfileid: "58878321"
   - Не удается подключиться к конечным точкам восстановления сайта из-за сбоя разрешения DNS.
   - Это чаще наблюдается во время повторной защиты, когда вы выполнили отработку отказа виртуальной машины, но DNS-сервер недоступен из региона аварийного восстановления.
 
-- **Способы устранения:**
+- **Разрешение**
    - Если вы используете настраиваемый DNS-сервер, обеспечьте его доступность из региона аварийного восстановления. Чтобы проверить, есть ли у вас настраиваемый DNS-сервер, выберите "Виртуальная машина", затем щелкните сеть аварийного восстановления и выберите "DNS-серверы". Попробуйте получить доступ к DNS-серверу с виртуальной машины. Если он недоступен, обеспечьте его доступность, выполнив отработку отказа DNS-сервера или обеспечив видимость между сетью аварийного восстановления и DNS-сервером.
 
     ![com-error](./media/azure-to-azure-troubleshoot-errors/custom_dns.png)
@@ -169,7 +169,7 @@ ms.locfileid: "58878321"
 - **Возможная причина** </br>
   - Не удается подключиться к конечным точкам IP4 удостоверения и проверки подлинности Office 365.
 
-- **Способы устранения:**
+- **Разрешение**
   - Обеспечьте доступ Azure Site Recovery для выполнения проверки подлинности диапазонов IP-адресов Office 365.
     Если вы используете правила группы безопасности сети Azure (NSG) или прокси-сервер брандмауэра для управления исходящим сетевым подключением на виртуальной машине, разрешите обмен данными с диапазонами IP-адресов Office 365. Создайте [тег службы AAD](../virtual-network/security-overview.md#service-tags) на основе правила NSG, чтобы разрешить доступ ко всем IP-адресам, соответствующим AAD.
       - При добавлении новых адресов в AAD необходимо создать новые правила NSG.
@@ -181,7 +181,7 @@ ms.locfileid: "58878321"
 - **Возможная причина** </br>
   - Не удается подключиться к конечным точкам службы Azure Site Recovery.
 
-- **Способы устранения:**
+- **Разрешение**
   - Обеспечение доступа Azure Site Recovery к [диапазонам IP-адресов Site Recovery](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-about-networking#outbound-connectivity-for-ip-address-ranges) зависит от региона. Обеспечьте доступ к нужным диапазонам IP-адресов с виртуальной машины.
 
 
@@ -190,7 +190,7 @@ ms.locfileid: "58878321"
   - Пользовательские настройки прокси-сервера недействительны, а агент службы Mobility Service ASR не смог автоматически определить параметры прокси-сервера из Internet Explorer
 
 
-- **Способы устранения:**
+- **Разрешение**
   1. Агент службы Mobility Service обнаруживает настройки прокси-сервера из Internet Explorer в ОС Windows и в каталоге /etc/environment в ОС Linux.
   2. Если вы предпочитаете устанавливать прокси-сервер только для службы Mobility Service ASR, данные прокси-сервера можно внести в файл ProxyInfo.conf, расположенный по адресу:</br>
      - ``/usr/local/InMage/config/`` на ***Linux***
@@ -238,13 +238,13 @@ ms.locfileid: "58878321"
 
 ### <a name="fix-the-problem"></a>Устранение проблемы
 
->[!NOTE] 
+>[!NOTE]
 >
->Обновите модуль AzureRM.Resources перед использованием упомянутого ниже скрипта. 
+>Обновите модуль AzureRM.Resources перед использованием упомянутого ниже скрипта.
 
 Вы можете использовать [скрипт для удаления устаревшей конфигурации ASR](https://gallery.technet.microsoft.com/Azure-Recovery-ASR-script-3a93f412) и удалить устаревшую конфигурацию Site Recovery на виртуальной машине Azure. После удаления устаревшей конфигурации вы должны увидеть виртуальную машину.
 
-## <a name="unable-to-select-virtual-machine-for-protection"></a>Не удалось выбрать виртуальную машину для защиты 
+## <a name="unable-to-select-virtual-machine-for-protection"></a>Не удалось выбрать виртуальную машину для защиты
  **Причина 1.  У некоторых в состоянии сбоя или не отвечает после установки расширения виртуальной машины** <br>
  Выберите "Виртуальные машины" > "Параметры" > "Расширения" и проверьте наличие расширений в состоянии сбоя. Удалите расширение в состоянии сбоя и повторите попытку применить защиту к виртуальной машине.<br>
  **Причина 2.  [Недопустимое состояние подготовки Виртуальной машины](#vms-provisioning-state-is-not-valid-error-code-150019)**
@@ -296,12 +296,12 @@ ms.locfileid: "58878321"
 
 **Код ошибки** | **Возможные причины** | **Рекомендации**
 --- | --- | ---
-150172<br></br>**Сообщение**. Не удалось включить защиту для виртуальной машины, так как ее диск (имя_диска) имеет размер (размер_диска), который меньше минимального поддерживаемого размера, равного 1024 МБ. | Размер диска меньше поддерживаемого размера, равного 1024 МБ| Убедитесь, что размеры дисков находятся в диапазоне поддерживаемых размеров, и повторите операцию. 
+150172<br></br>**Сообщение**. Не удалось включить защиту для виртуальной машины, так как ее диск (имя_диска) имеет размер (размер_диска), который меньше минимального поддерживаемого размера, равного 1024 МБ. | Размер диска меньше поддерживаемого размера, равного 1024 МБ| Убедитесь, что размеры дисков находятся в диапазоне поддерживаемых размеров, и повторите операцию.
 
 ## <a name="enable-protection-failed-as-device-name-mentioned-in-the-grub-configuration-instead-of-uuid-error-code-151126"></a>Включение защити завершилось сбоем, поскольку имя устройства, указанное в конфигурации GRUB вместо UUID (код ошибки 151126)
 
 **Возможная причина:** </br>
-Файлы конфигурации GRUB ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/boot/grub2/grub.cfg" или "/ etc / default / grub") могут содержать значение для параметров **root** и **resume** в качестве фактических имен устройств вместо UUID. Site Recovery требует наличие подхода UUID, поскольку имя устройства может меняться при перезагрузке виртуальной машины, а виртуальная машина может не выдавать одно и то же имя при сбое, что приводит к ошибкам. Например:  </br>
+Файлы конфигурации GRUB ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/boot/grub2/grub.cfg" или "/ etc / default / grub") могут содержать значение для параметров **root** и **resume** в качестве фактических имен устройств вместо UUID. Site Recovery требует наличие подхода UUID, поскольку имя устройства может меняться при перезагрузке виртуальной машины, а виртуальная машина может не выдавать одно и то же имя при сбое, что приводит к ошибкам. Например: </br>
 
 
 - Следующая строка из файла GRUB **/boot/grub2/grub.cfg**. <br>
@@ -317,13 +317,13 @@ ms.locfileid: "58878321"
 Имена устройств должны быть заменены на соответствующий UUID.<br>
 
 
-1. Найти идентификатор UUID устройства с помощью команды «blkid \<имя устройства >». Например: <br>
+1. Найти идентификатор UUID устройства с помощью команды «blkid \<имя устройства >». Например:<br>
    ```
-   blkid /dev/sda1 
+   blkid /dev/sda1
    ```<br>
    ```/dev/sda1: UUID="6f614b44-433b-431b-9ca1-4dd2f6f74f6b" TYPE="swap" ```<br>
-   ```blkid /dev/sda2```<br> 
-   ```/dev/sda2: UUID="62927e85-f7ba-40bc-9993-cc1feeb191e4" TYPE="ext3" 
+   ```blkid /dev/sda2```<br>
+   ```/dev/sda2: UUID="62927e85-f7ba-40bc-9993-cc1feeb191e4" TYPE="ext3"
    ```<br>
 
 
@@ -334,16 +334,16 @@ ms.locfileid: "58878321"
 
 ## Enable protection failed as device mentioned in the GRUB configuration doesn't exist(error code 151124)
 **Possible Cause:** </br>
-The GRUB configuration files ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/boot/grub2/grub.cfg" or "/etc/default/grub") may contain the parameters "rd.lvm.lv" or "rd_LVM_LV" to indicate the LVM device that should be discovered at the time of booting. If these LVM devices doesn't exist, then the protected system itself will not boot and stuck in the boot process. Even the same will be observed with the failover VM. Below are few examples: 
+The GRUB configuration files ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/boot/grub2/grub.cfg" or "/etc/default/grub") may contain the parameters "rd.lvm.lv" or "rd_LVM_LV" to indicate the LVM device that should be discovered at the time of booting. If these LVM devices doesn't exist, then the protected system itself will not boot and stuck in the boot process. Even the same will be observed with the failover VM. Below are few examples:
 
 Few examples: </br>
 
 1. The following line is from the GRUB file **"/boot/grub2/grub.cfg"** on RHEL7. </br>
    *linux16 /vmlinuz-3.10.0-957.el7.x86_64 root=/dev/mapper/rhel_mup--rhel7u6-root ro crashkernel=128M\@64M **rd.lvm.lv=rootvg/root rd.lvm.lv=rootvg/swap** rhgb quiet LANG=en_US.UTF-8*</br>
-   Here the highlighted portion shows that the GRUB has to detect two LVM devices with names **"root"** and **"swap"** from the volume group "rootvg". 
+   Here the highlighted portion shows that the GRUB has to detect two LVM devices with names **"root"** and **"swap"** from the volume group "rootvg".
 1. The following line is from the GRUB file **"/etc/default/grub"** on RHEL7 </br>
    *GRUB_CMDLINE_LINUX="crashkernel=auto **rd.lvm.lv=rootvg/root rd.lvm.lv=rootvg/swap** rhgb quiet"*</br>
-   Here the highlighted portion shows that the GRUB has to detect two LVM devices with names **"root"** and **"swap"** from the volume group "rootvg". 
+   Here the highlighted portion shows that the GRUB has to detect two LVM devices with names **"root"** and **"swap"** from the volume group "rootvg".
 1. The following line is from the GRUB file **"/boot/grub/menu.lst"** on RHEL6 </br>
    *kernel /vmlinuz-2.6.32-754.el6.x86_64 ro root=UUID=36dd8b45-e90d-40d6-81ac-ad0d0725d69e rd_NO_LUKS LANG=en_US.UTF-8 rd_NO_MD SYSFONT=latarcyrheb-sun16 crashkernel=auto rd_LVM_LV=rootvg/lv_root  KEYBOARDTYPE=pc KEYTABLE=us rd_LVM_LV=rootvg/lv_swap rd_NO_DM rhgb quiet* </br>
    Here the highlighted portion shows that the GRUB has to detect two LVM devices with names **"root"** and **"swap"** from the volume group "rootvg".<br>
@@ -360,8 +360,8 @@ Site Recovery mobility service has many components, one of which is called filte
 ## Protection couldn't be enabled as replica managed disk 'diskname-replica' already exists without expected tags in the target resource group( error code 150161
 
 **Cause**: It can occur if the  virtual machine was protected earlier in the past and during disabling the replication, replica disk was not cleaned due to some reason.</br>
-**How to fix:** 
-Delete the mentioned replica disk in the error message and restart the failed protection job again. 
+**How to fix:**
+Delete the mentioned replica disk in the error message and restart the failed protection job again.
 
 ## Next steps
 [Replicate Azure virtual machines](site-recovery-replicate-azure-to-azure.md)

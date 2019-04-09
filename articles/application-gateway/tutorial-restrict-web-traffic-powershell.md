@@ -11,20 +11,20 @@ ms.workload: infrastructure-services
 ms.date: 03/25/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 72d750022f9dc7005a5d20b012b47680ba69a270
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: a5a679c7a81fe7ac5fbe53fc56fe7cf63fb16976
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58446176"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58885287"
 ---
 # <a name="enable-web-application-firewall-using-azure-powershell"></a>Включение брандмауэра веб-приложения с помощью Azure PowerShell
 
 > [!div class="op_single_selector"]
 >
-> - [портал Azure](application-gateway-web-application-firewall-portal.md)
+> - [Портал Azure](application-gateway-web-application-firewall-portal.md)
 > - [PowerShell](tutorial-restrict-web-traffic-powershell.md)
-> - [Интерфейс командной строки Azure](tutorial-restrict-web-traffic-cli.md)
+> - [Инфраструктура CLI Azure](tutorial-restrict-web-traffic-cli.md)
 >
 > 
 
@@ -48,7 +48,7 @@ ms.locfileid: "58446176"
 
 [!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
 
-Если вы решили установить и использовать PowerShell локально, то для работы с этим руководством вам понадобится модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
+Если вы решили установить и использовать PowerShell локально, то для работы с этим руководством вам понадобится модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 

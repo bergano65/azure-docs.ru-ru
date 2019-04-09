@@ -1,21 +1,21 @@
 ---
-title: Руководство. Визуализация данных из обозревателя данных Azure в Power BI
+title: Руководство по Визуализация данных из Azure Data Explorer в Power BI
 description: В этом руководстве вы узнаете, как подключиться к обозревателю данных Azure с помощью Power BI и визуализировать ваши данные.
 services: data-explorer
 author: orspod
-ms.author: v-orspod
+ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: tutorial
 ms.date: 09/24/2018
-ms.openlocfilehash: c04c9d9618cfc507ebdba170e0697aeaeecb1e99
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.openlocfilehash: f253911c1830e606dd47b64aaea1f17cb3478cd5
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51854107"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58757740"
 ---
-# <a name="tutorial-visualize-data-from-azure-data-explorer-in-power-bi"></a>Руководство. Визуализация данных из обозревателя данных Azure в Power BI
+# <a name="tutorial-visualize-data-from-azure-data-explorer-in-power-bi"></a>Руководство по Визуализация данных из Azure Data Explorer в Power BI
 
 Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Power BI — это решение бизнес-аналитики, позволяющее визуализировать данные и делиться результатами с коллегами. В этом руководстве вы сначала научитесь отображать визуальные элементы в обозревателе данных Azure. Затем вы подключитесь к обозревателю данных Azure с помощью Power BI, создадите отчет на основе примера данных и опубликуете отчет в службе Power BI.
 
@@ -34,11 +34,11 @@ ms.locfileid: "51854107"
 
 В дополнение к подпискам Azure и Power BI для работы с этим руководством вам потребуется следующее:
 
-* [тестовый кластер и база данных](create-cluster-database-portal.md);
+* [Тестовый кластер и база данных](create-cluster-database-portal.md)
 
 * [образец данных StormEvents](ingest-sample-data.md); [!INCLUDE [data-explorer-storm-events](../../includes/data-explorer-storm-events.md)]
 
-* [Power BI Desktop](https://powerbi.microsoft.com/get-started/) (выберите **Скачать бесплатно**).
+* [Power BI Desktop](https://powerbi.microsoft.com/get-started/) (выберите **Скачать бесплатно**);
 
 ## <a name="render-visuals-in-azure-data-explorer"></a>Отображение визуальных элементов в обозревателе данных Azure
 

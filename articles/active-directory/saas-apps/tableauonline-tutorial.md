@@ -4,260 +4,247 @@ description: Узнайте, как настроить единый вход Azu
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 1d4b1149-ba3b-4f4e-8bce-9791316b730d
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 05/09/2017
+ms.topic: tutorial
+ms.date: 03/05/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd5e3087c21908600be9cd369a15f3036e5acb2f
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
-ms.translationtype: MT
+ms.openlocfilehash: cdebeefac1a77cd834466a8731d0652136bdbd47
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/03/2019
-ms.locfileid: "58884709"
+ms.locfileid: "58906180"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tableau-online"></a>Руководство по по интеграции Azure Active Directory с Tableau Online
 
 В этом руководстве описано, как интегрировать Tableau Online с Azure Active Directory (Azure AD).
-
 Интеграция Tableau Online с Azure AD обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к Tableau Online.
-- Вы можете включить автоматический вход пользователей в Tableau Online (единый вход) с применением учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+* С помощью Azure AD вы можете контролировать доступ к Tableau Online.
+* Можно включить автоматический вход пользователей в Tableau Online (единый вход) с помощью учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Tableau Online, вам потребуется следующее:
 
-- подписка Azure AD;
-- подписка на Tableau Online с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка на Tableau Online с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Tableau Online из коллекции.
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Tableau Online поддерживает единый вход, инициируемый **поставщиком услуг**.
 
 ## <a name="adding-tableau-online-from-the-gallery"></a>Добавление Tableau Online из коллекции.
+
 Чтобы настроить интеграцию Tableau Online с Azure AD, необходимо добавить Tableau Online из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Tableau Online из коллекции, выполните следующие действия.**
+**Чтобы добавить Tableau Online из коллекции, сделайте следующее:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![ПРИЛОЖЕНИЯ][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Tableau Online**.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/tableauonline-tutorial/tutorial_tableauonline_search.png)
+4. В поле поиска введите **Tableau Online**, выберите **Tableau Online** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-1. На панели результатов выберите **Tableau Online** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+     ![Tableau Online в списке результатов](common/search-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/tableauonline-tutorial/tutorial_tableauonline_addfromgallery.png)
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
-В этом разделе описана настройка и проверка единого входа Azure AD в Tableau Online с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в Tableau Online соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Tableau Online.
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Tableau Online.
+В этом разделе описана настройка и проверка единого входа Azure AD в Tableau Online с использованием тестового пользователя **Britta Simon**.
+Чтобы единый вход функционировал, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Tableau Online.
 
 Чтобы настроить и проверить единый вход Azure AD в Tableau Online, вам потребуется выполнить действия в следующих стандартных блоках:
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Tableau Online](#creating-a-tableau-online-test-user)** требуется для создания в Tableau Online пользователя Britta Simon, связанного с представлением этого пользователя в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в Tableau Online](#configure-tableau-online-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Tableau Online](#create-tableau-online-test-user)** нужно для того, чтобы в Tableau Online существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как на портале Azure включить единый вход Azure AD и настроить его в приложении Tableau Online.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить в Azure AD единого входа в Tableau Online, выполните следующие действия.**
+Чтобы настроить единый вход Azure AD в Tableau Online, сделайте следующее:
 
-1. На портале Azure на странице интеграции с приложением **Tableau Online** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Tableau Online** щелкните **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Настройка единого входа](./media/tableauonline-tutorial/tutorial_tableauonline_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Tableau Online** выполните следующие действия:
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Настройка единого входа](./media/tableauonline-tutorial/tutorial_tableauonline_url.png)
-    
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://sso.online.tableau.com`
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    2. В текстовом поле **Идентификатор** введите URL-адрес: `https://sso.online.tableau.com/public/sp/metadata?alias=<entityid>`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    ![Настройка единого входа](./media/tableauonline-tutorial/tutorial_tableauonline_certificate.png) 
+    ![Сведения о домене и URL-адресах единого входа для приложения Tableau Online](common/sp-identifier.png)
 
-1. Нажмите кнопку **Сохранить** .
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес: `https://sso.online.tableau.com/public/sp/login?alias=<entityid>`
 
-    ![Настройка единого входа](./media/tableauonline-tutorial/tutorial_general_400.png)
+    b. В текстовое поле **Идентификатор (сущности)** введите URL-адрес: `https://sso.online.tableau.com/public/sp/metadata?alias=<entityid>`
+
+    > [!NOTE]
+    > Значение `<entityid>` см. на странице **настройки Tableau Online**. Значением идентификатора сущности является **идентификатор Azure AD** на странице **настройки Tableau Online**.
+
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
+
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
+
+6. Требуемые URL-адреса вы можете скопировать на странице **настройки Tableau Online**.
+
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+    а) URL-адрес входа.
+
+    b. Идентификатор Azure AD
+
+    c. URL-адрес выхода.
+
+### <a name="configure-tableau-online-single-sign-on"></a>Настройка единого входа в Tableau Online
 
 1. В другом окне браузера войдите в приложение Tableau Online. Выберите **Параметры**, а затем щелкните **Проверка подлинности**.
-   
+
     ![Настройка единого входа](./media/tableauonline-tutorial/tutorial_tableauonline_09.png)
-    
-1. Чтобы включить SAML, в разделе **Типы проверки подлинности** установите флажок **Single sign-on with SAML** (Единый вход с помощью SAML).
-   
+
+2. Чтобы включить SAML, в разделе **Типы проверки подлинности** установите флажок **Enable an additional authentication method** (Включить дополнительный метод проверки подлинности) и флажок**SAML**.
+
     ![Настройка единого входа](./media/tableauonline-tutorial/tutorial_tableauonline_12.png)
 
-1. Прокрутите вниз до раздела **Import metadata file into Tableau Online** (Импорт файла метаданных в Tableau Online).  Нажмите кнопку "Обзор" и импортируйте файл метаданных, скачанный из Azure AD. Нажмите кнопку **Применить**.
-   
+3. Прокрутите вниз до раздела **Import metadata file into Tableau Online** (Импорт файла метаданных в Tableau Online).  Нажмите кнопку "Обзор" и импортируйте файл метаданных, скачанный из Azure AD. Нажмите кнопку **Применить**.
+
    ![Настройка единого входа](./media/tableauonline-tutorial/tutorial_tableauonline_13.png)
 
-1. В разделе **Match assertions** (Сопоставление утверждений) вставьте соответствующее имя утверждения поставщика удостоверений для **электронной почты**, **имени** и **фамилии**. Чтобы получить эти сведения из Azure AD, сделайте следующее: 
+4. В разделе **Match assertions** (Сопоставление утверждений) вставьте соответствующее имя утверждения поставщика удостоверений для **электронной почты**, **имени** и **фамилии**. Чтобы получить эти сведения из Azure AD, сделайте следующее: 
   
     a. Перейдите на страницу интеграции с приложением **Tableau Online** портала Azure.
-    
-    2. В разделе атрибутов установите флажок **Просмотреть и изменить все другие атрибуты пользователей** и задайте эти атрибуты. 
-    
+
+    b. В разделе утверждений и атрибутов пользователя щелкните значок правки.
+
    ![Настройка единого входа](./media/tableauonline-tutorial/attributesection.png)
-      
+
     c. Скопируйте значение пространства имен для этих атрибутов: имя, электронная почта и фамилия, выполнив следующие действия:
 
    ![единого входа Azure AD](./media/tableauonline-tutorial/tutorial_tableauonline_10.png)
-    
-    d. Щелкните значение **user.givenname**. 
-    
+
+    d. Щелкните значение **user.givenname**.
+
     д. Скопируйте значение из текстового поля **Пространство имен**.
 
-   ![Настройка единого входа](./media/tableauonline-tutorial/attributesection2.png)
+    ![Настройка единого входа](./media/tableauonline-tutorial/attributesection2.png)
 
-    Е. Чтобы скопировать значения пространства имен для электронной почты и фамилии, выполните описанные выше шаги.
+    Е. Чтобы скопировать значения пространства имен для электронной почты и фамилии, повторите описанные выше шаги.
 
-    ж. Перейдите к приложению Tableau Online, а затем задайте в разделе **Tableau Online Attributes** (Атрибуты Tableau Online) следующее:
-     * электронный адрес: **mail** или **userprincipalname**;
-     * имя: **givenname**
-     * фамилия: **surname**
-   
-   ![Настройка единого входа](./media/tableauonline-tutorial/tutorial_tableauonline_14.png)
+    ж. Перейдите к приложению Tableau Online и задайте в разделе **Утверждения и атрибуты пользователя** следующее:
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+    * электронный адрес: **mail** или **userprincipalname**;
+
+    * имя: **givenname**
+
+    * фамилия: **surname**
+
+    ![Настройка единого входа](./media/tableauonline-tutorial/tutorial_tableauonline_14.png)
+
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-![Создание пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия.**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/tableauonline-tutorial/create_aaduser_01.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
-    
-    ![Создание тестового пользователя Azure AD](./media/tableauonline-tutorial/create_aaduser_02.png) 
+3. В разделе свойств пользователя сделайте следующее:
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
- 
-    ![Создание тестового пользователя Azure AD](./media/tableauonline-tutorial/create_aaduser_03.png) 
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. На странице диалогового окна **Пользователь** выполните следующие действия.
- 
-    ![Создание тестового пользователя Azure AD](./media/tableauonline-tutorial/create_aaduser_04.png) 
+    а. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например BrittaSimon@contoso.com.
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
-
-    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
-
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
- 
-### <a name="creating-a-tableau-online-test-user"></a>Создание тестового пользователя Tableau Online
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Tableau Online.
-
-1. В приложении **Tableau Online** щелкните **Settings** (Параметры), а затем выберите раздел **Authentication** (Проверка подлинности). Прокрутите вниз до раздела **Выбор пользователей** . Щелкните **Add Users** (Добавить пользователей), а затем — **Enter Email Addresses** (Введите адреса электронной почты).
-   
-    ![Создание тестового пользователя Azure AD](./media/tableauonline-tutorial/tutorial_tableauonline_15.png)
-1. Установите переключатель **Add users for single sign-on (SSO) authentication**(Добавить пользователей для проверки подлинности единого входа). В текстовое поле **Enter Email Addresses** (Введите адреса электронной почты) добавьте britta.simon@contoso.com.
-   
-    ![Создание тестового пользователя Azure AD](./media/tableauonline-tutorial/tutorial_tableauonline_11.png)
-1. Нажмите кнопку **Создать**.
-
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к Tableau Online.
 
-![Назначение пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Tableau Online**.
 
-**Чтобы назначить пользователя Britta Simon в Tableau Online, выполните следующие действия.**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Tableau Online**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на Tableau Online в списке приложений](common/all-applications.png)
 
-1. В списке приложений выберите **Tableau Online**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Настройка единого входа](./media/tableauonline-tutorial/tutorial_tableauonline_app.png) 
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Назначение пользователя][202] 
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Назначение пользователя][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-tableau-online-test-user"></a>Создание тестового пользователя Tableau Online
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+В этом разделе описано, как создать пользователя Britta Simon в приложении Tableau Online.
 
-Цель этого раздела — проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+1. В приложении **Tableau Online** щелкните **Settings** (Параметры), а затем выберите раздел **Authentication** (Проверка подлинности). Прокрутите вниз до раздела **Управление пользователями**. Щелкните **Add Users** (Добавить пользователей), а затем — **Enter Email Addresses** (Ввести адреса электронной почты).
+  
+    ![Создание тестового пользователя Azure AD](./media/tableauonline-tutorial/tutorial_tableauonline_15.png)
 
-Щелкнув элемент Tableau Online на панели доступа, вы автоматически войдете в приложение Tableau Online.
+2. Выберите **Add users for (SAML) authentication** (Добавить пользователей для проверки подлинности (SAML). В текстовое поле **Enter Email Addresses** (Ввести адреса электронной почты) добавьте britta.simon@contoso.com.
+  
+    ![Создание тестового пользователя Azure AD](./media/tableauonline-tutorial/tutorial_tableauonline_11.png)
+
+3. Щелкните **Добавить пользователей**.
+
+### <a name="test-single-sign-on"></a>Проверка единого входа
+
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+
+Щелкнув плитку Tableau Online на Панели доступа, вы автоматически войдете в приложение Tableau Online, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [ Список учебников по интеграции приложений SaaS с Azure Active Directory ](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory? ](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/tableauonline-tutorial/tutorial_general_01.png
-[2]: ./media/tableauonline-tutorial/tutorial_general_02.png
-[3]: ./media/tableauonline-tutorial/tutorial_general_03.png
-[4]: ./media/tableauonline-tutorial/tutorial_general_04.png
-
-[100]: ./media/tableauonline-tutorial/tutorial_general_100.png
-
-[200]: ./media/tableauonline-tutorial/tutorial_general_200.png
-[201]: ./media/tableauonline-tutorial/tutorial_general_201.png
-[202]: ./media/tableauonline-tutorial/tutorial_general_202.png
-[203]: ./media/tableauonline-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

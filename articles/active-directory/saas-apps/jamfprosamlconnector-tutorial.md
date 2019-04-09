@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Jamf Pro | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Jamf Pro | Документация Майкрософт
 description: Сведения о том, как настроить единый вход между Azure Active Directory и Jamf Pro.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50349d008e3c2a7a8a09fd3e2d9e96097acc0c9e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 18b575b74c80499f2ddd6648bf051b5245077d2f
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57855824"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58906146"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-jamf-pro"></a>Руководство. Интеграция Azure Active Directory с Jamf Pro
+# <a name="tutorial-azure-active-directory-integration-with-jamf-pro"></a>Руководство по Интеграция Azure Active Directory с Jamf Pro
 
 В этом руководстве описано, как интегрировать Jamf Pro с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Jamf Pro обеспечивает следующие преимущества:
@@ -105,9 +105,9 @@ ms.locfileid: "57855824"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Jamf Pro](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.jamfcloud.com/saml/metadata`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<subdomain>.jamfcloud.com/saml/metadata`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.jamfcloud.com/saml/SSO`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.jamfcloud.com/saml/SSO`
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -160,11 +160,11 @@ ms.locfileid: "57855824"
 
     ![Конфигурация Jamf Pro](./media/jamfprosamlconnector-tutorial/configure3.png)
 
-    a. Выберите пункт **Другой** в раскрывающемся списке **IDENTITY PROVIDER** (Поставщик удостоверений).
+    a. Выберите пункт **Other** (Другой) в раскрывающемся списке **IDENTITY PROVIDER** (Поставщик удостоверений).
 
     b. В текстовом поле **OTHER PROVIDER** (Другой поставщик) введите **Azure AD**.
 
-    c. Выберите элемент **URL-адрес метаданных** в раскрывающемся списке **IDENTITY PROVIDER METADATA SOURCE** (Источник метаданных поставщика удостоверений) и затем в следующем текстовом поле вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure.
+    c. Выберите элемент **Metadata URL** (URL-адрес метаданных) в раскрывающемся списке **IDENTITY PROVIDER METADATA SOURCE** (Источник метаданных поставщика удостоверений) и затем в следующем текстовом поле вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure.
 
     d. Скопируйте значение **Entity ID** (Идентификатор сущности) и вставьте его в текстовое поле **Идентификатор (сущности)** в разделе **Домены и URL-адреса приложения Jamf Pro** на портале Azure.
 
@@ -191,7 +191,7 @@ ms.locfileid: "57855824"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -228,7 +228,7 @@ ms.locfileid: "57855824"
 
 Чтобы пользователи Azure AD могли выполнять вход в Jamf Pro, они должны быть подготовлены в Jamf Pro. В случае с Jamf Pro подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
+**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
 
 1. Войдите на веб-сайт Jamf Pro организации в качестве администратора.
 

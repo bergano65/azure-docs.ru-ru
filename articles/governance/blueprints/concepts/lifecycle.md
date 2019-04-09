@@ -1,7 +1,6 @@
 ---
 title: Общие сведения о жизненном цикле схемы
 description: Сведения о жизненном цикле схемы и подробные сведения о каждом этапе цикла.
-services: blueprints
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 02/01/2019
@@ -9,12 +8,12 @@ ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 71a5233c6d5af21d7bc5430cda14e156e16d5cd4
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: a57085fa37efd56a46b740d8cbc4278dc53cf39f
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58001576"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59266619"
 ---
 # <a name="understand-the-lifecycle-of-an-azure-blueprint"></a>Общие сведения о жизненном цикле схемы Azure Blueprints
 
@@ -103,8 +102,8 @@ ms.locfileid: "58001576"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Общие сведения об использовании [статических и динамических параметров](parameters.md).
-- Узнать, как настроить [схемы, в которой порядок последовательности](sequencing-order.md).
-- Узнайте, как сделать использование [схемы, в которой блокировки ресурсов](resource-locking.md).
-- Узнайте, как [обновить существующие назначения](../how-to/update-existing-assignments.md).
-- Устранить проблемы во время назначения плана с [устранения общих неполадок](../troubleshoot/general.md).
+- Узнайте, как использовать [статические и динамические параметры](parameters.md).
+- Научитесь настраивать [последовательность схемы](sequencing-order.md).
+- Узнайте, как применять [блокировку ресурсов схемы](resource-locking.md).
+- Узнайте, как [обновлять существующие назначения](../how-to/update-existing-assignments.md).
+- Устраняйте проблемы, возникающие во время назначения схемы, с помощью [общих инструкций по устранению неполадок](../troubleshoot/general.md).

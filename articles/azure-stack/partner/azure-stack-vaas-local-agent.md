@@ -10,26 +10,26 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 11/26/2018
+ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.lastreviewed: 11/26/2018
+ms.lastreviewed: 03/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 23bbcbf6947100db26f31562c44f8073e16e986f
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: cfea454b20b010148eba063ec724e55134944ac3
+ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55239347"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58482935"
 ---
 # <a name="deploy-the-local-agent"></a>Развертывание локального агента.
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
-Узнайте, как использовать локальный агент модели "проверка как услуга" (VaaS) для проверки оборудования. Локальный агент необходимо развернуть в решении Azure Stack, которое проверяется до выполнения проверочных тестов.
+Узнайте, как использовать локальный агент модели "проверка как услуга" (VaaS) для запуска проверочных тестов. Локальный агент необходимо развернуть перед запуском проверочных тестов.
 
 > [!Note]  
-> Необходимо убедиться в том, что компьютер, на котором выполняется локальный агент, не потеряет исходящий доступ к Интернету. Этот компьютер должен быть доступен только для пользователей, которые авторизованы для использования VaaS от имени клиента.
+> Убедитесь в том, что компьютер, на котором выполняется локальный агент, не потеряет исходящий доступ к Интернету. Этот компьютер должен быть доступен только для пользователей, которые авторизованы для использования VaaS от имени клиента.
 
 Чтобы развернуть локальный агент, выполните приведенные ниже действия.
 
@@ -39,7 +39,7 @@ ms.locfileid: "55239347"
 
 ## <a name="download-and-start-the-local-agent"></a>Скачивание и запуск локального агента
 
-Скачайте агент на компьютер, соответствующий требованиям, в центре обработки данных, который не является частью системы Azure Stack, но имеет доступ ко всем конечным точкам Azure Stack.
+Скачайте агент на компьютер в центре обработки данных, который соответствует требованиям и имеет доступ ко всем конечным точкам Azure Stack. Компьютер не должен быть частью системы Azure Stack или размещаться в облаке Azure Stack.
 
 ### <a name="machine-prerequisites"></a>Предварительные требования к компьютерам
 
@@ -52,14 +52,12 @@ ms.locfileid: "55239347"
 - не менее 200 ГБ дискового пространства;
 - постоянное сетевое подключение к Интернету.
 
-Azure Stack является тестируемой системы. Компьютер не должен быть частью Azure Stack или располагаться в облаке Azure Stack.
-
 ### <a name="download-and-install-the-agent"></a>Загрузка и установка агента
 
 1. Откройте Windows PowerShell в командной строке с повышенными привилегиями на компьютере, который будет использоваться для выполнения тестов.
 2. Выполните следующую команду, чтобы скачать локальный агент:
 
-    ```PowerShell
+    ```powershell
     Invoke-WebRequest -Uri "https://storage.azurestackvalidation.com/packages/Microsoft.VaaSOnPrem.TaskEngineHost.latest.nupkg" -outfile "OnPremAgent.zip"
     Expand-Archive -Path ".\OnPremAgent.zip" -DestinationPath VaaSOnPremAgent -Force
     Set-Location VaaSOnPremAgent\lib\net46
@@ -67,7 +65,7 @@ Azure Stack является тестируемой системы. Компью
 
 3. Выполните следующую команду, чтобы установить зависимости локального агента:
 
-    ```PowerShell
+    ```powershell
     $ServiceAdminCreds = New-Object System.Management.Automation.PSCredential "<aadServiceAdminUser>", (ConvertTo-SecureString "<aadServiceAdminPassword>" -AsPlainText -Force)
     Import-Module .\VaaSPreReqs.psm1 -Force
     Install-VaaSPrerequisites -AadTenantId $AadTenantId `
@@ -95,7 +93,7 @@ Azure Stack является тестируемой системы. Компью
 
 ## <a name="checks-before-starting-the-tests"></a>Проверки перед запуском тестов
 
-В рамках тестов выполняются удаленные действия. Компьютеру, на котором выполняются тесты, необходим доступ к конечным точкам Azure Stack. В противном случае тесты не будут работать. При использовании VaaS на локальном агенте нужен компьютер, на котором будет выполняться агент. Чтобы убедиться, что компьютер имеет доступ к конечным точкам Azure Stack, выполните следующие проверки.
+В рамках тестов выполняются удаленные операции. Компьютеру, на котором выполняются тесты, необходим доступ к конечным точкам Azure Stack. В противном случае тесты не будут работать. При использовании VaaS на локальном агенте нужен компьютер, на котором будет выполняться агент. Чтобы убедиться, что компьютер имеет доступ к конечным точкам Azure Stack, выполните следующие проверки.
 
 1. Проверьте, что базовый URI доступен. Откройте командную строку или оболочку Bash и запустите следующую команду, заменив `<EXTERNALFQDN>` внешним полным доменным именем среды:
 
@@ -115,14 +113,15 @@ Azure Stack является тестируемой системы. Компью
 
 2. Выполните следующую команду:
 
-    ```PowerShell
+    ```powershell
     .\Microsoft.VaaSOnPrem.TaskEngineHost.exe -u <VaaSUserId> -t <VaaSTenantId>
     ```
 
       **Параметры**  
+
     | Параметр | ОПИСАНИЕ |
     | --- | --- |
-    | VaaSUserId | Идентификатор пользователя, используемый для входа на портал VaaS (например, UserName@Contoso.com). |
+    | VaaSUserId | Идентификатор пользователя, используемый для входа на портал VaaS (например, имя_пользователя\@Contoso.com). |
     | VaaSTenantId | Идентификатор клиента Azure AD для учетной записи Azure, зарегистрированный с помощью проверки как услуги. |
 
     > [!Note]  

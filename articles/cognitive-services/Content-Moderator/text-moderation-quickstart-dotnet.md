@@ -10,14 +10,14 @@ ms.subservice: content-moderator
 ms.topic: quickstart
 ms.date: 02/07/2019
 ms.author: sajagtap
-ms.openlocfilehash: cc8cbc19f416e6e80d2d0fdfb4862536da7f0ce2
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: 09fd58fa33873c06ac5dab4970af199bc3030479
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56312248"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58756535"
 ---
-# <a name="quickstart-analyze-text-content-for-objectionable-material-in-c"></a>Краткое руководство. Анализ текста для выявления нежелательного содержимого с помощью C# 
+# <a name="quickstart-analyze-text-content-for-objectionable-material-in-c"></a>Краткое руководство. Анализ текста для выявления нежелательного содержимого с помощью C#
 
 В этой статье содержатся сведения и примеры кода, которые помогут вам приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы узнаете, как выполнять фильтрацию по терминам и классифицировать содержимое текста с целью ограничения потенциально нежелательного материала.
 

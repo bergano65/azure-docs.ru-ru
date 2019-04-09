@@ -9,19 +9,19 @@ editor: ''
 ms.service: active-directory
 ms.subservice: develop
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 03/20/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b00a4f9ee561e8e9356b36d4a14b4bcb4f9a3357
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
-ms.translationtype: MT
+ms.openlocfilehash: c5e05faa37baf3c25be70a9500f1131cc0ea9f66
+ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58202866"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58629411"
 ---
 # <a name="call-microsoft-graph-api-from-a-universal-windows-platform-application-xaml"></a>Вызов API Microsoft Graph из приложения для универсальной платформы Windows (XAML)
 
@@ -37,7 +37,7 @@ ms.locfileid: "58202866"
 
 ## <a name="how-this-guide-works"></a>Принцип работы с руководством
 
-![Показано, как работает пример приложения, созданный в этом руководстве](./media/tutorial-v2-windows-uwp/uwp-intro-updated.png)
+![Схема работы примера приложения, создаваемого в этом кратком руководстве](./media/tutorial-v2-windows-uwp/uwp-intro-updated.png)
 
 В этом руководстве создается пример приложения для универсальной платформы Windows, которое выполняет запрос к API Microsoft Graph или веб-API, принимающему маркеры от конечной точки Azure Active Directory версии 2.0. В этом сценарии маркер добавляется в запросы HTTP с помощью заголовка авторизации. Получение и продление маркеров выполняет библиотека проверки подлинности Майкрософт (MSAL).
 

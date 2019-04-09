@@ -1,19 +1,18 @@
 ---
-title: Краткое руководство по началу работы с Apache Kafka в Azure HDInsight
+title: Краткое руководство. Настройка Apache Kafka в HDInsight с помощью Azure Resource Manager
 description: В этом кратком руководстве вы узнаете, как создать кластер Apache Kafka в Azure HDInsight с помощью портала Azure. Вы также узнаете, что такое разделы, подписчики и потребители в Kafka.
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
-ms.custom: mvc,hdinsightactive
+ms.custom: mvc
 ms.topic: quickstart
 ms.date: 04/16/2018
-ms.openlocfilehash: b359716db5a30f8a77b9f54c2b0bc7b4d00a7f39
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: c1b8f711a6984a6134e6df0ae6ae12bf0b62cc0d
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58225762"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58757668"
 ---
 # <a name="quickstart-create-an-apache-kafka-on-hdinsight-cluster"></a>Краткое руководство. Создание Apache Kafka в кластере HDInsight
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по совместному использованию привязок между сеансами и устройствами с помощью Пространственных привязок Azure | Документация Майкрософт
+title: Руководство. Совместное использование Пространственных привязок Azure между сеансами и устройствами | Документация Майкрософт
 description: Из этого руководства вы узнаете, как совместно использовать идентификаторы пространственных привязок Azure между устройствами Android и iOS в Unity с внутренней службой.
 author: ramonarguelles
 manager: vicenterivera
@@ -8,19 +8,16 @@ ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 7d9fe58b7db60513eed81aae628ebd7ca754a53a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ff9868dd7347812eb6ef566288ec364bc89b6955
+ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57901310"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58629309"
 ---
-# <a name="tutorial-sharing-across-sessions-and-devices-with-azure-spatial-anchors"></a>Руководство по совместному использованию привязок между сеансами и устройствами с помощью Пространственных привязок Azure
+# <a name="tutorial-share-azure-spatial-anchors-across-sessions-and-devices"></a>Руководство по Совместное использование Пространственных привязок Azure между сеансами и устройствами
 
-Из этого руководства вы узнаете, как использовать [Пространственные привязки Azure](../overview.md), чтобы:
-
-1. Создавать привязки в одном сеансе, а затем использовать их в другом сеансе на том же или на другом устройстве, например в другой день.
-2. Создавать привязки, которые могут быть одновременно обнаружены несколькими устройствами в одном и том же расположении.
+В этом руководстве описано, как использовать [Пространственные привязки Azure](../overview.md), чтобы создавать привязки во время одного сеанса, а затем обнаруживать их на том же или на другом устройстве. Те же самые привязки могут быть одновременно обнаружены несколькими устройствами в одном и том же расположении.
 
 ![Сохраняемость](./media/persistence.gif)
 
@@ -51,10 +48,6 @@ ms.locfileid: "57901310"
 
 [!INCLUDE [Publish Azure](../../../includes/spatial-anchors-publish-azure.md)]
 
-## <a name="open-the-sample-project-in-unity"></a>Открытие примера проекта в Unity
-
-[!INCLUDE [Clone Sample Repo](../../../includes/spatial-anchors-clone-sample-repository.md)]
-
 [!INCLUDE [Run Share Anchors Sample](../../../includes/spatial-anchors-run-share-sample.md)]
 
 [!INCLUDE [Clean-up section](../../../includes/clean-up-section-portal.md)]
@@ -63,7 +56,7 @@ ms.locfileid: "57901310"
 
 В этом руководстве вы развернули веб-приложение ASP.NET Core в Azure, а затем настроили и развернули приложение Unity. Вы создали в приложении пространственные привязки и предоставили к ним доступ другим устройствам с помощью веб-приложения ASP.NET Core.
 
-Сведения о том, как улучшить веб-приложение ASP.NET Core, чтобы использовать Azure Cosmos DB для хранения общих пространственных привязок, см. в следующем руководстве.
+Сведения о том, как улучшить веб-приложение ASP.NET Core, чтобы использовать Azure Cosmos DB для хранения общих идентификаторов пространственных привязок, см. в следующем руководстве. Azure Cosmos DB обеспечивает сохраняемость веб-приложения ASP.NET Core. Это позволит приложению, создав привязку в один день, обнаружить ее снова спустя несколько дней с помощью идентификатора привязки, сохраненного в веб-приложении.
 
 > [!div class="nextstepaction"]
 > [Руководство Совместное использование привязок между сеансами и устройствами с помощью Пространственных привязок Azure и серверной части службы Azure Cosmos DB](./tutorial-use-cosmos-db-to-store-anchors.md)

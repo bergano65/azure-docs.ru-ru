@@ -18,12 +18,12 @@ ms.date: 03/23/2019
 ms.author: joflore
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ceaf472f53c48b17701b14fdf4107045c2e43fdc
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: a92d10f67533efc2f5893b012aefbcb92efee59a
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58521981"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59258748"
 ---
 # <a name="what-are-access-controls-in-azure-active-directory-conditional-access"></a>Элементы управления условным доступом в Azure Active Directory
 
@@ -58,7 +58,7 @@ ms.locfileid: "58521981"
 - были выполнены все выбранные элементы управления (*И*);
 - был выполнен один выбранный элемент управления (*И*).
 
-![Контроль](./media/controls/17.png)
+![Контроль](./media/controls/18.png)
 
 ### <a name="multi-factor-authentication"></a>Многофакторная Идентификация
 
@@ -76,9 +76,9 @@ ms.locfileid: "58521981"
 
 Ваше устройство должно быть зарегистрировано в Azure AD, прежде чем его можно будет пометить как соответствующее. Чтобы зарегистрировать устройство, у вас есть три варианта: 
 
-- [устройства, зарегистрированные в Azure AD](../devices/overview.md#azure-ad-registered-devices);
-- [устройства, присоединенные к Azure AD](../devices/overview.md#azure-ad-joined-devices);  
-- [устройства, использующие гибридное присоединение к Azure AD](../devices/overview.md#hybrid-azure-ad-joined-devices).
+- [Устройства, зарегистрированные в Azure AD](../devices/overview.md#azure-ad-registered-devices)
+- [Устройства, присоединенные к Azure AD](../devices/overview.md#azure-ad-joined-devices)  
+- [Гибридные устройства, присоединенные к Azure AD](../devices/overview.md#hybrid-azure-ad-joined-devices)
 
 Дополнительные сведения см. в статье [Практическое руководство. Требование использовать только управляемые устройства для доступа к облачным приложениям с помощью условного доступа](require-managed-devices.md).
 
@@ -94,6 +94,18 @@ ms.locfileid: "58521981"
 Можно использовать [политики защиты приложений Intune](https://docs.microsoft.com/intune/app-protection-policy), чтобы защитить данные компании независимо от какого-либо решения по управлению мобильными устройствами (MDM).
 
 Используя утвержденные клиентские приложения, можно требовать поддержку [политик защиты приложений Intune](https://docs.microsoft.com/intune/app-protection-policy) клиентским приложением, которое пытается получить доступ к вашим облачным приложениям. Например, можно ограничить доступ приложения Outlook к Exchange Online. Политика условного доступа, требующая утвержденное клиентское приложение, также называется [политикой условного доступа на основе приложений](app-based-conditional-access.md). Список поддерживаемых утвержденных клиентских приложений приведен в разделе [Требование утвержденного клиентского приложения](technical-reference.md#approved-client-app-requirement).
+
+### <a name="app-protection-policy-preview"></a>Политика защиты приложений (Предварительная версия)
+
+Так как ваши сотрудники используют мобильные устройства как в личных целях, так и для выполнения рабочих задач, вам может потребоваться возможность защитить данные компании, предоставляемые на устройствах, даже в том случае, если вы не управляете этими устройствами.
+Можно использовать [политики защиты приложений Intune](https://docs.microsoft.com/intune/app-protection-policy), чтобы защитить данные компании независимо от какого-либо решения по управлению мобильными устройствами (MDM).
+
+С политикой защиты приложений, можно ограничить доступ для клиентских приложений, которые передали в Azure AD имеет получение [политики защиты приложений Intune](https://docs.microsoft.com/intune/app-protection-policy). Например можно ограничить доступ к Exchange Online приложению Outlook, имеющего политику защиты приложений Intune. Политику условного доступа, который требуется политика защиты приложений также называется [политики условного доступа на основе защиты приложений](app-protection-based-conditional-access.md). 
+
+Необходимо зарегистрировать устройство в Azure AD, прежде чем приложение может быть помечен как защищенный политики.
+
+Список поддерживаемых политик защищенных клиентских приложений, см. в разделе [требование политики защиты приложений](technical-reference.md#app-protection-policy-requirement).
+
 
 ### <a name="terms-of-use"></a>Условия использования
 
@@ -112,8 +124,8 @@ ms.locfileid: "58521981"
 Сейчас поставщики включают следующие совместимые службы:
 
 - [Duo Security](https://duo.com/docs/azure-ca)
-- [Entrust Datacard](https://www.entrustdatacard.com/products/authentication/intellitrust);
-- [Ping Identity](https://documentation.pingidentity.com/pingid/pingidAdminGuide/index.shtml#pid_c_AzureADIntegration.html);
+- [Entrust Datacard](https://www.entrustdatacard.com/products/authentication/intellitrust)
+- [Ping Identity](https://documentation.pingidentity.com/pingid/pingidAdminGuide/index.shtml#pid_c_AzureADIntegration.html)
 - RSA
 - [SecureAuth](https://docs.secureauth.com/pages/viewpage.action?pageId=47238992#)
 - [Silverfort](https://www.silverfort.io/company/using-silverfort-mfa-with-azure-active-directory/)
@@ -162,9 +174,9 @@ ms.locfileid: "58521981"
 
 Дополнительные сведения см. на следующих ресурсах:
 
-- [Включение ограниченного доступа с помощью SharePoint Online](https://aka.ms/spolimitedaccessdocs)
+- [Включение ограниченный доступ в SharePoint Online](https://aka.ms/spolimitedaccessdocs)
 
-- [Включение ограниченного доступа с помощью Exchange Online](https://aka.ms/owalimitedaccess)
+- [Ограниченный доступ с Exchange Online](https://aka.ms/owalimitedaccess)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

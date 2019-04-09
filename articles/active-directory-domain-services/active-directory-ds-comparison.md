@@ -38,7 +38,7 @@ ms.locfileid: "58892302"
 | --- |:---:|:---:|
 | [**Управляемая служба**](active-directory-ds-comparison.md#managed-service) |**&#x2713;** |**&#x2715;** |
 | [**Защищенные развернутые службы**](active-directory-ds-comparison.md#secure-deployments) |**&#x2713;** |Администратор должен обеспечить безопасное развертывание. |
-| [**Сервер DNS**](active-directory-ds-comparison.md#dns-server) | **&#x2713;** (управляемая служба) |**&#x2713;** |
+| [**Сервер DNS**](active-directory-ds-comparison.md#dns-server) |**&#x2713;** (управляемая служба) |**&#x2713;** |
 | [**Права администратора домена или предприятия**](active-directory-ds-comparison.md#domain-or-enterprise-administrator-privileges) |**&#x2715;** |**&#x2713;** |
 | [**Присоединение к домену**](active-directory-ds-comparison.md#domain-join) |**&#x2713;** |**&#x2713;** |
 | [**Аутентификация в домене с помощью NTLM и Kerberos**](active-directory-ds-comparison.md#domain-authentication-using-ntlm-and-kerberos) |**&#x2713;** |**&#x2713;** |

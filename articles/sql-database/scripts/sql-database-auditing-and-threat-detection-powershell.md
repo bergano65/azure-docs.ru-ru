@@ -3,7 +3,7 @@ title: Пример для PowerShell. Аудит и обнаружение уг
 description: Пример сценария Azure PowerShell для настройки аудита и обнаружения угроз в базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
-ms.subservice: threat-detection
+ms.subservice: security
 ms.custom: security
 ms.devlang: PowerShell
 ms.topic: sample
@@ -12,12 +12,12 @@ ms.author: ronitr
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: d206d3f95f28fe058e836c3d0abbf0f270329657
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 5e838aa0bda0620958e679ab614cc238df607fdd
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57857323"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58891537"
 ---
 # <a name="use-powershell-to-configure-sql-database-auditing-and-threat-detection"></a>Настройка аудита и обнаружения угроз для базы данных SQL с помощью PowerShell
 

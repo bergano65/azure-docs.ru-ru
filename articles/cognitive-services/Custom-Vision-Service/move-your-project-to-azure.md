@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: anroth
 ms.openlocfilehash: 6fac6531ea0a39796de13f95aee33b30dc91f131
-ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
-ms.translationtype: HT
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59056883"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59274456"
 ---
 # <a name="how-to-move-your-limited-trial-project-to-azure"></a>Как переместить проект ограниченной пробной версии в Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "59056883"
 
 [Скрипт переноса](https://github.com/Azure-Samples/custom-vision-move-project) позволяет повторно создать проект, загрузки, а затем загружает все теги, области и образы в текущей итерации. Она обеспечит переход с новым проектом в новой подписки и затем вы можете обучить.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 - Вам потребуется действительная подписка Azure, связанные с учетной записью Майкрософт или учетную запись Azure Active Directory (AAD), которую необходимо использовать для входа на [концепции пользовательских веб-сайт](https://customvision.ai). 
     - Если у вас нет учетной записи Azure [создать учетную запись](https://azure.microsoft.com/free/) бесплатно.

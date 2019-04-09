@@ -1,19 +1,19 @@
 ---
 title: Подключение Raspberry Pi к приложению Azure IoT Central (C#) | Документация Майкрософт
-description: Вы узнаете, как разработчик устройства может подключать устройство Raspberry Pi к приложению Azure IoT Central, используя язык C#.
+description: Как разработчик устройств подключение устройства Raspberry Pi к Azure IoT Central приложения с помощью C#.
 author: viv-liu
 ms.author: viviali
-ms.date: 10/31/2018
+ms.date: 04/05/2018
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 6330e941f3308920ff4d5404663824633484146a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: 8137f7d167cc697671de99699c6031014d6a966e
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58108364"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59275969"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-c"></a>Подключение Raspberry Pi к приложению Azure IoT Central (C#)
 
@@ -25,37 +25,34 @@ ms.locfileid: "58108364"
 
 Чтобы выполнить действия, описанные в этой статье, вам потребуются следующие компоненты:
 
-* [.NET Core 2](https://www.microsoft.com/net) на компьютере, на котором ведется разработка. Также необходимо наличие подходящего редактора кода, например [Visual Studio Code](https://code.visualstudio.com/).
 * Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
-* Устройство Raspberry Pi с операционной системой Raspbian.
-
+* Устройство Raspberry Pi с операционной системой Raspbian. Raspberry Pi необходимо иметь возможность подключения к Интернету. Дополнительные сведения см. в разделе [Настройка Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/3).
 
 ## <a name="sample-devkits-application"></a>Пример **приложения Devkits**
 
-Приложение, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits), включает в себя шаблон приложения **Raspberry Pi** со следующими характеристиками: 
+Приложение, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits), включает в себя шаблон приложения **Raspberry Pi** со следующими характеристиками:
 
 - Данные телеметрии. К ним относятся следующие показатели, которые устройство будет собирать:
-    - влажность.
-    - температура;
-    - Давление
-    - магнитометр (X, Y, Z);
-    - акселерометр (X, Y, Z);
-    - гироскоп (X, Y, Z).
+  - влажность.
+  - температура;
+  - Давление
+  - магнитометр (X, Y, Z);
+  - акселерометр (X, Y, Z);
+  - гироскоп (X, Y, Z).
 - Параметры
-    - Напряжение
-    - Текущее значение
-    - Скорость вращения вентилятора
-    - ИК-переключатель.
+  - Напряжение
+  - Текущее значение
+  - Скорость вращения вентилятора
+  - ИК-переключатель.
 - properties
-    - Свойство серийного номера устройства
-    - Свойство расположения облака
+  - Свойство серийного номера устройства
+  - Свойство расположения облака
 
-Подробные сведения о настройке шаблона устройства Raspberry PI см. в [этом разделе](howto-connect-raspberry-pi-csharp.md#raspberry-pi-device-template-details).
-
+Подробные сведения о конфигурации шаблона устройства, см. в разделе [сведения о шаблоне устройство Raspberry Pi](#raspberry-pi-device-template-details).
 
 ## <a name="add-a-real-device"></a>Добавление реального устройства
 
-В приложение Azure IoT Central добавьте реальное устройство на основе шаблона приложения **Raspberry Pi** и запишите строку подключения к устройству. Дополнительные сведения см. в статье [Добавление реального устройства в приложение Azure IoT Central](tutorial-add-device.md).
+В приложении Azure IoT Central, добавьте реального устройства из **Raspberry Pi** шаблон устройства. Запомните или запишите устройства сведения о подключении (**идентификатор области**, **идентификатор устройства**, и **первичный ключ**). Дополнительные сведения см. в статье [Добавление реального устройства в приложение Azure IoT Central](tutorial-add-device.md).
 
 ### <a name="create-your-net-application"></a>Создание приложения .NET
 
@@ -86,7 +83,7 @@ ms.locfileid: "58108364"
         <RuntimeIdentifiers>win-arm;linux-arm</RuntimeIdentifiers>
       </PropertyGroup>
       <ItemGroup>
-        <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.5.2" />
+        <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.19.0" />
       </ItemGroup>
     </Project>
     ```
@@ -272,12 +269,9 @@ ms.locfileid: "58108364"
 
 ## <a name="run-your-net-application"></a>Запуск приложения .NET
 
-Добавьте строку подключения к устройству в код, чтобы устройство выполнило проверку подлинности в Azure IoT Central. Вы записали эту строку подключения при добавлении реального устройства в приложение Azure IoT Central.
+Добавьте строку подключения к устройству в код, чтобы устройство выполнило проверку подлинности в Azure IoT Central. Следуйте указаниям, приведенным к [создать строку подключения устройства](concepts-connectivity.md#get-a-connection-string) с помощью **идентификатор области**, **идентификатор устройства**, и **первичный ключ** вы создали Обратите внимание на то из ранее.
 
-  > [!NOTE]
-   > Azure IoT Central перешел с помощью службы подготовки устройств Azure IoT Hub (DPS) для всех подключений устройств, выполните следующие инструкции, чтобы [Получение строки подключения устройства](concepts-connectivity.md#get-a-connection-string) и продолжите выполнение оставшейся части руководства.
-
-1. Замените `{your device connection string}` в файле **Program.cs** ранее записанной строкой подключения.
+1. Замените `{your device connection string}` в **Program.cs** файла в строке подключения, был создан.
 
 1. В среде командной строки выполните следующую команду:
 
@@ -286,7 +280,7 @@ ms.locfileid: "58108364"
    dotnet publish -r linux-arm
    ```
 
-1. Скопируйте папку `pisample\bin\Debug\netcoreapp2.0\linux-arm\publish` на устройство Raspberry Pi. Вы можете использовать команду **scp**, чтобы скопировать файлы, например:
+1. Скопируйте папку `pisample\bin\Debug\netcoreapp2.1\linux-arm\publish` на устройство Raspberry Pi. Вы можете использовать команду **scp**, чтобы скопировать файлы, например:
 
     ```cmd/sh
     scp -r publish pi@192.168.0.40:publish
@@ -321,8 +315,7 @@ ms.locfileid: "58108364"
 
      ![Получение изменения параметра в Raspberry Pi](./media/howto-connect-raspberry-pi-csharp/device_switch.png)
 
-
-## <a name="raspberry-pi-device-template-details"></a>Подробные сведения о шаблоне устройства Raspberry PI
+## <a name="raspberry-pi-device-template-details"></a>Raspberry Pi шаблона подробной информации
 
 Приложение, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits), включает в себя шаблон приложения **Raspberry Pi** со следующими характеристиками:
 
@@ -368,6 +361,6 @@ ms.locfileid: "58108364"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы узнали, как подключить устройство Raspberry Pi к Azure IoT Central, а значит вы готовы к следующему шагу.
+Теперь, когда вы узнали, как подключение устройства Raspberry Pi к приложению Azure IoT Central, ниже приведены предлагаемые дальнейшие действия.
 
-* [Подключение универсального клиентского приложения Node.js к Azure IoT Central](howto-connect-nodejs.md)
+* [Подключить универсального клиентское приложение Node.js для Azure IoT Central](howto-connect-nodejs.md)

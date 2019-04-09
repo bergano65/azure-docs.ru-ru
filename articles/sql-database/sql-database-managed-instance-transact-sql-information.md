@@ -1,10 +1,9 @@
 ---
-title: Различия T-SQL Управляемого экземпляра Базы данных SQL Azure | Документация Майкрософт
+title: Отличия T-SQL базы данных управляемого экземпляра Azure SQL | Документация Майкрософт
 description: В этой статье рассматриваются различия T-SQL между управляемым экземпляром в Базе данных SQL Azure и SQL Server.
 services: sql-database
 ms.service: sql-database
 ms.subservice: managed-instance
-ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
 author: jovanpop-msft
@@ -12,20 +11,17 @@ ms.author: jovanpop
 ms.reviewer: carlrab, bonova
 manager: craigg
 ms.date: 03/13/2019
-ms.openlocfilehash: 208370884d89a7a2585f320c037284d6657732db
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.custom: seoapril2019
+ms.openlocfilehash: 14e33ec25dd2384607d41e4be6e5a33ebf889cbc
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "59010606"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59260499"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server
 
-Вариант развертывания в виде управляемого экземпляра обеспечивает высокий уровень совместимости с локальным ядром СУБД SQL Server. В управляемом экземпляре поддерживается большинство функций ядра СУБД SQL Server.
-
-![Миграция](./media/sql-database-managed-instance/migration.png)
-
-Так как в синтаксисе и поведении все еще есть некоторые различия, они перечислены и описаны в этой статье. <a name="Differences"></a>
+В этой статье перечислены и описаны различия в синтаксисе и поведении между базы данных управляемого экземпляра SQL Azure и локальным SQL Server Database Engine. <a name="Differences"></a>
 
 - [Доступность](#availability), включая различия в [Always-On](#always-on-availability) и [Azure Backup](#backup).
 - [Безопасность](#security), включая различия в [аудите](#auditing), [сертификатах](#certificates), [учетных данных](#credential), [поставщиках служб шифрования](#cryptographic-providers), [именах входа и пользователях](#logins--users), [ключе службы и главном ключе службы](#service-key-and-service-master-key).
@@ -33,6 +29,10 @@ ms.locfileid: "59010606"
 - [Функциональные возможности](#functionalities), включая [BULK INSERT или OPENROWSET](#bulk-insert--openrowset), [среды CLR](#clr), [DBCC](#dbcc), [распределенные транзакции](#distributed-transactions), [расширенные события](#extended-events), [внешние библиотеки](#external-libraries), [файловый поток и FileTable](#filestream-and-filetable), [полнотекстовый семантический поиск](#full-text-semantic-search), [связанные службы](#linked-servers), [PolyBase](#polybase), [репликацию](#replication), [инструкцию RESTORE](#restore-statement), [Service Broker](#service-broker), [хранимые процедуры, функции и триггеры](#stored-procedures-functions-triggers).
 - [Функции с другим поведением в управляемых экземплярах](#Changes)
 - [Временные ограничения и известные проблемы](#Issues)
+
+Вариант развертывания в виде управляемого экземпляра обеспечивает высокий уровень совместимости с локальным ядром СУБД SQL Server. В управляемом экземпляре поддерживается большинство функций ядра СУБД SQL Server.
+
+![Миграция](./media/sql-database-managed-instance/migration.png)
 
 ## <a name="availability"></a>Доступность
 
@@ -473,7 +473,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ### <a name="tempdb-size"></a>Размер tempdb
 
-Максимальный размер файла `tempdb` не может иметь значение, чем 24 ГБ/core на уровне общего назначения. Max `tempdb` объем на уровне "критически важный для бизнеса" ограничен с размером экземпляра хранилища. `tempdb` всегда разбивается на файлы данных 12. Этот максимальный размер каждого файла невозможно изменить. В `tempdb` невозможно добавить новые файлы. Некоторые запросы могут возвращать ошибку, если им требуется более чем 24 ГБ / ядро в `tempdb`.
+Максимальный размер файла `tempdb` не может превышать 24 ГБ/core на уровне общего назначения. Max `tempdb` объем на уровне "критически важный для бизнеса" ограничен с размером экземпляра хранилища. `tempdb` всегда разбивается на файлы данных 12. Этот максимальный размер каждого файла невозможно изменить. В `tempdb` невозможно добавить новые файлы. Некоторые запросы могут возвращать ошибку, если им требуется более чем 24 ГБ / ядро в `tempdb`.
 
 ### <a name="cannot-restore-contained-database"></a>Не удается восстановить автономной базы данных
 
@@ -494,7 +494,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 В этом примере существующие базы данных без проблем будут работать и разрастаться при условии, что в них не будут добавляться новые файлы. При этом создать новые базы данных или восстановить имеющиеся не удастся, так как для новых дисков места недостаточно, даже если общий размер всех баз данных не достигает предельного размера экземпляра. Сообщение об ошибке, поступающее в этом случае, плохо отражает ситуацию.
 
-Вы можете [определить количество оставшихся файлов](https://medium.com/azure-sqldb-managed-instance/how-many-files-you-can-create-in-general-purpose-azure-sql-managed-instance-e1c7c32886c1) с помощью системных представлений. Если производится доступ попробуйте это ограничение [пустые и удалите несколько файлов меньшего размера, с помощью инструкции DBCC SHRINKFILE](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-shrinkfile-transact-sql#d-emptying-a-file) или shitch для [уровня "критически важный для бизнеса", не имеет этого ограничения](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance-resource-limits#service-tier-characteristics).
+Вы можете [определить количество оставшихся файлов](https://medium.com/azure-sqldb-managed-instance/how-many-files-you-can-create-in-general-purpose-azure-sql-managed-instance-e1c7c32886c1) с помощью системных представлений. Если производится доступ попробуйте это ограничение [пустые и удалите несколько файлов меньшего размера, с помощью инструкции DBCC SHRINKFILE](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-shrinkfile-transact-sql#d-emptying-a-file) или переключиться в режим [уровня "критически важный для бизнеса", не имеет этого ограничения](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance-resource-limits#service-tier-characteristics).
 
 ### <a name="incorrect-configuration-of-sas-key-during-database-restore"></a>Неправильная конфигурация ключа SAS во время восстановления базы данных
 

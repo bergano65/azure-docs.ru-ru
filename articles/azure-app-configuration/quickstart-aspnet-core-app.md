@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ASP.NET Core
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: a721cc2252619923496ee5a3a8ae590a5cda3b04
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 23c74c0b1d4c311cd57a02cbac9498f3acb16992
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58487555"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58578124"
 ---
 # <a name="quickstart-create-an-aspnet-core-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения ASP.NET Core с помощью службы "Конфигурация приложений Azure"
 
@@ -93,13 +93,15 @@ ASP.NET Core создает один объект конфигурации на 
 
     Доступ к этому секрету осуществляется с помощью API конфигурации. Двоеточие (:) используется в имени конфигурации с API конфигурации на всех поддерживаемых платформах. Дополнительные сведения см. в статье [Конфигурация в .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/index?tabs=basicconfiguration&view=aspnetcore-2.0).
 
-4. Откройте файл Program.cs и обновите метод `CreateWebHostBuilder` для использования службы "Конфигурация приложений", вызвав метод `config.AddAzureAppConfiguration()`.
+4. Откройте файл *Program.cs* и добавьте ссылку на поставщик конфигурации .NET Core для службы "Конфигурация приложений".
 
     ```csharp
     using Microsoft.Extensions.Configuration.AzureAppConfiguration;
+    ```
 
-    ...
+5. Обновите метод `CreateWebHostBuilder`, чтобы использовать службу "Конфигурация приложений", путем вызова метода `config.AddAzureAppConfiguration()`.
 
+    ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
         WebHost.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration((hostingContext, config) =>
@@ -113,7 +115,7 @@ ASP.NET Core создает один объект конфигурации на 
             .UseStartup<Startup>();
     ```
 
-5. Откройте файл Index.cshtml в каталоге "Представления" > "Домашняя страница" и замените его содержимое следующим кодом.
+6. Откройте файл Index.cshtml в каталоге "Представления" > "Домашняя страница" и замените его содержимое следующим кодом.
 
     ```html
     @using Microsoft.Extensions.Configuration
@@ -139,7 +141,7 @@ ASP.NET Core создает один объект конфигурации на 
     </html>
     ```
 
-6. Откройте файл _Layout.cshtml в каталоге "Представления" > "Общие" и замените его содержимое следующим кодом.
+7. Откройте файл _Layout.cshtml в каталоге "Представления" > "Общие" и замените его содержимое следующим кодом.
 
     ```html
     <!DOCTYPE html>

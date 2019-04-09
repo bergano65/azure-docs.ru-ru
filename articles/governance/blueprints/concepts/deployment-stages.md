@@ -1,19 +1,18 @@
 ---
 title: Этапы развертывания схемы
 description: Узнайте, проходит службы Azure Blueprint во время развертывания.
-services: blueprints
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 03/14/2019
 ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: ced8c8ab2e65fb1d3f8a976f122a387fe9161750
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: d7000813b51fb9c9aae9a21cbded3ae0028e83f4
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58801970"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59261425"
 ---
 # <a name="stages-of-a-blueprint-deployment"></a>Этапы развертывания схемы
 

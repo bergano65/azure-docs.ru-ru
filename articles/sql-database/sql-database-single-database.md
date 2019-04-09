@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 03/29/2019
-ms.openlocfilehash: 19fa1797e2765a642aac19f55f0906ba9aef61a8
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
-ms.translationtype: MT
+ms.date: 034/08/2019
+ms.openlocfilehash: 804e60b141f6ad4f089710d4b85c52a8dad33cfc
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58660295"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59269526"
 ---
 # <a name="what-is-a-single-database-in-azure-sql-database"></a>Основные сведения об отдельной базе данных в Базе данных SQL Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "58660295"
 База данных SQL обеспечивает ряд [встроенных функций безопасности и соответствия](sql-database-security-overview.md), чтобы выполнить различные требования по защите вашего приложения.
 
 > [!IMPORTANT]
-> База данных SQL Azure (все параметры развертывания), сертифицирована для нескольких стандартов соответствия. Дополнительные сведения см. в [центре управления безопасностью Microsoft Azure](https://azure.microsoft.com/support/trust-center/), где представлен актуальный список [сертификатов соответствия базы данных SQL](https://www.microsoft.com/trustcenter/compliance/complianceofferings).
+> База данных SQL Azure (все параметры развертывания), сертифицирована для нескольких стандартов соответствия. Дополнительные сведения см. в разделе [Центр управления безопасностью Microsoft Azure](https://azure.microsoft.com/support/trust-center/compliance/) где можно найти актуальный список сертификатов соответствия базы данных SQL.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

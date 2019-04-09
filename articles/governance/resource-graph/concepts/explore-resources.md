@@ -1,7 +1,6 @@
 ---
 title: Просмотр ресурсов Azure
 description: Сведения об изучении ресурсов и связей между ними с помощью языка запросов графика ресурсов.
-services: resource-graph
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 02/05/2019
@@ -9,12 +8,12 @@ ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: d6ce615e23ce71f22eff3c2c70b387267792fef9
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
-ms.translationtype: HT
+ms.openlocfilehash: 3174e74dc3fb8c56279c0c9708a67d99ae19724a
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55768442"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59276122"
 ---
 # <a name="explore-your-azure-resources-with-resource-graph"></a>Изучение ресурсов Azure с помощью графика ресурсов
 
@@ -347,7 +346,7 @@ cat ips.txt
 az graph query -q="where type =~ 'Microsoft.Network/publicIPAddresses' | where id in ('$(awk -vORS="','" '{print $0}' ips.txt | sed 's/,$//')') | project ip = tostring(properties['ipAddress']) | where isnotempty(ip) | distinct ip" --output table
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [языке запросов](query-language.md)
 - См. описание используемого языка в разделе [Запросы для начинающих](../samples/starter.md)

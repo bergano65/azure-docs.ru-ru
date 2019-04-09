@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 02/28/2019
 ms.author: diberry
-ms.openlocfilehash: 7da861b240d0502d62c1344b1927c3c05a9086ac
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: f74d43d90a288a145887878305a95e1052ab8c05
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57313894"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58880021"
 ---
 # <a name="get-answers-to-a-question-from-a-knowledge-base-with-python"></a>Получение ответов на вопрос из базы знаний с помощью Python
 
@@ -23,8 +23,8 @@ ms.locfileid: "57313894"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Python версии 3.6 или выше](https://www.python.org/downloads/)
-* [Visual Studio Code](https://code.visualstudio.com/)
+* [Python версии 3.6 или выше.](https://www.python.org/downloads/)
+* [Visual Studio Code.](https://code.visualstudio.com/)
 * У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ, выберите **Ключи** в разделе **Управление ресурсами** на панели мониторинга ресурса QnA Maker на портале Azure. 
 * Параметры страницы **Публикация**. Если у вас нет опубликованной базы знаний, создайте новую, импортируйте ее на странице **Параметры**, а затем опубликуйте ее. Можно скачать и использовать [эту простую базу знаний](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/knowledge-bases/basic-kb.tsv). 
 
@@ -58,7 +58,7 @@ ms.locfileid: "57313894"
 
 [!code-python[Add a POST request to send question to knowledge base](~/samples-qnamaker-python/documentation-samples/quickstarts/get-answer/get-answer-3x.py?range=27-48 "Add a POST request to send question to knowledge base")]
 
-Значение заголовка `Authorization` содержит строку `EndpointKey `. 
+Значение заголовка `Authorization` содержит строку `EndpointKey`. 
 
 ## <a name="run-the-program"></a>Запуск программы
 
@@ -79,4 +79,4 @@ python get-answer-3x.py
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [QnA Maker (V4) REST API Reference](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff) (Справочник по API REST QnA Maker (V4))
+> [Справочник по REST API QnA Maker (версия 4)](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff)

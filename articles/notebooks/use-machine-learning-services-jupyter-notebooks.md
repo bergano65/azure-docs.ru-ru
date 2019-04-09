@@ -6,19 +6,19 @@ documentationcenter: ''
 author: kraigb
 manager: douge
 ms.assetid: 0dc4fc31-ae1c-422c-ac34-7b025e6651b4
-ms.service: azure
+ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: eb162e51a6091b22abd4a8d12275423d726b1785
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 2ef327721fd42e5274381834721fd987ec7e9d75
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57763951"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59263287"
 ---
 # <a name="use-azure-machine-learning-service-in-a-notebook"></a>Работа со Службами машинного обучения Azure в записной книжке
 
@@ -47,9 +47,9 @@ ms.locfileid: "57763951"
 
 Документация Служб машинного обучения Azure содержит множество других ресурсов, которые помогут вам при работе со Службой машинного обучения в записных книжках:
 
-- [Краткое руководство по началу работы со службой "Машинное обучение Azure" с использованием пакета SDK для Python](https://docs.microsoft.com/azure/machine-learning/service/quickstart-create-workspace-with-python).
-- [Руководство (1) по обучению модели классификации изображений с помощью Службы машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/service/tutorial-train-models-with-aml).
-- [Руководство (2). Развертывание модели классификации изображений в Экземпляре контейнера Azure](https://docs.microsoft.com/azure/machine-learning/service/tutorial-deploy-models-with-aml).
-- [Руководство. Создание регрессионной модели с помощью автоматического машинного обучения](https://docs.microsoft.com/azure/machine-learning/service/tutorial-auto-train-models).
+- [Краткое руководство. Начало работы с машинным обучением Azure с помощью Python](https://docs.microsoft.com/azure/machine-learning/service/quickstart-create-workspace-with-python)
+- [Учебник #1. обучению модели классификации изображений с помощью Службы машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/service/tutorial-train-models-with-aml)
+- [Учебное руководство #2. Развернуть модель классификации изображений в экземпляре контейнера Azure (ACI)](https://docs.microsoft.com/azure/machine-learning/service/tutorial-deploy-models-with-aml)
+- [Руководство по Обучение модели классификации с помощью автоматических машинного обучения в службе машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/service/tutorial-auto-train-models)
 
 Ознакомьтесь также с документацией по [пакету SDK Python для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).

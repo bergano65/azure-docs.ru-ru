@@ -5,15 +5,15 @@ services: iot-central
 ms.service: iot-central
 author: dominicbetts
 ms.author: dobett
-ms.date: 10/29/2018
+ms.date: 04/03/2019
 ms.topic: conceptual
 manager: philmea
-ms.openlocfilehash: 22e9954e66c05bfb2e425a01ffa6f9e3b93b761e
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: 8c73c55b059b4d3ca7136889122c11ab332b3f76
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57313724"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59270512"
 ---
 # <a name="as-a-csp-create-and-manage-an-azure-iot-central-application-on-behalf-of-your-customer"></a>Создание приложения Azure IoT Central и управление им поставщиком облачных решений от имени клиента 
 
@@ -61,7 +61,7 @@ URL-адрес приложения будет создан автоматиче
 
 Дополнительные сведения см. в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory/).
 
-## <a name="azure-subscription"></a>Подписка Azure.
+## <a name="azure-subscription"></a>Подписка Azure
 
 Подписка Azure позволяет создавать экземпляры служб Azure. Azure IoT Central автоматически обнаруживает все подписки Azure клиента, к которым у вас есть доступ, и отображает их в раскрывающемся списке на странице **Создание приложения**. Выберите подписку Azure, чтобы создать приложение Azure IoT Central.
 
@@ -84,7 +84,7 @@ URL-адрес приложения будет создан автоматиче
 
 Вы можете выбрать один из доступных шаблонов приложений для нового приложения Azure IoT Central. Шаблон приложения может содержать стандартные элементы (например, шаблоны устройств и панели мониторинга), которые позволяют вам приступить к работе.
 
-| Шаблон приложения | ОПИСАНИЕ |
+| Шаблон приложения | Описание |
 | -------------------- | ----------- |
 | Custom application (Пользовательское приложение)   | Создает пустое приложение, в которое необходимо добавить собственные шаблоны устройств и сами устройства. |
 | Sample Contoso (Образец Contoso)       | Создает приложение, которое содержит шаблон устройства для легко подключаемого устройства. Используйте этот шаблон, чтобы приступить к работе в Azure IoT Central. |

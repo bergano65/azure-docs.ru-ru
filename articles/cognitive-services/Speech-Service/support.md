@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/26/2018
 ms.author: wolfma
-ms.openlocfilehash: a4c256a6acd8e51986b40e28a6f658f1103ab337
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: c403bca3abf493448265e25316babe20ea9c8544
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57877706"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59272026"
 ---
 # <a name="support-and-help-options"></a>Возможности получения поддержки и справки
 
@@ -23,6 +23,7 @@ ms.locfileid: "57877706"
 
 > [!div class="checklist"]
 > * Будьте в курсе последних разработок в *Azure Cognitive Services* и следите за последними новостями о *службе "Речь"*.
+> * Заметки о выпуске содержат сведения для всех выпусков.
 > * Попробуйте найти вашу проблему в обсуждении сообщества или поищите документацию по нужной вам функции.
 > * Если не удается найти удовлетворительный ответ, задайте вопрос в *Stack Overflow*.
 > * Если возникла проблема с одним из примеров, опубликованных на сайте GitHub, создайте запрос на сайте *GitHub*.
@@ -32,7 +33,11 @@ ms.locfileid: "57877706"
 
 Новости о Cognitive Services собраны в [блоге по Cognitive Services](https://azure.microsoft.com/blog/topics/cognitive-services/). Последние сведения о службах речи отслеживания [служб речи блог](https://azure.microsoft.com/blog/tag/speech-service/).
 
-## <a name="search"></a>поиска
+## <a name="release-notes"></a>Заметки о выпуске
+
+[Заметки о выпуске]] (https://aka.ms/csspeech/whatsnew) обновляются сразу же доступен новый выпуск. Документ содержит сведения о новых функциях, улучшения и исправления ошибок.
+
+## <a name="search"></a>Поиск
 
 Ответ можно найти в документации, наших примерах или ответах на вопросы, заданные на сайте [Stack Overflow](https://www.stackoverflow.com).
 
@@ -50,8 +55,8 @@ ms.locfileid: "57877706"
 
 Клиенты Azure могут создавать запросы на получение поддержки и управлять ими на портале Azure.
 
-* [портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
-* [Портал Azure для государственных учреждений США](https://portal.azure.us)
+* [портале Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
+* [Портал Azure для государственных организаций США](https://portal.azure.us)
 
 ## <a name="post-a-question-to-stack-overflow"></a>Публикация вопроса на сайте Stack Overflow
 
@@ -61,22 +66,22 @@ Stack Overflow — это идеальное место для вопросов
 
 |Компонент или область  |Теги  |
 |---------|---------|
-|Распознавание речи |[[microsoft-cognitive+speech-to-text]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+speech-to-text)|
-|Синтез речи |[[microsoft-cognitive+text-to-speech]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+text-to-speech)|
-|Перевод речи |[[microsoft-cognitive+translation]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+translation)|
-|Намерения говорящего |[[microsoft-cognitive+luis]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+luis)|
-|Общий пакет SDK для службы "Речь" |[[microsoft-cognitive+microsoft-speech-api]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+microsoft-speech-api)|
+|Распознавание речи |[[microsoft-cognitive + речи в текст]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+speech-to-text)|
+|Синтез речи |[[microsoft-cognitive + текста в речь]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+text-to-speech)|
+|Перевод речи |[[microsoft-cognitive + перевода]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+translation)|
+|Намерения говорящего |[[microsoft-Луис cognitive +]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+luis)|
+|Общий пакет SDK для службы "Речь" |[[microsoft-cognitive + microsoft-api распознавания речи —]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+microsoft-speech-api)|
 
 > [!TIP]
 > Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуйте этим рекомендациям, чтобы повысить вероятность того, что участники сообщества быстро отреагируют на ваш вопрос:  
-> * [Как правильно задать вопрос?](https://stackoverflow.com/help/how-to-ask)
-> * [How to create a Minimal, Complete, and Verifiable example](https://stackoverflow.com/help/mcve) (Как создать минимальный, полный и доступный для проверки пример).
+> * [Как задать вопрос?](https://stackoverflow.com/help/how-to-ask)
+> * [Как создать минимальным завершить и проверяемых пример](https://stackoverflow.com/help/mcve)
 
 ## <a name="create-a-github-issue"></a>Сообщение о проблеме на GitHub
 
 Примеры часто публикуются с открытым кодом. Если возникнут вопросы и проблемы, создайте *запрос* в соответствующем репозитории GitHub. Также можно отправить запрос на вытягивание. В следующем списке представлены ссылки на репозитории с примерами:
 
-* [пакет SDK для службы "Речь"](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues);
+* [Пакет SDK для распознавания речи](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues)
 * [Пакет SDK для устройств](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK/issues)
 
 Можно создать отчет об ошибках, запрос на функцию или задать вопрос на общую тему и поделиться лучшими методами. Для отчетов об ошибках используйте предоставленный шаблон:
@@ -85,7 +90,7 @@ Stack Overflow — это идеальное место для вопросов
 
 Ясное и четкое описание ошибки.
 
-**Шаги для воспроизведения**
+**Для воспроизведения**
 
 Шаги для воспроизведения проблемы:
 1. ...
@@ -95,11 +100,11 @@ Stack Overflow — это идеальное место для вопросов
 
 Ясное и четкое описание ожидаемого результата.
 
-**Версия пакета SDK службы "Речь" в Cognitive Services**
+**Версия пакета SDK для речи Cognitive Services**
 
 Какую версию пакета SDK вы используете.
 
-**Платформа, операционная система и язык программирования**
+**Платформы ОС и язык программирования**
 
  - ОС: [например, Windows, Linux, Android, iOS и т. д.] — укажите конкретную версию
  - Оборудование — x64, x86, ARM и т. д.
@@ -108,7 +113,7 @@ Stack Overflow — это идеальное место для вопросов
 **Дополнительный контекст**
 
  - Сообщения об ошибках, сведения из журнала, трассировка стека и т. д.
- - Если вы сообщаете об ошибке в конкретном взаимодействии со службой, укажите идентификатор сеанса и время (в т. ч. часовой пояс) происшествий. Идентификатор сеанса указывается в обратных вызовах или событиях, которые вы получаете.
+ - Если вы сообщить об ошибке для диалога определенной службы, отчет о SessionId и времени (включая часовой пояс) сообщений о происшествиях. Идентификатор сеанса указывается в обратных вызовах или событиях, которые вы получаете.
  - Другая дополнительная информация
 
 

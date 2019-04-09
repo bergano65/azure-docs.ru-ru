@@ -7,14 +7,14 @@ ms.service: firewall
 ms.topic: tutorial
 ms.date: 10/24/2018
 ms.author: victorh
-ms.openlocfilehash: 2befbf66733430e6077f5e5ff3044c30a77b7e5c
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: 10837730bea17f98083f456ec4c9fb0d7567af57
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56958989"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58877267"
 ---
-# <a name="tutorial-monitor-azure-firewall-logs-and-metrics"></a>Руководство. Мониторинг журналов и метрик Брандмауэра Azure
+# <a name="tutorial-monitor-azure-firewall-logs-and-metrics"></a>Руководство по Мониторинг журналов и метрик Брандмауэра Azure
 
 Работу брандмауэра Azure можно отслеживать с помощью журналов брандмауэра. Также журналы действий можно использовать для аудита операций на ресурсах брандмауэра Azure. С помощью метрик можно просматривать счетчики производительности на портале. 
 
@@ -41,7 +41,7 @@ ms.locfileid: "56958989"
 Для включения ведения журнала диагностики потребуется несколько минут, чтобы данные появились в журналах после завершения этой процедуры. Если ничего не происходит, проверьте еще раз через несколько минут.
 
 1. На портале Azure откройте группу ресурсов брандмауэра, а затем щелкните брандмауэр.
-2. В разделе **Мониторинг** щелкните **Журналы диагностики**.
+2. В разделе **Мониторинг** щелкните **Параметры диагностики**.
 
    Для брандмауэра Azure доступны два журнала обслуживания.
 
@@ -113,7 +113,7 @@ ms.locfileid: "56958989"
 Теперь, когда брандмауэр настроен для сбора журналов, можно открыть Журналы Azure Monitor, чтобы просмотреть данные.
 
 > [!div class="nextstepaction"]
-> [Решения для мониторинга сетей в Журналах Azure Monitor](../azure-monitor/insights/azure-networking-analytics.md)
+> [Решения для мониторинга сетей в журналах Azure Monitor](../azure-monitor/insights/azure-networking-analytics.md)
 
 [1]: ./media/tutorial-diagnostics/figure1.png
 [2]: ./media/tutorial-diagnostics/figure2.png

@@ -1,6 +1,6 @@
 ---
 title: Обзор Azure Blueprint
-description: Azure Blueprint — это служба в Azure, с помощью которой можно создавать, определять и развертывать артефакты в среде Azure.
+description: Описание службы Azure Blueprints, с помощью которой можно создавать, определять и развертывать артефакты в среде Azure.
 services: blueprints
 author: DCtheGeek
 ms.author: dacoulte
@@ -9,14 +9,14 @@ ms.topic: overview
 ms.service: blueprints
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: cf3801381359bb973d126e2ee946cdb51e5aecb7
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: 29c58abb3a69da0886d512767cbc301621943f07
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56823099"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58802581"
 ---
-# <a name="what-is-azure-blueprints"></a>Что такое Azure Blueprint?
+# <a name="overview-of-the-azure-blueprints-service"></a>Обзор службы Azure Blueprints
 
 Так же, как чертеж позволяет инженеру или архитектору набросать конструктивные параметры для проекта, схемы Azure Blueprint позволяют облачным архитекторам и центральным ИТ-группам определять воспроизводимый набор ресурсов Azure, который реализует стандарты, шаблоны и требования организации и соблюдает их. С помощью Azure Blueprint группы разработчиков могут быстро создавать и настраивать новые среды, зная, что они создаются в соответствии с требованиями организации и с рядом встроенных компонентов, таких как сети, для ускорения разработки и поставки.
 

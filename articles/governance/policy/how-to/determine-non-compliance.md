@@ -1,19 +1,18 @@
 ---
 title: Определение причин несоответствия требованиям
 description: Если ресурс является несоответствующим, существует множество возможных причин. Узнайте, как выяснения причины несоответствия.
-services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 02/26/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 1121bdb379265ef592a26a8a31a90d402e529cc8
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: 8a593e92d7f24885c35043b874528e881d2e021e
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58802751"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59276105"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Определение причин несоответствия требованиям
 
@@ -21,7 +20,7 @@ ms.locfileid: "58802751"
 
 > [!div class="checklist"]
 > - [Сведения о соответствии](#compliance-details)
-> - [Журнал изменений (Предварительная версия)](#change-history-preview)
+> - [Журнал изменений (предварительная версия)](#change-history-preview)
 
 ## <a name="compliance-details"></a>Сведения о соответствии
 

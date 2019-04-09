@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 1/10/2019
+ms.date: 4/8/2019
 ms.author: victorh
-ms.openlocfilehash: 3da9982d1af886a4329ddc77a7b297e9e285453e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 258113f5201ad3d09df6119dec738d528e640c40
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58101556"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59269356"
 ---
 # <a name="configure-end-to-end-ssl-by-using-application-gateway-with-powershell"></a>Настройка сквозного режима связи SSL для Шлюза приложений с помощью PowerShell
 
@@ -52,20 +52,17 @@ ms.locfileid: "58101556"
 
 В этом разделе описывается создание группы ресурсов, содержащей шлюз приложений.
 
-
 1. Войдите в учетную запись Azure.
 
    ```powershell
    Connect-AzAccount
    ```
 
-
 2. Выберите подписку для этого сценария.
 
    ```powershell
    Select-Azsubscription -SubscriptionName "<Subscription name>"
    ```
-
 
 3. Создайте группу ресурсов. Если используется существующая группа ресурсов, пропустите этот шаг.
 
@@ -77,7 +74,6 @@ ms.locfileid: "58101556"
 
 Следующий пример создает виртуальную сеть и две подсети. Одна подсеть используется для размещения шлюза приложений, а другая — для внутренних серверов, на которых размещается веб-приложение.
 
-
 1. Назначьте диапазон адресов подсети для шлюза приложений.
 
    ```powershell
@@ -86,8 +82,7 @@ ms.locfileid: "58101556"
 
    > [!NOTE]
    > Подсети, настроенные для шлюза приложений, должны иметь соответствующий размер. У шлюза приложений может быть до 10 экземпляров. Для каждого экземпляра требуется отдельный IP-адрес из подсети. Слишком маленький размер подсети может отрицательно сказаться на возможности масштабирования шлюза приложений.
-   > 
-   > 
+   >
 
 2. Назначьте диапазон адресов для внутреннего пула адресов.
 
@@ -130,7 +125,6 @@ $publicip = New-AzPublicIpAddress -ResourceGroupName appgw-rg -Name 'publicIP01'
    $gipconfig = New-AzApplicationGatewayIPConfiguration -Name 'gwconfig' -Subnet $gwSubnet
    ```
 
-
 2. Создайте IP-конфигурацию внешнего интерфейса, в которой частный или общедоступный IP-адрес сопоставляется с внешним интерфейсом шлюза приложений. На следующем шаге общедоступный IP-адрес, указанный на предыдущем шаге, будет связан конфигурацией IP внешнего интерфейса.
 
    ```powershell
@@ -145,7 +139,6 @@ $publicip = New-AzPublicIpAddress -ResourceGroupName appgw-rg -Name 'publicIP01'
 
    > [!NOTE]
    > Для внутренних серверов вместо IP-адресов можно также использовать полные доменные имена. Для этого используйте параметр **-BackendFqdns**. 
-
 
 4. Настройте интерфейсный порт IP для конечной точки с общедоступным IP-адресом. Это порт, к которому подключаются пользователи.
 
@@ -177,7 +170,7 @@ $publicip = New-AzPublicIpAddress -ResourceGroupName appgw-rg -Name 'publicIP01'
    > Если на серверной части используются заголовки узлов и указание имени сервера (SNI), полученный открытый ключ не обязательно будет ключом сайта, на который направляется интернет-трафик. Если вы сомневаетесь, перейдите по адресу https://127.0.0.1/ на внутренних серверах, чтобы проверить, какой сертификат используется для привязки SSL *по умолчанию*. В этом разделе используйте открытый ключ из этого запроса. Если в привязках HTTPS используются заголовки узлов и указание имен сервера (SNI) и вы не получаете ответ и сертификат, после того как вручную отправили в браузере запрос на адрес https://127.0.0.1/ для внутренних серверов, на них необходимо настроить привязку SSL по умолчанию. Если этого не сделать, пробы будут завершены ошибкой и серверная часть не будет добавлена в список разрешений.
 
    ```powershell
-   $authcert = New-AzApplicationGatewayAuthenticationCertificate -Name 'whitelistcert1' -CertificateFile C:\users\gwallace\Desktop\cert.cer
+   $authcert = New-AzApplicationGatewayAuthenticationCertificate -Name 'whitelistcert1' -CertificateFile C:\cert.cer
    ```
 
    > [!NOTE]
@@ -220,14 +213,14 @@ $publicip = New-AzPublicIpAddress -ResourceGroupName appgw-rg -Name 'publicIP01'
 
     Ниже приведен список значений для версий протокола, которые можно определить:
 
-    - **TLSv1_0**;
-    - **TLSv1_1**;
-    - **TLSv1_2**.
+    - **TLSV1_0**
+    - **TLSV1_1**
+    - **TLSV1_2**
     
     В следующем примере показано, как задать **TLSv1_2** в качестве минимальной версии протокола и разрешить только шифры **TLS\_ECDHE\_ECDSA\_WITH\_AES\_128\_GCM\_SHA256**, **TLS\_ECDHE\_ECDSA\_WITH\_AES\_256\_GCM\_SHA384** и **TLS\_RSA\_WITH\_AES\_128\_GCM\_SHA256**.
 
     ```powershell
-    $SSLPolicy = New-AzApplicationGatewaySSLPolicy -MinProtocolVersion TLSv1_2 -CipherSuite "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256", "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384", "TLS_RSA_WITH_AES_128_GCM_SHA256"
+    $SSLPolicy = New-AzApplicationGatewaySSLPolicy -MinProtocolVersion TLSv1_2 -CipherSuite "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256", "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384", "TLS_RSA_WITH_AES_128_GCM_SHA256" -PolicyType Custom
     ```
 
 ## <a name="create-the-application-gateway"></a>Создание шлюза приложений

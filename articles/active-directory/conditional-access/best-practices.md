@@ -18,12 +18,12 @@ ms.date: 01/25/2019
 ms.author: joflore
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d30fe326ef677ca4543534d57dd306ed2a660300
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: eafc379a65fda1ed64c6afee1427e704558b1ee6
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58895568"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59261549"
 ---
 # <a name="best-practices-for-conditional-access-in-azure-active-directory"></a>Рекомендации по работе с условным доступом в Azure Active Directory
 
@@ -138,6 +138,7 @@ Azure Active Directory применяет обе политики, и польз
 
 - **Require domain join** (Требовать присоединения к домену) — эта политика блокировки доступа также имеет возможность блокировать доступ для всех пользователей организации, у которых еще нет присоединенных к домену устройств.
 
+- **Требуется политика защиты приложений** — эта политика блокировки доступа также имеет возможность блокировать доступ для всех пользователей в вашей организации, если у вас нет политики Intune. Если вы являетесь администратором без клиентское приложение, которое имеет политику защиты приложений Intune, эта политика блокирует ваш доступ обратно в порталах, таких как Intune и Azure.
 
 **Для всех пользователей всех облачных приложений, всех платформ устройств:**
 

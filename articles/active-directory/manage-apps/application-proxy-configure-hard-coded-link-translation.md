@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c010a7bcd2d811b31d9c2d05e81cce5dc85c2ce
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2949559542759cadf90d329bc50b352998b3eb7e
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58118601"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59262556"
 ---
 # <a name="redirect-hardcoded-links-for-apps-published-with-azure-ad-application-proxy"></a>Перенаправление встроенных ссылок для приложений, опубликованных с помощью прокси приложения Azure AD
 
@@ -81,6 +81,31 @@ Intune Managed Browser можно использовать для обеспеч
 
 - **Относительные внутренние ссылки**, которые указывают на общедоступный ресурс в локальной структуре файлов, такой как `/claims/claims.html`. Эти ссылки автоматически работают в приложениях, которые опубликованы через прокси приложения, и продолжают работать с преобразованием или без него. 
 - **Встроенные внутренние ссылки** на другие локальные приложения, такие как `http://expenses`, или опубликованные файлы, например `http://expenses/logo.jpg`. Функция преобразования ссылок работает со встроенными внутренними ссылками и изменяет их для указания на внешние URL-адреса, по которым могут пройти удаленные пользователи.
+
+Полный список тегов кода HTML, что прокси приложения поддерживает преобразование ссылок для метода include:
+* a
+* audio
+* Base
+* кнопка
+* div
+* Внедрить
+* Формы
+* Кадр
+* HEAD
+* html
+* IFRAME
+* Рисунок
+* input
+* link
+* MenuItem
+* Meta
+* object
+* script
+* источник
+* Отслеживание
+* video
+
+Кроме того в CSS атрибут URL-адрес также преобразуется.
 
 ### <a name="how-do-apps-link-to-each-other"></a>Как приложения ссылаются друг на друга
 

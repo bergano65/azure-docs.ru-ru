@@ -11,20 +11,20 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/25/2019
+ms.date: 04/04/2019
 ms.author: juliako
-ms.openlocfilehash: 9fad5874a0e595ee2c275f06504665ce143266f6
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
-ms.translationtype: MT
+ms.openlocfilehash: cb6826be8f6a9a8caf54a23b0dbc5f3dda7830d6
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58759673"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59273980"
 ---
 # <a name="connect-to-media-services-v3-api---net"></a>Подключение к API v3 служб мультимедиа - .NET
 
 В этой статье показано, как соединиться с пакета SDK для .NET v3 для служб мультимедиа Azure с помощью метода под основной учетной записью службы.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Запомните имя группы ресурсов и имя учетной записи служб мультимедиа
 - Установите это средство, которое вы хотите использовать для разработки приложений .NET. В этой статье показано, как использовать [Visual Studio 2017 Community Edition](https://www.visualstudio.com/downloads/). Вы можете использовать Visual Studio Code, см. в разделе [работа с C# ](https://code.visualstudio.com/docs/languages/csharp). Или можно использовать другом редакторе кода.
@@ -42,7 +42,7 @@ ms.locfileid: "58759673"
 1. В Visual Studio выберите **средства** > **диспетчер пакетов NuGet** > **консоли диспетчера NuGet**.
 2. В **консоль диспетчера пакетов** окно, используйте `Install-Package` команду, чтобы добавить следующие пакеты NuGet. Например, `Install-Package Microsoft.Azure.Management.Media`.
 
-|Package|ОПИСАНИЕ|
+|Пакет|Описание|
 |---|---|
 |`Microsoft.Azure.Management.Media`|Пакет SDK служб мультимедиа Azure. <br/>Чтобы убедиться, что вы используете последнюю версию пакета служб мультимедиа Azure, проверьте [Microsoft.Azure.Management.Media](https://www.nuget.org/packages/Microsoft.Azure.Management.Media).|
 |`Microsoft.Rest.ClientRuntime.Azure.Authentication`|Библиотека проверки подлинности ADAL для пакета Azure SDK для NET|
@@ -200,10 +200,6 @@ namespace ConsoleApp1
  
         private static async Task<ServiceClientCredentials> GetCredentialsAsync(ConfigWrapper config)
         {
-            // Use UserTokenProvider.LoginWithPromptAsync or UserTokenProvider.LoginSilentAsync to get a token using user authentication
-            //// ActiveDirectoryClientSettings.UsePromptOnly
-            //// UserTokenProvider.LoginWithPromptAsync
-
             // Use ApplicationTokenProvider.LoginSilentWithCertificateAsync or UserTokenProvider.LoginSilentAsync to get a token using service principal with certificate
             //// ClientAssertionCertificate
             //// ApplicationTokenProvider.LoginSilentWithCertificateAsync
@@ -229,17 +225,17 @@ namespace ConsoleApp1
 
 ## <a name="see-also"></a>См. также
 
-- [Руководство Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md) 
-- [Руководство Потоковая трансляция в реальном времени с помощью Служб мультимедиа Azure версии 3 и .NET](stream-live-tutorial-with-api.md)
-- [Руководство Анализ видео с помощью Служб мультимедиа версии 3 и .NET](analyze-videos-tutorial-with-api.md)
-- [Создание входных данных задания из локального файла с помощью .NET](job-input-from-local-file-how-to.md)
-- [Создание входных данных задания из URL-адреса HTTPS с помощью .NET](job-input-from-http-how-to.md)
-- [Кодирование с помощью пользовательского преобразования с помощью .NET](customize-encoder-presets-how-to.md)
-- [Использование динамического шифрования AES-128 и службы доставки ключей с помощью .NET](protect-with-aes128.md)
-- [Использование динамического шифрования DRM и службы доставки лицензий с помощью .NET](protect-with-drm.md)
-- [Получение ключа подписи из имеющейся политики с помощью .NET](get-content-key-policy-dotnet-howto.md)
-- [Создание фильтров с помощью Служб мультимедиа для .NET](filters-dynamic-manifest-dotnet-howto.md)
-- [Дополнительные примеры видео по запросу с использованием Функций Azure версии 2 и Cлужб мультимедиа версии 3](https://aka.ms/ams3functions)
+- [Учебник. Передача, кодирование и потоковую передачу видео - .NET](stream-files-tutorial-with-api.md) 
+- [Учебник. Live Stream с помощью Media Services v3 - .NET](stream-live-tutorial-with-api.md)
+- [Учебник. Анализ видео с помощью Media Services v3 - .NET](analyze-videos-tutorial-with-api.md)
+- [Создание входных данных задания из локального файла - .NET](job-input-from-local-file-how-to.md)
+- [Создание входных данных задания из URL-адрес HTTPS - .NET](job-input-from-http-how-to.md)
+- [Кодирование с помощью пользовательского преобразования — .NET](customize-encoder-presets-how-to.md)
+- [Использование динамического шифрования AES-128 и службы доставки ключей — .NET](protect-with-aes128.md)
+- [Использовать DRM динамического шифрования и лицензий служба доставки — .NET](protect-with-drm.md)
+- [Получить ключ подписи из существующей политики - .NET](get-content-key-policy-dotnet-howto.md)
+- [Создание фильтров с помощью служб мультимедиа - .NET](filters-dynamic-manifest-dotnet-howto.md)
+- [Дополнительные примеры видео по запросу "функции Azure" версии 2 с помощью Media Services v3](https://aka.ms/ams3functions)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

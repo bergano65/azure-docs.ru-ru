@@ -1,19 +1,18 @@
 ---
 title: Автор политики для свойства массива для ресурсов Azure
 description: Сведения для создания параметров массива, создать правила для массива выражения языка, оценить псевдоним [*], а также для добавления элементов в существующий массив правилам определения политики Azure.
-services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 03/06/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 62267a4549355212a18654ff9781b2164ba19fa9
-ms.sourcegitcommit: b8f9200112cae265155b8877f7e1621c4bcc53fc
+ms.openlocfilehash: 38cf6decb8e61768faa9680058f6366e1550ba40
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57860294"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59274729"
 ---
 # <a name="author-policies-for-array-properties-on-azure-resources"></a>Автор политики для свойства массива для ресурсов Azure
 
@@ -186,7 +185,7 @@ ms.locfileid: "57860294"
 
 Следующие результаты являются результатом сочетания условие правила политики в примере и массива из существующих значений выше:
 
-|Условие |Результат |Пояснение |
+|Условие |Результат |Объяснение |
 |-|-|-|
 |`{<field>,"notEquals":"127.0.0.1"}` |Nothing |Один элемент массива результатом является значение false (127.0.0.1! = 127.0.0.1) и один — как true (127.0.0.1! = 192.168.1.1), поэтому **notEquals** условие _false_ и эффект не срабатывает. |
 |`{<field>,"notEquals":"10.0.4.1"}` |Действия политики |Оба элемента массива, интерпретируются как true (10.0.4.1! = 127.0.0.1 и 10.0.4.1! = 192.168.1.1), поэтому **notEquals** условие _true_ и активируется эффект. |

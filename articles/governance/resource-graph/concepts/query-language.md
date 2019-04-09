@@ -1,7 +1,6 @@
 ---
 title: Основные сведения о языке запросов
 description: Описывает доступные операторы Kusto и функции, можно использовать с график ресурсов Azure.
-services: resource-graph
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 12/11/2018
@@ -9,12 +8,12 @@ ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 618445c5b792317d4de4b668e7ea1a186707007c
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: 08e4f09665a3501073f55b7f5b82bf51cf508ea9
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57317923"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59276683"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
@@ -26,22 +25,22 @@ ms.locfileid: "57317923"
 
 Ниже приведен список поддерживаемых табличных операторов в графике ресурсов:
 
-- [count](/azure/kusto/query/countoperator)
+- [количество](/azure/kusto/query/countoperator)
 - [distinct](/azure/kusto/query/distinctoperator)
 - [extend](/azure/kusto/query/extendoperator)
-- [limit](/azure/kusto/query/limitoperator)
-- [order by](/azure/kusto/query/orderoperator)
+- [ограничение](/azure/kusto/query/limitoperator)
+- [предложения ORDER by](/azure/kusto/query/orderoperator)
 - [project](/azure/kusto/query/projectoperator)
-- [project-away](/azure/kusto/query/projectawayoperator)
+- [Project-away](/azure/kusto/query/projectawayoperator)
 - [sample](/azure/kusto/query/sampleoperator)
-- [sample-distinct](/azure/kusto/query/sampledistinctoperator)
-- [sort by](/azure/kusto/query/sortoperator)
+- [Пример distinct](/azure/kusto/query/sampledistinctoperator)
+- [сортировать по](/azure/kusto/query/sortoperator)
 - [summarize](/azure/kusto/query/summarizeoperator)
 - [take](/azure/kusto/query/takeoperator)
-- [В начало](/azure/kusto/query/topoperator)
+- [top](/azure/kusto/query/topoperator)
 - [top-nested](/azure/kusto/query/topnestedoperator)
-- [top-hitters](/azure/kusto/query/tophittersoperator)
-- [where](/azure/kusto/query/whereoperator)
+- [TOP-hitters](/azure/kusto/query/tophittersoperator)
+- [где](/azure/kusto/query/whereoperator)
 
 ## <a name="supported-functions"></a>Поддерживаемые функции
 
@@ -51,7 +50,7 @@ ms.locfileid: "57317923"
 - [buildschema()](/azure/kusto/query/buildschema-aggfunction)
 - [strcat()](/azure/kusto/query/strcatfunction)
 - [isnotempty()](/azure/kusto/query/isnotemptyfunction)
-- [tostring()](/azure/kusto/query/tostringfunction)
+- [ToString()](/azure/kusto/query/tostringfunction)
 - [zip()](/azure/kusto/query/zipfunction)
 
 ## <a name="next-steps"></a>Дальнейшие действия

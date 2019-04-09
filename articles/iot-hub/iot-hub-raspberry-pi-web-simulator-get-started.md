@@ -1,21 +1,21 @@
 ---
 title: Подключение веб-симулятора Raspberry Pi (Node.js) к Центру Интернета вещей для передачи данных в облако | Документация Майкрософт
 description: Подключение веб-симулятора Raspberry Pi к Центру Интернета вещей для передачи данных с него в облако Azure.
-author: rangv
-manager: ''
+author: wesmc7777
+manager: philmea
 keywords: симулятор raspberry pi, raspberry pi и центр интернета вещей azure, raspberry pi и центр интернета вещей, отправка данных с raspberry pi в облако, подключение raspberry pi к облаку
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 04/11/2018
-ms.author: rangv
-ms.openlocfilehash: 3f8fbf571efafe22d7d0c5ccfd71dded381ba6fb
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.author: wesmc
+ms.openlocfilehash: 58e05ba4fb2e362147f7ca28d83440ddabb6ef38
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58847216"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59267741"
 ---
 # <a name="connect-raspberry-pi-online-simulator-to-azure-iot-hub-nodejs"></a>Подключение онлайн-симулятора Raspberry Pi к Центру Интернета вещей Azure (Node.js)
 
@@ -56,7 +56,7 @@ ms.locfileid: "58847216"
 Нажмите кнопку, чтобы запустить онлайн-симулятор Raspberry Pi.
 
 > [!div class="button"]
-> <a href="https://azure-samples.github.io/raspberry-pi-web-simulator/#GetStarted" target="_blank">Запустить симулятор Raspberry Pi</a>
+> <a href="https://azure-samples.github.io/raspberry-pi-web-simulator/#GetStarted" target="_blank">Запустить симулятор Raspberry Pi</a>
 
 В веб-симуляторе есть 3 области.
 
@@ -90,11 +90,11 @@ ms.locfileid: "58847216"
 ## <a name="run-a-sample-application-on-pi-web-simulator"></a>Запуск примера приложения на веб-симуляторе Pi
 
 1. В области кодирования убедитесь, что вы работаете над стандартным примером приложения. Замените значения заполнителя в 15 строке на строку подключения устройства Центра Интернета вещей.
-   ![Замена строки подключения устройства](media/iot-hub-raspberry-pi-web-simulator/1_connectionstring.png)
+   ![Замените строку подключения устройства](media/iot-hub-raspberry-pi-web-simulator/1_connectionstring.png)
 
 2. Щелкните **Запуск** или введите `npm start`, чтобы запустить приложение.
 
-Должны отобразиться следующие результаты, содержащие данные датчика и сообщения, которые отправляются в Центр Интернета вещей: ![Выходные данные — данные датчика, отправленные с Raspberry Pi в Центр Интернета вещей](media/iot-hub-raspberry-pi-web-simulator/2_run_application.png)
+Вы должны увидеть следующие выходные данные, содержащие данные датчика и сообщения, отправленные в центр Интернета вещей ![выходные данные — данные датчика, отправленные с Raspberry Pi к центру Интернета вещей](media/iot-hub-raspberry-pi-web-simulator/2_run_application.png)
 
 ## <a name="read-the-messages-received-by-your-hub"></a>Читать сообщения, отправляемые в центр
 

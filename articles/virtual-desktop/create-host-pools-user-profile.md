@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: how-to
-ms.date: 04/04/2019
+ms.date: 04/05/2019
 ms.author: helohr
-ms.openlocfilehash: a7e2f3c95819c6ab6d2e63e5c7a2f62649ebd15c
-ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
-ms.translationtype: HT
+ms.openlocfilehash: 0cb4df099faad8ca482fd15cf0bb50504c1528ab
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59056101"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59276394"
 ---
 # <a name="set-up-a-user-profile-share-for-a-host-pool"></a>Настройка общей папки профиля пользователя в пуле узлов
 
@@ -66,3 +66,6 @@ ms.locfileid: "59056101"
 |---------------------|--------------------|-----------------------------------|
 | Включено             | DWORD              | 1                                 |
 | VHDLocations        | Мультистроковый параметр | «Сетевой путь для общего файлового ресурса»     |
+
+>[!IMPORTANT]
+>Для помощи в защите вашей среде виртуального рабочего стола Windows в Azure, мы рекомендуем не откройте входящий порт 3389 на виртуальных машинах. Виртуальный рабочий стол Windows не требуется открыть входящий порт 3389 пользователям доступ к виртуальным машинам в пуле узлов. Если необходимо открыть порт 3389 для устранения неполадок, мы рекомендуем использовать [доступ к виртуальной Машине just-in-time](https://docs.microsoft.com/en-us/azure/security-center/security-center-just-in-time).

@@ -5,14 +5,14 @@ author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 11/27/2018
+ms.date: 04/08/2019
 ms.author: mayg
-ms.openlocfilehash: 6b980ae7539642e67609be802b2e31b287d09f72
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.openlocfilehash: 0c06283080a4ee51f863714e4c515672299b420d
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56415279"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59275119"
 ---
 # <a name="network-security-groups-with-azure-site-recovery"></a>Группы безопасности сети и Azure Site Recovery
 
@@ -71,7 +71,7 @@ Azure Site Recovery позволяет выполнять аварийное в�
 
 После создания и настройки групп безопасности сети мы рекомендуем выполнить [тестовую отработку отказа](azure-to-azure-tutorial-dr-drill.md) для проверки сценариев связи NSG и подключение виртуальной машины после отработки отказа.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 -   Узнайте больше о [группах безопасности сети](../virtual-network/security-overview.md#network-security-groups).
 -   Дополнительные сведения о [правилах безопасности](../virtual-network/security-overview.md#security-rules) NSG.
 -   Дополнительные сведения об [эффективных правилах безопасности](../virtual-network/diagnose-network-traffic-filter-problem.md) для NSG.

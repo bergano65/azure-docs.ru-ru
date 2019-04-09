@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: b9f153aa2da32fac2bf2e64f9fc4cd469acb0b89
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: a5d89051ef479cf9d87ca8f921e05c6d0be12b8c
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58007496"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58892183"
 ---
 # <a name="tutorial-automate-container-image-builds-when-a-base-image-is-updated-in-an-azure-container-registry"></a>Руководство. автоматизации сборок образов контейнера при обновлении базового образа в службе "Реестр контейнеров Azure" 
 
@@ -45,9 +45,9 @@ ms.locfileid: "58007496"
 
 Если вы еще этого не сделали, завершите работу с первыми двумя руководствами, а затем вернитесь к этому руководству:
 
-[Руководство. Создание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"](container-registry-tutorial-quick-task.md)
+[Создание образов контейнера в облаке с помощью Задач Реестра контейнеров Azure](container-registry-tutorial-quick-task.md)
 
-[Руководство. Автоматизация сборок образов контейнера с помощью задач службы "Реестр контейнеров Azure"](container-registry-tutorial-build-task.md)
+[Автоматизация сборок образов контейнера с помощью Задач Реестра контейнеров Azure](container-registry-tutorial-build-task.md)
 
 ### <a name="configure-the-environment"></a>Настройка среды
 
@@ -79,7 +79,7 @@ GIT_PAT=<personal-access-token> # The PAT you generated in the second tutorial
 
 В следующих разделах вы создадите задачу, обновите значение `NODE_VERSION` в файле Docker базового образа, а затем используете решение "Задачи ACR" для создания базового образа. Когда задача ACR принудительно отправит новый базовый образ в реестр, он автоматически запустит сборку образа приложения. При желании можно запустить образ контейнера приложения локально, чтобы увидеть различные строки версии в созданных образах.
 
-В этом руководстве в Реестре контейнеров Azure создается и отправляется один контейнер изображения, указанный в Dockerfile. С помощью решения "Задачи ACR" можно также запускать [многошаговые задачи](container-registry-tasks-multi-step.md) (сейчас в предварительной версии), используя файл YAML для определения действий по созданию, отправке и тестированию при необходимости нескольких контейнеров.
+В этом руководстве в Реестре контейнеров Azure создается и отправляется один контейнер изображения, указанный в Dockerfile. С помощью решения "Задачи ACR" можно также запускать [многошаговые задачи](container-registry-tasks-multi-step.md), используя файл YAML для определения действий по созданию, отправке и тестированию (при необходимости) нескольких контейнеров.
 
 ## <a name="build-the-base-image"></a>создание базового образа;
 
@@ -244,7 +244,7 @@ az ad sp delete --id http://$ACR_NAME-pull
 Из этого руководства вы узнали, как использовать задачу, чтобы автоматически активировать сборки образа контейнера при обновлении базового образа. Теперь рассмотрим аутентификацию реестра контейнеров.
 
 > [!div class="nextstepaction"]
-> [Аутентификация с помощью частного реестра контейнеров Docker](container-registry-authentication.md)
+> [Аутентификация с помощью Реестра контейнеров Azure](container-registry-authentication.md)
 
 <!-- LINKS - External -->
 [base-alpine]: https://hub.docker.com/_/alpine/

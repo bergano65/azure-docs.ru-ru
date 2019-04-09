@@ -12,14 +12,14 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: pryerram
 ms.custom: mvc
-ms.openlocfilehash: c66a7d7af2a73e26878b92f34e0f42ce0b3ae7f2
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: fb17afa4bfe8c00c91cc8fb33ab3326452065a9e
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57437503"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58885423"
 ---
-# <a name="tutorial-use-azure-key-vault-with-a-windows-virtual-machine-in-net"></a>Руководство. Использование Azure Key Vault с виртуальной машиной Windows в .NET
+# <a name="tutorial-use-azure-key-vault-with-a-windows-virtual-machine-in-net"></a>Руководство по Использование Azure Key Vault с виртуальной машиной Windows в .NET
 
 Azure Key Vault помогает защитить секреты, такие как ключи API, строки подключения к базам данных, необходимые для доступа к приложениям, службам и ИТ-ресурсам.
 
@@ -107,7 +107,7 @@ az keyvault secret set --vault-name "<YourKeyVaultName>" --name "AppSecret" --va
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 Вы можете создать виртуальную машину одним из следующих способов.
 
-* [CLI Azure.](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-cli)
+* [Интерфейс командной строки Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-cli)
 * [PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-powershell)
 * [Портал Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)
 
@@ -148,7 +148,7 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssigned
 
 Вы можете вывести Hello World на консоль, выполнив следующие команды.
 
-```
+```batch
 dotnet new console -o helloworldapp
 cd helloworldapp
 dotnet run
@@ -158,7 +158,7 @@ dotnet run
 
 Откройте файл *Program.cs* и добавьте следующие пакеты.
 
-```
+```csharp
 using System;
 using System.IO;
 using System.Net;
@@ -172,7 +172,7 @@ using Newtonsoft.Json.Linq;
 1. Получение токена из локальной конечной точки MSI на виртуальной машине. При этом также извлекается токен из Azure AD.
 1. Передача токена в хранилище ключей и получение секрета. 
 
-```
+```csharp
  class Program
     {
         static void Main(string[] args)
@@ -226,4 +226,4 @@ using Newtonsoft.Json.Linq;
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Справочник по REST API для Azure Key Vault](https://docs.microsoft.com/rest/api/keyvault/)
+> [REST API для Azure Key Vault](https://docs.microsoft.com/rest/api/keyvault/)

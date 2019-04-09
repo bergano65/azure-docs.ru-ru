@@ -15,18 +15,18 @@ ms.workload: NA
 ms.date: 01/31/2019
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: 0d4689e35cd308478ae0c0154761534dd834f146
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 34a967640ec039727e8947e865eeff1f5fef4649
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58482340"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58758587"
 ---
 # <a name="quickstart-deploy-windows-containers-to-service-fabric"></a>Краткое руководство. Развертывание контейнеров Windows в Service Fabric
 
 Azure Service Fabric — это платформа распределенных систем для развертывания масштабируемых надежных микрослужб и контейнеров и управления ими.
 
-Чтобы запустить существующее приложение в контейнере Windows кластера Service Fabric, не требуется вносить изменения в приложение. В этом кратком руководстве показано, как развернуть готовый образ контейнера Docker в приложении Service Fabric. По окончании вы получите рабочий контейнер для IIS и Nano Server в Windows Server 2016. В этом кратком руководстве объясняется, как развернуть контейнер Windows. Чтобы узнать, как развернуть контейнер Linux, ознакомьтесь с [этим кратким руководством](service-fabric-quickstart-containers-linux.md).
+Чтобы запустить существующее приложение в контейнере Windows кластера Service Fabric, не требуется вносить изменения в приложение. В этом кратком руководстве показано, как развернуть готовый образ контейнера Docker в приложении Service Fabric. В итоге у вас будет рабочий Windows Server Core 2016 и контейнер для IIS. В этом кратком руководстве объясняется, как развернуть контейнер Windows. Чтобы узнать, как развернуть контейнер Linux, ознакомьтесь с [этим кратким руководством](service-fabric-quickstart-containers-linux.md).
 
 ![Страница служб IIS по умолчанию][iis-default]
 
@@ -54,7 +54,7 @@ Azure Service Fabric — это платформа распределенных 
 
 Выберите **Контейнер** в шаблонах **размещенных контейнеров и приложений**.
 
-В поле **Имя образа** укажите microsoft/iis:nanoserver — [базовый образ Nano Server Windows Server и IIS](https://hub.docker.com/r/microsoft/iis/).
+В поле **Имя образа** введите mcr.microsoft.com/windows/servercore/iis:windowservercore-ltsc2016. Это [базовый образ Windows Server Core Server и IIS](https://hub.docker.com/r/microsoft-windows-servercore-iis).
 
 Настройте сопоставление порта контейнера с портом узла, чтобы входящие запросы к службе через порт 80 сопоставлялись с портом 80 в контейнере.  Укажите **порт контейнера** (80) и **узла** (80).  
 
@@ -74,14 +74,14 @@ Azure Service Fabric — это платформа распределенных 
     <ContainerHostPolicies CodePackageRef="Code"> 
       <ImageOverrides> 
         ...
-          <Image Name="microsoft/iis:nanoserverDefault" /> 
-          <Image Name= "microsoft/iis:nanoserver" Os="14393" /> 
-          <Image Name="microsoft/iis:windowsservercore-1709" Os="16299" /> 
+          <Image Name="mcr.microsoft.com/windows/servercore/iis:windowservercore-1803" /> 
+          <Image Name= "mcr.microsoft.com/windows/servercore/iis:windowservercore-ltsc2016" Os="14393" /> 
+          <Image Name="mcr.microsoft.com/windows/servercore/iis:windowservercore-1709" Os="16299" /> 
       </ImageOverrides> 
     </ContainerHostPolicies> 
 ```
 
-Манифест служб продолжает указывать только один образ для наносервера, `microsoft/iis:nanoserver`.
+Манифест служб продолжает указывать только один образ для наносервера, `mcr.microsoft.com/windows/servercore/iis:windowservercore-ltsc2016`.
 
 Кроме того, в файле *ApplicationManifest.xml* измените значение параметра **PasswordEncrypted** на **false**. Учетная запись и пароль не указаны для образа общедоступного контейнера, находящегося в центре Docker, поэтому мы отключили возможность шифрования, так как шифрование пустого пароля приведет к возникновению ошибки сборки.
 

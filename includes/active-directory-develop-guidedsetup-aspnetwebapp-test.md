@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 04/19/2018
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: 4c4870dc0f5a423288e6cb561b985501414e8525
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
-ms.translationtype: MT
+ms.openlocfilehash: 9b88a6f3f7e17cfc549b30d1f0d80d4cdf1c3e2d
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58203667"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58919335"
 ---
 ## <a name="test-your-code"></a>Тестирование кода
 
@@ -27,9 +27,9 @@ ms.locfileid: "58203667"
 
 Когда вы будете готовы запустить тестирование, войдите в учетную запись Microsoft Azure Active Directory (рабочую или учебную) (Azure AD) или в личную учетную запись Майкрософт (<span>live.com</span>, <span>outlook.</span>com).
 
-![Войдите с помощью учетной записи Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-test/aspnetbrowsersignin.png)
+![Вход с помощью учетной записи Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-test/aspnetbrowsersignin.png)
 <br/><br/>
-![Войдите в учетную запись Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-test/aspnetbrowsersignin2.png)
+![Вход с помощью учетной записи Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-test/aspnetbrowsersignin2.png)
 
 #### <a name="view-application-results"></a>Просмотр результатов приложения
 
@@ -45,10 +45,10 @@ ms.locfileid: "58203667"
 
 |Свойство |Значение |ОПИСАНИЕ |
 |---|---|---|
-|**Имя** |Полное имя пользователя | Имя и фамилия пользователя.
+|**ИМЯ** |Полное имя пользователя | Имя и фамилия пользователя.
 |**Имя пользователя** |user<span>@domain.com</span> | Имя пользователя, которое используется для идентификации пользователя.
-|**Тема** |Субъект |Строка, уникально идентифицирующая пользователя в Интернете.|
-|**Идентификатор клиента** |Guid | **Уникальный идентификатор**, который представляет организацию Azure AD пользователя.|
+|**Субъект** |Субъект |Строка, уникально идентифицирующая пользователя в Интернете.|
+|**Tenant ID** |Guid | **Уникальный идентификатор**, который представляет организацию Azure AD пользователя.|
 
 Кроме того, вы увидите таблицу всех утверждений, которые находятся в запросе проверки подлинности. Дополнительные сведения см. в статье [Azure AD token reference](https://docs.microsoft.com/azure/active-directory/develop/active-directory-token-and-claims) (Справочник по токенам Azure AD).
 
@@ -82,12 +82,12 @@ GlobalFilters.Filters.Add(new AuthorizeAttribute());
 
 #### <a name="option-1-restrict-users-from-only-one-organizations-active-directory-instance-to-sign-in-to-your-application-single-tenant"></a>Вариант 1. Разрешение входа в приложение только пользователям отдельного экземпляра Active Directory организации (приложение с одним клиентом)
 
-Этот параметр является распространенным сценарием для *бизнес-приложений*: Если требуется, чтобы приложение принимало операции входа только из учетных записей, относящихся к определенному экземпляру Azure Active Directory (включая *гостевых учетных записей* этого экземпляра) сделайте следующее:
+Это распространенный сценарий для *бизнес-приложений*. Если требуется, чтобы приложение принимало операции входа только с использованием учетных записей, относящихся к определенному экземпляру Azure Active Directory (включая *гостевые учетные записи* этого экземпляра), сделайте следующее:
 
 1. В файле **web.config** для значения параметра `Tenant` вместо `Common` установите имя клиента организации (например, `contoso.onmicrosoft.com`).
 2. В классе [OWIN Startup](#configure-the-authentication-pipeline) задайте аргументу `ValidateIssuer` значение `true`.
 
-#### <a name="option-2-restrict-access-to-your-application-to-users-in-a-specific-list-of-organizations"></a>Вариант 2. Ограничение доступа к приложению пользователей в определенный список организаций
+#### <a name="option-2-restrict-access-to-your-application-to-users-in-a-specific-list-of-organizations"></a>Вариант 2. Ограничение доступа к приложению для пользователей в определенном списке организаций
 
 Доступ на вход в приложение можно ограничить учетными записями пользователей организации Azure AD, которая находится в списке разрешенных организаций:
 1. В классе [OWIN Startup](#configure-the-authentication-pipeline) задайте аргументу `ValidateIssuer` значение `true`.
@@ -95,6 +95,6 @@ GlobalFilters.Filters.Add(new AuthorizeAttribute());
 
 #### <a name="option-3-use-a-custom-method-to-validate-issuers"></a>Вариант 3. Используйте пользовательский метод для проверки издателей
 
-Пользовательский метод можно реализовать для проверки издателей с помощью параметра **IssuerValidator**. Дополнительные сведения о том, как использовать этот параметр, см. в статье [TokenValidationParameters Class](https://msdn.microsoft.com/library/system.identitymodel.tokens.tokenvalidationparameters.aspx) (Класс TokenValidationParameters) на MSDN.
+Пользовательский метод можно реализовать для проверки издателей с помощью параметра **IssuerValidator**. Дополнительные сведения о том, как использовать этот параметр, см. в статье [TokenValidationParameters Class](/previous-versions/visualstudio/dn464192(v=vs.114)) (Класс TokenValidationParameters).
 
 [!INCLUDE [Help and support](./active-directory-develop-help-support-include.md)]

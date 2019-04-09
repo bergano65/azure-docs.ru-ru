@@ -8,18 +8,21 @@ ms.topic: quickstart
 ms.date: 1/8/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: b474d3579a7c20c190a427f503d97ec7471a1b12
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 42d3bd2285574b4416ec06af13006353880a7ca5
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58091160"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58903528"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-portal"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure на портале Azure
 
 В этом кратком руководстве показано, как использовать портал Azure для создания шлюза приложений.  Создав шлюз приложений, протестируйте его, чтобы убедиться в том, что он работает правильно. Шлюз приложений Azure позволяет направлять веб-трафик приложения к определенным ресурсам. Для этого портам назначаются прослушиватели, создаются определенные правила и в серверный пул добавляются соответствующие ресурсы. Чтобы упростить восприятие, в этой статье используется простая настройка с открытым интерфейсным IP-адресом, базовый прослушиватель для размещения одного сайта на этом шлюзе приложений, две виртуальные машины, используемые для серверного пула, и базовое правило маршрутизации запросов.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -123,7 +126,7 @@ ms.locfileid: "58091160"
 2. Чтобы установить службы IIS, выполните на виртуальной машине следующие команды: 
 
     ```azurepowershell-interactive
-    Set-AzureRmVMExtension `
+    Set-AzVMExtension `
       -ResourceGroupName myResourceGroupAG `
       -ExtensionName IIS `
       -VMName myVM `
@@ -134,7 +137,7 @@ ms.locfileid: "58091160"
       -Location EastUS
     ```
 
-3. Создайте вторую виртуальную машину и установите IIS, следуя только что выполненным инструкциям. Используйте *myVM2* в качестве имени виртуальной машины и параметр **VMName** для командлета **Set-AzureRmVMExtension**.
+3. Создайте вторую виртуальную машину и установите IIS, следуя только что выполненным инструкциям. Используйте *myVM2* в качестве имени виртуальной машины и параметр **VMName** для командлета **Set-AzVMExtension**.
 
 ### <a name="add-backend-servers-to-backend-pool"></a>Добавление серверов во внутренние пулы
 
@@ -174,4 +177,4 @@ ms.locfileid: "58091160"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по управлению веб-трафиком с помощью шлюза приложений и Azure CLI](./tutorial-manage-web-traffic-cli.md)
+> [Управление веб-трафиком с помощью шлюза приложений и Azure CLI](./tutorial-manage-web-traffic-cli.md)

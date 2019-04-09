@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: overview
-ms.date: 02/26/2019
+ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: 97794675f3d489e1154d9c327c18d40708dd5b53
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b104f2578938997ff12778d65f08cca226d9a445
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57877859"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58892336"
 ---
 # <a name="what-is-azure-data-box-disk"></a>Что такое диск Azure Data Box
 
@@ -42,7 +42,7 @@ ms.locfileid: "57877859"
 О. Если у вас есть 40 ТБ данных (или меньше), которые требуется перенести в Azure, эффективнее всего будет использовать диски Data Box.
 
 ### <a name="q-what-is-the-price-of-data-box-disks"></a>В. Какова стоимость дисков Data Box?
-О. Сведения о ценах на диски см. на странице [Семейство устройств Azure Data Box](https://azure.microsoft.com/pricing/details/storage/databox/disk/).
+О. Сведения о ценах на диски см. на странице [Семейство устройств Azure Data Box](https://azure.microsoft.com/pricing/details/databox/disk/).
 
 ### <a name="q-how-do-i-get-data-box-disks"></a>В. Как получить диски Data Box? 
 О.  Чтобы получить Диски Azure Data Box, выполните вход на портал Azure и создайте заказ Data Box для дисков. Введите свои контактные данные и сведения об уведомлениях. После размещения заказа диски будут доставлены в течение 10 дней в зависимости от доступности.
@@ -129,8 +129,8 @@ ms.locfileid: "57877859"
  - **Средство Split Copy Диска Data Box**. Применяйте этот инструмент при использовании нескольких дисков и при наличии большого набора данных, который нужно разделить и скопировать на все диски. Сейчас это средство доступно для ОС семейства Windows. Это средство не поддерживается с управляемыми дисками. Оно также выполняет проверку по мере копирования данных, поэтому вы можете пропустить этот шаг при использовании этого средства.
 
 Набор средств доступен для ОС Windows и Linux. Это средство вы можете скачать по ссылкам, приведенным далее.
-- [Скачать набор средств для диска Data Box для Windows](https://aka.ms/databoxdisktoolswin) 
-- [Скачать набор средств для диска Data Box для Linux](https://aka.ms/databoxdisktoolslinux)
+- [Скачать набор средств для Диска Data Box для Windows](https://aka.ms/databoxdisktoolswin) 
+- [Скачать набор средств для Диска Data Box для Linux](https://aka.ms/databoxdisktoolslinux)
  
   ### <a name="q-can-i-use-data-box-disk-to-transfer-data-to-azure-files-and-then-use-the-data-with-azure-file-sync"></a>В. Можно ли использовать диск Data Box для передачи данных в службу "Файлы Azure", а затем использовать данные с помощью функции "Синхронизация файлов Azure"? 
   О. Службу "Файлы Azure" можно использовать с Диском Data Box, но она не будет работать надлежащим образом при применении функции "Синхронизация файлов Azure". Метаданные не сохраняются, если данные файла впоследствии используются функцией "Синхронизация файлов Azure".
@@ -170,6 +170,6 @@ ms.locfileid: "57877859"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Ознакомьтесь с [системными требованиями Data Box](data-box-disk-system-requirements.md).
-- Изучите [ограничения Data Box](data-box-disk-limits.md).
-- Быстро разверните [диск Azure Data Box](data-box-disk-quickstart-portal.md) на портале Azure.
+- Просмотрите [требования к системе для использования Диска Data Box](data-box-disk-system-requirements.md).
+- Объяснение [ограничений диска Data Box](data-box-disk-limits.md).
+- Быстрое развертывание [диска Azure Data Box](data-box-disk-quickstart-portal.md) на портале Azure.
