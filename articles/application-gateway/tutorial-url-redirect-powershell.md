@@ -3,19 +3,15 @@ title: Создание шлюза приложений с перенаправ�
 description: Узнайте, как создать шлюз приложений с перенаправлением трафика на основе URL-пути с помощью Azure PowerShell.
 services: application-gateway
 author: vhorne
-manager: jpconnock
 ms.service: application-gateway
-ms.topic: tutorial
-ms.workload: infrastructure-services
-ms.date: 11/13/2018
+ms.date: 4/3/2019
 ms.author: victorh
-ms.custom: mvc
-ms.openlocfilehash: 91cc28ec3df6a1d9ef4fc773687a0ec2870b623d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: HT
+ms.openlocfilehash: febe02ac7fe4dfcb4140a8e5796c4c9fa86f6de3
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58001383"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918388"
 ---
 # <a name="create-an-application-gateway-with-url-path-based-redirection-using-azure-powershell"></a>Создание шлюза приложений с перенаправлением на основе URL-пути при помощи Azure PowerShell
 
@@ -41,7 +37,7 @@ ms.locfileid: "58001383"
 
 [!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
 
-Если вы решили установить и использовать PowerShell локально, то для работы с этим руководством вам понадобится модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+Если вы решили установить и использовать PowerShell локально, то для работы с этим учебником вам понадобится модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -502,7 +498,7 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ![Тестирование базового URL-адреса в шлюзе приложений](./media/tutorial-url-redirect-powershell/application-gateway-iistest.png)
 
-Измените URL-адрес на http://&lt;ip-address&gt;:8080/video/test.htm и замените &lt;ip-address&gt; своим IP-адресом. Результат должен быть примерно таким, как показано ниже.
+Измените URL-адрес на http://&lt;ip-address&gt;:8080/images/test.htm, указав вместо заполнителя &lt;ip-address&gt; фактический IP-адрес. Результат должен быть примерно таким, как показано ниже:
 
 ![Тестирование URL-адреса изображений в шлюзе приложений](./media/tutorial-url-redirect-powershell/application-gateway-iistest-images.png)
 
@@ -514,7 +510,7 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете удалить ненужные группу ресурсов, виртуальную машину и все связанные с ними ресурсы, выполнив командлет [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup).
+Если группа ресурсов, виртуальная машина и все связанные с ними ресурсы вам больше не требуются, их можно удалить. Для этого выполните командлет [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup).
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name myResourceGroupAG

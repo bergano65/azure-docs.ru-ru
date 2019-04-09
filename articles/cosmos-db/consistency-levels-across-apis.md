@@ -1,18 +1,18 @@
 ---
 title: Уровни согласованности и API для Azure Cosmos DB
 description: Основные сведения об уровнях согласованности в API Azure Cosmos DB.
-author: markjbrown
-ms.author: mjbrown
+author: rimman
+ms.author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 10/23/2018
+ms.date: 04/08/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 902303a8f55f4494e0cc6c21b0438e41437c0567
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.openlocfilehash: 7a8617ae2b01fc89a4c957b8610164a2b53a16f5
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58620671"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59274779"
 ---
 # <a name="consistency-levels-and-azure-cosmos-db-apis"></a>Уровни согласованности и API для Azure Cosmos DB
 
@@ -33,7 +33,7 @@ Azure Cosmos DB обеспечивает встроенную поддержку
 
 В следующей таблице показано, как собственные уровни согласованности Cassandra сопоставляются с Azure Cosmos DB уровней согласованности при использовании API-интерфейса Cassandra:  
 
-[ ![Сопоставления модели согласованности Cassandra](./media/consistency-levels-across-apis/consistency-model-mapping-cassandra.png) ](./media/consistency-levels-across-apis/consistency-model-mapping-cassandra.png#lightbox)
+[![Cсопоставления модели согласованности assandra](./media/consistency-levels-across-apis/consistency-model-mapping-cassandra.png)](./media/consistency-levels-across-apis/consistency-model-mapping-cassandra.png#lightbox)
 
 ## <a id="mongo-mapping"></a>Сопоставление MongoDB и Azure Cosmos DB уровней согласованности
 
@@ -51,12 +51,12 @@ Azure Cosmos DB обеспечивает встроенную поддержку
 
 В следующей таблице показано, как собственный MongoDB чтения и записи проблемы сопоставляются уровней согласованности Azure Cosmos, при использовании API Azure Cosmos DB для MongoDB:
 
-[ ![Сопоставления модели согласованности MongoDB](./media/consistency-levels-across-apis/consistency-model-mapping-mongodb.png) ](./media/consistency-levels-across-apis/consistency-model-mapping-mongodb.png#lightbox)
+[![Mсопоставления модели согласованности ongoDB](./media/consistency-levels-across-apis/consistency-model-mapping-mongodb.png)](./media/consistency-levels-across-apis/consistency-model-mapping-mongodb.png#lightbox)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об уровнях согласованности и совместимости API Azure Cosmos DB и API с открытым исходным кодом. Ознакомьтесь со следующими статьями:
 
 * [Достижение компромисса между доступностью и быстродействием для разных уровней согласованности](consistency-levels-tradeoffs.md)
-* [Использование API Azure Cosmos DB для поддержки возможностей и синтаксиса MongoDB](mongodb-feature-support.md)
-* [Функции Apache Cassandra, поддерживаемые API Cassandra для Azure Cosmos DB](cassandra-support.md)
+* [MongoDB возможности, поддерживаемые API Azure Cosmos DB для MongoDB](mongodb-feature-support.md)
+* [Apache Cassandra функции, поддерживаемые Azure Cosmos DB Cassandra API](cassandra-support.md)

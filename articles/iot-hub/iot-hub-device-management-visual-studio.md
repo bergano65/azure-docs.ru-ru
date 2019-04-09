@@ -7,16 +7,16 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: xshi
-ms.openlocfilehash: f0cb740f04970aeed4342511a046862f05aaa736
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
-ms.translationtype: HT
+ms.openlocfilehash: 87a0847f5d42e014f3b2691c96446892176b481b
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54109229"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59269577"
 ---
 # <a name="use-cloud-explorer-for-visual-studio-for-azure-iot-hub-device-management"></a>Управление устройствами Центра Интернета вещей Azure с помощью Cloud Explorer для Visual Studio
 
-![Комплексная схема](media/iot-hub-get-started-e2e-diagram/2.png)
+![Комплексная схема](media/iot-hub-device-management-visual-studio/iot-e2e-simple.png)
 
 [Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS) — это полезное расширение для Visual Studio. Оно позволяет просматривать ресурсы Azure, проверять их свойства и выполнять основные действия разработчика в среде Visual Studio. В нем предусмотрены возможности управления, с помощью которых можно выполнять различные задачи.
 
@@ -35,7 +35,7 @@ ms.locfileid: "54109229"
 
 ## <a name="what-you-learn"></a>Что вы узнаете
 
-Вы узнаете, как использовать Cloud Explorer для Visual Studio с различными параметрами управления на компьютере разработки.
+Вы узнаете, как использовать Cloud Explorer для Visual Studio с разными параметрами управления на компьютере разработки.
 
 ## <a name="what-you-do"></a>Что нужно сделать
 
@@ -43,8 +43,8 @@ ms.locfileid: "54109229"
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
-- Активная подписка Azure.
-- Центр Интернета вещей Azure в подписке.
+- активная подписка Azure;
+- Центр Интернета вещей Azure в подписке
 - Microsoft Visual Studio 2017 с обновлением 8 или более поздней версии.
 - Компонент Cloud Explorer из Visual Studio Installer (по умолчанию выбран вместе с рабочей нагрузкой Azure).
 
@@ -90,7 +90,7 @@ ms.locfileid: "54109229"
 1. Введите сообщение в поле ввода.
 1. Результаты будут отображаться в области вывода **Центра Интернета вещей**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как использовать Cloud Explorer для Visual Studio с различными параметрами управления.
 

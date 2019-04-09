@@ -1,5 +1,5 @@
 ---
-title: Функции службы базы данных SQL Azure | Документация Майкрософт
+title: Функции службы базы данных SQL Azure | Документы Майкрософт
 description: Узнайте о технических характеристиках и возможностях базы данных SQL, а также о реляционной системе управления базами данных (реляционной СУБД) Майкрософт в облаке.
 keywords: введение в sql, общие сведения об sql, что такое база данных sql
 services: sql-database
@@ -12,13 +12,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 03/29/2019
-ms.openlocfilehash: e71039c84c79c27a372a378144b21f6f724d08d8
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
-ms.translationtype: MT
+ms.date: 04/08/2019
+ms.openlocfilehash: bd696a003b54face4f95ae426c11840bb8805bee
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58670841"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59273147"
 ---
 # <a name="what-is-azure-sql-database-service"></a>Функции службы Базы данных SQL Azure
 
@@ -156,7 +156,7 @@ ms.locfileid: "58670841"
 База данных SQL обеспечивает ряд [встроенных функций безопасности и соответствия](sql-database-security-overview.md), чтобы выполнить различные требования по защите вашего приложения.
 
 > [!IMPORTANT]
-> База данных SQL Azure (все параметры развертывания), сертифицирована для нескольких стандартов соответствия. Дополнительные сведения см. в [центре управления безопасностью Microsoft Azure](https://azure.microsoft.com/support/trust-center/), где представлен актуальный список [сертификатов соответствия базы данных SQL](https://www.microsoft.com/trustcenter/compliance/complianceofferings).
+> База данных SQL Azure (все параметры развертывания), сертифицирована для нескольких стандартов соответствия. Дополнительные сведения см. в разделе [Центр управления безопасностью Microsoft Azure](https://azure.microsoft.com/support/trust-center/compliance/) где можно найти актуальный список сертификатов соответствия базы данных SQL.
 
 ### <a name="advance-threat-protection"></a>Расширенная защита от угроз
 
@@ -186,7 +186,7 @@ ms.locfileid: "58670841"
 
 ### <a name="compliance-certification"></a>Сертификат соответствия
 
-База данных SQL участвует в регулярном аудите и сертифицирована для нескольких стандартов соответствия. Дополнительные сведения см. в [центре управления безопасностью Microsoft Azure](https://azure.microsoft.com/support/trust-center/), где представлен актуальный список [сертификатов соответствия базы данных SQL](https://azure.microsoft.com/support/trust-center/services/).
+База данных SQL участвует в регулярном аудите и сертифицирована для нескольких стандартов соответствия. Дополнительные сведения см. в разделе [Центр управления безопасностью Microsoft Azure](https://azure.microsoft.com/support/trust-center/compliance/) где можно найти актуальный список сертификатов соответствия базы данных SQL.
 
 ## <a name="easy-to-use-tools"></a>Простые в использовании инструменты
 
@@ -215,7 +215,7 @@ ms.locfileid: "58670841"
 
 ### <a name="can-i-control-when-patching-downtime-occurs"></a>Могу ли я контролировать простой в связи с установкой исправлений
 
-№ Влияние исправления в основном незаметно, если в вашем приложении [применяется логика повторных попыток](sql-database-develop-overview.md#resiliency). Дополнительные сведения о подготовке к запланированным событиям по обслуживанию Базы данных SQL Azure см. в статье [Планирование событий обслуживания Azure в Базе данных SQL Azure](sql-database-planned-maintenance.md).
+Нет. Влияние исправления в основном незаметно, если в вашем приложении [применяется логика повторных попыток](sql-database-develop-overview.md#resiliency). Дополнительные сведения о подготовке к запланированным событиям по обслуживанию Базы данных SQL Azure см. в статье [Планирование событий обслуживания Azure в Базе данных SQL Azure](sql-database-planned-maintenance.md).
 
 ### <a name="azure-hybrid-benefit-questions"></a>Вопросы о Преимуществе гибридного использования Azure
 
@@ -255,10 +255,10 @@ ms.locfileid: "58670841"
 - Сравнение цен и калькуляторы для отдельных баз данных и пулов эластичных баз данных см. на [странице расценок](https://azure.microsoft.com/pricing/details/sql-database/).
 - См. эти краткие руководства по быстрому запуску:
 
-  - [Create and query a single Azure SQL database in the Azure portal](sql-database-single-database-get-started.md) (Создание отдельной базы данных SQL с помощью портала Azure)  
-  - [Создание базы данных SQL Azure и отправка к ней запросов с помощью Azure CLI](sql-database-get-started-cli.md)
-  - [Создание отдельной базы данных SQL Azure с помощью PowerShell](sql-database-get-started-powershell.md)
+  - [Создание базы данных SQL на портале Azure](sql-database-single-database-get-started.md)  
+  - [Создание базы данных SQL с помощью Azure CLI](sql-database-get-started-cli.md)
+  - [Создание базы данных SQL с помощью PowerShell](sql-database-get-started-powershell.md)
 
 - Примеры использования Azure CLI и PowerShell:
-  - [Примеры Azure CLI для базы данных SQL Azure](sql-database-cli-samples.md)
-  - [Примеры Azure PowerShell для базы данных SQL Azure](sql-database-powershell-samples.md)
+  - [Примеры Azure CLI для базы данных SQL](sql-database-cli-samples.md)
+  - [Примеры Azure PowerShell для базы данных SQL](sql-database-powershell-samples.md)

@@ -1,7 +1,6 @@
 ---
 title: Создание динамических схем с использованием параметров
 description: Ознакомьтесь со сведениями о статических и динамических параметрах и о том, как создавать динамические схемы с их использованием.
-services: blueprints
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 03/12/2019
@@ -9,12 +8,12 @@ ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 538015f3cd26d451285f1fd66853366f814f3b0a
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: 9b5b151c62c4294563f704dc9a0cf7daeaca874f
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58805578"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59279981"
 ---
 # <a name="creating-dynamic-blueprints-through-parameters"></a>Создание динамических схем с использованием параметров
 
@@ -77,8 +76,8 @@ ms.locfileid: "58805578"
 
 В каждом универсальном коде ресурса (URI) REST API есть переменные, которые необходимо заменить собственными значениями:
 
-- `{YourMG}` — замените это значение именем своей группы управления.
-- `{subscriptionId}` — замените это значение идентификатором своей подписки.
+- `{YourMG}` — Замените на имя вашей группы управления
+- `{subscriptionId}` -Замените идентификатор подписки
 
 ##### <a name="blueprint-level-parameter"></a>Параметр уровня схемы
 
@@ -90,7 +89,7 @@ ms.locfileid: "58805578"
   PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint?api-version=2018-11-01-preview
   ```
 
-- Текст запроса
+- Тело запроса
 
   ```json
   {
@@ -123,7 +122,7 @@ ms.locfileid: "58805578"
   PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/roleOwner?api-version=2018-11-01-preview
   ```
 
-- Текст запроса
+- Тело запроса
 
   ```json
   {
@@ -148,7 +147,7 @@ ms.locfileid: "58805578"
   PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/policyStorageTags?api-version=2018-11-01-preview
   ```
 
-- Текст запроса
+- Тело запроса
 
   ```json
   {
@@ -196,7 +195,7 @@ ms.locfileid: "58805578"
   PUT https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Blueprint/blueprintAssignments/assignMyBlueprint?api-version=2018-11-01-preview
   ```
 
-- Текст запроса
+- Тело запроса
 
   ```json
   {

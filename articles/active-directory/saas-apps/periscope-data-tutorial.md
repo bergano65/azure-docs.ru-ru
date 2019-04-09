@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
-ms.openlocfilehash: 0d8fd6a0422ee26610f58f872cba4487d4e01e6b
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: cac685cc3f5a19e9da134df87076299e3f38fe11
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58403635"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58880979"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-periscope-data"></a>Руководство по Интеграция Azure Active Directory с Periscope Data
 
@@ -50,7 +50,7 @@ ms.locfileid: "58403635"
 
 Чтобы настроить интеграцию Periscope Data с Azure AD, необходимо добавить Periscope Data из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Periscope Data из коллекции, выполните следующие действия**:
+**Чтобы добавить Periscope Data из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -109,9 +109,9 @@ ms.locfileid: "58403635"
     | |
     |--|
     | `https://app.periscopedata.com/` |
-    | ` https://app.periscopedata.com/app/<SITENAME>` |
+    | `https://app.periscopedata.com/app/<SITENAME>` |
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://app.periscopedata.com/<SITENAME>/sso`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://app.periscopedata.com/<SITENAME>/sso`
 
     > [!NOTE]
     > Значение URL-адреса входа приведено только для примера. Замените эти значения фактическим значением URL-адреса входа. Обратитесь в [службу поддержки Periscope Data](mailto:support@periscopedata.com), чтобы получить это значение и значение идентификатора, которое упоминается в разделе **Настройка единого входа в Periscope Data** далее в этом руководстве. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -203,7 +203,7 @@ ms.locfileid: "58403635"
 
 Чтобы пользователи AAD могли выполнять вход в Periscope Data, они должны быть подготовлены в Periscope Data. В Periscope Data подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
+**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
 
 1. Войдите в Periscope Data с правами администратора.
 
@@ -231,9 +231,9 @@ ms.locfileid: "58403635"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [ Список учебников по интеграции приложений SaaS с Azure Active Directory ](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory? ](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

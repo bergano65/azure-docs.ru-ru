@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: overview
 ms.date: 01/09/2019
 ms.author: alkohli
-ms.openlocfilehash: 6b6d0d1a7e14035f7a1b7998ec4b3e68761539f5
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: 5d1c3e4bb1c4b3545c8f051432016348112f16b0
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54158114"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58903652"
 ---
 # <a name="use-azure-portal-to-administer-your-data-box-disk"></a>Администрирование Диска Data Box с помощью портала Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "54158114"
 
 Возможно, после размещения заказа вам нужно будем отменить его по различным причинам. Его можно отменить только перед началом подготовки диска. После подготовки дисков и обработки заказа отменить его невозможно. 
 
-Выполните следующие действия для отмены заказа.
+Для отмены заказа выполните следующие действия.
 
 1.  Перейдите на вкладку **Обзор > Отмена**. 
 
@@ -55,7 +55,7 @@ ms.locfileid: "54158114"
 
 Клон создается в течение нескольких минут, после чего портал обновляется и отображается новый заказ.
 
-[![Порядок клонирования 3](media/data-box-portal-ui-admin/clone-order3.png)](media/data-box-portal-ui-admin/clone-order3.png#lightbox) 
+[![CПорядок клонирования 3](media/data-box-portal-ui-admin/clone-order3.png)](media/data-box-portal-ui-admin/clone-order3.png#lightbox) 
 
 ## <a name="delete-order"></a>Удаление заказа
 

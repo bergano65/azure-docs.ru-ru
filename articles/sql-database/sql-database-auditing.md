@@ -11,13 +11,13 @@ author: vainolo
 ms.author: arib
 ms.reviewer: vanto
 manager: craigg
-ms.date: 02/07/2019
-ms.openlocfilehash: a98ec18f2ed38b290d04c3fdc36d9a6ff80a675a
-ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
-ms.translationtype: MT
+ms.date: 04/08/2019
+ms.openlocfilehash: 75c4f531fff02d8dfeed4ca32bbe1da432635765
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58407357"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59261077"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Приступая к работе с аудитом базы данных SQL
 
@@ -25,7 +25,7 @@ ms.locfileid: "58407357"
 
 - Аудит может помочь вам соблюсти требования нормативов, проанализировать работу с базой данных и получить представление о расхождениях и аномалиях, которые могут указывать на бизнес-проблемы или предполагаемые нарушения безопасности.
 
-- Средства аудита способствуют соблюдению стандартов соответствия, но не гарантируют их выполнение. Дополнительную информацию о программах Azure, поддерживающих проверку соблюдения стандартов, см. в [Центре управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/compliance/).
+- Средства аудита способствуют соблюдению стандартов соответствия, но не гарантируют их выполнение. Дополнительные сведения о Azure программ, поддерживающих проверку соблюдения стандартов, см. в разделе [Центр управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/compliance/) где можно найти актуальный список сертификатов соответствия базы данных SQL.
 
 
 > [!NOTE] 
@@ -231,7 +231,7 @@ ms.locfileid: "58407357"
 
 - [Создание или обновление политики (Set-AzSqlDatabaseAuditing) аудита базы данных](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabaseauditing)
 - [Создание или обновление политики аудита сервера (Set-AzSqlServerAuditing)](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserverauditing)
-- [Получение политики аудита баз данных (Get-AzSqlDatabaseAuditing)](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaseauditing)
+- [Получение политики аудита базы данных (Get-AzSqlDatabaseAuditing)](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaseauditing)
 - [Получение политики аудита (Get-AzSqlServerAuditing) сервера](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlserverauditing)
 
 Пример сценария см. в статье [Настройка аудита и обнаружения угроз для базы данных SQL с помощью PowerShell](scripts/sql-database-auditing-and-threat-detection-powershell.md).
@@ -256,9 +256,9 @@ ms.locfileid: "58407357"
 
 Вы можете управлять аудитом базы данных Azure SQL с помощью шаблонов [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), как показано в следующих примерах.
 
-- [Deploy an Azure SQL Server with Auditing enabled to write audit logs to Azure Blob storage account](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-blob-storage) (Развертывание Azure SQL Server с поддержкой аудита, чтобы записывать журналы аудита в учетную запись хранения BLOB-объектов Azure).
-- [Развертывание сервера SQL Azure с поддержкой аудита, чтобы записывать журналы аудита в Log Analytics](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-oms)
-- [Развертывание сервера SQL Azure с поддержкой аудита, чтобы записывать журналы аудита в Центры событий](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-eventhub)
+- [Развертывание сервера SQL Azure с помощью аудит, чтобы записывать журналы аудита в учетной записи хранения BLOB-объектов Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-blob-storage)
+- [Развертывание сервера SQL Azure с помощью аудит, чтобы записывать журналы аудита в Log Analytics](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-oms)
+- [Развертывание сервера SQL Azure с аудит, чтобы записывать журналы аудита для концентраторов событий](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-eventhub)
 
 > [!NOTE]
 > Связанные образцы на внешнего общедоступного репозитория и предоставляются «как is», без гарантии и не поддерживаются в рамках любой программы поддержки Microsoft/service.

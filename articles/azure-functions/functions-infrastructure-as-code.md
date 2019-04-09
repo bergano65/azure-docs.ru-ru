@@ -11,14 +11,14 @@ ms.service: azure-functions
 ms.server: functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 05/25/2017
+ms.date: 04/03/2019
 ms.author: glenga
-ms.openlocfilehash: 9fc55e2b3ebb1e932a991e0da2c78a980abbc953
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.openlocfilehash: 5d028768c062ef7df74d48f83ccc4e27a506f1ac
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57792503"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59270910"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
 
@@ -27,23 +27,29 @@ ms.locfileid: "57792503"
 Дополнительные сведения о создании шаблонов см. в статье [Создание шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md).
 
 Примеры шаблонов см. в следующих статьях:
-- [Function app on Consumption plan] (Приложение-функция в плане потребления);
-- [Function app on Azure App Service plan] (Приложение-функция в плане службы приложений Azure).
+- [Приложения-функции в плане потребления]
+- [Приложения-функции в плане службы приложений Azure]
+
+> [!NOTE]
+> План "премиум" для размещения функций Azure доступна в предварительной версии. Дополнительные сведения см. в разделе [план "премиум" функции Azure](functions-premium-plan.md).
 
 ## <a name="required-resources"></a>Необходимые ресурсы
 
-Для приложения-функции требуются следующие ресурсы:
+При развертывании функции Azure обычно состоит из этих ресурсов:
 
-* [Учетная запись хранения Azure.](../storage/index.yml)
-* План размещения (план потребления или план службы приложений).
-* Приложение-функция. 
+| Ресурс                                                                           | Требование | Синтаксис и свойства ссылки                                                         |   |
+|------------------------------------------------------------------------------------|-------------|-----------------------------------------------------------------------------------------|---|
+| Приложение-функция.                                                                     | Обязательно    | [Microsoft.Web/sites](/azure/templates/microsoft.web/sites)                             |   |
+| [Учетная запись хранения Azure.](../storage/index.yml)                                   | Обязательно    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |   |
+| [Application Insights](../azure-monitor/app/app-insights-overview.md) компонента | Необязательно    | [Microsoft.Insights/components.](/azure/templates/microsoft.insights/components)         |   |
+| Объект [план размещения](./functions-scale.md)                                             | Необязательный<sup>1</sup>    | [Microsoft.Web/serverfarms](/azure/templates/microsoft.web/serverfarms)                 |   |
 
-Синтаксис JSON и свойства для этих ресурсов см. в этих разделах:
+<sup>1</sup>план размещения является только требуется, если вы выбрали для запуска приложения-функции [план "премиум"](./functions-premium-plan.md) (в предварительной версии) или на [план службы приложений](../app-service/overview-hosting-plans.md).
 
-* [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts)
-* [Microsoft.Web/serverfarms](/azure/templates/microsoft.web/serverfarms)
-* [Microsoft.Web/sites](/azure/templates/microsoft.web/sites)
+> [!TIP]
+> Не обязательно, настоятельно рекомендуется настроить Application Insights для своего приложения.
 
+<a name="storage"></a>
 ### <a name="storage-account"></a>Учетная запись хранения
 
 Учетная запись хранения Azure — обязательный ресурс для приложения-функции. Необходима учетная запись общего назначения, поддерживающая большие двоичные объекты, таблицы, очереди и файлы. Дополнительные сведения см. в разделе [Требования к учетной записи хранения](functions-create-function-app-portal.md#storage-account-requirements).
@@ -52,8 +58,9 @@ ms.locfileid: "57792503"
 {
     "type": "Microsoft.Storage/storageAccounts",
     "name": "[variables('storageAccountName')]",
-    "apiVersion": "2015-06-15",
+    "apiVersion": "2018-07-01",
     "location": "[resourceGroup().location]",
+    "kind": "StorageV2",
     "properties": {
         "accountType": "[parameters('storageAccountType')]"
     }
@@ -76,15 +83,51 @@ ms.locfileid: "57792503"
         "name": "AzureWebJobsDashboard",
         "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
     }
-```    
+]
+```
+
+### <a name="application-insights"></a>Application Insights
+
+Рекомендуется использовать Application Insights для мониторинга приложения-функции. Ресурс Application Insights определен с типом **Microsoft.Insights/components** и вид **web**:
+
+```json
+        {
+            "apiVersion": "2015-05-01",
+            "name": "[variables('appInsightsName')]",
+            "type": "Microsoft.Insights/components",
+            "kind": "web",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "[concat('hidden-link:', resourceGroup().id, '/providers/Microsoft.Web/sites/', variables('functionAppName'))]": "Resource"
+            },
+            "properties": {
+                "Application_Type": "web",
+                "ApplicationId": "[variables('functionAppName')]"
+            }
+        },
+```
+
+Кроме того, его необходимо предоставить в приложение функцию с помощью `APPINSIGHTS_INSTRUMENTATIONKEY` параметр приложения. Это свойство указано в `appSettings` коллекции в `siteConfig` объекта:
+
+```json
+"appSettings": [
+    {
+        "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+        "value": "[reference(resourceId('microsoft.insights/components/', variables('appInsightsName')), '2015-05-01').InstrumentationKey]"
+    }
+]
+```
 
 ### <a name="hosting-plan"></a>План размещения
 
-Определение плана размещения зависит от того, используется ли план потребления или план службы приложений. Дополнительные сведения см. в разделе [Развертывание приложения-функции в плане потребления](#consumption) и [Развертывание приложения-функции в плане службы приложений](#app-service-plan).
+Определение плана размещения зависит и может принимать одно из следующих:
+* [План потребления](#consumption) (по умолчанию)
+* [План "премиум"](#premium) (в предварительной версии)
+* [план службы приложений](#app-service-plan)
 
-### <a name="function-app"></a>Приложение-функция
+### <a name="function-app"></a>Приложение функций
 
-Ресурс приложения-функции определяется с помощью ресурса типа **Microsoft.Web/Site** и вида **functionapp**:
+Ресурс приложения-функции определяется с помощью ресурса типа **Microsoft.Web/sites** и вид **functionapp**:
 
 ```json
 {
@@ -92,24 +135,65 @@ ms.locfileid: "57792503"
     "type": "Microsoft.Web/sites",
     "name": "[variables('functionAppName')]",
     "location": "[resourceGroup().location]",
-    "kind": "functionapp",            
+    "kind": "functionapp",
     "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
-        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]",
+        "[resourceId('Microsoft.Insights/components', variables('appInsightsName'))]"
     ]
+```
+
+> [!IMPORTANT]
+> Если можно точно определить план размещения, потребуется еще один элемент в массиве dependsOn: `"[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]"`
+
+Приложения-функции необходимо включить эти параметры приложения:
+
+| Имя параметра                 | Описание                                                                               | Примеры значений                        |
+|------------------------------|-------------------------------------------------------------------------------------------|---------------------------------------|
+| AzureWebJobsStorage          | Строка подключения для хранилища учетной записи, среда выполнения функций для внутренних очередей | См. в разделе [учетной записи хранения](#storage)       |
+| FUNCTIONS_EXTENSION_VERSION  | Версия среды выполнения функций Azure                                                | `~2`                                  |
+| FUNCTIONS_WORKER_RUNTIME     | Стек языков для функции в этом приложении                                   | `dotnet`, `node`, `java`, или `python` |
+| WEBSITE_NODE_DEFAULT_VERSION | Требуется, только если с помощью `node` стек языков, который указывает используемую версию              | `10.14.1`                             |
+
+Эти свойства задаются в `appSettings` коллекции в `siteConfig` свойство:
+
+```json
+"properties": {
+    "siteConfig": {
+        "appSettings": [
+            {
+                "name": "AzureWebJobsStorage",
+                "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+            },
+            {
+                "name": "FUNCTIONS_WORKER_RUNTIME",
+                "value": "node"
+            },
+            {
+                "name": "WEBSITE_NODE_DEFAULT_VERSION",
+                "value": "10.14.1"
+            },
+            {
+                "name": "FUNCTIONS_EXTENSION_VERSION",
+                "value": "~2"
+            }
+        ]
+    }
+}
 ```
 
 <a name="consumption"></a>
 
-## <a name="deploy-a-function-app-on-the-consumption-plan"></a>Развертывание приложения-функции в плане потребления
+## <a name="deploy-on-consumption-plan"></a>Развертывание на план потребления
 
-Вы можете запускать приложение-функцию в двух разных режимах: план потребления и план службы приложений. План потребления автоматически выделяет вычислительные ресурсы в процессе выполнения кода, масштабируя их в соответствии с нагрузкой и уменьшая, когда код не выполняется. Таким образом, нет необходимости платить за бездействующие виртуальные машины и заранее резервировать ресурсы. Дополнительные сведения о планах размещения см. в статье [Потребление Функций Azure и планы службы приложений](functions-scale.md).
+План потребления автоматически выделяет вычислительные ресурсы в процессе выполнения кода, масштабируя их в соответствии с нагрузкой и уменьшая, когда код не выполняется. Не нужно платить за бездействующие виртуальные машины и заранее резервировать ресурсы не нужно. Дополнительные сведения см. в разделе [масштабирование и размещение функций Azure](functions-scale.md#consumption-plan).
 
 Образец шаблона диспетчера ресурсов Azure см. на странице [Function app on Consumption plan] (План потребления приложения-функции)
 
 ### <a name="create-a-consumption-plan"></a>Создание плана потребления
 
-План потребления — это специальный тип ресурса "ферма серверов". Его можно указать с помощью значения `Dynamic` для свойств `computeMode` и `sku`:
+План потребления не должны быть определены. Один будет автоматически создана или выбрать для каждого региона, при создании самого ресурса приложения-функции.
+
+План потребления — это специальный тип ресурса «ферма серверов». Для Windows, это можно сделать с помощью `Dynamic` значение `computeMode` и `sku` свойства:
 
 ```json
 {
@@ -125,29 +209,30 @@ ms.locfileid: "57792503"
 }
 ```
 
+> [!NOTE]
+> Нельзя явно определить план потребления для Linux. Он будет создан автоматически.
+
+Если вы явным образом определять плана потребления, вам потребуется задать `serverFarmId` свойства в приложении, чтобы он указывал на идентификатор ресурса плана. Следует убедиться, что у них `dependsOn` параметр для плана также.
+
 ### <a name="create-a-function-app"></a>Создание приложения-функции
 
-Кроме того, для плана потребления следует выполнить две дополнительные настройки в конфигурации сайта: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` и `WEBSITE_CONTENTSHARE`. Эти свойства настраивают учетную запись хранения и путь к файлам кода приложения-функции и конфигурации.
+#### <a name="windows"></a>Windows
+
+В Windows, плана потребления следует выполнить две дополнительные настройки в конфигурации сайта: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` и `WEBSITE_CONTENTSHARE`. Эти свойства настраивают учетную запись хранения и путь к файлам кода приложения-функции и конфигурации.
 
 ```json
 {
-    "apiVersion": "2015-08-01",
+    "apiVersion": "2016-03-01",
     "type": "Microsoft.Web/sites",
     "name": "[variables('functionAppName')]",
     "location": "[resourceGroup().location]",
-    "kind": "functionapp",            
+    "kind": "functionapp",
     "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
         "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
     ],
     "properties": {
-        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
         "siteConfig": {
             "appSettings": [
-                {
-                    "name": "AzureWebJobsDashboard",
-                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
-                },
                 {
                     "name": "AzureWebJobsStorage",
                     "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
@@ -161,24 +246,149 @@ ms.locfileid: "57792503"
                     "value": "[toLower(variables('functionAppName'))]"
                 },
                 {
+                    "name": "FUNCTIONS_WORKER_RUNTIME",
+                    "value": "node"
+                },
+                {
+                    "name": "WEBSITE_NODE_DEFAULT_VERSION",
+                    "value": "10.14.1"
+                },
+                {
                     "name": "FUNCTIONS_EXTENSION_VERSION",
-                    "value": "~1"
+                    "value": "~2"
                 }
             ]
         }
     }
 }
-```                    
+```
+
+#### <a name="linux"></a>Linux
+
+В Linux, приложения-функции необходимо быть его `kind` присвоено `functionapp,linux`, и он должен иметь `reserved` свойству присвоено `true`:
+
+```json
+{
+    "apiVersion": "2016-03-01",
+    "type": "Microsoft.Web/sites",
+    "name": "[variables('functionAppName')]",
+    "location": "[resourceGroup().location]",
+    "kind": "functionapp,linux",
+    "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+    ],
+    "properties": {
+        "siteConfig": {
+            "appSettings": [
+                {
+                    "name": "AzureWebJobsStorage",
+                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountName'),'2015-05-01-preview').key1)]"
+                },
+                {
+                    "name": "FUNCTIONS_WORKER_RUNTIME",
+                    "value": "node"
+                },
+                {
+                    "name": "WEBSITE_NODE_DEFAULT_VERSION",
+                    "value": "10.14.1"
+                },
+                {
+                    "name": "FUNCTIONS_EXTENSION_VERSION",
+                    "value": "~2"
+                }
+            ]
+        },
+        "reserved": true
+    }
+}
+```
+
+
+
+<a name="premium"></a>
+
+## <a name="deploy-on-premium-plan"></a>Развертывание на план "премиум"
+
+План "премиум" обеспечивает такой же принцип масштабирования плана потребления, но включает выделенные ресурсы и дополнительные возможности. Дополнительные сведения см. в разделе [функции уровня "премиум" план Azure (Предварительная версия)](./functions-premium-plan.md).
+
+### <a name="create-a-premium-plan"></a>Создать план "премиум"
+
+План "премиум" — это специальный тип ресурса «ферма серверов». Это можно сделать с помощью `EP1`, `EP2`, или `EP3` для `sku` значение свойства.
+
+```json
+{
+    "type": "Microsoft.Web/serverfarms",
+    "apiVersion": "2015-04-01",
+    "name": "[variables('hostingPlanName')]",
+    "location": "[resourceGroup().location]",
+    "properties": {
+        "name": "[variables('hostingPlanName')]",
+        "sku": "EP1"
+    }
+}
+```
+
+### <a name="create-a-function-app"></a>Создание приложения-функции
+
+Приложения-функции на план "премиум" должен быть `serverFarmId` свойство присвоено идентификатор ресурса план, созданный ранее. Кроме того, план "премиум" требуется две дополнительные настройки в конфигурации сайта: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` и `WEBSITE_CONTENTSHARE`. Эти свойства настраивают учетную запись хранения и путь к файлам кода приложения-функции и конфигурации.
+
+```json
+{
+    "apiVersion": "2016-03-01",
+    "type": "Microsoft.Web/sites",
+    "name": "[variables('functionAppName')]",
+    "location": "[resourceGroup().location]",
+    "kind": "functionapp",            
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+    ],
+    "properties": {
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+        "siteConfig": {
+            "appSettings": [
+                {
+                    "name": "AzureWebJobsStorage",
+                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                },
+                {
+                    "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
+                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                },
+                {
+                    "name": "WEBSITE_CONTENTSHARE",
+                    "value": "[toLower(variables('functionAppName'))]"
+                },
+                {
+                    "name": "FUNCTIONS_WORKER_RUNTIME",
+                    "value": "node"
+                },
+                {
+                    "name": "WEBSITE_NODE_DEFAULT_VERSION",
+                    "value": "10.14.1"
+                },
+                {
+                    "name": "FUNCTIONS_EXTENSION_VERSION",
+                    "value": "~2"
+                }
+            ]
+        }
+    }
+}
+```
+
 
 <a name="app-service-plan"></a> 
 
-## <a name="deploy-a-function-app-on-the-app-service-plan"></a>Развертывание приложения-функции в плане службы приложений
+## <a name="deploy-on-app-service-plan"></a>Развертывание на план службы приложений
 
-В плане службы приложений ваши приложения-функции запускаются на выделенных виртуальных машинах на Basic, Standard и Premium SKU аналогично веб-приложениям. Дополнительную информацию о том, как действует план службы приложений, см. в статье [Подробный обзор планов службы приложений Azure](../app-service/overview-hosting-plans.md). 
+В плане службы приложений ваши приложения-функции запускаются на выделенных виртуальных машинах на Basic, Standard и Premium SKU аналогично веб-приложениям. Дополнительную информацию о том, как действует план службы приложений, см. в статье [Подробный обзор планов службы приложений Azure](../app-service/overview-hosting-plans.md).
 
 Образец шаблона Azure Resource Manager см. на странице [Function app on Azure App Service plan] (Приложение-функция в плане службы приложений Azure).
 
 ### <a name="create-an-app-service-plan"></a>Создание плана службы приложений
+
+План службы приложений определяется ресурса «ферма серверов».
 
 ```json
 {
@@ -196,9 +406,169 @@ ms.locfileid: "57792503"
 }
 ```
 
+Чтобы запустить приложение на платформе Linux, необходимо также задать `kind` для `Linux`:
+
+```json
+{
+    "type": "Microsoft.Web/serverfarms",
+    "apiVersion": "2015-04-01",
+    "name": "[variables('hostingPlanName')]",
+    "location": "[resourceGroup().location]",
+    "kind": "Linux",
+    "properties": {
+        "name": "[variables('hostingPlanName')]",
+        "sku": "[parameters('sku')]",
+        "workerSize": "[parameters('workerSize')]",
+        "hostingEnvironment": "",
+        "numberOfWorkers": 1
+    }
+}
+```
+
 ### <a name="create-a-function-app"></a>Создание приложения-функции 
 
-Выбрав вариант масштабирования, создайте приложение-функцию. Приложение является контейнером, в котором содержатся все функции.
+Приложения-функции в плане службы приложений должен иметь `serverFarmId` свойство присвоено идентификатор ресурса план, созданный ранее.
+
+```json
+{
+    "apiVersion": "2016-03-01",
+    "type": "Microsoft.Web/sites",
+    "name": "[variables('functionAppName')]",
+    "location": "[resourceGroup().location]",
+    "kind": "functionapp",
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+    ],
+    "properties": {
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+        "siteConfig": {
+            "appSettings": [
+                {
+                    "name": "AzureWebJobsStorage",
+                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                },
+                {
+                    "name": "FUNCTIONS_WORKER_RUNTIME",
+                    "value": "node"
+                },
+                {
+                    "name": "WEBSITE_NODE_DEFAULT_VERSION",
+                    "value": "10.14.1"
+                },
+                {
+                    "name": "FUNCTIONS_EXTENSION_VERSION",
+                    "value": "~2"
+                }
+            ]
+        }
+    }
+}
+```
+
+Приложения Linux также должны содержать `linuxFxVersion` свойства в разделе `siteConfig`. Если развертывается код, значение для этого определяется вашей среды стека:
+
+| Стек            | Пример значения                                         |
+|------------------|-------------------------------------------------------|
+| Python (предварительная версия) | `DOCKER|microsoft/azure-functions-python3.6:2.0`      |
+| JavaScript       | `DOCKER|microsoft/azure-functions-node8:2.0`          |
+| .NET             | `DOCKER|microsoft/azure-functions-dotnet-core2.0:2.0` |
+
+```json
+{
+    "apiVersion": "2016-03-01",
+    "type": "Microsoft.Web/sites",
+    "name": "[variables('functionAppName')]",
+    "location": "[resourceGroup().location]",
+    "kind": "functionapp",
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+    ],
+    "properties": {
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+        "siteConfig": {
+            "appSettings": [
+                {
+                    "name": "AzureWebJobsStorage",
+                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                },
+                {
+                    "name": "FUNCTIONS_WORKER_RUNTIME",
+                    "value": "node"
+                },
+                {
+                    "name": "WEBSITE_NODE_DEFAULT_VERSION",
+                    "value": "10.14.1"
+                },
+                {
+                    "name": "FUNCTIONS_EXTENSION_VERSION",
+                    "value": "~2"
+                }
+            ],
+            "linuxFxVersion": "DOCKER|microsoft/azure-functions-node8:2.0"
+        }
+    }
+}
+```
+
+Если вы являетесь [развертывание настраиваемого образа контейнера](./functions-create-function-linux-custom-image.md), необходимо указать его с `linuxFxVersion` и включает в себя конфигурацию, которая позволяет получить, как в образе [веб-приложения для контейнеров](/azure/app-service/containers). Кроме того, задайте `WEBSITES_ENABLE_APP_SERVICE_STORAGE` для `false`, поскольку содержимое приложения предоставляется в сам контейнер:
+
+```json
+{
+    "apiVersion": "2016-03-01",
+    "type": "Microsoft.Web/sites",
+    "name": "[variables('functionAppName')]",
+    "location": "[resourceGroup().location]",
+    "kind": "functionapp",
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+    ],
+    "properties": {
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+        "siteConfig": {
+            "appSettings": [
+                {
+                    "name": "AzureWebJobsStorage",
+                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                },
+                {
+                    "name": "FUNCTIONS_WORKER_RUNTIME",
+                    "value": "node"
+                },
+                {
+                    "name": "WEBSITE_NODE_DEFAULT_VERSION",
+                    "value": "10.14.1"
+                },
+                {
+                    "name": "FUNCTIONS_EXTENSION_VERSION",
+                    "value": "~2"
+                },
+                {
+                    "name": "DOCKER_REGISTRY_SERVER_URL",
+                    "value": "[parameters('dockerRegistryUrl')]"
+                },
+                {
+                    "name": "DOCKER_REGISTRY_SERVER_USERNAME",
+                    "value": "[parameters('dockerRegistryUsername')]"
+                },
+                {
+                    "name": "DOCKER_REGISTRY_SERVER_PASSWORD",
+                    "value": "[parameters('dockerRegistryPassword')]"
+                },
+                {
+                    "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
+                    "value": "false"
+                }
+            ],
+            "linuxFxVersion": "DOCKER|myacr.azurecr.io/myimage:mytag"
+        }
+    }
+}
+```
+
+## <a name="customizing-a-deployment"></a>Настройка развертывания
 
 Приложение-функция содержит много дочерних ресурсов, которые можно использовать при развертывании, в том числе параметры приложения и параметры системы управления версиями. Вы можете также удалить дочерний ресурс **sourcecontrols** и выбрать другой [вариант развертывания](functions-continuous-deployment.md).
 
@@ -221,8 +591,14 @@ ms.locfileid: "57792503"
      "siteConfig": {
         "alwaysOn": true,
         "appSettings": [
-            { "name": "FUNCTIONS_EXTENSION_VERSION", "value": "~1" },
-            { "name": "Project", "value": "src" }
+            {
+                "name": "FUNCTIONS_EXTENSION_VERSION",
+                "value": "~2"
+            },
+            {
+                "name": "Project",
+                "value": "src"
+            }
         ]
      }
   },
@@ -238,7 +614,10 @@ ms.locfileid: "57792503"
         ],
         "properties": {
           "AzureWebJobsStorage": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]",
-          "AzureWebJobsDashboard": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+          "AzureWebJobsDashboard": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]",
+          "FUNCTIONS_EXTENSION_VERSION": "~2",
+          "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+          "Project": "src"
         }
      },
      {
@@ -265,8 +644,8 @@ ms.locfileid: "57792503"
 Для развертывания шаблона можно использовать любой из следующих способов:
 
 * [PowerShell](../azure-resource-manager/resource-group-template-deploy.md)
-* [Интерфейс командной строки Azure](../azure-resource-manager/resource-group-template-deploy-cli.md)
-* [портал Azure](../azure-resource-manager/resource-group-template-deploy-portal.md)
+* [Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md)
+* [портале Azure](../azure-resource-manager/resource-group-template-deploy-portal.md)
 * [REST API](../azure-resource-manager/resource-group-template-deploy-rest.md)
 
 ### <a name="deploy-to-azure-button"></a>Кнопка "Развертывание в Azure"
@@ -290,10 +669,10 @@ ms.locfileid: "57792503"
 Дополнительные сведения о разработке и настройке Функций Azure:
 
 * [Справочник разработчика по функциям Azure](functions-reference.md)
-* [Управление приложением-функцией на портале Azure](functions-how-to-use-azure-function-app-settings.md)
+* [Как настроить параметры приложения-функции Azure](functions-how-to-use-azure-function-app-settings.md)
 * [Создание первой функции Azure](functions-create-first-azure-function.md)
 
 <!-- LINKS -->
 
-[Function app on Consumption plan]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dynamic/azuredeploy.json (Приложение-функция в плане потребления)
-[Function app on Azure App Service plan]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dedicated/azuredeploy.json (Приложение-функция в плане службы приложений Azure)
+[Приложения-функции в плане потребления]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dynamic/azuredeploy.json
+[Приложения-функции в плане службы приложений Azure]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dedicated/azuredeploy.json

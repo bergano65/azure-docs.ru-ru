@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка Pingboard для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Учебник. Настройка Pingboard для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в Pingboard.
 services: active-directory
 documentationcenter: ''
@@ -18,17 +18,17 @@ ms.author: asmalser
 ms.reviewer: asmalser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d2ab7f58c3061044583baf9db73e193966d7d4eb
-ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
-ms.translationtype: HT
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59058386"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59280338"
 ---
-# <a name="tutorial-configure-pingboard-for-automatic-user-provisioning"></a>Руководство по Настройка Pingboard для автоматической подготовки пользователей
+# <a name="tutorial-configure-pingboard-for-automatic-user-provisioning"></a>Учебник. Настройка Pingboard для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure Active Directory (Azure AD) в Pingboard.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -72,15 +72,15 @@ ms.locfileid: "59058386"
 
 1. В разделе **Учетные данные администратора** выполните следующие действия.
 
-    a. В поле **URL-адрес клиента** введите `https://your_domain.pingboard.com/scim/v2`, заменив ваш_домен фактическим именем домена.
+    1. В поле **URL-адрес клиента** введите `https://your_domain.pingboard.com/scim/v2`, заменив ваш_домен фактическим именем домена.
 
     2. Войдите в [Pingboard](https://pingboard.com/) с помощью учетной записи администратора.
 
-    c. Выберите **Add-Ons** > **Integrations** > **Azure Active Directory** (Надстройки > Интеграции > Azure Active Directory).
+    В. Выберите **Add-Ons** > **Integrations** > **Azure Active Directory** (Надстройки > Интеграции > Azure Active Directory).
 
-    d. Перейдите на вкладку **Configure** (Настройка) и выберите **Enable user provisioning from Azure** (Включить подготовку пользователей из Azure).
+    Г. Перейдите на вкладку **Configure** (Настройка) и выберите **Enable user provisioning from Azure** (Включить подготовку пользователей из Azure).
 
-    д. Скопируйте маркер из поля **OAuth Bearer Token** (Токен носителя OAuth) и введите его в поле **Secret Token** (Токен секрета).
+    Д. Скопируйте маркер из поля **OAuth Bearer Token** (Токен носителя OAuth) и введите его в поле **Secret Token** (Токен секрета).
 
 1. На портале Azure выберите **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к приложению Pingboard. Если подключение отсутствует, убедитесь, что у учетной записи Pingboard есть права администратора, и повторите **проверку подключения**.
 

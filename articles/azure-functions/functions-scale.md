@@ -13,19 +13,19 @@ ms.topic: reference
 ms.date: 03/27/2019
 ms.author: glenga
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f09fded38e384126a8dfdbe567ce4a3ebd5b1af4
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: 459758142c94ddfd244df1427dd5632186efc0de
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58893594"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59266945"
 ---
 # <a name="azure-functions-scale-and-hosting"></a>Масштабирование и размещение Функций Azure
 
 Функции Azure выполняется в два разных плана: План потребления и план "премиум" (Предварительная версия). План потребления автоматически добавляет вычислительной мощности, когда ваш код выполняется. Ваше приложение масштабировать при необходимости для обработки нагрузки и уменьшения масштаба, при остановке выполнения кода. Нет необходимости платить за бездействующие виртуальные машины или заранее резервировать ресурсы.  План "премиум" также автоматически масштабировать и добавить дополнительные вычислительной мощности, когда ваш код выполняется.  План "премиум" поставляется с дополнительные функции, например "премиум" вычислительных операций, возможность хранить бессрочно "горячего" резервирования экземпляров и подключение к виртуальной сети.  При наличии существующего плана службы приложений, можно также запустить приложения-функции в них.
 
 > [!NOTE]  
-> Оба [план "премиум"](https://azure.microsoft.com/blog/uncompromised-serverless-scale-for-enterprise-workloads-with-the-azure-functions-premium-plan/preview/) и [план потребления для Linux](https://azure.microsoft.com/updates/azure-functions-consumption-plan-for-linux-preview/) в настоящее время доступны в предварительной версии.
+> Оба [план "премиум"](https://aka.ms/functions-premiumplan) и [план потребления для Linux](https://azure.microsoft.com/updates/azure-functions-consumption-plan-for-linux-preview/) в настоящее время доступны в предварительной версии.
 
 Если вы не знакомы с Функциями Azure, см. [эту статью](functions-overview.md).
 
@@ -75,7 +75,7 @@ ms.locfileid: "58893594"
 
 При выполнении функций JavaScript на план "премиум", необходимо выбрать экземпляр с меньшим количеством виртуальных процессоров. Дополнительные сведения см. в разделе [Выбор одноядерных планов уровня "премиум"](functions-reference-node.md#considerations-for-javascript-functions).  
 
-## <a name="app-service-plan"></a>План службы приложений
+## <a name="app-service-plan"></a>план службы приложений
 
 Приложения-функции могут выполняться в те же выделенные виртуальные машины, как другие приложения службы приложений (Basic, Standard, Premium и изолированной номера SKU). Планы служб приложений поддерживают Linux.
 

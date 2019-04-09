@@ -17,11 +17,11 @@ ms.date: 03/27/2019
 ms.author: v-ant
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cf747fb75ea663d2c64038d73f48adb19d9fb804
-ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
-ms.translationtype: HT
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59056594"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59278587"
 ---
 # <a name="tutorial-configure-zendesk-for-automatic-user-provisioning"></a>Руководство. Настройка Zendesk для автоматической подготовки пользователей
 
@@ -30,7 +30,7 @@ ms.locfileid: "59056594"
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -130,7 +130,7 @@ ms.locfileid: "59056594"
 
     ![Подготовка Zendesk](./media/zendesk-provisioning-tutorial/ZenDesk9.png)
 
-9. Выберите команду **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 
 10. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Zendesk**.
 

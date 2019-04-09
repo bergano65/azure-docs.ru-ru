@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Dropbox for Business | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Dropbox for Business | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Dropbox for Business.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/20/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e54ea079789ddfb2a6d85f808453589637522f1d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d55ae4077b3ec14cb8dc2226714b094574ed9522
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57896183"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905653"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-dropbox-for-business"></a>Руководство. Интеграция Azure Active Directory с Dropbox for Business
+# <a name="tutorial-azure-active-directory-integration-with-dropbox-for-business"></a>Руководство по Интеграция Azure Active Directory с Dropbox for Business
 
 В этом руководстве описано, как интегрировать Dropbox for Business с Azure Active Directory (Azure AD).
 Интеграция Dropbox for Business с Azure AD обеспечивает перечисленные ниже преимущества.
@@ -53,7 +53,7 @@ ms.locfileid: "57896183"
 
 Чтобы настроить интеграцию Dropbox for Business с Azure AD, необходимо добавить Dropbox for Business из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Dropbox for Business из коллекции, выполните указанные ниже действия.**
+**Чтобы добавить Dropbox for Business из коллекции, выполните указанные ниже действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -107,9 +107,9 @@ ms.locfileid: "57896183"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Dropbox for Business](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.dropbox.com/sso/<id>`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.dropbox.com/sso/<id>`
 
-    b. В текстовом поле **Идентификатор (сущности)** введите значение следующим образом: `Dropbox`.
+    b. В текстовом поле **Идентификатор (сущности)** введите значение: `Dropbox`
 
     > [!NOTE]
     > Приведенное выше значение "URL-адрес для входа" используется только для примера. Вы замените это значение на фактический URL-адрес для входа, который описывается далее в этом руководстве.
@@ -184,7 +184,7 @@ ms.locfileid: "57896183"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -13,16 +13,16 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81bf41dd183944a43d9558d0aec0c416d30620b2
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: 32511b638d4674198ce919b8b3a90e67b1c3cfc7
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58202577"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58793260"
 ---
 # <a name="restore-a-deleted-office-365-group-in-azure-active-directory"></a>Восстановление удаленной группы Office 365 в Azure Active Directory
 
-Когда вы удаляете группу Office 365 в Azure Active Directory (Azure AD), эта группа в течение 30 дней с момента удаления сохраняется, но не отображается. Это сделано для того, чтобы группу и ее содержимое можно было при необходимости восстановить. Эта функция действует в Azure AD исключительно для групп Office 365. Она недоступна для групп безопасности или групп рассылки.
+Когда вы удаляете группу Office 365 в Azure Active Directory (Azure AD), эта группа в течение 30 дней с момента удаления сохраняется, но не отображается. Это сделано для того, чтобы группу и ее содержимое можно было при необходимости восстановить. Эта функция действует в Azure AD исключительно для групп Office 365. Она недоступна для групп безопасности или групп рассылки. Учтите, что 30-дневный период восстановления группы не настраивается.
 
 > [!NOTE]
 > Не используйте `Remove-MsolGroup`, иначе группа будет удалена без возможности восстановления. Для удаления группы Office 365 всегда используйте `Remove-AzureADMSGroup`.
@@ -49,11 +49,13 @@ ms.locfileid: "58202577"
    - Окончательно удалить группу, выбрав **Удалить навсегда**. Чтобы окончательно удалить группу, вам потребуются права администратора.
 
 ## <a name="view-the-deleted-office-365-groups-that-are-available-to-restore-using-powershell"></a>Просмотр удаленных групп Office 365, которые можно восстановить, с помощью PowerShell
+
 Следующие командлеты можно использовать для просмотра удаленных групп, чтобы убедиться, что нужные группы еще не удалены окончательно. Эти командлеты являются частью [модуля Azure AD PowerShell](https://www.powershellgallery.com/packages/AzureAD/). Дополнительные сведения об этом модуле можно найти в статье [Azure Active Directory PowerShell Version 2](/powershell/azure/install-adv2?view=azureadps-2.0) (Модуль PowerShell версии 2 для Azure Active Directory).
 
 1.  Запустите следующий командлет, чтобы отобразить в клиенте все удаленные группы Office 365, которые доступны для восстановления.
    
-    ```
+
+    ```powershell
     Get-AzureADMSDeletedGroup
     ```
 
@@ -64,16 +66,19 @@ ms.locfileid: "58202577"
     ```
 
 ## <a name="how-to-restore-your-deleted-office-365-group-using-powershell"></a>Восстановление удаленной группы Office 365 с помощью PowerShell
+
 Когда вы убедитесь, что группа еще доступна для восстановления, вы можете восстановить эту удаленную группу, выполнив одно из следующих действий. Если группа содержит документы, узлы SP или другие постоянные объекты, полное восстановление группы и ее содержимого может занять до 24 часов.
 
 1. Запустите следующий командлет, чтобы восстановить группу и ее содержимое.
  
+
    ```
     Restore-AzureADMSDeletedDirectoryObject –Id <objectId>
     ``` 
 
 2. Кроме того, следующий командлет позволяет окончательно удалить группу без возможности восстановления.
     
+
     ```
     Remove-AzureADMSDeletedDirectoryObject –Id <objectId>
     ```
@@ -88,6 +93,7 @@ ms.locfileid: "58202577"
 - Группа станет доступна из любой конечной точки Exchange и из других рабочих нагрузок Office 365, которые поддерживают группы Office 365.
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 В следующих статьях содержатся дополнительные сведения о группах Azure Active Directory.
 
 * [Просмотр существующих групп](../fundamentals/active-directory-groups-view-azure-portal.md)

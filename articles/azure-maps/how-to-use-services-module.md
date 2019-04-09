@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
-ms.openlocfilehash: e614758a91cb3ff02822eeeeb8ae7e80d2123e5d
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: 3aa39568904cb0acc9b5b76ff7e07729bf99d6b1
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58578736"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59278604"
 ---
 # <a name="using-the-azure-maps-services-module"></a>С помощью модуля службы Azure Maps
 
@@ -24,10 +24,10 @@ SDK веб-карты Azure предоставляет службы модуля
 1. Создайте HTML-файл.
 2. Загрузить в модуле сопоставления служб Azure. Это можно сделать с помощью одного из двух параметров.
 
-    a. Использовать CDN глобально размещенную версию модуля службы "карты Azure", добавив ссылку на скрипт <head> элемент файла:
+    1. Использовать CDN глобально размещенную версию модуля службы "карты Azure", добавив ссылку на скрипт <head> элемент файла:
     
     ```html
-    <script src="https://atlas.microsoft.com/sdk/js/atlas-service.js?api-version=2"></script>
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas-service.min.js"></script>
     ```
     
     2. Кроме того, загрузить исходный код SDK веб-сопоставляет Azure локально с помощью [azure maps-rest](https://www.npmjs.com/package/azure-maps-rest) NPM упаковки и разместить его в приложении. Этот пакет также включает определения TypeScript.
@@ -183,7 +183,7 @@ SDK веб-карты Azure предоставляет службы модуля
 Ознакомьтесь со следующими статьями, Дополнительные примеры кода для использования модуля служб:
 
 > [!div class="nextstepaction"]
-> [Показать результаты поиска на карте](./map-search-location.md)
+> [Отображение результатов поиска на карте](./map-search-location.md)
 
 > [!div class="nextstepaction"]
 > [Получение сведений на основе координат](./map-get-information-from-coordinate.md)

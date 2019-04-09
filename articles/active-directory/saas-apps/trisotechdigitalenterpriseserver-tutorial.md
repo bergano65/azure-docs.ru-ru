@@ -4,143 +4,139 @@ description: Сведения о том, как настроить единый 
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 6d54d20c-eca1-4fa6-b56a-4c3ed0593db0
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 04/16/2018
+ms.topic: tutorial
+ms.date: 03/28/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a1a334c6c7852923da94403352bb7318b241629
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
-ms.translationtype: MT
+ms.openlocfilehash: 1a2964d2a79238bd085afe9527d71a8b083286a9
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56735850"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58848732"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-trisotech-digital-enterprise-server"></a>Руководство. Интеграция Azure Active Directory с Trisotech Digital Enterprise Server
+# <a name="tutorial-azure-active-directory-integration-with-trisotech-digital-enterprise-server"></a>Руководство по Интеграция Azure Active Directory с Trisotech Digital Enterprise Server
 
 В этом руководстве описано, как интегрировать Trisotech Digital Enterprise Server с Azure Active Directory (Azure AD).
-
 Интеграция Trisotech Digital Enterprise Server с Azure AD обеспечивает следующие преимущества:
 
-- С помощью Azure AD можно контролировать доступ к Trisotech Digital Enterprise Server.
-- Вы можете включить автоматический вход пользователей в Trisotech Digital Enterprise Server (единый вход) с применением учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно на портале Azure.
+* С помощью Azure AD можно контролировать доступ к Trisotech Digital Enterprise Server.
+* Вы можете включить автоматический вход пользователей в Trisotech Digital Enterprise Server (единый вход) с применением учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Trisotech Digital Enterprise Server, вам потребуется следующее:
 
-- подписка Azure AD;
-- подписка Trisotech Digital Enterprise Server с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Trisotech Digital Enterprise Server с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Trisotech Digital Enterprise Server из коллекции
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Trisotech Digital Enterprise Server поддерживает единый вход, инициированный **поставщиком услуг**.
+
+* Trisotech Digital Enterprise Server поддерживает **JIT**-подготовку пользователей.
 
 ## <a name="adding-trisotech-digital-enterprise-server-from-the-gallery"></a>Добавление Trisotech Digital Enterprise Server из коллекции
+
 Чтобы настроить интеграцию Trisotech Digital Enterprise Server с Azure AD, необходимо добавить Trisotech Digital Enterprise Server из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Trisotech Digital Enterprise Server из коллекции, сделайте следующее:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Кнопка "Создать приложение"][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Trisotech Digital Enterprise Server**, выберите **Trisotech Digital Enterprise Server** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Trisotech Digital Enterprise Server в списке результатов](./media/trisotechdigitalenterpriseserver-tutorial/tutorial_trisotechdigitalenterpriseserver_addfromgallery.png)
+4. В поле поиска введите **Trisotech Digital Enterprise Server**, выберите **Trisotech Digital Enterprise Server** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+
+     ![Trisotech Digital Enterprise Server в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Trisotech Digital Enterprise Server для тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в Trisotech Digital Enterprise Server соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Trisotech Digital Enterprise Server.
+В этом разделе описана настройка и проверка единого входа Azure AD в Trisotech Digital Enterprise Server для тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Trisotech Digital Enterprise Server.
 
 Чтобы настроить и проверить единый вход Azure AD в Trisotech Digital Enterprise Server, вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Trisotech Digital Enterprise Server](#create-a-trisotech-digital-enterprise-server-test-user)** требуется для того, чтобы в Trisotech Digital Enterprise Server существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в Trisotech Digital Enterprise Server](#configure-trisotech-digital-enterprise-server-single-sign-on)** необходима, чтобы задать параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Trisotech Digital Enterprise Server](#create-trisotech-digital-enterprise-server-test-user)** требуется для того, чтобы в Trisotech Digital Enterprise Server существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Trisotech Digital Enterprise Server.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Trisotech Digital Enterprise Server, сделайте следующее:**
+Чтобы настроить единый вход Azure AD в Trisotech Digital Enterprise Server, сделайте следующее:
 
-1. На портале Azure на странице интеграции с приложением **Trisotech Digital Enterprise Server** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Trisotech Digital Enterprise Server** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/trisotechdigitalenterpriseserver-tutorial/tutorial_trisotechdigitalenterpriseserver_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Trisotech Digital Enterprise Server** выполните следующие действия:
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Сведения о домене и URL-адресах приложения Trisotech Digital Enterprise Server](./media/trisotechdigitalenterpriseserver-tutorial/tutorial_trisotechdigitalenterpriseserver_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.trisotech.com`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.trisotech.com`
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    > [!NOTE] 
-    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Обратитесь в [клиентскую службу поддержки Trisotech Digital Enterprise Server](mailto:support@trisotech.com), чтобы получить эти значения.
+    ![Сведения о домене и URL-адресах приложения Trisotech Digital Enterprise Server](common/sp-identifier.png)
 
-1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот. 
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.trisotech.com`.
 
-    ![Ссылка для скачивания сертификата](./media/trisotechdigitalenterpriseserver-tutorial/tutorial_trisotechdigitalenterpriseserver_certificate.png)
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.trisotech.com`.
 
-1. Нажмите кнопку **Сохранить** .
+    > [!NOTE]
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Обратитесь в [клиентскую службу поддержки Trisotech Digital Enterprise Server](mailto:support@trisotech.com), чтобы получить эти значения. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/trisotechdigitalenterpriseserver-tutorial/tutorial_general_400.png)
+4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы копировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
+
+    ![Ссылка для скачивания сертификата](common/copy-metadataurl.png)
+
+### <a name="configure-trisotech-digital-enterprise-server-single-sign-on"></a>Настройка единого входа в Trisotech Digital Enterprise Server
 
 1. В другом окне веб-браузера войдите на сайт компании Trisotech Digital Enterprise Server с правами администратора.
 
-1. Щелкните **значок меню**, а затем выберите **Administration** (Администрирование).
+2. Щелкните **значок меню**, а затем выберите **Administration** (Администрирование).
 
     ![Настройка единого входа](./media/trisotechdigitalenterpriseserver-tutorial/user1.png)
 
-1. Выберите пункт **User Provider** (Поставщик пользователей).
+3. Выберите пункт **User Provider** (Поставщик пользователей).
 
     ![Настройка единого входа](./media/trisotechdigitalenterpriseserver-tutorial/user2.png)
 
-1. В разделе **User Provider Configurations** (Конфигурация поставщика пользователей) выполните следующие действия:
+4. В разделе **User Provider Configurations** (Конфигурация поставщика пользователей) выполните следующие действия:
 
     ![Настройка единого входа](./media/trisotechdigitalenterpriseserver-tutorial/user3.png)
 
     a. В раскрывающемся списке в поле **Authentication Method** (Способ проверки подлинности) выберите **язык разметки заявлений системы безопасности 2 (SAML 2)**.
 
-    2. В текстовое поле **URL-адрес метаданных** вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure.
+    b. В текстовое поле **URL-адрес метаданных** вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure.
 
     c. В текстовое поле **Application ID** (Идентификатор приложения) введите URL-адрес в следующем формате: `https://<companyname>.trisotech.com`.
 
@@ -150,97 +146,74 @@ ms.locfileid: "56735850"
 
     Е. Нажмите кнопку **Сохранить**
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-   ![Создание тестового пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка Azure Active Directory](./media/trisotechdigitalenterpriseserver-tutorial/create_aaduser_01.png)
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+3. В разделе свойств пользователя сделайте следующее:
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/trisotechdigitalenterpriseserver-tutorial/create_aaduser_02.png)
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+    а. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите brittasimon@yourcompanydomain.extension. Например BrittaSimon@contoso.com.
 
-    ![Кнопка "Добавить"](./media/trisotechdigitalenterpriseserver-tutorial/create_aaduser_03.png)
-
-1. В диалоговом окне **Пользователь** сделайте следующее.
-
-    ![Диалоговое окно "Пользователь"](./media/trisotechdigitalenterpriseserver-tutorial/create_aaduser_04.png)
-
-    a. В поле **Имя** введите **BrittaSimon**.
-
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
- 
-### <a name="create-a-trisotech-digital-enterprise-server-test-user"></a>Создание тестового пользователя Trisotech Digital Enterprise Server
-
-Цель этого раздела — создать в приложении Trisotech Digital Enterprise Server пользователя с именем Britta Simon. Приложение Trisotech Digital Enterprise Server поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. При попытке получить доступ к приложению Trisotech Digital Enterprise Server учетная запись пользователя создается автоматически, если она еще не создана.
->[!Note]
->Если необходимо создать пользователя вручную, обратитесь к  [группе поддержки Trisotech Digital Enterprise Server](mailto:support@trisotech.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив доступ к Trisotech Digital Enterprise Server.
 
-![Назначение роли пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Trisotech Digital Enterprise Server**.
 
-**Чтобы назначить Britta Simon в Trisotech Digital Enterprise Server, сделайте следующее:**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Trisotech Digital Enterprise Server**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на приложение Trisotech Digital Enterprise Server в списке приложений](common/all-applications.png)
 
-1. В списке приложений выберите **Trisotech Digital Enterprise Server**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка на приложение Trisotech Digital Enterprise Server в списке приложений](./media/trisotechdigitalenterpriseserver-tutorial/tutorial_trisotechdigitalenterpriseserver_app.png)  
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Область "Добавление назначения"][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-trisotech-digital-enterprise-server-test-user"></a>Создание тестового пользователя Trisotech Digital Enterprise Server
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="test-single-sign-on"></a>Проверка единого входа
+В этом разделе вы создадите в Trisotech Digital Enterprise Server пользователя с именем Britta Simon. Приложение Trisotech Digital Enterprise Server поддерживает JIT-подготовку пользователей. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Trisotech Digital Enterprise Server, его создадут после проверки подлинности.
+
+>[!Note]
+>Если необходимо создать пользователя вручную, обратитесь в [службу поддержки Trisotech Digital Enterprise Server](mailto:support@trisotech.com).
+
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Trisotech Digital Enterprise Server на панели доступа, вы автоматически войдете в приложение Trisotech Digital Enterprise Server.
-Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув плитку Trisotech Digital Enterprise Server на Панели доступа, вы автоматически войдете в приложение Trisotech Digital Enterprise Server, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/trisotechdigitalenterpriseserver-tutorial/tutorial_general_01.png
-[2]: ./media/trisotechdigitalenterpriseserver-tutorial/tutorial_general_02.png
-[3]: ./media/trisotechdigitalenterpriseserver-tutorial/tutorial_general_03.png
-[4]: ./media/trisotechdigitalenterpriseserver-tutorial/tutorial_general_04.png
-
-[100]: ./media/trisotechdigitalenterpriseserver-tutorial/tutorial_general_100.png
-
-[200]: ./media/trisotechdigitalenterpriseserver-tutorial/tutorial_general_200.png
-[201]: ./media/trisotechdigitalenterpriseserver-tutorial/tutorial_general_201.png
-[202]: ./media/trisotechdigitalenterpriseserver-tutorial/tutorial_general_202.png
-[203]: ./media/trisotechdigitalenterpriseserver-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

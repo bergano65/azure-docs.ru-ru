@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 030/25/2019
 ms.author: cshoe
-ms.openlocfilehash: 4b3cba7e7656ea13a6e7b36be4cb2fef99893867
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
-ms.translationtype: MT
+ms.openlocfilehash: 15e4cf484ae38268c59781101256d64ef85e72ef
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58439334"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59283041"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Методика тестирования кода с помощью Функций Azure
 
@@ -26,8 +26,8 @@ ms.locfileid: "58439334"
 
 Следующее содержимое разделяется на два различных раздела, что означает, что они предназначены для разных языков и сред. Можно научиться компилировать тесты в:
 
-- [C# в Visual Studio с использованием xUnit](#c-in-visual-studio);
-- [JavaScript в VS Code с использованием Jest](#javascript-in-vs-code).
+- [C#в Visual Studio с использованием xUnit](#c-in-visual-studio)
+- [JavaScript в Vscode с Jest](#javascript-in-vs-code)
 
 Пример репозитория можно найти на [GitHub](https://github.com/Azure-Samples/azure-functions-tests).
 
@@ -36,7 +36,7 @@ ms.locfileid: "58439334"
 
 ![Тестирование Функций Azure с помощью C# в Visual Studio](./media/functions-test-a-function/azure-functions-test-visual-studio-xunit.png)
 
-### <a name="setup"></a>Настройка
+### <a name="setup"></a>Установка
 
 Чтобы настроить среду, создайте функцию и протестируйте приложение. Описанные ниже действия помогут создать приложения и функции, необходимые для поддержки тестов.
 
@@ -253,6 +253,8 @@ namespace Functions.Tests
 
 - **Timer_should_log_message**. Этот тест создает экземпляр `ListLogger` и передает его функциям таймера. После выполнения функции журнал будет проверен на наличие ожидаемого сообщения.
 
+Если вы хотите получить доступ к параметрам приложения в тестах, можно использовать [System.Environment.GetEnvironmentVariable](./functions-dotnet-class-library.md#environment-variables).
+
 ### <a name="run-tests"></a>Выполнение тестов
 
 Чтобы выполнить тесты, перейдите в **Обозреватель тестов** и щелкните **Запустить все**.
@@ -269,7 +271,7 @@ namespace Functions.Tests
 
 ![Тестирование Функций Azure с помощью JavaScript в VS Code](./media/functions-test-a-function/azure-functions-test-vs-code-jest.png)
 
-### <a name="setup"></a>Настройка
+### <a name="setup"></a>Установка
 
 Для настройки среды инициализируйте новое приложение Node.js в пустой папке, запустив `npm init`.
 

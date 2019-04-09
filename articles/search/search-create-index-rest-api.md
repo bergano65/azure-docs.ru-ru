@@ -1,7 +1,7 @@
 ---
-title: Создания, загрузки и запроса индекса с помощью PowerShell и API REST - службы поиска Azure
-description: Создания, загрузки и отправка запросов в индекс, с помощью PowerShell, Invoke-RestMethod и API REST службы поиска Azure.
-ms.date: 03/15/2019
+title: Краткое руководство. Создания, загрузки и запроса индекса с помощью PowerShell и API REST - службы поиска Azure
+description: Создания, загрузки и запроса индекса с помощью PowerShell Invoke-RestMethod и API REST службы поиска Azure.
+ms.date: 04/08/2019
 author: heidisteen
 manager: cgronlun
 ms.author: heidist
@@ -10,38 +10,42 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 9e1b6fc0dc4e6a6c2c191960fa061c810e3a2e79
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 2deba4bf941d561fcef7c2dff804646732e7ce24
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58372120"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59268030"
 ---
 # <a name="quickstart-create-an-azure-search-index-using-powershell-and-the-rest-api"></a>Краткое руководство. Создание индекса службы поиска Azure с помощью PowerShell и REST API
 > [!div class="op_single_selector"]
 > * [PowerShell (REST)](search-create-index-rest-api.md)
 > * [C#](search-create-index-dotnet.md)
 > * [Postman (REST)](search-fiddler.md)
-> * [Портал](search-create-index-portal.md)
+> * [Microsoft Azure](search-create-index-portal.md)
 > 
 
 В этой статье описывается процесс создания, загрузки и запроса поиска Azure [индекс](search-what-is-an-index.md) с помощью PowerShell и [API REST службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice/). Определения индекса и содержимое для поиска предоставляется в тексте запроса как JSON-содержимого правильного формата.
 
 ## <a name="prerequisites"></a>Технические условия
 
-[Создание службы поиска Azure](search-create-service-portal.md) или [найти существующую службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Можно использовать это бесплатная служба, в этом кратком руководстве. Другие предварительные требования включают следующие элементы.
+В этом кратком руководстве используются следующие средства и службы. 
+
+[Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве. 
 
 [PowerShell 5.1 или более поздней версии](https://github.com/PowerShell/PowerShell), с использованием [Invoke-RestMethod](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Invoke-RestMethod) для последовательных и интерактивных шагов.
 
-Получение URL-адрес конечной точки и администратора ключ api службы поиска. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
+## <a name="get-a-key-and-url"></a>Получите ключ и URL-адрес
 
-1. На портале Azure, в службе поиска **Обзор** странице, получить URL-адрес. Пример конечной точки может выглядеть https:\//my-service-name.search.windows.net.
+Вызовам REST требуется URL-адрес службы и ключ доступа при каждом запросе. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
 
-2. В **параметры** > **ключи**, получите ключ администратора для полных прав в службе. Существует два ключа администратора взаимозаменяемыми, предоставленный для обеспечения непрерывности бизнеса, при необходимости продления, один. Для добавления, изменения и удаления объектов, можно использовать либо первичный или вторичный ключ на запросы.
+1. [Войдите на портал Azure](https://portal.azure.com/)и в службе поиска **Обзор** странице, получить URL-адрес. Пример конечной точки может выглядеть так: `https://mydemo.search.windows.net`.
 
-   ![Получение ключа конечной точки и доступ HTTP](media/search-fiddler/get-url-key.png "получить HTTP конечной точки и ключа доступа")
+2. В разделе **Параметры** > **Ключи** получите ключ администратора, чтобы обрести полные права на службу. Существуют два взаимозаменяемых ключа администратора, предназначенных для обеспечения непрерывности бизнес-процессов на случай, если вам потребуется сменить один из них. Вы можете использовать первичный или вторичный ключ для выполнения запросов на добавление, изменение и удаление объектов.
 
-   Все запросы, требуют ключ api на каждый запрос, отправленный к вашей службе. Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
+![Получение конечной точки HTTP и ключа доступа](media/search-fiddler/get-url-key.png "Получение конечной точки HTTP и ключа доступа")
+
+Для выполнения любого запроса к службе требуется использование ключа API. Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
 ## <a name="connect-to-azure-search"></a>Подключение к поиску Azure
 
@@ -165,7 +169,7 @@ Invoke-RestMethod -Uri $url -Headers $headers -Method Put -Body $body | ConvertT
 
 <a name="load-documents"></a>
 
-## <a name="2---load-documents"></a>2 - Загрузка документов
+## <a name="2---load-documents"></a>2. Загрузка документов
 
 Чтобы отправить документы, используйте запрос HTTP POST к конечной точке URL-адрес вашего индекса. REST API для выполнения этой задачи — [Добавление, обновление и удаление документов](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents).
 

@@ -4,22 +4,20 @@ description: Описывает функции, используемые в ша
 services: azure-resource-manager
 documentationcenter: na
 author: tfitzmac
-manager: timlt
-editor: tysonn
 ms.assetid: 0644abe1-abaa-443d-820d-1966d7d26bfd
 ms.service: azure-resource-manager
 ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/05/2019
+ms.date: 04/08/2019
 ms.author: tomfitz
-ms.openlocfilehash: eb3435d8c7b10e2de55cb0cf1f3ad2548bf2bcef
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: b5a1f12a877008a3ce2ff7bd9635b9ed47b379f7
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57766756"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59280321"
 ---
 # <a name="azure-resource-manager-template-functions"></a>Функции шаблонов диспетчера ресурсов Azure
 В этой статье описаны все функции, которые можно использовать в шаблоне Azure Resource Manager. Сведения об использовании функций в шаблоне, см. в разделе [синтаксис шаблона](resource-group-authoring-templates.md#syntax).
@@ -47,19 +45,19 @@ ms.locfileid: "57766756"
 ## <a name="array-and-object-functions"></a>Функции массива и объекта
 Resource Manager предоставляет ряд функций для работы с массивами и объектами.
 
-* [array](resource-group-template-functions-array.md#array).
+* [массив](resource-group-template-functions-array.md#array)
 * [coalesce](resource-group-template-functions-array.md#coalesce)
 * [concat](resource-group-template-functions-array.md#concat)
-* [contains](resource-group-template-functions-array.md#contains)
+* [содержит](resource-group-template-functions-array.md#contains)
 * [createArray](resource-group-template-functions-array.md#createarray)
 * [empty](resource-group-template-functions-array.md#empty)
 * [first](resource-group-template-functions-array.md#first)
-* [intersection](resource-group-template-functions-array.md#intersection)
+* [пересечению](resource-group-template-functions-array.md#intersection)
 * [json](resource-group-template-functions-array.md#json)
 * [last](resource-group-template-functions-array.md#last)
 * [длина](resource-group-template-functions-array.md#length)
-* [min](resource-group-template-functions-array.md#min)
-* [max](resource-group-template-functions-array.md#max)
+* [мин](resource-group-template-functions-array.md#min)
+* [максимум](resource-group-template-functions-array.md#max)
 * [range](resource-group-template-functions-array.md#range)
 * [skip](resource-group-template-functions-array.md#skip)
 * [take](resource-group-template-functions-array.md#take)
@@ -74,8 +72,8 @@ Resource Manager предоставляет ряд функций для раб�
 ## <a name="comparison-functions"></a>Функции сравнения
 Resource Manager предоставляет ряд функций для выполнения сравнений в шаблонах.
 
-* [equals](resource-group-template-functions-comparison.md#equals)
-* [less](resource-group-template-functions-comparison.md#less)
+* [равно](resource-group-template-functions-comparison.md#equals)
+* [меньше](resource-group-template-functions-comparison.md#less)
 * [lessOrEquals](resource-group-template-functions-comparison.md#lessorequals)
 * [greater](resource-group-template-functions-comparison.md#greater)
 * [greaterOrEquals](resource-group-template-functions-comparison.md#greaterorequals)
@@ -87,8 +85,8 @@ Resource Manager предоставляет ряд функций для вып�
 ## <a name="deployment-value-functions"></a>Функции для параметров развертывания
 Диспетчер ресурсов предоставляет следующие функции для получения значений из разделов шаблонов и значений, связанных с развертыванием:
 
-* [deployment](resource-group-template-functions-deployment.md#deployment)
-* [parameters](resource-group-template-functions-deployment.md#parameters)
+* [Развертывание](resource-group-template-functions-deployment.md#deployment)
+* [параметры](resource-group-template-functions-deployment.md#parameters)
 * [variables](resource-group-template-functions-deployment.md#variables)
 
 <a id="and" />
@@ -100,11 +98,11 @@ Resource Manager предоставляет ряд функций для вып�
 ## <a name="logical-functions"></a>Логические функции
 Resource Manager предоставляет для работы с логическими условиями следующие функции:
 
-* [and](resource-group-template-functions-logical.md#and) (и);
-* [bool](resource-group-template-functions-logical.md#bool);
-* [if](resource-group-template-functions-logical.md#if) (если);
-* [not](resource-group-template-functions-logical.md#not) (не);
-* [or](resource-group-template-functions-logical.md#or) (или).
+* [и](resource-group-template-functions-logical.md#and)
+* [bool](resource-group-template-functions-logical.md#bool)
+* [if](resource-group-template-functions-logical.md#if)
+* [not](resource-group-template-functions-logical.md#not)
+* [или](resource-group-template-functions-logical.md#or)
 
 <a id="add" />
 <a id="copyindex" />
@@ -120,13 +118,13 @@ Resource Manager предоставляет для работы с логиче�
 ## <a name="numeric-functions"></a>Числовые функции
 Диспетчер ресурсов предоставляет следующие функции для работы с целыми числами:
 
-* [добавление](resource-group-template-functions-numeric.md#add)
+* [добавить](resource-group-template-functions-numeric.md#add)
 * [copyIndex](resource-group-template-functions-numeric.md#copyindex)
 * [div](resource-group-template-functions-numeric.md#div)
 * [float](resource-group-template-functions-numeric.md#float)
-* [int](resource-group-template-functions-numeric.md#int)
-* [min](resource-group-template-functions-numeric.md#min)
-* [max](resource-group-template-functions-numeric.md#max)
+* [ssNoversion](resource-group-template-functions-numeric.md#int)
+* [мин](resource-group-template-functions-numeric.md#min)
+* [максимум](resource-group-template-functions-numeric.md#max)
 * [mod (модуль)](resource-group-template-functions-numeric.md#mod)
 * [mul](resource-group-template-functions-numeric.md#mul)
 * [sub](resource-group-template-functions-numeric.md#sub)
@@ -149,8 +147,8 @@ Resource Manager предоставляет для работы с логиче�
 * [providers](resource-group-template-functions-resource.md#providers)
 * [reference](resource-group-template-functions-resource.md#reference)
 * [resourceGroup](resource-group-template-functions-resource.md#resourcegroup)
-* [resourceId](resource-group-template-functions-resource.md#resourceid)
-* [subscription](resource-group-template-functions-resource.md#subscription)
+* [ResourceId](resource-group-template-functions-resource.md#resourceid)
+* [подписка](resource-group-template-functions-resource.md#subscription)
 
 <a id="base64" />
 <a id="base64tojson" />
@@ -190,13 +188,14 @@ Resource Manager предоставляет для работы с логиче�
 * [base64ToJson](resource-group-template-functions-string.md#base64tojson)
 * [base64ToString](resource-group-template-functions-string.md#base64tostring)
 * [concat](resource-group-template-functions-string.md#concat)
-* [contains](resource-group-template-functions-string.md#contains)
+* [содержит](resource-group-template-functions-string.md#contains)
 * [dataUri](resource-group-template-functions-string.md#datauri)
 * [dataUriToString](resource-group-template-functions-string.md#datauritostring)
 * [empty](resource-group-template-functions-string.md#empty)
 * [endsWith](resource-group-template-functions-string.md#endswith)
 * [first](resource-group-template-functions-string.md#first)
-* [guid](resource-group-template-functions-string.md#guid)
+* [свойства](resource-group-template-functions-string.md#format)
+* [GUID](resource-group-template-functions-string.md#guid)
 * [indexOf](resource-group-template-functions-string.md#indexof)
 * [last](resource-group-template-functions-string.md#last)
 * [lastIndexOf](resource-group-template-functions-string.md#lastindexof)
@@ -207,17 +206,17 @@ Resource Manager предоставляет для работы с логиче�
 * [skip](resource-group-template-functions-string.md#skip)
 * [split](resource-group-template-functions-string.md#split)
 * [startsWith](resource-group-template-functions-string.md#startswith)
-* [string](resource-group-template-functions-string.md#string)
+* [строка](resource-group-template-functions-string.md#string)
 * [substring](resource-group-template-functions-string.md#substring)
 * [take](resource-group-template-functions-string.md#take)
 * [toLower](resource-group-template-functions-string.md#tolower)
 * [toUpper](resource-group-template-functions-string.md#toupper)
 * [trim](resource-group-template-functions-string.md#trim)
 * [uniqueString](resource-group-template-functions-string.md#uniquestring)
-* [uri](resource-group-template-functions-string.md#uri)
+* [универсальный код ресурса](resource-group-template-functions-string.md#uri)
 * [uriComponent](resource-group-template-functions-string.md#uricomponent)
 * [uriComponentToString](resource-group-template-functions-string.md#uricomponenttostring)
-* [utcNow](resource-group-template-functions-string.md#utcnow)
+* [utcnow](resource-group-template-functions-string.md#utcnow)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](resource-group-authoring-templates.md).

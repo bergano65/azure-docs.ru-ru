@@ -5,15 +5,15 @@ services: cosmos-db
 author: roygara
 ms.service: cosmos-db
 ms.topic: article
-ms.date: 04/04/2019
+ms.date: 04/05/2019
 ms.author: rogarana
 ms.subservice: cosmosdb-table
-ms.openlocfilehash: c5491683a74321e370044cd6eb270cc34bbbce6a
-ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
-ms.translationtype: HT
+ms.openlocfilehash: 840c2793928816c6346e2039a38678585f8e0bc7
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59056414"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59273130"
 ---
 # <a name="perform-azure-table-storage-operations-with-azure-powershell"></a>Выполнение операций в хранилище таблиц Azure с помощью Azure PowerShell 
 [!INCLUDE [storage-table-cosmos-db-tip-include](../../../includes/storage-table-cosmos-db-langsoon-tip-include.md)]
@@ -28,23 +28,26 @@ ms.locfileid: "59056414"
 > * добавление сущностей таблицы;
 > * запрос к таблице;
 > * удаление сущностей таблицы.
-> * Удаление таблицы
+> * Удалить таблицу
 
 В этом практическом руководстве показано, как создать учетную запись службы хранилища Azure в новой группе ресурсов, чтобы вы могли легко удалить ее при необходимости. Вы можете использовать существующую учетную запись хранения.
 
 Для работы примеров модулей Az PowerShell `Az.Storage (1.1.0 or greater)` и `Az.Resources (1.2.0 or greater)`. В окне PowerShell выполните `Get-Module -ListAvailable Az*`, чтобы найти версию. Если версия не отображается или нужно установить обновление, ознакомьтесь со статьей [Install and configure Azure PowerShell](/powershell/azure/install-az-ps) (Установка и настройка Azure PowerShell).
 
 > [!IMPORTANT]
-> Для использования этой функции Azure от PowerShell требуется установленный модуль `Az`. Текущая версия AzureRmStorageTable несовместим с более старой модуля AzureRM.
+> Для использования этой функции Azure от PowerShell требуется установленный модуль `Az`. Текущая версия `AzTable` не совместим с более старой модуля AzureRM.
 > Выполните [последней инструкции по установке для установки модуля Az](/powershell/azure/install-az-ps) при необходимости.
 
-После установки или обновления Azure PowerShell нужно установить модуль **AzureRmStorageTable**, который содержит команды для управления сущностями. Чтобы установить этот модуль, запустите PowerShell от имени администратора и используйте команду **Install-Module**.
+После установки или обновления Azure PowerShell необходимо установить модуль **AzTable**, который содержит команды для управления сущностями. Чтобы установить этот модуль, запустите PowerShell от имени администратора и используйте команду **Install-Module**.
+
+> [!IMPORTANT]
+> Для модуля совместимости имя причины, по-прежнему мы публикуем этот же модуль старым именем `AzureRmStorageTables` в коллекции PowerShell. В этом документе будет ссылаться только новое имя.
 
 ```powershell
-Install-Module AzureRmStorageTable
+Install-Module AzTable
 ```
 
-## <a name="sign-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Войдите в Azure
 
 Войдите в подписку Azure с помощью команды `Add-AzAccount` и следуйте инструкциям на экране.
 
@@ -72,7 +75,7 @@ $resourceGroup = "pshtablesrg"
 New-AzResourceGroup -ResourceGroupName $resourceGroup -Location $location
 ```
 
-## <a name="create-storage-account"></a>Создать учетную запись хранения
+## <a name="create-storage-account"></a>Создайте учетную запись хранения
 
 Создайте стандартную учетную запись хранения общего назначения с локально избыточным хранилищем (LRS) с помощью команды [New-AzStorageAccount](/powershell/module/az.storage/New-azStorageAccount). Не забудьте указать уникальный хранения имя учетной записи. Затем получите контекст, который представляет учетную запись хранения. Действуя в учетной записи хранения может ссылаться на контекст вместо многократно предоставлять учетные данные.
 
@@ -87,7 +90,7 @@ $storageAccount = New-AzStorageAccount -ResourceGroupName $resourceGroup `
 $ctx = $storageAccount.Context
 ```
 
-## <a name="create-a-new-table"></a>Создание таблицы
+## <a name="create-a-new-table"></a>Создать таблицу
 
 Чтобы создать таблицу, используйте [New AzStorageTable](/powershell/module/az.storage/New-AzStorageTable) командлета. В этом примере таблица называется `pshtesttable`.
 
@@ -115,9 +118,9 @@ $storageTable = Get-AzStorageTable –Name $tableName –Context $ctx
 ## <a name="reference-cloudtable-property-of-a-specific-table"></a>Свойство CloudTable ссылки на конкретной таблицы
 
 > [!IMPORTANT]
-> Использование CloudTable является обязательным при работе с **AzureRmStorageTable** модуля PowerShell. Вызовите **Get AzTableTable** команду, чтобы получить ссылку на этот объект. Эта команда также создает таблицу, если он еще не существует.
+> Использование CloudTable является обязательным при работе с **AzTable** модуля PowerShell. Вызовите **Get AzTableTable** команду, чтобы получить ссылку на этот объект. Эта команда также создает таблицу, если он еще не существует.
 
-Для выполнения операций в таблицы с помощью **AzureRmStorageTable**, нужна ссылка на свойство CloudTable конкретной таблицы.
+Для выполнения операций в таблицы с помощью **AzTable**, нужна ссылка на свойство CloudTable конкретной таблицы.
 
 ```powershell
 $cloudTable = (Get-AzStorageTable –Name $tableName –Context $ctx).CloudTable
@@ -125,7 +128,7 @@ $cloudTable = (Get-AzStorageTable –Name $tableName –Context $ctx).CloudTable
 
 [!INCLUDE [storage-table-entities-powershell-include](../../../includes/storage-table-entities-powershell-include.md)]
 
-## <a name="delete-a-table"></a>Удаление таблицы
+## <a name="delete-a-table"></a>Удалить таблицу
 
 Чтобы удалить таблицу, используйте [Remove-AzStorageTable](/powershell/module/az.storage/Remove-AzStorageTable). Этот командлет удаляет таблицу, включая все ее данные.
 
@@ -154,12 +157,12 @@ Remove-AzResourceGroup -Name $resourceGroup
 > * добавление сущностей таблицы;
 > * запрос к таблице;
 > * удаление сущностей таблицы.
-> * Удаление таблицы
+> * Удалить таблицу
 
 Дополнительные сведения см. в следующих статьях:
 
 * [Командлеты PowerShell службы хранилища](/powershell/module/az.storage#storage)
 
-* [Работа с таблицами Azure из PowerShell - версии 2.0 модуль AzureRmStorageTable PS](https://paulomarquesc.github.io/working-with-azure-storage-tables-from-powershell)
+* [Работа с таблицами Azure из PowerShell - версии 2.0 модуль AzureRmStorageTable/AzTable PS](https://paulomarquesc.github.io/working-with-azure-storage-tables-from-powershell)
 
 * [Обозреватель хранилищ Microsoft Azure](../../vs-azure-tools-storage-manage-with-storage-explorer.md) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.

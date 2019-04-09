@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 04/03/2019
+ms.date: 04/05/2019
 ms.author: diberry
-ms.openlocfilehash: c418e15dbe133d94c081db2b925fa390307c240f
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.openlocfilehash: 96157511c0255774a64c0f64a333fe88a37f80d6
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58905058"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59261434"
 ---
 # <a name="entities-per-culture-in-your-luis-model"></a>Сущности для языков и региональных параметров в модели LUIS
 
@@ -110,12 +110,12 @@ ms.locfileid: "58905058"
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>Twitter в режиме реального<br>timerange   |    ✔   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
 [Email](luis-reference-prebuilt-email.md)   |    ✔   | 
-[GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    ✔   | 
+[GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
 [KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    ✔   | 
 [Number](luis-reference-prebuilt-number.md)   |    ✔   |  
 [Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
 [Процент](luis-reference-prebuilt-percentage.md)   |    ✔   | 
-[personName](luis-reference-prebuilt-person.md)   |    ✔   | 
+[personName](luis-reference-prebuilt-person.md)   |   -   | 
 [Номер телефона](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
 [Temperature](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    ✔   | 
 [URL-адрес](luis-reference-prebuilt-url.md)   |    ✔   |

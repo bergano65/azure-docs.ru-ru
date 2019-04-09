@@ -6,19 +6,19 @@ documentationcenter: ''
 author: kraigb
 manager: douge
 ms.assetid: e049f591-27a7-440f-a1a3-c5bef25e8a28
-ms.service: azure
+ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: 35b5f1e29ae125dcac79c278578e900a73ffc7be
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 368bc0402e56479ad8696ca9ed0702f246a670bd
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57771399"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59262012"
 ---
 # <a name="quickstart-create-a-project-with-a-custom-environment"></a>Краткое руководство. Создание проекта с настраиваемой средой
 
@@ -61,7 +61,7 @@ ms.locfileid: "57771399"
 
     | Операция | ОПИСАНИЕ |
     | --- | --- |
-    | Requirements.txt | В проектах Python зависимости определяются в файле requirements.txt. Для этого параметра выберите соответствующий файл из списка файлов проекта и версию Python в дополнительном раскрывающемся списке. При необходимости выберите **Отмена**, чтобы вернуться к проекту, отправить или создать файл, а затем последовательно выберите **Параметры проекта** > **Среда** и создайте новое действие. Если это действие настроено, при запуске записной книжки в проекте автоматически запускается `pip install -r <file>`. |
+    | Requirements.txt | В проектах Python зависимости определяются в файле requirements.txt. Для этого параметра выберите соответствующий файл из списка файлов проекта и версию Python в дополнительном раскрывающемся списке. При необходимости выберите **Отмена**, чтобы вернуться к проекту, отправить или создать файл, а затем последовательно выберите **Параметры проекта** > **Среда** и создайте новое действие. На этом этапе на месте выполняется автоматический запуск записной книжки в проекте `pip install -r <file>` |
     | Сценарий оболочки | Используется, чтобы указать сценарий оболочки bash (обычно это файл с расширением *.sh*), содержащий все команды, которые вы хотите использовать для инициализации среды. |
     | Environment.yml | Проект Python, который управляет средами с помощью conda, использует файл *environments.yml* для описания зависимостей. Для этого параметра выберите соответствующий файл из списка файлов проекта. |
 
@@ -74,7 +74,7 @@ ms.locfileid: "57771399"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Администрирование и настройка проектов в Записных книжках Azure](configure-manage-azure-notebooks-projects.md)
+> [Управление и Настройка проектов в записных книжках Azure](configure-manage-azure-notebooks-projects.md)
 
 > [!div class="nextstepaction"]
-> [Руководство по созданию и запуску записной книжки Jupyter для выполнения линейной регрессии](tutorial-create-run-jupyter-notebook.md)
+> [Руководство по созданию выполнения записной книжки Jupyter для выполнения линейной регрессии](tutorial-create-run-jupyter-notebook.md)

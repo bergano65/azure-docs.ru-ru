@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: c6aa3a1999460b5eb3e62e36883bb4827bd41305
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
-ms.translationtype: HT
+ms.openlocfilehash: f17dc61f47dadf4c808467b2158cd9ef034e1ce9
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "59010351"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59277125"
 ---
 # <a name="enable-azure-disk-encryption-for-windows-iaas-vms"></a>Включение шифрования дисков Azure для виртуальных машин IaaS под управлением Windows
 
@@ -128,7 +128,7 @@ ms.locfileid: "59010351"
 
 В следующей таблице перечислены параметры шаблона Resource Manager для имеющихся или работающих виртуальных машин.
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 | --- | --- |
 | vmName | Имя виртуальной машины для выполнения операции шифрования. |
 | keyVaultName | Имя хранилища ключей, в которое будет передан ключ BitLocker. Его можно получить с помощью командлета `(Get-AzKeyVault -ResourceGroupName <MyKeyVaultResourceGroupName>). Vaultname` или команду Azure CLI `az keyvault list --resource-group "MyKeyVaultResourceGroup"`|
@@ -137,7 +137,7 @@ ms.locfileid: "59010351"
 | volumeType | Тип тома, для которого будет выполняться шифрование. Допустимые значения: _OS_, _Data_ и _All_. 
 | forceUpdateTag | Передает уникальное значение, такое как GUID, каждый раз, когда операция должна выполняться принудительно. |
 | resizeOSDisk | Если размер раздела ОС будет изменен и займет весь виртуальный жесткий диск ОС до разделения системного тома. |
-| location | Расположение для всех ресурсов. |
+| расположение | Расположение для всех ресурсов. |
 
 ## <a name="encrypt-virtual-machine-scale-sets"></a>Шифрование масштабируемых наборов виртуальных машин
 
@@ -223,8 +223,7 @@ ms.locfileid: "59010351"
 Для шифрования или расшифровки масштабируемых наборов виртуальных машин Windows используйте шаблоны Azure Resource Manager и приведенные ниже инструкции:
 
 - [Включение шифрования для масштабируемого набора виртуальных машин Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-vmss-windows)
-- [Развертывание виртуальной Машины масштабируемый набор виртуальных машин Windows с основной виртуальной машины и включите шифрование в масштабируемом наборе виртуальных Машин Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-windows-jumpbox)
-- [Отключение шифрования на масштабируемый набор виртуальных Машин Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-vmss-windows)
+- [Отключение шифрования на масштабируемый набор виртуальных машин Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-vmss-windows)
 
      1. Нажмите кнопку **Развернуть в Azure**.
      2. Заполните обязательные поля, а затем согласитесь с условиями.

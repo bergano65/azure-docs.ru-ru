@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 06/28/2017
-ms.openlocfilehash: f110fe84ab09e930947411a79c950af21cc5334c
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 7ad2c9dd89843a36a786eeefee8403d32027e11c
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57544526"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59274524"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub"></a>Передача файлов с устройства в облако с помощью Центра Интернета вещей
 
@@ -23,28 +23,31 @@ ms.locfileid: "57544526"
 В этом руководстве используется код статьи [Отправка сообщений из облака на устройство с помощью Центра Интернета вещей (Java)](iot-hub-node-node-c2d.md), чтобы показать, как использовать [возможности передачи файлов Центра Интернета вещей](iot-hub-devguide-file-upload.md) для передачи файлов в [хранилище BLOB-объектов Azure](../storage/index.yml). В этом руководстве описаны следующие процедуры.
 
 - как безопасно предоставить устройству универсальный код ресурса (URI) большого двоичного объекта Azure для передачи файла;
+- 
 - как использовать уведомления о передаче файлов Центра Интернета вещей для активации обработки файла в серверной части приложения.
 
-В руководстве [Подключение виртуального устройства к Центру Интернета вещей с помощью Node](quickstart-send-telemetry-node.md) демонстрируется базовая функциональность Центра Интернета вещей при передаче сообщений с устройства в облако. Тем не менее в некоторых случаях не просто сопоставить данные, отправляемые устройством, с относительно небольшими сообщениями, отправляемыми из устройства в облако, которые принимает Центр Интернета вещей. Например: 
+В руководстве [Подключение виртуального устройства к Центру Интернета вещей с помощью Node](quickstart-send-telemetry-node.md) демонстрируется базовая функциональность Центра Интернета вещей при передаче сообщений с устройства в облако. Тем не менее в некоторых случаях не просто сопоставить данные, отправляемые устройством, с относительно небольшими сообщениями, отправляемыми из устройства в облако, которые принимает Центр Интернета вещей. Например:
 
-* Большие файлы, содержащие изображения.
-* Видеоролики
-* Данные вибрации с высокой частотой выборки.
-* Некоторые виды предварительно обработанных данных.
+*  Большие файлы, содержащие изображения.
+*  Видео
+*  Данные вибрации с высокой частотой выборки.
+*  Некоторые виды предварительно обработанных данных.
 
 Эти файлы обычно обрабатываются в виде пакета в облаке с помощью таких инструментов, как [фабрика данных Azure](../data-factory/introduction.md) или стек [Hadoop](../hdinsight/index.yml). При передаче файлов с устройства вы можете рассчитывать на безопасность и надежность Центра Интернета вещей.
 
 По завершении работы с этим руководством вы запустите два консольных приложения Node.js:
 
 * **SimulatedDevice.js** — передает файл в хранилище с помощью универсального кода ресурса (URI) SAS, предоставленного вашим Центром Интернета вещей.
+
 * **ReadFileUploadNotification.js** — получает уведомления о передаче файлов от Центра Интернета вещей.
 
 > [!NOTE]
-> Существуют пакеты SDK для устройств Azure IoT, обеспечивающие поддержку многих платформ устройств и языков (включая C, .NET, JavaScript, Python и Java) в Центре Интернета вещей. Пошаговые инструкции по подключению устройства к Центру Интернета вещей Azure см. в [центре разработчиков для Интернета вещей Azure].
+> Существуют пакеты SDK для устройств Azure IoT, обеспечивающие поддержку многих платформ устройств и языков (включая C, .NET, JavaScript, Python и Java) в Центре Интернета вещей. Пошаговые инструкции о том, как подключение устройства к центру Интернета вещей Azure приведены в [Azure Центр разработчиков для IoT].
 
 Для работы с этим учебником требуется:
 
 * Node.js 4.0.x или более поздней версии.
+
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
 [!INCLUDE [iot-hub-associate-storage](../../includes/iot-hub-associate-storage.md)]
@@ -59,25 +62,25 @@ ms.locfileid: "57544526"
     npm init
     ```
 
-1. В командной строке в папке ```simulateddevice``` выполните следующую команду, чтобы установить пакет SDK для устройств **azure-iot-device** и пакет **azure-iot-device-mqtt**.
+2. В командной строке в папке ```simulateddevice``` выполните следующую команду, чтобы установить пакет SDK для устройств **azure-iot-device** и пакет **azure-iot-device-mqtt**.
 
     ```cmd/sh
     npm install azure-iot-device azure-iot-device-mqtt --save
     ```
 
-1. В текстовом редакторе создайте файл **SimulatedDevice.js** в папке ```simulateddevice```.
+3. В текстовом редакторе создайте файл **SimulatedDevice.js** в папке ```simulateddevice```.
 
-1. Добавьте следующие инструкции ```require``` в начало файла **SimulatedDevice.js** :
+4. Добавьте следующие инструкции ```require``` в начало файла **SimulatedDevice.js** :
 
     ```javascript
     'use strict';
-    
+
     var fs = require('fs');
     var mqtt = require('azure-iot-device-mqtt').Mqtt;
     var clientFromConnectionString = require('azure-iot-device-mqtt').clientFromConnectionString;
     ```
 
-1. Добавьте переменную ```deviceconnectionstring```, чтобы создать с ее помощью экземпляр **клиента**.  Замените ```{deviceconnectionstring}``` именем устройства, созданного в разделе о _создании центра Интернета вещей_.
+5. Добавьте переменную `deviceconnectionstring`, чтобы создать с ее помощью экземпляр **клиента**.  Замените `{deviceconnectionstring}` именем устройства, созданного в разделе о *создании центра Интернета вещей*.
 
     ```javascript
     var connectionString = '{deviceconnectionstring}';
@@ -87,19 +90,19 @@ ms.locfileid: "57544526"
     > [!NOTE]
     > Для простоты строка подключения добавляется в код, хотя мы не рекомендуем так делать. В зависимости от сценария использования и архитектуры могут потребоваться более безопасные способы хранения этого секрета.
 
-1. Чтобы подключить клиент, добавьте следующий код:
+6. Чтобы подключить клиент, добавьте следующий код:
 
     ```javascript
     var client = clientFromConnectionString(connectionString);
     console.log('Client connected');
     ```
 
-1. Создайте обратный вызов и отправьте файл с помощью функции **uploadToBlob**.
+7. Создайте обратный вызов и отправьте файл с помощью функции **uploadToBlob**.
 
     ```javascript
     fs.stat(filename, function (err, stats) {
         const rr = fs.createReadStream(filename);
-    
+
         client.uploadToBlob(filename, rr, stats.size, function (err) {
             if (err) {
                 console.error('Error uploading file: ' + err.toString());
@@ -110,9 +113,9 @@ ms.locfileid: "57544526"
     });
     ```
 
-1. Сохраните и закройте файл **SimulatedDevice.js** .
+8. Сохраните и закройте файл **SimulatedDevice.js** .
 
-1. Скопируйте файл образа в папку `simulateddevice` и переименуйте его на `myimage.png`.
+9. Скопируйте файл образа в папку `simulateddevice` и переименуйте его на `myimage.png`.
 
 ## <a name="receive-a-file-upload-notification"></a>Получение уведомления о передачи файла
 
@@ -126,23 +129,23 @@ ms.locfileid: "57544526"
     npm init
     ```
 
-1. В командной строке в папке ```fileuploadnotification``` выполните следующую команду, чтобы установить пакет SDK **azure-iothub**:
+2. В командной строке в папке ```fileuploadnotification``` выполните следующую команду, чтобы установить пакет SDK **azure-iothub**:
 
     ```cmd/sh
     npm install azure-iothub --save
     ```
 
-1. С помощью текстового редактора создайте файл **FileUploadNotification.js** в папке ```fileuploadnotification```.
+3. С помощью текстового редактора создайте файл **FileUploadNotification.js** в папке `fileuploadnotification`.
 
-1. Добавьте следующие инструкции ```require``` в начало файла **FileUploadNotification.js**:
+4. Добавьте следующие инструкции `require` в начало файла **FileUploadNotification.js**:
 
     ```javascript
     'use strict';
-    
+
     var Client = require('azure-iothub').Client;
     ```
 
-1. Добавьте переменную ```iothubconnectionstring```, чтобы создать с ее помощью экземпляр **клиента**.  Замените ```{iothubconnectionstring}``` строкой подключения к Центру Интернета вещей, созданному в _соответствующем разделе_.
+5. Добавьте переменную `iothubconnectionstring`, чтобы создать с ее помощью экземпляр **клиента**.  Замените `{iothubconnectionstring}` строкой подключения к Центру Интернета вещей, созданному в _соответствующем разделе_.
 
     ```javascript
     var connectionString = '{iothubconnectionstring}';
@@ -151,13 +154,13 @@ ms.locfileid: "57544526"
     > [!NOTE]
     > Для простоты строка подключения добавляется в код, хотя мы не рекомендуем так делать. В зависимости от сценария использования и архитектуры могут потребоваться более безопасные способы хранения этого секрета.
 
-1. Чтобы подключить клиент, добавьте следующий код:
+6. Чтобы подключить клиент, добавьте следующий код:
 
     ```javascript
     var serviceClient = Client.fromConnectionString(connectionString);
     ```
 
-1. Откройте клиент и воспользуйтесь функцией **getFileNotificationReceiver**, чтобы получить обновления состояния.
+7. Откройте клиент и воспользуйтесь функцией **getFileNotificationReceiver**, чтобы получить обновления состояния.
 
     ```javascript
     serviceClient.open(function (err) {
@@ -179,7 +182,7 @@ ms.locfileid: "57544526"
     });
     ```
 
-1. Сохраните и закройте файл **FileUploadNotification.js**.
+8. Сохраните и закройте файл **FileUploadNotification.js**.
 
 ## <a name="run-the-applications"></a>Запуск приложений
 
@@ -213,13 +216,6 @@ node SimulatedDevice.js
 
 В этом руководство показано, как использовать возможности передачи файлов Центра Интернета вещей, чтобы упростить передачу файлов из устройств. Изучение функций и сценариев Центра Интернета вещей можно продолжить в следующих руководствах:
 
-* [Создание Центра Интернета вещей с помощью PowerShell][lnk-create-hub]
-* [Знакомство с пакетом SDK для устройств Центра Интернета вещей Azure для C][lnk-c-sdk]
-* [IoT Hub SDKs][lnk-sdks] (Пакеты SDK для Центра Интернета вещей)
-
-<!-- Links -->
-[центре разработчиков для Интернета вещей Azure]: https://azure.microsoft.com/develop/iot
-
-[lnk-create-hub]: iot-hub-rm-template-powershell.md
-[lnk-c-sdk]: iot-hub-device-sdk-c-intro.md
-[lnk-sdks]: iot-hub-devguide-sdks.md
+*  [Создание центра IoT программным образом](iot-hub-rm-template-powershell.md)
+*  [Общие сведения о пакете C SDK](iot-hub-device-sdk-c-intro.md)
+*  [Пакеты SDK для Центра Интернета вещей Azure](iot-hub-devguide-sdks.md)

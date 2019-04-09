@@ -12,25 +12,28 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: Identity
-ms.date: 07/18/2018
+ms.date: 04/08/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa21b1054fa6860a8acc5d6971f75e1d74c889f7
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.openlocfilehash: 2a3e7373a8b0354a3d08debf944f2f77f1609382
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57193761"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59267044"
 ---
 # <a name="azure-ad-connect-upgrade-from-a-previous-version-to-the-latest"></a>Azure AD Connect выполняет следующие функции: обновление до последней версии
 В этой статье описываются различные варианты обновления установленного экземпляра Azure Active Directory (Azure AD) Connect до последней версии. Мы рекомендуем устанавливать все новые выпуски Azure AD Connect. Действия, описанные в разделе [Обновление со сменой сервера](#swing-migration), можно также использовать при значительных изменениях конфигурации.
+
+>[!NOTE]
+> В настоящее время поддерживается обновление любой версии Azure AD Connect до текущей версии. Обновление на месте DirSync или ADSync не поддерживаются и сменой является обязательным.  Если вы хотите обновить DirSync, см. в разделе [обновление средства синхронизации Azure AD (DirSync)](how-to-dirsync-upgrade-get-started.md) или [обновление со сменой](#swing-migration) раздел.  </br>На практике клиенты, использующие старые версии могут возникать проблемы, не связанные непосредственно с Azure AD Connect. Серверы, которые были в рабочей среде в течение нескольких лет, обычно имели несколько обновления, примененные к ним и не все из них мог быть учтен.  Как правило, пользователям, которые не обновились в 12-18 месяцев следует обновление со сменой вместо этого, так как это параметр наиболее Консервативная и бы рискованным.
 
 Инструкции по обновлению DirSync см. в статье [Azure AD Connect: обновление DirSync](how-to-dirsync-upgrade-get-started.md).
 
 Существует несколько различных стратегий обновления Azure AD Connect.
 
-| Метод | ОПИСАНИЕ |
+| Метод | Описание |
 | --- | --- |
 | [Автоматическое обновление](how-to-connect-install-automatic-upgrade.md) |Самый простой вариант — для клиентов с экспресс-установкой. |
 | [Обновление «на месте»](#in-place-upgrade) |Если у вас один сервер, то установку можно обновить "на месте". |
@@ -130,7 +133,7 @@ ms.locfileid: "57193761"
    >[!IMPORTANT]
    > Не забудьте выполнить необходимые шаги синхронизации при первой возможности. Вы можете выполнить эти действия вручную с помощью Synchronization Service Manager или вернуть переопределения с помощью командлета Set-ADSyncSchedulerConnectorOverride.
 
-Чтобы добавить переопределения для полного импорта и полной синхронизации на произвольном соединителе, выполните следующий командлет: `Set-ADSyncSchedulerConnectorOverride -ConnectorIdentifier <Guid> -FullImportRequired $true -FullSyncRequired $true`
+Чтобы добавить переопределения для полного импорта и полной синхронизации на произвольном соединителе, выполните следующий командлет:  `Set-ADSyncSchedulerConnectorOverride -ConnectorIdentifier <Guid> -FullImportRequired $true -FullSyncRequired $true`
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 В следующем разделе приведены сведения об устранении неполадок, которые можно использовать, если у вас возникнет проблема с обновлением Azure AD Connect.
@@ -141,7 +144,7 @@ ms.locfileid: "57193761"
 
 ![Ошибка](./media/how-to-upgrade-previous-version/error1.png)
 
-Эта ошибка происходит потому, что соединитель Azure Active Directory с идентификатором b891884f-051e-4a83-95af - 2544101c 9083 не существует в текущей конфигурации Azure AD Connect. Чтобы убедиться в этом, откройте окно PowerShell и выполните командлет `Get-ADSyncConnector -Identifier b891884f-051e-4a83-95af-2544101c9083`.
+Эта ошибка происходит потому, что соединитель Azure Active Directory с идентификатором b891884f-051e-4a83-95af - 2544101c 9083 не существует в текущей конфигурации Azure AD Connect. Чтобы убедиться, что это так, откройте окно PowerShell, запустите командлет `Get-ADSyncConnector -Identifier b891884f-051e-4a83-95af-2544101c9083`
 
 ```
 PS C:\> Get-ADSyncConnector -Identifier b891884f-051e-4a83-95af-2544101c9083

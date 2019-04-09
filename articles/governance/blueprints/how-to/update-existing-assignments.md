@@ -1,7 +1,6 @@
 ---
 title: Обновление существующего назначения на портале
 description: Дополнительные сведения о механизме для обновления существующего назначения на портале в проекты Azure.
-services: blueprints
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 10/25/2018
@@ -9,12 +8,12 @@ ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 78b2f98b61306c22eaba59b9be7259b3a24d7bbe
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: c75bd8c3831bad0c8217f16315843cbe3824fe4d
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58805760"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59276876"
 ---
 # <a name="how-to-update-an-existing-blueprint-assignment"></a>Обновление существующего назначения схемы
 

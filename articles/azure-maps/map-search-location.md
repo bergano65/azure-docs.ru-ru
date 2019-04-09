@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 8ae6c8a20a05df723d3f6b394e0639f218896a85
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: be01c9d96386804b8bc074d81041104cbf592df6
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57845143"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59271600"
 ---
 # <a name="show-search-results-on-the-map"></a>Отображение результатов поиска на карте
 
@@ -29,11 +29,11 @@ ms.locfileid: "57845143"
 
 В приведенном выше коде первым блоком кода создает объект карты и задает способ проверки подлинности, использовать ключ подписки. См. инструкции по [созданию карты](./map-create.md).
 
-Второй блок кода создает **SubscriptionKeyCredentialPolicy** для проверки подлинности HTTP-запросов для службы карт Azure с помощью ключа подписки. Затем **atlas.service.MapsURL.newPipeline()** принимает **SubscriptionKeyCredential** политики и создает [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-iot-typescript-latest) экземпляра. **SearchURL** представляет URL-адрес для службы карт Azure [поиска](https://docs.microsoft.com/rest/api/maps/search) операций.
+Второй блок кода создает `SubscriptionKeyCredentialPolicy` для проверки подлинности HTTP-запросов для службы карт Azure с помощью ключа подписки. Затем `atlas.service.MapsURL.newPipeline()` принимает `SubscriptionKeyCredential` политики и создает [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-iot-typescript-latest) экземпляра. `searchURL` Представляет URL-адрес для службы карт Azure [поиска](https://docs.microsoft.com/rest/api/maps/search) операций.
 
 В третьем блоке кода создается объект источника данных с помощью класса [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest), к которому добавляются результаты поиска. В [слое символов](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest) данные на основе точек в оболочке [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) преобразовываются для просмотра в качестве символов на карте с помощью текста или значков.  Источник данных добавляется на создаваемый слой символов, который затем добавляется на карту.
 
-Четвертый блок кода использует [SearchFuzzy](/javascript/api/azure-maps-rest/atlas.service.models.searchgetsearchfuzzyoptionalparams) метод в [модуль службы](https://atlas.microsoft.com/sdk/js/atlas-service.js?api-version=2). Он позволяет выполнять поиск текста произвольной формы с помощью [Get поиска нечетких соответствий rest API](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) для поиска достопримечательностей. Get поиска нечетких соответствий API может обрабатывать любую комбинацию входов нечетких соответствий. Коллекция компонентов GeoJSON из ответа извлекается с помощью **geojson.getFeatures()** метод и добавляется к источнику данных, который автоматически приводит к данных, отображаемую на карте через уровень символ.
+Четвертый блок кода использует [SearchFuzzy](/javascript/api/azure-maps-rest/atlas.service.models.searchgetsearchfuzzyoptionalparams) метод в [модуль службы](https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas-service.min.js). Он позволяет выполнять поиск текста произвольной формы с помощью [Get поиска нечетких соответствий rest API](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) для поиска достопримечательностей. Get поиска нечетких соответствий API может обрабатывать любую комбинацию входов нечетких соответствий. Коллекция компонентов GeoJSON из ответа извлекается с помощью `geojson.getFeatures()` метод и добавляется к источнику данных, который автоматически приводит к данных, отображаемую на карте через уровень символ.
 
 Последний блок кода корректирует границы камеры для карты с помощью свойства карты [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#setcamera-cameraoptions---cameraboundsoptions---animationoptions-).
 
@@ -62,12 +62,12 @@ ms.locfileid: "57845143"
 Дополнительные сведения о **поиске нечетких соответствий**:
 
 > [!div class="nextstepaction"]
-> [API поиска нечетких соответствий службы "Карты Azure"](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy)
+> [Azure сопоставляет поиска нечетких соответствий API](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy)
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest);
+> [Карта](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
 
 Полные примеры кода см. в следующих статьях:
 

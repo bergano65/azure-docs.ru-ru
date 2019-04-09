@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 763ff0d5f619d2808fb06c05d5b266160b3a7069
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 5aa637938433eb1f906f0a4d81038cec0d6c6dcc
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55868571"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58893016"
 ---
 # <a name="tutorial-automate-container-image-builds-in-the-cloud-when-you-commit-source-code"></a>Руководство. Автоматизация создания образов контейнеров в облаке при фиксации исходного кода
 
@@ -52,7 +52,7 @@ ms.locfileid: "55868571"
 * фиксация в репозитории Git;
 * обновление базового образа.
 
-В этом руководстве в Реестре контейнеров Azure создается и отправляется один контейнер изображения, указанный в Dockerfile. С помощью решения "Задачи ACR" можно также запускать [многошаговые задачи](container-registry-tasks-multi-step.md) (сейчас в предварительной версии), используя файл YAML для определения действий по созданию, отправке и тестированию при необходимости нескольких контейнеров.
+В этом руководстве в Реестре контейнеров Azure создается и отправляется один контейнер изображения, указанный в Dockerfile. С помощью решения "Задачи ACR" можно также запускать [многошаговые задачи](container-registry-tasks-multi-step.md), используя файл YAML для определения действий по созданию, отправке и тестированию (при необходимости) нескольких контейнеров.
 
 ## <a name="create-a-build-task"></a>Создание задачи сборки
 
@@ -319,7 +319,7 @@ da1                       Linux       Succeeded  Manual      2018-09-17T22:29:59
 Из этого руководства вы узнали, как использовать задачу, чтобы автоматически активировать сборки образов контейнера в Azure при фиксации исходного кода в репозитории Git. Перейдите к следующему руководству, чтобы узнать, как создавать задачи, которые активируют сборку при обновлении базового образа контейнера.
 
 > [!div class="nextstepaction"]
-> [Руководство по автоматизации сборки образа при обновлении базового образа с помощью сборки реестра контейнеров Azure](container-registry-tutorial-base-image-update.md)
+> [Автоматизация сборки образа при обновлении базового образа](container-registry-tutorial-base-image-update.md)
 
 <!-- LINKS - External -->
 [sample-repo]: https://github.com/Azure-Samples/acr-build-helloworld-node

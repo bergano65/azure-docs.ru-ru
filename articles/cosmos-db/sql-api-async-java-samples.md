@@ -7,12 +7,12 @@ ms.devlang: java
 ms.topic: sample
 ms.date: 06/18/2018
 ms.author: sngun
-ms.openlocfilehash: 2b3a914feb09a88b06fcf11dc985965f89c85410
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 34551dcc64e6add2baa1ec94067037c98de67abe
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57538618"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58917946"
 ---
 # <a name="azure-cosmos-db-async-java-examples-for-the-sql-api"></a>Azure Cosmos DB — Примеры Async Java для API SQL
 

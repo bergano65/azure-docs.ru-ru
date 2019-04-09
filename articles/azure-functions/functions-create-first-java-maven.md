@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 08/10/2018
 ms.author: routlaw, glenga
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 96ac8522f94a3555fe63575baca8bbfbabc272d9
-ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
+ms.openlocfilehash: d25fbfc058337c7a96414cf41f321e039ebc2258
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57570459"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58801850"
 ---
 # <a name="create-your-first-function-with-java-and-maven"></a>Создание первой функции с помощью Java и Maven
 
@@ -48,6 +48,9 @@ mvn archetype:generate \
     -DarchetypeGroupId=com.microsoft.azure \
     -DarchetypeArtifactId=azure-functions-archetype 
 ```
+
+> [!NOTE]
+> Если не удается запустить команду, проверьте, какая версия `maven-archetype-plugin` используется. Так как команда выполняется в пустом каталоге без файла `.pom`, она может пытаться использовать более старую версию плагина из расположения `~/.m2/repository/org/apache/maven/plugins/maven-archetype-plugin`, если вы обновили Maven из предыдущей версии. В таком случае попробуйте удалить каталог `maven-archetype-plugin` и повторно выполнить команду.
 
 ### <a name="windows"></a> Windows
 
@@ -150,6 +153,9 @@ az login
 ```
 
 Разверните свой код в новом приложении-функции, используя целевой объект Maven `azure-functions:deploy`.
+
+> [!NOTE]
+> При использовании Visual Studio Code для развертывания приложения-функции необходимо выбрать платную подписку, иначе появится сообщение об ошибке. Подписка отображается в левой области интегрированной среды разработки.
 
 ```
 mvn azure-functions:deploy

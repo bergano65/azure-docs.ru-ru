@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: 2baabe6837d25cce5e9f5d9e1071af8417fe5f4d
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: da653842b09c15a5fd42bae0ed45e7b31452b972
+ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58401868"
+ms.lasthandoff: 03/28/2019
+ms.locfileid: "58578757"
 ---
 # <a name="tutorial-manage-app-groups-for-windows-virtual-desktop-preview"></a>Руководство по управлению группами приложений для предварительной версии Виртуального рабочего стола Windows
 
@@ -28,7 +28,7 @@ ms.locfileid: "58401868"
 
 ## <a name="create-a-remoteapp-group"></a>Создание группы приложений RemoteApp
 
-1. Выполните указанный ниже командлет PowerShell, чтобы создать пустую группу приложений RemoteApp.
+1. Выполните этот командлет PowerShell, чтобы создать пустую группу приложений RemoteApp.
 
    ```powershell
    New-RdsAppGroup <tenantname> <hostpoolname> <appgroupname> -ResourceType "RemoteApp"
@@ -45,17 +45,17 @@ ms.locfileid: "58401868"
    ```powershell
    Get-RdsStartMenuApp <tenantname> <hostpoolname> <appgroupname>
    ```
-
-4. Выполните указанный ниже командлет, чтобы опубликовать новое удаленное приложение RemoteApp в группе приложений, созданной на шаге 1.
+   
+4. Выполните следующий командлет, чтобы установить приложение на основе свойства appalias. Свойство appalias отображается после обработки выходных данных, полученных на шаге 3.
 
    ```powershell
-   New-RdsRemoteApp <tenantname> <hostpoolname> <appgroupname> <remoteappname> -Filepath <filepath>  -IconPath <iconpath> -IconIndex <iconindex>
+   New-RdsRemoteApp <tenantname> <hostpoolname> <appgroupname> -Name <remoteappname> -AppAlias <appalias>
    ```
 
-5. (Необязательно) Выполните указанный ниже командлет, чтобы установить приложение на основе свойства appalias. Свойство appalias отображается после обработки выходных данных, полученных на шаге 3.
+5. Выполните следующий командлет, чтобы опубликовать новое удаленное приложение RemoteApp в группе приложений, созданной на шаге 1.
 
    ```powershell
-   New-RdsRemoteApp <tenantname> <hostpoolname> <appgroupname> <remoteappname> -AppAlias <appalias>
+   New-RdsRemoteApp <tenantname> <hostpoolname> <appgroupname> -Name <remoteappname> -Filepath <filepath>  -IconPath <iconpath> -IconIndex <iconindex>
    ```
 
 6. Чтобы убедиться в том, что приложение было опубликовано, выполните указанный ниже командлет.

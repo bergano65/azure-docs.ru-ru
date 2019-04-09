@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 02/28/2019
 ms.author: diberry
-ms.openlocfilehash: 9b80222acfc1104c184fc9cfb4711c16e7bb8dd2
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: a8e51534fec3dacb577ef9b79bb42c48557dc15b
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57312993"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58884947"
 ---
 # <a name="get-answers-to-a-question-from-a-knowledge-base-with-java"></a>Получение ответов на вопрос из базы знаний с помощью Java
 
@@ -28,7 +28,7 @@ ms.locfileid: "57312993"
     * httpclient-4.5.3.jar;
     * httpcore-4.4.6.jar;
     * commons-logging-1.2.jar.
-* [Visual Studio Code](https://code.visualstudio.com/)
+* [Visual Studio Code.](https://code.visualstudio.com/)
 * У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ, выберите **Ключи** в разделе **Управление ресурсами** на панели мониторинга ресурса QnA Maker на портале Azure. 
 * Параметры страницы **Публикация**. Если у вас нет опубликованной базы знаний, создайте новую, импортируйте ее на странице **Параметры**, а затем опубликуйте ее. Можно скачать и использовать [эту простую базу знаний](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/knowledge-bases/basic-kb.tsv). 
 
@@ -70,7 +70,7 @@ public class GetAnswer {
 
 [!code-java[Add a POST request to send question to knowledge base](~/samples-qnamaker-java/documentation-samples/quickstarts/get-answer/GetAnswer.java?range=44-72 "Add a POST request to send question to knowledge base")]
 
-Значение заголовка `Authorization` содержит строку `EndpointKey `. 
+Значение заголовка `Authorization` содержит строку `EndpointKey`. 
 
 Дополнительные сведения о [запросе](../how-to/metadata-generateanswer-usage.md#generateanswer-request) и [ответе](../how-to/metadata-generateanswer-usage.md#generateanswer-response).
 
@@ -98,4 +98,4 @@ public class GetAnswer {
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [QnA Maker (V4) REST API Reference](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff) (Справочник по API REST QnA Maker (V4))
+> [Справочник по REST API QnA Maker (версия 4)](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff)

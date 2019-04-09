@@ -10,12 +10,12 @@ ms.topic: overview
 ms.date: 03/17/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 3c2567564e015ef19adf9f8c776e1f377a9cdf30
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 187e40716bc55f71623ef758722eb58d27651d4d
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58133065"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58882509"
 ---
 # <a name="what-is-cognitive-search-in-azure-search"></a>Что такое когнитивный поиск в службе "Поиск Azure"?
 
@@ -38,7 +38,7 @@ ms.locfileid: "58133065"
 
 ## <a name="components-of-cognitive-search"></a>Компоненты когнитивного поиска
 
-Когнитивный поиск является предварительной версией функции [службы "Поиск Azure"](search-what-is-azure-search.md), поддерживаемой в [этих регионах](#where-do-i-start). 
+Когнитивный поиск является предварительной версией функции [службы "Поиск Azure"](search-what-is-azure-search.md).
 
 Конвейер когнитивного поиска основан на [*индексаторах* службы "Поиск Azure](search-indexer-overview.md), которые последовательно сканируют источники данных и создают по ним индексы. Теперь к этим индексаторам можно подключать навыки, которые отслеживают и обогащают определенные документы по настроенным вами наборам навыков. После индексации созданный контент будет доступен через поисковые запросы [любых типов, поддерживаемых в службе "Поиск Azure"](search-query-overview.md).  Если вы еще не знакомы с индексаторами, ознакомьтесь с простым примером, представленным в этом разделе.
 
@@ -92,7 +92,7 @@ ms.locfileid: "58133065"
 
 ## <a name="where-do-i-start"></a>С чего начать?
 
-**Шаг 1. [Создание индекса службы "Поиск Azure"](search-create-service-portal.md)** 
+**Шаг 1. [Создание ресурса службы "Поиск Azure"](search-create-service-portal.md)** 
 
 **Шаг 2. Выполнение кратких руководств и изучение примеров**
 
@@ -135,6 +135,6 @@ ms.locfileid: "58133065"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-+ [Документация по когнитивному поиску](cognitive-search-resources-documentation.md)
++ [Документация по поиску с помощью служб Cognitive Services](cognitive-search-resources-documentation.md)
 + [Краткое руководство. Создание конвейера когнитивного поиска с использованием навыков и примера данных](cognitive-search-quickstart-blob.md)
-+ [Руководство. Вызов API когнитивного поиска (предварительная версия)](cognitive-search-tutorial-blob.md)
++ [Руководство по Вызов API-интерфейсов Cognitive Services в конвейере индексирования Поиска Azure (предварительная версия)](cognitive-search-tutorial-blob.md)

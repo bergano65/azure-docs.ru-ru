@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/07/2018
 ms.author: barclayn
-ms.openlocfilehash: 6470a358fd3127c93e2e2248b42f79690f4e8b55
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 9b905a81751ce5f4de4a4efbb9ff4c328269fe34
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58449353"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904854"
 ---
 # <a name="tutorial--deploying-hsms-into-an-existing-virtual-network-using-powershell"></a>Руководство. Развертывание выделенных устройств HSM в существующей виртуальной сети с помощью PowerShell
 
@@ -34,6 +34,9 @@ ms.locfileid: "58449353"
 ![Развертывание в нескольких регионах](media/tutorial-deploy-hsm-powershell/high-availability.png)
 
 В этом руководстве описана интеграция пары устройств HSM и требуемого шлюза ExpressRoute (см. Subnet 1 на предыдущем рисунке) в существующую виртуальную сеть (см. VNET 1 на предыдущем рисунке).  Все другие ресурсы — это стандартные ресурсы Azure. Аналогичный процесс интеграции можно использовать для устройств HSM в подсети 4 виртуальной сети 3 (см. представленный выше рисунок).
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -56,13 +59,13 @@ ms.locfileid: "58449353"
 Как указано выше, перед подготовкой к работе необходимо зарегистрировать службу выделенных устройств HSM в своей подписке. Чтобы проверить это, выполните следующую команду в Cloud Shell на портале Azure. 
 
 ```powershell
-Get-AzureRmProviderFeature -ProviderNamespace Microsoft.HardwareSecurityModules -FeatureName AzureDedicatedHsm
+Get-AzProviderFeature -ProviderNamespace Microsoft.HardwareSecurityModules -FeatureName AzureDedicatedHsm
 ```
 
 Следующая команда позволяет проверить сетевые возможности, необходимые для службы выделенных устройств HSM.
 
 ```powershell
-Get-AzureRmProviderFeature -ProviderNamespace Microsoft.Network -FeatureName AllowBaremetalServers
+Get-AzProviderFeature -ProviderNamespace Microsoft.Network -FeatureName AllowBaremetalServers
 ```
 
 Обе команды должны вернуть состояние Registered (как показано ниже), чтобы вы могли продолжить работу.  Если вам нужно зарегистрироваться для использования службы, свяжитесь со своим менеджером Майкрософт по работе с клиентами.
@@ -82,7 +85,7 @@ Get-AzureRmProviderFeature -ProviderNamespace Microsoft.Network -FeatureName All
 - `hsmSubnetRange` — диапазон IP-адресов в подсети для устройств HSM.
 - `ERSubnetRange` — диапазон IP-адресов в подсети для шлюза виртуальной сети.
 
-Пример указанных настроек:
+Вот пример таких изменений.
 
 ```json
 {
@@ -130,20 +133,20 @@ Get-AzureRmProviderFeature -ProviderNamespace Microsoft.Network -FeatureName All
 Прежде чем создавать ресурсы HSM, нужно создать другие необходимые ресурсы. Нужно создать виртуальную сеть с диапазонами подсетей для вычислительных ресурсов, устройств HSM и шлюза. Ниже приведены примеры команд по созданию такой виртуальной сети.
 
 ```powershell
-$compute = New-AzureRmVirtualNetworkSubnetConfig `
+$compute = New-AzVirtualNetworkSubnetConfig `
   -Name compute `
   -AddressPrefix 10.2.0.0/24
 ```
 
 ```powershell
-$delegation = New-AzureRmDelegation `
+$delegation = New-AzDelegation `
   -Name "myDelegation" `
   -ServiceName "Microsoft.HardwareSecurityModules/dedicatedHSMs"
 
 ```
 
 ```powershell
-$hsmsubnet = New-AzureRmVirtualNetworkSubnetConfig ` 
+$hsmsubnet = New-AzVirtualNetworkSubnetConfig ` 
   -Name hsmsubnet ` 
   -AddressPrefix 10.2.1.0/24 ` 
   -Delegation $delegation 
@@ -152,7 +155,7 @@ $hsmsubnet = New-AzureRmVirtualNetworkSubnetConfig `
 
 ```powershell
 
-$gwsubnet= New-AzureRmVirtualNetworkSubnetConfig `
+$gwsubnet= New-AzVirtualNetworkSubnetConfig `
   -Name GatewaySubnet `
   -AddressPrefix 10.2.255.0/26
 
@@ -160,7 +163,7 @@ $gwsubnet= New-AzureRmVirtualNetworkSubnetConfig `
 
 ```powershell
 
-New-AzureRmVirtualNetwork `
+New-AzVirtualNetwork `
   -Name myHSM-vnet `
   -ResourceGroupName myRG `
   -Location westus `
@@ -176,7 +179,7 @@ New-AzureRmVirtualNetwork `
 
 ```powershell
 
-New-AzureRmResourceGroupDeployment -ResourceGroupName myRG `
+New-AzResourceGroupDeployment -ResourceGroupName myRG `
      -TemplateFile .\Deploy-2HSM-toVNET-Template.json `
      -TemplateParameterFile .\Deploy-2HSM-toVNET-Params.json `
      -Name HSMdeploy -Verbose
@@ -195,10 +198,10 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName myRG `
 
 ```powershell
 
-$subid = (Get-AzureRmContext).Subscription.Id
+$subid = (Get-AzContext).Subscription.Id
 $resourceGroupName = "myRG"
 $resourceName = "HSM1"  
-Get-AzureRmResource -Resourceid /subscriptions/$subId/resourceGroups/$resourceGroupName/providers/Microsoft.HardwareSecurityModules/dedicatedHSMs/$resourceName
+Get-AzResource -Resourceid /subscriptions/$subId/resourceGroups/$resourceGroupName/providers/Microsoft.HardwareSecurityModules/dedicatedHSMs/$resourceName
 
 ```
 
@@ -218,7 +221,7 @@ Get-AzureRmResource -Resourceid /subscriptions/$subId/resourceGroups/$resourceGr
 
 ```powershell
 
-(Get-AzureRmResource -ResourceGroupName myRG -Name HSMdeploy -ExpandProperties).Properties.networkProfile.networkInterfaces.privateIpAddress
+(Get-AzResource -ResourceGroupName myRG -Name HSMdeploy -ExpandProperties).Properties.networkProfile.networkInterfaces.privateIpAddress
 
 ```
 Узнав нужный IP-адрес, выполните следующую команду:
@@ -262,10 +265,10 @@ Get-AzureRmResource -Resourceid /subscriptions/$subId/resourceGroups/$resourceGr
 
 ```powershell
 
-$subid = (Get-AzureRmContext).Subscription.Id
+$subid = (Get-AzContext).Subscription.Id
 $resourceGroupName = "myRG" 
 $resourceName = "HSMdeploy"  
-Remove-AzureRmResource -Resourceid /subscriptions/$subId/resourceGroups/$resourceGroupName/providers/Microsoft.HardwareSecurityModules/dedicatedHSMs/$resourceName 
+Remove-AzResource -Resourceid /subscriptions/$subId/resourceGroups/$resourceGroupName/providers/Microsoft.HardwareSecurityModules/dedicatedHSMs/$resourceName 
 
 ```
 

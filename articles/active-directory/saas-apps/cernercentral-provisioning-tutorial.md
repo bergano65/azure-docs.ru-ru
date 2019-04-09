@@ -13,27 +13,26 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/26/2018
+ms.date: 03/27/2019
 ms.author: asmalser-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dda84d30124eca1526f227ffec134f48451c9cb0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 00a967d61a5f81fc871488ea48df9cb4cf18c269
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58102573"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59268608"
 ---
-# <a name="tutorial-configure-cerner-central-for-automatic-user-provisioning"></a>Руководство. Настройка Cerner Central для автоматической подготовки пользователей
+# <a name="tutorial-configure-cerner-central-for-automatic-user-provisioning"></a>Руководство по Настройка Cerner Central для автоматической подготовки пользователей
 
-Цель этого руководства — показать, как настроить автоматическую подготовку и отзыв учетных записей пользователей Azure AD в списке пользователей в Cerner Central. 
-
+Цель этого руководства — показать, как настроить автоматическую подготовку и отзыв учетных записей пользователей Azure AD в списке пользователей в Cerner Central.
 
 ## <a name="prerequisites"></a>Технические условия
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
-*   Клиент Azure Active Directory.
-*   Клиент Cerner Central. 
+* Клиент Azure Active Directory.
+* Клиент Cerner Central.
 
 > [!NOTE]
 > Для интеграции Azure Active Directory с Cerner Central используется протокол [SCIM](http://www.simplecloud.info/).
@@ -44,16 +43,15 @@ ms.locfileid: "58102573"
 
 Перед настройкой и включением службы подготовки необходимо решить, какие пользователи и (или) группы в Azure AD представляют пользователей, которым нужен доступ к Cerner Central. Когда этот вопрос будет решен, этих пользователей можно будет назначить приложению Cerner Central, следуя приведенным ниже указаниям.
 
-[Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
+[Назначение пользователя или группы корпоративному приложению](../manage-apps/assign-user-or-group-access-portal.md)
 
 ### <a name="important-tips-for-assigning-users-to-cerner-central"></a>Важные рекомендации по назначению пользователей приложению Cerner Central
 
-*   Рекомендуем сначала назначить приложению Cerner Central одного пользователя Azure AD и с его помощью протестировать конфигурацию подготовки. Дополнительные пользователи и/или группы можно назначить позднее.
+* Рекомендуем сначала назначить приложению Cerner Central одного пользователя Azure AD и с его помощью протестировать конфигурацию подготовки. Дополнительные пользователи и/или группы можно назначить позднее.
 
 * По завершении первоначального тестирования отдельного пользователя Cerner Central порекомендует назначить целый список пользователей для доступа к любому решению Cerner (не только Cerner Central), которых следует подготовить и добавить в список пользователей Cerner Central.  Другие решения Cerner используют этот перечень пользователей из списка пользователей.
 
-*   Назначая пользователя приложению Cerner Central, в диалоговом окне назначения необходимо выбрать роль **Пользователь**. Пользователи с ролью "Default Access" исключаются из подготовки.
-
+* Назначая пользователя приложению Cerner Central, в диалоговом окне назначения необходимо выбрать роль **Пользователь**. Пользователи с ролью "Default Access" исключаются из подготовки.
 
 ## <a name="configuring-user-provisioning-to-cerner-central"></a>Настройка подготовки пользователей в Cerner Central
 
@@ -62,9 +60,7 @@ ms.locfileid: "58102573"
 > [!TIP]
 > Кроме того, можно включить на основе SAML единого входа, для Cerner Central, следуйте инструкциям, указанным в [портала Azure](https://portal.azure.com). Единый вход можно настроить независимо от автоматической подготовки, хотя две эти функции дополняют друг друга. Дополнительные сведения см. в [руководстве по настройке единого входа в Cerner Central](cernercentral-tutorial.md).
 
-
 ### <a name="to-configure-automatic-user-account-provisioning-to-cerner-central-in-azure-ad"></a>Настройка автоматической подготовки учетных записей пользователей Azure AD в Cerner Central
-
 
 Для подготовки учетных записей пользователей в Cerner Central потребуется запросить у Cerner системную учетную запись Cerner Central и создать токен носителя OAuth, который Azure AD сможет использовать для подключения к конечной точке SCIM Cerner. Также перед развертыванием в рабочей среде рекомендуется выполнить интеграцию в песочнице Cerner.
 
@@ -106,9 +102,9 @@ ms.locfileid: "58102573"
 
    * В поле **URL-адрес клиента** введите URL-адрес в формате, указанном ниже, заменив User-Roster-Realm-ID идентификатором области, полученным на шаге 4.
 
-> Песочница: https://user-roster-api.sandboxcernercentral.com/scim/v1/Realms/User-Roster-Realm-ID/ 
-> 
-> Производство: https://user-roster-api.cernercentral.com/scim/v1/Realms/User-Roster-Realm-ID/ 
+    > Песочница: https://user-roster-api.sandboxcernercentral.com/scim/v1/Realms/User-Roster-Realm-ID/ 
+    > 
+    > Производство: https://user-roster-api.cernercentral.com/scim/v1/Realms/User-Roster-Realm-ID/ 
 
    * В поле **Секретный токен** введите токен носителя OAuth, созданный на шаге 3, и нажмите кнопку **Проверить подключение**.
 
@@ -116,13 +112,13 @@ ms.locfileid: "58102573"
 
 1. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок ниже.
 
-1. Выберите команду **Сохранить**. 
+1. Выберите команду **Сохранить**.
 
 1. В разделе **Сопоставления атрибутов** просмотрите атрибуты пользователей и групп Azure AD, которые будут синхронизированы с Cerner Central. Атрибуты, которые выбраны в качестве свойств **Matching**, используются для сопоставления учетных записей пользователей и групп в Cerner Central для операций обновления. Нажмите кнопку "Сохранить", чтобы подтвердить все изменения.
 
 1. Чтобы включить службу подготовки Azure AD для Cerner Central, в разделе **Параметры** установите переключатель **Состояние подготовки** в положение **Включено**.
 
-1. Выберите команду **Сохранить**. 
+1. Выберите команду **Сохранить**.
 
 После этого будет запущена начальная синхронизация всех пользователей и (или) групп, назначенных приложению Cerner Central в разделе "Пользователи и группы". Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход синхронизации и с помощью ссылок просматривать журналы действий по подготовке, в которых описаны все действия, выполняемые службой подготовки в отношении приложения Cerner Central.
 
@@ -130,10 +126,11 @@ ms.locfileid: "58102573"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Cerner Central: Publishing identity data using Azure AD](https://wiki.ucern.com/display/public/reference/Publishing+Identity+Data+Using+Azure+AD) (Cerner Central: публикация данных удостоверений с помощью Azure Active Directory)
-* [Руководство Интеграция Azure Active Directory с Cerner Central](cernercentral-tutorial.md)
+* [Cerner Central: Публикация данных удостоверений, с помощью Azure AD](https://wiki.ucern.com/display/public/reference/Publishing+Identity+Data+Using+Azure+AD)
+* [Руководство по По настройке Cerner Central для единого входа с Azure Active Directory](cernercentral-tutorial.md)
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](https://docs.microsoft.com/azure/active-directory/active-directory-saas-provisioning-reporting).

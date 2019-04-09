@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/10/2019
+ms.date: 04/07/2019
 ms.author: juliako
-ms.openlocfilehash: 041e76ccecb4dd0fe9c060681609dfb92c03ec5a
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: 2c98f6d12f4868e5f90874fe3210fe5368f7ca2d
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58893152"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59270342"
 ---
 # <a name="compare-azure-media-services-v3-presets-and-video-indexer"></a>Сравнение предустановок Служб мультимедиа версии 3 и Индексатора видео 
 
@@ -26,16 +26,16 @@ ms.locfileid: "58893152"
 
 В настоящее время имеется перекрытия функций, предоставляемых [API индексатора видео](https://api-portal.videoindexer.ai/) и [API-интерфейсы служб мультимедиа v3](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2018-07-01/Encoding.json). В следующей таблице представлены сведения о текущих различиях и сходстве. 
 
-## <a name="compare"></a>Сравнение
+## <a name="compare"></a>Сравнить
 
-|Функция|API Индексатора видео |Предустановки анализатора видео и звука<br/>в Службах мультимедиа Azure, версия 3|
+|Возможность|API Индексатора видео |Предустановки анализатора видео и звука<br/>в Службах мультимедиа Azure, версия 3|
 |---|---|---|
 |Аналитические сведения о мультимедиа|[Расширенная архитектура](video-indexer-output-json-v2.md) |[Основы](../latest/intelligence-concept.md)|
 |Возможности|Ознакомьтесь с полным списком поддерживаемых возможностей в следующей статье: <br/> [Обзор](video-indexer-overview.md)|Возвращает только аналитические сведения о видео|
 |Выставление счетов|[Цены на службы мультимедиа](https://azure.microsoft.com/pricing/details/media-services/#analytics)|[Цены на службы мультимедиа](https://azure.microsoft.com/pricing/details/media-services/#analytics)|
-|Соответствие нормативным требованиям|[Обеспечение соответствия требованиям в Azure](https://aka.ms/AzureCompliance)|Службы мультимедиа соответствует требованиям многих сертификатов. Ознакомьтесь с документом [Azure Compliance Offerings.pdf](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942/file/178110/23/Microsoft%20Azure%20Compliance%20Offerings.pdf) (Предложение для соответствия требованиям Azure) и просмотрите сведения о Службах мультимедиа, чтобы узнать, соответствуют ли они требованиям необходимого сертификата.|
-|"Бесплатная пробная версия"|Восточная часть США|Недоступно|
-|Доступность |Западная часть США, Восточная Азия, Северная Европа|Ознакомьтесь со статьей [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=media-services).|
+|Соответствие|[ISO 27001](https://www.microsoft.com/TrustCenter/Compliance/ISO-IEC-27001), [ISO 27018](https://www.microsoft.com/trustcenter/Compliance/ISO-IEC-27018), [SOC 1,2,3](https://www.microsoft.com/TrustCenter/Compliance/SOC), [HIPAA](https://www.microsoft.com/trustcenter/compliance/hipaa), [FedRAMP](https://www.microsoft.com/TrustCenter/Compliance/fedramp), [PCI](https://www.microsoft.com/trustcenter/compliance/pci)и [ HITRUST](https://www.microsoft.com/TrustCenter/Compliance/hitrust) certified. Самые последние обновления, см. в статье [текущее состояние сертификации индексатора видео](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942).|Службы мультимедиа соответствует требованиям многих сертификатов. Ознакомьтесь с документом [Azure Compliance Offerings.pdf](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942/file/178110/23/Microsoft%20Azure%20Compliance%20Offerings.pdf) (Предложение для соответствия требованиям Azure) и просмотрите сведения о Службах мультимедиа, чтобы узнать, соответствуют ли они требованиям необходимого сертификата.|
+|Пробная версия|Восток США|Недоступно|
+|Доступность в регионах|Восточная часть США 2, Юго-центральный регион США, Западная часть США 2, Северная Европа, Западная Европа, Юго-Восточная Азия, Восточная Азия и Восточная Австралия.  Самые последние обновления, см. в статье [продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) страницы.|Ознакомьтесь со статьей [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=media-services).|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

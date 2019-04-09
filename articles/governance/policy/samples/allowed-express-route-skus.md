@@ -8,12 +8,12 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/29/2019
 ms.author: dacoulte
-ms.openlocfilehash: 3b2f8b06802c38446cccf5e243c5529073bd5c2a
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: fb6ba1f021b285a0d3e7cdcdc7a87e5b97004353
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57551257"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58801306"
 ---
 # <a name="sample---allowed-expressroute-skus"></a>Пример: допустимые номера SKU ExpressRoute
 
@@ -29,7 +29,7 @@ ms.locfileid: "57551257"
 
 ## <a name="deploy-with-the-portal"></a>Развертывание с помощью портала
 
-[![Развертывание в Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/?feature.customportal=false&microsoft_azure_policy=true&microsoft_azure_policy_policyinsights=true&feature.microsoft_azure_security_policy=true&microsoft_azure_marketplace_policy=true#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-policy%2Fmaster%2Fsamples%2FNetwork%2Fexpress-route-skus%2Fazurepolicy.json)
+[![Развертывание примера политики в Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/?feature.customportal=false&microsoft_azure_policy=true&microsoft_azure_policy_policyinsights=true&feature.microsoft_azure_security_policy=true&microsoft_azure_marketplace_policy=true#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-policy%2Fmaster%2Fsamples%2FNetwork%2Fexpress-route-skus%2Fazurepolicy.json)
 
 ## <a name="deploy-with-powershell"></a>Развертывание с помощью PowerShell
 

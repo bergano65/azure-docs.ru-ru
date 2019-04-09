@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 04/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 33011a419c8c966fc59b769106aaff428b2a0709
-ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
-ms.translationtype: HT
+ms.openlocfilehash: 624ad22b1c63498e8ce936472cfc884910bc6f84
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59057682"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59276955"
 ---
 # <a name="enable-azure-disk-encryption-for-linux-iaas-vms"></a>Включение шифрования дисков Azure для виртуальных машин IaaS под управлением Linux 
 
@@ -130,7 +130,7 @@ ms.locfileid: "59057682"
 
 В следующей таблице перечислены параметры шаблона Resource Manager для имеющихся или работающих виртуальных машин.
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 | --- | --- |
 | vmName | Имя виртуальной машины для выполнения операции шифрования. |
 | keyVaultName | Имя хранилища ключей, в которое будет передан ключ BitLocker. Его можно получить с помощью командлета `(Get-AzKeyVault -ResourceGroupName <MyKeyVaultResourceGroupName>). Vaultname` или команду Azure CLI `az keyvault list --resource-group "MyKeyVaultResourceGroupName"`|
@@ -139,7 +139,7 @@ ms.locfileid: "59057682"
 | volumeType | Тип тома, для которого будет выполняться шифрование. Допустимые значения: _OS_, _Data_ и _All_. 
 | forceUpdateTag | Передает уникальное значение, такое как GUID, каждый раз, когда операция должна выполняться принудительно. |
 | resizeOSDisk | Если размер раздела ОС будет изменен и займет весь виртуальный жесткий диск ОС до разделения системного тома. |
-| location | Расположение для всех ресурсов. |
+| расположение | Расположение для всех ресурсов. |
 
 
 
@@ -226,8 +226,7 @@ ms.locfileid: "59057682"
 Для шифрования или расшифровки масштабируемых наборов виртуальных машин Linux используйте шаблоны Azure Resource Manager и приведенные ниже инструкции:
 
 - [Включение шифрования для масштабируемого набора виртуальных машин Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-vmss-linux)
-- [Развертывание виртуальной Машины масштабируемый набор виртуальных машин Linux с основной виртуальной машины и включите шифрование в масштабируемом наборе виртуальных Машин Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-linux-jumpbox)
-- [Отключение шифрования на масштабируемый набор виртуальных Машин Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-vmss-linux)
+- [Отключение шифрования на масштабируемый набор виртуальных машин Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-vmss-linux)
 
      1. Нажмите кнопку **Развернуть в Azure**.
      2. Заполните обязательные поля, а затем согласитесь с условиями.

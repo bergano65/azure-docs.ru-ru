@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 01/31/2019
+ms.date: 04/05/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 5f98cf51b618686e3c608535667993e9d5f9e939
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 4c91bf389f5c63b95e5b68784b6657e92b109a46
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57852933"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59265871"
 ---
 # <a name="automate-resources-in-your-datacenter-or-cloud-by-using-hybrid-runbook-worker"></a>Автоматизация ресурсов в центре обработки данных или в облаке с помощью использования гибридной рабочей роли Runbook
 
@@ -36,7 +36,7 @@ ms.locfileid: "57852933"
 
 |ОС  |Типы развертывания  |
 |---------|---------|
-| Windows     | [PowerShell](automation-windows-hrw-install.md#automated-deployment)<br>[Вручную](automation-windows-hrw-install.md#manual-deployment)        |
+|Windows     | [PowerShell](automation-windows-hrw-install.md#automated-deployment)<br>[Вручную](automation-windows-hrw-install.md#manual-deployment)        |
 |Linux     | [Python](automation-linux-hrw-install.md#installing-a-linux-hybrid-runbook-worker)        |
 
 > [!NOTE]
@@ -53,7 +53,7 @@ ms.locfileid: "57852933"
 1. На портале Azure перейдите в свою учетную запись в службе автоматизации.
 2. В разделе **Параметры учетной записи** выберите **Ключи** и запишите значения **URL-адреса** и **первичного ключа доступа**. Эти сведения потребуются для выполнения следующего шага.
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 Откройте сеанс PowerShell в режиме администратора и выполните следующую команду. Получить подробный журнал процедуры удаления можно с помощью параметра **-Verbose** .
 
@@ -97,11 +97,11 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 
 ### <a name="hybrid-worker-role"></a>Гибридная рабочая роль
 
-Гибридные рабочая роль Runbook могла подключаться и регистрироваться с помощью журналов Azure Monitor ей нужен доступ к портам и URL-адреса, описанные в этом разделе. Этот доступ — сверху, чтобы [порты и URL-адреса, необходимые для Microsoft Monitoring Agent](../azure-monitor/platform/agent-windows.md) для подключения к журналам Azure Monitor.
+Для гибридной рабочей роли Runbook для подключения и регистрации в службе автоматизации Azure он должен иметь доступ к портам и URL-адреса, описанные в этом разделе. Этот доступ — сверху, чтобы [порты и URL-адреса, необходимые для Microsoft Monitoring Agent](../azure-monitor/platform/agent-windows.md) для подключения к журналам Azure Monitor.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-Если вы используете прокси-сервер для обмена данными между агентом и службой Azure Monitor, убедитесь, что соответствующие ресурсы доступны. Если доступ к Интернету ограничивается брандмауэром, вам нужно изменить его настройки, чтобы разрешить доступ к OMS. Если в качестве прокси-сервера используется шлюз Log Analytics, он должен быть настроен для гибридных рабочих ролей. Инструкции см. в разделе [Настройка поддержки гибридных рабочих ролей службы автоматизации](https://docs.microsoft.com/azure/log-analytics/log-analytics-oms-gateway).
+Если вы используете прокси-сервер для обмена данными между агентом и службой автоматизации Azure, убедитесь, что соответствующие ресурсы доступны. Время ожидания для запросов из гибридной рабочей роли Runbook и службами автоматизации составляет 30 секунд. После 3 попыток запрос завершится ошибкой. Если доступ к Интернету ограничивается брандмауэром, вам нужно изменить его настройки, чтобы разрешить доступ к OMS. Если в качестве прокси-сервера используется шлюз Log Analytics, он должен быть настроен для гибридных рабочих ролей. Инструкции см. в разделе [Настройка поддержки гибридных рабочих ролей службы автоматизации](https://docs.microsoft.com/azure/log-analytics/log-analytics-oms-gateway).
 
 Для обмена данными между гибридной рабочей ролью Runbook и службой автоматизации необходимы следующие порт и URL-адрес:
 
@@ -118,8 +118,8 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 | --- | --- |
 | Западно-центральная часть США | wcus-jobruntimedata-prod-su1.azure-automation.net</br>wcus-agentservice-prod-1.azure-automation.net |
 | Центрально-южная часть США |scus-jobruntimedata-prod-su1.azure-automation.net</br>scus-agentservice-prod-1.azure-automation.net |
-| Восток США 2 |eus2-jobruntimedata-prod-su1.azure-automation.net</br>eus2-agentservice-prod-1.azure-automation.net |
-| Западный регион США 2 |wus2-jobruntimedata-prod-su1.azure-automation.net</br>wus2-agentservice-prod-su1.azure-automation.net |
+| Восточная часть США 2 |eus2-jobruntimedata-prod-su1.azure-automation.net</br>eus2-agentservice-prod-1.azure-automation.net |
+| Западная часть США 2 |wus2-jobruntimedata-prod-su1.azure-automation.net</br>wus2-agentservice-prod-su1.azure-automation.net |
 | Центральная Канада |cc-jobruntimedata-prod-su1.azure-automation.net</br>cc-agentservice-prod-1.azure-automation.net |
 | Западная Европа |we-jobruntimedata-prod-su1.azure-automation.net</br>we-agentservice-prod-1.azure-automation.net |
 | Северная Европа |ne-jobruntimedata-prod-su1.azure-automation.net</br>ne-agentservice-prod-1.azure-automation.net |
@@ -127,8 +127,8 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 | Центральная Индия |cid-jobruntimedata-prod-su1.azure-automation.net</br>cid-agentservice-prod-1.azure-automation.net |
 | Восточная часть Японии |jpe-jobruntimedata-prod-su1.azure-automation.net</br>jpe-agentservice-prod-1.azure-automation.net |
 | Юго-Восточная Австралия |ase-jobruntimedata-prod-su1.azure-automation.net</br>ase-agentservice-prod-1.azure-automation.net |
-| Южная часть Великобритании | uks-jobruntimedata-prod-su1.azure-automation.net</br>uks-agentservice-prod-1.azure-automation.net |
-| Правительство штата Вирджиния | usge-jobruntimedata-prod-su1.azure-automation.us<br>usge-agentservice-prod-1.azure-automation.us |
+| Южная часть Соединенного Королевства | uks-jobruntimedata-prod-su1.azure-automation.net</br>uks-agentservice-prod-1.azure-automation.net |
+| US Gov (Вирджиния) | usge-jobruntimedata-prod-su1.azure-automation.us<br>usge-agentservice-prod-1.azure-automation.us |
 
 Для списка IP-адресов региона вместо его имен скачайте XML-файл [IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653) из Центра загрузки Майкрософт и ознакомьтесь с ним.
 
@@ -139,11 +139,11 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 >
 > Скачивайте новый XML-файл каждую неделю и вносите соответствующие изменения на своем сайте, чтобы правильно определять службы, выполняемые в Azure. Пользователям Azure ExpressRoute следует обратить внимание, что этот файл используется для того, чтобы обновлять протокол BGP в пространстве Azure в первую неделю каждого месяца.
 
-### <a name="update-management"></a>управление обновлениями;
+### <a name="update-management"></a>Управление обновлениями
 
 В дополнение к стандартным адресам и портам, которые требуются гибридной рабочей роли Runbook, для Управления обновлениями необходимы следующие адреса. Взаимодействие с этими адресами выполняется через порт 443.
 
-|Azure Public  |Azure Government  |
+|Azure Public  |Azure для государственных организаций  |
 |---------|---------|
 |*.ods.opinsights.azure.com     |*.ods.opinsights.azure.us         |
 |*.oms.opinsights.azure.com     | *.oms.opinsights.azure.us        |

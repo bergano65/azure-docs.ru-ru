@@ -3,24 +3,22 @@ title: Миграция локальных кластеров Apache Hadoop в H
 description: Ознакомьтесь с рекомендациями по использованию инфраструктуры в рамках миграции локальных кластеров Hadoop в Azure HDInsight.
 services: hdinsight
 author: hrasheed-msft
-ms.reviewer: ashishth
+ms.reviewer: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 10/25/2018
+ms.date: 04/05/2019
 ms.author: hrasheed
-ms.openlocfilehash: 6c57b62d63be55abc51b85327957afffa5dd3a42
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: 4fe47feff6ac3a58ba4db8c700a3e34b2cdc0df9
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58360203"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59274695"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---infrastructure-best-practices"></a>Миграция локальных кластеров Apache Hadoop в HDInsight Azure — рекомендации по использованию инфраструктуры
 
 В этой статье представлены рекомендации по управлению инфраструктуры кластеров Azure HDInsight. Это часть цикла, где приведены лучшие методики, применимые при перемещении локальных систем Apache Hadoop в Azure HDInsight.
-
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="plan-for-hdinsight-cluster-capacity"></a>Планирование емкости кластера HDInsight
 
@@ -43,32 +41,32 @@ ms.locfileid: "58360203"
 
 Вы также можете использовать пользовательский интерфейс Apache Ambari или Ambari REST API для проверки компонентов Hadoop и версий в HDInsight.
 
-Приложения или компоненты, которые были доступны в локальных кластерах, но не являются частью кластеров HDInsight, могут быть добавлены на граничном узле или на виртуальной машине в той же виртуальной сети, что и кластер HDInsight. Стороннее приложение Hadoop, которое недоступно на Azure HDInsight, может быть установлено с помощью опции "Приложение" в кластере HDInsight. Пользовательские приложения Hadoop могут быть установлены на кластере HDInsight с помощью "действий сценариев". В следующей таблице перечислены некоторые из распространенных приложений и их возможности интеграции с HDInsight.
+Приложения или компоненты, которые были доступны в локальных кластерах, но не входят в кластеры HDInsight могут добавляться на граничном узле или на виртуальной Машине в той же виртуальной сети, что и кластер HDInsight. Стороннее приложение Hadoop, которое недоступно на Azure HDInsight, может быть установлено с помощью опции "Приложение" в кластере HDInsight. Пользовательские приложения Hadoop могут быть установлены на кластере HDInsight с помощью "действий сценариев". В следующей таблице перечислены некоторые из распространенных приложений и их возможности интеграции с HDInsight.
 
-|**Приложения**|**Интеграция**
+|**Приложение**|**Интеграция**
 |---|---|
-|Воздушный поток|IaaS или граничный узел HDInsight
+|Воздушный поток|IaaS или HDInsight граничный узел
 |Alluxio|IaaS  
 |Arcadia|IaaS 
 |Atlas|Отсутствует (только HDP)
-|Datameer|Граничный узел HDInsight
+|Datameer|HDInsight граничный узел
 |Datastax (Cassandra)|IaaS (CosmosDB — альтернатива в Azure)
 |DataTorrent|IaaS 
 |Drill|IaaS 
 |Ignite|IaaS
 |Jethro|IaaS 
 |Mapador|IaaS 
-|Mongo|IaaS (CosmosDB — альтернатива в Azure)
+|Монго|IaaS (CosmosDB — альтернатива в Azure)
 |NiFi|IaaS 
-|Presto|IaaS или граничный узел HDInsight
+|Presto|IaaS или HDInsight граничный узел
 |Python 2;|PaaS 
 |Python 3|PaaS 
 |R|PaaS 
 |SAS|IaaS 
 |Vertica|IaaS (хранилище данных SQL — альтернатива в Azure)
 |Tableau|IaaS 
-|Waterline|Граничный узел HDInsight
-|Наборы потоков|HDInsight Edge 
+|Waterline|HDInsight граничный узел
+|Наборы потоков|HDInsight edge 
 |Palantir|IaaS 
 |Sailpoint|IaaS 
 
@@ -89,8 +87,8 @@ HDInsight предоставляет предварительно созданн
 - установка Presto;
 - установка Solr;
 - установка Giraph;
-- предварительная загрузка библиотек Hive.
-- Установка или обновление Mono
+- Предварительно загрузить библиотеки Hive
+- Установить или обновить Mono
 
 > [!Note]  
 > HDInsight не обеспечивает прямую поддержку пользовательских компонентов Hadoop или компонентов, установленных с помощью действий сценариев.
@@ -99,13 +97,13 @@ HDInsight предоставляет предварительно созданн
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Установка сторонних приложений Apache Hadoop в Azure HDInsight](../hdinsight-apps-install-applications.md)
+- [Установка сторонних приложений Hadoop Apache на HDInsight](../hdinsight-apps-install-applications.md)
 - [Настройка кластеров HDInsight с помощью действий сценариев](../hdinsight-hadoop-customize-cluster-linux.md)
 - [Публикация приложения HDInsight в Azure Marketplace](../hdinsight-apps-publish-applications.md)
 
 ## <a name="customize-hdinsight-configs-using-bootstrap"></a>Настройка конфигураций HDInsight с помощью начальной загрузки
 
-Изменения в конфигурациях в файлах конфигурации, таких как `core-site.xml`, `hive-site.xml` и `oozie-env.xml`, можно сделать с помощью начальной загрузки. Следующий сценарий является примером использования Powershell.
+Изменения в конфигурациях в файлах конфигурации, таких как `core-site.xml`, `hive-site.xml` и `oozie-env.xml`, можно сделать с помощью начальной загрузки. Следующий сценарий — пример с помощью Powershell [модуль AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az) командлет [New AzHDInsightClusterConfig](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster):
 
 ```powershell
 # hive-site.xml configuration
@@ -130,7 +128,7 @@ New—AzHDInsightCluster `
     —Config $config
 ```
 
-Дополнительные сведения см. в статье [Настройка кластеров HDInsight с помощью начальной загрузки](../hdinsight-hadoop-customize-cluster-bootstrap.md).
+Дополнительные сведения см. в статье [Настройка кластеров HDInsight с помощью начальной загрузки](../hdinsight-hadoop-customize-cluster-bootstrap.md).  Кроме того, см. в разделе [HDInsight управление кластерами с помощью Apache Ambari REST API](../hdinsight-hadoop-manage-ambari-rest-api.md).
 
 ## <a name="access-client-tools-from-hdinsight-hadoop-cluster-edge-nodes"></a>Клиентские инструменты доступа из граничных узлов кластера HDInsight Hadoop
 
@@ -148,37 +146,10 @@ New—AzHDInsightCluster `
 
 ## <a name="use-scale-up-and-scale-down-feature-of-clusters"></a>Использование функции увеличения и уменьшения масштаба кластеров
 
-HDInsight обеспечивает гибкость, предоставляя возможность увеличивать и уменьшать масштаб определенного количества рабочих узлов в кластерах. Эта функция позволяет сжимать кластер в нерабочие часы или в выходные дни, а также разворачивать его при пиковых бизнес-требованиях.
+HDInsight обеспечивает гибкость, предоставляя возможность увеличивать и уменьшать масштаб определенного количества рабочих узлов в кластерах. Эта функция позволяет сжимать кластер в нерабочие часы или в выходные дни, а также разворачивать его при пиковых бизнес-требованиях. Дополнительные сведения можно найти в разделе 
 
-Масштабирование кластеров можно автоматизировать с помощью следующих методов.
-
-### <a name="powershell-cmdlet"></a>Командлет PowerShell
-
-```powershell
-Set-AzHDInsightClusterSize -ClusterName <Cluster Name> -TargetInstanceCount <NewSize>
-```
-
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
-
-```powershell
-azure hdinsight cluster resize [options] <clusterName> <Target Instance Count>
-```
-
-### <a name="azure-portal"></a>Портал Azure
-
-Добавление узлов в работающий кластер HDInsight не повлияет на какие-либо ожидающие или выполняемые задания. Во время масштабирования можно безопасно передать новые задания. Сбой операции масштабирования из-за той или иной причины обрабатывается в безопасном режиме, благодаря чему кластер остается работоспособным.
-
-Однако при уменьшении масштаба кластера путем удаления узлов любые ожидающие или выполняемые задания завершатся сбоем по завершении операции масштабирования. Это происходит из-за повторного запуска некоторых служб во время этой операции. Чтобы устранить эту проблему, можно отложить выполнение заданий перед уменьшением масштаба кластера, вручную завершить выполнение заданий или повторно отправить их после завершения операции масштабирования.
-
-Если сжать кластер до масштаба одного рабочего узла, HDFS может зависнуть в безопасном режиме при перезагрузке рабочих узлов для установки исправлений или сразу же после операции масштабирования. Чтобы вывести HDFS из безопасного режима, можно выполнить следующую команду.
-
-```bash
-hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
-```
-
-После выхода из безопасного режима можно вручную удалить временные файлы или подождать, пока Hive в конечном итоге автоматически удалит их.
-
-Дополнительные сведения см. в статье [Масштабирование кластеров HDInsight](../hdinsight-scaling-best-practices.md).
+* [Масштабирование кластеров HDInsight](../hdinsight-scaling-best-practices.md).
+* [Масштабирование кластеров](../hdinsight-administer-use-portal-linux.md#scale-clusters).
 
 ## <a name="use-hdinsight-with-azure-virtual-network"></a>Использование HDInsight с виртуальной сетью Azure
 
@@ -190,24 +161,24 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
 - Подключение к хранилищам данных HDInsight в виртуальной сети Azure.
 - Прямой доступ к службам Hadoop, недоступным из Интернета. Например, возможность напрямую работать с API Kafka или использовать API Java для HBase.
 
-HDInsight можно добавить в новую или существующую виртуальную сеть Azure. Если HDInsight добавляется в существующую виртуальную сеть, необходимо обновить существующие группы безопасности сети и определенные пользователем маршруты, чтобы обеспечить неограниченный доступ к [нескольким IP-адресам](../hdinsight-extend-hadoop-virtual-network.md#hdinsight-ip) в центре обработки данных Azure. Кроме того, не блокируйте трафик на [порты](../hdinsight-extend-hadoop-virtual-network.md#hdinsight-ports), которые используются службами HDInsight.
+HDInsight можно добавить в новую или существующую виртуальную сеть Azure. Если HDInsight добавляется в существующую виртуальную сеть, необходимо обновить существующие группы безопасности сети и определенные пользователем маршруты, чтобы обеспечить неограниченный доступ к [нескольким IP-адресам](../hdinsight-extend-hadoop-virtual-network.md#hdinsight-ip) в центре обработки данных Azure. Кроме того, убедитесь, что не блокируйте трафик на [порты](../hdinsight-extend-hadoop-virtual-network.md#hdinsight-ports), которые используются службами HDInsight.
 
 > [!Note]  
 > В настоящее время HDInsight не поддерживает принудительное туннелирование. Принудительное туннелирование — это настройка подсети, которая принудительно отправляет исходящий интернет-трафик на устройство для его проверки и ведения журнала. Перед установкой HDInsight в подсеть либо удалите принудительное туннелирование, либо создайте новую подсеть для HDInsight. HDInsight также не поддерживает ограничение исходящего сетевого подключение.
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Что такое виртуальная сеть Azure?](../../virtual-network/virtual-networks-overview.md)
+- [Виртуальный сетей — общие сведения о Azure](../../virtual-network/virtual-networks-overview.md)
 - [Расширение возможностей HDInsight с помощью виртуальной сети Azure](../hdinsight-extend-hadoop-virtual-network.md)
 
 ## <a name="securely-connect-to-azure-services-with-azure-virtual-network-service-endpoints"></a>Безопасное подключение к другим службам Azure с использованием конечных точек службы виртуальной сети Azure
 
-HDInsight поддерживает [конечные точки службы виртуальной сети](../../virtual-network/virtual-network-service-endpoints-overview.md)  , которые позволяют безопасно подключаться к хранилищу BLOB-объектов Azure, Azure Data Lake 2-го поколения, базам данных Cosmos DB и SQL. Включив конечную точку службы для Azure HDInsight, вы обеспечите защищенный маршрут трафика из центра обработки данных Azure. Этот повышенный уровень безопасности на сетевом уровне позволяет заблокировать большие учетные записи хранилища данных для их конкретных виртуальных сетей (VNET) и по-прежнему использовать кластеры HDInsight для доступа и обработки этих данных.
+HDInsight поддерживает [конечных точек службы виртуальной сети](../../virtual-network/virtual-network-service-endpoints-overview.md), которые позволяют безопасно подключаться к базам данных хранилища больших двоичных объектов, Gen2 хранилища Озера данных Azure, Cosmos DB и SQL. Включив конечную точку службы для Azure HDInsight, вы обеспечите защищенный маршрут трафика из центра обработки данных Azure. Этот повышенный уровень безопасности на сетевом уровне позволяет заблокировать большие учетные записи хранилища данных для их конкретных виртуальных сетей (VNET) и по-прежнему использовать кластеры HDInsight для доступа и обработки этих данных.
 
 Дополнительные сведения см. в следующих статьях:
 
 - [Конечные точки службы виртуальной сети](../../virtual-network/virtual-network-service-endpoints-overview.md)
-- [How to enhance HDInsight security with service endpoints](https://azure.microsoft.com/blog/enhance-hdinsight-security-with-service-endpoints/) (Как повысить безопасность HDInsight с помощью конечных точек службы)
+- [Повысить уровень безопасности HDInsight с помощью конечных точек службы](https://azure.microsoft.com/blog/enhance-hdinsight-security-with-service-endpoints/)
 
 ## <a name="connect-hdinsight-to-the-on-premises-network"></a>Подключение HDInsight к локальной сети
 
@@ -223,4 +194,4 @@ HDInsight можно подключить к локальной сети с по
 
 Прочитайте следующую статью в этом цикле:
 
-- [Migrate on-premises Apache Hadoop clusters to Azure HDInsight — architecture best practices](apache-hadoop-on-premises-migration-best-practices-storage.md) (Миграция локальных кластеров Apache Hadoop в Azure HDInsight. Рекомендации по архитектуре)
+- [Рекомендации службы хранилища для локальной миграции Azure HDInsight Hadoop](apache-hadoop-on-premises-migration-best-practices-storage.md)

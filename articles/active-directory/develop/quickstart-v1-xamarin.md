@@ -18,12 +18,12 @@ ms.author: celested
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e25848359de91d67925f49901c6c170978ea592
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b0a20c2e6524b0c466f5c45578e0ba8eaad351ea
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58078709"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58881891"
 ---
 # <a name="quickstart-build-a-xamarin-app-that-integrates-microsoft-sign-in"></a>Краткое руководство. Создание приложения Xamarin, которое интегрирует функцию входа в Майкрософт
 
@@ -72,25 +72,25 @@ ms.locfileid: "58078709"
 
 1. Добавьте ADAL в проект DirectorySearcher с помощью консоли диспетчера пакетов.
 
-    `
+    ```
     PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirectorySearcherLib
-    `
+    ```
 
-    `
+    ```
     PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Android
-    `
+    ```
 
-    `
+    ```
     PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Desktop
-    `
+    ```
 
-    `
+    ```
     PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-iOS
-    `
+    ```
 
-    `
+    ```
     PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName DirSearchClient-Universal
-    `
+    ```
 
     Обратите внимание, что в каждый проект добавляются две ссылки на библиотеку: часть PCL в ADAL и специфическая для платформы часть.
 2. В проекте DirectorySearcherLib откройте файл DirectorySearcher.
@@ -104,7 +104,7 @@ ms.locfileid: "58078709"
 
 Практически вся логика для проверки подлинности приложения находится в `DirectorySearcher.SearchByAlias(...)`. Специфические для платформы проекты должны отправлять контекстный параметр в PCL `DirectorySearcher`.
 
-1. Откройте файл DirectorySearcher.cs, а затем добавьте новый параметр в метод `SearchByAlias(...)`. `IPlatformParameters` — это контекстный параметр, инкапсулирующий специфические для платформы объекты, которые нужны ADAL для проверки подлинности.
+1. Откройте файл DirectorySearcher.cs, а затем добавьте новый параметр в метод `SearchByAlias(...)`. `IPlatformParameters` — это контекстный параметр, инкапсулирующий специфические для платформы объекты, которые нужны ADAL для проверки подлинности.
 
     ```csharp
     public static async Task<List<User>> SearchByAlias(string alias, IPlatformParameters parent)
@@ -130,7 +130,7 @@ ms.locfileid: "58078709"
     ...
     ```
 
-    `AcquireTokenAsync(...)` сначала попытается вернуть маркер для запрошенного ресурса (в данном случае API Graph) и не будет предлагать пользователю вводить учетные данные (путем кэширования или обновления старых маркеров). При необходимости перед получением запрошенного маркера для пользователя отображается страница входа в Azure AD.
+    `AcquireTokenAsync(...)` сначала попытается вернуть маркер безопасности для запрошенного ресурса (в данном случае API Graph) и не будет предлагать пользователю вводить учетные данные (путем кэширования или обновления старых маркеров безопасности). При необходимости перед получением запрошенного маркера для пользователя отображается страница входа в Azure AD.
 4. Присоедините маркер доступа к запросу API Graph в заголовке **авторизации**:
 
     ```csharp

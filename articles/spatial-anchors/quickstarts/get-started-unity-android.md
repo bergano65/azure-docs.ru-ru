@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 21a10bcedc25ddce63ba468e400dcea1f77148a0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c5647aa20f444d5efd36f03d813ee87ef199cc41
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57863123"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58621878"
 ---
 # <a name="quickstart-create-an-android-unity-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложения Android Unity с помощью Пространственных привязок Azure
 
@@ -39,6 +39,7 @@ ms.locfileid: "57863123"
   - Если вы используете ОС Windows, вам также потребуется <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a>.
   - Если вы используете macOS, установите Git с помощью Homebrew. Введите в одну строку терминала такую команду: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. Затем выполните `brew install git`.
 - Устройство Android с включенным <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">режимом разработчика</a> и поддержкой <a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">ARCore</a>.
+- Приложение должно использовать пакет SDK ARCore для Unity версии **1.5** (поддержка ARCore 1.6 и последующих версий будет доступна позже).
 
 [!INCLUDE [Create Spatial Anchors resource](../../../includes/spatial-anchors-get-started-create-resource.md)]
 

@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 09/22/2018
 ms.custom: mvc
 ms.author: aschhab
-ms.openlocfilehash: 8217eddd6f31a30b9113b178d74b59afb94f42af
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: dd73fd8105de2a5fd24ffa8ad5db85da5e52228c
+ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57900868"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58918847"
 ---
 # <a name="what-is-azure-service-bus"></a>Что такое служебная шина Azure?
 
@@ -39,7 +39,7 @@ ms.locfileid: "57900868"
 
 ![Очередь](./media/service-bus-messaging-overview/about-service-bus-queue.png)
 
-Сообщения в очередях упорядочиваются и получают отметку времени поступления. Принятые сообщения безопасно хранятся в избыточном хранилище. Сообщения доставляются в режиме  *запроса*.
+Сообщения в очередях упорядочиваются и получают метку времени поступления. Принятые сообщения безопасно хранятся в хранилище с избыточностью. Сообщения доставляются в режиме *запрашивания*, то есть по запросу.
 
 ## <a name="topics"></a>Разделы
 
@@ -115,17 +115,17 @@ ms.locfileid: "57900868"
 
 Служебная шина полностью интегрируется со следующими службами Azure:
 
-- [Сетка событий](https://azure.microsoft.com/services/event-grid/) 
+- [Сетка событий Azure](https://azure.microsoft.com/services/event-grid/) 
 - [Logic Apps](https://azure.microsoft.com/services/logic-apps/) 
-- [Функции](https://azure.microsoft.com/services/functions/) 
-- [Dynamics 365](https://dynamics.microsoft.com)
-- [Анализ потока](https://azure.microsoft.com/services/stream-analytics/)
+- [Функции Azure](https://azure.microsoft.com/services/functions/) 
+- [Dynamics 365](https://dynamics.microsoft.com)
+- [Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)
  
 ## <a name="next-steps"></a>Дополнительная информация
 
 Сведения о начале работы с обменом сообщениями через служебную шину см. в следующих статьях:
 
-* [Сравнение служб обмена сообщениями Azure](../event-grid/compare-messaging-services.md?toc=%2fazure%2fservice-bus-messaging%2ftoc.json&bc=%2fazure%2fservice-bus-messaging%2fbreadcrumb%2ftoc.json).
+* [Сравнение служб обмена сообщениями Azure](../event-grid/compare-messaging-services.md?toc=%2fazure%2fservice-bus-messaging%2ftoc.json&bc=%2fazure%2fservice-bus-messaging%2fbreadcrumb%2ftoc.json)
 * Сведения о Служебной шине Azure [категории "Стандартный" и "Премиум"](https://azure.microsoft.com/pricing/details/service-bus/) и цены на нее.
-* [Performance and Latency of Azure Service Bus Premium tier](https://blogs.msdn.microsoft.com/servicebus/2016/07/18/premium-messaging-how-fast-is-it/) (Производительность и задержки для Служебной шины Azure категории "Премиум").
+* [Производительность и задержки для Служебной шины Azure (цен. категория "Премиум")](https://techcommunity.microsoft.com/t5/Service-Bus-blog/Premium-Messaging-How-fast-is-it/ba-p/370722)
 * Также вы можете изучить краткие руководства для [.NET](service-bus-dotnet-get-started-with-queues.md), [Java](service-bus-java-how-to-use-queues.md) или [JMS](service-bus-java-how-to-use-jms-api-amqp.md).

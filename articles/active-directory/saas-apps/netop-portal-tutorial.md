@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Netop Portal | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Netop Portal | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Netop Portal.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
-ms.openlocfilehash: d33ef63f142763d5d29c9cb1931fdd87bae5976e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 17c5e568bbdbdd9aa07db0ee10438cb7d05bd56c
+ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57891024"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58849238"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-netop-portal"></a>Руководство. Интеграция Azure Active Directory с Netop Portal
+# <a name="tutorial-azure-active-directory-integration-with-netop-portal"></a>Руководство по Интеграция Azure Active Directory с Netop Portal
 
 В этом руководстве показано, как интегрировать Netop Portal с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Netop Portal обеспечивает следующие преимущества:
@@ -128,7 +128,7 @@ ms.locfileid: "57891024"
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
-    c. Оставьте пустым поле **Пространство имен**.
+    c. В текстовом поле **Пространство имен** введите https:\//secure.netop.com.
 
     d. В качестве источника выберите **Атрибут**.
 
@@ -154,7 +154,7 @@ ms.locfileid: "57891024"
 
 ### <a name="configure-netop-portal-single-sign-on"></a>Настройка единого входа для Netop Portal
 
-Чтобы настроить единый вход на стороне **Netop Portal**, отправьте скачанный **XML-файл метаданных федерации** и URL-адреса, скопированные на портале Azure, в [службу технической поддержки Netop Portal](mailto:casemanager@netop.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Netop Portal**, вам понадобится скачанный **XML-файл метаданных федерации** и URL-адреса для входа, скопированные на портале Azure. Следуйте инструкциям из шага 3 [этой](https://kb.netop.com/assets/netop_portal_adfs_and_azure_ad_integration.pdf) документации, чтобы настроить портал NetOp для проверки подлинности в Azure AD.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

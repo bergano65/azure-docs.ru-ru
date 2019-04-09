@@ -1,7 +1,6 @@
 ---
 title: Устранение распространенных ошибок
 description: Узнайте, как устранять неполадки при создании, назначении и удалении схем.
-services: blueprints
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 12/11/2018
@@ -9,12 +8,12 @@ ms.topic: troubleshooting
 ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 3621ca198ec2bac24791a2515ade51b990194bf2
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 42fdd6645a7a0e7cd9a2f0a7bc969e8eee62758c
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58003854"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59267197"
 ---
 # <a name="troubleshoot-errors-using-azure-blueprints"></a>Устранение неполадок с помощью службы Azure Blueprint
 
@@ -49,7 +48,7 @@ ms.locfileid: "58003854"
 - создаваемый ресурс ограничен политикой (обычно в связи с ограничениями SKU или расположения);
 - в развертывании устанавливаются поля, настроенные политикой (распространено при использовании тегов).
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Измените схему, чтобы в сведениях об ошибке она не сталкивалась с политиками. Если это невозможно, следует изменить область назначения политики так, чтобы схема больше не сталкивалась с политикой.
 
@@ -63,7 +62,7 @@ ms.locfileid: "58003854"
 
 Передача параметра схемы, которая использует функцию (например `[resourceGroup().tags.myTag]`) для результатов артефакта, приводит к тому, что обработанный результат функции устанавливается на артефакт вместо динамической функции.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 Чтобы передать функцию в качестве параметра, направьте всю строку с `[` так, чтобы параметр схемы был похож на `[[resourceGroup().tags.myTag]`. Escape-символ заставляет схемы обрабатывать значение как строку при обработке. Схемы затем помещают функцию на артефакт, позволяя ему быть динамичным, как и ожидалось. Дополнительные сведения см. в разделе [структура файла шаблона — синтаксис](../../../azure-resource-manager/resource-group-authoring-templates.md#syntax).
 

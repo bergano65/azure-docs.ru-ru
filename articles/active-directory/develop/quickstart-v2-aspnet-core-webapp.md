@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 03/20/2019
+ms.date: 04/03/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fed62dfc3f7e7dc974fb709261e363f26ce97c51
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: 0fa2e38a680e8590a89131717136a7960c1d3680
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58200996"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58903596"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET Core с помощью учетной записи Майкрософт
 
@@ -40,7 +40,7 @@ ms.locfileid: "58200996"
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
-> 1. Откройте [Регистрация приложений (предварительная версия)](https://aka.ms/aspnetcore2-1-aad-quickstart-v2) на портале Azure.
+> 1. Откройте [Регистрация приложений](https://aka.ms/aspnetcore2-1-aad-quickstart-v2) на портале Azure.
 > 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 > 1. Следуйте инструкциям для загрузки и автоматической настройки нового приложения одним щелчком мыши.
 >
@@ -51,7 +51,8 @@ ms.locfileid: "58200996"
 >
 > 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 > 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
-> 1. В области навигации слева выберите службу **Azure Active Directory**, а затем выберите **Регистрация приложений (предварительная версия)** > **Новая регистрация**.
+> 1. Перейдите на страницу [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) Платформы удостоверений Майкрософт для разработчиков.
+> 1. Выберите **Новая регистрация**.
 > 1. После появления страницы **Регистрация приложения** введите сведения о регистрации приложения:
 >    - В разделе **Имя** введите понятное имя приложения, которое будет отображаться пользователям приложения, например `AspNetCore-Quickstart`.
 >    - В поле **URL-адрес ответа** добавьте `https://localhost:44321/` и выберите **Зарегистрировать**.
@@ -70,15 +71,15 @@ ms.locfileid: "58200996"
 > > [!div id="appconfigured" class="alert alert-info"]
 > > ![Уже настроено](media/quickstart-v2-aspnet-webapp/green-check.png). Ваше приложение настроено с помощью этих атрибутов.
 
-#### <a name="step-2-download-your-aspnet-core-project"></a>Шаг 2. Скачивание проекта ASP.NET Core
+#### <a name="step-2-download-your-aspnet-core-project"></a>Шаг 2. Скачивание проекта ASP.NET Core
 
-- [Скачайте решение Visual Studio 2017](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/archive/aspnetcore2-2.zip).
+- [Скачайте решение Visual Studio 2017.](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/archive/aspnetcore2-2.zip)
 
-#### <a name="step-3-configure-your-visual-studio-project"></a>Шаг 3. Настройка проекта Visual Studio
+#### <a name="step-3-configure-your-visual-studio-project"></a>Шаг 3. Настройка проекта Visual Studio
 
 1. Извлеките ZIP-файл в локальную папку, расположенную в корневой папке (например, **C:\Azure-Samples**).
 1. Если вы используете Visual Studio 2017, откройте решение в Visual Studio (необязательно).
-1. Измените файл **appsettings.json**. Найдите `ClientId` и замените `Enter_the_Application_Id_here` на значение **идентификатора зарегистрированного приложения (клиента)**. 
+1. Измените файл **appsettings.json**. Найдите `ClientId` и замените `ClientId` на значение **идентификатора зарегистрированного приложения (клиента)**. 
 
     ```json
     "ClientId": "Enter_the_Application_Id_here"
@@ -87,11 +88,11 @@ ms.locfileid: "58200996"
 
 > [!div renderon="docs"]
 > Описание
-> - `Enter_the_Application_Id_here` — **идентификатор приложения (клиента)**, зарегистрированного на портале Azure. **Идентификатор приложения (клиента)** можно найти на странице **Обзор** приложения.
+> - `Enter_the_Application_Id_here` — это **идентификатор приложения (клиента)**, зарегистрированного на портале Azure. **Идентификатор приложения (клиента)** можно найти на странице **Обзор** приложения.
 > - `Enter_the_Tenant_Info_Here` — один из следующих вариантов:
 >   - Если приложение поддерживает **учетные записи только в этом каталоге организации**, замените это значение **идентификатором клиента** или **именем клиента** (например, contoso.microsoft.com).
->   - Если ваше приложение поддерживает вариант **Учетные записи в любом каталоге организации**, замените это значение на `organizations`.
->   - Если приложение поддерживает вариант **Все пользователи с учетными записями Майкрософт**, замените это значение на `common`.
+>   - Если ваше приложение поддерживает вариант **Учетные записи в любом каталоге организации**, замените это значение на `organizations`
+>   - Если приложение поддерживает вариант **Все пользователи с учетными записями Майкрософт**, замените это значение на `common`
 >
 > > [!TIP]
 > > Чтобы найти значения параметров **Идентификатор приложения (клиента)**, **Идентификатор каталога (клиента)** и **Поддерживаемые типы учетных записей**, на портале Azure перейдите на страницу **Обзор**.

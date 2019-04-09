@@ -17,11 +17,11 @@ ms.date: 03/28/2019
 ms.author: v-wingf-msft
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ca43b62e66e3a736aa52fdd10fe36e635daba245
-ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
-ms.translationtype: HT
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59058022"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59280355"
 ---
 # <a name="tutorial-configure-samanage-for-automatic-user-provisioning"></a>Руководство. Настройка Samanage для автоматической подготовки пользователей
 
@@ -30,7 +30,7 @@ ms.locfileid: "59058022"
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
@@ -118,7 +118,7 @@ ms.locfileid: "59058022"
 
     ![Подготовка Samanage](./media/samanage-provisioning-tutorial/EmailNotification.png)
 
-8. Выберите команду **Сохранить**.
+8. Нажмите кнопку **Сохранить**.
 
 9. В разделе **Сопоставления** выберите **Synchronize Azure Active Directory Users to Samanage** (Синхронизировать пользователей Azure Active Directory с Samanage).
 

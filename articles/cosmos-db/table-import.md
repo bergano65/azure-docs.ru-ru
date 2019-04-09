@@ -1,6 +1,6 @@
 ---
 title: Перенос данных в учетную запись API таблиц в Azure Cosmos DB
-description: Сведения о том, как перенести либо импортировать данные из локальной или облачной среды в учетную запись API таблиц Azure в Azure Cosmos DB.
+description: Сведения о том, как перенести либо импортировать данные из локальной или облачной среды в учетную запись API таблиц Azure в Azure Cosmos DB.
 author: SnehaGunda
 ms.service: cosmos-db
 ms.subservice: cosmosdb-table
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/07/2017
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: e709aa25a8fa0a8ff6c94bf2e813151e5ecbae65
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: a0d2927024dff78021d433b965bb6c0149236ddd
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58006247"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58876823"
 ---
 # <a name="migrate-your-data-to-azure-cosmos-db-table-api-account"></a>Перенос данных в учетную запись API таблиц в Azure Cosmos DB
 
@@ -39,11 +39,11 @@ ms.locfileid: "58006247"
 Чтобы выполнить миграцию данных таблицы, сделайте следующее:
 
 1. Скачайте средство миграции с сайта [GitHub](https://github.com/azure/azure-documentdb-datamigrationtool).
-2. Запустите `dt.exe` с помощью аргументов командной строки для своего сценария. `dt.exe` принимает команду в следующем формате:
+2. Запустите `dt.exe` с помощью аргументов командной строки для своего сценария. `dt.exe` принимает команду в таком формате:
 
    ```bash
     dt.exe [/<option>:<value>] /s:<source-name> [/s.<source-option>:<value>] /t:<target-name> [/t.<target-option>:<value>] 
-```
+   ```
 
 Существуют такие параметры для команды:
 
@@ -76,7 +76,7 @@ ms.locfileid: "58006247"
 
 [Пример команды хранилища таблиц Azure](#azure-table-storage)
 
-[Пример команды API таблицы Azure Cosmos DB (предварительная версия)](#table-api-preview)
+[Пример команды API таблицы Azure Cosmos DB (предварительная версия)](#table-api-preview)
 
 ### <a name="command-line-target-settings"></a>Параметры целевого объекта командной строки
 
@@ -147,4 +147,4 @@ AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.table.cosmosdb.windows.net/m
 Теперь вы можете перейти к следующему руководству, из которого вы узнаете, как запрашивать данные с помощью API таблицы Azure Cosmos DB. 
 
 > [!div class="nextstepaction"]
->[Как выполнять запросы с помощью SQL в базе данных Azure Cosmos DB](../cosmos-db/tutorial-query-table.md)
+>[Сведения о запросе данных](../cosmos-db/tutorial-query-table.md)

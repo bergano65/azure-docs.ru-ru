@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/02/2019
+ms.date: 04/08/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 813ab2a349ba843e9f41675234e395470bef9740
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: 788b03bb55abdc3040df8c5317f1f55738ebb023
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58896131"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59268369"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-technical-deep-dive"></a>Простой единый вход Azure Active Directory: Подробное техническое руководство
 
@@ -44,7 +44,7 @@ ms.locfileid: "58896131"
 - С помощью Azure AD безопасным образом предоставляется ключ расшифровки Kerberos учетной записи компьютера. При наличии нескольких лесов AD, каждая учетная запись компьютера будет иметь свой собственный уникальный ключ расшифровки Kerberos.
 
 >[!IMPORTANT]
-> `AZUREADSSOACC` Учетная запись компьютера должна быть обеспечены надежной защитой по соображениям безопасности. Управление учетной записью компьютера можно только "Администраторы домена". Убедитесь, что делегирование Kerberos на учетную запись компьютера отключена. Store учетной записи компьютера в подразделение (OU) где они безопасны от случайных удалений. Ключ расшифровки Kerberos учетной записи компьютера, также должны рассматриваться как конфиденциальные. Настоятельно рекомендуется, чтобы вы [меняли ключ расшифровки Kerberos](how-to-connect-sso-faq.md#how-can-i-roll-over-the-kerberos-decryption-key-of-the-azureadssoacc-computer-account) для учетной записи компьютера `AZUREADSSOACC` хотя бы раз в 30 дней.
+> `AZUREADSSOACC` Учетная запись компьютера должна быть обеспечены надежной защитой по соображениям безопасности. Управление учетной записью компьютера можно только "Администраторы домена". Убедитесь, что делегирование Kerberos на учетную запись компьютера отключена. Store учетной записи компьютера в подразделение (OU), где они безопасны от случайных удалений и только администраторы домена имеют доступ. Ключ расшифровки Kerberos учетной записи компьютера, также должны рассматриваться как конфиденциальные. Настоятельно рекомендуется, чтобы вы [меняли ключ расшифровки Kerberos](how-to-connect-sso-faq.md#how-can-i-roll-over-the-kerberos-decryption-key-of-the-azureadssoacc-computer-account) для учетной записи компьютера `AZUREADSSOACC` хотя бы раз в 30 дней.
 
 После завершения настройки функция простого входа в Azure AD работает так же, как любая другая функция входа, использующая встроенную проверку подлинности Windows (IWA).
 

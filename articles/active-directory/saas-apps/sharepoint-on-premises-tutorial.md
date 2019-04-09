@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dca14f4c74c130145ba6792d2a3ee5c43f3c72b0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 8ba9f4df36f753a1caf619ad90015fa073a00de3
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57874802"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58883383"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sharepoint-on-premises"></a>Руководство. Интеграция Azure Active Directory с локальной версией SharePoint
 
@@ -106,11 +106,11 @@ ms.locfileid: "57874802"
 
     ![Сведения о домене и URL-адресах единого входа для локальной версии SharePoint](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YourSharePointServerURL>/_trust/default.aspx`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YourSharePointServerURL>/_trust/default.aspx`
 
-    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `urn:sharepoint:federation`.
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `urn:sharepoint:federation`
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<YourSharePointServerURL>/_trust/default.aspx`.
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<YourSharePointServerURL>/_trust/default.aspx`
 
     > [!NOTE]
     > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов локальной версии SharePoint](https://support.office.com/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -122,7 +122,7 @@ ms.locfileid: "57874802"
     > [!Note]
     > Запишите путь к файлу, по которому вы загрузили файл сертификата, так как вам нужно будет использовать его позже в сценарии PowerShell для настройки.
 
-6. Скопируйте требуемый URL-адрес из раздела **Настройка локальной версии SharePoint**. Для **URL-адреса службы единого входа** используйте значение из следующих форматов: `https://login.microsoftonline.com/_my_directory_id_/wsfed`
+6. Скопируйте требуемый URL-адрес из раздела **Настройка локальной версии SharePoint**. Для **URL-адреса службы единого входа** используйте значение такого формата: `https://login.microsoftonline.com/_my_directory_id_/wsfed`
 
     > [!Note]
     > _my_directory_id_ — это идентификатор клиента подписки Azure AD.
@@ -149,7 +149,7 @@ ms.locfileid: "57874802"
     > [!TIP]
     > Если вы не знаете, как использовать PowerShell, или хотите получить дополнительные сведения о том, как работает PowerShell, см. статью [SharePoint PowerShell](https://docs.microsoft.com/powershell/sharepoint/overview?view=sharepoint-ps).
 
-    ```
+    ```powershell
     $realm = "<Identifier value from the SharePoint on-premises Domain and URLs section in the Azure portal>"
     $wsfedurl="<SAML single sign-on service URL value which you have copied from the Azure portal>"
     $filepath="<Full path to SAML signing certificate file which you have downloaded from the Azure portal>"
@@ -198,7 +198,7 @@ ms.locfileid: "57874802"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -268,9 +268,9 @@ ms.locfileid: "57874802"
 10. Настройте AzureCP на локальной ферме SharePoint или настройте альтернативный пользовательский поставщик утверждений.  В этом примере мы используем AzureCP.
 
     > [!NOTE]
-    > Обратите внимание на то, что AzureCP не является продуктом корпорации Майкрософт и не обслуживается службой технической поддержки Майкрософт. Загрузка, установка и настройка AzureCP на локальной ферме SharePoint: https://yvand.github.io/AzureCP/ 
+    > Обратите внимание на то, что AzureCP не является продуктом корпорации Майкрософт и не обслуживается службой технической поддержки Майкрософт. Скачайте приложение AzureCP на локальной ферме SharePoint по адресу https://yvand.github.io/AzureCP/. Установите и настройте программу. 
 
-11. **Предоставьте доступ группе безопасности Azure Active Directory в локальной версии SharePoint**: группам должен быть предоставлен доступ к приложению в локальной версии SharePoint.  Следуйте инструкциям ниже, чтобы задать разрешения для доступа к веб-приложению.
+11. **Предоставьте доступ группе безопасности Azure Active Directory в локальной версии SharePoint**. Группам должен быть предоставлен доступ к приложению в локальной версии SharePoint.  Следуйте инструкциям ниже, чтобы задать разрешения для доступа к веб-приложению.
 
 12. В центре администрирования щелкните "Управление приложениями" > "Управление веб-приложениями", а затем выберите веб-приложение, чтобы включить ленту, и щелкните "Политика пользователя".
 
@@ -310,11 +310,12 @@ ms.locfileid: "57874802"
 
 5. На сервере SharePoint откройте **командную консоль SharePoint 2016** и выполните приведенные ниже команды, применив использованное ранее имя доверенного издателя токена удостоверения.
 
-    ```
+    ```powershell
     $t = Get-SPTrustedIdentityTokenIssuer "AzureAD"
     $t.UseWReplyParameter=$true
     $t.Update()
     ```
+
 6. В центре администрирования перейдите к веб-приложению и включите существующий доверенный поставщик удостоверений. Не забудьте также настроить URL-адрес страницы входа в качестве настраиваемой страницы входа `/_trust/`.
 
 7. В центре администрирования щелкните веб-приложение и выберите **Политика пользователей**. Добавьте пользователя с соответствующими разрешениями, как показано выше в данной статье.

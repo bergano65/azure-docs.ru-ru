@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: quickstart
-ms.date: 01/09/2019
+ms.date: 04/01/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 4e9080cfc863b4253a4eb4d427f21df74bb08874
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: e54c18eb405ffa36260e9980705784130bc0ca4c
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54186742"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58803015"
 ---
 # <a name="quickstart-create-a-server---portal"></a>Краткое руководство. Создание сервера с помощью портала
 
@@ -46,7 +46,7 @@ ms.locfileid: "54186742"
    * **Backup Storage setting** (Настройка хранилища резервных копий). Необязательный элемент. Если у вас уже есть [учетная запись хранения](../storage/common/storage-introduction.md), вы можете указать ее как резервную копию шаблона базы данных по умолчанию. Вы также можете указать [параметры резервного копирования и восстановления](analysis-services-backup.md) позже.
    * **Срок действия ключа хранилища**. Необязательный элемент. Укажите период истечения срока хранения ключа.
 
-Создание сервера обычно занимает меньше минуты. Если был выбран параметр **Add to Portal** (Добавить на портал), перейдите на портал, чтобы просмотреть новый сервер. Или перейдите по меню **Все службы** > **Analysis Services**, чтобы проверить, готов ли ваш сервер.
+Создание сервера обычно занимает меньше минуты. Если был выбран параметр **Add to Portal** (Добавить на портал), перейдите на портал, чтобы просмотреть новый сервер. Или перейдите по меню **Все службы** > **Analysis Services**, чтобы проверить, готов ли ваш сервер. Серверы поддерживают табличные модели на уровне совместимости 1200 и выше. Уровень совместимости модели указывается в SSDT или SSMS.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

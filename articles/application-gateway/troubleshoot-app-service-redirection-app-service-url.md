@@ -7,18 +7,24 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 02/22/2019
 ms.author: absha
-ms.openlocfilehash: 359d75f10f95b0e41ccd9a869d49247355f0d5d0
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: f456cfec82a315a2be877a52e4f3f1850b992736
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58123187"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59274544"
 ---
-# <a name="troubleshoot-application-gateway-with-app-service--redirection-to-app-services-url"></a>Устранение неполадок Шлюза приложений с помощью Службы приложений — перенаправление на URL-адрес Службы приложений
+# <a name="troubleshoot-application-gateway-with-app-service"></a>Устранение неполадок шлюза приложений с помощью службы приложений
 
- Узнайте, как для диагностики и устранения проблем со шлюзом приложений, где начало предоставляются URL-адрес службы приложений с перенаправлением.
+Узнайте, как диагностировать и устранить проблемы, возникающие с помощью шлюза приложений и службы приложений в качестве сервера базы данных.
 
 ## <a name="overview"></a>Обзор
+
+В этой статье вы узнаете способы устранения следующих проблем:
+
+> [!div class="checklist"]
+> * URL-адрес службы приложений, получение доступ в браузере, при отсутствии перенаправление
+> * Домен службы приложений ARRAffinity Cookie присвоено имя узла службы приложений (example.azurewebsites.net) вместо исходного узла
 
 При настройке общедоступные службы приложений в серверном пуле шлюза приложений и при наличии перенаправления, заданные в коде приложения, может появиться, при доступе к шлюзу приложений, вы будете перенаправлены с помощью браузера напрямую к приложению URL-адрес службы.
 
@@ -28,6 +34,8 @@ ms.locfileid: "58123187"
 - У вас есть проверка подлинности Azure AD, которая вызывает перенаправление.
 - Вы включили параметр «Выбрать адрес имени узла из серверной части» в параметрах HTTP шлюза приложений.
 - У вас нет личного домена, зарегистрированного в службе приложений.
+
+Кроме того при использовании службы приложений за шлюзом приложений и при использовании личного домена для доступа к шлюзу приложений, может появиться, значение домена файла cookie ARRAffinity установлено службой приложений будет содержать имя домена «example.azurewebsites.net». Исходное имя вашего узла, использовать в качестве домена файла cookie, выполните решение в этой статье.
 
 ## <a name="sample-configuration"></a>Пример конфигурации
 
@@ -94,6 +102,16 @@ X-Powered-By: ASP.NET
 - Связать пользовательский зонд обратно на параметры HTTP серверной части и убедитесь в работоспособности серверной части в том случае, если он находится в работоспособном состоянии.
 
 - После этого, шлюз приложений теперь пересылать же именем узла «www.contoso.com» в службе приложений и перенаправление произойдет на том же имени узла. Вы можете проверить пример заголовки запросов и ответов ниже.
+
+Чтобы реализовать описанные выше с помощью PowerShell для настройки существующего действия, выполните приведенный ниже пример скрипта PowerShell. Обратите внимание на то, как мы не использовали - PickHostname переключатели в конфигурации пробы и параметры HTTP.
+
+```azurepowershell-interactive
+$gw=Get-AzApplicationGateway -Name AppGw1 -ResourceGroupName AppGwRG
+Set-AzApplicationGatewayProbeConfig -ApplicationGateway $gw -Name AppServiceProbe -Protocol Http -HostName "example.azurewebsites.net" -Path "/" -Interval 30 -Timeout 30 -UnhealthyThreshold 3
+$probe=Get-AzApplicationGatewayProbeConfig -Name AppServiceProbe -ApplicationGateway $gw
+Set-AzApplicationGatewayBackendHttpSettings -Name appgwhttpsettings -ApplicationGateway $gw -Port 80 -Protocol Http -CookieBasedAffinity Disabled -Probe $probe -RequestTimeout 30
+Set-AzApplicationGateway -ApplicationGateway $gw
+```
   ```
   ## Request headers to Application Gateway:
 

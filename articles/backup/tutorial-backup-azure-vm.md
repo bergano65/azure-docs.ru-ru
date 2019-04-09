@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 85e5fc7e1c8a4561b51afaf0d665fedb6d9cde1f
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: 2a35435f56a4bb09a8a1958fbc175ef7c889c380
+ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58258383"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58863021"
 ---
 # <a name="back-up-azure-vms-with-powershell"></a>Резервное копирование виртуальных машин Azure с помощью PowerShell
 
@@ -122,5 +122,5 @@ Remove-AzRecoveryServicesVault -Vault $vault1
 ## <a name="next-steps"></a>Дополнительная информация
 
 - [Просмотрите](backup-azure-vms-automation.md) более подробное пошаговое руководство по резервному копированию и восстановлению виртуальных машин Azure с помощью PowerShell. 
-- [Manage Azure VM backups](backup-azure-manage-vms.md) (Управление резервными копиями виртуальных машин Azure)
+- [Управление виртуальными машинами Azure и их мониторинг](backup-azure-manage-vms.md)
 - [Восстановление виртуальных машин Azure](backup-azure-arm-restore-vms.md)

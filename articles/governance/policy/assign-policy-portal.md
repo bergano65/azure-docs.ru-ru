@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: af14b242ae7578e1f9797895bd18c37231959ac9
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.openlocfilehash: 99c9caa167b1615705adc29193bc395b0c9e2a66
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56342717"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58803992"
 ---
 # <a name="create-a-policy-assignment-to-identify-non-compliant-resources"></a>Создание назначения политики для идентификации ресурсов, не соответствующих требованиям
 
@@ -31,15 +31,15 @@ ms.locfileid: "56342717"
 
 1. Запустите службу "Политика Azure" на портале Azure, щелкнув **Все службы**, а затем выполнив поиск и выбрав **Политика**.
 
-   ![Поиск политики](./media/assign-policy-portal/search-policy.png)
+   ![Поиск политики в разделе "Все службы"](./media/assign-policy-portal/search-policy.png)
 
 1. Выберите **Назначения** на странице службы "Политики Azure" слева. Назначение — это политика, которая назначена в рамках определенной области.
 
-   ![Выбор назначений](./media/assign-policy-portal/select-assignments.png)
+   ![Выбор страницы "Назначения" на странице обзора политики](./media/assign-policy-portal/select-assignments.png)
 
 1. Выберите **Назначить политику** в верхней части страницы **Policy — Assignments** (Политика — назначения).
 
-   ![Назначение определения политики](./media/assign-policy-portal/select-assign-policy.png)
+   ![Назначение определения политики на странице "Назначения"](./media/assign-policy-portal/select-assign-policy.png)
 
 1. На странице **Назначить политику** выберите **Область**, нажав кнопку с многоточием и выбрав либо группу управления, либо подписку. Либо выберите группу ресурсов. Она определяет, к каким ресурсам или группе ресурсов принудительно применяется назначение политики.  Теперь щелкните **Выбрать** в нижней части страницы **Область**.
 
@@ -71,7 +71,7 @@ ms.locfileid: "56342717"
 
 Выберите **Соответствие** в левой части страницы и найдите ранее созданное назначение политики **Аудит виртуальных машин, которые не используют управляемые диски**.
 
-![Соответствие политике](./media/assign-policy-portal/policy-compliance.png)
+![Сведения о соответствии политике на соответствующей странице](./media/assign-policy-portal/policy-compliance.png)
 
 Существующие ресурсы, которые не соответствуют новому назначению, отображаются в разделе **Несоответствующие ресурсы**.
 
@@ -94,7 +94,7 @@ ms.locfileid: "56342717"
 
 1. Щелкните правой кнопкой мыши назначение политики **Аудит виртуальных машин, которые не используют управляемые диски** и выберите **Удалить назначение**.
 
-   ![Удаление назначения](./media/assign-policy-portal/delete-assignment.png)
+   ![Удаление назначения на странице сведений о соответствии](./media/assign-policy-portal/delete-assignment.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

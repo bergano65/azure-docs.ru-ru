@@ -12,12 +12,12 @@ ms.topic: overview
 ms.date: 04/09/2018
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: de83cc80d64fb1862f1fdec32b704d0948ef9fc8
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: ea99c7fe9bc7fd8d6e4e26baa0afe45505949098
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56820524"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58895653"
 ---
 # <a name="what-are-microsoft-flow-logic-apps-functions-and-webjobs"></a>Что такое Microsoft Flow, Logic Apps, Функции и Веб-задания?
 
@@ -26,7 +26,7 @@ ms.locfileid: "56820524"
 * [Microsoft Flow](https://flow.microsoft.com/)
 * [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/)
 * [Функции Azure](https://azure.microsoft.com/services/functions/)
-* [веб-задания службы приложений Azure](../app-service/webjobs-create.md)
+* [Веб-задания службы приложений Azure](../app-service/webjobs-create.md)
 
 Все эти службы используются для настройки интеграции и автоматизации бизнес-процессов. Они позволяют определять входные данные, действия, условия и выходные данные. Каждую отдельную службу можно запускать по расписанию или активировать по запросу. Каждая служба обладает уникальными преимуществами, но в этой статье описываются их различия.
 
@@ -84,9 +84,9 @@ Microsoft Flow и Logic Apps спроектированы в рамках под
 
 |  | Функции Azure | Компонент "Веб-задания" с пакетом SDK для веб-заданий |
 | --- | --- | --- |
-|[Бессерверная модель приложения](https://azure.microsoft.com/solutions/serverless/) с [автоматическим масштабированием](functions-scale.md#how-the-consumption-plan-works)|✔||
+|[Бессерверная модель приложения](https://azure.microsoft.com/solutions/serverless/) с [автоматическим масштабированием](functions-scale.md#how-the-consumption-and-premium-plans-work)|✔||
 |[Разработка и тестирование в браузере](functions-create-first-azure-function.md) |✔||
-|[Оплата по мере пользования](functions-scale.md#consumption-plan)|✔||
+|[Оплата по мере использования](functions-scale.md#consumption-plan)|✔||
 |[Интеграция с Logic Apps](functions-twitter-email.md)|✔||
 | События триггера |[Таймер](functions-bindings-timer.md)<br>[Очереди и большие двоичные объекты службы хранилища Azure](functions-bindings-storage-blob.md)<br>[Очереди и разделы служебной шины Azure](functions-bindings-service-bus.md)<br>[Azure Cosmos DB](functions-bindings-cosmosdb.md)<br>[Центры событий Azure](functions-bindings-event-hubs.md)<br>[HTTP или веб-перехватчик (GitHub, Slack)](functions-bindings-http-webhook.md)<br>[Сетка событий Azure](functions-bindings-event-grid.md)|[Таймер](functions-bindings-timer.md)<br>[Очереди и большие двоичные объекты службы хранилища Azure](functions-bindings-storage-blob.md)<br>[Очереди и разделы служебной шины Azure](functions-bindings-service-bus.md)<br>[Azure Cosmos DB](functions-bindings-cosmosdb.md)<br>[Центры событий Azure](functions-bindings-event-hubs.md)<br>[Файловая система](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Files/FileTriggerAttribute.cs)|
 | Поддерживаемые языки  |C#<br>F#<br>JavaScript<br>Java (предварительная версия) |C#<sup>1</sup>|
@@ -119,8 +119,8 @@ Microsoft Flow и Logic Apps спроектированы в рамках под
 
 Дополнительные сведения о службах интеграции см. в следующих источниках:
 
-* [Leveraging Azure Functions & Azure App Service for integration scenarios by Christopher Anderson](http://www.biztalk360.com/integrate-2016-resources/leveraging-azure-functions-azure-app-service-integration-scenarios/) (Использование функций Azure и службы приложений Azure в сценариях интеграции. Автор: Кристофер Андерсон (Christopher Anderson))
-* [Integrations Made Simple by Charles Lamanna](http://www.biztalk360.com/integrate-2016-resources/integrations-made-simple/) (Упрощенные возможности интеграции. Автор: Чарльз Ламанна (Charles Lamanna))
+* [Leveraging Azure Functions & Azure App Service for integration scenarios by Christopher Anderson (Использование функций Azure и службы приложений Azure в сценариях интеграции. Автор Кристофер Андерсон (Christopher Anderson).](http://www.biztalk360.com/integrate-2016-resources/leveraging-azure-functions-azure-app-service-integration-scenarios/)
+* [Integrations Made Simple by Charles Lamanna (Упрощенные возможности интеграции. Автор Чарльз Ламанна (Charles Lamanna)](http://www.biztalk360.com/integrate-2016-resources/integrations-made-simple/)
 * [Запись веб-трансляции по Logic Apps](https://aka.ms/logicappslive)
 * [Часто задаваемые вопросы о Microsoft Flow](https://flow.microsoft.com/documentation/frequently-asked-questions/)
 
@@ -130,4 +130,4 @@ Microsoft Flow и Logic Apps спроектированы в рамках под
 
 * [Начало работы с Microsoft Flow](https://flow.microsoft.com/en-us/documentation/getting-started/)
 * [Создайте приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)
-* [Создание первой функции Azure](functions-create-first-azure-function.md)
+* [Создание функции Azure](functions-create-first-azure-function.md)

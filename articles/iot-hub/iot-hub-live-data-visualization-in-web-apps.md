@@ -1,19 +1,19 @@
 ---
 title: Визуализация данных, поступающих c датчиков в реальном времени, из Центра Интернета вещей с помощью веб-приложений | Документация Майкрософт
 description: Сведения о визуализации данных о температуре и влажности, собранных с датчиков и переданных в Центр Интернета вещей, с помощью веб-приложений в службе приложений Microsoft Azure.
-author: rangv
+author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
-ms.author: rangv
-ms.openlocfilehash: c43431cd6ddbbbf8f6cb709b8c1783179d6cf760
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
-ms.translationtype: HT
+ms.author: robinsh
+ms.openlocfilehash: b870c432ea8021d9eeb14eec85ff9912b96ddc96
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50158726"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59270886"
 ---
 # <a name="visualize-real-time-sensor-data-from-your-azure-iot-hub-by-using-the-web-apps-feature-of-azure-app-service"></a>Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью веб-приложений службы приложений Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "50158726"
   * Центр Интернета вещей в подписке;
   * клиентское приложение, которое отправляет сообщения в Центр Интернета вещей.
 
-* [Скачайте Git](https://www.git-scm.com/downloads).
+* [Загрузить Git](https://www.git-scm.com/downloads)
 
 ## <a name="create-a-web-app"></a>Создание веб-приложения
 
@@ -61,7 +61,7 @@ ms.locfileid: "50158726"
 
 2. Щелкните **Параметры приложения**, а затем в разделе **Параметры приложения** добавьте следующие пары "ключ — значение":
 
-   | Ключ                                   | Значение                                                        |
+   | Раздел                                   | Значение                                                        |
    |---------------------------------------|--------------------------------------------------------------|
    | Azure.IoT.IoTHub.ConnectionString     | Из интерфейса командной строки Azure                                      |
    | Azure.IoT.IoTHub.ConsumerGroup        | Имя группы потребителей, добавленной в Центр Интернета вещей.  |
@@ -114,7 +114,7 @@ ms.locfileid: "50158726"
 > [!NOTE]
 > Убедитесь, что пример приложения запущен на устройстве. Если это не так, отобразится пустая диаграмма. Вы можете обратиться к руководствам в статье [Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)](iot-hub-raspberry-pi-kit-node-get-started.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы успешно использовали веб-приложение для визуализации данных датчика, полученных в реальном времени, из Центра Интернета вещей.
 

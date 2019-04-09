@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 04/04/2019
+ms.date: 04/08/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: 0defb1a8572cc3adad48dbcdb27a04e366fc3e60
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: 1fc04ee953ea53f96adfd1e85c9a616c62268ade
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59046792"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59282990"
 ---
 # <a name="understand-cost-management-data"></a>Интерпретация данных службы "Управление затратами"
 
@@ -28,16 +28,16 @@ ms.locfileid: "59046792"
 | Категория  | **Название предложения** | **Идентификатор квоты** | **Номер предложения** |
 | --- | --- | --- | --- |
 | **Azure для Германии** | [Azure для Германии с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-de-0003p)      | PayAsYouGo_2014-09-01 | MS-AZR-DE-0003P |
-| **Azure Government** | Azure для государственных организаций                                                         | EnterpriseAgreement_2014-09-01 | MS-AZR-USGOV-0017P |
+| **Azure для государственных организаций** | Azure для государственных организаций                                                         | EnterpriseAgreement_2014-09-01 | MS-AZR-USGOV-0017P |
 | **Соглашение Enterprise (EA)** | Enterprise — разработка и тестирование                                                        | MSDNDevTest_2014-09-01 | MS-AZR-0148P |
 | **Соглашение Enterprise (EA)** | [Microsoft Azure Enterprise](https://azure.microsoft.com/offers/enterprise-agreement-support-upgrade) | EnterpriseAgreement_2014-09-01 | MS-AZR-0017P |
-| **Клиентское соглашение Майкрософт** | [План Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0017g) | EnterpriseAgreement_2014-09-01 | MS-AZR-0017G |
-| **Клиентское соглашение Майкрософт** | [План Microsoft Azure для разработки и тестирования](https://azure.microsoft.com/offers/ms-azr-0148g)  | MSDNDevTest_2014-09-01 | MS-AZR-0148G |
+| **Клиентское соглашение Майкрософт** | [План Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0017g) | EnterpriseAgreement_2014-09-01 | Н/Д |
+| **Клиентское соглашение Майкрософт** | [План Microsoft Azure для разработки и тестирования](https://azure.microsoft.com/offers/ms-azr-0148g)  | MSDNDevTest_2014-09-01 | Н/Д |
 | **Microsoft Developer Network (MSDN)** | [MSDN Platforms](https://azure.microsoft.com/offers/ms-azr-0062p) | MSDN_2014-09-01 | MS-AZR-0062P |
 | **Оплата по мере использования** | [Оплата по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p)                       | PayAsYouGo_2014-09-01 | MS-AZR-0003P |
 | **Оплата по мере использования** | [Разработка и тестирование с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0023p)              | MSDNDevTest_2014-09-01 | MS-AZR-0023P |
 | **Оплата по мере использования** | [Microsoft Partner Network](https://azure.microsoft.com/offers/ms-azr-0025p)           | MPN_2014-09-01 | MS-AZR-0025P |
-| **Оплата по мере использования** | ["Бесплатная пробная версия"](https://azure.microsoft.com/offers/ms-azr-0044p)                          | FreeTrial_2014-09-01 | MS-AZR-0044P |
+| **Оплата по мере использования** | [Пробная версия](https://azure.microsoft.com/offers/ms-azr-0044p)                          | FreeTrial_2014-09-01 | MS-AZR-0044P |
 | **Оплата по мере использования** | [Azure с открытой лицензией;](https://azure.microsoft.com/offers/ms-azr-0111p)                       | AzureInOpen_2014-09-01 | MS-AZR-0111P |
 | **Оплата по мере использования** | [Azure для учащихся](https://azure.microsoft.com/offers/ms-azr-0170p)                  | AzureForStudents_2018-01-01 | MS-AZR-0170P |
 | **Оплата по мере использования** | Azure Pass                                                                             | AzurePass_2014-09-01 | MS-AZR-0120P, MS-AZR-0122P - MS-AZR-0125P, MS-AZR-0128P - MS-AZR-0130P |
@@ -51,10 +51,10 @@ ms.locfileid: "59046792"
 
 | Категория  | **Название предложения** | **Идентификатор квоты** | **Номер предложения** |
 | --- | --- | --- | --- |
-| **Поставщик облачных решений (CSP)** | Microsoft Azure.                                    | CSP_2015-05-01 | MS-AZR-0145P |
+| **Поставщик облачных решений (CSP)** | Microsoft Azure                                    | CSP_2015-05-01 | MS-AZR-0145P |
 | **Поставщик облачных решений (CSP)** | Поставщик облачных решений Azure для государственных организаций                               | CSP_2015-05-01 | MS-AZR-USGOV-0145P |
 | **Поставщик облачных решений (CSP)** | Azure для Германии в CSP для Microsoft Cloud для Германии   | CSP_2015-05-01 | MS-AZR-DE-0145P |
-| **Оплата по мере использования**                 | Начальный набор Microsoft Azure для учащихся | DreamSpark_2015-02-01 | MS-AZR-0144P |
+| **Оплата по мере использования**                 | Начальная версия Azure для учащихся | DreamSpark_2015-02-01 | MS-AZR-0144P |
 | **Оплата по мере использования**                 | [Спонсорское предложение Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/) | Sponsored_2016-01-01 | MS-AZR-0036P |
 | **Планы поддержки** | Поддержка уровня "Стандартный"                    | Default_2014-09-01 | MS-AZR-0041P |
 | **Планы поддержки** | Поддержка Professional Direct         | Default_2014-09-01 | MS-AZR-0042P |
@@ -77,23 +77,24 @@ ms.locfileid: "59046792"
 
 **Затрат и использования данных**
 
-| **Включено** | **Не включено** |
+| **Включены** | **Не включено** |
 | --- | --- |
 | Потребление службы Azure<sup>1</sup> | Резервирование покупок. Дополнительные сведения см. в статье [API-интерфейсы для автоматизации резервирования Azure](../billing/billing-reservation-apis.md). |
-| Использование предложения Marketplace | Покупки в Marketplace. Дополнительные сведения см. в статье [Основные сведения о выставлении счетов за использование внешних служб в Azure](../billing/billing-understand-your-azure-marketplace-charges.md). |
+| Использование предложения Marketplace<sup>2</sup> | Покупки в Marketplace. Дополнительные сведения см. в статье [Основные сведения о выставлении счетов за использование внешних служб в Azure](../billing/billing-understand-your-azure-marketplace-charges.md). |
 |   | Поддержки расходов. Дополнительные сведения см. в статье [Значение терминов в счете Microsoft Azure](../billing/billing-understand-your-invoice.md). |
 |   | Налоги. Дополнительные сведения см. в статье [Значение терминов в счете Microsoft Azure](../billing/billing-understand-your-invoice.md). |
 |   | Кредиты. Дополнительные сведения см. в статье [Значение терминов в счете Microsoft Azure](../billing/billing-understand-your-invoice.md). |
 
 <sup>1</sup> Потребление службы Azure основано на резервировании и согласованной цене.
+<sup>2</sup> предложения использования marketplace недоступен для оплаты по мере использования, MSDN, и в Visual Studio в данный момент.
 
 **Метаданные**
 
-| **Включено** | **Не включено** |
+| **Включены** | **Не включено** |
 | --- | --- |
-| Теги ресурсов<sup>2</sup> | Теги группы ресурсов |
+| Теги ресурсов<sup>3</sup> | Теги группы ресурсов |
 
-<sup>2</sup> Теги ресурса применяются по мере использования каждой службы и недоступны для ретроактивного использования с историческими данными.
+<sup>3</sup> теги ресурсов, применяются, как использование создается из каждой службы, поэтому они недоступны задним числом к исторические данные о потреблении.
 
 ## <a name="rated-usage-data-refresh-schedule"></a>Расписание обновления данных об использовании
 

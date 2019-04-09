@@ -9,12 +9,12 @@ ms.tgt_pltfrm: na
 ms.date: 03/18/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 5233f9421b02be9b34bb481252f749e153942573
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 5de6ba8ab64797da24039718ca7f2c0b88d1d33d
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58312025"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58881347"
 ---
 # <a name="migrate-servers-running-windows-server-2008-to-azure"></a>Перенос серверов под управлением Windows Server 2008 в Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "58312025"
 
 В этом руководстве описано, как можно переносить локальные виртуальные машины VMware и физические серверы под управлением Windows Server 2008 или 2008 R2.
 > [!TIP]
-> Если вы ищете способ перенести виртуальные машины VMware в Azure, не используя агент, [щелкните здесь](https://aka.ms/migrateVMs-signup).
+> Если вы ищете способ перенести виртуальные машины VMware в Azure, не используя агент, [Щелкните здесь.](https://aka.ms/migrateVMs-signup)
 
 
 ## <a name="limitations-and-known-issues"></a>Ограничения и известные проблемы
@@ -84,7 +84,7 @@ ms.locfileid: "58312025"
 
 Выполните следующие задачи для подготовки подписки Azure и локальной среды VMware или физического окружения.
 
-1. [Подготовка Azure](tutorial-prepare-azure.md).
+1. [Подготовка Azure](tutorial-prepare-azure.md)
 2. Подготовка локальной среды [VMware](vmware-azure-tutorial-prepare-on-premises.md).
 
 

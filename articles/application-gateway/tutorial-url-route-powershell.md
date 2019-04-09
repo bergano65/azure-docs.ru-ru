@@ -10,12 +10,12 @@ ms.workload: infrastructure-services
 ms.date: 10/25/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: cf89d814d6d46482c54d6991ba16b3050b882d05
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 8690c9f58a539337659d18ef954f88e4bb2baf9d
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57993979"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58881500"
 ---
 # <a name="route-web-traffic-based-on-the-url-using-azure-powershell"></a>Маршрутизация веб-трафика на основе URL-адреса с использованием Azure PowerShell
 
@@ -40,7 +40,7 @@ ms.locfileid: "57993979"
 
 [!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
 
-Если вы решили установить и использовать PowerShell локально, то для работы с этим учебником вам понадобится модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
+Если вы решили установить и использовать PowerShell локально, то для работы с этим учебником вам понадобится модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
 Для создания ресурсов потребуется некоторое время, поэтому работа с этим руководством может занять до 90 минут.
 
@@ -413,7 +413,7 @@ for ($i=1; $i -le 3; $i++)
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-Используйте командлет [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress), чтобы получить общедоступный IP-адрес шлюза приложений. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например `http://52.168.55.24`, `http://52.168.55.24:8080/images/test.htm` или `http://52.168.55.24:8080/video/test.htm`.
+Используйте командлет [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress), чтобы получить общедоступный IP-адрес шлюза приложений. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например, `http://52.168.55.24`, `http://52.168.55.24:8080/images/test.htm` или `http://52.168.55.24:8080/video/test.htm`.
 
 ```azurepowershell-interactive
 Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAddress
@@ -447,4 +447,4 @@ Remove-AzResourceGroup -Name myResourceGroupAG
 > * создание масштабируемых серверных пулов.
 
 > [!div class="nextstepaction"]
-> [Перенаправление веб-трафика на основе URL-адреса](./tutorial-url-redirect-powershell.md)
+> [перенаправление веб-трафика на основе URL-адреса.](./tutorial-url-redirect-powershell.md)

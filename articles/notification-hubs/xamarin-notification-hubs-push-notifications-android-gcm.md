@@ -13,22 +13,22 @@ ms.tgt_pltfrm: mobile-xamarin-android
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 1/4/2019
+ms.date: 03/28/2019
 ms.author: jowargo
-ms.openlocfilehash: f7088179f43c69fb9f72eacd6ff3703a926cabe2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 79913fc300f2ca66a84cf47c0e5b650b9ea2cc59
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57886564"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878780"
 ---
-# <a name="tutorial-push-notifications-to-xamarinandroid-apps-using-azure-notification-hubs"></a>Руководство. Отправка push-уведомлений в приложения Xamarin.Android с помощью Центров уведомлений Azure
+# <a name="tutorial-push-notifications-to-xamarinandroid-apps-using-azure-notification-hubs"></a>Руководство по Отправка push-уведомлений в приложения Xamarin.Android с помощью Центров уведомлений Azure
 
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
 ## <a name="overview"></a>Обзор
 
-В этом учебнике показано, как использовать Центры уведомлений Azure для отправки push-уведомлений в приложение Xamarin.Android. Вы создадите пустое приложение Xamarin.Android, которое получает push-уведомления с помощью Firebase Cloud Messaging. Вы сможете рассылать через Центр уведомлений push-уведомления на все устройства, где запущено ваше приложение. Готовый код доступен в примере [приложения NotificationHubs][GitHub].
+В этом учебнике показано, как использовать Центры уведомлений Azure для отправки push-уведомлений в приложение Xamarin.Android. Вы создадите пустое приложение Xamarin.Android, которое получает push-уведомления с помощью Firebase Cloud Messaging. Вы сможете рассылать через Центр уведомлений push-уведомления на все устройства, где запущено ваше приложение. Готовый код доступен в примере [приложения NotificationHubs](https://github.com/Azure/azure-notificationhubs-dotnet/tree/master/Samples/Xamarin/GetStartedXamarinAndroid).
 
 При работе с этим руководством вы выполните следующие задачи:
 
@@ -112,8 +112,15 @@ ms.locfileid: "57886564"
         </intent-filter>
     </receiver>
     ```
+2. Добавьте следующие операторы **перед приложением**. 
 
-2. Подготовьте следующую информацию для вашего приложения Android и концентратора уведомлений.
+    ```xml
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    ```
+1. Подготовьте следующую информацию для вашего приложения Android и концентратора уведомлений.
 
    * **Строка подключения для ожидания передачи данных**. На [портале Azure] на панели мониторинга выберите **Просмотреть строки подключения**. Скопируйте строку подключения для `DefaultListenSharedAccessSignature` для этого значения.
    * **Имя центра** — это имя вашего центра на [портале Azure]. Например, *mynotificationhub2*.
@@ -131,13 +138,61 @@ ms.locfileid: "57886564"
 
     ```csharp
     using Android.Util;
+    using Android.Gms.Common;
     ```
-6. Добавьте переменную экземпляра в класс `MainActivity.cs*`, чтобы отобразить диалоговое окно оповещения при выполнении приложения.
+6. Добавьте следующие свойства в класс MainActivity. Переменная TAG будет использоваться для отображение диалогового окна оповещения при выполнении приложения.
 
     ```csharp
     public const string TAG = "MainActivity";
+    internal static readonly string CHANNEL_ID = "my_notification_channel";
     ```
-7. Затем в классе `MainActivity.cs` добавьте следующий код в `OnCreate` после `base.OnCreate(savedInstanceState)`.
+7. Добавьте следующий метод в класс MainActivity. Он проверяет, доступны ли **Сервисы Google Play** на устройстве. 
+
+    ```csharp
+    public bool IsPlayServicesAvailable()
+    {
+        int resultCode = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
+        if (resultCode != ConnectionResult.Success)
+        {
+            if (GoogleApiAvailability.Instance.IsUserResolvableError(resultCode))
+                Log.Debug(TAG, GoogleApiAvailability.Instance.GetErrorString(resultCode));
+            else
+            {
+                Log.Debug(TAG, "This device is not supported");
+                Finish();
+            }
+            return false;
+        }
+     
+        Log.Debug(TAG, "Google Play Services is available.");
+        return true;
+    }
+    ```
+1. В класс MainActivity добавьте следующий метод, создающий канал уведомлений.
+
+    ```csharp
+    private void CreateNotificationChannel()
+    {
+        if (Build.VERSION.SdkInt < BuildVersionCodes.O)
+        {
+            // Notification channels are new in API 26 (and not a part of the
+            // support library). There is no need to create a notification
+            // channel on older versions of Android.
+            return;
+        }
+     
+        var channelName = CHANNEL_ID;
+        var channelDescription = string.Empty;
+        var channel = new NotificationChannel(CHANNEL_ID, channelName, NotificationImportance.Default)
+        {
+            Description = channelDescription
+        };
+     
+        var notificationManager = (NotificationManager)GetSystemService(NotificationService);
+        notificationManager.CreateNotificationChannel(channel);
+    }
+    ```
+1. Затем в классе `MainActivity.cs` добавьте следующий код в `OnCreate` после `base.OnCreate(savedInstanceState)`.
 
     ```csharp
     if (Intent.Extras != null)
@@ -151,6 +206,9 @@ ms.locfileid: "57886564"
             }
         }
     }
+    
+    IsPlayServicesAvailable();
+    CreateNotificationChannel();
     ```
 8. Создайте класс, `MyFirebaseIIDService`, так же, как создали `Constants`.
 9. Добавьте указанные ниже операторы using в `MyFirebaseIIDService.cs`.
@@ -201,6 +259,9 @@ ms.locfileid: "57886564"
     using Android.App;
     using Android.Util;
     using Firebase.Messaging;
+    using Android.OS;
+    using Android.Support.V4.App;
+    using Build = Android.OS.Build;
     ```
 14. Добавьте следующий код в класс перед объявлением class и настройте наследование класса из `FirebaseMessagingService`.
 
@@ -236,12 +297,18 @@ ms.locfileid: "57886564"
         intent.AddFlags(ActivityFlags.ClearTop);
         var pendingIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.OneShot);
 
-        var notificationBuilder = new Notification.Builder(this)
+        var notificationBuilder = new NotificationCompat.Builder(this)
                     .SetContentTitle("FCM Message")
                     .SetSmallIcon(Resource.Drawable.ic_launcher)
                     .SetContentText(messageBody)
                     .SetAutoCancel(true)
+                    .SetShowWhen(false)
                     .SetContentIntent(pendingIntent);
+
+        if (Build.VERSION.SdkInt >= BuildVersionCodes.O)
+        {
+            notificationBuilder.SetChannelId(MainActivity.CHANNEL_ID);
+        }
 
         var notificationManager = NotificationManager.FromContext(this);
 
@@ -264,7 +331,7 @@ Push-уведомления обычно отправляются в серве�
 В рамках этого руководства вы отправили широковещательные уведомления на все устройства Android, зарегистрированные в серверной части. Чтобы узнать, как отправлять push-уведомления на конкретные устройства Android, перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
->[Руководство по отправке push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging](notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md)
+>[Отправка push-уведомлений на конкретные устройства](notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md)
 
 <!-- Anchors. -->
 [Enable Google Cloud Messaging]: #register
@@ -296,10 +363,10 @@ Push-уведомления обычно отправляются в серве�
 [JavaScript and HTML]: /develop/mobile/tutorials/get-started-with-push-js
 [Visual Studio с Xamarin]: https://docs.microsoft.com/visualstudio/install/install-visual-studio
 [Visual Studio для Mac]: https://www.visualstudio.com/vs/visual-studio-mac/
-[портале Azure]: https://portal.azure.com/
+[Портал Azure]: https://portal.azure.com/
 [wns object]: https://go.microsoft.com/fwlink/p/?LinkId=260591
 [Notification Hubs Guidance]: https://msdn.microsoft.com/library/jj927170.aspx
 [Notification Hubs How-To for Android]: https://msdn.microsoft.com/library/dn282661.aspx
 [Use Notification Hubs to push notifications to users]: notification-hubs-aspnet-backend-ios-apple-apns-notification.md
 [Use Notification Hubs to send breaking news]: notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md
-[GitHub]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet/Xamarin/GetStartedXamarinAndroid
+[GitHub]: https://github.com/Azure/azure-notificationhubs-android

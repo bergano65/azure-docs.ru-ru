@@ -1,5 +1,5 @@
 ---
-title: Руководство. Использование службы Azure Database Migration Service для миграции MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме | Документация Майкрософт
+title: Руководство по Использование службы Azure Database Migration Service для миграции MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме | Документация Майкрософт
 description: Узнайте, как выполнять миграцию из локальной MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме с помощью Azure Database Migration Service.
 services: dms
 author: HJToland3
@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 03/12/2019
-ms.openlocfilehash: 62acab231455b19d37b0800ead172950b5ee0378
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 04/03/2019
+ms.openlocfilehash: 68cf4561d24a84c5aacefbe5fbd11bcd7e0576aa
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58176282"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878559"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-offline-using-dms"></a>Руководство по Миграция MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме с помощью DMS
 С помощью Azure Database Migration Service можно выполнять автономную (однократную) миграцию баз данных из локального или облачного экземпляра MongoDB в API Azure Cosmos DB для MongoDB.
@@ -43,7 +43,7 @@ ms.locfileid: "58176282"
     >
     > Эта настройка необходима, потому что у Azure Database Migration Service нет подключения к Интернету.
 
-- Убедитесь, что правила группы безопасности сети для виртуальной сети не блокируют порты 443, 53, 9354, 445 и 12000. Дополнительные сведения о фильтрации трафика, предназначенного для виртуальной сети Azure, с помощью NSG см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
+- Убедитесь, что правила группы безопасности сети для виртуальной сети не блокируют следующие входящие порты для Azure Database Migration Service: 443, 53, 9354, 445 и 12000. Дополнительные сведения о фильтрации трафика, предназначенного для виртуальной сети Azure, с помощью NSG см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
 - Откройте брандмауэр Windows, чтобы предоставить Azure Database Migration Service доступ к исходному серверу MongoDB. По умолчанию это TCP-порт 27017.
 - Если перед исходными базами данных развернуто устройство брандмауэра, вам может понадобиться добавить правила брандмауэра, чтобы позволить службе Azure Database Migration Service обращаться к исходным базам данных для выполнения миграции.
 
@@ -178,7 +178,7 @@ ms.locfileid: "58176282"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
- * [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)
+ * [Сведения о службе Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Просмотрите другие сценарии в [руководстве по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).

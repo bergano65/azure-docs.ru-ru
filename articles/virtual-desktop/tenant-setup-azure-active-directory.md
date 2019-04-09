@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: b8b5c2cef1db5018ce0d61e1950f49a3bd215ac2
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: 1c66b3de9e18cb74c43f20499e4065c7ec7ae5ca
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58402904"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58801685"
 ---
 # <a name="tutorial-create-a-tenant-in-windows-virtual-desktop-preview"></a>Руководство по Создание арендатора предварительной версии Виртуального рабочего стола Windows
 
@@ -30,6 +30,8 @@ ms.locfileid: "58402904"
 * Идентификатор арендатора [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) для пользователей Виртуального рабочего стола Windows.
 * Учетная запись глобального администратора в арендаторе Azure Active Directory.
    * Это также касается поставщиков облачных решений (CSP), которые создают арендатор Виртуального рабочего стола Windows для своих клиентов. У организации CSP должна быть возможность войти в Azure Active Directory своего клиента в качестве глобального администратора.
+   * Нужно использовать учетную запись администратора из клиента Azure Active Directory, в котором вы создаете клиент Виртуального рабочего стола Windows. Учетные записи Azure Active Directory B2B (гость) не поддерживаются этим процессом.
+   * Учетная запись администратора должна быть рабочей или учебной учетной записью.
 * Идентификатор подписки Azure.
 
 ## <a name="grant-azure-active-directory-permissions-to-the-windows-virtual-desktop-preview-service"></a>Предоставление разрешений Azure Active Directory службе "Виртуальный рабочий стол Windows"
@@ -75,7 +77,7 @@ ms.locfileid: "58402904"
 Войдите в Виртуальный рабочий стол Windows с учетными данными пользователя с ролью TenantCreator, выполнив следующий командлет:
 
 ```powershell
-Add-RdsAccount -DeploymentUrl “https://rdbroker.wvd.microsoft.com”
+Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 ```
 
 После этого создайте новый арендатор Виртуального рабочего стола Windows, связанный с арендатором Azure Active Directory:

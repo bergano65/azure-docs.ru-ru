@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11846ca2a323da5889f444024767df4803a48a51
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
-ms.translationtype: MT
+ms.openlocfilehash: b91af553c402cc1cb241e51e2bb2289bf45b1825
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58892217"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59269033"
 ---
 # <a name="planning-a-cloud-based-azure-multi-factor-authentication"></a>Планирование облачных многофакторной идентификации Azure
 
@@ -60,8 +60,14 @@ ms.locfileid: "58892217"
 * Устройства, соответствующие требованиям
 * Гибридные устройства, присоединенные к Azure AD
 * Утвержденные клиентские приложения
+ 
+
+Используйте настраиваемые плакаты и шаблоны сообщений электронной почты в [материалы, внедрение многофакторной проверки подлинности] для развертывания многофакторной проверки подлинности для вашей организации. (https://www.microsoft.com/en-us/download/details.aspx?id=57600&WT.mc_id=rss_alldownloads_all)
+
+## <a name="enable-multi-factor-authentication-with-conditional-access"></a>Включение службы Многофакторной идентификации Azure с условным доступом
 
 Политики условного доступа принудительная регистрация, требуя незарегистрированных пользователей завершить регистрацию при первом входе в систему, рассмотрения важный элемент обеспечения безопасности.
+
 
 [Защита идентификации Azure AD](../identity-protection/howto-configure-risk-policies.md) вносит политики регистрации и политики автоматических риска обнаружение и исправление в истории многофакторной идентификации Azure. Политики могут быть созданы для принудительного изменения пароля, когда существует угроза скомпрометированного удостоверения или требовать многофакторную Идентификацию, если вход в систему считается рискованные ниже [события](../reports-monitoring/concept-risk-events.md):
 

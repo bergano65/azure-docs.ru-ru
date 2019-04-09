@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 02/21/2019
+ms.date: 03/27/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: dc21a246c6129a12d0336733cfa2e9e7fd4a29ce
-ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.openlocfilehash: 4d7ec6ddeb48a9a24cdd8bd9bc2c28b6cbe70b3e
+ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56652235"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58630051"
 ---
 # <a name="quickstart-analyze-a-local-image-using-the-rest-api-and-python-in-computer-vision"></a>Краткое руководство. Анализ локального изображения с помощью REST API и Python в службе "Компьютерное зрение"
 
@@ -32,6 +32,10 @@ ms.locfileid: "56652235"
 
 - Установите [Python](https://www.python.org/downloads/), если хотите выполнить этот пример кода в локальной среде.
 - У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- Должны быть установлены указанные ниже пакеты Python. Чтобы установить пакеты Python, можно использовать [pip](https://packaging.python.org/tutorials/installing-packages/).
+    - [requests](http://docs.python-requests.org/en/master/)
+    - [matplotlib](https://matplotlib.org/).
+    - [pillow](https://python-pillow.org/)
 
 ## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 

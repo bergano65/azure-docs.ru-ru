@@ -6,19 +6,19 @@ documentationcenter: ''
 author: kraigb
 manager: douge
 ms.assetid: 5add60ad-0b4b-4fd5-adf5-eb50ce072d00
-ms.service: azure
+ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: 3f03202d0f4416b3bf08a33e5d997d7149eda9f0
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: b1618e2ac997445606ce98fc72a1ec35ca1280be
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58104409"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59273674"
 ---
 # <a name="quickstart-create-and-share-a-notebook"></a>Краткое руководство. Создание и совместное использование записной книжки
 
@@ -43,7 +43,7 @@ ms.locfileid: "58104409"
 
 1. Через несколько секунд Записные книжки Azure перенаправят вас в окно нового проекта. Добавьте записную книжку в проект. Для этого выберите раскрывающийся список **+ Создать** (который может отображаться в виде **+**), а затем элемент **Notebook** (Записная книжка):
 
-    [![](media/quickstarts/empty-project-new-notebook-button.png "Новый, пустой проект и команда добавления записной книжки")](media/quickstarts/empty-project-new-notebook-button.png#lightbox)
+    [![](media/quickstarts/empty-project-new-notebook-button.png "Новый, пустой проект и добавьте команду записной книжки")](media/quickstarts/empty-project-new-notebook-button.png#lightbox)
 
 1. В появившемся всплывающем окне **Create New Notebook** (Создание записной книжки) введите имя файла для записной книжки, например *HelloWorldInPython.ipynb* (*.ipynb* означает, что это записная книжка IronPython (Jupyter)) и выберите **Python 3.6** в качестве языка (также называемого *ядром*):
 
@@ -106,4 +106,4 @@ ms.locfileid: "58104409"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство по созданию и запуску записной книжки Jupyter для выполнения линейной регрессии](tutorial-create-run-jupyter-notebook.md)
+> [Руководство по созданию выполнения записной книжки Jupyter для выполнения линейной регрессии](tutorial-create-run-jupyter-notebook.md)

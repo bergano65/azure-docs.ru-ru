@@ -1,6 +1,6 @@
 ---
 title: Пример для PowerShell. Восстановление и архивация базы данных SQL Azure | Документация Майкрософт
-description: Пример скрипта Azure PowerShell для восстановления отдельной базы данных SQL Azure из геоизбыточных резервных копий.
+description: Пример скрипта Azure PowerShell для восстановления отдельной базы данных SQL Azure на момент автоматического создания резервной копии.
 services: sql-database
 ms.service: sql-database
 ms.subservice: backup-restore
@@ -11,23 +11,23 @@ author: mashamsft
 ms.author: mathoma
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 03/12/2019
-ms.openlocfilehash: 3bfefa704fdd819b3841dcc58866c310353bfdc3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 03/27/2019
+ms.openlocfilehash: f58cc930ace2dc1fc65aa0494fd6c1510ee5ff29
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57883616"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58621351"
 ---
-# <a name="use-powershell-to-restore-an-azure-sql-single-database-from-backups"></a>Восстановление отдельной базы данных SQL Azure из резервных копий с помощью PowerShell
+# <a name="use-powershell-to-restore-an-azure-sql-single-database-to-an-earlier-point-in-time"></a>Используйте PowerShell, чтобы восстановить отдельную базу данных SQL Azure на момент автоматического создания резервной копии.
 
-Этот пример сценария PowerShell восстанавливает базу данных SQL Azure из геоизбыточной резервной копии, восстанавливает последнюю резервную копию удаленной базы данных SQL Azure и восстанавливает базу данных SQL Azure до определенной точки во времени.  
+Этот пример скрипта PowerShell восстанавливает базу данных Azure SQL на определенный момент времени.  
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 [!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
 
-Чтобы установить и использовать PowerShell локально, для работы с этим руководством вам понадобится AZ PowerShell 1.4.0 или более поздней версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+Чтобы установить и использовать PowerShell локально, вам понадобится AZ PowerShell 1.4.0 или последующей версии для работы с этим руководством. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="sample-script"></a>Пример скрипта
 

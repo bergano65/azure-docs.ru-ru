@@ -7,14 +7,14 @@ ms.service: dns
 ms.topic: tutorial
 ms.date: 3/11/2019
 ms.author: victorh
-ms.openlocfilehash: 43df80e060ff698537f7fd65075006e6dfffe6c1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d2cb0ef904935d1736c23aeaf23030da99e41a71
+ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58117155"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58665956"
 ---
-# <a name="tutorial-create-dns-records-in-a-custom-domain-for-a-web-app"></a>Руководство. Создание записей DNS для веб-приложения в личном домене 
+# <a name="tutorial-create-dns-records-in-a-custom-domain-for-a-web-app"></a>Руководство по Создание записей DNS для веб-приложения в личном домене 
 
 Службу Azure DNS можно использовать для размещения пользовательского домена для веб-приложений. Например, создается веб-приложение Azure и необходимо, чтобы пользователи получали к нему доступ, используя веб-сайт contoso.com или www\.contoso.com как полное доменное имя (FQDN).
 
@@ -173,7 +173,7 @@ set-AzWebApp `
 Откройте окно браузера и перейдите по адресу `http://www.<your domainname>` и `http://<you domain name>`.
 
 > [!NOTE]
-> Убедитесь, что вы добавили префикс `http://`, иначе браузер может попытаться предсказать ваш URL-адрес!
+> Убедитесь, что вы добавили префикс `http://`, иначе браузер может попытаться предсказать ваш URL-адрес.
 
 Вы должны увидеть ту же страницу для обоих URL-адресов. Например: 
 

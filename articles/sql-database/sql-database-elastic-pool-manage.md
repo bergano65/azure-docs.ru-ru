@@ -1,10 +1,10 @@
 ---
-title: Создание эластичных пулов и управление ими — база данных SQL Azure | Документы Майкрософт
+title: Управление эластичными пулами - базы данных Azure SQL | Документация Майкрософт
 description: Создание эластичных пулов в базе данных SQL Azure и управление ими.
 services: sql-database
 ms.service: sql-database
 ms.subservice: elastic-pools
-ms.custom: ''
+ms.custom: seoapril2019
 ms.devlang: ''
 ms.topic: conceptual
 author: oslake
@@ -12,14 +12,14 @@ ms.author: moslake
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: e3f3a2260ba877c94262c12f5a999c6b7bdf5cd1
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: debf91f04cff3cb9705ebc5915e2e665679230a9
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58892404"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59267588"
 ---
-# <a name="create-and-manage-elastic-pools-in-azure-sql-database"></a>Создание эластичных пулов в базе данных SQL Azure и управление ими
+# <a name="manage-elastic-pools-in-azure-sql-database"></a>Управление эластичными пулами базы данных SQL Azure
 
 С эластичным пулом вы определяете количество ресурсов, которое необходимо эластичному пулу для обработки рабочей нагрузки баз данных, входящих в пул, и количество ресурсов для каждой базы данных в пуле.
 
@@ -49,7 +49,7 @@ ms.locfileid: "58892404"
 > Образцы скриптов PowerShell см. в статьях [Создание эластичных пулов и перемещение баз данных между пулами и из пула с помощью PowerShell](scripts/sql-database-move-database-between-pools-powershell.md) и [Отслеживание и масштабирование эластичного пула SQL в Базе данных SQL Azure с помощью PowerShell](scripts/sql-database-monitor-and-scale-pool-powershell.md).
 >
 
-| Командлет | ОПИСАНИЕ |
+| Командлет | Описание |
 | --- | --- |
 |[Новый AzSqlElasticPool](/powershell/module/az.sql/new-azsqlelasticpool)|Создает эластичный пул.|
 |[Get-AzSqlElasticPool](/powershell/module/az.sql/get-azsqlelasticpool)|Получает эластичные пулы и значения их свойств.|
@@ -72,7 +72,7 @@ ms.locfileid: "58892404"
 > Примеры скриптов для Azure CLI см. в статьях [Перемещение базы данных Azure SQL в эластичном пуле SQL с помощью интерфейса командной строки](scripts/sql-database-move-database-between-pools-cli.md) и [Масштабирование эластичного пула SQL в Базе данных SQL Azure с помощью Azure CLI](scripts/sql-database-scale-pool-cli.md).
 >
 
-| Командлет | ОПИСАНИЕ |
+| Командлет | Описание |
 | --- | --- |
 |[Создание AZ sql elastic-pool](/cli/azure/sql/elastic-pool#az-sql-elastic-pool-create)|Создает эластичный пул.|
 |[AZ sql elastic-pool списка](/cli/azure/sql/elastic-pool#az-sql-elastic-pool-list)|Возвращает список эластичных пулов на сервере.|
@@ -89,7 +89,7 @@ ms.locfileid: "58892404"
 > С помощью Transact-SQL невозможно создать, обновить или удалить пул эластичных баз данных SQL Azure. Вы можете добавить или удалить базы данных из эластичного пула, а также вернуть сведения о существующих эластичных пулах, используя динамические административные представления.
 >
 
-| Команда | ОПИСАНИЕ |
+| Command | Описание |
 | --- | --- |
 |[CREATE DATABASE (база данных Azure SQL)](/sql/t-sql/statements/create-database-azure-sql-database)|Создает новую базу данных в существующем пуле или отдельную базу данных. Для создания базы данных требуется подключение к базе данных master.|
 | [ALTER DATABASE (база данных Azure SQL)](/sql/t-sql/statements/alter-database-azure-sql-database) |Перемещает базы данных из, в или между эластичными пулами.|
@@ -101,7 +101,7 @@ ms.locfileid: "58892404"
 
 Для создания эластичных пулов и базах данных в пуле для базы данных SQL и управления ими используйте эти запросы REST API.
 
-| Команда | ОПИСАНИЕ |
+| Command | Описание |
 | --- | --- |
 |[Пулы эластичных баз данных - создание или обновление](https://docs.microsoft.com/rest/api/sql/elasticpools/createorupdate)|Создает эластичный пул или обновляет имеющийся.|
 |[Удаление эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/delete)|Удаляет эластичный пул.|

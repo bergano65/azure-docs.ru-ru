@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: tutorial
 ms.date: 02/11/2019
-ms.openlocfilehash: 7132c2073223008cd82d0ffd54aaf266d0a630ba
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 6cdccd54546296c85864f1588b71109ed8b8f79f
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57839023"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58620520"
 ---
 # <a name="tutorial-3-deploy-credit-risk-model---azure-machine-learning-studio"></a>Руководство 3. Развертывание модели кредитных рисков в Студии машинного обучения Azure
 
@@ -172,7 +172,7 @@ ms.locfileid: "57839023"
 Результаты возвращаются из веб-службы пользователю через модуль **Web service output** (Выходные данные веб-службы).
 
 > [!TIP]
-> Прогнозный эксперимент настроен так, чтобы из модуля [Score Model][score-model] (Оценка модели) возвращались полные результаты. Они включают все входные данные, а также значение кредитного риска и оценку вероятности. Но если нужно, вы можете возвращать что-нибудь другое, например только значение кредитного риска. Для этого добавьте модуль [Project Columns][project-columns] (Столбцы проекта) между модулями [Score Model][score-model] (Оценка модели) и **Web service output** (Выходные данные веб-службы), чтобы исключить ненужные столбцы из возвращаемых данных веб-службы. 
+> Прогнозный эксперимент настроен так, чтобы из модуля [Score Model][score-model] (Оценка модели) возвращались полные результаты. Они включают все входные данные, а также значение кредитного риска и оценку вероятности. Но если нужно, вы можете возвращать что-нибудь другое, например только значение кредитного риска. Для этого добавьте модуль [Select Columns][select-columns] (Выбор столбцов) между модулями [Score Model][score-model] (Оценка модели) и **Web service output** (Выходные данные веб-службы), чтобы исключить ненужные столбцы из возвращаемых данных веб-службы. 
 > 
 > 
 
@@ -267,4 +267,4 @@ ms.locfileid: "57839023"
 [train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
 [two-class-boosted-decision-tree]: https://msdn.microsoft.com/library/azure/e3c522f8-53d9-4829-8ea4-5c6a6b75330c/
 [two-class-support-vector-machine]: https://msdn.microsoft.com/library/azure/12d8479b-74b4-4e67-b8de-d32867380e20/
-[project-columns]: https://msdn.microsoft.com/library/azure/1ec722fa-b623-4e26-a44e-a50c6d726223/
+[select-columns]: https://msdn.microsoft.com/library/azure/1ec722fa-b623-4e26-a44e-a50c6d726223/

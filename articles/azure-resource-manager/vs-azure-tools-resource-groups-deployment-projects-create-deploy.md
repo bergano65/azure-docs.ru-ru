@@ -13,18 +13,20 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/21/2019
 ms.author: tomfitz
-ms.openlocfilehash: 36815010c3e8fccc2ec24ce344071d0836da219b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 442551424fea353aa7eddef6e7eba6e934f95691
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58097463"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905857"
 ---
 # <a name="creating-and-deploying-azure-resource-groups-through-visual-studio"></a>Создание и развертывание групп ресурсов Azure с помощью Visual Studio
 
 С помощью Visual Studio можно создать проект для развертывания инфраструктуры и кода в Azure. Например, можно определить веб-узел, веб-сайт и базу данных для приложения, а затем развернуть эту инфраструктуру вместе с кодом. Visual Studio предоставляет разные начальные шаблоны для распространенных сценариев развертывания. В этой статье показано, как развернуть веб-приложение и базу данных SQL.  
 
 В этой статье показано, как использовать [Visual Studio 2017 для разработки Azure и установленных рабочих нагрузок ASP.NET](/dotnet/azure/dotnet-tools). Использование Visual Studio 2015 с обновлением 2 и пакета Microsoft Azure SDK для .NET 2.9 или Visual Studio 2013 с Azure SDK 2.9 в основном ничем не отличается.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="create-azure-resource-group-project"></a>Создание проекта группы ресурсов Azure
 
@@ -148,7 +150,7 @@ ms.locfileid: "58097463"
    > [!NOTE]
    > В Visual Studio может отобразиться запрос на установку командлетов Azure PowerShell. При появлении запроса установите их. Модули Azure PowerShell необходимы для успешного развертывания групп ресурсов. Скрипт PowerShell в проекте не работает с новым [модулем Azure PowerShell Az](/powershell/azure/new-azureps-module-az). 
    >
-   > Дополнительные сведения см. в статье об [установке и настройке модулей Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
+   > Дополнительные сведения см. в статье об [установке и настройке модулей Azure PowerShell](/powershell/azure/install-Az-ps).
    > 
    > 
 6. Развертывание может занять несколько минут. Состояние развертывания отображается в окне **Выходные данные** . После успешного завершения развертывания появится примерно такое сообщение:
@@ -313,4 +315,4 @@ ms.locfileid: "58097463"
 В этом кратком руководстве вы узнали, как создать и развернуть шаблоны с помощью Visual Studio. В следующем руководстве показано, как в справочнике по шаблону найти информацию, чтобы создать зашифрованную учетную запись хранения Azure.
 
 > [!div class="nextstepaction"]
-> [Создание шаблона Azure Resource Manager для развертывания зашифрованной учетной записи хранения](./resource-manager-tutorial-create-encrypted-storage-accounts.md)
+> [Создание зашифрованной учетной записи хранения](./resource-manager-tutorial-create-encrypted-storage-accounts.md)

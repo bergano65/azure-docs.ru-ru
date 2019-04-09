@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 9dada3c6f0718db41a24368aca594bbd3215fec5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 06ee97cff08804093d3ee77ee11eca1b4e84bb0f
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57994859"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58885967"
 ---
 # <a name="define-and-assign-an-azure-blueprint-with-rest-api"></a>Определение и назначение схемы Azure с помощью REST API
 
@@ -40,10 +40,10 @@ ms.locfileid: "57994859"
 
 Если у вас еще нет средства для выполнения вызовов REST API, рекомендуем использовать среду PowerShell. Ниже приведен пример заголовка для проверки подлинности в Azure. Создайте заголовок проверки подлинности, иногда называемый **токеном носителя**, и укажите универсальный код ресурса (URI) REST API, к которому нужно подключиться, а также параметры или **текст запроса**.
 
-```powershell-interactive
-# Login first with Connect-AzureRmAccount if not using Cloud Shell
+```azurepowershell-interactive
+# Log in first with Connect-AzAccount if not using Cloud Shell
 
-$azContext = Get-AzureRmContext
+$azContext = Get-AzContext
 $azProfile = [Microsoft.Azure.Commands.Common.Authentication.Abstractions.AzureRmProfileProvider]::Instance.Profile
 $profileClient = New-Object -TypeName Microsoft.Azure.Commands.ResourceManager.Common.RMProfileClient -ArgumentList ($azProfile)
 $token = $profileClient.AcquireAccessToken($azContext.Subscription.TenantId)
@@ -68,7 +68,7 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
 
 В каждом универсальном коде ресурса (URI) REST API есть переменные, которые необходимо заменить собственными значениями:
 
-- `{YourMG}` — замените это значение идентификатором своей группы управления.
+- `{YourMG}` — замените это значение идентификатором своей группы управления.
 - `{subscriptionId}` — замените это значение идентификатором своей подписки.
 
 > [!NOTE]
@@ -334,8 +334,8 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
 
 В каждом универсальном коде ресурса (URI) REST API есть переменные, которые необходимо заменить собственными значениями:
 
-- `{tenantId}` — замените своим идентификатором клиента.
-- `{YourMG}` — замените это значение идентификатором своей группы управления.
+- `{tenantId}` — замените своим идентификатором клиента.
+- `{YourMG}` — замените это значение идентификатором своей группы управления.
 - `{subscriptionId}` — замените это значение идентификатором своей подписки.
 
 1. Предоставьте субъекту-службе Azure Blueprint роль **владельца** в целевой подписке. Идентификатор AppId является статическим (`f71766dc-90d9-4b7d-bd9d-4499c4331c3f`), но идентификаторы субъекта-службы у клиентов различны. Подробные сведения для своего клиента можно запросить с помощью приведенного ниже REST API. Он использует [API Graph Azure Active Directory](../../active-directory/develop/active-directory-graph-api.md), схема авторизации которого отличается.

@@ -1,53 +1,72 @@
 ---
 title: Краткое руководство. Использование Python для вызова API анализа текста
 titleSuffix: Azure Cognitive Services
-description: Получайте информацию и примеры кода, которые помогут вам приступить к работе с API анализа текста в Cognitive Services в Azure.
+description: Получайте информацию и примеры кода, которые помогут вам приступить к работе с API Анализа текста в Azure Cognitive Services.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 02/15/2019
+ms.date: 03/28/2019
 ms.author: aahi
-ms.openlocfilehash: 1219a5f43d8abd78c4840e824c2f4c69a6fa7939
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
+ms.openlocfilehash: 6edcb4501feb0ac2911fed075ed4866aa267a80e
+ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56330143"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58893084"
 ---
 # <a name="quickstart-using-python-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование Python для вызова API анализа текста Cognitive Services 
 <a name="HOLTop"></a>
 
 В этом пошаговом руководстве содержатся сведения о [распознавании языка](#Detect), [анализе тональности](#SentimentAnalysis) и [извлечении ключевых фраз](#KeyPhraseExtraction) с использованием [API анализа текста](//go.microsoft.com/fwlink/?LinkID=759711) для Python.
 
-Этот пример можно запустить как объект Jupyter Notebook в [MyBinder](https://mybinder.org), щелкнув эмблему запуска Binder. 
+Вы можете запустить этот пример из командной строки или как записную книжку Jupyter в [MyBinder](https://mybinder.org), щелкнув эмблему запуска Binder:
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/Microsoft/cognitive-services-notebooks/master?filepath=TextAnalytics.ipynb)
+
+### <a name="command-line"></a>Команда
+
+Вам может потребоваться обновить [IPython](https://ipython.org/install.html), ядро для Jupyter:
+```bash
+pip install --upgrade IPython
+```
+
+Вам может потребоваться обновить библиотеку [запросов](http://docs.python-requests.org/en/master/):
+```bash
+pip install requests
+```
 
 Техническую документацию по API-интерфейсам см. в разделе [API definitions](//go.microsoft.com/fwlink/?LinkID=759346) (Определения API).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [cognitive-services-text-analytics-signup-requirements](../../../../includes/cognitive-services-text-analytics-signup-requirements.md)]
+* [!INCLUDE [cognitive-services-text-analytics-signup-requirements](../../../../includes/cognitive-services-text-analytics-signup-requirements.md)]
 
-Также требуются [конечная точка и ключ доступа](../How-tos/text-analytics-how-to-access-key.md), созданный автоматически во время регистрации. 
+* [Конечная точка и ключ доступа](../How-tos/text-analytics-how-to-access-key.md), созданный автоматически во время регистрации.
 
-Чтобы продолжить работу с этим пошаговым руководством, замените `subscription_key` действующим ключом подписки, полученным ранее.
+* Следующие операции импорта, ключ подписки и `text_analytics_base_url` используются для всех кратких руководств ниже. Добавьте операции импорта.
 
-
-```python
-subscription_key = None
-assert subscription_key
-```
-
-Затем убедитесь, что регион в `text_analytics_base_url` соответствует тому, который вы указали при настройке службы. Если вы используете ключ бесплатной пробной версии, ничего изменять не нужно.
-
-
-```python
-text_analytics_base_url = "https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.0/"
-```
+    ```python
+    import requests
+    # pprint is pretty print (formats the JSON)
+    from pprint import pprint
+    from IPython.display import HTML
+    ```
+    
+    Добавьте эти строки, затем замените `subscription_key` действительным ключом подписки, полученным ранее.
+    
+    ```python
+    subscription_key = '<ADD KEY HERE>'
+    assert subscription_key
+    ```
+    
+    Далее добавьте эту строку, затем убедитесь, что регион в `text_analytics_base_url` соответствует тому, который вы указали при настройке службы. Если вы используете ключ бесплатной пробной версии, ничего изменять не нужно.
+    
+    ```python
+    text_analytics_base_url = "https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.0/"
+    ```
 
 <a name="Detect"></a>
 
@@ -55,19 +74,18 @@ text_analytics_base_url = "https://westcentralus.api.cognitive.microsoft.com/tex
 
 API распознавания языка определяет язык текстового документа, используя [метод распознавания языка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7). Конечная точка API распознавания языка доступна через следующий URL-адрес:
 
-
 ```python
 language_api_url = text_analytics_base_url + "languages"
 print(language_api_url)
 ```
 
-    https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.0/languages
-
+```url
+https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.0/languages
+```
 
 Полезные данные этого API состоят из списка объектов `documents`, каждый из которых содержит `id` и атрибут `text`. Атрибут `text` содержит текст для анализа. 
 
-Замените словарь `documents` любым другим текстом для распознавания языка. 
-
+Замените словарь `documents` любым другим текстом для распознавания языка.
 
 ```python
 documents = { 'documents': [
@@ -79,16 +97,27 @@ documents = { 'documents': [
 
 Следующие несколько строк кода обращаются к API распознавания языка с помощью библиотеки `requests` для Python, чтобы определить язык текста в этих документах.
 
-
 ```python
-import requests
-from pprint import pprint
 headers   = {"Ocp-Apim-Subscription-Key": subscription_key}
 response  = requests.post(language_api_url, headers=headers, json=documents)
 languages = response.json()
 pprint(languages)
 ```
 
+В следующих строках кода отображаются данные JSON в виде HTML-таблицы.
+
+```python
+table = []
+for document in languages["documents"]:
+    text  = next(filter(lambda d: d["id"] == document["id"], documents["documents"]))["text"]
+    langs = ", ".join(["{0}({1})".format(lang["name"], lang["score"]) for lang in document["detectedLanguages"]])
+    table.append("<tr><td>{0}</td><td>{1}</td>".format(text, langs))
+HTML("<table><tr><th>Text</th><th>Detected languages(scores)</th></tr>{0}</table>".format("\n".join(table)))
+```
+
+Успешный ответ JSON:
+
+```json
     {'documents': [{'detectedLanguages': [{'iso6391Name': 'en',
                                            'name': 'English',
                                            'score': 1.0}],
@@ -102,40 +131,23 @@ pprint(languages)
                                            'score': 1.0}],
                     'id': '3'}],
      'errors': []}
-
-
-В следующих строках кода отображаются данные JSON в виде HTML-таблицы.
-
-
-```python
-from IPython.display import HTML
-table = []
-for document in languages["documents"]:
-    text  = next(filter(lambda d: d["id"] == document["id"], documents["documents"]))["text"]
-    langs = ", ".join(["{0}({1})".format(lang["name"], lang["score"]) for lang in document["detectedLanguages"]])
-    table.append("<tr><td>{0}</td><td>{1}</td>".format(text, langs))
-HTML("<table><tr><th>Text</th><th>Detected languages(scores)</th></tr>{0}</table>".format("\n".join(table)))
 ```
 
 <a name="SentimentAnalysis"></a>
 
 ## <a name="analyze-sentiment"></a>Анализ тональности
 
-API анализа тональности определяет тональность набора записей текста с помощью [метода определения тональности](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9). В следующем примере выполняется оценка двух документов — на английском и на испанском языках.
+API анализа тональности определяет тональность (диапазон между положительным и отрицательным) набора текстовых записей с помощью [метода определения тональности](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9). В следующем примере выполняется оценка двух документов — на английском и на испанском языках.
 
 Конечная точка службы определения тональности доступна в вашем регионе через следующий URL-адрес:
-
 
 ```python
 sentiment_api_url = text_analytics_base_url + "sentiment"
 print(sentiment_api_url)
 ```
-
     https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment
 
-
-Как и в примере распознавания языка, этой службе передается словарь с ключом `documents`, который содержит список документов. Каждый документ представляет собой кортеж, состоящий из `id`, `text` для анализа и `language` для текста. Вы можете использовать API распознавания языка из предыдущего раздела, чтобы заполнить это поле. 
-
+Как и в примере распознавания языка, этой службе передается словарь с ключом `documents`, который содержит список документов. Каждый документ представляет собой кортеж, состоящий из `id`, `text` для анализа и `language` для текста. Вы можете использовать API распознавания языка из предыдущего раздела, чтобы заполнить это поле.
 
 ```python
 documents = {'documents' : [
@@ -148,7 +160,6 @@ documents = {'documents' : [
 
 Теперь можно использовать API анализа тональности для определения тональности этих документов.
 
-
 ```python
 headers   = {"Ocp-Apim-Subscription-Key": subscription_key}
 response  = requests.post(sentiment_api_url, headers=headers, json=documents)
@@ -156,13 +167,16 @@ sentiments = response.json()
 pprint(sentiments)
 ```
 
-    {'documents': [{'id': '1', 'score': 0.7673527002334595},
-                   {'id': '2', 'score': 0.18574094772338867},
-                   {'id': '3', 'score': 0.5}],
-     'errors': []}
+Успешный ответ JSON:
 
+```json
+{'documents': [{'id': '1', 'score': 0.7673527002334595},
+                {'id': '2', 'score': 0.18574094772338867},
+                {'id': '3', 'score': 0.5}],
+    'errors': []}
+```
 
-Оценка тональности для документа имеет значение в диапазоне от $0$ до $1$, где большее число обозначает более положительную тональность.
+Оценка тональности для документа имеет значение в диапазоне от 0.0 до 1.0, где большее число обозначает более положительную тональность.
 
 <a name="KeyPhraseExtraction"></a>
 
@@ -172,17 +186,13 @@ API извлечения ключевых фраз извлекает ключе
 
 Конечная точка службы для извлечения ключевых фраз доступна через следующий URL-адрес:
 
-
 ```python
 key_phrase_api_url = text_analytics_base_url + "keyPhrases"
 print(key_phrase_api_url)
 ```
-
     https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases
 
-
 Здесь используется та же коллекция документов, что и для анализа тональности.
-
 
 ```python
 documents = {'documents' : [
@@ -191,27 +201,11 @@ documents = {'documents' : [
   {'id': '3', 'language': 'es', 'text': 'Los caminos que llevan hasta Monte Rainier son espectaculares y hermosos.'},  
   {'id': '4', 'language': 'es', 'text': 'La carretera estaba atascada. Había mucho tráfico el día de ayer.'}
 ]}
-headers   = {'Ocp-Apim-Subscription-Key': subscription_key}
-response  = requests.post(key_phrase_api_url, headers=headers, json=documents)
-key_phrases = response.json()
-pprint(key_phrases)
 ```
 
-
-    {'documents': [
-        {'keyPhrases': ['wonderful experience', 'staff', 'rooms'], 'id': '1'},
-        {'keyPhrases': ['food', 'terrible time', 'hotel', 'staff'], 'id': '2'},
-        {'keyPhrases': ['Monte Rainier', 'caminos'], 'id': '3'},
-        {'keyPhrases': ['carretera', 'tráfico', 'día'], 'id': '4'}],
-     'errors': []
-    }
-
-
-Объект JSON здесь тоже можно преобразовать в HTML-таблицу для просмотра, используя следующие строки кода:
-
+Объект JSON можно преобразовать в HTML-таблицу для просмотра, используя следующие строки кода:
 
 ```python
-from IPython.display import HTML
 table = []
 for document in key_phrases["documents"]:
     text    = next(filter(lambda d: d["id"] == document["id"], documents["documents"]))["text"]    
@@ -220,12 +214,30 @@ for document in key_phrases["documents"]:
 HTML("<table><tr><th>Text</th><th>Key phrases</th></tr>{0}</table>".format("\n".join(table)))
 ```
 
+Следующие несколько строк кода обращаются к API распознавания языка с помощью библиотеки `requests` для Python, чтобы определить язык текста в этих документах.
+```python
+headers   = {'Ocp-Apim-Subscription-Key': subscription_key}
+response  = requests.post(key_phrase_api_url, headers=headers, json=documents)
+key_phrases = response.json()
+pprint(key_phrases)
+```
+
+Успешный ответ JSON:
+```json
+{'documents': [
+    {'keyPhrases': ['wonderful experience', 'staff', 'rooms'], 'id': '1'},
+    {'keyPhrases': ['food', 'terrible time', 'hotel', 'staff'], 'id': '2'},
+    {'keyPhrases': ['Monte Rainier', 'caminos'], 'id': '3'},
+    {'keyPhrases': ['carretera', 'tráfico', 'día'], 'id': '4'}],
+    'errors': []
+}
+```
+
 ## <a name="identify-entities"></a>Определение сущностей
 
 API сущностей определяет известные сущности в текстовом документе, используя [метод Entities](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634). Следующий пример определяет сущности в документах на английском языке.
 
 Конечная точка службы для связывания сущностей доступна через следующий URL-адрес:
-
 
 ```python
 entity_linking_api_url = text_analytics_base_url + "entities"
@@ -234,9 +246,7 @@ print(entity_linking_api_url)
 
     https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1-preview/entities
 
-
 Ниже представлена коллекция документов.
-
 
 ```python
 documents = {'documents' : [
@@ -244,7 +254,6 @@ documents = {'documents' : [
   {'id': '2', 'text': 'The Great Depression began in 1929. By 1933, the GDP in America fell by 25%.'}
 ]}
 ```
-
 Теперь эти документы можно передать в API анализа текста для получения ответа.
 
 ```python
@@ -253,6 +262,7 @@ response  = requests.post(entity_linking_api_url, headers=headers, json=document
 entities = response.json()
 ```
 
+Успешный ответ JSON:
 ```json
 {
     "Documents": [
@@ -412,9 +422,9 @@ entities = response.json()
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Text Analytics with Power BI](../tutorials/tutorial-power-bi-key-phrases.md) (Анализ текста с использованием Power BI)
+> [Анализ текста с использованием Power BI](../tutorials/tutorial-power-bi-key-phrases.md)
 
 ## <a name="see-also"></a>См. также 
 
- [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)  
+ [Обзор Анализа текста](../overview.md)  
  [Часто задаваемые вопросы](../text-analytics-resource-faq.md)

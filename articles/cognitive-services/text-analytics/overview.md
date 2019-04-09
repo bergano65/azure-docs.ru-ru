@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: overview
 ms.date: 03/01/2019
 ms.author: aahi
-ms.openlocfilehash: 1e6aea792666447141e504f45a3ff55cb70f6261
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 59763b1146986b9920b87152101fd1dcdb00fece
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57533244"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904769"
 ---
 # <a name="what-is-text-analytics-api"></a>Что такое API анализа текста?
 
@@ -77,7 +77,7 @@ API — это компонент [Microsoft Cognitive Services](https://docs.m
 | Максимальный размер всего запроса | 1 МБ |
 | Предельное число документов в запросе | 1000 документов |
 
-Ограничение скорости — 100 вызовов в минуту. Обратите внимание, что вы можете отправлять много документов в рамках одного вызова (до 1000 документов).
+Ограничение частоты составляет 100 запросов в секунду и 1000 запросов в минуту. Вы можете отправлять большое количество документов в ходе одного вызова (до 1000 документов).
 
 ## <a name="unicode-encoding"></a>Кодировка Юникод
 

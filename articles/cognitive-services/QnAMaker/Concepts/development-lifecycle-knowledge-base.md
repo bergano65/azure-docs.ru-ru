@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 02/21/2019
+ms.date: 04/05/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: bacfb5fed4d72a7be2239ba97a68f15766b3ff59
-ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.openlocfilehash: 4acecb9d15f820ba092f36d8fa3ea204658d2dba
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56650451"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59276785"
 ---
 # <a name="knowledge-base-lifecycle-in-qna-maker"></a>Время существования базы знаний в QnA Maker
 QnA Maker лучше всего обучается на итеративных циклах изменения моделей, примерах высказываний, публикации содержимого и сборе данных из запросов к конечным точкам. 
@@ -44,7 +44,7 @@ QnA Maker лучше всего обучается на итеративных �
 
 Каждую из этих баз знаний можно тестировать отдельно. С помощью интерфейсов API можно выбрать тестовую версию базы знаний, указав флаг `isTest=true` в вызове generateAnswer.
 
-Узнайте, как [опубликовать базу знаний](../How-To/publish-knowledge-base.md).
+Узнайте, как [опубликовать базу знаний](../Quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base).
 
 ## <a name="monitor-usage"></a>Мониторинг использования
 Чтобы иметь возможность вести журнал чата службы, необходимо включить Application Insights при [создании службы QnA Maker](../How-To/set-up-qnamaker-service-azure.md).
@@ -56,7 +56,7 @@ QnA Maker лучше всего обучается на итеративных �
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Оценка достоверности](./confidence-score.md)
+> [Оценка надежности](./confidence-score.md)
 
 ## <a name="see-also"></a>См. также 
 

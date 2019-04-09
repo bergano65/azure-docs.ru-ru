@@ -15,17 +15,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/12/2018
 ms.author: szark
-ms.openlocfilehash: c2c02283518bab0723b7bc815f034c4324c944e1
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: ecd30d30434d91893102ce6ec0df21daa84b677c
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51232898"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59276866"
 ---
 # <a name="prepare-an-oracle-linux-virtual-machine-for-azure"></a>Подготовка виртуальной машины Oracle Linux для Azure
 [!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Необходимые компоненты
 В этой статье предполагается, что вы уже установили операционную систему Oracle Linux на виртуальный жесткий диск. Существует несколько средств для создания VHD-файлов, например решение для виртуализации, такое как Hyper-V. Инструкции см. в разделе [Установка роли Hyper-V и настройка виртуальной машины](https://technet.microsoft.com/library/hh846766.aspx).
 
 ### <a name="oracle-linux-installation-notes"></a>Замечания по установке Oracle Linux
@@ -37,7 +37,7 @@ ms.locfileid: "51232898"
 * NUMA не поддерживается для виртуальных машин большего размера из-за ошибки ядра Linux в версиях ниже 2.6.37. Эта проблема влияет в основном на дистрибутивы, в которых используется исходное ядро Red Hat 2.6.32. При ручной установке агента Azure Linux (waagent) NUMA автоматически отключается в конфигурации GRUB для ядра Linux. Дополнительные сведения описаны далее.
 * Не настраивайте раздел подкачки на диске с ОС. Можно настроить агент Linux для создания файла подкачки на временном диске ресурсов.  Дополнительные сведения описаны далее.
 * Размер виртуальной памяти всех VHD в Azure должен быть округлен до 1 МБ. При конвертации диска в формате RAW в виртуальный жесткий диск убедитесь, что размер диска RAW в несколько раз превышает 1 МБ. См. дополнительные сведения в [примечаниях по установке Linux](create-upload-generic.md#general-linux-installation-notes).
-* Убедитесь, что `Addons` включен репозиторий. Измените файл `/etc/yum.repo.d/public-yum-ol7.repo` (Oracle Linux 6) или `enabled=0` (Oracle Linux) и замените в нем строку `enabled=1` строкой **в разделе `/etc/yum.repo.d/public-yum-ol6.repo`[ol6_addons]** или **[ol7_addons]**.
+* Убедитесь, что `Addons` включен репозиторий. Измените файл `/etc/yum.repos.d/public-yum-ol6.repo`(Oracle Linux 6) или `/etc/yum.repos.d/public-yum-ol7.repo`(Oracle Linux 7) и измените строку `enabled=0` для `enabled=1` под **[ol6_addons]** или **[ol7_addons]** в этом файле.
 
 ## <a name="oracle-linux-64"></a>Oracle Linux 6.4+
 Необходимо выполнить определенные действия с конфигурацией операционной системы, чтобы виртуальная машина запускалась в среде Azure.
@@ -183,6 +183,6 @@ ms.locfileid: "51232898"
         # logout
 15. В диспетчере Hyper-V выберите **Действие -> Завершение работы**. Виртуальный жесткий диск Linux готов к передаче в Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь вы можете создавать новые виртуальные машины в Azure с помощью VHD-файла системы Oracle Linux. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).
 

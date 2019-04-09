@@ -9,12 +9,12 @@ ms.subservice: content-moderator
 ms.topic: sample
 ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 4049211acd760f74fbb4a725f878e5c51acbe7dd
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: f2b5fb5c44cbb2e0d766c49ed6b715484c22f62e
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55875949"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58756742"
 ---
 # <a name="content-moderator-net-sdk-samples"></a>Примеры использования пакета SDK для .NET с Content Moderator
 
@@ -31,7 +31,7 @@ ms.locfileid: "55875949"
 > Существует максимальное ограничение в **5 списков изображений**, каждый из которых может содержать **не более 10 000 изображений**.
 >
 
-- **Модерация текста**. [Проверка текста на наличие ненормативной лексики и персональных данных (PII)](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/blob/master/ContentModerator/TextModeration/Program.cs). См. [краткое руководство](text-moderation-quickstart-dotnet.md).
+- **Модерация текста**. [Проверка текста на содержание ненормативной лексики и личных данных](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/blob/master/ContentModerator/TextModeration/Program.cs). См. [краткое руководство](text-moderation-quickstart-dotnet.md).
 - **Настраиваемые термины**. [Модерация с помощью настраиваемых списков терминов](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/blob/master/ContentModerator/TermListManagement/Program.cs). См. [краткое руководство](term-lists-quickstart-dotnet.md).
 
 > [!NOTE]

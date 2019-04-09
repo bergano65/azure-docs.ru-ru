@@ -16,12 +16,12 @@ ms.topic: overview
 ms.date: 1/11/2019
 ms.author: msangapu;yili
 ms.custom: seodec18
-ms.openlocfilehash: 161b2054d690a2e609085852aa7caf2f02366f69
-ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.openlocfilehash: 22c4096711bbc1d47ff6684e38ac829d77681a9f
+ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57215665"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58793447"
 ---
 # <a name="introduction-to-azure-app-service-on-linux"></a>Вводные сведения о службе приложений Azure на платформе Linux
 
@@ -73,7 +73,7 @@ ms.locfileid: "57215665"
 
 Служба приложений на платформе Linux поддерживается только в рамках планов службы приложений ["Базовый", "Стандартный" и "Премиум"](https://azure.microsoft.com/pricing/details/app-service/plans/). Уровни ["Бесплатный" и "Общий"](https://azure.microsoft.com/pricing/details/app-service/plans/) недоступны. Вы не можете создавать веб-приложения для контейнеров в рамках плана службы приложений, в котором уже размещены веб-приложения под управлением платформ, отличных от Linux.  
 
-Также сейчас недопустимо комбинировать приложения Windows и Linux в одной и той же группе ресурсов.
+Текущие ограничения не позволяют комбинировать приложения Windows и Linux в одной и той же группе ресурсов.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

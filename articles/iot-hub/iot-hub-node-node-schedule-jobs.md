@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 10/06/2017
-ms.openlocfilehash: 5f0198581c83522f42a6742a0578adfd6c0cb781
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 1f357ed60e9d9f020d5a80ac9349eb65577521e7
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57535773"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59267605"
 ---
 # <a name="schedule-and-broadcast-jobs-node"></a>Планирование и трансляция заданий (Node)
 
@@ -26,30 +26,33 @@ ms.locfileid: "57535773"
 * Обновление тегов
 * Вызов прямых методов
 
-По сути, задание включает одно из этих действий, отслеживая ход его выполнения на наборе устройств (определяется запросом двойника устройства).  Например, с помощью задания внутреннее приложение может вызывать метод перезагрузки на 10 000 устройств, определенных запросом двойника устройства и запланированных в будущем.  Затем это приложение может отследить ход выполнения задания по мере получения и выполнения метода Reboot на каждом из этих устройств.
+По сути, задание включает одно из этих действий, отслеживая ход его выполнения на наборе устройств (определяется запросом двойника устройства).  Например, с помощью задания внутреннее приложение может вызывать метод перезагрузки на 10 000 устройств, определенных запросом двойника устройства и запланированных в будущем. Затем это приложение может отследить ход выполнения задания по мере получения и выполнения метода Reboot на каждом из этих устройств.
 
 Дополнительные сведения о каждой из этих возможностей см. в следующих статьях:
 
-* Двойник устройства и свойства: [Начало работы с двойниками устройств][lnk-get-started-twin] и [Руководство. Настройка устройств из внутренней службы][lnk-twin-props].
-* Прямые методы: [Общие сведения о прямых методах и информация о вызове этих методов из Центра Интернета вещей][lnk-dev-methods] и [Краткое руководство по управлению подключенным к Центру Интернета вещей устройством][lnk-c2d-methods]
+* Двойник устройства и свойства: [Начало работы с двойниками устройств](iot-hub-node-node-twin-getstarted.md) и [руководства: Практическое использование свойств двойников устройств](tutorial-device-twins.md)
+
+* Прямые методы: [Руководство разработчика для центра Интернета вещей — прямые методы](iot-hub-devguide-direct-methods.md) и [учебник: прямые методы](quickstart-control-device-node.md)
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 
 В этом учебнике описаны следующие процедуры.
 
 * Создание приложения Node.js имитации устройства с прямым методом, который позволяет выполнить действие **lockDoor** путем вызова из серверной части решения.
+
 * Создание консольного приложения Node.js, которое с помощью задания вызывает в приложении имитации устройства прямой метод **lockDoor** и обновляет требуемые свойства с помощью задания устройства.
 
 По завершении работы с этим руководством у вас будет два приложения Node.js:
 
-**simDevice.js**, которое подключается к Центру Интернета вещей с удостоверением устройства и получает прямой метод **lockDoor**.
+* **simDevice.js**, которое подключается к Центру Интернета вещей с удостоверением устройства и получает прямой метод **lockDoor**.
 
-**scheduleJobService.js**, которое вызывает прямой метод в приложении имитации устройства и обновляет требуемые свойства двойника устройства с помощью задания.
+* **scheduleJobService.js**, которое вызывает прямой метод в приложении имитации устройства и обновляет требуемые свойства двойника устройства с помощью задания.
 
 Для работы с этим учебником требуется:
 
-* Node.js 4.0.x или более поздней версии. <br/>  В статье [Prepare your development environment][lnk-dev-setup] (Подготовка среды разработки) описывается, как установить Node.js для работы с этим учебником в ОС Windows или Linux.
-* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись][lnk-free-trial] всего за несколько минут.
+* Версия node.js 4.0.x или более поздней версии [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) описывается установка Node.js в этом руководстве в ОС Windows или Linux.
+
+* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -62,19 +65,23 @@ ms.locfileid: "57535773"
 [!INCLUDE [iot-hub-get-started-create-device-identity](../../includes/iot-hub-get-started-create-device-identity.md)]
 
 ## <a name="create-a-simulated-device-app"></a>Создание приложения виртуального устройства
+
 В этом разделе вы создадите консольное приложение Node.js, отвечающее на прямой метод, вызванный из облака, который активирует имитированный метод **lockDoor**.
 
 1. Создайте пустую папку с именем **simDevice**.  В папке **simDevice** создайте файл package.json, используя следующую команду в командной строке.  Примите значения по умолчанию:
-   
-    ```
-    npm init
-    ```
+
+   ```
+   npm init
+   ```
+
 2. В командной строке в папке **simDevice** выполните следующую команду, чтобы установить пакет SDK для устройств **azure-iot-device** и пакет **azure-iot-device-mqtt**.
    
-    ```
-    npm install azure-iot-device azure-iot-device-mqtt --save
-    ```
+   ```
+   npm install azure-iot-device azure-iot-device-mqtt --save
+   ```
+
 3. В текстовом редакторе создайте файл **simDevice.js** в папке **simDevice**.
+
 4. Добавьте следующие инструкции require в начало файла **simDevice.js**:
    
     ```
@@ -83,12 +90,14 @@ ms.locfileid: "57535773"
     var Client = require('azure-iot-device').Client;
     var Protocol = require('azure-iot-device-mqtt').Mqtt;
     ```
+
 5. Добавьте переменную **connectionString**, чтобы создать с ее помощью экземпляр **клиента**.  
    
     ```
     var connectionString = 'HostName={youriothostname};DeviceId={yourdeviceid};SharedAccessKey={yourdevicekey}';
     var client = Client.fromConnectionString(connectionString, Protocol);
     ```
+
 6. Добавьте следующую функцию для обработки метода **lockDoor**.
    
     ```
@@ -106,39 +115,44 @@ ms.locfileid: "57535773"
         console.log('Locking Door!');
     };
     ```
+
 7. Добавьте следующий код для регистрации обработчика для метода **lockDoor**.
-   
-    ```
-    client.open(function(err) {
+
+   ```
+   client.open(function(err) {
         if (err) {
             console.error('Could not connect to IotHub client.');
         }  else {
             console.log('Client connected to IoT Hub. Register handler for lockDoor direct method.');
             client.onDeviceMethod('lockDoor', onLockDoor);
         }
-    });
-    ```
+   });
+   ```
+
 8. Сохраните и закройте файл **simDevice.js**.
 
 > [!NOTE]
 > Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повторных попыток (например, с экспоненциальной задержкой), как указано в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
-> 
-> 
+>
 
 ## <a name="schedule-jobs-for-calling-a-direct-method-and-updating-a-device-twins-properties"></a>Планирование заданий для вызова прямого метода и обновления свойств двойника устройства
+
 В этом разделе создается консольное приложение Node.js, которое инициирует удаленное действие **lockDoor** на устройстве с помощью прямого метода и обновляет свойства двойника устройства.
 
 1. Создайте пустую папку с именем **scheduleJobService**.  В папке **scheduleJobService** создайте файл package.json, используя следующую команду в командной строке.  Примите значения по умолчанию:
-   
+
     ```
     npm init
     ```
+
 2. В командной строке в папке **scheduleJobService** выполните следующую команду, чтобы установить пакет SDK для устройств **azure-iothub** и пакет **azure-iot-device-mqtt**.
    
     ```
     npm install azure-iothub uuid --save
     ```
+
 3. В текстовом редакторе создайте файл **scheduleJobService.js** в папке **scheduleJobService**.
+
 4. Добавьте следующие инструкции require в начале файла **dmpatterns_gscheduleJobServiceetstarted_service.js**:
    
     ```
@@ -147,6 +161,7 @@ ms.locfileid: "57535773"
     var uuid = require('uuid');
     var JobClient = require('azure-iothub').JobClient;
     ```
+
 5. Добавьте следующие объявления переменных и замените значения заполнителей:
    
     ```
@@ -156,6 +171,7 @@ ms.locfileid: "57535773"
     var maxExecutionTimeInSeconds =  300;
     var jobClient = JobClient.fromConnectionString(connectionString);
     ```
+
 6. Добавьте следующую функцию, которая используется, чтобы отслеживать выполнение задания:
    
     ```
@@ -175,6 +191,7 @@ ms.locfileid: "57535773"
         }, 5000);
     }
     ```
+
 7. Добавьте следующий код, чтобы запланировать задание, которое вызывает метод устройства:
    
     ```
@@ -205,14 +222,15 @@ ms.locfileid: "57535773"
         }
     });
     ```
+
 8. Добавьте следующий код, чтобы запланировать задание, которое обновляет двойник устройства:
    
     ```
     var twinPatch = {
-       etag: '*', 
+       etag: '*',
        properties: {
            desired: {
-               building: '43', 
+               building: '43',
                floor: 3
            }
        }
@@ -240,9 +258,11 @@ ms.locfileid: "57535773"
         }
     });
     ```
+
 9. Сохраните и закройте файл **scheduleJobService.js**.
 
 ## <a name="run-the-applications"></a>Запуск приложений
+
 Теперь все готово к запуску приложений.
 
 1. В командной строке в папке **simDevice** выполните следующую команду, чтобы начать прослушивание прямого метода перезагрузки:
@@ -250,27 +270,19 @@ ms.locfileid: "57535773"
     ```
     node simDevice.js
     ```
+
 2. В командной строке в папке **scheduleJobService** выполните следующую команду, чтобы активировать задачи для блокировки дверей и обновления двойника.
    
     ```
     node scheduleJobService.js
     ```
+
 3. В консоли отобразится ответ устройства на прямой метод.
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 В этом учебнике описано использование задания для планирования прямого метода на устройстве и обновления свойств двойника устройства.
 
-Чтобы продолжить знакомство с Центром Интернета вещей и шаблонами управления устройствами, такими как удаленное обновление встроенного ПО, см. следующие материалы:
+Чтобы продолжить знакомство с центром Интернета вещей и шаблонами управления устройствами, такими как удаленное обновление встроенного по воздуху по, см. в разделе [руководства: Как обновить встроенное по](tutorial-firmware-update.md).
 
-[Руководство по реализации процесса обновления встроенного ПО][lnk-fwupdate]
-
-Чтобы продолжить знакомство с Центром Интернета вещей, см. сведения в статье [Приступая к работе с архитектурой Azure IoT Edge в Linux][lnk-iot-edge].
-
-[lnk-get-started-twin]: iot-hub-node-node-twin-getstarted.md
-[lnk-twin-props]: tutorial-device-twins.md
-[lnk-c2d-methods]: quickstart-control-device-node.md
-[lnk-dev-methods]: iot-hub-devguide-direct-methods.md
-[lnk-fwupdate]: tutorial-firmware-update.md
-[lnk-iot-edge]: ../iot-edge/tutorial-simulate-device-linux.md
-[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md
-[lnk-free-trial]: https://azure.microsoft.com/pricing/free-trial/
+Чтобы продолжить знакомство с центром Интернета вещей, см. в разделе [Приступая к работе с Azure IoT Edge](../iot-edge/tutorial-simulate-device-linux.md).

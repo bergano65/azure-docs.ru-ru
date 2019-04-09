@@ -11,12 +11,12 @@ ms.date: 01/15/2019
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: 6ab5ee923cc439901149a26d7af4b57f9933ee19
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.openlocfilehash: 7fd4fd65b48c199527d9172b7cea89010c962f5b
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58905891"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59261043"
 ---
 # <a name="create-and-configure-a-self-hosted-integration-runtime"></a>Создание и настройка локальной среды выполнения интеграции
 Среда выполнения интеграции (IR) — это инфраструктура вычислений, которую Фабрика данных Azure использует для обеспечения интеграции данных в разных сетевых средах. Дополнительные сведения о среде выполнения интеграции см. [в этом обзоре](concepts-integration-runtime.md).
@@ -39,7 +39,9 @@ ms.locfileid: "58905891"
 3. Получите ключ проверки подлинности и зарегистрируйте локальную среду выполнения интеграции с помощью этого ключа. Ниже приведен пример скрипта PowerShell.
 
     ```powershell
-    Get-AzDataFactoryV2IntegrationRuntimeKey -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $selfHostedIntegrationRuntime.  
+
+    Get-AzureRmDataFactoryV2IntegrationRuntimeKey -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $selfHostedIntegrationRuntimeName  
+
     ```
 
 ## <a name="setting-up-a-self-hosted-ir-on-an-azure-vm-by-using-an-azure-resource-manager-template-automation"></a>Настройка локальной среды IR на виртуальной машине Azure с помощью шаблона Azure Resource Manager (автоматизация)
@@ -110,7 +112,7 @@ ms.locfileid: "58905891"
 
 
 ## <a name="high-availability-and-scalability"></a>Высокий уровень доступности и масштабируемости
-Локальную среду выполнения интеграции можно связывать с несколькими локальными компьютерами. Такие компьютеры называются узлами. Для локальной среды выполнения интеграции можно использовать до четырех узлов. Ниже перечислены преимущества связывания нескольких узлов (локальных компьютеров с установленным шлюзом) с логическим шлюзом.
+Локальная среда выполнения интеграции может связываться с несколькими локальных компьютеров или виртуальных машин в Azure. Такие компьютеры называются узлами. Для локальной среды выполнения интеграции можно использовать до четырех узлов. Ниже перечислены преимущества связывания нескольких узлов (локальных компьютеров с установленным шлюзом) с логическим шлюзом.
 * Высокая доступность локальной среды выполнения интеграции при использовании нескольких узлов (до 4) избавляет от единой точки отказа в решении больших данных или облачных данных в Фабрике данных Azure.
 * Повышение производительности и пропускной способности при перемещении данных между локальными и облачными хранилищами данных. Узнайте больше о [сравнении производительности](copy-activity-performance.md).
 

@@ -6,25 +6,25 @@ documentationcenter: ''
 author: kraigb
 manager: douge
 ms.assetid: 7d069d86-660f-4c94-b6e3-0c0f38c52d0e
-ms.service: azure
+ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/25/2019
 ms.author: kraigb
-ms.openlocfilehash: 4186abd215509e0ae9ced50340fb1f3d3b5f9676
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: b8c21b908ca9162a7e44c7af1e222babc6ee1eb7
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57765923"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59265616"
 ---
 # <a name="your-profile-and-user-id-for-azure-notebooks"></a>Профиль и идентификатор пользователя в службе "Записные книжки Azure"
 
 В эффективном пространстве для совместной работы службы "Записные книжки Azure" ваш профиль пользователя представляет публичный образ для других пользователей:
 
-[![Страница профиля в службе "Записные книжки Azure"](media/accounts/profile-page.png)](media/accounts/profile-page.png#lightbox)
+[![An странице профиля записных книжек Azure](media/accounts/profile-page.png)](media/accounts/profile-page.png#lightbox)
 
 Идентификатор пользователя является частью URL-адреса, используемого для предоставления общего доступа к проектам и записным книжкам. Ниже перечислены различные шаблоны URL-адресов:
 
@@ -57,7 +57,7 @@ ms.locfileid: "57765923"
 
 Чтобы изменить профиль, воспользуйтесь командой **Edit Profile Information** (Изменить сведения профиля) на странице профиля. Ниже приведены разделы профиля.
 
-| Раздел | Оглавление |
+| Раздел | Содержимое |
 | --- | --- |
 | Profile photo (Фотография профиля) | Изображение, отображаемое на странице профиля. |
 | Сведения об учетной записи | Отображаемое имя, идентификатор пользователя и публичная учетная запись электронной почты. Учетная запись электронной почты предоставляет другим пользователям способ связи с вами и может отличаться от почты [учетной записи](azure-notebooks-user-account.md), которую вы используете для входа в службу "Записные книжки Azure". |
@@ -69,4 +69,4 @@ ms.locfileid: "57765923"
 ## <a name="next-steps"></a>Дальнейшие действия  
 
 > [!div class="nextstepaction"]
-> [Руководство по созданию и запуску записной книжки Jupyter для выполнения линейной регрессии](tutorial-create-run-jupyter-notebook.md)
+> [Руководство по созданию выполнения записной книжки Jupyter для выполнения линейной регрессии](tutorial-create-run-jupyter-notebook.md)

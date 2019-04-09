@@ -1,72 +1,69 @@
 ---
-title: Руководство. Настройка Zscaler Two для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
+title: Учебник. Настройка Zscaler Two для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Zscaler два два.
 services: active-directory
 documentationcenter: ''
 author: zchia
 writer: zchia
 manager: beatrizd-msft
-ms.assetid: na
+ms.assetid: 0a250fcd-6ca1-47c2-a780-7a6278186a69
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/03/2019
+ms.date: 03/27/2019
 ms.author: v-ant-msft
-ms.openlocfilehash: 797804be2588fb5c04c052c6f14c5b2b51146c32
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d7b0828dc4cb37afa9dda647c4407b4039ca4f73
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58106514"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59273572"
 ---
-# <a name="tutorial-configure-zscaler-two-for-automatic-user-provisioning"></a>Руководство. Настройка Zscaler Two для автоматической подготовки пользователей
+# <a name="tutorial-configure-zscaler-two-for-automatic-user-provisioning"></a>Учебник. Настройка Zscaler Two для автоматической подготовки пользователей
 
 Цель данного учебника — продемонстрировать действия, выполняемые в Zscaler Two и Azure Active Directory (Azure AD) для настройки Azure AD настроить автоматическую подготовку и отмену подготовки пользователей и групп в Zscaler Two.
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../active-directory-saas-app-provisioning.md).
-> 
+>
+
 > Сейчас этот соединитель доступен в общедоступной предварительной версии. Дополнительные сведения о общие Microsoft Azure условия использования предварительных версий функций, см. в разделе [дополнительным условиям использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
-*   клиент Azure AD;
-*   Клиент Zscaler Two
-*   Учетную запись пользователя в Zscaler Two с разрешениями администратора.
+* клиент Azure AD;
+* Клиент Zscaler Two
+* Учетную запись пользователя в Zscaler Two с разрешениями администратора.
 
 > [!NOTE]
 > Интеграция подготовки Azure AD зависит от двух API SCIM Zscaler, которая доступна разработчикам Zscaler Two для учетных записей с пакет предприятия.
 
 ## <a name="adding-zscaler-two-from-the-gallery"></a>Добавление Zscaler Two из коллекции
+
 Перед настройкой Zscaler Two для автоматической подготовки пользователей в Azure AD, необходимо добавить Zscaler Two из коллекции приложений Azure AD, в список управляемых приложений SaaS.
 
 **Чтобы добавить Zscaler Two из коллекции приложений Azure AD, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка Azure Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите к элементу **Корпоративные приложения** > **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Раздел "Корпоративные приложения"][2]
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить Zscaler Two, щелкните **новое приложение** кнопку в верхней части диалогового окна.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Создать приложение"][3]
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Zscaler Two**.
+4. В поле поиска введите **Zscaler Two**, выберите **Zscaler Two** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Zscaler Two Подготовка](./media/zscaler-two-provisioning-tutorial/app-search.png)
-
-5. В области результатов выберите **Zscaler Two**, а затем нажмите кнопку **добавить** кнопку, чтобы добавить Zscaler Two в список приложений SaaS.
-
-    ![Zscaler Two Подготовка](./media/zscaler-two-provisioning-tutorial/app-search-results.png)
-
-    ![Zscaler Two Подготовка](./media/zscaler-two-provisioning-tutorial/app-creation.png)
+    ![Zscaler Two в списке результатов](common/search-new-app.png)
 
 ## <a name="assigning-users-to-zscaler-two"></a>Назначение пользователей в Zscaler Two
 
@@ -74,13 +71,13 @@ ms.locfileid: "58106514"
 
 Перед настройкой и включением автоматической подготовки пользователей, следует решить, какие пользователи или группы в Azure AD требуется доступ к Zscaler Two. Сделав это, можно назначить этих пользователей и групп в Zscaler Two, следуя инструкциям ниже:
 
-*   [Назначение корпоративному приложению пользователя или группы](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
+* [Назначение пользователя или группы корпоративному приложению](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
 
 ### <a name="important-tips-for-assigning-users-to-zscaler-two"></a>Важные рекомендации по назначению пользователей в Zscaler Two
 
-*   Рекомендуется одного пользователя Azure AD назначается Zscaler Two для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
+* Рекомендуется одного пользователя Azure AD назначается Zscaler Two для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
-*   При назначении пользователя в Zscaler Two, необходимо выбрать действительную роль конкретного приложения (если доступно) в диалоговом окне назначения. Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя в Zscaler Two, необходимо выбрать действительную роль конкретного приложения (если доступно) в диалоговом окне назначения. Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
 
 ## <a name="configuring-automatic-user-provisioning-to-zscaler-two"></a>Настройка автоматической подготовки пользователей в Zscaler Two
 
@@ -91,11 +88,13 @@ ms.locfileid: "58106514"
 
 ### <a name="to-configure-automatic-user-provisioning-for-zscaler-two-in-azure-ad"></a>Настройка автоматической подготовки пользователей для Zscaler Two в Azure AD.
 
-1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory > Корпоративные приложения > Все приложения**.
+1. Войдите в [портала Azure](https://portal.azure.com) и выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **Zscaler Two**.
 
-2. В списке приложений SaaS выберите Zscaler Two.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Zscaler Two Подготовка](./media/zscaler-two-provisioning-tutorial/app-instance-search.png)
+2. Из списка приложений выберите **Zscaler Two**.
+
+    ![Ссылка на Zscaler Two в списке приложений](common/all-applications.png)
 
 3. Выберите вкладку **Подготовка**.
 
@@ -107,25 +106,25 @@ ms.locfileid: "58106514"
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **секретный токен** учетной Zscaler Two, как описано на шаге 6.
 
-6. Для получения **URL-адрес клиента** и **секретный токен**, перейдите к **Администрирование > Параметры проверки подлинности** в Zscaler Two пользовательского интерфейса портала и щелкнуть  **SAML** под **тип проверки подлинности**. 
+6. Для получения **URL-адрес клиента** и **секретный токен**, перейдите к **Администрирование > Параметры проверки подлинности** в Zscaler Two пользовательского интерфейса портала и щелкнуть  **SAML** под **тип проверки подлинности**.
 
     ![Zscaler Two Подготовка](./media/zscaler-two-provisioning-tutorial/secret-token-1.png)
-    
-    Щелкните **настроить SAML** открыть **конфигурации SAML** параметры. 
+
+    Щелкните **настроить SAML** открыть **конфигурации SAML** параметры.
 
     ![Zscaler Two Подготовка](./media/zscaler-two-provisioning-tutorial/secret-token-2.png)
-    
+
     Выберите **подготовки Enable SCIM-Based** извлекаемого **базовый URL-адрес** и **маркера носителя**, затем сохраните параметры. Копировать **базовый URL-адрес** для **URL-адрес клиента** и **маркера носителя** для **секретный токен** на портале Azure.
 
 7. После заполнения полей, указанных в шаге 5, щелкните **проверить подключение** и убедиться, что Azure AD может подключиться к Zscaler Two. Если подключение отсутствует, убедитесь, что учетная Zscaler Two запись имеет разрешения администратора и повторите попытку.
 
     ![Zscaler Two Подготовка](./media/zscaler-two-provisioning-tutorial/test-connection.png)
-    
+
 8. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
 
     ![Zscaler Two Подготовка](./media/zscaler-two-provisioning-tutorial/notification.png)
 
-9. Выберите команду **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать пользователей Azure Active Directory с Zscaler Two**.
 
@@ -168,7 +167,7 @@ ms.locfileid: "58106514"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
+* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
 
 <!--Image references-->
 [1]: ./media/zscaler-two-provisioning-tutorial/tutorial-general-01.png

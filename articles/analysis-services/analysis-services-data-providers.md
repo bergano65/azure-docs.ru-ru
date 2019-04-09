@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 03/12/2019
+ms.date: 04/05/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 3baccb6e0f5eef270dc8f0e06a8aa6b748fa4028
-ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
-ms.translationtype: HT
+ms.openlocfilehash: 334859aecf3a5f7a5678c0af656c6837d5661dac
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59056271"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59270869"
 ---
 # <a name="client-libraries-for-connecting-to-azure-analysis-services"></a>Клиентские библиотеки для подключения к службам Azure Analysis Services
 
@@ -21,7 +21,7 @@ ms.locfileid: "59056271"
 
 ## <a name="download-the-latest-client-libraries-windows-installer"></a>Скачивание последних версий клиентских библиотек (установщик Windows)  
 
-|Download (Скачать)  |Версия продукта  | 
+|Загрузить  |Версия продукта  | 
 |---------|---------|
 |[MSOLAP (amd64)](https://go.microsoft.com/fwlink/?linkid=829576)    |    15.0.15.26    |
 |[MSOLAP (x86)](https://go.microsoft.com/fwlink/?linkid=829575)     |    15.0.15.26      |
@@ -32,10 +32,10 @@ ms.locfileid: "59056271"
 
 Клиентские библиотеки AMO (объекты управления Analysis Services) и ADOMD доступны в качестве устанавливаемых пакетов на сайте [NuGet.org](https://www.nuget.org/). Мы рекомендуем использовать ссылки на пакеты NuGet вместо установщика Windows. 
 
-|Package  | Версия продукта  | 
+|Пакет  | Версия продукта  | 
 |---------|---------|
-|[AMO](https://www.nuget.org/packages/Microsoft.AnalysisServices.retail.amd64/)    |    15.15.0.0     |
-|[ADOMD](https://www.nuget.org/packages/Microsoft.AnalysisServices.AdomdClient.retail.amd64/)     |   15.15.0.0      |
+|[AMO](https://www.nuget.org/packages/Microsoft.AnalysisServices.retail.amd64/)    |    15.17.1     |
+|[ADOMD](https://www.nuget.org/packages/Microsoft.AnalysisServices.AdomdClient.retail.amd64/)     |   15.17.1      |
 
 Сборки пакетов NuGet AssemblyVersion следуют семантической организации номера версии: "Главная.Второстепенная.Исправление". Ссылки на пакеты NuGet загружают ожидаемую версию, даже при наличии другой версии в глобальном кэше сборок (в результате установки MSI). Номер исправления увеличивается с каждым выпуском. Версии ADOMD и AMO синхронизируются.
 

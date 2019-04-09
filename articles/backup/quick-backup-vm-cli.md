@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 01/31/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 8a7c722944aacaca9780939a1726c6e47be79be1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d3ed9370726d35f67edfbcf32dfd25e74d7865e5
+ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58112047"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58621572"
 ---
 # <a name="back-up-a-virtual-machine-in-azure-with-the-cli"></a>Резервное копирование виртуальной машины в Azure с помощью интерфейса командной строки
 Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. Для защиты данных можно создавать архивы с регулярным интервалом. Служба Azure Backup создает точки восстановления, которые могут храниться в геоизбыточных хранилищах служб восстановления. В этой статье объясняется, как создать резервную копию виртуальной машины в Azure с помощью Azure CLI. Эти действия также можно выполнить с помощью [Azure PowerShell](quick-backup-vm-powershell.md) или [портала Azure](quick-backup-vm-portal.md).
@@ -43,7 +43,14 @@ az backup vault create --resource-group myResourceGroup \
     --location eastus
 ```
 
-По умолчанию в качестве хранилища служб восстановления задано геоизбыточное хранилище. Геоизбыточное хранилище гарантирует, что данные резервного копирования реплицируются во вторичный регион, который находится в сотнях километров от первичного региона.
+По умолчанию в качестве хранилища служб восстановления задано геоизбыточное хранилище. Геоизбыточное хранилище гарантирует, что данные резервного копирования реплицируются во вторичный регион, который находится в сотнях километров от первичного региона. Если вам необходимо изменить параметр избыточности хранилища, используйте командлет [az backup vault backup-properties set](https://docs.microsoft.com/cli/azure/backup/vault/backup-properties?view=azure-cli-latest#az-backup-vault-backup-properties-set).
+
+```azurecli
+az backup vault backup-properties set \
+    --name myRecoveryServicesVault  \
+    --resource-group myResourceGroup \
+    --backup-storage-redundancy "LocallyRedundant/GeoRedundant" 
+```
 
 
 ## <a name="enable-backup-for-an-azure-vm"></a>Включение резервного копирования для виртуальной машины Azure

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/02/2018
 ms.author: cephalin
 ms.custom: include file
-ms.openlocfilehash: e8888a0505a3a38d2844f82c0f7fff255d05353d
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 4f061dc66829c49fba6722215dc36ed2ce6464ee
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58261424"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58919346"
 ---
 В Azure Cloud Shell настройте учетные данные развертывания с помощью команды [`az webapp deployment user set`](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az-webapp-deployment-user-set). Пользователь развертывания необходим для развертывания FTP и локального репозитория Git в веб-приложении. Имя пользователя и пароль представляют уровень учетной записи. _Они отличаются от учетных данных подписки Azure._
 
@@ -23,7 +23,7 @@ ms.locfileid: "58261424"
 az webapp deployment user set --user-name <username> --password <password>
 ```
 
-Вы получите выходные данные JSON с паролем, обозначенным как `null`. Если появляется сообщение об ошибке `'Conflict'. Details: 409`, измените имя пользователя. Если появляется сообщение об ошибке ` 'Bad Request'. Details: 400`, используйте более надежный пароль.
+Вы получите выходные данные JSON с паролем, обозначенным как `null`. Если появляется сообщение об ошибке `'Conflict'. Details: 409`, измените имя пользователя. Если появляется сообщение об ошибке ` 'Bad Request'. Details: 400`, используйте более надежный пароль. При перемещениях в локальный репозиторий Git имя пользователя для развертывания не должно содержать символ "@".
 
 Это развертывание настраивается только один раз. Его можно использовать для всех развертываний Azure.
 

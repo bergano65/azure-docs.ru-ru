@@ -9,11 +9,11 @@ ms.date: 03/21/2019
 ms.author: cbrooks
 ms.subservice: common
 ms.openlocfilehash: 6d6ca1fe1256f1571079027ebd299492bfa62f41
-ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
-ms.translationtype: HT
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59057393"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59280746"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -55,7 +55,7 @@ ms.locfileid: "59057393"
 
 Вы можете управлять сетевыми правилами доступа по умолчанию для учетных записей хранения с помощью портала Azure, PowerShell или CLI версии 2.
 
-#### <a name="azure-portal"></a>Портал Azure
+#### <a name="azure-portal"></a>портале Azure
 
 1. Перейдите к учетной записи хранения, которую нужно защитить.
 
@@ -126,7 +126,7 @@ ms.locfileid: "59057393"
 > [!NOTE]
 > Конечные точки службы не применяются к трафику за пределами региона виртуальной сети и заданного связанного региона. Сетевые правила, предоставляющие доступ к учетным записям хранения из виртуальных сетей, применяются только в основном регионе учетной записи хранения или в заданном связанном регионе.
 
-### <a name="required-permissions"></a>Необходимые разрешения
+### <a name="required-permissions"></a>Требуемые разрешения
 
 Чтобы применить правило виртуальной сети к учетной записи хранения, у пользователя должны быть соответствующие разрешения для добавляемых подсетей. Это разрешение *Join Service to a Subnet* (Добавить службу к подсети), включенное во встроенную роль *Участник учетных записей хранения*. Его также можно добавить к определениям пользовательских ролей.
 
@@ -136,7 +136,7 @@ ms.locfileid: "59057393"
 
 Правилами виртуальных сетей для учетных записей хранения можно управлять с помощью портала Azure, PowerShell или CLI версии 2.
 
-#### <a name="azure-portal"></a>Портал Azure
+#### <a name="azure-portal"></a>портале Azure
 
 1. Перейдите к учетной записи хранения, которую нужно защитить.
 
@@ -247,7 +247,7 @@ ms.locfileid: "59057393"
 
 Правилами IP-сети для учетных записей хранения можно управлять с помощью портала Azure, PowerShell или CLI версии 2.
 
-#### <a name="azure-portal"></a>Портал Azure
+#### <a name="azure-portal"></a>портале Azure
 
 1. Перейдите к учетной записи хранения, которую нужно защитить.
 
@@ -347,9 +347,9 @@ ms.locfileid: "59057393"
 
 При активном исключении **Разрешить доверенным службам Майкрософт...** доступ к учетной записи хранения предоставляется таким службам (при регистрации в вашей подписке):
 
-|Service|Имя поставщика ресурсов|Назначение|
+|Служба|Имя поставщика ресурсов|Цель|
 |:------|:---------------------|:------|
-|Служба архивации Azure|Microsoft.Backup|Резервное копирование и восстановление неуправляемых дисков в виртуальных машинах IAAS. (Не требуется для управляемых дисков.) [Узнайте больше](/azure/backup/backup-introduction-to-azure-backup).|
+|Azure Backup|Microsoft.Backup|Резервное копирование и восстановление неуправляемых дисков в виртуальных машинах IAAS. (Не требуется для управляемых дисков.) [Узнайте больше](/azure/backup/backup-introduction-to-azure-backup).|
 |Azure Data Box|Microsoft.DataBox|Включает Импорт данных в Azure с помощью Data Box. [Узнайте больше](/azure/databox/data-box-overview).|
 |Azure DevTest Labs|Microsoft.DevTestLab|Создание пользовательских образов и установка артефактов. [Узнайте больше](/azure/devtest-lab/devtest-lab-overview).|
 |Сетка событий Azure|Microsoft.EventGrid|Включение публикации событий в хранилище BLOB-объектов и предоставление службе "Сетка событий" разрешения на публикацию в хранилище очередей. См. дополнительные сведения о [событиях хранилища BLOB-объектов](/azure/event-grid/event-sources) и [публикации в хранилище очередей](/azure/event-grid/event-handlers).|
@@ -357,8 +357,8 @@ ms.locfileid: "59057393"
 |Azure HDInsight|Microsoft.HDInsight|Подготовьте исходные данные в файловой системы по умолчанию для нового кластера HDInsight. [Узнайте больше](https://azure.microsoft.com/en-us/blog/enhance-hdinsight-security-with-service-endpoints/).|
 |Azure Monitor|Microsoft.Insights|Позволяет записывать данные мониторинга в защищенную учетную запись. [Дополнительные сведения](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security).|
 |Сеть Azure|Microsoft.Networking|Хранение и анализ журналов сетевого трафика. [Узнайте больше](/azure/network-watcher/network-watcher-packet-capture-overview).|
-|Azure Site Recovery|Microsoft.SiteRecovery |Настройка аварийного восстановления путем включения репликации для виртуальных машин Azure IaaS. Эта процедура необходима при использовании учетных записей хранения кэша, источника или целевой учетной записи хранения со включенным брандмауэром.  [Узнайте больше](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication).|
-|Хранилище данных SQL Azure|Microsoft.Sql|Позволяет импортировать и экспортировать сценарии с использованием PolyBase. [Узнайте больше](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview).|
+|Служба Azure Site Recovery|Microsoft.SiteRecovery |Настройка аварийного восстановления путем включения репликации для виртуальных машин Azure IaaS. Эта процедура необходима при использовании учетных записей хранения кэша, источника или целевой учетной записи хранения со включенным брандмауэром.  [Узнайте больше](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication).|
+|Хранилище данных SQL Azure|Microsoft.Sql|Позволяет импортировать и экспортировать сценарии с использованием PolyBase. [Узнайте больше](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview).|
 
 ### <a name="storage-analytics-data-access"></a>Доступ к данным аналитики хранилища
 
@@ -368,7 +368,7 @@ ms.locfileid: "59057393"
 
 Исключениями из правил сети можно управлять с помощью портала Azure, PowerShell или Azure CLI v2.
 
-#### <a name="azure-portal"></a>Портал Azure
+#### <a name="azure-portal"></a>портале Azure
 
 1. Перейдите к учетной записи хранения, которую нужно защитить.
 

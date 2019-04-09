@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d81797f0d1e7f72842c3a5a127756b99bdc93992
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: 78b21e686d6ee6109ccf142dc4ca9956dc4d36ee
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59047812"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59278723"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-edigitalresearch"></a>Руководство. Интеграция Azure Active Directory с eDigitalResearch
 
@@ -35,12 +35,12 @@ ms.locfileid: "59047812"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 Чтобы настроить интеграцию Azure AD с eDigitalResearch, вам потребуется:
 
 - подписка Azure AD;
-- подписка на eDigitalResearch с поддержкой единого входа.
+- EDigitalResearch единого входа — подписка с поддержкой
 
 > [!NOTE]
 > Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
@@ -111,7 +111,7 @@ ms.locfileid: "59047812"
 
     ![Сведения о домене и URL-адресах единого входа приложения eDigitalResearch](./media/edigitalresearch-tutorial/tutorial_edigitalresearch_url.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<company-name>.edigitalresearch.com`
+    1. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<company-name>.edigitalresearch.com`
 
     2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company-name>.edigitalresearch.com/login/consume`
 
@@ -167,7 +167,7 @@ ms.locfileid: "59047812"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    Г. Нажмите кнопку **Создать**.
   
 ### <a name="create-an-edigitalresearch-test-user"></a>Создание тестового пользователя eDigitalResearch
 
@@ -208,7 +208,7 @@ ms.locfileid: "59047812"
 
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Тест единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

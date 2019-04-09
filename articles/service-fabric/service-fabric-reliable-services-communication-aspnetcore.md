@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 10/12/2018
 ms.author: vturecek
-ms.openlocfilehash: 98cc6ee2428523b93b42fca73daadc118103b7d7
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 5a4b7514005da9e9a998dba014fa0ea6c014397a
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58667488"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59268523"
 ---
 # <a name="aspnet-core-in-service-fabric-reliable-services"></a>ASP.NET Core в Service Fabric Reliable Services
 
@@ -134,7 +134,7 @@ protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceLis
 
 ### <a name="httpsys-in-a-stateful-service"></a>HttpSys в службе с отслеживанием состояния
 
-`HttpSysCommunicationListener` в настоящее время не предназначен для использования в службах с отслеживанием состояния из-за сложности с базовой функцией совместного использования портов *http.sys*. Дополнительные сведения о динамическом назначении портов HttpSys см. в следующем разделе. Для служб с отслеживанием состояния рекомендуемым веб-сервером является Kestrel.
+`HttpSysCommunicationListener` в настоящее время не предназначен для использования в службах с отслеживанием состояния из-за сложности с базовой *http.sys* функции совместного использования портов. Дополнительные сведения о динамическом назначении портов HttpSys см. в следующем разделе. Для служб с отслеживанием состояния рекомендуемым веб-сервером является Kestrel.
 
 ### <a name="endpoint-configuration"></a>Настройка конечной точки
 
@@ -369,7 +369,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 ### <a name="default-key-mapping"></a>Ключ сопоставления по умолчанию
-По умолчанию поставщик параметры конфигурации Service Fabric включает в себя имя пакета, имя раздела и имя свойства для формирования конфигурации asp.net core ключа, с помощью следующей функции:
+По умолчанию поставщик конфигурации Service Fabric включает в себя имя пакета, имя раздела и имя свойства для формирования конфигурации asp.net core ключа, с помощью следующей функции:
 ```csharp
 $"{this.PackageName}{ConfigurationPath.KeyDelimiter}{section.Name}{ConfigurationPath.KeyDelimiter}{property.Name}"
 ```

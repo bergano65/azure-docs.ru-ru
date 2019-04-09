@@ -5,14 +5,14 @@ services: container-registry
 author: dlepow
 ms.service: container-registry
 ms.topic: article
-ms.date: 03/14/2019
+ms.date: 04/03/2019
 ms.author: danlep
-ms.openlocfilehash: 0a4d9f355a5cdc92bab4491c08677042c42986cb
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 15b67218b129b5e017e67651587c389af412d7a1
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58517935"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59268435"
 ---
 # <a name="restrict-access-to-an-azure-container-registry-using-an-azure-virtual-network-or-firewall-rules"></a>Ограничение доступа к реестру контейнеров Azure с помощью виртуальной сети Azure или правила брандмауэра
 
@@ -29,6 +29,8 @@ ms.locfileid: "58517935"
 * Только **уровня "премиум"** реестр контейнеров можно настроить правила доступа к сети. Сведения об уровнях служб реестра, см. в разделе [SKU реестра контейнеров Azure](container-registry-skus.md). 
 
 * Только [службе Azure Kubernetes](../aks/intro-kubernetes.md) кластера или Azure [виртуальной машины](../virtual-machines/linux/overview.md) может использоваться в качестве узла для доступа к реестру контейнеров в виртуальной сети. *Другие службы Azure, включая экземпляры контейнеров Azure сейчас не поддерживаются.*
+
+* [Задачи ACR](container-registry-tasks-overview.md) операции не поддерживаются в реестр контейнеров, развернутых в виртуальной сети.
 
 * Каждый реестр поддерживает не более 100 правил виртуальной сети.
 

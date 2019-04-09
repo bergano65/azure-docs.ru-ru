@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: jeconnoc
-ms.openlocfilehash: 814ae0e79ac24d5b645c4bf107287ab1b8326ff4
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 2255004ae8cd92473b5fe71b44cccb79021a8bf7
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58121627"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59267152"
 ---
 # <a name="configuring-a-custom-domain-name-for-an-azure-cloud-service"></a>Настройка пользовательского доменного имени для облачной службы Azure
 При создании облачной службы Azure ей назначается поддомен **cloudapp.net**. Например, если имя облачной службы — contoso, пользователи будут иметь доступ к приложению по такому URL-адресу: http://contoso.cloudapp.net. Azure также назначает виртуальный IP-адрес.
@@ -64,11 +64,11 @@ ms.locfileid: "58121627"
 
 1. Чтобы найти доменное имя **.cloudapp.net** , назначенное для вашей облачной службы, используйте один из этих методов.
 
-   * Войдите на [портал Azure], выберите облачную службу и найдите **URL-адрес сайта** в разделе **Основное**.
+   * Войдите в [портала Azure], выберите облачную службу и найдите **Обзор** разделе **URL-адрес сайта** запись.
 
        ![Раздел краткого описания, в котором отображается URL-адрес][csurl]
 
-       **OR**
+       **ИЛИ**
    * Установите и настройте [Azure Powershell](/powershell/azure/overview), а затем используйте следующую команду:
 
        ```powershell
@@ -97,11 +97,11 @@ ms.locfileid: "58121627"
 
 1. Чтобы получить IP-адрес для своей облачной службы, используйте один из следующих способов.
 
-   * Войдите на [портал Azure], выберите облачную службу и найдите **Общедоступные IP-адреса** в разделе **Основное**.
+   * Войдите в [портала Azure], выберите облачную службу и найдите **Обзор** разделе **общедоступные IP-адреса** запись.
 
        ![Раздел краткого описания, в котором отображается VIP-адрес][vip]
 
-       **OR**
+       **ИЛИ**
    * Установите и настройте [Azure Powershell](/powershell/azure/overview), а затем используйте следующую команду:
 
        ```powershell
@@ -131,7 +131,7 @@ ms.locfileid: "58121627"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Управление облачными службами](cloud-services-how-to-manage-portal.md)
-* [Сопоставление содержимого CDN с пользовательским доменом](../cdn/cdn-map-content-to-custom-domain.md)
+* [Как сопоставить содержимое CDN с личным доменом](../cdn/cdn-map-content-to-custom-domain.md)
 * [Общая настройка облачной службы](cloud-services-how-to-configure-portal.md).
 * Узнайте, как [развернуть облачную службу](cloud-services-how-to-create-deploy-portal.md).
 * Настройка [SSL-сертификатов](cloud-services-configure-ssl-certificate-portal.md).
@@ -141,6 +141,6 @@ ms.locfileid: "58121627"
 [Expose Your Data on a Custom Domain]: #access-data
 [VIP swaps]: cloud-services-how-to-manage-portal.md#how-to-swap-deployments-to-promote-a-staged-deployment-to-production
 [Create a CNAME record that associates the subdomain with the storage account]: #create-cname
-[портал Azure]: https://portal.azure.com
+[портале Azure]: https://portal.azure.com
 [vip]: ./media/cloud-services-custom-domain-name-portal/csvip.png
 [csurl]: ./media/cloud-services-custom-domain-name-portal/csurl.png

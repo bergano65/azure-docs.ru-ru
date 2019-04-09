@@ -11,12 +11,12 @@ ms.subservice: qna-maker
 ms.topic: tutorial
 ms.date: 12/17/2018
 ms.author: diberry
-ms.openlocfilehash: 5635e0f669cec64bdbbf947099f980066a4aebc1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 6f79614e4b1ec660d2ec5c8aee40924908cf8f5c
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58121423"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58884131"
 ---
 # <a name="tutorial-create-a-knowledge-base-then-answer-question-via-the-qna-maker-portal"></a>Руководство. Создание базы знаний и получение ответа на вопрос на портале QnA Maker
 
@@ -66,7 +66,7 @@ ms.locfileid: "58121423"
     |Имя параметра|Значение параметра|Назначение|
     |--|--|--|
     |URL-адрес|`https://docs.microsoft.com/azure/cognitive-services/qnamaker/faqs` |Содержимое вопросов и ответов по указанному URL-адресу находится в формате: сначала вопрос, а потом ответ. QnA Maker может интерпретировать этот формат, чтобы извлечь вопросы и связанные с ними ответы.|
-    |Файл |_Не используется в этом руководстве_|Этот файл позволяет отправить файлы для вопросов и ответов. |
+    |Файл |_не используется в этом руководстве_|Этот файл позволяет отправить файлы для вопросов и ответов. |
     |Chit-chat (Беседа)|Друг|Это придает непринужденность общим вопросам и ответам. Эти вопросы и ответы можно изменить позже. |
 
     ![Шаг 4 процесса создания базы знаний](../media/qnamaker-tutorial-create-publish-query-in-portal/create-kb-step-4.png)
@@ -105,7 +105,7 @@ ms.locfileid: "58121423"
 
     ![Команда cURL](../media/qnamaker-tutorial-create-publish-query-in-portal/publish-3-curl.png)
 
-1. Скопируйте текст вкладки **cURL** и выполните его в терминале с поддержкой cURL или командной строке. Значение заголовка авторизации содержит текст `Endpoint ` с символом пробела в конце, а затем ключ.
+1. Скопируйте текст вкладки **cURL** и выполните его в терминале с поддержкой cURL или командной строке. Значение заголовка авторизации содержит текст `Endpoint` с символом пробела в конце, а затем ключ.
 
 1. Замените `<Your question>` на `How large can my KB be?`. Это близко к вопросу `How large a knowledge base can I create?`, но не совсем то. QnA Maker применяет обработку естественного языка, чтобы определить, совпадают ли два вопроса.     
 

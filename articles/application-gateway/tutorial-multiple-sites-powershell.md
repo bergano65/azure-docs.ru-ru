@@ -9,12 +9,12 @@ ms.workload: infrastructure-services
 ms.date: 7/13/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: fa54f814e3247c20b8a2c9a176bdc4fdaff7cc6a
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: f9352735b360b687d89acc6491c9b33dcda934ac
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57311820"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58881942"
 ---
 # <a name="create-an-application-gateway-that-hosts-multiple-web-sites-using-azure-powershell"></a>Создание шлюза приложений для размещения нескольких веб-сайтов с помощью Azure PowerShell
 
@@ -38,7 +38,7 @@ ms.locfileid: "57311820"
 
 [!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
 
-Если вы решили установить и использовать PowerShell локально, то для работы с этим руководством вам понадобится модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
+Если вы решили установить и использовать PowerShell локально, то для работы с этим учебником вам понадобится модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -294,7 +294,7 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете удалить ненужные группу ресурсов, виртуальную машину и все связанные с ними ресурсы, выполнив командлет [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup).
+Если группа ресурсов, виртуальная машина и все связанные с ними ресурсы вам больше не требуются, их можно удалить. Для этого выполните командлет [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup).
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name myResourceGroupAG
@@ -313,4 +313,4 @@ Remove-AzResourceGroup -Name myResourceGroupAG
 > * создание записи CNAME в домене.
 
 > [!div class="nextstepaction"]
-> [Создание шлюза приложений с правилами маршрутизации на основе URL-путей](./tutorial-url-route-powershell.md)
+> [создание шлюза приложений с правилами маршрутизации на основе URL-пути.](./tutorial-url-route-powershell.md)

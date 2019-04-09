@@ -17,12 +17,12 @@ ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 716f48a5db437ef1dc865aca66fbac1c1d51aec3
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: df9073bbf9789875c373bb7093ab1878a20c399f
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56207438"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59274197"
 ---
 # <a name="azure-active-directory-v20-and-the-oauth-20-resource-owner-password-credential"></a>Azure Active Directory версии 2.0 и пароль владельца ресурса OAuth 2.0
 
@@ -51,13 +51,12 @@ POST https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token?
 
 client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &scope=user.read%20openid%20profile%20offline_access
-&client_secret=wkubdywbc2894u
 &username=MyUsername@myTenant.com
 &password=SuperS3cret
 &grant_type=password
 ```
 
-| Параметр | Условие | ОПИСАНИЕ |
+| Параметр | Условие | Описание |
 | --- | --- | --- |
 | `tenant` | Обязательно | Клиент каталога, в который пользователь выполняет вход. Его можно указать в виде GUID или понятного имени. Этот параметр не может иметь значение `common` или `consumers`, но может быть равен `organizations`. |
 | `grant_type` | Обязательно | Нужно задать значение `password`. |
@@ -80,11 +79,11 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 }
 ```
 
-| Параметр | Формат | ОПИСАНИЕ |
+| Параметр | Формат | Описание |
 | --------- | ------ | ----------- |
 | `token_type` | Строка | Всегда имеет значение `Bearer`. |
 | `scope` | Строки, разделенные пробелами | Если возвращен маркер доступа, этот параметр содержит список областей, для которых действует этот маркер. |
-| `expires_in`| int | Количество секунд, в течение которых действует предоставленный маркер доступа. |
+| `expires_in`| ssNoversion | Количество секунд, в течение которых действует предоставленный маркер доступа. |
 | `access_token`| Непрозрачная строка | Выдается для запрошенных [областей](v2-permissions-and-consent.md). |
 | `id_token` | JWT | Выдается, если исходный параметр `scope` содержит область `openid`. |
 | `refresh_token` | Непрозрачная строка | Выдается, если исходный параметр `scope` содержит `offline_access`. |
@@ -95,7 +94,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 Если пользователь не указал правильное имя пользователя или пароль, либо клиент не получил требуемое согласие, аутентификация завершается ошибкой.
 
-| Ошибка | ОПИСАНИЕ | Действие клиента |
+| Ошибка | Описание | Действие клиента |
 |------ | ----------- | -------------|
 | `invalid_grant` | Сбой аутентификации | Учетные данные указаны неверно или у клиента отсутствует согласие для запрошенных областей. Если области не предоставлены, возвращается вложенная ошибка `consent_required`. В этом случае клиент должен перенаправить пользователя в интерактивный интерфейс через веб-представление или браузер. |
 | `invalid_request` | Запрос был неправильно сформирован | Тип предоставления разрешения не поддерживается для контекстов аутентификации `/common` или `/consumers`.  Используйте вместо этого `/organizations`. |

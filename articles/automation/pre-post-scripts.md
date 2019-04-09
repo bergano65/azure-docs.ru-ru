@@ -10,11 +10,11 @@ ms.date: 04/04/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 76cd877380090ccad8b2f7b7dbe79957e0eab5bb
-ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
-ms.translationtype: HT
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59056683"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59263814"
 ---
 # <a name="manage-pre-and-post-scripts-preview"></a>Управление сценариями предварительного и последующего выполнения (предварительная версия)
 
@@ -44,7 +44,7 @@ ms.locfileid: "59056683"
 
 Когда развертывание обновлений будет готово, откройте страницу **Развертывания обновлений** и проверьте результаты. Здесь вы увидите, среди прочего, состояние обоих сценариев.
 
-![Результаты обновления](./media/pre-post-scripts/update-results.png)
+![Обновление результатов](./media/pre-post-scripts/update-results.png)
 
 Чтобы получить дополнительные сведения о том или ином сценарии, щелкните строку состояния развертывания обновлений. В открывшемся окне будет ссылка на код сценария, который выполнялся.
 
@@ -87,7 +87,7 @@ foreach($summary in $finalStatus)
 
 ### <a name="softwareupdateconfigurationruncontext-properties"></a>Свойства SoftwareUpdateConfigurationRunContext
 
-|Свойство  |ОПИСАНИЕ  |
+|Свойство  |Описание  |
 |---------|---------|
 |SoftwareUpdateConfigurationName     | Имя конфигурации обновления программного обеспечения        |
 |SoftwareUpdateConfigurationRunId     | Уникальный идентификатор для запуска.        |
@@ -136,7 +136,7 @@ foreach($summary in $finalStatus)
 > [!NOTE]
 > `SoftwareUpdateConfigurationRunContext` Объект может содержать повторяющиеся записи для машины. Это может привести к скрипты предварительного и последующего многократное выполнение на одном компьютере. Чтобы обойти это поведение, используйте `Sort-Object -Unique` для выбора только уникальные имена виртуальных Машин в скрипте.
 
-## <a name="samples"></a>Примеры
+## <a name="samples"></a>Образцы
 
 Примеры сценариев предварительного и последующего выполнения можно найти в [коллекции центра сценариев](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=WindowsAzure&f%5B0%5D.Text=Windows%20Azure&f%5B1%5D.Type=SubCategory&f%5B1%5D.Value=WindowsAzure_automation&f%5B1%5D.Text=Automation&f%5B2%5D.Type=SearchText&f%5B2%5D.Value=update%20management&f%5B3%5D.Type=Tag&f%5B3%5D.Value=Patching&f%5B3%5D.Text=Patching&f%5B4%5D.Type=ProgrammingLanguage&f%5B4%5D.Value=PowerShell&f%5B4%5D.Text=PowerShell) или импортировать через портал Azure. Чтобы импортировать сценарии через портал, в учетной записи Службы автоматизации выберите в разделе **Автоматизация процессов** элемент **Коллекция модулей Runbook**. В качестве фильтра укажите **Управление обновлениями**.
 

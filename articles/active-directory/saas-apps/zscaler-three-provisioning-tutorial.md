@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка Zscaler три для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
+title: Учебник. Настройка Zscaler три для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Zscaler три.
 services: active-directory
 documentationcenter: ''
@@ -16,13 +16,13 @@ ms.topic: article
 ms.date: 03/27/2019
 ms.author: v-ant-msft
 ms.openlocfilehash: ed158ae825ec8aac24a57eb0f5a986b2124b66fb
-ms.sourcegitcommit: b4ad15a9ffcfd07351836ffedf9692a3b5d0ac86
-ms.translationtype: HT
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59057801"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59273691"
 ---
-# <a name="tutorial-configure-zscaler-three-for-automatic-user-provisioning"></a>Руководство по Настройка Zscaler три для автоматической подготовки пользователей
+# <a name="tutorial-configure-zscaler-three-for-automatic-user-provisioning"></a>Учебник. Настройка Zscaler три для автоматической подготовки пользователей
 
 Цель данного учебника — продемонстрировать действия, выполняемые в Zscaler три и Azure Active Directory (Azure AD) для настройки Azure AD настроить автоматическую подготовку и отмену подготовки пользователей и групп в трех Zscaler.
 
@@ -31,7 +31,7 @@ ms.locfileid: "59057801"
 >
 > Сейчас этот соединитель доступен в общедоступной предварительной версии. Дополнительные сведения о общие Microsoft Azure условия использования предварительных версий функций, см. в разделе [дополнительным условиям использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
@@ -123,7 +123,7 @@ ms.locfileid: "59057801"
 
     ![Zscaler трех подготовки](./media/zscaler-three-provisioning-tutorial/notification.png)
 
-9. Выберите команду **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать пользователей Azure Active Directory с Zscaler три**.
 

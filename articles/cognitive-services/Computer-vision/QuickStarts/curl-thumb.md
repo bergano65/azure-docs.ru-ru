@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 03/11/2019
+ms.date: 03/27/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 0b6430a31f31f85f01f67994f6b6fa0f30af9575
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 20a438f4eb932596647002bf9d3072c651ac969c
+ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57879928"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58630651"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-curl-in-computer-vision"></a>Краткое руководство. Создание эскиза с помощью API компьютерного зрения, REST API и cURL
 
@@ -65,7 +65,7 @@ ms.locfileid: "57879928"
 
 ## <a name="examine-the-response"></a>Изучение ответа
 
-При успешном получении ответа файл эскиза изображения будет записан в файл, указанный в `<thumbnailFile>`. Если запрос завершается сбоем, ответ будет содержать код ошибки и сообщение с описанием проблемы.
+При успешном получении ответа файл эскиза изображения будет записан в файл, указанный в `<thumbnailFile>`. Если запрос завершается сбоем, ответ будет содержать код ошибки и сообщение с описанием проблемы. Если запрос вроде бы выполняется, но созданный эскиз не является допустимым файлом изображения, проблема может быть в том, что ключ подписки не является допустимым.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

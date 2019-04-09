@@ -6,13 +6,13 @@ ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
-ms.date: 10/30/2018
-ms.openlocfilehash: 496c033e3df096cdada2b3facba3e73092ffd755
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.date: 04/07/2019
+ms.openlocfilehash: 8492f736e64366802b3601f9b5fc8bd1d9b6ea79
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59051501"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59273080"
 ---
 # <a name="time-series-analysis-in-azure-data-explorer"></a>Анализ временных рядов в службе Azure Data Explorer
 
@@ -35,15 +35,15 @@ demo_make_series1 | take 10
 |   |   |   |   |   |
 | --- | --- | --- | --- | --- |
 |   | TimeStamp | BrowserVer (версия браузера) | OsVer (версия ОС) | Страна |
-|   | 2016-08-25 09:12:35.4020000 | Chrome 51.0 | Windows 7 | Великобритания |
+|   | 2016-08-25 09:12:35.4020000 | Chrome 51.0 | Windows 7 | Соединенное королевство |
 |   | 2016-08-25 09:12:41.1120000 | Chrome 52.0 | Windows 10 |   |
-|   | 2016-08-25 09:12:46.2300000 | Chrome 52.0 | Windows 7 | Великобритания |
-|   | 2016-08-25 09:12:46.5100000 | Chrome 52.0 | Windows 10 | Великобритания |
+|   | 2016-08-25 09:12:46.2300000 | Chrome 52.0 | Windows 7 | Соединенное королевство |
+|   | 2016-08-25 09:12:46.5100000 | Chrome 52.0 | Windows 10 | Соединенное королевство |
 |   | 2016-08-25 09:12:46.5570000 | Chrome 52.0 | Windows 10 | Литовская Республика |
 |   | 2016-08-25 09:12:47.0470000 | Chrome 52.0 | Windows 8.1 | Индия |
-|   | 2016-08-25 09:12:51.3600000 | Chrome 52.0 | Windows 10 | Великобритания |
+|   | 2016-08-25 09:12:51.3600000 | Chrome 52.0 | Windows 10 | Соединенное королевство |
 |   | 2016-08-25 09:12:51.6930000 | Chrome 52.0 | Windows 7 | Нидерланды |
-|   | 2016-08-25 09:12:56.4240000 | Chrome 52.0 | Windows 10 | Великобритания |
+|   | 2016-08-25 09:12:56.4240000 | Chrome 52.0 | Windows 10 | Соединенное королевство |
 |   | 2016-08-25 09:13:08.7230000 | Chrome 52.0 | Windows 10 | Индия |
 
 Из-за отсутствия метрик мы можем сформировать только набор временных рядов, представляющий сам объем трафика и секционированный по ОС, выполнив следующий запрос:
@@ -136,13 +136,13 @@ demo_series3
 ```kusto
 demo_series3
 | project (periods, scores) = series_periods_detect(num, 0., 14d/2h, 2) //to detect the periods in the time series
-| mvexpand periods, scores
+| mv-expand periods, scores
 | extend days=2h*todouble(periods)/1d
 ```
 
 |   |   |   |   |
 | --- | --- | --- | --- |
-|   | periods | scores (баллы) | days |
+|   | periods | scores (баллы) | дн. |
 |   | 84 | 0,820622786055595 | 7 |
 |   | 12 | 0,764601405803502 | 1 |
 
@@ -180,7 +180,7 @@ demo_many_series1
 
 |   |   |   |   |   |   |
 | --- | --- | --- | --- | --- | --- |
-|   | TIMESTAMP | Loc | anonOp | DB | DataRead |
+|   | ВРЕМЕННАЯ МЕТКА | Loc | anonOp | DB | DataRead |
 |   | 2016-09-11 21:00:00.0000000 | Loc 9 | 5117853934049630089 | 262 | 0 |
 |   | 2016-09-11 21:00:00.0000000 | Loc 9 | 5117853934049630089 | 241 | 0 |
 |   | 2016-09-11 21:00:00.0000000 | Loc 9 | -865998331941149874 | 262 | 279862 |

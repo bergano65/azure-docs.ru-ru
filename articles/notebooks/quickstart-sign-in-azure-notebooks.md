@@ -6,25 +6,25 @@ documentationcenter: ''
 author: kraigb
 manager: douge
 ms.assetid: fb8c94b1-6d0a-4b77-8d14-ae6efcdd99f4
-ms.service: azure
+ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/25/2019
 ms.author: kraigb
-ms.openlocfilehash: 4c933145c54c47b5af083edd593ecb66b089f9c9
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: f3effc900b79ddb7beac6a3aaf2eee0a264f7b4d
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57769154"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59280865"
 ---
 # <a name="quickstart-sign-in-and-set-a-user-id"></a>Краткое руководство. Вход и настройка идентификатора пользователя
 
 Несмотря на то что вы всегда можете просмотреть службу "Записные книжки Azure" без входа в систему, вам необходимо войти, чтобы запускать записные книжки, получать доступ к сохраненным проектам и записным книжками и делиться последними.
 
-## <a name="sign-in"></a>Вход
+## <a name="sign-in"></a>Войти
 
 1. Выберите **Вход** в верхнем правом углу [notebooks.azure.com](https://notebooks.azure.com/).
 
@@ -55,7 +55,7 @@ ms.locfileid: "57769154"
 > [!NOTE]
 > Если появится сообщение «Идентификатор пользователя уже используется,» попробуйте другой идентификатор. Идентификаторы пользователей являются уникальными для всех учетных записей Azure Notebooks и записных книжек Azure также резервирует некоторые идентификаторы пользователей, например марок Microsoft.
 
-## <a name="sign-out"></a>Выход
+## <a name="sign-out"></a>Выйти
 
 Чтобы выйти из системы, выберите свое имя пользователя в правом верхнем углу страницы, а затем щелкните **Выйти**.
 
@@ -64,4 +64,4 @@ ms.locfileid: "57769154"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Краткое руководство по созданию и совместному использованию записной книжки](quickstart-create-share-jupyter-notebook.md)
+> [Краткое руководство. Создание и совместное использование записной книжки](quickstart-create-share-jupyter-notebook.md)

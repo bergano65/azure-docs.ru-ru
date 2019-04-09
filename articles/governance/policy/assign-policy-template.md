@@ -1,5 +1,5 @@
 ---
-title: Создание назначения политики для несоответствующих требованиям ресурсов с помощью шаблона Resource Manager
+title: Создание назначения политики с помощью шаблона Resource Manager
 description: В этой статье рассматриваются шаги, выполнив которые вы сможете создать назначение политики для выявления несоответствующих требованиям ресурсов с помощью шаблона Resource Manager.
 services: azure-policy
 author: DCtheGeek
@@ -8,12 +8,12 @@ ms.date: 03/13/2019
 ms.topic: quickstart
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 6ff76a66eba42fd87e88846f9ec2378bd63893f2
-ms.sourcegitcommit: 4133f375862fdbdec07b70de047d70c66ac29d50
+ms.openlocfilehash: 354d5aa250449b87345cef17778befddc761fa19
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58008616"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58802513"
 ---
 # <a name="create-a-policy-assignment-to-identify-non-compliant-resources-by-using-a-resource-manager-template"></a>Создание назначения политики для идентификации несоответствующих требованиям ресурсов с помощью шаблона Resource Manager
 
@@ -31,14 +31,14 @@ ms.locfileid: "58008616"
 Существует несколько способов создания назначений политики. В этом кратком руководстве используется [шаблон быстрого запуска](https://azure.microsoft.com/resources/templates/101-azurepolicy-assign-builtinpolicy-resourcegroup/).
 Ниже приведена копия шаблона:
 
-[!code-json[policy-assingment](~/quickstart-templates/101-azurepolicy-assign-builtinpolicy-resourcegroup/azuredeploy.json)]
+[!code-json[policy-assignment](~/quickstart-templates/101-azurepolicy-assign-builtinpolicy-resourcegroup/azuredeploy.json)]
 
 > [!NOTE]
 > Служба "Политика Azure" предоставляется бесплатно.  Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](./overview.md).
 
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон:
 
-   <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-azurepolicy-assign-builtinpolicy-resourcegroup%2Fazuredeploy.json"><img src="./media/assign-policy-template/deploy-to-azure.png" alt="deploy to azure"/></a>
+   [![Развертывание шаблона политики в Azure](./media/assign-policy-template/deploy-to-azure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-azurepolicy-assign-builtinpolicy-resourcegroup%2Fazuredeploy.json)
 
 1. Введите или выберите следующие значения.
 
@@ -48,7 +48,7 @@ ms.locfileid: "58008616"
    | Группа ресурсов | Выберите **Создать**, укажите имя, а затем выберите **OK**. На снимке экрана ниже группа ресурсов называется *mypolicyquickstart<Date in MMDD>rg*. |
    | Расположение | Выберите регион. Например, **центральная часть США**. |
    | Имя назначения политики | Укажите имя назначения политики. При необходимости можно использовать отображаемое имя определения политики. Например, **Аудит виртуальных машин, которые не используют управляемые диски**. |
-   | Имя группы ресурсов | Укажите имя группы ресурсов, для которой вы хотите назначить политику. В этом кратком руководстве используйте значение по умолчанию **[resourceGroup().name]**. **[resourceGroup()](/azure/azure-resource-manager/resource-group-template-functions-resource#resourcegroup)**  — это функция шаблона, которая извлекает группу ресурсов. |
+   | Имя группы ресурсов | Укажите имя группы ресурсов, для которой вы хотите назначить политику. В этом кратком руководстве используйте значение по умолчанию **[resourceGroup().name]**. **[resourceGroup()](../../azure-resource-manager/resource-group-template-functions-resource.md#resourcegroup)**  — это функция шаблона, которая извлекает группу ресурсов. |
    | Идентификатор определения политики | Укажите **/providers/Microsoft.Authorization/policyDefinitions/0a914e76-4921-4c19-b460-a2d36003525a**. |
    | Я принимаю указанные выше условия | Установите этот флажок. |
 
@@ -65,7 +65,7 @@ ms.locfileid: "58008616"
 
 Выберите **Соответствие** в левой части страницы и найдите ранее созданное назначение политики **Аудит виртуальных машин, которые не используют управляемые диски**.
 
-![Соответствие политике](./media/assign-policy-template/policy-compliance.png)
+![Страница сведений о соответствии политике](./media/assign-policy-template/policy-compliance.png)
 
 Существующие ресурсы, которые не соответствуют новому назначению, отображаются в разделе **Несоответствующие ресурсы**.
 
@@ -79,7 +79,7 @@ ms.locfileid: "58008616"
 
 1. Щелкните правой кнопкой мыши назначение политики **Аудит виртуальных машин, которые не используют управляемые диски** и выберите **Удалить назначение**.
 
-   ![Удаление назначения](./media/assign-policy-template/delete-assignment.png)
+   ![Удаление назначения на странице сведений о соответствии](./media/assign-policy-template/delete-assignment.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

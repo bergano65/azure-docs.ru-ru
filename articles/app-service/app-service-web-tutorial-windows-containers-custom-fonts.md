@@ -11,15 +11,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 09/17/2018
+ms.date: 04/03/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 9f328e47a49a5c6c53c21baa880c38578c657a33
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: 27102cd6b8e98b0f8b2b4940b92d4e4c4580a9cd
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55733746"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904072"
 ---
 # <a name="migrate-an-aspnet-app-to-azure-app-service-using-a-windows-container-preview"></a>Перенос приложения ASP.NET в Службу приложений Azure с помощью контейнера Windows (предварительная версия)
 
@@ -31,7 +31,7 @@ ms.locfileid: "55733746"
 
 Для работы с этим руководством:
 
-- <a href="https://hub.docker.com/" target="_blank">зарегистрируйте учетную запись центра Docker</a>.
+- <a href="https://hub.docker.com/" target="_blank">Зарегистрируйте учетную запись Docker Hub.</a>
 - <a href="https://docs.docker.com/docker-for-windows/install/" target="_blank">Установите Docker для ОС Windows</a>.
 - <a href="https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-10" target="_blank">Переключите Docker для запуска контейнеров Windows</a>.
 - <a href="https://www.visualstudio.com/downloads/" target="_blank">Установите Visual Studio 2017</a>, а также следующие рабочие нагрузки: **ASP.NET и веб-разработка** и **разработка Azure**. Если у вас уже установлена версия Visual Studio 2017, сделайте следующее.
@@ -80,7 +80,7 @@ ms.locfileid: "55733746"
 Необходимо использовать [поддерживаемый родительский образ](app-service-web-get-started-windows-container.md#use-a-different-parent-image). Измените родительский образ, заменив строку `FROM` приведенным ниже кодом.
 
 ```Dockerfile
-FROM microsoft/aspnet:4.7.1
+FROM mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-ltsc2019
 ```
 
 В конце файла добавьте приведенную ниже строку, после чего сохраните файл.
