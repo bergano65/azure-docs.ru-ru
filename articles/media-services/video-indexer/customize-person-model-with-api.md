@@ -9,12 +9,12 @@ ms.service: media-services
 ms.topic: article
 ms.date: 02/10/2019
 ms.author: anzaman
-ms.openlocfilehash: 6fe4f391b5337929efc3f6190a925fd1e967cf1c
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: e5a34a75c73401c567a0e898a1ce9f85cde96586
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55999357"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59360528"
 ---
 # <a name="customize-a-person-model-with-the-video-indexer-api"></a>Настройка модели пользователя с помощью API Индексатора видео
 
@@ -50,11 +50,11 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Person
 curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/PersonModels?name={name}&accessToken={accessToken}"
 ```
 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Create-PersonModel?).
+[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Create-Person-Model?).
 
 ### <a name="request-parameters"></a>Параметры запроса 
 
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
+|**ИМЯ**|**type**|**Обязательно для заполнения**|**ОПИСАНИЕ**|
 |---|---|---|---|
 |location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
 |accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
@@ -65,7 +65,7 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 Ответ предоставляет имя и идентификатор модели пользователя, которую вы создали используя формат из примера приведенного ниже.
 
@@ -95,11 +95,11 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Person
 curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/PersonModels/{id}?accessToken={accessToken}"
 ```
 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-PersonModel?).
+[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Person-Model?).
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
+|**ИМЯ**|**type**|**Обязательно для заполнения**|**ОПИСАНИЕ**|
 |---|---|---|---|
 |location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
 |accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
@@ -110,7 +110,7 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 При успешном удалении языковой модели содержимое не возвращается.
 
@@ -132,11 +132,11 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Person
 curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/PersonModels?accessToken={accessToken}"
 ```
 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-PersonModels?).
+[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Person-Models?).
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
+|**ИМЯ**|**type**|**Обязательно для заполнения**|**ОПИСАНИЕ**|
 |---|---|---|---|
 |location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
 |accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
@@ -146,7 +146,7 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 В ответе содержится список всех моделей пользователя в вашей учетной записи (включая модель пользователя по умолчанию в указанной учетной записи), а также их имена и идентификаторы используя формат из примера приведенного ниже.
 
@@ -187,11 +187,11 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Videos/{videoId}/Ind
 curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Videos/{videoId}/Index/Faces/{faceId}?accessToken={accessToken}&newName={newName}"
 ```
 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-face?).
+[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Video-Face?).
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
+|**ИМЯ**|**type**|**Обязательно для заполнения**|**ОПИСАНИЕ**|
 |---|---|---|---|
 |location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
 |accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
@@ -206,10 +206,10 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Vide
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 При успешном обновлении языковой модели содержимое не возвращается.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Customize Person model using the Video Indexer website](customize-person-model-with-website.md) (Настройка модели пользователя с помощью веб-сайта Индексатора видео)
+[Настройка модели человека на веб-сайте индексатор видео](customize-person-model-with-website.md)

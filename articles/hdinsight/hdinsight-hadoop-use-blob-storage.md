@@ -1,24 +1,22 @@
 ---
 title: Запрос данных из HDFS-совместимой службы хранилища Azure в Azure HDInsight
 description: Узнайте, как запрашивать данные из службы хранилища Azure и Azure Data Lake Storage для сохранения результатов анализа.
-services: hdinsight,storage
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 01/28/2019
-ms.openlocfilehash: d88a05b03813eb0ec94a84f60bffb903e1344987
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.date: 04/08/2019
+ms.openlocfilehash: 3356d3eee00a640efe10e2d9f3aa4fa7be775995
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58361920"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59360779"
 ---
 # <a name="use-azure-storage-with-azure-hdinsight-clusters"></a>Использование службы хранилища Azure с кластерами Azure HDInsight
 
-Данные для анализа в кластере HDInsight можно хранить в [службе хранилища Azure](../storage/common/storage-introduction.md) или в [Azure Data Lake Storage](../data-lake-store/data-lake-store-overview.md)[ (1-го или 2-го поколения)](../storage/blobs/data-lake-storage-introduction.md) либо в обеих службах сразу. Оба варианта хранилища позволяют безопасно и без потери пользовательских данных удалять используемые для расчетов кластеры HDInsight.
+Для анализа данных в кластере HDInsight, можно сохранить данные либо в [хранилища Azure](../storage/common/storage-introduction.md), [Azure Data Lake хранилища Gen 1](../data-lake-store/data-lake-store-overview.md)/[Azure Data Lake хранилища Gen 2](../storage/blobs/data-lake-storage-introduction.md), или их сочетание. Эти параметры хранилища позволяют безопасно и удалять кластеры HDInsight, которые используются для вычислений без потери пользовательских данных.
 
 В Apache Hadoop поддерживается концепция файловой системы по умолчанию. Файловая система по умолчанию подразумевает использование центра сертификации и схемы по умолчанию. Она также может использоваться для разрешения относительных путей. При создании кластера HDInsight в качестве файловой системы по умолчанию можно указать контейнер больших двоичных объектов в службе хранилища Azure, а в случае использования HDInsight 3.6 можно выбрать службу хранилища Azure или Azure Data Lake Storage (1-го или 2-го поколения) с несколькими исключениями. Дополнительные сведения о поддержке Data Lake Storage 1-го поколения в качестве связанного хранилища и хранилища по умолчанию см. в руководстве по [обеспечению доступности для кластеров HDInsight](./hdinsight-hadoop-use-data-lake-store.md#availability-for-hdinsight-clusters).
 
@@ -41,6 +39,8 @@ ms.locfileid: "58361920"
  
  > [!NOTE]  
  > Архивный уровень доступа — это автономный уровень с задержкой извлечения в несколько часов, который не рекомендуется использовать вместе с HDInsight. Дополнительные сведения см. в разделе <a href="https://docs.microsoft.com/azure/storage/blobs/storage-blob-storage-tiers#archive-access-tier">Архивный уровень доступа</a>.
+
+Если выбран для защиты вашей учетной записи хранения с **брандмауэры и виртуальные сети** ограничения на **выбранные сети**, не забудьте включить исключения **Разрешить надежные Microsoft службы...**  HDInsight можно получить доступ к вашей учетной записи хранения.
 
 ## <a name="hdinsight-storage-architecture"></a>Архитектура хранилища HDInsight
 Следующая схема является абстрактным представлением архитектуры хранилища HDInsight с использованием службы хранилища Azure.
@@ -297,25 +297,25 @@ Invoke-AzHDInsightHiveJob -Defines $defines -Query "dfs -ls wasb://$undefinedCon
 azure storage blob
 ```
 
-**Пример использования классического интерфейса командной строки Azure для отправки файла**
+**Пример использования классический интерфейс командной строки Azure для отправки файла**
 
 ```cli
 azure storage blob upload <sourcefilename> <containername> <blobname> --account-name <storageaccountname> --account-key <storageaccountkey>
 ```
 
-**Пример использования классического интерфейса командной строки Azure для скачивания файла**
+**Пример использования Azure классический интерфейс командной строки для загрузки файла**
 
 ```cli
 azure storage blob download <containername> <blobname> <destinationfilename> --account-name <storageaccountname> --account-key <storageaccountkey>
 ```
 
-**Пример использования классического интерфейса командной строки Azure для удаления файла**
+**Пример использования Azure классический интерфейс командной строки для удаления файла**
 
 ```cli
 azure storage blob delete <containername> <blobname> --account-name <storageaccountname> --account-key <storageaccountkey>
 ```
 
-**Пример использования классического интерфейса командной строки Azure для перечисления файлов**
+**Пример использования классический интерфейс командной строки Azure для просмотра списка файлов**
 
 ```cli
 azure storage blob list <containername> <blobname|prefix> --account-name <storageaccountname> --account-key <storageaccountkey>
@@ -335,12 +335,12 @@ azure storage blob list <containername> <blobname|prefix> --account-name <storag
 Дополнительные сведения можно найти в разделе 
 
 * [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux][hdinsight-get-started]
-* [Начало работы с Azure Data Lake Storage](../data-lake-store/data-lake-store-get-started-portal.md)
+* [Начало работы с Azure Data Lake Storage](../data-lake-store/data-lake-store-get-started-portal.md)
 * [Отправка данных в HDInsight][hdinsight-upload-data]
 * [Использование Apache Hive с HDInsight][hdinsight-use-hive]
 * [Использование Apache Pig с HDInsight][hdinsight-use-pig]
 * [Использование подписанных URL-адресов хранилища Azure для ограничения доступа к данным с помощью HDInsight][hdinsight-use-sas]
-* [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-storage-gen2.md)
+* [Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-storage-gen2.md)
 
 [hdinsight-use-sas]: hdinsight-storage-sharedaccesssignature-permissions.md
 [powershell-install]: /powershell/azureps-cmdlets-docs

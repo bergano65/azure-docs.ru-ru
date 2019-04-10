@@ -1,6 +1,6 @@
 ---
 title: Настройка автоматического ускорения входа для приложения с помощью политики обнаружения домашней области | Документация Майкрософт
-description: В этом разделе объясняется, что такое клиент Azure AD и как управлять Azure с помощью Azure Active Directory.
+description: Узнайте, как настроить политику обнаружения домашней области для проверки подлинности Azure Active Directory для федеративных пользователей, включая указания автоматического ускорения входа и домена.
 services: active-directory
 documentationcenter: ''
 author: CelesteDG
@@ -11,19 +11,20 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/08/2018
+ms.date: 04/08/2019
 ms.author: celested
+ms.custom: seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 333258ef9696e6dbe4aab5b10e815bb84428d425
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: d82ccf7c2983051597ff634117be81311c4c78a9
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56190268"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59360934"
 ---
 # <a name="configure-azure-active-directory-sign-in-behavior-for-an-application-by-using-a-home-realm-discovery-policy"></a>Настройка поведения при входе в Azure Active Directory для приложения с помощью политики обнаружения домашней области
 
-В данном документе содержатся вводные сведения о настройке поведения функции проверки подлинности Azure Active Directory для федеративных пользователей.   В нем рассказывается о настройке ограничений автоматического ускорения входа и проверки подлинности для пользователей в федеративных доменах.
+Статья содержит общие сведения о настройке поведения проверки подлинности Azure Active Directory для федеративных пользователей. В нем рассказывается о настройке ограничений автоматического ускорения входа и проверки подлинности для пользователей в федеративных доменах.
 
 ## <a name="home-realm-discovery"></a>Обнаружение домашней области
 Обнаружение домашней области (HRD) — это процесс, благодаря которому служба Azure Active Directory (Azure AD) может определять области, в которых пользователь должен пройти проверку подлинности во время входа пользователя систему.  При входе в клиент Azure AD для доступа к ресурсу или на общую страницу входа Azure AD пользователь вводит имя пользователя (имя участника-пользователя). Azure AD использует его для обнаружения областей, где пользователь должен выполнить вход. 
@@ -151,7 +152,7 @@ API Graph, который позволяет управлять политико
 - получение списка приложений, для которых настроена политика.
 
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 В примерах ниже создаются, обновляются, связываются и удаляются политики для субъектов-служб приложения в Azure AD.
 
 1.  Чтобы начать, скачайте последнюю предварительную версию командлетов PowerShell для Azure AD. 
@@ -261,7 +262,7 @@ Remove-AzureADApplicationPolicy -ObjectId <ObjectId of the Service Principal>  -
 ``` powershell
 Get-AzureADPolicyAppliedObject -ObjectId <ObjectId of the Policy>
 ```
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о принципах работы аутентификации в Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory](../develop/authentication-scenarios.md).
 - Дополнительные сведения о едином входе пользователей см. в статье [Управление параметрами единого входа для корпоративных приложений](configure-single-sign-on-portal.md).
 - Сведения для разработчиков см. в [руководстве разработчика по Active Directory](../develop/v1-overview.md).

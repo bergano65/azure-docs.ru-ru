@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 12/05/2018
 ms.author: raynew
-ms.openlocfilehash: 686c91669e5eccd7979c248db42d6f5b5079308b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
-ms.translationtype: HT
+ms.openlocfilehash: af47678b19209936aed86c132a8a3f400c3a7e8f
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59280916"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59360334"
 ---
 # <a name="group-machines-using-machine-dependency-mapping"></a>Группирование компьютеров с помощью зависимостей
 
@@ -121,21 +121,21 @@ ms.locfileid: "59280916"
 
 ## <a name="query-dependency-data-from-azure-monitor-logs"></a>Данные запроса зависимостей из журналов Azure Monitor
 
-Данные о зависимостях, захваченные Сопоставлением служб, доступны для запросов в рабочей области Log Analytics, связанной с вашим проектом Azure Migrate. [Дополнительные сведения](https://docs.microsoft.com/azure/azure-monitor/insights/service-map#log-analytics-records) о таблицах данные схемы услуги для запроса в Azure Monitor журналы. 
+Зависимость данных, полученных с услуги доступны для запросов в рабочей области Log Analytics, связанные с проектом "Миграция Azure". [Дополнительные сведения](https://docs.microsoft.com/azure/azure-monitor/insights/service-map#log-analytics-records) о таблицах данные схемы услуги для запроса в Azure Monitor журналы. 
 
 Для выполнения запросов Kusto:
 
 1. После установки агентов перейдите на портал и выберите **Обзор**.
 2. В разделе **Обзор** перейдите в раздел проекта **Основное** и щелкните по имени рабочей области, указанному рядом с разделом **Рабочая область OMS**.
 3. На странице "Рабочая область Log Analytics" щелкните **Общие** > **Журналы**.
-4. Составьте запрос для сбора данных зависимостей с помощью журналов Azure Monitor. Примеры запросов для сбора данных о зависимости см. [здесь](https://docs.microsoft.com/azure/azure-monitor/insights/service-map#sample-log-searches).
+4. Составьте запрос для сбора данных зависимостей с помощью журналов Azure Monitor. Найти примеры запросов в следующем разделе.
 5. Выполните запрос, нажав кнопку "Запуск". 
 
 [Дополнительные сведения](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal) о написании запросов Kusto. 
 
 ### <a name="sample-azure-monitor-logs-queries"></a>Пример Azure Monitor регистрирует запросы
 
-Ниже приведены примеры запросов, которые можно использовать для извлечения данных зависимостей. Обратите внимание на то, что запросы можно изменить, чтобы извлечь Ваш предпочитаемый доступ к данным. Полный список полей в записи данных зависимостей доступен [здесь](https://docs.microsoft.com/azure/azure-monitor/insights/service-map#log-analytics-records)
+Ниже приведены примеры запросов, которые можно использовать для извлечения данных зависимостей. Можно изменять запросы для извлечения Ваш предпочитаемый доступ к данным. Полный список полей в записи данных зависимостей доступен [здесь](https://docs.microsoft.com/azure/azure-monitor/insights/service-map#log-analytics-records). Найти дополнительные примеры запросов [здесь](https://docs.microsoft.com/azure/azure-monitor/insights/service-map#sample-log-searches).
 
 #### <a name="summarize-inbound-connections-on-a-set-of-machines"></a>Суммировать входящие подключения через набор компьютеров
 

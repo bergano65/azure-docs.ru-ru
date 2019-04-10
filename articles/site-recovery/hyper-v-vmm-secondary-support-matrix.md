@@ -6,18 +6,18 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 03/18/2018
+ms.date: 04/08/2019
 ms.author: raynew
-ms.openlocfilehash: 419974138d6f556a2f774e8c1a355729c824fddc
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 60ca12e5b362a37eb9f85c9a0d1fc23ca99e9edc
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58310614"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59360795"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-hyper-v-vms-to-a-secondary-site"></a>Матрица поддержки аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт
 
-В этой статье перечислены поддерживаемые компоненты при использовании службы [Azure Site Recovery](site-recovery-overview.md) для репликации виртуальных машин Hyper-V, управляемых в облаках System Center Virtual Machine Manager (VMM), на дополнительный сайт. Если нужно реплицировать виртуальные машины Hyper-V в Azure, ознакомьтесь с [этой таблицей поддержки](hyper-v-azure-support-matrix.md).
+В этой статье перечислены поддерживаемые компоненты при использовании [Azure Site Recovery](site-recovery-overview.md) service для репликации виртуальных машин Hyper-V, управляемых в облаках System Center Virtual Machine Manager (VMM) на дополнительный сайт. Если нужно реплицировать виртуальные машины Hyper-V в Azure, ознакомьтесь с [этой таблицей поддержки](hyper-v-azure-support-matrix.md).
 
 > [!NOTE]
 > Вы можете выполнить репликацию на дополнительный сайт, только если управление узлами Hyper-V осуществляется в облаках VMM.
@@ -26,7 +26,7 @@ ms.locfileid: "58310614"
 
 ## <a name="host-servers"></a>Серверы узлов
 
-**Операционная система** | **Дополнительные сведения**
+**Операционная система** | **Сведения**
 --- | ---
 Windows Server 2012 R2 | На сервере должны быть установлены последние обновления.
 Windows Server 2016 |  Сейчас облака VMM 2016, сочетающие узлы Windows Server 2016 и 2012 R2, не поддерживаются.<br/><br/> Развернутые компоненты, обновленные с System Center 2012 R2 VMM 2012 R2 до System Center 2016, сейчас не поддерживаются.
@@ -53,7 +53,7 @@ Windows Server 2012 R2 | Любая операционная система на
 
 ## <a name="network-configuration---hostguest-vm"></a>Конфигурация сети — узел или гостевые виртуальные машины
 
-**Конфигурация** | **Поддерживаются**  
+**Параметр Configuration** | **Поддерживаются**  
 --- | --- 
 Узел — объединение сетевых адаптеров | Yes 
 Узел — виртуальная локальная сеть | Yes 
@@ -70,7 +70,7 @@ Windows Server 2012 R2 | Любая операционная система на
 
 ### <a name="host-storage"></a>Хранилище узла
 
-**Устройство или система хранения (узел)** | **Поддерживаются**
+**Система хранения (узел)** | **Поддерживаются**
 --- | --- 
 NFS | Н/Д
 SMB 3.0 |  Yes
@@ -79,7 +79,7 @@ SMB 3.0 |  Yes
 
 ### <a name="guest-or-physical-server-storage"></a>Хранилища гостевого или физического сервера
 
-**Конфигурация** | **Поддерживаются**
+**Параметр Configuration** | **Поддерживаются**
 --- | --- | 
 VMDK |  Н/Д
 VHD (VHDX) | Да (до 16 дисков)
@@ -108,13 +108,13 @@ RDM | Н/Д
 
 Поставщик координирует обмен данными между серверами VMM. 
 
-**Актуальная** | **Обновления**
+**Последний** | **Обновления**
 --- | --- 
-5.1.19 ([доступна на портале](https://aka.ms/downloaddra)) | [Новейшие функции и последние исправления](https://support.microsoft.com/kb/3155002)
+5.1.19 ([доступна на портале](https://aka.ms/downloaddra)) | [Новейшие функции и исправления](https://support.microsoft.com/kb/3155002)
 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Репликация виртуальных машин Hyper-V из облаков VMM на вторичный сайт VMM](tutorial-vmm-to-vmm.md)
+[Репликация виртуальных машин Hyper-V в облаках VMM на дополнительный сайт](tutorial-vmm-to-vmm.md)
 
