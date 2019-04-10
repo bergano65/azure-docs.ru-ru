@@ -8,18 +8,41 @@ ms.service: sql-database
 ms.subservice: service
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 03/05/2019
+ms.date: 04/03/2019
 ms.author: carlrab
-ms.openlocfilehash: 6600a578ba9c73c8a2c71466fd0b008f19058b80
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c63ce51f442c8d7552c382f0e103be443afb9c75
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57861301"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59360084"
 ---
 # <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 
 В этой статье перечислены новые функции и усовершенствования в службу базы данных SQL и в документации по базе данных SQL. Улучшения для служб базы данных SQL, см. в разделе также [обновления базы данных SQL](https://azure.microsoft.com/updates/?product=sql-database). Усовершенствования к другим службам Azure, см. в разделе [обновления службы](https://azure.microsoft.com/updates).
+
+## <a name="features-in-public-preview"></a>Функции в общедоступной предварительной версии
+
+| Функция | Сведения |
+| ---| --- |
+| Задания обработки эластичных баз данных | Сведения см. в разделе [создавать, настраивать и администрировать задания обработки эластичных БД](elastic-jobs-overview.md) |
+| Эластичные транзакции | [Распределенные транзакции по облачным базам данных](sql-database-elastic-transactions-overview.md) |
+| Эластичные запросы | Сведения см. в разделе [Обзор эластичных запросов](sql-database-elastic-query-overview.md) |
+| Репликация с помощью управляемых экземпляров |Сведения см. в разделе [Настройка репликации в базе данных управляемого экземпляра базы данных SQL Azure](replication-with-sql-database-managed-instance.md)|
+| Параметры сортировки экземпляра с помощью управляемых экземпляров |Сведения см. в разделе [использование PowerShell с помощью шаблона Azure Resource Manager для создания управляемого экземпляра базы данных SQL Azure](./scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md)|
+| Службы R, / машинное обучение с помощью отдельных баз данных и пулов эластичных баз данных |Сведения см. в разделе [служб машинного обучения в базе данных SQL Azure](https://docs.microsoft.com/sql/advanced-analytics/what-s-new-in-sql-server-machine-learning-services?view=sql-server-2017#machine-learning-services-in-azure-sql-database)|
+| Восстановление ускоренной базы данных с помощью отдельных баз данных и пулов эластичных баз данных | Сведения см. в разделе [Ускорение восстановления базы данных](sql-database-accelerated-database-recovery.md)|
+| Обнаружение и классификация данных  |Сведения см. в разделе [базы данных SQL Azure и хранилище данных SQL обнаружение и классификация данных](sql-database-data-discovery-and-classification.md)|
+| Прозрачное шифрование данных (TDE) с перевести собственных ключей (BYOK) с помощью управляемых экземпляров |Сведения см. в разделе [Azure прозрачного шифрования данных SQL с помощью управляемых клиентом ключей в хранилище ключей Azure: Поддержка создания собственных ключей использования](transparent-data-encryption-byok-azure-sql.md)|
+| Повторное создание баз данных с управляемых экземпляров |Сведения см. в разделе [повторного создания удалении баз данных в управляемый экземпляр SQL Azure](https://medium.com/azure-sqldb-managed-instance/re-create-dropped-databases-in-azure-sql-managed-instance-dc369ed60266)|
+| Обнаружение угроз с помощью управляемых экземпляров |Сведения см. в разделе [Настройка обнаружения угроз для базы данных SQL управляемого экземпляра](sql-database-managed-instance-threat-detection.md)|
+| Гипермасштабируемый уровни служб для отдельных баз данных |Сведения см. в разделе [Гипермасштабируемого уровня службы для до 100 ТБ](sql-database-service-tier-hyperscale.md)|
+| Редактор запросов на портале Azure |Сведения см. в разделе [использование редактора запросов SQL на портале Azure для подключения и запроса данных](sql-database-connect-query-portal.md)|
+|Приблизительный подсчет различных объектов|Сведения см. в разделе [приблизительное Count Distinct](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#approximate-query-processing)|
+|Пакетный режим Rowstore (при уровне совместимости 150)|Сведения см. в разделе [пакетный режим Rowstore](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#batch-mode-on-rowstore)|
+|Обратной связи (режим строк) (на уровне совместимости 150)|Сведения см. в разделе [обратную связь с выделением памяти (в режиме строки)](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#row-mode-memory-grant-feedback)|
+|Таблица компиляции переменной отложенного (при уровне совместимости 150)|Сведения см. в разделе [переменной отложенной компиляции таблицы](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#table-variable-deferred-compilation)|
+|||
 
 ## <a name="march-2019"></a>Марта 2019 г.
 
@@ -27,7 +50,7 @@ ms.locfileid: "57861301"
 
 | Улучшения службы | Сведения |
 | --- | --- |
-| Скоро ||
+| Общая доступность: поддержка горизонтального масштабирования для чтения для службы "База данных SQL Azure" | Дополнительные сведения см. в разделе [масштабирование для чтения](sql-database-read-scale-out.md)|
 | &nbsp; |
 
 ### <a name="documentation-improvements"></a>Улучшения документации

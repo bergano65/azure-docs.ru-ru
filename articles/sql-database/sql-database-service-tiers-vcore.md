@@ -7,17 +7,17 @@ ms.subservice: service
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: CarlRabeler
-ms.author: carlrab
-ms.reviewer: sashan, moslake
+author: stevestein
+ms.author: sstein
+ms.reviewer: sashan, moslake, carlrab
 manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: a14912c48f27c4f4d0e54239f8e0523ffa62324f
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: edba858f9be3350034ff48ea16d3c9137254bb97
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57888508"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59357949"
 ---
 # <a name="vcore-service-tiers-azure-hybrid-benefit-and-migration"></a>Уровни служб на основе виртуальных ядер, Преимущество гибридного использования Azure и миграция
 
@@ -37,7 +37,7 @@ ms.locfileid: "57888508"
 
 В следующей таблице представлены различия между этими тремя уровнями.
 
-||**Общего назначения**|**Критически важный для бизнеса**|**Гипермасштабирование (предварительная версия)**|
+||**Общего назначения**|**Критически важный для бизнеса**|**Гипермасштабируемый (Предварительная версия)**|
 |---|---|---|---|
 |Оптимально для|Большинства рабочих нагрузок. Предлагает бюджетные сбалансированные и масштабируемые варианты ресурсов вычисления и хранилища.|Бизнес-приложений с высокими требованиями к операциям ввода-вывода. Предлагает самую высокую отказоустойчивость к сбоям благодаря использованию нескольких изолированных реплик.|Большинство рабочих нагрузок с требованиями к высокомасштабируемому хранилищу и масштабированию для чтения|
 |Службы вычислений|4-е поколение: от 1 до 24 виртуальных ядер<br/>5-е поколение: от 1 до 80 виртуальных ядер|4-е поколение: от 1 до 24 виртуальных ядер<br/>5-е поколение: от 1 до 80 виртуальных ядер|4-е поколение: от 1 до 24 виртуальных ядер<br/>5-е поколение: от 1 до 80 виртуальных ядер|
@@ -70,23 +70,23 @@ ms.locfileid: "57888508"
 - Чтобы установить или обновить тип лицензии с помощью PowerShell, можно использовать:
 
   - [New-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql/new-azsqldatabase)
-  - [Set-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql)
+  - [SET-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql)
   - [New-AzSqlInstance](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlinstance)
   - [Set-AzSqlInstance](https://docs.microsoft.com/powershell/module/az.sql)
 
 - Чтобы установить или обновить тип лицензии с помощью Azure CLI, можно использовать команды:
 
-  - [az sql db create](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-create)
-  - [az sql db update](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-update)
-  - [az sql mi create](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-create)
-  - [az sql mi update](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-update)
+  - [Создание AZ sql db](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-create)
+  - [AZ sql db обновление](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-update)
+  - [Создание AZ sql mi](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-create)
+  - [AZ sql mi обновление](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-update)
 
 - Чтобы установить или обновить тип лицензии с помощью REST API, воспользоваться следующими инструкциями:
 
-  - [Базы данных: создание или обновление](https://docs.microsoft.com/rest/api/sql/databases/createorupdate)
+  - [Базы данных: Создание или обновление](https://docs.microsoft.com/rest/api/sql/databases/createorupdate)
   - [Базы данных: обновление](https://docs.microsoft.com/rest/api/sql/databases/update)
-  - [Управляемые экземпляры. Создание или обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/createorupdate)
-  - [Управляемые экземпляры. Обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/update)
+  - [Управляемые экземпляры - Создание или обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/createorupdate)
+  - [Управляемые экземпляры - обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/update)
 
 ## <a name="migration-from-dtu-model-to-vcore-model"></a>Переход с модели DTU на модель с виртуальными ядрами
 

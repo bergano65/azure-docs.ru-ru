@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 04/02/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 1528b5e92e1952bf85799afd71bd5dac16aedcf4
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: a6ef53d56fa293791658b37b16cbaff94aee6ef3
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58878304"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59280899"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Развертывание моделей с помощью Службы машинного обучения Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "58878304"
 
 Использование пакета SDK для Azure Machine Learning развертывание обученной модели в следующие расположения:
 
-| Целевой объект вычисления | Тип развертывания | ОПИСАНИЕ |
+| Целевой объект вычисления | Тип развертывания | Описание |
 | ----- | ----- | ----- |
 | [Служба Azure Kubernetes (AKS)](#aks) | Вывод в режиме реального времени | Подходит для крупномасштабных рабочих развертываний. Она обеспечивает автоматическое масштабирование и малое время отклика. |
 | [Azure вычислений для машинного обучения (amlcompute)](#azuremlcompute) | Определение пакета | Запустите пакетный прогноз на бессерверных вычислений. Поддерживает нормальные и низкоприоритетные виртуальные машины. |
@@ -87,6 +87,8 @@ model = Model.register(model_path = "outputs/sklearn_mnist_model.pkl",
 
 Для создания конфигурации образа развертываний **экземпляра контейнера Azure**, **Службы Azure Kubernetes** и **Azure IoT Edge** используется класс [azureml.core.image.ContainerImage](https://docs.microsoft.com/python/api/azureml-core/azureml.core.image.containerimage?view=azure-ml-py). Затем конфигурация образа используется для создания образа Docker.
 
+При создании конфигурации образа можно использовать либо __изображение по умолчанию__ предоставляемых службой машинного обучения Azure или __пользовательский образ__ вами.
+
 В приведенном ниже коде показано, как создать новую конфигурацию образа.
 
 ```python
@@ -103,7 +105,7 @@ image_config = ContainerImage.image_configuration(execution_script = "score.py",
 
 В следующей таблице описаны важные параметры, используемые в этом примере:
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 | ----- | ----- |
 | `execution_script` | Указывает сценарий Python, который используется для получения запросов, отправленных в службу. В этом примере сценарий содержится в файле `score.py`. Дополнительные сведения см. в разделе [Сценарий выполнения](#script). |
 | `runtime` | Указывает, что образ использует Python. Другой вариант — `spark-py`, который использует Python с Apache Spark. |
@@ -112,6 +114,36 @@ image_config = ContainerImage.image_configuration(execution_script = "score.py",
 Пример создания конфигурация образа, см. в разделе [развертывание классификатора изображений](tutorial-deploy-models-with-aml.md).
 
 Дополнительные сведения см. в справочной документации по [классу ContainerImage](https://docs.microsoft.com/python/api/azureml-core/azureml.core.image.containerimage?view=azure-ml-py).
+
+### <a id="customimage"></a> Использование пользовательского образа
+
+При использовании пользовательского образа, этот образ должен соответствовать следующим требованиям:
+
+* Ubuntu 16.04 или более поздней версии.
+* Conda 4.5. # или более поздней версии.
+* Python 3.5. # или 3.6. #.
+
+Чтобы использовать пользовательский образ, задайте `base_image` свойство конфигурации образа на адрес образа. Следующий пример демонстрирует использование образа из обоих открытого и закрытого реестра контейнеров Azure:
+
+```python
+# use an image available in public Container Registry without authentication
+image_config.base_image = "mcr.microsoft.com/azureml/o16n-sample-user-base/ubuntu-miniconda"
+
+# or, use an image available in a private Container Registry
+image_config.base_image = "myregistry.azurecr.io/mycustomimage:1.0"
+image_config.base_image_registry.address = "myregistry.azurecr.io"
+image_config.base_image_registry.username = "username"
+image_config.base_image_registry.password = "password"
+```
+
+Дополнительные сведения об отправке образов в реестр контейнеров Azure, см. в разделе [отправка первого образа в частный реестр контейнеров Docker](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-docker-cli).
+
+Если ваша модель обучается на вычислений машинного обучения Azure, с помощью __версии 1.0.22 или более поздней версии__ пакета SDK для обучения машины Azure, образ создается во время обучения. Следующий пример демонстрирует использование этого образа:
+
+```python
+# Use an image built during training with SDK 1.0.22 or greater
+image_config.base_image = run.properties["AzureML.DerivedImageName"]
+```
 
 ### <a id="script"></a> Сценарий выполнения
 
@@ -214,7 +246,7 @@ image = ContainerImage.create(name = "myimage",
 
 На этапе развертывания процесс немного отличается в зависимости от целевого объекта вычислений, на котором оно выполняется. Из следующих разделов вы узнаете, как развернуть:
 
-| Целевой объект вычисления | Тип развертывания | ОПИСАНИЕ |
+| Целевой объект вычисления | Тип развертывания | Описание |
 | ----- | ----- | ----- |
 | [Служба Azure Kubernetes (AKS)](#aks) | Веб-службы (в режиме реального времени получение)| Подходит для крупномасштабных рабочих развертываний. Она обеспечивает автоматическое масштабирование и малое время отклика. |
 | [Вычислений для машинного Обучения Azure](#azuremlcompute) | Веб-службы (получение пакетной службы)| Запустите пакетный прогноз на бессерверных вычислений. Поддерживает нормальные и низкоприоритетные виртуальные машины. |
@@ -264,7 +296,7 @@ image = ContainerImage.create(name = "myimage",
 * Сбор данных модели
 * Малое время отклика для веб-служб
 * Обработку подключений TLS
-* Authentication
+* Проверка подлинности
 
 #### <a name="autoscaling"></a>Автомасштабирование
 
@@ -589,9 +621,9 @@ print(service.state)
 
 Ниже приведены другие методы для регистрации устройства.
 
-* [Портал Azure](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-portal)
+* [портале Azure](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-portal)
 * [Инфраструктура CLI Azure](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-cli)
-* [Visual Studio Code.](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-vscode)
+* [Visual Studio Code](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-vscode)
 
 ### <a name="deploy-the-model-to-the-device"></a>Развертывание модели на устройстве
 

@@ -9,14 +9,14 @@ keywords: функции azure, функции, обработка событи�
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 030/25/2019
+ms.date: 03/25/2019
 ms.author: cshoe
-ms.openlocfilehash: 15e4cf484ae38268c59781101256d64ef85e72ef
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
-ms.translationtype: HT
+ms.openlocfilehash: e0009e1c6380e02e2e0e24bf86e6dab435b6c022
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59283041"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59357636"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Методика тестирования кода с помощью Функций Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "59283041"
 
 ![Тестирование Функций Azure с помощью C# в Visual Studio](./media/functions-test-a-function/azure-functions-test-visual-studio-xunit.png)
 
-### <a name="setup"></a>Установка
+### <a name="setup"></a>Настройка
 
 Чтобы настроить среду, создайте функцию и протестируйте приложение. Описанные ниже действия помогут создать приложения и функции, необходимые для поддержки тестов.
 
@@ -271,7 +271,7 @@ namespace Functions.Tests
 
 ![Тестирование Функций Azure с помощью JavaScript в VS Code](./media/functions-test-a-function/azure-functions-test-vs-code-jest.png)
 
-### <a name="setup"></a>Установка
+### <a name="setup"></a>Настройка
 
 Для настройки среды инициализируйте новое приложение Node.js в пустой папке, запустив `npm init`.
 

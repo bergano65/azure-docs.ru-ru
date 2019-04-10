@@ -1,18 +1,20 @@
 items:
 - name: Документация по каталогу данных
-  href: index.md
+  href: index.yml
 - name: Обзор
   items:
   - name: Что такое каталог данных?
-    href: data-catalog-what-is-data-catalog.md
+    href: overview.md
+- name: Быстрый запуск
+  items:
+  - name: Создание каталога данных Azure
+    href: data-catalog-get-started.md
+- name: Основные понятия
+  items:
   - name: Распространенные сценарии
     href: data-catalog-common-scenarios.md
   - name: Поддерживаемые источники данных
     href: data-catalog-dsr.md
-- name: Начало работы
-  items:
-  - name: Начало работы с каталогом данных Azure
-    href: data-catalog-get-started.md
   - name: Внедрение каталога данных Azure
     href: data-catalog-adopting-data-catalog.md
   - name: Предварительные требования
@@ -69,17 +71,15 @@ items:
     href: https://azure.microsoft.com/pricing/details/data-catalog/
   - name: Калькулятор цен
     href: https://azure.microsoft.com/pricing/calculator/
-  - name: Заметки о выпуске
-    href: ../active-directory/fundamentals/whats-new.md
   - name: Обновления службы
     href: https://azure.microsoft.com/updates/?product=data-catalog
   - name: Переполнение стека
     href: https://stackoverflow.com/questions/tagged/azure-data-catalog
   - name: Терминология
     href: data-catalog-terminology.md
-ms.openlocfilehash: 47fef3cf68ca9ab34c0dd349106ed4ca8c8ad4f1
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 17965d0b9394cfea83fdb463db6ee2b0fde15d87
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58340648"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59277635"

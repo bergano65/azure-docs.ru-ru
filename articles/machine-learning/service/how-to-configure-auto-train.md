@@ -9,14 +9,14 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.date: 03/22/2019
+ms.date: 04/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: fd937aba302004f23904e4f743c93e69460f9026
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.openlocfilehash: 5aa9a60c624e1bfaa1570d02bfd1a421fcab3301
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58541151"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59358306"
 ---
 # <a name="configure-automated-machine-learning-experiments"></a>Настройка экспериментов автоматического машинного обучения
 
@@ -26,7 +26,7 @@ ms.locfileid: "58541151"
 
 Возможности настройки, доступные в автоматическом машинном обучении:
 
-* выбор типа эксперимента: классификация, регрессия или прогнозирование;
+* выбор типа эксперимента: Классификации, регрессии или прогнозирования временных рядов
 * источник данных, форматы и получение данных;
 * выбор целевого объекта вычислений (локальный или удаленный);
 * настройка параметров эксперимента автоматического машинного обучения;
@@ -39,22 +39,22 @@ ms.locfileid: "58541151"
 
 Эта служба также поддерживает приведенные ниже алгоритмы для автоматизации и настройки. Пользователю не нужно указывать алгоритм. Хотя алгоритмы DNN доступны во время обучения, автоматических машинного Обучения не выполняет сборку моделей DNN.
 
-классификация; | Регрессия | Прогнозирование
+классификация; | Регрессия | Прогнозирование временных рядов
 |-- |-- |--
-[Логистическая регрессия](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)| [Эластичная сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)| [Эластичная сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)
-[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)
-[Градиентное усиление](https://scikit-learn.org/stable/modules/ensemble.html#classification)|[Градиентное усиление](https://scikit-learn.org/stable/modules/ensemble.html#regression)|[Градиентное усиление](https://scikit-learn.org/stable/modules/ensemble.html#regression)
+[Логистическая Регрессия](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)| [Эластичной сети](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)| [Эластичной сети](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)
+[Свет GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Свет GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Свет GBM](https://lightgbm.readthedocs.io/en/latest/index.html)
+[Градиентный Бустинг](https://scikit-learn.org/stable/modules/ensemble.html#classification)|[Градиентный Бустинг](https://scikit-learn.org/stable/modules/ensemble.html#regression)|[Градиентный Бустинг](https://scikit-learn.org/stable/modules/ensemble.html#regression)
 [Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#decision-trees)|[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#regression)|[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#regression)
-[Алгоритм "К ближайших соседей"](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)|[Алгоритм "К ближайших соседей"](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)|[Алгоритм "К ближайших соседей"](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)
-[Линейная классификация опорных векторов](https://scikit-learn.org/stable/modules/svm.html#classification)|[Лассо LARS](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)|[Лассо LARS](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)
-[Классификация опорных C-векторов (SVC)](https://scikit-learn.org/stable/modules/svm.html#classification)|[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)|[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)
-[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)|[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)|[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)
-[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)|[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)|[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)
+[K ближайших](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)|[K ближайших](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)|[K ближайших](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)
+[Linear SVC](https://scikit-learn.org/stable/modules/svm.html#classification)|[ЛАРС лассо](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)|[ЛАРС лассо](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)
+[Поддержка C вектор классификации (SVC)](https://scikit-learn.org/stable/modules/svm.html#classification)|[Вероятностный градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)|[Вероятностный градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)
+[Случайного леса](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)|[Случайного леса](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)|[Случайного леса](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)
+[Очень случайную деревьев](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)|[Очень случайную деревьев](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)|[Очень случайную деревьев](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)
 [xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)|[xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)| [xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)
 [Определяемая DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNClassifier)|[Регрессор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor) | [Регрессор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor)|
 [Линейный классификатор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearClassifier)|[Линейной регрессии](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)|[Линейной регрессии](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)
 [Упрощенный алгоритм Байеса](https://scikit-learn.org/stable/modules/naive_bayes.html#bernoulli-naive-bayes)|
-[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#sgd)|
+[Вероятностный градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#sgd)|
 
 
 ## <a name="data-source-and-format"></a>Источник данных и формат
@@ -84,7 +84,7 @@ ms.locfileid: "58541151"
 
 ## <a name="fetch-data-for-running-experiment-on-remote-compute"></a>Получение данных для выполнения эксперимента на удаленных вычислительных ресурсах
 
-Если эксперимент выполняется на удаленных вычислительных ресурсах, получение данных должно быть помещено в отдельный сценарий Python `get_data()`. Этот сценарий выполняется на удаленных вычислительных ресурсах, в которых выполняется эксперимент автоматического машинного обучения. `get_data` избавляет от необходимости получать данные по сети для каждой итерации. Без `get_data` эксперимент завершится ошибкой при выполнении на удаленных вычислительных ресурсах.
+Если эксперимент выполняется на удаленных вычислительных ресурсах, получение данных должно быть помещено в отдельный сценарий Python `get_data()`. Этот сценарий выполняется на удаленных вычислительных ресурсах, в которых выполняется эксперимент автоматического машинного обучения. `get_data` избавляет от необходимости получения данных по сети для каждой итерации. Без `get_data` эксперимент завершится ошибкой при выполнении на удаленных вычислительных ресурсах.
 
 Вот пример `get_data`:
 
@@ -110,9 +110,9 @@ def get_data(): # Burning man 2016 data
 automl_config = AutoMLConfig(****, data_script=project_folder + "/get_data.py", **** )
 ```
 
-Сценарий `get_data` может вернуть:
+`get_data` скрипт может вернуть:
 
-Ключ | type |    Взаимно исключают друг друга с помощью | ОПИСАНИЕ
+Ключ | type | Взаимно исключают друг друга с помощью    | ОПИСАНИЕ
 ---|---|---|---
 X | Кадр данных Pandas или массив Numpy | data_train, метка, столбцы |  Все признаки для обучения
 y | Кадр данных Pandas или массив Numpy |   label   | Данные метки для обучения. Для классификации это должен быть массив целых чисел
@@ -191,6 +191,7 @@ y = dprep.read_csv(simple_example_data_root + 'y.csv').to_long(dprep.ColumnSelec
         primary_metric='AUC_weighted',
         max_time_sec=12000,
         iterations=50,
+        blacklist_models='XGBoostClassifier',
         X=X,
         y=y,
         n_cross_validations=2)
@@ -202,55 +203,25 @@ y = dprep.read_csv(simple_example_data_root + 'y.csv').to_long(dprep.ColumnSelec
         task='regression',
         max_time_sec=600,
         iterations=100,
+        whitelist_models='kNN regressor'
         primary_metric='r2_score',
         X=X,
         y=y,
         n_cross_validations=5)
     ```
 
-Есть три различных значения параметров `task`, которые определяют список алгоритмов для применения.  Используйте параметры `whitelist` или `blacklist` для дополнительного изменения итераций с помощью доступных алгоритмов для включения или исключения.
-* классификация;
-    * LogisticRegression;
-    * SGD
-    * MultinomialNaiveBayes;
-    * BernoulliNaiveBayes;
-    * SVM
-    * LinearSVM;
-    * kNN;
-    * DecisionTree;
-    * RandomForest;
-    * ExtremeRandomTrees;
-    * LightGBM
-    * GradientBoosting;
-    * TensorFlowDNN.
-    * TensorFlowLinearClassifier.
-    * XGBoostClassifier
-* Регрессия
-    * ElasticNet;
-    * GradientBoosting;
-    * DecisionTree;
-    * kNN;
-    * LassoLars;
-    * SGD 
-    * RandomForest;
-    * ExtremeRandomTree;
-    * LightGBM
-    * TensorFlowLinearRegressor;
-    * TensorFlowDNN.
-    * XGBoostRegressor
-* Прогнозирование
-    * ElasticNet;
-    * GradientBoosting;
-    * DecisionTree;
-    * kNN;
-    * LassoLars;
-    * SGD 
-    * RandomForest;
-    * ExtremeRandomTree;
-    * LightGBM
-    * TensorFlowLinearRegressor;
-    * TensorFlowDNN.
-    * XGBoostRegressor
+С тремя `task` значения параметра определить список алгоритмов для применения.  Используйте параметры `whitelist` или `blacklist` для дополнительного изменения итераций с помощью доступных алгоритмов для включения или исключения. Список поддерживаемых моделей можно найти на [SupportedAlgorithms-класс](https://docs.microsoft.com/en-us/python/api/azureml-train-automl/azureml.train.automl.constants.supportedalgorithms?view=azure-ml-py)
+
+## <a name="primary-metric"></a>Основная метрика
+Основной показатель; как показано в приведенных выше примерах, определяет метрику для использования во время обучения модели для оптимизации. Основным показателем, который можно выбрать определяется тип задачи, который выбран. Ниже приведен список доступных метрик.
+
+|классификация; | Регрессия | Прогнозирование временных рядов
+|-- |-- |--
+|accuracy| spearman_correlation; | spearman_correlation;
+|AUC_weighted | normalized_root_mean_squared_error; | normalized_root_mean_squared_error;
+|average_precision_score_weighted | r2_score; | r2_score;
+|norm_macro_recall | normalized_mean_absolute_error; | normalized_mean_absolute_error;
+|precision_score_weighted |
 
 ## <a name="data-pre-processing-and-featurization"></a>Предварительная обработка данных и добавление признаков
 
@@ -269,7 +240,7 @@ y = dprep.read_csv(simple_example_data_root + 'y.csv').to_long(dprep.ColumnSelec
 
 ## <a name="time-series-forecasting"></a>Прогнозирование временных рядов
 Для типа задачи прогнозирования ряда времени у вас есть дополнительные параметры для определения.
-1. time_horizon_name — это обязательный параметр, который определяет имя столбца, содержащего даты и времени ряда обучающих данных. 
+1. time_column_name — это обязательный параметр, который определяет имя столбца, содержащего даты и времени ряда обучающих данных. 
 1. max_horizon - определяет продолжительность времени, который требуется спрогнозировать основании периодичности обучающих данных. Например при наличии данных для обучения с ежедневной интервалов времени, вы определить, насколько далеко в днях должна обучить модель.
 1. grain_column_names - определяет имена столбцов, которые содержат данные отдельных временных рядов в обучающих данных. Например если выполнить прогноз продаж по магазинам отдельной марки, хранилище и торговой марки столбцы бы определить как столбцы детализации.
 
@@ -324,7 +295,6 @@ run = experiment.submit(automl_config, show_output=True)
 1. Выйдите из после периода времени — с помощью experiment_timeout_minutes в настройках, которые можно определить продолжительность в минутах следует продолжить эксперимента в сеансе.
 1. Выйдите из после оценки достижения - с помощью experiment_exit_score, вы можете выполнить experiement после достижения оценку на основе вашей основной метрики.
 
-
 ## <a name="explore-model-metrics"></a>Изучение метрик модели
 Просмотреть результаты можно в мини-приложении или во встроенном окне при работе с записной книжкой. Ознакомьтесь с разделом [Просмотр сведений о выполнении](how-to-track-experiments.md#view-run-details), чтобы получить дополнительные сведения.
 
@@ -355,7 +325,7 @@ recall_score_micro|Полнота — это процент элементов, 
 recall_score_weighted|Полнота — это процент элементов, которые фактически находятся в определенном классе и правильно помечены. Взвешенное значение — среднее арифметическое значение полноты для каждого класса, взвешенное по числу экземпляров значения true в каждом классе.|[Вычисление](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html)|average="weighted"|
 weighted_accuracy|Взвешенная точность — это точность, для вычисления которой каждой выборке присваивается вес, соответствующий доле экземпляров true в классе true для этой выборки.|[Вычисление](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)|Значение sample_weight представляет собой вектор, равный доле этого класса для каждого элемента в целевом элементе.|
 
-### <a name="regression-and-forecasting-metrics"></a>Метрики регрессии и прогнозирования
+### <a name="regression-and-time-series-forecasting-metrics"></a>Прогнозирование метрик регрессии и время рядов
 В каждой итерации для задачи регрессии или прогнозирования сохраняются следующие метрики.
 
 |Метрика|ОПИСАНИЕ|Вычисление|Дополнительные параметры

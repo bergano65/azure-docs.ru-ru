@@ -2,17 +2,17 @@
 title: Как выполнять поиск, эффективно с помощью службы поиска Azure Maps | Документация Майкрософт
 description: Узнайте, как использовать рекомендации для поиска с помощью службы поиска Azure Maps
 ms.author: v-musehg
-ms.date: 04/05/2019
+ms.date: 04/08/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 3a9c5ad92494dd82500c4faee82c119e99346c7a
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: f7a14e975a5ca3aee5588f55f43b28081c100074
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59288161"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59358144"
 ---
 # <a name="best-practices-to-use-azure-maps-search-service"></a>Советы и рекомендации для использования службы поиска Azure Maps
 
@@ -24,7 +24,7 @@ Azure Maps [службы поиска](https://docs.microsoft.com/rest/api/maps/
 * Чтение структуры ответа поиска адреса
 
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнять вызовы к API службы "Карты", вам потребуется учетная запись и ключ службы "Карты". Дополнительные сведения о создании учетной записи и получении ключа см. в статье об [управлении ключами и учетной записью службы "Карты Azure"](how-to-manage-account-keys.md).
 
@@ -83,7 +83,7 @@ Azure Maps [службы поиска](https://docs.microsoft.com/rest/api/maps/
 **Пример запроса:**
 
 ```HTTP
-https://atlas.microsoft.com/search/address/json?api-version=1.0&subscription-key={subscription-key}&query=MicrosoftWay&entityType=Municipality
+https://atlas.microsoft.com/search/address/reverse/json?api-version=1.0&subscription-key={subscription-key}&query=47.6394532,-122.1304551&language=en-US&entityType=Municipality
 ```
 
 **Ответ:**
@@ -240,14 +240,20 @@ https://atlas.microsoft.com/search/address/json?subscription-key={subscription-k
 
 ### <a name="uri-encoding-to-handle-special-characters"></a>URI, кодирования для обработки специальных символов 
 
-Чтобы найти пересекающей улицы адреса, то есть 1-го Avenue & Объединение Street, Сиэтл, специальный символ «&» должен быть закодирован перед отправкой запроса. Мы рекомендуем кодировать символьные данные в URI, там, где все символы кодируются с помощью знака «%» и шестнадцатеричное значение двух символов, соответствующий их символ UTF-8.
+Чтобы найти кросс-адреса, то есть «Avenue 1-го & Объединение Street, Сиэтл», специальный символ «&» должен быть закодирован перед отправкой запроса. Мы рекомендуем кодировать символьные данные в URI, там, где все символы кодируются с помощью знака «%» и шестнадцатеричное значение двух символов, соответствующий их символ UTF-8.
 
 **Примеры использования**:
 
 Получите адрес поиска:
 
 ```
-query=1st Avenue & E 111th St, New York shall be encoded as query"=1st%20Avenue%20%26%20E%20111th%20St%2C%20New%20York 
+query=1st Avenue & E 111th St, New York
+```
+
+ должен быть закодирован как:
+
+```
+query"=1st%20Avenue%20%26%20E%20111th%20St%2C%20New%20York
 ```
 
 
@@ -315,7 +321,7 @@ url.QueryEscape(query)
 **Пример запроса.**
 
 ```HTTP
-https://atlas.microsoft.com/search/poi/json?subscription-key={subscription-key}&api-version=1.0&query=gas station&limit=3&lat=47.6413362&lon=-122.1327968
+https://atlas.microsoft.com/search/poi/json?subscription-key={subscription-key}&api-version=1.0&query=gas%20station&limit=3&lat=47.6413362&lon=-122.1327968
 ```
 
 **Ответ:**
@@ -402,72 +408,7 @@ https://atlas.microsoft.com/search/poi/json?subscription-key={subscription-key}&
                 }
             ]
         },
-        {
-            "type": "POI",
-            "id": "US/POI/p0/7728133",
-            "score": 5.663,
-            "dist": 1330.1278248163273,
-            "info": "search:ta:840539001100326-US",
-            "poi": {
-                "name": "76",
-                "phone": "+(1)-(425)-7472126",
-                "brands": [
-                    {
-                        "name": "76"
-                    }
-                ],
-                "url": "www.76.com/",
-                "classifications": [
-                    {
-                        "code": "PETROL_STATION",
-                        "names": [
-                            {
-                                "nameLocale": "en-US",
-                                "name": "petrol station"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "address": {
-                "streetNumber": "2421",
-                "streetName": "148th Ave NE",
-                "municipalitySubdivision": "Redmond, Bellevue",
-                "municipality": "Redmond, Bellevue",
-                "countrySecondarySubdivision": "King",
-                "countryTertiarySubdivision": "Seattle East",
-                "countrySubdivision": "WA",
-                "postalCode": "98007",
-                "countryCode": "US",
-                "country": "United States Of America",
-                "countryCodeISO3": "USA",
-                "freeformAddress": "2421 148th Ave NE, Bellevue, WA 98007",
-                "countrySubdivisionName": "Washington"
-            },
-            "position": {
-                "lat": 47.63187,
-                "lon": -122.14365
-            },
-            "viewport": {
-                "topLeftPoint": {
-                    "lat": 47.63277,
-                    "lon": -122.14498
-                },
-                "btmRightPoint": {
-                    "lat": 47.63097,
-                    "lon": -122.14232
-                }
-            },
-            "entryPoints": [
-                {
-                    "type": "main",
-                    "position": {
-                        "lat": 47.63186,
-                        "lon": -122.14313
-                    }
-                }
-            ]
-        },
+        ...,
         {
             "type": "POI",
             "id": "US/POI/p0/7727106",
@@ -559,31 +500,31 @@ https://atlas.microsoft.com/search/poi/json?subscription-key={subscription-key}&
 **Пример запроса.**
 
 ```HTTP
-https://atlas.microsoft.com/search/address/json?subscription-key={subscription-key}&api-version=1&query=400BroadSt,Seattle,WA&countrySet=US
+https://atlas.microsoft.com/search/address/json?subscription-key={subscription-key}&api-version=1&query=400%20Broad%20Street%2C%20Seattle%2C%20WA&countrySet=US
 ```
 
-Дополнительно давайте взглянем на структуру ответа ниже. Типы результата объектов результатов в ответе различны. Если вы заметили внимательно, можно увидеть, что у нас есть три различных типа объектов результатов, которые точка адрес, улица и пересекающей улицы. Обратите внимание на то, что адрес поиска не возвращают Геозоне. `Score` Параметр для каждого объекта ответа указывает относительный показатель сопоставления для оценки других объектов в том же ответе. См. в разделе [получить адрес поиска](https://docs.microsoft.com/rest/api/maps/search/getsearchaddress) Дополнительные сведения о параметров объекта ответа.
+Дополнительно давайте взглянем на структуру ответа ниже. Типы результата объектов результатов в ответе различны. Если вы заметили внимательно, можно увидеть, что у нас есть три различных типа объектов результатов, которые «Точки Address», «Street» и «Пересекающей улицы». Обратите внимание на то, что адрес поиска не возвращают Геозоне. `Score` Параметр для каждого объекта ответа указывает относительный показатель сопоставления для оценки других объектов в том же ответе. См. в разделе [получить адрес поиска](https://docs.microsoft.com/rest/api/maps/search/getsearchaddress) Дополнительные сведения о параметров объекта ответа.
 
 **Поддерживаемые типы результата:**
 
-**Адрес точки:** Точек на карте с определенным адресом с помощью улица и номер. Самый высокий уровень точности для адреса. 
+* **Адрес точки:** Точек на карте с определенным адресом с помощью улица и номер. Самый высокий уровень точности для адреса. 
 
-**Диапазон адресов:**  Для некоторых улиц моментов адрес, на которые интерполируются в начале и конце улицы; Эти точки отображаются в виде диапазонов адресов. 
+* **Диапазон адресов:**  Для некоторых улиц моментов адрес, на которые интерполируются в начале и конце улицы; Эти точки отображаются в виде диапазонов адресов. 
 
-**География:** Области карты, представляющие административный Округ земли, то есть, страны, состояние, city. 
+* **География:** Области карты, представляющие административный Округ земли, то есть, страны, состояние, city. 
 
-**POI - (Достопримечательности):** Точек на карте, которые заслуживают внимания и может представлять интерес.
+* **POI - (Достопримечательности):** Точек на карте, которые заслуживают внимания и может представлять интерес.
 
-**Улица:** Представление улиц на карте. Адреса сопоставляются координаты широты и долготы, содержащий адрес улицы. Номера домов могут не учитываться. 
+* **Улица:** Представление улиц на карте. Адреса сопоставляются координаты широты и долготы, содержащий адрес улицы. Номера домов могут не учитываться. 
 
-**Пересекающей улицы:** Пересечения. Представление соединения; места, где пересекаются два улицы.
+* **Пересекающей улицы:** Пересечения. Представление соединения; места, где пересекаются два улицы.
 
 **Ответ:**
 
 ```JSON
 {
     "summary": {
-        "query": "400 broad st seattle wa",
+        "query": "400 broad street seattle wa",
         "queryType": "NON_NEAR",
         "queryTime": 129,
         "numResults": 6,

@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/02/2019
 ms.author: spelluru
-ms.openlocfilehash: 24391e9e8541f12c434ade837b8f4944711ae375
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: deb5595ac6a8b0d189e5594fda8e4b60480d038c
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58887238"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59357404"
 ---
 # <a name="integrate-environments-into-your-azure-devops-cicd-pipelines"></a>Интеграция среды в Azure DevOps непрерывной Интеграции и Развертывания конвейеров
 Можно использовать расширение задачи Azure DevTest Labs, в который установлена службам DevOps в Azure (прежнее название Visual Studio Team Services) для простой интеграции непрерывной интеграции (CI) / конвейер непрерывной поставки (CD) сборки — выпуска с Azure DevTest Labs. Эти расширения упрощают для быстрого развертывания [среды](devtest-lab-test-env.md) для конкретного теста задач и затем удалите его, после завершения теста. 
@@ -56,7 +56,7 @@ ms.locfileid: "58887238"
 
 1. В определении выпуска выберите **Добавить задачи**.
 2. На **задачи** вкладке, добавление задачи Azure DevTest Labs создавать среды. Настройте задачу следующим образом.
-    1. В поле **Подписка на AzureRM** выберите подключение в списке **Доступные подключения к службе Azure** или создайте подключение с ограниченными разрешениями к вашей подписке Azure. Дополнительные сведения см. в разделе о [конечной точке службы Azure Resource Manager](/devops/pipelines/library/service-endpoints).
+    1. В поле **Подписка на AzureRM** выберите подключение в списке **Доступные подключения к службе Azure** или создайте подключение с ограниченными разрешениями к вашей подписке Azure. Дополнительные сведения см. в разделе о [конечной точке службы Azure Resource Manager](/azure/devops/pipelines/library/service-endpoints).
 2. Для **имя лабораторной**, выберите имя экземпляра, который был создан ранее *.
 3. Для **имя репозитория**, выберите репозиторий, где был отправлен в шаблоне Resource Manager (201) *.
 4. Для **имя шаблона**, выберите имя среды, созданный для вашего исходного кода репозитории *. 
@@ -71,7 +71,7 @@ ms.locfileid: "58887238"
 В определении выпуска выберите **добавлять задачи**, а затем на **развернуть** вкладку, добавьте **удалить среду Azure DevTest Labs** задачи. Настройте его следующим образом.
 
 1. Чтобы удалить виртуальную Машину, см. в разделе [задачи Azure DevTest Labs](https://marketplace.visualstudio.com/items?itemName=ms-azuredevtestlabs.tasks):
-    1. В поле **Подписка на AzureRM** выберите подключение в списке **Доступные подключения к службе Azure** или создайте подключение с ограниченными разрешениями к вашей подписке Azure. Дополнительные сведения см. в разделе о [конечной точке службы Azure Resource Manager](/devops/pipelines/library/service-endpoints).
+    1. В поле **Подписка на AzureRM** выберите подключение в списке **Доступные подключения к службе Azure** или создайте подключение с ограниченными разрешениями к вашей подписке Azure. Дополнительные сведения см. в разделе о [конечной точке службы Azure Resource Manager](/azure/devops/pipelines/library/service-endpoints).
     2. Для **имя лабораторной**, выберите ту, где среда существует.
     3. Для **имя среды**, введите имя среды для удаления.
 2. Введите имя для определения выпуска и сохраните его.
@@ -80,5 +80,5 @@ ms.locfileid: "58887238"
 Ознакомьтесь со следующими статьями: 
 - [Создание сред со множеством виртуальных Машин с помощью шаблонов Resource Manager](devtest-lab-create-environment-from-arm.md).
 - Шаблоны быстрого запуска Resource Manager для автоматизации DevTest Labs из [репозитории DevTest Labs на сайте GitHub](https://github.com/Azure/azure-quickstart-templates).
-- [Устранение неполадок VSTS страницы](/devops/pipelines/troubleshooting)
+- [Устранение неполадок VSTS страницы](/azure/devops/pipelines/troubleshooting)
 

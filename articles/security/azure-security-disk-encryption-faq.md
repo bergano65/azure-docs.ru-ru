@@ -5,14 +5,14 @@ author: msmbaldwin
 ms.service: security
 ms.topic: article
 ms.author: mbaldwin
-ms.date: 03/15/2019
+ms.date: 04/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 14e9bd7b87f2941fcc075a6265f2e6c96fe646ea
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
-ms.translationtype: MT
+ms.openlocfilehash: 275907eed94f3165853ecf9adcb11fb62460d2e2
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58649923"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59282225"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
 
@@ -42,7 +42,7 @@ ms.locfileid: "58649923"
 | Дистрибутив Linux | Version (версия) | Тип тома, для которого поддерживается шифрование|
 | --- | --- |--- |
 | Ubuntu | 16.04| Диск операционной системы и данных |
-| Ubuntu | 14.04.5</br>[с ядром, оптимизированным для Azure, обновленным до версии 4.15 или более поздней версии](azure-security-disk-encryption-tsg.md#bkmk_Ubuntu14) | Диск операционной системы и данных |
+| Ubuntu | 14.04.5</br>[с помощью Azure настроены обновлен до 4.15 или более поздняя версия ядра](azure-security-disk-encryption-tsg.md#bkmk_Ubuntu14) | Диск операционной системы и данных |
 | RHEL | 7.6 | Диск операционной системы и данных * |
 | RHEL | 7.5 | Диск операционной системы и данных * |
 | RHEL | 7.4 | Диск операционной системы и данных * |
@@ -72,7 +72,7 @@ ms.locfileid: "58649923"
 
 ## <a name="can-i-encrypt-both-boot-and-data-volumes-with-azure-disk-encryption"></a>Можно ли с помощью шифрования дисков Azure зашифровать загрузочные тома и тома данных?
 
-Да, на виртуальных машинах IaaS под управлением Windows и Linux можно зашифровать как загрузочные тома, так и тома данных. Чтобы зашифровать данные на виртуальных машинах под управлением Windows, необходимо сначала зашифровать том операционной системы. На виртуальных машинах Linux можно зашифровать том данных без предварительного шифрования тома операционной системы. После шифрования тома операционной системы виртуальной машины IaaS под управлением Linux шифрование невозможно отключить.
+Да, на виртуальных машинах IaaS под управлением Windows и Linux можно зашифровать как загрузочные тома, так и тома данных. Чтобы зашифровать данные на виртуальных машинах под управлением Windows, необходимо сначала зашифровать том операционной системы. На виртуальных машинах Linux можно зашифровать том данных без предварительного шифрования тома операционной системы. После шифрования тома операционной системы виртуальной машины IaaS под управлением Linux шифрование невозможно отключить. Для виртуальных машин Linux в масштабируемом наборе можно зашифровать том данных.
 
 ## <a name="can-i-encrypt-an-unmounted-volume-with-azure-disk-encryption"></a>Можно зашифровать том размонтирована с шифрованием дисков Azure?
 
@@ -165,6 +165,6 @@ XFS тома поддерживаются для шифрования диско
 ## <a name="next-steps"></a>Дальнейшие действия
 Из этого документа вы получили ответы на самые распространенные вопросы, связанные с шифрованием дисков Azure. Дополнительные сведения об этой службе см. в следующих статьях:
 
-- [Шифрование дисков Azure для виртуальных машин IaaS](azure-security-disk-encryption-overview.md)
+- [Общие сведения о шифровании дисков Azure](azure-security-disk-encryption-overview.md)
 - [Шифрование диска в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-apply-disk-encryption)
-- [Шифрование неактивных данных в Azure](https://docs.microsoft.com/azure/security/azure-security-encryption-atrest)
+- [Шифрование неактивных данных Azure](https://docs.microsoft.com/azure/security/azure-security-encryption-atrest)

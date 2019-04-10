@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
-ms.reviewer: carlrab
+ms.reviewer: sstein
 manager: craigg
 ms.date: 02/08/2019
-ms.openlocfilehash: 04a99be40f1a89d834c560bddf3f49c2a73f34b8
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: ec9bd3ee106571484c513c2d005a374a90c1d17e
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58650263"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59359714"
 ---
 # <a name="prepay-for-sql-database-compute-resources-with-azure-sql-database-reserved-capacity"></a>Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности
 
@@ -84,12 +84,12 @@ ms.locfileid: "58650263"
 
 Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
 
-- [Основные сведения о резервировании в Azure](../billing/billing-save-compute-costs-reservations.md)
-- [Управление Azure Reserved VM Instances](../billing/billing-manage-reserved-vm-instance.md)
-- [Сведения о скидках на резервирование Azure](../billing/billing-understand-reservation-charges.md)
-- [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../billing/billing-understand-reserved-instance-usage.md)
-- [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](../billing/billing-understand-reserved-instance-usage-ea.md)
-- [Приобретение зарезервированных экземпляров Azure](https://docs.microsoft.com/partner-center/azure-reservations)
+- [Общие сведения об Azure Reserved VM Instances](../billing/billing-save-compute-costs-reservations.md)
+- [Управление Azure резервирования](../billing/billing-manage-reserved-vm-instance.md)
+- [Понимать, что скидки резервирования для Azure](../billing/billing-understand-reservation-charges.md)
+- [Общие сведения об использовании резервирования для подписки с оплатой по мере использования](../billing/billing-understand-reserved-instance-usage.md)
+- [Общие сведения об использовании резервирования о регистрации Enterprise](../billing/billing-understand-reserved-instance-usage-ea.md)
+- [Azure резервирования в программе поставщика облачных решений (CSP) партнер Center](https://docs.microsoft.com/partner-center/azure-reservations)
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/25/2019
 ms.author: juliako
-ms.openlocfilehash: fbea3daec3d9ccac81f246d3dc762fc80cb4b18a
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 7f3afa59b4c8eaaeaf54576eb9fcaad626749683
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58759641"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59358919"
 ---
 # <a name="connect-to-media-services-v3-api---nodejs"></a>Подключение к API v3 служб мультимедиа - Node.js
 
@@ -126,7 +126,6 @@ node index.js
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Основные понятия служб мультимедиа Azure](concepts-overview.md)
-- [Краткое руководство]()
-- [Справочник по Node.js](https://docs.microsoft.com/javascript/api/azure-arm-mediaservices/?view=azure-node-latest)
+- [Основные понятия служб мультимедиа](concepts-overview.md)
+- [Справочник по node.js](https://docs.microsoft.com/javascript/api/azure-arm-mediaservices/?view=azure-node-latest)
 - [NPM install azure-arm-mediaservices](https://www.npmjs.com/package/azure-arm-mediaservices/)<br>

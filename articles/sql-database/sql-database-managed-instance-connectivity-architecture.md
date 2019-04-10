@@ -9,17 +9,17 @@ ms.devlang: ''
 ms.topic: conceptual
 author: srdan-bozovic-msft
 ms.author: srbozovi
-ms.reviewer: bonova, carlrab
+ms.reviewer: sstein, bonova, carlrab
 manager: craigg
 ms.date: 02/26/2019
-ms.openlocfilehash: f08b22f24dfde41646f56dc1ecd9777f267620ee
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: 801294241f399097d363dd8dc2682f158c0bf2cc
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58651318"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59358284"
 ---
-# <a name="connectivity-architecture-for-a-managed-instance-in-azure-sql-database"></a>Архитектура подключений к для управляемого экземпляра базы данных SQL Azure 
+# <a name="connectivity-architecture-for-a-managed-instance-in-azure-sql-database"></a>Архитектура подключений к для управляемого экземпляра базы данных SQL Azure
 
 В этой статье объясняется обмен данными в управляемый экземпляр базы данных SQL Azure. Также описывается архитектура подключений к и как компоненты направлять трафик на управляемом экземпляре.  
 
@@ -117,7 +117,6 @@ ms.locfileid: "58651318"
 
 > [!IMPORTANT]
 > Несмотря на то, что правила безопасности для входящего трафика требуется разрешить трафик от _любой_ источников на порты 9000, 9003, 1438, 1440 и 1452, эти порты защищены встроенного брандмауэра. Дополнительные сведения см. в разделе [определить адрес конечной точки управления](sql-database-managed-instance-find-management-endpoint-ip-address.md).
-
 > [!NOTE]
 > При использовании репликации транзакций в управляемом экземпляре, и при использовании любой экземпляр базы данных в качестве издателя или распространителя, откройте порт 445 (исходящий TCP-ПОРТ) в правилах безопасности этой подсети. Этот порт будет разрешать доступ к общей папке Azure.
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: banders
-ms.openlocfilehash: 52e227b933533bf60a474d0417c57e4b75c7978f
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: b78fb7d697f8a72b3c2f99c4509ea6ac5c5e5566
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58224640"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59281188"
 ---
 # <a name="download-or-view-your-azure-billing-invoice-and-daily-usage-data"></a>Скачивание или просмотр счета на оплату и данных о ежедневном использовании в Azure
 
@@ -187,7 +187,7 @@ ms.locfileid: "58224640"
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Проверьте доступ к соглашению клиента Microsoft
 [!INCLUDE [billing-check-mca](../../includes/billing-check-mca.md)]
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
+## <a name="need-help-contact-us"></a>Нужна помощь? Наши координаты
 
 Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
@@ -197,12 +197,12 @@ ms.locfileid: "58224640"
 
 - [Расшифровка счета за использование Microsoft Azure](billing-understand-your-bill.md)
 - [Значение терминов в счете Azure](billing-understand-your-invoice.md)
-- [Значение терминов в файле с подробными данными об использовании Microsoft Azure](billing-understand-your-usage.md)
+- [Значение терминов в Microsoft Azure подробные использования](billing-understand-your-usage.md)
 - [Просмотреть цены на Azure вашей организации](billing-ea-pricing.md)
 
 Если у вас есть соглашения клиентов Майкрософт, см. в разделе:
 
-- [Основная информация о расходах на счете для профиля выставления счетов ](billing-mca-understand-your-bill.md)
+- [Основная информация о расходах на счете для профиля выставления счетов](billing-mca-understand-your-bill.md)
 - [Значение терминов в счете для профиля выставления счетов](billing-mca-understand-your-invoice.md)
 - [Понять Azure файл об использовании и затратах для профиль выставления счетов](billing-mca-understand-your-usage.md)
 - [Просмотр и Загрузка налоговых документов для профиля выставления счетов](billing-mca-download-tax-document.md)

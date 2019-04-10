@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop-msft
-ms.reviewer: carlrab
+ms.reviewer: sstein
 manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: 83be636317299adf820a60716866aa35d318d6dc
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: dc379f1ee67174cd806840e4244054701d18f0d4
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55997368"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59357914"
 ---
 # <a name="general-purpose-service-tier---azure-sql-database"></a>База данных SQL Azure на уровне службы общего назначения
 
@@ -26,7 +26,7 @@ ms.locfileid: "55997368"
 
 База данных SQL Azure основана на архитектуре ядра СУБД SQL Server, которая соответствует облачной среде, чтобы даже в случае сбоя инфраструктуры обеспечить доступность на уровне 99,99 %. Существует три модели уровней службы, которые используются в Базе данных SQL Azure, каждая из которых имеет разные архитектурные модели. Ниже указаны эти уровни служб.
 
-- Универсальные 
+- Универсальные
 - Критически важный для бизнеса
 - Уровень "Гипермасштабирование"
 
@@ -47,7 +47,7 @@ ms.locfileid: "55997368"
 
 Уровень служб общего назначения является уровнем служб по умолчанию в базе данных SQL Azure и предназначен для большей части универсальных рабочих нагрузок. Уровень общего назначения вам подойдет, если требуется полностью управляемое ядро СУБД с соглашением об уровне обслуживания 99.99 % и задержкой хранилища от 5 до 10 мс, что соответствует компоненту IaaS Azure SQL в большинстве случаев.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об уровнях [Критически важный для бизнеса](sql-database-service-tier-business-critical.md) и [Гипермасштабирование](sql-database-service-tier-hyperscale.md).
 - Дополнительные сведения о [Service Fabric](../service-fabric/service-fabric-overview.md).

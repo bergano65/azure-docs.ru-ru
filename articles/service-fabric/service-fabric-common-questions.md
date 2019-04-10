@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/18/2017
 ms.author: chackdan
-ms.openlocfilehash: f75236c826584d742fe3163a2fdac29c4030bf66
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: 0bd8a7d403ad1fe0f7abb15356cc9c90ed6b3f02
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59045804"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59359425"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Распространенные вопросы о Service Fabric
 
@@ -136,7 +136,7 @@ ms.locfileid: "59045804"
 Ниже приведены средства для того, чтобы ваше приложение получило учетные данные для аутентификации в KeyVault:
 
 О. Во время задания сборки и упаковки вы можете внедрить сертификат в пакет данных приложения Service Fabric и использовать его для аутентификации в KeyVault.
-B. Для узлов масштабируемого набора виртуальных машин с поддержкой MSI можно разработать простой PowerShell SetupEntryPoint для приложения Service Fabric, чтобы получить [маркер доступа из конечной точки MSI](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [получить секреты из хранилища ключей](https://docs.microsoft.com/powershell/module/az.keyvault/Get-AzureKeyVaultSecret)
+B. Для виртуальной машины масштабируемого набора узлов с поддержкой MSI, можно разработать простой PowerShell SetupEntryPoint SF приложения для получения [маркер доступа из конечной точки MSI](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [получения секретов из хранилища ключей](/powershell/module/azurerm.keyvault/get-azurekeyvaultsecret).
 
 ## <a name="application-design"></a>Проектирование приложений
 

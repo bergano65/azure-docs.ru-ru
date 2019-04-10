@@ -9,12 +9,12 @@ ms.reviewer: klam
 ms.assetid: 9a26c457-d7a1-4e4a-bc79-f26592155218
 ms.topic: article
 ms.date: 08/18/2016
-ms.openlocfilehash: 5c80e86699d671994a0989b99c0f97ebe2680592
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
-ms.translationtype: MT
+ms.openlocfilehash: daf960bec0fac5f0c96749c219304bc77a4ba905
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59045003"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59358549"
 ---
 # <a name="powershell-cmdlets-reference-for-azure-scheduler"></a>Справочник по командлетам PowerShell для планировщика Azure
 
@@ -27,23 +27,23 @@ ms.locfileid: "59045003"
 
 | Командлет | ОПИСАНИЕ |
 |--------|-------------|
-| [Disable-AzSchedulerJobCollection](/powershell/module/az.scheduler/disable-azschedulerjobcollection) |Отключает коллекцию заданий. |
-| [Enable-AzureRmSchedulerJobCollection](/powershell/module/az.scheduler/enable-azschedulerjobcollection) |Включает коллекцию заданий. |
-| [Get-AzSchedulerJob](/powershell/module/az.scheduler/get-azschedulerjob) |Получает задания планировщика. |
-| [Get-AzSchedulerJobCollection](/powershell/module/az.scheduler/get-azschedulerjobcollection) |Получает коллекции заданий. |
-| [Get-AzSchedulerJobHistory](/powershell/module/az.scheduler/get-azschedulerjobhistory) |Получает журнал заданий. |
-| [New-AzSchedulerHttpJob](/powershell/module/az.scheduler/new-azschedulerhttpjob) |Создает задание HTTP. |
-| [Новый AzSchedulerJobCollection](/powershell/module/az.scheduler/new-azschedulerjobcollection) |Создает коллекцию заданий. |
-| [Новый AzSchedulerServiceBusQueueJob](/powershell/module/az.scheduler/new-azschedulerservicebusqueuejob) | Создает задание очереди служебной шины. |
-| [New-AzSchedulerServiceBusTopicJob](/powershell/module/az.scheduler/new-azschedulerservicebustopicjob) |Создает задание раздела служебной шины. |
-| [Новый AzSchedulerStorageQueueJob](/powershell/module/az.scheduler/new-azschedulerstoragequeuejob) |Создает задание очереди хранилища. |
-| [Remove-AzSchedulerJob](/powershell/module/az.scheduler/remove-azschedulerjob) |Удаляет задание планировщика. |
-| [Remove-AzSchedulerJobCollection](/powershell/module/az.scheduler/remove-azschedulerjobcollection) |Удаляет коллекцию заданий. |
-| [Set-AzSchedulerHttpJob](/powershell/module/az.scheduler/set-azschedulerhttpjob) |Изменяет задание HTTP планировщика. |
-| [SET-AzSchedulerJobCollection](/powershell/module/az.scheduler/set-azschedulerjobcollection) |Изменяет коллекцию заданий. |
-| [SET-AzSchedulerServiceBusQueueJob](/powershell/module/az.scheduler/set-azschedulerservicebusqueuejob) |Изменяет задание очереди служебной шины. |
-| [Set-AzSchedulerServiceBusTopicJob](/powershell/module/az.scheduler/set-azschedulerservicebustopicjob) |Изменяет задание раздела служебной шины. |
-| [SET-AzSchedulerStorageQueueJob](/powershell/module/az.scheduler/set-azschedulerstoragequeuejob) |Изменяет задание очереди хранилища. |
+| [Disable-AzSchedulerJobCollection](/powershell/module/azurerm.scheduler/disable-azschedulerjobcollection) |Отключает коллекцию заданий. |
+| [Enable-AzureRmSchedulerJobCollection](/powershell/module/azurerm.scheduler/enable-azschedulerjobcollection) |Включает коллекцию заданий. |
+| [Get-AzSchedulerJob](/powershell/module/azurerm.scheduler/get-azschedulerjob) |Получает задания планировщика. |
+| [Get-AzSchedulerJobCollection](/powershell/module/azurerm.scheduler/get-azschedulerjobcollection) |Получает коллекции заданий. |
+| [Get-AzSchedulerJobHistory](/powershell/module/azurerm.scheduler/get-azschedulerjobhistory) |Получает журнал заданий. |
+| [New-AzSchedulerHttpJob](/powershell/module/azurerm.scheduler/new-azschedulerhttpjob) |Создает задание HTTP. |
+| [Новый AzSchedulerJobCollection](/powershell/module/azurerm.scheduler/new-azschedulerjobcollection) |Создает коллекцию заданий. |
+| [Новый AzSchedulerServiceBusQueueJob](/powershell/module/azurerm.scheduler/new-azschedulerservicebusqueuejob) | Создает задание очереди служебной шины. |
+| [New-AzSchedulerServiceBusTopicJob](/powershell/module/azurerm.scheduler/new-azschedulerservicebustopicjob) |Создает задание раздела служебной шины. |
+| [Новый AzSchedulerStorageQueueJob](/powershell/module/azurerm.scheduler/new-azschedulerstoragequeuejob) |Создает задание очереди хранилища. |
+| [Remove-AzSchedulerJob](/powershell/module/azurerm.scheduler/remove-azschedulerjob) |Удаляет задание планировщика. |
+| [Remove-AzSchedulerJobCollection](/powershell/module/azurerm.scheduler/remove-azschedulerjobcollection) |Удаляет коллекцию заданий. |
+| [Set-AzSchedulerHttpJob](/powershell/module/azurerm.scheduler/set-azschedulerhttpjob) |Изменяет задание HTTP планировщика. |
+| [SET-AzSchedulerJobCollection](/powershell/module/azurerm.scheduler/set-azschedulerjobcollection) |Изменяет коллекцию заданий. |
+| [SET-AzSchedulerServiceBusQueueJob](/powershell/module/azurerm.scheduler/set-azschedulerservicebusqueuejob) |Изменяет задание очереди служебной шины. |
+| [Set-AzSchedulerServiceBusTopicJob](/powershell/module/azurerm.scheduler/set-azschedulerservicebustopicjob) |Изменяет задание раздела служебной шины. |
+| [SET-AzSchedulerStorageQueueJob](/powershell/module/azurerm.scheduler/set-azschedulerstoragequeuejob) |Изменяет задание очереди хранилища. |
 ||| 
 
 Для получения дополнительных сведений можно выполнить любой из этих командлетов: 

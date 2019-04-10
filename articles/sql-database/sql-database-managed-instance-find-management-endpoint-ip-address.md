@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: srdan-bozovic-msft
 ms.author: srbozovi
-ms.reviewer: carlrab
+ms.reviewer: sstein, carlrab
 manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: 542db0200229b4fea4ac67ad19c468f2b9dc67d1
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: b7eb9ecd6b94aad263346ad6b5c45b694e0bd46f
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57772785"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59359770"
 ---
 # <a name="determine-the-management-endpoint-ip-address"></a>Определение IP-адреса конечной точки управления
 
@@ -32,7 +32,6 @@ ms.locfileid: "57772785"
 Теперь снова выполните команду `nslookup` для выделенного имени, удалив сегмент `.vnet.`. При выполнении этой команды вы получите общедоступный IP-адрес.
 
 ![Разрешение общедоступного IP-адреса](./media/sql-database-managed-instance-management-endpoint/02_find_public_ip.png)
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -6,14 +6,14 @@ author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 03/28/2019
+ms.date: 04/08/2019
 ms.author: hrasheed
-ms.openlocfilehash: 373851c406d95a2e458c017cb311bd5cc4e5b30f
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 54d7a0bf0474db4a9f9d74a1f694f10ef1be91cc
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58664296"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59357749"
 ---
 # <a name="add-additional-storage-accounts-to-hdinsight"></a>Добавление дополнительных учетных записей хранения в HDInsight
 
@@ -106,6 +106,10 @@ az hdinsight script-action execute ^
 См. в разделе [применение действия сценария в работающем кластере](hdinsight-hadoop-customize-cluster-linux.md#apply-a-script-action-to-a-running-cluster).
 
 ## <a name="known-issues"></a>Известные проблемы
+
+### <a name="storage-firewall"></a>Брандмауэр хранилища
+
+Если выбран для защиты вашей учетной записи хранения с **брандмауэры и виртуальные сети** ограничения на **выбранные сети**, не забудьте включить исключения **Разрешить надежные Microsoft службы...**  HDInsight можно получить доступ к вашей учетной записи хранения.
 
 ### <a name="storage-accounts-not-displayed-in-azure-portal-or-tools"></a>Учетные записи хранения не отображаются на портале Azure или в Azure Tools
 

@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: srdan-bozovic-msft
 ms.author: srbozovi
-ms.reviewer: bonova, carlrab
+ms.reviewer: sstein, bonova, carlrab
 manager: craigg
 ms.date: 01/15/2019
-ms.openlocfilehash: 13038bb7159556b36e82b598732d1f2d497bf314
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: c4ff12f0c9adcb9943a6e2426eaf2740ba171e39
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57762778"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59358847"
 ---
 # <a name="configure-an-existing-virtual-network-for-azure-sql-database-managed-instance"></a>Настройка имеющейся виртуальной сети для Управляемого экземпляра Базы данных SQL Azure
 
@@ -25,10 +25,9 @@ ms.locfileid: "57762778"
 
 Если к вам применим один из следующих вариантов, вы можете проверить и изменить свою сеть с помощью сценария, описанного в этой статье:
 
-* У вас есть новая подсеть, которая все еще не настроена.
-* Вы не уверены, что подсеть соответствует [требованиям](sql-database-managed-instance-connectivity-architecture.md#network-requirements).
-* Вы хотите убедиться, что подсеть по-прежнему соответствует [требованиям к сети](sql-database-managed-instance-connectivity-architecture.md#network-requirements) после внесения изменений.
-
+- У вас есть новая подсеть, которая все еще не настроена.
+- Вы не уверены, что подсеть соответствует [требованиям](sql-database-managed-instance-connectivity-architecture.md#network-requirements).
+- Вы хотите убедиться, что подсеть по-прежнему соответствует [требованиям к сети](sql-database-managed-instance-connectivity-architecture.md#network-requirements) после внесения изменений.
 
 > [!Note]
 > Управляемый экземпляр можно создать только в виртуальных сетях, созданных с помощью модели развертывания Azure Resource Manager. Пиринг между виртуальными сетями, созданными с помощью классической модели развертывания, невозможен. Вычислите размер подсети, следуя инструкциям из статьи [Определение размера подсети виртуальной сети для Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-determine-size-vnet-subnet.md). Вы не можете изменить размер подсети после того, как развернете в ней ресурсы.
