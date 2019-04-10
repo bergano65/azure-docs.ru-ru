@@ -3,17 +3,17 @@ title: Подключение устройства в Azure IoT Central | Док
 description: В этой статье описаны ключевые понятия, связанные с подключением устройства в Azure IoT Central.
 author: dominicbetts
 ms.author: dobett
-ms.date: 02/28/2019
+ms.date: 04/09/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: timlt
-ms.openlocfilehash: e45960363290879af2e72211f5ef31b825461947
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 9e1e85d1ab1c5e7ce0cbd96c64137309c2e2916a
+ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58522100"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59425973"
 ---
 # <a name="device-connectivity-in-azure-iot-central"></a>Подключение устройства в Azure IoT Central
 
@@ -30,7 +30,7 @@ Azure IoT Central использует [службы подготовки уст
 - Вы можете использовать собственные идентификаторов устройств для регистрации устройств в центр Интернета вещей. С помощью собственных идентификаторов устройств упрощает интеграцию с существующими системами отдела.
 - Единая, согласованная способ подключения устройств к IoT Central.
 
-Данная статья содержит четыре следующих случаях:
+В этой статье описывается следующих четырех случаях:
 
 1. [Быстрое подключение одного устройства с помощью SAS](#connect-a-single-device)
 1. [Подключение устройств в нужном масштабе с помощью SAS](#connect-devices-at-scale-using-sas)
@@ -39,24 +39,7 @@ Azure IoT Central использует [службы подготовки уст
 
 ## <a name="connect-a-single-device"></a>Подключение одного устройства
 
-Этот подход полезен в тех случаях, когда будете экспериментировать с IoT Central или тестирование устройств.
-
-Чтобы соединиться с одним устройством IoT Central, с помощью SAS, выполните следующие действия.
-
-1. Чтобы добавить реального устройства, перейдите к **Device Explorer**, выберите шаблон устройства и выберите **+ Создать > реальных**:
-    - Введите собственное (в нижнем регистре) **идентификатор устройства** или использовать предлагаемый идентификатор.
-    - Введите **имя_устройства** или используйте предложенное имя.
-
-      ![Add Device (Добавление устройства)](media/concepts-connectivity/add-device.png)
-
-1. Чтобы получить сведения о подключении устройства, выберите **Connect** на странице "устройства". Вам потребуется **идентификатор области**, **идентификатор устройства**, и **первичный ключ** значения:
-    - Каждое приложение IoT Central имеет уникальный [идентификатор области](../iot-dps/concepts-device.md#id-scope) , созданный DPS.
-    - [Идентификатор устройства](../iot-dps/concepts-device.md#device-id) — это уникальный идентификатор устройства. Устройства, идентификатор хранится в [реестр удостоверений](../iot-hub/iot-hub-devguide-identity-registry.md).
-    - **Первичный ключ** является маркером SAS, созданные IoT Central для устройства.
-
-      ![Сведения о подключении](media/concepts-connectivity/device-connect.png)
-
-Используйте сведения о соединении в коде устройства для включения устройства для подключения и отправки данных для Интернета вещей в приложение IoT Central. Дополнительные сведения о подключении устройств см. в разделе [дальнейшие действия](#next-steps).
+Этот подход полезен в тех случаях, когда будете экспериментировать с IoT Central или тестирование устройств. Сведения о подключении устройства из приложения IoT Central можно использовать для создания строки подключения для устройства. Подробные инструкции см. в разделе [способы создания строки подключения устройства для подключения к приложению Azure IoT Central](howto-generate-connection-string.md).
 
 ## <a name="connect-devices-at-scale-using-sas"></a>Подключение устройств в нужном масштабе с помощью SAS
 
@@ -104,7 +87,7 @@ Azure IoT Central использует [службы подготовки уст
 
 - Пример реализации для [RaspberryPi.](https://aka.ms/iotcentral-docs-Raspi-releases)
 
-- [Пример клиента устройства на языке C.](https://github.com/Azure/azure-iot-sdk-c/blob/dps_symm_key/provisioning_client/devdoc/using_provisioning_client.md)
+- [Образец клиента устройства на языке C.](https://github.com/Azure/azure-iot-sdk-c/blob/dps_symm_key/provisioning_client/devdoc/using_provisioning_client.md)
 
 ### <a name="for-testing-purposes-only"></a>Только для тестов
 
@@ -169,35 +152,15 @@ Azure IoT Central использует [службы подготовки уст
 
 1. Оператор может заблокировать устройство. Если устройство заблокировано, он не может отправить данные приложения IoT Central. Блокировка устройств с состоянием подготовки **Blocked**. Оператор необходимо сбросить устройство, прежде чем его можно возобновить отправку данных. Когда оператор разблокирует состояние подготовки возвращает предыдущее значение, устройство **зарегистрированные** или **инициализировано**.
 
-## <a name="get-a-connection-string"></a>Получение строки подключения
-
-Следующие шаги описывают, как можно получить строку подключения для устройства:
-
-1. Выберите **Connect** на **Device Explorer** страницу, чтобы получить сведения о подключении: **Код области**, **идентификатор устройства**, и **устройства первичный ключ**:
-
-    ![Сведения о подключении](media/concepts-connectivity/device-connect.png)
-
-1. Используйте `dps-keygen` программу командной строки для создания строки подключения:  Чтобы установить [ключа программа создания](https://github.com/Azure/dps-keygen), выполните следующую команду:
-
-    ```cmd/sh
-    npm i -g dps-keygen
-    ```
-
-    Чтобы создать строку подключения, выполните следующую команду:
-
-    ```cmd/sh
-    dps-keygen -di:<device_id> -dk:<device_key> -si:<scope_id>
-    ```
-
 ## <a name="sdk-support"></a>Поддержка пакетов SDK
 
 Пакеты SDK для устройств Azure предложение самый простой способ для вас реализовать кода устройства. Доступны следующие пакеты SDK для устройств:
 
-- [Пакет SDK для Azure IoT для C](https://github.com/azure/azure-iot-sdk-c).
-- [Пакет SDK для Azure IoT для Python](https://github.com/azure/azure-iot-sdk-python).
-- [Пакет SDK для Azure IoT для Node.js](https://github.com/azure/azure-iot-sdk-node).
-- [Пакет SDK для Azure IoT для Java](https://github.com/azure/azure-iot-sdk-java).
-- [Пакет SDK для Azure IoT для .NET](https://github.com/azure/azure-iot-sdk-csharp).
+- [Пакет SDK Azure IoT для C](https://github.com/azure/azure-iot-sdk-c)
+- [Пакет SDK Azure IoT для Python](https://github.com/azure/azure-iot-sdk-python)
+- [Пакет SDK Azure IoT для Node.js](https://github.com/azure/azure-iot-sdk-node)
+- [Пакет SDK Azure IoT для Java](https://github.com/azure/azure-iot-sdk-java)
+- [Пакет SDK Azure IoT для .NET](https://github.com/azure/azure-iot-sdk-csharp)
 
 Каждое устройство подключается с помощью уникальной строки подключения, идентифицирующей устройство. Устройство может подключиться только к центру Интернета вещей, где было зарегистрировано. При создании физического устройства в приложении Azure IoT Central, приложение выдает сведения, необходимые для создания строки подключения с помощью `dps-keygen`.
 
@@ -205,8 +168,8 @@ Azure IoT Central использует [службы подготовки уст
 
 Для всего обмена данными устройства с Центром Интернета вещей используются следующие варианты подключения Центра Интернета вещей:
 
-- [передача сообщений с устройства в облако](../iot-hub/iot-hub-devguide-messages-d2c.md);
-- [Двойники устройств](../iot-hub/iot-hub-devguide-device-twins.md)
+- [Передача сообщений с устройства в облако](../iot-hub/iot-hub-devguide-messages-d2c.md)
+- [Двойники устройства](../iot-hub/iot-hub-devguide-device-twins.md)
 
 В следующей таблице содержатся сведения о том, каким образом возможности устройства Azure IoT Central сопоставляются с возможностями Центра Интернета вещей.
 
@@ -218,8 +181,8 @@ Azure IoT Central использует [службы подготовки уст
 
 Чтобы узнать больше об использовании пакетов SDK для устройств, см. пример кода в одной из следующих статей:
 
-- [Подключение универсального клиентского приложения к приложению Azure IoT Central (Node.js)](howto-connect-nodejs.md)
-- [Подключение Raspberry Pi к приложению Azure IoT Central (Python)](howto-connect-raspberry-pi-python.md)
+- [Подключение универсального клиента Node.js к приложению Azure IoT Central](howto-connect-nodejs.md)
+- [Подключение устройства Raspberry Pi к приложению Azure IoT Central](howto-connect-raspberry-pi-python.md)
 - [Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central](howto-connect-devkit.md)
 
 ### <a name="protocols"></a>Протоколы
@@ -242,7 +205,7 @@ Azure IoT Central использует [службы подготовки уст
 
 Теперь, когда вы узнали о возможности подключения устройств в Azure IoT Central, ниже приведены предлагаемые дальнейшие действия.
 
-- [Подготовка и подключение устройства DevKit](howto-connect-devkit.md)
-- [Подготовка и подключение Raspberry Pi](howto-connect-raspberry-pi-python.md)
-- [Подключение универсального клиентского приложения к приложению Azure IoT Central (Node.js)](howto-connect-nodejs.md)
+- [Подготовить и подключить устройство DevKit](howto-connect-devkit.md)
+- [Подготовка и подключение устройства Raspberry Pi](howto-connect-raspberry-pi-python.md)
+- [Подключение универсального клиента Node.js к приложению Azure IoT Central](howto-connect-nodejs.md)
 - [C SDK: Пакет SDK для клиента подготовки устройства](https://github.com/Azure/azure-iot-sdk-c/blob/master/provisioning_client/devdoc/using_provisioning_client.md)

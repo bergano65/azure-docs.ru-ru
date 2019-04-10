@@ -12,12 +12,12 @@ ms.author: arib
 ms.reviewer: vanto
 manager: craigg
 ms.date: 04/08/2019
-ms.openlocfilehash: 75c4f531fff02d8dfeed4ca32bbe1da432635765
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
-ms.translationtype: HT
+ms.openlocfilehash: 9fac8291799216b4ca4527b482aefee169f7fc59
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59261077"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59361277"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Приступая к работе с аудитом базы данных SQL
 
@@ -25,7 +25,7 @@ ms.locfileid: "59261077"
 
 - Аудит может помочь вам соблюсти требования нормативов, проанализировать работу с базой данных и получить представление о расхождениях и аномалиях, которые могут указывать на бизнес-проблемы или предполагаемые нарушения безопасности.
 
-- Средства аудита способствуют соблюдению стандартов соответствия, но не гарантируют их выполнение. Дополнительные сведения о Azure программ, поддерживающих проверку соблюдения стандартов, см. в разделе [Центр управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/compliance/) где можно найти актуальный список сертификатов соответствия базы данных SQL.
+- Средства аудита способствуют соблюдению стандартов соответствия, но не гарантируют их выполнение. Дополнительные сведения о Azure программ, поддерживающих проверку соблюдения стандартов, см. в разделе [Центр управления безопасностью Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) где можно найти актуальный список сертификатов соответствия базы данных SQL.
 
 
 > [!NOTE] 

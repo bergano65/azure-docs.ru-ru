@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 02/14/2019
 ms.author: mbullwin
-ms.openlocfilehash: 213f4313e96638e4d94455be5f16aa3221d35b73
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.openlocfilehash: 0f348e3e7dc2812bf354d1f8ec86330b0742439a
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58905687"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59361868"
 ---
 # <a name="resources-roles-and-access-control-in-application-insights"></a>Ресурсы, роли и контроль доступа в Application Insights
 
@@ -48,7 +48,7 @@ ms.locfileid: "58905687"
 
 ## <a name="access"></a> Контроль доступа в группе ресурсов
 
-Важно понимать, что кроме ресурса, созданного для приложения, существуют также отдельные скрытые ресурсы для оповещений и веб-тестов. Они вложены в ту же [группу ресурсов](#resource-group) , что и ваше приложение. В нее также можно поместить другие службы Azure, такие как веб-сайты или службы хранилища.
+Важно понимать, что кроме ресурса, созданного для приложения, существуют также отдельные скрытые ресурсы для оповещений и веб-тестов. Они присоединены к тому же [группы ресурсов](#resource-group) как ресурс Application Insights. В нее также можно поместить другие службы Azure, такие как веб-сайты или службы хранилища.
 
 Поэтому для контроля доступа к этим ресурсам рекомендуем:
 

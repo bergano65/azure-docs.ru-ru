@@ -12,12 +12,12 @@ ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 3004f073100b45de25655fc6dee6a96c90612c46
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.openlocfilehash: f023ab4fe55cf180ac1e3f0634856a528c911746
+ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58905209"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59426514"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Ведение журналов метрик и диагностики Базы данных SQL Azure
 
@@ -77,7 +77,7 @@ ms.locfileid: "58905209"
 > Пулы эластичных баз данных и управляемых экземпляров имеют свой собственный отдельный диагностики телеметрии из баз данных, которые они содержат. Это важно отметить как данные телеметрии диагностики настраивается отдельно для каждого из этих ресурсов, как описано ниже.
 
 > [!NOTE]
-> Журналы аудита и безопасности SQLSecurityAuditEvents нельзя включить в параметрах диагностики базы данных. Чтобы включить потоковую передачу журнала аудита, см. в разделе [Настройка аудита базы данных](sql-database-auditing.md#subheading-2), и [журналы в журналах Azure Monitor и концентраторов событий аудита](https://blogs.msdn.microsoft.com/sqlsecurity/2018/09/13/sql-audit-logs-in-azure-log-analytics-and-azure-event-hubs/).
+> Журналы аудита и безопасности SQLSecurityAuditEvents нельзя включить в параметрах диагностики базы данных (несмотря на то, что отображается на экране). Чтобы включить потоковую передачу журнала аудита, см. в разделе [Настройка аудита базы данных](sql-database-auditing.md#subheading-2), и [журналы в журналах Azure Monitor и концентраторов событий аудита](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/SQL-Audit-logs-in-Azure-Log-Analytics-and-Azure-Event-Hubs/ba-p/386242).
 
 ## <a name="azure-portal"></a>Портал Azure
 
@@ -141,7 +141,7 @@ ms.locfileid: "58905209"
 1. Повторите эти шаги для каждой базы данных, которые вы хотите отслеживать.
 
 > [!NOTE]
-> Журналы аудита и безопасности SQLSecurityAuditEvents нельзя включить в параметрах диагностики базы данных. Чтобы включить потоковую передачу журнала аудита, см. в разделе [Настройка аудита базы данных](sql-database-auditing.md#subheading-2), и [журналы в журналах Azure Monitor и концентраторов событий аудита](https://blogs.msdn.microsoft.com/sqlsecurity/2018/09/13/sql-audit-logs-in-azure-log-analytics-and-azure-event-hubs/).
+> Журналы аудита и безопасности SQLSecurityAuditEvents нельзя включить в параметрах диагностики базы данных (несмотря на то, что отображается на экране). Чтобы включить потоковую передачу журнала аудита, см. в разделе [Настройка аудита базы данных](sql-database-auditing.md#subheading-2), и [журналы в журналах Azure Monitor и концентраторов событий аудита](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/SQL-Audit-logs-in-Azure-Log-Analytics-and-Azure-Event-Hubs/ba-p/386242).
 > [!TIP]
 > Повторите эти шаги для каждой Базы данных SQL Azure, которую вы хотите отслеживать.
 

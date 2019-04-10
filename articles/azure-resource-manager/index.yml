@@ -1,85 +1,78 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: d6ae30f73fa16bbd5e3c698e12c54c074f0a0b43
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57772741"
 documentType: LandingData
 title: Документация по Azure Resource Manager
 metadata:
   title: 'Документация по Azure Resource Manager: руководства, примеры, справочные материалы и ресурсы'
-  description: Узнайте, как использовать диспетчер ресурсов для развертывания и администрирования ресурсов решений в качестве группы, а также как создавать шаблоны для согласованного и воспроизводимого развертывания ресурсов.
+  description: 'Узнайте, как использовать диспетчер ресурсов для развертывания и администрирования ресурсов решений в качестве группы, а также как создавать шаблоны для согласованного и воспроизводимого развертывания ресурсов.'
   services: azure-resource-manager
   ms.service: azure-resource-manager
-  keywords: Resource Manager, azure, devops, tutorials, samples, reference, documentation
+  keywords: 'Resource Manager, azure, devops, tutorials, samples, reference, documentation'
   author: mumian
   manager: dougeby
   ms.author: jgao
   ms.topic: landing-page
   ms.date: 12/10/2018
 abstract:
-  description: Узнайте, как использовать диспетчер ресурсов для развертывания, отслеживания и администрирования ресурсов решения в качестве группы. Руководства, справочники по API и другая документация, в которой показано, как настраивать группы ресурсов и создавать шаблоны для согласованного и воспроизводимого развертывания.
+  description: 'Узнайте, как использовать диспетчер ресурсов для развертывания, отслеживания и администрирования ресурсов решения в качестве группы. Руководства, справочники по API и другая документация, в которой показано, как настраивать группы ресурсов и создавать шаблоны для согласованного и воспроизводимого развертывания.'
 sections:
-- title: Быстрое начало работы
-  items:
-  - type: paragraph
-    text: Используя различные инструменты, создавайте шаблоны Azure Resource Manager для развертывания ресурсов Azure.
-  - type: list
-    style: icon48
+  - title: Быстрое начало работы
     items:
-    - image:
-        src: https://docs.microsoft.com/media/common/i_portal.svg
-      text: Создание шаблона с помощью портала Azure
-      href: https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal
-    - image:
-        src: https://docs.microsoft.com/media/logos/logo_vs-code.svg
-      text: Создание шаблона с помощью Visual Studio Code
-      href: https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-visual-studio-code
-    - image:
-        src: https://docs.microsoft.com/media/logos/logo_visual-studio.svg
-      text: Создание шаблона с помощью Visual Studio
-      href: https://docs.microsoft.com/azure/azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: Сведения о том, как создавать шаблоны Azure Resource Manager для развертывания ресурсов Azure.
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: 'Используя различные инструменты, создавайте шаблоны Azure Resource Manager для развертывания ресурсов Azure.'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_portal.svg'
+            text: Создание шаблона с помощью портала Azure
+            href: 'https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal'
+          - image:
+              src: 'https://docs.microsoft.com/media/logos/logo_vs-code.svg'
+            text: Создание шаблона с помощью Visual Studio Code
+            href: 'https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-visual-studio-code'
+          - image:
+              src: 'https://docs.microsoft.com/media/logos/logo_visual-studio.svg'
+            text: Создание шаблона с помощью Visual Studio
+            href: 'https://docs.microsoft.com/azure/azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy'
+  - title: Пошаговые руководства
     items:
-    - html: <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-create-encrypted-storage-accounts">Справочник по использованию шаблонов Resource Manager</a>
-    - html: <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-create-multiple-instances">Создание нескольких экземпляров ресурсов Azure</a>
-    - html: <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-move-resources">Перемещение ресурсов</a>
-    - html: <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-create-templates-with-dependent-resources">Настройка развертывания ресурсов по порядку</a>
-    - html: <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-use-conditions">Использование условий</a>
-    - html: <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-use-key-vault">Интеграция Azure Key Vault</a>
-    - html: <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-create-linked-templates">Создание связанных шаблонов</a>
-    - html: <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-deploy-vm-extensions">Развертывание расширений виртуальной машины</a>
-    - html: <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-deploy-sql-extensions-bacpac">Развертывание расширений SQL</a>
-    - html: <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-secure-artifacts">Защита артефактов шаблонов</a>
-    - html: <a href="https://docs.microsoft.com/azure/azure-resource-manager/deployment-manager-tutorial">Использование методик безопасного развертывания</a>
-    - html: <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-troubleshoot">Устраняйте неполадки развертывания шаблонов</a>.
-- title: Примеры
-  items:
-  - type: paragraph
-    text: Примеры шаблонов конфигурации для стандартных задач развертывания.
-  - type: list
-    style: unordered
-    className: spaced noBullet
+      - type: paragraph
+        text: 'Сведения о том, как создавать шаблоны Azure Resource Manager для развертывания ресурсов Azure.'
+      - type: list
+        style: unordered
+        items:
+          - html: '<a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-create-encrypted-storage-accounts">Справочник по использованию шаблонов Resource Manager</a>'
+          - html: '<a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-create-multiple-instances">Создание нескольких экземпляров ресурсов Azure</a>'
+          - html: '<a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-create-templates-with-dependent-resources">Настройка развертывания ресурсов по порядку</a>'
+          - html: '<a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-use-conditions">Использование условий</a>'
+          - html: '<a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-use-key-vault">Интеграция Azure Key Vault</a>'
+          - html: '<a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-create-linked-templates">Создание связанных шаблонов</a>'
+          - html: '<a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-deploy-vm-extensions">Развертывание расширений виртуальной машины</a>'
+          - html: '<a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-deploy-sql-extensions-bacpac">Развертывание расширений SQL</a>'
+          - html: '<a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-secure-artifacts">Защита артефактов шаблонов</a>'
+          - html: '<a href="https://docs.microsoft.com/azure/azure-resource-manager/deployment-manager-tutorial">Использование методик безопасного развертывания</a>'
+          - html: '<a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-troubleshoot">Устраняйте неполадки развертывания шаблонов</a>.'
+  - title: Примеры
     items:
-    - html: <a href="https://azure.microsoft.com/resources/templates/">шаблонов быстрого запуска Azure</a>
-    - html: <a href="https://resources.azure.com/">Обозреватель ресурсов Azure (предварительная версия)</a>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: paragraph
+        text: Примеры шаблонов конфигурации для стандартных задач развертывания.
+      - type: list
+        style: unordered
+        className: spaced noBullet
+        items:
+          - html: '<a href="https://azure.microsoft.com/resources/templates/">Шаблоны быстрого запуска Azure</a>'
+          - html: '<a href="https://resources.azure.com/">Обозреватель ресурсов Azure (предварительная версия)</a>'
+  - title: Справочные материалы
     items:
-    - title: Шаблоны
-      html: <p><a href="/azure/templates/">Справочник по шаблонам</a></p><p><a href="/azure/resource-group-template-functions">Функции шаблонов</a></p><p><a href="/azure/azure-resource-manager/managed-application-createuidefinition-functions">Функции определения пользовательского интерфейса</a></p><p><a href="/azure/azure-resource-manager/managed-application-createuidefinition-elements">Элементы CreateUiDefinition</a></p>
-    - title: Командная строка
-      html: <p><a href="/cli/azure/resource">Интерфейс командной строки Azure</a></p><p><a href="/powershell/module/az.resources">Azure PowerShell</a></p>
-    - title: Языки
-      html: <p><a href="/dotnet/api/microsoft.azure.management.resourcemanager">.NET</a></p><p><a href="/java/api/com.microsoft.azure.management.resources">Java</a></p><p><a href="/python/api/overview/azure/resources?view=azure-python">Python</a></p>
-    - title: REST
-      html: <p><a href="/rest/api/resources/">REST API</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Шаблоны
+            html: <p><a href="/azure/templates/">Справочник по шаблонам</a></p><p><a href="/azure/resource-group-template-functions">Функции шаблонов</a></p><p><a href="/azure/azure-resource-manager/managed-application-createuidefinition-functions">Функции определения пользовательского интерфейса</a></p><p><a href="/azure/azure-resource-manager/managed-application-createuidefinition-elements">Элементы определения пользовательского интерфейса</a></p>
+          - title: Командная строка
+            html: <p><a href="/cli/azure/resource">Инфраструктура CLI Azure</a></p><p><a href="/powershell/module/az.resources">Azure PowerShell</a></p>
+          - title: Languages
+            html: <p><a href="/dotnet/api/microsoft.azure.management.resourcemanager">.NET</a></p><p><a href="/java/api/com.microsoft.azure.management.resources">Java</a></p><p><a href="/python/api/overview/azure/resources?view=azure-python">Python</a></p>
+          - title: REST
+            html: <p><a href="/rest/api/resources/">REST API</a></p>

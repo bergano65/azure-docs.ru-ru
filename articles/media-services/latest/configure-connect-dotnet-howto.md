@@ -13,18 +13,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/04/2019
 ms.author: juliako
-ms.openlocfilehash: cb6826be8f6a9a8caf54a23b0dbc5f3dda7830d6
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
-ms.translationtype: HT
+ms.openlocfilehash: 8f8a1434af768180e34afcaacd6e92ab402ad8cd
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59273980"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59361241"
 ---
 # <a name="connect-to-media-services-v3-api---net"></a>Подключение к API v3 служб мультимедиа - .NET
 
 В этой статье показано, как соединиться с пакета SDK для .NET v3 для служб мультимедиа Azure с помощью метода под основной учетной записью службы.
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Запомните имя группы ресурсов и имя учетной записи служб мультимедиа
 - Установите это средство, которое вы хотите использовать для разработки приложений .NET. В этой статье показано, как использовать [Visual Studio 2017 Community Edition](https://www.visualstudio.com/downloads/). Вы можете использовать Visual Studio Code, см. в разделе [работа с C# ](https://code.visualstudio.com/docs/languages/csharp). Или можно использовать другом редакторе кода.
@@ -35,14 +35,14 @@ ms.locfileid: "59273980"
 1. Из **файл** меню, щелкните **New** > **проекта**. 
 1. Создание **.NET Core** консольное приложение.
 
-Предназначен для примера приложения в этом разделе `netcoreapp2.0`. Код использует «async основной», который доступен, начиная с C# 7.1. См. в разделе, это [блог](https://blogs.msdn.microsoft.com/benwilli/2017/12/08/async-main-is-available-but-hidden/) для получения дополнительных сведений.
+Предназначен для примера приложения в этом разделе `netcoreapp2.0`. Код использует «асинхронным методом main», который доступен, начиная с C# 7.1. См. в разделе, это [блог](https://blogs.msdn.microsoft.com/benwilli/2017/12/08/async-main-is-available-but-hidden/) для получения дополнительных сведений.
 
 ## <a name="add-required-nuget-packages"></a>Добавьте необходимые пакеты NuGet
 
 1. В Visual Studio выберите **средства** > **диспетчер пакетов NuGet** > **консоли диспетчера NuGet**.
 2. В **консоль диспетчера пакетов** окно, используйте `Install-Package` команду, чтобы добавить следующие пакеты NuGet. Например, `Install-Package Microsoft.Azure.Management.Media`.
 
-|Пакет|Описание|
+|Package|ОПИСАНИЕ|
 |---|---|
 |`Microsoft.Azure.Management.Media`|Пакет SDK служб мультимедиа Azure. <br/>Чтобы убедиться, что вы используете последнюю версию пакета служб мультимедиа Azure, проверьте [Microsoft.Azure.Management.Media](https://www.nuget.org/packages/Microsoft.Azure.Management.Media).|
 |`Microsoft.Rest.ClientRuntime.Azure.Authentication`|Библиотека проверки подлинности ADAL для пакета Azure SDK для NET|
@@ -223,11 +223,11 @@ namespace ConsoleApp1
 }
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Учебник. Передача, кодирование и потоковую передачу видео - .NET](stream-files-tutorial-with-api.md) 
-- [Учебник. Live Stream с помощью Media Services v3 - .NET](stream-live-tutorial-with-api.md)
-- [Учебник. Анализ видео с помощью Media Services v3 - .NET](analyze-videos-tutorial-with-api.md)
+- [Руководство по Передача, кодирование и потоковую передачу видео - .NET](stream-files-tutorial-with-api.md) 
+- [Руководство по Live Stream с помощью Media Services v3 - .NET](stream-live-tutorial-with-api.md)
+- [Руководство по Анализ видео с помощью Media Services v3 - .NET](analyze-videos-tutorial-with-api.md)
 - [Создание входных данных задания из локального файла - .NET](job-input-from-local-file-how-to.md)
 - [Создание входных данных задания из URL-адрес HTTPS - .NET](job-input-from-http-how-to.md)
 - [Кодирование с помощью пользовательского преобразования — .NET](customize-encoder-presets-how-to.md)
@@ -237,6 +237,6 @@ namespace ConsoleApp1
 - [Создание фильтров с помощью служб мультимедиа - .NET](filters-dynamic-manifest-dotnet-howto.md)
 - [Дополнительные примеры видео по запросу "функции Azure" версии 2 с помощью Media Services v3](https://aka.ms/ams3functions)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="see-also"></a>См. также
 
 [Справочник по .NET](https://docs.microsoft.com/dotnet/api/overview/azure/mediaservices/management?view=azure-dotnet)

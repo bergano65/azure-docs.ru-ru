@@ -10,19 +10,19 @@ ms.subservice: core
 ms.reviewer: trbye
 ms.topic: conceptual
 ms.date: 03/19/2019
-ms.openlocfilehash: 32f96a28e027bfd0e65d934bb47bb98400af459d
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: e1b584d38c4583e37b7c47535c836d1fa7d428f1
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58360730"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59357251"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Автоматическое обучение, прогнозная модель временных рядов
 
 В этой статье вы узнаете, как обучить временных рядов регрессии модели прогнозирования с помощью автоматических в машинном обучении в службе машинного обучения Azure. Настройка модели прогнозирования аналогична настройке стандартной модели регрессии с помощью автоматических машинного обучения, но существуют определенные параметры и предварительной обработки действия по настройке для работы с данными временных рядов. В следующих примерах показано, как для:
 
 * Подготовка данных для моделирования временного ряда
-* Настройте определенные параметры временных рядов в [ `AutoMLConfig` ](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py) объекта
+* Настройте определенные параметры временных рядов в [ `AutoMLConfig` ](/python/api/azureml-train-automl/azureml.train.automl.automlconfig) объекта
 * Запустите прогнозы с данными временных рядов
 
 ## <a name="prerequisites"></a>Технические условия

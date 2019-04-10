@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: carlrab
+ms.reviewer: sstein
 manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: 2f18b51a07bb58f13673427f0acadb6b80d7a1c8
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: e9f40e749642f2025c5298df74f9d8ff87aec14b
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56005324"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59362189"
 ---
 # <a name="business-critical-tier---azure-sql-database"></a>Уровень "Критически важный для бизнеса" для Базы данных SQL Azure
 
@@ -47,7 +47,7 @@ Azure прозрачно обновляет и исправляет базову
 
 Уровень службы "Критически важный для бизнеса" предназначен для приложений, требующих низкой задержки при получении ответов из базового хранилища SSD (в среднем 1–2 мс), быстрого восстановления при сбое базовой инфраструктуры, а также разгрузки отчетов, аналитики и запросов, доступных только для чтения, в бесплатную считываемую вторичную реплику базы данных-источника.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. дополнительные сведения об уровнях [Общего назначения](sql-database-service-tier-general-purpose.md) и [Гипермасштабируемый](sql-database-service-tier-hyperscale.md).
 - См. дополнительные сведения о [Service Fabric](../service-fabric/service-fabric-overview.md).

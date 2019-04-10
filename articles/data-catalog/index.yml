@@ -24,6 +24,14 @@ sections:
               src: media/index/data-catalog.svg
             text: Портал Azure
             href: 'https://docs.microsoft.com/azure/data-catalog/data-catalog-get-started'
+  - title: Пошаговые руководства
+    items:
+      - type: paragraph
+        text: 'Узнайте, как регистрировать, искать, контролировать и удалять ресурсы в Каталоге данных Azure, а также добавлять к ним заметки:'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="register-data-assets-tutorial">Регистрация ресурсов данных в Каталоге данных Azure</a>
   - title: Справочные материалы
     items:
       - type: list

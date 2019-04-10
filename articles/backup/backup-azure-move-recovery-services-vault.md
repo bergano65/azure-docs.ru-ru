@@ -6,14 +6,14 @@ author: sogup
 manager: vijayts
 ms.service: backup
 ms.topic: conceptual
-ms.date: 03/19/2019
+ms.date: 04/08/2019
 ms.author: sogup
-ms.openlocfilehash: 7745f986c6e9ba22258f51f9329444b8232762e1
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.openlocfilehash: f4ab983fbebe9c0219e70fa7bd5742cf1c3a0491
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58905772"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59361979"
 ---
 # <a name="move-a-recovery-services-vault-across-azure-subscriptions-and-resource-groups-limited-public-preview"></a>Перемещение хранилища Служб восстановления между подписками Azure и группами ресурсов (ограниченная общедоступная предварительная версия)
 
@@ -22,7 +22,9 @@ ms.locfileid: "58905772"
 > [!NOTE]
 > Чтобы переместить в хранилище служб восстановления и связанные с ней ресурсы в другую группу ресурсов, вы должны сначала [зарегистрировать подписку по источника](#register-the-source-subscription-to-move-your-recovery-services-vault).
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+## <a name="supported-geos"></a>Поддерживаемых географических регионах
+
+Перемещение ресурсов для хранилища служб восстановления, поддерживаемых в Восточная Австралия, юго-восток Австралии, Центральная Канада, Восточная Канада, Юго-Восточная Азия, Восточная Азия, центральный регион США, северо-Центральная часть США, восточная часть США, восточной части США 2, Южная центральная США, западно-Центральная часть США, западно-Центральная часть США 2, Западная часть США Центральная Индия, Южная Индия, Восточная Япония, Западная Япония, Корея центральный регион, Южная Корея, Северная Европа, Западная Европа, Север ЮАР, Запад ЮАР, Южная часть соединенного Королевства, Западная часть соединенного Королевства, Центральная часть ОАЭ и Северная часть ОАЭ.
 
 ## <a name="prerequisites-for-moving-a-vault"></a>Предварительные требования для перемещения хранилища
 
@@ -34,12 +36,12 @@ ms.locfileid: "58905772"
 - Сейчас за один раз можно переместить одно хранилище Служб восстановления в каждом регионе.
 - Если виртуальная машина с хранилищем Служб восстановления не перемещается между подписками или в новую группу ресурсов, текущие точки восстановления виртуальной машины остаются неизменными в хранилище до истечения их срока действия.
 - Независимо от того, была ли виртуальная машина перемещена с хранилищем или нет, вы в любом случае можете восстановить виртуальную машину из сохраненного журнала резервного копирования в хранилище.
--   Для шифрования дисков Azure требуется, чтобы хранилище ключей и виртуальные машины находились в одном регионе и подписке Azure.
--   Чтобы узнать, как переместить виртуальную машину с управляемыми дисками, обратитесь к [этой статье](https://azure.microsoft.com/blog/move-managed-disks-and-vms-now-available/).
--   Процедуры перемещения ресурсов, развернутых с помощью классической модели, отличаются в зависимости от того, перемещаются ли ресурсы в пределах одной подписки, или они переносятся в новую подписку. Дополнительные сведения см. в этой [статье](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources#classic-deployment-limitations).
--   Политики службы Backup, определенные для хранилища, сохраняются после перемещения хранилища между подписками или в новую группу ресурсов.
--   Сейчас между подписками и группами ресурсов невозможно перемещать хранилища, содержащие Файлы Azure, службу "Синхронизация файлов Azure" или SQL на виртуальных машинах IaaS. Поддержка этих сценариев будет добавлена в будущих выпусках.
--   Если вы перемещаете хранилище с данными резервного копирования виртуальной машины между подписками, вы должны переместить виртуальные машины в одну подписку и использовать одну целевую группу ресурсов для продолжения резервного копирования.<br>
+- Для шифрования дисков Azure требуется, чтобы хранилище ключей и виртуальные машины находились в одном регионе и подписке Azure.
+- Чтобы узнать, как переместить виртуальную машину с управляемыми дисками, обратитесь к [этой статье](https://azure.microsoft.com/blog/move-managed-disks-and-vms-now-available/).
+- Процедуры перемещения ресурсов, развернутых с помощью классической модели, отличаются в зависимости от того, перемещаются ли ресурсы в пределах одной подписки, или они переносятся в новую подписку. Дополнительные сведения см. в этой [статье](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources#classic-deployment-limitations).
+- Политики службы Backup, определенные для хранилища, сохраняются после перемещения хранилища между подписками или в новую группу ресурсов.
+- Сейчас между подписками и группами ресурсов невозможно перемещать хранилища, содержащие Файлы Azure, службу "Синхронизация файлов Azure" или SQL на виртуальных машинах IaaS.
+- Если вы перемещаете хранилище с данными резервного копирования виртуальной машины между подписками, вы должны переместить виртуальные машины в одну подписку и использовать одну целевую группу ресурсов для продолжения резервного копирования.<br>
 
 > [!NOTE]
 >
@@ -52,24 +54,24 @@ ms.locfileid: "58905772"
 1. Вход в учетную запись Azure
 
    ```
-   Connect-AzAccount
+   Connect-AzureRmAccount
    ```
 
 2. Выберите подписку, которую нужно зарегистрировать.
 
    ```
-   Get-AzSubscription –SubscriptionName "Subscription Name" | Select-AzSubscription
+   Get-AzureRmSubscription –SubscriptionName "Subscription Name" | Select-AzureRmSubscription
    ```
 3. Зарегистрируйте эту подписку.
 
    ```
-   Register-AzProviderFeature -ProviderNamespace Microsoft.RecoveryServices -FeatureName RecoveryServicesResourceMove
+   Register-AzureRmProviderFeature -ProviderNamespace Microsoft.RecoveryServices -FeatureName RecoveryServicesResourceMove
    ```
 
 4. Выполните команду следующую команду.
 
    ```
-   Register-AzResourceProvider -ProviderNamespace Microsoft.RecoveryServices
+   Register-AzureRmResourceProvider -ProviderNamespace Microsoft.RecoveryServices
    ```
 
 Подождите 30 минут, чтобы получить разрешение для подписки, прежде чем приступать к операции перемещения с помощью портала Azure или PowerShell.
@@ -139,18 +141,18 @@ ms.locfileid: "58905772"
 
 ## <a name="use-powershell-to-move-a-vault"></a>Перемещение хранилища с помощью PowerShell
 
-Чтобы переместить хранилище Служб восстановления в другую группу ресурсов, используйте командлет `Move-AzResource`. `Move-AzResource` требуется имя ресурса и тип ресурса. Эти данные можно получить, выполнив командлет `Get-AzRecoveryServicesVault`.
+Чтобы переместить хранилище Служб восстановления в другую группу ресурсов, используйте командлет `Move-AzureRMResource`. `Move-AzureRMResource` требуется имя ресурса и тип ресурса. Эти данные можно получить, выполнив командлет `Get-AzureRmRecoveryServicesVault`.
 
 ```
 $destinationRG = "<destinationResourceGroupName>"
-$vault = Get-AzRecoveryServicesVault -Name <vaultname> -ResourceGroupName <vaultRGname>
-Move-AzResource -DestinationResourceGroupName $destinationRG -ResourceId $vault.ID
+$vault = Get-AzureRmRecoveryServicesVault -Name <vaultname> -ResourceGroupName <vaultRGname>
+Move-AzureRmResource -DestinationResourceGroupName $destinationRG -ResourceId $vault.ID
 ```
 
 Чтобы переместить ресурсы в другую подписку, добавьте параметр `-DestinationSubscriptionId`.
 
 ```
-Move-AzResource -DestinationSubscriptionId "<destinationSubscriptionID>" -DestinationResourceGroupName $destinationRG -ResourceId $vault.ID
+Move-AzureRmResource -DestinationSubscriptionId "<destinationSubscriptionID>" -DestinationResourceGroupName $destinationRG -ResourceId $vault.ID
 ```
 
 После выполнения указанных выше командлетов вам будет предложено подтвердить перемещение указанных ресурсов. Чтобы подтвердить, введите **Y**. После успешной проверки начнется перемещение ресурса.

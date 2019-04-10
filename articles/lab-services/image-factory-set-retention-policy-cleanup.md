@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/25/2019
 ms.author: spelluru
-ms.openlocfilehash: 5c1465f31c8b5eb15b6fe63ed61a946e3b32d550
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
-ms.translationtype: MT
+ms.openlocfilehash: 8190c2043d7d3daae91c93fd3b66126d0941710b
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58440090"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59361851"
 ---
 # <a name="create-a-custom-image-factory-in-azure-devtest-labs"></a>Создание фабрики пользовательского образа в Azure DevTest Labs
 В этой статье рассматриваются устанавливать политику хранения, очистка фабрики и снятия с учета старые образы из всех других DevTest Labs в организации. 
@@ -25,9 +25,9 @@ ms.locfileid: "58440090"
 ## <a name="prerequisites"></a>Технические условия
 Убедитесь, что вы выполнили эти статьи прежде чем продолжить.
 
-- [Создайте фабрику образов](image-factory-create.md)
-- [Запустите фабрику образов из Azure DevOps](image-factory-set-up-devops-lab.md)
-- [Сохранение пользовательских образов и распространять в несколько лабораторий](image-factory-save-distribute-custom-images.md)
+- [Создание фабрики образов](image-factory-create.md)
+- [Запуск фабрики образов из Azure DevOps](image-factory-set-up-devops-lab.md)
+- [Сохранение пользовательских образов и их распространение в несколько лабораторий](image-factory-save-distribute-custom-images.md)
 
 Следующие элементы уже должны быть выполнены:
 
@@ -73,7 +73,7 @@ ms.locfileid: "58440090"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-1. [Планировать сборки или выпуска](/devops/pipelines/build/triggers?view=azure-devops&tabs=designer) периодический запуск фабрики образов. Он обновляет ваш образов, созданных с помощью фабрики на регулярной основе.
+1. [Планировать сборки или выпуска](/azure/devops/pipelines/build/triggers?view=azure-devops&tabs=designer) периодический запуск фабрики образов. Он обновляет ваш образов, созданных с помощью фабрики на регулярной основе.
 2. Сделать дополнительные эталонные образы для фабрики. Также можно рассмотреть [создании артефактов](devtest-lab-artifact-author.md) сценариев дополнительных элемента задачи настройки виртуальной Машины и включить в него артефакты в изображениях фабрики.
-4. Создание [отдельные сборки или выпуска](/devops/pipelines/overview.md?view=azure-devops-2019) для запуска **DistributeImages** скрипт отдельно. Этот сценарий можно запустить, если вы вносите изменения для Labs.json и получить образы, скопировать labs целевой без повторного создания всех образов, еще раз.
+4. Создание [отдельные сборки или выпуска](/azure/devops/pipelines/overview.md?view=azure-devops-2019) для запуска **DistributeImages** скрипт отдельно. Этот сценарий можно запустить, если вы вносите изменения для Labs.json и получить образы, скопировать labs целевой без повторного создания всех образов, еще раз.
 

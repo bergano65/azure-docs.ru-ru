@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/27/2018
 ms.author: magoedte
-ms.openlocfilehash: f0f156568eed5a1e8f3296ff7c37df7f050dbc33
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 0ed6747573edf4c059eb29d28107a22706c52856
+ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57540051"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59426195"
 ---
 # <a name="collect-alerts-from-nagios-and-zabbix-in-azure-monitor-from-log-analytics-agent-for-linux"></a>Сбор оповещений Nagios и Zabbix с помощью агента Log Analytics для Linux в службу Azure Monitor 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
@@ -92,15 +92,15 @@ ms.locfileid: "57540051"
 
 | Свойство | ОПИСАНИЕ |
 |:--- |:--- |
-| type |*Предупреждение* |
-| SourceSystem |*Nagios* |
-| AlertName |Имя оповещения. |
-| AlertDescription | Описание оповещения. |
-| AlertState | Состояние службы или узла.<br><br>ОК<br>ПРЕДУПРЕЖДЕНИЕ<br>РАБОТАЕТ<br>СБОЙ |
-| HostName | Имя узла, который создал оповещение. |
-| PriorityNumber | Приоритет оповещения. |
-| StateType | Тип состояния оповещения.<br><br>SOFT — проблема, которая не проверялась повторно.<br>HARD — проблема, которая проверялась повторно заданное число раз.  |
-| TimeGenerated |Дата и время создания оповещения. |
+| `Type` |*Предупреждение* |
+| `SourceSystem` |*Nagios* |
+| `AlertName` |Имя оповещения. |
+| `AlertDescription` | Описание оповещения. |
+| `AlertState` | Состояние службы или узла.<br><br>ОК<br>ПРЕДУПРЕЖДЕНИЕ<br>РАБОТАЕТ<br>СБОЙ |
+| `HostName` | Имя узла, который создал оповещение. |
+| `PriorityNumber` | Приоритет оповещения. |
+| `StateType` | Тип состояния оповещения.<br><br>SOFT — проблема, которая не проверялась повторно.<br>HARD — проблема, которая проверялась повторно заданное число раз.  |
+| `TimeGenerated` |Дата и время создания оповещения. |
 
 
 ### <a name="zabbix-alert-records"></a>Записи оповещений Zabbix
@@ -108,17 +108,17 @@ ms.locfileid: "57540051"
 
 | Свойство | ОПИСАНИЕ |
 |:--- |:--- |
-| type |*Предупреждение* |
-| SourceSystem |*Zabbix* |
-| AlertName | Имя оповещения. |
-| AlertPriority | Серьезность оповещения.<br><br>не определен<br>информационный.<br>Предупреждение<br>average<br>высокий<br>очень высокий  |
-| AlertState | Состояние оповещения.<br><br>0 — актуальное состояние.<br>1 — состояние неизвестно.  |
-| AlertTypeNumber | Указывает, может ли оповещение создавать несколько событий, связанных с проблемой.<br><br>0 — актуальное состояние.<br>1 — состояние неизвестно.    |
-| Комментарии | Дополнительные комментарии для оповещения. |
-| HostName | Имя узла, который создал оповещение. |
-| PriorityNumber | Значение, указывающее уровень серьезности оповещения.<br><br>0 — не определен<br>1 — информация<br>2 — предупреждение<br>3 — средний<br>4 — высокий<br>5 — очень высокий |
-| TimeGenerated |Дата и время создания оповещения. |
-| TimeLastModified |Дата и время последнего изменения состояния оповещения. |
+| `Type` |*Предупреждение* |
+| `SourceSystem` |*Zabbix* |
+| `AlertName` | Имя оповещения. |
+| `AlertPriority` | Серьезность оповещения.<br><br>не определен<br>информационный.<br>Предупреждение<br>average<br>высокий<br>очень высокий  |
+| `AlertState` | Состояние оповещения.<br><br>0 — актуальное состояние.<br>1 — состояние неизвестно.  |
+| `AlertTypeNumber` | Указывает, может ли оповещение создавать несколько событий, связанных с проблемой.<br><br>0 — актуальное состояние.<br>1 — состояние неизвестно.    |
+| `Comments` | Дополнительные комментарии для оповещения. |
+| `HostName` | Имя узла, который создал оповещение. |
+| `PriorityNumber` | Значение, указывающее уровень серьезности оповещения.<br><br>0 — не определен<br>1 — информация<br>2 — предупреждение<br>3 — средний<br>4 — высокий<br>5 — очень высокий |
+| `TimeGenerated` |Дата и время создания оповещения. |
+| `TimeLastModified` |Дата и время последнего изменения состояния оповещения. |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

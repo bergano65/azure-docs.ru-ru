@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 8137f7d167cc697671de99699c6031014d6a966e
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
-ms.translationtype: HT
+ms.openlocfilehash: 341b4d23664900cdf1f9a209df663ad4e6e96fe4
+ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59275969"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59426364"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-c"></a>Подключение Raspberry Pi к приложению Azure IoT Central (C#)
 
@@ -269,7 +269,7 @@ ms.locfileid: "59275969"
 
 ## <a name="run-your-net-application"></a>Запуск приложения .NET
 
-Добавьте строку подключения к устройству в код, чтобы устройство выполнило проверку подлинности в Azure IoT Central. Следуйте указаниям, приведенным к [создать строку подключения устройства](concepts-connectivity.md#get-a-connection-string) с помощью **идентификатор области**, **идентификатор устройства**, и **первичный ключ** вы создали Обратите внимание на то из ранее.
+Добавьте строку подключения к устройству в код, чтобы устройство выполнило проверку подлинности в Azure IoT Central. Следуйте указаниям, приведенным к [создать строку подключения устройства](howto-generate-connection-string.md) с помощью **идентификатор области**, **идентификатор устройства**, и **первичный ключ** вы создали Обратите внимание на то из ранее.
 
 1. Замените `{your device connection string}` в **Program.cs** файла в строке подключения, был создан.
 

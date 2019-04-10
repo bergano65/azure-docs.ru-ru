@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 85fba27c856561eb1270e719dcf24b88d2d5a01f
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: 0312e322aea74b3ce9867d09cebc7543da40de5f
+ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57309916"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59426245"
 ---
 # <a name="connect-a-windows-iot-core-device-to-your-azure-iot-central-application"></a>Подключение устройства Windows IoT Core к приложению Azure IoT Central
 
@@ -48,10 +48,7 @@ ms.locfileid: "57309916"
 
 ### <a name="add-a-real-device"></a>Добавление реального устройства
 
-В приложении Azure IoT Central добавьте реальное устройство на основе шаблона устройства **Windows IoT Core** и запишите сведения о подключении для устройства (**идентификатор области, идентификатор устройства и первичный ключ**). Дополнительные сведения см. в статье [Добавление реального устройства в приложение Azure IoT Central](tutorial-add-device.md).
-
- > [!NOTE]
-   > Azure IoT Central перешел с помощью службы подготовки устройств Azure IoT Hub (DPS) для всех подключений устройств, выполните следующие инструкции, чтобы [Получение строки подключения устройства](concepts-connectivity.md#get-a-connection-string) и продолжите выполнение оставшейся части руководства.
+В приложении Azure IoT Central добавьте реальное устройство на основе шаблона устройства **Windows IoT Core** и запишите сведения о подключении для устройства (**идентификатор области, идентификатор устройства и первичный ключ**). Следуйте указаниям, приведенным к [создать строку подключения устройства](howto-generate-connection-string.md) с помощью **идентификатор области**, **идентификатор устройства**, и **первичный ключ** вы создали Обратите внимание на то из ранее.
 
 ## <a name="prepare-the-windows-10-iot-core-device"></a>Подготовка устройства Windows 10 IoT Core
 
@@ -65,9 +62,10 @@ ms.locfileid: "57309916"
 
 Чтобы развернуть клиентское приложение из предыдущего шага на устройстве Windows 10 IoT, которое нужно подготовить, сделайте следующее:
 
-**Убедитесь, что строка подключения хранится на устройстве для клиентского приложения, которое нужно использовать**.
+**Убедитесь, что строка подключения хранится на устройстве для клиентского приложения для использования**
 * На рабочем столе сохраните строку подключения в текстовом файле с именем connection.string.iothub.
-* Скопируйте текстовый файл в папку с документами устройства: `[device-IP-address]\C$\Data\Users\DefaultAccount\Documents\connection.string.iothub`.
+* Копирование текстового файла в папку документов устройства:
+`[device-IP-address]\C$\Data\Users\DefaultAccount\Documents\connection.string.iothub`
 
 После этого вам понадобится открыть [портал устройств Windows](https://docs.microsoft.com/windows/iot-core/manage-your-device/deviceportal), введя в любом браузере путь http://[IP-адрес_устройства]:8080.
 
