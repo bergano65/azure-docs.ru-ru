@@ -17,16 +17,16 @@ ms.workload: na
 ms.date: 03/14/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3e6cb875aa686d9e2d0ba7bf51563d3b51b1572a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9d6af7106e991f0306ae2fef69129888219a9c0e
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58094234"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59469528"
 ---
 # <a name="upgrade-your-free-trial-or-azure-for-students-starter-subscription-to-pay-as-you-go"></a>Обновление бесплатной пробной версии или Azure для учащихся Starter подписки для оплаты по мере использования
 
-Если у вас есть [бесплатной пробной версии](https://azure.microsoft.com/free/), можно обновить до [оплаты по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/) подписки на портале Azure. Если у вас есть [Azure Starter для учащихся](https://azure.microsoft.com/offers/ms-azr-0144p/) подписки, можно обновить до [оплаты по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/) в центре управления учетной записью.
+Если у вас есть [бесплатной пробной версии](https://azure.microsoft.com/free/) или [Azure Starter для учащихся](https://azure.microsoft.com/offers/ms-azr-0144p/) подписки, можно обновить до [оплаты по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/) на портале Azure. Если у вас есть Azure для подписки Starter для учащихся и имеют право на бесплатную пробную версию, вы переходите на бесплатную пробную версию.
 
 <a id="freetrial"></a>
 
@@ -35,9 +35,9 @@ ms.locfileid: "58094234"
 Когда вы перейдете от использования бесплатной пробной версии и создадите подписку, оставшийся кредит будет доступным в течение полных 30 дней. Кроме того, вам предоставляется доступ к бесплатным службам в течение 12 месяцев.
 
 1. Войдите на [портал Azure](https://portal.azure.com)
-1. Выполните поиск **Cost Management + выставление счетов.**
+1. Выполните поиск **подписок.**
 
-    ![Снимок экрана, показывающий поиска](./media/billing-upgrade-azure-subscription/search.png)
+    ![Снимок экрана, показывающий поиска](./media/billing-upgrade-azure-subscription/search-subscriptions-ibiza.png)
 
 1. Выберите свою подписку на бесплатную пробную версию.
 1. В колонке обзора подписки щелкните **обновление подписки** на панели команд.
@@ -63,15 +63,24 @@ ms.locfileid: "58094234"
 
 ## <a name="upgrade-your-azure-for-students-starter-subscription-to-pay-as-you-go"></a>Обновление до оплаты по мере использования Azure для подписки Starter для учащихся
 
-1. Войдите в [Центр учетных записей Azure](https://account.windowsazure.com/subscriptions).
+Когда вы выполните следующие действия, мы обеспечит возможность обновления для получения бесплатной пробной версии, если вы имеете право.
+
+1. Войдите на [портал Azure](https://portal.azure.com)
+1. Выполните поиск **подписок.**
+
+    ![Снимок экрана, показывающий поиска](./media/billing-upgrade-azure-subscription/search-subscriptions-ibiza.png)
+
 1. Выберите Azure для подписки Starter для учащихся.
-1. В разделе **состояние подписки**, нажмите кнопку **Обновить сейчас**.
+1. В колонке обзора подписки щелкните **обновление подписки** на панели команд.
 
-    ![Снимок экрана, показывающий обновления для учащихся](./media/billing-upgrade-azure-subscription/student-upgrade-button.png)
+    ![Снимок экрана: кнопка обновления для учащихся](./media/billing-upgrade-azure-subscription/student-upgrade-ibiza.png)
 
+1. Если вы обновляете до оплаты по мере использования и у вас еще нет способа оплаты для своей подписки, вам будет предложено добавить его.
+1. Может потребоваться ввести номер телефона для проверки личности.
 1. Введите имя для вашей подписки.
+1. Если вы обновляете до оплаты по мере использования, выберите план поддержки для вашей подписки. Дополнительные сведения о планах поддержки, см. в разделе [планов поддержки Azure](https://azure.microsoft.com/us/support/plans/).
 
-1. Нажмите кнопку **Обновить сейчас**.
+1. Щелкните **Обновить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

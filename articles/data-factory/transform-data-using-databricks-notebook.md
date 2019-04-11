@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 03/12/2018
 ms.author: abnarain
 ms.reviewer: douglasl
-ms.openlocfilehash: fcf3fe85b6dd184b4f58060aab4fcf3ce146af13
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b8333ae7eb676fd38bf7d654cecdb4dd07ff7c03
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58015154"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59279693"
 ---
 # <a name="run-a-databricks-notebook-with-the-databricks-notebook-activity-in-azure-data-factory"></a>Запуск записной книжки Databricks с помощью действия Databricks Notebook в фабрике данных Azure
 
@@ -165,8 +165,8 @@ ms.locfileid: "58015154"
            dbutils.widgets.text("input", "","")
            dbutils.widgets.get("input")
            y = getArgument("input")
-           print "Param -\'input':"
-           print y
+           print ("Param -\'input':")
+           print (y)
            ```
 
            ![Создание мини-приложений для параметров](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image16.png)

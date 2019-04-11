@@ -1,7 +1,7 @@
 ---
 title: Справочник по параметрам условного доступа в Azure Active Directory | Документация Майкрософт
 description: Эта статья содержит обзор поддерживаемых параметров в политике условного доступа Azure Active Directory.
-services: active-directory.
+services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: article
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f92001e9d2fd322e858440ef64991b9de856735
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
-ms.translationtype: HT
+ms.openlocfilehash: 0e87a4c7ebafd8ddcfa54c87b189316b0ce98b0f
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59273045"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59358995"
 ---
 # <a name="azure-active-directory-conditional-access-settings-reference"></a>Справочник по параметрам условного доступа в Azure Active Directory
 
@@ -41,7 +41,7 @@ ms.locfileid: "59273045"
 
 Политики условного доступа можно назначить для следующих облачных приложений от корпорации Майкрософт:
 
-- Azure Analysis Services
+- Службы Azure Analysis Services
 - Azure DevOps
 - База данных SQL Azure и хранилище данных — [Подробнее](https://docs.microsoft.com/azure/sql-database/sql-database-conditional-access)
 - Dynamics CRM Online
@@ -62,8 +62,8 @@ ms.locfileid: "59273045"
 - Microsoft PowerApps
 - Microsoft Search в Bing
 - Microsoft StaffHub
-- Microsoft Stream
-- Microsoft Teams
+- Microsoft Stream;
+- Microsoft Teams
 - Office 365 Exchange Online
 - Office 365 SharePoint Online
 - Office 365 Yammer
@@ -93,7 +93,7 @@ ms.locfileid: "59273045"
 - Android
 - iOS
 - Windows Phone
-- Windows
+-  Windows
 - macOS
 
 ![Привязка политики доступа к клиентской ОС](./media/technical-reference/41.png)
@@ -102,7 +102,7 @@ ms.locfileid: "59273045"
 
 В политике условного доступа можно настроить условие [Клиентские приложения](conditions.md#client-apps), чтобы привязать ее к клиентскому приложению, которое инициировало попытку доступа. Условие клиентских приложений можно задать, чтобы предоставить или заблокировать доступ, если была предпринята попытка доступа из приведенных ниже типов клиентских приложений:
 
-- Браузер
+- "Обзор"
 - мобильные и классические приложения.
 
 ![Управление доступом к клиентским приложениям](./media/technical-reference/03.png)
@@ -123,8 +123,8 @@ ms.locfileid: "59273045"
 | iOS                    | Управляемый браузер Intune Safari, Microsoft Edge |
 | Android                | Управляемый браузер Intune Chrome, Microsoft Edge |
 | Windows Phone          | Internet Explorer, Microsoft Edge, Chrome             |
-| Windows Server 2016    | Internet Explorer, Microsoft Edge, Chrome             |
-| Windows Server 2016    | Chrome                                        |
+| Windows Server 2016    | Internet Explorer, Microsoft Edge, Chrome             |
+| Windows Server 2016    | Chrome                                        |
 | Windows Server 2012 R2 | Internet Explorer, Chrome                     |
 | Windows Server 2008 R2 | Internet Explorer, Chrome                     |
 | macOS                  | Chrome, Safari                                |
@@ -142,8 +142,8 @@ ms.locfileid: "59273045"
 |    |    |
 | --- | --- |
 | Путь | HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist |
-| Название | 1 |
-| Тип | REG_SZ (String) |
+| ИМЯ | 1 |
+| type | REG_SZ (String) |
 | Данные | ppnbnpeolgkicgegkbkbjmhlideopiji; https://clients2.google.com/service/update2/crx |
 
 Для поддержки Chrome в **Windows 8.1 и Windows 7** создайте следующий раздел реестра:
@@ -151,8 +151,8 @@ ms.locfileid: "59273045"
 |    |    |
 | --- | --- |
 | Путь | HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls |
-| Название | 1 |
-| Тип | REG_SZ (String) |
+| ИМЯ | 1 |
+| type | REG_SZ (String) |
 | Данные | {"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}} |
 
 Эти браузеры поддерживают аутентификацию устройств, позволяя идентифицировать устройство и проверить, соответствует ли оно политике. Если браузер работает в частном режиме, проверка устройства завершается ошибкой.
@@ -165,13 +165,13 @@ ms.locfileid: "59273045"
 
 Этот параметр влияет на попытки доступа, предпринимаемые из следующих мобильных приложений и классических клиентов.
 
-| Клиентские приложения | Целевая служба | Платформа |
+| Клиентские приложения | Целевая служба | платформа |
 | --- | --- | --- |
 | Azure RemoteApp | Удаленная служба приложений Azure | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
 | Приложение Dynamics CRM | Dynamics CRM | Windows 10, Windows 8.1, iOS и Android |
 | Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online | Windows 10 |
 | MFA и политика расположения для приложений Политики на основе устройств не поддерживаются.| Все службы приложения "Мои приложения"| Android и iOS |
-| Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент. | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
+| Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент. | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
 | Приложения Office 2016, Office 2013 (с современной проверкой подлинности), клиент синхронизации OneDrive (см. [заметки](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)) | Office 365 SharePoint Online | Windows 8.1, Windows 7 |
 | Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), клиент синхронизации OneDrive (см. [заметки](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)); поддержка групп Office и SharePoint ожидается в будущем | Office 365 SharePoint Online | Windows 10 |
 | Office 2016 (только Word, Excel, PowerPoint, OneNote). Поддержку OneDrive для бизнеса планируется реализовать в будущем.| Office 365 SharePoint Online| macOS|
@@ -220,8 +220,8 @@ ms.locfileid: "59273045"
 - Microsoft SharePoint
 - Microsoft Skype для бизнеса;
 - Microsoft StaffHub
-- Microsoft Stream
-- Microsoft Teams
+- Microsoft Stream;
+- Microsoft Teams
 - Microsoft To-Do
 - Microsoft Visio;
 - Microsoft Word

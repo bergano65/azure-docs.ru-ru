@@ -5,16 +5,18 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 02/28/2018
-ms.openlocfilehash: b55f8d44d12fa503a17218db4a5166819024f1aa
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.date: 04/09/2018
+ms.openlocfilehash: 017266fd28fb31b4509957560a042abf74314453
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56872902"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59469460"
 ---
 # <a name="create-and-manage-azure-database-for-mysql-firewall-rules-by-using-the-azure-portal"></a>Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью портала Azure
-Правила брандмауэра уровня сервера позволяют администраторам обращаться к серверу базы данных Azure для MySQL с указанного IP-адреса или диапазона IP-адресов. 
+Правила брандмауэра уровня сервера можно использовать для управления доступом к базе данных Azure для сервера MySQL с указанного IP-адреса или диапазон IP-адресов. 
+
+Правилами виртуальных сетей (VNet) также может использоваться для обеспечения безопасного доступа к серверу. Дополнительные сведения о [Создание и управление виртуальной сетью на базе службы конечных точек и правил, с помощью портала Azure](howto-manage-vnet-using-portal.md).
 
 ## <a name="create-a-server-level-firewall-rule-in-the-azure-portal"></a>Создание правила брандмауэра на уровне сервера с помощью портала Azure
 
@@ -57,4 +59,5 @@ ms.locfileid: "56872902"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Аналогичным образом можно [создать правила брандмауэра базы данных Azure для MySQL и управлять ими с помощью Azure CLI](howto-manage-firewall-using-cli.md).
-- Справка по подключению к серверу базы данных Azure для MySQL доступна в разделе [Библиотеки подключений для базы данных Azure для MySQL](./concepts-connection-libraries.md).
+- Дополнительно обеспечить безопасность доступа к серверу с [Создание и управление виртуальной сетью на базе службы конечных точек и правил, с помощью портала Azure](howto-manage-vnet-using-portal.md).
+- Справка по подключению к базе данных Azure для сервера MySQL, см. в разделе [библиотеки подключений для базы данных Azure для MySQL](./concepts-connection-libraries.md).

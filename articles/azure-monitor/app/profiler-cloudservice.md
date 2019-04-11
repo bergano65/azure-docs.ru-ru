@@ -12,17 +12,17 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 08/06/2018
 ms.author: cweining
-ms.openlocfilehash: 2e13f1f09fcdfb68a99e705511e3659f1632132e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 93d0f148c1fa3f13e79b28e19527251455a1b65c
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57895487"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59470863"
 ---
 # <a name="profile-live-azure-cloud-services-with-application-insights"></a>Профилирование облачных служб реального времени Azure с помощью Application Insights
 
-Вы можете развернуть Application Insights Profiler для следующих служб.
-* [службе приложений Azure](profiler.md?toc=/azure/azure-monitor/toc.json)
+Вы можете развернуть Application Insights Profiler для следующих служб:
+* [Служба приложений Azure](profiler.md?toc=/azure/azure-monitor/toc.json)
 * [Приложения Azure Service Fabric](profiler-servicefabric.md?toc=/azure/azure-monitor/toc.json)
 * [Виртуальные машины Azure](profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 
@@ -33,7 +33,7 @@ Application Insights Profiler поставляется с расширением
 
 1. Добавьте [Application Insights для облачных служб Azure](../../azure-monitor/app/cloudservices.md?toc=/azure/azure-monitor/toc.json).
 
-   >**Это ошибка в приложении profiler, который поставляется в последней версии WAD для облачных служб.** Чтобы использовать профилировщик с облачной службой, он поддерживает только пакет SDK AI до версии 2.7.2. При использовании более новой версии пакета SDK AI, необходимо вернуться к 2.7.2 для использования профилировщика. При использовании Visual Studio для перехода на предыдущую версию пакета SDK App Insights во время выполнения может появиться ошибка перенаправления привязки. Это обусловлено «newVersion» в файле web.config для Microsoft.ApplicationInsights следует установить значение «2.7.2.0», после понижения версии пакета SDK AI, но он не будет автоматически обновлено.
+    **Исправил ошибку в профилировщик, который поставляется в WAD для облачных служб.** Последнюю версию WAD (1.12.2.0) для облачных служб работает с всех последних версиях пакета SDK App Insights. Узлы облачных служб автоматически обновит WAD, но он не выполняется немедленно. Чтобы принудительно выполнить обновление, можно повторно разверните службу или перезагрузите узел.
 
 1. Отслеживание запросов с помощью Application Insights.
 

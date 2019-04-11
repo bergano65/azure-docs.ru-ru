@@ -16,12 +16,12 @@ ms.topic: quickstart
 ms.date: 04/11/2018
 ms.author: cfowler
 ms.custom: seodec18
-ms.openlocfilehash: af22473e0c9b56210b720ee5d122d96566689158
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.openlocfilehash: 43016b3c31a0371f953f758bc7afb53bd1508495
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56889721"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59278519"
 ---
 # <a name="create-an-aspnet-core-app-in-app-service-on-linux"></a>Создание приложения .NET Core в Службе приложений в Linux
 
@@ -41,15 +41,15 @@ ms.locfileid: "56889721"
 
 Для работы с этим кратким руководством сделайте следующее:
 
-* <a href="https://git-scm.com/" target="_blank">установите Git</a>;
-* <a href="https://www.microsoft.com/net/core/" target="_blank">установите .NET Core</a>.
+* <a href="https://git-scm.com/" target="_blank">Установка Git</a>
+* <a href="https://www.microsoft.com/net/core/" target="_blank">Установка .NET Core</a>
 
 ## <a name="create-the-app-locally"></a>Локальное создание приложения
 
 В окне терминала на компьютере создайте каталог `hellodotnetcore` и перейдите в него.
 
 ```bash
-md hellodotnetcore
+mkdir hellodotnetcore
 cd hellodotnetcore
 ```
 
@@ -188,4 +188,4 @@ git push azure master
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Создание веб-приложения .NET Core с базой данных SQL в службе приложений Azure в Linux](tutorial-dotnetcore-sqldb-app.md)
+> [Создание приложения .NET Core с Базой данных SQL в Службе приложений Azure в Linux](tutorial-dotnetcore-sqldb-app.md)

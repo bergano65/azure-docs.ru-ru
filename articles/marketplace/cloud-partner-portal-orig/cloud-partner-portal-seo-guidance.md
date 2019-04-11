@@ -1,5 +1,5 @@
 ---
-title: Руководство по Azure Marketplace для издателей SEO | Документация Майкрософт
+title: Руководство по Azure Marketplace SEO | Документация Майкрософт
 description: Дополнительные сведения по улучшению оптимизация для поисковых систем (SEO).
 services: Azure, Marketplace, Cloud Partner Portal,
 documentationcenter: ''
@@ -12,21 +12,23 @@ ms.workload: ''
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 09/13/2018
+ms.date: 04/09/2019
 ms.author: pbutlerm
-ms.openlocfilehash: cacc7c0b269e8006903961049caf3cd7e3bee449
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: da7b59400baa4c964dff71fa1f842fede9d68df1
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57834342"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59469664"
 ---
-<a name="azure-marketplace-seo-publisher-guide"></a>Руководство для издателя SEO в Azure Marketplace
-=======================================
+# <a name="azure-marketplace-seo-guidance"></a>Руководство по Azure Marketplace оптимизации поисковой системы
 
-### <a name="general-explanation-of-algorithm"></a>Общие сведения об алгоритме
+В этой статье объясняется, как максимально увеличить возможности обнаружения своего предложения, функциональные возможности поиска в [Azure Marketplace](https://azuremarketplace.microsoft.com) и [AppSource](https://appsource.microsoft.com). 
 
-Чтобы повысить поисковые возможности на сайтах, в Marketplace будет включен поиск Azure. Алгоритм основывается на частоте условия или инверсной частота в документе ([TF/IDF](https://en.wikipedia.org/wiki/Tf–idf)). Используется стандартный [анализатор Lucene](https://lucene.apache.org/core/).
+
+## <a name="general-explanation-of-algorithm"></a>Общие сведения об алгоритме
+
+Магазины Майкрософт использовать поиск Azure для повышения эффективности возможности поиска веб-узла. Алгоритм основывается на частоте условия или инверсной частота в документе ([TF/IDF](https://en.wikipedia.org/wiki/Tf–idf)). Используется стандартный [анализатор Lucene](https://lucene.apache.org/core/).
 
 В общем, все текстовые поля, категории и отрасли включены в релевантность весомости связей. Чтобы получить более высокие результаты поиска можно использовать определенные термины, редко используемые для приложения, но часто используемые самим приложением. Поэтому, включение таких терминов, как виртуальная машина, позволит получить небольшое преимущество, в то время, как использование поиска Azure является более определенным.
 Далее приведены наиболее важные поля, которые следует рассмотреть.
@@ -42,7 +44,7 @@ ms.locfileid: "57834342"
 |  |  |  |
 
 
-### <a name="other-tips"></a>Другие советы
+## <a name="other-tips"></a>Другие советы
 
 -   Поиск предложений является тяжелой пользовательской деятельностью. В нем определяются совпадения с именем приложения или именем издателя. Когда условие поиска не совпадает с именем издателя или приложения, краткое описание становится ключевым.
 -   В поиск весомых связей не включены документы для загрузки.

@@ -5,16 +5,18 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: 3fccb50e3447eabc15cbef89ab7655b3f1d1f4ac
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.date: 04/09/2019
+ms.openlocfilehash: e9ab243692f5a4a1ec7de25774f5bad867698fc3
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56876812"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59470004"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-firewall-rules-by-using-the-azure-portal"></a>Создание правил брандмауэра MariaDB в Базе данных Azure для MariaDB и управление ими на портале Azure
-Правила брандмауэра уровня сервера позволяют администраторам обращаться к серверу Базы данных Azure для MariaDB с указанного IP-адреса или диапазона IP-адресов. 
+Правила брандмауэра уровня сервера можно использовать для управления доступом к базе данных Azure для MariaDB сервера с указанного IP-адреса или диапазон IP-адресов.
+
+Правилами виртуальных сетей (VNet) также может использоваться для обеспечения безопасного доступа к серверу. Дополнительные сведения о [Создание и управление виртуальной сетью на базе службы конечных точек и правил, с помощью портала Azure](howto-manage-vnet-portal.md).
 
 ## <a name="create-a-server-level-firewall-rule-in-the-azure-portal"></a>Создание правила брандмауэра на уровне сервера с помощью портала Azure
 
@@ -52,7 +54,6 @@ ms.locfileid: "56876812"
 * Чтобы изменить существующее правило, щелкните любое поле в нем и внесите необходимые изменения. Щелкните **Сохранить** , чтобы сохранить изменения.
 * Чтобы удалить существующее правило, щелкните многоточие [...] и выберите **Удалить**. Щелкните **Сохранить** , чтобы сохранить изменения.
 
-<!--
-## Next steps
- - Similarly, you can script to [Create and manage Azure Database for MariaDB firewall rules using Azure CLI](howto-manage-firewall-using-cli.md).
-- For help in connecting to an Azure Database for MariaDB server, see [Connection libraries for Azure Database for MariaDB](./concepts-connection-libraries.md) -->
+## <a name="next-steps"></a>Дальнейшие действия
+ - Вы можете аналогичным образом [создать и управлять базой данных Azure для MariaDB правил брандмауэра, с помощью Azure CLI](howto-manage-firewall-cli.md).
+ - Дополнительно обеспечить безопасность доступа к серверу с [Создание и управление виртуальной сетью на базе службы конечных точек и правил, с помощью портала Azure](howto-manage-vnet-portal.md).

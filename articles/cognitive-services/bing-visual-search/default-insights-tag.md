@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: conceptual
-ms.date: 04/17/2018
+ms.date: 04/04/2019
 ms.author: scottwhi
-ms.openlocfilehash: 4805b36c48476727938840672a9cdf82506f1d13
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: b6bc323f4e8deaf975c292f92d862b1fbe0e2714
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55862876"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59469393"
 ---
 # <a name="default-insights-tag"></a>Тег аналитических сведений по умолчанию
 
@@ -100,7 +100,7 @@ ms.locfileid: "55862876"
 
 ## <a name="pagesincluding-insight"></a>Аналитические сведения PagesIncluding
 
-Аналитические сведения PagesIncluding возвращают список веб-страниц с указанным изображением. Это фактически список объектов Image, для которых поле `hostPageUrl` содержит URL-адрес веб-страницы с этим изображением. Пример использования PagesIncluding см. [здесь](./bing-insights-usage.md#pagesincluding-insight-example). 
+Аналитические сведения PagesIncluding возвращают список веб-страниц с указанным изображением. Это фактически список `Image` объектов и `hostPageUrl` поле содержит URL-адрес веб-страницу, которая включает образ. Пример использования см. в разделе [пример insight PagesIncluding](./bing-insights-usage.md#pagesincluding-insight-example).
 
 ```json
       {
@@ -139,7 +139,7 @@ ms.locfileid: "55862876"
 
 ## <a name="shoppingsources-insight"></a>Аналитические сведения ShoppingSources
 
-Аналитические сведения ShoppingSources содержат список веб-сайтов, на которых пользователь может купить товар, изображенный на рисунке. Список предложений содержит URL-адрес веб-страницы, где пользователь может приобрести этот товар, цену товара и оценку, сведения о рейтинге или отзывах. Пример использования ShoppingSources см. [здесь](./bing-insights-usage.md#shoppingsources-insight-example).
+Аналитические сведения ShoppingSources содержат список веб-сайтов, на которых пользователь может купить товар, изображенный на рисунке. Список предложений включает URL-адрес веб-страницы, где пользователь может приобрести элемента, цену элемента и оценку или отзыв сведения. Пример использования ShoppingSources см. [здесь](./bing-insights-usage.md#shoppingsources-insight-example).
 
 ```json
       {
@@ -166,10 +166,9 @@ ms.locfileid: "55862876"
       }
 ```
 
-
 ## <a name="moresizes-insight"></a>Аналитические сведения MoreSizes
 
-Аналитические сведения MoreSizes предоставляют число размеров (больших и маленьких) изображения, которые система Bing смогла найти в Интернете (см. поле `availableSizesCount`).
+Анализ MoreSizes определяет число (больше или меньше) размеров изображения, которое Bing найти в Интернете (см. в разделе `availableSizesCount` поля):
 
 ```json
       {
@@ -204,7 +203,7 @@ ms.locfileid: "55862876"
 
 ## <a name="visualsearch-insight"></a>Аналитические сведения VisualSearch
 
-Аналитические сведения VisualSearch предоставляют список изображений, визуально похожих на исходное изображение (с содержимым похожим на содержимое исходного изображения). Пример использования VisualSearch см. [здесь](./bing-insights-usage.md#visualsearch-insight-example).
+Аналитические сведения VisualSearch предоставляют список изображений, визуально похожих на исходное изображение (с содержимым похожим на содержимое исходного изображения). Пример использования см. в разделе [пример insight VisualSearch](./bing-insights-usage.md#visualsearch-insight-example).
 
 ```json
       {
@@ -244,7 +243,7 @@ ms.locfileid: "55862876"
 
 ## <a name="recipes-insight"></a>Аналитические сведения Recipes
 
-Аналитические сведения Recipes содержат список веб-страниц, на которых есть инструкции по приготовлению блюда, изображенного на рисунке. Пример использования Recipes см. [здесь](./bing-insights-usage.md#recipes-insight-example).
+Аналитические сведения Recipes содержат список веб-страниц, на которых есть инструкции по приготовлению блюда, изображенного на рисунке. Пример использования см. в разделе [пример insight рецепты](./bing-insights-usage.md#recipes-insight-example).
 
 ```json
       {
@@ -279,7 +278,7 @@ ms.locfileid: "55862876"
 
 ## <a name="imagebyid-insight"></a>Аналитические сведения ImageById
 
-Аналитические сведения ImageById предоставляют объект `Image` с изображением, для которого вы запросили эти сведения.
+Предоставляет анализ ImageById `Image` объект изображения, которое вы запросили insights для:
 
 ```json
       {
@@ -312,10 +311,9 @@ ms.locfileid: "55862876"
       },
 ```
 
-
 ## <a name="productvisualsearch-insight"></a>Аналитические сведения ProductVisualSearch
 
-Аналитические сведения ProductVisualSearch предоставляют список изображений с товарами, которые визуально похожи на товары на исходном изображении. Поле `insightsMetadata` может содержать сведения о предложениях по этим товарам, в том числе их цену. 
+Аналитические сведения ProductVisualSearch предоставляют список изображений с товарами, которые визуально похожи на товары на исходном изображении. Поле `insightsMetadata` может содержать сведения о предложениях по этим товарам, в том числе их цену.
 
 ```json
       {
@@ -377,11 +375,9 @@ ms.locfileid: "55862876"
       }
 ```
 
-
 ## <a name="relatedsearches-insight"></a>Аналитические сведения RelatedSearches
 
-Аналитические сведения RelatedSearches возвращают список связанных поисковых запросов, выполненных другими пользователями (с учетом условий поиска, заданных другими пользователями). Пример использования RelatedSearches см. [здесь](./bing-insights-usage.md#relatedsearches-insight-example).
-
+Аналитические сведения RelatedSearches возвращают список связанных поисковых запросов, выполненных другими пользователями (с учетом условий поиска, заданных другими пользователями). Пример использования см. в разделе [пример insight RelatedSearches](./bing-insights-usage.md#relatedsearches-insight-example).
 
 ```json
       {
@@ -402,10 +398,9 @@ ms.locfileid: "55862876"
       }
 ```
 
-
 ## <a name="documentlevelsuggestions-insight"></a>Аналитические сведения DocumentLevelSuggestions
 
-Аналитические сведения DocumentLevelSuggestions предоставляют список предлагаемых поисковых терминов на основе содержимого изображения. 
+Анализ DocumentLevelSuggestions предоставляет список предлагаемых поисковый запрос на основе содержимого образа:
 
 ```json
       {
@@ -426,10 +421,8 @@ ms.locfileid: "55862876"
       }
 ```
 
+## <a name="next-steps"></a>Дальнейшие действия
 
-
-## <a name="next-steps"></a>Дополнительная информация
-
-Изучите примеры отображения визуальных аналитических сведений в Bing (см. [Примеры использования аналитических сведений Bing](bing-insights-usage.md)).
+Ознакомьтесь с [использования примеров из Bing insights](bing-insights-usage.md) чтобы увидеть, как Bing может отображаться visual insights.
 
 Сведения о том, как быстро создать первый запрос, см. в кратких руководствах по [C#](quickstarts/csharp.md) | [Java](quickstarts/java.md) | [node.js](quickstarts/nodejs.md) | [Python](quickstarts/python.md).

@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 02/25/2018
 ms.author: glenga
-ms.openlocfilehash: 30d578f130985548c431dea8b68ee291325b5c99
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: 4e9bd4e9ea467446c2814cdb8956a40b1503b027
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58893227"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59469511"
 ---
 # <a name="manage-connections-in-azure-functions"></a>Управление подключениями в функциях Azure
 
@@ -24,6 +24,8 @@ ms.locfileid: "58893227"
 Количество доступных подключений ограничено, отчасти потому, что приложение-функция работает [среде-песочнице](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox). Одно из ограничений, которые "песочницы" налагает на ваш код является [ограничение на количество подключений (в настоящее время на 600 активных подключений и общее число подключений, 1200)](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox#numerical-sandbox-limits) каждого экземпляра. По достижении этого ограничения среда выполнения функций создает журнал со следующим сообщением: `Host thresholds exceeded: Connections`.
 
 Это ограничение не на один экземпляр.  Когда [контроллер масштабирования добавляет экземпляров приложения-функции](functions-scale.md#how-the-consumption-and-premium-plans-work) возможность обрабатывать больше запросов, каждый экземпляр имеет ограничение независимое подключение. Это означает, что не ограничено глобальных подключений, и может иметь гораздо более чем 600 активных подключений для всех активных экземпляров.
+
+При устранении неполадок, убедитесь, что вы включили Application Insights для приложения-функции. Application Insights позволяет просматривать метрики для приложения-функции например выполнений. Дополнительные сведения см. в разделе [просмотреть данные телеметрии в Application Insights](functions-monitoring.md#view-telemetry-in-application-insights).  
 
 ## <a name="static-clients"></a>Статических клиентов
 

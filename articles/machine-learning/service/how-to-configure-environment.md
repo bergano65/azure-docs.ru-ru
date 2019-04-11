@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.topic: conceptual
 ms.date: 02/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4ca64071d068f95bf3de2dc9730629b5f475d92e
-ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
-ms.translationtype: HT
+ms.openlocfilehash: d4866a6863143d2228c556a64c8e75c9f273076e
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59426381"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59469902"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
 
@@ -320,8 +320,8 @@ Azure Databricks — это среда на основе Apache Spark, в обл
       
    Также рассмотрите возможность:
    + В файле конфигурации Automl, при использовании Azure Databricks, добавьте следующие параметры:
-    1. ```max_concurrent_iterations``` на основе числа рабочих узлов в кластере. 
-    2. ```spark_context=sc``` контекст spark по умолчанию #databricks или spark. 
+        1. ```max_concurrent_iterations``` основан на количество рабочих узлов в кластере. 
+        2. ```spark_context=sc``` основан на контекст spark по умолчанию. 
    + Или, если у вас есть более старые версии SDK, отменить его выбор из установленных библиотек кластера и переместить в корзину. Установите новую версию пакета SDK и перезапустите кластер. Если после этого возникнет проблема, отсоедините и заново присоедините кластер.
 
 Если установка выполнена успешно, импортированную библиотеку должна выглядеть как одна из них:

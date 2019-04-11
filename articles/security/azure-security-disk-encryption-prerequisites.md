@@ -7,16 +7,16 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: 896553890252572e4b5524d047893953b78a4ba1
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.openlocfilehash: 1da35b55a458ad73689f51c49e73855fd33ee45f
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "59010097"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59470302"
 ---
 # <a name="azure-disk-encryption-prerequisites"></a>Предварительные требования для шифрования дисков Azure
 
- В этой статье объясняются компоненты, которые должны быть установлены до того, как вы сможете использовать шифрование дисков Azure. Шифрование дисков Azure интегрируется с [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/), обеспечивая управление ключами шифрования. Для настройки шифрования дисков Azure можно использовать [Azure PowerShell](/powershell/azure/overview), [Azure CLI](/cli/azure/) или [портал Azure](https://portal.azure.com).
+В этой статье объясняются компоненты, которые должны быть установлены до того, как вы сможете использовать шифрование дисков Azure. Шифрование дисков Azure интегрируется с [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/), обеспечивая управление ключами шифрования. Для настройки шифрования дисков Azure можно использовать [Azure PowerShell](/powershell/azure/overview), [Azure CLI](/cli/azure/) или [портал Azure](https://portal.azure.com).
 
 Ниже перечислены предварительные требования для включения шифрования дисков Azure на виртуальных машинах IaaS Azure в сценариях, которые обсуждались в статье [Azure Disk Encryption for IaaS VMs](azure-security-disk-encryption-overview.md) (Шифрование дисков Azure для виртуальных машин IaaS). Эти требования обязательно должны быть выполнены. 
 
@@ -29,10 +29,11 @@ ms.locfileid: "59010097"
 ## <a name="bkmk_OSs"></a> Поддерживаемые операционные системы
 Шифрование дисков Azure поддерживается в приведенных ниже операционных системах.
 
-- Версии Windows Server: Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 и более версиях Windows, находящихся в коллекции Azure.
-  - Для Windows Server 2008 R2 перед включением шифрования в Azure требуется установить .NET Framework 4.5. Установите его из Центра обновления Windows вместе с необязательным обновлением Microsoft .NET Framework 4.5.2 для Windows Server 2008 R2 для 64-разрядных систем ([KB2901983](https://support.microsoft.com/kb/2901983)).    
+- Версии Windows Server: Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016, Windows Server 2012 R2 Server Core и Windows Server 2016 Server core.
+Для Windows Server 2008 R2 перед включением шифрования в Azure требуется установить .NET Framework 4.5. Установите его из центра обновления Windows с помощью необязательное обновление Microsoft .NET Framework 4.5.2 для Windows Server 2008 R2 x64-разрядных систем (KB2901983).
+- Ядро Windows Server 2012 R2 и Windows Server 2016 Core поддерживаются шифрование дисков Azure, когда компонент bdehdcfg установлено на виртуальной Машине.
 - Версии клиентов Windows: клиент Windows 8 и клиент Windows 10.
-- Шифрование дисков Azure поддерживается только для определенных дистрибутивов и версий серверов Linux из коллекции Azure. Список поддерживаемых сейчас версий см. в статье [Шифрование дисков Azure: часто задаваемые вопросы](azure-security-disk-encryption-faq.md#bkmk_LinuxOSSupport).
+- Шифрование дисков Azure поддерживается только для определенных дистрибутивов и версий серверов Linux из коллекции Azure. Список поддерживаемых сейчас версий см. в статье [Шифрование дисков Azure: часто задаваемые вопросы](azure-security-disk-encryption-faq.md#bkmk_LinuxOSSupport). Ссылаться на [дистрибутивов Linux, рекомендованные для Azure](../virtual-machines/linux/endorsed-distros.md) список образов, поддерживаемые корпорацией Майкрософт и [какие дистрибутивы Linux поддерживает шифрование дисков Azure?](azure-security-disk-encryption-faq.md#bkmk_LinuxOSSupport) в [Azure Часто задаваемые вопросы о шифрования на диске](azure-security-disk-encryption-faq.md) список поддерживаемых в настоящее время версии, основанные на дистрибутивы подтвержденных образа.
 - Для шифрования дисков Azure требуется, чтобы хранилище ключей и виртуальные машины находились в одном регионе и подписке Azure. Настройка ресурсов в отдельных регионах приведет к сбою при включении функции шифрования дисков Azure.
 
 ## <a name="bkmk_LinuxPrereq"></a> Дополнительные требования для виртуальных машин Linux IaaS 

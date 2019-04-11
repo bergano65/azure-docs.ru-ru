@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 04/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 275907eed94f3165853ecf9adcb11fb62460d2e2
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
-ms.translationtype: HT
+ms.openlocfilehash: 413ed4a56afad5ced221ba957af9ddb007622b6a
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59282225"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59470055"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
 
@@ -37,7 +37,11 @@ ms.locfileid: "59282225"
 
 ## <a name="bkmk_LinuxOSSupport"></a> Какие дистрибутивы Linux поддерживает шифрование дисков Azure?
 
-Шифрование дисков Azure поддерживается для следующих дистрибутивов и версий серверов Linux:
+Шифрование дисков Azure поддерживается на подмножестве [дистрибутивы Linux, рекомендованные Azure](../virtual-machines/linux/endorsed-distros.md), который сам является подмножеством всех возможных распределений.
+
+ ![Диаграмма Венна server дистрибутивов Linux, которые поддерживают шифрование дисков Azure](./media/azure-security-disk-encryption-faq/ade-supported-distros.png)
+
+Дистрибутивы не поддерживается в Azure не поддерживают шифрование дисков Azure и из них, которые поддерживается, только следующие дистрибутивы Linux сервер и версиями поддерживают шифрование дисков Azure:
 
 | Дистрибутив Linux | Version (версия) | Тип тома, для которого поддерживается шифрование|
 | --- | --- |--- |
@@ -64,7 +68,8 @@ ms.locfileid: "59282225"
 | SLES | 12-SP4 | Диск данных |
 | SLES | 12-SP3 | Диск данных |
 
-*__Новая реализация ADE поддерживается для операционной системы RHEL и диска данных для образов RHEL7 с оплатой по мере использования. Для образов RHEL, предоставляемых по подписке, ADE пока не поддерживается. Дополнительные сведения см. в статье [Шифрование дисков Azure для Linux](azure-security-disk-encryption-linux.md).__
+> [!NOTE]
+> Новая реализация ADE поддерживается для RHEL ОС и диска данных для образов RHEL7 оплаты по мере использования. Для образов RHEL, предоставляемых по подписке, ADE пока не поддерживается. Ознакомьтесь также с [шифрования дисков Azure для Linux](azure-security-disk-encryption-linux.md) для получения дополнительной информации. __
 
 ## <a name="how-can-i-start-using-azure-disk-encryption"></a>Как приступить к работе с шифрованием дисков Azure?
 

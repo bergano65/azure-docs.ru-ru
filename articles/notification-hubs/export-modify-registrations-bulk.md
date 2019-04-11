@@ -12,12 +12,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: jowargo
-ms.openlocfilehash: a86c3bd85f9d611787a41754f49ee2475ba33a9a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c24fcd5f007b641bb594bb07348491f70c03ea41
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175794"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59469137"
 ---
 # <a name="export-and-import-azure-notification-hubs-registrations-in-bulk"></a>Экспорт и импорт регистраций концентраторов уведомлений Azure в пакетном режиме
 Существуют сценарии, в которых она необходима для создания или изменения большого числа регистраций в концентраторе уведомлений. Некоторые из этих сценариев — это обновления тегов после пакетных вычислений или перенос извещающей реализации для использования концентраторов уведомлений.
@@ -34,7 +34,7 @@ ms.locfileid: "58175794"
 
 - Провизионированный концентратор уведомлений.
 - Контейнер больших двоичных объектов хранилища Azure.
-- Ссылки на пакеты службы хранилища Azure и NuGet служебной шины Azure.
+- Ссылки на [пакет NuGet хранилища Azure](https://www.nuget.org/packages/windowsazure.storage/) и [пакета NuGet для центров уведомлений](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/1.0.9).
 
 ### <a name="create-input-file-and-store-it-in-a-blob"></a>Создание входного файла и сохраните его в большой двоичный объект
 Входной файл содержит список регистраций, сериализованных в формате XML, по одному на строку. С помощью пакета SDK для Azure, в следующем примере кода показано, как проводится сериализация регистраций и отправлять их в контейнер больших двоичных объектов.
@@ -132,7 +132,7 @@ while (i > 0 && job.Status != NotificationHubJobStatus.Completed)
 В следующем примере кода импортирует регистрации в концентраторе уведомлений.
 
 ```csharp
-using Microsoft.ServiceBus.Notifications;
+using Microsoft.Azure.NotificationHubs;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System;

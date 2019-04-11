@@ -8,19 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 2/20/2019
+ms.date: 04/08/2019
 ms.author: wolfma
-ms.custom: seodec18
-ms.openlocfilehash: bd42e8c5fe3a766f5c8a74784212712748a50549
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.openlocfilehash: bb28972469ca33a7fb33a50a8ce2e9bf326222b8
+ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "59010470"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59425803"
 ---
 # <a name="about-the-speech-sdk"></a>Сведения о пакете SDK службы "Речь"
 
-Речи Software Development Kit (SDK) предоставляет приложениям получать доступ к функциям служб речи, облегчая процесс разработки программного обеспечения с поддержкой речевых функций. Сейчас пакеты SDK предоставляют доступ к **преобразованию речи в текст**, **переводу речи** и **распознаванию намерений**. Общие сведения о возможностях и поддерживаемых платформ можно найти в документации по [страницы записи](https://aka.ms/csspeech).
+Речи Software Development Kit (SDK) предоставляет приложениям получать доступ к функциям служб речи, облегчая процесс разработки программного обеспечения с поддержкой речевых функций. В настоящее время пакеты SDK предоставляют доступ к **речи в текст**, **преобразования текста в речь**, **перевода речи**, и **распознавание сути высказывания**. Общие сведения о возможностях и поддерживаемых платформ можно найти в документации по [страницы записи](https://aka.ms/csspeech).
 
 [!INCLUDE [Speech SDK Platforms](../../../includes/cognitive-services-speech-service-speech-sdk-platforms.md)]
 

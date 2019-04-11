@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 48cf0f2e219d141a039f508f0ea948aa5c78b882
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 3c6c552a6605278d8ab31264f5d180206e0badac
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57838278"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59470701"
 ---
 # <a name="azure-disk-encryption-troubleshooting-guide"></a>Руководство по устранению неполадок шифрования дисков Azure
 
@@ -49,6 +49,14 @@ sudo reboot
 ```
 uname -a
 ```
+
+## <a name="update-the-azure-virtual-machine-agent-and-extension-versions"></a>Обновление версий расширения и агент виртуальной машины Azure
+
+Возможен сбой операции шифрования дисков Azure образы виртуальных машин с использованием неподдерживаемых версий агент виртуальной машины Azure. Дополнительные сведения, обратитесь к [Минимальная поддержка версий для агентов виртуальных машин в Azure](https://support.microsoft.com/en-us/help/4049215/extensions-and-virtual-machine-agent-minimum-version-support).  
+
+Правильная версия расширение Microsoft.Azure.Security.AzureDiskEncryption или Microsoft.Azure.Security.AzureDiskEncryptionForLinux гостевого агента также является обязательным. Обслуживание и обновляется автоматически платформой, когда удовлетворяются требования к агенту виртуальной машины Azure и используется поддерживаемая версия агента виртуальной машины версии расширения.
+
+Расширение Microsoft.OSTCExtensions.AzureDiskEncryptionForLinux устарел и больше не поддерживается.  
 
 ## <a name="unable-to-encrypt-linux-disks"></a>Сбой шифрования дисков Linux
 
@@ -149,4 +157,4 @@ If the expected encryption state does not match what is being reported in the po
 В этом документе вы узнали о некоторых распространенных проблемах в шифровании дисков Azure и их устранении. Дополнительные сведения об этой службе и ее возможностях см. в статьях:
 
 - [Шифрование диска в центре безопасности Azure](../security-center/security-center-apply-disk-encryption.md)
-- [Шифрование неактивных данных в Azure](azure-security-encryption-atrest.md)
+- [Шифрование неактивных данных Azure](azure-security-encryption-atrest.md)

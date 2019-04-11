@@ -10,18 +10,18 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.workload: big-data
 ms.date: 07/03/2018
-ms.openlocfilehash: 1982f974acd1e9d5e8cae91201f6503eb2ae678a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 47235fa5676acd8de8a7cc0d969b813837faf0af
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57898811"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59469715"
 ---
 # <a name="use-a-u-sql-database-project-to-develop-a-u-sql-database-for-azure-data-lake"></a>Использование проекта базы данных U-SQL в разработке базы данных U-SQL для Azure Data Lake
 
 База данных U-SQL предоставляет структурированные представления по неструктурированным данным и управляемым структурированным данным в таблицах. Она также предоставляет общую систему каталогов метаданных для организации структурированных данных и пользовательского кода. База данных объединяет эти связанные объекты.
 
-См. дополнительные сведения о [базе данных U-SQL и языке описания данных (DDL)](https://msdn.microsoft.com/azure/data-lake-analytics/u-sql/data-definition-language-ddl-statements-u-sql). 
+См. дополнительные сведения о [базе данных U-SQL и языке описания данных (DDL)](/u-sql/data-definition-language-ddl-statements). 
 
 Проект базы данных U-SQL — это тип проекта в Visual Studio, который помогает разработчикам быстро и легко разрабатывать, развертывать и администрировать свои базы данных U-SQL.
 
@@ -92,7 +92,7 @@ ms.locfileid: "57898811"
   
 ### <a name="deploy-u-sql-database-by-using-the-sdk"></a>Развертывание базы данных U-SQL с помощью пакета SDK
 
-`PackageDeploymentTool.exe` предоставляет программный интерфейс и интерфейс командной строки, которые позволяют развернуть базы данных U-SQL. Пакет SDK включен в [пакет U-SQL SDK для NuGet](https://www.nuget.org/packages/Microsoft.Azure.DataLake.USQL.SDK/), размещенный в файле `build/runtime/PackageDeploymentTool.exe`.
+`PackageDeploymentTool.exe` предоставляет программирования и интерфейсы командной строки, которые помогают развертывать базы данных U-SQL. Пакет SDK включен в [пакет U-SQL SDK для NuGet](https://www.nuget.org/packages/Microsoft.Azure.DataLake.USQL.SDK/), размещенный в файле `build/runtime/PackageDeploymentTool.exe`.
 
 См. дополнительные сведения об [использовании пакета SDK и настройке конвейера CI/CD для развертывания базы данных U-SQL](data-lake-analytics-cicd-overview.md).
 

@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 03/30/2019
 ms.author: juliako
-ms.openlocfilehash: 1d28701dd35b9d80fd52a1f102c53f2d59d63b09
-ms.sourcegitcommit: 09bb15a76ceaad58517c8fa3b53e1d8fec5f3db7
+ms.openlocfilehash: 00dab8381c26a6331dd325eacd4a550892bd3411
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58762360"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59469817"
 ---
 # <a name="live-events-and-live-outputs"></a>События и выходные данные прямой трансляции
 
@@ -127,7 +127,7 @@ ms.locfileid: "58762360"
 
 ## <a name="live-event-long-running-operations"></a>Динамические события длительных операций
 
-Дополнительные сведения см. в разделе [длительных операций](entities-overview.md#long-running-operations)
+Дополнительные сведения см. в разделе [длительных операций](media-services-apis-overview.md#long-running-operations)
 
 ## <a name="live-outputs"></a>Динамичесие выходные данные
 
@@ -146,4 +146,4 @@ ms.locfileid: "58762360"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Руководство по потоковой трансляции](stream-live-tutorial-with-api.md)
+[Учебник динамической потоковой передачи](stream-live-tutorial-with-api.md)

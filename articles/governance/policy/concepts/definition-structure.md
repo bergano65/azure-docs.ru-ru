@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: f554be0803041b12dc49a576e8eb737732ec2a80
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
-ms.translationtype: HT
+ms.openlocfilehash: 4d7ecdcff356f27e17eca95a0d42290037d6b570
+ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59283109"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59426466"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -25,9 +25,9 @@ ms.locfileid: "59283109"
 Для создания определения политики используется JSON. Определение политики содержит следующие элементы:
 
 - mode;
-- параметры
+- parameters
 - display name
-- описание
+- description
 - policy rule
   - logical evaluation
   - effect
@@ -70,7 +70,7 @@ ms.locfileid: "59283109"
 
 [!INCLUDE [az-powershell-update](../../../../includes/updated-for-az.md)]
 
-## <a name="mode"></a>Режим
+## <a name="mode"></a>Mode
 
 **Режим** определяет типы ресурсов, которые будут оцениваться для политики. Ниже приведены поддерживаемые режимы.
 
@@ -140,12 +140,16 @@ ms.locfileid: "59283109"
 
 В свойстве `metadata` можно использовать вложенное свойство **strongType**, чтобы предоставить список для выбора параметров на портале Azure. К допустимым значениям для **strongType** относится следующее:
 
-- `"location"`
-- `"resourceTypes"`
-- `"storageSkus"`
-- `"vmSKUs"`
-- `"existingResourceGroups"`
-- `"omsWorkspace"`
+- `location`
+- `resourceTypes`
+- `storageSkus`
+- `vmSKUs`
+- `existingResourceGroups`
+- `omsWorkspace`
+- `Microsoft.EventHub/Namespaces/EventHubs`
+- `Microsoft.EventHub/Namespaces/EventHubs/AuthorizationRules`
+- `Microsoft.RecoveryServices/vaults`
+- `Microsoft.RecoveryServices/vaults/backupPolicies`
 
 ## <a name="definition-location"></a>Расположение определения
 
@@ -369,7 +373,7 @@ ms.locfileid: "59283109"
 
 Измененная политика правило с `if()` проверяет длину **имя** перед попыткой получения `substring()` на значении с менее чем из трех символов. Если **имя** слишком короткий, значение «не запускается с abc» вместо этого возвращается и по сравнению с **abc**. Ресурс с короткое имя, которое не начинается с **abc** по-прежнему не соответствует правилу политики, но больше не приводит к ошибке во время оценки.
 
-### <a name="effect"></a>Эффект
+### <a name="effect"></a>Результат
 
 Политика поддерживает следующие типы действий:
 
@@ -458,7 +462,7 @@ ms.locfileid: "59283109"
   Get-AzPolicyAlias -NamespaceMatch 'automation'
   ```
 
-- Azure CLI
+- Инфраструктура CLI Azure
 
   ```azurecli-interactive
   # Login first with az login if not using Cloud Shell
@@ -478,7 +482,7 @@ ms.locfileid: "59283109"
 
 ### <a name="understanding-the--alias"></a>Общие сведения о псевдониме [*]
 
-Некоторые доступные псевдонимы имеют версию с отображаемым именем "Обычный", а другие — с подключенным к ней **[\*]**. Например:
+Некоторые доступные псевдонимы имеют версию с отображаемым именем "Обычный", а другие — с подключенным к ней **[\*]**. Например: 
 
 - `Microsoft.Storage/storageAccounts/networkAcls.ipRules`
 - `Microsoft.Storage/storageAccounts/networkAcls.ipRules[*]`

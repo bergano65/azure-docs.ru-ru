@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 5dd77d85e06a821d8dd359174bb5de6bca8b4d61
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: b205f7782dc14c9108032d2b4a274f884194874e
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58669782"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59357862"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -147,7 +147,7 @@ kubectl delete pod -n kube-system -l app=addon-http-application-routing-nginx-in
 
 Скачайте и установите последнюю версию Azure Dev Spaces CLI.
 
-* [Windows](https://aka.ms/get-azds-windows)
+* [ Windows](https://aka.ms/get-azds-windows)
 * [Mac](https://aka.ms/get-azds-mac)
 * [Linux](https://aka.ms/get-azds-linux)
 
@@ -187,11 +187,11 @@ Azure Dev Spaces предоставляет встроенную поддерж�
 1. Проверьте конфигурацию порта. Указанные номера портов должны **совпадать** во всех следующих ресурсах:
     * **Dockerfile:** задается инструкцией `EXPOSE`.
     * **[Диаграмма Helm](https://docs.helm.sh):** задается значениями `externalPort` и `internalPort` для службы (часто находится в файле `values.yml`).
-    * Все порты, открытые в коде приложения, например в Node.js: `var server = app.listen(80, function () {...}`
+    * Какие-либо порты, открытые в коде приложения, например в Node.js: `var server = app.listen(80, function () {...}`
 
 
 ## <a name="config-file-not-found"></a>Файл конфигурации не найден
-Вы запускаете `azds up`, и появляется следующая ошибка: `Config file not found: .../azds.yaml`
+Запуском `azds up` и возникает следующая ошибка: `Config file not found: .../azds.yaml`
 
 ### <a name="reason"></a>Причина
 Необходимо запустить `azds up` из корневого каталога кода, который вы хотите выполнить, и инициализировать папку с кодом для запуска с Azure Dev Spaces.
@@ -208,7 +208,7 @@ Azure Dev Spaces предоставляет встроенную поддерж�
 2. Нажмите клавишу F5 еще раз.
 
 ## <a name="debugging-error-failed-to-find-debugger-extension-for-typecoreclr"></a>Ошибка отладки "Не удалось найти расширение отладчика для типа: coreclr"
-При запуске отладчика VS Code возникает ошибка: `Failed to find debugger extension for type:coreclr.`
+Запуск отладчика VS Code сообщает об ошибке: `Failed to find debugger extension for type:coreclr.`
 
 ### <a name="reason"></a>Причина
 На компьютере, на котором ведется разработка, не установлено расширение VS Code для C#. C# Расширение включает поддержку отладки для .NET Core (CoreCLR).
@@ -217,7 +217,7 @@ Azure Dev Spaces предоставляет встроенную поддерж�
 Установите [расширение VS Code для C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).
 
 ## <a name="debugging-error-configured-debug-type-coreclr-is-not-supported"></a>Ошибка отладки "Configured debug type 'coreclr' is not supported" (Настроенный тип отладки "coreclr" не поддерживается)
-При запуске отладчика VS Code возникает ошибка: `Configured debug type 'coreclr' is not supported.`
+Запуск отладчика VS Code сообщает об ошибке: `Configured debug type 'coreclr' is not supported.`
 
 ### <a name="reason"></a>Причина
 На компьютере, на котором ведется разработка, не установлено расширения VS Code для Azure Dev Spaces.
@@ -226,7 +226,7 @@ Azure Dev Spaces предоставляет встроенную поддерж�
 Установите [расширение VS Code для Azure Dev Spaces](get-started-netcore.md).
 
 ## <a name="debugging-error-invalid-cwd-value-src-the-system-cannot-find-the-file-specified-or-launch-program-srcpath-to-project-binary-does-not-exist"></a>Ошибка отладки "Invalid 'cwd' value '/src'. The system cannot find the file specified" ("Недопустимое значение "/src" каталога "cwd". Системе не удается найти указанный файл") или "launch: program '/src/[path to project binary]' does not exist" ("запуск: программа "/src/[путь к двоичному файлу проекта]" не существует")
-При запуске отладчика VS Code возникает ошибка `Invalid 'cwd' value '/src'. The system cannot find the file specified.` и (или) `launch: program '/src/[path to project executable]' does not exist`.
+Запуск отладчика VS Code сообщает об ошибке `Invalid 'cwd' value '/src'. The system cannot find the file specified.` и (или) `launch: program '/src/[path to project executable]' does not exist`
 
 ### <a name="reason"></a>Причина
 По умолчанию расширение VS Code использует `src` в качестве рабочего каталога для проекта в контейнере. Эта ошибка может возникать, если вы обновили свой `Dockerfile`, указав другой рабочий каталог.

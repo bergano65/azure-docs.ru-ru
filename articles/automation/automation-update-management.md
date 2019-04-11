@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: update-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 04/02/2019
+ms.date: 04/09/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 1af2117b1d12c98182434705181462fd7c9bebf4
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.openlocfilehash: 39e8c06228381143a6f4975e4d6415799ce16d43
+ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58862953"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59426495"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -565,7 +565,7 @@ Update
 | project-away ClassificationWeight, InformationId, InformationUrl
 ```
 
-## <a name="using-dynamic-groups"></a>Использование динамических групп (предварительная версия)
+## <a name="using-dynamic-groups"></a>С помощью динамических групп
 
 Управление обновлениями позволяет настраивать динамическую группу виртуальных машин Azure для развертывания обновлений. Эти группы определяются по запросу. Когда начинается развертывание обновлений, оцениваются участники этой группы. Динамические группы не работают с классическим виртуальным машинам. При определении запроса следующие элементы могут использоваться для совместного заполнения динамической группы.
 

@@ -4,43 +4,40 @@ description: Описываются функции, используемые в 
 services: azure-resource-manager
 documentationcenter: na
 author: tfitzmac
-manager: timlt
-editor: tysonn
 ms.assetid: ''
 ms.service: azure-resource-manager
 ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/24/2018
+ms.date: 04/09/2019
 ms.author: tomfitz
-ms.openlocfilehash: 109bd1c987c86721c6064fc0294913c85fa3a901
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.openlocfilehash: 9065c6bc71a153ae94ddc20d5b41a152094fc111
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56267875"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59470157"
 ---
 # <a name="logical-functions-for-azure-resource-manager-templates"></a>Логические функции для шаблонов Azure Resource Manager
 
 Resource Manager предоставляет ряд функций для выполнения сравнений в шаблонах.
 
-* [and](#and) (и);
-* [bool](#bool);
-* [if](#if) (если);
-* [not](#not) (не);
-* [or](#or) (или).
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+* [и](#and)
+* [bool](#bool)
+* [if](#if)
+* [not](#not)
+* [или](#or)
 
 ## <a name="and"></a>и
+
 `and(arg1, arg2, ...)`
 
 Проверяет, соответствуют ли истине все значения параметров.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | arg1 |Yes |Логическое |Первое значение, которое необходимо проверить на соответствие истине. |
 | arg2 |Yes |Логическое |Второе значение, которое необходимо проверить на соответствие истине. |
@@ -84,26 +81,15 @@ Resource Manager предоставляет ряд функций для вып�
 | orExampleOutput | Bool | Истина |
 | notExampleOutput | Bool | Ложь |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/andornot.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```powershell
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/andornot.json
-```
-
 ## <a name="bool"></a>bool
+
 `bool(arg1)`
 
 Преобразует параметр в логическое значение.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | arg1 |Yes |строка или целое число |Значение, которое необходимо преобразовать в логическое. |
 
@@ -149,28 +135,17 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | trueInt | Bool | Истина |
 | falseInt | Bool | Ложь |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/bool.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```powershell
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/bool.json
-```
-
 ## <a name="if"></a>if
+
 `if(condition, trueValue, falseValue)`
 
 Возвращает значение в зависимости от того, выполняется ли условие.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
-| condition |Yes |Логическое |Значение, которое необходимо проверить на соответствие истине. |
+| condition |Yes |Логическое |Значение, чтобы проверить, является ли значение true или false. |
 | trueValue |Yes | строка, целое число, объект или массив |Возвращаемое значение, если условие выполняется. |
 | falseValue |Yes | строка, целое число, объект или массив |Возвращаемое значение, если условие не выполняется. |
 
@@ -180,49 +155,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="remarks"></a>Примечания
 
-Эту функцию можно использовать, чтобы условно задавать свойство ресурса. Следующий пример не является полным шаблоном, но в нем показаны соответствующие части для условной настройки группы доступности.
-
-```json
-{
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        ...
-        "availabilitySet": {
-            "type": "string",
-            "allowedValues": [
-                "yes",
-                "no"
-            ]
-        }
-    },
-    "variables": {
-        ...
-        "availabilitySetName": "availabilitySet1",
-        "availabilitySet": {
-            "id": "[resourceId('Microsoft.Compute/availabilitySets',variables('availabilitySetName'))]"
-        }
-    },
-    "resources": [
-        {
-            "condition": "[equals(parameters('availabilitySet'),'yes')]",
-            "type": "Microsoft.Compute/availabilitySets",
-            "name": "[variables('availabilitySetName')]",
-            ...
-        },
-        {
-            "apiVersion": "2016-03-30",
-            "type": "Microsoft.Compute/virtualMachines",
-            "properties": {
-                "availabilitySet": "[if(equals(parameters('availabilitySet'),'yes'), variables('availabilitySet'), json('null'))]",
-                ...
-            }
-        },
-        ...
-    ],
-    ...
-}
-```
+Если условие равно **True**, вычисляется только значение true. Если условие равно **False**, вычисляется значение false. С помощью **Если** функции, можно включить выражения, которые допустимы только по условию. Например можно ссылаться на ресурс, который существует одно условие, но не в других условиях. В следующем разделе показан пример условной оценки выражений.
 
 ### <a name="examples"></a>Примеры
 
@@ -259,26 +192,63 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | noOutput | Строка | Нет |
 | objectOutput | Объект. | { "test": "value1" } |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
+Следующие [пример шаблона](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/conditionWithReference.json) показано, как использовать эту функцию с выражениями, которые допустимы только по условию.
 
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/if.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```powershell
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/if.json
+```json
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vmName": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "logAnalytics": {
+            "type": "string",
+            "defaultValue": ""
+        }
+    },
+    "resources": [
+        {
+            "condition": "[greaterOrEquals(parameters('logAnalytics'), '0')]",
+            "name": "[concat(parameters('vmName'),'/omsOnboarding')]",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "location": "[parameters('location')]",
+            "apiVersion": "2017-03-30",
+            "properties": {
+                "publisher": "Microsoft.EnterpriseCloud.Monitoring",
+                "type": "MicrosoftMonitoringAgent",
+                "typeHandlerVersion": "1.0",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "workspaceId": "[if(greaterOrEquals(parameters('logAnalytics'), '0'), reference(parameters('logAnalytics'), '2015-11-01-preview').customerId, json('null'))]"
+                },
+                "protectedSettings": {
+                    "workspaceKey": "[if(greaterOrEquals(parameters('logAnalytics'), '0'), listKeys(parameters('logAnalytics'), '2015-11-01-preview').primarySharedKey, json('null'))]"
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "mgmtStatus": {
+            "type": "string",
+            "value": "[if(greaterOrEquals(parameters('logAnalytics'), '0'), 'Enabled monitoring for VM!', 'Nothing to enable')]"
+        }
+    }
+}
 ```
 
 ## <a name="not"></a>not
+
 `not(arg1)`
 
 Преобразует логическое значение в противоположное ему значение.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | arg1 |Yes |Логическое |Значение, которое необходимо преобразовать. |
 
@@ -320,18 +290,6 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | orExampleOutput | Bool | Истина |
 | notExampleOutput | Bool | Ложь |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/andornot.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```powershell
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/andornot.json
-```
-
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/not-equals.json) используется **not** и [equals](resource-group-template-functions-comparison.md#equals).
 
 ```json
@@ -354,26 +312,15 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | ---- | ---- | ----- |
 | checkNotEquals | Bool | Истина |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
-
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/not-equals.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```powershell
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/not-equals.json
-```
-
 ## <a name="or"></a>или
+
 `or(arg1, arg2, ...)`
 
 Проверяет, соответствует ли истине какое-либо значение параметров.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | arg1 |Yes |Логическое |Первое значение, которое необходимо проверить на соответствие истине. |
 | arg2 |Yes |Логическое |Второе значение, которое необходимо проверить на соответствие истине. |
@@ -417,19 +364,8 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | orExampleOutput | Bool | Истина |
 | notExampleOutput | Bool | Ложь |
 
-Развернуть этот пример шаблона с помощью Azure CLI можно так:
+## <a name="next-steps"></a>Дальнейшие действия
 
-```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/andornot.json
-```
-
-Развернуть этот пример шаблона с помощью PowerShell можно так:
-
-```powershell
-New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/andornot.json
-```
-
-## <a name="next-steps"></a>Дополнительная информация
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).
 * Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](resource-group-create-multiple.md).
