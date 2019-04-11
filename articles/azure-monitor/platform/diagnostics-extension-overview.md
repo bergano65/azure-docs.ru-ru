@@ -14,7 +14,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 03/18/2019
 ms.locfileid: "58078545"
 ---
-# <a name="what-is-azure-diagnostics-extension"></a>Расширение системы диагностики Microsoft Azure
+# <a name="what-is-azure-diagnostics-extension"></a>Расширение Диагностики Azure
 Расширение диагностики Azure — это агент, который позволяет выполнять сбор диагностических данных о развернутом приложении. Можно использовать модуль диагностики из различных источников. Сейчас поддерживаются веб-роль и рабочая роль облачной службы Azure (классические), виртуальные машины, масштабируемые наборы виртуальных машин и Service Fabric. Для других служб Azure предусмотрены другие методы диагностики. Ознакомьтесь с [общими сведениями о мониторинге в Azure](../../azure-monitor/overview.md).
 
 ## <a name="linux-agent"></a>Агент Linux
@@ -85,6 +85,6 @@ ms.locfileid: "58078545"
 Начните со статьи [Мониторинг и диагностика состояния служб в локальной среде разработки](../../service-fabric/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md). В дереве навигации слева от нее вы найдете ссылки на множество других статей по диагностике Service Fabric.
 
 ## <a name="general-articles"></a>Общие статьи
-* Узнайте, как [использовать счетчики производительности в Azure](../../cloud-services/diagnostics-performance-counters.md).
+* Узнайте, как [использовать счетчики производительности в Диагностике Azure](../../cloud-services/diagnostics-performance-counters.md).
 * Если возникнут проблемы с запуском диагностики или поиском данных в таблицах хранилища Azure, см. статью [Устранение неполадок с помощью системы диагностики Azure](diagnostics-extension-troubleshooting.md).
 

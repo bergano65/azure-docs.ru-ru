@@ -14,12 +14,12 @@ ms.date: 03/11/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
 ms.lastreviewed: 12/03/2018
-ms.openlocfilehash: 4e92f2aeec21ccef5a6a553b17e099d54de7266a
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 4385e982b2a1da52ae55acf50c601108863c452a
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57774343"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58905959"
 ---
 # <a name="use-data-transfer-tools-for-azure-stack-storage"></a>Использование средств передачи данных в хранилище Azure Stack
 
@@ -37,11 +37,11 @@ Microsoft Azure Stack предоставляет набор служб хран�
 
     Оболочка командной строки для выполнения задач и язык сценариев, разработанный специально для администрирования системы.
 
-* [Интерфейс командной строки Azure](#azure-cli)
+* [Инфраструктура CLI Azure](#azure-cli)
 
     Кроссплатформенное средство с открытым кодом, которое предоставляет набор команд для работы с платформами Azure и Azure Stack.
 
-* [Обозреватель службы хранилища Microsoft Azure](#microsoft-azure-storage-explorer)
+* [Обозреватель хранилища Microsoft](#microsoft-azure-storage-explorer)
 
     Простое в использовании автономное приложение с пользовательским интерфейсом.
 
@@ -59,7 +59,7 @@ AzCopy — это служебная программа командной ст�
 
 Существует две версии служебной программы AzCopy: AzCopy для Windows и AzCopy для Linux.
 
- - **AzCopy в Windows**
+ - **AzCopy для Windows**
     - Скачайте поддерживаемую версию AzCopy для Azure Stack. Можно установить и использовать AzCopy в Azure так же, как в Azure. Дополнительные сведения см. в статье [Перенос данных с помощью AzCopy для Windows](../../storage/common/storage-use-azcopy.md).
         - Для обновления 1811 и более поздней версии [скачайте AzCopy 7.3.0](https://aka.ms/azcopyforazurestack20171109).
         - Для предыдущих версий (1802–1809) [скачайте AzCopy 7.1.0](https://aka.ms/azcopyforazurestack20170417).
@@ -71,11 +71,11 @@ AzCopy — это служебная программа командной ст�
 
 ### <a name="azcopy-command-examples-for-data-transfer"></a>Примеры команд AzCopy для передачи данных
 
-В следующих примерах описаны стандартные сценарии копирования данных в большие двоичные объекты Azure Stack и обратно. См. дополнительные сведения об AzCopy в [Windows](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-linux) и [Linux](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-linux).
+В следующих примерах описаны стандартные сценарии копирования данных в большие двоичные объекты Azure Stack и обратно. См. дополнительные сведения об AzCopy в [Windows](../../storage/common/storage-use-azcopy.md) и [Linux](../../storage/common/storage-use-azcopy-linux.md).
 
 ### <a name="download-all-blobs-to-a-local-disk"></a>Скачивание всех больших двоичных объектов на локальный диск
 
-**Windows**
+** Windows**
 
 ```shell
 AzCopy.exe /source:https://myaccount.blob.local.azurestack.external/mycontainer /dest:C:\myfolder /sourcekey:<key> /S
@@ -93,7 +93,7 @@ azcopy \
 
 ### <a name="upload-single-file-to-virtual-directory"></a>Отправка одного файла в виртуальный каталог
 
-**Windows**
+** Windows**
 
 ```shell
 AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.local.azurestack.external/mycontainer/vd /DestKey:key /Pattern:abc.txt
@@ -112,7 +112,7 @@ azcopy \
 
 Асинхронная передача данных между хранилищем Azure и Azure Stack не поддерживается. Для передачи данных необходимо указать параметр **/SyncCopy** или **--sync-copy**.
 
-**Windows**
+** Windows**
 
 ```shell
 Azcopy /Source:https://myaccount.blob.local.azurestack.external/mycontainer /Dest:https://myaccount2.blob.core.windows.net/mycontainer2 /SourceKey:AzSKey /DestKey:Azurekey /S /SyncCopy
@@ -156,7 +156,7 @@ Azure PowerShell — это модуль, предоставляющий ком
    > [!NOTE]
    > Этот скрипт должен быть запущен в корневом каталоге **AzureStack_Tools**.
 
-```PowerShell  
+```powershell  
 # begin
 
 $ARMEvnName = "AzureStackUser" # set AzureStackUser as your Azure Stack environment name
@@ -264,7 +264,7 @@ Azure CLI — это интерфейс командной строки Azure �
 2. Обновите переменные скрипта в соответствии с параметрами конфигурации.
 3. После обновления необходимых переменных сохраните скрипт и выйдите из редактора. В описанных ниже действиях предполагается, что скрипту присвоено имя **my_storage_sample.sh**.
 4. При необходимости пометьте скрипт как исполняемый файл: `chmod +x my_storage_sample.sh`
-5. Выполните скрипт, например в Bash: `./my_storage_sample.sh`
+5. Выполните скрипт, Пример (bash): `./my_storage_sample.sh`
 
 ```azurecli
 #!/bin/bash
@@ -336,7 +336,7 @@ blobEndpoint myaccount.blob.local.azurestack.external
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Подключение обозревателя службы хранилища к подписке Azure Stack или к учетной записи хранения](azure-stack-storage-connect-se.md)
-* [Начало работы с Обозревателем службы хранилища](../../vs-azure-tools-storage-manage-with-storage-explorer.md)
-* [Хранилище Azure Stack. Отличия и рекомендации](azure-stack-acs-differences.md)
-* [Общие сведения о службе хранилища Microsoft Azure](../../storage/common/storage-introduction.md)
+* [Подключение обозревателя хранилища к подписке Azure Stack](azure-stack-storage-connect-se.md)
+* [Начало работы с обозревателем хранилища](../../vs-azure-tools-storage-manage-with-storage-explorer.md)
+* [Объем хранилища для Azure Stack. Отличия и рекомендации](azure-stack-acs-differences.md)
+* [Introduction to Microsoft Azure storage (Общие сведения о службе хранилища Azure)](../../storage/common/storage-introduction.md)

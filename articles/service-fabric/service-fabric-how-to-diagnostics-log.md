@@ -175,7 +175,7 @@ internal sealed class ServiceEventSource : EventSource
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [приложении наблюдения за Service Fabric](service-fabric-diagnostics-event-generation-app.md).
-- Изучите методы ведения журнала с использованием [EventFlow](service-fabric-diagnostics-event-aggregation-eventflow.md) и [системы диагностики Microsoft Azure](service-fabric-diagnostics-event-aggregation-wad.md).
+- Изучите методы ведения журнала с использованием [EventFlow](service-fabric-diagnostics-event-aggregation-eventflow.md) и [Диагностики Azure для Windows](service-fabric-diagnostics-event-aggregation-wad.md).
 
 
 

@@ -10,7 +10,7 @@ ms.author: robb
 ms.subservice: diagnostic-extension
 ms.openlocfilehash: f7e21b805c64522005dce3e7d04aa158e1c21032
 ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/08/2019
 ms.locfileid: "55892864"
@@ -60,7 +60,7 @@ ms.locfileid: "55892864"
 ```
 - Атрибут **Sink** *name* — это строковое значение, однозначно определяющее приемник.
 
-- Элемент **ApplicationInsights** указывает ключ инструментирования ресурса Application Insights, в который отправляются диагностические данные Azure.
+- Элемент **ApplicationInsights** указывает ключ инструментирования ресурса Application Insights, в который отправляется Диагностика Azure.
     - Если ресурс Application Insights еще не существует, см. статью [Создание нового ресурса Application Insights](../../azure-monitor/app/create-new-resource.md ), где содержатся дополнительные сведения о создании ресурса и получении ключа инструментирования.
     - При разработке облачной службы с использованием пакета SDK для Azure 2.8 и более поздних версий этот ключ инструментирования заполняется автоматически. При упаковке проекта облачной службы это значение задается на основе параметра конфигурации службы **APPINSIGHTS_INSTRUMENTATIONKEY**. См. статью [Application Insights для облачных служб Azure](../../azure-monitor/app/cloudservices.md)
 

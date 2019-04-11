@@ -3,25 +3,25 @@ title: Копирование данных с помощью средства к
 description: Создание фабрики данных Azure и применение средства копирования данных для копирования данных из одного расположения в хранилище BLOB-объектов Azure в другое.
 services: data-factory
 documentationcenter: ''
-author: linda33wj
+author: dearandyxu
 manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: quickstart
 ms.date: 06/20/2018
-ms.author: jingwang
-ms.openlocfilehash: 6ff264c079ef5ee18258c3cd136cf441dc33e299
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.author: yexu
+ms.openlocfilehash: a77041b063f043c065df9a2955e9d07b5692f592
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55992761"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59256266"
 ---
 # <a name="quickstart-use-the-copy-data-tool-to-copy-data"></a>Краткое руководство. Копирование данных с помощью средства копирования данных
 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service that you are using:"]
-> * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
+> * [версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](quickstart-create-data-factory-copy-data-tool.md)
 
 В этом руководстве вы создадите фабрику данных с помощью портала Azure. После этого вы примените средство копирования данных, чтобы создать конвейер для копирования данных из одной папки в другую в хранилище BLOB-объектов Azure. 
@@ -75,7 +75,7 @@ ms.locfileid: "55992761"
 
     ![Страница "Исходное хранилище данных"](./media/quickstart-create-data-factory-copy-data-tool/new-source-linked-service.png)
 
-    б) В коллекции выберите **Хранилище BLOB-объектов Azure**, а затем нажмите кнопку **Далее**.
+    b. В коллекции выберите **Хранилище BLOB-объектов Azure**, а затем нажмите кнопку **Далее**.
 
     ![Выбор хранилища BLOB-объектов из коллекции](./media/quickstart-create-data-factory-copy-data-tool/select-blob-source.png)
 
@@ -83,7 +83,7 @@ ms.locfileid: "55992761"
 
    ![Настройка учетной записи хранилища BLOB-объектов Azure](./media/quickstart-create-data-factory-copy-data-tool/configure-blob-storage.png)
 
-   4.3. Выберите созданную связанную службу в качестве источника, а затем нажмите кнопку **Далее**.
+   d. Выберите созданную связанную службу в качестве источника, а затем нажмите кнопку **Далее**.
 
    ![Выбор исходной связанной службы](./media/quickstart-create-data-factory-copy-data-tool/select-source-linked-service.png)
 
@@ -94,7 +94,7 @@ ms.locfileid: "55992761"
 
    ![Страница Choose the input file or folder (Выбор входного файла или папки)](./media/quickstart-create-data-factory-copy-data-tool/configure-source-path.png)
 
-   4.3. Установите флажок **Двоичное копирование**, чтобы скопировать файл как есть, и нажмите кнопку **Далее**. 
+   d. Установите флажок **Двоичное копирование**, чтобы скопировать файл как есть, и нажмите кнопку **Далее**. 
 
    ![Страница Choose the input file or folder (Выбор входного файла или папки)](./media/quickstart-create-data-factory-copy-data-tool/select-binary-copy.png)
 

@@ -3,24 +3,24 @@ title: Копирование локальных данных с помощью 
 description: Создание фабрики данных Azure и применение средства копирования данных для копирования данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure.
 services: data-factory
 documentationcenter: ''
-author: linda33wj
+author: nabhishek
 manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
-ms.date: 01/04/2018
-ms.author: jingwang
-ms.openlocfilehash: 3569d39b8e4668894e44507dfdd0e20297028290
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.date: 04/09/2018
+ms.author: abnarain
+ms.openlocfilehash: 26bc6861602cae349c8ebaafefe070c119a93e87
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58226510"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59261531"
 ---
 # <a name="copy-data-from-an-on-premises-sql-server-database-to-azure-blob-storage-by-using-the-copy-data-tool"></a>Копирование данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure с помощью средства копирования данных
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
+> * [версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](tutorial-hybrid-copy-data-tool.md)
 
 В этом руководстве вы создадите фабрику данных с помощью портала Azure. После этого вы примените средство копирования данных для копирования данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure.
@@ -205,21 +205,19 @@ ms.locfileid: "58226510"
 
 1. Щелкните **Далее**.
 
-       ![](./media/tutorial-hybrid-copy-data-tool/select-source-linked-service.png)
+   ![](./media/tutorial-hybrid-copy-data-tool/select-source-linked-service.png)
 
 1. На странице **Select tables from which to copy the data or use a custom query** (Выберите таблицы, из которых нужно скопировать данные, или введите пользовательский запрос) выберите в списке значение **[dbo].[emp]**, а затем **Далее**. Можно выбрать любую другую таблицу в зависимости от базы данных.
 
-       ![The Product table selection](./media/tutorial-hybrid-copy-data-tool/select-emp-table.png)
+   ![Выбор таблицы продуктов](./media/tutorial-hybrid-copy-data-tool/select-emp-table.png)
 
 1. На странице **Destination data store** (Целевое хранилище данных) выберите **Create new connection** (Создать подключение).
 
-       //image create-new-sink-connection.png
-
-       ![Create Destination linked service](./media/tutorial-hybrid-copy-data-tool/create-new-sink-connection.png)
+   ![Создание связанной целевой службы](./media/tutorial-hybrid-copy-data-tool/create-new-sink-connection.png)
 
 1. В разделе **New Linked Service** (Новая связанная служба) найдите и выберите **BLOB-объект Azure**, а затем нажмите кнопку **Продолжить**. 
 
-       ![Blob storage selection](./media/tutorial-hybrid-copy-data-tool/select-destination-data-store.png)
+   ![Выбор хранилища BLOB-объектов](./media/tutorial-hybrid-copy-data-tool/select-destination-data-store.png)
 
 1. В диалоговом окне **New Linked Service (Azure Blob Storage)** (Новая связанная служба (хранилище BLOB-объектов Azure)) сделайте следующее: 
 
@@ -231,47 +229,47 @@ ms.locfileid: "58226510"
 
        d. Select **Next**.
 
-       ![Specify the storage account](./media/tutorial-hybrid-copy-data-tool/specify-azure-blob-storage-account.png)
+   ![Укажите учетную запись хранения](./media/tutorial-hybrid-copy-data-tool/specify-azure-blob-storage-account.png)
 
 1. В диалоговом окне **Destination data store** (Целевое хранилище данных) выберите **Далее**. В разделе **Свойства подключения** в качестве **службы хранилища Azure** выберите **хранилище BLOB-объектов Azure**. Щелкните **Далее**. 
 
-       ![connection properties](./media/tutorial-hybrid-copy-data-tool/select-connection-properties.png)
+   ![Свойства подключения](./media/tutorial-hybrid-copy-data-tool/select-connection-properties.png)
 
 1. В диалоговом окне **Choose the output file or folder** (Выбор выходного файла или папки) в поле **Путь к папке** введите **adftutorial/fromonprem**. Для работы с этим руководством вы ранее создали контейнер **adftutorial**. Если указанной папки выходных данных (в этом случае **fromonprem**) не существует, Фабрика данных создаст ее автоматически. Также можно нажать кнопку **Обзор**, чтобы открыть хранилище BLOB-объектов и просмотреть в нем контейнеры и папки. Если не указать значение в поле **имени файла**, по умолчанию будет использоваться имя источника (в этом случае **dbo.emp**).
            
-       ![Choose the output file or folder](./media/tutorial-hybrid-copy-data-tool/choose-output-file-folder.png)
+   ![Выбор целевого файла или папки](./media/tutorial-hybrid-copy-data-tool/choose-output-file-folder.png)
 
 1. В диалоговом окне **File format settings** (Параметры формата файла) выберите **Далее**. 
 
-       ![File format settings page](./media/tutorial-hybrid-copy-data-tool/file-format-settings-page.png)
+   ![Страница параметров формата файла](./media/tutorial-hybrid-copy-data-tool/file-format-settings-page.png)
 
 1. В диалоговом окне **Параметры** выберите **Далее**. 
 
-       ![Settings page](./media/tutorial-hybrid-copy-data-tool/settings-page.png)
+   ![Страница «Параметры»](./media/tutorial-hybrid-copy-data-tool/settings-page.png)
 
 1. В диалоговом окне **Сводка** проверьте значения всех параметров и нажмите кнопку **Далее**. 
 
-       ![Summary page](./media/tutorial-hybrid-copy-data-tool/summary-page.png)
+   ![Страница "Сводка"](./media/tutorial-hybrid-copy-data-tool/summary-page.png)
 
 1. На странице **Развертывание** нажмите кнопку **Monitor** (Отслеживать), чтобы отслеживать созданный конвейер или задачу.
 
-       ![Deployment page](./media/tutorial-hybrid-copy-data-tool/deployment-page.png)
+   ![Страница развертывания](./media/tutorial-hybrid-copy-data-tool/deployment-page.png)
 
 1. На вкладке **Monitor** (Мониторинг) вы можете просмотреть состояние созданного конвейера. Можно использовать ссылки в столбце **Действия**, чтобы просматривать запуски действий, связанные с этим запуском конвейера, и (или) повторно запускать конвейер. 
 
-       ![Monitor pipeline runs](./media/tutorial-hybrid-copy-data-tool/monitor-pipeline-runs.png)
+   ![Мониторинг выполнений конвейера](./media/tutorial-hybrid-copy-data-tool/monitor-pipeline-runs.png)
 
 1. Чтобы просмотреть запуски действий, связанных с этим запуском конвейера, щелкните ссылку **View Activity Runs** (Просмотр запусков действий) в столбце **Действия**. Чтобы увидеть сведения об операции копирования, щелкните ссылку **Сведения** (значок очков) в столбце **Действия**. Чтобы переключиться на представление **Pipeline Runs** (Запуски конвейера), в верхней части окна выберите **Конвейеры**.
 
-       ![Monitor activity runs](./media/tutorial-hybrid-copy-data-tool/monitor-activity-runs.png)
+   ![Мониторинг выполнений действий](./media/tutorial-hybrid-copy-data-tool/monitor-activity-runs.png)
 
 1. Убедитесь, что целевой файл появился в папке **fromonprem** конвейера **adftutorial**. 
 
-       ![Output blob](./media/tutorial-hybrid-copy-data-tool/output-blob.png)
+   ![Целевой BLOB-объект](./media/tutorial-hybrid-copy-data-tool/output-blob.png)
 
 1. Выберите вкладку **Правка** слева, чтобы переключиться в режим правки. В этом редакторе вы можете изменять параметры связанных служб, наборов данных и конвейеров, созданных с помощью средства. Выберите **Код**, чтобы просмотреть код JSON для сущности, открытой в редакторе. Сведения о том, как редактировать эти сущности с помощью пользовательского интерфейса фабрики данных, см. в [версии этого руководства для портала Azure](tutorial-copy-data-portal.md).
 
-       ![Edit tab](./media/tutorial-hybrid-copy-data-tool/edit-tab.png)
+   ![Вкладка редактирования](./media/tutorial-hybrid-copy-data-tool/edit-tab.png)
 
 
 ## <a name="next-steps"></a>Дополнительная информация
@@ -287,4 +285,4 @@ ms.locfileid: "58226510"
 Информацию о копировании данных в пакетном режиме из источника в место назначения см. в следующем руководстве:
 
 > [!div class="nextstepaction"]
->[Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure](tutorial-bulk-copy-portal.md)
+>[Копирование данных в пакетном режиме](tutorial-bulk-copy-portal.md)

@@ -1,6 +1,6 @@
 ---
 title: Хранение и просмотр диагностических данных в службе хранилища Azure
-description: Получение и просмотр диагностических данных Azure в хранилище Azure
+description: Получение и просмотр диагностических данных Azure в службе хранилища Azure
 services: azure-monitor
 author: jpconnock
 ms.service: azure-monitor
@@ -10,7 +10,7 @@ ms.author: jeconnoc
 ms.subservice: diagnostic-extension
 ms.openlocfilehash: 23379e9d9bb29efb7fb026260e8245e8eb8a2d71
 ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/23/2019
 ms.locfileid: "54468528"

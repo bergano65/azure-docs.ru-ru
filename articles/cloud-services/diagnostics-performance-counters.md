@@ -127,7 +127,7 @@ Application Insights автоматически собирает данные с
 
 Счетчики производительности, данные которых вы хотите собрать, определены в файле **diagnostics.wadcfgx**. Откройте этот файл (он определен для каждой роли) в Visual Studio и найдите элемент **DiagnosticsConfiguration** > **PublicConfig** > **WadCfg** > **DiagnosticMonitorConfiguration** > **PerformanceCounters**. Добавьте новый дочерний элемент **PerformanceCounterConfiguration**. Этот элемент имеет два атрибута: `counterSpecifier` и `sampleRate`. Атрибут `counterSpecifier` определяет набор счетчиков производительности системы (описанный в предыдущем разделе) для сбора данных. Значение `sampleRate` указывает, как часто выполняется опрос. В целом все счетчики производительности передаются в Azure в соответствии со значением атрибута `scheduledTransferPeriod` родительского элемента `PerformanceCounters`.
 
-Дополнительные сведения об элементе схемы `PerformanceCounters` см. в разделе [Элемент PerformanceCounters](../azure-monitor/platform/diagnostics-extension-schema-1dot3.md#performancecounters-element).
+Дополнительные сведения об элементе схемы `PerformanceCounters` см. в разделе [Схема Диагностики Azure](../azure-monitor/platform/diagnostics-extension-schema-1dot3.md#performancecounters-element).
 
 Период, определенный атрибутом `sampleRate`, использует тип данных продолжительности XML, чтобы указать, как часто проверяется счетчик производительности. В приведенном ниже примере скорость равна `PT3M`, что означает `[P]eriod[T]ime[3][M]inutes`: каждые три минуты.
 

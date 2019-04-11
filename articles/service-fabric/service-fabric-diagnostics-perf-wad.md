@@ -1,6 +1,6 @@
 ---
-title: Azure Service Fabric. Мониторинг производительности с помощью расширения для системы диагностики Microsoft Azure | Документация Майкрософт
-description: Использование системы диагностики Microsoft Azure для сбора данных счетчиков производительности для кластеров Azure Service Fabric.
+title: Azure Service Fabric. Мониторинг производительности с помощью расширения Диагностики Microsoft Azure | Документация Майкрософт
+description: Использование Диагностики Azure для Windows для сбора данных счетчиков производительности для кластеров Azure Service Fabric.
 services: service-fabric
 documentationcenter: .net
 author: srrengar
@@ -21,12 +21,12 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 04/05/2019
 ms.locfileid: "59049461"
 ---
-# <a name="performance-monitoring-with-the-windows-azure-diagnostics-extension"></a>Мониторинг производительности с помощью расширения для системы диагностики Microsoft Azure
+# <a name="performance-monitoring-with-the-windows-azure-diagnostics-extension"></a>Мониторинг производительности с помощью расширения для Диагностики Azure для Windows
 
-В этом документе рассматриваются шаги, необходимые для настройки сбора данных счетчиков производительности через расширение системы диагностики Microsoft Azure для кластеров Windows. Для кластеров Linux настройте [агент Log Analytics](service-fabric-diagnostics-oms-agent.md), чтобы собрать данные счетчиков производительности для узлов. 
+В этом документе рассматриваются шаги, необходимые для настройки сбора данных счетчиков производительности через расширение Диагностики Azure для Windows для кластеров Windows. Для кластеров Linux настройте [агент Log Analytics](service-fabric-diagnostics-oms-agent.md), чтобы собрать данные счетчиков производительности для узлов. 
 
  > [!NOTE]
-> Чтобы выполнение этих шагов было эффективным, на кластере необходимо развернуть расширение системы диагностики Microsoft Azure. Если оно не настроено, перейдите к разделу [Агрегирование и сбор событий с помощью системы диагностики Microsoft Azure](service-fabric-diagnostics-event-aggregation-wad.md).  
+> Чтобы выполнение этих шагов было эффективным, на кластере необходимо развернуть расширение системы диагностики Microsoft Azure. Если оно не настроено, перейдите к разделу [Агрегирование и сбор событий с помощью Диагностики Azure для Windows](service-fabric-diagnostics-event-aggregation-wad.md).  
 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]

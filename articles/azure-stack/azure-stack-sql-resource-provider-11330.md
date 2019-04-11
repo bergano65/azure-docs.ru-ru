@@ -16,12 +16,12 @@ ms.date: 01/09/2019
 ms.author: jeffgilb
 ms.reviewer: jiahan
 ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: 4b9b91c17a9199c7890d17a2b721ce0803e6bd6c
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: ae5a824fbd96a9a76eb18811a46bfc17afa15073
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55243340"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58879358"
 ---
 # <a name="sql-resource-provider-11330-release-notes"></a>Заметки о выпуске для поставщика ресурсов SQL 1.1.33.0
 
@@ -50,7 +50,8 @@ ms.locfileid: "55243340"
 
 - **В предыдущем развертывании поставщика ресурсов SQL (1.1.30.0) мог произойти сбой, если протокол TLS 1.2 не был включен**. Поставщик ресурсов SQL 1.1.33.0 обновлен для включения TLS 1.2 при развертывании, обновлении поставщика ресурсов или смене секретов. 
 
-- **Происходит сбой смены секретов поставщика ресурсов SQL**. Исправлена проблема, в результате которой в коде возникала следующая ошибка при смене секретов: ` New-AzureRmResourceGroupDeployment - Error: Code=InvalidDeploymentParameterValue; Message=The value of deployment parameter 'StorageAccountBlobUri' is null.`
+- **Происходит сбой смены секретов поставщика ресурсов SQL**. Исправлена проблема, в результате которой в коде возникала следующая ошибка при смене секретов:
+`New-AzureRmResourceGroupDeployment - Error: Code=InvalidDeploymentParameterValue; Message=The value of deployment parameter 'StorageAccountBlobUri' is null.`
 
 ## <a name="known-issues"></a>Известные проблемы 
 

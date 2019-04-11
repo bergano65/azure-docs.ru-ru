@@ -10,7 +10,7 @@ ms.author: vinagara
 ms.subservice: alerts
 ms.openlocfilehash: 7cca9d9c91f35c30bbd71ae82b9f02447051078d
 ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/09/2019
 ms.locfileid: "55983174"
@@ -45,7 +45,7 @@ Azure Monitor стала единой службой мониторинга по
 Доступны такие новые метрики для ресурсов Azure:
 
 - **Стандартные метрики платформы Azure Monitor** — это популярные предварительно заполненные метрики из различных служб и продуктов Azure. Дополнительные сведения см. в разделах [Поддерживаемые метрики и измерения](../../azure-monitor/platform/alerts-metric-near-real-time.md#metrics-and-dimensions-supported) и [Поддерживаемые типы ресурсов оповещений о метриках](../../azure-monitor/platform/alerts-metric-overview.md#supported-resource-types-for-metric-alerts).
-- **Пользовательские метрики Azure Monitor** — метрики из управляемых пользователями источников, включая агент системы диагностики Azure. Дополнительные сведения см. в статье [Пользовательские метрики в Azure Monitor](../../azure-monitor/platform/metrics-custom-overview.md). С помощью пользовательских метрик можно также публиковать метрики, собранные [агентом системы диагностики Windows Azure](../../azure-monitor/platform/collect-custom-metrics-guestos-resource-manager-vm.md) и [InfluxData Telegraf Agent](../../azure-monitor/platform/collect-custom-metrics-linux-telegraf.md).
+- **Пользовательские метрики Azure Monitor** — метрики из управляемых пользователями источников, включая агент системы диагностики Azure. Дополнительные сведения см. в статье [Пользовательские метрики в Azure Monitor](../../azure-monitor/platform/metrics-custom-overview.md). С помощью пользовательских метрик можно также публиковать метрики, собранные [агентом Диагностики Azure для Windows](../../azure-monitor/platform/collect-custom-metrics-guestos-resource-manager-vm.md) и [InfluxData Telegraf Agent](../../azure-monitor/platform/collect-custom-metrics-linux-telegraf.md).
 
 ## <a name="retirement-of-classic-monitoring-and-alerting-platform"></a>Прекращение поддержки классической платформы мониторинга и оповещений
 

@@ -8,13 +8,13 @@ ms.service: azure-stack
 ms.topic: article
 ms.date: 12/12/2018
 ms.author: mabrigg
-ms.lastreviewed: 12/12/2018
-ms.openlocfilehash: d4f7ec8f4b6960650b98d8f2d2f051c0873c9754
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.lastreviewed: 3/20/2019
+ms.openlocfilehash: d15a981e0f43c686a5b6f60387dab6aa6f4b8096
+ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55242507"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58540335"
 ---
 # <a name="azure-stack-training-and-certification"></a>Обучение и сертификация Azure Stack
 
@@ -24,9 +24,18 @@ ms.locfileid: "55242507"
 
 ## <a name="training"></a>Обучение
 
-- [Course 20537A: Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack](https://www.microsoft.com/en-us/learning/course.aspx?cid=20537) (Курс 20537A. Настройка и эксплуатация гибридного облака с помощью Microsoft Azure Stack)
-- [edX: Azure Stack Online Training](https://aka.ms/AzureStackMOOC) (edX: интерактивное изучение Azure Stack)
-- [Роли и схемы обучения](https://azure.microsoft.com/training/learning-paths/)
+- Официальные курсы Microsoft по запросу
+   - [ODX20537: Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack (180 Day)](https://www.microsoft.com/en-us/learning/course.aspx?cid=ODX20537) (Курс ODX20537. Настройка и эксплуатация гибридного облака с помощью Microsoft Azure Stack (180 дней)
+   - [OD20537: Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack (90 Day)](https://www.microsoft.com/en-us/learning/course.aspx?cid=OD20537) (Курс ODX20537. Настройка и эксплуатация гибридного облака с помощью Microsoft Azure Stack (90 дней)
+
+- Учебный курс Microsoft по ИТ
+   - [Course 20537A: Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack](https://aka.ms/azsmoc) (Курс 20537A. Настройка и эксплуатация гибридного облака с помощью Microsoft Azure Stack)
+
+- Open edX
+   - [edX: Configuring and Operating a Hybrid Cloud with Microsoft Azure Stack](https://aka.ms/AzureStackMOOC) (Настройка и эксплуатация гибридного облака с помощью Microsoft Azure Stack)
+   
+- Схемы обучения Майкрософт
+   - [Роли и схемы обучения](https://azure.microsoft.com/training/learning-paths/)
 
 ## <a name="certification"></a>Сертификация
 

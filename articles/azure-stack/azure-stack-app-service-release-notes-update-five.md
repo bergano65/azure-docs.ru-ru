@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/27/2019
+ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: ''
-ms.openlocfilehash: 0a0eb9586e78442947138831dd774298906aaf9c
-ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
+ms.openlocfilehash: 851673de4a711f5eb64228233ea7703ef86bfa7b
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56993450"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58500208"
 ---
 # <a name="app-service-on-azure-stack-update-5-release-notes"></a>Служба приложений в заметках о выпуске обновления 5 для Azure Stack
 
@@ -59,11 +59,14 @@ ms.locfileid: "56993450"
 
 - Обновления для **клиента, администратора службы приложений, портала функций и средств Kudu**. Согласованы с версией пакета SDK для портала Azure Stack.
 
+- Обновления **среды выполнения Функций Azure** до версии **v1.0.12205**.
+
 - Обновления **средств Kudu**, что позволило разрешить проблемы со стилями и функциональными возможностями, которые возникали у пользователей **с отключенной** инфраструктурой Azure Stack. 
 
 - Обновления основной службы для повышения надежности и отображения сообщений об ошибках упрощают диагностику распространенных проблем.
 
 - **Реализованы обновления следующих исполняющих сред и инструментов**:
+  - Добавлено ASP.NET Core версий 2.1.6 и 2.2.0.
   - Добавлено NodeJS 10.14.1.
   - Добавлено NPM 6.4.1.
   - Kudu обновлено до версии 79.20129.3767.

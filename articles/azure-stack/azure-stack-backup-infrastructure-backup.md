@@ -14,12 +14,12 @@ ms.date: 01/25/2019
 ms.author: mabrigg
 ms.reviewer: hectorl
 ms.lastreviewed: 03/19/2019
-ms.openlocfilehash: 080129ca1520dc2b1b085c69f6389508f11c7ba2
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: da1ae76925ffeba7a1df57b4121f8cfe20b2887f
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58285927"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58882112"
 ---
 # <a name="backup-and-data-recovery-for-azure-stack-with-the-infrastructure-backup-service"></a>Резервное копирование и восстановление данных для Azure Stack с помощью службы резервного копирования инфраструктуры
 
@@ -32,7 +32,7 @@ ms.locfileid: "58285927"
 Прежде чем включить службу резервного копирования, убедитесь, что соблюдены все [требования](#verify-requirements-for-the-infrastructure-backup-service).
 
 > [!Note]  
-> Служба резервного копирования инфраструктуры не обрабатывает данные и приложения пользователя. Дополнительные сведения о защите приложений, развернутых на виртуальных машинах IaaS, см. в статье [Защита виртуальных машин, развернутых в Azure Stack](user/azure-stack-manage-vm-protect.md). Подробное описание защиты приложений в Azure Stack см. в этом техническом документе с [рекомендациями по обеспечению непрерывности бизнес-процессов и аварийного восстановления для Azure Stack](http://aka.ms/azurestackbcdrconsiderationswp).
+> Служба резервного копирования инфраструктуры не обрабатывает данные и приложения пользователя. Дополнительные сведения о защите приложений, развернутых на виртуальных машинах IaaS, см. в статье [Защита виртуальных машин, развернутых в Azure Stack](user/azure-stack-manage-vm-protect.md). Подробное описание защиты приложений в Azure Stack см. в [документе с рекомендациями по обеспечению непрерывности бизнес-процессов и аварийного восстановления для Azure Stack](https://aka.ms/azurestackbcdrconsiderationswp).
 
 ## <a name="the-infrastructure-backup-service"></a>Служба резервного копирования инфраструктуры
 
@@ -48,7 +48,7 @@ ms.locfileid: "58285927"
 
 ## <a name="verify-requirements-for-the-infrastructure-backup-service"></a>Проверка выполнения требований для службы резервного копирования инфраструктуры
 
-- **Место хранения**  
+- **Расположение хранения**  
   Требуется общий файловый ресурс, который доступен из Azure Stack и может содержать семь резервных копий. Размер каждой резервной копии составляет около 10 ГБ. В вашем общем ресурсе должно быть пространство для хранения резервных копий объемом 140 ГБ. Дополнительные сведения о выборе места хранения для службы резервного копирования инфраструктуры Azure Stack см. в разделе с [требованиями для контроллера резервного копирования](azure-stack-backup-reference.md#backup-controller-requirements).
 - **Учетные данные**  
   Требуются учетная запись и учетные данные пользователя домена. Например, вы можете использовать учетные данные администратора Azure Stack.

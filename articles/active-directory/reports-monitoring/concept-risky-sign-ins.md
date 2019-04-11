@@ -44,7 +44,7 @@ Azure Active Directory (AAD) обнаруживает подозрительны
 
 - Администратор безопасности
 - глобального администратора;
-- Чтение данных безопасности
+- Читатель сведений о безопасности
 
 Дополнительные сведения см. в руководстве по [просмотру и назначению ролей администратора в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-manage-roles-portal).
 

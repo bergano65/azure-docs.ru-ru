@@ -141,7 +141,7 @@ Export-PfxCertificate -Cert $cert -FilePath ".\my-cert-file.pfx" -Password $pass
 * [IIS Logs stop writing in Cloud Service](https://blogs.msdn.microsoft.com/cie/2013/12/21/iis-logs-stops-writing-in-cloud-service/) (Журналы IIS прекращают запись в облачной службе)
 
 ### <a name="how-do-i-enable-wad-logging-for-cloud-services"></a>Как включить ведение журнала WAD для облачных служб?
-Вы можете включить ведение журнала Windows Azure Diagnostics (WAD) такими способами:
+Вы можете включить ведение журнала Диагностики Azure для Windows (WAD) такими способами:
 1. [С помощью Visual Studio](https://docs.microsoft.com/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines#turn-on-diagnostics-in-cloud-service-projects-before-you-deploy-them).
 2. [Включить с помощью кода .NET](https://docs.microsoft.com/azure/cloud-services/cloud-services-dotnet-diagnostics)
 3. [С помощью PowerShell](https://docs.microsoft.com/azure/cloud-services/cloud-services-diagnostics-powershell).

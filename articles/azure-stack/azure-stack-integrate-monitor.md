@@ -15,12 +15,12 @@ ms.date: 02/06/2019
 ms.author: jeffgilb
 ms.reviewer: thoroet
 ms.lastreviewed: 02/06/2019
-ms.openlocfilehash: 64a31e0c8a36b7ea8b60f65caefba9ba15b91777
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: 520319fb21dce3cf4f3cc1b36c52657cf9eb24e7
+ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58258740"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58904004"
 ---
 # <a name="integrate-external-monitoring-solution-with-azure-stack"></a>Интеграция внешнего решения для мониторинга с Azure Stack
 
@@ -81,8 +81,8 @@ Operations Manager можно использовать для внешнего �
 
 | Параметр | ОПИСАНИЕ | Пример |
 |---------|---------|---------|
-| *arm_endpoint* | Конечная точка Azure Resource Manager (администратор). |https:\//adminmanagement.local.azurestack.external |
-| *api_endpoint* | Конечная точка Azure Resource Manager (администратор).  | https:\//adminmanagement.local.azurestack.external |
+| *arm_endpoint* | Конечная точка Azure Resource Manager (администратор). | https://adminmanagement.local.azurestack.external |
+| *api_endpoint* | Конечная точка Azure Resource Manager (администратор).  | https://adminmanagement.local.azurestack.external |
 | *Tenant_id* | Идентификатор подписки администратора. | Его можно получить с помощью портала администратора или PowerShell. |
 | *User_name* | Имя пользователя в подписке оператора. | operator@myazuredirectory.onmicrosoft.com |
 | *User_password* | Пароль подписки оператора. | mypassword |
@@ -96,35 +96,36 @@ Operations Manager можно использовать для внешнего �
 
 Если вы не используете Operations Manager, Nagios или решение на основе Nagios, то можете использовать PowerShell, чтобы интегрировать широкий спектр решений для мониторинга с Azure Stack.
 
-1. Чтобы использовать PowerShell, убедитесь, в среде оператора Azure Stack [установлен и настроен компонент PowerShell](azure-stack-powershell-configure-quickstart.md). Установите PowerShell на локальном компьютере с доступом к конечной точке Resource Manager (администратор) (https:\//adminmanagement.[регион].[внешний_FQDN]).
+1. Чтобы использовать PowerShell, убедитесь, в среде оператора Azure Stack [установлен и настроен компонент PowerShell](azure-stack-powershell-configure-quickstart.md). Установите PowerShell на локальном компьютере с доступом к конечной точке Resource Manager (администратор) (https://adminmanagement.[регион].[внешнее_полное_доменное_имя]).
 
 2. Выполните следующие команды для подключения к среде Azure Stack в качестве оператора Azure Stack.
 
-   ```PowerShell  
-    Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint https:\//adminmanagement.[Region].[External_FQDN]
+   ```powershell
+   Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint https://adminmanagement.[Region].[External_FQDN]
 
    Add-AzureRmAccount -EnvironmentName "AzureStackAdmin"
    ```
 
 3. Ниже приведены примеры команд для работы с оповещениями.
-   ```PowerShell
+   ```powershell
     #Retrieve all alerts
-    Get-AzsAlert
+    $Alerts = Get-AzsAlert
+    $Alerts
 
     #Filter for active alerts
-    $Active=Get-AzsAlert | Where {$_.State -eq "active"}
+    $Active = $Alerts | Where-Object { $_.State -eq "active" }
     $Active
 
     #Close alert
     Close-AzsAlert -AlertID "ID"
 
     #Retrieve resource provider health
-    Get-AzsRPHealth
+    $RPHealth = Get-AzsRPHealth
+    $RPHealth
 
     #Retrieve infrastructure role instance health
-    $FRPID=Get-AzsRPHealth|Where-Object {$_.DisplayName -eq "Capacity"}
+    $FRPID = $RPHealth | Where-Object { $_.DisplayName -eq "Capacity" }
     Get-AzsRegistrationHealth -ServiceRegistrationId $FRPID.RegistrationId
-
     ```
 
 ## <a name="learn-more"></a>Подробнее

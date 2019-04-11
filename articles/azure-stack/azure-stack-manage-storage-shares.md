@@ -1,6 +1,6 @@
 ---
 title: Управление емкостью хранилища в Azure Stack | Документация Майкрософт
-description: Мониторинг доступного объема хранилища и управление им для Azure Stack.
+description: Отслеживание емкости хранилища для Azure Stack и доступности дискового пространства для Azure Stack и управление ими.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: conceptual
-ms.date: 03/19/2019
+ms.date: 03/29/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
-ms.lastreviewed: 01/14/2019
-ms.openlocfilehash: 617696c842ab90fc36c68e74831ffd1d79d14bc4
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.lastreviewed: 03/19/2019
+ms.openlocfilehash: e5188a7f7a1ce889c8f4340f100cfe767ff2dff8
+ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58225711"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58629400"
 ---
 # <a name="manage-storage-capacity-for-azure-stack"></a>Управление емкостью хранилища для Azure Stack 
 
@@ -53,7 +53,6 @@ ms.locfileid: "58225711"
 
 Если у общего ресурса недостаточно свободного места, а вы не пробовали или не можете [освободить](#reclaim-capacity) место, оператор облака Azure Stack может переносить контейнеры больших двоичных объектов из одного общего ресурса в другой.
 
-- Дополнительные сведения о контейнерах и больших двоичных объектах см. в подпункте [Хранилище BLOB-объектов](azure-stack-key-features.md#blob-storage) статьи "Общие сведения о хранилище Azure Stack".
 - См. дополнительные сведения о том, как пользователи клиента взаимодействуют с [хранилищем BLOB-объектов в Azure Stack](/azure/azure-stack/user/azure-stack-storage-overview#azure-stack-storage-services).
 
 
@@ -142,14 +141,14 @@ ms.locfileid: "58225711"
 1. Проверьте, [установлена и настроена ли среда Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/). Дополнительные сведения см. в статье [Использование Azure PowerShell с диспетчером ресурсов Azure](https://go.microsoft.com/fwlink/?LinkId=394767).
 2. Изучите контейнер, чтобы понять, какие данные находятся в общем ресурсе, который планируется перенести. Чтобы определить наиболее подходящие для переноса контейнеры в томе, используйте командлет **Get-AzsStorageContainer**:
 
-   ```PowerShell  
+   ```powershell  
    $farm_name = (Get-AzsStorageFarm)[0].name
    $shares = Get-AzsStorageShare -FarmName $farm_name
    $containers = Get-AzsStorageContainer -ShareName $shares[0].ShareName -FarmName $farm_name
    ```
    Затем проверьте значение $containers:
 
-   ```PowerShell
+   ```powershell
    $containers
    ```
 
@@ -157,14 +156,14 @@ ms.locfileid: "58225711"
 
 3. Определите наиболее подходящие общие ресурсы назначения для хранения контейнера, который переносится:
 
-   ```PowerShell
+   ```powershell
    $destinationshares = Get-AzsStorageShare -SourceShareName
    $shares[0].ShareName -Intent ContainerMigration
    ```
 
    Затем проверьте значение $destinationshares:
 
-   ```PowerShell 
+   ```powershell 
    $destinationshares
    ```
 
@@ -172,20 +171,20 @@ ms.locfileid: "58225711"
 
 4. Запустите перенос контейнера. Перенос выполняется асинхронно. Если вы начнете миграцию дополнительных контейнеров до завершения первой миграции, используйте идентификатор задания, чтобы отслеживать состояние каждого задания.
 
-   ```PowerShell
+   ```powershell
    $job_id = Start-AzsStorageContainerMigration -StorageAccountName $containers[0].Accountname -ContainerName $containers[0].Containername -ShareName $containers[0].Sharename -DestinationShareUncPath $destinationshares[0].UncPath -FarmName $farm_name
    ```
 
    Затем проверьте значение $jobId. В следующем примере замените *d62f8f7a-8b46-4f59-a8aa-5db96db4ebb0* идентификатором задания, которое нужно просмотреть:
 
-   ```PowerShell
+   ```powershell
    $jobId
    d62f8f7a-8b46-4f59-a8aa-5db96db4ebb0
    ```
 
 5. Используйте идентификатор задания, чтобы проверить состояние задания переноса. По завершении переноса параметру **MigrationStatus** присваивается значение **Complete**.
 
-   ```PowerShell 
+   ```powershell 
    Get-AzsStorageContainerMigrationStatus -JobId $job_id -FarmName $farm_name
    ```
 
@@ -193,7 +192,7 @@ ms.locfileid: "58225711"
 
 6. Вы можете отменить выполняющиеся задания переноса. Отмененные задания переноса обрабатываются асинхронно. Отслеживать отмену можно с помощью $jobid:
 
-   ```PowerShell
+   ```powershell
    Stop-AzsStorageContainerMigration -JobId $job_id -FarmName $farm_name
    ```
 

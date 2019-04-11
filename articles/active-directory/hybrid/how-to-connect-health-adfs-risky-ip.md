@@ -34,7 +34,7 @@ ms.locfileid: "58540913"
 
 > [!NOTE]
 > Чтобы применять этот отчет, необходимо убедиться, что включен аудит AD FS. Дополнительные сведения см. в разделе [Включение аудита для AD FS](how-to-connect-health-agent-install.md#enable-auditing-for-ad-fs). <br />
-> Для доступа к предварительной версии требуются разрешения глобального администратора или [читателя безопасности](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#security-reader).  
+> Для доступа к предварительной версии требуются разрешения глобального администратора или [читателя сведений о безопасности](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#security-reader).  
 > 
 
 ## <a name="what-is-in-the-report"></a>Что такое в отчете?
@@ -112,7 +112,7 @@ ms.locfileid: "58540913"
 - На фермах AD FS отключен аудит.
 
 **Почему я вижу нет доступа к отчету?**  <br />
-Для доступа требуются разрешения глобального администратора или [читателя безопасности](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#security-reader). Для получения доступа обратитесь к администратору.
+Для доступа требуются разрешения глобального администратора или [читателя сведений о безопасности](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#security-reader). Для получения доступа обратитесь к администратору.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

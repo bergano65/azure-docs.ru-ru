@@ -34,7 +34,7 @@ ms.locfileid: "58260052"
 1. Добавьте пакет SDK для Application Insights в [приложение ASP.Net](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net) или в обычное [приложение .NET](windows-services.md?toc=/azure/azure-monitor/toc.json).  
    Чтобы просмотреть профили запросов, необходимо отправить телеметрию запроса в Application Insights.
 
-1. Установите на виртуальную машину расширение "Система диагностики Microsoft Azure". Полные примеры шаблонов Resource Manager можно найти здесь:  
+1. Установите на виртуальную машину расширение "Диагностика Microsoft Azure". Полные примеры шаблонов Resource Manager можно найти здесь:  
    * [Виртуальная машина](https://github.com/Azure/azure-docs-json-samples/blob/master/application-insights/WindowsVirtualMachine.json)
    * [Масштабируемый набор виртуальных машин](https://github.com/Azure/azure-docs-json-samples/blob/master/application-insights/WindowsVirtualMachineScaleSet.json)
     

@@ -3,7 +3,7 @@ title: Создание и передача VHD Red Hat Enterprise Linux для 
 description: Узнайте, как создать и передать виртуальный жесткий диск (VHD) Azure, содержащий операционную систему RedHat Linux.
 services: azure-stack
 documentationcenter: ''
-author: JeffGoldner
+author: mattbriggs
 manager: BradleyB
 editor: ''
 tags: ''
@@ -13,15 +13,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/15/2018
-ms.author: jeffgo
+ms.date: 03/28/2019
+ms.author: mabrigg
+ms.reviewer: jeffgo
 ms.lastreviewed: 08/15/2018
-ms.openlocfilehash: ad0419cee3fc5c838d6d81adf9040432b9feaf07
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: e287a6f436b51f55d9a5aa59dbbe2a195015c292
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55242235"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58883130"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure-stack"></a>Подготовка виртуальной машины на основе Red Hat для Azure Stack
 
@@ -100,6 +101,13 @@ ms.locfileid: "55242235"
 
     ```bash
     sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+    ```
+
+1. Остановка и удаление cloud-init:
+
+    ```bash
+    systemctl stop cloud-init
+    yum remove cloud-init
     ```
 
 1. Убедитесь, что SSH-сервер установлен и настроен для включения во время загрузки (что обычно задано по умолчанию). Измените файл `/etc/ssh/sshd_config` , добавив в него следующую строку:
@@ -246,15 +254,17 @@ ms.locfileid: "55242235"
     dracut -f -v
     ```
 
-1. Удаление cloud-init:
+1. Остановка и удаление cloud-init:
 
     ```bash
+    systemctl stop cloud-init
     yum remove cloud-init
     ```
 
 1. Убедитесь, что SSH-сервер установлен и настроен для включения во время загрузки:
 
     ```bash
+    systemctl stop cloud-init
     systemctl enable sshd
     ```
 
@@ -265,22 +275,55 @@ ms.locfileid: "55242235"
     ClientAliveInterval 180
     ```
 
-1. Пакет WALinuxAgent `WALinuxAgent-<version>` был отправлен в репозиторий дополнений Red Hat. Включите репозиторий дополнений, выполнив следующую команду:
+1. При создании пользовательского VHD-файла для Azure Stack имейте в виду, что WALinuxAgent версий 2.2.20–2.2.35.1 (монопольный доступ) не работает в средах Azure Stack под управлением сборки до версии 1903. Чтобы устранить эту проблему, примените исправление 1901/1902 или следуйте второй части этих инструкций. 
+
+При запуске сборки Azure Stack версии 1903 или выше либо применении исправления 1901/1902 скачайте пакет WALinuxAgent из репозитория дополнительных компонентов Redhat следующим образом:
+    
+   Пакет WALinuxAgent `WALinuxAgent-<version>` был отправлен в репозиторий дополнений Red Hat. Включите репозиторий дополнительных компонентов, выполнив следующую команду:
 
     ```bash
     subscription-manager repos --enable=rhel-7-server-extras-rpms
     ```
 
-1. Установите агент Linux для Azure, выполнив следующую команду:
+   Установите агент Linux для Azure, выполнив следующую команду:
 
     ```bash
     yum install WALinuxAgent
     ```
 
-    Включите службу waagent:
+   Включите службу waagent:
 
     ```bash
     systemctl enable waagent.service
+    ```
+    
+    
+Если вы выполняете сборку Azure Stack до версии 1903 и не применили исправление 1901/1902, следуйте этим инструкциям, чтобы скачать WALinuxAgent:
+    
+   a.   Скачивание setuptools
+    ```bash
+    wget https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz --no-check-certificate
+    tar xzf setuptools-7.0.tar.gz
+    cd setuptools-7.0
+    ```
+   b. Скачайте и распакуйте последнюю версию агента из GitHub. Ниже приведен пример скачивания версии 2.2.36 из репозитория GitHub.
+    ```bash
+    wget https://github.com/Azure/WALinuxAgent/archive/v2.2.36.zip
+    unzip v2.2.36.zip
+    cd WALinuxAgent-2.2.36
+    ```
+    c. Install setup.py
+    ```bash
+    sudo python setup.py install
+    ```
+    d. Restart waagent
+    ```bash
+    sudo systemctl restart waagent
+    ```
+    e. Test if the agent version matches the one your downloaded. For this example, it should be 2.2.36.
+    
+    ```bash
+    waagent -version
     ```
 
 1. Не создавайте пространство подкачки на диске ОС.
@@ -420,6 +463,13 @@ ms.locfileid: "55242235"
 
     ```bash
     dracut -f -v
+    ```
+
+1. Остановка и удаление cloud-init:
+
+    ```bash
+    systemctl stop cloud-init
+    yum remove cloud-init
     ```
 
 1. Убедитесь, что SSH-сервер установлен и настроен для включения во время загрузки. Обычно этот параметр задан по умолчанию. Измените файл `/etc/ssh/sshd_config` , добавив в него следующую строку:
@@ -581,6 +631,10 @@ ms.locfileid: "55242235"
     Install latest repo update
     yum update -y
 
+    Stop and Uninstall cloud-init
+    systemctl stop cloud-init
+    yum remove cloud-init
+    
     Enable extras repo
     subscription-manager repos --enable=rhel-7-server-extras-rpms
 
@@ -657,15 +711,15 @@ ms.locfileid: "55242235"
 
 Измените файл `/etc/dracut.conf`, добавив следующее содержимое:
 
-    ```sh
-    add_drivers+="hv_vmbus hv_netvsc hv_storvsc"
-    ```
+```sh
+add_drivers+="hv_vmbus hv_netvsc hv_storvsc"
+```
 
 Повторно создайте initramfs:
 
-    ```bash
-    dracut -f -v
-    ```
+```bash
+dracut -f -v
+```
 
 Дополнительные сведения см. в разделе о [повторном создании initramfs](https://access.redhat.com/solutions/1958).
 

@@ -1,19 +1,18 @@
 ---
 title: 'Пример: требование шифрования для Data Lake Store'
 description: В этом примере определения политики проверяется, включено ли шифрование в учетных записях Data Lake Store.
-services: azure-policy
 author: DCtheGeek
 manager: carmonm
 ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: e4de4c78bec9f4ffa6c4e2711a2d4260279ca559
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.openlocfilehash: f9e38b737cad255ef2d9802490b5d114950d01e6
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56340609"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59264749"
 ---
 # <a name="sample---require-data-lake-store-encryption"></a>Пример обязательного шифрования для Data Lake Store
 

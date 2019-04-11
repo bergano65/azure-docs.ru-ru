@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок развертывания Kubernetes в Azure Stack | Документация Майкрософт
-description: Узнайте, как устранять неполадки развертывания Kubernetes в Azure Stack.
+title: Устранение неполадок с развертыванием Kubernetes в Azure Stack | Документация Майкрософт
+description: Узнайте, как устранять неполадки с развертыванием Kubernetes в Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,17 +11,17 @@ pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.author: mabrigg
-ms.date: 03/20/2019
+ms.date: 04/02/2019
 ms.reviewer: waltero
 ms.lastreviewed: 03/20/2019
-ms.openlocfilehash: 9af4b7a622bfb47d44c3da0edcece8c9528b08c4
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: 2a9eccfa109292b7d142092f69f4a664b0ff8f20
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58361546"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58878134"
 ---
-# <a name="troubleshoot-your-kubernetes-deployment-to-azure-stack"></a>Устранение неполадок развертывания Kubernetes в Azure Stack
+# <a name="troubleshoot-kubernetes-deployment-to-azure-stack"></a>Устранение неполадок с развертыванием Kubernetes в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
@@ -30,11 +30,11 @@ ms.locfileid: "58361546"
 
 В статье рассматривается устранение неполадок кластера Kubernetes. Вы можете проверить оповещение о развертывании и просмотреть состояние развертывания с помощью элементов, необходимых для развертывания. Вам может потребоваться сбор журналов из Azure Stack или виртуальных машин Linux, которые размещены в Kubernetes. Вам может также потребоваться работать совместно с администратором Azure Stack, чтобы получить журналы из конечной точки администрирования.
 
-## <a name="overview-of-deployment"></a>Общие сведения о развертывании
+## <a name="overview-of-kubernetes-deployment"></a>Общие сведения о развертывании Kubernetes
 
 Прежде чем приступать к устранению неполадок в кластере, рассмотрите процесс развертывания кластера Azure Stack Kubernetes. Развертывание создает шаблон решения Azure Resource Manager для создания виртуальных машин и установки обработчика ACS для кластера.
 
-### <a name="deployment-workflow"></a>Рабочий процесс развертывания
+### <a name="kubernetes-deployment-workflow"></a>Рабочий процесс развертывания Kubernetes
 
 В примере ниже показан общий процесс для развертывания кластера.
 
@@ -85,7 +85,7 @@ ms.locfileid: "58361546"
 
 Вы можете собирать журналы на виртуальных машинах, поддерживающих кластер Kubernetes. Можно также проверить, существует ли журнал развертывания. Вам может потребоваться обратиться к администратору Azure Stack для проверки версии Azure Stack, которую необходимо использовать, а также получить журналы из Azure Stack, связанные с развертыванием.
 
-1. Проверьте [состояние развертывания](#review-deployment-status) и [извлеките журналы](#get-logs-from-a-vm) из главного узла в кластере Kubernetes.
+1. Проверьте [состояние развертывания](#review-deployment-status) и извлеките журналы из главного узла в кластере Kubernetes.
 2. Убедитесь, что у вас установлена последняя версия Azure Stack. Если вы не уверены, какая версия используется, обратитесь к администратору Azure Stack.
 3.  Просмотрите файлы создания виртуальной машины. Возможно были следующие проблемы:  
     - Открытый ключ может быть недопустимым. Проверьте ключ, который вы создали.  
@@ -170,6 +170,6 @@ ms.locfileid: "58361546"
 
 [Развертывание Kubernetes в Azure Stack](azure-stack-solution-template-kubernetes-deploy.md)
 
-[Добавление Kubernetes в Azure Stack Marketplace](../azure-stack-solution-template-kubernetes-cluster-add.md)
+[Добавление Kubernetes в Azure Stack Marketplace (для оператора Azure Stack)](../azure-stack-solution-template-kubernetes-cluster-add.md)
 
 [Kubernetes в Azure](https://docs.microsoft.com/azure/container-service/kubernetes/container-service-kubernetes-walkthrough)

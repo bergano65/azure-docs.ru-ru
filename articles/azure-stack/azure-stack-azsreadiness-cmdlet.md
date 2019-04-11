@@ -12,26 +12,26 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/04/2018
+ms.date: 03/30/2018
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 12/04/2018
-ms.openlocfilehash: 0b75085754a66fabf07076282c977acd7f10a556
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: f920059f97f43a2ac3c48dad1c8f999833f6add1
+ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57992318"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58757771"
 ---
 # <a name="start-azsreadinesschecker-cmdlet-reference"></a>Справочник по командлету Start-AzsReadinessChecker
 
-Модуль: Microsoft.AzureStack.ReadinessChecker
+Модуль: **Microsoft.AzureStack.ReadinessChecker**
 
-Этот модуль содержит только один командлет.  Этот командлет выполняет одну или несколько функций перед развертыванием или обслуживанием Azure Stack.
+Этот модуль содержит только один командлет. С его помощью выполняется выполняет одна или более функций перед развертыванием или обслуживанием Azure Stack.
 
 ## <a name="syntax"></a>Синтаксис
 
-```PowerShell
+```powershell
 Start-AzsReadinessChecker
        [-CertificatePath <String>]
        -PfxPassword <SecureString>
@@ -45,7 +45,7 @@ Start-AzsReadinessChecker
        [<CommonParameters>]
 ```
 
-```PowerShell
+```powershell
 Start-AzsReadinessChecker
        [-CertificatePath <String>]
        -PfxPassword <SecureString>
@@ -57,7 +57,7 @@ Start-AzsReadinessChecker
        [<CommonParameters>]
 ```
 
-```PowerShell
+```powershell
 Start-AzsReadinessChecker
        -PaaSCertificates <Hashtable>
        -DeploymentDataJSONPath <String>
@@ -67,7 +67,7 @@ Start-AzsReadinessChecker
        [<CommonParameters>]
 ```
 
-```PowerShell
+```powershell
 Start-AzsReadinessChecker
        -PaaSCertificates <Hashtable>
        -RegionName <String>
@@ -79,7 +79,7 @@ Start-AzsReadinessChecker
        [<CommonParameters>]
 ```
 
-```PowerShell
+```powershell
 Start-AzsReadinessChecker
        -RegionName <String>
        -FQDN <String>
@@ -94,7 +94,7 @@ Start-AzsReadinessChecker
        [<CommonParameters>]
 ```
 
-```PowerShell
+```powershell
 Start-AzsReadinessChecker
        -PfxPassword <SecureString>
        -PfxPath <String>
@@ -105,7 +105,7 @@ Start-AzsReadinessChecker
        [<CommonParameters>]
 ```
 
-```PowerShell
+```powershell
 Start-AzsReadinessChecker
        -AADServiceAdministrator <PSCredential>
        -AADDirectoryTenantName <String>
@@ -118,7 +118,7 @@ Start-AzsReadinessChecker
        [<CommonParameters>]
 ```
 
-```PowerShell
+```powershell
 Start-AzsReadinessChecker
        -AADServiceAdministrator <PSCredential>
        -DeploymentDataJSONPath <String>
@@ -129,7 +129,7 @@ Start-AzsReadinessChecker
        [<CommonParameters>]
 ```
 
-```PowerShell
+```powershell
 Start-AzsReadinessChecker
        -RegistrationAccount <PSCredential>
        -RegistrationSubscriptionID <Guid>
@@ -141,7 +141,7 @@ Start-AzsReadinessChecker
        [<CommonParameters>]
 ```
 
-```PowerShell
+```powershell
 Start-AzsReadinessChecker
        -RegistrationAccount <PSCredential>
        -RegistrationSubscriptionID <Guid>
@@ -153,7 +153,7 @@ Start-AzsReadinessChecker
        [<CommonParameters>]
 ```
 
-```PowerShell
+```powershell
 Start-AzsReadinessChecker
        -ReportPath <String>
        [-ReportSections <String>]
@@ -166,42 +166,42 @@ Start-AzsReadinessChecker
 
 ## <a name="description"></a>ОПИСАНИЕ
 
-Командлет **Start-AzsReadinessChecker** проверяет сертификаты, учетные записи Azure, подписки Azure и Azure Active Directory. Выполните проверку перед развертыванием Azure Stack или перед выполнением таких действий по обслуживанию Azure Stack, как смена секрета. Командлет также может использоваться для создания запросов на подпись для сертификатов инфраструктуры и, при необходимости, сертификатов PaaS.  Наконец, командлет может распаковать сертификаты PFX для устранения общих проблем с упаковкой.
+Командлет **Start-AzsReadinessChecker** проверяет сертификаты, учетные записи Azure, подписки Azure и Azure Active Directory. Выполните проверку перед развертыванием Azure Stack или перед такими действиями по обслуживанию Azure Stack, как смена секрета. С помощью командлета также можно создавать запросы на подпись для сертификатов инфраструктуры и, при необходимости, сертификатов PaaS. Наконец, командлет может распаковать сертификаты PFX для устранения общих проблем с упаковкой.
 
 ## <a name="examples"></a>Примеры
 
-### <a name="example-generate-certificate-signing-request"></a>Пример: Создание запроса на подпись сертификата
+### <a name="example-generate-certificate-signing-request"></a>Пример. Создание запроса на подпись сертификата
 
-```PowerShell
+```powershell
 $regionName = 'east'
 $externalFQDN = 'azurestack.contoso.com'
 $subjectHash = [ordered]@{"OU"="AzureStack";"O"="Microsoft";"L"="Redmond";"ST"="Washington";"C"="US"}
 Start-AzsReadinessChecker -regionName $regionName -externalFQDN $externalFQDN -subject $subjectHash -IdentitySystem ADFS -requestType MultipleCSR
 ```
 
-В этом примере Start-AzsReadinessChecker создает несколько запросов на подпись сертификатов (CSR), которые подходят для развертывания Azure Stack ADFS с именем региона "east" и внешним полным доменным именем "azurestack.contoso.com".
+В этом примере с помощью `Start-AzsReadinessChecker` создается несколько запросов на подпись сертификатов (CSR), которые подходят для развертывания Azure Stack ADFS с именем региона **east** и внешним полным доменным именем **azurestack.contoso.com**.
 
-### <a name="example-validate-certificates"></a>Пример: Проверка сертификатов
+### <a name="example-validate-certificates"></a>Пример. Проверка сертификатов
 
-```PowerShell
+```powershell
 $password = Read-Host -Prompt "Enter PFX Password" -AsSecureString
 Start-AzsReadinessChecker -CertificatePath .\Certificates\ -PfxPassword $password -RegionName east -FQDN azurestack.contoso.com -IdentitySystem AAD
 ```
 
-В этом примере пароль PFX запрашивается безопасно, а Start-AzsReadinessChecker проверяет относительную папку "Certificates" на наличие допустимых сертификатов для развертывания AAD с именем региона "east" и внешним полным доменным именем "azurestack.contoso.com".
+В этом примере в целях безопасности запрашивается пароль PFX, а затем `Start-AzsReadinessChecker` проверяет соответствующую папку **Certificates** на наличие допустимых сертификатов для развертывания AAD в регионе с именем **east** и внешним полным доменным именем **azurestack.contoso.com**.
 
-### <a name="example-validate-certificates-with-deployment-data-deployment-and-support"></a>Пример: Проверка сертификатов с помощью данных развертывания (развертывание и поддержка)
+### <a name="example-validate-certificates-with-deployment-data-deployment-and-support"></a>Пример. Проверка сертификатов с помощью данных развертывания (развертывание и поддержка)
 
-```PowerShell
+```powershell
 $password = Read-Host -Prompt "Enter PFX Password" -AsSecureString
 Start-AzsReadinessChecker -CertificatePath .\Certificates\ -PfxPassword $password -DeploymentDataJSONPath .\deploymentdata.json
 ```
 
-В этом примере развертывания и поддержки пароль PFX запрашивается безопасно, а Start-AzsReadinessChecker проверяет относительную папку "Certificates" на наличие допустимых сертификатов для развертывания, при этом идентификационные данные, регион и внешнее полное доменное имя считываются из JSON-файла с данными развертывания, созданного для развертывания. 
+В этом примере развертывания и поддержки в целях безопасности запрашивается пароль PFX, а затем `Start-AzsReadinessChecker` проверяет соответствующую папку **Certificates** на наличие допустимых сертификатов для развертывания. При этом идентификатор, название региона и внешнее имя FQDN считываются из JSON-файла с данными развертывания, созданного для развертывания.
 
-### <a name="example-validate-paas-certificates"></a>Пример: Проверка сертификатов PaaS
+### <a name="example-validate-paas-certificates"></a>Пример. Проверка сертификатов PaaS
 
-```PowerShell
+```powershell
 $PaaSCertificates = @{
     'PaaSDBCert' = @{'pfxPath' = '<Path to DBAdapter PFX>';'pfxPassword' = (ConvertTo-SecureString -String '<Password for PFX>' -AsPlainText -Force)}
     'PaaSDefaultCert' = @{'pfxPath' = '<Path to Default PFX>';'pfxPassword' = (ConvertTo-SecureString -String '<Password for PFX>' -AsPlainText -Force)}
@@ -212,11 +212,11 @@ $PaaSCertificates = @{
 Start-AzsReadinessChecker -PaaSCertificates $PaaSCertificates – RegionName east -FQDN azurestack.contoso.com
 ```
 
-В этом примере хэш-таблица создается с путями и паролями для каждого сертификата PaaS. Сертификаты могут быть пропущены. Start-AzsReadinessChecker проверяет существование каждого PFX-пути для региона "east" и внешнего полного доменного имени "azurestack.contoso.com".
+В этом примере хэш-таблица создается с путями и паролями для каждого сертификата PaaS. Сертификаты могут быть пропущены. `Start-AzsReadinessChecker` проверяет существование каждого PFX-пути для региона **east** и внешнего имени FQDN **azurestack.contoso.com**.
 
-### <a name="example-validate-paas-certificates-with-deployment-data"></a>Пример: Проверка сертификатов PaaS с помощью данных развертывания
+### <a name="example-validate-paas-certificates-with-deployment-data"></a>Пример. Проверка сертификатов PaaS с помощью данных развертывания
 
-```PowerShell
+```powershell
 $PaaSCertificates = @{
     'PaaSDBCert' = @{'pfxPath' = '<Path to DBAdapter PFX>';'pfxPassword' = (ConvertTo-SecureString -String '<Password for PFX>' -AsPlainText -Force)}
     'PaaSDefaultCert' = @{'pfxPath' = '<Path to Default PFX>';'pfxPassword' = (ConvertTo-SecureString -String '<Password for PFX>' -AsPlainText -Force)}
@@ -227,78 +227,78 @@ $PaaSCertificates = @{
 Start-AzsReadinessChecker -PaaSCertificates $PaaSCertificates -DeploymentDataJSONPath .\deploymentdata.json
 ```
 
-В этом примере хэш-таблица создается с путями и паролями для каждого сертификата PaaS. Сертификаты могут быть пропущены. Start-AzsReadinessChecker проверяет существование каждого PFX-пути для региона и внешнего полного доменного имени, считываемых из JSON-файла с данными развертывания, созданного для развертывания. 
+В этом примере хэш-таблица создается с путями и паролями для каждого сертификата PaaS. Сертификаты могут быть пропущены. `Start-AzsReadinessChecker` проверяет существование каждого PFX-пути для названия региона и внешнего имени FQDN, считываемых из JSON-файла с данными развертывания, созданного для развертывания.
 
-### <a name="example-validate-azure-identity"></a>Пример: Проверка удостоверения Azure
+### <a name="example-validate-azure-identity"></a>Пример. Проверка удостоверения Azure
 
-```PowerShell
+```powershell
 $serviceAdminCredential = Get-Credential -Message "Enter Credentials for Service Administrator of Azure Active Directory Tenant e.g. serviceadmin@contoso.onmicrosoft.com"
 # Supported values for the <environment name> parameter are AzureCloud, AzureChinaCloud or AzureUSGovernment depending which Azure subscription you are using.
 Start-AzsReadinessChecker -AADServiceAdministrator $serviceAdminCredential -AzureEnvironment "<environment name>" -AzureDirectoryTenantName azurestack.contoso.com
 ```
 
-В этом примере учетные данные учетной записи администратора сервера безопасно запрашиваются, а Start-AzsReadinessChecker проверяет, допустимы ли учетная запись Azure и Azure Active Directory для развертывания AAD с именем каталога клиента "azurestack.contoso.com".
+В этом примере в целях безопасности запрашиваются учетные данные учетной записи администратора службы, а затем `Start-AzsReadinessChecker` проверяет, допустимы ли учетная запись Azure и Azure Active Directory для развертывания AAD с именем каталога клиента **azurestack.contoso.com**.
 
-### <a name="example-validate-azure-identity-with-deployment-data-deployment-support"></a>Пример: Проверка идентификаторов Azure с помощью данных развертывания (развертывание и поддержка)
+### <a name="example-validate-azure-identity-with-deployment-data-deployment-support"></a>Пример. Проверка удостоверения Azure с помощью данных развертывания (развертывание и поддержка)
 
 ```PowerSHell
 $serviceAdminCredential = Get-Credential -Message "Enter Credentials for Service Administrator of Azure Active Directory Tenant e.g. serviceadmin@contoso.onmicrosoft.com"
 Start-AzsReadinessChecker -AADServiceAdministrator $serviceAdminCredential -DeploymentDataJSONPath .\contoso-depploymentdata.json
 ```
 
-В этом примере учетные данные учетной записи администратора сервера безопасно запрашиваются, а Start-AzsReadinessChecker проверяет, допустимы ли учетная запись Azure и Azure Active Directory для развертывания AAD, при этом AzureCloud и TenantName считываются из JSON-файла с данными развертывания, созданного для развертывания.
+В этом примере в целях безопасности запрашиваются учетные данные учетной записи администратора службы, а затем `Start-AzsReadinessChecker` проверяет, допустимы ли учетная запись Azure и Azure Active Directory для развертывания AAD. При этом **AzureCloud** и **TenantName** считываются из JSON-файла с данными развертывания, созданного для развертывания.
 
-### <a name="example-validate-azure-registration"></a>Пример: Проверка регистрации в Azure
+### <a name="example-validate-azure-registration"></a>Пример. Проверка регистрации в Azure
 
-```PowerShell
+```powershell
 $registrationCredential = Get-Credential -Message "Enter Credentials for Subscription Owner e.g. subscriptionowner@contoso.onmicrosoft.com"
 $subscriptionID = "<subscription ID"
 # Supported values for the <environment name> parameter are AzureCloud, AzureChinaCloud or AzureUSGovernment depending which Azure subscription you are using.
 Start-AzsReadinessChecker -RegistrationAccount $registrationCredential -RegistrationSubscriptionID $subscriptionID -AzureEnvironment "<environment name>"
 ```
 
-В этом примере учетные данные владельца подписки безопасно запрашиваются, а затем Start-AzsReadinessChecker выполняет проверку данной учетной записи и подписки, чтобы убедиться, что их можно использовать для регистрации в Azure Stack. 
+В этом примере в целях безопасности запрашиваются учетные данные владельца подписки, а затем `Start-AzsReadinessChecker` проверяет учетную запись и подписку, чтобы убедиться, что их можно использовать для регистрации в Azure Stack.
 
-### <a name="example-validate-azure-registration-with-deployment-data-deployment-team"></a>Пример: Проверка регистрации Azure с помощью данных развертывания (команда развертывания)
+### <a name="example-validate-azure-registration-with-deployment-data-deployment-team"></a>Пример. Проверка регистрации Azure с помощью данных развертывания (группа развертывания)
 
-```PowerShell
+```powershell
 $registrationCredential = Get-Credential -Message "Enter Credentials for Subscription Owner e.g. subscriptionowner@contoso.onmicrosoft.com"
 $subscriptionID = "<subscription ID>"
 Start-AzsReadinessChecker -RegistrationAccount $registrationCredential -RegistrationSubscriptionID $subscriptionID -DeploymentDataJSONPath .\contoso-deploymentdata.json
 ```
 
-В этом примере учетные данные владельца подписки безопасно запрашиваются, а затем Start-AzsReadinessChecker выполняет проверку данной учетной записи и подписки, чтобы убедиться, что ее можно использовать для регистрации в Azure Stack, при этом дополнительные сведения считываются из JSON-файла с данными развертывания, созданного для развертывания.
+В этом примере в целях безопасности запрашиваются учетные данные владельца подписки, а затем `Start-AzsReadinessChecker` проверяет учетную запись и подписку, чтобы убедиться, что их можно использовать для регистрации в Azure Stack. При этом дополнительные сведения считываются из JSON-файла с данными развертывания, созданного для развертывания.
 
-### <a name="example-importexport-pfx-package"></a>Пример: Импорт и экспорт пакета PFX
+### <a name="example-importexport-pfx-package"></a>Пример. Импорт и экспорт пакета PFX
 
-```PowerShell
+```powershell
 $password = Read-Host -Prompt "Enter PFX Password" -AsSecureString
 Start-AzsReadinessChecker -PfxPassword $password -PfxPath .\certificates\ssl.pfx -ExportPFXPath .\certificates\ssl_new.pfx
 ```
 
-В этом примере PFX-пароль запрашивается безопасно. Файл ssl.pfx импортируется в хранилище сертификатов на локальном компьютере, а затем повторно экспортируется с тем же паролем и сохраняется как ssl_new.pfx.  Эта процедура используется, если в результате проверки сертификата обнаруживается, что у закрытого ключа нет установленного атрибута Local Machine, цепочка сертификата повреждена, в PFX присутствуют несоответствующие сертификаты или цепочка сертификатов находится в неправильном порядке.
+В этом примере в целях безопасности запрашивается PFX-пароль. Файл ssl.pfx импортируется в хранилище сертификатов на локальном компьютере, а затем повторно экспортируется с тем же паролем и сохраняется как ssl_new.pfx. Эта процедура используется, если в результате проверки сертификата обнаружено, что для закрытого ключа не установлен атрибут **Local Machine**, цепочка сертификата повреждена, в PFX есть несоответствующие сертификаты или цепочка сертификатов организована в неправильном порядке.
 
-### <a name="example-view-validation-report-deployment-support"></a>Пример: Просмотр отчета о проверке (поддержка развертывания)
+### <a name="example-view-validation-report-deployment-support"></a>Пример. Просмотр отчета о проверке (развертывание и поддержка)
 
-```PowerShell
+```powershell
 Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json
 ```
 
-В этом примере команда разработки или поддержки получает отчет о готовности от клиента (Contoso) и использует Start-AzsReadinessChecker для просмотра состояния выполнения проверки для Contoso.
+В этом примере группа развертывания или поддержки получает отчет о готовности от клиента (Contoso) и использует `Start-AzsReadinessChecker`, чтобы узнать состояние выполнения проверки для Contoso.
 
-### <a name="example-view-validation-report-summary-for-certificate-validation-only-deployment-and-support"></a>Пример: Просмотр сводки отчета о проверке только для подтверждения сертификата (развертывание и поддержка)
+### <a name="example-view-validation-report-summary-for-certificate-validation-only-deployment-and-support"></a>Пример. Просмотр сводки отчета о проверке только для подтверждения сертификата (развертывание и поддержка)
 
-```PowerShell
+```powershell
 Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSections Certificate -Summary
 ```
 
-В этом примере команда разработки или поддержки получает отчет о готовности от клиента (Contoso) и использует Start-AzsReadinessChecker для просмотра сводки по состоянию проверки сертификата для Contoso.
+В этом примере группа развертывания или поддержки получает отчет о готовности от клиента (Contoso) и использует `Start-AzsReadinessChecker`, чтобы просмотреть сводку по состоянию проверки сертификата для Contoso.
 
 ## <a name="required-parameters"></a>Необходимые параметры
 
-> -RegionName
+### <a name="-regionname"></a>-RegionName
 
-Указывает имя региона развертывания Azure Stack.
+Определяет имя региона развертывания Azure Stack.
 
 |  |  |
 |----------------------------|--------------|
@@ -308,9 +308,9 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь         |
 |Принимает подстановочные знаки: |Ложь         |
 
-> -FQDN
+### <a name="-fqdn"></a>-FQDN
 
-Указывает внешнее полное доменное имя развертывания Azure Stack (FQDN), которое также имеет псевдоним ExternalFQDN и ExternalDomainName.
+Определяет внешнее имя FQDN развертывания Azure Stack, которое также имеет псевдонимы **ExternalFQDN** и **ExternalDomainName**.
 
 |  |  |
 |----------------------------|--------------|
@@ -320,9 +320,9 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь         |
 |Принимает подстановочные знаки: |Ложь         |
 
-> -IdentitySystem
+### <a name="-identitysystem"></a>-IdentitySystem
 
-Указывает допустимые значения идентификационной системы развертывания Azure Stack, AAD или ADFS, для Azure Active Directory и федеративных служб Active Directory соответственно.
+Указывает допустимые значения идентификационной системы развертывания Azure Stack, AAD или ADFS для Azure Active Directory и федеративных служб Active Directory соответственно.
 
 |  |  |
 |----------------------------|--------------|
@@ -333,7 +333,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь         |
 |Принимает подстановочные знаки: |Ложь         |
 
-> -PfxPassword
+### <a name="-pfxpassword"></a>-PfxPassword
 
 Указывает пароль, связанный с PFX-файлами сертификатов.
 
@@ -345,7 +345,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
-> -PaaSCertificates
+### <a name="-paascertificates"></a>-PaaSCertificates
 
 Указывает хэш-таблицу, содержащую пути и пароли для сертификатов PaaS.
 
@@ -357,7 +357,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
-> -DeploymentDataJSONPath
+### <a name="-deploymentdatajsonpath"></a>-DeploymentDataJSONPath
 
 Указывает JSON-файл конфигурации с данными развертывания Azure Stack. Этот файл создается для развертывания.
 
@@ -369,9 +369,9 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
-> -PfxPath
+### <a name="-pfxpath"></a>-PfxPath
 
-Указывает путь к проблемному сертификату, которому для исправления требуется процедура импорта и экспорта, как указано в ходе проверки сертификатов в этом инструменте.
+Указывает путь к проблемному сертификату, которому для исправления требуется процедура импорта и экспорта, как определено в ходе проверки сертификатов в этом инструменте.
 
 |  |  |
 |----------------------------|---------|
@@ -381,7 +381,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
-> -ExportPFXPath  
+### <a name="-exportpfxpath"></a>-ExportPFXPath  
 
 Указывает конечный путь для PFX-файла, полученного в результате процедуры импорта и экспорта.  
 
@@ -393,7 +393,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
-> -Subject
+### <a name="-subject"></a>-Subject
 
 Указывает упорядоченный словарь субъекта для создания запроса на сертификат.
 
@@ -405,12 +405,12 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
-> -RequestType
+### <a name="-requesttype"></a>-RequestType
 
-Указывает тип сети хранения данных для запроса на сертификат. Допустимые значения: MultipleCSR, SingleCSR.
+Указывает тип сети хранения данных для запроса на сертификат. Допустимые значения: **MultipleCSR**, **SingleCSR**.
 
-- *MultipleCSR*. Создает несколько запросов на сертификаты, по одному для каждой службы.
-- *SingleCSR*. Создает один запрос на сертификат для всех служб.
+- **MultipleCSR**. Создает несколько запросов на сертификаты, по одному для каждой службы.
+- **SingleCSR**. Создает один запрос на сертификат для всех служб.
 
 |  |  |
 |----------------------------|---------|
@@ -421,7 +421,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
-> -OutputRequestPath
+### <a name="-outputrequestpath"></a>-OutputRequestPath
 
 Указывает путь назначения для файлов запроса на сертификат. Каталог уже должен существовать.
 
@@ -433,9 +433,9 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
-> -AADServiceAdministrator
+### <a name="-aadserviceadministrator"></a>-AADServiceAdministrator
 
-Указывает администратора службы Azure Active Directory, используемого в развертывании Azure Stack.
+Указывает администратора службы Azure Active Directory для развертывания Azure Stack.
 
 |  |  |
 |----------------------------|---------|
@@ -445,7 +445,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
-> -AADDirectoryTenantName
+### <a name="-aaddirectorytenantname"></a>-AADDirectoryTenantName
 
 Указывает имя Azure Active Directory, используемое в развертывании Azure Stack.
 
@@ -457,7 +457,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
-> -AzureEnvironment
+### <a name="-azureenvironment"></a>-AzureEnvironment
 
 Указывает экземпляр служб Azure с учетными записями, каталогами и подписками для развертывания и регистрации Azure Stack.
 
@@ -470,7 +470,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
-> -RegistrationAccount
+### <a name="-registrationaccount"></a>-RegistrationAccount
 
 Указывает учетную запись для регистрации в Azure Stack.
 
@@ -482,7 +482,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
-> -RegistrationSubscriptionID
+### <a name="-registrationsubscriptionid"></a>-RegistrationSubscriptionID
 
 Указывает идентификатор подписки для регистрации в Azure Stack.
 
@@ -494,9 +494,9 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
-> -ReportPath
+### <a name="-reportpath"></a>-ReportPath
 
-Указывает путь для отчета о готовности, по умолчанию используется текущий каталог и стандартное имя отчета.
+Указывает путь для отчета о готовности. По умолчанию используется текущий каталог и стандартное имя отчета.
 
 |  |  |
 |----------------------------|---------|
@@ -508,7 +508,7 @@ Start-AzsReadinessChecker -ReportPath Contoso-AzsReadinessReport.json -ReportSec
 
 ## <a name="optional-parameters"></a>Необязательные параметры
 
-> -CertificatePath
+### <a name="-certificatepath"></a>-CertificatePath
 
 Указывает путь, по которому присутствуют только необходимые папки с сертификатами.
 
@@ -528,7 +528,7 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
-> -IncludePaaS  
+### <a name="-includepaas"></a>-IncludePaaS  
 
 Указывает, нужно ли добавлять к запросам на сертификат службы PaaS или имена узлов.
 
@@ -540,7 +540,7 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 |Принимает входные данные конвейера:      |Ложь             |
 |Принимает подстановочные знаки: |Ложь             |
 
-> -ReportSections
+### <a name="-reportsections"></a>-ReportSections
 
 Показывает только сводку отчета, опуская подробности.
 
@@ -553,7 +553,7 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 |Принимает входные данные конвейера:      |Ложь    |
 |Принимает подстановочные знаки: |Ложь    |
 
-> -Summary
+### <a name="-summary"></a>-Summary
 
 Показывает только сводку отчета, опуская подробности.
 
@@ -565,7 +565,7 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 |Принимает входные данные конвейера:      |Ложь             |
 |Принимает подстановочные знаки: |Ложь             |
 
-> -CleanReport
+### <a name="-cleanreport"></a>-CleanReport
 
 Удаляет журналы предыдущего выполнения и проверки и записывает проверки в новый отчет.
 
@@ -578,9 +578,9 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 |Принимает входные данные конвейера:      |Ложь             |
 |Принимает подстановочные знаки: |Ложь             |
 
-> -OutputPath
+### <a name="-outputpath"></a>-OutputPath
 
-Задает пользовательский путь для сохранения отчета о готовности в формате JSON и подробного файла журнала.  Если путь еще не существует, инструмент попытается создать каталог.
+Указывает пользовательский путь для сохранения отчета о готовности в формате JSON и подробного файла журнала. Если путь не существует, инструмент попытается создать каталог.
 
 |  |  |
 |----------------------------|------------------|
@@ -590,7 +590,7 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 |Принимает входные данные конвейера:      |Ложь             |
 |Принимает подстановочные знаки: |Ложь             |
 
-> -Confirm
+### <a name="-confirm"></a>-Confirm
 
 Запрашивает подтверждение перед выполнением командлета.
 
@@ -603,7 +603,7 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 |Принимает входные данные конвейера:      |Ложь             |
 |Принимает подстановочные знаки: |Ложь             |
 
-> -WhatIf
+### <a name="-whatif"></a>-WhatIf
 
 Показывает, что произойдет при запуске командлета. Командлет не выполняется.
 
@@ -615,4 +615,3 @@ ACSBlob, ACSQueue, ACSTable, ADFS, Admin Portal, ARM Admin, ARM Public, Graph, K
 |Значение по умолчанию:              |Ложь             |
 |Принимает входные данные конвейера:      |Ложь             |
 |Принимает подстановочные знаки: |Ложь             |
-

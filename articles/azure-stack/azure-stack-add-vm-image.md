@@ -1,6 +1,6 @@
 ---
-title: Добавление и удаление образа виртуальной машины в Azure Stack | Документация Майкрософт
-description: Добавление корпоративного образа виртуальной машины Windows или Linux для использования клиентами и удаление его.
+title: Добавление образа виртуальной машины в Azure Stack | Документация Майкрософт
+description: Добавление и удаление корпоративного пользовательского образа виртуальной машины Windows или Linux для использования клиентами.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -11,22 +11,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: conceptual
-ms.date: 03/04/2019
+ms.date: 04/02/2019
 ms.author: mabrigg
 ms.reviewer: kivenkat
 ms.lastreviewed: 06/08/2018
-ms.openlocfilehash: ccf3beaacd15ad7d3e9177614bb62b0050bd8d5c
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 9e20abfde8a4524b00e60651bbe71135d357a237
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58109173"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58881466"
 ---
-# <a name="make-a-virtual-machine-image-available-in-azure-stack"></a>Размещение образа виртуальной машины через Azure Stack
+# <a name="add-a-vm-image-to-offer-in-azure-stack"></a>Добавление образа виртуальной машины в предложение в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-В Azure Stack вы можете разместить образы виртуальных машин, сделав их доступными для пользователей. Эти образы можно использовать в шаблонах Azure Resource Manager. Их можно также добавить в пользовательский интерфейс Azure Marketplace в качестве элемента Marketplace. Используйте образ из глобального магазина Azure Marketplace или пользовательский образ. Образ можно добавить с помощью портала или Windows PowerShell.
+В Azure Stack можно добавить образ виртуальной машины в Marketplace, чтобы сделать его доступным для пользователей. Образы виртуальных машин можно добавлять с помощью шаблонов Azure Resource Manager для Azure Stack. Их можно также добавить в пользовательский интерфейс Azure Marketplace в качестве элемента Marketplace. Используйте образ из глобального магазина Azure Marketplace или пользовательский образ. Виртуальную машину можно добавить с помощью портала администрирования или Windows PowerShell.
 
 ## <a name="add-a-vm-image-through-the-portal"></a>Добавление образа виртуальной машины через портал
 
@@ -83,7 +83,7 @@ ms.locfileid: "58109173"
 
 3. Откройте PowerShell с помощью командной строки с повышенными привилегиями и выполните следующую команду:
 
-   ```PowerShell  
+   ```powershell
     Add-AzsPlatformimage -publisher "<publisher>" `
       -offer "<offer>" `
       -sku "<sku>" `
@@ -94,22 +94,22 @@ ms.locfileid: "58109173"
 
    Командлет **Add-AzsPlatformimage** позволяет задать значения, которые используются в шаблонах Azure Resource Manager для ссылки на образ виртуальной машины. Допустимые значения:
    - **publisher**  
-     Например: `Canonical`  
+     Например:  `Canonical`  
      Сегмент имени издателя образа виртуальной машины, которое применяется пользователями при развертывании образа. Например, **Microsoft**. Не используйте пробел или другие специальные символы в этом поле.  
    - **offer**  
-     Например: `UbuntuServer`  
+     Например:  `UbuntuServer`  
      Сегмент имени предложения образа виртуальной машины, которое применяется пользователями при развертывании образа виртуальной машины. Например, **WindowsServer**. Не используйте пробел или другие специальные символы в этом поле.  
    - **sku**  
-     Например: `14.04.3-LTS`  
+     Например:  `14.04.3-LTS`  
      Сегмент имени SKU образа виртуальной машины, которое применяется пользователями при развертывании образа виртуальной машины. Например, **Datacenter2016**. Не используйте пробел или другие специальные символы в этом поле.  
-   - **version**  
-     Например: `1.0.0`  
+   - **версия**  
+     Например:  `1.0.0`  
      Версия виртуальной машины, которая применяется пользователями при развертывании образа виртуальной машины. Эта версия имеет формат *\#.\#.\#*. Например, **1.0.0**. Не используйте пробел или другие специальные символы в этом поле.  
    - **osType**  
-     Например: `Linux`  
+     Например:  `Linux`  
      Тип ОС образа должен быть **Windows** или **Linux**.  
    - **OSUri**  
-     Например: `https://storageaccount.blob.core.windows.net/vhds/Ubuntu1404.vhd`  
+     Например:  `https://storageaccount.blob.core.windows.net/vhds/Ubuntu1404.vhd`  
      В качестве значения `osDisk` вы можете указать URI хранилища BLOB-объектов.  
 
      Дополнительные сведения см. в справочнике PowerShell в разделах о командлетах [Add-AzsPlatformimage](https://docs.microsoft.com/powershell/module/azs.compute.admin/add-azsplatformimage) и [New-DataDiskObject](https://docs.microsoft.com/powershell/module/Azs.Compute.Admin/New-DataDiskObject).
@@ -118,7 +118,7 @@ ms.locfileid: "58109173"
  
 1. [Установите PowerShell для Azure Stack](azure-stack-powershell-install.md).
 
-   ```PowerShell  
+   ```powershell
     # Create the Azure Stack operator's Azure Resource Manager environment by using the following cmdlet:
     Add-AzureRMEnvironment `
       -Name "AzureStackAdmin" `
@@ -139,7 +139,7 @@ ms.locfileid: "58109173"
 
 2. Если вы используете **службы федерации Active Directory (AD FS)**, примените следующий командлет:
 
-   ```PowerShell
+   ```powershell
    # For Azure Stack Development Kit, this value is set to https://adminmanagement.local.azurestack.external. To get this value for Azure Stack integrated systems, contact your service provider.
    $ArmEndpoint = "<Resource Manager endpoint for your environment>"
 
@@ -158,7 +158,7 @@ ms.locfileid: "58109173"
 
 5. Подготовьте образ операционной системы Windows или Linux в формате VHD (не VHDX), отправьте этот образ в учетную запись хранения и запишите URI, по которому можно получить этот образ виртуальной машины из PowerShell.  
 
-   ```PowerShell  
+   ```powershell
     Add-AzureRmAccount `
       -EnvironmentName "AzureStackAdmin" `
       -TenantId $TenantID
@@ -166,14 +166,14 @@ ms.locfileid: "58109173"
 
 6. (Необязательно.) В образе виртуальной машины можно передать массив дисков с данными. Создайте диски данных с помощью командлета New-DataDiskObject. Откройте PowerShell в командной строке с повышенными привилегиями и выполните следующую команду:
 
-   ```PowerShell  
+   ```powershell
     New-DataDiskObject -Lun 2 `
     -Uri "https://storageaccount.blob.core.windows.net/vhds/Datadisk.vhd"
    ```
 
 7. Откройте PowerShell с помощью командной строки с повышенными привилегиями и выполните следующую команду:
 
-   ```PowerShell  
+   ```powershell
     Add-AzsPlatformimage -publisher "<publisher>" -offer "<offer>" -sku "<sku>" -version "<#.#.#>” -OSType "<ostype>" -OSUri "<osuri>"
    ```
 
@@ -189,7 +189,7 @@ ms.locfileid: "58109173"
 
 3. Откройте PowerShell с помощью командной строки с повышенными привилегиями и выполните следующую команду:
 
-   ```PowerShell  
+   ```powershell  
    Remove-AzsPlatformImage `
     -publisher "<publisher>" `
     -offer "<offer>" `
@@ -198,16 +198,16 @@ ms.locfileid: "58109173"
    ```
    Командлет **Remove-AzsPlatformimage** позволяет задать значения, которые используются в шаблонах Azure Resource Manager для ссылки на образ виртуальной машины. Допустимые значения:
    - **publisher**  
-     Например: `Canonical`  
+     Например:  `Canonical`  
      Сегмент имени издателя образа виртуальной машины, которое применяется пользователями при развертывании образа. Например, **Microsoft**. Не используйте пробел или другие специальные символы в этом поле.  
    - **offer**  
-     Например: `UbuntuServer`  
+     Например:  `UbuntuServer`  
      Сегмент имени предложения образа виртуальной машины, которое применяется пользователями при развертывании образа виртуальной машины. Например, **WindowsServer**. Не используйте пробел или другие специальные символы в этом поле.  
    - **sku**  
-     Например: `14.04.3-LTS`  
+     Например:  `14.04.3-LTS`  
      Сегмент имени SKU образа виртуальной машины, которое применяется пользователями при развертывании образа виртуальной машины. Например, **Datacenter2016**. Не используйте пробел или другие специальные символы в этом поле.  
-   - **version**  
-     Например: `1.0.0`  
+   - **версия**  
+     Например:  `1.0.0`  
      Версия виртуальной машины, которая применяется пользователями при развертывании образа виртуальной машины. Эта версия имеет формат *\#.\#.\#*. Например, **1.0.0**. Не используйте пробел или другие специальные символы в этом поле.  
     
      Дополнительные сведения о командлете Remove-AzsPlatformimage см. в [документации по модулю оператора Azure Stack](https://docs.microsoft.com/powershell/module/) для Microsoft PowerShell.

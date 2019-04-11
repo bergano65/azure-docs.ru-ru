@@ -1,6 +1,6 @@
 ---
-title: Развертывание Kubernetes в Azure Stack | Документация Майкрософт
-description: Узнайте, как развернуть Kubernetes в Azure Stack.
+title: Развертывание Kubernetes для работы с контейнерами Azure Stack | Документация Майкрософт
+description: Узнайте, как развернуть Kubernetes для работы с контейнерами Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: mattbriggs
@@ -15,14 +15,14 @@ ms.date: 02/27/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 01/16/2019
-ms.openlocfilehash: 6b00f63fac0110a8964270b9cbcad5330ac44645
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.openlocfilehash: 77275ec274a9c76918874007cfe564eea09e6de5
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56986249"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58877199"
 ---
-# <a name="deploy-kubernetes-to-azure-stack"></a>Развертывание Kubernetes в Azure Stack
+# <a name="deploy-kubernetes-to-use-containers-with-azure-stack"></a>Узнайте, как развернуть Kubernetes для работы с контейнерами Azure Stack.
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
@@ -43,14 +43,14 @@ Kubernetes можно использовать для следующих цел�
 
 Вам будут выставляться счета только за использование вычислительных ресурсов, необходимых для узлов, поддерживающих кластер. Дополнительные сведения см. в статье [Потребление ресурсов и выставление счетов в Azure Stack](https://docs.microsoft.com/azure/azure-stack/azure-stack-billing-and-chargeback).
 
-## <a name="deploy-kubernetes"></a>Развертывание Kubernetes
+## <a name="deploy-kubernetes-to-use-containers"></a>Развертывание Kubernetes для работы с контейнерами
 
 Инструкции по развертыванию кластера Kubernetes в Azure Stack будут зависеть от вашей службы управления удостоверениями. Проверьте решение по управлению удостоверениями, используемое при установке Azure Stack. Обратитесь к администратору Azure Stack, чтобы проверить службу управления удостоверениями.
 
-- **Azure Active Directory (Azure AD).**  
+- **Azure Active Directory (Azure AD)**  
 Инструкции по установке кластера с использованием Azure AD см. в статье [Deploy Kubernetes to Azure Stack using Azure Active Directory](azure-stack-solution-template-kubernetes-azuread.md) (Развертывание Kubernetes в Azure Stack с помощью Azure Active Directory).
 
-- **Службы федерации Active Directory (AD FS)**  
+- **Службы федерации Active Directory (AD FS)**  
 Инструкции по установке кластера с использованием AD FS см. в статье [Развертывание Kubernetes в Azure Stack с помощью служб федерации Active Directory](azure-stack-solution-template-kubernetes-adfs.md).
 
 ## <a name="connect-to-your-cluster"></a>Подключение к кластеру
@@ -61,12 +61,12 @@ Kubernetes можно использовать для следующих цел�
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Получение доступа к панели мониторинга Kubernetes в Azure Stack](azure-stack-solution-template-kubernetes-dashboard.md)
+[Включение панели мониторинга Kubernetes](azure-stack-solution-template-kubernetes-dashboard.md)
 
 [Добавление Kubernetes в Marketplace (для оператора Azure Stack)](../azure-stack-solution-template-kubernetes-cluster-add.md)
 
-[Deploy Kubernetes to Azure Stack using Azure Active Directory](azure-stack-solution-template-kubernetes-azuread.md) (Развертывание Kubernetes в Azure Stack с помощью Azure Active Directory)
+[Развертывание Kubernetes в Azure Stack с помощью Azure Active Directory (Azure AD)](azure-stack-solution-template-kubernetes-azuread.md)
 
-[Развертывание Kubernetes в Azure Stack с помощью служб федерации Active Directory](azure-stack-solution-template-kubernetes-adfs.md)
+[Развертывание Kubernetes в Azure Stack с помощью служб федерации Active Directory (AD FS)](azure-stack-solution-template-kubernetes-adfs.md)
 
 [Kubernetes в Azure](https://docs.microsoft.com/azure/container-service/kubernetes/container-service-kubernetes-walkthrough)

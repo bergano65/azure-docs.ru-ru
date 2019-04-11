@@ -16,12 +16,12 @@ ms.date: 01/09/2019
 ms.author: jeffgilb
 ms.reviewer: jiahan
 ms.lastreviewed: 01/09/2019
-ms.openlocfilehash: 7f44e8c2c4587ecfdb3bd5eb4304789674da96f3
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: e0101aebadcaef71f35c72b54f9126e69cff0f61
+ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55252019"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58882841"
 ---
 # <a name="mysql-resource-provider-11330--release-notes"></a>Заметки о выпуске для поставщика ресурсов MySQL 1.1.33.0
 
@@ -50,7 +50,8 @@ ms.locfileid: "55252019"
 
 - **В предыдущем развертывании поставщика ресурсов MySQL (1.1.30.0) мог произойти сбой, если протокол TLS 1.2 не был включен**. Поставщик ресурсов MySQL 1.1.33.0 обновлен для включения TLS 1.2 при развертывании, обновлении поставщика ресурсов или смене секретов. 
 
-- **Происходит сбой смены секретов поставщика ресурсов MySQL**. Исправлена проблема, в результате которой в коде возникала следующая ошибка при смене секретов: ` New-AzureRmResourceGroupDeployment - Error: Code=InvalidDeploymentParameterValue; Message=The value of deployment parameter 'StorageAccountBlobUri' is null.`
+- **Происходит сбой смены секретов поставщика ресурсов MySQL**. Исправлена проблема, в результате которой в коде возникала следующая ошибка при смене секретов:
+`New-AzureRmResourceGroupDeployment - Error: Code=InvalidDeploymentParameterValue; Message=The value of deployment parameter 'StorageAccountBlobUri' is null.`
 
 ## <a name="known-issues"></a>Известные проблемы 
 

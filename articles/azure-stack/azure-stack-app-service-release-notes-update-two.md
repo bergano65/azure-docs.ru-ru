@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/18/2018
+ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: sethm
 ms.lastreviewed: 05/18/2018
-ms.openlocfilehash: d57b06a33421a94c4f849a1c1fd7cd6f1f4248dd
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 98d084794accb99e0fecac85f7de861ec35bc15e
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57848904"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58446029"
 ---
 # <a name="app-service-on-azure-stack-update-2-release-notes"></a>Служба приложений в заметках о выпуске обновления 2 Azure Stack
 
@@ -52,6 +52,8 @@ ms.locfileid: "57848904"
 Обновление 2 службы приложений Azure в Azure Stack включает в себя следующие улучшения и исправления.
 
 - Обновления для **клиента, администратора службы приложений, портала функций и средств Kudu**. Согласованы с версией пакета SDK для портала Azure Stack.
+
+- Обновления **среды выполнения Функций Azure** до версии **v1.0.11612**.
 
 - Обновления основной службы для повышения надежности и отображения сообщений об ошибках упрощают диагностику распространенных проблем.
 

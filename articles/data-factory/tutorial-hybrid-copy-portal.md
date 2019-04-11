@@ -3,7 +3,7 @@ title: Копирование данных из базы данных SQL Server
 description: Узнайте, как копировать данные из локального хранилища данных в облако с помощью локальной среды выполнения интеграции в фабрике данных Azure.
 services: data-factory
 documentationcenter: ''
-author: linda33wj
+author: nabhishek
 manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
@@ -11,13 +11,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/11/2018
-ms.author: jingwang
-ms.openlocfilehash: f2dc2418354cb1083c02516fbcdea710a74152ad
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.author: abnarain
+ms.openlocfilehash: 7e09c36128c3471ce9df33b2a78eb14fab89435b
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58445412"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59256997"
 ---
 # <a name="copy-data-from-an-on-premises-sql-server-database-to-azure-blob-storage"></a>Копирование данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure
 В этом руководстве вы создадите конвейер фабрики данных, в котором данные из локальной базы данных SQL Server копируются в хранилище BLOB-объектов Azure, с помощью пользовательского интерфейса службы "Фабрика данных Azure". Вы создадите и будете использовать локальную среду выполнения интеграции, которая перемещает данные между локальным и облачным хранилищами данных.
@@ -337,4 +337,4 @@ ms.locfileid: "58445412"
 Чтобы узнать о копировании данных в пакетном режиме из источника в место назначения, перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
->[Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure](tutorial-bulk-copy-portal.md)
+>[Копирование данных в пакетном режиме](tutorial-bulk-copy-portal.md)

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 07/13/2018
 ms.author: spelluru
-ms.openlocfilehash: 5c53c64c337cb2992b002ee02ceb9aab36e16de4
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: a4ca5cba924a3269f279469f26e68acdb0ad0659
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56958751"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59257626"
 ---
 # <a name="an-introduction-to-azure-lab-services"></a>Общие сведения о Службах лабораторий Azure
 Службы лабораторий Azure позволяют быстро настроить среду для вашей команды (например, среду разработки, тестовую среду, среду лабораторий для аудитории) в облаке. Владелец создает лабораторию, подготавливает виртуальные машины Windows или Linux, устанавливает необходимое программное обеспечение и инструменты, а также предоставляет к ним доступ пользователям. Пользователи лаборатории подключаются к виртуальным машинам и выполняют на них ежедневные задания, краткосрочные проекты или учебные упражнения. После того как пользователи начнут применять ресурсы в лаборатории, администратор лаборатории может анализировать затраты и использование в нескольких лабораториях и устанавливать общие политики для оптимизации затрат вашей организации или команды.
@@ -120,5 +120,5 @@ Azure DevTest Labs можно использовать для реализаци
 
 Ознакомьтесь со следующими статьями: 
 
-- [Общие сведения о классных лабораториях](./classroom-labs/classroom-labs-overview.md)
-- [Сведения об Azure DevTest Labs](devtest-lab-overview.md)
+- [О лабораториях для аудитории](./classroom-labs/classroom-labs-overview.md)
+- [О DevTest Labs](devtest-lab-overview.md)

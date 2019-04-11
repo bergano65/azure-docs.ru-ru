@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2018
+ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: sethm
 ms.lastreviewed: 03/20/2018
-ms.openlocfilehash: 99b4134f8f2d6ed2f521a7f488c33e06c0f436bb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 3d75467da01f0672bb735e01cbd6d7634cdf843e
+ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58165834"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58445243"
 ---
 # <a name="app-service-on-azure-stack-update-1-release-notes"></a>Служба приложений в заметках о выпуске обновления 1 Azure Stack
 
@@ -56,6 +56,8 @@ ms.locfileid: "58165834"
 - **Развертывание в существующей виртуальной сети**. Теперь клиенты могут развертывать службу приложений в Azure Stack в существующей виртуальной сети. Развертывание в существующей виртуальной сети позволяет клиентам подключаться через частные порты к SQL Server и файловому серверу, которые необходимы для службы приложений Azure. Во время развертывания клиенты могут выбрать развертывание в существующей виртуальной сети, но до этого они [должны создать подсети для использования службой приложений](azure-stack-app-service-before-you-get-started.md#virtual-network).
 
 - Обновления для **клиента, администратора службы приложений, портала функций и средств Kudu**. Согласованы с версией пакета SDK для портала Azure Stack.
+
+- Обновления **среды выполнения Функций Azure** до версии **v1.0.11388**.
 
 - **Реализованы обновления следующих исполняющих сред и инструментов**:
     - Добавлена поддержка **.NET Core 2.0**.

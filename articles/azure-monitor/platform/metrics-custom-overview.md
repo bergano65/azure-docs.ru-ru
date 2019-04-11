@@ -23,7 +23,7 @@ ms.locfileid: "58287270"
 ## <a name="send-custom-metrics"></a>Отправка пользовательских метрик
 Пользовательские метрики можно отправлять в Azure Monitor несколькими способами.
 - Инструментировать приложения с помощью пакета SDK Application Insights и отправить пользовательские данные телеметрии в Azure Monitor. 
-- Установить расширения диагностики Windows из [виртуальной машины Azure](collect-custom-metrics-guestos-resource-manager-vm.md), [масштабируемого набора виртуальных машин](collect-custom-metrics-guestos-resource-manager-vmss.md), [классической виртуальной машины](collect-custom-metrics-guestos-vm-classic.md) или [классических облачных служб](collect-custom-metrics-guestos-vm-cloud-service-classic.md) и отправить счетчики производительности в Azure Monitor. 
+- Установить расширения Диагностики Azure для Windows из [виртуальной машины Azure](collect-custom-metrics-guestos-resource-manager-vm.md), [масштабируемого набора виртуальных машин](collect-custom-metrics-guestos-resource-manager-vmss.md), [классической виртуальной машины](collect-custom-metrics-guestos-vm-classic.md) или [классических облачных служб](collect-custom-metrics-guestos-vm-cloud-service-classic.md) и отправить счетчики производительности в Azure Monitor. 
 - Установить [агент InfluxData Telegraf](collect-custom-metrics-linux-telegraf.md) на виртуальной машине Linux Azure и отправить метрики с помощью подключаемого модуля выходных данных Azure Monitor.
 - Отправить пользовательские метрики [непосредственно в REST API Azure Monitor](../../azure-monitor/platform/metrics-store-custom-rest-api.md), `https://<azureregion>.monitoring.azure.com/<AzureResourceID>/metrics`.
 

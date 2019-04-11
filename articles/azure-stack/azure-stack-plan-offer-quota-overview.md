@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/13/2019
+ms.date: 03/26/2019
 ms.author: sethm
 ms.reviewer: efemmano
 ms.lastreviewed: 10/12/2018
-ms.openlocfilehash: 0de021f4666da805eab8faba527f7c5322c39e9d
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 9d495087a0b3db5bba3b00fa9d0d40c91e5e9244
+ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57763458"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58497863"
 ---
 # <a name="plan-offer-quota-and-subscription-overview"></a>Обзор планов, предложений, квот и подписок
 
@@ -52,6 +52,9 @@ ms.locfileid: "57763458"
 ### <a name="quotas"></a>Квоты
 
 Чтобы управлять производительностью облака, следует выбрать стандартные настроенные *квоты* или создать новые квоты для каждой службы в плане. Квоты определяют верхние границы ресурсов, которые может подготовить или использовать пользователь в рамках подписки. Например, квота может разрешать пользователю создать до пяти виртуальных машин.
+
+> [!IMPORTANT]
+> Отображение новых квот на пользовательском портале или применение измененных квот может занять до двух часов.
 
 Квоты можно настраивать отдельно для разных регионов. Например, можно создать план, предоставляющий службы вычислений для региона А, с квотой в две виртуальные машины.
 
