@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: glenga
-ms.openlocfilehash: dcd6d907fec3d7f2cc0c8d5c06fdec28125154c1
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.openlocfilehash: 84c578fdbcfb555bde23d6a9e6f8258259cff8de
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "59009552"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59471288"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -478,6 +478,15 @@ func deploy
 | **`--min`**  | При необходимости задает минимальное число экземпляров приложения-функции, в которые будет выполняться развертывание. |
 | **`--config`** | Задает дополнительный файл конфигурации развертывания. |
 
+## <a name="monitoring-functions"></a>Мониторинг функций
+
+Рекомендуемый способ наблюдения за выполнение функций — интеграция с Azure Application Insights. При создании приложения-функции на портале Azure эта интеграция выполняется по умолчанию. Тем не менее при создании приложения-функции с помощью Azure CLI, интеграция в приложение-функцию в Azure не делается.
+
+Чтобы включить Application Insights для приложения-функции:
+
+[!INCLUDE [functions-connect-new-app-insights.md](../../includes/functions-connect-new-app-insights.md)]
+
+Дополнительные сведения см. в статье [Мониторинг Функций Azure](functions-monitoring.md).
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Основные инструменты службы "Функции Azure" [имеют открытый код и размещаются на GitHub](https://github.com/azure/azure-functions-cli).  

@@ -12,12 +12,12 @@ ms.reviewer: sstein, carlrab, bonova
 manager: craigg
 ms.date: 03/13/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: d84e52878c285ddd66fd799efe8c0f3cd2fc3e31
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
-ms.translationtype: HT
+ms.openlocfilehash: 4ceed2fb2b42dc8e09d1a837200652d29838d81b
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59358441"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59471568"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server
 
@@ -217,7 +217,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 - Несколько файлов журнала не поддерживаются.
 - Объекты в памяти не поддерживаются на уровне служб "Общего назначения".  
-- Имеется ограничение в 280 файлов на один экземпляр общего назначения, подразумевая max 280 файлов на каждую базу данных. Как файлов данных и журналов в целом назначение уровня распространяется на это ограничение. [Уровня критически важный для бизнеса поддерживает 32 767 файлов на каждую базу данных](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance-resource-limits#service-tier-characteristics).
+- Имеется ограничение в 280 файлов на один экземпляр общего назначения, подразумевая max 280 файлов на каждую базу данных. Как файлов данных и журналов в целом назначение уровня распространяется на это ограничение. [Уровня критически важный для бизнеса поддерживает 32 767 файлов на каждую базу данных](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-resource-limits#service-tier-characteristics).
 - База данных не может содержать файловые группы, содержащие данные файлового потока.  Восстановление завершится со сбоем, если BAK-файл содержит данные `FILESTREAM`.  
 - Каждый файл помещается в хранилище BLOB-объектов Azure. Операции ввода-вывода и пропускная способность каждого файла зависят от размера каждого файла.  
 
@@ -467,7 +467,6 @@ WITH PRIVATE KEY (<private_key_options>)
 - `@@SERVICENAME` Возвращает значение NULL, так как существует понятие службы, когда оно не применяется SQL Server в управляемый экземпляр для. См. статью [@SERVICENAME](https://docs.microsoft.com/sql/t-sql/functions/servicename-transact-sql).
 - `SUSER_ID` поддерживается. Возвращает значение NULL, если имя для входа Azure AD не содержится в sys.syslogins. См. статью [Идентификатор SUSER_ID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-id-transact-sql).  
 - `SUSER_SID` не поддерживается. Возвращает неверные данные (временная известная проблема). См. статью [SUSER_SID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-sid-transact-sql).
-- `GETDATE()` и другие функции встроенных даты и времени всегда возвращают время в часовом поясе UTC. См. статью [GETDATE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/getdate-transact-sql).
 
 ## <a name="Issues"></a> Известные проблемы и ограничения
 
@@ -494,7 +493,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 В этом примере существующие базы данных без проблем будут работать и разрастаться при условии, что в них не будут добавляться новые файлы. При этом создать новые базы данных или восстановить имеющиеся не удастся, так как для новых дисков места недостаточно, даже если общий размер всех баз данных не достигает предельного размера экземпляра. Сообщение об ошибке, поступающее в этом случае, плохо отражает ситуацию.
 
-Вы можете [определить количество оставшихся файлов](https://medium.com/azure-sqldb-managed-instance/how-many-files-you-can-create-in-general-purpose-azure-sql-managed-instance-e1c7c32886c1) с помощью системных представлений. Если производится доступ попробуйте это ограничение [пустые и удалите несколько файлов меньшего размера, с помощью инструкции DBCC SHRINKFILE](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-shrinkfile-transact-sql#d-emptying-a-file) или переключиться в режим [уровня "критически важный для бизнеса", не имеет этого ограничения](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance-resource-limits#service-tier-characteristics).
+Вы можете [определить количество оставшихся файлов](https://medium.com/azure-sqldb-managed-instance/how-many-files-you-can-create-in-general-purpose-azure-sql-managed-instance-e1c7c32886c1) с помощью системных представлений. Если производится доступ попробуйте это ограничение [пустые и удалите несколько файлов меньшего размера, с помощью инструкции DBCC SHRINKFILE](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-shrinkfile-transact-sql#d-emptying-a-file) или переключиться в режим [уровня "критически важный для бизнеса", у которых это ограничение](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-resource-limits#service-tier-characteristics).
 
 ### <a name="incorrect-configuration-of-sas-key-during-database-restore"></a>Неправильная конфигурация ключа SAS во время восстановления базы данных
 
@@ -567,11 +566,11 @@ using (var scope = new TransactionScope())
 
 **Возможное решение**: если есть возможность, используйте в модуле среды CLR контекстные подключения.
 
-### <a name="tde-encrypted-databases-dont-support-user-initiated-backups"></a>Базы данных, зашифрованные с помощью TDE, не поддерживают резервные копии, инициированные пользователем
+### <a name="tde-encrypted-databases-with-service-managed-key-dont-support-user-initiated-backups"></a>Базы данных шифрованием TDE с управляемого службой ключа не поддерживают резервных копий, инициируемых пользователем
 
-Невозможно выполнить `BACKUP DATABASE ... WITH COPY_ONLY` с базой данных, зашифрованной с использованием прозрачного шифрования данных (TDE). TDE вынуждает шифровать резервные копии с помощью внутренних ключей TDE. Так как ключ невозможно экспортировать, вы не сможете восстановить резервную копию.
+Не удается выполнить `BACKUP DATABASE ... WITH COPY_ONLY` в базе данных, зашифрованного с управляемого службой прозрачным шифрованием данных (TDE). Управляемое службой прозрачное шифрование данных заставляет резервные копии шифруются внутреннего ключа прозрачного шифрования данных, а ключ невозможно экспортировать, поэтому вы не сможете восстановить резервную копию.
 
-**Возможное решение**: Используйте автоматические резервные копии и восстановления до точки во времени или отключите шифрование для баз данных.
+**Возможное решение**: Использовать автоматическое резервное копирование и восстановление на момент времени или [управлением клиентом (BYOK) прозрачного шифрования данных](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql#customer-managed-transparent-data-encryption---bring-your-own-key) вместо, или отключить шифрование в базе данных.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

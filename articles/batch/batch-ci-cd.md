@@ -5,13 +5,14 @@ author: christianreddington
 ms.author: chredd
 ms.date: 03/28/2019
 ms.topic: conceptual
+ms.custom: fasttrack-new
 services: batch
-ms.openlocfilehash: 1e3b2d42ae390b9eb755e568b82fc1a90e0eae6a
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: 5b7c44d3ea3394ff728adfb9d9fd72293138fb2e
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58807051"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59471330"
 ---
 # <a name="use-azure-pipelines-to-build-and-deploy-hpc-solutions"></a>Используйте Azure конвейеры для создания и развертывания решения HPC
 
@@ -396,7 +397,7 @@ ms.locfileid: "58807051"
     * **batchApplicationVersion**: Семантическая версия приложения пакетной службы (то есть ffmpeg двоичные файлы)
     * **location**: Расположение для развертывания ресурсов Azure
     * **resourceGroupName**: Имя создаваемой группы ресурсов, и где будут развертываться ресурсы
-    * **StorageAccountName**: Имя учетной записи хранения для хранения связанных шаблонов Resource Manager
+    * **storageAccountName**: Имя учетной записи хранения для хранения связанных шаблонов Resource Manager
 
     ![Пример того, переменные, заданные для Azure конвейеры выпуска](media/batch-ci-cd/Release-4.jpg)
 
@@ -505,5 +506,5 @@ az batch pool resize --pool-id <poolname> --target-dedicated-nodes 4
 
 В дополнение к этой статье есть два руководства, которые используют ffmpeg, с помощью .NET и Python. См. в статье эти учебники, Дополнительные сведения о том, как взаимодействовать с учетной записью пакетной службы с помощью простого приложения.
 
-* [Запуск параллельной рабочей нагрузки с помощью пакета Azure, с помощью Python API](tutorial-parallel-python.md)
-* [Запуск параллельной рабочей нагрузки с помощью пакета Azure, с помощью .NET API](tutorial-parallel-dotnet.md)
+* [Запуск параллельной рабочей нагрузки с помощью пакета Azure с использованием Python API](tutorial-parallel-python.md)
+* [Запуск параллельной рабочей нагрузки с помощью пакетной службы Azure с использованием .NET API](tutorial-parallel-dotnet.md)

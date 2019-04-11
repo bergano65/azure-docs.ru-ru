@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 10/05/2018
 ms.reviewer: mbullwin
 ms.author: tilee
-ms.openlocfilehash: dd28bc3925b0f07a441c46a26498ef1a14c3e650
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
-ms.translationtype: HT
+ms.openlocfilehash: 101c985178b8269b4ff542b94b057330d0c2652a
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55510329"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59471670"
 ---
 # <a name="application-insights-for-azure-functions-supported-features"></a>Application Insights для функций, поддерживаемых в службе "Функции Azure"
 
@@ -27,12 +27,12 @@ ms.locfileid: "55510329"
 
 | Функции Azure                       | V1                | Версия 2 (Ignite 2018)  | 
 |-----------------------------------    |---------------    |------------------ |
-| **Пакет SDK Application Insights для .NET**   | **2.5.0**       | **2.7.2**         |
+| **Пакет SDK .NET Application Insights**   | **2.5.0**       | **2.9.1**         |
 | | | | 
-| **Автоматический сбор**        |                 |                   |               
+| **Автоматический сбор сведений**        |                 |                   |               
 | &bull; Запросы                     | Yes             | Yes               | 
 | &bull; Исключения                   | Yes             | Yes               | 
-| &bull; Счетчики производительности         | Yes             |                   |
+| &bull; Счетчики производительности         | Yes             | Yes               |
 | &bull; Зависимости                   |                   |                   |               
 | &nbsp;&nbsp;&nbsp;&mdash; HTTP      |                 | Yes               | 
 | &nbsp;&nbsp;&nbsp;&mdash; Служебная шина|                 | Yes               | 
@@ -45,11 +45,11 @@ ms.locfileid: "55510329"
 | &bull; Выборка                     | Yes             | Yes               | 
 | &bull; Пакет пульса                   |                 | Yes               | 
 | | | | 
-| **Корреляция**                       |                   |                   |               
+| **Корреляции**                       |                   |                   |               
 | &bull; Служебная шина                     |                   | Yes               | 
 | &bull; EventHub                       |                   | Yes               | 
 | | | | 
-| **Можно настроить**                      |                   |                   |           
+| **Настраивается**                      |                   |                   |           
 | &bull;Полностью настраивается.<br/>Инструкции см. в комментариях [в этой статье](https://github.com/Microsoft/ApplicationInsights-aspnetcore/issues/759#issuecomment-426687852).<br/>Сведения обо всех вариантах ASP.NET Core см. в статье [Custom Configuration](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Custom-Configuration) (Настраиваемая конфигурация).               |                   | Yes                   | 
 
 
@@ -65,3 +65,30 @@ ms.locfileid: "55510329"
 ## <a name="sampling"></a>Выборка
 
 Служба "Функции Azure" включает в своей конфигурации выборку по умолчанию. Дополнительные сведения см. в разделе [о настройке выборки](https://docs.microsoft.com/azure/azure-functions/functions-monitoring#configure-sampling).
+
+Если проект зависит от пакета SDK Application Insights делать вручную телеметрии трассировки, возможно появление странное поведение вашей конфигурации выборки отличается от функции конфигурации выборки. 
+
+Мы рекомендуем использовать ту же конфигурацию как функции. С помощью **v2 функции**, вы можете получить ту же конфигурацию с помощью внедрения зависимости в конструкторе:
+
+```csharp
+using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.Extensibility;
+
+public class Function1 
+{
+
+    private readonly TelemetryClient telemetryClient;
+
+    public Function1(TelemetryConfiguration configuration)
+    {
+        this.telemetryClient = new TelemetryClient(configuration);
+    }
+
+    [FunctionName("Function1")]
+    public async Task<IActionResult> Run(
+        [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req, ILogger logger)
+    {
+        this.telemetryClient.TrackTrace("C# HTTP trigger function processed a request.");
+    }
+}
+```

@@ -1,7 +1,7 @@
 ---
 title: Запуск, отслеживать и отменять учебных запусков в Python
 titleSuffix: Azure Machine Learning service
-description: Узнайте, как начать, состояние, тег и организация эксперименты машинного обучения.
+description: Узнайте, как начать, задайте для тега состояние и организация эксперименты машинного обучения.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,13 +10,13 @@ ms.author: roastala
 author: rastala
 manager: cgronlun
 ms.reviewer: nibaccam
-ms.date: 4/5/2019
-ms.openlocfilehash: 726273024a2da0cea5207c86140f3c31263a208f
-ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
-ms.translationtype: HT
+ms.date: 04/05/2019
+ms.openlocfilehash: 82df2258116ce55fa440b67ec0a66b106d0d72c7
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59426745"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59471500"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Запуск, отслеживать и отменять учебных запусков в Python
 
@@ -47,7 +47,7 @@ ms.locfileid: "59426745"
 
 <a name="monitor"></a>
 
-## <a name="start-and-status-a-run"></a>Запуск и состояние выполнения
+## <a name="start-a-run-and-set-its-status"></a>Запустить выполнение и задать его состояние
 
 Настройка эксперимента, импортировав [рабочей области](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py), [поэкспериментировать](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py), [запуска](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py), и [ScriptRunConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py) классы из [azureml.core](https://docs.microsoft.com/python/api/azureml-core/azureml.core?view=azure-ml-py) пакета.
 
@@ -101,7 +101,7 @@ print("Has it completed?",notebook_run.get_status())
 
 ## <a name="cancel-or-fail-runs"></a>Отмена или вызвать сбой запуски
 
- Если вы заметили ошибку или запуска кажется, что занимает много времени завершения, используйте [ `cancel()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#cancel--) метод, чтобы остановить выполнение программы до его завершения и пометить его как отмененные.
+ Если вы заметили ошибку или запуска, кажется, что для завершения, используйте некоторое время [ `cancel()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#cancel--) метод, чтобы остановить выполнение программы до его завершения и пометить его как отмененные.
 
 ```Python
 run_config = ScriptRunConfig(source_directory='.', script='hello_with_delay.py')

@@ -1,7 +1,8 @@
 ---
-title: Руководство по Обрезка изображения при помощи SDK визуального поиска Bing
+title: Руководство. Обрезка изображения при помощи SDK визуального поиска Bing
 description: Используйте пакет SDK визуального поиска Bing, чтобы извлекать ценные сведения из определенных областей изображения.
 services: cognitive-services
+titleSuffix: Azure Cognitive Services
 author: mikedodaro
 manager: nitinme
 ms.service: cognitive-services
@@ -9,14 +10,14 @@ ms.subservice: bing-visual-search
 ms.topic: article
 ms.date: 04/03/2019
 ms.author: rosh
-ms.openlocfilehash: d1d3243f1d11ee9093a249ce61ceab8128dbf91d
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: a6a98d9ddf76e86feb35c6d3d71f7777b0edd51d
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59048595"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59471772"
 ---
-# <a name="tutorial-crop-an-image-with-the-bing-visual-search-sdk-for-c"></a>Руководство по Обрезка изображения при помощи SDK визуального поиска Bing — C#
+# <a name="tutorial-crop-an-image-with-the-bing-visual-search-sdk-for-c"></a>Руководство. Обрезка изображения при помощи SDK визуального поиска Bing — C#
 
 Пакет SDK Bing Visual Search позволяет обрезать изображение, прежде чем удастся найти похожих изображений online. Это приложение вырезает изображение человека со снимка, содержащего несколько человек, и затем возвращает результаты, содержащие похожие изображения, найденные в Интернете.
 

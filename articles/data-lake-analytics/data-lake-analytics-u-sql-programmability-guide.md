@@ -9,12 +9,12 @@ ms.reviewer: jasonwhowell
 ms.assetid: 63be271e-7c44-4d19-9897-c2913ee9599d
 ms.topic: conceptual
 ms.date: 06/30/2017
-ms.openlocfilehash: f0f5a4ee5206201cca20e705011126e6cf472a1a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: d1b230b40d1f880787334ebfd39e704e3a650baa
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57835458"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59471092"
 ---
 # <a name="u-sql-programmability-guide"></a>Руководство по программированию U-SQL
 
@@ -85,7 +85,7 @@ OUTPUT @rs1
 
 ### <a name="use-c-expressions-for-todays-date"></a>Использование выражений C# для получения текущей даты
 
-Получить текущую дату можно с помощью следующего выражения C#: `DateTime.Now.ToString("M/d/yyyy")`
+Чтобы получить текущую дату, можно использовать следующие C# выражение: `DateTime.Now.ToString("M/d/yyyy")`
 
 Ниже приведен пример использования этого выражения в скрипте.
 
@@ -533,9 +533,9 @@ public class MyTypeFormatter : IFormatter<MyType>
 
 * **Сериализация** — процесс сериализации объекта или графа объектов с использованием заданного корня в предоставленный поток.
 
-Экземпляр `MyType` — экземпляр типа.  
-Модуль записи `IColumnWriter` или чтения `IColumnReader` — базовый поток столбца.  
-Контекст `ISerializationContext` — перечисление, которое определяет набор флагов, указывающих контекст источника или назначения для потока во время сериализации.
+`MyType` Экземпляр: экземпляр типа.  
+`IColumnWriter` модуль записи / `IColumnReader` чтения: базовый поток столбца.  
+`ISerializationContext` Контекст: перечисление, которое определяет набор флагов, указывающих контекст источника или назначения для потока во время сериализации.
 
 * **Intermediate** — указывает, что контекст источника или назначения не является материализованным хранилищем.
 
@@ -1267,9 +1267,9 @@ public class MyOutputter : IOutputter
 }
 ```
 
-* Метод `Output` вызывается для каждой входной строки. Он возвращает набор строк `IUnstructuredWriter output`.
+* `Output` вызывается для каждой входной строки. Он возвращает набор строк `IUnstructuredWriter output`.
 * Класс Constructor используется для передачи параметров в пользовательское средство вывода.
-* Метод `Close` при необходимости можно переопределить, чтобы выходить из ресурсозатратных состояний или узнавать время записи последней строки.
+* `Close` При необходимости можно переопределить, чтобы выходить из ресурсозатратных состояний или определить, когда была сделана последней строки.
 
 Атрибут **SqlUserDefinedAggregate** указывает, что этот тип должен быть зарегистрирован как пользовательское средство вывода. Этот класс не наследуется.
 
@@ -1601,7 +1601,7 @@ CROSS APPLYis used to pass parameters
 new MyScript.MyApplier(param1, param2) AS alias(output_param1 string, …);
 ```
 
-Дополнительные сведения об использовании средств применения в выражении SELECT см. в статье [U-SQL SELECT, выбрав из CROSS APPLY и OUTER APPLY](https://msdn.microsoft.com/library/azure/mt621307.aspx).
+Дополнительные сведения об использовании средств применения в выражении SELECT см. в статье [U-SQL SELECT, выбрав из CROSS APPLY и OUTER APPLY](/u-sql/statements-and-expressions/select/from/select-selecting-from-cross-apply-and-outer-apply).
 
 Ниже представлено определение базового класса пользовательского средства применения.
 
@@ -1815,7 +1815,7 @@ Combine_Expression :=
     USING_Clause.
 ```
 
-Дополнительные сведения см. в [описании выражения COMBINE для U-SQL](https://msdn.microsoft.com/library/azure/mt621339.aspx).
+Дополнительные сведения см. в [описании выражения COMBINE для U-SQL](/u-sql/statements-and-expressions/combine-expression).
 
 Чтобы задать пользовательское средство объединения, нам необходимо создать интерфейс `ICombiner` с атрибутом [`SqlUserDefinedCombiner`], который не является обязательным для определения пользовательских средств объединения.
 
@@ -1877,7 +1877,7 @@ public override IEnumerable<IRow> Combine(IRowset left, IRowset right,
 
 Для целей кэширования мы можем создать тип структуры памяти List\<T\> как результат выполнения запроса LINQ, в частности создать тип List<`IRow`>. Также для перечисления можно использовать анонимные типы данных.
 
-Дополнительные сведения о запросах LINQ см. в статье [Introduction to LINQ Queries (C#)](https://msdn.microsoft.com/library/bb397906.aspx) (Введение в запросы LINQ (C#)), а описание интерфейса IEnumerable\<T\> — в статье [Интерфейс IEnumerable\<T\>](https://msdn.microsoft.com/library/9eekhta0(v=vs.110).aspx).
+Дополнительные сведения о запросах LINQ см. в статье [Introduction to LINQ Queries (C#)](/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries) (Введение в запросы LINQ (C#)), а описание интерфейса IEnumerable\<T\> — в статье [Интерфейс IEnumerable\<T\>](/dotnet/api/system.collections.generic.ienumerable-1).
 
 Чтобы получить фактические значения данных из входящего метода `IRowset`, мы используем метод Get() интерфейса `IRow`.
 

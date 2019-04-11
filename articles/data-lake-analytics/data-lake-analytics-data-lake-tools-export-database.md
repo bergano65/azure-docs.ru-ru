@@ -9,12 +9,12 @@ ms.assetid: dc9b21d8-c5f4-4f77-bcbc-eff458f48de2
 ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 11/27/2017
-ms.openlocfilehash: 7a4aae87cd704cf94c89c308c0c056ae5b9a8b4d
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.openlocfilehash: fe28aa8b88f557d4bbcdabf1de1c4bc6491743ce
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51251008"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59471415"
 ---
 # <a name="export-a-u-sql-database"></a>Экспорт базы данных U-SQL
 
@@ -26,7 +26,7 @@ ms.locfileid: "51251008"
 
 ## <a name="export-steps"></a>Экспорт
 
-### <a name="step-1-export-the-database-in-server-explorer"></a>Шаг 1. Экспорт базы данных в обозреватель сервера
+### <a name="step-1-export-the-database-in-server-explorer"></a>Шаг 1. Экспорт базы данных в обозревателе серверов
 
 Все учетные записи Data Lake Analytics, на которые у вас есть разрешения, перечислены в обозревателе сервера. Чтобы экспортировать базу данных:
 
@@ -37,7 +37,7 @@ ms.locfileid: "51251008"
 
      Если параметр меню **Экспорт** недоступен, необходимо [обновить средство до последней версии](https://aka.ms/adltoolsvs).
 
-### <a name="step-2-configure-the-objects-that-you-want-to-export"></a>Шаг 2. Настройка объектов, которые необходимо экспортировать
+### <a name="step-2-configure-the-objects-that-you-want-to-export"></a>Шаг 2. Настроить объекты, которые вы хотите экспортировать
 
 Если вам требуется только небольшая часть большой базы данных, в окне мастера экспорта можно настроить подмножество объектов, которые необходимо экспортировать. 
 
@@ -45,7 +45,7 @@ ms.locfileid: "51251008"
 
 ![Мастер экспорта базы данных — выбор объектов экспорта](./media/data-lake-analytics-data-lake-tools-export-database/export-database-wizard.png)
 
-### <a name="step-3-check-the-objects-list-and-other-configurations"></a>Шаг 3. Проверка списка объектов и других настроек
+### <a name="step-3-check-the-objects-list-and-other-configurations"></a>Шаг 3. Проверка списка объектов и других конфигураций
 
 На этом шаге можно проверить выбранные объекты в поле **Export object list** (Экспорт списка объектов). Если есть какие-либо ошибки, выберите **Предыдущий**, чтобы вернуться назад и правильно настроить объекты, которые нужно экспортировать.
 
@@ -61,7 +61,7 @@ ms.locfileid: "51251008"
 
 ![Мастер экспорта баз данных — экспорт списка объектов и других конфигураций](./media/data-lake-analytics-data-lake-tools-export-database/export-database-wizard-configuration.png)
 
-### <a name="step-4-check-the-export-results"></a>Шаг 4. Проверка результатов экспорта
+### <a name="step-4-check-the-export-results"></a>Шаг 4. Проверка результатов экспорта
 
 После экспорта результаты можно просмотреть в окне журнала мастера. В приведенном ниже примере показано, как найти экспортированный скрипт U-SQL и ресурсы базы данных, включая сборки, дополнительные файлы и демонстрационные данные.
 
@@ -82,9 +82,9 @@ ms.locfileid: "51251008"
 
 Если вы выбрали параметр **Схема и данные** на шаге 3, средство выполняет задание U-SQL для экспорта данных, хранящихся в таблицах. Из-за этого данные могут экспортироваться медленно и экспорт может быть платным. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Data Definition Language (DDL) Statements (U-SQL)](https://msdn.microsoft.com/library/azure/mt621299.aspx) (Операторы U-SQL языка описания данных DDL) 
+* [Дополнительные сведения о базах данных U-SQL](/u-sql/data-definition-language-ddl-statements) 
 * [Тестирование и отладка заданий U-SQL с помощью локального выполнения и пакета SDK U-SQL для Azure Data Lake](data-lake-analytics-data-lake-tools-local-run.md)
 
 
