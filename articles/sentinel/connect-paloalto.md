@@ -1,6 +1,6 @@
 ---
-title: Сбор данных Palo Alto Networks в предварительной версии Sentinel Azure | Документация Майкрософт
-description: Дополнительные сведения о сборе данных Palo Alto Networks в Azure Sentinel.
+title: Подключайте данные из Palo Alto Networks предварительную версию Sentinel Azure | Документация Майкрософт
+description: Узнайте, как соединиться с Palo Alto Networks данных Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/6/2019
+ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: 130982dc6adadd22037f395635a9525bf28bcedd
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 0e811fb8d084f90410d48124f488843daa31a5a5
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58877097"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59489422"
 ---
 # <a name="connect-your-palo-alto-networks-appliance"></a>Подключение устройства Palo Alto Networks
 
@@ -43,7 +43,7 @@ ms.locfileid: "58877097"
 
 ### <a name="deploy-the-agent-in-azure"></a>Развертывание агента в Azure
 
-1. На портале Azure Sentinel щелкните **сбора данных** и выберите тип устройства. 
+1. На портале Azure Sentinel щелкните **соединители данных** и выберите тип устройства. 
 
 1. В разделе **конфигурация агента Linux Syslog**:
    - Выберите **автоматического развертывания** Если вы хотите создать новый компьютер, который устанавливается с агентом Azure Sentinel и включает в себя все необходимые настройки, как описано выше. Выберите **авторазвертывания** и нажмите кнопку **агент автоматического развертывания**. Вы перейдете на страницу покупки для выделенной виртуальной Машине, которой автоматически подключается к рабочей области, является. Виртуальная машина находится **стандартный D2s v3 (2 виртуальных ЦП, память объемом 8 ГБ)** и общедоступный IP-адрес.
@@ -80,7 +80,7 @@ ms.locfileid: "58877097"
 Если вы не используете Azure, вручную разверните агент Azure Sentinel для запуска на выделенном сервере Linux.
 
 
-1. На портале Azure Sentinel щелкните **сбора данных** и выберите тип устройства.
+1. На портале Azure Sentinel щелкните **соединители данных** и выберите тип устройства.
 1. Чтобы создать выделенной виртуальной Машине Linux, в разделе **конфигурация агента Linux Syslog** выберите **развертывания вручную**.
    1. В разделе **Загрузка и установка агента Syslog**выберите **машины Linux в Azure не**. 
    1. В **Direct agent** экран, на котором окне выберите **агент для Linux** скачайте агент или выполните следующую команду, чтобы скачать его на компьютере Linux:   `wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh && sh onboard_agent.sh -w {workspace GUID} -s gehIk/GvZHJmqlgewMsIcth8H6VqXLM9YXEpu0BymnZEJb6mEjZzCHhZgCx5jrMB1pVjRCMhn+XTQgDTU3DVtQ== -d opinsights.azure.com`

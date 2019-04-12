@@ -1,6 +1,6 @@
 ---
-title: Check Point сбор данных в предварительной версии Sentinel Azure | Документация Майкрософт
-description: Дополнительные сведения о сборе данных Check Point в Azure Sentinel.
+title: Подключайте данные из Check Point предварительную версию Sentinel Azure | Документация Майкрософт
+description: Узнайте, как подключиться к Azure Sentinel данных Check Point.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/6/2019
+ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: 1fb4f9165be03a7fc3cd055ef616dcfadb58ac9d
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 664b09a8ad0cb7d06019281869e390a465637c00
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58876502"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59489182"
 ---
 # <a name="connect-your-check-point-appliance"></a>Подключение устройства Check Point
 
@@ -30,7 +30,7 @@ ms.locfileid: "58876502"
 Можно подключить Azure Sentinel любое устройство Check Point путем сохранения файлы журналов в формате CEF системного журнала. Интеграция с Azure Sentinel позволяет легко работают аналитики и запросы на данные файла журнала от Check Point. Дополнительные сведения о том, как Azure Sentinel принимает данные CEF, см. в разделе [CEF, подключение устройств](connect-common-event-format.md).
 
 > [!NOTE]
-> - Данные будут храниться в географическое расположение рабочей области, на котором выполняется Azure Sentinel.
+> Данные будут храниться в географическое расположение рабочей области, на котором выполняется Azure Sentinel.
 
 ## <a name="step-1-connect-your-check-point-appliance-using-an-agent"></a>Шаг 1. Подключение устройства Check Point, с помощью агента
 
@@ -42,7 +42,7 @@ ms.locfileid: "58876502"
 
 ### <a name="deploy-the-agent-in-azure"></a>Развертывание агента в Azure
 
-1. На портале Azure Sentinel щелкните **сбора данных** и выберите тип устройства. 
+1. На портале Azure Sentinel щелкните **соединители данных** и выберите тип устройства. 
 
 1. В разделе **конфигурация агента Linux Syslog**:
    - Выберите **автоматического развертывания** Если вы хотите создать новый компьютер, который устанавливается с агентом Azure Sentinel и включает в себя все необходимые настройки, как описано выше. Выберите **авторазвертывания** и нажмите кнопку **агент автоматического развертывания**. Вы перейдете на страницу покупки для выделенной виртуальной Машине, автоматически подключается к рабочей области. Виртуальная машина находится **стандартный D2s v3 (2 виртуальных ЦП, память объемом 8 ГБ)** и общедоступный IP-адрес.
