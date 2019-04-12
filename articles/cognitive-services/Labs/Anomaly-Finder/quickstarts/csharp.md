@@ -1,6 +1,6 @@
 ---
-title: Использование API средства для поиска аномалий с C# — Microsoft Cognitive Services | Документация Майкрософт
-description: Информация и примеры кода, которые помогут вам быстро приступить к работе с API средства для обнаружения аномалий и C# в Cognitive Services.
+title: Использование API Anomaly Finder с C# — Microsoft Cognitive Services | Документация Майкрософт
+description: Информация и примеры кода, которые помогут вам быстро приступить к работе с API Anomaly Finder и C# в Cognitive Services.
 services: cognitive-services
 author: chliang
 manager: bix
@@ -16,17 +16,17 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 02/23/2019
 ms.locfileid: "56736640"
 ---
-# <a name="use-the-anomaly-finder-api-with-c"></a>Использование API средства для поиска аномалий с C#
+# <a name="use-the-anomaly-finder-api-with-c"></a>Использование API Anomaly Finder с C#
 
 [!INCLUDE [PrivatePreviewNote](../../../../../includes/cognitive-services-anomaly-finder-private-preview-note.md)]
 
-В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API обнаружения аномалий и C# для получения результатов обнаружения аномалий в данных временных рядов.
+В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API Anomaly Finder и C# для получения результатов обнаружения аномалий в данных временных рядов.
 
 ## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [GetSubscriptionKey](../includes/get-subscription-key.md)]
 
-## <a name="getting-anomaly-points-with-anomaly-finder-api-using-c"></a>Получение точек аномалий с помощью API средства для поиска аномалий с использованием C#
+## <a name="getting-anomaly-points-with-anomaly-finder-api-using-c"></a>Получение точек аномалий с помощью API Anomaly Finder с использованием C#
 
 [!INCLUDE [DataContract](../includes/datacontract.md)]
 

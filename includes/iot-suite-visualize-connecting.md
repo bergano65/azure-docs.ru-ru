@@ -54,4 +54,4 @@ ms.locfileid: "56988073"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Способы настройки акселератора решений описаны в статье [Настройка акселератора решений для удаленного мониторинга](../articles/iot-accelerators/iot-accelerators-remote-monitoring-customize.md).
+Способы настройки акселератора решений описаны в статье [Настройка акселератора решения для удаленного мониторинга](../articles/iot-accelerators/iot-accelerators-remote-monitoring-customize.md).

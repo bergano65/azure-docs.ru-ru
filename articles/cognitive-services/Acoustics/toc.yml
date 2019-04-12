@@ -12,18 +12,24 @@ items:
     href: unreal-quickstart.md
 - name: Учебники
   items:
-  - name: Рабочий процесс разработки для Unity
-    href: unity-workflow.md
-  - name: Рабочий процесс разработки для Unreal/Wwise
-    href: unreal-workflow.md
-  - name: Акустическое моделирование с помощью Unity
-    href: unity-baking.md
-  - name: Акустическое моделирование с помощью Unreal/Wwise
-    href: unreal-baking.md
+  - name: Unity
+    items:
+    - name: Акустическое моделирование с помощью Unity
+      href: unity-baking.md
+    - name: Рабочий процесс разработки для Unity
+      href: unity-workflow.md
+  - name: Unreal/Wwise
+    items:
+    - name: Акустическое моделирование с помощью Unreal/Wwise
+      href: unreal-baking.md
+    - name: Рабочий процесс разработки для Unreal/Wwise
+      href: unreal-workflow.md
 - name: Основные понятия
   items:
   - name: Принципы разработки с использованием акустического моделирования
     href: design-process.md
+  - name: Разрешение в акустическом моделировании
+    href: bake-resolution.md
 - name: Инструкции
   items:
   - name: Создание учетной записи пакетной службы Azure
@@ -38,9 +44,9 @@ items:
     href: faq.md
   - name: Известные проблемы
     href: known-issues.md
-ms.openlocfilehash: 37514a3f8c149c1e34b4e0faa8a7109290a80feb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0a445890369e48f61dfa545d7107f46e3d0675a1
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58138225"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59495640"

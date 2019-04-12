@@ -1,6 +1,6 @@
 ---
-title: Справочник по API средства для поиска аномалий — Microsoft Cognitive Services | Документация Майкрософт
-description: Справочник по API средства для поиска аномалий — Microsoft Cognitive Services
+title: Справочник по API Anomaly Finder — Microsoft Cognitive Services | Документация Майкрософт
+description: Справочник по API Anomaly Finder — Microsoft Cognitive Services.
 services: cognitive-services
 author: tonyxing
 ms.service: cognitive-services
@@ -15,7 +15,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 02/23/2019
 ms.locfileid: "56732006"
 ---
-# <a name="anomaly-finder-api-reference"></a>Справочник по API средства для поиска аномалий
+# <a name="anomaly-finder-api-reference"></a>Справочник по API Anomaly Finder
 
 [!INCLUDE [PrivatePreviewNote](../../../../includes/cognitive-services-anomaly-finder-private-preview-note.md)]
 

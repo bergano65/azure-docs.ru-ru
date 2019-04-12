@@ -1,5 +1,5 @@
 ---
-title: Использование API средства для поиска аномалий с Java — Microsoft Cognitive Services | Документация Майкрософт
+title: Использование API Anomaly Finder с Java — Microsoft Cognitive Services | Документация Майкрософт
 description: Информация и примеры кода, которые помогут вам быстро приступить к работе со средством для обнаружения аномалий и Java в Cognitive Services.
 services: cognitive-services
 author: chliang
@@ -16,7 +16,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 02/23/2019
 ms.locfileid: "56732885"
 ---
-# <a name="use-the-anomaly-finder-api-with-java"></a>Использование API средства для поиска аномалий с Java
+# <a name="use-the-anomaly-finder-api-with-java"></a>Использование API Anomaly Finder с Java
 
 [!INCLUDE [PrivatePreviewNote](../../../../../includes/cognitive-services-anomaly-finder-private-preview-note.md)]
 

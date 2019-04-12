@@ -198,7 +198,7 @@ ms.locfileid: "57547707"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы узнали, как подключить устройство DevKit к акселератору решений для удаленного мониторинга Интернета вещей Azure и как использовать службу SendGrid для отправки сообщений электронной почты. Ниже приведены предлагаемые дальнейшие действия:
+Вы узнали, как подключить устройство DevKit к акселератору решения Azure IoT для удаленного мониторинга и как использовать службу SendGrid для отправки сообщений электронной почты. Ниже приведены предлагаемые дальнейшие действия:
 
 * [Общие сведения об акселераторе решений для удаленного мониторинга Интернета вещей Azure](https://docs.microsoft.com/azure/iot-suite/)
 * [Connect an MXChip IoT DevKit device to your Azure IoT Central application](https://docs.microsoft.com/microsoft-iot-central/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central)

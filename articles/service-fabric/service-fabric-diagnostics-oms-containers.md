@@ -29,14 +29,14 @@ ms.locfileid: "58663204"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="set-up-the-container-monitoring-solution"></a>Настройка решения мониторинга контейнера
+## <a name="set-up-the-container-monitoring-solution"></a>Настройка решения для мониторинга контейнера
 
 > [!NOTE]
 > Необходимо иметь Azure Monitor журналы для кластера, а также развернуть на узлах агент Log Analytics. Если не сделать, выполните действия, описанные в [настроить журналы Azure Monitor](service-fabric-diagnostics-oms-setup.md) и [Добавление агента Log Analytics в кластер](service-fabric-diagnostics-oms-agent.md) первого.
 
 1. После настройки кластера с журналами Azure Monitor и агент Log Analytics, разверните контейнеры. Прежде чем перейти к следующему шагу, подождите, пока ваши контейнеры развернутся.
 
-2. Найдите *Решение мониторинга контейнеров* в Azure Marketplace и щелкните ресурс **Решения мониторинга контейнеров** в категории "Мониторинг и управление".
+2. Найдите *Решение для мониторинга контейнеров* в Azure Marketplace и щелкните ресурс **Решения для мониторинга контейнеров** в категории "Мониторинг и управление".
 
     ![Добавление решения "Контейнеры"](./media/service-fabric-diagnostics-event-analysis-oms/containers-solution.png)
 

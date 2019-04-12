@@ -1,6 +1,6 @@
 ---
 title: Добавление устройства Edge в решение для удаленного мониторинга Azure | Документация Майкрософт
-description: В этой статье описывается, как добавить устройство IoT Edge в акселератор решений для удаленного мониторинга.
+description: В этой статье описывается, как добавить устройство IoT Edge в акселератор решения для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
 ms.author: dobett
@@ -15,7 +15,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 02/24/2019
 ms.locfileid: "56749551"
 ---
-# <a name="add-an-iot-edge-device-to-your-remote-monitoring-solution-accelerator"></a>Добавление устройства IoT Edge в акселератор решений для удаленного мониторинга
+# <a name="add-an-iot-edge-device-to-your-remote-monitoring-solution-accelerator"></a>Добавление устройства IoT Edge в акселератор решения для удаленного мониторинга
 
 Чтобы добавить устройство [IoT Edge](../iot-edge/about-iot-edge.md) в акселератор решений, выполните два шага ниже:
 
@@ -24,7 +24,7 @@ ms.locfileid: "56749551"
 
 ## <a name="add-the-iot-edge-device"></a>Добавление устройства IoT Edge
 
-Чтобы добавить устройство IoT Edge в акселератор решений для удаленного мониторинга, перейдите на страницу **Device Explorer** в веб-интерфейсе и щелкните **+ Новое устройство**.
+Чтобы добавить устройство IoT Edge в акселератор решения для удаленного мониторинга, перейдите на страницу **Device Explorer** в веб-интерфейсе и щелкните **+ Новое устройство**.
 
 На панели **Новое устройство** выберите **Устройство IoT Edge**. Для остальных параметров можно оставить значения по умолчанию. Нажмите кнопку **Применить**:
 
@@ -52,4 +52,4 @@ ms.locfileid: "56749551"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы подготовили устройство IoT Edge, можно развернуть на нем модули. Ознакомьтесь со статьей [Import an IoT Edge package into your Remote Monitoring solution accelerator](iot-accelerators-remote-monitoring-import-edge-package.md) (Импорт пакета IoT Edge в акселератор решений для удаленного мониторинга).
+Теперь, когда вы подготовили устройство IoT Edge, можно развернуть на нем модули. Ознакомьтесь со статьей [Import an IoT Edge package into your Remote Monitoring solution accelerator](iot-accelerators-remote-monitoring-import-edge-package.md) (Импорт пакета IoT Edge в акселератор решения для удаленного мониторинга).

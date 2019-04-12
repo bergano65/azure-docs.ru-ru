@@ -289,7 +289,7 @@ ms.locfileid: "58540760"
 [Сборщик данных Azure Log Analytics](https://docs.microsoft.com/connectors/azureloganalyticsdatacollector/) действие использует объект из действия Compose и отправляет его в рабочую область Log Analytics.
 
 1. Щелкните **Новый шаг** > **Добавить действие**.
-2. Введите *log analytics* в качестве своего фильтра, а затем выберите действие **Сборщик данных Azure Log Analytics: отправить данные**.
+2. Введите *log analytics* в качестве фильтра, а затем выберите действие **Сборщик данных Azure Log Analytics: отправить данные**.
 
    ![Добавление действия отправки данных Log Analytics в приложениях логики](media/collect-activity-logs-subscriptions/logic-apps-send-data-to-log-analytics-connector.png)
 

@@ -15,7 +15,7 @@ ms.date: 11/05/2018
 ms.author: magoedte
 ms.openlocfilehash: c6a8322998b391b9021292a3a7213ded56b67feb
 ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/14/2019
 ms.locfileid: "54263362"
@@ -46,7 +46,7 @@ ms.locfileid: "54263362"
 Следующие шаги описывают, как полностью удалить Azure Monitor для виртуальных машин, если вам по-прежнему требуется рабочая область Log Analytics. Вы собираетесь удалить решения **InfastructureInsights** и **ServiceMap** из рабочей области.  
 
 >[!NOTE]
->Если вы использовали решение мониторинга Сопоставления служб до включения Azure Monitor для виртуальных машин и по-прежнему его используете, не удаляйте это решение, как описано ниже в шаге 6.  
+>Если вы использовали решение для мониторинга Сопоставления служб до включения Azure Monitor для виртуальных машин и по-прежнему его используете, не удаляйте это решение, как описано ниже в шаге 6.  
 >
 
 1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).

@@ -12,12 +12,12 @@ ms.author: chliang
 ms.custom: include file
 ms.openlocfilehash: 3cc0e521e43f6855397a19fe34fce99da3e20494
 ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/29/2019
 ms.locfileid: "55228872"
 ---
-С помощью [API средства для поиска аномалий](https://labs.cognitive.microsoft.com/en-us/project-anomaly-finder) можно отправить данные временных рядов в формате JSON на конечную точку API, а затем считать результат из ответа API. При отправке данных временных рядов каждая точка данных включает следующие элементы:  
+С помощью [API Anomaly Finder](https://labs.cognitive.microsoft.com/en-us/project-anomaly-finder) можно отправить данные временных рядов в формате JSON на конечную точку API, а затем считать результат из ответа API. При отправке данных временных рядов каждая точка данных включает следующие элементы:  
 * Timestamp — метка времени для точки данных. Убедитесь, что используется строка даты и времени в формате UTC, например 2017-08-01T00:00:00Z.
 * Value — значение этой точки данных.
 

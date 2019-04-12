@@ -1,6 +1,6 @@
 ---
-title: Использование API средства для поиска аномалий с Javascript — Microsoft Cognitive Services | Документация Майкрософт
-description: Информация и примеры кода, которые помогут вам быстро приступить к работе со средством для поиска аномалий и Javascript в Cognitive Services.
+title: Использование API Anomaly Finder с Javascript — Microsoft Cognitive Services | Документация Майкрософт
+description: Информация и примеры кода, которые помогут вам быстро приступить к работе с Anomaly Finder и Javascript в Cognitive Services.
 services: cognitive-services
 author: chliang
 manager: bix
@@ -16,7 +16,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 03/07/2019
 ms.locfileid: "57551914"
 ---
-# <a name="use-the-anomaly-finder-api-with-javascript"></a>Использование API средства для поиска аномалий с Javascript
+# <a name="use-the-anomaly-finder-api-with-javascript"></a>Использование API Anomaly Finder с Javascript
 
 [!INCLUDE [PrivatePreviewNote](../../../../../includes/cognitive-services-anomaly-finder-private-preview-note.md)]
 

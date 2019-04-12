@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/11/2019
 ms.author: fryu
 ms.subservice: common
-ms.openlocfilehash: 9b4bceba53658cb8ac3c73e75e0d19faf3fe3f0b
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: c15242b0c480e2da39897b850ab7b2a2fd05bf11
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259760"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59489295"
 ---
 # <a name="azure-storage-analytics-metrics-classic"></a>Метрики аналитики хранилища Azure (Классическая модель)
 
@@ -75,7 +75,7 @@ ms.locfileid: "58259760"
 Сейчас [портал Azure](https://portal.azure.com) не позволяет настраивать минутные метрики в учетной записи хранения. Их необходимо включить с помощью PowerShell или программно.
 
 > [!NOTE]
->  Обратите внимание на то, что портал Azure не настоящее время позволяет настраивать минутные метрики в учетной записи хранения. Необходимо включить с помощью PowerShell или программно.  
+>  Обратите внимание на то, что портал Azure не настоящее время позволяет настраивать минутные метрики в учетной записи хранения. Необходимо включить с помощью PowerShell или программно.
 
 ## <a name="enable-storage-metrics-using-powershell"></a>Включение метрик хранилища с помощью PowerShell  
 Чтобы настроить метрики хранилища в учетной записи хранения с помощью командлета Azure PowerShell можно использовать PowerShell на локальном компьютере **Get-AzureStorageServiceMetricsProperty** для получения текущих настроек и командлет  **SET-AzureStorageServiceMetricsProperty** изменение текущих параметров.  
@@ -228,5 +228,5 @@ private static string MetricsString(MetricsEntity entity, OperationContext opCon
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Мониторинг учетной записи хранения](https://www.windowsazure.com/manage/services/storage/how-to-monitor-a-storage-account/)   
 * [Схема таблицы метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema)   
-* [Операции с протоколированием и сообщения о состоянии аналитик хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages)   
-* [Ведение журнала аналитики службы хранилища](storage-analytics-logging.md)
+* [Аналитика хранилища операции с протоколированием и сообщения о состоянии](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages)   
+* [Ведение журнала Storage Analytics](storage-analytics-logging.md)

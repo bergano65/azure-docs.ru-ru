@@ -15,7 +15,7 @@ ms.date: 02/28/2019
 ms.author: magoedte
 ms.openlocfilehash: fbc9e0f8e7dfda86b5c53e28aa3aa3b733bb9600
 ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/03/2019
 ms.locfileid: "58905761"
@@ -36,7 +36,7 @@ ms.locfileid: "58905761"
 - Service Fabric
 - Red Hat OpenShift.
 
-Если вы заинтересованы в мониторинге производительности рабочих нагрузок, развернутых в средах Kubernetes, которые размещены в Службе Azure Kubernetes (AKS), см. статью [Обзор службы "Azure Monitor для контейнеров"](../../azure-monitor/insights/container-insights-overview.md). Решение мониторинга контейнеров не поддерживает мониторинг этой платформы.  
+Если вы заинтересованы в мониторинге производительности рабочих нагрузок, развернутых в средах Kubernetes, которые размещены в Службе Azure Kubernetes (AKS), см. статью [Обзор службы "Azure Monitor для контейнеров"](../../azure-monitor/insights/container-insights-overview.md). Решение для мониторинга контейнеров не поддерживает мониторинг этой платформы.  
 
 Следующая диаграмма показывает связи между разными узлами контейнера и агентами с помощью Azure Monitor.
 
@@ -521,7 +521,7 @@ Start-Service docker
 
 ## <a name="solution-components"></a>Компоненты решения
 
-На портале Azure перейдите к *коллекции решений* и добавьте **решение мониторинга контейнера**. Если вы используете агенты Windows, то при добавлении этого решения на каждом компьютере с агентом устанавливается следующий пакет управления. Для этих пакетов управления не требуются настройка или обслуживание.
+На портале Azure перейдите к *коллекции решений* и добавьте **решение для мониторинга контейнера**. Если вы используете агенты Windows, то при добавлении этого решения на каждом компьютере с агентом устанавливается следующий пакет управления. Для этих пакетов управления не требуются настройка или обслуживание.
 
 - *ContainerManagement.xxx* устанавливается в папке, расположенной по адресу C:\Program Files\Microsoft Monitoring Agent\Agent\Health Service State\Management Packs.
 

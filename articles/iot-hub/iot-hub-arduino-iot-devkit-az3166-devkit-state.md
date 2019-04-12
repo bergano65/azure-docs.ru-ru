@@ -11,7 +11,7 @@ ms.date: 04/04/2018
 ms.author: liydu
 ms.openlocfilehash: e955d21132dda6caa137ad3b5de9d00ccf7ed1b4
 ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/07/2019
 ms.locfileid: "55811058"
@@ -67,7 +67,7 @@ ms.locfileid: "55811058"
 
 1. Подключите MXChip IoT DevKit к компьютеру.
 
-2. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...**, **config-device-connection**.
+2. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...** - , **config-device-connection**.
 
 3. На MXChip IoT DevKit нажмите и удерживайте кнопку **A**, дополнительно нажмите кнопку **Сброс**, а затем отпустите кнопку **A**, чтобы DevKit вошел в режим настройки.
 
@@ -111,7 +111,7 @@ ms.locfileid: "55811058"
 ## <a name="next-steps"></a>Дополнительная информация
 
 Вы узнали, как выполнять такие задачи:
-- Подключение устройства MXChip IoT DevKit к акселератору решений для удаленного мониторинга Интернета вещей Azure.
+- Подключение устройства MXChip IoT DevKit к акселератору решения Azure IoT для удаленного мониторинга.
 - Определение состояния системы и управление цветом светодиодного индикатора RGB DevKit с помощью функции двойников устройств Интернета вещей Azure.
 
 Ниже приведены предлагаемые дальнейшие действия:

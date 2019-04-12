@@ -1,6 +1,6 @@
 ---
-title: Использование API средства для поиска аномалий с Python. Microsoft Cognitive Services | Документация Майкрософт
-description: Информация и примеры кода, которые помогут вам приступить к работе с API средства для поиска аномалий с использованием Python в Cognitive Services.
+title: Использование API Anomaly Finder с Python. Microsoft Cognitive Services | Документация Майкрософт
+description: Информация и примеры кода, которые помогут вам приступить к работе с API Anomaly Finder с использованием Python в Cognitive Services.
 services: cognitive-services
 author: chliang
 manager: bix
@@ -16,17 +16,17 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 02/23/2019
 ms.locfileid: "56737133"
 ---
-# <a name="use-the-anomaly-finder-api-with-python"></a>Использование API средства для поиска аномалий с Python
+# <a name="use-the-anomaly-finder-api-with-python"></a>Использование API Anomaly Finder с Python
 
 [!INCLUDE [PrivatePreviewNote](../../../../../includes/cognitive-services-anomaly-finder-private-preview-note.md)]
 
-В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API средства для поиска аномалий с Python для получения аномальных результатов в данных временных рядов.
+В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API Anomaly Finder с Python для получения аномальных результатов в данных временных рядов.
 
 ## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [GetSubscriptionKey](../includes/get-subscription-key.md)]
 
-## <a name="getting-anomaly-points-with-anomaly-finder-api-using-python"></a>Получение точек аномалий с помощью API средства для поиска аномалий с использованием Python 
+## <a name="getting-anomaly-points-with-anomaly-finder-api-using-python"></a>Получение точек аномалий с помощью API Anomaly Finder с использованием Python 
 
 [!INCLUDE [DataContract](../includes/datacontract.md)]
 

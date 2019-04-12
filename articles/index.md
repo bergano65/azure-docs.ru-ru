@@ -961,7 +961,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/cognitive-services/labs/anomaly-finder/overview">
                                                 <img src="media/index/API_Anomaly_Finder.svg" alt="" />
-                                                <p>Средство для поиска аномалий</p>
+                                                <p>Anomaly Finder</p>
                                             </a>
                                         </li>
                                         <li>

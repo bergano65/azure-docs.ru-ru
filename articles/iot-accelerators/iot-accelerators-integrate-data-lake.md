@@ -1,6 +1,6 @@
 ---
-title: Интеграция решения удаленного мониторинга с Azure Data Lake Store | Документация Майкрософт
-description: Узнайте о том, как выполнить интеграцию решения удаленного мониторинга с Azure Data Lake Store с помощью задания Azure Stream Analytics.
+title: Интеграция решения для удаленного мониторинга с Azure Data Lake Store | Документация Майкрософт
+description: Узнайте о том, как выполнить интеграцию решения для удаленного мониторинга с Azure Data Lake Store с помощью задания Azure Stream Analytics.
 author: philmea
 manager: timlt
 ms.author: philmea
@@ -10,30 +10,30 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.openlocfilehash: 021f18f588613817110539d408f9260fb9247895
 ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/19/2018
 ms.locfileid: "53603935"
 ---
-# <a name="integrate-the-remote-monitoring-solution-with-azure-data-lake-store"></a>Интеграция решения удаленного мониторинга с Azure Data Lake Store
+# <a name="integrate-the-remote-monitoring-solution-with-azure-data-lake-store"></a>Интеграция решения для удаленного мониторинга с Azure Data Lake Store
 
-Вам может понадобиться расширенная аналитика, которой нет в решении удаленного мониторинга. Azure Data Lake Store идеально подходит для этого приложения, так как оно может хранить крупные и разнообразные наборы данных, а также интегрироваться с Azure Data Lake Analytics, чтобы предоставлять данные аналитики по запросу.
+Вам может понадобиться расширенная аналитика, которой нет в решении для удаленного мониторинга. Azure Data Lake Store идеально подходит для этого приложения, так как оно может хранить крупные и разнообразные наборы данных, а также интегрироваться с Azure Data Lake Analytics, чтобы предоставлять данные аналитики по запросу.
 
-В этом практическом руководстве используется задание Azure Stream Analytics для потоковой передачи данных из Центра Интернета вещей в вашем решении удаленного мониторинга в Azure Data Lake Store.
+В этом практическом руководстве используется задание Azure Stream Analytics для потоковой передачи данных из Центра Интернета вещей в вашем решении для удаленного мониторинга в Azure Data Lake Store.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим практическим руководством необходимо следующее:
 
 * [Развертывание акселератора решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
-  * Решение удаленного мониторинга развернет Центр Интернета вещей и задание Azure Stream Analytics, используемые в этой статье, в вашей подписке Azure.
+  * Решение для удаленного мониторинга развернет Центр Интернета вещей и задание Azure Stream Analytics, используемые в этой статье, в вашей подписке Azure.
 * [Развернуть Azure Data Lake Store](../data-lake-store/data-lake-store-get-started-portal.md).
-  * Data Lake Store следует развернуть в том же регионе, что и решение удаленного мониторинга.
+  * Data Lake Store следует развернуть в том же регионе, что и решение для удаленного мониторинга.
   * [Создайте папку](../data-lake-store/data-lake-store-get-started-portal.md#createfolder) с именем "streaming" в вашей учетной записи.
 
 ## <a name="create-a-consumer-group"></a>Создание группы потребителей
 
-Создайте выделенную группу потребителей в Центре Интернета вещей вашего решения удаленного мониторинга. Ее будет использовать задание Stream Analytics для потоковой передачи данных в Data Lake Store.
+Создайте выделенную группу потребителей в Центре Интернета вещей вашего решения для удаленного мониторинга. Ее будет использовать задание Stream Analytics для потоковой передачи данных в Data Lake Store.
 
 > [!NOTE]
 > Группы потребителей используются приложениями для извлечения данных из Центра Интернета вещей Azure. Новая группа потребителей создается для каждых пяти потребителей выходных данных. Можно создать до 32 групп потребителей.
@@ -51,7 +51,7 @@ az iot hub consumer-group create --hub-name contoso-rm30263 --name streamanalyti
 ```
 
 > [!NOTE]
-> Используйте имена группы ресурсов и Центра Интернета вещей из решения удаленного мониторинга.
+> Используйте имена группы ресурсов и Центра Интернета вещей из решения для удаленного мониторинга.
 
 ## <a name="create-stream-analytics-job"></a>Создание задания Stream Analytics
 
@@ -73,7 +73,7 @@ az iot hub consumer-group create --hub-name contoso-rm30263 --name streamanalyti
 
 ## <a name="configure-the-stream-analytics-job"></a>Настройка задания Stream Analytics
 
-1. Перейдите в **задание Stream Analytics** в группе ресурсов решения удаленного мониторинга.
+1. Перейдите в **задание Stream Analytics** в группе ресурсов решения для удаленного мониторинга.
 
 1. На странице обзора щелкните **Входные данные**.
 

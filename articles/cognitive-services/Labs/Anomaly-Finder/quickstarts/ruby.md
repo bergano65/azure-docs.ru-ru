@@ -1,6 +1,6 @@
 ---
-title: Как использовать API средства для поиска аномалий в Microsoft Cognitive Services с помощью Ruby | Документация Майкрософт
-description: Информация и примеры кода, которые помогут вам быстро приступить к работе с API средства для поиска аномалий и Ruby в Cognitive Services.
+title: Как использовать API Anomaly Finder в Microsoft Cognitive Services с помощью Ruby | Документация Майкрософт
+description: Информация и примеры кода, которые помогут вам быстро приступить к работе с API Anomaly Finder и Ruby в Cognitive Services.
 services: cognitive-services
 author: chliang
 manager: bix
@@ -16,17 +16,17 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 02/23/2019
 ms.locfileid: "56735039"
 ---
-# <a name="use-the-anomaly-finder-api-with-ruby"></a>Использование API средства для поиска аномалий на Ruby
+# <a name="use-the-anomaly-finder-api-with-ruby"></a>Использование API Anomaly Finder с Ruby
 
 [!INCLUDE [PrivatePreviewNote](../../../../../includes/cognitive-services-anomaly-finder-private-preview-note.md)]
 
-В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API поиска аномалий и Ruby для получения результатов обнаружения аномалий в данных временных рядов.
+В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API Anomaly Finder и Ruby для получения результатов обнаружения аномалий в данных временных рядов.
 
 ## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [GetSubscriptionKey](../includes/get-subscription-key.md)]
 
-## <a name="getting-anomaly-points-with-anomaly-finder-api-using-ruby"></a>Получение точек аномалий с помощью API средства для поиска аномалий с использованием Ruby 
+## <a name="getting-anomaly-points-with-anomaly-finder-api-using-ruby"></a>Получение точек аномалий с помощью API Anomaly Finder и Ruby 
 [!INCLUDE [DataContract](../includes/datacontract.md)]
 
 ### <a name="example-of-time-series-data"></a>Пример данных временных рядов

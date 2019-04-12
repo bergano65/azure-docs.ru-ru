@@ -10,7 +10,7 @@ ms.date: 08/31/2018
 ms.author: dobett
 ms.openlocfilehash: 91d4eda566c8b534daa10c62637db28ccb01bbb6
 ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/19/2018
 ms.locfileid: "53628329"
@@ -19,7 +19,7 @@ ms.locfileid: "53628329"
 
 [!INCLUDE [iot-suite-selector-connecting](../../includes/iot-suite-selector-connecting.md)]
 
-В этом руководстве показано, как подключить реальное устройство к акселератору решений для удаленного мониторинга.
+В этом руководстве показано, как подключить реальное устройство к акселератору решения для удаленного мониторинга.
 
 Как и для большинства внедряемых приложений, работающих на устройствах с ограниченными ресурсами, клиентский код для приложения на устройстве пишется на языке C. В этом руководстве вы создадите приложение на компьютере под управлением Ubuntu (Linux).
 

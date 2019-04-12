@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: reference
-ms.date: 04/02/2019
+ms.date: 04/10/2019
 ms.author: mimart
 author: msmimart
 manager: celested
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98f81edcfa2a9daf5162ff1c7e23025b405092b8
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: d361a40e2efa80a677255c02c7e9cf155af09ffb
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59260397"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59496307"
 ---
 # <a name="azure-active-directory-b2b-collaboration-faqs"></a>Часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B
 
@@ -54,7 +54,7 @@ ms.locfileid: "59260397"
 Конечно. Дополнительные сведения см. в статье [Назначение пользователю ролей администратора в предварительной версии Azure Active Directory](add-guest-to-role.md).
 
 ### <a name="does-azure-ad-b2b-collaboration-allow-b2b-users-to-access-the-azure-portal"></a>Можно ли с помощью службы совместной работы Azure AD B2B разрешить доступ пользователей службы B2B к порталу Azure?
-Пользователям службы совместной работы B2B не нужен доступ к порталу Azure, только если им не назначена роль администратора с ограниченными правами или глобального администратора. В противном случае они имеют доступ к порталу. Кроме того, если гостевой пользователь, которому не назначены эти роли, получает доступ к порталу, он может воспользоваться частью возможностей, так как у роли гостевого пользователя есть некоторые разрешения в каталоге.
+Если пользователю назначена роль администратора с ограниченными правами, пользователей службы совместной работы B2B не нужен доступ к порталу Azure. Однако пользователей службы совместной работы B2B, которым назначена роль администратора с ограниченными правами можно получить доступ к порталу. Кроме того, если гостевой пользователь, которому не назначены эти роли, получает доступ к порталу, он может воспользоваться частью возможностей, так как у роли гостевого пользователя есть некоторые разрешения в каталоге.
 
 ### <a name="can-i-block-access-to-the-azure-portal-for-guest-users"></a>Можно ли заблокировать доступ к порталу Azure для гостевых пользователей?
  Да! Но будьте осторожны при настройке этой политики, чтобы случайно не заблокировать доступ для участников и администраторов.

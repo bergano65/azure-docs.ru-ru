@@ -1,6 +1,6 @@
 ---
-title: Использование API средства для поиска аномалий с cURL — Microsoft Cognitive Services | Документация Майкрософт
-description: Сведения, которые помогут вам быстро приступить к работе с API средства для поиска аномалий с использованием cURL в Cognitive Services.
+title: Использование API Anomaly Finder с cURL — Microsoft Cognitive Services | Документация Майкрософт
+description: Сведения, которые помогут вам быстро приступить к работе с API Anomaly Finder с использованием cURL в Cognitive Services.
 services: cognitive-services
 author: chliang
 manager: bix
@@ -16,17 +16,17 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 02/23/2019
 ms.locfileid: "56730891"
 ---
-# <a name="use-the-anomaly-finder-api-with-curl"></a>Использование API средства для поиска аномалий с cURL
+# <a name="use-the-anomaly-finder-api-with-curl"></a>Использование API Anomaly Finder с cURL
 
 [!INCLUDE [PrivatePreviewNote](../../../../../includes/cognitive-services-anomaly-finder-private-preview-note.md)]
 
-В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API обнаружения аномалий и cURL для получения результатов обнаружения аномалий в данных временных рядов.
+В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с API Anomaly Finder и cURL для получения результатов обнаружения аномалий в данных временных рядов.
 
 ## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [GetSubscriptionKey](../includes/get-subscription-key.md)]
 
-## <a name="getting-anomaly-points-with-the-anomaly-finder-api-using-curl"></a>Получение точек аномалий с помощью API обнаружения аномалий и cURL 
+## <a name="getting-anomaly-points-with-the-anomaly-finder-api-using-curl"></a>Получение точек аномалий с помощью API Anomaly Finder и cURL 
 
 [!INCLUDE [DataContract](../includes/datacontract.md)]
 
