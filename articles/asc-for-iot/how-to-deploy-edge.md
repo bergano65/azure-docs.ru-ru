@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/1/2019
 ms.author: mlottner
-ms.openlocfilehash: 40f771e97b61c28229b0eff29191247ef2fef695
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.openlocfilehash: d72980d6e27600cb844d5477d3b9a61d9e1573e4
+ms.sourcegitcommit: f24b62e352e0512dfa2897362021b42e0cb9549d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58862851"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59505623"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Развертывание модуля безопасности на вашем устройстве IoT Edge
 
 > [!IMPORTANT]
-> Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
+> Центр безопасности Azure для Интернета вещей сейчас предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 **Azure центр безопасности (ASC) для Интернета вещей** модуль представляет собой решение полнофункциональных средств безопасности для устройства IoT Edge.
@@ -75,8 +75,25 @@ ms.locfileid: "58862851"
 1. Из **Добавление модулей** вкладке **развертывания модулей** область, нажмите кнопку **AzureSecurityCenterforIoT**. 
    
 1. Изменение **имя** для **azureiotsecurity**.
-1. Измените имя **URI образа** для **mcr.microsoft.com/ascforiot/azureiotsecurity:0.0.1**
-      
+1. Изменение **изображения URI** для **mcr.microsoft.com/ascforiot/azureiotsecurity:0.0.3**.
+1. Проверьте **параметры создания контейнера** присваивается значение:      
+    ``` json
+    {
+        "NetworkingConfig": {
+            "EndpointsConfig": {
+                "host": {}
+            }
+        },
+        "HostConfig": {
+            "Privileged": true,
+            "NetworkMode": "host",
+            "PidMode": "host",
+            "Binds": [
+                "/:/host"
+            ]
+        }
+    }    
+    ```
 1. Убедитесь, что **требуемые свойства двойника модуля набор** выбран и изменить объект конфигурации, чтобы:
       
     ``` json
@@ -89,12 +106,16 @@ ms.locfileid: "58862851"
 1. Выберите команду **Сохранить**.
 1. Прокрутите до нижней части вкладки и выберите **Настройка дополнительных параметров среды выполнения Edge**.
    
-  >[!Note]
-  > Сделать **не** AMQP взаимодействие для концентратора Edge Интернета вещей.
-  > Центр безопасности Azure для Интернета вещей модуля требует связи AMQP с концентратором Edge Интернета вещей.
+   >[!Note]
+   > Сделать **не** AMQP взаимодействие для концентратора Edge Интернета вещей.
+   > Центр безопасности Azure для Интернета вещей модуля требует связи AMQP с концентратором Edge Интернета вещей.
    
-1. Изменение **изображение** под **концентратора Edge** для **mcr.microsoft.com/ascforiot/edgehub:1.05-preview**.
-      
+1. Изменение **изображение** под **концентратора Edge** для **mcr.microsoft.com/ascforiot/edgehub:1.0.9-preview**.
+
+   >[!Note]
+   > Центр безопасности Azure для Интернета вещей модуля требуется разветвленного версия Edge Интернета вещей, в зависимости от пакета SDK версии 1,20.
+   > Изменение образа концентратора Edge Интернета вещей, вы разрешаете устройству IoT Edge для замены последнего стабильного выпуска разветвленного версии концентратор Edge Интернета вещей, который официально не поддерживается службой IoT Edge.
+
 1. Проверьте **параметры создания** имеет значение: 
          
     ``` json
@@ -137,8 +158,8 @@ ms.locfileid: "58862851"
    
    | ИМЯ | ИЗОБРАЖЕНИЕ |
    | --- | --- |
-   | azureIoTSecurity | mcr.Microsoft.com/ascforiot/azureiotsecurity:0.0.1 |
-   | edgeHub | asotcontainerregistry.azurecr.IO/edgehub:1.04-Preview |
+   | azureIoTSecurity | mcr.Microsoft.com/ascforiot/azureiotsecurity:0.0.3 |
+   | edgeHub | mcr.Microsoft.com/ascforiot/edgehub:1.0.9-Preview |
    | edgeAgent | mcr.Microsoft.com/azureiotedge-Agent:1.0 |
    
    Если Минимальная требуемая контейнеры не отображаются, проверьте, если манифест развертывания IoT Edge выравнивается с рекомендованными настройками. Дополнительные сведения см. в разделе [модуля IoT Edge, развернуть](#deployment-using-azure-portal).

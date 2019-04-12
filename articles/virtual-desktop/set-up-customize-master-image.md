@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 04/03/2019
 ms.author: helohr
-ms.openlocfilehash: d22fffcb792227b4d0805abd005d8c050cb97248
-ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.openlocfilehash: e82b9ae96ae43278e22da22702d3d899abadb1b5
+ms.sourcegitcommit: f24b62e352e0512dfa2897362021b42e0cb9549d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "59006199"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59505606"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Подготовка и настройка главного образа VHD
 
@@ -158,21 +158,20 @@ reg add HKLM\SOFTWARE\Policies\Microsoft\office\16.0\common\officeupdate /v hide
 reg add HKLM\SOFTWARE\Policies\Microsoft\office\16.0\common\officeupdate /v hideenabledisableupdates /t REG_DWORD /d 1 /f
 ```
 
-Вы можете отключить автоматическое обновление вручную.
+### <a name="disable-automatic-updates"></a>Отключить автоматическое обновление
 
-Чтобы отключить автоматическое обновление:
+Чтобы отключить автоматическое обновление с помощью групповой политики:
 
-1. Установка Office 365, следуя инструкциям в [подготовки программного обеспечения и установки](set-up-customize-master-image.md#software-preparation-and-installation).
-2. Установить дополнительные приложения, следуя инструкциям в [настроить контейнер профиля пользователя (FSLogix)](set-up-customize-master-image.md#set-up-user-profile-container-fslogix), [настроить Защитник Windows](set-up-customize-master-image.md#configure-windows-defender), и [другими приложениями и реестра конфигурации](set-up-customize-master-image.md#other-applications-and-registry-configuration).
-3. Отключите службу обновления Windows автоматически на локальной виртуальной Машине.
-4. Откройте **редактор локальных групповых политик\\административные шаблоны\\компоненты Windows\\Windows Update**.
-5. Щелкните правой кнопкой мыши **настроить автоматическое обновление** и присвойте ему значение **отключено**.
+1. Откройте **редактор локальных групповых политик\\административные шаблоны\\компоненты Windows\\Windows Update**.
+2. Щелкните правой кнопкой мыши **настроить автоматическое обновление** и присвойте ему значение **отключено**.
 
 Можно также выполните следующую команду в командной строке, чтобы отключить автоматическое обновление.
 
 ```batch
 reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU /v NoAutoUpdate /t REG_DWORD /d 1 /f
 ```
+
+### <a name="specify-start-layout-for-windows-10-pcs-optional"></a>Задать макет Start для ПК Windows 10 (необязательно)
 
 Выполните следующую команду, чтобы указать макет начального для компьютеров с Windows 10.
 
@@ -369,7 +368,7 @@ remove CorporateWerServer* from Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\W
 Теперь, когда у вас есть образ, можно создать или обновить пулы узлов. Дополнительные сведения о том, как создавать и обновлять пулы узлов, см. в разделе со следующими статьями:
 
 - [Создание пула узлов с помощью шаблона Azure Resource Manager](create-host-pools-arm-template.md)
-- [Руководство по Создание пула узлов с помощью Azure Marketplace](create-host-pools-azure-marketplace.md)
+- [Руководство. Создание пула узлов с помощью Azure Marketplace](create-host-pools-azure-marketplace.md)
 - [Создание пула узлов с помощью PowerShell](create-host-pools-powershell.md)
 - [Настройка общей папки профиля пользователя в пуле узлов](create-host-pools-user-profile.md)
 - [Настройка метода балансировки нагрузки Виртуального рабочего стола Windows](configure-host-pool-load-balancing.md)

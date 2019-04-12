@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 09/20/2018
 ms.author: robb
 ms.subservice: diagnostic-extension
-ms.openlocfilehash: 92ae1e31a739486871ebff69740f31a495c7b780
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.openlocfilehash: 29091add5cee0934064224c9cca8644b401bd5e4
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54471656"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59493320"
 ---
 # <a name="azure-diagnostics-extension-configuration-schema-versions-and-history"></a>Журнал и версии схемы конфигурации расширения системы диагностики Azure
 На этой странице приведен указатель версий схемы расширения системы диагностики Azure, которые поставляются в составе пакета Microsoft Azure SDK.  
@@ -29,7 +29,7 @@ ms.locfileid: "54471656"
 >
 > Данная страница применяется только в том случае, если вы используете одну из этих служб.
 
-Расширение системы диагностики Azure используется с другими продуктами диагностики корпорации Майкрософт, такими как Azure Monitor, Application Insights и Log Analytics. Дополнительные сведения см. в статье [Обзор мониторинга в Microsoft Azure](../../azure-monitor/overview.md).
+Расширение системы диагностики Azure используется с другими продуктами диагностики корпорации Майкрософт, таких как Azure Monitor, включающий Application Insights и Log Analytics. Дополнительные сведения см. в статье [Обзор мониторинга в Microsoft Azure](../../azure-monitor/overview.md).
 
 ## <a name="azure-sdk-and-diagnostics-versions-shipping-chart"></a>Диаграмма версий пакета SDK для Azure и системы диагностики  
 
@@ -56,11 +56,11 @@ ms.locfileid: "54471656"
 ## <a name="schemas-index"></a>Указатель схем  
 Для разных версий системы диагностики Azure используются разные схемы конфигурации.
 
-[Схема конфигурации системы диагностики Azure 1.0](diagnostics-extension-schema-1dot0.md)  
+[Схема конфигурации системы диагностики 1.0](diagnostics-extension-schema-1dot0.md)  
 
-[Схема конфигурации системы диагностики Azure 1.2](diagnostics-extension-schema-1dot2.md)  
+[Схема конфигурации системы диагностики 1.2](diagnostics-extension-schema-1dot2.md)  
 
-[Схема конфигурации системы диагностики версии 1.3 и более поздние версии](diagnostics-extension-schema-1dot3.md)  
+[Системы диагностики версии 1.3 и более поздние версии схемы конфигурации](diagnostics-extension-schema-1dot3.md)  
 
 ## <a name="version-history"></a>Журнал версий
 

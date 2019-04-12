@@ -1,6 +1,6 @@
 ---
-title: Примеры PowerShell для Azure Log Analytics | Документация Майкрософт
-description: Здесь приведены примеры PowerShell для Azure Log Analytics.
+title: Примеры PowerShell для Azure Monitor | Документация Майкрософт
+description: Примеры PowerShell для Azure Monitor
 services: log-analytics
 documentationcenter: ''
 author: mgoedtel
@@ -15,20 +15,20 @@ ms.workload: na
 ms.date: 09/14/2017
 ms.author: magoedte
 ms.custom: mvc
-ms.openlocfilehash: 642aa385f52e3757f1f872d47d6dd2de80f36d2e
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: 5aac1f7e1ded700b9bec38c358ea0049df93fd3e
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53111357"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59492623"
 ---
-# <a name="azure-log-analytics-powershell-samples"></a>Примеры PowerShell для Azure Log Analytics
+# <a name="azure-monitor-powershell-samples"></a>Примеры Azure Monitor с помощью PowerShell
 
-В следующей таблице представлены ссылки на примеры сценариев PowerShell для выполнения различных функций в Log Analytics.
+В следующей таблице содержатся ссылки на примеры сценариев PowerShell для выполнения различных функций в Azure Monitor.
 
 | | |
 |---|---|
 |**Создание рабочей области**||
-| [Создание рабочей области Log Analytics с помощью PowerShell](../scripts/powershell-sample-create-workspace.md) | Создает рабочую область в Log Analytics.|
+| [Создание рабочей области Log Analytics](../scripts/powershell-sample-create-workspace.md) | Создает рабочую область Log Analytics в Azure Monitor.|
 | | |
 

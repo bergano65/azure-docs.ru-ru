@@ -1,6 +1,6 @@
 ---
-title: Сбор данных Office 365 в предварительной версии Sentinel Azure | Документация Майкрософт
-description: Дополнительные сведения о сборе данных Office 365 в Azure Sentinel.
+title: Подключайте данные из Office 365 для предварительной версии Sentinel Azure | Документация Майкрософт
+description: Узнайте, как подключиться к Azure Sentinel данных Office 365.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/26/2019
+ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: ad501958a5f88c821e48a3e21f69a960160b3c8e
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: 77587b0b7506ef0ccadbeb6d1f010f5b6a72d93e
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58574864"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59495196"
 ---
-# <a name="collect-data-from-office-365-logs"></a>Собирать данные из Office 365 журналов
+# <a name="connect-data-from-office-365-logs"></a>Подключайте данные из Office 365 журналов
 
 > [!IMPORTANT]
 > Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
@@ -33,11 +33,11 @@ ms.locfileid: "58574864"
 ## <a name="prerequisites"></a>Технические условия
 
 - На клиенте должен быть глобальный администратор или администратор безопасности
-- На компьютере, с которого вы выполнили вход в Azure Sentinel для создания подключения, порт suretha марки 4433 открыт для веб-трафика.
+- На компьютере, с которого вы выполнили вход в Azure Sentinel, чтобы создать подключение, убедитесь, что открыт порт 4433 для веб-трафика.
 
 ## <a name="connect-to-office-365"></a>Подключение к Office 365
 
-1. В Azure Sentinel, выберите **сбора данных** и нажмите кнопку **Office 365** плитку.
+1. В Azure Sentinel, выберите **соединители данных** и нажмите кнопку **Office 365** плитку.
 
 2. Если вы еще не включили, в разделе **подключения** использовать **включить** кнопку, чтобы включить решение Office 365. Если оно уже включено, оно будет идентифицировано в окне подключения как уже включена.
 1. Office 365 позволяет потоковая передача данных из нескольких клиентов в Azure Sentinel. Для каждого клиента, который вы хотите подключиться, добавьте клиент в разделе **подключают клиентов к Azure Sentinel**. 

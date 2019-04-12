@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: shlo
-ms.openlocfilehash: 0b8b892f02e54c3b0ddb155af97ce63ff115bb1f
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 6ec43b06ce266b9ceaddb5dd21cbf52f509d6596
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58523003"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59495914"
 ---
 # <a name="webhook-activity-in-azure-data-factory"></a>Веб-перехватчика действия в фабрике данных Azure
 Обработчик веб-действие можно использовать для управления выполнением конвейеров через пользовательский код. Использование действия веб-перехватчика, клиенты могут вызвать конечную точку и передать URL-адрес обратного вызова. Запуск конвейера ожидает обратного вызова, вызываемый перед переходом к следующему действию.
@@ -63,11 +63,11 @@ URL-адрес | Целевая конечная точка и путь | Стр
 Заголовки | Заголовки, которые отправляются в запрос. Например, чтобы задать язык и тип в запросе: «заголовки»: {«Accept-Language»: «en-us», «Content-Type»: «application/json»}. | Строка (или выражение с типом результата "строка") | Да, требуется заголовок Content-type. "headers":{ "Content-Type":"application/json"} |
 текст | Представляет полезные данные, отправляемые конечной точке. | Текст передается обратно в обратный вызов URI должен быть допустимым JSON. Просмотрите схему полезных данных запроса в разделе [Схема полезных данных запроса](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fdata-factory%2Fcontrol-flow-web-activity%23request-payload-schema&amp;data=02%7C01%7Cshlo%40microsoft.com%7Cde517eae4e7f4f2c408d08d6b167f6b1%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636891457414397501&amp;sdata=ljUZv5csQQux2TT3JtTU9ZU8e1uViRzuX5DSNYkL0uE%3D&amp;reserved=0). | Yes |
 authentication | Метод проверки подлинности, используемый для вызова конечной точки. Поддерживаемые типы: «Базовый» или «ClientCertificate.» Дополнительные сведения см. в разделе [Проверка подлинности](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fdata-factory%2Fcontrol-flow-web-activity%23authentication&amp;data=02%7C01%7Cshlo%40microsoft.com%7Cde517eae4e7f4f2c408d08d6b167f6b1%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636891457414397501&amp;sdata=GdA1%2Fh2pAD%2BSyWJHSW%2BSKucqoAXux%2F4L5Jgndd3YziM%3D&amp;reserved=0). Если проверка подлинности не требуется, исключите это свойство. | Строка (или выражение с типом результата "строка") | Нет  |
-timeout | Время ожидания для действия &#39;callbackuri&#39; вызываемого. Как долго будет ожидать действие «callbackuri» должен быть вызван. Значение по умолчанию — 10mins («00: параметра»). Формат имеет Timespan д.чч:мм:сс т. е. | Строка | Нет  |
+timeout | Время ожидания для действия &#39;callBackUri&#39; вызываемого. Как долго будет ожидать действие «callBackUri» должен быть вызван. Значение по умолчанию — 10mins («00: параметра»). Формат имеет Timespan д.чч:мм:сс т. е. | Строка | Нет  |
 
 ## <a name="additional-notes"></a>Дополнительные замечания
 
-Фабрика данных Azure, передаст дополнительное свойство «callbackuri» в тексте URL-адрес конечной точки и будет ожидать, что этот uri должен быть вызван перед значение времени ожидания, указанное. Если uri не вызывается, происходит сбой действия с состоянием «TimedOut».
+Фабрика данных Azure, передаст дополнительное свойство «callBackUri» в тексте URL-адрес конечной точки и будет ожидать, что этот uri должен быть вызван перед значение времени ожидания, указанное. Если uri не вызывается, происходит сбой действия с состоянием «TimedOut».
 
 Веб-перехватчик действие сам завершается сбоем, только если вызов к пользовательской конечной точки завершается сбоем. Все сообщения об ошибках могут быть добавлены в тело функции обратного вызова и использовать в последующем действии.
 
@@ -75,8 +75,8 @@ timeout | Время ожидания для действия &#39;callbackuri&#
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных:
 
 - [Действие условия If](control-flow-if-condition-activity.md)
-- [Действие выполнения конвейера](control-flow-execute-pipeline-activity.md)
-- [Действие ForEach](control-flow-for-each-activity.md)
+- [Действие выполнения работы](control-flow-execute-pipeline-activity.md)
+- [Действие For Each](control-flow-for-each-activity.md)
 - [Действие получения метаданных](control-flow-get-metadata-activity.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 - [Веб-действие](control-flow-web-activity.md)

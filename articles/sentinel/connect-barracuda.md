@@ -1,6 +1,6 @@
 ---
-title: Сбор данных Barracuda в предварительной версии Sentinel Azure | Документация Майкрософт
-description: Дополнительные сведения о сборе данных Barracuda в Azure Sentinel.
+title: Подключайте данные из Barracuda предварительную версию Sentinel Azure | Документация Майкрософт
+description: Узнайте, как подключиться к Azure Sentinel Barracuda данных.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 2/28/2019
+ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: b4d1830e705e1813c8448787e587d720eaf5ddbd
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: d8e92fd3918230b48449926dcbb7528d919fd96f
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58574724"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59492844"
 ---
 # <a name="connect-your-barracuda-appliance"></a>Подключение устройства Barracuda 
 
@@ -31,11 +31,10 @@ ms.locfileid: "58574724"
 
 
 > [!NOTE]
-> 
-> - Данные будут храниться в географическое расположение рабочей области, на котором выполняется Azure Sentinel.
+> Данные будут храниться в географическое расположение рабочей области, на котором выполняется Azure Sentinel.
 
 ## <a name="configure-and-connect-barracuda-waf"></a>Настройка и подключение Barracuda WAF
-Barracuda Web Application Firewall можно интегрировать и экспортировать журналы непосредственно к [ASI] через сервер Azure OMS.
+Barracuda Web Application Firewall можно интегрировать и экспортировать журналы непосредственно в Azure Sentinel через сервер Azure OMS.
 1. Перейдите к [Barracuda WAF конфигурации потока](https://campus.barracuda.com/product/webapplicationfirewall/doc/73696965/configure-the-barracuda-web-application-firewall-to-integrate-with-the-oms-server-and-export-logs/)и следуйте инструкциям, чтобы установить подключение, используя следующие параметры:
     - **Идентификатор рабочей области**: скопируйте значение идентификатора рабочей области на странице соединителя Azure Sentinel Barracuda.
     - **Первичный ключ**: скопируйте значение первичного ключа на странице соединителя Azure Sentinel Barracuda.

@@ -1,5 +1,5 @@
 ---
-title: Безопасность связи клиента OPC и PLC OPC с помощью управления сертификатами OPC UA Интернета вещей Azure | Документация Майкрософт
+title: Безопасный обмен данными клиента OPC и PLC OPC хранилище OPC - Azure | Документация Майкрософт
 description: Безопасный обмен данными клиента OPC и OPC PLC входя свои сертификаты, используя хранилище OPC ЦС.
 author: dominicbetts
 ms.author: dobett
@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: iot-industrialiot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: c437f6db21956d1be5e4f6d3512f325f37ca7308
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 30eedd982fa0536ce45506c159de6d04132e9a14
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58759672"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59494019"
 ---
 # <a name="secure-the-communication-of-opc-client-and-opc-plc"></a>Безопасный обмен данными клиента OPC и OPC PLC
 
-Azure IoT OPC UA Управление сертификатами, а также знать, что хранилище OPC соответствует micro службы, можно настроить, регистр и управление жизненным циклом сертификатов для OPC UA серверных и клиентских приложений в облаке. В этой статье показано, как защитить обмен данными клиента OPC и OPC PLC входя свои сертификаты, используя хранилище OPC ЦС.
+Хранилище OPC — микрослужбу, можно настроить, регистрации и управления жизненным циклом сертификатов для сервера OPC UA и клиентских приложений в облаке. В этой статье показано, как защитить обмен данными клиента OPC и OPC PLC входя свои сертификаты, используя хранилище OPC ЦС.
 
 В следующей программе установки клиент OPC проверяет возможность подключения к OPC PLC. По умолчанию возможность подключения не поддерживается, так как оба компонента не подготавливаются с сертификатами, правого. Если компонент OPC UA была еще не подготовлена с помощью сертификата, он будет генерировать самозаверяющий сертификат при запуске. Тем не менее сертификат можно подписан центром сертификации (ЦС) и установить в компоненте OPC UA. После этого для клиента OPC и OPC PLC, подключение будет активирована. Процесс ниже рабочем процессе. Некоторые общие сведения о безопасности на основе унифицированной Архитектуры OPC можно найти в [в этом документе](https://opcfoundation.org/wp-content/uploads/2014/05/OPC-UA_Security_Model_for_Administrators_V1.00.pdf) Технический документ. Полные сведения можно найти в спецификации OPC UA.
 
@@ -39,7 +39,7 @@ Azure IoT OPC UA Управление сертификатами, а также 
 
 - Убедитесь, нет томов docker `opcclient` или `opcplc`. Уточните `docker volume ls` и удалить их с `docker volume rm <volumename>`. Необходимо также удалить контейнеры с `docker rm <containerid>` если тома по-прежнему используются в контейнере.
 
-**Краткое руководство**
+**Быстрый запуск**
 
 В корне репозитория, выполните следующую команду PowerShell:
 
@@ -59,7 +59,7 @@ opcplc-123456 | [20:51:32 INF] Rejected certificate store contains 0 certs
 ```
 Если вы видите сообщил сертификаты, выполните указанные выше действия подготовки и удалите тома docker.
 
-Убедитесь, что сбой подключения к OPC PLC. Вы должны увидеть следующие выходные данные в клиенте OPC записи выходных данных:
+Убедитесь, что сбой подключения к OPC PLC. Вы должны увидеть следующие выходные данные в выходные данные журнала клиента OPC:
 
 ```
 opcclient-123456 | [20:51:35 INF] Create secured session for endpoint URI 'opc.tcp://opcplc-123456:50000/' with timeout of 10000 ms.
@@ -92,7 +92,7 @@ opcclient-123456 | Opc.Ua.ServiceResultException: Certificate is not trusted.
     
 1. Перейдите к [хранилище OPC веб-сайт](https://opcvault.azurewebsites.net/).
 
-1. Выберите `Register New`
+1. Выберите пункт `Register New`
 
 1. Введите сведения OPC PLC из выходных данных журнала `CreateSigningRequest information` область в поля ввода на `Register New OPC UA Application` выберите `Server` как тип приложения.
 
@@ -130,7 +130,7 @@ opcclient-123456 | Opc.Ua.ServiceResultException: Certificate is not trusted.
 > [!NOTE]
 > При работе с этим сценарием, вы может распознать, `<addissuercertbase64-string>` и `<updatecrlbase64-string>` значения идентичны для `opcplc` и `opcclient`. Это справедливо для наших вариантов использования и может сэкономить время при выполнении действия.
 
-**Краткое руководство**
+**Быстрый запуск**
 
 В корне репозитория, выполните следующую команду PowerShell:
 
@@ -175,7 +175,7 @@ opcplc-123456 | [20:54:39 INF] Rejected certificate store contains 0 certs
 Издатель сертификата приложения — это ЦС `CN=Azure IoT OPC Vault CA, O=Microsoft Corp.` и OPC PLC доверия также все сертификаты, подписанные этим ЦС.
 
 
-Убедитесь, что подключение к OPC PLC будет создан, и клиент OPC может считывать данные из OPC PLC. Вы должны увидеть следующие выходные данные в клиенте OPC записи выходных данных:
+Убедитесь, что подключение к OPC PLC будет создан, и клиент OPC может считывать данные из OPC PLC. Вы должны увидеть следующие выходные данные в выходные данные журнала клиента OPC:
 ```
 opcclient-123456 | [20:54:42 INF] Create secured session for endpoint URI 'opc.tcp://opcplc-123456:50000/' with timeout of 10000 ms.
 opcclient-123456 | [20:54:42 INF] Session successfully created with Id ns=3;i=1085867946.
@@ -189,7 +189,7 @@ opcclient-123456 | [20:54:42 INF] Execute 'OpcClient.OpcTestAction' action on no
 opcclient-123456 | [20:54:42 INF] Action (ActionId: 000 ActionType: 'OpcTestAction', Endpoint: 'opc.tcp://opcplc-123456:50000/' Node 'i=2258') completed successfully
 opcclient-123456 | [20:54:42 INF] Value (ActionId: 000 ActionType: 'OpcTestAction', Endpoint: 'opc.tcp://opcplc-123456:50000/' Node 'i=2258'): 10/20/2018 20:54:42
 ```
-Если вы видите эти выходные данные, OPC PLC, теперь доверие клиента OPC и наоборот, так как обоим назначено теперь сертификаты, подписанный центром сертификации и оба доверия сертификатов, необходимых какие where подписанные этим ЦС.
+Если вы видите эти выходные данные, OPC PLC, теперь доверяющих OPC клиента и наоборот, так как оба имеют теперь сертификатов, подписанных центром сертификации и сертификатов какие where доверие подписанные этим ЦС.
 
 > [!NOTE] 
 > Несмотря на то, что мы показали первые две проверки шаги только для OPC PLC, их необходимо также проверить для клиента OPC.

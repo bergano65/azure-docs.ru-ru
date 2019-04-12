@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 12/10/2018
 ms.author: routlaw
 ms.custom: seodec18
-ms.openlocfilehash: 71632b3846a5dac39d7827c874367bd9802574f8
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: bab6510af98b153ecb61db8fc49b5124aae04598
+ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58803532"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59500470"
 ---
 # <a name="java-developers-guide-for-app-service-on-linux"></a>Руководство разработчика для Java для службы приложений в Linux
 
@@ -69,9 +69,13 @@ az webapp log tail --name webappname --resource-group myResourceGroup
 
 ### <a name="app-logging"></a>Ведение журнала приложений
 
-Включите [ведение журнала приложений](/azure/app-service/troubleshoot-diagnostic-logs#enablediag) с помощью портала Azure или [Azure CLI](/cli/azure/webapp/log#az-webapp-log-config), чтобы настроить службу приложений для записи выходных данных стандартной консоли приложения и потоков ошибок стандартной консоли в локальную файловую систему или хранилище BLOB-объектов Azure. Запись журналов в локальную файловую систему экземпляра службы приложений отключается через 12 часов после настройки ведения журнала. Если необходимо более длительное хранение, настройте приложение для записи выходных данных в контейнер больших двоичных объектов.
+Включите [ведение журнала приложений](/azure/app-service/troubleshoot-diagnostic-logs#enablediag) с помощью портала Azure или [Azure CLI](/cli/azure/webapp/log#az-webapp-log-config), чтобы настроить службу приложений для записи выходных данных стандартной консоли приложения и потоков ошибок стандартной консоли в локальную файловую систему или хранилище BLOB-объектов Azure. Запись журналов в локальную файловую систему экземпляра службы приложений отключается через 12 часов после настройки ведения журнала. Если необходимо более длительное хранение, настройте приложение для записи выходных данных в контейнер больших двоичных объектов. Журналы приложений Java и Tomcat можно найти в `/home/LogFiles/Application/` каталога.
 
 Если приложение использует [Logback](https://logback.qos.ch/) или [Log4j](https://logging.apache.org/log4j) для трассировки, то эти данные трассировки можно передать в Azure Application Insights для просмотра, выполнив инструкции по настройке платформы ведения журнала в разделе [Просмотр журналов трассировки Java в Application Insights](/azure/application-insights/app-insights-java-trace-logs).
+
+### <a name="troubleshooting-tools"></a>Средства устранения неполадок
+
+На основе встроенных образов Java [Alpine Linux](https://alpine-linux.readthedocs.io/en/latest/getting_started.html) операционной системы. Используйте `apk` диспетчер пакетов для установки Устранение неполадок средства или команды.
 
 ## <a name="customization-and-tuning"></a>Настройка
 
@@ -79,33 +83,36 @@ az webapp log tail --name webappname --resource-group myResourceGroup
 
 - [Настройка параметров службы приложений](/azure/app-service/web-sites-configure?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
 - [Настройка личного домена](/azure/app-service/app-service-web-tutorial-custom-domain?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
-- [Включение SSL](/azure/app-service/app-service-web-tutorial-custom-ssl?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
+- [Включить SSL](/azure/app-service/app-service-web-tutorial-custom-ssl?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
 - [Добавление CDN](/azure/cdn/cdn-add-to-web-app?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
+- [Настройка на сайт Kudu](https://github.com/projectkudu/kudu/wiki/Configurable-settings#linux-on-app-service-settings)
 
 ### <a name="set-java-runtime-options"></a>Настройка параметров среды выполнения Java
 
-Чтобы настроить выделенную память или другие параметры среды выполнения виртуальной машины Java в средах Java SE и Tomcat, задайте параметр JAVA_OPTS в качестве [параметра приложения](/azure/app-service/web-sites-configure#app-settings), как показано ниже. При запуске служба приложений для Linux передает этот параметр в качестве переменной среды в среду выполнения Java.
+Чтобы задать объем выделенной памяти и других параметров среды выполнения виртуальной машины Java в средах Java SE и Tomcat, создайте [параметр приложения](/azure/app-service/web-sites-configure#app-settings) с именем `JAVA_OPTS` с параметрами. При запуске служба приложений для Linux передает этот параметр в качестве переменной среды в среду выполнения Java.
 
-На портале Azure в разделе **Параметры приложения** для веб-приложения создайте параметр приложения `JAVA_OPTS`, включающий в себя дополнительные параметры, такие как `$JAVA_OPTS -Xms512m -Xmx1204m`.
+На портале Azure в разделе **Параметры приложения** для веб-приложения создайте параметр приложения `JAVA_OPTS`, включающий в себя дополнительные параметры, такие как `-Xms512m -Xmx1204m`.
 
-Чтобы настроить параметр приложения из подключаемого модуля Maven для Службы приложений Azure для Linux, добавьте теги "параметр/значение" в раздел подключаемого модуля Azure. В следующем примере задаются минимальный и максимальный размеры кучи для Java.
+Чтобы настроить параметр приложения из подключаемого модуля Maven, добавьте значение параметра/тегов в разделе подключаемый модуль Azure. В следующем примере задаются минимальный и максимальный размеры кучи для Java.
 
 ```xml
 <appSettings>
     <property>
         <name>JAVA_OPTS</name>
-        <value>$JAVA_OPTS -Xms512m -Xmx1204m</value>
+        <value>-Xms512m -Xmx1204m</value>
     </property>
 </appSettings>
 ```
 
 Разработчики, запускающие отдельное приложение в одном слоте развертывания в плане службы приложений, могут использовать следующие параметры.
 
-- Экземпляры B1 и S1: -Xms1024m -Xmx1024m.
-- Экземпляры B2 и S2: -Xms3072m -Xmx3072m.
-- Экземпляры B3 и S3: -Xms6144m -Xmx6144m.
+- Экземпляры B1 и S1: `-Xms1024m -Xmx1024m`
+- Экземпляры В2 и S2: `-Xms3072m -Xmx3072m`
+- Экземпляры B3 и S3: `-Xms6144m -Xmx6144m`
 
 При настройке параметров кучи приложения просмотрите сведения о плане службы приложений и примите во внимание, что наличие нескольких приложений и одного слота развертывания требует оптимального выделения памяти.
+
+Если вы развертываете приложение JAR-ФАЙЛ, его имя должно `app.jar` таким образом, чтобы встроенного изображения мог корректно идентифицировать приложение. (Подключаемый модуль Maven делает этот переименование автоматически.) Если вы не хотите переименовать JAR-ФАЙЛУ для `app.jar`, вы можете отправить сценарий оболочки с помощью команды для запуска JAR-ФАЙЛУ. Вставьте полный путь для этого сценария в [файл запуска](https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-faq#startup-file) текстовое поле в разделе конфигурации портала.
 
 ### <a name="turn-on-web-sockets"></a>Включение веб-сокетов
 
@@ -126,7 +133,7 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 
 ### <a name="set-default-character-encoding"></a>Настройка кодировки по умолчанию
 
-На портале Azure в разделе **Параметры приложения** для веб-приложения создайте параметр приложения `JAVA_OPTS` со значением `$JAVA_OPTS -Dfile.encoding=UTF-8`.
+На портале Azure в разделе **Параметры приложения** для веб-приложения создайте параметр приложения `JAVA_OPTS` со значением `-Dfile.encoding=UTF-8`.
 
 Можно также настроить параметр приложения с помощью подключаемого модуля Maven для службы приложений. Добавьте теги имени и значения параметра в конфигурацию подключаемого модуля.
 
@@ -134,10 +141,14 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 <appSettings>
     <property>
         <name>JAVA_OPTS</name>
-        <value>$JAVA_OPTS -Dfile.encoding=UTF-8</value>
+        <value>-Dfile.encoding=UTF-8</value>
     </property>
 </appSettings>
 ```
+
+### <a name="adjust-startup-timeout"></a>Отрегулировать время ожидания запуска
+
+Если приложение Java, особенно велик, следует увеличить предельное время запуска. Чтобы сделать это, создайте параметр приложения, `WEBSITES_CONTAINER_START_TIME_LIMIT` и присвойте ему значение количество секунд ожидания до истечения времени ожидания службы приложений. Максимальное значение равно `1800` секунд.
 
 ## <a name="secure-applications"></a>Защита приложений
 
@@ -171,9 +182,9 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 
 | База данных   | Имя класса драйвера                             | Драйвер JDBC                                                                      |
 |------------|-----------------------------------------------|------------------------------------------------------------------------------------------|
-| PostgreSQL | `org.postgresql.Driver`                        | [Загрузить](https://jdbc.postgresql.org/download.html)                                    |
+| PostgreSQL | `org.postgresql.Driver`                        | [Download (Скачать)](https://jdbc.postgresql.org/download.html)                                    |
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Скачать](https://dev.mysql.com/downloads/connector/j/) (выберите "Platform Independent" (Независимо от платформы)) |
-| SQL Server; | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
+| SQL Server; | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Download (Скачать)](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
 
 Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или Java Persistence API (JPA), сначала настройте переменную среды `CATALINA_OPTS`, считываемую Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 

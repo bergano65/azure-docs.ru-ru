@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 08/06/2018
 ms.author: cweining
-ms.openlocfilehash: 93d0f148c1fa3f13e79b28e19527251455a1b65c
-ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
+ms.openlocfilehash: 8ad472b9c92e3bc2164146191a63985fd26becab
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "59470863"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59492521"
 ---
 # <a name="profile-live-azure-cloud-services-with-application-insights"></a>Профилирование облачных служб реального времени Azure с помощью Application Insights
 
@@ -41,7 +41,7 @@ Application Insights Profiler поставляется с расширением
 
     * Сведения о рабочих ролях см. в статье [Написание кода для отслеживания запросов с помощью Azure Application Insights](profiler-trackrequests.md?toc=/azure/azure-monitor/toc.json).
 
-1. Настройте использование Profiler в расширении системы диагностики Azure следующим образом.
+1. Настройка расширения системы диагностики Azure для включения Profiler:
 
     a. Найдите файл *diagnostics.wadcfgx* [системы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) для роли приложения, как показано ниже.  
 

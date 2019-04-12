@@ -1,6 +1,6 @@
 ---
-title: Собирать данные Azure AD в предварительной версии Sentinel Azure | Документация Майкрософт
-description: Дополнительные сведения о сборе данных Azure Active Directory в Azure Sentinel.
+title: Подключайте данные из Azure AD для предварительной версии Sentinel Azure | Документация Майкрософт
+description: Узнайте, как подключиться к Azure Sentinel данные Azure Active Directory.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 1/30/2019
+ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: b42fb982abb916503d530d5040641ba1dcce3c92
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: f29ae9a8fcaecfc345efae02084f31d133e67b5d
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58575136"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59494890"
 ---
-# <a name="collect-data-from-azure-active-directory"></a>Сбор данных из Azure Active Directory
+# <a name="connect-data-from-azure-active-directory"></a>Подключайте данные из Azure Active Directory
 
 > [!IMPORTANT]
 > Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
@@ -38,7 +38,7 @@ Azure Sentinel позволяет собирать данные из [Azure Acti
 
 ## <a name="connect-to-azure-ad"></a>Подключение к Azure AD
 
-1. В Azure Sentinel, выберите **сбора данных** и нажмите кнопку **Azure Active Directory** плитку.
+1. В Azure Sentinel, выберите **соединители данных** и нажмите кнопку **Azure Active Directory** плитку.
 
 2. Рядом с журналы для потоковой передачи в Azure Sentinel, щелкните **Connect**.
 

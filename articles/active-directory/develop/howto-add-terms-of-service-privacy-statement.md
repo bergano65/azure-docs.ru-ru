@@ -1,5 +1,5 @@
 ---
-title: Условия обслуживания и заявление о конфиденциальности для приложения Azure AD | Документация Майкрософт
+title: Условия службы и заявление о конфиденциальности для приложений | Azure
 description: Узнайте, как настроить условия обслуживания и заявление о конфиденциальности для приложений, зарегистрированных для использования Azure AD.
 services: active-directory
 documentationcenter: dev-center-name
@@ -17,14 +17,14 @@ ms.author: celested
 ms.reviwer: lenalepa, sureshja
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3687d0b50add3301fb8e15b9c70569554b91c04
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 97728fa70f0c5f58510e0e68d27a379b20887703
+ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56193515"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59500309"
 ---
-# <a name="terms-of-service-and-privacy-statement-for-registered-azure-active-directory-apps"></a>Условия обслуживания и заявление о конфиденциальности для зарегистрированных приложений Azure Active Directory
+# <a name="how-to-configure-terms-of-service-and-privacy-statement-for-an-app"></a>Практическое руководство: Настройка условия службы и заявление о конфиденциальности для приложения
 
 Разработчики, создающие и обслуживающие приложения, которые интегрируются с Azure Active Directory (Azure AD) и учетными записями Майкрософт, должны добавить ссылки на условия обслуживания и заявление о конфиденциальности приложений. Условия обслуживания и заявление о конфиденциальности отображаются в окне запроса согласия пользователя. Они помогут пользователям понять, что они могут доверять вашему приложению. Условия обслуживания и заявление о конфиденциальности особенно важны для пользовательских мультитенантных приложений, то есть приложений, используемых в нескольких каталогах или доступных для любой учетной записи Майкрософт.
 
@@ -47,7 +47,7 @@ ms.locfileid: "56193515"
 | Рекомендация     | ОПИСАНИЕ                           |
 |---------------|---------------------------------------|
 | Формат        | Допустимый URL-адрес                             |
-| Допустимые схемы | HTTP и HTTPS</br>Рекомендуется использовать протокол HTTPS |
+| Допустимые схемы | HTTP и HTTPS<br/>Рекомендуется использовать протокол HTTPS |
 | Максимальная длина    | 2048 знаков                       |
 
 Примеры: `https://myapp.com/terms-of-service` и `https://myapp.com/privacy-statement`
@@ -56,10 +56,10 @@ ms.locfileid: "56193515"
 
 Подготовив условия обслуживания и заявление о конфиденциальности, можно добавить ссылки на эти документы в приложение с помощью одного из следующих методов:
 
-* [с помощью портала Azure](#registered-in-azure-portal);
-* [на портале регистрации приложений или в Центре разработки](#registered-in-app-reg-portal);
-* [с помощью JSON объекта приложения](#app-object-json);
-* [с помощью бета-версии REST API MSGraph](#msgraph-beta-rest-api).
+* [На портале Azure](#registered-in-azure-portal)
+* [В портале регистрации приложений, или в центре разработчиков](#registered-in-app-reg-portal)
+* [С помощью приложения объекта JSON](#app-object-json)
+* [С помощью бета-версии MSGraph REST API](#msgraph-beta-rest-api)
 
 ### <a name="registered-in-azure-portal"></a>Если приложение зарегистрировано на портале Azure
 
@@ -114,5 +114,5 @@ PATCH https://graph.microsoft.com/beta/applications/{application id}
 ```
 
 > [!NOTE]
-> * Соблюдайте осторожность, чтобы не перезаписать значения, присвоенные какому-либо из этих полей: `supportUrl`, `marketingUrl`, и `logoUrl`.
+> * Будьте внимательны, чтобы не перезаписать любые существующие значения, которые были назначены для любой из этих полей: `supportUrl`, `marketingUrl`, и `logoUrl`
 > * Бета-версия REST API MSGraph будет работать только в случае входа с учетной записью Azure AD. Личные учетные записи Майкрософт не поддерживаются.

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 07/02/2018
 ms.author: ellacroi
-ms.openlocfilehash: 852d0874a91418bf28e674b02087aeb7edbdd833
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 5fb8d4420c4d46bc8a4ffe80743578cea338dd8e
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56730517"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59492555"
 ---
 # <a name="support-for-appsource"></a>Поддержка AppSource  
 Варианты поддержки для AppSource.  
@@ -28,7 +28,7 @@ ms.locfileid: "56730517"
 
 | Канал поддержки | ОПИСАНИЕ |  
 |:--- |:--- |  
-| Форумы MSDN. Azure Active Directory, расположенный [social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD](https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD "Azure AD на форумах MSDN") | Форум Microsoft Developer Network. |  
+| Форумы MSDN: Azure Active Directory, расположенный [social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD](https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD "Azure AD на форумах MSDN") | Форум Microsoft Developer Network. |  
 | StackOverflow: Azure Active Directory, расположенный [stackoverflow.com/questions/tagged/azure-active-directory](https://stackoverflow.com/questions/tagged/azure-active-directory "Azure AD на сайте stackoverflow") | Среда Stack Overflow, где можно получить решения и задать вопросы, относящиеся к Azure Active Directory (Azure AD). |  
 
 ## <a name="next-steps"></a>Дальнейшие действия

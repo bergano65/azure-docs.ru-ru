@@ -1,6 +1,6 @@
 ---
-title: Сбор данных Cloud App Security в предварительной версии Sentinel Azure | Документация Майкрософт
-description: Дополнительные сведения о сборе данных Cloud App Security в Azure Sentinel.
+title: Подключайте данные из Cloud App Security предварительную версию Sentinel Azure | Документация Майкрософт
+description: Узнайте, как подключиться к Azure Sentinel данных Cloud App Security.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -12,19 +12,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 2/28/2019
+ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: b0033f5f8636053f88825541b8b2cfcbf2fc9f8b
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.openlocfilehash: 5a7dfeed7b52453b38720c21c7d213679b8d2854
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57245494"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59496375"
 ---
-# <a name="collect-data-from-microsoft-cloud-app-security"></a>Сбор данных из Microsoft Cloud App Security 
+# <a name="connect-data-from-microsoft-cloud-app-security"></a>Подключайте данные из Microsoft Cloud App Security 
 
 > [!IMPORTANT]
-> Azure Sentinel сейчас находится в общедоступной предварительной версии.
+> Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Можно осуществлять потоковую передачу журналов из [Cloud App Security](https://docs.microsoft.com/cloud-app-security/what-is-cloud-app-security) в Azure Sentinel одним щелчком. Это подключение позволяет потоковую передачу оповещений из Cloud App Security в Azure Sentinel. 
@@ -39,7 +39,7 @@ ms.locfileid: "57245494"
 Если Cloud App Security развертывается и приема данных, данные оповещения можно легко настроить потоковую передачу в Azure Sentinel.
 
 
-1. В Azure Sentinel, выберите **сбора данных** и нажмите кнопку **Cloud App Security** плитку.
+1. В Azure Sentinel, выберите **соединители данных** и нажмите кнопку **Cloud App Security** плитку.
 
 2. Щелкните **Подключить**.
 
@@ -47,6 +47,6 @@ ms.locfileid: "57245494"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В этом документе вы узнали, как подключиться к Azure Sentinel Microsoft Cloud App Security. Дополнительные сведения о Azure Sentinel, см. в разделе со следующими статьями:
+В этом документе вы узнали, как подключиться к Azure Sentinel Microsoft Cloud App Security. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
 - Начало работы [обнаружение угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

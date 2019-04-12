@@ -2,18 +2,18 @@
 title: Конечные точки безопасности в службе подготовки устройств Интернета вещей | Документация Майкрософт
 description: Основные понятия. Управление доступом к службе "Подготовка устройств Интернета вещей" для серверных приложений. Эта статья включает сведения о маркерах безопасности.
 author: wesmc7777
-manager: timlt
+manager: philmea
 ms.service: iot-dps
 services: iot-dps
 ms.topic: conceptual
-ms.date: 09/28/2017
+ms.date: 04/09/2019
 ms.author: wesmc
-ms.openlocfilehash: 0258a37b0614ca7505a90f88afaaaee1a6d5c04e
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
-ms.translationtype: HT
+ms.openlocfilehash: 7ff622ceac9c49eda7ba6bca1a8bb3aaabccb816
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55496976"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59495436"
 ---
 # <a name="control-access-to-azure-iot-hub-device-provisioning-service"></a>Управление доступом к службе подготовки устройств Центра Интернета вещей Azure
 
@@ -75,7 +75,7 @@ SharedAccessSignature sr =
 
 Это ожидаемые значения:
 
-| Значение | ОПИСАНИЕ |
+| Значение | Описание |
 | --- | --- |
 | {signature} |Строка подписи HMAC-SHA256 формата `{URL-encoded-resourceURI} + "\n" + expiry`. **Важно!** Ключ шифруется в кодировке base64 и используется для вычислений HMAC-SHA256.|
 | {expiry} |Строки в формате UTF8, отображающие количество секунд с начала эры 00:00:00 (в формате UTC) 1 января 1970 г. |
@@ -179,7 +179,7 @@ var token = generateSasToken(endpoint, policyKey, policyName, 60);
 
 | Разрешение | Примечания |
 | --- | --- |
-| **ServiceConfig** |Предоставляет доступ для изменения конфигурации службы. <br/>Это разрешение используется серверными облачными службами. |
+| **serviceConfig** |Предоставляет доступ для изменения конфигурации службы. <br/>Это разрешение используется серверными облачными службами. |
 | **EnrollmentRead** |Предоставляет доступ на чтение к регистрации устройств и группам регистрации. <br/>Это разрешение используется серверными облачными службами. |
 | **EnrollmentWrite** |Предоставляет доступ на запись к регистрации устройств и группам регистрации. <br/>Это разрешение используется серверными облачными службами. |
 | **RegistrationStatusRead** |Предоставляет доступ на чтение к состоянию регистрации устройства. <br/>Это разрешение используется серверными облачными службами. |

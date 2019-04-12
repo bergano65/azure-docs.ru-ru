@@ -1,6 +1,6 @@
 ---
-title: Сбор данных брандмауэра Microsoft веб-приложения в предварительной версии Sentinel Azure | Документация Майкрософт
-description: Дополнительные сведения о сборе данных брандмауэра Microsoft веб-приложения в Azure Sentinel.
+title: Подключение данных брандмауэра веб-приложения Microsoft предварительную версию Sentinel Azure | Документация Майкрософт
+description: Узнайте, как соединиться с данных брандмауэра веб-приложения Microsoft Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/6/2019
+ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: 2238060acb60b1be0d06b81f62fb45a7f1c7a9b6
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: 5316fa7e3aa4465349b762b99bec9171f821062f
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58580603"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59491036"
 ---
-# <a name="collect-data-from-microsoft-web-application-firewall"></a>Сбор данных из Microsoft брандмауэр веб-приложения
+# <a name="connect-data-from-microsoft-web-application-firewall"></a>Подключайте данные из Microsoft брандмауэр веб-приложения
 
 > [!IMPORTANT]
 > Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
@@ -39,15 +39,15 @@ ms.locfileid: "58580603"
 Если вас уже есть брандмауэр веб-приложения Microsoft, убедитесь, что у вас есть существующий ресурс шлюза.
 После развертывания брандмауэра веб-приложения Майкрософт и получение данных, данные оповещения можно легко настроить потоковую передачу в Azure Sentinel.
     
-5. На портале Azure Sentinel выберите **соединители данных**.
-5. На странице соединителей данных, выберите **WAF** плитку.
+1. На портале Azure Sentinel выберите **соединители данных**.
+1. На странице соединителей данных, выберите **WAF** плитку.
 1. Перейдите к [ресурсов шлюза приложений](https://ms.portal.azure.com/#blade/HubsExtension/BrowseAllResourcesBlade/resourceType/Microsoft.Network%2FapplicationGateways) и выберите WAF.
     1. Выберите **параметров диагностики**.
     1. Выберите **+ добавить параметр диагностики** под таблицей.
     1. В **параметров диагностики** введите **имя** и выберите **отправить в Log Analytics**.
     1. В разделе **рабочей области Log Analytics** выберите рабочую область Azure Sentinel.
     1. Выберите типы журналов, которые необходимо проанализировать. Мы рекомендуем: ApplicationGatewayAccessLog и ApplicationGatewayFirewallLog.
-6. Для использования соответствующей схемы в Log Analytics для оповещений Microsoft web application брандмауэра, поиск **AzureDiagnostics**.
+1. Для использования соответствующей схемы в Log Analytics для оповещений Microsoft web application брандмауэра, поиск **AzureDiagnostics**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как соединиться с брандмауэром веб-приложения Microsoft Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.

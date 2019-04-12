@@ -1,6 +1,6 @@
 ---
-title: Собирать данные Azure ATP в предварительной версии Sentinel Azure | Документация Майкрософт
-description: Дополнительные сведения о сборе данных Azure ATP в Azure Sentinel.
+title: Подключайте данные из Azure ATP предварительную версию Sentinel Azure | Документация Майкрософт
+description: Узнайте, как соединиться с Azure ATP данных Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/26/2019
+ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: 5254e60b9b7c38e5f4534e90f8aabe938aef99b2
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: 153b6cb44cbcf5ecca9a4941c6bef7a8721dc56c
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58574949"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59492657"
 ---
-# <a name="collect-data-from-azure-advanced-threat-protection-atp"></a>Сбор данных из Azure Advanced Threat Protection (ATP)
+# <a name="connect-data-from-azure-advanced-threat-protection-atp"></a>Подключайте данные из Azure Advanced Threat Protection (ATP)
 
 > [!IMPORTANT]
 > Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
@@ -42,7 +42,7 @@ ms.locfileid: "58574949"
 
 
 
-1. В Azure Sentinel, выберите **сбора данных** и нажмите кнопку **Azure ATP** плитку.
+1. В Azure Sentinel, выберите **соединители данных** и нажмите кнопку **Azure ATP** плитку.
 
 2. Щелкните **Подключить**.
 

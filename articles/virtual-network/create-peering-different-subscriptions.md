@@ -4,20 +4,20 @@ titlesuffix: Azure Virtual Network
 description: Узнайте, как создать пиринг между виртуальными сетями, развернутыми с помощью Resource Manager в разных подписках Azure.
 services: virtual-network
 documentationcenter: ''
-author: jimdial
+author: anavinahar
 ms.service: virtual-network
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/24/2018
-ms.author: jdial;anavin
-ms.openlocfilehash: 2965f72a1f0532cd9e13d5fa03750cf4ed8bab99
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.date: 04/09/2019
+ms.author: anavin
+ms.openlocfilehash: ff8c866f62e8d795f04491cf249b7dae26c8269c
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58403474"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59492300"
 ---
 # <a name="create-a-virtual-network-peering---resource-manager-different-subscriptions"></a>Создание пиринга виртуальных сетей, развернутых с помощью Resource Manager в разных подписках
 
@@ -27,9 +27,9 @@ ms.locfileid: "58403474"
 
 |Модель развертывания Azure  | Подписка Azure.  |
 |--------- |---------|
-|[Обе Resource Manager](tutorial-connect-virtual-networks-portal.md) |Аналогично|
-|[Одна виртуальная сеть Resource Manager, одна классическая виртуальная сеть](create-peering-different-deployment-models.md) |Аналогично|
-|[Одна виртуальная сеть Resource Manager, одна классическая виртуальная сеть](create-peering-different-deployment-models-subscriptions.md) |Разные|
+|[Обе — диспетчер ресурсов](tutorial-connect-virtual-networks-portal.md) |Аналогично|
+|[Одна — диспетчер ресурсов, вторая — классическая](create-peering-different-deployment-models.md) |Аналогично|
+|[Одна — диспетчер ресурсов, вторая — классическая](create-peering-different-deployment-models-subscriptions.md) |Разные|
 
 Невозможно создать пиринг между двумя виртуальными сетями, созданными с помощью классической модели развертывания. Если вам необходимо подключить виртуальные сети, созданные с помощью классической модели развертывания, можно использовать [VPN-шлюз](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) Azure.
 
@@ -39,7 +39,9 @@ ms.locfileid: "58403474"
 
 ## <a name="portal"></a>Создание пиринга с помощью портала Azure
 
-Если виртуальные сети, пиринг между которыми требуется установить, размещены в подписках, связанных с разными клиентами Azure Active Directory, выполните инструкции в разделах для интерфейса командной строки и PowerShell в этой статье. Портал не поддерживает создание пиринга между виртуальными сетями, принадлежащими к подпискам из разных клиентов Active Directory.
+Если виртуальные сети, пиринг между которыми требуется установить, размещены в подписках, связанных с разными клиентами Azure Active Directory, выполните инструкции в разделах для интерфейса командной строки и PowerShell в этой статье. Портал не поддерживает создание пиринга между виртуальными сетями, принадлежащими к подпискам из разных клиентов Active Directory. 
+
+Обратите внимание на то, что Cloud Shell имеет ограничения во время переключения, подписках и клиентах, из-за которых Пиринга или Пиринга глобальной виртуальной сети между виртуальными сетями, принадлежащими к подпискам в разных клиентов Azure Active Directory не будет работать. Используйте PowerShell или интерфейса командной строки.
 
 В инструкциях ниже используются разные учетные записи для каждой подписки. Если вы используете учетную запись, имеющую разрешения для обеих подписок, то можете использовать эту учетную запись для всех действий. Пропустите выход с портала и назначение разрешений еще одного пользователя для виртуальных сетей.
 

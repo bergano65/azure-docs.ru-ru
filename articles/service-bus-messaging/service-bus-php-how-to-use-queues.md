@@ -12,33 +12,38 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PHP
 ms.topic: article
-ms.date: 09/10/2018
+ms.date: 04/10/2019
 ms.author: aschhab
-ms.openlocfilehash: 9915392f7bb12b31dce6e141383a48b69c6f70a9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 55eee839e24db2ad96eb635adc488e9a119c5907
+ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57842776"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59501201"
 ---
 # <a name="how-to-use-service-bus-queues-with-php"></a>Как использовать очереди служебной шины с PHP
 [!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
 
-В этом руководстве показано, как использовать очереди служебной шины. Примеры написаны на PHP и используют [пакет Azure SDK для PHP](../php-download-sdk.md). Здесь описаны такие сценарии, как **создание очередей**, **отправка и получение сообщений**, а также **удаление очередей**.
+В этом руководстве вы узнаете, как создавать приложения PHP для отправки и получения сообщений из очереди служебной шины. 
 
-[!INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
+## <a name="prerequisites"></a>Технические условия
+1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать ваши [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+2. Если у вас нет очереди для работы с, выполните шаги [с помощью портала Azure создать очередь служебной шины](service-bus-quickstart-portal.md) статью, чтобы создать очередь.
+    1. Чтение быстрого **Обзор** служебной шины **очереди**. 
+    2. Чтобы создать служебную шину **пространства имен**. 
+    3. Получить **строку подключения**. 
 
-[!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
+        > [!NOTE]
+        > Вы создадите **очереди** в пространстве имен служебной шины с помощью приложения PHP в этом руководстве. 
+3. [Пакет SDK для Azure для PHP](../php-download-sdk.md)
 
 ## <a name="create-a-php-application"></a>Создание приложения PHP
 Для создания приложения PHP, которое получает доступ к службе BLOB-объектов Azure, достаточно сослаться на классы в [пакете SDK Azure для PHP](../php-download-sdk.md) непосредственно из кода. Для создания приложения можно использовать любые средства разработки или Блокнот.
 
 > [!NOTE]
 > В установленном пакете PHP должно быть установлено и включено [расширение OpenSSL](https://php.net/openssl).
-> 
-> 
 
-В этом руководстве будут использоваться компоненты службы, которые могут быть вызваны локально или в коде из приложения PHP, работающем в веб-роли Azure, рабочей роли или на веб-сайте Azure.
+В этом руководстве будет использовать функции службы, которые могут быть вызваны из приложения PHP локально или в коде, работающем в Azure веб-роли, рабочей роли или веб-сайта.
 
 ## <a name="get-the-azure-client-libraries"></a>Получение клиентских библиотек Azure
 [!INCLUDE [get-client-libraries](../../includes/get-client-libraries.md)]
@@ -158,7 +163,7 @@ catch(ServiceException $e){
 }
 ```
 
-Сообщения, отправляемые в очереди служебной шины и получаемые из них, представляют собой экземпляры класса [BrokeredMessage][BrokeredMessage]. У объектов [BrokeredMessage][BrokeredMessage] есть набор стандартных методов и свойств, используемый для хранения настраиваемых свойств приложения, и текст из произвольных данных приложения.
+Сообщения, отправленные (и полученные из) служебной шины, очереди являются экземплярами [BrokeredMessage] [ BrokeredMessage] класса. У объектов [BrokeredMessage][BrokeredMessage] есть набор стандартных методов и свойств, используемый для хранения настраиваемых свойств приложения, и текст из произвольных данных приложения.
 
 Очереди служебной шины поддерживают максимальный размер сообщения 256 КБ для [уровня "Стандартный"](service-bus-premium-messaging.md) и 1 МБ для [уровня Premium](service-bus-premium-messaging.md). Максимальный размер заголовка, который содержит стандартные и настраиваемые свойства приложения, — 64 КБ. Ограничения на количество сообщений в очереди нет, но есть максимальный общий размер сообщений, содержащихся в очереди. Максимальный размер очереди ограничен 5 ГБ.
 

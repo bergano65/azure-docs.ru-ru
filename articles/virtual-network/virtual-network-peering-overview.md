@@ -4,20 +4,20 @@ titlesuffix: Azure Virtual Network
 description: Сведения о пиринге между виртуальными сетями в Azure.
 services: virtual-network
 documentationcenter: na
-author: jimdial
+author: anavinahar
 ms.service: virtual-network
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/21/2019
-ms.author: jdial
-ms.openlocfilehash: 3488e8501b0b9bea83bfcce5085d42b6476d3ed2
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.date: 04/01/2019
+ms.author: anavin
+ms.openlocfilehash: e6c5a9aa3e4e173ecfc79f4072d091493677afed
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58880429"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59489987"
 ---
 # <a name="virtual-network-peering"></a>Пиринг между виртуальными сетями
 
@@ -80,7 +80,6 @@ ms.locfileid: "58880429"
 
 Когда создается глобальный пиринг виртуальных сетей, действуют следующие ограничения:
 - Ресурсы в одной виртуальной сети не может взаимодействовать с IP-адрес внешнего интерфейса основные внутренней подсистемы балансировки нагрузки в глобально пиринговой виртуальной сети. Поддержка основные подсистемы балансировки нагрузки существует только в одном регионе. Поддержка стандартных подсистемы балансировки нагрузки существует для Пиринга глобальной виртуальной сети.
-- Можно использовать удаленные шлюзы или разрешить Транзит шлюзов в пиринговые виртуальные сети на этапе предварительной версии. Предварительная версия доступна во всех регионах Azure, Китай облачных регионах и регионы облака для государственных организаций. Нет список разрешений необходим. Можно проверить в предварительной версии с помощью интерфейса командной строки, PowerShell, шаблонов или API. Портал не поддерживается в предварительной версии.
 
 См. дополнительные сведения о [требованиях и ограничениях для виртуальных сетей](virtual-network-manage-peering.md#requirements-and-constraints). Дополнительные сведения об ограничениях на число пиринговых подключений, которые можно создать для виртуальной сети, см. в разделе о [сетевых ограничениях Azure](../azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits). 
 

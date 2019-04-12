@@ -3,17 +3,17 @@ title: Подготовка устройств к мультитенантнос
 description: Подготовка устройств к мультитенантности с помощью экземпляра службы подготовки устройств
 author: wesmc7777
 ms.author: wesmc
-ms.date: 08/15/2018
+ms.date: 04/10/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-manager: timlt
-ms.openlocfilehash: ea071b704c58383ce52615bb1dfd88df8017ef7f
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+manager: philmea
+ms.openlocfilehash: 84e1f57175d772ad281c18b67fa1be484c0cac69
+ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57544449"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59500742"
 ---
 # <a name="how-to-provision-for-multitenancy"></a>Подготовка к мультитенантности 
 
@@ -208,7 +208,7 @@ ms.locfileid: "57544449"
     git clone https://github.com/Azure/azure-iot-sdk-c.git --recursive
     ```
 
-    Размер этого репозитория в настоящее время составляет примерно 220 МБ. Выполнение этой операции может занять несколько минут.
+    Выполнение этой операции может занять несколько минут.
 
 1. Для обеих виртуальных машин создайте новую папку **cmake** внутри репозитория и измените путь, указав на эту папку.
 
@@ -420,7 +420,7 @@ J5n4NY2GiBYy7Mp4lDDa5CbEe6zDU/c62rhjCuFWxnc=
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о повторной подготовке см. в статье, посвященной [основным понятиям повторной подготовки устройств в Центре Интернета вещей](concepts-device-reprovision.md). 
+- Чтобы узнать дополнительные Reprovisioning, см. в разделе [инициализацию понятия устройства Интернета вещей](concepts-device-reprovision.md) 
 - Чтобы узнать дополнительные отзыва, см. в разделе [как отменить подготовку устройств, которые были автоматически подготовлены](how-to-unprovision-devices.md) 
 
 

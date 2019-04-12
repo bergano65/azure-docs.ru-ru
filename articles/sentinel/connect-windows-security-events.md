@@ -1,6 +1,6 @@
 ---
-title: Сбор данных событий безопасности Windows в предварительной версии Sentinel Azure | Документация Майкрософт
-description: Дополнительные сведения о сборе данных событий безопасности Windows в Azure Sentinel.
+title: Подключение данных событий безопасности Windows для предварительной версии Sentinel Azure | Документация Майкрософт
+description: Узнайте, как подключиться к Azure Sentinel данных событий безопасности Windows.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 2/28/2019
+ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: 90bff4cd98046a42fa31d98ff00e76d7fc9ac307
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: d131d39a9d9770046fa3f9368250204e4d0b0162
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58576094"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59491958"
 ---
 # <a name="connect-windows-security-events"></a>Подключение событий безопасности Windows 
 
@@ -42,7 +42,7 @@ ms.locfileid: "58576094"
 
 Чтобы полностью интегрировать события системы безопасности Windows в Azure Sentinel:
 
-1. На портале Azure Sentinel выберите **сбора данных** и выберите команду **событий безопасности Windows** плитку. 
+1. На портале Azure Sentinel выберите **соединители данных** и выберите команду **событий безопасности Windows** плитку. 
 1. Выберите типы данных для потоковой передачи.
 1. Нажмите кнопку **Обновить**.
 6. Для соответствующей схемы в Log Analytics можно использовать для событий безопасности Windows, найдите **SecurityEvent**.

@@ -4,20 +4,18 @@ description: Управляйте учетной записью, базой да
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 10/23/2018
+ms.date: 4/8/2019
 ms.author: mjbrown
-ms.openlocfilehash: c3028fd18bd9afefaa18f7f515a43a852ddef78a
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 1d19e58b2d1381725de490b68d9e4d00a2ca4cb6
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55464405"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59495487"
 ---
 # <a name="manage-azure-cosmos-resources-using-azure-cli"></a>Управление ресурсами Azure Cosmos с помощью Azure CLI
 
-В этом руководстве содержатся контейнеры Azure CLI, используемые для автоматизации управления учетными записями баз данных Azure Cosmos DB. Оно также включает команды для масштабирования пропускной способности контейнера. Страницы справки для всех команд интерфейса командной строки Azure Cosmos DB доступны в [справочнике по Azure CLI](https://docs.microsoft.com/cli/azure/cosmosdb). Вы также можете найти несколько примеров в [Экземплярах Azure CLI для Azure Cosmos DB](cli-samples.md), в том числе и сведения о том, как создавать и управлять учетными записями, базами данных и контейнерами Cosmos DB для MongoDB, Gremlin, Cassandra и Table API.
-
-При помощи этого примера-скрипта CLI создается учетная запись, база данных и контейнер API SQL в Azure Cosmos DB.  
+В этом руководстве содержатся общие команды для автоматизации управления учетными записями Azure Cosmos DB, баз данных и контейнеров с помощью Azure CLI. Страницы справки для всех команд интерфейса командной строки Azure Cosmos DB доступны в [справочнике по Azure CLI](https://docs.microsoft.com/cli/azure/cosmosdb). Вы также можете найти несколько примеров в [Экземплярах Azure CLI для Azure Cosmos DB](cli-samples.md), в том числе и сведения о том, как создавать и управлять учетными записями, базами данных и контейнерами Cosmos DB для MongoDB, Gremlin, Cassandra и Table API.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -25,96 +23,99 @@ ms.locfileid: "55464405"
 
 ## <a name="create-an-azure-cosmos-db-account"></a>создание учетной записи Azure Cosmos DB;
 
-Чтобы создать учетную запись Azure Cosmos DB с SQL API, согласованным сеансом, поддержкой нескольких источников в восточной и западной части США, откройте Azure CLI или Cloud Shell и выполните следующую команду:
+Чтобы создать учетную запись Azure Cosmos DB с SQL API, согласованность уровня сеанса, в восточной части США и Западная часть США, выполните следующую команду:
 
 ```azurecli-interactive
 az cosmosdb create \
-   –-name "myCosmosDbAccount" \
-   --resource-group "myResourceGroup" \
+   --name mycosmosdbaccount \
+   --resource-group myResourceGroup \
    --kind GlobalDocumentDB \
-   --default-consistency-level "Session" \
-   --locations "EastUS=0" "WestUS=1" \
-   --enable-multiple-write-locations true \
+   --default-consistency-level Session \
+   --locations EastUS=0 WestUS=1 \
+   --enable-multiple-write-locations false
 ```
+
+> [!IMPORTANT]
+> Имя учетной записи Azure Cosmos должны быть строчными.
 
 ## <a name="create-a-database"></a>Создание базы данных
 
-Чтобы создать базу данных Cosmos DB, откройте Azure CLI или Cloud Shell и выполните следующую команду:
+Чтобы создать базу данных Cosmos DB, выполните следующую команду:
 
 ```azurecli-interactive
 az cosmosdb database create \
-   --name "myCosmosDbAccount" \
-   --db-name "myDatabase" \
-   --resource-group "myResourceGroup"
+   --name mycosmosdbaccount \
+   --db-name myDatabase \
+   --resource-group myResourceGroup
 ```
 
 ## <a name="create-a-container"></a>Создание контейнера
 
-Чтобы создать контейнер Cosmos DB с 1000 ЕЗ/с и ключом секции, откройте Azure CLI или Cloud Shell и выполните следующую команду:
+Чтобы создать контейнер Cosmos DB с ЕЗ/с, 400 и ключ секции, выполните следующую команду:
 
 ```azurecli-interactive
 # Create a container
 az cosmosdb collection create \
-   --collection-name "myContainer" \
-   --name "myCosmosDbAccount" \
-   --db-name "myDatabase" \
-   --resource-group "myResourceGroup" \
-   --partition-key-path = "/myPartitionKey" \
-   --throughput 1000
+   --collection-name myContainer \
+   --name mycosmosdbaccount \
+   --db-name myDatabase \
+   --resource-group myResourceGroup \
+   --partition-key-path /myPartitionKey \
+   --throughput 400
 ```
 
 ## <a name="change-the-throughput-of-a-container"></a>Изменение пропускной способности контейнера
 
-Чтобы изменить пропускную способность контейнера Cosmos DB с 400 ЕЗ/с, откройте Azure CLI или Cloud Shell и выполните следующую команду:
+Чтобы изменить 1000 ЕЗ/с пропускной способности контейнера Cosmos DB, выполните следующую команду:
 
 ```azurecli-interactive
 # Update container throughput
 az cosmosdb collection update \
-   --collection-name "myContainer" \
-   --name "myCosmosDbAccount" \
-   --db-name "myDatabase" \
-   --resource-group "myResourceGroup" \
-   --throughput 400
+   --collection-name myContainer \
+   --name mycosmosdbaccount \
+   --db-name myDatabase \
+   --resource-group myResourceGroup \
+   --throughput 1000
 ```
 
 ## <a name="list-account-keys"></a>Вывод ключей учетной записи
 
-При создании учетной записи Azure Cosmos DB служба создает два главных ключа доступа, которые можно использовать для проверки подлинности при доступе к учетной записи Azure Cosmos DB. Предоставляя два ключа, Azure Cosmos DB позволяет вам повторно создавать ключи без перерывов в работе учетной записи Azure Cosmos DB. Ключи только для чтения, используемые для выполнения проверки подлинности операций чтения, также доступны. Доступны два ключа для чтения и записи (первичный и вторичный), а также два ключа только для чтения (первичный и вторичный). Получите ключи для своей учетной записи Azure с помощью следующей команды:
+Чтобы получить ключи для учетной записи Cosmos, выполните следующую команду:
 
 ```azurecli-interactive
 # List account keys
 az cosmosdb list-keys \
-   --name "myCosmosDbAccount"\
-   --resource-group "myResourceGroup"
+   --name  mycosmosdbaccount \
+   --resource-group myResourceGroup
 ```
 
 ## <a name="list-connection-strings"></a>Вывод строк подключения
 
-Строку для подключения вашего приложения к учетной записи Cosmos DB можно получить с помощью следующей команды.
+Чтобы получить строки подключения для учетной записи Cosmos, выполните следующую команду:
 
 ```azurecli-interactive
 # List connection strings
 az cosmosdb list-connection-strings \
-   --name "myCosmosDbAccount"\
-   --resource-group "myResourceGroup"
+   --name mycosmosdbaccount \
+   --resource-group myResourceGroup
 ```
 
 ## <a name="regenerate-account-key"></a>Повторное создание ключей учетных записей
 
-Вам следует периодически менять ключи доступа для своей учетной записи Azure Cosmos DB, чтобы повысить уровень безопасности соединений. Назначается два ключа доступа, что позволяет поддерживать подключения к учетной записи Azure Cosmos DB с помощью одного ключа, одновременно повторно создавая второй ключ.
+Чтобы повторно создать новый первичный ключ для учетной записи Cosmos, выполните следующую команду:
 
 ```azurecli-interactive
 # Regenerate account key
 az cosmosdb regenerate-key \
-   --name "myCosmosDbAccount"\
-   --resource-group "myResourceGroup" \
+   --name mycosmosdbaccount \
+   --resource-group myResourceGroup \
    --key-kind primary
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см.:
 
 - [Установка Azure CLI](/cli/azure/install-azure-cli)
-- [Справочник по интерфейсу командной строки Azure](https://docs.microsoft.com/cli/azure/cosmosdb)
+- [Справочник по Azure CLI](https://docs.microsoft.com/cli/azure/cosmosdb)
 - [Дополнительные примеры Azure CLI для Azure Cosmos DB](cli-samples.md)

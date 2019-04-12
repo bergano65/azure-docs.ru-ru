@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 53140c7b02dd657036b76db0dd137bd770d97f4d
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 49b247338bbb1f20082fdef2a2bc291fb6183b10
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58369536"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59493065"
 ---
 # <a name="reporting-options-for-azure-ad-password-management"></a>Параметры отчетов для управления паролями Azure AD
 
@@ -118,7 +118,7 @@ ms.locfileid: "58369536"
 В приведенном ниже списке подробно описано это действие.
 
 * **Описание действия**. Указывает, что администратор сбросил пароль от имени пользователя на портале Azure.
-* **Субъект действия**. Администратор, сбросивший пароль от имени другого пользователя или администратора. Это должен быть глобальный администратор, администратор паролей, администратор пользователей или администратор службы технической поддержки.
+* **Субъект действия**. Администратор, сбросивший пароль от имени другого пользователя или администратора. Должен быть пароль администратора, администратор или администратор службы технической поддержки.
 * **Целевой объект действия**. Пользователь, чей пароль сброшен. Это может быть пользователь или другой администратор.
 * **Состояния действия**:
   * _Выполнено_. Указывает, что администратор успешно сбросил пароль пользователя.
@@ -176,16 +176,16 @@ ms.locfileid: "58369536"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
+* [Как завершить успешно развернуть самостоятельный Сброс ПАРОЛЯ?](howto-sspr-deployment.md)
 * [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
 * [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md)
-* [Требования к лицензированию самостоятельного сброса пароля в Azure AD](concept-sspr-licensing.md)
-* [Какие данные используются для SSPR и какие сведения нужно указывать для пользователей](howto-sspr-authenticationdata.md)
-* [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods)
-* [Параметры политики для SSPR](concept-sspr-policy.md)
-* [Что такое обратная запись паролей и каково ее назначение](howto-sspr-writeback.md)
-* [Руководство по самостоятельному сбросу пароля в Azure AD](concept-sspr-howitworks.md).
-* [Как устранить неполадки самостоятельного сброса пароля](active-directory-passwords-troubleshoot.md)
-* [Вопросы, не вошедшие в другие статьи](active-directory-passwords-faq.md)
+* [У вас есть вопрос лицензирования?](concept-sspr-licensing.md)
+* [Какие данные используются для SSPR и какие данные нужно указывать для пользователей?](howto-sspr-authenticationdata.md)
+* [Какие методы проверки подлинности доступны для пользователей?](concept-sspr-howitworks.md#authentication-methods)
+* [Что такое параметры политики для SSPR](concept-sspr-policy.md)
+* [Что такое обратная запись паролей и Зачем мне об этом?](howto-sspr-writeback.md)
+* [Они означают, что все параметры в SSPR и какие возможности?](concept-sspr-howitworks.md)
+* [Я думаю, что-то не работает. Как устранить неполадки SSPR?](active-directory-passwords-troubleshoot.md)
+* [У меня есть вопрос, не вошедшие в противном случае](active-directory-passwords-faq.md)
 
 [Reporting]: ./media/howto-sspr-reporting/sspr-reporting.png "Пример журналов аудита действий SSPR в Azure AD"

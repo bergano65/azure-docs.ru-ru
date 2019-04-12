@@ -14,14 +14,15 @@ ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce76fa7fecb8a82f76d40827bfa868061a0ed584
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: 4db6554e86cef61f2fc8e7a466919d2ce723f0e5
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56204905"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59492708"
 ---
 # <a name="reset-a-users-password-using-azure-active-directory"></a>Сброс пароля пользователя в Azure Active Directory
+
 Если пользователь забыл пароль, был заблокирован на устройстве или никогда не получал пароля, то администратор может сбросить его пароль.
 
 >[!Note]
@@ -32,7 +33,7 @@ ms.locfileid: "56204905"
 
 ## <a name="to-reset-a-password"></a>Процедура сброса пароля
 
-1. Войдите на [портал Azure](https://portal.azure.com/) как глобальный администратор, администратор пользователей или администратор паролей. Дополнительные сведения о доступных ролях см. в статье [Назначение ролей администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md#available-roles)
+1. Войдите в [портала Azure](https://portal.azure.com/) как администратор или администратор паролей. Дополнительные сведения о доступных ролях см. в статье [Назначение ролей администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md#available-roles)
 
 2. Выберите **Azure Active Directory**, затем **Пользователи**, найдите и выберите пользователя, которому требуется сброс, и затем **Сброс пароля**.
 
@@ -49,15 +50,16 @@ ms.locfileid: "56204905"
     >[!Note]
     >Срок действия временного пароля не ограничен. При следующем входе пользователя пароль будет по-прежнему действующим, независимо от того, сколько времени прошло с момента создания временного пароля.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
+
 После сброса пароля пользователя можно выполнить следующие базовые операции:
 
-- [Добавить или удалить пользователя](add-users-azure-active-directory.md)
+- [Добавление или удаление пользователей](add-users-azure-active-directory.md)
 
 - [Назначение ролей пользователям](active-directory-users-assign-role-azure-portal.md)
 
-- [Добавить или изменить данные профиля](active-directory-users-profile-azure-portal.md)
+- [Добавление или изменение данных профиля](active-directory-users-profile-azure-portal.md)
 
-- [Создать простую группу и добавить в нее участников](active-directory-groups-create-azure-portal.md)
+- [Создание простой группы и добавление участников](active-directory-groups-create-azure-portal.md)
 
 Или можно выполнить более сложные сценарии пользователей, такие как назначение делегатов, использование политик и совместное использование учетных записей пользователей. Дополнительные сведения о других доступных действиях см. в [документации по управлению пользователями Azure Active Directory](../users-groups-roles/index.yml).

@@ -1,5 +1,5 @@
 ---
-title: Развертывание зависимости облачных управления устройства OPC UA Интернета вещей Azure | Документация Майкрософт
+title: Развертывание Двойника OPC зависимостей cloud в Azure | Документация Майкрософт
 description: Как развернуть Azure Двойника OPC зависимости.
 author: dominicbetts
 ms.author: dobett
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-industrialiot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: cdd89293328da47c8e338bb6fca8c7b93dd84f97
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: ae9f2b05bfc6ea6315022d04c8d267d916cf282e
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58759657"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59491992"
 ---
 # <a name="deploying-dependencies-for-local-development"></a>Развертывание зависимостей для локальной разработки
 
@@ -52,7 +52,7 @@ ms.locfileid: "58759657"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда службы управления устройствами OPC успешно развернуто в существующий проект, вот мы предлагаем:
+Теперь, когда служб Двойника OPC успешно развернуто в существующий проект, вот мы предлагаем:
 
 > [!div class="nextstepaction"]
-> [Дополнительные сведения о развертывании модулей управления устройствами OPC](howto-opc-twin-deploy-modules.md)
+> [Дополнительные сведения о развертывании модулей OPC Двойника](howto-opc-twin-deploy-modules.md)

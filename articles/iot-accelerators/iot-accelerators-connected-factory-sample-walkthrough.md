@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 03/08/2019
 ms.author: dobett
-ms.openlocfilehash: be9bde90684b46adef509532eb7b0cc236c5efb1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 950d248d2525f053981c8642ee2d39021b9a0494
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58180608"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59490365"
 ---
 # <a name="connected-factory-solution-accelerator-walkthrough"></a>Инструкция по работе с акселератором решений подключенной фабрики
 
@@ -73,7 +73,7 @@ ms.locfileid: "58180608"
 
 1. преобразует данные узла в формат JSON;
 1. шифрует полученный код JSON;
-1. отправляет код JSON в Центр Интернета вещей в виде сообщений публикации и подписки OPC UA.
+1. Отправляет JSON в центр Интернета вещей как OPC UA сообщений публикации и подписки.
 
 Модулю издателя OPC требуется только исходящий порт HTTPS (443), и он может работать с существующей инфраструктурой предприятия.
 
@@ -230,7 +230,7 @@ TSI отправляет запрос к данным узла с использ
 Дополнительные сведения об акселераторах решений Интернета вещей см. в следующих статьях:
 
 * [Разрешения на сайте azureiotsolutions.com][lnk-permissions]
-* [Развертывание шлюза Edge для предварительно настроенного решения подключенной фабрики в ОС Windows или Linux](iot-accelerators-connected-factory-gateway-deployment.md)
+* [Развертывание шлюза в Windows или Linux для Connected Factory solution accelerator](iot-accelerators-connected-factory-gateway-deployment.md)
 * [OPC Publisher for Azure IoT Edge](https://github.com/Azure/iot-edge-opc-publisher/blob/master/README.md) (Издатель OPC для Azure IoT Edge)
 
 [connected-factory-logical]:media/iot-accelerators-connected-factory-sample-walkthrough/cf-logical-architecture.png

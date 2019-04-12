@@ -1,5 +1,5 @@
 ---
-title: Сбор данных аналитики угроз в на этапе предварительной версии Sentinel Azure | Документация Майкрософт
+title: Подключение данных аналитики угроз в предварительную версию Sentinel Azure | Документация Майкрософт
 description: Узнайте о том, как подключиться к Azure Sentinel данных аналитики угроз.
 documentationcenter: na
 author: rkarlin
@@ -11,19 +11,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/20/2019
+ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: bc8a644f99d9a84e1f2c177a87e2668ae9a57868
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: a33b00e4e553824f1f719be2c8518487241f0a11
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58400629"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59494839"
 ---
-# <a name="collect-data-from-threat-intelligence-providers"></a>Сбор данных от поставщиков решений по аналитике угроз 
+# <a name="connect-data-from-threat-intelligence-providers"></a>Подключайте данные из поставщиков решений по аналитике угроз 
 
 > [!IMPORTANT]
-> Azure Sentinel сейчас находится в общедоступной предварительной версии.
+> Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 После вы потоковую передачу данных в Azure Sentinel, можно расширить его с помощью функции анализа угроз веб-канала, используемого во всей организации. 
@@ -44,7 +44,7 @@ ms.locfileid: "58400629"
 
 1. Если вы уже используете поставщик аналитики угроз, убедитесь, что приложение TIP и предоставить разрешение на отправку индикаторы в корпорацию Майкрософт и укажите службу как Azure Sentinel.  
 
-2. В Azure Sentinel, выберите **сбора данных** и нажмите кнопку **анализ угроз** плитку.
+2. В Azure Sentinel, выберите **соединители данных** и нажмите кнопку **анализ угроз** плитку.
 
 3. Щелкните **Подключить**. 
 
@@ -55,5 +55,5 @@ ms.locfileid: "58400629"
 
 В этом документе вы узнали, как подключиться к Azure Sentinel поставщику аналитики угроз. Узнать больше о Azure Sentinel, см. в следующих статьях.
 
-- Чтобы приступить к работе с Azure Sentinel, вам потребуется подписка на Microsoft Azure. Если у вас нет подписки, вы можете зарегистрироваться для получения [бесплатной пробной версии](https://azure.microsoft.com/free/).
-- Узнайте, как [встроенных данных для Azure Sentinel](quickstart-onboard.md), и [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
+- Чтобы начать работу с Azure Sentinel, вам нужна подписка на Microsoft Azure. Если у вас нет подписки, вы можете зарегистрироваться для получения [бесплатной пробной версии](https://azure.microsoft.com/free/).
+- Узнайте, как [подключить данные к Azure Sentinel](quickstart-onboard.md), и [отслеживайте свои данные и потенциальные угрозы](quickstart-get-visibility.md).

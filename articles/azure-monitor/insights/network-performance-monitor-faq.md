@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/12/2018
 ms.author: vinynigam
-ms.openlocfilehash: 5186c11259a03717f83db675cbfe7c90f3ecb7cc
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: 285f29055d0ac9ba656ec828972ef15f4c0d36c7
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55734561"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59496970"
 ---
 # <a name="network-performance-monitor-solution-faq"></a>Вопросы и ответы по решению "Монитор производительности сети"
 
@@ -25,7 +25,7 @@ ms.locfileid: "55734561"
 
 В этой статье собраны часто задаваемые вопросы о решении "Монитор производительности сети" в Azure
 
-[Монитор производительности сети](/azure/networking/network-monitoring-overview) — это облачное [гибридное решение для сетевого мониторинга](../../azure-monitor/insights/network-performance-monitor-performance-monitor.md), которое позволяет отслеживать производительность сети между разными точками в сетевой инфраструктуре. Это решение также помогает отслеживать сетевое подключение к [конечным точкам служб и приложений](../../azure-monitor/insights/network-performance-monitor-service-endpoint.md), а также [производительность Azure ExpressRoute](../../azure-monitor/insights/network-performance-monitor-expressroute.md). 
+[Монитор производительности сети](/azure/networking/network-monitoring-overview) — это облачное [гибридное решение для сетевого мониторинга](../../azure-monitor/insights/network-performance-monitor-performance-monitor.md), которое позволяет отслеживать производительность сети между разными точками в сетевой инфраструктуре. Это решение также помогает отслеживать сетевое подключение к [конечным точкам служб и приложений](../../azure-monitor/insights/network-performance-monitor-service-connectivity.md), а также [производительность Azure ExpressRoute](../../azure-monitor/insights/network-performance-monitor-expressroute.md). 
 
 Монитор производительности сети обнаруживает проблемы сети, такие как появление "черных дыр" в трафике, ошибки маршрутизации и проблемы, которые невозможно обнаружить с помощью традиционных методов мониторинга сети. Решение создает предупреждения и уведомляет о превышении порогового значения для сетевого соединения. Кроте того, оно обеспечивает своевременное обнаружение проблем с производительностью сети и определяет конкретный сегмент сети или сетевое устройство как источник проблемы. 
 
@@ -213,6 +213,6 @@ NPM ограничивает количество IP-адресов до 5000 I
 ### <a name="can-npm-report-latency-numbers-in-microseconds"></a>Можно ли в решении "Монитор производительности сети" узнать значения задержки в микросекундах?
 Решение "Монитор производительности сети" округляет показатели задержки в пользовательском интерфейсе до миллисекунд. Но эти данные хранятся с большей точностью (иногда до четырех десятичных разрядов).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о решении "Монитор производительности сети" в Azure вы можете получить [в этой статье](../../azure-monitor/insights/network-performance-monitor.md).

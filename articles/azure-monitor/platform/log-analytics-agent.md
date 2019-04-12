@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 03/12/2019
+ms.date: 04/10/2019
 ms.author: magoedte
-ms.openlocfilehash: e9df83ef81c2656bf94002feb79d7e4d99ed7954
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 5f9a225e8a256dd55feadf97f0a7b9f922487a6f
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57841112"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59492810"
 ---
 # <a name="collect-log-data-with-the-azure-log-analytics-agent"></a>Сбор данных журнала с помощью агента Azure Log Analytics
 
@@ -41,8 +41,9 @@ ms.locfileid: "57841112"
 ## <a name="supported-windows-operating-systems"></a>Поддерживаемые операционные системы Windows
 Для агента Windows официально поддерживаются следующие версии операционной системы Windows:
 
-* Windows Server 2008 R2 или более поздней версии
-* Windows 7 с пакетом обновления 1 и более поздней версии.
+* Windows Server 2019
+* Windows Server 2008 R2, 2012, 2012 R2, 2016 г., версии 1709 и 1803
+* Windows 7 с пакетом обновления 1 и более поздних версий
 
 ## <a name="supported-linux-operating-systems"></a>Поддерживаемые операционные системы Linux
 В этом разделе приведены сведения о поддерживаемых дистрибутивах Linux.    
@@ -104,7 +105,8 @@ ms.locfileid: "57841112"
 |proxyhost | Адрес или полное доменное имя прокси-сервера или шлюза Log Analytics |
 |порт | Необязательный номер порта прокси-сервера или шлюза Log Analytics |
 
-Например: `https://user01:password@proxy01.contoso.com:30443`
+Например: 
+`https://user01:password@proxy01.contoso.com:30443`
 
 > [!NOTE]
 > Если в пароле использованы специальные знаки (например, \@), отобразится ошибка подключения прокси-сервера из-за неправильного анализа значения.  Чтобы обойти эту проблему, закодируйте пароль в URL-адрес, используя специальные инструменты (например, [URLDecode](https://www.urldecoder.org/)).  

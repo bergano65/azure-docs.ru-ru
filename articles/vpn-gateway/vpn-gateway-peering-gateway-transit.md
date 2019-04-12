@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/25/2018
 ms.author: yushwang
-ms.openlocfilehash: 05b25a524894248152114ca9c756d4a0f8944ad8
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: d5e62bf1838c8f07068208019d28d7273c28bd63
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58199636"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59492351"
 ---
 # <a name="configure-vpn-gateway-transit-for-virtual-network-peering"></a>Настройка транзита VPN-шлюзов для пиринга между виртуальными сетями
 
@@ -37,9 +37,6 @@ ms.locfileid: "58199636"
 1. Обе виртуальные сети используют модель развертывания Resource Manager.
 2. Периферийная виртуальная сеть является классической, а виртуальная сеть концентратора с шлюзом находится в Resource Manager.
 
-> [!IMPORTANT]  
-> Транзит через шлюз в настоящее время поддерживается в предварительной версии пиринга глобальной виртуальной сети. Предварительный просмотр доступен во всех регионах Azure, Китай облачных регионах и регионы облака для государственных организаций, но не в облаках. Нет список разрешений необходим. Можно проверить в предварительной версии с помощью интерфейса командной строки, PowerShell, шаблонов или API. Портал не поддерживается в предварительной версии. 
-
 ## <a name="requirements"></a>Требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -54,8 +51,8 @@ ms.locfileid: "58199636"
 Инструкции см. по следующим ссылкам:
 
 1. [Создание VPN-шлюза в виртуальной сети](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
-2. [Создание пиринга между виртуальными сетями с одинаковой моделью развертывания](../virtual-network/tutorial-connect-virtual-networks-portal.md)
-3. [Создание пиринга между виртуальными сетями с разными моделями развертывания](../virtual-network/create-peering-different-deployment-models.md)
+2. [Создание пиринга виртуальных сетей с той же модели развертывания](../virtual-network/tutorial-connect-virtual-networks-portal.md)
+3. [Создание пиринга виртуальных сетей с помощью разных моделей развертывания](../virtual-network/create-peering-different-deployment-models.md)
 
 ## <a name="permissions"></a>Разрешения
 

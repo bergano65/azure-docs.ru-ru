@@ -8,14 +8,14 @@ ms.service: sql-database
 ms.subservice: service
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/03/2019
+ms.date: 04/10/2019
 ms.author: carlrab
-ms.openlocfilehash: c63ce51f442c8d7552c382f0e103be443afb9c75
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.openlocfilehash: 9b961436c81282381f963d16c6c6dd5f289d1259
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59360084"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59495111"
 ---
 # <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 
@@ -42,6 +42,8 @@ ms.locfileid: "59360084"
 |Пакетный режим Rowstore (при уровне совместимости 150)|Сведения см. в разделе [пакетный режим Rowstore](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#batch-mode-on-rowstore)|
 |Обратной связи (режим строк) (на уровне совместимости 150)|Сведения см. в разделе [обратную связь с выделением памяти (в режиме строки)](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#row-mode-memory-grant-feedback)|
 |Таблица компиляции переменной отложенного (при уровне совместимости 150)|Сведения см. в разделе [переменной отложенной компиляции таблицы](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#table-variable-deferred-compilation)|
+|Аналитика SQL|Сведения см. в разделе [аналитика SQL Azure](../azure-monitor/insights/azure-sql.md)|
+| Поддержку часовых поясов для управляемых экземпляров|Дополнительные сведения см. в разделе [часовой пояс в базе данных управляемого экземпляра SQL Azure](sql-database-managed-instance-timezone.md)|
 |||
 
 ## <a name="march-2019"></a>Марта 2019 г.
@@ -57,6 +59,7 @@ ms.locfileid: "59360084"
 
 | Улучшения документации | Сведения |
 | --- | --- |
+| Поддержку часовых поясов для управляемых экземпляров|Дополнительные сведения см. в разделе [часовой пояс в базе данных управляемого экземпляра SQL Azure](sql-database-managed-instance-timezone.md)|
 | Добавлен журнал ограничения для отдельных баз данных|Дополнительные сведения см. в разделе [единый ограничения ресурсов базы данных виртуальное](sql-database-vcore-resource-limits-single-databases.md).|
 | Добавлен журнал ограничения для эластичных пулов и баз данных в составе пула|Дополнительные сведения см. в разделе [эластичных пулов ограничения ресурсов виртуальное](sql-database-vcore-resource-limits-elastic-pools.md).|
 | Добавлена управления скорость журнала транзакций| Добавить новое содержимое для [управления скорость журнала транзакций](sql-database-resource-limits-database-server.md#transaction-log-rate-governance).|

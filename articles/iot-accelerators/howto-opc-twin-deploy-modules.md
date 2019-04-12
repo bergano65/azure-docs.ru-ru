@@ -1,5 +1,5 @@
 ---
-title: Как развернуть модуль управления Azure IoT OPC UA устройства с нуля | Документация Майкрософт
+title: Развертывание модуля Двойника OPC для Azure с нуля | Документация Майкрософт
 description: Как развернуть OPC Двойника с нуля.
 author: dominicbetts
 ms.author: dobett
@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: iot-industrialiot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: fe1b141ecacbd1d96c217322e69709828a3bf36c
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: f470beb79e69b5a4a3febeb6a433c48490b96cf7
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58759601"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59491362"
 ---
 # <a name="deploy-opc-twin-module-and-dependencies-from-scratch"></a>Развертывание OPC Двойника модуля и зависимости с нуля
 
-OPC Двойник модуля выполняется в IoT Edge и предоставляет несколько служб edge на Двойник устройства OPC и реестра службы. 
+OPC Двойника модуля выполняется в IoT Edge и предоставляет несколько пограничных служб в двойник устройства OPC и реестра службы. 
 
 Существует несколько вариантов для развертывания модулей, чтобы ваши [Azure IoT Edge](https://azure.microsoft.com/services/iot-edge/) шлюза, между ними
 
@@ -109,7 +109,7 @@ OPC Двойник модуля выполняется в IoT Edge и предо
 
 ### <a name="prerequisites"></a>Технические условия
 
-1. Развертывание управления устройствами OPC UA [зависимости](howto-opc-twin-deploy-dependencies.md) и не получил результирующий `.env` файл. Обратите внимание, развернутому `hub name` из `PCS_IOTHUBREACT_HUB_NAME` переменных в итоговом `.env` файл.
+1. Развертывание на "Двойнике" OPC [зависимости](howto-opc-twin-deploy-dependencies.md) и не получил результирующий `.env` файл. Обратите внимание, развернутому `hub name` из `PCS_IOTHUBREACT_HUB_NAME` переменных в итоговом `.env` файл.
 
 2. Регистрация и запуск [Linux](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge-linux) или [Windows](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge-windows) шлюз Edge Интернета вещей и запишите его `device id`.
 
@@ -205,7 +205,7 @@ OPC Двойник модуля выполняется в IoT Edge и предо
 
 ### <a name="prerequisites"></a>Технические условия
 
-1. Развертывание управления устройствами OPC UA [зависимости](howto-opc-twin-deploy-dependencies.md).
+1. Развертывание на "Двойнике" OPC [зависимости](howto-opc-twin-deploy-dependencies.md).
 
 2. Установка [Docker CE (18.02.0+)](https://www.docker.com/community-edition) на [Windows](https://docs.docker.com/docker-for-windows/install/), [macOS](https://docs.docker.com/docker-for-mac/install/) или [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce).
 

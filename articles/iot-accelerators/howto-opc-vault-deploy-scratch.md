@@ -1,5 +1,5 @@
 ---
-title: Как развернуть модуль управления сертификат OPC UA Интернета вещей Azure с нуля | Документация Майкрософт
+title: Как развернуть модуль хранилище OPC с нуля — Azure | Документация Майкрософт
 description: Как развернуть хранилище OPC с нуля.
 author: dominicbetts
 ms.author: dobett
@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: iot-industrialiot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: a3a9d21b70f16482f05d27aa0df8d8865459aeb4
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: dedba42d7e4b8d603d97522cf0173f41efd20b3a
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58759625"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59496902"
 ---
-# <a name="deploy-opc-vault-from-scratch"></a>Разверните хранилище OPC с нуля
+# <a name="deploy-opc-vault-from-scratch"></a>Развертывание хранилища OPC с нуля
 
-Azure IoT OPC UA Управление сертификатами, а также знать, что хранилище OPC является микрослужба, можно настроить, регистр и управление жизненным циклом сертификатов для OPC UA серверных и клиентских приложений в облаке. В этой статье показано, как развернуть хранилище OPC с нуля.
+Хранилище OPC — микрослужбу, можно настроить, регистрации и управления жизненным циклом сертификата для сервера OPC UA и клиентских приложений в облаке. В этой статье показано, как развернуть хранилище OPC с нуля.
 
 ## <a name="configuration-and-environment-variables"></a>Конфигурации и переменные среды
 
@@ -133,7 +133,7 @@ Visual Studio позволяет быстро открывать приложе�
 - [Visual Studio](https://www.visualstudio.com)
 - [Visual Studio для Mac](https://www.visualstudio.com/vs/visual-studio-mac)
 - [IntelliJ Rider](https://www.jetbrains.com/rider)
-- [Visual Studio Code](https://code.visualstudio.com)
+- [Visual Studio Code.](https://code.visualstudio.com)
 
 ### <a name="git-setup"></a>Настройка Git
 

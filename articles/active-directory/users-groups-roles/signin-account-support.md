@@ -8,21 +8,21 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 04/08/2019
+ms.date: 04/10/2019
 ms.author: curtand
 ms.reviewer: kexia
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a62c4d56fbfca34ff6291863149b078f7ddc6680
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 2d26ff0f9259e3531259673f94fe477444cc786b
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59288596"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59491601"
 ---
 # <a name="sign-in-options-for-microsoft-accounts-in-azure-active-directory"></a>Параметры входа для учетных записей Майкрософт в Azure Active Directory
 
-Страница входа в систему Microsoft 365 для Azure Active Directory (Azure AD) поддерживает один или оба рабочих или учебных учетных записей и учетных записей Майкрософт, в зависимости от ситуации, для поддержки:
+Страница входа в систему Microsoft 365 для Azure Active Directory (Azure AD) поддерживает рабочих или учебных учетных записей и учетных записей Майкрософт, но в зависимости от ситуации пользователя, это может быть один или другой или оба. Например страницы входа Azure AD поддерживает:
 
 * Приложения, которые принимают вход из обоих типов учетной записи
 * Организаций, принимающих гостей
@@ -32,7 +32,7 @@ ms.locfileid: "59288596"
 
 ![Разница между страниц входа учетной записи](./media/signin-account-support/ui-prompt.png)
 
-[Дополнительные параметры подходят только для личных учетных записей Майкрософт](index.yml) , но не может использоваться для входа для рабочей или учебной учетной записи ресурсов.
+[Дополнительные параметры подходят только для личных учетных записей Майкрософт](https://azure.microsoft.com/updates/microsoft-account-signin-options/ ) , но не может использоваться для входа для рабочей или учебной учетной записи ресурсов.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

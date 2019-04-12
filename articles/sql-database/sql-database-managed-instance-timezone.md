@@ -10,15 +10,15 @@ author: MladjoA
 ms.author: mlandzic
 ms.reviewer: ''
 manager: craigg
-ms.date: 04/09/2019
-ms.openlocfilehash: c9be129624c87ca0bff1e85a5d1c71425ef06b89
-ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
+ms.date: 04/10/2019
+ms.openlocfilehash: 23314e97051da95ab164baeab6e9d089f486351a
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "59471912"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59489696"
 ---
-# <a name="time-zone-in-azure-sql-database-managed-instance"></a>Часовой пояс в управляемый экземпляр базы данных Azure SQL
+# <a name="time-zone-in-azure-sql-database-managed-instance-preview"></a>Часовой пояс в управляемый экземпляр базы данных Azure SQL (Предварительная версия)
 
 Хотя с помощью времени в формате UTC, рекомендуется для уровня данных из облачных решений, базы данных управляемого экземпляра SQL Azure предлагает выбрать часовой пояс для удовлетворения потребностей существующих приложений, которые хранят значения даты и времени и Дата звонка и функции времени с неявное контекстом объекта конкретного часового пояса.
 
@@ -72,7 +72,7 @@ ms.locfileid: "59471912"
 
 ## <a name="checking-the-time-zone-of-instance"></a>Проверка часового пояса экземпляра
 
-[CURRENT_TIMEZONE](https://docs.microsoft.com/sql/t-sql/functions/current-timestamp-transact-sql) функция возвращает отображаемое имя часового пояса экземпляра.
+[CURRENT_TIMEZONE](https://docs.microsoft.com/sql/t-sql/functions/current-timezone-transact-sql) функция возвращает отображаемое имя часового пояса экземпляра.
 
 ## <a name="cross-feature-considerations"></a>Вопросы с разными компонентами
 

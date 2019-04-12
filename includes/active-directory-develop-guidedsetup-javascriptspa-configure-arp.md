@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 09/17/2018
 ms.author: nacanuma
 ms.custom: include file
-ms.openlocfilehash: f9993058f93cf94ee468a92ac7cbb2d6881e61be
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: 7a6fa45d0f4ea09fbc84d3185aa0e58db165ac19
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58214215"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59502810"
 ---
 ## <a name="add-the-applications-registration-information-to-your-app"></a>Добавление в приложение сведений о его регистрации
 
@@ -35,7 +35,7 @@ ms.locfileid: "58214215"
 > 2. Скопируйте значение **URL-адреса** в буфер обмена:<br/> ![Свойства проекта](media/active-directory-develop-guidedsetup-javascriptspa-configure/vs-project-properties-screenshot.png)<br />
 > 3. Вставьте значение в поле **URL-адрес перенаправления** вверху страницы и щелкните **Обновить**.
 
-<p/>
+<p>
 
 > #### <a name="setting-redirect-url-for-node"></a>Настройка URL-адреса перенаправления для Node.js
 > При использовании Node.js порт веб-сервера можно задать в файле *server.js*. В этом руководстве в качестве примера использован порт 30662, но можно применить любой другой доступный порт. Выполните инструкции ниже, чтобы указать URL-адрес перенаправления в сведениях о регистрации приложения.<br/>

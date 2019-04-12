@@ -11,20 +11,20 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 03/26/2018
+ms.date: 04/11/2019
 ms.author: magoedte
-ms.openlocfilehash: 48fb09b73a6169da392443f5fbf4f005e9640c3e
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.openlocfilehash: 4476bb0a5a343fd43ce5ed70cf0e493d0ccae0e9
+ms.sourcegitcommit: f24b62e352e0512dfa2897362021b42e0cb9549d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58905993"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59505640"
 ---
 # <a name="collect-and-analyze-azure-activity-logs-in-log-analytics-workspace-in-azure-monitor"></a>Сбор и анализ журналов действий Azure в рабочую область Log Analytics в Azure Monitor
 
 ![Символ журналов действий Azure](./media/collect-activity-logs/activity-log-analytics.png)
 
-Решение "Аналитика журнала действий" помогает анализировать [журналы действий Azure](../../azure-monitor/platform/activity-logs-overview.md) во всех подписках Azure и искать в них необходимые данные. Журнал действий Azure — это журнал с информацией об операциях, которые выполнялись с ресурсами в подписке. Журнал действий раньше назывался *журналом аудита* или *операционным журналом*, так как он содержит связанные с подписками события.
+Решение "Аналитика журнала действий" помогает анализировать [журналы действий Azure](activity-logs-overview.md) во всех подписках Azure и искать в них необходимые данные. Журнал действий Azure — это журнал с информацией об операциях, которые выполнялись с ресурсами в подписке. Журнал действий раньше назывался *журналом аудита* или *операционным журналом*, так как он содержит связанные с подписками события.
 
 С помощью журнала действий можно ответить на вопросы *что?*, *кто?* и *когда?* о любой операции записи (PUT, POST, DELETE) с ресурсами в вашей подписке. Вы также можете отслеживать состояние операции и другие ее свойства. Журнал действий не содержит операции чтения (GET) или операции с ресурсами, которые используют классическую модель развертывания.
 
@@ -50,30 +50,41 @@ ms.locfileid: "58905993"
 
 В отличие от большинства других решений Azure Monitor данные не собираются журналы действий для агентов. Все данные, используемые решением, поступают непосредственно из Azure.
 
-| Подключенный источник | Поддерживаются | ОПИСАНИЕ |
+| Подключенный источник | Поддерживаются | Описание |
 | --- | --- | --- |
-| [Агенты Windows](../../azure-monitor/platform/agent-windows.md) | Нет  | Решение не собирает сведения из агентов Windows. |
-| [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет  | Решение не собирает сведения из агентов Linux. |
-| [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | Нет  | Решение не собирает сведения из агентов в подключенной группе управления SCOM. |
+| [Агенты Windows](agent-windows.md) | Нет  | Решение не собирает сведения из агентов Windows. |
+| [Агенты Linux](../learn/quick-collect-linux-computer.md) | Нет  | Решение не собирает сведения из агентов Linux. |
+| [Группа управления System Center Operations Manager](om-agents.md) | Нет  | Решение не собирает сведения из агентов, предоставляющих отчеты в группу управления Operations Manager. |
 | [Учетная запись хранения Azure.](collect-azure-metrics-logs.md) | Нет  | Решение не собирает сведения из службы хранилища Azure. |
 
 ## <a name="prerequisites"></a>Технические условия
 
-- Для доступа к сведениям журнала действий Azure необходимо наличие подписки Azure.
+Для доступа к сведениям журнала действий Azure необходимо наличие подписки Azure.
+
+Решение также требует регистрацию следующих двух поставщиков ресурсов в вашей подписке:
+
+1. Microsoft.OperationalInsights
+2. Microsoft.OperationsManagement
+
+Чтобы узнать, как для регистрации или проверки регистрации, см. в разделе [поставщики и типы ресурсов Azure](../../azure-resource-manager/resource-manager-supported-services.md)
 
 ## <a name="configuration"></a>Параметр Configuration
 
 Выполните следующие действия, чтобы настроить решение для анализа журналов действий в своих рабочих областях.
 
-1. Включите решение для анализа журналов действий из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureActivityOMS?tab=Overview) или выполните инструкции из статьи [Добавление решений для управления Azure Log Analytics в рабочую область](../../azure-monitor/insights/solutions.md).
+1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
+
+2. Включите решение для анализа журналов действий из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureActivityOMS?tab=Overview) или выполните инструкции из статьи [Добавление решений для управления Azure Log Analytics в рабочую область](../insights/solutions.md).
+
 2. Настройте журналы действий так, чтобы они поступали в вашу рабочую область Log Analytics.
     1. На портале Azure выберите рабочую область и нажмите **Журнал действий Azure**.
     2. Щелкните имя каждой подписки.  
+        
         ![Добавление подписки](./media/collect-activity-logs/add-subscription.png)
+    
     3. В колонке *SubscriptionName* щелкните **Подключить**.  
+    
         ![Подключение подписки](./media/collect-activity-logs/subscription-connect.png)
-
-Войдите на портал Azure, чтобы подключить подписку Azure к рабочей области.  
 
 ## <a name="using-the-solution"></a>Использование решения
 
@@ -98,5 +109,5 @@ ms.locfileid: "58905993"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Создание [оповещения](../../azure-monitor/platform/alerts-metric.md) о выполнении определенного действия.
-- Использование [поиска по журналам](../../azure-monitor/log-query/log-query-overview.md) для просмотра подробных сведений из журналов действий.
+- Создание [оповещения](../platform/alerts-metric.md) о выполнении определенного действия.
+- Использование [поиска по журналам](../log-query/log-query-overview.md) для просмотра подробных сведений из журналов действий.

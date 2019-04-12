@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: d6c46d6ebfa8ae44c9bfac4929d3478f6701758a
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: c767406ceec703b5c14680ec96fdf703c2316044
+ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58497845"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59500147"
 ---
 # <a name="message-sessions-first-in-first-out-fifo"></a>Сеансы сообщений и обработка в порядке очереди (FIFO) 
 
@@ -51,7 +51,7 @@ ms.locfileid: "58497845"
 
 Получатель [MessageSession](/dotnet/api/microsoft.servicebus.messaging.messagesession) создается клиентом, принимающим сеанс. Клиент вызывает [QueueClient.AcceptMessageSession](/dotnet/api/microsoft.servicebus.messaging.queueclient.acceptmessagesession#Microsoft_ServiceBus_Messaging_QueueClient_AcceptMessageSession) или [QueueClient.AcceptMessageSessionAsync](/dotnet/api/microsoft.servicebus.messaging.queueclient.acceptmessagesessionasync#Microsoft_ServiceBus_Messaging_QueueClient_AcceptMessageSessionAsync) в C#. В реактивной модели обратного вызова он регистрирует обработчик сеанса.
 
-Когда объект [MessageSession](/dotnet/api/microsoft.servicebus.messaging.messagesession) принимается и хранится в клиенте, этот клиент накладывает монопольную блокировку на все сообщения со значением [SessionId](/en-us/dotnet/api/microsoft.servicebus.messaging.messagesession.sessionid#Microsoft_ServiceBus_Messaging_MessageSession_SessionId) этого сеанса, имеющиеся в очереди или подписке, а также на все сообщения с этим значением **SessionId**, которые продолжают поступать во время сеанса.
+Когда объект [MessageSession](/dotnet/api/microsoft.servicebus.messaging.messagesession) принимается и хранится в клиенте, этот клиент накладывает монопольную блокировку на все сообщения со значением [SessionId](/dotnet/api/microsoft.servicebus.messaging.messagesession.sessionid#Microsoft_ServiceBus_Messaging_MessageSession_SessionId) этого сеанса, имеющиеся в очереди или подписке, а также на все сообщения с этим значением **SessionId**, которые продолжают поступать во время сеанса.
 
 Блокировка снимается, когда вызывается функция **Close** или **CloseAsync**. Если же приложение не может выполнить операцию закрытия, блокировка снимается, когда истекает ее срок действия. Блокировка сеанса должна рассматриваться как монопольная блокировка файла. Это означает, что приложение должно закрыть сеанс, как только он стал не нужен и (или) оно не ожидает поступления новых сообщений.
 

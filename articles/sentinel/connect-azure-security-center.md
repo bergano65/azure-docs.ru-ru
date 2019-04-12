@@ -1,6 +1,6 @@
 ---
-title: Сбор данных центра безопасности Azure в предварительной версии Sentinel Azure | Документация Майкрософт
-description: Дополнительные сведения о сборе данных центра безопасности Azure в Azure Sentinel.
+title: Подключение к Azure Sentinel Preview данных центра безопасности Azure | Документация Майкрософт
+description: Узнайте, как подключиться к Azure Sentinel данных центра безопасности Azure.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -12,24 +12,24 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 2/28/2019
+ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: f59c5f6a9f497a6420172996f9f327f16ffd26f9
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.openlocfilehash: bd6fe027da8c16157c7fce6c348e49c0a6b73ea3
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57242281"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59490677"
 ---
-# <a name="collect-data-from-azure-security-center"></a>Сбор данных из центра безопасности Azure
+# <a name="connect-data-from-azure-security-center"></a>Подключайте данные из центра безопасности Azure
 
 > [!IMPORTANT]
-> Azure Sentinel сейчас находится в общедоступной предварительной версии.
+> Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 
 
-Azure Sentinel позволяет собирать оповещения от [центра безопасности](../security-center/security-center-intro.md) и передает их в Azure Sentinel. 
+Azure Sentinel позволяет подключать оповещения из [центра безопасности](../security-center/security-center-intro.md) и передает их в Azure Sentinel. 
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -42,7 +42,7 @@ Azure Sentinel позволяет собирать оповещения от [ц
 
 ## <a name="connect-to-azure-security-center"></a>Подключение к центру безопасности Azure
 
-1. В Azure Sentinel, выберите **сбора данных** и нажмите кнопку **центра безопасности** плитку.
+1. В Azure Sentinel, выберите **соединители данных** и нажмите кнопку **центра безопасности** плитку.
 1. В правой части щелкните **Connect** рядом с каждой подпиской, оповещения которого вы хотите выполнять потоковую передачу в Azure Sentinel. Убедитесь в том, что обновления каждой подписки до стандартного центра безопасности Azure уровня на поток оповещения для Azure Sentinel.
 
 3. Щелкните **Подключить**.
@@ -50,6 +50,6 @@ Azure Sentinel позволяет собирать оповещения от [ц
 4. Чтобы использовать соответствующей схемы в Log Analytics для оповещений центра безопасности Azure, поиск **SecurityEvent**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В этом документе вы узнали, как соединиться с центра безопасности Azure Sentinel. Дополнительные сведения о Azure Sentinel, см. в разделе со следующими статьями:
+В этом документе вы узнали, как соединиться с центра безопасности Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
 - Начало работы [обнаружение угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

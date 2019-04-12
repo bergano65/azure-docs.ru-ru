@@ -1,6 +1,6 @@
 ---
-title: Сбор данных брандмауэра Windows в предварительной версии Sentinel Azure | Документация Майкрософт
-description: Дополнительные сведения о сборе данных брандмауэра Windows в Azure Sentinel.
+title: Подключайте данные из брандмауэра Windows для предварительной версии Sentinel Azure | Документация Майкрософт
+description: Узнайте, как подключиться к Azure Sentinel данных брандмауэра Windows.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/28/2019
+ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: 3839d81f70b8bc6dcb1da3c4dd77f52443294707
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: 27a82545f77fe15541ac598abadbfc8ffb6d3405
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58574846"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59494230"
 ---
 # <a name="connect-windows-firewall"></a>Подключение брандмауэра Windows
 
@@ -31,12 +31,11 @@ ms.locfileid: "58574846"
 
 
 > [!NOTE]
-> 
-> - Данные будут храниться в географическое расположение рабочей области, на котором выполняется Azure Sentinel.
+> Данные будут храниться в географическое расположение рабочей области, на котором выполняется Azure Sentinel.
 
 ## <a name="enable-the-connector"></a>Включение соединителя 
 
-1. На портале Azure Sentinel выберите **сбора данных** и выберите команду **брандмауэра Windows** плитку. 
+1. На портале Azure Sentinel выберите **соединители данных** и выберите команду **брандмауэра Windows** плитку. 
 1. Выберите типы данных для потоковой передачи.
 1. Щелкните **Install**(Установить).
 6. Чтобы использовать соответствующей схемы в Log Analytics для брандмауэра Windows, найдите **SecurityEvent**.

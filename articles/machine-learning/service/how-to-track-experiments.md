@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 7ef3cfe1df792721db3fe3657c08f58ca82e3c91
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: 41797caa89108448f0eaa27309046c01d7432823
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58652320"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59494633"
 ---
 # <a name="log-metrics-during-training-runs-in-azure-machine-learning"></a>Метрики журнала во время обучения выполняется в машинном обучении Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "58652320"
 |Таблица|Функция:<br>`run.log_table(name, value, description='')`<br><br>Пример:<br>run.log_table("Y over X", {"x":[1, 2, 3], "y":[0.6, 0.7, 0.89]}) | Запишите объект словаря в выполнение с заданным именем. |
 |Образы|Функция:<br>`run.log_image(name, path=None, plot=None)`<br><br>Пример:<br>`run.log_image("ROC", plt)` | Запишите изображение в запись о выполнении. Используйте log_image, чтобы записать файл изображения или график matplotlib в выполнение.  Эти изображения будут видимы, и их можно сравнить в записи о выполнении.|
 |Добавление тега к выполнению|Функция:<br>`run.tag(key, value=None)`<br><br>Пример:<br>run.tag("selected", "yes") | Добавление тега к выполнению с использованием строкового ключа и дополнительного значения строки.|
-|Отправка файла или каталога|Функция:<br>`run.upload_file(name, path_or_stream)`<br> <br> Пример:<br>run.upload_file("best_model.pkl", "./model.pkl") | Отправка файла в запись о выполнении. Выполняет автоматическую запись файла в указанном каталоге вывода, который по умолчанию имеет значение "./outputs" для большинства типов выполнения.  Используйте upload_file только в том случае, если необходимо отправить дополнительные файлы или не указан выходной каталог. Мы советуем добавлять `outputs` к имени для того, чтобы файл отправлялся в выходной каталог. Вы можете перечислить все файлы, связанные с этой записью о выполнении, вызвав `run.get_file_names()`.|
+|Отправка файла или каталога|Функция:<br>`run.upload_file(name, path_or_stream)`<br> <br> Пример:<br>run.upload_file("best_model.pkl", "./model.pkl") | Отправка файла в запись о выполнении. Выполняет автоматическую запись файла в указанном каталоге вывода, который по умолчанию имеет значение "./outputs" для большинства типов выполнения.  Используйте upload_file только в том случае, если необходимо отправить дополнительные файлы или не указан выходной каталог. Мы советуем добавлять `outputs` к имени для того, чтобы файл отправлялся в выходной каталог. Можно вывести список всех файлов, которые связаны с этим выполнение запись с именем `run.get_file_names()`|
 
 > [!NOTE]
 > Метрики для скалярных значений, списков, строк и таблиц могут быть типа: число с плавающей точкой, целое число или строка.
@@ -217,37 +217,9 @@ ms.locfileid: "58652320"
    run = experiment.submit(src)
    ```
 
-## <a name="cancel-a-run"></a>Отмена выполнения
+## <a name="manage-a-run"></a>Управление запуска
 
-ALTER запуска отправляется, отмените его даже если вы потеряли ссылку на объект, поскольку вы знаете имя эксперимента и идентификатор. 
-
-
-```python
-from azureml.core import Experiment
-exp = Experiment(ws, "my-experiment-name")
-
-# if you don't know the run id, you can list all runs under an experiment
-for r in exp.get_runs():  
-    print(r.id, r.get_status())
-
-# if you know the run id, you can "rehydrate" the run
-from azureml.core import get_run
-r = get_run(experiment=exp, run_id="my_run_id", rehydrate=True)
-  
-# check the returned run type and status
-print(type(r), r.get_status())
-
-# you can cancel a run if it hasn't completed or failed
-if r.get_status() not in ['Complete', 'Failed']:
-    r.cancel()
-```
-В настоящее время только типы ScriptRun и PipelineRun поддерживает операцию отмены.
-
-Кроме того вы можете отменить выполнение в интерфейсе командной строки с помощью такой команды:
-```shell
-az ml run cancel -r <run_id> -p <project_path>
-```
-
+[Start "," монитор "и" Отмена учебные запуски](how-to-manage-runs.md) статье указаны конкретные рабочие процессы машинного обучения Azure, сведения об управлении экспериментов.
 
 ## <a name="view-run-details"></a>Просмотр сведений о выполнении
 
@@ -293,7 +265,7 @@ az ml run cancel -r <run_id> -p <project_path>
 
 После завершения эксперимента можно просмотреть записи о выполнении в эксперименте. Обращаться к журналу можно двумя способами.
 
-* Получить URL-адрес для перехода к выполнению напрямую: ```print(run.get_portal_url())```.
+* Получить URL-адрес к запуску напрямую ```print(run.get_portal_url())```
 * Просмотреть сведения о выполнении, отправив имя выполнения (в этом случае ```run```). Вы получите имя эксперимента, идентификатор, тип, состояние, страницу сведений, ссылку на портал Azure и ссылку на документацию.
 
 Ссылка для выполнения переведет вас на страницу сведений о выполнении на портале Azure. Здесь отображаются все свойства, отслеживаемые метрики, изображения и диаграммы, которые были зарегистрированы во время эксперимента. В этом случае мы регистрируем MSE и альфа-значения.
@@ -320,8 +292,8 @@ az ml run cancel -r <run_id> -p <project_path>
 
 См. также:
 + [Диаграммы и кривые для моделей классификации](#classification)
-+ [Диаграммы и графы для моделей регрессии](#regression)
-+ [Моделирование возможностей объяснения](#model-explain-ability-and-feature-importance)
++ [Диаграммы и графики для моделей регрессии](#regression)
++ [Модель объяснить возможности](#model-explain-ability-and-feature-importance)
 
 
 ### <a name="view-the-run-charts"></a>Просмотр диаграмм выполнения
@@ -349,12 +321,12 @@ az ml run cancel -r <run_id> -p <project_path>
 ### <a name="classification"></a>классификация;
 
 Для каждой модели классификации, которую вы создаете с помощью автоматического машинного обучения в Машинном обучении Azure, отображаются следующие диаграммы: 
-+ [матрица неточностей](#confusion-matrix);
-+ [диаграмма с соотношением полноты и точности](#precision-recall-chart);
-+ [ROC-кривые](#roc);
-+ [кривая точности прогнозов](#lift-curve);
-+ [кривая прироста](#gains-curve);
-+ [график калибровки](#calibration-plot).
++ [Матрица неточностей](#confusion-matrix)
++ [Диаграммы точности отзыва](#precision-recall-chart)
++ [Получатель эксплуатационные характеристики (или ROC)](#roc)
++ [Диаграмма точности прогнозов](#lift-curve)
++ [Кривая прироста](#gains-curve)
++ [График калибровки](#calibration-plot)
 
 #### <a name="confusion-matrix"></a>Матрица неточностей
 
@@ -362,9 +334,9 @@ az ml run cancel -r <run_id> -p <project_path>
 
 Для решения проблем с классификацией Машинное обучение Azure автоматически предоставляет матрицу неточностей для каждой созданной модели. В каждой матрице неточностей автоматическое ML отображает зеленым цветом правильно классифицированные метки, а красным — неправильно классифицированные метки. Размер каждого круга соответствует количеству выборок для этой ячейки. Кроме того, в смежной линейчатой диаграмме представлены данные о частоте для каждой прогнозируемой и реальной метки. 
 
-Пример 1 Модель классификации с низкой точностью ![Модель классификации с низкой точностью](./media/how-to-track-experiments/azure-machine-learning-auto-ml-confusion_matrix1.PNG)
+Пример 1 Модель классификации с низкой точности ![модель классификации с низкой точности](./media/how-to-track-experiments/azure-machine-learning-auto-ml-confusion_matrix1.PNG)
 
-Пример 2 Модель классификации с высокой (идеальной) точностью ![Модель классификации с высокой точностью](./media/how-to-track-experiments/azure-machine-learning-auto-ml-confusion_matrix2.PNG)
+Пример 2 Модель классификации с высокой точностью (лучше всего использовать) ![модель классификации с высокой точностью.](./media/how-to-track-experiments/azure-machine-learning-auto-ml-confusion_matrix2.PNG)
 
 
 #### <a name="precision-recall-chart"></a>Диаграмма соотношения полноты и точности
@@ -373,17 +345,17 @@ az ml run cancel -r <run_id> -p <project_path>
 
 Термин "точность" здесь обозначает способность классификатора правильно назначить метки всем экземплярам. Термин "полнота" обозначает способность классификатора найти все экземпляры для определенной метки. Кривая соотношения полноты и точности демонстрирует связь между этими двумя параметрами. В идеальном случае модель демонстрирует 100 % точность и полноту.
 
-Пример 1 Модель классификации с низкой точностью и низкой полнотой ![Модель классификации с низкой точностью и низкой полнотой](./media/how-to-track-experiments/azure-machine-learning-auto-ml-precision_recall1.PNG)
+Пример 1 Модель классификации с низкой точности и отзыва низкой ![модель классификации с низкой точности и низкой отзыва](./media/how-to-track-experiments/azure-machine-learning-auto-ml-precision_recall1.PNG)
 
-Пример 2 Модель классификации с близкими к 100 % точностью и полнотой (идеальный вариант) ![Модель классификации с высокой точностью и высокой полнотой](./media/how-to-track-experiments/azure-machine-learning-auto-ml-precision_recall2.PNG)
+Пример 2 Модель классификации с около 100% точностью и около 100% отзыв (лучше всего использовать) ![высокой точности модели классификации и отзывов](./media/how-to-track-experiments/azure-machine-learning-auto-ml-precision_recall2.PNG)
 
 #### <a name="roc"></a>ROC
 
 Кривая ROC отображает правильно и неправильно классифицированные метки для конкретной модели. Кривая ROC может быть недостаточно информативной, если обучение моделей выполняется по наборам данных с высоким уровнем смещения, так как она не отображает ложноположительные метки.
 
-Пример 1 Модель классификации с небольшим количеством правильных меток и большим количеством неправильных меток![Модель классификации с небольшим количеством правильных меток и большим количеством неправильных меток](./media/how-to-track-experiments/azure-machine-learning-auto-ml-roc1.PNG)
+Пример 1 Модель классификации с низкой истинных метках и высокий уровень false метками ![модель классификации с низкой истинных метках и высокий уровень false метки](./media/how-to-track-experiments/azure-machine-learning-auto-ml-roc1.PNG)
 
-Пример 2 Модель классификации с большим количеством правильных меток и небольшим количеством неправильных меток![Модель классификации с большим количеством правильных меток и небольшим количеством неправильных меток](./media/how-to-track-experiments/azure-machine-learning-auto-ml-roc2.PNG)
+Пример 2 Модель классификации с высокой истинных метках и низкой false метками ![модель классификации с высокой истинных метках и низкой false метки](./media/how-to-track-experiments/azure-machine-learning-auto-ml-roc2.PNG)
 
 #### <a name="lift-curve"></a>Диаграмма точности прогнозов
 
@@ -391,9 +363,9 @@ az ml run cancel -r <run_id> -p <project_path>
 
 Диаграммы точности прогнозов используются для оценки эффективности модели классификации. Они демонстрируют, насколько улучшаются результаты с применением модели по сравнению с результатами без модели. 
 
-Пример 1 Модель демонстрирует результаты хуже, чем у модели случайного выбора ![Модель классификации с результатами хуже, чем у модели случайного выбора](./media/how-to-track-experiments/azure-machine-learning-auto-ml-lift_curve1.PNG)
+Пример 1 Что еще хуже, чем модель случайного выбора эффективность модели ![модель классификации, что еще хуже, чем случайного выбора модели](./media/how-to-track-experiments/azure-machine-learning-auto-ml-lift_curve1.PNG)
 
-Пример 2 Модель демонстрирует результаты лучше, чем у модели случайного выбора ![Модель классификации с результатами лучше, чем у модели случайного выбора](./media/how-to-track-experiments/azure-machine-learning-auto-ml-lift_curve2.PNG)
+Пример 2 Модель работает лучше, чем модель случайного выбора ![модель классификации, которая работает лучше](./media/how-to-track-experiments/azure-machine-learning-auto-ml-lift_curve2.PNG)
 
 #### <a name="gains-curve"></a>Кривая прироста
 
@@ -401,9 +373,9 @@ az ml run cancel -r <run_id> -p <project_path>
 
 Использование диаграммы суммарного прироста позволяет выбрать параметры отсечения для классификации по процентному уровню, который соответствующий требуемому приросту для модели. Здесь представлена та же информация, что и на диаграмме точности прогнозов, но в другом режиме отображения.
 
-Пример 1 Модель классификации с минимальным приростом ![Модель классификации с минимальным приростом](./media/how-to-track-experiments/azure-machine-learning-auto-ml-gains_curve1.PNG)
+Пример 1 Модель классификации с минимальными прибыль ![модель классификации с минимальными прибыль](./media/how-to-track-experiments/azure-machine-learning-auto-ml-gains_curve1.PNG)
 
-Пример 2 Модель классификации с существенным приростом ![Модель классификации с существенным приростом](./media/how-to-track-experiments/azure-machine-learning-auto-ml-gains_curve2.PNG)
+Пример 2 Модель классификации с значительного повышения ![модель классификации с значительного повышения](./media/how-to-track-experiments/azure-machine-learning-auto-ml-gains_curve2.PNG)
 
 #### <a name="calibration-plot"></a>График калибровки
 
@@ -411,13 +383,13 @@ az ml run cancel -r <run_id> -p <project_path>
 
 График калибровки отображает достоверность прогнозной модели. На нем отображается зависимость между прогнозируемой и фактической вероятностями, где "вероятность" обозначает шанс принадлежности конкретного экземпляра к определенной метке. Хорошо откалиброванная модель дает результаты, близкие к графику y=x, где обеспечивается высокая надежность прогнозов. Модель с высокой степенью достоверности приближается к графику y=0, где присутствует прогнозируемая вероятность, но отсутствует фактическая.
 
-Пример 1 Относительно неплохо откалиброванная модель ![ Относительно неплохо откалиброванная модель](./media/how-to-track-experiments/azure-machine-learning-auto-ml-calib_curve1.PNG)
+Пример 1 Модель более четко калиброванных ![ более четко калиброванных модели](./media/how-to-track-experiments/azure-machine-learning-auto-ml-calib_curve1.PNG)
 
-Пример 2 Модель с высокой степенью достоверности ![Модель с высокой степенью достоверности](./media/how-to-track-experiments/azure-machine-learning-auto-ml-calib_curve2.PNG)
+Пример 2 Модель чрезмерное Конфиденциально ![модель чрезмерное Конфиденциально](./media/how-to-track-experiments/azure-machine-learning-auto-ml-calib_curve2.PNG)
 
 ### <a name="regression"></a>Регрессия
 Для каждой модели регрессии, которую вы создаете с помощью автоматического машинного обучения в Машинном обучении Azure, отображаются следующие графики: 
-+ [Прогнозируемые и истинные значения](#pvt)
++ [Прогнозируемые и Истина](#pvt)
 + [Гистограмма остатков](#histo)
 
 <a name="pvt"></a>
@@ -428,9 +400,9 @@ az ml run cancel -r <run_id> -p <project_path>
 
 После каждого запуска для каждой модели регрессии отображается диаграмма прогнозируемых и истинных значений. Для обеспечения конфиденциальности данных значения группируются по ячейкам, размер каждой из которых отображается в виде линейчатой диаграммы в нижней части области диаграммы. Вы можете сравнить результаты прогнозной модели с более светлой областью, которая отображает идеальные значения, требуемые для этой модели, с учетом допусков.
 
-Пример 1 Модель регрессии с низкой точностью прогнозирования ![Модель регрессии с низкой точностью прогнозирования](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression1.PNG)
+Пример 1 Модель регрессии с низкой точности прогнозирования ![модель регрессии с низкой точности прогнозирования](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression1.PNG)
 
-Пример 2 Модель регрессии с высокой точностью прогнозирования ![Модель регрессии с высокой точностью прогнозирования](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression2.PNG)
+Пример 2 Модель регрессии с высокой точностью в своих прогнозах ![модель регрессии с высокой точностью в своих прогнозах](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression2.PNG)
 
 <a name="histo"></a>
 
@@ -438,9 +410,9 @@ az ml run cancel -r <run_id> -p <project_path>
 
 Гистограмма остатков отображает разность между наблюдаемыми и прогнозируемыми значениями y. Чтобы отобразить допуск ошибок с низким смещением, гистограмма остатков должна иметь форму колокола с центром около 0. 
 
-Пример 1 Модель регрессии с заметным смещением ошибок![Модель регрессии с заметным смещением ошибок](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression3.PNG)
+Пример 1 Модель регрессии с смещения в его ошибки ![SA модель регрессии с помощью смещения в его ошибки](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression3.PNG)
 
-Пример 2 Модель регрессии с более равномерным распределением ошибок ![Модель регрессии с более равномерным распределением ошибок](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression4.PNG)
+Пример 2 Модель регрессии с более равномерного распределения ошибок ![модель регрессии с более равномерное распределение ошибок](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression4.PNG)
 
 ### <a name="model-explain-ability-and-feature-importance"></a>Возможность объяснить модель и важность компонентов
 
@@ -450,8 +422,8 @@ az ml run cancel -r <run_id> -p <project_path>
 
 ## <a name="example-notebooks"></a>Примеры записных книжек
 Основные понятия, описанные в этой статье, демонстрируют следующие записные книжки:
-* [how-to-use-azureml/training/train-within-notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-within-notebook)
-* [how-to-use-azureml/training/train-on-local](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-on-local)
+* [How-to-Use-azureml/Training/Train-WITHIN-Notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-within-notebook)
+* [How-to-Use-azureml/Training/Train-On-Local](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-on-local)
 * [how-to-use-azureml/training/logging-api/logging-api.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/logging-api)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]

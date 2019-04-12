@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 02/23/2018
 ms.author: cweining
-ms.openlocfilehash: 5787db7e2b726a10891fcabb0b215399d0d4e0ae
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 35789cc1e516fb24d5e985e12b44fe3cd01b795d
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55884313"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59494754"
 ---
 # <a name="profile-aspnet-core-azure-linux-web-apps-with-application-insights-profiler"></a>Профилирование веб-приложений ASP.NET Core в Azure для Linux с помощью Application Insights Profiler
 
@@ -29,7 +29,7 @@ ms.locfileid: "55884313"
 
 ![Трассировки профилировщика](./media/profiler-aspnetcore-linux/profiler-traces.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Приведенные ниже инструкции применяются ко всем средам разработки для Windows, Linux и Mac:
 
 * Установите [пакет SDK для .NET Core 2.1.2 или более поздней версии](https://dotnet.microsoft.com/download/archives).
@@ -39,21 +39,40 @@ ms.locfileid: "55884313"
 
 1. Откройте окно командной строки на компьютере. Приведенные ниже инструкции работают для всех сред разработки для Windows, Linux и Mac.
 
-2. Создайте веб-приложение MVC для ASP.NET Core.
+1. Создайте веб-приложение MVC для ASP.NET Core.
 
     ```
     dotnet new mvc -n LinuxProfilerTest
     ```
 
-3. Измените рабочую папку на корневую папку для проекта.
+1. Измените рабочую папку на корневую папку для проекта.
 
-4. Добавьте пакет NuGet для сбора трассировок профилировщика.
+1. Добавьте пакет NuGet для сбора трассировок профилировщика.
 
-    ```
+    ```shell
     dotnet add package Microsoft.ApplicationInsights.Profiler.AspNetCore
     ```
 
-5. Добавьте строку кода в раздел **HomeController.cs** для случайной задержки на несколько секунд.
+1. Включите Application Insights в файле Program.cs:
+
+    ```csharp
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        WebHost.CreateDefaultBuilder(args)
+            .UseApplicationInsights() // Add this line of code to Enable Application Insights
+            .UseStartup<Startup>();
+    ```
+    
+1. Включите Profiler в файле Startup.cs:
+
+    ```csharp
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddServiceProfiler(); // Add this line of code to Enable Profiler
+        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+    }
+    ```
+
+1. Добавьте строку кода в раздел **HomeController.cs** для случайной задержки на несколько секунд.
 
     ```csharp
         using System.Threading;
@@ -68,7 +87,7 @@ ms.locfileid: "55884313"
             }
     ```
 
-6. Сохраните и зафиксируйте внесенные изменения в локальном репозитории.
+1. Сохраните и зафиксируйте внесенные изменения в локальном репозитории.
 
     ```
         git init
@@ -143,10 +162,7 @@ ms.locfileid: "55884313"
 
     ```
     APPINSIGHTS_INSTRUMENTATIONKEY: [YOUR_APPINSIGHTS_KEY]
-    ASPNETCORE_HOSTINGSTARTUPASSEMBLIES: Microsoft.ApplicationInsights.Profiler.AspNetCore
     ```
-
-    ![Настройка параметров приложения](./media/profiler-aspnetcore-linux/set-appsettings.png)
 
     После изменения параметров приложения выполняется автоматический перезапуск сайта. Когда новые параметры будут применены, профилировщик немедленно запустится на две минуты. Затем он будет запускаться на две минуты каждый час.
 
@@ -160,19 +176,11 @@ ms.locfileid: "55884313"
 
 ## <a name="known-issues"></a>Известные проблемы
 
-### <a name="the-enable-action-in-the-profiler-configuration-pane-doesnt-work"></a>Действие включения на панели конфигурации профилировщика не работает
-
-> [!NOTE]
-> При размещении приложения с помощью службы приложений в Linux нет необходимости снова включать профилировщик в области **производительности** на портале Application Insights. Для включения профилировщика можно включить пакет NuGet в проект и указать значение **iKey** для Application Insights в параметрах веб-приложения.
-
-Если вы следуете рабочему процессу включения [Application Insights Profiler для Windows](./profiler.md) и нажмете кнопку **Включить** на панели **Configure Profiler** (Настройка профилировщика), появится сообщение об ошибке. Действие включения попытается установить версию агента профилировщика Windows в среде Linux.
-
-Мы работаем над устранением этой проблемы.
-
-![Не пытайтесь повторно включить профилировщик в области производительности](./media/profiler-aspnetcore-linux/issue-enable-profiler.png)
+### <a name="profile-now-button-doesnt-work-for-linux-profiler"></a>Профиль теперь кнопка не работает для Linux Profiler
+Версии Linux профилировщик App Insights не еще поддерживает по требованию, профилирование с помощью профиля теперь кнопка.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Если вы используете пользовательские контейнеры, размещенные в Службе приложений Azure, чтобы включить Application Insights Profiler, следуйте инструкциям из статьи [Enable Service Profiler for containerized ASP.NET Core application](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/tree/master/examples/EnableServiceProfilerForContainerApp) (Включение профилировщика службы для контейнерного приложения ASP.NET Core).
 
 О каких-либо проблемах или предложениях сообщайте в репозиторий GitHub [ApplicationInsights-Profiler-AspNetCore: Issues](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/issues).

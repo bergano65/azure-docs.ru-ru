@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 02/13/2019
 ms.author: aahi
-ms.openlocfilehash: d1f4c72ec0a67baa6f523c1ab632903b0580f3a7
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: dfbb31ce9f61ee28fef046120474a6a170906512
+ms.sourcegitcommit: f24b62e352e0512dfa2897362021b42e0cb9549d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58339386"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59505581"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics-preview"></a>Как использовать распознавание именованных сущностей в API анализа текста (предварительная версия)
 
@@ -56,7 +56,7 @@ ms.locfileid: "58339386"
 | Количество      | температура;   | "32 градуса"    |
 | DateTime      | Недоступно\*         | "18:30 4 февраля 2012 г."      | 
 | DateTime      | Дата          | "2 мая 2017 г.", "02.05.2017"   | 
-| Дата и время     | Время          | "8 утра", "8:00"  | 
+| DateTime      | Время          | "8 утра", "8:00"  | 
 | DateTime      | Диапазон дат     | "с 2 по 5 мая"    | 
 | DateTime      | Диапазон времени     | "6:00–17:00"     | 
 | DateTime      | Duration      | "1 минута и 45 секунд"   | 
@@ -96,7 +96,7 @@ ms.locfileid: "58339386"
 
 + Создайте запрос **POST**. Ознакомьтесь с документацию по API для этого запроса: [API связывания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/5ac4251d5b4ccd1554da7634)
 
-+ Настройка конечной точки HTTP для извлечения сущностей. Она должна включать ресурс `/entities`: `https://[your-region].api.cognitive.microsoft.com/text/analytics/v2.1-preview/entities`
++ Настройка конечной точки HTTP для извлечения сущностей. Она должна включать `/entities` ресурсов: `https://[your-region].api.cognitive.microsoft.com/text/analytics/v2.1-preview/entities`
 
 + Задайте заголовок запроса, чтобы включить ключ доступа для операций Анализа текста. Дополнительные сведения см. в статье [о поиске конечных точек и ключей доступа](text-analytics-how-to-access-key.md).
 
@@ -287,9 +287,9 @@ ms.locfileid: "58339386"
 
 ## <a name="see-also"></a>См. также 
 
- [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)  
+ [Обзор Анализа текста](../overview.md)  
  [Часто задаваемые вопросы](../text-analytics-resource-faq.md)</br>
- [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712) 
+ [Текстовая страница продукта Analytics](//go.microsoft.com/fwlink/?LinkID=759712) 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

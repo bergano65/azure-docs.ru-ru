@@ -1,6 +1,6 @@
 ---
-title: Сбор данных F5 в предварительной версии Sentinel Azure | Документация Майкрософт
-description: Дополнительные сведения о сборе данных F5 в Azure Sentinel.
+title: Подключайте данные из F5 предварительную версию Sentinel Azure | Документация Майкрософт
+description: Узнайте, как подключиться к Azure Sentinel F5 данных.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/6/2019
+ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: b78ed31fec3716e06f74d9c026ca2af2c48e0312
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 0f5452ade7a34a06cef4564760dc31981f1d8f37
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58883468"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59492572"
 ---
 # <a name="connect-your-f5-appliance"></a>Подключение устройства F5
 
@@ -30,7 +30,7 @@ ms.locfileid: "58883468"
 Можно подключить Azure Sentinel любое устройство F5 путем сохранения файлы журналов в формате CEF системного журнала. Интеграция с Azure Sentinel позволяет легко работают аналитики и запросы на данные файла журнала от F5. Дополнительные сведения о том, как Azure Sentinel принимает данные CEF, см. в разделе [CEF, подключение устройств](connect-common-event-format.md).
 
 > [!NOTE]
-> - Данные будут храниться в географическое расположение рабочей области, на котором выполняется Azure Sentinel.
+> Данные будут храниться в географическое расположение рабочей области, на котором выполняется Azure Sentinel.
 
 ## <a name="step-1-connect-your-f5-appliance-using-an-agent"></a>Шаг 1. Подключение устройства F5, с помощью агента
 
@@ -42,7 +42,7 @@ ms.locfileid: "58883468"
 
 ### <a name="deploy-the-agent-in-azure"></a>Развертывание агента в Azure
 
-1. На портале Azure Sentinel щелкните **сбора данных** и выберите тип устройства. 
+1. На портале Azure Sentinel щелкните **connecctors данных** и выберите тип устройства. 
 
 1. В разделе **конфигурация агента Linux Syslog**:
    - Выберите **автоматического развертывания** Если вы хотите создать новый компьютер, который устанавливается с агентом Azure Sentinel и включает в себя все необходимые настройки, как описано выше. Выберите **авторазвертывания** и нажмите кнопку **агент автоматического развертывания**. Вы перейдете на страницу покупки для выделенной виртуальной Машине, которой автоматически подключается к рабочей области, является. Виртуальная машина находится **стандартный D2s v3 (2 виртуальных ЦП, память объемом 8 ГБ)** и общедоступный IP-адрес.
@@ -79,7 +79,7 @@ ms.locfileid: "58883468"
 Если вы не используете Azure, вручную разверните агент Azure Sentinel для запуска на выделенном сервере Linux.
 
 
-1. На портале Azure Sentinel щелкните **сбора данных** и выберите тип устройства.
+1. На портале Azure Sentinel щелкните **соединители данных** и выберите тип устройства.
 1. Чтобы создать выделенной виртуальной Машине Linux, в разделе **конфигурация агента Linux Syslog** выберите **развертывания вручную**.
    1. В разделе **Загрузка и установка агента Syslog**выберите **машины Linux в Azure не**. 
    1. В **Direct agent** экран, на котором окне выберите **агент для Linux** скачайте агент или выполните следующую команду, чтобы скачать его на компьютере Linux:   `wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh && sh onboard_agent.sh -w {workspace GUID} -s gehIk/GvZHJmqlgewMsIcth8H6VqXLM9YXEpu0BymnZEJb6mEjZzCHhZgCx5jrMB1pVjRCMhn+XTQgDTU3DVtQ== -d opinsights.azure.com`
