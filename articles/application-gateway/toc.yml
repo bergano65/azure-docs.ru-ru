@@ -18,8 +18,6 @@ items:
   expanded: true
 - name: Учебники
   items:
-  - name: Размещение одного веб-сайта
-    href: quick-create-portal.md
   - name: Включение брандмауэра веб-приложения Azure
     href: application-gateway-web-application-firewall-portal.md
   - name: Защита с помощью SSL
@@ -32,8 +30,6 @@ items:
     href: tutorial-url-redirect-cli.md
   - name: Автоматическое масштабирование и избыточность в пределах зоны
     href: tutorial-autoscale-ps.md
-  - name: Перезапись заголовков HTTP
-    href: tutorial-http-header-rewrite-powershell.md
 - name: Примеры
   items:
   - name: Azure PowerShell
@@ -178,8 +174,10 @@ items:
         href: redirect-internal-site-cli.md
     - name: Перенаправление веб-трафика с помощью Azure PowerShell
       href: tutorial-url-redirect-powershell.md
-  - name: Перезапись HTTP-заголовков в существующем шлюзе
+  - name: Перезапись заголовков HTTP
     items:
+    - name: Портал Azure
+      href: rewrite-http-headers-portal.md
     - name: Azure PowerShell
       href: add-http-header-rewrite-rule-powershell.md
   - name: Настройка веб-приложения Службы приложений и мультитенантной службы
@@ -240,9 +238,9 @@ items:
     href: https://azure.microsoft.com/regions/services/
   - name: Переполнение стека
     href: https://stackoverflow.com/questions/tagged/azure-application-gateway
-ms.openlocfilehash: 01ca52cb94059cd0281fb81f605380c8bd852704
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: 26ec063b5ad05325eb654a3b112eb5dd6ef23bcc
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58803771"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59547386"

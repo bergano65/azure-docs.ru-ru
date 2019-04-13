@@ -44,8 +44,8 @@ sections:
       - type: list
         style: unordered
         items:
-          - html: '<a href="https://github.com/Azure/azure-notificationhubs-android">Android SDK</a>'
-          - html: '<a href="https://github.com/Azure/azure-notificationhubs-ios">iOS SDK</a>'
+          - html: '<a href="https://github.com/Azure/azure-notificationhubs-android">Пакет SDK для Android</a>'
+          - html: '<a href="https://github.com/Azure/azure-notificationhubs-ios">пакета SDK iOS</a>'
           - html: '<a href="https://github.com/Azure/azure-notificationhubs-dotnet">ПАКЕТ SDK .NET</a>'
           - html: '<a href="https://github.com/Azure/azure-notificationhubs-samples">Репозиторий примеров (для других платформ)</a>'
           - html: <a href="/azure/notification-hubs/samples-powershell">PowerShell</a>
@@ -56,5 +56,4 @@ sections:
         items:
           - html: '<a href="https://docs.microsoft.com/powershell/module/az.notificationhubs">Azure PowerShell</a>'
           - html: <a href="/dotnet/api/microsoft.azure.notificationhubs">ПАКЕТ SDK .NET</a>
-          - html: <a href="/rest/api/notificationhubs">Интерфейс API REST для управления.</a>
-          - html: '<a href="https://docs.microsoft.com/previous-versions/azure/reference/dn223264(v%3dazure.100)">REST API для службы "Центры уведомлений"</a>'
+          - html: <a href="/rest/api/notificationhubs">справочник по API REST</a>

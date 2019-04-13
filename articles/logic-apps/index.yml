@@ -1,18 +1,12 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 2d1c2aaa47d056a56d6fb0fc09f4de8072258c9a
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242147"
 documentType: LandingData
 title: Документация Azure Logic Apps
 metadata:
   title: Документация по Azure Logic Apps. Руководства и справочник по API | Документация Майкрософт
-  description: Служба Azure Logic Apps упрощает создание автоматических масштабируемых рабочих процессов для интеграции приложений и данных в различные облачные службы и локальные системы. Узнайте, как создавать, разрабатывать и развертывать приложения логики для автоматизации бизнес-процессов, при помощи наших кратких руководств, инструкций, шаблонов и API-интерфейсов.
+  description: 'Служба Azure Logic Apps упрощает создание автоматических масштабируемых рабочих процессов для интеграции приложений и данных в различные облачные службы и локальные системы. Узнайте, как создавать, разрабатывать и развертывать приложения логики для автоматизации бизнес-процессов, при помощи наших кратких руководств, инструкций, шаблонов и API-интерфейсов.'
   services: logic-apps
-  author: czeumault
-  manager: estfan
+  author: ecfan
+  manager: carmonm
   ms.service: logic-apps
   ms.tgt_pltfrm: na
   ms.devlang: na
@@ -20,36 +14,36 @@ metadata:
   ms.date: 01/09/2018
   ms.author: estfan
 abstract:
-  description: Служба Azure Logic Apps упрощает создание автоматических масштабируемых рабочих процессов для интеграции приложений и данных в различные облачные службы и локальные системы. Узнайте, как создавать, разрабатывать и развертывать приложения логики для автоматизации бизнес-процессов, при помощи наших кратких руководств, инструкций, шаблонов и API-интерфейсов.
+  description: 'Служба Azure Logic Apps упрощает создание автоматических масштабируемых рабочих процессов для интеграции приложений и данных в различные облачные службы и локальные системы. Узнайте, как создавать, разрабатывать и развертывать приложения логики для автоматизации бизнес-процессов, при помощи наших кратких руководств, инструкций, шаблонов и API-интерфейсов.'
 sections:
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: Узнайте, как создать приложение логики в Azure.
-  - type: list
-    style: icon48
+  - title: 5-минутные руководства по началу работы
     items:
-    - image:
-        src: https://docs.microsoft.com/media/common/i_portal.svg
-      text: Портал Azure
-      href: /azure/logic-apps/quickstart-create-first-logic-app-workflow
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: Узнайте, как создавать приложения логики, которые выполняются по расписанию, и интегрировать данные в различные службы Azure, службы Майкрософт и другие приложения SaaS (программное обеспечение как услуга).
-  - type: list
-    style: ordered
+      - type: paragraph
+        text: 'Узнайте, как создать приложение логики в Azure.'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_portal.svg'
+            text: Портал Azure
+            href: /azure/logic-apps/quickstart-create-first-logic-app-workflow
+  - title: Пошаговые руководства
     items:
-    - html: <a href="/azure/logic-apps/tutorial-build-schedule-recurring-logic-app-workflow">Проверка трафика при помощи приложения логики, которое выполняется по расписанию</a>
-    - html: <a href="/azure/logic-apps/tutorial-process-mailing-list-subscriptions-workflow">Управление запросами для списка рассылки с помощью приложения логики</a>
-    - html: <a href="/azure/logic-apps/tutorial-process-email-attachments-workflow">Обработка сообщений электронной почты и вложений с помощью приложения логики</a>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: paragraph
+        text: 'Узнайте, как создавать приложения логики, которые выполняются по расписанию, и интегрировать данные в различные службы Azure, службы Майкрософт и другие приложения SaaS (программное обеспечение как услуга).'
+      - type: list
+        style: ordered
+        items:
+          - html: '<a href="/azure/logic-apps/tutorial-build-schedule-recurring-logic-app-workflow">Проверка трафика при помощи приложения логики, которое выполняется по расписанию</a>'
+          - html: <a href="/azure/logic-apps/tutorial-process-mailing-list-subscriptions-workflow">Управление запросами для списка рассылки с помощью приложения логики</a>
+          - html: <a href="/azure/logic-apps/tutorial-process-email-attachments-workflow">Обработка сообщений электронной почты и вложений с помощью приложения логики</a>
+  - title: Справочные материалы
     items:
-    - title: Командная строка
-      html: <p><a href="/powershell/module/az.logicapp">Azure PowerShell</a></p>
-    - title: REST
-      html: <p><a href="/rest/api/logic/">справочник по API REST</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Командная строка
+            html: <p><a href="/powershell/module/az.logicapp">Azure PowerShell</a></p>
+          - title: REST
+            html: <p><a href="/rest/api/logic/">справочник по API REST</a></p>

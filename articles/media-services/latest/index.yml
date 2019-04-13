@@ -24,9 +24,9 @@ sections:
         className: cardImageOuter
         items:
           - title: Концепции
-            html: '<p><a href="https://docs.microsoft.com/azure/media-services/latest/storage-account-concept">Передача в облако и хранение</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/encoding-concept">Кодирование</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/reacting-to-media-services-events">Мониторинг</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/analyzing-video-audio-files-concept">Аналитика мультимедиа</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/dynamic-packaging-overview">Упаковка</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/content-protection-overview">Защита</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/live-streaming-overview">Потоковая передача в реальном времени</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/use-azure-media-player">Клиенты в Проигрывателе</a></p>'
+            html: '<p><a href="https://docs.microsoft.com/azure/media-services/latest/storage-account-concept">Cloud upload and storage</a> (Передача в облако и хранение)</p><p><a href="https://docs.microsoft.com/azure/media-services/latest/encoding-concept">Кодирование</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/reacting-to-media-services-events">Мониторинг</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/analyzing-video-audio-files-concept">Аналитика мультимедиа</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/dynamic-packaging-overview">Упаковка</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/content-protection-overview">Защита</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/live-streaming-overview">Потоковая передача в реальном времени</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/use-azure-media-player">Клиенты Проигрывателя</a></p>'
           - title: "Разработка с помощью API версии\_3"
-            html: '<p><a href="https://docs.microsoft.com/azure/media-services/latest/developers-guide">Начало разработки с использованием пакетов SDK</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/media-rest-apis-with-postman">Разработка с использованием REST</a></p>'
+            html: '<p><a href="https://docs.microsoft.com/azure/media-services/latest/developers-guide">Начало разработки с использованием пакетов SDK</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/media-rest-apis-with-postman">Разработка с использованием REST</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/configure-connect-java-howto">Подключение с помощью Java</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/configure-connect-dotnet-howto">Подключение с помощью .NET</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/configure-connect-nodejs-howto">Подключение с помощью Node.js</a></p>'
   - title: 5-минутные руководства по началу работы
     items:
       - type: paragraph
@@ -120,7 +120,7 @@ sections:
         style: unordered
         className: spaced noBullet
         items:
-          - html: '<a href="https://aka.ms/ams-v3-cli-ref">Инфраструктура CLI Azure</a>'
+          - html: '<a href="https://aka.ms/ams-v3-cli-ref">Интерфейс командной строки Azure</a>'
           - html: '<a href="https://aka.ms/ams-v3-rest-ref">REST</a>'
           - html: '<a href="https://aka.ms/ams-v3-dotnet-ref">.NET</a>'
           - html: '<a href="https://aka.ms/ams-v3-java-ref">Java</a>'
