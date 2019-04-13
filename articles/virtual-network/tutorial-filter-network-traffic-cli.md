@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 03/30/2018
 ms.author: jdial
 ms.custom: ''
-ms.openlocfilehash: 630eddc8494b32d93035913bcb2b55f00153b1be
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: 2c24634a42fd420eae204437418b82479869bbe5
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55755515"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59525550"
 ---
 # <a name="filter-network-traffic-with-a-network-security-group-using-the-azure-cli"></a>Фильтрация сетевого трафика с помощью групп безопасности сети, используя Azure CLI
 
@@ -196,7 +196,7 @@ az vm create \
 
 ## <a name="test-traffic-filters"></a>Тестирование фильтров трафика
 
-Создайте сеанс SSH с виртуальной машиной *myVmMgmt* при помощи приведенной ниже команды. Замените *<publicIpAddress>* общедоступным IP-адресом, который присвоен виртуальной машине. В примере выше используется IP-адрес *13.90.242.231*.
+Создайте сеанс SSH с виртуальной машиной *myVmMgmt* при помощи приведенной ниже команды. Замените  *\<publicIpAddress >* общедоступный IP-адрес виртуальной машины. В примере выше используется IP-адрес *13.90.242.231*.
 
 ```bash 
 ssh azureuser@<publicIpAddress>
@@ -240,7 +240,7 @@ curl myVmWeb
 az group delete --name myResourceGroup --yes
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы создали группу безопасности сети и связали ее с подсетью виртуальной сети. Дополнительные сведения о группах безопасности сети см. в статьях [Безопасность сети](security-overview.md) и [Create, change, or delete a network security group](manage-network-security-group.md) (Создание, изменение или удаление группы безопасности сети).
 

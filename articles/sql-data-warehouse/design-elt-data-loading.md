@@ -2,20 +2,20 @@
 title: Создание пакетов ELT вместо ETL для хранилища данных SQL в Azure | Документация Майкрософт
 description: Для загрузки данных в хранилище данных SQL Azure вместо пакетов ETL создавайте процессы извлечения, загрузки и преобразования данных (ELT).
 services: sql-data-warehouse
-author: ckarst
+author: kevinvngo
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: design
-ms.date: 04/17/2018
-ms.author: cakarst
+ms.date: 04/12/2019
+ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 96f6da7e081430768b5a6f8fd874e289b8256271
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.openlocfilehash: 2e65c1a33a60e19538a26e0f47f205235dd1695c
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57308488"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59548670"
 ---
 # <a name="designing-a-polybase-data-loading-strategy-for-azure-sql-data-warehouse"></a>Проектирование стратегии загрузки данных PolyBase для Хранилища данных SQL Azure
 
@@ -99,7 +99,7 @@ PolyBase загружает данные из текстовых файлов с
 - [PolyBase с использованием T-SQL](load-data-from-azure-blob-storage-using-polybase.md) хорошо работает, когда данные хранятся в хранилище BLOB-объектов Azure или Azure Data Lake Store. Этот вариант предоставляет наибольший контроль над процессом загрузки, но также требует определения объектов внешних данных. Другие методы определяют эти объекты в фоновом режиме, когда вы сопоставляете исходные таблицы с целевыми.  Для оркестрации загрузок T-SQL можно использовать фабрику данных Azure, службы SSIS или функции Azure. 
 - [PolyBase со службами SSIS](/sql/integration-services/load-data-to-sql-data-warehouse) является оптимальным выбором, когда исходные данные хранятся в SQL Server — локально или в облаке. Службы SSIS определяют сопоставления исходной и целевой таблиц, а также управляют загрузкой. При наличии пакетов служб SSIS можно изменить пакеты для работы с новым назначением хранилища данных. 
 - [PolyBase с фабрикой данных Azure (ADF)](sql-data-warehouse-load-with-data-factory.md) представляет собой другое средство оркестрации.  Оно определяет конвейер и планирует расписания заданий. 
-- [PolyBase с Azure DataBricks](../azure-databricks/databricks-extract-load-sql-data-warehouse.md) передает данные из таблицы хранилища данных SQL в кадр данных Databricks и (или) записывает данные из кадра данных Databricks в таблицу хранилища данных SQL.
+- [PolyBase с использованием Azure DataBricks](../azure-databricks/databricks-extract-load-sql-data-warehouse.md) передает данные из таблицы хранилища данных SQL в кадр данных Databricks и (или) записывает данные из кадра данных Databricks в таблицу хранилища данных SQL, с помощью PolyBase.
 
 ### <a name="non-polybase-loading-options"></a>Варианты загрузки, отличные от PolyBase
 

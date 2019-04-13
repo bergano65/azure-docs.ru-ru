@@ -10,12 +10,12 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.workload: big-data
 ms.date: 07/17/2018
-ms.openlocfilehash: 5393e202c7b5005552f164c9c6f55da92fc82572
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 6894486118f69e682353142be04821e1d28440e5
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58104443"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523177"
 ---
 # <a name="schedule-u-sql-jobs-using-sql-server-integration-services-ssis"></a>Планирование заданий U-SQL с использованием служб Integration Services (SSIS)
 
@@ -93,7 +93,7 @@ ms.locfileid: "58104443"
     
     Создание файла подключения.
 
-   1. Выберите **<New Connection...>** в параметре FileConnection.
+   1. Выберите  **\<новое соединение... >** в параметре FileConnection.
    2. Задайте параметру **Тип использования** значение **Существующий файл**, а параметру **Файл** — любой путь к существующему файлу.
 
        ![Настройка контейнера "Цикл по каждому элементу"](./media/data-lake-analytics-schedule-jobs-ssis/configure-file-connection-for-foreach-loop-container.png)

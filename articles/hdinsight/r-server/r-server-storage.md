@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: 888cc9d894861c7d7b808500cd60bbed9faa05d7
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: ffde6f3e94cab94fca5a815db28478790a2a4221
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56309123"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523398"
 ---
 # <a name="azure-storage-solutions-for-ml-services-on-azure-hdinsight"></a>Решения службы хранилища Azure для служб машинного обучения в Azure HDInsight
 
@@ -95,7 +95,7 @@ ms.locfileid: "56309123"
 
 Теперь все ссылки на каталоги и файлы указывают на учетную запись хранения `wasb://container2@storage2.blob.core.windows.net`. Это указанный вами **узел имени**.
 
-В учетной записи хранения **storage2** следует настроить каталог /user/RevoShare/<SSH username> указанным ниже образом.
+Вы должны настроить `/user/RevoShare/<SSH username>` каталог_установки **storage2** следующим образом:
 
 
     hadoop fs -mkdir wasb://container2@storage2.blob.core.windows.net/user
@@ -167,7 +167,7 @@ ms.locfileid: "56309123"
 - [Использование хранилища файлов Azure в Windows](../../storage/files/storage-dotnet-how-to-use-files.md)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Основные сведения о кластере служб машинного обучения в HDInsight](r-server-overview.md)
 * [Начало работы со службами машинного обучения в Azure HDInsight](r-server-get-started.md)

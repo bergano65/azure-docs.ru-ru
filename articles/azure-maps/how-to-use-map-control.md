@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: ffd2afd66c108f9eef690d641d9c4cbc85e9d609
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 9e3a442a3d6c420c548979327c193628efbee5aa
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59256096"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549224"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Использование библиотеки Map Control в службе Azure Maps
 
@@ -166,8 +166,7 @@ ms.locfileid: "59256096"
 
 8. Откройте файл в веб-браузере и вы увидите готовую для просмотра карту. Он должен выглядеть аналогично следующему коду:
 
-    <iframe height="700" style="width: 100%;" scrolling="no" title="Использование элемента управления картой" src="//codepen.io/azuremaps/embed/yZpEYL/?height=557&theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Просмотрите перо <a href='https://codepen.io/azuremaps/pen/yZpEYL/'>How to use the map control</a> (Использование элемента управления картой) с помощью Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
+    <iframe height="700" style="width: 100%;" scrolling="no" title="Использование элемента управления картой" src="//codepen.io/azuremaps/embed/yZpEYL/?height=557&theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">См. в разделе пера <a href='https://codepen.io/azuremaps/pen/yZpEYL/'>способ использования элемента управления картой</a> по "карты Azure" (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
     </iframe>
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -175,7 +174,7 @@ ms.locfileid: "59256096"
 Узнайте, как создавать и взаимодействовать с картой:
 
 > [!div class="nextstepaction"]
-> [Создание карты](map-create.md)
+> [Create a map](map-create.md) (Создание карты)
 
 Узнайте, как изменить стиль карты:
 

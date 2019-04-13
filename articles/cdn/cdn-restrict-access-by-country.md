@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/19/2018
 ms.author: magattus
-ms.openlocfilehash: f6efec64b4e6659b822b76e0fd7f9cc71a164094
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.openlocfilehash: 248a51da76cdee06e55438a706c543c70dcf141e
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58917759"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59526187"
 ---
 # <a name="restrict-azure-cdn-content-by-country"></a>Ограничение доступности содержимого Azure CDN по странам
 
@@ -46,9 +46,9 @@ ms.locfileid: "58917759"
 
 Например, все следующие фильтры путей каталогов являются допустимыми:   
 */*                                 
-*/Photos/*     
-*Запрета доступа/Strasbourg /*     
-*/Photos/Strasbourg/city.png*
+*/Photos/*   ;  
+*/Photos/Strasbourg/*   ;  
+*/Photos/Strasbourg/city.png*.
 
 ### <a name="define-the-type-of-action"></a>Определение типа действия
 
@@ -59,8 +59,8 @@ ms.locfileid: "58917759"
 - **Блок**: Пользователям из указанных стран, будет запрещен доступ к ресурсам, запрашиваемым по указанному рекурсивному пути. Если для этого пути не было настроено другой фильтрации по стране, то доступ для всех остальных пользователей будет разрешен.
 
 Например, правило геофильтрации для блокировки путей */фотографии/Strasbourg/* фильтрует следующие файлы:     
-*http://<endpoint>.azureedge.net/Photos/Strasbourg/1000.jpg*
-*http://<endpoint>.azureedge.net/Photos/Strasbourg/Cathedral/1000.jpg*
+*http:\//\<конечной точки >.azureedge.net/Photos/Strasbourg/1000.jpg*
+*http:\//\<конечной точки >.azureedge.net/Photos/Strasbourg/Cathedral/1000.jpg*
 
 ### <a name="define-the-countries"></a>Определение стран
 В списке **Коды стран** выберите страны, доступ из которых для выбранного пути нужно разрешить или запретить. 

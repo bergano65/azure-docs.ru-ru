@@ -6,18 +6,18 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/28/2018
-ms.openlocfilehash: 721950160974ef21f88791e64a41cfe0dd2b23ba
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: 503b7764ba7958a5448903b217b00e204ffcbf61
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53546765"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59527410"
 ---
 # <a name="how-to-connect-applications-to-azure-database-for-mysql"></a>Как подключить приложения к базе данных Azure для MySQL
 В этой статье перечислены типы строк подключения, поддерживаемые базой данных Azure для MySQL, а также шаблоны и примеры. Строка подключения может содержать различные параметры и настройки.
 
 - Сведения о получении сертификата см. в статье [Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MySQL](./howto-configure-ssl.md).
-- {ваш_узел} = <servername>.mysql.database.azure.com
+- {ваш_узел} = \<servername >. mysql.database.azure.com
 - {ваш_пользователь}@{имя_сервера} = формат userID для правильной аутентификации.  Если использовать только userID, аутентификация завершится ошибкой.
 
 ## <a name="adonet"></a>ADO.NET
@@ -66,5 +66,5 @@ client = Mysql2::Client.new(username: {username@servername}, password: {your_pas
 
 Строка содержит такие сведения, как драйвер, сервер и другие параметры подключения к базе данных. Измените эти примеры, чтобы использовать собственные параметры, такие как имя базы данных, пароль и т. д. Тогда вы сможете использовать эту строку для подключения к серверу из своего кода и приложений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о библиотеках подключений см. в статье [Библиотеки подключений для базы данных Azure для MySQL](./concepts-connection-libraries.md).

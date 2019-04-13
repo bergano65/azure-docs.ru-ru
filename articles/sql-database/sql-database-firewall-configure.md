@@ -12,12 +12,12 @@ ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: f2ea9f784064a926a391ba0eadebd9fa5224a36d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 513836257a292069da709ad7a71e480f2b4d069d
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57875192"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549735"
 ---
 # <a name="azure-sql-database-and-sql-data-warehouse-ip-firewall-rules"></a>Правила брандмауэра для IP-адресов служб "База данных SQL Azure" и "Хранилище данных SQL"
 
@@ -153,7 +153,7 @@ EXECUTE sp_delete_firewall_rule @name = N'ContosoFirewallRule'
 > [!IMPORTANT]
 > Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
 
-| Командлет | Уровень | ОПИСАНИЕ |
+| Командлет | Уровень | Описание |
 | --- | --- | --- |
 | [Get-AzSqlServerFirewallRule](/powershell/module/az.sql/get-azsqlserverfirewallrule) |сервер; |Возвращает текущие правила брандмауэра уровня сервера |
 | [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) |сервер; |Создает новое правило брандмауэра уровня сервера |
@@ -249,6 +249,7 @@ az sql server firewall-rule create --resource-group myResourceGroup --server $se
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+- Убедитесь, что входящий трафик из вычислений диапазоны IP-адресов (включая диапазоны SQL), используемые центрами данных Microsoft Azure позволяет среде вашей корпоративной сети. Может потребоваться добавить в белый список этих IP-адресов, см. в разделе [диапазоны IP-адрес центра обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653)  
 - Чтобы быстро приступить к созданию правила брандмауэра для IP-адресов на уровне сервера, ознакомьтесь со статьей о [создании базы данных SQL Azure](sql-database-single-database-get-started.md).
 - Дополнительные сведения о подключении к базе данных SQL Azure из приложений с открытым кодом или приложений сторонних производителей см. в статье [Библиотеки подключений для базы данных SQL и SQL Server](https://msdn.microsoft.com/library/azure/ee336282.aspx).
 - Сведения о дополнительных портах, которые, возможно, потребуется открыть, см. в разделе **Снаружи или внутри** статьи [Порты для ADO.NET 4.5, отличные от порта 1433](sql-database-develop-direct-route-ports-adonet-v12.md).

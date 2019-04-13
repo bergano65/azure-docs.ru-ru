@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/16/2018
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: 225c86ee1a7f764f60b2da0b8e3be02aa5dd22e7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 74666149824627308b6c5b026e0c9ba7a7750ada
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58123306"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523619"
 ---
 # <a name="sms-alert-behavior-in-action-groups"></a>Поведение SMS-оповещений в группе действий
 ## <a name="overview"></a>Обзор ##
@@ -30,10 +30,10 @@ ms.locfileid: "58123306"
 * короткое имя группы действий, в которую было отправлено это оповещение;
 * Заголовок оповещения.
 
-| Ответ | ОПИСАНИЕ |
+| Ответ | Описание |
 | ----- | ----------- |
-| DISABLE <Action Group Short name> | Отключает получение SMS от группы действий |
-| ENABLE <Action Group Short name> | Повторно включает получение SMS от группы действий |
+| DISABLE `<Action Group Short name>` | Отключает получение SMS от группы действий |
+| ENABLE `<Action Group Short name>` | Повторно включает получение SMS от группы действий |
 | STOP | Отключает получение SMS от всех групп действий |
 | START | Повторно включает получение SMS от всех групп действий |
 | HELP | Пользователю будет отправлен ответ со ссылкой на данную статью. |

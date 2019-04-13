@@ -12,12 +12,12 @@ author: jaredmoo
 ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 4f4032551efbf517ab47a64afc393cc57ace6bc1
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.openlocfilehash: 59e0e4cf82af9851dacf3ec030575ed392571331
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58621504"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523772"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs"></a>Создание заданий эластичной базы данных и управление ими с помощью Transact-SQL (T-SQL)
 
@@ -193,7 +193,7 @@ CREATE TABLE [dbo].[Test]([TestId] [int] NOT NULL);',
 По умолчанию агент заданий будет пытаться создать таблицу для хранения возвращаемых результатов. В результате вход, связанный с учетными данными, которые используются для выходных данных, должен будет иметь достаточные разрешения для выполнения этого. Если необходимо заранее вручную создать таблицу, тогда она должна иметь такие свойства:
 1. Столбцы с правильными именами и типами данных для результирующего набора.
 2. Дополнительный столбец для internal_execution_id с типом данных uniqueidentifier.
-3. Некластеризованный индекс с именем "IX_<TableName>_Internal_Execution_ID" в столбце internal_execution_id.
+3. Некластеризованный индекс с именем `IX_<TableName>_Internal_Execution_ID` internal_execution_id по столбцу.
 
 Подключитесь к [*базе данных заданий*](sql-database-job-automation-overview.md#job-database) и выполните команды, приведенные ниже.
 
@@ -1193,7 +1193,7 @@ GO
 Ниже приведены представления, доступные в [базе данных заданий](sql-database-job-automation-overview.md#job-database).
 
 
-|Просмотр  |ОПИСАНИЕ  |
+|Просмотр  |Описание  |
 |---------|---------|
 |[jobs_executions](#jobs_executions-view)     |  Отображает журнал выполнения задания.      |
 |[jobs](#jobs-view)     |   Отображает все задания.      |
@@ -1311,7 +1311,7 @@ GO
 
 Отображает все целевые группы.
 
-|Имя столбца|Тип данных| ОПИСАНИЕ|
+|Имя столбца|Тип данных| Описание|
 |-----|-----|-----|
 |**target_group_name**| nvarchar(128)   |Имя целевой группы, содержащей коллекцию баз данных. 
 |**target_group_id**    |uniqueidentifier   |Уникальный идентификатор целевой группы.
@@ -1322,7 +1322,7 @@ GO
 
 Отображает все элементы всех целевых групп.
 
-|Имя столбца|Тип данных| ОПИСАНИЕ|
+|Имя столбца|Тип данных| Описание|
 |-----|-----|-----|
 |**target_group_name**  |nvarchar(128)|Имя целевой группы, содержащей коллекцию баз данных. |
 |**target_group_id**    |uniqueidentifier   |Уникальный идентификатор целевой группы.|

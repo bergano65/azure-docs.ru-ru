@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/14/2018
 ms.author: apimpm
-ms.openlocfilehash: 1393e548c46c23f6b50c1b18a274febb74914ae8
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
+ms.openlocfilehash: bc791fea1dfd184749e84cb7b7a912972c6a9f12
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54054515"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523513"
 ---
 # <a name="create-subscriptions-in-azure-api-management"></a>Создание подписок в службе управления API Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "54054515"
 
 Эта статья поможет вам создать подписки с помощью портала Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для выполнения действий в этой статье требуется следующее.
 
@@ -38,15 +38,16 @@ ms.locfileid: "54054515"
 1. Выберите **Подписки** в меню слева.
 2. Выберите **Добавить подписку**.
 3. Укажите название подписки и выберите область.
-4. Щелкните **Сохранить**.
+4. При необходимости выберите, если подписки должны быть связаны с пользователем.
+5. Щелкните **Сохранить**.
 
 ![Гибкие подписки](./media/api-management-subscriptions/flexible-subscription.png)
 
 После того как вы создадите подписку, предоставляются два ключа API для получения доступа к API-интерфейсам. Один ключ является основным, а второй — дополнительным. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о службе управления API:
 
-+ См. сведения о других [концепциях](api-management-terminology.md) службы управления API.
++ Узнайте о терминологии Управления API в [этой статье](api-management-terminology.md).
 + Ознакомьтесь с [руководствами](import-and-publish.md) по использованию службы управления API.
 + Изучите страницу [Часто задаваемые вопросы о службе управления API Azure](api-management-faq.md).

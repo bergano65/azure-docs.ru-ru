@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 5aa9a60c624e1bfaa1570d02bfd1a421fcab3301
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.openlocfilehash: 87e1e57a969fc5e65302dcce44231773f7e74b3a
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59358306"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59548839"
 ---
 # <a name="configure-automated-machine-learning-experiments"></a>Настройка экспериментов автоматического машинного обучения
 
@@ -41,20 +41,20 @@ ms.locfileid: "59358306"
 
 классификация; | Регрессия | Прогнозирование временных рядов
 |-- |-- |--
-[Логистическая Регрессия](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)| [Эластичной сети](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)| [Эластичной сети](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)
-[Свет GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Свет GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Свет GBM](https://lightgbm.readthedocs.io/en/latest/index.html)
-[Градиентный Бустинг](https://scikit-learn.org/stable/modules/ensemble.html#classification)|[Градиентный Бустинг](https://scikit-learn.org/stable/modules/ensemble.html#regression)|[Градиентный Бустинг](https://scikit-learn.org/stable/modules/ensemble.html#regression)
+[Логистическая регрессия](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)| [Эластичная сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)| [Эластичная сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)
+[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)
+[Градиентное усиление](https://scikit-learn.org/stable/modules/ensemble.html#classification)|[Градиентное усиление](https://scikit-learn.org/stable/modules/ensemble.html#regression)|[Градиентное усиление](https://scikit-learn.org/stable/modules/ensemble.html#regression)
 [Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#decision-trees)|[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#regression)|[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#regression)
-[K ближайших](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)|[K ближайших](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)|[K ближайших](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)
-[Linear SVC](https://scikit-learn.org/stable/modules/svm.html#classification)|[ЛАРС лассо](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)|[ЛАРС лассо](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)
-[Поддержка C вектор классификации (SVC)](https://scikit-learn.org/stable/modules/svm.html#classification)|[Вероятностный градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)|[Вероятностный градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)
-[Случайного леса](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)|[Случайного леса](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)|[Случайного леса](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)
-[Очень случайную деревьев](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)|[Очень случайную деревьев](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)|[Очень случайную деревьев](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)
+[Алгоритм "К ближайших соседей"](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)|[Алгоритм "К ближайших соседей"](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)|[Алгоритм "К ближайших соседей"](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)
+[Линейная классификация опорных векторов](https://scikit-learn.org/stable/modules/svm.html#classification)|[Лассо LARS](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)|[Лассо LARS](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)
+[Классификация опорных C-векторов (SVC)](https://scikit-learn.org/stable/modules/svm.html#classification)|[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)|[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)
+[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)|[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)|[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)
+[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)|[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)|[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)
 [xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)|[xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)| [xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)
 [Определяемая DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNClassifier)|[Регрессор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor) | [Регрессор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor)|
 [Линейный классификатор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearClassifier)|[Линейной регрессии](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)|[Линейной регрессии](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)
 [Упрощенный алгоритм Байеса](https://scikit-learn.org/stable/modules/naive_bayes.html#bernoulli-naive-bayes)|
-[Вероятностный градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#sgd)|
+[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#sgd)|
 
 
 ## <a name="data-source-and-format"></a>Источник данных и формат
@@ -84,7 +84,7 @@ ms.locfileid: "59358306"
 
 ## <a name="fetch-data-for-running-experiment-on-remote-compute"></a>Получение данных для выполнения эксперимента на удаленных вычислительных ресурсах
 
-Если эксперимент выполняется на удаленных вычислительных ресурсах, получение данных должно быть помещено в отдельный сценарий Python `get_data()`. Этот сценарий выполняется на удаленных вычислительных ресурсах, в которых выполняется эксперимент автоматического машинного обучения. `get_data` избавляет от необходимости получения данных по сети для каждой итерации. Без `get_data` эксперимент завершится ошибкой при выполнении на удаленных вычислительных ресурсах.
+Если эксперимент выполняется на удаленных вычислительных ресурсах, получение данных должно быть помещено в отдельный сценарий Python `get_data()`. Этот сценарий выполняется на удаленных вычислительных ресурсах, в которых выполняется эксперимент автоматического машинного обучения. `get_data` избавляет от необходимости получать данные по сети для каждой итерации. Без `get_data` эксперимент завершится ошибкой при выполнении на удаленных вычислительных ресурсах.
 
 Вот пример `get_data`:
 
@@ -110,9 +110,9 @@ def get_data(): # Burning man 2016 data
 automl_config = AutoMLConfig(****, data_script=project_folder + "/get_data.py", **** )
 ```
 
-`get_data` скрипт может вернуть:
+Сценарий `get_data` может вернуть:
 
-Ключ | type | Взаимно исключают друг друга с помощью    | ОПИСАНИЕ
+Ключ | type | Взаимно исключают друг друга с помощью    | Описание
 ---|---|---|---
 X | Кадр данных Pandas или массив Numpy | data_train, метка, столбцы |  Все признаки для обучения
 y | Кадр данных Pandas или массив Numpy |   label   | Данные метки для обучения. Для классификации это должен быть массив целых чисел
@@ -173,7 +173,7 @@ y = dprep.read_csv(simple_example_data_root + 'y.csv').to_long(dprep.ColumnSelec
 *   Локальный компьютер или ноутбук. Как правило, при наличии небольшого набора данных и если вы по-прежнему находитесь на этапе изучения.
 *   Удаленный компьютер в облаке. [Управляемая Вычислительная среда Машинного обучения Azure](concept-azure-machine-learning-architecture.md#managed-and-unmanaged-compute-targets) — это управляемая служба, которая позволяет обучать модели машинного обучения в кластерах виртуальных машин Azure.
 
-На [сайте GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/automl) доступны примеры записных книжек с локальными и удаленными целевыми объектами вычислений.
+На [сайте GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning) доступны примеры записных книжек с локальными и удаленными целевыми объектами вычислений.
 
 <a name='configure-experiment'></a>
 
@@ -238,6 +238,9 @@ y = dprep.read_csv(simple_example_data_root + 'y.csv').to_long(dprep.ColumnSelec
     * Числовые признаки с очень малым числом уникальных значений преобразовываются в категориальные признаки.
     * В зависимости от кратности категориальных признаков можно выполнить кодирование меток или (хэширование) прямое унитарное кодирование.
 
+## <a name="ensemble-models"></a>Защищенными моделями совокупности
+Совокупного обучения улучшает результаты обучения компьютера и производительность прогнозирования объединение множество моделей, а не с помощью одной модели. Когда с помощью автоматизированных машинного обучения, вы можете обучить с помощью модели совокупности [Caruana алгоритм выбора совокупности с отсортированный инициализации совокупности](http://www.niculescu-mizil.org/papers/shotgun.icml04.revised.rev2.pdf). В совокупности итерации отображается в виде последней итерации выполнения.
+
 ## <a name="time-series-forecasting"></a>Прогнозирование временных рядов
 Для типа задачи прогнозирования ряда времени у вас есть дополнительные параметры для определения.
 1. time_column_name — это обязательный параметр, который определяет имя столбца, содержащего даты и времени ряда обучающих данных. 
@@ -270,7 +273,6 @@ automl_config = AutoMLConfig(task='forecasting',
                              X=X_train,
                              y=y_train,
                              n_cross_validations=5,
-                             enable_ensembling=False,
                              path=project_folder,
                              verbosity=logging.INFO,
                              **time_series_settings)

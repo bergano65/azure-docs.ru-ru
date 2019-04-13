@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: anzaman;cherylmc
-ms.openlocfilehash: 2013b3b96fddd32f01245655c1feb600bc426e2a
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: 556589aa7a0a577b9b1a010cf4811922ebc6de52
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53084147"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59524894"
 ---
 # <a name="create-and-modify-an-expressroute-circuit-using-cli"></a>Создание и изменение канала ExpressRoute с помощью CLI
 
@@ -56,7 +56,7 @@ az account set --subscription "<subscription ID>"
 
 ### <a name="2-get-the-list-of-supported-providers-locations-and-bandwidths"></a>2. Получение списка поддерживаемых поставщиков, расположений и значений пропускной способности
 
-Перед созданием канала ExpressRoute потребуется список поддерживаемых поставщиков услуг подключения, расположений и вариантов пропускной способности. Команда CLI az network express-route list-service-providers возвращает сведения, которые вы будете использовать на следующих этапах:
+Перед созданием канала ExpressRoute потребуется список поддерживаемых поставщиков услуг подключения, расположений и вариантов пропускной способности. Команды CLI `az network express-route list-service-providers` возвращает эти сведения, которые будут использоваться на последующих этапах:
 
 ```azurecli-interactive
 az network express-route list-service-providers
@@ -154,7 +154,7 @@ az network express-route create --bandwidth 200 -n MyCircuit --peering-location 
 
 ### <a name="4-list-all-expressroute-circuits"></a>4. Получение списка всех каналов ExpressRoute
 
-Чтобы получить список всех созданных вами каналов ExpressRoute, выполните команду az network express-route list. Вы можете получить эти сведения в любое время с помощью этой команды. Чтобы получить список всех каналов, сделайте вызов без параметров.
+Чтобы получить список всех созданных вами каналов ExpressRoute, выполните `az network express-route list` команды. Вы можете получить эти сведения в любое время с помощью этой команды. Чтобы получить список всех каналов, сделайте вызов без параметров.
 
 ```azurecli-interactive
 az network express-route list
@@ -358,7 +358,7 @@ az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-
 az network express-route delete  -n MyCircuit -g ExpressRouteResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания канала обязательно выполните задачи, описанные в следующих статьях:
 

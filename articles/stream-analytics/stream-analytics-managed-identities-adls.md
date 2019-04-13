@@ -1,19 +1,18 @@
 ---
-title: Аутентификация заданий Azure Stream Analytics для вывода данных в Azure Data Lake Storage 1-го поколения
+title: Проверка подлинности задания Azure Stream Analytics выходные данные Gen1 хранилища Озера данных Azure
 description: В этой статье объясняется, как использовать управляемые удостоверения для аутентификации заданий Azure Stream Analytics для вывода данных в Azure Data Lake Storage 1-го поколения.
-services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 04/8/2019
+ms.date: 04/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9eb66a9000c9add0718c6edf6674a26ce8e479b3
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 695591fedfacb34742335a6e9d6ca32a9c77eb7e
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59257983"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59522067"
 ---
 # <a name="authenticate-stream-analytics-to-azure-data-lake-storage-gen1-using-managed-identities"></a>Проверка подлинности Stream Analytics для Gen1 хранилища Озера данных Azure с помощью управляемых удостоверений
 
@@ -100,36 +99,40 @@ Azure Stream Analytics поддерживает аутентификацию с 
    Это свойство указывает Azure Resource Manager, что требуется создать удостоверение для задания Azure Stream Analytics и управлять им.
 
    **Пример задания**
-
-    ```json
-    {
-      "Name": "AsaJobWithIdentity",
-      "Type": "Microsoft.StreamAnalytics/streamingjobs",
-      "Location": "West US",
-      "Identity": {
-        "Type": "SystemAssigned",
-      },
-      "properties": {
-        "sku": {
-          "name": "standard"
-        },
-        "outputs": [
-          {
-            "name": "string",
-            "properties":{
-              "datasource": {
-                "type": "Microsoft.DataLake/Accounts",
-                "properties": {
-                  "accountName": "myDataLakeAccountName",
-                  "filePathPrefix": "cluster1/logs/{date}/{time}",
-                  "dateFormat": "YYYY/MM/DD",
-                  "timeFormat": "HH",
-                  "authenticationMode": "Msi"
-                }
-              }
+   
+   ```json
+   {
+     "Name": "AsaJobWithIdentity",
+     "Type": "Microsoft.StreamAnalytics/streamingjobs",
+     "Location": "West US",
+     "Identity": {
+       "Type": "SystemAssigned",
+     },
+     "properties": {
+       "sku": {
+         "name": "standard"
+       },
+       "outputs": [
+         {
+           "name": "string",
+           "properties":{
+             "datasource": {
+               "type": "Microsoft.DataLake/Accounts",
+               "properties": {
+                 "accountName": "myDataLakeAccountName",
+                 "filePathPrefix": "cluster1/logs/{date}/{time}",
+                 "dateFormat": "YYYY/MM/DD",
+                 "timeFormat": "HH",
+                 "authenticationMode": "Msi"
+             }
+           }
+         }
+       }
+     }
+   }
    ```
   
-   **Пример задания ответа**
+   **Пример ответа задания**
 
    ```json
    {
@@ -145,7 +148,8 @@ Azure Stream Analytics поддерживает аутентификацию с 
         "sku": {
           "name": "standard"
         },
-      }
+     }
+   }
    ```
 
    Запишите идентификатор субъекта (principalId) из ответа задания для предоставления доступа к необходимому ресурсу ADLS.
@@ -169,18 +173,17 @@ Azure Stream Analytics поддерживает аутентификацию с 
    User -Id 14c6fd67-d9f5-4680-a394-cd7df1f9bacf -Permissions WriteExecute
    ```
 
-   Чтобы узнать больше о вышеуказанная команда PowerShell, обратитесь к [AzDataLakeStoreItemAclEntry набора](https://docs.microsoft.com/powershell/module/az.datalakestore/set-azdatalakestoreitemaclentry) документации.
+   Чтобы узнать больше о вышеуказанная команда PowerShell, обратитесь к [AzDataLakeStoreItemAclEntry набора](/powershell/module/az.datalakestore/set-azdatalakestoreitemaclentry) документации.
 
 ## <a name="limitations"></a>Ограничения
 Эта функция не поддерживает следующее:
 
-1.  **Доступ несколькими клиентами**: Субъекта-службы, созданные для данного задания Stream Analytics будет находиться в клиенте Azure Active Directory, на котором был создан задания и не может использоваться для ресурсов, который находится на другом клиенте Azure Active Directory. Таким образом MSI можно использовать только в ADLS Gen 1 ресурсы, которые находятся в том же клиенте Azure Active Directory задания Azure Stream Analytics. 
+1. **Доступ несколькими клиентами**: Субъекта-службы, созданные для данного задания Stream Analytics будет находиться в клиенте Azure Active Directory, на котором был создан задания и не может использоваться для ресурсов, который находится на другом клиенте Azure Active Directory. Таким образом MSI можно использовать только в ADLS Gen 1 ресурсы, которые находятся в том же клиенте Azure Active Directory задания Azure Stream Analytics. 
 
-2.  **[Назначить удостоверение пользователя](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview)**: не поддерживается это означает, что пользователь не может перейти в свои собственные субъекта-службы для использования их заданием Stream Analytics. Для создания субъекта-службы Azure Stream Analytics. 
-
+2. **[Назначить удостоверение пользователя](../active-directory/managed-identities-azure-resources/overview.md)**: не поддерживается. Это означает, что пользователь не может перейти в свои собственные субъекта-службы для использования их заданием Stream Analytics. Для создания субъекта-службы Azure Stream Analytics.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Создание выходных данных Data lake Store с помощью stream analytics](../data-lake-store/data-lake-store-stream-analytics.md)
+* [Создание выходных данных Data Lake Store с помощью Stream Analytics](../data-lake-store/data-lake-store-stream-analytics.md)
 * [Локальное тестирование запросов Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools-local-run.md)
-* [Реальные данные теста локально с помощью инструментов Azure Stream Analytics для Visual Studio](stream-analytics-live-data-local-testing.md) 
+* [Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)](stream-analytics-live-data-local-testing.md) 

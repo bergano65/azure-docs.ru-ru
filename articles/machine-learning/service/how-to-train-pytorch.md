@@ -11,12 +11,12 @@ author: mx-iao
 ms.reviewer: sgilley
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: a5ddc17f6200ba2d43d67fcd2e4bcc35c224e6cb
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 9ae7795381f036bb819ce24554d8cea94ceb5552
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58004054"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59548557"
 ---
 # <a name="train-pytorch-models-with-azure-machine-learning-service"></a>Обучение моделей PyTorch с помощью Службы машинного обучения Azure
 
@@ -43,10 +43,10 @@ pt_est = PyTorch(source_directory='./my-pytorch-proj',
 
 Укажем следующие параметры в конструкторе PyTorch.
 
-Параметр | ОПИСАНИЕ
+Параметр | Описание
 --|--
 `source_directory` |  Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка копируется с локального компьютера на удаленный вычислительный ресурс.
-`script_params` |  Словарь, указывающий аргументы командной строки для сценария обучения `entry_script` в виде пар <аргумент командной строки, значение>.
+`script_params` |  Словарь, указав аргументы командной строки в сценарий обучения `entry_script`, в виде < аргумент командной строки, значение > пары.  Чтобы указать подробные флаг в `script_params`, используйте `<command-line argument, "">`.
 `compute_target` |  Удаленный целевой объект вычислений, на котором будет выполняться сценарий обучения. В нашем случае это кластер Вычислительной среды Машинного обучения Azure ([AmlCompute](how-to-set-up-training-targets.md#amlcompute)).
 `entry_script` |  Путь к файлу (относительно `source_directory`) сценария обучения, который будет выполняться на удаленном вычислительном ресурсе. В этой папке должны быть расположены этот файл и дополнительные файлы, от которых он зависит.
 `conda_packages` |  Необходимый для сценария обучения список пакетов Python, которые нужно установить с помощью conda. Параметр `pip_packages` конструктора можно использовать для всех необходимых пакетов pip.

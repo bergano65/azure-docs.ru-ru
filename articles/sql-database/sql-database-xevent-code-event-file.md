@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: jrasnik
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 0a9472dec9b76dfbde1690e11f13836746b0dfaa
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 983a090942a77c2f40e0136b00acdc0a3d49c571
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57862902"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59528345"
 ---
 # <a name="event-file-target-code-for-extended-events-in-sql-database"></a>Код целевого файла событий для расширенных событий в Базе данных SQL
 
@@ -463,9 +463,9 @@ GO
 
 ## <a name="output"></a>Выходные данные
 
-После того как сценарий Transact-SQL будет выполнен, щелкните ячейку под заголовком столбца **event_data_XML**. Один из отображенных элементов **<event>** содержит инструкцию UPDATE.
+После того как сценарий Transact-SQL будет выполнен, щелкните ячейку под заголовком столбца **event_data_XML**. Один  **\<событий >** отображается элемент, который содержит инструкцию UPDATE.
 
-Ниже приведен один из элементов **<event>** , сформированных в процессе тестирования.
+Ниже приведен один из  **\<событий >** элемент, который был создан во время тестирования:
 
 
 ```xml

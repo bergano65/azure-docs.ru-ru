@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: hrasheed
-ms.openlocfilehash: ac1c1c4ae21ebd184b833fe4d23084f7cf324d2c
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: 7ff89e12a1011c0a16644324584eb1610302b1b3
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58500480"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59544295"
 ---
 # <a name="manage-logs-for-an-hdinsight-cluster"></a>Управление журналами для кластера HDInsight
 
@@ -176,5 +176,5 @@ Hadoop выполняет работу заданий в виде *попыто�
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Monitoring and logging](https://msdn.microsoft.com/library/dn749790.aspx) (Мониторинг и ведение журнала)
-* [Доступ входа приложения Apache Hadoop YARN в HDInsight под управлением Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md)
+* [Журналы приложений доступ Apache Hadoop YARN в HDInsight под управлением Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md)
 * [How to control size of log files for various HDP components?](https://community.hortonworks.com/articles/8882/how-to-control-size-of-log-files-for-various-hdp-c.html) (Как контролировать размер файлов журнала для различных компонентов HDP).

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: ca7f749a04b569d183589fba8c788ce48f29358b
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.openlocfilehash: a26388de85ff6293985fe23adac8ca4d04d0de61
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58295561"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59525795"
 ---
 # <a name="encrypting-your-content-with-storage-encryption"></a>Шифрование содержимого с помощью шифрования хранилища 
 
@@ -42,7 +42,7 @@ ms.locfileid: "58295561"
 
 ### <a name="storage-side-encryption"></a>Шифрование на стороне хранилища
 
-|Вариант шифрования|ОПИСАНИЕ|Службы мультимедиа версии 2|Службы мультимедиа версии 3|
+|Вариант шифрования|Описание|Службы мультимедиа версии 2|Службы мультимедиа версии 3|
 |---|---|---|---|
 |Шифрование хранилища Служб мультимедиа|Шифрование AES-256. Ключами управляют Службы мультимедиа|Поддерживается<sup>(1)</sup>|Не поддерживается<sup>(2)</sup>|
 |[Шифрование службы хранилища для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)|Шифрование на стороне сервера, предоставляемое службой хранилища Azure. Ключами управляет Azure или клиент|Поддерживаются|Поддерживаются|
@@ -111,7 +111,7 @@ ms.locfileid: "58295561"
 
     Свойство текста запроса    | ОПИСАНИЕ
     ---|---
-    Идентификатор | Идентификатор ContentKey создается в следующем формате: "nb:kid:UUID:<NEW GUID>".
+    Идентификатор | Идентификатор ContentKey создается в следующем формате «nb:kid:UUID:\<новый GUID >».
     ContentKeyType | Тип ключа содержимого — это целое число, которое определяет ключ. Для формата шифрования хранилища установлено значение 1.
     EncryptedContentKey | Мы создаем значение ключа содержимого, которое представляет собой 256-битное (32-байтное) значение. Ключ шифруется с помощью сертификата шифрования хранилища X.509, полученного из Служб мультимедиа Microsoft Azure с помощью HTTP-запроса GET для методов GetProtectionKeyId и GetProtectionKey. Например, см. следующий код .NET: метод **EncryptSymmetricKeyData**, определенный [здесь](https://github.com/Azure/azure-sdk-for-media-services/blob/dev/src/net/Client/Common/Common.FileEncryption/EncryptionUtils.cs).
     ProtectionKeyId | Идентификатор ключа защиты для сертификата шифрования хранилища X.509, который использовался для шифрования ключа содержимого.

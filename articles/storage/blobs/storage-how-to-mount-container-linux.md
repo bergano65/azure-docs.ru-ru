@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: article
 ms.date: 2/1/2019
 ms.author: seguler
-ms.openlocfilehash: 1e26eb213ad2613877c46758299c2e962894d358
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: eadf52afd115eb1cb642082cea4b9f338bd44914
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55698012"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59521659"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse
 
@@ -29,7 +29,7 @@ ms.locfileid: "55698012"
 ## <a name="install-blobfuse-on-linux"></a>Установка blobfuse в Linux
 Двоичные файлы blobfuse доступны в [репозиториях программного обеспечения Майкрософт для Linux](https://docs.microsoft.com/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) для дистрибутивов Ubuntu и RHEL. Чтобы установить blobfuse в этих дистрибутивах, настройте один из репозиториев из списка. Вы также можете создавать двоичные файлы из исходного кода, следуя [действиям по установке службы хранилища Azure](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source), если для вашего дистрибутива нет двоичных файлов.
 
-blobfuse поддерживает установку на Ubuntu 14.04 и 16.04. Выполните следующую команду, чтобы убедиться в том, что у вас развернута одна из этих версий:
+Blobfuse поддерживает установку на Ubuntu 14.04, 16.04 и 18.04. Выполните следующую команду, чтобы убедиться в том, что у вас развернута одна из этих версий:
 ```
 lsb_release -a
 ```
@@ -51,7 +51,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
 ```
 
-Аналогичным образом измените URL-адрес на `.../ubuntu/16.04/...`, чтобы указать дистрибутив Ubuntu 16.04.
+Аналогичным образом измените URL-адрес `.../ubuntu/16.04/...` или `.../ubuntu/18.04/...` для ссылки на другую версию Ubuntu.
 
 ### <a name="install-blobfuse"></a>Установка blobfuse
 
@@ -85,7 +85,7 @@ sudo chown <youruser> /mnt/ramdisk/blobfusetmp
 
 Для пользователя нужно настроить права доступа к временному пути:
 ```bash
-sudo mkdir /mnt/resource/blobfusetmp
+sudo mkdir /mnt/resource/blobfusetmp -p
 sudo chown <youruser> /mnt/resource/blobfusetmp
 ```
 
@@ -97,8 +97,15 @@ accountName myaccount
 accountKey storageaccesskey
 containerName mycontainer
 ```
+`accountName` — Префикс для вашей учетной записи хранения - не полный URL-адрес.
 
-После создания этого файла ограничьте к нему доступ, чтобы никто не смог его прочитать.
+Создайте этот файл с помощью:
+
+```
+touch ~/fuse_connection.cfg
+```
+
+Когда вы создадите и редактировать этот файл, убедитесь, что для ограничения доступа, чтобы другие пользователи не могли читать его.
 ```bash
 chmod 600 fuse_connection.cfg
 ```
@@ -132,7 +139,7 @@ mkdir test
 echo "hello world" > test/blob.txt
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Домашняя страница blobfuse](https://github.com/Azure/azure-storage-fuse#blobfuse)
 * [Сообщить о проблемах с blobfuse](https://github.com/Azure/azure-storage-fuse/issues) 

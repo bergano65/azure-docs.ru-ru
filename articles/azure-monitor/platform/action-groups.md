@@ -5,15 +5,15 @@ author: dkamstra
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 3/26/2019
+ms.date: 4/12/2019
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: 695a2ff827fc5514c3a32364026bc9d47c8a2121
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: 3d06024b7fa4356d4ad0e8b52c45c2ead62ef784
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58500323"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549667"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Создание групп действий и управление ими на портале Azure
 ## <a name="overview"></a>Обзор ##
@@ -103,6 +103,7 @@ ms.locfileid: "58500323"
  - 52.244.68.117
  - 51.4.138.199
  - 51.5.148.86
+ - 51.5.149.19
 
 Для получения обновлений о внесении изменений в эти IP-адреса, мы рекомендуем настроить [оповещение о работоспособности службы, которая отслеживает для уведомления о службе группы действий.
 

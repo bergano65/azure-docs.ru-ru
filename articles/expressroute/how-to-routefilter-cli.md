@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: anzaman
-ms.openlocfilehash: 94bdd4819d750f4c26c93a88cc6982a60583171c
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: cfd9f4c52d3ddddd944186a833cba48e6ca76182
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53079302"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59527971"
 ---
 # <a name="configure-route-filters-for-microsoft-peering-azure-cli"></a>Настройка фильтров маршрутов для пиринга Майкрософт: Инфраструктура CLI Azure
 
@@ -109,7 +109,7 @@ az network route-filter rule list-service-communities
 
 ### <a name="1-create-a-route-filter"></a>1. Создание фильтра маршрута
 
-Сначала создайте фильтр маршрутов. Команда az network route-filter create создает только ресурс фильтра маршрутов. После создания ресурса нужно создать правило и подключить его к объекту фильтра маршрута. Чтобы создать ресурс фильтра маршрута, выполните следующую команду:
+Сначала создайте фильтр маршрутов. Команда `az network route-filter create` создает только ресурс фильтра маршрута. После создания ресурса нужно создать правило и подключить его к объекту фильтра маршрута. Чтобы создать ресурс фильтра маршрута, выполните следующую команду:
 
 ```azurecli-interactive
 az network route-filter create -n MyRouteFilter -g MyResourceGroup
@@ -165,6 +165,6 @@ az network express-route peering update --circuit-name MyCircuit -g ExpressRoute
 az network route-filter delete -n MyRouteFilter -g MyResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

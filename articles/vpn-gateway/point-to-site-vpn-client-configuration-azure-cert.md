@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: cherylmc
-ms.openlocfilehash: fdf5f07f9b27a17eb4c15495c4ac9776d77f525c
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: b590dabbe4b2c6526f2c602aeed64667348eefa9
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58313946"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59525173"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
 
@@ -174,7 +174,7 @@ ms.locfileid: "58313946"
 2. Извлеките файл.
 3. Из папки **Generic** копируйте или переместите файл VpnServerRoot.cer в папку /etc/ipsec.d/cacerts.
 4. Скопируйте или переместите файл cp client.p12 в папку /etc/ipsec.d/private/. Это сертификат клиента для VPN-шлюза Azure.
-5. Откройте файл VpnSettings.xml и скопируйте значение <VpnServer>. Это значение потребуется на следующем шаге.
+5. Откройте файл VpnSettings.xml и скопируйте значение `<VpnServer>`. Это значение потребуется на следующем шаге.
 6. Измените значения в приведенном ниже примере, а затем добавьте этот код в файл конфигурации /etc/ipsec.conf.
   
    ```

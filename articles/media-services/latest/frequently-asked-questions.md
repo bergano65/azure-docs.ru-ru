@@ -9,20 +9,24 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 04/10/2019
 ms.author: juliako
-ms.openlocfilehash: e543f6e69632da67900e3b49a9c77e125df5f852
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: d6e5142bec29f58671c553b7b32bb72202cae263
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58316921"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59544183"
 ---
 # <a name="azure-media-services-v3-frequently-asked-questions"></a>Часто задаваемые вопросы о Службах мультимедиа Azure версии 3
 
 В этой статье предоставлены ответы на часто задаваемые вопросы о Службах мультимедиа Azure (AMS) версии 3.
 
 ## <a name="v3-apis"></a>Интерфейсы API версии 3
+
+### <a name="what-azure-roles-can-perform-actions-on-azure-media-services-resources"></a>Какие роли Azure можно выполнять действия с ресурсами служб мультимедиа Azure? 
+
+См. в разделе [управления доступом на основе ролей (RBAC) для учетных записей служб мультимедиа](rbac-overview.md).
 
 ### <a name="how-do-i-configure-media-reserved-units"></a>Как настроить зарезервированные единицы мультимедиа?
 
@@ -73,7 +77,7 @@ ms.locfileid: "58316921"
 
 ### <a name="can-i-use-the-azure-portal-to-manage-v3-resources"></a>Могу ли я использовать портал Azure для управления ресурсами версии 3?
 
-В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref), или одного из поддерживаемых [пакеты SDK](developers-guide.md).
+В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](developers-guide.md).
 
 ### <a name="is-there-an-assetfile-concept-in-v3"></a>Существует элемент AssetFile в версии 3?
 

@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 7/14/2018
 ms.author: victorh
-ms.openlocfilehash: 9c628b02961ee289833e669a4c77de0bf824de22
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 061156a455664a5a3f0b4c4497d24f4e8ff6eea7
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57999988"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59527257"
 ---
 # <a name="create-an-application-gateway-with-url-path-based-routing-rules-using-the-azure-cli"></a>Создание шлюза приложений с правилами маршрутизации на основе URL-пути при помощи Azure CLI | Документация Майкрософт
 
@@ -220,7 +220,7 @@ done
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду [az network public-ip show](/cli/azure/network/public-ip). Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например `http://40.121.222.19`, `http://40.121.222.19:8080/images/test.htm`, или `http://40.121.222.19:8080/video/test.htm`.
+Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду [az network public-ip show](/cli/azure/network/public-ip). Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например, `http://40.121.222.19`, `http://40.121.222.19:8080/images/test.htm` или `http://40.121.222.19:8080/video/test.htm`.
 
 ```azurepowershell-interactive
 az network public-ip show \
@@ -232,11 +232,11 @@ az network public-ip show \
 
 ![Тестирование базового URL-адреса в шлюзе приложений](./media/application-gateway-create-url-route-cli/application-gateway-nginx.png)
 
-Замените URL-адрес значением http://<ip-address>:8080/video/test.html в конце базового URL-адреса. Результат должен быть примерно таким:
+Изменить URL-адрес `http://<ip-address>:8080/video/test.html` в конец базового URL-адреса и вы должны увидеть что-то, как в следующем примере:
 
 ![Тестирование URL-адреса изображений в шлюзе приложений](./media/application-gateway-create-url-route-cli/application-gateway-nginx-images.png)
 
-Замените URL-адрес значением http://<ip-address>:8080/video/test.htm. Результат должен быть примерно таким:
+Изменить URL-адрес `http://<ip-address>:8080/video/test.html` и вы увидите, что-то, как в следующем примере.
 
 ![Тестирование URL-адреса видео в шлюзе приложений](./media/application-gateway-create-url-route-cli/application-gateway-nginx-video.png)
 

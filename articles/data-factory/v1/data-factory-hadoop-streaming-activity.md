@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: f4bdeee08e81c16dfdd03620eb1fc61251f90400
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.openlocfilehash: dd00c0a2998009ce6c39ca19abb25a2548682cee
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54025179"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523228"
 ---
 # <a name="transform-data-using-hadoop-streaming-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия потоковой передачи Hadoop в фабрике данных Azure
 > [!div class="op_single_selector" title1="Transformation Activities"]
@@ -99,7 +99,7 @@ ms.locfileid: "54025179"
 2. Задайте в качестве типа действия значение **HDInsightStreaming**.
 3. Для свойства **mapper** укажите имя исполняемого файла mapper. В этом примере таким файлом является cat.exe.
 4. Для свойства **reducer** укажите имя исполняемого файла reducer. В этом примере таким файлом является wc.exe.
-5. Для свойства типа **input** укажите входной файл (включая местоположение) для свойства mapper. В примере "wasb://adfsample@<account name>.blob.core.windows.net/example/data/gutenberg/davinci.txt" adfsample — это контейнер BLOB-объектов, example/data/Gutenberg — это папка, а davinci.txt — это двоичный большой объект.
+5. Для свойства типа **input** укажите входной файл (включая местоположение) для свойства mapper. В примере `wasb://adfsample@<account name>.blob.core.windows.net/example/data/gutenberg/davinci.txt` adfsample — это контейнер больших двоичных объектов, example/data/Gutenberg — это папка, а davinci.txt — это большой двоичный объект.
 6. Для свойства типа **output** укажите выходной файл (включая местоположение) для reducer. Результат задания потоковой передачи Hadoop записывается в расположение, заданное для этого свойства.
 7. В разделе **filePaths** укажите пути для исполняемых файлов mapper и reducer. В примере adfsample/example/apps/wc.exe adfsample — это контейнер больших двоичных объектов, example/apps — это папка, а wc.exe — это исполняемый файл.
 8. Для свойства **fileLinkedService** укажите связанную службу хранилища Azure, которая представляет хранилище Azure, где хранятся указанные в разделе filePaths файлы.

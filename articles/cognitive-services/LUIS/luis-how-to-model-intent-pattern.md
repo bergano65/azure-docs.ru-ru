@@ -1,7 +1,7 @@
 ---
 title: Добавление шаблонов для повышения точности
 titleSuffix: Language Understanding - Azure Cognitive Services
-description: Сведения о добавлении шаблонов в приложения службы "Распознавание речи" (LUIS) для повышения точности прогнозирования.
+description: Добавьте шаблон шаблоны для повышения точности прогнозов в приложениях Language Understanding (LUIS).
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -9,17 +9,17 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 02/22/2019
+ms.date: 04/01/2019
 ms.author: diberry
-ms.openlocfilehash: 132f6eab86c02e28fe562a0c7d3357175e5813b8
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.openlocfilehash: 202b9632b7a7faaf955874a0300edbe5134b7fa1
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57195053"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59521260"
 ---
 # <a name="how-to-add-patterns-to-improve-prediction-accuracy"></a>Добавление шаблонов для повышения точности прогнозов
-После того как приложения LUIS получает фразы конечной точки, используйте [шаблон](luis-concept-patterns.md) для повышения точности прогнозов для фразы, которые раскрывают шаблон в порядок слов и выбора слов. Шаблоны используются определенные [синтаксис](luis-concept-patterns.md#pattern-syntax) для указания расположения: [сущностей](luis-concept-entity-types.md), сущности роли и необязательный текст.
+После того как приложения LUIS получает фразы конечной точки, используйте [шаблон](luis-concept-patterns.md) для повышения точности прогнозов для фразы, которые раскрывают шаблон в порядок слов и выбора слов. Шаблоны используются определенные [синтаксис](luis-concept-patterns.md#pattern-syntax) для указания расположения: [сущностей](luis-concept-entity-types.md), сущности [ролей](luis-concept-roles.md)и необязательный текст.
 
 ## <a name="add-template-utterance-to-create-pattern"></a>Добавление фрагмента речи шаблона для создания шаблона
 1. Откройте приложение, выбрав его имя на странице **Мои приложения**, а затем выберите **Patterns** (Шаблоны) на левой панели в разделе **Improve app performance** (Повышение производительности приложений).
@@ -34,7 +34,7 @@ ms.locfileid: "57195053"
 
     ![Снимок экрана сущности для шаблона](./media/luis-how-to-model-intent-pattern/patterns-3.png)
 
-    Если сущность содержит роль, обозначьте роль одним знаком двоеточия, `:`, после имени сущности, например `{Location:Origin}`. Список ролей для сущностей появится в списке. Выберите роль и нажмите клавишу ВВОД. 
+    Если ваше учреждение включает [роли](luis-concept-roles.md), содержать информацию о роли с одним знаком двоеточия, `:`, когда имя сущности, такие как `{Location:Origin}`. Список ролей для сущностей появится в списке. Выберите роль и нажмите клавишу ВВОД. 
 
     ![Снимок экрана сущности с ролью](./media/luis-how-to-model-intent-pattern/patterns-4.png)
 

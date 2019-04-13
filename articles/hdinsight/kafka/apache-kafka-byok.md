@@ -8,14 +8,14 @@ ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: b5f7c472c8ebd60d8e7f928534834c9672fe3b14
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: cb18f0e1b682434c5069c2a02524a6f16551e9e2
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59489025"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59545983"
 ---
-# <a name="bring-your-own-key-for-apache-kafka-on-azure-hdinsight-preview"></a>Создание собственных ключей для Apache Kafka в Azure HDInsight (предварительная версия)
+# <a name="bring-your-own-key-for-apache-kafka-on-azure-hdinsight"></a>Создание собственных ключей для Apache Kafka в Azure HDInsight
 
 Azure HDInsight включает поддержку создания собственных ключей (BYOK) для Apache Kafka. Эта функция позволяет вам владеть ключами, используемыми для шифрования неактивных данных, и управлять ими. 
 
@@ -34,6 +34,7 @@ Azure HDInsight включает поддержку создания собст�
 1. Создание управляемых удостоверений для ресурсов Azure
 2. Настройка Azure Key Vault и ключей
 3. Создание кластера HDInsight Kafka с поддержкой BYOK
+4. Смена ключа шифрования
 
 ## <a name="create-managed-identities-for-azure-resources"></a>Создание управляемых удостоверений для ресурсов Azure
 
@@ -70,6 +71,7 @@ Azure HDInsight включает поддержку создания собст�
         ![Copy key identifier](./media/apache-kafka-byok/kafka-get-key-identifier.png)
    
     4. Add managed identity to the key vault access policy.
+
         a. Create a new Azure Key Vault access policy.
 
         ![Create new Azure Key Vault access policy](./media/apache-kafka-byok/add-key-vault-access-policy.png)
@@ -86,7 +88,7 @@ Azure HDInsight включает поддержку создания собст�
 
         ![Set Key Permissions for Azure Key Vault access policy](./media/apache-kafka-byok/add-key-vault-access-policy-secrets.png)
 
-        e. Click on **Save** 
+        e. Click on **Save**. 
 
         ![Save Azure Key Vault access policy](./media/apache-kafka-byok/add-key-vault-access-policy-save.png)
 
@@ -97,6 +99,13 @@ Azure HDInsight включает поддержку создания собст�
    ![Kafka disk encryption in Azure portal](./media/apache-kafka-byok/apache-kafka-byok-portal.png)
 
    During cluster creation, provide the full key URL, including the key version. For example, `https://contoso-kv.vault.azure.net/keys/kafkaClusterKey/46ab702136bc4b229f8b10e8c2997fa4`. You also need to assign the managed identity to the cluster and provide the key URI.
+
+## Rotating the Encryption key
+   There might be scenarios where you might want to change the encryption keys used by the Kafka cluster after it has been created. This can be easily via the portal. For this operation, the cluster must have access to both the current key and the intended new key, otherwise the rotate key operation will fail.
+
+   To rotate the key, you must have the full url of the new key (See Step 3 of [Setup the Key Vault and Keys](#setup-the-key-vault-and-keys)). Once you have that, go to the Kafka cluster properties section in the portal and click on **Change Key** under **Disk Encryption Key URL**. Enter in the new key url and submit to rotate the key.
+
+   ![Kafka rotate disk encryption key](./media/apache-kafka-byok/kafka-change-key.png)
 
 ## FAQ for BYOK to Apache Kafka
 
@@ -111,6 +120,11 @@ Azure HDInsight включает поддержку создания собст�
 **Can I have different keys for different topics/partitions?**
 
    No, all managed disks in the cluster are encrypted by the same key.
+
+**What happens if the cluster loses access to the key vault or the key?**
+   If the cluster loses access to the key, warnings will be shown in the Ambari portal. In this state, the **Change Key** operation will fail. Once key access is restored, ambari warnings will go away and operations such as key rotation can be successfully performed.
+
+   ![Kafka key access ambari alert](./media/apache-kafka-byok/kafka-byok-ambari-alert.png)
 
 **How can I recover the cluster if the keys are deleted?**
 

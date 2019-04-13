@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 03/13/2018
 ms.author: jdial
 ms.custom: ''
-ms.openlocfilehash: 08189522f4f73e996ed98f3996f87da8d93b5d2a
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.openlocfilehash: e3106a792f486a62986734e562c96b41dd8a75dc
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55895641"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59524129"
 ---
 # <a name="route-network-traffic-with-a-route-table-using-the-azure-cli"></a>Маршрутизация сетевого трафика с помощью таблицы маршрутов и Azure CLI
 
@@ -208,7 +208,7 @@ az vm create \
 
 ## <a name="route-traffic-through-an-nva"></a>Перенаправление трафика через виртуальный сетевой модуль
 
-Используйте следующую команду для создания сеанса SSH с виртуальной машиной *myVmPrivate*. Замените *<publicIpAddress>* общедоступным IP-адресом, который присвоен виртуальной машине. В примере выше используется IP-адрес *13.90.242.231*.
+Используйте следующую команду для создания сеанса SSH с виртуальной машиной *myVmPrivate*. Замените  *\<publicIpAddress >* общедоступный IP-адрес виртуальной машины. В примере выше используется IP-адрес *13.90.242.231*.
 
 ```bash 
 ssh azureuser@<publicIpAddress>
@@ -274,7 +274,7 @@ traceroute to myVmPrivate (10.0.1.4), 30 hops max, 60 byte packets
 az group delete --name myResourceGroup --yes
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 При работе с этой статьей вы создали таблицу маршрутов и связали ее с подсетью. Вы также создали простой виртуальный сетевой модуль, который направляет трафик из общедоступной подсети в частную подсеть. [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/networking) предоставляет широкий выбор предварительно настроенных виртуальных сетевых модулей для разных сетевых функций, например модули брандмауэра и оптимизация доступа к глобальной сети. См. дополнительные сведения о [маршрутизации](virtual-networks-udr-overview.md) и [управлении таблицей маршрутов](manage-route-table.md).
 

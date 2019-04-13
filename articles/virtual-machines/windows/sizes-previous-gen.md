@@ -13,24 +13,27 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 07/06/2018
+ms.date: 04/11/2019
 ms.author: jonbeck
-ms.openlocfilehash: c39a744a5ef57efa6486460ab84998d6600e7bc5
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.openlocfilehash: 8ae5cbac61a35d3be712c34b6bbde6caffba265b
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57405612"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549124"
 ---
 # <a name="previous-generations-of-virtual-machine-sizes"></a>Размеры виртуальных машин предыдущих поколений
-
 
 [!INCLUDE [virtual-machines-common-sizes-general](../../../includes/virtual-machines-common-sizes-previous-gen.md)]
 
 [!INCLUDE [virtual-machines-common-sizes-table-defs](../../../includes/virtual-machines-common-sizes-table-defs.md)]
 
+## <a name="older-generations-of-virtual-machine-sizes"></a>Размеры виртуальных машин предыдущих поколений
+
+[!INCLUDE [virtual-machines-common-sizes-older](../../../includes/virtual-machines-common-sizes-older.md)]
 
 ## <a name="other-sizes"></a>Остальные размеры
+
 - [Универсальные](sizes-general.md)
 - [Оптимизированные для вычислений](sizes-compute.md)
 - [Оптимизированные для памяти](sizes-memory.md)
@@ -38,7 +41,6 @@ ms.locfileid: "57405612"
 - [GPU](sizes-gpu.md)
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 
-
 ## <a name="next-steps"></a>Дальнейшие действия
-Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
 
+Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.

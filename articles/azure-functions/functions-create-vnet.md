@@ -6,14 +6,14 @@ author: alexkarcher-msft
 manager: jehollan
 ms.service: azure-functions
 ms.topic: article
-ms.date: 12/03/2018
+ms.date: 4/11/2019
 ms.author: alkarche
-ms.openlocfilehash: 4f27bbeb43bbf373b621d151d68583f0041378b3
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: f8ddcbcb25dc45ee71304ffa1bc5c0c4d3751b61
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58894212"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523738"
 ---
 # <a name="integrate-a-function-app-with-an-azure-virtual-network"></a>Интеграция приложения-функции с виртуальной сетью Azure
 
@@ -99,7 +99,7 @@ ms.locfileid: "58894212"
     <img src="./media/functions-create-vnet/new-proxy.png" width="250">
 
 1. Настройте имя и маршруты для прокси-сервера. В этом примере используется маршрут /plant.
-1. Введите IP-адрес сайта wordpress из более ранней версии и задайте URL-адреса серверной части `http://{YOUR VM IP}/wp-content/themes/twentyseventeen/assets/images/header.jpg`
+1. Введите IP-адрес сайта WordPress, который мы записали ранее, и задайте для серверной части URL-адрес `http://{YOUR VM IP}/wp-content/themes/twentyseventeen/assets/images/header.jpg`.
     
     <img src="./media/functions-create-vnet/create-proxy.png" width="900">
 
@@ -111,13 +111,14 @@ ms.locfileid: "58894212"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Функций, выполняемых в план "премиум" совместное использование одной базовой инфраструктуре службы приложений как веб-приложения. Это означает, что вся документация для веб-приложений применяется к функции плана "премиум".
+Функций, выполняемых в план "премиум" совместное использование одной базовой инфраструктуре службы приложений, веб-приложениях на PV2 планов. Это означает, что вся документация для веб-приложений применяется к функции плана "премиум".
 
-1. [Дополнительные сведения об интеграции виртуальной сети с помощью службы приложений и функций здесь](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet)
-1. [Дополнительные сведения о виртуальных сетях в Azure](https://azure.microsoft.com/documentation/articles/virtual-networks-overview/)
-1. [Включите для сетевые компоненты и управления со средами службы приложений](https://docs.microsoft.com/azure/app-service/environment/intro)
-1. [Подключиться к отдельным локальным ресурсам без изменений брандмауэра с помощью гибридных подключений](https://docs.microsoft.com/azure/app-service/app-service-hybrid-connections)
-1. [Дополнительные сведения о прокси-серверы функций](https://review.docs.microsoft.com/azure/azure-functions/functions-proxies)
+1. [Дополнительные сведения о сетевых параметрах в функциях здесь](./functions-networking-options.md)
+1. [Функции, здесь сети часто задаваемые вопросы о чтения](./functions-networking-faq.md)
+1. [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md)
+1. [Включить дополнительные сетевые компоненты и элемент управления со средами службы приложений](../app-service/environment/intro.md)
+1. [Гибридные подключения к службе приложений Azure](../app-service/app-service-hybrid-connections.md)
+1. [Сведения о прокси функций](./functions-proxies.md)
 
 <!--Image references-->
 [1]: ./media/functions-create-vnet/topology.png

@@ -8,16 +8,16 @@ ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
 author: CarlRabeler
-ms.author: carlrab
+ms.author: sahsan
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 03/12/2019
-ms.openlocfilehash: 2aeb756bda50597bf3e43c0c84391e0750bd8acb
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.date: 04/11/2019
+ms.openlocfilehash: 47aa88040b6010aeca4aeed696310505d1e17df9
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58486824"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549701"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-an-azure-sql-database"></a>Копирование транзакционно согласованной копии базы данных Azure SQL
 
@@ -90,10 +90,16 @@ New-AzSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
     -- Execute on the master database of the target server (server2)
     -- Start copying from Server1 to Server2
     CREATE DATABASE Database2 AS COPY OF server1.Database1;
+    
+> [!IMPORTANT]
+> Брандмауэры на обоих серверах должен быть настроен так, чтобы разрешить входящие подключения с IP-адреса клиента, выполнив команду КОПИРОВАНИЯ T-SQL.
 
-## <a name="to-move-a-database-between-subscriptions"></a>Перенос базы данных из одной подписки в другую
+### <a name="copy-a-sql-database-to-a-different-subscription"></a>Копирование базы данных SQL в другую подписку
 
-На [портале Azure](https://portal.azure.com)щелкните **Серверы SQL Server** и выберите из списка сервер, на котором размещена ваша база данных. Щелкните **Перенести**и выберите ресурсы, которые нужно перенести, а также подписку, в которую их нужно переместить.
+Копирование базы данных на сервер базы данных SQL, в другой подписке, можно использовать descrbed действия в предыдущем разделе. Убедитесь, что с помощью имени входа, имеющего то же имя и пароль владельца базы данных-источника, и он является членом роли dbmanager либо имя входа субъекта уровня сервера. 
+
+> [!NOTE]
+> [Портала Azure](https://portal.azure.com) не поддерживает копирование в другую подписку, поскольку портал вызывает ARM API и использует сертификаты подписки для доступа к обоих серверов, участвующих в георепликации.  
 
 ### <a name="monitor-the-progress-of-the-copying-operation"></a>Отслеживание хода операции копирования
 

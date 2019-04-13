@@ -13,12 +13,12 @@ ms.date: 08/03/2018
 ms.author: lizross
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2ba6b2d33c3fb5d9fda6821718ac61513a958b7
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: dfd38e775ba418fbe31cafa8df5f37b45c3b0643
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58369145"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59524378"
 ---
 # <a name="join-your-work-device-to-your-organizations-network"></a>Присоединения рабочего устройства к сети организации
 Присоедините свое рабочее устройство Windows 10 к сети вашей организации, чтобы вы могли получать доступ к потенциально ограниченным ресурсам.
@@ -62,7 +62,7 @@ ms.locfileid: "58369145"
 
     ![Пункт "Учетные записи" в окне параметров](./media/user-help-join-device-on-network/join-device-settings-accounts.png)
 
-2. Выберите **Доступ к учетной записи места работы или учебного заведения** и убедитесь, что вы видите текст, например, **Подключено к *<ваша_организация>* Azure AD**.
+2. Выберите **доступ к рабочей или учебной**и убедитесь, что вы видите текст, который говорит нечто вроде, **подключен к  *\<Ваша_Организация >* Azure AD**.
 
     ![Окно доступа к учетной записи места работы или учебного заведения с подключенной учетной записью Contoso](./media/user-help-join-device-on-network/join-device-oobe-verify.png)
 
@@ -107,7 +107,7 @@ ms.locfileid: "58369145"
 
     ![Пункт "Учетные записи" в окне параметров](./media/user-help-join-device-on-network/join-device-settings-accounts.png)
 
-2. Выберите **Доступ к учетной записи места работы или учебного заведения** и убедитесь, что вы видите текст, например, **Подключено к *<ваша_организация>* Azure AD**.
+2. Выберите **доступ к рабочей или учебной**и убедитесь, что вы видите текст, который говорит нечто вроде, **подключен к  *\<Ваша_Организация >* Azure AD**.
 
     ![Окно доступа к учетной записи места работы или учебного заведения с подключенной учетной записью Contoso](./media/user-help-join-device-on-network/join-device-setup-verify.png)
 

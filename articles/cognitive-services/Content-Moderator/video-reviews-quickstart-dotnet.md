@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: sajagtap
-ms.openlocfilehash: 47516f06f212dd0541da5f177401d479eb760cc0
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: e4dd7299907168bb50ac8ebdf90b381c0bac01f2
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58758256"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59527376"
 ---
 # <a name="create-video-reviews-using-net"></a>Создание проверок видео с помощью .NET
 
@@ -166,7 +166,7 @@ public static ContentModeratorClient NewClient()
 **CreateVideoReviews** принимает следующие обязательные параметры.
 1. Строка, обозначающая тип MIME, которая должна иметь значение "application/json". 
 1. Имя команды Content Moderator.
-1. Объект **IList<CreateVideoReviewsBodyItem>**. Каждый объект **CreateVideoReviewsBodyItem** представляет отдельную проверку видео. В этом кратком руководстве проверки создаются по одной.
+1. **IList\<CreateVideoReviewsBodyItem >** объекта. Каждый объект **CreateVideoReviewsBodyItem** представляет отдельную проверку видео. В этом кратком руководстве проверки создаются по одной.
 
 **CreateVideoReviewsBodyItem** имеет несколько свойств. Необходимо задать по меньшей мере следующие свойства.
 - **Content**. URL-адрес видео для проверки.
@@ -224,18 +224,18 @@ private static string CreateReview(ContentModeratorClient client, string id, str
 1. Строка, обозначающая тип MIME, которая должна иметь значение "application/json".
 1. Имя команды Content Moderator.
 1. Идентификатор проверки видео, полученный от **CreateVideoReviews**.
-1. Объект **IList<VideoFrameBodyItem>**. Каждый объект **VideoFrameBodyItem** представляет видеокадр.
+1. **IList\<VideoFrameBodyItem >** объекта. Каждый объект **VideoFrameBodyItem** представляет видеокадр.
 
 **VideoFrameBodyItem** имеет следующие свойства.
 - **Timestamp**. Строка время создания видеокадра в видео (в секундах).
 - **FrameImage**. URL-адрес видеокадра.
-- **Metadata** Объект IList<VideoFrameBodyItemMetadataItem>. **VideoFrameBodyItemMetadataItem** представляет собой просто пару "ключ-значение". Допустимые ключи перечислены ниже.
+- **Metadata** IList\<VideoFrameBodyItemMetadataItem >. **VideoFrameBodyItemMetadataItem** представляет собой просто пару "ключ-значение". Допустимые ключи перечислены ниже.
 - **reviewRecommended**. Имеет значение true, если рекомендуется пользовательская проверка видеокадра.
 - **adultScore**. Имеет значение от 0 до 1, которое оценивает серьезность содержимого для взрослых в видеокадре.
 - **a**. Имеет значение true, если в видео есть содержимое для взрослых.
 - **racyScore**. Имеет значение от 0 до 1, которое оценивает серьезность непристойного содержимого в видеокадре.
 - **r**. Имеет значение true, если в видеокадре есть непристойное содержимое.
-- **ReviewerResultTags**. Объект IList<VideoFrameBodyItemReviewerResultTagsItem>. **VideoFrameBodyItemReviewerResultTagsItem** представляет собой просто пару "ключ-значение". Приложение может использовать эти теги для упорядочивания видеокадров.
+- **ReviewerResultTags**. IList\<VideoFrameBodyItemReviewerResultTagsItem >. **VideoFrameBodyItemReviewerResultTagsItem** представляет собой просто пару "ключ-значение". Приложение может использовать эти теги для упорядочивания видеокадров.
 
 > [!NOTE]
 > В этом кратком руководство создаются случайные значения свойств **adultScore** и **racyScore**. В рабочем приложении эти значения будут получены [службой модерации видео](video-moderation-api.md), развернутой в качестве службы мультимедиа Azure.

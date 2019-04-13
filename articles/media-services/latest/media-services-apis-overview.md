@@ -9,19 +9,48 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/08/2019
+ms.date: 04/11/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 18b72ceaee0ca0747a0bf2144d5f9ffddbee8b8c
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: 9d1fa5786dcde70d42363dbb9af7221ca5383e64
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59492147"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59546404"
 ---
 # <a name="developing-with-media-services-v3-apis"></a>Разработка с использованием служб мультимедиа версии 3 API-интерфейсов
 
 В этой статье рассматриваются правила, применяемые к сущностям и API при разработке с помощью Media Services v3.
+
+## <a name="accessing-the-azure-media-services-api"></a>Доступ к API служб мультимедиа Azure
+
+Для доступа к ресурсам служб мультимедиа Azure, следует использовать проверку подлинности субъекта-службы Azure Active Directory (AD). API служб мультимедиа Azure требует, что пользователь или приложение, которое делает REST API запрашивает имеют доступ к ресурсу учетной записи служб мультимедиа Azure (как правило **участник** или **владельца** роль). Дополнительные сведения см. в разделе [управление доступом на основе ролей для учетных записей служб мультимедиа](rbac-overview.md).
+
+Вместо создания субъекта-службы, рассмотрите возможность использования управляемых удостоверений для ресурсов Azure для доступа к API служб мультимедиа Azure Resource Manager. Дополнительные сведения об управляемых удостоверениях для ресурсов Azure, см. в разделе [что такое управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
+
+### <a name="azure-ad-service-principal"></a>Субъект-служба Azure AD 
+
+Если вы создаете приложение Azure AD и службу субъекта, приложение должно быть в собственном клиенте. После создания приложения назначьте приложению **участник** или **владельца** роли доступ к учетной записи служб мультимедиа. 
+
+Если вы не уверены, что у вас есть разрешения на создание приложения Azure AD, см. в разделе [необходимые разрешения](../../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).
+
+На следующем рисунке цифры обозначают последовательность запросов в хронологическом порядке:
+
+![Приложения среднего уровня](../previous/media/media-services-use-aad-auth-to-access-ams-api/media-services-principal-service-aad-app1.png)
+
+1. Приложение среднего уровня запрашивает маркер доступа Azure AD, который имеет следующие параметры:  
+
+   * Конечная точка клиента Azure AD.
+   * Универсальный код ресурса (URI) для ресурса служб мультимедиа.
+   * Универсальный код ресурса (URI) для ресурса REST служб мультимедиа.
+   * Значения приложения Azure AD: идентификатор клиента и секрет клиента.
+   
+   Чтобы получить все необходимые значения, см. в разделе [доступа к API служб мультимедиа Azure с помощью Azure CLI](access-api-cli-how-to.md)
+
+2. Маркер доступа Azure AD передается на средний уровень.
+4. Средний уровень отправляет запрос к REST API служб мультимедиа Azure с помощью маркера Azure AD.
+5. Средний уровень получает данные из служб мультимедиа.
 
 ## <a name="naming-conventions"></a>Соглашения об именовании.
 
@@ -30,17 +59,6 @@ ms.locfileid: "59492147"
 Имена ресурсов Служб мультимедиа не должны содержать следующие символы: "<", ">", "%", "&", ":", "&#92;", "?", "/", "*", "+", ".", символ единичной кавычки или любые управляющие символы. Все остальные символы разрешены. Максимальная длина имени ресурса составляет 260 символов. 
 
 Дополнительные сведения об именовании в Azure Resource Manager см. в статье [о требованиях к именованию](https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/resource-api-reference.md#arguments-for-crud-on-resource) и статье [Соглашения об именовании для ресурсов Azure](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions).
-
-## <a name="v3-api-design-principles-and-rbac"></a>принципы проектирования API V3 и RBAC
-
-Один из ключевых принципов проектирования API версии 3 — сделать API более безопасным. API-интерфейсы v3 не возвращают секретные данные или учетные данные на **получить** или **списка** операций. Ключи всегда являются NULL, пустыми или исключенными из ответа. Пользователь должен вызвать метод отдельное действие для получения секретов или учетные данные. **Чтения** роли не может вызывать операции, поэтому не может вызвать операции, такие как ContentKeyPolicies.GetPolicyPropertiesWithSecrets Asset.ListContainerSas StreamingLocator.ListContentKeys,. Наличие отдельных действий позволяет при необходимости задайте более детализированных разрешений системы безопасности RBAC в пользовательскую роль.
-
-Дополнительные сведения можно найти в разделе 
-
-- [Определения встроенной роли](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles)
-- [Использование RBAC для управления доступом](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-rest)
-- [Управление доступом на основе ролей для учетных записей служб мультимедиа](rbac-overview.md)
-- [Получение содержимого ключа политики - .NET](get-content-key-policy-dotnet-howto.md).
 
 ## <a name="long-running-operations"></a>Длительные операции
 
@@ -71,4 +89,4 @@ ms.locfileid: "59492147"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Начало разработки с использованием API Служб мультимедиа версии 3 с помощью пакетов SDK и служб](developers-guide.md)
+[Начало разработки с использованием API служб мультимедиа версии 3, с помощью пакетов SDK/tools](developers-guide.md)

@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: sajagtap
-ms.openlocfilehash: 56cd608d337d817b849a0902569e9aeddeca80ab
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: a3d362f08765cc80b65659b406a2fac3af71f167
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58758575"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59524503"
 ---
 # <a name="create-video-transcript-reviews-using-net"></a>Создание проверок для расшифровки видео .NET
 
@@ -154,7 +154,7 @@ public static ContentModeratorClient NewClient()
 **CreateVideoReviews** принимает следующие обязательные параметры.
 1. Строка, обозначающая тип MIME, которая должна иметь значение "application/json". 
 1. Имя команды Content Moderator.
-1. Объект **IList<CreateVideoReviewsBodyItem>**. Каждый объект **CreateVideoReviewsBodyItem** представляет отдельную проверку видео. В этом кратком руководстве проверки создаются по одной.
+1. **IList\<CreateVideoReviewsBodyItem >** объекта. Каждый объект **CreateVideoReviewsBodyItem** представляет отдельную проверку видео. В этом кратком руководстве проверки создаются по одной.
 
 **CreateVideoReviewsBodyItem** имеет несколько свойств. Необходимо задать по меньшей мере следующие свойства.
 - **Content**. URL-адрес видео для проверки.
@@ -244,15 +244,15 @@ static void AddTranscript(ContentModeratorClient client, string review_id, strin
 1. Строка, обозначающая тип MIME, который должен иметь значение "application/json". 
 1. Имя команды Content Moderator.
 1. Идентификатор проверки видео, полученный от **CreateVideoReviews**.
-1. Список IList<TranscriptModerationBodyItem>. Объект **TranscriptModerationBodyItem** имеет следующие свойства.
-1. **Terms**. Список IList<TranscriptModerationBodyItemTermsItem>. Объект **TranscriptModerationBodyItemTermsItem** имеет следующие свойства.
+1. IList\<TranscriptModerationBodyItem >. Объект **TranscriptModerationBodyItem** имеет следующие свойства.
+1. **Terms**. IList\<TranscriptModerationBodyItemTermsItem >. Объект **TranscriptModerationBodyItemTermsItem** имеет следующие свойства.
 1. **Index**. Отсчитываемый от нуля индекс терминов.
 1. **Term**. Строка, содержащая термин.
 1. **Timestamp**. Строка, указывающая время в расшифровке (в секундах), в котором обнаружен указанный термин.
 
 Расшифровка должна иметь формат WebVTT. Дополнительные сведения см. на странице [спецификации формата WebVTT](https://www.w3.org/TR/webvtt1/).
 
-Добавьте следующие определения методов в пространство имен VideoTranscriptReviews, в класс Program. Этот метод передает расшифровку в метод **ContentModeratorClient.TextModeration.ScreenText**. Также он преобразует результат в IList<TranscriptModerationBodyItem> и передает его в **AddVideoTranscriptModerationResult**.
+Добавьте следующие определения методов в пространство имен VideoTranscriptReviews, в класс Program. Этот метод передает расшифровку в метод **ContentModeratorClient.TextModeration.ScreenText**. Она также преобразует результат в IList\<TranscriptModerationBodyItem > и передает **AddVideoTranscriptModerationResult**.
 
 ```csharp
 /// <summary>

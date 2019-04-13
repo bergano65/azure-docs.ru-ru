@@ -9,12 +9,12 @@ ms.date: 11/28/2018
 ms.topic: conceptual
 ms.service: service-fabric-mesh
 manager: timlt
-ms.openlocfilehash: 7b817eefc7a17966060eb7ca05e21f70f04d0878
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c716ae0a2bb30e7e8eb249a1d230097efc0d3795
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57885459"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59521022"
 ---
 # <a name="set-up-service-fabric-mesh-cli"></a>Настройка CLI для Сетки Service Fabric
 Интерфейс командной строки (CLI) вложенной службы "Сетка Service Fabric" требуется для развертывания и администрирования ресурсов локально в этой службе. 
@@ -25,7 +25,7 @@ ms.locfileid: "57885459"
 |---|---|---|
 | az mesh | Служба "Сетка Azure Service Fabric" | Основной интерфейс командной строки для развертывания приложений и управления ресурсами в среде сетки Azure Service Fabric. 
 | sfctl | Локальные кластеры | Служба Service Fabric CLI позволяет развертывать и тестировать ресурсы Service Fabric для локальных кластеров.  
-| Интерфейс командной строки Maven | Локальные кластеры и Сетка Azure Service Fabric | Оболочка "az mesh" и "sfctl", которая позволяет разработчикам Java использовать знакомый интерфейс командной строки для локальной работы и разработки в Azure.  
+| Интерфейс командной строки Maven | Локальные кластеры и Сетка Azure Service Fabric | Это оболочка вокруг `az mesh` и `sfctl` , разработчики Java могут использовать возможности знакомых командной строки для среды разработки локальных и Azure.  
 
 В режиме предварительной версии CLI для Сетки Azure Service Fabric записывается как расширение для Azure CLI. Вы можете установить его в Azure Cloud Shell или локально в Azure CLI. 
 

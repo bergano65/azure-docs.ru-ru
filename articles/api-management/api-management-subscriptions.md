@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/14/2018
 ms.author: apimpm
-ms.openlocfilehash: 1f7c2bde631e42ac94ce4c0394d13e369f6ea23f
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
+ms.openlocfilehash: 6f577530c42952c6340a15110bcd37383a5fca57
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54049764"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59526594"
 ---
 # <a name="subscriptions-in-azure-api-management"></a>Подписки в службе управления API Azure
 
@@ -51,9 +51,6 @@ ms.locfileid: "54049764"
 
 ### <a name="subscriptions-for-all-apis-or-an-individual-api"></a>Подписки для всех API или отдельных API
 
-> [!NOTE]
-> Сейчас эта функция доступна только в службе управления API ценовой категории "Потребление".
-
 Представив уровень [Потребление](https://aka.ms/apimconsumptionblog) службы "Управление API", мы реализовали ряд изменений, чтобы упростить управление ключами.
 - Во-первых, появились две новые области действия подписки: все API и один API. Теперь область действия подписок не ограничивается исключительно продуктом API. Теперь можно создавать ключи, предоставляющие доступ к одному API (или всем API в экземпляре службы управления API) без необходимости создавать продукт и добавлять к нему API. Кроме того, каждый экземпляр Управления API теперь поставляется с неизменяемой подпиской на все API. Эта подписка упрощает и ускоряет тестирование и отладку API в консоли тестирования.
 
@@ -63,9 +60,9 @@ ms.locfileid: "54049764"
 
     ![Гибкие подписки](./media/api-management-subscriptions/flexible-subscription.png)
 
-## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения о службе "Управление API":
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные сведения о службе управления API:
 
 + Узнайте о терминологии Управления API в [этой статье](api-management-terminology.md).
-+ См. руководство[Импорт и публикация первого API](import-and-publish.md).
-+ Изучите [Часто задаваемые вопросы о службе управления API Azure](api-management-faq.md).
++ Ознакомьтесь с [руководствами](import-and-publish.md) по использованию службы управления API.
++ Изучите страницу [Часто задаваемые вопросы о службе управления API Azure](api-management-faq.md).

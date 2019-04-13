@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 02/08/2019
 ms.author: diberry
-ms.openlocfilehash: a71b09ba8b3e7fa7299c34c3cdc64503ae4e9857
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 31d8f54cb05bdbba7fe05249527db3dd50385087
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56736555"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523415"
 ---
 # <a name="use-microsoft-azure-traffic-manager-to-manage-endpoint-quota-across-keys"></a>Использование диспетчера трафика Microsoft Azure для распределения квоты конечной точки на несколько ключей
 Служба "Распознавание речи" (LUIS) позволяет увеличить квоту запросы конечной точки за пределы квоты для одного ключа. Для этого создайте дополнительные ключи для LUIS и добавьте их в приложение LUIS на странице **Публикация** в разделе **Ресурсы и ключи**. 
@@ -86,7 +86,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     |-RelativeDnsName|luis-dns-eastus|Это дочерний домен службы: luis-dns-eastus.trafficmanager.net|
     |-Ttl|30|Интервал опроса, 30 секунд|
     |-MonitorProtocol<BR>-MonitorPort|HTTPS<br>443|Порт и протокол для LUIS — HTTPS-порт 443|
-    |-MonitorPath|`/luis/v2.0/apps/<appIdLuis>?subscription-key=<subscriptionKeyLuis>&q=traffic-manager-east`|Замените <appIdLuis> и <subscriptionKeyLuis> собственными значениями.|
+    |-MonitorPath|`/luis/v2.0/apps/<appIdLuis>?subscription-key=<subscriptionKeyLuis>&q=traffic-manager-east`|Замените `<appIdLuis>` и `<subscriptionKeyLuis>` собственными значениями.|
     
     Для успешного запроса ответ не возвращается.
 
@@ -154,7 +154,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     |-RelativeDnsName|luis-dns-westus|Это дочерний домен службы: luis-dns-westus.trafficmanager.net|
     |-Ttl|30|Интервал опроса, 30 секунд|
     |-MonitorProtocol<BR>-MonitorPort|HTTPS<br>443|Порт и протокол для LUIS — HTTPS-порт 443|
-    |-MonitorPath|`/luis/v2.0/apps/<appIdLuis>?subscription-key=<subscriptionKeyLuis>&q=traffic-manager-west`|Замените <appId> и <subscriptionKey> собственными значениями. Помните, что этот ключ конечной точки отличается от ключа конечной точки в регионе "Восточная часть США"|
+    |-MonitorPath|`/luis/v2.0/apps/<appIdLuis>?subscription-key=<subscriptionKeyLuis>&q=traffic-manager-west`|Замените `<appId>` и `<subscriptionKey>` собственными значениями. Помните, что этот ключ конечной точки отличается от ключа конечной точки в регионе "Восточная часть США"|
     
     Для успешного запроса ответ не возвращается.
 

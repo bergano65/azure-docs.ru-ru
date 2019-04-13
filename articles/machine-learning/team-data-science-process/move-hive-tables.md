@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: d67bd26dcb2ac0b3bf909e1ef3d5ca75a0882eb3
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 28e399eaf62731d7c38cea5f5a8cb8ebf876e686
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57840653"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59522509"
 ---
 # <a name="create-hive-tables-and-load-data-from-azure-blob-storage"></a>Создание таблиц Hive и загрузка данных из хранилища BLOB-объектов Azure
 
@@ -112,7 +112,7 @@ ms.locfileid: "57840653"
 ![Обозреватель службы хранилища Azure с выходными данными запроса Hive](./media/move-hive-tables/output-hive-results-3.png)
 
 ### <a name="hive-editor"></a> 2. Отправка запросов Hive с помощью редактора Hive
-Вы также можете использовать консоль запросов (редактор Hive). Для этого введите в веб-браузер URL-адрес в таком формате: *https://<Hadoop cluster name>.azurehdinsight.net/Home/HiveEditor*. Чтобы увидеть эту консоль, необходимо выполнить вход, а для этого вам потребуются ваши учетные данные для кластера Hadoop.
+Можно также использовать консоль запросов (редактор Hive), введя URL-адрес в форме *https:\//\<имя кластера Hadoop >.azurehdinsight.net/Home/HiveEditor* в веб-браузере. Чтобы увидеть эту консоль, необходимо выполнить вход, а для этого вам потребуются ваши учетные данные для кластера Hadoop.
 
 ### <a name="ps"></a> 3. Отправка запросов Hive с помощью команд PowerShell Azure
 Для отправки запросов Hive также можно использовать PowerShell. Инструкции см. в статье [Отправка заданий Hadoop в HDInsight](../../hdinsight/hadoop/apache-hadoop-use-hive-powershell.md).
@@ -149,7 +149,7 @@ ms.locfileid: "57840653"
 
     LOAD DATA INPATH '<path to blob data>' INTO TABLE <database name>.<table name>;
 
-* **\<путь к данным BLOB-объекта\>**  — если файл BLOB-объекта, который необходимо передать в таблицу Hive, расположен в контейнере по умолчанию для кластера HDInsight Hadoop, *\<путь к данным BLOB-объекта\>* следует указать в формате *wasb:///<directory in this container>/<blob file name>*. В дополнительном контейнере кластера Hadoop под управлением службы HDInsight также может быть файл большого двоичного объекта. В этом случае для *\<пути к данным BLOB-объекта\>* нужно использовать формат *wasb://<container name><storage account name>.blob.core.windows.net/<blob file name>*.
+* **\<путь к данным BLOB-объекта\>**  — Если файл BLOB-объектов для передачи в таблицу Hive в контейнере по умолчанию кластера HDInsight Hadoop, *\<путь_к_данным_большого_двоичного_объекта\>* должно быть в формате *"wasb: / /\< каталог, в этом контейнере > /\<имя файла большого двоичного объекта > "*. В дополнительном контейнере кластера Hadoop под управлением службы HDInsight также может быть файл большого двоичного объекта. В этом случае *\<путь_к_данным_большого_двоичного_объекта\>* должно быть в формате *"wasb: / /\<имя контейнера >\<имя учетной записи хранения >.blob.core.windows.net/\<имя файла большого двоичного объекта > "*.
 
   > [!NOTE]
   > Данные большого двоичного объекта, которые необходимо отправить в таблицу Hive, должны находиться в контейнере по умолчанию или в дополнительном контейнере учетной записи хранения для кластера Hadoop. В противном случае запрос *LOAD DATA* завершается ошибкой доступа к данным.

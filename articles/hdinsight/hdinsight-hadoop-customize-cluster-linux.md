@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/02/2019
-ms.openlocfilehash: fe0fec082ace997a3bd66ca7c7575ce8dce3be1a
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: e67e41d5e423e07371fbce06066076ab809f60df
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58885576"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59545337"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров Azure HDInsight с помощью действий сценария
 
@@ -152,7 +152,6 @@ ms.locfileid: "58885576"
 | установка Presto; |`https://raw.githubusercontent.com/hdinsight/presto-hdinsight/master/installpresto.sh`. Ознакомьтесь со статьей [Установка и использование Presto в кластерах HDInsight Hadoop](hdinsight-hadoop-install-presto.md). |
 | установка Giraph; |`https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh`. Ознакомьтесь со статьей [Установка Apache Giraph в кластерах HDInsight Hadoop и использование Giraph для обработки диаграмм больших объемов](hdinsight-hadoop-giraph-install-linux.md). |
 | Предварительная загрузка библиотек Hive |`https://hdiconfigactions.blob.core.windows.net/linuxsetupcustomhivelibsv01/setup-customhivelibs-v01.sh`. Ознакомьтесь со статьей [Добавление пользовательских библиотек Apache Hive при создании кластера HDInsight](hdinsight-hadoop-add-hive-libraries.md). |
-| Установка или обновление Mono | `https://hdiconfigactions.blob.core.windows.net/install-mono/install-mono.bash`. См. статью [Установка или обновление Mono в HDInsight](hdinsight-hadoop-install-mono.md). |
 
 ## <a name="use-a-script-action-during-cluster-creation"></a>Использование действия сценария при создании кластера
 
@@ -369,7 +368,7 @@ ms.locfileid: "58885576"
 | `Remove-AzHDInsightPersistedScriptAction` |Понижение уровня сохраняемого сценария до специального. |
 
 > [!IMPORTANT]  
-> `Remove-AzHDInsightPersistedScriptAction` не отменить действия, выполняемые с помощью сценария. Этот командлет только удаляет флаг сохранения.
+> При использовании `Remove-AzHDInsightPersistedScriptAction` действия, выполненные сценарием, не отменяются. Этот командлет только удаляет флаг сохранения.
 
 В приведенном ниже примере сценария показано использование командлетов для повышения уровня типа сценария (и наоборот).
 
@@ -387,7 +386,7 @@ ms.locfileid: "58885576"
 | `azure hdinsight script-action persisted delete <clustername> <scriptname>` |Понижение уровня сохраняемого сценария до специального. |
 
 > [!IMPORTANT]  
-> `azure hdinsight script-action persisted delete` не отменить действия, выполняемые с помощью сценария. Этот командлет только удаляет флаг сохранения.
+> При использовании `azure hdinsight script-action persisted delete` действия, выполненные сценарием, не отменяются. Этот командлет только удаляет флаг сохранения.
 
 ### <a name="the-hdinsight-net-sdk"></a>Пакет SDK для HDInsight .NET
 
@@ -461,7 +460,7 @@ ms.locfileid: "58885576"
 
     * **Рабочий узел**: `<uniqueidentifier>AmbariDb-wn0-<generated_value>.cloudapp.net`
 
-    * **Узел zookeeper**: `<uniqueidentifier>AmbariDb-zk0-<generated_value>.cloudapp.net`
+    * **Узел Zookeeper**: `<uniqueidentifier>AmbariDb-zk0-<generated_value>.cloudapp.net`
 
 * Все **stdout** и **stderr** соответствующего узла передаются в учетную запись хранения. Для каждого действия сценария создается файл **output-\*.txt** и файл **errors-\*.txt**. Файл **output-*.txt** содержит сведения об URI сценария, запущенном на узле. Ниже приведен пример таких сведений:
 
@@ -517,8 +516,8 @@ sudo pip install azure-storage==0.20.0
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Разработка скриптов действия сценария для HDInsight](hdinsight-hadoop-script-actions-linux.md)
-* [Установить и использовать Apache Giraph в кластерах HDInsight](hdinsight-hadoop-giraph-install-linux.md)
-* [Добавление дополнительного хранилища в кластер HDInsight](hdinsight-hadoop-add-storage.md)
+* [Разработка действий сценариев с помощью HDInsight](hdinsight-hadoop-script-actions-linux.md)
+* [Установка и использование Apache Giraph в кластерах HDInsight](hdinsight-hadoop-giraph-install-linux.md)
+* [Добавление дополнительных учетных записей хранения Azure в HDInsight](hdinsight-hadoop-add-storage.md)
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-linux/HDI-Cluster-state.png "Этапы создания кластера"

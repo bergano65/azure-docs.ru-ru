@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 03/07/2018
 ms.author: cephalin;sisirap
 ms.custom: seodec18
-ms.openlocfilehash: 1bc8dc822622ee7b16b3e0a31e7b0b66ed7556e6
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: a48a72fe36b7925936758e844d959968ea921c65
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59488411"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59544064"
 ---
 # <a name="deploy-your-app-to-azure-app-service-with-a-zip-or-war-file"></a>Развертывание приложения в Службе приложений Azure с помощью ZIP- или WAR-файла
 
@@ -73,13 +73,23 @@ Compress-Archive -Path * -DestinationPath <file-name>.zip
 
 Разверните загруженный ZIP-файл в веб-приложение с помощью команды [az webapp deployment source config-zip](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-zip).  
 
-Следующий пример развертывает загруженный ZIP-файл. При использовании локальной установки Azure CLI укажите путь к локальному ZIP-файлу `--src`.   
+Следующий пример развертывает загруженный ZIP-файл. При использовании локальной установки Azure CLI укажите путь к локальному ZIP-файлу `--src`.
 
 ```azurecli-interactive
 az webapp deployment source config-zip --resource-group myResourceGroup --name <app_name> --src clouddrive/<filename>.zip
 ```
 
-Эта команда позволяет развертывать файлы и каталоги из ZIP-файлов в папку для приложения службы приложений по умолчанию (`\home\site\wwwroot`). Затем приложение перезапускается. Если настроен любой дополнительный пользовательский процесс сборки, он также запустится. Дополнительные сведения см. в [документации по Kudu](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file).
+Эта команда позволяет развертывать файлы и каталоги из ZIP-файлов в папку для приложения службы приложений по умолчанию (`\home\site\wwwroot`). Затем приложение перезапускается.
+
+По умолчанию подсистема развертывания предполагает, что ZIP-файл готов к выполнению как-не запускать любой автоматизации сборки. Чтобы включить тот же сборки автоматизации, как показано на [развертывание Git](deploy-local-git.md), задайте `SCM_DO_BUILD_DURING_DEPLOYMENT` параметр приложения, выполнив следующую команду в [Cloud Shell](https://shell.azure.com):
+
+```azurecli-interactive
+az webapp config appsettings set --resource-group <resource-group-name> --name <app-name> --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
+```
+
+
+
+Дополнительные сведения см. в [документации по Kudu](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file-or-url).
 
 [!INCLUDE [app-service-deploy-zip-push-rest](../../includes/app-service-deploy-zip-push-rest.md)]  
 
@@ -118,5 +128,5 @@ Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $base64A
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
-* [Kudu: Развертывание из ZIP-файла](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file)
+* [Kudu: Deploying from a zip file](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file) (Kudu. Развертывание из ZIP-файла)
 * [Учетные данные развертывания службы приложений Azure](deploy-ftp.md)

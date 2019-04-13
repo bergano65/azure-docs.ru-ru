@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/21/2019
 ms.author: spelluru
-ms.openlocfilehash: 8b2eee0bfd32b58cd751f8bf70aff1d4f460a353
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 9cd2e5e211fcda7c59469d3b09e9c9e5bdefdbd6
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58340144"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59546597"
 ---
 # <a name="import-virtual-machines-from-another-lab-in-azure-devtest-labs"></a>Импорт виртуальных машин из другой лабораторию в Azure DevTest Labs
 В этой статье сведения о том, как импортировать виртуальные машины из другой лаборатории в лаборатории. 
@@ -47,7 +47,7 @@ ms.locfileid: "58340144"
 - В настоящее время эта функция поддерживается только через Powershell и REST API.
 
 ## <a name="use-powershell"></a>Использование PowerShell
-Загрузите файл ImportVirtualMachines.ps1 с [GitHub](https://github.com/Azure/azure-devtestlab/blob/master/Scripts/ImportVirtualMachines/ImportVirtualMachines.ps1). Скрипт можно использовать для импорта одной виртуальной Машины или всех виртуальных машин в лаборатории источника в целевой лабораторной среде. 
+Загрузите файл ImportVirtualMachines.ps1 с [GitHub](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Scripts/ImportVirtualMachines). Скрипт можно использовать для импорта одной виртуальной Машины или всех виртуальных машин в лаборатории источника в целевой лабораторной среде. 
 
 ### <a name="use-powershell-to-import-a-single-vm"></a>Для импорта одной виртуальной Машины с помощью PowerShell
 Этот сценарий powershell для выполнения требуется определение исходной виртуальной Машины и назначения лаборатории и при необходимости указав новое имя для использования на целевом компьютере:

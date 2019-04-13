@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/24/2017
 ms.author: jdial;annahar
-ms.openlocfilehash: bded6c76aa209a718929c891bd2443f8517ec44a
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: 70dac62e3e19ad0e9b33ea7b376a8fe479bf3131
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58649657"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59522990"
 ---
 # <a name="assign-multiple-ip-addresses-to-virtual-machines-using-powershell"></a>Назначение виртуальным машинам нескольких IP-адресов с помощью PowerShell
 
@@ -96,7 +96,7 @@ ms.locfileid: "58649657"
 
 6. Определите основную конфигурацию IP для сетевого адаптера. Замените 10.0.0.4 действительным адресом в созданной подсети, если вы не использовали значение, определенное ранее. Прежде чем назначать статический IP-адрес, рекомендуем сначала убедиться, что он не используется. Введите команду `Test-AzPrivateIPAddressAvailability -IPAddress 10.0.0.4 -VirtualNetwork $VNet`. Если адрес доступен, в выходных данных возвращается значение *True*, а если нет — значение *False* и список доступных адресов. 
 
-    В следующих командах **замените <replace-with-your-unique-name> уникальным DNS-именем.** Имя должно быть уникальным для всех общедоступных IP-адресов в регионе Azure. Данный параметр является необязательным. Его можно удалить, если вам нужно подключаться к виртуальной машине, используя только общедоступный IP-адрес.
+    В следующих командах **замените \<replace с your-unique-name > уникальным именем DNS для использования.** Имя должно быть уникальным для всех общедоступных IP-адресов в регионе Azure. Данный параметр является необязательным. Его можно удалить, если вам нужно подключаться к виртуальной машине, используя только общедоступный IP-адрес.
 
     ```powershell
     

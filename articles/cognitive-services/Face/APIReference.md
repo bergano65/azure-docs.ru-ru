@@ -1,7 +1,7 @@
 ---
 title: Справочник по API распознавания лиц
 titleSuffix: Azure Cognitive Services
-description: Этот справочник по API содержит сведения об API управления данными о людях, API управления группами людей и большими группами людей, API управления списками лиц и большими списками лиц, а также API алгоритмов распознавания лиц.
+description: Справочник по API содержит сведения о Person, LargePersonGroup/каждой группе людей, LargeFaceList/FaceList и API-интерфейсы для распознавания лиц алгоритмов.
 services: cognitive-services
 author: SteveMSFT
 manager: nitinme
@@ -10,24 +10,22 @@ ms.subservice: face-api
 ms.topic: reference
 ms.date: 03/01/2018
 ms.author: sbowles
-ms.openlocfilehash: a82bd4b06680c0f7763136af70dcfcae5f10af52
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: f4258f34bb7d353ee4e76f4675f4ef672a4a8c78
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55877212"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59547611"
 ---
 # <a name="api-reference"></a>Справочник по API
 
 API распознавания лиц Azure — это облачный API, который предоставляет алгоритмы определения и распознавания лиц. API распознавания лиц включают следующее:
 
-- [API алгоритмов распознавания лиц](https://docs.microsoft.com/rest/api/cognitiveservices/face/face). Предоставляют основные функции, такие как [обнаружение](https://docs.microsoft.com/rest/api/cognitiveservices/face/face/detectwithstream), [поиск похожих лиц](https://docs.microsoft.com/rest/api/cognitiveservices/face/face/findsimilar), [проверка](https://docs.microsoft.com/rest/api/cognitiveservices/face/face/verifyfacetoface), [идентификация](https://docs.microsoft.com/rest/api/cognitiveservices/face/face/identify) и [группирование](https://docs.microsoft.com/rest/api/cognitiveservices/face/face/group).
-- [API управления списком лиц](https://docs.microsoft.com/rest/api/cognitiveservices/face/facelist). Используются для управления списком лиц при [поиске похожих лиц](https://docs.microsoft.com/rest/api/cognitiveservices/face/face/findsimilar).
-- [API управления людьми в большой группе людей](https://docs.microsoft.com/rest/api/cognitiveservices/face/largepersongroupperson). Используются для управления лицами людей в большой группе для [идентификации](https://docs.microsoft.com/rest/api/cognitiveservices/face/face/identify).
-- [API управления большими группами людей](https://docs.microsoft.com/rest/api/cognitiveservices/face/largepersongroup). Используются для управления наборами данных большой группы людей для [идентификации](https://docs.microsoft.com/rest/api/cognitiveservices/face/face/identify).
-- [API управления большим списком лиц](https://docs.microsoft.com/rest/api/cognitiveservices/face/largefacelist). Используются для управления большим списком лиц для [поиска похожих лиц](https://docs.microsoft.com/rest/api/cognitiveservices/face/face/findsimilar).
-- [API управления людьми в группе людей](https://docs.microsoft.com/rest/api/cognitiveservices/face/persongroupperson). Используются для управления лицами людей в группе для [идентификации](https://docs.microsoft.com/rest/api/cognitiveservices/face/face/identify).
-- [API управления группами людей](https://docs.microsoft.com/rest/api/cognitiveservices/face/persongroup). Используются для управления наборами данных группы людей для [идентификации](https://docs.microsoft.com/rest/api/cognitiveservices/face/face/identify).
-- [API управления моментальными снимками](https://docs.microsoft.com/rest/api/cognitiveservices/face/snapshot). Используется для управления моментальными снимками для переноса данных между подписками.
-
-<!-- Linguist question: Please confirm that the following are API names and should be left as is: "Person Management, LargePersonGroup/PersonGroup Management, LargeFaceList/FaceList Management, and Face Algorithms" -->
+- API распознавания лиц алгоритма: Охватывает основные функции, такие как [обнаружения](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), [поиск похожих](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237), [проверки](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a), [идентификации](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239), и [группы](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395238).
+- [API-интерфейсы FaceList](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524b): Используются для управления списком лиц при [поиске похожих лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237).
+- [API-интерфейсы пользователя LargePersonGroup](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/599adcba3a7b9412a4d53f40): Используются для управления лицами людей в большой группе для [идентификации](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239).
+- [API-интерфейсы LargePersonGroup](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/599acdee6ac60f11b48b5a9d): Используются для управления наборами данных большой группы людей для [идентификации](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239).
+- [API-интерфейсы LargeFaceList](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/5a157b68d2de3616c086f2cc): Используются для управления большим списком лиц для [поиска похожих лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237).
+- [API-интерфейсы пользователя в каждой группе людей](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523c): Используются для управления лицами людей в группе для [идентификации](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239).
+- [API-интерфейсы каждой группе людей](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395244): Используются для управления наборами данных группы людей для [идентификации](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239).
+- [Моментальный снимок API-интерфейсы](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/snapshot-take): Используется для управления моментальными снимками для переноса данных между подписками.

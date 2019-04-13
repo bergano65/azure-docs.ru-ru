@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: barclayn
-ms.openlocfilehash: 71931194c88412467252d16c5333d7a77338378c
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.openlocfilehash: 70a33b0ec55705c6fb00671cc801415cd7459558
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58630614"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59522734"
 ---
 # <a name="how-to-generate-and-transfer-hsm-protected-keys-for-azure-key-vault"></a>Создание ключей, защищенных аппаратным модулем безопасности, и их передача в хранилище ключей Azure
 
@@ -445,7 +445,7 @@ KeyVault-BYOK-Tools-UnitedKingdom.zip
 
 Появится запрос на подключение карт администратора системы безопасности.
 
-После завершения команды вы увидите сообщение **Результат: успешно**, а копия ключа с ограниченными разрешениями появится в файле с именем key_xferacId_<contosokey>.
+После завершения команды вы увидите сообщение **Результат: Успех** и копия ключа с ограниченными разрешениями находятся в файле с именем key_xferacId_\<contosokey >.
 
 Вы можете проверить списки ACL, используя следующие команды и служебные программы Thales:
 

@@ -14,17 +14,17 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/15/2018
 ms.author: magattus
-ms.openlocfilehash: 6e17b110cbfc293e19714399d5b2cdb753aa1ac4
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.openlocfilehash: c21ae227d74442be5701dd906180392b1e0fdf8b
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58917963"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59525676"
 ---
 # <a name="manage-expiration-of-web-content-in-azure-cdn"></a>Управление сроком действия веб-содержимого в Azure CDN
 > [!div class="op_single_selector"]
 > * [Веб-содержимое Azure](cdn-manage-expiration-of-cloud-service-content.md)
-> * [Хранилище больших двоичных объектов Azure](cdn-manage-expiration-of-blob-content.md)
+> * [хранилище BLOB-объектов Azure](cdn-manage-expiration-of-blob-content.md)
 > 
 
 Файлы из общедоступных исходных веб-серверов могут кэшироваться в Azure CDN до истечения срока их жизни (TTL). Срок жизни определяется заголовком `Cache-Control`, указанным в HTTP-ответе исходного сервера. В этой статье описано, как определить заголовки `Cache-Control` для функции веб-приложений службы приложений Microsoft Azure, облачных служб Azure, приложений ASP.NET и сайтов IIS. Все они настраиваются сходным образом. Определить заголовок `Cache-Control` можно с помощью файлов конфигурации или программным способом. 
@@ -56,7 +56,7 @@ ms.locfileid: "58917963"
    ![Страница кэширования CDN](./media/cdn-manage-expiration-of-cloud-service-content/cdn-caching-page.png)
 
 
-**Чтобы установить заголовки Cache-Control сервера веб-сайт, используя глобальные правила кэширования:**
+**Чтобы установить заголовки Cache-Control веб-сервера, используя глобальные правила кэширования, сделайте следующее:**
 
 1. В разделе **Глобальные правила кэширования** задайте для параметра **Режим кэширования строк запросов** значение **Пропускать строки запросов**, а для параметра **Поведение кэширования** — значение **Переопределить**.
       
@@ -68,7 +68,7 @@ ms.locfileid: "58917963"
 
 1. Щелкните **Сохранить**.
 
-**Чтобы установить заголовки Cache-Control файла веб-сервера, используя настраиваемые правила кэширования:**
+**Чтобы установить файлы заголовков Cache-Control веб-сервера, используя настраиваемые правила кэширования, сделайте следующее:**
 
 1. В разделе **Настраиваемые правила кэширования** создайте два условия соответствия.
 
@@ -106,7 +106,7 @@ ms.locfileid: "58917963"
 </configuration>
 ```
 
-Чтобы использовать атрибут **cacheControlMaxAge**, присвойте атрибуту **cacheControlMode** значение `UseMaxAge`. Этот параметр добавляет HTTP-заголовок и директиву (`Cache-Control: max-age=<nnn>`) в ответ. У значения интервала времени для атрибута **cacheControlMaxAge** следующий формат: `<days>.<hours>:<min>:<sec>`. Это значение преобразуется в секунды и используется в качестве значения директивы `Cache-Control` `max-age`. Дополнительные сведения об элементе `<clientCache>` см. в описании [клиентского кэша <clientCache>](https://www.iis.net/ConfigReference/system.webServer/staticContent/clientCache).  
+Чтобы использовать атрибут **cacheControlMaxAge**, присвойте атрибуту **cacheControlMode** значение `UseMaxAge`. Этот параметр добавляет HTTP-заголовок и директиву (`Cache-Control: max-age=<nnn>`) в ответ. У значения интервала времени для атрибута **cacheControlMaxAge** следующий формат: `<days>.<hours>:<min>:<sec>`. Это значение преобразуется в секунды и используется в качестве значения директивы `Cache-Control` `max-age`. Дополнительные сведения о `<clientCache>` элемент, см. в разделе [кэш клиента \<clientCache >](https://www.iis.net/ConfigReference/system.webServer/staticContent/clientCache).  
 
 ## <a name="setting-cache-control-headers-programmatically"></a>Определение заголовков Cache-Control программным способом
 Для приложений ASP.NET можно настроить режим кэширования CDN программным способом, задав свойство **HttpResponse.Cache** для API .NET. Дополнительные сведения о свойстве **HttpResponse.Cache**, см. в описании [свойства HttpResponse.Cache](/dotnet/api/system.web.httpresponse.cache#System_Web_HttpResponse_Cache) и [класса HttpCachePolicy](/dotnet/api/system.web.httpcachepolicy).  
@@ -131,7 +131,7 @@ Response.Cache.SetLastModified(DateTime.Now);
 Вы легко можете проверить установленный для веб-содержимого срок жизни. Используя встроенные в браузер [средства разработчика](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/), убедитесь, что ваше веб-содержимое содержит заголовок ответа `Cache-Control`. Для просмотра заголовков ответа можно использовать и другие средства, например **wget**, [Postman](https://www.getpostman.com/) или [Fiddler](https://www.telerik.com/fiddler).
 
 ## <a name="next-steps"></a>Следующие шаги
-* [Сведения об **clientCache** элемент](https://www.iis.net/ConfigReference/system.webServer/staticContent/clientCache)
-* [Ознакомьтесь с документацией по **HttpResponse.Cache** свойство](/dotnet/api/system.web.httpresponse.cache#System_Web_HttpResponse_Cache) 
-* [Ознакомьтесь с документацией по **класс HttpCachePolicy**](/dotnet/api/system.web.httpcachepolicy)  
+* [Сведения об элементе **clientCache**](https://www.iis.net/ConfigReference/system.webServer/staticContent/clientCache).
+* [Документация по свойству **HttpResponse.Cache**](/dotnet/api/system.web.httpresponse.cache#System_Web_HttpResponse_Cache). 
+* [Документация по **классу HttpCachePolicy**](/dotnet/api/system.web.httpcachepolicy).  
 * [Дополнительные сведения о кэшировании](cdn-how-caching-works.md)

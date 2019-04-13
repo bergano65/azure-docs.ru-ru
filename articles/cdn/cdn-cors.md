@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 635b4e71c09a2e8b3901af5580f221bc4716831d
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.openlocfilehash: 3dbf0aea50f382a0b325bf068a200cde42098733
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58917776"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59547603"
 ---
 # <a name="using-azure-cdn-with-cors"></a>Использование Azure CDN с CORS
 ## <a name="what-is-cors"></a>Что такое CORS?
@@ -32,7 +32,7 @@ CORS (общий доступ к ресурсам независимо от ис
 
 1. Браузер отправляет запрос CORS с дополнительным заголовком HTTP-запроса **Origin**. Значение этого заголовка является источником, обслужившим родительскую страницу, который определяется как сочетание *протокола*, *домена* и *порта*.  Когда на странице https://www.contoso.com произойдет попытка получить доступ к данным пользователя в источнике fabrikam.com, на fabrikam.com отправится запрос со следующим заголовком:
 
-   `Origin: https://www.contoso.com`
+   `Origin: https:\//www.contoso.com`
 
 2. Сервер может отправить в ответ следующее:
 

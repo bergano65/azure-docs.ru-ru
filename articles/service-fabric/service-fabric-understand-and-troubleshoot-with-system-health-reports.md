@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/28/2018
 ms.author: oanapl
-ms.openlocfilehash: 4ece2dc1df3d29a3024c7efe15dd8cecfd9666db
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 4322fd60bb30b9eb6ac18c72e75127006acf5149
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58663865"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59528192"
 ---
 # <a name="use-system-health-reports-to-troubleshoot"></a>Устранение неполадок с помощью отчетов о работоспособности системы
 Компоненты Azure Service Fabric предоставляют готовые системные отчеты о работоспособности для всех сущностей в кластере. В [хранилище данных о работоспособности](service-fabric-health-introduction.md#health-store) сущности создаются и удаляются на основании отчетов системы. Кроме того, эти сущности упорядочиваются в иерархию с учетом взаимодействия между ними.
@@ -640,7 +640,7 @@ HealthEvents          :
 
 - **IReplicator.CatchupReplicaSet**: Это предупреждение означает одну из следующих действий. недостаточно реплик (это можно определить, посмотрев состояние реплик в секции или отчет о работоспособности System.FM для заблокированной перенастройки); реплики не подтверждают операции. С помощью командлета PowerShell `Get-ServiceFabricDeployedReplicaDetail` можно узнать ход выполнения всех реплик. Проблема связана с репликами, у которых значение `LastAppliedReplicationSequenceNumber` ниже значения `CommittedSequenceNumber` первичной реплики.
 
-- **IReplicator.BuildReplica (<Remote ReplicaId>)**: Это предупреждение указывает на проблему в процессе построения. Ознакомьтесь с [жизненным циклом реплики](service-fabric-concepts-replica-lifecycle.md). Проблема может быть вызвана неправильной настройкой адреса репликатора. Дополнительные сведения см. в разделах [Настройка надежных служб с отслеживанием состояния](service-fabric-reliable-services-configuration.md) и [Указание ресурсов в манифесте служб](service-fabric-service-manifest-resources.md). Также возможно наличие проблемы на удаленном узле.
+- **IReplicator.BuildReplica (\<удаленного ReplicaId >)**: Это предупреждение указывает на проблему в процессе построения. Ознакомьтесь с [жизненным циклом реплики](service-fabric-concepts-replica-lifecycle.md). Проблема может быть вызвана неправильной настройкой адреса репликатора. Дополнительные сведения см. в разделах [Настройка надежных служб с отслеживанием состояния](service-fabric-reliable-services-configuration.md) и [Указание ресурсов в манифесте служб](service-fabric-service-manifest-resources.md). Также возможно наличие проблемы на удаленном узле.
 
 ### <a name="replicator-system-health-reports"></a>Системные отчеты о работоспособности репликатора
 **Переполнение очереди репликации.**

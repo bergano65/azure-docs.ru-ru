@@ -9,12 +9,12 @@ ms.subservice: anomaly-detector
 ms.topic: article
 ms.date: 03/26/2019
 ms.author: aahi
-ms.openlocfilehash: 06cb4d32359014f3cbc67ed1f75988c794e6599e
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.openlocfilehash: 1c8ce91a0fd8805b307e1e21bc08f9050b8a47d4
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58619521"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59547045"
 ---
 # <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-java"></a>Краткое руководство. Обнаруживать аномалии в данных временных рядов с помощью REST API обнаружения аномалий и Java
 
@@ -82,7 +82,7 @@ ms.locfileid: "58619521"
 3. Чтение в файле данных JSON
 
     ```java
-    String requestData = new String(Files.readAllBytes(Paths.get(dataPath)), "UTF-8");
+    String requestData = new String(Files.readAllBytes(Paths.get(dataPath)), "utf-8");
     ```
 
 ## <a name="create-a-function-to-send-requests"></a>Создание функции для отправки запросов
@@ -93,9 +93,9 @@ ms.locfileid: "58619521"
 
 3. Используйте запрос `setHeader()` функцию для задания `Content-Type` заголовок `application/json`и добавьте ключ подписки для `Ocp-Apim-Subscription-Key` заголовка.
 
-4. Используйте запрос `setEntity()` функцию для отправки данных.   
+4. Используйте запрос `setEntity()` функцию для отправки данных.
 
-5. Использование клиента `execute()` функцию для отправки запроса и сохраните его для `CloseableHttpResponse` объекта. 
+5. Использование клиента `execute()` функцию для отправки запроса и сохраните его для `CloseableHttpResponse` объекта.
 
 6. Создание `HttpEntity` объект для сохранения содержимого ответа. Получить содержимое с `getEntity()`. Если ответ не является пустым, вернуть его.
 
@@ -127,16 +127,20 @@ static String sendRequest(String apiAddress, String endpoint, String subscriptio
 
 1. Создайте метод с именем `detectAnomaliesBatch()` для обнаружения аномалий в данных в пакетном режиме. Вызовите `sendRequest()` метод, созданный ранее с помощью конечной точки, URL-адрес, ключ подписки и данных json. Получить результат и его вывода на консоль.
 
-2. Найти позиции аномалии в наборе данных. Ответ `isAnomaly` поле содержит значение типа boolean, относящиеся к ли точки данных — аномалия. Возвращает массив JSON и итерации, печать индекса любого `true` значения. Эти значения соответствуют индекс точки данных подозрительной активности, если любой объект найден.
+2. Если в ответе содержится `code` поле, печати, код ошибки и сообщение об ошибке.
 
-    
-    ```java
-    static void detectAnomaliesBatch(String requestData) {
-        System.out.println("Detecting anomalies as a batch");
-        String result = sendRequest(batchDetectionUrl, endpoint, subscriptionKey, requestData);
-        if (result != null) {
-            System.out.println(result);
-            JSONObject jsonObj = new JSONObject(result);
+3. В противном случае поиск позиции аномалии в наборе данных. Ответ `isAnomaly` поле содержит значение типа boolean, относящиеся к ли точки данных — аномалия. Возвращает массив JSON и итерации, печать индекса любого `true` значения. Эти значения соответствуют индекс точки данных подозрительной активности, если любой объект найден.
+
+```java
+static void detectAnomaliesBatch(String requestData) {
+    System.out.println("Detecting anomalies as a batch");
+    String result = sendRequest(batchDetectionUrl, endpoint, subscriptionKey, requestData);
+    if (result != null) {
+        System.out.println(result);
+        JSONObject jsonObj = new JSONObject(result);
+        if (jsonObj.has("code")) {
+            System.out.println(String.format("Detection failed. ErrorCode:%s, ErrorMessage:%s", jsonObj.getString("code"), jsonObj.getString("message")));
+        } else {
             JSONArray jsonArray = jsonObj.getJSONArray("isAnomaly");
             System.out.println("Anomalies found in the following data positions:");
             for (int i = 0; i < jsonArray.length(); ++i) {
@@ -146,7 +150,8 @@ static String sendRequest(String apiAddress, String endpoint, String subscriptio
             System.out.println();
         }
     }
-    ```
+}
+```
 
 ## <a name="detect-the-anomaly-status-of-the-latest-data-point"></a>Обнаружение аномалий состояние последней точки данных
 
@@ -165,14 +170,14 @@ static void detectAnomaliesLatest(String requestData) {
 1. В методе main приложения чтения в JSON-файл, содержащий данные, которые будут добавлены на запросы.
 
 2. Вызовите функции обнаружения аномалий два, созданной ранее.
-    
-    ```java
-    public static void main(String[] args) throws Exception {
-        String requestData = new String(Files.readAllBytes(Paths.get(dataPath)), "UTF-8");
-        detectAnomaliesBatch(requestData);
-        detectAnomaliesLatest(requestData);
-    }
-    ```
+
+```java
+public static void main(String[] args) throws Exception {
+    String requestData = new String(Files.readAllBytes(Paths.get(dataPath)), "utf-8");
+    detectAnomaliesBatch(requestData);
+    detectAnomaliesLatest(requestData);
+}
+```
 
 ### <a name="example-response"></a>Пример ответа
 

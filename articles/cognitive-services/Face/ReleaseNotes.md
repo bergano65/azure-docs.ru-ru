@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 03/29/2019
 ms.author: yluiu
-ms.openlocfilehash: 02e4e73bbbc7f843a3483bab4791484b89f97dd7
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.openlocfilehash: 8502d643986392ba846d509819c6d8f63f931c07
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58862035"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59544556"
 ---
 # <a name="face-api-release-notes"></a>Заметки о выпуске для API распознавания лиц
 
@@ -27,7 +27,7 @@ ms.locfileid: "58862035"
 
 ### <a name="release-changes-in-january-2019"></a>Изменения в выпуске за январь 2019 г.
 
-* Добавлена функция моментального снимка для поддержки миграции данных между подписками. [Моментальный снимок](https://docs.microsoft.com/rest/api/cognitiveservices/face/snapshot). Дополнительные сведения в [как перенести данные лиц в другую подписку лиц](Face-API-How-to-Topics/how-to-migrate-face-data.md).
+* Добавлена функция моментального снимка для поддержки миграции данных между подписками. [Моментальный снимок](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/snapshot-get). Дополнительные сведения в [как перенести данные лиц в другую подписку лиц](Face-API-How-to-Topics/how-to-migrate-face-data.md).
 
 ### <a name="release-changes-in-october-2018"></a>Изменения в выпуске за октябрь 2018 г.
 

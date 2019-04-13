@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 970e570d9ad27da2690cd38fe480823128322db0
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: c5f37873b51d6257ffec3ada10be886995f7f5d5
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58370709"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59521875"
 ---
 # <a name="configure-azure-multi-factor-authentication-server-to-work-with-ad-fs-in-windows-server"></a>Настройка сервера Многофакторной идентификации Azure для работы с AD FS на платформе Windows Server
 
@@ -81,7 +81,7 @@ ms.locfileid: "58370709"
 Чтобы изменить файл MultiFactorAuthenticationAdfsAdapter.config, выполните следующие действия.
 
 1. Задайте для узла **UseWebServiceSdk** значение **true**.  
-2. В поле **WebServiceSdkUrl** укажите URL-адрес пакета SDK веб-службы многофакторной проверки подлинности. Например: *<https://contoso.com/&lt;certificatename&gt;/MultiFactorAuthWebServiceSdk/PfWsSdk.asmx>*, где *certificatename* — имя вашего сертификата.  
+2. В поле **WebServiceSdkUrl** укажите URL-адрес пакета SDK веб-службы многофакторной проверки подлинности. Например: *https:\/\/contoso.com/\<certificatename > /MultiFactorAuthWebServiceSdk/PfWsSdk.asmx*, где  *\<certificatename >* — имя вашего сертификата.  
 3. Измените скрипт Register-MultiFactorAuthenticationAdfsAdapter.ps1. Для этого добавьте `-ConfigurationFilePath &lt;path&gt;` в конец команды `Register-AdfsAuthenticationProvider`, где *&lt;path&gt;*  — это полный путь к файлу MultiFactorAuthenticationAdfsAdapter.config.
 
 ### <a name="configure-the-web-service-sdk-with-a-username-and-password"></a>Настройка пакета SDK веб-службы с помощью имени пользователя и пароля

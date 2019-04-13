@@ -12,12 +12,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 6c01232c9bdb685fbc54e5ebe1e1f9fa83073dc2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: e528b70e257c41f771a1bd3e5ec811c61eb512cc
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58107803"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59526679"
 ---
 # <a name="join-an-azure-ssis-integration-runtime-to-a-virtual-network"></a>Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
 Присоедините среду выполнения интеграции (IR) Azure SSIS к виртуальной сети в одной из следующих ситуаций: 
@@ -135,9 +135,9 @@ ms.locfileid: "58107803"
 
 ### <a name="resource-group"></a> Требования для группы ресурсов
 -   Среда выполнения интеграции Azure SSIS должна создать определенные сетевые ресурсы в той же группе ресурсов, в которой находится виртуальная сеть. В число этих ресурсов входят следующие:
-    -   подсистема балансировки нагрузки с именем *<Guid>-azurebatch-cloudserviceloadbalancer*;
-    -   общедоступный IP-адрес Azure с именем *<Guid>-azurebatch-cloudservicepublicip*;
-    -   рабочая группа безопасности с именем *<Guid>-azurebatch-cloudservicenetworksecuritygroup*. 
+    -   Azure load balancer, с именем  *\<Guid > - azurebatch - cloudserviceloadbalancer*.
+    -   Azure общедоступный IP-адрес, с именем  *\<Guid > - azurebatch - cloudservicepublicip*.
+    -   Группу безопасности сети работы с именем  *\<Guid > - azurebatch - cloudservicenetworksecuritygroup*. 
 
 -   Убедитесь в отсутствии блокировки ресурсов в группе ресурсов и в подписке, к которым принадлежит виртуальная сеть. Если настроена блокировка только для чтения или блокировка удаления, то при запуске или остановке IR может произойти сбой или зависание. 
 

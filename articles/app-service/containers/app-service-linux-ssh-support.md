@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 02/25/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: a56c4b0bac61bd2039138ffed554130c6e520821
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 2d84a4dd0b69ce9ca7fc594dffce3238c620c426
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58167139"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59543979"
 ---
 # <a name="ssh-support-for-azure-app-service-on-linux"></a>Поддержка SSH для службы приложений Azure в Linux
 
@@ -35,71 +35,11 @@ ms.locfileid: "58167139"
 
 ## <a name="open-ssh-session-in-browser"></a>Открытие сеанса SSH в браузере
 
-Чтобы настроить клиентское подключение SSH к контейнеру, необходимо запустить приложение.
-
-Вставьте следующий URL-адрес в браузер и замените \<app_name> именем вашего приложения:
-
-```
-https://<app_name>.scm.azurewebsites.net/webssh/host
-```
-
-Если вы еще не прошли аутентификацию, это потребуется сделать, воспользовавшись подпиской Azure, чтобы подключиться. После выполнения проверки подлинности отобразится оболочка в браузере. Здесь можно запускать команды внутри контейнера.
-
-![SSL-подключение](./media/app-service-linux-ssh-support/app-service-linux-ssh-connection.png)
+[!INCLUDE [Open SSH session in browser](../../../includes/app-service-web-ssh-connect-no-h.md)]
 
 ## <a name="use-ssh-support-with-custom-docker-images"></a>Применение поддержки SSH в пользовательских образах Docker
 
-Чтобы пользовательский образ Docker поддерживал обмен данными по протоколу SSH между контейнером и клиентом на портале Azure, выполните следующие действия с образом Docker.
-
-Эти действия показаны в репозитории службы приложений Azure в качестве [примера](https://github.com/Azure-App-Service/node/blob/master/6.9.3/).
-
-1. Добавьте установку `openssh-server` в инструкцию [`RUN` ](https://docs.docker.com/engine/reference/builder/#run)в Dockerfile для образа и установите пароль для учетной записи привилегированного пользователя `"Docker!"`.
-
-    > [!NOTE]
-    > Эта конфигурация не разрешает внешние подключения к контейнеру. SSH-подключение доступно только для Kudu и сайта SCM, который аутентифицирован с помощью учетных данных для публикации.
-
-    ```Dockerfile
-    # ------------------------
-    # SSH Server support
-    # ------------------------
-    RUN apt-get update \
-        && apt-get install -y --no-install-recommends openssh-server \
-        && echo "root:Docker!" | chpasswd
-    ```
-
-2. Добавьте [инструкцию `COPY`](https://docs.docker.com/engine/reference/builder/#copy) в Dockerfile, чтобы скопировать файл [sshd_config](https://man.openbsd.org/sshd_config) в каталог */etc/ssh/*. Ваш файл конфигурации должен быть создан на основе файла sshd_config из репозитория GitHub Azure-App-Service, который доступен [здесь](https://github.com/Azure-App-Service/node/blob/master/10.14/sshd_config).
-
-    > [!NOTE]
-    > Файл *sshd_config* должен содержать приведенные ниже компоненты, иначе установить подключение будет невозможно. 
-    > * `Ciphers` должен содержать по крайней мере одно из следующих значений: `aes128-cbc,3des-cbc,aes256-cbc`.
-    > * `MACs` должен содержать по крайней мере одно из следующих значений: `hmac-sha1,hmac-sha1-96`.
-
-    ```Dockerfile
-    COPY sshd_config /etc/ssh/
-    ```
-
-3. Добавьте порт 2222 в инструкцию [`EXPOSE` ](https://docs.docker.com/engine/reference/builder/#expose)для Dockerfile. Даже при указании пароля привилегированного пользователя порт 2222 недоступен из Интернета. Это внутренний порт, который доступен только контейнерам внутри мостовой сети виртуальной частной сети.
-
-    ```Dockerfile
-    EXPOSE 2222 80
-    ```
-
-4. Запустите службу SSH с помощью сценария оболочки (см. пример в файле [init_container.sh](https://github.com/Azure-App-Service/node/blob/master/6.9.3/startup/init_container.sh)).
-
-    ```bash
-    #!/bin/bash
-    service ssh start
-    ```
-
-Dockerfile использует инструкцию [`ENTRYPOINT` ](https://docs.docker.com/engine/reference/builder/#entrypoint)для выполнения этого сценария.
-
-    ```Dockerfile
-    COPY init_container.sh /opt/startup
-    ...
-    RUN chmod 755 /opt/startup/init_container.sh
-    ...
-    ENTRYPOINT ["/opt/startup/init_container.sh"]
-    ```
+См. в разделе [Настройка SSH в пользовательский контейнер](configure-custom-container.md#enable-ssh).
 
 ## <a name="open-ssh-session-from-remote-shell"></a>Открытие сеанса SSH из удаленной оболочки
 
@@ -111,10 +51,10 @@ Dockerfile использует инструкцию [`ENTRYPOINT` ](https://doc
 
 Чтобы начать работу, нужно установить [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). Чтобы ознакомиться с принципами работы без установки Azure CLI, перейдите к статье [Обзор Azure Cloud Shell](../../cloud-shell/overview.md). 
 
-Откройте удаленное подключение к приложению, используя команду [az webapp remote-connection create](/cli/azure/ext/webapp/webapp/remote-connection?view=azure-cli-latest#ext-webapp-az-webapp-remote-connection-create). Укажите параметры _\_ИД\<подписки>_, _\<имя\_группы>_ и \_<имя\_приложения>_ для вашего приложения.
+Откройте удаленное подключение к приложению, используя команду [az webapp remote-connection create](/cli/azure/ext/webapp/webapp/remote-connection?view=azure-cli-latest#ext-webapp-az-webapp-remote-connection-create). Укажите  _\<ИД_ПОДПИСКИ >_,  _\<имя группы >_ и \__ < имя_приложения > для вашего приложения.
 
 ```azurecli-interactive
-az webapp remote-connection create --subscription <subscription_id> --resource-group <group_name> -n <app_name> &
+az webapp remote-connection create --subscription <subscription-id> --resource-group <resource-group-name> -n <app-name> &
 ```
 
 > [!TIP]

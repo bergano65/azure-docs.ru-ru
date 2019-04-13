@@ -9,14 +9,14 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.reviewer: sgilley
-ms.date: 2/14/2019
+ms.date: 04/19/2019
 ms.custom: seodec18
-ms.openlocfilehash: 818b6e5994a4f5b9d21d511f0a31eab6e00033f7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 7b479556543c6a9dff88643fdc587dec3f832f39
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58012479"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59548176"
 ---
 # <a name="train-models-with-azure-machine-learning-using-estimator"></a>Обучение моделей с помощью оценщика Машинного обучения Azure
 
@@ -59,7 +59,7 @@ sk_est = Estimator(source_directory='./my-sklearn-proj',
 Параметр | ОПИСАНИЕ
 --|--
 `source_directory`| Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка копируется с локального компьютера на удаленный вычислительный ресурс. 
-`script_params`| Словарь, указывающий аргументы командной строки для сценария обучения `entry_script` в виде пар <аргумент командной строки, значение>.
+`script_params`| Словарь, указав аргументы командной строки в сценарий обучения `entry_script`, в виде < аргумент командной строки, значение > пары. Чтобы указать подробные флаг в `script_params`, используйте `<command-line argument, "">`.
 `compute_target`| Удаленный целевой объект вычислений, на котором будет выполняться скрипт обучения. В нашем случае это кластер Вычислительной среды Машинного обучения Azure ([AmlCompute](how-to-set-up-training-targets.md#amlcompute)). (Обратите внимание: даже если кластер AmlCompute чаще всего используется как целевой объект, вы можете выбрать другие типы целевых объектов вычислений, такие как виртуальные машины Azure или даже локальный компьютер.)
 `entry_script`| Путь к файлу (относительно `source_directory`) сценария обучения, который будет выполняться на удаленном вычислительном ресурсе. В этой папке должны быть расположены этот файл и дополнительные файлы, от которых он зависит.
 `conda_packages`| Необходимый для сценария обучения список пакетов Python, которые нужно установить с помощью conda.  

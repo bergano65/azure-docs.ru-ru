@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 11/21/2017
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 66973ce78004d0f29d08264869f166202aaaf109
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 3ef1656a7e8a66092de3050a8f14c5b38e0e2e6c
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58011849"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59525472"
 ---
 # <a name="high-availability-set-up-in-suse-using-the-stonith"></a>Настройка высокого уровня доступности в SUSE с помощью STONITH
 Этот документ содержит подробные пошаговые инструкции для настройки высокого уровня доступности в операционной системе SUSE с помощью устройства STONITH.
@@ -258,7 +258,7 @@ systemctl start pacemaker
 ```
 crm_mon
 ```
-![CRM-mon.png](media/HowToHLI/HASetupWithStonith/crm-mon.png)Кроме того, для проверки состояния кластера можно войти в Hawk *https://<node IP>: 7630*. Пользователь по умолчанию — hacluster, а пароль — linux. При необходимости можно изменить пароль с помощью команды *passwd*.
+![CRM-mon.png](media/HowToHLI/HASetupWithStonith/crm-mon.png) вы можете также войти в hawk для проверки состояния кластера *https://\<IP-Адресу узла >: 7630*. Пользователь по умолчанию — hacluster, а пароль — linux. При необходимости можно изменить пароль с помощью команды *passwd*.
 
 ## <a name="7-configure-cluster-properties-and-resources"></a>7. Настройка свойств кластера и ресурсов 
 В этом разделе описаны действия по настройке кластерных ресурсов.
@@ -323,7 +323,7 @@ crm configure load update crm-vip.txt
 При выполнении команды *crm_mon* отобразится два ресурса.
 ![crm_mon_command.png](media/HowToHLI/HASetupWithStonith/crm_mon_command.png)
 
-Кроме того, появится сообщение о состоянии в *https://<node IP address>:7630/cib/live/state*
+Кроме того, вы увидите сообщение о состоянии в *https://\<узла IP-адрес >: 7630/cib/live/состояние*
 
 ![hawlk-status-page.png](media/HowToHLI/HASetupWithStonith/hawlk-status-page.png)
 

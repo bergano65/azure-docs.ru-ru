@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: d1453a558032e458e89c724e30472cc06f9cf33c
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.openlocfilehash: fea9bae9fadc20622a6ca3d2e08db9cd3a92c800
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58295136"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523993"
 ---
 # <a name="get-started-with-delivering-content-on-demand-using-rest"></a>Начало работы с доставкой содержимого по запросу с помощью REST  
 
@@ -560,7 +560,7 @@ ms.locfileid: "58295136"
 При создании любого запроса задания необходимо учитывать несколько важных моментов.
 
 * Чтобы определить количество входных или выходных ресурсов, используемых задачей, в свойствах TaskBody НЕОБХОДИМО использовать XML-литерал. В статье о задаче приведено определение схемы XML.
-* В определении TaskBody каждое внутреннее значение <inputAsset> и <outputAsset> необходимо установить как JobInputAsset(value) или JobOutputAsset(value).
+* В определении TaskBody каждое внутреннее значение `<inputAsset>` и `<outputAsset>` необходимо установить как JobInputAsset(value) или JobOutputAsset(value).
 * В задаче может содержаться несколько выходных ресурсов. Значение JobOutputAsset(x) может использоваться только один раз в качестве выходных данных задачи в задании.
 * В качестве входного ресурса задачи можно указать JobInputAsset или JobOutputAsset.
 * Задачи не должны образовывать цикл.
@@ -572,7 +572,7 @@ ms.locfileid: "58295136"
 >
 
 * Ресурсы InputMediaAsset сопоставляются с одним или несколькими ресурсами, созданными в службах мультимедиа. Ресурсы OutputMediaAsset создаются системой. Они не ссылаются на существующий ресурс.
-* Ресурсам OutputMediaAsset можно присвоить имя с помощью атрибута assetName. Если этот атрибут отсутствует, то именем ресурса OutputMediaAsset будет внутреннее текстовое значение элемента <outputAsset> с суффиксом, которым может быть значение параметра имени задания или параметра идентификатора задания (если свойство Name не определено). Например, если задать для атрибута assetName значение Sample, для свойства Name ресурса OutputMediaAsset будет задано значение Sample. Тем не менее, если значение атрибута assetName не задано, но в качестве имени задания задано NewJob, имя OutputMediaAsset будет выглядеть следующим образом: JobOutputAsset(значение)_NewJob.
+* Ресурсам OutputMediaAsset можно присвоить имя с помощью атрибута assetName. Если этот атрибут отсутствует, то именем ресурса OutputMediaAsset будет внутреннее текстовое значение элемента `<outputAsset>` с суффиксом, которым может быть значение параметра имени задания или параметра идентификатора задания (если свойство Name не определено). Например, если задать для атрибута assetName значение Sample, для свойства Name ресурса OutputMediaAsset будет задано значение Sample. Тем не менее, если значение атрибута assetName не задано, но в качестве имени задания задано NewJob, имя OutputMediaAsset будет выглядеть следующим образом: JobOutputAsset(значение)_NewJob.
 
     В следующем примере показано, как установить атрибут assetName:
 

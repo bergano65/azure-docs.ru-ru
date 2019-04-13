@@ -10,12 +10,12 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.workload: big-data
 ms.date: 09/14/2018
-ms.openlocfilehash: b6c5df1ef0c93508595e27cbda315281aa3461b5
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: b035be727df2dfecb613da79681affd740c69bec
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58124292"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59544824"
 ---
 # <a name="how-to-set-up-a-cicd-pipeline-for-azure-data-lake-analytics"></a>Настройка конвейера CI/CD для Azure Data Lake Analytics  
 
@@ -66,7 +66,7 @@ MSBuild не предоставляет встроенной поддержки 
 См. дополнительные сведения о [проектах базы данных U-SQL](data-lake-analytics-data-lake-tools-develop-usql-database.md).
 
 >[!NOTE]
->Проект базы данных U-SQL в настоящее время находится в общедоступной предварительной версии. При наличии в проекте оператора DROP сборка завершается ошибкой. Скоро будет разрешено выполнение оператора DROP.
+>Инструкцию DROP может вызвать проблемы с удалением случайно. Чтобы включить инструкцию DROP, необходимо явно указать аргументы MSBuild. **AllowDropStatement** позволит данных не связанных операция ПЕРЕТАСКИВАНИЯ, как удалить сборку и drop табличное значение функция. **AllowDataDropStatement** позволит операции ПЕРЕТАСКИВАНИЯ, такие как drop table и drop схемы, связанные с данными. Необходимо включить AllowDropStatement перед использованием AllowDataDropStatement.
 >
 
 ### <a name="build-a-u-sql-project-with-the-msbuild-command-line"></a>Создание проекта U-SQL из командной строки MSBuild
@@ -79,11 +79,11 @@ msbuild USQLBuild.usqlproj /p:USQLSDKPath=packages\Microsoft.Azure.DataLake.USQL
 
 Ниже приведены определения и значения аргументов.
 
-* **USQLSDKPath=<U-SQL Nuget package>\build\runtime**. Этот параметр ссылается на путь установки пакета NuGet для языковой службы U-SQL.
+* **USQLSDKPath =\<пакет Nuget U-SQL > \build\runtime**. Этот параметр ссылается на путь установки пакета NuGet для языковой службы U-SQL.
 * **USQLTargetType=Merge или SyntaxCheck**:
     * **Merge**. Режим слияния компилирует файлы с выделенным кодом. Примеры — файлы **CS**, **PY**, и **R**. В этом режиме полученная библиотека пользовательского кода включается в скрипт U-SQL. Этот режим используется для двоичных файлов DLL, кода Python или R.
     * **SyntaxCheck**. Режим SyntaxCheck сначала объединяет файлы с выделенным кодом в скрипт U-SQL. Затем он компилирует скрипт U-SQL для проверки кода.
-* **DataRoot=<DataRoot path>**. DataRoot используется только в режиме SyntaxCheck. Создавая скрипт в режиме SyntaxCheck, MSBuild проверяет включаемые в этот скрипт ссылки на объекты базы данных. Перед сборкой настройте на компьютере сборки локальную среду так, чтобы она содержала в папке DataRoot все объекты, на которые ссылается база данных U-SQL. Вы также можете управлять этими зависимостями базы данных, используя [ссылки на проект базы данных U-SQL](data-lake-analytics-data-lake-tools-develop-usql-database.md#reference-a-u-sql-database-project). MSBuild проверяет только ссылки на объекты базы данных, но не файлы.
+* **Корневая папка =\<пути к DataRoot >**. DataRoot используется только в режиме SyntaxCheck. Создавая скрипт в режиме SyntaxCheck, MSBuild проверяет включаемые в этот скрипт ссылки на объекты базы данных. Перед сборкой настройте на компьютере сборки локальную среду так, чтобы она содержала в папке DataRoot все объекты, на которые ссылается база данных U-SQL. Вы также можете управлять этими зависимостями базы данных, используя [ссылки на проект базы данных U-SQL](data-lake-analytics-data-lake-tools-develop-usql-database.md#reference-a-u-sql-database-project). MSBuild проверяет только ссылки на объекты базы данных, но не файлы.
 * **EnableDeployment=true** или **false**. EnableDeployment указывает, разрешено ли развертывать указанные базы данных U-SQL во время процесса сборки. Если вы ссылаетесь на проект базы данных U-SQL и используете объекты базы данных в скрипте U-SQL, установите для этого параметра значение **true**.
 
 ### <a name="continuous-integration-through-azure-pipelines"></a>Непрерывная интеграция с помощью Azure Pipelines
@@ -463,7 +463,7 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 
 #### <a name="parameter-for-local-deployment"></a>Параметр для локального развертывания
 
-|Параметр|ОПИСАНИЕ|По умолчанию|Обязательно для заполнения|
+|Параметр|Описание|По умолчанию|Обязательно для заполнения|
 |---------|-----------|-------------|--------|
 |DataRoot|Локальный путь к корневой папке данных.|null|Да|
 

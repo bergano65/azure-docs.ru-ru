@@ -12,12 +12,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/09/2018
 ms.author: mikhegn
-ms.openlocfilehash: 0ab6e3f189d4a2e7e8f3bc96108d7979c99fffa8
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 3d03ca5cec2cef67862c2678b3b0a8f17b413787
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58102675"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59524520"
 ---
 # <a name="how-to-parameterize-configuration-files-in-service-fabric"></a>Как параметризовать файлы конфигурации в Service Fabric
 
@@ -27,7 +27,7 @@ ms.locfileid: "58102675"
 
 В этом примере с помощью параметров в развертывании приложения переопределяется значение конфигурации.
 
-1. Откройте файл *<MyService>\PackageRoot\Config\Settings.xml* в проекте службы.
+1. Откройте  *\<MyService > \PackageRoot\Config\Settings.xml* файл в проекте службы.
 1. Задайте имя и значение параметра конфигурации, например кэш размером 25, добавив следующий XML:
 
    ```xml
@@ -37,7 +37,7 @@ ms.locfileid: "58102675"
    ```
 
 1. Сохраните и закройте файл.
-1. Откройте файл *<MyApplication>\ApplicationPackageRoot\ApplicationManifest.xml*.
+1. Откройте  *\<MyApplication > \ApplicationPackageRoot\ApplicationManifest.xml* файл.
 1. В файле ApplicationManifest.xml объявите параметр и значение по умолчанию в элементе `Parameters`.  Рекомендуется задавать имя параметра с содержанием имени службы (например, "MyService").
 
    ```xml

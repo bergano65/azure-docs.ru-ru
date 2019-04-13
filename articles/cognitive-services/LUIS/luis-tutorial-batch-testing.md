@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 12/21/2018
+ms.date: 03/29/2019
 ms.author: diberry
-ms.openlocfilehash: 97dd880f7342c8d7f4854bb06abf2906bbd4c50a
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 391a5386a5ecc144b15c35a85d501dfb5ce2d172
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55872974"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523143"
 ---
 # <a name="tutorial-batch-test-data-sets"></a>Руководство. Пакетное тестирование наборов данных
 
@@ -201,6 +201,8 @@ ms.locfileid: "55872974"
 
 7. Щелкните **See results** (Просмотреть результаты).
 
+[!INCLUDE [Entity roles in batch testing - currently not supported](../../../includes/cognitive-services-luis-roles-not-supported-in-batch-testing.md)]
+
 ## <a name="review-entity-batch-results"></a>Просмотр результатов пакетного тестирования сущностей
 
 Диаграмма открывается со всеми намерениями, которые были правильно спрогнозированы. Прокрутите вниз фильтр справа, чтобы найти прогнозирования ошибочных сущностей. 
@@ -232,7 +234,7 @@ ms.locfileid: "55872974"
 
 [!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы использовали пакетное тестирование для поиска проблем с текущей моделью. Вы исправили модель и провели повторное тестирование с использованием пакетного файла, чтобы убедиться в правильности изменения.
 

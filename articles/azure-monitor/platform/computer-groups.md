@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/05/2019
 ms.author: bwren
-ms.openlocfilehash: 0a29e453c723ecc9ac378ee337365525587aaef2
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: c2babb5a86d69881b6a76c6dceae80a24a891f6c
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57444129"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549309"
 ---
 # <a name="computer-groups-in-azure-monitor-log-queries"></a>Группы компьютеров в Azure Monitor журнал запросов
 В Azure Monitor вы можете ограничить [запросы к журналам](../log-query/log-query-overview.md) определенной группой компьютеров.  Каждая группа заполняется компьютерами с помощью определяемого запроса или при импорте групп из разных источников.  Если в запрос к журналам включена группа, в результатах возвращаются только те записи, которые относятся к компьютерам в этой группе.
@@ -28,7 +28,7 @@ ms.locfileid: "57444129"
 ## <a name="creating-a-computer-group"></a>Создание группы компьютеров
 В Azure Monitor группу компьютеров можно создать с помощью любого из способов, перечисленных в следующей таблице.  Подробные сведения о способе представлены в разделах ниже. 
 
-| Метод | ОПИСАНИЕ |
+| Метод | Описание |
 |:--- |:--- |
 | Запрос журнала |Создание запроса к журналам, который возвращает список компьютеров. |
 | API поиска по журналам |Использование API поиска по журналам для создания группы компьютеров программными средствами на основе результатов запроса к журналам. |
@@ -127,15 +127,15 @@ ms.locfileid: "57444129"
 
 | Свойство | ОПИСАНИЕ |
 |:--- |:--- |
-| type |*ComputerGroup* |
-| SourceSystem |*SourceSystem* |
-| Компьютер |Имя компьютера-члена. |
-| Группа |Имя группы. |
-| GroupFullName |Полный путь к группе, включая источник и имя источника. |
-| GroupSource |Источник, из которого получена группа. <br><br>ActiveDirectory<br>WSUS<br>WSUSClientTargeting |
-| GroupSourceName |Имя источника, из которого получена группа.  Для Active Directory это имя домена. |
-| ManagementGroupName |Имя группы управления для агентов SCOM.  Для других агентов это AOI-\<идентификатор_рабочей_области\>. |
-| TimeGenerated |Дата и время создания или изменения группы компьютеров. |
+| `Type` |*ComputerGroup* |
+| `SourceSystem` |*SourceSystem* |
+| `Computer` |Имя компьютера-члена. |
+| `Group` |Имя группы. |
+| `GroupFullName` |Полный путь к группе, включая источник и имя источника. |
+| `GroupSource` |Источник, из которого получена группа. <br><br>ActiveDirectory<br>WSUS<br>WSUSClientTargeting |
+| `GroupSourceName` |Имя источника, из которого получена группа.  Для Active Directory это имя домена. |
+| `ManagementGroupName` |Имя группы управления для агентов SCOM.  Для других агентов это AOI-\<идентификатор_рабочей_области\>. |
+| `TimeGenerated` |Дата и время создания или изменения группы компьютеров. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.  

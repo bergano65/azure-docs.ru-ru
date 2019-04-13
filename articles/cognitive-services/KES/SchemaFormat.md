@@ -10,12 +10,12 @@ ms.subservice: knowledge-exploration
 ms.topic: conceptual
 ms.date: 03/26/2016
 ms.author: paulhsu
-ms.openlocfilehash: 23120e45a1070f46ae4e1927a29bdab4c990d96f
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 51a812762659bcc67762b82e9c120772065aab53
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55860717"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549693"
 ---
 # <a name="schema-format"></a>Формат схемы
 
@@ -41,16 +41,16 @@ ms.locfileid: "55860717"
 
 Ниже приведен список поддерживаемых типов данных атрибутов.
 
-| type | ОПИСАНИЕ | Операции | Пример |
+| type | Описание | Операции | Пример |
 |------|-------------|------------|---------|
-| Строка | Строка (1–1024 знака) | equals, starts_with | "hello world" |
-| Int32 | 32-разрядное целое число со знаком | equals, starts_with, is_between | 2016 |
-| Int64 | 64-разрядное целое число со знаком | equals, starts_with, is_between | 9 876 543 210 |
-| Double | Значение двойной точности с плавающей запятой | equals, starts_with, is_between | 1,602e-19 |
-| Дата | Дата (с 01.01.1400 до 31.12.9999) | equals, is_between | '2016-03-14' |
-| Guid | Глобальный уникальный идентификатор | equals (равно) | "602DD052-CC47-4B23-A16A-26B52D30C05B" |
-| BLOB-объект | Сжатые внутри службы неиндексированные данные | *None* | "Empower every person and every organization on the planet to achieve more" |
-| Составной | Сочетание нескольких вложенных атрибутов| *Н/Д* | { "Name":"harry shum", "Affiliation":"microsoft" } |
+| `String` | Строка (1–1024 знака) | equals, starts_with | "hello world" |
+| `Int32` | 32-разрядное целое число со знаком | equals, starts_with, is_between | 2016 |
+| `Int64` | 64-разрядное целое число со знаком | equals, starts_with, is_between | 9 876 543 210 |
+| `Double` | Значение двойной точности с плавающей запятой | equals, starts_with, is_between | 1,602e-19 |
+| `Date` | Дата (с 01.01.1400 до 31.12.9999) | equals, is_between | '2016-03-14' |
+| `Guid` | Глобальный уникальный идентификатор | equals (равно) | "602DD052-CC47-4B23-A16A-26B52D30C05B" |
+| `Blob` | Сжатые внутри службы неиндексированные данные | *None* | "Empower every person and every organization on the planet to achieve more" |
+| `Composite` | Сочетание нескольких вложенных атрибутов| *Н/Д* | { "Name":"harry shum", "Affiliation":"microsoft" } |
 
 Строковые атрибуты используются для представления строковых значений, которые могут входить в запрос пользователя.  Они поддерживают операцию точного соответствия *equals*, а также операцию *starts_with* для сценариев автозавершения запросов (например, "micros" соответствует "microsoft").  Возможности нечеткого соответствия и поиска без учета регистра для обработки орфографических ошибок будут поддерживаться в будущих выпусках.
 

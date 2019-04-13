@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/15/2017
 ms.author: jdial;anavin
-ms.openlocfilehash: c9247b37e1e475892a1561c5667dc25275f67327
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1a066e6b75d527dcdf1b211c0ebb76a2d4520eb7
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58104120"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59528218"
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-and-subscriptions"></a>Создание пиринга виртуальных сетей с разными моделями развертывания в разных подписках
 
@@ -71,7 +71,7 @@ ms.locfileid: "58104120"
     - **Расположение**: *восточная часть США*.
 
 14. В поле **Поиск ресурсов**, находящемся в верхней части портала, введите *myVnetB*. Когда сеть **myVnetB** появится в результатах поиска, щелкните ее. Отобразится колонка для виртуальной сети **myVnetB**.
-15. В вертикальном списке параметров в левой части отобразившейся колонки **myVnetB** щелкните **Свойства**. Скопируйте **Идентификатор ресурса**, он понадобится нам позже. Идентификатор ресурса имеет следующий вид: /subscriptions/<Subscription ID>/resourceGroups/myResourceGroupB/providers/Microsoft.ClassicNetwork/virtualNetworks/myVnetB.
+15. В вертикальном списке параметров в левой части отобразившейся колонки **myVnetB** щелкните **Свойства**. Скопируйте **Идентификатор ресурса**, он понадобится нам позже. Идентификатор ресурса — как в следующем примере: `/subscriptions/<Subscription ID>/resourceGroups/myResourceGroupB/providers/Microsoft.ClassicNetwork/virtualNetworks/myVnetB`
 16. Выполните шаги 5–9 для myVnetB, указав **пользователя A** на шаге 8.
 17. Выйдите с портала как пользователь B, а затем войдите как пользователь A.
 18. В поле **Поиск ресурсов**, находящемся в верхней части портала, введите *myVnetA*. Когда сеть **myVnetA** появится в результатах поиска, щелкните ее. Отобразится колонка для виртуальной сети **myVnetA**.

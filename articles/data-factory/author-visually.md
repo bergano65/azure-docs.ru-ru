@@ -12,12 +12,12 @@ author: sharonlo101
 ms.author: shlo
 ms.reviewer: ''
 manager: craigg
-ms.openlocfilehash: 77eb109b8826bcb6136e91ac610235f74551cecb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d2e51551643e154714b9d2368e63d7af9ebfa204
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57853092"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59526917"
 ---
 # <a name="visual-authoring-in-azure-data-factory"></a>Визуальная разработка в фабрике данных Azure
 С пользовательским интерфейсом фабрики данных Azure пользователи могут визуально разрабатывать и развертывать ресурсы в своей фабрике, не написав не единой строки кода. Вы можете перетаскивать действия на панель холста конвейера, выполнять тестовые запуски, выполнять последовательную отладку, а также развертывать и выполнять мониторинг запуска конвейера. Пользовательский интерфейс можно использовать для визуальной разработки двумя способами:
@@ -58,15 +58,15 @@ ms.locfileid: "57853092"
 
 В области показаны следующие параметры репозитория кода Azure Repos:
 
-| Параметр | ОПИСАНИЕ | Значение |
+| Параметр | Описание | Значение |
 |:--- |:--- |:--- |
 | **Тип репозитория** | Тип репозитория кода Azure Repos.<br/>**Примечание**. Сейчас GitHub не поддерживается. | Git Azure Repos |
-| **Azure Active Directory** | Имя вашего клиента Azure AD. | <your tenant name> |
-| **Организация Azure Repos** | Название вашей организации Azure Repos. Название организации Azure Repos можно найти по адресу `https://{organization name}.visualstudio.com`. [Войдите в свою организацию Azure Repos](https://www.visualstudio.com/team-services/git/) и получите доступ к профилю Visual Studio, чтобы просмотреть свои репозитории и проекты. | <your organization name> |
-| **Имя проекта** | Имя проекта Azure Repos. Имя проекта Azure Repos можно найти по адресу `https://{organization name}.visualstudio.com/{project name}`. | <your Azure Repos project name> |
-| **Имя репозитория** | Имя репозитория кода Azure Repos. Проекты Azure Repos содержат репозитории Git, которые управляют исходным кодом по мере роста проекта. Создайте репозиторий либо используйте репозиторий, который уже имеется в проекте. | <your Azure Repos code repository name> |
-| **Ветвь совместной работы** | Ветвь вашей совместной работы в Azure Repos, которая используется для публикации. По умолчанию это `master`. Измените этот параметр, если нужно опубликовать ресурсы из другой ветви. | <your collaboration branch name> |
-| **Корневая папка** | Корневая папка в ветви совместной работы Azure Repos. | <your root folder name> |
+| **Azure Active Directory** | Имя вашего клиента Azure AD. | `<your tenant name>` |
+| **Организация Azure Repos** | Название вашей организации Azure Repos. Название организации Azure Repos можно найти по адресу `https://{organization name}.visualstudio.com`. [Войдите в свою организацию Azure Repos](https://www.visualstudio.com/team-services/git/) и получите доступ к профилю Visual Studio, чтобы просмотреть свои репозитории и проекты. | `<your organization name>` |
+| **Имя проекта** | Имя проекта Azure Repos. Имя проекта Azure Repos можно найти по адресу `https://{organization name}.visualstudio.com/{project name}`. | `<your Azure Repos project name>` |
+| **Имя репозитория** | Имя репозитория кода Azure Repos. Проекты Azure Repos содержат репозитории Git, которые управляют исходным кодом по мере роста проекта. Создайте репозиторий либо используйте репозиторий, который уже имеется в проекте. | `<your Azure Repos code repository name>` |
+| **Ветвь совместной работы** | Ветвь вашей совместной работы в Azure Repos, которая используется для публикации. По умолчанию это `master`. Измените этот параметр, если нужно опубликовать ресурсы из другой ветви. | `<your collaboration branch name>` |
+| **Корневая папка** | Корневая папка в ветви совместной работы Azure Repos. | `<your root folder name>` |
 | **Import existing Data Factory resources to repository** (Импорт существующих ресурсов фабрики данных в репозиторий) | Указывает, следует ли импортировать имеющиеся ресурсы фабрики данных из пользовательского интерфейса **Работа над холстом** в репозиторий Git Azure Repos. Установите флажок, чтобы импортировать ресурсы фабрики данных в связанный репозиторий Git в формате JSON. Это действие экспортирует каждый ресурс по отдельности (то есть, связанные службы и наборы данных будут экспортироваться в отдельных файлах JSON). Если этот флажок не установлен, имеющиеся ресурсы не импортируются. | Установлен (по умолчанию) |
 
 #### <a name="configuration-method-2-azure-repos-git-repo-ux-authoring-canvas"></a>Метод настройки 2 (репозиторий Git Azure Repos). Пользовательский интерфейс "Работа над холстом"

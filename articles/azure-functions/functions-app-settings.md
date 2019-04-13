@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/22/2018
 ms.author: glenga
-ms.openlocfilehash: d49a6f88f3475359a74be74bf528fb5699dce632
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 573e6ea857ef17a6160f7e03f52f9c64f903530a
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57860658"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59546632"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Справочник по параметрам приложений для Функций Azure
 
@@ -106,7 +106,7 @@ ms.locfileid: "57860658"
 
 ## <a name="functionappeditmode"></a>FUNCTION\_APP\_EDIT\_MODE
 
-Допустимые значения — "readwrite" и "readonly".
+Определяет, разрешено ли редактирование на портале Azure. Допустимые значения — "readwrite" и "readonly".
 
 |Ключ|Образец значения|
 |---|------------|
@@ -187,7 +187,7 @@ ms.locfileid: "57860658"
 
 Этот параметр контролирует, декодируется ли сочетание знаков %2F как косая черта в параметрах маршрута, если оно вставлено в URL-адрес внутреннего сервера. 
 
-|Ключ|Значение|ОПИСАНИЕ|
+|Ключ|Значение|Описание|
 |-|-|-|
 |AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|Да|Параметры маршрута с закодированными косыми чертами будут его декодировать. `example.com/api%2ftest` станет `example.com/api/test`|
 |AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|false|Это поведение по умолчанию. Все параметры маршрута будут передаваться без изменений|

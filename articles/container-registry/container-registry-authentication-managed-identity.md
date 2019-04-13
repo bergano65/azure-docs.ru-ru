@@ -7,12 +7,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 01/16/2019
 ms.author: danlep
-ms.openlocfilehash: b09348e98a0dee85338cc9f20289d83b658eb719
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 728a2f8cf61bbe0691350b9de45a5fab6b90cadb
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58338468"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59526628"
 ---
 # <a name="use-an-azure-managed-identity-to-authenticate-to-an-azure-container-registry"></a>Аутентификация в реестре контейнеров Azure с помощью управляемого удостоверения Azure 
 
@@ -164,7 +164,7 @@ az role assignment create --assignee $spID --scope $resourceID --role acrpull
 
 Установите SSH-подключение к виртуальной машине Docker, настроенной с удостоверением. Выполните следующие команды в Azure CLI, установленном на виртуальной машине.
 
-Во-первых, проверку подлинности в Azure CLI с помощью [az login][az-login], используя удостоверение, настроенное на виртуальной Машине. Для <userID> замените идентификатор удостоверения идентификатором, полученным на предыдущем шаге. 
+Во-первых, проверку подлинности в Azure CLI с помощью [az login][az-login], используя удостоверение, настроенное на виртуальной Машине. Для `<userID>` замените идентификатор удостоверения идентификатором, полученным на предыдущем шаге. 
 
 ```azurecli
 az login --identity --username <userID>

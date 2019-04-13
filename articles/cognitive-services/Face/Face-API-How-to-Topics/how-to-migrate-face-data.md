@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: lewlu
-ms.openlocfilehash: 95b339e8d7f2c5c63c30e002411152b50cece2a5
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 30ceb0e396597530071c70c4448761d914acb4ac
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57448787"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59548410"
 ---
 # <a name="migrate-your-face-data-to-a-different-face-subscription"></a>Перенос данных распознавания лиц в другую подписку API распознавания лиц
 
@@ -79,7 +79,7 @@ var takeSnapshotResult = await FaceClientEastAsia.Snapshot.TakeAsync(
 ```
 
 > [!NOTE]
-> Процесс создания и применения моментальных снимков не прерывает обычных вызовов к исходным или целевым объектам **PersonGroup** (или **FaceList**). Однако мы не советуем выполнять одновременные вызовы, изменяющие исходный объект (например, [вызовы управления списком распознавания лиц](https://docs.microsoft.com/rest/api/cognitiveservices/face/facelist) или вызов [обучения группы людей](https://docs.microsoft.com/rest/api/cognitiveservices/face/persongroup/train)), так как операция создания моментального снимка может выполняться до или после этих операций, и в результате может возникнуть ошибка. 
+> Процесс создания и применения моментальных снимков не прерывает обычных вызовов к исходным или целевым объектам **PersonGroup** (или **FaceList**). Тем не менее, мы не рекомендуем всего одновременных вызовов, изменить исходный объект ([вызовы управления FaceList](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.facelistoperations?view=azure-dotnet) или [Train каждой группе людей](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperations?view=azure-dotnet) вызвать, например), так как операция snapshot может выполнение до или после выполнения этих операций или могут возникнуть ошибки.
 
 ## <a name="retrieve-the-snapshot-id"></a>Получение идентификатора моментального снимка
 

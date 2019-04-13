@@ -7,12 +7,12 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/04/2018
-ms.openlocfilehash: 42fde2804c04b2449068d649e1c660d02e72edb1
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: aadab68185347dc0a12e0802f675efe13ecea545
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56729361"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59547150"
 ---
 # <a name="mapping-data-flow-schema-drift"></a>Смещение схемы сопоставления потоков данных
 
@@ -26,7 +26,7 @@ ms.locfileid: "56729361"
 * определять параметры преобразования, которые могут работать с шаблонами данных вместо жестко закодированных полей и значений;
 * определять выражения, которые распознают шаблоны для сопоставления входящих полей вместо использования именованных полей.
 
-Чтобы отобразить эти средства в Потоке данных Фабрики данных Azure, следуйте этому рабочему процессу:
+## <a name="how-to-implement-schema-drift"></a>Как реализовать смещение схемы
 
 * Выберите "Allow Schema Drift" (Разрешить смещение схемы) в разделе преобразования источника.
 
@@ -67,3 +67,10 @@ ms.locfileid: "56729361"
 
 <img src="media/data-flow/taxidrift2.png" width="800">
 
+## <a name="access-new-columns-downstream"></a>Доступ более низком уровне в новые столбцы
+
+При создании новых столбцов шаблоны столбцов, эти новые столбцы доступны позже в вашей преобразования потока данных, используя функцию «byName» выражение.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+В [язык выражений потока данных](data-flow-expression-functions.md) вы найдете дополнительные средства для шаблоны столбцов и смещение схемы, включая «byName» и «byPosition».

@@ -3,7 +3,7 @@ title: Руководство по планированию использова
 description: Этот документ поможет вам спланировать работу перед переходом на использование центра безопасности Azure. Кроме того, здесь содержатся рекомендации по ежедневно выполняемым операциям.
 services: security-center
 documentationcenter: na
-author: rkarlin
+author: monhaber
 manager: barbkess
 editor: ''
 ms.assetid: f984e4a2-ac97-40bf-b281-2f7f473494c4
@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/28/2018
-ms.author: rkarlin
-ms.openlocfilehash: ece396a85a817df51f650fd1c513085efa3dedf5
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.date: 04/11/2019
+ms.author: monhaber
+ms.openlocfilehash: 3aae2d6adfd520f103ca1e1bd5e67eeb4b542a3d
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57842137"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523381"
 ---
 # <a name="azure-security-center-planning-and-operations-guide"></a>Руководство по планированию использования центра безопасности Azure и работе в нем
 Это руководство предназначено для ИТ-специалистов, ИТ-архитекторов, аналитиков в сфере информационной безопасности и администраторов облака, организации которых планируют использовать центр безопасности Azure.
@@ -82,11 +82,6 @@ ms.locfileid: "57842137"
 - **Администратор безопасности.** Имеет те же права, что и читатель безопасности, но также может обновлять политику безопасности, отклонять рекомендации и оповещения.
 
 Описанные выше роли центра безопасности не имеют доступа к другим областям службы Azure, например к службе хранилища, Интернету и мобильным устройствам или "Интернету вещей".  
-
-> [!NOTE]
-> Просматривать центр безопасности в Azure могут владельцы группы ресурсов, подписки или участники.
->
->
 
 Таким образом, для описанных выше сотрудников понадобятся следующие роли RBAC:
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 5/8/2017
 ms.author: aljo
-ms.openlocfilehash: 48f7153dcee45a6271919ac756ad794186faaed4
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: ee19be45915b3ff1253ec721f4334fead19647b8
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58668451"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59522393"
 ---
 # <a name="reliable-collection-object-serialization-in-azure-service-fabric"></a>Сериализация объектов надежной коллекции в Azure Service Fabric
 Надежные коллекции реплицируют и сохраняют свои элементы, чтобы обеспечить надежность их работы в случае сбоев машин и отключения электроэнергии.
@@ -96,7 +96,7 @@ public class OrderKey : IComparable<OrderKey>, IEquatable<OrderKey>
 }
 ```
 
-Ниже приведен пример реализации IStateSerializer<OrderKey>.
+Ниже приведен пример реализации IStateSerializer\<OrderKey >.
 Обратите внимание, что перегрузки Read и Write, которые принимают базовое значение, вызывают соответствующую перегрузку для прямой совместимости.
 
 ```csharp

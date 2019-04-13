@@ -11,15 +11,15 @@ ms.service: azure-netapp-files
 ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: how-to-article
+ms.topic: conceptual
 ms.date: 3/17/2019
 ms.author: b-juche
-ms.openlocfilehash: c2dd8b636223e0484e36eed9fcc616dc6f19cf3a
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 3c59fb6abe9c26e6886706dae360ff40787e8faa
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58877981"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549190"
 ---
 # <a name="create-a-volume-for-azure-netapp-files"></a>Создание тома для Azure NetApp Files
 
@@ -29,7 +29,7 @@ ms.locfileid: "58877981"
 Перед началом необходимо настроить пул емкости.   
 [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)   
 Подсеть должна быть делегирована службе Azure NetApp Files.  
-[Делегирование подсети в Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
+[Делегирование подсети службе Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
 
 ## <a name="create-an-nfs-volume"></a>Создание тома NFS
 
@@ -46,10 +46,10 @@ ms.locfileid: "58877981"
 
         Имя должно быть уникальным в пределах группы ресурсов. Длина имени должна быть не менее трех знаков.  Можно использовать любые буквы или цифры.
 
-    * **Пул емкости**  
+    * **Пула емкостей**  
         Укажите емкость пула, место тома должен быть создан.
 
-    * **Quota**  
+    * **Квота**  
         Укажите объем логического хранилища, выделенный для тома.  
 
         В поле **Доступная квота** отображается объем неиспользуемого пространства выбранного пула емкости, которое можно использовать для создания нового тома. Размер нового тома не должен превышать доступную квоту.  
@@ -96,9 +96,9 @@ ms.locfileid: "58877981"
 
 2. В окне присоединиться к Active Directory укажите следующие сведения:
 
-    * **Основной DNS**   
+    * **Основной DNS-сервер**   
         Это IP-адрес контроллера домена для предпочтительных доменных служб Active Directory для использования с файлами Azure NetApp. 
-    * **Дополнительный DNS**  
+    * **Дополнительный DNS-сервер**  
         Это IP-адрес контроллера домена для вторичного доменных служб Active Directory для использования с файлами Azure NetApp. 
     * **Домен**  
         Это имя домена Active Directory доменных служб, которые нужно соединить.
@@ -141,10 +141,10 @@ ms.locfileid: "58877981"
      
         Имя пути к файлу может содержать только буквы, цифры и дефисы. Длина имени находится в диапазоне от 16 до 40 знаков.  
 
-    * **Пул емкости**  
+    * **Пула емкостей**  
         Укажите емкость пула, место тома должен быть создан.
 
-    * **Quota**  
+    * **Квота**  
         Укажите объем логического хранилища, выделенный для тома.  
 
         В поле **Доступная квота** отображается объем неиспользуемого пространства выбранного пула емкости, которое можно использовать для создания нового тома. Размер нового тома не должен превышать доступную квоту.  
@@ -179,6 +179,6 @@ ms.locfileid: "58877981"
 
 ## <a name="next-steps"></a>Дальнейшие действия  
 
-* [Подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
+* [Подключения или отключения тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 * [Настройка политики экспорта для тома NFS](azure-netapp-files-configure-export-policy.md)
-* [Дополнительные сведения об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)
+* [Узнайте об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)

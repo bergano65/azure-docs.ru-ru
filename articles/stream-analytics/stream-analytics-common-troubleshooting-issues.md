@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: a2c7ceae342124f06fcfe8dc18b1a69f7176f4e1
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.openlocfilehash: 0191c56e1140870b1710b48c4fa1189fd92a337b
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53090981"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59521481"
 ---
 # <a name="common-issues-in-stream-analytics-and-steps-to-troubleshoot"></a>Распространенные проблемы в Stream Analytics и инструкции по их устранению
 
@@ -26,7 +26,7 @@ ms.locfileid: "53090981"
 
 ![Плитка "Входные данные" панели мониторинга Azure Stream Analytics](media/stream-analytics-malformed-events/stream-analytics-inputs-tile.png)
 
-Чтобы просмотреть сведения предупреждения, включите журналы диагностики. Для входных событий неправильного формата журналы выполнения содержат запись с сообщением, которое выглядит так: "Message: Could not deserialize the input event(s) from resource <blob URI> as json" (Сообщение. Не удалось десериализовать входные события из ресурса <blob URI> как JSON). 
+Чтобы просмотреть сведения предупреждения, включите журналы диагностики. Для входных событий неправильного формата журналы выполнения содержат запись с сообщением, которое выглядит так: "Message: Не удалось десериализовать входные события из ресурса \<BLOB-объектов URI > как json». 
 
 ### <a name="troubleshooting-steps"></a>Действия по устранению неполадок
 
@@ -89,6 +89,6 @@ ms.locfileid: "53090981"
 * Вы можете задать параметр IGNORE_DUP_KEY для уникального индекса при помощи ALTER INDEX. Это ограничение отличается от PRIMARY KEY или UNIQUE и создается с использованием определения CREATE INDEX или INDEX.  
 * IGNORE_DUP_KEY не применяется к индексам хранилища столбцов, так как нельзя обеспечить уникальность таких индексов.  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Справочник по языку запросов Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

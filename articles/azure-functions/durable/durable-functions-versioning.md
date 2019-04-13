@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2017
 ms.author: azfuncdf
-ms.openlocfilehash: a90a6811b1c59538db98b85d950906dba2969d57
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
-ms.translationtype: HT
+ms.openlocfilehash: 33ca6c36cd11d53a3c50a8374181c511fd2f8c3e
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53338249"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549090"
 ---
 # <a name="versioning-in-durable-functions-azure-functions"></a>Управление версиями в устойчивых функциях (Функции Azure)
 
@@ -140,9 +140,9 @@ public static Task Run([OrchestrationTrigger] DurableOrchestrationContext contex
 Мы советуем развертывать новую версию приложения-функции в новый [слот развертывания](https://blogs.msdn.microsoft.com/appserviceteam/2017/06/13/deployment-slots-preview-for-azure-functions/). Слоты развертывания позволяют параллельно запускать несколько копий приложения-функции, при этом только один слот может быть активным *рабочим* слотом. Предоставить новую логику оркестрации для имеющейся инфраструктуры может быть так же просто, как заменить новую версию в рабочем слоте.
 
 > [!NOTE]
-> Эта стратегия оптимально подходит при использовании триггеров HTTP и веб-перехватчика для функций оркестратора. Для триггеров, отличных от HTTP, таких как очереди или Центры событий, определение триггера должно основываться на параметре приложения, который обновляется в рамках операции замены.
+> Эта стратегия оптимально подходит при использовании триггеров HTTP и веб-перехватчика для функций оркестратора. Для триггеров, отличных от HTTP, таких как очереди или концентраторы событий, определение триггера должно [являются производными от параметр приложения](../functions-bindings-expressions-patterns.md#binding-expressions---app-settings) , обновляется как часть операции замены.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Узнайте, как управлять проблемами с производительностью и масштабированием](durable-functions-perf-and-scale.md)

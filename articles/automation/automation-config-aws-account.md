@@ -10,12 +10,12 @@ ms.author: gwallace
 ms.date: 04/17/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: e6a7f1758fd0a6fb4ce91c18f375dcf189becd41
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.openlocfilehash: 2866891bba80cbf4227907145f4f803ab123fd85
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54435504"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549428"
 ---
 # <a name="authenticate-runbooks-with-amazon-web-services"></a>Проверка подлинности модулей Runbook с помощью Amazon Web Services
 
@@ -30,11 +30,11 @@ ms.locfileid: "54435504"
 
 Чтобы служба автоматизации Azure могла взаимодействовать с AWS, необходимо сначала получить учетные данные AWS и сохранить их как ресурсы в службе автоматизации Azure. Выполните следующие действия, описанные в документе AWS [Managing Access Keys for your AWS Account](https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html) (Управление ключами доступа учетной записи AWS), чтобы создать ключ доступа и скопировать **идентификатор ключа доступа** и **секретный ключ доступа** (при необходимости скачайте файл ключа, чтобы сохранить его в безопасном расположении).
 
-Создав и скопировав ключи безопасности AWS, нужно создать ресурс учетных данных в учетной записи службы автоматизации Azure, чтобы безопасно хранить их и ссылаться на них с помощью модулей Runbook. Следуйте инструкциям в разделе **Создание нового ресурса учетных данных на портале Azure** статьи [Ресурсы учетных данных в службе автоматизации Azure](automation-credentials.md#to-create-a-new-credential-asset-with-the-azure-portal) и введите следующие данные:
+Создав и скопировав ключи безопасности AWS, нужно создать ресурс учетных данных в учетной записи службы автоматизации Azure, чтобы безопасно хранить их и ссылаться на них с помощью модулей Runbook. Следуйте инструкциям в разделе **Создание нового ресурса учетных данных на портале Azure** статьи [Ресурсы учетных данных в службе автоматизации Azure](/shared-resources/credentials.md#to-create-a-new-credential-asset-with-the-azure-portal) и введите следующие данные:
 
 1. В поле **Имя** введите **AWScred** или другое значение, соответствующее вашим стандартам именования.
 2. В поле **Имя пользователя** введите **идентификатор доступа**, а в полях **Пароль** и **Подтверждение пароля** — **секретный ключ доступа**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о создании модулей Runbook для автоматизации задач в AWS см. в статье [Сценарий службы автоматизации Azure: подготовка виртуальной машины AWS](automation-scenario-aws-deployment.md).

@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 11/28/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 1c75d781c8a83b54ac9474c83388cf02b5d03e3c
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 2e2502e35b3720ddbfe5950b89e2388de378f2ba
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57532088"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59528124"
 ---
 # <a name="configure-a-gateway-resource-to-route-requests"></a>Настройка шлюза для маршрутизации запросов
 
@@ -228,8 +228,8 @@ ms.locfileid: "57532088"
 ```
 
 Для этого шлюза настраивается приложение Linux "meshAppLinux", содержащее по меньшей мере две службы, helloWorldService и counterService, которые прослушивают порт 80. В зависимости от структуры URL-адреса входящего запроса этот шлюз перенаправит запрос к одной из этих служб. 
-* Запрос вида "<IPAddress>:80/helloWorld/\<request\>" будет направлен к helloWorldListener в службе helloWorldService. 
-* Запрос вида "<IPAddress>:80/counter/\<request\>" будет направлен к counterListener в службе counterService. 
+* "\<IP-адрес >: 80/helloWorld/\<запроса\>" приведет к запрос не будет направляться в helloWorldService «helloWorldListener». 
+* "\<IP-адрес >: 80/счетчик/\<запроса\>" приведет к запрос не будет направляться в counterService «counterListener». 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Разверните [пример для входящих данных](https://github.com/Azure-Samples/service-fabric-mesh/tree/2018-09-01-preview/templates/ingress), чтобы увидеть шлюзы в действии.

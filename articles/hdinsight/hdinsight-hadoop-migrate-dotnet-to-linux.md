@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
-ms.openlocfilehash: 3a9a026af67cd5528dfc00148bcbbcef82b8b189
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.openlocfilehash: adab50b7325be96830ee937153d110754cc0b552
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53714667"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549803"
 ---
 # <a name="migrate-net-solutions-for-windows-based-hdinsight-to-linux-based-hdinsight"></a>Перенос решений .NET из HDInsight под управлением Windows в HDInsight под управлением Linux
 
@@ -22,7 +22,7 @@ ms.locfileid: "53714667"
 
 ## <a name="mono-compatibility-with-net"></a>Совместимость Mono с .NET
 
-Mono версии 4.2.1 входит в состав HDInsight версии 3.6. Дополнительные сведения о версии Mono, которая входит в состав HDInsight, см. в разделе [Что представляют собой различные компоненты Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md) Чтобы установить определенную версию Mono, см. статью об [установке или обновлении Mono](hdinsight-hadoop-install-mono.md).
+Mono версии 4.2.1 входит в состав HDInsight версии 3.6. Дополнительные сведения о версии Mono, которая входит в состав HDInsight, см. в разделе [Что представляют собой различные компоненты Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md)
 
 См. дополнительные сведения о [совместимости Mono и .NET (https://www.mono-project.com/docs/about-mono/compatibility/)](https://www.mono-project.com/docs/about-mono/compatibility/).
 
@@ -66,7 +66,7 @@ Mono версии 4.2.1 входит в состав HDInsight версии 3.6.
 
 * [Access Apache Hadoop YARN application logs on Linux-based HDInsight](hdinsight-hadoop-access-yarn-app-logs-linux.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование языка C# для потоковой передачи MapReduce в Hadoop в HDInsight](hadoop/apache-hadoop-dotnet-csharp-mapreduce-streaming.md)
 

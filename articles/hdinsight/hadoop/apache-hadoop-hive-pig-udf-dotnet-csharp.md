@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: df8196389ecb92229ff9495002c4bce394d7c048
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: ac2edb4c12e95a915790c1fadfb2dcdcce554aad
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58202713"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59545579"
 ---
 # <a name="use-c-user-defined-functions-with-apache-hive-and-apache-pig-streaming-on-apache-hadoop-in-hdinsight"></a>Использование определяемых пользователем функций C# при потоковой передаче Apache Hive и Apache Pig в Apache Hadoop в HDInsight
 
@@ -46,8 +46,6 @@ Hive и Pig могут передавать данные во внешние п�
 * В кластерах __HDInsight под управлением Linux__ для запуска приложений .NET используется [Mono (https://mono-project.com)](https://mono-project.com). Mono версии 4.2.1 входит в состав HDInsight версии 3.6.
 
     Дополнительные сведения о совместимости Mono с различными версиями платформы .NET Framework см. в разделе [Compatibility](https://www.mono-project.com/docs/about-mono/compatibility/) (Совместимость).
-
-    Чтобы использовать определенную версию Mono, см. статью об [установке или обновлении Mono](../hdinsight-hadoop-install-mono.md).
 
 * В кластерах __HDInsight под управлением Windows__ для запуска приложений .NET используется среда CLR для Microsoft .NET.
 

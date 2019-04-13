@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/24/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 1973d7e360f77aed028d8a93a625f0f6cb7e1ab8
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.openlocfilehash: 1e4feaed9f4e8f6dd3275da25e33e57197731572
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53730357"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523449"
 ---
 # <a name="security-in-azure-app-service"></a>Безопасность в Службе приложений Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "53730357"
 
 По умолчанию приложение службы приложений принимает запросы со всех IP-адресов из Интернета, но вы можете ограничить доступ небольшим подмножеством IP-адресов. Служба приложений в Windows позволяет определить список IP-адресов, с которых разрешен доступ к вашему приложению. Список разрешений может содержать отдельные IP-адреса или их диапазон, который определяется маской подсети. Дополнительные сведения см. в статье [Ограничения статических IP-адресов в Службе приложений Azure](app-service-ip-restrictions.md).
 
-Для службы приложений в Windows вы также можете ограничить IP-адреса динамически, настроив _web.config_. Чтобы узнать больше, ознакомьтесь со статьей о [безопасности динамического IP-адреса<dynamicIpSecurity>](https://docs.microsoft.com/iis/configuration/system.webServer/security/dynamicIpSecurity/).
+Для службы приложений в Windows вы также можете ограничить IP-адреса динамически, настроив _web.config_. Дополнительные сведения см. в разделе [Dynamic IP Security \<dynamicIpSecurity >](https://docs.microsoft.com/iis/configuration/system.webServer/security/dynamicIpSecurity/).
 
 ## <a name="client-authentication-and-authorization"></a>Аутентификация и авторизация клиента
 

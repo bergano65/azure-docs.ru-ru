@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: mcollier
 ms.subservice: ''
-ms.openlocfilehash: f47e9fd8842f9884ced290385e5f647fac57bc13
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: ddbc00155c3c5c136f7d33861e9ad5177df77470
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58484988"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59528073"
 ---
 # <a name="azure-monitoring-rest-api-walkthrough"></a>Пошаговое руководство по REST API Azure Monitor
 
@@ -657,7 +657,7 @@ Version        : 08586982649483762729
 
 ### <a name="azure-cli"></a>Инфраструктура CLI Azure
 
-Чтобы получить идентификатор ресурса для учетной записи хранения Azure с помощью Azure CLI, выполните команду az storage account show, как показано в следующем примере:
+Чтобы получить идентификатор ресурса для учетной записи хранения Azure, с помощью Azure CLI, выполните `az storage account show` команды, как показано в следующем примере:
 
 ```
 az storage account show -g azmon-rest-api-walkthrough -n contosotweets2017

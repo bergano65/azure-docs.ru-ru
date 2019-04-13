@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/01/2019
 ms.author: apimpm
-ms.openlocfilehash: 7cbd21ce9f8e5d9d3c03eb7c626ab41b8d28498d
-ms.sourcegitcommit: f24b62e352e0512dfa2897362021b42e0cb9549d
+ms.openlocfilehash: db48db5ce9402267570ac9e41f9f4b5bec2781ad
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59505674"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59527954"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
@@ -106,7 +106,7 @@ ms.locfileid: "59505674"
 
 * **Порты, необходимые для управления API**. Входящим и исходящим трафиком в подсети, в которой развернута служба управления API, можно управлять с помощью [группы безопасности сети][Network Security Group]. Если какой-либо из этих портов недоступен, служба управления API может не работать должным образом и даже стать недоступной. Блокировка одного или нескольких из этих портов является одной из распространенных проблем неправильной конфигурации при использовании управления API в виртуальной сети.
 
-При размещении экземпляра службы управления API в виртуальной сети используются порты, указанные в следующей таблице.
+<a name="required-ports"> </a> Когда экземпляр службы управления API размещается в виртуальной сети, используются порты в следующей таблице.
 
 | Исходные и конечные порты | Направление          | Транспортный протокол |   [Теги служб](../virtual-network/security-overview.md#service-tags) <br> Ресурс и назначение   | Назначение (*)                                                 | Тип виртуальной сети |
 |------------------------------|--------------------|--------------------|---------------------------------------|-------------------------------------------------------------|----------------------|
@@ -114,7 +114,7 @@ ms.locfileid: "59505674"
 | * / 3443                     | Входящий трафик            | TCP                | ApiManagement / VIRTUAL_NETWORK       | Конечная точка управления для портала Azure и PowerShell         | Внешний и внутренний  |
 | * / 80, 443                  | Исходящие           | TCP                | VIRTUAL_NETWORK / Storage             | **Зависимость от службы хранилища Azure**                             | Внешний и внутренний  |
 | * / 80, 443                  | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureActiveDirectory | Приложения Azure Active Directory (где применяется)                   | Внешний и внутренний  |
-| * / 1433                     | Исходящие           | TCP                | VIRTUAL_NETWORK / SQL                 | **Доступ к конечным точкам Azure SQL**                           | Внешний и внутренний  |
+| * / 1433                     | Исходящие           | TCP                | VIRTUAL_NETWORK / SQL                 | **Доступ к конечным точкам службы SQL Azure**                           | Внешний и внутренний  |
 | * / 5672                     | Исходящие           | TCP                | VIRTUAL_NETWORK / EventHub            | Зависимость для политики ведения журнала концентратора событий и агента мониторинга | Внешний и внутренний  |
 | * / 445                      | Исходящие           | TCP                | VIRTUAL_NETWORK / Storage             | Зависимость для общей папки Azure для GIT                      | Внешний и внутренний  |
 | * / 1886                     | Исходящие           | TCP                | VIRTUAL_NETWORK — INTERNET            | Необходимо опубликовать сведения о работоспособности в службе "Работоспособность ресурсов"          | Внешний и внутренний  |
@@ -136,7 +136,7 @@ ms.locfileid: "59505674"
 
     | Среда Azure | Конечные точки                                                                                                                                                                                                                                                                                                                                                              |
     |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | Azure Public      | <ul><li>prod.warmpath.msftcloudes.com;</li><li>shoebox2.metrics.nsatc.net;</li><li>prod3.metrics.nsatc.net;</li><li>prod3-black.prod3.metrics.nsatc.net;</li><li>prod3-red.prod3.metrics.nsatc.net.</li><li>prod.warm.ingestion.msftcloudes.com</li><li>`azure region`.warm.ingestion.msftcloudes.com where `East US 2` is eastus2.warm.ingestion.msftcloudes.com</li></ul> |
+    | Azure Public      | <ul><li>prod.warmpath.msftcloudes.com;</li><li>shoebox2.metrics.nsatc.net;</li><li>prod3.metrics.nsatc.net;</li><li>prod3-black.prod3.metrics.nsatc.net;</li><li>prod3-red.prod3.metrics.nsatc.net.</li><li>prod.warm.ingestion.msftcloudes.com</li><li>`azure region`.warm.ingestion.msftcloudes.com где `East US 2` является eastus2.warm.ingestion.msftcloudes.com</li></ul> |
     | Azure Government  | <ul><li>fairfax.warmpath.usgovcloudapi.net;</li><li>shoebox2.metrics.nsatc.net;</li><li>prod3.metrics.nsatc.net.</li></ul>                                                                                                                                                                                                                                                |
     | Azure для Китая       | <ul><li>mooncake.warmpath.chinacloudapi.cn;</li><li>shoebox2.metrics.nsatc.net;</li><li>prod3.metrics.nsatc.net.</li></ul>                                                                                                                                                                                                                                                |
 
@@ -194,10 +194,10 @@ Azure резервирует некоторые IP-адреса в каждой 
 
 
 ## <a name="related-content"> </a>Связанная информация
-* [Подключение виртуальной сети к серверной части с помощью VPN-шлюза](../vpn-gateway/vpn-gateway-about-vpngateways.md#s2smulti)
-* [Подключение виртуальных сетей из разных моделей развертывания](../vpn-gateway/vpn-gateway-connect-different-deployment-models-powershell.md)
-* [Как использовать инспектор API для трассировки вызовов в Azure API Management](api-management-howto-api-inspector.md)
-* [Часто задаваемые вопросы о виртуальной сети](../virtual-network/virtual-networks-faq.md)
+* [Подключение типа "сеть — сеть" и многосайтовое подключение (через VPN-туннель IPsec/IKE)](../vpn-gateway/vpn-gateway-about-vpngateways.md#s2smulti)
+* [Подключение виртуальных сетей из различных моделей развертывания с использованием PowerShell](../vpn-gateway/vpn-gateway-connect-different-deployment-models-powershell.md)
+* [Как использовать инспектор API для трассировки вызовов в службе управления API Azure](api-management-howto-api-inspector.md)
+* [Виртуальная сеть Azure: часто задаваемые вопросы](../virtual-network/virtual-networks-faq.md)
 * [Теги служб](../virtual-network/security-overview.md#service-tags)
 
 [api-management-using-vnet-menu]: ./media/api-management-using-with-vnet/api-management-menu-vnet.png

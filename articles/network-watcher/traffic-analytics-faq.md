@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: jdial
-ms.openlocfilehash: 65948b1de3a972687e738b011acf3542073db277
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: 3938427c23993f0546e7df62da88dadaf3353118
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59046996"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549377"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Часто задаваемые вопросы по Аналитике трафика Azure
 
@@ -179,7 +179,7 @@ ms.locfileid: "59046996"
 
 Чтобы настроить решение "Аналитика трафика" с помощью клиента Azure Resource Manager, см. следующие примеры.
 
-**Пример набора командлетов.**
+**Пример командлета Set:**
 ```
 #Requestbody parameters
 $TAtargetUri ="/subscriptions/<NSG subscription id>/resourceGroups/<NSG resource group name>/providers/Microsoft.Network/networkSecurityGroups/<name of NSG>"
@@ -220,7 +220,7 @@ $apiversion = "2016-09-01"
 armclient login
 armclient post "https://management.azure.com/subscriptions/<NSG subscription id>/resourceGroups/<network watcher resource group name>/providers/Microsoft.Network/networkWatchers/<network watcher name>/configureFlowlog?api-version=${apiversion}" $requestBody
 ```
-**Получите пример командлета:**
+**Пример командлета Get:**
 ```
 #Requestbody parameters
 $TAtargetUri ="/subscriptions/<NSG subscription id>/resourceGroups/<NSG resource group name>/providers/Microsoft.Network/networkSecurityGroups/<NSG name>"
@@ -239,12 +239,27 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
 ```
 
 
-
 ## <a name="how-is-traffic-analytics-priced"></a>Как образуются цены на Аналитику трафика?
 
 Аналитика трафика измеряется на основе обработки данных журнала потоков службой и сохранении полученных расширенных журналов в рабочей области Log Analytics. 
 
 Например, согласно [тарифному плану](https://azure.microsoft.com/pricing/details/network-watcher/) для региона центрально-западной части США, если в учетной записи хранения хранимые данные журнала потоков, обрабатываемые Аналитиком трафика, составляет 10 ГБ, а объем улучшенных журналов, принятых в рабочей области Log Analytics, — 1 ГБ, то применимый тариф рассчитывается так: 10 x 2,3 долл. США + 1 x 2,76 долл. США = 25,76 долл. США.
+
+## <a name="how-frequently-does-traffic-analytics-process-data"></a>Как часто аналитики трафика обработки данных?
+
+Ссылаться на [раздел статистической обработки данных](https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics-schema#data-aggregation) схема аналитики трафика и документе статистической обработки данных
+
+## <a name="how-does-traffic-analytics-decide-that-an-ip-is-malicious"></a>Как аналитика трафика определяет, что IP-адрес является вредоносным? 
+
+Аналитика трафика зависит от системы аналитики внутренних угроз корпорации Майкрософт для достижения как вредоносный IP-адрес. Эти системы использовать телеметрии различных источников, таких как продукты Microsoft и служб, Microsoft Digital Crimes Unit (DCU), Microsoft Security Response Center (MSRC) и внешних веб-каналов и создавать множество аналитики на ее основе. Некоторые из этих данных является внутренним Mircosoft. Если это известных IP-адрес получения помечен как malicios, обратитесь в службу поддержки подробная информация.
+
+## <a name="how-can-i-set-alerts-on-traffic-analytics-data"></a>Как настроить оповещения для данных аналитики трафика?
+
+Аналитика трафика не поддерживает встроенная поддержка оповещений. Тем не менее поскольку аналитика трафика данные хранятся в службе Log Analytics можно написать нестандартные запросы и настроить оповещения на них. Шаги:
+- Адресе можно использовать для Log Analytics в аналитике трафика Azure. 
+- Используйте [здесь описаны схемы](traffic-analytics-schema.md) для написания запросов 
+- Нажмите кнопку «Новое правило генерации оповещений» Создание оповещения
+- Ссылаться на [документации по оповещениям журнала](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-log) Создание оповещения
 
 ## <a name="how-can-i-navigate-by-using-the-keyboard-in-the-geo-map-view"></a>Как перемещаться в представлении географической карты с помощью клавиатуры?
 
@@ -272,7 +287,7 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
         
 ### <a name="keyboard-navigation-at-any-stage"></a>Навигация с помощью клавиатуры на любом этапе
     
-- `Esc` Сворачивает развернутый элемент.
+- Клавиша `Esc` позволяет свернуть развернутый элемент.
 - Клавиша `Up arrow` работает так же, как `Esc`. Клавиша `Down arrow` работает так же, как `Enter`.
 - Клавиши `Shift+Plus` позволяют увеличить масштаб, а `Shift+Minus` — уменьшить его.
 

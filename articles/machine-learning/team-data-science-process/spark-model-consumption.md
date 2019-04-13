@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 03/15/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: d89886e7cc5fe47013902b281c490b79a07e7641
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: dd0467479960df30b1d44aeaef7ed0ed0d6c2a87
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57888116"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59524588"
 ---
 # <a name="operationalize-spark-built-machine-learning-models"></a>Ввод моделей машинного обучения, созданных с помощью Spark, в эксплуатацию
 
@@ -112,7 +112,7 @@ datetime.datetime(2016, 4, 25, 23, 56, 19, 229403)
 Ядро PySpark предоставляет несколько "волшебных команд". Это специальные команды, которые можно вызывать с %%. В этих примерах кода используются две подобные команды.
 
 * **%%local** Указывает, что код в последующих строках будет выполнен локально. В качестве кода должен быть указан корректный код Python.
-* **%%sql -o <variable name>** 
+* **%% sql -o \<имя переменной >** 
 * Выполняет запрос Hive к sqlContext. Если передан параметр -o, результат запроса сохраняется в контексте %%local Python в качестве таблицы данных Pandas.
 
 Дополнительные сведения о ядрах для записных книжек Jupyter и предустановленных "волшебных командах", которые они предоставляют, см. в статье [Ядра, доступные для использования записными книжками Jupyter с кластерами Apache Spark в HDInsight на платформе Linux](../../hdinsight/spark/apache-spark-jupyter-notebook-kernels.md).

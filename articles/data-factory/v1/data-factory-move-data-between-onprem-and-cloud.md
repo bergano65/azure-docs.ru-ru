@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: 72e93b99783441bda97c52ff295a89b0fcf4e629
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 4eb881992b7e40e0a9d67bd2cee94f1f09958e9e
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57995894"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59524112"
 ---
 # <a name="move-data-between-on-premises-sources-and-the-cloud-with-data-management-gateway"></a>Перемещение данных между локальными источниками и облаком с помощью шлюза управления данными
 > [!NOTE]
@@ -280,7 +280,7 @@ ms.locfileid: "57995894"
    * **folderPath** имеет значение **adftutorial/outfromonpremdf**, где outfromonpremdf — это папка в контейнере adftutorial. Если контейнер **adftutorial** еще не существует, создайте его.
    * Параметр **availability** имеет значение **hourly** (параметру **frequency** присваивается значение **hour**, а параметру **interval** — значение **1**).  Служба фабрики данных каждый час создает срез выходных данных в таблице **emp** в базе данных SQL Azure.
 
-   Если не указать **fileName** для **выходной таблицы**, то созданные в **folderPath** файлы получают имена в следующем формате: Data.<Guid>.txt (например: : Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt.).
+   Если вы не укажете **fileName** для **выходную таблицу**, созданные файлы в **folderPath** имеют имена в следующем формате: `Data.<Guid>.txt` (например:: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt.).
 
    Чтобы динамически установить параметры **folderPath** и **fileName** на основе времени **SliceStart**, используйте свойство partitionedBy. В следующем примере folderPath использует год, месяц и день из SliceStart (время начала обработки среза), а в fileName используется время (часы) из SliceStart. Например, если срез выполняется для временной отметки 2014-10-20T08:00:00, folderName получает значение wikidatagateway/wikisampledataout/2014/10/20, а fileName – 08.csv.
 

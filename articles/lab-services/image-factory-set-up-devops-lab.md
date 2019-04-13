@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/25/2019
 ms.author: spelluru
-ms.openlocfilehash: 62cb8222b592660f2e7ab32d438fd4073246ee50
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: 5a3d6e51a71f6aab742fe042d6e6e281192319a4
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58440040"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523024"
 ---
-# <a name="run-an-image-factory-from-azure-devops"></a>Запустите фабрику образов из Azure DevOps
+# <a name="run-an-image-factory-from-azure-devops"></a>Запуск фабрики образов из Azure DevOps
 В этой статье рассматриваются все подготовительные действия, необходимые для запуска фабрика образов из DevOps в Azure (прежнее название — Visual Studio Team Services).
 
 > [!NOTE]
@@ -44,12 +44,12 @@ Azure DevOps позволяют хранить исходный код, запу
 
 При наличии существующей учетной записи DevOps или проект, который вы хотите использовать вместо этого, пропустите этот шаг.
 
-Чтобы приступить к работе, создайте бесплатную учетную запись в DevOps в Azure. Посетите https://www.visualstudio.com/ и выберите **начните работу бесплатно** прямо под **Azure DevOps** (прежнее название — VSTS). Необходимо выбрать уникальное имя и убедитесь, что вы решили управлять кодом, с помощью Git. После создания, сохраните URL-адрес командного проекта. Ниже приведен пример URL-адрес: https://<accountname>.visualstudio.com/MyFirstProject.
+Чтобы приступить к работе, создайте бесплатную учетную запись в DevOps в Azure. Посетите https://www.visualstudio.com/ и выберите **начните работу бесплатно** прямо под **Azure DevOps** (прежнее название — VSTS). Необходимо выбрать уникальное имя и убедитесь, что вы решили управлять кодом, с помощью Git. После создания, сохраните URL-адрес командного проекта. Ниже приведен пример URL-адреса: `https://<accountname>.visualstudio.com/MyFirstProject`.
 
 ## <a name="check-in-the-image-factory-to-git"></a>Проверьте в фабрике образа на Git
 Все PowerShell, шаблоны и конфигурация фабрики изображения находятся в [общедоступном репозитории DevTest Labs на сайте GitHub](https://github.com/Azure/azure-devtestlab/tree/master/Scripts/ImageFactory). Самый быстрый способ получить код в новый командный проект является импортировать репозиторий. Это извлекает всего репозитория DevTest Labs (индекс, чтобы получать дополнительные документы и примеры). 
 
-1. Посетите проект Azure DevOps, созданный на предыдущем шаге (URL-адрес выглядит **https://<accountname>.visualstudio.com/MyFirstProject**).
+1. Посетите проект Azure DevOps, созданный на предыдущем шаге (URL-адрес выглядит **https:\//\<accountname >.visualstudio.com/MyFirstProject**).
 2. Выберите **импортировать репозиторий**.
 3. Введите **URL-адрес клона** для репозитория DevTest Labs: `https://github.com/Azure/azure-devtestlab`.
 4. Выберите **Импортировать**.

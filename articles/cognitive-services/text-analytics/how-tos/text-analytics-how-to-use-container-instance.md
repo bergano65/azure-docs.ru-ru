@@ -10,18 +10,18 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 01/22/2019
 ms.author: diberry
-ms.openlocfilehash: 00e2c143116550aa77d38b4bc93bbe2e0b41c331
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 3541376331725fddcd58d94625f5d761ef159c97
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55868350"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59526509"
 ---
 # <a name="deploy-the-language-detection-container-to-azure-kubernetes-service"></a>Развертывание контейнера распознавания языка в Службе Azure Kubernetes
 
 Узнайте, как развертывать контейнер распознавания языка. В статье описано, как создавать локальные контейнеры Docker, отправлять их в закрытый реестр контейнеров и запускать в кластере Kubernetes, а также тестировать в веб-браузере. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для выполнения этой процедуры необходимо установить и запустить несколько средств локально. Не используйте Azure CloudShell. 
 
@@ -206,7 +206,7 @@ ms.locfileid: "55868350"
 
     Сохраните полное значение для шага 3 в этом разделе. 
 
-1. Чтобы правильно предоставить кластеру AKS права доступа для использования образов, хранящихся в реестре контейнеров, создайте назначение роли. Замените <appId> и <acrId> значениями, полученными на двух предыдущих шагах.
+1. Чтобы правильно предоставить кластеру AKS права доступа для использования образов, хранящихся в реестре контейнеров, создайте назначение роли. Замените `<appId>` и `<acrId>` значениями, полученными на двух предыдущих шагах.
 
     ```azurecli
     az role assignment create --assignee <appId> --scope <acrId> --role Reader
@@ -405,7 +405,7 @@ az group delete --name cogserv-container-rg
 
 * [kubectl для пользователей Docker](https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/)
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 * [Поддержка контейнеров в Azure Cognitive Services](../../cognitive-services-container-support.md)
 * Руководство. Подключение к службе "Анализ текста" в Cognitive Services с помощью подключенной службы в Visual Studio

@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
 ms.date: 03/12/2019
-ms.openlocfilehash: e2b82c8a7bcdc1982ed4489e9422a4a0efd64f3c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: cf5215ff5acaf08125cf280103ba8ff0123dc116
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175105"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523823"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-db-for-mysql"></a>Известные проблемы и ограничения при сетевых миграциях в Базу данных Azure для MySQL
 
@@ -30,7 +30,7 @@ ms.locfileid: "58175105"
 - Миграция между одинаковыми версиями. Миграция с MySQL 5.6 в Базу данных Azure для MySQL 5.7 не поддерживается.
 - Включите ведение двоичных журналов в файле my.ini (Windows) или my.cnf (Unix).
     - Установите для значения Server_id любое число, которое больше или равно 1, например, Server_id = 1 (только для MySQL 5.6).
-    - Установите log-bin = <path> (только для MySQL 5.6).
+    - Набор log-bin = \<путь > (только для версии MySQL 5.6)
     - Установите binlog_format = row.
     - Установите Expire_logs_days = 5 ( рекомендуется только для MySQL 5.6).
 - Пользователю должна быть назначена роль ReplicationAdmin.

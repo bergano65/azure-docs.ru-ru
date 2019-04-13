@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 01/19/2019
 ms.author: chmutali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73e5b081e85726a1fc78d92996846faa18ce616a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d34bd9d7f80f72b3c6c0821ad48e6be1fd260be9
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57897628"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59524639"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство. Настройка Workday для автоматической подготовки пользователей
 
@@ -50,7 +50,7 @@ ms.locfileid: "57897628"
 
 ### <a name="who-is-this-user-provisioning-solution-best-suited-for"></a>Кому это решение подготовки пользователей подходит лучше всего?
 
-Это решение подготовки пользователей в Workday сейчас находится на этапе общедоступной предварительной версии и идеально подходит для:
+Это решение подготовки пользователей Workday идеально подходит для:
 
 * организаций, которым необходимо готовое облачное решение для подготовки пользователей в Workday;
 
@@ -460,7 +460,7 @@ ms.locfileid: "57897628"
 
 2. В поле **Область исходного объекта** можно выбрать, какие наборы пользователей в Workday должны учитываться при подготовке в AD, определив набор фильтров на основе атрибутов. Область по умолчанию — "Все пользователи в Workday". Примеры фильтров
 
-   * Пример: Охват пользователей с идентификаторами рабочих ролей в диапазоне от 1000000 до 2000000
+   * Пример: Охват пользователей с идентификаторами рабочих от 1000000 до 2000000 (за исключением 2000000)
 
       * Атрибут: WorkerID.
 

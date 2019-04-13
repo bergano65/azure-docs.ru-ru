@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: ramkris
 ms.reviewer: sngun
-ms.openlocfilehash: ba6a352d965f3f90a122f5277ad23ec5f92907eb
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: cfb90dc31635001291b1661f31ec2ee1fc378404
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58258468"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523347"
 ---
 # <a name="use-bulk-executor-net-library-to-perform-bulk-operations-in-azure-cosmos-db"></a>Использование библиотеки .NET массового исполнителя для выполнения массовых операций в Azure Cosmos DB
 
@@ -115,7 +115,7 @@ git clone https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-st
    |NumberOfDocumentsImported (long)   |  Общее число документов, которые были успешно импортированы, среди предоставленных для вызова API массового импорта.       |
    |TotalRequestUnitsConsumed (double)   |   Общее число единиц запросов (ЕЗ), потребляемых вызовом API массового импорта.      |
    |TotalTimeTaken (TimeSpan)    |   Общее время, затрачиваемое на выполнение вызова API массового импорта.      |
-   |BadInputDocuments (List<object>)   |     Список документов с неверным форматом, которые не были успешно импортированы при вызове API массового импорта. Пользователь должен исправить возвращенные документы и повторить импорт. Документы с неверным форматом включают в себя документы, значение идентификаторов которых не является строкой (NULL или любой другой тип данных считается недействительным).    |
+   |BadInputDocuments (список\<объекта >)   |     Список документов с неверным форматом, которые не были успешно импортированы при вызове API массового импорта. Пользователь должен исправить возвращенные документы и повторить импорт. Документы с неверным форматом включают в себя документы, значение идентификаторов которых не является строкой (NULL или любой другой тип данных считается недействительным).    |
 
 ## <a name="bulk-update-data-in-azure-cosmos-db"></a>Массовое обновление данных в Azure Cosmos DB
 

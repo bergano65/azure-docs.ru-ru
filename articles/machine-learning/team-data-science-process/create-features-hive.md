@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/21/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 4d74b122f3b5567e8291ec5f3ff4e1dda7ff68f0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: a491f923d7755513d84adfe765d595a3a7a80715
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57835022"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59524911"
 ---
 # <a name="create-features-for-data-in-a-hadoop-cluster-using-hive-queries"></a>Создание признаков для данных в кластере Hadoop с помощью запросов Hive
 В этом документе показано, как создавать компоненты для данных, хранящихся в кластере Azure HDInsight Hadoop, используя запросы Hive. Эти запросы Hive используют внедренные пользовательские функции, сценарии для которых предоставлены.
@@ -89,14 +89,14 @@ ms.locfileid: "57835022"
         select day(<datetime field>), month(<datetime field>)
         from <databasename>.<tablename>;
 
-В этом запросе Hive предполагается, что значение в поле *<datetime field>* указано в стандартном формате даты и времени.
+Этом запросе Hive предполагается, что  *\<поля даты и времени >* — в формате даты и времени по умолчанию.
 
 Если поле даты и времени приведено не в формате по умолчанию, нужно преобразовать его в метку времени Unix, а затем преобразовать метку времени в строку даты и времени в формате по умолчанию. Когда дата и время указаны в формате по умолчанию, вы можете применять определяемые пользователями функции даты и времени для извлечения функций.
 
         select from_unixtime(unix_timestamp(<datetime field>,'<pattern of the datetime field>'))
         from <databasename>.<tablename>;
 
-Если в этом запросе значение в поле *<datetime field>* указано в формате *03/26/2015 12:04:39*, значение поля *<pattern of the datetime field>'* должно выглядеть так: `'MM/dd/yyyy HH:mm:ss'`. Чтобы проверить шаблон поля даты и времени, можно выполнить такую команду:
+В этом запросе Если  *\<поля даты и времени >* указано в формате *03/26/2015 12:04:39*,  *\<шаблон поля даты и времени > "* должен быть `'MM/dd/yyyy HH:mm:ss'`. Чтобы проверить шаблон поля даты и времени, можно выполнить такую команду:
 
         select from_unixtime(unix_timestamp('05/15/2015 09:32:10','MM/dd/yyyy HH:mm:ss'))
         from hivesampletable limit 1;

@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: 09b652b236e1fbe68d93298f0f8793854e411aad
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 0c3525b73560d3edee5bffa7a391fcedeaaa1e48
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58095676"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59545100"
 ---
 # <a name="use-c-with-mapreduce-streaming-on-apache-hadoop-in-hdinsight"></a>Использование C# для потоковой передачи MapReduce в Apache Hadoop в HDInsight
 
@@ -27,7 +27,7 @@ ms.locfileid: "58095676"
 
 ## <a name="net-on-hdinsight"></a>.NET в HDInsight
 
-В кластерах __HDInsight под управлением Linux__ для запуска приложений .NET используется [Mono (https://mono-project.com)](https://mono-project.com). Mono версии 4.2.1 входит в состав HDInsight версии 3.6. Дополнительные сведения о версии Mono, которая входит в состав HDInsight, см. в разделе [Что представляют собой различные компоненты Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md) Чтобы использовать определенную версию Mono, см. статью об [установке или обновлении Mono](../hdinsight-hadoop-install-mono.md).
+В кластерах __HDInsight под управлением Linux__ для запуска приложений .NET используется [Mono (https://mono-project.com)](https://mono-project.com). Mono версии 4.2.1 входит в состав HDInsight версии 3.6. Дополнительные сведения о версии Mono, которая входит в состав HDInsight, см. в разделе [Что представляют собой различные компоненты Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md) 
 
 Дополнительные сведения о совместимости Mono с различными версиями платформы .NET Framework см. в разделе [Compatibility](https://www.mono-project.com/docs/about-mono/compatibility/) (Совместимость).
 

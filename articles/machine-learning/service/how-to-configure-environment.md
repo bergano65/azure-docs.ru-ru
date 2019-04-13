@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.topic: conceptual
 ms.date: 02/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: d4866a6863143d2228c556a64c8e75c9f273076e
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: 720f984feb5675281510962d4ebee63f638d696d
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59489507"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59548892"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
 
@@ -87,7 +87,7 @@ DSVM — это настраиваемый образ виртуальной м
 
     * На портале Azure:
 
-        * [Создайте виртуальную машину обработки и анализа данных Ubuntu](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro)
+        * [Создание Виртуальной машины для обработки и анализа данных на платформе Ubuntu](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro)
 
         * [Создание виртуальной машины Windows для обработки и анализа данных](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/provision-vm)
 
@@ -280,7 +280,7 @@ Azure Databricks — это среда на основе Apache Spark, в обл
 ### <a name="set-up-your-databricks-cluster"></a>Настройка кластера Databricks
 
 Создание [кластера Databricks](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal). Некоторые параметры применяются только в том случае, если вы установите пакет SDK для автоматических машинное обучение в Databricks.
-**Создание кластера занимает несколько минут.**
+**Может занять несколько минут для создания кластера.**
 
 Используйте следующие параметры:
 
@@ -350,7 +350,7 @@ Azure Databricks — это среда на основе Apache Spark, в обл
 }
 ```
 
-Этот JSON-файл должен находиться в структуре каталогов, которые содержат сценарии Python или приложения Jupyter Notebook. Он может находиться в том же каталоге, подкаталоге с именем *aml_config* или родительском каталоге.
+Этот JSON-файл должен находиться в структуре каталогов, которые содержат сценарии Python или приложения Jupyter Notebook. Он может быть в том же каталоге, подкаталог с именем *.azureml*, или в родительском каталоге.
 
 Чтобы использовать этот файл в коде, выполните `ws=Workspace.from_config()`. Этот код загружает данные из файла и подключается к рабочей области.
 
@@ -379,7 +379,7 @@ Azure Databricks — это среда на основе Apache Spark, в обл
         print('Workspace not found')
     ```
 
-    Этот код записывает файл конфигурации в файл *aml_config/config.json*.
+    Этот код записывает файл конфигурации, *.azureml/config.json* файла.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 3/6/2019
 ms.author: victorh
-ms.openlocfilehash: 4410dd9e61fe5b585ca5b245dbf33dbf8c38e701
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.openlocfilehash: 95b14a0028134e522206f3595bc3b9ebf9aaf396
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "59010232"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59548733"
 ---
 # <a name="autoscaling-and-zone-redundant-application-gateway-public-preview"></a>Автоматическое масштабирование и шлюз приложений, избыточный между зонами (общедоступная предварительная версия)
 
@@ -31,7 +31,7 @@ ms.locfileid: "59010232"
 ![](./media/application-gateway-autoscaling-zone-redundant/application-gateway-autoscaling-zone-redundant.png)
 
 > [!NOTE]
-> Автоматическое масштабирование и шлюз приложений, избыточные в пределах зоны SKU теперь поддерживает [стандартную пробу работоспособности](https://docs.microsoft.com/azure/application-gateway/application-gateway-probe-overview#default-health-probe) автоматически наблюдения за работоспособностью всех ресурсов в пуле серверной части и удалять все ресурсы, признанные неработоспособными из пула. Будут получены пробы работоспособности по умолчанию автоматически настроены для всех этих серверных систем для которых вы не настроили какой-либо настройки пользовательской пробы. Дополнительные сведения см. в разделе [проверки работоспособности в шлюзе приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-probe-overview).
+> Автоматическое масштабирование и шлюз приложений, избыточные в пределах зоны SKU теперь поддерживает [стандартную пробу работоспособности](https://docs.microsoft.com/azure/application-gateway/application-gateway-probe-overview#default-health-probe) автоматически наблюдения за работоспособностью всех ресурсов в пуле серверной части и выделите эти члены серверной части, которые считаются неработоспособное. Будут получены пробы работоспособности по умолчанию автоматически настроены для всех этих серверных систем для которых вы не настроили какой-либо настройки пользовательской пробы. Дополнительные сведения см. в разделе [проверки работоспособности в шлюзе приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-probe-overview).
 
 ## <a name="feature-comparison-between-v1-sku-and-v2-sku"></a>Сравнение возможностей v1 SKU и v2 SKU
 
@@ -79,6 +79,6 @@ ms.locfileid: "59010232"
 |Интеграция Наблюдателя за сетями|Не поддерживается в общедоступной предварительной версии.|
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Создание автоматического масштабирования, шлюз избыточных приложений зоны с помощью зарезервированного виртуального IP-адреса, с помощью Azure PowerShell](tutorial-autoscale-ps.md)
+- [Создание автоматически масштабируемого, избыточного в пределах зоны шлюза приложений с зарезервированным виртуальным IP-адресом с помощью Azure PowerShell](tutorial-autoscale-ps.md)
 - Дополнительные сведения о [шлюзе приложений](overview.md).
 - Дополнительные сведения о [брандмауэре Azure](../firewall/overview.md).

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/08/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c99bc4ef23ee2d8f4478bbaab591e7b36c7ea75
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 416a98c5f9c5a2ec813206ea9ea7f311b23e86cb
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58109837"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59525585"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rightscale"></a>Руководство. Интеграция Azure Active Directory с Rightscale
 
@@ -132,7 +132,7 @@ ms.locfileid: "58109837"
 1. В разделе **Конфигурация Rightscale** щелкните **Настроить Rightscale**, чтобы открыть окно **Настройка единого входа**. Скопируйте **идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Quick Reference** (Краткий справочник).
 
     ![Настройка единого входа](./media/rightscale-tutorial/tutorial_rightscale_configure.png) 
-   <CS>
+
 1. Чтобы настроить для приложения единый вход, нужно войти в клиент приложения RightScale с правами администратора.
 
     a. В меню в верхней части откройте вкладку **Параметры** и выберите **Единый вход**.
@@ -164,7 +164,7 @@ ms.locfileid: "58109837"
     ![Настройка единого входа](./media/rightscale-tutorial/tutorial_rightscale_009.png)
 
     h. Выберите команду **Сохранить**.
-   <CE>
+
    > [!TIP]
    > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
    > 

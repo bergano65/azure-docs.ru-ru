@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 1e550002948fc1320b8645bf1af635536d524fe6
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: f61c7a939902ee5d02b2e9ba896c7555968f9d0d
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59282395"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59547991"
 ---
 # <a name="add-a-shape-to-a-map"></a>Добавление фигуры на карту
 
@@ -26,7 +26,7 @@ ms.locfileid: "59282395"
 
 `LineString` и `MultiLineString` функции используются для представления путей, а также описывается на карте.
 
-## <a name="use-a-line"></a>С помощью строки кода
+### <a name="add-a-line"></a>Добавление линии
 
 <iframe height='500' scrolling='no' title='Добавление линии на карту' src='//codepen.io/azuremaps/embed/qomaKv/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/qomaKv/'>Добавление линии на карту</a> службы "Карты Azure" (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -53,7 +53,7 @@ ms.locfileid: "59282395"
 
 <br/>
 
-<iframe height="265" style="width: 100%;" scrolling="no" title="Линия с градиентом штриха" src="//codepen.io/azuremaps/embed/wZwWJZ/?height=265&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Линия с градиентом штриха" src="//codepen.io/azuremaps/embed/wZwWJZ/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
 См. в разделе пера <a href='https://codepen.io/azuremaps/pen/wZwWJZ/'>линия с градиентом Stroke</a> по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -156,7 +156,7 @@ SDK веб-карты Azure преобразует эти `Pooint` функци�
 ## <a name="make-a-geometry-easy-to-update"></a>Упрощение обновления геометрического объекта
 
 Объект `Shape` класса оболочку [Geometry](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.geometry?view=azure-iot-typescript-latest) или [функция](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.feature?view=azure-iot-typescript-latest) и позволяет легко обновлять и обслуживать их.
-`new Shape(data: Feature<data.Geometry, any>)` Создает объект shape и инициализирует его с помощью указанного компонента.
+`new Shape(data: Feature<data.Geometry, any>)` отвечает за создание объекта фигуры и его инициализацию с конкретным компонентом.
 
 <br/>
 
@@ -171,7 +171,7 @@ SDK веб-карты Azure преобразует эти `Pooint` функци�
 
 В четвертом блоке создается объект источника данных с помощью класса [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest). Затем точка добавляется к источнику данных.
 
-[PolygonLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.polygonlayer?view=azure-iot-typescript-latest) отвечает за отображение данных, заключенных в [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest), на карте. В третьем блоке кода создается слой многоугольников. Просмотрите свойства слоя многоугольников в разделе о классе [PolygonLayerOptions](/javascript/api/azure-maps-control/atlas.polygonlayeroptions?view=azure-iot-typescript-latest). Создаются и добавляются на карту в источнике данных, hanlder событие click и слой многоугольников [обработчик событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) чтобы убедиться, что точки отображается после загрузки карты, полностью.
+[PolygonLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.polygonlayer?view=azure-iot-typescript-latest) отвечает за отображение данных, заключенных в [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest), на карте. В третьем блоке кода создается слой многоугольников. Просмотрите свойства слоя многоугольников в разделе о классе [PolygonLayerOptions](/javascript/api/azure-maps-control/atlas.polygonlayeroptions?view=azure-iot-typescript-latest). Создаются и добавляются на карту в источнике данных, обработчик событий click и слой многоугольников [обработчик событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) чтобы убедиться, что точки отображается после загрузки карты, полностью.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

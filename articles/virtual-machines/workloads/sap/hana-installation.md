@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 03/05/2019
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5b6c636366d494901a34078100290084298de686
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 96acb2e7af797f2777cc751417f50eb21faa46da
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57999837"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59522560"
 ---
 # <a name="how-to-install-and-configure-sap-hana-large-instances-on-azure"></a>Как установить и настроить SAP HANA в Azure (крупные экземпляры)
 
@@ -151,8 +151,8 @@ ms.locfileid: "57999837"
 
 | Использование хранилища | Имя подключения | Имя тома | 
 | --- | --- | ---|
-| Данные HANA | /hana/data/SID/mnt0000<m> | IP хранилища: /hana_data_SID_mnt00001_tenant_vol |
-| Журнал HANA | /hana/log/SID/mnt0000<m> | IP хранилища: /hana_log_SID_mnt00001_tenant_vol |
+| Данные HANA | /hana/data/SID/mnt0000\<m> | IP хранилища: /hana_data_SID_mnt00001_tenant_vol |
+| Журнал HANA | /hana/log/SID/mnt0000\<m > | IP хранилища: /hana_log_SID_mnt00001_tenant_vol |
 | Резервная копия журнала HANA | /hana/log/backups | IP хранилища: /hana_log_backups_SID_mnt00001_tenant_vol |
 | Общий HANA | /hana/shared/SID | IP хранилища: /hana_shared_SID_mnt00001_tenant_vol/shared |
 | usr/sap | /usr/sap/SID | IP хранилища: /hana_shared_SID_mnt00001_tenant_vol/usr_sap |

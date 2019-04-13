@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 01/02/2019
+ms.date: 03/29/2019
 ms.author: diberry
-ms.openlocfilehash: 4d29602581531e9e42edbf4e00eca810757a8a99
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: d615eb2a23b953bad5e41859357d9ae9e9be2ba6
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58895738"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59521222"
 ---
 # <a name="batch-testing-with-a-set-of-example-utterances"></a>Пакетное тестирование с помощью набора примеров высказываний
 
@@ -96,11 +96,13 @@ ms.locfileid: "58895738"
 
 Два зеленых раздела на диаграмме означают соответствие ожидаемому прогнозированию.
 
+[!INCLUDE [Entity roles in batch testing - currently not supported](../../../includes/cognitive-services-luis-roles-not-supported-in-batch-testing.md)]
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Если тестирование показывает, что приложение LUIS не распознает правильные намерения и сущности, вы можете повысить производительность приложения LUIS, пометив дополнительные высказывания или добавив компоненты. 
 
-* [Метка предлагаемые фразы с помощью LUIS](luis-how-to-review-endpoint-utterances.md) 
-* [Использование функций для повышения производительности приложения LUIS](luis-how-to-add-features.md) 
-* [Понять пакетное тестирование с помощью этого руководства](luis-tutorial-batch-testing.md)
+* я[Label suggested utterances with LUIS](luis-how-to-review-endpoint-utterances.md) (Пометка предлагаемых высказываний в LUIS) 
+* [Use features to improve your LUIS app's performance](luis-how-to-add-features.md) (Использование функций для повышения производительности приложения LUIS) 
+* [Understand batch testing with this tutorial](luis-tutorial-batch-testing.md) (Общие сведения о пакетном тестировании в этом руководстве)
 * [Learn batch testing concepts](luis-concept-batch-test.md) (Общие сведения о принципах пакетного тестирования)

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 4/9/2019
 ms.author: mayg
-ms.openlocfilehash: 1cf324887a225ecb9ba2cb40176a1f358e40a8e1
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.openlocfilehash: a3aef06e6ee0d3989a4da8fdd93d27d28f2eede4
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59361989"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59527685"
 ---
 # <a name="run-the-azure-site-recovery-deployment-planner-for-vmware-disaster-recovery-to-azure"></a>Запуск Планировщика развертывания Azure Site Recovery для аварийного восстановления VMware в Azure
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
@@ -21,9 +21,9 @@ ms.locfileid: "59361989"
 ## <a name="modes-of-running-deployment-planner"></a>Режимы запуска для планировщика развертывания
 Программу командной строки (ASRDeploymentPlanner.exe) можно запустить в любом из следующих четырех режимов:
 
-1.  [Профилирование.](#profile-vmware-vms)
-2.  [Создание отчетов.](#generate-report)
-3.  [Оценка пропускной способности.](#get-throughput)
+1.  [Профилирование](#profile-vmware-vms).
+2.  [Создание отчета](#generate-report).
+3.  [Получение данных пропускной способности](#get-throughput).
 
 Сначала планировщик необходимо запустить в режиме профилирования, чтобы получить сведения об активности обработки данных и числе операций ввода-вывода в секунду на виртуальной машине. Затем запустите ее в режиме создания отчетов, чтобы узнать пропускную способность сети, требования к хранилищу, а также оценить затраты на аварийное восстановление.
 
@@ -136,7 +136,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Direc
 
 
 ## <a name="generate-report"></a>Создание отчета
-Планировщик создает отчет в формате XLSM (файл Microsoft Excel с поддержкой макросов). В нем содержатся все рекомендации по развертыванию. Этот отчет называется DeploymentPlannerReport_<unique numeric identifier>.xlsm и помещается в указанный каталог.
+Планировщик создает отчет в формате XLSM (файл Microsoft Excel с поддержкой макросов). В нем содержатся все рекомендации по развертыванию. Этот отчет называется `DeploymentPlannerReport_<unique numeric identifier>.xlsm` и помещается в указанный каталог.
 
 >[!NOTE]
 >В качестве десятичного разделителя для отчета необходимо выбрать точку — это требуется для проведения оценки затрат на сервере, где выполняется планировщик развертывания. Если на компьютере Windows в качестве десятичного разделителя задана запятая, выберите на панели управления раздел "Изменение даты, времени или числовых форматов", откройте "Дополнительные параметры" и измените десятичный разделитель на точку.
@@ -214,7 +214,7 @@ ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware  -Dire
 ```
 
 ## <a name="percentile-value-used-for-the-calculation"></a>Значение процентиля, используемое для вычисления
-**Значение процентиля какие по умолчанию из метрик производительности, собранных во время профилирования использует планировщик при создании отчета?**
+**Значение какого процентиля метрик производительности, собранных во время профилирования, по умолчанию использует планировщик при создании отчета?**
 
 По умолчанию планировщик использует значения 95-го процентиля числа операций записи и чтения на диск в секунду, числа операций вода-вывода в секунду при записи и активности обработки данных, собранных во время профилирования всех виртуальных машин. Это гарантирует, что для определения требований к пропускной способности учетной записи хранения и целевой службы не будут использоваться пиковые значения 100-го процентиля, которые могут возникать на виртуальной машине из-за временных событий, например из-за выполнения задания архивации раз в день, периодического индексирования базы данных, создания аналитического отчета или какого-либо другого кратковременного события, происходящего в определенный момент времени.
 
@@ -240,12 +240,12 @@ ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware  -Dire
 
 Созданный отчет Microsoft Excel содержит следующие сведения:
 
-* [Сводка по локальной инфраструктуре](site-recovery-vmware-deployment-planner-analyze-report.md#on-premises-summary)
-* [Рекомендации](site-recovery-vmware-deployment-planner-analyze-report.md#recommendations)
-* [Размещение хранилища виртуальной Машины <> –](site-recovery-vmware-deployment-planner-analyze-report.md#vm-storage-placement)
+* [сводка по локальной инфраструктуре](site-recovery-vmware-deployment-planner-analyze-report.md#on-premises-summary);
+* [рекомендации](site-recovery-vmware-deployment-planner-analyze-report.md#recommendations);
+* [Размещение хранилища виртуальной машины](site-recovery-vmware-deployment-planner-analyze-report.md#vm-storage-placement)
 * [Совместимые виртуальные машины](site-recovery-vmware-deployment-planner-analyze-report.md#compatible-vms)
 * [Несовместимые виртуальные машины](site-recovery-vmware-deployment-planner-analyze-report.md#incompatible-vms)
-* [Оценка затрат](site-recovery-vmware-deployment-planner-cost-estimation.md)
+* [оценка затрат](site-recovery-vmware-deployment-planner-cost-estimation.md).
 
 ![Планировщик ресурсов](media/site-recovery-vmware-deployment-planner-analyze-report/Recommendations-v2a.png)
 

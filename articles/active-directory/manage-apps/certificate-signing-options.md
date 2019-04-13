@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a5548e7a5f60d9882fdfb4fb6eb777ab993e121
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.openlocfilehash: bede53ef2bc05750be21f831fc0cb790a001c6c5
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58916008"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549343"
 ---
 # <a name="advanced-certificate-signing-options-in-the-saml-token-for-gallery-apps-in-azure-active-directory"></a>Расширенные параметры подписи сертификата в маркере SAML для приложений коллекции в Azure Active Directory
 
@@ -49,7 +49,7 @@ Azure AD поддерживает два алгоритма подписыван
 
 * **SHA-1**. Этот алгоритм является более ранней, и он считается меньшей безопасной, чем SHA-256. Если приложение поддерживает только этот алгоритм подписывания, его можно выбрать из раскрывающегося списка **Алгоритм подписывания**. В этом случае Azure AD будет подписывать ответы SAML с помощью алгоритма SHA-1.
 
-## <a name="change-the-certificate-signing-options-and-certificate-signing-algorithm"></a>Изменить параметры подписи сертификата и алгоритм подписывания сертификатов
+## <a name="change-certificate-signing-options-and-signing-algorithm"></a>Изменить сертификат, параметры подписывания и алгоритм подписи
 
 Чтобы изменить параметры подписи сертификата приложения SAML и алгоритм подписывания сертификатов, выберите приложение в вопросе:
 
@@ -82,4 +82,4 @@ Azure AD поддерживает два алгоритма подписыван
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка единого входа для приложений, которых нет в коллекции приложений Azure Active Directory](configure-federated-single-sign-on-non-gallery-applications.md)
-* [Устранение неполадок на основе SAML единого входа](../develop/howto-v1-debug-saml-sso-issues.md)
+* [Устранение неполадок единого входа на основе SAML](../develop/howto-v1-debug-saml-sso-issues.md)

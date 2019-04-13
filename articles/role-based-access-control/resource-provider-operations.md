@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 04/01/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 3eed2bbb03334fed41bf0c74b1c287d9ca3f53eb
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.openlocfilehash: 6c3accdd74ce3277181f6cdfc890de0d8c55bf07
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59501473"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549545"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -47,7 +47,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftaadiam"></a>microsoft.aadiam
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | microsoft.aadiam/diagnosticsettings/delete | Удаление параметра диагностики. |
 > | Действие | microsoft.aadiam/diagnosticsettings/read | Чтение параметра диагностики. |
@@ -69,7 +69,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftadhybridhealthservice"></a>Microsoft.ADHybridHealthService
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.ADHybridHealthService/addsservices/action | Создает лес для клиента. |
 > | Действие | Microsoft.ADHybridHealthService/addsservices/addomainservicemembers/read | Получает все серверы для указанного имени службы. |
@@ -400,7 +400,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftauthorization"></a>Microsoft.Authorization
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.Authorization/classicAdministrators/delete | Удаляет учетные данные администратора из подписки. |
 > | Действие | Microsoft.Authorization/classicAdministrators/operationstatuses/read | Получает сведения о состоянии операции администратора подписки. |
@@ -435,7 +435,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftautomation"></a>Microsoft.Automation
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.Automation/automationAccounts/agentRegistrationInformation/read | Чтение сведений о регистрации Azure Automation DSC. |
 > | Действие | Microsoft.Automation/automationAccounts/agentRegistrationInformation/regenerateKey/action | Запись запроса на повторное создание ключей Azure Automation DSC. |
@@ -552,7 +552,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftazureactivedirectory"></a>Microsoft.AzureActiveDirectory
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.AzureActiveDirectory/b2cDirectories/delete | Удаление ресурса каталога B2C. |
 > | Действие | Microsoft.AzureActiveDirectory/b2cDirectories/read | Просмотр ресурса каталога B2C. |
@@ -644,7 +644,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftblueprint"></a>Microsoft.Blueprint
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.Blueprint/blueprintAssignments/assignmentOperations/read | Чтение артефактов схемы. |
 > | Действие | Microsoft.Blueprint/blueprintAssignments/delete | Удаление любых артефактов схемы. |
@@ -666,7 +666,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftbotservice"></a>Microsoft.BotService
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.BotService/botServices/channels/delete | Удаление службы бота. |
 > | Действие | Microsoft.BotService/botServices/channels/read | Чтение службы бота. |
@@ -683,7 +683,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftcache"></a>Microsoft.Cache
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.Cache/checknameavailability/action | Проверяет, доступно ли имя для нового кэша Redis. |
 > | Действие | Microsoft.Cache/locations/operationresults/read | Получение результата длительных операций, для которых заголовок Location был ранее возвращен клиенту. |
@@ -949,7 +949,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftclassicnetwork"></a>Microsoft.ClassicNetwork
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.ClassicNetwork/expressroutecrossconnections/operationstatuses/read | Получение состояния операции для перекрестных подключений ExpressRoute. |
 > | Действие | Microsoft.ClassicNetwork/expressroutecrossconnections/peerings/delete | Удаление пиринга перекрестных подключений ExpressRoute. |
@@ -1074,7 +1074,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftcognitiveservices"></a>Microsoft.CognitiveServices
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | DataAction | Microsoft.CognitiveServices/accounts/ComputerVision/analyze/action | Эта операция извлекает широкий набор функций языка visual на основе содержимого образа.  |
 > | DataAction | Microsoft.CognitiveServices/accounts/ComputerVision/areaofinterest/action | Эта операция возвращает ограничивающий прямоугольник вокруг наиболее важные области изображения. |
@@ -1092,57 +1092,43 @@ ms.locfileid: "59501473"
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/facelists/delete | Удаление лиц указанного списка. Связанные лица изображений в списке лиц будут удалены, слишком. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/facelists/persistedfaces/delete | Удалите фрагмент из списка лиц, указанный faceListId и persisitedFaceId. Связанные изображения будут удалены, слишком. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/facelists/persistedfaces/write | Добавьте фрагмент списка указанного лиц, не более 1000 лиц. |
-> | DataAction | Microsoft.CognitiveServices/accounts/Face/facelists/read | Получить список лиц faceListId, имя, userData и лиц, в списке лиц.
-Список faceListId списки лиц, имя и userData. |
-> | DataAction | Microsoft.CognitiveServices/accounts/Face/facelists/write | Создание списка пустой лиц с помощью пользовательской faceListId, имя и необязательное userData. До 64 лиц допускаются списков
-Обновление сведений о список лиц, включая имя и userData. |
+> | DataAction | Microsoft.CognitiveServices/accounts/Face/facelists/read | Получить список лиц faceListId, имя, userData и лиц, в списке лиц. Список faceListId списки лиц, имя и userData. |
+> | DataAction | Microsoft.CognitiveServices/accounts/Face/facelists/write | Создание списка пустой лиц с помощью пользовательской faceListId, имя и необязательное userData. До 64 лиц списки разрешены сведения об обновлении список лиц, включая имя и userData. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/findsimilars/action | Учитывая faceId лиц запроса, чтобы найти похожие лица из массива faceId, список лиц или большой лицевой. faceId |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/group/action | Разделите по сходству лиц кандидата лиц. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/identify/action | 1-ко многим код для поиска ближайшего поверхности конкретного запроса пользователя из группы пользователя или группы больших person. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/largefacelists/delete | Удаление указанного большого лиц списка. Связанные лица изображений в списке больших лиц будут удалены, слишком. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/largefacelists/persistedfaces/delete | Удалите фрагмент из списка больших лиц, указанный largeFaceListId и persisitedFaceId. Связанные изображения будут удалены, слишком. |
-> | DataAction | Microsoft.CognitiveServices/accounts/Face/largefacelists/persistedfaces/read | Получить сохраненных лиц в списке больших лиц, largeFaceListId и persistedFaceId.
-Список persistedFaceId и userData в указанный большой лицевой список лиц. |
-> | DataAction | Microsoft.CognitiveServices/accounts/Face/largefacelists/persistedfaces/write | Добавьте фрагмент к списку указанный большой лицевой до 1 000 000 лиц.
-Обновите поля userData указанный фрагмент в списке больших лиц, его persistedFaceId. |
-> | DataAction | Microsoft.CognitiveServices/accounts/Face/largefacelists/read | Получите список больших лиц largeFaceListId "," имя "," userData.
-Список сведений списки большой лицевой largeFaceListId "," имя "и" userData. |
+> | DataAction | Microsoft.CognitiveServices/accounts/Face/largefacelists/persistedfaces/read | Получить сохраненных лиц в списке больших лиц, largeFaceListId и persistedFaceId. Список persistedFaceId и userData в указанный большой лицевой список лиц. |
+> | DataAction | Microsoft.CognitiveServices/accounts/Face/largefacelists/persistedfaces/write | Добавьте фрагмент к списку указанный большой лицевой до 1 000 000 лиц. Обновите поля userData указанный фрагмент в списке больших лиц, его persistedFaceId. |
+> | DataAction | Microsoft.CognitiveServices/accounts/Face/largefacelists/read | Получите список больших лиц largeFaceListId "," имя "," userData. Список сведений списки большой лицевой largeFaceListId "," имя "и" userData. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/largefacelists/train/action | Отправьте задачей обучения списка больших лиц. Обучение является ключевым этапом, можно использовать только список обученной больших лиц. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/largefacelists/training/read | Чтобы проверить состояние обучение списка большой лицевой завершенные или по-прежнему постоянная. Обучение LargeFaceList является асинхронной операцией |
-> | DataAction | Microsoft.CognitiveServices/accounts/Face/largefacelists/write | Создание списка пустой большой лиц с помощью пользовательской largeFaceListId, имя и необязательное userData.
-Обновите информацию списка больших лиц, включая имя и userData. |
+> | DataAction | Microsoft.CognitiveServices/accounts/Face/largefacelists/write | Создание списка пустой большой лиц с помощью пользовательской largeFaceListId, имя и необязательное userData. Обновите информацию списка больших лиц, включая имя и userData. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/delete | Удаление существующей группы больших пользователя с указанным personGroupId. Материализованные данные в эту группу больших лица будут удалены. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/persons/action | Создание нового пользователя в группе указанного больших лица. Чтобы добавить лицо этого человека, обратитесь в |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/persons/delete | Удалите его из группы больших person. Все сохраненные данные пользователя и изображений лиц в записи пользователя будут удалены. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/persons/persistedfaces/delete | Удалите фрагмент от лица в группе большого person. Данные лиц и изображения, связанные с этим элементом лиц будут также удалены. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/persons/persistedfaces/read | Получить сведения о менеджере лиц. LargePersonGroupId, personId и persistedFaceId указывается лиц материализованных person. |
-> | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/persons/persistedfaces/write | Добавьте образ лиц человека в больших лица группу для подтверждения или идентификацию лиц. Для работы с изображением
-Обновление пользователя сохраняются поле userData лиц. |
-> | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/persons/read | Получить имя пользователя и userData и сохраненные faceIds, представляющий изображение лиц зарегистрированного пользователя.
-Просмотреть сведения о всех лиц в указанное лицо больших групп, включая personId "," имя "," userData "и" persistedFaceIds. |
+> | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/persons/persistedfaces/write | Добавьте образ лиц человека в больших лица группу для подтверждения или идентификацию лиц. Для работы с изображением обновления человека сохраняются поле userData лиц по. |
+> | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/persons/read | Получить имя пользователя и userData и сохраненные faceIds, представляющий изображение лиц зарегистрированного пользователя. Просмотреть сведения о всех лиц в указанное лицо больших групп, включая personId "," имя "," userData "и" persistedFaceIds. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/persons/write | Обновить имя или userData человека. |
-> | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/read | Получите сведения о больших person группы, включая его имя и userData. Этот API возвращает большой пользователя сведения о группе
-Список всех существующих больших групп в largePesonGroupId, имя и userData. |
+> | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/read | Получите сведения о больших person группы, включая его имя и userData. Этот API возвращает большой лица группу сведения список всех существующих largePesonGroupId person больших групп, имя и userData. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/train/action | Отправьте задачу больших лица группу обучения. Обучение является ключевым этапом, можно использовать только группе обученной больших person. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/training/read | Для проверки больших лица группу обучения состояния завершенного или по-прежнему постоянная. Обучение LargePersonGroup является асинхронной операцией |
-> | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/write | Создайте группу больших person с largePersonGroupId определяемое пользователем имя и необязательное userData.
-Обновите имя существующей группы больших person и userData. Свойства оставьте без изменений, если они не в тексте запроса. |
+> | DataAction | Microsoft.CognitiveServices/accounts/Face/largepersongroups/write | Создайте группу больших person с largePersonGroupId определяемое пользователем имя и необязательное userData. Обновите имя существующей группы больших person и userData. Свойства оставьте без изменений, если они не в тексте запроса. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/delete | Удаление существующей группы пользователя с указанным personGroupId. Материализованные данные в эту группу пользователя будут удалены. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/persons/action | Создание нового пользователя в группе указанному пользователю. Чтобы добавить лицо этого человека, обратитесь в |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/persons/delete | Удалите его из группы пользователя. Все сохраненные данные пользователя и изображений лиц в записи пользователя будут удалены. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/persons/persistedfaces/delete | Удалите фрагмент от лица пользователя группы. Данные лиц и изображения, связанные с этим элементом лиц будут также удалены. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/persons/persistedfaces/read | Получить сведения о менеджере лиц. PersonGroupId, personId и persistedFaceId указывается лиц материализованных person. |
-> | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/persons/persistedfaces/write | Добавьте образ лиц в группу пользователя для подтверждения или идентификацию лиц человека. Для работы с изображением нескольких
-Обновление пользователя сохраняются поле userData лиц. |
-> | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/persons/read | Получить имя пользователя и userData и сохраненные faceIds, представляющий изображение лиц зарегистрированного пользователя.
-Просмотреть сведения о всех лиц в группе указанному пользователю, включая personId "," имя "," userData "и" persistedFaceIds из регистрации. |
+> | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/persons/persistedfaces/write | Добавьте образ лиц в группу пользователя для подтверждения или идентификацию лиц человека. Для работы с изображением нескольких обновления человека сохраняются поле userData лиц. |
+> | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/persons/read | Получить имя пользователя и userData и сохраненные faceIds, представляющий изображение лиц зарегистрированного пользователя. Просмотреть сведения о всех лиц в группе указанному пользователю, включая personId "," имя "," userData "и" persistedFaceIds из регистрации. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/persons/write | Обновить имя или userData человека. |
-> | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/read | Чтобы получить имя группы и userData. Чтобы получить сведения о менеджере под этой каждой группе людей, используйте
-Список pesonGroupId групп пользователя, имя и userData. |
+> | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/read | Чтобы получить имя группы и userData. Чтобы получить сведения о менеджере под этой каждой группе людей, используйте pesonGroupId person групп списка, имя и userData. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/train/action | Отправьте задачу обучение пользователя группы. Обучение является ключевым этапом, можно использовать только группе обученной person. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/training/read | Чтобы проверить person группы обучения состояние завершенного или по-прежнему постоянная. Каждой группе людей обучения является асинхронной операцией активации |
-> | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/write | Создайте группу пользователя с указанным personGroupId, именем и предоставляемое пользователем userData.
-Обновите имя и userData существующую группу пользователя. Свойства оставьте без изменений, если они не в тексте запроса. |
+> | DataAction | Microsoft.CognitiveServices/accounts/Face/persongroups/write | Создайте группу пользователя с указанным personGroupId, именем и предоставляемое пользователем userData. Обновите имя и userData существующую группу пользователя. Свойства оставьте без изменений, если они не в тексте запроса. |
 > | DataAction | Microsoft.CognitiveServices/accounts/Face/verify/action | Проверьте ли два портрета принадлежат одному человеку или от того, принадлежит ли одной грани пользователю. |
 > | Действие | Microsoft.CognitiveServices/accounts/listKeys/action | Список ключей |
 > | DataAction | Microsoft.CognitiveServices/accounts/LUIS/predict/action | Получает прогноз опубликованной конечной точке для данного запроса. |
@@ -1162,7 +1148,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftcommerce"></a>Microsoft.Commerce
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.Commerce/RateCard/read | Возвращает данные предложения, метаданные ресурсов и единиц измерения и тарифы для заданной подписки. |
 > | Действие | Microsoft.Commerce/UsageAggregates/read | Извлекает данные о потреблении ресурсов Microsoft Azure по подписке. Результат содержит статистические данные об использовании, а также сведения о подписке и ресурсах за определенный диапазон времени. |
@@ -1170,7 +1156,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftcompute"></a>Microsoft.Compute;
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.Compute/availabilitySets/delete | Удаляет группу доступности. |
 > | Действие | Microsoft.Compute/availabilitySets/read | Получение свойств группы доступности |
@@ -1445,7 +1431,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftcontentmoderator"></a>Microsoft.ContentModerator
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.ContentModerator/applications/delete | Операция удаления. |
 > | Действие | Microsoft.ContentModerator/applications/listSecrets/action | Выводит список секретов. |
@@ -1596,7 +1582,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftdataboxedge"></a>Microsoft.DataBoxEdge
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/alerts/read | Выводит список оповещений или возвращает их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/alerts/read | Выводит список оповещений или возвращает их |
@@ -1676,7 +1662,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftdatafactory"></a>Microsoft.DataFactory
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.DataFactory/checkazuredatafactorynameavailability/read | Проверяет, доступно ли имя фабрики данных для использования. |
 > | Действие | Microsoft.DataFactory/datafactories/activitywindows/read | Считывает окна действий в фабрике данных с указанными параметрами. |
@@ -1785,7 +1771,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftdatalakeanalytics"></a>Microsoft.DataLakeAnalytics
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.DataLakeAnalytics/accounts/computePolicies/delete | Удаление политики вычислений. |
 > | Действие | Microsoft.DataLakeAnalytics/accounts/computePolicies/read | Получение сведений о политике вычислений. |
@@ -1850,7 +1836,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftdatamigration"></a>Microsoft.DataMigration
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.DataMigration/locations/operationResults/read | Получение состояния длительной операции, связанной с ответом 202 (принято) |
 > | Действие | Microsoft.DataMigration/locations/operationStatuses/read | Получение состояния длительной операции, связанной с ответом 202 (принято) |
@@ -1885,7 +1871,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftdbformariadb"></a>Microsoft.DBforMariaDB
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.DBforMariaDB/locations/performanceTiers/read | Получение списка доступных уровней производительности. |
 > | Действие | Microsoft.DBforMariaDB/performanceTiers/read | Получение списка доступных уровней производительности. |
@@ -1912,7 +1898,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.DBforMySQL/locations/performanceTiers/read | Получение списка доступных уровней производительности. |
 > | Действие | Microsoft.DBforMySQL/performanceTiers/read | Получение списка доступных уровней производительности. |
@@ -1941,7 +1927,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.DBforPostgreSQL/locations/performanceTiers/read | Получение списка доступных уровней производительности. |
 > | Действие | Microsoft.DBforPostgreSQL/performanceTiers/read | Получение списка доступных уровней производительности. |
@@ -1975,7 +1961,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftdevices"></a>Microsoft.Devices
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.Devices/checkNameAvailability/Action | Проверяет, доступно ли имя Центра Интернета вещей. |
 > | Действие | Microsoft.Devices/checkProvisioningServiceNameAvailability/Action | Проверяет, доступно ли имя службы подготовки. |
@@ -2063,7 +2049,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftdevspaces"></a>Microsoft.DevSpaces
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.DevSpaces/controllers/delete | Удаление контроллера Azure Dev Spaces Controller и служб плоскости данных |
 > | Действие | Microsoft.DevSpaces/controllers/listConnectionDetails/action | Сведения о подключении списка для инфраструктуры контроллера Azure Dev Spaces |
@@ -2074,7 +2060,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftdevtestlab"></a>Microsoft.DevTestLab
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.DevTestLab/labCenters/delete | Удаление центров лабораторий. |
 > | Действие | Microsoft.DevTestLab/labCenters/read | Чтение центров лабораторий. |
@@ -2255,7 +2241,7 @@ ms.locfileid: "59501473"
 ## <a name="microsofteventgrid"></a>Microsoft.EventGrid
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.EventGrid/domains/delete | Удаление домена |
 > | Действие | Microsoft.EventGrid/domains/listKeys/action | Получение списка ключей для домена |
@@ -2371,7 +2357,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftguestconfiguration"></a>Microsoft.GuestConfiguration
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.GuestConfiguration/guestConfigurationAssignments/read | Получение назначения конфигурации гостевой системы. |
 > | Действие | Microsoft.GuestConfiguration/guestConfigurationAssignments/reports/read | Получение отчета о назначении конфигурации гостевой системы. |
@@ -2380,7 +2366,7 @@ ms.locfileid: "59501473"
 ## <a name="microsofthdinsight"></a>Microsoft.HDInsight
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.HDInsight/clusters/applications/delete | Удаление приложения для кластера HDInsight |
 > | Действие | Microsoft.HDInsight/clusters/applications/read | Получение приложения для кластера HDInsight |
@@ -2404,7 +2390,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftimportexport"></a>Microsoft.ImportExport
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.ImportExport/jobs/delete | Удаляет существующее задание. |
 > | Действие | Microsoft.ImportExport/jobs/listBitLockerKeys/action | Возвращает ключи BitLocker для указанного задания. |
@@ -2416,7 +2402,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftinsights"></a>Microsoft.Insights
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.Insights/ActionGroups/Delete | Удаление группы действий. |
 > | Действие | Microsoft.Insights/ActionGroups/Read | Чтение группы действий. |
@@ -2724,7 +2710,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftkeyvault"></a>Microsoft.KeyVault
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.KeyVault/checkNameAvailability/read | Проверяет, является ли имя Key Vault допустимым и неиспользуемым. |
 > | Действие | Microsoft.KeyVault/deletedVaults/read | Отображает свойства обратимо удаленных хранилищ Key Vault. |
@@ -2753,7 +2739,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftkusto"></a>Microsoft.Kusto
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.Kusto/Clusters/Activate/action | Кластер запускается. |
 > | Действие | Microsoft.Kusto/Clusters/CheckNameAvailability/action | Проверяет доступность имени кластера. |
@@ -2789,7 +2775,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftlabservices"></a>Microsoft.LabServices
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.LabServices/labAccounts/CreateLab/action | Создание лаборатории в учетной записи лаборатории. |
 > | Действие | Microsoft.LabServices/labAccounts/delete | Удаление учетных записей лабораторий. |
@@ -3160,7 +3146,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftmachinelearningcompute"></a>Microsoft.MachineLearningCompute
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.MachineLearningCompute/operationalizationClusters/checkUpdate/action | Проверка наличия обновлений для системных служб кластера операционализации. |
 > | Действие | Microsoft.MachineLearningCompute/operationalizationClusters/delete | Удаление учетной записи размещения. |
@@ -3214,7 +3200,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftmanagedlab"></a>Microsoft.ManagedLab
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.ManagedLab/labAccounts/CreateLab/action | Создание лаборатории в учетной записи лаборатории. |
 > | Действие | Microsoft.ManagedLab/labAccounts/delete | Удаление учетных записей лабораторий. |
@@ -3281,7 +3267,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftmarketplaceapps"></a>Microsoft.MarketplaceApps
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.MarketplaceApps/ClassicDevServices/delete | Выполнение операции DELETE в ресурсе классической службы разработки. |
 > | Действие | Microsoft.MarketplaceApps/ClassicDevServices/listSecrets/action | Получение ключей управления для ресурса классической службы разработки. |
@@ -3305,7 +3291,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftmedia"></a>Microsoft.Media
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.Media/checknameavailability/action | Проверка доступности имени учетной записи служб мультимедиа. |
 > | Действие | Microsoft.Media/locations/checkNameAvailability/action | Проверка доступности имени учетной записи служб мультимедиа. |
@@ -3416,7 +3402,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftnetapp"></a>Microsoft.NetApp
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.NetApp/locations/operationresults/read | Чтение ресурса результата операции. |
 > | Действие | Microsoft.NetApp/locations/read | Чтение ресурса проверки доступности. |
@@ -3921,7 +3907,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftoperationalinsights"></a>Microsoft.OperationalInsights
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.OperationalInsights/linkTargets/read | Выводит список существующих учетных записей, которые не связаны с подпиской Azure. Чтобы связать эту подписку Azure с рабочей областью, укажите идентификатор клиента, возвращаемый этой операцией, в свойстве идентификатора клиента в операции создания рабочей области. |
 > | Действие | microsoft.operationalinsights/operations/read | Отображение списка всех доступных операций REST API OperationalInsights. |
@@ -4173,7 +4159,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftpolicyinsights"></a>Microsoft.PolicyInsights
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.PolicyInsights/asyncOperationResults/read | Получает результат асинхронной операции. |
 > | Действие | Microsoft.PolicyInsights/policyEvents/queryResults/action | Запрашивает сведения о событиях политики. |
@@ -4211,7 +4197,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftpowerbidedicated"></a>Microsoft.PowerBIDedicated
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.PowerBIDedicated/capacities/delete | Удаление выделенной емкости Power BI. |
 > | Действие | Microsoft.PowerBIDedicated/capacities/read | Извлечение сведений об указанной выделенной емкости Power BI. |
@@ -4401,7 +4387,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftrelay"></a>Microsoft.Relay
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.Relay/checkNameAvailability/action | Проверяет доступность пространства имен в заданной подписке. |
 > | Действие | Microsoft.Relay/checkNamespaceAvailability/action | Проверяет доступность пространства имен в заданной подписке. Этот API не рекомендуется. Вместо него используйте CheckNameAvailability. |
@@ -4513,7 +4499,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftscheduler"></a>Microsoft.Scheduler
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.Scheduler/jobcollections/delete | Удаляет коллекцию заданий. |
 > | Действие | Microsoft.Scheduler/jobcollections/disable/action | Отключает коллекцию заданий. |
@@ -4530,7 +4516,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftsearch"></a>Microsoft.Search
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.Search/checkNameAvailability/action | Проверяет доступность имени службы. |
 > | Действие | Microsoft.Search/operations/read | Выводит список всех доступных операций поставщика Microsoft.Search. |
@@ -4549,7 +4535,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftsecurity"></a>Microsoft.Security
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.Security/advancedThreatProtectionSettings/read | Получает параметры расширенной защиты от угроз для ресурса. |
 > | Действие | Microsoft.Security/advancedThreatProtectionSettings/write | Обновляет параметры расширенной защиты от угроз для ресурса. |
@@ -4723,7 +4709,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftsignalrservice"></a>Microsoft.SignalRService
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.SignalRService/locations/checknameavailability/action | Проверяет, доступно ли имя для новой службы SignalR. |
 > | Действие | Microsoft.SignalRService/locations/operationresults/signalr/read | Запрос состояния асинхронной операции. |
@@ -4745,7 +4731,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftsolutions"></a>Microsoft.Solutions
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.Solutions/applicationDefinitions/applicationArtifacts/read | Список артефактов приложения определения приложения. |
 > | Действие | Microsoft.Solutions/applicationDefinitions/delete | Удаление определения приложения. |
@@ -5174,7 +5160,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftstoragesync"></a>Microsoft.StorageSync
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | microsoft.storagesync/locations/checkNameAvailability/action | Проверяет, является ли имя службы синхронизации хранилища допустимым и неиспользуемым. |
 > | Действие | microsoft.storagesync/locations/workflows/operations/read | Возвращает состояние асинхронной операции. |
@@ -5386,7 +5372,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftstreamanalytics"></a>Microsoft.StreamAnalytics
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.StreamAnalytics/locations/quotas/Read | Чтение квоты подписки Stream Analytics. |
 > | Действие | Microsoft.StreamAnalytics/operations/Read | Чтение операций Stream Analytics. |
@@ -5436,7 +5422,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftsupport"></a>Microsoft.Support
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.Support/register/action | Выполняет регистрацию в поставщике ресурсов поддержки. |
 > | Действие | Microsoft.Support/supportTickets/read | Возвращает подробные сведения о запросе в службу поддержки (включая состояние, серьезность, контактную информацию и сообщения) или возвращает список запросов в службу поддержки в подписках. |
@@ -5465,7 +5451,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftvisualstudio"></a>Microsoft.VisualStudio
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.VisualStudio/Account/Delete | Удаление учетной записи. |
 > | Действие | Microsoft.VisualStudio/Account/Extension/Read | Считывает учетную запись или расширение. |
@@ -5887,7 +5873,7 @@ ms.locfileid: "59501473"
 ## <a name="microsoftworkloadmonitor"></a>Microsoft.WorkloadMonitor
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
+> | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.WorkloadMonitor/components/read | Возвращает компоненты ресурса. |
 > | Действие | Microsoft.WorkloadMonitor/componentsSummary/read | Возвращает сводки компонентов. |
@@ -5902,4 +5888,4 @@ ms.locfileid: "59501473"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Пользовательские роли для ресурсов Azure](custom-roles.md)
-- [Встроенные роли для ресурсов Azure](built-in-roles.md)
+- [Встроенные роли управления доступом на основе ролей в Azure](built-in-roles.md)

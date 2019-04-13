@@ -12,19 +12,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 9daa7fc15ecbb4065c8d26bb5cefa27f17f66f4d
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: c57a45145d9abc43d0ca79839ea297dfc025db9b
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58878280"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59524095"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-as-default-storage-by-using-powershell"></a>Создание кластеров HDInsight, использующих Azure Data Lake Storage 1-го поколения в качестве хранилища по умолчанию, с помощью PowerShell
 
 > [!div class="op_single_selector"]
 > * [Использование портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
-> * [С помощью PowerShell (для хранилища по умолчанию)](data-lake-store-hdinsight-hadoop-use-powershell-for-default-storage.md)
-> * [С помощью PowerShell (для дополнительного хранилища)](data-lake-store-hdinsight-hadoop-use-powershell.md)
+> * [Использование PowerShell (для хранилища по умолчанию)](data-lake-store-hdinsight-hadoop-use-powershell-for-default-storage.md)
+> * [Использование PowerShell (для дополнительного хранилища)](data-lake-store-hdinsight-hadoop-use-powershell.md)
 > * [Использование Resource Manager](data-lake-store-hdinsight-hadoop-use-resource-manager-template.md)
 
 Узнайте, как с помощью Azure PowerShell настроить кластеры Azure HDInsight, использующие Azure Data Lake Storage 1-го поколения в качестве хранилища по молчанию. Инструкции по созданию кластера HDInsight, использующего Data Lake Storage 1-го поколения в качестве дополнительного хранилища, см. в статье [Создание кластера HDInsight с Data Lake Storage 1-го поколения (как дополнительное хранилище) с помощью Azure PowerShell](data-lake-store-hdinsight-hadoop-use-powershell.md).
@@ -215,7 +215,7 @@ ms.locfileid: "58878280"
     После успешного выполнения командлетов должны отобразиться сведения о кластере.
 
 ## <a name="run-test-jobs-on-the-hdinsight-cluster-to-use-data-lake-storage-gen1"></a>Выполнение тестовых заданий в кластере HDInsight для использования Data Lake Storage 1-го поколения
-После настройки кластера HDInsight выполните в нем тестовые задания, чтобы проверить, может ли он использовать Data Lake Storage 1-го поколения. Для этого выполните пример задания Hive, чтобы создать таблицу, использующую демонстрационные данные, которые уже доступны в Data Lake Storage 1-го поколения в расположении *<cluster root>/example/data/sample.log*.
+После настройки кластера HDInsight выполните в нем тестовые задания, чтобы проверить, может ли он использовать Data Lake Storage 1-го поколения. Чтобы сделать это, запустите образец задания Hive, чтобы создать таблицу, использующую демонстрационные данные, которые уже доступны в поколение 1 хранилища Озера данных в  *\<корня кластера > /example/data/sample.log*.
 
 Следуя инструкциям в этом разделе, вы подключитесь по протоколу Secure Shell (SSH) к созданному кластеру HDInsight на платформе Linux и выполните пример запроса Hive.
 
@@ -255,7 +255,7 @@ ms.locfileid: "58878280"
 
 ## <a name="see-also"></a>См. также
 * [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight/hdinsight-hadoop-use-data-lake-store.md)
-* [Портал Azure: Создание кластера HDInsight для использования Gen1 хранилища Озера данных](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Портал Azure: создание кластера HDInsight для работы с Data Lake Storage 1-го поколения](data-lake-store-hdinsight-hadoop-use-portal.md)
 
 [makecert]: https://msdn.microsoft.com/library/windows/desktop/ff548309(v=vs.85).aspx
 [pvk2pfx]: https://msdn.microsoft.com/library/windows/desktop/ff550672(v=vs.85).aspx

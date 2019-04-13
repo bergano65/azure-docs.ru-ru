@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
-ms.openlocfilehash: 3aa39568904cb0acc9b5b76ff7e07729bf99d6b1
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: e89a4675f867e53c499bb82b239ddb9bec1aed6f
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59278604"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59521208"
 ---
 # <a name="using-the-azure-maps-services-module"></a>С помощью модуля службы Azure Maps
 
@@ -24,7 +24,7 @@ SDK веб-карты Azure предоставляет службы модуля
 1. Создайте HTML-файл.
 2. Загрузить в модуле сопоставления служб Azure. Это можно сделать с помощью одного из двух параметров.
 
-    1. Использовать CDN глобально размещенную версию модуля службы "карты Azure", добавив ссылку на скрипт <head> элемент файла:
+    a. Использовать CDN глобально размещенную версию модуля службы "карты Azure", добавив ссылку на скрипт `<head>` элемент файла:
     
     ```html
     <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas-service.min.js"></script>
@@ -183,7 +183,7 @@ SDK веб-карты Azure предоставляет службы модуля
 Ознакомьтесь со следующими статьями, Дополнительные примеры кода для использования модуля служб:
 
 > [!div class="nextstepaction"]
-> [Отображение результатов поиска на карте](./map-search-location.md)
+> [Показать результаты поиска на карте](./map-search-location.md)
 
 > [!div class="nextstepaction"]
 > [Получение сведений на основе координат](./map-get-information-from-coordinate.md)
