@@ -17,12 +17,12 @@ ms.author: celested
 ms.reviewer: zachowd, lenalepa, jesakowi
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0200aa917894f4b7f1a45a9d3bd15b128aaf27a2
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: f01555933ca8b3d0c48a956d3deb4b3356b4e1a2
+ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58124190"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59564964"
 ---
 # <a name="azure-active-directory-consent-framework"></a>Платформа предоставления согласия Azure Active Directory
 
@@ -46,7 +46,7 @@ ms.locfileid: "58124190"
 
 1. Если пользователь еще не выполнил проверку подлинности, конечная точка `/authorize` Azure AD запросит данные пользователя для входа.
 
-    [Вход пользователя или администратора в Azure AD](./media/quickstart-v1-integrate-apps-with-azure-ad/usersignin.png)
+    ![Вход пользователя или администратора в Azure AD](./media/quickstart-v1-integrate-apps-with-azure-ad/usersignin.png)
 
 1. После входа Azure AD определяет, требуется ли отобразить этому пользователю страницу согласия. Принятие этого решения основано на том, дал ли этот пользователь (или администратор его организации) свое согласие для приложения. Если согласие еще не было дано, Azure AD запрашивает у пользователя согласие и отображает необходимые для этого разрешения. В диалоговом окне согласия отображается тот же набор разрешений, который совпадает с набором **Делегированные разрешения** на портале Azure.
 

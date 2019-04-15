@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 04/10/2019
 ms.author: juergent
-ms.openlocfilehash: d47c64fb8b148e39eab09a33c3241ac7dd3ea537
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: 3c1d0e252b5c658ab6da2b3932918f05ba651d52
+ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59502133"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59565807"
 ---
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
 [2015553]:https://launchpad.support.sap.com/#/notes/2015553
@@ -136,7 +136,7 @@ HADR является только функциональные возможно
     
 Дополнительные сведения об использовании Linux Pacemaker в Azure можно найти в следующих статьях:
 
-- [Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker)
+- [Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker)
 
 
 
@@ -538,7 +538,7 @@ stonith-sbd     (stonith:external/sbd): Started azibmdb02
 
 
 > [!IMPORTANT] 
-> Перед началом теста убедитесь, что Pacemaker не поддерживает все завершившиеся сбоем действия (crm status) и нет никаких ограничений расположение (leftovers теста миграции) и работоспособности синхронизации IBM Db2 HADR. Уточните db2 пользователя с\<ИД безопасности > <pre><code>db2pd -hadr -db \<DBSID></code></pre>
+> Перед началом теста убедитесь, что Pacemaker не поддерживает все завершившиеся сбоем действия (crm status) и нет никаких ограничений расположение (leftovers теста миграции) и работоспособности синхронизации IBM Db2 HADR. Проверка с помощью db2 пользователя\<ИД безопасности > <pre><code>db2pd -hadr -db \<DBSID></code></pre>
 
 
 Миграция узла при выполнении основной базы данных Db2, выполнив следующую команду:
@@ -879,7 +879,7 @@ stonith-sbd     (stonith:external/sbd): Started azibmdb02
 ## <a name="next-steps"></a>Дальнейшие действия
 Обратитесь к этой документации:
 
-- [Высокодоступная архитектура и сценарии для SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-architecture-scenarios)
+- [Архитектура высокого уровня доступности и сценарии для SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-architecture-scenarios)
 - [Настройка кластера Pacemaker в SUSE Linux введите
 - pri
 - SE сервер в Azure])https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker)

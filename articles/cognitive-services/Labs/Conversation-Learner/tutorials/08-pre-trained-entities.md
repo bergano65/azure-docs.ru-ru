@@ -10,12 +10,12 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: f5b3234c45a9ee80bc5a2c2afe67046896270802
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: dade442cb04f79ef75e65d6eb29128b105e72b40
+ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58163792"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59565416"
 ---
 # <a name="how-to-add-pre-trained-entities"></a>Добавление предварительно обученных сущностей
 В этом руководстве описано, как добавить предварительно обученные сущности в модель Conversation Learner.
@@ -62,7 +62,7 @@ ms.locfileid: "58163792"
 
 1. Выберите **действия** на левой панели, затем **новое действие**.
 2. Введите **что такое Дата?** для **Bot ответа...** . Предварительно обученный сущностей не может быть **необходимые сущности** как они распознаются по умолчанию для всех фразы.
-3. Введите **builtin datetimev2** для **дисквалификации дает право**.
+3. Введите **builtin datetimev2** для **дисквалификации сущностей**.
 4. Нажмите кнопку **Создать**.
 
 ![](../media/T08_action_create_2.png)

@@ -6,14 +6,14 @@ author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 4/9/2019
+ms.date: 4/15/2019
 ms.author: mayg
-ms.openlocfilehash: 7f5d3ff6759cebca2f592e1cd4822ee85959ecb9
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.openlocfilehash: 2e1cbb2446501d0afda29eba179e388b5a22e6a8
+ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59361316"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59565688"
 ---
 # <a name="set-up-ip-addressing-to-connect-to-azure-vms-after-failover"></a>Настройка назначения IP-адресов для подключения к виртуальным машинам Azure после отработки отказа
 
@@ -62,7 +62,7 @@ ms.locfileid: "59361316"
 
 1. Создайте виртуальную сеть Azure, где будут созданы виртуальные машины Azure после отработки отказа локальных компьютеров. Она должна быть расширением локальной сети, чтобы приложения могли с легкостью выполнить отработку отказа.
 2. Перед отработкой отказа с помощью Site Recovery в свойствах компьютера назначается тот же IP-адрес. После отработки отказа Site Recovery назначает этот адрес виртуальной машине Azure.
-3. После запуска отработки отказа и создания виртуальных машин Azure с таким же IP-адресом для подключения к сети используется [подключение типа "виртуальная сеть — виртуальная сеть"](../vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md). Это действие можно выполнить с помощью сценария.
+3. После запуска отработки отказа и создания виртуальных машин Azure с таким же IP-адресом для подключения к сети используется [подключение типа "виртуальная сеть — виртуальная сеть"](../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md). Это действие можно выполнить с помощью сценария.
 4. Требуется изменить маршруты, чтобы отразить тот факт, что подсеть 192.168.1.0/24 теперь перемещена в Azure.
 
 

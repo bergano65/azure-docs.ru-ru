@@ -11,12 +11,12 @@ author: mx-iao
 ms.reviewer: sgilley
 ms.date: 02/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: 85910e2f422ea45b2468f20b4ff9425f64ca3cbe
-ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
+ms.openlocfilehash: 0ab01187b03b3d658b171029003667588382bd7f
+ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58793420"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59563540"
 ---
 # <a name="access-data-from-your-datastores"></a>Доступ к данным из вашего хранилища данных
 
@@ -78,7 +78,7 @@ ds = ws.get_default_datastore()
   ```Python
   ds = Datastore.register_azure_file_share(workspace=ws, 
                                            datastore_name='your datastore name', 
-                                           container_name='your file share name',
+                                           file_share_name='your file share name',
                                            account_name='your storage account name', 
                                            account_key='your storage account key',
                                            create_if_not_exists=True)
@@ -153,7 +153,7 @@ ds.download(target_path='your target path',
 
 В следующей таблице перечислены [ `DataReference` ](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py) методов, которые сообщают целевого объекта вычислений, как использовать хранилище данных во время выполнения.
 
-способ|Метод|ОПИСАНИЕ|
+способ|Метод|Описание|
 ----|-----|--------
 Подключение| [`as_mount()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-mount--)| Используйте для подключения к хранилищу данных в целевой объект вычислений.
 Download (Скачать)|[`as_download()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-)|Использовать для загрузки содержимого из хранилища данных в расположении, заданном параметром `path_on_compute`. <br> Для контекста обучающих запусках данная загрузка происходит до запуска.

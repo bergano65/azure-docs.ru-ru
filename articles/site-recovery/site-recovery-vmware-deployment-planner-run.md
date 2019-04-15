@@ -1,25 +1,25 @@
 ---
 title: Запуск Планировщика развертывания Azure Site Recovery для аварийного восстановления VMware в Azure | Документация Майкрософт
 description: В этой статье описано, как запустить Планировщик развертывания Azure Site Recovery для аварийного развертывания VMware в Azure.
-author: nsoneji
-manager: garavd
+author: mayurigupta13
+manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 4/9/2019
+ms.date: 4/15/2019
 ms.author: mayg
-ms.openlocfilehash: a3aef06e6ee0d3989a4da8fdd93d27d28f2eede4
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: 3a6c9e50804db573395984b8ba38838eb15b0792
+ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59527685"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59565433"
 ---
 # <a name="run-the-azure-site-recovery-deployment-planner-for-vmware-disaster-recovery-to-azure"></a>Запуск Планировщика развертывания Azure Site Recovery для аварийного восстановления VMware в Azure
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
 
 
 ## <a name="modes-of-running-deployment-planner"></a>Режимы запуска для планировщика развертывания
-Программу командной строки (ASRDeploymentPlanner.exe) можно запустить в любом из следующих четырех режимов:
+Программу командной строки (ASRDeploymentPlanner.exe) можно запустить в любом из следующих трех режимов:
 
 1.  [Профилирование](#profile-vmware-vms).
 2.  [Создание отчета](#generate-report).
@@ -139,7 +139,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Direc
 Планировщик создает отчет в формате XLSM (файл Microsoft Excel с поддержкой макросов). В нем содержатся все рекомендации по развертыванию. Этот отчет называется `DeploymentPlannerReport_<unique numeric identifier>.xlsm` и помещается в указанный каталог.
 
 >[!NOTE]
->В качестве десятичного разделителя для отчета необходимо выбрать точку — это требуется для проведения оценки затрат на сервере, где выполняется планировщик развертывания. Если на компьютере Windows в качестве десятичного разделителя задана запятая, выберите на панели управления раздел "Изменение даты, времени или числовых форматов", откройте "Дополнительные параметры" и измените десятичный разделитель на точку.
+>Создание отчета требуется компьютер Windows или Windows Server с Excel 2013 или более поздней версии. Десятичный разделитель на этом компьютере должен быть настроен как «.» для создания оценки затрат. В случае, если вы уже настроили «, «как десятичный разделитель, перейдите к «Изменение даты, времени или числовые форматы» панели управления и перейти к «Дополнительные настройки», чтобы изменить десятичный разделитель для».».
 
 После завершения профилирования планировщик можно запустить в режиме создания отчетов. В таблице ниже приведен список обязательных и необязательных параметров для запуска программы в режиме создания отчетов.
 

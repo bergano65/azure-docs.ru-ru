@@ -15,15 +15,15 @@ ms.workload: iaas-sql-server
 ms.date: 02/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: d5b0ff70baaba0b409cbd91ec2c68c77b98ba085
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 0a29c15be6cfb73bb768e74cd9141e660b598f06
+ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59548072"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59565671"
 ---
 # <a name="how-to-change-the-licensing-model-for-a-sql-server-virtual-machine-in-azure"></a>Изменение модели лицензирования для виртуальной машины SQL Server в Azure
-В этой статье описывается процесс, позволяющий изменить модель лицензирования для виртуальной машины SQL Server в Azure с помощью нового поставщика ресурсов виртуальной машины SQL **Microsoft.SqlVirtualMachine**. Существуют две модели для виртуальной машины (VM), где размещен SQL Server — по мере использования, лицензирования и использовать собственную лицензию (BYOL). И теперь, с помощью портала Azure или Azure CLI, можно изменить какую модель лицензирования использует виртуальную Машину SQL Server. 
+В этой статье описывается процесс, позволяющий изменить модель лицензирования для виртуальной машины SQL Server в Azure с помощью нового поставщика ресурсов виртуальной машины SQL **Microsoft.SqlVirtualMachine**. Существуют две модели для виртуальной машины (VM), где размещен SQL Server — по мере использования, лицензирования и использовать собственную лицензию (BYOL). И теперь, с помощью портала Azure, Azure CLI или PowerShell можно изменить какую модель лицензирования использует виртуальную Машину SQL Server. 
 
 **Оплаты по мере использования** модели (PAYG) означает, что стоимость секунды выполнения виртуальной Машины Azure включает в себя стоимость лицензии SQL Server.
 
@@ -36,10 +36,7 @@ ms.locfileid: "59548072"
  - Клиенты CSP могут использовать преимущества AHB, сначала развернув виртуальную машину с оплатой по мере использования, а затем преобразовав ее для использования собственной лицензии. 
  - При регистрации пользовательского образа виртуальной Машины SQL Server с поставщиком ресурсов, укажите тип лицензии = «AHUB». При этом лицензии введите как пустой либо указав «PAYG» приведет к регистрации переход на другой. 
  - Если удалить ресурс виртуальной Машины SQL Server, будет выполнен переход обратно параметр жестко лицензии изображения. 
- - Возможность изменить модель лицензирования входит в состав поставщика ресурсов виртуальной Машины SQL. Управление виртуальной Машины SQL Server на портале автоматически регистрирует виртуальную Машину SQL Server с поставщиком ресурсов. Тем не менее _некоторые_ клиентам может потребоваться вручную [зарегистрировать их виртуальной Машине SQL Server](#register-sql-server-vm-with-the-sql-vm-resource-provider) с поставщиком ресурсов, таких как:
-     - Клиенты, которые развернули их виртуальной Машине SQL Server с помощью PowerShell или интерфейса командной строки Azure. 
-     - Клиенты, которые самостоятельно установить SQL Server в образ SQL Server. 
-     - Клиенты, которые развернули их виртуальной Машины с помощью пользовательских виртуальных жестких дисков. 
+ - Возможность изменить модель лицензирования входит в состав поставщика ресурсов виртуальной Машины SQL. Развертывание образа marketplace на портале Azure автоматически регистрирует виртуальную Машину SQL Server с поставщиком ресурсов. Тем не менее клиенты, которые самостоятельно при установке SQL Server потребуется вручную [зарегистрировать их виртуальной Машине SQL Server](#register-sql-server-vm-with-the-sql-vm-resource-provider). 
 
  
 ## <a name="limitations"></a>Ограничения
@@ -90,6 +87,37 @@ az sql vm update -n <VMName> -g <ResourceGroupName> --license-type AHUB
 
 az sql vm update -n <VMName> -g <ResourceGroupName> --license-type PAYG
 ```
+## <a name="with-powershell"></a>С помощью PowerShell
+Вы можете изменить модель лицензирования с помощью PowerShell.
+
+В следующем фрагменте кода для переключения модели оплаты по мере использования лицензии BYOL (и преимущество гибридного использования Azure):
+
+```powershell
+# Switch your SQL Server VM license from pay-as-you-go to bring-your-own
+#example: $SqlVm = Get-AzResource -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines -ResourceGroupName AHBTest -ResourceName AHBTest
+$SqlVm = Get-AzResource -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines -ResourceGroupName <resource_group_name> -ResourceName <VM_name>
+$SqlVm.Properties.sqlServerLicenseType="AHUB"
+<# the following code snippet is only necessary if using Azure Powershell version > 4
+$SqlVm.Kind= "LicenseChange"
+$SqlVm.Plan= [Microsoft.Azure.Management.ResourceManager.Models.Plan]::new()
+$SqlVm.Sku= [Microsoft.Azure.Management.ResourceManager.Models.Sku]::new() #>
+$SqlVm | Set-AzResource -Force 
+```
+
+В следующем фрагменте кода модели BYOL переключается на оплату по мере использования:
+
+```powershell
+# Switch your SQL Server VM license from bring-your-own to pay-as-you-go
+#example: $SqlVm = Get-AzResource -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines -ResourceGroupName AHBTest -ResourceName AHBTest
+$SqlVm = Get-AzResource -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines -ResourceGroupName <resource_group_name> -ResourceName <VM_name>
+$SqlVm.Properties.sqlServerLicenseType="PAYG"
+<# the following code snippet is only necessary if using Azure Powershell version > 4
+$SqlVm.Kind= "LicenseChange"
+$SqlVm.Plan= [Microsoft.Azure.Management.ResourceManager.Models.Plan]::new()
+$SqlVm.Sku= [Microsoft.Azure.Management.ResourceManager.Models.Sku]::new() #>
+$SqlVm | Set-AzResource -Force 
+```
+
 
 ## <a name="register-sql-server-vm-with-the-sql-vm-resource-provider"></a>Регистрация виртуальной Машины SQL Server с поставщиком ресурсов виртуальной Машины SQL
 В некоторых случаях может потребоваться вручную зарегистрировать виртуальную Машину SQL Server с поставщиком ресурсов виртуальной Машины SQL. Для этого может потребоваться вручную зарегистрировать поставщик ресурсов в подписке. 
@@ -118,16 +146,35 @@ az sql vm update -n <VMName> -g <ResourceGroupName> --license-type PAYG
 az provider register --namespace Microsoft.SqlVirtualMachine 
 ```
 
+#### <a name="with-powershell"></a>С помощью PowerShell
+
+В следующем фрагменте кода будет зарегистрировать поставщик ресурсов SQL к своей подписке Azure.
+
+```powershell
+# Register the new SQL resource provider to your subscription
+Register-AzResourceProvider -ProviderNamespace Microsoft.SqlVirtualMachine
+```
 
 ### <a name="register-sql-server-vm-with-sql-resource-provider"></a>Регистрация виртуальной машины SQL Server в поставщике ресурсов SQL
 После регистрации поставщика ресурсов виртуальной Машины SQL к своей подписке можно затем зарегистрировать виртуальную Машину SQL Server с поставщиком ресурсов, с помощью Azure CLI. 
 
+#### <a name="with-azure-cli"></a>С помощью Azure CLI
 Зарегистрируйте виртуальную Машину SQL Server, с помощью Azure CLI на следующий фрагмент кода: 
 
 ```azurecli
 # Register your existing SQL Server VM with the new resource provider
 az sql vm create -n <VMName> -g <ResourceGroupName> -l <VMLocation>
 ```
+#### <a name="with-powershell"></a>С помощью PowerShell
+Зарегистрируйте виртуальную Машину SQL Server, с помощью PowerShell следующим фрагментом кода:
+
+```powershell
+# Register your existing SQL Server VM with the new resource provider
+# example: $vm=Get-AzVm -ResourceGroupName AHBTest -Name AHBTest
+$vm=Get-AzVm -ResourceGroupName <ResourceGroupName> -Name <VMName>
+New-AzResource -ResourceName $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $vm.Location -ResourceType Microsoft.SqlVirtualMachine/sqlVirtualMachines -Proper
+```
+
 
 
 ## <a name="known-errors"></a>Известные ошибки
@@ -145,6 +192,23 @@ az sql vm create -n <VMName> -g <ResourceGroupName> -l <VMLocation>
 
 ### <a name="the-resource-microsoftsqlvirtualmachinesqlvirtualmachinesresource-group-under-resource-group-resource-group-was-not-found-the-property-sqlserverlicensetype-cannot-be-found-on-this-object-verify-that-the-property-exists-and-can-be-set"></a>Не удалось найти ресурс «Microsoft.SqlVirtualMachine/SqlVirtualMachines/ < группа_ресурсов >» в группе ресурсов «< группа_ресурсов >». Не удалось найти свойство «sqlServerLicenseType» для этого объекта. Убедитесь, что свойство существует и можно задать.
 Эта ошибка возникает при попытке изменить модель лицензирования на виртуальную Машину SQL Server, который не был зарегистрирован с помощью поставщика ресурсов SQL. Вам потребуется зарегистрировать поставщик ресурсов должен вашей [подписки](#register-sql-vm-resource-provider-with-subscription), а затем зарегистрировать виртуальную Машину SQL Server в SQL [поставщика ресурсов](#register-sql-server-vm-with-sql-resource-provider). 
+
+### <a name="cannot-validate-argument-on-parameter-sku"></a>Не удается проверить аргумент в параметре "Sku"
+Эта ошибка возникает при попытке изменить модель лицензирования виртуальной машины SQL Server при использовании Azure PowerShell версии 4.0 или более новой: SET-AzResource: Не удается проверить аргумент в параметре «Sku». Аргумент имеет значение null или пустым. Укажите аргумент, который не является пустым или равным NULL и затем попробуйте еще раз.
+Чтобы устранить эту ошибку, раскомментируйте эти строки в приведенном выше фрагменте кода PowerShell при изменении модели лицензирования:
+
+```powershell
+# the following code snippet is necessary if using Azure Powershell version > 4
+$SqlVm.Kind= "LicenseChange"
+$SqlVm.Plan= [Microsoft.Azure.Management.ResourceManager.Models.Plan]::new()
+$SqlVm.Sku= [Microsoft.Azure.Management.ResourceManager.Models.Sku]::new()
+```
+
+Чтобы проверить версию Azure PowerShell, используйте следующий код:
+
+```powershell
+Get-Module -ListAvailable -Name Azure -Refresh
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
