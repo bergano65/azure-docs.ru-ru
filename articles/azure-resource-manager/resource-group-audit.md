@@ -1,6 +1,6 @@
 ---
 title: Просмотр журналов действий Azure для наблюдения за ресурсами | Документация Майкрософт
-description: Просмотр действий пользователя и ошибок с помощью журнала действий. Отображаются портал Azure, PowerShell, интерфейс командной строки Azure и REST.
+description: Просмотр действий пользователя и ошибок с помощью журналов действий. Отображаются портал Azure, PowerShell, интерфейс командной строки Azure и REST.
 services: azure-resource-manager
 documentationcenter: ''
 author: tfitzmac

@@ -134,7 +134,7 @@ ContainerInstanceLog_CL
 
 ### <a name="azure-monitor-logs"></a>Журналы Azure Monitor
 
-Дополнительные сведения о запросах по журналам и настройке предупреждений в Журналах Azure Monitor см. в следующих статьях:
+Дополнительные сведения о запросах по журналам и настройке предупреждений в журналах Azure Monitor см. в следующих статьях:
 
 * [Анализ данных журнала в Azure Monitor](../log-analytics/log-analytics-log-search.md)
 * [Новые возможности оповещений в Azure Monitor](../azure-monitor/platform/alerts-overview.md)

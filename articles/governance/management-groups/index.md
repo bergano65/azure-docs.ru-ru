@@ -1,12 +1,18 @@
 ---
-title: "Упорядочивание ресурсов с помощью групп управления Azure\_— Azure Governance"
-description: 'Сведения о группах управления и способах их использования, а также о том, как работают разрешения.'
+title: Упорядочивание ресурсов с помощью групп управления Azure — Azure Governance
+description: Сведения о группах управления и способах их использования, а также о том, как работают разрешения.
 author: rthorn17
 ms.assetid: 482191ac-147e-4eb6-9655-c40c13846672
 ms.service: azure-resource-manager
 ms.date: 02/20/2019
 ms.author: rithorn
 ms.topic: overview
+ms.openlocfilehash: bd874ffe9293d01fced7ff6df5d329a829b7d8b4
+ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58804842"
 ---
 # <a name="organize-your-resources-with-azure-management-groups"></a>Упорядочение ресурсов с помощью групп управления Azure
 
@@ -106,7 +112,7 @@ ms.topic: overview
 
 [Журнал действий Azure](../../azure-monitor/platform/activity-logs-overview.md) поддерживает группы управления. Сведения обо всех событиях, происходящих в группе управления, можно найти в том же централизованном расположении, что и другие ресурсы Azure.  Например, вы можете просмотреть сведения обо всех изменениях в назначениях ролей или назначении политик, внесенные в пределах определенной группы управления.
 
-![Журнал действий для групп управления](media/al-mg.png)
+![Журналы действий для групп управления](media/al-mg.png)
 
 Если нужно создать запрос к группам управления вне портала Azure, целевая область для групп управления будет такой: **"/providers/Microsoft.Management/managementGroups/{идентификатор_вашей_группы_управления}"**.
 

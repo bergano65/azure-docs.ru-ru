@@ -6,7 +6,7 @@ ms.date: 01/27/2019
 ms.author: cynthn
 ms.openlocfilehash: 2978da7f2e7ec27ded6b5994570fa50a9032d0d2
 ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/09/2019
 ms.locfileid: "55985496"
@@ -66,7 +66,7 @@ ms.locfileid: "55985496"
 
 - [Azure Monitor](../articles/azure-monitor/overview.md) — это служба, отслеживающая облачные и локальные среды, чтобы поддерживать уровень их доступности и производительности. Эта служба обеспечивает комплексное решение для сбора, анализа и использования телеметрии из облака и локальных сред. Она поможет вам понять, как выполняются приложения, а также заранее определить проблемы, влияющие на них, и ресурсы, от которых они зависят. На виртуальной машине [Linux](../articles/virtual-machines/linux/extensions-oms.md) или [Windows](../articles/virtual-machines/windows/extensions-oms.md) можно установить расширение, которое устанавливает агент Log Analytics для сбора данных журнала и хранения этих данных в рабочей области Log Analytics.
 
-    Для виртуальных машин Windows и Linux рекомендуемым методом сбора данных журналов является установка агента Log Analytics. Проще всего установить агент Log Analytics на виртуальную машину при помощи [расширения виртуальной машины Log Analytics](../articles/log-analytics/log-analytics-azure-vm-extension.md). Использование расширения упрощает процесс установки и автоматически настраивает агент на отправку данных в указанную вами рабочую область службы Log Analytics. Кроме того, агент обновляется автоматически, обеспечивая наличие новейших компонентов и исправлений.
+    Для виртуальных машин Windows и Linux рекомендуемым методом сбора данных журналов является установка агента Log Analytics. Проще всего установить агент Log Analytics на виртуальную машину при помощи [расширения виртуальной машины Log Analytics](../articles/log-analytics/log-analytics-azure-vm-extension.md). Использование расширения упрощает процесс установки и автоматически настраивает агент на отправку данных в указанную вами рабочую область Log Analytics. Кроме того, агент обновляется автоматически, обеспечивая наличие новейших компонентов и исправлений.
 
 - [Наблюдатель за сетями](../articles/network-watcher/network-watcher-monitoring-overview.md) позволяет выполнять мониторинг виртуальной машины и связанных с ней ресурсов, которые находятся в одной сети. На виртуальной машине [Linux](../articles/virtual-machines/linux/extensions-nwa.md) или [Windows](../articles/virtual-machines/windows/extensions-nwa.md) можно установить расширения для агента Наблюдателя за сетями.
 

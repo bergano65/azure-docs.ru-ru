@@ -82,7 +82,7 @@ items:
     href: traffic-manager-load-balancing-azure.md
   - name: Измерение производительности диспетчера трафика
     href: traffic-manager-performance-considerations.md
-  - name: Включение ведения журнала диагностики для веб-приложений в службе приложений Azure
+  - name: Включение журналов диагностики
     href: traffic-manager-diagnostic-logs.md
   - name: Использование Azure PowerShell для управления диспетчером трафика
     href: traffic-manager-powershell-arm.md

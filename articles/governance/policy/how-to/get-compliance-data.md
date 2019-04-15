@@ -415,7 +415,7 @@ Trent Baker
 
 ## <a name="azure-monitor-logs"></a>Журналы Azure Monitor
 
-Если у вас есть [рабочей области Log Analytics](../../../log-analytics/log-analytics-overview.md) с `AzureActivity` из [решение для анализа журнала действий](../../../azure-monitor/platform/collect-activity-logs.md) связана с подпиской, вы также можете просмотреть результаты несоответствия с помощью цикла оценки простых запросов Kusto и `AzureActivity` таблицы. С учетом подробных сведений о несоответствии в Azure Monitor вы также можете настроить оповещения для отслеживания несоответствия.
+Если у вас есть [рабочей области Log Analytics](../../../log-analytics/log-analytics-overview.md) с `AzureActivity` из [решение для анализа журнала действий](../../../azure-monitor/platform/collect-activity-logs.md) связана с подпиской, вы также можете просмотреть результаты несоответствия с помощью цикла оценки простых запросов Kusto и `AzureActivity` таблицы. С учетом подробных сведений о несоответствии в журналах Azure Monitor вы также можете настроить оповещения для отслеживания несоответствия.
 
 ![Оценка соответствия политик с использованием журналов Azure Monitor](../media/getting-compliance-data/compliance-loganalytics.png)
 

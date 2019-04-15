@@ -9,7 +9,7 @@ ms.topic: article
 ms.date: 06/06/2017
 ms.openlocfilehash: 6d83aed6910127ceb34b9a694f48ca9c19ab6d18
 ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/07/2019
 ms.locfileid: "55878397"
@@ -43,7 +43,7 @@ https://management.azure.com/subscriptions/{subscription-id}/providers/microsoft
 | :--- | :---------- |
 | subscriptionId | Идентификатор подписки Azure. Если у вас несколько подписок, см. раздел [Использование нескольких подписок](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
 | api-version | Версия API для использования в запросе.<br /><br /> В этом документе рассматривается API версии `2015-04-01`, которая включена в приведенный выше URL-адрес.  |
-| $filter | Параметр фильтрации для уменьшения набора возвращаемых результатов. Допустимые шаблоны для этого параметра доступны [в справочнике по работе с журналом действий](/rest/api/monitor/activitylogs/list#uri-parameters). В примере ниже показана запись всех событий в диапазоне времени между 2018-05-16 и 2018-06-20. |
+| $filter | Параметр фильтрации для уменьшения набора возвращаемых результатов. Допустимые шаблоны для этого параметра доступны [в справочнике по работе с журналами действий](/rest/api/monitor/activitylogs/list#uri-parameters). В примере ниже показана запись всех событий в диапазоне времени между 2018-05-16 и 2018-06-20. |
 | &nbsp; | &nbsp; |
 
 ### <a name="request-body"></a>Тело запроса

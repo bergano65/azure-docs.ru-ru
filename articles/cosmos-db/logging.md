@@ -361,7 +361,7 @@ $blobs | Get-AzStorageBlobContent `
 >[!NOTE]
 >Рабочие области OMS теперь называются рабочими областями Log Analytics.  
 
-Если на странице **Рабочая область Log Analytics** отображается указанное ниже сообщение, это значит, что рабочая область не обновлена и не может использовать новый язык. Дополнительные сведения об обновлении для использования нового языка запросов см. в статье [Обновление Azure Log Analytics до нового поиска по журналам](../log-analytics/log-analytics-log-search-upgrade.md). 
+Если на странице **Рабочая область Log Analytics** отображается указанное ниже сообщение, это значит, что рабочая область не обновлена и не может использовать новый язык. Дополнительные сведения об обновлении для использования нового языка запросов см. в статье об [обновлении рабочей области Azure Log Analytics до нового поиска по журналам](../log-analytics/log-analytics-log-search-upgrade.md). 
 
 ![Сообщение об обновлении журналов Azure Monitor](./media/logging/upgrade-notification.png)
 
@@ -464,5 +464,5 @@ $blobs | Get-AzStorageBlobContent `
 - Прочтите эти статьи, чтобы узнать о концентраторах событий:
    - [Что такое Центры событий Azure?](../event-hubs/event-hubs-what-is-event-hubs.md)
    - [Приступая к работе с Центрами событий](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
-- Ознакомьтесь с разделом [Скачивание больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-dotnet.md#download-blobs).
+- Ознакомьтесь с разделом [скачивании метрик и журналов диагностики из службы хранилища Azure](../storage/blobs/storage-quickstart-blobs-dotnet.md#download-blobs).
 - Чтение [общие принципы по журналам в Azure Monitor журналы](../log-analytics/log-analytics-log-search-new.md).

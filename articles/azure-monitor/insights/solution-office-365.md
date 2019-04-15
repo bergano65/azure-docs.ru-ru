@@ -524,7 +524,7 @@ At line:12 char:18
 
 ## <a name="azure-monitor-log-records"></a>Записи журнала Azure Monitor
 
-У всех записей, создаваемых решением Office 365 в рабочей области Azure Monitor, свойство **Type** (Тип) имеет значение **OfficeActivity**.  Свойство **OfficeWorkload** определяет, к какой службе Office 365 относится запись — Exchange, Azure Active Directory, SharePoint или OneDrive.  Свойство **RecordType** указывает тип операции.  Эти свойства будут отличаться для каждого типа операции. Их описание приводится в таблице ниже.
+У всех записей, создаваемых решением Office 365 в рабочей области Log Analytics в Azure Monitor, свойство **Type** (Тип) имеет значение **OfficeActivity**.  Свойство **OfficeWorkload** определяет, к какой службе Office 365 относится запись — Exchange, Azure Active Directory, SharePoint или OneDrive.  Свойство **RecordType** указывает тип операции.  Эти свойства будут отличаться для каждого типа операции. Их описание приводится в таблице ниже.
 
 ### <a name="common-properties"></a>Общие свойства
 

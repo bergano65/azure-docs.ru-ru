@@ -15,7 +15,7 @@ ms.date: 08/09/2018
 ms.author: magoedte
 ms.openlocfilehash: d2736e397827373949da1634a99056420dc13b8a
 ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/11/2019
 ms.locfileid: "56003862"
@@ -145,7 +145,7 @@ ms.locfileid: "56003862"
 
 
 ## <a name="correlating-with-other-data-in-log-analytics-and-application-insights"></a>Сопоставление с другими данными в Log Analytics и Application Insights
-Чтобы завершить задачу по сопоставлению данных просмотра страницы Application Insights с данными о населении, которые были приняты от пользовательского источника данных, необходимо выполнить следующий запрос из окна аналитики Application Insights или из рабочего пространства Log Analytics.
+Чтобы завершить задачу по сопоставлению данных просмотра страницы Application Insights с данными о населении, которые были приняты от пользовательского источника данных, необходимо выполнить следующий запрос из окна аналитики Application Insights или из рабочей области Log Analytics.
 
 ``` KQL
 app("fabrikamprod").pageViews

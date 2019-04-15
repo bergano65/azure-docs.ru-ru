@@ -38,7 +38,7 @@ ms.locfileid: "59551237"
 
 [!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-no-h.md)]
 
-Дополнительные сведения см. в разделе [Потоковая передача с использованием интерфейса командной строки Azure](../troubleshoot-diagnostic-logs.md#streaming-with-azure-cli).
+Дополнительные сведения см. в разделе о [потоковой передаче журналов с помощью Azure CLI](../troubleshoot-diagnostic-logs.md#streaming-with-azure-cli).
 
 ### <a name="app-logging"></a>Ведение журнала приложений
 

@@ -338,7 +338,7 @@ ms.locfileid: "59548648"
 
 4. Нажмите **ОК** для подтверждения, а затем выберите **Создать**.
 
-### <a name="configure-databases-to-record-metrics-and-diagnostics-logs"></a>Настройка баз данных для записи журналов метрик и диагностики
+### <a name="configure-databases-to-record-metrics-and-diagnostics-logs"></a>Настройка баз данных для записи метрик и журналов диагностики
 
 Самый простой способ настроить, где базы данных будут записывать метрики — с помощью портала Azure. Как описано выше, перейдите к ресурсу Базы данных SQL на портале Azure и выберите **Параметры диагностики**.
 
@@ -373,7 +373,7 @@ ms.locfileid: "59548648"
 
 ### <a name="schema-of-metrics-and-diagnostics-logs-in-the-storage-account"></a>Схема журналов метрик и диагностики в учетной записи хранения
 
-После настройки сбора журналов метрик и диагностики в выбранной учетной записи хранения создается контейнер хранилища, как только первые строки данных станут доступными. Вот как выглядит структура большого двоичного объекта:
+После настройки сбора метрик и журналов диагностики в выбранной учетной записи хранения создается контейнер хранилища, как только первые строки данных станут доступными. Вот как выглядит структура большого двоичного объекта:
 
 ```powershell
 insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription ID}/ RESOURCEGROUPS/{resource group name}/PROVIDERS/Microsoft.SQL/servers/{resource_server}/ databases/{database_name}/y={four-digit numeric year}/m={two-digit numeric month}/d={two-digit numeric day}/h={two-digit 24-hour clock hour}/m=00/PT1H.json
@@ -399,7 +399,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 ### <a name="download-metrics-and-logs-from-storage"></a>Скачивание метрик и журналов из хранилища
 
-Ознакомьтесь с разделом [Скачивание больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-dotnet.md#download-the-sample-application).
+Ознакомьтесь с разделом о [скачивании метрик и журналов диагностики из службы хранилища](../storage/blobs/storage-quickstart-blobs-dotnet.md#download-the-sample-application).
 
 ## <a name="data-retention-policy-and-pricing"></a>Политика хранения данных и цены
 

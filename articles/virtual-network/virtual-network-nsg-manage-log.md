@@ -78,7 +78,7 @@ $Oms=Get-AzOperationalInsightsWorkspace `
 
 Если у вас нет существующей рабочей области, можно создать с [New AzOperationalInsightsWorkspace](/powershell/module/az.operationalinsights/new-azoperationalinsightsworkspace).
 
-Существуют две категории, для которых можно включить ведение журнала. Дополнительные сведения см. в разделе [Категории журналов](#log-categories). Включить ведение журнала диагностики для группы безопасности сети с помощью [AzDiagnosticSetting набора](/powershell/module/az.monitor/set-azdiagnosticsetting). Следующий пример записывает в журнал данные о категориях событий и счетчиков и сохраняет его в рабочую область для NSG, используя идентификаторы NSG и рабочей области, полученные ранее.
+Существуют две категории, для которых можно включить журналы. Дополнительные сведения см. в разделе [Категории журналов](#log-categories). Включить ведение журнала диагностики для группы безопасности сети с помощью [AzDiagnosticSetting набора](/powershell/module/az.monitor/set-azdiagnosticsetting). Следующий пример записывает в журнал данные о категориях событий и счетчиков и сохраняет его в рабочую область для NSG, используя идентификаторы NSG и рабочей области, полученные ранее.
 
 ```azurepowershell-interactive
 Set-AzDiagnosticSetting `
@@ -120,7 +120,7 @@ az monitor diagnostic-settings create \
   --resource-group myWorkspaces
 ```
 
-Если у вас нет существующей рабочей области, ее можно создать с помощью [портала Azure](../azure-monitor/learn/quick-create-workspace.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [PowerShell](/powershell/module/az.operationalinsights/new-azoperationalinsightsworkspace). Существуют две категории, для которых можно включить ведение журнала.
+Если у вас нет существующей рабочей области, ее можно создать с помощью [портала Azure](../azure-monitor/learn/quick-create-workspace.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [PowerShell](/powershell/module/az.operationalinsights/new-azoperationalinsightsworkspace). Существуют две категории, для которых можно включить журналы.
 
 Если вы хотите регистрировать данные только для какой-то из категорий, удалите ненужную категорию с помощью предыдущей команды. Если вы хотите записывать журналы не в рабочую область Log Analytics, а в другое [назначение](#log-destinations), используйте соответствующие параметры [учетной записи хранения](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [концентратора событий](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json) Azure.
 
@@ -197,7 +197,7 @@ az monitor diagnostic-settings create \
 
 ## <a name="view-and-analyze-logs"></a>Просмотр и анализ журналов
 
-Узнайте, как просмотреть данные журнала диагностики, ознакомившись с разделом [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Если данные диагностики отправляются в:
+Узнайте, как просмотреть данные журнала диагностики, ознакомившись с [обзором журналов диагностики Azure](../azure-monitor/platform/diagnostic-logs-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Если данные диагностики отправляются в:
 - **Журналы Azure Monitor**. то важные сведения можно получать с помощью решения для [анализа групп безопасности сети](../azure-monitor/insights/azure-networking-analytics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-network-security-group-analytics-solution-in-azure-monitor
 ). Это решение наглядно представляет правила NSG, которые разрешают или запрещают трафик по MAC-адресу сетевого интерфейса в виртуальной машине.
 - **учетную запись хранения,** то данные записываются в файл PT1H.json. Расположение журналов:

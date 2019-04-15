@@ -12,7 +12,7 @@ ms.date: 12/07/2018
 ms.author: azfuncdf
 ms.openlocfilehash: 7bb2a68209e657b1e3ff8c3a61730d42f04a3b8a
 ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/21/2018
 ms.locfileid: "53727383"
@@ -167,7 +167,7 @@ Content-Type: application/json; charset=utf-8
 {"runtimeStatus":"Completed","input":"D:\\home\\LogFiles","output":452071,"createdTime":"2017-06-29T18:50:55Z","lastUpdatedTime":"2017-06-29T18:51:26Z"}
 ```
 
-Теперь оркестрация завершена, и вы можете оценить, сколько времени ушло на ее выполнение. Вы также увидите значение поля `output`, в котором указано, что отправлено примерно 450 КБ данных журнала.
+Теперь оркестрация завершена, и вы можете оценить, сколько времени ушло на ее выполнение. Вы также увидите значение поля `output`, в котором указано, что отправлено примерно 450 КБ данных журналов.
 
 ## <a name="visual-studio-sample-code"></a>Пример кода для Visual Studio
 

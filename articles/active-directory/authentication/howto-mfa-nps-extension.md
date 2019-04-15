@@ -268,7 +268,7 @@ Get-MsolServicePrincipalCredential -AppPrincipalId "981f26a1-7f43-403b-a875-f8b0
 
 -------------------------------------------------------------
 
-### <a name="why-does-authentication-fail-with-an-error-in-http-logs-stating-that-the-user-is-not-found"></a>Почему проверка подлинности завершается ошибкой, а в журнал HTTP заносится ошибка с сообщением о том, что пользователь не найден?
+### <a name="why-does-authentication-fail-with-an-error-in-http-logs-stating-that-the-user-is-not-found"></a>Почему проверка подлинности завершается ошибкой, а в журналы HTTP заносится ошибка с сообщением о том, что пользователь не найден?
 
 Убедитесь, что служба AD Connect работает, а нужный пользователь присутствует как в Windows Active Directory, так и в Azure Active Directory.
 

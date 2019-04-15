@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.date: 11/10/2018
 ms.openlocfilehash: 403f111882b1bd151b26af56fd614355e7ba88e3
 ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/17/2018
 ms.locfileid: "53539217"
@@ -45,7 +45,7 @@ az mariadb server configuration list --resource-group myresourcegroup --server m
 az mariadb server-logs list --resource-group myresourcegroup --server mydemoserver > log_files_list.txt
 ```
 ## <a name="download-logs-from-the-server"></a>Скачивание журналов с сервера
-Команда [az mariadb server-logs download](/cli/azure/mariadb/server-logs#az-mariadb-server-logs-download) позволяет скачать отдельные файлы журнала для сервера.
+Команда [az mariadb server-logs download](/cli/azure/mariadb/server-logs#az-mariadb-server-logs-download) позволяет скачать отдельные файлы журналов для сервера.
 
 В следующем примере в локальную среду скачивается определенный файл журнала для сервера **mydemoserver.mariadb.database.azure.com** в группе ресурсов **myresourcegroup**.
 ```azurecli-interactive

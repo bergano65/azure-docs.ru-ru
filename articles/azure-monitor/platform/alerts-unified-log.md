@@ -10,7 +10,7 @@ ms.author: vinagara
 ms.subservice: alerts
 ms.openlocfilehash: 194fba3296359f5f7d29a37425a938fe08f1332b
 ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/20/2019
 ms.locfileid: "56452888"
@@ -19,10 +19,10 @@ ms.locfileid: "56452888"
 
 В этой статье рассматриваются оповещения журнала. Это один из типов оповещений, которые поддерживаются в системе [оповещений Azure](../../azure-monitor/platform/alerts-overview.md) и позволяют пользователям применять платформу аналитики Azure в качестве основы для оповещений.
 
-Оповещение журнала состоит из правил поиска по журналам, созданных для [Azure Monitor Logs](../../azure-monitor/learn/tutorial-viewdata.md) или [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostics-events). Дополнительные сведения о его использовании см. в сведениях о [создании оповещений журнала в Azure](../../azure-monitor/platform/alerts-log.md).
+Оповещение журнала состоит из правил поиска по журналам, созданных для [журналов Azure Monitor](../../azure-monitor/learn/tutorial-viewdata.md) или [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostics-events). Дополнительные сведения о его использовании см. в сведениях о [создании оповещений журнала в Azure](../../azure-monitor/platform/alerts-log.md).
 
 > [!NOTE]
-> Часто используемые данные из [Azure Monitor Logs](../../azure-monitor/learn/tutorial-viewdata.md) теперь доступны на платформе метрик в Azure Monitor. Более подробную информацию см. в статье [Create Metric Alerts for Logs in Azure Monitor](../../azure-monitor/platform/alerts-metric-logs.md) (Создание оповещений метрик для журналов в Azure Monitor).
+> Часто используемые данные из [журналов Azure Monitor](../../azure-monitor/learn/tutorial-viewdata.md) теперь доступны на платформе метрик в Azure Monitor. Более подробную информацию см. в статье [Create Metric Alerts for Logs in Azure Monitor](../../azure-monitor/platform/alerts-metric-logs.md) (Создание оповещений метрик для журналов в Azure Monitor).
 
 
 ## <a name="log-search-alert-rule---definition-and-types"></a>Правило генерации оповещений для поиска по журналам: определения и типы
@@ -43,7 +43,7 @@ ms.locfileid: "56452888"
 
 - **Пороговое значение**.  Чтобы определить, следует ли создавать оповещение, оцениваются результаты поиска по журналам.  Для каждого типа правил генерации оповещений для поиска по журналам определяется собственное пороговое значение.
 
-Для [Azure Monitor Logs](../../azure-monitor/learn/tutorial-viewdata.md) и для [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostics-events) используются правила поиска по журналам двух типов. Каждый из этих типов подробно описан в последующих разделах.
+Для [журналов Azure Monitor](../../azure-monitor/learn/tutorial-viewdata.md) и для [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostics-events) используются правила поиска по журналам двух типов. Каждый из этих типов подробно описан в последующих разделах.
 
 - **[Число результатов](#number-of-results-alert-rules)**. Если число записей, возвращенных в результатах поиска по журналам, превышает указанное количество, создается оповещение.
 - **[Измерение метрик](#metric-measurement-alert-rules)**.  Оповещение, созданное для каждого объекта в результатах поиска по журналам со значением, превышающим указанное пороговое значение.

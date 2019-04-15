@@ -1,6 +1,6 @@
 ---
 title: Анализ журналов веб-сайта с помощью Azure Data Lake Analytics
-description: Информация об анализе журналов веб-сайта с помощью аналитики озера данных Azure.
+description: Информация об анализе журналов веб-сайта с помощью Data Lake Analytics.
 services: data-lake-analytics
 author: saveenr
 ms.author: saveenr
@@ -11,7 +11,7 @@ ms.topic: conceptual
 ms.date: 12/05/2016
 ms.openlocfilehash: 83742a4f82fb4d67fd258ff0d242847eab634c78
 ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/18/2019
 ms.locfileid: "54402291"
