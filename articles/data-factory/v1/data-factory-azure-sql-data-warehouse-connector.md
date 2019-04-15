@@ -71,7 +71,7 @@ ms.locfileid: "58651757"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
-| Тип |Свойству type необходимо задать значение **AzureSqlDW** |Yes |
+| type |Свойству type необходимо задать значение **AzureSqlDW** |Yes |
 | connectionString |Укажите сведения, необходимые для подключения к экземпляру хранилища данных SQL Azure, для свойства connectionString. Поддерживается только обычная проверка подлинности. |Yes |
 
 > [!IMPORTANT]
@@ -99,7 +99,7 @@ ms.locfileid: "58651757"
 
 | Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
-| SqlReaderQuery |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. |Нет  |
+| sqlReaderQuery |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. |Нет  |
 | sqlReaderStoredProcedureName |Имя хранимой процедуры, которая считывает данные из исходной таблицы. |Имя хранимой процедуры. Последней инструкцией SQL должна быть инструкция SELECT в хранимой процедуре. |Нет  |
 | storedProcedureParameters |Параметры для хранимой процедуры. |Пары имен и значений. Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. |Нет  |
 
@@ -308,28 +308,28 @@ All columns of the table must be specified in the INSERT BULK statement.
 | TinyInt | TinyInt |
 | Bit | Bit |
 | Decimal | Decimal |
-| Числовой | Decimal |
+| Numeric | Decimal |
 | Float | Float |
 | Money | Money |
 | Real | Real |
 | SmallMoney | SmallMoney |
 | Binary | Binary |
-| Varbinary | VarBinary (до 8000) |
-| Дата | Дата |
+| Varbinary | Varbinary (до 8000) |
+| Date | Date |
 | DateTime | DateTime |
 | DateTime2 | DateTime2 |
-| Время | Время |
+| Time | Time |
 | DateTimeOffset | DateTimeOffset |
 | SmallDateTime | SmallDateTime |
-| текст | Varchar (до 8000) |
+| Text | Varchar (до 8000) |
 | NText | NVarChar (до 4000) |
-| Образ — | VarBinary (до 8000) |
+| Image | VarBinary (до 8000) |
 | UniqueIdentifier | UniqueIdentifier |
 | Char | Char |
-| NCHAR | NCHAR |
+| NChar | NChar |
 | VarChar | Varchar (до 8000) |
 | NVarChar | NVarChar (до 4000) |
-| xml | Varchar (до 8000) |
+| Xml | Varchar (до 8000) |
 
 [!INCLUDE [data-factory-type-repeatability-for-sql-sources](../../../includes/data-factory-type-repeatability-for-sql-sources.md)]
 
@@ -346,37 +346,37 @@ All columns of the table must be specified in the INSERT BULK statement.
 | Тип ядра СУБД SQL Server | Тип .NET Framework |
 | --- | --- |
 | bigint |Int64 |
-| binary; |Byte[] |
-| bit |Логическое |
-| char; |String, Char[] |
-| дата |DateTime |
-| DateTime |DateTime |
-| datetime2; |DateTime |
+| binary |Byte[] |
+| bit |Boolean |
+| char |String, Char[] |
+| date |DateTime |
+| Datetime |DateTime |
+| datetime2 |DateTime |
 | Datetimeoffset |DateTimeOffset |
 | Decimal |Decimal |
-| Атрибут FILESTREAM (varbinary(max)) |Byte[] |
+| FILESTREAM attribute (varbinary(max)) |Byte[] |
 | Float |Double |
-| изображение |Byte[] |
+| image |Byte[] |
 | int |Int32 |
-| money; |Decimal |
-| nchar; |String, Char[] |
+| money |Decimal |
+| nchar |String, Char[] |
 | ntext |String, Char[] |
 | numeric |Decimal |
-| nvarchar; |String, Char[] |
-| real; |Single |
+| nvarchar |String, Char[] |
+| real |Single |
 | rowversion |Byte[] |
-| smalldatetime; |DateTime |
-| smallint; |Int16 |
-| smallmoney; |Decimal |
+| smalldatetime |DateTime |
+| smallint |Int16 |
+| smallmoney |Decimal |
 | sql_variant |Object * |
-| текст |String, Char[] |
-| Twitter в режиме реального |TimeSpan |
-|  timestamp |Byte[] |
-| tinyint; |Byte |
+| text |String, Char[] |
+| time |TimeSpan |
+| timestamp |Byte[] |
+| tinyint |Byte |
 | uniqueidentifier |Guid |
-| varbinary; |Byte[] |
-| varchar. |String, Char[] |
-| xml |xml |
+| varbinary |Byte[] |
+| varchar |String, Char[] |
+| xml |Xml |
 
 Также можно сопоставить столбцы из набора данных, используемого в качестве источника, со столбцами из приемника в определении действия копирования. Дополнительные сведения см. в статье [Сопоставление столбцов исходного набора данных со столбцами целевого набора данных](data-factory-map-columns.md).
 
