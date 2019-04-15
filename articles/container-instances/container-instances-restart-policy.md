@@ -134,7 +134,7 @@ az container create \
     --environment-variables NumWords=5 MinLength=8
 ```
 
-Если вы определите для контейнера переменные среды `NumWords=5` и `MinLength=8`, выходные данные в журнале контейнера изменятся. Когда статус контейнера примет значение *Terminated* (Завершено), что можно проверить с помощью команды `az container show`, просмотрите его журналы для оценки новых выходных данных.
+Если вы определите для контейнера переменные среды `NumWords=5` и `MinLength=8`, выходные данные в журналах контейнера изменятся. Когда статус контейнера примет значение *Terminated* (Завершено), что можно проверить с помощью команды `az container show`, просмотрите его журналы для оценки новых выходных данных.
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name mycontainer2

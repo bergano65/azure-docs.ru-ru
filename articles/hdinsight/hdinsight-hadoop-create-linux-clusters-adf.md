@@ -318,7 +318,7 @@ Write-host "`nScript completed" -ForegroundColor Green
 
     - Контейнер **adfhdidatafactory-\<linked-service-name>-\<timestamp>**. Этот контейнер по умолчанию является местом хранения кластера HDInsight, который был создан в рамках выполнения конвейера.
 
-    - Контейнер **adfjobs**, содержащий журнал заданий фабрики данных Azure.  
+    - Контейнер **adfjobs**, содержащий журналы заданий фабрики данных Azure.  
 
         ![Проверка выходных данных конвейера фабрики данных Azure](./media/hdinsight-hadoop-create-linux-clusters-adf/hdinsight-data-factory-verify-output.png "Проверка выходных данных конвейера фабрики данных Azure")
 

@@ -1,6 +1,6 @@
 ---
 title: Отслеживание поведения пользователей с помощью событий в Application Insights из Azure Active Directory B2C | Документация Майкрософт
-description: Узнайте, как включить журнал событий в Application Insights из путей взаимодействия пользователей Azure AD B2C с использованием настраиваемых политик (предварительная версия).
+description: Узнайте, как включить журналы событий в Application Insights из путей взаимодействия пользователей Azure AD B2C с использованием настраиваемых политик (предварительная версия).
 services: active-directory-b2c
 author: davidmu1
 manager: daveba

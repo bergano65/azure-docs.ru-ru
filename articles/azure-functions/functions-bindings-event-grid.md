@@ -551,7 +551,7 @@ http://{functionappname}.azurewebsites.net/admin/host/systemkeys/eventgridextens
 
 Функция триггера службы "Сетка событий" выполняет и показывает журналы, похожие на приведенные ниже:
 
-![Пример журнала функций триггера службы "Сетка событий"](media/functions-bindings-event-grid/eg-output.png)
+![Пример журналов функций триггера службы "Сетка событий"](media/functions-bindings-event-grid/eg-output.png)
 
 ## <a name="local-testing-with-ngrok"></a>Локальное тестирование с помощью ngrok
 
@@ -626,7 +626,7 @@ az eventgrid event-subscription create --resource-id /subscriptions/aeb4b7cb-b7c
 
 Функция триггера службы "Сетка событий" выполняет и показывает журналы, похожие на приведенные ниже:
 
-![Пример журнала функций триггера службы "Сетка событий"](media/functions-bindings-event-grid/eg-output.png)
+![Пример журналов функций триггера службы "Сетка событий"](media/functions-bindings-event-grid/eg-output.png)
 
 ## <a name="use-an-http-trigger-as-an-event-grid-trigger"></a>Использование триггера HTTP в качестве триггера службы "Сетка событий"
 

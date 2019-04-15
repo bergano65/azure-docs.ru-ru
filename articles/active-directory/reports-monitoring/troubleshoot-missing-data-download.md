@@ -24,11 +24,11 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 03/26/2019
 ms.locfileid: "58434846"
 ---
-# <a name="i-cant-find-all-the-data-in-the-azure-active-directory-activity-logs-i-downloaded"></a>Я не могу найти данные в скачанном журнале действий Azure Active Directory
+# <a name="i-cant-find-all-the-data-in-the-azure-active-directory-activity-logs-i-downloaded"></a>Я не могу найти данные в скачанных журналах действий Azure Active Directory
 
 ## <a name="symptoms"></a>Проблемы
 
-В скачанном журнале действий (аудита или входа) нет всех записей за выбранный период времени. Почему? 
+В скачанных журналах действий (аудита или входа) нет всех записей за выбранный период времени. Почему? 
 
  ![Отчеты](./media/troubleshoot-missing-data-download/01.png)
  

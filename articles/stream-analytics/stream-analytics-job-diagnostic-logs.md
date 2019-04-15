@@ -33,7 +33,7 @@ Stream Analytics предоставляет журналы двух типов:
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="debugging-using-activity-logs"></a>Отладка с помощью журнала действий
+## <a name="debugging-using-activity-logs"></a>Отладка с помощью журналов действий
 
 Журналы действий включены по умолчанию и содержат аналитические сведения высокого уровня об операциях, выполняемых заданием Stream Analytics. Данные, находящиеся в журналах действий, могут помочь найти причину проблемы, влияющей на ваше задание. Выполните следующие действия, чтобы использовать журналы действий в Stream Analytics.
 

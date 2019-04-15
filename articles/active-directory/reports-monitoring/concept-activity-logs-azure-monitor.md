@@ -62,7 +62,7 @@ ms.locfileid: "58436308"
 
 * Учетная запись хранения Azure, для которой имеется разрешение *ListKeys*. Рекомендуется использовать общую учетную запись хранения вместо учетной записи хранилища BLOB-объектов. Информацию о ценах на хранение можно узнать на странице [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/?service=storage). 
 * Пространство имен Центров событий Azure для интеграции со сторонними решениями.
-* Рабочая область Azure Log Analytics для отправки журналов в Azure Monitor.
+* Рабочая область Azure Log Analytics для отправки данных в журналы Azure Monitor.
 
 ## <a name="cost-considerations"></a>Рекомендации по стоимости
 
@@ -98,7 +98,7 @@ ms.locfileid: "58436308"
 
 ### <a name="azure-monitor-logs-cost-considerations"></a>Рекомендации по затратам журналов Azure Monitor.
 
-Чтобы просмотреть затраты, связанные с управлением журналов Azure Monitor, изучите статью [Управление использованием и затратами для Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-manage-cost-storage).
+Чтобы просмотреть затраты, связанные с управлением журналами Azure Monitor, изучите статью о том, как [контролировать затраты, управляя объемом и сроком хранения данных в журналах Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-manage-cost-storage).
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
