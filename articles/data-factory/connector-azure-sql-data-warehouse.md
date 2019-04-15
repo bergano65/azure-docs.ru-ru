@@ -58,7 +58,7 @@ ms.locfileid: "58010207"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **AzureSqlDW**. | Yes |
+| type | Для свойства type необходимо задать значение **AzureSqlDW**. | Yes |
 | connectionString | Укажите сведения, необходимые для подключения к экземпляру хранилища данных SQL Azure, для свойства **connectionString**. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы также можете поместить ключ субъекта-службы и пароль в Azure Key Vault и в случае аутентификации SQL получить конфигурацию `password` из строки подключения. Ознакомьтесь с примером JSON под таблицей и с подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | servicePrincipalId | Укажите идентификатора клиента приложения. | Значение Yes при использовании проверки подлинности Azure AD на основе субъекта-службы. |
 | servicePrincipalKey | Укажите ключ приложения. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Значение Yes при использовании проверки подлинности Azure AD на основе субъекта-службы. |
@@ -276,8 +276,8 @@ ms.locfileid: "58010207"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство **type** источника действия копирования должно иметь значение **SqlDWSource**. | Yes |
-| SqlReaderQuery | Используйте пользовательский SQL-запрос для чтения данных. Пример: `select * from MyTable`. | Нет  |
+| type | Свойство **type** источника действия копирования должно иметь значение **SqlDWSource**. | Yes |
+| sqlReaderQuery | Используйте пользовательский SQL-запрос для чтения данных. Пример: `select * from MyTable`. | Нет  |
 | sqlReaderStoredProcedureName | Имя хранимой процедуры, которая считывает данные из исходной таблицы. Последней инструкцией SQL должна быть инструкция SELECT в хранимой процедуре. | Нет  |
 | storedProcedureParameters | Параметры для хранимой процедуры.<br/>Допустимые значения: пары имен или значений. Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. | Нет  |
 
@@ -379,7 +379,7 @@ GO
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство **type** приемника действия копирования должно иметь значение **SqlDWSink**. | Yes |
+| type | Свойство **type** приемника действия копирования должно иметь значение **SqlDWSink**. | Yes |
 | allowPolyBase | Указывает, следует ли использовать PolyBase (если применимо) вместо механизма BULKINSERT. <br/><br/> Мы рекомендуем загружать данные в хранилище данных SQL с использованием PolyBase. Подробные сведения и ограничения приведены в разделе [Загрузка данных в хранилище данных SQL Azure с помощью PolyBase](#use-polybase-to-load-data-into-azure-sql-data-warehouse).<br/><br/>Допустимые значения: **true** и **false** (по умолчанию).  | Нет  |
 | polyBaseSettings | Группа свойств, которые можно задать, если свойство **allowPolybase** имеет значение **true**. | Нет  |
 | rejectValue | Указывает количество или процент строк, которые могут быть отклонены, прежде чем запрос завершится с ошибкой.<br/><br/>Дополнительные сведения о параметрах отклонения PolyBase см. в подразделе "Аргументы" раздела [CREATE EXTERNAL TABLE (Transact-SQL)](https://msdn.microsoft.com/library/dn935021.aspx). <br/><br/>Допустимые значения: 0 (по умолчанию), 1, 2 и. т. д. |Нет  |
@@ -580,37 +580,37 @@ All columns of the table must be specified in the INSERT BULK statement.
 | Тип данных хранилища данных SQL Azure | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | bigint | Int64 |
-| binary; | Byte[] |
-| bit | Логическое |
-| char; | String, Char[] |
-| дата | DateTime |
-| DateTime | DateTime |
-| datetime2; | DateTime |
+| binary | Byte[] |
+| bit | Boolean |
+| char | String, Char[] |
+| date | DateTime |
+| Datetime | DateTime |
+| datetime2 | DateTime |
 | Datetimeoffset | DateTimeOffset |
 | Decimal | Decimal |
-| Атрибут FILESTREAM (varbinary(max)) | Byte[] |
+| FILESTREAM attribute (varbinary(max)) | Byte[] |
 | Float | Double |
-| изображение | Byte[] |
+| image | Byte[] |
 | int | Int32 |
-| money; | Decimal |
-| nchar; | String, Char[] |
+| money | Decimal |
+| nchar | String, Char[] |
 | ntext | String, Char[] |
 | numeric | Decimal |
-| nvarchar; | String, Char[] |
-| real; | Single |
+| nvarchar | String, Char[] |
+| real | Single |
 | rowversion | Byte[] |
-| smalldatetime; | DateTime |
-| smallint; | Int16 |
-| smallmoney; | Decimal |
-| sql_variant | Объект. |
-| текст | String, Char[] |
-| Twitter в режиме реального | TimeSpan |
-|  timestamp | Byte[] |
-| tinyint; | Byte |
+| smalldatetime | DateTime |
+| smallint | Int16 |
+| smallmoney | Decimal |
+| sql_variant | Object |
+| text | String, Char[] |
+| time | TimeSpan |
+| timestamp | Byte[] |
+| tinyint | Byte |
 | uniqueidentifier | Guid |
-| varbinary; | Byte[] |
-| varchar. | String, Char[] |
-| xml | xml |
+| varbinary | Byte[] |
+| varchar | String, Char[] |
+| xml | Xml |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.
