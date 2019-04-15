@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6648aec8741a748dd4150406831035a68b97af7c
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: a2be8455a3fb0a60cea056e9bda1f41b076dfec9
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59268472"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59545041"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Установка агента Azure AD Connect Health
 
@@ -58,7 +58,7 @@ ms.locfileid: "59268472"
 
 * Обязательно [выполните требования](how-to-connect-health-agent-install.md#requirements) для Azure AD Connect Health.
 * Приступая к работе с Azure AD Connect Health для AD FS
-    * [Скачайте Azure AD Connect агент Health для AD FS.](https://go.microsoft.com/fwlink/?LinkID=518973)
+    * [Скачайте агент Azure AD Connect Health для AD FS.](https://go.microsoft.com/fwlink/?LinkID=518973)
     * [Ознакомьтесь с инструкциями по установке.](#installing-the-azure-ad-connect-health-agent-for-ad-fs)
 * Приступая к работе с Azure AD Connect Health для синхронизации
     * [Скачайте и установите последнюю версию Azure AD Connect.](https://go.microsoft.com/fwlink/?linkid=615771) Агент Azure AD Connect Health для синхронизации будет установлен вместе с Azure AD Connect (версии 1.0.9125.0 или более поздней).
@@ -127,7 +127,7 @@ ms.locfileid: "59268472"
 1. Нажиме кнопку **Пуск**, наведите указатель мыши на пункт **Программы**, а затем — на **Администрирование** и выберите **Локальная политика безопасности**.
 2. Перейдите к папке **Параметры безопасности\Локальные политики\Предоставление прав пользователям**, а затем дважды щелкните пункт **Создание аудитов безопасности**.
 3. Убедитесь, что на вкладке **Параметры локальной безопасности** в списке указана учетная запись службы AD FS 2.0. Если она отсутствует, щелкните **Добавить пользователя или группу**, добавьте учетную запись в список и нажмите кнопку **ОК**.
-4. Чтобы включить аудит, откройте командную строку с повышенными привилегиями и выполните следующую команду: <code>auditpol.exe /set /subcategory:{0CCE9222-69AE-11D9-BED3-505054503030} /failure:enable /success:enable</code>
+4. Чтобы включить аудит, откройте командную строку с более высоким уровнем привилегий и выполните следующую команду: <code>auditpol.exe /set /subcategory:{0CCE9222-69AE-11D9-BED3-505054503030} /failure:enable /success:enable</code>.
 5. Закройте вкладку **Параметры локальной безопасности**.
 <br />   -- **Следующие шаги требуются только для основных серверов AD FS.** -- <br />
 6. Откройте оснастку **Управление AD FS**. Чтобы открыть оснастку управления AD FS, нажмите кнопку **Пуск**, наведите указатель мыши на пункт **Программы**, а затем — на **Администрирование** и выберите пункт **AD FS 2.0 Management** (Управление AD FS 2.0).
@@ -141,7 +141,7 @@ ms.locfileid: "59268472"
 1. Из раздела **Диспетчер сервера** на начальном экране или на панели задач откройте диалоговое окно **Локальная политика безопасности**. Затем выберите **Сервис/Локальная политика безопасности**.
 2. Перейдите к папке **Параметры безопасности\Локальные политики\Предоставление прав пользователям**, а затем дважды щелкните пункт **Создание аудитов безопасности**.
 3. Убедитесь, что на вкладке **Параметры локальной безопасности** в списке указана учетная запись службы AD FS. Если она отсутствует, щелкните **Добавить пользователя или группу**, добавьте учетную запись в список и нажмите кнопку **ОК**.
-4. Чтобы включить аудит, откройте командную строку с повышенными привилегиями и выполните следующую команду: ```auditpol.exe /set /subcategory:{0CCE9222-69AE-11D9-BED3-505054503030} /failure:enable /success:enable```
+4. Чтобы включить аудит, откройте командную строку с повышенным уровнем привилегий и выполните следующую команду: ```auditpol.exe /set /subcategory:{0CCE9222-69AE-11D9-BED3-505054503030} /failure:enable /success:enable```.
 5. Закройте вкладку **Параметры локальной безопасности**.
 <br />   -- **Следующие шаги требуются только для основных серверов AD FS.** -- <br />
 6. Откройте оснастку **Управление AD FS** (в разделе "Диспетчер сервера" выберите меню "Сервис" и щелкните "Управление AD FS").
@@ -154,7 +154,7 @@ ms.locfileid: "59268472"
 1. Из раздела **Диспетчер сервера** на начальном экране или на панели задач откройте диалоговое окно **Локальная политика безопасности**. Затем выберите **Сервис/Локальная политика безопасности**.
 2. Перейдите к папке **Параметры безопасности\Локальные политики\Предоставление прав пользователям**, а затем дважды щелкните пункт **Создание аудитов безопасности**.
 3. Убедитесь, что на вкладке **Параметры локальной безопасности** в списке указана учетная запись службы AD FS. Если она отсутствует, щелкните **Добавить пользователя или группу**, добавьте учетную запись службы AD FS в список и нажмите кнопку **ОК**.
-4. Чтобы включить аудит, откройте командную строку с повышенными привилегиями и выполните следующую команду: <code>auditpol.exe /set /subcategory:{0CCE9222-69AE-11D9-BED3-505054503030} /failure:enable /success:enable</code>
+4. Чтобы включить аудит, откройте командную строку с повышенным уровнем привилегий и выполните следующую команду: <code>auditpol.exe /set /subcategory:{0CCE9222-69AE-11D9-BED3-505054503030} /failure:enable /success:enable</code>.
 5. Закройте вкладку **Параметры локальной безопасности**.
 <br />   -- **Следующие шаги требуются только для основных серверов AD FS.** -- <br />
 6. Откройте оснастку **Управление AD FS** (в разделе "Диспетчер сервера" выберите меню "Сервис" и щелкните "Управление AD FS").
@@ -264,7 +264,7 @@ $secpasswd = ConvertTo-SecureString "PASSWORD" -AsPlainText -Force
 $myCreds = New-Object System.Management.Automation.PSCredential ($userName, $secpasswd)
 import-module "C:\Program Files\Azure Ad Connect Health Adds Agent\PowerShell\AdHealthAdds"
  
-Register-AzureADConnectHealthADDSAgent -UserPrincipalName $USERNAME -Credential $password
+Register-AzureADConnectHealthADDSAgent -UserPrincipalName $USERNAME -Credential $myCreds
 
 ```
 
@@ -377,10 +377,10 @@ Register-AzureADConnectHealthADDSAgent -UserPrincipalName $USERNAME -Credential 
 
 ## <a name="related-links"></a>Связанные ссылки
 
-* [Azure AD Connect Health,](whatis-hybrid-identity-health.md)
+* [Azure AD Connect Health](whatis-hybrid-identity-health.md)
 * [Операции Azure AD Connect Health](how-to-connect-health-operations.md)
 * [Использование Azure AD Connect Health с AD FS](how-to-connect-health-adfs.md)
 * [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md)
-* [Использование Azure AD Connect Health с AD DS](how-to-connect-health-adds.md)
+* [Using Azure AD Connect Health with AD DS (Использование Azure AD Connect Health с AD DS)](how-to-connect-health-adds.md)
 * [Часто задаваемые вопросы об Azure AD Connect Health](reference-connect-health-faq.md)
 * [Azure AD Connect Health: история версий](reference-connect-health-version-history.md)

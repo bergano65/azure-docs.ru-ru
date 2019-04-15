@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 597932ae9ad4dba76428fa6a4882c50f6ff98754
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 85c51320d2be1eac540f1d14910927c0fdccef64
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59263117"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549511"
 ---
 # <a name="what-is-text-to-speech"></a>Что такое преобразования текста в речь?
 
@@ -56,7 +56,7 @@ ms.locfileid: "59263117"
 \* *Эти службы доступны cris.ai конечной точки. См. в разделе [Swagger ссылку](https://westus.cris.ai/swagger/ui/index).*
 
 > [!NOTE]
-> Конечную точку преобразования текста в речь реализует регулирование ограничивает запросы на 25 в 5 секунд. Если регулирование, вы будете получать уведомления через заголовки сообщений.
+> Конечные точки настраиваемых голосовых реализовать регулирование ограничивает запросы на 25 в 5 секунд. Если регулирование, вы будете получать уведомления через заголовки сообщений.
 
 ## <a name="get-started-with-text-to-speech"></a>Начало работы с преобразования текста в речь
 
@@ -66,7 +66,7 @@ ms.locfileid: "59263117"
 
 | Краткое руководство (SDK) | платформа | Справочник по API |
 |------------|----------|---------------|
-| [C#, .NET Framework](quickstart-text-to-speech-dotnet-windows.md) |  Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C#, .NET framework](quickstart-text-to-speech-dotnet-windows.md) |  Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
 | [C++](quickstart-text-to-speech-cpp-windows.md) |  Windows | [Обзор](https://aka.ms/csspeech/cppref) |
 | [C++](quickstart-text-to-speech-cpp-linux.md) | Linux | [Обзор](https://aka.ms/csspeech/cppref) |
 
@@ -87,13 +87,13 @@ ms.locfileid: "59263117"
 
 ## <a name="reference-docs"></a>Справочная документация
 
-* [Пакет SDK для распознавания речи](speech-sdk-reference.md)
+* [пакет SDK для службы "Речь"](speech-sdk-reference.md);
 * [Пакет SDK для речевых устройств](speech-devices-sdk.md)
-* [REST API: Преобразование речи в текст.](rest-speech-to-text.md)
+* [REST API: Преобразование речи в текст](rest-speech-to-text.md)
 * [REST API: Преобразование текста в речь](rest-text-to-speech.md)
-* [REST API: Расшифровка дикторского текста для пакетной службы и их настройка](https://westus.cris.ai/swagger/ui/index)
+* [REST API: Пакетное транскрибирование и настройка](https://westus.cris.ai/swagger/ui/index)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Получить подписку служб free речи](get-started.md)
-* [Создайте настраиваемые голоса](how-to-customize-voice-font.md)
+* [Получение бесплатной подписки на службу "Речь"](get-started.md).
+* [Создание настраиваемого голоса](how-to-customize-voice-font.md)

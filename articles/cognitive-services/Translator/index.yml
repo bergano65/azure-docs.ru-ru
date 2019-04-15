@@ -93,7 +93,7 @@ sections:
       - type: paragraph
         text: 'Как разрабатывать приложения с использованием API перевода текстов:'
       - type: paragraph
-        text: '<a href="tutorial-wpf-translation-csharp.md">Написание приложения WPF для службы "Перевод текстов" на C#</a>'
+        text: '<li><a href="tutorial-wpf-translation-csharp.md">Создание приложения WPF для API "Перевод текстов" на C#</a></li><li><a href="tutorial-build-flask-app-translation-synthesis.md">Создание приложения Flask для перевода на Python</a></li>'
   - title: Справочные материалы
     items:
       - type: paragraph

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: abshamsft
-ms.openlocfilehash: 465d59ff13982eee8432d7ef97e2f522b0d7125b
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: ac10f1f1c6336098afc2abd2b8f720cedfb6f579
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59489730"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59548941"
 ---
 # <a name="network-performance-monitor-solution-in-azure"></a>Решение "Монитор производительности сети" в Azure
 
@@ -151,9 +151,9 @@ ms.locfileid: "59489730"
 
 Настройте функции, которые вам нужны.
 
-- [Мониторинг производительности](network-performance-monitor-performance-monitor.md#configuration)
-- [Монитор подключений службы](network-performance-monitor-performance-monitor.md#configuration)
-- [Мониторинг ExpressRoute](network-performance-monitor-expressroute.md#configuration)
+- [Мониторинг производительности.](network-performance-monitor-performance-monitor.md#configuration)
+- [Монитор подключения службы](network-performance-monitor-performance-monitor.md#configuration)
+- [Мониторинг ExpressRoute.](network-performance-monitor-expressroute.md#configuration)
 
  
 
@@ -251,13 +251,13 @@ ms.locfileid: "59489730"
 
 Это означает, что управление оповещениями осуществляется с помощью [групп действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups#overview).  
 
-Если вы являетесь пользователем NPM создания оповещения через монитор LAzure: 
-1. Вы увидите ссылку, которая перенаправит вас на портал Azure. Щелкните ее для доступа к порталу.
+Если вы пользователь NPM, создающий оповещение через Log Analytics: 
+1. Вы увидите ссылку, вы будете перенаправлены на портал Azure. Щелкните ее для доступа к порталу.
 2. Щелкните плитку Монитора производительности сети. 
 3. Перейдите к настройке.  
 4. Выберите тест, для которого необходимо создать оповещение, и выполните действия, указанные ниже.
 
-Если вы — пользователь NPM, создающий оповещение через портал Azure:  
+Если вы являетесь пользователем NPM создания оповещения с помощью портала Azure:  
 1. Вы можете ввести свой адрес электронной почты напрямую или создавать оповещения через группы действий.
 2. Если вы решили ввести адрес электронной почты напрямую, будет создана группа действий **NPM Email ActionGroup**, в которую добавляется идентификатор адреса электронной почты.
 3. Если вы решили использовать группы действий, необходимо выбрать группу действий, созданную ранее. Дополнительные сведения о создании группы действий см. [здесь.](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups#create-an-action-group-by-using-the-azure-portal) 

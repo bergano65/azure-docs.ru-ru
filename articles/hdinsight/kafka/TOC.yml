@@ -22,19 +22,16 @@ items:
     href: apache-kafka-quickstart-resource-manager-template.md
 - name: Учебники
   items:
-  - name: 1. Использование структурированной потоковой передачи Apache Spark
+  - name: Использование структурированной потоковой передачи Apache Spark
     href: ../hdinsight-apache-kafka-spark-structured-streaming.md
     maintainContext: true
-  - name: 2. Чтение и запись данных в Apache Kafka с помощью Apache Storm
+  - name: Чтение и запись данных в Apache Kafka с помощью Apache Storm
     href: ../hdinsight-apache-storm-with-kafka.md
     maintainContext: true
-  - name: 3. Использование API производителя и потребителя Apache Kafka
+  - name: Использование API объекта-производителя и объекта-получателя Apache Kafka
     href: apache-kafka-producer-consumer-api.md
-  - name: 4. Разработка приложения с помощью API потоков Apache Kafka
+  - name: Разработка приложения с помощью API потоков Apache Kafka
     href: apache-kafka-streams-api.md
-  - name: Мониторинг доступности кластера с помощью журналов Ambari и Azure Monitor
-    href: ../hdinsight-cluster-availability.md
-    maintainContext: true
 - name: Основные понятия
   items:
   - name: Планирование загрузки
@@ -159,6 +156,9 @@ items:
       - name: Использование Apache Ambari REST API
         href: ../hdinsight-hadoop-manage-ambari-rest-api.md
         maintainContext: true
+      - name: Мониторинг доступности кластера с помощью журналов Azure Monitor
+        href: ../hdinsight-cluster-availability.md
+        maintainContext: true
       maintainContext: true
     - name: Управление журналами для кластера HDInsight
       href: ../hdinsight-log-management.md
@@ -271,9 +271,9 @@ items:
   - name: Средства Windows для HDInsight
     href: ../hdinsight-hadoop-windows-tools.md
     maintainContext: true
-ms.openlocfilehash: 1bc035c80492c283364e5216184d2e943bacc3aa
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 4549b041bc9e754aca632826c8e1a2afc7622a82
+ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58668149"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59565104"

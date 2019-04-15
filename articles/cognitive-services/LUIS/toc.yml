@@ -62,11 +62,14 @@ items:
       href: luis-quickstart-intents-regex-entity.md
     - name: Получение точных текстовых совпадений с помощью списков
       href: luis-quickstart-intent-and-list-entity.md
-    - name: Извлечение контекстуально связанных данных с помощью иерархических сущностей
-      href: luis-quickstart-intent-and-hier-entity.md
+    - name: Получение связанных данных с использованием ролей сущностей
+      displayName: roles, geographyV2, context
+      href: tutorial-entity-roles.md
     - name: Группирование и извлечение связанных данных с помощью составных сущностей
+      displayName: roles
       href: luis-tutorial-composite-entity.md
     - name: Извлечение имен с помощью простых сущностей
+      displayName: roles
       href: luis-quickstart-primary-and-secondary-data.md
   - name: Улучшение приложения
     items:
@@ -77,6 +80,7 @@ items:
     - name: Добавление стандартных форматов высказываний
       href: luis-tutorial-pattern.md
     - name: Извлечение контекстуально связанных шаблонов
+      displayName: roles
       href: luis-tutorial-pattern-roles.md
     - name: Извлечение неструктурированных данных
       href: luis-tutorial-pattern-any.md
@@ -113,7 +117,7 @@ items:
     - name: Намерения
       href: luis-concept-intent.md
     - name: Сущности
-      displayName: prebuilt, custom, regular expression, regex, simple, list, pattern.any, composite, hierarchical, machine-learn, exact, mixed
+      displayName: prebuilt, custom, regular expression, regex, simple, list, pattern.any, composite, hierarchical, machine-learn, exact, mixed, roles
       href: luis-concept-entity-types.md
     - name: Высказывания
       href: luis-concept-utterance.md
@@ -130,6 +134,7 @@ items:
     - name: Списки фраз
       href: luis-concept-feature.md
     - name: Шаблоны
+      displayName: roles
       href: luis-concept-patterns.md
   - name: Управление данными
     items:
@@ -138,6 +143,7 @@ items:
     - name: Преобразование данных
       href: luis-concept-data-conversion.md
     - name: Извлечение данных
+      displayName: roles
       href: luis-concept-data-extraction.md
     - name: Хранилище данных
       href: luis-concept-data-storage.md
@@ -171,7 +177,7 @@ items:
     - name: Добавление сущности к фрагменту речи
       href: luis-how-to-add-example-utterances.md
     - name: Добавление сущности без фрагмента речи
-      displayName: import
+      displayName: roles, import
       href: luis-how-to-add-entities.md
     - name: Использование предварительно созданных моделей
       items:
@@ -220,7 +226,7 @@ items:
       displayName: synonym, interchange
       href: luis-how-to-add-features.md
     - name: Добавление шаблонов
-      displayName: syntax, template
+      displayName: syntax, template, roles
       href: luis-how-to-model-intent-pattern.md
   - name: Train
     href: luis-how-to-train.md
@@ -410,9 +416,9 @@ items:
     href: https://blog.botframework.com/category/luis/
   - name: База знаний
     href: https://cognitive.uservoice.com/knowledgebase/topics/127872-luis-language-understanding-intelligent-service
-ms.openlocfilehash: db4e3cf9cad70556b057645dec52c9705fb29079
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: 1a35c8befbffae02a169e87390677c547aec833c
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58896114"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523690"
