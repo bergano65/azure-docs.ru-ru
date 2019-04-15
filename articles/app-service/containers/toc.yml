@@ -23,7 +23,7 @@ items:
     href: quickstart-python.md
   - name: Создание приложения Ruby
     href: quickstart-ruby.md
-  - name: Создание приложения Docker или Go
+  - name: Запуск пользовательского контейнера
     href: quickstart-docker-go.md
   - name: Создание многоконтейнерного приложения
     href: quickstart-multi-container.md
@@ -48,7 +48,7 @@ items:
       href: tutorial-java-enterprise-postgresql-app.md
   - name: Многоконтейнерное приложение
     href: tutorial-multi-container-app.md
-  - name: Пользовательский образ Docker
+  - name: Запуск контейнера из Реестра контейнеров Azure
     href: tutorial-custom-docker-image.md
   - name: Сопоставление личного домена
     href: ../app-service-web-tutorial-custom-domain.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
@@ -72,10 +72,6 @@ items:
     href: ../overview-hosting-plans.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
   - name: Среда службы приложений
     href: ../environment/intro.md
-  - name: Руководство для разработчиков Java
-    href: app-service-linux-java.md
-  - name: Руководство по Java Enterprise
-    href: app-service-java-enterprise.md
   - name: Входящие и исходящие IP-адреса
     href: ../overview-inbound-outbound-ips.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
   - name: Аутентификация и авторизация
@@ -88,10 +84,22 @@ items:
   items:
   - name: Настройка приложения
     items:
-    - name: Образ Python
-      href: how-to-configure-python.md
     - name: Использование параметров приложения
       href: ../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - name: Настройка ASP.NET Core
+      href: configure-language-dotnetcore.md
+    - name: Настройка Node.js
+      href: configure-language-nodejs.md
+    - name: Настройка PHP
+      href: configure-language-php.md
+    - name: Настройка Java
+      href: configure-language-java.md
+    - name: Настройка Python
+      href: how-to-configure-python.md
+    - name: Настройка Ruby
+      href: configure-language-ruby.md
+    - name: Настройка пользовательского контейнера
+      href: configure-custom-container.md
     - name: Обработка содержимого с помощью Службы хранилища Azure
       href: how-to-serve-content-from-azure-storage.md
   - name: Развернуть в Azure
@@ -158,8 +166,6 @@ items:
       href: ../web-sites-monitor.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
     - name: Включение журналов
       href: ../troubleshoot-diagnostic-logs.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-    - name: Интеграция APM для Java
-      href: how-to-java-apm-monitoring.md
   - name: Управление приложением
     items:
     - name: Резервное копирование приложения
@@ -222,9 +228,9 @@ items:
         href: ../faq-open-source-technologies.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
       - name: Часто задаваемые вопросы о настройке и управлении
         href: ../faq-configuration-and-management.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-ms.openlocfilehash: f29fa4901e2eb8e3a6bcabcc72e4dba37041186a
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 250501832c3daaeee9935c2796e6da9df3483e35
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53719529"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59544878"

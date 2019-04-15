@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: bwren
-ms.openlocfilehash: 1f55e03d9a925bf939d627f376d29edf27461e74
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 8fcab1ead4ab6135e715dc173829178e43f8af2a
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56001125"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59522716"
 ---
 # <a name="windows-event-log-data-sources-in-azure-monitor"></a>Источники данных для журнала событий Windows в Azure Monitor
 Журналы событий Windows — это один из самых распространенных [источников данных](agent-data-sources.md), используемый для сбора данных агентами Windows, так как он применяется большинством приложений для записи сведений.  События можно собирать из стандартных журналов, таких как журналы системы и приложений, а также указывать пользовательские журналы приложений, которые необходимо отслеживать.
@@ -54,7 +54,7 @@ Azure Monitor собирает события только из журналов
 | EventLevelName |Степень серьезности события в текстовом формате. |
 | EventLog |Имя журнала событий, из которого было получено событие. |
 | ParameterXml |Значения параметров события в формате XML. |
-| ManagementGroupName |Имя группы управления для агентов System Center Operations Manager.  Для других агентов это AOI-<workspace ID>. |
+| ManagementGroupName |Имя группы управления для агентов System Center Operations Manager.  Для других агентов это значение равно `AOI-<workspace ID>` |
 | RenderedDescription |Описание события со значениями параметров. |
 | Источник |Источник события. |
 | SourceSystem |Тип агента, из которого было получено событие. <br> OpsManager — агент Windows, подключенный напрямую или управляемый с помощью Operations Manager. <br> Linux — все агенты Linux  <br>  AzureStorage – диагностика Azure |
@@ -72,7 +72,7 @@ Azure Monitor собирает события только из журналов
 | Event &#124; where EventLevelName == "error" &#124; summarize count() by Source |Число событий ошибок Windows по источникам. |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Настройте службу Log Analytics для сбора других [источников данных](agent-data-sources.md) для анализа.
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.  
 * Настройте [коллекцию счетчиков производительности](data-sources-performance-counters.md) из агентов Windows.
