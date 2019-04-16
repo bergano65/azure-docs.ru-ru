@@ -16,12 +16,12 @@ ms.date: 04/05/2019
 ms.subservice: manage-apps
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ab280b4647c0e8eb7083797ec00965cbaec6f8e
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.openlocfilehash: bf9ee43c6c6b332c05286da8e330812d7e0db6c2
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59502343"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59578595"
 ---
 # <a name="azure-ad-application-proxy-version-release-history"></a>Характеристики прокси приложения Azure AD: Журнал выпуска версий
 В этой статье перечислены версии и возможности прокси приложения Azure Active Directory (Azure AD), которые были выпущены. Команда Azure AD регулярно обновляет прокси приложения, добавляя новые функции и возможности. Соединители прокси приложения обновляются автоматически при выпуске новой версии.
@@ -31,7 +31,7 @@ ms.locfileid: "59502343"
 Ресурс |  Сведения
 --------- | --------- |
 Включение прокси приложения | Описываются предварительные требования для включения прокси приложения, Установка и регистрация соединителя в этом [руководстве](application-proxy-add-on-premises-application.md).
-Сведения о соединителях прокси приложения Azure AD | Дополнительные сведения о [управления соединителя](application-proxy-connectors.md) и как соединители автоматическое обновление.
+Сведения о соединителях прокси приложения Azure AD | Дополнительные сведения о [управления соединителя](application-proxy-connectors.md) и как соединители [автоматическое обновление](application-proxy-connectors.md#automatic-updates).
 Скачивание соединителя прокси приложения Azure AD |  [Скачайте последнюю версию connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download).
 
 ## <a name="156120"></a>1.5.612.0

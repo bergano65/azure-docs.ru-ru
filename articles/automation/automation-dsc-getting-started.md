@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: dsc
 author: bobbytreed
 ms.author: robreed
-ms.date: 08/08/2018
+ms.date: 04/15/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 234d59f9d625af6d0309b2995cc734fad6028b1e
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 60cd2d21167739e824489e30ebd187a5fc0cc12d
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57767045"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59579280"
 ---
 # <a name="getting-started-with-azure-automation-state-configuration"></a>Начало работы со службой "Настройка состояния службы автоматизации Azure"
 
@@ -27,7 +27,7 @@ ms.locfileid: "57767045"
 Для выполнения примеров из этой статьи необходимо следующее.
 
 - Учетная запись службы автоматизации Azure. Указания по созданию учетной записи запуска от имени пользователя для службы автоматизации Azure см. в статье [Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](automation-sec-configure-azure-runas-account.md).
-- Виртуальная машина Azure Resource Manager (неклассическая) под управлением Windows Server 2008 R2 или более поздней версии. Инструкции по созданию виртуальной машины см. в статье [Создание первой виртуальной машины Windows на портале Azure](../virtual-machines/virtual-machines-windows-hero-tutorial.md).
+- Виртуальная машина Azure Resource Manager (Неклассическая) под управлением [поддерживаемая операционная система](automation-dsc-overview.md#operating-system-requirements). Инструкции по созданию виртуальной машины см. в статье [Создание первой виртуальной машины Windows на портале Azure](../virtual-machines/virtual-machines-windows-hero-tutorial.md).
 
 ## <a name="creating-a-dsc-configuration"></a>Создание конфигурации DSC
 
@@ -149,9 +149,9 @@ ms.locfileid: "57767045"
 1. На странице сведений **Виртуальная машина** выберите **+ Подключить**.
 
    > [!IMPORTANT]
-   > Это должна быть виртуальная машина Azure Resource Manager под управлением Windows Server 2008 R2 или более поздней версии.
+   > Это должен быть под управлением виртуальной Машины Azure Resource Manager [поддерживаемая операционная система](automation-dsc-overview.md#operating-system-requirements).
 
-1. На странице **Регистрация** в поле **Имя конфигурации узла** выберите имя конфигурации узла, которое необходимо применить к виртуальной машине. На этом этапе указывать имя необязательно. После подключения узла назначенную конфигурацию узла можно изменить.
+2. На странице **Регистрация** в поле **Имя конфигурации узла** выберите имя конфигурации узла, которое необходимо применить к виртуальной машине. На этом этапе указывать имя необязательно. После подключения узла назначенную конфигурацию узла можно изменить.
    Установите флажок **Перезагрузить узел при необходимости** и нажмите кнопку **ОК**.
 
    ![Снимок экрана: колонка "Регистрация"](./media/automation-dsc-getting-started/RegisterVM.png)

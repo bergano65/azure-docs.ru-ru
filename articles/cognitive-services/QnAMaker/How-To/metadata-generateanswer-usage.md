@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: article
 ms.date: 02/21/2019
 ms.author: tulasim
-ms.openlocfilehash: 462dfb2de8608eebd5609f7044bde03991fca3ca
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: d14e2897183a97da5e84a76b699def529f1d167e
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56958054"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59579416"
 ---
 # <a name="get-a-knowledge-answer-with-the-generateanswer-api-and-metadata"></a>Получение ответа базы знаний с помощью GenerateAnswer API и метаданные
 
@@ -71,10 +71,10 @@ https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer?i
 |--|--|--|--|
 |Параметр URL-адреса маршрута|Идентификатор базы знаний|строка|Идентификатор GUID для базы знаний.|
 |Параметр URL-адреса маршрута|Узел конечной точки QnAMaker|строка|Имя узла конечной точки, развернутой в вашей подписке Azure. Доступно на странице "Параметры" после ее публикации в базе знаний. |
-|Заголовок|Content-Type|строка|Тип носителя текста, отправляемого в API. Значение по умолчанию —: ''|
-|Заголовок|Авторизация|строка|Ключ конечной точки (EndpointKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).|
+|Верхний колонтитул|Content-Type|строка|Тип носителя текста, отправляемого в API. Значение по умолчанию —: ''|
+|Верхний колонтитул|Авторизация|строка|Ключ конечной точки (EndpointKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).|
 |Текст запроса POST|Объект JSON|JSON|Вопрос с параметрами|
-|Параметр строки запроса (необязательно)|`isTest`|Логическое|Если установлено значение true, возвращает результаты из `testkb` индекса поиска вместо опубликованного индекса.|
+
 
 Текст JSON имеет несколько параметров:
 
@@ -83,6 +83,7 @@ https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer?i
 |`question`|обязательно|строка|Вопрос пользователя отправки на базе знаний.|
 |`top`|необязательный|целое число|Количество ранжированных результатов в выходных данных. Значение по умолчанию — 1.|
 |`userId`|необязательный|строка|Уникальный идентификатор для определения пользователя. Этот идентификатор будет записываться в журналы чата.|
+|`isTest`|необязательный|Логическое|Если установлено значение true, возвращает результаты из `testkb` индекса поиска вместо опубликованного индекса.|
 |`strictFilters`|необязательный|строка|Если указан, QnA Maker будет возвращать только ответы с указанными метаданными.|
 
 Пример текста JSON выглядит как:
@@ -91,6 +92,7 @@ https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer?i
 {
     "question": "qna maker and luis",
     "top": 6,
+    "isTest": true,
     "strictFilters": [
     {
         "name": "category",

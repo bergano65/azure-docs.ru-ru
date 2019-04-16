@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: sachdevaswati
-ms.openlocfilehash: 1a596462eb42231a356ddc4fa67b6468b63cd97c
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.openlocfilehash: 5e4bd3647b557b260e65e3fb1ce297892f5d7d78
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58849306"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59578830"
 ---
 # <a name="back-up-sql-server-databases-in-azure-vms"></a>Создание резервных копий баз данных SQL Server на виртуальных машинах Azure
 
@@ -113,7 +113,7 @@ Azure Backup выполняет ряд операций при настройк�
     - Azure Backup создает учетную запись службы **NT Service\AzureWLBackupPluginSvc**.
       - Все операции резервного копирования и восстановления используют учетную запись службы.
       - Учетной записи **NT Service\AzureWLBackupPluginSvc** необходимы разрешения sysadmin SQL. Все виртуальные машины SQL Server, созданные в Azure Marketplace, поставляются с установленным **SqlIaaSExtension**. Расширение **AzureBackupWindowsWorkload** использует **SQLIaaSExtension** для автоматического получения необходимых разрешений.
-    - Если виртуальная машина не создана в marketplace, в ней не установлено **SqlIaaSExtension** и операция обнаружения завершается со сбоем и сообщением об ошибке **UserErrorSQLNoSysAdminMembership**. Следуйте инструкциям в [#fix-sql-sysadmin-permissions], чтобы устранить эту проблему.
+    - Если виртуальная машина не создана в marketplace, в ней не установлено **SqlIaaSExtension** и операция обнаружения завершается со сбоем и сообщением об ошибке **UserErrorSQLNoSysAdminMembership**. Выполните [инструкции](backup-azure-sql-database.md#fix-sql-sysadmin-permissions) Чтобы устранить эту проблему.
 
         ![Выбор виртуальной машины и базы данных](./media/backup-azure-sql-database/registration-errors.png)
 

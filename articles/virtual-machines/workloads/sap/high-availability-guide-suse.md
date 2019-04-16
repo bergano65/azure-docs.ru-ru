@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/15/2019
 ms.author: sedusch
-ms.openlocfilehash: 9809584a3abe1d0cdde2cd6ccf90b48432d27c11
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 90ec7cf4964440d39b3f69eb9ae9708eaafe3748
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58007847"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59579042"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-for-sap-applications"></a>Руководство по обеспечению высокого уровня доступности виртуальных машин Azure для SAP NetWeaver на SUSE Linux Enterprise Server для приложений SAP
 
@@ -95,7 +95,8 @@ NFS-сервер, SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и б
   * подключена к основным сетевым интерфейсам всех виртуальных машин, которые должны быть частью кластера (A)SCS/ERS.
 * Порт пробы:
   * порт 620<strong>&lt;nr&gt;</strong>.
-* Правила балансировки нагрузки:
+* загрузить 
+* правила балансировки
   * 32<strong>&lt;nr&gt;</strong> TCP;
   * 36<strong>&lt;nr&gt;</strong> TCP;
   * 39<strong>&lt;nr&gt;</strong> TCP;
@@ -112,7 +113,7 @@ NFS-сервер, SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и б
   * подключена к основным сетевым интерфейсам всех виртуальных машин, которые должны быть частью кластера (A)SCS/ERS.
 * Порт пробы:
   * Порт 621<strong>&lt;nr&gt;</strong>.
-* Правила балансировки нагрузки:
+* Правила балансировки нагрузки
   * 33<strong>&lt;nr&gt;</strong> TCP;
   * 5<strong>&lt;nr&gt;</strong>13 TCP;
   * 5<strong>&lt;nr&gt;</strong>14 TCP;
@@ -132,7 +133,8 @@ SAP NetWeaver требует общее хранилище для каталог
 
 Все необходимые ресурсы можно развернуть с помощью шаблонов быстрого запуска с сайта GitHub. Шаблон развертывает виртуальные машины, подсистему балансировки нагрузки, группу доступности и т. д. Выполните следующее, чтобы развернуть шаблон.
 
-1. Откройте [шаблон нескольких ИД безопасности ASCS/SCS][template-multisid-xscs] или [конвергированный шаблон][template-converged] на портале Azure. Шаблон ASCS/SCS создает только правила балансировки нагрузки для экземпляров SAP NetWeaver ASCS/SCS и ERS (только для Linux), в то время как конвергированный шаблон также создает правила балансировки нагрузки для базы данных. Например, Microsoft SQL Server или SAP HANA. Если вы планируете установить систему на основе SAP NetWeaver и базу данных на одних и тех же компьютерах, используйте [конвергированный шаблон][template-converged].
+1. Откройте [шаблон нескольких ИД безопасности ASCS/SCS] [ template-multisid-xscs] или [конвергированный шаблон] [ template-converged] на портале Azure. 
+   Шаблон ASCS/SCS только создает правила балансировки нагрузки для SAP NetWeaver ASCS/SCS и экземпляров ERS (только Linux), а конвергированный шаблон дополнительно создает правила балансировки нагрузки для базы данных (например, Microsoft SQL Server или SAP HANA). Если вы планируете установить систему на основе SAP NetWeaver и базу данных на одних и тех же компьютерах, используйте [конвергированный шаблон][template-converged].
 1. Задайте следующие параметры.
    1. Префикс ресурса (только шаблон нескольких ИД безопасности ASCS/SCS).  
       Введите префикс, который вы хотите использовать. Значение будет использоваться в качестве префикса для развертываемых ресурсов.
@@ -144,7 +146,7 @@ SAP NetWeaver требует общее хранилище для каталог
       Выберите один из дистрибутивов Linux. Для этого примера выберите SLES 12 BYOS.
    6. Тип базы данных.  
       Выберите HANA.
-   7. Размер системы SAP  
+   7. Размер системы SAP.  
       Количество систем SAP, которые предоставляет новая система. Если вы не знаете, сколько систем SAP потребуется, обратитесь к партнеру по технологиям или системному интегратору SAP.
    8. Доступность системы  
       Выберите высокую доступность
@@ -198,7 +200,7 @@ SAP NetWeaver требует общее хранилище для каталог
          1. Нажмите кнопку "ОК"
       1. Порт 621**02** для ASCS ERS
          * Чтобы создать проверку работоспособности для ERS, повторите предыдущие шаги (например, 621**02** и **nw1-aers-hp**).
-   1. Правила балансировки нагрузки:
+   1. Правила балансировки нагрузки
       1. TCP 32**00** для ASCS
          1. Выберите подсистему балансировки нагрузки, щелкните "Правила балансировки нагрузки" и нажмите кнопку "Добавить".
          1. Введите имя нового правила балансировщика нагрузки (например, **nw1-lb-3200**).
@@ -530,6 +532,8 @@ SAP NetWeaver требует общее хранилище для каталог
 
 1. **[1]** Создайте кластерные ресурсы SAP.
 
+Если в рамках архитектуры сервера 1 постановки в очередь (ENSA1) определите ресурсы следующим образом:
+
    <pre><code>sudo crm configure property maintenance-mode="true"
    
    sudo crm configure primitive rsc_sap_<b>NW1</b>_ASCS<b>00</b> SAPInstance \
@@ -556,7 +560,37 @@ SAP NetWeaver требует общее хранилище для каталог
    sudo crm configure property maintenance-mode="false"
    </code></pre>
 
+  SAP введена поддержка сервер постановки в очередь 2, включая репликацию, начиная с SAP NW 7.52. Начиная с платформы 1809 ABAP, сервер постановки в очередь 2 устанавливается по умолчанию. См. в разделе SAP Примечание [2630416](https://launchpad.support.sap.com/#/notes/2630416) для поддержки сервера 2 постановки в очередь.
+При использовании архитектуры сервера 2 постановки в очередь ([ENSA2](https://help.sap.com/viewer/cff8531bc1d9416d91bb6781e628d4e0/1709%20001/en-US/6d655c383abf4c129b0e5c8683e7ecd8.html)), определите ресурсы следующим образом:
+
+<pre><code>sudo crm configure property maintenance-mode="true"
+   
+   sudo crm configure primitive rsc_sap_<b>NW1</b>_ASCS<b>00</b> SAPInstance \
+    operations \$id=rsc_sap_<b>NW1</b>_ASCS<b>00</b>-operations \
+    op monitor interval=11 timeout=60 on_fail=restart \
+    params InstanceName=<b>NW1</b>_ASCS<b>00</b>_<b>nw1-ascs</b> START_PROFILE="/sapmnt/<b>NW1</b>/profile/<b>NW1</b>_ASCS<b>00</b>_<b>nw1-ascs</b>" \
+    AUTOMATIC_RECOVER=false \
+    meta resource-stickiness=5000
+   
+   sudo crm configure primitive rsc_sap_<b>NW1</b>_ERS<b>02</b> SAPInstance \
+    operations \$id=rsc_sap_<b>NW1</b>_ERS<b>02</b>-operations \
+    op monitor interval=11 timeout=60 on_fail=restart \
+    params InstanceName=<b>NW1</b>_ERS<b>02</b>_<b>nw1-aers</b> START_PROFILE="/sapmnt/<b>NW1</b>/profile/<b>NW1</b>_ERS<b>02</b>_<b>nw1-aers</b>" AUTOMATIC_RECOVER=false IS_ERS=true 
+   
+   sudo crm configure modgroup g-<b>NW1</b>_ASCS add rsc_sap_<b>NW1</b>_ASCS<b>00</b>
+   sudo crm configure modgroup g-<b>NW1</b>_ERS add rsc_sap_<b>NW1</b>_ERS<b>02</b>
+   
+   sudo crm configure colocation col_sap_<b>NW1</b>_no_both -5000: g-<b>NW1</b>_ERS g-<b>NW1</b>_ASCS
+   sudo crm configure order ord_sap_<b>NW1</b>_first_start_ascs Optional: rsc_sap_<b>NW1</b>_ASCS<b>00</b>:start rsc_sap_<b>NW1</b>_ERS<b>02</b>:stop symmetrical=false
+   
+   sudo crm node online <b>nw1-cl-0</b>
+   sudo crm configure property maintenance-mode="false"
+   </code></pre>
+
+  Если вы обновляете более старой версии и переключение на сервер постановки в очередь 2, см. Примечание sap [2641019](https://launchpad.support.sap.com/#/notes/2641019). 
+
    Убедитесь, что состояние кластера — "ОК" и что запущены все ресурсы. Не важно, на каком узле выполняются ресурсы.
+
 
    <pre><code>sudo crm_mon -r
    
@@ -958,7 +992,7 @@ SAP NetWeaver требует общее хранилище для каталог
         rsc_sap_NW1_ERS02  (ocf::heartbeat:SAPInstance):   Started nw1-cl-0
    </code></pre>
 
-   Создайте блокировку постановки в очередь, например измените пользователя в транзакции su01. Выполните следующие команды \<SID_SAP>adm на узле, где выполняется экземпляр ASCS. Команды остановят экземпляр ASCS и запустят его снова. Блокировка постановки в очередь будет потеряна в этом тесте.
+   Создайте блокировку постановки в очередь, например измените пользователя в транзакции su01. Выполните следующие команды \<SID_SAP>adm на узле, где выполняется экземпляр ASCS. Команды остановят экземпляр ASCS и запустят его снова. При использовании архитектуры сервера 1 постановки в очередь, блокировка постановки в очередь ожидается потеряны в данном тесте. При использовании архитектуры сервера 2 постановки в очередь, будут храниться постановки в очередь. 
 
    <pre><code>nw1-cl-1:nw1adm 54> sapcontrol -nr 00 -function StopWait 600 2
    </code></pre>

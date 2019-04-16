@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/26/2018
 ms.author: mihauss
 ms.subservice: blobs
-ms.openlocfilehash: 1166f98dcd39362ef5e28be12ff9e2f561ab5b1f
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: 90ddb58f3499180e17df559a98ac8a46b53fb824
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55238229"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59579018"
 ---
 # <a name="use-azure-cdn-to-access-blobs-with-custom-domains-over-https"></a>Получение доступа к большим двоичным объектам с помощью личных доменов по HTTPS с использованием Azure CDN
 
@@ -64,7 +64,7 @@ Azure CDN не учитывает ограничений, добавленных
 
 На [странице цен Azure CDN](https://azure.microsoft.com/pricing/details/cdn/) поддержка HTTPS для имен личных доменов доступна для Azure CDN только из продуктов Verizon цен. категорий "Стандартный" и "Премиум".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка имени личного домена для конечной точки хранилища BLOB-объектов](storage-custom-domain-name.md)
 * [Размещение статических веб-сайтов в службе хранилища Azure](storage-blob-static-website.md)

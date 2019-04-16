@@ -18,12 +18,12 @@ ms.date: 01/25/2019
 ms.author: joflore
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eafc379a65fda1ed64c6afee1427e704558b1ee6
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 11d4d319fa31dd2493810dc7293d415554f79d94
+ms.sourcegitcommit: e89b9a75e3710559a9d2c705801c306c4e3de16c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59261549"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59571126"
 ---
 # <a name="best-practices-for-conditional-access-in-azure-active-directory"></a>Рекомендации по работе с условным доступом в Azure Active Directory
 
@@ -109,7 +109,7 @@ Azure Active Directory применяет обе политики, и польз
 
 ### <a name="does-conditional-access-work-with-exchange-activesync"></a>Работает ли условный доступ с Exchange Active Sync?
 
-Да. Exchange ActiveSync можно использовать в политике условного доступа.
+Да, вы можете использовать Exchange ActiveSync в политике условного доступа с некоторыми [ограничения](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/conditional-access-for-exo-and-spo#exchange-activesync). 
 
 ### <a name="how-should-you-configure-conditional-access-with-office-365-apps"></a>Как следует настроить условный доступ с помощью приложений Office 365?
 
@@ -130,7 +130,7 @@ Azure Active Directory применяет обе политики, и польз
 В своей среде следует избегать следующих конфигураций:
 
 
-**Для всех пользователей всех облачных приложений:**
+**Для всех пользователей, всех облачных приложений:**
 
 - **Блокировка доступа** — эта конфигурация блокирует всю организацию, что явно не является хорошей идеей.
 
@@ -140,7 +140,7 @@ Azure Active Directory применяет обе политики, и польз
 
 - **Требуется политика защиты приложений** — эта политика блокировки доступа также имеет возможность блокировать доступ для всех пользователей в вашей организации, если у вас нет политики Intune. Если вы являетесь администратором без клиентское приложение, которое имеет политику защиты приложений Intune, эта политика блокирует ваш доступ обратно в порталах, таких как Intune и Azure.
 
-**Для всех пользователей всех облачных приложений, всех платформ устройств:**
+**Для всех пользователей, всех облачных приложений, всех платформ устройств:**
 
 - **Блокировка доступа** — эта конфигурация блокирует всю организацию, что явно не является хорошей идеей.
 

@@ -5,16 +5,16 @@ services: automation
 ms.service: automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 10/16/2018
+ms.date: 4/11/2019
 ms.topic: conceptual
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: 0f5d36dfbe614e35256231a91a9e15055e2e81cb
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 41f0607908cde94ca08a4c4dfce0a47032eefbb3
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57843629"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59578447"
 ---
 # <a name="onboard-update-management-change-tracking-and-inventory-solutions"></a>Подключение решений для управления обновлениями, отслеживания изменений и инвентаризации
 
@@ -44,7 +44,7 @@ ms.locfileid: "57843629"
 |EastUS<sup>1</sup>|EastUS2|
 |JapanEast|JapanEast|
 |SoutheastAsia|SoutheastAsia|
-|WestCentralUS|WestCentralUS|
+|WestCentralUS<sup>2</sup>|WestCentralUS<sup>2</sup>|
 |WestEurope|WestEurope|
 |UKSouth|UKSouth|
 |USGovVirginia|USGovVirginia|
@@ -52,8 +52,7 @@ ms.locfileid: "57843629"
 
 <sup>1</sup> EastUS2EUAP и EastUS сопоставлений рабочих областей Log Analytics для учетных записей службы автоматизации не точное сопоставление одного региона в другой, но имеет правильное сопоставление.
 
-> [!NOTE]
-> Из-за загрузки регион может оказаться недоступными при создании рабочей области учетной записи службы автоматизации или Log Analytics.  Если это так, убедитесь, что вы используете в предыдущей таблице, можно создавать ресурсы в регионе.
+<sup>2</sup> из-за ограничений емкости регион является недоступным при создании новых ресурсов. Сюда входят учетные записи службы автоматизации и Log Analytics рабочие области. Тем не менее созданной ранее связанные ресурсы в регионе должны продолжать работать.
 
 Решение для отслеживания изменений и инвентаризации позволяет [отслеживать изменения](automation-vm-change-tracking.md) и [выполнять инвентаризацию](automation-vm-inventory.md) на виртуальных машинах. На этом этапе нужно включить решение на виртуальной машине.
 

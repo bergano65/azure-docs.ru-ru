@@ -11,12 +11,12 @@ ms.date: 04/03/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 49234472481e30cf74efa3e72ac0e4f31466fada
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: e33143626e136523b4af086e841b92e9ad30fa86
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58884896"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59577615"
 ---
 # <a name="what-is-the-azure-ad-connect-admin-agent"></a>Общие сведения об агенте администратора Azure AD Connect 
 Агент Azure AD Connect администрирования является новым компонентом Azure Active Directory Connect, установленного на сервере Azure Active Directory Connect. Он позволяет собирать определенные данные из вашей среды Active Directory, которая помогает поддержки инженера, устранение неполадок при обратиться в службу поддержки корпорации Майкрософт.
@@ -41,16 +41,18 @@ ms.locfileid: "58884896"
  
 Если вы не хотите инженер поддержки Майкрософт для доступа к данным для позвонить в службу поддержки можно отключить это, изменив файл конфигурации службы, как описано ниже: 
 
-  1.    Откройте **C:\Program Files\Microsoft Azure AD Connect администрирования Agent\AzureADConnectAdministrationAgentService.exe.config** в блокноте.
-  2.    Отключить **UserDataEnabled** параметр, как показано ниже. Если **UserDataEnabled** параметр существует и имеет значение true, а затем присвойте ему значение false. Если параметр не существует, добавьте параметр, как показано ниже.    
-  `
- <appSettings>
-   <add key="TraceFilename" value="ADAdministrationAgent.log" />
-   <add key="UserDataEnabled" value="false" />
-  </appSettings>
-  `
-  3.    Сохраните файл конфигурации.
-  4.    Перезапуск службы агента Azure AD Connect администрирования, как показано ниже
+1.  Откройте **C:\Program Files\Microsoft Azure AD Connect администрирования Agent\AzureADConnectAdministrationAgentService.exe.config** в блокноте.
+2.  Отключить **UserDataEnabled** параметр, как показано ниже. Если **UserDataEnabled** параметр существует и имеет значение true, а затем присвойте ему значение false. Если параметр не существует, добавьте параметр, как показано ниже.    
+
+    ```xml
+    <appSettings>
+      <add key="TraceFilename" value="ADAdministrationAgent.log" />
+      <add key="UserDataEnabled" value="false" />
+    </appSettings>
+    ```
+
+3.  Сохраните файл конфигурации.
+4.  Перезапуск службы агента Azure AD Connect администрирования, как показано ниже
 
 ![Агент-администратор](media/whatis-aadc-admin-agent/adminagent2.png)
 

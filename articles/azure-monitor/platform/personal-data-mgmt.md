@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/18/2018
 ms.author: magoedte
-ms.openlocfilehash: 9112d50384aba288038343ff9a14ed55542fb722
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0cf5a80e3eedbe7efb8463162b5b3ed489ac08c8
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58121355"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59577904"
 ---
 # <a name="guidance-for-personal-data-stored-in-log-analytics-and-application-insights"></a>Руководство по хранению персональных данных в Log Analytics и Application Insights
 
@@ -86,6 +86,9 @@ Log Analytics — это масштабируемое хранилище, опи
 ### <a name="view-and-export"></a>Просмотр и экспорт
 
 Для просмотра и экспорта запросов данных следует использовать [API запросов Log Analytics](https://dev.loganalytics.io/) или [API запросов Application Insights](https://dev.applicationinsights.io/quickstart). Вам необходимо самостоятельно создать логику преобразования данных в требуемый вид для предоставления пользователям. [Функции Azure](https://azure.microsoft.com/services/functions/) отлично подходят для размещения такой логики.
+
+> [!IMPORTANT]
+>  Хотя большинство операций очистки может завершиться гораздо быстрее, чем соглашение об уровне ОБСЛУЖИВАНИЯ, **формальным соглашение об уровне ОБСЛУЖИВАНИЯ для выполнения операций очистки составляет 30 дней** из-за их высокой влияние на платформы данных. Это автоматизированный процесс; нет способа для запроса, что операции обрабатываться быстрее.
 
 ### <a name="delete"></a>Delete (Удалить)
 

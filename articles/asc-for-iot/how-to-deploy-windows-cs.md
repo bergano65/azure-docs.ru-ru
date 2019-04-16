@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/19/2019
 ms.author: mlottner
-ms.openlocfilehash: b45d64f56653ad6d0baabef4a63351ef14f24c42
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.openlocfilehash: 601ee706adedf522890acc3f3996a7d36b349348
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58861961"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59577848"
 ---
 # <a name="deploy-an-azure-security-center-for-iot-c-based-security-agent-for-windows"></a>Развертывание в центр безопасности Azure для IoT C#-основе security agent для Windows
 
 > [!IMPORTANT]
-> Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
+> Центр безопасности Azure для Интернета вещей сейчас предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В этом руководстве объясняется, как установить центр безопасности Azure (ASC) для Интернета вещей C#-агент безопасности в Windows.
@@ -86,7 +86,7 @@ ms.locfileid: "58861961"
 ### <a name="verify-deployment-status"></a>Проверка состояния развертывания
 
 - Проверьте состояние развертывания агента, выполнив следующую команду:<br>
-    ```sc.exe query "ASC IoT Agent" ```
+    ```sc.exe query "ASC IoT Agent"```
 
 ### <a name="uninstall-the-agent"></a>Удаление агента
 
@@ -135,7 +135,7 @@ ms.locfileid: "58861961"
 
 1. Дополнительные сведения о сбое можно просмотреть в файле журнала.
 
-   Расположение файла журнала: `%WinDir%/System32/IoTAgentLog.log`
+   Расположение файла журнала: `%WinDir%/System32/IoTAgentLog.log`.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

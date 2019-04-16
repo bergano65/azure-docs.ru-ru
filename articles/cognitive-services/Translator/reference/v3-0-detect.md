@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: a552fece120d7978825a685960bf4faf65aba783
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.openlocfilehash: fa618c5c623a631e7a88f8235a0b7b16fcb2bc88
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58916671"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59578663"
 ---
 # <a name="translator-text-api-30-detect"></a>API перевода текстов 3.0: Detect
 
@@ -48,8 +48,8 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
   <th width="20%">Заголовки</th>
   <th>ОПИСАНИЕ</th>
   <tr>
-    <td>_По одному разрешению_<br/>_Верхний колонтитул_</td>
-    <td>*Обязательный заголовок запроса*.<br/>См. [описание доступных способов аутентификации](./v3-0-reference.md#authentication).</td>
+    <td>Заголовки проверки подлинности</td>
+    <td><em>Обязательный заголовок запроса</em>.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
   </tr>
   <tr>
     <td>Content-Type</td>
@@ -65,7 +65,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
   </tr>
 </table> 
 
-## <a name="request-body"></a>Тело запроса
+## <a name="request-body"></a>Текст запроса
 
 Текст запроса является массивом в формате JSON. Каждый элемент этого массива представляет собой объект JSON со строковым свойством `Text`. Определение языка применяется к значению свойства `Text`. Ниже представлен пример текста запроса.
 
@@ -176,7 +176,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 
 В следующем примере показано, как получить список языков, поддерживаемых для перевода текста.
 
-# [<a name="curl"></a>curl](#tab/curl)
+# <a name="curltabcurl"></a>[curl](#tab/curl)
 
 ```
 curl -X POST "https://api.cognitive.microsofttranslator.com/detect?api-version=3.0" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'What language is this text written in?'}]"

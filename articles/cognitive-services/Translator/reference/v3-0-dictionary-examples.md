@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 03/29/2018
 ms.author: v-jansko
-ms.openlocfilehash: 26f147fde58a7f9c836bdacd6d66321f0fc5529a
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.openlocfilehash: d48349b802023d9a05bf14898440837b7793715d
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58916427"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59578280"
 ---
 # <a name="translator-text-api-30-dictionary-examples"></a>API перевода текстов 3.0: Примеры словарей
 
@@ -56,8 +56,8 @@ https://api.cognitive.microsofttranslator.com/dictionary/examples?api-version=3.
   <th width="20%">Заголовки</th>
   <th>ОПИСАНИЕ</th>
   <tr>
-    <td>_По одному разрешению_<br/>_Верхний колонтитул_</td>
-    <td>*Обязательный заголовок запроса*.<br/>См. [описание доступных способов аутентификации](./v3-0-reference.md#authentication).</td>
+    <td>Заголовки проверки подлинности</td>
+    <td><em>Обязательный заголовок запроса</em>.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
   </tr>
   <tr>
     <td>Content-Type</td>
@@ -73,13 +73,13 @@ https://api.cognitive.microsofttranslator.com/dictionary/examples?api-version=3.
   </tr>
 </table> 
 
-## <a name="request-body"></a>Тело запроса
+## <a name="request-body"></a>Текст запроса
 
 Текст запроса является массивом в формате JSON. Каждый элемент этого массива представляет собой объект JSON со следующими свойствами.
 
   * `Text`: строка с термином, который нужно найти. Здесь должно передаваться значение из поля `normalizedText`, полученного в обратном переводе по предшествующему запросу [поиска по словарю](./v3-0-dictionary-lookup.md). Также это может быть значение поля `normalizedSource`.
 
-  * `Translation`: строка, содержащая переведенный текст, возвращенный предшествующей операцией ](./v3-0-dictionary-lookup.md)поиска по словарю. Здесь должно передаваться значение из поля `normalizedTarget`, полученного в списке `translations` по предшествующему запросу [поиска по словарю](./v3-0-dictionary-lookup.md). Служба возвращает примеры для конкретной пары слов на языках оригинала и перевода.
+  * `Translation`: строка, содержащая переведенный текст, возвращенный предшествующей операцией [поиска по словарю](./v3-0-dictionary-lookup.md). Здесь должно передаваться значение из поля `normalizedTarget`, полученного в списке `translations` по предшествующему запросу [поиска по словарю](./v3-0-dictionary-lookup.md). Служба возвращает примеры для конкретной пары слов на языках оригинала и перевода.
 
 Пример.
 
@@ -104,11 +104,11 @@ https://api.cognitive.microsofttranslator.com/dictionary/examples?api-version=3.
   
   * `examples`: список примеров для пары терминов в оригинале и в переводе. Каждый элемент этого списка — это объект со следующими свойствами:
 
-    * `sourcePrefix`: строка, которую нужно добавить _перед`sourceTerm` значением  для создания полного примера. Не добавляйте символ пробела, так как он уже расположен в нужном месте. Это значение может быть пустой строкой.
+    * `sourcePrefix`: строка, которую нужно добавить _перед_ значением `sourceTerm` для создания полного примера. Не добавляйте символ пробела, так как он уже расположен в нужном месте. Это значение может быть пустой строкой.
 
     * `sourceTerm`: строка, совпадающая с термином, по которому выполнялся поиск. Эта строка объединяется с `sourcePrefix` и `sourceSuffix` для создания полного примера. Это значение выделяется для того, чтобы его было удобно отмечать в пользовательском интерфейсе, например, полужирным шрифтом.
 
-    * `sourceSuffix`: строка, которую нужно добавить _после`sourceTerm` значения  для создания полного примера. Не добавляйте символ пробела, так как он уже расположен в нужном месте. Это значение может быть пустой строкой.
+    * `sourceSuffix`: строка, которую нужно добавить _после_ значения `sourceTerm` для создания полного примера. Не добавляйте символ пробела, так как он уже расположен в нужном месте. Это значение может быть пустой строкой.
 
     * `targetPrefix`: строка, аналогичная `sourcePrefix`, но для языка перевода.
 
@@ -123,7 +123,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/examples?api-version=3.
 
 В этом примере показано, как найти примеры для конкретной пары терминов: английский оригинал `fly` и испанский перевод `volar`.
 
-# [<a name="curl"></a>curl](#tab/curl)
+# <a name="curltabcurl"></a>[curl](#tab/curl)
 
 ```
 curl -X POST "https://api.cognitive.microsofttranslator.com/dictionary/examples?api-version=3.0&from=en&to=es" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'fly', 'Translation':'volar'}]"

@@ -7,16 +7,16 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/07/2018
 ms.author: xshi
-ms.openlocfilehash: bc955db4e851c1f59012dc1375170850e1b0604c
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
-ms.translationtype: HT
+ms.openlocfilehash: ab3c02d7207bca70a90df8aa08c73c1484cd635d
+ms.sourcegitcommit: e89b9a75e3710559a9d2c705801c306c4e3de16c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54109509"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59571317"
 ---
 # <a name="use-cloud-explorer-for-visual-studio-to-send-and-receive-messages-between-your-device-and-iot-hub"></a>Использование Cloud Explorer для Visual Studio для обмена сообщениями между устройством и Центром Интернета вещей
 
-![Комплексная схема](media/iot-hub-get-started-e2e-diagram/2.png)
+![Комплексная схема](./media/iot-hub-visual-studio-cloud-device-messaging/e-to-e-diagram.png)
 
 [Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS) — это полезное расширение для Visual Studio. Оно позволяет просматривать ресурсы Azure, проверять их свойства и выполнять основные действия разработчика в среде Visual Studio. В этой статье объясняется, как использовать Cloud Explorer для обмена сообщениями между устройством и Центром Интернета вещей.
 
@@ -48,10 +48,14 @@ ms.locfileid: "54109509"
 
     ![Выбор "Управление учетными записями"](media/iot-hub-visual-studio-cloud-device-messaging/click-account-management.png)
 
-1. Щелкните **Управление учетными записями** в Cloud Explorer.
-1. Выберите **Добавить учетную запись...** в новом окне при первом входе в Azure.
-1. После входа появится список подписок Azure. Выберите подписки Azure, которые вы хотите просмотреть, и нажмите кнопку **Применить**.
-1. Разверните узлы **Ваша подписка** > **IoT Hubs**(Центры Интернета вещей) > **Ваш Центр Интернета вещей**, после чего в узле Центра Интернета вещей появится список устройств.
+
+2. Щелкните **Управление учетными записями** в Cloud Explorer.
+
+3. Выберите **Добавить учетную запись...** в новом окне при первом входе в Azure.
+
+4. После входа появится список подписок Azure. Выберите подписки Azure, которые вы хотите просмотреть, и нажмите кнопку **Применить**.
+
+5. Разверните узлы **Ваша подписка** > **IoT Hubs**(Центры Интернета вещей) > **Ваш Центр Интернета вещей**, после чего в узле Центра Интернета вещей появится список устройств.
 
     ![Список устройств](media/iot-hub-visual-studio-cloud-device-messaging/device-list.png)
 
@@ -63,11 +67,11 @@ ms.locfileid: "54109509"
 
     ![Действие Start Monitoring D2C Message (Начать мониторинг сообщений D2C)](media/iot-hub-visual-studio-cloud-device-messaging/start-monitoring-d2c-message.png)
 
-1. Отслеживаемые сообщения будут отображаться в области вывода **Центра Интернета вещей**.
+2. Отслеживаемые сообщения будут отображаться в области вывода **Центра Интернета вещей**.
 
     ![Результаты мониторинга сообщений D2C](media/iot-hub-visual-studio-cloud-device-messaging/monitor-d2c-message-result.png)
 
-1. Чтобы остановить мониторинг, щелкните правой кнопкой мыши любой Центр Интернета вещей или любое устройство и выберите **Stop Monitoring D2C Message** (Остановить мониторинг сообщений D2C).
+3. Чтобы остановить мониторинг, щелкните правой кнопкой мыши любой Центр Интернета вещей или любое устройство и выберите **Stop Monitoring D2C Message** (Остановить мониторинг сообщений D2C).
 
 ## <a name="send-cloud-to-device-messages"></a>Отправка сообщений из облака на устройство
 
@@ -77,12 +81,13 @@ ms.locfileid: "54109509"
 
     ![Действие Send C2D Message (Отправить сообщение C2D)](media/iot-hub-visual-studio-cloud-device-messaging/send-c2d-message.png)
 
-1. Введите сообщение в поле ввода.
-1. Результаты будут отображаться в области вывода **Центра Интернета вещей**.
+2. Введите сообщение в поле ввода.
+
+3. Результаты будут отображаться в области вывода **Центра Интернета вещей**.
 
     ![Результаты отправки сообщения C2D](media/iot-hub-visual-studio-cloud-device-messaging/send-c2d-message-result.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как отслеживать сообщения, отправляемые из устройства Интернета вещей в облако Центра Интернета вещей, и отправлять сообщения из этого облака на устройство.
 

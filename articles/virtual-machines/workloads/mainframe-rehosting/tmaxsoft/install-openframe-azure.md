@@ -8,12 +8,12 @@ ms.author: larryme
 ms.date: 04/02/2019
 ms.topic: article
 ms.service: virtual-machines-linux
-ms.openlocfilehash: 6b109f347ee7a917b57acfc56ab4418755295bc5
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: 78a8b5e7a1c5512f81315519210bc7759dd15342
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58896516"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59578481"
 ---
 # <a name="install-tmaxsoft-openframe-on-azure"></a>Установка TmaxSoft OpenFrame в Azure
 
@@ -945,7 +945,7 @@ ProSort — это программа, используемые в пакетн�
      export PATH
      ```
 
-6. Чтобы выполнить профиля bash, в командной строке введите: ` . .bash_profile`
+6. Чтобы выполнить профиля bash, в командной строке введите: `. .bash_profile`
 
 7. Создайте файл конфигурации. Например: 
 
@@ -1055,7 +1055,7 @@ OFCOBOL является OpenFrame компилятора, который инт
      0 NonFatalErrors 
      0 FatalError
      ```
-10. Используйте `ofcob --version ` команду и проверьте номер версии, чтобы проверить установку. Например: 
+10. Используйте `ofcob --version` команду и проверьте номер версии, чтобы проверить установку. Например: 
 
      ```
      [oframe7@ofdemo ~]$ ofcob --version 
@@ -1342,7 +1342,7 @@ JEUS (решение пользователя Enterprise Java) предоста�
      [oframe7\@ofdemo setup]\$ vi domain-config-template.properties
      ```
 
-7. Изменение `jeus.password=jeusadmin nodename=Tmaxsoft` для `jeus.password=tmax1234 nodename=ofdemo`
+7. Измените `jeus.password=jeusadmin nodename=Tmaxsoft` на `jeus.password=tmax1234 nodename=ofdemo`.
 
 8. Выполнение `ant install` команду, чтобы создать JEUS.
 9.  Обновить .bash\_файл профиля с переменными JEUS, как показано:
@@ -1477,5 +1477,5 @@ OFManager предоставляет операции и функции упра
 Если вы рассматриваете переход с мэйнфреймов, расширяемый экосистеме партнеров помогут вам. См. дополнительные сведение о критериях выбора решений от партнеров в статье [Platform Modernization Alliance](https://www.platformmodernization.org/pages/mainframe.aspx) (Альянс модернизации платформы).
 
 -   [Приступая к работе с Azure](https://docs.microsoft.com/azure/)
--   [Узел Integration Server (HIS) документации](https://docs.microsoft.com/host-integration-server/)
+-   [Документация по Host Integration Server (HIS)](https://docs.microsoft.com/host-integration-server/)
 -   [Руководство по Lift-and-Shift в Azure виртуальный центр обработки данных](https://blogs.msdn.microsoft.com/azurecat/2018/03/12/new-whitepaper-azure-virtual-datacenter-lift-and-shift-guide/)

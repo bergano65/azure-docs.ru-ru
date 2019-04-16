@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: sedusch
-ms.openlocfilehash: f1b993cf45d987cb51f64359b331f3862d054774
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 62356ee35631373b5a5d38ed356bbb2fb489807b
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59549905"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59577801"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.
 
@@ -84,7 +84,7 @@ ms.locfileid: "59549905"
 
 Выполните следующие команды на всех **целевых виртуальных машинах iSCSI**, чтобы создать диски iSCSI для кластеров, используемых вашими системами SAP. В следующем примере создаются устройства SBD для нескольких кластеров. В нем показано, как использовать один сервер цели iSCSI для нескольких кластеров. Устройства SBD размещаются на диске операционной системы. Убедитесь, что на диске достаточно места.
 
-**` nfs`** используется для определения кластера NFS, **ascsnw1** используется для идентификации кластера ASCS **NW1**, **dbnw1** используется для идентификации базы данных кластера **NW1.** , **nfs-0** и **nfs-1** — имена узлов кластера NFS **nw1-xscs-0** и **nw1-xscs-1**— имена **NW1** узлов, кластера ASCS и **nw1-db-0** и **nw1-db-1** — имена базы данных на узлах кластера. Замените их именами узлов кластера и SID системы SAP.
+**`nfs`** используется для определения кластера NFS, **ascsnw1** используется для идентификации кластера ASCS **NW1**, **dbnw1** используется для идентификации базы данных кластера **NW1.** , **nfs-0** и **nfs-1** — имена узлов кластера NFS **nw1-xscs-0** и **nw1-xscs-1**— имена **NW1** узлов, кластера ASCS и **nw1-db-0** и **nw1-db-1** — имена базы данных на узлах кластера. Замените их именами узлов кластера и SID системы SAP.
 
 <pre><code># Create the root folder for all SBD devices
 sudo mkdir /sbd
@@ -302,7 +302,7 @@ o- / ...........................................................................
    <b>SBD_WATCHDOG="yes"</b>
    </code></pre>
 
-   Создание ` softdog` файла конфигурации
+   Создание `softdog` файла конфигурации
 
    <pre><code>echo softdog | sudo tee /etc/modules-load.d/softdog.conf
    </code></pre>

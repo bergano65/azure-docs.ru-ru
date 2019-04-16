@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок с оповещениями журнала в Azure Monitor | Документация Майкрософт
-description: Распространенные проблемы, ошибки и методы их устранения для правил генерации оповещений журналов в Azure.
+description: Распространенные проблемы, ошибки и разрешение для правил генерации оповещений журнала в Azure.
 author: msvijayn
 services: azure-monitor
 ms.service: azure-monitor
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: aa42e8975432de8ca489cf9b1b6dd509c9fb01c1
-ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.openlocfilehash: 0c7189f1d43a114532b30b0c1aabe6f7cd4402d8
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "59005308"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59578719"
 ---
 # <a name="troubleshooting-log-alerts-in-azure-monitor"></a>Устранение неполадок с оповещениями журналов в Azure Monitor  
 
@@ -25,7 +25,6 @@ ms.locfileid: "59005308"
 
 > [!NOTE]
 > В этой статье не рассматриваются случаи, когда правило генерации оповещений отображается на портале Azure как активированное и отправляет уведомление через связанные группы действий. В таких случаях см. сведения о [группах действий](../platform/action-groups.md).
-
 
 ## <a name="log-alert-didnt-fire"></a>Оповещение журналов не срабатывает
 
@@ -57,7 +56,7 @@ ms.locfileid: "59005308"
 
 Предположим, что мы настроили такое правило генерации оповещений журнала с типом "Измерение метрик", как показано ниже:
 
-- запрос был: `search *| summarize AggregatedValue = count() by $table, bin(timestamp, 1h)`  
+- выполняемый запрос: `search *| summarize AggregatedValue = count() by $table, bin(timestamp, 1h)`;  
 - период времени: 6 часов;
 - пороговое значение: 50;
 - логика оповещений: три последовательных нарушения;
@@ -92,9 +91,94 @@ Log Analytics и Application Insights основываются на службе
 
 ### <a name="alert-query-output-misunderstood"></a>Неправильная интерпретация выходных данных запроса оповещения
 
-Вы предоставляете логику для оповещений журнала в аналитическом запросе. В этом аналитическом запросе могут использоваться различные возможности больших данных и математические функции.  Служба оповещений выполняет ваш запрос с указанной периодичностью по данным за указанный период времени. В зависимости от выбранного типа оповещений она вносит в запрос незначительные изменения. Эти изменения отображаются в разделе "Выполняемый запрос" на экране *Настроить логику сигналов*, как показано на следующем рисунке: ![Выполняемый запрос](media/alert-log-troubleshoot/LogAlertPreview.png)
+Вы предоставляете логику для оповещений журнала в аналитическом запросе. В этом аналитическом запросе могут использоваться различные возможности больших данных и математические функции.  Служба оповещений выполняет ваш запрос с указанной периодичностью по данным за указанный период времени. В зависимости от выбранного типа оповещений она вносит в запрос незначительные изменения. Это изменение можно просмотреть в разделе «Запроса для выполнения» *настройка логики сигнала* экрана, как показано ниже: ![Выполняемый запрос](media/alert-log-troubleshoot/LogAlertPreview.png)
 
 В поле **Выполняемый запрос** отображается запрос, выполняемый службой оповещений журнала. Вы можете запустить указанный запрос, а также временной диапазон на [портале аналитики](../log-query/portals.md) или с помощью [API аналитики](https://docs.microsoft.com/rest/api/loganalytics/), если хотите просмотреть возможные выходные данные запроса оповещения перед фактическим созданием оповещения.
+
+## <a name="log-alert-was-disabled"></a>Оповещение журнала был отключен
+
+Ниже приведены некоторые причины, из-за чего [правила оповещения журнала в Azure Monitor](../platform/alerts-log.md) можно отключить с Azure Monitor.
+
+### <a name="resource-on-which-alert-was-created-no-longer-exists"></a>Ресурс, на котором создания предупреждения больше не существует
+
+Правила генерации оповещений журнала, созданные в Azure Monitor предназначенных для конкретного ресурса, например рабочей области Azure Log Analytics, Azure Application Insights приложения и ресурсов Azure. И службы оповещений журнала будет выполнять запрос аналитики, предоставляемых в правило для указанного целевого объекта. Но после создания правила, часто пользователи для удаления из Azure или перемещения внутри Azure — целевой объект правила генерации оповещений. Так как целевой объект правила генерации оповещений журнала больше не является допустимым, произойдет сбой выполнения правила.
+
+В таких случаях Azure Monitor отключит оповещения журнала и убедитесь, что клиенты не взимается, без необходимости, когда само правило не сможет выполнять постоянно за допустимыми пределами период как недели. Пользователей можно узнать на точное время, по которому была отключена правило генерации оповещений журнала Azure Monitor с помощью [журнал действий Azure](../../azure-resource-manager/resource-group-audit.md). В журнале действий Azure при отключении правила оповещения журнала в Azure, добавлении события в журнале действий Azure.
+
+Пример события в журнале действий Azure для отключения правила генерации оповещений из-за его постоянные ошибки; Ниже приведен.
+
+```json
+{
+    "caller": "Microsoft.Insights/ScheduledQueryRules",
+    "channels": "Operation",
+    "claims": {
+        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/spn": "Microsoft.Insights/ScheduledQueryRules"
+    },
+    "correlationId": "abcdefg-4d12-1234-4256-21233554aff",
+    "description": "Alert: test-bad-alerts is disabled by the System due to : Alert has been failing consistently with the same exception for the past week",
+    "eventDataId": "f123e07-bf45-1234-4565-123a123455b",
+    "eventName": {
+        "value": "",
+        "localizedValue": ""
+    },
+    "category": {
+        "value": "Administrative",
+        "localizedValue": "Administrative"
+    },
+    "eventTimestamp": "2019-03-22T04:18:22.8569543Z",
+    "id": "/SUBSCRIPTIONS/<subscriptionId>/RESOURCEGROUPS/<ResourceGroup>/PROVIDERS/MICROSOFT.INSIGHTS/SCHEDULEDQUERYRULES/TEST-BAD-ALERTS",
+    "level": "Informational",
+    "operationId": "",
+    "operationName": {
+        "value": "Microsoft.Insights/ScheduledQueryRules/disable/action",
+        "localizedValue": "Microsoft.Insights/ScheduledQueryRules/disable/action"
+    },
+    "resourceGroupName": "<Resource Group>",
+    "resourceProviderName": {
+        "value": "MICROSOFT.INSIGHTS",
+        "localizedValue": "Microsoft Insights"
+    },
+    "resourceType": {
+        "value": "MICROSOFT.INSIGHTS/scheduledqueryrules",
+        "localizedValue": "MICROSOFT.INSIGHTS/scheduledqueryrules"
+    },
+    "resourceId": "/SUBSCRIPTIONS/<subscriptionId>/RESOURCEGROUPS/<ResourceGroup>/PROVIDERS/MICROSOFT.INSIGHTS/SCHEDULEDQUERYRULES/TEST-BAD-ALERTS",
+    "status": {
+        "value": "Succeeded",
+        "localizedValue": "Succeeded"
+    },
+    "subStatus": {
+        "value": "",
+        "localizedValue": ""
+    },
+    "submissionTimestamp": "2019-03-22T04:18:22.8569543Z",
+    "subscriptionId": "<SubscriptionId>",
+    "properties": {
+        "resourceId": "/SUBSCRIPTIONS/<subscriptionId>/RESOURCEGROUPS/<ResourceGroup>/PROVIDERS/MICROSOFT.INSIGHTS/SCHEDULEDQUERYRULES/TEST-BAD-ALERTS",
+        "subscriptionId": "<SubscriptionId>",
+        "resourceGroup": "<ResourceGroup>",
+        "eventDataId": "12e12345-12dd-1234-8e3e-12345b7a1234",
+        "eventTimeStamp": "03/22/2019 04:18:22",
+        "issueStartTime": "03/22/2019 04:18:22",
+        "operationName": "Microsoft.Insights/ScheduledQueryRules/disable/action",
+        "status": "Succeeded",
+        "reason": "Alert has been failing consistently with the same exception for the past week"
+    },
+    "relatedEvents": []
+}
+```
+
+### <a name="query-used-in-log-alert-is-not-valid"></a>Недопустимый запрос, используемый в журнал предупреждений
+
+Каждого правила генерации оповещений журнала, созданные в Azure Monitor в процессе его настройки необходимо указать запрос analytics периодически выполняемой службы оповещений. Хотя запрос аналитики может имеет неправильный синтаксис во время создания правила или обновления. Несколько раз в течение времени, укажите запрос, в журнале правила генерации оповещений можно разрабатывать проблем синтаксиса и привести к завершаться сбоем при выполнении правила. Ниже приведены некоторые распространенные причины, почему запрос analytics, в правило генерации оповещений журнала можно разработать ошибки.
+
+- Запрос записывается в [выполнения по нескольким ресурсам](../log-query/cross-workspace-query.md) и один или несколько ресурсов указано, теперь не существует.
+- Нет потоков данных на платформу аналитики, из-за которой было [выполнения запроса выдает ошибку](https://dev.loganalytics.io/documentation/Using-the-API/Errors) как нет данных для предоставленного запроса.
+- Изменения в [язык запросов](https://docs.microsoft.com/azure/kusto/query/) произошли какие команды и функции имеют измененный формат. Поэтому ранее указанный запрос в правило генерации оповещений больше не является допустимым.
+
+Пользователь должен быть вывод предупреждений такого поведения через [помощника по Azure](../../advisor/advisor-overview.md). Рекомендация будет добавляться для конкретного правила оповещения журнала в помощнике по Azure, в категории с высоким уровнем доступности с со средним уровнем влияния и описание, как «Восстановить правило оповещения журнала для обеспечения мониторинга». Если через семь дней, предоставляя рекомендации в помощнике по Azure запроса на оповещение в правило генерации оповещений журнала не будет исправлено. Затем Azure Monitor отключит оповещения журнала и убедитесь, что клиенты не взимается, без необходимости, когда само правило не сможет выполнять постоянно за допустимыми пределами период как недели.
+
+Пользователей можно узнать на точное время, по которому была отключена правило генерации оповещений журнала Azure Monitor с помощью [журнал действий Azure](../../azure-resource-manager/resource-group-audit.md). В журнале действий Azure при отключении правила генерации оповещений журнала с Azure — добавлении события в журнале действий Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

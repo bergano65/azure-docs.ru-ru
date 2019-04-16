@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 03/28/2019
 ms.author: snehaa
-ms.openlocfilehash: 366240c273feed559edb6e569640020046cc9471
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: 17cead93325da903161d95b315435d6e7b106dbb
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58578651"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59578923"
 ---
 # <a name="azure-migrate---frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Миграция Azure"
 
@@ -60,6 +60,10 @@ Azure Government | Правительство штата Вирджиния
 ### <a name="how-does-the-on-premises-site-connect-to-azure-migrate"></a>Как локальный сайт подключается к службе "Миграция Azure"?
 
 Подключение можно организовать через Интернет или канал ExpressRoute с общедоступным пирингом.
+
+### <a name="what-network-connectivity-requirements-are-needed-for-azure-migrate"></a>Какие требования к сетевому подключению требуются для "Миграция Azure"?
+
+URL-адреса и порты, необходимые для "Миграция Azure", для взаимодействия с Azure, см. в разделе [URL-адреса для подключения к](https://docs.microsoft.com/azure/migrate/concepts-collector#urls-for-connectivity).
 
 ### <a name="can-i-harden-the-vm-set-up-with-the-ova-template"></a>Могу ли я защитить виртуальную машину, используя OVA-файл шаблона?
 

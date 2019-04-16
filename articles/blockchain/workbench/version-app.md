@@ -5,17 +5,17 @@ services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 1/8/2019
+ms.date: 04/15/2019
 ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: brendal
 manager: femila
-ms.openlocfilehash: c4c5dcf9c83b79158e3459e79db6dd066d982fc8
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
-ms.translationtype: HT
+ms.openlocfilehash: 63f18e3ee316b9791bb62bfcd20c07a30cbebb5e
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54109309"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59579222"
 ---
 # <a name="azure-blockchain-workbench-application-versioning"></a>Управление версиями приложения в Azure Blockchain Workbench
 
@@ -23,7 +23,7 @@ ms.locfileid: "54109309"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Развертывание Blockchain Workbench. Дополнительные сведения о развертывании Azure Blockchain Workbench см. в [этой статье](deploy.md).
 * Развернутое блокчейн-приложение в Blockchain Workbench. Сведения см. в статье [Создание блокчейн-приложения в Azure Blockchain Workbench](create-app.md).
@@ -60,6 +60,6 @@ ms.locfileid: "54109309"
 
     Вы можете создать новые контракты или выполнять действия с контрактами предыдущих версий. Версия приложения отображается после имени приложения. При использовании старой версии отображается соответствующее предупреждение.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок в Azure Blockchain Workbench](troubleshooting.md)
