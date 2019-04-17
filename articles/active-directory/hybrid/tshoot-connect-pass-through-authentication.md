@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/14/2018
+ms.date: 4/15/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f927d1deb3da6269159e1f3f24a17c4675dc7568
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: ae83cea866367fa6a6596caa683d0287bea96c29
+ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56184896"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59616217"
 ---
 # <a name="troubleshoot-azure-active-directory-pass-through-authentication"></a>Устранение неполадок в работе сквозной аутентификации Azure Active Directory
 
@@ -71,6 +71,9 @@ ms.locfileid: "56184896"
 | 80007 | Агенту аутентификации не удалось подключиться к Active Directory. | Проверьте, доступна ли из агента аутентификации служба Active Directory.
 | 80010 | Агенту аутентификации не удалось расшифровать пароль. | Если проблема возникает постоянно, установите и зарегистрируйте новый агент аутентификации. Также удалите текущий агент. 
 | 80011 | Агенту аутентификации не удается получить ключ расшифровки. | Если проблема возникает постоянно, установите и зарегистрируйте новый агент аутентификации. Также удалите текущий агент.
+
+>[!IMPORTANT]
+>Агенты сквозной проверки подлинности проверки подлинности пользователей Azure AD путем проверки имен пользователей и пароли в Active Directory путем вызова [Win32 LogonUser API](https://msdn.microsoft.com/library/windows/desktop/aa378184.aspx). Таким образом Если выбран параметр «Вход в систему для» в Active Directory для ограничения доступа для входа в рабочую станцию, необходимо добавить серверы, на которых агенты сквозной проверки подлинности в список «Входа в систему для» серверов, а также. Если сделать это будет блокировать пользователей войти в Azure AD.
 
 ## <a name="authentication-agent-installation-issues"></a>Проблемы с установкой агента аутентификации
 

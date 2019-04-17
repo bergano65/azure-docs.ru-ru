@@ -12,14 +12,14 @@ ms.devlang: tbd
 ms.topic: conceptual
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 01/23/2019
+ms.date: 04/15/2019
 ms.author: aschhab
-ms.openlocfilehash: 19949b555a5be21c06c3acfbbd5fb9be08dc9f23
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 892d485fb5cdaa08107870e9ab5b2b7ad9bcba5b
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57766954"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59608900"
 ---
 # <a name="get-started-with-service-bus-topics"></a>Начало работы с разделами служебной шины
 
@@ -27,24 +27,20 @@ ms.locfileid: "57766954"
 
 В этом руководстве рассматриваются следующие действия:
 
-1. Создание пространства имен служебной шины с помощью портала Azure.
-2. Создание раздела служебной шины с помощью портала Azure.
-3. Создание подписки на этот раздел служебной шины с помощью портала Azure.
-4. Написание консольного приложения .NET Core для отправки набора сообщений в раздел.
-5. Написание консольного приложения .NET Core для получения этих сообщений из подписки.
+1. Написание консольного приложения .NET Core для отправки набора сообщений в раздел.
+2. Написание консольного приложения .NET Core для получения этих сообщений из подписки.
 
 ## <a name="prerequisites"></a>Технические условия
 
-1. [Visual Studio 2017 с обновлением 3 (версия 15.3, 26730.01)](https://www.visualstudio.com/vs) или более новая версия.
-2. [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows) версии 2.0 или более новой.
-2. Подписка Azure.
-
-[!INCLUDE [create-account-note](../../includes/create-account-note.md)]
-
-[!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
-
-[!INCLUDE [service-bus-create-topics-subscriptions-portal](../../includes/service-bus-create-topics-subscriptions-portal.md)]
-
+1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать ваши [преимущества для подписчиков Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрируйте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+2. Выполните шаги [краткое руководство: Чтобы создать раздел служебной шины и подписок для раздела с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md) выполнить следующие задачи:
+    1. Чтобы создать служебную шину **пространства имен**.
+    2. Получить **строку подключения**.
+    3. Создание **разделе** в пространстве имен.
+    4. Создание **одна подписка** в раздел, в пространстве имен.
+3. [Visual Studio 2017 с обновлением 3 (версия 15.3, 26730.01)](https://www.visualstudio.com/vs) или более новая версия.
+4. [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows) версии 2.0 или более новой.
+ 
 ## <a name="send-messages-to-the-topic"></a>Отправка сообщений в раздел
 
 Для отправки сообщений в раздел создайте консольное приложение C# с помощью Visual Studio.
@@ -204,7 +200,7 @@ ms.locfileid: "57766954"
 
 ## <a name="receive-messages-from-the-subscription"></a>Получение сообщений из подписки
 
-Чтобы получить только что отправленные сообщения, создайте другое консольное приложение .NET Core и установите пакет NuGet **Microsoft.Azure.ServiceBus**, как для предыдущего приложения отправителя.
+Чтобы получить отправленных сообщений, создайте другое консольное приложение .NET Core и установить **Microsoft.Azure.ServiceBus** пакет NuGet с инструкциями для предыдущего приложения отправителя.
 
 ### <a name="write-code-to-receive-messages-from-the-subscription"></a>Написание кода для получения сообщений из подписки
 

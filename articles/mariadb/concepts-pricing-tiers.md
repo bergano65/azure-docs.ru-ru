@@ -5,13 +5,13 @@ author: jan-eng
 ms.author: janeng
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: bb6e27f92f60712cce71ba6fca53b40af00ee714
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
-ms.translationtype: HT
+ms.date: 04/15/2019
+ms.openlocfilehash: 5eb2ba509983918a55370ae0deafd019e03f53d8
+ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54354456"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59617790"
 ---
 # <a name="azure-database-for-mariadb-pricing-tiers"></a>Ценовые категории службы "База данных Azure для MariaDB"
 
@@ -20,7 +20,7 @@ ms.locfileid: "54354456"
 |    | **базовая;** | **Общего назначения** | **С оптимизацией для операций в памяти** |
 |:---|:----------|:--------------------|:---------------------|
 | Поколение вычислительных ресурсов | Поколение 5 |Поколение 5 | Поколение 5 |
-| Виртуальные ядра | 1, 2 | 2, 4, 8, 16, 32 |2, 4, 8, 16 |
+| Виртуальные ядра | 1, 2 | 2, 4, 8, 16, 32, 64 |2, 4, 8, 16, 32 |
 | Объем памяти на виртуальное ядро | 2 ГБ | 5 ГБ | 10 ГБ |
 | Размер хранилища | От 5 ГБ до 1 ТБ | От 5 ГБ до 4 ТБ | От 5 ГБ до 4 ТБ |
 | Тип хранилища | Служба хранилища Azure класса Standard | Хранилище Azure класса Premium | Хранилище Azure класса Premium |
@@ -83,7 +83,7 @@ ms.locfileid: "54354456"
 
 Наиболее актуальные сведения о стоимости см. в статье [Цены на Базу данных Azure для PostgreSQL](https://azure.microsoft.com/pricing/details/mariadb/). Расходы на вашу конфигурацию можно посмотреть на [портале Azure](https://portal.azure.com/#create/Microsoft.MariaDBServer). На вкладке **Ценовая категория** отображается ежемесячная стоимость выбранных параметров. Если у вас нет подписки Azure, для расчета цены можно воспользоваться калькулятором цен Azure. На сайте с [калькулятором цен Azure](https://azure.microsoft.com/pricing/calculator/) нажмите кнопку **Добавить элементы**, разверните категорию **Базы данных** и выберите **База данных Azure для MariaDB**, чтобы настроить параметры.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Ограничения в базе данных Azure для PostgreSQL](concepts-limits.md).
 - Узнайте, как [создать сервер MariaDB на портале Azure](quickstart-create-mariadb-server-database-using-azure-portal.md).
 

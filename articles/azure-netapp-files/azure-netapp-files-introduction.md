@@ -11,15 +11,15 @@ ms.service: azure-netapp-files
 ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: overview
 ms.date: 03/28/2018
 ms.author: b-juche
-ms.openlocfilehash: 84ab433f5de8a62f33aca01e60bc2dbd1d8e68f8
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
-ms.translationtype: MT
+ms.openlocfilehash: d7eb73c8fb4573084ba0a213282fdb71e14ff5fa
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57761435"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59546746"
 ---
 # <a name="introduction-to-azure-netapp-files"></a>Общие сведения об Azure NetApp Files
 Azure NetApp Files — это высокопроизводительная тарифицируемая служба хранилища файлов корпоративного класса хранилища. Azure NetApp Files поддерживает любые типы рабочих нагрузок и обеспечивает высокую доступность по умолчанию. С помощью службы можно выбрать гарантированные уровни обслуживания и производительности и настроить моментальные снимки. 
