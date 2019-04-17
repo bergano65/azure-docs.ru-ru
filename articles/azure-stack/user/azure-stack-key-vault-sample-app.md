@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/27/2018
+ms.date: 04/08/2019
 ms.author: sethm
-ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 578ca59b3f00bc1f4e876fd2b007c4b45901f86c
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.lastreviewed: 04/08/2019
+ms.openlocfilehash: 7ca02b35cd8f302b856b2d7fcbfb5bac304f1a00
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57782383"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59358631"
 ---
 # <a name="a-sample-application-that-uses-keys-and-secrets-stored-in-a-key-vault"></a>Пример приложения, использующего ключи и секреты, хранящиеся в хранилище ключей
 
@@ -30,7 +30,7 @@ ms.locfileid: "57782383"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Вы можете установить указанные ниже обязательные компоненты из [Пакета средств разработки](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-remote-desktop) Azure Stack либо через внешнего клиента для Windows (при [подключении через VPN](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-vpn)).
+Вы можете установить указанные ниже обязательные компоненты из [Пакета средств разработки Azure Stack](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-remote-desktop) либо через внешний клиент для Windows (при [подключении через VPN](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-vpn)).
 
 * Установите [совместимые с Azure Stack модули Azure PowerShell](azure-stack-powershell-install.md).
 * Скачайте [средства, необходимые для работы с Azure Stack](azure-stack-powershell-download.md).
@@ -44,8 +44,8 @@ ms.locfileid: "57782383"
 
 Подготовить пример приложения можно с помощью портала Azure или PowerShell. В этой статье показано, как создать хранилище ключей и зарегистрировать приложение с помощью PowerShell.
 
->[!NOTE]
->По умолчанию этот скрипт PowerShell создает приложение в Active Directory. Но его можно использовать и для регистрации существующего приложения.
+> [!NOTE]
+> По умолчанию этот скрипт PowerShell создает приложение в Active Directory. Но его можно использовать и для регистрации существующего приложения.
 
 Прежде чем запускать приведенный ниже скрипт, не забудьте предоставить значения для переменных `aadTenantName` и `applicationPassword`. Если вы не укажете значение для переменной `applicationPassword`, скрипт создаст случайный пароль.
 
@@ -55,7 +55,7 @@ $resourceGroupName   = 'myResourceGroup'
 $applicationName     = 'myApp'
 $location            = 'local'
 
-# Password for the application. If not specified, this script will generate a random password during app creation.
+# Password for the application. If not specified, this script generates a random password during app creation.
 $applicationPassword = ''
 
 # Function to generate a random password for the application.
@@ -141,7 +141,7 @@ Write-Host
 
 ![Хранилище ключей с ключами доступа](media/azure-stack-key-vault-sample-app/settingsoutput.png)
 
-Запишите значения **VaultUrl**, **AuthClientId** и **AuthClientSecret**, возвращенные предыдущим скриптом. Используйте их для запуска приложения HelloKeyVault.
+Запишите значения **VaultUrl**, **AuthClientId** и **AuthClientSecret**, возвращенные предыдущим скриптом. Используйте их для запуска приложения **HelloKeyVault**.
 
 ## <a name="download-and-configure-the-sample-application"></a>Скачивание и настройка примера приложения
 
@@ -149,30 +149,30 @@ Write-Host
 
 Чтобы применить пример **HelloKeyVault**, выполните следующие действия.
 
-* Перейдите к папке **Microsoft.Azure.KeyVault.Samples** > **samples** > **HelloKeyVault**.
-* Откройте приложение **HelloKeyVault** в Visual Studio.
+1. Перейдите в папку **Microsoft.Azure.KeyVault.Samples** > **samples** > **HelloKeyVault**.
+2. Откройте приложение **HelloKeyVault** в Visual Studio.
 
 ### <a name="configure-the-sample-application"></a>Настройка примера приложения
 
 В Visual Studio:
 
-* Откройте файл HelloKeyVault\App.config и найдите элемент &lt;**appSettings**&gt;.
-* Укажите для ключей **VaultUrl**, **AuthClientId** и **AuthClientSecret** значения, которые были возвращены при создании хранилища ключей. По умолчанию файл App.config содержит заполнитель для `AuthCertThumbprint`. Замените его на `AuthClientSecret`.
+1. Откройте файл HelloKeyVault\App.config и найдите элемент `<appSettings>`.
+2. Укажите для ключей **VaultUrl**, **AuthClientId** и **AuthClientSecret** значения, которые были возвращены при создании хранилища ключей. По умолчанию файл App.config содержит заполнитель для `AuthCertThumbprint`. Замените его на `AuthClientSecret`.
 
-  ![Параметры приложения](media/azure-stack-key-vault-sample-app/appconfig.png)
+   ![Параметры приложения](media/azure-stack-key-vault-sample-app/appconfig.png)
 
-* Повторно создайте решение.
+3. Повторно создайте решение.
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
-При запуске приложение HelloKeyVault входит в Azure AD и применяет маркер AuthClientSecret для аутентификации в хранилище ключей Azure Stack.
+При запуске приложение **HelloKeyVault** входит в Azure AD и применяет маркер `AuthClientSecret` для аутентификации в хранилище ключей Azure Stack.
 
-Пример HelloKeyVault позволяет выполнить следующие действия:
+Пример **HelloKeyVault** позволяет выполнить следующие действия:
 
 * запустить основные операции, например создание, шифрование, заключение в оболочку или удаление ключей и секретных данных;
-* передать приложению HelloKeyVault параметры, например `encrypt` и `decrypt`, чтобы применить указанные изменения к хранилищу ключей.
+* передать приложению **HelloKeyVault** параметры, например `encrypt` и `decrypt`, чтобы применить указанные изменения к хранилищу ключей.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Развертывание виртуальной машины с помощью пароля из хранилища ключей](azure-stack-key-vault-deploy-vm-with-secret.md)
-- [Create a virtual machine and include certificate retrieved from a key vault](azure-stack-key-vault-push-secret-into-vm.md) (Создание виртуальной машины с сертификатом хранилища ключей)
+* [Создание виртуальной машины с помощью безопасного пароля, хранящегося в Key Vault Azure Stack](azure-stack-key-vault-deploy-vm-with-secret.md)
+* [Создание виртуальной машины и установка сертификатов, полученных из хранилища ключей Azure Stack](azure-stack-key-vault-push-secret-into-vm.md)

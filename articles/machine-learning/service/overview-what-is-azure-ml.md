@@ -11,12 +11,12 @@ author: garyericson
 ms.author: garye
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: c9f8e13ad089fd40cde22bb76587b171a1c52c7b
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: 26248616c6b490de00028d8ecc8a0e225da0c0a6
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58361903"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59257116"
 ---
 # <a name="what-is-azure-machine-learning-service"></a>Что такое служба машинного обучения Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "58361903"
 
 Служба машинного обучения предоставляет облачную среду, которую можно использовать для подготовки данных для моделей машинного обучения, их обучения, тестирования, развертывания и отслеживания, а также управления такими моделями.
 
-[![Рабочий процесс службы машинного обучения Azure](./media/overview-what-is-azure-ml/aml.png)](./media/overview-what-is-azure-ml/aml.png#lightbox)
+[![AРабочий процесс Службы машинного обучения Azure](./media/overview-what-is-azure-ml/aml.png)](./media/overview-what-is-azure-ml/aml.png#lightbox)
 
 Служба машинного обучения Azure полностью поддерживает технологии с открытым исходным кодом. Вы можете применять десятки тысяч пакетов Python с открытым исходным кодом с компонентами машинного обучения. Например PyTorch, TensorFlow и scikit-learn.
 Благодаря поддержке большого набора средств можно легко исследовать данные в интерактивном режиме, подготавливать данные, а затем разрабатывать и тестировать модели. Примерами являются [записные книжки Jupyter](https://jupyter.org) или расширение [Машинное обучение Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-ai#overview).
@@ -53,9 +53,8 @@ ms.locfileid: "58361903"
 Пакеты Python с открытым исходным кодом предлагают различные компоненты машинного обучения, такие как:
 
 - <a href="https://scikit-learn.org/stable/" target="_blank">Scikit-learn</a>
-- <a href="https://www.tensorflow.org" target="_blank">Tensorflow</a>
+- <a href="https://www.tensorflow.org" target="_blank">Тensorflow;</a>
 - <a href="https://pytorch.org" target="_blank">PyTorch</a>
-- <a href="https://www.microsoft.com/en-us/cognitive-toolkit/" target="_blank">CNTK</a>
 - <a href="https://mxnet.io" target="_blank">MXNet</a>
 
 Служба машинного обучения Azure может также автоматически обучать модели и настраивать их для вас.
@@ -90,8 +89,8 @@ ms.locfileid: "58361903"
 - [Create a Machine Learning service workspace](setup-create-workspace.md) (Создание рабочей области Cлужбы машинного обучения Azure).
 
 - Исчерпывающие руководства: 
-  + [Руководство по обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md) 
-  + [Руководство. Подготовка данных для моделирования регрессии](tutorial-data-prep.md)
+  + [обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md) 
+  + [Подготовка данных и использование автоматического машинного обучения для обучения и настройки моделей регрессии](tutorial-data-prep.md)
 
 - Подготовьте данные с помощью [этого пакета SDK для службы "Машинное обучение Azure"](https://aka.ms/data-prep-sdk).
 

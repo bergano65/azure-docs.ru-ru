@@ -14,12 +14,12 @@ ms.date: 03/07/2019
 ms.author: mabrigg
 ms.reviewer: sijuman
 ms.lastreviewed: 02/28/2019
-ms.openlocfilehash: 21167366ff3af2bb360c33eaae9d591020bf11a5
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: fa1731c9361be83949aa794ed8842681bd81d995
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58487589"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59257575"
 ---
 # <a name="use-api-version-profiles-with-azure-cli-in-azure-stack"></a>Использование профилей версий API и Azure CLI в Azure Stack
 
@@ -99,7 +99,7 @@ az --version
     python -m pip install --upgrade pip
     ```
 
-3. Установите модуль **certifi**. [Certifi](https://pypi.org/project/certifi/) — это модуль и коллекция корневых сертификатов для проверки надежности SSL-сертификатов при проверке подлинности узлов TLS. Откройте командную строку или строку PowerShell с повышенными правами и введите следующую команду:
+3. Установите модуль **certifi**. [Certifi](https://pypi.org/project/certifi/) — это модуль и коллекция корневых сертификатов для проверки надежности SSL-сертификатов при аутентификации узлов TLS. Откройте командную строку или строку PowerShell с повышенными правами и введите следующую команду:
 
     ```powershell
     pip install certifi
@@ -139,7 +139,7 @@ az --version
     sudo -H pip3 install --upgrade pip
     ```
 
-3. Установите модуль **certifi**. [Certifi](https://pypi.org/project/certifi/) — это модуль и коллекция корневых сертификатов для проверки надежности SSL-сертификатов при проверке подлинности узлов TLS. Откройте командную строку или строку PowerShell с повышенными правами и введите следующую команду:
+3. Установите модуль **certifi**. [Certifi](https://pypi.org/project/certifi/) — это модуль и коллекция корневых сертификатов для проверки надежности SSL-сертификатов при аутентификации узлов TLS. Откройте командную строку или строку PowerShell с повышенными правами и введите следующую команду:
 
     ```bash
     pip3 install certifi
@@ -634,6 +634,6 @@ az group create -n MyResourceGroup -l local
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Развертывание шаблонов с помощью интерфейса командной строки Azure](azure-stack-deploy-template-command-line.md)
-- [Включение Azure CLI для пользователей Azure Stack (оператор)](../azure-stack-cli-admin.md)
+- [Развертывание шаблонов в Azure Stack с помощью командной строки](azure-stack-deploy-template-command-line.md)
+- [Применение Azure CLI для пользователей Azure Stack](../azure-stack-cli-admin.md)
 - [Управление разрешениями пользователей](azure-stack-manage-permissions.md) 

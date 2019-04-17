@@ -6,15 +6,15 @@ author: HeidiSteen
 services: search
 ms.service: search
 ms.topic: quickstart
-ms.date: 01/17/2019
+ms.date: 04/05/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 8d3bc70b467cabfc5d45c51b79b43d2942d558ae
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: c48acf7e9074ac3c5a7d19765a9524a411fa26c8
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54885733"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59264035"
 ---
 # <a name="create-an-azure-search-service-in-the-portal"></a>Создание службы "Поиск Azure" на портале
 
@@ -22,7 +22,7 @@ ms.locfileid: "54885733"
 
 В этой статье вы узнаете, как создать ресурс "Поиск Azure" на [портале Azure](https://portal.azure.com/).
 
-[![Анимированный GIF-файл](./media/search-create-service-portal/AnimatedGif-AzureSearch-small.gif)](./media/search-create-service-portal/AnimatedGif-AzureSearch.gif#lightbox)
+[![AАнимированный GIF-файл](./media/search-create-service-portal/AnimatedGif-AzureSearch-small.gif)](./media/search-create-service-portal/AnimatedGif-AzureSearch.gif#lightbox)
 
 Предпочитаете использовать PowerShell? Используйте [шаблон службы](https://azure.microsoft.com/resources/templates/101-azure-search-create/) Azure Resource Manager. Сведения для начала работы см. в статье [Управление службой поиска Azure с помощью PowerShell](search-manage-powershell.md).
 
@@ -71,7 +71,7 @@ ms.locfileid: "54885733"
 
 Являясь службой Azure, Поиск Azure может размещаться в центрах обработки данных по всему миру. [Цены могут отличаться](https://azure.microsoft.com/pricing/details/search/) в зависимости от географического региона.
 
-Если вы планируете использовать когнитивный поиск, выберите [регион, в котором эта функция доступна](cognitive-search-quickstart-blob.md#supported-regions).
+Если вы индексируете содержимое, расположенное в службах Azure(служба хранилища Azure, Azure Cosmos DB, База данных SQL Azure), создайте службу Поиск Azure в том же регионе, где находятся данные, чтобы избежать оплаты за пропускную способность. Если службы размещаются в одном регионе, плата за исходящий трафик не взимается.
 
 ## <a name="select-a-pricing-tier-sku"></a>Выбор ценовой категории (номера SKU)
 
@@ -143,4 +143,4 @@ ms.locfileid: "54885733"
 После подготовки службы "Поиск Azure" вы можете продолжить на портале, чтобы создать свой первый индекс.
 
 > [!div class="nextstepaction"]
-> [Руководство Использование встроенных инструментов на портале для отправки запросов и индексирования в службе поиска Azure](search-get-started-portal.md)
+> [Руководство по Использование встроенных инструментов на портале для импорта, индексирования и отправки запросов в Поиске Azure](search-get-started-portal.md)

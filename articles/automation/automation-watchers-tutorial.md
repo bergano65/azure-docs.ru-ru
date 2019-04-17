@@ -8,12 +8,12 @@ author: eamonoreilly
 ms.author: eamono
 ms.topic: conceptual
 ms.date: 10/30/2018
-ms.openlocfilehash: 7d7ebc7493ff8e272e35abafeedd8fbc52b986ab
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: bee414ada61e2cfcf7609b02ef1da7323a0fe0e3
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58002155"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59606928"
 ---
 # <a name="create-an-azure-automation-watcher-tasks-to-track-file-changes-on-a-local-machine"></a>Создание задач службы "Наблюдатель за автоматизацией Azure" для отслеживания изменений файлов на локальном компьютере
 
@@ -36,6 +36,9 @@ ms.locfileid: "58002155"
 * Подписка Azure. Если у вас ее нет, [активируйте преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрируйте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Учетная запись службы автоматизации](automation-offering-get-started.md) для хранения runbook наблюдателя, runbook действия и задачи наблюдателя.
 * [Гибридная рабочая роль runbook](automation-hybrid-runbook-worker.md), в которой выполняется задача наблюдателя.
+
+> [!NOTE]
+> Задачи наблюдателя не поддерживаются в китайской версии Azure.
 
 ## <a name="import-a-watcher-runbook"></a>Импорт runbook службы "Наблюдатель"
 

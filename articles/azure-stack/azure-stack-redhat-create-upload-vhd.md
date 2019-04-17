@@ -13,16 +13,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/28/2019
+ms.date: 04/03/2019
 ms.author: mabrigg
 ms.reviewer: jeffgo
 ms.lastreviewed: 08/15/2018
-ms.openlocfilehash: e287a6f436b51f55d9a5aa59dbbe2a195015c292
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 728839accbce80ece6795e098d5d2855320fab06
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58883130"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59006681"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure-stack"></a>Подготовка виртуальной машины на основе Red Hat для Azure Stack
 
@@ -264,7 +264,6 @@ ms.locfileid: "58883130"
 1. Убедитесь, что SSH-сервер установлен и настроен для включения во время загрузки:
 
     ```bash
-    systemctl stop cloud-init
     systemctl enable sshd
     ```
 
@@ -277,7 +276,7 @@ ms.locfileid: "58883130"
 
 1. При создании пользовательского VHD-файла для Azure Stack имейте в виду, что WALinuxAgent версий 2.2.20–2.2.35.1 (монопольный доступ) не работает в средах Azure Stack под управлением сборки до версии 1903. Чтобы устранить эту проблему, примените исправление 1901/1902 или следуйте второй части этих инструкций. 
 
-При запуске сборки Azure Stack версии 1903 или выше либо применении исправления 1901/1902 скачайте пакет WALinuxAgent из репозитория дополнительных компонентов Redhat следующим образом:
+    При запуске сборки Azure Stack версии 1903 или выше либо применении исправления 1901/1902 скачайте пакет WALinuxAgent из репозитория дополнительных компонентов Redhat следующим образом:
     
    Пакет WALinuxAgent `WALinuxAgent-<version>` был отправлен в репозиторий дополнений Red Hat. Включите репозиторий дополнительных компонентов, выполнив следующую команду:
 
@@ -298,7 +297,7 @@ ms.locfileid: "58883130"
     ```
     
     
-Если вы выполняете сборку Azure Stack до версии 1903 и не применили исправление 1901/1902, следуйте этим инструкциям, чтобы скачать WALinuxAgent:
+    Если вы выполняете сборку Azure Stack до версии 1903 и не применили исправление 1901/1902, следуйте этим инструкциям, чтобы скачать WALinuxAgent:
     
    a.   Скачивание setuptools
     ```bash
@@ -312,15 +311,15 @@ ms.locfileid: "58883130"
     unzip v2.2.36.zip
     cd WALinuxAgent-2.2.36
     ```
-    c. Install setup.py
+    c. Установите setup.py.
     ```bash
     sudo python setup.py install
     ```
-    d. Restart waagent
+    d. Перезапустите waagent.
     ```bash
     sudo systemctl restart waagent
     ```
-    e. Test if the agent version matches the one your downloaded. For this example, it should be 2.2.36.
+    д. Проверьте, совпадает ли версия агента со скачанной версией. В нашем примере это должна быть версия 2.2.36.
     
     ```bash
     waagent -version

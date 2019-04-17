@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: da1ff2be9661de143bd36c8e17fd388d64f947a7
-ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
+ms.openlocfilehash: 30f431c1806c6a0697a6b74b43f1cc35660fc85e
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58407510"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59261740"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pantheon"></a>Руководство по Интеграция Azure Active Directory с Pantheon
 
@@ -51,7 +51,7 @@ ms.locfileid: "58407510"
 
 Чтобы настроить интеграцию Pantheon с Azure AD, необходимо добавить Pantheon из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Pantheon из коллекции, выполните следующие действия:**
+**Чтобы добавить Pantheon из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "58407510"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Pantheon](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `urn:auth0:pantheon:<orgname>-SSO`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `urn:auth0:pantheon:<orgname>-SSO`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://pantheon.auth0.com/login/callback?connection=<orgname>-SSO`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://pantheon.auth0.com/login/callback?connection=<orgname>-SSO`
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Pantheon](https://pantheon.io/docs/getting-support/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -217,9 +217,9 @@ ms.locfileid: "58407510"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

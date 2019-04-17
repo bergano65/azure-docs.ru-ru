@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: tutorial
-ms.date: 03/21/2019
+ms.date: 04/05/2019
 ms.author: helohr
-ms.openlocfilehash: cc404c84bf855ab6e49d13207f40b9faa32cdbb2
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: f539a71fccca116ee031781df855ec55158eb63a
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58399870"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59257456"
 ---
 # <a name="tutorial-create-a-host-pool-with-azure-marketplace"></a>Руководство по Создание пула узлов с помощью Azure Marketplace
 
@@ -114,12 +114,15 @@ Add-RdsAppGroupUser <tenantname> <hostpoolname> "Desktop Application Group" -Use
 
 Поддерживаемые клиенты:
 
-- [клиент удаленного рабочего стола для Windows 7 и Windows 10](connect-windows-7-and-10.md);
-- [веб-клиент Виртуального рабочего стола Windows](connect-web.md).
+- [клиент удаленного рабочего стола для Windows 7 и Windows 10;](connect-windows-7-and-10.md)
+- [веб-клиент Виртуального рабочего стола Windows.](connect-web.md)
+
+>[!IMPORTANT]
+>Чтобы усилить защиту среды Виртуального рабочего стола Windows в Azure, мы рекомендуем не открывать входящий порт 3389 для виртуальных машин. Виртуальный рабочий стол Windows не требует открытия входящего порта 3389, чтобы пользователи могли получить доступ к виртуальным машинам пула узла. Если вам все же нужно открыть порт 3389 для устранения неполадок, мы рекомендуем использовать[JIT-доступ к виртуальным машинам](https://docs.microsoft.com/en-us/azure/security-center/security-center-just-in-time).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Теперь, когда вы создали пул узлов и предоставили пользователям возможность доступа к соответствующему рабочему столу, можно также добавить в этот пул узлов удаленные приложения. Дополнительные сведения о том, как управлять приложениями в Виртуальном рабочем столе Windows см. в руководстве по управлению группами приложений.
 
 > [!div class="nextstepaction"]
-> [Управление группами приложений](./manage-app-groups.md)
+> [Руководство по управлению группами приложений](./manage-app-groups.md)

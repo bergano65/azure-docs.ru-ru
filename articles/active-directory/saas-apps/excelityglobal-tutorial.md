@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
-ms.openlocfilehash: b962f0e7d571828fb3a1180b3d77a3368ef6c665
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: bb18aa35c89657f01319512eac6c15096174891f
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57852633"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59265735"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-excelityglobal"></a>Руководство. Руководство по интеграции Azure Active Directory с приложением ExcelityGlobal
+# <a name="tutorial-azure-active-directory-integration-with-excelityglobal"></a>Руководство по Руководство по интеграции Azure Active Directory с приложением ExcelityGlobal
 
 В этом руководстве описано, как интегрировать приложение ExcelityGlobal с Azure Active Directory (Azure AD).
 Интеграция ExcelityGlobal с Azure AD обеспечивает следующие преимущества.
@@ -50,7 +50,7 @@ ms.locfileid: "57852633"
 
 Чтобы настроить интеграцию ExcelityGlobal с Azure AD, необходимо добавить приложение ExcelityGlobal из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить ExcelityGlobal из коллекции, выполните следующие действия.**
+**Чтобы добавить ExcelityGlobal из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -160,7 +160,7 @@ ms.locfileid: "57852633"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -205,8 +205,8 @@ ms.locfileid: "57852633"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

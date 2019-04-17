@@ -8,17 +8,17 @@ ms.subservice: service
 ms.custom: ''
 ms.devlang: ''
 ms.topic: quickstart
-author: CarlRabeler
-ms.author: carlrab
+author: stevestein
+ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 03/25/2019
-ms.openlocfilehash: 20d6ccca448d53da54835aad1d6dd85702c7390f
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 8901855ad68a5edb4710853dcde9311216fa2d61
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58446938"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59357118"
 ---
 # <a name="quickstart-use-visual-studio-code-to-connect-and-query-an-azure-sql-database"></a>Краткое руководство. Подключение и запрос Базы данных SQL Azure с помощью Visual Studio Code
 
@@ -30,8 +30,8 @@ ms.locfileid: "58446938"
 
   || Отдельная база данных | Управляемый экземпляр |
   |:--- |:--- |:---|
-  | Создание| [Портал](sql-database-single-database-get-started.md) | [Портал](sql-database-managed-instance-get-started.md) |
-  || [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](scripts/sql-database-create-and-configure-database-cli.md) | [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
+  | Создание| [Microsoft Azure](sql-database-single-database-get-started.md) | [Microsoft Azure](sql-database-managed-instance-get-started.md) |
+  || [Интерфейс командной строки](scripts/sql-database-create-and-configure-database-cli.md) | [Интерфейс командной строки](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
   || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md) |
   | Настройка | [Правило брандмауэра IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
   |||[Подключение "точка — сеть"](sql-database-managed-instance-configure-p2s.md)
@@ -46,11 +46,11 @@ ms.locfileid: "58446938"
 
 Убедитесь, что установили последнюю версию [Visual Studio Code](https://code.visualstudio.com/Download) и загрузили [расширение mssql](https://aka.ms/mssql-marketplace). Руководство по установке расширения mssql см. в разделе [об установке VS Code](https://docs.microsoft.com/sql/linux/sql-server-linux-develop-use-vscode#install-and-start-visual-studio-code) и на странице [расширения mssql для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql).
 
-## <a name="configure-visual-studio-code"></a>Откройте Visual Studio Code. 
+## <a name="configure-visual-studio-code"></a>Откройте Visual Studio Code.
 
-### <a name="mac-os"></a>**Mac OS**
+### **<a name="mac-os"></a>MacOS**
 
-Для macOS необходимо установить OpenSSL. Это предварительное требование для платформы .NET Core, используемой для расширения mssql. Откройте терминал и введите следующие команды для установки **brew** и **OpenSSL**. 
+Для macOS необходимо установить OpenSSL. Это предварительное требование для платформы .NET Core, используемой для расширения mssql. Откройте терминал и введите следующие команды для установки **brew** и **OpenSSL**.
 
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -61,11 +61,11 @@ ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
 ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 ```
 
-### <a name="linux-ubuntu"></a>**Linux (Ubuntu)**
+### **<a name="linux-ubuntu"></a>Linux (Ubuntu)**
 
 Специальная настройка не требуется.
 
-### <a name="windows"></a>**Windows**
+### **<a name="windows"></a> Windows**
 
 Специальная настройка не требуется.
 
@@ -83,13 +83,13 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 В Visual Studio Code укажите для режима языка значение **SQL**, чтобы активировать команды mssql и T-SQL IntelliSense.
 
-1. Откройте новое окно Visual Studio Code. 
+1. Откройте новое окно Visual Studio Code.
 
-2. Нажмите клавиши **CTRL**+**N**. Откроется новый обычный текстовый файл. 
+2. Нажмите клавиши **CTRL**+**N**. Откроется новый обычный текстовый файл.
 
 3. В правом нижнем углу строки состояния выберите **Обычный текст**.
 
-4. В открывшемся раскрывающемся меню **Выберите языковой режим** выберите **SQL**. 
+4. В открывшемся раскрывающемся меню **Выберите языковой режим** выберите **SQL**.
 
 ## <a name="connect-to-your-database"></a>Подключение к базе данных
 
@@ -97,7 +97,6 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 > [!IMPORTANT]
 > Прежде чем продолжить, приготовьте сервер и данные для входа. Если при вводе данных профиля подключения переключиться с Visual Studio Code, понадобится начать создание профиля заново.
->
 
 1. В Visual Studio Code нажмите клавиши **CTRL+SHIFT+P** (или **F1**), чтобы открыть палитру команд.
 
@@ -105,17 +104,17 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 3. Выберите **Create Connection Profile** (Создать профиль подключения).
 
-4. Следуйте инструкциям на экране, чтобы указать свойства для нового профиля подключения. Укажите все значения и нажмите клавишу **ВВОД** для продолжения. 
+4. Следуйте инструкциям на экране, чтобы указать свойства для нового профиля подключения. Укажите все значения и нажмите клавишу **ВВОД** для продолжения.
 
-   | Свойство       | Рекомендуемое значение | ОПИСАНИЕ |
-   | ------------ | ------------------ | ------------------------------------------------- | 
-   | **Server name** (Имя сервера) | Полное имя сервера | Примерно такое: **mynewserver20170313.database.windows.net**. |
-   | **Database name** (Имя базы данных) | mySampleDatabase | База данных для подключения. |
-   | **Проверка подлинности** | Имя для входа в SQL| В этом руководстве используется проверка подлинности SQL. |
+   | Свойство       | Рекомендуемое значение | Описание |
+   | ------------ | ------------------ | ------------------------------------------------- |
+   | **Имя сервера** | Полное имя сервера | Примерно такое: **mynewserver20170313.database.windows.net**. |
+   | **Имя базы данных** | mySampleDatabase | База данных для подключения. |
+   | **Authentication** | Имя для входа в SQL| В этом руководстве используется проверка подлинности SQL. |
    | **Имя пользователя** | Имя пользователя | Имя пользователя учетной записи администратора сервера, используемое для создания сервера. |
-   | **Password (SQL Login)** (Пароль для входа в SQL) | Пароль | Пароль учетной записи администратора сервера, используемый для создания сервера. |
-   | **Save Password?** (Сохранить пароль?) | "Да" или "Нет" | Выберите **Да**, если вы не хотите вводить пароль каждый раз. |
-   | **Укажите имя для этого профиля** | Имя профиля, например **mySampleProfile** | Сохраненный профиль повышает скорость подключения при последующих входах. | 
+   | **Password (SQL Login) (Пароль для входа в SQL)** | Пароль | Пароль учетной записи администратора сервера, используемый для создания сервера. |
+   | **Save Password? (Сохранить пароль?)** | "Да" или "Нет" | Выберите **Да**, если вы не хотите вводить пароль каждый раз. |
+   | **Enter a name for this profile (Укажите имя этого профиля)** | Имя профиля, например **mySampleProfile** | Сохраненный профиль повышает скорость подключения при последующих входах. |
 
    В случае успешного выполнения появится уведомление о том, что профиль создан и подключен.
 
@@ -144,22 +143,22 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
    ```sql
    INSERT INTO [SalesLT].[Product]
-           ( [Name]
-           , [ProductNumber]
-           , [Color]
-           , [ProductCategoryID]
-           , [StandardCost]
-           , [ListPrice]
-           , [SellStartDate]
-           )
+        ( [Name]
+        , [ProductNumber]
+        , [Color]
+        , [ProductCategoryID]
+        , [StandardCost]
+        , [ListPrice]
+        , [SellStartDate]
+        )
      VALUES
-           ('myNewProduct'
-           ,123456789
-           ,'NewColor'
-           ,1
-           ,100
-           ,100
-           ,GETDATE() );
+        ('myNewProduct'
+        ,123456789
+        ,'NewColor'
+        ,1
+         ,100
+         ,100
+         ,GETDATE() );
    ```
 
 2. Нажмите клавиши **CTRL**+**SHIFT**+**E** для вставки новой строки в таблицу `Product`.

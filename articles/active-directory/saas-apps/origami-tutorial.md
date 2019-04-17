@@ -15,43 +15,43 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 1a3e01b7275b7d8329a9fc3bfc90e20398fdf38b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 0d5c697f8c6c2365539ce5147ad5bafff1e6c396
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57845109"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59282199"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-origami"></a>Руководство по Интеграция Azure Active Directory с Origami
 
 В этом учебнике описано, как интегрировать Origami с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Origami обеспечивает следующие преимущества.
 
-* Вы можете управлять Azure AD, у кого есть доступ к Origami.
-* Можно включить пользователей требуется автоматически войти в систему в Origami (единый вход) с учетной записью Azure AD.
+* С помощью Azure Active Directory вы можете контролировать доступ к Origami.
+* Вы можете включить автоматический вход пользователей в Origami (единый вход) с помощью учетных записей Azure Active Directory.
 * Вы можете управлять учетными записями централизованно на портале Azure.
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Origami, вам потребуется:
 
 * подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
-* Origami единого входа — подписка с поддержкой
+* подписка Origami с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Поддерживает Origami **SP** единый вход
+* Приложение Origami поддерживает единый вход, инициированный **поставщиком услуг**.
 
 ## <a name="adding-origami-from-the-gallery"></a>Добавление Origami из коллекции
 
 Чтобы настроить интеграцию Origami с Azure AD, необходимо добавить Origami из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Origami из коллекции, выполните следующие действия.**
+**Чтобы добавить Origami из коллекции, сделайте следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -65,31 +65,31 @@ ms.locfileid: "57845109"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Origami**выберите **Origami** на панели результатов и нажмите **добавить** кнопку, чтобы добавить это приложение.
+4. В поле поиска введите **Origami**, выберите **Origami** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
      ![Origami в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка Azure AD единого входа в Origami с использованием тестового пользователя **пользователя Britta Simon**.
-Для единого входа для работы необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Origami.
+В этом разделе описана настройка и проверка единого входа Azure Active Directory в Origami с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure Active Directory и соответствующим пользователем в Origami.
 
 Чтобы настроить и проверить единый вход Azure AD в Origami, вам потребуется выполнить действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка Origami единого входа](#configure-origami-single-sign-on)**  — Настройка параметров единого входа на стороне приложения.
+2. **[Настройка единого входа в Origami](#configure-origami-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя Origami](#create-origami-test-user)**  — требуется для создания пользователя Britta Simon в Origami, связанного с одноименным пользователем в Azure AD.
+5. **[Создание тестового пользователя Origami](#create-origami-test-user)** требуется для того, чтобы в приложении Origami существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure Active Directory.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
 В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-Чтобы настроить Azure AD единого входа в Origami, выполните следующие действия.
+Чтобы настроить единый вход Azure Active Directory в Origami, сделайте следующее.
 
-1. В [портала Azure](https://portal.azure.com/)на **Origami** странице интеграции с приложением, выберите **единого входа**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Origami** выберите **Единый вход**.
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
@@ -103,7 +103,7 @@ ms.locfileid: "57845109"
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    ![Origami домене и URL-адреса приложения единого входа сведения](common/sp-signonurl.png)
+    ![Сведения о домене и URL-адресах единого входа приложения Origami](common/sp-signonurl.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://live.origamirisk.com/origami/account/login?account=<companyname>`.
 
@@ -114,7 +114,7 @@ ms.locfileid: "57845109"
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-6. На **Настройка Origami** скопируйте соответствующий URL-адреса в соответствии с вашим требованиям.
+6. Требуемый URL-адрес можно скопировать из раздела **Настройка Origami**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -124,7 +124,7 @@ ms.locfileid: "57845109"
 
     c. URL-адрес выхода.
 
-### <a name="configure-origami-single-sign-on"></a>Настройка Origami единого входа
+### <a name="configure-origami-single-sign-on"></a>Настройка единого входа в Origami
 
 1. Войдите в систему, используя учетную запись Origami с правами администратора.
 
@@ -138,9 +138,9 @@ ms.locfileid: "57845109"
 
     a. Выберите пункт **Включить единый вход**.
 
-    2. В **поставщика удостоверений Sign-in URL-адрес страницы** текстовом поле вставьте значение **URL-адрес входа**, который вы скопировали на портале Azure.
+    b. В текстовое поле **Identity Provider's Sign-in Page URL** (URL-адрес страницы входа поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
-    c. В **URL-адрес страницы выхода поставщика удостоверений** текстовом поле вставьте значение **URL-адрес выхода**, который вы скопировали на портале Azure.
+    c. В текстовое поле **Identity Provider's Sign-in Page URL** (URL-адрес страницы выхода поставщика удостоверений) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
     d. Нажмите кнопку **Browse** (Обзор), чтобы отправить файл метаданных, скачанный с портала Azure.
 
@@ -175,13 +175,13 @@ ms.locfileid: "57845109"
 
 В этом разделе описано, как позволить пользователю Britta Simon использовать единый вход Azure, предоставив ему доступ к Origami.
 
-1. На портале Azure выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **Origami**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Origami**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
 2. В списке приложений выберите **Origami**.
 
-    ![Ссылка на Origami в списке приложений](common/all-applications.png)
+    ![Ссылка на Origami в списке "Приложения"](common/all-applications.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
@@ -219,9 +219,9 @@ ms.locfileid: "57845109"
    
     ![Настройка единого входа](./media/origami-tutorial/tutorial_origami_56.png)
 
-    a. В **имя пользователя** текстовом поле введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
+    a. В текстовом поле **Имя пользователя** введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
-    2. В текстовом поле **Пароль** введите пароль.
+    b. В текстовом поле **Пароль** введите пароль.
 
     c. В текстовом поле **подтверждения пароля** введите пароль еще раз.
 
@@ -241,13 +241,13 @@ ms.locfileid: "57845109"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент Origami на панели доступа, вы автоматически войдете Origami, для которого настраивается единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Origami на Панели доступа, вы автоматически войдете в приложение Origami, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

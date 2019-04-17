@@ -10,24 +10,24 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/09/2019
+ms.date: 04/15/2019
 ms.author: tomfitz
-ms.openlocfilehash: 9065c6bc71a153ae94ddc20d5b41a152094fc111
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: 2ccdd337d5c01a0ac0253fe1d1e131fa4e6d51a7
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59492181"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59608919"
 ---
 # <a name="logical-functions-for-azure-resource-manager-templates"></a>Логические функции для шаблонов Azure Resource Manager
 
 Resource Manager предоставляет ряд функций для выполнения сравнений в шаблонах.
 
-* [и](#and)
-* [bool](#bool)
-* [if](#if)
-* [not](#not)
-* [или](#or)
+* [and](#and) (и);
+* [bool](#bool);
+* [if](#if) (если);
+* [not](#not) (не);
+* [or](#or) (или).
 
 ## <a name="and"></a>и
 
@@ -37,7 +37,7 @@ Resource Manager предоставляет ряд функций для вып�
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | Описание |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | arg1 |Yes |Логическое |Первое значение, которое необходимо проверить на соответствие истине. |
 | arg2 |Yes |Логическое |Второе значение, которое необходимо проверить на соответствие истине. |
@@ -77,9 +77,9 @@ Resource Manager предоставляет ряд функций для вып�
 
 | ИМЯ | type | Значение |
 | ---- | ---- | ----- |
-| andExampleOutput | Bool | Ложь |
-| orExampleOutput | Bool | Истина |
-| notExampleOutput | Bool | Ложь |
+| andExampleOutput | Bool | False |
+| orExampleOutput | Bool | Да |
+| notExampleOutput | Bool | False |
 
 ## <a name="bool"></a>bool
 
@@ -89,7 +89,7 @@ Resource Manager предоставляет ряд функций для вып�
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | Описание |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | arg1 |Yes |строка или целое число |Значение, которое необходимо преобразовать в логическое. |
 
@@ -130,10 +130,10 @@ Resource Manager предоставляет ряд функций для вып�
 
 | ИМЯ | type | Значение |
 | ---- | ---- | ----- |
-| trueString | Bool | Истина |
-| falseString | Bool | Ложь |
-| trueInt | Bool | Истина |
-| falseInt | Bool | Ложь |
+| trueString | Bool | Да |
+| falseString | Bool | False |
+| trueInt | Bool | Да |
+| falseInt | Bool | False |
 
 ## <a name="if"></a>if
 
@@ -212,7 +212,7 @@ Resource Manager предоставляет ряд функций для вып�
     },
     "resources": [
         {
-            "condition": "[greaterOrEquals(parameters('logAnalytics'), '0')]",
+            "condition": "[not(empty(parameters('logAnalytics')))]",
             "name": "[concat(parameters('vmName'),'/omsOnboarding')]",
             "type": "Microsoft.Compute/virtualMachines/extensions",
             "location": "[parameters('location')]",
@@ -223,10 +223,10 @@ Resource Manager предоставляет ряд функций для вып�
                 "typeHandlerVersion": "1.0",
                 "autoUpgradeMinorVersion": true,
                 "settings": {
-                    "workspaceId": "[if(greaterOrEquals(parameters('logAnalytics'), '0'), reference(parameters('logAnalytics'), '2015-11-01-preview').customerId, json('null'))]"
+                    "workspaceId": "[if(not(empty(parameters('logAnalytics'))), reference(parameters('logAnalytics'), '2015-11-01-preview').customerId, json('null'))]"
                 },
                 "protectedSettings": {
-                    "workspaceKey": "[if(greaterOrEquals(parameters('logAnalytics'), '0'), listKeys(parameters('logAnalytics'), '2015-11-01-preview').primarySharedKey, json('null'))]"
+                    "workspaceKey": "[if(not(empty(parameters('logAnalytics'))), listKeys(parameters('logAnalytics'), '2015-11-01-preview').primarySharedKey, json('null'))]"
                 }
             }
         }
@@ -234,7 +234,7 @@ Resource Manager предоставляет ряд функций для вып�
     "outputs": {
         "mgmtStatus": {
             "type": "string",
-            "value": "[if(greaterOrEquals(parameters('logAnalytics'), '0'), 'Enabled monitoring for VM!', 'Nothing to enable')]"
+            "value": "[if(not(empty(parameters('logAnalytics'))), 'Enabled monitoring for VM!', 'Nothing to enable')]"
         }
     }
 }
@@ -286,9 +286,9 @@ Resource Manager предоставляет ряд функций для вып�
 
 | ИМЯ | type | Значение |
 | ---- | ---- | ----- |
-| andExampleOutput | Bool | Ложь |
-| orExampleOutput | Bool | Истина |
-| notExampleOutput | Bool | Ложь |
+| andExampleOutput | Bool | False |
+| orExampleOutput | Bool | Да |
+| notExampleOutput | Bool | False |
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/not-equals.json) используется **not** и [equals](resource-group-template-functions-comparison.md#equals).
 
@@ -310,7 +310,7 @@ Resource Manager предоставляет ряд функций для вып�
 
 | ИМЯ | type | Значение |
 | ---- | ---- | ----- |
-| checkNotEquals | Bool | Истина |
+| checkNotEquals | Bool | Да |
 
 ## <a name="or"></a>или
 
@@ -360,9 +360,9 @@ Resource Manager предоставляет ряд функций для вып�
 
 | ИМЯ | type | Значение |
 | ---- | ---- | ----- |
-| andExampleOutput | Bool | Ложь |
-| orExampleOutput | Bool | Истина |
-| notExampleOutput | Bool | Ложь |
+| andExampleOutput | Bool | False |
+| orExampleOutput | Bool | Да |
+| notExampleOutput | Bool | False |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

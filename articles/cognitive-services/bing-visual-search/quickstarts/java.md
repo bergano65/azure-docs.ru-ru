@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: quickstart
-ms.date: 5/16/2018
+ms.date: 4/02/2019
 ms.author: scottwhi
-ms.openlocfilehash: 79b118c0a4fd28eacf24dc63f04f36314807b41a
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 2fe4e9dad0b198fe54e06ce07100d231f1f7d157
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57531102"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59046450"
 ---
 # <a name="quickstart-get-image-insights-using-the-bing-visual-search-rest-api-and-java"></a>Краткое руководство. Получение аналитических сведений об изображениях с помощью REST API визуального поиска Bing и Java
 
-В этом кратком руководстве вы узнаете, как сделать первый вызов API визуального поиска Bing и просмотреть результаты поиска. Это простое приложение C# отправляет изображение в API и отображает возвращенные данные о нем. Хотя это приложение создается на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+В этом кратком руководстве вы узнаете, как сделать первый вызов API Визуального поиска Bing и просмотреть результаты. Это приложение Java отправляет изображение в API и отображает возвращенные данные о нем. Хотя это приложение создано на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-При отправке локального изображения данные формы должны содержать заголовок Content-Disposition. Его параметру `name` необходимо присвоить значение "image", а для параметра `filename` можно задать любую строку. Содержимым формы является двоичный файл изображения. Максимально допустимый размер отправляемого изображения — 1 МБ.
+При отправке локального изображения данные формы должны содержать заголовок `Content-Disposition`. Необходимо задать для его параметра `name` значение "image", а для параметра `filename` можно присвоить любую строку. Форма содержит двоичные данные изображения. Максимально допустимый размер отправляемого изображения — 1 МБ.
 
 ```
 --boundary_1234-abcd
@@ -34,16 +34,15 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Комплект разработчика Java (JDK) 7 или 8](https://aka.ms/azure-jdks).
-* [Библиотека Gson](https://github.com/google/gson).
-* [Apache HttpComponents](https://hc.apache.org/downloads.cgi).
-
+* [Комплект SDK Java (JDK) 7 или 8](https://aka.ms/azure-jdks).
+* [Библиотеки Gson Java](https://github.com/google/gson).
+* [Apache HttpComponents.](https://hc.apache.org/downloads.cgi)
 
 [!INCLUDE [cognitive-services-bing-visual-search-signup-requirements](../../../../includes/cognitive-services-bing-visual-search-signup-requirements.md)]
 
 ## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
-1. Создайте проект Java в любой интегрированной среде разработки или редакторе, а затем импортируйте в него следующие библиотеки.
+1. Создайте проект Java в любой интегрированной среде разработки или редакторе, а затем импортируйте в него следующие библиотеки:
 
     ```java
     import java.util.*;
@@ -64,7 +63,7 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
     import org.apache.http.impl.client.HttpClientBuilder;
     ```
 
-2. Создайте переменные для конечной точки API, ключ подписки и путь к изображению. 
+2. Создайте переменные для конечной точки API, ключ подписки и путь к изображению:
 
     ```java
     static String endpoint = "https://api.cognitive.microsoft.com/bing/v7.0/images/visualsearch";
@@ -74,7 +73,7 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 
 ## <a name="create-the-json-parser"></a>Создание средства синтаксического анализа JSON
 
-Создайте метод, чтобы сделать ответ JSON от API более удобным для чтения с помощью `JsonParser`.
+Создайте метод, чтобы сделать ответ JSON от API более удобным для чтения с помощью `JsonParser`:
 
     ```java
     public static String prettify(String json_text) {
@@ -87,13 +86,13 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 
 ## <a name="construct-the-search-request-and-query"></a>Создание поискового запроса и запроса
 
-1. В методе main приложения создайте клиент Http с помощью `HttpClientBuilder.create().build();`.
+1. В методе main приложения создайте клиент HTTP с помощью `HttpClientBuilder.create().build();`:
 
     ```java
     CloseableHttpClient httpClient = HttpClientBuilder.create().build();
     ```
 
-2. Создайте `HttpEntity` для отправки изображения в API.
+2. Создайте объект `HttpEntity` для отправки изображения в API:
 
     ```java
     HttpEntity entity = MultipartEntityBuilder
@@ -102,7 +101,7 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
         .build();
     ```
 
-3. Создайте объект `httpPost` с конечной точкой и задайте заголовок, чтобы использовать ключ подписки.
+3. Создайте объект `httpPost` с конечной точкой и задайте заголовок, чтобы использовать ключ подписки:
 
     ```java
     HttpPost httpPost = new HttpPost(endpoint);
@@ -112,7 +111,7 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 
 ## <a name="receive-and-process-the-json-response"></a>Получение и обработка ответа в формате JSON
 
-1. Используйте `HttpClient.execute()` для отправки запроса в API и сохраните ответ в объекте `InputStream`.
+1. Используйте метод `HttpClient.execute()` для отправки запроса в API и сохраните ответ в объекте `InputStream`.
     
     ```java
     HttpResponse response = httpClient.execute(httpPost);
@@ -130,4 +129,4 @@ System.out.println(prettify(json));
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Создание веб-страницы пользовательского поиска](../tutorial-bing-visual-search-single-page-app.md)
+> [Создание одностраничного веб-приложения Визуального поиска](../tutorial-bing-visual-search-single-page-app.md)

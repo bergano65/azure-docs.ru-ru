@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 5e7994ba5fcd3efa061f56d7ee77f796bab16708
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 6afe76aca388f1f6bd479f53eb4e18cc62c10584
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58449297"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59268676"
 ---
 # <a name="create-an-interactive-search-map-by-using-azure-maps"></a>Создание карты с интерактивным поиском с помощью службы Azure Maps
 
@@ -49,7 +49,7 @@ ms.locfileid: "58449297"
 
 1. Скачайте файл [interactiveSearch.html](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/interactiveSearch.html) или скопируйте его содержимое.
 2. Сохраните его локально как файл **AzureMapDemo.html**. Откройте в текстовом редакторе.
-3. Найдите строку `<insert-key>`. Замените ее значением **Первичный ключ**, полученным в предыдущем разделе.
+3. Найдите строку `<Your Azure Maps Key>`. Замените ее значением **Первичный ключ**, полученным в предыдущем разделе.
 
 ## <a name="open-the-application"></a>Запуск приложения
 
@@ -70,15 +70,15 @@ ms.locfileid: "58449297"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы создали учетную запись службы Azure Maps и запустили демоверсию приложения. Чтобы узнать, как создать собственное приложение с использованием интерфейсов API службы Azure Maps, перейдите к следующему руководству:
+В этом кратком руководстве вы создали учетную запись службы Azure Maps и запустили демоверсию приложения. Сведения об Azure Maps см. в этих руководствах:
 
 > [!div class="nextstepaction"]
-> [Поиск ближайшей точки интереса с помощью службы "Карты Azure"](./tutorial-search-location.md)
+> [Поиск ближайшей точки интереса с помощью службы "Карты Azure"](tutorial-search-location.md)
 
 Дополнительные примеры кода и сведения о возможностях интерактивного программирования см. в следующих практических руководствах:
 
 > [!div class="nextstepaction"]
-> [Поиск адреса с помощью службы поиска Azure Maps](./how-to-search-for-address.md)
+> [Find an address by using the Azure Maps search service (Поиск адреса с помощью службы поиска Azure Maps)](how-to-search-for-address.md)
 
 > [!div class="nextstepaction"]
-> [Использование библиотеки Map Control в службе Azure Maps](./how-to-use-map-control.md)
+> [Использование библиотеки Map Control в службе Azure Maps](how-to-use-map-control.md)

@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
-ms.openlocfilehash: b2d8d98fb9c953ef8063bf2081201f7d9bdf3649
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 4904e98556f5d4a033b178bfdc4305714a80e07e
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57874989"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59257881"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-pluralsight"></a>Руководство. Интеграция Azure Active Directory с Pluralsight
+# <a name="tutorial-azure-active-directory-integration-with-pluralsight"></a>Руководство по Интеграция Azure Active Directory с Pluralsight
 
 В этом руководстве описано, как интегрировать Pluralsight с Azure Active Directory (Azure AD).
 Интеграция Pluralsight с Azure AD обеспечивает приведенные далее преимущества.
@@ -52,7 +52,7 @@ ms.locfileid: "57874989"
 
 Чтобы настроить интеграцию Pluralsight с Azure AD, необходимо добавить Pluralsight из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Pluralsight из коллекции, выполните следующие действия:**
+**Чтобы добавить Pluralsight из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,17 +106,17 @@ ms.locfileid: "57874989"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Pluralsight](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<instancename>.pluralsight.com/sso/<companyname>`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<instancename>.pluralsight.com/sso/<companyname>`
 
-    b. В поле **Идентификатор** введите URL-адрес `www.pluralsight.com`.
+    b. В поле **Идентификатор** введите URL-адрес: `www.pluralsight.com`
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<instancename>.pluralsight.com/sp/ACS.saml2`.
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<instancename>.pluralsight.com/sp/ACS.saml2`
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения URL-адреса входа и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Pluralsight](mailto:support@pluralsight.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. Для приложения Pluralsight проверочные утверждения SAML должны иметь определенный формат. Для этого необходимо добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов маркера SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя**.
-    ![image](common/edit-attribute.png)
+5. Для приложения Pluralsight проверочные утверждения SAML должны иметь определенный формат. Для этого необходимо добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов маркера SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
+    ![изображение](common/edit-attribute.png)
 
     >[!NOTE]
     >Также можно добавить атрибут **Уникальный идентификатор** с соответствующим значением, таким как EmployeeID или другим, которое подходит для вашей организации. Обратите внимание, что это необязательный атрибут, однако его можно добавить для идентификации уникального пользователя.
@@ -173,7 +173,7 @@ ms.locfileid: "57874989"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -218,7 +218,7 @@ ms.locfileid: "57874989"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список руководств по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory со Skills Manager | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory со Skills Manager | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Skills Manager.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 44f309b828a851a45e34a89473a2599d6c8566c9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b599eaf36eed69cd693e0dc4e20ef2123e42e60b
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58168679"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59270750"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-skills-manager"></a>Руководство. Интеграция Azure Active Directory со Skills Manager
+# <a name="tutorial-azure-active-directory-integration-with-skills-manager"></a>Руководство по Интеграция Azure Active Directory со Skills Manager
 
 В этом руководстве описано, как интегрировать Skills Manager с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Skills Manager обеспечивает следующие преимущества:
@@ -105,9 +105,9 @@ ms.locfileid: "58168679"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Skills Manager](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.skills-manager.com/kennametal`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<SUBDOMAIN>.skills-manager.com/kennametal`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.skills-manager.com/public/SamlLogin2.aspx`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<SUBDOMAIN>.skills-manager.com/public/SamlLogin2.aspx`
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Для получения этих значений обратитесь к [группе поддержки клиентов Skills Manager](https://www.ibm.com/support/uk/?lnk=msu_uk). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -193,8 +193,8 @@ ms.locfileid: "58168679"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

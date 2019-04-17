@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с HackerOne | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с HackerOne | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в HackerOne.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 52a782831f0f017423faef7610f984b2ea87e445
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 6faf023d36ea40e3694161ee0cfc8aac7c5652fa
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57898471"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59277941"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hackerone"></a>Руководство по Интеграция Azure Active Directory с HackerOne
 
@@ -106,9 +106,9 @@ ms.locfileid: "57898471"
 
     ![Сведения о домене и URL-адресах единого входа приложения HackerOne](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://hackerone.com/<company name>/authentication`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://hackerone.com/<company name>/authentication`
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://hackerone.com/users/saml/metadata`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом. `https://hackerone.com/users/saml/metadata`
 
     > [!NOTE]
     > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить его, обратитесь в [службу поддержки клиентов HackerOne](mailto:support@hackerone.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -145,9 +145,9 @@ ms.locfileid: "57898471"
 
     a. Введите имя зарегистрированного домена в поле **Email Domain** (Домен электронной почты).
 
-    b. В текстовые поля   **URL-адресов для единого входа** вставьте значение **URL-адреса для входа**, скопированное на портале Azure.
+    b. В текстовом поле **Single Sign On URL** (URL-адрес единого входа) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
-    c. Откройте в Блокноте **файл сертификата**, скачанный на портале Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **X509 Certificate** (Сертификат X509).
+    c. Откройте в Блокноте **файл сертификата**, скачанный на портале Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **X509 Certificate** (Сертификат X509).
 
     d. Выберите команду **Сохранить**.
 
@@ -177,7 +177,7 @@ ms.locfileid: "57898471"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

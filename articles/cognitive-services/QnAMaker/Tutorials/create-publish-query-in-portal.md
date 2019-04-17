@@ -1,7 +1,7 @@
 ---
 title: Создание, публикация и получение ответа в QnA Maker
 titleSuffix: Azure Cognitive Services
-description: В этом руководстве по работе с порталом содержатся сведения о программном создании и публикации базы знаний, а также создании ответа на вопрос из базы знаний.
+description: Создайте базу знаний с вопросами и ответами из общедоступных часто задаваемых веб-вопросов. Сохраните, обучите и опубликуйте базу знаний. После публикации базы знаний отправьте вопрос и получите ответ с помощью команды CURL. Затем создайте чат-бот и протестируйте его с помощью того же вопроса.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -9,18 +9,18 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: tutorial
-ms.date: 12/17/2018
+ms.date: 04/08/2019
 ms.author: diberry
-ms.openlocfilehash: 6f79614e4b1ec660d2ec5c8aee40924908cf8f5c
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 299dd61055503f0b5a11cbe97e137e4760edadda
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58884131"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59266959"
 ---
-# <a name="tutorial-create-a-knowledge-base-then-answer-question-via-the-qna-maker-portal"></a>Руководство. Создание базы знаний и получение ответа на вопрос на портале QnA Maker
+# <a name="tutorial-from-qna-maker-portal-create-a-knowledge-base"></a>Руководство по На портале QnA Maker создайте базу знаний.
 
-В этом руководстве содержатся сведения о создании и публикации базы знаний, а также создании ответа на вопрос из базы знаний.
+Создайте базу знаний с вопросами и ответами из общедоступных часто задаваемых веб-вопросов. Сохраните, обучите и опубликуйте базу знаний. После публикации базы знаний отправьте вопрос и получите ответ с помощью команды Curl. Затем создайте чат-бот и протестируйте его с помощью того же вопроса. 
 
 Из этого руководства вы узнаете, как выполнять следующие задачи: 
 
@@ -29,6 +29,7 @@ ms.locfileid: "58884131"
 > * Просмотр, сохранение и обучение базы знаний
 > * Публикация базы знаний
 > * Использование cURL для отправки запроса в базу знаний
+> * Создание бота
 > 
 > [!NOTE]
 > Программная версия этого руководства доступна с полным решением в [**репозитории GitHub** Azure-Samples/cognitive-services-qnamaker-csharp](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp/tree/master/documentation-samples/tutorials/create-publish-answer-knowledge-base).
@@ -51,7 +52,7 @@ ms.locfileid: "58884131"
 
     |Параметр|Назначение|
     |--|--|
-    |Microsoft Azure Directory Id (Идентификатор каталога Microsoft Azure)|Ваш _идентификатор каталога Microsoft Azure_ связан с учетной записью, используемой для входа на портал Azure и портал QnA Maker. |
+    |Microsoft Azure Directory Id (Идентификатор каталога Microsoft Azure)|Ваш _идентификатор каталога Microsoft Azure_ связан с учетной записью, используемой для входа на портал Azure и QnA Maker. |
     |Azure Subscription name (Имя подписки Azure)|Учетная запись выставления счетов, в которой создан ресурс QnA Maker.|
     |Azure QnA Service (Служба Azure QnA)|Ваш имеющийся ресурс QnA Maker.|
 
@@ -99,7 +100,9 @@ ms.locfileid: "58884131"
 
 ![Параметры конечной точки на странице публикации](../media/qnamaker-tutorial-create-publish-query-in-portal/publish-2.png)
 
-## <a name="use-curl-to-query-for-an-faq-answer"></a>Использование cURL для запроса ответа из часто задаваемых вопросов
+Не закрывайте эту страницу **публикации**, она будет использоваться для создания чат-бота далее в этом учебнике. 
+
+## <a name="use-curl-to-query-for-an-faq-answer"></a>Использование Curl для запроса ответа из часто задаваемых вопросов
 
 1. Выберите вкладку **cURL**. 
 
@@ -109,7 +112,7 @@ ms.locfileid: "58884131"
 
 1. Замените `<Your question>` на `How large can my KB be?`. Это близко к вопросу `How large a knowledge base can I create?`, но не совсем то. QnA Maker применяет обработку естественного языка, чтобы определить, совпадают ли два вопроса.     
 
-1. Выполните команду cURL и получите ответ JSON, включающий оценку и ответ. 
+1. Выполните команду Curl и получите ответ JSON, включающий оценку и ответ. 
 
     ```TXT
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -133,11 +136,11 @@ ms.locfileid: "58884131"
 
     Достоверность QnA Maker составляет 42,81 %.  
 
-## <a name="use-curl-to-query-for-a-chit-chat-answer"></a>Использование cURL для запроса ответа в беседе
+## <a name="use-curl-to-query-for-a-chit-chat-answer"></a>Использование Curl для запроса ответа в беседе
 
-1. В окне терминала с поддержкой cURL замените `How large can my KB be?` оператором завершения общения с ботом со стороны пользователя, например `Thank you`.   
+1. В окне терминала с поддержкой Curl замените вопрос `How large can my KB be?` оператором завершения общения с чат-ботом со стороны пользователя, например ответом `Thank you`.   
 
-1. Выполните команду cURL и получите ответ JSON, включающий оценку и ответ. 
+1. Выполните команду Curl и получите ответ JSON, включающий оценку и ответ. 
 
     ```TXT
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -173,13 +176,13 @@ ms.locfileid: "58884131"
 
     Так как вопрос `Thank you` точно соответствует вопросу в беседе, достоверность QnA Maker составляет 100 %. QnA Maker также возвращает все связанные вопросы и свойство метаданных, содержащее сведения о теге метаданных беседы.  
 
-## <a name="use-curl-to-query-for-the-default-answer"></a>Использование cURL для запроса ответа по умолчанию
+## <a name="use-curl-to-query-for-the-default-answer"></a>Использование Curl для запроса ответа по умолчанию
 
 На любой вопрос, на который QnA Maker не может достоверно ответить, приходит ответ по умолчанию. Этот ответ настраивается на портале Azure. 
 
 1. В окне терминала с поддержкой cURL замените `Thank you` значением `x`. 
 
-1. Выполните команду cURL и получите ответ JSON, включающий оценку и ответ. 
+1. Выполните команду Curl и получите ответ JSON, включающий оценку и ответ. 
 
     ```TXT
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -197,7 +200,17 @@ ms.locfileid: "58884131"
     }
     ```
     
-    QnA Maker возвратил оценку 0. Это означает, что нет достоверного ответа, но он также возвратил ответ по умолчанию. 
+    QnA Maker возвратил оценку ответа `0`. Это означает, что нет достоверного ответа, но он также возвратил ответ по умолчанию. 
+
+## <a name="create-a-knowledge-base-bot"></a>Создание чат-бота базы знаний
+
+Дополнительные сведения см. в статье [Tutorial: Create a QnA Bot with Azure Bot Service v4](create-qna-bot.md) (Учебник: создание чат-бота QnA с помощью службы Azure Bot версии 4).
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Закончив работу с чат-ботом базы знаний, удалите группу ресурсов, `my-tutorial-rg`, чтобы удалить все ресурсы Azure, созданные в процессе чат-ботов.
+
+Закончив работу с базой знаний, на портале QnA Maker выберите раздел **My knowledge bases** (Мои базы знаний), затем выберите базу знаний, **My Tutorial kb**, затем — значок "Удалить" справа в этой строке.  
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -208,4 +221,4 @@ ms.locfileid: "58884131"
 Дополнительные сведения об ответе по умолчанию см. [здесь](../Concepts/confidence-score.md#no-match-found). 
 
 > [!div class="nextstepaction"]
-> [Понятия базы знаний](../Concepts/knowledge-base.md)
+> [Создание чат-бота с помощью этой базы знаний](create-qna-bot.md)

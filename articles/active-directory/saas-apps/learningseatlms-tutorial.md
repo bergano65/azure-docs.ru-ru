@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Learning Seat LMS | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Learning Seat LMS | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Learning Seat LMS.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b478d0779a493d9c5b29690a3eb495d5abaadc7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1e4e564a8c41065f6f68d93735d441ba6c69479a
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57842968"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59274966"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-learning-seat-lms"></a>Руководство по Интеграция Azure Active Directory с Learning Seat LMS
 
@@ -105,9 +105,9 @@ ms.locfileid: "57842968"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Learning Seat LMS](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.learningseatlms.com`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<subdomain>.learningseatlms.com`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.learningseatlms.com/Account/AssertionConsumerService`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.learningseatlms.com/Account/AssertionConsumerService`
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -154,7 +154,7 @@ ms.locfileid: "57842968"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -199,8 +199,8 @@ ms.locfileid: "57842968"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

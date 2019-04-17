@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: dadabe6dce052affff3c5d20315d75a2c38e6adb
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.openlocfilehash: b8d7b6fee973379516e7dbf58b27cfafe1e1edc0
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58849981"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59276547"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-reflektive"></a>Руководство по Интеграция Azure Active Directory с Reflektive
 
@@ -51,7 +51,7 @@ ms.locfileid: "58849981"
 
 Чтобы настроить интеграцию Reflektive с Azure AD, необходимо добавить Reflektive из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Reflektive из коллекции, сделайте следующее.**
+**Чтобы добавить Reflektive из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -202,9 +202,9 @@ ms.locfileid: "58849981"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

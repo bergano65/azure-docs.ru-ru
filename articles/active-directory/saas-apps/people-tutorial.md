@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 9a22de254a2a0ddde3f6fe53a9adaed246e1754a
-ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
+ms.openlocfilehash: 14313567df69b26b000f9bddd98e009aeed2dcd7
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58407663"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59272043"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-people"></a>Руководство по Интеграция Azure Active Directory с приложением "Люди"
 
@@ -105,11 +105,11 @@ ms.locfileid: "58407663"
 
     ![Сведения о домене и URL-адресах единого входа приложения "Люди"](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.peoplehr.net`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.peoplehr.net`
 
-    b. В поле **Идентификатор** введите URL-адрес `https://www.peoplehr.com`.
+    b. В поле **Идентификатор** введите URL-адрес: `https://www.peoplehr.com`
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<company name>.peoplehr.net/Pages/Saml/ConsumeAzureAD.aspx`.
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<company name>.peoplehr.net/Pages/Saml/ConsumeAzureAD.aspx`
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения URL-адреса входа и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки People](mailto:customerservices@peoplehr.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -207,9 +207,9 @@ ms.locfileid: "58407663"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

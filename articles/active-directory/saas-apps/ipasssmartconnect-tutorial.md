@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с iPass SmartConnect | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с iPass SmartConnect | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и iPass SmartConnect.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: b5b39a436ae356cf2543f03db3d6a84d1daa936a
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.openlocfilehash: bf8c7e76aa6dd69cc505be237e47d8e10e7e8db5
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58189501"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59264868"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ipass-smartconnect"></a>Руководство. интеграции Azure Active Directory с iPass SmartConnect
+# <a name="tutorial-azure-active-directory-integration-with-ipass-smartconnect"></a>Руководство по интеграции Azure Active Directory с iPass SmartConnect
 
 В этом руководстве описано, как интегрировать iPass SmartConnect с Azure Active Directory (Azure AD).
 Интеграция iPass SmartConnect с Azure AD позволяет получить следующие преимущества:
@@ -221,7 +221,7 @@ ms.locfileid: "58189501"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-**Чтобы проверить приложение в режиме, инициируемом поставщиком услуг, выполните следующие действия:**
+**Чтобы проверить приложение в режиме, инициируемом поставщиком служб, выполните следующие действия:**
 
 a. Скачайте клиент iPass SmartConnect [здесь](https://om-activation.ipass.com/ClientActivation/ssolanding.go).
 
@@ -257,8 +257,8 @@ d. При первом запуске клиента активация буде
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

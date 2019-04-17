@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/28/2018
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 5eb3c08792b760bf66e443f79762d91210706c92
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
-ms.translationtype: HT
+ms.openlocfilehash: cda08d44cba9e59af853b1705f538ec199ec4d3a
+ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47435118"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59630557"
 ---
 В первом сценарии вы добавляете новый тип телеметрии к существующему типу устройства **охладителя** компании Contoso.
 
@@ -33,7 +33,7 @@ ms.locfileid: "47435118"
 
 | ИМЯ   | Значения      |
 | ------ | ----------- |
-| Status | on, off |
+| Статус | on, off |
 | температура; | Градусы по Фаренгейту |
 | в сети | true, false |
 
@@ -67,7 +67,7 @@ ms.locfileid: "47435118"
 
 [!INCLUDE [cloud-shell-try-it.md](cloud-shell-try-it.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы следовать этому пошаговому руководству, вам необходимы следующие компоненты.
 
@@ -98,13 +98,11 @@ ms.locfileid: "47435118"
 
 Откройте папку **remote-monitoring-services-dotnet-master\storage-adapter** в Visual Studio Code. Чтобы исправить любые нерешенные зависимости, щелкните любую кнопку **Восстановить**.
 
-Откройте файл **.vscode/launch.json** и назначьте строку подключения Cosmos DB для переменной среды **PCS_STORAGEADAPTER_DOCUMENTDB_CONNSTRING**.
-
-<!-- Open the **WebService/appsettings.ini** file and assign your Cosmos DB connection string to the **documentdb_connstring** configuration setting.-->
+Откройте **storage-adapter/WebService/appsettings.ini** файла и назначьте строку подключения Cosmos DB, чтобы **documentDBConnectionString** переменной.
 
 Чтобы запустить микрослужбу локально, нажмите **Отладка > Начать отладку**.
 
-Окно **Терминал** в Visual Studio Code отображает выходные данные из работающей микрослужбы, включая URL-адрес проверки работоспособности веб-службы: [http://127.0.0.1:9022/v1/status](http://127.0.0.1:9022/v1/status). При переходе на этот адрес, состояние должно быть "OK: живой и отлично".
+Окно **Терминал** в Visual Studio Code отображает выходные данные из работающей микрослужбы, включая URL-адрес проверки работоспособности веб-службы: [http://127.0.0.1:9022/v1/status](http://127.0.0.1:9022/v1/status). При переходе на этот адрес, состояние должно быть «ОК: Проверки активности и хорошо».
 
 Оставьте микрослужбу адаптера хранилища запущенной в данном экземпляре Visual Studio Code, пока вы выполняете следующие действия.
 
@@ -417,11 +415,7 @@ ms.locfileid: "47435118"
 
 Откройте папку **​​device-simulation-dotnet-master**, загруженную с GitHub, в новом экземпляре Visual Studio Code. Чтобы исправить любые нерешенные зависимости, щелкните любую кнопку **Восстановить**.
 
-Откройте файл **.vscode/launch.json** и назначьте строку подключения Центра Интернета вещей для переменной среды **PCS_IOTHUB_CONNSTRING**. В том же файле назначьте строку подключения к базе данных Cosmos DB и добавьте переменную среды **PCS_STORAGEADAPTER_DOCUMENTDB_CONNSTRING**.
-
-Откройте файл **WebService/Properties/launchSettings.json** и назначьте строку подключения Центра Интернета вещей для переменной среды **PCS_IOTHUB_CONNSTRING**.
-
-Откройте файл **WebService/appsettings.ini** и измените настройки следующим образом.
+Откройте **WebService/appsettings.ini** файла и назначьте строку подключения Cosmos DB, чтобы **documentdb_connstring** переменную и измените настройки следующим образом:
 
 ```ini
 device_models_folder = C:\temp\devicemodels\

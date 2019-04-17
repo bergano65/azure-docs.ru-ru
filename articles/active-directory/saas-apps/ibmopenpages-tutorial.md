@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc5403dee386db2fbdabc124b80fb559a59e637a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 699e4830b6399fbce07dfc125e69513b58f58dd1
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57834920"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59260125"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ibm-openpages"></a>Руководство. Интеграция Azure Active Directory с IBM OpenPages
+# <a name="tutorial-azure-active-directory-integration-with-ibm-openpages"></a>Руководство по Интеграция Azure Active Directory с IBM OpenPages
 
 В этом руководстве описано, как интегрировать IBM OpenPages с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением IBM OpenPages обеспечивает следующие преимущества.
@@ -51,7 +51,7 @@ ms.locfileid: "57834920"
 
 Чтобы настроить интеграцию IBM OpenPages с Azure AD, необходимо добавить IBM OpenPages из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить IBM OpenPages из коллекции, выполните следующие действия.**
+**Чтобы добавить IBM OpenPages из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "57834920"
 
     ![Сведения о домене и URL-адресах единого входа для приложения IBM OpenPages](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `http://<subdomain>.ibm.com:<ID>/openpages`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `http://<subdomain>.ibm.com:<ID>/openpages`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.ibm.com:<ID>/samlsps/op`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.ibm.com:<ID>/samlsps/op`
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов IBM OpenPages](https://www.ibm.com/support/home/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -148,7 +148,7 @@ ms.locfileid: "57834920"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -193,8 +193,8 @@ ms.locfileid: "57834920"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

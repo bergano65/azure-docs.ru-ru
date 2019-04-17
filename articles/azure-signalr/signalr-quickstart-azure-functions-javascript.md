@@ -7,12 +7,12 @@ ms.devlang: javascript
 ms.topic: quickstart
 ms.date: 03/04/2019
 ms.author: zhshang
-ms.openlocfilehash: c66323a430e86053627577b40f66b3f4be11c74f
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 0ca73ed314b254f9f73833bb2c4311f03f62508f
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57535654"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59264205"
 ---
 # <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-javascript"></a>Краткое руководство. Создание чат-комнаты с помощью служб "Функции Azure" и SignalR с использованием JavaScript
 
@@ -50,7 +50,7 @@ ms.locfileid: "57535654"
 
     ![Создание службы SignalR](media/signalr-quickstart-azure-functions-javascript/signalr-quickstart-keys.png)
 
-1. В редакторе кода откройте папку *chat/src/javascript* из клонированного репозитория.
+1. В редакторе кода откройте папку *src/chat/javascript* из клонированного репозитория.
 
 1. Переименуйте *local.settings.sample.json* на *local.settings.json*.
 
@@ -61,7 +61,7 @@ ms.locfileid: "57535654"
     - **Согласование** использует входную привязку *SignalRConnectionInfo* для генерации и возврата сведений о допустимом соединении.
     - **Сообщения**. Эта функция получает мгновенное сообщение в тексте запроса и использует выходную привязку *SignalR* для рассылки сообщений ко всем подключенным клиентским приложениям.
 
-1. В терминале убедитесь, что вы находитесь в папке *чата/src/javascript*. Используйте основные инструменты "Функции Azure" для установки расширений, необходимых для запуска приложения.
+1. В терминале убедитесь, что вы находитесь в папке *src/chat/javascript*. Используйте основные инструменты "Функции Azure" для установки расширений, необходимых для запуска приложения.
 
     ```bash
     func extensions install

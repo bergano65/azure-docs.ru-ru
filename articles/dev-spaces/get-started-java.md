@@ -10,12 +10,12 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s
 manager: mmontwil
-ms.openlocfilehash: 49f3f50cd33d2b3fea1e784fcfc70044c568ba31
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b69a793d1d860bf2f2a4d52a92d4bea5cf903c0c
+ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57842419"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59426313"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-java"></a>Начало работы в Azure Dev Spaces с использованием Java
 
@@ -26,15 +26,10 @@ ms.locfileid: "57842419"
 - эффективная разработка и тестирование кода в среде командной работы.
 
 > [!Note]
-> **Если на каком-то этапе у вас возникли трудности**, см. статью [Устранение неполадок](troubleshooting.md) или оставьте комментарий на этой странице.
-
-Теперь вы готовы создать среду разработки на основе Kubernetes в Azure.
+> **Если на каком-то этапе у вас возникли трудности**, см. статью об [устранении неполадок](troubleshooting.md).
 
 ## <a name="install-the-azure-cli"></a>Установка Azure CLI
 Для Azure Dev Spaces требуется минимальная настройка локального компьютера. Большая часть конфигурации среды разработки хранится в облаке и доступна для других пользователей. Начните со скачивания и запуска [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
-
-> [!IMPORTANT]
-> Если интерфейс Azure CLI уже установлен, убедитесь, что используется версия 2.0.43 или выше.
 
 ### <a name="sign-in-to-azure-cli"></a>Вход в Azure CLI
 Войдите в Azure. В окне терминала введите следующую команду:
@@ -153,7 +148,7 @@ Service 'webfrontend' port 80 (TCP) is available at 'http://localhost:<port>'
 > Azure Dev Spaces — это не просто среда выполнения кода в Kubernetes. Она позволяет быстро и итеративно видеть, как изменения вашего кода вступают в силу в среде Kubernetes в облаке.
 
 1. В окне терминала нажмите клавишу `Ctrl+C` (чтобы остановить `azds up`).
-1. Откройте файл кода с именем `src/main/java/com/ms/sample/webfrontend/Application.java` и измените текст приветствия: `return "Hello from webfrontend in Azure!";`.
+1. Откройте файл `src/main/java/com/ms/sample/webfrontend/Application.java` с кодом и измените текст приветствия: `return "Hello from webfrontend in Azure!";`
 1. Сохраните файл.
 1. Запустите `azds up` в окне терминала.
 
@@ -220,9 +215,9 @@ public String greeting()
 
 Обновите веб-приложение в браузере. Вы должны увидеть настраиваемое сообщение в пользовательском интерфейсе.
 
-**Теперь у вас есть метод быстрой итерации кода и отладки непосредственно в Kubernetes**. Далее вы узнаете, как создать и вызвать второй контейнер.
+**Теперь у вас есть метод быстрой итерации кода и отладки непосредственно в Kubernetes.** Далее вы узнаете, как создать и вызвать второй контейнер.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Узнайте больше о разработке с использованием нескольких служб](multi-service-java.md)
+> [Разработка с использованием нескольких служб](multi-service-java.md)

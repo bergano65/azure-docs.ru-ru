@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3253c26f99c470a256b937844138d8875219cbd1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 35f9a8949f5b51f88b9297890fc5562e7b8dd591
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57878046"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59273385"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-help-scout"></a>Руководство. Интеграция Azure Active Directory с Help Scout
+# <a name="tutorial-azure-active-directory-integration-with-help-scout"></a>Руководство по Интеграция Azure Active Directory с Help Scout
 
 В этом учебнике описано, как интегрировать Help Scout с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Help Scout обеспечивает следующие преимущества.
@@ -106,9 +106,9 @@ ms.locfileid: "57878046"
 
     ![Сведения о домене и URL-адресах единого входа приложения Help Scout](common/idp-intiated.png)
 
-    a. **Идентификатор** — это **URI аудитории (идентификатор сущности поставщика службы)** из Help Scout, который начинается с `urn:`
+    a. **Идентификатор** — это **Audience URI (Service Provider Entity ID)** (URI аудитории (идентификатор сущности поставщика службы) из Help Scout, который начинается с `urn:`
 
-    b. **URL-адрес ответа** — это **URL-адрес обратной отправки (URL-адрес службы обработчика утверждений)** из Help Scout, который начинается с `https://` 
+    b. **URL-адрес ответа** — это **Post-back URL (Assertion Consumer Service URL)** (URL-адрес обратной отправки (URL-адрес службы обработчика утверждений) из Help Scout, который начинается с `https://` 
 
     > [!NOTE]
     > Значения этих URL-адресов приведены только в качестве примера. Замените эти значения фактическими URL-адресом ответа и идентификатором. Эти значения можно найти на вкладке **Single Sign-On** (Единый вход) в разделе Authentication (Аутентификация), как описано далее в этом руководстве.
@@ -117,7 +117,7 @@ ms.locfileid: "57878046"
 
     ![Сведения о домене и URL-адресах единого входа приложения Help Scout](common/metadata-upload-additional-signon.png)
 
-    В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://secure.helpscout.net/members/login/`.
+    В текстовом поле **URL-адрес для входа** введите URL-адрес. `https://secure.helpscout.net/members/login/`
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -157,7 +157,7 @@ ms.locfileid: "57878046"
 
     ![Настройка единого входа](./media/helpscout-tutorial/settings4.png)
 
-    a. В текстовое поле **URL-адрес для единого входа** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+    a. В текстовом поле **URL-адрес входа** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
     b. Нажмите кнопку **Upload Certificate** (Отправить сертификат), чтобы передать **сертификат(Base64)**, скачанный с портала Azure.
 

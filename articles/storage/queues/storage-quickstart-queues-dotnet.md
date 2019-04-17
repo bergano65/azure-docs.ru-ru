@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 02/06/2018
 ms.author: tamram
-ms.openlocfilehash: b219e1e1e083355f662919fe332725bd9162d390
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: f16c4438dfb2feb70dece0b95f8afc701c5a3d66
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55885457"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59009314"
 ---
 # <a name="quickstart-use-net-to-create-a-queue-in-azure-storage"></a>Краткое руководство. Использование .NET для создания очереди в службе хранилища Azure
 
@@ -163,7 +163,7 @@ else
 {
     Console.WriteLine(
         "A connection string has not been defined in the system environment variables. " +
-        "Add a environment variable named 'storageconnectionstring' with your storage " +
+        "Add an environment variable named 'storageconnectionstring' with your storage " +
         "connection string as a value.");
 }
 ```
@@ -269,6 +269,6 @@ if (queue != null)
 Из этого краткого руководства вы узнали, как добавлять сообщения в очередь, просматривать их и выводить из очереди, а также обрабатывать сообщения с помощью .NET. 
 
 > [!div class="nextstepaction"]
-> [Обмен данными между приложениями с помощью хранилища очередей Azure](https://docs.microsoft.com/learn/modules/communicate-between-apps-with-azure-queue-storage/index)
+> [Обмен данными между приложениями с помощью Хранилища очередей Azure](https://docs.microsoft.com/learn/modules/communicate-between-apps-with-azure-queue-storage/index)
 
 - Дополнительные сведения о .NET Core см. в статье [Get started with .NET in 10 minutes](https://www.microsoft.com/net/learn/get-started/) (Быстрое начало работы с .NET).

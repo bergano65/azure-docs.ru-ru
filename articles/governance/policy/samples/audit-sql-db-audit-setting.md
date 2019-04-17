@@ -1,19 +1,18 @@
 ---
 title: 'Пример: аудит параметров аудита уровня базы данных SQL'
 description: В этом примере определения политики выполняется проверка параметров аудита базы данных SQL, если эти параметры не соответствуют заданным.
-services: azure-policy
 author: DCtheGeek
 manager: carmonm
 ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 4db43c6fb0978330ab3e9fb54323e4ec70ba4ffd
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: 913bb4e037eb8c80a3f3caa8d90961dd5ede3e86
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58802768"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59264885"
 ---
 # <a name="sample---audit-sql-db-level-audit-setting"></a>Пример проверки параметров аудита базы данных SQL
 
@@ -29,7 +28,7 @@ ms.locfileid: "58802768"
 
 ## <a name="deploy-with-the-portal"></a>Развертывание с помощью портала
 
-[![Развертывание примера политики в Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/?feature.customportal=false&microsoft_azure_policy=true&microsoft_azure_policy_policyinsights=true&feature.microsoft_azure_security_policy=true&microsoft_azure_marketplace_policy=true#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-policy%2Fmaster%2Fsamples%2FSQL%2Faudit-sql-db-auditing%2Fazurepolicy.json)
+[![DРазвертывание примера политики в Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/?feature.customportal=false&microsoft_azure_policy=true&microsoft_azure_policy_policyinsights=true&feature.microsoft_azure_security_policy=true&microsoft_azure_marketplace_policy=true#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-policy%2Fmaster%2Fsamples%2FSQL%2Faudit-sql-db-auditing%2Fazurepolicy.json)
 
 ## <a name="deploy-with-powershell"></a>Развертывание с помощью PowerShell
 

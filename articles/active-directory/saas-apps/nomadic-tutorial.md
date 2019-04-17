@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Nomadic | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Nomadic | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Nomadic.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 6b8a63d24626a1d7af3659281b613f8186a62a5d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 91ba5de6a6e0a18d494a449acfdea330234bcc9b
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57897645"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59258816"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-nomadic"></a>Руководство. Интеграция Azure Active Directory с Nomadic
+# <a name="tutorial-azure-active-directory-integration-with-nomadic"></a>Руководство по Интеграция Azure Active Directory с Nomadic
 
 В этом руководстве описано, как интегрировать Nomadic с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Nomadic обеспечивает следующие преимущества:
@@ -104,7 +104,7 @@ ms.locfileid: "57897645"
 
     ![Сведения о домене и URL-адресах единого входа приложения Nomadic](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.nomadic.fm/signin`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.nomadic.fm/signin`
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
     
@@ -197,9 +197,9 @@ ms.locfileid: "57897645"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

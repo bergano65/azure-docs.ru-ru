@@ -1,19 +1,18 @@
 ---
 title: Краткое руководство. Прием данных с помощью библиотеки Python в Azure Data Explorer
 description: В этом кратком руководстве описывается, как выполнять прием данных (загрузка) в обозреватель данных Azure с помощью Python.
-services: data-explorer
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 10/16/2018
-ms.openlocfilehash: 309e391412a0e2c698173f02eb9fd00d576ead09
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: fdeae2c6b598feee0abc57c80ea32f2108504330
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58757706"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59046467"
 ---
 # <a name="quickstart-ingest-data-using-the-azure-data-explorer-python-library"></a>Краткое руководство. Прием данных с помощью библиотеки Python в Azure Data Explorer
 
@@ -25,7 +24,7 @@ ms.locfileid: "58757706"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
-* [Кластер и база данных](create-cluster-database-portal.md).
+* [Кластер и база данных.](create-cluster-database-portal.md)
 
 * [Python](https://www.python.org/downloads/) на компьютере, на котором ведется разработка
 

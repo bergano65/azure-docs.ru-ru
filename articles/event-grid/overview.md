@@ -6,15 +6,15 @@ author: banisadr
 manager: timlt
 ms.service: event-grid
 ms.topic: overview
-ms.date: 01/06/2019
+ms.date: 04/04/2019
 ms.author: babanisa
 ms.custom: seodec18
-ms.openlocfilehash: 1fa9eaa5f4ba399622e0b8889ab722e4a4e130a0
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 7f501bf8496d1293a45c15908d4f2b21b6ed01d2
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57770482"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59045411"
 ---
 # <a name="what-is-azure-event-grid"></a>Что такое служба "Сетка событий Azure"?
 
@@ -114,11 +114,11 @@ ms.locfileid: "57770482"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Перенаправление событий хранилища BLOB-объектов](../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json)  
+* [Краткое руководство. Перенаправление событий хранилища в конечную веб-точку с помощью Azure CLI](../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json)  
   Реагирование на события хранилища BLOB-объектов с помощью службы "Сетка событий".
-* [Создание и перенаправление пользовательского события со службой "Сетка событий Azure"](custom-event-quickstart.md)  
+* [Краткое руководство. Перенаправление пользовательских событий в конечную веб-точку с помощью Azure CLI и службы "Сетка событий"](custom-event-quickstart.md)  
   Перейдите сразу к делу. Отправляйте пользовательские события в любую конечную точку, воспользовавшись инструкциями в кратком руководстве по службе "Сетка событий Azure".
-* [Отслеживание изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure"](monitor-virtual-machine-changes-event-grid-logic-app.md)  
+* [Руководство. Отслеживание изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure"](monitor-virtual-machine-changes-event-grid-logic-app.md)  
   Руководство по созданию приложения с помощью Logic Apps для реагирования на события, отправляемые службой "Сетка событий".
 * [Потоковая передача больших данных в хранилище данных](event-grid-event-hubs-integration.md)  
   Руководство, в котором служба "Функции Azure" используется для потоковой передачи данных из Центров событий в хранилище данных SQL.

@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16cf541dca003446e7b49033018d5b9950bfc54f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: edfc1f0b2d49510926cfbc306dacf6715225c5c1
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57889579"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59272161"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-learningpool-act"></a>Руководство. Интеграция Azure Active Directory с Learningpool Act
+# <a name="tutorial-azure-active-directory-integration-with-learningpool-act"></a>Руководство по Интеграция Azure Active Directory с Learningpool Act
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Learningpool Act.
 Интеграция приложения Learningpool Act с Azure AD обеспечивает следующие преимущества:
@@ -51,7 +51,7 @@ ms.locfileid: "57889579"
 
 Чтобы настроить интеграцию Learningpool Act с Azure AD, необходимо добавить Learningpool Act из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Learningpool Act из коллекции, выполните следующие действия.**
+**Чтобы добавить Learningpool Act из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,7 +105,7 @@ ms.locfileid: "57889579"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Learningpool Act](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://parliament.preview.Learningpool.com/auth/shibboleth/index.php`
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес: `https://parliament.preview.Learningpool.com/auth/shibboleth/index.php`
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
     
@@ -186,7 +186,7 @@ ms.locfileid: "57889579"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -237,9 +237,9 @@ ms.locfileid: "57889579"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

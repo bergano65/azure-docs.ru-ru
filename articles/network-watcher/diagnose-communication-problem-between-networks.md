@@ -15,14 +15,14 @@ ms.workload: infrastructure-services
 ms.date: 04/27/2018
 ms.author: jdial
 ms.custom: mvc
-ms.openlocfilehash: a35e65237a3f4278e9154daddff328887d9f36ef
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 4f5fbbb9d06f9fcb8858625b57957fc18c5c1f1f
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57997390"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59046917"
 ---
-# <a name="tutorial-diagnose-a-communication-problem-between-networks-using-the-azure-portal"></a>Руководство. Диагностика проблем с обменом данными между сетями на портале Azure
+# <a name="tutorial-diagnose-a-communication-problem-between-networks-using-the-azure-portal"></a>Руководство по Диагностика проблем с обменом данными между сетями на портале Azure
 
 Шлюз виртуальной сети соединяет виртуальную сеть Azure с локальной или другой виртуальной сетью. Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -33,10 +33,13 @@ ms.locfileid: "57997390"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать диагностику VPN, необходимо наличие работающего VPN-шлюза. Если у вас нет VPN-шлюза для диагностики, вы можете развернуть его, используя [скрипт PowerShell](../vpn-gateway/scripts/vpn-gateway-sample-site-to-site-powershell.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json). Вы можете запустить скрипт PowerShell из:
-- **Локальной установки PowerShell**. Для выполнения этого скрипта вам понадобится модуль AzureRM PowerShell 5.7.0 или более поздней версии. Выполните командлет `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzureRmAccount`, чтобы создать подключение к Azure.
+- **Локальной установки PowerShell**. Для работы этого сценария требуется модуль Azure PowerShell `Az`. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 - **Azure Cloud Shell**. В [Azure Cloud Shell](https://shell.azure.com/powershell) установлена и настроена последняя версия PowerShell. Эта служба позволяет выполнить вход в Azure.
 
 С помощью этого скрипта VPN-шлюз можно создать приблизительно за час. В последующих шагах предполагается, что диагностика выполняется для шлюза, развернутого с помощью этого скрипта. Если вместо этого выполнить диагностику для имеющегося шлюза, результаты будут отличаться.
@@ -112,4 +115,4 @@ ms.locfileid: "57997390"
 Из этого руководства вы узнали, как выполнить диагностику проблемы с помощью шлюза виртуальной сети. Вы можете сделать запись о сетевом обмене данными с виртуальной машиной, чтобы иметь возможность проверить журнал на наличие аномалий. Чтобы узнать, как сделать это, перейдите к изучению следующего руководства.
 
 > [!div class="nextstepaction"]
-> [Запись сетевого входящего и исходящего трафика виртуальной машины в журнал](network-watcher-nsg-flow-logging-portal.md)
+> [Руководство. Регистрация потока входящего и исходящего сетевого трафика виртуальной машины с помощью портала Azure](network-watcher-nsg-flow-logging-portal.md)

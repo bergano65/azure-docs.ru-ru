@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 04/20/2018
 author: deborahc
 ms.author: dech
-ms.openlocfilehash: 0adb24458f718511c7134fc3bf36dd0b03173e30
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 3d535c71480693d0424c6697776a1ddbf37b47c5
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58011516"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59470922"
 ---
 # <a name="use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде
 
@@ -122,7 +122,7 @@ DocumentClient client = new DocumentClient(
 
 ### <a name="azure-cosmos-dbs-api-for-mongodb"></a>API Azure Cosmos DB для MongoDB
 
-Если вы используете [поддержку MongoDB в Azure Cosmos DB](mongodb-introduction.md), укажите следующую строку подключения:
+Если вы используете [API Azure Cosmos DB для MongoDB](mongodb-introduction.md), укажите следующую строку подключения:
 
 ```bash
 mongodb://localhost:C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==@localhost:10255/admin?ssl=true
@@ -151,9 +151,9 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 
 Запустите эмулятор из командной строки с правами администратора, указав параметр /EnableCassandraEndpoint. В качестве альтернативы можно также задать переменную среды `AZURE_COSMOS_EMULATOR_CASSANDRA_ENDPOINT=true`.
 
-* [Установите Python 2.7](https://www.python.org/downloads/release/python-2716/).
+* [Установите Python 2.7.](https://www.python.org/downloads/release/python-2716/)
 
-* [Установите Cassandra CLI/CQLSH](http://cassandra.apache.org/download/)
+* [Установите Cassandra CLI/CQLSH.](http://cassandra.apache.org/download/)
 
 * Выполните следующие команды в обычном окне командной строки:
 
@@ -179,9 +179,9 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 
 ### <a name="gremlin-api"></a>API Gremlin
 
-Запустите эмулятор из командной строки с правами администратора, указав параметр /EnableGremlinEndpoint. В качестве альтернативы можно также задать переменную среды `AZURE_COSMOS_EMULATOR_GREMLIN_ENDPOINT=true`.
+Запустите эмулятор из командной строки с правами администратора, указав параметр /EnableGremlinEndpoint. В качестве альтернативы можно также задать переменную среды `AZURE_COSMOS_EMULATOR_GREMLIN_ENDPOINT=true`
 
-* [Установите apache-tinkerpop-gremlin-console-3.3.4](http://tinkerpop.apache.org/downloads.html)
+* [Установите apache-tinkerpop-gremlin-console-3.3.4.](http://tinkerpop.apache.org/downloads.html)
 
 * В обозревателе данных эмулятора создайте базу данных db1 и коллекцию coll1, указав параметр /name для ключа раздела
 
@@ -236,7 +236,7 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 
 Чтобы просмотреть список параметров, в командной строке введите `CosmosDB.Emulator.exe /?` .
 
-|**Параметр** | **Описание** | **Команда**| **Аргументы**|
+|**Параметр** | **ОПИСАНИЕ** | **Команда**| **Аргументы**|
 |---|---|---|---|
 |[Нет аргументов] | Запускает эмулятор Azure Cosmos с параметрами по умолчанию. |CosmosDB.Emulator.exe| |
 |[Help] |Отображает список поддерживаемых аргументов командной строки.|CosmosDB.Emulator.exe /? | |
@@ -459,4 +459,4 @@ cd $env:LOCALAPPDATA\CosmosDBEmulator\bind-mount
 Из этого руководства вы также узнали, как использовать локальный эмулятор для бесплатной разработки в локальной среде. Теперь вы можете перейти к следующему руководству, из которого вы узнаете, как экспортировать SSL-сертификаты эмулятора.
 
 > [!div class="nextstepaction"]
-> [Экспорт сертификатов эмулятора Azure Cosmos](local-emulator-export-ssl-certificates.md)
+> [Экспорт сертификатов эмулятора Azure Cosmos DB для использования с Java, Python и Node.js](local-emulator-export-ssl-certificates.md)

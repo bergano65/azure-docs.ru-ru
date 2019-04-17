@@ -15,12 +15,12 @@ ms.date: 03/11/2019
 ms.author: mabrigg
 ms.lastreviewed: 03/11/2019
 ms.reviewer: jiahan
-ms.openlocfilehash: 4a8287d7ca4da380ad7c2b1e039ab3058ca07a96
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 416d75b254d0fbe14a0b39e5ae77d09a48e548f6
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57760279"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59271294"
 ---
 # <a name="manage-storage-infrastructure-for-azure-stack"></a>Управление инфраструктурой хранения для Azure Stack
 
@@ -32,7 +32,7 @@ ms.locfileid: "57760279"
 
 ### <a name="drives"></a>Диски
 
-Azure Stack с программно-определяемыми возможностями хранения Windows Server в сочетании с локальными дисковыми пространствами (S2D) и отказоустойчивой кластеризацией Windows Server обеспечивает эффективную, масштабируемую и отказоустойчивую службу хранения.
+Azure Stack на платформе Windows Server определяет возможности хранения данных и, используя сочетание локальных дисковых пространств (S2D) и отказоустойчивой кластеризации Windows Server, обеспечивает эффективную, масштабируемую и отказоустойчивую службу хранения.
 
 Партнеры по интегрированной системе Azure Stack предлагают множество вариантов решения, включая широкий спектр гибких возможностей хранения. В настоящее время можно выбрать комбинацию из трех типов дисков: NVMe (энергонезависимая память Express), SSD (твердотельный накопитель) SATA/SAS или HDD (жесткий диск).
 
@@ -220,4 +220,4 @@ Get-AzsDrive -ScaleUnit \$scaleunit\_name -StorageSubSystem \$subsystem\_name | 
 
 ## <a name="next-step"></a>Дальнейшие действия
 
-[Управление емкостью хранилища для Azure Stack](https://docs.microsoft.com/azure/azure-stack/azure-stack-manage-storage-shares) 
+[Управление емкостью хранилища](https://docs.microsoft.com/azure/azure-stack/azure-stack-manage-storage-shares) 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 11ac9d859ec76c782f762dfc6f424d70ea487665
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: 041f1e9706c7d815dad1a33104e7dd15b2cc3893
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58360234"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59270240"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-syncplicity"></a>Руководство по Интеграция Azure Active Directory с Syncplicity
 
@@ -105,9 +105,9 @@ ms.locfileid: "58360234"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Syncplicity](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.syncplicity.com`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.syncplicity.com`
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.syncplicity.com/sp`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.syncplicity.com/sp`
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Syncplicity](https://www.syncplicity.com/contact-us). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -136,7 +136,7 @@ ms.locfileid: "58360234"
 
 1. На странице диалогового окна **Единый вход** сделайте следующее:
 
-    ![Единый вход\(Единый вход\)](./media/syncplicity-tutorial/ic769550.png "Single Sign-On \\\(SSO\\\)")
+    ![Единый вход \(SSO\)](./media/syncplicity-tutorial/ic769550.png "Single Sign-On \\\(SSO\\\)")
 
     a. В текстовом поле **Личный домен** введите имя своего домена.
   
@@ -206,7 +206,7 @@ ms.locfileid: "58360234"
 
 Чтобы пользователи AAD могли входить систему, их необходимо подготовить для Syncplicity. В этом разделе описывается порядок создания учетных записей пользователей AAD в Syncplicity.
 
-**Чтобы подготовить учетную запись пользователя в Syncplicity, выполните следующее.**
+**Чтобы подготовить учетные записи пользователей для Syncplicity, выполните следующие действия:**
 
 1. Войдите в клиент **Syncplicity** (например: `https://company.Syncplicity.com`).
 
@@ -243,8 +243,8 @@ ms.locfileid: "58360234"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

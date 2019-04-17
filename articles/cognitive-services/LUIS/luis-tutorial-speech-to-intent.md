@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/07/2018
+ms.date: 04/08/2018
 ms.author: diberry
-ms.openlocfilehash: 6f775ffaf53019cc50bc38c294b4d5f40c8eca90
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9d6173ee25f28aa884513d126c06a8a7c722098d
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58076757"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59273844"
 ---
 # <a name="integrate-speech-service-with-your-language-understanding-app"></a>Интеграция службы "Речь" с приложением службы "Распознавание речи"
 [Служба распознавания речи](https://docs.microsoft.com/azure/cognitive-services/Speech-Service/) позволяет использовать один запрос для получения аудио и возврата объектов JSON с предсказаниями LUIS. В этой статье описано, как загрузить и использовать проект C# в Visual Studio, чтобы произнести фразу в микрофон и получить информацию о предсказании LUIS. В этом проекте используется уже включенный в качестве ссылки пакет [NuGet](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/) для распознавания речи. 
@@ -24,7 +24,7 @@ ms.locfileid: "58076757"
 Для работы с этой статьей требуется бесплатная учетная запись для веб-сайта [LUIS][LUIS], в которую вы импортируете приложение.
 
 ## <a name="create-luis-endpoint-key"></a>Создание ключа конечной точки LUIS
-На портале Azure [создайте](luis-how-to-azure-subscription.md) ключ **службы "Распознавание речи"** (LUIS). 
+На портале Azure [создайте](luis-how-to-azure-subscription.md) ключ **Cognitive Service** (LUIS) для приложения LUIS.  
 
 ## <a name="import-human-resources-luis-app"></a>Импорт приложения LUIS Human Resources
 Намерения и фразы для этой статьи взяты из приложения LUIS Human Resources, доступного в репозитории GitHub [Azure-Samples](https://github.com/Azure-Samples/cognitive-services-language-understanding). Скачайте файл [HumanResources.json](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/HumanResources.json), сохраните его с расширением `.json`, а затем — [импортируйте](luis-how-to-start-new-app.md#import-new-app) в LUIS. 
@@ -66,7 +66,7 @@ ms.locfileid: "58076757"
 
 Пакет SDK для распознавания речи уже включен в качестве ссылки. 
 
-[![Снимок экрана Visual Studio 2017 с пакетом NuGet Microsoft.CognitiveServices.Speech](./media/luis-tutorial-speech-to-intent/nuget-package.png "Снимок экрана Visual Studio 2017 с пакетом NuGet Microsoft.CognitiveServices.Speech")](./media/luis-tutorial-speech-to-intent/nuget-package.png#lightbox)
+[![SСнимок экрана Visual Studio 2017 с пакетом NuGet Microsoft.CognitiveServices.Speech](./media/luis-tutorial-speech-to-intent/nuget-package.png "Снимок экрана Visual Studio 2017 с пакетом NuGet Microsoft.CognitiveServices.Speech")](./media/luis-tutorial-speech-to-intent/nuget-package.png#lightbox)
 
 ## <a name="modify-the-c-code"></a>Изменение кода C#
 Откройте файл `Program.cs` и измените следующие переменные:
@@ -98,6 +98,6 @@ ms.locfileid: "58076757"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Интеграция LUIS с бот](luis-csharp-tutorial-build-bot-framework-sample.md)
+> [Integrate LUIS with a BOT (Интеграция LUIS c ботом)](luis-csharp-tutorial-build-bot-framework-sample.md)
 
 [LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-website

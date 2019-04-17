@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: overview
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: f922f940f6c579c8710dadec29b365e7cf4c7938
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: 6385838064c408ccfa23dacbd5785f8e82f3cc8b
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58577192"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59049444"
 ---
 # <a name="what-is-windows-virtual-desktop-preview"></a>Общие сведения о Виртуальном рабочем столе Windows (предварительная версия) 
 
@@ -54,12 +54,12 @@ ms.locfileid: "58577192"
 
 Есть несколько вещей, которые необходимо настроить для Виртуального рабочего стола Windows, чтобы успешно подключить пользователей к рабочим столам и приложениям Windows.
 
-Во-первых, у вас должны быть соответствующие лицензии для пользователей на основе рабочего стола и приложений, которые вы планируете развернуть:
+Во-первых, у вас должны быть [соответствующие лицензии](https://azure.microsoft.com/pricing/details/virtual-desktop/) для пользователей на основе рабочего стола и приложений, которые вы планируете развернуть:
 
 |ОС|Требуемая лицензия|
 |---|---|
-|Windows 10 Корпоративная с поддержкой нескольких сеансов или Windows 10 с поддержкой одного сеанса|Microsoft E3, E5, A3, A5, бизнес<br>Windows E3, E5, A3, A5|
-|Windows 7|Microsoft E3, E5, A3, A5, бизнес<br>Windows E3, E5, A3, A5|
+|Windows 10 Корпоративная с поддержкой нескольких сеансов или Windows 10 с поддержкой одного сеанса|Microsoft 365 E3, E5, A3, A5, бизнес, F1<br>Windows E3, E5, A3, A5|
+|Windows 7|Microsoft 365 E3, E5, A3, A5, бизнес, F1<br>Windows E3, E5, A3, A5|
 |Windows Server 2012 R2, 2016, 2019|Клиентская лицензия служб удаленных рабочих столов с поддержкой программы Software Assurance|
 
 Требования к инфраструктуре для включения поддержки Виртуального рабочего стола Windows следующие:

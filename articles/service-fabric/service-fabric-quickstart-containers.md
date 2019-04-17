@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 01/31/2019
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: 34a967640ec039727e8947e865eeff1f5fef4649
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: afeaccd798204ab0973be87ea36c275e1d633403
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58758587"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59051552"
 ---
 # <a name="quickstart-deploy-windows-containers-to-service-fabric"></a>Краткое руководство. Развертывание контейнеров Windows в Service Fabric
 
@@ -36,6 +36,9 @@ Azure Service Fabric — это платформа распределенных 
 * настройка обмена данными;
 * создание и упаковка приложений Service Fabric;
 * развертывание приложения-контейнера в Azure.
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -95,7 +98,7 @@ Azure Service Fabric — это платформа распределенных 
 
 При необходимости установите Azure PowerShell с помощью инструкций, приведенных в [руководстве по Azure PowerShell](/powershell/azure/overview).
 
-Прежде чем запустить следующий сценарий, в PowerShell выполните командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
+Прежде чем запустить следующий сценарий, в PowerShell выполните командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 Скопируйте приведенный ниже сценарий в буфер обмена и откройте **интегрированную среду сценариев Windows PowerShell**.  Вставьте содержимое в пустое окно Untitled1.ps1. Затем укажите значения для содержащихся в сценарии переменных: `subscriptionId`, `certpwd`, `certfolder`, `adminuser`, `adminpwd` и т. д.  Указанный для `certfolder` каталог должен существовать до запуска сценария.
 

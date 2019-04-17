@@ -9,12 +9,12 @@ ms.date: 01/04/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 10026f0a9ff702ee45926ca097e9123ea3db06d5
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 3b79c75b9846a4f8966a113c6e06fabc25bcf011
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58225932"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59470956"
 ---
 # <a name="tutorial-develop-and-deploy-a-nodejs-iot-edge-module-to-your-simulated-device"></a>Руководство по разработке модуля IoT Edge на Node.js и его развертывание на имитированном устройстве
 
@@ -35,8 +35,8 @@ ms.locfileid: "58225932"
 
 Устройство Azure IoT Edge.
 
-* В качестве устройства Azure IoT Edge можно использовать компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве для устройств [Linux](quickstart-linux.md) или [Windows](quickstart.md).
-* Если вы запускаете IoT Edge в Windows, то IoT Edge версии 1.0.5 не поддерживает модули Node.js. Дополнительные сведения см. в [заметках о выпуске 1.0.5](https://github.com/Azure/azure-iotedge/releases/tag/1.0.5). Инструкции по установке конкретной версии см. в статье [Обновление управляющей программы безопасности и среды выполнения IoT Edge](how-to-update-iot-edge.md).
+* В качестве устройства Azure IoT Edge можно использовать компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве для устройства [Linux](quickstart-linux.md).
+* Модули Node.js для IoT Edge не поддерживают контейнеры Windows. 
 
 Облачные ресурсы.
 
@@ -47,6 +47,7 @@ ms.locfileid: "58225932"
 * [Visual Studio Code](https://code.visualstudio.com/). 
 * [Средства Azure IoT](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) для Visual Studio Code. 
 * [Docker CE](https://docs.docker.com/engine/installation/). 
+   * Если разработка выполняется на устройстве Windows, убедитесь, что для Docker [настроено использование контейнеров Linux](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers). 
 * [Node.js и NPM](https://nodejs.org). Пакет NPM распределяется с Node.js. Это означает, что при загрузке Node.js NPM автоматически устанавливается на компьютер.
 
 ## <a name="create-a-container-registry"></a>Создание реестра контейнеров
@@ -184,7 +185,7 @@ ms.locfileid: "58225932"
 
 10. В обозревателе VS Code откройте файл **deployment.template.json** в рабочей области решения IoT Edge. Этот файл указывает агенту IoT Edge на модуль для развертывания, в нашем случае это **tempSensor** и **NodeModule**, а центру IoT Edge на то, как маршрутизировать сообщения между ними. Расширение Visual Studio Code автоматически заполняет шаблон развертывания большинством нужной информации, но проверьте, все ли подходит для вашего решения: 
 
-   1. На панели состояния VS Code для устройства IoT Edge указана платформа по умолчанию **amd64**, т. е. модуль **NodeModule** использует версию образа для Linux amd64. При необходимости измените платформу по умолчанию на панели состояния с **amd64** на **arm32v7** или **windows-amd64** в соответствии с архитектурой вашего устройства IoT Edge. 
+   1. На панели состояния VS Code для устройства IoT Edge указана платформа по умолчанию **amd64**, т. е. модуль **NodeModule** использует версию образа для Linux amd64. При необходимости измените платформу по умолчанию на панели состояния с **amd64** на **arm32v7** в соответствии с архитектурой вашего устройства IoT Edge. 
 
       ![Снимок экрана обновления модуля платформы](./media/tutorial-node-module/image-platform.png)
 
@@ -229,8 +230,9 @@ ms.locfileid: "58225932"
 >[!TIP]
 >Если при попытке создания и отправки модуля появляется сообщение об ошибке, проверьте следующее:
 >* Вы вошли в Docker в Visual Studio Code, используя учетные данные из реестра контейнеров? Эти учетные данные отличаются от тех, которые вы используете для входа на портал Azure.
->* Правильно ли указан репозиторий контейнеров? Откройте **modules** > **cmodule** > **module.json** и найдите поле **repository**. Репозиторий образов должен выглядеть так: **\<имя_реестра\>.azurecr.io/nodemodule**. 
->* Вы создаете контейнеры того же типа, что и для вашего компьютера разработки? В Visual Studio Code по умолчанию используются контейнеры amd64 Linux. Если на вашем компьютере разработки используются контейнеры Windows или arm32v7 Linux, обновите платформу с помощью синей полосы состояния в нижней части окна VS Code, чтобы она соответствовала вашей платформе контейнеров.
+>* Правильно ли указан репозиторий контейнеров? Откройте **modules** > **nodemodule** > **module.json** и найдите поле **repository**. Репозиторий образов должен выглядеть так: **\<имя_реестра\>.azurecr.io/nodemodule**. 
+>* Вы создаете контейнеры того же типа, что и для вашего компьютера разработки? Visual Studio Code по умолчанию использует контейнеры amd64 Linux. Если на вашем компьютере для разработки используются контейнеры arm32v7, обновите платформу в синей полосе состояния в нижней части окна VS Code, чтобы она соответствовала вашей платформе контейнеров.
+>* Модули Node.js для IoT Edge не поддерживают контейнеры Windows.
 
 ## <a name="deploy-and-run-the-solution"></a>Развертывание и запуск решения
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Moxtra | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Moxtra | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Moxtra.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
-ms.openlocfilehash: 7b1fe34c390eecb77ff608a334eae2a8b2e9ae50
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 21f7cdaf3dbd3e01040081c786cd7a03f6ba3e3c
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57840398"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59257354"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-moxtra"></a>Руководство по Интеграция Azure Active Directory с Moxtra
 
@@ -50,7 +50,7 @@ ms.locfileid: "57840398"
 
 Чтобы настроить интеграцию Moxtra с Azure AD, необходимо добавить Moxtra из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Moxtra из коллекции, выполните следующие действия.**
+**Чтобы добавить Moxtra из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,7 +106,7 @@ ms.locfileid: "57840398"
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://www.moxtra.com/service/#login`.
 
-5. Приложение Moxtra ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя**.
+5. Приложение Moxtra ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
 
     ![изображение](common/edit-attribute.png)
 
@@ -202,7 +202,7 @@ ms.locfileid: "57840398"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -239,7 +239,7 @@ ms.locfileid: "57840398"
 
 Цель этого раздела — создать пользователя с именем Britta Simon в Moxtra.
 
-**Чтобы создать пользователя с именем Britta Simon в Moxtra, выполните следующие действия.**
+**Чтобы создать пользователя с именем Britta Simon в Moxtra, выполните следующие действия:**
 
 1. Выполните вход на веб-сайт компании Moxtra в качестве администратора.
 
@@ -271,9 +271,9 @@ ms.locfileid: "57840398"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

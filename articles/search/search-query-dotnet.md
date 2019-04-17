@@ -9,12 +9,12 @@ ms.service: search
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 03/20/2019
-ms.openlocfilehash: 6bb170a5f3353288ab9c393e01b7a0902361913b
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: 1194407122123797c2564c96ac452b9582b017a4
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58287015"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59264953"
 ---
 # <a name="quickstart-3---query-an-azure-search-index-in-c"></a>Краткое руководство. 3 — запрос индекса Поиска Azure на C#
 
@@ -49,7 +49,7 @@ private static SearchIndexClient CreateSearchIndexClient(IConfigurationRoot conf
 }
 ```
 
-У класса `SearchIndexClient` есть свойство [`Documents`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchindexclient.documents?view=azure-dotnet). Это свойство предоставляет все методы, которые требуются для отправки запросов в индексы службы поиска Azure.
+`SearchIndexClient` имеет свойство [`Documents`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchindexclient.documents?view=azure-dotnet). Это свойство предоставляет все методы, которые требуются для отправки запросов в индексы службы поиска Azure.
 
 ## <a name="construct-searchparameters"></a>Создание объекта SearchParameters
 Поиск с помощью пакета SDK для .NET сводится к вызову метода `Documents.Search` для класса `SearchIndexClient`. Этот метод принимает несколько параметров, включая текст поиска и объект `SearchParameters` , с помощью которого можно уточнить запрос.

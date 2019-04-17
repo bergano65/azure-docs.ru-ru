@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Nuclino | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Nuclino | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Nuclino.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 3a17b42458cf1512c1dd9ee38782917ca93cd2ae
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 4788b65201792292d79cd8c4d1b22f22c5e67eb6
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57904598"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59278808"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-nuclino"></a>Руководство. Интеграция Azure Active Directory с Nuclino
+# <a name="tutorial-azure-active-directory-integration-with-nuclino"></a>Руководство по Интеграция Azure Active Directory с Nuclino
 
 В этом руководстве описано, как интегрировать Nuclino с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Nuclino обеспечивает следующие преимущества:
@@ -52,7 +52,7 @@ ms.locfileid: "57904598"
 
 Чтобы настроить интеграцию Nuclino с Azure AD, необходимо добавить Nuclino из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Nuclino из коллекции, выполните следующие действия:**
+**Чтобы добавить Nuclino из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,9 +106,9 @@ ms.locfileid: "57904598"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Nuclino](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://api.nuclino.com/api/sso/<UNIQUE-ID>/metadata`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://api.nuclino.com/api/sso/<UNIQUE-ID>/metadata`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://api.nuclino.com/api/sso/<UNIQUE-ID>/acs`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://api.nuclino.com/api/sso/<UNIQUE-ID>/acs`
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора и URL-адреса ответа из раздела **Authentication** (Проверка подлинности), который описывается далее в этом руководстве.
@@ -122,7 +122,7 @@ ms.locfileid: "57904598"
     > [!NOTE]
     > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь в [группу поддержки клиентов Nuclino](mailto:contact@nuclino.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-6. Приложение Nuclino ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя**.
+6. Приложение Nuclino ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
 
     ![изображение](common/edit-attribute.png)
 
@@ -217,7 +217,7 @@ ms.locfileid: "57904598"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -265,9 +265,9 @@ ms.locfileid: "57904598"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

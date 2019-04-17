@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: overview
-ms.date: 03/13/2019
+ms.date: 04/03/2019
 ms.author: erhopf
-ms.openlocfilehash: b536c55b0f7c29bc463781d9fda0348ef994c5ce
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 61f22568aa6e6cf04963b40ad7c47163e87b9800
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58662230"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59010198"
 ---
 # <a name="what-are-the-speech-services"></a>Общие сведения о службе "Речь"
 
@@ -28,18 +28,19 @@ ms.locfileid: "58662230"
 
 | Service | Функция | ОПИСАНИЕ | SDK | REST |
 |---------|---------|-------------|-----|------|
-| [Преобразование речи в текст](speech-to-text.md) | Преобразование речи в текст. | Преобразование речи в текст позволяет расшифровывать аудиопотоки в режиме реального времени и сохранять их в текстовом формате, который ваши приложения, инструменты или устройства могут использовать или отображать. Используйте преобразование речи в текст с помощью портала [Распознавание речи (LUIS)](https://docs.microsoft.com/azure/cognitive-services/luis/), чтобы получать намерения пользователя из расшифрованной речи и выполнять голосовые команды. | [Да](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) | [Да](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
-| | [Пакетное транскрибирование](batch-transcription.md) | Пакетное транскрибирование обеспечивает асинхронную расшифровку речи в текст для больших объемов данных. Это служба на основе REST, которая использует ту же конечную точку, что и настройка и управление моделью. | Нет  | [Да](https://westus.cris.ai/swagger/ui/index) |
-| | [Настройка](#customize-your-speech-experience) | Если вы используете преобразование речи в текст для распознавания и расшифровки в уникальной среде, вы можете создавать и обучать пользовательские акустические, языковые модели и модели произношения для учета окружающих помех или отраслевого словаря. | Нет  | [Да](https://westus.cris.ai/swagger/ui/index) |
-| [Преобразование текста в речь](text-to-speech.md) | Преобразование текста в речь | Преобразование текста в речь преобразует вводимый текст в синтезированную речь, похожую на человеческую. Выберите из стандартных и нейронных голосовых моделей (см. раздел [Поддержка языков](language-support.md)). | Нет  | [Да](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
-| | [Настройка](#customize-your-speech-experience) | Создание пользовательских голосовых моделей, уникальных для вашего бренда или продукта. | Нет  | [Да](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
-| [Перевод речи](speech-translation.md) | Перевод речи. | Перевод речи позволяет применить в инструментах, приложениях и устройствах полнофункциональное решение для перевода устной речи на многих языках в режиме реального времени. Используйте эту службу для перевода речи и преобразования речи в текст. | [Да](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) | Нет  |
+| [Преобразование речи в текст](speech-to-text.md) | Преобразование речи в текст. | Преобразование речи в текст позволяет расшифровывать аудиопотоки в режиме реального времени и сохранять их в текстовом формате, который ваши приложения, инструменты или устройства могут использовать или отображать. Используйте преобразование речи в текст с помощью портала [Распознавание речи (LUIS)](https://docs.microsoft.com/azure/cognitive-services/luis/), чтобы получать намерения пользователя из расшифрованной речи и выполнять голосовые команды. | [Yes](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) | [Yes](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
+| | [Пакетное транскрибирование](batch-transcription.md) | Пакетное транскрибирование обеспечивает асинхронную расшифровку речи в текст для больших объемов данных. Это служба на основе REST, которая использует ту же конечную точку, что и настройка и управление моделью. | Нет  | [Yes](https://westus.cris.ai/swagger/ui/index) |
+| | [Настройка](#customize-your-speech-experience) | Если вы используете преобразование речи в текст для распознавания и расшифровки в уникальной среде, вы можете создавать и обучать пользовательские акустические, языковые модели и модели произношения для учета окружающих помех или отраслевого словаря. | Нет  | [Yes](https://westus.cris.ai/swagger/ui/index) |
+| [Преобразование текста в речь](text-to-speech.md) | Преобразование текста в речь | Преобразование текста в речь преобразует вводимый текст в синтезированную речь, похожую на человеческую. Выберите из стандартных и нейронных голосовых моделей (см. раздел [Поддержка языков](language-support.md)). | [Yes](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) | [Yes](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
+| | [Настройка](#customize-your-speech-experience) | Создание пользовательских голосовых моделей, уникальных для вашего бренда или продукта. | Нет  | [Yes](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
+| [Перевод речи](speech-translation.md) | Перевод речи. | Перевод речи позволяет применить в инструментах, приложениях и устройствах полнофункциональное решение для перевода устной речи на многих языках в режиме реального времени. Используйте эту службу для перевода речи и преобразования речи в текст. | [Yes](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) | Нет  |
 
 ## <a name="news-and-updates"></a>Новости и обновления
 
 Узнайте о новых возможностях служб речи Azure.
 
-* В марте 2019 года стала доступна новая конечная точка для преобразования текста в речь, которая возвращает полный список доступных голосов в определенных регионах. Преобразование текста в речь теперь поддерживается в новых регионах. Дополнительные сведения см. в [справочнике по REST API Преобразования текста в речь](rest-text-to-speech.md).
+* В апреле 2019 года был выпущен пакет SDK для службы "Речь" версии 1.4.0 с поддержкой преобразования текста в речь (бета-версия) для C++, C# и Java в Windows и Linux. Кроме того, теперь пакет SDK поддерживает аудиоформаты MP3 и Opus/Ogg для C++ и C# в Linux. Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске). 
+* В марте 2019 года стала доступна новая конечная точка для преобразования текста в речь, которая возвращает полный список доступных голосов в определенных регионах. Преобразование текста в речь теперь поддерживается в новых регионах. Дополнительные сведения см. в [справочнике по REST API Преобразования текста в речь](rest-text-to-speech.md).
 * В феврале 2019 года был выпущен пакет SDK для распознавания речи 1.3.0 с поддержкой [Unity (бета-версия)](quickstart-csharp-unity.md). Добавлена ​​поддержка для класса `AudioInput`, который позволяет выбирать источник потоковой передачи аудио. Полный список улучшений и распространенных проблем см. в разделе [Заметки о выпуске](releasenotes.md).
 * В декабре 2018 года был выпущен пакет SDK для распознавания речи 1.2.0 с поддержкой [Python](quickstart-python.md) и [Node.js](quickstart-js-node.md), а также Ubuntu 18.04 LTS. Дополнительные сведения см. в разделе [Заметки о выпуске](releasenotes.md).
 
@@ -47,23 +48,23 @@ ms.locfileid: "58662230"
 
 Мы предлагаем руководства на большинстве популярных языках программирования, каждый из которых позволяет получить рабочий код менее чем за 10 минут. Эта таблица содержит наиболее популярные руководства для каждой функции. Для знакомства с дополнительными языками и платформами используйте навигационное меню слева.
 
-| Преобразование речи в текст (пакет SDK) | Перевод (пакет SDK) | Преобразование текста в речь (REST) |
-|-------------------|-------------------|-----------------------|
-| [C#, .NET Core (для Windows)](quickstart-csharp-dotnet-windows.md) | [Java (для Windows, Linux)](quickstart-translate-speech-java-jre.md) | [Python (для Windows, Linux, macOS)](quickstart-python-text-to-speech.md) |
-| [JavaScript (для браузера)](quickstart-js-browser.md) | [C#, .NET Core (для Windows)](quickstart-translate-speech-dotnetcore-windows.md) | [C#, .NET Core (для Windows, Linux, macOS)](quickstart-dotnet-text-to-speech.md) |
-| [Python (для Windows, Linux, macOS)](quickstart-python.md) | [C#, .NET framework (для Windows)](quickstart-translate-speech-dotnetframework-windows.md) | [Node.js (для Windows, Linux, macOS)](quickstart-nodejs-text-to-speech.md) |
-| [Java (для Windows, Linux)](quickstart-java-jre.md) | [C++ (для Windows)](quickstart-translate-speech-cpp-windows.md) | |
+| Преобразование речи в текст (пакет SDK) | Перевод (пакет SDK) | Преобразование текста в речь (REST) | Преобразование текста в речь (SDK) |
+|-------------------|-------------------|-----------------------|-----------------------|
+| [C#, .NET Core (для Windows)](quickstart-csharp-dotnet-windows.md) | [Java (Windows, Linux)](quickstart-translate-speech-java-jre.md) | [Python (для Windows, Linux, macOS)](quickstart-python-text-to-speech.md) | [C#, .NET Framework (для Windows)](quickstart-text-to-speech-dotnet-windows.md) |
+| [JavaScript (для браузера)](quickstart-js-browser.md) | [C#, .NET Core (для Windows)](quickstart-translate-speech-dotnetcore-windows.md) | [C#, .NET Core (для Windows, Linux, macOS)](quickstart-dotnet-text-to-speech.md) | [C++ (Windows)](quickstart-text-to-speech-cpp-windows.md) |
+| [Python (для Windows, Linux, macOS)](quickstart-python.md) | [C#, .NET Framework (для Windows)](quickstart-translate-speech-dotnetframework-windows.md) | [Node.js (для Windows, Linux, macOS)](quickstart-nodejs-text-to-speech.md) | [C++ (Linux)](quickstart-text-to-speech-cpp-linux.md) |
+| [Java (Windows, Linux)](quickstart-java-jre.md) | [C++ (Windows)](quickstart-translate-speech-cpp-windows.md) | |
 
 После того, как у вас будет возможность использовать службы речи, просмотрите наше руководство, которое научит вас распознавать намерения из речи с помощью пакета SDK для распознавания речи и LUIS.
 
-* [Руководство Распознавание намерений в речи с помощью пакета SDK для распознавания речи и LUIS, C#](how-to-recognize-intents-from-speech-csharp.md)
+* [Руководство по Распознавание намерений в речи с помощью пакета SDK для службы "Речь" и LUIS, C#](how-to-recognize-intents-from-speech-csharp.md)
 
 ## <a name="get-sample-code"></a>Получение примера кода
 
 Пример кода доступен на GitHub для каждой из служб речи Azure. В этих примерах рассматриваются сценарии общего характера, такие как чтение аудио из файла или потока, непрерывное и одиночное распознавание, а также работа с пользовательскими моделями. Используйте эти ссылки, чтобы просмотреть примеры для пакета SDK и REST:
 
-* [Примеры преобразования речи в текст и перевод речи (SDK)](https://github.com/Azure-Samples/cognitive-services-speech-sdk)
-* [Примеры транскрибирования с помощью Пакетной службы (REST)](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/batch)
+* [Примеры преобразования речи в текст, текста в речь и перевода речи (SDK)](https://github.com/Azure-Samples/cognitive-services-speech-sdk)
+* [Примеры транскрибирования с помощью пакетной службы (REST)](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/batch)
 * [Примеры преобразования текста в речь (REST)](https://github.com/Azure-Samples/Cognitive-Speech-TTS)
 
 ## <a name="customize-your-speech-experience"></a>Настройки работы речи
@@ -75,17 +76,17 @@ ms.locfileid: "58662230"
 | Преобразование речи в текст | [Акустическая модель](how-to-customize-acoustic-models.md) | Создайте пользовательскую акустическую модель для приложений, инструментов или устройств, которые используются в определенных условиях, например, в автомобиле или в заводском цехе, для каждого из которых характерны определенные условия записи. В качестве примера можно привести речь с акцентом, наличие фонового шума или использование определенного микрофона для записи. |
 | | [Языковая модель](how-to-customize-language-model.md) | Создайте пользовательскую языковую модель для улучшения транскрипции профильного словаря и грамматики, таких как медицинская терминология или IT-жаргон. |
 | | [Модель произношения](how-to-customize-pronunciation.md) | Используя модель пользовательского произношения, вы можете определить фонетическую и отображаемую форму слова или термина. Это удобно для обработки настраиваемых терминов, например имен продуктов или аббревиатур. Все, что требуется для начала работы — это файл с записями произношения (простой TXT-файл). |
-| Преобразование текста в речь | [Настраиваемый голос](how-to-customize-voice-font.md) | Пользовательские голосовые модели позволяют создать узнаваемый, единственный в своем роде голос для вашего бренда. Чтобы приступить к работе, потребуется небольшой объем данных. Чем больше данных вы предоставите, тем более естественной и человекоподобной будет ваша голосовая модель. |
+| Преобразование текста в речь | [Голос](how-to-customize-voice-font.md) | Пользовательские голосовые модели позволяют создать узнаваемый, единственный в своем роде голос для вашего бренда. Чтобы приступить к работе, потребуется небольшой объем данных. Чем больше данных вы предоставите, тем более естественной и человекоподобной будет ваша голосовая модель. |
 
 ## <a name="reference-docs"></a>Справочная документация
 
-* [пакет SDK для службы "Речь"](speech-sdk-reference.md);
+* [Пакет SDK для распознавания речи](speech-sdk-reference.md)
 * [Пакет SDK для речевых устройств](speech-devices-sdk.md)
-* [REST API: Преобразование речи в текст](rest-speech-to-text.md)
+* [REST API: Преобразование речи в текст.](rest-speech-to-text.md)
 * [REST API: Преобразование текста в речь](rest-text-to-speech.md)
 * [REST API: Пакетное транскрибирование и настройка](https://westus.cris.ai/swagger/ui/index)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Получите ключ подписки для Служб речи бесплатно](get-started.md)
+> [Получите ключ подписки для служб "Речь" бесплатно](get-started.md)

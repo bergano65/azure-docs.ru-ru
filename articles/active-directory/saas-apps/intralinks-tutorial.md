@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Intralinks | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Intralinks | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Intralinks.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: d7a1f5e35ea853d90dd34c33d63d3e7d4788fe63
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: f72d00878e510a420b6974a7564ebc01fc09dcc3
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58258808"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59260007"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-intralinks"></a>Руководство. Интеграция Azure Active Directory с Intralinks
+# <a name="tutorial-azure-active-directory-integration-with-intralinks"></a>Руководство по Интеграция Azure Active Directory с Intralinks
 
 В этом руководстве описано, как интегрировать Intralinks с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Intralinks обеспечивает следующие преимущества:
@@ -51,7 +51,7 @@ ms.locfileid: "58258808"
 
 Чтобы настроить интеграцию Intralinks с Azure AD, необходимо добавить Intralinks из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Intralinks из коллекции, выполните следующие действия.**
+**Чтобы добавить Intralinks из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -191,8 +191,8 @@ ms.locfileid: "58258808"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

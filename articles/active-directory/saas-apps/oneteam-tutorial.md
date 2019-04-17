@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Oneteam | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Oneteam | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Oneteam.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: e2b2a7ce4e057b97ef8c714c7af25b173e881706
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 6f12a4973f2c3427d9d44de625f9e987e836d4b7
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58183583"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59272620"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-oneteam"></a>Руководство. Интеграция Azure Active Directory с Oneteam
+# <a name="tutorial-azure-active-directory-integration-with-oneteam"></a>Руководство по Интеграция Azure Active Directory с Oneteam
 
 В этом руководстве описано, как интегрировать Oneteam с Azure Active Directory (Azure AD).
 Интеграция Oneteam с Azure AD обеспечивает следующие преимущества.
@@ -53,7 +53,7 @@ ms.locfileid: "58183583"
 
 Чтобы настроить интеграцию Oneteam с Azure AD, необходимо добавить Oneteam из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Oneteam из коллекции, выполните следующее.**
+**Чтобы добавить Oneteam из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -107,9 +107,9 @@ ms.locfileid: "58183583"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Oneteam](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://api.one-team.io/teams/<team name>`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://api.one-team.io/teams/<team name>`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://api.one-team.io/teams/<team name>/auth/saml/callback`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://api.one-team.io/teams/<team name>/auth/saml/callback`
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -204,9 +204,9 @@ ms.locfileid: "58183583"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

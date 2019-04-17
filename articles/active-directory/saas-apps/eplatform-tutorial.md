@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с ePlatform | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с ePlatform | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и ePlatform.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 75c65d9fe7cf884f1c76439fc2f8d5373fadd5ae
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 5b73712e114b3542caa5aa05570d509c93df019e
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57880625"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59276598"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-eplatform"></a>Руководство. Интеграция Azure Active Directory с ePlatform
+# <a name="tutorial-azure-active-directory-integration-with-eplatform"></a>Руководство по Интеграция Azure Active Directory с ePlatform
 
 В этом учебнике вы узнаете, как интегрировать приложение ePlatform с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением ePlatform обеспечивает следующие преимущества.
@@ -117,7 +117,7 @@ ms.locfileid: "57880625"
 
     ![Копирование значения "Отпечаток"](common/copy-thumbprint.png)
 
-7. Приложение ePlatform ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя**.
+7. Приложение ePlatform ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
 
     ![изображение](common/edit-attribute.png)
 
@@ -222,9 +222,9 @@ ms.locfileid: "57880625"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

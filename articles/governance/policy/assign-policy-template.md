@@ -1,19 +1,18 @@
 ---
 title: Создание назначения политики с помощью шаблона Resource Manager
 description: В этой статье рассматриваются шаги, выполнив которые вы сможете создать назначение политики для выявления несоответствующих требованиям ресурсов с помощью шаблона Resource Manager.
-services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 03/13/2019
 ms.topic: quickstart
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 354d5aa250449b87345cef17778befddc761fa19
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: 3b7ceb07fe874ebc012696f73c21d5c270cb3cee
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58802513"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59268999"
 ---
 # <a name="create-a-policy-assignment-to-identify-non-compliant-resources-by-using-a-resource-manager-template"></a>Создание назначения политики для идентификации несоответствующих требованиям ресурсов с помощью шаблона Resource Manager
 
@@ -38,7 +37,7 @@ ms.locfileid: "58802513"
 
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон:
 
-   [![Развертывание шаблона политики в Azure](./media/assign-policy-template/deploy-to-azure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-azurepolicy-assign-builtinpolicy-resourcegroup%2Fazuredeploy.json)
+   [![DРазвертывание шаблона политики в Azure](./media/assign-policy-template/deploy-to-azure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-azurepolicy-assign-builtinpolicy-resourcegroup%2Fazuredeploy.json)
 
 1. Введите или выберите следующие значения.
 
@@ -85,7 +84,7 @@ ms.locfileid: "58802513"
 
 С помощью этого краткого руководства вы назначили встроенное определение политики для области и изучили отчет о соответствии. Определение политики проверяет, все ли ресурсы в области соответствуют требованиям, и определяет, какие из них не соответствуют.
 
-В следующем руководстве описано, как назначать политики для проверки новых ресурсов на соответствие требованиям:
+Следующее руководство серии содержит сведения о назначении политик для проверки новых ресурсов на соответствие требованиям:
 
 > [!div class="nextstepaction"]
 > [Создание политик и управление ими](./tutorials/create-and-manage.md)

@@ -10,19 +10,19 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 2/20/2019
 ms.author: wolfma
-ms.openlocfilehash: 9458f052258993ee598ddfbca262faf8f6cb4ab9
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: 690656449fdb86c200a8978f0e17db562e4abbca
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58258553"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59009184"
 ---
 # <a name="quickstart-recognize-speech-in-java-on-android-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении Java для Android с помощью пакета SDK для службы "Речь"
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Из этой статьи вы узнаете, как с помощью пакета SDK службы "Речь" в Cognitive Services создать приложение Java для Android, которое будет преобразовывать речь в текст.
-Приложение основано на пакете SDK Maven версии 1.3.1 для службы "Речь" в Microsoft Cognitive Services, а также Android Studio 3.1.
+Приложение основано на пакете SDK Maven версии 1.4.0 для служб "Речь", а также Android Studio 3.3.
 Пакет SDK службы "Речь" сейчас совместим с устройствами Android, в которых установлены 32- или 64-разрядные процессоры ARM и процессоры Intel, совместимые с набором команд x86-x64.
 
 > [!NOTE]
@@ -38,27 +38,19 @@ ms.locfileid: "58258553"
 
     ![Снимок экрана окна приветствия Android Studio](media/sdk/qs-java-android-01-start-new-android-studio-project.png)
 
-1. Откроется мастер **Create New Project** (Создание нового проекта). На экране **Create Android Project** (Создание проекта Android) в поле **Application name** (Имя приложения) введите **Quickstart**, в поле **Company domain** (Домен компании) укажите **samples.speech.cognitiveservices.microsoft.com** и выберите каталог проекта. Оставьте флажки C++ и Kotlin снятыми и выберите **Далее**.
+1. Откроется мастер **Choose your project** (Выбор проекта), выберите **Phone and Tablet** (Телефон и планшет) и **Empty Activity** (Пустое действие) в поле выбора действия. Щелкните **Далее**.
 
-   ![Снимок экрана мастера Create New Project (создание нового проекта)](media/sdk/qs-java-android-02-create-android-project.png)
+   ![Снимок экрана мастера Choose your project (Выбор проекта)](media/sdk/qs-java-android-02-target-android-devices.png)
 
-1. На экране **Target Android Devices** (целевые устройства Android) выберите только пункт **Phone and Tablet** (телефоны и планшеты). В раскрывающемся списке под этим пунктом выберите **API 23: Android 6.0 (Marshmallow)** и нажмите кнопку **Далее**.
+1. На экране **Configure your project** (Настройка проекта) введите **Quickstart** в поле **Name** (Имя), **samples.speech.cognitiveservices.microsoft.com** в поле **Package name** (Имя пакета) и выберите каталог проекта. Для параметра **Minimum API level** (Минимальный уровень API) задайте значение **API 23: Android 6.0 (Marshmallow)**, оставьте другие флажки снятыми и нажмите **Finish** (Готово).
 
-   ![Снимок экрана мастера Create New Project (создание нового проекта)](media/sdk/qs-java-android-03-target-android-devices.png)
-
-1. На экране **Add an Activity to Mobile** (Добавление действия для мобильных устройств) выберите **Empty Activity** (Пустое действие) и нажмите кнопку **Далее**.
-
-   ![Снимок экрана мастера Create New Project (создание нового проекта)](media/sdk/qs-java-android-04-add-an-activity-to-mobile.png)
-
-1. На экране **Configure Activity** (Настройка действия) введите **MainActivity** в качестве имени действия и **activity\_main** — в качестве имени макета. Установите оба флажка и нажмите **Готово**.
-
-   ![Снимок экрана мастера Create New Project (создание нового проекта)](media/sdk/qs-java-android-05-configure-activity.png)
+   ![Снимок экрана мастера Configure your project (Настройка проекта)](media/sdk/qs-java-android-03-create-android-project.png)
 
 Android Studio требуется несколько минут, чтобы подготовить новый проект Android. Затем настройте для проекта пакет SDK для службы "Речь" и использование Java 8.
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.3.1`.
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.4.0`.
 
 Пакет SDK службы "Речь" для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит необходимые библиотеки и требуемые разрешения Android.
 Он доступен в репозитории Maven по адресу https:\//csspeechstorage.blob.core.windows.net/maven/.
@@ -73,7 +65,7 @@ Android Studio требуется несколько минут, чтобы по
 
    ![Снимок экрана окна Project Structure (Структура проекта)](media/sdk/qs-java-android-07-add-module-dependency.png)
 
-1. В появившемся окне введите имя и версию нашего пакета SDK службы "Речь" для Android, `com.microsoft.cognitiveservices.speech:client-sdk:1.3.1`. Нажмите кнопку **ОК**.
+1. В появившемся окне введите имя и версию нашего пакета SDK службы "Речь" для Android, `com.microsoft.cognitiveservices.speech:client-sdk:1.4.0`. Нажмите кнопку **ОК**.
    Пакет SDK для службы "Речь" должен быть добавлен в список зависимостей, как показано ниже.
 
    ![Снимок экрана окна Project Structure (Структура проекта)](media/sdk/qs-java-android-08-dependency-added-1.0.0.png)
@@ -100,16 +92,9 @@ Android Studio требуется несколько минут, чтобы по
 
 Теперь текстовая и графическая версии пользовательского интерфейса должны выглядеть следующим образом:
 
-<table>
-<tr>
-<td valign="top">
 ![](media/sdk/qs-java-android-11-gui.png)
-</td>
-<td valign="top">
+
 [!code-xml[](~/samples-cognitive-services-speech-sdk/quickstart/java-android/app/src/main/res/layout/activity_main.xml)]
-</td>
-</tr>
-</table>
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 

@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 16d5f9ac8e1dbe01fdf812c5193285dcb0a28527
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 3055d91028ed6c4fcfbfcbe607350b3f5fc8bedf
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57897543"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59258273"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-novatus"></a>Руководство. Интеграция Azure Active Directory с Novatus
+# <a name="tutorial-azure-active-directory-integration-with-novatus"></a>Руководство по Интеграция Azure Active Directory с Novatus
 
 В этом руководстве описано, как интегрировать приложение Novatus с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Novatus обеспечивает следующие преимущества.
@@ -52,7 +52,7 @@ ms.locfileid: "57897543"
 
 Чтобы настроить интеграцию Novatus с Azure AD, необходимо добавить Novatus из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Novatus из коллекции, выполните следующие действия.**
+**Чтобы добавить Novatus из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -147,7 +147,7 @@ ms.locfileid: "57897543"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -196,9 +196,9 @@ ms.locfileid: "57897543"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

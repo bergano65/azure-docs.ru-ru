@@ -6,14 +6,14 @@ ms.service: signalr
 ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: zhshang
-ms.openlocfilehash: c18597fde157e0308138348432d63d56446931b7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 28fb3295ef02d508ef04299398a61ea59828df35
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58012560"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59278842"
 ---
-# <a name="tutorial-azure-signalr-service-authentication-with-azure-functions"></a>Руководство. аутентификации в службе Azure SignalR с помощью Функций Azure
+# <a name="tutorial-azure-signalr-service-authentication-with-azure-functions"></a>Руководство по аутентификации в службе Azure SignalR с помощью Функций Azure
 
 Пошаговое руководство по созданию комнаты чата с аутентификацией и обменом частными сообщениями с помощью Функций Azure, проверки подлинности службы приложений и службы SignalR.
 
@@ -62,7 +62,7 @@ ms.locfileid: "58012560"
 
 1. Нажмите кнопку **Создать**.
 
-1. После развертывания экземпляра откройте его на портале и найдите страницу "Параметры". Измените параметр режима обслуживания на *Бессерверный*.
+1. После развертывания экземпляра откройте его на портале и найдите страницу "Параметры". Измените параметр "Режим службы" на *Бессерверный*.
 
     ![Режим Службы SignalR](media/signalr-concept-azure-functions/signalr-service-mode.png)
 
@@ -348,7 +348,7 @@ ms.locfileid: "58012560"
 
 При отправке сообщения приложение будет определять, нужно ли отправить его всем подключенным клиентам или только тем, которые прошли аутентификацию от имени определенного пользователя.
 
-1. В VS Code откройте файл **SignalRInfo/function.json**.
+1. В VS Code откройте файл **negotiate/function.json**.
 
 1. Вставьте [выражение привязки](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings) в свойство *userId* для привязки *SignalRConnectionInfo*: `{headers.x-ms-client-principal-name}`. Так мы сохраним в этом значении имя пользователя, прошедшего аутентификацию. Теперь этот атрибут будет выглядеть следующим образом:
 

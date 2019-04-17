@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: quickstart
-ms.date: 5/16/2018
+ms.date: 4/02/2019
 ms.author: scottwhi
-ms.openlocfilehash: 7a0103e21b4c287526e53b9f886e98027f49c392
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 9414bac220d928618b403aa2f7df7748772e0e9a
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55863998"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59047574"
 ---
 # <a name="quickstart-get-image-insights-using-the-bing-visual-search-rest-api-and-nodejs"></a>Краткое руководство. Получение аналитических сведений об изображениях с помощью REST API Визуального поиска Bing и Node.js
 
 В этом кратком руководстве вы узнаете, как сделать первый вызов API визуального поиска Bing и просмотреть результаты поиска. Это простое приложение JavaScript отправляет изображение в API и отображает данные о нем. Хотя это приложение создается на языке JavaScript, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-При отправке локального изображения данные формы должны содержать заголовок Content-Disposition. Его параметру `name` необходимо присвоить значение "image", а для параметра `filename` можно задать любую строку. Содержимым формы является двоичный файл изображения. Максимально допустимый размер отправляемого изображения — 1 МБ.
+При отправке локального изображения данные формы должны содержать заголовок `Content-Disposition`. Необходимо задать для его параметра `name` значение "image", а для параметра `filename` можно присвоить любую строку. Форма содержит двоичные данные изображения. Максимально допустимый размер отправляемого изображения — 1 МБ.
 
 ```
 --boundary_1234-abcd
@@ -35,14 +35,10 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Node.js](https://nodejs.org/en/download/)
-* Модуль запросов для JavaScript.
-    * Этот модуль можно установить с помощью команды `npm install request`.
-* Модуль данных формы.
-    * Этот модуль можно установить с помощью команды `npm install form-data`.
-
+* Модуль запросов для JavaScript. Вы можете использовать команду `npm install request`, чтобы установить модуль.
+* Модуль данных формы. Вы можете использовать команду `npm install form-data`, чтобы установить модуль. 
 
 [!INCLUDE [cognitive-services-bing-visual-search-signup-requirements](../../../../includes/cognitive-services-bing-image-search-signup-requirements.md)]
-
 
 ## <a name="initialize-the-application"></a>Инициализация приложения
 
@@ -54,7 +50,7 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
     var fs = require('fs');
     ```
 
-2. Создайте переменные для конечной точки API, ключ подписки и путь к изображению.
+2. Создайте переменные для конечной точки API, ключ подписки и путь к изображению:
 
     ```javascript
     var baseUri = 'https://api.cognitive.microsoft.com/bing/v7.0/images/visualsearch';
@@ -62,7 +58,7 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
     var imagePath = "path-to-your-image";
     ```
 
-3. Создайте функцию с именем `requestCallback()`, чтобы вывести ответ, полученный от API.
+3. Создайте функцию с именем `requestCallback()`, чтобы вывести ответ, полученный от API:
 
     ```javascript
     function requestCallback(err, res, body) {
@@ -72,14 +68,14 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 
 ## <a name="construct-and-send-the-search-request"></a>Создание и отправка поискового запроса
 
-1. Создайте новые данные формы с помощью `FormData()` и добавьте в них путь к своему изображению, используя `fs.createReadStream()`.
+1. Создайте объект **FormData** с помощью `FormData()` и добавьте в него путь к своему изображению, используя `fs.createReadStream()`:
     
     ```javascript
     var form = new FormData();
     form.append("image", fs.createReadStream(imagePath));
     ```
 
-2. Используйте библиотеку запросов, чтобы отправить изображение, вызвав `requestCallback()` для вывода ответа. Не забудьте добавить ключ подписки в заголовок запроса. 
+2. Используйте библиотеку запросов, чтобы отправить изображение, и вызовите `requestCallback()` для вывода ответа. Не забудьте добавить ключ подписки в заголовок запроса:
 
     ```javascript
     form.getLength(function(err, length){
@@ -95,4 +91,4 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Создание веб-страницы пользовательского поиска](../tutorial-bing-visual-search-single-page-app.md)
+> [Создание одностраничного веб-приложения Визуального поиска](../tutorial-bing-visual-search-single-page-app.md)

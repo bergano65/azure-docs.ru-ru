@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Insider Track | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Insider Track | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Insider Track.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 2e67aa6a2e072a1f140cc725720f095f7d93b49a
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.openlocfilehash: 876e9f95c5f1cdca3e0b41a16d77aee52fccb837
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58189076"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59259071"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-insider-track"></a>Руководство. Интеграция Azure Active Directory с Insider Track
+# <a name="tutorial-azure-active-directory-integration-with-insider-track"></a>Руководство по Интеграция Azure Active Directory с Insider Track
 
 В этом руководстве описано, как интегрировать Insider Track с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Insider Track обеспечивает следующие преимущества.
@@ -51,7 +51,7 @@ ms.locfileid: "58189076"
 
 Чтобы настроить интеграцию Insider Track с Azure AD, необходимо добавить Insider Track из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Insider Track из коллекции, выполните следующие действия.**
+**Чтобы добавить Insider Track из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -191,8 +191,8 @@ ms.locfileid: "58189076"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

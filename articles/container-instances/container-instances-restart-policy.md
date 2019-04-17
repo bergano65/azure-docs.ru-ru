@@ -5,14 +5,14 @@ services: container-instances
 author: dlepow
 ms.service: container-instances
 ms.topic: article
-ms.date: 03/21/2019
+ms.date: 04/15/2019
 ms.author: danlep
-ms.openlocfilehash: ef34985e7897aa751275231a28c6031d6c9747b0
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 06872eefd0d500a22214109ad5055dd236b5a6ac
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58369982"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59606843"
 ---
 # <a name="run-containerized-tasks-with-restart-policies"></a>Выполнение контейнерных задач с помощью политики перезапуска
 
@@ -93,98 +93,9 @@ az container logs --resource-group myResourceGroup --name mycontainer
 
 В нашем примере вы увидите выходные данные, отправленные скриптом в STDOUT. Но задачи, заключенные в контейнер, могут записывать выходные данные в постоянное хранилище, чтобы их можно было использовать позднее. Например, их можно отправить в [файловый ресурс Azure](container-instances-mounting-azure-files-volume.md)
 
-## <a name="manually-stop-and-start-a-container-group"></a>Остановка и запуск группы контейнеров вручную
-
-Независимо от политики перезапуска, настроенной для [группы контейнеров](container-instances-container-groups.md), вы можете вручную останавливать или запускать группу контейнеров.
-
-* **Остановка.** Вы можете вручную остановить работающую группу контейнеров в любое время, например с помощью команды [az container stop][az-container-stop]. Для определенных рабочих нагрузок контейнеров может потребоваться остановить группу контейнеров через определенный период времени в целях экономии расходов. 
-
-  Остановка группы контейнеров завершает и перезапускает контейнеры в группе. Состояние контейнера не сохраняется. 
-
-* **Запуск.** При остановке работы группы контейнеров (по причине самостоятельной остановки работы контейнеров или же по причине того, что вы остановили группу вручную) вы можете использовать [API запуска контейнеров](/rest/api/container-instances/containergroups/start) или портал Azure, чтобы вручную запустить контейнеры в группе. Если образ какого-либо контейнера обновлен, извлекается новый образ. 
-
-  Запуск группы контейнеров начинает новое развертывание с той же конфигурацией контейнера. Это действие поможет вам повторно использовать известную конфигурацию группы контейнеров, которая работает необходимым образом. Вам не нужно будет создавать новую группу контейнеров для выполнения той же рабочей нагрузки.
-
-* **Перезапуск.** Вы можете перезапустить группу контейнеров во время ее работы, например с помощью команды [az container restart][az-container-restart]. Это действие перезагружает все контейнеры в группе контейнеров. Если образ какого-либо контейнера обновлен, извлекается новый образ. 
-
-  Перезапуск группы контейнеров полезен при устранении проблемы с развертыванием. Например, если временное ограничение ресурса препятствует успешной работе ваших контейнеров, перезапуск группы может решить проблему.
-
-После того как вы вручную запустите или перезапустите группу контейнеров, она будет работать в соответствии с настроенной политикой перезапуска.
-
-## <a name="configure-containers-at-runtime"></a>Настройка контейнеров во время выполнения
-
-Когда вы создаете экземпляр контейнера, для него можно задать **переменные среды**, а также пользовательскую **командную строку** для выполнения при запуске контейнера. Эти параметры позволяют выполнять пакетные задания, создавая для каждого контейнера отдельную конфигурацию в соответствии с конкретной задачей.
-
-## <a name="environment-variables"></a>Переменные среды
-
-Используйте переменные среды в контейнере, чтобы динамически изменять конфигурацию выполняемого в нем приложения или скрипта. Эта функция работает так же, как и аргумент `--env` в команде `docker run`.
-
-Например, в нашем примере вы можете изменить поведение скрипта, указав следующие переменные среды при создании экземпляра контейнера.
-
-*NumWords*. Число слов, отправленных в STDOUT.
-
-*MinLength*. Минимальное количество учитываемых знаков в слове. Если увеличить это значение, скрипт будет пропускать самые распространенные слова, например of и the.
-
-```azurecli-interactive
-az container create \
-    --resource-group myResourceGroup \
-    --name mycontainer2 \
-    --image mcr.microsoft.com/azuredocs/aci-wordcount:latest \
-    --restart-policy OnFailure \
-    --environment-variables NumWords=5 MinLength=8
-```
-
-Если вы определите для контейнера переменные среды `NumWords=5` и `MinLength=8`, выходные данные в журналах контейнера изменятся. Когда статус контейнера примет значение *Terminated* (Завершено), что можно проверить с помощью команды `az container show`, просмотрите его журналы для оценки новых выходных данных.
-
-```azurecli-interactive
-az container logs --resource-group myResourceGroup --name mycontainer2
-```
-
-Выходные данные:
-
-```bash
-[('CLAUDIUS', 120),
- ('POLONIUS', 113),
- ('GERTRUDE', 82),
- ('ROSENCRANTZ', 69),
- ('GUILDENSTERN', 54)]
-```
-
-
-
-## <a name="command-line-override"></a>Переопределение командной строки
-
-Если при создании экземпляра контейнера вы укажете командную строку, она переопределит командную строку, сохраненную в образе контейнера. Эта функция работает так же, как и аргумент `--entrypoint` в команде `docker run`.
-
-Например, в контейнер из нашего примера вы можете передать другой текст для анализа, а не пьесу *Гамлет*, указав новую командную строку. Скрипт Python *wordcount.py*, который выполняется в этом контейнере, принимает в качестве аргумента URL-адрес текста, который нужно обработать вместо стандартного.
-
-Например, так вы можете найти 3 самых употребляемых слова из пяти букв в тексте пьесы *Ромео и Джульетта*.
-
-```azurecli-interactive
-az container create \
-    --resource-group myResourceGroup \
-    --name mycontainer3 \
-    --image mcr.microsoft.com/azuredocs/aci-wordcount:latest \
-    --restart-policy OnFailure \
-    --environment-variables NumWords=3 MinLength=5 \
-    --command-line "python wordcount.py http://shakespeare.mit.edu/romeo_juliet/full.html"
-```
-
-Как и прежде, вы сможете просмотреть выходные данные с помощью журналов контейнера, когда его состояние изменится на *Terminated* (Завершено), как показано ниже.
-
-```azurecli-interactive
-az container logs --resource-group myResourceGroup --name mycontainer3
-```
-
-Выходные данные:
-
-```bash
-[('ROMEO', 177), ('JULIET', 134), ('CAPULET', 119)]
-```
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-### <a name="persist-task-output"></a>Сохранение выходных данных задачи
+Сценарии, основанные на задачах, такие как пакетная обработка большого набора данных с несколькими контейнерами, можно воспользоваться преимуществами custom [переменные среды](container-instances-environment-variables.md) или [командные строки](container-instances-start-command.md) во время выполнения.
 
 Дополнительные сведения о том, как сохранить выходные данные контейнеров, которые выполняются до завершения, вы найдете в статье [Подключение файлового ресурса Azure с помощью Экземпляров контейнеров Azure](container-instances-mounting-azure-files-volume.md).
 
@@ -194,7 +105,5 @@ az container logs --resource-group myResourceGroup --name mycontainer3
 <!-- LINKS - Internal -->
 [az-container-create]: /cli/azure/container?view=azure-cli-latest#az-container-create
 [az-container-logs]: /cli/azure/container?view=azure-cli-latest#az-container-logs
-[az-container-restart]: /cli/azure/container?view=azure-cli-latest#az-container-restart
 [az-container-show]: /cli/azure/container?view=azure-cli-latest#az-container-show
-[az-container-stop]: /cli/azure/container?view=azure-cli-latest#az-container-stop
 [azure-cli-install]: /cli/azure/install-azure-cli

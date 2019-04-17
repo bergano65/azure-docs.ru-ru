@@ -8,12 +8,12 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 04/26/2018
 ms.author: menchi
-ms.openlocfilehash: cb6ddbab2fd4cb21ef547d116652f7ea9e63607f
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: f887fbd4f82e59c02d6a5b69d0d5b43b426a39bc
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59258153"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59606775"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-using-python-back-end-and-python-device"></a>Приступая к работе с удостоверением и двойником модуля Центра Интернета вещей с использованием серверной части и устройства Python
 
@@ -87,11 +87,13 @@ except KeyboardInterrupt:
 
 В этом разделе объясняется, как создать приложение Python на имитированном устройстве, которое обновляет сообщаемые свойства двойника модуля.
 
-1. **Получите строку подключения модуля**. Войдите на [портал Azure](https://portal.azure.com/). Перейдите к Центру Интернета вещей и щелкните "Устройства IoT". Найдите устройство myFirstDevice, откройте его и вы увидите, что модуль myFirstModule успешно создан. Скопируйте строку подключения модуля. Она понадобится на следующем шаге.
+1. **Получить строку подключения модуля** — теперь, если вы выполняете вход в [портала Azure](https://portal.azure.com/). Перейдите к Центру Интернета вещей и щелкните "Устройства IoT". Найдите устройство myFirstDevice, откройте его и вы увидите, что модуль myFirstModule успешно создан. Скопируйте строку подключения модуля. Она понадобится на следующем шаге.
 
    ![Сведения о модуле на портале Azure](./media/iot-hub-python-python-module-twin-getstarted/module-detail.png)
 
-2. **Создайте приложение UpdateModuleTwinReportedProperties**. В начало файла **Program.cs** добавьте следующие инструкции `using`:
+2. **Создание приложения UpdateModuleTwinReportedProperties**
+
+   Добавьте следующие инструкции `using` в начало файла **Program.cs** :
 
     ```python
     import sys
@@ -165,6 +167,6 @@ except KeyboardInterrupt:
 
 Чтобы продолжить знакомство с Центром Интернета вещей и изучить другие сценарии Интернета вещей, см. следующие ресурсы:
 
-* [Приступая к работе с управлением устройствами](iot-hub-node-node-device-management-get-started.md)
+* [Начало работы с управлением устройствами (Node)](iot-hub-node-node-device-management-get-started.md)
 
-* [Приступая к работе с IoT Edge](../iot-edge/tutorial-simulate-device-linux.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 3c416254acf63dc479326cf00e3113c1425c4008
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: 2e6916cc96f9d9778cc829e39f82ef7204e137bc
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58360798"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59269475"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-synergi"></a>Руководство по Интеграция Azure Active Directory с Synergi
 
@@ -105,9 +105,9 @@ ms.locfileid: "58360798"
 
     ![Сведения о домене и URL-адресах единого входа приложения Synergi](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<company name>.irmsecurity.com`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<company name>.irmsecurity.com`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<company name>.irmsecurity.com/sso/<organization id>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<company name>.irmsecurity.com/sso/<organization id>`
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Synergi](https://www.irmsecurity.com/contact/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -193,9 +193,9 @@ ms.locfileid: "58360798"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -6,25 +6,25 @@ documentationcenter: ''
 author: kraigb
 manager: douge
 ms.assetid: 9cea5a8e-c52d-4bdc-9e4a-cecdc1ad02c1
-ms.service: azure
+ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 01/11/2019
+ms.date: 04/05/2019
 ms.author: kraigb
-ms.openlocfilehash: 9916b75a15098acbafc1cb1f6d44d948cf6de851
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 4840a9839fe1f2a31470d4a67b3755b82077fd90
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57777725"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59280117"
 ---
 # <a name="overview-of-azure-notebooks"></a>Общие сведения о службе "Записные книжки Azure"
 
 Записные книжки Azure — это бесплатная размещенная служба для разработки и запуска записных книжек Jupyter в облаке без их установки. [Jupyter](https://jupyter.org/) (прежнее название — IPython) — это проект с открытым кодом, который позволяет легко объединять текст с разметкой, исполняемый код, хранимые данные, графики и визуализации на одном общем холсте, который называется *записной книжкой* (изображение предоставлено сайтом jupyter.org):
 
-[![Примеры записных книжек Jupyter](https://jupyter.org/assets/jupyterpreview.png)](https://jupyter.org/assets/jupyterpreview.png#lightbox)
+[![EПримеры записных книжек Jupyter](https://jupyter.org/assets/jupyterpreview.png)](https://jupyter.org/assets/jupyterpreview.png#lightbox)
 
 Из-за мощного сочетания кода, графики и пояснений Jupyter стал популярным для различных целей, включая инструкции по обработке и анализу данных, очистку и преобразование данных, цифровое и статистическое моделирование, а также разработку моделей машинного обучения.
 
@@ -58,6 +58,8 @@ ms.locfileid: "57777725"
 Записные книжки Azure — это бесплатная служба, но каждый проект ограничен 4 ГБ памяти и 1 ГБ данных во избежание злоупотребления. Уполномоченные пользователи, превысившие эти ограничения, должны ответить на запрос Captcha, чтобы продолжить использование записных книжек.
 
 Чтобы снять все ограничения, войдите в службу "Записные книжки Azure" с учетной записью с помощью Azure Active Directory (например, с учетной записью организации). Если эта учетная запись связана с подпиской Azure, можно подключиться к любому экземпляру виртуальной машины для обработки и анализа данных в этой подписке. Дополнительные сведения см. в разделе об уровне вычислительной среды в руководстве [Администрирование и настройка проектов](configure-manage-azure-notebooks-projects.md#compute-tier).
+
+Максимальное время работы сервера записной книжки составляет 8 часов. В большинстве случаев на ваш контейнер это ограничение не распространяется и он продолжает выполняться по истечении этого срока, но продолжительные сеансы иногда могут завершаться в целях обеспечения стабильности системы.
 
 ## <a name="available-kernels-and-environments"></a>Доступные ядра и среды
 
@@ -95,7 +97,7 @@ ms.locfileid: "57777725"
 
 ## <a name="next-steps"></a>Дополнительная информация  
 
-- [Обзор примеров записных книжек](azure-notebooks-samples.md)
+- [Примеры записных книжек](azure-notebooks-samples.md)
 
 - Краткие руководства:
 

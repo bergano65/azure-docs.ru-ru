@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Moxi Engage | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Moxi Engage | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Moxi Engage.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 5fa2796ccaccd6d840ed0ca814d124e433b26049
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 655f8555f9e7fb04d69f35048b7fdec0fb1cebce
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57857799"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59275595"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-moxi-engage"></a>Руководство. Интеграция Azure Active Directory с Moxi Engage
+# <a name="tutorial-azure-active-directory-integration-with-moxi-engage"></a>Руководство по Интеграция Azure Active Directory с Moxi Engage
 
 В этом руководстве описано, как интегрировать Moxi Engage с Azure Active Directory (Azure AD).
 Интеграция приложения Moxi Engage c Azure AD обеспечивает следующие преимущества.
@@ -50,7 +50,7 @@ ms.locfileid: "57857799"
 
 Чтобы настроить интеграцию приложения Moxi Engage с Azure AD, вам нужно добавить это приложение из коллекции в свой список управляемых приложений SaaS.
 
-**Добавление приложения Moxi Engage из коллекции**
+**Чтобы добавить приложение Moxi Engage из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -145,7 +145,7 @@ ms.locfileid: "57857799"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -190,9 +190,9 @@ ms.locfileid: "57857799"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

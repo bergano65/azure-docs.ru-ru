@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory со SkyDesk Email | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory со SkyDesk Email | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SkyDesk Email.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 76e19a5d83b1e59aedc0e6e4d6a1f03ae10039a9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: e0c2dc6c370e697f896e24e7d56c6eb8900601a9
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58167003"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59271056"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-skydesk-email"></a>Руководство. Интеграция Azure Active Directory со SkyDesk Email
+# <a name="tutorial-azure-active-directory-integration-with-skydesk-email"></a>Руководство по Интеграция Azure Active Directory со SkyDesk Email
 
 В этом руководстве описано, как интегрировать SkyDesk Email с Azure Active Directory (Azure AD).
 Интеграция SkyDesk Email с Azure AD дает приведенные ниже преимущества.
@@ -51,7 +51,7 @@ ms.locfileid: "58167003"
 
 Чтобы настроить интеграцию SkyDesk Email с Azure AD, необходимо добавить приложение SkyDesk Email из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить SkyDesk Email из коллекции, выполните указанные ниже действия.**
+**Чтобы добавить SkyDesk Email из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -239,9 +239,9 @@ ms.locfileid: "58167003"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

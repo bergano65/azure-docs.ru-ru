@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 65badda86fa29dc68f2eef1e9c0883dc8b40107a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 25540d1f26fa6021ef05108f9743e77a6184f3b3
+ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57852905"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59426330"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-github"></a>Руководство. Интеграция Azure Active Directory с GitHub
+# <a name="tutorial-azure-active-directory-integration-with-github"></a>Руководство по Интеграция Azure Active Directory с GitHub
 
 В этом руководстве описано, как интегрировать GitHub с Azure Active Directory (Azure AD).
 Интеграция Azure AD с GitHub обеспечивает следующие преимущества.
@@ -53,7 +53,7 @@ ms.locfileid: "57852905"
 
 Чтобы настроить интеграцию GitHub с Azure AD, необходимо добавить GitHub из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить приложение GitHub из коллекции, сделайте следующее.**
+**Чтобы добавить приложение GitHub из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -67,7 +67,7 @@ ms.locfileid: "57852905"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **GitHub**, выберите **GitHub** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **GitHub**, выберите **GitHub.com** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
      ![GitHub в списке результатов](common/search-new-app.png)
 
@@ -107,9 +107,9 @@ ms.locfileid: "57852905"
 
     ![Сведения о домене и URL-адресах единого входа приложения GitHub](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://github.com/orgs/<entity-id>/sso`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://github.com/orgs/<entity-id>/sso`
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://github.com/orgs/<entity-id>`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://github.com/orgs/<entity-id>`
 
     > [!NOTE]
     > Обратите внимание, что значения, указанные выше, используются в качестве примера. Необходимо заменить эти значения фактическим URL-адресом для входа и идентификатором. Мы рекомендуем использовать уникальное значение строки идентификатора. Перейдите в раздел администрирования GitHub, чтобы получить эти значения.
@@ -185,7 +185,7 @@ ms.locfileid: "57852905"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -10,19 +10,19 @@ ms.subservice: acoustics
 ms.topic: quickstart
 ms.date: 03/20/2019
 ms.author: kegodin
-ms.openlocfilehash: 1575c4f4a1c96a84823f76e8e98e76de3c2ace86
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 691f49e9be8aabe9a3e229bfd3b35ab183f9fed9
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58313028"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59492418"
 ---
 # <a name="project-acoustics-unrealwwise-quickstart"></a>Краткое руководство по использованию Project Acoustics с Unreal и Wwise
 В этом кратком руководстве вы будете экспериментировать с элементами управления для проектирования Project Acoustics, используя предоставленный пример содержимого для Unreal Engine и Wwise.
 
 Требования к программному обеспечению:
-* [Unreal Engine 4.21](https://www.unrealengine.com/).
-* [Wwise 2018.1.6](https://www.audiokinetic.com/products/wwise/).
+* [Unreal Engine](https://www.unrealengine.com/) 4.21;
+* [AudioKinetic Wwise](https://www.audiokinetic.com/products/wwise/) 2018.1.6.
 
 ## <a name="download-the-sample-package"></a>Загрузка примера пакета
 Скачайте [пример пакета Project Acoustics для Unreal и Wwise](https://www.microsoft.com/download/details.aspx?id=58090). Пример пакета содержит проект Unreal Engine, проект Wwise для этого проекта Unreal и подключаемый модуль Wwise для Project Acoustics.
@@ -50,7 +50,7 @@ ms.locfileid: "58313028"
 
     ![Снимок экрана с проводником Windows окно — скрипт для исправления проекта Wwise](media/patch-wwise-script.png)
 
-* Если у вас нет установленного пакета SDK для DirectX, вам потребуется закомментировать строку, содержащую DXSDK_DIR в `AcousticsGame\Plugins\Wwise\Source\AkAudio\AkAudio.Build.cs`.
+* Если у вас нет установленного пакета SDK для DirectX, вам потребуется закомментировать строку, содержащую DXSDK_DIR в `AcousticsGame\Plugins\Wwise\Source\AkAudio\AkAudio.Build.cs`
 
     ![Снимок экрана с редактором кода — комментирование строки DXSDK](media/directx-sdk-comment.png)
 

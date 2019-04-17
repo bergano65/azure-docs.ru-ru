@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: quickstart
-ms.date: 5/16/2018
+ms.date: 4/02/2019
 ms.author: scottwhi
-ms.openlocfilehash: 873da64592c2c2e925d8731d4b1154db95bed31d
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 7ec37b4c3bdeb924b3e35dbcb5d07a478611f631
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55863233"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59047132"
 ---
-# <a name="quickstart-your-first-bing-visual-search-query-in-python"></a>Краткое руководство. Ваш первый запрос в службу наглядного поиска Bing на Python
+# <a name="quickstart-get-image-insights-using-the-bing-visual-search-rest-api-and-python"></a>Краткое руководство. Получение аналитических сведений об изображении с помощью REST API и Python Визуального поиска Bing
 
-В этом кратком руководстве вы узнаете, как сделать первый вызов API визуального поиска Bing и просмотреть результаты поиска. Это простое приложение JavaScript отправляет изображение в API и отображает данные о нем. Хотя это приложение создается на языке JavaScript, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Из этого краткого руководства вы узнаете, как сделать первый вызов API Визуального поиска Bing и просмотреть результаты. Это приложение Python отправляет изображение в API и отображает возвращенные данные о нем. Хотя это приложение создано на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-При отправке локального изображения данные формы POST должны содержать заголовок Content-Disposition. Его параметру `name` необходимо присвоить значение "image", а для параметра `filename` можно задать любую строку. Содержимым формы является двоичный файл изображения. Максимально допустимый размер отправляемого изображения — 1 МБ.
+При отправке локального изображения данные формы должны содержать заголовок `Content-Disposition`. Вам необходимо задать для его параметра `name` значение "image", а для параметра `filename` — любую строку. Форма содержит двоичные данные изображения. Максимально допустимый размер отправляемого изображения — 1 МБ.
 
 ```
 --boundary_1234-abcd
@@ -34,20 +34,19 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Python 3.x](https://www.python.org/)
-
+* [Python 3.x](https://www.python.org/)
 
 [!INCLUDE [cognitive-services-bing-visual-search-signup-requirements](../../../../includes/cognitive-services-bing-image-search-signup-requirements.md)]
 
 ## <a name="initialize-the-application"></a>Инициализация приложения
 
-1. Создайте файл Python в избранной интегрированной среде разработки или редакторе и добавьте следующую инструкцию для импорта.
+1. Создайте файл Python в избранной интегрированной среде разработки или редакторе и добавьте следующую инструкцию `import`:
 
     ```python
     import requests, json
     ```
 
-2. Создайте переменные для ключа подписки, конечной точки и путь к отправляемому изображению.
+2. Создайте переменные для ключа подписки, конечной точки и пути к отправляемому изображению:
 
     ```python
 
@@ -56,13 +55,13 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
     imagePath = 'your-image-path'
     ```
 
-3. Создайте объект словаря для хранения информации о заголовке запросов. Привяжите ключ подписки к строке `Ocp-Apim-Subscription-Key`, как показано ниже.
+3. Создайте объект словаря для хранения информации о заголовке запроса. Привяжите ключ подписки к строке `Ocp-Apim-Subscription-Key`, как показано ниже:
 
     ```python
     HEADERS = {'Ocp-Apim-Subscription-Key': SUBSCRIPTION_KEY}
     ```
 
-4. Создайте еще один словарь, содержащий изображение, которое будет открываться и загружаться при отправке запроса. 
+4. Создайте еще один словарь, содержащий изображение, которое будет открываться и загружаться при отправке запроса:
 
     ```python
     file = {'image' : ('myfile', open(imagePath, 'rb'))}
@@ -70,7 +69,7 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 
 ## <a name="parse-the-json-response"></a>Проанализируйте ответ JSON.
 
-1. Создайте метод с именем `print_json()` для получения ответа API и распечатайте JSON.
+1. Создайте метод с именем `print_json()` для получения ответа API и напечатайте JSON:
 
     ```python
     def print_json(obj):
@@ -80,7 +79,7 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 
 ## <a name="send-the-request"></a>Отправка запроса
 
-1. Используйте `requests.post()` для отправки запроса в Визуальный поиск Bing. Включите строку для конечной точки, заголовка и сведений о файле. Напечатайте `response.json()` с помощью `print_json()`
+1. Используйте `requests.post()` для отправки запроса в Визуальный поиск Bing. Включите строку для конечной точки, заголовка и сведений о файле. Напечатайте `response.json()` с помощью `print_json()`:
 
     ```python
     try:
@@ -95,4 +94,4 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Создание веб-страницы пользовательского поиска](../tutorial-bing-visual-search-single-page-app.md)
+> [Создание одностраничного веб-приложения для визуального поиска](../tutorial-bing-visual-search-single-page-app.md)

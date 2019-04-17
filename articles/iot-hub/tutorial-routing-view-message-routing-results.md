@@ -9,16 +9,18 @@ ms.topic: tutorial
 ms.date: 03/25/2018
 ms.author: robinsh
 ms.custom: mvc
-ms.openlocfilehash: 7f6baec8fee2b046949e2d88b5fff7bb5db9b40b
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 1417ecdaf6a85f491e1accfb9564e27d15e13445
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58662420"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59045839"
 ---
 # <a name="tutorial-part-2---view-the-routed-messages"></a>Руководство по Часть 2. Просмотр маршрутизированных сообщений
 
 [!INCLUDE [iot-hub-include-routing-intro](../../includes/iot-hub-include-routing-intro.md)]
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="rules-for-routing-the-messages"></a>Правила маршрутизации сообщений
 
@@ -272,7 +274,7 @@ ms.locfileid: "58662420"
 
 ### <a name="use-the-azure-cli-to-clean-up-resources"></a>Очистка ресурсов с помощью Azure CLI
 
-Чтобы удалить группу ресурсов, используйте команду [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete). Значение `$resourceGroup` было присвоено **ContosoResources** в начале работы с этим руководством.
+Чтобы удалить группу ресурсов, используйте команду [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete). `$resourceGroup` было присвоено **ContosoResources** в начале работы с этим руководством.
 
 ```azurecli-interactive
 az group delete --name $resourceGroup
@@ -280,10 +282,10 @@ az group delete --name $resourceGroup
 
 ### <a name="use-powershell-to-clean-up-resources"></a>Очистка ресурсов с помощью PowerShell
 
-Чтобы удалить группу ресурсов, используйте команду [Remove-AzureRmResourceGroup](https://docs.microsoft.com/powershell/module/azurerm.resources/remove-azurermresourcegroup). Значение `$resourceGroup` было присвоено **ContosoResources** в начале работы с этим руководством.
+Чтобы удалить группу ресурсов, используйте команду [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup). `$resourceGroup` было присвоено **ContosoResources** в начале работы с этим руководством.
 
 ```azurepowershell-interactive
-Remove-AzureRmResourceGroup -Name $resourceGroup
+Remove-AzResourceGroup -Name $resourceGroup
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
@@ -308,4 +310,4 @@ Remove-AzureRmResourceGroup -Name $resourceGroup
 Перейдите к следующему руководству, чтобы узнать, как управлять состоянием устройств IoT. 
 
 > [!div class="nextstepaction"]
-> [Tutorial: Set up and use metrics and diagnostic logs with an IoT hub](tutorial-use-metrics-and-diags.md) (Руководство. Настройка и использование метрик и журналов диагностики с Центром Интернета вещей)
+> [Руководство. Настройка и использование метрик и журналов диагностики с Центром Интернета вещей](tutorial-use-metrics-and-diags.md)

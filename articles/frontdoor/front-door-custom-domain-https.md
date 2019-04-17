@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/05/2018
 ms.author: sharadag
-ms.openlocfilehash: b3ec0616a7f022a104a20589f3281262b2717e35
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b99132cceb8981a93a8f1c10ccc488d5806f7254
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58014114"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59050983"
 ---
 # <a name="tutorial-configure-https-on-a-front-door-custom-domain"></a>Руководство по Настройка протокола HTTPS на личном домене Front Door
 
@@ -40,6 +40,9 @@ ms.locfileid: "58014114"
 > - использование собственного сертификата, то есть пользовательского SSL-сертификата;
 > - проверка домена;
 > - отключение протокола HTTPS в личном домене.
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -86,11 +89,11 @@ ms.locfileid: "58014114"
 
 Зарегистрируйте субъект-службу для Azure Front Door Service в качестве приложения в Azure Active Directory с помощью PowerShell.
 
-1. При необходимости установите [Azure PowerShell](https://www.powershellgallery.com/packages/AzureRM/6.0.0) в PowerShell на локальном компьютере.
+1. При необходимости установите [Azure PowerShell](/powershell/azure/install-az-ps) в PowerShell на локальном компьютере.
 
 2. Выполните следующую команду в PowerShell:
 
-     `New-AzureRmADServicePrincipal -ApplicationId "ad0e1c7e-6d38-4ba4-9efd-0bc77ba9f037"`              
+     `New-AzADServicePrincipal -ApplicationId "ad0e1c7e-6d38-4ba4-9efd-0bc77ba9f037"`              
 
 #### <a name="grant-azure-front-door-service-access-to-your-key-vault"></a>Предоставление Azure Front Door Service доступа к хранилищу ключей
  

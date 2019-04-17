@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: fa8f52cc106fdf9c104717d19792770677d10949
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.openlocfilehash: 5e7c1ce6ab217149acd3aed9e5268b70fbd664df
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58622150"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59274201"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-qualtrics"></a>Руководство. Интеграция Azure Active Directory с Qualtrics
 
@@ -53,7 +53,7 @@ ms.locfileid: "58622150"
 
 Чтобы настроить интеграцию Qualtrics с Azure AD, необходимо добавить Qualtrics из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Qualtrics из коллекции, выполните следующие действия.**
+**Чтобы добавить Qualtrics из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -107,7 +107,7 @@ ms.locfileid: "58622150"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Qualtrics](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.qualtrics.com`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.qualtrics.com`
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
 
@@ -200,9 +200,9 @@ ms.locfileid: "58622150"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

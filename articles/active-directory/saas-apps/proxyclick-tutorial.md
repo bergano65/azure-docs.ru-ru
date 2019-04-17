@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: d37e3cc56b4a80fce9dcae6f87ff626867496007
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: b797c7d49495aac90abb31a9214bf2928784a866
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58578345"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59262403"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-proxyclick"></a>Руководство по Интеграция Azure Active Directory с Proxyclick
 
@@ -51,7 +51,7 @@ ms.locfileid: "58578345"
 
 Чтобы настроить интеграцию Proxyclick с Azure AD, необходимо добавить Proxyclick из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Proxyclick из коллекции, сделайте следующее.**
+**Чтобы добавить Proxyclick из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "58578345"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Proxyclick](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://saml.proxyclick.com/init/<companyId>`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://saml.proxyclick.com/init/<companyId>`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://saml.proxyclick.com/consume/<companyId>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://saml.proxyclick.com/consume/<companyId>`
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -216,7 +216,7 @@ ms.locfileid: "58578345"
 
 Чтобы пользователи Azure AD могли выполнять вход в Proxyclick, они должны быть подготовлены для Proxyclick. В случае с Proxyclick подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
+**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
 
 1. Выполните вход на корпоративный сайт Proxyclick в качестве администратора.
 
@@ -248,9 +248,9 @@ ms.locfileid: "58578345"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

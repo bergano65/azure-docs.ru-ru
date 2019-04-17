@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Silverback | Документы Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Silverback | Документы Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Silverback.
 services: active-directory
 documentationCenter: na
@@ -15,37 +15,37 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 1a104da9ecb28d2109e82056995ef7a8048eafe2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: d02ec23e7e6ce936fdbcce63d1394e3a8681c65b
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57838754"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59268642"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-silverback"></a>Руководство. Интеграция Azure Active Directory с Silverback
+# <a name="tutorial-azure-active-directory-integration-with-silverback"></a>Руководство по Интеграция Azure Active Directory с Silverback
 
 В этом руководстве описано, как интегрировать Silverback с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Silverback обеспечивает следующие преимущества:
 
 * С помощью Azure AD вы можете контролировать доступ к Silverback.
-* Можно включить пользователей требуется автоматически войти в систему для Silverback (единый вход) с учетной записью Azure AD.
+* Вы можете включить автоматический вход пользователей в Silverback (единый вход) с помощью учетной записи Azure AD.
 * Вы можете управлять учетными записями централизованно на портале Azure.
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Silverback, вам потребуется следующее:
 
 * подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
-* Silverback единого входа — подписка с поддержкой
+* подписка Silverback с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Поддерживает silverback **SP** единый вход
+* Silverback поддерживает единый вход, инициированный **поставщиком услуг**.
 
 ## <a name="adding-silverback-from-the-gallery"></a>добавление Silverback из коллекции;
 
@@ -71,25 +71,25 @@ ms.locfileid: "57838754"
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка Azure AD единого входа с Silverback, в зависимости от тестового пользователя **пользователя Britta Simon**.
-Для единого входа для работы необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Silverback.
+В этом разделе описана настройка и проверка единого входа Azure AD в Silverback с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Silverback.
 
 Чтобы настроить и проверить единый вход Azure AD в Silverback, вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка Silverback единого входа](#configure-silverback-single-sign-on)**  — Настройка параметров единого входа на стороне приложения.
+2. **[Настройка единого входа в Silverback](#configure-silverback-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя Silverback](#create-silverback-test-user)**  — требуется для создания пользователя Britta Simon в Silverback, связанного с одноименным пользователем в Azure AD.
+5. **[Создание тестового пользователя Silverback](#create-silverback-test-user)** требуется для того, чтобы в приложении Silverback существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
 В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-Чтобы настроить Azure AD единого входа в Silverback, выполните следующие действия.
+Чтобы настроить единый вход Azure AD в Silverback, сделайте следующее:
 
-1. В [портала Azure](https://portal.azure.com/)на **Silverback** странице интеграции с приложением, выберите **единого входа**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Silverback** выберите **Единый вход**.
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
@@ -105,11 +105,11 @@ ms.locfileid: "57838754"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Silverback](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YOURSILVERBACKURL>.com/ssp`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YOURSILVERBACKURL>.com/ssp`
 
-    2. В поле **Идентификатор** введите URL-адрес в следующем формате: `<YOURSILVERBACKURL>.com`.
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `<YOURSILVERBACKURL>.com`
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<YOURSILVERBACKURL>.com/sts/authorize/login`.
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<YOURSILVERBACKURL>.com/sts/authorize/login`
 
     > [!NOTE]
     > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Silverback](mailto:helpdesk@matrix42.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -118,9 +118,9 @@ ms.locfileid: "57838754"
 
     ![Ссылка для скачивания сертификата](common/copy-metadataurl.png)
 
-### <a name="configure-silverback-single-sign-on"></a>Настройка Silverback единого входа
+### <a name="configure-silverback-single-sign-on"></a>Настройка единого входа Silverback
 
-1. В другой браузер, войдите на ваш сервер Silverback с правами администратора.
+1. Войдите в свой сервер Silverback от имени администратора в другом браузере.
 
 2. Перейдите к разделу **Admin** > **Authentication Provider** (Администрирование > Поставщик проверки подлинности).
 
@@ -130,7 +130,7 @@ ms.locfileid: "57838754"
 
     a.  Выберите **Import from URL** (Импорт из URL-адреса).
 
-    2.  Вставьте скопированный URL-адрес метаданных и нажмите кнопку **ОК**.
+    b.  Вставьте скопированный URL-адрес метаданных и нажмите кнопку **ОК**.
 
     c.  После того как значения заполнятся автоматически, нажмите **ОК** для подтверждения.
 
@@ -175,7 +175,7 @@ ms.locfileid: "57838754"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Silverback.
 
-1. На портале Azure выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **Silverback**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Silverback**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -201,7 +201,7 @@ ms.locfileid: "57838754"
 
 Чтобы пользователи Azure AD могли выполнять вход в Silverback, они должны быть подготовлены в Silverback. В Silverback подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
+**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
 
 1. Войдите на сервер Silverback с правами администратора.
 
@@ -213,7 +213,7 @@ ms.locfileid: "57838754"
 
     a. В текстовое поле **Username** (Имя пользователя) введите имя пользователя, например **Britta Simon**.
 
-    2. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
+    b. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
@@ -232,13 +232,13 @@ ms.locfileid: "57838754"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Когда вы нажмете плитку Silverback на панели доступа, вы автоматически войдете Silverback, для которого настраивается единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Silverback на Панели доступа, вы автоматически войдете в приложение Silverback, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

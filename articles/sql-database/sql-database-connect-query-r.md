@@ -11,13 +11,13 @@ author: dphansen
 ms.author: davidph
 ms.reviewer: ''
 manager: cgronlun
-ms.date: 03/01/2019
-ms.openlocfilehash: e15cf93514f921223fea37aa480730bba46dd195
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 04/04/2019
+ms.openlocfilehash: f5d43794ba80e4791c8bf24ad404069a8329518e
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57864955"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59051229"
 ---
 # <a name="quickstart-use-machine-learning-services-with-r-in-azure-sql-database-preview"></a>Краткое руководство. Использование Служб машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия)
 
@@ -98,7 +98,8 @@ GRANT EXECUTE ANY EXTERNAL SCRIPT TO <username>
     b <- 2
     c <- a/b
     d <- a*b
-    print(c, d)'
+    print(c(c, d))
+    '
     ```
 
 2. С учетом того, что все настроено правильно, вычисляется корректный результат, а функция R `print`возвращает результат в окне **Сообщения**.
@@ -519,8 +520,8 @@ GRANT EXECUTE ANY EXTERNAL SCRIPT TO <username>
 
 Дополнительные сведения о Службах машинного обучения содержатся в указанных ниже статьях. Хотя некоторые из этих статьей предназначены для SQL Server, большая часть информации также применима к Службам машинного обучения (с использованием R) в Базе данных SQL Azure.
 
-- [Machine Learning Services (with R) in Azure SQL Database (preview)](sql-database-machine-learning-services-overview.md) (Службы машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия))
+- [Machine Learning Services (with R) in Azure SQL Database (preview) (Службы машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия)](sql-database-machine-learning-services-overview.md)
 - [Службы машинного обучения SQL Server](https://docs.microsoft.com/sql/advanced-analytics/what-is-sql-server-machine-learning)
-- [Руководство Анализ данных R для разработчиков SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/sqldev-in-database-r-for-sql-developers)
-- [Комплексное пошаговое руководство по обработке и анализу данных для R и SQL Server](https://docs.microsoft.com/sql/advanced-analytics/tutorials/walkthrough-data-science-end-to-end-walkthrough)
-- [Руководство Use RevoScaleR R functions with SQL Server data](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-data-science-deep-dive-using-the-revoscaler-packages) (Руководство. Использование функций R RevoScaleR с данными SQL Server)
+- [Руководство по Learn in-database analytics using R in SQL Server (Руководство по изучению аналитики в базе данных с помощью R в SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/tutorials/sqldev-in-database-r-for-sql-developers)
+- [End-to-end data science walkthrough for R and SQL Server (Комплексное пошаговое руководство по обработке и анализу данных для R и SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/tutorials/walkthrough-data-science-end-to-end-walkthrough)
+- [Руководство по Use RevoScaleR R functions with SQL Server data (Руководство. Использование функций R RevoScaleR с данными SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-data-science-deep-dive-using-the-revoscaler-packages)

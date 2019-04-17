@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 89a45bb9c291a426c08a403f1fa588f9831798a3
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.openlocfilehash: 22f56fb44737bab30b113e3afe6b8ba21518330d
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58849461"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59262335"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-redvector"></a>Руководство по Интеграция Azure Active Directory с RedVector
 
@@ -51,7 +51,7 @@ ms.locfileid: "58849461"
 
 Чтобы настроить интеграцию RedVector с Azure AD, необходимо добавить RedVector из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить RedVector из коллекции, выполните следующие действия.**
+**Чтобы добавить RedVector из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "58849461"
 
     ![Сведения о домене и URL-адресах единого входа для приложения RedVector](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://sso2.redvector.com/adfs/<Companyname>`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://sso2.redvector.com/adfs/<Companyname>`
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<Companyname>.redvector.com/saml2`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<Companyname>.redvector.com/saml2`
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов RedVector](mailto:sso@redvector.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -192,9 +192,9 @@ ms.locfileid: "58849461"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

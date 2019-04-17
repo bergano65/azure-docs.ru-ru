@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 5dc1451d75b14c89fd9fa1742c3e0b078b035d7f
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: d3459f7bcfc0e2e61cb55b38a05b7b6a21ea3e9e
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58361852"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59283517"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-te-express"></a>Руководство по Интеграция Azure Active Directory с T&E Express
 
@@ -105,9 +105,9 @@ ms.locfileid: "58361852"
 
     ![Сведения о домене и URL-адресах единого входа для приложения T&E Express](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите значение в виде URL-адреса в следующем формате: `https://<domain>.tyeexpress.com`.
+    a. В текстовом поле **Идентификатор** введите значение в виде URL-адреса в формате `https://<domain>.tyeexpress.com`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<domain>.tyeexpress.com/authorize/samlConsume.aspx`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<domain>.tyeexpress.com/authorize/samlConsume.aspx`
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Мы рекомендуем использовать уникальное значение строки идентификатора. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов T&E Express](http://www.tyeexpress.com/contacto.aspx). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -221,9 +221,9 @@ ms.locfileid: "58361852"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

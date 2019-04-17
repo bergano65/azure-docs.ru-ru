@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: quickstart
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: carlr
+ms.reviewer: sstein, carlr
 manager: craigg
 ms.date: 03/25/2019
-ms.openlocfilehash: 08b7870000b38d782e9282eef7ec9c0d551094dd
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 739afe52403633b1a37f57f0005a85972cc78a39
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58444320"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59360172"
 ---
 # <a name="getting-started-with-azure-sql-database-managed-instance"></a>Начало работы с управляемым экземпляром Базы данных SQL Azure
 
@@ -66,7 +66,7 @@ ms.locfileid: "58444320"
  Если вы не создавали сетевую среду, как описано на предыдущем шаге, портал Azure может сделать это за вас. Единственным недостатком является то, что сетевая среда будет настроена с некоторыми параметрами по умолчанию, которые невозможно впоследствии изменить. В качестве альтернативы можно использовать:
 
 - [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md)
-- [PowerShell с шаблоном Resource Manager](scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md);
+- [PowerShell с шаблоном Resource Manager;](scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md)
 - [Azure CLI](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/11/14/create-azure-sql-managed-instance-using-azure-cli/).
 - [Шаблон Resource Manager](sql-database-single-database-get-started-template.md)
 

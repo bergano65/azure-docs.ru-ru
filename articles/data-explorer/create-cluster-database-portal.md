@@ -1,25 +1,24 @@
 ---
 title: Краткое руководство. Создание кластера и базы данных Azure Data Explorer
 description: В этом кратком руководстве вы узнаете, как создать кластер и базу данных обозревателя данных Azure и принять (загрузить) данные.
-services: data-explorer
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
-ms.date: 3/25/2019
-ms.openlocfilehash: aa98fb8f9569282e9636d5cb593523b9642395e1
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.date: 03/25/2019
+ms.openlocfilehash: 41a15a29798953cb32029b7c4d1167020074e49f
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58758627"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59046042"
 ---
 # <a name="quickstart-create-an-azure-data-explorer-cluster-and-database"></a>Краткое руководство. Создание кластера и базы данных Azure Data Explorer
 
 > [!div class="op_single_selector"]
-> * [Портал](create-cluster-database-portal.md)
-> * [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](create-cluster-database-cli.md)
+> * [Microsoft Azure](create-cluster-database-portal.md)
+> * [Интерфейс командной строки](create-cluster-database-cli.md)
 > * [PowerShell](create-cluster-database-powershell.md)
 > * [C#](create-cluster-database-csharp.md)
 > * [Python](create-cluster-database-python.md)
@@ -55,7 +54,7 @@ ms.locfileid: "58758627"
     | Подписка | Ваша подписка | Выберите подписку Azure, которую вы хотите использовать для кластера.|
     | Группа ресурсов | *test-resource-group* | Воспользуйтесь существующей группой ресурсов или создайте новую. |
     | Имя кластера | Уникальное имя кластера | Выберите уникальное имя для кластера. Например, *mydataexplorercluster*. К введенному имени кластера добавляется имя домена *[region].kusto.windows.net*. Имя должно содержать только строчные буквы и цифры. Его длина должна составлять от 3 до 22 символов.
-    | Расположение | *Западная часть США* | Выберите *Западная часть США* для этого краткого руководства. Для производственной системы выберите регион, лучше всего соответствующий вашим потребностям.
+    | Расположение | *Запад США* | Выберите *Западная часть США* для этого краткого руководства. Для производственной системы выберите регион, лучше всего соответствующий вашим потребностям.
     | Спецификации вычислительных ресурсов | *D13_v2* | Для этого краткого руководства выберите спецификацию с наименьшей ценой. Для производственной системы выберите спецификацию, лучше всего соответствующую вашим потребностям.
     | | |
 
@@ -123,6 +122,6 @@ ms.locfileid: "58758627"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Краткое руководство Прием данных из концентратора событий в Azure Data Explorer](ingest-data-event-hub.md)
+> [Краткое руководство. Прием данных из концентратора событий в Azure Data Explorer](ingest-data-event-hub.md)
 
 

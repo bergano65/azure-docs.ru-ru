@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/17/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73bb37607af681fcd505706ae99b308024be2c2d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ab329574ef425e8133ac746c185050efcc8bc15a
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57887431"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59261451"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-netsuite"></a>Руководство по Интеграция Azure Active Directory с NetSuite
 
@@ -53,7 +53,7 @@ ms.locfileid: "57887431"
 
 Чтобы настроить интеграцию NetSuite с Azure AD, нужно добавить NetSuite из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить NetSuite из коллекции, выполните следующие действия:**
+**Чтобы добавить NetSuite из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -173,19 +173,19 @@ ms.locfileid: "57887431"
 
 1. Откройте новую вкладку в браузере и войдите как администратор корпоративного сайта NetSuite.
 
-2. На панели инструментов в верхней части страницы щелкните  **Установка**, перейдите в раздел  **Компания** и щелкните **Enable Features** (Включить компоненты).
+2. На панели инструментов в верхней части страницы щелкните **Настройка**, перейдите в раздел **Компания** и щелкните **Включить компоненты**.
 
     ![Настройка единого входа](./media/NetSuite-tutorial/ns-setupsaml.png)
 
-3. На панели инструментов в средней части страницы щелкните  **SuiteCloud**.
+3. На панели инструментов в средней части страницы щелкните **SuiteCloud**.
 
     ![Настройка единого входа](./media/NetSuite-tutorial/ns-suitecloud.png)
 
-4. В разделе  **Manage Authentication** (Управление проверкой подлинности) выберите **Единый вход SAML** для включения единого входа SAML в NetSuite.
+4. В разделе **Manage Authentication** (Управление проверкой подлинности) выберите **Единый вход SAML** для включения единого входа SAML в NetSuite.
 
     ![Настройка единого входа](./media/NetSuite-tutorial/ns-ticksaml.png)
 
-5. На панели инструментов в верхней части страницы щелкните **Установка**.
+5. На панели инструментов в верхней части страницы щелкните **Настройка**.
 
     ![Настройка единого входа](./media/NetSuite-tutorial/ns-setup.png)
 
@@ -279,7 +279,7 @@ ms.locfileid: "57887431"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -330,5 +330,5 @@ ms.locfileid: "57887431"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Руководство по настройке Google Apps для автоматической подготовки пользователей](NetSuite-provisioning-tutorial.md)
+- [Настройка подготовки пользователей](NetSuite-provisioning-tutorial.md)
 

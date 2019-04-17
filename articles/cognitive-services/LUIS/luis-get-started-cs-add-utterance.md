@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 12/17/2018
+ms.date: 04/08/2019
 ms.author: diberry
-ms.openlocfilehash: dd60897d19ef4de7369b2b127c88e778363a387f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: e9f8d274d81cdefbf9dfb41708cd537b2d60471a
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57852284"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59273470"
 ---
 # <a name="quickstart-change-model-using-c"></a>Краткое руководство. Изменение модели с помощью C#
 
@@ -37,13 +37,13 @@ ms.locfileid: "57852284"
 
 ## <a name="create-quickstart-code"></a>Создание простого примера кода 
 
-В Visual Studio создайте **классическое консольное приложение для Windows** на платформе .NET Framework. 
+В Visual Studio создайте **классическое консольное приложение для Windows** на платформе .NET Framework. Присвойте проекту имя `ConsoleApp1`.
 
 ![Тип проекта Visual Studio](./media/luis-quickstart-cs-add-utterance/vs-project-type.png)
 
 ### <a name="add-the-systemweb-dependency"></a>Добавление зависимости System.Web
 
-Проекту Visual Studio требуется зависимость **System.Web**. В обозревателе решений щелкните правой кнопкой мыши **Ссылки** и выберите **Добавить ссылку**.
+Проекту Visual Studio требуется зависимость **System.Web**. В обозревателе решений щелкните правой кнопкой мыши **Ссылки** и выберите **Добавить ссылку** в разделе "Сборки".
 
 ![Добавление ссылки на System.web](./media/luis-quickstart-cs-add-utterance/system.web.png)
 
@@ -64,7 +64,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp3
+namespace ConsoleApp1
 {
     class Program
     {
@@ -75,7 +75,7 @@ namespace ConsoleApp3
 }
 ```
 
-Добавьте зависимости.
+Обновите зависимости таким образом:
 
    [!code-csharp[Add the dependencies](~/samples-luis/documentation-samples/quickstarts/change-model/csharp/ConsoleApp1/Program.cs?range=1-11 "Add the dependencies")]
 
@@ -115,7 +115,7 @@ namespace ConsoleApp3
 
 ### <a name="copy-utterancesjson-to-output-directory"></a>Копирование файла utterances.json в выходной каталог
 
-В обозревателе решений щелкните правой кнопкой мыши `utterances.json` и выберите **Свойства**. В окне свойств параметр **Действие при построении** должен иметь значение `Content`, а параметр **Копировать в выходной каталог** — значение `Copy Always`.  
+В обозревателе решений добавьте файл `utterances.json`: щелкните правой кнопкой мыши имя проекта в обозревателе решений, выберите **Добавить** и **Существующий элемент**. Выберите файл `utterances.json`. Файл будет добавлен в проект. Затем его нужно добавить в выходной каталог. Щелкните правой кнопкой мыши файл `utterances.json` и выберите **Свойства**. В окне свойств параметр **Действие при построении** должен иметь значение `Content`, а параметр **Копировать в выходной каталог** — значение `Copy Always`.  
 
 ![Пометка файла JSON как содержимого](./media/luis-quickstart-cs-add-utterance/content-properties.png)
 
@@ -128,7 +128,7 @@ namespace ConsoleApp3
 Запустите приложение с помощью командной строки из каталога /bin/Debug. 
 
 ```console
-ConsoleApp\bin\Debug> ConsoleApp1.exe --add utterances.json --train --status
+ConsoleApp1.exe --add utterances.json --train --status
 ```
 
 Эта командная строка отображает результаты вызова API добавления фраз. 

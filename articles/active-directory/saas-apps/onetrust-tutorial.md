@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с OneTrust Privacy Management Software | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с OneTrust Privacy Management Software | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и OneTrust Privacy Management Software.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: f65bb7506b112828a49f9410f4790932f0abbfbc
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 490ef95e061da4a008bf50ef664aaa379d5b3062
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58177540"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59258833"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-onetrust-privacy-management-software"></a>Руководство. Интеграция Azure Active Directory с OneTrust Privacy Management Software
+# <a name="tutorial-azure-active-directory-integration-with-onetrust-privacy-management-software"></a>Руководство по Интеграция Azure Active Directory с OneTrust Privacy Management Software
 
 В этом руководстве описано, как интегрировать OneTrust Privacy Management Software с Azure Active Directory (Azure AD).
 Интеграция OneTrust Privacy Management Software с Azure AD обеспечивает следующие преимущества.
@@ -53,7 +53,7 @@ ms.locfileid: "58177540"
 
 Чтобы настроить интеграцию OneTrust Privacy Management Software с Azure AD, необходимо добавить OneTrust Privacy Management Software из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить OneTrust Privacy Management Software из коллекции, выполните следующее.**
+**Чтобы добавить OneTrust Privacy Management Software из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -109,7 +109,7 @@ ms.locfileid: "58177540"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://www.onetrust.com/saml2`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.onetrust.com/auth/consumerservice`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.onetrust.com/auth/consumerservice`
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -204,9 +204,9 @@ ms.locfileid: "58177540"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

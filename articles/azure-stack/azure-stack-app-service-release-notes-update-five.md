@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: anwestg
 ms.reviewer: ''
-ms.openlocfilehash: 851673de4a711f5eb64228233ea7703ef86bfa7b
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: 192ac256f013498e57ecf7939d29796af073b948
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58500208"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59260567"
 ---
 # <a name="app-service-on-azure-stack-update-5-release-notes"></a>Служба приложений в заметках о выпуске обновления 5 для Azure Stack
 
@@ -72,12 +72,12 @@ ms.locfileid: "58500208"
   - Kudu обновлено до версии 79.20129.3767.
   
 - **Обновления базовой операционной системы всех ролей**.
-  - [Накопительное обновление 64-разрядных систем Windows Server 2016 от февраля 2019 г. (KB4487006)](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006)
+  - [Накопительное обновление для 64-разрядных систем Windows Server 2016 от февраля 2019 года (KB4487006)](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006)
 
 ### <a name="post-deployment-steps"></a>Действия, выполняемые после развертывания
 
 > [!IMPORTANT]  
-> Если вы указали план восстановления Службы приложений с помощью экземпляра SQL Always On, [к группе доступности необходимо добавить базы данных appservice_hosting и appservice_metering](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database), а затем синхронизировать эти базы данных, чтобы избежать прекращения работы службы в случае отработки отказа.
+> Если вы указали поставщик ресурсов Службы приложений с помощью экземпляра SQL Always On, [к группе доступности необходимо добавить базы данных appservice_hosting и appservice_metering](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/availability-group-add-a-database), а затем синхронизировать эти базы данных, чтобы избежать прекращения работы службы в случае отработки отказа.
 
 ### <a name="post-update-steps"></a>Действия после обновления
 

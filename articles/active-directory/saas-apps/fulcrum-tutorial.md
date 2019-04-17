@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Fulcrum | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Fulcrum | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Fulcrum.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
-ms.openlocfilehash: 917ad5a97932bc6eefbbd20c0df4981eb30095d7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 040413f2e0daccc04921f32199a3c75e8d38310e
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57902813"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59267368"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-fulcrum"></a>Руководство. Интеграция Azure Active Directory с Fulcrum
+# <a name="tutorial-azure-active-directory-integration-with-fulcrum"></a>Руководство по Интеграция Azure Active Directory с Fulcrum
 
 В этом учебнике описано, как интегрировать Fulcrum с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Fulcrum обеспечивает следующие преимущества:
@@ -52,7 +52,7 @@ ms.locfileid: "57902813"
 
 Чтобы настроить интеграцию Fulcrum с Azure AD, необходимо добавить Fulcrum из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Fulcrum из коллекции, выполните следующие действия.**
+**Чтобы добавить Fulcrum из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -117,7 +117,7 @@ ms.locfileid: "57902813"
     > [!NOTE]
     > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь к [группе поддержки клиентов Fulcrum](mailto:support@fulcrumapp.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-6. Приложение Fulcrum ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя**.
+6. Приложение Fulcrum ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
 
     ![изображение](common/edit-attribute.png)
 
@@ -228,9 +228,9 @@ ms.locfileid: "57902813"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 392dd39e2b3b0e26e7b0ba645bf5a70231167ad5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 71970a74817665c97a9522fbc9a68dd3834252b9
+ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58014404"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59616362"
 ---
 # <a name="monitoring-and-troubleshooting-from-hana-side"></a>Мониторинг и устранение неполадок со стороны HANA
 
@@ -108,7 +108,7 @@ ms.locfileid: "58014404"
 
 ## <a name="storage"></a>Хранилище
 
-С точки зрения конечного пользователя при наличии проблем с производительностью операций ввода-вывода приложение (либо система в целом) работает медленно, не отвечает или может даже зависнуть. На вкладке **Volumes** (Тома) в SAP HANA Studio отображаются подключенные тома, а также то, какие тома использует каждая служба.
+С точки зрения конечного пользователя приложения (или системы в целом) работает медленно, не отвечает или даже может показаться перестает отвечать на запросы при возникновении проблем с производительностью операций ввода-вывода. На вкладке **Volumes** (Тома) в SAP HANA Studio отображаются подключенные тома, а также то, какие тома использует каждая служба.
 
 ![На вкладке Volumes (Тома) в SAP HANA Studio отображаются подключенные тома, а также то, какие тома использует каждая служба](./media/troubleshooting-monitoring/image5-volumes-tab-a.png)
 

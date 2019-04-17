@@ -7,12 +7,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 03/04/2019
 ms.author: zhshang
-ms.openlocfilehash: b2f89d3fbb427cc3e14be231d4ffae879e641f2c
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 9e4e64b99a69e523547bae04146c7460d08bc1df
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57554905"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59261179"
 ---
 # <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-java"></a>Краткое руководство. Создание комнаты чата с помощью служб "Функции Azure" и SignalR с использованием Java
 
@@ -58,18 +58,18 @@ ms.locfileid: "57554905"
 
     ![Создание службы SignalR](media/signalr-quickstart-azure-functions-javascript/signalr-quickstart-keys.png)
 
-1. В редакторе кода откройте папку *chat/src/java* из клонированного репозитория.
+1. В редакторе кода откройте папку *src/chat/java* из клонированного репозитория.
 
 1. Переименуйте *local.settings.sample.json* на *local.settings.json*.
 
 1. В файл **local.settings.json** вставьте строку подключения как значение параметра **AzureSignalRConnectionString**. Сохраните файл.
 
-1. Основной файл, содержащий функции, находится в *src/main/java/com/function/Functions.java*.
+1. Основной файл, содержащий функции, находится по такому пути: *src/chat/java/src/main/java/com/function/Functions.java*.
 
     - **Согласование** использует входную привязку *SignalRConnectionInfo* для генерации и возврата сведений о допустимом соединении.
     - **sendMessage** получает мгновенное сообщение в тексте запроса и использует выходную привязку *SignalR*, чтобы разослать сообщение всем подключенным клиентским приложениям.
 
-1. В терминале убедитесь, что вы находитесь в папке *чата/src/java*. Создайте приложение-функцию.
+1. В терминале убедитесь, что вы находитесь в папке *src/chat/java*. Создайте приложение-функцию.
 
     ```bash
     mvn clean package

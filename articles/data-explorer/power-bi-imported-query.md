@@ -1,19 +1,18 @@
 ---
-title: Краткое руководство. Визуализация данных с помощью запроса, импортированного в Power BI
+title: 'Краткое руководство. Визуализация данных из Azure Data Explorer в Power BI с помощью импортированного запроса '
 description: В этом кратком руководстве описано, как использовать один из трех способов визуализации данных в Power BI — импорт запроса из Azure Data Explorer.
-services: data-explorer
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 11/14/2018
-ms.openlocfilehash: 3251ae9f39ea38eac6887df3072257e1e8e88306
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: d14de1f25cc432cb2a9fed2149bd0870aa3ce16a
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58756108"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59050599"
 ---
 # <a name="quickstart-visualize-data-using-a-query-imported-into-power-bi"></a>Краткое руководство. Визуализация данных с помощью запроса, импортированного в Power BI
 
@@ -31,7 +30,7 @@ Azure Data Explorer поддерживает три варианта подкл�
 
 * [Power BI Desktop](https://powerbi.microsoft.com/get-started/) (выберите **Скачать бесплатно**);
 
-* [классическое приложение Azure Data Explorer](/azure/kusto/tools/kusto-explorer).
+* [классическое приложение Azure Data Explorer.](/azure/kusto/tools/kusto-explorer)
 
 ## <a name="get-data-from-azure-data-explorer"></a>Получение данных из Azure Data Explorer
 
@@ -84,4 +83,4 @@ Azure Data Explorer поддерживает три варианта подкл�
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Краткое руководство Визуализация данных с помощью запроса, импортированного в Power BI](power-bi-sql-query.md)
+> [Краткое руководство. Визуализация данных с помощью соединителя Azure Data Explorer для Power BI](power-bi-sql-query.md)

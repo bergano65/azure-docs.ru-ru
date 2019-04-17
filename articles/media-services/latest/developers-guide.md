@@ -16,12 +16,12 @@ ms.workload: media
 ms.date: 03/20/2019
 ms.author: juliako
 ms.custom: ''
-ms.openlocfilehash: 774ddfa435cb23a8bf5d179fb0f7a0baf9dfca75
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 4f9911259cc4da02429971ef6bddfa62080a9fe6
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58755893"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59044412"
 ---
 # <a name="start-developing-with-media-services-v3-api-using-sdkstools"></a>Начало разработки с использованием API Служб мультимедиа версии 3 с помощью пакетов SDK и служб
 
@@ -29,12 +29,15 @@ ms.locfileid: "58755893"
 
 В этом разделе приведены ссылки на пакеты SDK, инструменты, документацию. Здесь также предоставлена некоторая полезная информация о различных ENV-файлах для разработки.
 
+> [!NOTE]
+> Пакеты SDK для Служб мультимедиа Azure версии 3 могут не обеспечивать нужную безопасность для потоков. При разработке приложений с несколькими потоками вам следует добавить собственную логику синхронизации потоков, чтобы защитить клиент, или использовать новый объект AzureMediaServicesClient для каждого потока. Также помните, что предоставляемые кодом клиенту дополнительные объекты (например, экземпляр HttpClient в .NET) могут создавать проблемы при обработке нескольких потоков.
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы начать разработку с использованием Служб мультимедиа, вам потребуется:
 
 - Активная подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
-- [Learn about fundamental concepts](concepts-overview.md) (Основные понятия служб мультимедиа)
+- [Основные понятия служб мультимедиа](concepts-overview.md)
 - [Создание учетной записи Служб мультимедиа с помощью CLI](create-account-cli-how-to.md)
 
 ## <a name="start-developing-with-sdks"></a>Начало разработки с использованием пакетов SDK

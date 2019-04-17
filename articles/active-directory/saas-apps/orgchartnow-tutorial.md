@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: d34b40195a5f8effb794f3fbefc7949740509e27
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: cc2bbd0c1220a37de640bde6294eb096b25e5398
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57835669"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59258204"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-orgchart-now"></a>Руководство по Интеграция Azure Active Directory с OrgChart Now
 
@@ -28,24 +28,24 @@ ms.locfileid: "57835669"
 Интеграция Azure AD с приложением OrgChart Now обеспечивает следующие преимущества.
 
 * C помощью Azure AD вы можете контролировать доступ к OrgChart Now.
-* Можно включить пользователей требуется автоматически войти в систему в OrgChart Now (единый вход) с учетной записью Azure AD.
+* Вы можете включить автоматический вход пользователей в OrgChart Now (единый вход) с помощью учетных записей Azure Active Directory.
 * Вы можете управлять учетными записями централизованно на портале Azure.
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с OrgChart Now, вам потребуется:
 
 * подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
-* OrgChart Now единого входа — подписка с поддержкой
+* подписка OrgChart Now с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Приложение OrgChart Now поддерживает **SP** и **IDP** единый вход
+* OrgChart Now поддерживает единый вход, инициированный **поставщиком услуг** и **поставщиком удостоверений**.
 
 ## <a name="adding-orgchart-now-from-the-gallery"></a>Добавление OrgChart Now из коллекции.
 
@@ -71,25 +71,25 @@ ms.locfileid: "57835669"
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка Azure AD единого входа с OrgChart Now использованием тестового пользователя **пользователя Britta Simon**.
-Для единого входа для работы необходимо установить связь между пользователем Azure AD и соответствующим пользователем в OrgChart Now.
+В этом разделе описана настройка и проверка единого входа Azure Active Directory в OrgChart Now с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure Active Directory и соответствующим пользователем в OrgChart Now.
 
 Чтобы настроить и проверить единый вход Azure AD в OrgChart Now, вам потребуется выполнить действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка OrgChart теперь единого входа](#configure-orgchart-now-single-sign-on)**  — Настройка параметров единого входа на стороне приложения.
+2. **[Настройка единого входа в OrgChart Now](#configure-orgchart-now-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя OrgChart Now](#create-orgchart-now-test-user)**  — требуется для создания пользователя Britta Simon в OrgChart Now, связанного с одноименным пользователем в Azure AD.
+5. **[Создание тестового пользователя OrgChart Now](#create-orgchart-now-test-user)** требуется для того, чтобы в приложении OrgChart Now существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure Active Directory.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
 В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-Чтобы настроить Azure AD единый вход в OrgChart Now, выполните следующие действия.
+Чтобы настроить единый вход Azure Active Directory в OrgChart Now, сделайте следующее.
 
-1. В [портала Azure](https://portal.azure.com/)на **OrgChart Now** странице интеграции с приложением, выберите **единого входа**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **OrgChart Now** выберите **Единый вход**.
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
@@ -114,13 +114,13 @@ ms.locfileid: "57835669"
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://sso2.orgchartnow.com/Shibboleth.sso/Login?entityID=<YourEntityID>&target=https://sso2.orgchartnow.com`.
 
     > [!NOTE]
-    > `<YourEntityID>` — **Azure AD идентификатор** копируются **Настройка OrgChart Now** раздела, описанные далее в этом руководстве.
+    > `<YourEntityID>` это **идентификатор Azure AD**. Его можно скопировать из раздела **Настройка OrgChart Now**, как описывается далее в этом учебнике.
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-7. На **Настройка OrgChart Now** скопируйте соответствующий URL-адреса в соответствии с вашим требованиям.
+7. Требуемый URL-адрес можно скопировать из раздела **Настройка OrgChart Now**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -130,9 +130,9 @@ ms.locfileid: "57835669"
 
     c. URL-адрес выхода.
 
-### <a name="configure-orgchart-now-single-sign-on"></a>Настройка OrgChart Now единого входа
+### <a name="configure-orgchart-now-single-sign-on"></a>Настройка единого входа в OrgChart Now
 
-Чтобы настроить единый вход на **OrgChart Now** стороны, нужно отправить Скачанный **XML-ФАЙЛ метаданных федерации** и соответствующие URL-адреса приложения, скопированный с портала Azure, чтобы [службу поддержки OrgChart Now ](mailto:ocnsupport@officeworksoftware.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **OrgChart Now**, вам необходимо отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки OrgChart Now](mailto:ocnsupport@officeworksoftware.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -163,7 +163,7 @@ ms.locfileid: "57835669"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к OrgChart Now.
 
-1. На портале Azure выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **OrgChart Now**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **OrgChart Now**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -195,7 +195,7 @@ ms.locfileid: "57835669"
 
     ![Группы OrgChart Now](./media/orgchartnow-tutorial/tutorial_orgchartnow_manage.png)    
 
-    2. Щелкните значок **Add** (Добавить) и назовите группу **Общие**, а затем нажмите кнопку **ОК**. 
+    b. Щелкните значок **Add** (Добавить) и назовите группу **Общие**, а затем нажмите кнопку **ОК**. 
 
     ![Добавление OrgChart Now](./media/orgchartnow-tutorial/tutorial_orgchartnow_add.png)
 
@@ -211,7 +211,7 @@ ms.locfileid: "57835669"
 
     a. Войдите в OrgChart Now с правами администратора безопасности.
 
-    2.  Щелкните **Settings** (Параметры) в верхнем правом углу, а затем выберите **Manage Users** (Управление пользователями).
+    b.  Щелкните **Settings** (Параметры) в верхнем правом углу, а затем выберите **Manage Users** (Управление пользователями).
 
     ![Параметры OrgChart Now](./media/orgchartnow-tutorial/tutorial_orgchartnow_settings.png)
 
@@ -219,9 +219,9 @@ ms.locfileid: "57835669"
 
     ![Управление OrgChart Now](./media/orgchartnow-tutorial/tutorial_orgchartnow_manageusers.png)
 
-    * В **идентификатор пользователя** текстовом поле введите идентификатор пользователя, например **brittasimon\@contoso.com**.
+    * В текстовом поле **Идентификатор пользователя** введите идентификатор пользователя (**brittasimon\@contoso.com**).
 
-    * В **адрес электронной почты** текста введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
+    * В текстовом поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
     * Щелкните **Добавить**.
 
@@ -229,13 +229,13 @@ ms.locfileid: "57835669"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку OrgChart Now на панели доступа, вы автоматически войдете OrgChart Now, для которого настраивается единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку OrgChart Now на Панели доступа, вы автоматически войдете в приложение OrgChart Now, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

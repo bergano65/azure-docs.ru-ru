@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: c5e9ccfa3c179aea190028ba5f97086186b70a02
-ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
+ms.openlocfilehash: 0ce92abda9652351712f086ab24aff8575d84c8d
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58407578"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59271583"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-performancecentre"></a>Руководство по Интеграция Azure Active Directory с PerformanceCentre
 
@@ -51,7 +51,7 @@ ms.locfileid: "58407578"
 
 Чтобы настроить интеграцию PerformanceCentre с Azure AD, вам потребуется добавить PerformanceCentre из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить PerformanceCentre из коллекции, выполните следующие действия.**
+**Чтобы добавить PerformanceCentre из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "58407578"
 
     ![Сведения о домене и URL-адресах единого входа приложения PerformanceCentre](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `http://<companyname>.performancecentre.com/saml/SSO`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `http://<companyname>.performancecentre.com/saml/SSO`
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `http://<companyname>.performancecentre.com`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `http://<companyname>.performancecentre.com`
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов PerformanceCentre](https://www.performancecentre.com/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -205,7 +205,7 @@ ms.locfileid: "58407578"
 
 Цель этого раздела — создать пользователя с именем Britta Simon в PerformanceCentre.
 
-**Чтобы создать пользователя с именем Britta Simon в PerformanceCentre, выполните следующие действия.**
+**Чтобы создать пользователя с именем Britta Simon в PerformanceCentre, выполните следующие действия:**
 
 1. Войдите на корпоративный сайт PerformanceCentre с правами администратора.
 
@@ -234,9 +234,9 @@ ms.locfileid: "58407578"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

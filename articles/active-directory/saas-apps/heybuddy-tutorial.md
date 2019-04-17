@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с HeyBuddy | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с HeyBuddy | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и HeyBuddy.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88fa7ace6427a14dc167a46eba3076798114cff7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 850f5e3f96439e1fea0a77b94f2ed733cc451bdf
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57897730"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59267265"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-heybuddy"></a>Руководство. Интеграция Azure Active Directory с HeyBuddy
+# <a name="tutorial-azure-active-directory-integration-with-heybuddy"></a>Руководство по Интеграция Azure Active Directory с HeyBuddy
 
 В этом руководстве вы узнаете, как интегрировать Azure Active Directory (AAD) с приложением HeyBuddy.
 Интеграция Azure AD с приложением HeyBuddy обеспечивает следующие преимущества:
@@ -52,7 +52,7 @@ ms.locfileid: "57897730"
 
 Чтобы настроить интеграцию HeyBuddy с Azure AD, необходимо добавить HeyBuddy из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить HeyBuddy из коллекции, выполните следующие действия:**
+**Чтобы добавить HeyBuddy из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,9 +106,9 @@ ms.locfileid: "57897730"
 
     ![Сведения о домене и URL-адресах для единого входа в приложение HeyBuddy](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://api.heybuddy.com/auth/<ENTITY ID>`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://api.heybuddy.com/auth/<ENTITY ID>`
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `YourCompanyInstanceofHeyBuddy`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `YourCompanyInstanceofHeyBuddy`
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором (идентификатор сущности). Идентификатор `Entity ID` в URL-адресе входа автоматически создается для каждой организации. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов HeyBuddy](mailto:support@heybuddy.com).
@@ -219,8 +219,8 @@ ms.locfileid: "57897730"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

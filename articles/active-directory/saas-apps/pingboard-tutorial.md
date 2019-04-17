@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 45b542cb644666a6bf1df3dc76cbf54693330810
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: d69271f65c326237a380624d994d8f5339537114
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58438909"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59271124"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pingboard"></a>Руководство по Интеграция Azure Active Directory с Pingboard
 
@@ -109,7 +109,7 @@ ms.locfileid: "58438909"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `http://app.pingboard.com/sp`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<entity-id>.pingboard.com/auth/saml/consume`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<entity-id>.pingboard.com/auth/saml/consume`
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -247,10 +247,10 @@ ms.locfileid: "58438909"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Руководство по настройке Google Apps для автоматической подготовки пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/pingboard-provisioning-tutorial)
+- [Настройка подготовки пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/pingboard-provisioning-tutorial)

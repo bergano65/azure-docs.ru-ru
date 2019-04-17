@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с PagerDuty | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с PagerDuty | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении PagerDuty.
 services: active-directory
 documentationCenter: na
@@ -15,43 +15,43 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 5470c13f75d010634f97e87dc1a870a100187973
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: ded5854c5e669ab1982641169f13a9cb400d5d6d
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57835073"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59270121"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pagerduty"></a>Руководство по Интеграция Azure Active Directory с PagerDuty
 
 В этом руководстве описано, как интегрировать PagerDuty с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением PagerDuty обеспечивает следующие преимущества.
 
-* Вы можете управлять Azure AD, у кого есть доступ к PagerDuty.
-* Можно включить пользователей требуется автоматически войти в систему в PagerDuty (единый вход) с учетной записью Azure AD.
+* С помощью Azure AD вы можете контролировать доступ к PagerDuty.
+* Вы можете включить автоматический вход пользователей в PagerDuty (единый вход) с помощью учетной записи Azure AD.
 * Вы можете управлять учетными записями централизованно на портале Azure.
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением PagerDuty, вам потребуется:
 
 * подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
-* PagerDuty единого входа — подписка с поддержкой
+* подписка PagerDuty с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* PagerDuty поддерживает **SP** единый вход
+* PagerDuty поддерживает единый вход, инициированный **поставщиком услуг**
 
 ## <a name="adding-pagerduty-from-the-gallery"></a>Добавление PagerDuty из коллекции
 
 Чтобы настроить интеграцию PagerDuty с Azure AD, необходимо добавить PagerDuty из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить PagerDuty из коллекции, выполните следующие действия.**
+**Чтобы добавить PagerDuty из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -65,31 +65,31 @@ ms.locfileid: "57835073"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **PagerDuty**выберите **PagerDuty** на панели результатов и нажмите **добавить** кнопку, чтобы добавить это приложение.
+4. В поле поиска введите **PagerDuty**, выберите **PagerDuty** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
      ![PagerDuty в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка Azure AD единого входа в PagerDuty с использованием тестового пользователя **пользователя Britta Simon**.
-Для единого входа для работы необходимо установить связь между пользователем Azure AD и соответствующим пользователем в PagerDuty.
+В этом разделе описана настройка и проверка единого входа Azure AD в PagerDuty с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в PagerDuty.
 
 Чтобы настроить и проверить единый вход Azure AD в PagerDuty, вам потребуется выполнить действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настроить PagerDuty единого входа](#configure-pagerduty-single-sign-on)**  — Настройка параметров единого входа на стороне приложения.
+2. **[Настройка единого входа в PagerDuty](#configure-pagerduty-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя PagerDuty](#create-pagerduty-test-user)**  — требуется для создания пользователя Britta Simon в PagerDuty, связанного с одноименным пользователем в Azure AD.
+5. **[Создание тестового пользователя PagerDuty](#create-pagerduty-test-user)** требуется для того, чтобы в приложении PagerDuty существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
 В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-Чтобы настроить Azure AD единого входа в PagerDuty, выполните следующие действия.
+Чтобы настроить единый вход Azure AD в PagerDuty, сделайте следующее:
 
-1. В [портала Azure](https://portal.azure.com/)на **PagerDuty** странице интеграции с приложением, выберите **единого входа**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **PagerDuty** выберите **Единый вход**.
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
@@ -105,9 +105,9 @@ ms.locfileid: "57835073"
 
     ![Сведения о домене и URL-адресах единого входа для приложения PagerDuty](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.pagerduty.com`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.pagerduty.com`
 
-    2. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<tenant-name>.pagerduty.com`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<tenant-name>.pagerduty.com`
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов PagerDuty](https://www.pagerduty.com/support/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -116,7 +116,7 @@ ms.locfileid: "57835073"
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-6. На **настроить PagerDuty** скопируйте соответствующий URL-адреса в соответствии с вашим требованиям.
+6. Требуемый URL-адрес можно скопировать из раздела **Настройка PagerDuty**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -126,7 +126,7 @@ ms.locfileid: "57835073"
 
     c. URL-адрес выхода.
 
-### <a name="configure-pagerduty-single-sign-on"></a>Настроить PagerDuty единого входа
+### <a name="configure-pagerduty-single-sign-on"></a>Настройка единого входа PagerDuty
 
 1. В другом окне браузера войдите на свой сайт PagerDuty компании в качестве администратора.
 
@@ -144,7 +144,7 @@ ms.locfileid: "57835073"
 
     a. Откройте в Блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **X.509 Certificate** (Сертификат X.509).
   
-    2. В текстовое поле **URL-адрес для входа** вставьте **URL-адрес входа**, скопированный на портале Azure.
+    b. В текстовое поле **URL-адрес для входа** вставьте **URL-адрес входа**, скопированный на портале Azure.
   
     c. В текстовое поле **URL-адрес выхода** вставьте **URL-адрес выхода**, скопированный на портале Azure.
 
@@ -183,7 +183,7 @@ ms.locfileid: "57835073"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к PagerDuty.
 
-1. На портале Azure выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **PagerDuty**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **PagerDuty**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -213,7 +213,7 @@ ms.locfileid: "57835073"
 >[!NOTE]
 >Вы можете использовать любые другие инструменты создания учетных записей пользователя PagerDuty или API, предоставляемые PagerDuty для подготовки учетных записей Azure Active Directory.
 
-**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
+**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
 
 1. Выполните вход в клиент **PagerDuty** .
 
@@ -229,7 +229,7 @@ ms.locfileid: "57835073"
 
     a. В текстовое поле **First and Last Name** (Имя и фамилия) введите сведения о пользователе, например **Britta Simon**. 
    
-    2. Введите **электронной почты** адрес пользователя, такие как **brittasimon\@contoso.com**.
+    b. Введите адрес **электронной почты** пользователя, например **brittasimon\@contoso.com**.
    
     c. Нажмите **Add** (Добавить), затем нажмите **Send Invites** (Отправить приглашения).
    
@@ -240,13 +240,13 @@ ms.locfileid: "57835073"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент PagerDuty на панели доступа, вы автоматически войдете PagerDuty, для которого настраивается единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку PagerDuty на Панели доступа, вы автоматически войдете в приложение PagerDuty, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

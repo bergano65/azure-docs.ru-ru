@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 2613adf4db69d9ab2ad7862fe9e5504921a1a5d8
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 9b3725f217ef261df7bc8d9821edf972bfe58806
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58671607"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59272397"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-benchling"></a>Руководство по Интеграция Azure Active Directory с Benchling
 
@@ -107,9 +107,9 @@ ms.locfileid: "58671607"
 
     ![Сведения о домене и URL-адресах для единого входа в Benchling](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.benchling.com/ext/saml/metadata.xml`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<SUBDOMAIN>.benchling.com/ext/saml/metadata.xml`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.benchling.com/ext/saml/signin:finish`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<SUBDOMAIN>.benchling.com/ext/saml/signin:finish`
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -220,9 +220,9 @@ ms.locfileid: "58671607"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

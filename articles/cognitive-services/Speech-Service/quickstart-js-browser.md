@@ -10,26 +10,26 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 2/20/2019
 ms.author: fmegen
-ms.openlocfilehash: 0a06293a648460694bbe222f36f81bea2d6acdac
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: a418966ce72876d58d39b939ecb7dd5a05e41b9b
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57841180"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59008992"
 ---
 # <a name="quickstart-recognize-speech-in-javascript-in-a-browser-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в браузере с помощью JavaScript и пакета SDK службы "Речь"
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Из этой статьи вы узнаете, как создать веб-сайт, использующий привязку JavaScript из пакета SDK для службы "Речь" в Cognitive Services, который будет преобразовывать речь в текст.
-Приложение создано на базе пакета SDK службы "Речь" в Microsoft Cognitive Services ([скачать версию 1.3.0](https://aka.ms/csspeech/jsbrowserpackage)).
+Приложение основано на пакете SDK службы "Речь" для JavaScript ([скачать версию 1.4.0](https://aka.ms/csspeech/jsbrowserpackage)).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Ключ подписки для службы распознавания речи. См. статью [Бесплатная пробная подписка на службу "Речь"](get-started.md).
 * Компьютер Windows или Mac с рабочим микрофоном.
 * Текстовый редактор.
-* Текущая версия Chrome или Microsoft Edge.
+* Текущая версия Chrome, Microsoft Edge или Safari.
 * Веб-сервер, поддерживающий размещение сценариев PHP (при необходимости).
 
 ## <a name="create-a-new-website-folder"></a>Создание папки веб-сайта
@@ -52,7 +52,7 @@ ms.locfileid: "57841180"
    ```html
    <html>
    <head>
-      <title>Microsoft Cognitive Service Speech SDK JavaScript Quickstart</title>
+      <title>Speech SDK JavaScript Quickstart</title>
    </head>
    <body>
     <!-- UI code goes here -->
@@ -99,6 +99,10 @@ ms.locfileid: "57841180"
 
 Чтобы запустить приложение, дважды щелкните файл index.html или откройте файл index.html с помощью веб-браузера на свой выбор. Отобразится простой графический пользовательский интерфейс, в котором можно ввести ключ подписки и [регион](regions.md) и активировать распознавание речи с помощью микрофона.
 
+> [!NOTE]
+> Этот метод не работает в браузере Safari.
+> Пример веб-страницы в Safari должен быть размещен на веб-сервере. В Safari загруженные из локального файла веб-сайты не могут использовать микрофон.
+
 ## <a name="build-and-run-the-sample-via-a-web-server"></a>Сборка и запуск примера на веб-сервере
 
 Чтобы запустить приложение, откройте веб-браузер на свой выбор и введите в нем общедоступный URL-адрес, по которому размещена ваша папка. Затем введите свой [регион](regions.md) и активируйте распознавание речи с помощью микрофона. Приложение получит маркер из источника маркера, если он настроен.
@@ -106,4 +110,4 @@ ms.locfileid: "57841180"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Примеры для JavaScript на сайте GitHub](https://aka.ms/csspeech/samples)
+> [Изучите примеры JavaScript на сайте GitHub](https://aka.ms/csspeech/samples)

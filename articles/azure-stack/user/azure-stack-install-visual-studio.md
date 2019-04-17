@@ -12,22 +12,22 @@ ms.workload: azure-vs
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/04/2019
+ms.date: 04/08/2019
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 274240aab54f27f36734516026e9feebf64ae4b5
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: da17d114c1ffb920fbaae85a6cdcbc35a66631a4
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55248118"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59258000"
 ---
 # <a name="install-visual-studio-and-connect-to-azure-stack"></a>Установка Visual Studio и подключение к Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-С помощью Visual Studio можно записывать и развертывать [шаблоны](azure-stack-arm-templates.md) Azure Resource Manager в Azure Stack. В этой статье описана установка Visual Studio в [Azure Stack](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-remote-desktop) или на внешнем компьютере, если вы планируете использовать Azure Stack через [VPN](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-vpn).
+С помощью Visual Studio можно записывать и развертывать [шаблоны](azure-stack-arm-templates.md) Azure Resource Manager в Azure Stack. В этой статье подробно описана установка Visual Studio в [Azure Stack](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-remote-desktop) или на внешнем компьютере, если вы планируете использовать Azure Stack через [VPN](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-vpn).
 
 ## <a name="install-visual-studio"></a>Установка Visual Studio
 
@@ -39,9 +39,9 @@ ms.locfileid: "55248118"
 
 4. Удалите средство**Microsoft Azure PowerShell**, которое установлено как часть пакета Azure SDK.
 
-    ![Снимок экрана: шаги по установке установщика веб-платформы](./media/azure-stack-install-visual-studio/image1.png) 
+    ![Снимок экрана: шаги по установке установщика веб-платформы](./media/azure-stack-install-visual-studio/image1.png)
 
-5. [Install PowerShell for Azure Stack](azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack)
+5. [Установка PowerShell для Azure Stack](azure-stack-powershell-install.md)
 
 6. Перезагрузите компьютер после завершения установки.
 
@@ -65,9 +65,7 @@ ms.locfileid: "55248118"
 
 3. Разверните раскрывающееся меню **Среда** в **области навигации** и выберите **Учетные записи**.
 
-4. Выберите **Добавить** и введите конечную точку Azure Resource Manager пользователя.  
-  Если вам нужен пакет средств разработки Azure Stack, используйте адрес: `https://management.local.azurestack/external`.  
-  Если вам нужны интегрированные системы Azure Stack, используйте адрес: `https://management.[Region}.[External FQDN]`.
+4. Выберите **Добавить** и введите конечную точку Azure Resource Manager пользователя. Если вам нужен пакет средств разработки Azure Stack, используйте адрес: `https://management.local.azurestack/external`.  Если вам нужны интегрированные системы Azure Stack, используйте адрес: `https://management.[Region}.[External FQDN]`.
 
     ![X](./media/azure-stack-install-visual-studio/image5.png)
 
@@ -79,11 +77,11 @@ ms.locfileid: "55248118"
 
 6. В меню **Представление** выберите **Cloud Explorer**.
 
-1. Выберите **Добавить ученую запись** и выполните вход с помощью учетных данных служб федерации Active Directory.  
+7. Выберите **Добавить ученую запись** и выполните вход с помощью учетных данных служб федерации Active Directory.  
 
     ![Cloud Explorer](./media/azure-stack-install-visual-studio/image7.png)
 
-    Cloud Explorer запрашивает доступные подписки. Вы можете выбрать одну доступную подписку для управления.
+    Cloud Explorer запрашивает доступные подписки. Вы можете выбрать доступную подписку для управления.
 
     ![Cloud Explorer](./media/azure-stack-install-visual-studio/image8.png)
 
@@ -91,5 +89,5 @@ ms.locfileid: "55248118"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
- - Дополнительные сведения см. в рекомендациях по [параллельной](https://msdn.microsoft.com/library/ms246609.aspx) установке разных версий Visual Studio.
- - [Разработка шаблонов для Azure Stack](azure-stack-develop-templates.md).
+- Дополнительные сведения см. в рекомендациях по [параллельной](/visualstudio/install/install-visual-studio-versions-side-by-side) установке разных версий Visual Studio.
+- [Разработка шаблонов для Azure Stack](azure-stack-develop-templates.md).

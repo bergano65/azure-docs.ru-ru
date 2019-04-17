@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с SumoLogic | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с SumoLogic | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SumoLogic.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 07442d9636ec488da6eb3cdf9000b7f3cc24b61f
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 4edd445fe526b9be5c421b21b25f9b095c734f43
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58223518"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59269900"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sumologic"></a>Руководство по Интеграция Azure Active Directory с SumoLogic
 
@@ -105,7 +105,7 @@ ms.locfileid: "58223518"
 
     ![Сведения о домене и URL-адресах единого входа приложения SumoLogic](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenantname>.SumoLogic.com`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenantname>.SumoLogic.com`
 
    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
 
@@ -225,7 +225,7 @@ ms.locfileid: "58223518"
 
 Чтобы пользователи Azure AD могли входить в SumoLogic, их необходимо подготовить для SumoLogic. В случае SumoLogic подготовка пользователей осуществляется вручную.
 
-**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
+**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
 
 1. Войдите в клиент **SumoLogic**.
 
@@ -260,9 +260,9 @@ ms.locfileid: "58223518"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

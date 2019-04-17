@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 03/13/2019
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: 5ef143fe2021a9f705bf61b579e8251b2946b042
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: dabbefa8ca2073e30948f1c70782f730bceae030
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58668098"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59050012"
 ---
 # <a name="tutorial-deploy-a-service-fabric-cluster-running-windows-into-an-azure-virtual-network"></a>Руководство по развертыванию кластера Service Fabric на платформе Windows в виртуальной сети Azure
 
@@ -45,10 +45,13 @@ ms.locfileid: "58668098"
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * создание защищенного кластера в Azure;
-> * [Мониторинг кластера](service-fabric-tutorial-monitor-cluster.md)
-> * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
-> * [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
+> * [мониторинг кластера;](service-fabric-tutorial-monitor-cluster.md)
+> * [увеличение или уменьшение масштаба кластера;](service-fabric-tutorial-scale-cluster.md)
+> * [обновление среды выполнения кластера;](service-fabric-tutorial-upgrade-cluster.md)
 > * [Удаление кластера](service-fabric-tutorial-delete-cluster.md)
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -56,7 +59,7 @@ ms.locfileid: "58668098"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Установите [пакет SDK для Service Fabric и модуль PowerShell](service-fabric-get-started.md).
-* Установите модуль [Azure PowerShell версии 4.1 или более поздней](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps).
+* Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps).
 * Изучите основные понятия для [кластеров Azure](service-fabric-azure-clusters-overview.md).
 * [Спланируйте и подготовьте](service-fabric-cluster-azure-deployment-preparation.md) развертывание рабочего кластера.
 
@@ -611,7 +614,7 @@ https://&lt;cluster_domain&gt;:19080/Explorer
 
 ### <a name="create-a-cluster-by-using-an-existing-certificate"></a>Создание кластера с применением существующего сертификата
 
-В приведенном ниже сценарии используется командлет [New-AzureRmServiceFabricCluster](/powershell/module/azurerm.servicefabric/New-AzureRmServiceFabricCluster) и шаблон, которые позволяют развернуть в Azure новый кластер. Этот командлет создает хранилище ключей в Azure и отправляет в него существующий сертификат.
+В приведенном ниже сценарии используется командлет [New-AzServiceFabricCluster](/powershell/module/az.servicefabric/New-azServiceFabricCluster) и шаблон, которые позволяют развернуть в Azure новый кластер. Этот командлет создает хранилище ключей в Azure и отправляет в него существующий сертификат.
 
 ```powershell
 # Variables.
@@ -626,22 +629,22 @@ $vaultgroupname="clusterkeyvaultgroup123"
 $subname="$clustername.$clusterloc.cloudapp.azure.com"
 
 # Sign in to your Azure account and select your subscription
-Connect-AzureRmAccount
-Get-AzureRmSubscription
-Set-AzureRmContext -SubscriptionId <guid>
+Connect-AzAccount
+Get-AzSubscription
+Set-AzContext -SubscriptionId <guid>
 
 # Create a new resource group for your deployment, and give it a name and a location.
-New-AzureRmResourceGroup -Name $groupname -Location $clusterloc
+New-AzResourceGroup -Name $groupname -Location $clusterloc
 
 # Create the Service Fabric cluster.
-New-AzureRmServiceFabricCluster  -ResourceGroupName $groupname -TemplateFile "$templatepath\azuredeploy.json" `
+New-AzServiceFabricCluster  -ResourceGroupName $groupname -TemplateFile "$templatepath\azuredeploy.json" `
 -ParameterFile "$templatepath\azuredeploy.parameters.json" -CertificatePassword $certpwd `
 -KeyVaultName $vaultname -KeyVaultResourceGroupName $vaultgroupname -CertificateFile $certpath
 ```
 
 ### <a name="create-a-cluster-by-using-a-new-self-signed-certificate"></a>Создание кластера с помощью нового самозаверяющего сертификата
 
-В приведенном ниже сценарии используется командлет [New-AzureRmServiceFabricCluster](/powershell/module/azurerm.servicefabric/New-AzureRmServiceFabricCluster) и шаблон, которые позволяют развернуть в Azure новый кластер. Этот командлет создает хранилище ключей в Azure, добавляет в него самозаверяющий сертификат и скачивает файл сертификата на локальный компьютер.
+В приведенном ниже сценарии используется командлет [New-AzServiceFabricCluster](/powershell/module/az.servicefabric/New-azServiceFabricCluster) и шаблон, которые позволяют развернуть в Azure новый кластер. Этот командлет создает хранилище ключей в Azure, добавляет в него самозаверяющий сертификат и скачивает файл сертификата на локальный компьютер.
 
 ```powershell
 # Variables.
@@ -657,15 +660,15 @@ $vaultgroupname="clusterkeyvaultgroup123"
 $subname="$clustername.$clusterloc.cloudapp.azure.com"
 
 # Sign in to your Azure account and select your subscription
-Connect-AzureRmAccount
-Get-AzureRmSubscription
-Set-AzureRmContext -SubscriptionId <guid>
+Connect-AzAccount
+Get-AzSubscription
+Set-AzContext -SubscriptionId <guid>
 
 # Create a new resource group for your deployment, and give it a name and a location.
-New-AzureRmResourceGroup -Name $groupname -Location $clusterloc
+New-AzResourceGroup -Name $groupname -Location $clusterloc
 
 # Create the Service Fabric cluster.
-New-AzureRmServiceFabricCluster  -ResourceGroupName $groupname -TemplateFile "$templatepath\azuredeploy.json" `
+New-AzServiceFabricCluster  -ResourceGroupName $groupname -TemplateFile "$templatepath\azuredeploy.json" `
 -ParameterFile "$templatepath\azuredeploy.parameters.json" -CertificatePassword $certpwd `
 -CertificateOutputFolder $certfolder -KeyVaultName $vaultname -KeyVaultResourceGroupName $vaultgroupname -CertificateSubjectName $subname
 

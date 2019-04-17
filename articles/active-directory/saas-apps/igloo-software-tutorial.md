@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Igloo Software | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Igloo Software | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Igloo Software.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/06/2019
 ms.author: jeedes
-ms.openlocfilehash: d5c814fbf180ddd1cd3b447533a89cc577151d6c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 60ec322758a3c3b83e7b24cfba37daaec02fc4c0
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58093792"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59270835"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-igloo-software"></a>Руководство. Интеграция Azure Active Directory с Igloo Software
+# <a name="tutorial-azure-active-directory-integration-with-igloo-software"></a>Руководство по Интеграция Azure Active Directory с Igloo Software
 
 В этом руководстве описано, как интегрировать Igloo Software с Azure Active Directory (Azure AD).
 Интеграция Igloo Software с Azure AD обеспечивает следующие преимущества:
@@ -52,7 +52,7 @@ ms.locfileid: "58093792"
 
 Чтобы настроить интеграцию Igloo Software с Azure AD, вам потребуется добавить Igloo Software из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Igloo Software из коллекции, выполните следующие действия:**
+**Чтобы добавить Igloo Software из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,11 +106,11 @@ ms.locfileid: "58093792"
 
     ![Сведения о домене и URL-адресах единого входа приложения Igloo Software](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.igloocommmunities.com`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.igloocommmunities.com`
 
-    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<company name>.igloocommmunities.com/saml.digest`.
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<company name>.igloocommmunities.com/saml.digest`
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<company name>.igloocommmunities.com/saml.digest`.
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<company name>.igloocommmunities.com/saml.digest`
 
     > [!NOTE]
     > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Igloo Software](https://www.igloosoftware.com/services/support). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -248,8 +248,8 @@ ms.locfileid: "58093792"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: rezas
-ms.openlocfilehash: a737413f6692b4ee811d0590351a385552cc9a8f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: a459473e04f9cbf3b11b75f3b9dbea2732455084
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58085581"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59005428"
 ---
 # <a name="quickstart-sshrdp-over-iot-hub-device-streams-using-nodejs-proxy-application-preview"></a>Краткое руководство. SSH/RDP через потоки устройств Центра Интернета вещей с помощью приложения прокси Node.js (предварительная версия)
 
@@ -27,17 +27,15 @@ ms.locfileid: "58085581"
 
 Сначала мы опишем настройку для SSH (используя порт 22). Затем опишем, как изменить настройку для RDP (используя порт 3389). Так как потоки устройств не зависят от приложений и протоколов, тот же пример можно изменить для размещения других типов трафика клиент-серверных приложений (обычно путем изменения портов для обмена данными).
 
-
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-
 ## <a name="prerequisites"></a>Предварительные требования
 
-Предварительная версия функции "Потоки устройств" сейчас поддерживается только в Центрах Интернета вещей, созданных в следующих регионах:
+Предварительная версия потоков устройств сейчас поддерживается только в Центрах Интернета вещей, созданных в следующих регионах.
 
-  - **Центральная часть США**
+  - **Центральный регион США**
   - **Центральная часть США (EUAP)**
 
 Для запуска приложения на стороне службы в этом руководстве вам понадобится Node.js версии 4.x.x и выше на компьютере разработчика.
@@ -50,8 +48,13 @@ Node.js, предназначенный для нескольких платфо
 node --version
 ```
 
-Если вы еще не сделали это, скачайте пример проекта Node.js по адресу https://github.com/Azure-Samples/azure-iot-samples-node/archive/streams-preview.zip и извлеките ZIP-архив.
+Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
 
+```azurecli-interactive
+az extension add --name azure-cli-iot-ext
+```
+
+Если вы еще не сделали это, скачайте пример проекта Node.js по адресу https://github.com/Azure-Samples/azure-iot-samples-node/archive/streams-preview.zip и извлеките ZIP-архив.
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -59,21 +62,19 @@ node --version
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub-device-streams.md)]
 
-
 ## <a name="register-a-device"></a>Регистрация устройства
 
 Если вы закончили работу с предыдущим руководством по [ отправке данных телеметрии с устройства в Центр Интернета вещей](quickstart-send-telemetry-node.md), можете пропустить этот шаг.
 
 Устройство должно быть зарегистрировано в Центре Интернета вещей, прежде чем оно сможет подключиться. В этом кратком руководстве для регистрации имитируемого устройства используется Azure Cloud Shell.
 
-1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы добавить расширение CLI Центра Интернета вещей и создать удостоверение устройства. 
+1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы создать удостоверение устройства.
 
    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
    **MyDevice**. Это имя, присвоенное зарегистрированному устройству. Используйте имя MyDevice, как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
-    az extension add --name azure-cli-iot-ext
     az iot hub device-identity create --hub-name YourIoTHubName --device-id MyDevice
     ```
 
@@ -89,13 +90,11 @@ node --version
 
    `"HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}"`
 
-
 ## <a name="ssh-to-a-device-via-device-streams"></a>SSH-подключение к устройству через потоки устройств
 
 ### <a name="run-the-device-local-proxy"></a>Запуск локального прокси-сервера устройства
 
 Как упоминалось ранее, пакет SDK для Node.js Центра Интернета вещей поддерживает только потоки устройств на стороне службы. Для запуска приложения на стороне устройства используйте сопутствующие программы прокси устройства, которые описаны в кратких руководствах по [C](./quickstart-device-streams-proxy-c.md) и [C#](./quickstart-device-streams-proxy-csharp.md). Прежде чем перейти к следующему шагу, убедитесь, что прокси-сервер на стороне устройства запущен.
-
 
 ### <a name="run-the-service-local-proxy"></a>Запуск прокси-сервера на стороне службы
 
@@ -128,13 +127,12 @@ node --version
   ```
 
 ### <a name="ssh-to-your-device-via-device-streams"></a>SSH-подключение к устройству через потоки устройств
+
 В Linux запустите SSH, используя `ssh $USER@localhost -p 2222` в терминале. В Windows используйте клиент SSH, с которым вы работаете (например, PuTTY).
 
 Вывод на консоль на стороне службы после установления сеанса SSH (прокси-сервер на стороне службы прослушивает порт 2222): ![Замещающий текст](./media/quickstart-device-streams-proxy-nodejs/service-console-output.PNG "Вывод терминала SSH")
 
-
 Вывод на консоль клиентской программы SSH (клиент SSH связывается с управляющей программой SSH, подключаясь к порту 22, где прослушивает локальный прокси-сервер службы): ![Замещающий текст](./media/quickstart-device-streams-proxy-nodejs/ssh-console-output.PNG "Вывод клиента SSH")
-
 
 ### <a name="rdp-to-your-device-via-device-streams"></a>RDP-подключение к устройству через потоки устройств
 
@@ -144,7 +142,6 @@ node --version
 > Убедитесь, что прокси-сервер устройства правильно настроен для RDP и порта RDP 3389.
 
 ![Замещающий текст](./media/quickstart-device-streams-proxy-nodejs/rdp-screen-capture.PNG "Подключение клиента RDP к локальному прокси-серверу службы")
-
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -157,4 +154,4 @@ node --version
 Используйте приведенные ниже ссылки для получения дополнительных сведений о потоках устройства:
 
 > [!div class="nextstepaction"]
-> [IoT Hub Device Streams (preview)](./iot-hub-device-streams-overview.md) (Потоки устройств (предварительная версия))
+> [IoT Hub Device Streams (preview) (Потоки устройств Центра Интернета вещей (предварительная версия)](./iot-hub-device-streams-overview.md)

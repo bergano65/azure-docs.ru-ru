@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Bambu by Sprout Social | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Bambu by Sprout Social | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Bambu by Sprout Social.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/22/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 875938b6839cbb85e10ac2937eda187bc6de27e2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 902abe2f6ba122537eae1a49015c990493cd1e3d
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57854234"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59273181"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-bambu-by-sprout-social"></a>Руководство. Интеграция Azure Active Directory с Bambu by Sprout Social
+# <a name="tutorial-azure-active-directory-integration-with-bambu-by-sprout-social"></a>Руководство по Интеграция Azure Active Directory с Bambu by Sprout Social
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с Bambu by Sprout Social.
 Интеграция Azure AD с Bambu by Sprout Social обеспечивает следующие преимущества:
@@ -142,7 +142,7 @@ ms.locfileid: "57854234"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -187,8 +187,8 @@ ms.locfileid: "57854234"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

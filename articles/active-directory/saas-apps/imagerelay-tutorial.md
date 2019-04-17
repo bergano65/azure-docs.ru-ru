@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Image Relay | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Image Relay | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Image Relay.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 63fbab5fffbcc30d0242d223fd8a6b5796c2aeae
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9d2d41af8fa04b03ab8d18277d377f3700575cd1
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57901905"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59259819"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-image-relay"></a>Руководство. Интеграция Azure Active Directory с Image Relay
+# <a name="tutorial-azure-active-directory-integration-with-image-relay"></a>Руководство по Интеграция Azure Active Directory с Image Relay
 
 В этом учебнике описано, как интегрировать Image Relay с Azure Active Directory (Azure AD).
 Интеграция Image Relay с Azure AD обеспечивает следующие преимущества.
@@ -105,9 +105,9 @@ ms.locfileid: "57901905"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Image Relay](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.imagerelay.com/`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.imagerelay.com/`
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.imagerelay.com/sso/metadata`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.imagerelay.com/sso/metadata`
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Image Relay](http://support.imagerelay.com/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -257,8 +257,8 @@ ms.locfileid: "57901905"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

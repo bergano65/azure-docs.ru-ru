@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: d35c33a45f2ce23dabfba20bbd902c058e3033d3
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.openlocfilehash: 3db2b810ba4ba96e492c6b6ba841d9cfa35418a8
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58540471"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59260851"
 ---
 # <a name="search-nearby-points-of-interest-using-azure-maps"></a>Поиск ближайшей точки интереса с помощью службы "Карты Azure"
 
@@ -81,11 +81,11 @@ API элементов управления картой — это удобна
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
-        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=2" type="text/css">
-        <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=2"></script>
+        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
+        <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
 
         <!-- Add a reference to the Azure Maps Services Module JavaScript file. -->
-        <script src="https://atlas.microsoft.com/sdk/js/atlas-service.js?api-version=2"></script>
+        <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas-service.min.js"></script>
 
         <script>
         function GetMap(){
@@ -116,7 +116,7 @@ API элементов управления картой — это удобна
 
    Обратите внимание на то, что заголовок HTML содержит файлы ресурсов CSS и JavaScript, размещенные в библиотеке Azure Map Control. Обратите внимание на событие `onload` в тексте страницы, которое вызовет функцию `GetMap` после загрузки текста страницы. Функция `GetMap` будет содержать внутренний код JavaScript для доступа к интерфейсам службы Azure Maps.
 
-3. Добавьте следующий код JavaScript к функции `GetMap` HTML-файла. Замените строку **\<Your Azure Maps Key\>** первичным ключом, скопированным из учетной записи службы Maps.
+3. Добавьте следующий код JavaScript к функции `GetMap` HTML-файла. Замените строку `<Your Azure Maps Key>` первичным ключом, скопированным из учетной записи службы Maps.
 
     ```JavaScript
     //Instantiate a map object
@@ -129,17 +129,17 @@ API элементов управления картой — это удобна
     });
     ```
 
-   Этот сегмент инициирует API Map Control для ключа учетной записи службы Azure Maps. **Atlas** — это пространство имен, которое содержит API и связанные визуальные компоненты. **atlas.Map** предоставляет элемент управления для визуальной интерактивной веб-карты.
+   Этот сегмент инициирует API Map Control для ключа учетной записи службы Azure Maps. `atlas` это пространство имен, которое содержит API и связанные визуальные компоненты. `atlas.Map` предоставляет элемент управления для визуальной интерактивной веб-карты.
 
-4. Сохраните изменения в файл и откройте HTML-страницу в браузере. Это самая простая карта, которую можно создать, вызвав **atlas.map**, используя ключ учетной записи.
+4. Сохраните изменения в файл и откройте HTML-страницу в браузере. Это самая простая карта, которую можно создать, вызвав `atlas.Map`, используя ключ учетной записи.
 
    ![Просмотр карты](./media/tutorial-search-location/basic-map.png)
 
 5. В функции `GetMap` после инициализации карты добавьте следующий код JavaScript.
 
     ```JavaScript
-    //Wait until the map resources are loaded.
-    map.events.add('load', function() {
+    //Wait until the map resources are ready.
+    map.events.add('ready', function() {
 
         //Create a data source and add it to the map.
         datasource = new atlas.source.DataSource();
@@ -161,7 +161,7 @@ API элементов управления картой — это удобна
     });
     ```
 
-   В этом сегменте кода на карту добавляется событие загрузки, которое сработает, когда ресурсы карты будут полностью загружены. В обработчике событий загрузки карты создается источник данных для хранения выходных данных. Слой символов создается и привязывается к источнику данных. Этот слой определяет, как должны отображаться выходные данные в источнике данных. В этом случае — с использованием синего круглого значка, который размещается по центру координат результатов и может перекрываться другими значками. Слой результатов добавляется к слоям карты.
+   В этом сегменте кода на карту добавляется событие `ready`, которое сработает, когда ресурсы карты будут загружены, а карта готова к доступу. В обработчике событий карты `ready` создается источник данных для хранения выходных данных. Слой символов создается и привязывается к источнику данных. Этот слой определяет, как должны отображаться выходные данные в источнике данных. В этом случае — с использованием синего круглого значка, который размещается по центру координат результатов и может перекрываться другими значками. Слой результатов добавляется к слоям карты.
 
 <a id="usesearch"></a>
 
@@ -171,7 +171,7 @@ API элементов управления картой — это удобна
 
 ### <a name="service-module"></a>Модуль службы
 
-1. В обработчике событий загрузки карты создайте URL-адрес службы поиска, добавив приведенный ниже код JavaScript.
+1. В обработчике событий карты `ready` создайте URL-адрес службы поиска, добавив приведенный ниже код JavaScript.
 
     ```JavaScript
    // Use SubscriptionKeyCredential with a subscription key
@@ -184,9 +184,9 @@ API элементов управления картой — это удобна
    var searchURL = new atlas.service.SearchURL(pipeline); 
    ```
 
-   **SubscriptionKeyCredential** создает политику **SubscriptionKeyCredentialPolicy**, которая проверяет подлинность HTTP-запросов к службе Azure Maps с помощью ключа подписки. **atlas.service.MapsURL.newPipeline()** принимает политику **SubscriptionKeyCredential** и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-iot-typescript-latest). **searchURL** представляет URL-адрес к операциям [поиска](https://docs.microsoft.com/rest/api/maps/search) службы Azure Maps.
+   `SubscriptionKeyCredential` создает `SubscriptionKeyCredentialPolicy` для проверки подлинности HTTP-запросов для Azure Maps с помощью ключа подписки. `atlas.service.MapsURL.newPipeline()` принимает политику `SubscriptionKeyCredential` и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-iot-typescript-latest). `searchURL` представляет собой URL-адрес к операциям [поиска](https://docs.microsoft.com/rest/api/maps/search) службы Azure Maps.
 
-2. Затем, чтобы создать поисковый запрос, добавьте следующий блок сценария. В нем используется служба поиска нечетких соответствий, которая является базовым API поиска Службы поиска. Служба поиска нечетких соответствий обрабатывает большинство нечетких входных данных, например адреса, места и точки интереса (POI). Этот код выполняет поиск ближайших бензозаправочных станций для заданных координат широты и долготы в пределах указанного адреса. Затем с помощью метода **geojson.getFeatures()** из ответа извлекается коллекция функций GeoJSON и добавляется к источнику данных, после чего данные автоматически отображаются на карте с помощью слоя символов. Последняя часть сценария устанавливает представление с камер на карте, используя ограничивающий прямоугольник с результатами, с помощью свойства карты [setCamera](/javascript/api/azure-maps-control/atlas.map#setcamera-cameraoptions---cameraboundsoptions---animationoptions-).
+2. Затем, чтобы создать поисковый запрос, добавьте следующий блок сценария. В нем используется служба поиска нечетких соответствий, которая является базовым API поиска Службы поиска. Служба поиска нечетких соответствий обрабатывает большинство нечетких входных данных, например адреса, места и точки интереса (POI). Этот код выполняет поиск ближайших бензозаправочных станций для заданных координат широты и долготы в пределах указанного адреса. Затем с помощью метода `geojson.getFeatures()` из ответа извлекается коллекция функций GeoJSON и добавляется к источнику данных, после чего данные автоматически отображаются на карте с помощью слоя символов. Последняя часть сценария устанавливает представление с камер на карте, используя ограничивающий прямоугольник с результатами, с помощью свойства карты [setCamera](/javascript/api/azure-maps-control/atlas.map#setcamera-cameraoptions---cameraboundsoptions---animationoptions-).
 
     ```JavaScript
     var query =  'gasoline-station';
@@ -229,7 +229,7 @@ API элементов управления картой — это удобна
 
 Карта, которую мы создали, учитывает только данные широты и долготы в результатах поиска. Если взглянуть на необработанные данные JSON, которые возвращает служба поиска "Карты Azure", вы увидите, что они содержат дополнительные сведения о каждой заправочной станции, включая название и адрес. Эти данные можно включить в карту с помощью интерактивных всплывающих окон.
 
-1. Добавьте приведенный ниже код в обработчик событий загрузки карты после кода для запроса службы поиска нечетких соответствий. Этот процесс создаст экземпляр всплывающего окна и добавит событие наведения указателя мыши на слой символов.
+1. Добавьте приведенные ниже строки кода в обработчик событий карты `ready` после кода для запроса службы поиска нечетких соответствий. Этот процесс создаст экземпляр всплывающего окна и добавит событие наведения указателя мыши на слой символов.
 
     ```JavaScript
    //Create a popup but leave it closed so we can update it and display it later.
@@ -239,7 +239,7 @@ API элементов управления картой — это удобна
     map.events.add('mouseover', resultLayer, showPopup);
     ```
 
-    **atlas.Popup** API предоставляет информационное окно, которое можно привязать к нужной позиции на карте. 
+    `sup` API предоставляет информационное окно, которое можно привязать к нужной позиции на карте. 
 
 2. В теге *script* после функции `GetMap` добавьте следующий код для отображения во всплывающем окне событий наведения указателя мыши поверх сведений о результатах.
 
@@ -284,9 +284,9 @@ API элементов управления картой — это удобна
 
 > [Поиск местоположения с помощью Azure Maps](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/search.html)
 
-[См. этот пример в интерактивном режиме](https://azuremapscodesamples.azurewebsites.net/?sample=Search%20for%20points%20of%20interest)
+[Ознакомьтесь с примером в интерактивном режиме](https://azuremapscodesamples.azurewebsites.net/?sample=Search%20for%20points%20of%20interest)
 
 В следующем руководстве показано, как отобразить маршрут между двумя расположениями.
 
 > [!div class="nextstepaction"]
-> [Прокладывание маршрута до точки интереса в службе "Карты Azure"](./tutorial-route-location.md)
+> [Построение маршрута к месту назначения](./tutorial-route-location.md)

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с PureCloud от Genesys | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с PureCloud от Genesys | Документация Майкрософт
 description: В этой статье объясняется, как настроить единый вход между Azure Active Directory и PureCloud от Genesys.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.openlocfilehash: d1cc7735b8caa952a5ab7695d3e1f35b03fec1bb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 764ad8f1ca19238e1986d1d187d19c405963a832
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57890684"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59267401"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-purecloud-by-genesys"></a>Руководство. Интеграция Azure Active Directory с PureCloud от Genesys
+# <a name="tutorial-azure-active-directory-integration-with-purecloud-by-genesys"></a>Руководство по Интеграция Azure Active Directory с PureCloud от Genesys
 
 В этом руководстве описано, как интегрировать PureCloud от Genesys с Azure Active Directory (Azure AD).
 Интеграция PureCloud от Genesys с Azure AD дает следующие преимущества:
@@ -50,7 +50,7 @@ ms.locfileid: "57890684"
 
 Чтобы настроить интеграцию PureCloud от Genesys с Azure AD, необходимо добавить PureCloud от Genesys из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить PureCloud от Genesys из коллекции, выполните следующие действия:**
+**Чтобы добавить PureCloud от Genesys из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -138,7 +138,7 @@ ms.locfileid: "57890684"
     | `https://login.mypurecloud.ie` |
     | `https://login.mypurecloud.com.au` |
 
-6. Приложение PureCloud от Genesys ожидает проверочные утверждения SAML в определенном формате, поэтому вам требуется добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя**.
+6. Приложение PureCloud от Genesys ожидает проверочные утверждения SAML в определенном формате, поэтому вам требуется добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
 
     ![изображение](common/edit-attribute.png)
 
@@ -260,7 +260,7 @@ ms.locfileid: "57890684"
 
 Чтобы пользователи Azure AD могли выполнять вход в PureCloud от Genesys, их нужно подготовить к работе в PureCloud от Genesys. В PureCloud от Genesys такая подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
+**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
 
 1. Войдите в PureCloud от Genesys с правами администратора.
 
@@ -290,9 +290,9 @@ ms.locfileid: "57890684"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

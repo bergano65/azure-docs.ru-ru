@@ -15,12 +15,12 @@ ms.date: 03/07/2019
 ms.author: mabrigg
 ms.reviewer: waltero
 ms.lastreviewed: 02/27/2019
-ms.openlocfilehash: 4e9df0d413b964b4a14cf9ca48db8b7956b441f9
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: fa663cce10a39ef60a0efa5838b81b257fd02b46
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58482595"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59255943"
 ---
 # <a name="access-the-kubernetes-dashboard-in-azure-stack"></a>Получение доступа к панели мониторинга Kubernetes в Azure Stack 
 
@@ -70,7 +70,7 @@ ms.locfileid: "58482595"
     ```Bash   
     kubectl cluster-info 
     ``` 
-    Найдите URL-адрес для панели мониторинга. Например: `https://k8-1258.local.cloudapp.azurestack.external/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy`
+    Найдите URL-адрес для панели мониторинга. Например:   `https://k8-1258.local.cloudapp.azurestack.external/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy`
 
 6.  Извлеките самозаверяющий сертификат и преобразуйте его в формат PFX. Выполните следующую команду:
 
@@ -135,6 +135,6 @@ ms.locfileid: "58482595"
 
 [Развертывание Kubernetes в Azure Stack](azure-stack-solution-template-kubernetes-deploy.md)  
 
-[Добавление Kubernetes в Azure Stack Marketplace](../azure-stack-solution-template-kubernetes-cluster-add.md)  
+[Добавление Kubernetes в Azure Stack Marketplace (для оператора Azure Stack)](../azure-stack-solution-template-kubernetes-cluster-add.md)  
 
 [Kubernetes в Azure](https://docs.microsoft.com/azure/container-service/kubernetes/container-service-kubernetes-walkthrough)  

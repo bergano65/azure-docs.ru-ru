@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 03/12/2019
 ms.author: aahi
-ms.openlocfilehash: 09eed87dce65325a5b3466346b073a0d786bfb89
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d31be245d906ba0405a44d4482272051982c943c
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57861457"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59469154"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-c"></a>Краткое руководство. Отправка запросов для поиска в REST API Поиска сущностей Bing с помощью C#
 
@@ -29,7 +29,7 @@ ms.locfileid: "57861457"
 * Любой выпуск [Visual Studio 2017](https://www.visualstudio.com/downloads/).
 * Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet.
     * Чтобы установить пакет NuGet в Visual Studio сделайте следующее.
-        1. Щелкните правой кнопкой мыши в Solution Manager.
+        1. Щелкните правой кнопкой мыши в обозревателе решений.
         2. Щелкните **Manage NuGet Packages...**
         3. Найдите пакет **newtonsoft.json** и установите его.
 
@@ -174,7 +174,7 @@ ms.locfileid: "57861457"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-entities-search-single-page-app.md)
+> [Создание одностраничного веб-приложения](../tutorial-bing-entities-search-single-page-app.md)
 
 * [Основные сведения об API Bing для поиска сущностей](../overview.md )
-* [Справочник по API Bing для поиска сущностей](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference)
+* [Bing Entity Search API Reference (Справочник по API Bing для поиска сущностей)](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference)

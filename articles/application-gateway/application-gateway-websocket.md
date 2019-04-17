@@ -1,18 +1,18 @@
 ---
 title: Поддержка WebSocket в шлюзе приложений Azure| Документация Майкрософт
 description: Здесь представлен обзор поддержки WebSocket в шлюзе приложений.
-author: amsriva
+author: vhorne
 ms.author: amsriva
 ms.service: application-gateway
 ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 03/18/2019
-ms.openlocfilehash: bae4b3d955076679a5640717ac6f5446e3951fb9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 54c34690e678f07d6309a1877b0ca5d0a0b274f5
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58168125"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59606911"
 ---
 # <a name="overview-of-websocket-support-in-application-gateway"></a>Общие сведения о поддержке WebSocket в шлюзе приложений
 
@@ -32,7 +32,7 @@ ms.locfileid: "58168125"
 
 ### <a name="listener-configuration-element"></a>Элемент конфигурации прослушивателя
 
-Для поддержки трафика WebSocket можно использовать имеющийся прослушиватель HTTPListener. Ниже приведен фрагмент кода с элементом httpListeners из примера файла шаблона. Для поддержки и защиты трафика WebSocket необходимы прослушиватели HTTP и HTTPS. Чтобы создать шлюз приложений с прослушивателями на порте 80 или 443 для поддержки трафика WebSocket, можно использовать [портал](application-gateway-create-gateway-portal.md) или [PowerShell](application-gateway-create-gateway-arm.md)
+Для поддержки трафика WebSocket можно использовать имеющийся прослушиватель HTTPListener. Ниже приведен фрагмент кода с элементом httpListeners из примера файла шаблона. Для поддержки и защиты трафика WebSocket необходимы прослушиватели HTTP и HTTPS. Аналогичным образом можно использовать портал или Azure PowerShell для создания шлюза приложений с прослушивателями на порте 80 или 443 для поддержки трафика WebSocket.
 
 ```json
 "httpListeners": [
@@ -123,5 +123,4 @@ ms.locfileid: "58168125"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Ознакомившись с поддержкой протокола WebSocket, приступите к [созданию шлюза приложений](application-gateway-create-gateway.md) , чтобы начать работу с веб-приложением с поддержкой WebSocket.
-
+Ознакомившись с поддержкой протокола WebSocket, приступите к [созданию шлюза приложений](quick-create-powershell.md) , чтобы начать работу с веб-приложением с поддержкой WebSocket.

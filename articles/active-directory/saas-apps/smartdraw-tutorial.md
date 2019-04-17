@@ -1,5 +1,5 @@
 ---
-title: Руководство. Руководство по интеграции Azure Active Directory с приложением SmartDraw | Документация Майкрософт
+title: Руководство по Руководство по интеграции Azure Active Directory с приложением SmartDraw | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SmartDraw.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 910e485586eb8c43399f6f0b6791ab654003a19d
-ms.sourcegitcommit: 4133f375862fdbdec07b70de047d70c66ac29d50
+ms.openlocfilehash: 7d811cd69185e77f50749fc48974dee684fb7cfa
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58003766"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59256368"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-smartdraw"></a>Руководство. Интеграция Azure Active Directory со SmartDraw
+# <a name="tutorial-azure-active-directory-integration-with-smartdraw"></a>Руководство по Интеграция Azure Active Directory со SmartDraw
 
 В этом руководстве описано, как интегрировать SmartDraw с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением SmartDraw обеспечивает следующие преимущества.
@@ -53,7 +53,7 @@ ms.locfileid: "58003766"
 
 Чтобы настроить интеграцию SmartDraw с Azure AD, необходимо добавить SmartDraw из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить SmartDraw из коллекции, выполните следующие действия.**
+**Чтобы добавить SmartDraw из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -116,7 +116,7 @@ ms.locfileid: "58003766"
     > [!NOTE]
     > Значение URL-адреса входа приведено для примера. Вы замените это значение на фактический URL-адрес для входа, который описывается далее в этом руководстве. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-6. Приложение SmartDraw ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя**.
+6. Приложение SmartDraw ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
 
     ![изображение](common/edit-attribute.png)
 
@@ -248,9 +248,9 @@ ms.locfileid: "58003766"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

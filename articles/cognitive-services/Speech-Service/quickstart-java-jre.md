@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 2/20/2019
 ms.author: fmegen
-ms.openlocfilehash: 83d6c430d0973d4b45fcfc40bbb93ae283d1133d
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
+ms.openlocfilehash: fe565d63e72b5ec2798dde03ba4f4bd9ff4f48a7
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56447588"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59009405"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-java"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Java
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
-В этой статье вы создадите консольное приложение Java с помощью [пакета SDK службы "Речь"](speech-sdk.md). Вы преобразуете речь с микрофона вашего компьютера в текст в реальном времени. Приложение создается с помощью пакета SDK Maven службы "Речь" и Eclipse Java IDE (4.8) на 64-разрядной версии Windows или Ubuntu Linux 16.04 или 18.04. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
+В этой статье вы создадите консольное приложение Java с помощью [пакета SDK службы "Речь"](speech-sdk.md). Вы преобразуете речь с микрофона вашего компьютера в текст в реальном времени. Приложение создается с помощью пакета SDK Maven служб "Речь" и Eclipse Java IDE (версии 4.8) на 64-разрядной версии Windows, 64-разрядной версии Ubuntu Linux 16.04 или 18.04, а также на macOS 10.13 или более поздней версии. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
 
 > [!NOTE]
 > Ознакомьтесь с пакетом SDK службы "Речь" и устройством Roobo в разделе [Сведения о пакете SDK для речевых устройств](speech-devices-sdk.md).
@@ -30,7 +30,7 @@ ms.locfileid: "56447588"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* Операционная система: 64-разрядная версия Windows или Ubuntu Linux 16.04 или 18.04
+* Операционная система: Windows (64-разрядная версия), Ubuntu Linux 16.04/18.04 (64-разрядная версия), а также macOS 10.13 или более поздней версии
 * [Eclipse Java IDE](https://www.eclipse.org/downloads/)
 * [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) или [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 * Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
@@ -42,7 +42,7 @@ sudo apt-get update
 sudo apt-get install build-essential libssl1.0.0 libasound2 wget
 ```
 
-Если вы используете Windows (64-разрядная версия) убедитесь, что у вас установлен распространяемый компонент Microsoft Visual C++ для вашей платформы.
+Если вы используете Windows (64-разрядная версия), убедитесь, что у вас установлен распространяемый компонент Microsoft Visual C++ для вашей платформы.
 * [Скачать распространяемый компонент Microsoft Visual C++ для Visual Studio 2017](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads)
 
 
@@ -84,6 +84,6 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
 
 ## <a name="see-also"></a>См. также
 
-- [Краткое руководство Перевод речи с помощью пакета SDK службы "Речь" для Java"](quickstart-translate-speech-java-jre.md)
+- [Краткое руководство. Перевод речи с помощью Java (Windows, Linux)](quickstart-translate-speech-java-jre.md)
 - [Настройка акустических моделей](how-to-customize-acoustic-models.md)
 - [Настройка языковых моделей](how-to-customize-language-model.md)

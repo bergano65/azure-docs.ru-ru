@@ -12,16 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/04/2019
+ms.date: 04/10/2019
 ms.author: sethm
 ms.reviewer: adepue
-ms.lastreviewed: 04/04/2019
-ms.openlocfilehash: 2a2e289423eda53d610b2346193f6ee8a30b9c48
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.lastreviewed: 04/10/2019
+ms.openlocfilehash: f07f81562c604913e633a8d93fa9c7db28a7bf55
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58917691"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59471483"
 ---
 # <a name="azure-stack-1903-update"></a>Обновление 1903 для Azure Stack
 
@@ -64,6 +64,12 @@ Azure Stack выпускает исправления на регулярной 
 
 - Усовершенствована функция обнаружения и устранения нехватки места на диске.
 
+### <a name="secret-management"></a>Управление секретами
+
+- Azure Stack теперь поддерживает смену корневого сертификата, используемого сертификатами для смены внешних секретов. Дополнительные сведения [см. в этой статье](azure-stack-rotate-secrets.md).
+
+- Версия 1903 содержит улучшения, ускоряющие смену секретов. Они сокращают время, необходимое для смены внутренних секретов.
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 > [!IMPORTANT]
@@ -91,7 +97,8 @@ Azure Stack выпускает исправления на регулярной 
 
 - При запуске [Test-AzureStack](azure-stack-diagnostic-test.md) выводится предупреждающее сообщение от контроллера управления основной платой (BMC). Это предупреждение можно проигнорировать.
 
-- <!-- 2468613 - IS --> Во время установки этого обновления могут отображаться оповещения с заголовком `Error – Template for FaultType UserAccounts.New is missing.` Их можно игнорировать. Эти оповещения закроются автоматически после завершения установки этого обновления.
+<!-- 2468613 - IS -->
+- Во время установки этого обновления могут отображаться оповещения с заголовком **Error – Template for FaultType UserAccounts. New is missing** (Ошибка: отсутствует шаблон для FaultType UserAccounts.New). Эти оповещения можно игнорировать. Эти оповещения закроются автоматически после завершения установки этого обновления.
 
 ## <a name="post-update-steps"></a>Действия после обновления
 
@@ -118,10 +125,15 @@ Azure Stack выпускает исправления на регулярной 
 - Удаление подписки пользователя приводит к появлению потерянных ресурсов. Чтобы избежать этого, следует сначала удалить ресурсы пользователя или всю группу ресурсов и лишь затем удалять подписки пользователя.
 
 <!-- 1663805 - IS ASDK --> 
-- Вы не можете просматривать разрешения для подписки на порталах Azure Stack. [Используйте PowerShell](/powershell/module/azs.subscriptions.admin/get-azssubscriptionplan), чтобы проверить разрешения.
+- Вы не можете просматривать разрешения для подписки на порталах Azure Stack. [Используйте PowerShell](/powershell/module/azurerm.resources/get-azurermroleassignment), чтобы проверить разрешения.
 
 <!-- Daniel 3/28 -->
-- Если на пользовательском портале перейти к большому двоичному объекту в учетной записи хранения и попытаться открыть раздел **Политика доступа**, соответствующее окно не отображается в дереве навигации.
+- Если на пользовательском портале перейти к большому двоичному объекту в учетной записи хранения и попытаться открыть раздел **Политика доступа**, соответствующее окно не отображается в дереве навигации. Чтобы обойти эту проблему, можно использовать приведенные ниже командлеты PowerShell для создания, получения, установки и удаления политик доступа соответственно.
+
+  - [New-AzureStorageContainerStoredAccessPolicy](/powershell/module/azure.storage/new-azurestoragecontainerstoredaccesspolicy)
+  - [Get-AzureStorageContainerStoredAccessPolicy](/powershell/module/azure.storage/get-azurestoragecontainerstoredaccesspolicy)
+  - [Set-AzureStorageContainerStoredAccessPolicy](/powershell/module/azure.storage/set-azurestoragecontainerstoredaccesspolicy)
+  - [Remove-AzureStorageContainerStoredAccessPolicy](/powershell/module/azure.storage/remove-azurestoragecontainerstoredaccesspolicy)
 
 <!-- Daniel 3/28 -->
 - Если на пользовательском портале попытаться отправить большой двоичный объект с помощью варианта **OAuth (предварительная версия)**, задача завершается сбоем с сообщением об ошибке. Чтобы обойти эту проблему, отправьте большой двоичный объект с помощью варианта **SAS**.
@@ -151,14 +163,16 @@ Azure Stack выпускает исправления на регулярной 
 
 - Виртуальная машина Ubuntu 18.04, созданная с включенной авторизацией SSH, не позволяет использовать ключи SSH для входа. В качестве решения используйте расширение доступа к виртуальной машине для Linux для реализации ключей SSH после подготовки или проверку подлинности на основе пароля.
 
-- Если у вас нет узла жизненного цикла оборудования (HLH). До выхода сборки 1902 нужно было установить для групповой политики в разделе *Конфигурация компьютера\Параметры Windows\Параметры безопасности\Локальные политики\Параметры безопасности* значение **Отправлять LM и NTLM — использовать сеансовую безопасность NTLMv2 при согласовании**. С выходом сборки 1902 необходимо оставлять значение **Не определено** или установить значение **Отправлять только NTLMv2 ответ** (значение по умолчанию). Иначе вы не сможете установить удаленный сеанс PowerShell и получите сообщение об ошибке *Отказано в доступе*:
+- Azure Stack теперь поддерживает агенты Windows Azure для Linux более поздней версии, чем версия 2.2.20. Эта поддержка была реализована в исправлениях 1901 и 1902. Она позволяет клиентам обеспечивать согласование образов Linux между Azure и Azure Stack.
 
-   ```PowerShell
+- Если у вас нет узла жизненного цикла оборудования (HLH). До выхода сборки 1902 нужно было установить для групповой политики в разделе **Конфигурация компьютера\Параметры Windows\Параметры безопасности\Локальные политики\Параметры безопасности** значение **Отправлять LM и NTLM — использовать сеансовую безопасность NTLMv2 при согласовании**. В сборке 1902 и более поздних необходимо оставить значение **Не определено** или установить значение **Отправлять только NTLMv2 ответ** (значение по умолчанию). Иначе вы не сможете установить удаленный сеанс PowerShell и увидите сообщение об ошибке **Отказано в доступе**:
+
+   ```powershell
    PS C:\Users\Administrator> $session = New-PSSession -ComputerName x.x.x.x -ConfigurationName PrivilegedEndpoint  -Credential $cred
    New-PSSession : [x.x.x.x] Connecting to remote server x.x.x.x failed with the following error message : Access is denied. For more information, see the 
    about_Remote_Troubleshooting Help topic.
    At line:1 char:12
-   + $session = New-PSSession -ComputerName x.x.x.x -ConfigurationNa ...
+   + $Session = New-PSSession -ComputerName x.x.x.x -ConfigurationNa ...
    +            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       + CategoryInfo          : OpenError: (System.Manageme....RemoteRunspace:RemoteRunspace) [New-PSSession], PSRemotingTransportException
       + FullyQualifiedErrorId : AccessDenied,PSSessionOpenFailed
@@ -169,7 +183,7 @@ Azure Stack выпускает исправления на регулярной 
 <!-- 3239127 - IS, ASDK -->
 - При изменении на портале Azure Stack статического IP-адреса для конфигурации IP, которая привязана к сетевому адаптеру, подключенному к экземпляру виртуальной машины, вы увидите предупреждение: 
 
-    `The virtual machine associated with this network interface will be restarted to utilize the new private IP address...`.
+    `The virtual machine associated with this network interface will be restarted to utilize the new private IP address...`
 
     Вы можете игнорировать это сообщение, так как IP-адрес изменится, даже если не перезапустить экземпляр виртуальной машины.
 
@@ -194,12 +208,15 @@ Azure Stack выпускает исправления на регулярной 
 <!-- 2352906 - IS ASDK --> 
 - Прежде чем создавать первую функцию Azure в подписке, пользователь должен зарегистрировать поставщик ресурсов хранилища.
 
-
 <!-- ### Usage -->
 
  
 <!-- #### Identity -->
 <!-- #### Marketplace -->
+
+### <a name="syslog"></a>syslog
+
+- Конфигурация системного журнала не сохраняется в цикле обновления, поэтому клиент системного журнала теряет свою конфигурацию, а пересылка сообщений системного журнала останавливается. Эта проблема относится ко всем версиям платформы Azure Stack, начиная с общедоступной версии клиента системного журнала (1809). Чтобы обойти эту проблему, повторно настройте клиент системного журнала после установки обновления Azure Stack.
 
 ## <a name="download-the-update"></a>Скачивание обновления
 

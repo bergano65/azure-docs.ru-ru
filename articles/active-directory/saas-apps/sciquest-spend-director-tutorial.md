@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory со SciQuest Spend Director | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory со SciQuest Spend Director | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SciQuest Spend Director.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 614d56cba4a95b7f9364bc9c044e78d291caf3ff
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 371ea6609181b84ff8554b9e2f1a5047d2d48c48
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57998592"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59258459"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sciquest-spend-director"></a>Руководство по Интеграция Azure Active Directory со SciQuest Spend Director
 
@@ -52,7 +52,7 @@ ms.locfileid: "57998592"
 
 Чтобы настроить интеграцию SciQuest Spend Director с Azure AD, вам потребуется добавить SciQuest Spend Director из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить SciQuest Spend Director из коллекции, выполните следующие действия:**
+**Чтобы добавить SciQuest Spend Director из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,11 +106,11 @@ ms.locfileid: "57998592"
 
     ![Сведения о домене и URL-адресах единого входа приложения SciQuest Spend Director](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.sciquest.com/apps/Router/SAMLAuth/<instancename>`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.sciquest.com/apps/Router/SAMLAuth/<instancename>`
 
-    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.sciquest.com`.
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.sciquest.com`
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<companyname>.sciquest.com/apps/Router/ExternalAuth/Login/<instancename>`.
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<companyname>.sciquest.com/apps/Router/ExternalAuth/Login/<instancename>`
 
     > [!NOTE]
     > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов SciQuest Spend Director](https://www.jaggaer.com/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -203,8 +203,8 @@ ms.locfileid: "57998592"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

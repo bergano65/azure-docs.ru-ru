@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 2/20/2019
 ms.author: chlandsi
-ms.openlocfilehash: 2520f05c83cb5b727c8cdae1602b39320de4b99d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ee0be31b10c86651fa36577ad0dffccc3dc7bf59
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58094928"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59009277"
 ---
 # <a name="quickstart-recognize-speech-in-objective-c-on-ios-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в iOS с помощью Objective-C и пакета SDK службы "Речь"
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
-Из этой статьи вы узнаете, как с помощью пакета SDK для службы "Речь" в Cognitive Services можно создать приложение iOS в Objective-C, которое будет преобразовывать аудиозапись речи в текст.
+Из этой статьи вы узнаете, как с помощью пакета SDK службы "Речь" в Cognitive Services можно создать приложение iOS в Objective-C, которое будет преобразовывать в текст речь из микрофона или аудиофайла.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -29,16 +29,16 @@ ms.locfileid: "58094928"
 
 * [Ключ подписки](get-started.md) для службы "Речь".
 * Компьютер под управлением macOS с [Xcode 9.4.1](https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12) или более поздней версии.
-* iOS 11.4 или более поздней версии в качестве целевой версии.
+* iOS 9.3 или последующей версии в качестве целевой версии.
 
 ## <a name="get-the-speech-sdk-for-ios"></a>Получение пакета SDK службы "Речь" для iOS
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.3.1`.
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.4.0`.
 
-В настоящее время пакет SDK службы "Речь" для Cognitive Services для Mac и iOS распределяется под названием Cocoa Framework.
-Его можно скачать по ссылке: https://aka.ms/csspeech/iosbinary. Загрузите файл в домашний каталог.
+Пакет SDK службы "Речь" для Cognitive Services для iOS сейчас доступен в виде Cocoa Framework.
+Скачать его можно [здесь](https://aka.ms/csspeech/iosbinary). Загрузите файл в домашний каталог.
 
 ## <a name="create-an-xcode-project"></a>Создание проекта Xcode
 
@@ -103,3 +103,4 @@ ms.locfileid: "58094928"
 
 > [!div class="nextstepaction"]
 > [Ознакомьтесь с примерами на Objective-C на сайте GitHub](https://aka.ms/csspeech/samples)
+

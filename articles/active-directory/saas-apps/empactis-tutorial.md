@@ -1,5 +1,5 @@
 ---
-title: Руководство. Руководство по интеграции Azure Active Directory с приложением Empactis | Документация Майкрософт
+title: Руководство по Руководство по интеграции Azure Active Directory с приложением Empactis | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Empactis.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: ed0b5c990bd12e23fefcc433a656a71207b08683
-ms.sourcegitcommit: 4133f375862fdbdec07b70de047d70c66ac29d50
+ms.openlocfilehash: d4d9e988f54abc52eedf0dfc26c78a2d16f72032
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58003761"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59277736"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-empactis"></a>Руководство. Интеграция Azure Active Directory с Empactis
+# <a name="tutorial-azure-active-directory-integration-with-empactis"></a>Руководство по Интеграция Azure Active Directory с Empactis
 
 В этом руководстве описано, как интегрировать приложение Empactis с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Empactis обеспечивает следующие преимущества.
@@ -51,7 +51,7 @@ ms.locfileid: "58003761"
 
 Чтобы настроить интеграцию Empactis с Azure AD, необходимо добавить Empactis из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Empactis из коллекции, сделайте следующее.**
+**Чтобы добавить Empactis из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -186,9 +186,9 @@ ms.locfileid: "58003761"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

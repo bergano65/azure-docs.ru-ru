@@ -1,44 +1,26 @@
 ---
-title: Создание Шлюза приложений Azure с помощью классического Azure CLI | Документация Майкрософт
+title: 'Создание шлюза приложений Azure — Классическая модель: CLI Azure'
 description: Создание Шлюза приложений с помощью классического Azure CLI в Resource Manager
 services: application-gateway
-documentationcenter: na
 author: vhorne
-manager: jpconnock
-editor: ''
-tags: azure-resource-manager
-ms.assetid: c2f6516e-3805-49ac-826e-776b909a9104
 ms.service: application-gateway
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 07/31/2017
+ms.topic: conceptual
+ms.date: 4/15/2019
 ms.author: victorh
-ms.openlocfilehash: e834b1633f17ecec74ae17e962de445ad8d6dccd
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
-ms.translationtype: HT
+ms.openlocfilehash: 7107f45253c4f13b3378489726bf5034e104fa30
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46974431"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59608478"
 ---
 # <a name="create-an-application-gateway-by-using-the-azure-cli"></a>Создание шлюза приложений с помощью интерфейса командной строки Azure
 
-> [!div class="op_single_selector"]
-> * [портала Azure](application-gateway-create-gateway-portal.md)
-> * [PowerShell и диспетчер ресурсов Azure](application-gateway-create-gateway-arm.md)
-> * [Классическая модель — Azure PowerShell](application-gateway-create-gateway.md)
-> * [Шаблон Azure Resource Manager](application-gateway-create-gateway-arm-template.md)
-> * [Классический Azure CLI](application-gateway-create-gateway-cli.md)
-> * [Интерфейс командной строки Azure](application-gateway-create-gateway-cli.md)
-> 
-> 
+Шлюз приложений — это балансировщик нагрузки уровня 7. Он отвечает за отработку отказов и эффективную маршрутизацию HTTP-запросов между разными серверами (облачными и локальными). Шлюз приложений имеет такие функции доставки приложений: Балансировка нагрузки HTTP, определение сходства сеансов на основе файлов cookie и разгрузки Secure Sockets Layer (SSL), пользовательские пробы работоспособности и поддержку нескольких сайтов.
 
-Шлюз приложений — это балансировщик нагрузки уровня 7. Он отвечает за отработку отказов и эффективную маршрутизацию HTTP-запросов между разными серверами (облачными и локальными). Шлюз приложений выполняет такие функции доставки приложений: балансировка нагрузки HTTP, определение сходства сеансов на основе файлов cookie, разгрузка SSL, применение пользовательских проб работоспособности и поддержка нескольких сайтов.
+## <a name="prerequisite-install-the-azure-cli"></a>Предварительные требования: Установка Azure CLI
 
-## <a name="prerequisite-install-the-azure-cli"></a>Предварительные требования. Установка Azure CLI
-
-Для выполнения действий, описанных в этой статье, требуется [установить Azure CLI](../xplat-cli-install.md) и [войти в учетную запись Azure](/cli/azure/authenticate-azure-cli). 
+Чтобы выполнить действия в этой статье, вам потребуется [установите Azure CLI](../xplat-cli-install.md) и вам нужно [войдите в Azure](/cli/azure/authenticate-azure-cli). 
 
 > [!NOTE]
 > Если у вас нет учетной записи Azure, то вам потребуется получить ее. Зарегистрируйтесь, чтобы получить [бесплатную пробную версию](../active-directory/fundamentals/sign-up-organization.md).
@@ -60,15 +42,15 @@ ms.locfileid: "46974431"
 
 Шлюзу приложений Azure требуется собственная подсеть. При создании виртуальной сети обязательно оставьте достаточно адресного пространства для нескольких подсетей. После развертывания шлюза приложений в подсети в нее можно добавлять только дополнительные шлюзы приложений.
 
-## <a name="log-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Откройте **командную строку Microsoft Azure**, и выполните вход. 
+Откройте **командную строку Microsoft Azure**и войдите в систему.
 
 ```azurecli-interactive
-azure login
+az login
 ```
 
-Введя предыдущий пример, вы получите код. В браузере перейдите по адресу https://aka.ms/devicelogin, чтобы продолжить процедуру входа.
+Введя предыдущий пример, вы получите код. Перейдите к https://aka.ms/devicelogin в браузере, чтобы продолжить процесс входа.
 
 ![Команда, выводящая имя пользователя устройства][1]
 
@@ -122,7 +104,7 @@ azure network vnet subnet create \
 
 ## <a name="create-the-application-gateway"></a>Создание шлюза приложений
 
-После создания виртуальной сети и подсети можно считать, что все предварительные требования для шлюза приложений соблюдены. Кроме того, далее вам понадобятся ранее экспортированный PFX-сертификат и пароль для сертификата. IP-адреса, используемые для серверной части, — это IP-адреса для внутреннего сервера. Эти значения могут быть частными IP-адресами в виртуальной сети, общедоступными IP-адресами или полными доменными именами для внутренних серверов.
+После создания виртуальной сети и подсети можно считать, что все предварительные требования для шлюза приложений соблюдены. Кроме того ранее экспортированный PFX-сертификат и пароль для сертификата для необходимы следующие действия: IP-адреса серверной части — это IP-адреса внутреннего сервера. Эти значения могут быть частными IP-адресами в виртуальной сети, общедоступными IP-адресами или полными доменными именами для внутренних серверов.
 
 ```azurecli-interactive
 azure network application-gateway create \
@@ -149,7 +131,7 @@ azure network application-gateway create \
 В этом примере создается базовый шлюз приложений с параметрами по умолчанию для прослушивателя, серверного пула, протокола HTTP серверной части и правил. Вы сможете изменить эти параметры в соответствии с развертыванием после успешного завершения подготовки.
 Если на предыдущем шаге вы уже определили для веб-приложения внутренний пул, то после создания шлюза запускается балансировка нагрузки.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как создавать пользовательские пробы работоспособности, посетив страницу [Create a custom probe for Application Gateway by using the portal](application-gateway-create-probe-portal.md)
 

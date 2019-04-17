@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Citrix Netscaler | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Citrix Netscaler | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Citrix Netscaler.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: ca5fec00d264bb50c75338d36ec793946f495bff
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 6d434295a6a46ee5b7089608cbf788ff91589fb7
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58229264"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59281681"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-citrix-netscaler"></a>Руководство по Интеграция Azure Active Directory с Citrix Netscaler
 
@@ -53,7 +53,7 @@ ms.locfileid: "58229264"
 
 Чтобы настроить интеграцию Citrix Netscaler с Azure AD, вам нужно добавить Citrix Netscaler из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Citrix Netscaler из коллекции, выполните следующие действия.**
+**Чтобы добавить Citrix Netscaler из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -107,11 +107,11 @@ ms.locfileid: "58229264"
 
     ![Сведения о домене и URL-адресах единого входа приложения Citrix Netscaler](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<<Your FQDN>>/CitrixAuthService/AuthService.asmx`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<<Your FQDN>>/CitrixAuthService/AuthService.asmx`
     
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<<Your FQDN>>`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<<Your FQDN>>`
 
-    c. В текстовое поле **URL-адреса ответа или URL-адрес службы обработчика утверждений** введите URL-адрес в следующем формате: `https://<<Your FQDN>>/CitrixAuthService/AuthService.asmx`.
+    c. В текстовое поле **URL-адреса ответа или URL-адрес службы обработчика утверждений** введите URL-адрес в следующем формате: `https://<<Your FQDN>>/CitrixAuthService/AuthService.asmx`
     
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов Citrix Netscaler](https://www.citrix.com/contact/technical-support.html). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -383,9 +383,9 @@ ms.locfileid: "58229264"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

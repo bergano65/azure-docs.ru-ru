@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: 59dc9f82251e7a406e6fe1339fdb55b4880cd74d
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: 34fe5d85829d909989513214406ba96ea5be0aa8
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58649192"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59271107"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pega-systems"></a>Руководство по Интеграция Azure Active Directory с Pega Systems
 
@@ -105,9 +105,9 @@ ms.locfileid: "58649192"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Pega Systems](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/sp/<INSTANCEID>`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/sp/<INSTANCEID>`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/PRRestService/WebSSO/SAML/AssertionConsumerService`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/PRRestService/WebSSO/SAML/AssertionConsumerService`
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -115,7 +115,7 @@ ms.locfileid: "58649192"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес для входа.
 
-    b. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://<CUSTOMERNAME>.pegacloud.io/prweb/sso`.
+    b. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://<CUSTOMERNAME>.pegacloud.io/prweb/sso`
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените эти значения фактическим идентификатором, URL-адресом ответа, URL-адресом для входа и URL-адресом состояния ретранслятора. Далее в этом руководстве объясняется, как найти значения идентификатора и URL-адреса ответа в приложении Pega Systems. Чтобы получить значение состояния ретрансляции, обратитесь к [группе поддержки клиентов Pega Systems](https://www.pega.com/contact-us). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -275,8 +275,8 @@ ms.locfileid: "58649192"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: iot-industrialiot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 1dee51354ba9210e52459dcf7a96695bc3736648
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: b4fbfc1d9c9441c6c9f12987de5feb1a90e9f17f
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58759767"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59256385"
 ---
 # <a name="what-is-industrial-iot-iiot"></a>Что собой представляет промышленный Интернет вещей (ПИВ)
 
@@ -50,4 +50,4 @@ ms.locfileid: "58759767"
 Теперь, когда ознакомились с основами промышленного Интернета вещей и его компонентов, мы предлагаем:
 
 > [!div class="nextstepaction"]
-> [Что такое OPC Twin](overview-opc-twin.md)
+> [Что собой представляет двойник OPC](overview-opc-twin.md)

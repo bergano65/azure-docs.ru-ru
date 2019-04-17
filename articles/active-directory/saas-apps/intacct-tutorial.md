@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Intacct | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Intacct | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Intacct.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: cd10adbc509812a360ae59fdac3f16bd2af0324c
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.openlocfilehash: 31bc5622c6c6c3dd00bc59b5d8f3aa349055d125
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58188158"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59279250"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-intacct"></a>Руководство по Интеграция Azure Active Directory с Intacct
 
@@ -51,7 +51,7 @@ ms.locfileid: "58188158"
 
 Чтобы настроить интеграцию Intacct с Azure AD, необходимо добавить Intacct из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Intacct из коллекции, выполните следующие действия.**
+**Чтобы добавить Intacct из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -211,7 +211,7 @@ ms.locfileid: "58188158"
 
 Чтобы пользователи Azure AD могли входить в Intacct, их необходимо подготовить для Intacct. Эта подготовка для Intacct выполняется вручную.
 
-**Чтобы подготовить учетные записи пользователей, выполните следующие действия.**
+**Чтобы подготовить учетные записи пользователей, выполните следующие действия:**
 
 1. Войдите в клиент **Intacct**.
 
@@ -244,9 +244,9 @@ ms.locfileid: "58188158"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

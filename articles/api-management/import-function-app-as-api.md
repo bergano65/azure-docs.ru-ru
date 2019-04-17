@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 08/28/2018
 ms.author: apimpm
-ms.openlocfilehash: e86bd797774448d8e4821ff02d358d420a099442
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: fe6a008a6cbd2ca4e8aedeeca6d96cc00f6b29d1
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55810785"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59046059"
 ---
 # <a name="import-an-azure-function-app-as-an-api-in-azure-api-management"></a>Импорт приложения-функции Azure в качестве API в службу управления API Azure
 
@@ -69,7 +69,7 @@ ms.locfileid: "55810785"
     ![Добавление из приложения-функции](./media/import-function-app-as-api/add-05.png)
 
     > [!NOTE]
-    > Вы можете импортировать только функции, которые основаны на триггере HTTP и имеют уровень авторизации *Анонимный* или *Функция*.
+    > Вы можете импортировать только функции, которые основаны на триггере HTTP и имеют уровень авторизации *Анонимный* или *Функция*. В данный момент приложения-функции Linux не поддерживаются.
 
 7. Переключитесь в **полное** представление и назначьте **продукт** вашему новому API. При необходимости измените другие предварительно заполненные поля.
 
@@ -111,11 +111,14 @@ ms.locfileid: "55810785"
 
     ![Добавление из приложения-функции](./media/import-function-app-as-api/append-04.png)
 
-## <a name="function-app-import-keys"></a> Создание ключа узла приложения-функции Azure
+## <a name="authorization"></a> Авторизация
 
 Во время импорта приложения-функции Azure автоматически создается:
+
 * ключ узла в приложении-функции с именем apim-{*имя экземпляра службы "Управление API Azure"*};
 * именованное значение в экземпляре службы "Управление API Azure" с именем {*имя экземпляра приложения-функции Azure*}-key, которое содержит созданный ключ узла.
+
+При использовании интерфейсов API, созданных после 4 апреля 2019 г., ключ узла передается в HTTP-запросе от службы "Управление API" к приложению-функции в заголовке. Более старые API передают ключ узла в виде [параметра запроса](../azure-functions/functions-bindings-http-webhook.md#api-key-authorization). Такое поведение можно изменить с помощью вызова [REST API](https://docs.microsoft.com/rest/api/apimanagement/backend/update#backendcredentialscontract) `PATCH Backend` к сущности *Backend*, связанной с приложением-функцией.
 
 > [!WARNING]
 > Удаление или изменение значения ключа узла в приложении-функции Azure или именованного значения службы "Управление API Azure" приведет к разрыву подключения между службами. Значения не синхронизируются автоматически.

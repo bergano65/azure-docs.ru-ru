@@ -1,19 +1,18 @@
 ---
 title: Краткое руководство. Прием данных из Logstash в Azure Data Explorer
 description: В этом кратком руководстве описывается процесс выполнения приема данных (загрузки) в Azure Data Explorer из Logstash.
-services: data-explorer
 author: tamirkamara
 ms.author: takamara
 ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: quickstart
-ms.date: 1/14/2019
-ms.openlocfilehash: a5b4917e0d73378b908739a8fc8c0744c70dd1e9
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.date: 01/14/2019
+ms.openlocfilehash: e0d81454e6036d09bb74af6f522063a1aed5fffe
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58754662"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59046416"
 ---
 # <a name="quickstart-ingest-data-from-logstash-to-azure-data-explorer"></a>Краткое руководство. Прием данных из Logstash в Azure Data Explorer
 
@@ -114,7 +113,7 @@ output {
 | **app_id**, **app_key**, и **app_tenant**| Учетные данные, необходимые для подключения к Azure Data Explorer. Обязательно используйте приложение с привилегиями приема. |
 | **database**| Имя базы данных для размещения событий. |
 | **таблица** | Имя целевой таблицы для размещения событий. |
-| **сопоставление** | Сопоставление используется для сопоставления строки в формате JSON входящего события в правильный формат строки (определяет, какое свойство входит в какой столбец). |
+| **mapping** | Сопоставление используется для сопоставления строки в формате JSON входящего события в правильный формат строки (определяет, какое свойство входит в какой столбец). |
 
 ## <a name="run-logstash"></a>Запуск Logstash
 

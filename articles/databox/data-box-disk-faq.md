@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: overview
-ms.date: 04/01/2019
+ms.date: 04/08/2019
 ms.author: alkohli
-ms.openlocfilehash: b104f2578938997ff12778d65f08cca226d9a445
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: 27200406f0866697100e1cf9b32c199203ad600d
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58892336"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59258782"
 ---
 # <a name="what-is-azure-data-box-disk"></a>Что такое диск Azure Data Box
 
@@ -54,7 +54,7 @@ ms.locfileid: "58892336"
 О.  Чтобы узнать, где в настоящее время доступны Диски Data Box, перейдите к разделу [Регионы доступности](data-box-disk-overview.md#region-availability).  
 
 ### <a name="q-which-regions-can-i-store-data-in-with-data-box-disks"></a>В. В каких регионах можно хранить данные с помощью дисков Data Box?
-О. Диск Data Box поддерживается во всех регионах США, Канаде, Австралии, Западной и Северной Европе. Поддерживаются регионы только общедоступного облака Azure. Облако Azure для государственных организаций и другие национальные облака не поддерживаются.
+О. В режиме предварительной версии Диск Data Box поддерживается во всех регионах США, Канаде, Австралии, Западной и Северной Европе, Корее и Японии. Поддерживаются регионы только общедоступного облака Azure. Облако Azure для государственных организаций и другие национальные облака не поддерживаются.
 
 ### <a name="q-whom-should-i-contact-if-i-encounter-any-issues--with-data-box-disks"></a>В. С кем следует связаться при возникновении проблем с дисками Data Box?
 О. При любых проблемах с Data Box Disks обратитесь в [службу поддержки Майкрософт](https://docs.microsoft.com/azure/databox/data-box-disk-contact-microsoft-support).
@@ -132,8 +132,8 @@ ms.locfileid: "58892336"
 - [Скачать набор средств для Диска Data Box для Windows](https://aka.ms/databoxdisktoolswin) 
 - [Скачать набор средств для Диска Data Box для Linux](https://aka.ms/databoxdisktoolslinux)
  
-  ### <a name="q-can-i-use-data-box-disk-to-transfer-data-to-azure-files-and-then-use-the-data-with-azure-file-sync"></a>В. Можно ли использовать диск Data Box для передачи данных в службу "Файлы Azure", а затем использовать данные с помощью функции "Синхронизация файлов Azure"? 
-  О. Службу "Файлы Azure" можно использовать с Диском Data Box, но она не будет работать надлежащим образом при применении функции "Синхронизация файлов Azure". Метаданные не сохраняются, если данные файла впоследствии используются функцией "Синхронизация файлов Azure".
+### <a name="q-can-i-use-data-box-disk-to-transfer-data-to-azure-files-and-then-use-the-data-with-azure-file-sync"></a>В. Можно ли использовать диск Data Box для передачи данных в службу "Файлы Azure", а затем использовать данные с помощью функции "Синхронизация файлов Azure"? 
+О. Службу "Файлы Azure" можно использовать с Диском Data Box, но она не будет работать надлежащим образом при применении функции "Синхронизация файлов Azure". Метаданные не сохраняются, если данные файла впоследствии используются функцией "Синхронизация файлов Azure".
 
 
 ## <a name="verify-and-upload"></a>Проверка и отправка данных
@@ -166,7 +166,7 @@ ms.locfileid: "58892336"
 О. Да. Ваши данные были переданы в Azure, но если вы не видите управляемых дисков с определенными группами ресурсов, вполне вероятно, что данные были недопустимыми. Если страничные BLOB-объекты, блочные BLOB-объекты, Файлы Azure и управляемые диски недопустимы, они помещаются в следующие папки:
  - Страничные BLOB-объекты помещаются в контейнер блочных BLOB-объектов, имя которого начинается с *databoxdisk-invalid-pb-*.
  - Файлы Azure помещаются в контейнер блочных BLOB-объектов, имя которого начинается с *databoxdisk-invalid-af-*.
- - Управляемые диски помещаются в контейнер блочных BLOB-объектов, имя которого начинается с *databoxdisk-invliad-md-*.
+ - Управляемые диски помещаются в контейнер блочных BLOB-объектов, имя которого начинается с *databoxdisk-invalid-md-*.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

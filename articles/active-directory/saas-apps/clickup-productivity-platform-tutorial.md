@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с ClickUp Productivity Platform | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с ClickUp Productivity Platform | Документация Майкрософт
 description: В этой статье объясняется, как настроить единый вход между Azure Active Directory и ClickUp Productivity Platform.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
-ms.openlocfilehash: eababa0d83e1db4934fc8b2315e20407ccc77f27
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 3244140999dc61560549db077d4c402b3986956b
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57892954"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59282650"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-clickup-productivity-platform"></a>Руководство. Интеграция Azure Active Directory с ClickUp Productivity Platform
+# <a name="tutorial-azure-active-directory-integration-with-clickup-productivity-platform"></a>Руководство по Интеграция Azure Active Directory с ClickUp Productivity Platform
 
 В этом руководстве описано, как интегрировать ClickUp Productivity Platform с Azure Active Directory (Azure AD).
 Интеграция Azure AD с ClickUp Productivity Platform обеспечивает следующие преимущества:
@@ -50,7 +50,7 @@ ms.locfileid: "57892954"
 
 Чтобы настроить интеграцию ClickUp Productivity Platform с Azure AD, необходимо добавить ClickUp Productivity Platform из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить ClickUp Productivity Platform из коллекции, выполните следующие действия:**
+**Чтобы добавить ClickUp Productivity Platform из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -104,9 +104,9 @@ ms.locfileid: "57892954"
 
     ![Сведения о домене и URL-адресах единого входа для приложения ClickUp Productivity Platform](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://app.clickup.com/login/sso`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://app.clickup.com/login/sso`
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://api.clickup.com/v1/team/<team_id>/microsoft`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://api.clickup.com/v1/team/<team_id>/microsoft`
 
     > [!NOTE]
     > Значение идентификатора приведено для примера и не является реальным. Замените его на фактический идентификатор, как описано далее в этом руководстве.
@@ -213,9 +213,9 @@ ms.locfileid: "57892954"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

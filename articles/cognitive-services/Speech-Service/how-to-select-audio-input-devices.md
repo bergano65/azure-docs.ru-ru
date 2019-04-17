@@ -10,16 +10,17 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 2/20/2019
 ms.author: chlandsi
-ms.openlocfilehash: e8e2bd34ebb5b789bb3e9ba4a419ab424d3fdf5a
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 97a3f00bcb5b1a0fb3f499657044b9d83f5b08d7
+ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57550692"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59010385"
 ---
 # <a name="select-an-audio-input-device-with-the-speech-sdk"></a>Выбор аудиоустройства ввода с помощью пакета SDK для распознавания речи
 
-В версии 1.3.0 пакет SDK для распознавания речи представляет API для выбора аудиоустройства ввода. В этой статье описано, как получить идентификаторы аудиоустройств, подключенных к системе.
+Пакет SDK версии 1.3.0 для служб "Речь" предоставляет API для выбора аудиовхода.
+В этой статье описывается, как получить идентификаторы звуковых устройств, подключенных к системе.
 Они могут затем использоваться в пакете SDK для распознавания речи путем настройки звукового устройства с помощью объекта `AudioConfig`:
 
 ```C++
@@ -42,8 +43,11 @@ audioConfig = AudioConfiguration.FromMicrophoneInput("<device id>");
 audioConfig = AudioConfiguration.fromMicrophoneInput("<device id>");
 ```
 
-> [!NOTE]
-> Эта возможность пока недоступна в JavaScript.
+```JavaScript
+audioConfig = AudioConfiguration.fromMicrophoneInput("<device id>");
+```
+>[!Note]
+> Использование микрофона недоступно для JavaScript, выполняющегося в Node.js
 
 ## <a name="audio-device-ids-on-windows-for-desktop-applications"></a>Идентификаторы аудиоустройств в Windows для настольных приложений
 
@@ -367,6 +371,10 @@ CFArrayRef CreateInputDeviceArray()
 ```
 
 позволяет использовать гарнитуру Bluetooth для приложения с поддержкой речевых функций.
+
+## <a name="audio-device-ids-in-javascript"></a>Идентификаторы звуковых устройств в JavaScript
+
+В JavaScript метод [MediaDevices.enumerateDevices()](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/enumerateDevices) можно использовать для перечисления устройств мультимедиа и поиска идентификаторов устройств для их передачи `fromMicrophone(...)`.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

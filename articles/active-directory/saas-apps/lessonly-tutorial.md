@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Lessonly.com | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Lessonly.com | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Lessonly.com.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.openlocfilehash: ced28f5bc3ca947bb4754b7de716b37062f9859a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ec1fce18913d6763514abb80ceba471bf73d59ad
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57898573"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59263678"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lessonlycom"></a>Руководство по Интеграция Azure Active Directory с Lessonly.com
 
@@ -51,7 +51,7 @@ ms.locfileid: "57898573"
 
 Чтобы настроить интеграцию Lessonly.com с Azure AD, необходимо добавить Lessonly.com из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Lessonly.com из коллекции, выполните следующие действия:**
+**Чтобы добавить Lessonly.com из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,12 +105,12 @@ ms.locfileid: "57898573"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Lessonly.com](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.lessonly.com/signin`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.lessonly.com/signin`
 
     > [!NOTE]
     > Значение **companyname** в ссылке необходимо заменить фактическим именем.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.lessonly.com/auth/saml/metadata`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.lessonly.com/auth/saml/metadata`
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Lessonly.com](mailto:support@lessonly.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -183,7 +183,7 @@ ms.locfileid: "57898573"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -233,9 +233,9 @@ ms.locfileid: "57898573"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

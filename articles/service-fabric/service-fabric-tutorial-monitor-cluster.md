@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 03/13/2019
 ms.author: srrengar
 ms.custom: mvc
-ms.openlocfilehash: 62ab98d2279380df33657967c55bf7fb4d36da43
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 9838c6e31e3bb7031d98e615fd96049f22dd8d30
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58662454"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59045651"
 ---
 # <a name="tutorial-monitor-a-service-fabric-cluster-in-azure"></a>Руководство по Мониторинг кластера Service Fabric в Azure
 
@@ -38,16 +38,19 @@ ms.locfileid: "58662454"
 > [!div class="checklist"]
 > * создание безопасного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в Azure с помощью шаблона;
 > * мониторинг кластера;
-> * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
-> * [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
+> * [увеличение или уменьшение масштаба кластера;](service-fabric-tutorial-scale-cluster.md)
+> * [обновление среды выполнения кластера;](service-fabric-tutorial-upgrade-cluster.md)
 > * [Удаление кластера](service-fabric-tutorial-delete-cluster.md)
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Установите [модуль Azure PowerShell версии 4.1 или более поздней версии](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps) либо [Azure CLI](/cli/azure/install-azure-cli).
+* Установите [Azure Powershell](https://docs.microsoft.com/powershell/azure/install-Az-ps) или [Azure CLI](/cli/azure/install-azure-cli).
 * Создайте защищенный [кластер Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md). 
 * Настройте [данные диагностики](service-fabric-tutorial-create-vnet-and-windows-cluster.md#configurediagnostics_anchor) для кластера.
 * Включите [службу ​EventStore](service-fabric-tutorial-create-vnet-and-windows-cluster.md#configureeventstore_anchor) в кластере.
@@ -71,9 +74,9 @@ Azure Monitor собирает и анализирует данные телем
 
  Если включить диагностику во время создания кластера, можно просмотреть такие события: 
 
-* [События кластера Service Fabric](service-fabric-diagnostics-event-generation-operational.md).
-* [События модели программирования на основе Reliable Actors](service-fabric-reliable-actors-diagnostics.md).
-* [События модели программирования на основе Reliable Services](service-fabric-reliable-services-diagnostics.md).
+* [события кластера Service Fabric;](service-fabric-diagnostics-event-generation-operational.md)
+* [события модели программирования на основе Reliable Actors;](service-fabric-reliable-actors-diagnostics.md)
+* [события модели программирования на основе Reliable Services.](service-fabric-reliable-services-diagnostics.md)
 
 >[!NOTE]
 >Помимо готовых событий Service Fabric, можно собирать дополнительные системные события. Для этого [обновите файл конфигурации расширения диагностики](service-fabric-diagnostics-event-aggregation-wad.md#log-collection-configurations).
@@ -491,7 +494,7 @@ Get-ServiceFabricService -ApplicationName fabric:/System | Get-ServiceFabricServ
 
 Теперь перейдите к следующему учебнику, чтобы узнать, как масштабировать кластер.
 > [!div class="nextstepaction"]
-> [Масштабирование кластера](service-fabric-tutorial-scale-cluster.md)
+> [Масштабировать кластер](service-fabric-tutorial-scale-cluster.md)
 
 [durability]: service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster
 [template]: https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/7-VM-Windows-3-NodeTypes-Secure-NSG/AzureDeploy.json
