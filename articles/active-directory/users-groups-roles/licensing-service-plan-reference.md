@@ -11,17 +11,17 @@ ms.service: active-directory
 ms.topic: article
 ms.workload: identity
 ms.subservice: users-groups-roles
-ms.date: 04/10/2019
+ms.date: 04/15/2019
 ms.author: curtand
 ms.reviewer: ajayanti1
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b859c64c61264f43a88c158dc10ba6f2b2e56ce
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: e90c4e1f39deffea8a7dd7b2c0dbfdcf5e0b3555
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59495128"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59609512"
 ---
 # <a name="product-names-and-service-plan-identifiers-for-licensing"></a>Названия продуктов и идентификаторы планов служб для лицензирования
 
@@ -34,7 +34,7 @@ ms.locfileid: "59495128"
 - **Включенные планы (понятные имена) службы**: Список планов обслуживания (понятные имена) в продукт, которые соответствуют Идентификатору строки и GUID
 
 >[!NOTE]
->Эти сведения достоверные по состоянию на 17 августа 2018 года.
+>Эти сведения достоверные по состоянию на 15 апреля 2019 г.
 
 | Название продукта | Идентификатор строки | GUID | Включенные планы службы | Включенные планы службы (понятные имена) |
 | --- | --- | --- |--- |
@@ -214,10 +214,10 @@ ms.locfileid: "59495128"
 
 Дополнительные сведения о наборе функций для управления лицензиями с помощью групп см. по ссылкам ниже.
 
-* [Что такое лицензии групп в Azure Active Directory?](../fundamentals/active-directory-licensing-whatis-azure-portal.md)
+* [Group-based licensing basics in Azure Active Directory](../fundamentals/active-directory-licensing-whatis-azure-portal.md) (Основы группового лицензирования в Azure Active Directory)
 * [Назначение лицензий группе в Azure Active Directory](licensing-groups-assign.md)
 * [Поиск и устранение проблем лицензирования группы в Azure Active Directory](licensing-groups-resolve-problems.md)
 * [Как перевести отдельных лицензированных пользователей на групповое лицензирование в Azure Active Directory](licensing-groups-migrate-users.md)
-* [Как перевести пользователей с отдельных лицензий продуктов на групповое Лицензирование в Azure Active Directory](licensing-groups-change-licenses.md)
+* [Как безопасно перевести пользователей с отдельных лицензий продуктов с использованием группового лицензирования](licensing-groups-change-licenses.md)
 * [Дополнительные сценарии лицензирования на основе группы в Azure Active Directory](licensing-group-advanced.md)
 * [Примеры PowerShell для группового лицензирования в Azure AD](licensing-ps-examples.md)
