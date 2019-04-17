@@ -8,17 +8,17 @@ ms.subservice: service
 ms.custom: ''
 ms.devlang: ''
 ms.topic: quickstart
-author: CarlRabeler
-ms.author: carlrab
+author: stevestein
+ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 03/25/2019
-ms.openlocfilehash: 2348b4293b8726c406b1f06b2f88c37dfb00e80c
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 86f29f07df6174ecead852fada73ac05f8682fca
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58447751"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59359981"
 ---
 # <a name="quickstart-use-sql-server-management-studio-to-connect-and-query-an-azure-sql-database"></a>Краткое руководство. Подключение к базе данных SQL Azure и создание запросов к ней с помощью SQL Server Management Studio
 
@@ -30,8 +30,8 @@ ms.locfileid: "58447751"
 
   || Отдельная база данных | Управляемый экземпляр |
   |:--- |:--- |:---|
-  | Создание| [Портал](sql-database-single-database-get-started.md) | [Портал](sql-database-managed-instance-get-started.md) |
-  || [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](scripts/sql-database-create-and-configure-database-cli.md) | [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
+  | Создание| [Microsoft Azure](sql-database-single-database-get-started.md) | [Microsoft Azure](sql-database-managed-instance-get-started.md) |
+  || [Интерфейс командной строки](scripts/sql-database-create-and-configure-database-cli.md) | [Интерфейс командной строки](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
   || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md) |
   | Настройка | [Правило брандмауэра IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
   |||[Подключение "точка — сеть"](sql-database-managed-instance-configure-p2s.md)
@@ -44,7 +44,7 @@ ms.locfileid: "58447751"
 
 ## <a name="install-the-latest-ssms"></a>Установка последней версии SSMS
 
-Перед началом работы убедитесь, что вы установили последнюю версию [SSMS][ssms-install-latest-84g]. 
+Перед началом работы убедитесь, что вы установили последнюю версию [SSMS][ssms-install-latest-84g].
 
 ## <a name="get-sql-server-connection-information"></a>Получение сведений о подключении к SQL Server
 
@@ -58,7 +58,7 @@ ms.locfileid: "58447751"
 
 ## <a name="connect-to-your-database"></a>Подключение к базе данных
 
-В SMSS подключитесь к своему серверу Базы данных SQL Azure. 
+В SMSS подключитесь к своему серверу Базы данных SQL Azure.
 
 > [!IMPORTANT]
 > Сервер Базы данных SQL Azure прослушивает порт 1433. Чтобы подключиться к серверу Базы данных SQL при включенном корпоративном брандмауэре, необходимо открыть этот порт в брандмауэре.
@@ -68,12 +68,12 @@ ms.locfileid: "58447751"
 
 2. Введите следующие сведения:
 
-   | Параметр      | Рекомендуемое значение    | ОПИСАНИЕ | 
-   | ------------ | ------------------ | ----------- | 
+   | Параметр      | Рекомендуемое значение    | ОПИСАНИЕ |
+   | ------------ | ------------------ | ----------- |
    | **Тип сервера** | Ядро СУБД | Обязательное значение. |
-   | **Server name** (Имя сервера) | Полное имя сервера | Примерно такое: **mynewserver20170313.database.windows.net**. |
-   | **Проверка подлинности** | Проверка подлинности SQL Server | В этом руководстве используется проверка подлинности SQL. |
-   | **Имя входа** | Идентификатор пользователя учетной записи администратора сервера | Идентификатор пользователя учетной записи администратора сервера, используемый для создания сервера. |
+   | **Имя сервера** | Полное имя сервера | Примерно такое: **mynewserver20170313.database.windows.net**. |
+   | **Authentication** | Проверка подлинности SQL Server | В этом руководстве используется проверка подлинности SQL. |
+   | **Вход** | Идентификатор пользователя учетной записи администратора сервера | Идентификатор пользователя учетной записи администратора сервера, используемый для создания сервера. |
    | **Пароль** | Пароль для учетной записи администратора сервера | Пароль учетной записи администратора сервера, используемый для создания сервера. |
    ||||
 
@@ -83,7 +83,7 @@ ms.locfileid: "58447751"
 
    ![Подключение к базе данных на сервере](./media/sql-database-connect-query-ssms/options-connect-to-db.png)  
 
-4. Нажмите кнопку **Подключиться**. После этого откроется окно обозревателя объектов. 
+4. Нажмите кнопку **Подключиться**. После этого откроется окно обозревателя объектов.
 
 5. Чтобы просмотреть объекты базы данных, разверните узел **Базы данных**, а затем — **mySampleDatabase**.
 
@@ -140,15 +140,14 @@ ms.locfileid: "58447751"
 1. Замените предыдущий запрос следующим содержимым.
 
    ```sql
-   SELECT * FROM [SalesLT].[Product] 
-   WHERE Name='myNewProduct' 
+   SELECT * FROM [SalesLT].[Product]
+   WHERE Name='myNewProduct'
    ```
-   
-2. Нажмите кнопку **Выполнить**. Отобразится такой результат. 
+
+2. Нажмите кнопку **Выполнить**. Отобразится такой результат.
 
    ![result](./media/sql-database-connect-query-ssms/result.png)
 
- 
 ## <a name="update-data"></a>Обновление данных
 
 Запустите код Transact-SQL [UPDATE](https://msdn.microsoft.com/library/ms177523.aspx), чтобы обновить новый продукт.
@@ -188,8 +187,6 @@ ms.locfileid: "58447751"
 - См. дополнительные сведения о [подключении и создании запросов с помощью Python](sql-database-connect-query-python.md).
 - См. дополнительные сведения о [подключении и создании запросов с помощью Ruby](sql-database-connect-query-ruby.md).
 
-
 <!-- Article link references. -->
 
 [ssms-install-latest-84g]: https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms
-

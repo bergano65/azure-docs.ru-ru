@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с OpsGenie | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с OpsGenie | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и OpsGenie.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 48922e0165aa8f5f418c222aab29ff8c100f2745
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f395ae51d51e56668482ad6c8d446bdd31050fea
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58076434"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59280177"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-opsgenie"></a>Руководство. Интеграция Azure Active Directory с OpsGenie
+# <a name="tutorial-azure-active-directory-integration-with-opsgenie"></a>Руководство по Интеграция Azure Active Directory с OpsGenie
 
 В этом руководстве описано, как интегрировать OpsGenie с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением OpsGenie обеспечивает следующие преимущества.
@@ -51,7 +51,7 @@ ms.locfileid: "58076434"
 
 Чтобы настроить интеграцию OpsGenie с Azure AD, необходимо добавить OpsGenie из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить OpsGenie из коллекции, выполните следующие действия.**
+**Чтобы добавить OpsGenie из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -231,9 +231,9 @@ ms.locfileid: "58076434"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

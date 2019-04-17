@@ -8,14 +8,14 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 02/27/2019
 ms.author: alkohli
-ms.openlocfilehash: 1358751c71dfba39574807c9b232957227980f5d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ec2013a793f766221a66912d6de9d8da8b8106dd
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57887516"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59282565"
 ---
-# <a name="tutorial-use-data-box-to-import-data-as-managed-disks-in-azure"></a>Руководство. Использование Data Box для импорта данных в качестве управляемых дисков в Azure.
+# <a name="tutorial-use-data-box-to-import-data-as-managed-disks-in-azure"></a>Руководство по Использование Data Box для импорта данных в качестве управляемых дисков в Azure.
 
 В этом руководстве описывается использование Azure Data Box для переноса локальных виртуальных жестких дисков на управляемые диски в Azure. Виртуальные жесткие диски из локальных виртуальных машин копируются в Data Box в качестве страничных BLOB-объектов и отправляются в Azure как управляемые диски. Затем эти управляемые диски можно подключить к виртуальным машинам Azure.
 
@@ -46,7 +46,7 @@ ms.locfileid: "57887516"
 - `mydbmdrg1_MDisk`
 - `mydbmdrg2_MDisk`
 
-В каждой общей папке создаются следующие четыре папки, которые соответствуют контейнерам в вашей учетной записи хранения.
+В каждой общей папке создаются следующие три папки, которые соответствуют контейнерам в вашей учетной записи хранения.
 
 - SSD (цен. категория "Премиум")
 - Диск HDD (цен. категория "Стандартный")
@@ -142,8 +142,8 @@ ms.locfileid: "57887516"
 
 В зависимости от того, производится ли подключение через SMB или NFS вы можете:
 
-- [копировать данные по протоколу SMB](data-box-deploy-copy-data.md#copy-data-to-data-box);
-- [копировать данные по протоколу NFS](data-box-deploy-copy-data-via-nfs.md#copy-data-to-data-box).
+- [Копирование данных по протоколу SMB](data-box-deploy-copy-data.md#copy-data-to-data-box)
+- [Копирование данных по протоколу NFS](data-box-deploy-copy-data-via-nfs.md#copy-data-to-data-box)
 
 Дождитесь окончания заданий копирования. Прежде чем переходить к следующему шагу убедитесь, что задания копирования завершены без ошибок.
 
@@ -179,5 +179,5 @@ ms.locfileid: "57887516"
 Перейдите к следующему руководству, чтобы узнать, как отправить свой Data Box обратно в корпорацию Майкрософт.
 
 > [!div class="nextstepaction"]
-> [Отправка Azure Data Box в корпорацию Майкрософт](./data-box-deploy-picked-up.md)
+> [Руководство. Отправка Azure Data Box и проверка передачи данных в Azure](./data-box-deploy-picked-up.md)
 

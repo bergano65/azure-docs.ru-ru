@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с SmartRecruiters | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с SmartRecruiters | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении SmartRecruiters.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 6cf24dd5bd43670efbc41b89ca62ec061dc0dbc3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 79223a7f5c1f16eaf09de8efd05e0ec096ac73ab
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58177608"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59279454"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-smartrecruiters"></a>Руководство. Интеграция Azure Active Directory с SmartRecruiters
+# <a name="tutorial-azure-active-directory-integration-with-smartrecruiters"></a>Руководство по Интеграция Azure Active Directory с SmartRecruiters
 
 Из этого руководства вы узнаете, как интегрировать SmartRecruiters с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением SmartRecruiters обеспечивает следующие преимущества:
@@ -51,7 +51,7 @@ ms.locfileid: "58177608"
 
 Чтобы настроить интеграцию SmartRecruiters с Azure AD, необходимо добавить SmartRecruiters из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить SmartRecruiters из коллекции, выполните инструкции ниже.**
+**Чтобы добавить SmartRecruiters из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "58177608"
 
     ![Сведения о домене и URL-адресах единого входа для приложения SmartRecruiters](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.smartrecruiters.com/web-sso/saml/<companyname>`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://www.smartrecruiters.com/web-sso/saml/<companyname>`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://www.smartrecruiters.com/web-sso/saml/<companyname>/callback`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://www.smartrecruiters.com/web-sso/saml/<companyname>/callback`
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -211,7 +211,7 @@ ms.locfileid: "58177608"
 
 ### <a name="create-smartrecruiters-test-user"></a>Создание тестового пользователя SmartRecruiters
 
-Из этого раздела вы узнаете, как создать пользователя Britta Simon в SmartRecruiters. Чтобы добавить пользователей на платформу SmartRecruiters обратитесь к [группе поддержки SmartRecruiters](https://www.smartrecruiters.com/about-us/contact-us/). Перед использованием единого входа необходимо создать и активировать пользователей.
+Из этого раздела вы узнаете, как создать пользователя Britta Simon в SmartRecruiters. Чтобы добавить пользователей на платформу SmartRecruiters обратитесь к [группе поддержки SmartRecruiters](https://www.smartrecruiters.com/about-us/contact-us/).   Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -221,9 +221,9 @@ ms.locfileid: "58177608"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

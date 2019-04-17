@@ -5,14 +5,14 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.topic: overview
-ms.date: 03/20/2019
+ms.date: 04/08/2019
 ms.author: alkohli
-ms.openlocfilehash: e7a65a6b49544783ed3f40194e2338540819536b
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: 340ff99aae9acff49ffdeaa43463521debb16a07
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58400963"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59282820"
 ---
 # <a name="what-is-azure-data-box-gateway"></a>Что такое Шлюз Azure Data Box?
 
@@ -29,6 +29,8 @@ ms.locfileid: "58400963"
 - **Непрерывный прием данных** — постоянный прием на устройство данных для копирования в облако, независимо от их размера. Устройство отправляет данные в службу хранилище Azure по мере их получения.  
 
 - **Начальная массовая передача данных с последующей передачей добавочных данных** — Data Box позволяет вне сети перенести большой объем данных (первоначальное заполнение), а Шлюз Data Box можно настроить для добавочной передачи текущих изменений по сети.
+
+Дополнительные сведения см. в статье о [сценариях использования Шлюза Azure Data Box](data-box-gateway-use-cases.md).
 
 ## <a name="benefits"></a>Преимущества
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/15/2018
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: 634143f56bc9134f240ff42b7b5989605c8bffde
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
-ms.translationtype: HT
+ms.openlocfilehash: a7c696870e22e1692ca5ed778e47f8e4cc00615a
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45979084"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59610141"
 ---
 ## <a name="set-up-the-development-environment"></a>Настройка среды разработки
 
@@ -37,7 +37,7 @@ ms.locfileid: "45979084"
 
 1. В **обозревателе решений** щелкните проект правой кнопкой мыши.
 
-2. В контекстном меню выберите **Добавить** > **Подключенная служба**.
+1. В контекстном меню выберите **Добавить** > **Подключенная служба**.
 
 1. В диалоговом окне **Подключенные службы** выберите **Cloud Storage with Azure Storage** (Облачное хранилище в службе хранения Azure).
 
@@ -45,8 +45,9 @@ ms.locfileid: "45979084"
 
 1. В диалоговом окне **Служба хранилища Azure** выберите учетную запись хранения Azure, с которой вы будете работать в рамках этого руководства. Чтобы создать учетную запись хранения Azure, выберите **Создать новую учетную запись хранения** и заполните форму. Создав учетную запись или выбрав имеющуюся, нажмите кнопку **Добавить**. После этого Visual Studio установит пакет NuGet для службы хранилища Azure и создаст строку подключения хранилища к **Web.config**.
 
+1. В **обозревателе решений**, щелкните правой кнопкой мыши **зависимости**, выберите **управление пакетами NuGet**и добавьте ссылку на пакет NuGet для последней версии Microsoft.Azure.ConfigurationManager.
+
 > [!TIP]
-> Сведения о создании учетной записи хранения на [портале Azure](https://portal.azure.com) см. в [этом разделе](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+> Сведения о создании учетной записи хранения на [портале Azure](https://portal.azure.com) см. в разделе [Об учетных записях хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
 >
 > Учетную запись хранения можно также создать с помощью [Azure PowerShell](../articles/storage/common/storage-powershell-guide-full.md), [Azure CLI](../articles/storage/common/storage-azure-cli.md) или [Azure Cloud Shell](../articles/cloud-shell/overview.md).
-

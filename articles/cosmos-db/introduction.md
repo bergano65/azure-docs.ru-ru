@@ -1,17 +1,17 @@
 ---
 title: Знакомство с Azure Cosmos DB
 description: Узнайте об Azure Cosmos DB. Эта глобально распределенная многомодельная база данных с низкой задержкой, гибкой масштабируемостью и высоким уровнем доступности предлагает встроенную поддержку данных NoSQL.
-author: SnehaGunda
+author: rimman
 ms.service: cosmos-db
 ms.topic: overview
-ms.date: 03/18/2019
-ms.author: sngun
-ms.openlocfilehash: eec94217cc62f74a5075412aafcf85bf67346bf4
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.date: 04/08/2019
+ms.author: rimman
+ms.openlocfilehash: a965db4334e88d032f767bd7b855dea6f3ff174f
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58294371"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59280950"
 ---
 # <a name="welcome-to-azure-cosmos-db"></a>Добро пожаловать в базу данных Azure Cosmos DB
 
@@ -22,7 +22,7 @@ Azure Cosmos DB — это глобально распределенная мн
 [Бесплатную пробную версию Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) можно использовать без подписки Azure, без оплаты и каких-либо обязательств.
 
 > [!div class="nextstepaction"]
-> [Бесплатная пробная версия Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/)
+> [Бесплатная пробная версия Azure Cosmos DB.](https://azure.microsoft.com/try/cosmosdb/)
 
 ![Cosmos DB — это глобально распределенная служба базы данных Майкрософт с гибкой масштабируемостью, гарантированно низкой задержкой, пятью моделями согласованности и универсальными соглашениями об уровне обслуживания.](./media/introduction/azure-cosmos-db.png)
 
@@ -97,11 +97,11 @@ Cosmos DB предлагает широкий ассортимент API-инт�
 
 Приступая к работе с Azure Cosmos DB, ознакомьтесь с одним из наших кратких руководств:
 
-* [Azure Cosmos DB. Создание веб-приложения API SQL с использованием языка .NET и портала Azure](create-sql-api-dotnet.md)
-* [Начало работы с API Azure Cosmos DB для MongoDB](create-mongodb-nodejs.md)
-* [Краткое руководство. Создание приложения Cassandra с помощью .NET и Azure Cosmos DB](create-cassandra-dotnet.md)
-* [Начало работы с API Gremlin в Azure Cosmos DB](create-graph-dotnet.md)
-* [Краткое руководство. Создание приложения API таблицы с помощью .NET и Azure Cosmos DB](create-table-dotnet.md)
+* [Краткое руководство. Создание веб-приложения .NET с помощью учетной записи API SQL для Azure Cosmos DB](create-sql-api-dotnet.md)
+* [Краткое руководство. Перенос имеющегося веб-приложения MongoDB на Node.js в Azure Cosmos DB](create-mongodb-nodejs.md)
+* [Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для .NET и Azure Cosmos DB](create-cassandra-dotnet.md)
+* [Краткое руководство. Создание приложения .NET Framework или Core с помощью учетной записи API Gremlin для Azure Cosmos DB](create-graph-dotnet.md)
+* [Краткое руководство. Создание приложения API таблиц с помощью пакета SDK .NET и Azure Cosmos DB](create-table-dotnet.md)
 
 > [!div class="nextstepaction"]
 > [Бесплатная пробная версия Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/)

@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 02/25/2019
+ms.date: 04/08/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 40c7e00ad5271457904fc3273fdb633b0c7a8016
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 7339c975bf979907bd1f9bbb46546b58ef7ae6e5
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58085071"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59282361"
 ---
 # <a name="tutorial-import-sql-bacpac-files-with-azure-resource-manager-templates"></a>Руководство. Импорт BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager
 
@@ -53,13 +53,13 @@ BACPAC-файл совместно используется в [учетной �
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
-Шаблоны быстрого запуска Azure являются репозиторием для шаблонов Resource Manager. Вместо создания шаблона с нуля можно найти пример шаблона и настроить его. Шаблон, используемый в этом руководстве, называется [Deploy an Azure SQL Server with Threat Detection](https://azure.microsoft.com/resources/templates/201-sql-threat-detection-server-policy-optional-db/) (Развертывание Azure SQL Server с обнаружением зависимостей).
+Используемый в этом руководстве шаблон хранится в [учетной записи хранения Azure](https://armtutorials.blob.core.windows.net/createsql/azuredeploy.json). 
 
 1. В Visual Studio Code выберите **Файл**>**Открыть файл**.
 2. Скопируйте приведенный ниже URL-адрес и вставьте его в поле **Имя файла**.
 
     ```url
-    https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-sql-threat-detection-server-policy-optional-db/azuredeploy.json
+    https://armtutorials.blob.core.windows.net/createsql/azuredeploy.json
     ```
 3. Чтобы открыть файл, выберите **Открыть**.
 
@@ -175,4 +175,4 @@ New-AzResourceGroupDeployment `
 В этом руководстве вы развернули SQL Server, Базу данных SQL и импортированный BACPAC-файл. BACPAC-файл хранится в учетной записи хранения Azure. К нему может получить доступ любой пользователь, у которого есть URL-адрес. Сведения о защите BACPAC-файла (артефакта) см. в следующем ресурсе:
 
 > [!div class="nextstepaction"]
-> [Защита артефактов](./resource-manager-tutorial-secure-artifacts.md)
+> [Руководство. Защита артефактов в развертываниях шаблонов Azure Resource Manager](./resource-manager-tutorial-secure-artifacts.md)

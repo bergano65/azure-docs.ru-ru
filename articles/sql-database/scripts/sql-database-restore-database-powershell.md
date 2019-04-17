@@ -12,12 +12,12 @@ ms.author: mathoma
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/27/2019
-ms.openlocfilehash: f58cc930ace2dc1fc65aa0494fd6c1510ee5ff29
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.openlocfilehash: 846cf0e0afe2bd1eedaea3c66af674f9b8a447d3
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58621351"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59359185"
 ---
 # <a name="use-powershell-to-restore-an-azure-sql-single-database-to-an-earlier-point-in-time"></a>Используйте PowerShell, чтобы восстановить отдельную базу данных SQL Azure на момент автоматического создания резервной копии.
 
@@ -35,7 +35,7 @@ ms.locfileid: "58621351"
 
 ## <a name="clean-up-deployment"></a>Очистка развертывания
 
-После выполнения примера сценария можно удалить группу ресурсов и все связанные с ней ресурсы, выполнив следующую команду.
+Используйте следующую команду, чтобы удалить группу ресурсов и все связанные с ней ресурсы.
 
 ```powershell
 Remove-AzResourceGroup -ResourceGroupName $resourcegroupname
@@ -47,7 +47,7 @@ Remove-AzResourceGroup -ResourceGroupName $resourcegroupname
 
 | Команда | Примечания |
 |---|---|
-| [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. | 
+| [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер Базы данных SQL, на котором размещена отдельная база данных или пул эластичных баз данных. |
 | [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) | Создает на сервере Базы данных SQL отдельную базу данных или базу данных в составе пула. |
 [Get-AzSqlDatabaseGeoBackup](/powershell/module/az.sql/get-azsqldatabasegeobackup) | Получает геоизбыточную резервную копию отдельной базы данных или базы данных в составе пула. |
