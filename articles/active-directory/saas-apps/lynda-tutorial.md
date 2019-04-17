@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Lynda.com | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Lynda.com | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Lynda.com.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb5399ea7e49475b73f6e614d6c9e81ca96a5f72
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0f20c917a889450f0eacd34e86683b4346681cfc
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57886530"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59258850"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lyndacom"></a>Руководство по Интеграция Azure Active Directory с Lynda.com
 
@@ -52,7 +52,7 @@ ms.locfileid: "57886530"
 
 Чтобы настроить интеграцию Lynda.com с Azure AD, необходимо добавить Lynda.com из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Lynda.com из коллекции, выполните следующие действия.**
+**Чтобы добавить Lynda.com из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -147,7 +147,7 @@ ms.locfileid: "57886530"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -198,9 +198,9 @@ ms.locfileid: "57886530"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

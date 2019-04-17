@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 104acda9521ff52af809fc79b1dfd12e4769e87b
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.openlocfilehash: b648c51b1b169c02f149493c53b6ef738b736e61
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58848799"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59281902"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tonicdm"></a>Руководство по Интеграция Azure Active Directory с TonicDM
 
@@ -107,9 +107,9 @@ ms.locfileid: "58848799"
 
     ![Сведения о домене и URL-адресах единого входа для приложения TonicDM](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://tonicdm.com/`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://tonicdm.com/`
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://tonicdm.com/saml/metadata`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом. `https://tonicdm.com/saml/metadata`
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -191,9 +191,9 @@ ms.locfileid: "58848799"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

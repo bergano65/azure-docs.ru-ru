@@ -8,19 +8,25 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 03/04/2019
+ms.date: 04/11/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: 5b4c9e24bdcb6aaf4efde24d747e77d6014b2539
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 8104497a1808aa4e92d62f45e37525dba2f47742
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57439474"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59607177"
 ---
 # <a name="frequently-asked-questions-for-qna-maker"></a>Часто задаваемые вопросы о QnA Maker
 
 Проверенный список наиболее часто задаваемые вопросы о службе QnA Maker поможет вам быстрее и с более точные результаты, решившим использовать службу.
+
+## <a name="use-the-help-bot-in-the-qna-maker-portal"></a>Использовать бот-помощник в портал QnA Maker
+
+QnA Maker предоставляет **помочь** программ-роботов на портале QnA Maker, чтобы помочь вам. Бот-помощник можно найти в каждой веб-странице. Бот используются QnA Maker давать ответы, а также предоставляется [ C# проект кода Bot Framework](https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/csharp_dotnetcore/qnamaker-support-bot) боту, поэтому вы можете быстро получить приступить к работе с собственных программ-роботов ответов. 
+
+![! [QnA Maker предоставляет ** справки ** программ-роботов на портале QnA Maker, помогающие.] (. / media/qnamaker-faq/use-qna-maker-help-bot-to-learn-qna-maker-service.png)](./media/qnamaker-faq/use-qna-maker-help-bot-to-learn-qna-maker-service.png#lightbox)
 
 ## <a name="manage-the-knowledge-base"></a>Управление базой знаний
 
@@ -98,7 +104,7 @@ ms.locfileid: "57439474"
 
 ### <a name="can-i-use-the-same-azure-search-resource-for-knowledge-bases-using-multiple-languages"></a>Можно ли использовать один и тот же ресурс службы "Поиск Azure" для баз знаний на разных языках?
 
-Чтобы использовать несколько языков и несколько баз знаний, пользователю придется создать ресурс QnA Maker для каждого языка. При этом для каждого языка будет создана отдельная служба поиска Azure. Сочетание баз знаний на нескольких языках в одной службе поиска Azure приведет к снижению релевантности результатов.
+Чтобы использовать несколько языков и несколько баз знаний, пользователю придется создать ресурс QnA Maker для каждого языка. Это будет создан отдельный поиск Azure службы каждого языка. Сочетание баз знаний на нескольких языках в одной службе поиска Azure приведет к снижению релевантности результатов.
 
 ### <a name="how-can-i-change-the-name-of-the-azure-search-resource-used-by-qna-maker"></a>Как изменить имя ресурса службы "Поиск Azure", используемого QnA Maker?
 

@@ -12,24 +12,34 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: ruby
 ms.topic: article
-ms.date: 01/23/2019
+ms.date: 04/15/2019
 ms.author: aschhab
-ms.openlocfilehash: 486e891ae055bdd6b6c30aeff63744acb3b0ef04
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: c2862c3521c05ba81f7a567f7951d22a9ab95c44
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55734544"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59609427"
 ---
 # <a name="how-to-use-service-bus-topics-and-subscriptions-with-ruby"></a>Как использовать разделы и подписки служебной шины с Ruby
  
 [!INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
 
-В этой статье показано, как использовать разделы и подписки служебной шины в приложениях Ruby. В этой статье описаны такие сценарии, как **создание разделов и подписок, создание фильтров подписок, отправка сообщений** в раздел, **получение сообщений из подписки** и **удаление разделов и подписок**. Дополнительные сведения о разделах и подписках см. в разделе [Дальнейшие действия](#next-steps).
+В этой статье показано, как использовать разделы и подписки служебной шины в приложениях Ruby. К рассмотренным сценариям относятся:
 
-[!INCLUDE [howto-service-bus-topics](../../includes/howto-service-bus-topics.md)]
+- создание разделов и подписок; 
+- создание фильтров подписки; 
+- отправка сообщений в раздел; 
+- получение сообщений из подписки;
+- удаление разделов и подписок.
 
-[!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
+
+## <a name="prerequisites"></a>Технические условия
+1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать ваши [преимущества для подписчиков Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрируйте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+2. Выполните шаги [краткое руководство: Чтобы создать раздел служебной шины и подписок для раздела с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md) для создания служебной шины **пространства имен** и получить **строку подключения**. 
+
+    > [!NOTE]
+    > Вы создадите **разделе** и **подписки** в раздел с помощью **Ruby** в этом кратком руководстве. 
 
 [!INCLUDE [service-bus-ruby-setup](../../includes/service-bus-ruby-setup.md)]
 
@@ -158,7 +168,7 @@ azure_service_bus_service.delete_topic("test-topic")
 azure_service_bus_service.delete_subscription("test-topic", "high-messages")
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Вы узнали основные сведения о разделах служебной шины. Для получения дополнительных сведений используйте следующие ссылки.
 
 * См. статью [Очереди, разделы и подписки](service-bus-queues-topics-subscriptions.md).

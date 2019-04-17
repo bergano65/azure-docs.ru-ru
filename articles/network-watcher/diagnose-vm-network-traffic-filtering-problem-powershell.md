@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 04/20/2018
 ms.author: jdial
 ms.custom: mvc
-ms.openlocfilehash: 0aa9c42a25b9bb0e740145ffd9b842814574176b
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: bf4c49bc988500d0f8b226dd6d735f966080ae09
+ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58878051"
+ms.lasthandoff: 04/05/2019
+ms.locfileid: "59047200"
 ---
 # <a name="quickstart-diagnose-a-virtual-machine-network-traffic-filter-problem---azure-powershell"></a>Краткое руководство. Диагностика проблемы с фильтром трафика на виртуальной машине с помощью Azure PowerShell
 
@@ -30,22 +30,26 @@ ms.locfileid: "58878051"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-powershell.md)]
 
-Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль AzureRM PowerShell 5.4.1 или более поздней версии. Выполните командлет `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzureRmAccount`, чтобы создать подключение к Azure.
+Чтобы установить и использовать PowerShell локально, для работы с этим кратким руководством вам понадобится модуль `Az` Azure PowerShell. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+
+
 
 ## <a name="create-a-vm"></a>Создание виртуальной машины
 
-Прежде чем создать виртуальную машину, создайте группу ресурсов, которая будет содержать эту виртуальную машину. Создайте группу ресурсов с помощью командлета [New-AzureRmResourceGroup](/powershell/module/AzureRM.Resources/New-AzureRmResourceGroup). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Прежде чем создать виртуальную машину, создайте группу ресурсов, которая будет содержать эту виртуальную машину. Создайте группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/az.Resources/New-azResourceGroup). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
 ```azurepowershell-interactive
-New-AzureRmResourceGroup -Name myResourceGroup -Location EastUS
+New-AzResourceGroup -Name myResourceGroup -Location EastUS
 ```
 
-Создайте виртуальную машину с помощью командлета [New-AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm). При выполнении этого шага будут запрошены учетные данные. В качестве вводимых значений указываются имя пользователя и пароль для виртуальной машины.
+Создайте виртуальную машину с помощью команды [New-AzVM](/powershell/module/az.compute/new-azvm). При выполнении этого шага будут запрошены учетные данные. В качестве вводимых значений указываются имя пользователя и пароль для виртуальной машины.
 
 ```azurepowershell-interactive
-$vM = New-AzureRmVm `
+$vM = New-AzVm `
     -ResourceGroupName "myResourceGroup" `
     -Name "myVm" `
     -Location "East US"
@@ -59,18 +63,18 @@ $vM = New-AzureRmVm `
 
 ### <a name="enable-network-watcher"></a>Включение Наблюдателя за сетями
 
-Если Наблюдатель за сетями уже включен в регионе "Восточная часть США", получите его экземпляр с помощью командлета [Get-AzureRmNetworkWatcher](/powershell/module/azurerm.network/get-azurermnetworkwatcher). В следующем примере извлекается существующий Наблюдатель за сетями с именем *NetworkWatcher_eastus*, размещенный в группе ресурсов *NetworkWatcherRG*:
+Если Наблюдатель за сетями уже включен в регионе "Восточная часть США", получите его экземпляр с помощью командлета [Get-AzNetworkWatcher](/powershell/module/az.network/get-aznetworkwatcher). В следующем примере извлекается существующий Наблюдатель за сетями с именем *NetworkWatcher_eastus*, размещенный в группе ресурсов *NetworkWatcherRG*:
 
 ```azurepowershell-interactive
-$networkWatcher = Get-AzureRmNetworkWatcher `
+$networkWatcher = Get-AzNetworkWatcher `
   -Name NetworkWatcher_eastus `
   -ResourceGroupName NetworkWatcherRG
 ```
 
-Если Наблюдатель за сетями еще не включен в регионе "Восточная часть США", создайте его с помощью командлета [New-AzureRmNetworkWatcher](/powershell/module/azurerm.network/new-azurermnetworkwatcher):
+Если Наблюдатель за сетями еще не включен в регионе "Восточная часть США", создайте его с помощью командлета [New-AzNetworkWatcher](/powershell/module/az.network/new-aznetworkwatcher):
 
 ```azurepowershell-interactive
-$networkWatcher = New-AzureRmNetworkWatcher `
+$networkWatcher = New-AzNetworkWatcher `
   -Name "NetworkWatcher_eastus" `
   -ResourceGroupName "NetworkWatcherRG" `
   -Location "East US"
@@ -78,12 +82,12 @@ $networkWatcher = New-AzureRmNetworkWatcher `
 
 ### <a name="use-ip-flow-verify"></a>Применение проверки IP-потока
 
-При создании виртуальной машины Azure применяет к ней стандартные правила разрешений и запретов трафика. Позднее вы можете переопределить эти значения по умолчанию, чтобы разрешить или запретить дополнительные типы трафика. Чтобы проверить, разрешено или запрещено поступление трафика в определенные назначения с исходного IP-адреса, используйте команду [Test-AzureRmNetworkWatcherIPFlow](/powershell/module/azurerm.network/test-azurermnetworkwatcheripflow).
+При создании виртуальной машины Azure применяет к ней стандартные правила разрешений и запретов трафика. Позднее вы можете переопределить эти значения по умолчанию, чтобы разрешить или запретить дополнительные типы трафика. Чтобы проверить, разрешено или запрещено поступление трафика в определенные назначения с исходного IP-адреса, используйте команду [Test-AzNetworkWatcherIPFlow](/powershell/module/az.network/test-aznetworkwatcheripflow).
 
 Проверьте исходящее подключение виртуальной машины по любому из IP-адресов сайта www.bing.com.
 
 ```azurepowershell-interactive
-Test-AzureRmNetworkWatcherIPFlow `
+Test-AzNetworkWatcherIPFlow `
   -NetworkWatcher $networkWatcher `
   -TargetVirtualMachineId $vM.Id `
   -Direction Outbound `
@@ -99,7 +103,7 @@ Test-AzureRmNetworkWatcherIPFlow `
 Проверьте исходящее подключение виртуальной машины к адресу 172.31.0.100:
 
 ```azurepowershell-interactive
-Test-AzureRmNetworkWatcherIPFlow `
+Test-AzNetworkWatcherIPFlow `
   -NetworkWatcher $networkWatcher `
   -TargetVirtualMachineId $vM.Id `
   -Direction Outbound `
@@ -115,7 +119,7 @@ Test-AzureRmNetworkWatcherIPFlow `
 Проверьте исходящее подключение с адреса 172.31.0.100 к виртуальной машине:
 
 ```azurepowershell-interactive
-Test-AzureRmNetworkWatcherIPFlow `
+Test-AzNetworkWatcherIPFlow `
   -NetworkWatcher $networkWatcher `
   -TargetVirtualMachineId $vM.Id `
   -Direction Inbound `
@@ -130,10 +134,10 @@ Test-AzureRmNetworkWatcherIPFlow `
 
 ## <a name="view-details-of-a-security-rule"></a>Просмотр сведений о правиле безопасности
 
-Чтобы определить, почему в разделе [проверки сетевой связи](#test-network-communication) мы получили такие ответы о разрешении и (или) запрете доступа, изучите правила безопасности для сетевого интерфейса с помощью командлета [Get-AzureRmEffectiveNetworkSecurityGroup](/powershell/module/azurerm.network/get-azurermeffectivenetworksecuritygroup):
+Чтобы определить, почему в разделе [проверки сетевой связи](#test-network-communication) мы получили такие ответы о разрешении и (или) запрете доступа, изучите правила безопасности для сетевого интерфейса с помощью командлета [Get-AzEffectiveNetworkSecurityGroup](/powershell/module/az.network/get-azeffectivenetworksecuritygroup):
 
 ```azurepowershell-interactive
-Get-AzureRmEffectiveNetworkSecurityGroup `
+Get-AzEffectiveNetworkSecurityGroup `
   -NetworkInterfaceName myVm `
   -ResourceGroupName myResourceGroup
 ```
@@ -173,9 +177,9 @@ Get-AzureRmEffectiveNetworkSecurityGroup `
   },
 ```
 
-Этих выходные данные свидетельствуют о том, что параметр **DestinationAddressPrefix** имеет значение **Internet**. Не совсем ясно, почему примененный в разделе [проверки IP-потока](#use-ip-flow-verify) адрес 13.107.21.200 относится к категории **Internet**. Рядом в разделе **ExpandedDestinationAddressPrefix** перечислены несколько префиксов адресов. Один из этих префиксов имеет значение **12.0.0.0/6**, которое охватывает диапазон IP-адресов с 12.0.0.1 по 15.255.255.254. Так как 13.107.21.200 попадает в этот диапазон адресов, правило **AllowInternetOutBound** разрешает исходящий трафик. Кроме того, в выходных данных `Get-AzureRmEffectiveNetworkSecurityGroup` нет правил с более высоким **приоритетом** (чем меньше это число, тем выше приоритет), которые переопределяют указанное выше правило. Чтобы запретить исходящий трафик по адресу 13.107.21.200, вы можете добавить правило безопасности с более высоким приоритетом, которое запрещает исходящие подключения по этому IP-адресу через порт 80.
+Этих выходные данные свидетельствуют о том, что параметр **DestinationAddressPrefix** имеет значение **Internet**. Не совсем ясно, почему примененный в разделе [проверки IP-потока](#use-ip-flow-verify) адрес 13.107.21.200 относится к категории **Internet**. Рядом в разделе **ExpandedDestinationAddressPrefix** перечислены несколько префиксов адресов. Один из этих префиксов имеет значение **12.0.0.0/6**, которое охватывает диапазон IP-адресов с 12.0.0.1 по 15.255.255.254. Так как 13.107.21.200 попадает в этот диапазон адресов, правило **AllowInternetOutBound** разрешает исходящий трафик. Кроме того, в выходных данных `Get-AzEffectiveNetworkSecurityGroup` нет правил с более высоким **приоритетом** (чем меньше это число, тем выше приоритет), которые переопределяют указанное выше правило. Чтобы запретить исходящий трафик по адресу 13.107.21.200, вы можете добавить правило безопасности с более высоким приоритетом, которое запрещает исходящие подключения по этому IP-адресу через порт 80.
 
-Когда вы выполняли команду `Test-AzureRmNetworkWatcherIPFlow`, чтобы проверить исходящее подключение по адресу 172.131.0.100 в разделе [проверки IP-потока](#use-ip-flow-verify), выходные данные указывали на то, что правило **DefaultOutboundDenyAll** запрещает такую связь. Правило **DefaultOutboundDenyAll** аналогично правилу **DenyAllOutBound**, которое указано в следующих выходных данных команды `Get-AzureRmEffectiveNetworkSecurityGroup`:
+Когда вы выполняли команду `Test-AzNetworkWatcherIPFlow`, чтобы проверить исходящее подключение по адресу 172.131.0.100 в разделе [проверки IP-потока](#use-ip-flow-verify), выходные данные указывали на то, что правило **DefaultOutboundDenyAll** запрещает такую связь. Правило **DefaultOutboundDenyAll** аналогично правилу **DenyAllOutBound**, которое указано в следующих выходных данных команды `Get-AzEffectiveNetworkSecurityGroup`:
 
 ```powershell
 {
@@ -201,9 +205,9 @@ Get-AzureRmEffectiveNetworkSecurityGroup `
 }
 ```
 
-Это правило содержит значение **0.0.0.0/0** для параметра **DestinationAddressPrefix**. Такое правило запрещает исходящие подключения по адресу 172.131.0.100, так как он не входит в диапазон **DestinationAddressPrefix** любого из правил для исходящего трафика,перечисленных в выходных данных команды `Get-AzureRmEffectiveNetworkSecurityGroup`. Чтобы разрешить исходящий трафик, вы можете добавить правило безопасности с более высоким приоритетом, которое разрешает исходящие подключения по IP-адресу 172.131.0.100 через порт 80.
+Это правило содержит значение **0.0.0.0/0** для параметра **DestinationAddressPrefix**. Такое правило запрещает исходящие подключения по адресу 172.131.0.100, так как он не входит в диапазон **DestinationAddressPrefix** любого из правил для исходящего трафика,перечисленных в выходных данных команды `Get-AzEffectiveNetworkSecurityGroup`. Чтобы разрешить исходящий трафик, вы можете добавить правило безопасности с более высоким приоритетом, которое разрешает исходящие подключения по IP-адресу 172.131.0.100 через порт 80.
 
-Когда вы выполняли команду `Test-AzureRmNetworkWatcherIPFlow`, чтобы проверить входящее подключение с адреса 172.131.0.100 в разделе [проверки IP-потока](#use-ip-flow-verify), выходные данные указывали на то, что правило **DefaultInboundDenyAll** запрещает такую связь. Правило **DefaultInboundDenyAll** аналогично правилу **DenyAllInBound**, которое указано в следующих выходных данных команды `Get-AzureRmEffectiveNetworkSecurityGroup`:
+Когда вы выполняли команду `Test-AzNetworkWatcherIPFlow`, чтобы проверить входящее подключение с адреса 172.131.0.100 в разделе [проверки IP-потока](#use-ip-flow-verify), выходные данные указывали на то, что правило **DefaultInboundDenyAll** запрещает такую связь. Правило **DefaultInboundDenyAll** аналогично правилу **DenyAllInBound**, которое указано в следующих выходных данных команды `Get-AzEffectiveNetworkSecurityGroup`:
 
 ```powershell
 {
@@ -229,16 +233,16 @@ Get-AzureRmEffectiveNetworkSecurityGroup `
 },
 ```
 
-Правило **DenyAllInBound** применяется, так как в выходных данных команды `Get-AzureRmEffectiveNetworkSecurityGroup` не существует правил с более высоким приоритетом, которые разрешают входящие подключения к виртуальной машине с адреса 172.131.0.100 через порт 80. Чтобы разрешить входящий трафик, вы можете добавить правило безопасности с более высоким приоритетом, которое разрешает входящий трафик на порт 80 с адреса 172.131.0.100.
+Правило **DenyAllInBound** применяется, так как в выходных данных команды `Get-AzEffectiveNetworkSecurityGroup` не существует правил с более высоким приоритетом, которые разрешают входящие подключения к виртуальной машине с адреса 172.131.0.100 через порт 80. Чтобы разрешить входящий трафик, вы можете добавить правило безопасности с более высоким приоритетом, которое разрешает входящий трафик на порт 80 с адреса 172.131.0.100.
 
 Проверки в этом кратком руководстве предназначены для тестирования конфигурации Azure. Если все эти проверки возвращают ожидаемые результаты, но сетевые проблемы при этом сохраняются, проверьте отсутствие брандмауэров между виртуальной машиной и конечной точкой, с которой вы взаимодействуете, а также отсутствие брандмауэра в операционной системы самой виртуальной машины, который разрешает или запрещает обмен данными.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы с помощью командлета [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup):
+Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы с помощью командлета [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup):
 
 ```azurepowershell-interactive
-Remove-AzureRmResourceGroup -Name myResourceGroup -Force
+Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

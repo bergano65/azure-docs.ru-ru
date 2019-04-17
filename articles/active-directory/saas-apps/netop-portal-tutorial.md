@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
-ms.openlocfilehash: 17c5e568bbdbdd9aa07db0ee10438cb7d05bd56c
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.openlocfilehash: 0bbd13a29b8d01f64ca68c35b751b0adf0a76c58
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58849238"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59260363"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-netop-portal"></a>Руководство по Интеграция Azure Active Directory с Netop Portal
 
@@ -219,8 +219,8 @@ ms.locfileid: "58849238"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: include
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/17/2018
+ms.date: 04/11/2019
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: 0b00597deff5a498d54ffcfd9978a68e5b60c5f8
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
-ms.translationtype: MT
+ms.openlocfilehash: 3f72f6a5097221c904faff633b5a4ee5a6e023c1
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58203228"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59532749"
 ---
 ## <a name="use-msal-to-get-a-token-for-the-microsoft-graph-api"></a>Получение маркера для API Microsoft Graph с помощью MSAL
 
@@ -37,41 +37,47 @@ ms.locfileid: "58203228"
     public partial class MainWindow : Window
     {
         //Set the API Endpoint to Graph 'me' endpoint
-        string _graphAPIEndpoint = "https://graph.microsoft.com/v1.0/me";
+        string graphAPIEndpoint = "https://graph.microsoft.com/v1.0/me";
 
         //Set the scope for API call to user.read
-        string[] _scopes = new string[] { "user.read" };
+        string[] scopes = new string[] { "user.read" };
+
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Call AcquireTokenAsync - to acquire a token requiring user to sign-in
+      /// <summary>
+        /// Call AcquireToken - to acquire a token requiring user to sign-in
         /// </summary>
         private async void CallGraphButton_Click(object sender, RoutedEventArgs e)
         {
             AuthenticationResult authResult = null;
-
             var app = App.PublicClientApp;
             ResultText.Text = string.Empty;
             TokenInfoText.Text = string.Empty;
 
             var accounts = await app.GetAccountsAsync();
+            var firstAccount = accounts.FirstOrDefault();
 
             try
             {
-                authResult = await app.AcquireTokenSilentAsync(_scopes, accounts.FirstOrDefault());
+                authResult = await app.AcquireTokenSilent(scopes, firstAccount)
+                    .ExecuteAsync();
             }
             catch (MsalUiRequiredException ex)
             {
-                // A MsalUiRequiredException happened on AcquireTokenSilentAsync. This indicates you need to call AcquireTokenAsync to acquire a token
+                // A MsalUiRequiredException happened on AcquireTokenSilent.
+                // This indicates you need to call AcquireTokenInteractive to acquire a token
                 System.Diagnostics.Debug.WriteLine($"MsalUiRequiredException: {ex.Message}");
 
                 try
                 {
-                    authResult = await App.PublicClientApp.AcquireTokenAsync(_scopes);
+                    authResult = await app.AcquireTokenInteractive(scopes)
+                        .WithAccount(accounts.FirstOrDefault())
+                        .WithPrompt(Prompt.SelectAccount)
+                        .ExecuteAsync();
                 }
                 catch (MsalException msalex)
                 {
@@ -86,12 +92,11 @@ ms.locfileid: "58203228"
 
             if (authResult != null)
             {
-                ResultText.Text = await GetHttpContentWithToken(_graphAPIEndpoint, authResult.AccessToken);
+                ResultText.Text = await GetHttpContentWithToken(graphAPIEndpoint, authResult.AccessToken);
                 DisplayBasicTokenInfo(authResult);
                 this.SignOutButton.Visibility = Visibility.Visible;
             }
         }
-    }
     ```
 
 <!--start-collapse-->
@@ -99,21 +104,21 @@ ms.locfileid: "58203228"
 
 #### <a name="get-a-user-token-interactively"></a>Интерактивное получение маркера пользователя
 
-При вызове метода `AcquireTokenAsync` появится окно, в котором пользователю предлагается выполнить вход. Когда пользователь впервые запрашивает доступ к защищенному ресурсу, приложение обычно требует выполнить интерактивный вход. Пользователям также может потребоваться выполнить вход при сбое автоматической операции получения маркера (например, по истечении срока действия пароля пользователя).
+При вызове метода `AcquireTokenInteractive` появится окно, в котором пользователю предлагается выполнить вход. Когда пользователь впервые запрашивает доступ к защищенному ресурсу, приложение обычно требует выполнить интерактивный вход. Пользователям также может потребоваться выполнить вход при сбое автоматической операции получения маркера (например, по истечении срока действия пароля пользователя).
 
 #### <a name="get-a-user-token-silently"></a>Автоматическое получение маркера пользователя
 
-Метод `AcquireTokenSilentAsync` обрабатывает получение и обновление маркера без участия пользователя. После первого выполнения метода `AcquireTokenAsync` обычно используется метод `AcquireTokenSilentAsync`, чтобы получить маркеры для доступа к защищенным ресурсам для последующих вызовов, так как вызовы для запроса или обновления маркеров выполняются автоматически.
+Метод `AcquireTokenSilent` обрабатывает получение и обновление маркера без участия пользователя. После первого выполнения метода `AcquireTokenInteractive` обычно используется метод `AcquireTokenSilent`, чтобы получить маркеры для доступа к защищенным ресурсам для последующих вызовов, так как вызовы для запроса или обновления маркеров выполняются автоматически.
 
-Иногда метод `AcquireTokenSilentAsync` завершается ошибкой. Причина может заключаться в том, что пользователь вышел из системы или изменил пароль на другом устройстве. Когда MSAL обнаруживает, что эту проблему можно решить, запросив интерактивное действие, возникает исключение `MsalUiRequiredException`. Приложение может обработать это исключение двумя способами:
+Иногда метод `AcquireTokenSilent` завершается ошибкой. Причина может заключаться в том, что пользователь вышел из системы или изменил пароль на другом устройстве. Когда MSAL обнаруживает, что эту проблему можно решить, запросив интерактивное действие, возникает исключение `MsalUiRequiredException`. Приложение может обработать это исключение двумя способами:
 
-* Может немедленно вызвать `AcquireTokenAsync`. Этот вызов приводит к появлению запроса на вход пользователя. Этот шаблон обычно используется в интерактивных приложениях, где пользователю недоступно автономное содержимое. Этот шаблон используется в примере, созданном в ходе настройки с помощью этих инструкций. Вы увидите его в действии при первом запуске примера. 
+* Может немедленно вызвать `AcquireTokenInteractive`. Этот вызов приводит к появлению запроса на вход пользователя. Этот шаблон обычно используется в интерактивных приложениях, где пользователю недоступно автономное содержимое. Этот шаблон используется в примере, созданном в ходе настройки с помощью этих инструкций. Вы увидите его в действии при первом запуске примера. 
 
 * Так как приложение еще не использовалось, `PublicClientApp.Users.FirstOrDefault()` будет содержать значение NULL и будет выдано исключение `MsalUiRequiredException`. 
 
-* Код в примере обработает исключение, вызвав `AcquireTokenAsync`, в результате чего пользователю будет предложено войти.
+* Код в примере обработает исключение, вызвав `AcquireTokenInteractive`, в результате чего пользователю будет предложено войти.
 
-* Также приложение может визуально уведомить пользователей, что требуется интерактивный вход, чтобы они могли выбрать подходящее время для входа. Либо приложение может попытаться повторно выполнить метод `AcquireTokenSilentAsync` позже. Этот шаблон часто применяется, когда пользователи могут использовать другие функциональные возможности приложения без прерывания работы — например, если в приложении доступно автономное содержимое. В этом случае пользователи могут решать, что им нужно сделать после входа — получить доступ к защищенному ресурсу или обновить устаревшие данные. Кроме того, приложение может попытаться повторно выполнить `AcquireTokenSilentAsync` при восстановлении сети после временной недоступности.
+* Также приложение может визуально уведомить пользователей, что требуется интерактивный вход, чтобы они могли выбрать подходящее время для входа. Либо приложение может попытаться повторно выполнить метод `AcquireTokenSilent` позже. Этот шаблон часто применяется, когда пользователи могут использовать другие функциональные возможности приложения без прерывания работы — например, если в приложении доступно автономное содержимое. В этом случае пользователи могут решать, что им нужно сделать после входа — получить доступ к защищенному ресурсу или обновить устаревшие данные. Кроме того, приложение может попытаться повторно выполнить `AcquireTokenSilent` при восстановлении сети после временной недоступности.
 <!--end-collapse-->
 
 ## <a name="call-the-microsoft-graph-api-by-using-the-token-you-just-obtained"></a>Вызов API Microsoft Graph с помощью полученного маркера
@@ -169,7 +174,7 @@ private async void SignOutButton_Click(object sender, RoutedEventArgs e)
     {
         try
         {
-            await App.PublicClientApp.RemoveAsync(accounts.FirstOrDefault()); 
+            await App.PublicClientApp.RemoveAsync(accounts.FirstOrDefault());
             this.ResultText.Text = "User has signed-out";
             this.CallGraphButton.Visibility = Visibility.Visible;
             this.SignOutButton.Visibility = Visibility.Collapsed;
@@ -205,7 +210,6 @@ private void DisplayBasicTokenInfo(AuthenticationResult authResult)
     {
         TokenInfoText.Text += $"Username: {authResult.Account.Username}" + Environment.NewLine;
         TokenInfoText.Text += $"Token Expires: {authResult.ExpiresOn.ToLocalTime()}" + Environment.NewLine;
-        TokenInfoText.Text += $"Access Token: {authResult.AccessToken}" + Environment.NewLine;
     }
 }
 ```

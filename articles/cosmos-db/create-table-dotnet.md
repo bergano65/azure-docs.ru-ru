@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 03/11/2019
 ms.author: sngun
-ms.openlocfilehash: 7ca51b176c17f33b4779a0129c5dc57b220c0097
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 25f8a88c1b488b9272ed1254aaca79a79bc7e871
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57877638"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59544200"
 ---
 # <a name="quickstart-build-a-table-api-app-with-net-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблиц с помощью пакета SDK .NET и Azure Cosmos DB 
 
@@ -65,9 +65,6 @@ ms.locfileid: "57877638"
    ```bash
    git clone https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started.git
    ```
-   > [!NOTE]
-   > Стандартный образец .NET, который описан в этой документации, работает как с API таблиц Azure Cosmos DB, так и с хранилищем таблиц Azure. Если вы хотите запустить образец, который работает на .NET Framework 4.5, см. пример [storage-table-dotnet-getting-started](https://github.com/Azure-Samples/storage-table-dotnet-getting-started). 
-
 
 ## <a name="open-the-sample-application-in-visual-studio"></a>Открытие примера приложения в Visual Studio
 
@@ -94,7 +91,6 @@ ms.locfileid: "57877638"
       "StorageConnectionString": "<Primary connection string from Azure portal>"
    }
    ```
-   При использовании образца [.NET Framework](https://github.com/Azure-Samples/storage-table-dotnet-getting-started) необходимо выполнить обновление строки подключения, которая находится в файле **App.config**.
 
 4. Чтобы сохранить файл **Settings.json**, нажмите CTRL+S.
 
@@ -107,9 +103,6 @@ ms.locfileid: "57877638"
    ![Управление пакетами NuGet](media/create-table-dotnet/azure-cosmosdb-manage-nuget.png)
 
 2. В поле **Обзор** NuGet введите Microsoft.Azure.Cosmos.Table. Это запрос для поиска клиентской библиотеки API таблицы Cosmos DB. Обратите внимание, что на данный момент эта библиотека доступна только для .NET Framework и .NET Standard. 
-
-   > [!NOTE]
-   > При использовании образцов, для которых требуется NET Framework, необходимо установить пакет NuGet *Microsoft.Azure.CosmosDB.Table*. При использовании образца .NET Framework с хранилищем таблиц Azure, кроме пакета NuGet для Cosmos DB, вам также потребуется пакет NuGet *Microsoft.Azure.Storage.Common*. 
    
    ![Вкладка "Обзор" NuGet](media/create-table-dotnet/azure-cosmosdb-nuget-browse.png)
 

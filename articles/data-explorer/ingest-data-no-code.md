@@ -1,19 +1,18 @@
 ---
 title: Руководство по Прием данных журнала диагностики и действий в Azure Data Explorer без необходимости писать код
 description: В этом руководстве описано, как принимать данные в Azure Data Explorer без необходимости писать код, а также как создавать к ним запросы.
-services: data-explorer
 author: orspod
 ms.author: orspodek
 ms.reviewer: jasonh
 ms.service: data-explorer
 ms.topic: tutorial
-ms.date: 3/14/2019
-ms.openlocfilehash: 5d6b595b442b645f57454e317e6535645f643598
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.date: 04/07/2019
+ms.openlocfilehash: 9f4b7ee0dcc87ca03fd051be0dacedf0912b5320
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58756845"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59262913"
 ---
 # <a name="tutorial-ingest-data-in-azure-data-explorer-without-one-line-of-code"></a>Руководство по Прием данных в Azure Data Explorer без необходимости писать код
 
@@ -210,12 +209,12 @@ ms.locfileid: "58756845"
 
 #### <a name="activity-log-data-update-policy"></a>Политика обновления данных журнала действий
 
-1. Создайте [функцию](/azure/kusto/management/functions), которая развертывает коллекцию записей журнала действий таким образом, чтобы каждое значение в коллекции получало отдельную строку. Используйте оператор [`mvexpand`](/azure/kusto/query/mvexpandoperator):
+1. Создайте [функцию](/azure/kusto/management/functions), которая развертывает коллекцию записей журнала действий таким образом, чтобы каждое значение в коллекции получало отдельную строку. Используйте оператор [`mv-expand`](/azure/kusto/query/mvexpandoperator):
 
     ```kusto
     .create function ActivityLogRecordsExpand() {
         ActivityLogsRawRecords
-        | mvexpand events = Records
+        | mv-expand events = Records
         | project
             Timestamp = todatetime(events["time"]),
             ResourceId = tostring(events["resourceId"]),
@@ -239,11 +238,11 @@ ms.locfileid: "58756845"
 
 #### <a name="diagnostic-log-data-update-policy"></a>Политика обновления данных журнала диагностики
 
-1. Создайте [функцию](/azure/kusto/management/functions), которая развертывает коллекцию записей журнала диагностики таким образом, чтобы каждое значение в коллекции получало отдельную строку. Используйте оператор [`mvexpand`](/azure/kusto/query/mvexpandoperator):
+1. Создайте [функцию](/azure/kusto/management/functions), которая развертывает коллекцию записей журнала диагностики таким образом, чтобы каждое значение в коллекции получало отдельную строку. Используйте оператор [`mv-expand`](/azure/kusto/query/mvexpandoperator):
      ```kusto
     .create function DiagnosticLogRecordsExpand() {
         DiagnosticLogsRawRecords
-        | mvexpand events = Records
+        | mv-expand events = Records
         | project
             Timestamp = todatetime(events["time"]),
             ResourceId = tostring(events["resourceId"]),
@@ -269,7 +268,7 @@ ms.locfileid: "58756845"
 
 1. Создайте концентратор событий на портале Azure с помощью шаблона Azure Resource Manager. Чтобы выполнить остальные шаги из этой статьи, щелкните правой кнопкой кнопку **Развеhнуть в Azure** и выберите вариант **Открыть в новом окне**. Нажав кнопку **Развернуть в Azure**, вы перейдете на портал Azure.
 
-    [![Кнопка "Развертывание в Azure"](media/ingest-data-no-code/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-event-hubs-create-event-hub-and-consumer-group%2Fazuredeploy.json)
+    [![DКнопка "Развертывание в Azure"](media/ingest-data-no-code/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-event-hubs-create-event-hub-and-consumer-group%2Fazuredeploy.json)
 
 1. Создайте пространство имен концентраторов событий и концентратор событий для журналов диагностики.
 
@@ -277,11 +276,11 @@ ms.locfileid: "58756845"
 
 1. Заполните форму, указав следующую информацию. Сохраните значения по умолчанию для всех параметров, не указанных в следующей таблице.
 
-    **Параметр** | **Рекомендуемое значение** | **Описание**
+    **Параметр** | **Рекомендуемое значение** | **ОПИСАНИЕ**
     |---|---|---|
     | **Подписка** | *Ваша подписка* | Выберите подписку Azure, которую нужно использовать для своего концентратора событий.|
     | **Группа ресурсов** | *test-resource-group* | Создайте новую группу ресурсов. |
-    | **Местоположение.** | Выберите регион в соответствии со своими потребностями. | Создайте пространство имен концентратора событий в том же расположении, в котором находятся другие ресурсы.
+    | **Расположение** | Выберите регион в соответствии со своими потребностями. | Создайте пространство имен концентратора событий в том же расположении, в котором находятся другие ресурсы.
     | **Имя пространства имен** | *AzureMonitoringData* | Выберите уникальное имя, идентифицирующее пространство имен.
     | **Имя концентратора событий** | *DiagnosticLogsData* | Концентратор событий находится в пространстве имен, предоставляющем уникальный контейнер области. |
     | **Имя группы потребителей** | *adxpipeline* | Создайте имя группы потребителей. Группы получателей событий позволяют каждому из нескольких получающих события приложений иметь отдельное представление потока событий. |
@@ -369,7 +368,7 @@ ms.locfileid: "58756845"
     |---|---|---|
     | **Имя подключения к данным** | *DiagnosticsLogsConnection* | Имя создаваемого подключения к обозревателю данных Azure.|
     | **Пространство имен концентратора событий** | *AzureMonitoringData* | Имя, выбранное ранее и определяющее пространство имен. |
-    | **Концентратор событий** | *diagnosticlogsdata* | Созданный концентратор событий. |
+    | **концентратор событий;** | *diagnosticlogsdata* | Созданный концентратор событий. |
     | **Группа потребителей** | *adxpipeline* | Группа получателей событий, определенная в созданном концентраторе событий. |
     | | |
 
@@ -398,7 +397,7 @@ ms.locfileid: "58756845"
     |---|---|---|
     | **Имя подключения к данным** | *ActivityLogsConnection* | Имя создаваемого подключения к обозревателю данных Azure.|
     | **Пространство имен концентратора событий** | *AzureMonitoringData* | Имя, выбранное ранее и определяющее пространство имен. |
-    | **Концентратор событий** | *insights-operational-logs* | Созданный концентратор событий. |
+    | **концентратор событий;** | *insights-operational-logs* | Созданный концентратор событий. |
     | **Группа потребителей** | *$Default* | Группа потребителей по умолчанию. При необходимости вы можете создать другую группу потребителей. |
     | | |
 

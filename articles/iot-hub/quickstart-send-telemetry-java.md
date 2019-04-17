@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 02/22/2019
-ms.openlocfilehash: f5ec6a16de46a7902f7ab739922dc756c96702e0
-ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
+ms.openlocfilehash: 12574dd6600004175ab85eead0f837544c6e5ebf
+ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "57010979"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59004796"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-java"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (Java)
 
@@ -49,6 +49,12 @@ java -version
 mvn --version
 ```
 
+Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
+
+```azurecli-interactive
+az extension add --name azure-cli-iot-ext
+```
+
 Скачайте пример проекта Java по ссылке https://github.com/Azure-Samples/azure-iot-samples-java/archive/master.zip и извлеките ZIP-архив.
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
@@ -59,14 +65,13 @@ mvn --version
 
 Устройство должно быть зарегистрировано в Центре Интернета вещей, прежде чем оно сможет подключиться. В этом кратком руководстве для регистрации имитируемого устройства используется Azure Cloud Shell.
 
-1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы добавить расширение CLI Центра Интернета вещей и создать удостоверение устройства.
+1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы создать удостоверение устройства.
 
    **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
    **MyJavaDevice**. Имя регистрируемого устройства. Используйте **MyJavaDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
-    az extension add --name azure-cli-iot-ext
     az iot hub device-identity create --hub-name YourIoTHubName --device-id MyJavaDevice
     ```
 
