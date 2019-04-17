@@ -10,25 +10,25 @@ ms.service: media-services
 ms.workload: ''
 ms.topic: article
 ms.custom: mvc
-ms.date: 01/28/2019
+ms.date: 04/15/2019
 ms.author: juliako
-ms.openlocfilehash: 1b872c5c2ff0f581300a843650d7434c7c526c84
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 8374e4c49012a2c49de41001be0fdb30f9151332
+ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59545625"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59617841"
 ---
 # <a name="access-azure-media-services-api-with-the-azure-cli"></a>Доступ к API Служб мультимедиа Azure с помощью Azure CLI
  
-Чтобы подключиться к API Служб мультимедиа Azure, необходимо настроить аутентификацию субъекта-службы Azure AD. Приложение должно запросить токен Azure AD со следующими параметрами:
+Чтобы использовать проверку подлинности субъекта-службы Azure AD для подключения к API служб мультимедиа Azure, приложению требуется запросить маркер Azure AD имеет следующие параметры:
 
 * Конечная точка клиента Azure AD.
 * Универсальный код ресурса (URI) для ресурса служб мультимедиа.
 * Универсальный код ресурса (URI) для ресурса REST служб мультимедиа.
 * Значения приложения Azure AD: идентификатор и секрет клиента.
 
-Дополнительные сведения см. в разделе [разработка с использованием API-интерфейсы служб мультимедиа v3](media-services-apis-overview.md).
+Подробное описание см. в разделе [API-интерфейсы для доступа к службам Media v3](media-services-apis-overview.md#accessing-the-azure-media-services-api).
 
 В этой статье показано, как с помощью Azure CLI создать приложение Azure AD и субъект-службу, а также получить значения, необходимые при доступе к ресурсам Служб мультимедиа Azure.
 

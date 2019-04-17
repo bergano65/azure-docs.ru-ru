@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 85c51320d2be1eac540f1d14910927c0fdccef64
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 2c5c2bc2b8dd1930efef9833bd442fcad5566e2a
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59549511"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59578790"
 ---
 # <a name="what-is-text-to-speech"></a>Что такое преобразования текста в речь?
 
@@ -53,10 +53,7 @@ ms.locfileid: "59549511"
 | Создание и управление ими голоса шрифта тестов. | Нет  | Да\* |
 | Управление подписками. | Нет  | Да\* |
 
-\* *Эти службы доступны cris.ai конечной точки. См. в разделе [Swagger ссылку](https://westus.cris.ai/swagger/ui/index).*
-
-> [!NOTE]
-> Конечные точки настраиваемых голосовых реализовать регулирование ограничивает запросы на 25 в 5 секунд. Если регулирование, вы будете получать уведомления через заголовки сообщений.
+\* *Эти службы доступны cris.ai конечной точки. См. в разделе [Swagger ссылку](https://westus.cris.ai/swagger/ui/index). Эти пользовательские голосовые модели обучения и API-интерфейсов управления реализовать регулирование, что запросов 25 в течение 5 секунд, тогда как синтеза речи сам интерфейс API реализует регулирования, разрешает 200 запросов в секунду с наивысшим приоритетом. Если регулирование, вы будете получать уведомления через заголовки сообщений.*
 
 ## <a name="get-started-with-text-to-speech"></a>Начало работы с преобразования текста в речь
 

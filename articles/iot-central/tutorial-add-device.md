@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: 8e7eee40bed29117d2873393395a852e4b738533
-ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
+ms.openlocfilehash: 201b438601c9929e5ca3d292f9fc3d7b7ff64de8
+ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58793487"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59425939"
 ---
 # <a name="tutorial-add-a-real-device-to-your-azure-iot-central-application"></a>Руководство по Добавление реального устройства в приложение Azure IoT Central
 
@@ -41,6 +41,8 @@ ms.locfileid: "58793487"
 * [Определение типа нового устройства в приложении в Azure IoT Central](tutorial-define-device-type.md) (обязательно).
 * [Настройка правил и действий для устройства в Azure IoT Central](tutorial-configure-rules.md).
 * [Настройка представлений оператора Azure IoT Central](tutorial-customize-operator.md) (необязательно).
+
+Установите на компьютере для разработки [Node.js](https://nodejs.org/) версии 8.0.0 или более поздней. Вы можете запустить `node --version` в командной строке, чтобы проверить версию. Node.js доступен для разных операционных систем.
 
 ## <a name="add-a-real-device"></a>Добавление реального устройства
 
@@ -92,37 +94,27 @@ ms.locfileid: "58793487"
 
 В следующих шагах показано, как подготовить пример [Node.js](https://nodejs.org/):
 
-1. Установите на компьютере [Node.js](https://nodejs.org/) версии 4.0.x или более поздней. Node.js доступен для разных операционных систем.
-
-1. Создайте на компьютере папку с именем `connectedairconditioner`.
-
-1. Перейдите к созданной папке `connectedairconditioner` в среде командной строки.
-
-1. Установите генератор ключей DPS с помощью следующей команды:
-
-    ```cmd/sh
-    npm i -g dps-keygen
-    ```
-
-   Дополнительные сведения о [программе командной строки см. здесь](https://www.npmjs.com/package/dps-keygen).
+### <a name="get-the-device-connection-information"></a>Получение сведений о подключении к устройству
 
 1. Срока подключения для экземпляра устройства в приложении создается на основе сведений об устройстве, предоставляемых IoT Central.
 
-   Вернитесь на портал IoT Central. На экране устройства для подключенного кондиционера выберите **Connect** (Подключить).
+   На экране устройства для подключенного кондиционера выберите **Connect** (Подключить).
 
    ![Страница устройства, отображающая ссылку на сведения о подключении](media/tutorial-add-device/connectionlink.png)
 
-1. На странице подключения устройства скопируйте идентификатор области действия, идентификатор устройства и первичный ключ и вставьте их в текстовый редактор, после чего сохраните файл. Эти значения будут использованы на следующем шаге.
+1. Запишите значения **Идентификатор области**, **Идентификатор устройства** и **Первичный ключ** на странице "Подключение к устройству. Эти значения будут использованы на следующем шаге.
 
    ![Сведения о подключении](media/tutorial-add-device/device-connect.png)
 
-1. Вернитесь в среду командной строки и создайте строку подключения, выполнив следующую команду:
+### <a name="generate-the-connection-string"></a>Создание строки подключения
 
-    ```cmd/sh
-    dps-keygen -si:<scope_id> -di:<device_id> -dk:<Primary Key>
-    ```
+[!INCLUDE [iot-central-howto-connection-string](../../includes/iot-central-howto-connection-string.md)]
 
-   Скопируйте полученные данные и сохраните их в новом файле (например, connection.txt).
+### <a name="prepare-the-nodejs-project"></a>Подготовка проекта Node.js
+
+1. Создайте папку с именем `connectedairconditioner` на компьютере для разработки.
+
+1. Перейдите к созданной папке `connectedairconditioner` в среде командной строки.
 
 1. Чтобы инициализировать проект Node.js, выполните следующую команду, приняв все значения по умолчанию:
 
@@ -309,7 +301,7 @@ ms.locfileid: "58793487"
     var connectionString = '{your device connection string}';
     ```
 
-1. Замените `{your device connection string}` строкой подключения реального устройства. Сроку подключения вы сохранили ранее с помощью текстового редактора.
+1. Замените `{your device connection string}` строкой подключения реального устройства. Вы скопировали эту созданную строку подключения на предыдущем шаге.
 
 1. Сохраните изменения в файле **ConnectedAirConditioner.js**.
 
@@ -360,14 +352,14 @@ ms.locfileid: "58793487"
 
 Будучи оператором, вы можете научиться, как:
 
-* [Управление устройствами](howto-manage-devices.md)
-* [использовать наборы устройств](howto-use-device-sets.md);
-* [создавать настраиваемую аналитику](howto-use-device-sets.md).
+* [управление устройствами.](howto-manage-devices.md)
+* [Использование наборов устройств](howto-use-device-sets.md)
+* [Создание настраиваемой функции аналитики](howto-use-device-sets.md)
 
 Как разработчик устройств вы можете научиться, как:
 
-* [подключить устройство MXChip IoT DevKit к приложению Azure IoT Central](howto-connect-devkit.md);
-* [подключить устройство Raspberry Pi к приложению Azure IoT Central (Python)](howto-connect-raspberry-pi-python.md);
-* [подключить устройство Raspberry Pi к приложению Azure IoT Central (C#)](howto-connect-raspberry-pi-csharp.md);
-* [подключить устройство Windows 10 IoT Core к приложению Azure IoT Central](howto-connect-windowsiotcore.md);
-* [Подключение универсального клиентского приложения к приложению Azure IoT Central (Node.js)](howto-connect-nodejs.md)
+* [подготовить и подключить устройство DevKit (C);](howto-connect-devkit.md)
+* [Подготовка и подключение Raspberry Pi (Python)](howto-connect-raspberry-pi-python.md)
+* [Подготовка и подключение Raspberry Pi (C#)](howto-connect-raspberry-pi-csharp.md)
+* [подготовить и подключить устройство Windows 10 IoT Core (C#);](howto-connect-windowsiotcore.md)
+* [подключить универсальный клиент Node.js к приложению Azure IoT Central.](howto-connect-nodejs.md)

@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/015/2019
 ms.author: radeltch
-ms.openlocfilehash: 02a97852a8dc659071c3484126b921d6f7106562
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 18bbeef833e1c82999e87451d279c0d3464af509
+ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58662376"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59617773"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-with-azure-netapp-files-for-sap-applications"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure в SUSE Linux Enterprise Server с файлами NetApp Azure для приложений SAP
 
@@ -166,14 +166,11 @@ SAP NetWeaver требует общее хранилище для каталог
 
 - Минимальная емкость пула — 4 Тиб. Размер емкости пула должен быть кратно 4 Тиб.
 - Минимальное том содержит 100 Гиб
-- Служба файлов Azure NetApp и все виртуальные машины, куда будет подключен тома файлов Azure NetApp должны быть в той же виртуальной сети Azure. [Пиринг виртуальных сетей](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview) сейчас не поддерживается файлы NetApp Azure.
+- Служба файлов Azure NetApp и все виртуальные машины, куда будет подключен тома файлов Azure NetApp, должны находиться в той же виртуальной сети Azure или в [пиринговые виртуальные сети](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview) в одном регионе. Теперь поддерживается Azure файлы NetApp доступ через ПИРИНГ виртуальных сетей в одном регионе. Azure NetApp доступ через глобальный пиринг не поддерживается.
 - Выбранной виртуальной сети должен иметь подсеть, делегировать NetApp службы файлов Azure.
 - Служба файлов Azure NetApp в настоящее время поддерживает только NFSv3 
 - Служба файлов Azure NetApp предоставляет [экспортировать политику](https://docs.microsoft.com/en-gb/azure/azure-netapp-files/azure-netapp-files-configure-export-policy): разрешенных клиентов, можно управлять тип доступа (чтение и запись, только для чтения и т. д.). 
 - Компонент Azure NetApp файлы еще не поясе. В настоящее время функции Azure NetApp файлов не был развернут во всех зонах доступности в регионе Azure. Имейте в виду потенциальные последствия задержку в некоторых регионах Azure. 
-
-   > [!NOTE]
-   > Имейте в виду, что файлы NetApp Azure не поддерживает еще пиринг виртуальных сетей. Развертывание виртуальных машин и томами NetApp службы файлов Azure в той же виртуальной сети.
 
 ## <a name="deploy-linux-vms-manually-via-azure-portal"></a>Развертывание виртуальных машин Linux вручную с помощью портала Azure
 
@@ -574,6 +571,8 @@ SAP NetWeaver требует общее хранилище для каталог
 
 9. **[1]** Создайте кластерные ресурсы SAP.
 
+Если в рамках архитектуры сервера 1 постановки в очередь (ENSA1) определите ресурсы следующим образом:
+
    <pre><code>sudo crm configure property maintenance-mode="true"
    
    sudo crm configure primitive rsc_sap_<b>QAS</b>_ASCS<b>00</b> SAPInstance \
@@ -599,6 +598,35 @@ SAP NetWeaver требует общее хранилище для каталог
    sudo crm node online <b>anftstsapcl1</b>
    sudo crm configure property maintenance-mode="false"
    </code></pre>
+
+   SAP введена поддержка сервер постановки в очередь 2, включая репликацию, начиная с SAP NW 7.52. Начиная с платформы 1809 ABAP, сервер постановки в очередь 2 устанавливается по умолчанию. См. в разделе SAP Примечание [2630416](https://launchpad.support.sap.com/#/notes/2630416) для поддержки сервера 2 постановки в очередь.
+При использовании архитектуры сервера 2 постановки в очередь ([ENSA2](https://help.sap.com/viewer/cff8531bc1d9416d91bb6781e628d4e0/1709%20001/en-US/6d655c383abf4c129b0e5c8683e7ecd8.html)), определите ресурсы следующим образом:
+
+   <pre><code>sudo crm configure property maintenance-mode="true"
+   
+   sudo crm configure primitive rsc_sap_<b>QAS</b>_ASCS<b>00</b> SAPInstance \
+    operations \$id=rsc_sap_<b>QAS</b>_ASCS<b>00</b>-operations \
+    op monitor interval=11 timeout=60 on_fail=restart \
+    params InstanceName=<b>QAS</b>_ASCS<b>00</b>_<b>anftstsapvh</b> START_PROFILE="/sapmnt/<b>QAS</b>/profile/<b>QAS</b>_ASCS<b>00</b>_<b>anftstsapvh</b>" \
+    AUTOMATIC_RECOVER=false \
+    meta resource-stickiness=5000
+   
+   sudo crm configure primitive rsc_sap_<b>QAS</b>_ERS<b>01</b> SAPInstance \
+    operations \$id=rsc_sap_<b>QAS</b>_ERS<b>01</b>-operations \
+    op monitor interval=11 timeout=60 on_fail=restart \
+    params InstanceName=<b>QAS</b>_ERS<b>01</b>_<b>anftstsapers</b> START_PROFILE="/sapmnt/<b>QAS</b>/profile/<b>QAS</b>_ERS<b>01</b>_<b>anftstsapers</b>" AUTOMATIC_RECOVER=false IS_ERS=true
+   
+   sudo crm configure modgroup g-<b>QAS</b>_ASCS add rsc_sap_<b>QAS</b>_ASCS<b>00</b>
+   sudo crm configure modgroup g-<b>QAS</b>_ERS add rsc_sap_<b>QAS</b>_ERS<b>01</b>
+   
+   sudo crm configure colocation col_sap_<b>QAS</b>_no_both -5000: g-<b>QAS</b>_ERS g-<b>QAS</b>_ASCS
+   sudo crm configure order ord_sap_<b>QAS</b>_first_start_ascs Optional: rsc_sap_<b>QAS</b>_ASCS<b>00</b>:start rsc_sap_<b>QAS</b>_ERS<b>01</b>:stop symmetrical=false
+   
+   sudo crm node online <b>anftstsapcl1</b>
+   sudo crm configure property maintenance-mode="false"
+   </code></pre>
+
+   Если вы обновляете более старой версии и переключение на сервер постановки в очередь 2, см. Примечание sap [2641019](https://launchpad.support.sap.com/#/notes/2641019). 
 
    Убедитесь, что состояние кластера — "ОК" и что запущены все ресурсы. Не важно, на каком узле выполняются ресурсы.
 
@@ -1051,7 +1079,7 @@ SAP NetWeaver требует общее хранилище для каталог
         rsc_sap_QAS_ERS01  (ocf::heartbeat:SAPInstance):   Started anftstsapcl1
    </code></pre>
 
-   Создайте блокировку постановки в очередь, например измените пользователя в транзакции su01. Выполните следующие команды, как < sapsid\>adm на узле, где выполняется экземпляр ASCS. Команды остановят экземпляр ASCS и запустят его снова. Блокировка постановки в очередь будет потеряна в этом тесте.
+   Создайте блокировку постановки в очередь, например измените пользователя в транзакции su01. Выполните следующие команды, как < sapsid\>adm на узле, где выполняется экземпляр ASCS. Команды остановят экземпляр ASCS и запустят его снова. При использовании архитектуры сервера 1 постановки в очередь, блокировка постановки в очередь ожидается потеряны в данном тесте. При использовании архитектуры сервера 2 постановки в очередь, будут храниться постановки в очередь. 
 
    <pre><code>anftstsapcl2:qasadm 51> sapcontrol -nr 00 -function StopWait 600 2
    </code></pre>
@@ -1066,7 +1094,7 @@ SAP NetWeaver требует общее хранилище для каталог
    <pre><code>anftstsapcl2:qasadm 52> sapcontrol -nr 00 -function StartWait 600 2
    </code></pre>
 
-   Блокировка постановки в очередь для транзакции su01 должна быть потеряна, а серверная часть — сброшена. Состояние ресурсов после теста:
+   Блокировки постановки в очередь транзакций su01 будут потеряны, если используется архитектура репликации 1 сервер постановки в очередь и серверной части должен быть сброшен. Состояние ресурсов после теста:
 
    <pre><code>
     Resource Group: g-QAS_ASCS

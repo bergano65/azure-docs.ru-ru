@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Jostle | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Jostle | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Jostle.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9fd2e9c90a7ae2593b2b4d6502ce55b3aee579db
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 6304f4afa05850ced8b88bb81c0f94e4a31fb5be
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57903576"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59277278"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-jostle"></a>Руководство. Интеграция Azure Active Directory с Jostle
+# <a name="tutorial-azure-active-directory-integration-with-jostle"></a>Руководство по Интеграция Azure Active Directory с Jostle
 
 В этом руководстве описано, как интегрировать Jostle с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Jostle обеспечивает следующие преимущества:
@@ -105,11 +105,11 @@ ms.locfileid: "57903576"
 
     ![Сведения о домене и URL-адресах единого входа приложения Jostle](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://login-prod.jostle.us`.
+    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://login-prod.jostle.us`
 
-    b. В поле **Идентификатор** введите следующий URL-адрес: `https://jostle.us`.
+    b. В поле **Идентификатор** введите URL-адрес: `https://jostle.us`
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://login-prod.jostle.us/saml/SSO/alias/newjostle.us`
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес: `https://login-prod.jostle.us/saml/SSO/alias/newjostle.us`
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -195,8 +195,8 @@ ms.locfileid: "57903576"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

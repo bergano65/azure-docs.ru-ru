@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bed1c201831b1edf4f5c267d2093ada4ba91d7df
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: bc8431e2c45cc3bfdfa08dd0078220ab2d290309
+ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59263321"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59565722"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-velpic-saml"></a>Руководство по Интеграция Azure Active Directory с Velpic SAML
 
@@ -106,9 +106,9 @@ ms.locfileid: "59263321"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Velpic SAML](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<sub-domain>.velpicsaml.net`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<sub-domain>.velpicsaml.net`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://auth.velpic.com/saml/v2/<entity-id>/login`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://auth.velpic.com/saml/v2/<entity-id>/login`.
 
     > [!NOTE]
     > Обратите внимание, что URL-адрес входа предоставляется командой поддержки Velpic SAML, а значение идентификатора станет доступно только после настройки подключаемого модуля единого входа на стороне Velpic SAML. Скопируйте это значение на странице приложения Velpic SAML и вставьте в это поле.
@@ -251,9 +251,9 @@ ms.locfileid: "59263321"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [ Список учебников по интеграции приложений SaaS с Azure Active Directory ](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory? ](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

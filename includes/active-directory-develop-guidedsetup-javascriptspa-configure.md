@@ -14,18 +14,18 @@ ms.workload: identity
 ms.date: 09/17/2018
 ms.author: nacanuma
 ms.custom: include file
-ms.openlocfilehash: ec9eba4766da1afbbee568374de1ce06dc92ab2b
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
-ms.translationtype: MT
+ms.openlocfilehash: c0dcfc4ad7edf4d9203b807aa799eb047c753bed
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58203359"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59551558"
 ---
 ## <a name="register-your-application"></a>Регистрация приложения
 
 1. Чтобы зарегистрировать приложение, войдите на [портал Azure](https://portal.azure.com/).
 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
-1. В области навигации слева выберите службу **Azure Active Directory**, а затем выберите **App registrations (Preview) (Регистрация приложений (предварительная версия)) > Новая регистрация**.
+1. Перейдите на страницу [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) Платформы удостоверений Майкрософт для разработчиков.
 1. Когда откроется страница **Register an application** (Регистрация приложения), введите имя приложения.
 1. В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт).
 1. В разделе **URI перенаправления** выберите платформу **Интернет** и задайте в качестве значения URL-адрес приложения в зависимости от вашего веб-сервера. Инструкции по определению и получению URL-адреса перенаправления в Visual Studio и Node см. в разделах ниже.
@@ -39,7 +39,7 @@ ms.locfileid: "58203359"
 > При использовании Node.js порт веб-сервера можно задать в файле *server.js*. В этом руководстве в качестве примера использован порт 30662, но можно применить любой другой доступный порт. Выполните инструкции ниже, чтобы указать URL-адрес перенаправления в сведениях о регистрации приложения.<br/>
 > - Вернитесь на страницу *регистрации приложений* и укажите для `http://localhost:30662/` значение `Redirect URL` или укажите `http://localhost:[port]/`, если вы используете другой номер TCP-порта (где *[port]*  — это номер пользовательского TCP-порта).
 
-<p/>
+<p>
 
 > #### <a name="visual-studio-instructions-for-obtaining-the-redirect-url"></a>Инструкции для Visual Studio по получению URL-адреса перенаправления
 > Чтобы получить URL-адрес перенаправления, выполните следующие действия:
@@ -54,14 +54,15 @@ ms.locfileid: "58203359"
     ```javascript
     var applicationConfig = {
         clientID: "Enter_the_Application_Id_here",
-        authority: "https://login.microsoftonline.com/common",
+        authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here",
         graphScopes: ["user.read"],
         graphEndpoint: "https://graph.microsoft.com/v1.0/me"
     };
     ```
 
-<ol start="2">
-<li>
-Замените <code>Enter the application Id here</code> зарегистрированным идентификатором приложения.
-</li>
-</ol>
+    Описание
+    - `Enter_the_Application_Id_here` — это **идентификатор приложения (клиента)**, которое вы зарегистрировали.
+    - `Enter_the_Tenant_Info_Here` может иметь несколько значений.
+       - Если приложение поддерживает **учетные записи только в этом каталоге организации**, замените это значение **идентификатором клиента** или **именем клиента** (например, contoso.microsoft.com).
+       - Если ваше приложение поддерживает вариант **Учетные записи в любом каталоге организации**, замените это значение на `organizations`.
+       - Если приложение поддерживает **учетные записи в любом каталоге организации и личные учетные записи Майкрософт**, укажите значение `common`.

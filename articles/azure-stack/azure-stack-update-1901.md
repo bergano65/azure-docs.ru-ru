@@ -12,20 +12,20 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/27/2019
+ms.date: 04/09/2019
 ms.author: sethm
 ms.reviewer: adepue
 ms.lastreviewed: 03/27/2019
-ms.openlocfilehash: 00eb4fc3eb0b2e7120208e6318bf35fc2cc6f188
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: cd07ff5beddf65c9788c9ba94802ba2d37172923
+ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58649413"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59360701"
 ---
 # <a name="azure-stack-1901-update"></a>Обновление 1901 для Azure Stack
 
-*Область применения: интегрированные системы Azure Stack*
+*Область применения: Интегрированные системы Azure Stack*
 
 В этой статье описывается содержимое пакета обновления 1901. Обновление содержит улучшения, исправления и новые функции для этой версии Azure Stack. В этой статье также описываются известные проблемы этого выпуска и содержится ссылка для скачивания обновления. Известные проблемы можно разделить на проблемы, которые непосредственно относятся к процессу обновления, и проблемы со сборкой (после установки).
 
@@ -52,7 +52,7 @@ Azure Stack выпускает исправления на регулярной 
 > [!TIP]  
 > Подпишитесь на следующие веб-каналы *RSS* или *Atom*, чтобы следить за исправлениями Azure Stack:
 > - [RSS](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/rss)
-> - [Atom](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/atom)
+> - [Atom.](https://support.microsoft.com/app/content/api/content/feeds/sap/en-us/32d322a8-acae-202d-e9a9-7371dccf381b/atom)
 
 ### <a name="azure-stack-hotfixes"></a>Исправления для Azure Stack
 
@@ -82,15 +82,15 @@ Azure Stack выпускает исправления на регулярной 
 - Управляемые образы в Azure Stack позволяют создавать на обобщенной виртуальной машине (как неуправляемой, так и управляемой) объект управляемого образа, который может создавать только виртуальные машины с управляемыми дисками в будущем. Дополнительные сведения см. в статье об [Управляемых дисках Azure Stack](user/azure-stack-managed-disk-considerations.md#managed-images).
 
 - **AzureRm 2.4.0**
-   * **AzureRm.Profile**  
+   * **AzureRm.Profile;**  
          Исправления: `Import-AzureRmContext` правильно десериализирует сохраненный маркер.  
-   * **AzureRm.Resources**  
+   * **AzureRm.Resources;**  
          Исправления: `Get-AzureRmResource` выполняет запросы по типу ресурса (не чувствителен к регистру).  
-   * **Azure.Storage**  
+   * **Azure.Storage;**  
          Модуль развертывания AzureRm теперь включает уже опубликованную версию 4.5.0, поддерживающую **api-version 2017-07-29**.  
-   * **AzureRm.Storage**  
+   * **AzureRm.Storage.**  
          Модуль развертывания AzureRm теперь включает уже опубликованную версию 5.0.4, поддерживающую **api-version 2017-10-01**.  
-   * **AzureRm.Compute**  
+   * **AzureRm.Compute;**  
          Добавлены простые наборы параметров в `New-AzureRmVM` и `New-AzureRmVmss`. Параметр `-Image` поддерживает указание пользовательских образов.  
    * **AzureRm.Insights**  
          Модуль развертывания AzureRm теперь включает уже опубликованную версию 5.1.5, поддерживающую **api-version 2018-01-01**, для типов ресурсов метрик и определений метрик.
@@ -99,9 +99,9 @@ Azure Stack выпускает исправления на регулярной 
    * **Модуль Azs.Backup.Admin**  
          Критическое изменение. Изменения резервного копирования в режиме шифрования на основе сертификатов. Прекращена поддержка симметричных ключей.  
    * **Модуль Azs.Fabric.Admin**  
-         `Get-AzsInfrastructureVolume` больше не поддерживается. Используйте новый командлет `Get-AzsVolume`.  
-         `Get-AzsStorageSystem` больше не поддерживается.  Используйте новый командлет `Get-AzsStorageSubSystem`.  
-         `Get-AzsStoragePool` больше не поддерживается. Объект `StorageSubSystem` содержит свойство capacity.  
+         `Get-AzsInfrastructureVolume` не рекомендуется. Используйте новый командлет `Get-AzsVolume`.  
+         `Get-AzsStorageSystem` не рекомендуется.  Используйте новый командлет `Get-AzsStorageSubSystem`.  
+         `Get-AzsStoragePool` не рекомендуется. Объект `StorageSubSystem` содержит свойство capacity.  
    * **Модуль Azs.Compute.Admin**  
          Исправления: `Add-AzsPlatformImage`, `Get-AzsPlatformImage`. Вызов `ConvertTo-PlatformImageObject` происходит только по правильному пути.  
          Исправления: `Add-AzsVmExtension`, `Get-AzsVmExtension`. Вызов ConvertTo-VmExtensionObject происходит только по правильному пути.  
@@ -223,7 +223,7 @@ Azure Stack выпускает исправления на регулярной 
 
 ## <a name="known-issues-with-the-update-process"></a>Известные проблемы с процессом обновления
 
-- Если при выполнении [Test-AzureStack](azure-stack-diagnostic-test.md) тест **AzsInfraRoleSummary** или **AzsPortalApiSummary** завершается ошибкой, вам будет предложено запустить **Test-AzureStack** с параметром `-Repair`.  При выполнении этой команды происходит сбой со следующим сообщением об ошибке: `Unexpected exception getting Azure Stack health status. Cannot bind argument to parameter 'TestResult' because it is null.`
+- Если при выполнении [Test-AzureStack](azure-stack-diagnostic-test.md) тест **AzsInfraRoleSummary** или **AzsPortalApiSummary** завершается ошибкой, вам будет предложено запустить **Test-AzureStack** с параметром `-Repair`.  При выполнении этой команды происходит сбой со следующим сообщением об ошибке:  `Unexpected exception getting Azure Stack health status. Cannot bind argument to parameter 'TestResult' because it is null.`
 
 - При запуске [Test-AzureStack](azure-stack-diagnostic-test.md) выводится предупреждающее сообщение от контроллера управления основной платой (BMC). Это предупреждение можно проигнорировать.
 
@@ -291,9 +291,9 @@ Azure Stack выпускает исправления на регулярной 
 <!-- 3632798 - IS, ASDK -->
 - На портале при добавлении правила безопасности входящего трафика и выборе в качестве источника **тега службы** в списке **тегов источников** отображаются несколько вариантов, которые недоступны для Azure Stack. Ниже перечислены варианты, допустимые в Azure Stack:
 
-  - **Интернет**;
-  - **VirtualNetwork**;
-  - **AzureLoadBalancer**.
+  - **Интернет**
+  - **Виртуальная сеть**
+  - **AzureLoadBalancer**
   
     Другие варианты не поддерживаются как теги источников в Azure Stack. Аналогично, если добавить правило безопасности для исходящего трафика и выбрать **тег службы** как целевой объект, отобразится тот же список вариантов для **тега источника**. Единственные допустимые варианты такие же, как и для **тегов источников** (приведены в предыдущем списке).
 
@@ -315,6 +315,10 @@ Azure Stack выпускает исправления на регулярной 
  
 <!-- #### Identity -->
 <!-- #### Marketplace -->
+
+### <a name="syslog"></a>syslog
+
+- Конфигурация системного журнала не сохраняется в цикле обновления, поэтому клиент системного журнала теряет свою конфигурацию, а пересылка сообщений системного журнала останавливается. Эта проблема относится ко всем версиям платформы Azure Stack, начиная с общедоступной версии клиента системного журнала (1809). Чтобы обойти эту проблему, повторно настройте клиент системного журнала после установки обновления Azure Stack.
 
 ## <a name="download-the-update"></a>Скачивание обновления
 

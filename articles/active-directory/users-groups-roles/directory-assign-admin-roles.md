@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 04/09/2019
+ms.date: 04/15/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df0593faaf8b68c793a65312b208fe858804db53
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: 82afadef58310f46046c8c3168ed93a34769b316
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59496287"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59609529"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -71,9 +71,9 @@ ms.locfileid: "59496287"
 
   В | Может
   ----- | ----------
-  [Центре соответствия требованиям Microsoft 365](https://protection.microsoft.com) | Защита и управление данными организации во всех службах Microsoft 365.<br>Управление оповещениями по соответствию.
+  [Центр соответствия требованиям Microsoft 365](https://protection.office.com) | Защита и управление данными организации во всех службах Microsoft 365.<br>Управление оповещениями по соответствию.
   [Диспетчер соответствия](https://docs.microsoft.com/office365/securitycompliance/meet-data-protection-and-regulatory-reqs-using-microsoft-cloud) | Отслеживание, назначение и проверка деятельности организации на соответствие требованиям.
-  [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Управление системой управления данными.<br>Выполнение юридического расследование и анализа данных.<br>Управление запросом субъекта данных.
+  [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Управление системой управления данными.<br>Выполнение юридического расследование и анализа данных.<br>Управление запросом субъекта данных.
   [Intune](https://docs.microsoft.com/intune/role-based-access-control) | Просмотр всех данных проверки Intune.
   [Cloud App Security](https://docs.microsoft.com/cloud-app-security/manage-admins) | Обладает разрешением только для чтения и может управлять оповещениями.<br>Может создавать и изменять файловые политики и давать разрешение на управление файлом.<br> Позволяет просматривать все встроенные отчеты в разделе "Управление данными".
 
@@ -81,7 +81,7 @@ ms.locfileid: "59496287"
 
   In | Can do
   ----- | ----------
-  [Microsoft 365 compliance center](https://protection.microsoft.com) | Monitor compliance-related policies across Microsoft 365 services<br>Manage compliance alerts
+  [Microsoft 365 compliance center](https://protection.office.com) | Monitor compliance-related policies across Microsoft 365 services<br>Manage compliance alerts
   [Compliance Manager](https://docs.microsoft.com/office365/securitycompliance/meet-data-protection-and-regulatory-reqs-using-microsoft-cloud) | Track, assign, and verify your organization's regulatory compliance activities
   [Office 365 Security & Compliance Center](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Manage data governance<br>Perform legal and data investigation<br>Manage Data Subject Request
   [Intune](https://docs.microsoft.com/intune/role-based-access-control) | View all Intune audit data
@@ -170,22 +170,22 @@ ms.locfileid: "59496287"
   
   В | Может
   --- | ---
-  [Центр безопасности Microsoft 365](https://protection.microsoft.com) | Отслеживает политики, связанные с безопасностью во всех службах Microsoft 365.<br>Управляет угрозами безопасности и оповещениями.<br>Просмотр отчетов
+  [Центр безопасности Microsoft 365](https://protection.office.com) | Отслеживает политики, связанные с безопасностью во всех службах Microsoft 365.<br>Управляет угрозами безопасности и оповещениями.<br>Просмотр отчетов
   Центр защиты идентификации | Все разрешения роли читателя сведений о безопасности.<br>А также возможность выполнять все операции центра защиты идентификации, кроме сброса паролей.
-  [Управление привилегированными пользователями (PIM)](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Все разрешения роли читателя сведений о безопасности.<br>**Не удается** управлять назначением ролей в Azure AD или параметры
-  [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Управление политиками безопасности.<br>Просмотр, исследование и реагирование на угрозы безопасности.<br>Просмотр отчетов
+  [управление привилегированными пользователями;](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Все разрешения роли читателя сведений о безопасности.<br>**Не удается** управлять назначением ролей в Azure AD или параметры
+  [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Управление политиками безопасности.<br>Просмотр, исследование и реагирование на угрозы безопасности.<br>Просмотр отчетов
   Azure Advanced Threat Protection | Мониторинг и реагирование на подозрительные безопасные действия.
   EDR и ATP в Защитнике Windows | Назначение ролей<br>Управление группами компьютеров<br>Настройка выявления угроз в конечной точке и автоматизированном исправлении.<br>Просмотр, исследование и реагирование на оповещения.
   [Intune](https://docs.microsoft.com/intune/role-based-access-control) | Просмотр пользователя, устройства, соглашения о регистрации, конфигурации и сведений о приложении.<br>Не может вносить изменения в Intune.
   [Cloud App Security](https://docs.microsoft.com/cloud-app-security/manage-admins) | Добавление администраторов, политики и параметров, загрузка журналов и выполнение действия системы управления.
   [Центр безопасности Azure](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles) | Может просматривать политики и состояния безопасности, изменять политики безопасности, просматривать оповещения и рекомендации, а также закрывать предупреждения и рекомендации.
-  [Служба работоспособности служб Office 365](https://docs.microsoft.com/office365/enterprise/view-service-health) | Просмотр состояния служб Office 365.
+  [Работоспособность службы Office 365](https://docs.microsoft.com/office365/enterprise/view-service-health) | Просмотр состояния служб Office 365.
 
 <!--* **[Security operator](#security-operator)**: Users with this role can manage alerts and have global read-only access on security-related feature, including all information in Microsoft 365 security center, Azure Active Directory, Identity Protection, Privileged Identity Management, as well as the ability to read Azure Active Directory sign-in reports and audit logs, and in Office 365 Security & Compliance Center.
 
   In | Can do
   --- | ---
-  [Microsoft 365 security center](https://protection.microsoft.com) | All permissions of the Security Reader role<br>View, investigate, and respond to security threats alerts
+  [Microsoft 365 security center](https://protection.office.com) | All permissions of the Security Reader role<br>View, investigate, and respond to security threats alerts
   Identity Protection Center | All permissions of the Security Reader role<br>Additionally, the ability to perform all Identity Protection Center operations except for resetting passwords
   [Privileged Identity Management](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | All permissions of the Security Reader role
   [Office 365 Security & Compliance Center](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | All permissions of the Security Reader role<br>View, investigate, and respond to security alerts
@@ -198,15 +198,15 @@ ms.locfileid: "59496287"
 
   В | Может
   --- | ---
-  [Центр безопасности Microsoft 365](https://protection.microsoft.com) | Просмотр политик связанных с безопасностью во всех службах Microsoft 365.<br>Просмотр угроз безопасности и оповещений.<br>Просмотр отчетов
+  [Центр безопасности Microsoft 365](https://protection.office.com) | Просмотр политик связанных с безопасностью во всех службах Microsoft 365.<br>Просмотр угроз безопасности и оповещений.<br>Просмотр отчетов
   Центр защиты идентификации | Чтение всех отчетов о безопасности и сведений о параметрах функций безопасности<br><ul><li>Защита от нежелательной почты<li>Шифрование<li>Защита от потери данных<li>Защита от вредоносных программ<li>Дополнительная защита от угроз<li>Защита от фишинга<li>Правила обработки почты
-  [Управление привилегированными пользователями (PIM)](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Имеет доступ только для чтения ко всем сведениям, отображаемым в службе управления привилегированными пользователями (PIM) Azure AD: политики и отчеты для назначения ролей Azure AD, проверки безопасности, а в будущем также доступ на чтение для данных политик и отчетов, относящихся к сценариям за пределами назначения ролей Azure AD.<br>**Не может** регистрироваться в службе управления привилегированными пользователями Azure AD или вносить в нее какие-либо изменения. На портале PIM, или с помощью PowerShell кто-то с этой ролью может активировать дополнительные роли, (например, глобальный администратор или администратор привилегированных ролей), если пользователь имеет право их.
-  [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Просмотр политик безопасности<br>Просмотр и анализ угроз безопасности.<br>Просмотр отчетов
+  [управление привилегированными пользователями;](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Имеет доступ только для чтения ко всем сведениям, отображаемым в службе управления привилегированными пользователями (PIM) Azure AD: политики и отчеты для назначения ролей Azure AD, проверки безопасности, а в будущем также доступ на чтение для данных политик и отчетов, относящихся к сценариям за пределами назначения ролей Azure AD.<br>**Не может** регистрироваться в службе управления привилегированными пользователями Azure AD или вносить в нее какие-либо изменения. На портале PIM, или с помощью PowerShell кто-то с этой ролью может активировать дополнительные роли, (например, глобальный администратор или администратор привилегированных ролей), если пользователь имеет право их.
+  [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Просмотр политик безопасности<br>Просмотр и анализ угроз безопасности.<br>Просмотр отчетов
   EDR и ATP в Защитнике Windows | Просмотр и анализ оповещений.
   [Intune](https://docs.microsoft.com/intune/role-based-access-control) | Просмотр пользователя, устройства, соглашения о регистрации, настроек и сведений о приложении. Не может вносить изменения в Intune.
   [Cloud App Security](https://docs.microsoft.com/cloud-app-security/manage-admins) | Обладает разрешением только для чтения и может управлять оповещениями.
   [Центр безопасности Azure](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles) | Может просматривать оповещения и рекомендации, просматривать политики и состояния безопасности, но не может вносить изменения.
-  [Служба работоспособности служб Office 365](https://docs.microsoft.com/office365/enterprise/view-service-health) | Просмотр состояния служб Office 365.
+  [Работоспособность службы Office 365](https://docs.microsoft.com/office365/enterprise/view-service-health) | Просмотр состояния служб Office 365.
 
 * **[Администратор службы поддержки](#service-support-administrator)**: Пользователи с этой ролью могут открывать запросы в службу поддержки в Майкрософт для служб Azure и Office 365 и представления панели мониторинга служб и центр сообщений [портала Azure](https://portal.azure.com) и [Центр администрирования Microsoft 365](https://admin.microsoft.com). Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
   > [!NOTE]
@@ -252,7 +252,7 @@ ms.locfileid: "59496287"
 ### <a name="application-administrator"></a>Администратор приложений
 Может создавать любые аспекты регистрации приложений и работы с корпоративными приложениями и управлять ими.
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/applications/audience/update | Изменение свойства applications.audience в Azure Active Directory. |
 | microsoft.aad.directory/applications/authentication/update | Изменение свойства applications.authentication в Azure Active Directory. |
@@ -295,7 +295,7 @@ ms.locfileid: "59496287"
 ### <a name="application-developer"></a>Разработчик приложения
 Может создавать регистрации приложений независимо от значения параметра "Пользователи могут регистрировать приложения".
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/applications/createAsOwner | Создание приложений в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
 | microsoft.aad.directory/appRoleAssignments/createAsOwner | Создание объектов appRoleAssignment в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
@@ -323,7 +323,7 @@ ms.locfileid: "59496287"
   >
   >
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/organization/basic/update | Обновление базовых свойств в организации в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
@@ -341,7 +341,7 @@ ms.locfileid: "59496287"
   >
   >
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
@@ -395,7 +395,7 @@ ms.locfileid: "59496287"
 ### <a name="cloud-device-administrator"></a>Администратор облачного устройства
 Полный доступ для управления устройствами в Azure AD.
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
 | microsoft.aad.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
@@ -480,7 +480,7 @@ ms.locfileid: "59496287"
   >
   >
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
@@ -514,7 +514,7 @@ ms.locfileid: "59496287"
   >
   >
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
@@ -539,7 +539,7 @@ ms.locfileid: "59496287"
 ### <a name="device-administrators"></a>Администраторы устройств
 Пользователи, которым назначена эта роль добавляются в группу локальных администраторов на устройства, присоединенного к домену AD Azure.
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/groupSettings/basic/read | Чтение базовых свойств для объектов groupSettings в Azure Active Directory. |
 | microsoft.aad.directory/groupSettingTemplates/basic/read | Чтение базовых свойств для объектов groupSettingTemplate в Azure Active Directory. |
@@ -634,7 +634,7 @@ ms.locfileid: "59496287"
 ### <a name="directory-writers"></a>Создатели каталогов
 Может считывать и записывать сведения базового каталога. Предназначено для предоставления доступа приложениям, а не пользователям.
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/groups/create | Создание групп в Azure Active Directory. |
 | microsoft.aad.directory/groups/createAsOwner | Создание групп в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
@@ -661,7 +661,7 @@ ms.locfileid: "59496287"
   >
   >
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/groups/unified/appRoleAssignments/update | Обновление свойства groups.unified в Azure Active Directory. |
 | microsoft.aad.directory/groups/unified/basic/update | Обновление основных свойств групп Office 365. |
@@ -679,7 +679,7 @@ ms.locfileid: "59496287"
 ### <a name="guest-inviter"></a>Приглашающий гостей
 Может приглашать гостей независимо от значения параметра "Участники могут приглашать гостей".
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/users/appRoleAssignments/read | Чтение свойства users.appRoleAssignments в Azure Active Directory. |
 | microsoft.aad.directory/users/basic/read | Чтение базовых свойств пользователей в Azure Active Directory. |
@@ -714,7 +714,7 @@ ms.locfileid: "59496287"
   >
   >
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.informationProtection/allEntities/allTasks | Управление всеми аспектами Azure Information Protection. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
@@ -730,7 +730,7 @@ ms.locfileid: "59496287"
   >
   >
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
 | microsoft.aad.directory/contacts/create | Создание контактов в Azure Active Directory. |
@@ -762,7 +762,7 @@ ms.locfileid: "59496287"
 ### <a name="license-administrator"></a>Администратор лицензий
 Может управлять лицензиями продуктов для пользователей и групп.
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/usageLocation/update | Изменение свойства Users.UsageLocation в Azure Active Directory. |
@@ -778,7 +778,7 @@ ms.locfileid: "59496287"
   >
   >
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
@@ -808,7 +808,7 @@ ms.locfileid: "59496287"
   >
   >
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
 | microsoft.aad.directory/contacts/create | Создание контактов в Azure Active Directory. |
@@ -840,7 +840,7 @@ ms.locfileid: "59496287"
   >
   >
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
 | microsoft.aad.directory/contacts/create | Создание контактов в Azure Active Directory. |
@@ -874,7 +874,7 @@ ms.locfileid: "59496287"
   >
   >
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
@@ -886,7 +886,7 @@ ms.locfileid: "59496287"
 ### <a name="privileged-authentication-administrator"></a>Администратор привилегированных проверки подлинности
 Может просматривать, задавать и сбрасывать способ проверки подлинности для любых пользователей (включая администраторов).
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/strongAuthentication/update | Изменение свойств строгой аутентификации, таких как сведения об учетных данных MFA. |
@@ -904,7 +904,7 @@ ms.locfileid: "59496287"
   >
   >
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/directoryRoles/update | Обновление объектов directoryRole в Azure Active Directory. |
 | microsoft.aad.privilegedIdentityManagement/allEntities/allTasks | Создание и удаление всех ресурсов, а также чтение и изменение стандартных свойств в microsoft.aad.privilegedIdentityManagement. |
@@ -998,7 +998,7 @@ ms.locfileid: "59496287"
   >
   >
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/groups/unified/appRoleAssignments/update | Обновление свойства groups.unified в Azure Active Directory. |
 | microsoft.aad.directory/groups/unified/basic/update | Обновление основных свойств групп Office 365. |
@@ -1021,7 +1021,7 @@ ms.locfileid: "59496287"
   >
   >
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
@@ -1052,7 +1052,7 @@ ms.locfileid: "59496287"
   >
   >
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
@@ -1085,7 +1085,7 @@ ms.locfileid: "59496287"
 ### <a name="user-administrator"></a>администратора пользователей;
 Может контролировать все аспекты работы пользователей и групп, в том числе сбрасывать пароли администраторов с ограниченными правами.
 
-| **Действия** | **ОПИСАНИЕ** |
+| **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/appRoleAssignments/create | Создание объектов appRoleAssignment в Azure Active Directory. |
 | microsoft.aad.directory/appRoleAssignments/delete | Удаление объектов appRoleAssignment в Azure Active Directory. |

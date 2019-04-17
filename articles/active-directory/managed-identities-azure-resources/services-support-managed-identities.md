@@ -4,18 +4,18 @@ description: Список служб, которые поддерживают у
 services: active-directory
 author: MarkusVi
 ms.author: priyamo
-ms.date: 11/28/2018
+ms.date: 04/15/2019
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: msi
 manager: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d524f5f58e7381dd89f36c5d2821e6911ed9ec15
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: 79c3f8ae183c78b19f7f520f8154bf9484a1f795
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59045463"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59607999"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -37,10 +37,10 @@ ms.locfileid: "59045463"
 
 Чтобы настроить управляемые удостоверения для виртуальных машин Azure (в регионах, где они доступны), см. следующий список.
 
-- [Портал Azure](qs-configure-portal-windows-vm.md)
+- [портал Azure](qs-configure-portal-windows-vm.md)
 - [PowerShell](qs-configure-powershell-windows-vm.md)
-- [Инфраструктура CLI Azure](qs-configure-cli-windows-vm.md)
-- [Шаблоны Azure Resource Manager](qs-configure-template-windows-vm.md)
+- [Интерфейс командной строки Azure](qs-configure-cli-windows-vm.md)
+- [Шаблоны диспетчера ресурсов Azure](qs-configure-template-windows-vm.md)
 - [REST](qs-configure-rest-vm.md)
 
 ### <a name="azure-virtual-machine-scale-sets"></a>Масштабируемые наборы виртуальных машин Azure
@@ -52,10 +52,10 @@ ms.locfileid: "59045463"
 
 Чтобы настроить управляемые удостоверения для масштабируемых наборов виртуальных машин Azure (в регионах, где они доступны), см. следующий список.
 
-- [Портал Azure](qs-configure-portal-windows-vm.md)
+- [портал Azure](qs-configure-portal-windows-vm.md)
 - [PowerShell](qs-configure-powershell-windows-vm.md)
-- [Инфраструктура CLI Azure](qs-configure-cli-windows-vm.md)
-- [Шаблоны Azure Resource Manager](qs-configure-template-windows-vm.md)
+- [Интерфейс командной строки Azure](qs-configure-cli-windows-vm.md)
+- [Шаблоны диспетчера ресурсов Azure](qs-configure-template-windows-vm.md)
 - [REST](qs-configure-rest-vm.md)
 
 ### <a name="azure-app-service"></a>Служба приложений Azure
@@ -67,8 +67,8 @@ ms.locfileid: "59045463"
 
 Чтобы настроить управляемые удостоверения для Службы приложений Azure (в регионах, где они доступны), см. следующий список.
 
-- [Портал Azure](/azure/app-service/overview-managed-identity#using-the-azure-portal)
-- [Инфраструктура CLI Azure](/azure/app-service/overview-managed-identity#using-the-azure-cli)
+- [портал Azure](/azure/app-service/overview-managed-identity#using-the-azure-portal)
+- [Интерфейс командной строки Azure](/azure/app-service/overview-managed-identity#using-the-azure-cli)
 - [Azure PowerShell](/azure/app-service/overview-managed-identity#using-azure-powershell)
 - [Шаблон Azure Resource Manager](/azure/app-service/overview-managed-identity#using-an-azure-resource-manager-template)
 
@@ -93,8 +93,8 @@ ms.locfileid: "59045463"
 
 Чтобы настроить управляемые удостоверения для Функций Azure (в регионах, где они доступны), см. следующий список.
 
-- [Портал Azure](/azure/app-service/overview-managed-identity#using-the-azure-portal)
-- [Инфраструктура CLI Azure](/azure/app-service/overview-managed-identity#using-the-azure-cli)
+- [портал Azure](/azure/app-service/overview-managed-identity#using-the-azure-portal)
+- [Интерфейс командной строки Azure](/azure/app-service/overview-managed-identity#using-the-azure-cli)
 - [Azure PowerShell](/azure/app-service/overview-managed-identity#using-azure-powershell)
 - [Шаблон Azure Resource Manager](/azure/app-service/overview-managed-identity#using-an-azure-resource-manager-template)
 
@@ -107,7 +107,7 @@ ms.locfileid: "59045463"
 
 Чтобы настроить управляемые удостоверения для Logic Apps (в регионах, где они доступны), см. следующий список.
 
-- [Портал Azure](/azure/logic-apps/create-managed-service-identity#azure-portal)
+- [портал Azure](/azure/logic-apps/create-managed-service-identity#azure-portal)
 - [Шаблон Azure Resource Manager](/azure/app-service/overview-managed-identity)
 
 ### <a name="azure-data-factory-v2"></a>Фабрика данных Azure версии 2
@@ -119,10 +119,10 @@ ms.locfileid: "59045463"
 
 Чтобы настроить управляемые удостоверения для Фабрики данных Azure версии 2 (в регионах, где они доступны), см. следующий список.
 
-- [Портал Azure](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity)
+- [портал Azure](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity)
 - [PowerShell](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-powershell)
 - [REST](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-rest-api)
-- [SDK](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-sdk)
+- [Пакет SDK](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-sdk)
 
 ### <a name="azure-api-management"></a>Cлужба управления Azure API 
 
@@ -144,7 +144,7 @@ ms.locfileid: "59045463"
 
 Чтобы настроить управляемые удостоверения для Экземпляров контейнеров Azure (в регионах, где они доступны), см. следующий список.
 
-- [Инфраструктура CLI Azure](~/articles/container-instances/container-instances-managed-identity.md)
+- [Интерфейс командной строки Azure](~/articles/container-instances/container-instances-managed-identity.md)
 - [Шаблон Azure Resource Manager](~/articles/container-instances/container-instances-managed-identity.md#enable-managed-identity-using-resource-manager-template)
 - [YAML](~/articles/container-instances/container-instances-managed-identity.md#enable-managed-identity-using-yaml-file)
 
@@ -161,7 +161,7 @@ ms.locfileid: "59045463"
 - [Назначение доступа через интерфейс командной строки Azure](howto-assign-access-CLI.md)
 - [Назначение доступа с помощью шаблона Azure Resource Manager](../../role-based-access-control/role-assignments-template.md)
 
-| Облако | Идентификатор ресурса | Status |
+| Облако | Идентификатор ресурса | Статус |
 |--------|------------|--------|
 | Azure (глобальный) | `https://management.azure.com/`| Доступна |
 | Azure Government | `https://management.usgovcloudapi.net/` | Доступна |
@@ -170,7 +170,7 @@ ms.locfileid: "59045463"
 
 ### <a name="azure-key-vault"></a>Хранилище ключей Azure
 
-| Облако | Идентификатор ресурса | Status |
+| Облако | Идентификатор ресурса | Статус |
 |--------|------------|--------|
 | Azure (глобальный) | `https://vault.azure.net`| Доступна |
 | Azure Government | `https://vault.usgovcloudapi.net` | Доступна |
@@ -179,7 +179,7 @@ ms.locfileid: "59045463"
 
 ### <a name="azure-data-lake"></a>Azure Data Lake; 
 
-| Облако | Идентификатор ресурса | Status |
+| Облако | Идентификатор ресурса | Статус |
 |--------|------------|--------|
 | Azure (глобальный) | `https://datalake.azure.net/` | Доступна |
 | Azure Government |  | Недоступно |
@@ -188,7 +188,7 @@ ms.locfileid: "59045463"
 
 ### <a name="azure-sql"></a>Azure SQL 
 
-| Облако | Идентификатор ресурса | Status |
+| Облако | Идентификатор ресурса | Статус |
 |--------|------------|--------|
 | Azure (глобальный) | `https://database.windows.net/` | Доступна |
 | Azure Government | `https://database.usgovcloudapi.net/` | Доступна |
@@ -197,7 +197,7 @@ ms.locfileid: "59045463"
 
 ### <a name="azure-event-hubs"></a>Центры событий Azure
 
-| Облако | Идентификатор ресурса | Status |
+| Облако | Идентификатор ресурса | Статус |
 |--------|------------|--------|
 | Azure (глобальный) | `https://eventhubs.azure.net` | Предварительный просмотр |
 | Azure Government |  | Недоступно |
@@ -206,16 +206,16 @@ ms.locfileid: "59045463"
 
 ### <a name="azure-service-bus"></a>Azure Service Bus
 
-| Облако | Идентификатор ресурса | Status |
+| Облако | Идентификатор ресурса | Статус |
 |--------|------------|--------|
 | Azure (глобальный) | `https://servicebus.azure.net`  | Предварительный просмотр |
 | Azure Government |  | Недоступно |
 | Azure для Германии |   | Недоступно |
 | Azure China 21Vianet |  | Недоступно |
 
-### <a name="azure-storage"></a>Хранилище Azure
+### <a name="azure-storage-blobs-and-queues"></a>Хранилище BLOB-объектов Azure и очереди
 
-| Облако | Идентификатор ресурса | Status |
+| Облако | Идентификатор ресурса | Статус |
 |--------|------------|--------|
 | Azure (глобальный) | `https://storage.azure.com/` | Доступна |
 | Azure Government | `https://storage.azure.com/` | Доступна |

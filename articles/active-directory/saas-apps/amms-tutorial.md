@@ -1,35 +1,35 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Useall | Документация Майкрософт
-description: Узнайте, как настроить единый вход между Azure Active Directory и Useall.
+title: Руководство по интеграции Azure Active Directory с приложением AMMS | Документация Майкрософт
+description: Сведения о настройке единого входа между Azure Active Directory и AMMS.
 services: active-directory
 documentationCenter: na
 author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
-ms.assetid: 8dd9e452-a5b6-4a16-a97c-b60211ea6b95
+ms.assetid: 107653a2-bd5c-4916-9fd2-1c15a9e24dc1
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 04/03/2019
+ms.date: 04/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88cee825f132054eb1228e8930f82199c7f1812f
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: e91f51de53b920d1a130c3983489a08b7f1f6cfd
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59565112"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59283835"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-useall"></a>Руководство по Интеграция Azure Active Directory с Useall
+# <a name="tutorial-azure-active-directory-integration-with-amms"></a>Руководство по интеграции Azure Active Directory с AMMS
 
-В этом руководстве описано, как интегрировать Useall с Azure Active Directory (Azure AD).
-Интеграция Azure AD с Useall обеспечивает следующие преимущества.
+В этом руководстве описано, как интегрировать AMMS с Azure Active Directory (Azure AD).
+Интеграция Azure AD с приложением AMMS обеспечивает следующие преимущества:
 
-* С помощью Azure AD вы можете контролировать доступ к Useall.
-* Вы можете включить автоматический вход пользователей в Useall (единый вход) с помощью учетной записи Azure AD.
+* С помощью Azure AD вы можете контролировать доступ к AMMS.
+* Вы можете включить автоматический вход пользователей в AMMS (единый вход) с помощью учетных записей Azure AD.
 * Вы можете управлять учетными записями централизованно на портале Azure.
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
@@ -37,22 +37,22 @@ ms.locfileid: "59565112"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы настроить интеграцию Azure AD с Useall, вам потребуется:
+Чтобы настроить интеграцию Azure AD с AMMS, вам потребуется:
 
 * подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
-* подписка Useall с поддержкой единого входа
+* подписка AMMS с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Useall поддерживает единый вход, инициированный **поставщиком услуг**
+* AMMS поддерживает единый вход, инициированный **поставщиком услуг**.
 
-## <a name="adding-useall-from-the-gallery"></a>Добавление Useall из коллекции
+## <a name="adding-amms-from-the-gallery"></a>Добавление AMMS из коллекции
 
-Чтобы настроить интеграцию Useall с Azure AD, необходимо добавить Useall из коллекции в список управляемых приложений SaaS.
+Чтобы настроить интеграцию AMMS с Azure AD, необходимо добавить AMMS из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Useall из коллекции, выполните следующие действия.**
+**Чтобы добавить AMMS из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -66,31 +66,31 @@ ms.locfileid: "59565112"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Useall**, выберите **Useall** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **AMMS**, выберите **AMMS** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Useall в списке результатов](common/search-new-app.png)
+    ![AMMS в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Useall с использованием тестового пользователя **Britta Simon**.
-Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Useall.
+В этом разделе описана настройка и проверка единого входа Azure AD в AMMS с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в AMMS.
 
-Чтобы настроить и проверить единый вход Azure AD в Useall, вам потребуется выполнить действия в следующих стандартных блоках.
+Чтобы настроить и проверить единый вход Azure AD в AMMS, вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в Useall](#configure-useall-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+2. **[Настройка единого входа в AMMS](#configure-amms-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя Useall](#create-useall-test-user)** требуется для того, чтобы в приложении Useall существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+5. **[Создание тестового пользователя приложения AMMS](#create-amms-test-user)** требуется для того, чтобы в AMMS существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
 В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-Чтобы настроить единый вход Azure AD в Useall, сделайте следующее:
+Чтобы настроить единый вход Azure AD в AMMS, выполните следующие действия.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Useall** выберите **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **AMMS** выберите **Единый вход**.
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
@@ -104,22 +104,22 @@ ms.locfileid: "59565112"
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    ![Сведения о домене и URL-адресах единого входа приложения Useall](common/sp-identifier.png)
+    ![Сведения о домене и URL-адресах единого входа для приложения AMMS](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.useall.com.br/tenant/useall`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.microwestcloud.com/amms/pages/login.aspx`
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.useall.com.br/tenant/apiuseall/saml2`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `<SUBDOMAIN>.microwestcloud.com/amms`
 
     > [!NOTE]
-    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Useall](mailto:luizotavio@useall.com.br). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов AMMS](mailto:techsupport@microwestsoftware.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы копировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/copy-metadataurl.png)
 
-### <a name="configure-useall-single-sign-on"></a>Настройка единого входа Useall
+### <a name="configure-amms-single-sign-on"></a>Настройка единого входа в AMMS
 
-Для настройки единого входа на стороне **Useall** необходимо отправить **URL-адрес метаданных федерации приложений** [группе поддержки Useall](mailto:luizotavio@useall.com.br). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **AMMS**, необходимо отправить **URL-адрес метаданных федерации приложения** в [группу поддержки AMMS](mailto:techsupport@microwestsoftware.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -147,15 +147,15 @@ ms.locfileid: "59565112"
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Useall.
+В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к AMMS.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Useall**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **AMMS**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. Из списка приложений выберите **Useall**.
+2. В списке приложений выберите **AMMS**.
 
-    ![Ссылка на Useall в списке приложений](common/all-applications.png)
+    ![Ссылка на AMMS в списке приложений](common/all-applications.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
@@ -171,21 +171,21 @@ ms.locfileid: "59565112"
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-### <a name="create-useall-test-user"></a>Создание тестового пользователя Useall
+### <a name="create-amms-test-user"></a>Создание тестового пользователя AMMS
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Useall. Обратитесь к  [группе поддержки Useall](mailto:luizotavio@useall.com.br), чтобы добавить пользователей на платформу Useall. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении AMMS. Обратитесь в  [службу поддержки AMMS](mailto:techsupport@microwestsoftware.com), чтобы добавить пользователей на платформу AMMS. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Useall на Панели доступа, вы автоматически войдете в приложение Useall, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку AMMS на панели доступа, вы автоматически войдете в приложение AMMS, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [ Список учебников по интеграции приложений SaaS с Azure Active Directory ](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory? ](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

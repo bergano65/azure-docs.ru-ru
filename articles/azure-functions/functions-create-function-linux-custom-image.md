@@ -11,12 +11,12 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: azure-cli
 manager: jeconnoc
-ms.openlocfilehash: 92811110ef44676de487bca1ad2022cb63315c75
-ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
+ms.openlocfilehash: 03e1ec58b0ef3ad50a04f82ced7d20119ab3ef5b
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58418063"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59470072"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-image"></a>Создание функции на Linux с помощью пользовательского образа
 
@@ -256,6 +256,16 @@ AzureWebJobsStorage=$storageConnectionString
 
 [!INCLUDE [functions-test-function-code](../../includes/functions-test-function-code.md)]
 
+## <a name="enable-application-insights"></a>Включение Application Insights
+
+Рекомендуемый способ наблюдения за выполнением этой функции — интеграция приложения-функции в Azure Application Insights. При создании приложения-функции на портале Azure эта интеграция выполняется по умолчанию. Тем не менее при создании приложения-функции с помощью Azure CLI его интеграции в Azure не происходит.
+
+Чтобы настроить Application Insights для приложения-функции, сделайте следующее:
+
+[!INCLUDE [functions-connect-new-app-insights.md](../../includes/functions-connect-new-app-insights.md)]
+
+Дополнительные сведения см. в статье [Мониторинг Функций Azure](functions-monitoring.md).
+
 ## <a name="enable-continuous-deployment"></a>Включение непрерывного развертывания
 
 Одним из преимуществ использования контейнеров является возможность автоматического развертывания обновлений при обновлении контейнеров в реестре. Включите непрерывное развертывание с помощью команды [az functionapp deployment container config](/cli/azure/functionapp/deployment/container#az-functionapp-deployment-container-config).
@@ -292,4 +302,4 @@ az functionapp deployment container config --enable-cd \
 Узнайте, как включить функцию непрерывной интеграции, встроенную в основную платформу службы приложений. Вы можете настроить приложение-функцию, чтобы контейнер повторно развертывался при обновлении образа в центре Docker.
 
 > [!div class="nextstepaction"] 
-> [Непрерывное развертывание с использованием платформы Azure "Веб-приложение для контейнеров"](../app-service/containers/app-service-linux-ci-cd.md).
+> [Непрерывное развертывание с использованием платформы Azure "Веб-приложения для контейнеров"](../app-service/containers/app-service-linux-ci-cd.md)

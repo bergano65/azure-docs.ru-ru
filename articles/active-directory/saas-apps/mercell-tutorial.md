@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
-ms.openlocfilehash: 317ff01b8c06f02acc57dc7e873daeef36b17932
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2411a036cd56d88e261317ae523d8186b85b5a15
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57895436"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59274558"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mercell"></a>Руководство. Интеграция Azure Active Directory с Mercell
+# <a name="tutorial-azure-active-directory-integration-with-mercell"></a>Руководство по Интеграция Azure Active Directory с Mercell
 
 В этом руководстве описано, как интегрировать Mercell с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Mercell обеспечивает следующие преимущества.
@@ -52,7 +52,7 @@ ms.locfileid: "57895436"
 
 Чтобы настроить интеграцию Mercell с Azure AD, необходимо добавить Mercell из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Mercell из коллекции, выполните следующие действия:**
+**Чтобы добавить Mercell из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -134,7 +134,7 @@ ms.locfileid: "57895436"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -182,9 +182,9 @@ ms.locfileid: "57895436"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: tutorial
 ms.date: 08/22/2017
 ms.author: ramkris
-ms.openlocfilehash: 4d6d26bd142a62d57b55caa290a2a94a3988737d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: a915792ad5cd1352c666f8224345c54e278ab899
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58008706"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59526883"
 ---
 # <a name="build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Создание веб-приложения Java с использованием Azure Cosmos DB и API SQL
 
@@ -71,7 +71,7 @@ ms.locfileid: "58008706"
    
     ![Создание файла JSP — учебник по разработке веб-приложений Java](./media/sql-api-java-application/image11.png)
 5. В диалоговом окне **Select JSP Template** (Выбор шаблона JSP) в целях обучения выберите **New JSP File (html)** (Новый JSP-файл (html)) и нажмите кнопку **Finish** (Готово).
-6. Открыв файл index.jsp в Eclipse, добавьте текст для отображения **Hello World!** в существующий элемент <body>. Обновленное содержимое элемента <body> должно отображаться следующим образом:
+6. Открыв файл index.jsp в Eclipse, добавьте текст для отображения **Hello World!** в существующий элемент `<body>`. Обновленное содержимое элемента `<body>` должно отображаться следующим образом:
    
         <body>
             <% out.println("Hello World!"); %>
@@ -99,8 +99,13 @@ ms.locfileid: "58008706"
    ![Установка пакета Java Application SDK для SQL](./media/sql-api-java-application/image13.png)
      
    * Либо добавьте зависимость XML для идентификаторов группы и артефакта непосредственно в pom.xml в текстовом редакторе:
-     
-        <dependency> <groupId>com.microsoft.azure</groupId> <artifactId>azure-documentdb</artifactId> <version>1.9.1</version> </dependency>
+        ```xml
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-documentdb</artifactId>
+            <version>1.9.1</version>
+        </dependency>
+        ```
 6. Нажмите кнопку **ОК**, и Maven установит пакет Java SDK для SQL.
 7. Сохраните файл pom.xml.
 

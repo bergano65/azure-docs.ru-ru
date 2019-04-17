@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 04/19/2018
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: 9b88a6f3f7e17cfc549b30d1f0d80d4cdf1c3e2d
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: 8795c9ab0a4dbb76327d0ead48ed33fb0cff9e86
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58919335"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59528550"
 ---
 ## <a name="test-your-code"></a>Тестирование кода
 
@@ -27,9 +27,9 @@ ms.locfileid: "58919335"
 
 Когда вы будете готовы запустить тестирование, войдите в учетную запись Microsoft Azure Active Directory (рабочую или учебную) (Azure AD) или в личную учетную запись Майкрософт (<span>live.com</span>, <span>outlook.</span>com).
 
-![Вход с помощью учетной записи Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-test/aspnetbrowsersignin.png)
+![Войдите с помощью учетной записи Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-test/aspnetbrowsersignin.png)
 <br/><br/>
-![Вход с помощью учетной записи Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-test/aspnetbrowsersignin2.png)
+![Войдите в учетную запись Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-test/aspnetbrowsersignin2.png)
 
 #### <a name="view-application-results"></a>Просмотр результатов приложения
 
@@ -45,10 +45,10 @@ ms.locfileid: "58919335"
 
 |Свойство |Значение |ОПИСАНИЕ |
 |---|---|---|
-|**ИМЯ** |Полное имя пользователя | Имя и фамилия пользователя.
+|**Имя** |Полное имя пользователя | Имя и фамилия пользователя.
 |**Имя пользователя** |user<span>@domain.com</span> | Имя пользователя, которое используется для идентификации пользователя.
-|**Субъект** |Субъект |Строка, уникально идентифицирующая пользователя в Интернете.|
-|**Tenant ID** |Guid | **Уникальный идентификатор**, который представляет организацию Azure AD пользователя.|
+|**Тема** |Субъект |Строка, уникально идентифицирующая пользователя в Интернете.|
+|**Идентификатор клиента** |Guid | **Уникальный идентификатор**, который представляет организацию Azure AD пользователя.|
 
 Кроме того, вы увидите таблицу всех утверждений, которые находятся в запросе проверки подлинности. Дополнительные сведения см. в статье [Azure AD token reference](https://docs.microsoft.com/azure/active-directory/develop/active-directory-token-and-claims) (Справочник по токенам Azure AD).
 
@@ -96,5 +96,3 @@ GlobalFilters.Filters.Add(new AuthorizeAttribute());
 #### <a name="option-3-use-a-custom-method-to-validate-issuers"></a>Вариант 3. Используйте пользовательский метод для проверки издателей
 
 Пользовательский метод можно реализовать для проверки издателей с помощью параметра **IssuerValidator**. Дополнительные сведения о том, как использовать этот параметр, см. в статье [TokenValidationParameters Class](/previous-versions/visualstudio/dn464192(v=vs.114)) (Класс TokenValidationParameters).
-
-[!INCLUDE [Help and support](./active-directory-develop-help-support-include.md)]

@@ -3,17 +3,17 @@ title: Настройка представлений оператора в Azure
 description: Как конструктор вы можете настраивать представления оператора в приложении Azure IoT Central.
 author: sandeeppujar
 ms.author: sandeepu
-ms.date: 01/29/2018
+ms.date: 03/26/2019
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-ms.openlocfilehash: 86c9a7794146edc4106d8ec30106e1c27556248f
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: dc3543af0a10c83d8ca212957a6345c8a70cd58b
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57769682"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59279947"
 ---
 # <a name="tutorial-customize-the-azure-iot-central-operators-view-new-ui-design"></a>Руководство по Настройка представления оператора Azure IoT Central (новый дизайн пользовательского интерфейса)
 
@@ -161,4 +161,4 @@ ms.locfileid: "57769682"
 Теперь, когда вы узнали, как настраивать представление оператора приложения, предлагаем перейти к следующим руководствам:
 
 * [Отслеживание устройств (для операторов)](tutorial-monitor-devices.md)
-* [Добавление реального устройства в приложение (для операторов и разработчиков приложений)](tutorial-add-device.md)
+* [Добавление нового устройства в приложение (для операторов и разработчиков приложений)](tutorial-add-device.md)

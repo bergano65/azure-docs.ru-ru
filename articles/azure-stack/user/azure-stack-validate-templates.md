@@ -12,37 +12,36 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/27/2018
+ms.date: 04/08/2018
 ms.author: sethm
 ms.reviewer: unknown
 ms.lastreviewed: 12/27/2018
-ms.openlocfilehash: 02ceb6cbcbf824f8bf830c66bc9899c20f6ed822
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 650b868762299725927623134039e87bbee9f4c2
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58484056"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59277516"
 ---
 # <a name="check-your-templates-for-azure-stack-with-the-template-validation-tool"></a>Проверьте свои шаблоны для Azure Stack с помощью средства проверки шаблонов.
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-С помощью средства проверки шаблонов вы можете убедиться, что [шаблоны](azure-stack-arm-templates.md) Azure Resource Manager готовы к развертыванию в Azure Stack. Средство проверки шаблона предоставляется в составе средств Azure Stack. Чтобы скачать средства Azure Stack с GitHub, выполните действия, описанные в [этой статье](azure-stack-powershell-download.md).
+С помощью средства проверки шаблонов вы можете проверить, готовы ли [шаблоны](azure-stack-arm-templates.md) Azure Resource Manager к развертыванию в Azure Stack. Средство проверки шаблона предоставляется в составе средств Azure Stack. Чтобы скачать средства Azure Stack с GitHub, выполните действия, описанные в [этой статье](azure-stack-powershell-download.md).
 
 ## <a name="overview"></a>Обзор
 
 Чтобы проверить шаблон, сначала нужно создать файл возможностей облака, а затем запустить средство проверки. Можно использовать приведенные ниже модули PowerShell с помощью инструментов Azure Stack.
 
-- В папке **CloudCapabilities**:<br>         `AzureRM.CloudCapabilities.psm1` создает JSON-файл со списком возможностей облака, где перечисляются доступные в облаке Azure Stack службы и версии.
-- В папке **TemplateValidator**:<br>
-`AzureRM.TemplateValidator.psm1` использует JSON-файл облачных возможностей для проверки шаблонов на возможность развертывания в Azure Stack.
+- В папке **CloudCapabilities**: `AzureRM.CloudCapabilities.psm1` создает JSON-файл со списком возможностей облака, где перечисляются доступные в облаке Azure Stack службы и версии.
+- В папке **TemplateValidator**: `AzureRM.TemplateValidator.psm1` использует JSON-файл облачных возможностей для проверки шаблонов на возможность развертывания в Azure Stack.
 
 ## <a name="build-the-cloud-capabilities-file"></a>Создание файла возможностей облака
 
 Прежде чем использовать средство проверки шаблонов, запустите модуль PowerShell **AzureRM.CloudCapabilities**, чтобы создать файл JSON.
 
 >[!NOTE]
->При обновлении интегрированной системы и добавлении новых служб или расширений виртуальной машины следует еще раз запустить этот модуль.
+> При обновлении интегрированной системы и добавлении новых служб или расширений виртуальной машины следует еще раз запустить этот модуль.
 
 1. Убедитесь, что у вас есть подключение к Azure Stack. Эти шаги можно выполнить на узле пакета средств разработки Azure Stack или на рабочей станции, подключенной через [VPN](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-vpn).
 2. Импортируйте модуль PowerShell **AzureRM.CloudCapabilities**.
@@ -51,7 +50,7 @@ ms.locfileid: "58484056"
     Import-Module .\CloudCapabilities\AzureRM.CloudCapabilities.psm1
     ```
 
-3. С помощью командлета `Get-CloudCapabilities` получите версии служб и создайте JSON-файл облачных возможностей. Если вы не укажете параметр **-OutputPath**, файл AzureCloudCapabilities.Json будет создан в текущем каталоге. Укажите фактическое расположение.
+3. С помощью командлета `Get-CloudCapabilities` получите версии служб и создайте JSON-файл облачных возможностей. Если вы не укажете параметр **-OutputPath**, файл AzureCloudCapabilities.Json будет создан в текущем каталоге. Укажите фактическое расположение Azure.
 
     ```powershell
     Get-AzureRMCloudCapability -Location <your location> -Verbose
@@ -76,7 +75,7 @@ ms.locfileid: "58484056"
     -Verbose
     ```
 
-Все предупреждения и ошибки, сгенерированные в процессе проверки, выводятся в консоль PowerShell и HTML-файл в исходном каталоге. На следующем снимке экрана показан пример отчета о проверке.
+Сведения о всех предупреждениях и ошибках, полученные в процессе проверки шаблонов, выводятся в консоль PowerShell и записываются HTML-файл в исходном каталоге. На снимке экрана ниже показан пример отчета о проверке.
 
 ![Пример отчета о проверке шаблона](./media/azure-stack-validate-templates/image1.png)
 
@@ -86,12 +85,12 @@ ms.locfileid: "58484056"
 
 | Параметр | ОПИСАНИЕ | Обязательно |
 | ----- | -----| ----- |
-| TemplatePath | Указывает путь для рекурсивного поиска шаблонов Azure Resource Manager. | Yes | 
+| TemplatePath | Указывает путь для рекурсивного поиска шаблонов Azure Resource Manager. | Yes |
 | TemplatePattern | Задает шаблон имени, по которому выбираются файлы. | Нет  |
-| CapabilitiesPath | Указывает путь к JSON-файлу возможностей облака | Yes | 
+| CapabilitiesPath | Указывает путь к JSON-файлу возможностей облака. | Yes |
 | IncludeComputeCapabilities | Включает оценку ресурсов IaaS, например размеров и расширений виртуальных машин. | Нет  |
 | IncludeStorageCapabilities | Включает оценку ресурсов хранения, например типов SKU. | Нет  |
-| Отчет | Указывает имя создаваемого HTML-отчета. | Нет  |
+| Отчет | Указывает имя создаваемого HTML-файла отчета. | Нет  |
 | Подробная информация | Выводит ошибки и предупреждения в консоль. | Нет |
 
 ### <a name="examples"></a>Примеры
@@ -108,5 +107,5 @@ test-AzureRMTemplate -TemplatePath C:\AzureStack-Quickstart-Templates `
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Use Azure Resource Manager templates in Azure Stack](azure-stack-arm-templates.md) (Использование шаблонов Resource Manager в Azure Stack)
-- [Разработка шаблонов для Azure Stack](azure-stack-develop-templates.md)
+- [Использование шаблонов диспетчера ресурсов Azure в Azure Stack](azure-stack-arm-templates.md)
+- [Рекомендации по использованию шаблона Azure Resource Manager](azure-stack-develop-templates.md)

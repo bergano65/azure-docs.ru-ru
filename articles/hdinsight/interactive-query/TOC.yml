@@ -155,21 +155,9 @@ items:
       maintainContext: true
   - name: управление
     items:
-    - name: Создание кластеров
+    - name: Создание кластеров HDInsight
       href: ../hdinsight-hadoop-provision-linux-clusters.md
       items:
-      - name: Использование Azure PowerShell
-        href: ../hdinsight-hadoop-create-linux-clusters-azure-powershell.md
-        maintainContext: true
-      - name: Использование cURL и Azure REST API
-        href: ../hdinsight-hadoop-create-linux-clusters-curl-rest.md
-        maintainContext: true
-      - name: Использование пакета SDK для .NET
-        href: ../hdinsight-hadoop-create-linux-clusters-dotnet-sdk.md
-        maintainContext: true
-      - name: Использование классического Azure CLI
-        href: ../hdinsight-hadoop-create-linux-clusters-azure-cli.md
-        maintainContext: true
       - name: Использование портала Azure
         href: ../hdinsight-hadoop-create-linux-clusters-portal.md
         maintainContext: true
@@ -177,16 +165,39 @@ items:
         displayName: resource manager template, arm template, resource manager group
         href: ../hdinsight-hadoop-create-linux-clusters-arm-templates.md
         maintainContext: true
+      - name: Использование пакета SDK для .NET
+        href: https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet#create-a-cluster
+      - name: Использование пакета SDK для Python
+        href: https://docs.microsoft.com/python/api/overview/azure/hdinsight?view=azure-python#create-a-cluster
+      - name: Использование пакета SDK для Java
+        href: https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable#create-a-cluster
+      - name: Использование Azure PowerShell
+        href: ../hdinsight-hadoop-create-linux-clusters-azure-powershell.md
+        maintainContext: true
+      - name: Использование cURL и Azure REST API
+        href: ../hdinsight-hadoop-create-linux-clusters-curl-rest.md
+        maintainContext: true
+      - name: Использование классического Azure CLI
+        href: ../hdinsight-hadoop-create-linux-clusters-azure-cli.md
+        maintainContext: true
+      - name: Создание кластеров по запросу
+        href: ../hdinsight-hadoop-create-linux-clusters-adf.md
+        maintainContext: true
       maintainContext: true
     - name: Создание кластеров по запросу
       href: ../hdinsight-hadoop-create-linux-clusters-adf.md
       maintainContext: true
-    - name: Управление кластерами Apache Hadoop
+    - name: Управление кластерами HDInsight
       href: ../hdinsight-administer-use-portal-linux.md
       items:
       - name: Использование пакета SDK для .NET
-        href: ../hdinsight-administer-use-dotnet-sdk.md
-        maintainContext: true
+        href: https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet#management
+      - name: Использование пакета SDK для Python
+        href: https://docs.microsoft.com/python/api/overview/azure/hdinsight?view=azure-python
+      - name: Использование пакета SDK для Java
+        href: https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable
+      - name: Использование пакета SDK для Go (предварительная версия)
+        href: https://docs.microsoft.com/azure/hdinsight/hdinsight-go-sdk-overview
       - name: Использование Azure PowerShell
         href: ../hdinsight-administer-use-powershell.md
         maintainContext: true
@@ -236,6 +247,9 @@ items:
       maintainContext: true
     - name: Обновление ОС путем частичной замены для кластера HDInsight
       href: ../hdinsight-os-patching.md
+      maintainContext: true
+    - name: Перенос рабочих нагрузок Hive в HDInsight 4.0
+      href: apache-hive-migrate-workloads.md
       maintainContext: true
   - name: Устранение неполадок
     href: ../hdinsight-troubleshoot-guide.md
@@ -326,13 +340,13 @@ items:
     href: https://azure.microsoft.com/resources/samples/?service=hdinsight
   - name: Azure PowerShell
     href: /powershell/module/az.hdinsight
-  - name: ПАКЕТ SDK .NET
+  - name: Пакет SDK для .NET
     href: https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet
   - name: Пакет SDK для Python
     href: https://docs.microsoft.com/python/api/overview/azure/hdinsight?view=azure-python
   - name: Пакет SDK для Java
-    href: https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-preview
-  - name: Пакет SDK для GO
+    href: https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable
+  - name: Пакет SDK для Go
     href: ../hdinsight-go-sdk-overview.md
   - name: .NET (Apache HBase)
     href: https://www.nuget.org/packages/Microsoft.HBase.Client/
@@ -346,12 +360,15 @@ items:
 - name: Ресурсы
   items:
   - name: Заметки о выпуске
-    href: ../hdinsight-release-notes.md
     items:
+    - name: Заметки о текущем выпуске
+      href: ../hdinsight-release-notes.md
+      maintainContext: true
     - name: Архивные заметки о выпуске
       href: ../hdinsight-release-notes-archive.md
       maintainContext: true
-    maintainContext: true
+  - name: Изменения в доступе к конфигурации кластера
+    href: ../hdinsight-migrate-granular-access-cluster-configurations.md
   - name: Стратегия развития Azure
     href: https://azure.microsoft.com/roadmap/?category=intelligence-analytics
   - name: Получить помощь на форуме
@@ -365,9 +382,9 @@ items:
   - name: Средства Windows для HDInsight
     href: ../hdinsight-hadoop-windows-tools.md
     maintainContext: true
-ms.openlocfilehash: 4ff59bd9aeb59ad3dd835edaff3d1e5048f2e58e
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 2f9952a95da9a47448d54ba5b48be033fb5707cc
+ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58444121"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59615729"

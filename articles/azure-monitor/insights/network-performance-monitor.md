@@ -15,7 +15,7 @@ ms.date: 02/20/2018
 ms.author: abshamsft
 ms.openlocfilehash: ac10f1f1c6336098afc2abd2b8f720cedfb6f579
 ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/13/2019
 ms.locfileid: "59548941"
@@ -117,7 +117,7 @@ ms.locfileid: "59548941"
 
    ![Представление мониторинга подключения службы](media/network-performance-monitor/npm-service-endpoint-monitor.png)
 
-   **Монитор ExpressRoute**. Щелкните **Discover Now** (Обнаружить), чтобы обнаружить все частные пиринги ExpressRoute, подключенные к виртуальным сетям в подписке Azure, связанной с этим рабочим пространством Log Analytics. 
+   **Монитор ExpressRoute**. Щелкните **Discover Now** (Обнаружить), чтобы обнаружить все частные пиринги ExpressRoute, подключенные к виртуальным сетям в подписке Azure, связанной с этой рабочей областью Log Analytics. 
 
    ![Представление мониторинга ExpressRoute](media/network-performance-monitor/npm-express-route.png)
 

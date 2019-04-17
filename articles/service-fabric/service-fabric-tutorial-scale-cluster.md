@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 03/19/2019
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: 40e372b779d06656b111ad3d7de435b99c401dc3
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: fa9b091beacbc98c6939ec0454bd04da2b7561e7
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58669509"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59278706"
 ---
 # <a name="tutorial-scale-a-service-fabric-cluster-in-azure"></a>Руководство по Масштабирование кластера Service Fabric в Azure
 
@@ -36,17 +36,20 @@ ms.locfileid: "58669509"
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * создание безопасного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в Azure с помощью шаблона;
-> * [Мониторинг кластера](service-fabric-tutorial-monitor-cluster.md)
+> * [мониторинг кластера;](service-fabric-tutorial-monitor-cluster.md)
 > * увеличение или уменьшение масштаба кластера;
-> * [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
+> * [обновление среды выполнения кластера;](service-fabric-tutorial-upgrade-cluster.md)
 > * [Удаление кластера](service-fabric-tutorial-delete-cluster.md)
+
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Установите [модуль Azure PowerShell версии 4.1 или более поздней версии](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps) либо [Azure CLI](/cli/azure/install-azure-cli).
+* Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps) или [Azure CLI](/cli/azure/install-azure-cli).
 * Создание защищенного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в Azure
 
 ## <a name="important-considerations-and-guidelines"></a>Важные рекомендации и советы
@@ -98,7 +101,7 @@ ms.locfileid: "58669509"
 Сохраните изменения, внесенные в файлы *template.json* и *parameters.json*.  Чтобы развернуть обновленный шаблон, выполните следующую команду:
 
 ```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName sfclustertutorialgroup -TemplateFile c:\temp\template.json -TemplateParameterFile c:\temp\parameters.json -Name "ChangingInstanceCount"
+New-AzResourceGroupDeployment -ResourceGroupName sfclustertutorialgroup -TemplateFile c:\temp\template.json -TemplateParameterFile c:\temp\parameters.json -Name "ChangingInstanceCount"
 ```
 Или такую команду Azure CLI:
 ```azure-cli
@@ -804,7 +807,7 @@ az group deployment create --resource-group sfclustertutorialgroup --template-fi
 Сохраните изменения, внесенные в файлы *template.json* и *parameters.json*.  Чтобы развернуть обновленный шаблон, выполните следующую команду:
 
 ```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName sfclustertutorialgroup -TemplateFile c:\temp\template.json -TemplateParameterFile c:\temp\parameters.json -Name "AddingNodeType"
+New-AzResourceGroupDeployment -ResourceGroupName sfclustertutorialgroup -TemplateFile c:\temp\template.json -TemplateParameterFile c:\temp\parameters.json -Name "AddingNodeType"
 ```
 Или такую команду Azure CLI:
 ```azure-cli
@@ -815,16 +818,16 @@ az group deployment create --resource-group sfclustertutorialgroup --template-fi
 После создания кластера Service Fabric вы можете масштабировать кластер по горизонтали, удалив тип узла (масштабируемый набор виртуальных машин) и все его узлы. Кластер можно масштабировать в любое время, даже когда в нем выполняются рабочие нагрузки. Вместе с кластером автоматически масштабируются ваши приложения.
 
 > [!WARNING]
-> Использовать команду Remove-AzureRmServiceFabricNodeType для удаления типа узла из рабочего кластера на регулярной основе не рекомендуется. Это опасная команда, так как она удаляет ресурс масштабируемого набора виртуальных машин, связанный с типом узла. 
+> Использовать команду Remove-AzServiceFabricNodeType для удаления типа узла из рабочего кластера на регулярной основе не рекомендуется. Это опасная команда, так как она удаляет ресурс масштабируемого набора виртуальных машин, связанный с типом узла. 
 
-Чтобы удалить тип узла, запустите командлет [Remove-AzureRmServiceFabricNodeType](/powershell/module/azurerm.servicefabric/remove-azurermservicefabricnodetype).  Тип узла должен иметь [уровень устойчивости][durability] Silver или Gold Этот командлет удаляет масштабируемый набор, связанный с типом узла, и на это требуется некоторое время.  Затем запустите на каждом из удаляемых узлов командлет [Remove-ServiceFabricNodeState](/powershell/module/servicefabric/remove-servicefabricnodestate?view=azureservicefabricps), который удаляет состояние узла и узлы из кластера. Если на таком узле есть службы, они сначала перемещаются на другой узел. Если диспетчеру кластеров не удается найти узел для реплики или службы, тогда операция откладывается или блокируется.
+Чтобы удалить тип узла, запустите командлет [Remove-AzServiceFabricNodeType](/powershell/module/az.servicefabric/remove-azservicefabricnodetype).  Тип узла должен иметь [уровень устойчивости][durability] Silver или Gold Этот командлет удаляет масштабируемый набор, связанный с типом узла, и на это требуется некоторое время.  Затем запустите на каждом из удаляемых узлов командлет [Remove-ServiceFabricNodeState](/powershell/module/servicefabric/remove-servicefabricnodestate?view=azureservicefabricps), который удаляет состояние узла и узлы из кластера. Если на таком узле есть службы, они сначала перемещаются на другой узел. Если диспетчеру кластеров не удается найти узел для реплики или службы, тогда операция откладывается или блокируется.
 
 ```powershell
 $groupname = "sfclustertutorialgroup"
 $nodetype = "nt4vm"
 $clustername = "mysfcluster123"
 
-Remove-AzureRmServiceFabricNodeType -Name $clustername  -NodeType $nodetype -ResourceGroupName $groupname
+Remove-AzServiceFabricNodeType -Name $clustername  -NodeType $nodetype -ResourceGroupName $groupname
 
 Connect-ServiceFabricCluster -ConnectionEndpoint mysfcluster123.eastus.cloudapp.azure.com:19000 `
           -KeepAliveIntervalInSec 10 `
@@ -861,7 +864,7 @@ Foreach($node in $nodes)
 Сохраните изменения, внесенные в файлы *template.json* и *parameters.json*.  Чтобы развернуть обновленный шаблон, выполните следующую команду:
 
 ```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName sfclustertutorialgroup -TemplateFile c:\temp\template.json -TemplateParameterFile c:\temp\parameters.json -Name "ScaleUpNodeType"
+New-AzResourceGroupDeployment -ResourceGroupName sfclustertutorialgroup -TemplateFile c:\temp\template.json -TemplateParameterFile c:\temp\parameters.json -Name "ScaleUpNodeType"
 ```
 Или такую команду Azure CLI:
 ```azure-cli
@@ -874,6 +877,18 @@ az group deployment create --resource-group sfclustertutorialgroup --template-fi
 
 > [!div class="checklist"]
 > * добавление и удаление узлов (развертывание и свертывание кластера);
+> * добавление и удаление типов узла (развертывание и свертывание кластера);
+> * увеличение ресурсов узла (вертикальное масштабирование).
+
+Теперь перейдите к следующему руководству, чтобы узнать, как обновить среду выполнения кластера.
+> [!div class="nextstepaction"]
+> [обновление среды выполнения кластера;](service-fabric-tutorial-upgrade-cluster.md)
+
+[durability]: service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster
+[reliability]: service-fabric-cluster-capacity.md#the-reliability-characteristics-of-the-cluster
+[template]:https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/7-VM-Windows-3-NodeTypes-Secure-NSG/AzureDeploy.json
+[parameters]:https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/7-VM-Windows-3-NodeTypes-Secure-NSG/AzureDeploy.Parameters.json
+и свертывание))
 > * добавление и удаление типов узла (развертывание и свертывание кластера);
 > * увеличение ресурсов узла (вертикальное масштабирование).
 

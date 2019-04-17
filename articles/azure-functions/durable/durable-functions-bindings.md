@@ -2,7 +2,7 @@
 title: Привязки для устойчивых функций — Azure
 description: Инструкции по использованию триггеров и привязок в расширении Устойчивых функций для Функций Azure.
 services: functions
-author: kashimiz
+author: ggailey777
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 889d26be12fef62d37a471fbe0640a2b8ecdd99c
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
-ms.translationtype: HT
+ms.openlocfilehash: 678e370977cadae642207f91a02136404fb6c34e
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53337195"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59609325"
 ---
 # <a name="bindings-for-durable-functions-azure-functions"></a>Привязки для устойчивых функций (Функции Azure)
 
@@ -363,7 +363,7 @@ module.exports = async function (context) {
 
 [!INCLUDE [durabletask](../../../includes/functions-host-json-durabletask.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Контрольные точки и воспроизведение в устойчивых функциях (Функции Azure)](durable-functions-checkpointing-and-replay.md)

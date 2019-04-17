@@ -12,12 +12,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: e528b70e257c41f771a1bd3e5ec811c61eb512cc
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: 6978b83e66f58e468d9f98394904861c8a4d8bd0
+ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59526679"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59618147"
 ---
 # <a name="join-an-azure-ssis-integration-runtime-to-a-virtual-network"></a>Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
 Присоедините среду выполнения интеграции (IR) Azure SSIS к виртуальной сети в одной из следующих ситуаций: 
@@ -139,7 +139,7 @@ ms.locfileid: "59526679"
     -   Azure общедоступный IP-адрес, с именем  *\<Guid > - azurebatch - cloudservicepublicip*.
     -   Группу безопасности сети работы с именем  *\<Guid > - azurebatch - cloudservicenetworksecuritygroup*. 
 
--   Убедитесь в отсутствии блокировки ресурсов в группе ресурсов и в подписке, к которым принадлежит виртуальная сеть. Если настроена блокировка только для чтения или блокировка удаления, то при запуске или остановке IR может произойти сбой или зависание. 
+-   Убедитесь в отсутствии блокировки ресурсов в группе ресурсов и в подписке, к которым принадлежит виртуальная сеть. Если вы настраиваете блокировки только для чтения или блокировки удаления, запуска и остановки среды выполнения Интеграции может произойти сбой или перестать отвечать на запросы. 
 
 -   Убедитесь, что у вас нет политики Azure, которая запрещает создавать следующие ресурсы в группе ресурсов и в подписке, к которым принадлежит виртуальная сеть: 
     -   Microsoft.Network/LoadBalancers 

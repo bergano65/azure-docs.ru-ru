@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 06/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 4ba94187cb014256d63e80cb23defc5099aac52d
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 444269aa7ca2b0a82b78e8437b7884ef8833c665
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58445556"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59279794"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
 В этом руководстве показано **копирование нескольких таблиц из базы данных SQL Azure в хранилище данных SQL Azure**. Этот подход можно применить и в других сценариях. Например, копирование таблиц из SQL Server или Oracle в базу данных SQL Azure, хранилище данных или большой двоичный объект Azure, копирование различных путей из большого двоичного объекта в таблицы базы данных SQL Azure.
@@ -215,7 +215,7 @@ ms.locfileid: "58445556"
 * Ищет системную таблицу базы данных SQL Azure, чтобы получить список таблиц для копирования.
 * Активирует конвейер **IterateAndCopySQLTables** для копирования данных.
 
-Конвейер **GetTableListAndTriggerCopyData** принимает в качестве параметра список таблиц. Для каждой таблицы в списке он копирует данные из таблицы в базе данных SQL Azure в хранилище данных SQL Azure с помощью промежуточного копирования и PolyBase.
+**IterateAndCopySQLTables** принимает список таблиц в качестве параметра. Для каждой таблицы в списке он копирует данные из таблицы в базе данных SQL Azure в хранилище данных SQL Azure с помощью промежуточного копирования и PolyBase.
 
 ### <a name="create-the-pipeline-iterateandcopysqltables"></a>Создание конвейера IterateAndCopySQLTables
 
@@ -418,4 +418,4 @@ ms.locfileid: "58445556"
 
 Перейдите к следующему руководству, чтобы узнать о копировании данных по шагам из источника в место назначения:
 > [!div class="nextstepaction"]
->[Пошаговая загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure](tutorial-incremental-copy-portal.md)
+>[Копирование данных с приращением](tutorial-incremental-copy-portal.md)

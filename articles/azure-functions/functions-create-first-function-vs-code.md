@@ -12,18 +12,18 @@ ms.topic: quickstart
 ms.date: 09/07/2018
 ms.author: glenga
 ms.custom: mvc, devcenter
-ms.openlocfilehash: d265c391b12a46f509c8663c64892372c8d806ba
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: cbe4dbd2ae741f4225cfdc628c31508956cbb95c
+ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54104528"
+ms.lasthandoff: 04/10/2019
+ms.locfileid: "59469732"
 ---
 # <a name="create-your-first-function-using-visual-studio-code"></a>Создание функции в Azure с помощью Visual Studio Code
 
 Решение "Функции Azure" позволяет выполнять код в [бессерверной](https://azure.microsoft.com/solutions/serverless/) среде без необходимости создавать виртуальную машину или публиковать веб-приложение.
 
-В этой статье описано, как с помощью [Расширение "Функции Azure" для Visual Studio Code] создать и проверить функцию Hello World на локальном компьютере с помощью Microsoft Visual Studio Code. Затем вы опубликуете код функции в Azure.
+В этой статье описано, как с помощью [расширения "Функции Azure" для Visual Studio Code] создать и проверить функцию Hello World на локальном компьютере с помощью Microsoft Visual Studio Code. Затем вы опубликуете код функции в Azure.
 
 ![Код функций Azure в проекте Visual Studio](./media/functions-create-first-function-vs-code/functions-vscode-intro.png)
 
@@ -41,8 +41,8 @@ ms.locfileid: "54104528"
 
     | Язык | Добавочный номер |
     | -------- | --------- |
-    | **C#** | [C# для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp);<br/>[Средства .NET Core CLI](https://docs.microsoft.com/dotnet/core/tools/?tabs=netcore2x)*   |
-    | **Java** | [Отладчик для Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug)<br/>[Java 8](https://aka.ms/azure-jdks);<br/>[Maven 3+](https://maven.apache.org/) |
+    | **C#** | [C# для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)<br/>[Средства .NET Core CLI](https://docs.microsoft.com/dotnet/core/tools/?tabs=netcore2x)*   |
+    | **Java** | [Отладчик для Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug)<br/>[Java 8](https://aka.ms/azure-jdks)<br/>[Maven 3+](https://maven.apache.org/) |
     | **JavaScript** | [Node 8.0+](https://nodejs.org/)  |
 
     \* Также требуется для основных инструментов.
@@ -115,12 +115,10 @@ ms.locfileid: "54104528"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-С помощью Visual Studio Code вы создали приложение-функцию с простой функцией, активируемой HTTP-запросом. Дополнительные сведения о разработке функций на определенном языке см. в справочниках по языкам [JavaScript](functions-reference-node.md), [.NET](functions-dotnet-class-library.md) или [Java](functions-reference-java.md).
-
-Далее можно узнать о локальном тестировании и отладке из терминала или командной строки основных инструментов "Функций Azure".
+С помощью Visual Studio Code вы создали приложение-функцию с простой функцией, активируемой HTTP-запросом. См. дополнительные сведения о [локальном тестировании и отладке из терминала или командной строки](functions-run-local.md) с использованием Azure Functions Core Tools.
 
 > [!div class="nextstepaction"]
-> [Создание и тестирование кода на локальном компьютере](functions-run-local.md)
+> [Включение интеграции с Application Insights](functions-monitoring.md#manually-connect-an-app-insights-resource)
 
 [Azure Functions Core Tools]: functions-run-local.md
 [Расширение "Функции Azure" для Visual Studio Code]: https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions

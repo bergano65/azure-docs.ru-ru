@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 3a5e8d15d9a705892fe54c50e9b79e6d42af78d9
-ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
+ms.openlocfilehash: f302cbfa7152ae30be434f560c0c39056d40f9f4
+ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59426738"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59615767"
 ---
 # <a name="generate-a-device-connection-string-to-connect-to-an-azure-iot-central-application"></a>Создание строки подключения устройства для подключения к приложению Azure IoT Central
 
@@ -23,14 +23,14 @@ ms.locfileid: "59426738"
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-1. Приложение Azure IoT Central. Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
-1. Компьютер для разработки с [Node.js](https://nodejs.org/) версии 8.0.0 или более поздней версии. Вы можете запустить `node --version` в командной строке, чтобы проверить версию. Node.js доступен для разных операционных систем.
+- Приложение Azure IoT Central. Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
+- Компьютер для разработки с [Node.js](https://nodejs.org/) версии 8.0.0 или более поздней версии. Вы можете запустить `node --version` в командной строке, чтобы проверить версию. Node.js доступен для разных операционных систем.
 
 ## <a name="get-connection-information"></a>Получение сведений о подключении
 
 Следующие шаги описывают, как получить сведения, необходимые для создания строки подключения SAS для устройства:
 
-1. В **Explorer**, найти реального устройства, требуется подключение к приложению:
+1. В **Device Explorer**, найти реального устройства, требуется подключение к приложению:
 
     ![Выберите физическое устройство](media/howto-generate-connection-string/real-devices.png)
 
@@ -44,7 +44,7 @@ ms.locfileid: "59426738"
 
     Можно скопировать значения на этой странице, чтобы сохранить.
 
-## <a name="generate-the-connection-string"></a>Создать строку подключения
+## <a name="generate-the-connection-string"></a>Создание строки подключения
 
 [!INCLUDE [iot-central-howto-connection-string](../../includes/iot-central-howto-connection-string.md)]
 
@@ -52,8 +52,8 @@ ms.locfileid: "59426738"
 
 Теперь, созданной разработчиком строку подключения для реального устройства для подключения к приложению Azure IoT Central, ниже приведены предлагаемые дальнейшие действия.
 
-* [Подготовить и подключить устройство DevKit (C)](howto-connect-devkit.md)
-* [Подготовка и подключение Raspberry Pi (Python)](howto-connect-raspberry-pi-python.md)
-* [Подготовка и подключение Raspberry Pi (C#)](howto-connect-raspberry-pi-csharp.md)
-* [Подготовка и подключение устройства Windows 10 IoT core (C#)](howto-connect-windowsiotcore.md)
-* [Подключение универсального клиента Node.js к приложению Azure IoT Central](howto-connect-nodejs.md)
+* [подключить устройство MXChip IoT DevKit к приложению Azure IoT Central](howto-connect-devkit.md);
+* [подключить устройство Raspberry Pi к приложению Azure IoT Central (Python)](howto-connect-raspberry-pi-python.md);
+* [подключить устройство Raspberry Pi к приложению Azure IoT Central (C#)](howto-connect-raspberry-pi-csharp.md);
+* [подключить устройство Windows 10 IoT Core к приложению Azure IoT Central](howto-connect-windowsiotcore.md);
+* [Подключение универсального клиентского приложения к приложению Azure IoT Central (Node.js)](howto-connect-nodejs.md)

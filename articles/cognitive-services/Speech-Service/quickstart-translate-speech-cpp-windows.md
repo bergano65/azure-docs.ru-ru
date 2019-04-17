@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 03/13/2019
 ms.author: erhopf
-ms.openlocfilehash: a4710e2afc1688d83ff1c6da3ba36693584f16d3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f7120e80d079723ed8265320ba4b38d76a825a00
+ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57871804"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59499824"
 ---
 # <a name="quickstart-translate-speech-with-the-speech-sdk-for-c"></a>Краткое руководство. Перевод речи с помощью пакета SDK службы "Речь" для C++
 
@@ -32,7 +32,7 @@ ms.locfileid: "57871804"
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
-[!INCLUDE [](../../../includes/cognitive-services-speech-service-quickstart-cpp-create-proj.md)]
+[!INCLUDE[](../../../includes/cognitive-services-speech-service-quickstart-cpp-create-proj.md)]
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
@@ -65,7 +65,7 @@ ms.locfileid: "57871804"
 Дополнительные примеры, например чтение речи из звукового файла и вывод переведенного текста в виде синтезированной речи, доступны на сайте GitHub.
 
 > [!div class="nextstepaction"]
-> [Примеры для C++ на сайте GitHub](https://aka.ms/csspeech/samples)
+> [Ознакомьтесь с примерами для C++ на сайте GitHub.](https://aka.ms/csspeech/samples)
 
 ## <a name="see-also"></a>См. также
 

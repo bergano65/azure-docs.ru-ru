@@ -1,27 +1,29 @@
 ---
-title: Сведенья о функциях языка определения рабочих процессов в Azure Logic Apps | Документация Майкрософт
-description: Сведения о функциях языка определения рабочих процессов в Azure Logic Apps
+title: Справочник по для функций в язык определения рабочего процесса — Azure Logic Apps и Microsoft Flow
+description: Справочное руководство по функции в выражениях, созданных с помощью языка определения рабочих процессов для Azure Logic Apps и Microsoft Flow
 services: logic-apps
 ms.service: logic-apps
+ms.suite: integration
 author: ecfan
 ms.author: estfan
-manager: jeconnoc
+ms.reviewer: klam, LADocs
 ms.topic: reference
 ms.date: 08/15/2018
-ms.reviewer: klam, LADocs
-ms.suite: integration
-ms.openlocfilehash: e58d534811fc6d6ed2bb24486c149f217a7a28a3
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.openlocfilehash: d7ea62c51065cbe85a905b4ff78743fdc11c1e10
+ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58189909"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59618215"
 ---
-# <a name="functions-reference-for-workflow-definition-language-in-azure-logic-apps"></a>Сведенья о функциях языка определения рабочих процессов в Azure Logic Apps
+# <a name="functions-reference-for-workflow-definition-language-in-azure-logic-apps-and-microsoft-flow"></a>Справочник по функциям для языка определения рабочих процессов в Azure Logic Apps и Microsoft Flow
 
-Некоторые [выражения](../logic-apps/logic-apps-workflow-definition-language.md#expressions) в [Azure Logic Apps](../logic-apps/logic-apps-overview.md) получают значения из действий среды выполнения, которые могут не существовать в начале определения рабочего процесса приложения логики.
-Чтобы работать с этими значениями или ссылаться на них в выражениях, вы можете использовать *функции*, предоставляемые [языком определений рабочего процесса](../logic-apps/logic-apps-workflow-definition-language.md).
-Например, вы можете использовать математические функции для вычислений, такие как функция [add()](../logic-apps/workflow-definition-language-functions-reference.md#add), которая возвращает сумму из целых чисел или чисел с плавающей запятой. Вот еще несколько примеров задач, которые можно выполнять с помощью функций:
+Для определения рабочих процессов в [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Microsoft Flow](https://docs.microsoft.com/flow/getting-started), некоторые [выражения](../logic-apps/logic-apps-workflow-definition-language.md#expressions) получают значения из среды выполнения действий, которые может еще не существует при рабочем процессе начинает выполнение. Чтобы использовать эти значения, или обрабатывать эти значения в этих выражениях, можно использовать *функции* предоставляемые [язык определения рабочего процесса](../logic-apps/logic-apps-workflow-definition-language.md). 
+
+> [!NOTE]
+> На этой странице относится к Azure Logic Apps и Microsoft Flow, но отображается в документации по Azure Logic Apps. Несмотря на то, что эта страница ссылается специально для приложений логики, эти функции работают для потоков и logic apps. Дополнительные сведения о функции и выражения в Microsoft Flow, см. в разделе [использование выражений в условиях](https://docs.microsoft.com/flow/use-expressions-in-conditions).
+
+Например, можно вычислить значения с помощью математических функций, таких как [функция add()](../logic-apps/workflow-definition-language-functions-reference.md#add), при необходимости сумму на основе целые числа или числа с плавающей запятой. Ниже приведены несколько примеры задач, которые можно выполнять с помощью функций.
 
 | Задача | Синтаксис функции | Результат |
 | ---- | --------------- | ------ |
@@ -29,8 +31,7 @@ ms.locfileid: "58189909"
 | Возвращение глобального уникального идентификатора (GUID). | guid() |"c2ecc88d-88c8-4096-912c-d6f2e2b138ce" |
 ||||
 
-В этой статье описываются функции, которые можно использовать при создании определений приложений логики.
-Чтобы найти функции, [основанные на общем назначении](#ordered-by-purpose), продолжайте с помощью следующих таблиц. Или, подробные сведения о каждой функции см. в [алфавитном списке](#alphabetical-list).
+Чтобы найти функции [зависимости от их общего назначения](#ordered-by-purpose), просмотрите следующие таблицы. Или, подробные сведения о каждой функции см. в [алфавитном списке](#alphabetical-list).
 
 > [!NOTE]
 > В синтаксисе для определения параметров знак вопроса (?), который расположен после параметра, означает, что параметр является необязательным.
@@ -142,7 +143,7 @@ ms.locfileid: "58189909"
 
 Чтобы изменить тип или формат значения, можно использовать приведенные ниже функции преобразования.
 Например, вы можете изменить значение с логического на целочисленное.
-Чтобы узнать, как приложения логики обрабатывают типы содержимого во время преобразования, см. статью [Обработка типов содержимого в приложениях логики](../logic-apps/logic-apps-content-type.md).
+Дополнительные сведения о том, как приложения логики обрабатывают типов содержимого во время преобразования, см. в разделе [обработка типов содержимого](../logic-apps/logic-apps-content-type.md).
 Подробные сведения о каждой функции см. в [алфавитном списке](../logic-apps/workflow-definition-language-functions-reference.md#alphabetical-list).
 
 | Функция преобразования | Задача |
@@ -229,7 +230,7 @@ ms.locfileid: "58189909"
 Эти функции рабочего процесса могут помочь:
 
 * получить сведения об экземпляре рабочего процесса во время выполнения;
-* работать с входными данными, используемыми при создании экземпляра приложения логики;
+* Работать с входные данные, используемые для создания экземпляра приложения логики или последовательности.
 * ссылаться на выходные данные из триггеров и действий.
 
 Например, вы можете ссылаться на выходные данные одного действия и использовать их в действии, которое выполняется позже.
@@ -248,7 +249,7 @@ ms.locfileid: "58189909"
 | [items](../logic-apps/workflow-definition-language-functions-reference.md#items) | При использовании внутри цикла for-each или do-until возвращает текущий элемент из указанного цикла.|
 | [listCallbackUrl](../logic-apps/workflow-definition-language-functions-reference.md#listCallbackUrl) | Возвращает URL-адрес обратного вызова, который вызывает триггер или действие. |
 | [multipartBody](../logic-apps/workflow-definition-language-functions-reference.md#multipartBody) | Возвращает текст указанной части выходных данных действия, которые состоят из нескольких частей. |
-| [parameters](../logic-apps/workflow-definition-language-functions-reference.md#parameters) | Возвращает значение параметра, описанного в определении вашего приложения логики. |
+| [parameters](../logic-apps/workflow-definition-language-functions-reference.md#parameters) | Возвращает значение для параметра, который описан в определении рабочего процесса. |
 | [trigger](../logic-apps/workflow-definition-language-functions-reference.md#trigger) | Возвращает выходные данные триггера во время выполнения или значения из других пар "имя — значение" JSON. См. разделы [triggerOutputs](#triggerOutputs) и [triggerBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerBody). |
 | [triggerBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerBody) | Возвращает выходные данные `body` триггера во время выполнения. См. раздел [trigger](../logic-apps/workflow-definition-language-functions-reference.md#trigger). |
 | [triggerFormDataValue](../logic-apps/workflow-definition-language-functions-reference.md#triggerFormDataValue) | Возвращает одно значение, соответствующее имени ключа, из выходных данных *form-data* или *form-encoded* триггера. |
@@ -1812,7 +1813,7 @@ first(createArray(0, 1, 2))
 ### <a name="float"></a>float;
 
 Преобразует строковую версию числа с плавающей запятой в фактическое число с плавающей запятой.
-Эта функция используется только при передаче пользовательских параметров в приложение, такое как приложение логики.
+Эту функцию можно использовать только в том случае, при передаче пользовательских параметров в приложении, например, приложения логики или последовательности.
 
 ```
 float('<value>')
@@ -2766,7 +2767,7 @@ multipartBody('<actionName>', <index>)
 Проверяет, имеет ли выражение значение false.
 Возвращает значение true, если выражение ложно, или значение false, если значение истинно.
 
-```
+```json
 not(<expression>)
 ```
 
@@ -2784,7 +2785,7 @@ not(<expression>)
 
 В этих примерах проверяется, все ли указанные выражения ложны:
 
-```
+```json
 not(false)
 not(true)
 ```
@@ -2798,7 +2799,7 @@ not(true)
 
 В этих примерах проверяется, все ли указанные выражения ложны:
 
-```
+```json
 not(equals(1, 2))
 not(equals(1, 1))
 ```
@@ -2833,7 +2834,7 @@ or(<expression1>, <expression2>, ...)
 
 В этих примерах проверяется, является ли хотя бы одно выражение истинным:
 
-```
+```json
 or(true, false)
 or(false, false)
 ```
@@ -2847,7 +2848,7 @@ or(false, false)
 
 В этих примерах проверяется, является ли хотя бы одно выражение истинным:
 
-```
+```json
 or(equals(1, 1), equals(1, 2))
 or(equals(1, 2), equals(1, 3))
 ```
@@ -2861,7 +2862,7 @@ or(equals(1, 2), equals(1, 3))
 
 ### <a name="parameters"></a>parameters
 
-Возвращает значение параметра, описанного в определении вашего приложения логики.
+Возвращает значение для параметра, который описан в определении рабочего процесса.
 
 ```
 parameters('<parameterName>')
