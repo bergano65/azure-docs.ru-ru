@@ -12,27 +12,34 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: python
 ms.topic: article
-ms.date: 09/20/2018
+ms.date: 04/15/2019
 ms.author: aschhab
-ms.openlocfilehash: a12288de2f9a7682fb433dd0d5c7905cc76c12b9
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.openlocfilehash: 102fe85916194648501be3d2cb39d8bcda9e9f5c
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351669"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59607081"
 ---
 # <a name="how-to-use-service-bus-topics-and-subscriptions-with-python"></a>Как использовать разделы и подписки служебной шины с Python
 
 [!INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
 
-В этой статье описывается использование разделов и подписок служебной шины. Примеры написаны на языке Python и в них используется [пакет Azure SDK для Python][Azure Python package]. В этой статье описаны такие сценарии, как **создание разделов и подписок**, **создание фильтров подписок**, **отправка сообщений в раздел**, **получение сообщений из подписки** и **удаление разделов и подписок**. Дополнительные сведения о разделах и подписках см. в разделе [Дальнейшие действия](#next-steps).
+В этой статье описывается использование разделов и подписок служебной шины. Примеры написаны на языке Python и в них используется [пакет Azure SDK для Python][Azure Python package]. К рассмотренным сценариям относятся:
 
-[!INCLUDE [howto-service-bus-topics](../../includes/howto-service-bus-topics.md)]
+- создание разделов и подписок; 
+- создание фильтров подписки; 
+- отправка сообщений в раздел; 
+- получение сообщений из подписки;
+- удаление разделов и подписок.
 
-> [!NOTE] 
-> Если требуется установить Python или [пакет Azure для Python][Azure Python package], дополнительные сведения см. в [руководстве по установке Python](../python-how-to-install.md).
+## <a name="prerequisites"></a>Технические условия
+1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать ваши [преимущества для подписчиков Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+2. Выполните шаги [краткое руководство: Чтобы создать раздел служебной шины и подписок для раздела с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md) для создания служебной шины **пространства имен** и получить **строку подключения**.
 
-[!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
+    > [!NOTE]
+    > Вы создадите **разделе** и **подписки** в раздел с помощью **Python** в этом кратком руководстве. 
+3. Установка [пакет Azure Python][Azure Python package]. См. в разделе [руководство по установке Python](../python-how-to-install.md).
 
 ## <a name="create-a-topic"></a>Создание раздела
 

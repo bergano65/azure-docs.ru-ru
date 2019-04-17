@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 31528c30ac8b795a661539349c2bee31edb6973c
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.openlocfilehash: 4b7a9409052d8255bbad00b38217bcff030e8620
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58850990"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59277023"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-perception-united-states-non-ultipro"></a>Руководство. Интеграция Azure Active Directory с Perception United States (Non-UltiPro)
 
@@ -51,7 +51,7 @@ ms.locfileid: "58850990"
 
 Чтобы настроить интеграцию Perception United States (Non-UltiPro) с Azure AD, необходимо добавить Perception United States (Non-UltiPro) из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Perception United States (Non-UltiPro) из коллекции, выполните следующие действия:**
+**Чтобы добавить Perception United States (Non-UltiPro) из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -107,7 +107,7 @@ ms.locfileid: "58850990"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://perception.kanjoya.com/sp`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://perception.kanjoya.com/sso?idp=<entity_id>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://perception.kanjoya.com/sso?idp=<entity_id>`
 
     c. Для приложения **Perception United States (Non-UltiPro)** требуется, чтобы значение **идентификатора Azure AD** (указанное в виде <entity_id>), которое находится в разделе **Настройка Perception United States (Non-UltiPro)**, было закодировано в формат URI. Чтобы получить значение, закодированное в формате URI, перейдите по ссылке **http://www.url-encode-decode.com/**.
 
@@ -229,9 +229,9 @@ ms.locfileid: "58850990"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

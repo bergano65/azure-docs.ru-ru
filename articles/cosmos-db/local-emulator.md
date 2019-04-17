@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 04/20/2018
 author: deborahc
 ms.author: dech
-ms.openlocfilehash: 3d535c71480693d0424c6697776a1ddbf37b47c5
-ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
+ms.openlocfilehash: 1db103fe46db292e2aa41b648c0ace16fd450d90
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "59470922"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59525428"
 ---
 # <a name="use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде
 
@@ -151,9 +151,9 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 
 Запустите эмулятор из командной строки с правами администратора, указав параметр /EnableCassandraEndpoint. В качестве альтернативы можно также задать переменную среды `AZURE_COSMOS_EMULATOR_CASSANDRA_ENDPOINT=true`.
 
-* [Установите Python 2.7.](https://www.python.org/downloads/release/python-2716/)
+* [Установите Python 2.7](https://www.python.org/downloads/release/python-2716/).
 
-* [Установите Cassandra CLI/CQLSH.](http://cassandra.apache.org/download/)
+* [Установите Cassandra CLI/CQLSH](http://cassandra.apache.org/download/)
 
 * Выполните следующие команды в обычном окне командной строки:
 
@@ -179,9 +179,9 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 
 ### <a name="gremlin-api"></a>API Gremlin
 
-Запустите эмулятор из командной строки с правами администратора, указав параметр /EnableGremlinEndpoint. В качестве альтернативы можно также задать переменную среды `AZURE_COSMOS_EMULATOR_GREMLIN_ENDPOINT=true`
+Запустите эмулятор из командной строки с правами администратора, указав параметр /EnableGremlinEndpoint. В качестве альтернативы можно также задать переменную среды `AZURE_COSMOS_EMULATOR_GREMLIN_ENDPOINT=true`.
 
-* [Установите apache-tinkerpop-gremlin-console-3.3.4.](http://tinkerpop.apache.org/downloads.html)
+* [Установите apache-tinkerpop-gremlin-console-3.3.4](http://tinkerpop.apache.org/downloads.html)
 
 * В обозревателе данных эмулятора создайте базу данных db1 и коллекцию coll1, указав параметр /name для ключа раздела
 
@@ -236,7 +236,7 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 
 Чтобы просмотреть список параметров, в командной строке введите `CosmosDB.Emulator.exe /?` .
 
-|**Параметр** | **ОПИСАНИЕ** | **Команда**| **Аргументы**|
+|**Параметр** | **Описание** | **Команда**| **Аргументы**|
 |---|---|---|---|
 |[Нет аргументов] | Запускает эмулятор Azure Cosmos с параметрами по умолчанию. |CosmosDB.Emulator.exe| |
 |[Help] |Отображает список поддерживаемых аргументов командной строки.|CosmosDB.Emulator.exe /? | |
@@ -252,7 +252,7 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 | GremlinPort | Номер порта для конечной точки Gremlin. Значение по умолчанию — 8901. | CosmosDB.Emulator.exe /GremlinPort=\<port\> | \<port:\> один номер порта. |
 |TablePort | Номер порта для конечной точки таблицы Azure. Значение по умолчанию — 8902. | CosmosDB.Emulator.exe /TablePort=\<port\> | \<port:\> один номер порта.|
 | KeyFile | Считывает ключ авторизации из указанного файла. Используйте параметр /GenKeyFile, чтобы сгенерировать файл ключа. | CosmosDB.Emulator.exe /KeyFile=\<file_name\> | \<file_name\>: Путь к файлу. |
-| ResetDataPath | Рекурсивно удаляет файлы по указанному пути. Если путь не указан, используется путь по умолчанию %LOCALAPPDATA%\CosmosDbEmulator | CosmosDB.Emulator.exe /ResetDataPath[=<path>] | \<path\>: Путь к файлу  |
+| ResetDataPath | Рекурсивно удаляет файлы по указанному пути. Если путь не указан, используется путь по умолчанию %LOCALAPPDATA%\CosmosDbEmulator | CosmosDB.Emulator.exe /ResetDataPath[=\<path>] | \<path\>: Путь к файлу  |
 | StartTraces  |  Начинает сбор журналов трассировки для отладки. | CosmosDB.Emulator.exe /StartTraces | |
 | StopTraces     | Завершает сбор журналов трассировки для отладки. | CosmosDB.Emulator.exe /StopTraces  | |
 |EnableTableEndpoint | Включает API таблиц Azure | CosmosDB.Emulator.exe /EnableTableEndpoint | |
@@ -459,4 +459,4 @@ cd $env:LOCALAPPDATA\CosmosDBEmulator\bind-mount
 Из этого руководства вы также узнали, как использовать локальный эмулятор для бесплатной разработки в локальной среде. Теперь вы можете перейти к следующему руководству, из которого вы узнаете, как экспортировать SSL-сертификаты эмулятора.
 
 > [!div class="nextstepaction"]
-> [Экспорт сертификатов эмулятора Azure Cosmos DB для использования с Java, Python и Node.js](local-emulator-export-ssl-certificates.md)
+> [Экспорт сертификатов эмулятора Azure Cosmos](local-emulator-export-ssl-certificates.md)

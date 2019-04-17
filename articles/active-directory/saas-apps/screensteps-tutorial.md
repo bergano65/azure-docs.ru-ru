@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 3a67bb2b258d5376c997d4858bea4d094e850127
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 570f789d0f399c5ffa7535101136ab65ba58ccd5
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57997131"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59277091"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-screensteps"></a>Руководство по Интеграция Azure Active Directory со ScreenSteps
 
@@ -51,7 +51,7 @@ ms.locfileid: "57997131"
 
 Чтобы настроить интеграцию ScreenSteps с Azure AD, необходимо добавить ScreenSteps из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить ScreenSteps из коллекции, выполните следующие действия.**
+**Чтобы добавить ScreenSteps из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -227,7 +227,7 @@ ms.locfileid: "57997131"
 
 ### <a name="create-screensteps-test-user"></a>Создание тестового пользователя ScreenSteps
 
-В этом разделе описано, как создать пользователя Britta Simon в ScreenSteps. Чтобы добавить пользователей на платформу ScreenSteps, обратитесь к [группе поддержки ScreenSteps](https://www.screensteps.com/contact). Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в ScreenSteps. Чтобы добавить пользователей на платформу ScreenSteps, обратитесь к [группе поддержки ScreenSteps](https://www.screensteps.com/contact).   Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
@@ -237,8 +237,8 @@ ms.locfileid: "57997131"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

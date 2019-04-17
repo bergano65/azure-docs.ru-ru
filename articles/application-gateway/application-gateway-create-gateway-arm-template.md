@@ -1,33 +1,20 @@
 ---
-title: Создание шлюза приложений Azure с помощью шаблонов | Документация Майкрософт
-description: На этой странице приводятся инструкции по созданию шлюза приложений Azure с помощью шаблона диспетчера ресурсов Azure.
-documentationcenter: na
+title: Создание шлюза приложений Azure — шаблоны
+description: В этой статье приводятся инструкции по созданию шлюза приложений Azure с помощью шаблона Azure Resource Manager
 services: application-gateway
 author: vhorne
-manager: jpconnock
-editor: tysonn
 ms.service: application-gateway
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 07/31/2017
+ms.topic: conceptual
+ms.date: 4/15/2019
 ms.author: victorh
-ms.openlocfilehash: 682aac8ec6716ac59c6bdc0710065c916a0c41b6
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 113e30ab65f2cd0ff420df1c79807147a62f79f1
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58084935"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59608468"
 ---
 # <a name="create-an-application-gateway-by-using-the-azure-resource-manager-template"></a>Создание шлюза приложений с помощью шаблона диспетчера ресурсов Azure
-
-> [!div class="op_single_selector"]
-> * [портал Azure](application-gateway-create-gateway-portal.md)
-> * [PowerShell и диспетчер ресурсов Azure](application-gateway-create-gateway-arm.md)
-> * [Классическая модель — Azure PowerShell](application-gateway-create-gateway.md)
-> * [Шаблон диспетчера ресурсов Azure](application-gateway-create-gateway-arm-template.md)
-> * [Интерфейс командной строки Azure](application-gateway-create-gateway-cli.md)
 
 Шлюз приложений — это балансировщик нагрузки уровня 7. Он отвечает за отработку отказов и эффективную маршрутизацию HTTP-запросов между разными серверами (облачными и локальными). Шлюз приложений выполняет многие функции контроллера доставки приложений (ADC), включая балансировку нагрузки HTTP, определение сходства сеансов на основе файлов cookie, разгрузку SSL, выполнение пользовательской проверки работоспособности, поддержку нескольких сайтов и т. д. Полный список поддерживаемых функций представлен в [обзоре шлюза приложений](application-gateway-introduction.md).
 
@@ -243,4 +230,3 @@ az group delete --name appgatewayRG
 
 * [Подсистема балансировщика нагрузки Azure](https://azure.microsoft.com/documentation/services/load-balancer/)
 * [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
-

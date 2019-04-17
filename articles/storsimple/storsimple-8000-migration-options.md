@@ -11,19 +11,19 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 04/10/2019
+ms.date: 04/15/2019
 ms.author: alkohli
-ms.openlocfilehash: e8a5ae4a4ee9cfd5c39e8e399784ec65f2ee2660
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.openlocfilehash: 78508c1227c0b278041b86c3fdd698c6ad27c132
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59500912"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59608221"
 ---
 # <a name="options-to-migrate-data-from-storsimple-5000-7000-series"></a>Варианты переноса данных с устройств StorSimple серий 5000–7000 
 
 > [!IMPORTANT]
-> 31 июля 2019 года поддержка устройств StorSimple серий 5000/7000 будет прекращена. Мы рекомендуем клиентам устройств StorSimple серий 5000 и 7000 перейти на один из альтернативных вариантов, описанных в этом документе.
+> На 9 июля 2019 серии StorSimple 5000/7000 подойдет к концу состоянии поддержки (EOS). Мы рекомендуем клиентам устройств StorSimple серий 5000 и 7000 перейти на один из альтернативных вариантов, описанных в этом документе.
 
 [Поддержка](https://support.microsoft.com/lifecycle/search?alpha=StorSimple%205000%2F7000%20Series) устройств StorSimple серий 5000–7000 будет прекращена в июле 2019 г. Клиенты, использующие StorSimple серий 5000–7000, имеют возможность перейти на другие гибридные службы Azure. В этой статье описываются гибридные варианты, доступные для переноса данных в Azure. 
 
@@ -127,4 +127,4 @@ Talon упрощает для клиентов StorSimple 5000 – 7000 прод
 
 ## <a name="next-steps"></a>Дальнейшие действия
  - [Перенос данных с устройства StorSimple серий 5000–7000 на устройство серии 8000](storsimple-8000-migrate-from-5000-7000.md).
- - [Перенос данных из серии StorSimple 5000 – 7000 для синхронизации файлов Azure](storsimple-5000-7000-afs-migration.md)
+ - [Migrate data from StorSimple 5000-7000 series to Azure File Sync](storsimple-5000-7000-afs-migration.md) (Перенос данных с устройств StorSimple серий 5000–7000 в службу "Синхронизация файлов Azure")

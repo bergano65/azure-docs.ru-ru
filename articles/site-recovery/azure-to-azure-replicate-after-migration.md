@@ -5,19 +5,19 @@ services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: article
-ms.date: 03/18/2019
+ms.date: 04/16/2019
 ms.author: raynew
-ms.openlocfilehash: 76119c912ac6ad1447bfcff1f4c98e60f34b072f
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 019c6ec776277a9102cb95cd685bbae0fc660d66
+ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58317142"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59615920"
 ---
 # <a name="set-up-disaster-recovery-for-azure-vms-after-migration-to-azure"></a>Настройка аварийного восстановления виртуальных машин Azure после миграции в Azure 
 
 
-Воспользуйтесь этой статьей, если вы уже [миграции локальных компьютеров к виртуальным машинам Azure](tutorial-migrate-on-premises-to-azure.md) с помощью [Site Recovery](site-recovery-overview.md) службы и теперь требуется получить виртуальные машины для аварийного восстановления в дополнительный регион Azure. В статье описывается, как убедиться, что агент виртуальной Машины Azure установлен на перенесенных виртуальных машинах, а также способ удаления службы мобильности Site Recovery, который имеет больше не нужны после миграции.
+Выполните в этой статье, если вы уже [миграции локальных компьютеров к виртуальным машинам Azure](tutorial-migrate-on-premises-to-azure.md) с помощью [Site Recovery](site-recovery-overview.md) службы и теперь требуется получить виртуальные машины для аварийного восстановления в дополнительный регион Azure. В статье описывается, как убедиться, что агент виртуальной Машины Azure установлен на перенесенных виртуальных машинах, а также способ удаления службы мобильности Site Recovery, который имеет больше не нужны после миграции.
 
 
 
@@ -77,7 +77,7 @@ ms.locfileid: "58317142"
         ```
     - Linux: войдите как привилегированный пользователь. В окне терминала перейдите в расположение **/user/local/ASR** и выполните следующую команду:
         ```
-        uninstall.sh -Y
+        ./uninstall.sh -Y
         ```
 2. Перед настройкой репликации перезапустите виртуальную машину.
 

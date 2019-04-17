@@ -1,19 +1,18 @@
 ---
 title: 'Пример: инициатива политики тегов для выставления счетов'
 description: В этом примере определения политики требуется указать значения тега для обозначения места возникновения затрат и имени продукта.
-services: azure-policy
 author: DCtheGeek
 manager: carmonm
 ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 13a9dd86e83099e25f7688ddb8ecc04793d3bb27
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.openlocfilehash: 9d9a3a5af304c1080d1d43b9bbfbafe2554a9844
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58801776"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59275017"
 ---
 # <a name="sample---billing-tags-policy-initiative"></a>Пример: инициатива политики тегов для выставления счетов
 
@@ -29,7 +28,7 @@ ms.locfileid: "58801776"
 
 ## <a name="deploy-with-the-portal"></a>Развертывание с помощью портала
 
-[![Развертывание примера политики в Azure](https://azuredeploy.net/deploybutton.png)](https://aka.ms/getpolicy)
+[![DРазвертывание примера политики в Azure](https://azuredeploy.net/deploybutton.png)](https://aka.ms/getpolicy)
 
 ## <a name="deploy-with-powershell"></a>Развертывание с помощью PowerShell
 

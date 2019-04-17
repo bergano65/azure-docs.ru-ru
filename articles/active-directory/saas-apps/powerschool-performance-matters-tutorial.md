@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/08/2019
 ms.author: jeedes
-ms.openlocfilehash: 7286f507c8374c56ecedf84c3775be57f8aa4872
-ms.sourcegitcommit: f596d88d776a3699f8c8cf98415eb874187e2a48
+ms.openlocfilehash: b62ac8229d121738c23a4520bc1c1952603e2a12
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58074766"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59273929"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-powerschool-performance-matters"></a>Руководство. Интеграция Azure Active Directory с Powerschool Performance Matters
+# <a name="tutorial-azure-active-directory-integration-with-powerschool-performance-matters"></a>Руководство по Интеграция Azure Active Directory с Powerschool Performance Matters
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с Powerschool Performance Matters.
 Интеграция Powerschool Performance Matters с Azure AD обеспечивает следующие преимущества.
@@ -51,7 +51,7 @@ ms.locfileid: "58074766"
 
 Чтобы настроить интеграцию Powerschool Performance Matters с Azure AD, необходимо добавить Powerschool Performance Matters из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Powerschool Performance Matters из коллекции, сделайте следующее.**
+**Чтобы добавить Powerschool Performance Matters из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -197,8 +197,8 @@ ms.locfileid: "58074766"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

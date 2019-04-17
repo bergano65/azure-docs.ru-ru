@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 360dbd6605953f77a2874b2daf8db2d4e93307c1
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.openlocfilehash: 1ad101d209415acdceb0091dba5fbedeb8b0aa4b
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58189620"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59280525"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-insight4grc"></a>Руководство. Интеграция Azure Active Directory с Insight4GRC
+# <a name="tutorial-azure-active-directory-integration-with-insight4grc"></a>Руководство по Интеграция Azure Active Directory с Insight4GRC
 
 В этом руководстве описано, как интегрировать Insight4GRC с Azure Active Directory (Azure AD).
 Интеграция Insight4GRC с Azure AD обеспечивает следующие преимущества:
@@ -52,7 +52,7 @@ ms.locfileid: "58189620"
 
 Чтобы настроить интеграцию Insight4GRC с Azure AD, необходимо добавить Insight4GRC из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Insight4GRC из коллекции, выполните следующие действия.**
+**Чтобы добавить Insight4GRC из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,9 +106,9 @@ ms.locfileid: "58189620"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Insight4GRC](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.Insight4GRC.com/SAML`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<subdomain>.Insight4GRC.com/SAML`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.Insight4GRC.com/Public/SAML/ACS.aspx`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.Insight4GRC.com/Public/SAML/ACS.aspx`
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -193,9 +193,9 @@ ms.locfileid: "58189620"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

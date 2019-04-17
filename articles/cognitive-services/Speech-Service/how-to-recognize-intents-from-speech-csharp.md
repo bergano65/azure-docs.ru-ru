@@ -1,5 +1,5 @@
 ---
-title: Руководство. Распознавание намерений из речи с помощью пакета SDK службы "Речь" для C#
+title: Руководство по Распознавание намерений из речи с помощью пакета SDK службы "Речь" для C#
 titleSuffix: Azure Cognitive Services
 description: В данном руководстве приведены сведения о различных способах распознавания намерений в речи с помощью пакета SDK службы "Речь" для C#.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.subservice: speech-service
 ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: wolfma
-ms.openlocfilehash: a9b3d8a2670a0b4e6bed2d5e9a9b64e597adcb16
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9a00dfd1186d19ce9432db8e636bffa40eb977af
+ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57855730"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59280542"
 ---
-# <a name="tutorial-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>Руководство. Распознавание намерений в речи с помощью пакета SDK службы "Речь" для C#
+# <a name="tutorial-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>Руководство по Распознавание намерений в речи с помощью пакета SDK службы "Речь" для C#
 
 [!INCLUDE [Article selector](../../../includes/cognitive-services-speech-service-how-to-recognize-intents-from-speech-selector.md)]
 
@@ -133,17 +133,19 @@ static async Task RecognizeIntentAsync()
 
 Для добавления намерений требуется три аргумента. Модель LUIS (которая была создана с именем `model`), имя намерения и его идентификатор. Разница между идентификатором и именем приведена в следующей таблице.
 
-|Аргумент `AddIntent()`|Назначение|
+|`AddIntent()` — аргумент|Назначение|
 |--------|-------|
 |intentName |Имя намерения, определенного в приложении LUIS. Оно должно совпадать с именем намерения LUIS.|
 |intentID    |Идентификатор, присвоенный намерению, распознанному пакетом SDK для службы "Речь". Он может быть любым. Он не обязательно должен соответствовать имени намерения, определенному в приложении LUIS. Для обработки нескольких намерений может использоваться один код, как и один идентификатор используется для всех намерений.|
 
-Приложение LUIS Home Automation содержит два намерения. Первое — включение устройства и второе — выключения устройства. С помощью приведенных ниже строк намерения будут добавлены в распознаватель. Замените приведенным ниже кодом три строки `AddIntent` в методе `RecognizeIntentAsync()`.
+Приложение LUIS Home Automation содержит два намерения. Первое — включение устройства и второе — выключения устройства. С помощью приведенных ниже строк намерения будут добавлены в распознаватель. Замените приведенным ниже кодом три строки `AddIntent` в методе `RecognizeIntentAsync()`.
 
 ```csharp
 recognizer.AddIntent(model, "HomeAutomation.TurnOff", "off");
 recognizer.AddIntent(model, "HomeAutomation.TurnOn", "on");
 ```
+
+Вместо добавления отдельных намерения можно также использовать метод `AddAllIntents`, чтобы добавить в распознаватель все намерения из модели.
 
 ## <a name="start-recognition"></a>Начало распознавания
 
@@ -186,4 +188,4 @@ result.Properties.GetProperty(PropertyId.LanguageUnderstandingServiceResponse_Js
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Как распознавать речь](how-to-recognize-speech-csharp.md).
+> [Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для .NET Core](how-to-recognize-speech-csharp.md)

@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 16b33203099765633d6bc5992fdc266aa1f28a26
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 4617e878f2af446608ede4e0aed644848564a074
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59548786"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59609081"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -357,3 +357,25 @@ azds controller create --name <cluster name> -g <resource group name> -tn <clust
 ```
 
 После переустановки контроллере, повторное развертывание модулей будет удален.
+
+## <a name="incorrect-rbac-permissions-for-calling-dev-spaces-controller-and-apis"></a>Неправильные разрешения RBAC для вызова контроллера пробелы разработки и API-интерфейсов
+
+### <a name="reason"></a>Причина
+Доступ к контроллеру пробелы разработки Azure пользователь должен иметь доступ на чтение администратор *kubeconfig* в кластере AKS. Например, это разрешение доступно в [встроенные Azure роль администратора кластера Kubernetes службы](../aks/control-kubeconfig-access.md#available-cluster-roles-permissions). Пользователь, доступ к контроллеру пробелы разработки Azure должен также иметь *участник* или *владельца* роли RBAC для контроллера.
+
+### <a name="try"></a>Попытка
+Дополнительные сведения об изменении разрешений пользователя для кластера AKS доступны [здесь](../aks/control-kubeconfig-access.md#assign-role-permissions-to-a-user).
+
+Обновление пользователя роли RBAC для контроллера:
+
+1. Войдите на портал Azure по адресу https://portal.azure.com.
+1. Перейдите к группе ресурсов, содержащей контроллера, обычно это то же самое, что и кластер AKS.
+1. Включить *Показать скрытые типы* флажок.
+1. Щелкните на контроллере.
+1. Откройте *управление доступом (IAM)* области.
+1. Щелкните *назначения ролей* вкладки.
+1. Нажмите кнопку *добавить* затем *добавить назначение роли*.
+    * Для *роли* выберите либо *участник* или *владельца*.
+    * Для *назначение доступа к* выберите *пользователя, группы или субъекта-службы Azure AD*.
+    * Для *выберите* поиска для пользователя, необходимо предоставить разрешения на доступ.
+1. Выберите команду *Сохранить*.
