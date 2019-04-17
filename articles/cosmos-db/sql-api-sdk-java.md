@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 03/13/2019
 ms.author: sngun
-ms.openlocfilehash: 298f4d8cb62ce1d71ed8922483115606f8876d79
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: cb8a97a29a14ecd5601495048bcbe1aff748d892
+ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58648562"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59617138"
 ---
 # <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -127,7 +127,7 @@ ms.locfileid: "58648562"
 * Добавлена поддержка веб-канала изменений.
 * Добавлена поддержка сведений о квотах коллекций посредством RequestOptions.setPopulateQuotaInfo.
 * Добавлена поддержка ведения журнала сценариев хранимых процедур посредством RequestOptions.setScriptLoggingEnabled.
-* Исправлена ошибка, из-за которой запросы в режиме DirectHttps переставали отвечать при обнаружении ошибок регулирования.
+* Исправлена ошибка, в которой запрос в режиме DirectHttps может перестать отвечать на запросы при обнаружении ошибок регулирования.
 * Исправлена ошибка в режиме согласованности сеанса.
 * Исправлена ошибка, которая могла приводить к порождению исключения NullReferenceException в HttpContext при высокой частоте запросов.
 * Повышена производительность режима DirectHttps.
