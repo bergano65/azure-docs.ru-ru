@@ -55,10 +55,10 @@ SQL Server с [Always Encrypted](https://docs.microsoft.com/sql/relational-datab
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| тип | Свойству type необходимо задать значение **SqlServer** | Да |
+| type | Свойству type необходимо задать значение **SqlServer** | Да |
 | connectionString |Укажите сведения о параметре connectionString, необходимые для подключения к базе данных SQL Server с помощью проверки подлинности SQL или Windows. Ознакомьтесь с приведенными ниже примерами.<br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы также можете поместить пароль в Azure Key Vault, и если это аутентификация SQL, извлеките конфигурацию `password` из строки подключения. Ознакомьтесь с примером JSON под таблицей и с подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
 | userName |При использовании проверки подлинности Windows укажите имя пользователя. Например, **domainname\\username**. |Нет |
-| пароль |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Нет |
+| password |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Нет |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных является общедоступным). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
 >[!TIP]
@@ -148,7 +148,7 @@ SQL Server с [Always Encrypted](https://docs.microsoft.com/sql/relational-datab
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| тип | Для свойства type набора данных необходимо задать следующее значение: **SqlServerTable**. | Да |
+| type | Для свойства type набора данных необходимо задать следующее значение: **SqlServerTable**. | Да |
 | tableName |Имя таблицы или представления экземпляра базы данных SQL Server, на который ссылается связанная служба. | "Нет" для источника, "Да" для приемника |
 
 **Пример:**
@@ -180,8 +180,8 @@ SQL Server с [Always Encrypted](https://docs.microsoft.com/sql/relational-datab
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| тип | Свойству type источника действия копирования необходимо задать значение **SqlSource**. | Да |
-| SqlReaderQuery |Используйте пользовательский SQL-запрос для чтения данных. Пример: `select * from MyTable`. |Нет |
+| type | Свойству type источника действия копирования необходимо задать значение **SqlSource**. | Да |
+| sqlReaderQuery |Используйте пользовательский SQL-запрос для чтения данных. Пример: `select * from MyTable`. |Нет |
 | sqlReaderStoredProcedureName |Имя хранимой процедуры, которая считывает данные из исходной таблицы. Последней инструкцией SQL должна быть инструкция SELECT в хранимой процедуре. |Нет |
 | storedProcedureParameters |Параметры для хранимой процедуры.<br/>Допустимые значения: пары "имя — значение". Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. |Нет |
 
@@ -283,7 +283,7 @@ GO
 
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
-| тип | Свойство type приемника действия копирования должно иметь следующее значение: **SqlSink**. | Да |
+| type | Свойство type приемника действия копирования должно иметь следующее значение: **SqlSink**. | Да |
 | writeBatchSize |Количество строк для вставки в таблицу SQL **в пакете**.<br/>Допустимые значения: целое число (количество строк). |Нет (по умолчанию 10 000) |
 | writeBatchTimeout |Время ожидания до выполнения операции пакетной вставки, пока не завершится срок ее действия.<br/>Допустимые значения: промежуток времени. Пример: "00:30:00" (30 минут). |Нет |
 | preCopyScript |Укажите SQL-запрос для действия копирования, выполняемый перед записью данных в базу данных SQL Server. Он будет однократно вызываться при каждом запуске копирования. Это свойство можно использовать для очистки предварительно загруженных данных. |Нет |
@@ -512,36 +512,36 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 | Типы данных SQL Server | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | bigint |Int64 |
-| binary; |Byte[] |
-| bit |Логический |
-| char; |String, Char[] |
-| дата |Дата/Время (DateTime) |
-| Дата и время |Дата/Время (DateTime) |
-| datetime2; |Дата/Время (DateTime) |
+| binary |Byte[] |
+| bit |Boolean |
+| char |String, Char[] |
+| date |DateTime |
+| Datetime |DateTime |
+| datetime2 |DateTime |
 | Datetimeoffset |DateTimeOffset |
-| Десятичное |Десятичное |
-| Атрибут FILESTREAM (varbinary(max)) |Byte[] |
-| Плавающая область |Двойное с плавающей запятой |
-| образ |Byte[] |
-| ssNoversion |Int32 |
-| money; |Десятичное |
-| nchar; |String, Char[] |
+| Decimal |Decimal |
+| FILESTREAM attribute (varbinary(max)) |Byte[] |
+| Float |Double |
+| image |Byte[] |
+| int |Int32 |
+| money |Decimal |
+| nchar |String, Char[] |
 | ntext |String, Char[] |
-| numeric |Десятичное |
-| nvarchar; |String, Char[] |
-| real; |Одинарный |
+| numeric |Decimal |
+| nvarchar |String, Char[] |
+| real |Single |
 | rowversion |Byte[] |
-| smalldatetime; |Дата/Время (DateTime) |
-| smallint; |Int16 |
-| smallmoney; |Десятичное |
-| sql_variant |Объект |
-| текст |String, Char[] |
-| время |TimeSpan |
-|  timestamp |Byte[] |
-| tinyint; |Int16 |
-| uniqueidentifier |GUID |
-| varbinary; |Byte[] |
-| varchar. |String, Char[] |
+| smalldatetime |DateTime |
+| smallint |Int16 |
+| smallmoney |Decimal |
+| sql_variant |Object |
+| text |String, Char[] |
+| time |TimeSpan |
+| timestamp |Byte[] |
+| tinyint |Int16 |
+| uniqueidentifier |Guid |
+| varbinary |Byte[] |
+| varchar |String, Char[] |
 | xml |Xml |
 
 >[!NOTE]
