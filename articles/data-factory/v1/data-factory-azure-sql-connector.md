@@ -65,7 +65,7 @@ ms.locfileid: "55811493"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 | --- | --- | --- |
-| Тип |Свойству type необходимо задать значение **AzureSqlDatabase** |Yes |
+| type |Свойству type необходимо задать значение **AzureSqlDatabase** |Yes |
 | connectionString |В свойстве connectionString указываются сведения, необходимые для подключения к экземпляру базы данных SQL Azure. Поддерживается только обычная проверка подлинности. |Yes |
 
 > [!IMPORTANT]
@@ -97,7 +97,7 @@ ms.locfileid: "55811493"
 
 | Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
-| SqlReaderQuery |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Пример: `select * from MyTable`. |Нет  |
+| sqlReaderQuery |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Пример: `select * from MyTable`. |Нет  |
 | sqlReaderStoredProcedureName |Имя хранимой процедуры, которая считывает данные из исходной таблицы. |Имя хранимой процедуры. Последней инструкцией SQL должна быть инструкция SELECT в хранимой процедуре. |Нет  |
 | storedProcedureParameters |Параметры для хранимой процедуры. |Пары имен и значений. Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. |Нет  |
 
@@ -638,37 +638,37 @@ create table dbo.TargetTbl
 | Тип ядра СУБД SQL Server | Тип .NET Framework |
 | --- | --- |
 | bigint |Int64 |
-| binary; |Byte[] |
-| bit |Логическое |
-| char; |String, Char[] |
-| дата |DateTime |
-| DateTime |DateTime |
-| datetime2; |DateTime |
+| binary |Byte[] |
+| bit |Boolean |
+| char |String, Char[] |
+| date |DateTime |
+| Datetime |DateTime |
+| datetime2 |DateTime |
 | Datetimeoffset |DateTimeOffset |
 | Decimal |Decimal |
-| Атрибут FILESTREAM (varbinary(max)) |Byte[] |
+| FILESTREAM attribute (varbinary(max)) |Byte[] |
 | Float |Double |
-| изображение |Byte[] |
+| image |Byte[] |
 | int |Int32 |
-| money; |Decimal |
-| nchar; |String, Char[] |
+| money |Decimal |
+| nchar |String, Char[] |
 | ntext |String, Char[] |
 | numeric |Decimal |
-| nvarchar; |String, Char[] |
-| real; |Single |
+| nvarchar |String, Char[] |
+| real |Single |
 | rowversion |Byte[] |
-| smalldatetime; |DateTime |
-| smallint; |Int16 |
-| smallmoney; |Decimal |
+| smalldatetime |DateTime |
+| smallint |Int16 |
+| smallmoney |Decimal |
 | sql_variant |Object * |
-| текст |String, Char[] |
-| Twitter в режиме реального |TimeSpan |
-|  timestamp |Byte[] |
-| tinyint; |Byte |
+| text |String, Char[] |
+| time |TimeSpan |
+| timestamp |Byte[] |
+| tinyint |Byte |
 | uniqueidentifier |Guid |
-| varbinary; |Byte[] |
-| varchar. |String, Char[] |
-| xml |xml |
+| varbinary |Byte[] |
+| varchar |String, Char[] |
+| xml |Xml |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника
 Дополнительные сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в [этой статье](data-factory-map-columns.md).
