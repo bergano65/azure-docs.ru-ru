@@ -13,10 +13,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/12/2019
 ms.openlocfilehash: 6362084c11ce7aa9078823758700239694162765
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59359153"
 ---
 # <a name="managed-api-reference-for-azure-sql-database-managed-instances"></a>Справочник по API управления для Управляемых экземпляров Базы данных SQL Azure
@@ -58,15 +58,15 @@ ms.locfileid: "59359153"
 
 | Командлет | ОПИСАНИЕ |
 | --- | --- |
-|[Создание AZ sql mi](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-create) |Создает Управляемый экземпляр|
-|[Список mi AZ sql](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-list)|Перечисляет доступные Управляемые экземпляры|
-|[Показать mi AZ sql](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-show)|Получает сведения об Управляемом экземпляре|
-|[AZ sql mi обновление](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-update)|Обновляет Управляемый экземпляр|
-|[AZ sql mi delete](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-delete)|Удаляет Управляемый экземпляр|
-|[Создание AZ sql midb](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-create) |Создает управляемую базу данных|
-|[Список midb AZ sql](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-list)|Выводит список доступных управляемых баз данных|
-|[Восстановление midb AZ sql](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-restore)|Восстанавливает управляемую базу данных|
-|[AZ sql midb delete](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-delete)|Удаляет управляемую базу данных|
+|[az sql mi create](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-create) |Создает Управляемый экземпляр|
+|[az sql mi list](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-list)|Перечисляет доступные Управляемые экземпляры|
+|[az sql mi show](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-show)|Получает сведения об Управляемом экземпляре|
+|[az sql mi update](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-update)|Обновляет Управляемый экземпляр|
+|[az sql mi delete](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-delete)|Удаляет Управляемый экземпляр|
+|[az sql midb create](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-create) |Создает управляемую базу данных|
+|[az sql midb list](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-list)|Выводит список доступных управляемых баз данных|
+|[az sql midb restore](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-restore)|Восстанавливает управляемую базу данных|
+|[az sql midb delete](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-delete)|Удаляет управляемую базу данных|
 
 ## <a name="transact-sql-create-and-manage-instance-databases"></a>Transact-SQL: Создание и управление базами данных управляемого экземпляра
 
@@ -79,8 +79,8 @@ ms.locfileid: "59359153"
 
 | Команда | ОПИСАНИЕ |
 | --- | --- |
-|[СОЗДАНИЕ БАЗЫ ДАННЫХ](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-mi-current)|Создает базу данных Управляемого экземпляра. Для создания базы данных требуется подключение к базе данных master.|
-| [ИЗМЕНЕНИЕ БАЗЫ ДАННЫХ](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-mi-current) |Изменяет базу данных Управляемого экземпляра SQL Azure.|
+|[CREATE DATABASE](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-mi-current)|Создает базу данных Управляемого экземпляра. Для создания базы данных требуется подключение к базе данных master.|
+| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-mi-current) |Изменяет базу данных Управляемого экземпляра SQL Azure.|
 
 ## <a name="rest-api-create-and-manage-managed-instances"></a>REST API: Создание управляемых экземпляров и управление ими
 
@@ -88,12 +88,12 @@ ms.locfileid: "59359153"
 
 | Команда | ОПИСАНИЕ |
 | --- | --- |
-|[Управляемые экземпляры - Создание или обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/createorupdate)|Создает или обновляет Управляемый экземпляр.|
-|[Управляемые экземпляры - Delete](https://docs.microsoft.com/rest/api/sql/managedinstances/delete)|Удаляет Управляемый экземпляр.|
-|[Управляемые экземпляры - Get](https://docs.microsoft.com/rest/api/sql/managedinstances/get)|Получает Управляемый экземпляр.|
-|[Управляемые экземпляры - список](https://docs.microsoft.com/rest/api/sql/managedinstances/list)|Возвращает список Управляемых экземпляров в подписке.|
-|[Управляемые экземпляры - списка по группе ресурсов](https://docs.microsoft.com/rest/api/sql/managedinstances/listbyresourcegroup)|Возвращает список Управляемых экземпляров в группе ресурсов.|
-|[Управляемые экземпляры - обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/update)|Обновляет Управляемый экземпляр.|
+|[Управляемые экземпляры. Создание или обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/createorupdate)|Создает или обновляет Управляемый экземпляр.|
+|[Управляемые экземпляры. Удаление](https://docs.microsoft.com/rest/api/sql/managedinstances/delete)|Удаляет Управляемый экземпляр.|
+|[Управляемые экземпляры. Получение](https://docs.microsoft.com/rest/api/sql/managedinstances/get)|Получает Управляемый экземпляр.|
+|[Управляемые экземпляры. Перечисление](https://docs.microsoft.com/rest/api/sql/managedinstances/list)|Возвращает список Управляемых экземпляров в подписке.|
+|[Управляемые экземпляры. Перечисление по группе ресурсов](https://docs.microsoft.com/rest/api/sql/managedinstances/listbyresourcegroup)|Возвращает список Управляемых экземпляров в группе ресурсов.|
+|[Управляемые экземпляры. Обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/update)|Обновляет Управляемый экземпляр.|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -15,10 +15,10 @@ ms.reviewer: vanto
 manager: craigg
 ms.date: 04/08/2019
 ms.openlocfilehash: 6ada2a5e505bfe37f4f9a956570d8b6f38f55e55
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59357428"
 ---
 # <a name="get-started-with-azure-sql-database-managed-instance-auditing"></a>Начало работы с аудитом управляемого экземпляра Базы данных SQL Azure
@@ -60,7 +60,7 @@ ms.locfileid: "59357428"
 
         ![Кнопка свойств контейнера больших двоичных объектов](./media/sql-managed-instance-auditing/4_container_properties_button.png)
 
-     1. Скопируйте URL-адрес контейнера, щелкнув значок копирования, и сохраните этот URL-адрес (например, в Блокноте) для дальнейшего использования. Формат URL-адрес контейнера должен быть `https://<StorageName>.blob.core.windows.net/<ContainerName>`
+     1. Скопируйте URL-адрес контейнера, щелкнув значок копирования, и сохраните этот URL-адрес (например, в Блокноте) для дальнейшего использования. URL-адрес контейнера должен иметь формат `https://<StorageName>.blob.core.windows.net/<ContainerName>`.
 
         ![Копирование URL-адреса контейнера больших двоичных объектов](./media/sql-managed-instance-auditing/5_container_copy_name.png)
 
@@ -141,8 +141,8 @@ ms.locfileid: "59357428"
 
 1. <a id="createspec"></a>После настройки контейнера больших двоичных объектов как целевого объекта для журналов аудита создайте спецификацию аудита сервера или аудита базы данных, как это делается для SQL Server:
 
-   - [Создать структуру T-SQL для спецификации аудита сервера](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-specification-transact-sql)
-   - [Создать структуру T-SQL для спецификации аудита базы данных](https://docs.microsoft.com/sql/t-sql/statements/create-database-audit-specification-transact-sql)
+   - [Руководство по созданию спецификации T-SQL для аудита сервера](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-specification-transact-sql)
+   - [Руководство по созданию спецификации T-SQL для аудита базы данных](https://docs.microsoft.com/sql/t-sql/statements/create-database-audit-specification-transact-sql)
 
 1. Включите аудит сервера, созданный на шаге 6:
 
@@ -154,9 +154,9 @@ ms.locfileid: "59357428"
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Аудит различия между отдельных баз данных эластичного пула, s и управляемых экземпляров в базе данных SQL Azure и баз данных в SQL Server](#auditing-differences-between-databases-in-azure-sql-database-and-databases-in-sql-server)
-- [СОЗДАНИЕ АУДИТА СЕРВЕРА](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql)
-- [ALTER SERVER AUDIT](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
+- [Различия между аудитом отдельных баз данных, эластичных пулов и управляемых экземпляров в Базе данных SQL Azure и баз данных в SQL Server](#auditing-differences-between-databases-in-azure-sql-database-and-databases-in-sql-server)
+- [CREATE SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql)
+- [ALTER SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
 
 ## <a name="set-up-auditing-for-your-server-to-event-hub-or-azure-monitor-logs"></a>Настройка аудита для сервера, чтобы журналы концентратора событий или Azure Monitor
 
@@ -187,8 +187,8 @@ ms.locfileid: "59357428"
 
 9. Создайте спецификацию аудита сервера или спецификацию аудита базы данных, как для обычного сервера SQL Server.
 
-   - [Создать структуру T-SQL для спецификации аудита сервера](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-specification-transact-sql)
-   - [Создать структуру T-SQL для спецификации аудита базы данных](https://docs.microsoft.com/sql/t-sql/statements/create-database-audit-specification-transact-sql)
+   - [Руководство по созданию спецификации T-SQL для аудита сервера](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-specification-transact-sql)
+   - [Руководство по созданию спецификации T-SQL для аудита базы данных](https://docs.microsoft.com/sql/t-sql/statements/create-database-audit-specification-transact-sql)
 
 10. Включите аудит сервера, созданного на шаге 8:
  
@@ -237,7 +237,7 @@ ms.locfileid: "59357428"
 - Новый синтаксис `TO EXTERNAL MONITOR` предоставляется для обеспечения цели журналы даже концентратора и Azure Monitor.
 - Синтаксис `TO FILE` **не поддерживается**, так как База данных SQL не может использовать файловые ресурсы Windows.
 - Параметр завершения работы **не поддерживается**.
-- `queue_delay` 0 — **не поддерживается**.
+- Значение 0 для `queue_delay` **не поддерживается**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

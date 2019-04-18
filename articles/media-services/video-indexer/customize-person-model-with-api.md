@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 02/10/2019
 ms.author: anzaman
 ms.openlocfilehash: e5a34a75c73401c567a0e898a1ce9f85cde96586
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59360528"
 ---
 # <a name="customize-a-person-model-with-the-video-indexer-api"></a>Настройка модели пользователя с помощью API Индексатора видео
@@ -54,14 +54,14 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 
 ### <a name="request-parameters"></a>Параметры запроса 
 
-|**ИМЯ**|**type**|**Обязательно для заполнения**|**ОПИСАНИЕ**|
+|**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
 |location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
 |accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
 |name|строка|Yes|Имя для модели пользователя|
 |accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Для этого вызова больше не требуется текст запроса.
 
@@ -99,14 +99,14 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-|**ИМЯ**|**type**|**Обязательно для заполнения**|**ОПИСАНИЕ**|
+|**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
 |location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
 |accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
 |id|строка|Yes|Идентификатор модели пользователя (создан вместе с моделью пользователя)|
 |accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Для этого вызова больше не требуется текст запроса.
 
@@ -136,13 +136,13 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-|**ИМЯ**|**type**|**Обязательно для заполнения**|**ОПИСАНИЕ**|
+|**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
 |location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
 |accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
 |accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Для этого вызова больше не требуется текст запроса.
 
@@ -191,7 +191,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Vide
 
 ### <a name="request-parameters"></a>Параметры запроса
 
-|**ИМЯ**|**type**|**Обязательно для заполнения**|**ОПИСАНИЕ**|
+|**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
 |location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
 |accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
@@ -202,7 +202,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Vide
 
 Имена являются уникальными в моделях Person, поэтому если вы присваиваете одно **имя** двум разным лицам, Индексатор видео распознает эти лица как лица одного человека и объединит их при повторной индексации видео. 
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Для этого вызова больше не требуется текст запроса.
 
@@ -212,4 +212,4 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Vide
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Настройка модели человека на веб-сайте индексатор видео](customize-person-model-with-website.md)
+[Customize Person model using the Video Indexer website](customize-person-model-with-website.md) (Настройка модели пользователя с помощью веб-сайта Индексатора видео)

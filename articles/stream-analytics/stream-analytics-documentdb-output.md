@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 01/11/2019
 ms.custom: seodec18
 ms.openlocfilehash: 734cf09869e5a2df5f9a505a3cb8ccc7bc2338d5
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59495982"
 ---
 # <a name="azure-stream-analytics-output-to-azure-cosmos-db"></a>Выходные данные Azure Stream Analytics в Azure Cosmos DB  
@@ -88,5 +88,5 @@ Stream Analytics использует оптимистичный подход Up
 |Идентификатор учетной записи      | Имя или универсальный код ресурса (URI) конечной точки учетной записи Azure Cosmos DB.|
 |Ключ учетной записи     | Общедоступный ключ доступа к учетной записи Azure Cosmos DB.|
 |База данных        | Имя базы данных Azure Cosmos DB.|
-|Шаблон имен коллекций | Имя для используемой коллекции. `MyCollection` — Это пример допустимых входных данных — одна коллекция с именем `MyCollection` должен существовать.  |
+|Шаблон имен коллекций | Имя для используемой коллекции. `MyCollection` — это пример допустимых входных данных; должна существовать одна коллекция с именем `MyCollection`.  |
 |Идентификатор документа     | Необязательный элемент. Имя столбца в выходных событиях используется как уникальный ключ, на котором должны основываться операции вставки или обновления. Если оставить это поле пустым, все события будут вставлены, без возможности обновления.|

@@ -18,10 +18,10 @@ ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8c1372263bfa3f684d30ad583bfb6a9d434c3cc2
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59499943"
 ---
 # <a name="microsoft-identity-platform-and-the-oauth-20-resource-owner-password-credential"></a>Платформа Microsoft identity и пароль владельца ресурса OAuth 2.0
@@ -63,7 +63,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &grant_type=password
 ```
 
-| Параметр | Условие | Описание |
+| Параметр | Условие | ОПИСАНИЕ |
 | --- | --- | --- |
 | `tenant` | Обязательно для заполнения | Клиент каталога, в который пользователь выполняет вход. Его можно указать в виде GUID или понятного имени. Этот параметр не может иметь значение `common` или `consumers`, но может быть равен `organizations`. |
 | `grant_type` | Обязательно для заполнения | Нужно задать значение `password`. |
@@ -86,7 +86,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 }
 ```
 
-| Параметр | Формат | Описание |
+| Параметр | Формат | ОПИСАНИЕ |
 | --------- | ------ | ----------- |
 | `token_type` | Строка | Всегда имеет значение `Bearer`. |
 | `scope` | Строки, разделенные пробелами | Если возвращен маркер доступа, этот параметр содержит список областей, для которых действует этот маркер. |

@@ -8,10 +8,10 @@ ms.author: mbaldwin
 ms.date: 03/12/2019
 ms.custom: seodec18
 ms.openlocfilehash: 3c6c552a6605278d8ab31264f5d180206e0badac
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59490048"
 ---
 # <a name="azure-disk-encryption-troubleshooting-guide"></a>Руководство по устранению неполадок шифрования дисков Azure
@@ -157,4 +157,4 @@ If the expected encryption state does not match what is being reported in the po
 В этом документе вы узнали о некоторых распространенных проблемах в шифровании дисков Azure и их устранении. Дополнительные сведения об этой службе и ее возможностях см. в статьях:
 
 - [Шифрование диска в центре безопасности Azure](../security-center/security-center-apply-disk-encryption.md)
-- [Шифрование неактивных данных Azure](azure-security-encryption-atrest.md)
+- [Шифрование неактивных данных в Azure](azure-security-encryption-atrest.md)

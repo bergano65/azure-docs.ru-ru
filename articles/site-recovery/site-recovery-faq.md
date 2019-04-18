@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 4/08/2019
 ms.author: raynew
 ms.openlocfilehash: 824782e54f2cd989f9ab13857d9b894b215fc550
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59361358"
 ---
 # <a name="azure-site-recovery-frequently-asked-questions-faq"></a>Azure Site Recovery: вопросы и ответы
@@ -186,8 +186,8 @@ Azure Site Recovery реплицирует данные в учетную зап
 ### <a name="can-i-throttle-bandwidth-allotted-for-replication-traffic"></a>Можно ли регулировать пропускную способность, выделенную для трафика репликации?
 Да. Дополнительные сведения о регулировании пропускной способности в следующих статьях:
 
-* [Планирование емкости для репликации виртуальных машин VMware и физических серверов](site-recovery-plan-capacity-vmware.md)
-* [Планирование емкости для репликации виртуальных машин Hyper-V в Azure](site-recovery-capacity-planning-for-hyper-v-replication.md)
+* [Планирование ресурсов для репликации виртуальных машин VMware и физических серверов](site-recovery-plan-capacity-vmware.md)
+* [Запуск планировщика ресурсов Hyper-V для Site Recovery](site-recovery-capacity-planning-for-hyper-v-replication.md)
 
 
 
@@ -223,8 +223,8 @@ Azure Site Recovery реплицирует данные в учетную зап
 ### <a name="can-i-automate-site-recovery-scenarios-with-an-sdk"></a>Можно ли автоматизировать сценарии Site Recovery с помощью пакета SDK?
 Да. Рабочие процессы службы Site Recovery можно автоматизировать с помощью интерфейса REST API, PowerShell или пакета SDK для Azure. Ниже перечислены сценарии развертывания Site Recovery с помощью PowerShell, которые поддерживаются в настоящее время.
 
-* [Репликация виртуальных машин Hyper-V из облаков VMM в Azure PowerShell Resource Manager](hyper-v-vmm-powershell-resource-manager.md)
-* [Репликация виртуальных машин Hyper-V без VMM в Azure PowerShell для Resource Manager](hyper-v-azure-powershell-resource-manager.md)
+* [Репликация виртуальных машин Hyper-V из облаков VMM в Azure с помощью PowerShell (модель Resource Manager)](hyper-v-vmm-powershell-resource-manager.md)
+* [Репликация виртуальных машин Hyper-V (без VMM) в Azure с помощью PowerShell (модель Resource Manager)](hyper-v-azure-powershell-resource-manager.md)
 * [Репликация из VMware в Azure с помощью PowerShell для Resource Manager](vmware-azure-disaster-recovery-powershell.md)
 
 ## <a name="componentprovider-upgrade"></a>Обновление компонента или поставщик

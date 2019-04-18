@@ -11,17 +11,17 @@ author: Blackmist
 ms.date: 04/15/2019
 ms.custom: seodec18
 ms.openlocfilehash: 83ca4d2bf767d338943c396330b36f3f8180e170
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59489953"
 ---
 # <a name="how-azure-machine-learning-service-works-architecture-and-concepts"></a>Принципы работы Службы машинного обучения Azure: архитектура и основные понятия
 
 Дополнительные сведения об архитектуре, основные понятия и рабочий процесс для службы машинного обучения Azure. Основные компоненты службы и общий рабочий процесс при использовании службы показаны на следующей схеме:
 
-[![AАрхитектура службы машинного обучения zure и рабочих процессов](./media/concept-azure-machine-learning-architecture/workflow.png)](./media/concept-azure-machine-learning-architecture/workflow.png#lightbox)
+[![Архитектура и рабочий процесс Службы машинного обучения Azure](./media/concept-azure-machine-learning-architecture/workflow.png)](./media/concept-azure-machine-learning-architecture/workflow.png#lightbox)
 
 ## <a name="workflow"></a>Рабочий процесс
 
@@ -68,7 +68,7 @@ ms.locfileid: "59489953"
 
 Таксономия рабочей области показана на следующей схеме:
 
-[![WТаксономия orkspace](./media/concept-azure-machine-learning-architecture/azure-machine-learning-taxonomy.svg)](./media/concept-azure-machine-learning-architecture/azure-machine-learning-taxonomy.png#lightbox)
+[![Схема рабочей области](./media/concept-azure-machine-learning-architecture/azure-machine-learning-taxonomy.svg)](./media/concept-azure-machine-learning-architecture/azure-machine-learning-taxonomy.png#lightbox)
 
 ## <a name="experiment"></a>Эксперимент
 
@@ -234,7 +234,7 @@ Azure IoT Edge гарантирует, что модуль запущен и о�
 
 Чтобы начать работу со Службой машинного обучения Azure, ознакомьтесь со следующими статьями:
 
-* [Что такое служба машинного обучения Azure](overview-what-is-azure-ml.md)
+* [Что такое Служба машинного обучения Azure](overview-what-is-azure-ml.md)
 * [Создание рабочей области службы машинного обучения Azure](setup-create-workspace.md)
-* [Руководство. Обучение модели](tutorial-train-models-with-aml.md)
+* [Руководство Обучение модели](tutorial-train-models-with-aml.md)
 * [Создание рабочей области с помощью шаблона Resource Manager](how-to-create-workspace-template.md)

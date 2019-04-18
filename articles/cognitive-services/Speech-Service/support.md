@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 07/26/2018
 ms.author: wolfma
 ms.openlocfilehash: bf0916f197ff5bf1a9531fde98fe8cefc8d7727f
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59358069"
 ---
 # <a name="support-and-help-options"></a>Возможности получения поддержки и справки
@@ -55,8 +55,8 @@ ms.locfileid: "59358069"
 
 Клиенты Azure могут создавать запросы на получение поддержки и управлять ими на портале Azure.
 
-* [Портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
-* [Портал Azure для государственных организаций США](https://portal.azure.us)
+* [портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
+* [Портал Azure для государственных учреждений США](https://portal.azure.us)
 
 ## <a name="post-a-question-to-stack-overflow"></a>Публикация вопроса на сайте Stack Overflow
 
@@ -66,22 +66,22 @@ Stack Overflow — это идеальное место для вопросов
 
 |Компонент или область  |Теги  |
 |---------|---------|
-|Распознавание речи |[[microsoft-cognitive + речи в текст]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+speech-to-text)|
-|Синтез речи |[[microsoft-cognitive + текста в речь]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+text-to-speech)|
-|Перевод речи |[[microsoft-cognitive + перевода]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+translation)|
-|Намерения говорящего |[[microsoft-Луис cognitive +]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+luis)|
-|Общий пакет SDK для службы "Речь" |[[microsoft-cognitive + microsoft-api распознавания речи —]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+microsoft-speech-api)|
+|Распознавание речи |[[microsoft-cognitive+speech-to-text]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+speech-to-text)|
+|Синтез речи |[[microsoft-cognitive+text-to-speech]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+text-to-speech)|
+|Перевод речи |[[microsoft-cognitive+translation]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+translation)|
+|Намерения говорящего |[[microsoft-cognitive+luis]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+luis)|
+|Общий пакет SDK для службы "Речь" |[[microsoft-cognitive+microsoft-speech-api]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+microsoft-speech-api)|
 
 > [!TIP]
 > Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуйте этим рекомендациям, чтобы повысить вероятность того, что участники сообщества быстро отреагируют на ваш вопрос:  
-> * [Как задать вопрос?](https://stackoverflow.com/help/how-to-ask)
-> * [Как создать минимальным завершить и проверяемых пример](https://stackoverflow.com/help/mcve)
+> * [Как правильно задать вопрос?](https://stackoverflow.com/help/how-to-ask)
+> * [How to create a Minimal, Complete, and Verifiable example](https://stackoverflow.com/help/mcve) (Как создать минимальный, полный и доступный для проверки пример).
 
 ## <a name="create-a-github-issue"></a>Сообщение о проблеме на GitHub
 
 Примеры часто публикуются с открытым кодом. Если возникнут вопросы и проблемы, создайте *запрос* в соответствующем репозитории GitHub. Также можно отправить запрос на вытягивание. В следующем списке представлены ссылки на репозитории с примерами:
 
-* [Пакет SDK для распознавания речи](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues)
+* [пакет SDK для службы "Речь"](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues);
 * [Пакет SDK для устройств](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK/issues)
 
 Можно создать отчет об ошибках, запрос на функцию или задать вопрос на общую тему и поделиться лучшими методами. Для отчетов об ошибках используйте предоставленный шаблон:
@@ -90,7 +90,7 @@ Stack Overflow — это идеальное место для вопросов
 
 Ясное и четкое описание ошибки.
 
-**Для воспроизведения**
+**Шаги для воспроизведения**
 
 Шаги для воспроизведения проблемы:
 1. ...
@@ -100,11 +100,11 @@ Stack Overflow — это идеальное место для вопросов
 
 Ясное и четкое описание ожидаемого результата.
 
-**Версия пакета SDK для речи Cognitive Services**
+**Версия пакета SDK службы "Речь" в Cognitive Services**
 
 Какую версию пакета SDK вы используете.
 
-**Платформы ОС и язык программирования**
+**Платформа, операционная система и язык программирования**
 
  - ОС: [например, Windows, Linux, Android, iOS и т. д.] — укажите конкретную версию
  - Оборудование — x64, x86, ARM и т. д.

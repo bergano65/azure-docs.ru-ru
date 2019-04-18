@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: fasttrack-new
 services: batch
 ms.openlocfilehash: 5b7c44d3ea3394ff728adfb9d9fd72293138fb2e
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59494650"
 ---
 # <a name="use-azure-pipelines-to-build-and-deploy-hpc-solutions"></a>Используйте Azure конвейеры для создания и развертывания решения HPC
@@ -506,5 +506,5 @@ az batch pool resize --pool-id <poolname> --target-dedicated-nodes 4
 
 В дополнение к этой статье есть два руководства, которые используют ffmpeg, с помощью .NET и Python. См. в статье эти учебники, Дополнительные сведения о том, как взаимодействовать с учетной записью пакетной службы с помощью простого приложения.
 
-* [Запуск параллельной рабочей нагрузки с помощью пакета Azure с использованием Python API](tutorial-parallel-python.md)
-* [Запуск параллельной рабочей нагрузки с помощью пакетной службы Azure с использованием .NET API](tutorial-parallel-dotnet.md)
+* [Запуск параллельной рабочей нагрузки с помощью пакета Azure, с помощью Python API](tutorial-parallel-python.md)
+* [Запуск параллельной рабочей нагрузки с помощью пакета Azure, с помощью .NET API](tutorial-parallel-dotnet.md)

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/21/2018
 ms.author: aschhab
 ms.openlocfilehash: 0d15aa4d7b8a922f7606b7c4d1b357a80b3cbfab
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59359126"
 ---
 # <a name="use-powershell-to-manage-service-bus-resources"></a>Управление ресурсами служебной шины с помощью модуля PowerShell
@@ -47,9 +47,9 @@ Microsoft Azure PowerShell — это среда сценариев, котор
 
 В этом примере мы создадим несколько локальных переменных в сценарии, в частности `$Namespace` и `$Location`.
 
-* `$Namespace` — Имя пространства имен служебной шины, с которой мы будем использовать.
-* `$Location` Определяет центр обработки данных, в котором подготовим пространство имен.
-* `$CurrentNamespace` место хранения ссылки пространства имен полученного (или создание).
+* `$Namespace` — имя пространства имен служебной шины, которое мы будем использовать.
+* `$Location` — центр обработки данных, в котором мы подготовим пространство имен к работе.
+* `$CurrentNamespace` — место хранения полученного (или созданного) исходного пространства имен.
 
 В фактическом сценарии переменные `$Namespace` и `$Location` могут передаваться как параметры.
 
@@ -170,9 +170,9 @@ Set-AzServiceBusQueue -ResourceGroup $ResGrpName -NamespaceName $Namespace -Queu
 
 Существуют альтернативные способы управления сущностями служебной шины, как описано в следующих блогах.
 
-* [Создание очереди служебной шины, разделы и подписки, с помощью сценария PowerShell](https://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
-* [Как создать пространство имен служебной шины и концентратор событий с помощью сценария PowerShell](https://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
-* [Скрипты PowerShell для служебной шины](https://code.msdn.microsoft.com/Service-Bus-PowerShell-a46b7059)
+* [Как создать запросы, разделы и подписки Service Bus с помощью сценария PowerShell](https://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
+* [Как создать пространство имен и концентратор событий служебной шины с помощью сценария PowerShell](https://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
+* [Сценарии PowerShell для Service Bus](https://code.msdn.microsoft.com/Service-Bus-PowerShell-a46b7059)
 
 <!--Anchors-->
 

@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: glenga
 ms.openlocfilehash: 9db84ee23a2b2b19d05e458ff38854076a530e38
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59495538"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
@@ -136,7 +136,7 @@ Writing C:\myfunctions\myMyFunctionProj\.vscode\extensions.json
 Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 ```
 
-`func init` поддерживает следующие параметры, которые имеют версию только для версии 2.x, в том случае, если не указано иное.
+`func init` поддерживает следующие параметры, которые подходят только для версии 2.x, если не указано иное:
 
 | Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
@@ -181,7 +181,7 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 }
 ```
 
-| Параметр      | Описание                            |
+| Параметр      | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
 | **`IsEncrypted`** | Если задано значение `true`, все значения шифруются с помощью ключа локального компьютера. Используется с командами `func settings`. По умолчанию имеет значение `false`. |
 | **`Values`** | Коллекция параметров приложения и строк подключения, используемых при локальном выполнении. Эти значения соответствуют параметры приложения в приложении-функции в Azure, такие как [ `AzureWebJobsStorage` ]. Многие триггеры и привязки имеют свойство, которое ссылается на параметр приложения строки подключения, например `Connection` для [триггер хранилища BLOB-объектов](functions-bindings-storage-blob.md#trigger---configuration). Для таких свойств требуется параметр приложения, определенный в `Values` массива. <br/>[`AzureWebJobsStorage`] Обязательное приложение устанавливает для триггеров, отличных от HTTP. <br/>Версии 2.x среды выполнения функций требует [ `FUNCTIONS_WORKER_RUNTIME` ] параметр, который создается для проекта, основными инструментами. <br/> При наличии [эмулятора хранения Azure](../storage/common/storage-use-emulator.md) установлены локально, можно задать [ `AzureWebJobsStorage` ] для `UseDevelopmentStorage=true` и основных инструментов используется эмулятор. Во время разработки это удобно, но следует проверить подключение к фактическому хранилищу перед развертыванием. |
@@ -192,9 +192,9 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 
 Эти значения параметров приложения-функции также могут считываться в коде как переменные среды. Дополнительные сведения см. в разделе о переменных среды в этих справочниках для определенного языка:
 
-* [C#предварительно скомпилированные](functions-dotnet-class-library.md#environment-variables)
-* [Скрипт C# (.csx)](functions-reference-csharp.md#environment-variables)
-* [F#скрипт (расширение fsx)](functions-reference-fsharp.md#environment-variables)
+* [Предкомпилированный код C#](functions-dotnet-class-library.md#environment-variables)
+* [Скрипт C# (CSX)](functions-reference-csharp.md#environment-variables)
+* [Скрипт F# (FSX)](functions-reference-fsharp.md#environment-variables)
 * [Java](functions-reference-java.md#environment-variables)
 * [JavaScript](functions-reference-node.md#environment-variables)
 
@@ -294,9 +294,9 @@ func host start
 
 Команда `host` требуется только в версии 1.x.
 
-`func host start` поддерживает следующие параметры:
+`func host start` имеет указанные ниже параметры.
 
-| Параметр     | Описание                            |
+| Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
 | **`--no-build`** | Не выполняйте сборку текущего проекта перед запуском. Только для проектов .NET. По умолчанию установлено значение false. Только версия 2.x. |
 | **`--cert`** | Путь к PFX-файлу, который содержит закрытый ключ. Используется только с `--useHttps`. Только версия 2.x. |
@@ -386,9 +386,9 @@ curl --request POST -H "Content-Type:application/json" --data '{"input":"sample 
 
 Вы также можете вызвать функцию напрямую с помощью `func run <FunctionName>` и предоставить входные данные для нее. Эта команда аналогична выполнению функции с помощью вкладки **Тест** на портале Azure.
 
-`func run` поддерживает следующие параметры:
+`func run` имеет указанные ниже параметры.
 
-| Параметр     | Описание                            |
+| Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
 | **`--content -c`** | Встроенное содержимое. |
 | **`--debug -d`** | Подключение отладчика к хост-процессу перед выполнением функции.|
@@ -428,14 +428,14 @@ func azure functionapp publish <FunctionAppName>
 
 Следующие параметры публикации проектов применимы для версий 1.x и 2.x:
 
-| Параметр     | Описание                            |
+| Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
 | **`--publish-local-settings -i`** |  Публикация параметров из файла local.settings.json в Azure с запросом на перезапись, если параметр уже существует. Если используется эмулятор хранилища, измените параметр приложения на [подключение действующего хранилища](#get-your-storage-connection-strings). |
 | **`--overwrite-settings -y`** | Отключите запрос на перезапись параметров приложения при использовании `--publish-local-settings -i`.|
 
 Следующие параметры публикации проектов поддерживаются только в версии 2.x:
 
-| Параметр     | Описание                            |
+| Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
 | **`--publish-settings-only -o`** |  Только публикует параметры и пропускает содержимое. Значение по умолчанию — запрос. |
 |**`--list-ignored-files`** | Отображает основанный на файле FUNCIGNORE список файлов, которые будут проигнорированы во время публикации. |
@@ -461,7 +461,7 @@ func deploy
 | Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
 | **`--registry`** | Имя реестра Docker, в который вошел текущий пользователь. |
-| **`--platform`** | Платформа размещения для приложения-функции. Допустимые значения: `kubernetes` |
+| **`--platform`** | Платформа размещения для приложения-функции. Допустимые параметры: `kubernetes`. |
 | **`--name`** | Имя приложения-функции. |
 | **`--max`**  | При необходимости задает максимальное число экземпляров приложения-функции, в которые будет выполняться развертывание. |
 | **`--min`**  | При необходимости задает минимальное число экземпляров приложения-функции, в которые будет выполняться развертывание. |
@@ -469,9 +469,9 @@ func deploy
 
 ## <a name="monitoring-functions"></a>Мониторинг функций
 
-Рекомендуемый способ наблюдения за выполнение функций — интеграция с Azure Application Insights. При создании приложения-функции на портале Azure эта интеграция выполняется по умолчанию. Тем не менее при создании приложения-функции с помощью Azure CLI, интеграция в приложение-функцию в Azure не делается.
+Рекомендуемый способ наблюдения за выполнение функций — интеграция с Azure Application Insights. При создании приложения-функции на портале Azure эта интеграция выполняется по умолчанию. Тем не менее при создании приложения-функции с помощью Azure CLI его интеграции в Azure не происходит.
 
-Чтобы включить Application Insights для приложения-функции:
+Чтобы настроить Application Insights для приложения-функции, сделайте следующее:
 
 [!INCLUDE [functions-connect-new-app-insights.md](../../includes/functions-connect-new-app-insights.md)]
 
@@ -484,8 +484,8 @@ func deploy
 
 <!-- LINKS -->
 
-[Основных инструментов функций Azure]: https://www.npmjs.com/package/azure-functions-core-tools
-[Портал Azure]: https://portal.azure.com 
+[Основные инструменты службы "Функции Azure"]: https://www.npmjs.com/package/azure-functions-core-tools
+[портале Azure]: https://portal.azure.com 
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows
 [«FUNCTIONS_WORKER_RUNTIME»]: functions-app-settings.md#functions_worker_runtime
 [«AzureWebJobsStorage»]: functions-app-settings.md#azurewebjobsstorage

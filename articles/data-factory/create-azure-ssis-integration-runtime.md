@@ -13,10 +13,10 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
 ms.openlocfilehash: d30ec0765627ec173f0027e49f44cb77f6b26ac6
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59361474"
 ---
 # <a name="create-azure-ssis-integration-runtime-in-azure-data-factory"></a>Создание среды выполнения интеграции Azure-SSIS в фабрике данных Azure
@@ -33,7 +33,7 @@ ms.locfileid: "59361474"
 
 В этой статье показаны различные способы подготовки среды выполнения интеграции Azure SSIS IR.
 
-- [Портал Azure](#azure-portal)
+- [портал Azure](#azure-portal)
 - [Azure PowerShell](#azure-powershell)
 - [Шаблон Azure Resource Manager](#azure-resource-manager-template)
 
@@ -69,7 +69,7 @@ ms.locfileid: "59361474"
 | Функция | Отдельная база данных / эластичный пул| Управляемый экземпляр |
 |---------|--------------|------------------|
 | **Планирование** | Агент SQL Server недоступен.<br/><br/>См. раздел [Планирование выполнения пакета в конвейере ADF](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages?view=sql-server-2017#activity).| Доступен агент управляемого экземпляра. |
-| **Authentication** | Вы можете создать SSISDB, выбрав пользователя автономной базы данных, представляющего любую группу AAD с управляемым удостоверением ADF, в качестве члена роли **db_owner**.<br/><br/>См. раздел [Использование проверки подлинности Azure AD для создания SSISDB на сервере базы данных SQL Azure](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-azure-sql-database). | Вы можете создать SSISDB, выбрав пользователя автономной базы данных, представляющего управляемое удостоверение ADF. <br/><br/>См. раздел [Использование проверки подлинности Azure AD для создания SSISDB в управляемом экземпляре базы данных SQL Azure](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-azure-sql-database-managed-instance). |
+| **Проверка подлинности** | Вы можете создать SSISDB, выбрав пользователя автономной базы данных, представляющего любую группу AAD с управляемым удостоверением ADF, в качестве члена роли **db_owner**.<br/><br/>См. раздел [Использование проверки подлинности Azure AD для создания SSISDB на сервере базы данных SQL Azure](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-azure-sql-database). | Вы можете создать SSISDB, выбрав пользователя автономной базы данных, представляющего управляемое удостоверение ADF. <br/><br/>См. раздел [Использование проверки подлинности Azure AD для создания SSISDB в управляемом экземпляре базы данных SQL Azure](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-azure-sql-database-managed-instance). |
 | **Уровень служб** | При создании среды выполнения интеграции Azure-SSIS на сервере базы данных SQL Azure для SSISDB можно выбрать уровень служб. Существует несколько уровней служб. | При создании среды выполнения интеграции Azure-SSIS в управляемом экземпляре уровень служб для SSISDB выбрать невозможно. Все базы данных одного управляемого экземпляра используют один и тот же ресурс, который ему выделен. |
 | **Виртуальная сеть** | Если вы используете сервер базы данных SQL Azure с конечными точками службы виртуальной сети или вам нужен доступ к локальным хранилищам данных, для присоединения Azure-SSIS поддерживаются только виртуальные сети Azure Resource Manager. | Для присоединения среды выполнения интеграции Azure-SSIS поддерживаются только виртуальные сети Azure Resource Manager. Виртуальная сеть требуется во всех случаях.<br/><br/>Если среда выполнения интеграции Azure-SSIS присоединяется к виртуальной сети управляемого экземпляра, используйте для них разные подсети. Если среда выполнения интеграции Azure-SSIS присоединяется к другой виртуальной сети, отличной от сети управляемого экземпляра, используйте пиринг между виртуальными сетями или подключение типа "виртуальная сеть — виртуальная сеть". См. статью [Подключение приложения к управляемому экземпляру базы данных SQL](../sql-database/sql-database-managed-instance-connect-app.md). |
 | **Распределенные транзакции** | Поддержка с помощью эластичных транзакций. Транзакции координатора распределенных транзакций (MSDTC) не поддерживаются. Если ваши пакеты SSIS используют MSDTC для координации распределенных транзакций, рекомендуем перейти на эластичные транзакции для базы данных SQL Azure. Дополнительные сведения см. в статье [Распределенные транзакции по облачным базам данных](../sql-database/sql-database-elastic-transactions-overview.md). | Не поддерживается. |

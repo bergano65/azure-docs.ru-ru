@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: shlo
 ms.openlocfilehash: 6ec43b06ce266b9ceaddb5dd21cbf52f509d6596
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59495914"
 ---
 # <a name="webhook-activity-in-azure-data-factory"></a>Веб-перехватчика действия в фабрике данных Azure
@@ -75,8 +75,8 @@ timeout | Время ожидания для действия &#39;callBackUri&#
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных:
 
 - [Действие условия If](control-flow-if-condition-activity.md)
-- [Действие выполнения работы](control-flow-execute-pipeline-activity.md)
-- [Действие For Each](control-flow-for-each-activity.md)
+- [Действие выполнения конвейера](control-flow-execute-pipeline-activity.md)
+- [Действие ForEach](control-flow-for-each-activity.md)
 - [Действие получения метаданных](control-flow-get-metadata-activity.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 - [Веб-действие](control-flow-web-activity.md)

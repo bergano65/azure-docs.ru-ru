@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 08/18/2017
 ms.author: chackdan
 ms.openlocfilehash: 0bd8a7d403ad1fe0f7abb15356cc9c90ed6b3f02
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59359425"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Распространенные вопросы о Service Fabric
@@ -111,13 +111,13 @@ ms.locfileid: "59359425"
 
 ### <a name="what-are-the-directories-and-processes-that-i-need-to-exclude-when-running-an-anti-virus-program-in-my-cluster"></a>Какие каталоги и процессы необходимо исключить при запуске антивирусной программы в кластере?
 
-| **Антивирусные Исключаемые каталоги** |
+| **Исключаемые при проверке антивирусной программой каталоги** |
 | --- |
 | Program Files\Microsoft Service Fabric |
 | FabricDataRoot (из конфигурации кластера) |
 | FabricLogRoot (из конфигурации кластера) |
 
-| **Антивирусные исключенные процессы** |
+| **Исключаемые при проверке антивирусной программой процессы** |
 | --- |
 | Fabric.exe |
 | FabricHost.exe |

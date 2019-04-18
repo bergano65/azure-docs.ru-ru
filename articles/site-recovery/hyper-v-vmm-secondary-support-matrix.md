@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: raynew
 ms.openlocfilehash: 60ca12e5b362a37eb9f85c9a0d1fc23ca99e9edc
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59360795"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-hyper-v-vms-to-a-secondary-site"></a>Матрица поддержки аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт
@@ -26,7 +26,7 @@ ms.locfileid: "59360795"
 
 ## <a name="host-servers"></a>Серверы узлов
 
-**Операционная система** | **Сведения**
+**Операционная система** | **Дополнительные сведения**
 --- | ---
 Windows Server 2012 R2 | На сервере должны быть установлены последние обновления.
 Windows Server 2016 |  Сейчас облака VMM 2016, сочетающие узлы Windows Server 2016 и 2012 R2, не поддерживаются.<br/><br/> Развернутые компоненты, обновленные с System Center 2012 R2 VMM 2012 R2 до System Center 2016, сейчас не поддерживаются.
@@ -53,7 +53,7 @@ Windows Server 2012 R2 | Любая операционная система на
 
 ## <a name="network-configuration---hostguest-vm"></a>Конфигурация сети — узел или гостевые виртуальные машины
 
-**Параметр Configuration** | **Поддерживаются**  
+**Конфигурация** | **Поддерживаются**  
 --- | --- 
 Узел — объединение сетевых адаптеров | Yes 
 Узел — виртуальная локальная сеть | Yes 
@@ -70,7 +70,7 @@ Windows Server 2012 R2 | Любая операционная система на
 
 ### <a name="host-storage"></a>Хранилище узла
 
-**Система хранения (узел)** | **Поддерживаются**
+**Устройство или система хранения (узел)** | **Поддерживаются**
 --- | --- 
 NFS | Н/Д
 SMB 3.0 |  Yes
@@ -79,7 +79,7 @@ SMB 3.0 |  Yes
 
 ### <a name="guest-or-physical-server-storage"></a>Хранилища гостевого или физического сервера
 
-**Параметр Configuration** | **Поддерживаются**
+**Конфигурация** | **Поддерживаются**
 --- | --- | 
 VMDK |  Н/Д
 VHD (VHDX) | Да (до 16 дисков)
@@ -108,13 +108,13 @@ RDM | Н/Д
 
 Поставщик координирует обмен данными между серверами VMM. 
 
-**Последний** | **Обновления**
+**Актуальная** | **Обновления**
 --- | --- 
-5.1.19 ([доступна на портале](https://aka.ms/downloaddra)) | [Новейшие функции и исправления](https://support.microsoft.com/kb/3155002)
+5.1.19 ([доступна на портале](https://aka.ms/downloaddra)) | [Новейшие функции и последние исправления](https://support.microsoft.com/kb/3155002)
 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Репликация виртуальных машин Hyper-V в облаках VMM на дополнительный сайт](tutorial-vmm-to-vmm.md)
+[Репликация виртуальных машин Hyper-V из облаков VMM на вторичный сайт VMM](tutorial-vmm-to-vmm.md)
 

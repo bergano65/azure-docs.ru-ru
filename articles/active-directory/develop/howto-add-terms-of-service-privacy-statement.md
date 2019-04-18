@@ -18,10 +18,10 @@ ms.reviwer: lenalepa, sureshja
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 97728fa70f0c5f58510e0e68d27a379b20887703
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59500309"
 ---
 # <a name="how-to-configure-terms-of-service-and-privacy-statement-for-an-app"></a>Практическое руководство: Настройка условия службы и заявление о конфиденциальности для приложения
@@ -56,10 +56,10 @@ ms.locfileid: "59500309"
 
 Подготовив условия обслуживания и заявление о конфиденциальности, можно добавить ссылки на эти документы в приложение с помощью одного из следующих методов:
 
-* [На портале Azure](#registered-in-azure-portal)
-* [В портале регистрации приложений, или в центре разработчиков](#registered-in-app-reg-portal)
-* [С помощью приложения объекта JSON](#app-object-json)
-* [С помощью бета-версии MSGraph REST API](#msgraph-beta-rest-api)
+* [с помощью портала Azure](#registered-in-azure-portal);
+* [на портале регистрации приложений или в Центре разработки](#registered-in-app-reg-portal);
+* [с помощью JSON объекта приложения](#app-object-json);
+* [с помощью бета-версии REST API MSGraph](#msgraph-beta-rest-api).
 
 ### <a name="registered-in-azure-portal"></a>Если приложение зарегистрировано на портале Azure
 
@@ -114,5 +114,5 @@ PATCH https://graph.microsoft.com/beta/applications/{application id}
 ```
 
 > [!NOTE]
-> * Будьте внимательны, чтобы не перезаписать любые существующие значения, которые были назначены для любой из этих полей: `supportUrl`, `marketingUrl`, и `logoUrl`
+> * Соблюдайте осторожность, чтобы не перезаписать значения, присвоенные какому-либо из этих полей: `supportUrl`, `marketingUrl`, и `logoUrl`.
 > * Бета-версия REST API MSGraph будет работать только в случае входа с учетной записью Azure AD. Личные учетные записи Майкрософт не поддерживаются.

@@ -12,10 +12,10 @@ ms.date: 04/05/2019
 ms.author: tulasim
 ms.custom: seodec18
 ms.openlocfilehash: 97c44c9285ec7a29827361111599db37bc6a86f3
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59282582"
 ---
 # <a name="confidence-score-of-a-qna-maker-knowledge-base"></a>Оценка достоверности в базе знаний QnA Maker
@@ -82,7 +82,7 @@ ms.locfileid: "59282582"
 
     ![Доступ к службе приложений для QnA Maker на портале Azure](../media/qnamaker-concepts-confidencescore/set-default-response.png)
 
-3. Щелкните **Параметры приложения** и укажите в поле **DefaultAnswer** требуемый ответ по умолчанию. Нажмите кнопку **Сохранить**.
+3. Щелкните **Параметры приложения** и укажите в поле **DefaultAnswer** требуемый ответ по умолчанию. Выберите команду **Сохранить**.
 
     ![Выбор элемента "Параметры приложения" и изменение значения в поле DefaultAnswer для QnA Maker](../media/qnamaker-concepts-confidencescore/change-response.png)
 

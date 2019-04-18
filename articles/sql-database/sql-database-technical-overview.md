@@ -14,10 +14,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 04/08/2019
 ms.openlocfilehash: ecfd0cbc3eaaae64a956568a506252fdbeddcac2
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59358333"
 ---
 # <a name="what-is-azure-sql-database-service"></a>Что такое служба базы данных SQL Azure
@@ -254,10 +254,10 @@ ms.locfileid: "59358333"
 - Сравнение цен и калькуляторы для отдельных баз данных и пулов эластичных баз данных см. на [странице расценок](https://azure.microsoft.com/pricing/details/sql-database/).
 - См. эти краткие руководства по быстрому запуску:
 
-  - [Создание базы данных SQL на портале Azure](sql-database-single-database-get-started.md)  
-  - [Создание базы данных SQL с помощью Azure CLI](sql-database-get-started-cli.md)
-  - [Создание базы данных SQL с помощью PowerShell](sql-database-get-started-powershell.md)
+  - [Create and query a single Azure SQL database in the Azure portal](sql-database-single-database-get-started.md) (Создание отдельной базы данных SQL с помощью портала Azure)  
+  - [Создание базы данных SQL Azure и отправка к ней запросов с помощью Azure CLI](sql-database-get-started-cli.md)
+  - [Создание отдельной базы данных SQL Azure с помощью PowerShell](sql-database-get-started-powershell.md)
 
 - Примеры использования Azure CLI и PowerShell:
-  - [Примеры Azure CLI для базы данных SQL](sql-database-cli-samples.md)
-  - [Примеры Azure PowerShell для базы данных SQL](sql-database-powershell-samples.md)
+  - [Примеры Azure CLI для базы данных SQL Azure](sql-database-cli-samples.md)
+  - [Примеры Azure PowerShell для базы данных SQL Azure](sql-database-powershell-samples.md)

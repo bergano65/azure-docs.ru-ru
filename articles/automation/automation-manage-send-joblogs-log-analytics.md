@@ -10,10 +10,10 @@ ms.date: 02/05/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 82baef7ce0d91713c8bef202ab0ea0925d290f3a
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59496596"
 ---
 # <a name="forward-job-status-and-job-streams-from-automation-to-azure-monitor-logs"></a>Пересылка состояния задания и потоков заданий из службы автоматизации для журналов Azure Monitor
@@ -68,8 +68,7 @@ Get-AzResource -ResourceType "Microsoft.OperationalInsights/workspaces"
 
 После запуска этого сценария может занять час перед началом просмотра записей в журналах Azure Monitor новый элемент JobLogs или JobStreams.
 
-Чтобы просмотреть журналы, выполните следующий запрос в поиске по журналам log analytics:
-`AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION"`
+Чтобы просмотреть журналы, выполните следующий запрос в поиске по журналам log analytics: `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION"`
 
 ### <a name="verify-configuration"></a>Проверка конфигурации
 
@@ -90,7 +89,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 
 ### <a name="job-logs"></a>Журналы заданий
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 | --- | --- |
 | TimeGenerated |Дата и время выполнения задания Runbook. |
 | RunbookName_s |Имя Runbook. |
@@ -112,7 +111,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 
 
 ### <a name="job-streams"></a>Потоки заданий
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 | --- | --- |
 | TimeGenerated |Дата и время выполнения задания Runbook. |
 | RunbookName_s |Имя Runbook. |
@@ -137,8 +136,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 
 Теперь, когда вы начали отправку журналов заданий службы автоматизации в Azure Monitor журналы, давайте посмотрим, что делать с помощью этих журналов в журналы Azure Monitor.
 
-Чтобы просмотреть журналы, выполните следующий запрос:
-`AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION"`
+Чтобы просмотреть журналы, выполните следующий запрос: `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION"`
 
 ### <a name="send-an-email-when-a-runbook-job-fails-or-suspends"></a>Отправка электронного сообщения при сбое или приостановке задания Runbook
 Один из наших основных клиентов запрашивает возможность отправлять электронное сообщение или текст при возникновении ошибки в работе задания runbook.   
@@ -146,7 +144,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 Чтобы создать правило генерации оповещений, начните с создания поиска в журнале записей заданий Runbook, которые должны вызывать оповещение. Щелкните кнопку **Оповещение**, чтобы создать и настроить правило генерации оповещений.
 
 1. На странице обзора рабочей области Log Analytics, щелкните **Просмотр журналов**.
-2. Поищите по журналам свое оповещение при помощи следующего поискового запроса: `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and (ResultType == "Failed" or ResultType == "Suspended")`  Можно также группирование по RunbookName с помощью: `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and (ResultType == "Failed" or ResultType == "Suspended") | summarize AggregatedValue = count() by RunbookName_s`
+2. Поищите по журналам свое оповещение при помощи следующего поискового запроса: `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and (ResultType == "Failed" or ResultType == "Suspended")`  Вы также можете использовать группирование по RunbookName с помощью `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and (ResultType == "Failed" or ResultType == "Suspended") | summarize AggregatedValue = count() by RunbookName_s`.
 
    Если вы настроили для рабочей области журналы из более чем одной учетной записи службы автоматизации или подписки, то можете группировать оповещения по подписке или учетной записи службы автоматизации. Имя учетной записи службы автоматизации можно найти в поле "Ресурс" для поиска JobLogs.
 3. Чтобы открыть экран **Создать правило**, щелкните **+ Новое правило генерации оповещений** в верхней части страницы. Дополнительные сведения о параметрах настройки оповещения см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](../azure-monitor/platform/alerts-unified-log.md).
@@ -166,7 +164,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 Наконец, вам может понадобиться визуализировать журнал задания по прошествии времени. Для поиска для поиска состояния заданий по прошествии времени можно использовать приведенный ниже запрос.
 
 `AzureDiagnostics | where ResourceProvider == "MICROSOFT.AUTOMATION" and Category == "JobLogs" and ResultType != "started" | summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h)`  
-<br> ![Log Analytics диаграмма хронологии состояния задания](media/automation-manage-send-joblogs-log-analytics/historical-job-status-chart.png)<br>
+<br> ![Диаграмма хронологии состояния задания в Log Analytics](media/automation-manage-send-joblogs-log-analytics/historical-job-status-chart.png)<br>
 
 ## <a name="remove-diagnostic-settings"></a>Удаление параметров диагностики
 

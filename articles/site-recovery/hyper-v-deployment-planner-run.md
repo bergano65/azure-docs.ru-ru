@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 4/9/2019
 ms.author: mayg
 ms.openlocfilehash: 6528b683ec9464c2b1982d631455718e6fe6f3b7
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59361336"
 ---
 # <a name="run-the-azure-site-recovery-deployment-planner-for-hyper-v-disaster-recovery-to-azure"></a>Запуск Планировщика развертывания Azure Site Recovery для аварийного восстановления Hyper-V в Azure
@@ -20,7 +20,7 @@ ms.locfileid: "59361336"
 -   Получение списка виртуальных машин
 -   [Профиль](#profile-hyper-v-vms)
 -   Создание отчета
--   [Оценка пропускной способности.](#get-throughput)
+-   [Получение данных пропускной способности](#get-throughput).
 
 Сначала запустите планировщик, чтобы получить список виртуальных машин из одного или нескольких узлов Hyper-V. Затем запустите программу в режиме профилирования, чтобы получить сведения об активности обработки данных и числе операций ввода-вывода в секунду на виртуальной машине. Затем запустите его в режиме создания отчетов, чтобы оценить требования к пропускной способности сети и хранилищу.
 
@@ -254,14 +254,14 @@ ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization Hyper-V -Dire
 
 Созданный отчет Microsoft Excel содержит следующие сведения:
 
-* [Сводка по локальной инфраструктуре](hyper-v-deployment-planner-analyze-report.md#on-premises-summary)
-* [Рекомендации](hyper-v-deployment-planner-analyze-report.md#recommendations)
-* [Размещение хранилища виртуальной машины](hyper-v-deployment-planner-analyze-report.md#vm-storage-placement-recommendation)
+* [сводка по локальной инфраструктуре](hyper-v-deployment-planner-analyze-report.md#on-premises-summary);
+* [рекомендации](hyper-v-deployment-planner-analyze-report.md#recommendations);
+* [размещение хранилища виртуальной машины](hyper-v-deployment-planner-analyze-report.md#vm-storage-placement-recommendation);
 * [Совместимые виртуальные машины](hyper-v-deployment-planner-analyze-report.md#compatible-vms)
 * [Несовместимые виртуальные машины](hyper-v-deployment-planner-analyze-report.md#incompatible-vms)
-* [Требования к локальному хранилищу](hyper-v-deployment-planner-analyze-report.md#on-premises-storage-requirement)
-* [Пакетная обработка IR](hyper-v-deployment-planner-analyze-report.md#initial-replication-batching)
-* [Оценка затрат](hyper-v-deployment-planner-cost-estimation.md)
+* [требования к локальному хранилищу](hyper-v-deployment-planner-analyze-report.md#on-premises-storage-requirement);
+* [пакетная обработка IR](hyper-v-deployment-planner-analyze-report.md#initial-replication-batching);
+* [оценка затрат](hyper-v-deployment-planner-cost-estimation.md).
 
 ![Отчет планировщика развертывания](media/hyper-v-deployment-planner-run/deployment-planner-report-h2a.png)
 

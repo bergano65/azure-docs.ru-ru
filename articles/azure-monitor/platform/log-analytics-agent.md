@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 04/10/2019
 ms.author: magoedte
 ms.openlocfilehash: 5f9a225e8a256dd55feadf97f0a7b9f922487a6f
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59492810"
 ---
 # <a name="collect-log-data-with-the-azure-log-analytics-agent"></a>Сбор данных журнала с помощью агента Azure Log Analytics
@@ -105,8 +105,7 @@ ms.locfileid: "59492810"
 |proxyhost | Адрес или полное доменное имя прокси-сервера или шлюза Log Analytics |
 |порт | Необязательный номер порта прокси-сервера или шлюза Log Analytics |
 
-Например: 
-`https://user01:password@proxy01.contoso.com:30443`
+Например: `https://user01:password@proxy01.contoso.com:30443`
 
 > [!NOTE]
 > Если в пароле использованы специальные знаки (например, \@), отобразится ошибка подключения прокси-сервера из-за неправильного анализа значения.  Чтобы обойти эту проблему, закодируйте пароль в URL-адрес, используя специальные инструменты (например, [URLDecode](https://www.urldecoder.org/)).  

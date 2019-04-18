@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.openlocfilehash: 3356d3eee00a640efe10e2d9f3aa4fa7be775995
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59360779"
 ---
 # <a name="use-azure-storage-with-azure-hdinsight-clusters"></a>Использование службы хранилища Azure с кластерами Azure HDInsight
@@ -297,25 +297,25 @@ Invoke-AzHDInsightHiveJob -Defines $defines -Query "dfs -ls wasb://$undefinedCon
 azure storage blob
 ```
 
-**Пример использования классический интерфейс командной строки Azure для отправки файла**
+**Пример использования классического интерфейса командной строки Azure для отправки файла**
 
 ```cli
 azure storage blob upload <sourcefilename> <containername> <blobname> --account-name <storageaccountname> --account-key <storageaccountkey>
 ```
 
-**Пример использования Azure классический интерфейс командной строки для загрузки файла**
+**Пример использования классического интерфейса командной строки Azure для скачивания файла**
 
 ```cli
 azure storage blob download <containername> <blobname> <destinationfilename> --account-name <storageaccountname> --account-key <storageaccountkey>
 ```
 
-**Пример использования Azure классический интерфейс командной строки для удаления файла**
+**Пример использования классического интерфейса командной строки Azure для удаления файла**
 
 ```cli
 azure storage blob delete <containername> <blobname> --account-name <storageaccountname> --account-key <storageaccountkey>
 ```
 
-**Пример использования классический интерфейс командной строки Azure для просмотра списка файлов**
+**Пример использования классического интерфейса командной строки Azure для перечисления файлов**
 
 ```cli
 azure storage blob list <containername> <blobname|prefix> --account-name <storageaccountname> --account-key <storageaccountkey>
@@ -335,12 +335,12 @@ azure storage blob list <containername> <blobname|prefix> --account-name <storag
 Дополнительные сведения можно найти в разделе 
 
 * [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux][hdinsight-get-started]
-* [Начало работы с Azure Data Lake Storage](../data-lake-store/data-lake-store-get-started-portal.md)
+* [Начало работы с Azure Data Lake Storage](../data-lake-store/data-lake-store-get-started-portal.md)
 * [Отправка данных в HDInsight][hdinsight-upload-data]
 * [Использование Apache Hive с HDInsight][hdinsight-use-hive]
 * [Использование Apache Pig с HDInsight][hdinsight-use-pig]
 * [Использование подписанных URL-адресов хранилища Azure для ограничения доступа к данным с помощью HDInsight][hdinsight-use-sas]
-* [Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-storage-gen2.md)
+* [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-storage-gen2.md)
 
 [hdinsight-use-sas]: hdinsight-storage-sharedaccesssignature-permissions.md
 [powershell-install]: /powershell/azureps-cmdlets-docs

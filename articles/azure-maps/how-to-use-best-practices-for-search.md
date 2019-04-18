@@ -8,10 +8,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: f7a14e975a5ca3aee5588f55f43b28081c100074
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59358144"
 ---
 # <a name="best-practices-to-use-azure-maps-search-service"></a>Советы и рекомендации для использования службы поиска Azure Maps
@@ -86,7 +86,7 @@ Azure Maps [службы поиска](https://docs.microsoft.com/rest/api/maps/
 https://atlas.microsoft.com/search/address/reverse/json?api-version=1.0&subscription-key={subscription-key}&query=47.6394532,-122.1304551&language=en-US&entityType=Municipality
 ```
 
-**Ответ:**
+**Ответ.**
 
 ```JSON
 {
@@ -136,13 +136,13 @@ https://atlas.microsoft.com/search/address/reverse/json?api-version=1.0&subscrip
 
 В примере запроса ниже можно см. в разделе, адрес службы поиска запрашиваются «Майкросо» с `typehead` параметру присвоить **true**. Если вы заметили ответ, вы увидите, что служба поиска интерпретируется запроса в виде частичный запрос и ответ содержит результаты запроса, предложенные автоматически.
 
-**Пример запроса.**
+**Пример запроса**
 
 ```HTTP
 https://atlas.microsoft.com/search/address/json?subscription-key={subscription-key}&api-version=1.0&typeahead=true&countrySet=US&lat=47.6370891183&lon=-122.123736172&query=Microsoft
 ```
 
-**Ответ:**
+**Ответ.**
 
 ```JSON
 {
@@ -318,13 +318,13 @@ url.QueryEscape(query)
 
 Давайте внесем [категории поиска ДОСТОПРИМЕЧАТЕЛЬНОСТЕЙ](https://docs.microsoft.com/rest/api/maps/search/getsearchpoicategory) запрос заправки практически кампусе Майкрософт (Редмонд, штат Вашингтон). Если вы заметили ответ, вы увидите сведения о торговых марках для каждая POI возвращается.
 
-**Пример запроса.**
+**Пример запроса**
 
 ```HTTP
 https://atlas.microsoft.com/search/poi/json?subscription-key={subscription-key}&api-version=1.0&query=gas%20station&limit=3&lat=47.6413362&lon=-122.1327968
 ```
 
-**Ответ:**
+**Ответ.**
 
 ```JSON
 {
@@ -497,7 +497,7 @@ https://atlas.microsoft.com/search/poi/json?subscription-key={subscription-key}&
 
 Создадим запроса на поиск адреса для службы карт Azure [службы поиска](https://docs.microsoft.com/rest/api/maps/search) для адреса в Сиэтле. Если вы внимательно посмотреть на URL-АДРЕСЕ запроса ниже, мы задали `countrySet` параметр **США** для поиска адреса в США.
 
-**Пример запроса.**
+**Пример запроса**
 
 ```HTTP
 https://atlas.microsoft.com/search/address/json?subscription-key={subscription-key}&api-version=1&query=400%20Broad%20Street%2C%20Seattle%2C%20WA&countrySet=US
@@ -519,7 +519,7 @@ https://atlas.microsoft.com/search/address/json?subscription-key={subscription-k
 
 * **Пересекающей улицы:** Пересечения. Представление соединения; места, где пересекаются два улицы.
 
-**Ответ:**
+**Ответ.**
 
 ```JSON
 {

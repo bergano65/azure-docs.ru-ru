@@ -13,10 +13,10 @@ ms.date: 10/05/2018
 ms.reviewer: mbullwin
 ms.author: tilee
 ms.openlocfilehash: 101c985178b8269b4ff542b94b057330d0c2652a
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59496067"
 ---
 # <a name="application-insights-for-azure-functions-supported-features"></a>Application Insights для функций, поддерживаемых в службе "Функции Azure"
@@ -27,9 +27,9 @@ ms.locfileid: "59496067"
 
 | Функции Azure                       | V1                | Версия 2 (Ignite 2018)  | 
 |-----------------------------------    |---------------    |------------------ |
-| **Пакет SDK .NET Application Insights**   | **2.5.0**       | **2.9.1**         |
+| **Пакет SDK Application Insights для .NET**   | **2.5.0**       | **2.9.1**         |
 | | | | 
-| **Автоматический сбор сведений**        |                 |                   |               
+| **Автоматический сбор**        |                 |                   |               
 | &bull; Запросы                     | Yes             | Yes               | 
 | &bull; Исключения                   | Yes             | Yes               | 
 | &bull; Счетчики производительности         | Yes             | Yes               |
@@ -45,11 +45,11 @@ ms.locfileid: "59496067"
 | &bull; Выборка                     | Yes             | Yes               | 
 | &bull; Пакет пульса                   |                 | Yes               | 
 | | | | 
-| **Корреляции**                       |                   |                   |               
+| **Корреляция**                       |                   |                   |               
 | &bull; Служебная шина                     |                   | Yes               | 
 | &bull; EventHub                       |                   | Yes               | 
 | | | | 
-| **Настраивается**                      |                   |                   |           
+| **Можно настроить**                      |                   |                   |           
 | &bull;Полностью настраивается.<br/>Инструкции см. в комментариях [в этой статье](https://github.com/Microsoft/ApplicationInsights-aspnetcore/issues/759#issuecomment-426687852).<br/>Сведения обо всех вариантах ASP.NET Core см. в статье [Custom Configuration](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Custom-Configuration) (Настраиваемая конфигурация).               |                   | Yes                   | 
 
 

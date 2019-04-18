@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: mbullwin
 ms.openlocfilehash: 25f620cb36c2bfb548ecf08c33dc04b37118a256
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59489628"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Мониторинг производительности Службы приложений Azure
@@ -99,7 +99,7 @@ ms.locfileid: "59489628"
 * Выберите **параметры** > ** ** приложения параметры ***
    * В разделе "Параметры приложения" добавьте новую **имя параметра приложения** и **значение**:
 
-     Имя: `APPINSIGHTS_JAVASCRIPT_ENABLED`
+     Имя: `APPINSIGHTS_JAVASCRIPT_ENABLED`.
 
      Значение: `true`
 
@@ -118,7 +118,7 @@ ms.locfileid: "59489628"
 * Выберите **параметры** > **параметры приложения**
    * В разделе "Параметры приложения" добавьте новую **имя параметра приложения** и **значение**:
 
-     name. `APPINSIGHTS_JAVASCRIPT_ENABLED`
+     Имя: `APPINSIGHTS_JAVASCRIPT_ENABLED`
 
      Значение: `false`
 

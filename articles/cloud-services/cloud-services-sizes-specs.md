@@ -15,10 +15,10 @@ ms.workload: tbd
 ms.date: 07/18/2017
 ms.author: jeconnoc
 ms.openlocfilehash: 6f3177c37a2db03b8821e3e4f5b68c8b1315a016
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59358248"
 ---
 # <a name="sizes-for-cloud-services"></a>Размеры для облачных служб
@@ -59,16 +59,16 @@ ms.locfileid: "59358248"
 
 | Семейство SKU | ACU/число ядер |
 | --- | --- |
-| [Очень малый](#a-series) |50 |
-| [Малый ExtraLarge](#a-series) |100 |
-| [A5 – 7](#a-series) |100 |
-| [A8 – A11](#a-series) |225* |
+| [ExtraSmall](#a-series) |50 |
+| [Small-ExtraLarge](#a-series) |100 |
+| [A5–7](#a-series) |100 |
+| [A8-A11](#a-series) |225* |
 | [A v2](#av2-series) |100 |
 | [D](#d-series) |160 |
-| [D версии 2](#dv2-series) |160–190* |
+| [D v2](#dv2-series) |160–190* |
 | [D v3](#dv3-series) |160–190* |
 | [E v3](#ev3-series) |160–190* |
-| [G.](#g-series) |180–240* |
+| [G](#g-series) |180–240* |
 | [H](#h-series) |290–300* |
 
 Единицы ACU, помеченные * , основаны на технологии Intel® Turbo для увеличения частоты ЦП и значительного повышения производительности. Степень увеличения производительности может различаться в зависимости от размера виртуальной машины, рабочей нагрузки и других рабочих нагрузок, выполняющихся на том же узле.

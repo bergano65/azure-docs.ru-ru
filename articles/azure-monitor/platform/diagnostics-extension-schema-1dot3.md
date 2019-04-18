@@ -10,10 +10,10 @@ ms.date: 09/20/2018
 ms.author: robb
 ms.subservice: diagnostic-extension
 ms.openlocfilehash: fa03017c35c76d986139eeee00eea8a9b4a00e62
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59497089"
 ---
 # <a name="azure-diagnostics-13-and-later-configuration-schema"></a>Схема конфигурации системы диагностики Azure версии 1.3 и более поздней
@@ -408,7 +408,7 @@ ms.locfileid: "59497089"
 
 
 ## <a name="diagnosticsconfiguration-element"></a>Элемент DiagnosticsConfiguration  
- *Дерево: Корневой элемент — DiagnosticsConfiguration*
+ *Дерево: корневой элемент — DiagnosticsConfiguration*
 
 Добавлен в версии 1.3.  
 
@@ -425,33 +425,33 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 |**IsEnabled**|Логическое значение. Ознакомьтесь с описанием в другом разделе на этой странице.|  
 
 ## <a name="publicconfig-element"></a>Элемент PublicConfig  
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig*
 
  Описывает общедоступную конфигурацию диагностики.  
 
-|Дочерние элементы|Описание|  
+|Дочерние элементы|ОПИСАНИЕ|  
 |--------------------|-----------------|  
 |**WadCfg**|Обязательный элемент. Ознакомьтесь с описанием в другом разделе на этой странице.|  
 |**StorageAccount**|Имя учетной записи хранения Azure для хранения данных. Может также быть указан как параметр при выполнении командлета Set-AzureServiceDiagnosticsExtension.|  
-|**Тип хранилища**|Может быть *таблицей*, *большим двоичным объектом* или *TableAndBlob*. Таблица — это значение по умолчанию. При выборе TableAndBlob диагностические данные записываются дважды (по одному разу на каждый тип).|  
-|**LocalResourceDirectory**|Каталог на виртуальной машине, в котором Monitoring Agent хранит данные событий. Если этот параметр не задан, используется каталог по умолчанию:<br /><br /> Для рабочих и веб-роли: `C:\Resources\<guid>\directory\<guid>.<RoleName.DiagnosticStore\`<br /><br /> Для виртуальной машины: `C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<WADVersion>\WAD<WADVersion>`<br /><br /> Ниже перечислены обязательные атрибуты.<br /><br /> - **path**: каталог в системе для использования системой диагностики Azure.<br /><br /> - **expandEnvironment**: позволяет раскрыть переменные среды в пути.|  
+|**StorageType**|Может быть *таблицей*, *большим двоичным объектом* или *TableAndBlob*. Таблица — это значение по умолчанию. При выборе TableAndBlob диагностические данные записываются дважды (по одному разу на каждый тип).|  
+|**LocalResourceDirectory**|Каталог на виртуальной машине, в котором Monitoring Agent хранит данные событий. Если этот параметр не задан, используется каталог по умолчанию:<br /><br /> для рабочей роли или веб-роли: `C:\Resources\<guid>\directory\<guid>.<RoleName.DiagnosticStore\`<br /><br /> для виртуальной машины: `C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<WADVersion>\WAD<WADVersion>`<br /><br /> Ниже перечислены обязательные атрибуты.<br /><br /> - **path**: каталог в системе для использования системой диагностики Azure.<br /><br /> - **expandEnvironment**: позволяет раскрыть переменные среды в пути.|  
 
 ## <a name="wadcfg-element"></a>Элемент WadCFG  
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG*
 
  Позволяет определить и настроить сбор данных телеметрии.  
 
 
 ## <a name="diagnosticmonitorconfiguration-element"></a>Элемент DiagnosticMonitorConfiguration
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration*
 
  Обязательно для заполнения
 
-|Атрибуты|Описание|  
+|Атрибуты|ОПИСАНИЕ|  
 |----------------|-----------------|  
 | **overallQuotaInMB** | Максимальный объем пространства на локальном жестком диске, доступный для диагностических данных различного типа, собранных системой диагностики Azure. Значение по умолчанию составляет 4096 МБ.<br />
 |**useProxyServer** | Позволяет настроить систему диагностики Azure для использования параметров прокси-сервера, указанных в настройках IE.|
-|**sinks** | Добавлено в версии 1.5. Необязательный элемент. Указывает расположение приемника для отправки диагностических данных для всех дочерних элементов с соответствующей поддержкой. Пример приемника — Application Insights или Центры событий Azure.|  
+|**Приемники** | Добавлено в версии 1.5. Необязательный элемент. Указывает расположение приемника для отправки диагностических данных для всех дочерних элементов с соответствующей поддержкой. Пример приемника — Application Insights или Центры событий Azure.|  
 
 
 <br /> <br />
@@ -460,7 +460,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 |--------------------|-----------------|  
 |**CrashDumps**|Ознакомьтесь с описанием в другом разделе на этой странице.|  
 |**DiagnosticInfrastructureLogs**|Включает сбор журналов, создаваемых системой диагностикой Azure. Журналы инфраструктуры диагностики удобны для устранения неполадок в самой системе диагностики. Необязательные атрибуты:<br /><br /> - **scheduledTransferLogLevelFilter**: задает минимальный уровень серьезности собираемых журналов.<br /><br /> - **scheduledTransferPeriod**: интервал между запланированными передачами в службу хранилища, округленный с точностью до ближайшей минуты. Значение относится к [типу данных XML "Duration"](https://www.w3schools.com/xml/schema_dtypes_date.asp). |  
-|**Каталоги**|Ознакомьтесь с описанием в другом разделе на этой странице.|  
+|**Directories**|Ознакомьтесь с описанием в другом разделе на этой странице.|  
 |**EtwProviders**|Ознакомьтесь с описанием в другом разделе на этой странице.|  
 |**Метрики**|Ознакомьтесь с описанием в другом разделе на этой странице.|  
 |**PerformanceCounters**|Ознакомьтесь с описанием в другом разделе на этой странице.|  
@@ -470,11 +470,11 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 
 ## <a name="crashdumps-element"></a>Элемент CrashDumps  
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — CrashDumps*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — CrashDumps*
 
  Включает сбор аварийных дампов.  
 
-|Атрибуты|Описание|  
+|Атрибуты|ОПИСАНИЕ|  
 |----------------|-----------------|  
 |**containerName**|Необязательный элемент. Имя контейнера больших двоичных объектов в вашей учетной записи хранения Azure, используемого для хранения аварийных дампов.|  
 |**crashDumpType**|Необязательный элемент.  Позволяет настроить систему диагностики Azure для сбора мини-дампов или полных дампов.|  
@@ -485,23 +485,23 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 |**CrashDumpConfiguration**|Обязательный элемент. Определяет значения конфигурации для каждого процесса.<br /><br /> Следующий атрибут также является обязательным:<br /><br /> **processName**: имя процесса, для которого системе диагностики Azure нужно собирать аварийные дампы.|  
 
 ## <a name="directories-element"></a>Элемент Directories
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — Directories*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — Directories*
 
  Включает сбор содержимого каталога, журналов невыполненных запросов на вход IIS и (или) журналов IIS.  
 
  Необязательный атрибут **scheduledTransferPeriod**. Ознакомьтесь с описанием выше.  
 
-|Дочерние элементы|Описание|  
+|Дочерние элементы|ОПИСАНИЕ|  
 |--------------------|-----------------|  
 |**IISLogs**|Если добавить этот элемент в конфигурацию, то будет включен сбор журналов IIS.<br /><br /> **containerName**: имя контейнера больших двоичных объектов в вашей учетной записи хранения Azure, используемого для хранения журналов IIS.|   
 |**FailedRequestLogs**|Если добавить этот элемент в конфигурацию, то будет включен сбор журналов о невыполненных запросах к сайту или приложению IIS. Вам также необходимо включить параметры трассировки в разделе **system.WebServer** файла **Web.config**.|  
-|**Источники данных**|Задает список отслеживаемых каталогов.|
+|**DataSources**|Задает список отслеживаемых каталогов.|
 
 
 
 
 ## <a name="datasources-element"></a>Элемент DataSources  
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — Directories — DataSources*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — Directories — DataSources*
 
  Задает список отслеживаемых каталогов.  
 
@@ -514,19 +514,19 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 
 ## <a name="directoryconfiguration-element"></a>Элемент DirectoryConfiguration  
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — Directories — DataSources — DirectoryConfiguration*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — Directories — DataSources — DirectoryConfiguration*
 
  Может содержать только один из элементов **Absolute** и **LocalResource**, но не оба.  
 
 |Дочерние элементы|ОПИСАНИЕ|  
 |--------------------|-----------------|  
-|**Абсолютный**|Абсолютный путь к отслеживаемому каталогу. Ниже приведены обязательные атрибуты.<br /><br /> - **Path**: абсолютный путь к отслеживаемому каталогу.<br /><br /> - **expandEnvironment**: позволяет раскрыть переменные среды, указанные в пути.|  
+|**Absolute**|Абсолютный путь к отслеживаемому каталогу. Ниже приведены обязательные атрибуты.<br /><br /> - **Path**: абсолютный путь к отслеживаемому каталогу.<br /><br /> - **expandEnvironment**: позволяет раскрыть переменные среды, указанные в пути.|  
 |**LocalResource**|Путь относительно отслеживаемого локального ресурса. Ниже перечислены обязательные атрибуты.<br /><br /> - **Name**: локальный ресурс, который содержит каталог для отслеживания.<br /><br /> - **relativePath**: путь относительно значения Name, содержащего отслеживаемый каталог.|  
 
 
 
 ## <a name="etwproviders-element"></a>Элемент EtwProviders  
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — EtwProviders*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — EtwProviders*
 
  Настраивает сбор событий ETW (трассировка событий Windows) из поставщиков на основе EventSource и (или) манифеста ETW.  
 
@@ -538,42 +538,42 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 
 ## <a name="etweventsourceproviderconfiguration-element"></a>Элемент EtwEventSourceProviderConfiguration  
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — EtwProviders — EtwEventSourceProviderConfiguration*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — EtwProviders — EtwEventSourceProviderConfiguration*
 
  Позволяет настроить сбор событий, создаваемых из [класса EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource\(v=vs.110\).aspx).  
 
-|Дочерние элементы|Описание|  
+|Дочерние элементы|ОПИСАНИЕ|  
 |--------------------|-----------------|  
 |**DefaultEvents**|Необязательный атрибут:<br/><br/> **eventDestination**: имя таблицы для хранения событий.|  
-|**Событие**|Обязательный атрибут:<br /><br /> **id**: идентификатор события.<br /><br /> Необязательный атрибут:<br /><br /> **eventDestination**: имя таблицы для хранения событий.|  
+|**Event**|Обязательный атрибут:<br /><br /> **id**: идентификатор события.<br /><br /> Необязательный атрибут:<br /><br /> **eventDestination**: имя таблицы для хранения событий.|  
 
 
 
 ## <a name="etwmanifestproviderconfiguration-element"></a>Элемент EtwManifestProviderConfiguration  
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — EtwProviders — EtwManifestProviderConfiguration*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — EtwProviders — EtwManifestProviderConfiguration*
 
 |Дочерние элементы|ОПИСАНИЕ|  
 |--------------------|-----------------|  
 |**DefaultEvents**|Необязательный атрибут:<br /><br /> **eventDestination**: имя таблицы для хранения событий.|  
-|**Событие**|Обязательный атрибут:<br /><br /> **id**: идентификатор события.<br /><br /> Необязательный атрибут:<br /><br /> **eventDestination**: имя таблицы для хранения событий.|  
+|**Event**|Обязательный атрибут:<br /><br /> **id**: идентификатор события.<br /><br /> Необязательный атрибут:<br /><br /> **eventDestination**: имя таблицы для хранения событий.|  
 
 
 
 ## <a name="metrics-element"></a>Элемент Metrics  
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — Metrics*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — Metrics*
 
  Позволяет создать таблицу счетчиков производительности, которая оптимизирована для быстрых запросов. Каждый счетчик производительности, который определен в элементе **PerformanceCounters**, помимо таблицы счетчиков производительности хранится в таблице метрик.  
 
  Атрибут **ResourceId** является обязательным.  Это идентификатор ресурса виртуальной машины или масштабируемого набора виртуальных машин, в котором развертывается система диагностики Azure. Значение **resourceID** можно получить на [портале Azure](https://portal.azure.com). Выберите **Обзор** -> **Группы ресурсов** -> **<Имя\>**. Щелкните элемент **Свойства** и скопируйте значение поля **Идентификатор**.  
 
-|Дочерние элементы|Описание|  
+|Дочерние элементы|ОПИСАНИЕ|  
 |--------------------|-----------------|  
 |**MetricAggregation**|Обязательный атрибут:<br /><br /> **scheduledTransferPeriod**: интервал между запланированными передачами в службу хранилища, округленный с точностью до ближайшей минуты. Значение относится к [типу данных XML "Duration"](https://www.w3schools.com/xml/schema_dtypes_date.asp). |  
 
 
 
 ## <a name="performancecounters-element"></a>Элемент PerformanceCounters  
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — PerformanceCounters*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — PerformanceCounters*
 
  Включает сбор данных счетчиков производительности.  
 
@@ -581,22 +581,22 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
  Необязательный атрибут **scheduledTransferPeriod**. Ознакомьтесь с описанием выше.
 
-|Дочерний элемент|Описание|  
+|Дочерний элемент|ОПИСАНИЕ|  
 |-------------------|-----------------|  
 |**PerformanceCounterConfiguration**|Ниже приведены обязательные атрибуты.<br /><br /> - **counterSpecifier** — имя счетчика производительности. Например, `\Processor(_Total)\% Processor Time`. Чтобы получить список счетчиков производительности на узле, выполните команду `typeperf`.<br /><br /> - **sampleRate**: частота выборки для счетчика.<br /><br /> Необязательный атрибут:<br /><br /> **unit**: единица измерения счетчика.|
-|**sinks** | Добавлено в версии 1.5. Необязательный элемент. Указывает расположение приемника для отправки диагностических данных. Например, Azure Monitor или Центры событий.|    
+|**Приемники** | Добавлено в версии 1.5. Необязательный элемент. Указывает расположение приемника для отправки диагностических данных. Например, Azure Monitor или Центры событий.|    
 
 
 
 
 ## <a name="windowseventlog-element"></a>Элемент WindowsEventLog
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — WindowsEventLog*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — WindowsEventLog*
 
  Включает сбор журналов событий Windows.  
 
  Необязательный атрибут **scheduledTransferPeriod**. Ознакомьтесь с описанием выше.  
 
-|Дочерний элемент|Описание|  
+|Дочерний элемент|ОПИСАНИЕ|  
 |-------------------|-----------------|  
 |**DataSource**|Собираемые журналы событий Windows. Обязательный атрибут:<br /><br /> **name** — запрос XPath, описывающий собираемые события Windows. Например: <br /><br /> `Application!*[System[(Level <=3)]], System!*[System[(Level <=3)]], System!*[System[Provider[@Name='Microsoft Antimalware']]], Security!*[System[(Level <= 3)]`<br /><br /> Для сбора всех событий укажите "*".|  
 
@@ -604,7 +604,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 
 ## <a name="logs-element"></a>Элемент Logs  
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — Logs*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — Logs*
 
  Используется в версиях 1.0 и 1.1. Отсутствует в версии 1.2. Снова добавлен в версии 1.3.  
 
@@ -613,30 +613,30 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 |Атрибут|type|ОПИСАНИЕ|  
 |---------------|----------|-----------------|  
 |**bufferQuotaInMB**|**unsignedInt**|Необязательный элемент. Указывает максимальный объем хранилища файловой системы, который доступен для указанных данных.<br /><br /> Значение по умолчанию — 0.|  
-|**scheduledTransferLogLevelFilter**|**строка**|Необязательный элемент. Указывает минимальный уровень серьезности для передаваемых записей журнала. Значение по умолчанию — **Undefined**, при котором передаются все журналы. Другие возможные значения (в порядке убывания информативности): **Verbose**, **Information**, **Warning**, **Error** и **Critical**.|  
-|**scheduledTransferPeriod**|**длительность**|Необязательный элемент. Указывает интервал между запланированными передачами данных, округленный с точностью до ближайшей минуты.<br /><br /> По умолчанию используется значение PT0S.|  
-|**sinks** |**строка**| Добавлено в версии 1.5. Необязательный элемент. Указывает расположение приемника для отправки диагностических данных. Например, Application Insights или Центры событий Azure.|  
+|**scheduledTransferLogLevelFilter**|**string**|Необязательный элемент. Указывает минимальный уровень серьезности для передаваемых записей журнала. Значение по умолчанию — **Undefined**, при котором передаются все журналы. Другие возможные значения (в порядке убывания информативности): **Verbose**, **Information**, **Warning**, **Error** и **Critical**.|  
+|**scheduledTransferPeriod**|**duration**|Необязательный элемент. Указывает интервал между запланированными передачами данных, округленный с точностью до ближайшей минуты.<br /><br /> По умолчанию используется значение PT0S.|  
+|**Приемники** |**string**| Добавлено в версии 1.5. Необязательный элемент. Указывает расположение приемника для отправки диагностических данных. Например, Application Insights или Центры событий Azure.|  
 
 ## <a name="dockersources"></a>DockerSources
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — DockerSources*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — DockerSources*
 
  Добавлен в версии 1.9.
 
 |Имя элемента|ОПИСАНИЕ|  
 |------------------|-----------------|  
-|**Статистика**|Указывает системе, что нужно собрать статистику для контейнеров Docker.|  
+|**Stats**|Указывает системе, что нужно собрать статистику для контейнеров Docker.|  
 
 ## <a name="sinksconfig-element"></a>Элемент SinksConfig  
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — SinksConfig*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — SinksConfig*
 
  Содержит список расположений для отправки диагностических данных и конфигурацию, связанную с этими расположениями.  
 
-|Имя элемента|Описание|  
+|Имя элемента|ОПИСАНИЕ|  
 |------------------|-----------------|  
 |**Приемник**|Ознакомьтесь с описанием в другом разделе на этой странице.|  
 
 ## <a name="sink-element"></a>Элемент Sink
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — SinksConfig — Sink*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — SinksConfig — Sink*
 
  Добавлен в версии 1.5.  
 
@@ -649,10 +649,10 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 |Элемент|type|ОПИСАНИЕ|  
 |-------------|----------|-----------------|  
 |**Application Insights**|строка|Используется только при отправке данных в Application Insights. Содержит ключ инструментирования для активной учетной записи Application Insights, к которой у вас есть доступ.|  
-|**Каналы**|строка|Указывается для каждой дополнительной фильтрации, используемой при потоковой передаче.|  
+|**Channels**|строка|Указывается для каждой дополнительной фильтрации, используемой при потоковой передаче.|  
 
 ## <a name="channels-element"></a>Элемент Channels  
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — SinksConfig — Sink — Channels*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — SinksConfig — Sink — Channels*
 
  Добавлен в версии 1.5.  
 
@@ -660,10 +660,10 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 |Элемент|type|ОПИСАНИЕ|  
 |-------------|----------|-----------------|  
-|**Канал**|строка|Ознакомьтесь с описанием в другом разделе на этой странице.|  
+|**Channel**|строка|Ознакомьтесь с описанием в другом разделе на этой странице.|  
 
 ## <a name="channel-element"></a>Элемент Channel
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — SinksConfig — Sink — Channels — Channel*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — SinksConfig — Sink — Channels — Channel*
 
  Добавлен в версии 1.5.  
 
@@ -671,12 +671,12 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 |Атрибуты|type|ОПИСАНИЕ|  
 |----------------|----------|-----------------|  
-|**LogLevel**|**строка**|Указывает минимальный уровень серьезности для передаваемых записей журнала. Значение по умолчанию — **Undefined**, при котором передаются все журналы. Другие возможные значения (в порядке убывания информативности): **Verbose**, **Information**, **Warning**, **Error** и **Critical**.|  
-|**name**|**строка**|Уникальное имя для использования ссылки на канал.|  
+|**logLevel**|**string**|Указывает минимальный уровень серьезности для передаваемых записей журнала. Значение по умолчанию — **Undefined**, при котором передаются все журналы. Другие возможные значения (в порядке убывания информативности): **Verbose**, **Information**, **Warning**, **Error** и **Critical**.|  
+|**name**|**string**|Уникальное имя для использования ссылки на канал.|  
 
 
 ## <a name="privateconfig-element"></a>Элемент PrivateConfig
- *Дерево: Корневой элемент — DiagnosticsConfiguration — PrivateConfig*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — PrivateConfig*
 
  Добавлен в версии 1.3.  
 
@@ -684,13 +684,13 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
  Хранит частные сведения об учетной записи хранения (имя, ключ и конечную точку). Эта информация отправляется на виртуальную машину, но извлечь ее из виртуальной машины невозможно.  
 
-|Дочерние элементы|Описание|  
+|Дочерние элементы|ОПИСАНИЕ|  
 |--------------------|-----------------|  
 |**StorageAccount**|Используемая учетная запись хранения. Ниже приведены обязательные атрибуты.<br /><br /> - **name**: имя учетной записи хранения.<br /><br /> - **key**: ключ учетной записи хранения.<br /><br /> - **endpoint**: конечная точка для доступа к учетной записи хранения. <br /><br /> -**sasToken** (добавлен в версии 1.8.1): вы можете указать маркер SAS вместо ключа учетной записи хранения в закрытой конфигурации. Если он указан, ключ учетной записи хранения не учитывается. <br />Требования к маркеру SAS: <br />Поддерживает только маркер SAS учетной записи. <br />Требуемые типы служб: - *b*, *t*. <br /> Требуемые разрешения: - *a*, *c*, *u*, *w*. <br /> Требуемые типы ресурсов: - *c*, *o*. <br /> Поддерживает только протокол HTTPS. <br /> Время начала и окончания срока действия должно быть допустимым.|  
 
 
 ## <a name="isenabled-element"></a>Элемент IsEnabled  
- *Дерево: Корневой элемент — DiagnosticsConfiguration — IsEnabled*
+ *Дерево: корневой элемент — DiagnosticsConfiguration — IsEnabled*
 
  Логическое значение. Используйте `true`, чтобы включить диагностику, или `false`, чтобы отключить ее.
 

@@ -13,10 +13,10 @@ ms.workload: na
 ms.date: 04/09/2019
 ms.author: tomfitz
 ms.openlocfilehash: 4d5e6d20cb93c339d75c12ca1c0f56eaa5cc8cdd
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59490764"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Функции для работы с ресурсами в шаблонах Azure Resource Manager
@@ -27,8 +27,8 @@ ms.locfileid: "59490764"
 * [providers](#providers)
 * [reference](#reference)
 * [resourceGroup](#resourcegroup)
-* [ResourceId](#resourceid)
-* [Подписка](#subscription)
+* [resourceId](#resourceid)
+* [subscription](#subscription)
 
 Получение значений параметров, переменных или текущего развертывания описано в разделе [Функции для параметров развертывания](resource-group-template-functions-deployment.md).
 
@@ -90,7 +90,7 @@ ms.locfileid: "59490764"
 | Microsoft.Logic/integrationAccounts/agreements | [listContentCallbackUrl](/rest/api/logic/agreements/listcontentcallbackurl) |
 | Microsoft.Logic/integrationAccounts/assemblies | [listContentCallbackUrl](/rest/api/logic/integrationaccountassemblies/listcontentcallbackurl) |
 | Microsoft.Logic/integrationAccounts | [listCallbackUrl](/rest/api/logic/integrationaccounts/getcallbackurl) |
-| Microsoft.Logic/integrationAccounts | [listkeyvaultkeys указано](/rest/api/logic/integrationaccounts/listkeyvaultkeys) |
+| Microsoft.Logic/integrationAccounts | [listKeyVaultKeys](/rest/api/logic/integrationaccounts/listkeyvaultkeys) |
 | Microsoft.Logic/integrationAccounts/maps | [listContentCallbackUrl](/rest/api/logic/maps/listcontentcallbackurl) |
 | Microsoft.Logic/integrationAccounts/partners | [listContentCallbackUrl](/rest/api/logic/partners/listcontentcallbackurl) |
 | Microsoft.Logic/integrationAccounts/schemas | [listContentCallbackUrl](/rest/api/logic/schemas/listcontentcallbackurl) |
@@ -254,7 +254,7 @@ ms.locfileid: "59490764"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | Описание |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | пространство_имен_поставщика |Yes |строка |Пространство имен поставщика. |
 | тип_ресурса |Нет  |строка |Тип ресурса в указанном пространстве имен. |
@@ -329,7 +329,7 @@ ms.locfileid: "59490764"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | Описание |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | имя_ресурса или идентификатор_ресурса |Yes |строка |Имя или уникальный идентификатор ресурса. |
 | версия_API |Нет  |строка |Версия API для указанного ресурса. Если ресурс не предоставляется в рамках того же шаблона, необходимо включить этот параметр. Как правило, указывается в формате **гггг-мм-дд**. |
@@ -592,7 +592,7 @@ ms.locfileid: "59490764"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | Описание |
+| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
 |:--- |:--- |:--- |:--- |
 | subscriptionId |Нет  |строка (в формате GUID) |Значение по умолчанию — текущая подписка. Укажите это значение, если нужно получить ресурс из другой подписки. |
 | имя_группы_ресурсов |Нет  |строка |Значение по умолчанию — текущая группа ресурсов. Укажите это значение, если нужно получить ресурс из другой группы ресурсов. |

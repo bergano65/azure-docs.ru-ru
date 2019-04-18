@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 8/6/2018
 ms.author: trinadhk
 ms.openlocfilehash: c1690fe6d0ce24bd319b042a3850bbfe487ffcfc
-ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59426262"
 ---
 # <a name="questions-about-the-azure-backup-agent"></a>Вопросы об агенте службы Azure Backup
@@ -113,8 +113,8 @@ ms.locfileid: "59426262"
 
 ## <a name="restore"></a>восстановление;
 
-### <a name="what-happens-if-i-cancel-an-ongoing-restore-job"></a>Что произойдет, если отменить задание восстановления текущих?
-Если задание восстановления текущих отменяется, процесс восстановления останавливается и все файлы, восстановленные до отмены, остаются в целевому (исходное или другое расположение) без любой откатов.
+### <a name="what-happens-if-i-cancel-an-ongoing-restore-job"></a>Что произойдет, если отменить выполняемое задание восстановления?
+Если отменить выполняемое задание восстановления, процесс восстановления прекращается и все файлы, восстановленные до отмены, остаются в заданном целевом расположении (исходном или другом указанном) без выполнения отката.
 
 
 ## <a name="manage-backups"></a>Управление резервными копиями

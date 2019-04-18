@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/08/2019
 ms.author: dobett
 ms.openlocfilehash: 950d248d2525f053981c8642ee2d39021b9a0494
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59490365"
 ---
 # <a name="connected-factory-solution-accelerator-walkthrough"></a>Инструкция по работе с акселератором решений подключенной фабрики
@@ -230,7 +230,7 @@ TSI отправляет запрос к данным узла с использ
 Дополнительные сведения об акселераторах решений Интернета вещей см. в следующих статьях:
 
 * [Разрешения на сайте azureiotsolutions.com][lnk-permissions]
-* [Развертывание шлюза в Windows или Linux для Connected Factory solution accelerator](iot-accelerators-connected-factory-gateway-deployment.md)
+* [Развертывание шлюза Edge для предварительно настроенного решения подключенной фабрики в ОС Windows или Linux](iot-accelerators-connected-factory-gateway-deployment.md)
 * [OPC Publisher for Azure IoT Edge](https://github.com/Azure/iot-edge-opc-publisher/blob/master/README.md) (Издатель OPC для Azure IoT Edge)
 
 [connected-factory-logical]:media/iot-accelerators-connected-factory-sample-walkthrough/cf-logical-architecture.png

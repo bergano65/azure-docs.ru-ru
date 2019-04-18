@@ -15,10 +15,10 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4db6554e86cef61f2fc8e7a466919d2ce723f0e5
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59492708"
 ---
 # <a name="reset-a-users-password-using-azure-active-directory"></a>Сброс пароля пользователя в Azure Active Directory
@@ -54,12 +54,12 @@ ms.locfileid: "59492708"
 
 После сброса пароля пользователя можно выполнить следующие базовые операции:
 
-- [Добавление или удаление пользователей](add-users-azure-active-directory.md)
+- [Добавить или удалить пользователя](add-users-azure-active-directory.md)
 
 - [Назначение ролей пользователям](active-directory-users-assign-role-azure-portal.md)
 
-- [Добавление или изменение данных профиля](active-directory-users-profile-azure-portal.md)
+- [Добавить или изменить данные профиля](active-directory-users-profile-azure-portal.md)
 
-- [Создание простой группы и добавление участников](active-directory-groups-create-azure-portal.md)
+- [Создать простую группу и добавить в нее участников](active-directory-groups-create-azure-portal.md)
 
 Или можно выполнить более сложные сценарии пользователей, такие как назначение делегатов, использование политик и совместное использование учетных записей пользователей. Дополнительные сведения о других доступных действиях см. в [документации по управлению пользователями Azure Active Directory](../users-groups-roles/index.yml).

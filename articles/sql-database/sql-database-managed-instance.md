@@ -13,10 +13,10 @@ ms.reviewer: sstein, carlrab, vanto
 manager: craigg
 ms.date: 04/08/2019
 ms.openlocfilehash: 15b7bfc9e1d747fcefdbba03ca254a9604197b5f
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59361825"
 ---
 # <a name="use-sql-database-advanced-data-security-with-virtual-networks-and-near-100-compatibility"></a>Использование расширенной защиты данных Базы данных SQL с виртуальными сетями и почти полной совместимостью
@@ -46,7 +46,7 @@ ms.locfileid: "59361825"
 | **Преимущества PaaS** | **Непрерывность бизнес-процессов** |
 | --- | --- |
 |Нет необходимости в приобретении оборудования и управления им <br>Отсутствие накладных расходов на управление базовой инфраструктурой <br>Быстрая подготовка и масштабирование службы <br>Автоматическое исправление и обновление версии <br>Интеграция с другими службами данных PaaS |Соглашение об уровне обслуживания с гарантией времени непрерывной работы 99,99 %.  <br>Встроенный [высокий уровень доступности](sql-database-high-availability.md) <br>Данные защищены путем [автоматического создания резервных копий](sql-database-automated-backups.md) <br>Период хранения резервных копий настраивается пользователем <br>Инициируемые пользователем [резервные копии](https://docs.microsoft.com/sql/t-sql/statements/backup-transact-sql?view=azuresqldb-mi-current) <br>Возможность [восстановления базы данных до точки во времени](sql-database-recovery-using-backups.md#point-in-time-restore) |
-|**Безопасность и соответствие требованиям** | **управления**|
+|**Безопасность и соответствие требованиям** | **Управление**|
 |Изолированная среда ([интеграция виртуальной сети](sql-database-managed-instance-connectivity-architecture.md), клиентская служба, выделенные ресурсы вычисления и хранилище) <br>[Прозрачное шифрование данных (TDE)](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql)<br>[Проверка подлинности Azure AD](sql-database-aad-authentication.md), поддержка единого входа <br> <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">Субъекты сервера (имена для входа) Azure AD</a> (**общедоступная предварительная версия**) <br>Соблюдение тех же стандартов соответствия, что и База данных SQL Azure <br>[Аудит SQL](sql-database-managed-instance-auditing.md) <br>[обнаружение угроз](sql-database-managed-instance-threat-detection.md) |Программный интерфейс Azure Resource Manager для автоматизации подготовки и масштабирования службы <br>Функциональные возможности портала Azure для подготовки и масштабирования службы вручную <br>Служба миграции данных
 
 > [!IMPORTANT]

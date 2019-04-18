@@ -9,10 +9,10 @@ ms.date: 03/25/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 72dec14dde47580313e57bb3b8d7315604929277
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59288431"
 ---
 # <a name="how-to-create-an-azure-premium-file-share"></a>Как создать файловый ресурс Azure уровня "премиум"
@@ -21,13 +21,13 @@ ms.locfileid: "59288431"
 
 В этой статье показано, как создать этот новый тип учетной записи, используя [портала Azure](https://portal.azure.com/), Azure PowerShell и Azure CLI.
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 Для доступа к службе хранилища Azure требуется подписка Azure. Если у вас еще нет подписки, вы можете [создать бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="create-a-premium-file-share-using-the-azure-portal"></a>Создайте файловый ресурс уровня "премиум" с помощью портала Azure
 
-### <a name="sign-in-to-azure"></a>Войдите в Azure
+### <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на [портале Azure](https://portal.azure.com/).
 
@@ -58,7 +58,7 @@ ms.locfileid: "59288431"
 
 Когда ресурс учетной записи хранения будет создана, перейдите к нему.
 
-### <a name="create-a-premium-file-share"></a>Создайте файловый ресурс уровня "премиум"
+### <a name="create-a-premium-file-share"></a>Создание общей папки (цен. категория "Премиум")
 
 1. В меню слева для учетной записи хранения, перейдите к **файловой службы** раздела, а затем выберите **файлов (Предварительная версия)**.
 1. Выберите **+ файловый ресурс** для создания общей папки "премиум".
@@ -67,7 +67,7 @@ ms.locfileid: "59288431"
 > [!NOTE]
 > Размеры подготовленного общего файлового ресурса задается в квоте общих ресурсов, файловые ресурсы оплачиваются на подготовленном размере см. [странице с ценами](https://azure.microsoft.com/pricing/details/storage/files/) для получения дополнительных сведений.
 
-   ![Создайте файловый ресурс уровня "премиум"](media/storage-how-to-create-premium-fileshare/create-premium-file-share.png)
+   ![Создание общей папки (цен. категория "Премиум")](media/storage-how-to-create-premium-fileshare/create-premium-file-share.png)
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -101,7 +101,7 @@ Install-Module Az.Storage -Repository PSGallery -AllowPrerelease -AllowClobber -
 Login-AzAccount
 ```
 
-### <a name="create-a-resource-group"></a>Создать группу ресурсов
+### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Чтобы создать группу ресурсов с помощью PowerShell, выполните команду [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup).
 
@@ -121,7 +121,7 @@ New-AzResourceGroup -Name $resourceGroup -Location $location
 $storageAcct = New-AzStorageAccount -ResourceGroupName $resourceGroup -Name "fileshowto" -SkuName "Premium_LRS" -Location "westus2" -Kind "FileStorage"
 ```
 
-### <a name="create-a-premium-file-share"></a>Создайте файловый ресурс уровня "премиум"
+### <a name="create-a-premium-file-share"></a>Создание общей папки (цен. категория "Премиум")
 
 Теперь у вас учетной записи хранилища, можно создать общую папку "премиум". Используйте [New AzStorageShare](/powershell/module/az.storage/New-AzStorageShare) командлет, чтобы создать его.
 
@@ -156,9 +156,9 @@ az login
 
 Для взаимодействия уровня "премиум" с файлами с помощью интерфейса командной строки, необходимо добавить расширение в оболочке.
 
-Для этого введите следующую команду с помощью Cloud Shell или локальный оболочки: `az extension add --name storage-preview`
+Для этого с помощью Cloud Shell или локальный оболочки введите следующую команду: `az extension add --name storage-preview`
 
-### <a name="create-a-resource-group"></a>Создать группу ресурсов
+### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Чтобы создать группу ресурсов с помощью Azure CLI, используйте команду [az group create](/cli/azure/group).
 
@@ -192,7 +192,7 @@ STORAGEKEY=$(az storage account keys list \
     --query "[0].value" | tr -d '"')
 ```
 
-### <a name="create-a-premium-file-share"></a>Создайте файловый ресурс уровня "премиум"
+### <a name="create-a-premium-file-share"></a>Создание общей папки (цен. категория "Премиум")
 
 Теперь у вас учетной записи хранилища, можно создать общую папку "премиум". Используйте [создать общую папку хранилища az](/cli/azure/storage/share) команду, чтобы создать его.
 
@@ -219,4 +219,4 @@ az group delete --name myResourceGroup
 В этой статье вы создали учетную запись хранения уровня "премиум" файлы. Дополнительные сведения о производительности, которые предлагает эта учетная запись, перейдите к разделу уровня производительности руководства по планированию.
 
 > [!div class="nextstepaction"]
-> [Уровни производительности файлового ресурса](storage-files-planning.md#file-share-performance-tiers)
+> [Файл уровни производительности в общую папку](storage-files-planning.md#file-share-performance-tiers)

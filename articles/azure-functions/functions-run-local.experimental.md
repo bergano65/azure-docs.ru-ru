@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: glenga
 ms.openlocfilehash: 84c578fdbcfb555bde23d6a9e6f8258259cff8de
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59497106"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
@@ -147,7 +147,7 @@ Writing C:\myfunctions\myMyFunctionProj\.vscode\extensions.json
 Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 ```
 
-`func init` поддерживает следующие параметры, которые имеют версию только для версии 2.x, в том случае, если не указано иное.
+`func init` поддерживает следующие параметры, которые подходят только для версии 2.x, если не указано иное:
 
 | Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
@@ -203,9 +203,9 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 
 Эти значения параметров приложения-функции также могут считываться в коде как переменные среды. Дополнительные сведения см. в разделе о переменных среды в этих справочниках для определенного языка:
 
-* [C#предварительно скомпилированные](functions-dotnet-class-library.md#environment-variables)
-* [Скрипт C# (.csx)](functions-reference-csharp.md#environment-variables)
-* [F#скрипт (расширение fsx)](functions-reference-fsharp.md#environment-variables)
+* [Предкомпилированный код C#](functions-dotnet-class-library.md#environment-variables)
+* [Скрипт C# (CSX)](functions-reference-csharp.md#environment-variables)
+* [Скрипт F# (FSX)](functions-reference-fsharp.md#environment-variables)
 * [Java](functions-reference-java.md#environment-variables)
 * [JavaScript](functions-reference-node.md#environment-variables)
 
@@ -276,7 +276,7 @@ Writing C:\myfunctions\myMyFunctionProj\MyQueueTrigger\function.json
 
 Эти параметры можно также задать в команде, указав следующие аргументы.
 
-| Аргумент     | Описание                            |
+| Аргумент     | ОПИСАНИЕ                            |
 | ------------------------------------------ | -------------------------------------- |
 | **`--csx`** | (Версия 2.x). Создаются те же шаблоны сценариев C# (.csx), которые используются в версии 1.x и на портале. |
 | **`--language -l`**| Язык программирования шаблона, например C#, F# или JavaScript. Этот параметр необходим в версии 1.x. Не используйте этот параметр в версии 2.x или выберите язык, который совпадает со средой выполнения рабочей роли. |
@@ -305,7 +305,7 @@ func host start
 
 Команда `host` требуется только в версии 1.x.
 
-`func host start` поддерживает следующие параметры:
+`func host start` имеет указанные ниже параметры.
 
 | Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
@@ -397,7 +397,7 @@ curl --request POST -H "Content-Type:application/json" --data '{"input":"sample 
 
 Вы также можете вызвать функцию напрямую с помощью `func run <FunctionName>` и предоставить входные данные для нее. Эта команда аналогична выполнению функции с помощью вкладки **Тест** на портале Azure.
 
-`func run` поддерживает следующие параметры:
+`func run` имеет указанные ниже параметры.
 
 | Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
@@ -472,7 +472,7 @@ func deploy
 | Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
 | **`--registry`** | Имя реестра Docker, в который вошел текущий пользователь. |
-| **`--platform`** | Платформа размещения для приложения-функции. Допустимые значения: `kubernetes` |
+| **`--platform`** | Платформа размещения для приложения-функции. Допустимые параметры: `kubernetes`. |
 | **`--name`** | Имя приложения-функции. |
 | **`--max`**  | При необходимости задает максимальное число экземпляров приложения-функции, в которые будет выполняться развертывание. |
 | **`--min`**  | При необходимости задает минимальное число экземпляров приложения-функции, в которые будет выполняться развертывание. |
@@ -480,9 +480,9 @@ func deploy
 
 ## <a name="monitoring-functions"></a>Мониторинг функций
 
-Рекомендуемый способ наблюдения за выполнение функций — интеграция с Azure Application Insights. При создании приложения-функции на портале Azure эта интеграция выполняется по умолчанию. Тем не менее при создании приложения-функции с помощью Azure CLI, интеграция в приложение-функцию в Azure не делается.
+Рекомендуемый способ наблюдения за выполнение функций — интеграция с Azure Application Insights. При создании приложения-функции на портале Azure эта интеграция выполняется по умолчанию. Тем не менее при создании приложения-функции с помощью Azure CLI его интеграции в Azure не происходит.
 
-Чтобы включить Application Insights для приложения-функции:
+Чтобы настроить Application Insights для приложения-функции, сделайте следующее:
 
 [!INCLUDE [functions-connect-new-app-insights.md](../../includes/functions-connect-new-app-insights.md)]
 
@@ -494,8 +494,8 @@ func deploy
 
 <!-- LINKS -->
 
-[Основных инструментов функций Azure]: https://www.npmjs.com/package/azure-functions-core-tools
-[Портал Azure]: https://portal.azure.com 
+[Основные инструменты службы "Функции Azure"]: https://www.npmjs.com/package/azure-functions-core-tools
+[портале Azure]: https://portal.azure.com 
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows
 [«FUNCTIONS_WORKER_RUNTIME»]: functions-app-settings.md#functions_worker_runtime
 [«AzureWebJobsStorage»]: functions-app-settings.md#azurewebjobsstorage

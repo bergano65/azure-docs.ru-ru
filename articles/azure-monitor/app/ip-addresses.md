@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 01/22/2019
 ms.author: mbullwin
 ms.openlocfilehash: b383a4f85a039eb8eed87e2e78940aaf48b30a33
-ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59425922"
 ---
 # <a name="ip-addresses-used-by-application-insights-and-log-analytics"></a>IP-адреса, используемые Application Insights и Log Analytics
@@ -52,7 +52,7 @@ ms.locfileid: "59425922"
 | Параметр Configuration |`secure.aadcdn.microsoftonline-p.com` | |`443` |
 | Параметр Configuration |`auth.gfx.ms` | |`443` |
 | Параметр Configuration |`login.live.com` | |`443` |
-| Установка |`packages.nuget.org` , `nuget.org`, `api.nuget.org`, `az320820.vo.msecnd.net` (Скачиваются) | |`443` |
+| Установка |`packages.nuget.org`, `nuget.org`, `api.nuget.org`, `az320820.vo.msecnd.net` (ресурсы для скачивания NuGet) | |`443` |
 
 ## <a name="availability-tests"></a>Тесты доступности
 Ниже приведен список адресов, которые используются для [проверки доступности веб-сайтов](../../azure-monitor/app/monitor-web-app-availability.md) . Если вам нужно запустить веб-тесты в приложении, а веб-сервер обслуживает только определенные клиенты, следует разрешить входящий трафик от наших серверов тестирования доступности.
@@ -407,7 +407,7 @@ East US
 
 | Назначение | URI | IP-адрес | порты; |
 | --- | --- | --- | --- |
-| Microsoft Azure | portal.loganalytics.io | Динамический | 80, 443 |
+| Портал | portal.loganalytics.io | Динамический | 80, 443 |
 | CDN | applicationanalytics.azureedge.net | Динамический | 80, 443 |
 
 Примечание. Домен *.loganalytics.io принадлежит команде Log Analytics.
@@ -437,7 +437,7 @@ East US
 | Назначение | URI | IP-адрес | порты; |
 | --- | --- | --- | --- |
 | Агент | agent.azureserviceprofiler.net<br/>*.agent.azureserviceprofiler.net | 40.68.32.221<br/>40.85.246.0<br/>40.85.246.57<br/>40.117.252.0<br/>40.117.253.100<br/>51.140.140.162<br/>51.140.140.184<br/>51.143.96.206<br/>51.143.98.157<br/>52.161.8.88<br/>52.161.29.225<br/>52.178.147.66<br/>52.178.149.106<br/>52.230.122.9<br/>52.230.124.46<br/>104.40.217.71<br/>104.211.89.26<br/>104.211.90.232 | 443
-| Microsoft Azure | gateway.azureserviceprofiler.net | Динамический | 443
+| Портал | gateway.azureserviceprofiler.net | Динамический | 443
 | Хранилище | *.core.windows.net | Динамический | 443
 
 ## <a name="snapshot-debugger"></a>Отладчик моментальных снимков
@@ -448,5 +448,5 @@ East US
 | Назначение | URI | IP-адрес | порты; |
 | --- | --- | --- | --- |
 | Агент | ppe.azureserviceprofiler.net<br/>*.ppe.azureserviceprofiler.net | 40.68.32.221<br/>40.85.246.0<br/>40.85.246.57<br/>40.117.252.0<br/>40.117.253.100<br/>51.140.140.162<br/>51.140.140.184<br/>51.143.96.206<br/>51.143.98.157<br/>52.161.8.88<br/>52.161.29.225<br/>52.178.147.66<br/>52.178.149.106<br/>52.230.122.9<br/>52.230.124.46<br/>104.40.217.71<br/>104.211.89.26<br/>104.211.90.232 | 443
-| Microsoft Azure | ppe.gateway.azureserviceprofiler.net | Динамический | 443
+| Портал | ppe.gateway.azureserviceprofiler.net | Динамический | 443
 | Хранилище | *.core.windows.net | Динамический | 443

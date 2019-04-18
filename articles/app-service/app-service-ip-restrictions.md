@@ -16,10 +16,10 @@ ms.date: 07/30/2018
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: bb6ab29f02282a394e3f93e41682ceaec5208b75
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59357618"
 ---
 # <a name="azure-app-service-static-access-restrictions"></a>Ограничения статических доступа к службе приложений Azure #
@@ -90,4 +90,4 @@ management.azure.com/subscriptions/**ИД_подписки**/resourceGroups/**г
 
 Ограничения IP-адресов доступны для обоих приложений-функций с ту же функциональность, что планы службы приложений. Обратите внимание на то, что IP-адреса ограничения приведет к отключению редактор кода портала для всех запрещенных IP-адресов.
 
-[Дополнительные сведения](../azure-functions/functions-networking-options.md#inbound-ip-restrictions)
+Дополнительные сведения см. [здесь](../azure-functions/functions-networking-options.md#inbound-ip-restrictions).

@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: cithomas
 ms.openlocfilehash: 8243523887ec9861459b2d196126237cf89bad97
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59288371"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для приложений ASP.NET Core
@@ -27,7 +27,7 @@ ms.locfileid: "59288371"
 
 Пакет SDK Application Insights (пакет средств разработки программного обеспечения) для ASP.NET Core можно отслеживать приложения независимо от того, откуда и как его запуске. Если приложение работает и имеет сетевое подключение к службе Application Insights, собираемых ожидается телеметрии. Эта поддержка включает в себя, но не ограничивается любой операционной системы (Windows, Linux, Mac), метод размещения (vs в процессе ожидания процесса), метод развертывания (зависящего от платформы Visual Studio автономное), веб-сервер (IIS, Kestrel), платформы (веб-приложений Azure, виртуальных Машин в Azure Docker, AKS и т. д.) или интегрированной среде разработки (Командная строка Visual Studio, VS Code).
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 - Работающее приложение ASP.NET Core. Выполните [это](https://docs.microsoft.com/aspnet/core/getting-started/) руководство по созданию приложения ASP.NET Core, при необходимости.
 - Допустимый ключ инструментирования Application Insights, который требуется отправить данные телеметрии в службу Application Insights. Выполните [эти](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource) инструкции по созданию нового ресурса Application Insights, при необходимости и получение ключа инструментирования.
@@ -107,7 +107,7 @@ ms.locfileid: "59288371"
             1. Приложение предназначено для полной версии платформы .NET Framework счетчики производительности поддерживаются во всех версиях пакета SDK.
 
             В этом документе будет обновляться при добавлении поддержки счетчика производительности в Linux.
-    1. [Интерактивные метрики](https://docs.microsoft.com/azure/application-insights/app-insights-live-stream)
+    1. [Динамические метрики](https://docs.microsoft.com/azure/application-insights/app-insights-live-stream)
     1. `ILogger` журналы уровня серьезности `Warning` или выше, автоматически зарегистрированные из пакета SDK версии 2.7.0-beta3 или более поздней версии. Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/azure-monitor/app/ilogger).
 
 Может занять несколько минут для телеметрии до начала отображения на портале. Чтобы быстро узнать, если все работает, то лучше использовать [Live Metrics](https://docs.microsoft.com/azure/application-insights/app-insights-live-stream), тогда как при отправке запросов к запущенному приложению.
@@ -311,7 +311,7 @@ public class HomeController : Controller
 
 *4. Включить мониторинг Application Insights с помощью таких средств, как монитор состояния?*
 
-* Нет. [Монитор состояния](https://docs.microsoft.com/azure/azure-monitor/app/monitor-performance-live-website-now) и их замене предстоящих [IISConfigurator](https://github.com/Microsoft/ApplicationInsights-Announcements/issues/21) сейчас поддерживает только ASP.NET. Документ будет обновлен при поддерживает приложения ASP.NET Core.
+* № [Монитор состояния](https://docs.microsoft.com/azure/azure-monitor/app/monitor-performance-live-website-now) и их замене предстоящих [IISConfigurator](https://github.com/Microsoft/ApplicationInsights-Announcements/issues/21) сейчас поддерживает только ASP.NET. Документ будет обновлен при поддерживает приложения ASP.NET Core.
 
 *5. У меня есть приложение ASP.NET Core 2.0? Не Application Insights включено автоматически для них без мне делать?*
 

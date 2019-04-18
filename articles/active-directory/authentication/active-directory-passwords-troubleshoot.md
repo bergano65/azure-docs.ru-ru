@@ -13,10 +13,10 @@ ms.reviewer: sahenry
 ms.custom: seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5adb857e6032e46c31a86685913277ec3eb571be
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59496409"
 ---
 # <a name="troubleshoot-self-service-password-reset"></a>Как устранить неполадки самостоятельного сброса пароля
@@ -285,14 +285,14 @@ ms.locfileid: "59496409"
 
 Дополнительные сведения о сбросе пароля с помощью Azure AD см. в следующих статьях:
 
-* [Как завершить успешно развернуть самостоятельный Сброс ПАРОЛЯ?](howto-sspr-deployment.md)
+* [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
 * [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
 * [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md)
-* [У вас есть вопрос лицензирования?](concept-sspr-licensing.md)
-* [Какие данные используются для SSPR и какие данные нужно указывать для пользователей?](howto-sspr-authenticationdata.md)
-* [Какие методы проверки подлинности доступны для пользователей?](concept-sspr-howitworks.md#authentication-methods)
-* [Что такое параметры политики для SSPR](concept-sspr-policy.md)
-* [Что такое обратная запись паролей и Зачем мне об этом?](howto-sspr-writeback.md)
-* [Как сообщить о действиях в SSPR?](howto-sspr-reporting.md)
-* [Они означают, что все параметры в SSPR и какие возможности?](concept-sspr-howitworks.md)
-* [У меня есть вопрос, не вошедшие в противном случае](active-directory-passwords-faq.md)
+* [Требования к лицензированию самостоятельного сброса пароля в Azure AD](concept-sspr-licensing.md)
+* [Какие данные используются для SSPR и какие сведения нужно указывать для пользователей](howto-sspr-authenticationdata.md)
+* [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods)
+* [Параметры политики для SSPR](concept-sspr-policy.md)
+* [Что такое обратная запись паролей и каково ее назначение](howto-sspr-writeback.md)
+* [Как сообщать о действиях в SSPR](howto-sspr-reporting.md)
+* [Обзор всех параметров SSPR и их значение](concept-sspr-howitworks.md)
+* [Вопросы, не вошедшие в другие статьи](active-directory-passwords-faq.md)

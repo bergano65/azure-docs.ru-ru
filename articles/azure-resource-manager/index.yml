@@ -60,7 +60,7 @@ sections:
         style: unordered
         className: spaced noBullet
         items:
-          - html: '<a href="https://azure.microsoft.com/resources/templates/">Шаблоны быстрого запуска Azure</a>'
+          - html: '<a href="https://azure.microsoft.com/resources/templates/">шаблонов быстрого запуска Azure</a>'
           - html: '<a href="https://resources.azure.com/">Обозреватель ресурсов Azure (предварительная версия)</a>'
   - title: Справочные материалы
     items:
@@ -69,10 +69,10 @@ sections:
         className: cardsD
         items:
           - title: Шаблоны
-            html: <p><a href="/azure/templates/">Справочник по шаблонам</a></p><p><a href="/azure/resource-group-template-functions">Функции шаблонов</a></p><p><a href="/azure/azure-resource-manager/managed-application-createuidefinition-functions">Функции определения пользовательского интерфейса</a></p><p><a href="/azure/azure-resource-manager/managed-application-createuidefinition-elements">Элементы определения пользовательского интерфейса</a></p>
+            html: <p><a href="/azure/templates/">Справочник по шаблонам</a></p><p><a href="/azure/resource-group-template-functions">Функции шаблонов</a></p><p><a href="/azure/azure-resource-manager/managed-application-createuidefinition-functions">Функции определения пользовательского интерфейса</a></p><p><a href="/azure/azure-resource-manager/managed-application-createuidefinition-elements">Элементы CreateUiDefinition</a></p>
           - title: Командная строка
-            html: <p><a href="/cli/azure/resource">Инфраструктура CLI Azure</a></p><p><a href="/powershell/module/az.resources">Azure PowerShell</a></p>
-          - title: Languages
+            html: <p><a href="/cli/azure/resource">Интерфейс командной строки Azure</a></p><p><a href="/powershell/module/az.resources">Azure PowerShell</a></p>
+          - title: Языки
             html: <p><a href="/dotnet/api/microsoft.azure.management.resourcemanager">.NET</a></p><p><a href="/java/api/com.microsoft.azure.management.resources">Java</a></p><p><a href="/python/api/overview/azure/resources?view=azure-python">Python</a></p>
           - title: REST
             html: <p><a href="/rest/api/resources/">REST API</a></p>

@@ -13,10 +13,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 02/25/2019
 ms.openlocfilehash: 05164985c7851ed828e22f4eeafde64a1940ebc0
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59357595"
 ---
 # <a name="service-tiers-in-the-dtu-based-purchase-model"></a>Уровни службы в модели приобретения на основе единицы DTU
@@ -62,7 +62,7 @@ ms.locfileid: "59357595"
 
 ## <a name="elastic-pool-edtu-storage-and-pooled-database-limits"></a>eDTU эластичного пула, хранилище и пределы для базы данных в пуле
 
-| | **базовая;** | **Стандартная** | **Премиум** |
+| | **базовая;** | **Стандартный** | **Премиальный** |
 | :-- | --: | --: | --: |
 | Максимальный размер хранилища для базы данных  | 2 ГБ | 1 TБ | 1 TБ |
 | Максимальный размер хранилища для пула | 156 ГБ | 4 TБ | 4 TБ |

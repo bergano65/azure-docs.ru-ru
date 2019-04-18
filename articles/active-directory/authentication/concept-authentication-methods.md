@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahenry, michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e0c9af1a9ad8b816809f661d368133997f55329d
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59360652"
 ---
 # <a name="what-are-authentication-methods"></a>Какие методы проверки подлинности доступны?
@@ -236,10 +236,10 @@ Helga@contoso.com,1234567,1234567890abcdef1234567890abcdef,60,Contoso,HardwareKe
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Включение самостоятельного сброса паролей для вашей организации](quickstart-sspr.md)
+[Включение самостоятельного сброса пароля для организации](quickstart-sspr.md)
 
-[Включение многофакторной идентификации Azure для вашей организации](howto-mfa-getstarted.md)
+[Включение службы Многофакторной идентификации Azure для организации](howto-mfa-getstarted.md)
 
 [Включить объединенный регистрацию в клиенте](howto-registration-mfa-sspr-combined.md)
 
-[Документация по настройке метода проверки подлинности конечных пользователей](https://aka.ms/securityinfoguide)
+[Документация по настройке метода аутентификации пользователей](https://aka.ms/securityinfoguide)

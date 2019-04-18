@@ -13,10 +13,10 @@ ms.reviewer: sstein, bonova, carlrab
 manager: craigg
 ms.date: 11/09/2018
 ms.openlocfilehash: ed9fbdd3e999cfd262ecbcf05a843c19cc969ed1
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59360422"
 ---
 # <a name="connect-your-application-to-azure-sql-database-managed-instance"></a>Подключение приложения к Управляемому экземпляру Базы данных SQL
@@ -39,7 +39,7 @@ ms.locfileid: "59360422"
 
 Существует два варианта подключения виртуальных сетей.
 
-- [Пиринговая связь между виртуальными сетями Azure](../virtual-network/virtual-network-peering-overview.md)
+- [Пиринговая связь между виртуальными сетями Azure](../virtual-network/virtual-network-peering-overview.md).
 - VPN-шлюз между виртуальными сетями ([портал Azure](../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md), [PowerShell](../vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md), [Azure CLI](../vpn-gateway/vpn-gateway-howto-vnet-vnet-cli.md)).
 
 Лучше использовать пиринговую связь, поскольку она использует магистральную сеть корпорации Майкрософт и не добавляет существенных задержек по сравнению с подключением виртуальных машин в одной виртуальной сети. Пиринг виртуальной сети ограничен сетями в том же регионе.  

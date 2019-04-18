@@ -11,10 +11,10 @@ ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 04/19/2017
 ms.openlocfilehash: 0a29d763ab54ee716e514df23576e9c3b294d792
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59359655"
 ---
 # <a name="azure-machine-learning-studio-web-services-deployment-and-consumption"></a>Веб-службы Студии машинного обучения Azure: развертывание и использование
@@ -36,8 +36,8 @@ ms.locfileid: "59359655"
 * Полное пошаговое руководство по созданию и развертыванию веб-службы см. в статье [Руководство 1. Прогнозирование кредитного риска](tutorial-part1-credit-risk.md).
 * Конкретные примеры развертывания веб-службы см. в следующих статьях:
 
-  * [Руководство 3. Развертывание модели кредитных рисков](tutorial-part3-credit-risk-deploy.md)
-  * [Как развернуть веб-службы в нескольких регионах](/azure/machine-learning/studio/publish-a-machine-learning-web-service#multi-region)
+  * [Руководство 3. Развертывание модели кредитных рисков в Студии машинного обучения Azure](tutorial-part3-credit-risk-deploy.md).
+  * [Развертывание веб-службы в нескольких регионах](/azure/machine-learning/studio/publish-a-machine-learning-web-service#multi-region)
 
 ### <a name="with-web-services-resource-provider-apis-azure-resource-manager-apis"></a>С помощью интерфейсов API поставщика ресурсов веб-служб (интерфейсов API Azure Resource Manager)
 
@@ -89,13 +89,13 @@ ms.locfileid: "59359655"
 
 * [Развертывание новой веб-службы](publish-a-machine-learning-web-service.md)
 * [Развертывание веб-службы машинного обучения Azure](publish-a-machine-learning-web-service.md)
-* [Руководство 3. Развертывание модели кредитных рисков](tutorial-part3-credit-risk-deploy.md)
+* [Руководство 3. Развертывание модели кредитных рисков в Студии машинного обучения Azure](tutorial-part3-credit-risk-deploy.md).
 
 ### <a name="from-excel"></a>Из Excel
 
 Вы можете скачать шаблон Excel, который использует веб-службу:
 
-* [Использование веб-службы машинного обучения Azure, из Excel](consuming-from-excel.md)
+* [Использование веб-службы Машинного обучения Azure в Excel](consuming-from-excel.md)
 * [Надстройка Excel для веб-служб машинного обучения Azure](excel-add-in-for-web-services.md)
 
 ### <a name="from-a-rest-based-client"></a>Из клиента на основе REST

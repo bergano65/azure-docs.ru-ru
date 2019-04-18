@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 04/04/2019
 ms.author: juliako
 ms.openlocfilehash: 8f8a1434af768180e34afcaacd6e92ab402ad8cd
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59361241"
 ---
 # <a name="connect-to-media-services-v3-api---net"></a>Подключение к API v3 служб мультимедиа - .NET
@@ -225,17 +225,17 @@ namespace ConsoleApp1
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство по Передача, кодирование и потоковую передачу видео - .NET](stream-files-tutorial-with-api.md) 
-- [Руководство по Live Stream с помощью Media Services v3 - .NET](stream-live-tutorial-with-api.md)
-- [Руководство по Анализ видео с помощью Media Services v3 - .NET](analyze-videos-tutorial-with-api.md)
-- [Создание входных данных задания из локального файла - .NET](job-input-from-local-file-how-to.md)
-- [Создание входных данных задания из URL-адрес HTTPS - .NET](job-input-from-http-how-to.md)
-- [Кодирование с помощью пользовательского преобразования — .NET](customize-encoder-presets-how-to.md)
-- [Использование динамического шифрования AES-128 и службы доставки ключей — .NET](protect-with-aes128.md)
-- [Использовать DRM динамического шифрования и лицензий служба доставки — .NET](protect-with-drm.md)
-- [Получить ключ подписи из существующей политики - .NET](get-content-key-policy-dotnet-howto.md)
-- [Создание фильтров с помощью служб мультимедиа - .NET](filters-dynamic-manifest-dotnet-howto.md)
-- [Дополнительные примеры видео по запросу "функции Azure" версии 2 с помощью Media Services v3](https://aka.ms/ams3functions)
+- [Руководство Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md) 
+- [Руководство Потоковая трансляция в реальном времени с помощью Служб мультимедиа Azure версии 3 и .NET](stream-live-tutorial-with-api.md)
+- [Руководство Анализ видео с помощью Служб мультимедиа версии 3 и .NET](analyze-videos-tutorial-with-api.md)
+- [Создание входных данных задания из локального файла с помощью .NET](job-input-from-local-file-how-to.md)
+- [Создание входных данных задания из URL-адреса HTTPS с помощью .NET](job-input-from-http-how-to.md)
+- [Кодирование с помощью пользовательского преобразования с помощью .NET](customize-encoder-presets-how-to.md)
+- [Использование динамического шифрования AES-128 и службы доставки ключей с помощью .NET](protect-with-aes128.md)
+- [Использование динамического шифрования DRM и службы доставки лицензий с помощью .NET](protect-with-drm.md)
+- [Получение ключа подписи из имеющейся политики с помощью .NET](get-content-key-policy-dotnet-howto.md)
+- [Создание фильтров с помощью Служб мультимедиа для .NET](filters-dynamic-manifest-dotnet-howto.md)
+- [Дополнительные примеры видео по запросу с использованием Функций Azure версии 2 и Cлужб мультимедиа версии 3](https://aka.ms/ams3functions)
 
 ## <a name="see-also"></a>См. также
 

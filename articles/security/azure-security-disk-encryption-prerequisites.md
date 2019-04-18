@@ -8,10 +8,10 @@ ms.author: mbaldwin
 ms.date: 03/25/2019
 ms.custom: seodec18
 ms.openlocfilehash: 1da35b55a458ad73689f51c49e73855fd33ee45f
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59496256"
 ---
 # <a name="azure-disk-encryption-prerequisites"></a>Предварительные требования для шифрования дисков Azure
@@ -51,7 +51,7 @@ ms.locfileid: "59496256"
 
 ## <a name="bkmk_GPO"></a> Сетевые подключения и групповая политика
 
-**Чтобы использовать функцию шифрования дисков Azure, конфигурация конечной точки виртуальной машины IaaS должна соответствовать приведенным ниже требованиям.**
+**Чтобы использовать функцию шифрования дисков Azure, конфигурация конечной точки сети виртуальной машины IaaS должна соответствовать приведенным ниже требованиям:**
   - Виртуальная машина IaaS должна иметь возможность подключиться к конечной точке Azure Active Directory \[login.microsoftonline.com\], чтобы получить маркер для подключения к хранилищу ключей.
   - Для записи ключей шифрования в ваше хранилище ключей виртуальная машина IaaS должна иметь возможность подключиться к конечной точке хранилища ключей.
   - Виртуальная машина IaaS должна иметь возможность подключиться к конечной точке службы хранилища Azure, в которой размещен репозиторий расширений Azure, и к учетной записи хранения Azure, в которой размещены VHD-файлы.
@@ -302,8 +302,8 @@ ms.locfileid: "59496256"
  
 ## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
-> [Включить шифрование дисков Azure для Windows](azure-security-disk-encryption-windows.md)
+> [Включение шифрования дисков Azure для виртуальных машин Windows IaaS](azure-security-disk-encryption-windows.md)
 
 > [!div class="nextstepaction"]
-> [Включить шифрование дисков Azure для Linux](azure-security-disk-encryption-linux.md)
+> [Включение шифрование дисков Azure для Linux](azure-security-disk-encryption-linux.md)
 

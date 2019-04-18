@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 04/10/2019
 ms.author: magoedte
 ms.openlocfilehash: 8b6745a2b9afe8d3101585e3f7a13f2fc978c84a
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59492094"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-vms-preview"></a>Как выполнять запросы к журналам из Azure Monitor для виртуальных машин (предварительная версия)
@@ -99,7 +99,7 @@ Azure Monitor для виртуальных машин собирает данн
 #### <a name="geolocation"></a>Географическое положение
 *VMConnection* для каждой записи подключения содержит указанные ниже свойства со сведениями о географическом положении для удаленной стороны. 
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 |:--|:--|
 |RemoteCountry |Название страны, в которой размещена сторона с IP-адресом, указанным в свойстве RemoteIp.  Пример: *United States* (США). |
 |RemoteLatitude |Широта географического положения. Пример: *47,68*. |
@@ -134,7 +134,7 @@ Azure Monitor для виртуальных машин собирает данн
 
 Каждая запись в VMBoundPort идентифицируется по следующим полям: 
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 |:--|:--|
 |Process | Удостоверение процесса (или группы процессов), с которыми порт будет связано с.|
 |IP-адрес | Порт IP-адрес (может быть IP-адрес подстановочный знак, *0.0.0.0*) |

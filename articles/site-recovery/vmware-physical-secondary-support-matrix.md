@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/08/2019
 ms.author: raynew
 ms.openlocfilehash: b316d6a8293d9f23eb89e8b6fffedac316759df4
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59360159"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-vmware-vms-and-physical-servers-to-a-secondary-site"></a>Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов на дополнительный сайт
@@ -28,7 +28,7 @@ ms.locfileid: "59360159"
 
 ## <a name="host-servers"></a>Серверы узлов
 
-**Операционная система** | **Сведения**
+**Операционная система** | **Дополнительные сведения**
 --- | ---
 Сервер vCenter | vCenter 5.5, 6.0 или 6.5<br/><br/> Обратите внимание, что при использовании версии 6.0 или 6.5 поддерживаются только функции версии 5.5.
 
@@ -37,7 +37,7 @@ ms.locfileid: "59360159"
 
 В следующей таблице указаны сведения о поддержке операционных систем для компьютеров, реплицируемых с помощью Site Recovery. В поддерживаемой операционной системе может выполняться любая рабочая нагрузка.
 
-**Операционная система** | **Сведения**
+**Операционная система** | **Дополнительные сведения**
 --- | ---
 Windows Server | 64-разрядная версия Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 как минимум с пакетом обновления 1 (SP1).
 Linux | Red Hat Enterprise Linux 6.7, 6.8, 6.9, 7.1 или 7.2. <br/><br/> CentOS 6.5, 6.6, 6.7, 6.8, 6.9, 7.0, 7.1 или 7.2. <br/><br/> Oracle Enterprise Linux 6.4, 6.5 или 6.8 с ядром, совместимым с Red Hat, или с ядром Unbreakable Enterprise Kernel Release 3 (UEK3). <br/><br/> SUSE Linux Enterprise Server 11 SP3, 11 SP4 
@@ -55,7 +55,7 @@ Linux | Red Hat Enterprise Linux 6.7, 6.8, 6.9, 7.1 или 7.2. <br/><br/> CentO
 
 ## <a name="network-configuration---hostguest-vm"></a>Конфигурация сети — узел или гостевые виртуальные машины
 
-**Параметр Configuration** | **Поддерживаются**  
+**Конфигурация** | **Поддерживаются**  
 --- | --- 
 Узел — объединение сетевых адаптеров | Yes 
 Узел — виртуальная локальная сеть | Yes 
@@ -72,7 +72,7 @@ Linux | Red Hat Enterprise Linux 6.7, 6.8, 6.9, 7.1 или 7.2. <br/><br/> CentO
 
 ### <a name="host-storage"></a>Хранилище узла
 
-**Система хранения (узел)** | **Поддерживаются** 
+**Устройство или система хранения (узел)** | **Поддерживаются** 
 --- | --- 
 NFS | Yes 
 SMB 3.0 | Н/Д 
@@ -81,7 +81,7 @@ SMB 3.0 | Н/Д
 
 ### <a name="guest-or-physical-server-storage"></a>Хранилища гостевого или физического сервера
 
-**Параметр Configuration** | **Поддерживаются** 
+**Конфигурация** | **Поддерживаются** 
 --- | --- 
 VMDK | Yes 
 VHD (VHDX) | Н/Д 
@@ -110,7 +110,7 @@ RDM | Yes
 
 Служба Mobility Service координирует репликацию между локальными серверами VMware или физическими серверами и дополнительным расположением. При настройке репликации обязательно проверьте, что установлена последняя версия Mobility Service и других компонентов.
 
-| **Блокировка изменений** | **Сведения** |
+| **Обновление**. | **Дополнительные сведения** |
 | --- | --- |
 |Обновления Scout | Обновления Scout являются накопительными. <br/><br/> Последние обновления Scout: [сведения и файлы для скачивания](vmware-physical-secondary-disaster-recovery.md#updates) |
 |Обновления компонентов | В пакет обновлений Scout входят обновления для всех компонентов, включая сервер RX, сервер конфигурации, главный целевой сервер и целевой сервер обработки, серверы vContinuum и исходные серверы, которые нужно защитить.<br/><br/> [Узнайте больше](vmware-physical-secondary-disaster-recovery.md#download-and-install-component-updates).|
@@ -120,5 +120,5 @@ RDM | Yes
 
 Скачайте [руководство пользователя InMage Scout](https://aka.ms/asr-scout-user-guide).
 
-- [Репликация виртуальных машин Hyper-V в облаках VMM на дополнительный сайт](tutorial-vmm-to-vmm.md)
+- [Репликация виртуальных машин Hyper-V из облаков VMM на вторичный сайт VMM](tutorial-vmm-to-vmm.md)
 - [Репликация виртуальных машин и физических серверов VMware на дополнительный сайт](tutorial-vmware-to-vmware.md)

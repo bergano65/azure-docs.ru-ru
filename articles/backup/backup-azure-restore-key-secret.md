@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 08/28/2017
 ms.author: geetha
 ms.openlocfilehash: 13eb800cd64e0de736b1fdea308a03d8a8d0f046
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59358201"
 ---
 # <a name="restore-key-vault-key-and-secret-for-encrypted-vms-using-azure-backup"></a>Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы архивации Azure
@@ -66,7 +66,7 @@ Restore-AzureKeyVaultKey -VaultName '<target_key_vault_name>' -InputFile $keyDes
 
 Используйте созданный выше JSON-файл для получения имени и значения секрета и укажите его при выполнении командлета настройки секрета, чтобы поместить секрет (BEK) обратно в хранилище ключей. **Воспользуйтесь этими командлетами, если виртуальная машина зашифрована с помощью BEK и KEK.**
 
-**Используйте эти командлеты, если виртуальная машина Windows зашифрована с помощью BEK и KEK.**
+**Воспользуйтесь этими командлетами, если виртуальная машина Windows зашифрована с помощью BEK и KEK.**
 
 ```powershell
 $secretdata = $encryptionObject.OsDiskKeyAndSecretDetails.SecretData
@@ -76,7 +76,7 @@ $Tags = @{'DiskEncryptionKeyEncryptionAlgorithm' = 'RSA-OAEP';'DiskEncryptionKey
 Set-AzureKeyVaultSecret -VaultName '<target_key_vault_name>' -Name $secretname -SecretValue $Secret -ContentType  'Wrapped BEK' -Tags $Tags
 ```
 
-**Используйте эти командлеты, если виртуальная машина Linux зашифрована с помощью BEK и KEK.**
+**Воспользуйтесь этими командлетами, если виртуальная машина Linux зашифрована с помощью BEK и KEK.**
 
 ```powershell
 $secretdata = $encryptionObject.OsDiskKeyAndSecretDetails.SecretData

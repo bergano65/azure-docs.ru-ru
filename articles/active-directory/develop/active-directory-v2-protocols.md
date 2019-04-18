@@ -19,10 +19,10 @@ ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dad05221376fa5871aadf6d89dcb15dff55a6dfa
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59490728"
 ---
 # <a name="microsoft-identity-platform-protocols"></a>Протоколы платформы удостоверений Microsoft
@@ -64,7 +64,7 @@ https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token
 
 Где `{tenant}` может принимать одно из четырех значений:
 
-| Значение | Описание |
+| Значение | ОПИСАНИЕ |
 | --- | --- |
 | `common` | Позволяет пользователям с личными учетными записями Майкрософт и рабочими учетными записями Azure AD выполнять вход в приложение. |
 | `organizations` | Позволяет выполнять вход в приложение только пользователям с рабочими учетными записями Azure AD. |
@@ -86,8 +86,8 @@ https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token
 
 Если вы готовы рассмотреть несколько примеров запросов, приступите к одному из учебников ниже. Каждый из них соответствует определенному сценарию аутентификации. Если вам нужна помощь в выборе правильный поток, см. статью [типы приложений, которые можно создать с платформой Microsoft identity](v2-app-types.md).
 
-* [Создание мобильного и собственного приложения с помощью OAuth 2.0](v2-oauth2-auth-code-flow.md)
-* [Создание веб-приложений с помощью OpenID Connect](v2-protocols-oidc.md)
-* [Создание одностраничных приложений с помощью неявного потока OAuth 2.0](v2-oauth2-implicit-grant-flow.md)
-* [Создание управляющих программ или серверных процессов с помощью потока учетных данных клиента OAuth 2.0](v2-oauth2-client-creds-grant-flow.md)
-* [Получение маркеров в веб-API с помощью потока on-behalf-of OAuth 2.0](v2-oauth2-on-behalf-of-flow.md)
+* [Создание мобильного и собственного приложения с использованием OAuth 2.0](v2-oauth2-auth-code-flow.md)
+* [Сборка веб-приложения с протоколом OpenID Connect](v2-protocols-oidc.md)
+* [Создание одностраничных приложений с использованием неявной последовательности OAuth 2.0](v2-oauth2-implicit-grant-flow.md)
+* [Создание управляющих программ или серверных процессов с использованием последовательности учетных данных клиентов OAuth 2.0](v2-oauth2-client-creds-grant-flow.md)
+* [Получение маркеров в веб-API с помощью последовательности OAuth 2.0 On-Behalf-Of](v2-oauth2-on-behalf-of-flow.md)

@@ -11,21 +11,21 @@ ms.topic: article
 ms.assetid: 7574cc7c-e5a1-4b7c-97f6-0cffb1a5d536
 ms.date: 10/15/2017
 ms.openlocfilehash: bbb10bf0174b6e06e28d171510345ed92b6642d9
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59357076"
 ---
 # <a name="deploy-logic-apps-with-azure-resource-manager-templates"></a>Развертывание приложений логики с помощью шаблонов Azure Resource Manager
 
 После создания шаблона Azure Resource Manager для развертывания приложения логики, можно развернуть шаблон в следующих случаях:
 
-* [Портал Azure](#portal)
+* [портал Azure](#portal)
 * [Azure PowerShell](#powershell)
-* [Инфраструктура CLI Azure](#cli)
-* [REST API Azure Resource Manager](../azure-resource-manager/resource-group-template-deploy-rest.md)
-* [Azure DevOps Azure Pipelines](#azure-pipelines)
+* [Интерфейс командной строки Azure](#cli)
+* [API REST диспетчера ресурсов Azure](../azure-resource-manager/resource-group-template-deploy-rest.md)
+* [Конвейеры Azure DevOps Azure](#azure-pipelines)
 
 <a name="portal"></a>
 
@@ -33,7 +33,7 @@ ms.locfileid: "59357076"
 
 Чтобы автоматически развернуть шаблон приложения логики Azure, можно выбрать следующие **развертывание в Azure** кнопку, которая выполняется вход в портал Azure и запрашивает сведения о приложении логики. Необходимые изменения можно внести в шаблон приложения логики или параметры.
 
-[![Dазвернуть в Azure](./media/logic-apps-create-deploy-azure-resource-manager-templates/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-logic-app-create%2Fazuredeploy.json)
+[![Развертывание в Azure](./media/logic-apps-create-deploy-azure-resource-manager-templates/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-logic-app-create%2Fazuredeploy.json)
 
 Например будет предложено ввести эту информацию, после входа на портал Azure:
 

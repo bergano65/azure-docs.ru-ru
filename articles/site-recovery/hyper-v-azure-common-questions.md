@@ -9,10 +9,10 @@ ms.date: 04/08/2019
 ms.topic: conceptual
 ms.author: raynew
 ms.openlocfilehash: ce4a6ab24aaa5ed693f8d64782fb025a2ca9ce30
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59357995"
 ---
 # <a name="common-questions---hyper-v-to-azure-disaster-recovery"></a>Часто задаваемые вопросы. Аварийное восстановление Hyper-V в Azure
@@ -33,8 +33,8 @@ ms.locfileid: "59357995"
 
 Требования для сервера узла Hyper-V зависят от сценария развертывания. Ознакомьтесь с предварительными требованиями к Hyper-V:
 
-* [Репликация виртуальных машин Hyper-V (без VMM) в Azure](site-recovery-hyper-v-site-to-azure.md)
-* [Репликация виртуальных машин Hyper-V (с VMM) в Azure](site-recovery-vmm-to-azure.md)
+* [Репликация виртуальных машин Hyper-V в Azure (без использования VMM)](site-recovery-hyper-v-site-to-azure.md)
+* [Репликация виртуальных машин Hyper-V в Azure (с помощью VMM)](site-recovery-vmm-to-azure.md)
 * [Репликация виртуальных машин Hyper-V в дополнительный центр обработки данных](site-recovery-vmm-to-vmm.md)
 * Если вы выполняете репликацию на вторичный центр обработки данных, прочтите о [поддерживаемых гостевых операционных системах для виртуальных машин Hyper-V](https://technet.microsoft.com/library/mt126277.aspx).
 * При репликации в Azure служба Site Recovery поддерживает все гостевые операционные системы на виртуальной машине, [поддерживаемые Azure](https://technet.microsoft.com/library/cc794868%28v=ws.10%29.aspx).
@@ -114,8 +114,8 @@ Site Recovery имеет сертификаты ISO 27001:2013, 27018, HIPAA, DP
 ### <a name="can-i-automate-site-recovery-scenarios-with-an-sdk"></a>Можно ли автоматизировать сценарии Site Recovery с помощью пакета SDK?
 Да. Рабочие процессы службы Site Recovery можно автоматизировать с помощью интерфейса REST API, PowerShell или пакета SDK для Azure. В настоящее время поддерживаются такие сценарии для репликации Hyper-V в Azure с помощью PowerShell:
 
-- [Репликация Hyper-V без VMM, с помощью PowerShell](hyper-v-azure-powershell-resource-manager.md)
-- [Репликация Hyper-V с VMM, с помощью Powershell](hyper-v-vmm-powershell-resource-manager.md)
+- [репликация Hyper-V без VMM с использованием PowerShell](hyper-v-azure-powershell-resource-manager.md);
+- [репликация Hyper-V с VMM с использованием PowerShell](hyper-v-vmm-powershell-resource-manager.md).
 
 ## <a name="replication"></a>Репликация
 

@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 02/14/2019
 ms.author: mbullwin
 ms.openlocfilehash: 0f348e3e7dc2812bf354d1f8ec86330b0742439a
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59361868"
 ---
 # <a name="resources-roles-and-access-control-in-application-insights"></a>Ресурсы, роли и контроль доступа в Application Insights
@@ -83,20 +83,20 @@ ms.locfileid: "59361868"
 
 | Роль | В группе ресурсов |
 | --- | --- |
-| [Владелец.](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) |Может менять любые параметры, в том числе права доступа пользователей. |
-| [участник;](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) |Может изменять любое содержимое, в том числе любые ресурсы. |
-| [участника компонента Application Insights](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#application-insights-component-contributor) |Может изменять ресурсы, веб-тесты и оповещения Application Insights. |
+| [Владелец](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) |Может менять любые параметры, в том числе права доступа пользователей. |
+| [Участник](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) |Может изменять любое содержимое, в том числе любые ресурсы. |
+| [Участник компонента Application Insights](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#application-insights-component-contributor) |Может изменять ресурсы, веб-тесты и оповещения Application Insights. |
 | [Читатель](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#reader) |Может просматривать содержимое, но нельзя ничего изменять. |
 | [Отладчик моментальных снимков Application Insights](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#application-insights-snapshot-debugger) | Предоставляет пользователю разрешение на использование функций Snapshot Debugger Application Insights. Обратите внимание на то, что эта роль не включает в себя ни роль "Владелец", ни роль "Участник". |
 | Участник управления выпусками развертывания служб Azure | Роль участника для развертывания служб с помощью функции развертывания служб Azure. |
 | [Средство очистки данных](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#data-purger) | Специальная роль для очистки персональных данных. Дополнительные сведения см. в статье [Руководство по хранению персональных данных в Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-customer-data).   |
 | Администратор ExpressRoute | Может создавать и удалять подключения ExpressRoute, а также управлять ими.|
-| [участник Log Analytics.](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-contributor) | Участник Log Analytics может считывать все данные мониторинга и изменять параметры мониторинга. Изменение параметров мониторинга подразумевает добавление расширений в виртуальные машины, чтение ключей учетной записи хранения для настройки коллекции журналов в службе хранилища Azure, создание и настройку учетных записей службы автоматизации, добавление решений и настройку диагностики Azure во всех ресурсах Azure.  |
-| [читатель Log Analytics;](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-reader) | Читатель Log Analytics может просматривать все данные мониторинга, выполнять по ним поиск и просматривать параметры мониторинга, в том числе конфигурацию системы диагностики Azure для всех ресурсов Azure. |
+| [Участник Log Analytics](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-contributor) | Участник Log Analytics может считывать все данные мониторинга и изменять параметры мониторинга. Изменение параметров мониторинга подразумевает добавление расширений в виртуальные машины, чтение ключей учетной записи хранения для настройки коллекции журналов в службе хранилища Azure, создание и настройку учетных записей службы автоматизации, добавление решений и настройку диагностики Azure во всех ресурсах Azure.  |
+| [Читатель Log Analytics](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-reader) | Читатель Log Analytics может просматривать все данные мониторинга, выполнять по ним поиск и просматривать параметры мониторинга, в том числе конфигурацию системы диагностики Azure для всех ресурсов Azure. |
 | masterreader | Позволяет пользователю просматривать все элементы, но не вносить изменения. |
-| [Monitoring Contributor](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor) | Может читать все данные мониторинга и параметры обновления мониторинга. |
+| [Monitoring Contributor](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor) (Участник мониторинга) | Может читать все данные мониторинга и параметры обновления мониторинга. |
 | [Издатель метрик мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-metrics-publisher) | Включает публикацию метрик ресурсов Azure. |
-| [Роль Monitoring Reader](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) | Может читать все данные мониторинга. |
+| [Monitoring Reader](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) (Читатель данных мониторинга) | Может читать все данные мониторинга. |
 | Участник политики ресурсов (предварительная версия) | Обратное заполнение пользователей из EA с правами на создание и изменение политики ресурсов, создание запросов в службу поддержки, а также чтение ресурсов и иерархии.  |
 | [Администратор доступа пользователей](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) | Позволяет пользователю управлять доступом других пользователей к ресурсам Azure.|
 | [Участник веб-сайта](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#website-contributor) | Позволяет управлять веб-сайтами (не веб-планами), но не доступом к ним.|
@@ -115,7 +115,7 @@ ms.locfileid: "59361868"
 
 ## <a name="related-content"></a>Связанная информация
 
-* [Управление доступом в Azure на основе ролей](../../role-based-access-control/role-assignments-portal.md)
+* [Управление доступом на основе ролей в Azure](../../role-based-access-control/role-assignments-portal.md)
 
 ## <a name="powershell-query-to-determine-role-membership"></a>Запрос PowerShell для определения членства в роли
 

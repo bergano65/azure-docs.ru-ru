@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 11/27/2018
 ms.author: magoedte
 ms.openlocfilehash: 0ed6747573edf4c059eb29d28107a22706c52856
-ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59426195"
 ---
 # <a name="collect-alerts-from-nagios-and-zabbix-in-azure-monitor-from-log-analytics-agent-for-linux"></a>Сбор оповещений Nagios и Zabbix с помощью агента Log Analytics для Linux в службу Azure Monitor 
@@ -96,7 +96,7 @@ ms.locfileid: "59426195"
 | `SourceSystem` |*Nagios* |
 | `AlertName` |Имя оповещения. |
 | `AlertDescription` | Описание оповещения. |
-| `AlertState` | Состояние службы или узла.<br><br>ОК<br>ПРЕДУПРЕЖДЕНИЕ<br>РАБОТАЕТ<br>СБОЙ |
+| `AlertState` | Состояние службы или узла.<br><br>OК<br>ПРЕДУПРЕЖДЕНИЕ<br>РАБОТАЕТ<br>СБОЙ |
 | `HostName` | Имя узла, который создал оповещение. |
 | `PriorityNumber` | Приоритет оповещения. |
 | `StateType` | Тип состояния оповещения.<br><br>SOFT — проблема, которая не проверялась повторно.<br>HARD — проблема, которая проверялась повторно заданное число раз.  |
