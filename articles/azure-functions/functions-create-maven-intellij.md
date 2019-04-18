@@ -13,10 +13,10 @@ ms.date: 07/01/2018
 ms.author: jehollan
 ms.custom: mvc, devcenter
 ms.openlocfilehash: da93c60b52edf509900adf89fb688a0596d9763b
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58877812"
 ---
 # <a name="create-your-first-azure-function-with-java-and-intellij"></a>Создание первой функции Azure с помощью Java и IntelliJ
@@ -37,7 +37,7 @@ ms.locfileid: "58877812"
 - [Java Developer Kit (JDK) версии 8](https://www.azul.com/downloads/zulu/)
 - [Apache Maven 3.0](https://maven.apache.org) или более поздней версии
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/download), версия Community или Ultimate с Maven
-- [Инфраструктура CLI Azure](https://docs.microsoft.com/cli/azure)
+- [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure)
 
 > [!IMPORTANT]
 > Чтобы завершить выполнение шагов из этой статьи, переменной среде JAVA_HOME необходимо присвоить расположение установки JDK.
@@ -68,7 +68,7 @@ Maven создает файлы проекта в новой папке с им�
 1. Откройте панель инструментов **Maven Projects** (Проекты Maven).
 1. Разверните **Жизненный цикл**, а затем откройте **Пакет**. Решение будет создано и упаковано в созданном целевом каталоге.
 1. Чтобы запустить локальную среду выполнения Azure, расширьте **Подключаемые модули** > **azure-functions** и откройте **azure-functions:run**.  
-  ![Панель инструментов maven для функций Azure](media/functions-create-first-java-intellij/functions-intellij-java-maven-toolbar.png)  
+  ![Панель инструментов Maven для Функций Azure](media/functions-create-first-java-intellij/functions-intellij-java-maven-toolbar.png)  
 
 1. После того как вы протестировали функцию, закройте диалоговое окно запуска. Только один узел функции может быть активным и работать локально одновременно.
 

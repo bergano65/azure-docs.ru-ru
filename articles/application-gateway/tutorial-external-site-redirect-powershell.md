@@ -11,10 +11,10 @@ ms.workload: infrastructure-services
 ms.date: 01/24/2018
 ms.author: victorh
 ms.openlocfilehash: c6b8e61f3b5dc8ce3623c9ee6654a1befdc1e924
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58877216"
 ---
 # <a name="create-an-application-gateway-with-external-redirection-using-azure-powershell"></a>Создание шлюза приложений с перенаправлением внешнего трафика с помощью Azure PowerShell
@@ -34,7 +34,7 @@ ms.locfileid: "58877216"
 
 [!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
 
-Если вы решили установить и использовать PowerShell локально, то для работы с этим руководством вам понадобится модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+Если вы решили установить и использовать PowerShell локально, то для работы с этим учебником вам понадобится модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -169,4 +169,4 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 > * Создание шлюза приложений
 
 > [!div class="nextstepaction"]
-> [Дополнительные сведения о возможностях со шлюзом приложений](./application-gateway-introduction.md)
+> [Дополнительные сведения о возможностях шлюза приложений](./application-gateway-introduction.md)

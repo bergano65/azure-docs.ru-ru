@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 04/03/2019
 ms.author: helohr
-ms.openlocfilehash: e82b9ae96ae43278e22da22702d3d899abadb1b5
-ms.sourcegitcommit: f24b62e352e0512dfa2897362021b42e0cb9549d
+ms.openlocfilehash: 9d69a24b106fc39c03b8f95758bc240916023456
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59505606"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59698321"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Подготовка и настройка главного образа VHD
 
@@ -274,7 +274,7 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v MaxId
 1. На сервере Active Directory, откройте **консоли управления групповыми политиками**.
 2. Разверните домен и объекты групповой политики.
 3. Щелкните правой кнопкой мыши **объекта групповой политики** , созданную для параметров групповой политики и выберите **изменить**.
-4. В **редактор управления групповыми политиками**, перейдите к **Конфигурация компьютера** > **политики** > **администрирования Шаблоны** > **компоненты Windows** > **горизонта Просмотр RDSH служб** > **сеанс удаленного рабочего стола Узел** > **перенаправление устройств и ресурсов**.
+4. В **редактор управления групповыми политиками**, перейдите к **Конфигурация компьютера** > **политики** > **администрирования Шаблоны** > **компоненты Windows** > **служб удаленных рабочих столов** > **узла сеансов удаленных рабочих столов**   >  **Перенаправление устройств и ресурсов**.
 5. Включить **разрешить функцию перенаправления часового пояса** параметр.
 
 Эту команду можно также выполнить на основной образ для перенаправления часовых поясов:
@@ -368,7 +368,7 @@ remove CorporateWerServer* from Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\W
 Теперь, когда у вас есть образ, можно создать или обновить пулы узлов. Дополнительные сведения о том, как создавать и обновлять пулы узлов, см. в разделе со следующими статьями:
 
 - [Создание пула узлов с помощью шаблона Azure Resource Manager](create-host-pools-arm-template.md)
-- [Руководство. Создание пула узлов с помощью Azure Marketplace](create-host-pools-azure-marketplace.md)
-- [Создание пула узлов с помощью PowerShell](create-host-pools-powershell.md)
+- [Руководство Создание пула узла с помощью Azure Marketplace](create-host-pools-azure-marketplace.md)
+- [Создание пула узла с помощью PowerShell](create-host-pools-powershell.md)
 - [Настройка общей папки профиля пользователя в пуле узлов](create-host-pools-user-profile.md)
-- [Настройка метода балансировки нагрузки Виртуального рабочего стола Windows](configure-host-pool-load-balancing.md)
+- [Настройка метода балансировки нагрузки виртуальный рабочий стол Windows](configure-host-pool-load-balancing.md)

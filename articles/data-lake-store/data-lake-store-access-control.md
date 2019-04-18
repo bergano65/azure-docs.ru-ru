@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
 ms.openlocfilehash: 211cb32298b17bb9e4023bf8bc74233c3916f58d
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58877675"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen1"></a>Контроль доступа в Azure Data Lake Storage 1-го поколения
@@ -47,9 +47,9 @@ ms.locfileid: "58877675"
 
 |            |    Файл     |   Папка |
 |------------|-------------|----------|
-| **Read (R)** | Чтение содержимого файла | Для просмотра содержимого папки требуются **разрешения на чтение** и **выполнение**.|
-| **Запись (W)** | Запись или добавление данных в файл | Для создания дочерних элементов в папке требуются **разрешения на запись** и **выполнение**. |
-| **Выполнение (X)** | Не имеет значения в контексте Data Lake Storage 1-го поколения | Требуется для просмотра дочерних элементов папки. |
+| **Разрешение на чтение (R)** | Чтение содержимого файла | Для просмотра содержимого папки требуются **разрешения на чтение** и **выполнение**.|
+| **Разрешение на запись (W)** | Запись или добавление данных в файл | Для создания дочерних элементов в папке требуются **разрешения на запись** и **выполнение**. |
+| **Разрешение на выполнение (X)** | Не имеет значения в контексте Data Lake Storage 1-го поколения | Требуется для просмотра дочерних элементов папки. |
 
 ### <a name="short-forms-for-permissions"></a>Сокращения для разрешений
 
@@ -124,13 +124,13 @@ ms.locfileid: "58877675"
 
 ### <a name="the-owning-group"></a>группа владельцев;
 
-**Фоновый**
+**Вводная информация**
 
 В списках управления доступом POSIX каждый пользователь связан с "основной группой". Например, пользователь Алиса принадлежит к группе finance. Пользователь Aлиса может принадлежать к нескольким группам, но одна из них всегда назначается как основная. В интерфейсе POSIX, когда пользователь Aлиса создает файл, группа владельцев этого файла задается для основной группы этого пользователя, которой в данном случае является группа finance. В противном случае разрешения группы владельцев будут аналогичны разрешениям, назначенным другим пользователям или группам.
 
 Поскольку в Data Lake Storage 1-го поколения пользователи не связаны с "основной группой", группа владельцев назначается следующим образом.
 
-**Назначение владельца группы для нового файла или папки**
+**Назначение группы владельцев для нового файла или папки**
 
 * **Тип 1.** Корневая папка "/". Эта папка создается при создании учетной записи Data Lake Storage 1-го поколения. В этом случае группе владельцев задан GUID, состоящий из нулей.  Это значение не разрешает доступ.  Это заполнитель на время, пока не будет назначена группа.
 * **Тип 2** (во всех остальных случаях). При создании элемента группа владельцев копируется из родительской папки.
@@ -288,15 +288,15 @@ GUID отображается, если пользователь не сущес
 
 ### <a name="where-can-i-learn-more-about-posix-access-control-model"></a>Где можно получить дополнительную информацию о модели контроля доступа POSIX?
 
-* [Списки управления доступом POSIX для Linux](https://www.linux.com/news/posix-acls-linux)
-* [Руководство по разрешение HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html)
-* [ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ О POSIX](https://www.opengroup.org/austin/papers/posix_faq.html)
+* [POSIX Access Control Lists on Linux](https://www.linux.com/news/posix-acls-linux) (Списки управления доступом POSIX для Linux)
+* [HDFS Permission Guide](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html) (Руководство по разрешениям в HDFS)
+* [POSIX FAQ (POSIX: вопросы и ответы)](https://www.opengroup.org/austin/papers/posix_faq.html)
 * [POSIX 1003.1 2008](https://standards.ieee.org/findstds/standard/1003.1-2008.html)
-* [POSIX 1003.1 2013](https://pubs.opengroup.org/onlinepubs/9699919799.2013edition/)
-* [POSIX 1003.1 2016](https://pubs.opengroup.org/onlinepubs/9699919799.2016edition/)
-* [POSIX ACL для Ubuntu](https://help.ubuntu.com/community/FilePermissionsACLs)
-* [Список управления Доступом с помощью списков управления доступом в Linux](https://bencane.com/2012/05/27/acl-using-access-control-lists-on-linux/)
+* [POSIX 1003.1 2013](https://pubs.opengroup.org/onlinepubs/9699919799.2013edition/)
+* [POSIX 1003.1 2016](https://pubs.opengroup.org/onlinepubs/9699919799.2016edition/)
+* [POSIX ACL on Ubuntu](https://help.ubuntu.com/community/FilePermissionsACLs) (POSIX ACL для Ubuntu)
+* [ACL: Using Access Control Lists on Linux](https://bencane.com/2012/05/27/acl-using-access-control-lists-on-linux/) (ACL: использование списков управления доступом в Linux)
 
 ## <a name="see-also"></a>См. также
 
-* [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
+* [Обзор Azure Data Lake Storage Gen1](data-lake-store-overview.md)

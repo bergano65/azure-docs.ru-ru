@@ -9,10 +9,10 @@ ms.date: 08/10/2018
 ms.author: tamram
 ms.subservice: common
 ms.openlocfilehash: bc78dade345c9f9c72cf936136d9969b79bc1398
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58878593"
 ---
 # <a name="use-the-azure-storage-emulator-for-development-and-testing"></a>Использование эмулятора хранения Azure для разработки и тестирования
@@ -171,9 +171,9 @@ http://127.0.0.1:10000/devstoreaccount1/sascontainer?sv=2012-02-12&se=2015-07-08
 | --- | --- | --- | --- |
 | **Начало** |Запускает эмулятор хранения. |`AzureStorageEmulator.exe start [-inprocess]` |*-inprocess*: запускает эмулятор в текущем процессе вместо создания нового процесса. |
 | **Остановить** |Останавливает эмулятор хранения. |`AzureStorageEmulator.exe stop` | |
-| **Status** |Печатает состояние эмулятора хранения. |`AzureStorageEmulator.exe status` | |
+| **Состояние** |Печатает состояние эмулятора хранения. |`AzureStorageEmulator.exe status` | |
 | **Clear** |Очищает данные во всех службах, указанных в командной строке. |`AzureStorageEmulator.exe clear [blob] [table] [queue] [all]` |*blob*: удаляет данные о больших двоичных объектах. <br/>*queue*: удаляет данные об очередях. <br/>*table*: удаляет данные о таблицах. <br/>*all*: удаляет все данные во всех службах. |
-| **init** |Выполняет одноразовую инициализацию для настройки эмулятора. |<code>AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate&#124;-skipcreate] [-reserveports&#124;-unreserveports] [-inprocess]</code> |*-server serverName\имя_экземпляра*: указывает сервер для размещения экземпляра SQL. <br/>*-sqlinstance имя_экземпляра*: указывает имя экземпляра SQL, используемого на сервере по умолчанию. <br/>*-forcecreate*: принудительно создает базу данных SQL, даже если она уже существует. <br/>*-skipcreate*: пропускает создание базы данных SQL. Имеет приоритет над -forcecreate.<br/>*-reserveports*: пытается зарезервировать порты HTTP, связанные со службами.<br/>*-unreserveports*: пытается отменить резервирование портов HTTP, связанных со службами. Имеет приоритет над -reserveports.<br/>*-inprocess*: выполняет инициализацию в текущем процессе вместо порождения нового процесса. При изменении резервирований портов нужно запустить текущий процесс с повышенными привилегиями. |
+| **Init** |Выполняет одноразовую инициализацию для настройки эмулятора. |<code>AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate&#124;-skipcreate] [-reserveports&#124;-unreserveports] [-inprocess]</code> |*-server serverName\имя_экземпляра*: указывает сервер для размещения экземпляра SQL. <br/>*-sqlinstance имя_экземпляра*: указывает имя экземпляра SQL, используемого на сервере по умолчанию. <br/>*-forcecreate*: принудительно создает базу данных SQL, даже если она уже существует. <br/>*-skipcreate*: пропускает создание базы данных SQL. Имеет приоритет над -forcecreate.<br/>*-reserveports*: пытается зарезервировать порты HTTP, связанные со службами.<br/>*-unreserveports*: пытается отменить резервирование портов HTTP, связанных со службами. Имеет приоритет над -reserveports.<br/>*-inprocess*: выполняет инициализацию в текущем процессе вместо порождения нового процесса. При изменении резервирований портов нужно запустить текущий процесс с повышенными привилегиями. |
 
 ## <a name="differences-between-the-storage-emulator-and-azure-storage"></a>Различия между эмулятором хранения и службой хранилища Azure
 Эмулятор хранения представляет собой эмулированную среду, выполняемую в локальном экземпляре SQL. Поэтому между эмулятором и учетной записью хранения Azure в облаке существуют функциональные различия.

@@ -9,10 +9,10 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: 4fbb86f4fbda9b8e521f7465bb8bb3d18602ca13
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58877471"
 ---
 # <a name="aggregate-operations-on-azure-cosmos-db-cassandra-api-tables-from-spark"></a>Статистические операции для таблиц API Cassandra для Azure Cosmos DB из Spark 
@@ -368,4 +368,4 @@ select book_name,book_price from books_vw order by book_price desc limit 3;
 
 Для выполнения операций копирования таблицы обратитесь к разделу:
 
-* [Операции копирования таблицы](cassandra-spark-table-copy-ops.md)
+* [Операции копирования таблиц](cassandra-spark-table-copy-ops.md)

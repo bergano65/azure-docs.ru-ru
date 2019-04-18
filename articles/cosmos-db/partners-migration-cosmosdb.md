@@ -7,10 +7,10 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/07/2018
 ms.openlocfilehash: f3b744f676dd352bb38e5cbca6e532c650617816
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58880616"
 ---
 # <a name="azure-cosmos-db-nosql-migration-and-application-development-partners"></a>Партнеры по разработке миграции и приложения Azure Cosmos DB для NoSQL
@@ -19,14 +19,14 @@ ms.locfileid: "58880616"
 
 ## <a name="migration-tools"></a>Средства миграции
 
-|**Партнер**  |**Возможности и практические рекомендации**  |**Поддерживаемые страны**  |**Контакт**  |
+|**Партнер**  |**Возможности и опыт**  |**Поддерживаемые страны**  |**Контакт**  |
 |---------|---------|---------|---------|
 |![ImanisData][1]   | [Миграция данных](https://www.imanisdata.com/wp-content/uploads/2018/02/Imanis_DS_MongoDB_Azure_FINAL.pdf) из MongoDB в Azure Cosmos DB. <br/> Imanis Data позволяет глобальным предприятиям быстро и легко переносить свои локальные или облачные базы данных MongoDB в Azure Cosmos DB. Imanis Data обеспечивает бессубъектный, инкрементно-вечный подход облачной миграции для хранилищ данных MongoDB, который упрощает миграцию и значительно сокращает время простоя.|  США  |   [Веб-сайт](http://www.imanisdata.com/)      |
 |![Striim][2]    |  [Перемещение данных в режиме реального времени в Azure Cosmos DB](https://www.striim.com/striim-for-azure-cosmos-db/) из разнообразных источников данных. <br/> Striim упрощает коллекции в режиме реального времени и перемещение данных из разнообразных источников в локальной, включая enterprise документа и реляционных баз данных, датчики и файлов журналов в Azure Cosmos DB. |   США   |  [Веб-сайт](https://www.striim.com/)       |
 
 ## <a name="systems-integrator-partners"></a>Партнеры системных интеграторов
 
-|**Партнер**  |**Возможности и практические рекомендации**  |**Поддерживаемые страны**  |**Контакт**  |
+|**Партнер**  |**Возможности и опыт**  |**Поддерживаемые страны**  |**Контакт**  |
 |---------|---------|---------|---------|
 | ![10thMagnitude][13] | Миграция NoSQL, разработка новых приложений. | США | [Веб-сайт](https://www.10thmagnitude.com/)|
 |![Altoros Development LLC][3]    |  Миграция NoSQL, <br/> инновация приложений (существующие приложения), <br/> разработка новых приложений. |   США, Норвегия, Финляндия, Беларусь, Аргентина |  [Веб-сайт](https://www.altoros.com/)     |

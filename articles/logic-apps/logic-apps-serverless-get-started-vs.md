@@ -11,10 +11,10 @@ ms.custom: vs-azure
 ms.topic: article
 ms.date: 04/02/2019
 ms.openlocfilehash: 39b44668a89ce0c77c09a7fa20dc4d95b2164bf4
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58863004"
 ---
 # <a name="build-your-first-serverless-app-with-azure-logic-apps-and-azure-functions---visual-studio"></a>Создание первого бессерверного приложения на основе Azure Logic Apps и Функций Azure (Visual Studio)
@@ -29,18 +29,18 @@ ms.locfileid: "58863004"
 
 * Скачайте и установите эти средства, если вы еще этого не сделали:
 
-  * <a href="https://aka.ms/download-visual-studio" target="_blank">Visual Studio 2019 г., 2017 или 2015 — Community edition или более поздней версии</a>. 
+  * <a href="https://aka.ms/download-visual-studio" target="_blank">Visual Studio 2019, 2017 или 2015 — выпуски Community или выше</a>. 
   В этом кратком руководстве используется бесплатная версия Visual Studio Community 2017.
 
     > [!IMPORTANT]
-    > При установке Visual Studio 2019 или 2017, убедитесь, что выбран **разработки Azure** рабочей нагрузки.
-    > Для Visual Studio 2019 г. Cloud Explorer можно открыть конструктор приложений логики на портале Azure, но еще не удается открыть встроенного конструктора приложений логики.
+    > При установке Visual Studio 2019 или 2017 обязательно выберите рабочую нагрузку **разработки Azure**.
+    > Если используется Visual Studio 2019, Cloud Explorer может открыть конструктор приложений логики на портале Azure. Открытие встроенного конструктора приложений логики пока не поддерживается.
 
-  * <a href="https://azure.microsoft.com/downloads/" target="_blank">Microsoft Azure SDK для .NET (2.9.1 или более поздней версии)</a>. Дополнительные сведения о <a href="https://docs.microsoft.com/dotnet/azure/dotnet-tools?view=azure-dotnet">пакете Azure SDK для .NET</a>.
+  * <a href="https://azure.microsoft.com/downloads/" target="_blank">Пакет Microsoft Azure SDK для .NET (2.9.1 или более поздней версии)</a>. Дополнительные сведения о <a href="https://docs.microsoft.com/dotnet/azure/dotnet-tools?view=azure-dotnet">пакете Azure SDK для .NET</a>.
 
   * [Azure PowerShell](https://github.com/Azure/azure-powershell#installation)
 
-  * Средства Azure Logic Apps для версии Visual Studio вы можете:
+  * Средства Azure Logic Apps для необходимой версии Visual Studio:
 
     * <a href="https://aka.ms/download-azure-logic-apps-tools-visual-studio-2019" target="_blank">Visual Studio 2019 г.</a>
 
@@ -73,11 +73,11 @@ ms.locfileid: "58863004"
    > [!NOTE]
    > Если не существует категория **Cloud** или проект **Группа ресурсов Azure**, убедитесь, что у вас установлен пакет Azure SDK для Visual Studio.
 
-   Если вы используете Visual Studio 2019 г., выполните следующие действия:
+   Если вы используете Visual Studio 2019, сделайте следующее:
 
-   1. В **создайте новый проект** выберите **группы ресурсов Azure** шаблон проекта для любого визуального C# или Visual Basic и выберите **Далее**.
+   1. В поле **Создать проект** выберите шаблон проекта **Группа ресурсов Azure** для языка C# или Visual Basic, а затем нажмите кнопку **Далее**.
 
-   1. Укажите имя для группы ресурсов Azure, которую вы хотите использовать и другие сведения о проекте. Когда все будет готово, выберите **Создать**.
+   1. Укажите имя группы ресурсов Azure, которую вы хотите использовать, и другие сведения о проекте. Когда все будет готово, выберите **Создать**.
 
 1. Укажите имя и расположение проекта, а затем щелкните **ОК**.
 

@@ -15,16 +15,16 @@ ms.workload: na
 ms.date: 03/26/2019
 ms.author: mlottner
 ms.openlocfilehash: d1f9d77d1f87e8d201e2cb034401bb3cae14f41b
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58862919"
 ---
 # <a name="security-agent-authentication-methods"></a>Методы проверки подлинности агента безопасности 
 
 > [!IMPORTANT]
-> Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
+> Центр безопасности Azure для Интернета вещей сейчас предоставляется в общедоступной предварительной версии.
 > Предварительная версия предоставляется без соглашения об уровне обслуживания. Мы не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Здесь объясняются методы проверки подлинности, которые можно использовать с агентом AzureIoTSecurity для проверки подлинности в центре Интернета вещей.
@@ -64,7 +64,7 @@ ms.locfileid: "58862919"
 |Параметр|ОПИСАНИЕ|Параметры|
 |---------|---------------|---------------|
 |**identity**|Режим проверки подлинности| **Модуль** или **устройства**|
-|**Тип**|Authentication type (Тип проверки подлинности)|**SymmetricKey** или **SelfSignedCertificate**|
+|**type**|Authentication type (Тип проверки подлинности)|**SymmetricKey** или **SelfSignedCertificate**|
 |**filePath**|Абсолютный путь к файлу, содержащему сертификат или симметричный ключ| |
 |**gatewayHostname**|Полное ДОМЕННОЕ имя центра Интернета вещей|Пример: ContosoIotHub.azure-devices.net|
 |**deviceId**|Идентификатор устройства.|Пример: MyDevice1|
@@ -114,4 +114,4 @@ ms.locfileid: "58862919"
 ## <a name="see-also"></a>См. также
 - [Общие сведения о безопасности агентов](security-agent-architecture.md)
 - [Развернуть агент безопасности](how-to-deploy-agent.md)
-- [Доступ к необработанным данным безопасности](how-to-security-data-access.md)
+- [Доступ к данным необработанной безопасности](how-to-security-data-access.md)

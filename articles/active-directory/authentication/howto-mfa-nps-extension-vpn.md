@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5ea409b1726e82557b564f93fbd35898e9cf2cb
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 2674e5ca12269d44e111f140fce77bd8bc0c9ae7
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58372460"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59699121"
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Интеграция инфраструктуры VPN с Azure MFA с помощью расширения сервера политики сети для Azure
 
@@ -374,7 +374,7 @@ ms.locfileid: "58372460"
 
 2. В командной строке PowerShell введите команду **cd "c:\Program Files\Microsoft\AzureMfa\Config"** и нажмите клавишу ВВОД.
 
-3. В следующей командной строке введите **.\AzureMfsNpsExtnConfigSetup.ps1** и нажмите клавишу ВВОД. Сценарий проверяет, установлен ли модуль PowerShell для Azure Active Directory. Если он не установлен, сценарий автоматически установит этот модуль.
+3. В следующей командной строке введите **.\AzureMfaNpsExtnConfigSetup.ps1**, а затем нажмите клавишу ВВОД. Сценарий проверяет, установлен ли модуль PowerShell для Azure Active Directory. Если он не установлен, сценарий автоматически установит этот модуль.
 
     ![Выполнение сценария конфигурации AzureMfsNpsExtnConfigSetup.ps1](./media/howto-mfa-nps-extension-vpn/image38.png)
 

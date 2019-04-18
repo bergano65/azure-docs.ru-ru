@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
 ms.openlocfilehash: 0b16154edbda4bedfd4e9b680ba4311e7a235212
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58878763"
 ---
 # <a name="using-azure-data-lake-storage-gen1-for-big-data-requirements"></a>Использование Data Lake Storage Gen1 для обеспечения соответствия требованиям больших данных
@@ -40,8 +40,8 @@ ms.locfileid: "58878763"
 
 | источник данных | Средство для приема |
 | --- | --- |
-| Локальный компьютер |<ul> <li>[Портал Azure](data-lake-store-get-started-portal.md)</li> <li>[Azure PowerShell](data-lake-store-get-started-powershell.md)</li> <li>[Инфраструктура CLI Azure](data-lake-store-get-started-cli-2.0.md)</li> <li>[С помощью средств Data Lake для Visual Studio](../data-lake-analytics/data-lake-analytics-data-lake-tools-get-started.md) </li></ul> |
-| Большой двоичный объект хранилища Azure |<ul> <li>[Фабрика данных Azure](../data-factory/connector-azure-data-lake-store.md)</li> <li>[Инструмент AdlCopy](data-lake-store-copy-data-azure-storage-blob.md)</li><li>[DistCp, запущенный в кластере HDInsight](data-lake-store-copy-data-wasb-distcp.md)</li> </ul> |
+| Локальный компьютер |<ul> <li>[портал Azure](data-lake-store-get-started-portal.md)</li> <li>[Azure PowerShell](data-lake-store-get-started-powershell.md)</li> <li>[Интерфейс командной строки Azure](data-lake-store-get-started-cli-2.0.md)</li> <li>[Data Lake Tools для Visual Studio](../data-lake-analytics/data-lake-analytics-data-lake-tools-get-started.md) </li></ul> |
+| Большой двоичный объект хранилища Azure |<ul> <li>[Фабрика данных Azure](../data-factory/connector-azure-data-lake-store.md)</li> <li>[инструмента AdlCopy](data-lake-store-copy-data-azure-storage-blob.md)</li><li>[DistCp, запущенный на кластере HDInsight](data-lake-store-copy-data-wasb-distcp.md)</li> </ul> |
 
 ### <a name="streamed-data"></a>Потоковые данные
 Это данные, создаваемые различными источниками, такими как приложения, устройства, датчики и т. д. Для ввода этих данных в Data Lake Storage 1-го поколения можно использовать разные средства. Как правило, эти средства собирают и обрабатывают данные на основе событий в режиме реального времени, а затем записывают события в пакетном режиме в Data Lake Storage 1-го поколения для последующей обработки.
@@ -61,9 +61,9 @@ ms.locfileid: "58878763"
 ### <a name="web-server-log-data-upload-using-custom-applications"></a>Данные журналов веб-сервера (отправка с помощью настраиваемых приложений)
 Этот тип набора данных вызывается специально, так как анализ данных журналов веб-сервера часто используется в приложениях по работе с большими данными, и для его выполнения требуется отправка больших объемов файлов журналов в Data Lake Storage 1-го поколения. Для отправки таких данных воспользуйтесь следующими средствами или напишите собственные сценарии или приложения.
 
-* [Инфраструктура CLI Azure](data-lake-store-get-started-cli-2.0.md)
+* [Интерфейс командной строки Azure](data-lake-store-get-started-cli-2.0.md)
 * [Azure PowerShell](data-lake-store-get-started-powershell.md)
-* [Пакет SDK для .NET Gen1 хранилища Озера данных Azure](data-lake-store-get-started-net-sdk.md)
+* [Пакет SDK Data Lake Storage 1-го поколения для .NET](data-lake-store-get-started-net-sdk.md)
 * [Фабрика данных Azure](../data-factory/copy-activity-overview.md)
 
 Отличным способом отправки данных журналов веб-сервера и других типов данных (например данных общественных мнений) является использование собственных написанных сценариев или приложений, поскольку вы можете включить компонент отправки данных в состав более масштабного приложения по работе с большими объемами данных. В одних случаях этот код может иметь форму сценария или простой программы командной строки. В других случаях код может использоваться для интеграции обработки больших данных в бизнес-приложение или решение.
@@ -80,9 +80,9 @@ ms.locfileid: "58878763"
 
 | Подход | Сведения | Преимущества | Рекомендации |
 | --- | --- | --- | --- |
-| Использование Фабрики данных Azure (ADF) для копирования данных напрямую из кластеров Hadoop в Azure Data Lake Storage 1-го поколения |[ADF поддерживает HDFS в качестве источника данных](../data-factory/connector-hdfs.md) |ADF реализована готовая поддержка HDFS, а также первоклассные инструменты комплексного управления и мониторинга. |Требуется развернуть шлюз управления данными в локальном кластере или кластере IaaS. |
-| Экспорт данных из Hadoop в виде файлов. Затем — копирование этих файлов в Azure Data Lake Storage 1-го поколения с помощью соответствующего механизма. |Вы можете скопировать файлы в Azure Data Lake Storage 1-го поколения с помощью: <ul><li>[Azure PowerShell для операционной системы Windows](data-lake-store-get-started-powershell.md)</li><li>[Инфраструктура CLI Azure](data-lake-store-get-started-cli-2.0.md)</li><li>Пользовательское приложение, использующее любой пакет SDK для Azure Data Lake Storage 1-го поколения</li></ul> |Можно быстро приступить к работе. Возможны настраиваемые передачи данных. |Многоэтапный процесс с использованием нескольких технологий. Учитывая настраиваемый характер инструментов, со временем будет все сложнее осуществлять управление и мониторинг. |
-| Использование Distcp для копирования данных из Hadoop в службу хранилища Azure. Затем — копирование данных из службы хранилища Azure в Data Lake Storage 1-го поколения с помощью соответствующего механизма. |Скопировать данные из службы хранилища Azure в Data Lake Storage 1-го поколения можно с помощью: <ul><li>[Фабрика данных Azure](../data-factory/copy-activity-overview.md)</li><li>[Инструмент AdlCopy](data-lake-store-copy-data-azure-storage-blob.md)</li><li>[Apache DistCp, запущенный в кластерах HDInsight](data-lake-store-copy-data-wasb-distcp.md)</li></ul> |Можно использовать инструменты с открытым кодом. |Многоэтапный процесс с использованием нескольких технологий. |
+| Использование Фабрики данных Azure (ADF) для копирования данных напрямую из кластеров Hadoop в Azure Data Lake Storage 1-го поколения |[ADF поддерживает HDFS в качестве источника данных.](../data-factory/connector-hdfs.md) |ADF реализована готовая поддержка HDFS, а также первоклассные инструменты комплексного управления и мониторинга. |Требуется развернуть шлюз управления данными в локальном кластере или кластере IaaS. |
+| Экспорт данных из Hadoop в виде файлов. Затем — копирование этих файлов в Azure Data Lake Storage 1-го поколения с помощью соответствующего механизма. |Вы можете скопировать файлы в Azure Data Lake Storage 1-го поколения с помощью: <ul><li>[Azure PowerShell только для Windows](data-lake-store-get-started-powershell.md)</li><li>[Интерфейс командной строки Azure](data-lake-store-get-started-cli-2.0.md)</li><li>Пользовательское приложение, использующее любой пакет SDK для Azure Data Lake Storage 1-го поколения</li></ul> |Можно быстро приступить к работе. Возможны настраиваемые передачи данных. |Многоэтапный процесс с использованием нескольких технологий. Учитывая настраиваемый характер инструментов, со временем будет все сложнее осуществлять управление и мониторинг. |
+| Использование Distcp для копирования данных из Hadoop в службу хранилища Azure. Затем — копирование данных из службы хранилища Azure в Data Lake Storage 1-го поколения с помощью соответствующего механизма. |Скопировать данные из службы хранилища Azure в Data Lake Storage 1-го поколения можно с помощью: <ul><li>[Фабрика данных Azure](../data-factory/copy-activity-overview.md)</li><li>[инструмента AdlCopy](data-lake-store-copy-data-azure-storage-blob.md)</li><li>[Apache DistCp, запущенный в кластерах HDInsight](data-lake-store-copy-data-wasb-distcp.md)</li></ul> |Можно использовать инструменты с открытым кодом. |Многоэтапный процесс с использованием нескольких технологий. |
 
 ### <a name="really-large-datasets"></a>Очень большие наборы данных
 Для отправки наборов данных размером в несколько терабайт использование описанных выше методов иногда может быть медленным и затратным процессом. В таких ситуациях будут уместны следующие варианты.
@@ -102,8 +102,8 @@ ms.locfileid: "58878763"
 
 Рассмотрите следующие примеры.
 
-* [Создание кластера HDInsight с Gen1 хранилища Озера данных в качестве хранилища](data-lake-store-hdinsight-hadoop-use-portal.md)
-* [Использование Azure Data Lake Analytics с Gen1 хранилища Озера данных](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Создание кластера HDInsight с Data Lake Storage 1-го поколения в качестве хранилища](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Использование Azure Data Lake Analytics с Azure Data Lake Storage 1-го поколения](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
 
 ## <a name="download-data-from-data-lake-storage-gen1"></a>Копирование из Data Lake Storage 1-го поколения
 Возможно, вам потребуется загрузить или переместить данные из Azure Data Lake Storage 1-го поколения в случаях, аналогичных указанным далее.
@@ -121,9 +121,9 @@ ms.locfileid: "58878763"
 
 Для написания сценария или приложения для загрузки данных из Data Lake Storage 1-го поколения можно воспользоваться следующими средствами.
 
-* [Инфраструктура CLI Azure](data-lake-store-get-started-cli-2.0.md)
+* [Интерфейс командной строки Azure](data-lake-store-get-started-cli-2.0.md)
 * [Azure PowerShell](data-lake-store-get-started-powershell.md)
-* [Пакет SDK для .NET Gen1 хранилища Озера данных Azure](data-lake-store-get-started-net-sdk.md)
+* [Пакет SDK Data Lake Storage 1-го поколения для .NET](data-lake-store-get-started-net-sdk.md)
 
 ## <a name="visualize-data-in-data-lake-storage-gen1"></a>Визуализация данных в Data Lake Storage 1-го поколения
 Для создания визуальных представлений данных, хранящихся в Data Lake Storage 1-го поколения, можно использовать сочетание служб.

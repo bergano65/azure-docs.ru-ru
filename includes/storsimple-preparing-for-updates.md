@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 4e262c9e5bb88e77bc9c09853c06f4cdb41eedaa
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58891077"
 ---
 ## <a name="preparing-for-updates"></a>Подготовка к обновлению
@@ -19,7 +19,7 @@ ms.locfileid: "58891077"
    
      `Test-Connection -Source <Fixed IP of your device controller> -Destination <Any IP or computer name outside of datacenter network>`
    
-    **Пример выходных данных для тестирования соединения, когда фиксированные IP-адреса можно подключиться к Интернету**
+    **Пример выходных данных для тестирования соединения, когда фиксированные IP-адреса могут подключаться к Интернету**
 
         Controller0>Test-Connection -Source 10.126.173.91 -Destination bing.com
 

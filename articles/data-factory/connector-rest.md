@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 03/28/2019
 ms.author: jingwang
 ms.openlocfilehash: ee47f464c59bd9deed98671f19cfcc6d2c3c1b39
-ms.sourcegitcommit: 09bb15a76ceaad58517c8fa3b53e1d8fec5f3db7
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58762486"
 ---
 # <a name="copy-data-from-a-rest-endpoint-by-using-azure-data-factory"></a>Копирование данных из конечной точки REST с помощью Фабрики данных Azure
@@ -102,7 +102,7 @@ ms.locfileid: "58762486"
 |:--- |:--- |:--- |
 | servicePrincipalId | Укажите идентификатор клиента приложения Azure Active Directory. | Yes |
 | servicePrincipalKey | Укажите ключ приложения Azure Active Directory. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
-| tenant | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Его можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Yes |
+| клиент | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Его можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Yes |
 | aadResourceId | Укажите ресурс AAD, для которого запрашивается авторизация, например `https://management.core.windows.net`.| Yes |
 
 **Пример**

@@ -15,15 +15,15 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/09/2018
 ms.author: cynthn;davberg
-ms.openlocfilehash: a8d071544462361e9750d3fa622467cd0000a040
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
-ms.translationtype: HT
+ms.openlocfilehash: 43d0ab6552847df7f1f2a8599dcc7cb9a8fcb57b
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39056789"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59698835"
 ---
 # <a name="compute-benchmark-scores-for-windows-vms"></a>Вычисление результатов теста производительности для виртуальных машин Windows
-Ниже приведены результаты теста производительности SPECInt линейки высокопроизводительных виртуальных машин Azure под управлением Windows Server. Вы можете также ознакомиться с результатами теста производительности для [виртуальных машин Linux](../linux/compute-benchmark-scores.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). 
+Ниже приведены результаты теста производительности SPECInt линейки высокопроизводительных виртуальных машин Azure под управлением Windows Server. Вы можете также ознакомиться с результатами теста производительности для [виртуальных машин Linux](../linux/compute-benchmark-scores.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 > [!NOTE]
 > Показатели для Linux были недавно обновлены и содержат более широкий набор виртуальных машин.
@@ -71,6 +71,6 @@ ms.locfileid: "39056789"
 ## <a name="about-specint"></a>О SPECint
 Полученные результаты для Windows были вычислены посредством запуска [SPECint 2006](https://www.spec.org/cpu2006/results/rint2006.html) в Windows Server. Для запуска SPECint был использован режим базовой производительности (SPECint_rate2006) с одной копией на виртуальный ЦП. SPECint содержит 12 отдельных тестов, каждый из которых выполняется трижды, после чего срединное значение каждого теста взвешивается для получения составного показателя. Эти тесты были выполнены на нескольких виртуальных машинах для получения приведенных средних показателей.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Сведения о емкости хранилища, подробности о дисках и дополнительные рекомендации по выбору размера виртуальной машины см. в статье [Размеры виртуальных машин в Azure](sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 

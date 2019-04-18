@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: hrasheed
 ms.openlocfilehash: 80c27d588bb8b4c60ae8432fbd3a2ac3d2db1394
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58802666"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure
@@ -102,7 +102,7 @@ ms.locfileid: "58802666"
 |имя узла;|имя кластера;|
 |URL-адрес кластера|URL-адрес веб-интерфейса Ambari.|
 |Secure shell (SSH)|Имя пользователя и имя узла используются при доступе к кластеру по протоколу SSH.|
-|Status|Возможные варианты: Aborted, Accepted, ClusterStorageProvisioned, AzureVMConfiguration, HDInsightConfiguration, Operational, Running, Error, Deleting, Deleted, Timedout, DeleteQueued, DeleteTimedout, DeleteError, PatchQueued, CertRolloverQueued, ResizeQueued или ClusterCustomization.|
+|Статус|Возможные варианты: Aborted, Accepted, ClusterStorageProvisioned, AzureVMConfiguration, HDInsightConfiguration, Operational, Running, Error, Deleting, Deleted, Timedout, DeleteQueued, DeleteTimedout, DeleteError, PatchQueued, CertRolloverQueued, ResizeQueued или ClusterCustomization.|
 |Регион|Расположение Azure. Поддерживаемые расположения Azure перечислены в раскрывающемся списке **Регион** на странице [Цены — HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/).|
 |Дата создания|Дата развертывания кластера.|
 |Операционная система|**Windows** или **Linux**.|

@@ -12,18 +12,18 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 8b558fca964f33d47d331e007329d1bae2626877
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58881262"
 ---
 # <a name="end-user-authentication-with-azure-data-lake-storage-gen1-using-java"></a>Аутентификация пользователей в Azure Data Lake Storage 1-го поколения с помощью Java
 > [!div class="op_single_selector"]
-> * [Использование Java](data-lake-store-end-user-authenticate-java-sdk.md)
-> * [Использование пакета .NET SDK](data-lake-store-end-user-authenticate-net-sdk.md)
+> * [С использованием Java](data-lake-store-end-user-authenticate-java-sdk.md)
+> * [Использование пакета SDK для .NET](data-lake-store-end-user-authenticate-net-sdk.md)
 > * [Использование Python](data-lake-store-end-user-authenticate-python.md)
-> * [Использование интерфейса REST API](data-lake-store-end-user-authenticate-rest-api.md)
+> * [Использование REST API](data-lake-store-end-user-authenticate-rest-api.md)
 > 
 >   
 
@@ -78,6 +78,6 @@ ms.locfileid: "58881262"
 ## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы узнали, как использовать аутентификацию пользователей, чтобы реализовать аутентификацию в Data Lake Storage 1-го поколения с помощью пакета SDK для Java. Дополнительные сведения об использовании пакета SDK для Java для работы с Azure Data Lake Storage 1-го поколения см. в следующих статьях.
 
-* [Операции с данными в поколение 1 хранилища Озера данных с помощью пакета SDK для Java](data-lake-store-get-started-java-sdk.md)
+* [Операции с данными в Data Lake Storage 1-го поколения c использованием SDK для Java](data-lake-store-get-started-java-sdk.md)
 
 

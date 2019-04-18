@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 108ead982529d2ac6549cceffd9d2177ab6456bf
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58863188"
 ---
 # <a name="azure-ad-password-protection-troubleshooting"></a>Устранение неполадок с функцией защиты паролей Azure AD
@@ -152,6 +152,6 @@ ms.locfileid: "58863188"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Часто задаваемые вопросы для защиты паролей Azure AD](howto-password-ban-bad-on-premises-faq.md)
+[Часто задаваемые вопросы о функции защиты паролей Azure AD](howto-password-ban-bad-on-premises-faq.md)
 
 Для получения дополнительной информации о глобальном и пользовательском запрещенных списках паролей см. статью [Запрет неверных паролей в организации](concept-password-ban-bad.md).

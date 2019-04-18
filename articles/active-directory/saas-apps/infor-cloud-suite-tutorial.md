@@ -17,10 +17,10 @@ ms.date: 11/29/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 025a9d7df16b2be5e22104010be057403ce53c25
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58880633"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-infor-cloudsuite"></a>Руководство. Интеграция Azure Active Directory с Infor CloudSuite
@@ -61,7 +61,7 @@ ms.locfileid: "58880633"
 
 Чтобы настроить интеграцию Infor CloudSuite в Azure AD, необходимо добавить Infor CloudSuite из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Infor CloudSuite из коллекции, выполните следующие действия:**
+**Чтобы добавить Infor CloudSuite из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
@@ -97,7 +97,7 @@ ms.locfileid: "58880633"
 
 В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Infor CloudSuite.
 
-**Чтобы настроить Azure AD единого входа в Infor CloudSuite, выполните следующие действия.**
+**Чтобы настроить единый вход Azure AD в Infor CloudSuite, выполните следующие действия.**
 
 1. На портале Azure на странице интеграции с приложением **Infor CloudSuite** щелкните **Единый вход**.
 

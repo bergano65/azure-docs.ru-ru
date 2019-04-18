@@ -15,16 +15,16 @@ ms.workload: na
 ms.date: 03/26/2019
 ms.author: mlottner
 ms.openlocfilehash: f09d768c0c6c1d351f737b053da9fd3282867099
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58861695"
 ---
 # <a name="azure-security-center-for-iot-prerequisites"></a>Центр безопасности Azure для Интернета вещей необходимых компонентов
 
 > [!IMPORTANT]
-> Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
+> Центр безопасности Azure для Интернета вещей сейчас предоставляется в общедоступной предварительной версии.
 > Предварительная версия предоставляется без соглашения об уровне обслуживания. Мы не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В этой статье приводится объяснение различных стандартных блоков из центр безопасности Azure (ASC) для Интернета вещей службы, необходимые для начала и основные понятия для понимания службы. 
@@ -33,7 +33,7 @@ ms.locfileid: "58861695"
 
 - Уровень "стандартный центр Интернета вещей"
     - Роли RBAC **владельца** уровня привилегий 
-- [Рабочая область Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) 
+- [Рабочая область log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) 
 - Центр безопасности Azure (рекомендуется)
     - Хотя использование центра безопасности Azure является только рекомендацией и не является обязательным, без него, нельзя просматривать ресурсы Azure в центре Интернета вещей. 
  

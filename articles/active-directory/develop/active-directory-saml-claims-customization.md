@@ -19,10 +19,10 @@ ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c6fe74852824c10d24729f785e5e33a17b793161
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58878576"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Практическое руководство: Настройка утверждений, выпущенных в токене SAML для корпоративных приложений
@@ -61,11 +61,11 @@ ms.locfileid: "58878576"
 
 | Формат идентификатора имени | ОПИСАНИЕ |
 |---------------|-------------|
-| **значение по умолчанию** | Azure AD будет использовать исходный формат по умолчанию. |
-| **Постоянный** | Azure AD будет использовать постоянный формат идентификатора имени. |
+| **По умолчанию** | Azure AD будет использовать исходный формат по умолчанию. |
+| **Постоянные** | Azure AD будет использовать постоянный формат идентификатора имени. |
 | **EmailAddress** | Azure AD будет использовать EmailAddress в качестве формата NameID. |
-| **Не указано** | Azure AD будет использовать не указано в качестве формата идентификатора имени. |
-| **Промежуточный** | Несохраняемым будет использоваться в Azure AD как формат идентификатора имени. |
+| **Этот атрибут не задан** | Azure AD будет использовать не указано в качестве формата идентификатора имени. |
+| **Несохраняемым** | Несохраняемым будет использоваться в Azure AD как формат идентификатора имени. |
 
 Дополнительные сведения об атрибуте политики идентификатора имени см. в разделе [протокол SAML](single-sign-on-saml-protocol.md).
 
@@ -131,6 +131,6 @@ ms.locfileid: "58878576"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Управление приложениями в Azure AD](../manage-apps/what-is-application-management.md)
-* [Настройка единого входа для приложений, которых нет в коллекции приложений Azure AD](../manage-apps/configure-federated-single-sign-on-non-gallery-applications.md)
-* [Устранение неполадок на основе SAML единого входа](howto-v1-debug-saml-sso-issues.md)
+* [Управление приложениями с помощью Azure Active Directory](../manage-apps/what-is-application-management.md)
+* [Настройка федеративного единого входа для приложения не из коллекции](../manage-apps/configure-federated-single-sign-on-non-gallery-applications.md)
+* [Устранение неполадок единого входа на основе SAML](howto-v1-debug-saml-sso-issues.md)

@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 01/09/2019
 ms.author: diberry
 ms.openlocfilehash: f23cf78bfca48b3a78e234520d645abdb354038f
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58878474"
 ---
 # <a name="luis-bot-in-c-with-the-bot-framework-3x-and-the-azure-web-app-bot"></a>Создание бота Интеллектуальной службы распознавания речи на C# с помощью Bot Framework 3.x и бота веб-приложения Azure
@@ -49,9 +49,9 @@ ms.locfileid: "58878474"
    * В поле **Имя приложения** укажите имя бота. При развертывании бота в облаке имя используется в качестве поддомена (например, mynotesbot.azurewebsites.net). <!-- This name is also used as the name of the LUIS app associated with your bot. Copy it to use later, to find the LUIS app associated with the bot. -->
    * Заполните поля "Подписка", [Группа ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), "План службы приложений" и [Расположение](https://azure.microsoft.com/regions/).
    * В поле **Шаблон бота** выберите:
-       * **Пакет SDK версии 3**
+       * **SDK v3**
        * **C#**
-       * **распознавание языка;**
+       * **Распознавание речи**
    * Выберите значение для поля **LUIS App Location** (Расположение приложения LUIS). Это [регион](luis-reference-regions.md) разработки, в котором создано приложение.
    * Установите флажок принятия юридического уведомления. Условия юридического уведомления приводятся под флажком.
 

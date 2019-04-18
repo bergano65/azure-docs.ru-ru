@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 7153a6ed4a91e59eea936f1e17d827a40bb99371
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58883247"
 ---
 # <a name="disaster-recovery-in-azure-service-fabric"></a>Аварийное восстановление в Azure Service Fabric
@@ -70,14 +70,14 @@ Service Fabric предоставляет некоторые механизмы 
 Домены обновления можно использовать для моделирования областей, в которых программное обеспечение будет обновляться в одно время. По этой причине домены обновления также часто определяют границы, где программное обеспечение прекращает работу во время запланированного обновления. Обновления Service Fabric и ваших служб следуют той же модели. Дополнительные сведения о последовательном обновлении, доменах обновления и модели работоспособности Service Fabric, которая помогает предотвратить непредвиденные изменения, влияющие на кластер и службы, см. в следующих статьях:
 
  - [Обновление приложения](service-fabric-application-upgrade.md)
- - [Руководстве по обновлению приложений](service-fabric-application-upgrade-tutorial.md)
- - [Модель работоспособности Service Fabric](service-fabric-health-introduction.md)
+ - [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md)
+ - [Общие сведения о наблюдении за работоспособностью системы в Service Fabric](service-fabric-health-introduction.md)
 
 Для визуализации структуры кластера можно использовать схему кластера в [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md):
 
 <center>
 
-![Узлы, распределенные между доменами сбоев в обозревателе Service Fabric][sfx-cluster-map]
+![Узлы, распределенные между доменами сбоев в Service Fabric Explorer][sfx-cluster-map]
 </center>
 
 > [!NOTE]

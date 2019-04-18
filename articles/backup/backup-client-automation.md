@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 5/24/2018
 ms.author: pvrk
-ms.openlocfilehash: c2f6d8262d47a537667ef7b25333a3beff425bbe
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 6280ca55023fc604e70b62cabdc30cca6409d9e6
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58878695"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59698493"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-windows-serverwindows-client-using-powershell"></a>Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell
 
@@ -200,9 +200,11 @@ Server properties updated successfully.
 
 Для защиты конфиденциальности данных резервные копии данных, отправляемые в службу архивации Azure, зашифровываются. Используемая для шифрования парольная фраза является "паролем" для расшифровки данных во время их восстановления.
 
+Необходимо создать ПИН-код безопасности, выбрав **формирования**в разделе **параметры** > **свойства** > **ПИН-код безопасности** в **хранилище служб восстановления** раздела на портале Azure. Затем используйте его в виде `generatedPIN` в команде:
+
 ```powershell
 $PassPhrase = ConvertTo-SecureString -String "Complex!123_STRING" -AsPlainText -Force
-Set-OBMachineSetting -EncryptionPassPhrase $PassPhrase
+Set-OBMachineSetting -EncryptionPassPhrase $PassPhrase -SecurityPin "<generatedPIN>"
 ```
 
 ```Output

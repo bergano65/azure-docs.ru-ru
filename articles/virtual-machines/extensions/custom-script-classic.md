@@ -3,8 +3,8 @@ title: Расширение пользовательских сценариев 
 description: Автоматизируйте процесс настройки виртуальных машин Azure с помощью расширения Custom Script для выполнения сценариев PowerShell на удаленной виртуальной машине под управлением Windows
 services: virtual-machines-windows
 documentationcenter: ''
-author: roiyz-msft
-manager: jeconnoc
+author: georgewallace
+manager: carmonm
 editor: ''
 tags: azure-service-management
 ms.assetid: ebb7340a-8f61-4d3c-a290-d7bf8de2d0bd
@@ -14,13 +14,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 01/17/2017
-ms.author: roiyz
-ms.openlocfilehash: f7a1cb0ff1e530f15db7d56421fcc67555ac8ada
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.author: gwallace
+ms.openlocfilehash: 65e626ebccd4965807fb384b4ac2a8667c4323c3
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55978567"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59699070"
 ---
 # <a name="custom-script-extension-for-windows-using-the-classic-deployment-model"></a>Расширение пользовательских сценариев для Windows с помощью классической модели развертывания
 
@@ -32,7 +32,7 @@ ms.locfileid: "55978567"
 
 В этом документе объясняется, как использовать расширение пользовательских сценариев с помощью модуля Azure PowerShell и шаблонов Azure Resource Manager, а также подробно описываются действия по устранению неполадок в системах Windows.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 ### <a name="operating-system"></a>Операционная система
 

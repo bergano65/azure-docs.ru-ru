@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 2/14/2018
 ms.author: robb
 ms.subservice: ''
-ms.openlocfilehash: e9376b0d137534f301332feaf4e99bfa937fbfa9
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.openlocfilehash: 59cb14c86963d956b0bd63f65b10776dff4aa97f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58905483"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59698082"
 ---
 # <a name="azure-monitor-powershell-quick-start-samples"></a>Примеры для быстрого запуска Azure Monitor с помощью PowerShell
 В этой статье показаны примеры команд PowerShell, с помощью которых можно быстро получить доступ к функциям Azure Monitor.
@@ -91,7 +91,7 @@ Get-AzLog -MaxEvents 1000
 `Get-AzLog` поддерживает много других параметров. Дополнительные сведения см. в справке по `Get-AzLog`.
 
 > [!NOTE]
-> `Get-AzLog` предоставляет только 15 дней. С помощью параметра **-MaxEvents** можно запрашивать N последних событий за 15 дней. Чтобы получить события старше 15 дней, используйте REST API или пакет SDK (пример на C# с использованием пакета SDK). Если не указать **StartTime**, то значением **EndTime** по умолчанию будет минус один час. Если не указать **EndTime**, то значением по умолчанию будет текущее время. Все значения времени указаны в формате UTC.
+> `Get-AzLog` предоставляет данные журнала только за 15 дней. С помощью параметра **-MaxEvents** можно запрашивать N последних событий за 15 дней. Чтобы получить события старше 15 дней, используйте REST API или пакет SDK (пример на C# с использованием пакета SDK). Если не указать **StartTime**, то значением **EndTime** по умолчанию будет минус один час. Если не указать **EndTime**, то значением по умолчанию будет текущее время. Все значения времени указаны в формате UTC.
 > 
 > 
 
@@ -131,7 +131,7 @@ Get-AzAlertRule -ResourceGroup montest
 Get-AzAlertRule -ResourceGroup montest -TargetResourceId /subscriptions/s1/resourceGroups/montest/providers/Microsoft.Compute/virtualMachines/testconfig
 ```
 
-`Get-AzAlertRule` поддерживает другие параметры. Дополнительную информацию см. в документации [Get-AlertRule](https://msdn.microsoft.com/library/mt282459.aspx).
+`Get-AzAlertRule` поддерживает и другие параметры. Дополнительную информацию см. в документации [Get-AlertRule](https://msdn.microsoft.com/library/mt282459.aspx).
 
 ## <a name="create-metric-alerts"></a>Создание оповещений о метриках
 С помощью командлета `Add-AlertRule` можно создать, обновить или отключить правило генерации оповещений.
@@ -169,7 +169,7 @@ $actionWebhook = New-AzAlertRuleWebhook -ServiceUri https://example.com?token=my
 Создание правила генерации оповещений на основе метрики загруженности ЦП (%) для классической виртуальной машины
 
 ```powershell
-Add-AzMetricAlertRule -Name vmcpu_gt_1 -Location "East US" -ResourceGroup myrg1 -TargetResourceId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.ClassicCompute/virtualMachines/my_vm1 -MetricName "Percentage CPU" -Operator GreaterThan -Threshold 1 -WindowSize 00:05:00 -TimeAggregationOperator Average -Actions $actionEmail, $actionWebhook -Description "alert on CPU > 1%"
+Add-AzMetricAlertRule -Name vmcpu_gt_1 -Location "East US" -ResourceGroup myrg1 -TargetResourceId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.ClassicCompute/virtualMachines/my_vm1 -MetricName "Percentage CPU" -Operator GreaterThan -Threshold 1 -WindowSize 00:05:00 -TimeAggregationOperator Average -Action $actionEmail, $actionWebhook -Description "alert on CPU > 1%"
 ```
 
 Извлечение правила генерации оповещений

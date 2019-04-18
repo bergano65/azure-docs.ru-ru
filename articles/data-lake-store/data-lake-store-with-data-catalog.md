@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: fd887560c0011fb1ec2141e33f02f7e3d8a39c81
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58877890"
 ---
 # <a name="register-data-from-azure-data-lake-storage-gen1-in-azure-data-catalog"></a>Регистрация данных из Azure Data Lake Storage 1-го поколения в каталоге данных Azure
@@ -74,10 +74,10 @@ ms.locfileid: "58877890"
      ![Поиск данных в каталоге](./media/data-lake-store-with-data-catalog/search-data-in-catalog.png "Поиск данных в каталоге")
 1. Теперь можно выполнять такие операции, как добавление аннотаций и документации к данным. Дополнительные сведения см. по следующим ссылкам.
 
-    * [Комментарии к источникам данных в каталоге данных](../data-catalog/data-catalog-how-to-annotate.md)
-    * [Документации по источникам данных в каталоге данных](../data-catalog/data-catalog-how-to-documentation.md)
+    * [Создание заметок к источникам данных](../data-catalog/data-catalog-how-to-annotate.md)
+    * [Создание документации по источникам данных](../data-catalog/data-catalog-how-to-documentation.md)
 
 ## <a name="see-also"></a>См. также
-* [Комментарии к источникам данных в каталоге данных](../data-catalog/data-catalog-how-to-annotate.md)
-* [Документации по источникам данных в каталоге данных](../data-catalog/data-catalog-how-to-documentation.md)
-* [Интеграция Gen1 хранилища Озера данных с другими службами Azure](data-lake-store-integrate-with-other-services.md)
+* [Создание заметок к источникам данных](../data-catalog/data-catalog-how-to-annotate.md)
+* [Создание документации по источникам данных](../data-catalog/data-catalog-how-to-documentation.md)
+* [Интеграция Data Lake Storage 1-го поколения c другими службами Azure](data-lake-store-integrate-with-other-services.md)

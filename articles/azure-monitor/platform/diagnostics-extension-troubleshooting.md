@@ -4,17 +4,16 @@ description: Устранение неполадок при использова
 services: azure-monitor
 author: rboucher
 ms.service: azure-monitor
-ms.devlang: dotnet
-ms.topic: conceptual
-ms.date: 07/12/2017
-ms.author: robb
 ms.subservice: diagnostic-extension
-ms.openlocfilehash: f92b2589afc8bf4eba1bfdf421ab27300b41aa91
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.topic: conceptual
+ms.date: 04/17/2019
+ms.author: robb
+ms.openlocfilehash: 81c93900acf2d75eeb8e4fdc8da7d563f3a59595
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822142"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59699104"
 ---
 # <a name="azure-diagnostics-troubleshooting"></a>Устранение неполадок с помощью системы диагностики Azure
 Данная статья содержит сведения об устранении неполадок, относящихся к средствами диагностики Azure. Дополнительные сведения о системе диагностики Azure см. в [обзоре системы диагностики Azure](diagnostics-extension-overview.md).
@@ -82,7 +81,7 @@ ms.locfileid: "55822142"
 Если конфигурация настроена правильно, но данные метрики все равно не отображаются, следуйте инструкциям ниже для устранения ошибок.
 
 
-## <a name="azure-diagnostics-isnt-starting"></a>Система диагностики Azure не запускается
+## <a name="azure-diagnostics-is-not-starting"></a>Система диагностики Azure не запускается
 Сведения о том, почему система диагностики Azure не запускается, см. в файлах **DiagnosticsPluginLauncher.log** и **DiagnosticsPlugin.log** в расположение файлов журнала, указанном выше.
 
 Если эти журналы указывают `Monitoring Agent not reporting success after launch`, это означает, что произошел сбой запуска MonAgentHost.exe. Просмотрите журналы в расположении, указанном для `MonAgentHost log file` в предыдущем разделе.
@@ -105,9 +104,16 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 
 Решение. Исправьте файл конфигурации системы диагностики и переустановите систему диагностики.
 
-Если учетная запись хранения настроена правильно, удаленно подключитесь к компьютеру и проверьте, выполняются ли процессы DiagnosticsPlugin.exe и MonAgentCore.exe. Если они не выполняются, выполните действия в разделе "Система диагностики Azure не запускается".
+Если учетная запись хранения настроена правильно, удаленный доступ к компьютеру и убедитесь, что *DiagnosticsPlugin.exe* и *MonAgentCore.exe* запущены. Если они не выполняются, выполните действия в разделе [Система диагностики Azure не запускается](#azure-diagnostics-is-not-starting).
 
 Если процессы выполняются, перейдите к разделу [Сохраняются ли собранные данные локально?](#is-data-getting-captured-locally) и следуйте инструкциям в нем.
+
+Если это не решает проблему, попробуйте:
+
+1. Удаление агента
+2. Удалить каталог C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics
+3. Установить агент еще раз
+
 
 ### <a name="part-of-the-data-is-missing"></a>Отсутствует часть данных
 Вы получаете не все данные, это означает, что конвейер сбора и передачи данных настроен правильно. Следуйте указаниям из подразделов ниже, чтобы сузить список возможных проблем.

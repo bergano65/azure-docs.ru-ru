@@ -1,22 +1,22 @@
 ---
-title: Настройка сценариев предварительного и последующего выполнения в службе "Управление обновлениями" в Azure (предварительная версия)
+title: Настройка сценариев предварительного и последующего вашего развертывания управления обновлениями в Azure
 description: В этой статье описывается настройка сценариев предварительного и последующего выполнения, а также управление этими сценариями.
 services: automation
 ms.service: automation
 ms.subservice: update-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 04/04/2019
+ms.date: 04/15/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 76cd877380090ccad8b2f7b7dbe79957e0eab5bb
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 84df04a6d3fbd634524d3819657860c6a3448d65
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59263814"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59698748"
 ---
-# <a name="manage-pre-and-post-scripts-preview"></a>Управление сценариями предварительного и последующего выполнения (предварительная версия)
+# <a name="manage-pre-and-post-scripts"></a>Управление скрипты предварительного и последующего
 
 Сценарии предварительного и последующего выполнения позволяют запускать модули Runbook PowerShell в учетной записи Службы автоматизации до и после задач развертывания обновлений. Такие сценарии выполняются в контексте Azure, а не в локальной среде. Сценарии предварительной обработки запускаются в начале развертывания обновлений. Запись сценариев запускается в конце развертывания и после каждой настроенной перезагрузки.
 
@@ -26,7 +26,7 @@ ms.locfileid: "59263814"
 
 ## <a name="using-a-prepost-script"></a>Использование сценария, выполняемого перед развертыванием или после него
 
-Чтобы использовать сценарий предварительного или последующего выполнения, прежде всего создайте развертывание обновлений. Выберите **Сценарии предварительного и последующего выполнения (предварительная версия)**. Откроется страница **Выбор сценариев предварительного и последующего выполнения**.  
+Чтобы использовать сценарий предварительного или последующего выполнения, прежде всего создайте развертывание обновлений. Выберите **сценарии предварительной обработки + сценарии**. Откроется страница **Выбор сценариев предварительного и последующего выполнения**.  
 
 ![Выбор сценариев](./media/pre-post-scripts/select-scripts.png)
 
@@ -44,7 +44,7 @@ ms.locfileid: "59263814"
 
 Когда развертывание обновлений будет готово, откройте страницу **Развертывания обновлений** и проверьте результаты. Здесь вы увидите, среди прочего, состояние обоих сценариев.
 
-![Обновление результатов](./media/pre-post-scripts/update-results.png)
+![Результаты обновления](./media/pre-post-scripts/update-results.png)
 
 Чтобы получить дополнительные сведения о том или ином сценарии, щелкните строку состояния развертывания обновлений. В открывшемся окне будет ссылка на код сценария, который выполнялся.
 
@@ -87,7 +87,7 @@ foreach($summary in $finalStatus)
 
 ### <a name="softwareupdateconfigurationruncontext-properties"></a>Свойства SoftwareUpdateConfigurationRunContext
 
-|Свойство  |Описание  |
+|Свойство  |ОПИСАНИЕ  |
 |---------|---------|
 |SoftwareUpdateConfigurationName     | Имя конфигурации обновления программного обеспечения        |
 |SoftwareUpdateConfigurationRunId     | Уникальный идентификатор для запуска.        |
@@ -136,7 +136,7 @@ foreach($summary in $finalStatus)
 > [!NOTE]
 > `SoftwareUpdateConfigurationRunContext` Объект может содержать повторяющиеся записи для машины. Это может привести к скрипты предварительного и последующего многократное выполнение на одном компьютере. Чтобы обойти это поведение, используйте `Sort-Object -Unique` для выбора только уникальные имена виртуальных Машин в скрипте.
 
-## <a name="samples"></a>Образцы
+## <a name="samples"></a>Примеры
 
 Примеры сценариев предварительного и последующего выполнения можно найти в [коллекции центра сценариев](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=WindowsAzure&f%5B0%5D.Text=Windows%20Azure&f%5B1%5D.Type=SubCategory&f%5B1%5D.Value=WindowsAzure_automation&f%5B1%5D.Text=Automation&f%5B2%5D.Type=SearchText&f%5B2%5D.Value=update%20management&f%5B3%5D.Type=Tag&f%5B3%5D.Value=Patching&f%5B3%5D.Text=Patching&f%5B4%5D.Type=ProgrammingLanguage&f%5B4%5D.Value=PowerShell&f%5B4%5D.Text=PowerShell) или импортировать через портал Azure. Чтобы импортировать сценарии через портал, в учетной записи Службы автоматизации выберите в разделе **Автоматизация процессов** элемент **Коллекция модулей Runbook**. В качестве фильтра укажите **Управление обновлениями**.
 
@@ -206,7 +206,20 @@ $variable = Get-AutomationVariable -Name $runId
 #>      
 ```
 
-## <a name="interacting-with-non-azure-machines"></a>Взаимодействие с компьютерами, не входящими в Azure
+## <a name="interacting-with-machines"></a>Взаимодействия с компьютерами
+
+PRE и post задачи выполняются в том, как runbook в учетной записи службы автоматизации, а не непосредственно на машинах в развертывании. PRE и post задачи также выполняются в контексте Azure и не имеют доступа к Azure без машин. В следующих разделах показано, возможностей взаимодействия с машинами напрямую, являются ли они виртуальной Машины Azure или на машине Non-Azure:
+
+### <a name="interacting-with-azure-machines"></a>Взаимодействие с машинами Azure
+
+PRE и post задачи, выполнялись как модули и не выполняются в собственном коде для виртуальных машин Azure в вашем развертывании. Для взаимодействия с виртуальными машинами Azure, необходимо иметь следующее:
+
+* учетная запись запуска от имени;
+* Модуль runbook, которую вы хотите запустить
+
+Для взаимодействия с машинами Azure, следует использовать [Invoke-AzureRmVMRunCommand](/powershell/module/azurerm.compute/invoke-azurermvmruncommand) командлет, чтобы взаимодействовать с виртуальными машинами Azure. Пример того, как это сделать, см. в примере runbook [управление обновлениями — запустить сценарий с помощью команды запуска](https://gallery.technet.microsoft.com/Update-Management-Run-40f470dc).
+
+### <a name="interacting-with-non-azure-machines"></a>Взаимодействие с компьютерами, не входящими в Azure
 
 Задачи предварительного и последующего выполнения работают в контексте Azure и не имеют доступ к компьютерам в других средах. Чтобы взаимодействовать с компьютерами, не входящими в Azure, вам потребуется следующее:
 
@@ -215,38 +228,7 @@ $variable = Get-AutomationVariable -Name $runId
 * модуль Runbook, который будет запускаться локально;
 * родительский модуль Runbook.
 
-Для взаимодействия с компьютерами, не относящимися к Azure, в контексте Azure выполняется родительский модуль Runbook. Он вызывает дочерний модуль Runbook с помощью командлета [Start-AzureRmAutomationRunbook](/powershell/module/azurerm.automation/start-azurermautomationrunbook). Ему нужно передать параметр `-RunOn` и имя гибридной рабочей роли Runbook, которая будет выполнять сценарий.
-
-```powershell
-$ServicePrincipalConnection = Get-AutomationConnection -Name 'AzureRunAsConnection'
-
-Add-AzureRmAccount `
-    -ServicePrincipal `
-    -TenantId $ServicePrincipalConnection.TenantId `
-    -ApplicationId $ServicePrincipalConnection.ApplicationId `
-    -CertificateThumbprint $ServicePrincipalConnection.CertificateThumbprint
-
-$AzureContext = Select-AzureRmSubscription -SubscriptionId $ServicePrincipalConnection.SubscriptionID
-
-$resourceGroup = "AzureAutomationResourceGroup"
-$aaName = "AzureAutomationAccountName"
-
-$output = Start-AzureRmAutomationRunbook -Name "StartService" -ResourceGroupName $resourceGroup  -AutomationAccountName $aaName -RunOn "hybridWorker"
-
-$status = Get-AzureRmAutomationJob -Id $output.jobid -ResourceGroupName $resourceGroup  -AutomationAccountName $aaName
-while ($status.status -ne "Completed")
-{ 
-    Start-Sleep -Seconds 5
-    $status = Get-AzureRmAutomationJob -Id $output.jobid -ResourceGroupName $resourceGroup  -AutomationAccountName $aaName
-}
-
-$summary = Get-AzureRmAutomationJobOutput -Id $output.jobid -ResourceGroupName $resourceGroup  -AutomationAccountName $aaName
-
-if ($summary.Type -eq "Error")
-{
-    Write-Error -Message $summary.Summary
-}
-```
+Для взаимодействия с компьютерами, не относящимися к Azure, в контексте Azure выполняется родительский модуль Runbook. Он вызывает дочерний модуль Runbook с помощью командлета [Start-AzureRmAutomationRunbook](/powershell/module/azurerm.automation/start-azurermautomationrunbook). Ему нужно передать параметр `-RunOn` и имя гибридной рабочей роли Runbook, которая будет выполнять сценарий. Пример того, как это сделать, см. в примере runbook [управление обновлениями — запустить сценарий локально](https://gallery.technet.microsoft.com/Update-Management-Run-6949cc44).
 
 ## <a name="abort-patch-deployment"></a>Прервать развертывание исправлений
 
@@ -268,5 +250,5 @@ if (<My custom error logic>)
 Ознакомьтесь с руководством ниже, чтобы узнать, как управлять обновлениями для виртуальных машин Windows.
 
 > [!div class="nextstepaction"]
-> [Управление обновлениями и исправлениями для виртуальных машин Azure под управлением Windows](automation-tutorial-update-management.md)
+> [Устранение неполадок при изменениях в среде](automation-tutorial-update-management.md)
 

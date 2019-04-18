@@ -16,10 +16,10 @@ ms.date: 10/24/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 936ad2e49aaf449144296dd941a3fbc42719fe4f
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58879035"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skillport"></a>Руководство по Интеграция Azure Active Directory с Skillport
@@ -99,7 +99,7 @@ ms.locfileid: "58879035"
 
 В этом разделе описано, как включить единый вход Azure AD на новом портале Azure и настроить его в приложении Skillport.
 
-**Чтобы настроить Azure AD единого входа в Skillport, выполните следующие действия.**
+**Чтобы настроить единый вход Azure AD в Skillport, выполните следующие действия.**
 
 1. На портале Azure на странице интеграции с приложением **Skillport** щелкните **Единый вход**.
 
@@ -115,21 +115,21 @@ ms.locfileid: "58879035"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес:
       
-      Центр обработки данных ЕС: `https://adfs.skillport.eu`
+      Центр обработки данных в ЕС: `https://adfs.skillport.eu`
    
-      Центр обработки данных США: `https://sso.skillport.com`
+      Центр обработки данных в США: `https://sso.skillport.com`
 
     2. В текстовом поле **Идентификатор** введите URL-адрес:
       
-      Центр обработки данных ЕС: `http://adfs.skillport.eu/adfs/services/trust`
+      Центр обработки данных в ЕС: `http://adfs.skillport.eu/adfs/services/trust`
    
-      Центр обработки данных США: `https://sso.skillport.com`
+      Центр обработки данных в США: `https://sso.skillport.com`
    
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес:
     
-      Центр обработки данных ЕС: `https://adfs.skillport.eu/adfs/ls/`
+      Центр обработки данных в ЕС: `https://adfs.skillport.eu/adfs/ls/`
     
-      Центр обработки данных США: `https://sso.skillport.com/sp/ACS.saml2`
+      Центр обработки данных в США: `https://sso.skillport.com/sp/ACS.saml2`
  
 1. В разделе **Сертификат подписи SAML** щелкните **XML метаданных** и сохраните XML-файл на компьютере.
 
@@ -146,7 +146,7 @@ ms.locfileid: "58879035"
 
 ![Создание пользователя Azure AD][100]
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия.**
+**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
 
 1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -182,7 +182,7 @@ ms.locfileid: "58879035"
 
 ![Назначение пользователя][200] 
 
-**Чтобы назначить пользователя Britta Simon в Skillport, выполните следующие действия.**
+**Чтобы назначить пользователя Britta Simon приложению Skillport, выполните следующие действия.**
 
 1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
 

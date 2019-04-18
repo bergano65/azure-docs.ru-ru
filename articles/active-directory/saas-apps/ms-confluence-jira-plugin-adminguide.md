@@ -15,10 +15,10 @@ ms.date: 11/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e2f06b884cb1213e9d2cabff4e6e2b97a60339a6
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58862868"
 ---
 # <a name="atlassian-jira-and-confluence-admin-guide-for-azure-active-directory"></a>Atlassian JIRA и Confluence в руководстве администратора для Azure Active Directory
@@ -146,7 +146,7 @@ ms.locfileid: "58862868"
 
 * **Необходимо отключить WebSudo (отключение безопасного сеанса администратора)**.
 
-  * Для Jira безопасные сеансы администратора (то есть подтверждение пароля перед доступом к функциям администрирования) включены по умолчанию. Если вы хотите удалить эту возможность в своем экземпляре Jira, укажите следующую строку в файле jira-.Properties: `ira.websudo.is.disabled = true`
+  * Для Jira безопасные сеансы администратора (то есть подтверждение пароля перед доступом к функциям администрирования) включены по умолчанию. Если вы хотите удалить эту возможность в вашем экземпляре Jira, укажите следующую строку в файле jira-config.properties: `ira.websudo.is.disabled = true`
 
   * Для Confluence выполните действия, указанные на [сайте технической поддержки Confluence](https://confluence.atlassian.com/doc/configuring-secure-administrator-sessions-218269595.html).
 

@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.service: azure-monitor
 ms.subservice: ''
 ms.openlocfilehash: 6ea8f4e591399e23b103871da115dbb937227ca9
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58850688"
 ---
 # <a name="monitor-your-azure-services-in-grafana"></a>Мониторинг служб Azure в Grafana
@@ -122,7 +122,7 @@ ms.locfileid: "58850688"
 
  - [Monitor Docker resource metrics with Grafana, InfluxDB, and Telegraf](https://blog.vpetkov.net/2016/08/04/monitor-docker-resource-metrics-with-grafana-influxdb-and-telegraf/) (Мониторинг метрик ресурса Docker с помощью Grafana, InfluxDB и Telegraf)
 
- - [A monitoring solution for Docker hosts, containers and containerized services](https://stefanprodan.com/2016/a-monitoring-solution-for-docker-hosts-containers-and-containerized-services/) (Решение мониторинга для служб контейнеров, контейнеров и узлов Docker)
+ - [A monitoring solution for Docker hosts, containers and containerized services](https://stefanprodan.com/2016/a-monitoring-solution-for-docker-hosts-containers-and-containerized-services/) (Решение для мониторинга для служб контейнеров, контейнеров и узлов Docker)
 
 Вот изображение полной панели мониторинга Grafana, на которой есть метрики из Azure Monitor и Application Insights.
 ![Пример метрик Grafana](media/grafana-plugin/grafana8.png)

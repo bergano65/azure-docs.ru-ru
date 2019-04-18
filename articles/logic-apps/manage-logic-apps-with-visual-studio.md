@@ -11,10 +11,10 @@ ms.topic: article
 ms.custom: mvc
 ms.date: 04/02/2019
 ms.openlocfilehash: 9654caca5fd4b1f79544ea7303a5d3fff72d22f8
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58862749"
 ---
 # <a name="manage-logic-apps-with-visual-studio"></a>Управление приложениями логики в Visual Studio
@@ -32,11 +32,11 @@ ms.locfileid: "58862749"
 
 * Скачайте и установите эти средства, если вы еще этого не сделали: 
 
-  * <a href="https://aka.ms/download-visual-studio" target="_blank">Visual Studio 2019 г., 2017 или 2015 — Community edition или более поздней версии</a>. 
+  * <a href="https://aka.ms/download-visual-studio" target="_blank">Visual Studio 2019, 2017 или 2015 — выпуски Community или выше</a>. 
   В этом кратком руководстве используется бесплатная версия Visual Studio Community 2017.
 
     > [!IMPORTANT]
-    > При установке Visual Studio 2019 или 2017, убедитесь, что выбран **разработки Azure** рабочей нагрузки.
+    > При установке Visual Studio 2019 или 2017 обязательно выберите рабочую нагрузку **разработки Azure**.
     > Дополнительные сведения см. в разделе [управления ресурсами, связанными с учетными записями Azure в Visual Studio Cloud Explorer](https://docs.microsoft.com/visualstudio/azure/vs-azure-tools-resources-managing-with-cloud-explorer?view).
     >
     > В Visual Studio 2019 г. Cloud Explorer можно открыть конструктор приложений логики на портале Azure, но еще не удается открыть встроенного конструктора приложений логики.
@@ -48,7 +48,7 @@ ms.locfileid: "58862749"
 
   * <a href="https://github.com/Azure/azure-powershell#installation" target="_blank">Azure PowerShell</a>
 
-  * Средства Azure Logic Apps для версии Visual Studio вы можете:
+  * Средства Azure Logic Apps для необходимой версии Visual Studio:
 
     * <a href="https://aka.ms/download-azure-logic-apps-tools-visual-studio-2019" target="_blank">Visual Studio 2019 г.</a>
     
@@ -202,4 +202,4 @@ Visual Studio позволяет открыть приложения логик�
 Из этой статьи вы узнали, как управлять развернутыми приложениями логики в Visual Studio. Теперь ознакомьтесь с настройкой определений приложения логики для развертывания:
 
 > [!div class="nextstepaction"]
-> [Создание определений приложений логики в формате JSON](../logic-apps/logic-apps-author-definitions.md)
+> [Создание определений для приложений логики с помощью JSON](../logic-apps/logic-apps-author-definitions.md)

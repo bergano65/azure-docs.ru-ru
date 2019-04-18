@@ -8,12 +8,12 @@ ms.author: kasparks
 ms.service: advisor
 ms.topic: article
 ms.date: 01/29/2019
-ms.openlocfilehash: 42627649145b568b2b25411d182e5a36cdb025b0
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 793c881d08e8feb038cc6e7ac82b7e95384e1b55
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58881194"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59699310"
 ---
 # <a name="improve-availability-of-your-application-with-azure-advisor"></a>Повышение уровня доступности приложения с использованием Помощника по Azure
 
@@ -66,6 +66,10 @@ ms.locfileid: "58881194"
 
 В конфигурации активный активный оба экземпляра VPN-шлюза будут устанавливать VPN-туннелей S2S VPN-устройство локальной. Когда событие запланированного обслуживания или незапланированное событие происходит с одним экземпляром шлюза, трафик автоматически переключается на другой активный туннель IPsec. Помощник по Azure будет идентифицировать VPN-шлюзы, которые не настроены на режим "активный — активный", и предложит настроить их для обеспечения высокой доступности.
 
+## <a name="use-production-vpn-gateways-to-run-your-production-workloads"></a>Производственный VPN-шлюзы можно использовать для запуска рабочих нагрузок
+
+Помощник по Azure проверка для любой VPN-шлюзов, которые являются SKU "базовый" и рекомендуется использовать вместо создания номера SKU. SKU "базовый" предназначена для разработки и тестирования. SKU рабочей предлагают большего количества туннелей, поддержки BGP, параметры конфигурации активный активный, пользовательские политики Ipsec/IKE и более поздней версии стабильности и доступности.
+
 ## <a name="how-to-access-high-availability-recommendations-in-advisor"></a>Как получить доступ к рекомендациям по высокой доступности в Advisor
 
 1. Войдите на [портал Azure](https://portal.azure.com) и откройте [Помощник](https://aka.ms/azureadvisordashboard).
@@ -76,7 +80,7 @@ ms.locfileid: "58881194"
 
 Дополнительные сведения о рекомендациях Помощника см. в следующих разделах.
 * [Общие сведения об Azure Advisor](advisor-overview.md)
-* [Начало работы с Помощником](advisor-get-started.md)
+* [Приступая к работе с Azure Advisor](advisor-get-started.md)
 * [Рекомендации Azure Advisor по затратам](advisor-cost-recommendations.md)
 * [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md)
 * [Рекомендации Azure Advisor по безопасности](advisor-security-recommendations.md)

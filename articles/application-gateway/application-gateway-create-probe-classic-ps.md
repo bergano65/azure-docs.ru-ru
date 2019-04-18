@@ -16,18 +16,18 @@ ms.workload: infrastructure-services
 ms.date: 04/26/2017
 ms.author: victorh
 ms.openlocfilehash: 01c1768f60da98206f0dfd041745428256f545fc
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58861885"
 ---
 # <a name="create-a-custom-probe-for-azure-application-gateway-classic-by-using-powershell"></a>Создание пользовательской проверки для шлюза приложений (классического) Azure с помощью PowerShell
 
 > [!div class="op_single_selector"]
-> * [Портал Azure](application-gateway-create-probe-portal.md)
-> * [PowerShell для Azure Resource Manager](application-gateway-create-probe-ps.md)
-> * [Классическая модель — Azure PowerShell](application-gateway-create-probe-classic-ps.md)
+> * [портал Azure](application-gateway-create-probe-portal.md)
+> * [PowerShell и диспетчер ресурсов Azure](application-gateway-create-probe-ps.md)
+> * [Классическая модель — Azure PowerShell](application-gateway-create-probe-classic-ps.md)
 
 Следуя инструкциям этой статьи вы добавите пользовательскую пробу в имеющийся шлюз приложений с помощью PowerShell. Пользовательские пробы полезны в приложениях с конкретной страницей проверки работоспособности или приложениях, не предоставляющих успешный ответ веб-приложению по умолчанию.
 
@@ -150,7 +150,7 @@ Get-AzureApplicationGateway AppGwTest
 
 |Параметр|ОПИСАНИЕ|
 |---|---|
-|**ИМЯ** |Имя пользовательской пробы. |
+|**Имя** |Имя пользовательской пробы. |
 | **Протокол** | Используемый протокол (возможные значения: HTTP или HTTPS).|
 | **Host** и **Path** | Полный путь URL-адреса, который вызывается шлюзом приложений для определения работоспособности экземпляра. Например, если у вас есть веб-сайт http:\//contoso.com/, а затем пользовательской проверки можно настроить для «http:\//contoso.com/path/custompath.htm» для получения успешного ответа HTTP.|
 | **Интервал** | Задает интервал между пробами в секундах.|

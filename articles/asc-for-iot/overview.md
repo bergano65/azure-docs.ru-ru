@@ -15,16 +15,16 @@ ms.workload: na
 ms.date: 03/18/2019
 ms.author: mlottner
 ms.openlocfilehash: 49decb2d67c8ff16f9912fea8e8ece1a3bd9feb5
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58863038"
 ---
 # <a name="introducing-azure-security-center-for-iot"></a>Вводные сведения о центре безопасности Azure для Интернета вещей
 
 > [!IMPORTANT]
-> Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
+> Центр безопасности Azure для Интернета вещей сейчас предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="secure-your-azure-iot-solution"></a>Защитить ваше решение Интернета вещей Azure 

@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 04/15/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: ed10354047060825b4368e02160d4655e33bc8f6
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.openlocfilehash: 5ae7563892cb4792f5c329b2850d7b88d37c0e7d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59617402"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59698278"
 ---
 # <a name="developing-with-media-services-v3-apis"></a>Разработка с использованием служб мультимедиа версии 3 API-интерфейсов
 
@@ -38,7 +38,7 @@ API служб мультимедиа требует, что пользоват�
 
 На следующем рисунке цифры обозначают последовательность запросов в хронологическом порядке:
 
-![Приложения среднего уровня](../previous/media/media-services-use-aad-auth-to-access-ams-api/media-services-principal-service-aad-app1.png)
+![Приложения среднего уровня](./media/use-aad-auth-to-access-ams-api/media-services-principal-service-aad-app1.png)
 
 1. Приложение среднего уровня запрашивает маркер доступа Azure AD, который имеет следующие параметры:  
 

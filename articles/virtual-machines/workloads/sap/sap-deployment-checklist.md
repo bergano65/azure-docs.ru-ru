@@ -17,10 +17,10 @@ ms.date: 04/01/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: fef2d42282291bb0ea6afeea03e60234d3d47a4d
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58878729"
 ---
 # <a name="sap-workload-on-azure-planning-and-deployment-checklist"></a>Контрольный список для планирования и развертывания рабочей нагрузки SAP в Azure 
@@ -50,7 +50,7 @@ ms.locfileid: "58878729"
         2.  Примечание о поддержке SAP [2039619](https://launchpad.support.sap.com/#/notes/2039619). В этом примечании приведена матрица поддержки Oracle в Azure. Учтите, что Oracle поддерживает Windows и Oracle Linux для рабочих нагрузок SAP только в качестве гостевой ОС в Azure. Данное заявление о поддержке также относится к прикладному уровню SAP, на котором работают экземпляры SAP. Тем не менее Oracle не поддерживает высокий уровень доступности для центральных служб SAP в Oracle Linux через Pacemaker. Если вам нужна высокая доступность для ASCS в Oracle Linux, необходимо использовать SIOS Protection Suite для Linux. Подробные данные о сертификации SAP см. в примечании о поддержке SAP [1662610 со сведениями о поддержке SIOS Protection Suite для Linux](https://launchpad.support.sap.com/#/notes/1662610). Для Windows поддерживаемое SAP решение отработки отказа отказоустойчивого кластера Windows для центральных служб SAP поддерживается в сочетании с Oracle в качестве уровня СУБД. 
         3.  Примечание о поддержке SAP [2235581](https://launchpad.support.sap.com/#/notes/2235581) для получения матрицы поддержки SAP HANA в разных выпусках ОС.
         4.  Виртуальные машины Azure, поддерживаемые SAP HANA, и [крупные экземпляры HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture) перечислены [здесь](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure).
-        5.  [Матрица доступности продуктов SAP](https://support.sap.com/en/)
+        5.  [Матрица доступности продуктов SAP](https://support.sap.com/en/).
         6.  Другие примечания SAP для конкретных продуктов SAP.  
     5.  Мы рекомендуем использовать исключительно трехуровневые структуры для рабочих систем SAP. Совмещение серверов ASCS и серверов приложений на одной виртуальной машине не рекомендуется.  Конфигурации кластеров с несколькими идентификаторами безопасности для центральных служб SAP поддерживаются при использовании Windows в качестве гостевой ОС в Azure. Тогда как такие конфигурации кластеров SAP не поддерживаются в операционных системах Linux в Azure. Документация по гостевой ОС Windows:
         1.  [Обеспечение высокого уровня доступности с несколькими идентификаторами безопасности для экземпляра SAP ASCS/SCS с помощью отказоустойчивой кластеризации Windows Server и общего диска в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-ascs-ha-multi-sid-wsfc-shared-disk)
@@ -59,9 +59,9 @@ ms.locfileid: "58878729"
         1.  Определите на основе RTO и RPO, как должна выглядеть архитектура обеспечения высокого уровня доступности и аварийного восстановления.
         2.  Для обеспечения высокой доступности в пределах зоны проверьте, какие возможности требуемая СУБД должна обеспечивать в Azure. Большинство СУБД предлагает синхронные методы сервера горячей замены, которые рекомендуется использовать для рабочих систем. Кроме того, ознакомьтесь со сведениями о разных базах данных в посвященной SAP документации, начиная с [рекомендаций по развертыванию СУБД виртуальных машин Azure для рабочей нагрузки SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general), и связанных документах.
             1.  Использование службы отказоустойчивого кластера Windows с конфигурацией общих дисков для уровня СУБД, как, например, для SQL Server [здесь](https://docs.microsoft.com/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server?view=sql-server-2017), **не** поддерживается. Вместо этого поддерживаются такие решения, как:
-                1.  [SQL Server AlwaysOn](https://docs.microsoft.com/azure/virtual-machines/windows/sqlclassic/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups) 
-                2.  [Oracle Data Guard](https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/configure-oracle-dataguard)
-                3.  [Репликация системы HANA](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.01/en-US/b74e16a9e09541749a745f41246a065e.html)
+                1.  [SQL Server AlwaysOn](https://docs.microsoft.com/azure/virtual-machines/windows/sqlclassic/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups); 
+                2.  [Oracle Data Guard](https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/configure-oracle-dataguard);
+                3.  [репликация системы HANA](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.01/en-US/b74e16a9e09541749a745f41246a065e.html).
         3.  Для аварийного восстановления в разных регионах Azure проверьте, какие возможности предоставляются различными поставщиками СУБД. Большинство из них поддерживает асинхронную репликацию или доставку журналов.
         4.  Для прикладного уровня SAP определите, будут ли использоваться системы регрессионного тестирования для бизнеса. В идеальном случае это реплики рабочих развертываний, размещенные в том же регионе Azure или в вашем регионе аварийного восстановления. В последнем случае эти системы регрессионного тестирования для бизнеса можно использовать в качестве цели аварийного восстановления рабочей среды.
         5.  Если вы решите не размещать непроизводственные системы на сайте аварийного восстановления, рассмотрите Azure Site Recovery в качестве приемлемого метода репликации на прикладном уровне SAP в регионе аварийного восстановления Azure. Ознакомьтесь также с разделом [Настройка аварийного восстановления для многоуровневого развертывания приложения SAP NetWeaver](https://docs.microsoft.com/azure/site-recovery/site-recovery-sap). 
@@ -72,14 +72,14 @@ ms.locfileid: "58878729"
     2.  Топология сети в Azure и назначение различных систем SAP.
     3.  Схема [доступа на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/overview) для разных команд, которые управляют инфраструктурой и приложениями SAP в Azure.
     3.  Топология групп ресурсов. 
-    4.  [Стратегия тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags#tags-and-billing)
+    4.  [Стратегия тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags#tags-and-billing).
     5.  Соглашение об именовании виртуальных машин и других компонентов инфраструктуры и (или) логические имена.
 5.  Контракт на поддержку Microsoft Premier — укажите менеджера по технической поддержке Майкрософт (TAM). Требования к поддержке SAP приведены в примечании по поддержке SAP [2015553](https://launchpad.support.sap.com/#/notes/2015553). 
 6.  Определите число подписок Azure и квоту ядер для разных подписок. [Отправьте запросы в службу поддержки для увеличения квот подписок Azure](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request), если потребуется. 
 7.  План сокращения данных и переноса данных для переноса данных SAP в Azure. Для систем SAP NetWeaver компания SAP разработала рекомендации по уменьшению объема данных. Она опубликовала [это подробное руководство](https://help.sap.com/http.svc/rc/2eb2fba8f8b1421c9a37a8d7233da545/7.0/en-US/Data_Management_Guide_Version_70E.PDF) по управлению данными в системах SAP ERP. Однако часть содержимого относится к системам NetWeaver и S/4 HANA в целом.
 8.  Определите и выберите метод автоматизированного развертывания. Цель автоматизации развертывания инфраструктуры в Azure — детерминированное развертывание с детерминированными результатами. Многие клиенты используют сценарии на основе PowerShell или интерфейса командной строки. Однако существуют различные технологии с открытым кодом, которые могут использоваться для развертывания инфраструктуры Azure для SAP и даже установки программного обеспечения SAP. Примеры можно найти в GitHub:
-    1.  [Автоматические SAP развертываний в облаке Azure](https://github.com/Azure/sap-hana)
-    2.  [Установку SAP HANA](https://github.com/AzureCAT-GSI/SAP-HANA-ARM)
+    1.  [Автоматическое развертывание SAP в облаке Azure](https://github.com/Azure/sap-hana)
+    2.  [Установка SAP HANA](https://github.com/AzureCAT-GSI/SAP-HANA-ARM)
 9.  Определите частоту регулярных проверок проекта и развертывания с участием вас как клиента, системного интегратора, корпорации Майкрософт и других участвующих сторон.
 
  

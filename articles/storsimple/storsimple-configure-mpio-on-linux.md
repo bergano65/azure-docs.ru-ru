@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 01/09/2018
 ms.author: alkohli
 ms.openlocfilehash: bc1e8a5abc85af95448570497177030f17649d87
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58877590"
 ---
 # <a name="configure-mpio-on-a-storsimple-host-running-centos"></a>Настройка MPIO на узле StorSimple под управлением CentOS
@@ -432,7 +432,7 @@ ms.locfileid: "58877590"
 | &nbsp; |`iscsiadm –m session –s <sessionid> -P 3` |Проверка состояния сеанса iSCSI и тома, обнаруженного на узле |
 | &nbsp; |`iscsi –m session` |Показывает все сеансы iSCSI, установленные между узлом и устройством StorSimple |
 |  | | |
-| **Многоканального ввода-вывода** |`service multipathd start` |Запуск управляющей программы многоканального ввода-вывода |
+| **Поддержка нескольких каналов ввода-вывода** |`service multipathd start` |Запуск управляющей программы многоканального ввода-вывода |
 | &nbsp; |`service multipathd stop` |Остановка управляющей программы многоканального ввода-вывода |
 | &nbsp; |`service multipathd restart` |Перезапуск управляющей программы многоканального ввода-вывода |
 | &nbsp; |`chkconfig multipathd on` </br> Или </br> `mpathconf –with_chkconfig y` |Обеспечение запуска управляющей программы многоканального ввода-вывода во время загрузки |

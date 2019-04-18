@@ -14,12 +14,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26a3594b00f19c2790e9dfd5f09fbdc7d73d478f
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: db68ad2a29dcaa53d219b679b9e0f24a50a6f576
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58434897"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "58877063"
 ---
 # <a name="how-to-troubleshoot-sign-in-errors-using-azure-active-directory-reports"></a>Практическое руководство: Устранение ошибок входа с помощью отчетов Azure Active Directory
 
@@ -55,7 +55,7 @@ ms.locfileid: "58434897"
 
     ![Устранение неполадок и поддержка](./media/howto-troubleshoot-sign-in-errors/troubleshooting-and-support.png)
 
-6. Причина сбоя описывает ошибку. Например, в сценарии выше причина сбоя — **Недопустимое имя пользователя или пароль либо недопустимое локальное имя пользователя или пароль**. Исправление — просто войти еще раз с правильными именем пользователя и паролем.
+6. Причина сбоя описывает ошибку. Например, в сценарии выше причина сбоя — **недопустимое имя пользователя или пароль или недопустимое локальное имя пользователя или пароль**. Исправление — просто войти еще раз с правильными именем пользователя и паролем.
 
 7. Вы можете получить дополнительные сведения, включая идеи для исправления, выполнив поиск по коду ошибки (**50126** в этом примере) в [справочнике по кодам ошибок входа](reference-sign-ins-error-codes.md). 
 

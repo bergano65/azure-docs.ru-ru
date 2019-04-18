@@ -13,10 +13,10 @@ ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 12/19/2018
 ms.openlocfilehash: d80581aae56fc9d65d6f24d21f2c582cb74b3f2d
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58863208"
 ---
 # <a name="find-and-apply-performance-recommendations"></a>Поиск и применение рекомендаций по производительности
@@ -128,7 +128,7 @@ ms.locfileid: "58863208"
 
 Применение рекомендаций может происходить не мгновенно. Портал предоставляет сведения о состоянии рекомендации. Ниже перечислены состояния, в которых может находиться индекс.
 
-| Status | ОПИСАНИЕ |
+| Статус | ОПИСАНИЕ |
 |:--- |:--- |
 | Ожидает |Команда на применение рекомендации получена и запланирована для выполнения. |
 | Выполняется |Идет применение рекомендации. |

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/22/2019
 ms.author: erhopf
 ms.openlocfilehash: 66bda68b1313a7c172e273671bc3a03503d08e0d
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58876586"
 ---
 # <a name="quickstart-get-the-list-of-text-to-speech-voices-using-python"></a>Краткое руководство. Получите список преобразования текста в речь голоса с помощью Python
@@ -131,10 +131,10 @@ python get-voices.py
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Изучите примеры Python на сайте GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/Samples-Http/Python)
+> [Ознакомиться с примерами на Python на сайте GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/Samples-Http/Python)
 
 ## <a name="see-also"></a>См. также
 
 * [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis)
 * [Создание настраиваемого голоса](how-to-customize-voice-font.md)
-* [Запись образцов голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)
+* [Запись примеров голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)

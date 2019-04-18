@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: d4e9e26f2c6764cc179826266891d861514e23f6
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58882214"
 ---
 # <a name="microsoft-azure-documentation"></a>Документация по Microsoft Azure
@@ -25,7 +25,7 @@ ms.locfileid: "58882214"
 Установите следующие средства:
 
 * [Git](https://git-scm.com/download)
-* [Visual Studio Code.](https://code.visualstudio.com/Download)
+* [Visual Studio Code](https://code.visualstudio.com/Download)
 * Расширение [Docs Authoring Pac](https://marketplace.visualstudio.com/items?itemName=docsmsft.docs-authoring-pack) для Visual Studio Code
 
 #### <a name="install"></a>Install

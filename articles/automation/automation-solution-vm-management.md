@@ -10,10 +10,10 @@ ms.date: 03/31/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 6d7b99da3e8e81973c51bbd68a15517828c9736d
-ms.sourcegitcommit: 09bb15a76ceaad58517c8fa3b53e1d8fec5f3db7
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58762945"
 ---
 # <a name="startstop-vms-during-off-hours-solution-in-azure-automation"></a>Решение для запуска и остановки виртуальных машин в нерабочее время в службе автоматизации Azure
@@ -196,9 +196,9 @@ ms.locfileid: "58762945"
 | --- | --- | ---|
 |AutoStop_CreateAlert_Child | VMObject <br> AlertAction <br> WebHookURI | Вызывается из родительского runbook. Этот runbook создает оповещения для каждого ресурса для сценария AutoStop.|
 |AutoStop_CreateAlert_Parent | VMList<br> WhatIf: Значение true или false  | Создает или обновляет правила генерации оповещений Azure для виртуальных машин в целевой подписке или группах ресурсов. <br> VMList список виртуальных машин с разделителями-запятыми. Например, _vm1, vm2, vm3_.<br> *WhatIf* проверяет логику runbook без выполнения.|
-|AutoStop_Disable | Нет | Отключает оповещения AutoStop и расписание по умолчанию.|
+|AutoStop_Disable | нет | Отключает оповещения AutoStop и расписание по умолчанию.|
 |AutoStop_StopVM_Child | WebHookData | Вызывается из родительского runbook. Правила генерации оповещений вызывают этот runbook, чтобы остановить виртуальную машину.|
-|Bootstrap_Main | Нет | Используется один раз для установки конфигураций начальной загрузки, например webhookURI, которые, как правило, недоступны в Azure Resource Manager. Этот runbook автоматически удаляется после успешного развертывания.|
+|Bootstrap_Main | нет | Используется один раз для установки конфигураций начальной загрузки, например webhookURI, которые, как правило, недоступны в Azure Resource Manager. Этот runbook автоматически удаляется после успешного развертывания.|
 |ScheduledStartStop_Child | VMName <br> Действие: Start или Stop <br> ResourceGroupName | Вызывается из родительского runbook. Выполняет действие Start или Stop для запланированной остановки.|
 |ScheduledStartStop_Parent | Действие: Start или Stop <br>VMList <br> WhatIf: Значение true или false | Этот параметр влияет на все виртуальные машины в подписке. Измените **External_Start_ResourceGroupNames** и **External_Stop_ResourceGroupNames**, ограничив выполнение только этими целевыми группами ресурсов. Можно также исключить определенные виртуальные машины, обновив переменную **External_ExcludeVMNames**.<br> VMList список виртуальных машин с разделителями-запятыми. Например, _vm1, vm2, vm3_.<br> _WhatIf_ проверяет логику runbook без выполнения.|
 |SequencedStartStop_Parent | Действие: Start или Stop <br> WhatIf: Значение true или false<br>VMList| Создайте теги **sequencestart** и **sequencestop** для каждой виртуальной машины, для которой требуется использовать действие последовательного запуска и остановки. В именах этих тегов учитывается регистр. Значением тега должно быть положительное целое число (1, 2, 3 и т. д.), которое соответствует очередности запуска или остановки. <br> VMList список виртуальных машин с разделителями-запятыми. Например, _vm1, vm2, vm3_. <br> _WhatIf_ проверяет логику runbook без выполнения. <br> **Примечание**. Виртуальные машины должны находиться в группах ресурсов, определенных в таких переменных службы автоматизации Azure: External_Start_ResourceGroupNames, External_Stop_ResourceGroupNames и External_ExcludeVMNames. Чтобы эти действия выполнялись, они должны иметь соответствующие теги.|

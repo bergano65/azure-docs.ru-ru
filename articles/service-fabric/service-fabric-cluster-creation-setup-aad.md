@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/15/2019
 ms.author: aljo
-ms.openlocfilehash: 132609529fbeda9b6dbd76a3ef6c824e84c15164
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: c02e38880fdf8e8f1a2229f009b343d6431af853
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58670767"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59699189"
 ---
 # <a name="set-up-azure-active-directory-for-client-authentication"></a>Настройка Azure Active Directory для проверки подлинности клиента
 
@@ -39,7 +39,7 @@ ms.locfileid: "58670767"
 2. Щелкните правой кнопкой мыши ZIP-файл, выберите **Свойства**, установите флажок **Разблокировать** и нажмите кнопку **Применить**.
 3. Извлеките ZIP-файл.
 
-## <a name="create-azure-ad-applications-and-asssign-users-to-roles"></a>Создание приложений Azure AD и назначение ролей пользователям
+## <a name="create-azure-ad-applications-and-assign-users-to-roles"></a>Создание приложения Azure AD и назначение ролей пользователям
 Создайте два приложения Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение. Создав приложения, представляющие кластер, назначьте пользователям [роли, поддерживаемые Service Fabric](service-fabric-cluster-security-roles.md) и разрешающие доступ на чтение и администрирование.
 
 Запустите `SetupApplications.ps1` и укажите идентификатор клиента, имя кластера и URL-адрес ответа веб-приложения в качестве параметров.  Укажите также имена пользователей и пароли для пользователей.  Например: 

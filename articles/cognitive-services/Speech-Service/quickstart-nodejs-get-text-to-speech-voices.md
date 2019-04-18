@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/02/2019
 ms.author: erhopf
 ms.openlocfilehash: 62187ddbe587a81038f8424b079e3c0c313d1ae2
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58887105"
 ---
 # <a name="quickstart-get-the-list-of-text-to-speech-voices-using-nodejs"></a>Краткое руководство. Получите список преобразования текста в речь голоса с помощью Node.js
@@ -27,7 +27,7 @@ ms.locfileid: "58887105"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* [Узел 8.12.x или более поздней версии](https://nodejs.org/en/)
+* [Node 8.12.x или более поздней версии](https://nodejs.org/en/);
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
 * Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
 
@@ -146,10 +146,10 @@ node get-voices.js
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Изучение примеров Node.js на GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/Samples-Http/NodeJS)
+> [Примеры для Node.js на сайте GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/Samples-Http/NodeJS)
 
 ## <a name="see-also"></a>См. также
 
 * [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis)
 * [Создание настраиваемого голоса](how-to-customize-voice-font.md)
-* [Запись образцов голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)
+* [Запись примеров голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)

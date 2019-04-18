@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 351c92f1e1a698893f61004d523ba79ebca253e8
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58877640"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-storage-gen1-using-rest-api"></a>Операции файловой системы в Azure Data Lake Storage 1-го поколения с использованием REST API
@@ -114,7 +114,7 @@ ms.locfileid: "58877640"
 * Сначала следует отправить запрос GET к конечной точке `https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/myinputfile.txt?op=OPEN`. Будет возвращено расположение для отправки следующего запроса GET.
 * Затем нужно отправить запрос GET к конечной точке `https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/myinputfile.txt?op=OPEN&read=true`. Будет отображено содержимое файла.
 
-Однако поскольку на первом и втором этапе применяются одинаковые входные параметры, для отправки первого запроса можно использовать параметр `-L`. `-L` фактически объединяет два запроса в один, а позволяет cURL повторно отправить запрос к новому расположению. И наконец, отображаются выходные данные всех вызовов запросов, как показано в следующем фрагменте кода. Замените **\<yourstorename>** именем своей учетной записи Data Lake Storage 1-го поколения.
+Однако поскольку на первом и втором этапе применяются одинаковые входные параметры, для отправки первого запроса можно использовать параметр `-L`. `-L` фактически объединяет два запроса в один, а также позволяет cURL повторно отправить запрос к новому расположению. И наконец, отображаются выходные данные всех вызовов запросов, как показано в следующем фрагменте кода. Замените **\<yourstorename>** именем своей учетной записи Data Lake Storage 1-го поколения.
 
     curl -i -L GET -H "Authorization: Bearer <REDACTED>" 'https://<yourstorename>.azuredatalakestore.net/webhdfs/v1/mytempdir/myinputfile.txt?op=OPEN'
 
@@ -162,6 +162,6 @@ ms.locfileid: "58877640"
 * [Операции управления учетными записями в Azure Data Lake Store с использованием REST API](data-lake-store-get-started-rest-api.md)
 
 ## <a name="see-also"></a>См. также
-* [Справочник по API REST в поколение 1 хранилища Озера данных Azure](https://docs.microsoft.com/rest/api/datalakestore/)
-* [Откройте исходные данные больших приложений, совместимых с Gen1 хранилища Озера данных Azure](data-lake-store-compatible-oss-other-applications.md)
+* [Справочник по REST API для Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/rest/api/datalakestore/)
+* [Приложения больших данных с открытым исходным кодом, которые работают с Azure Data Lake Storage Gen1](data-lake-store-compatible-oss-other-applications.md)
 

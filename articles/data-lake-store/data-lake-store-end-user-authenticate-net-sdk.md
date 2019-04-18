@@ -12,18 +12,18 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 78a290d8136f8804e853d36a9bc95571625ed89c
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58876774"
 ---
 # <a name="end-user-authentication-with-azure-data-lake-storage-gen1-using-net-sdk"></a>Проверка подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью .NET SDK
 > [!div class="op_single_selector"]
-> * [Использование Java](data-lake-store-end-user-authenticate-java-sdk.md)
-> * [Использование пакета .NET SDK](data-lake-store-end-user-authenticate-net-sdk.md)
+> * [С использованием Java](data-lake-store-end-user-authenticate-java-sdk.md)
+> * [Использование пакета SDK для .NET](data-lake-store-end-user-authenticate-net-sdk.md)
 > * [Использование Python](data-lake-store-end-user-authenticate-python.md)
-> * [Использование интерфейса REST API](data-lake-store-end-user-authenticate-rest-api.md)
+> * [Использование REST API](data-lake-store-end-user-authenticate-rest-api.md)
 > 
 >  
 
@@ -55,8 +55,8 @@ ms.locfileid: "58876774"
    2. На вкладке **Диспетчер пакетов NuGet** в поле **Источник пакета** выберите **nuget.org** и установите флажок **Включить предварительные выпуски**.
    3. Найдите и установите следующие пакеты NuGet:
 
-      * `Microsoft.Azure.Management.DataLake.Store` — В этом руководстве используется Предварительная версия 2.1.3.
-      * `Microsoft.Rest.ClientRuntime.Azure.Authentication` — В этом руководстве используется версия 2.2.12.
+      * `Microsoft.Azure.Management.DataLake.Store`. В этом руководстве используется предварительная версия 2.1.3.
+      * `Microsoft.Rest.ClientRuntime.Azure.Authentication`. В этом руководстве используется версия 2.2.12.
 
         ![Добавление источника NuGet](./media/data-lake-store-get-started-net-sdk/data-lake-store-install-nuget-package.png "Создание учетной записи Azure Data Lake")
    4. Закройте **диспетчер пакетов NuGet**.
@@ -112,6 +112,6 @@ ms.locfileid: "58876774"
 ## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы узнали, как использовать проверку подлинности пользователей, чтобы реализовать проверку подлинности в Data Lake Storage 1-го поколения с помощью .NET SDK. Дополнительные сведения об использовании пакета .NET SDK для работы с Azure Data Lake Storage 1-го поколения см. в следующих статьях.
 
-* [Начало работы с Gen1 хранилища Озера данных с помощью пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
-* [Операции с данными в поколение 1 хранилища Озера данных с помощью пакета SDK для .NET](data-lake-store-data-operations-net-sdk.md)
+* [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
+* [Операции с данными в Data Lake Storage 1-го поколения c использованием SDK для .NET](data-lake-store-data-operations-net-sdk.md)
 

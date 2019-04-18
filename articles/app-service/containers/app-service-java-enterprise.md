@@ -14,10 +14,10 @@ ms.date: 08/29/2018
 ms.author: routlaw
 ms.custom: seodec18
 ms.openlocfilehash: 8db65fd9a1f271aea4ceb345f4d9dfbb6b9ff8a6
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58877386"
 ---
 # <a name="java-enterprise-guide-for-app-service-on-linux"></a>Руководство разработчика по Java Enterprise для Службы приложений в Linux
@@ -119,5 +119,4 @@ ms.locfileid: "58877386"
 
 -   Включите ведение журналов, щелкнув **Журналы диагностики** в области навигации слева. Щелкните **Файловая система**, чтобы задать квоту хранилища и период хранения, и сохраните изменения. Эти журналы можно найти в каталоге `/home/LogFiles/`.
 -   [Используйте SSH для подключения к экземпляру приложения](app-service-linux-ssh-support.md), чтобы просматривать журналы для запущенных приложений.
--   Журналы диагностики проверки **журналы диагностики** панели портала или с помощью команды Azure CLI:
-`az webapp log tail --name <your-app-name> --resource-group <your-apps-resource-group>`
+-   Журналы диагностики можно просматривать на панели **Журналы диагностики** на портале или с помощью команды Azure CLI: `az webapp log tail --name <your-app-name> --resource-group <your-apps-resource-group>`.

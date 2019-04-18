@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/11/2018
 ms.author: subramar
-ms.openlocfilehash: 04163bea8f4c1247f42b65c35c2b82910e623bc9
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 7bb9b1c545d30f66a09817ba977f12666a9f41c9
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58661383"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59699138"
 ---
 # <a name="create-your-first-azure-service-fabric-application"></a>Создание первого приложения Azure Service Fabric
 > [!div class="op_single_selector"]
@@ -108,7 +108,7 @@ Service Fabric предоставляет средства формирован�
 
 1. Запустите этот скрипт с помощью служебной программы для отслеживания, чтобы просмотреть выходные данные службы субъекта.
 
-   В MAC OS X нужно скопировать папку myactorsvcTestClient в расположение внутри контейнера с помощью следующих дополнительных команд.
+   В случае MAC OS X необходимо скопировать папку myactorsvcTestClient в том же расположении, внутри контейнера, выполнив следующие дополнительные команды.
     
     ```bash
     docker cp  [first-four-digits-of-container-ID]:/home

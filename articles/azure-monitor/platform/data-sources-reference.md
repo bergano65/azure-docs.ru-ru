@@ -9,10 +9,10 @@ ms.date: 06/12/2018
 ms.author: johnkem
 ms.subservice: ''
 ms.openlocfilehash: c703f735f59a8425c2a14641781f482a6e2d1c78
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58848542"
 ---
 # <a name="consume-monitoring-data-from-azure"></a>Использование данных мониторинга из Azure
@@ -37,8 +37,8 @@ ms.locfileid: "58848542"
 | Журналы хранилища | События | Хранилище Azure | <ul><li>**Таблица службы хранилища:** [Аналитика службы хранилища](https://docs.microsoft.com/rest/api/storageservices/storage-analytics)</li></ul> |
 | Оповещения центра безопасности | События | Центр безопасности Azure | <ul><li>**REST API:** [оповещения безопасности](https://msdn.microsoft.com/library/mt704050.aspx)</li></ul> |
 | Отчеты Azure Active Directory | События | Azure Active Directory | <ul><li>**REST API:** [API Graph Azure Active Directory](../../active-directory/reports-monitoring/concept-reporting-api.md)</li></ul> |
-| Состояние ресурсов центра безопасности | Status | [Все поддерживаемые ресурсы](https://msdn.microsoft.com/library/mt704041.aspx#Anchor_1). | <ul><li>**REST API:** [состояния системы безопасности](https://msdn.microsoft.com/library/mt704041.aspx)</li></ul> |
-| Работоспособность ресурса | Status | Поддерживаемые службы | <ul><li>**REST API:** [REST API работоспособности ресурсов](https://azure.microsoft.com/blog/reduce-troubleshooting-time-with-azure-resource-health/)</li></ul> |
+| Состояние ресурсов центра безопасности | Статус | [Все поддерживаемые ресурсы](https://msdn.microsoft.com/library/mt704041.aspx#Anchor_1). | <ul><li>**REST API:** [состояния системы безопасности](https://msdn.microsoft.com/library/mt704041.aspx)</li></ul> |
+| Работоспособность ресурса | Статус | Поддерживаемые службы | <ul><li>**REST API:** [REST API работоспособности ресурсов](https://azure.microsoft.com/blog/reduce-troubleshooting-time-with-azure-resource-health/)</li></ul> |
 | Оповещения о метриках Azure Monitor | Уведомления | [Список доступен здесь](metrics-supported.md). | <ul><li>**Веб-перехватчик**: [оповещения о метриках Azure](alerts-webhooks.md)</li></ul> |
 | Оповещения журнала действий Azure Monitor | Уведомления | Все службы Azure. | <ul><li>**Веб-перехватчик**: оповещения журнала действий Azure</li></ul> |
 | Уведомления об автомасштабировании | Уведомления | [Список доступен здесь](autoscale-overview.md#supported-services-for-autoscale). | <ul><li>**Веб-перехватчик**: [схема полезных данных веб-перехватчика уведомлений автомасштабирования](autoscale-webhook-email.md#autoscale-notification-webhook-payload-schema)</li></ul> |

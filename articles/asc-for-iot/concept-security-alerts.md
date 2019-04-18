@@ -15,16 +15,16 @@ ms.workload: na
 ms.date: 03/24/2019
 ms.author: mlottner
 ms.openlocfilehash: f3ae69cb6c8e2a60488b4f1ff3df1bb8ab0c04ea
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58861984"
 ---
 # <a name="azure-security-center-for-iot-security-alerts"></a>Центр безопасности Azure и оповещения системы безопасности Интернета вещей
 
 > [!IMPORTANT]
-> Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
+> Центр безопасности Azure для Интернета вещей сейчас предоставляется в общедоступной предварительной версии.
 > Предварительная версия предоставляется без соглашения об уровне обслуживания. Мы не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Центр безопасности Azure (ASC) для Интернета вещей постоянно анализирует решения Интернета вещей с помощью расширенной аналитики и аналитики угроз, чтобы оповещать вас о вредоносных действиях.
@@ -95,4 +95,4 @@ ms.locfileid: "58861984"
 
 - [Обзор](overview.md)
 - [Доступ к данным безопасности](how-to-security-data-access.md)
-- [Исследование устройства](how-to-investigate-device.md)
+- [Исследовать устройство](how-to-investigate-device.md)

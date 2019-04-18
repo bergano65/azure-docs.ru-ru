@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/02/2019
 ms.author: alkohli
 ms.openlocfilehash: cac451634bfa357784f9fd3d3a24e06ef3a4ee19
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58881772"
 ---
 # <a name="azure-data-box-gateway-system-requirements"></a>Требования к системе Azure шлюз поле данных
@@ -48,7 +48,7 @@ ms.locfileid: "58881772"
 
 ## <a name="supported-virtualization-platforms-for-device"></a>Поддерживаемые платформы виртуализации для устройства
 
-| **Операционная система**  |**Версии**   |**Примечания**  |
+| **Операционная система и (или) платформа**  |**Версии**   |**Примечания**  |
 |---------|---------|---------|
 |Hyper-V.  |  2012 R2 <br> 2016  |         |
 |VMware ESXi     | 6,0 <br> 6,5 <br> 6.7       |Средства VMware не поддерживаются.         |
@@ -95,5 +95,5 @@ ms.locfileid: "58881772"
 
 ## <a name="next-step"></a>Дальнейшие действия
 
-* [Развертывание шлюза для Azure Data Box](data-box-gateway-deploy-prep.md)
+* [Tutorial: Prepare to deploy Azure Data Box Gateway (Preview)](data-box-gateway-deploy-prep.md) (Руководство. Подготовка к развертыванию шлюза Azure Data Box)
 

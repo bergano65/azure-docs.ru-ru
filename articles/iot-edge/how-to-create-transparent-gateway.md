@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 9d67a87b182758e37c9e379a8f96a6540797ce3e
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 95ee0a4d5d150741e59c0c2d20abebe9609e179f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58482952"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59699019"
 ---
 # <a name="configure-an-iot-edge-device-to-act-as-a-transparent-gateway"></a>Настройка устройства IoT Edge в качестве прозрачного шлюза
 
@@ -260,6 +260,18 @@ certificates:
    ```
 
 6. На странице **Review template** (Проверка шаблона) щелкните **Отправить**.
+
+## <a name="open-ports-on-gateway-device"></a>Открытые порты на устройстве шлюза
+
+Стандартные устройства IoT Edge не требуется исходящее подключение к функции, так как весь обмен данными с центром Интернета вещей выполняется с помощью исходящих подключений. Тем не менее шлюзы отличаются, так как они должны иметь возможность получать сообщения из их подчиненных устройств.
+
+Для работы сценария шлюза по крайней мере один из поддерживаемых протоколов концентратора IoT Edge должны быть открыты для входящего трафика из подчиненных устройств. Поддерживаемые portocols, MQTT, AMQP и HTTPS.
+
+| Порт | Протокол |
+| ---- | -------- |
+| 8883 | MQTT |
+| 5671 | AMQP |
+| 443 | HTTPS <br> MQTT + WS <br> AMQP + WS | 
 
 ## <a name="route-messages-from-downstream-devices"></a>Маршрутизация сообщений с подчиненных устройств
 Среда выполнения IoT Edge может маршрутизировать сообщения, отправляемые с подчиненных устройств. Например, сообщения, отправляемые модулями. Благодаря этому можно анализировать данные на базе модулей, работающих в шлюзе, прежде чем данные будут отправлены в облако. 

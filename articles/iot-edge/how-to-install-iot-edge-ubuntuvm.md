@@ -1,7 +1,7 @@
 ---
 title: Запуск Azure IoT Edge на виртуальных машинах Ubuntu | Документация Майкрософт
 description: Инструкции по настройке Azure IoT Edge на виртуальных машинах Ubuntu 16.04 из Azure Marketplace.
-author: gregman
+author: gregman-msft
 manager: arjmands
 ms.reviewer: kgremban
 ms.service: iot-edge
@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 03/29/2019
 ms.author: gregman
-ms.openlocfilehash: 5cb15f45508b60a1b7f8c9049b8779c1b7d31150
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 7062bd2dbd8c375b8dd3fad348e5cc26de8f36d2
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58757927"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59698594"
 ---
 # <a name="run-azure-iot-edge-on-ubuntu-virtual-machines"></a>Запуск Azure IoT Edge на виртуальных машинах Ubuntu
 
@@ -41,7 +41,7 @@ ms.locfileid: "58757927"
     1.  Подождите несколько секунд и на экране отобразится сообщение об успешном выполнении, указывающее об успешной настройке строки подключения.
 
 
-## <a name="deploy-from-the-azure-portal"></a>Развертывание на портале Azure
+## <a name="deploy-from-the-azure-portal"></a>Развертывание с помощью портала Azure
 На портале Azure выполните поиск по запросу Azure IoT Edge и выберите **Ubuntu Server 16.04 LTS + Azure IoT Edge runtime**, чтобы начать создание виртуальной машины. После этого выполните шаги 3 и 4 из приведенного выше раздела "Развертывание из Azure Marketplace".
 
 ## <a name="deploy-from-azure-cli"></a>Развертывание с помощью Azure CLI
@@ -95,6 +95,6 @@ ms.locfileid: "58757927"
 
 Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 
-Если вам не удается установить среду выполнения Edge, перейдите на страницу со сведениями об [устранении неполадок](troubleshoot.md).
+Если возникают проблемы со средой выполнения IoT Edge, установка должным образом, см. статью [Устранение неполадок](troubleshoot.md) страницы.
 
 Чтобы обновить существующую установку до последней версии IoT Edge, см. раздел [Обновление управляющей программы безопасности и среды выполнения IoT Edge](how-to-update-iot-edge.md).

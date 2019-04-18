@@ -16,10 +16,10 @@ ms.date: 11/27/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6f76fef3d5e6515e9d546c709ace0a4a533c0a45
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58881177"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-powershell"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью PowerShell
@@ -62,7 +62,7 @@ ms.locfileid: "58881177"
 
 ### <a name="enable-system-assigned-managed-identity-on-an-existing-azure-vm"></a>Включение управляемого удостоверения, назначаемого системой, для имеющейся виртуальной машины Azure
 
-Чтобы включить назначаемое системой управляемое удостоверение на виртуальной машине, которое было подготовлено до ее создания, вашей учетной записи должна быть назначена роль [Участник виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).  Назначать другие роли в каталоге Azure AD не требуется.
+Чтобы включить назначаемое системой управляемое удостоверение на виртуальной машине, которая была подготовлена без него, вашей учетной записи должна быть назначена роль [Участника виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).  Назначать другие роли в каталоге Azure AD не требуется.
 
 1. Войдите в Azure, используя команду `Connect-AzAccount`. Используйте учетную запись, связанную с подпиской Azure, которая содержит виртуальную машину.
 
@@ -215,7 +215,7 @@ Update-AzVm -ResourceGroupName myResourceGroup -VirtualMachine $vm -IdentityType
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Управляемые удостоверения для обзора ресурсов Azure](overview.md)
+- [Обзор управляемых удостоверений для ресурсов Azure](overview.md).
 - Ниже приведены комплексные краткие руководства по созданию виртуальных машин Azure:
   
   - [Создание виртуальной машины Windows с помощью PowerShell](../../virtual-machines/windows/quick-create-powershell.md) 

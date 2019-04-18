@@ -17,10 +17,10 @@ ms.date: 07/12/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 71878d5d033f0005d2c8c36d9f59799e125a19dd
-ms.sourcegitcommit: 09bb15a76ceaad58517c8fa3b53e1d8fec5f3db7
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58762707"
 ---
 # <a name="automate-management-tasks-on-azure-virtual-machines-with-the-sql-server-agent-extension-resource-manager"></a>Автоматизация задач управления на виртуальных машинах Azure с помощью расширения агента SQL Server (модель с использованием Resource Manager)
@@ -96,7 +96,7 @@ Set-AzVMSqlServerExtension -ResourceGroupName "resourcegroupname" -VMName "vmnam
    1. Установка SQL Server с именованным экземпляром, в виртуальной Машине SQL Server. 
    1. Установите расширение IaaS из на портале Azure.  
 
-## <a name="status"></a>Status
+## <a name="status"></a>Статус
 Одним из способов проверки того, что расширение установлено, является просмотр состояния агента на портале Azure. В окне виртуальной машины выберите **Все параметры**, а затем щелкните **Расширения**. В списке будет указано расширение **SqlIaasExtension**.
 
 ![Расширение агента IaaS для SQL Server на портале Azure](./media/virtual-machines-windows-sql-server-agent-extension/azure-rm-sql-server-iaas-agent-portal.png)

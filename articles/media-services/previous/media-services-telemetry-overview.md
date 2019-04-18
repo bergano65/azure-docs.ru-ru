@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
 ms.openlocfilehash: 8e8b493881662483e66dd835d1cc68a471b18454
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58803314"
 ---
 # <a name="azure-media-services-telemetry"></a>Телеметрия Служб мультимедиа Azure  
@@ -132,10 +132,10 @@ OverlapCount|Перекрытие при приеме.|0
 DiscontinuityCount|Прерывание дорожки.|0
 LastTimestamp|Метка времени последнего получения данных.|1800488800
 NonincreasingCount|Число фрагментов, отклоненных из-за невозрастающей метки времени.|2
-UnalignedKeyFrames|Получены ли фрагменты (для уровней качества), в которых ключевые кадры не выровнены. |Истина
-UnalignedPresentationTime|Получены ли фрагменты (для уровней качества или дорожек), в которых время презентации не согласовано.|Истина
-UnexpectedBitrate|Значение True, если расчетная или фактическая скорость для аудио- или видеодорожки превышает 40 000 бит/с и значение IncomingBitrate равно 0 ЛИБО значения IncomingBitrate и actualBitrate отличаются на 50 %. |Истина
-Healthy|Значение True, если значения <br/>overlapCount, <br/>DiscontinuityCount, <br/>NonIncreasingCount, <br/>UnalignedKeyFrames, <br/>UnalignedPresentationTime и <br/>UnexpectedBitrate<br/> равны 0.|Истина<br/><br/>Healthy — это составная функция, которая возвращает значение false, если выполнено любое из следующих условий:<br/><br/>- OverlapCount > 0<br/>- DiscontinuityCount > 0<br/>- NonincreasingCount > 0<br/>- UnalignedKeyFrames = True<br/>- UnalignedPresentationTime = True<br/>- UnexpectedBitrate = True
+UnalignedKeyFrames|Получены ли фрагменты (для уровней качества), в которых ключевые кадры не выровнены. |Да
+UnalignedPresentationTime|Получены ли фрагменты (для уровней качества или дорожек), в которых время презентации не согласовано.|Да
+UnexpectedBitrate|Значение True, если расчетная или фактическая скорость для аудио- или видеодорожки превышает 40 000 бит/с и значение IncomingBitrate равно 0 ЛИБО значения IncomingBitrate и actualBitrate отличаются на 50 %. |Да
+Healthy|Значение True, если значения <br/>overlapCount, <br/>DiscontinuityCount, <br/>NonIncreasingCount, <br/>UnalignedKeyFrames, <br/>UnalignedPresentationTime и <br/>UnexpectedBitrate<br/> равны 0.|Да<br/><br/>Healthy — это составная функция, которая возвращает значение false, если выполнено любое из следующих условий:<br/><br/>- OverlapCount > 0<br/>- DiscontinuityCount > 0<br/>- NonincreasingCount > 0<br/>- UnalignedKeyFrames = True<br/>- UnalignedPresentationTime = True<br/>- UnexpectedBitrate = True
 
 **Динамический архив**
 

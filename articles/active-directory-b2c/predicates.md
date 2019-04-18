@@ -11,10 +11,10 @@ ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
 ms.openlocfilehash: 0dfe6553778092c33f9e1bd55ac7a7ae65137a6e
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58881007"
 ---
 # <a name="predicates-and-predicatevalidations"></a>Элементы Predicates и PredicateValidations
@@ -194,7 +194,7 @@ ms.locfileid: "58881007"
 - **Lowercase** с помощью метода `IncludesCharacters` проверяет, содержит ли пароль строчную букву.
 - **Uppercase** с помощью метода `IncludesCharacters` проверяет, содержит ли пароль прописную букву.
 - **Number** с помощью метода `IncludesCharacters` проверяет, содержит ли пароль цифру.
-- **Символ** с помощью `IncludesCharacters` метод, проверяет пароль должен содержать одно из следующих символов `@#$%^&*\-_+=[]{}|\:',?/~"();!`
+- **Symbol** с помощью метода `IncludesCharacters` проверяет, содержит ли пароль один из следующих знаков: `@#$%^&*\-_+=[]{}|\:',?/~"();!`
 - **PIN** с помощью метода `MatchesRegex` проверяет, содержит ли пароль только цифры.
 - **AllowedAADCharacters** с помощью метода `MatchesRegex` проверяет, используются ли в пароле только допустимые знаки.
 - **DisallowedWhitespace** с помощью метода `MatchesRegex` проверяет, не начинается или не заканчивается ли пароль пробелом.
