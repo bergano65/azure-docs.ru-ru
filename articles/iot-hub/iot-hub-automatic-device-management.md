@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/13/2018
 ms.author: chrisgre
 ms.openlocfilehash: 598bf82e375f472b2f723c3462ba7ba7b4d25fbe
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59012955"
 ---
 # <a name="automatic-iot-device-management-at-scale-using-the-azure-portal"></a>Автоматическое управление устройствами Интернета вещей в нужном масштабе с помощью портала Azure
@@ -203,14 +203,14 @@ SELECT deviceId FROM devices
 В этой статье вы узнали, как настроить и отслеживать устройства Интернета вещей в нужном масштабе. Дополнительные сведения об управлении Центром Интернета вещей в Azure см. по следующим ссылкам:
 
 * [Управление удостоверениями устройств Центра Интернета вещей в пакетном режиме](iot-hub-bulk-identity-mgmt.md)
-* [Метрики Центра Интернета вещей](iot-hub-metrics.md)
+* [Общие сведения о метриках Центра Интернета вещей](iot-hub-metrics.md)
 * [Мониторинг операций](iot-hub-operations-monitoring.md)
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 
-* [Руководство разработчика для центра Интернета вещей](iot-hub-devguide.md)
-* [Развертывание ии на пограничных устройствах с помощью Azure IoT Edge](../iot-edge/tutorial-simulate-device-linux.md)
+* [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
 
 Узнайте, как использовать службу подготовки устройств для Центра Интернета вещей, чтобы включить автоматическую подготовку JIT, из следующей статьи: 
 
-* [Служба подготовки устройств к добавлению в Центр Интернета вещей Azure](/azure/iot-dps)
+* [Служба подготовки устройств для Центра Интернета вещей Azure](/azure/iot-dps)

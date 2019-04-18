@@ -9,10 +9,10 @@ ms.date: 06/07/2018
 ms.author: renash
 ms.subservice: files
 ms.openlocfilehash: 315bad5c4ffc3d5e8909c86cb8de703e9cb941b0
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59048849"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
@@ -225,7 +225,7 @@ Remove-PSDrive -Name <desired-drive-letter>
 
 #### <a name="restore-from-a-previous-version"></a>Восстановление из предыдущей версии
 Нажмите кнопку **Восстановить**, чтобы рекурсивно скопировать содержимое всего каталога на момент создания моментального снимка общего ресурса в исходном расположении.
- ![Кнопка "Восстановить" в предупреждающем сообщении](./media/storage-how-to-use-files-windows/snapshot-windows-restore.png) 
+ ![Кнопка "Восстановить" в предупреждении](./media/storage-how-to-use-files-windows/snapshot-windows-restore.png) 
 
 ## <a name="securing-windowswindows-server"></a>Обеспечение безопасности Windows или Windows Server
 Чтобы подключить общую папку Azure в Windows, порт 445 должен быть доступен. Многие организации блокируют порт 445 из-за угроз безопасности, присущих SMB 1. SMB 1, также известный как CIFS (Common Internet File System), является устаревшим протоколом файловой системы, включенным в Windows и Windows Server. SMB 1 — это устаревший, неэффективный и, самое главное, небезопасный протокол. Хорошей новостью является то, что компонент "Файлы Azure" не поддерживает SMB 1, а все поддерживаемые версии Windows и Windows Server позволяют удалить или отключить этот протокол. Мы всегда [настоятельно рекомендуем](https://aka.ms/stopusingsmb1) удалять или отключать клиент и сервер SMB 1 в Windows перед использованием общей папки Azure в рабочей среде.
@@ -298,13 +298,13 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 После создания этого раздела реестра необходимо перезагрузить сервер, чтобы отключить SMB 1.
 
 ### <a name="smb-resources"></a>Ресурсы по SMB
-- [Прекратить использование SMB 1](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/)
-- [Clearinghouse SMB 1 продукт](https://blogs.technet.microsoft.com/filecab/2017/06/01/smb1-product-clearinghouse/)
-- [Обнаружение SMB 1 в вашей среде с DSCEA](https://blogs.technet.microsoft.com/ralphkyttle/2017/04/07/discover-smb1-in-your-environment-with-dscea/)
-- [Отключение SMB 1, с помощью групповой политики](https://blogs.technet.microsoft.com/secguide/2017/06/15/disabling-smbv1-through-group-policy/)
+- [Запись блога о прекращении использования SMB 1](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/)
+- [Центр координации продуктов с SMB 1](https://blogs.technet.microsoft.com/filecab/2017/06/01/smb1-product-clearinghouse/)
+- [Запись блога об обнаружении SMB 1 в своей среде с помощью DSCEA](https://blogs.technet.microsoft.com/ralphkyttle/2017/04/07/discover-smb1-in-your-environment-with-dscea/)
+- [Запись блога об отключении SMB 1 в групповой политике](https://blogs.technet.microsoft.com/secguide/2017/06/15/disabling-smbv1-through-group-policy/)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о службе файлов Azure см. по следующим ссылкам.
 - [Планирование развертывания службы файлов Azure](storage-files-planning.md)
 - [Часто задаваемые вопросы](../storage-files-faq.md)
-- [Устранение неполадок в Windows](storage-troubleshoot-windows-file-connection-problems.md)      
+- [Troubleshoot Azure File storage problems in Windows](storage-troubleshoot-windows-file-connection-problems.md) (Устранение неполадок хранилища файлов Azure в Windows)      

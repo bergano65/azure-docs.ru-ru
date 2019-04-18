@@ -10,10 +10,10 @@ ms.date: 12/26/2018
 ms.author: lyrana
 ms.custom: seodec18
 ms.openlocfilehash: 72155799971760e9ddc93746dceafb1ea554d88b
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58905313"
 ---
 # <a name="create-and-manage-role-assignments-in-azure-digital-twins"></a>Создание назначений ролей и управление ими в Azure Digital Twins
@@ -163,12 +163,12 @@ YOUR_MANAGEMENT_API_URL/system/roles
 YOUR_MANAGEMENT_API_URL/roleassignments/check?userId=YOUR_USER_ID&path=YOUR_PATH&accessType=YOUR_ACCESS_TYPE&resourceType=YOUR_RESOURCE_TYPE
 ```
 
-| **Значение параметра** | **Обязательно для заполнения** |  **type** |  **ОПИСАНИЕ** |
+| **Значение параметра** | **Обязательный** |  **Тип** |  **Описание** |
 | --- | --- | --- | --- |
-| YOUR_USER_ID |  Истина | Строка |   Свойство objectId для objectIdType идентификатора пользователя. |
-| YOUR_PATH | Истина | Строка |   Выбранный путь для проверки доступа. |
-| YOUR_ACCESS_TYPE |  Истина | Строка |   Тип доступа для проверки. |
-| YOUR_RESOURCE_TYPE | Истина | Строка |  Ресурс для проверки. |
+| YOUR_USER_ID |  Да | Строка |   Свойство objectId для objectIdType идентификатора пользователя. |
+| YOUR_PATH | Да | Строка |   Выбранный путь для проверки доступа. |
+| YOUR_ACCESS_TYPE |  Да | Строка |   Тип доступа для проверки. |
+| YOUR_RESOURCE_TYPE | Да | Строка |  Ресурс для проверки. |
 
 Успешный запрос возвращает логическое значение `true` или `false` для указания того, назначен ли тип доступа пользователю для данного пути и ресурса.
 

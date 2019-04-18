@@ -38,11 +38,11 @@ sections:
         style: unordered
         items:
           - html: <a href="/azure/active-directory/governance/access-reviews-overview">Сведения о проверке доступа</a>
-          - html: <a href="/azure/active-directory/governance/manage-user-access-with-access-reviews">Управление доступом пользователей с помощью проверок доступа</a>
+          - html: <a href="/azure/active-directory/governance/manage-user-access-with-access-reviews">Управление пользовательским доступом с помощью проверок доступа</a>
           - html: <a href="/azure/active-directory/governance/manage-guest-access-with-access-reviews">Управление гостевым доступом с помощью проверок доступа</a>
   - title: Условия использования
     items:
       - type: list
         style: unordered
         items:
-          - html: <a href="/azure/active-directory/conditional-access/terms-of-use">Что можно делать с помощью условий использования?</a>
+          - html: <a href="/azure/active-directory/conditional-access/terms-of-use">Для чего нужна функции "Условия использования"</a>

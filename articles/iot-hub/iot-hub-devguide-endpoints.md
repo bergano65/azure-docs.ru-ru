@@ -9,10 +9,10 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/18/2018
 ms.openlocfilehash: 5015068f9b165190bef3b0cb97ddb194e173303e
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59045923"
 ---
 # <a name="reference---iot-hub-endpoints"></a>Руководство. Конечные точки Центра Интернета вещей
@@ -101,6 +101,6 @@ ms.locfileid: "59045923"
 
 Другие справочные статьи в руководстве разработчика для Центра Интернета вещей:
 
-* [Язык запросов Центра Интернета вещей для двойников устройств, заданий и маршрутизации сообщений](iot-hub-devguide-query-language.md)
+* [Язык запросов Центра Интернета вещей для двойников устройств и двойников модулей, заданий и маршрутизации сообщений](iot-hub-devguide-query-language.md)
 * [Квоты и регулирование](iot-hub-devguide-quotas-throttling.md)
-* [Поддержка MQTT в Центре Интернета вещей](iot-hub-mqtt-support.md)
+* [Взаимодействие с Центром Интернета вещей с помощью протокола MQTT](iot-hub-mqtt-support.md)

@@ -6,10 +6,10 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.service: multiple
 ms.openlocfilehash: be94cf0367f93f14249239fce5e09c8635a01136
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58892489"
 ---
 # <a name="set-up-micro-focus-cics-bankdemo-for-micro-focus-enterprise-developer-40-on-azure"></a>Настройка BankDemo CICS Micro фокус для 4.0 Micro фокус Enterprise Developer в Azure
@@ -272,4 +272,4 @@ CICs — это система управления сведения клиен�
 - [Переход с мэйнфреймов - портала](https://blogs.msdn.microsoft.com/azurecat/2018/11/16/mainframe-migration-to-azure-portal/)
 - [Виртуальные машины](https://docs.microsoft.com/azure/virtual-machines/linux/overview)
 - [Устранение неполадок](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/)
-- [Основные сведения о переносе приложений для мейнфреймов в Azure](https://azure.microsoft.com/resources/demystifying-mainframe-to-azure-migration/en-us/)
+- [Мифы о больших ЭВМ к миграции в Azure](https://azure.microsoft.com/resources/demystifying-mainframe-to-azure-migration/en-us/)

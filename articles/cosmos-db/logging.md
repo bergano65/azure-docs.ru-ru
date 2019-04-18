@@ -8,10 +8,10 @@ ms.date: 03/15/2019
 ms.author: sngun
 ms.custom: seodec18
 ms.openlocfilehash: 8839d7ea93bcb205b1900e63d3ab98394e72cd75
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58904871"
 ---
 # <a name="diagnostic-logging-in-azure-cosmos-db"></a>Журнал ведения диагностики в Azure Cosmos DB 
@@ -260,7 +260,7 @@ Name              : resourceId=/SUBSCRIPTIONS/<subscription-ID>/RESOURCEGROUPS/C
 /MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/CONTOSOCOSMOSDB/y=2017/m=09/d=28/h=19/m=00/PT1H.json
 ```
 
-Как видно из этих выходных данных, большие двоичные объекты имеют соглашения об именовании: `resourceId=/SUBSCRIPTIONS/<subscription-ID>/RESOURCEGROUPS/<resource group name>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<Database Account Name>/y=<year>/m=<month>/d=<day of month>/h=<hour>/m=<minute>/filename.json`
+Как видно из этих выходных данных, имена больших двоичных объектов соответствуют соглашению об именовании: `resourceId=/SUBSCRIPTIONS/<subscription-ID>/RESOURCEGROUPS/<resource group name>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<Database Account Name>/y=<year>/m=<month>/d=<day of month>/h=<hour>/m=<minute>/filename.json`
 
 Для значений даты и времени используется время в формате UTC.
 
@@ -440,8 +440,8 @@ $blobs | Get-AzStorageBlobContent `
 
 | Поле или свойство службы хранилища Azure | Azure Monitor регистрирует свойство | ОПИСАНИЕ |
 | --- | --- | --- |
-| **Twitter в режиме реального** | **TimeGenerated** | Дата и время (UTC) выполнения операции. |
-| **ResourceId** | **Ресурс** | Учетная запись Azure Cosmos DB, для которой включены журналы.|
+| **time** | **TimeGenerated** | Дата и время (UTC) выполнения операции. |
+| **resourceId** | **Ресурс** | Учетная запись Azure Cosmos DB, для которой включены журналы.|
 | **category** | **Категория** | Для журналов Azure Cosmos DB единственным доступным значением является **DataPlaneRequests**. |
 | **operationName** | **OperationName** | Имя операции. В качестве значения можно использовать любую из следующих операций: Create, Update, Read, ReadFeed, Delete, Replace, Execute, SqlQuery, Query, JSQuery, Head, HeadFeed или Upsert.   |
 | **properties** | Недоступно | Содержимое этого поля описано в строках, приведенных ниже. |
@@ -453,7 +453,7 @@ $blobs | Get-AzStorageBlobContent `
 | **clientIpAddress** | **clientIpAddress_s** | IP-адрес клиента. |
 | **requestCharge** | **requestCharge_s** | Количество ЕЗ, которые используются при операции. |
 | **collectionRid** | **collectionId_s** | Уникальный идентификатор коллекции.|
-| **длительность** | **duration_s** | Длительность операции в тактах. |
+| **duration** | **duration_s** | Длительность операции в тактах. |
 | **requestLength** | **requestLength_s** | Длина запроса в байтах. |
 | **responseLength** | **responseLength_s** | Длина ответа в байтах.|
 | **resourceTokenUserRid** | **resourceTokenUserRid_s** | Это свойство должно быть заполнено, если [маркеры ресурсов](https://docs.microsoft.com/azure/cosmos-db/secure-access-to-data#resource-tokens) используются для проверки подлинности. Значение указывает на идентификатор ресурса пользователя. |
@@ -463,6 +463,6 @@ $blobs | Get-AzStorageBlobContent `
 - Чтобы понять, как включать ведение журнала, и узнать, какие метрики и категории журналов поддерживаются различными службами Azure, ознакомьтесь со статьями [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md) и [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
 - Прочтите эти статьи, чтобы узнать о концентраторах событий:
    - [Что такое Центры событий Azure?](../event-hubs/event-hubs-what-is-event-hubs.md)
-   - [Приступая к работе с Центрами событий](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
+   - [Начало работы с Центрами событий](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
 - Ознакомьтесь с разделом [скачивании метрик и журналов диагностики из службы хранилища Azure](../storage/blobs/storage-quickstart-blobs-dotnet.md#download-blobs).
 - Чтение [общие принципы по журналам в Azure Monitor журналы](../log-analytics/log-analytics-log-search-new.md).

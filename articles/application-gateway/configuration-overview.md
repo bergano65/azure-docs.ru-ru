@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: absha
 ms.openlocfilehash: 40c5444a54f4e483a9dcacb958c18f66da45019a
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58906129"
 ---
 # <a name="application-gateway-configuration-overview"></a>Общие сведения о конфигурации шлюза приложений
@@ -346,4 +346,4 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 
 - [Создание шлюза приложений на портале Azure](quick-create-portal.md)
 - [Создание шлюза приложений с помощью PowerShell](quick-create-powershell.md)
-- [Создание шлюза приложений с помощью интерфейса командной строки Azure](quick-create-cli.md)
+- [Создание шлюза приложений с помощью Azure CLI](quick-create-cli.md)

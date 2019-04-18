@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 08/28/2018
 ms.author: banders
 ms.openlocfilehash: 4305db991a8129b0ae4205300051391df893c52c
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58917793"
 ---
 # <a name="understand-how-the-suse-linux-enterprise-software-reservation-plan-discount-is-applied-for-azure"></a>Сведения о применении скидки план программного обеспечения SUSE Linux Enterprise для Azure
@@ -126,12 +126,12 @@ ms.locfileid: "58917793"
 
 Дополнительные сведения о резервировании см. в следующих статьях:
 
-- [Общие сведения об Azure Reserved VM Instances](billing-save-compute-costs-reservations.md)
-- [Оплатите планы программного обеспечения SUSE с помощью Azure резервирований](../virtual-machines/linux/prepay-suse-software-charges.md)
+- [Основные сведения о резервировании в Azure](billing-save-compute-costs-reservations.md)
+- [Предварительная оплата программного обеспечения SUSE в резервированиях Azure](../virtual-machines/linux/prepay-suse-software-charges.md)
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../virtual-machines/windows/prepay-reserved-vm-instances.md)
-- [Управление Azure резервирования](billing-manage-reserved-vm-instance.md)
-- [Общие сведения об использовании резервирования для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
-- [Общие сведения об использовании резервирования о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
+- [Управление Azure Reserved VM Instances](billing-manage-reserved-vm-instance.md)
+- [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
+- [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
 

@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 04/03/2019
 ms.author: juliako
 ms.openlocfilehash: ad8e84d84665b20bfff53cf09473bc8bce9760d8
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58916042"
 ---
 # <a name="live-streaming-with-azure-media-services-v3"></a>Потоковая трансляция в Службах мультимедиа Azure версии 3
@@ -68,7 +68,7 @@ ms.locfileid: "58916042"
 Чтобы понять рабочие процессы live streaming в версии 3 службы мультимедиа, нужно сначала Ознакомьтесь и понимать следующие концепции: 
 
 - [Конечные точки потоковой передачи](streaming-endpoint-concept.md)
-- [События и выходные данные прямой трансляции](live-events-outputs-concept.md)
+- [События и выходные данные потоковой трансляции](live-events-outputs-concept.md)
 - [Указатели потоковой передачи](streaming-locators-concept.md)
 
 ### <a name="general-steps"></a>Общие шаги
@@ -87,13 +87,13 @@ ms.locfileid: "58916042"
 
 ## <a name="other-important-articles"></a>Другие важные статьи
 
-- [Рекомендуемые динамические кодировщики](recommended-on-premises-live-encoders.md)
-- [Использование DVR в облаке](live-event-cloud-dvr.md)
-- [Сравнение функций динамической типы событий](live-event-types-comparison.md)
+- [Recommended live streaming encoders](recommended-on-premises-live-encoders.md) (Рекомендуемые кодировщики потоковой трансляции)
+- [Использование средства цифровой видеозаписи в облаке](live-event-cloud-dvr.md)
+- [Сравнение типов LiveEvent](live-event-types-comparison.md)
 - [Состояния и выставление счетов](live-event-states-billing.md)
-- [Latency](live-event-latency.md)
+- [Задержка](live-event-latency.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Учебник динамической потоковой передачи](stream-live-tutorial-with-api.md)
-* [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md)
+* [Руководство по потоковой трансляции](stream-live-tutorial-with-api.md)
+* [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md)

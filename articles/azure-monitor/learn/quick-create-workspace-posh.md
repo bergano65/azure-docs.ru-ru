@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 03/12/2019
 ms.author: magoedte
 ms.openlocfilehash: 6f27aeb65cb9077011e662c165ca26202546db26
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58905738"
 ---
 # <a name="create-a-log-analytics-workspace-with-azure-powershell"></a>Создание рабочей области Log Analytics с помощью Azure PowerShell
@@ -31,9 +31,9 @@ ms.locfileid: "58905738"
  
 Сведения о других источниках, таких как виртуальные машины Azure и виртуальные машины Windows или Linux в вашей среде, см. в статьях ниже.
 
-* [Сбор данных на виртуальных машинах Azure](../learn/quick-collect-azurevm.md)
-* [Собирать данные c компьютера Linux гибридных](../learn/quick-collect-linux-computer.md)
-* [Собирать данные c компьютера Windows гибридного](quick-collect-windows-computer.md)
+* [Сбор данных о виртуальных машинах Azure](../learn/quick-collect-azurevm.md)
+* [Настройка агента Log Analytics для компьютеров Linux в гибридной среде](../learn/quick-collect-linux-computer.md)
+* [Настройка агента Log Analytics для компьютеров Windows в гибридной среде](quick-collect-windows-computer.md)
 
 Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

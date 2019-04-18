@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: spelluru
 ms.openlocfilehash: 19a7d6052091f8889a88c61793186b7bf7d9d869
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59047030"
 ---
 # <a name="add-an-artifact-to-a-vm"></a>Добавление артефакта к виртуальной Машине
@@ -168,5 +168,5 @@ if ($virtualMachine -ne $null) {
 
 - [Укажите обязательные артефакты для лаборатории](devtest-lab-mandatory-artifacts.md)
 - [Создание настраиваемых артефактов](devtest-lab-artifact-author.md)
-- [Добавление репозитория артефактов в лабораторию](devtest-lab-artifact-author.md)
+- [Добавить репозиторий артефактов в лабораторию](devtest-lab-artifact-author.md)
 - [Диагностика сбоев артефактов](devtest-lab-troubleshoot-artifact-failure.md)

@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 01/08/2018
 ms.author: magoedte
 ms.openlocfilehash: 40f0705cfa7f0e9bb45d300a629adebd0cc5be47
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58883679"
 ---
 # <a name="troubleshooting-the-log-analytics-vm-extension-in-azure-monitor"></a>Устранение неполадок расширения виртуальной Машины Log Analytics в Azure Monitor
@@ -42,19 +42,19 @@ ms.locfileid: "58883679"
 Если расширение виртуальной машины *Microsoft Monitoring Agent* не устанавливается или не создает отчеты, можно выполнить следующие действия для решения проблемы.
 
 1. Следуя инструкции в статье базы знаний [KB 2965986](https://support.microsoft.com/kb/2965986#mt1), убедитесь, что агент виртуальной машины установлен и работает правильно.
-   * Можно также просмотреть файл журнала агента ВМ `C:\WindowsAzure\logs\WaAppAgent.log`
+   * Также можно проверить, существует ли файл журнала агента ВМ `C:\WindowsAzure\logs\WaAppAgent.log`.
    * Если журнал не создан, значит агент виртуальной машины не установлен.
-   * [Установка агента ВМ Azure](../../azure-monitor/learn/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension)
+   * [Установка агента виртуальной машины Azure](../../azure-monitor/learn/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension)
 2. Проверьте пульс расширения Microsoft Monitoring Agent, выполнив следующие действия:
    * Войдите на виртуальную машину.
    * Откройте планировщик задач и найдите задачу `update_azureoperationalinsight_agent_heartbeat`.
    * Убедитесь, что задача активна и выполняется ежеминутно.
-   * Проверьте файл журнала пульса `C:\WindowsAzure\Logs\Plugins\Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent\heartbeat.log`
-3. Просмотрите файлы журнала расширения ВМ Microsoft Monitoring Agent в `C:\Packages\Plugins\Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent`
+   * Проверьте, есть ли в папке `C:\WindowsAzure\Logs\Plugins\Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent\heartbeat.log` файл журнала пульса.
+3. Просмотрите файлы журнала расширения виртуальной машины Microsoft Monitoring Agent в папке `C:\Packages\Plugins\Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent`.
 4. Убедитесь, что на виртуальной машине можно запускать сценарии PowerShell.
 5. Убедитесь, что разрешения на доступ к папке C:\Windows\temp не были изменены.
-6. Просмотреть состояние агента Microsoft Monitoring Agent, введя следующую команду в окне PowerShell с повышенными привилегиями на виртуальной машине `(New-Object -ComObject 'AgentConfigManager.MgmtSvcCfg').GetCloudWorkspaces() | Format-List`
-7. Просмотрите файлы журналов программы установки Microsoft Monitoring Agent в `C:\Windows\System32\config\systemprofile\AppData\Local\SCOM\Logs`
+6. Просмотрите состояние агента Microsoft Monitoring Agent. Для этого на виртуальной машине в окне PowerShell с повышенными правами введите следующий код `(New-Object -ComObject 'AgentConfigManager.MgmtSvcCfg').GetCloudWorkspaces() | Format-List`.
+7. Просмотрите файлы журнала установки агента Microsoft Monitoring Agent в папке `C:\Windows\System32\config\systemprofile\AppData\Local\SCOM\Logs`.
 
 Подробные сведения см. в статье об [устранении неполадок расширений для виртуальных машин Windows](../../virtual-machines/extensions/oms-windows.md).
 
@@ -62,11 +62,11 @@ ms.locfileid: "58883679"
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)] 
 Если расширение виртуальной машины *Агент Log Analytics для Linux* не устанавливается или не создает отчеты, можно выполнить следующие действия для решения проблемы.
 
-1. Если состояние расширения *Неизвестный* проверьте, установлен ли агент виртуальной Машины Azure и работает правильно, просмотрев файл журнала агента ВМ `/var/log/waagent.log`
+1. Если состояние расширения *неизвестно*, убедитесь, что агент виртуальной машины Azure установлен и работает правильно, просмотрев файл журнала агента ВМ `/var/log/waagent.log`.
    * Если журнал не создан, значит агент виртуальной машины не установлен.
-   * [Установите агент виртуальной Машины Azure на виртуальных машинах Linux](../../azure-monitor/learn/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension)
-2. Для возникновения других неполадок просмотрите агент Log Analytics для расширения виртуальной Машины Linux, файлы журналов `/var/log/azure/Microsoft.EnterpriseCloud.Monitoring.OmsAgentForLinux/*/extension.log` и `/var/log/azure/Microsoft.EnterpriseCloud.Monitoring.OmsAgentForLinux/*/CommandExecution.log`
-3. Если состояние расширения находится в работоспособном состоянии, но данные не отправляются, просмотрите агент Log Analytics для файлов журнала Linux в `/var/opt/microsoft/omsagent/log/omsagent.log`
+   * [Установите агент виртуальной машины Azure на виртуальной машине Linux](../../azure-monitor/learn/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension).
+2. В случае возникновения других неполадок просмотрите файлы журналов расширения агента Log Analytics для Linux в папке `/var/log/azure/Microsoft.EnterpriseCloud.Monitoring.OmsAgentForLinux/*/extension.log` и `/var/log/azure/Microsoft.EnterpriseCloud.Monitoring.OmsAgentForLinux/*/CommandExecution.log`.
+3. Если расширение работает нормально, но данные не отправляются, просмотрите файлы журнала агента Log Analytics для Linux в папке `/var/opt/microsoft/omsagent/log/omsagent.log`.
 
 Подробные сведения см. в статье [Устранение неполадок расширения виртуальной машины Linux](../../virtual-machines/extensions/oms-linux.md).
 

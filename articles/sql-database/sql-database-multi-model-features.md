@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 12/17/2018
 ms.openlocfilehash: 4351017cc1848e29cca038f82fd96548ae3492e0
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58892472"
 ---
 # <a name="multi-model-capabilities-of-azure-sql-database"></a>Возможности при использовании нескольких моделей в службе "База данных SQL Azure"
@@ -142,5 +142,5 @@ CREATE TABLE Collection (
 
 * [Обработка Graph](https://docs.microsoft.com/sql/relational-databases/graphs/sql-graph-overview)
 * [Данные JSON](https://docs.microsoft.com/sql/relational-databases/json/json-data-sql-server)
-* [Пространственная поддержка](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-data-sql-server)
-* [XML-данных](https://docs.microsoft.com/sql/relational-databases/xml/xml-data-sql-server)
+* [Пространственные данные (SQL Server)](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-data-sql-server)
+* [XML-данные (SQL Server)](https://docs.microsoft.com/sql/relational-databases/xml/xml-data-sql-server)

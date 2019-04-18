@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 01/30/2019
 ms.author: banders
 ms.openlocfilehash: 340cba65a1faac247678cd187f106157ba566f3e
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58918728"
 ---
 # <a name="software-costs-not-included-with-azure-reserved-vm-instances"></a>Затраты на программное обеспечение, которые не включены в стоимость экземпляров Azure Reserved Virtual Machine Instances
@@ -74,9 +74,9 @@ ms.locfileid: "58918728"
 - [Что такое резервирования для Azure?](billing-save-compute-costs-reservations.md)
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../virtual-machines/windows/prepay-reserved-vm-instances.md)
 - [Управление резервирования для Azure](billing-manage-reserved-vm-instance.md)
-- [Сведения о применении скидки на резервирование](billing-understand-vm-reservation-charges.md)
-- [Общие сведения об использовании резервирования для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
-- [Общие сведения об использовании резервирования о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
+- [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](billing-understand-vm-reservation-charges.md)
+- [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
+- [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
 

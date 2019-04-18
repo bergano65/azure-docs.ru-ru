@@ -10,10 +10,10 @@ ms.suite: integration
 ms.topic: article
 ms.date: 03/29/2019
 ms.openlocfilehash: 8445b67fa049116d93f3710ff108f904ca7ecd77
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59010555"
 ---
 # <a name="authenticate-and-access-resources-with-managed-identities-in-azure-logic-apps"></a>Проверка подлинности и получение доступа к ресурсам с помощью управляемых удостоверений в Azure Logic Apps
@@ -37,8 +37,8 @@ ms.locfileid: "59010555"
 
 Для назначенных системой управляемых удостоверений этот идентификатор не обязательно создавать вручную. Настроить назначенное системой управляемое удостоверение для приложения логики можно следующими способами: 
 
-* [Портал Azure](#azure-portal) 
-* [Шаблоны Azure Resource Manager](#template) 
+* [портал Azure](#azure-portal) 
+* [Шаблоны диспетчера ресурсов Azure](#template) 
 * [Azure PowerShell](../active-directory/managed-identities-azure-resources/howto-assign-access-powershell.md) 
 
 <a name="azure-portal"></a>
@@ -61,7 +61,7 @@ ms.locfileid: "59010555"
 
    | Свойство | Значение | ОПИСАНИЕ | 
    |----------|-------|-------------| 
-   | **Object ID** | <*identity-resource-ID*> | Глобальный уникальный идентификатор (GUID), который представляет присвоенное системой управляемое удостоверение приложения логики в клиенте Azure AD | 
+   | **Идентификатор объекта** | <*identity-resource-ID*> | Глобальный уникальный идентификатор (GUID), который представляет присвоенное системой управляемое удостоверение приложения логики в клиенте Azure AD | 
    ||| 
 
 <a name="template"></a>
@@ -113,7 +113,7 @@ ms.locfileid: "59010555"
 
 | Свойство | Значение | ОПИСАНИЕ | 
 |----------|-------|-------------|
-| **principalId** | <*ИД субъекта*> | Глобально уникальный идентификатор (GUID), представляющий приложение логики в клиенте Azure AD и иногда отображается как «Идентификатор объекта» или `objectID` | 
+| **principalId** | <*ИД субъекта*> | Глобальный уникальный идентификатор (GUID), который представляет приложение логики в клиенте Azure AD и иногда появляется в качестве идентификатора объекта или `objectID` | 
 | **tenantId** | <*ИД клиента Azure AD*> | Глобальный уникальный идентификатор (GUID), представляющий клиент Azure AD, участником которого является приложение логики. В клиенте Azure AD субъект-служба имеет то же имя, что и экземпляр приложения логики. | 
 ||| 
 

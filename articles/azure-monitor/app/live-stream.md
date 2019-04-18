@@ -14,10 +14,10 @@ ms.date: 01/28/2019
 ms.reviewer: sdash
 ms.author: mbullwin
 ms.openlocfilehash: 588b8b11a02551a790145aafb013759699004267
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59009971"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: мониторинг и диагностика с задержкой в 1 секунду
@@ -34,7 +34,7 @@ ms.locfileid: "59009971"
 * Отслеживать любые счетчики производительности Windows в режиме реального времени.
 * Легко определить сервер, на котором возникают проблемы, и с помощью фильтра получить все КПЭ и динамические веб-каналы, относящиеся только к этому серверу.
 
-[![Lвидео Stream метрики ивный](./media/live-stream/youtube.png)](https://www.youtube.com/watch?v=zqfHf1Oi5PY)
+[![Видео, посвященное Live Metrics Stream](./media/live-stream/youtube.png)](https://www.youtube.com/watch?v=zqfHf1Oi5PY)
 
 Динамические метрики в настоящее время поддерживаются для приложений ASP.NET, ASP.NET Core, функции Azure, Java и Node.js.
 
@@ -60,7 +60,7 @@ ms.locfileid: "59009971"
 | |Live Stream | Обозреватель метрик и служба аналитики |
 |---|---|---|
 |Задержка|Данные отображаются в течение одной секунды|Агрегирование выполняется в течение нескольких минут|
-|Нет сохранения|Данные сохраняются, только пока они отображаются на диаграмме, а затем удаляются.|[Данные хранятся в течение 90 дней](../../azure-monitor/app/data-retention-privacy.md#how-long-is-the-data-kept)|
+|Нет сохранения|Данные сохраняются, только пока они отображаются на диаграмме, а затем удаляются.|[Данные сохраняются 90 дней](../../azure-monitor/app/data-retention-privacy.md#how-long-is-the-data-kept)|
 |По запросу|Данные передаются, пока открыта служба Live Metrics|Данные отправляются, когда пакет SDK установлен и включен|
 |Free|Плата за данные Live Stream не взимается|Действуют [расценки](../../azure-monitor/app/pricing.md)
 |Выборка|Передаются все выбранные метрики и счетчики. Производится выборка сбоев и трассировок стека. TelemetryProcessors не применяются.|Может производиться [выборка](../../azure-monitor/app/api-filtering-sampling.md) событий.|
@@ -207,7 +207,7 @@ services.ConfigureTelemetryModule<QuickPulseTelemetryModule> ((module, o) => mod
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Отслеживание использования Application Insights](../../azure-monitor/app/usage-overview.md)
-* [Поиск по журналу диагностики](../../azure-monitor/app/diagnostic-search.md)
+* [Отслеживание использования Application Insights.](../../azure-monitor/app/usage-overview.md)
+* [Использование диагностического поиска](../../azure-monitor/app/diagnostic-search.md)
 * [Профилировщик](../../azure-monitor/app/profiler.md)
 * [Отладчик моментальных снимков](../../azure-monitor/app/snapshot-debugger.md)

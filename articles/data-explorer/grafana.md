@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 12/05/2018
 ms.openlocfilehash: 188cb310cfc13fe2fc41ba3e01deb01068c0184d
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59048322"
 ---
 # <a name="visualize-data-from-azure-data-explorer-in-grafana"></a>Визуализация данных из Azure Data Explorer в Grafana
@@ -154,7 +154,7 @@ ms.locfileid: "59048322"
     | Пользовательский интерфейс Grafana | Портал Azure | Инфраструктура CLI Azure |
     | --- | --- | --- |
     | идентификатор подписки; | Идентификатор подписки | SubscriptionId |
-    | Идентификатор клиента | Идентификатор каталога | tenant |
+    | Идентификатор клиента | Идентификатор каталога | клиент |
     | Идентификатор клиента | Идентификатор приложения | appId |
     | Секрет клиента | Пароль | password |
     | | | |
@@ -210,4 +210,4 @@ ms.locfileid: "59048322"
 
 [Написание запросов для обозревателя данных Azure](write-queries.md)
 
-[Руководство по Визуализация данных с помощью обозревателя данных Azure в Power BI](visualize-power-bi.md)
+[Руководство. Визуализация данных из обозревателя данных Azure в Power BI](visualize-power-bi.md)

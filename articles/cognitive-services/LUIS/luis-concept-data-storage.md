@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 03/28/2019
 ms.author: diberry
 ms.openlocfilehash: a1093c2a6303b453a17a52058303913de5ecfa8d
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58893203"
 ---
 # <a name="data-storage-and-removal-in-language-understanding-luis-cognitive-services"></a>Хранение и удаление данных в службе "Распознавание речи" (LUIS) Cognitive Services
@@ -66,4 +66,4 @@ LUIS хранит данные в зашифрованном виде в хра�
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Дополнительные сведения об экспорте и удалении приложения](luis-how-to-start-new-app.md)
+> [Узнайте больше об экспорте и удалении приложения](luis-how-to-start-new-app.md)

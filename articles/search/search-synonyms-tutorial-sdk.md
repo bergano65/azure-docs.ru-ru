@@ -10,10 +10,10 @@ ms.date: 03/18/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: f9cadfcf0c027f4aec4f9d4928872709ee7d3e99
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59008981"
 ---
 # <a name="example-add-synonyms-for-azure-search-in-c"></a>Пример: Добавление синонимов в Поиск Azure на C#
@@ -37,7 +37,7 @@ ms.locfileid: "59008981"
 
 * [Visual Studio](https://www.visualstudio.com/downloads/)
 * [Служба поиска Azure](search-create-service-portal.md)
-* [Библиотека библиотеки Microsoft.Azure.Search .NET](https://aka.ms/search-sdk)
+* [Библиотека Microsoft.Azure.Search .NET](https://aka.ms/search-sdk)
 * [Использование службы поиска Azure в приложении .NET](https://docs.microsoft.com/azure/search/search-howto-dotnet-sdk)
 
 ## <a name="overview"></a>Обзор
@@ -175,4 +175,4 @@ Name: Roach Motel       Category: Budget        Tags: [motel, budget]
 В этом примере показано [API REST для синонимов](https://aka.ms/rgm6rq) в C# код, чтобы создать и опубликовать правила сопоставления и затем вызывать карты синонимов в запрос. См. дополнительные сведения о [пакете SDK для .NET ](https://docs.microsoft.com/dotnet/api/microsoft.azure.search) и [REST API](https://docs.microsoft.com/rest/api/searchservice/).
 
 > [!div class="nextstepaction"]
-> [Как использовать синонимы в поиске Azure](search-synonyms.md)
+> [Как использовать синонимы в Поиске Azure](search-synonyms.md)

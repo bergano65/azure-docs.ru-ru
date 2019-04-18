@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 4/2/2019
 ms.custom: seodec18
 ms.openlocfilehash: 4ecea8864a565997b8df119d870e7efee8448143
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58892234"
 ---
 # <a name="azure-stream-analytics-on-iot-edge"></a>Azure Stream Analytics в IoT Edge
@@ -48,7 +48,7 @@ ASA развертывает задания Edge на устройства с п
 |      |Шаг   | Примечания   |
 | ---   | ---   |  ---      |
 | 1   | **Создание контейнера хранилища**   | Контейнеры хранилища используются для сохранения определения задания, доступ к которому можно получить с устройств IoT. <br>  Любой имеющийся контейнер хранилища можно использовать повторно.     |
-| 2   | **Создание задания edge ASA**   |  Создайте новое задание, выберите **Edge** в качестве **среды размещения**. <br> Создание этих заданий и управление ими осуществляется из облака, а выполняются они на ваших устройствах IoT Edge.     |
+| 2   | **Создание задания Edge ASA**   |  Создайте новое задание, выберите **Edge** в качестве **среды размещения**. <br> Создание этих заданий и управление ими осуществляется из облака, а выполняются они на ваших устройствах IoT Edge.     |
 | 3   | **Настройка среды IoT Edge на ваших устройствах**   | Инструкции для [Windows](https://docs.microsoft.com/azure/iot-edge/quickstart) или [Linux](https://docs.microsoft.com/azure/iot-edge/quickstart-linux).          |
 | 4.   | **Развертывание ASA на ваших устройствах IoT Edge**   |  Определение задания ASA экспортируется в контейнер хранилища, созданный ранее.       |
 
@@ -134,7 +134,7 @@ IoT Edge предоставляет способ декларативно мар
 
 ```
 В этом примере показаны маршруты для сценария, описанного на рисунке ниже. Он содержит задание Edge с именем **ASA**, ввод с именем **temperature** и вывод с именем **alert**.
-![Пример схемы маршрутизации сообщений](media/stream-analytics-edge/edge-message-routing-example.png)
+![Схема примера маршрутизации сообщений](media/stream-analytics-edge/edge-message-routing-example.png)
 
 В этом примере определяются следующие маршруты:
 - Каждое сообщение из **tempSensor** отправляется в модуль с именем **ASA** и ввод с именем **temperature**.
@@ -209,10 +209,10 @@ ASA в IoT Edge доступна в качестве образов Windows и L
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Дополнительные сведения об Azure Iot Edge](https://docs.microsoft.com/azure/iot-edge/how-iot-edge-works)
-* [ASA в IoT Edge учебника](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics)
+* [Что такое Azure IoT Edge (предварительная версия)](https://docs.microsoft.com/azure/iot-edge/how-iot-edge-works)
+* [Deploy Azure Stream Analytics as an IoT Edge module - preview](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics) (Развертывание Azure Stream Analytics в качестве модуля IoT Edge (предварительная версия))
 * [Разработка заданий Edge Stream Analytics с помощью средств Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio-edge-jobs)
-* [Реализация CI/CD для Stream Analytics с использованием API-интерфейсов](stream-analytics-cicd-api.md)
+* [Сведения о реализации CI/CD для Stream Analytics с использованием API-интерфейсов](stream-analytics-cicd-api.md)
 
 <!--Link references-->
 [stream.analytics.developer.guide]: ../stream-analytics-developer-guide.md

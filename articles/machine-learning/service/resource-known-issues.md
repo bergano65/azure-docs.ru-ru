@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 03/29/2019
 ms.custom: seodec18
 ms.openlocfilehash: db0eccb542cb4253e6e891fa9fa51e60fb7951a1
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58892744"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning-service"></a>Устранение неполадок и описание известных проблем в службе "Машинное обучение Azure"
@@ -24,7 +24,7 @@ ms.locfileid: "58892744"
 
 ## <a name="sdk-installation-issues"></a>Проблемы с установкой пакета SDK
 
-**Сообщение об ошибке: Не удается удалить «PyYAML»**
+**Сообщение об ошибке: не удается удалить "PyYAML"**
 
 Пакет SDK Машинного обучения Azure для Python. PyYAML — это проект, установленный в distutils. Поэтому невозможно точно определить, какие файлы принадлежат ему в случае частичного удаления. Чтобы продолжить установку SDK игнорируя эту ошибку, используйте:
 

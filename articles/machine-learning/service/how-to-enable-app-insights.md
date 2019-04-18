@@ -12,10 +12,10 @@ author: marthalc
 ms.date: 04/02/2019
 ms.custom: seoapril2019
 ms.openlocfilehash: 2e481a388d8cbd6baf66b95c74449396b2e70f7d
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58885508"
 ---
 # <a name="monitor-your-azure-machine-learning-models-with-application-insights"></a>Мониторинг моделей машинного обучения в Azure с помощью Application Insights
@@ -85,15 +85,15 @@ ms.locfileid: "58885508"
 
 1. На вкладке **Развертывания** выберите службу, для которой требуется включить Application Insights.
 
-   [![Lв данном документе служб на вкладку "Развертывание"](media/how-to-enable-app-insights/Deployments.PNG)](./media/how-to-enable-app-insights/Deployments.PNG#lightbox)
+   [![Список служб на вкладке "Развертывания"](media/how-to-enable-app-insights/Deployments.PNG)](./media/how-to-enable-app-insights/Deployments.PNG#lightbox)
 
 3. Выберите **Изменить**
 
-   [![EКнопка DIT](media/how-to-enable-app-insights/Edit.PNG)](./media/how-to-enable-app-insights/Edit.PNG#lightbox)
+   [![Кнопка "Изменить"](media/how-to-enable-app-insights/Edit.PNG)](./media/how-to-enable-app-insights/Edit.PNG#lightbox)
 
 4. В разделе **Дополнительные параметры** установите флажок **Включить диагностику AppInsights**.
 
-   [![Sвыделенные флажок включения диагностики](media/how-to-enable-app-insights/AdvancedSettings.png)](./media/how-to-enable-app-insights/AdvancedSettings.png#lightbox)
+   [![Установленный флажок для включения диагностики](media/how-to-enable-app-insights/AdvancedSettings.png)](./media/how-to-enable-app-insights/AdvancedSettings.png#lightbox)
 
 1. Чтобы применить изменение, в верхней части экрана выберите **Изменить**. 
 
@@ -101,11 +101,11 @@ ms.locfileid: "58885508"
 1. Откройте рабочую область на [портале Azure](https://portal.azure.com).
 1. Откройте **Развертывания**, затем выберите службу и щелкните **Изменить**.
 
-   [![USE "Изменить"](media/how-to-enable-app-insights/Edit.PNG)](./media/how-to-enable-app-insights/Edit.PNG#lightbox)
+   [![Нажмите кнопку "Изменить"](media/how-to-enable-app-insights/Edit.PNG)](./media/how-to-enable-app-insights/Edit.PNG#lightbox).
 
 1. В разделе **Дополнительные параметры** снимите флажок **Включить диагностику AppInsights**. 
 
-   [![Cинструкциями флажок включения диагностики](media/how-to-enable-app-insights/uncheck.png)](./media/how-to-enable-app-insights/uncheck.png#lightbox)
+   [![Снятый флажок включения диагностики](media/how-to-enable-app-insights/uncheck.png)](./media/how-to-enable-app-insights/uncheck.png#lightbox)
 
 1. Чтобы применить изменение, в верхней части экрана выберите **Изменить**. 
  
@@ -119,12 +119,12 @@ ms.locfileid: "58885508"
 
 1. Выберите вкладку **Обзор**, чтобы увидеть базовый набор метрик для своей службы.
 
-   [![OОбзор миграции](media/how-to-enable-app-insights/overview.png)](./media/how-to-enable-app-insights/overview.png#lightbox)
+   [![Обзор](media/how-to-enable-app-insights/overview.png)](./media/how-to-enable-app-insights/overview.png#lightbox)
 
 3. Чтобы выполнить поиск в пользовательских трассировках, выберите **Аналитика**.
 4. В разделе схемы выберите **Трассировки**. Затем выберите **Запуск**, чтобы выполнить запрос. Данные будут отображаться в формате таблицы и сопоставляться с пользовательскими вызовами в файле оценки. 
 
-   [![Cпользовательские трассировки](media/how-to-enable-app-insights/logs.png)](./media/how-to-enable-app-insights/logs.png#lightbox)
+   [![Пользовательские трассировки](media/how-to-enable-app-insights/logs.png)](./media/how-to-enable-app-insights/logs.png#lightbox)
 
 Дополнительные сведения об использовании службы Application Insights см. в статье [Что такое Azure Application Insights?](../../azure-monitor/app/app-insights-overview.md)
     

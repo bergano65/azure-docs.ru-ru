@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 04/02/2019
 ms.author: juliako
 ms.openlocfilehash: 8c1e50064491032d78e467496f0c53300dd6acd1
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58892795"
 ---
 # <a name="view-and-edit-video-indexer-insights"></a>Просмотр и редактирование аналитических сведений Индексатора видео
@@ -40,5 +40,5 @@ ms.locfileid: "58892795"
 
 ## <a name="see-also"></a>См. также
 
-[Видеообзор индексатора](video-indexer-overview.md)
+[Общие сведения об Индексаторе видео](video-indexer-overview.md)
 

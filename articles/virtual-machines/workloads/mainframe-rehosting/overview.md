@@ -11,10 +11,10 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.service: multiple
 ms.openlocfilehash: 8b7c2a088dc917c319acf6cad251ad53367a14b6
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58895043"
 ---
 # <a name="mainframe-rehosting-on-azure-virtual-machines"></a>Повторного размещения мэйнфреймов, на виртуальных машинах Azure
@@ -53,7 +53,7 @@ TmaxSoft OpenFrame — это решение повторного размеще
 Чтобы начать работу:
 
 - [Начало работы с TmaxSoft OpenFrame](./tmaxsoft/get-started.md)
-- [Загрузить электронную книгу](https://azure.microsoft.com/resources/install-tmaxsoft-openframe-azure/)
+- [Скачайте бесплатную электронную книгу](https://azure.microsoft.com/resources/install-tmaxsoft-openframe-azure/)
 
 ## <a name="ibm-zdt-120"></a>IBM zD & T 12.0
 
@@ -117,9 +117,9 @@ Azure для государственных организаций, получе
 См. также:
 
 - [Технические документы по темам мэйнфреймов](mainframe-white-papers.md)
-- [Миграция мейнфреймов](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/overview)
+- [Переход с мэйнфреймов](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/overview)
 - [Устранение неполадок](/azure/virtual-machines/troubleshooting/)
-- [Основные сведения о переносе приложений для мейнфреймов в Azure](https://azure.microsoft.com/resources/demystifying-mainframe-to-azure-migration/)
+- [Мифы о больших ЭВМ к миграции в Azure](https://azure.microsoft.com/resources/demystifying-mainframe-to-azure-migration/)
 
 <!-- INTERNAL LINKS -->
 [microfocus-get-started]: /microfocus/get-started.md

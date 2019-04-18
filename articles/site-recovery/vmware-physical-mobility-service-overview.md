@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
 ms.openlocfilehash: 3b354492778426d1e3c31e53e277fd9be1e22c93
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59048118"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
@@ -113,7 +113,7 @@ ms.locfileid: "59048118"
     ```
 
 #### <a name="installation-settings"></a>Параметры установки
-**Параметр** | **Сведения**
+**Параметр** | **Дополнительные сведения**
 --- | ---
 Использование | UnifiedAgent.exe /Role <MS|MT> /InstallLocation <Install Location> /Platform "VmWare" /Silent
 журналы установки; | В разделе %ProgramData%\ASRSetupLogs\ASRUnifiedAgentInstaller.log.
@@ -123,7 +123,7 @@ ms.locfileid: "59048118"
 /Silent| Необязательный элемент. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
-**Параметр** | **Сведения**
+**Параметр** | **Дополнительные сведения**
 --- | ---
 Использование | UnifiedAgentConfigurator.exe /CSEndPoint \<CSIP > /PassphraseFilePath \<PassphraseFilePath >
 Журналы конфигурации агента | Журналы находятся в папке %ProgramData%\ASRSetupLogs\ASRUnifiedAgentConfigurator.log.
@@ -152,7 +152,7 @@ ms.locfileid: "59048118"
     ```
 
 #### <a name="installation-settings"></a>Параметры установки
-**Параметр** | **Сведения**
+**Параметр** | **Дополнительные сведения**
 --- | ---
 Использование | . / install -d \<Расположение_установки > - r < MS|MT> -v VmWare -q
 -r | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
@@ -161,7 +161,7 @@ ms.locfileid: "59048118"
 -q | Необязательный элемент. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
-**Параметр** | **Сведения**
+**Параметр** | **Дополнительные сведения**
 --- | ---
 Использование | cd /usr/local/ASR/Vx/bin<br/><br/> UnifiedAgentConfigurator.sh -i \<CSIP> -P \<PassphraseFilePath>
 -i | Обязательный параметр. Указывает IP-адрес сервера конфигурации. Используйте любой допустимый IP-адрес.
@@ -176,7 +176,7 @@ ms.locfileid: "59048118"
 
 Перейдите в папку %ProgramData%\ASR\home\svsystems\pushinstallsvc\repository на сервере конфигурации. Проверьте, какие установщика, вам потребуется, в зависимости от операционной системы. В следующей таблице перечислены файлы установщика для каждой виртуальной Машины VMware и физических серверов операционной системы. Вы можете просмотреть [поддерживаемые операционные системы](vmware-physical-azure-support-matrix.md#replicated-machines), прежде чем начать.
 
-**Файл установщика** | **Операционная система (только 64-разрядная)**
+**Файл установщика** | **Операционная система (только 64-разрядная версия)**
 --- | ---
 Microsoft-ASR\_UA\*Windows\*release.exe | Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 с пакетом обновления 1
 Microsoft-ASR\_UA\*RHEL6-64\*release.tar.gz | Red Hat Enterprise Linux (RHEL) 6.* </br> CentOS 6.*

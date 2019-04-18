@@ -9,10 +9,10 @@ ms.service: iot-dps
 services: iot-dps
 manager: jeffya
 ms.openlocfilehash: 80e4895e0b276e701a6d7f10d8fc67649db0f188
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58904497"
 ---
 # <a name="use-azure-iot-hub-device-provisioning-service-auto-provisioning-to-register-the-mxchip-iot-devkit-with-iot-hub"></a>Использование автоподготовки в службе подготовки устройств к добавлению в Центр Интернета вещей Azure для регистрации MXChip IoT DevKit в Центре Интернета вещей
@@ -61,13 +61,13 @@ ms.locfileid: "58904497"
 1. В DevKit удерживайте нажатой **кнопку A**, нажмите и отпустите кнопку **Reset** (Сброс), а затем отпустите **кнопку А**. DevKit переходит в режим настройки.
 
 1. Щелкните `F1`, чтобы открыть палитру команд, затем введите и выберите **Azure IoT Device Workbench. Настройка параметров устройства… > Настройка уникальной строки устройства (UDS)**.
-  ![Настройка доменов обновления](media/how-to-connect-mxchip-iot-devkit/config-uds.png)
+  ![Настройте UDS](media/how-to-connect-mxchip-iot-devkit/config-uds.png)
 
 1. Запишите созданную строку уникального секрета устройства. Она понадобится для создания сертификата X.509. Затем нажмите `Enter`.
-  ![Скопируйте доменов обновления](media/how-to-connect-mxchip-iot-devkit/copy-uds.png)
+  ![Скопируйте UDS](media/how-to-connect-mxchip-iot-devkit/copy-uds.png)
 
 1. Подтвердите в уведомлении, что UDS на STSAFE успешно настроен.
-  ![Настройка доменов обновления успех](media/how-to-connect-mxchip-iot-devkit/config-uds-success.png)
+  ![Успех настройки UDS](media/how-to-connect-mxchip-iot-devkit/config-uds-success.png)
 
 > [!NOTE]
 > Кроме того, уникальный секрет устройства можно настроить через последовательный порт с помощью служебных программ, например Putty. Воспользуйтесь для этого разделом [Использование режима конфигурации](https://microsoft.github.io/azure-iot-developer-kit/docs/use-configuration-mode/).
@@ -77,16 +77,16 @@ ms.locfileid: "58904497"
 В коде устройства необходимо указать [конечную точку подготовки устройства](/azure/iot-dps/concepts-service#device-provisioning-endpoint) и область идентификаторов, чтобы обеспечить изоляцию клиента.
 
 1. На портале Azure выберите панель **Обзор** службы подготовки устройств и запишите значения **глобальной конечной точки устройства** и **области идентификатора**.
-  ![Обеспечения глобальной конечной точки службы и область идентификатора устройства](media/how-to-connect-mxchip-iot-devkit/dps-global-endpoint.png)
+  ![Глобальная конечная точка Службы подготовки устройств и область идентификатора](media/how-to-connect-mxchip-iot-devkit/dps-global-endpoint.png)
 
 1. Откройте **DeKitDPS.ino**. Найдите и замените значения `[Global Device Endpoint]` и `[ID Scope]` значениями, которые вы только что записали.
-  ![Конечная точка службы подготовки устройства](media/how-to-connect-mxchip-iot-devkit/endpoint.png)
+  ![Конечная точка службы подготовки устройств](media/how-to-connect-mxchip-iot-devkit/endpoint.png)
 
 1. Заполните переменную `registrationId` в коде. Допускаются только буквенно-цифровые символы, строчные буквы, и дефисы, не более 128 символов. Также запишите и это значение.
-  ![Идентификатор регистрации](media/how-to-connect-mxchip-iot-devkit/registration-id.png)
+  ![Идентификатор регистрации](media/how-to-connect-mxchip-iot-devkit/registration-id.png).
 
 1. Щелкните `F1`, введите и выберите **Azure IoT Device Workbench. Отправка кода устройства**. Система запускает компиляцию и отправку кода в DevKit.
-  ![Отправка устройства](media/how-to-connect-mxchip-iot-devkit/device-upload.png)
+  ![Отправка на устройство](media/how-to-connect-mxchip-iot-devkit/device-upload.png)
 
 ## <a name="generate-x509-certificate"></a>Создание сертификата X.509
 
@@ -100,7 +100,7 @@ ms.locfileid: "58904497"
 1. Запустите `dps_cert_gen.exe` в папке `tool`.
 
 1. Укажите расположение скомпилированного двоичного файла как `..\.build\DevKitDPS`. Затем вставьте **UDS** и **registrationId**, которые вы только что записали. 
-  ![Создать X.509](media/how-to-connect-mxchip-iot-devkit/gen-x509.png)
+  ![Создание X.509](media/how-to-connect-mxchip-iot-devkit/gen-x509.png)
 
 1. Сертификат X.509 `.pem` создается в той же папке.
   ![Файл X.509](media/how-to-connect-mxchip-iot-devkit/pem-file.png)
@@ -111,7 +111,7 @@ ms.locfileid: "58904497"
   ![Добавить индивидуальную регистрацию](media/how-to-connect-mxchip-iot-devkit/add-enrollment.png)
 
 1. Щелкните значок рядом с полем **PEM-файл или CER-файл первичного сертификата** для отправки созданного файла `.pem`.
-  ![Отправка PEM-файл](media/how-to-connect-mxchip-iot-devkit/upload-pem.png)
+  ![Отправка PEM-файла](media/how-to-connect-mxchip-iot-devkit/upload-pem.png)
 
 ## <a name="verify-the-devkit-is-registered-with-azure-iot-hub"></a>Убедитесь, что DevKit зарегистрирован в центре Интернета вещей Azure
 
@@ -128,8 +128,8 @@ ms.locfileid: "58904497"
 
 Если вы столкнулись с проблемами, ознакомьтесь с [часто задаваемыми вопросами](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/) об IoT DevKit или войдите в один из таких каналов, чтобы получить поддержку.
 
-* [Gitter.IM](https://gitter.im/Microsoft/azure-iot-developer-kit)
-* [Переполнение стека](https://stackoverflow.com/questions/tagged/iot-devkit)
+* [Gitter.im](https://gitter.im/Microsoft/azure-iot-developer-kit)
+* [Stack Overflow](https://stackoverflow.com/questions/tagged/iot-devkit)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

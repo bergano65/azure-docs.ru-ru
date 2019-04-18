@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/11/2018
 ms.author: spelluru
 ms.openlocfilehash: 196b00f1268eada20d0e35473dc6eb43c9e48df6
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59045275"
 ---
 # <a name="create-service-bus-resources-using-azure-resource-manager-templates"></a>Создание ресурсов служебной шины с использованием шаблонов Azure Resource Manager
@@ -36,11 +36,11 @@ ms.locfileid: "59045275"
 
 Эти шаблоны Azure Resource Manager для служебной шины доступны для скачивания и развертывания. Чтобы получить подробные сведения о каждом из них со ссылками на шаблоны в GitHub, щелкните приведенные ниже ссылки.
 
-* [Создание пространства имен служебной шины](service-bus-resource-manager-namespace.md)
+* [Создайте пространство имен служебной шины](service-bus-resource-manager-namespace.md)
 * [Создание пространства имен служебной шины с очередью](service-bus-resource-manager-namespace-queue.md)
 * [Создание пространства имен служебной шины с разделом и подпиской](service-bus-resource-manager-namespace-topic.md)
 * [Создание пространства имен служебной шины с очередью и правилом авторизации](service-bus-resource-manager-namespace-auth-rule.md)
-* [Создание пространства имен служебной шины с разделом, подпиской и правилом](service-bus-resource-manager-namespace-topic-with-rule.md)
+* [Создание пространства имен служебной шины с разделом, подпиской и правилом с помощью шаблона Azure Resource Manager](service-bus-resource-manager-namespace-topic-with-rule.md)
 
 ## <a name="deploy-with-powershell"></a>Развертывание с помощью PowerShell
 
@@ -258,7 +258,7 @@ Parameters        :
 * [Общие сведения о диспетчере ресурсов Azure][Azure Resource Manager overview]
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell][Deploy resources with Azure Resource Manager templates]
 * [Создание шаблонов диспетчера ресурсов Azure](../azure-resource-manager/resource-group-authoring-templates.md)
-* [Типы ресурсов Microsoft.ServiceBus](/azure/templates/microsoft.servicebus/allversions)
+* [Microsoft.ServiceBus versions](/azure/templates/microsoft.servicebus/allversions) (Версии типов ресурсов Microsoft.ServiceBus)
 
 [Azure Resource Manager overview]: ../azure-resource-manager/resource-group-overview.md
 [Deploy resources with Azure Resource Manager templates]: ../azure-resource-manager/resource-group-template-deploy.md

@@ -9,10 +9,10 @@ ms.date: 07/19/2018
 ms.author: wgries
 ms.subservice: files
 ms.openlocfilehash: 0f18467bfefdb27f2cb9c2c3f56942f679673c16
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59048452"
 ---
 # <a name="manage-registered-servers-with-azure-file-sync"></a>Управление зарегистрированными серверами в службе "Синхронизация файлов Azure"
@@ -193,7 +193,7 @@ Get-StorageSyncNetworkLimit | ForEach-Object { Remove-StorageSyncNetworkLimit -I
 Если служба "Синхронизация файлов Azure" размещается на виртуальной машине под управлением узла виртуализации Windows Server, вы можете с помощью функции качества обслуживания ограничить потребление ресурсов хранилища. Политика качества обслуживания хранилища позволяет задать максимальный уровень (ограничение, которое действует аналогично описанным выше лимитам StorageSyncNetwork) или минимальный уровень (резервирование). Если использовать минимальные ограничения вместо максимальных, служба "Синхронизация файлов Azure" сможет активно использовать доступную пропускную способность хранилища, когда она не используется другими рабочими нагрузками. Дополнительные сведения см. в статье [Качество обслуживания хранилища](https://docs.microsoft.com/windows-server/storage/storage-qos/storage-qos-overview).
 
 ## <a name="see-also"></a>См. также
-- [Планирование развертывания службы синхронизации файлов Azure](storage-sync-files-planning.md)
-- [Развертывание Синхронизации файлов Azure](storage-sync-files-deployment-guide.md)
+- [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md)
+- [Как развернуть службу синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md)
 - [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)
-- [Устранение неполадок службы синхронизации файлов Azure](storage-sync-files-troubleshoot.md)
+- [Устранение неполадок службы "Синхронизация файлов Azure"](storage-sync-files-troubleshoot.md)

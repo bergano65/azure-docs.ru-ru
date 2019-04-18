@@ -12,16 +12,16 @@ author: nabhishek
 ms.author: abnarain
 manager: craigg
 ms.openlocfilehash: ea409d6705d0146e9cb32ba11e6b785cf527739c
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58904582"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [версия 1](v1/data-factory-use-custom-activities.md)
+> * [Версия 1](v1/data-factory-use-custom-activities.md)
 > * [Текущая версия](transform-data-using-dotnet-custom-activity.md)
 
 Существует два типа действий, которые можно использовать в конвейере фабрики данных Azure.
@@ -387,5 +387,5 @@ $TargetDedicated=min(maxNumberofVMs,pendingTaskSamples);
 * [Действие MapReduce](transform-data-using-hadoop-map-reduce.md)
 * [Действие потоковой передачи Hadoop](transform-data-using-hadoop-streaming.md)
 * [Действие Spark](transform-data-using-spark.md)
-* [Действие выполнения пакета обучения компьютера](transform-data-using-machine-learning.md)
+* [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](transform-data-using-machine-learning.md)
 * [Действие хранимой процедуры](transform-data-using-stored-procedure.md)

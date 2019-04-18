@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 06/20/2016
 ms.author: timlt
 ms.openlocfilehash: b3660901c86dd644369e6d1913e825cbd5ea316b
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58918473"
 ---
 # <a name="managing-azure-cloud-services-using-azure-automation"></a>Управление облачными службами Azure с помощью службы автоматизации Azure
@@ -36,12 +36,12 @@ ms.locfileid: "58918473"
 
 В некоторых примерах используется служба автоматизации Azure для управления облачными службами Azure, включая следующее:
 
-* [Непрерывное развертывание облачной службы всякий раз, когда в хранилище BLOB-объектов Azure обновляется cscfg- или cspkg-файл](https://gallery.technet.microsoft.com/scriptcenter/Continuous-Deployment-of-A-eeebf3a6)
-* [Перезагрузка экземпляров облачной службы в параллельном режиме, одному домену обновления за раз](https://gallery.technet.microsoft.com/scriptcenter/Reboot-Cloud-Service-PaaS-b337a06d)
+* [непрерывное развертывание облачной службы всякий раз, когда в хранилище BLOB-объектов Azure обновляется CSCFG- или CSPKG-файл;](https://gallery.technet.microsoft.com/scriptcenter/Continuous-Deployment-of-A-eeebf3a6)
+* [параллельная перезагрузка экземпляров облачной службы, по одному домену обновления за раз.](https://gallery.technet.microsoft.com/scriptcenter/Reboot-Cloud-Service-PaaS-b337a06d)
 
 ## <a name="next-steps"></a>Следующие шаги
 Теперь, когда вы познакомились с основами службы автоматизации Azure и способах ее использования для управления облачными службами Azure, пройдите по ссылкам, чтобы получить дополнительные сведения о службе автоматизации Azure.
 
 * [Обзор службы автоматизации Azure](../automation/automation-intro.md)
 * [Мой первый Runbook](../automation/automation-first-runbook-graphical.md)
-* [Карта обучения Azure автоматизации](https://azure.microsoft.com/documentation/learning-paths/automation/)
+* [План обучения работе со службой автоматизации Azure](https://azure.microsoft.com/documentation/learning-paths/automation/)

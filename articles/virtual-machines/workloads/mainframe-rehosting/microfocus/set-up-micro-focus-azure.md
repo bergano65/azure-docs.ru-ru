@@ -9,10 +9,10 @@ editor: edprice
 tags: ''
 keywords: ''
 ms.openlocfilehash: 33d0baf10df1882baf212c3e2c2683c8ca072fcc
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58896607"
 ---
 # <a name="install-micro-focus-enterprise-server-40-and-enterprise-developer-40-on-azure"></a>Установка Micro Focus Enterprise Server 4.0 и Enterprise Developer 4.0 в Azure
@@ -38,7 +38,7 @@ ms.locfileid: "58896607"
 > [!NOTE]
 > Мы рекомендуем настроить туннеля виртуальной частной сети сеть сеть (VPN) или jumpbox, поэтому вы можете управлять доступом к виртуальным машинам Azure.
 
-## <a name="install-enterprise-server"></a>Установите Enterprise Server
+## <a name="install-enterprise-server"></a>Установка Enterprise Server
 
 1. Для повышения безопасности и управляемости, рекомендуется создать новую группу ресурсов для этого проекта — например, **RGMicroFocusEntServer**. Первая часть имени в Azure можно используйте для обозначения типа ресурса, чтобы упростить выявление в списке.
 

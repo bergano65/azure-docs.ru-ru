@@ -8,10 +8,10 @@ ms.date: 12/06/2018
 ms.author: sngun
 ms.custom: seodec18
 ms.openlocfilehash: 01c351ad08399c0b42e831e325b3f818741d1d83
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58904378"
 ---
 # <a name="manage-azure-cosmos-resources-using-powershell"></a>Управление ресурсами Azure Cosmos DB с помощью PowerShell
@@ -39,15 +39,15 @@ ms.locfileid: "58904378"
     $CosmosDBProperties = @{"databaseAccountOfferType"="Standard"; "locations"=$locations; "consistencyPolicy"=$consistencyPolicy; "ipRangeFilter"=$iprangefilter}
     New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" -ApiVersion "2015-04-08" -ResourceGroupName <resource-group-name>  -Location "<resource-group-location>" -Name <database-account-name> -Properties $CosmosDBProperties
     
-* `<write-region-location>` Имя расположения региона записи учетной записи базы данных. Значение приоритета отработки отказа для этого расположения должно быть равно 0. Каждая учетная запись базы данных должна иметь только один регион для записи.
-* `<read-region-location>` Имя расположения региона для чтения учетной записи базы данных. Значение приоритета отработки отказа для этого расположения должно быть больше 0. Каждая учетная запись базы данных может иметь несколько регионов для чтения.
-* `<ip-range-filter>` Указывает набор IP-адреса или диапазоны IP-адресов в нотации CIDR, которые добавляются в список разрешенных клиентских IP-адресов для учетной записи данной базы данных. IP-адреса и их диапазоны должны быть разделены запятой без пробелов. Дополнительные сведения см. в статье о [поддержке брандмауэра Azure Cosmos DB](firewall-support.md).
-* `<default-consistency-level>` Уровень согласованности по умолчанию учетной записи Azure Cosmos DB. Дополнительные сведения см. в статье о [настраиваемых уровнях согласованности в Azure Cosmos DB](consistency-levels.md).
-* `<max-interval>` При использовании согласованности с ограниченным устареванием это значение представляет время устаревания (в секундах) которое должно пройти. Допустимый диапазон — 1–100.
-* `<max-staleness-prefix>` При использовании согласованности с ограниченным устареванием это значение представляет количество устаревших запросов, в которое должно пройти. Допустимый диапазон — 1–2 147 483 647.
-* `<resource-group-name>` Имя [группы ресурсов Azure] [ azure-resource-groups] , которому принадлежит новой учетной записи базы данных Azure Cosmos DB.
-* `<resource-group-location>` Расположение группы ресурсов Azure, к которому принадлежит новой учетной записи базы данных Azure Cosmos DB.
-* `<database-account-name>` Имя создаваемой учетной записи базы данных Azure Cosmos DB. В нем могут использоваться только строчные буквы, цифры и символ "-", а его длина должна составлять от 3 до 50 символов.
+* `<write-region-location>` — имя расположения региона для записи учетной записи базы данных. Значение приоритета отработки отказа для этого расположения должно быть равно 0. Каждая учетная запись базы данных должна иметь только один регион для записи.
+* `<read-region-location>` — имя расположения региона для чтения учетной записи базы данных. Значение приоритета отработки отказа для этого расположения должно быть больше 0. Каждая учетная запись базы данных может иметь несколько регионов для чтения.
+* `<ip-range-filter>` — указывает набор IP-адресов или их диапазонов в нотации CIDR, которые добавляются в список разрешенных клиентских IP-адресов для указанной учетной записи базы данных. IP-адреса и их диапазоны должны быть разделены запятой без пробелов. Дополнительные сведения см. в статье о [поддержке брандмауэра Azure Cosmos DB](firewall-support.md).
+* `<default-consistency-level>` — уровень согласованности по умолчанию учетной записи Azure Cosmos DB. Дополнительные сведения см. в статье о [настраиваемых уровнях согласованности в Azure Cosmos DB](consistency-levels.md).
+* `<max-interval>`. При использовании согласованности с ограниченным устареванием это значение указывает допустимое время устаревания (в секундах). Допустимый диапазон — 1–100.
+* `<max-staleness-prefix>`. При использовании согласованности с ограниченным устареванием это значение указывает допустимое количество устаревших запросов. Допустимый диапазон — 1–2 147 483 647.
+* `<resource-group-name>` — имя [группы ресурсов Azure][azure-resource-groups], в которую входит новая учетная запись базы данных Azure Cosmos DB.
+* `<resource-group-location>` — расположение группы ресурсов Azure, в которую входит новая учетная запись базы данных Azure Cosmos DB.
+* `<database-account-name>` — имя создаваемой учетной записи базы данных Azure Cosmos DB. В нем могут использоваться только строчные буквы, цифры и символ "-", а его длина должна составлять от 3 до 50 символов.
 
 Пример: 
 
@@ -74,15 +74,15 @@ ms.locfileid: "58904378"
     $CosmosDBProperties = @{"databaseAccountOfferType"="Standard"; "locations"=$locations; "consistencyPolicy"=$consistencyPolicy; "ipRangeFilter"=$iprangefilter}
     Set-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" -ApiVersion "2015-04-08" -ResourceGroupName <resource-group-name> -Name <database-account-name> -Properties $CosmosDBProperties
     
-* `<write-region-location>` Имя расположения региона записи учетной записи базы данных. Значение приоритета отработки отказа для этого расположения должно быть равно 0. Каждая учетная запись базы данных должна иметь только один регион для записи.
-* `<read-region-location>` Имя расположения региона для чтения учетной записи базы данных. Значение приоритета отработки отказа для этого расположения должно быть больше 0. Каждая учетная запись базы данных может иметь несколько регионов для чтения.
-* `<default-consistency-level>` Уровень согласованности по умолчанию учетной записи Azure Cosmos DB. Дополнительные сведения см. в статье о [настраиваемых уровнях согласованности в Azure Cosmos DB](consistency-levels.md).
-* `<ip-range-filter>` Указывает набор IP-адреса или диапазоны IP-адресов в нотации CIDR, которые добавляются в список разрешенных клиентских IP-адресов для учетной записи данной базы данных. IP-адреса и их диапазоны должны быть разделены запятой без пробелов. Дополнительные сведения см. в статье о [поддержке брандмауэра Azure Cosmos DB](firewall-support.md).
-* `<max-interval>` При использовании согласованности с ограниченным устареванием это значение представляет время устаревания (в секундах) которое должно пройти. Допустимый диапазон — 1–100.
-* `<max-staleness-prefix>` При использовании согласованности с ограниченным устареванием это значение представляет количество устаревших запросов, в которое должно пройти. Допустимый диапазон — 1–2 147 483 647.
-* `<resource-group-name>` Имя [группы ресурсов Azure] [ azure-resource-groups] , которому принадлежит новой учетной записи базы данных Azure Cosmos DB.
-* `<resource-group-location>` Расположение группы ресурсов Azure, к которому принадлежит новой учетной записи базы данных Azure Cosmos DB.
-* `<database-account-name>` Имя обновляемой учетной записи базы данных Azure Cosmos DB.
+* `<write-region-location>` — имя расположения региона для записи учетной записи базы данных. Значение приоритета отработки отказа для этого расположения должно быть равно 0. Каждая учетная запись базы данных должна иметь только один регион для записи.
+* `<read-region-location>` — имя расположения региона для чтения учетной записи базы данных. Значение приоритета отработки отказа для этого расположения должно быть больше 0. Каждая учетная запись базы данных может иметь несколько регионов для чтения.
+* `<default-consistency-level>` — уровень согласованности по умолчанию учетной записи Azure Cosmos DB. Дополнительные сведения см. в статье о [настраиваемых уровнях согласованности в Azure Cosmos DB](consistency-levels.md).
+* `<ip-range-filter>` — указывает набор IP-адресов или их диапазонов в нотации CIDR, которые добавляются в список разрешенных клиентских IP-адресов для указанной учетной записи базы данных. IP-адреса и их диапазоны должны быть разделены запятой без пробелов. Дополнительные сведения см. в статье о [поддержке брандмауэра Azure Cosmos DB](firewall-support.md).
+* `<max-interval>`. При использовании согласованности с ограниченным устареванием это значение указывает допустимое время устаревания (в секундах). Допустимый диапазон — 1–100.
+* `<max-staleness-prefix>`. При использовании согласованности с ограниченным устареванием это значение указывает допустимое количество устаревших запросов. Допустимый диапазон — 1–2 147 483 647.
+* `<resource-group-name>` — имя [группы ресурсов Azure][azure-resource-groups], в которую входит новая учетная запись базы данных Azure Cosmos DB.
+* `<resource-group-location>` — расположение группы ресурсов Azure, в которую входит новая учетная запись базы данных Azure Cosmos DB.
+* `<database-account-name>` — имя обновляемой учетной записи базы данных Azure Cosmos DB.
 
 Пример: 
 
@@ -98,8 +98,8 @@ ms.locfileid: "58904378"
 
     Remove-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" -ApiVersion "2015-04-08" -ResourceGroupName "<resource-group-name>" -Name "<database-account-name>"
     
-* `<resource-group-name>` Имя [группы ресурсов Azure] [ azure-resource-groups] , которому принадлежит новой учетной записи базы данных Azure Cosmos DB.
-* `<database-account-name>` Имя удаляемой учетной записи базы данных Azure Cosmos DB.
+* `<resource-group-name>` — имя [группы ресурсов Azure][azure-resource-groups], в которую входит новая учетная запись базы данных Azure Cosmos DB.
+* `<database-account-name>` — имя удаляемой учетной записи базы данных Azure Cosmos DB.
 
 Пример:
 
@@ -111,8 +111,8 @@ ms.locfileid: "58904378"
 
     Get-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" -ApiVersion "2015-04-08" -ResourceGroupName "<resource-group-name>" -Name "<database-account-name>"
 
-* `<resource-group-name>` Имя [группы ресурсов Azure] [ azure-resource-groups] , которому принадлежит новой учетной записи базы данных Azure Cosmos DB.
-* `<database-account-name>` Имя учетной записи базы данных Azure Cosmos DB.
+* `<resource-group-name>` — имя [группы ресурсов Azure][azure-resource-groups], в которую входит новая учетная запись базы данных Azure Cosmos DB.
+* `<database-account-name>` — имя учетной записи базы данных Azure Cosmos DB.
 
 Пример:
 
@@ -136,8 +136,8 @@ ms.locfileid: "58904378"
 
     $keys = Invoke-AzResourceAction -Action listKeys -ResourceType "Microsoft.DocumentDb/databaseAccounts" -ApiVersion "2015-04-08" -ResourceGroupName "<resource-group-name>" -Name "<database-account-name>"
 
-* `<resource-group-name>` Имя [группы ресурсов Azure] [ azure-resource-groups] , которому принадлежит новой учетной записи базы данных Azure Cosmos DB.
-* `<database-account-name>` Имя учетной записи базы данных Azure Cosmos DB.
+* `<resource-group-name>` — имя [группы ресурсов Azure][azure-resource-groups], в которую входит новая учетная запись базы данных Azure Cosmos DB.
+* `<database-account-name>` — имя учетной записи базы данных Azure Cosmos DB.
 
 Пример:
 
@@ -149,8 +149,8 @@ ms.locfileid: "58904378"
 
     $keys = Invoke-AzResourceAction -Action listConnectionStrings -ResourceType "Microsoft.DocumentDb/databaseAccounts" -ApiVersion "2015-04-08" -ResourceGroupName "<resource-group-name>" -Name "<database-account-name>"
 
-* `<resource-group-name>` Имя [группы ресурсов Azure] [ azure-resource-groups] , которому принадлежит новой учетной записи базы данных Azure Cosmos DB.
-* `<database-account-name>` Имя учетной записи базы данных Azure Cosmos DB.
+* `<resource-group-name>` — имя [группы ресурсов Azure][azure-resource-groups], в которую входит новая учетная запись базы данных Azure Cosmos DB.
+* `<database-account-name>` — имя учетной записи базы данных Azure Cosmos DB.
 
 Пример:
 
@@ -162,9 +162,9 @@ ms.locfileid: "58904378"
 
     Invoke-AzResourceAction -Action regenerateKey -ResourceType "Microsoft.DocumentDb/databaseAccounts" -ApiVersion "2015-04-08" -ResourceGroupName "<resource-group-name>" -Name "<database-account-name>" -Parameters @{"keyKind"="<key-kind>"}
 
-* `<resource-group-name>` Имя [группы ресурсов Azure] [ azure-resource-groups] , которому принадлежит новой учетной записи базы данных Azure Cosmos DB.
-* `<database-account-name>` Имя учетной записи базы данных Azure Cosmos DB.
-* `<key-kind>` Один из четырех типов ключей: [«Primary» |» Вторичный» |» PrimaryReadonly» |» SecondaryReadonly»], вы хотите повторно создать.
+* `<resource-group-name>` — имя [группы ресурсов Azure][azure-resource-groups], в которую входит новая учетная запись базы данных Azure Cosmos DB.
+* `<database-account-name>` — имя учетной записи базы данных Azure Cosmos DB.
+* `<key-kind>` — один из четырех типов ключей, которые можно повторно создать: Primary, Secondary, PrimaryReadonly, SecondaryReadonly.
 
 Пример:
 
@@ -177,10 +177,10 @@ ms.locfileid: "58904378"
     $failoverPolicies = @(@{"locationName"="<write-region-location>"; "failoverPriority"=0},@{"locationName"="<read-region-location>"; "failoverPriority"=1})
     Invoke-AzResourceAction -Action failoverPriorityChange -ResourceType "Microsoft.DocumentDb/databaseAccounts" -ApiVersion "2015-04-08" -ResourceGroupName "<resource-group-name>" -Name "<database-account-name>" -Parameters @{"failoverPolicies"=$failoverPolicies}
 
-* `<write-region-location>` Имя расположения региона записи учетной записи базы данных. Значение приоритета отработки отказа для этого расположения должно быть равно 0. Каждая учетная запись базы данных должна иметь только один регион для записи.
-* `<read-region-location>` Имя расположения региона для чтения учетной записи базы данных. Значение приоритета отработки отказа для этого расположения должно быть больше 0. Каждая учетная запись базы данных может иметь несколько регионов для чтения.
-* `<resource-group-name>` Имя [группы ресурсов Azure] [ azure-resource-groups] , которому принадлежит новой учетной записи базы данных Azure Cosmos DB.
-* `<database-account-name>` Имя учетной записи базы данных Azure Cosmos DB.
+* `<write-region-location>` — имя расположения региона для записи учетной записи базы данных. Значение приоритета отработки отказа для этого расположения должно быть равно 0. Каждая учетная запись базы данных должна иметь только один регион для записи.
+* `<read-region-location>` — имя расположения региона для чтения учетной записи базы данных. Значение приоритета отработки отказа для этого расположения должно быть больше 0. Каждая учетная запись базы данных может иметь несколько регионов для чтения.
+* `<resource-group-name>` — имя [группы ресурсов Azure][azure-resource-groups], в которую входит новая учетная запись базы данных Azure Cosmos DB.
+* `<database-account-name>` — имя учетной записи базы данных Azure Cosmos DB.
 
 Пример:
 

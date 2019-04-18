@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 01/23/2018
 ms.author: mikerou
 ms.openlocfilehash: 552c9820cca4380c00e1bf435fdb3d068c0690fb
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59047945"
 ---
 # <a name="scale-a-service-fabric-cluster-programmatically"></a>Программное масштабирование кластера Service Fabric 
@@ -34,9 +34,9 @@ ms.locfileid: "59047945"
 Чтобы создать субъект-службу, необходимо выполнить следующие действия:
 
 1. Войдите в интерфейс командной строки Azure (`az login`) как пользователь с правом доступа к масштабируемому набору виртуальных машин.
-2. Создание субъекта-с помощью службы `az ad sp create-for-rbac`
+2. Создайте субъект-службу с помощью `az ad sp create-for-rbac`.
     1. Запишите идентификатор приложения (другое название — идентификатор клиента), имя, пароль и клиент для последующего использования.
-    2. Вам также потребуется ваш идентификатор подписки, который можно просмотреть при помощи `az account list`
+    2. Также вам понадобится идентификатор подписки, который можно просмотреть с помощью `az account list`.
 
 Свободная библиотека вычислений может войти в систему, используя эти учетные данные, следующим образом (обратите внимание, что основные типы свободных библиотек Azure, например `IAzure`, расположены в пакете [Microsoft.Azure.Management.Fluent](https://www.nuget.org/packages/Microsoft.Azure.Management.Fluent/)):
 
@@ -128,6 +128,6 @@ await client.ClusterManager.RemoveNodeStateAsync(mostRecentLiveNode.NodeName);
 
 Чтобы внедрить собственную логику автомасштабирования, ознакомьтесь со следующими понятиями и полезными API-интерфейсами:
 
-- [Масштабирование вручную или с помощью правил автомасштабирования](./service-fabric-cluster-scale-up-down.md)
+- [Масштабирование кластера Service Fabric с помощью правил автомасштабирования](./service-fabric-cluster-scale-up-down.md)
 - [Свободные библиотеки управления Azure для .NET](https://github.com/Azure/azure-sdk-for-net/tree/Fluent) (для взаимодействия с базовыми масштабируемыми наборами виртуальных машин для кластеров Service Fabric)
 - [System.Fabric.FabricClient](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient) (для взаимодействия с кластером Service Fabric и его узлами)

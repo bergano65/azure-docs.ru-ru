@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: mbullwin
 ms.openlocfilehash: 614f9a44f7c699be38906ac00e12f523490ce112
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58884301"
 ---
 # <a name="explore-java-trace-logs-in-application-insights"></a>Просмотр журналов трассировки Java в Application Insights
@@ -27,7 +27,7 @@ ms.locfileid: "58884301"
 Выполните инструкции по установке [пакета SDK Application Insights для Java][java], если это еще не сделано.
 
 ## <a name="add-logging-libraries-to-your-project"></a>Добавление в проект библиотеки ведения журналов
-*Выберите подходящий метод для вашего проекта.*
+*Выберите подходящий метод для проекта.*
 
 #### <a name="if-youre-using-maven"></a>Если вы используете Maven...
 Если проект уже настроен для сборки с использованием Maven, добавьте один из следующих фрагментов кода в файл pom.xml.
@@ -103,8 +103,8 @@ ms.locfileid: "58884301"
 | Средство ведения журнала | Download (Скачать) | Библиотека |
 | --- | --- | --- |
 | Logback |[JAR-файл аппендера Logback](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22applicationinsights-logging-logback%22) |applicationinsights-logging-logback |
-| Log4J версии 2.0 |[JAR-файл для аппендера Log4J версии 2](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22applicationinsights-logging-log4j2%22) |applicationinsights-logging-log4j2 |
-| Log4J версии 1.2 |[Аппендером Log4J версии 1.2 JAR-файл](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22applicationinsights-logging-log4j1_2%22) |applicationinsights-logging-log4j1_2 |
+| Log4J версии 2.0 |[JAR-файл аппендера Log4J версии 2](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22applicationinsights-logging-log4j2%22) |applicationinsights-logging-log4j2 |
+| Log4J версии 1.2 |[JAR-файл аппендера Log4J версии 1.2](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22applicationinsights-logging-log4j1_2%22) |applicationinsights-logging-log4j1_2 |
 
 
 ## <a name="add-the-appender-to-your-logging-framework"></a>Добавление аппендера в платформу ведения журнала

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 04/03/2019
 ms.author: aschhab
 ms.openlocfilehash: 85d24a9e7c753ec5dba80c4f259dd3fb51d9c14b
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58910050"
 ---
 # <a name="amqp-errors-in-azure-service-bus"></a>Ошибки AMQP в служебной шине Azure
@@ -49,10 +49,10 @@ Error{condition=amqp:connection:forced, description='The connection was inactive
 
 Сведения о служебной шине и AMQP см. по следующим ссылкам.
 
-* [Обзор AMQP для служебной шины]
+* [Протокол AMQP служебной шины — обзор]
 * [Руководство по использованию протокола AMQP 1.0]
 * [Протокол AMQP служебной шины для Windows Server]
 
-[Обзор AMQP для служебной шины]: service-bus-amqp-overview.md
+[Протокол AMQP служебной шины — обзор]: service-bus-amqp-overview.md
 [Руководство по использованию протокола AMQP 1.0]: service-bus-amqp-protocol-guide.md
 [Протокол AMQP служебной шины для Windows Server]: https://docs.microsoft.com/previous-versions/service-bus-archive/dn282144(v=azure.100)

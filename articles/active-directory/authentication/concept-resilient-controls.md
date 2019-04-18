@@ -12,10 +12,10 @@ ms.date: 12/19/2018
 ms.author: martincoetzer
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6e1fa72f8c7edf76ec46663fd62ee40a3a16e8cd
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58886086"
 ---
 # <a name="create-a-resilient-access-control-management-strategy-with-azure-active-directory"></a>Создание устойчивой стратегии управления доступом с помощью Azure Active Directory
@@ -75,7 +75,7 @@ ms.locfileid: "58886086"
 В следующем примере описываются политики, которые вам необходимо создать, чтобы предоставить пользователю устойчивое управление доступом к своим приложениям и ресурсам. В этом примере вам потребуется группа безопасности **AppUsers** с целевыми пользователями, которым вы хотите предоставить доступ, группа с именем **CoreAdmins** с основными администраторами и группа с именем **EmergencyAccess** с учетными записями для аварийного доступа.
 Этот пример набора политик предоставит выбранным пользователям в **AppUsers** доступ к выбранным приложениям, если они подключаются с доверенного устройства, ИЛИ обеспечит строгую проверку подлинности, например MFA. Это исключает учетные записи для аварийного доступа и основных администраторов.
 
-**Задайте политики устранения ЦС:**
+**Набор политик устранения рисков условного доступа:**
 
 * Политика 1: блокировка доступа для пользователей за пределами целевых групп
   * Пользователи и группы: включает всех пользователей, исключает AppUsers, CoreAdmins и EmergencyAccess
@@ -137,7 +137,7 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
 
 В следующем примере выполняются следующие действия: **Пример A — политика условного доступа на случай непредвиденных обстоятельств для восстановления доступа к критически важным приложениям для совместной работы** является обычным корпоративным непредвиденным случаем. В этом сценарии организации, как правило, требуется MFA для всего доступа к Exchange Online и SharePoint Online, и в этом случае нарушается работа поставщика MFA для клиента (например, Azure MFA, локальный поставщик MFA или сторонняя MFA). Эта политика устраняет сбой, предоставляя определенным целевым пользователям доступ к этим приложениям с доверенных устройств Windows только тогда, когда они обращаются к приложению из своей доверенной корпоративной сети. Она также исключит из этих ограничений учетные записи для экстренных ситуаций и основных администраторов. Затем целевые пользователи получат доступ к Exchange Online и SharePoint Online, тогда как другие пользователи по-прежнему не будут иметь доступ к приложениям из-за сбоя. В этом примере потребуется именованное расположение в сети **CorpNetwork** и группа безопасности **ContingencyAccess** с целевыми пользователями, группа с именем **CoreAdmins** с основными администраторами и группа с именем **EmergencyAccess** с учетными записями для аварийного доступа. На случай непредвиденных обстоятельств для обеспечения желаемого доступа необходимы четыре политики. 
 
-**Пример A - политики на непредвиденные случаи ЦС, чтобы восстановить доступ к критически важных приложений для совместной работы.**
+**Пример A — политики условного доступа на случай непредвиденных обстоятельств для восстановления доступа к критически важным приложениям для совместной работы:**
 
 * Политика 1: требуются присоединенные к домену устройства для Exchange и SharePoint
   * Имя: EM001. ВКЛЮЧЕНИЕ В АВАРИЙНОМ РЕЖИМЕ. Нарушение работы MFA [1/4]. Exchange SharePoint. Требование гибридного присоединения Azure AD
@@ -179,7 +179,7 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
 
 В этом следующем примере **пример Б — политики условного доступа на случай непредвиденных обстоятельств, которые разрешают мобильный доступ к Salesforce** , восстанавливается доступ бизнес-приложения. В этом сценарии клиент обычно требует, чтобы его сотрудники отдела продаж имели доступ к Salesforce (настроенный для единого входа в Azure AD) с мобильных устройств, чтобы он был разрешен только со совместимых устройств. В этом случае сбой заключается в существовании проблемы с оценкой соответствия устройств и происходит в трудное время, когда отдел по продажам должен иметь доступ к Salesforce, чтобы закрыть сделки. Эти политики на случай непредвиденных обстоятельств предоставят доступ к Salesforce с мобильного устройства критическим пользователям, чтобы те могли продолжать закрывать сделки и не нарушать работу. В этом примере **SalesforceContingency** содержит всех сотрудников отдела продаж, которым необходимо сохранить доступ, а **SalesAdmins** — необходимых администраторов Salesforce.
 
-**Пример Б - на непредвиденные случаи ЦС политик.**
+**Пример Б — политики условного доступа на случай непредвиденных обстоятельств:**
 
 * Политика 1: блокировка всех, кто не является частью команды SalesContingency
   * Имя: EM001. ВКЛЮЧЕНИЕ В АВАРИЙНОМ РЕЖИМЕ. Нарушение соответствия устройства [1/2]. Salesforce. Блокировка всех пользователей, кроме SalesforceContingency
@@ -261,12 +261,12 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
 
 ## <a name="learn-more"></a>Подробнее
 
-* [Документация по аутентификации Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-iis)
+* [Настройка сервера Многофакторной идентификации Azure для веб-приложений IIS](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-iis)
 * [Управление учетными записями администратора для аварийного доступа в Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-emergency-access)
-* [Настройка именованных расположений в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
+* [Быстрое начало. Настройка именованных расположений в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
   * [Set-MsolDomainFederationSettings](https://docs.microsoft.com/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0)
-* [Настройка гибридных устройств, присоединенных к Azure Active Directory](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan)
-* [Windows Hello для бизнеса руководство по развертыванию](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
-  * [Пароль руководства - Microsoft Research](https://research.microsoft.com/pubs/265143/microsoft_password_guidance.pdf)
+* [Как планировать гибридную реализацию присоединения к Azure Active Directory](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan)
+* [Руководство по развертыванию Windows Hello для бизнеса](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
+  * [Password Guidance - Microsoft Research](https://research.microsoft.com/pubs/265143/microsoft_password_guidance.pdf) (Руководство о паролях — Microsoft Research)
 * [Что собой представляют условия условного доступа Azure Active Directory](https://docs.microsoft.com/azure/active-directory/conditional-access/conditions)
 * [Элементы управления условным доступом в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/conditional-access/controls)

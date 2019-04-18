@@ -17,10 +17,10 @@ ms.date: 07/28/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dc492142200c7fd028360d01c2602904531550dc
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58884488"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insignia-saml-sso"></a>Руководство. Интеграция Azure Active Directory с Insignia SAML SSO
@@ -59,7 +59,7 @@ ms.locfileid: "58884488"
 ## <a name="adding-insignia-saml-sso-from-the-gallery"></a>Добавление Insignia SAML SSO из коллекции
 Чтобы настроить интеграцию Insignia SAML SSO с Azure AD, необходимо добавить Insignia SAML SSO из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Insignia SAML SSO из коллекции, выполните следующие действия:**
+**Чтобы добавить приложение Insignia SAML SSO из коллекции, сделайте следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
@@ -97,7 +97,7 @@ ms.locfileid: "58884488"
 
 В данном разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Insignia SAML SSO.
 
-**Чтобы настроить Azure AD единого входа в Insignia SAML SSO, выполните следующие действия.**
+**Чтобы настроить единый вход Azure AD в Insignia SAML SSO, выполните следующие действия.**
 
 1. На портале Azure на странице интеграции с приложением **Insignia SAML SSO** щелкните **Единый вход**.
 
@@ -149,7 +149,7 @@ ms.locfileid: "58884488"
 
    ![Создание тестового пользователя Azure AD][100]
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия.**
+**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
@@ -169,7 +169,7 @@ ms.locfileid: "58884488"
 
     a. В поле **Имя** введите **BrittaSimon**.
 
-    2. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
+    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 07/03/2017
 ms.author: robinsh
 ms.openlocfilehash: bd7cc37b8fc81fc9d4109826743f2243913d0604
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59047285"
 ---
 # <a name="configure-iot-hub-file-uploads-using-the-azure-portal"></a>Настройка отправки файлов Центра Интернета вещей с помощью портала Azure
@@ -45,12 +45,12 @@ ms.locfileid: "59047285"
 
 Дополнительные сведения об управлении Центром Интернета вещей в Azure см. по следующим ссылкам:
 
-* [Массовое управление удостоверениями устройств центра IoT](iot-hub-bulk-identity-mgmt.md)
-* [Метрики Центра Интернета вещей](iot-hub-metrics.md)
+* [Массовое управление удостоверениями устройств Центра Интернета вещей](iot-hub-bulk-identity-mgmt.md)
+* [Общие сведения о метриках Центра Интернета вещей](iot-hub-metrics.md)
 * [Мониторинг операций](iot-hub-operations-monitoring.md)
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 
-* [Руководство разработчика для центра Интернета вещей](iot-hub-devguide.md)
-* [Развертывание ии на пограничных устройствах с помощью Azure IoT Edge](../iot-edge/tutorial-simulate-device-linux.md)
-* [Безопасности решения IoT с нуля вверх](../iot-fundamentals/iot-security-ground-up.md)
+* [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)
+* [Комплексная защита в Интернете вещей](../iot-fundamentals/iot-security-ground-up.md)

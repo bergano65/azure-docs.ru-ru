@@ -9,10 +9,10 @@ ms.date: 02/11/2019
 ms.author: tamram
 ms.subservice: common
 ms.openlocfilehash: fd8eecbd20446bfde8d3a7467e2982398c3b8c19
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59044969"
 ---
 # <a name="initiate-a-storage-account-failover-preview"></a>Инициация отработки отказа учетной записи хранения (предварительная версия)
@@ -106,6 +106,6 @@ az storage account failover \ --name accountName
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Аварийное восстановление и учетной записи отработка отказа (Предварительная версия) в службе хранилища Azure](storage-disaster-recovery-guidance.md)
+- [Disaster recovery and storage account failover (preview) in Azure Storage](storage-disaster-recovery-guidance.md) (Аварийное восстановление и отработка отказа учетной записи хранения (предварительная версия) в службе хранилища Azure)
 - [Проектирование высокодоступных приложений с использованием RA-GRS](storage-designing-ha-apps-with-ragrs.md)
-- [Руководство по Создание высокодоступного приложения с помощью хранилища BLOB-объектов](../blobs/storage-create-geo-redundant-storage.md) 
+- [Руководство Создание высокодоступного приложения с помощью хранилища BLOB-объектов](../blobs/storage-create-geo-redundant-storage.md). 

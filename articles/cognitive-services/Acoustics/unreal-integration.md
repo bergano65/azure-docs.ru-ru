@@ -11,10 +11,10 @@ ms.topic: how-to
 ms.date: 03/20/2019
 ms.author: kegodin
 ms.openlocfilehash: c6baa9f8330338c1e5fdc9ee0b5a8cc8b344e871
-ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59006482"
 ---
 # <a name="project-acoustics-unreal-and-wwise-integration"></a>Unreal шума и интеграции Wwise проекта
@@ -80,7 +80,7 @@ ms.locfileid: "59006482"
 
     ![Снимок экрана: обозреватель Windows окно выделение предоставленный сценарий для исправления Wwise](media/patch-wwise-script.png)
 
-* Если у вас нет установленного пакета SDK DirectX, вам потребуется закомментировать строку, содержащую DXSDK_DIR в `[UProject]\Plugins\Wwise\Source\AkAudio\AkAudio.Build.cs`
+* Если у вас нет установленного пакета SDK для DirectX, вам потребуется закомментировать строку, содержащую DXSDK_DIR в `[UProject]\Plugins\Wwise\Source\AkAudio\AkAudio.Build.cs`.
 
     ![Снимок экрана с редактором кода — комментирование строки DXSDK](media/directx-sdk-comment.png)
 

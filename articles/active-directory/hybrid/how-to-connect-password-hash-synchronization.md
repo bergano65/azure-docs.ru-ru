@@ -16,10 +16,10 @@ search.appverid:
 - MET150
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 146fdc3ca2af708a96e6b9a604493eb63c2e6530
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58916382"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
@@ -119,7 +119,7 @@ ms.locfileid: "58916382"
 ### <a name="password-hash-synchronization-and-fips"></a>Синхронизация хэшированных паролей и FIPS
 Если сервер блокируется в соответствии с федеральным стандартом обработки информации (FIPS), схема MD5 отключается.
 
-**Чтобы включить MD5 для синхронизации хэшированных паролей, выполните следующие действия:**
+**Чтобы включить MD5 для синхронизации хэшированных паролей, выполните следующие действия.**
 
 1. Перейдите к папке %programfiles%\Azure AD Sync\Bin.
 2. Откройте файл miiserver.exe.config.
@@ -143,6 +143,6 @@ ms.locfileid: "58916382"
 Если вы столкнетесь с проблемами при синхронизации хэшированных паролей, воспользуйтесь рекомендациями из статьи [Устранение неполадок синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](tshoot-connect-password-hash-synchronization.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Синхронизация Azure AD Connect: Настройка параметров синхронизации](how-to-connect-sync-whatis.md)
+* [Синхронизация Azure AD Connect: настройка параметров синхронизации](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
-* [Получите пошаговое развертывание план для выполнения перехода от служб федерации Active Directory для синхронизации хэшированных паролей](https://aka.ms/authenticationDeploymentPlan)
+* [Получить поэтапный план развертывания для перехода с ADFS на синхронизацию хэша паролей](https://aka.ms/authenticationDeploymentPlan)

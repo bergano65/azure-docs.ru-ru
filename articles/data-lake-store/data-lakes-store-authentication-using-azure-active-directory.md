@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: f83cf183bee930dd07c707b0eb49125cecd70b84
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58884641"
 ---
 # <a name="authentication-with-azure-data-lake-storage-gen1-using-azure-active-directory"></a>Аутентификация в ADLS 1-го поколения с помощью Azure Active Directory
@@ -42,14 +42,14 @@ Azure Data Lake Storage 1-го поколения (ADLS 1-го поколени�
 |Аутентификация между службами (с помощью ключа клиента)         |    **[✔*](data-lake-store-service-to-service-authenticate-net-sdk.md#service-to-service-authentication-with-client-secret)** |    **[✔*](data-lake-store-service-to-service-authenticate-java.md)**    |    ✔      |       ✔      |    **[✔*](data-lake-store-service-to-service-authenticate-python.md#service-to-service-authentication-with-client-secret-for-account-management)**     |    **[✔*](data-lake-store-service-to-service-authenticate-rest-api.md)**    |
 |Аутентификация между службами (с помощью сертификата клиента) |    **[✔*](data-lake-store-service-to-service-authenticate-net-sdk.md#service-to-service-authentication-with-certificate)**        |    ✔    |    ✔      |       ✔      |    ✔     |    ✔    |
 
-<i>* Щелкните <b>✔\* </b> символов. Это ссылка.</i><br>
-<i>** MFA — это многофакторная проверка подлинности</i>
+<i>* Щелкните символ <b>✔\*</b>. Это ссылка.</i><br>
+<i>** MFA — многофакторная идентификация (Multi-Factor Authentication).</i>
 
 Дополнительные сведения об использовании Azure Active Directory для аутентификации см. в статье [Сценарии аутентификации в Azure Active Directory](../active-directory/develop/authentication-scenarios.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Аутентификация пользователей](data-lake-store-end-user-authenticate-using-active-directory.md)
-* [Взаимодействие между службами](data-lake-store-service-to-service-authenticate-using-active-directory.md)
+* [Аутентификация между службами](data-lake-store-service-to-service-authenticate-using-active-directory.md)
 
 

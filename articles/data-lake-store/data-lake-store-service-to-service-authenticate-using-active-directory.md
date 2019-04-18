@@ -12,16 +12,16 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: a7fdcf396f586a65efa17e489d002f1c8847a193
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58884998"
 ---
 # <a name="service-to-service-authentication-with-azure-data-lake-storage-gen1-using-azure-active-directory"></a>Аутентификация между службами в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory
 > [!div class="op_single_selector"]
 > * [Аутентификация пользователей](data-lake-store-end-user-authenticate-using-active-directory.md)
-> * [Взаимодействие между службами](data-lake-store-service-to-service-authenticate-using-active-directory.md)
+> * [Аутентификация между службами](data-lake-store-service-to-service-authenticate-using-active-directory.md)
 > 
 >  
 
@@ -102,9 +102,9 @@ Azure Data Lake Storage 1-го поколения (ADLS 1-го поколени�
 ## <a name="next-steps"></a>Дальнейшие действия
 В этой статье мы создали веб-приложение Azure AD и собрали сведения, необходимые в клиентских приложениях, создаваемых с помощью пакетов SDK для .NET, Java, Python, REST API и др. Из следующих статей вы узнаете, как с помощью собственного веб-приложения Azure AD проходить аутентификацию в Data Lake Storage 1-го поколения, а затем выполнить другие операции в хранилище.
 
-* [Служба служба проверки подлинности с Gen1 хранилища Озера данных с помощью Java](data-lake-store-service-to-service-authenticate-java.md)
-* [Служба служба проверки подлинности с Gen1 хранилища Озера данных с помощью пакета SDK для .NET](data-lake-store-service-to-service-authenticate-net-sdk.md)
-* [Служба служба проверки подлинности с Gen1 хранилища Озера данных с помощью Python](data-lake-store-service-to-service-authenticate-python.md)
-* [Служба служба проверки подлинности с Gen1 хранилища Озера данных с помощью REST API](data-lake-store-service-to-service-authenticate-rest-api.md)
+* [Аутентификация между службами в Data Lake Storage 1-го поколения с помощью Java](data-lake-store-service-to-service-authenticate-java.md)
+* [Аутентификация между службами в Data Lake Storage 1-го поколения с помощью пакета SDK для .NET](data-lake-store-service-to-service-authenticate-net-sdk.md)
+* [Аутентификация между службами в Data Lake Storage 1-го поколения с помощью Python](data-lake-store-service-to-service-authenticate-python.md)
+* [Аутентификация между службами в Data Lake Storage 1-го поколения с помощью REST API](data-lake-store-service-to-service-authenticate-rest-api.md)
 
 

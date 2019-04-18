@@ -13,10 +13,10 @@ ms.topic: reference
 ms.date: 10/09/2018
 ms.author: syclebsc
 ms.openlocfilehash: 981ffce34c56f4becee2ed0c72da72baa220e395
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58894361"
 ---
 # <a name="azure-functions-f-developer-reference"></a>Справочник разработчика F# по Функциям Azure
@@ -285,18 +285,18 @@ let mylog(log: ILogger, text: string) =
 Пути, передаваемые в директиве `#load`, определены относительно расположения вашего файла `.fsx`.
 
 * `#load "logger.fsx"` загружает файл, расположенный в папке функции.
-* `#load "package\logger.fsx"` загружает файл, расположенный в `package` папку в папке функции.
-* `#load "..\shared\mylogger.fsx"` загружает файл, расположенный в `shared` папку на том же уровне, что и папка функции, то есть непосредственно под `wwwroot`.
+* `#load "package\logger.fsx"` загружает файл, расположенный в папке `package`, которая содержится в папке функции.
+* `#load "..\shared\mylogger.fsx"` загружает файл, расположенный в папке `shared` на том же уровне, что и папка функции, то есть непосредственно в разделе `wwwroot`.
 
 Директива `#load` работает только с файлами `.fsx` (скрипт F#), а не с файлами `.fs`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Для получения дополнительных сведений см. следующие ресурсы:
 
-* [F#Руководство по](/dotnet/articles/fsharp/index)
-* [Рекомендации по Функциям Azure](functions-best-practices.md)
+* [Руководство по F#](/dotnet/articles/fsharp/index)
+* [Best Practices for Azure Functions](functions-best-practices.md) (Рекомендации по Функциям Azure)
 * [Справочник разработчика по функциям Azure](functions-reference.md)
-* [Триггеры функций Azure и привязки](functions-triggers-bindings.md)
-* [Тестирование функций Azure](functions-test-a-function.md)
-* [Масштабирование функций Azure](functions-scale.md)
+* [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
+* [Тестирование Функций Azure](functions-test-a-function.md)
+* [Масштабирование Функций Azure](functions-scale.md)
 

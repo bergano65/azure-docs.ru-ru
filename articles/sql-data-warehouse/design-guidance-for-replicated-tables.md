@@ -11,10 +11,10 @@ ms.date: 03/19/2019
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.openlocfilehash: acea42f7f4ab986e9828000ab7cfc9e302ed92a3
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58885463"
 ---
 # <a name="design-guidance-for-using-replicated-tables-in-azure-sql-data-warehouse"></a>Руководство по проектированию для использования реплицированных таблиц в хранилище данных SQL Azure
@@ -182,7 +182,7 @@ SELECT TOP 1 * FROM [ReplicatedTable]
 Чтобы создать реплицированную таблицу, воспользуйтесь одной из следующих инструкций:
 
 - [CREATE TABLE (хранилище данных Azure SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse)
-- [CREATE TABLE AS SELECT (хранилище данных Azure SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse)
+- [CREATE TABLE AS SELECT (хранилище данных SQL Azure)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse)
 
 Обзор распределенных таблиц см. в разделе [Распределенные таблицы](sql-data-warehouse-tables-distribute.md).
 

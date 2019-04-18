@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sasubram
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5e5a8d46f67553cc10bd9cdb31cf64511858948f
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59046501"
 ---
 # <a name="azure-active-directory-b2b-collaboration-invitation-redemption"></a>Активация приглашения службы совместной работы Azure Active Directory B2B
@@ -62,8 +62,8 @@ ms.locfileid: "59046501"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Что такое служба совместной работы Azure AD B2B](what-is-b2b.md)
-- [Добавление пользователей службы совместной работы B2B на портале Azure](add-users-administrator.md)
-- [Как информационные работники могут добавить пользователей службы совместной работы B2B в Azure Active Directory?](add-users-information-worker.md)
+- [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
+- [Add Azure Active Directory B2B collaboration users in the Azure portal](add-users-administrator.md) (Добавление пользователей службы совместной работы Azure Active Directory B2B на портале Azure)
+- [How do information workers add B2B collaboration users to Azure Active Directory?](add-users-information-worker.md) (Как информационные работники могут добавить пользователей для совместной работы B2B в Azure Active Directory)
 - [Добавление пользователей службы совместной работы Azure Active Directory B2B с помощью PowerShell](customize-invitation-api.md#powershell)
-- [Выход гостевого пользователя из организации](leave-the-organization.md)
+- [Leave an organization as a guest user](leave-the-organization.md) (Выход гостевого пользователя из организации)

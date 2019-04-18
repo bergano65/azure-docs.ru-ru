@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: diberry
 ms.openlocfilehash: 9a6f9d54c52f36b8f709eacaf25d3fea31dbe516
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58895821"
 ---
 # <a name="best-practices-for-building-a-language-understanding-app-with-cognitive-services"></a>Рекомендации по созданию приложения для распознавания речи с использованием Cognitive Services
@@ -36,13 +36,13 @@ ms.locfileid: "58895821"
 
 |Рекомендации|Предостережения|
 |--|--|
-|[Определение различных целей](#do-define-distinct-intents) |[Добавить множество пример фразы намерений](#dont-add-many-example-utterances-to-intents) |
-|[Найти дождались благоприятного между слишком общие и слишком конкретные для каждой цели](#do-find-sweet-spot-for-intents)|[Использовать в качестве платформы обучения LUIS](#dont-use-luis-as-a-training-platform)|
-|[Сборка приложения итеративно](#do-build-the-app-iteratively)|[Добавление многих высказываний пример того же формата, без учета других форматов](#dont-add-many-example-utterances-of-the-same-format-ignoring-other-formats)|
-|[Добавьте в последующих итерациях фразу списков и шаблоны](#do-add-phrase-lists-and-patterns-in-later-iterations)|[MIX определение намерения и сущности](#dont-mix-the-definition-of-intents-and-entities)|
-|[Сбалансируйте высказывания по всем намерениям](#balance-your-utterances-across-all-intents), за исключением намерения None.<br>[Добавьте примеры речевых фрагментов в намерение None](#do-add-example-utterances-to-none-intent)|[Создание списков фразы с использованием всех возможных значений](#dont-create-phrase-lists-with-all-the-possible-values)|
-|[Используйте функцию предложить для активное обучение](#do-leverage-the-suggest-feature-for-active-learning)|[Добавление слишком много шаблонов](#dont-add-many-patterns)|
-|[Монитор производительности приложения](#do-monitor-the-performance-of-your-app)|[Обучение и публикация с utterance одно примера, каждый добавлен](#dont-train-and-publish-with-every-single-example-utterance)|
+|[Определяйте четкие намерения](#do-define-distinct-intents) |[Не добавляйте слишком много примеров высказываний в намерения](#dont-add-many-example-utterances-to-intents) |
+|[Найдите компромисс между слишком общим и слишком конкретным содержанием для каждого намерения](#do-find-sweet-spot-for-intents)|[Не используйте LUIS в качестве платформы обучения](#dont-use-luis-as-a-training-platform)|
+|[Разрабатывайте приложения итерационно](#do-build-the-app-iteratively)|[Не добавляйте слишком много примеров высказываний одного формата, игнорируя другие форматы](#dont-add-many-example-utterances-of-the-same-format-ignoring-other-formats)|
+|[Добавляйте списки фраз и шаблоны в последующие итерации](#do-add-phrase-lists-and-patterns-in-later-iterations)|[Не смешивайте определения намерений и сущностей](#dont-mix-the-definition-of-intents-and-entities)|
+|[Сбалансируйте высказывания по всем намерениям](#balance-your-utterances-across-all-intents), за исключением намерения None.<br>[Добавьте примеры высказываний в намерение None](#do-add-example-utterances-to-none-intent)|[Не создавайте списки фраз со всеми возможными значениями](#dont-create-phrase-lists-with-all-the-possible-values)|
+|[Используйте функцию предложения для активного обучения](#do-leverage-the-suggest-feature-for-active-learning)|[Не добавляйте слишком много шаблонов](#dont-add-many-patterns)|
+|[Отслеживайте производительность своего приложения](#do-monitor-the-performance-of-your-app)|[Не выполняйте обучение и публикацию для каждого добавленного примера высказывания](#dont-train-and-publish-with-every-single-example-utterance)|
 |[Используйте версии для каждой итерации приложения](#do-use-versions-for-each-app-iteration)||
 
 ## <a name="do-define-distinct-intents"></a>Определяйте четкие намерения

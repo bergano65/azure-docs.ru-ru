@@ -7,10 +7,10 @@ ms.service: dns
 ms.date: 4/3/2019
 ms.author: victorh
 ms.openlocfilehash: 25445415141372e1f231549c5b8f8575a89363c6
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58905415"
 ---
 # <a name="import-and-export-a-dns-zone-file-using-the-azure-cli"></a>Импорт и экспорт файла зоны DNS с помощью Azure CLI
@@ -67,8 +67,8 @@ az network dns zone import -g <resource group> -n <zone name> -f <zone file name
 
 Значения:
 
-* `<resource group>` — Имя группы ресурсов для зоны в Azure DNS.
-* `<zone name>` — Имя зоны.
+* `<resource group>` — имя группы ресурсов для зоны в Azure DNS;
+* `<zone name>` — имя зоны;
 * `<zone file name>` — путь и имя импортируемого файла зоны.
 
 Если зона с таким именем не существует в группе ресурсов, она создается автоматически. Если зона существует, импортированные наборы записей объединяются с существующими наборами. 
@@ -161,8 +161,8 @@ az network dns zone export -g <resource group> -n <zone name> -f <zone file name
 
 Значения:
 
-* `<resource group>` — Имя группы ресурсов для зоны в Azure DNS.
-* `<zone name>` — Имя зоны.
+* `<resource group>` — имя группы ресурсов для зоны в Azure DNS;
+* `<zone name>` — имя зоны;
 * `<zone file name>` — путь и имя экспортируемого файла зоны.
 
 Как и при импорте зоны, сначала требуется войти, выбрать подписку и настроить Azure CLI для использования режима Resource Manager.

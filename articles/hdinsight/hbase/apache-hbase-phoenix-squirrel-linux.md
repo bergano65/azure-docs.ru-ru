@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 01/03/2018
 ms.author: hrasheed
 ms.openlocfilehash: 38f86bd19c85440fbad0e7fd56a3dd9ba836c7b8
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58903308"
 ---
 # <a name="use-apache-phoenix-with-linux-based-apache-hbase-clusters-in-hdinsight"></a>Использование Apache Phoenix с кластерами Apache HBase под управлением Linux в HDInsight
@@ -34,7 +34,7 @@ ms.locfileid: "58903308"
 
 При подключении к кластеру HBase необходимо подключиться к одной из виртуальных машин [Apache ZooKeeper](https://zookeeper.apache.org/). Каждый кластер HDInsight содержит три виртуальных машины Zookeeper.
 
-**Для получения имени узла ZooKeeper**
+**Получение имени узла Zookeeper**
 
 1. Откройте [Apache Ambari](https://ambari.apache.org/), перейдя по адресу **https://\<имя кластера\>.azurehdinsight.net**.
 2. Чтобы войти в систему, введите имя пользователя (кластера) HTTP и пароль.

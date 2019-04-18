@@ -12,10 +12,10 @@ ms.date: 01/14/2019
 ms.author: Barclayn
 ms.custom: AzLog
 ms.openlocfilehash: 7e70920e806b3d9838d693ff1fc74a3e9371319d
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58883927"
 ---
 # <a name="azure-log-integration-tutorial-process-azure-key-vault-events-by-using-event-hubs"></a>Руководство по интеграции журналов данных Azure. Обработка событий Azure Key Vault с помощью Центров событий
@@ -45,7 +45,7 @@ ms.locfileid: "58883927"
 
 - [Хранилище ключей Azure](../key-vault/key-vault-whatis.md)
 - [Центры событий Azure](../event-hubs/event-hubs-what-is-event-hubs.md)
-- [Служба интеграции журналов Azure](security-azure-log-integration-overview.md)
+- [Интеграция журналов Azure](security-azure-log-integration-overview.md)
 
 
 ## <a name="initial-setup"></a>Начальная настройка
@@ -89,13 +89,13 @@ ms.locfileid: "58883927"
 1. После успешной аутентификации вы вошли. Запишите идентификатор подписки и имя подписки, так как они потребуются вам на следующих этапах.
 
 1. Создайте переменные для хранения значений, которые будут использоваться дальше. Введите следующие строки PowerShell. Может потребоваться настроить параметры в соответствии с вашей средой.
-    - ```$subscriptionName = 'Visual Studio Ultimate with MSDN'``` (Имя своей подписки могут отличаться. Вы увидите его в составе выходных данных предыдущей команды.)
-    - ```$location = 'West US'``` (Эта переменная будет использоваться для передачи расположения, где должны быть созданы ресурсы. Эту переменную можно изменить на любое необходимое расположение.)
+    - ```$subscriptionName = 'Visual Studio Ultimate with MSDN'``` (У вашей подписки может быть другое имя. Вы увидите его в составе выходных данных предыдущей команды.)
+    - ```$location = 'West US'``` (Эта переменная будет использоваться для передачи расположения, в котором должны быть созданы ресурсы. Эту переменную можно изменить на любое необходимое расположение.)
     - ```$random = Get-Random```
-    - ```$name = 'azlogtest' + $random``` (Имя может быть любым, но оно должно включать только строчные буквы и цифры).
+    - ```$name = 'azlogtest' + $random``` (Имя может быть любым, но оно должно включать только строчные буквы и цифры.)
     - ```$storageName = $name``` (Эта переменная будет использоваться для имени учетной записи хранения.)
     - ```$rgname = $name``` (Эта переменная будет использоваться для имени группы ресурсов.)
-    - ```$eventHubNameSpaceName = $name``` (Это имя пространства имен концентратора событий).
+    - ```$eventHubNameSpaceName = $name``` (Это имя пространства имен концентратора событий.)
 1. Укажите подписку, с которой вы будете работать:
     
     ```Select-AzSubscription -SubscriptionName $subscriptionName```
@@ -157,8 +157,7 @@ ms.locfileid: "58883927"
    ```Get-AzStorageAccountKey -Name $storagename -ResourceGroupName $rgname  | ft -a```
 1. Задайте и считайте секрет для создания дополнительных записей журнала:
     
-   a. ```Set-AzKeyVaultSecret -VaultName $name -Name TestSecret -SecretValue (ConvertTo-SecureString -String 'Hi There!' -AsPlainText -Force)```
-   2. ```(Get-AzKeyVaultSecret -VaultName $name -Name TestSecret).SecretValueText```
+   a. ```Set-AzKeyVaultSecret -VaultName $name -Name TestSecret -SecretValue (ConvertTo-SecureString -String 'Hi There!' -AsPlainText -Force)``` Б. ```(Get-AzKeyVaultSecret -VaultName $name -Name TestSecret).SecretValueText```
 
    ![Возвращенный секрет](./media/security-azure-log-integration-keyvault-eventhub/keyvaultsecret.png)
 
@@ -181,6 +180,6 @@ ms.locfileid: "58883927"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Часто задаваемые вопросы об интеграции журналов Azure](security-azure-log-integration-faq.md)
-- [Начало работы со службой интеграции журналов Azure](security-azure-log-integration-get-started.md)
+- [Интеграция журналов Azure: часто задаваемые вопросы](security-azure-log-integration-faq.md)
+- [Приступая к работе со службой интеграции журналов Azure](security-azure-log-integration-get-started.md)
 - [Интеграция журналов из ресурсов Azure в системы SIEM](security-azure-log-integration-overview.md)

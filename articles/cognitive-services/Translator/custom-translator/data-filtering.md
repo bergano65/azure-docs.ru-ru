@@ -10,10 +10,10 @@ ms.date: 02/21/2019
 ms.author: v-jansko
 ms.topic: conceptual
 ms.openlocfilehash: 0871cb7e4dcbe8cf71f35f174137396bde607c54
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58916116"
 ---
 # <a name="data-filtering"></a>Фильтрация данных
@@ -49,9 +49,9 @@ ms.locfileid: "58916116"
 
 ## <a name="unescaped-xml-tags"></a>Неэкранированные теги XML
 Фильтрация преобразует неэкранированные теги в экранированные:
-* `&lt;` становится `&amp;lt;`
-* `&gt;` становится `&amp;gt;`
-* `&amp;` становится `&amp;amp;`
+* `&lt;` превращается в `&amp;lt;`;
+* `&gt;` превращается в `&amp;gt;`;
+* `&amp;` превращается в `&amp;amp;`.
 
 ## <a name="invalid-characters"></a>Недопустимые знаки
 Пользовательский переводчик удаляет предложения, содержащие символ Юникода U+FFFD. Символ U+FFFD указывает на сбой преобразования кодировки.

@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: kumud
 ms.openlocfilehash: 2ce2e2b35d731c3edfed931d158b420e66ed5620
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59045753"
 ---
 # <a name="using-powershell-to-manage-traffic-manager"></a>Использование PowerShell для управления диспетчером трафика
@@ -38,7 +38,7 @@ Azure Resource Manager представляет собой предпочтит�
 
 В данных инструкциях используется Microsoft Azure PowerShell. В следующей статье объясняется, как установить и настроить Azure PowerShell:
 
-* [Установка и настройка Azure PowerShell](/powershell/azure/overview)
+* [Как установить и настроить Azure PowerShell](/powershell/azure/overview)
 
 Для приведенных в этой статье примеров предполагается, что у вас уже есть группа ресурсов. Чтобы создать группу ресурсов, выполните следующую команду:
 
@@ -325,4 +325,4 @@ Get-AzTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG | Remove-AzT
 
 [Мониторинг диспетчера трафика](traffic-manager-monitoring.md)
 
-[Вопросы производительности диспетчера трафика](traffic-manager-performance-considerations.md)
+[Рекомендации по безопасности для диспетчера трафика](traffic-manager-performance-considerations.md)

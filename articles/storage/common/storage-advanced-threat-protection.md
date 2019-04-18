@@ -9,15 +9,15 @@ ms.date: 04/03/2019
 ms.author: monhaber
 ms.manager: shaik
 ms.openlocfilehash: 78338ece1bc70d8410bd71183a34aaf1a52f2d1b
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58904123"
 ---
 # <a name="advanced-threat-protection-for-azure-storage"></a>Расширенная защита от угроз для службы хранилища Azure
 
-Advanced Threat Protection для службы хранилища Azure предоставляет дополнительный уровень аналитики безопасности, которая выявляет подозрительные и потенциально опасные попытки получить доступ к или воспользоваться учетные записи хранения. Этот уровень защиты позволяет устранять угрозы без необходимости в экспертных знаниях по безопасности или в управлении системами мониторинга безопасности. 
+Расширенная защита от угроз Azure для службы хранилища Azure предоставляет дополнительный уровень безопасности. Она обнаруживает необычные и потенциально опасные попытки доступа к вашим учетным записям хранения или их использования. Этот уровень защиты позволяет устранять угрозы без необходимости в экспертных знаниях по безопасности или в управлении системами мониторинга безопасности. 
 
 При возникновении ошибки в действии, активируются оповещения безопасности.  Эти оповещения системы безопасности интегрированы с [центра безопасности](https://azure.microsoft.com/services/security-center/), а также отправляются по электронной почте администраторам подписки с подробными сведениями о подозрительном действии и рекомендации о том, как определить причину и устранить угрозы.
 
@@ -80,7 +80,7 @@ Advanced Threat Protection для службы хранилища Azure прин
 
 Используйте следующие командлеты PowerShell:
 
-  * [Включить Advanced Threat Protection](https://docs.microsoft.com/powershell/module/az.security/enable-azsecurityadvancedthreatprotection)
+  * [Расширенная защита от угроз](https://docs.microsoft.com/powershell/module/az.security/enable-azsecurityadvancedthreatprotection)
   * [Получить Advanced Threat Protection.](https://docs.microsoft.com/powershell/module/az.security/get-azsecurityadvancedthreatprotection)
   * [Отключить расширенную защиту от угроз](https://docs.microsoft.com/powershell/module/az.security/disable-azsecurityadvancedthreatprotection)
 

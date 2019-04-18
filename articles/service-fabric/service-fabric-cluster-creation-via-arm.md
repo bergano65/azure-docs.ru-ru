@@ -15,16 +15,16 @@ ms.workload: NA
 ms.date: 08/16/2018
 ms.author: aljo
 ms.openlocfilehash: 52623183139be2b8ac6b12d3adca64e72de932d3
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59050328"
 ---
 # <a name="create-a-service-fabric-cluster-using-azure-resource-manager"></a>Создание кластера Service Fabric с помощью Azure Resource Manager 
 > [!div class="op_single_selector"]
 > * [Azure Resource Manager](service-fabric-cluster-creation-via-arm.md)
-> * [Портал Azure](service-fabric-cluster-creation-via-portal.md)
+> * [портал Azure](service-fabric-cluster-creation-via-portal.md)
 >
 >
 
@@ -45,7 +45,7 @@ ms.locfileid: "59050328"
 
 Найти справочную документацию для модулей Service Fabric можно здесь:
 * [Az.ServiceFabric](https://docs.microsoft.com/powershell/module/az.servicefabric)
-* [модуль CLI AZ SF](https://docs.microsoft.com/cli/azure/sf?view=azure-cli-latest)
+* [az SF CLI module](https://docs.microsoft.com/cli/azure/sf?view=azure-cli-latest)
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -170,7 +170,7 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
 
 Создайте кластер, используя следующую команду, если уже имеется сертификат, который нужно использовать для защиты кластера.
 
-Если это подписанный ЦС сертификат, который также используется в других целях, рекомендуется предоставить отдельную группу ресурсов, специально для хранилища ключей. Рекомендуется поместить хранилище ключей в собственной группе ресурсов. Так вы сможете удалять группы ресурсов для вычислений и хранения, включая группу ресурсов, в которой размещен кластер Service Fabric, без потери ключей и секретов. **Группа ресурсов с хранилищем ключей *должна находиться в том же регионе*, что и кластер, который ее использует.**
+Если это подписанный ЦС сертификат, который также используется в других целях, рекомендуется предоставить отдельную группу ресурсов, специально для хранилища ключей. Рекомендуется поместить хранилище ключей в собственной группе ресурсов. Так вы сможете удалять группы ресурсов для вычислений и хранения, включая группу ресурсов, в которой размещен кластер Service Fabric, без потери ключей и секретов. **Группа ресурсов с хранилищем ключей *должна находиться в том же регионе*, что и кластер, который ее использует**.
 
 ### <a name="use-the-default-five-node-one-node-type-template-that-ships-in-the-module"></a>Использование шаблона по умолчанию с типом для одного или пяти узлов, который поставляется в модуле
 Используемый шаблон доступен в [примерах Azure для Windows](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Windows-1-NodeTypes-Secure-NSG) и [Ubuntu](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Ubuntu-1-NodeTypes-Secure).

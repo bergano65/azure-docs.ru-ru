@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 05/03/2017
 ms.author: genli
 ms.openlocfilehash: f01dfe78d5d5e322258b0ee98cec314f9afe33c0
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59050651"
 ---
 # <a name="troubleshooting-degraded-state-on-azure-traffic-manager"></a>Устранение неполадок, связанных со сбоем диспетчера трафика
@@ -43,7 +43,7 @@ ms.locfileid: "59050651"
 
 * [Fiddler](https://www.telerik.com/fiddler)
 * [curl](https://curl.haxx.se/)
-* [wget](http://gnuwin32.sourceforge.net/packages/wget.htm)
+* [wget](http://gnuwin32.sourceforge.net/packages/wget.htm).
 
 Кроме того, для просмотра ответа HTTP можно воспользоваться вкладкой "Сеть" средств отладки F12 в Internet Explorer.
 
@@ -80,15 +80,15 @@ public class TrustAllCertsPolicy : ICertificatePolicy {
 
 ## <a name="next-steps"></a>Следующие шаги
 
-[Методы маршрутизации трафика диспетчером трафика](traffic-manager-routing-methods.md)
+[О методах маршрутизации трафика в диспетчере трафика](traffic-manager-routing-methods.md)
 
 [Что такое диспетчер трафика](traffic-manager-overview.md)
 
 [Облачные службы](https://go.microsoft.com/fwlink/?LinkId=314074)
 
-[Служба приложений Azure](https://azure.microsoft.com/documentation/services/app-service/web/)
+[службе приложений Azure](https://azure.microsoft.com/documentation/services/app-service/web/)
 
-[Операции с диспетчером трафика (Справочник по API REST)](https://go.microsoft.com/fwlink/?LinkId=313584)
+[Операции с диспетчером трафика (справочник по REST API)](https://go.microsoft.com/fwlink/?LinkId=313584)
 
 [Командлеты для диспетчера трафика Azure][1]
 

@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: ashish
 ms.openlocfilehash: d2eaab80abed6615f46ef190bae56b8a70db2888
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59050685"
 ---
 # <a name="scale-hdinsight-clusters"></a>Масштабирование кластеров HDInsight
@@ -33,9 +33,9 @@ HDInsight обеспечивает гибкость, предоставляя в
 |---|---|
 |[PowerShell Az](https://docs.microsoft.com/powershell/azure)|[SET-AzHDInsightClusterSize](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) - ClusterName \<имя кластера > - TargetInstanceCount \<NewSize >|
 |[PowerShell AzureRM](https://docs.microsoft.com/powershell/azure/azurerm) |[SET-AzureRmHDInsightClusterSize](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) - ClusterName \<имя кластера > - TargetInstanceCount \<NewSize >|
-|[Инфраструктура CLI Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)|[Изменение размера AZ hdinsight](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) --группы ресурсов \<группы ресурсов >--имя \<имя кластера >--счетчик целевых экземпляров \<NewSize >|
+|[Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)|[Изменение размера AZ hdinsight](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) --группы ресурсов \<группы ресурсов >--имя \<имя кластера >--счетчик целевых экземпляров \<NewSize >|
 |[Классический Azure CLI](hdinsight-administer-use-command-line.md)|Изменение размера кластера Azure hdinsight \<Имя_кластера > \<счетчик целевых экземпляров >|
-|[Портал Azure](https://portal.azure.com)|Откройте панель кластера HDInsight, выберите **размер кластера** в меню слева, а затем на панели размер кластера, введите количество рабочих узлов и выберите Save.|  
+|[портал Azure](https://portal.azure.com)|Откройте панель кластера HDInsight, выберите **размер кластера** в меню слева, а затем на панели размер кластера, введите количество рабочих узлов и выберите Save.|  
 
 ![Изменение масштаба кластера](./media/hdinsight-scaling-best-practices/scale-cluster-blade.png)
 
@@ -154,7 +154,7 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode get
 ![Безопасный режим отключен](./media/hdinsight-scaling-best-practices/safe-mode-off.png)
 
 > [!NOTE]  
-> Требуется параметр `-D`, так как в HDInsight файловой системой по умолчанию является служба хранилища Azure или Azure Data Lake Storage. `-D` Указывает, что команды выполняются локальной файловой системе HDFS.
+> Требуется параметр `-D`, так как в HDInsight файловой системой по умолчанию является служба хранилища Azure или Azure Data Lake Storage. Параметр `-D` указывает, что команды выполняются в локальной файловой системе HDFS.
 
 Затем можно просмотреть отчет, в котором содержатся дополнительные сведения о состоянии HDFS:
 

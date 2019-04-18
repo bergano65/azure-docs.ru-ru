@@ -9,10 +9,10 @@ ms.date: 01/08/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 629a97048ceba4ac02e3aa1dd59310980e5a0c95
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58894172"
 ---
 # <a name="install-and-configure-an-on-premises-data-gateway"></a>Установка и настройка локального шлюза данных
@@ -26,13 +26,13 @@ ms.locfileid: "58894172"
 * .NET Framework 4.5;
 * 64-разрядная версия Windows 7 / Windows Server 2008 R2 (или более новой версии).
 
-**Рекомендация:**
+**Рекомендуется:**
 
 * 8-ядерный ЦП;
 * 8 ГБ ОЗУ;
 * 64-разрядная версия Windows 2012 R2 (или более поздняя версия).
 
-**Важные замечания.**
+**Важные сведения:**
 
 * Во время установки и регистрации шлюза в Azure выбирается регион по умолчанию для вашей подписки. Вы можете выбрать другой регион. При наличии серверов в нескольких регионах необходимо установить шлюз для каждого региона. 
 * Шлюз нельзя устанавливать на контроллере домена.
@@ -47,7 +47,7 @@ ms.locfileid: "58894172"
 
 ## <a name="download"></a>Загрузка
 
- [Скачать шлюз](https://aka.ms/azureasgateway)
+ [Скачайте шлюз](https://aka.ms/azureasgateway).
 
 ## <a name="install"></a>Установка
 

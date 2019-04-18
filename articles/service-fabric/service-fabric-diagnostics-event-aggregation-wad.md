@@ -15,15 +15,15 @@ ms.workload: NA
 ms.date: 04/03/2018
 ms.author: srrengar
 ms.openlocfilehash: d49104c1d1402969917de63e22bd41e7489a08c7
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59046300"
 ---
 # <a name="event-aggregation-and-collection-using-windows-azure-diagnostics"></a>Агрегирование и сбор событий с помощью Диагностики Azure для Windows
 > [!div class="op_single_selector"]
-> * [ Windows](service-fabric-diagnostics-event-aggregation-wad.md)
+> * [Windows](service-fabric-diagnostics-event-aggregation-wad.md)
 > * [Linux](service-fabric-diagnostics-event-aggregation-lad.md)
 >
 >
@@ -45,8 +45,8 @@ ms.locfileid: "59046300"
 ## <a name="service-fabric-platform-events"></a>События платформы Service Fabric
 Service Fabric настраивает несколько [стандартных каналов ведения журнала](service-fabric-diagnostics-event-generation-infra.md), и для нескольких из них расширение предварительно настраивает отправку данных мониторинга и диагностики в таблицу хранилища или в другое расположение.
   * [Рабочие события](service-fabric-diagnostics-event-generation-operational.md): операции высокого уровня, выполняемые платформой Service Fabric. Некоторые примеры: создание приложений и служб, изменение состояния узлов и сведения об обновлении. Они передаются в рамках журналов трассировки событий для Windows (ETW).
-  * [События модели программирования Reliable Actors](service-fabric-reliable-actors-diagnostics.md)
-  * [События модели программирования надежных служб](service-fabric-reliable-services-diagnostics.md)
+  * [События модели программирования на основе Reliable Actors](service-fabric-reliable-actors-diagnostics.md).
+  * [События модели программирования на основе Reliable Services](service-fabric-reliable-services-diagnostics.md).
 
 ## <a name="deploy-the-diagnostics-extension-through-the-portal"></a>Развертывание расширения системы диагностики с помощью портала
 Для сбора журналов прежде всего нужно развернуть расширение системы диагностики на каждом узле масштабируемого набора виртуальных машин в кластере Service Fabric. Расширение системы диагностики собирает журналы на каждой виртуальной машине и отправляет их в указанную учетную запись хранения. Ниже описано, как настроить это для новых и существующих кластеров с помощью портала Azure и шаблонов Azure Resource Manager.
@@ -192,7 +192,7 @@ Service Fabric настраивает несколько [стандартных
 
 ### <a name="update-storage-quota"></a>Изменение квоты хранилища
 
-Это расширение постоянно увеличивает размер заполняемых таблиц, пока не будет достигнута квота хранилища. Возможно, вы захотите уменьшить эту квоту. Значение по умолчанию составляет 50 ГБ и можно настроить в шаблоне `overallQuotaInMB` в разделе `DiagnosticMonitorConfiguration`
+Это расширение постоянно увеличивает размер заполняемых таблиц, пока не будет достигнута квота хранилища. Возможно, вы захотите уменьшить эту квоту. По умолчанию квота имеет значение 50 ГБ, а изменить ее можно в шаблоне, в поле `overallQuotaInMB` раздела `DiagnosticMonitorConfiguration`.
 
 ```json
 "overallQuotaInMB": "50000",
@@ -348,8 +348,8 @@ Service Fabric настраивает несколько [стандартных
 >[!NOTE]
 >Сегодня не существует способа фильтрации или очистки событий, которые отправляются в таблицу. Если не реализовать метод удаления событий из таблицы, она продолжит расти. Сейчас есть пример службы очистки данных, выполняющийся в [примере модуля наблюдения](https://github.com/Azure-Samples/service-fabric-watchdog-service). Мы также советуем написать собственный пример, если у вас нет веских причин для хранения журналов дольше 30 или 90 дней.
 
-* [Дополнительные сведения о сборе счетчиков производительности или журналы с помощью расширения диагностики](../virtual-machines/windows/extensions-diagnostics-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-* [Анализ событий и визуализация с помощью Application Insights](service-fabric-diagnostics-event-analysis-appinsights.md)
+* [Узнайте, как собирать данные счетчиков производительности или журналы, используя расширения системы диагностики.](../virtual-machines/windows/extensions-diagnostics-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+* [Event Analysis and Visualization with Application Insights](service-fabric-diagnostics-event-analysis-appinsights.md) (Анализ событий и визуализация с помощью Application Insights)
 * [Анализ и визуализация с помощью Azure Monitor журналов событий](service-fabric-diagnostics-event-analysis-oms.md)
-* [Анализ событий и визуализация с помощью Application Insights](service-fabric-diagnostics-event-analysis-appinsights.md)
+* [Event Analysis and Visualization with Application Insights](service-fabric-diagnostics-event-analysis-appinsights.md) (Анализ событий и визуализация с помощью Application Insights)
 * [Анализ и визуализация с помощью Azure Monitor журналов событий](service-fabric-diagnostics-event-analysis-oms.md)

@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
 ms.openlocfilehash: 38d8bdfcba48d2080b434ebec192b41f3663ae6a
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58895213"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
@@ -80,7 +80,7 @@ static void Main(string[] args)
 
 | Свойство | Параметр разработки |
 | ------------- | ------------- |
-| `Tracing.ConsoleLevel` | `TraceLevel.Verbose` Чтобы максимально увеличить выходные данные журнала. |
+| `Tracing.ConsoleLevel` | `TraceLevel.Verbose` — чтобы увеличить выходные данные журнала. |
 | `Queues.MaxPollingInterval`  | Низкое значение для обеспечения немедленного запуска методов очереди.  |
 | `Singleton.ListenerLockPeriod` | 15 секунд для ускорения последовательной разработки. |
 
@@ -369,7 +369,7 @@ class Program
 Можно настроить следующие привязки:
 
 * [Триггер Azure CosmosDB](#azure-cosmosdb-trigger-configuration-version-3x)
-* [Триггер Центров событий](#event-hubs-trigger-configuration-version-3x)
+* [Триггер концентратора событий](#event-hubs-trigger-configuration-version-3x)
 * Триггер хранилища очередей
 * [Привязки SendGrid](#sendgrid-binding-configuration-version-3x)
 * [Триггер служебной шины](#service-bus-trigger-configuration-version-3x)
@@ -849,7 +849,7 @@ public static void RemoveItem([QueueTrigger("remove-item")] string message)
 
 Версия 3. *x* пакета SDK использует фильтры, встроенные в .NET Core. Класс `LogCategories` позволяет определить категории для конкретных функций, триггеров или пользователей. Он также определяет фильтры для состояний конкретного узла, например `Startup` и `Results`. Это позволяет точно настроить выходные данные журнала. Если в определенных категориях не найдено совпадение, фильтр возвращается к значению `Default` при принятии решения о фильтрации сообщения.
 
-`LogCategories` требует следующего оператор using:
+Добавьте в `LogCategories` следующий оператор:
 
 ```cs
 using Microsoft.Azure.WebJobs.Logging; 
@@ -1010,9 +1010,9 @@ config.LoggerFactory = new LoggerFactory()
 
 В этой статье предоставлены фрагменты кода, показывающие, как для обработки обычных сценариев для работы с пакетом SDK веб-заданий. Полные примеры см. на странице с примерами [azure-webjobs-sdk-samples](https://github.com/Azure/azure-webjobs-sdk-samples).
 
-[«ExecutionContext»]: https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions/Extensions/Core/ExecutionContext.cs
-[«TelemetryClient»]: /dotnet/api/microsoft.applicationinsights.telemetryclient
-[«ConfigureServices»]: /dotnet/api/microsoft.extensions.hosting.hostinghostbuilderextensions.configureservices
-[«ITelemetryInitializer»]: /dotnet/api/microsoft.applicationinsights.extensibility.itelemetryinitializer
-[«Конфигурацией TelemetryConfiguration»]: /dotnet/api/microsoft.applicationinsights.extensibility.telemetryconfiguration
+[ExecutionContext]: https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions/Extensions/Core/ExecutionContext.cs
+[TelemetryClient]: /dotnet/api/microsoft.applicationinsights.telemetryclient
+[ConfigureServices]: /dotnet/api/microsoft.extensions.hosting.hostinghostbuilderextensions.configureservices
+[ITelemetryInitializer]: /dotnet/api/microsoft.applicationinsights.extensibility.itelemetryinitializer
+[TelemetryConfiguration]: /dotnet/api/microsoft.applicationinsights.extensibility.telemetryconfiguration
 [«JobHostConfiguration»]: https://github.com/Azure/azure-webjobs-sdk/blob/v2.x/src/Microsoft.Azure.WebJobs.Host/JobHostConfiguration.cs

@@ -16,10 +16,10 @@ ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
 ms.openlocfilehash: 497571a65510f806d7d7994c9dc37f9a00b65a5f
-ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59006721"
 ---
 # <a name="understand-deny-assignments-for-azure-resources"></a>Запрет назначений для ресурсов Azure
@@ -56,12 +56,12 @@ ms.locfileid: "59006721"
 
 ## <a name="system-defined-principal"></a>Субъект System-Defined
 
-Для поддержки запретов назначений используется субъект **System-Defined**. Этот субъект представляет всех пользователей, группы, субъекты-службы и управляемые удостоверения в каталоге Azure AD. Если идентификатор субъекта имеет нулевое значение GUID (`00000000-0000-0000-0000-000000000000`), а тип субъекта — `SystemDefined`, субъект представляет все субъекты. `SystemDefined` можно сочетать с `ExcludePrincipals` Запрет всех участников, кроме некоторых пользователей. `SystemDefined` имеет следующие ограничения:
+Для поддержки запретов назначений используется субъект **System-Defined**. Этот субъект представляет всех пользователей, группы, субъекты-службы и управляемые удостоверения в каталоге Azure AD. Если идентификатор субъекта имеет нулевое значение GUID (`00000000-0000-0000-0000-000000000000`), а тип субъекта — `SystemDefined`, субъект представляет все субъекты. `SystemDefined` можно сочетать с `ExcludePrincipals`, чтобы запретить все субъекты, кроме некоторых пользователей. Для `SystemDefined` действуют следующие ограничения:
 
 - Может использоваться только в `Principals` и не может использоваться в `ExcludePrincipals`.
-- `Principals[i].Type` Нужно задать значение `SystemDefined`.
+- Для параметра `Principals[i].Type` нужно задать значение `SystemDefined`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Просмотр запрещающих назначений для ресурсов Azure с помощью портала Azure](deny-assignments-portal.md)
+* [Представление запретить назначения для ресурсов Azure с помощью портала Azure](deny-assignments-portal.md)
 * [Общие сведения об определениях ролей для ресурсов Azure](role-definitions.md)

@@ -17,10 +17,10 @@ ms.date: 04/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9167a5ed72e6fec2ca03cc97d1d41dd6cd4aaba6
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58885848"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-secret-server-on-premises"></a>Руководство по Интеграция Azure Active Directory с Secret Server (On-Premises)
@@ -59,7 +59,7 @@ ms.locfileid: "58885848"
 ## <a name="adding-secret-server-on-premises-from-the-gallery"></a>Добавление Secret Server (On-Premises) из коллекции приложений
 Чтобы настроить интеграцию Secret Server (On-Premises) с Azure AD, необходимо добавить Secret Server (On-Premises) из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Secret Server (On-Premises) из коллекции, выполните следующие действия:**
+**Чтобы добавить Secret Server (On-Premises) из коллекции, сделайте следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
@@ -95,7 +95,7 @@ ms.locfileid: "58885848"
 
 В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Secret Server (On-Premises).
 
-**Чтобы настроить Azure AD единого входа в Secret Server (On-Premises), выполните следующие действия.**
+**Чтобы настроить единый вход Azure AD в Secret Server (On-Premises), выполните следующие действия.**
 
 1. На портале Azure на странице интеграции с приложением **Secret Server (On-Premises)** щелкните **Единый вход**.
 
@@ -109,9 +109,9 @@ ms.locfileid: "58885848"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Secret Server (On-Premises)](./media/secretserver-on-premises-tutorial/tutorial_secretserver_url.png)
 
-    a. В **идентификатор** текстовом поле введите имя пользователя, в соответствии с выбранным значением в качестве примера: `https://secretserveronpremises.azure`
+    a. В текстовом поле **Идентификатор** укажите пользовательское значение, например: `https://secretserveronpremises.azure`
 
-    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SecretServerURL>/SAML/AssertionConsumerService.aspx`
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SecretServerURL>/SAML/AssertionConsumerService.aspx`.
 
     > [!NOTE]
     > Представленный выше идентификатор сущности используется только для примера. Вы можете выбрать любое уникальное значение для представления экземпляра Secret Server в AAD. Этот идентификатор сущности следует отправить в [группу поддержки приложения Secret Server (On-Premises)](https://thycotic.force.com/support/s/), чтобы они выполнили настройки со своей стороны. Дополнительные сведения см. в [этой статье](https://thycotic.force.com/support/s/article/Configuring-SAML-in-Secret-Server).
@@ -149,7 +149,7 @@ ms.locfileid: "58885848"
 
    ![Создание тестового пользователя Azure AD][100]
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия.**
+**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
@@ -169,7 +169,7 @@ ms.locfileid: "58885848"
 
     a. В поле **Имя** введите **BrittaSimon**.
 
-    2. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
+    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
@@ -185,7 +185,7 @@ ms.locfileid: "58885848"
 
 ![Назначение роли пользователя][200]
 
-**Чтобы назначить пользователя Britta Simon в Secret Server (On-Premises), выполните следующие действия.**
+**Чтобы назначить пользователя Britta Simon в Secret Server (On-Premises), сделайте следующее.**
 
 1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
 

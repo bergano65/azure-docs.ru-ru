@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/02/2019
 ms.author: diberry
 ms.openlocfilehash: eb125133138c6de173fdeb90024a9e5d961a929d
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58895162"
 ---
 # <a name="export-and-delete-your-customer-data-in-language-understanding-luis-in-cognitive-services"></a>Экспорт и удаление данных клиентов в Интеллектуальной службе распознавания речи (LUIS) в Cognitive Services
@@ -37,16 +37,16 @@ ms.locfileid: "58895162"
 ## <a name="deleting-customer-data"></a>Удаление данных клиента
 LUIS пользователи имеют полный доступ для удаления любой пользователь, содержимого, с помощью LUIS веб-портала или API-интерфейсы LUIS разработки (также известен как программным способом). В следующей таблице представлены ссылки, помогающие освоить оба способа:
 
-| | **Учетная запись пользователя** | **Приложение** | **Пример Utterance(s)** | **Запросы конечных пользователей** |
+| | **Учетная запись пользователя** | **Приложения** | **Пример Utterance(s)** | **Запросы конечных пользователей** |
 | --- | --- | --- | --- | --- |
-| **Microsoft Azure** | [Ссылка](luis-concept-data-storage.md#delete-an-account) | [Ссылка](luis-how-to-start-new-app.md#delete-app) | [Ссылка](luis-concept-data-storage.md#utterances-in-an-intent) | [Фразы продолжительностью активное обучение](luis-how-to-review-endpoint-utterances.md#disable-active-learning)<br>[Журнал фразы](luis-concept-data-storage.md#disable-logging-utterances) |
+| **Портал** | [Ссылка](luis-concept-data-storage.md#delete-an-account) | [Ссылка](luis-how-to-start-new-app.md#delete-app) | [Ссылка](luis-concept-data-storage.md#utterances-in-an-intent) | [Фразы продолжительностью активное обучение](luis-how-to-review-endpoint-utterances.md#disable-active-learning)<br>[Журнал фразы](luis-concept-data-storage.md#disable-logging-utterances) |
 | **Интерфейсы API** | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c4c) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c39) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0b) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/58b6f32139e2bb139ce823c9) |
 
 
 ## <a name="exporting-customer-data"></a>Экспорт данных клиента
 LUIS пользователи имеют полный доступ для просмотра данных на портале, однако он должен быть экспортирован через API LUIS разработки (также известный как программный). В следующей таблице приведены ссылки, помогая Экспорт данных с помощью LUIS разработки (также известный как программный) API-интерфейсы:
 
-| | **Учетная запись пользователя** | **Приложение** | **Utterance(s)** | **Запросы конечных пользователей** |
+| | **Учетная запись пользователя** | **Приложения** | **Фразы** | **Запросы конечных пользователей** |
 | --- | --- | --- | --- | --- |
 | **Интерфейсы API** | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c48) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0a) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36) |
 
@@ -90,4 +90,4 @@ LUIS пользователи имеют полный доступ для про
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Справочник по области LUIS](./luis-reference-regions.md)
+> [Справочник по регионам LUIS](./luis-reference-regions.md)

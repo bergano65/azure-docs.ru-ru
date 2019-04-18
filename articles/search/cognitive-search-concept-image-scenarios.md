@@ -12,10 +12,10 @@ ms.date: 05/01/2018
 ms.author: luisca
 ms.custom: seodec2018
 ms.openlocfilehash: f1491d6b87816dfc70e94e01653567bda101d045
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58916977"
 ---
 #  <a name="how-to-process-and-extract-information-from-images-in-cognitive-search-scenarios"></a>Обработка и извлечение информации из изображений в сценариях когнитивного поиска
@@ -109,7 +109,7 @@ ms.locfileid: "58916977"
 
 Типичный сценарий предусматривает создание одной строки, содержащей все содержимое файла (текст и текст, полученный из изображения), следующим образом:  
 
-1. [Извлеките normalized_images](#get-normalized-images)
+1. [Извлеките normalized_images](#get-normalized-images).
 1. Запустите навык OCR, используя `"/document/normalized_images"` как входные данные.
 1. Объедините текстовое представление и изображения с необработанным текстом, извлеченные из файла. Можно использовать навык [слияния текста](cognitive-search-skill-textmerger.md) для объединения обоих фрагментов текста в одну большую строку.
 
@@ -219,8 +219,8 @@ ms.locfileid: "58916977"
 
 ## <a name="see-also"></a>См. также
 + [Создание индексатора (REST)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
-+ [Анализ изображения навыков](cognitive-search-skill-image-analysis.md)
++ [Анализ навыков изображения](cognitive-search-skill-image-analysis.md)
 + [Навык OCR](cognitive-search-skill-ocr.md)
-+ [Текст слияния навыков](cognitive-search-skill-textmerger.md)
-+ [Как определить набор навыков](cognitive-search-defining-skillset.md)
-+ [Как сопоставить Обогащенные поля](cognitive-search-output-field-mapping.md)
++ [Навык объединения текста](cognitive-search-skill-textmerger.md)
++ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Сопоставление обогащенных полей](cognitive-search-output-field-mapping.md)

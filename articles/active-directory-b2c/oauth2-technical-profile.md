@@ -11,10 +11,10 @@ ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
 ms.openlocfilehash: fde556c60f823f4bd287ca5672503158c7292f51
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58918932"
 ---
 # <a name="define-an-oauth2-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определить OAuth2 технического профиля в настраиваемую политику Azure Active Directory B2C
@@ -112,7 +112,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 
 Примеры:
 
-- [Добавление Google + в качестве поставщика удостоверений OAuth2 с помощью пользовательских политик](active-directory-b2c-custom-setup-goog-idp.md)
+- [Добавление Google+ в качестве поставщика удостоверений OAuth2 с помощью пользовательских политик](active-directory-b2c-custom-setup-goog-idp.md)
 
 
 

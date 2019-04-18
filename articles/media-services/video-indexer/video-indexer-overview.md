@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 03/12/2019
 ms.author: juliako
 ms.openlocfilehash: a182b9ec0fb945b4c2ffddd7a977df8ad9a8d250
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58895974"
 ---
 # <a name="what-is-video-indexer"></a>Что такое Индексатор видео?
@@ -79,6 +79,6 @@ ms.locfileid: "58895974"
 
 Теперь вы готовы приступить к работе со службой "Индексатор видео". Дополнительные сведения см. в следующих статьях:
 
-- [Начало работы с веб-сайта индексатор видео](video-indexer-get-started.md)
-- [Обработка содержимого с помощью REST API индексатора видео](video-indexer-use-apis.md)
-- [Внедрение visual мини-приложений в приложении](video-indexer-embed-widgets.md)
+- [Начало работы с веб-сайтом Индексатора видео](video-indexer-get-started.md)
+- [Использование API Индексатора видео](video-indexer-use-apis.md)
+- [Embed visual widgets in your application](video-indexer-embed-widgets.md) (Внедрение визуальных мини-приложений в собственное приложение)

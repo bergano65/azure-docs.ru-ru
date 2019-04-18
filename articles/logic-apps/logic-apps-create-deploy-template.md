@@ -11,10 +11,10 @@ ms.topic: article
 ms.assetid: 85928ec6-d7cb-488e-926e-2e5db89508ee
 ms.date: 10/18/2016
 ms.openlocfilehash: 624539557b0bf57e9d919a3a46337f1cf93a4f07
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58894240"
 ---
 # <a name="create-azure-resource-manager-templates-for-deploying-logic-apps"></a>Создание шаблонов Azure Resource Manager для развертывания приложений логики
@@ -26,8 +26,8 @@ Azure Logic Apps предоставляет [шаблон Azure Resource Manager
 
 Дополнительные сведения о шаблонах Azure Resource Manager см. в статьях:
 
-* [Создание шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md)
-* [Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком](../azure-resource-manager/templates-cloud-consistency.md)
+* [Шаблоны диспетчера ресурсов Azure](../azure-resource-manager/resource-group-authoring-templates.md)
+* [Разработка шаблонов Azure Resource Manager для обеспечения согласованности облака](../azure-resource-manager/templates-cloud-consistency.md)
 
 ## <a name="logic-app-structure"></a>Структура приложения логики
 
@@ -71,7 +71,7 @@ Azure Logic Apps предоставляет [шаблон Azure Resource Manager
 
 `armclient token $SubscriptionId | Get-LogicAppTemplate -LogicApp MyApp -ResourceGroup MyRG -SubscriptionId $SubscriptionId -Verbose | Out-File C:\template.json`
 
-`$SubscriptionId` идентификатор подписки Azure. Эта строка сначала получает маркер доступа через программу ARMClient, затем передает его по конвейеру в сценарий PowerShell и создает шаблон в JSON-файл.
+`$SubscriptionId` — это идентификатор подписки Azure. Эта строка сначала получает маркер доступа через программу ARMClient, затем передает его по конвейеру в сценарий PowerShell и создает шаблон в JSON-файл.
 
 ## <a name="parameters-in-logic-app-templates"></a>Параметры в шаблоны приложений логики
 

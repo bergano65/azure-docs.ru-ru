@@ -13,10 +13,10 @@ ms.topic: reference
 ms.date: 10/12/2017
 ms.author: glenga
 ms.openlocfilehash: 5b2b7f3cd6bfa219b794edc63d6bf8b2784b713c
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58891895"
 ---
 # <a name="azure-functions-developers-guide"></a>Руководство для разработчиков по Функциям Azure
@@ -86,10 +86,10 @@ ms.locfileid: "58891895"
 
 * [Функции Azure](https://github.com/Azure/Azure-Functions)
 * [Узел функций Azure](https://github.com/Azure/azure-functions-host/)
-* [портале функций Azure](https://github.com/azure/azure-functions-ux)
-* [Шаблоны функций Azure](https://github.com/azure/azure-functions-templates)
-* [Пакет SDK для веб-заданий](https://github.com/Azure/azure-webjobs-sdk/)
-* [Пакет SDK для веб-заданий расширения](https://github.com/Azure/azure-webjobs-sdk-extensions/)
+* [портал функций Azure;](https://github.com/azure/azure-functions-ux)
+* [шаблоны функций Azure;](https://github.com/azure/azure-functions-templates)
+* [пакет Azure SDK для веб-заданий;](https://github.com/Azure/azure-webjobs-sdk/)
+* [расширения пакета Azure SDK для веб-заданий.](https://github.com/Azure/azure-webjobs-sdk-extensions/)
 
 ## <a name="bindings"></a>Привязки
 В таблице ниже приведены все поддерживаемые привязки.
@@ -104,8 +104,8 @@ ms.locfileid: "58891895"
 ## <a name="next-steps"></a>Дальнейшие действия
 Для получения дополнительных сведений см. следующие ресурсы:
 
-* [Триггеры функций Azure и привязки](functions-triggers-bindings.md)
-* [Как программировать и тестировать Функции Azure в локальной среде](./functions-develop-local.md)
-* [Рекомендации по Функциям Azure](functions-best-practices.md)
+* [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
+* [Как программировать и тестировать функции Azure в локальной среде](./functions-develop-local.md)
+* [Best Practices for Azure Functions](functions-best-practices.md) (Рекомендации по Функциям Azure)
 * [Справочник разработчика C# по функциям Azure](functions-reference-csharp.md)
 * [Справочник разработчика NodeJS по функциям Azure](functions-reference-node.md)

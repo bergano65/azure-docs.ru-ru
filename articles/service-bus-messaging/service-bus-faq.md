@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: 41a5f08be833d1235146d6e748580751af2c9d73
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59046093"
 ---
 # <a name="service-bus-faq"></a>Часто задаваемые вопросы о служебной шине
@@ -99,7 +99,7 @@ ms.locfileid: "59046093"
 
 Вы можете переместить пространство имен из одной подписки Azure в другую, используя [портал Azure](https://portal.azure.com) или выполняя команды PowerShell. При перемещении пространство имен уже должно быть активно. Пользователь, который выполняет команды, должен обладать правами администратора как в исходной, так и в целевой подписках.
 
-#### <a name="portal"></a>Microsoft Azure
+#### <a name="portal"></a>Портал
 
 Чтобы использовать портал Azure для переноса пространств имен служебной шины в другую подписку, следуйте [этим инструкциям](../azure-resource-manager/resource-group-move-resources.md#use-portal). 
 
@@ -121,8 +121,8 @@ Move-AzResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptio
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о служебной шине см. в следующих статьях:
 
-* [Знакомство с Azure Service Bus Premium (запись блога)](https://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/)
-* [Знакомство с Azure служебную шину Premium (Channel9)](https://channel9.msdn.com/Blogs/Subscribe/Introducing-Azure-Service-Bus-Premium-Messaging)
+* [Introducing Azure Service Bus Premium Messaging](https://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/) (Общие сведения об обмене сообщениями через служебную шину Azure уровня "Премиум") (запись блога)
+* [Introducing Azure Service Bus Premium Messaging](https://channel9.msdn.com/Blogs/Subscribe/Introducing-Azure-Service-Bus-Premium-Messaging) (Общие сведения об обмене сообщениями через служебную шину Azure уровня "Премиум") (Channel9)
 * [Обзор служебной шины](service-bus-messaging-overview.md)
 * [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md)
 

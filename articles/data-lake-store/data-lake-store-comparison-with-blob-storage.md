@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
 ms.openlocfilehash: 478c261bb909cbc931a7dbbaa9cb6c61152970e4
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58885542"
 ---
 # <a name="comparing-azure-data-lake-storage-gen1-and-azure-blob-storage"></a>Сравнение Azure Data Lake Storage 1-го поколения и хранилища BLOB-объектов Azure
@@ -32,7 +32,7 @@ ms.locfileid: "58885542"
 | Основные понятия |Учетная запись Data Lake Storage 1-го поколения содержит папки, которые, в свою очередь, содержат данные, хранящиеся в виде файлов |Учетная запись хранения содержит контейнеры, которые в свою очередь содержат данные в виде больших двоичных объектов |
 | structure |Иерархическая файловая система |Хранилище объектов с одноуровневым пространством имен |
 | API |REST API по протоколу HTTPS |REST API по протоколу HTTP/HTTPS |
-| API серверной части |[API REST, совместимый с WebHDFS](https://msdn.microsoft.com/library/azure/mt693424.aspx) |[REST API службы хранилища BLOB-объектов Azure](https://msdn.microsoft.com/library/azure/dd135733.aspx) |
+| API серверной части |[REST API, совместимый с WebHDFS](https://msdn.microsoft.com/library/azure/mt693424.aspx) |[REST API хранилища BLOB-объектов Azure](https://msdn.microsoft.com/library/azure/dd135733.aspx) |
 | Клиент файловой системы Hadoop |Yes |Yes |
 | Операции с данными — аутентификация |Основана на [удостоверениях Azure Active Directory](../active-directory/develop/authentication-scenarios.md) |Основана на общих секретах — [ключи доступа к учетным записям](../storage/common/storage-account-manage.md#access-keys) и [ключи подписанных URL-адресов](../storage/common/storage-dotnet-shared-access-signature-part-1.md). |
 | Операции с данными — протокол проверки подлинности |OAuth 2.0. Вызовы должны содержать допустимые веб-маркеры JSON (JWT), выданные Azure Active Directory. |Код проверки подлинности сообщения на основе хэша (HMAC). Вызовы должны содержать хэш SHA-256 с кодировкой Base64 для части HTTP-запроса. |

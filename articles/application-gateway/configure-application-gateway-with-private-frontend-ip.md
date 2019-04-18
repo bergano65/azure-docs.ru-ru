@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 02/26/2019
 ms.author: absha
 ms.openlocfilehash: cfc63349e20aa6dbef4e0d31e81842d325bd3ec6
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58905545"
 ---
 # <a name="configure-an-application-gateway-with-an-internal-load-balancer-ilb-endpoint"></a>Настройка шлюза приложений с конечной точкой внутреннего балансировщика нагрузки
@@ -30,7 +30,7 @@ ms.locfileid: "58905545"
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
-Войдите на портал Azure по адресу <https://portal.azure.com>
+Войдите на портал Azure по адресу <https://portal.azure.com>.
 
 ## <a name="create-an-application-gateway"></a>Создание шлюза приложений
 
@@ -45,14 +45,14 @@ ms.locfileid: "58905545"
    - 10.0.0.0/16* - адресного пространства виртуальной сети.
    - *myAGSubnet* — имя подсети;
    - *10.0.0.0/24* — диапазон адресов подсети.  
-     ![Private-frontendip-1](./media/configure-application-gateway-with-private-frontend-ip/private-frontendip-1.png)
+     ![private-frontendip-1](./media/configure-application-gateway-with-private-frontend-ip/private-frontendip-1.png)
 6. Нажмите кнопку **ОК**, чтобы создать виртуальную сеть и подсеть.
 7. Выберите конфигурацию IP внешнего интерфейса как частные, и по умолчанию, это динамическое назначение IP-адресов. Первый доступный адрес из выбранной подсети будет назначен IP-адрес внешнего интерфейса.
 8. Если вы хотите выбрать частный IP-адрес из диапазона адресов подсети (статическое выделение), щелкните поле **выберите определенный частный IP-адрес** и укажите IP-адрес.
    > [!NOTE]
    > После выделения памяти тип IP-адреса (статический или динамический) нельзя изменить позже.
 9. Выберите конфигурацию прослушивателя для протокола и порта, конфигурации WAF (при необходимости) и нажмите кнопку ОК.
-    ![Private-frontendip-2](./media/configure-application-gateway-with-private-frontend-ip/private-frontendip-2.png)
+    ![private-frontendip-2](./media/configure-application-gateway-with-private-frontend-ip/private-frontendip-2.png)
 10. Просмотрите параметры на странице сводки и нажмите кнопку **ОК**, чтобы создать сетевые ресурсы и шлюз приложений. Процесс создания шлюза приложений может занять несколько минут. Дождитесь успешного завершения развертывания, прежде чем переходить к следующему разделу.
 
 ## <a name="add-backend-pool"></a>Добавление внутреннего пула
@@ -69,8 +69,8 @@ ms.locfileid: "58905545"
 2. Щелкните **Вычисления**, а затем в списке "Рекомендованные" выберите **Windows Server 2016 Datacenter**.
 3. Введите следующие значения для виртуальной машины:
    - *myVM* — имя виртуальной машины;
-   - *azureuser* — для имени пользователя учетной записи администратора;
-   - *Azure123456!* в качестве пароля.
+   - *azureuser* — имя пользователя учетной записи администратора;
+   - *Azure123456!* — пароль.
    - Щелкните **Use existing** (Использовать существующую), а затем выберите *myResourceGroupAG*.
 4. Последовательно выберите **ОК**.
 5. Выберите **DS1_V2** для размера виртуальной машины и нажмите кнопку **выберите**.
@@ -81,7 +81,7 @@ ms.locfileid: "58905545"
 ### <a name="install-iis"></a>Установка служб IIS
 
 1. Откройте интерактивную оболочку и убедитесь, что для нее задано значение **PowerShell**.
-    ![Private-frontendip-3](./media/configure-application-gateway-with-private-frontend-ip/private-frontendip-3.png)
+    ![private-frontendip-3](./media/configure-application-gateway-with-private-frontend-ip/private-frontendip-3.png)
 2. Чтобы установить службы IIS, выполните на виртуальной машине следующие команды:
 
    ```azurepowershell

@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: magoedte
 ms.openlocfilehash: b79f8a44f0fc38dd7e5f9ae7e3ac1fe6e9f6b7b8
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58884182"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Устранение неполадок с агентом Log Analytics для Linux 
@@ -45,7 +45,7 @@ ms.locfileid: "58884182"
 
  Категория | Расположение файла
  ----- | -----
- syslog | `/etc/syslog-ng/syslog-ng.conf` или `/etc/rsyslog.conf` или `/etc/rsyslog.d/95-omsagent.conf`
+ syslog | `/etc/syslog-ng/syslog-ng.conf`, `/etc/rsyslog.conf` или `/etc/rsyslog.d/95-omsagent.conf`
  Производительность, Nagios, Zabbix, выходные данные Log Analytics и общие настройки агента | `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.conf`
  Дополнительные конфигурации | `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.d/*.conf`
 
@@ -117,7 +117,7 @@ ms.locfileid: "58884182"
 
 Ведение журнала отладки позволяет просматривать групповые отправки данных в Azure Monitor, по типу, количество элементов данных и время, необходимое для отправки:
 
-*Пример включенного журнала отладки:*
+*Пример включенного журнала отладки.*
 
 ```
 Success sending oms.nagios x 1 in 0.14s
@@ -380,13 +380,13 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 
 **Базовая информация.** Вместо привилегированного пользователя (`root`) для выполнения агента Log Analytics для Linux используется пользователь `omsagent`. В большинстве случаев этому пользователю необходимо предоставить явное разрешение на чтение определенных файлов. Чтобы предоставить разрешения пользователю `omsagent`, выполните следующие команды:
 
-1. Добавление `omsagent` пользователя для определенной группы `sudo usermod -a -G <GROUPNAME> <USERNAME>`
-2. Предоставьте универсальный доступ на чтение для требуемого файла `sudo chmod -R ugo+rx <FILE DIRECTORY>`
+1. Добавьте пользователя `omsagent` в определенную группу `sudo usermod -a -G <GROUPNAME> <USERNAME>`.
+2. Предоставьте универсальный доступ на чтение требуемого файла `sudo chmod -R ugo+rx <FILE DIRECTORY>`.
 
 Есть известная проблема с состоянием гонки в агенте Log Analytics для Linux версий старше 1.1.0-217. После обновления агента до последней версии выполните приведенную далее команду, чтобы получить последнюю версию подключаемого модуля выходных данных `sudo cp /etc/opt/microsoft/omsagent/sysconf/omsagent.conf /etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.conf`.
 
 ## <a name="issue-you-are-trying-to-reonboard-to-a-new-workspace"></a>Проблема Вы пытаетесь повторно подключиться к новой рабочей области
-Перед попыткой повторно подключить агент к новой рабочей области необходимо очистить конфигурацию агента Log Analytics. Чтобы очистить старые конфигурации агента, выполните пакет оболочки с помощью `--purge`
+Перед попыткой повторно подключить агент к новой рабочей области необходимо очистить конфигурацию агента Log Analytics. Чтобы удалить из агента старую конфигурацию, выполните пакет оболочки с помощью `--purge`.
 
 ```
 sudo sh ./omsagent-*.universal.x64.sh --purge

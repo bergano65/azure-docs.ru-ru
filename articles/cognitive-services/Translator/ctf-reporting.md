@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: v-jansko
 ms.openlocfilehash: da321aa2a4db441fa5bb51e4986d00889cb7482d
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58917402"
 ---
 # <a name="how-to-use-collaborative-translation-framework-ctf-reporting"></a>Как использовать отчеты на платформе для совместного перевода CTF
@@ -116,7 +116,7 @@ API отчетов платформы для совместного перево
 > [!NOTE]
 > Квота будет корректироваться, чтобы обеспечить распределение ресурсов между всеми пользователями.
 
-**Просмотр примеров кода на GitHib**
+**Примеры кода в GitHub**
 * [C#](https://github.com/MicrosoftTranslator/Documentation-Code-TextAPI/blob/master/ctf/ctf-getusertranslationcounts-example-csharp.md)
 * [PHP](https://github.com/MicrosoftTranslator/Documentation-Code-TextAPI/blob/master/ctf/ctf-getusertranslationcounts-example-php.md)
 
@@ -153,7 +153,7 @@ API отчетов платформы для совместного перево
 | значение| **Необязательный**. Строка, представляющая код языка для перевода текста.|
 | minRating| **Необязательный**. Целочисленное значение, представляющее минимальную оценку качества для переведенного текста. Допустимое значение — от -10 до 10. Значение по умолчанию — 1.|
 | maxRating| **Необязательный**. Целочисленное значение, представляющее максимальную оценку качества для переведенного текста. Допустимое значение — от -10 до 10. Значение по умолчанию — 1.|
-| user| **Необязательный элемент. Строку, которая используется для фильтрации результатов, в зависимости от инициатора отправки**|
+| user| **Необязательный. Строка, которая используется для фильтрации результата на основе инициатора отправки**|
 | category| **Необязательный**. Строка, содержащая категорию (домен) перевода. Этот параметр поддерживает только общий параметр по умолчанию.|
 | minDateUtc| **Необязательный**. Дата, с которой вы хотите получить переводы. Дата должна быть в формате UTC.|
 | maxDateUtc| **Необязательный**. Дата, до которой вы хотите получить переводы. Дата должна быть в формате UTC.|
@@ -189,6 +189,6 @@ API отчетов платформы для совместного перево
 > [!NOTE]
 > Квота будет корректироваться, чтобы обеспечить распределение ресурсов между всеми пользователями.
 
-**Просмотр примеров кода на GitHib**
+**Примеры кода в GitHub**
 * [C#](https://github.com/MicrosoftTranslator/Documentation-Code-TextAPI/blob/master/ctf/ctf-getusertranslations-example-csharp.md)
 * [PHP](https://github.com/MicrosoftTranslator/Documentation-Code-TextAPI/blob/master/ctf/ctf-getusertranslations-example-php.md)

@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/04/2018
 ms.custom: seodec18
 ms.openlocfilehash: 6f2d71abeacee531b21a8276f621367dd39a39d9
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58891673"
 ---
 # <a name="train-models-with-automated-machine-learning-in-the-cloud"></a>Обучение моделей с помощью автоматического машинного обучения в облаке
@@ -237,8 +237,8 @@ RunDetails(remote_run).show()
 ```
 Вот как выглядит статическое изображение мини-приложения.  В записной книжке можно щелкнуть любую строку таблицы, чтобы просмотреть свойства прогона и файлы журналов для этого прогона.   Для просмотра графика каждой доступной метрики для каждой итерации можно также использовать раскрывающийся список над графиком.
 
-![мини-приложения таблицы](./media/how-to-auto-train-remote/table.png)
-![построения мини-приложения](./media/how-to-auto-train-remote/plot.png)
+![таблица мини-приложения](./media/how-to-auto-train-remote/table.png)
+![график мини-приложения](./media/how-to-auto-train-remote/plot.png)
 
 Мини-приложение показывает URL-адрес, который можно использовать для просмотра и изучения данных отдельного прогона.
  

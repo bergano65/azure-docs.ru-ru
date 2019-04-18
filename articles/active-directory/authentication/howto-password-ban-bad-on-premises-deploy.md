@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f1c24ec49652cfe9105aa66fd1d5e26c81afcd14
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58904633"
 ---
 # <a name="deploy-azure-ad-password-protection"></a>Развертывание защиты паролем Azure AD
@@ -223,7 +223,7 @@ ms.locfileid: "58904633"
 
 1. Необязательно: Настройка службы прокси-сервера для защиты пароля на прослушивание определенного порта.
    * Программное обеспечение агента DC для защиты пароля на контроллерах домена используется RPC по TCP для взаимодействия со службой прокси. По умолчанию служба прокси-сервер прослушивает любая доступная динамические RPC конечная точка. Но можно настроить службу для прослушивания определенного TCP-порта, если это необходимо из-за топологией сети или требования к брандмауэру в вашей среде.
-      * <a id="static" /></a>Чтобы настроить службу для запуска на статическом порту, используйте командлет `Set-AzureADPasswordProtectionProxyConfiguration`.
+      * <a id="static" /></a>Чтобы настроить службу для запуска под статический порт, используйте `Set-AzureADPasswordProtectionProxyConfiguration` командлета.
 
          ```powershell
          Set-AzureADPasswordProtectionProxyConfiguration –StaticPort <portnumber>
@@ -289,4 +289,4 @@ ms.locfileid: "58904633"
 
 Теперь, когда вы установили службы, которые необходимы для защиты паролей Azure AD на локальных серверах, [выполнения настройки после установки и как собрать сведения о формировании отчетов](howto-password-ban-bad-on-premises-operations.md) для завершения развертывания.
 
-[Концептуальный обзор защиты пароля Azure AD](concept-password-ban-bad-on-premises.md)
+[Предварительная версия. Применение защиты паролем Azure AD для Windows Server Active Directory](concept-password-ban-bad-on-premises.md)

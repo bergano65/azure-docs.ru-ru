@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/13/2018
 ms.author: aljo
 ms.openlocfilehash: 0038de621a02a2edf3198686e1f2fc88fb917d9c
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59050243"
 ---
 # <a name="add-or-remove-certificates-for-a-service-fabric-cluster-in-azure"></a>Добавление и удаление сертификатов для кластера Service Fabric в Azure
@@ -61,7 +61,7 @@ Service Fabric позволяет указать в дополнение к се
 
 Для удобства выполнения инструкций пример 5-VM-1-NodeTypes-Secure_Step2.JSON содержит все изменения, которые мы будем вносить. Этот пример доступен в репозитории [git-repo](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/Cert%20Rollover%20Sample).
 
-**Убедитесь, что выполнены все этапы**
+**Обязательные шаги**
 
 1. Откройте шаблон Resource Manager, который использовался для развертывания кластера. (Если вы скачали пример из указанного выше репозитория, воспользуйтесь файлом 5-VM-1-NodeTypes-Secure_Step1.JSON для развертывания защищенного кластера, а затем откройте этот шаблон.)
 
@@ -291,7 +291,7 @@ Get-ServiceFabricClusterHealth
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об управлении кластерами доступны в следующих статьях.
 
-* [Процесс обновления кластера Service Fabric и ожидания от вас](service-fabric-cluster-upgrade.md)
+* [Обновление кластера Service Fabric](service-fabric-cluster-upgrade.md)
 * [Настройка доступа на основе ролей для клиентов](service-fabric-cluster-security-roles.md)
 
 <!--Image references-->

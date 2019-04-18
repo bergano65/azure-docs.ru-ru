@@ -9,10 +9,10 @@ ms.service: iot-dps
 services: iot-dps
 manager: briz
 ms.openlocfilehash: 07c5dbce0b98d1c197164f4fc77682f78ede57f0
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59048883"
 ---
 # <a name="tpm-attestation"></a>Аттестация доверенного платформенного модуля
@@ -67,5 +67,5 @@ ms.locfileid: "59048883"
 
 Теперь устройство подключается к Центру Интернета вещей и вы можете быть уверены в безопасности хранения ключей ваших устройств. Теперь, когда вы знаете, как служба подготовки устройств проверяет удостоверение устройства с помощью модуля TPM с поддержкой надлежащего уровня безопасности, можно приступать к следующим материалам:
 
-* [Ознакомиться с принципами в автоматической подготовки](./concepts-auto-provisioning.md)
+* [сведения о принципах автоматической подготовки](./concepts-auto-provisioning.md);
 * [сведения о начале работы с использованием автоматической подготовки](./quick-setup-auto-provision.md), которая выполняется с помощью пакетов SDK.

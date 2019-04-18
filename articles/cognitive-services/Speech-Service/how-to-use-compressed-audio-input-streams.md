@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: amishu
 ms.openlocfilehash: 2066dc3e20ab9fc92b23fd071728ea6a920d3324
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59012426"
 ---
 # <a name="stream-compressed-audio-with-the-speech-sdk"></a>Stream сжатые аудио с пакетом SDK для распознавания речи
@@ -58,5 +58,5 @@ var text = result.GetText();
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Получение пробной подписки речи](https://azure.microsoft.com/try/cognitive-services/)
-* [Распознавание речи в см. в разделеC#](quickstart-csharp-dotnet-windows.md)
+* [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
+* [Распознавание речи в C#](quickstart-csharp-dotnet-windows.md)

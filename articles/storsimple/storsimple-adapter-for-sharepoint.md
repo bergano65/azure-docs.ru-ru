@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/06/2017
 ms.author: v-sharos
 ms.openlocfilehash: a2f8e75578e396085e7d80f43c1180e158967061
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58885593"
 ---
 # <a name="install-and-configure-the-storsimple-adapter-for-sharepoint"></a>Установка и настройка адаптера StorSimple для SharePoint
@@ -59,7 +59,7 @@ ms.locfileid: "58885593"
 
 * Убедитесь, что общий размер содержимого (суммарный размер базы данных содержимого и всех связанных внешних больших двоичных объектов) не превышает предельный размер RBS, поддерживаемый SharePoint. Он составляет 200 Гб. 
   
-    **Измерение базы данных контента и размер большого двоичного ОБЪЕКТА**
+    **Для измерения размера базы данных содержимого и больших двоичных объектов**
   
   1. Выполните этот запрос в клиентском веб-интерфейсе центра администрирования. Запустите консоль управления SharePoint, затем введите следующую команду Windows PowerShell для получения размера баз данных содержимого:
      

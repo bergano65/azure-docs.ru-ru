@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 02/21/2019
 ms.openlocfilehash: d01c825e50e30e3545a0d47e432835c658d677af
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59043887"
 ---
 # <a name="connect-to-azure-data-explorer-with-odbc"></a>Подключение в обозреватель данных Azure с помощью ODBC
@@ -102,4 +102,4 @@ Open Database Connectivity ([ODBC](/sql/odbc/reference/odbc-overview)) — ши�
 
 [Написание запросов для обозревателя данных Azure](write-queries.md)
 
-[Руководство по Визуализация данных с помощью обозревателя данных Azure в Power BI](visualize-power-bi.md)
+[Руководство. Визуализация данных из обозревателя данных Azure в Power BI](visualize-power-bi.md)

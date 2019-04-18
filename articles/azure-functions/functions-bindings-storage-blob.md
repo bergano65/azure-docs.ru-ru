@@ -12,19 +12,19 @@ ms.topic: reference
 ms.date: 11/15/2018
 ms.author: cshoe
 ms.openlocfilehash: c1c20e225e15769a8cb09f60dfc371f4ec4d81f6
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58895855"
 ---
 # <a name="azure-blob-storage-bindings-for-azure-functions"></a>Привязки хранилища BLOB-объектов Azure для службы "Функции Azure"
 
 В этой статье рассматривается работа с привязками хранилища BLOB-объектов Azure в службе "Функции Azure". Служба "Функции Azure" поддерживает привязки триггера, а также входные и выходные привязки для больших двоичных объектов. В этой статье каждой из следующих привязок посвящен раздел:
 
-* [Триггер BLOB-объектов](#trigger)
-* [Входная привязка большого двоичного объекта](#input)
-* [Привязка выходные данные большого двоичного объекта](#output)
+* [триггер большого двоичного объекта](#trigger);
+* [входная привязка большого двоичного объекта](#input);
+* [выходная привязка большого двоичного объекта](#output).
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
@@ -78,7 +78,7 @@ ms.locfileid: "58895855"
 Языковой пример см. в разделах:
 
 * [C#](#trigger---c-example)
-* [Скрипт C# (.csx)](#trigger---c-script-example)
+* [Скрипт C# (CSX)](#trigger---c-script-example)
 * [Java](#trigger---java-example)
 * [JavaScript](#trigger---javascript-example)
 * [Python](#trigger---python-example)
@@ -316,11 +316,11 @@ public void run(
 
 |свойство function.json | Свойство атрибута |ОПИСАНИЕ|
 |---------|---------|----------------------|
-|**Тип** | Недоступно | Нужно задать значение `blobTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
+|**type** | Недоступно | Нужно задать значение `blobTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
 |**direction** | Недоступно | Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. Исключения приведены в этом [разделе](#trigger---usage). |
 |**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции. |
 |**path** | **BlobPath** |[Контейнер](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources) для мониторинга.  Может быть [шаблоном имени большого двоичного объекта](#trigger---blob-name-patterns). |
-|**connection;** | **Подключение** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
+|**подключение** | **Connection** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -463,7 +463,7 @@ module.exports = function (context, myBlob) {
 Языковой пример см. в разделах:
 
 * [C#](#input---c-example)
-* [Скрипт C# (.csx)](#input---c-script-example)
+* [Скрипт C# (CSX)](#input---c-script-example)
 * [Java](#input---java-examples)
 * [JavaScript](#input---javascript-example)
 * [Python](#input---python-example)
@@ -636,8 +636,8 @@ def main(queuemsg: func.QueueMessage, inputblob: func.InputStream) -> func.Input
 
 В этом разделе содержатся следующие примеры:
 
-* [Триггер HTTP, имя большого двоичного объекта из строки запроса для поиска](#http-trigger-look-up-blob-name-from-query-string-java)
-* [Очередь триггера, получать имя большого двоичного объекта из сообщения очереди](#queue-trigger-receive-blob-name-from-queue-message-java)
+* [Триггер HTTP, поиск имени BLOB-объекта из строки запроса](#http-trigger-look-up-blob-name-from-query-string-java)
+* [Очередь триггера, получение имени BLOB-объекта из сообщения очереди](#queue-trigger-receive-blob-name-from-queue-message-java)
 
 #### <a name="http-trigger-look-up-blob-name-from-query-string-java"></a>Триггер HTTP, поиск имени BLOB-объекта из строки запроса (Java)
 
@@ -727,11 +727,11 @@ public static void Run(
 
 |свойство function.json | Свойство атрибута |ОПИСАНИЕ|
 |---------|---------|----------------------|
-|**Тип** | Недоступно | Нужно задать значение `blob`. |
+|**type** | Недоступно | Нужно задать значение `blob`. |
 |**direction** | Недоступно | Нужно задать значение `in`. Исключения приведены в этом [разделе](#input---usage). |
 |**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции.|
 |**path** |**BlobPath** | Путь к BLOB-объекту. |
-|**connection;** |**Подключение**| Имя параметра приложения, содержащего [строку подключения к службе хранилища](../storage/common/storage-configure-connection-string.md#create-a-connection-string-for-an-azure-storage-account), используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
+|**подключение** |**Connection**| Имя параметра приложения, содержащего [строку подключения к службе хранилища](../storage/common/storage-configure-connection-string.md#create-a-connection-string-for-an-azure-storage-account), используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
 |Недоступно | **Access** | Указывает, какая операция будет выполняться (запись или чтение). |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
@@ -768,7 +768,7 @@ public static void Run(
 Языковой пример см. в разделах:
 
 * [C#](#output---c-example)
-* [Скрипт C# (.csx)](#output---c-script-example)
+* [Скрипт C# (CSX)](#output---c-script-example)
 * [Java](#output---java-examples)
 * [JavaScript](#output---javascript-example)
 * [Python](#output---python-example)
@@ -960,8 +960,8 @@ def main(queuemsg: func.QueueMessage, inputblob: func.InputStream,
 
 В этом разделе содержатся следующие примеры:
 
-* [Триггер HTTP, с помощью OutputBinding](#http-trigger-using-outputbinding-java)
-* [Триггер очереди, с помощью возвращаемого значения функции](#queue-trigger-using-function-return-value-java)
+* [Триггер HTTP, использование OutputBinding](#http-trigger-using-outputbinding-java)
+* [Триггер очереди, использование возвращаемого значения функции](#queue-trigger-using-function-return-value-java)
 
 #### <a name="http-trigger-using-outputbinding-java"></a>Триггер HTTP, использование OutputBinding (Java)
 
@@ -1061,11 +1061,11 @@ public static void Run(
 
 |свойство function.json | Свойство атрибута |ОПИСАНИЕ|
 |---------|---------|----------------------|
-|**Тип** | Недоступно | Нужно задать значение `blob`. |
+|**type** | Недоступно | Нужно задать значение `blob`. |
 |**direction** | Недоступно | Нужно задать значение `out` для выходной привязки. Исключения приведены в этом [разделе](#output---usage). |
 |**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции.  Задайте значение `$return`, ссылающееся на возвращаемое значение функции.|
 |**path** |**BlobPath** | Путь к большому двоичному объекту. |
-|**connection;** |**Подключение**| Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
+|**подключение** |**Connection**| Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
 |Недоступно | **Access** | Указывает, какая операция будет выполняться (запись или чтение). |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
@@ -1109,7 +1109,7 @@ public static void Run(
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Дополнительные сведения о функции Azure триггеры и привязки](functions-triggers-bindings.md)
+* [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)
 
 <!---
 > [!div class="nextstepaction"]

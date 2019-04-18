@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
 ms.openlocfilehash: cebdff5ed233516683df3330e8fd3332ded664e5
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58885678"
 ---
 # <a name="securing-data-stored-in-azure-data-lake-storage-gen1"></a>Защита данных, хранимых в Azure Data Lake Storage 1-го поколения
@@ -148,11 +148,11 @@ Data Lake Storage 1-го поколения позволяет дополнит�
     ![Назначение разрешений для группы](./media/data-lake-store-secure-data/adl.remove.acl.png "Назначение разрешений для группы")
 
 ## <a name="see-also"></a>См. также
-* [Общие сведения об Azure Data Lake Storage Gen1](data-lake-store-overview.md)
-* [Копирование данных из больших двоичных объектов хранилища Azure в поколение 1 хранилища Озера данных](data-lake-store-copy-data-azure-storage-blob.md)
-* [Использование Azure Data Lake Analytics с Gen1 хранилища Озера данных](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
-* [Использование Azure HDInsight с Gen1 хранилища Озера данных](data-lake-store-hdinsight-hadoop-use-portal.md)
-* [Начало работы с Data Lake Storage Gen1 с помощью PowerShell](data-lake-store-get-started-powershell.md)
-* [Начало работы с Gen1 хранилища Озера данных с помощью пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
-* [Доступ к журналам диагностики для Gen1 хранилища Озера данных](data-lake-store-diagnostic-logs.md)
+* [Обзор Azure Data Lake Storage Gen1](data-lake-store-overview.md)
+* [Копирование данных из больших двоичных объектов хранилища Azure в хранилище озера данных](data-lake-store-copy-data-azure-storage-blob.md)
+* [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Использование Azure HDInsight с Data Lake Storage 1-го поколения](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Начало работы с Data Lake Storage 1-го поколения с помощью PowerShell](data-lake-store-get-started-powershell.md)
+* [Начало работы с Data Lake Storage 1-го поколения с помощью пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
+* [Доступ к журналам диагностики Data Lake Storage 1-го поколения](data-lake-store-diagnostic-logs.md)
 

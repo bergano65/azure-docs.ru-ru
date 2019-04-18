@@ -211,8 +211,8 @@ sections:
       - type: list
         style: unordered
         items:
-          - html: <a href="speech-to-text-sample.md">Преобразование речи в текст (SR)</a><br/>
-          - html: <a href="intent.md">Распознавание намерений</a><br/>
+          - html: <a href="speech-to-text-sample.md">Преобразование речи в текст</a><br/>
+          - html: <a href="intent.md">Распознавание намерений говорящего</a><br/>
           - html: <a href="translation.md">Перевод</a>
           - html: <a href="quickstart-text-to-speech-dotnet-windows.md">Преобразование текста в речь</a><br/>
   - title: Примеры
@@ -222,8 +222,8 @@ sections:
       - type: list
         style: unordered
         items:
-          - html: '<a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk">Примеры пакета SDK для служб</a><br/>'
-          - html: '<a href="https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK">Примеры пакета SDK для устройств</a><br/>'
+          - html: '<a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk">Примеры для пакета SDK для служб</a><br/>'
+          - html: '<a href="https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK">Примеры для пакета SDK для устройств</a><br/>'
   - title: Справочные материалы
     items:
       - type: list
@@ -246,4 +246,4 @@ sections:
               <p><a href=https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>
           - title: Интерфейс командной строки
             html: |
-              <p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Инфраструктура CLI Azure</a></p>
+              <p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Интерфейс командной строки Azure</a></p>

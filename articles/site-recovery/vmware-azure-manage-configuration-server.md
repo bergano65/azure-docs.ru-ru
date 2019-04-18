@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 02/12/2018
 ms.author: ramamill
 ms.openlocfilehash: c23f3ec9c85bb3997380d83c097f2690b91c1f4f
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59049703"
 ---
 # <a name="manage-the-configuration-server-for-vmware-vm-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления виртуальных машин VMware
@@ -68,7 +68,7 @@ ms.locfileid: "59049703"
 
 1. После [входа](#access-configuration-server) выберите **Управление учетными данными виртуальной машины**.
 2. Щелкните **Добавить учетные данные виртуальной машины**.
-    ![Добавление мобильности credentials](media/vmware-azure-manage-configuration-server/add-mobility-credentials.png)
+    ![добавить-учетные-данные-мобильности](media/vmware-azure-manage-configuration-server/add-mobility-credentials.png)
 3. Введите новые учетные данные и щелкните **Добавить**.
 
 Учетные данные также можно добавить с помощью CSPSConfigtool.exe.
@@ -151,7 +151,7 @@ ms.locfileid: "59049703"
 
 1. В хранилище перейдите в **Управление** > **Site Recovery Infrastructure (Инфраструктура Site Recovery)** > **Серверы конфигурации**.
 2. Если обновление доступно, то в строке **Версия агента** > появится ссылка.
-    ![Блокировка изменений](./media/vmware-azure-manage-configuration-server/update2.png)
+    ![Обновление](./media/vmware-azure-manage-configuration-server/update2.png).
 3. Скачайте файл установщика обновлений на сервер конфигурации.
 
     ![Блокировка изменений](./media/vmware-azure-manage-configuration-server/update1.png)

@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 04/02/2017
 ms.author: mbullwin
 ms.openlocfilehash: 1c360d60a429f137c4b74ad4afe8ae9bba895b7d
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58883417"
 ---
 #  <a name="create-application-insights-resources-using-powershell"></a>Создание ресурсов Application Insights с помощью PowerShell
@@ -168,9 +168,9 @@ ms.locfileid: "58883417"
 
     ``` 
    
-   * `-ResourceGroupName` — Это группа, которой вы хотите создать новые ресурсы.
-   * `-TemplateFile` должен предшествовать пользовательским параметрам.
-   * `-appName` Имя ресурса.
+   * `-ResourceGroupName` — группа, в которой необходимо создать ресурсы.
+   * Параметр `-TemplateFile` должен предшествовать пользовательским параметрам.
+   * `-appName` — имя создаваемого ресурса.
 
 Можно добавить другие параметры. Их описание доступно в разделе параметров шаблона.
 
@@ -448,8 +448,8 @@ ms.locfileid: "58883417"
 
 * [Создание ресурса Application Insights](powershell-script-create-resource.md) — быстрый метод без использования шаблона.
 * [Настройка оповещений](powershell-alerts.md)
-* [Создание веб-тестов](https://azure.microsoft.com/blog/creating-a-web-test-alert-programmatically-with-application-insights/)
-* [Отправка данных диагностики Azure в Application Insights](powershell-azure-diagnostics.md)
+* [Creating an Application Insights Web Test and Alert Programmatically](https://azure.microsoft.com/blog/creating-a-web-test-alert-programmatically-with-application-insights/)
+* [Отправка данных системы диагностики Azure в Application Insights](powershell-azure-diagnostics.md)
 * [Развертывание в Azure из GitHub](https://blogs.msdn.com/b/webdev/archive/2015/09/16/deploy-to-azure-from-github-with-application-insights.aspx)
-* [Создание заметок к выпуску](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1)
+* [Создание заметок выпуска](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1)
 

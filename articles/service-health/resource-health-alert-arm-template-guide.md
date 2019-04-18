@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.service: service-health
 ms.date: 9/4/2018
 ms.openlocfilehash: afa89fc90552c7ccba1fcea0945ee223d0096be4
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59047523"
 ---
 # <a name="configure-resource-health-alerts-using-resource-manager-templates"></a>Настройка оповещений о работоспособности ресурсов с помощью шаблонов Resource Manager
@@ -164,7 +164,7 @@ ms.locfileid: "59047523"
 ],
 ```
 
-Например:  `"/subscriptions/d37urb3e-ed41-4670-9c19-02a1d2808ff9/resourcegroups/myRG/providers/microsoft.compute/virtualmachines/myVm"`
+Например: `"/subscriptions/d37urb3e-ed41-4670-9c19-02a1d2808ff9/resourcegroups/myRG/providers/microsoft.compute/virtualmachines/myVm"`
 
 > Чтобы получить эту строку, перейдите на портал Azure и посмотрите на URL-адрес в разделе ресурса Azure.
 
@@ -429,7 +429,7 @@ ms.locfileid: "59047523"
 
 Дополнительная информация о службе "Работоспособность ресурсов".
 -  [Обзор службы "Работоспособность ресурсов Azure"](Resource-health-overview.md)
--  [Типы ресурсов и проверок работоспособности, доступные в Работоспособности ресурсов Azure](resource-health-checks-resource-types.md)
+-  [Типы ресурсов и проверок работоспособности, доступные в службе работоспособности ресурсов Azure](resource-health-checks-resource-types.md)
 
 Создание оповещений службы "Работоспособность служб":
--  [Настройка оповещений о работоспособности службы](../azure-monitor/platform/alerts-activity-log-service-notifications.md) 
+-  [Создание оповещений журнала действий для уведомлений службы](../azure-monitor/platform/alerts-activity-log-service-notifications.md) 

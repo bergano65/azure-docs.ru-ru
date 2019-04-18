@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 10/01/2016
 ms.author: crdun
 ms.openlocfilehash: 03fb286bd24bb12f3a1e508627a2de156e185568
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58892438"
 ---
 # <a name="create-a-xamarinios-app"></a>Создание приложения Xamarin.iOS
@@ -71,8 +71,8 @@ ms.locfileid: "58892438"
 >
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Добавление автономной синхронизации в приложение](app-service-mobile-xamarin-ios-get-started-offline-data.md)
-* [Добавьте в приложения проверку подлинности](app-service-mobile-xamarin-ios-get-started-users.md)
+* [Включение автономной синхронизации для мобильного приложения Xamarin.Android](app-service-mobile-xamarin-ios-get-started-offline-data.md)
+* [Добавление аутентификации в приложение](app-service-mobile-xamarin-ios-get-started-users.md)
 * [Добавление push-уведомлений в приложение Xamarin.Android](app-service-mobile-xamarin-ios-get-started-push.md)
 * [Использование управляемого клиента для мобильных приложений Azure](app-service-mobile-dotnet-how-to-use-client-library.md)
 
@@ -88,4 +88,4 @@ ms.locfileid: "58892438"
 [10]: ./media/app-service-mobile-xamarin-ios-get-started/mobile-quickstart-startup-ios.png
 
 <!-- URLs. -->
-[Портал Azure]: https://portal.azure.com/
+[портал Azure]: https://portal.azure.com/

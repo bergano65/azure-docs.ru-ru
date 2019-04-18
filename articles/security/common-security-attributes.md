@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 2eb480e10ca3b674895d2d22cc44fb52f305f988
-ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59007623"
 ---
 # <a name="common-security-attributes-for-azure-services"></a>Общие атрибуты безопасности для служб Azure
@@ -23,7 +23,7 @@ ms.locfileid: "59007623"
 [!INCLUDE [Security Attributes Header](../../includes/security-attributes-header.md)]
 
 
-## [<a name="azure-backup"></a>Служба архивации Azure](../backup/backup-security-attributes.md)
+## <a name="azure-backupbackupbackup-security-attributesmd"></a>[Azure Backup](../backup/backup-security-attributes.md)
 
 ### <a name="preventative"></a>профилактическая;
 
@@ -71,7 +71,7 @@ ms.locfileid: "59007623"
 |---|---|--|
 | Поддержка конфигурации management (Управление версиями конфигурации и т. д.)| Yes|  |
 
-## [<a name="azure-key-vault"></a>Хранилище ключей Azure](../key-vault/key-vault-security-attributes.md)
+## <a name="azure-key-vaultkey-vaultkey-vault-security-attributesmd"></a>[Хранилище ключей Azure](../key-vault/key-vault-security-attributes.md)
 
 ### <a name="preventative"></a>профилактическая;
 
@@ -120,7 +120,7 @@ ms.locfileid: "59007623"
 | Элементы управления доступом в плоскости управления | Yes | Управление доступом на основе ролей Azure Active Directory (RBAC) |
 | Элементы управления доступом в плоскости данных (на каждом уровне обслуживания) | Yes | Политика доступа к Key Vault |
 
-## [<a name="azure-service-fabric"></a>Azure Service Fabric](../service-fabric/service-fabric-security-attributes.md)
+## <a name="azure-service-fabricservice-fabricservice-fabric-security-attributesmd"></a>[Azure Service Fabric](../service-fabric/service-fabric-security-attributes.md)
 
 ### <a name="preventative"></a>профилактическая;
 

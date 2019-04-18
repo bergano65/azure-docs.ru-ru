@@ -8,10 +8,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 08/20/2018
 ms.openlocfilehash: 37cc8192cc5934cf967ad9b9c62614d0b4503fb4
-ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59006601"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-mysql"></a>Использование конечных точек службы и правил виртуальной сети для базы данных Azure для MySQL
@@ -142,8 +142,8 @@ ms.locfileid: "59006601"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Статьи о создании правил виртуальной сети см. по следующим ссылкам:
-- [Создание и управление ими базы данных Azure для правила виртуальной сети MySQL, с помощью портала Azure](howto-manage-vnet-using-portal.md)
-- [Создание и управление ими базы данных Azure для правила виртуальной сети MySQL, с помощью Azure CLI](howto-manage-vnet-using-cli.md)
+- [Создание правил виртуальной сети базы данных Azure для MySQL и управление ими на портале Azure](howto-manage-vnet-using-portal.md)
+- [Создание правил виртуальной сети базы данных Azure для MySQL и управление ими с помощью Azure CLI](howto-manage-vnet-using-cli.md)
 
 <!-- Link references, to text, Within this same GitHub repo. -->
 [arm-deployment-model-568f]: ../azure-resource-manager/resource-manager-deployment-model.md

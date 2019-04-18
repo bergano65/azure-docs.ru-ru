@@ -17,10 +17,10 @@ ms.author: rolyon
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e4e2f564de254c2aea779b30286183d0a4e17db6
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59045490"
 ---
 # <a name="what-is-azure-ad-identity-governance"></a>Что такое Azure AD Identity Governance?
@@ -81,8 +81,8 @@ Azure AD Privileged Identity Management (PIM) предоставляет цел�
 
 ### <a name="terms-of-use"></a>Условия использования
 
-- [Что можно делать с помощью условий использования?](../conditional-access/terms-of-use.md)
+- [Для чего нужна функции "Условия использования"](../conditional-access/terms-of-use.md)
 
 ### <a name="privileged-identity-management"></a>Управление привилегированными пользователями (PIM)
 
-- [Что такое Azure AD Privileged Identity Management?](../privileged-identity-management/pim-configure.md)
+- [Что такое Azure AD PIM?](../privileged-identity-management/pim-configure.md)

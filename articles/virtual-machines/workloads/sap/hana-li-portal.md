@@ -17,10 +17,10 @@ ms.date: 04/02/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 8240308b3e0955b1d4d3ef2e82cad215daf95b00
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59009374"
 ---
 # <a name="azure-hana-large-instances-control-through-azure-portal"></a>Управление крупными экземплярами HANA в Azure с помощью портала Azure
@@ -149,6 +149,6 @@ ms.locfileid: "59009374"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Мониторинг SAP HANA на крупных экземплярах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/troubleshooting-monitoring)
+- [Мониторинг SAP HANA (крупные экземпляры) в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/troubleshooting-monitoring)
 - [Мониторинг и устранение неполадок со стороны HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-monitor-troubleshoot)
 

@@ -15,19 +15,19 @@ ms.workload: NA
 ms.date: 01/19/2018
 ms.author: aljo
 ms.openlocfilehash: d5aa09f3ff899766e6eb6d1784e4417f7b48eac0
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59049903"
 ---
 # <a name="service-fabric-networking-patterns"></a>Схемы сетевых подключений Service Fabric
 Кластер Azure Service Fabric можно интегрировать с другими сетевыми компонентами Azure. В этой статье показано, как создавать кластеры, использующие следующие компоненты:
 
-- [Существующая виртуальная сеть или подсеть](#existingvnet)
-- [Статический общедоступный IP-адрес](#staticpublicip)
-- [Подсистема балансировки нагрузки только для внутреннего использования](#internallb)
-- [Внутренняя и внешняя подсистемы балансировки нагрузки](#internalexternallb)
+- [существующая виртуальная сеть или подсеть](#existingvnet);
+- [статический общедоступный IP-адрес](#staticpublicip);
+- [подсистема балансировки нагрузки только для внутреннего использования](#internallb);
+- [внутренняя и внешняя подсистемы балансировки нагрузки](#internalexternallb).
 
 Service Fabric выполняется в стандартном масштабируемом наборе виртуальных машин. Любые функции, которые можно использовать в масштабируемом наборе виртуальных машин, можно также использовать и в кластере Service Fabric. Сетевые компоненты шаблонов Azure Resource Manager для масштабируемых наборов виртуальных машин и Service Fabric идентичны. После развертывания в существующей виртуальной сети легко внедрить другие сетевые компоненты, такие как Azure ExpressRoute, VPN-шлюз Azure, группа безопасности сети и пиринговая виртуальная сеть.
 
@@ -349,7 +349,7 @@ DnsSettings              : {
                 ],
     ```
 
-5. Измените параметр `frontendIPConfigurations` подсистемы балансировки нагрузки: вместо `publicIPAddress` укажите подсеть и `privateIPAddress`. `privateIPAddress` использует предопределенные статический внутренний IP-адрес. Чтобы использовать динамический IP-адрес, удалите элемент `privateIPAddress` и измените значение параметра `privateIPAllocationMethod` на **Dynamic**.
+5. Измените параметр `frontendIPConfigurations` подсистемы балансировки нагрузки: вместо `publicIPAddress` укажите подсеть и `privateIPAddress`. `privateIPAddress` использует предварительно определенный статический внутренний IP-адрес. Чтобы использовать динамический IP-адрес, удалите элемент `privateIPAddress` и измените значение параметра `privateIPAllocationMethod` на **Dynamic**.
 
     ```json
                 "frontendIPConfigurations": [

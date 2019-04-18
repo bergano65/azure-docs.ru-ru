@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
 ms.openlocfilehash: 601a3f273a8da9100d24dfdbd13bd598b0e48884
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59051569"
 ---
 # <a name="create-an-azure-network-watcher-instance"></a>Создание экземпляра Наблюдателя за сетями Azure
@@ -110,9 +110,9 @@ armclient put "https://management.azure.com/subscriptions/${subscriptionId}/reso
 * [Топология](network-watcher-topology-overview.md)
 * [Запись пакетов](network-watcher-packet-capture-overview.md)
 * [Проверка IP-потока](network-watcher-ip-flow-verify-overview.md)
-* [Следующий прыжок](network-watcher-next-hop-overview.md)
+* [Определение следующего прыжка](network-watcher-next-hop-overview.md)
 * [Представление групп безопасности](network-watcher-security-group-view-overview.md)
 * [Ведение журнала потоков NSG](network-watcher-nsg-flow-logging-overview.md)
-* [Устранение неполадок виртуального сетевого шлюза](network-watcher-troubleshoot-overview.md)
+* [Устранение неполадок шлюза виртуальной сети](network-watcher-troubleshoot-overview.md)
 
 Создав экземпляр Наблюдателя за сетями, вы можете включить захват пакетов на виртуальных машинах. Сведения об этом см. в статье [Использование записи пакетов для упреждающего мониторинга сети с помощью оповещений и функций Azure](network-watcher-alert-triggered-packet-capture.md).

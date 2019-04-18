@@ -9,10 +9,10 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 11/07/2018
 ms.openlocfilehash: 217d348eacab30b90e06fe805d9cdb0cf32349ac
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59050736"
 ---
 # <a name="upload-files-with-iot-hub"></a>Отправка файлов с помощью Центра Интернета вещей
@@ -148,16 +148,16 @@ ms.locfileid: "59050736"
 
 Теперь, когда вы узнали, как отправлять файлы с устройств с помощью центра Интернета вещей, вас могут заинтересовать следующие статьи в руководстве разработчика для центра Интернета вещей.
 
-* [Управление удостоверениями устройств в Центре Интернета вещей](iot-hub-devguide-identity-registry.md)
+* [Общие сведения о реестре удостоверений в Центре Интернета вещей](iot-hub-devguide-identity-registry.md)
 
 * [Управление доступом к Центру Интернета вещей](iot-hub-devguide-security.md)
 
-* [Использование двойников устройств для синхронизации состояния и конфигурации](iot-hub-devguide-device-twins.md)
+* [Общие сведения о двойниках устройств и их использование в Центре Интернета вещей](iot-hub-devguide-device-twins.md)
 
-* [Вызов прямого метода на устройстве](iot-hub-devguide-direct-methods.md)
+* [Общие сведения о прямых методах и информация о вызове этих методов из Центра Интернета вещей](iot-hub-devguide-direct-methods.md)
 
 * [Планирование заданий на нескольких устройствах](iot-hub-devguide-jobs.md)
 
 Чтобы применить некоторые основные понятия, описанные в этой статье, просмотрите следующие руководства по Центру Интернета вещей:
 
-* [Сведения об отправке файлов с устройств в облако с помощью центра Интернета вещей](iot-hub-csharp-csharp-file-upload.md)
+* [Передача файлов с устройства в облако с помощью Центра Интернета вещей и .NET](iot-hub-csharp-csharp-file-upload.md)

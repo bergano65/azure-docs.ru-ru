@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/03/2019
 ms.author: alkohli
 ms.openlocfilehash: d1e4af6e73c272a7ccc8996b0ccc854be64dd74b
-ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59006347"
 ---
 # <a name="azure-data-box-edge-system-requirements"></a>Требования к системе Azure Edge поле данных
@@ -135,4 +135,4 @@ Azure IoT Edge обеспечивает исходящее подключени�
 
 ## <a name="next-step"></a>Дальнейшие действия
 
-- [Развертывание в Edge поле данных Azure](data-box-edge-deploy-prep.md)
+- [Руководство. Подготовка к развертыванию Azure Data Box Edge (предварительная версия)](data-box-edge-deploy-prep.md)

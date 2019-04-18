@@ -20,10 +20,10 @@ ms.reviewer: tanning
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cce60769ffae399062a50e1b2c28c1cd6e49a47e
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58904259"
 ---
 # <a name="troubleshooting-enterprise-state-roaming-settings-in-azure-active-directory"></a>Устранение неполадок параметров Enterprise State Roaming в Azure Active Directory
@@ -164,8 +164,8 @@ ms.locfileid: "58904259"
 Пользователю будет необходимо отсоединить, а затем заново присоединить устройство к облаку. Для этого войдите в систему как локальный администратор и отсоедините устройство, выбрав **Параметры** > **Система** > **Сведения** и щелкнув "Управление местом работы или учебным заведением или отключение от них". Очистите приведенные ниже файлы, затем повторно присоедините устройство к Azure AD, выбрав **Параметры** > **Система** > **Сведения** и щелкнув "Подключение к месту работы или учебы". Продолжайте присоединение устройства к Azure Active Directory и завершите процесс.
 
 На этапе очистки нужно удалить следующие файлы:
-- Settings.dat в `C:\Users\<Username>\AppData\Local\Packages\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy\Settings\`
-- Все файлы в папке `C:\Users\<Username>\AppData\Local\Packages\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy\AC\TokenBroker\Account`
+- Settings.dat в `C:\Users\<Username>\AppData\Local\Packages\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy\Settings\`;
+- все файлы в папке `C:\Users\<Username>\AppData\Local\Packages\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy\AC\TokenBroker\Account`.
 
 ---
 

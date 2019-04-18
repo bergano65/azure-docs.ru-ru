@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 11/29/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 0885b187c4b9e9636144a3ab2a94b941008bec20
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59046741"
 ---
 # <a name="deploy-an-azure-vm-from-a-user-vhd"></a>Развертывание виртуальной машины Azure из виртуального жесткого диска пользователя
@@ -42,7 +42,7 @@ ms.locfileid: "59046741"
 | vmName                     | Имя виртуальной машины                                                    |
 | vaultName                  | Имя хранилища ключей.                                                          |
 | vaultResourceGroup         | Группа ресурсов хранилища ключей.
-| certificateUrl             | URL-адрес сертификата, включая версией, хранящейся в хранилище ключей, например:  `https://testault.vault.azure.net/secrets/testcert/b621es1db241e56a72d037479xab1r7` |
+| certificateUrl             | URL-адрес сертификата, включая версию, хранящуюся в хранилище ключей, например: `https://testault.vault.azure.net/secrets/testcert/b621es1db241e56a72d037479xab1r7` |
 | vhdUrl                     | URL-адрес виртуального жесткого диска                                                   |
 | vmSize                     | Размер экземпляра виртуальной машины                                           |
 | publicIPAddressName        | Имя общедоступного IP-адреса                                                  |

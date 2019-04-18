@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: shlo
 ms.openlocfilehash: d704c32ee7417c6460ad6cc880e451adddfa61de
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59048220"
 ---
 # <a name="azure-data-factory-faq"></a>Часто задаваемые вопросы о фабрике данных Azure
@@ -145,9 +145,9 @@ Azure визуальные инструменты для фабрики данн
 
 Дополнительные сведения о понятиях фабрики данных см. в следующих статьях:
 
-- [Набор данных и связанные службы](concepts-datasets-linked-services.md)
+- [Datasets and linked services in Azure Data Factory](concepts-datasets-linked-services.md) (Наборы данных и связанные службы в фабрике данных Azure)
 - [Конвейеры и действия](concepts-pipelines-activities.md)
-- [Среда выполнения интеграции](concepts-integration-runtime.md)
+- [Среда выполнения интеграции в фабрике данных Azure](concepts-integration-runtime.md)
 
 ## <a name="what-is-the-pricing-model-for-data-factory"></a>Какая модель ценообразования применяется для фабрики данных?
 Подробные сведения о ценах на фабрику данных Azure см. на [этой странице](https://azure.microsoft.com/pricing/details/data-factory/).
@@ -156,7 +156,7 @@ Azure визуальные инструменты для фабрики данн
 Чтобы узнавать о последних новостях о фабрике данных Azure, используйте следующие сайты:
 
 - [Блог](https://azure.microsoft.com/blog/tag/azure-data-factory/)
-- [Домашняя страница документации](/azure/data-factory)
+- [Документация по фабрике данных Azure V2](/azure/data-factory)
 - [Домашняя страница продукта](https://azure.microsoft.com/services/data-factory/)
 
 ## <a name="technical-deep-dive"></a>Подробное техническое руководство 
@@ -211,5 +211,5 @@ Azure визуальные инструменты для фабрики данн
 ## <a name="next-steps"></a>Дальнейшие действия
 Пошаговые инструкции по созданию фабрики данных см. в следующих руководствах:
 
-- [Краткое руководство. Создание фабрики данных](quickstart-create-data-factory-dot-net.md)
-- [Руководство по Копирование данных в облаке](tutorial-copy-data-dot-net.md)
+- [Краткое руководство. Создание фабрики данных и конвейера с помощью пакета SDK .NET](quickstart-create-data-factory-dot-net.md)
+- [Руководство Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL Azure с помощью фабрики данных Azure](tutorial-copy-data-dot-net.md)

@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 03/22/2019
 ms.author: banders
 ms.openlocfilehash: 1edc15261520d1c2cbf9bf85a62249826edc045b
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58904447"
 ---
 # <a name="manage-reservations-for-azure-resources"></a>Управление резервированиями для ресурсов Azure
@@ -99,7 +99,7 @@ ms.locfileid: "58904447"
 В зависимости от типа резервирования его можно отменить или обменять. Дополнительные сведения см. в разделах об отмене и обмене в следующих статьях:
 
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](..//virtual-machines/windows/prepay-reserved-vm-instances.md#cancellations-and-exchanges)
-- [Предварительная оплата планов программного обеспечения SUSE в резервировании Azure](../virtual-machines/linux/prepay-suse-software-charges.md#cancellation-and-exchanges-not-allowed)
+- [Предварительная оплата программного обеспечения SUSE в резервированиях Azure](../virtual-machines/linux/prepay-suse-software-charges.md#cancellation-and-exchanges-not-allowed)
 - [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../sql-database/sql-database-reserved-capacity.md#cancellations-and-exchanges)
 
 ## <a name="change-optimize-setting-for-reserved-vm-instances"></a>Изменение параметра оптимизации для зарезервированных экземпляров виртуальной машины
@@ -131,17 +131,17 @@ ms.locfileid: "58904447"
 Купите план обслуживания:
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../virtual-machines/windows/prepay-reserved-vm-instances.md)
 - [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../sql-database/sql-database-reserved-capacity.md)
-- [Предоплата для ресурсов Azure Cosmos DB с емкостью защищены в Azure Cosmos DB](../cosmos-db/cosmos-db-reserved-capacity.md)
+- [Предоплата ресурсов Azure Cosmos DB с зарезервированной емкостью Azure Cosmos DB](../cosmos-db/cosmos-db-reserved-capacity.md)
 
 Приобрести план программного обеспечения:
 - [Оплатите Red Hat планы программного обеспечения из Azure резервирования](../virtual-machines/linux/prepay-rhel-software-charges.md)
-- [Предварительная оплата планов программного обеспечения SUSE в резервировании Azure](../virtual-machines/linux/prepay-suse-software-charges.md)
+- [Предварительная оплата программного обеспечения SUSE в резервированиях Azure](../virtual-machines/linux/prepay-suse-software-charges.md)
 
 Понимание, скидок и использования.
-- [Сведения о применении скидки на резервирование виртуальных Машин](billing-understand-vm-reservation-charges.md)
+- [Сведения о применении скидки к зарезервированному экземпляру виртуальной машины Azure](billing-understand-vm-reservation-charges.md)
 - [Сведения о применении скидки план программного обеспечения Red Hat Enterprise Linux](../billing/billing-understand-rhel-reservation-charges.md)
 - [Сведения о применении скидки на программное обеспечение SUSE Linux Enterprise](../billing/billing-understand-suse-reservation-charges.md)
-- [Сведения о применении другие скидки резервирования](billing-understand-reservation-charges.md)
-- [Общие сведения об использовании резервирования для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
-- [Общие сведения об использовании резервирования о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
-- [Затраты на программное обеспечение Windows, не входит в состав резервирования](billing-reserved-instance-windows-software-costs.md)
+- [Сведения о применении скидки на другие резервирования](billing-understand-reservation-charges.md)
+- [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
+- [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
+- [Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров Azure](billing-reserved-instance-windows-software-costs.md)

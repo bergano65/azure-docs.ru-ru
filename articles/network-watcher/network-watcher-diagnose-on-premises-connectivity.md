@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
 ms.openlocfilehash: 323e5d63b5f8566d570dfd47323fcf12f7c6b28b
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59051586"
 ---
 # <a name="diagnose-on-premises-connectivity-via-vpn-gateways"></a>Диагностика локальных подключений через VPN-шлюзы
@@ -37,7 +37,7 @@ VPN-шлюз Azure позволяет создать гибридное реше
 1. Шлюз виртуальной сети — VPN-шлюз в Azure.
 1. Шлюз локальной сети — представление [локального VPN-шлюза (FortiGate)](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md#LocalNetworkGateway) в облаке Azure.
 1. Подключение типа "сеть — сеть" (на основе маршрута) — [подключение между VPN-шлюзом и локальным маршрутизатором](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#createconnection).
-1. [Настройка FortiGate](https://github.com/Azure/Azure-vpn-config-samples/blob/master/Fortinet/Current/Site-to-Site_VPN_using_FortiGate.md)
+1. [Configuring FortiGate](https://github.com/Azure/Azure-vpn-config-samples/blob/master/Fortinet/Current/Site-to-Site_VPN_using_FortiGate.md) (Настройка FortiGate)
 
 Подробные пошаговые инструкции по настройке конфигурации "сеть — сеть" см. в статье: [Создание подключения типа "сеть — сеть" на портале Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md).
 
@@ -45,7 +45,7 @@ VPN-шлюз Azure позволяет создать гибридное реше
 
 ### <a name="ike-phase-1-setup"></a>Этап 1 настройки протокола IKE
 
-| **Свойство** | **На основе политик** | **RouteBased и стандартный или высокопроизводительный VPN-шлюза** |
+| **Свойство** | **PolicyBased** | **Стандартный или высокопроизводительный VPN-шлюз с маршрутизацией на основе маршрутов** |
 | --- | --- | --- |
 | Версия IKE |IKEv1 |IKEv2 |
 | Группа Диффи — Хелмана |Группа 2 (1024 бита) |Группа 2 (1024 бита) |

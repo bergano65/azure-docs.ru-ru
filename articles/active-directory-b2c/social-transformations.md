@@ -11,10 +11,10 @@ ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
 ms.openlocfilehash: 53608654392d7efb73b6dadac14f01a94bb035a7
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58893526"
 ---
 # <a name="social-accounts-claims-transformations"></a>Преобразования утверждений учетных записей социальных сетей
@@ -81,7 +81,7 @@ ms.locfileid: "58893526"
 В приведенном ниже примере новое удостоверение социальной сети связывается с существующей учетной записью. Чтобы связать новое удостоверение социальной сети с существующей учетной записью, выполните следующие действия:
 1. В технических профилях **AAD-UserReadUsingAlternativeSecurityId** и **AAD-UserReadUsingObjectId** выведите утверждение пользователя **alternativeSecurityIds**.
 1. Попросите пользователя выполнить вход с помощью одного из поставщиков удостоверений, которые не связаны с этим пользователем.
-1. С помощью **CreateAlternativeSecurityId** преобразования, утверждений создайте **alternativeSecurityId** тип с именем утверждения `AlternativeSecurityId2`
+1. Выполните преобразование утверждений **CreateAlternativeSecurityId**, чтобы создать новый тип утверждения **alternativeSecurityId** с именем `AlternativeSecurityId2`.
 1. Вызовите преобразование утверждений **AddItemToAlternativeSecurityIdCollection**, чтобы добавить утверждение **AlternativeSecurityId2** к существующему утверждению **AlternativeSecurityIds**.
 1. Сохраните утверждение **alternativeSecurityIds** в учетной записи пользователя.
 

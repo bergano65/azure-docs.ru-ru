@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 05/21/2018
 ms.author: spelluru
 ms.openlocfilehash: 2433f4b3563cc8b301d1815cccf5ab24406e8662
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59045583"
 ---
 # <a name="azure-relay-faqs"></a>Часто задаваемые вопросы о ретрансляторе Azure
@@ -135,8 +135,8 @@ Move-AzResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptio
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Создание пространства имен](relay-create-namespace-portal.md)
-* [Начало работы с .NET](relay-hybrid-connections-dotnet-get-started.md)
-* [Начало работы с узлом](relay-hybrid-connections-node-get-started.md)
+* [Приступая к работе с .NET](relay-hybrid-connections-dotnet-get-started.md)
+* [Приступая к работе с Node](relay-hybrid-connections-node-get-started.md)
 
 [Pricing overview]: https://azure.microsoft.com/pricing/details/service-bus/
 [Relay exceptions]: relay-exceptions.md

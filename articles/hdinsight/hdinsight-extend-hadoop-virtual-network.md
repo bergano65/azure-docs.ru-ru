@@ -9,10 +9,10 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/29/2019
 ms.openlocfilehash: a2d06cdbcc6ce995c55c858cb7a50a93ef6b3fb1
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58883570"
 ---
 # <a name="extend-azure-hdinsight-using-an-azure-virtual-network"></a>Расширение возможностей HDInsight с помощью виртуальной сети Azure
@@ -111,10 +111,10 @@ ms.locfileid: "58883570"
 
 4. Создайте кластер HDInsight и выберите виртуальную сеть Azure во время настройки. Следуйте инструкциям в следующих документах, чтобы понять процесс создания кластера:
 
-    * [Создание HDInsight с помощью портала Azure](hdinsight-hadoop-create-linux-clusters-portal.md)
-    * [Создание HDInsight с помощью Azure PowerShell](hdinsight-hadoop-create-linux-clusters-azure-powershell.md)
-    * [Создание HDInsight, используя классический интерфейс командной строки Azure](hdinsight-hadoop-create-linux-clusters-azure-cli.md)
-    * [Создание HDInsight с помощью шаблона Azure Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md)
+    * [Создание кластера HDInsight с использованием портала Azure](hdinsight-hadoop-create-linux-clusters-portal.md)
+    * [Создание кластера HDInsight с использованием Azure PowerShell](hdinsight-hadoop-create-linux-clusters-azure-powershell.md)
+    * [Создание кластеров HDInsight с помощью интерфейса командной строки Azure](hdinsight-hadoop-create-linux-clusters-azure-cli.md)
+    * [Создание кластеров Hadoop в HDInsight с помощью шаблонов Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md)
 
    > [!IMPORTANT]  
    > Добавление кластера HDInsight в виртуальную сеть — это необязательный шаг настройки. При настройке кластера не забудьте выбрать виртуальную сеть.
@@ -240,7 +240,7 @@ Azure предоставляет разрешение имен для служб
 
 Дополнительные сведения о группах безопасности сети и определяемых пользователем маршрутах см. в следующей документации:
 
-* [Группа безопасности сети](../virtual-network/security-overview.md)
+* [группа безопасности сети](../virtual-network/security-overview.md).
 
 * [Определяемые пользователем маршруты](../virtual-network/virtual-networks-udr-overview.md)
 

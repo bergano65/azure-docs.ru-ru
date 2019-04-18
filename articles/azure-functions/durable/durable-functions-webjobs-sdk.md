@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
 ms.openlocfilehash: df12639aaafaf3df7ae2b755d635d4fba83d846e
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58905099"
 ---
 # <a name="how-to-run-durable-functions-as-webjobs"></a>Как выполнять устойчивых функций веб-заданий
@@ -33,7 +33,7 @@ ms.locfileid: "58905099"
 
 * [Начало работы с пакетом SDK WebJobs](../../app-service/webjobs-sdk-get-started.md)
 * [Создание первой функции с помощью Visual Studio](../functions-create-your-first-function-visual-studio.md)
-* [Устойчивые функции](durable-functions-sequence.md)
+* [Цепочки функций в устойчивых функциях — пример последовательности Hello](durable-functions-sequence.md)
 
 Чтобы выполнить действия, описанные в этой статье, сделайте следующее:
 
@@ -132,8 +132,8 @@ static void Main(string[] args)
 Пакет SDK для веб-заданий не поддерживает следующие возможности Функций Azure:
 
 * [Атрибут FunctionName](#functionname-attribute)
-* [Триггер HTTP](#http-trigger)
-* [API управления устойчивых функций HTTP](#http-management-api)
+* [триггером HTTP](#http-trigger)
+* [API управления HTTP устойчивых функций](#http-management-api)
 
 ### <a name="functionname-attribute"></a>Атрибут FunctionName
 

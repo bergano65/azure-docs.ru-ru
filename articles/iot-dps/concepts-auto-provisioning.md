@@ -9,10 +9,10 @@ ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.openlocfilehash: 0df4eb664accd828c47d834fb0014d0d60f57458
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59051739"
 ---
 # <a name="auto-provisioning-concepts"></a>Принципы автоматической подготовки устройств
@@ -59,7 +59,7 @@ ms.locfileid: "59051739"
 
 На следующей схеме показаны роли и последовательность операций при автоматической подготовке устройства.
 <br><br>
-[![Последовательность автоматической подготовки для устройства](./media/concepts-auto-provisioning/sequence-auto-provision-device-vs.png)](./media/concepts-auto-provisioning/sequence-auto-provision-device-vs.png#lightbox) 
+[![Последовательность автоматической подготовки устройства](./media/concepts-auto-provisioning/sequence-auto-provision-device-vs.png)](./media/concepts-auto-provisioning/sequence-auto-provision-device-vs.png#lightbox) 
 
 > [!NOTE]
 > При необходимости изготовитель может также выполнить операцию "регистрации удостоверения устройства" с помощью интерфейсов API службы подготовки устройств (а не с помощью оператора). Подробное описание этой процедуры и многое другое можно найти в видео [Zero touch device registration with Azure IoT](https://youtu.be/cSbDRNg72cU?t=2460) (Автоматическая регистрация устройств в Azure IoT) (начиная с 41-й минуты).

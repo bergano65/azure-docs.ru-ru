@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 06/21/2018
 ms.author: magattus
 ms.openlocfilehash: 7edf0a9f8d4eb4c01b6d80fd82a1061b6cbb1e35
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58918558"
 ---
 # <a name="using-azure-cdn-with-sas"></a>Использование Azure CDN с SAS
@@ -86,11 +86,10 @@ https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-07-29&
    ```
    $1?sv=2017-07-29&ss=b&srt=c&sp=r&se=2027-12-19T17:35:58Z&st=2017-12-19T09:35:58Z&spr=https&sig=kquaXsAuCLXomN7R00b8CYM13UpDbAHcsRfGOW3Du1M%3D
    ```
-   ![Переопределения URL-адресов CDN правило — слева](./media/cdn-sas-storage-support/cdn-url-rewrite-rule.png)
-   ![переопределения URL-адресов CDN правило — справа](./media/cdn-sas-storage-support/cdn-url-rewrite-rule-option-4.png)
+   ![Правило переопределения URL-адресов CDN — слева](./media/cdn-sas-storage-support/cdn-url-rewrite-rule.png)
+   ![Правило переопределения URL-адресов CDN — справа](./media/cdn-sas-storage-support/cdn-url-rewrite-rule-option-4.png)
 
-2. После того, как новое правило станет активным, к файлам в указанном контейнере конечной точки CDN сможет получить доступ любой желающий, даже без маркера SAS в URL-адресе. Ниже приведен формат:
-   `https://<endpoint hostname>.azureedge.net/<container>/<file>`
+2. После того, как новое правило станет активным, к файлам в указанном контейнере конечной точки CDN сможет получить доступ любой желающий, даже без маркера SAS в URL-адресе. Используется следующий формат: `https://<endpoint hostname>.azureedge.net/<container>/<file>`.
  
    Например:    
    `https://sasstoragedemo.azureedge.net/container1/demo.jpg`
@@ -125,8 +124,8 @@ https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-07-29&
    ```
    $1&sv=2017-07-29&ss=b&srt=c&sp=r&se=2027-12-19T17:35:58Z&st=2017-12-19T09:35:58Z&spr=https&sig=kquaXsAuCLXomN7R00b8CYM13UpDbAHcsRfGOW3Du1M%3D
    ```
-   ![Переопределения URL-адресов CDN правило — слева](./media/cdn-sas-storage-support/cdn-url-rewrite-rule.png)
-   ![переопределения URL-адресов CDN правило — справа](./media/cdn-sas-storage-support/cdn-url-rewrite-rule-option-4.png)
+   ![Правило переопределения URL-адресов CDN — слева](./media/cdn-sas-storage-support/cdn-url-rewrite-rule.png)
+   ![Правило переопределения URL-адресов CDN — справа](./media/cdn-sas-storage-support/cdn-url-rewrite-rule-option-4.png)
 
 3. При обновлении SAS не забудьте обновить и правило переопределения URL-адресов, указав новый маркер SAS. 
 
@@ -145,6 +144,6 @@ https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-07-29&
 
 Дополнительные сведения о SAS доступны в следующих статьях:
 - [Использование подписанных URL-адресов (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
-- [Подписанные URL-адреса. Часть 2. Создание и использование подписанного URL-адреса с помощью хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-shared-access-signature-part-2)
+- [Подписанные URL-адреса. Часть 2: Создание и использование подписанного URL-адреса с помощью хранилища BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-shared-access-signature-part-2)
 
 Дополнительные сведения о настройке аутентификации на основе маркеров см. в разделе [Защита ресурсов сети доставки содержимого Azure с помощью аутентификации на основе маркеров](https://docs.microsoft.com/azure/cdn/cdn-token-auth).

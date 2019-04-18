@@ -13,10 +13,10 @@ ms.reviewer: mbullwin
 ms.date: 08/06/2018
 ms.author: cweining
 ms.openlocfilehash: 9603c45443c6339a127f977600eeff2ba57a283f
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58884165"
 ---
 # <a name="configure-application-insights-profiler"></a>Настройка Application Insights Profiler
@@ -125,7 +125,7 @@ ms.locfileid: "58884165"
     ![Проверка обновлений для расширения][check-for-extension-update]
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Включить Profiler и просмотреть трассировку](profiler-overview.md?toc=/azure/azure-monitor/toc.json)
+[Профилирование приложений в рабочей среде Azure с помощью Application Insights Profiler](profiler-overview.md?toc=/azure/azure-monitor/toc.json)
 
 [profiler-on-demand]: ./media/profiler-settings/Profiler-on-demand.png
 [configure-profiler-entry]: ./media/profiler-settings/configure-profiler-entry.png

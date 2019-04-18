@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/17/2018
 ms.author: barclayn
 ms.openlocfilehash: f872c61ad0597d2307cd244668fdfc258f7a45cb
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58895692"
 ---
 # <a name="azure-identity-management-and-access-control-security-best-practices"></a>Рекомендации по обеспечению безопасности за счет управления удостоверениями и контроля доступа Azure
@@ -183,21 +183,21 @@ ms.locfileid: "58895692"
 
 [Обеспечение отдельных учетных записей пользователей и перенаправление почты для глобальных учетных записей администратора](../active-directory/users-groups-roles/directory-admin-roles-secure.md)  
 
-[Убедитесь, что пароли административных учетных записей был недавно изменен](../active-directory/users-groups-roles/directory-admin-roles-secure.md#ensure-the-passwords-of-administrative-accounts-have-recently-changed)  
+[Проверка того, что пароли административных учетных записей недавно изменялись](../active-directory/users-groups-roles/directory-admin-roles-secure.md#ensure-the-passwords-of-administrative-accounts-have-recently-changed)  
 
 [Включение синхронизации хэша паролей](../active-directory/users-groups-roles/directory-admin-roles-secure.md#turn-on-password-hash-synchronization)  
 
-[Требовать многофакторную проверку подлинности для пользователей во всех привилегированных ролях, а также раскрытых пользователей](../active-directory/users-groups-roles/directory-admin-roles-secure.md#require-multi-factor-authentication-mfa-for-users-in-all-privileged-roles-as-well-as-exposed-users)  
+[Настройка принудительного прохождения многофакторной идентификации для пользователей во всех привилегированных ролях, а также пользователей важных учетных записей](../active-directory/users-groups-roles/directory-admin-roles-secure.md#require-multi-factor-authentication-mfa-for-users-in-all-privileged-roles-as-well-as-exposed-users)  
 
 [Получение оценки безопасности Office 365 (если используется Office 365)](../active-directory/users-groups-roles/directory-admin-roles-secure.md#obtain-your-office-365-secure-score-if-using-office-365)  
 
-[Ознакомление с руководством по обеспечению безопасности и соответствия Office 365 (при использовании Office 365)](../active-directory/users-groups-roles/directory-admin-roles-secure.md#review-the-office-365-security-and-compliance-guidance-if-using-office-365)  
+[Ознакомление с руководством по обеспечению безопасности и соответствия Office 365 (при использовании Office 365)](../active-directory/users-groups-roles/directory-admin-roles-secure.md#review-the-office-365-security-and-compliance-guidance-if-using-office-365)  
 
-[Настройка мониторинга активности в Office 365 (при использовании Office 365)](../active-directory/users-groups-roles/directory-admin-roles-secure.md#configure-office-365-activity-monitoring-if-using-office-365)  
+[Настройка мониторинга активности в Office 365 (при использовании Office 365)](../active-directory/users-groups-roles/directory-admin-roles-secure.md#configure-office-365-activity-monitoring-if-using-office-365)  
 
 [Определение владельцев плана реагирования на инциденты или чрезвычайные ситуации](../active-directory/users-groups-roles/directory-admin-roles-secure.md#establish-incidentemergency-response-plan-owners)  
 
-[Безопасные локальных привилегированных учетных записей](../active-directory/users-groups-roles/directory-admin-roles-secure.md#turn-on-password-hash-synchronization)
+[Защита локальных привилегированных учетных записей](../active-directory/users-groups-roles/directory-admin-roles-secure.md#turn-on-password-hash-synchronization)
 
 Если не уделять должное внимание защите привилегированного доступа, может оказаться, что привилегированные роли назначаются слишком большому количеству пользователей, которые становятся все более уязвимыми для атак. Злоумышленники, в том числе киберпреступники, часто совершают атаки на учетные записи администраторов и другие объекты привилегированного доступа, чтобы получить доступ к конфиденциальным данным и системам путем кражи учетных данных.
 

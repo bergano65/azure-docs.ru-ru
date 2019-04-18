@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 03/12/2019
 ms.author: aljo
 ms.openlocfilehash: 400e4653800d445506d4854e70034a707dcc4629
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59049187"
 ---
 # <a name="scale-a-cluster-in-or-out"></a>увеличение или уменьшение масштаба кластера;
@@ -195,7 +195,7 @@ else
 }
 ```
 
-В **sfctl** кода ниже, следующая команда используется для получения **имя узла** значение последнего созданного узла: `sfctl node list --query "sort_by(items[*], &name)[-1].name"`
+В коде **sfctl** ниже следующая команда используется для получения значений **имени узла** последнего созданного узла: `sfctl node list --query "sort_by(items[*], &name)[-1].name"`
 
 ```azurecli
 # Inform the node that it is going to be removed
@@ -263,7 +263,7 @@ az vmss scale -g sfclustertutorialgroup -n nt1vm --new-capacity 5
 
 * [Планирование емкости кластера](service-fabric-cluster-capacity.md)
 * [Обновления кластера](service-fabric-cluster-upgrade.md)
-* [Секции службы с отслеживанием состояния для максимального масштабирования](service-fabric-concepts-partitioning.md)
+* [Секционирование служб с отслеживанием состояния для максимального масштабирования](service-fabric-concepts-partitioning.md)
 
 <!--Image references-->
 [BrowseServiceFabricClusterResource]: ./media/service-fabric-cluster-scale-up-down/BrowseServiceFabricClusterResource.png

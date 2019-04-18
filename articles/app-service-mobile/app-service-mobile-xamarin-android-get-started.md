@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: crdun
 ms.openlocfilehash: 29efa963a254913e3d4744ade1d161c5c8ce42e4
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58893356"
 ---
 # <a name="create-a-xamarinandroid-app"></a>Создание приложения Xamarin.Android
@@ -71,8 +71,8 @@ ms.locfileid: "58893356"
 Обратите внимание, что все пакеты поддержки, на которые содержатся ссылки в проекте Android, должны быть одной версии. [Пакет NuGet для мобильных приложений Azure](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) имеет зависимость `Xamarin.Android.Support.CustomTabs` для платформы Android, поэтому если в проекте используются пакеты поддержки более новой версии, во избежание конфликтов необходимо установить требуемую версию пакета.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Добавление автономной синхронизации в приложение](app-service-mobile-xamarin-android-get-started-offline-data.md)
-* [Добавьте в приложения проверку подлинности](app-service-mobile-xamarin-android-get-started-users.md)
+* [Включение автономной синхронизации для мобильного приложения Xamarin.Android](app-service-mobile-xamarin-android-get-started-offline-data.md)
+* [Добавление аутентификации в приложение](app-service-mobile-xamarin-android-get-started-users.md)
 * [Добавление push-уведомлений в приложение Xamarin.Android](app-service-mobile-xamarin-android-get-started-push.md)
 * [Использование управляемого клиента для мобильных приложений Azure](app-service-mobile-dotnet-how-to-use-client-library.md)
 

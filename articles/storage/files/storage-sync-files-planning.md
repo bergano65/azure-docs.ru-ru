@@ -9,10 +9,10 @@ ms.date: 2/7/2019
 ms.author: wgries
 ms.subservice: files
 ms.openlocfilehash: ad3b5a1d684c500eff3d20832d7aa290a13849b9
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58918643"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Планирование развертывания службы синхронизации файлов Azure
@@ -172,7 +172,7 @@ ms.locfileid: "58918643"
 **Версия агента 5.0.2.0**   
 Дедупликация данных поддерживается в томах с включенным распределением по уровням в облаке в Windows Server 2016 и Windows Server 2019. Включив дедупликацию в томе с включенным распределением по уровням в облаке, вы можете кэшировать больше файлов локально без выделения дополнительного объема памяти.
 
-**Windows Server 2012 R2 или более старые версии агента**  
+**Windows Server 2012 R2 или более ранняя версия агента**  
 Для томов без распределения по уровням облака служба синхронизации файлов Azure поддерживает включение дедупликации данных Windows Server.
 
 ### <a name="distributed-file-system-dfs"></a>Распределенная файловая система (DFS)
@@ -293,8 +293,8 @@ ms.locfileid: "58918643"
 [!INCLUDE [storage-sync-files-agent-update-policy](../../../includes/storage-sync-files-agent-update-policy.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Рассмотрим параметры брандмауэра и прокси-сервера](storage-sync-files-firewall-and-proxy.md)
+* [Параметры брандмауэра и прокси-сервера Синхронизации файлов Azure](storage-sync-files-firewall-and-proxy.md)
 * [Планирование развертывания службы файлов Azure](storage-files-planning.md)
-* [Развертывание файлов Azure](storage-files-deployment-guide.md)
-* [Развертывание Синхронизации файлов Azure](storage-sync-files-deployment-guide.md)
+* [Как развернуть службу файлов Azure](storage-files-deployment-guide.md)
+* [Как развернуть службу синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md)
 * [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)
