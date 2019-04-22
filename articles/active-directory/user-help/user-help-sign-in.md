@@ -14,10 +14,10 @@ ms.author: lizross
 ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 60e4d9a4cb555dfbc9f05961487a8f794d19e1bf
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59268364"
 ---
 # <a name="sign-in-using-two-step-verification-or-security-info"></a>Вход с помощью двухфакторной проверки подлинности или сведений для защиты
@@ -26,7 +26,7 @@ ms.locfileid: "59268364"
 > [!Note]
 > Если вы используете процедуру двухфакторной проверки подлинности, необходимо настроить методы проверки подлинности, следуя указаниям в [этой статье](multi-factor-authentication-end-user-first-time.md).
 > 
-> Если администратор включил функцию использования сведений для защиты, необходимо настроить методы проверки подлинности, выполняя пошаговые инструкции из этих статей:<ul><li>[Настройка сведения о безопасности для использования приложения для проверки подлинности](security-info-setup-auth-app.md)</li><li>[Настроить сведения о безопасности, чтобы использовать обмен текстовыми сообщениями](security-info-setup-text-msg.md)</li><li>[Настройка сведения о безопасности для использования телефонный звонок](security-info-setup-phone-number.md)</li></ul>
+> Если администратор включил функцию использования сведений для защиты, необходимо настроить методы проверки подлинности, выполняя пошаговые инструкции из этих статей:<ul><li>[Настройка использования приложения проверки подлинности в сведениях для защиты (предварительная версия)](security-info-setup-auth-app.md)</li><li>[Настройка использования обмена текстовыми сообщениями в сведениях для защиты (предварительная версия)](security-info-setup-text-msg.md)</li><li>[Настройка использования телефонного звонка в сведениях для защиты (предварительная версия)](security-info-setup-phone-number.md)</li></ul>
 
 ## <a name="sign-in-using-an-authenticator-app-notification-on-your-mobile-device"></a>Вход с помощью уведомления от приложения проверки подлинности на мобильном устройстве
 

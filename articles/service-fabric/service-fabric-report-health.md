@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 2/28/2018
 ms.author: oanapl
 ms.openlocfilehash: 49ebf4ab95816a3da2f74a464b12b46de6228456
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59280559"
 ---
 # <a name="add-custom-service-fabric-health-reports"></a>Добавление настраиваемых отчетов о работоспособности Service Fabric
@@ -304,13 +304,13 @@ HealthEvents          :
 ## <a name="next-steps"></a>Дальнейшие действия
 На основе данных о работоспособности создатели служб и администраторы кластеров или приложений могут решить, как использовать полученные сведения. Например, они могут настроить оповещения на основе состояния работоспособности для выявления серьезных проблем, которые могут вызвать простои. Кроме того, администраторы могут настроить системы восстановления, чтобы устранять неполадки автоматически.
 
-[Общие сведения о работоспособности Service Fabric мониторинг](service-fabric-health-introduction.md)
+[Общие сведения о наблюдении за работоспособностью системы в Service Fabric](service-fabric-health-introduction.md)
 
 [Просмотр отчетов о работоспособности Service Fabric](service-fabric-view-entities-aggregated-health.md)
 
-[Как отчеты и проверка работоспособности службы](service-fabric-diagnostics-how-to-report-and-check-service-health.md)
+[Проверка работоспособности службы и оповещение о проблемах](service-fabric-diagnostics-how-to-report-and-check-service-health.md)
 
-[Используйте отчеты о работоспособности системы для устранения неполадок](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
+[Использование отчетов о работоспособности системы для устранения неполадок](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
 
 [Мониторинг и диагностика состояния служб в локальной среде разработки](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md)
 

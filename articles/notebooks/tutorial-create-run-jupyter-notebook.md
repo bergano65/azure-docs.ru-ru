@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/11/2019
 ms.author: kraigb
 ms.openlocfilehash: d5ccf3e9f35a8d35387962278577333ff92ff02b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59258544"
 ---
 # <a name="tutorial-create-and-run-a-jupyter-notebook-with-python"></a>Руководство. Создание и запуск записной книжки Jupyter с помощью Python
@@ -128,7 +128,7 @@ ms.locfileid: "59258544"
 1. Так как файл *requirements.txt* указан в параметрах среды, отобразится сообщение "Waiting for your container to finish being prepared" (Ожидание завершения подготовки контейнера). Можно нажать кнопку **ОК**, чтобы закрыть сообщение и продолжить работу в записной книжке, но пока среда полностью не настроена, ячейки кода нельзя выполнить.
 1. Записная книжка откроется в интерфейсе Jupyter с одной пустой ячейкой кода по умолчанию.
 
-    [![Initial представление записной книжки в записных книжках Azure](media/tutorial/tutorial-new-notebook.png)](media/tutorial/tutorial-new-notebook.png#lightbox)
+    [![Первоначальный вид новой записной книжки в службе "Записные книжки Azure"](media/tutorial/tutorial-new-notebook.png)](media/tutorial/tutorial-new-notebook.png#lightbox)
 
 ## <a name="tour-the-notebook-interface"></a>Обзор интерфейса записной книжки
 
@@ -144,7 +144,7 @@ ms.locfileid: "59258544"
 (F) Индикатор, показывающий, является ли записная книжка доверенной (значение по умолчанию — **Not Trusted** (Не является доверенной)).
 (G) Ядро, используемое для запуска записной книжки, с индикатором активности.
 
-[![Pвичный областей пользовательского интерфейса Jupyter](media/tutorial/tutorial-notebook-ui.png)](media/tutorial/tutorial-notebook-ui.png#lightbox)
+[![Основные области пользовательского интерфейса Jupyter](media/tutorial/tutorial-notebook-ui.png)](media/tutorial/tutorial-notebook-ui.png#lightbox)
 
 В Jupyter предоставляется встроенный обзор основных элементов пользовательского интерфейса. Чтобы начать обзор, выберите команду **Help** > **User Interface Tour** (Справка > Обзор пользовательского интерфейса) и поочередно выберите всплывающие окна.
 
@@ -421,12 +421,12 @@ ms.locfileid: "59258544"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Изучите примеры записных книжек](azure-notebooks-samples.md)
+- [Обзор примеров записных книжек](azure-notebooks-samples.md)
 
 Статьи с инструкциями, посвященные таким темам:
 
 - [Создание и клонирование проектов](create-clone-jupyter-notebooks.md)
-- [Настройка и управление проектами](configure-manage-azure-notebooks-projects.md)
+- [Администрирование и настройка проектов](configure-manage-azure-notebooks-projects.md)
 - [Установка пакетов из записной книжки](install-packages-jupyter-notebook.md)
 - [Представление слайд-шоу](present-jupyter-notebooks-slideshow.md)
 - [Работа с файлами данных](work-with-project-data-files.md)

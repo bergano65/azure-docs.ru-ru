@@ -13,10 +13,10 @@ ms.reviewer: sasubram
 ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4d4466e4ac7a4e818da6332254e3094eccbaf2b4
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59257609"
 ---
 # <a name="properties-of-an-azure-active-directory-b2b-collaboration-user"></a>Свойства пользователя службы совместной работы Azure Active Directory B2B
@@ -105,6 +105,6 @@ ms.locfileid: "59257609"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Что такое служба совместной работы Azure AD B2B](what-is-b2b.md)
-* [Маркеры пользователя службы совместной работы B2B](user-token.md)
-* [Сопоставление утверждений пользователя службы совместной работы B2B](claims-mapping.md)
+* [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
+* [Основные сведения о токенах пользователей в службе совместной работы Azure Active Directory B2B](user-token.md)
+* [Сопоставление утверждений пользователя службы совместной работы B2B в Azure Active Directory](claims-mapping.md)

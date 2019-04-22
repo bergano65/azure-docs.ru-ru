@@ -1,5 +1,5 @@
 ---
-title: Учебник. Настройка Bonusly для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка Bonusly для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Сведения о настройке Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в Bonusly.
 services: active-directory
 documentationcenter: ''
@@ -17,20 +17,20 @@ ms.date: 03/27/2019
 ms.author: v-wingf-msft
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4ad0ee590572dbc92e67be9f84ffc65afc3e8473
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59278740"
 ---
-# <a name="tutorial-configure-bonusly-for-automatic-user-provisioning"></a>Учебник. Настройка Bonusly для автоматической подготовки пользователей
+# <a name="tutorial-configure-bonusly-for-automatic-user-provisioning"></a>Руководство по Настройка Bonusly для автоматической подготовки пользователей
 
 В этом руководстве описаны шаги, которые нужно выполнить в Bonusly и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отзыва пользователей и групп в Bonusly.
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
@@ -45,7 +45,7 @@ ms.locfileid: "59278740"
 
 Перед настройкой Bonusly для автоматической подготовки пользователей в Azure AD необходимо добавить Bonusly из коллекции приложений Azure AD в список управляемых приложений SaaS.
 
-**Чтобы добавить Bonusly из коллекции приложений Azure AD, выполните следующие действия.**
+**Чтобы добавить Bonusly из коллекции приложений Azure AD, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -69,7 +69,7 @@ ms.locfileid: "59278740"
 
 Перед настройкой и включением автоматической подготовки пользователей нужно решить, какие пользователи или группы в Azure AD должны иметь доступ к Bonusly. Когда данный вопрос будет решен, этих пользователей или группы можно будет назначить приложению Bonusly, следуя инструкциям:
 
-* [Назначение пользователя или группы корпоративному приложению](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
+* [Назначение корпоративному приложению пользователя или группы](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
 
 ### <a name="important-tips-for-assigning-users-to-bonusly"></a>Важные рекомендации по назначению пользователей в Bonusly
 
@@ -128,7 +128,7 @@ ms.locfileid: "59278740"
 
     ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/EmailNotification.png)
 
-10. Нажмите кнопку **Сохранить**.
+10. Выберите команду **Сохранить**.
 
 11. В разделе **Сопоставления** выберите **Synchronize Azure Active Directory Users to Bonusly** (Синхронизировать пользователей Azure Active Directory с Bonusly).
 
@@ -163,7 +163,7 @@ ms.locfileid: "59278740"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 
 <!--Image references-->
 [1]: ./media/bonusly-provisioning-tutorial/tutorial_general_01.png

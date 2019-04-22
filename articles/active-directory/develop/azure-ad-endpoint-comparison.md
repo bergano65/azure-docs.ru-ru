@@ -19,10 +19,10 @@ ms.reviewer: hirsin, andret, jmprieur, sureshja, jesakowi, lenalepa, kkrishna, d
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4dd443c95e8cf6dbddd66e5531b182469a118e4c
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59260737"
 ---
 # <a name="comparing-the-microsoft-identity-platform-endpoint-and-azure-ad-v10-endpoint"></a>Сравнение платформы удостоверений Microsoft endpoint и конечная точка Azure AD версии 1.0
@@ -143,7 +143,7 @@ client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
 
 ### <a name="restrictions-on-redirect-urls"></a>Ограничения для URL-адресов перенаправления
 
-Приложения, зарегистрированные для платформы Microsoft identity, ограничены определенным набором значений URL-адрес перенаправления. URL-адрес перенаправления для веб-приложений и служб должен начинаться со схемы `https`, и во всех его значениях должен использоваться один домен DNS.  Система регистрации сравнивает полное DNS-имя существующего URL-адреса перенаправления и DNS-имя добавляемого URL-адреса перенаправления. `http://localhost` также поддерживается в качестве URL-адрес перенаправления.  
+Приложения, зарегистрированные для платформы Microsoft identity, ограничены определенным набором значений URL-адрес перенаправления. URL-адрес перенаправления для веб-приложений и служб должен начинаться со схемы `https`, и во всех его значениях должен использоваться один домен DNS.  Система регистрации сравнивает полное DNS-имя существующего URL-адреса перенаправления и DNS-имя добавляемого URL-адреса перенаправления. `http://localhost` также поддерживается в качестве URL-адреса перенаправления.  
 
 Запрос на добавление DNS-имени завершится ошибкой при выполнении любого из следующих условий.  
 

@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: jingwang
 ms.openlocfilehash: 3c1bb38eb12ce77d172257706cd458cebda4bd8c
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59260754"
 ---
 # <a name="managed-identity-for-data-factory"></a>Управляемое удостоверение для Фабрики данных
@@ -192,6 +192,6 @@ Type                  : ServicePrincipal
 См. следующие разделы, которые вводят, когда и как использовать фабрику данных управляемого удостоверения:
 
 - [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md)
-- [Копирование данных в Azure Data Lake Store, с помощью управляемых удостоверений для проверки подлинности ресурсов Azure](connector-azure-data-lake-store.md)
+- [Копирование данных в Azure Data Lake Storage Gen1 и из него с помощью фабрики данных Azure](connector-azure-data-lake-store.md)
 
 См. в разделе [удостоверений, управляемых Azure ресурсы Обзор](/azure/active-directory/managed-identities-azure-resources/overview) для основан на дополнительные сведения об управляемых удостоверений для ресурсов Azure, какая фабрика данных управляемого удостоверения. 

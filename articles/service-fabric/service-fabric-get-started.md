@@ -15,15 +15,15 @@ ms.workload: NA
 ms.date: 04/02/2019
 ms.author: aljo
 ms.openlocfilehash: 45d5d1b4e050d01b003b6321e1af44c0da762e19
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59275507"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 > [!div class="op_single_selector"]
-> * [ Windows](service-fabric-get-started.md) 
+> * [Windows](service-fabric-get-started.md) 
 > * [Linux](service-fabric-get-started-linux.md)
 > * [OSX](service-fabric-get-started-mac.md)
 > 
@@ -92,9 +92,9 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
 Среда разработки настроена, и вы готовы к созданию и запуску собственных приложений.
 
 * [Узнайте, как создавать, развертывать и администрировать приложения](service-fabric-tutorial-create-dotnet-app.md)
-* [Дополнительные сведения о моделях программирования: Reliable Services и Reliable Actors](service-fabric-choose-framework.md)
-* [Ознакомьтесь с примерами кода Service Fabric на сайте GitHub](https://aka.ms/servicefabricsamples)
-* [Визуализация кластера с помощью Service Fabric Explorer](service-fabric-visualizing-your-cluster.md)
+* [Общие сведения о модели программирования Service Fabrics](service-fabric-choose-framework.md)
+* [Ознакомление с примерами кода Service Fabric на GitHub](https://aka.ms/servicefabricsamples)
+* [Визуализация кластера с помощью обозревателя Service Fabric](service-fabric-visualizing-your-cluster.md)
 * [Сведения о вариантах поддержки Service Fabric](service-fabric-support.md)
 
 [1]: https://azure.microsoft.com/campaigns/service-fabric/ "Страница кампании Service Fabric"

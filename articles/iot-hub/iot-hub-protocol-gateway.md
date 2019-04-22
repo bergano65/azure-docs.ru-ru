@@ -9,10 +9,10 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/11/2017
 ms.openlocfilehash: 9dbb7905c2a0fed65ede610577e0fa11a1deef92
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59276241"
 ---
 # <a name="support-additional-protocols-for-iot-hub"></a>Поддержка дополнительных протоколов для Центра Интернета вещей
@@ -35,14 +35,14 @@ ms.locfileid: "59276241"
 
 Чтобы подробнее узнать о шлюзе протокола IoT Azure и о том, как развернуть его для вашего решения IoT, обратитесь к следующим документам и ресурсам:
 
-* [Azure репозиторий шлюза протокола IoT на GitHub](https://github.com/Azure/azure-iot-protocol-gateway/blob/master/README.md)
+* [Репозиторий шлюза протокола IoT Azure в GitHub](https://github.com/Azure/azure-iot-protocol-gateway/blob/master/README.md)
 
-* [Руководство разработчика шлюза протокола для Azure IoT](https://github.com/Azure/azure-iot-protocol-gateway/blob/master/docs/DeveloperGuide.md)
+* [Руководство разработчика для шлюза протокола IoT Azure](https://github.com/Azure/azure-iot-protocol-gateway/blob/master/docs/DeveloperGuide.md)
 
 Дополнительные сведения о планировании развертывания Центра Интернета вещей см. в следующих руководствах:
 
-* [Сравнение с Центрами событий](iot-hub-compare-event-hubs.md)
+* [Сравнение с концентраторами событий](iot-hub-compare-event-hubs.md)
 
 * [Масштабирование, высокий уровень доступности и аварийного восстановления](iot-hub-scaling.md)
 
-* [Руководство разработчика для центра Интернета вещей](iot-hub-devguide.md)
+* [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide.md)

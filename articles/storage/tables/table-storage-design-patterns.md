@@ -9,10 +9,10 @@ ms.date: 04/08/2019
 ms.author: tamram
 ms.subservice: tables
 ms.openlocfilehash: a428abd95f955a16d03c4ab86f05644f6db65da5
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59271634"
 ---
 # <a name="table-design-patterns"></a>Шаблоны для разработки таблиц
@@ -71,8 +71,8 @@ ms.locfileid: "59271634"
 ### <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 При реализации данного шаблона можно принять во внимание следующие шаблоны и рекомендации:  
 
-* [Шаблон вторичного индекса в разных разделах](#inter-partition-secondary-index-pattern)
-* [Шаблон составного ключа](#compound-key-pattern)
+* [Шаблон вторичного индекса в разных разделах;](#inter-partition-secondary-index-pattern)
+* [Шаблон составного ключа;](#compound-key-pattern)
 * Транзакции группы сущностей
 * [Работа с разными типами сущностей](#working-with-heterogeneous-entity-types)
 
@@ -125,9 +125,9 @@ ms.locfileid: "59271634"
 ### <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 При реализации данного шаблона можно принять во внимание следующие шаблоны и рекомендации:  
 
-* [Шаблон для согласованных транзакций](#eventually-consistent-transactions-pattern)  
-* [Шаблон вторичного индекса внутри раздела](#intra-partition-secondary-index-pattern)  
-* [Шаблон составного ключа](#compound-key-pattern)  
+* [Шаблон для согласованных транзакций;](#eventually-consistent-transactions-pattern)  
+* [Шаблон вторичного индекса внутри раздела;](#intra-partition-secondary-index-pattern)  
+* [Шаблон составного ключа;](#compound-key-pattern)  
 * Транзакции группы сущностей  
 * [Работа с разными типами сущностей](#working-with-heterogeneous-entity-types)  
 
@@ -197,7 +197,7 @@ ms.locfileid: "59271634"
 * Создание сущностей индексов в одном разделе с сущностями сотрудников.  
 * Создание сущностей индексов в отдельном разделе или таблице.  
 
-<u>Вариант #1. Использование хранилища BLOB-объектов</u>  
+<u>Вариант 1. Использование хранилища BLOB-объектов</u>  
 
 В этом случае вы создаете большой двоичный объект для каждой уникальной фамилии, а затем в каждом таком объекте сохраняете список значений **PartitionKey** (отдел) и **RowKey** (идентификатор сотрудника) для сотрудников с этой фамилией. При добавлении или удалении сотрудника следует убедиться, что содержимое соответствующего большого двоичного объекта согласовано с сущностями сотрудников.  
 
@@ -249,8 +249,8 @@ ms.locfileid: "59271634"
 ### <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 При реализации данного шаблона можно принять во внимание следующие шаблоны и рекомендации:  
 
-* [Шаблон составного ключа](#compound-key-pattern)  
-* [Шаблон для согласованных транзакций](#eventually-consistent-transactions-pattern)  
+* [Шаблон составного ключа;](#compound-key-pattern)  
+* [Шаблон для согласованных транзакций;](#eventually-consistent-transactions-pattern)  
 * Транзакции группы сущностей  
 * [Работа с разными типами сущностей](#working-with-heterogeneous-entity-types)  
 
@@ -263,7 +263,7 @@ ms.locfileid: "59271634"
 ![Сущность отдела и сущность сотрудника](media/storage-table-design-guide/storage-table-design-IMAGE16.png)
 
 ### <a name="solution"></a>Решение
-Вместо хранения данных в двух отдельных сущностях денормализуйте данные и сохраните копию со сведениями о руководителе в сущности отдела. Например:  
+Вместо хранения данных в двух отдельных сущностях денормализуйте данные и сохраните копию со сведениями о руководителе в сущности отдела. Например:   
 
 ![Сущность отдела](media/storage-table-design-guide/storage-table-design-IMAGE17.png)
 
@@ -281,7 +281,7 @@ ms.locfileid: "59271634"
 ### <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 При реализации данного шаблона можно принять во внимание следующие шаблоны и рекомендации:  
 
-* [Шаблон составного ключа](#compound-key-pattern)  
+* [Шаблон составного ключа;](#compound-key-pattern)  
 * Транзакции группы сущностей  
 * [Работа с разными типами сущностей](#working-with-heterogeneous-entity-types)
 
@@ -327,7 +327,7 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 
 * Транзакции группы сущностей  
 * [Работа с разными типами сущностей](#working-with-heterogeneous-entity-types)  
-* [Шаблон для согласованных транзакций](#eventually-consistent-transactions-pattern)  
+* [Шаблон для согласованных транзакций;](#eventually-consistent-transactions-pattern)  
 
 ## <a name="log-tail-pattern"></a>Шаблон для заключительного фрагмента журнала
 Извлечение *n* сущностей, недавно добавленных в раздел, с помощью значения **RowKey** , выполняющего сортировку по дате и времени в обратном порядке.  
@@ -362,7 +362,7 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 ### <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 При реализации данного шаблона можно принять во внимание следующие шаблоны и рекомендации:  
 
-* [Добавить в начало / append антишаблон](#prepend-append-anti-pattern)  
+* [Анти-шаблон, предусматривающий добавление в начало или конец;](#prepend-append-anti-pattern)  
 * [Извлечение сущностей.](#retrieving-entities)  
 
 ## <a name="high-volume-delete-pattern"></a>Шаблон для удаления больших объемов сущностей
@@ -480,8 +480,8 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 ### <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 При реализации данного шаблона можно принять во внимание следующие шаблоны и рекомендации:  
 
-* [Шаблон для согласованных транзакций](#eventually-consistent-transactions-pattern)  
-* [Шаблон для масштабных сущностей](#wide-entities-pattern)
+* [Шаблон для согласованных транзакций;](#eventually-consistent-transactions-pattern)  
+* [Шаблон для масштабных сущностей.](#wide-entities-pattern)
 
 <a name="prepend-append-anti-pattern"></a>
 
@@ -512,8 +512,8 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 ### <a name="related-patterns-and-guidance"></a>Связанные шаблоны и рекомендации
 При реализации данного шаблона можно принять во внимание следующие шаблоны и рекомендации:  
 
-* [Шаблон составного ключа](#compound-key-pattern)  
-* [Шаблон для заключительного фрагмента журнала](#log-tail-pattern)  
+* [Шаблон составного ключа;](#compound-key-pattern)  
+* [Шаблон для заключительного фрагмента журнала;](#log-tail-pattern)  
 * [Изменение сущностей.](#modifying-entities)  
 
 ## <a name="log-data-anti-pattern"></a>Анти-шаблон для данных журнала
@@ -711,7 +711,7 @@ foreach (var e in entities)
 <tr>
 <th>PartitionKey</th>
 <th>RowKey</th>
-<th>Метка времени</th>
+<th>Timestamp</th>
 <th></th>
 </tr>
 <tr>
@@ -723,8 +723,8 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Возраст</th>
-<th>Электронное письмо</th>
+<th>Age</th>
+<th>Email</th>
 </tr>
 <tr>
 <td></td>
@@ -743,8 +743,8 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Возраст</th>
-<th>Электронное письмо</th>
+<th>Age</th>
+<th>Email</th>
 </tr>
 <tr>
 <td></td>
@@ -780,8 +780,8 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Возраст</th>
-<th>Электронное письмо</th>
+<th>Age</th>
+<th>Email</th>
 </tr>
 <tr>
 <td></td>
@@ -803,7 +803,7 @@ foreach (var e in entities)
 <tr>
 <th>PartitionKey</th>
 <th>RowKey</th>
-<th>Метка времени</th>
+<th>Timestamp</th>
 <th></th>
 </tr>
 <tr>
@@ -816,8 +816,8 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Возраст</th>
-<th>Электронное письмо</th>
+<th>Age</th>
+<th>Email</th>
 </tr>
 <tr>
 <td>Employee</td>
@@ -838,8 +838,8 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Возраст</th>
-<th>Электронное письмо</th>
+<th>Age</th>
+<th>Email</th>
 </tr>
 <tr>
 <td>Employee</td>
@@ -862,7 +862,7 @@ foreach (var e in entities)
 <th>EmployeeCount</th>
 </tr>
 <tr>
-<td>Отдел</td>
+<td>Department</td>
 <td></td>
 <td></td>
 </tr>
@@ -879,8 +879,8 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Возраст</th>
-<th>Электронное письмо</th>
+<th>Age</th>
+<th>Email</th>
 </tr>
 <tr>
 <td>Employee</td>
@@ -1109,6 +1109,6 @@ private static async Task SimpleEmployeeUpsertAsync(
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Моделирование отношений](table-storage-design-modeling.md)
-- [Разработка для запросов](table-storage-design-for-query.md)
-- [Шифрование данных таблицы](table-storage-design-encrypt-data.md)
-- [Разработка для изменения данных](table-storage-design-for-modification.md)
+- [Проектирование запросов](table-storage-design-for-query.md)
+- [Шифрование данных таблиц](table-storage-design-encrypt-data.md)
+- [Проектирование изменения данных](table-storage-design-for-modification.md)

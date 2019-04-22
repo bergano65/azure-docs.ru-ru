@@ -9,10 +9,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/28/2017
 ms.openlocfilehash: f11034a4970e3fb95333310af82a6b2a2551f1eb
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59257286"
 ---
 # <a name="scale-your-stream-analytics-job-with-azure-machine-learning-functions"></a>Масштабирование заданий Stream Analytics с помощью функций машинного обучения Azure
@@ -74,14 +74,14 @@ ms.locfileid: "59257286"
 
 | Размер пакета (задержка службы машинного обучения) | 500 (200 мс) | 1000 (200 мс) | 5000 (250 мс) | 10 000 (300 мс) | 25 000 (500 мс) |
 | --- | --- | --- | --- | --- | --- |
-| **1 ЕП** |2500 |5 000 |20 000 |30 000 |50 000 |
-| **3 SU** |2500 |5 000 |20 000 |30 000 |50 000 |
-| **6 SU** |2500 |5 000 |20 000 |30 000 |50 000 |
-| **12 SU** |5 000 |10 000 |40 000 |60 000 |100 000 |
-| **18 SU** |7500 |15 000 |60 000 |90 000 |150 000 |
-| **24 SU** |10 000 |20 000 |80 000 |120 000 |200 000 |
+| **1 единица хранения** |2500 |5 000 |20 000 |30 000 |50 000 |
+| **3 единицы хранения** |2500 |5 000 |20 000 |30 000 |50 000 |
+| **6 единиц хранения** |2500 |5 000 |20 000 |30 000 |50 000 |
+| **12 единиц хранения** |5 000 |10 000 |40 000 |60 000 |100 000 |
+| **18 единиц хранения** |7500 |15 000 |60 000 |90 000 |150 000 |
+| **24 единицы хранения** |10 000 |20 000 |80 000 |120 000 |200 000 |
 | **…** |… |… |… |… |… |
-| **60 SU** |25 000 |50 000 |200 000 |300 000 |500 000 |
+| **60 единиц хранения** |25 000 |50 000 |200 000 |300 000 |500 000 |
 
 Теперь у вас есть четкое представление о том, как работают функции машинного обучения в Stream Analytics. Скорее всего, вы также знаете, что задания Stream Analytics извлекают данные из источников данных и каждая операция извлечения возвращает пакет событий, которые обрабатывает задание Stream Analytics. Каким образом эта модель извлечения данных влияет на запросы к веб-службе машинного обучения?
 
@@ -112,7 +112,7 @@ ms.locfileid: "59257286"
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о службе Stream Analytics см. в следующих статьях:
 
-* [Начало работы с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
-* [Масштабирование заданий Azure Stream Analytics](stream-analytics-scale-jobs.md)
+* [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
+* [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
 * [Справочник по языку запросов Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-* [Справочник по API REST управления Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+* [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

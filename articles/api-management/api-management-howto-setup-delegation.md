@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 796bea3c64ef7fc03367707461d13e0ea2514b8b
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59051762"
 ---
 # <a name="how-to-delegate-user-registration-and-product-subscription"></a>Делегирование пользователю регистрации и подписки на продукт
@@ -82,9 +82,9 @@ ms.locfileid: "59051762"
 
 Помимо использования операции **SignIn**, вы можете управлять учетными записями, выполнив указанные выше действия и одну из следующих операций.
 
-* **Изменение пароля**
-* **ChangeProfile**
-* **CloseAccount**
+* **ChangePassword;**
+* **ChangeProfile;**
+* **CloseAccount.**
 
 Для операций управления учетными записями необходимо передать следующие параметры запроса.
 
@@ -141,7 +141,7 @@ ms.locfileid: "59051762"
 
 Тот же код с незначительными изменениями подходит для productId и userId.
 
-**C#код для создания хэша returnUrl**
+**Код C# для создания хэша returnUrl**
 
 ```csharp
 using System.Security.Cryptography;
@@ -184,10 +184,10 @@ var signature = digest.toString('base64');
 
 [Delegating developer sign in and sign up]: #delegate-signin-up
 [Delegating product subscription]: #delegate-product-subscription
-[Запросите маркер single-sign-on (SSO)]: https://docs.microsoft.com/rest/api/apimanagement/User/GenerateSsoUrl
+[запросите маркер единого входа (SSO)]: https://docs.microsoft.com/rest/api/apimanagement/User/GenerateSsoUrl
 [Создание пользователя]: https://docs.microsoft.com/rest/api/apimanagement/user/createorupdate
-[вызов REST API для подписки на продукт]: https://docs.microsoft.com/rest/api/apimanagement/productsubscriptions
+[вызова интерфейса REST API для подписки на продукт]: https://docs.microsoft.com/rest/api/apimanagement/productsubscriptions
 [Next steps]: #next-steps
-[Приведенный ниже пример кода]: #delegate-example-code
+[на приведенном ниже примере кода]: #delegate-example-code
 
 [api-management-delegation-signin-up]: ./media/api-management-howto-setup-delegation/api-management-delegation-signin-up.png 

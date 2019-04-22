@@ -9,10 +9,10 @@ ms.date: 04/05/2019
 ms.author: rogarana
 ms.subservice: cosmosdb-table
 ms.openlocfilehash: 840c2793928816c6346e2039a38678585f8e0bc7
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59273130"
 ---
 # <a name="perform-azure-table-storage-operations-with-azure-powershell"></a>Выполнение операций в хранилище таблиц Azure с помощью Azure PowerShell 
@@ -28,7 +28,7 @@ ms.locfileid: "59273130"
 > * добавление сущностей таблицы;
 > * запрос к таблице;
 > * удаление сущностей таблицы.
-> * Удалить таблицу
+> * Удаление таблицы
 
 В этом практическом руководстве показано, как создать учетную запись службы хранилища Azure в новой группе ресурсов, чтобы вы могли легко удалить ее при необходимости. Вы можете использовать существующую учетную запись хранения.
 
@@ -47,7 +47,7 @@ ms.locfileid: "59273130"
 Install-Module AzTable
 ```
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите в подписку Azure с помощью команды `Add-AzAccount` и следуйте инструкциям на экране.
 
@@ -75,7 +75,7 @@ $resourceGroup = "pshtablesrg"
 New-AzResourceGroup -ResourceGroupName $resourceGroup -Location $location
 ```
 
-## <a name="create-storage-account"></a>Создайте учетную запись хранения
+## <a name="create-storage-account"></a>Создать учетную запись хранения
 
 Создайте стандартную учетную запись хранения общего назначения с локально избыточным хранилищем (LRS) с помощью команды [New-AzStorageAccount](/powershell/module/az.storage/New-azStorageAccount). Не забудьте указать уникальный хранения имя учетной записи. Затем получите контекст, который представляет учетную запись хранения. Действуя в учетной записи хранения может ссылаться на контекст вместо многократно предоставлять учетные данные.
 
@@ -90,7 +90,7 @@ $storageAccount = New-AzStorageAccount -ResourceGroupName $resourceGroup `
 $ctx = $storageAccount.Context
 ```
 
-## <a name="create-a-new-table"></a>Создать таблицу
+## <a name="create-a-new-table"></a>Создание таблицы
 
 Чтобы создать таблицу, используйте [New AzStorageTable](/powershell/module/az.storage/New-AzStorageTable) командлета. В этом примере таблица называется `pshtesttable`.
 
@@ -128,7 +128,7 @@ $cloudTable = (Get-AzStorageTable –Name $tableName –Context $ctx).CloudTable
 
 [!INCLUDE [storage-table-entities-powershell-include](../../../includes/storage-table-entities-powershell-include.md)]
 
-## <a name="delete-a-table"></a>Удалить таблицу
+## <a name="delete-a-table"></a>Удаление таблицы
 
 Чтобы удалить таблицу, используйте [Remove-AzStorageTable](/powershell/module/az.storage/Remove-AzStorageTable). Этот командлет удаляет таблицу, включая все ее данные.
 
@@ -157,11 +157,11 @@ Remove-AzResourceGroup -Name $resourceGroup
 > * добавление сущностей таблицы;
 > * запрос к таблице;
 > * удаление сущностей таблицы.
-> * Удалить таблицу
+> * Удаление таблицы
 
 Дополнительные сведения см. в следующих статьях:
 
-* [Командлеты PowerShell службы хранилища](/powershell/module/az.storage#storage)
+* [Командлеты PowerShell для службы хранилища](/powershell/module/az.storage#storage)
 
 * [Работа с таблицами Azure из PowerShell - версии 2.0 модуль AzureRmStorageTable/AzTable PS](https://paulomarquesc.github.io/working-with-azure-storage-tables-from-powershell)
 

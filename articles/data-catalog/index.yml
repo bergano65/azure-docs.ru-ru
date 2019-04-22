@@ -41,4 +41,4 @@ sections:
           - title: REST
             html: <p><a href="/rest/api/datacatalog/">справочник по API REST</a></p><p><a href="/rest/api/datacatalog/data-catalog-search-syntax-reference">Справочник по синтаксису поиска</a></p>
           - title: Диспетчер ресурсов
-            html: <p><a href="/azure/templates/microsoft.datacatalog/catalogs">Шаблоны диспетчера ресурсов</a></p>
+            html: <p><a href="/azure/templates/microsoft.datacatalog/catalogs">Шаблоны Resource Manager</a></p>

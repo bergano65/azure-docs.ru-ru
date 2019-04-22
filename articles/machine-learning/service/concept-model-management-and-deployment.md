@@ -12,10 +12,10 @@ ms.author: clauren
 ms.date: 1/23/2019
 ms.custom: seodec18
 ms.openlocfilehash: 2cd2d328d33744854bc525e5ecf1dfa3b6e4bcc8
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59275448"
 ---
 # <a name="manage-deploy-and-monitor-models-with-azure-machine-learning-service"></a>Администрирование, развертывание и мониторинг моделей с помощью службы "Машинное обучение Azure"
@@ -28,12 +28,12 @@ ms.locfileid: "59275448"
 1. **Регистрация модели** в реестре, размещенном в рабочей области службы "Машинное обучение Azure"
 1. **Регистрация образа**, который связывает модель со сценарием оценки и зависимостями в переносимом контейнере. 
 1. **Развертывание** образа в виде веб-службы в облаке или на пограничных устройствах.
-1. **Мониторинг и сбор данных**
+1. **Мониторинг и сбор данных**.
 1. **Обновление** развертывания для использования нового образа.
 
 Каждый шаг может выполняться независимо друг от друга или как часть одной команды развертывания. Кроме того, развертывание можно интегрировать в **рабочий процесс CI/CD** как показано на следующем рисунке.
 
-[!['Цикл непрерывной интеграции и развертывания (CI/CD) для машинного обучения Azure "](media/concept-model-management-and-deployment/model-ci-cd.png)](media/concept-model-management-and-deployment/model-ci-cd.png#lightbox)
+[![«Машинное обучение azure непрерывной интеграции и цикл развертывания (CI/CD)»](media/concept-model-management-and-deployment/model-ci-cd.png)](media/concept-model-management-and-deployment/model-ci-cd.png#lightbox)
 
 ## <a name="step-1-register-model"></a>Шаг 1. Регистрация модели
 
@@ -75,7 +75,7 @@ ms.locfileid: "59275448"
 
 Развертывания веб-служб также доступны для поиска. Например, можно найти все развертывания конкретной модели или образа.
 
-[![Iцелевые объекты nferencing](media/concept-model-management-and-deployment/inferencing-targets.png)](media/concept-model-management-and-deployment/inferencing-targets.png#lightbox)
+[![Целевые объекты выводов](media/concept-model-management-and-deployment/inferencing-targets.png)](media/concept-model-management-and-deployment/inferencing-targets.png#lightbox)
 
 Образы можно развернуть на следующих целевых объектах развертывания в облаке:
 
