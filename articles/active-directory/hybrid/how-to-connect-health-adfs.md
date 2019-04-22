@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 92825a9ef84edc30b6b34aa875f8a207c70c8511
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59260941"
 ---
 # <a name="monitor-ad-fs-using-azure-ad-connect-health"></a>Мониторинг AD FS с помощью Azure AD Connect Health
@@ -118,7 +118,7 @@ Azure AD Connect Health для AD FS предоставляет отчет о 50
 > Каждые 12 часов в этот отчет автоматически добавляются новые данные, собранные за этот период времени. Следовательно, сведения о входе в систему в рамках последнего 12-часового интервала могут отсутствовать в отчете.
 
 ## <a name="related-links"></a>Связанные ссылки
-* [Azure AD Connect Health,](whatis-hybrid-identity-health.md)
+* [Azure AD Connect Health](whatis-hybrid-identity-health.md)
 * [Установка агента Azure AD Connect Health](how-to-connect-health-agent-install.md)
 * [Рискованные IP-адрес отчета](how-to-connect-health-adfs-risky-ip.md)
 

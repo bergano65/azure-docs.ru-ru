@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 12/04/2018
 ms.author: kraigb
 ms.openlocfilehash: b522b0bd641d0147518843b11be4cd3a1430ae20
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59265344"
 ---
 # <a name="work-with-data-files-in-azure-notebook-projects"></a>Работа с файлами данных в проектах Записных книжек Azure
@@ -120,6 +120,6 @@ wget https://raw.githubusercontent.com/petroleum101/figures/db46e7f48b8aab67a0df
 
 1. Записная книжка подготавливает один *ZIP-файл*, содержащий выбранные файлы, которые вы сохраните как обычно это делаете в браузере. Записная книжка создает *ZIP-файл* даже в том случае, если загружается один файл.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-- [Доступ к облачным данным в записной книжке](access-data-resources-jupyter-notebooks.md)
+- [Access cloud data in a notebook](access-data-resources-jupyter-notebooks.md) (Доступ к облачным данным в записной книжке)

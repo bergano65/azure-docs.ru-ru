@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: rimman
 ms.openlocfilehash: 6998db1679e67f8ac4bf7c81ea9373c66a9618ee
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
-ms.translationtype: MT
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59278570"
 ---
 # <a name="index-policy-in-azure-cosmos-db"></a>Политика индексирования в Azure Cosmos DB
@@ -70,7 +70,7 @@ Azure Cosmos DB поддерживает два режима индексиро�
 
 Дополнительные сведения об индексировании см. по следующим ссылкам:
 
-* [Обзор индексации](index-overview.md)
+* [Общие сведения об индексировании](index-overview.md)
 * [Типы индексов](index-types.md)
-* [Пути индекса](index-paths.md)
-* [Как управлять политикой индексирования](how-to-manage-indexing-policy.md)
+* [Пути индексов](index-paths.md)
+* [Управление политикой индексирования](how-to-manage-indexing-policy.md)

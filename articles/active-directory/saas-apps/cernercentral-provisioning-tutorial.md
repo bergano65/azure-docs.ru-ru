@@ -17,10 +17,10 @@ ms.date: 03/27/2019
 ms.author: asmalser-msft
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 00a967d61a5f81fc871488ea48df9cb4cf18c269
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59268608"
 ---
 # <a name="tutorial-configure-cerner-central-for-automatic-user-provisioning"></a>Руководство по Настройка Cerner Central для автоматической подготовки пользователей
@@ -43,7 +43,7 @@ ms.locfileid: "59268608"
 
 Перед настройкой и включением службы подготовки необходимо решить, какие пользователи и (или) группы в Azure AD представляют пользователей, которым нужен доступ к Cerner Central. Когда этот вопрос будет решен, этих пользователей можно будет назначить приложению Cerner Central, следуя приведенным ниже указаниям.
 
-[Назначение пользователя или группы корпоративному приложению](../manage-apps/assign-user-or-group-access-portal.md)
+[Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
 ### <a name="important-tips-for-assigning-users-to-cerner-central"></a>Важные рекомендации по назначению пользователей приложению Cerner Central
 
@@ -126,8 +126,8 @@ ms.locfileid: "59268608"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Cerner Central: Публикация данных удостоверений, с помощью Azure AD](https://wiki.ucern.com/display/public/reference/Publishing+Identity+Data+Using+Azure+AD)
-* [Руководство по По настройке Cerner Central для единого входа с Azure Active Directory](cernercentral-tutorial.md)
+* [Cerner Central: Publishing identity data using Azure AD](https://wiki.ucern.com/display/public/reference/Publishing+Identity+Data+Using+Azure+AD) (Cerner Central: публикация данных удостоверений с помощью Azure Active Directory)
+* [Руководство Интеграция Azure Active Directory с Cerner Central](cernercentral-tutorial.md)
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 

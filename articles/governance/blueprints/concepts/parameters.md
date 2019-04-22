@@ -9,10 +9,10 @@ ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
 ms.openlocfilehash: 9b5b151c62c4294563f704dc9a0cf7daeaca874f
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59279981"
 ---
 # <a name="creating-dynamic-blueprints-through-parameters"></a>Создание динамических схем с использованием параметров
@@ -76,8 +76,8 @@ ms.locfileid: "59279981"
 
 В каждом универсальном коде ресурса (URI) REST API есть переменные, которые необходимо заменить собственными значениями:
 
-- `{YourMG}` — Замените на имя вашей группы управления
-- `{subscriptionId}` -Замените идентификатор подписки
+- `{YourMG}` — замените это значение именем своей группы управления.
+- `{subscriptionId}` — замените это значение идентификатором своей подписки.
 
 ##### <a name="blueprint-level-parameter"></a>Параметр уровня схемы
 
@@ -89,7 +89,7 @@ ms.locfileid: "59279981"
   PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint?api-version=2018-11-01-preview
   ```
 
-- Тело запроса
+- Текст запроса
 
   ```json
   {
@@ -122,7 +122,7 @@ ms.locfileid: "59279981"
   PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/roleOwner?api-version=2018-11-01-preview
   ```
 
-- Тело запроса
+- Текст запроса
 
   ```json
   {
@@ -147,7 +147,7 @@ ms.locfileid: "59279981"
   PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/policyStorageTags?api-version=2018-11-01-preview
   ```
 
-- Тело запроса
+- Текст запроса
 
   ```json
   {
@@ -195,7 +195,7 @@ ms.locfileid: "59279981"
   PUT https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Blueprint/blueprintAssignments/assignMyBlueprint?api-version=2018-11-01-preview
   ```
 
-- Тело запроса
+- Текст запроса
 
   ```json
   {

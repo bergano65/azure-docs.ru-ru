@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 04/05/2019
 ms.author: helohr
 ms.openlocfilehash: 0cb4df099faad8ca482fd15cf0bb50504c1528ab
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59276394"
 ---
 # <a name="set-up-a-user-profile-share-for-a-host-pool"></a>Настройка общей папки профиля пользователя в пуле узлов
@@ -68,4 +68,4 @@ ms.locfileid: "59276394"
 | VHDLocations        | Мультистроковый параметр | «Сетевой путь для общего файлового ресурса»     |
 
 >[!IMPORTANT]
->Для помощи в защите вашей среде виртуального рабочего стола Windows в Azure, мы рекомендуем не откройте входящий порт 3389 на виртуальных машинах. Виртуальный рабочий стол Windows не требуется открыть входящий порт 3389 пользователям доступ к виртуальным машинам в пуле узлов. Если необходимо открыть порт 3389 для устранения неполадок, мы рекомендуем использовать [доступ к виртуальной Машине just-in-time](https://docs.microsoft.com/en-us/azure/security-center/security-center-just-in-time).
+>Чтобы усилить защиту среды Виртуального рабочего стола Windows в Azure, мы рекомендуем не открывать входящий порт 3389 для виртуальных машин. Виртуальный рабочий стол Windows не требует открытия входящего порта 3389, чтобы пользователи могли получить доступ к виртуальным машинам пула узла. Если вам все же нужно открыть порт 3389 для устранения неполадок, мы рекомендуем использовать[JIT-доступ к виртуальным машинам](https://docs.microsoft.com/en-us/azure/security-center/security-center-just-in-time).

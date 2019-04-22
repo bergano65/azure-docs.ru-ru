@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: anroth
 ms.openlocfilehash: 6fac6531ea0a39796de13f95aee33b30dc91f131
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59274456"
 ---
 # <a name="how-to-move-your-limited-trial-project-to-azure"></a>Как переместить проект ограниченной пробной версии в Azure
@@ -27,13 +27,13 @@ ms.locfileid: "59274456"
 
 [Скрипт переноса](https://github.com/Azure-Samples/custom-vision-move-project) позволяет повторно создать проект, загрузки, а затем загружает все теги, области и образы в текущей итерации. Она обеспечит переход с новым проектом в новой подписки и затем вы можете обучить.
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 - Вам потребуется действительная подписка Azure, связанные с учетной записью Майкрософт или учетную запись Azure Active Directory (AAD), которую необходимо использовать для входа на [концепции пользовательских веб-сайт](https://customvision.ai). 
     - Если у вас нет учетной записи Azure [создать учетную запись](https://azure.microsoft.com/free/) бесплатно.
     - Введение в основные понятия Azure подписок и ресурсов, см. в разделе [руководством для разработчиков Azure.](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide#manage-your-subscriptions).
 -  [Python](https://www.python.org/downloads/)
-- [PIP](https://pip.pypa.io/en/stable/installing/)
+- [Pip](https://pip.pypa.io/en/stable/installing/)
 
 ## <a name="create-custom-vision-resources-in-the-azure-portal"></a>Создание пользовательских концепции ресурсов на портале Azure
 

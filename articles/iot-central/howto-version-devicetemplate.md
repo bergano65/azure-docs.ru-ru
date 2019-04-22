@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: peterpr
 ms.openlocfilehash: d4f9617a5c2ba6f6cf8dc261845aa98e33d70a55
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59281783"
 ---
 # <a name="create-a-new-device-template-version"></a>Создание версии шаблона нового устройства
@@ -68,4 +68,4 @@ Azure IoT Central позволяет быстро разрабатывать п�
 Вы узнали, как использовать версии шаблона устройства в приложении Azure IoT Central, а значит вы готовы к следующему шагу.
 
 > [!div class="nextstepaction"]
-> [Как создать правила телеметрии](howto-create-telemetry-rules.md)
+> [Создание правил телеметрии](howto-create-telemetry-rules.md)

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
 ms.openlocfilehash: 5c6dfa359a85b5330e70a2618d59ffab15cf24f4
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59276649"
 ---
 # <a name="on-board-azure-sentinel-preview"></a>Предварительная версия встроенного Sentinel Azure
@@ -49,7 +49,7 @@ ms.locfileid: "59276649"
 1. Перейдите на портал Azure.
 2. Убедитесь, что выбрана подписка, в котором создается Azure Sentinel. 
 3. Поиск Azure Sentinel. 
-   ![поиск](./media/quickstart-onboard/search-product.png)
+   ![search](./media/quickstart-onboard/search-product.png)
 
 1. Щелкните **+Добавить**.
 1. Выберите рабочую область, которую вы хотите использовать, или создайте новую. Azure Sentinel можно запускать на более чем одной рабочей области, но данные изолирован на одной рабочей области.

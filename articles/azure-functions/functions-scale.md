@@ -14,10 +14,10 @@ ms.date: 03/27/2019
 ms.author: glenga
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 459758142c94ddfd244df1427dd5632186efc0de
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59266945"
 ---
 # <a name="azure-functions-scale-and-hosting"></a>Масштабирование и размещение Функций Azure
@@ -75,7 +75,7 @@ ms.locfileid: "59266945"
 
 При выполнении функций JavaScript на план "премиум", необходимо выбрать экземпляр с меньшим количеством виртуальных процессоров. Дополнительные сведения см. в разделе [Выбор одноядерных планов уровня "премиум"](functions-reference-node.md#considerations-for-javascript-functions).  
 
-## <a name="app-service-plan"></a>план службы приложений
+## <a name="app-service-plan"></a>План службы приложений
 
 Приложения-функции могут выполняться в те же выделенные виртуальные машины, как другие приложения службы приложений (Basic, Standard, Premium и изолированной номера SKU). Планы служб приложений поддерживают Linux.
 
@@ -164,4 +164,4 @@ az appservice plan list --query "[?id=='$appServicePlanId'].sku.tier" --output t
 
 Можно найти полезные запросы и сведения о том, как расшифровка счета потребления [на выставления счетов вопросов и Ответов](https://github.com/Azure/Azure-Functions/wiki/Consumption-Plan-Cost-Billing-FAQ).
 
-[Странице цен на функции Azure]: https://azure.microsoft.com/pricing/details/functions
+[странице цен на Функции Azure]: https://azure.microsoft.com/pricing/details/functions

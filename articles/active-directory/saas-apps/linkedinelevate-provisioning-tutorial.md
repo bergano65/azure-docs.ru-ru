@@ -17,10 +17,10 @@ ms.date: 03/28/2019
 ms.author: asmalser-msft
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e95fae67d3e7fd97cf4be1642f41b64a07fd0145
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59259615"
 ---
 # <a name="tutorial-configure-linkedin-elevate-for-automatic-user-provisioning"></a>Руководство по Руководство по настройке LinkedIn Elevate для автоматической подготовки пользователей
@@ -44,7 +44,7 @@ ms.locfileid: "59259615"
 
 Перед настройкой и включением службы подготовки необходимо решить, какие пользователи или группы в Azure AD представляют пользователей, которым необходим доступ к LinkedIn Elevate. Сделав это, можно назначить этих пользователей для LinkedIn Elevate. Для этого выполните следующие действия:
 
-[Назначение пользователя или группы корпоративному приложению](../manage-apps/assign-user-or-group-access-portal.md)
+[Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
 ### <a name="important-tips-for-assigning-users-to-linkedin-elevate"></a>Важные рекомендации по назначению пользователей для LinkedIn Elevate
 

@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 12/18/2018
 ms.openlocfilehash: 62efee57f3663f1dad0446da659de16d2800bf75
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59264426"
 ---
 # <a name="create-configure-and-manage-elastic-jobs"></a>Создание, настройка и управление заданиями обработки эластичных баз данных
@@ -40,7 +40,7 @@ ms.locfileid: "59264426"
 6. Запустите задание с помощью [PowerShell](elastic-jobs-powershell.md#run-the-job) или [T-SQL](elastic-jobs-tsql.md#begin-ad-hoc-execution-of-a-job).
 7. Отслеживайте состояние выполнения задания на портале с использованием [PowerShell](elastic-jobs-powershell.md#monitor-status-of-job-executions) или [T-SQL](elastic-jobs-tsql.md#monitor-job-execution-status).
 
-   ![Microsoft Azure](media/elastic-jobs-overview/elastic-job-executions-overview.png)
+   ![Портал](media/elastic-jobs-overview/elastic-job-executions-overview.png)
 
 ## <a name="credentials-for-running-jobs"></a>Учетные данные для выполнения заданий
 
@@ -98,5 +98,5 @@ IF NOT EXIST (some_object)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Создание и управление ими заданий обработки эластичных БД с помощью PowerShell](elastic-jobs-powershell.md)
-- [Создание и управление ими заданий обработки эластичных БД с помощью Transact-SQL (T-SQL)](elastic-jobs-tsql.md)
+- [Создание заданий обработки эластичных баз данных и управление ими с помощью PowerShell](elastic-jobs-powershell.md)
+- [Use Transact-SQL (T-SQL) to create and manage Elastic Database Jobs](elastic-jobs-tsql.md) (Создание заданий обработки эластичных БД и управление ими с использованием Transact-SQL (T-SQL))

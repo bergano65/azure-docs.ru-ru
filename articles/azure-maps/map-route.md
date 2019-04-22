@@ -10,10 +10,10 @@ services: azure-maps
 manager: timlt
 ms.custom: codepen
 ms.openlocfilehash: b8205383c25ba04212126e0e6ca1bd44e4efad1a
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59264528"
 ---
 # <a name="show-directions-from-a-to-b"></a>Отображение направлений от точки А до точки Б
@@ -29,7 +29,7 @@ ms.locfileid: "59264528"
 
 В приведенном выше коде первым блоком кода создает объект карты и задает способ проверки подлинности, используйте ключ подписки. См. инструкции по [созданию карты](./map-create.md).
 
-Второй блок кода создает `SubscriptionKeyCredentialPolicy` для проверки подлинности HTTP-запросов для службы карт Azure с помощью ключа подписки. `atlas.service.MapsURL.newPipeline()` Принимает `SubscriptionKeyCredential` политики и создает [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-iot-typescript-latest) экземпляра. `routeURL` Представляет URL-адрес для службы карт Azure [маршрута](https://docs.microsoft.com/rest/api/maps/route) операций.
+Второй блок кода создает `SubscriptionKeyCredentialPolicy` для проверки подлинности HTTP-запросов для службы карт Azure с помощью ключа подписки. `atlas.service.MapsURL.newPipeline()` принимает политику `SubscriptionKeyCredential` и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-iot-typescript-latest). `routeURL` представляет собой URL-адрес для операций [маршрута](https://docs.microsoft.com/rest/api/maps/route) Azure Maps.
 
 Третий блок кода создает и добавляет [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) объекта на карту.
 
@@ -71,7 +71,7 @@ ms.locfileid: "59264528"
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Карта](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
+> класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest);
 
 Полные примеры кода см. в следующих статьях:
 
@@ -79,4 +79,4 @@ ms.locfileid: "59264528"
 > [Отображение данных дорожного движения на карте](./map-show-traffic.md)
 
 > [!div class="nextstepaction"]
-> [Взаимодействие с картой - события мыши](./map-events.md)
+> [Взаимодействие с картой — события мыши](./map-events.md)

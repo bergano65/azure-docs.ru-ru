@@ -1,5 +1,5 @@
 ---
-title: Учебник. Настройка Asana для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка Asana для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Asana.
 services: active-directory
 documentationcenter: ''
@@ -18,17 +18,17 @@ ms.author: asmalser
 ms.reviewer: asmalser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a763b2516f88e8c92efc321db50dc15881f54c9b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59265647"
 ---
-# <a name="tutorial-configure-asana-for-automatic-user-provisioning"></a>Учебник. Настройка Asana для автоматической подготовки пользователей
+# <a name="tutorial-configure-asana-for-automatic-user-provisioning"></a>Руководство по Настройка Asana для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как в Asana и Azure Active Directory (Azure AD) настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в Asana.
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -72,15 +72,15 @@ Azure AD используется концепция, называемая *на
 
 1. В разделе **Учетные данные администратора** выполните следующие инструкции по созданию токена и введите его в текстовое поле **Секретный токен**.
 
-    1. Войдите в [Asana](https://app.asana.com) с помощью учетной записи администратора.
+    a. Войдите в [Asana](https://app.asana.com) с помощью учетной записи администратора.
 
     2. Щелкните фотографию профиля на верхней панели и выберите текущие параметры для названия организации.
 
-    В. Перейдите на вкладку **Service Accounts** (Учетные записи служб).
+    c. Перейдите на вкладку **Service Accounts** (Учетные записи служб).
 
-    Г. Выберите **Add Service Account** (Добавить учетную запись службы).
+    d. Выберите **Add Service Account** (Добавить учетную запись службы).
 
-    Д. При необходимости обновите значения в полях **Name** (Имя) и **About** (О себе), а также фотографию профиля. Скопируйте токен в поле **Token** (Токен) и нажмите кнопку **Save Changes** (Сохранить изменения).
+    д. При необходимости обновите значения в полях **Name** (Имя) и **About** (О себе), а также фотографию профиля. Скопируйте токен в поле **Token** (Токен) и нажмите кнопку **Save Changes** (Сохранить изменения).
 
 1. На портале Azure выберите **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к приложению Asana. Если подключение отсутствует, убедитесь, что учетной записи Asana назначены разрешения администратора, и повторите шаг **Проверить подключение**.
 
@@ -102,6 +102,6 @@ Azure AD используется концепция, называемая *на
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
+* [Managing user account provisioning for enterprise apps in the Azure portal](../manage-apps/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 * [Настройка единого входа](asana-tutorial.md)

@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: hrasheed
 ms.openlocfilehash: 30154c55e60b7150257729c9bc90ee07a561e08e
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59264545"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-using-azure-powershell"></a>Создание кластеров под управлением Linux в HDInsight с помощью Azure PowerShell
@@ -25,7 +25,7 @@ Azure PowerShell — это полнофункциональная среда с
 > [!NOTE]  
 > Оболочка Azure PowerShell доступна только для клиентов Windows. Если вы используете клиент Linux, Unix или Mac OS X, сведения об использовании классического интерфейса командной строки Azure для создания кластера см. в статье [Создание кластеров HDInsight с помощью интерфейса командной строки Azure](hdinsight-hadoop-create-linux-clusters-azure-cli.md).
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -48,7 +48,7 @@ Azure PowerShell — это полнофункциональная среда с
 * создание группы ресурсов Azure;
 * Создание учетной записи хранения Azure
 * Создание контейнера BLOB-объектов Azure
-* Создать кластер HDInsight
+* Создание кластера HDInsight
 
 Следующий сценарий демонстрирует создание нового кластера.
 
@@ -95,8 +95,8 @@ Azure PowerShell — это полнофункциональная среда с
 
 ### <a name="apache-hadoop-clusters"></a>Кластеры Apache Hadoop
 
-* [Использование Apache Hive с HDInsight](hadoop/hdinsight-use-hive.md)
-* [Использование Pig с HDInsight](hadoop/hdinsight-use-pig.md)
+* [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hadoop/hdinsight-use-hive.md)
+* [Использование Pig с Hadoop в HDInsight](hadoop/hdinsight-use-pig.md)
 * [Использование MapReduce с HDInsight](hadoop/hdinsight-use-mapreduce.md)
 
 ### <a name="apache-hbase-clusters"></a>Кластеры Apache HBase
@@ -108,12 +108,12 @@ Azure PowerShell — это полнофункциональная среда с
 
 * [Разработка приложений Java для Storm в HDInsight](storm/apache-storm-develop-java-topology.md)
 * [Использование компонентов Python в Storm в HDInsight](storm/apache-storm-develop-python-topology.md)
-* [Развертывание и мониторинг топологий Apache Storm в HDInsight](storm/apache-storm-deploy-monitor-topology-linux.md)
+* [Развертывание и мониторинг топологий с помощью Storm в HDInsight](storm/apache-storm-deploy-monitor-topology-linux.md)
 
 ### <a name="apache-spark-clusters"></a>Кластеры Apache Spark
 
 * [Создание автономного приложения с использованием Scala](spark/apache-spark-create-standalone-application.md)
-* [Удаленный запуск заданий в кластере Apache Spark, с помощью Apache Livy](spark/apache-spark-livy-rest-interface.md)
-* [Apache Spark BI: Выполнение интерактивного анализа данных с использованием Spark в HDInsight с помощью средств бизнес-Аналитики](spark/apache-spark-use-bi-tools.md)
-* [Apache Spark с помощью машинного обучения: Использование Spark в HDInsight для прогнозирования результатов контроля качества пищевых продуктов](spark/apache-spark-machine-learning-mllib-ipython.md)
+* [Удаленный запуск заданий с помощью Apache Livy в кластере Apache Spark](spark/apache-spark-livy-rest-interface.md)
+* [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](spark/apache-spark-use-bi-tools.md)
+* [Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных](spark/apache-spark-machine-learning-mllib-ipython.md)
 

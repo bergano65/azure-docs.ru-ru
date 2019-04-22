@@ -11,10 +11,10 @@ ms.workload: infrastructure-services
 ms.date: 06/11/2018
 ms.author: kumud
 ms.openlocfilehash: 1c0c48efc7abf4b810e92b5cd04d1538577c71d3
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59268291"
 ---
 # <a name="traffic-manager-metrics-and-alerts"></a>Метрики и оповещения диспетчера трафика
@@ -33,13 +33,13 @@ ms.locfileid: "59268291"
   
 ![Статистическое представление всех запросов](./media/traffic-manager-metrics-alerts/traffic-manager-metrics-queries-aggregate-view.png)
 
-*Рис. 1. Общее представление всех запросов*
+*Рис. 1. Статистическое представление всех запросов*
   
 На рис. 2 отображаются те же сведения, но разделенные по конечным точкам. В результате отображаются все ответы на запросы, в которых возвращена конкретная конечная точка.
 
 ![Метрики диспетчера трафика — разделенное представление всех запросов на каждую конечную точку](./media/traffic-manager-metrics-alerts/traffic-manager-metrics-query-volume-per-endpoint.png)
 
-*Рис. 2. Разделенное представление с объема запросов, отображаемых на одной возвращаемая конечная точка*
+*Рис. 2. Разделенное представление всех запросов для возвращенной конечной точки*
 
 ## <a name="endpoint-status-by-endpoint"></a>Проверка состояния конечных точек
 [Эта метрика](../azure-monitor/platform/metrics-supported.md#microsoftnetworktrafficmanagerprofiles) позволяет проверить состояние работоспособности конечных точек в профиле. Эта метрика имеет два значения:
@@ -51,12 +51,12 @@ ms.locfileid: "59268291"
 
 ![Метрики диспетчера трафика — составное представление состояния конечной точки](./media/traffic-manager-metrics-alerts/traffic-manager-metrics-endpoint-status-composite-view.png)
 
-*Рис. 3. Составное представление метрики состояния конечной точки — «Среднее» статистической обработки выбранного*
+*Рис. 3. Составное представление метрики состояния конечной точки с выбранным значением агрегирования "Сред."*
 
 
 ![Метрики диспетчера трафика — разделенное представление состояния конечной точки](./media/traffic-manager-metrics-alerts/traffic-manager-metrics-endpoint-status-split-view.png)
 
-*Рис. 4. Разделенное представление показателей состояния конечной точки*
+*Рис. 4. Разделенное представление метрик состояния конечной точки*
 
 Вы можете использовать эти метрики на портале [службы Azure Monitor](../azure-monitor/platform/metrics-supported.md) с помощью [REST API](https://docs.microsoft.com/rest/api/monitor/), [Azure CLI](https://docs.microsoft.com/cli/azure/monitor) и [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.applicationinsights), а также в разделе метрики при работе на портале диспетчера трафика.
 

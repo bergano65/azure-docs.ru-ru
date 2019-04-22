@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: glenga
 ms.openlocfilehash: 5d028768c062ef7df74d48f83ccc4e27a506f1ac
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59270910"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
@@ -27,8 +27,8 @@ ms.locfileid: "59270910"
 Дополнительные сведения о создании шаблонов см. в статье [Создание шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md).
 
 Примеры шаблонов см. в следующих статьях:
-- [Приложения-функции в плане потребления]
-- [Приложения-функции в плане службы приложений Azure]
+- [Function app on Consumption plan] (Приложение-функция в плане потребления);
+- [Function app on Azure App Service plan] (Приложение-функция в плане службы приложений Azure).
 
 > [!NOTE]
 > План "премиум" для размещения функций Azure доступна в предварительной версии. Дополнительные сведения см. в разделе [план "премиум" функции Azure](functions-premium-plan.md).
@@ -39,8 +39,8 @@ ms.locfileid: "59270910"
 
 | Ресурс                                                                           | Требование | Синтаксис и свойства ссылки                                                         |   |
 |------------------------------------------------------------------------------------|-------------|-----------------------------------------------------------------------------------------|---|
-| Приложение-функция.                                                                     | Обязательно    | [Microsoft.Web/sites](/azure/templates/microsoft.web/sites)                             |   |
-| [Учетная запись хранения Azure.](../storage/index.yml)                                   | Обязательно    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |   |
+| Приложение-функция.                                                                     | Обязательно для заполнения    | [Microsoft.Web/sites](/azure/templates/microsoft.web/sites)                             |   |
+| [Учетная запись хранения Azure.](../storage/index.yml)                                   | Обязательно для заполнения    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |   |
 | [Application Insights](../azure-monitor/app/app-insights-overview.md) компонента | Необязательно    | [Microsoft.Insights/components.](/azure/templates/microsoft.insights/components)         |   |
 | Объект [план размещения](./functions-scale.md)                                             | Необязательный<sup>1</sup>    | [Microsoft.Web/serverfarms](/azure/templates/microsoft.web/serverfarms)                 |   |
 
@@ -123,9 +123,9 @@ ms.locfileid: "59270910"
 Определение плана размещения зависит и может принимать одно из следующих:
 * [План потребления](#consumption) (по умолчанию)
 * [План "премиум"](#premium) (в предварительной версии)
-* [план службы приложений](#app-service-plan)
+* [План обслуживания приложения](#app-service-plan)
 
-### <a name="function-app"></a>Приложение функций
+### <a name="function-app"></a>Приложение-функция
 
 Ресурс приложения-функции определяется с помощью ресурса типа **Microsoft.Web/sites** и вид **functionapp**:
 
@@ -147,7 +147,7 @@ ms.locfileid: "59270910"
 
 Приложения-функции необходимо включить эти параметры приложения:
 
-| Имя параметра                 | Описание                                                                               | Примеры значений                        |
+| Имя параметра                 | ОПИСАНИЕ                                                                               | Примеры значений                        |
 |------------------------------|-------------------------------------------------------------------------------------------|---------------------------------------|
 | AzureWebJobsStorage          | Строка подключения для хранилища учетной записи, среда выполнения функций для внутренних очередей | См. в разделе [учетной записи хранения](#storage)       |
 | FUNCTIONS_EXTENSION_VERSION  | Версия среды выполнения функций Azure                                                | `~2`                                  |
@@ -216,7 +216,7 @@ ms.locfileid: "59270910"
 
 ### <a name="create-a-function-app"></a>Создание приложения-функции
 
-#### <a name="windows"></a>Windows
+#### <a name="windows"></a> Windows
 
 В Windows, плана потребления следует выполнить две дополнительные настройки в конфигурации сайта: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` и `WEBSITE_CONTENTSHARE`. Эти свойства настраивают учетную запись хранения и путь к файлам кода приложения-функции и конфигурации.
 
@@ -644,8 +644,8 @@ ms.locfileid: "59270910"
 Для развертывания шаблона можно использовать любой из следующих способов:
 
 * [PowerShell](../azure-resource-manager/resource-group-template-deploy.md)
-* [Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md)
-* [портале Azure](../azure-resource-manager/resource-group-template-deploy-portal.md)
+* [Интерфейс командной строки Azure](../azure-resource-manager/resource-group-template-deploy-cli.md)
+* [портал Azure](../azure-resource-manager/resource-group-template-deploy-portal.md)
 * [REST API](../azure-resource-manager/resource-group-template-deploy-rest.md)
 
 ### <a name="deploy-to-azure-button"></a>Кнопка "Развертывание в Azure"
@@ -669,10 +669,10 @@ ms.locfileid: "59270910"
 Дополнительные сведения о разработке и настройке Функций Azure:
 
 * [Справочник разработчика по функциям Azure](functions-reference.md)
-* [Как настроить параметры приложения-функции Azure](functions-how-to-use-azure-function-app-settings.md)
+* [Управление приложением-функцией на портале Azure](functions-how-to-use-azure-function-app-settings.md)
 * [Создание первой функции Azure](functions-create-first-azure-function.md)
 
 <!-- LINKS -->
 
-[Приложения-функции в плане потребления]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dynamic/azuredeploy.json
-[Приложения-функции в плане службы приложений Azure]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dedicated/azuredeploy.json
+[Function app on Consumption plan]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dynamic/azuredeploy.json (Приложение-функция в плане потребления)
+[Function app on Azure App Service plan]: https://github.com/Azure/azure-quickstart-templates/blob/master/101-function-app-create-dedicated/azuredeploy.json (Приложение-функция в плане службы приложений Azure)

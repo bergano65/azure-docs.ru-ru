@@ -28,14 +28,14 @@ sections:
             href: /azure/azure-maps/quick-demo-map-app
   - title: Пошаговые руководства
     items:
-      - html: <b>Учебные материалы по веб-пакетам SDK</b>
+      - html: <b>Руководства по веб-пакетам SDK</b>
       - type: paragraph
         text: Создавайте геопространственные веб-приложения с помощью веб-пакетов SDK для Azure Maps.
       - type: list
         style: unordered
         items:
-          - html: <a href="/azure/azure-maps/tutorial-search-location">Поиск точек интереса</a>
-          - html: <a href="/azure/azure-maps/tutorial-route-location">Построение маршрута к точке интереса</a>
+          - html: <a href="/azure/azure-maps/tutorial-search-location">Поиск достопримечательностей</a>
+          - html: <a href="/azure/azure-maps/tutorial-route-location">Построение маршрута к достопримечательности</a>
           - html: <a href="/azure/azure-maps/tutorial-prioritized-routes">Маршруты по видам транспорта</a>
           - html: <a href="/azure/azure-maps/tutorial-create-store-locator">Создание указателя магазинов</a>
       - html: <b>Руководства по REST API</b>

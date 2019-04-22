@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 12/04/2018
 ms.author: kraigb
 ms.openlocfilehash: b1618e2ac997445606ce98fc72a1ec35ca1280be
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59273674"
 ---
 # <a name="quickstart-create-and-share-a-notebook"></a>Краткое руководство. Создание и совместное использование записной книжки
@@ -43,7 +43,7 @@ ms.locfileid: "59273674"
 
 1. Через несколько секунд Записные книжки Azure перенаправят вас в окно нового проекта. Добавьте записную книжку в проект. Для этого выберите раскрывающийся список **+ Создать** (который может отображаться в виде **+**), а затем элемент **Notebook** (Записная книжка):
 
-    [![](media/quickstarts/empty-project-new-notebook-button.png "Новый, пустой проект и добавьте команду записной книжки")](media/quickstarts/empty-project-new-notebook-button.png#lightbox)
+    [![](media/quickstarts/empty-project-new-notebook-button.png "Новый, пустой проект и команда добавления записной книжки")](media/quickstarts/empty-project-new-notebook-button.png#lightbox)
 
 1. В появившемся всплывающем окне **Create New Notebook** (Создание записной книжки) введите имя файла для записной книжки, например *HelloWorldInPython.ipynb* (*.ipynb* означает, что это записная книжка IronPython (Jupyter)) и выберите **Python 3.6** в качестве языка (также называемого *ядром*):
 
@@ -106,4 +106,4 @@ ms.locfileid: "59273674"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство по созданию выполнения записной книжки Jupyter для выполнения линейной регрессии](tutorial-create-run-jupyter-notebook.md)
+> [Руководство по созданию и запуску записной книжки Jupyter для выполнения линейной регрессии](tutorial-create-run-jupyter-notebook.md)

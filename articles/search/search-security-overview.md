@@ -10,10 +10,10 @@ ms.date: 04/06/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: 11b2fb5a246dfa8f5b1295a11cc57de36120898e
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59269560"
 ---
 # <a name="security-and-data-privacy-in-azure-search"></a>Безопасность и конфиденциальность данных в службе "Поиск Azure"
@@ -26,13 +26,13 @@ ms.locfileid: "59269560"
 
 [Как было объявлено в июне 2018 г.](https://azure.microsoft.com/blog/azure-search-is-now-certified-for-several-levels-of-compliance/), служба "Поиск Azure" сертифицирована на соответствие следующим стандартам:
 
-+ [ISO 27001:2013](https://www.iso.org/isoiec-27001-information-security.html) 
++ [ISO 27001:2013](https://www.iso.org/isoiec-27001-information-security.html). 
 + [SOC 2 типа 2](https://www.aicpa.org/interestareas/frc/assuranceadvisoryservices/aicpasoc2report.html). Чтобы просмотреть полный отчет, перейдите к [отчету SOC 2 типа II для Azure для государственных организаций](https://servicetrust.microsoft.com/ViewPage/MSComplianceGuide?command=Download&downloadType=Document&downloadId=93292f19-f43e-4c4e-8615-c38ab953cf95&docTab=4ce99610-c9c0-11e7-8c2c-f908a777fa4d_SOC%20%2F%20SSAE%2016%20Reports). 
-+ [Акт о передаче и Act защите данных учреждений здравоохранения (HIPAA)](https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act)
-+ [GxP (21 CFR часть 11)](https://en.wikipedia.org/wiki/Title_21_CFR_Part_11)
-+ [HITRUST](https://en.wikipedia.org/wiki/HITRUST)
-+ [PCI DSS, уровень 1](https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard)
-+ [Australia IRAP неклассифицированных диспетчер загрузки](https://asd.gov.au/infosec/irap/certified_clouds.htm)
++ [Акт о передаче и защите данных учреждений здравоохранения (HIPAA)](https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act).
++ [GxP (21 CFR, ч. 11)](https://en.wikipedia.org/wiki/Title_21_CFR_Part_11).
++ [HITRUST](https://en.wikipedia.org/wiki/HITRUST).
++ [PCI DSS, уровень 1](https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard).
++ [Программа IRAP австралийского правительства (без грифа секретности)](https://asd.gov.au/infosec/irap/certified_clouds.htm).
 
 Соответствие стандартам относится к общедоступным функциям. Функции в предварительной версии будут сертифицированы, когда станут общедоступными. Не следует их использовать в решениях со строгими требованиями к соответствию стандартам. Сведения о сертификатах соответствия см. в документе [Overview of Microsoft Azure compliance](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) (Общие сведения о соответствии требованиям Microsoft Azure) и в [центре управления безопасностью](https://www.microsoft.com/en-us/trustcenter). 
 
@@ -53,8 +53,8 @@ ms.locfileid: "59269560"
 
 В Azure есть несколько механизмов безопасности. Следовательно, они автоматически доступны для созданных вами ресурсов Поиска Azure.
 
-+ [Блокировок на уровне подписки или ресурсов для предотвращения удаления](../azure-resource-manager/resource-group-lock-resources.md)
-+ [На основе ролей управления ДОСТУПОМ для управления доступом к информации и административным операциям](../role-based-access-control/overview.md)
++ [Блокировки на уровне подписки или ресурсов для предотвращения удаления](../azure-resource-manager/resource-group-lock-resources.md)
++ [Управление доступом на основе ролей (RBAC) для управления доступом к информации и административным операциям](../role-based-access-control/overview.md)
 
 Все службы Azure поддерживают элементы управления доступом на основе ролей (RBAC) для согласованного задания уровней доступа во всех службах. Например, просматривать конфиденциальные данные, такие как ключ администратора, могут только пользователи с ролью владельца или участника, а состояние службы доступно для обладателей любой роли. RBAC предоставляет роли владельца, участника и читателя. По умолчанию все администраторы службы являются участниками роли владельца.
 
@@ -97,8 +97,8 @@ ms.locfileid: "59269560"
 
 | Подход | ОПИСАНИЕ |
 |----------|-------------|
-|[Фильтрация по ролям безопасности на основе фильтров удостоверений](search-security-trimming-for-azure-search.md)  | Документирует базовый рабочий процесс для реализации управления доступом на основе удостоверений пользователей. Описывает добавление удостоверений безопасности в индекс, а также объясняет фильтрацию этого поля для усечения результатов запрещенного содержимого. |
-|[Фильтрация по ролям безопасности на основе удостоверений Azure Active Directory](search-security-trimming-for-azure-search-with-aad.md)  | Эта статья дополняет предыдущую статью, в ней приведены действия для получения удостоверений из Azure Active Directory (AAD), одной из [бесплатных служб](https://azure.microsoft.com/free/) на облачной платформе Azure. |
+|[Security filters for trimming results in Azure Search](search-security-trimming-for-azure-search.md) (Фильтры безопасности для обрезки результатов Поиска Azure)  | Документирует базовый рабочий процесс для реализации управления доступом на основе удостоверений пользователей. Описывает добавление удостоверений безопасности в индекс, а также объясняет фильтрацию этого поля для усечения результатов запрещенного содержимого. |
+|[Security filters for trimming Azure Search results using Active Directory identities](search-security-trimming-for-azure-search-with-aad.md) (Фильтры безопасности для обрезки результатов Поиска Azure с использованием удостоверений Active Directory)  | Эта статья дополняет предыдущую статью, в ней приведены действия для получения удостоверений из Azure Active Directory (AAD), одной из [бесплатных служб](https://azure.microsoft.com/free/) на облачной платформе Azure. |
 
 ## <a name="table-permissioned-operations"></a>Таблица. Разрешенные операции
 
@@ -124,8 +124,8 @@ ms.locfileid: "59269560"
 
 ## <a name="see-also"></a>См. также
 
-+ [Получение запуска .NET (показано с помощью пакета SDK для создания индекса)](search-create-index-dotnet.md)
-+ [Получить работу REST (показано с помощью пакета SDK для создания индекса)](search-create-index-rest-api.md)
-+ [Элемент управления доступом на основе удостоверений, с помощью фильтров поиска Azure](search-security-trimming-for-azure-search.md)
-+ [Контроля доступа на основе удостоверений Active Directory, с помощью фильтров поиска Azure](search-security-trimming-for-azure-search-with-aad.md)
++ [Создание индекса службы поиска Azure с помощью пакета SDK для .NET](search-create-index-dotnet.md)
++ [Создание индекса службы поиска Azure с помощью REST API](search-create-index-rest-api.md)
++ [Security filters for trimming results in Azure Search](search-security-trimming-for-azure-search.md) (Фильтры безопасности для обрезки результатов Поиска Azure)
++ [Security filters for trimming Azure Search results using Active Directory identities](search-security-trimming-for-azure-search-with-aad.md) (Фильтры безопасности для обрезки результатов Поиска Azure с использованием удостоверений Active Directory)
 + [Фильтры в службе "Поиск Azure"](search-filters.md)

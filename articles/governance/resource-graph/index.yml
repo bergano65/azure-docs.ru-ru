@@ -41,8 +41,8 @@ sections:
         className: cardsD
         items:
           - title: Командная строка
-            html: <p><a href="/cli/azure/ext/resource-graph/graph">Инфраструктура CLI Azure</a></p><p><a href="/powershell/module/az.resourcegraph/">Azure PowerShell</a></p>
+            html: <p><a href="/cli/azure/ext/resource-graph/graph">Интерфейс командной строки Azure</a></p><p><a href="/powershell/module/az.resourcegraph/">Azure PowerShell</a></p>
           - title: Languages
-            html: <p><a href="/dotnet/api/Microsoft.Azure.Management.ResourceGraph">Пакет Azure SDK для .NET</a></p><p><a href="/python/api/azure-mgmt-resourcegraph/azure.mgmt.resourcegraph">Пакет SDK Azure для Python</a></p>
+            html: <p><a href="/dotnet/api/Microsoft.Azure.Management.ResourceGraph">Пакет Azure SDK для .NET</a></p><p><a href="/python/api/azure-mgmt-resourcegraph/azure.mgmt.resourcegraph">Пакет SDK для Azure для Python</a></p>
           - title: REST
             html: '<p><a href="/rest/api/azureresourcegraph/resources/resources">Справочник по API</a></p><p><a href="https://github.com/Azure/azure-rest-api-specs/tree/master/specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/preview/2018-09-01-preview">2018-09-01-preview (OpenAPI)</a></p>'

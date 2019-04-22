@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 04/05/2019
 ms.author: helohr
 ms.openlocfilehash: 2af9df4771d58f2288820dad8ef8d7ac84deb8ae
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59258476"
 ---
 # <a name="create-a-host-pool-with-powershell"></a>Создание пула узлов с помощью PowerShell
@@ -113,11 +113,11 @@ $token = (Export-RdsRegistrationInfo -TenantName <tenantname> -HostPoolName <hos
      - Выберите зеленую кнопку воспроизведения для запуска скрипта.
 
 >[!IMPORTANT]
->Для помощи в защите вашей среде виртуального рабочего стола Windows в Azure, мы рекомендуем не откройте входящий порт 3389 на виртуальных машинах. Виртуальный рабочий стол Windows не требуется открыть входящий порт 3389 пользователям доступ к виртуальным машинам в пуле узлов. Если необходимо открыть порт 3389 для устранения неполадок, мы рекомендуем использовать [доступ к виртуальной Машине just-in-time](https://docs.microsoft.com/en-us/azure/security-center/security-center-just-in-time).
+>Чтобы усилить защиту среды Виртуального рабочего стола Windows в Azure, мы рекомендуем не открывать входящий порт 3389 для виртуальных машин. Виртуальный рабочий стол Windows не требует открытия входящего порта 3389, чтобы пользователи могли получить доступ к виртуальным машинам пула узла. Если вам все же нужно открыть порт 3389 для устранения неполадок, мы рекомендуем использовать[JIT-доступ к виртуальным машинам](https://docs.microsoft.com/en-us/azure/security-center/security-center-just-in-time).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы внесли пула узла, его можно заполнить RemoteApps. Дополнительные сведения о том, как управлять приложениями в Виртуальном рабочем столе Windows см. в руководстве по управлению группами приложений.
 
 > [!div class="nextstepaction"]
-> [Руководство по приложениям группы управления](./manage-app-groups.md)
+> [Управление группами приложений](./manage-app-groups.md)

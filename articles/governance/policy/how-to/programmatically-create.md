@@ -9,10 +9,10 @@ ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
 ms.openlocfilehash: ade5d55833f1d63a8d70b6eedb3c3e4bdffe590b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59276496"
 ---
 # <a name="programmatically-create-policies-and-view-compliance-data"></a>Программное создание политик и просмотр данных о соответствии
@@ -23,7 +23,7 @@ ms.locfileid: "59276496"
 
 [!INCLUDE [az-powershell-update](../../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 Прежде чем приступить к работе, убедитесь, что у вас есть следующие необходимые компоненты.
 
@@ -95,12 +95,12 @@ ms.locfileid: "59276496"
    Замените _ContosoRG_ именем вашей целевой группы ресурсов.
 
    **Область** параметр на `New-AzPolicyAssignment` работает с группой управления, подписки, группу ресурсов или отдельный ресурс. Параметр использует полный путь к ресурсу, возвращаемый свойством **ResourceId** в `Get-AzResourceGroup`. Формат параметра **Scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно.
-   `{rType}` Вместо будет **тип ресурса** ресурса, например `Microsoft.Compute/virtualMachines` для виртуальной Машины.
+   Замените `{rType}` **типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
 
-   - Ресурс — `/subscriptions/{subID}/resourceGroups/{rgName}/providers/{rType}/{rName}`
+   - Ресурс: `/subscriptions/{subID}/resourceGroups/{rgName}/providers/{rType}/{rName}`.
    - Группа ресурсов — `/subscriptions/{subId}/resourceGroups/{rgName}`
    - Подписка — `/subscriptions/{subId}/`
-   - Группы управления- `/providers/Microsoft.Management/managementGroups/{mgName}`
+   - Группа управления — `/providers/Microsoft.Management/managementGroups/{mgName}`
 
 Дополнительные сведения об управлении политиками ресурсов с помощью модуля PowerShell Azure Resource Manager см. в разделе [Политики](/powershell/module/az.resources/#policies).
 
@@ -223,12 +223,12 @@ ms.locfileid: "59276496"
    az policy assignment create --name '<name>' --scope '<scope>' --policy '<policy definition ID>'
    ```
 
-   Параметр **--scope** в `az policy assignment create` работает с группой управления, подпиской, группой ресурсов или отдельным ресурсом. Параметр использует полный путь к ресурсу. Формат параметра **--scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно. `{rType}` Вместо будет **тип ресурса** ресурса, например `Microsoft.Compute/virtualMachines` для виртуальной Машины.
+   Параметр **--scope** в `az policy assignment create` работает с группой управления, подпиской, группой ресурсов или отдельным ресурсом. Параметр использует полный путь к ресурсу. Формат параметра **--scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно. Замените `{rType}` **типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
 
-   - Ресурс — `/subscriptions/{subID}/resourceGroups/{rgName}/providers/{rType}/{rName}`
+   - Ресурс: `/subscriptions/{subID}/resourceGroups/{rgName}/providers/{rType}/{rName}`.
    - Группа ресурсов — `/subscriptions/{subID}/resourceGroups/{rgName}`
    - Подписка — `/subscriptions/{subID}`
-   - Группы управления- `/providers/Microsoft.Management/managementGroups/{mgName}`
+   - Группа управления — `/providers/Microsoft.Management/managementGroups/{mgName}`
 
 Вы можете получить идентификатор определения политики с помощью следующей команды в PowerShell.
 
@@ -249,7 +249,7 @@ az policy definition show --name 'Audit Storage Accounts with Open Public Networ
 Дополнительные сведения о командах и запросах, используемых в этой статье, см. в следующих ресурсах.
 
 - [Ресурсы REST API Azure](/rest/api/resources/)
-- [Модули Azure PowerShell](/powershell/module/az.resources/#policies)
-- [Политика команды Azure CLI](/cli/azure/policy?view=azure-cli-latest)
-- [Поставщика ресурсов аналитики политики Справочник по REST API](/rest/api/policy-insights)
+- [Модули Azure PowerShell](/powershell/module/az.resources/#policies).
+- [Команды Azure CLI для роботы с политикой](/cli/azure/policy?view=azure-cli-latest)
+- [Policy Insights](/rest/api/policy-insights)
 - [Упорядочение ресурсов с помощью групп управления Azure](../../management-groups/overview.md)

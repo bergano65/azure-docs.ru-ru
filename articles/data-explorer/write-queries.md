@@ -8,17 +8,17 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 04/07/2019
 ms.openlocfilehash: b1a7e64cf6b85b517bc027d6541d63c9be729734
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59274638"
 ---
 # <a name="write-queries-for-azure-data-explorer"></a>Написание запросов для обозревателя данных Azure
 
 В этой статье вы узнаете, как использовать язык запросов в обозревателе данных Azure для выполнения простых запросов с наиболее распространенными операторами. Вы также познакомитесь с некоторыми более сложными функциями языка.
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 Запросы в этой статье можно выполнять одним из двух способов:
 
@@ -69,7 +69,7 @@ StormEvents
 
 1. В верхней части приложения нажмите кнопку **Выполнить**.
 
-### <a name="count"></a>количество
+### <a name="count"></a>count
 
 [**count**](https://docs.microsoft.com/azure/kusto/query/countoperator): возвращает количество строк в таблице.
 
@@ -110,7 +110,7 @@ StormEvents
 | project StartTime, EndTime, State, EventType, DamageProperty, EpisodeNarrative
 ```
 
-### <a name="where"></a>где
+### <a name="where"></a>где:
 
 [**where**](https://docs.microsoft.com/azure/kusto/query/whereoperator): Отфильтровывает таблицу для подмножества строк, которые удовлетворяют предикату.
 
@@ -682,7 +682,7 @@ LightningStorms
 | distinct State
 ```
 
-### <a name="join"></a>соединение
+### <a name="join"></a>join
 
 [**join**](https://docs.microsoft.com/azure/kusto/query/joinoperator): объединение строк двух таблиц для формирования новой таблицы путем сопоставления значений указанных столбцов каждой таблицы. Kusto поддерживает весь диапазон типов объединения: **fullouter**, **inner**, **innerunique**, **leftanti**, **leftantisemi**, **leftouter**, **leftsemi**, **rightanti**, **rightantisemi**, **rightouter** и **rightsemi**.
 
@@ -901,7 +901,7 @@ StormEvents
 
 [**Подключаемый модуль funnel_sequence_completion**](https://docs.microsoft.com/azure/kusto/query/funnel-sequence-completion-plugin): вычисляет воронку завершенных шагов последовательности для различных периодов времени.
 
-Следующий запрос проверяет воронки завершения последовательности: `Hail -> Tornado -> Thunderstorm -> Wind` в «общее» время один час, 4 часа и один день (`[1h, 4h, 1d]`).
+Следующий запрос проверяет завершение воронки последовательности: `Hail -> Tornado -> Thunderstorm -> Wind`  за "общее" время в один час, четыре часа и один день (`[1h, 4h, 1d]`).
 
 **\[**[**Щелкните, чтобы выполнить запрос**](https://dataexplorer.azure.com/clusters/help/databases/Samples?query=H4sIAAAAAAAAA12QTYvCMBCG74L/YW6tkIV2XT9g8SjsnlvwICKhM9JAOqlJqrj4402CW0RIIB/PPLwzmjwcnZfWwwZQevKqo/yzKFYfRRnW7Hs60ZEhxjdi/UZcFaO5VuqPAjhfLvD/w9F5IG7iM95YdqrJ99mPVDoTkNXGskSTju3ASNZ5Y7t43wVhdhj9PVll0L1aylbAV9glJqyKldsLsXfTyR3oIvUQAsNpYCY95jg2puuDUhnOt71yBukXBVRxCnVoTjwnIlLX4rUzAUlf3/pEPYViDDd7AOyqowFQAQAA)**\]**
 
@@ -915,7 +915,7 @@ StormEvents
 | evaluate funnel_sequence_completion(EpisodeId, StartTime, _start, _end, _windowSize, EventType, _sequence, _periods)
 ```
 
-## <a name="functions"></a>Функции
+## <a name="functions"></a>Функции Azure
 
 В этом разделе рассматриваются [**функции**](https://docs.microsoft.com/azure/kusto/query/functions): многократно используемые запросы, которые хранятся на сервере. Функции могут вызываться запросами и другими функциями (рекурсивные функции не поддерживаются).
 

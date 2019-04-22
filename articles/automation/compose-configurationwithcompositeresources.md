@@ -11,10 +11,10 @@ ms.date: 08/21/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 64588829cec964e52dcb44465869e0090f36f9f1
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59278628"
 ---
 # <a name="composing-dsc-configurations-in-azure-automation-state-configuration-dsc-using-composite-resources"></a>Составление конфигураций DSC в службе "Настройка состояния службы автоматизации Azure" с помощью составных ресурсов
@@ -32,11 +32,11 @@ ms.locfileid: "59278628"
 1. На странице **Учетная запись автоматизации** в разделе **Управление конфигурацией** выберите **Настройка состояния (DSC)**.
 1. На странице **Настройка состояния (DSC)** выберите вкладку **Конфигурации** или **Составленные конфигурации**, а затем в меню в верхней части страницы выберите пункт **Составление конфигурации**.
 1. В шаге **Основы** укажите имя новой конфигурации (обязательно), а затем щелкните в любом месте строки каждого составного ресурса, который следует включить в конфигурацию. Нажмите кнопку **Далее** или щелкните шаг **Исходный код**. Для последующих шагов мы выбрали составные ресурсы **PSExecutionPolicy** и **RenameAndDomainJoin**.
-   ![Снимок экрана шаге basics части страницы конфигурации compose](./media/compose-configurationwithcompositeresources/compose-configuration-basics.png)
+   ![Снимок экрана: шаг "Основы" на странице составления конфигурации](./media/compose-configurationwithcompositeresources/compose-configuration-basics.png)
 1. В шаге **Исходный код** показано, как выглядит составленная из выбранных составных ресурсов конфигурация. Вы можете увидеть, как объединяются все параметры и как они передаются в составной ресурс. Просмотрев новый исходный код, нажмите кнопку **Далее** или щелкните шаг **Параметры**.
-   ![Снимок экрана исходного кода страницы конфигурации compose](./media/compose-configurationwithcompositeresources/compose-configuration-sourcecode.png)
+   ![Снимок экрана: шаг "Исходный код" на странице составления конфигурации](./media/compose-configurationwithcompositeresources/compose-configuration-sourcecode.png)
 1. В шаге **Параметры** можно указать параметры для каждого составного ресурса. Если у параметра есть описание, оно приводится рядом с полем параметра. Если поле содержит параметр типа **PSCredential**, в раскрывающемся списке приводятся объекты **учетных данных**, имеющиеся в текущей учетной записи службы автоматизации. Кроме того, доступен пункт **+ Добавить учетные данные**. Указав все обязательные параметры, щелкните **Сохранить и скомпилировать**.
-   ![Снимок экрана параметров страницы конфигурации compose](./media/compose-configurationwithcompositeresources/compose-configuration-parameters.png)
+   ![Снимок экрана: шаг "Параметры" на странице составления конфигурации](./media/compose-configurationwithcompositeresources/compose-configuration-parameters.png)
 
 После сохранения новой конфигурации она отправляется на компиляцию. Состояние задания компиляции можно просмотреть так же, как для любой импортируемой конфигурации. Дополнительные сведения см. в разделе [Просмотр задания компиляции](automation-dsc-getting-started.md#viewing-a-compilation-job).
 

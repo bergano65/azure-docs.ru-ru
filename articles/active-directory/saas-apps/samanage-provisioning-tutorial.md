@@ -17,10 +17,10 @@ ms.date: 03/28/2019
 ms.author: v-wingf-msft
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ca43b62e66e3a736aa52fdd10fe36e635daba245
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59280355"
 ---
 # <a name="tutorial-configure-samanage-for-automatic-user-provisioning"></a>Руководство. Настройка Samanage для автоматической подготовки пользователей
@@ -30,7 +30,7 @@ ms.locfileid: "59280355"
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
@@ -45,7 +45,7 @@ ms.locfileid: "59280355"
 
 Перед настройкой Samanage для автоматической подготовки пользователей в Azure AD необходимо добавить Samanage из коллекции приложений Azure AD в список управляемых приложений SaaS.
 
-**Чтобы добавить Samanage из коллекции приложений Azure AD, выполните следующие действия.**
+**Чтобы добавить Samanage из коллекции приложений Azure AD, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -69,7 +69,7 @@ ms.locfileid: "59280355"
 
 Перед настройкой и включением автоматической подготовки пользователей нужно решить, какие пользователи или группы в Azure AD должны иметь доступ к Samanage. Когда этот вопрос будет решен, этих пользователей и (или) группы можно будет назначить приложению Samanage, следуя приведенным ниже указаниям.
 
-*   [Назначение пользователя или группы корпоративному приложению](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
+*   [Назначение корпоративному приложению пользователя или группы](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
 
 ### <a name="important-tips-for-assigning-users-to-samanage"></a>Важные советы по назначению пользователей в Samanage
 
@@ -118,7 +118,7 @@ ms.locfileid: "59280355"
 
     ![Подготовка Samanage](./media/samanage-provisioning-tutorial/EmailNotification.png)
 
-8. Нажмите кнопку **Сохранить**.
+8. Выберите команду **Сохранить**.
 
 9. В разделе **Сопоставления** выберите **Synchronize Azure Active Directory Users to Samanage** (Синхронизировать пользователей Azure Active Directory с Samanage).
 
@@ -167,7 +167,7 @@ ms.locfileid: "59280355"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 
 <!--Image references-->
 [1]: ./media/samanage-provisioning-tutorial/tutorial_general_01.png

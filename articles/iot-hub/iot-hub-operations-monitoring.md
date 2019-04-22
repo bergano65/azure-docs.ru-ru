@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: nberdy
 ms.openlocfilehash: 84f28a1cb411e7df156fc08fa683efe7f83eda64
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59258119"
 ---
 # <a name="iot-hub-operations-monitoring-deprecated"></a>Операций центра Интернета вещей мониторинга (устаревшая версия)
@@ -268,6 +268,6 @@ class Program
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 
-* [Руководство разработчика для центра Интернета вещей](iot-hub-devguide.md)
+* [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide.md)
 
-* [Развертывание ии на пограничных устройствах с помощью Azure IoT Edge](../iot-edge/tutorial-simulate-device-linux.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)

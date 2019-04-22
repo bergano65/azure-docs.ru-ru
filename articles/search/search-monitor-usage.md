@@ -12,10 +12,10 @@ ms.date: 04/04/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: f4a0cba18f27c9cabfc03d1934469e6899c5cd18
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59010419"
 ---
 # <a name="monitor-resource-consumption-and-query-activity-in-azure-search"></a>Мониторинг использования ресурсов и обработки запросов в Поиске Azure
@@ -96,7 +96,7 @@ ms.locfileid: "59010419"
 * insights-logs-operationlogs: для поиска журналов трафика
 * insights-metrics-pt1m: для метрик
 
-**Создаваемые контейнеры отобразятся в хранилище BLOB-объектов через один час. Для каждого часа и каждого контейнера создается один большой двоичный объект.**
+**Он принимает один час, прежде чем контейнеры будут отображаться в хранилище BLOB-объектов. Имеется один большой двоичный объект, в час, каждый контейнер.**
 
 Для просмотра этих файлов можно использовать [Visual Studio Code](#download-and-open-in-visual-studio-code) или другой редактор JSON. 
 
@@ -169,7 +169,7 @@ resourceId=/subscriptions/<subscriptionID>/resourcegroups/<resourceGroupName>/pr
 REST API Поиска Azure и пакет SDK для .NET Поиска Azure обеспечивают программный доступ к метрикам служб, данным индекса и индексаторов, а также количеству документов.
 
 * [Получение статистики службы](/rest/api/searchservice/get-service-statistics)
-* [Получение статистических данных индекса](/rest/api/searchservice/get-index-statistics)
+* [Получение статистики индексов](/rest/api/searchservice/get-index-statistics)
 * [Подсчет документов](/rest/api/searchservice/count-documents)
 * [Получение состояния индексатора](/rest/api/searchservice/get-indexer-status)
 

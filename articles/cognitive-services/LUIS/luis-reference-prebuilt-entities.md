@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 04/05/2019
 ms.author: diberry
 ms.openlocfilehash: 96157511c0255774a64c0f64a333fe88a37f80d6
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59261434"
 ---
 # <a name="entities-per-culture-in-your-luis-model"></a>Сущности для языков и региональных параметров в модели LUIS
@@ -26,7 +26,7 @@ ms.locfileid: "59261434"
 |--|--|--|
 |Китайский|[zh-CN](#chinese-entity-support)||
 |Нидерландский|[nl-NL](#dutch-entity-support)||
-|Английский|[en US (американский)](#english-american-entity-support)||
+|Английский|[en-US (США)](#english-american-entity-support)||
 |Французский|[fr-CA (Канада)](#french-canadian-entity-support), [fr-FR (Франция)](#french-france-entity-support), ||
 |Немецкий|[de-DE](#german-entity-support)||
 |Итальянский|[it-IT](#italian-entity-support)||
@@ -34,7 +34,7 @@ ms.locfileid: "59261434"
 |Корейский|[ko-KR](#korean-entity-support)||
 |Португальский|[pt-BR (Бразилия)](#portuguese-brazil-entity-support)||
 |Испанский|[es-ES (Испания)](#spanish-spain-entity-support), [es-MX (Мексика)](#spanish-mexico-entity-support)||
-|Турецкий|[турецкий](#turkish-entity-support)|Предварительно созданные сущности не поддерживается в турецком языке|
+|Турецкий|[turkish](#turkish-entity-support)|Предварительно созданные сущности не поддерживается в турецком языке|
 
 ## <a name="chinese-entity-support"></a>Поддержка сущностей для китайского языка
 
@@ -46,14 +46,14 @@ ms.locfileid: "59261434"
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>Twitter в режиме реального<br>timerange   |    ✔   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
-[Email](luis-reference-prebuilt-email.md)   |    ✔   | 
+[Электронная почта](luis-reference-prebuilt-email.md)   |    ✔   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
 [KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    -   | 
-[Number](luis-reference-prebuilt-number.md)   |    ✔   |  
-[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
-[Процент](luis-reference-prebuilt-percentage.md)   |    ✔   | 
-[personName](luis-reference-prebuilt-person.md)   |    ✔   | 
-[Номер телефона](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
+[Число](luis-reference-prebuilt-number.md)   |    ✔   |  
+[Ordinal](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
+[Percentage](luis-reference-prebuilt-percentage.md)   |    ✔   | 
+[PersonName](luis-reference-prebuilt-person.md)   |    ✔   | 
+[Phonenumber](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
 [Temperature](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    ✔   | 
 [URL-адрес](luis-reference-prebuilt-url.md)   |    ✔   |
 
@@ -67,14 +67,14 @@ ms.locfileid: "59261434"
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>Twitter в режиме реального<br>timerange   |    -   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
-[Email](luis-reference-prebuilt-email.md)   |    ✔   | 
+[Электронная почта](luis-reference-prebuilt-email.md)   |    ✔   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
 [KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    ✔   | 
-[Number](luis-reference-prebuilt-number.md)   |    ✔   |  
-[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
-[Процент](luis-reference-prebuilt-percentage.md)   |    ✔   | 
-[personName](luis-reference-prebuilt-person.md)   |    -   | 
-[Номер телефона](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
+[Число](luis-reference-prebuilt-number.md)   |    ✔   |  
+[Ordinal](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
+[Percentage](luis-reference-prebuilt-percentage.md)   |    ✔   | 
+[PersonName](luis-reference-prebuilt-person.md)   |    -   | 
+[Phonenumber](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
 [Temperature](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    ✔   | 
 [URL-адрес](luis-reference-prebuilt-url.md)   |    ✔   |
 
@@ -88,14 +88,14 @@ ms.locfileid: "59261434"
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>Twitter в режиме реального<br>timerange   |    ✔   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
-[Email](luis-reference-prebuilt-email.md)   |    ✔   | 
+[Электронная почта](luis-reference-prebuilt-email.md)   |    ✔   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    ✔   | 
 [KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    ✔   | 
-[Number](luis-reference-prebuilt-number.md)   |    ✔   |  
-[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
-[Процент](luis-reference-prebuilt-percentage.md)   |    ✔   | 
-[personName](luis-reference-prebuilt-person.md)   |    ✔   | 
-[Номер телефона](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
+[Число](luis-reference-prebuilt-number.md)   |    ✔   |  
+[Ordinal](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
+[Percentage](luis-reference-prebuilt-percentage.md)   |    ✔   | 
+[PersonName](luis-reference-prebuilt-person.md)   |    ✔   | 
+[Phonenumber](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
 [Temperature](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    ✔   | 
 [URL-адрес](luis-reference-prebuilt-url.md)   |    ✔   |
 
@@ -109,14 +109,14 @@ ms.locfileid: "59261434"
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>Twitter в режиме реального<br>timerange   |    ✔   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
-[Email](luis-reference-prebuilt-email.md)   |    ✔   | 
+[Электронная почта](luis-reference-prebuilt-email.md)   |    ✔   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
 [KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    ✔   | 
-[Number](luis-reference-prebuilt-number.md)   |    ✔   |  
-[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
-[Процент](luis-reference-prebuilt-percentage.md)   |    ✔   | 
-[personName](luis-reference-prebuilt-person.md)   |   -   | 
-[Номер телефона](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
+[Число](luis-reference-prebuilt-number.md)   |    ✔   |  
+[Ordinal](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
+[Percentage](luis-reference-prebuilt-percentage.md)   |    ✔   | 
+[PersonName](luis-reference-prebuilt-person.md)   |   -   | 
+[Phonenumber](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
 [Temperature](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    ✔   | 
 [URL-адрес](luis-reference-prebuilt-url.md)   |    ✔   |
 
@@ -130,14 +130,14 @@ ms.locfileid: "59261434"
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>Twitter в режиме реального<br>timerange   |    ✔   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
-[Email](luis-reference-prebuilt-email.md)   |    ✔   | 
+[Электронная почта](luis-reference-prebuilt-email.md)   |    ✔   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
 [KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    ✔   | 
-[Number](luis-reference-prebuilt-number.md)   |    ✔   |  
-[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
-[Процент](luis-reference-prebuilt-percentage.md)   |    ✔   | 
-[personName](luis-reference-prebuilt-person.md)   |    -   | 
-[Номер телефона](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
+[Число](luis-reference-prebuilt-number.md)   |    ✔   |  
+[Ordinal](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
+[Percentage](luis-reference-prebuilt-percentage.md)   |    ✔   | 
+[PersonName](luis-reference-prebuilt-person.md)   |    -   | 
+[Phonenumber](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
 [Temperature](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    ✔   | 
 [URL-адрес](luis-reference-prebuilt-url.md)   |    ✔   |
 
@@ -151,14 +151,14 @@ ms.locfileid: "59261434"
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>Twitter в режиме реального<br>timerange   |    ✔   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
-[Email](luis-reference-prebuilt-email.md)   |    ✔   | 
+[Электронная почта](luis-reference-prebuilt-email.md)   |    ✔   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
 [KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    ✔   | 
-[Number](luis-reference-prebuilt-number.md)   |    ✔   |  
-[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
-[Процент](luis-reference-prebuilt-percentage.md)   |    ✔   | 
-[personName](luis-reference-prebuilt-person.md)   |    -   | 
-[Номер телефона](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
+[Число](luis-reference-prebuilt-number.md)   |    ✔   |  
+[Ordinal](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
+[Percentage](luis-reference-prebuilt-percentage.md)   |    ✔   | 
+[PersonName](luis-reference-prebuilt-person.md)   |    -   | 
+[Phonenumber](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
 [Temperature](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    ✔   | 
 [URL-адрес](luis-reference-prebuilt-url.md)   |    ✔   |
 
@@ -172,14 +172,14 @@ ms.locfileid: "59261434"
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>Twitter в режиме реального<br>timerange   |    -   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
-[Email](luis-reference-prebuilt-email.md)   |    ✔   | 
+[Электронная почта](luis-reference-prebuilt-email.md)   |    ✔   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
 [KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    ✔   | 
-[Number](luis-reference-prebuilt-number.md)   |    ✔   |  
-[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
-[Процент](luis-reference-prebuilt-percentage.md)   |    ✔   | 
-[personName](luis-reference-prebuilt-person.md)   |    -   | 
-[Номер телефона](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
+[Число](luis-reference-prebuilt-number.md)   |    ✔   |  
+[Ordinal](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
+[Percentage](luis-reference-prebuilt-percentage.md)   |    ✔   | 
+[PersonName](luis-reference-prebuilt-person.md)   |    -   | 
+[Phonenumber](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
 [Temperature](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    ✔   | 
 [URL-адрес](luis-reference-prebuilt-url.md)   |    ✔   |
 
@@ -193,14 +193,14 @@ ms.locfileid: "59261434"
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>Twitter в режиме реального<br>timerange   |    -   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
-[Email](luis-reference-prebuilt-email.md)   |    ✔   | 
+[Электронная почта](luis-reference-prebuilt-email.md)   |    ✔   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
 [KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    ✔   | 
-[Number](luis-reference-prebuilt-number.md)   |    ✔   |  
-[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
-[Процент](luis-reference-prebuilt-percentage.md)   |    ✔   | 
-[personName](luis-reference-prebuilt-person.md)   |    -   | 
-[Номер телефона](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
+[Число](luis-reference-prebuilt-number.md)   |    ✔   |  
+[Ordinal](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
+[Percentage](luis-reference-prebuilt-percentage.md)   |    ✔   | 
+[PersonName](luis-reference-prebuilt-person.md)   |    -   | 
+[Phonenumber](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
 [Temperature](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    ✔   | 
 [URL-адрес](luis-reference-prebuilt-url.md)   |    ✔   |
 
@@ -214,14 +214,14 @@ ms.locfileid: "59261434"
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    -   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>Twitter в режиме реального<br>timerange   |    -   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    -   | 
-[Email](luis-reference-prebuilt-email.md)   |    ✔   | 
+[Электронная почта](luis-reference-prebuilt-email.md)   |    ✔   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
 [KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    ✔   | 
-[Number](luis-reference-prebuilt-number.md)   |    -   |  
-[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    -   |  
-[Процент](luis-reference-prebuilt-percentage.md)   |    -   | 
-[personName](luis-reference-prebuilt-person.md)   |    -   | 
-[Номер телефона](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
+[Число](luis-reference-prebuilt-number.md)   |    -   |  
+[Ordinal](luis-reference-prebuilt-ordinal.md)   |    -   |  
+[Percentage](luis-reference-prebuilt-percentage.md)   |    -   | 
+[PersonName](luis-reference-prebuilt-person.md)   |    -   | 
+[Phonenumber](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
 [Temperature](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    -   | 
 [URL-адрес](luis-reference-prebuilt-url.md)   |    ✔   |
 
@@ -235,14 +235,14 @@ ms.locfileid: "59261434"
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>Twitter в режиме реального<br>timerange   |    ✔   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
-[Email](luis-reference-prebuilt-email.md)   |    ✔   | 
+[Электронная почта](luis-reference-prebuilt-email.md)   |    ✔   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
 [KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    ✔   | 
-[Number](luis-reference-prebuilt-number.md)   |    ✔   |  
-[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
-[Процент](luis-reference-prebuilt-percentage.md)   |    ✔   | 
-[personName](luis-reference-prebuilt-person.md)   |    -   | 
-[Номер телефона](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
+[Число](luis-reference-prebuilt-number.md)   |    ✔   |  
+[Ordinal](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
+[Percentage](luis-reference-prebuilt-percentage.md)   |    ✔   | 
+[PersonName](luis-reference-prebuilt-person.md)   |    -   | 
+[Phonenumber](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
 [Temperature](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    ✔   | 
 [URL-адрес](luis-reference-prebuilt-url.md)   |    ✔   |
 
@@ -256,14 +256,14 @@ ms.locfileid: "59261434"
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>Twitter в режиме реального<br>timerange   |    ✔   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    ✔   | 
-[Email](luis-reference-prebuilt-email.md)   |    ✔   | 
+[Электронная почта](luis-reference-prebuilt-email.md)   |    ✔   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
 [KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    ✔   | 
-[Number](luis-reference-prebuilt-number.md)   |    ✔   |  
-[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
-[Процент](luis-reference-prebuilt-percentage.md)   |    ✔   | 
-[personName](luis-reference-prebuilt-person.md)   |    -   | 
-[Номер телефона](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
+[Число](luis-reference-prebuilt-number.md)   |    ✔   |  
+[Ordinal](luis-reference-prebuilt-ordinal.md)   |    ✔   |  
+[Percentage](luis-reference-prebuilt-percentage.md)   |    ✔   | 
+[PersonName](luis-reference-prebuilt-person.md)   |    -   | 
+[Phonenumber](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
 [Temperature](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    ✔   | 
 [URL-адрес](luis-reference-prebuilt-url.md)   |    ✔   |
 
@@ -277,14 +277,14 @@ ms.locfileid: "59261434"
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    -   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>Twitter в режиме реального<br>timerange   |    -   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    -   | 
-[Email](luis-reference-prebuilt-email.md)   |    ✔   | 
+[Электронная почта](luis-reference-prebuilt-email.md)   |    ✔   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
 [KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    ✔   | 
-[Number](luis-reference-prebuilt-number.md)   |    ✔   |  
-[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    -   |  
-[Процент](luis-reference-prebuilt-percentage.md)   |    -   | 
-[personName](luis-reference-prebuilt-person.md)   |    -   | 
-[Номер телефона](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
+[Число](luis-reference-prebuilt-number.md)   |    ✔   |  
+[Ordinal](luis-reference-prebuilt-ordinal.md)   |    -   |  
+[Percentage](luis-reference-prebuilt-percentage.md)   |    -   | 
+[PersonName](luis-reference-prebuilt-person.md)   |    -   | 
+[Phonenumber](luis-reference-prebuilt-phonenumber.md)   |    ✔   | 
 [Temperature](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    -   | 
 [URL-адрес](luis-reference-prebuilt-url.md)   |    ✔   |
 

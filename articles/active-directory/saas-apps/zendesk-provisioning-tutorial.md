@@ -17,10 +17,10 @@ ms.date: 03/27/2019
 ms.author: v-ant
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cf747fb75ea663d2c64038d73f48adb19d9fb804
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59278587"
 ---
 # <a name="tutorial-configure-zendesk-for-automatic-user-provisioning"></a>Руководство. Настройка Zendesk для автоматической подготовки пользователей
@@ -30,7 +30,7 @@ ms.locfileid: "59278587"
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -45,7 +45,7 @@ ms.locfileid: "59278587"
 
 Перед настройкой Zendesk для автоматической подготовки пользователей в Azure AD необходимо добавить Zendesk из коллекции приложений Azure AD в список управляемых приложений SaaS.
 
-**Чтобы добавить Zendesk из коллекции приложений Azure AD, выполните следующие действия.**
+**Чтобы добавить Zendesk из коллекции приложений Azure AD, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -69,7 +69,7 @@ ms.locfileid: "59278587"
 
 Перед настройкой и включением автоматической подготовки пользователей нужно решить, какие пользователи или группы в Azure AD должны иметь доступ к Zendesk. Когда этот вопрос будет решен, этих пользователей и (или) группы можно будет назначить приложению Zendesk, следуя инструкциям:
 
-* [Назначение пользователя или группы корпоративному приложению](../manage-apps/assign-user-or-group-access-portal.md)
+* [Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
 ### <a name="important-tips-for-assigning-users-to-zendesk"></a>Важные советы по назначению пользователей в Zendesk
 
@@ -130,7 +130,7 @@ ms.locfileid: "59278587"
 
     ![Подготовка Zendesk](./media/zendesk-provisioning-tutorial/ZenDesk9.png)
 
-9. Нажмите кнопку **Сохранить**.
+9. Выберите команду **Сохранить**.
 
 10. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Zendesk**.
 
@@ -179,7 +179,7 @@ ms.locfileid: "59278587"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 
 <!--Image references-->
 [1]: ./media/zendesk-tutorial/tutorial_general_01.png

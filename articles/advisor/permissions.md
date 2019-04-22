@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 04/03/2019
 ms.author: kasparks
 ms.openlocfilehash: cbd2e456c96dbf8ca01387f0c7c17a1541dbfe55
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59052797"
 ---
 # <a name="permissions-in-azure-advisor"></a>Разрешения в помощник по Azure
@@ -54,4 +54,4 @@ ms.locfileid: "59052797"
 В этой статье представлен обзор как помощник по RBAC для управления разрешениями пользователей и способы решения распространенных проблем. Дополнительные сведения о Помощнике см. в таких разделах.
 
 - [Что такое Azure Advisor?](https://docs.microsoft.com/azure/advisor/advisor-overview)
-- [Приступая к работе с Azure Advisor](https://docs.microsoft.com/azure/advisor/advisor-get-started)
+- [Начало работы с помощником по Azure](https://docs.microsoft.com/azure/advisor/advisor-get-started)

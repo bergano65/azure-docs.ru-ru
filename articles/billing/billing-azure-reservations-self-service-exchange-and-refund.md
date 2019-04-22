@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 04/5/2019
 ms.author: banders
 ms.openlocfilehash: aa1a218fbf0bc7eacac65b50e4ee1f86791e2b3b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
-ms.translationtype: MT
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59281987"
 ---
 # <a name="self-service-exchanges-and-refunds-for-azure-reservations"></a>Обмен самообслуживания и возмещения для резервирования Azure
@@ -85,11 +85,11 @@ Money добавляется денежных обязательств для о
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об управлении резервированием см. в разделе [Управление резервированиями в Azure](billing-manage-reserved-vm-instance.md).
-- Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
-    - [Общие сведения об Azure Reserved VM Instances](billing-save-compute-costs-reservations.md)
-    - [Управление резервирования в Azure](billing-manage-reserved-vm-instance.md)
-    - [Сведения о применении скидки на резервирование](billing-understand-vm-reservation-charges.md)
-    - [Общие сведения об использовании резервирования для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
-    - [Общие сведения об использовании резервирования о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
-    - [Затраты на программное обеспечение Windows, не входит в состав резервирования](billing-reserved-instance-windows-software-costs.md)
-    - [Azure резервирования в программе поставщика облачных решений (CSP) партнер Center](/partner-center/azure-reservations)
+- Дополнительные сведения о резервировании в Azure см. в следующих статьях.
+    - [Основные сведения о резервировании в Azure](billing-save-compute-costs-reservations.md)
+    - [Управление резервированиями в Azure](billing-manage-reserved-vm-instance.md)
+    - [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](billing-understand-vm-reservation-charges.md)
+    - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
+    - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
+    - [Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров Azure](billing-reserved-instance-windows-software-costs.md)
+    - [Приобретение зарезервированных экземпляров Azure](/partner-center/azure-reservations)

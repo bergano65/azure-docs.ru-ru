@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2a3e7373a8b0354a3d08debf944f2f77f1609382
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59267044"
 ---
 # <a name="azure-ad-connect-upgrade-from-a-previous-version-to-the-latest"></a>Azure AD Connect выполняет следующие функции: обновление до последней версии
@@ -33,7 +33,7 @@ ms.locfileid: "59267044"
 
 Существует несколько различных стратегий обновления Azure AD Connect.
 
-| Метод | Описание |
+| Метод | ОПИСАНИЕ |
 | --- | --- |
 | [Автоматическое обновление](how-to-connect-install-automatic-upgrade.md) |Самый простой вариант — для клиентов с экспресс-установкой. |
 | [Обновление «на месте»](#in-place-upgrade) |Если у вас один сервер, то установку можно обновить "на месте". |
@@ -133,7 +133,7 @@ ms.locfileid: "59267044"
    >[!IMPORTANT]
    > Не забудьте выполнить необходимые шаги синхронизации при первой возможности. Вы можете выполнить эти действия вручную с помощью Synchronization Service Manager или вернуть переопределения с помощью командлета Set-ADSyncSchedulerConnectorOverride.
 
-Чтобы добавить переопределения для полного импорта и полной синхронизации на произвольном соединителе, выполните следующий командлет:  `Set-ADSyncSchedulerConnectorOverride -ConnectorIdentifier <Guid> -FullImportRequired $true -FullSyncRequired $true`
+Чтобы добавить переопределения для полного импорта и полной синхронизации на произвольном соединителе, выполните следующий командлет: `Set-ADSyncSchedulerConnectorOverride -ConnectorIdentifier <Guid> -FullImportRequired $true -FullSyncRequired $true`
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 В следующем разделе приведены сведения об устранении неполадок, которые можно использовать, если у вас возникнет проблема с обновлением Azure AD Connect.
@@ -144,7 +144,7 @@ ms.locfileid: "59267044"
 
 ![Ошибка](./media/how-to-upgrade-previous-version/error1.png)
 
-Эта ошибка происходит потому, что соединитель Azure Active Directory с идентификатором b891884f-051e-4a83-95af - 2544101c 9083 не существует в текущей конфигурации Azure AD Connect. Чтобы убедиться, что это так, откройте окно PowerShell, запустите командлет `Get-ADSyncConnector -Identifier b891884f-051e-4a83-95af-2544101c9083`
+Эта ошибка происходит потому, что соединитель Azure Active Directory с идентификатором b891884f-051e-4a83-95af - 2544101c 9083 не существует в текущей конфигурации Azure AD Connect. Чтобы убедиться в этом, откройте окно PowerShell и выполните командлет `Get-ADSyncConnector -Identifier b891884f-051e-4a83-95af-2544101c9083`.
 
 ```
 PS C:\> Get-ADSyncConnector -Identifier b891884f-051e-4a83-95af-2544101c9083

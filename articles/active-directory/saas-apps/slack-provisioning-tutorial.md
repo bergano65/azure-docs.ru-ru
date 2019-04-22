@@ -18,10 +18,10 @@ ms.author: asmalser-msft
 ms.reviewer: asmalser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b50bcada8cfc72c06804793850f1f28a288f5248
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59272926"
 ---
 # <a name="tutorial-configure-slack-for-automatic-user-provisioning"></a>Руководство. Настройка Slack для автоматической подготовки пользователей
@@ -44,7 +44,7 @@ ms.locfileid: "59272926"
 
 Перед настройкой и включением службы подготовки необходимо решить, какие пользователи или группы в Azure AD представляют пользователей, которым необходим доступ к приложению Slack. Когда этот вопрос будет решен, можно назначить этих пользователей приложению Slack, следуя нижеперечисленным указаниям.
 
-[Назначение пользователя или группы корпоративному приложению](../manage-apps/assign-user-or-group-access-portal.md)
+[Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
 ### <a name="important-tips-for-assigning-users-to-slack"></a>Важные рекомендации по назначению пользователей в Slack
 

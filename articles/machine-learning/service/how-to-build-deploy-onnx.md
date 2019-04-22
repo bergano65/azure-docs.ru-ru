@@ -12,10 +12,10 @@ author: prasanthpul
 ms.date: 12/3/2018
 ms.custom: seodec18
 ms.openlocfilehash: 33a93aa01499beb978f616f633588ba75e4b62a3
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59259190"
 ---
 # <a name="onnx-and-azure-machine-learning-create-and-deploy-interoperable-ai-models"></a>ONNX и Машинное обучение Azure: создание и развертывание моделей ИИ с возможностью взаимодействия
@@ -37,7 +37,7 @@ ONNX дает совместимость, которая позволяет бы
 
 [Модели ONNX можно развертывать](#deploy) в облако с помощью Машинного обучения Azure и среды выполнения ONNX. С помощью [Windows ML](https://docs.microsoft.com/windows/ai/) их можно также развертывать на устройствах Windows 10. В сообществе ONNX существуют также конвертеры для развертывания на другие платформы. 
 
-[![ONNX блок-схема обучение, преобразователи типов и развертывание](media/concept-onnx/onnx.png)](./media/concept-onnx/onnx.png#lightbox)
+[![ONNX блок-схема обучения, преобразователи типов и развертывания](media/concept-onnx/onnx.png)](./media/concept-onnx/onnx.png#lightbox)
 
 ## <a name="get-onnx-models"></a>Получение моделей ONNX
 
@@ -54,7 +54,7 @@ ONNX дает совместимость, которая позволяет бы
 |Платформа модели|Пример или средство преобразования|
 |-----|-------|
 |PyTorch|[Записная книжка Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/PytorchOnnxExport.ipynb)|
-|TensorFlow|[преобразователь tensorflow onnx](https://github.com/onnx/tensorflow-onnx)|
+|TensorFlow|[Преобразователь tensorflow-onnx](https://github.com/onnx/tensorflow-onnx)|
 |Chainer|[Записная книжка Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/ChainerOnnxExport.ipynb)|
 |MXNet|[Записная книжка Jupyter](https://github.com/onnx/tutorials/blob/master/tutorials/MXNetONNXExport.ipynb)|
 |Keras, ScitKit-Learn, CoreML<br/>XGBoost и libSVM|[WinMLTools](https://docs.microsoft.com/windows/ai/convert-model-winmltools)|
@@ -208,9 +208,9 @@ results = session.run([], {"input1": indata1, "input2": indata2})
 Узнайте больше об ONNX или поддержите проект:
 + [Веб-сайт проекта ONNX](https://onnx.ai)
 
-+ [ONNX код на GitHub](https://github.com/onnx/onnx)
++ [Код ONNX в GitHub](https://github.com/onnx/onnx)
 
 Узнайте больше о среде выполнения ONNX или поддержите проект:
-+ [Репозиторий GitHub ONNX среды выполнения](https://github.com/Microsoft/onnxruntime)
++ [Репозиторий GitHub для среды выполнения ONNX](https://github.com/Microsoft/onnxruntime)
 
 

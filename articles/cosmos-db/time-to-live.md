@@ -8,10 +8,10 @@ ms.date: 04/08/2019
 ms.author: rimman
 ms.reviewer: sngun
 ms.openlocfilehash: 27540c3dfce73788e01f0f8ab0892c733f153fdf
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59271277"
 ---
 # <a name="time-to-live-ttl-in-azure-cosmos-db"></a>Срок жизни (TTL) в Azure Cosmos DB 
@@ -50,4 +50,4 @@ ms.locfileid: "59271277"
 
 Узнайте, как настроить время жизни в следующих статьях:
 
-* [Настройка времени жизни](how-to-time-to-live.md)
+* [Как настроить срок жизни в Azure Cosmos DB](how-to-time-to-live.md)

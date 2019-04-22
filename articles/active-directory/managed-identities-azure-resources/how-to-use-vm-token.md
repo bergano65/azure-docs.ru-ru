@@ -16,10 +16,10 @@ ms.date: 12/01/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: abdeb7ce5327db57b8a6ae48fdd8d8c0c81879a7
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59258918"
 ---
 # <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-to-acquire-an-access-token"></a>Как использовать управляемые удостоверения для ресурсов Azure на виртуальной машине Azure для получения маркера доступа 
@@ -365,7 +365,7 @@ echo The managed identities for Azure resources access token is $access_token
 | Элемент | ОПИСАНИЕ |
 | ------- | ----------- |
 | error   | Идентификатор ошибки. |
-| error_description | Подробное описание ошибки. **Описания ошибок можно изменить в любое время. Не записывайте код, который ветвей на основе значений в описании ошибки.**|
+| error_description | Подробное описание ошибки. **Описания ошибки могут в любое время измениться. Не записывайте код, который создает ветвь на основе значений в описании ошибки.**|
 
 ### <a name="http-response-reference"></a>Ссылка ответа HTTP
 

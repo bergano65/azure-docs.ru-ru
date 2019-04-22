@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: hrasheed
 ms.openlocfilehash: 89303e5c827fc24540d345a9a2b9a0743e453a4d
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59257133"
 ---
 # <a name="use-the-apache-beeline-client-with-apache-hive"></a>Использование клиента Apache Beeline с Apache Hive
@@ -180,17 +180,17 @@ beeline -u 'jdbc:hive2://headnodehost:10002/;transportMode=http'
 
     Эти операторы выполняют следующие действия:
 
-    * `DROP TABLE` — Если таблица существует, она удаляется.
+    * `DROP TABLE`. Если таблица уже создана, она будет удалена.
 
-    * `CREATE EXTERNAL TABLE` — Создает **внешних** таблицы в Hive. Внешние таблицы хранят только определения таблицы в Hive. Данные остаются в исходном расположении.
+    * `CREATE EXTERNAL TABLE`. Создает **внешнюю** таблицу в Hive. Внешние таблицы хранят только определения таблицы в Hive. Данные остаются в исходном расположении.
 
-    * `ROW FORMAT` — Настройка форматирования данных. В данном случае поля всех журналов разделены пробелом.
+    * `ROW FORMAT` — настройка форматирования данных. В данном случае поля всех журналов разделены пробелом.
 
-    * `STORED AS TEXTFILE LOCATION` -При хранении данных и их формат.
+    * `STORED AS TEXTFILE LOCATION`. Указывает расположение для хранения данных и их формат.
 
-    * `SELECT` — Подсчет количества строк, где столбец **t4** содержит значение **[ERROR]**. Этот запрос должен вернуть значение **3**, так как таблица содержит три строки с данным значением.
+    * `SELECT`. Подсчитывает количество строк, в которых столбец **t4** содержит значение **[ERROR]**. Этот запрос должен вернуть значение **3**, так как таблица содержит три строки с данным значением.
 
-    * `INPUT__FILE__NAME LIKE '%.log'` . Hive пытается применить схему ко всем файлам в каталоге. В этом случае каталог содержит файлы, которые не соответствуют схеме. Чтобы исключить лишние данные в результатах, эта инструкция указывает Hive возвращать данные только из файлов, заканчивающихся на .log.
+    * `INPUT__FILE__NAME LIKE '%.log'`. Hive пытается применить схему ко всем файлам в каталоге. В этом случае каталог содержит файлы, которые не соответствуют схеме. Чтобы исключить лишние данные в результатах, эта инструкция указывает Hive возвращать данные только из файлов, заканчивающихся на .log.
 
    > [!NOTE]  
    > Внешние таблицы следует использовать, если исходные данные должны обновляться с использованием внешних источников. Например, процессом автоматизированной передачи данных или другой операцией MapReduce.
@@ -284,12 +284,12 @@ beeline -u 'jdbc:hive2://headnodehost:10002/;transportMode=http'
 
 Дополнительные общие сведения об использовании Hadoop в HDInsight см. в следующем документе:
 
-* [Использование Apache Hive и Apache Hadoop в HDInsight](hdinsight-use-hive.md)
+* [Использование Apache Hive с Apache Hadoop в HDInsight](hdinsight-use-hive.md)
 
 Дополнительные сведения о способах работы с Hadoop в HDInsight см. в следующих документах:
 
 * [Использование Apache Pig с Apache Hadoop в HDInsight](hdinsight-use-pig.md)
-* [Использование MapReduce с Apache Hadoop в HDInsight](hdinsight-use-mapreduce.md)
+* [Использование MapReduce в Apache Hadoop в HDInsight](hdinsight-use-mapreduce.md)
 
 [azure-purchase-options]: https://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: https://azure.microsoft.com/pricing/member-offers/

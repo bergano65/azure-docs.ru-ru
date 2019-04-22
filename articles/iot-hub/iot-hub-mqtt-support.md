@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 10/12/2018
 ms.author: rezas
 ms.openlocfilehash: 5c879b050fad0ac8c6467ffa29d9aee398f57aa2
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59276865"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Взаимодействие с Центром Интернета вещей с помощью протокола MQTT
@@ -47,7 +47,7 @@ ms.locfileid: "59276865"
 | --- | --- |
 | [Node.js](https://github.com/Azure/azure-iot-sdk-node/blob/master/device/samples/simple_sample_device.js) |azure-iot-device-mqtt |
 | [Java](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-samples/send-receive-sample/src/main/java/samples/com/microsoft/azure/sdk/iot/SendReceive.java) |IotHubClientProtocol.MQTT |
-| [К](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples/iothub_client_sample_mqtt_dm) |MQTT_Protocol |
+| [C](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples/iothub_client_sample_mqtt_dm) |MQTT_Protocol |
 | [C#](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/iothub/device/samples) |TransportType.Mqtt |
 | [Python](https://github.com/Azure/azure-iot-sdk-python/tree/master/device/samples) |IoTHubTransportProvider.MQTT |
 
@@ -150,11 +150,11 @@ pip install paho-mqtt
 
 * `<local path to digicert.cer>` — путь к локальному файлу, содержащему корневой сертификат DigiCert Baltimore. Этот файл можно создать путем копирования сведений о сертификате из [certs.c](https://github.com/Azure/azure-iot-sdk-c/blob/master/certs/certs.c) в пакете Центра Интернета вещей Azure для C. Укажите строки `-----BEGIN CERTIFICATE-----` и `-----END CERTIFICATE-----`, удалите метки `"` в начале и в конце каждой строки, а также удалите знаки `\r\n` в конце каждой строки.
 
-* `<device id from device registry>` — Идентификатор устройства, добавленного в центр Интернета вещей.
+* `<device id from device registry>` — идентификатор устройства, добавленного в Центр Интернета вещей.
 
-* `<generated SAS token>` — Это маркер SAS для устройства, созданного как описано ранее в этой статье.
+* `<generated SAS token>` — маркер SAS для устройства, созданного как описано ранее в этой статье.
 
-* `<iot hub name>` имя центра Интернета вещей.
+* `<iot hub name>` — имя Центра Интернета вещей.
 
 ```python
 from paho.mqtt import client as mqtt
@@ -191,7 +191,7 @@ client.loop_forever()
 
 ### <a name="sending-device-to-cloud-messages"></a>Отправка сообщений из устройства в облако
 
-После успешного подключения устройство может отправлять сообщения в Центр Интернета вещей, используя `devices/{device_id}/messages/events/` или `devices/{device_id}/messages/events/{property_bag}` в качестве значения параметра **Имя раздела**. Элемент `{property_bag}` позволяет устройству отправлять сообщения с дополнительными свойствами в формате URL-адреса. Например:
+После успешного подключения устройство может отправлять сообщения в Центр Интернета вещей, используя `devices/{device_id}/messages/events/` или `devices/{device_id}/messages/events/{property_bag}` в качестве значения параметра **Имя раздела**. Элемент `{property_bag}` позволяет устройству отправлять сообщения с дополнительными свойствами в формате URL-адреса. Например: 
 
 ```text
 RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-encoded(<PropertyName2>)=RFC 2396-encoded(<PropertyValue2>)…
@@ -216,7 +216,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 Устройство не будет получать сообщения из Центра Интернета вещей, пока не будет успешно подписано на соответствующую конечную точку устройства, представленную фильтром разделов `devices/{device_id}/messages/devicebound/#`. Когда подписка выполнена, устройство получает сообщения, переданные из облака на устройство, только с момента подписки. Если устройство подключается с флагом **CleanSession**, имеющим значение **0**, то подписка будет сохраняться в разных сеансах. В этом случае при следующем подключении с флагом **CleanSession 0** устройство получает ожидающие сообщения, отправленные на него, пока оно было отключено. Если устройство использует флаг **CleanSession** со значением **1**, то оно не будет получать сообщения из Центра Интернета вещей, пока не будет подписано на конечную точку устройства.
 
-Центр Интернета вещей передает сообщения с **именем раздела** `devices/{device_id}/messages/devicebound/` или `devices/{device_id}/messages/devicebound/{property_bag}` при наличии свойств сообщения. `{property_bag}` содержит пары ключ/значение в кодировке URL-адрес свойств сообщения. В контейнер свойств входят только свойства приложений и задаваемые пользователем системные свойства (такие как **messageId** или **correlationId**). Имена системных свойств имеют префикс **$**, свойства приложений используют исходное имя свойства без префикса.
+Центр Интернета вещей передает сообщения с **именем раздела** `devices/{device_id}/messages/devicebound/` или `devices/{device_id}/messages/devicebound/{property_bag}` при наличии свойств сообщения. `{property_bag}` содержит закодированные в формате URL-адреса пары "ключ-значение" свойств сообщения. В контейнер свойств входят только свойства приложений и задаваемые пользователем системные свойства (такие как **messageId** или **correlationId**). Имена системных свойств имеют префикс **$**, свойства приложений используют исходное имя свойства без префикса.
 
 Если приложение для устройства подписывается на раздел со **вторым уровнем качества обслуживания**, то Центр Интернета вещей присваивает пакету **SUBACK** уровень качества обслуживания не выше первого. После этого Центр Интернета вещей доставляет сообщения на устройство, используя первый уровень качества обслуживания.
 
@@ -244,7 +244,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 Возможны следующие коды состояний:
 
-|Статус | Описание |
+|Статус | ОПИСАНИЕ |
 | ----- | ----------- |
 | 204 | Успех (содержимое не возвращается) |
 | 429 | Слишком много запросов (регулирование), как указано в [регулирования центра Интернета вещей](iot-hub-devguide-quotas-throttling.md) |
@@ -264,7 +264,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 3. Затем служба отправляет ответное сообщение, содержащее новое значение ETag для коллекции сообщаемых свойств в разделе `$iothub/twin/res/{status}/?$rid={request id}`. В этом ответном сообщении используется то же значение **request ID**, что и в запросе.
 
-Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый элемент документа JSON обновляет или добавляет соответствующий компонент в документе двойника устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Например:
+Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый элемент документа JSON обновляет или добавляет соответствующий компонент в документе двойника устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Например: 
 
 ```json
 {
@@ -275,9 +275,9 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 Возможны следующие коды состояний:
 
-|Статус | Описание |
+|Статус | ОПИСАНИЕ |
 | ----- | ----------- |
-| 200 | Успех |
+| 200 | Успешно |
 | 400 | Недопустимый запрос. Неправильно сформированный JSON. |
 | 429 | Слишком много запросов (регулирование), как указано в [регулирования центра Интернета вещей](iot-hub-devguide-quotas-throttling.md) |
 | 5** | ошибки сервера; |
@@ -301,7 +301,7 @@ client.publish("$iothub/twin/PATCH/properties/reported/?$rid=" + rid, twin_repor
 
 ### <a name="receiving-desired-properties-update-notifications"></a>Получение уведомлений об обновлении требуемых свойств
 
-При подключении устройства Центр Интернета вещей отправляет уведомления в раздел `$iothub/twin/PATCH/properties/desired/?$version={new version}`, в котором находится содержимое обновления, выполненного серверной частью решения. Например:
+При подключении устройства Центр Интернета вещей отправляет уведомления в раздел `$iothub/twin/PATCH/properties/desired/?$version={new version}`, в котором находится содержимое обновления, выполненного серверной частью решения. Например: 
 
 ```json
 {
@@ -338,10 +338,10 @@ client.publish("$iothub/twin/PATCH/properties/reported/?$rid=" + rid, twin_repor
 
 * [Каталог устройств, сертифицированных по программе Microsoft Azure Certified for IoT](https://catalog.azureiotsolutions.com/)
 * [Поддержка дополнительных протоколов](iot-hub-protocol-gateway.md)
-* [Сравнение с Центрами событий](iot-hub-compare-event-hubs.md)
-* [Масштабирование, HA и DR](iot-hub-scaling.md)
+* [Сравнение с концентраторами событий](iot-hub-compare-event-hubs.md)
+* [Масштабирование, высокой ДОСТУПНОСТИ и аварийного восстановления](iot-hub-scaling.md)
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 
-* [Руководство разработчика для центра Интернета вещей](iot-hub-devguide.md)
-* [Развертывание ии на пограничных устройствах с помощью Azure IoT Edge](../iot-edge/tutorial-simulate-device-linux.md)
+* [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide.md)
+* [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)

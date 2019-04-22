@@ -9,10 +9,10 @@ ms.date: 04/08/2019
 ms.author: alkohli
 ms.subservice: common
 ms.openlocfilehash: 28026a429643c62434ddfd7591126169857a7371
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59265646"
 ---
 # <a name="use-azure-importexport-service-to-import-data-to-azure-files"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в службу "Файлы Azure"
@@ -21,7 +21,7 @@ ms.locfileid: "59265646"
 
 Служба "Импорт и экспорт Azure" поддерживает только импорт файлов Azure в службу хранилища Azure. Экспорт файлов Azure не поддерживается.
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 Перед созданием задания импорта для передачи данных в службу "Файлы Azure" внимательно просмотрите и выполните описанные ниже предварительные требования. Необходимо следующее:
 
@@ -112,7 +112,7 @@ ms.locfileid: "59265646"
 
 Дополнительные примеры см. в [примерах для файлов журнала](#samples-for-journal-files).
 
-## <a name="step-2-create-an-import-job"></a>Шаг 2. Создать задание импорта 
+## <a name="step-2-create-an-import-job"></a>Шаг 2. создание задания импорта; 
 
 Чтобы создать задание импорта на портале Azure, выполните следующие шаги.
 1. Войдите в систему по адресу https://portal.azure.com/.
@@ -208,6 +208,6 @@ ms.locfileid: "59265646"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Просмотр состояния задания и диска](storage-import-export-view-drive-status.md)
-* [Ознакомьтесь с требованиями к импорта и экспорта](storage-import-export-requirements.md)
+* [Сведения о требованиях службы "Импорт и экспорт"](storage-import-export-requirements.md)
 
 

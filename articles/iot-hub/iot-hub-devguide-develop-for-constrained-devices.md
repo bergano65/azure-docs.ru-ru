@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: yizhon
 ms.openlocfilehash: 7788bca621a59ec8cdfe36edf73a99efca8c460c
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59261400"
 ---
 # <a name="develop-for-constrained-devices-using-azure-iot-c-sdk"></a>Разработка устройств с ограниченными ресурсами с помощью пакета SDK Azure IoT для C
@@ -82,5 +82,5 @@ strip -s <Path_to_executable>
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об архитектуре пакетов SDK для Azure IoT для C см. в следующих источниках:
--   [Azure исходный код пакета SDK для IoT для C](https://github.com/Azure/azure-iot-sdk-c/)
--   [Azure SDK для устройств IoT для C-введение](iot-hub-device-sdk-c-intro.md)
+-   [Исходный код пакета SDK для Интернета вещей Azure для C](https://github.com/Azure/azure-iot-sdk-c/)
+-   [Пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md)

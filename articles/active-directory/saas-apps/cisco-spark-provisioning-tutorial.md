@@ -1,5 +1,5 @@
 ---
-title: Учебник. Настройка Cisco Spark для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка Cisco Spark для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: В этой статье описано, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Cisco Spark.
 services: active-directory
 documentationcenter: ''
@@ -17,20 +17,20 @@ ms.date: 03/27/2019
 ms.author: v-wingf
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 77dab6ad0480bc1565c219766d17211995dcfc20
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59278418"
 ---
-# <a name="tutorial-configure-cisco-spark-for-automatic-user-provisioning"></a>Учебник. Настройка Cisco Spark для автоматической подготовки пользователей
+# <a name="tutorial-configure-cisco-spark-for-automatic-user-provisioning"></a>Руководство по Настройка Cisco Spark для автоматической подготовки пользователей
 
 В этом руководстве описаны шаги, которые нужно выполнить в Cisco Spark и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отмены подготовки пользователей.
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -45,7 +45,7 @@ ms.locfileid: "59278418"
 
 Перед началом настройки Cisco Spark для автоматической подготовки пользователей с помощью Azure AD необходимо добавить Cisco Spark в список управляемых приложений SaaS из коллекции приложений Azure AD.
 
-**Чтобы добавить Cisco Spark из коллекции приложений Azure AD, выполните следующие действия:**
+**Чтобы добавить Cisco Spark из коллекции приложений Azure AD, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -69,7 +69,7 @@ ms.locfileid: "59278418"
 
 Перед настройкой и включением автоматической подготовки пользователей, определите, каким пользователям или группам Azure AD необходим доступ к Cisco Spark. После этого, выполнив следующие действия, этих пользователей можно назначить приложению Cisco Spark.
 
-* [Назначение пользователя или группы корпоративному приложению](../manage-apps/assign-user-or-group-access-portal.md)
+* [Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
 
 ### <a name="important-tips-for-assigning-users-to-cisco-spark"></a>Важные советы по назначению пользователей в Cisco Spark
 
@@ -145,7 +145,7 @@ ms.locfileid: "59278418"
 
     ![Подготовка Cisco Spark](./media/cisco-spark-provisioning-tutorial/EmailNotification.png)
 
-9. Нажмите кнопку **Сохранить**.
+9. Выберите команду **Сохранить**.
 
 10. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Cisco Spark**.
 
@@ -184,7 +184,7 @@ ms.locfileid: "59278418"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 
 <!--Image references-->
 [1]: ./media/cisco-spark-provisioning-tutorial/tutorial_general_01.png

@@ -11,10 +11,10 @@ ms.date: 04/05/2019
 ms.author: rithorn
 ms.topic: conceptual
 ms.openlocfilehash: 2dd2a6e071533deef47a6482bfb9ed92953864ba
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59259820"
 ---
 # <a name="create-management-groups-for-resource-organization-and-management"></a>Создание групп управления для упорядочения ресурсов и управления ими
@@ -98,7 +98,7 @@ az account management-group create --name ContosoSubGroup --parent Contoso
 Дополнительные сведения о группах управления:
 
 - [Создание групп управления для организации ресурсов Azure](create.md)
-- [Как изменить, удалить или управлять группами управления](manage.md)
+- [Изменение, удаление групп управления и управление ими](manage.md)
 - [Просмотр групп управления в модуле ресурсов Azure PowerShell](/powershell/module/az.resources#resources)
 - [Просмотр групп управления в REST API](/rest/api/resources/managementgroups)
 - [Просмотр групп управления в Azure CLI](/cli/azure/account/management-group)

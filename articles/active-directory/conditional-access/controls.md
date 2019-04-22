@@ -19,10 +19,10 @@ ms.author: joflore
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a92d10f67533efc2f5893b012aefbcb92efee59a
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59258748"
 ---
 # <a name="what-are-access-controls-in-azure-active-directory-conditional-access"></a>Элементы управления условным доступом в Azure Active Directory
@@ -76,9 +76,9 @@ ms.locfileid: "59258748"
 
 Ваше устройство должно быть зарегистрировано в Azure AD, прежде чем его можно будет пометить как соответствующее. Чтобы зарегистрировать устройство, у вас есть три варианта: 
 
-- [Устройства, зарегистрированные в Azure AD](../devices/overview.md#azure-ad-registered-devices)
-- [Устройства, присоединенные к Azure AD](../devices/overview.md#azure-ad-joined-devices)  
-- [Гибридные устройства, присоединенные к Azure AD](../devices/overview.md#hybrid-azure-ad-joined-devices)
+- [устройства, зарегистрированные в Azure AD](../devices/overview.md#azure-ad-registered-devices);
+- [устройства, присоединенные к Azure AD](../devices/overview.md#azure-ad-joined-devices);  
+- [устройства, использующие гибридное присоединение к Azure AD](../devices/overview.md#hybrid-azure-ad-joined-devices).
 
 Дополнительные сведения см. в статье [Практическое руководство. Требование использовать только управляемые устройства для доступа к облачным приложениям с помощью условного доступа](require-managed-devices.md).
 
@@ -124,8 +124,8 @@ ms.locfileid: "59258748"
 Сейчас поставщики включают следующие совместимые службы:
 
 - [Duo Security](https://duo.com/docs/azure-ca)
-- [Entrust Datacard](https://www.entrustdatacard.com/products/authentication/intellitrust)
-- [Ping Identity](https://documentation.pingidentity.com/pingid/pingidAdminGuide/index.shtml#pid_c_AzureADIntegration.html)
+- [Entrust Datacard](https://www.entrustdatacard.com/products/authentication/intellitrust);
+- [Ping Identity](https://documentation.pingidentity.com/pingid/pingidAdminGuide/index.shtml#pid_c_AzureADIntegration.html);
 - RSA
 - [SecureAuth](https://docs.secureauth.com/pages/viewpage.action?pageId=47238992#)
 - [Silverfort](https://www.silverfort.io/company/using-silverfort-mfa-with-azure-active-directory/)
@@ -174,9 +174,9 @@ ms.locfileid: "59258748"
 
 Дополнительные сведения см. на следующих ресурсах:
 
-- [Включение ограниченный доступ в SharePoint Online](https://aka.ms/spolimitedaccessdocs)
+- [Включение ограниченного доступа с помощью SharePoint Online](https://aka.ms/spolimitedaccessdocs)
 
-- [Ограниченный доступ с Exchange Online](https://aka.ms/owalimitedaccess)
+- [Включение ограниченного доступа с помощью Exchange Online](https://aka.ms/owalimitedaccess)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

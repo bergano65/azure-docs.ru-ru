@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: automation
 manager: carmonm
 ms.openlocfilehash: 22e3ea1c90946902fc2a16d947ff2884e5e0a44b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59274592"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Устранение неполадок c помощью управления обновлениями
@@ -21,7 +21,7 @@ ms.locfileid: "59274592"
 
 Агент устранения неполадок определяет первоначальную проблему для агента гибридной рабочей роли. Для дополнительных сведений о средстве устранения неполадок см. [Общие сведения о результатах проверки агента в службе "Управление обновлениями"](update-agent-issues.md). Подробные сведения о других неполадках см. ниже.
 
-## <a name="general"></a>Общее
+## <a name="general"></a>Общие сведения
 
 ### <a name="components-enabled-not-working"></a>Сценарий. Компоненты для решения "Управление обновлениями" включены, и теперь эта виртуальная машина настраивается
 
@@ -40,12 +40,12 @@ The components for the 'Update Management' solution have been enabled, and now t
 1. Обмен данными в учетной записи службы автоматизации заблокирован.
 2. Подключенная виртуальная машина, возможно, поступила с клонированного компьютера, необработанного командой Sysprep с помощью установленного Microsoft Monitoring Agent.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
 1. Дополнительные сведения о том, какие адреса и порты должны быть разрешены, чтобы управление обновлениями работало, см. в статье [Автоматизация ресурсов в центре обработки данных или в облаке с помощью использования гибридной рабочей роли Runbook](../automation-hybrid-runbook-worker.md#network-planning).
 2. Если используется клонированный образ:
    1. В рабочей области Log Analytics, необходимо удалить виртуальную Машину из сохраненного поиска для конфигурации области `MicrosoftDefaultScopeConfig-Updates` если он отображается. Сохраненные поисковые запросы хранятся на вкладке **Общие** рабочей области.
-   2. Запуск `Remove-Item -Path "HKLM:\software\microsoft\hybridrunbookworker" -Recurse -Force`
+   2. Запустите `Remove-Item -Path "HKLM:\software\microsoft\hybridrunbookworker" -Recurse -Force`
    3. Выполните `Restart-Service HealthService`, чтобы перезапустить `HealthService`. Будет повторно создан ключ, а также сгенерирован новый идентификатор UUID.
    4. Если это не сработает, sysprep изображение первого и установите агент MMA за прошедшие периоды.
 
@@ -63,7 +63,7 @@ The client has permission to perform action 'Microsoft.Compute/virtualMachines/w
 
 Эта ошибка возникает при создании развертывания обновления с виртуальными машинами Azure, расположенными в другом клиенте.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
 Необходимо использовать обходной путь, чтобы запланировать обновление этих виртуальных машин. Можно использовать командлет [New-AzureRmAutomationSchedule](/powershell/module/azurerm.automation/new-azurermautomationschedule) с параметром `-ForUpdate`, чтобы создать расписание, а также применить командлет [New AzureRmAutomationSoftwareUpdateConfiguration](/powershell/module/azurerm.automation/new-azurermautomationsoftwareupdateconfiguration
 ) и передать компьютеры, расположенные в другом клиенте, в параметр `-NonAzureComputer`. В приведенном ниже примере показано, как это сделать.
@@ -88,11 +88,11 @@ New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -Automa
 
 Возможно, нужно повторно зарегистрировать и установить гибридные рабочие роли Runbook.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
 Следуйте инструкциям статьи [Развертывание гибридной рабочей роли Runbook для Windows](../automation-windows-hrw-install.md), чтобы переустановить гибридную рабочую роль для Windows, или статьи [Развертывание гибридной рабочей роли Runbook для Linux](../automation-linux-hrw-install.md) — для Linux.
 
-## <a name="windows"></a>Windows
+## <a name="windows"></a> Windows
 
 Если при попытке подключить решение или виртуальную машину возникли проблемы, проверьте журнал событий **Operations Manager** в разделе **Журналы приложений и служб** на локальном компьютере для событий с идентификатором **4502**, а также сообщение события, содержащее **Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent**.
 
@@ -112,7 +112,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 Компьютер уже подключен к другой рабочей области для управления обновлениями.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
 Выполните очистку старых артефактов на компьютере путем [удаления группы гибридных модулей Runbook](../automation-hybrid-runbook-worker.md#remove-a-hybrid-worker-group) и повторите попытку.
 
@@ -138,7 +138,7 @@ The certificate presented by the service <wsid>.oms.opinsights.azure.com was not
 
 Возможно, прокси-сервер, шлюз или брандмауэр блокирует сетевую связь.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
 Проверьте сеть и убедитесь, что необходимые порты и адреса разрешены. Раздел [Требования сети](../automation-hybrid-runbook-worker.md#network-planning) содержит информацию о том, как создать список портов и адресов, необходимых для управления обновлениями, и гибридные рабочие роли Runbook.
 
@@ -156,7 +156,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 Гибридной рабочей роли Runbook не удалось создать самозаверяющий сертификат.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
 Убедитесь, что системная учетная запись имеет доступ для чтения к папке **C:\ProgramData\Microsoft\Crypto\RSA** и повторите попытку.
 
@@ -170,7 +170,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 Центр обновления Windows или Windows Server Update Services неправильно настроены на компьютере. Решение "Управление обновлениями" зависит от Центра обновлений Windows или от служб WSUS для предоставления необходимых обновлений, состояния исправления и результатов развернутых исправлений. Без этой информации решение "Управление обновлениями" не сможет должным образом предоставлять отчеты об исправлениях, которые требуется установить или которые уже установлены.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
 Чтобы просмотреть целиком сообщение об исключении, дважды щелкните на исключение, выделенное красным. Ознакомьтесь со следующей таблицей для выполнения потенциальных решений или действий.
 
@@ -201,7 +201,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 Гибридная рабочая роль Linux неработоспособна.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
 Создайте копию в следующем файле журнала и сохранить его для устранения неполадок.
 
@@ -221,9 +221,9 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 * диспетчер пакетов неработоспособен;
 * определенные пакеты могут конфликтовать с установкой исправлений облака;
-* Другие причины
+* другие причины.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Способы устранения:
 
 Если сбои происходят во время запуска обновления после того, как он успешно запущен в Linux, проверьте выполнение задания на затронутом компьютере в ходе выполнения. Просмотрите конкретные сообщения об ошибках из диспетчера пакетов вашего компьютера и примите меры. Для успешного обновления развертываний управлению обновлениями необходима работоспособность диспетчера пакетов.
 

@@ -12,10 +12,10 @@ ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: seoapril2019
 ms.openlocfilehash: 62007624bdf2b5f1b9c387bcc51d58c020860913
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59279777"
 ---
 # <a name="table-statistics-in-azure-sql-data-warehouse"></a>Статистика таблицы в хранилище данных SQL Azure
@@ -46,11 +46,11 @@ SET AUTO_CREATE_STATISTICS ON
 
 Эти инструкции активируют автоматическое создание статистики:
 
-- ВЫБОР
+- SELECT
 - INSERT SELECT
 - CTAS;
 - UPDATE
-- DELETE
+- УДАЛИТЬ
 - ОБЪЯСНИТЕ, если он содержит соединения или обнаружено наличие предикат
 
 > [!NOTE]
@@ -148,7 +148,7 @@ WHERE
 CREATE STATISTICS [statistics_name] ON [schema_name].[table_name]([column_name]);
 ```
 
-Например:
+Например: 
 
 ```sql
 CREATE STATISTICS col1_stats ON dbo.table1 (col1);
@@ -164,7 +164,7 @@ CREATE STATISTICS col1_stats ON dbo.table1 (col1);
 CREATE STATISTICS [statistics_name] ON [schema_name].[table_name]([column_name]) WITH FULLSCAN;
 ```
 
-Например:
+Например: 
 
 ```sql
 CREATE STATISTICS col1_stats ON dbo.table1 (col1) WITH FULLSCAN;
@@ -367,7 +367,7 @@ EXEC [dbo].[prc_sqldw_create_stats] 3, 20;
 UPDATE STATISTICS [schema_name].[table_name]([stat_name]);
 ```
 
-Например:
+Например: 
 
 ```sql
 UPDATE STATISTICS [dbo].[table1] ([stats_col1]);
@@ -383,7 +383,7 @@ UPDATE STATISTICS [dbo].[table1] ([stats_col1]);
 UPDATE STATISTICS [schema_name].[table_name];
 ```
 
-Например:
+Например: 
 
 ```sql
 UPDATE STATISTICS dbo.table1;
@@ -406,24 +406,24 @@ UPDATE STATISTICS dbo.table1;
 
 Вот какие системные представления показывают информацию о статистике:
 
-| Представления каталога | Описание |
+| Представления каталога | ОПИСАНИЕ |
 |:--- |:--- |
-| [sys.Columns](/sql/relational-databases/system-catalog-views/sys-columns-transact-sql) |Одна строка для каждого столбца. |
-| [sys.Objects](/sql/relational-databases/system-catalog-views/sys-objects-transact-sql) |Одна строка для каждого объекта в базе данных. |
+| [sys.columns](/sql/relational-databases/system-catalog-views/sys-columns-transact-sql) |Одна строка для каждого столбца. |
+| [sys.objects](/sql/relational-databases/system-catalog-views/sys-objects-transact-sql) |Одна строка для каждого объекта в базе данных. |
 | [sys.schemas](/sql/relational-databases/system-catalog-views/sys-objects-transact-sql) |Одна строка для каждой схемы в базе данных. |
 | [sys.stats](/sql/relational-databases/system-catalog-views/sys-stats-transact-sql) |Одна строка для каждого объекта статистики. |
 | [sys.stats_columns](/sql/relational-databases/system-catalog-views/sys-stats-columns-transact-sql) |Одна строка для каждого столбца в объекте статистики. Ссылается на sys.columns. |
-| [sys.Tables](/sql/relational-databases/system-catalog-views/sys-tables-transact-sql) |Одна строка для каждой таблицы (включая внешние таблицы). |
+| [sys.tables](/sql/relational-databases/system-catalog-views/sys-tables-transact-sql) |Одна строка для каждой таблицы (включая внешние таблицы). |
 | [sys.table_types](/sql/relational-databases/system-catalog-views/sys-table-types-transact-sql) |Одна строка для каждого типа данных. |
 
 ### <a name="system-functions-for-statistics"></a>Системные функции для статистики
 
 Эти системные функции полезны для работы со статистикой:
 
-| Системная функция | Описание |
+| Системная функция | ОПИСАНИЕ |
 |:--- |:--- |
 | [STATS_DATE](/sql/t-sql/functions/stats-date-transact-sql) |Дата последнего обновления объекта статистики. |
-| [ИНСТРУКЦИЯ DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql) |Сводная и подробная информация о распределении значений согласно объекту статистики. |
+| [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql) |Сводная и подробная информация о распределении значений согласно объекту статистики. |
 
 ### <a name="combine-statistics-columns-and-functions-into-one-view"></a>Сочетание столбцов и функций статистики в одном представлении
 
@@ -483,7 +483,7 @@ DBCC SHOW_STATISTICS() отображает данные, хранящиеся �
 DBCC SHOW_STATISTICS([<schema_name>.<table_name>],<stats_name>)
 ```
 
-Например:
+Например: 
 
 ```sql
 DBCC SHOW_STATISTICS (dbo.table1, stats_col1);
@@ -497,7 +497,7 @@ DBCC SHOW_STATISTICS (dbo.table1, stats_col1);
 DBCC SHOW_STATISTICS([<schema_name>.<table_name>],<stats_name>) WITH stat_header, histogram, density_vector
 ```
 
-Например:
+Например: 
 
 ```sql
 DBCC SHOW_STATISTICS (dbo.table1, stats_col1) WITH histogram, density_vector
