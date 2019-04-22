@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Evernote | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Evernote | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Evernote.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,21 @@ manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 28acce3e-22a0-4a37-8b66-6e518d777350
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 02/07/2019
+ms.date: 04/10/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46d8b4c20ee7aa932109c0e89904456fea8dd437
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2ce05e904484a6d773a0132734208b87e161f960
+ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57854710"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59499926"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-evernote"></a>Руководство. Интеграция Azure Active Directory с Evernote
+# <a name="tutorial-azure-active-directory-integration-with-evernote"></a>Руководство по Интеграция Azure Active Directory с Evernote
 
 В этом руководстве описано, как интегрировать Evernote с Azure Active Directory (Azure AD).
 Интеграция Evernote с Azure AD обеспечивает следующие преимущества:
@@ -51,7 +51,7 @@ ms.locfileid: "57854710"
 
 Чтобы настроить интеграцию Evernote с Azure AD, необходимо добавить Evernote из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Evernote из коллекции, сделайте следующее:**
+**Чтобы добавить Evernote из коллекции, сделайте следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -61,7 +61,7 @@ ms.locfileid: "57854710"
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+3. Чтобы добавить новое приложение, нажмите кнопку **Новое приложение** в верхней части диалогового окна.
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
@@ -101,7 +101,7 @@ ms.locfileid: "57854710"
 
     ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
+4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующее действие.
 
     ![Сведения о домене и URL-адресах единого входа приложения Evernote](common/idp-identifier.png)
 
@@ -117,15 +117,25 @@ ms.locfileid: "57854710"
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-7. Требуемый URL-адрес вы можете скопировать из раздела **Настройка Evernote**.
+7. В разделе **Сертификат подписи SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
+
+    ![изображение](common/edit-certificate.png) 
+
+    ![изображение](./media/evernote-tutorial/samlassertion.png)
+
+    a. Для параметра **Вариант подписывания** выберите значение **Ответ знака SAML и утверждение**.
+
+    b. Нажмите кнопку **Сохранить**
+
+8. Требуемый URL-адрес вы можете скопировать из раздела **Настройка Evernote**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
     а) URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-evernote-single-sign-on"></a>Настройка единого входа в Evernote
 
@@ -169,8 +179,7 @@ ms.locfileid: "57854710"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
-    Например BrittaSimon@contoso.com.
+    b. В поле **Имя пользователя** введите `brittasimon@yourcompanydomain.extension`. Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

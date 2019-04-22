@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7ee8c94b216b9e4e0699e70819e3eb775d62234
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: d4bda20d9ce06f756913e6dfb3e980399ac7e0a6
+ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59283875"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59565455"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rstudio-connect"></a>Руководство по Интеграция Azure Active Directory с приложением RStudio Connect
 
@@ -54,7 +54,7 @@ ms.locfileid: "59283875"
 
 Чтобы настроить интеграцию RStudio Connect с Azure AD, необходимо добавить RStudio Connect из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить RStudio Connect из коллекции, сделайте следующее:**
+**Чтобы добавить RStudio Connect из коллекции, сделайте следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -108,9 +108,9 @@ ms.locfileid: "59283875"
 
     ![Сведения о домене и URL-адресах единого входа для приложения RStudio Connect](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://connect.<example>.com/__login__/saml`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://connect.<example>.com/__login__/saml`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://connect.<example>.com/__login__/saml/acs`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://connect.<example>.com/__login__/saml/acs`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -195,9 +195,9 @@ ms.locfileid: "59283875"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [ Список учебников по интеграции приложений SaaS с Azure Active Directory ](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory? ](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

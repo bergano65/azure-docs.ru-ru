@@ -10,7 +10,7 @@ ms.author: johnkem
 ms.subservice: logs
 ms.openlocfilehash: b84238e8a659358f2c065eb1533f0d21a5335d43
 ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/18/2019
 ms.locfileid: "59496885"

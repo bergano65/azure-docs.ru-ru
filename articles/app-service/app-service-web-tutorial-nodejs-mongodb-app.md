@@ -1,6 +1,6 @@
 ---
-title: Разработка приложения на основе Node.js и MongoDB в Службе приложений Azure | Документация Майкрософт
-description: Узнайте, как разработать приложение Node.js с подключением к базе данных Cosmos DB и строкой подключения MongoDB в Azure.
+title: Node.js (MEAN.js) с MongoDB — Служба приложений Azure | Документация Майкрософт
+description: Узнайте, как разработать приложение Node.js с подключением к базе данных Cosmos DB и строкой подключения MongoDB в Azure. В этом руководстве используется MEAN.js.
 services: app-service\web
 documentationcenter: nodejs
 author: cephalin
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 05/04/2017
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: f123a443d9a00aa7f1b35bd8ed540f90d66de97f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 361e921af65b33ac0a7a8d12e28db1cb305b0fa1
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57891830"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59548132"
 ---
 # <a name="tutorial-build-a-nodejs-and-mongodb-app-in-azure"></a>Руководство по Разработка приложения на основе Node.js и MongoDB в Azure
 

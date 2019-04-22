@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: quickstart
-ms.date: 02/20/2019
+ms.date: 04/11/2019
 ms.author: aahi
-ms.openlocfilehash: b439b702fb5ae4990c8c31838fe9677cb882d2a2
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 7a17c695482f2e9c8158c437c9c40c0abcb07e67
+ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57546325"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59616294"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-c"></a>Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и C#
 
@@ -24,7 +24,10 @@ ms.locfileid: "57546325"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Любой выпуск [Visual Studio 2017](https://www.visualstudio.com/downloads/).
-* Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet.
+* Чтобы установить `Newtonsoft.Json` в качестве пакета NuGet в Visual Studio, сделайте следующее.
+    1. Щелкните правой кнопкой мыши файл решения в обозревателе решений.
+    1. Выберите **Управление пакетами NuGet для решения**.
+    1. Затем выполните поиск пакета `Newtonsoft.Json` и установите его.
 * Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
 
 [!INCLUDE [cognitive-services-bing-spell-check-signup-requirements](../../../../includes/cognitive-services-bing-spell-check-signup-requirements.md)]
@@ -52,14 +55,14 @@ ms.locfileid: "57546325"
         {
             static string host = "https://api.cognitive.microsoft.com";
             static string path = "/bing/v7.0/spellcheck?";
-            static string key = "enter your key here";
+            static string key = "<ENTER-KEY-HERE>";
             //text to be spell-checked
             static string text = "Hollo, wrld!";
         }
     }
     ```
 
-3. Создайте переменную для параметров поиска. Добавьте свой код рынка в `mkt=`, а режим проверки орфографии в `&mode=`.
+3. Создайте переменную для параметров поиска. Добавьте код рынка после `mkt=`. Код рынка определяет страну, из которой выполняется запрос. Кроме того, добавьте режим проверки орфографии после `&mode=`. Можно указать режим `proof` (выявляет большинство орфографических и грамматических ошибок) или `spell` (выявляет большинство орфографических ошибок, но не так много грамматических ошибок).
     
     ```csharp
     static string params_ = "mkt=en-US&mode=proof";
@@ -76,10 +79,10 @@ ms.locfileid: "57546325"
         client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
 
         HttpResponseMessage response = new HttpResponseMessage();
-        //...
+        // add the rest of the code snippets here (except for main())...
     }
 
-2. Create the URI for your request by appending your host, path, and parameters. 
+2. Create the URI for your request by appending your host, path, and parameters.
     
     ```csharp
     string uri = host + path + params_;

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/08/2019
 ms.author: dobett
-ms.openlocfilehash: 2d759dbfc9b38aae00dd8c3a51a6c0ee2dbe523f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 6338403818259c7263fe66af7d8c8840d98efbcd
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58176571"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59491276"
 ---
 # <a name="quickstart-try-a-cloud-based-solution-to-manage-my-industrial-iot-devices"></a>Краткое руководство. Пробное использование облачного решения для управления промышленными устройствами Интернета вещей
 
@@ -64,7 +64,7 @@ ms.locfileid: "58176571"
 
 *Панель мониторинга* является представлением по умолчанию. Чтобы перейти к другим областям портала, используйте меню в левой части страницы:
 
-[![Панель мониторинга решения](./media/quickstart-connected-factory-deploy/dashboard-inline.png)](./media/quickstart-connected-factory-deploy/dashboard-expanded.png#lightbox)
+[![SПанель мониторинга решения(./media/quickstart-connected-factory-deploy/dashboard-inline.png)](./media/quickstart-connected-factory-deploy/dashboard-expanded.png#lightbox)
 
 Панель мониторинга используется для управления промышленными устройствами Центра Интернета вещей. Подключенная фабрика использует иерархию, чтобы представить глобальную конфигурацию фабрик. Вверху иерархии находится предприятие, которое включает одну или несколько фабрик. Каждая фабрика содержит производственные линии, каждая из которых состоит из станций. На каждом уровне можно просматривать значения общей эффективности оборудования и ключевых показателей эффективности, публиковать новые узлы для передачи телеметрии и реагировать на оповещения.
 
@@ -74,13 +74,13 @@ ms.locfileid: "58176571"
 
 На панели **Общая эффективность оборудования** отображаются соответствующие значения для всего предприятия, фабрики, производственной линии или станции, которые вы просматриваете. Это значение агрегируется из представления узла с представлением уровня предприятия. Показатель общей эффективности оборудования и его составные элементы в дальнейшем можно проанализировать.
 
-[![Общая эффективность оборудования](./media/quickstart-connected-factory-deploy/oee-inline.png)](./media/quickstart-connected-factory-deploy/oee-expanded.png#lightbox)
+[![OОбщая эффективность оборудования(./media/quickstart-connected-factory-deploy/oee-inline.png)](./media/quickstart-connected-factory-deploy/oee-expanded.png#lightbox)
 
 Значение общей эффективности оборудования определяет эффективность производственного процесса с помощью параметров работоспособности. Общая эффективность оборудования является стандартной рабочей мерой, которая вычисляется путем умножения значений уровня доступности, производительности и качества (общая эффективность оборудования = доступность x качество x производительность).
 
 Можно дополнительно проанализировать общую эффективность оборудования для любого уровня в иерархии данных. Щелкните элемент с процентом общей эффективности оборудования, доступности, производительности либо качества. Отобразится контекстная панель с визуализациями, которые отображают данные на разных шкалах времени:
 
-[![Сведения об общей эффективности оборудования](./media/quickstart-connected-factory-deploy/oeedetail-inline.png)](./media/quickstart-connected-factory-deploy/oeedetail-expanded.png#lightbox)
+[![OСведения об общей эффективности оборудования(./media/quickstart-connected-factory-deploy/oeedetail-inline.png)](./media/quickstart-connected-factory-deploy/oeedetail-expanded.png#lightbox)
 
 Вы можете щелкнуть диаграмму, чтобы выполнить дальнейший анализ данных.
 
@@ -88,11 +88,11 @@ ms.locfileid: "58176571"
 
 На панели **Ключевые показатели эффективности** отображается количество произведенной продукции в час и количество энергии (кВт/ч), потребляемой всем предприятием, фабрикой, производственной линией или станцией, которые вы просматриваете. Эти значения агрегируются из представления станции с уровнем предприятия.
 
-[![Ключевые показатели эффективности](./media/quickstart-connected-factory-deploy/kpis-inline.png)](./media/quickstart-connected-factory-deploy/kpis-expanded.png#lightbox)
+[![KКлючевые показатели эффективности(./media/quickstart-connected-factory-deploy/kpis-inline.png)](./media/quickstart-connected-factory-deploy/kpis-expanded.png#lightbox)
 
 Можно дополнительно проанализировать ключевые показатели эффективности для любого уровня в иерархии данных. Щелкните элемент с процентом общей эффективности оборудования, доступности, производительности либо качества. Отобразится контекстная панель с визуализациями, которые отображают данные на разных шкалах времени:
 
-[![Сведения о ключевом показатели эффективности](./media/quickstart-connected-factory-deploy/kpidetail-inline.png)](./media/quickstart-connected-factory-deploy/kpidetail-expanded.png#lightbox)
+[![KСведения о ключевых показателях эффективности(./media/quickstart-connected-factory-deploy/kpidetail-inline.png)](./media/quickstart-connected-factory-deploy/kpidetail-expanded.png#lightbox)
 
 Вы можете щелкнуть диаграмму, чтобы выполнить дальнейший анализ данных.
 
@@ -100,7 +100,7 @@ ms.locfileid: "58176571"
 
 На панели **Расположения фабрик** отображается состояние, расположение и текущая рабочая конфигурация решения. При первом запуске акселератора решений на панели мониторинга отображается имитируемый набор фабрик. Имитация производственной линии состоит из трех физических серверов на основе унифицированной архитектуры (UA) OPC, которые выполняют имитирующие задачи и обмениваются данными. Дополнительные сведения об OPC UA см. в статье [Часто задаваемые вопросы об акселераторе решения "Подключенная фабрика"](iot-accelerators-faq-cf.md).
 
-[![Расположения фабрик](./media/quickstart-connected-factory-deploy/factorylocations-inline.png)](./media/quickstart-connected-factory-deploy/factorylocations-expanded.png#lightbox)
+[![FРасположения фабрик(./media/quickstart-connected-factory-deploy/factorylocations-inline.png)](./media/quickstart-connected-factory-deploy/factorylocations-expanded.png#lightbox)
 
 Можно перемещаться по иерархии решения и просматривать значения общей эффективности оборудования и ключевых показателей эффективности на каждом уровне.
 
@@ -112,19 +112,19 @@ ms.locfileid: "58176571"
 
 1. Щелкните **EnergyConsumption**. Вы увидите несколько диаграмм, где это значение отображено на разных шкалах времени. Вы можете щелкнуть диаграмму, чтобы выполнить дальнейший анализ данных.
 
-[![Просмотр данных о потреблении энергии](./media/quickstart-connected-factory-deploy/explorelocations-inline.png)](./media/quickstart-connected-factory-deploy/explorelocations-expanded.png#lightbox)
+[![VПросмотр данных о потреблении энергии(./media/quickstart-connected-factory-deploy/explorelocations-inline.png)](./media/quickstart-connected-factory-deploy/explorelocations-expanded.png#lightbox)
 
 ### <a name="map"></a>Сопоставление
 
 Если ваша подписка имеет доступ к [API для Карт Bing](iot-accelerators-faq-cf.md), на карте *фабрик* отобразится географическое расположение и состояние всех фабрик в решении. Щелкните расположение на карте, чтобы просмотреть подробную информацию о нем.
 
-[![Карта](./media/quickstart-connected-factory-deploy/map-inline.png)](./media/quickstart-connected-factory-deploy/map-expanded.png#lightbox)
+[![MКарта(./media/quickstart-connected-factory-deploy/map-inline.png)](./media/quickstart-connected-factory-deploy/map-expanded.png#lightbox)
 
 ### <a name="alarms"></a>Оповещения
 
 На панели **Оповещения** отображаются сигналы о сообщаемом или вычисленном значении общей эффективности оборудования или ключевых показателей эффективности, превышающие заданное пороговое значение. На этой панели отображаются оповещения на каждом уровне иерархии, от уровня представления станции до предприятия. Оповещения содержат описание, дату, время, расположение и число повторений.
 
-[![Оповещения](./media/quickstart-connected-factory-deploy/alarms-inline.png)](./media/quickstart-connected-factory-deploy/alarms-expanded.png#lightbox)
+[![AОповещения(./media/quickstart-connected-factory-deploy/alarms-inline.png)](./media/quickstart-connected-factory-deploy/alarms-expanded.png#lightbox)
 
 Вы можете проанализировать данные, вызвавшие оповещение, на панели мониторинга. При возникновении оповещений администратор может предпринять следующие действия по умолчанию.
 
@@ -133,7 +133,7 @@ ms.locfileid: "58176571"
 
 Щелкните одно из оповещений в раскрывающемся списке **Выбрать действие**, выберите **Подтвердить оповещение** и нажмите кнопку **Применить**:
 
-[![Подтверждение оповещение](./media/quickstart-connected-factory-deploy/acknowledge-inline.png)](./media/quickstart-connected-factory-deploy/acknowledge-expanded.png#lightbox)
+[![AПодтверждение оповещения(./media/quickstart-connected-factory-deploy/acknowledge-inline.png)](./media/quickstart-connected-factory-deploy/acknowledge-expanded.png#lightbox)
 
 Чтобы дополнительно проанализировать данные оповещения, щелкните диаграмму на панели оповещений.
 
@@ -154,4 +154,4 @@ ms.locfileid: "58176571"
 Чтобы узнать, как использовать другие функции панели мониторинга для управления промышленными устройствами Центра Интернета вещей, перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
-> [Руководство по использованию панели мониторинга подключенной фабрики](iot-accelerators-connected-factory-dashboard.md)
+> [Использование панели мониторинга подключенной фабрики](iot-accelerators-connected-factory-dashboard.md)

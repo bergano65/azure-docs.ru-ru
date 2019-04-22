@@ -19,10 +19,10 @@ ms.reviewer: jmprieur, dadobali
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0de9b3e3535253724d068f806b219736f6889477
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59501601"
 ---
 # <a name="support-and-help-options-for-developers"></a>Возможности получения поддержки и справки для разработчиков
@@ -54,7 +54,7 @@ ms.locfileid: "59501601"
 
 | Средство  | ОПИСАНИЕ  |
 |---------|---------|
-| [JWT.MS](https://jwt.ms) | Вставьте идентификатор или маркер доступа, чтобы декодировать имена и значения утверждений. |
+| [jwt.ms](https://jwt.ms) | Вставьте идентификатор или маркер доступа, чтобы декодировать имена и значения утверждений. |
 | [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)| Средство для выполнения запросов и получения ответов по API Microsoft Graph. |
 
 ## <a name="post-a-question-to-stack-overflow"></a>Публикация вопроса на сайте Stack Overflow
@@ -68,15 +68,15 @@ Stack Overflow — это идеальное место для вопросов
 | Библиотека ADAL | [[adal]](https://stackoverflow.com/questions/tagged/adal) |
 | Библиотека MSAL     | [[msal]](https://stackoverflow.com/questions/tagged/msal) |
 | ПО промежуточного слоя OWIN  | [[azure-active-directory]](https://stackoverflow.com/questions/tagged/azure-active-directory) |
-| [Azure B2B](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)  | [[azure ad b2b]](https://stackoverflow.com/questions/tagged/azure-ad-b2b) |
+| [Azure B2B](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)  | [[azure-ad-b2b]](https://stackoverflow.com/questions/tagged/azure-ad-b2b) |
 | [Azure B2C](https://azure.microsoft.com/services/active-directory-b2c/)  | [[azure-ad-b2c]](https://stackoverflow.com/questions/tagged/azure-ad-b2c) |
 | [API Microsoft Graph](https://developer.microsoft.com/graph/) | [[microsoft-graph]](https://stackoverflow.com/questions/tagged/microsoft-graph) |
 | Любая другая область, которая относится к аутентификации или авторизации | [[azure-active-directory]](https://stackoverflow.com/questions/tagged/azure-active-directory) |
 
 Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуя этим рекомендациям, вы повысите вероятность того, что участники сообщества быстро отреагируют на ваш вопрос.
 
-* [Как задать вопрос](https://stackoverflow.com/help/how-to-ask)
-* [Как создать минимальный, полный и проверяемых пример](https://stackoverflow.com/help/mcve)
+* [How do I ask a good question](https://stackoverflow.com/help/how-to-ask) (Как правильно задать вопрос).
+* [How to create a Minimal, Complete, and Verifiable example](https://stackoverflow.com/help/mcve) (Как создать минимальный, полный и доступный для проверки пример)
 
 ## <a name="create-a-github-issue"></a>Сообщение о проблеме на GitHub
 

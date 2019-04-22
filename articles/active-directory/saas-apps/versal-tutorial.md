@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 83a5d4c1d9c0475609a506fbfe6ae23bd9e236fa
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59262658"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-versal"></a>Руководство по Интеграция Azure Active Directory с Versal
@@ -107,14 +107,14 @@ ms.locfileid: "59262658"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `VERSAL`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://versal.com/sso/saml/orgs/<organization_id>`
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://versal.com/sso/saml/orgs/<organization_id>`.
 
     > [!NOTE]
     > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Versal](https://support.versal.com/hc/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. Приложение Versal ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Versal ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 

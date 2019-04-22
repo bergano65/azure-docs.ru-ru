@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/10/2019
 ms.author: aschhab
 ms.openlocfilehash: 55eee839e24db2ad96eb635adc488e9a119c5907
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59501201"
 ---
 # <a name="how-to-use-service-bus-queues-with-php"></a>Как использовать очереди служебной шины с PHP
@@ -35,7 +35,7 @@ ms.locfileid: "59501201"
 
         > [!NOTE]
         > Вы создадите **очереди** в пространстве имен служебной шины с помощью приложения PHP в этом руководстве. 
-3. [Пакет SDK для Azure для PHP](../php-download-sdk.md)
+3. [Пакет Azure SDK для PHP](../php-download-sdk.md)
 
 ## <a name="create-a-php-application"></a>Создание приложения PHP
 Для создания приложения PHP, которое получает доступ к службе BLOB-объектов Azure, достаточно сослаться на классы в [пакете SDK Azure для PHP](../php-download-sdk.md) непосредственно из кода. Для создания приложения можно использовать любые средства разработки или Блокнот.

@@ -9,10 +9,10 @@ ms.service: iot-industrialiot
 services: iot-industrialiot
 manager: philmea
 ms.openlocfilehash: 30eedd982fa0536ce45506c159de6d04132e9a14
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59494019"
 ---
 # <a name="secure-the-communication-of-opc-client-and-opc-plc"></a>Безопасный обмен данными клиента OPC и OPC PLC
@@ -39,7 +39,7 @@ ms.locfileid: "59494019"
 
 - Убедитесь, нет томов docker `opcclient` или `opcplc`. Уточните `docker volume ls` и удалить их с `docker volume rm <volumename>`. Необходимо также удалить контейнеры с `docker rm <containerid>` если тома по-прежнему используются в контейнере.
 
-**Быстрый запуск**
+**Краткое руководство**
 
 В корне репозитория, выполните следующую команду PowerShell:
 
@@ -92,7 +92,7 @@ opcclient-123456 | Opc.Ua.ServiceResultException: Certificate is not trusted.
     
 1. Перейдите к [хранилище OPC веб-сайт](https://opcvault.azurewebsites.net/).
 
-1. Выберите пункт `Register New`
+1. Выберите `Register New`
 
 1. Введите сведения OPC PLC из выходных данных журнала `CreateSigningRequest information` область в поля ввода на `Register New OPC UA Application` выберите `Server` как тип приложения.
 
@@ -130,7 +130,7 @@ opcclient-123456 | Opc.Ua.ServiceResultException: Certificate is not trusted.
 > [!NOTE]
 > При работе с этим сценарием, вы может распознать, `<addissuercertbase64-string>` и `<updatecrlbase64-string>` значения идентичны для `opcplc` и `opcclient`. Это справедливо для наших вариантов использования и может сэкономить время при выполнении действия.
 
-**Быстрый запуск**
+**Краткое руководство**
 
 В корне репозитория, выполните следующую команду PowerShell:
 

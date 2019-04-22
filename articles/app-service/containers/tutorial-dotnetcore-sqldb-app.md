@@ -1,10 +1,10 @@
 ---
-title: Создание веб-приложения .NET Core с базой данных SQL в службе приложений Azure в Linux | Документация Майкрософт
-description: Узнайте, как создать приложение .NET Core, работающее в службе приложений Azure в Linux, с подключением к базе данных SQL.
+title: Создание веб-приложения .NET Core с базой данных SQL в Linux в Службе приложений Azure | Документация Майкрософт
+description: Узнайте, как создать приложение ASP.NET Core, работающее в Службе приложений Azure в Linux, с подключением к Базе данных SQL.
 services: app-service\web
 documentationcenter: dotnet
 author: cephalin
-manager: syntaxc4
+manager: jeconnoc
 editor: ''
 ms.assetid: 0b4d7d0e-e984-49a1-a57a-3c0caa955f0e
 ms.service: app-service-web
@@ -12,17 +12,17 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 01/31/2019
+ms.date: 03/27/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 9d4aee884e91c52be48c8a44f185f188b0c93ab5
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: c90d0d2596eb6b8650e2d9809b23bb0e184d97c0
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55511145"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59547833"
 ---
-# <a name="build-a-net-core-and-sql-database-app-in-azure-app-service-on-linux"></a>Создание приложения .NET Core с Базой данных SQL в Службе приложений Azure в Linux
+# <a name="build-an-aspnet-core-and-sql-database-app-in-azure-app-service-on-linux"></a>Создание веб-приложения ASP.NET Core с Базой данных SQL в Службе приложений Azure в Linux
 
 > [!NOTE]
 > В этой статье мы развернем приложение в службе приложений на платформе Linux. Дополнительные сведения о развертывании в Службе приложений в _Windows_ см. в руководстве по [созданию приложения .NET Core с Базой данных SQL в Службе приложений Azure](../app-service-web-tutorial-dotnetcore-sqldb.md).
@@ -32,7 +32,7 @@ ms.locfileid: "55511145"
 
 ![Приложение, работающее в службе приложений в Linux](./media/tutorial-dotnetcore-sqldb-app/azure-app-in-browser.png)
 
-Вы узнаете, как выполнять следующие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание базы данных SQL в Azure.
@@ -100,11 +100,11 @@ dotnet run
 
 В Cloud Shell создайте логический сервер базы данных SQL с помощью команды [`az sql server create`](/cli/azure/sql/server?view=azure-cli-latest#az-sql-server-create).
 
-Замените заполнитель *\<server_name>* уникальным именем базы данных SQL. Это имя используется как часть конечной точки базы данных SQL (`<server_name>.database.windows.net`), поэтому оно должно быть уникальным для логических серверов в Azure. В нем могут использоваться только строчные буквы, цифры и дефис (-). Его длина должна быть от 3 до 50 знаков. Кроме того, замените *\<db_username >* на имя пользователя, а *\<db_password >*  — на пароль по своему усмотрению. 
+Замените заполнитель *\<server-name>* уникальным именем Базы данных SQL. Это имя используется как часть конечной точки базы данных SQL (`<server-name>.database.windows.net`), поэтому оно должно быть уникальным для логических серверов в Azure. В нем могут использоваться только строчные буквы, цифры и дефис (-). Его длина должна быть от 3 до 50 знаков. Кроме того, замените *\<db-username>* и *\<db-password>* именем пользователя и паролем по своему усмотрению. 
 
 
 ```azurecli-interactive
-az sql server create --name <server_name> --resource-group myResourceGroup --location "West Europe" --admin-user <db_username> --admin-password <db_password>
+az sql server create --name <server-name> --resource-group myResourceGroup --location "West Europe" --admin-user <db-username> --admin-password <db-password>
 ```
 
 После создания логического сервера базы данных SQL в Azure CLI отображаются примерно такие сведения:
@@ -113,12 +113,12 @@ az sql server create --name <server_name> --resource-group myResourceGroup --loc
 {
   "administratorLogin": "sqladmin",
   "administratorLoginPassword": null,
-  "fullyQualifiedDomainName": "<server_name>.database.windows.net",
-  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Sql/servers/<server_name>",
+  "fullyQualifiedDomainName": "<server-name>.database.windows.net",
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Sql/servers/<server-name>",
   "identity": null,
   "kind": "v12.0",
   "location": "westeurope",
-  "name": "<server_name>",
+  "name": "<server-name>",
   "resourceGroup": "myResourceGroup",
   "state": "Ready",
   "tags": null,
@@ -132,7 +132,7 @@ az sql server create --name <server_name> --resource-group myResourceGroup --loc
 Создайте [правило брандмауэра серверного уровня для Базы данных SQL Azure](../../sql-database/sql-database-firewall-configure.md) с помощью команды [`az sql server firewall create`](/cli/azure/sql/server/firewall-rule?view=azure-cli-latest#az-sql-server-firewall-rule-create). Если для начального и конечного IP-адресов задано значение 0.0.0.0, брандмауэр открыт только для других ресурсов Azure. 
 
 ```azurecli-interactive
-az sql server firewall-rule create --resource-group myResourceGroup --server <server_name> --name AllowYourIp --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
+az sql server firewall-rule create --resource-group myResourceGroup --server <server-name> --name AllowYourIp --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
 ```
 
 ### <a name="create-a-database"></a>Создание базы данных
@@ -140,15 +140,15 @@ az sql server firewall-rule create --resource-group myResourceGroup --server <se
 Создайте на сервере базу данных с [уровнем производительности S0](../../sql-database/sql-database-service-tiers-dtu.md) с помощью команды [`az sql db create`](/cli/azure/sql/db?view=azure-cli-latest#az-sql-db-create).
 
 ```azurecli-interactive
-az sql db create --resource-group myResourceGroup --server <server_name> --name coreDB --service-objective S0
+az sql db create --resource-group myResourceGroup --server <server-name> --name coreDB --service-objective S0
 ```
 
 ### <a name="create-connection-string"></a>Создание строки подключения
 
-В следующей строке замените *\<server_name>*, *\<db_username>* и *\<db_password>* на использованные ранее значения.
+В следующей строке замените *\<server-name>*, *\<db-username>* и *\<db-password>* используемыми ранее значениями.
 
 ```
-Server=tcp:<server_name>.database.windows.net,1433;Database=coreDB;User ID=<db_username>;Password=<db_password>;Encrypt=true;Connection Timeout=30;
+Server=tcp:<server-name>.database.windows.net,1433;Database=coreDB;User ID=<db-username>;Password=<db-password>;Encrypt=true;Connection Timeout=30;
 ```
 
 Это строка подключения для вашего приложения .NET Core. Скопируйте ее для дальнейшего использования.
@@ -171,18 +171,18 @@ Server=tcp:<server_name>.database.windows.net,1433;Database=coreDB;User ID=<db_u
 
 ### <a name="configure-an-environment-variable"></a>Настройка переменной среды
 
-Чтобы задать строки подключения для приложения Azure, используйте команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. В следующей команде замените *\<app name>* на собственное значение, а параметр *\<connection_string>*  — на строку подключения, созданную ранее.
+Чтобы задать строки подключения для приложения Azure, используйте команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. В следующей команде замените *\<app-name>*. Также замените *\<connection-string>* строкой подключения, созданной ранее.
 
 ```azurecli-interactive
-az webapp config connection-string set --resource-group myResourceGroup --name <app name> --settings MyDbConnection='<connection_string>' --connection-string-type SQLServer
+az webapp config connection-string set --resource-group myResourceGroup --name <app name> --settings MyDbConnection='<connection-string>' --connection-string-type SQLServer
 ```
 
 Затем задайте для параметра приложения `ASPNETCORE_ENVIRONMENT` значение _Production_. Этот параметр позволяет определить, выполняется ли приложение в Azure, так как SQLite применяется для локальной среды разработки, а база данных SQL — для среды Azure.
 
-В следующем примере настраивается параметр приложения `ASPNETCORE_ENVIRONMENT` в приложении Azure. Замените заполнитель *\<app_name>* собственным значением.
+В следующем примере настраивается параметр приложения `ASPNETCORE_ENVIRONMENT` в приложении Azure. Замените заполнитель *\<app-name>*.
 
 ```azurecli-interactive
-az webapp config appsettings set --name <app_name> --resource-group myResourceGroup --settings ASPNETCORE_ENVIRONMENT="Production"
+az webapp config appsettings set --name <app-name> --resource-group myResourceGroup --settings ASPNETCORE_ENVIRONMENT="Production"
 ```
 
 ### <a name="connect-to-sql-database-in-production"></a>Подключение к базе данных SQL в рабочей среде
@@ -209,11 +209,11 @@ else
 services.BuildServiceProvider().GetService<MyDatabaseContext>().Database.Migrate();
 ```
 
-Если в коде определено использование рабочей среды (то есть среды Azure), в нем используется строка подключения, настроенная для подключения к базе данных SQL.
+Если в коде определено использование рабочей среды (то есть среды Azure), в нем используется строка подключения, настроенная для подключения к базе данных SQL. См. подробнее о [доступе к переменным среды в Службе приложений](configure-language-dotnetcore.md#access-environment-variables).
 
-Вызов `Database.Migrate()` полезен при выполнении в среде Azure, так как он позволяет автоматически создавать базы данных, необходимые для приложения .NET Core, в зависимости от конфигурации миграции. 
+Вызов `Database.Migrate()` полезен при выполнении в среде Azure, так как он позволяет автоматически создавать базы данных, необходимые для приложения .NET Core, в зависимости от конфигурации миграции.
 
-Сохраните изменения и зафиксируйте их в репозитории Git. 
+Сохраните изменения и зафиксируйте их в репозитории Git.
 
 ```bash
 git add .
@@ -246,7 +246,7 @@ remote: Finished successfully.
 remote: Running post deployment command(s)...
 remote: Deployment successful.
 remote: App container will begin restart within 10 seconds.
-To https://<app_name>.scm.azurewebsites.net/<app_name>.git
+To https://<app-name>.scm.azurewebsites.net/<app-name>.git
  * [new branch]      master -> master
 ```
 
@@ -255,7 +255,7 @@ To https://<app_name>.scm.azurewebsites.net/<app_name>.git
 Перейдите к развернутому приложению в веб-браузере.
 
 ```bash
-http://<app_name>.azurewebsites.net
+http://<app-name>.azurewebsites.net
 ```
 
 Добавьте несколько элементов списка дел.
@@ -369,23 +369,9 @@ git push azure master
 
 > [!NOTE]
 > Для уровня ведения журнала проекта задано значение `Information` в файле *appsettings.json*.
-> 
+>
 
-В Службе приложений Azure под управлением Linux приложения выполняются внутри контейнера из образа Docker по умолчанию. Можно получить доступ к журналам консоли, которые были созданы в контейнере. Чтобы получить журналы, выполните команду [`az webapp log config`](/cli/azure/webapp/log?view=azure-cli-latest#az-webapp-log-config) в Cloud Shell для включения ведения журнала контейнера.
-
-```azurecli-interactive
-az webapp log config --name <app_name> --resource-group myResourceGroup --docker-container-logging filesystem
-```
-
-Включив ведение журнала контейнера, просмотрите поток журналов. Для этого выполните команду [`az webapp log tail`](/cli/azure/webapp/log?view=azure-cli-latest#az-webapp-log-tail) в Cloud Shell.
-
-```azurecli-interactive
-az webapp log tail --name <app_name> --resource-group myResourceGroup
-```
-
-После настройки потоков обновите приложение Azure в браузере, чтобы получить немного трафика. Вы должны увидеть, что журналы консоли теперь направляются в терминал. Если журналы консоли не отображаются, проверьте еще раз через 30 секунд.
-
-Чтобы отменить потоки для журналов, выполните команду `Ctrl`+`C`.
+[!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-no-h.md)]
 
 Дополнительные сведения о настройке журналов ASP.NET Core см. в статье [Ведение журналов в ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging).
 
@@ -419,4 +405,9 @@ az webapp log tail --name <app_name> --resource-group myResourceGroup
 Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](../app-service-web-tutorial-custom-domain.md)
+> [Руководство Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
+
+Также ознакомьтесь с другими ресурсами:
+
+> [!div class="nextstepaction"]
+> [Настройка приложения ASP.NET Core](configure-language-dotnetcore.md)

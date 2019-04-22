@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 06/11/2018
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: c5eb69ddd9c621024799b940ef58c34e7caaa3ff
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.openlocfilehash: b80cb0d68e6875881f2a9fc97fa52531525c1cdc
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58294031"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59579195"
 ---
 # <a name="tutorial-add-a-custom-domain-to-your-azure-cdn-endpoint"></a>Руководство по Добавление личного домена к конечной точке Azure CDN
 Из этого руководства вы узнаете, как добавить личный домен к конечной точке сети доставки содержимого (CDN) Azure. При использовании конечной точки CDN для доставки содержимого личный домен требуется, если вы хотите обеспечить видимость своего доменного имени в URL-адресе CDN. Видимое доменное имя удобно для клиентов и эффективно используется для популяризации бренда. 
@@ -50,7 +50,7 @@ ms.locfileid: "58294031"
 Личный домен и его поддомен можно связать только с одной конечной точкой за раз. Однако можно использовать разные поддомены одного и того же личного домена для разных конечных точек службы Azure с помощью нескольких записей CNAME. Кроме того, можно сопоставить личный домен с разными поддоменами с одной конечной точкой CDN.
 
 > [!NOTE]
-> Для личных доменов можно использовать любой тип записи псевдонима, если в качестве поставщика доменов вы используете Azure DNS. В этом пошаговом руководстве используется тип записи CNAME. Если вы используете типы записей A или AAAA, просто выполните шаги ниже для замены типа CNAME нужным вам типом записи. Если вы используете запись псевдонима для добавления корневого домена в качестве личного домена и хотите включить протокол SSL, используйте процесс валидации вручную, как описано [здесь](https://docs.microsoft.com/azure/cdn/cdn-custom-ssl?tabs=option-1-default-enable-https-with-a-cdn-managed-certificate#custom-domain-is-not-mapped-to-your-cdn-endpoint)
+> Для личных доменов можно использовать любой тип записи псевдонима, если в качестве поставщика доменов вы используете Azure DNS. В этом пошаговом руководстве используется тип записи CNAME. Если вы используете записи типа A или AAAA, просто выполните шаги ниже и замените тип CNAME нужным вам типом записи. Если вы используете запись псевдонима для добавления корневого домена в качестве личного домена и хотите включить протокол SSL, [выполните валидацию вручную](https://docs.microsoft.com/azure/cdn/cdn-custom-ssl?tabs=option-1-default-enable-https-with-a-cdn-managed-certificate#custom-domain-is-not-mapped-to-your-cdn-endpoint). См. подробнее о [привязке вершины зоны к конечной точке CDN Azure](https://docs.microsoft.com/azure/dns/dns-alias#point-zone-apex-to-azure-cdn-endpoints).
 
 ## <a name="map-the-temporary-cdnverify-subdomain"></a>Сопоставление промежуточного поддомена cdnverify
 

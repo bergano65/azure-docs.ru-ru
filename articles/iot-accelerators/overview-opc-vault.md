@@ -1,5 +1,5 @@
 ---
-title: Сведения о компоненте управления сертификатами унифицированной архитектуры OPC Интернета вещей Azure | Документация Майкрософт
+title: Что собой представляет OPC Vault — Azure | Документация Майкрософт
 description: Общие сведения о хранилище OPC
 author: dominicbetts
 ms.author: dobett
@@ -8,16 +8,16 @@ ms.topic: overview
 ms.service: iot-industrialiot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: ba3313d927ec4317d6c051f6058d75a415b92288
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 99dfcaeb1ef5b52e6827f1b3ac65d6201557a8fb
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58759775"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59490382"
 ---
-# <a name="what-is-azure-iot-open-platform-communications-opc-ua-certificate-management"></a>Сведения о компоненте управления сертификатами унифицированной архитектуры OPC Интернета вещей Azure
+# <a name="what-is-opc-vault"></a>Что собой представляет OPC Vault?
 
-Компонент управления сертификатами унифицированной архитектуры OPC Интернета вещей Azure, также известный как хранилище OPC, — это микрослужба, которая настраивает и регистрирует сертификаты клиентских приложений и сервера на основе унифицированной архитектуры OPC в облаке, а также управляет их жизненным циклом. В этой статье описаны простые примеры использования хранилища OPC.
+OPC Vault — это микрослужба, которая настраивает и регистрирует сертификаты клиентских приложений и сервера на основе унифицированной архитектуры OPC в облаке, а также управляет их жизненным циклом. В этой статье описаны простые примеры использования хранилища OPC.
 
 ## <a name="certificate-management"></a>Управление сертификатами
 

@@ -4,7 +4,7 @@ description: В этом кратком руководстве описывае�
 services: app-service\web
 documentationcenter: ''
 author: msangapu
-manager: cfowler
+manager: jeconnoc
 editor: ''
 ms.assetid: 582bb3c2-164b-42f5-b081-95bfcb7a502a
 ms.service: app-service-web
@@ -12,15 +12,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: Java
 ms.topic: quickstart
-ms.date: 12/10/2018
+ms.date: 03/27/2019
 ms.author: msangapu
 ms.custom: mvc
-ms.openlocfilehash: 4b95c75b863cdc86dd8a1ebe8347b77b637b110c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: af1256b4432e42f91209b622239ca55901929a1b
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57999100"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59544744"
 ---
 # <a name="quickstart-create-a-java-app-in-app-service-on-linux"></a>Краткое руководство. Создание приложения Java в Службе приложений на платформе Linux
 
@@ -99,17 +99,15 @@ mvn package azure-webapp:deploy
 
 **Поздравляем!** Вы развернули свое первое приложение Java в службе приложений на платформе Linux.
 
-
 [!INCLUDE [cli-samples-clean-up](../../../includes/cli-samples-clean-up.md)]
-
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве описано, как использовать Maven для создания приложения Java, настроить [подключаемый модуль Maven для веб-приложений Azure](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin) и развернуть веб-архив упакованного приложения Java в службе приложений в Linux. Дополнительные сведения о размещении приложений Java в Службе приложений в Linux см. в следующих руководствах и статьях с инструкциями.
+> [!div class="nextstepaction"]
+> [Руководство по приложению Java Enterprise с PostgreSQL](tutorial-java-enterprise-postgresql-app.md)
 
-- [Руководство развертыванию приложения Java Enterprise с использованием PostgreSQL](tutorial-java-enterprise-postgresql-app.md)
-- [Настройка источника данных Tomcat](app-service-linux-java.md#tomcat)
-- [CI/CD с использованием Jenkins](/azure/jenkins/deploy-jenkins-app-service-plugin)
-- [Настройка средств мониторинга производительности приложения](how-to-java-apm-monitoring.md)
-- [Руководство разработчика для Java для службы приложений в Linux](app-service-linux-java.md)
+> [!div class="nextstepaction"]
+> [Настройка приложения Java](configure-custom-container.md)
 
+> [!div class="nextstepaction"]
+> [CI/CD с использованием Jenkins](/azure/jenkins/deploy-jenkins-app-service-plugin)

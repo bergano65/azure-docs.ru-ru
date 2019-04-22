@@ -10,12 +10,12 @@ ms.subservice: bing-spell-check
 ms.topic: quickstart
 ms.date: 02/20/2019
 ms.author: aahi
-ms.openlocfilehash: e95006c6448bf1179d33bcd00c16d6e4246db148
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.openlocfilehash: 1cf46fd5ec55f0b240f6bb4adbe49c1344a4663b
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56887324"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59547685"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-python"></a>Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и Python
 
@@ -26,7 +26,6 @@ ms.locfileid: "56887324"
 * Python [3.x](https://www.python.org)
 
 [!INCLUDE [cognitive-services-bing-spell-check-signup-requirements](../../../../includes/cognitive-services-bing-spell-check-signup-requirements.md)]
-
 
 ## <a name="initialize-the-application"></a>Инициализация приложения
 
@@ -40,7 +39,7 @@ ms.locfileid: "56887324"
 2. Создайте переменные для текста, орфографию которого необходимо проверить, ключ подписки и конечную точку Проверки орфографии Bing.
 
     ```python
-    api_key = "enter-your-key-here"
+    api_key = "<ENTER-KEY-HERE>"
     example_text = "Hollo, wrld" # the text to be spell-checked
     endpoint = "https://api.cognitive.microsoft.com/bing/v7.0/SpellCheck"
     ```
@@ -53,7 +52,7 @@ ms.locfileid: "56887324"
     data = {'text': example_text}
     ```
 
-2. Добавьте к запросу параметры. Укажите для параметра `mkt` свой языковой код, а для параметра `mode` — значение `proof`. 
+2. Добавьте к запросу параметры. Добавьте код рынка после `mkt=`. Код рынка определяет страну, из которой выполняется запрос. Кроме того, добавьте режим проверки орфографии после `&mode=`. Можно указать режим `proof` (выявляет большинство орфографических и грамматических ошибок) или `spell` (выявляет большинство орфографических ошибок, но не так много грамматических ошибок).
 
     ```python
     params = {
@@ -80,7 +79,7 @@ ms.locfileid: "56887324"
     ```
 
 2. Получите ответ в формате JSON и выведите его.
-    
+
     ```python
     json_response = response.json()
     print(json.dumps(json_response, indent=4))
@@ -88,7 +87,7 @@ ms.locfileid: "56887324"
 
 ## <a name="example-json-response"></a>Пример ответа в формате JSON
 
-Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
+Успешный ответ возвращается в формате JSON, как показано в примере ниже.
 
 ```json
 {

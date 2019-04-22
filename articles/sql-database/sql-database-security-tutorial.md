@@ -1,6 +1,6 @@
 ---
 title: Защита отдельной базы данных или базы данных в составе пула в Базе данных SQL Azure | Документация Майкрософт
-description: Узнайте о методах и функциях, используемых для защиты отдельной базы данных или базы данных в составе пула в Базе данных SQL Azure.
+description: В этом руководстве рассказывается о методах и функциях, используемых для защиты отдельной базы данных или базы данных в составе пула в Базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
@@ -10,14 +10,23 @@ ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 02/08/2019
-ms.openlocfilehash: d6f14a7cdcb77c1ca47d0f79f587e0bf3606b5d5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.custom: seoapril2019
+ms.openlocfilehash: d09af0a4c2d09004d5c1bbf3261a14850eef7714
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57893277"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59496443"
 ---
-# <a name="tutorial-secure-a-single-or-pooled-database"></a>Руководство. Защита отдельной базы данных или базы данных в составе пула
+# <a name="tutorial-secure-a-single-or-pooled-database"></a>Руководство по Защита отдельной базы данных или базы данных в составе пула
+
+Из этого руководства вы узнаете, как выполнить следующие задачи:
+
+> [!div class="checklist"]
+> - Создавать правила брандмауэра уровня сервера и уровня базы данных.
+> - Назначать администратора Azure Active Directory (AD).
+> - Управлять пользовательским доступом с помощью аутентификации SQL, аутентификации Azure AD и безопасных строк подключения.
+> - Включать функции безопасности, такие как расширенная защита данных, аудит, маскирование данных и шифрование.
 
 База данных SQL Azure защищает данные в отдельной базе данных или базе данных в составе пула, предоставляя возможность:
 
@@ -28,14 +37,6 @@ ms.locfileid: "57893277"
 
 > [!NOTE]
 > База данных SQL Azure в управляемом экземпляре защищена с помощью правил безопасности сети и частных конечных точек, как описано в статьях [Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance-index.yml) и [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md).
-
-Вы можете улучшить безопасность базы данных с помощью нескольких простых шагов. Из этого руководства вы узнаете, как выполнить следующие задачи:
-
-> [!div class="checklist"]
-> - Создавать правила брандмауэра уровня сервера и уровня базы данных.
-> - Назначать администратора Azure Active Directory (AD).
-> - Управлять пользовательским доступом с помощью аутентификации SQL, аутентификации Azure AD и безопасных строк подключения.
-> - Включать функции безопасности, такие как расширенная защита данных, аудит, маскирование данных и шифрование.
 
 Дополнительные сведения см. в статьях [Расширенные функции безопасности Базы данных SQL Azure](/azure/sql-database/sql-database-security-index) и [Обзор возможностей безопасности Базы данных SQL Azure](sql-database-security-overview.md).
 
@@ -140,11 +141,11 @@ ms.locfileid: "57893277"
 
 Сведения о настройке Azure AD см. в статьях:
 
-- [Что собой представляет гибридная идентификация](../active-directory/hybrid/whatis-hybrid-identity.md)
-- [Добавление имени личного домена с помощью портала Azure Active Directory](../active-directory/active-directory-domains-add-azure-portal.md)
-- [Windows Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/20../../windows-azure-now-supports-federation-with-windows-server-active-directory/) (Теперь Microsoft Azure поддерживает федерацию с Windows Server AD)
+- [Интеграция локальных удостоверений с помощью Azure AD](../active-directory/hybrid/whatis-hybrid-identity.md)
+- [Добавление имени личного домена в Azure AD](../active-directory/active-directory-domains-add-azure-portal.md)
+- [Теперь Microsoft Azure поддерживает федерацию с Windows Server AD](https://azure.microsoft.com/blog/20../../windows-azure-now-supports-federation-with-windows-server-active-directory/)
 - [Администрирование каталога Azure AD](../active-directory/fundamentals/active-directory-administer.md)
-- [Общие сведения об Azure PowerShell](/powershell/azure/overview?view=azureadps-2.0)
+- [Управление Azure AD с помощью PowerShell](/powershell/azure/overview?view=azureadps-2.0)
 - [Порты и протоколы, необходимые для гибридной идентификации](../active-directory/hybrid/reference-connect-ports.md)
 
 ## <a name="manage-database-access"></a>Управление доступом к базе данных

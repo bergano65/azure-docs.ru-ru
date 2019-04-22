@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
 ms.openlocfilehash: aa96bcbc7c75f1a4dcd28a5dbe7479f99aabe908
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59263844"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-predictix-price-reporting"></a>Руководство. Интеграция Azure Active Directory с Predictix Price Reporting
@@ -51,7 +51,7 @@ ms.locfileid: "59263844"
 
 Чтобы настроить интеграцию Predictix Price Reporting с Azure AD, необходимо добавить приложение Predictix Price Reporting из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Predictix Price Reporting из коллекции, сделайте следующее:**
+**Чтобы добавить Predictix Price Reporting из коллекции, выполните указанные ниже действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,7 +105,7 @@ ms.locfileid: "59263844"
 
     ![Сведения о домене и URL-адресах единого входа приложения Predictix Price Reporting](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname-pricing>.predictix.com/sso/request`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname-pricing>.predictix.com/sso/request`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
 

@@ -16,10 +16,10 @@ ms.date: 02/19/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f250a5ac5f6fefa099303b033a9687f1a219efd8
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59262318"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bersin"></a>Руководство по Интеграция Azure Active Directory с Bersin
@@ -51,7 +51,7 @@ ms.locfileid: "59262318"
 
 Чтобы настроить интеграцию Bersin с Azure AD, необходимо добавить Bersin из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Bersin из коллекции, сделайте следующее:**
+**Чтобы добавить Bersin из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -104,11 +104,11 @@ ms.locfileid: "59262318"
 
     ![Сведения о домене и URL-адресах единого входа приложения Bersin](common/idp-identifier-relay.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://www.bersin.com/shibboleth`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.bersin.com/shibboleth`.
 
     b. Щелкните **Задать дополнительные URL-адреса**.
 
-    c. В текстовом поле **Состояние ретранслятора** введите URL-адрес в следующем формате: `https://www.bersin.com/secure/`
+    c. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://www.bersin.com/secure/`.
 
 5. Чтобы настроить приложение в инициируемом режиме **пакета обновления**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 

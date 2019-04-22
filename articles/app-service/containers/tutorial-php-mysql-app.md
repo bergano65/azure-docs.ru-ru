@@ -1,22 +1,22 @@
 ---
-title: Создание приложения PHP с помощью MySQL на платформе Linux — Служба приложений Azure | Документация Майкрософт
-description: Узнайте, как создать приложение PHP, работающее в Службе приложений Azure в Linux, с подключением к базе данных MySQL в Azure.
+title: Создание приложения PHP (Laravel) с базой данных MySQL в Linux в Службе приложений Azure | Документация Майкрософт
+description: Узнайте, как создать приложение PHP, работающее в Службе приложений Azure в Linux, с подключением к базе данных MySQL в Azure. В этом руководстве используется Laravel.
 services: app-service\web
 author: cephalin
-manager: erikre
+manager: jeconnoc
 ms.service: app-service-web
 ms.workload: web
 ms.devlang: php
 ms.topic: tutorial
-ms.date: 11/15/2018
+ms.date: 03/27/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 0470c12f7965ec5d7e151bb6b03163d6946b83e6
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 6d9ef67f39a67fd06a5b42afe4432b5a0156fead
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57548189"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549837"
 ---
 # <a name="build-a-php-and-mysql-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе PHP и MySQL в Службе приложений Azure в Linux
 
@@ -161,22 +161,22 @@ php artisan serve
 
 Создайте сервер в службе "База данных Azure для MySQL", выполнив команду [`az mysql server create`](/cli/azure/mysql/server?view=azure-cli-latest#az-mysql-server-create).
 
-В следующей команде замените заполнитель *\<mysql_server_name>* уникальным именем сервера, заполнитель *\<admin_user>* — именем пользователя, а заполнитель *\<admin_password>* — паролем. Это имя используется как часть конечной точки MySQL (`https://<mysql_server_name>.mysql.database.azure.com`), поэтому оно должно быть уникальным на всех серверах в Azure. Дополнительные сведения о выборе номера SKU базы данных MySQL см. в разделе [Создайте сервер базы данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/quickstart-create-mysql-server-database-using-azure-cli#create-an-azure-database-for-mysql-server).
+В следующей команде замените заполнитель *\<mysql-server-name>* уникальным именем сервера, заполнитель *\<admin-user>*  — именем пользователя, а заполнитель *\<admin-password>*  — паролем. Это имя используется как часть конечной точки MySQL (`https://<mysql-server-name>.mysql.database.azure.com`), поэтому оно должно быть уникальным на всех серверах в Azure. Дополнительные сведения о выборе номера SKU базы данных MySQL см. в разделе [Создайте сервер базы данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/quickstart-create-mysql-server-database-using-azure-cli#create-an-azure-database-for-mysql-server).
 
 ```azurecli-interactive
-az mysql server create --resource-group myResourceGroup --name <mysql_server_name> --location "West Europe" --admin-user <admin_user> --admin-password <admin_password> --sku-name B_Gen5_1
+az mysql server create --resource-group myResourceGroup --name <mysql-server-name> --location "West Europe" --admin-user <admin-user> --admin-password <admin-password> --sku-name B_Gen5_1
 ```
 
 После создания сервера MySQL в Azure CLI отображаются следующие сведения.
 
 ```json
 {
-  "administratorLogin": "<admin_user>",
+  "administratorLogin": "<admin-user>",
   "administratorLoginPassword": null,
-  "fullyQualifiedDomainName": "<mysql_server_name>.mysql.database.azure.com",
-  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.DBforMySQL/servers/<mysql_server_name>",
+  "fullyQualifiedDomainName": "<mysql-server-name>.mysql.database.azure.com",
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.DBforMySQL/servers/<mysql-server-name>",
   "location": "westeurope",
-  "name": "<mysql_server_name>",
+  "name": "<mysql-server-name>",
   "resourceGroup": "myResourceGroup",
   ...
 }
@@ -187,25 +187,25 @@ az mysql server create --resource-group myResourceGroup --name <mysql_server_nam
 Создайте правило брандмауэра для сервера MySQL, чтобы разрешить подключения клиентов, выполнив команду [`az mysql server firewall-rule create`](/cli/azure/mysql/server/firewall-rule?view=azure-cli-latest#az-mysql-server-firewall-rule-create). Если для начального и конечного IP-адресов задано значение 0.0.0.0, брандмауэр открыт только для других ресурсов Azure. 
 
 ```azurecli-interactive
-az mysql server firewall-rule create --name allAzureIPs --server <mysql_server_name> --resource-group myResourceGroup --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
+az mysql server firewall-rule create --name allAzureIPs --server <mysql-server-name> --resource-group myResourceGroup --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
 ```
 
 > [!TIP] 
 > Вы можете применить еще более строгие ограничения в правиле брандмауэра, [разрешив только исходящие IP-адреса, используемые приложением](../overview-inbound-outbound-ips.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#find-outbound-ips).
 >
 
-В Cloud Shell повторно выполните соответствующую команду, чтобы разрешить доступ с локального компьютера, заменив *\<you_ip_address >* [локальным IPv4-адресом](https://www.whatsmyip.org/).
+В Cloud Shell повторно выполните соответствующую команду, чтобы разрешить доступ с локального компьютера, заменив *\<your-ip-address>* [локальным IPv4-адресом](https://www.whatsmyip.org/).
 
 ```azurecli-interactive
-az mysql server firewall-rule create --name AllowLocalClient --server <mysql_server_name> --resource-group myResourceGroup --start-ip-address=<your_ip_address> --end-ip-address=<your_ip_address>
+az mysql server firewall-rule create --name AllowLocalClient --server <mysql-server-name> --resource-group myResourceGroup --start-ip-address=<your-ip-address> --end-ip-address=<your-ip-address>
 ```
 
 ### <a name="connect-to-production-mysql-server-locally"></a>Локальное подключение к серверу рабочей базы данных MySQL
 
-В окне терминала подключитесь к серверу MySQL в Azure. Используйте значение, указанное ранее для _&lt;admin_user>_ и _&lt;mysql_server_name>_. При появлении запроса на ввод пароля используйте пароль, указанный во время создания базы данных в Azure.
+В окне терминала подключитесь к серверу MySQL в Azure. Используйте значение, указанное ранее для _&lt;admin-user>_ и _&lt;mysql-server-name>_. При появлении запроса на ввод пароля используйте пароль, указанный во время создания базы данных в Azure.
 
 ```bash
-mysql -u <admin_user>@<mysql_server_name> -h <mysql_server_name>.mysql.database.azure.com -P 3306 -p
+mysql -u <admin-user>@<mysql-server-name> -h <mysql-server-name>.mysql.database.azure.com -P 3306 -p
 ```
 
 ### <a name="create-a-production-database"></a>Создание рабочей базы данных
@@ -239,7 +239,7 @@ quit
 
 ### <a name="configure-the-database-connection"></a>Настройка подключения к базе данных
 
-В корневой папке репозитория создайте файл _.env.production_ и скопируйте в него следующие переменные. Замените заполнитель _&lt;mysql_server_name>_.
+В корневой папке репозитория создайте файл _.env.production_ и скопируйте в него следующие переменные. Замените заполнитель _&lt;mysql-server-name>_.
 
 ```txt
 APP_ENV=production
@@ -247,9 +247,9 @@ APP_DEBUG=true
 APP_KEY=SomeRandomString
 
 DB_CONNECTION=mysql
-DB_HOST=<mysql_server_name>.mysql.database.azure.com
+DB_HOST=<mysql-server-name>.mysql.database.azure.com
 DB_DATABASE=sampledb
-DB_USERNAME=phpappuser@<mysql_server_name>
+DB_USERNAME=phpappuser@<mysql-server-name>
 DB_PASSWORD=MySQLAzure2017
 MYSQL_SSL=true
 ```
@@ -271,12 +271,12 @@ MYSQL_SSL=true
     ...
     'sslmode' => env('DB_SSLMODE', 'prefer'),
     'options' => (env('MYSQL_SSL')) ? [
-        PDO::MYSQL_ATTR_SSL_KEY    => '/ssl/BaltimoreCyberTrustRoot.crt.pem', 
+        PDO::MYSQL_ATTR_SSL_KEY    => '/ssl/BaltimoreCyberTrustRoot.crt.pem',
     ] : []
 ],
 ```
 
-В рамках этого руководства сертификат `BaltimoreCyberTrustRoot.crt.pem` предоставляется в репозитории для удобства. 
+В рамках этого руководства сертификат `BaltimoreCyberTrustRoot.crt.pem` предоставляется в репозитории для удобства.
 
 ### <a name="test-the-application-locally"></a>Локальное тестирование приложения
 
@@ -323,10 +323,7 @@ git commit -m "database.php updates"
 
 Приложение Laravel запускается в каталоге _/public_. Образ PHP Docker по умолчанию для службы приложений использует Apache и не позволяет настраивать `DocumentRoot` для Laravel. Тем не менее вы можете использовать `.htaccess` для повторного создания всех запросов к точке в каталоге _/public_ вместо корневого каталога. В корне репозитория для этой цели уже добавлен `.htaccess`. С ним приложение Laravel будет готово к развертыванию.
 
-> [!NOTE] 
-> Если вы предпочитаете не использовать повторное создание с помощью _.htaccess_, вместо него приложение Laravel можно развернуть из [пользовательского образа Docker](quickstart-docker-go.md).
->
->
+См. подробнее об [изменении корневого каталога сайта](configure-language-php.md#change-site-root).
 
 ### <a name="configure-a-deployment-user"></a>Настойка пользователя развертывания
 
@@ -344,13 +341,13 @@ git commit -m "database.php updates"
 
 В службе приложений переменные среды задаются в качестве _параметров приложения_ с помощью команды [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set).
 
-Команда ниже позволяет настроить параметры приложения `DB_HOST`, `DB_DATABASE`, `DB_USERNAME` и `DB_PASSWORD`. Замените заполнители _&lt;appname>_ и _&lt;mysql_server_name>_ собственными значениями.
+Команда ниже позволяет настроить параметры приложения `DB_HOST`, `DB_DATABASE`, `DB_USERNAME` и `DB_PASSWORD`. Замените заполнители _&lt;appname>_ и _&lt;mysql-server-name>_.
 
 ```azurecli-interactive
-az webapp config appsettings set --name <app_name> --resource-group myResourceGroup --settings DB_HOST="<mysql_server_name>.mysql.database.azure.com" DB_DATABASE="sampledb" DB_USERNAME="phpappuser@<mysql_server_name>" DB_PASSWORD="MySQLAzure2017" MYSQL_SSL="true"
+az webapp config appsettings set --name <app-name> --resource-group myResourceGroup --settings DB_HOST="<mysql-server-name>.mysql.database.azure.com" DB_DATABASE="sampledb" DB_USERNAME="phpappuser@<mysql-server-name>" DB_PASSWORD="MySQLAzure2017" MYSQL_SSL="true"
 ```
 
-Для доступа к параметрам можно использовать метод PHP [getenv](https://php.net/manual/en/function.getenv.php). В коде Laravel используется программа-оболочка [env](https://laravel.com/docs/5.4/helpers#method-env) для PHP `getenv`. Например, конфигурация MySQL в файле _config/database.php_ выглядит следующим образом:
+Для [доступа к параметрам приложения](configure-language-php.md#access-environment-variables) можно использовать метод PHP [getenv](https://php.net/manual/en/function.getenv.php). В коде Laravel используется программа-оболочка [env](https://laravel.com/docs/5.4/helpers#method-env) для PHP `getenv`. Например, конфигурация MySQL в файле _config/database.php_ выглядит следующим образом:
 
 ```php
 'mysql' => [
@@ -376,7 +373,7 @@ php artisan key:generate --show
 Задайте ключ приложения в приложении Службы приложений с помощью команды [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set). Замените заполнители _&lt;appname>_ и _&lt;outputofphpartisankey:generate>_ собственными значениями.
 
 ```azurecli-interactive
-az webapp config appsettings set --name <app_name> --resource-group myResourceGroup --settings APP_KEY="<output_of_php_artisan_key:generate>" APP_DEBUG="true"
+az webapp config appsettings set --name <app-name> --resource-group myResourceGroup --settings APP_KEY="<output_of_php_artisan_key:generate>" APP_DEBUG="true"
 ```
 
 Значение `APP_DEBUG="true"` указывает Laravel возвращать отладочную информацию в случае ошибок в работе развернутого приложения. При выполнении рабочего приложения задайте для него более безопасное значение `false`.
@@ -419,12 +416,12 @@ remote: Running deployment command...
 > - `deploy.sh` — пользовательский скрипт развертывания. Если открыть этот файл, вы увидите, что он запускает `php composer.phar install` после `npm install`.
 > - `composer.phar` — диспетчер пакетов Composer.
 >
-> Точно так же можно добавить любые действия развертывания в службе приложений на основе Git. Дополнительные сведения см. в статье [Custom Deployment Script](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script) (Пользовательский сценарий развертывания).
+> Точно так же можно добавить любые действия развертывания в службе приложений на основе Git. См. подробнее о [запуске средства создания](configure-language-php.md#run-composer).
 >
 
 ### <a name="browse-to-the-azure-app"></a>Переход к приложению Azure
 
-Перейдите по адресу `http://<app_name>.azurewebsites.net` и добавьте несколько задач в список.
+Перейдите по адресу `http://<app-name>.azurewebsites.net` и добавьте несколько задач в список.
 
 ![Приложение PHP, работающее в службе приложений Azure](./media/tutorial-php-mysql-app/php-mysql-in-azure.png)
 
@@ -572,6 +569,10 @@ git push azure master
 
 Добавленные задачи сохраняются в базе данных. Изменения в схеме данных не влияют на имеющиеся данные.
 
+## <a name="stream-diagnostic-logs"></a>Потоковая передача журналов диагностики
+
+[!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-no-h.md)]
+
 ## <a name="manage-the-azure-app"></a>Управление приложением Azure
 
 Перейдите на [портал Azure](https://portal.azure.com), чтобы управлять созданным приложением.
@@ -605,4 +606,9 @@ git push azure master
 Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](../app-service-web-tutorial-custom-domain.md)
+> [Руководство Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
+
+Также ознакомьтесь с другими ресурсами:
+
+> [!div class="nextstepaction"]
+> [Настройка приложения PHP](configure-language-php.md)

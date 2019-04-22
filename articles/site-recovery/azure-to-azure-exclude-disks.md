@@ -1,6 +1,6 @@
 ---
-title: Azure Site Recovery. Исключение диска во время репликации виртуальных машин Azure с помощью Azure PowerShell | Документация Майкрософт
-description: Сведения об исключении диска для виртуальных машин с Azure Site Recovery Azure с помощью Azure PowerShell.
+title: Azure Site Recovery - исключения дисков во время репликации виртуальных машин Azure с помощью Azure PowerShell | Документация Майкрософт
+description: Узнайте, как исключать диски виртуальных машин Azure во время восстановления сайта Azure с помощью Azure PowerShell.
 services: site-recovery
 author: asgang
 manager: rochakm
@@ -8,16 +8,16 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: asgang
-ms.openlocfilehash: 1c278d810df7e5ba8701529a59987c9bb16fa40c
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: 54a32d7f7aa4bcab73f5828da3e7eba9d25276be
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59044131"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59678281"
 ---
-# <a name="exclude-disks-from-replication-of-azure-vms-to-azure-using-azure-powershell"></a>Исключение дисков из репликации виртуальных машин в Azure с помощью Azure PowerShell
+# <a name="exclude-disks-from-powershell-replication-of-azure-vms"></a>Исключение дисков из репликации виртуальных машин Azure PowerShell
 
-В этой статье описано, как исключать диски при репликации виртуальных машин Azure. Благодаря этому можно оптимизировать использование пропускной способности при репликации или же ресурсы целевой стороны, используемые такими дисками. Сейчас эта возможность предоставляется только с помощью Azure PowerShell.
+В этой статье описывается, как исключать диски при репликации виртуальных машин Azure. Можно исключить диски для оптимизации пропускной способности при репликации потребляемого или ресурсов целевой стороны, использующие эти диски. В настоящее время эта возможность доступна только через Azure PowerShell.
 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -26,26 +26,25 @@ ms.locfileid: "59044131"
 
 Перед началом работы:
 
-- Вам должны быть понятны [архитектура и компоненты сценария](azure-to-azure-architecture.md).
+- Убедитесь, что вы понимаете [аварийного восстановления архитектуре и компонентах](azure-to-azure-architecture.md).
 - [Ознакомьтесь](azure-to-azure-support-matrix.md) с требованиями поддержки для всех компонентов.
-- Среда Azure PowerShell `Az` модуля. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
-- Ваше хранилище Служб восстановления уже создано и защита виртуальных машин выполнялась по крайней мере один раз. Если не выполните его с помощью документации, упомянутой [здесь](azure-to-azure-powershell.md).
+- Убедитесь, что у вас есть AzureRm PowerShell «Az» модуля. Чтобы установить или обновить PowerShell, см. в разделе [установить модуль Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+- Убедитесь, что вы создали хранилище служб восстановления и защищенных виртуальных машин по крайней мере один раз. Если вы еще не сделано, выполните этот процесс для [Настройка аварийного восстановления для виртуальных машин Azure с помощью Azure PowerShell](azure-to-azure-powershell.md).
 
 ## <a name="why-exclude-disks-from-replication"></a>Зачем исключать диски из репликации
-Исключение дисков из репликации часто бывает необходимо:
+Может потребоваться исключить диски из репликации, так как:
 
-- Виртуальная машина достигла [пределов Azure Site Recovery для скорости репликации измененных данных](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-support-matrix)
+- Виртуальный компьютер был достигнут [ограничения Azure Site Recovery для репликации данных изменить тарифы](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-support-matrix).
 
-- Если данные, находящиеся на исключенных дисках, не важны или их репликация не требуется.
+- Данные, находящиеся на исключенных дисках, не имеет значения или не нужно реплицировать.
 
-- Ресурсы хранилища и сети можно сохранять, не реплицируя данные этого потока.
-
+- Вы хотите сохранить ресурсы хранилища и сети, не реплицируя данные.
 
 ## <a name="how-to-exclude-disks-from-replication"></a>Как исключать диски из репликации
 
-В примере для этой статьи виртуальная машина, которая имеет 1 диск ОС и 3 диска из региона "Восточная часть США" будет реплицирована в регион "Западная часть США 2". Виртуальная машина в этом примере имеет имя AzureDemoVM. Мы исключим диск 1, а диск 2 и 3 сохраним.
+В нашем примере мы реплицировать виртуальную машину с одной ОС и трех дисков данных, что в регионе "восточная часть США" в регион Западная часть США 2. Имя виртуальной машины — *AzureDemoVM*. Мы исключить диск 1 и сохраните диски 2 и 3.
 
-## <a name="get-details-of-the-virtual-machines-to-be-replicated"></a>Получение сведений о реплицируемой виртуальной машине
+## <a name="get-details-of-the-virtual-machines-to-replicate"></a>Получение сведений о виртуальных машин для репликации
 
 ```azurepowershell
 # Get details of the virtual machine
@@ -70,27 +69,25 @@ ProvisioningState  : Succeeded
 StorageProfile     : {ImageReference, OsDisk, DataDisks}
 ```
 
-
-Получите сведения о дисках виртуальной машины. Сведения о дисках потребуются позже для запуска репликации виртуальной машины.
+Получите подробные сведения о дисках виртуальной машины. Эта информация будет использоваться позже при запуске репликации виртуальной машины.
 
 ```azurepowershell
 $OSDiskVhdURI = $VM.StorageProfile.OsDisk.Vhd
 $DataDisk1VhdURI = $VM.StorageProfile.DataDisks[0].Vhd
 ```
 
-## <a name="replicate-azure-virtual-machine"></a>Репликация виртуальной машины Azure
+## <a name="replicate-an-azure-virtual-machine"></a>Репликация виртуальной машины Azure
 
-В приведенном ниже примере мы предположили, что у вас уже есть учетная запись хранения для кэширования, политика репликации и сопоставления. Если нет, выполните это с помощью документации, описанной [здесь](azure-to-azure-powershell.md) 
+В следующем примере предполагается наличие учетной записи хранения кэша, политику репликации и сопоставления. Если у вас нет этих вещей, выполните этот процесс для [Настройка аварийного восстановления для виртуальных машин Azure с помощью Azure PowerShell](azure-to-azure-powershell.md).
 
-
-Выполните репликацию виртуальной машины Azure с помощью **управляемых дисков**.
+Репликация виртуальной машины Azure с помощью *управляемые диски*.
 
 ```azurepowershell
 
 #Get the resource group that the virtual machine must be created in when failed over.
 $RecoveryRG = Get-AzResourceGroup -Name "a2ademorecoveryrg" -Location "West US 2"
 
-#Specify replication properties for each disk of the VM that is to be replicated (create disk replication configuration)
+#Specify replication properties for each disk of the VM that is to be replicated (create disk replication configuration).
 
 #OsDisk
 $OSdiskId =  $vm.StorageProfile.OsDisk.ManagedDisk.Id
@@ -101,7 +98,7 @@ $OSDiskReplicationConfig = New-AzRecoveryServicesAsrAzureToAzureDiskReplicationC
          -DiskId $OSdiskId -RecoveryResourceGroupId  $RecoveryRG.ResourceId -RecoveryReplicaDiskAccountType  $RecoveryReplicaDiskAccountType `
          -RecoveryTargetDiskAccountType $RecoveryOSDiskAccountType
 
-# Data Disk 1 i.e StorageProfile.DataDisks[0] is excluded so we will provide it during the time of replication 
+# Data Disk 1 i.e StorageProfile.DataDisks[0] is excluded, so we will provide it during the time of replication. 
 
 # Data disk 2
 $datadiskId2  = $vm.StorageProfile.DataDisks[1].ManagedDisk.id
@@ -127,17 +124,18 @@ $diskconfigs = @()
 $diskconfigs += $OSDiskReplicationConfig, $DataDisk2ReplicationConfig, $DataDisk3ReplicationConfig
 
 
-#Start replication by creating replication protected item. Using a GUID for the name of the replication protected item to ensure uniqueness of name.
+#Start replication by creating a replication protected item. Using a GUID for the name of the replication protected item to ensure uniqueness of name.
 $TempASRJob = New-ASRReplicationProtectedItem -AzureToAzure -AzureVmId $VM.Id -Name (New-Guid).Guid -ProtectionContainerMapping $EusToWusPCMapping -AzureToAzureDiskReplicationConfiguration $diskconfigs -RecoveryResourceGroupId $RecoveryRG.ResourceId
 ```
 
-Когда начальная репликация успешно завершится, все данные виртуальной машины будут реплицированы в регион восстановления.
+После успешного завершения операции начала репликации данных виртуальной Машины реплицируется в регион восстановления.
 
-Вы можете перейти на портал Azure и в реплицированных элементах отобразится репликация виртуальных машин.
-Процесс репликации начинается с того, что в регионе восстановления создаются копии реплицируемых дисков виртуальной машины. Этот этап называется начальной репликацией.
+Перейдите на портал Azure и см. в разделе реплицированные виртуальные машины в разделе «реплицированные элементы».
 
-После завершения начальной репликации начинается этап разностной синхронизации. На этом этапе виртуальная машина защищена. Чтобы увидеть исключен диск или нет, щелкните защищенную виртуальную машину, а затем диски.
+Процесс репликации начинается с заполнения копию дисков репликации виртуальной машины в регионе восстановления. Этот этап называется фазой начальной репликации.
+
+После завершения начальной репликации, репликация переходит к фазы синхронизации разностной резервной копии. На этом этапе виртуальная машина защищена. Выберите защищенную виртуальную машину, чтобы увидеть, если все диски, исключаются.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о выполнении тестовой отработки отказа см. в [этой статье](site-recovery-test-failover-to-azure.md).
+Дополнительные сведения о [тестовой отработке отказа](site-recovery-test-failover-to-azure.md).

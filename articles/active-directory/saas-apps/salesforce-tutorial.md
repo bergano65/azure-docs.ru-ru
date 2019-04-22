@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Salesforce | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Salesforce | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Salesforce.
 services: active-directory
 documentationCenter: na
@@ -8,19 +8,20 @@ manager: daveba
 ms.reviewer: barbkess
 ms.assetid: d2d7d420-dc91-41b8-a6b3-59579e043b35
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/17/2019
+ms.date: 04/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 239298959efa5c17d2f3d0c0aa5c4c30853c076f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 27a61205426cbf43fd3b3b549909ffa13ff07dc7
+ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57902041"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59500368"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-salesforce"></a>Руководство по Интеграция Azure Active Directory с Salesforce
 
@@ -65,13 +66,13 @@ ms.locfileid: "57902041"
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+3. Чтобы добавить новое приложение, нажмите кнопку **Новое приложение** в верхней части диалогового окна.
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **Salesforce**, выберите **Salesforce** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![Salesforce в списке результатов](common/search-new-app.png)
+    ![Salesforce в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -111,13 +112,13 @@ ms.locfileid: "57902041"
 
     a. В текстовом поле **URL-адрес для входа** введите значение в следующем формате:
 
-    Учетная запись предприятия: `https://<subdomain>.my.salesforce.com`
+    Корпоративная учетная запись: `https://<subdomain>.my.salesforce.com`
 
     Учетная запись разработчика: `https://<subdomain>-dev-ed.my.salesforce.com`
 
     b. В текстовое поле **Идентификатор** введите значение в следующем формате:
 
-    Учетная запись предприятия: `https://<subdomain>.my.salesforce.com`
+    Корпоративная учетная запись: `https://<subdomain>.my.salesforce.com`
 
     Учетная запись разработчика: `https://<subdomain>-dev-ed.my.salesforce.com`
 
@@ -134,13 +135,13 @@ ms.locfileid: "57902041"
 
     а) URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-salesforce-single-sign-on"></a>Настройка Salesforce единого входа
 
-1. Откройте новую вкладку в браузере и войдите в учетную запись администратора Salesforce.
+1. Откройте новую вкладку в браузере и выполните вход с учетной записью администратора Salesforce.
 
 2. Щелкните **Setup** (Настройка) под **значком параметров** в правом верхнем углу страницы.
 
@@ -206,8 +207,7 @@ ms.locfileid: "57902041"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
-    Например BrittaSimon@contoso.com.
+    b. В поле **Имя пользователя** введите `brittasimon\@yourcompanydomain.extension`. Например, BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -257,4 +257,4 @@ ms.locfileid: "57902041"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Руководство по настройке Google Apps для автоматической подготовки пользователей](salesforce-provisioning-tutorial.md)
+- [Настройка подготовки пользователей](salesforce-provisioning-tutorial.md)

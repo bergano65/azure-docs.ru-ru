@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/20/2018
 ms.author: yexu
-ms.openlocfilehash: 77be9d80d535cced48a39c47695257d4868f698c
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: b9dafd31ed84298c97932b1cdb5593eb17769ef9
+ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59257439"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59566011"
 ---
 # <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-an-azure-sql-database"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в базу данных SQL Azure
 В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц локальной базы данных SQL Server в базу данных SQL Azure.    
@@ -491,11 +491,12 @@ END
 1. Перейдите на вкладку **Приемник** и выберите **SinkDataset** в поле **Sink Dataset** (Целевой набор данных). 
         
     ![Действие копирования — настройки приемника](./media/tutorial-incremental-copy-multiple-tables-portal/copy-sink-settings.png)
-1. Перейдите на вкладку **Параметры** и сделайте следующее:
+1. Сделайте следующее:
 
-    1. В поле свойства **Sink Stored Procedure Name** (Имя хранимой процедуры приемника) введите `@{item().StoredProcedureNameForMergeOperation}`.
-    1. В поле свойства **Sink Table Type** (Тип таблицы приемника) введите `@{item().TableType}`.
-    1. В разделе **Набор данных приемника** для параметра **SinkTableName** введите `@{item().TABLE_NAME}`.
+    1. Для свойства **Dataset** (Набор данных) параметра **SinkTableName** введите `@{item().TABLE_NAME}`.
+    1. В поле свойства **Stored Procedure Name** (Имя хранимой процедуры) введите `@{item().StoredProcedureNameForMergeOperation}`.
+    1. В поле свойства **Table Type** (Тип таблицы) введите `@{item().TableType}`.
+
 
         ![Параметры действия копирования](./media/tutorial-incremental-copy-multiple-tables-portal/copy-activity-parameters.png)
 1. Перетащите действие **Хранимая процедура** с панели элементов **Действия** в область конструктора конвейера. Подключите действие **копирования** к действию **Хранимая процедура**. 
@@ -743,6 +744,6 @@ project_table   2017-10-01 00:00:00.000
 Перейдите к следующему руководству, чтобы узнать о преобразовании данных с помощью кластера Spark в Azure:
 
 > [!div class="nextstepaction"]
->[Добавочная загрузка данных из Базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием технологии Отслеживания изменений](tutorial-incremental-copy-change-tracking-feature-portal.md)
+>[Добавочная загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживании изменений](tutorial-incremental-copy-change-tracking-feature-portal.md)
 
 

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: b797c7d49495aac90abb31a9214bf2928784a866
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59262403"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-proxyclick"></a>Руководство по Интеграция Azure Active Directory с Proxyclick
@@ -51,7 +51,7 @@ ms.locfileid: "59262403"
 
 Чтобы настроить интеграцию Proxyclick с Azure AD, необходимо добавить Proxyclick из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Proxyclick из коллекции, сделайте следующее:**
+**Чтобы добавить Proxyclick из коллекции, сделайте следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59262403"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Proxyclick](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://saml.proxyclick.com/init/<companyId>`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://saml.proxyclick.com/init/<companyId>`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://saml.proxyclick.com/consume/<companyId>`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://saml.proxyclick.com/consume/<companyId>`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -216,7 +216,7 @@ ms.locfileid: "59262403"
 
 Чтобы пользователи Azure AD могли выполнять вход в Proxyclick, они должны быть подготовлены для Proxyclick. В случае с Proxyclick подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Выполните вход на корпоративный сайт Proxyclick в качестве администратора.
 

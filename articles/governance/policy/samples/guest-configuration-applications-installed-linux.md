@@ -8,10 +8,10 @@ ms.topic: sample
 ms.date: 03/18/2019
 ms.author: dacoulte
 ms.openlocfilehash: b432d8557c4244d58c23e7b068874dd747f6249f
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59256470"
 ---
 # <a name="sample---audit-if-specified-applications-are-not-installed-inside-linux-vms"></a>Пример. Выполнение аудита в случае, если заданные приложения не установлены на виртуальных машинах Linux
@@ -33,9 +33,9 @@ ms.locfileid: "59256470"
 Инициатива [гостевой конфигурации](../concepts/guest-configuration.md) состоит из следующих политик:
 
 - [audit](#audit-definition) — проверка, что приложение установлено на виртуальные машины Linux.
-  - ID: `/providers/Microsoft.Authorization/policyDefinitions/fee5cb2b-9d9b-410e-afe3-2902d90d0004`
+  - Идентификатор: `/providers/Microsoft.Authorization/policyDefinitions/fee5cb2b-9d9b-410e-afe3-2902d90d0004`
 - [deployIfNotExists](#deployIfNotExists-definition) — развертывание расширения виртуальной машины для проверки, что приложение установлено на виртуальные машины Linux.
-  - ID: `/providers/Microsoft.Authorization/policyDefinitions/4d1c04de-2172-403f-901b-90608c35c721`
+  - Идентификатор: `/providers/Microsoft.Authorization/policyDefinitions/4d1c04de-2172-403f-901b-90608c35c721`
 
 ### <a name="initiative-definition"></a>Определение инициативы
 

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 8ceb9aefb1e68ceb6030f078aba8b0717cdf9e7c
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: f9987a4aee561340c5ebe2639626e5f66a55358e
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59260890"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59544608"
 ---
 # <a name="route-to-a-point-of-interest-using-azure-maps"></a>Поиск маршрута к точке интереса с помощью службы "Карты Azure"
 
@@ -218,13 +218,13 @@ ms.locfileid: "59260890"
 > * Настройка координат адреса.
 > * Отправка запроса к службе построения маршрутов для поиска маршрута к точке интереса.
 
-Пример кода, используемый при работе с этим руководством, приведен здесь:
+> [!div class="nextstepaction"]
+> [Просмотр полного исходного кода](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/route.html)
 
-> [Поиск маршрута с помощью службы Azure Maps](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/route.html)
-
-[См. этот пример в интерактивном режиме](https://azuremapscodesamples.azurewebsites.net/?sample=Route%20to%20a%20destination)
+> [!div class="nextstepaction"]
+> [Просмотр примера, работающего в реальном времени](https://azuremapscodesamples.azurewebsites.net/?sample=Route%20to%20a%20destination)
 
 В следующем руководстве показано, как создать запрос на поиск маршрута с такими ограничениями, как вид транспорта или тип груза, а затем отобразить несколько маршрутов на одной карте.
 
 > [!div class="nextstepaction"]
-> [Поиск маршрутов для различных способов перемещения](./tutorial-prioritized-routes.md)
+> [Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"](./tutorial-prioritized-routes.md)

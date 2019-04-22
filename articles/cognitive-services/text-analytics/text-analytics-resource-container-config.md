@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 04/01/2019
+ms.date: 04/16/2019
 ms.author: diberry
-ms.openlocfilehash: 3cb6f4563cf45b9ccd377dec3db4ebab095c8a09
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
-ms.translationtype: MT
+ms.openlocfilehash: 137d7aa48595e3f21ee99c6ebe23babd7a2d32b5
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58885440"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59677771"
 ---
 # <a name="configure-text-analytics-docker-containers"></a>Настройка контейнеров Docker API анализа текста
 
@@ -31,11 +31,11 @@ ms.locfileid: "58885440"
 
 ## <a name="apikey-configuration-setting"></a>Параметр конфигурации ApiKey
 
-Параметр `ApiKey` определяет ключ ресурса Azure, который используется для отслеживания данных для выставления счетов для контейнера. Значение ApiKey является обязательным и должно содержать допустимый ключ ресурса службы _Анализ текста_, который определяется в параметре конфигурации [`Billing`](#billing-configuration-setting).
+Параметр `ApiKey` определяет ключ ресурса Azure, который используется для отслеживания данных для выставления счетов для контейнера. Необходимо указать значение для ApiKey и оно должно быть допустимый ключ для _Cognitive Services_ ресурс, заданный для [ `Billing` ](#billing-configuration-setting) параметр конфигурации.
 
 Этот параметр можно найти в следующем месте.
 
-* Портал Azure: Управление ресурсами **API анализа текста** в разделе **Ключи**
+* Портал Azure: **Cognitive Services** управления ресурсами в разделе **ключи**
 
 ## <a name="applicationinsights-setting"></a>Параметр ApplicationInsights.
 
@@ -43,11 +43,13 @@ ms.locfileid: "58885440"
 
 ## <a name="billing-configuration-setting"></a>Параметр конфигурации выставления счетов
 
-Параметр `Billing` определяет URI конечной точки ресурса _Анализа текста_ на Azure, используемый, чтобы измерять данные для выставления счетов для контейнера. Для этого параметра конфигурации необходимо задать значение, которое должно быть допустимым URI конечной точки для ресурса _Анализа текста_ в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
+`Billing` Параметр указывает URI конечной точки из _Cognitive Services_ ресурсов в Azure позволяет контролировать использование выставления счетов для контейнера. Необходимо указать значение для этого параметра конфигурации, а значение должно быть допустимым URI конечной точки для __Cognitive Services_ ресурсов в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
 
 Этот параметр можно найти в следующем месте.
 
-* Портал Azure: **Текстовая аналитика** Обзор, с меткой `Endpoint`
+* Портал Azure: **Cognitive Services** Обзор, с меткой `Endpoint`
+
+Необходимо добавить `text/analytics/v2.0` маршрутизации URI конечной точки, как показано в следующем примере BILLING_ENDPOINT_URI.
 
 |Обязательно для заполнения| ИМЯ | Тип данных | ОПИСАНИЕ |
 |--|------|-----------|-------------|
@@ -87,18 +89,20 @@ ms.locfileid: "58885440"
 В следующих примерах параметры конфигурации иллюстрируют процесс написания и использования команд `docker run`.  После запуска контейнер продолжает работу, пока вы его не [остановите](how-tos/text-analytics-how-to-install-containers.md#stop-the-container).
 
 * **Символ продолжения строки**. В командах Docker в следующих разделах используется обратная косая черта (`\`) как символ продолжения строки. Замените или удалите ее в соответствии с требованиями вашей операционной системы. 
-* **Порядок аргументов**. Не изменяйте порядок аргументов, если вы еще не очень хорошо знакомы с контейнерами Docker.
+* **Порядок аргументов**. Не изменяйте порядок аргументов, если вы не являетесь уверенным пользователем контейнеров Docker.
+
+Необходимо добавить `text/analytics/v2.0` маршрутизации URI конечной точки, как показано в следующем примере BILLING_ENDPOINT_URI.
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
 | Placeholder | Значение | Формат или пример |
 |-------------|-------|---|
-|{BILLING_KEY} | Ключ конечной точки ресурса API анализа текста можно найти на странице ключей API анализа текста на портале Azure. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
-|{BILLING_ENDPOINT_URI} | Значение конечной точки выставления счетов доступно на странице обзора API анализа текста на портале Azure.|`https://westus.api.cognitive.microsoft.com/text/analytics/v2.0`|
+|{BILLING_KEY} | Ключ конечной точки `Cognitive Services` ресурсов, доступных на Azure `Cognitive Services` страницы "ключи". |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
+|{BILLING_ENDPOINT_URI} | Значение конечной точки выставления счетов можно найти в Azure `Cognitive Services` странице "Обзор".|`https://westus.api.cognitive.microsoft.com/text/analytics/v2.0`|
 
 > [!IMPORTANT]
 > Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](how-tos/text-analytics-how-to-install-containers.md#billing).
-> Значение ApiKey — это **ключ** со страницы ключей ресурса API анализа текста Azure. 
+> Значение ApiKey **ключ** от Azure `Cognitive Services` страницу ключей ресурсов. 
 
 ## <a name="keyphrase-extraction-container-docker-examples"></a>Примеры контейнеров Docker для извлечения ключевой фразы
 

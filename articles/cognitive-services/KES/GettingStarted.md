@@ -10,12 +10,12 @@ ms.subservice: knowledge-exploration
 ms.topic: sample
 ms.date: 03/26/2016
 ms.author: paulhsu
-ms.openlocfilehash: e2678200e2f8c55111e53ab0a341804fd17623a3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 00c5ed3e3ea5c083f727d06c2ed305fe35ed03db
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57994950"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523330"
 ---
 # <a name="get-started-with-the-knowledge-exploration-service"></a>Начало работы со Службой поиска и распознавания данных
 
@@ -252,7 +252,7 @@ ms.locfileid: "57994950"
 
 [Переключите](../../../articles/cloud-services/cloud-services-nodejs-stage-application.md) содержимое промежуточного слота на рабочий слот, чтобы текущий трафик теперь направлялся к новой развернутой службе. Можно повторить этот процесс при развертывании обновленной версии службы с новыми данными. Как и с другими облачными службами Azure, при необходимости можно использовать портал Azure для настройки [автомасштабирования](../../../articles/cloud-services/cloud-services-how-to-scale-portal.md).
 
-В этом примере развертывается индекс *Academic* для промежуточного слота существующей облачной службы с виртуальными машинами размера *< vm_size >*. Используйте следующую команду:
+В этом примере развертывается индекс *Academic* для промежуточного слота существующей облачной службы с виртуальными машинами размера *\<< vm_size>*. Используйте следующую команду:
 
 `kes.exe deploy_service http://<account>.blob.core.windows.net/<container>/Academic.grammar http://<account>.blob.core.windows.net/<container>/Academic.index <serviceName> <vm_size> --slot Staging`
 

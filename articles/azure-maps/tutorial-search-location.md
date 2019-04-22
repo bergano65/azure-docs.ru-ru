@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 3db2b810ba4ba96e492c6b6ba841d9cfa35418a8
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 125e0c4331eea105ffc201bd1f5f26bdbec1c553
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59260851"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549394"
 ---
 # <a name="search-nearby-points-of-interest-using-azure-maps"></a>Поиск ближайшей точки интереса с помощью службы "Карты Azure"
 
@@ -129,7 +129,7 @@ API элементов управления картой — это удобна
     });
     ```
 
-   Этот сегмент инициирует API Map Control для ключа учетной записи службы Azure Maps. `atlas` это пространство имен, которое содержит API и связанные визуальные компоненты. `atlas.Map` предоставляет элемент управления для визуальной интерактивной веб-карты.
+   Этот сегмент инициирует API Map Control для ключа учетной записи службы Azure Maps. `atlas` — это пространство имен, которое содержит API и связанные визуальные компоненты. `atlas.Map` предоставляет элемент управления для визуальной интерактивной веб-карты.
 
 4. Сохраните изменения в файл и откройте HTML-страницу в браузере. Это самая простая карта, которую можно создать, вызвав `atlas.Map`, используя ключ учетной записи.
 
@@ -280,13 +280,13 @@ API элементов управления картой — это удобна
 > * Создание веб-страницы с помощью API Map Control.
 > * Использование службы поиска для поиска ближайшего объекта.
 
-Пример кода, используемый при работе с этим руководством, приведен здесь:
+> [!div class="nextstepaction"]
+> [Просмотр полного исходного кода](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/search.html)
 
-> [Поиск местоположения с помощью Azure Maps](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/search.html)
-
-[Ознакомьтесь с примером в интерактивном режиме](https://azuremapscodesamples.azurewebsites.net/?sample=Search%20for%20points%20of%20interest)
+> [!div class="nextstepaction"]
+> [Просмотр примера, работающего в реальном времени](https://azuremapscodesamples.azurewebsites.net/?sample=Search%20for%20points%20of%20interest)
 
 В следующем руководстве показано, как отобразить маршрут между двумя расположениями.
 
 > [!div class="nextstepaction"]
-> [Построение маршрута к месту назначения](./tutorial-route-location.md)
+> [Прокладывание маршрута до точки интереса в службе "Карты Azure"](./tutorial-route-location.md)

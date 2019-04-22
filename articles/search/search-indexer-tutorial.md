@@ -7,17 +7,17 @@ services: search
 ms.service: search
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 04/08/2019
+ms.date: 04/09/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 401ad90f1ae4ffb4915a0b51aea41430e7045aa9
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 8550e220a2c87823fc337154ea33dd3c4ec81ed0
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59270473"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59528056"
 ---
-# <a name="tutorial-in-c-crawl-an-azure-sql-database-using-azure-search-indexers"></a>Учебник на C#. Сканирование базы данных Azure SQL с помощью индексаторов в службе "Поиск Azure"
+# <a name="c-tutorial-crawl-an-azure-sql-database-using-azure-search-indexers"></a>Руководство по C#. Сканирование базы данных Azure SQL с помощью индексаторов в службе "Поиск Azure"
 
 Вы узнаете, как настроить индексатор для извлечения доступных для поиска данных из примера базы данных SQL Azure. [Индексатор](search-indexer-overview.md) — это компонент службы "Поиск Azure", который сканирует внешние источники данных и заполняет [индекс поиска](search-what-is-an-index.md) содержимым. Чаще всего используется индексатор для Базы данных SQL Azure. 
 
@@ -87,7 +87,7 @@ ms.locfileid: "59270473"
 
 В следующем упражнении предполагается, что сервер и база данных не существуют. Поэтому здесь рекомендуется создать их на шаге 2. Если у вас уже есть необходимый ресурс, можно добавить в него таблицу отелей и начать с шага 4.
 
-1. Войдите на [портале Azure](https://portal.azure.com/). 
+1. [Войдите на портал Azure](https://portal.azure.com/). 
 
 2. Найдите или создайте **Базу данных SQL Azure**, чтобы создать базу данных, сервер и группу ресурсов. Вы можете использовать значения по умолчанию и самую низкую ценовую категорию. Одним из преимуществ создания сервера является то, что вы можете указать имя пользователя и пароль администратора, которые потребуются для создания и загрузки таблиц в дальнейшем.
 
@@ -99,7 +99,7 @@ ms.locfileid: "59270473"
 
    ![Страница базы данных SQL](./media/search-indexer-tutorial/hotels-db.png)
 
-4. На панели команд последовательно выберите **Средства** > **Редактор запросов**.
+4. В области навигации щелкните **Редактор запросов (предварительная версия)**.
 
 5. Нажмите **Вход**, а затем введите имя пользователя и пароль администратора сервера.
 
@@ -116,7 +116,7 @@ ms.locfileid: "59270473"
     ```sql
     SELECT HotelId, HotelName, Tags FROM Hotels
     ```
-    Классический запрос `SELECT * FROM Hotels` не работает в редакторе запросов. Пример данных содержит географические координаты в поле "Расположение". Такие данные не обрабатываются в текущей версии редактора. Список других столбцов для запроса вы можете вывести при помощи инструкции: `SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('dbo.Hotels')`
+    Классический запрос `SELECT * FROM Hotels` не работает в редакторе запросов. Пример данных содержит географические координаты в поле "Расположение". Такие данные не обрабатываются в текущей версии редактора. Список других столбцов для запроса можно вывести при помощи инструкции `SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('dbo.Hotels')`.
 
 10. Теперь, когда у вас есть внешний набор данных, скопируйте строку подключения ADO.NET для базы данных. На странице базы данных SQL последовательно выберите **Параметры** > **Строки подключения** и скопируйте строку подключения ADO.NET.
  
@@ -137,7 +137,7 @@ ms.locfileid: "59270473"
 
 ## <a name="understand-the-code"></a>Изучение кода
 
-Теперь ваш код готов к сборке и выполнению. Но перед этим рекомендуем изучить определения индекса и индексатора для примера. Соответствующий код находится в двух файлах:
+После определения данных и настройки параметров конфигурации пример программы в **DotNetHowToIndexers.sln** готов к сборке и запуску. Но перед этим рекомендуем изучить определения индекса и индексатора для примера. Соответствующий код находится в двух файлах:
 
   + **hotel.cs** — содержит схему, которая определяет индекс;
   + **Program.cs** — содержит функции для создания структур и управления ими в службе.
@@ -155,45 +155,65 @@ public string HotelName { get; set; }
 
 Кроме того, схема может включать профили повышения для оценки результатов поиска, пользовательские анализаторы и другие конструкции. Но для наших целей схема определена не так подробно. Она содержит только поля, обнаруженные в примерах наборов данных.
 
-В этом руководстве индексаторы извлекают данные из одного источника. На практике вы можете подключить несколько индексаторов к одному индексу и создать из нескольких источников данных и индексаторов объединенный индекс с поддержкой поиска. Можно использовать одну и ту же пару, состоящую из индекса и индексатора, изменяя только источники данных, или один индекс с различными сочетаниями индексаторов и источников. Это зависит от требуемого уровня гибкости.
+В этом руководстве индексаторы извлекают данные из одного источника. На практике вы можете подключить несколько индексаторов к одному индексу, создав из нескольких источников данных объединенный индекс с поддержкой поиска. Можно использовать одну и ту же пару, состоящую из индекса и индексатора, изменяя только источники данных, или один индекс с различными сочетаниями индексаторов и источников. Это зависит от требуемого уровня гибкости.
 
 ### <a name="in-programcs"></a>Program.cs
 
-Основная программа содержит функции для всех трех репрезентативных источников данных. Если рассматривать только базу данных SQL Azure, следует обратить внимание на такие объекты:
+Основная программа содержит логику для создания клиента, индекса, источника данных и индексатора. При помощи этого кода проверяется наличие ресурсов с таким же именем. При обнаружении такие ресурсы удаляются, так как есть вероятность, что вы будете запускать эту программу несколько раз.
+
+Исходный объект данных настраивается с помощью параметров, относящихся к ресурсам базы данных Azure SQL, включая [добавочное индексирование](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md#capture-new-changed-and-deleted-rows) для использования встроенных [функций обнаружения изменений](https://docs.microsoft.com/sql/relational-databases/track-changes/about-change-tracking-sql-server) SQL Azure. Демонстрационная база данных гостиниц в SQL Azure содержит столбец "обратимого удаления", **IsDeleted**. Если этот столбец имеет значение true в базе данных, индексатор удаляет соответствующего документа из индекса Поиска Azure.
 
   ```csharp
-  private const string IndexName = "hotels";
-  private const string AzureSqlHighWaterMarkColumnName = "RowVersion";
-  private const string AzureSqlDataSourceName = "azure-sql";
-  private const string AzureSqlIndexerName = "azure-sql-indexer";
+  Console.WriteLine("Creating data source...");
+
+  DataSource dataSource = DataSource.AzureSql(
+      name: "azure-sql",
+      sqlConnectionString: configuration["AzureSQLConnectionString"],
+      tableOrViewName: "hotels",
+      deletionDetectionPolicy: new SoftDeleteColumnDeletionDetectionPolicy(
+          softDeleteColumnName: "IsDeleted",
+          softDeleteMarkerValue: "true"));
+  dataSource.DataChangeDetectionPolicy = new SqlIntegratedChangeTrackingPolicy();
+
+  searchService.DataSources.CreateOrUpdateAsync(dataSource).Wait();
   ```
 
-Индексы, индексаторы и источники данных в службе "Поиск Azure" (*hotels*, *azure-sql-indexer* и *azure-sql* соответственно), которые можно независимо просмотреть, настроить или удалить. 
-
-Отдельно стоит остановиться на столбце *AzureSqlHighWaterMarkColumnName*. В нем содержатся сведения об обнаружении изменений, при помощи которых индексатор определяет, была ли строка изменена с момента последней рабочей нагрузки индексирования. [Политики обнаружения изменений](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md) поддерживаются только в индексаторах и зависят от источника данных. Для базы данных SQL Azure можно выбрать одну из двух политик, руководствуясь требованиями базы данных.
-
-В приведенном ниже коде показаны методы в файле Program.cs, которые используются для создания источника данных и индексатора. При помощи этого кода проверяется наличие ресурсов с таким же именем. При обнаружении такие ресурсы удаляются, так как есть вероятность, что вы будете запускать эту программу несколько раз.
+Объект индексатора не зависит от платформы. Его настройка, планирование и вызов одинаковы независимо от источника. Этот пример индексатора включает в себя расписание, возможность сброса, которая очищает журнал индексатора и вызывает метод для создания и немедленного запуска индексатора.
 
   ```csharp
-  private static string SetupAzureSqlIndexer(SearchServiceClient serviceClient, IConfigurationRoot configuration)
+  Console.WriteLine("Creating Azure SQL indexer...");
+  Indexer indexer = new Indexer(
+      name: "azure-sql-indexer",
+      dataSourceName: dataSource.Name,
+      targetIndexName: index.Name,
+      schedule: new IndexingSchedule(TimeSpan.FromDays(1)));
+  // Indexers contain metadata about how much they have already indexed
+  // If we already ran the sample, the indexer will remember that it already
+  // indexed the sample data and not run again
+  // To avoid this, reset the indexer if it exists
+  exists = await searchService.Indexers.ExistsAsync(indexer.Name);
+  if (exists)
   {
-    Console.WriteLine("Deleting Azure SQL data source if it exists...");
-    DeleteDataSourceIfExists(serviceClient, AzureSqlDataSourceName);
+      await searchService.Indexers.ResetAsync(indexer.Name);
+  }
 
-    Console.WriteLine("Creating Azure SQL data source...");
-    DataSource azureSqlDataSource = CreateAzureSqlDataSource(serviceClient, configuration);
+  await searchService.Indexers.CreateOrUpdateAsync(indexer);
 
-    Console.WriteLine("Deleting Azure SQL indexer if it exists...");
-    DeleteIndexerIfExists(serviceClient, AzureSqlIndexerName);
+  // We created the indexer with a schedule, but we also
+  // want to run it immediately
+  Console.WriteLine("Running Azure SQL indexer...");
 
-    Console.WriteLine("Creating Azure SQL indexer...");
-    Indexer azureSqlIndexer = CreateIndexer(serviceClient, AzureSqlDataSourceName, AzureSqlIndexerName);
-
-    return azureSqlIndexer.Name;
+  try
+  {
+      await searchService.Indexers.RunAsync(indexer.Name);
+  }
+  catch (CloudException e) when (e.Response.StatusCode == (HttpStatusCode)429)
+  {
+      Console.WriteLine("Failed to run indexer: {0}", e.Response.Content);
   }
   ```
 
-Обратите внимание, что вызовы API индексатора не зависят от платформы, за исключением [DataSourceType](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datasourcetype?view=azure-dotnet), в котором указан тип поискового модуля для вызова.
+
 
 ## <a name="run-the-indexer"></a>Запуск индексатора
 
@@ -236,12 +256,10 @@ public string HotelName { get; set; }
 
 Все индексаторы, включая только что созданный программными средствами, отображаются на портале. Вы можете открыть определение индексатора и просмотреть его источник данных или настроить расписание обновления, чтобы применялись новые и измененные строки.
 
-1. Откройте страницу обзора в службе "Поиск Azure".
-2. Прокрутите вниз, чтобы найти плитки для **индексаторов** и **источников данных**.
-3. Щелкните плитку, чтобы открыть список для каждого ресурса. Чтобы просмотреть или изменить параметры конфигурации, вы можете выбрать отдельные индексаторы или источники данных.
+1. [Войдите на портал Azure](https://portal.azure.com/) и на странице **Обзор** службы поиска щелкните ссылки на **индексы**, **индексаторы** и **источники данных**.
+3. Выберите отдельные объекты для просмотра или изменения параметров конфигурации.
 
    ![Плитки для индексаторов и источников данных](./media/search-indexer-tutorial/tiles-portal.png)
-
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -252,4 +270,4 @@ public string HotelName { get; set; }
 Управляемые ИИ алгоритмы можно включить в конвейер индексатора. Дальнейшие действия см. в следующем руководстве.
 
 > [!div class="nextstepaction"]
-> [Индексирование документов в хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
+> [Индексирование документов в хранилище BLOB-объектов Azure с помощью службы поиска Azure](search-howto-indexing-azure-blob-storage.md)

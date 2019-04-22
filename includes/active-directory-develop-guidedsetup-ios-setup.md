@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 09/19/2018
 ms.author: dadobali
 ms.custom: include file
-ms.openlocfilehash: d8e249a788d80108d46a61f316b795ab04e541a2
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
-ms.translationtype: MT
+ms.openlocfilehash: e72c4b0cf8f77a057ff07f8bce7acae4e834e28d
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58203548"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59502948"
 ---
 ## <a name="setting-up-your-ios-application"></a>Настройка приложения iOS
 
@@ -61,7 +61,7 @@ echo "github \"AzureAD/microsoft-authentication-library-for-objc\" \"master\"" >
 carthage update
 ```
 
-> Описанный выше процесс используется для скачивания и сборки библиотеки проверки подлинности Microsoft (MSAL). MSAL обрабатывает получение, кэширование и обновление маркеров пользователей, которые необходимы для доступа к API-интерфейсам, защищенным Azure Active Directory версии 2.0.
+> Описанный выше процесс используется для скачивания и сборки библиотеки проверки подлинности Microsoft (MSAL). MSAL обрабатывает получение, кэширование и обновление маркеров пользователей, которые используются для доступа к интерфейсам API, защищенным платформой удостоверений Майкрософт.
 
 ## <a name="add-the-msal-framework-to-your-application"></a>Добавление платформы MSAL в приложение
 
@@ -91,7 +91,7 @@ $(SRCROOT)/Carthage/Build/iOS/MSAL.framework
 
 Файл Main.storyboard должен быть создан автоматически, как часть шаблона проекта. Следуйте инструкциям для создания пользовательского интерфейса приложения:
 
-1.  Щелкните `Main.storyboard`, удерживая клавишу CTRL, чтобы открыть контекстное меню, затем щелкните `Open As` > `Source Code`.
+1.  Щелкните `Main.storyboard`, удерживая клавишу CTRL, чтобы открыть контекстное меню, затем щелкните `Open As` > .`Source Code`
 2.  Замените узел `<scenes>` на следующий код:
 
 ```xml

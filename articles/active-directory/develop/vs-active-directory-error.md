@@ -13,26 +13,26 @@ ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ed328b29c853e5ff75d64332f0228277cff90d4
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: a6f151251d76965cf1bc86216eac15a08f1adbc6
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56203681"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59679114"
 ---
 # <a name="diagnosing-errors-with-the-azure-active-directory-connected-service"></a>Диагностика ошибок с помощью подключенной службы Azure Active Directory
 
 При попытке определить существующий код аутентификации сервер подключения Azure Active Directory обнаружил несовместимый тип аутентификации.
 
-Чтобы правильно определить существующий в проекте код аутентификации, необходимо создать проект.  Если возникла эта ошибка и в вашем проекте нет предыдущего кода аутентификации, еще раз выполните сборку проекта и повторите попытку.
+Чтобы правильно определить существующий в проекте код аутентификации, необходимо создать проект.  Если вы видите эту ошибку, и у вас нет предыдущего кода аутентификации в проекте, перестроить и повторите попытку.
 
 ## <a name="project-types"></a>Типы проектов
 
-Подключенная служба проверяет тип проекта, над которым вы работаете, чтобы внедрить в него правильную логику аутентификации. Если в проекте есть какой-либо контроллер, являющийся производным от `ApiController`, то этот проект рассматривается как проект веб-API. Если в проекте есть какие-либо контроллеры, являющиеся производными от `MVC.Controller`, то этот проект рассматривается как проект MVC. Подключенная служба не поддерживает другие типы проектов.
+Подключенная служба проверяет тип проекта, над которым вы работаете, чтобы внедрить в него правильную логику аутентификации. При возникновении любого контроллера, который является производным от `ApiController` в проекте, этот проект рассматривается в проект WebAPI. Если в проекте есть какие-либо контроллеры, являющиеся производными от `MVC.Controller`, то этот проект рассматривается как проект MVC. Подключенная служба не поддерживает другие типы проектов.
 
 ## <a name="compatible-authentication-code"></a>Совместимый код аутентификации
 
-Также подключенная служба проверяет параметры аутентификации, настроенные ранее или совместимые с этой службой. Если присутствуют все необходимые параметры, то проект рассматривается как подключаемый повторно, и подключенная служба отображает эти параметры при открытии.  Если присутствуют только некоторые параметры, это рассматривается как случай ошибки.
+Также подключенная служба проверяет параметры аутентификации, настроенные ранее или совместимые с этой службой. Если присутствуют все параметры, она рассматривается как реентерабельный случай, и откроется подключенной службы отобразить эти параметры.  Некоторые параметры присутствуют, если только она рассматривается как случай ошибки.
 
 В проекте MVC подключенная служба проверяет все перечисленные ниже параметры, которые могли быть созданы при предыдущем применении этой службы.
 
@@ -41,7 +41,7 @@ ms.locfileid: "56203681"
     <add key="ida:AADInstance" value="" />
     <add key="ida:PostLogoutRedirectUri" value="" />
 
-Кроме того, подключенная служба проверяет в проекте веб-API все перечисленные ниже параметры, которые могли быть созданы при предыдущем применении этой службы.
+Кроме того подключенная служба проверяет все из следующих параметров в проект веб-API, полученных в результате предыдущего использования службы.
 
     <add key="ida:ClientId" value="" />
     <add key="ida:Tenant" value="" />
@@ -60,7 +60,7 @@ ms.locfileid: "56203681"
 ```xml
 <configuration>
     <system.web>
-        <span style="background-color: yellow"><authentication mode="Windows" /></span>
+        <authentication mode="Windows" />
     </system.web>
 </configuration>
 ```
@@ -70,7 +70,7 @@ ms.locfileid: "56203681"
 ```xml
 <Project>
     <PropertyGroup>
-        <span style="background-color: yellow"><IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication></span>
+        <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     </PropertyGroup>
 </Project>
 ```
@@ -79,7 +79,7 @@ ms.locfileid: "56203681"
 
 ```xml
 <packages>
-    <span style="background-color: yellow"><package id="Microsoft.AspNet.Identity.EntityFramework" version="2.1.0" targetFramework="net45" /></span>
+    <package id="Microsoft.AspNet.Identity.EntityFramework" version="2.1.0" targetFramework="net45" />
 </packages>
 ```
 
@@ -88,7 +88,7 @@ ms.locfileid: "56203681"
 ```xml
 <configuration>
     <appSettings>
-        <span style="background-color: yellow"><add key="ida:Realm" value="***" /></span>
+        <add key="ida:Realm" value="***" />
     </appSettings>
 </configuration>
 ```

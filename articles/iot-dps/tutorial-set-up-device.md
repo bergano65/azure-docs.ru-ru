@@ -3,18 +3,18 @@ title: Настройка устройства для службы "Подгот
 description: Настройка устройства для подготовки через службу подготовки устройств для Центра Интернета вещей во время производства устройства.
 author: wesmc7777
 ms.author: wesmc
-ms.date: 04/02/2018
+ms.date: 04/10/2019
 ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
-manager: timlt
+manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: eae674693b647eed5bce0a38236d44d457c1c2ae
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 344cc3b8ba3f7698f5124d464f3c277b6cb5cdde
+ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58486926"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59500980"
 ---
 # <a name="set-up-a-device-to-provision-using-the-azure-iot-hub-device-provisioning-service"></a>Настройка устройства для подготовки с помощью службы подготовки устройств для Центра Интернета вещей
 
@@ -45,23 +45,7 @@ ms.locfileid: "58486926"
 
 Клиентский пакет SDK для службы подготовки устройств позволяет реализовать программный пакет регистрации устройств. Но до этого нужно создать версию пакета SDK для определенной клиентской платформы разработки и механизма аттестации. С помощью этого руководства вы создадите пакет SDK, который использует Visual Studio 2017 на платформе разработки Windows для поддерживаемого типа аттестации:
 
-1. Скачайте [систему сборки CMake](https://cmake.org/download/). Проверьте загруженный бинарный дистрибутив с помощью криптографического хэша, соответствующего скачанной версии. Криптографические значения хэша также доступны по предоставленной ссылке для скачивания CMake.
-
-    В следующем примере для проверки криптографического хэша для дистрибутива MSI x64 версии 3.13.4 использовалась среда Windows PowerShell.
-
-    ```powershell
-    PS C:\Downloads> $hash = get-filehash .\cmake-3.13.4-win64-x64.msi
-    PS C:\Downloads> $hash.Hash -eq "64AC7DD5411B48C2717E15738B83EA0D4347CD51B940487DFF7F99A870656C09"
-    True
-    ```
-
-    Приведенные ниже значения хэша для версии 3.13.4 были указаны на сайте CMake на момент написания этой статьи.
-
-    ```
-    563a39e0a7c7368f81bfa1c3aff8b590a0617cdfe51177ddc808f66cc0866c76  cmake-3.13.4-Linux-x86_64.tar.gz
-    7c37235ece6ce85aab2ce169106e0e729504ad64707d56e4dbfc982cb4263847  cmake-3.13.4-win32-x86.msi
-    64ac7dd5411b48c2717e15738b83ea0d4347cd51b940487dff7f99a870656c09  cmake-3.13.4-win64-x64.msi
-    ```
+1. Скачайте [систему сборки CMake](https://cmake.org/download/).
 
     **Перед** установкой `CMake` очень важно установить на компьютер необходимые компоненты Visual Studio (Visual Studio с рабочей нагрузкой "Разработка классических приложений на C++"). После установки компонентов и проверки загрузки установите систему сборки CMake.
 
@@ -70,7 +54,7 @@ ms.locfileid: "58486926"
     ```cmd/sh
     git clone https://github.com/Azure/azure-iot-sdk-c.git --recursive
     ```
-    Размер этого репозитория в настоящее время составляет примерно 220 МБ. Выполнение этой операции может занять несколько минут.
+    Выполнение этой операции может занять несколько минут.
 
 
 1. Создайте подкаталог `cmake` в корневом каталоге репозитория Git и перейдите в эту папку. 
@@ -227,5 +211,5 @@ PROV_DEVICE_RESULT Prov_Device_LL_SetOption(PROV_DEVICE_LL_HANDLE handle, const 
 Перейдите к следующему руководству, чтобы узнать, как подготовить свое устройство в Центре Интернета вещей, зарегистрировав его в службе подготовки устройств для Центра Интернета вещей Azure, позволяющей выполнить автоматическую подготовку.
 
 > [!div class="nextstepaction"]
-> [Provision the device to an IoT hub using the Azure IoT Hub Device Provisioning Service](tutorial-provision-device-to-hub.md) (Подготовка устройства в Центре Интернета вещей с помощью службы подготовки устройств для Центра Интернета вещей).
+> [Подготовка устройства к добавлению в ваш центр Интернета вещей](tutorial-provision-device-to-hub.md)
 

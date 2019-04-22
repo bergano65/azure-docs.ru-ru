@@ -16,10 +16,10 @@ ms.date: 02/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8ba9f4df36f753a1caf619ad90015fa073a00de3
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58883383"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sharepoint-on-premises"></a>Руководство. Интеграция Azure Active Directory с локальной версией SharePoint
@@ -106,11 +106,11 @@ ms.locfileid: "58883383"
 
     ![Сведения о домене и URL-адресах единого входа для локальной версии SharePoint](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YourSharePointServerURL>/_trust/default.aspx`
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YourSharePointServerURL>/_trust/default.aspx`.
 
-    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `urn:sharepoint:federation`
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `urn:sharepoint:federation`.
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<YourSharePointServerURL>/_trust/default.aspx`
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<YourSharePointServerURL>/_trust/default.aspx`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов локальной версии SharePoint](https://support.office.com/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -122,7 +122,7 @@ ms.locfileid: "58883383"
     > [!Note]
     > Запишите путь к файлу, по которому вы загрузили файл сертификата, так как вам нужно будет использовать его позже в сценарии PowerShell для настройки.
 
-6. Скопируйте требуемый URL-адрес из раздела **Настройка локальной версии SharePoint**. Для **URL-адреса службы единого входа** используйте значение такого формата: `https://login.microsoftonline.com/_my_directory_id_/wsfed`
+6. Скопируйте требуемый URL-адрес из раздела **Настройка локальной версии SharePoint**. Для **URL-адреса службы единого входа** используйте значение из следующих форматов: `https://login.microsoftonline.com/_my_directory_id_/wsfed`
 
     > [!Note]
     > _my_directory_id_ — это идентификатор клиента подписки Azure AD.

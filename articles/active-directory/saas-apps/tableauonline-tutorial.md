@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 5ccf978ab33226dc029d534a343a87a796ab69e8
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 563668780c42ca23a1904757f886581f3ad0c5e8
+ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59278111"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59617312"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tableau-online"></a>Руководство по по интеграции Azure Active Directory с Tableau Online
 
@@ -105,9 +105,9 @@ ms.locfileid: "59278111"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Tableau Online](common/sp-identifier.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес: `https://sso.online.tableau.com/public/sp/login?alias=<entityid>`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://sso.online.tableau.com/public/sp/login?alias=<entityid>`
 
-    b. В текстовое поле **Идентификатор (сущности)** введите URL-адрес: `https://sso.online.tableau.com/public/sp/metadata?alias=<entityid>`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес: `https://sso.online.tableau.com/public/sp/metadata?alias=<entityid>`.
 
     > [!NOTE]
     > Значение `<entityid>` см. на странице **настройки Tableau Online**. Значением идентификатора сущности является **идентификатор Azure AD** на странице **настройки Tableau Online**.
@@ -144,7 +144,7 @@ ms.locfileid: "59278111"
   
     a. Перейдите на страницу интеграции с приложением **Tableau Online** портала Azure.
 
-    b. В разделе утверждений и атрибутов пользователя щелкните значок правки.
+    b. В разделе **Атрибуты и утверждения пользователя** щелкните значок правки.
 
    ![Настройка единого входа](./media/tableauonline-tutorial/attributesection.png)
 
@@ -189,7 +189,7 @@ ms.locfileid: "59278111"
     а. В поле **Имя** введите **BrittaSimon**.
   
     b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
-    Например BrittaSimon@contoso.com.
+    Например, BrittaSimon\@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

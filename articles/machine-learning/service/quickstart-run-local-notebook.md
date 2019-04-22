@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 03/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: ade0444110dbb23e762a869dc79805872c0f0bf0
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 3afea20fe02eafbf14b5162eef3a198d27140b9e
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59281137"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549141"
 ---
 # <a name="quickstart-use-your-own-notebook-server-to-get-started-with-azure-machine-learning"></a>Краткое руководство. Использование собственного сервера записных книжек для начала работы с Машинным обучением Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "59281137"
 
 * Сервер записных книжек Python 3.6 с установленным пакетом SDK Машинного обучения Azure.
 * Рабочая область службы машинного обучения Azure.
-* Файл конфигурации рабочей области (**aml_config/config.json**).
+* Файл конфигурации рабочей области (**.azureml/config.json** ).
 
 Все эти предварительные требования описаны в руководстве по [созданию рабочей области Машинного обучения Azure](setup-create-workspace.md#portal).
 
@@ -74,6 +74,6 @@ print(run.get_portal_url())
 В этой статье вы создали ресурсы для экспериментирования и развертывания моделей. Кроме того, вы запускали код в записной книжке и изучали журнал выполнения из этого кода в вашей рабочей области в облаке.
 
 > [!div class="nextstepaction"]
-> [Руководство по обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md)
+> [Руководство Обучение модели классификации изображений](tutorial-train-models-with-aml.md)
 
 Вы также можете изучить [более сложные примеры на GitHub](https://aka.ms/aml-notebooks) или ознакомиться с [руководством пользователя для этого пакета SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).

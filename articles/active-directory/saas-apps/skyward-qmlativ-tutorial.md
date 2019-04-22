@@ -16,10 +16,10 @@ ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9faf5068f6007cc357bcd22480c08af4223ba906
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58883032"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skyward-qmlativ"></a>Руководство по Интеграция Azure Active Directory со Skyward Qmlativ
@@ -51,7 +51,7 @@ ms.locfileid: "58883032"
 
 Чтобы настроить интеграцию Skyward Qmlativ с Azure AD, необходимо добавить приложение Skyward Qmlativ из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Skyward Qmlativ из коллекции, выполните следующие действия:**
+**Чтобы добавить Skyward Qmlativ из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "58883032"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Skyward Qmlativ](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.skyward.com/<CUSTOMERIDENTIFIERSTS>`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.skyward.com/<CUSTOMERIDENTIFIERSTS>`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<BASEURL>/customeridentifierSTS`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<BASEURL>/customeridentifierSTS`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Skyward Qmlativ](mailto:steveb@skyward.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

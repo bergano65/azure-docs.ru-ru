@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
 ms.openlocfilehash: bb18aa35c89657f01319512eac6c15096174891f
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59265735"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-excelityglobal"></a>Руководство по Руководство по интеграции Azure Active Directory с приложением ExcelityGlobal
@@ -50,7 +50,7 @@ ms.locfileid: "59265735"
 
 Чтобы настроить интеграцию ExcelityGlobal с Azure AD, необходимо добавить приложение ExcelityGlobal из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить ExcelityGlobal из коллекции, выполните следующие действия:**
+**Чтобы добавить ExcelityGlobal из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -118,7 +118,7 @@ ms.locfileid: "59265735"
 
 5. Приложение ExcelityGlobal ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение ExcelityGlobal ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
  
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Сертификат подписи SAML** щелкните кнопку **Правка**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 

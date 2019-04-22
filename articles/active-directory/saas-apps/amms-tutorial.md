@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e91f51de53b920d1a130c3983489a08b7f1f6cfd
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 798245dc293ecac01fb874fc57b98b14d258f686
+ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59283835"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59564889"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-amms"></a>Руководство по интеграции Azure Active Directory с AMMS
 
@@ -52,7 +52,7 @@ ms.locfileid: "59283835"
 
 Чтобы настроить интеграцию AMMS с Azure AD, необходимо добавить AMMS из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить AMMS из коллекции, выполните следующие действия:**
+**Чтобы добавить AMMS из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,9 +106,9 @@ ms.locfileid: "59283835"
 
     ![Сведения о домене и URL-адресах единого входа для приложения AMMS](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.microwestcloud.com/amms/pages/login.aspx`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.microwestcloud.com/amms/pages/login.aspx`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `<SUBDOMAIN>.microwestcloud.com/amms`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `<SUBDOMAIN>.microwestcloud.com/amms`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов AMMS](mailto:techsupport@microwestsoftware.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -183,9 +183,9 @@ ms.locfileid: "59283835"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [ Список учебников по интеграции приложений SaaS с Azure Active Directory ](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory? ](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

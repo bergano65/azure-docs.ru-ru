@@ -1,6 +1,6 @@
 ---
-title: Отправка событий в Центры событий Azure с помощью Java | Документация Майкрософт
-description: В статье описано, как создать приложение Java, которое отправляет события в Центры событий Azure.
+title: Отправки и получения событий с помощью Java - концентраторов событий Azure | Документация Майкрософт
+description: Эта статья содержит пошаговое руководство по созданию приложения Java, которое отправляет события в концентраторы событий Azure.
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: timlt
@@ -8,38 +8,36 @@ ms.service: event-hubs
 ms.workload: core
 ms.topic: article
 ms.custom: seodec18
-ms.date: 12/06/2018
+ms.date: 04/15/2019
 ms.author: shvija
-ms.openlocfilehash: 4da89e0f99832c429091e0a028fafd8943df811a
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
-ms.translationtype: HT
+ms.openlocfilehash: 0487cac6a0cf7d37befdf0d7cfab33ad6a62cf7f
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55300121"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59679650"
 ---
-# <a name="send-events-to-azure-event-hubs-using-java"></a>Отправка событий в Центры событий Azure с помощью Java
+# <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-java"></a>Отправлять события или получения событий из концентраторов событий Azure с помощью Java
 
 Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
 
-В этом руководстве показано, как отправлять события в концентратор событий с помощью консольного приложения, написанного на языке Java. 
+Этом руководстве показано, как создавать приложения Java для отправки событий или получать события из концентратора событий. 
 
 > [!NOTE]
 > Вы можете скачать это краткое руководство в качестве примера с сайта [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/Java/Basic/SimpleSend), заменить строки `EventHubConnectionString` и `EventHubName` значениями для своего концентратора событий и выполнить этот пример. Или следуйте инструкциям из этого руководства, чтобы создать собственное решение.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с данным руководством вам потребуется:
 
-* Среда разработки Java. В этом руководстве используется среда [Eclipse](https://www.eclipse.org/).
+- Активная учетная запись Azure. Если у вас еще нет подписки Azure, создайте [бесплатная учетная запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
+- Среда разработки Java. В этом руководстве используется среда [Eclipse](https://www.eclipse.org/).
+- **Создать пространство имен концентраторов событий и концентратора событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Затем получите значение ключа доступа для концентратора событий, следуя указаниям из статьи: [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Используйте ключ доступа в коде, который вы напишете далее в рамках этого руководства. Имя ключа по умолчанию: **RootManageSharedAccessKey**.
 
-## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен Центров событий и концентратора событий
-Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md).
+## <a name="send-events"></a>Отправка событий 
+В этом разделе показано, как создать приложение Java для отправки событий в концентратор событий. 
 
-Получите значение ключа доступа для концентратора событий, следуя [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Используйте ключ доступа в коде, который вы напишете далее в рамках этого руководства. Имя ключа по умолчанию: **RootManageSharedAccessKey**.
-
-Теперь приступите к следующим действиям в этом руководстве:
-
-## <a name="add-reference-to-azure-event-hubs-library"></a>Добавление ссылки на библиотеку Центров событий Azure
+### <a name="add-reference-to-azure-event-hubs-library"></a>Добавление ссылки на библиотеку Центров событий Azure
 
 Клиентскую библиотеку Java для Центров событий можно использовать в проектах Maven из [центрального репозитория Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs%22). Чтобы сослаться на эту библиотеку, используйте следующее объявление зависимостей в файле проекта Maven:
 
@@ -55,7 +53,7 @@ ms.locfileid: "55300121"
 
 Если используется простой издатель событий, импортируйте пакет *com.microsoft.azure.eventhubs* для клиентских классов Центров событий и пакет *com.microsoft.azure.servicebus* для служебных классов, таких как общие исключения, которые используются совместно с клиентом обмена сообщениями служебной шины Azure. 
 
-## <a name="write-code-to-send-messages-to-the-event-hub"></a>Написание кода для отправки сообщений в концентратор событий
+### <a name="write-code-to-send-messages-to-the-event-hub"></a>Написание кода для отправки сообщений в концентратор событий
 
 Следующий пример сначала создает новый проект Maven для приложения консоли или оболочки в избранной среде разработки Java. Добавьте класс с именем `SimpleSend` и добавьте в него следующий код.
 
@@ -96,7 +94,7 @@ public class SimpleSend {
                 .setSasKey("2+WMsyyy1XmUtEnRsfOmTTyGasfJgsVjGAOIN20J1Y8=");
 ```
 
-### <a name="send-events"></a>Отправка событий
+### <a name="write-code-to-send-events"></a>Написание кода для отправки событий
 
 Создайте одиночное событие, преобразовав строку в байтовую кодировку UTF-8. Затем создайте экземпляр клиента Центров событий из строки подключения и отправьте сообщение.   
 
@@ -169,11 +167,264 @@ eventHubClient.closeSync();
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="receive-events"></a>Получение событий
+Код в этом руководстве основан на [коде EventProcessorSample в GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/Java/Basic/EventProcessorSample). Изучите его, чтобы получить полное представление о рабочем приложении.
 
-В этом кратком руководстве вы научились отправлять сообщения в концентратор событий с помощью Java. Чтобы узнать, как получать события из концентратора событий с помощью Java, см. статью о [получении событий из концентраторов событий с помощью Java](event-hubs-java-get-started-receive-eph.md).
+### <a name="receive-messages-with-eventprocessorhost-in-java"></a>Прием сообщений через EventProcessorHost в Java
 
-<!-- Links -->
-[Event Hubs overview]: event-hubs-overview.md
-[free account]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+**EventProcessorHost** — это класс Java, который упрощает прием событий от концентраторов событий путем управления постоянными контрольными точками и параллельно принимает сообщения от этих концентраторов событий. С помощью класса EventProcessorHost можно разделить события между несколькими получателями, даже если они размещены на разных узлах. В этом примере показано, как использовать EventProcessorHost для одного получателя.
+
+### <a name="create-a-storage-account"></a>Создание учетной записи хранения
+
+Для использования класса EventProcessorHost необходимо иметь [учетную запись хранения] [учетной записи хранения Azure]:
+
+1. Войдите в [портала Azure](https://portal.azure.com)и нажмите кнопку **+ создать ресурс** в левой части экрана.
+2. Щелкните **Хранилище**, а затем — **Учетная запись хранения**. В окне **Создание учетной записи хранения** введите имя учетной записи хранения. Заполните остальные поля, выберите нужный регион и нажмите кнопку **Создать**.
+   
+    ![Создать учетную запись хранения](./media/event-hubs-dotnet-framework-getstarted-receive-eph/create-storage2.png)
+
+3. Выберите созданную учетную запись хранения и нажмите кнопку **Ключи доступа**:
+   
+    ![Получение ключей доступа](./media/event-hubs-dotnet-framework-getstarted-receive-eph/create-storage3.png)
+
+    Скопируйте значение key1 во временное расположение. Оно будет использоваться далее в этом руководстве.
+
+### <a name="create-a-java-project-using-the-eventprocessor-host"></a>Создание проекта Java с помощью EventProcessorHost
+
+Клиентская библиотека Java для Центров событий доступна для использования в проектах из [центрального репозитория Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs-eph%22). Ссылаться на нее можно, используя следующее объявление зависимости в файле проекта Maven: 
+
+```xml
+<dependency>
+    <groupId>com.microsoft.azure</groupId>
+    <artifactId>azure-eventhubs</artifactId>
+    <version>2.2.0</version>
+</dependency>
+<dependency>
+    <groupId>com.microsoft.azure</groupId>
+    <artifactId>azure-eventhubs-eph</artifactId>
+    <version>2.4.0</version>
+</dependency>
+```
+
+Для различных типов сред сборки можно явно получить последние выпущенные JAR-файлы из [центрального репозитория Maven] [https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs-eph%22].  
+
+1. Следующий пример сначала создает новый проект Maven для приложения консоли или оболочки в избранной среде разработки Java. Класс называется `ErrorNotificationHandler`.     
+   
+    ```java
+    import java.util.function.Consumer;
+    import com.microsoft.azure.eventprocessorhost.ExceptionReceivedEventArgs;
+   
+    public class ErrorNotificationHandler implements Consumer<ExceptionReceivedEventArgs>
+    {
+        @Override
+        public void accept(ExceptionReceivedEventArgs t)
+        {
+            System.out.println("SAMPLE: Host " + t.getHostname() + " received general error notification during " + t.getAction() + ": " + t.getException().toString());
+        }
+    }
+    ```
+2. Создайте новый класс с именем `EventProcessorSample`с помощью следующего кода: Замените значения заполнителей значениями, которые использовались при создании концентратора событий и учетной записи хранения:
+   
+   ```java
+   package com.microsoft.azure.eventhubs.samples.eventprocessorsample;
+
+   import com.microsoft.azure.eventhubs.ConnectionStringBuilder;
+   import com.microsoft.azure.eventhubs.EventData;
+   import com.microsoft.azure.eventprocessorhost.CloseReason;
+   import com.microsoft.azure.eventprocessorhost.EventProcessorHost;
+   import com.microsoft.azure.eventprocessorhost.EventProcessorOptions;
+   import com.microsoft.azure.eventprocessorhost.ExceptionReceivedEventArgs;
+   import com.microsoft.azure.eventprocessorhost.IEventProcessor;
+   import com.microsoft.azure.eventprocessorhost.PartitionContext;
+
+   import java.util.concurrent.ExecutionException;
+   import java.util.function.Consumer;
+
+   public class EventProcessorSample
+   {
+       public static void main(String args[]) throws InterruptedException, ExecutionException
+       {
+           String consumerGroupName = "$Default";
+           String namespaceName = "----NamespaceName----";
+           String eventHubName = "----EventHubName----";
+           String sasKeyName = "----SharedAccessSignatureKeyName----";
+           String sasKey = "----SharedAccessSignatureKey----";
+           String storageConnectionString = "----AzureStorageConnectionString----";
+           String storageContainerName = "----StorageContainerName----";
+           String hostNamePrefix = "----HostNamePrefix----";
+        
+           ConnectionStringBuilder eventHubConnectionString = new ConnectionStringBuilder()
+                .setNamespaceName(namespaceName)
+                .setEventHubName(eventHubName)
+                .setSasKeyName(sasKeyName)
+                .setSasKey(sasKey);
+        
+           EventProcessorHost host = new EventProcessorHost(
+                EventProcessorHost.createHostName(hostNamePrefix),
+                eventHubName,
+                consumerGroupName,
+                eventHubConnectionString.toString(),
+                storageConnectionString,
+                storageContainerName);
+        
+           System.out.println("Registering host named " + host.getHostName());
+           EventProcessorOptions options = new EventProcessorOptions();
+           options.setExceptionNotification(new ErrorNotificationHandler());
+
+           host.registerEventProcessor(EventProcessor.class, options)
+           .whenComplete((unused, e) ->
+           {
+               if (e != null)
+               {
+                   System.out.println("Failure while registering: " + e.toString());
+                   if (e.getCause() != null)
+                   {
+                       System.out.println("Inner exception: " + e.getCause().toString());
+                   }
+               }
+           })
+           .thenAccept((unused) ->
+           {
+               System.out.println("Press enter to stop.");
+               try 
+               {
+                   System.in.read();
+               }
+               catch (Exception e)
+               {
+                   System.out.println("Keyboard read failed: " + e.toString());
+               }
+           })
+           .thenCompose((unused) ->
+           {
+               return host.unregisterEventProcessor();
+           })
+           .exceptionally((e) ->
+           {
+               System.out.println("Failure while unregistering: " + e.toString());
+               if (e.getCause() != null)
+               {
+                   System.out.println("Inner exception: " + e.getCause().toString());
+               }
+               return null;
+           })
+           .get(); // Wait for everything to finish before exiting main!
+        
+           System.out.println("End of sample");
+       }
+    ```
+3. Создайте еще один класс с именем `EventProcessor` при помощи следующего кода:
+   
+    ```java
+    public static class EventProcessor implements IEventProcessor
+    {
+        private int checkpointBatchingCount = 0;
+
+        // OnOpen is called when a new event processor instance is created by the host. 
+        @Override
+        public void onOpen(PartitionContext context) throws Exception
+        {
+            System.out.println("SAMPLE: Partition " + context.getPartitionId() + " is opening");
+        }
+
+        // OnClose is called when an event processor instance is being shut down. 
+        @Override
+        public void onClose(PartitionContext context, CloseReason reason) throws Exception
+        {
+            System.out.println("SAMPLE: Partition " + context.getPartitionId() + " is closing for reason " + reason.toString());
+        }
+        
+        // onError is called when an error occurs in EventProcessorHost code that is tied to this partition, such as a receiver failure.
+        @Override
+        public void onError(PartitionContext context, Throwable error)
+        {
+            System.out.println("SAMPLE: Partition " + context.getPartitionId() + " onError: " + error.toString());
+        }
+
+        // onEvents is called when events are received on this partition of the Event Hub. 
+        @Override
+        public void onEvents(PartitionContext context, Iterable<EventData> events) throws Exception
+        {
+            System.out.println("SAMPLE: Partition " + context.getPartitionId() + " got event batch");
+            int eventCount = 0;
+            for (EventData data : events)
+            {
+                try
+                {
+                    System.out.println("SAMPLE (" + context.getPartitionId() + "," + data.getSystemProperties().getOffset() + "," +
+                            data.getSystemProperties().getSequenceNumber() + "): " + new String(data.getBytes(), "UTF8"));
+                    eventCount++;
+                    
+                    // Checkpointing persists the current position in the event stream for this partition and means that the next
+                    // time any host opens an event processor on this event hub+consumer group+partition combination, it will start
+                    // receiving at the event after this one. 
+                    this.checkpointBatchingCount++;
+                    if ((checkpointBatchingCount % 5) == 0)
+                    {
+                        System.out.println("SAMPLE: Partition " + context.getPartitionId() + " checkpointing at " +
+                            data.getSystemProperties().getOffset() + "," + data.getSystemProperties().getSequenceNumber());
+                        // Checkpoints are created asynchronously. It is important to wait for the result of checkpointing
+                        // before exiting onEvents or before creating the next checkpoint, to detect errors and to ensure proper ordering.
+                        context.checkpoint(data).get();
+                    }
+                }
+                catch (Exception e)
+                {
+                    System.out.println("Processing failed for an event: " + e.toString());
+                }
+            }
+            System.out.println("SAMPLE: Partition " + context.getPartitionId() + " batch size was " + eventCount + " for host " + context.getOwner());
+        }
+    }
+    ```
+
+В данном учебнике используется один экземпляр EventProcessorHost. Чтобы увеличить пропускную способность, можно запустить несколько экземпляров EventProcessorHost, желательно на разных компьютерах.  Кроме того, такое решение обеспечит избыточность. В этом случае различные экземпляры автоматически координируются друг с другом для распределения нагрузки полученных событий. Если каждый из нескольких получателей должен обрабатывать *все* события, то необходимо использовать понятие **ConsumerGroup** . При получении события от разных компьютеров может оказаться полезным указать имена экземпляров EventProcessorHost в компьютерах (или ролях), где они развернуты.
+
+### <a name="publishing-messages-to-eventhub"></a>Публикация сообщений в EventHub
+
+Прежде чем сообщения будут получены потребителями, они должны быть опубликованы издателями в разделах. Следует отметить, что при синхронной публикации сообщения в концентраторе событий с помощью метода sendSync() в объекте com.microsoft.azure.eventhubs.EventHubClient сообщение может быть отправлено в определенный раздел или распределиться по всем доступным разделам циклически, в зависимости от того, указан ли ключ раздела.
+
+Если указана строка, представляющая ключ раздела, раздел для отправки события определяется по хэшу ключа.
+
+Если ключ раздела не задан, сообщения будут отправляются поочередно во все доступные разделы.
+
+```java
+// Serialize the event into bytes
+byte[] payloadBytes = gson.toJson(messagePayload).getBytes(Charset.defaultCharset());
+
+// Use the bytes to construct an {@link EventData} object
+EventData sendEvent = EventData.create(payloadBytes);
+
+// Transmits the event to event hub without a partition key
+// If a partition key is not set, then we will round-robin to all topic partitions
+eventHubClient.sendSync(sendEvent);
+
+//  the partitionKey will be hash'ed to determine the partitionId to send the eventData to.
+eventHubClient.sendSync(sendEvent, partitionKey);
+
+```
+
+### <a name="implementing-a-custom-checkpointmanager-for-eventprocessorhost-eph"></a>Реализация пользовательского CheckpointManager для EventProcessorHost (EPH)
+
+API предоставляет механизм реализации пользовательского диспетчера контрольных точек для сценариев, где реализация по умолчанию несовместима с вашим вариантом использования.
+
+Диспетчер контрольных точек по умолчанию использует хранилище BLOB-объектов, но вы можете переопределить диспетчер контрольных точек собственной реализацией и использовать любое хранилище для резервного копирования в этой реализации диспетчера контрольных точек.
+
+Создайте класс, который реализует интерфейс com.microsoft.azure.eventprocessorhost.ICheckpointManager.
+
+Используйте свою реализацию пользовательского диспетчера контрольных точек (com.microsoft.azure.eventprocessorhost.ICheckpointManager).
+
+В реализации можно переопределить механизм создания контрольных точек по умолчанию и использования собственных контрольных точек, в зависимости от хранилища данных (например, SQL Server, CosmosDB и кэша Redis для Azure). Мы рекомендуем, чтобы хранилище, используемое для резервного копирования в вашей реализации диспетчера контрольных точек, было доступно всем экземплярам EPH, которые обрабатывают события для группы потребителей.
+
+Вы можете использовать любое хранилище данных, которое доступно в вашей среде.
+
+Класс com.microsoft.azure.eventprocessorhost.EventProcessorHost предоставляет два конструктора, которые позволяют переопределить диспетчер контрольных точек для EventProcessorHost.
+
+
+## <a name="next-steps"></a>Дальнейшие действия
+Ознакомьтесь со следующими статьями: 
+
+- [EventProcessorHost](event-hubs-event-processor-host.md)
+- [Возможностями и терминологией в концентраторах событий Azure](event-hubs-features.md)
+- [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
 

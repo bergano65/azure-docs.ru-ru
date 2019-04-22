@@ -9,12 +9,12 @@ ms.custom: seodec18
 ms.topic: article
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: e96abfbdbd9394d27fbffbcb64aa9cbfabbbcb69
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 29814cb8aef09a8ead30d6daa615554dd55135dd
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57835441"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59678587"
 ---
 # <a name="programming-guide-for-azure-event-hubs"></a>Руководство по программированию для Центров событий Azure
 В данной статье обсуждаются некоторые распространенные сценарии написания кодов с помощью Центров событий Azure. Предполагается, что вы уже имеете представление о Центрах событий. Общие сведения о Центрах событий см. в статье [Общие сведения о Центрах событий Azure](event-hubs-what-is-event-hubs.md).
@@ -110,7 +110,7 @@ for (var i = 0; i < numMessagesToSend; i++)
 Чтобы начать обработку событий, следует создать [EventProcessorHost][], указав соответствующие параметры для концентратора событий. Например: 
 
 > [!NOTE]
-> EventProcessorHost и связанных с ним классов, указанные в **Microsoft.Azure.EventHubs.Processor** пакета. Добавьте пакет в проект Visual Studio, следуя указаниям в [в этой статье](event-hubs-dotnet-framework-getstarted-receive-eph.md#add-the-event-hubs-nuget-package) или, выполнив следующую команду в [консоль диспетчера пакетов](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) окно:`Install-Package Microsoft.Azure.EventHubs.Processor`.
+> EventProcessorHost и связанных с ним классов, указанные в **Microsoft.Azure.EventHubs.Processor** пакета. Добавьте пакет в проект Visual Studio, следуя указаниям в [в этой статье](event-hubs-dotnet-framework-getstarted-send.md#add-the-event-hubs-nuget-package) или, выполнив следующую команду в [консоль диспетчера пакетов](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) окно:`Install-Package Microsoft.Azure.EventHubs.Processor`.
 
 ```csharp
 var eventProcessorHost = new EventProcessorHost(

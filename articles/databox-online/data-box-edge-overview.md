@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: overview
-ms.date: 03/27/2019
+ms.date: 04/12/2019
 ms.author: alkohli
-ms.openlocfilehash: 8e07678604797e7e2090f5fefcdb3f3adff40161
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: cd4d84d6698ddeda2fb00a8452fbe8cd02771e4b
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58521777"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59544574"
 ---
 # <a name="what-is-azure-data-box-edge"></a>Что такое Azure Data Box Edge? 
 
@@ -93,7 +93,7 @@ Azure Data Box Edge — это вычислительное устройств�
     - **Европейский союз**: Западная Европа.
     - **Азиатско-Тихоокеанский регион**: Юго-Восточная Азия.
     
-    Шлюз Data Box также можно развернуть в облаке Azure для государственных организаций. Дополнительные сведения см. в обзорной статье об [Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome).
+    Data Box Edge также можно развернуть в облаке Azure для государственных организаций. Дополнительные сведения см. в обзорной статье об [Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome).
     
 - **Целевые учетные записи хранения**. Учетные записи хранения, в которых хранятся данные, доступны во всех регионах Azure. 
 

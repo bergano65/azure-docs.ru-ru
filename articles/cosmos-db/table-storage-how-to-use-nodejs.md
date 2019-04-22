@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 04/05/2018
 author: wmengmsft
 ms.author: wmeng
-ms.openlocfilehash: 58022ca4f605b4672cd9b6e22993fca8ff6dc591
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: 977b59c3344eaf2c4877f51afea176455d22ecc9
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55510958"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59546693"
 ---
 # <a name="how-to-use-azure-table-storage-or-the-azure-cosmos-db-table-api-from-nodejs"></a>Как использовать в Node.js Хранилище таблиц Azure и API таблиц Azure Cosmos DB
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -364,6 +364,8 @@ dc.table.queryEntities(tableName,
 ```
 
 Если обратиться к объекту `continuationToken`, то вы обнаружите, что он имеет такие свойства, как `nextPartitionKey`, `nextRowKey` и `targetLocation`, которые можно использовать для итерации по всем результатам.
+
+Можно также использовать `top` вместе с `continuationToken`, чтобы задать размер страницы. 
 
 ## <a name="work-with-shared-access-signatures"></a>Работа с подписями общего доступа
 Подписанные URL-адреса (SAS) — безопасный способ предоставить детализированный доступ к таблицам без указания имени или ключей своей учетной записи хранения. SAS часто используется для предоставления ограниченного доступа к данным, например, позволяет мобильному приложению запрашивать записи.

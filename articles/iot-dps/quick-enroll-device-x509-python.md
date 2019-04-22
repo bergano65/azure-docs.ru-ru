@@ -3,19 +3,19 @@ title: В этом кратком руководстве показана рег
 description: В этом кратком руководстве используется групповая регистрация. В этом кратком руководстве описана регистрация устройств X.509 в Службе подготовки устройств к добавлению в Центр Интернета вещей Azure с помощью Python
 author: wesmc7777
 ms.author: wesmc
-ms.date: 01/25/2018
+ms.date: 04/10/2019
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
-manager: timlt
+manager: philmea
 ms.devlang: python
 ms.custom: mvc
-ms.openlocfilehash: aad21bd4003f789a0a315d6514bf428a4ef3f9f5
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: d9ed0cb82f8ad1c19f95299b3dd651fc099368b8
+ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53187355"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59500776"
 ---
 # <a name="quickstart-enroll-x509-devices-to-the-device-provisioning-service-using-python"></a>Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств с помощью Python
 
@@ -52,7 +52,7 @@ ms.locfileid: "53187355"
    git clone https://github.com/Azure/azure-iot-sdk-c.git --recursive
    ```
 
-   Размер этого репозитория в настоящее время составляет примерно 220 МБ. Выполнение этой операции может занять несколько минут.
+   Выполнение этой операции может занять несколько минут.
 
    Средства тестирования находятся в клонированном репозитории *azure-iot-sdk-c/tools/CACertificates*.    
 
@@ -148,4 +148,4 @@ ms.locfileid: "53187355"
 В рамках работы с этим кратким руководством вы зарегистрировали группу имитированных устройств X.509 в службе подготовки устройств. Дополнительные сведения о подготовке устройств см. в руководстве по настройке службы подготовки устройств на портале Azure. 
 
 > [!div class="nextstepaction"]
-> [Руководства по службе подготовки устройств для Центра Интернета вещей Azure](./tutorial-set-up-cloud.md)
+> [Руководства по службе подготовки устройств к добавлению в Центр Интернета вещей Azure](./tutorial-set-up-cloud.md)

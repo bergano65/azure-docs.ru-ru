@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/07/2018
 ms.author: barclayn
-ms.openlocfilehash: 9b905a81751ce5f4de4a4efbb9ff4c328269fe34
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.openlocfilehash: 288ad14110bd446955d6cec7439bfa40a750276c
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58904854"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59521668"
 ---
 # <a name="tutorial--deploying-hsms-into-an-existing-virtual-network-using-powershell"></a>Руководство. Развертывание выделенных устройств HSM в существующей виртуальной сети с помощью PowerShell
 
@@ -85,7 +85,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Network -FeatureName AllowBar
 - `hsmSubnetRange` — диапазон IP-адресов в подсети для устройств HSM.
 - `ERSubnetRange` — диапазон IP-адресов в подсети для шлюза виртуальной сети.
 
-Вот пример таких изменений.
+Пример указанных настроек:
 
 ```json
 {
@@ -217,7 +217,7 @@ Get-AzResource -Resourceid /subscriptions/$subId/resourceGroups/$resourceGroupNa
 `ssh adminuser@hsmlinuxvm.westus.cloudapp.azure.com`
 
 Используйте пароль, указанный в файле параметров.
-После входа на виртуальную машину Linux можно войти в устройство HSM, воспользовавшись частным IP-адресом, который указан на портале для ресурса <prefix>hsm_vnic.
+После входа на виртуальную машину Linux вы можете войти в устройство HSM, воспользовавшись частным IP-адресом, который указан на портале для ресурса \<префикс>hsm_vnic.
 
 ```powershell
 

@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 04/04/2019
 ms.author: babanisa
 ms.custom: seodec18
-ms.openlocfilehash: 7f501bf8496d1293a45c15908d4f2b21b6ed01d2
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: 8ceb3d2d97c63bd19333336314beb6c7444288e9
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59045411"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59578413"
 ---
 # <a name="what-is-azure-event-grid"></a>Что такое служба "Сетка событий Azure"?
 
@@ -22,7 +22,7 @@ ms.locfileid: "59045411"
 
 Вы можете применять фильтры для маршрутизации определенных событий в различные конечные точки, использовать многоадресную рассылку в несколько конечных точек, а также проверять надежность доставки.
 
-Сейчас служба "Сетка событий Azure" предоставляется во всех общедоступных регионах. Она пока не предоставляется в облаках Azure для Китая, Azure для Германии или Azure для государственных организаций.
+Сейчас служба "Сетка событий Azure" предоставляется во всех общедоступных регионах. Она пока не предоставляется в облаках Azure для Китая от 21Vianet, Azure для Германии или Azure для государственных организаций.
 
 В статье представлен обзор службы "Сетка событий Azure". Чтобы приступить к использованию службы, см. раздел [Создание и перенаправление пользовательского события со службой "Сетка событий Azure"](custom-event-quickstart.md). 
 
@@ -34,30 +34,29 @@ ms.locfileid: "59045411"
 
 Дополнительные сведения о возможностях каждого источника, а также статьи по этой теме см. в описании [источников событий](event-sources.md). В настоящее время отправку событий в службу "Сетка событий" поддерживают следующие службы Azure:
 
-* Подписки Azure (операции управления)
-* Реестр контейнеров
-* Пользовательские разделы
-* Центры событий;
-* Центр Интернета вещей
-* Службы мультимедиа
-* Группы ресурсов (операции управления)
-* Служебная шина Azure
-* Большой двоичный объект хранилища
-* Хранилище общего назначения версии 2 (GPv2)
-* Карты Azure
+* [Подписки Azure (операции управления)](event-sources.md#azure-subscriptions)
+* [Реестр контейнеров](event-sources.md#container-registry)
+* [Пользовательские разделы](event-sources.md#custom-topics)
+* [Центры событий](event-sources.md#event-hubs)
+* [Центр Интернета вещей](event-sources.md#iot-hub)
+* [Службы мультимедиа](event-sources.md#media-services)
+* [Группы ресурсов (операции управления)](event-sources.md#resource-groups)
+* [Служебная шина](event-sources.md#service-bus)
+* [Большой двоичный объект хранилища](event-sources.md#storage)
+* [служба "Карты Azure"](event-sources.md#maps);
 
 ## <a name="event-handlers"></a>Обработчики событий
 
 Дополнительные сведения о возможностях каждого обработчика, а также статьи по этой теме см. в описании [обработчиков событий](event-handlers.md). В настоящее время обработку событий из службы "Сетка событий" поддерживают следующие службы Azure: 
 
-* Служба автоматизации Azure
-* Функции Azure
-* Центры событий;
-* через гибридные подключения
-* Logic Apps
-* Microsoft Flow
-* Хранилище очередей
-* Веб-перехватчики
+* [Служба автоматизации Azure](event-handlers.md#azure-automation)
+* [Функции Azure](event-handlers.md#azure-functions)
+* [Центры событий](event-handlers.md#event-hubs)
+* [гибридных подключений](event-handlers.md#hybrid-connections)
+* [Logic Apps](event-handlers.md#logic-apps)
+* [Microsoft Flow](https://preview.flow.microsoft.com/connectors/shared_azureeventgrid/azure-event-grid/)
+* [Хранилище очередей](event-handlers.md#queue-storage)
+* [Веб-перехватчики](event-handlers.md#webhooks)
 
 ## <a name="concepts"></a>Основные понятия
 
@@ -114,11 +113,11 @@ ms.locfileid: "59045411"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Краткое руководство. Перенаправление событий хранилища в конечную веб-точку с помощью Azure CLI](../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json)  
+* [Перенаправление событий хранилища BLOB-объектов](../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json)  
   Реагирование на события хранилища BLOB-объектов с помощью службы "Сетка событий".
-* [Краткое руководство. Перенаправление пользовательских событий в конечную веб-точку с помощью Azure CLI и службы "Сетка событий"](custom-event-quickstart.md)  
+* [Создание и перенаправление пользовательского события со службой "Сетка событий Azure"](custom-event-quickstart.md)  
   Перейдите сразу к делу. Отправляйте пользовательские события в любую конечную точку, воспользовавшись инструкциями в кратком руководстве по службе "Сетка событий Azure".
-* [Руководство. Отслеживание изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure"](monitor-virtual-machine-changes-event-grid-logic-app.md)  
+* [Отслеживание изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure"](monitor-virtual-machine-changes-event-grid-logic-app.md)  
   Руководство по созданию приложения с помощью Logic Apps для реагирования на события, отправляемые службой "Сетка событий".
 * [Потоковая передача больших данных в хранилище данных](event-grid-event-hubs-integration.md)  
   Руководство, в котором служба "Функции Azure" используется для потоковой передачи данных из Центров событий в хранилище данных SQL.

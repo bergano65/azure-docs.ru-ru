@@ -1,6 +1,6 @@
 ---
 title: Руководство по индексированию частично структурированных данных в больших двоичных объектах JSON в службе "Поиск Azure"
-description: Сведения об индексировании и поиске частично структурированных больших двоичных объектов Azure JSON с помощью службы "Поиск Azure" и Postman.
+description: Сведения об индексировании и поиске частично структурированных больших двоичных объектов JSON в Azure с помощью интерфейсов REST API Поиска Azure и Postman.
 author: HeidiSteen
 manager: cgronlun
 services: search
@@ -9,14 +9,14 @@ ms.topic: tutorial
 ms.date: 04/08/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 4df64595f83bd7280fa781f27f3030eda3729911
-ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
+ms.openlocfilehash: 147f67f40a060f3e274fe1f3fa368ebfd01711b6
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "59471466"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59525353"
 ---
-# <a name="tutorial-index-and-search-semi-structured-data-json-blobs-in-azure-search"></a>Руководство по индексированию и поиску частично структурированных данных (больших двоичных объектов JSON) в службе "Поиск Azure"
+# <a name="rest-tutorial-index-and-search-semi-structured-data-json-blobs-in-azure-search"></a>Руководство по использованию REST. Индексирование и поиск частично структурированных данных (больших двоичных объектов JSON) в службе "Поиск Azure"
 
 Служба "Поиск Azure" может индексировать документы и массивы JSON в хранилище BLOB-объектов Azure с помощью [индексатора](search-indexer-overview.md), который умеет читать полуструктурированные данные. Частично структурированные данные содержат теги или метки, отделяющие содержимое в данных. Этим они отличаются от неструктурированных данных, которые должны быть полностью проиндексированы, и от формально структурированных данных, которые соответствуют модели данных, например схеме реляционной базы данных, и поддерживают индексирование по отдельным полям.
 
@@ -39,7 +39,7 @@ ms.locfileid: "59471466"
 
 [Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account) для хранения примера данных.
 
-Используйте [классическое приложение Postman](https://www.getpostman.com/) для отправки запросов в службу "Поиск Azure".
+Используйте [классическое приложение Postman](https://www.getpostman.com/) для отправки запросов в Поиск Azure.
 
 Архив [clinical-trials-json.zip](https://github.com/Azure-Samples/storage-blob-integration-with-cdn-search-hdi/raw/master/clinical-trials-json.zip) содержит данные, используемые в этом учебнике. Скачайте этот файл и распакуйте его в собственной папке. Источником данных, преобразованных в JSON для этого учебника, является [clinicaltrials.gov](https://clinicaltrials.gov/ct2/results).
 
@@ -59,9 +59,7 @@ ms.locfileid: "59471466"
 
 1. [Войдите на портал Azure](https://portal.azure.com), перейдите к учетной записи хранения Azure, выберите **Большие двоичные объекты**, а затем щелкните **Контейнер**.
 
-1. [Создайте контейнер больших двоичных объектов](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal) для хранения примера данных. Так как для подключения используются ключ и имя учетной записи хранения, убедитесь, что для общедоступного уровня контейнера установлено значение Container (anonymous read access for container) (Контейнер (анонимный доступ для чтения к контейнеру)).
-
-   ![Настройка общедоступного уровня контейнера](media/search-semi-structured-data/container-public-access-level.png "Set public access level")
+1. [Создайте контейнер больших двоичных объектов](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal) для хранения примера данных. Можно задать любое из допустимых значений уровня общего доступа.
 
 1. Откройте контейнер после создания и на панели команд выберите **Загрузить**.
 
@@ -295,7 +293,7 @@ URL-адрес этого вызова — `https://[service name].search.window
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Вы можете вложить управляемые ИИ алгоритмы Cognitive Services в конвейер индексатора. Дальнейшие действия см. в следующем руководстве.
+Существует ряд подходов и несколько вариантов индексирования больших двоичных объектов JSON. Следующим шагом будет рассмотрение и тестирование различных вариантов. Это позволит понять, что лучше всего подходит для вашего сценария.
 
 > [!div class="nextstepaction"]
-> [Индексирование с помощью ИИ](cognitive-search-tutorial-blob.md)
+> [Как индексировать большие двоичные объекты JSON с помощью индексатора больших двоичных объектов Поиска Azure](search-howto-index-json-blobs.md)

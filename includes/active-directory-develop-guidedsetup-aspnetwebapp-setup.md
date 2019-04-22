@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 09/17/2018
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: 701b08cafd2e6d38a68252ea5919c8f4cd7de9b4
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
-ms.translationtype: MT
+ms.openlocfilehash: dcfc341b89a3cfebcb5538f88481fd2fbb2936a7
+ms.sourcegitcommit: f24b62e352e0512dfa2897362021b42e0cb9549d
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58203658"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59505823"
 ---
 ## <a name="set-up-your-project"></a>Настройка проекта
 
@@ -29,14 +29,14 @@ ms.locfileid: "58203658"
 
 ### <a name="create-your-aspnet-project"></a>Создание проекта ASP.NET
 
-1. В Visual Studio выберите `File` > `New` > `Project`.
+1. В Visual Studio выберите `File` > `New` > `Project`
 2. В разделе *Visual C#\Web* выберите `ASP.NET Web Application (.NET Framework)`.
 3. Присвойте имя приложению и нажмите кнопку *ОК*.
 4. Выберите `Empty` и установите флажок, чтобы добавить ссылки `MVC`.
 
 ## <a name="add-authentication-components"></a>Добавление компонентов проверки подлинности
 
-1. В Visual Studio выберите `Tools` > `Nuget Package Manager` > `Package Manager Console`.
+1. В Visual Studio выберите `Tools` > `Nuget Package Manager` > `Package Manager Console`
 2. Добавьте *пакеты NuGet для промежуточного слоя OWIN*, введя следующие команды в окне консоли диспетчера пакетов:
 
     ```powershell
@@ -51,12 +51,13 @@ ms.locfileid: "58203658"
 <!--end-collapse-->
 
 ## <a name="configure-the-authentication-pipeline"></a>Настройка конвейера для проверки подлинности
+
 Приведенные ниже шаги позволяют создать класс запуска промежуточного слоя OWIN для настройки проверки подлинности OpenID Connect. Этот класс будет выполняться автоматически при запуске процесса IIS.
 
 > [!TIP]
 > Если проект не содержит файл `Startup.cs` в корневой папке, сделайте следующее:
-> 1. Щелкните правой кнопкой мыши корневой каталог проекта: > `Add` > `New Item...` > `OWIN Startup class`.<br/>
-> 2. Назовите класс `Startup.cs`.
+> 1. Щелкните правой кнопкой мыши корневой каталог проекта: > `Add` > `New Item...` > `OWIN Startup class`<br/>
+> 2. Присвойте ему имя `Startup.cs`
 >
 >> Выберите класс запуска OWIN, а не стандартный класс C#. Если вы выбрали нужный класс, вы должны увидеть `[assembly: OwinStartup(typeof({NameSpace}.Startup))]` над пространством имен.
 
@@ -113,10 +114,10 @@ ms.locfileid: "58203658"
                     ResponseType = OpenIdConnectResponseType.IdToken,
                     // ValidateIssuer set to false to allow personal and work accounts from any organization to sign in to your application
                     // To only allow users from a single organizations, set ValidateIssuer to true and 'tenant' setting in web.config to the tenant name
-                    // To allow users from only a list of specific organizations, set ValidateIssuer to true and use ValidIssuers parameter 
+                    // To allow users from only a list of specific organizations, set ValidateIssuer to true and use ValidIssuers parameter
                     TokenValidationParameters = new TokenValidationParameters()
                     {
-                        ValidateIssuer = false
+                        ValidateIssuer = false // This is a simplification
                     },
                     // OpenIdConnectAuthenticationNotifications configures OWIN to send notification of failed authentications to OnAuthenticationFailed method
                     Notifications = new OpenIdConnectAuthenticationNotifications
@@ -140,6 +141,9 @@ ms.locfileid: "58203658"
         }
     }
     ```
+
+> [!NOTE]
+> Параметр `ValidateIssuer = false` приводится в этом кратком руководстве для упрощения. Для реальных приложений вам потребуется проверить издателя. Подробные сведения о том, как это сделать, см. в примерах.
 
 <!--start-collapse-->
 > ### <a name="more-information"></a>Дополнительные сведения

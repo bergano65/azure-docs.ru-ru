@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 01/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: cc561bd88c18788be3ed1b9aef8a6a985af8a6f2
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 2e6bc0fd9de4fdba1188b40c49ebf9459d684d38
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59278553"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59679998"
 ---
 # <a name="create-and-run-a-machine-learning-pipeline-by-using-azure-machine-learning-sdk"></a>Создание и запуск конвейера машинного обучения с помощью пакета SDK для машинного обучения Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "59278553"
 
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию службы машинного обучения Azure](https://aka.ms/AMLFree).
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 * [Настройте среду разработки](how-to-configure-environment.md) для установки пакета SDK для Машинного обучения Azure.
 
@@ -93,7 +93,7 @@ blob_input_data = DataReference(
     path_on_datastore="20newsgroups/20news.pkl")
 ```
 
-Промежуточные данные (или выходные данные шага) представляет объект [PipelineData](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py). `output_data1` создается как выходные данные шага и использовать в качестве входных данных из одного или нескольких последующих шагов. `PipelineData` Представляет зависимость данных между шагами и создает заказ неявного выполнения конвейера.
+Промежуточные данные (или выходные данные шага) представляет объект [PipelineData](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py). `output_data1` создается как выходные данные шага и используется в качестве входных данных одного шага или нескольких последующих шагов. `PipelineData` представляет зависимость данных между шагами и неявно определяет порядок выполнения шагов в конвейере.
 
 ```python
 output_data1 = PipelineData(
@@ -113,7 +113,7 @@ output_data1 = PipelineData(
 
 * Вычислительная среда Машинного обучения Azure;
 * Azure Databricks 
-* Azure Data Lake Analytics
+* Аналитика озера данных Azure
 
 ### <a name="azure-machine-learning-compute"></a>Вычислительная среда Машинного обучения Azure;
 
@@ -253,8 +253,8 @@ trainStep = PythonScriptStep(
 
 После определения шагов следует создать конвейер, добавив в него некоторые созданные шаги (или все).
 
->[!NOTE]
->При определении шагов и создании конвейера никакие файлы или данные в службу машинного обучения Azure не передаются.
+> [!NOTE]
+> При определении шагов и создании конвейера никакие файлы или данные в службу машинного обучения Azure не передаются.
 
 ```python
 # list of steps to run
@@ -289,8 +289,12 @@ pipeline1 = Pipeline(workspace=ws, steps=steps)
 
 ## <a name="submit-the-pipeline"></a>Отправка конвейера
 
-При отправке конвейера служба машинного обучения Azure проверяет зависимости для каждого шага и отправляет моментальный снимок указанного исходного каталога. Если исходный каталог не указан, передается текущий локальный каталог.
+При отправке конвейера служба машинного обучения Azure проверяет зависимости для каждого шага и отправляет моментальный снимок указанного исходного каталога. Если исходный каталог не указан, передается текущий локальный каталог. Моментальный снимок также сохраняется как часть эксперимента в рабочей области.
 
+> [!IMPORTANT]
+> Чтобы заблокировать развертывание файлов, включаемого в моментальном снимке, создайте [.gitignore](https://git-scm.com/docs/gitignore) или `.amlignore` в каталоге и добавьте файлы к нему. `.amlignore` Файл использует тот же синтаксис и шаблоны как [.gitignore](https://git-scm.com/docs/gitignore) файла. Если существуют оба файла, `.amlignore` файл имеет приоритет.
+>
+> Дополнительные сведения см. в разделе о [моментальных снимках](concept-azure-machine-learning-architecture.md#snapshot).
 
 ```python
 # Submit the pipeline to be run

@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 04/03/2019
-ms.openlocfilehash: 0aaa88e1ebe1c8cefadbe55a8348d730ae04bb56
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.date: 04/16/2019
+ms.openlocfilehash: b39ce138677fc8933b62bd999f20abc21c0ae690
+ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58883062"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59617960"
 ---
 # <a name="tutorial-migrate-mysql-to-azure-database-for-mysql-online-using-dms"></a>Руководство. Интерактивная миграция MySQL в Базу данных Azure для MySQL с помощью DMS
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра MySQL в [Базу данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/) с минимальным временем простоя. Другими словами, миграцию можно выполнить с минимальным временем простоя для приложения. В этом руководстве выполняется миграция примера базы данных **сотрудников** из локального экземпляра MySQL 5.7 в Базу данных Azure для MySQL с помощью интерактивного действия миграции в Azure Database Migration Service.
@@ -120,6 +120,9 @@ SET group_concat_max_len = 8192;
  ```
         
 Запустите сценарий удаления внешнего ключа (второй столбец) в результате запроса, чтобы удалить внешний ключ.
+
+> [!IMPORTANT]
+> Также обязательно удалите из схемы все инструкции DEFINER, чтобы не допустить ошибки миграции.
 
 Если у вас есть триггер в данных (триггер вставки или обновления), он будет обеспечивать целостность данных в целевом объекте перед реплицированными данными из источника. Рекомендуется отключить триггеры во всех таблицах целевого объекта во время миграции, а затем включить их после завершения миграции.
 

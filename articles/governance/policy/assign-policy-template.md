@@ -7,12 +7,12 @@ ms.date: 03/13/2019
 ms.topic: quickstart
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 3b7ceb07fe874ebc012696f73c21d5c270cb3cee
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 1a811d3d0796b37053ffbabf56b63b4e4f68e203
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59268999"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59524078"
 ---
 # <a name="create-a-policy-assignment-to-identify-non-compliant-resources-by-using-a-resource-manager-template"></a>Создание назначения политики для идентификации несоответствующих требованиям ресурсов с помощью шаблона Resource Manager
 
@@ -37,14 +37,14 @@ ms.locfileid: "59268999"
 
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон:
 
-   [![DРазвертывание шаблона политики в Azure](./media/assign-policy-template/deploy-to-azure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-azurepolicy-assign-builtinpolicy-resourcegroup%2Fazuredeploy.json)
+   [![Развертывание шаблона политики в Azure](./media/assign-policy-template/deploy-to-azure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-azurepolicy-assign-builtinpolicy-resourcegroup%2Fazuredeploy.json)
 
 1. Введите или выберите следующие значения.
 
    | ИМЯ | Значение |
    |------|-------|
    | Подписка | Выберите подписку Azure. |
-   | Группа ресурсов | Выберите **Создать**, укажите имя, а затем выберите **OK**. На снимке экрана ниже группа ресурсов называется *mypolicyquickstart<Date in MMDD>rg*. |
+   | Группа ресурсов | Выберите **Создать**, укажите имя, а затем выберите **OK**. На снимке экрана ниже группа ресурсов называется *mypolicyquickstart\<дата в формате ММДД>rg*. |
    | Расположение | Выберите регион. Например, **центральная часть США**. |
    | Имя назначения политики | Укажите имя назначения политики. При необходимости можно использовать отображаемое имя определения политики. Например, **Аудит виртуальных машин, которые не используют управляемые диски**. |
    | Имя группы ресурсов | Укажите имя группы ресурсов, для которой вы хотите назначить политику. В этом кратком руководстве используйте значение по умолчанию **[resourceGroup().name]**. **[resourceGroup()](../../azure-resource-manager/resource-group-template-functions-resource.md#resourcegroup)**  — это функция шаблона, которая извлекает группу ресурсов. |
@@ -84,7 +84,7 @@ ms.locfileid: "59268999"
 
 С помощью этого краткого руководства вы назначили встроенное определение политики для области и изучили отчет о соответствии. Определение политики проверяет, все ли ресурсы в области соответствуют требованиям, и определяет, какие из них не соответствуют.
 
-Следующее руководство серии содержит сведения о назначении политик для проверки новых ресурсов на соответствие требованиям:
+В следующем руководстве описано, как назначать политики для проверки новых ресурсов на соответствие требованиям:
 
 > [!div class="nextstepaction"]
 > [Создание политик и управление ими](./tutorials/create-and-manage.md)

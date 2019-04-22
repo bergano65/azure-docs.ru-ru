@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d58b439d12b313bd6f01c9524b230bbfecc21ef0
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 47adab265978b4b760450ab1176cf28c55bc0548
+ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59283915"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59563688"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-certent-equity-management"></a>Руководство по Интеграция Azure Active Directory с приложением Certent Equity Management
 
@@ -106,9 +106,9 @@ ms.locfileid: "59283915"
 
     ![Сведения о домене и URL-адресах единого входа для Certent Equity Management](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<SUBDOMAIN>.certent.com/sys/sso/saml/acs.aspx`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.certent.com/sys/sso/saml/acs.aspx`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<SUBDOMAIN>.certent.com/sys/sso/saml/acs.aspx`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.certent.com/sys/sso/saml/acs.aspx`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Обратитесь к аналитику интеграции Certent, назначенному менеджером по работе с клиентами, чтобы получить эти значения. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -224,9 +224,9 @@ ms.locfileid: "59283915"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [ Список учебников по интеграции приложений SaaS с Azure Active Directory ](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory? ](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

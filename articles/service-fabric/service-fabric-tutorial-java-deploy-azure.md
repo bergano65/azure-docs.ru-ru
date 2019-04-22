@@ -15,14 +15,14 @@ ms.workload: NA
 ms.date: 02/26/2018
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: db0b1cd9d61e498430bff417573b63f99c0ae7e4
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: aa7f77299750a969bf936a3ed9b6ae76653a90c4
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55301736"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59526696"
 ---
-# <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Руководство. Развертывание приложения Java в кластере Service Fabric в Azure
+# <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Руководство по Развертывание приложения Java в кластере Service Fabric в Azure
 
 Это руководство является третьей частью цикла. В нем показано, как развернуть приложение Service Fabric в кластере в Azure.
 
@@ -171,7 +171,7 @@ ms.locfileid: "55301736"
     https%3A%2F%testeventhub.servicebus.windows.net%testeventhub&sig=7AlFYnbvEm%2Bat8ALi54JqHU4i6imoFxkjKHS0zI8z8I%3D&se=1517354876&skn=sender
     ```
 
-    URL-адрес SAS концентраторов событий имеет следующую структуру: https://<namespacename>.servicebus.windows.net/<eventhubsname>?sr=<sastoken>. Например, https://testeventhubnamespace.servicebus.windows.net/testeventhub?sr=https%3A%2F%testeventhub.servicebus.windows.net%testeventhub&sig=7AlFYnbvEm%2Bat8ALi54JqHU4i6imoFxkjKHS0zI8z8I%3D&se=1517354876&skn=sender
+    URL-адрес SAS концентраторов событий имеет следующую структуру: `https://<namespacename>.servicebus.windows.net/<eventhubsname>?sr=<sastoken>`. Например `https://testeventhubnamespace.servicebus.windows.net/testeventhub?sr=https%3A%2F%testeventhub.servicebus.windows.net%testeventhub&sig=7AlFYnbvEm%2Bat8ALi54JqHU4i6imoFxkjKHS0zI8z8I%3D&se=1517354876&skn=sender`.
 
 12. Откройте файл *sfdeploy.parameters.json* и замените следующее содержимое из предыдущих шагов. [SAS-URL-STORAGE-ACCOUNT] — отмечено на шаге 8. [SAS-URL-EVENT-HUBS] — отмечено на шаге 11.
 

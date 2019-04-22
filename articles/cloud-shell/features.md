@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/10/2019
 ms.author: damaerte
 ms.openlocfilehash: 46c9350dd2a33d0d25fe193b2ae50c954f2d1f95
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59500623"
 ---
 # <a name="features--tools-for-azure-cloud-shell"></a>Функции и средства для Azure Cloud Shell
@@ -65,8 +65,8 @@ PowerShell в Cloud Shell запускается на диске Azure (`Azure:`
 |Система управления версиями         |git                    |
 |Инструменты сборки            |make<br> maven<br> npm<br> pip         |
 |Контейнеры             |[Виртуальная машина Docker](https://github.com/docker/machine)<br> [Kubectl](https://kubernetes.io/docs/user-guide/kubectl-overview/)<br> [Helm](https://github.com/kubernetes/helm)<br> [Интерфейс командной строки DC/OS](https://github.com/dcos/dcos-cli)         |
-|Базы данных              |Клиент MySQL<br> Клиент PostgreSQL<br> [Служебная программа sqlcmd](https://docs.microsoft.com/sql/tools/sqlcmd-utility)<br> [MSSQL-scripter](https://github.com/Microsoft/sql-xplat-cli) |
-|Другие                  |Клиент iPython<br> [Cloud Foundry интерфейса командной строки](https://github.com/cloudfoundry/cli)<br> [Terraform](https://www.terraform.io/docs/providers/azurerm/)<br> [Ansible](https://www.ansible.com/microsoft-azure)<br> [Chef InSpec](https://www.chef.io/inspec/)|
+|Базы данных              |Клиент MySQL<br> Клиент PostgreSQL<br> [Служебная программа sqlcmd](https://docs.microsoft.com/sql/tools/sqlcmd-utility)<br> [mssql-scripter](https://github.com/Microsoft/sql-xplat-cli) |
+|Другие                  |Клиент iPython<br> [Интерфейс командной строки Cloud Foundry](https://github.com/cloudfoundry/cli)<br> [Terraform](https://www.terraform.io/docs/providers/azurerm/)<br> [Ansible](https://www.ansible.com/microsoft-azure)<br> [Chef InSpec](https://www.chef.io/inspec/)|
 
 ## <a name="language-support"></a>Поддержка языков
 
@@ -80,7 +80,7 @@ PowerShell в Cloud Shell запускается на диске Azure (`Azure:`
 |Python     |2.7 и 3.5 (по умолчанию)|
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Bash в Краткое руководство по Cloud Shell](quickstart.md) <br>
-[PowerShell в Краткое руководство по Cloud Shell](quickstart-powershell.md) <br>
+[Краткое руководство по Bash в Cloud Shell](quickstart.md) <br>
+[Краткое руководство по использованию PowerShell в Azure Cloud Shell (предварительная версия)](quickstart-powershell.md) <br>
 [Справочник команд Azure CLI](https://docs.microsoft.com/cli/azure/) <br>
 [Дополнительные сведения об Azure PowerShell](https://docs.microsoft.com/powershell/azure/) <br>

@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: quickstart
 ms.subservice: manage
-ms.date: 11/16/2018
+ms.date: 4/11/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 01a1c1fef5dd2dabf99677d59126caf41e1f6885
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d76f7ac6c8b60e2dec7d7d95cf419e1352b97f15
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57900613"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59545134"
 ---
 # <a name="quickstart-create-and-query-an-azure-sql-data-warehouse-with-azure-powershell"></a>Краткое руководство. Создание Хранилища данных SQL Azure и его запрос с помощью Azure PowerShell
 
@@ -103,8 +103,8 @@ New-AzSqlServerFirewallRule -ResourceGroupName $resourcegroupname `
 >
 
 
-## <a name="create-a-data-warehouse-with-sample-data"></a>Создание хранилища данных с примером данных
-В этом примере создается хранилище данных с использованием ранее определенных переменных.  Он определяет цель службы как DW400, что является бюджетной начальной точкой для хранилища данных. 
+## <a name="create-a-data-warehouse"></a>Создание хранилища данных
+В этом примере создается хранилище данных с использованием ранее определенных переменных.  Он определяет цель службы как DW100c, что является бюджетной начальной точкой для хранилища данных. 
 
 ```Powershell
 New-AzSqlDatabase `
@@ -112,7 +112,7 @@ New-AzSqlDatabase `
     -ServerName $servername `
     -DatabaseName $databasename `
     -Edition "DataWarehouse" `
-    -RequestedServiceObjectiveName "DW400" `
+    -RequestedServiceObjectiveName "DW100c" `
     -CollationName "SQL_Latin1_General_CP1_CI_AS" `
     -MaxSizeBytes 10995116277760
 ```
@@ -128,7 +128,7 @@ New-AzSqlDatabase `
 Необязательные параметры.
 
 - **CollationName**: если параметры сортировки не указаны, по умолчанию используется SQL_Latin1_General_CP1_CI_AS. Параметры сортировки базы данных изменить нельзя.
-- **MaxSizeBytes**: по умолчанию максимальный размер базы данных составляет 10 ГБ.
+- **MaxSizeBytes**: по умолчанию максимальный размер базы данных составляет 240 ТБ. Максимальный размер ограничивает объем данных хранимых строк. Объем данных хранения для столбцов неограничен.
 
 Дополнительные сведения о параметрах см. в статье о командлете [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase).
 

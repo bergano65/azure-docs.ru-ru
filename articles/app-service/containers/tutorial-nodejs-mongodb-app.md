@@ -1,10 +1,10 @@
 ---
-title: Разработка веб-приложения на основе Node.js и MongoDB в службе приложений Azure на платформе Linux | Документация Майкрософт
-description: Узнайте, как разработать приложение Node.js с подключением к базе данных Cosmos DB и строкой подключения MongoDB в службе приложений Azure на платформе Linux.
+title: Node.js (MEAN.js) с MongoDB в Linux — Служба приложений Azure | Документация Майкрософт
+description: Узнайте, как разработать приложение Node.js с подключением к базе данных Cosmos DB и строкой подключения MongoDB в службе приложений Azure на платформе Linux. В этом руководстве используется MEAN.js.
 services: app-service\web
 documentationcenter: nodejs
 author: cephalin
-manager: syntaxc4
+manager: jeconnoc
 editor: ''
 ms.assetid: 0b4d7d0e-e984-49a1-a57a-3c0caa955f0e
 ms.service: app-service-web
@@ -12,15 +12,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: tutorial
-ms.date: 10/10/2017
+ms.date: 03/27/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 73f810072fce9345208593342df597b72c522a73
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 3a5f6b5b1f66542a534c9016c5d9d60a1273975f
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57894518"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59544807"
 ---
 # <a name="build-a-nodejs-and-mongodb-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе Node.js и MongoDB в Службе приложений Azure в Linux
 
@@ -32,7 +32,7 @@ ms.locfileid: "57894518"
 
 ![Приложение MEAN.js, которое запущено в службе приложений Azure](./media/tutorial-nodejs-mongodb-app/meanjs-in-azure.png)
 
-Вы узнаете, как выполнять следующие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание базы данных с помощью API Azure Cosmos DB для MongoDB
@@ -131,10 +131,10 @@ MEAN.JS version: 0.5.0
 
 В Cloud Shell создайте учетную запись Cosmos DB при помощи команды [`az cosmosdb create`](/cli/azure/cosmosdb?view=azure-cli-latest#az-cosmosdb-create).
 
-В следующей команде замените заполнитель *\<cosmosdb_name>* уникальным именем базы данных Cosmos DB. Это имя используется как часть конечной точки Cosmos DB (`https://<cosmosdb_name>.documents.azure.com/`), поэтому оно должно быть уникальным для всех учетных записей Cosmos DB в Azure. В нем могут использоваться только строчные буквы, цифры и дефис (-). Его длина должна быть от 3 до 50 знаков.
+В следующей команде замените заполнитель *\<cosmosdb-name>* уникальным именем базы данных Cosmos DB. Это имя используется как часть конечной точки Cosmos DB (`https://<cosmosdb-name>.documents.azure.com/`), поэтому оно должно быть уникальным для всех учетных записей Cosmos DB в Azure. В нем могут использоваться только строчные буквы, цифры и дефис (-). Его длина должна быть от 3 до 50 знаков.
 
 ```azurecli-interactive
-az cosmosdb create --name <cosmosdb_name> --resource-group myResourceGroup --kind MongoDB
+az cosmosdb create --name <cosmosdb-name> --resource-group myResourceGroup --kind MongoDB
 ```
 
 Параметр *--kind MongoDB* разрешает клиентские подключения MongoDB.
@@ -150,7 +150,7 @@ az cosmosdb create --name <cosmosdb_name> --resource-group myResourceGroup --kin
     "maxStalenessPrefix": 100
   },
   "databaseAccountOfferType": "Standard",
-  "documentEndpoint": "https://<cosmosdb_name>.documents.azure.com:443/",
+  "documentEndpoint": "https://<cosmosdb-name>.documents.azure.com:443/",
   "failoverPolicies":
   ...
   < Output truncated for readability >
@@ -166,7 +166,7 @@ az cosmosdb create --name <cosmosdb_name> --resource-group myResourceGroup --kin
 Для подключения к базе данных Cosmos DB потребуется ключ базы данных. Чтобы получить первичный ключ, выполните в Cloud Shell команду [`az cosmosdb list-keys`](/cli/azure/cosmosdb?view=azure-cli-latest#az-cosmosdb-list-keys).
 
 ```azurecli-interactive
-az cosmosdb list-keys --name <cosmosdb_name> --resource-group myResourceGroup
+az cosmosdb list-keys --name <cosmosdb-name> --resource-group myResourceGroup
 ```
 
 В Azure CLI отображаются следующие сведения:
@@ -188,12 +188,12 @@ az cosmosdb list-keys --name <cosmosdb_name> --resource-group myResourceGroup
 
 В локальном репозитории MEAN.js создайте файл с именем _local-production.js_ в папке _config/env/_. Чтобы этот файл хранился вне репозитория, настраивается _.gitignore_.
 
-Скопируйте в него следующий код: Замените два заполнителя *\<cosmosdb_name>* именем базы данных Cosmos DB, а заполнитель *\<primary_master_key>*  — ключом, скопированным на предыдущем шаге.
+Скопируйте в него следующий код: Замените два заполнителя *\<cosmosdb-name>* именем базы данных Cosmos DB, а заполнитель *\<primary-master-key>*  — ключом, скопированным на предыдущем шаге.
 
 ```javascript
 module.exports = {
   db: {
-    uri: 'mongodb://<cosmosdb_name>:<primary_master_key>@<cosmosdb_name>.documents.azure.com:10250/mean?ssl=true&sslverifycertificate=false'
+    uri: 'mongodb://<cosmosdb-name>:<primary-master-key>@<cosmosdb-name>.documents.azure.com:10250/mean?ssl=true&sslverifycertificate=false'
   }
 };
 ```
@@ -226,7 +226,7 @@ MEAN.JS
 
 Environment:     production
 Server:          http://0.0.0.0:8443
-Database:        mongodb://<cosmosdb_name>:<primary_master_key>@<cosmosdb_name>.documents.azure.com:10250/mean?ssl=true&sslverifycertificate=false
+Database:        mongodb://<cosmosdb-name>:<primary-master-key>@<cosmosdb-name>.documents.azure.com:10250/mean?ssl=true&sslverifycertificate=false
 App version:     0.5.0
 MEAN.JS version: 0.5.0
 ```
@@ -259,13 +259,13 @@ MEAN.JS version: 0.5.0
 
 Чтобы задать параметры приложения, выполните команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell.
 
-В следующем примере настраивается параметр приложения `MONGODB_URI` в приложении Azure. Замените заполнители *\<app_name>*, *\<cosmosdb_name>* и *\<primary_master_key>*.
+В следующем примере настраивается параметр приложения `MONGODB_URI` в приложении Azure. Замените заполнители *\<app-name>*, *\<cosmosdb-name>* и *\<primary-master-key>*.
 
 ```azurecli-interactive
-az webapp config appsettings set --name <app_name> --resource-group myResourceGroup --settings MONGODB_URI="mongodb://<cosmosdb_name>:<primary_master_key>@<cosmosdb_name>.documents.azure.com:10250/mean?ssl=true"
+az webapp config appsettings set --name <app-name> --resource-group myResourceGroup --settings MONGODB_URI="mongodb://<cosmosdb-name>:<primary-master-key>@<cosmosdb-name>.documents.azure.com:10250/mean?ssl=true"
 ```
 
-В коде Node.js для доступа к этому параметру приложения, как и к любой переменной среды, используется `process.env.MONGODB_URI`. 
+В коде Node.js для [доступа к этому параметру приложения](configure-language-nodejs.md#access-environment-variables), как и к любой переменной среды, используется `process.env.MONGODB_URI`.
 
 В локальном репозитории MEAN.js откройте файл _config/env/production.js_ (не _config/env/local-production.js_), который содержит конфигурацию для конкретной рабочей среды. Приложение MEAN.js по умолчанию уже настроено для использования созданной переменной среды `MONGODB_URI`.
 
@@ -296,7 +296,7 @@ remote: Handling node.js deployment.
 .
 .
 remote: Deployment successful.
-To https://<app_name>.scm.azurewebsites.net/<app_name>.git
+To https://<app-name>.scm.azurewebsites.net/<app-name>.git
  * [new branch]      master -> master
 ```
 
@@ -305,14 +305,14 @@ To https://<app_name>.scm.azurewebsites.net/<app_name>.git
 - _.deployment_ — этот файл указывает службе приложений запустить `bash deploy.sh` как пользовательский сценарий развертывания.
 - _deploy.sh_ — пользовательский сценарий развертывания. Если открыть этот файл, вы увидите, что он запускает `gulp prod` после `npm install` и `bower install`.
 
-Точно так же можно добавить любые действия в развертывание на основе Git. При перезапуске приложения Azure в любой момент времени Служба приложений не перезапускает эти задачи автоматизации.
+Точно так же можно добавить любые действия в развертывание на основе Git. При перезапуске приложения Azure в любой момент времени Служба приложений не перезапускает эти задачи автоматизации. Подробные сведения см. в разделе [Run Grunt/Bower/Gulp](configure-language-nodejs.md#run-gruntbowergulp) (Запуск Grunt/Bower/Gulp).
 
 ### <a name="browse-to-the-azure-app"></a>Переход к приложению Azure
 
 Перейдите к развернутому приложению в веб-браузере.
 
 ```bash
-http://<app_name>.azurewebsites.net
+http://<app-name>.azurewebsites.net
 ```
 
 Щелкните **Зарегистрироваться** в верхнем меню и создайте фиктивного пользователя.
@@ -451,6 +451,10 @@ git push azure master
 
 Если вы добавляли статьи ранее, то вы увидите, что они по-прежнему отображаются. Существующие данные в Cosmos DB не теряются. Кроме того, изменения в схеме данных не влияют на существующие данные.
 
+## <a name="stream-diagnostic-logs"></a>Потоковая передача журналов диагностики
+
+[!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-no-h.md)]
+
 ## <a name="manage-your-azure-app"></a>Управление приложением Azure
 
 Перейдите на [портал Azure](https://portal.azure.com), чтобы увидеть созданное приложение.
@@ -482,4 +486,9 @@ git push azure master
 Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](../app-service-web-tutorial-custom-domain.md)
+> [Руководство Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
+
+Также ознакомьтесь с другими ресурсами:
+
+> [!div class="nextstepaction"]
+> [Настройка приложения Node.js](configure-language-nodejs.md)

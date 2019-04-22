@@ -8,36 +8,34 @@ ms.service: service-bus-messaging
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 01/12/2019
+ms.date: 04/10/2019
 ms.author: spelluru
-ms.openlocfilehash: ef510ca88f1b305125c7840932641c8a2359d8c9
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: 31b1b852c92ad671564fd54520af3f3a23b3e3c2
+ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59045247"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59499807"
 ---
 # <a name="quickstart-use-azure-powershell-to-create-a-service-bus-queue"></a>Краткое руководство. Создание очереди Служебной шины с помощью Azure PowerShell
-Служебная шина Microsoft Azure представляет собой брокер интеграции сообщений корпоративного уровня, который гарантирует защищенную и абсолютно надежную доставку сообщений. Типичный сценарий применения служебной шины подразумевает функциональное разделение двух или более приложений, служб либо процессов, которым нужно обмениваться данными или сведениями о состоянии. В таких сценариях часто требуется назначать несколько пакетных заданий для других приложений и служб или запускать обработку заказов. Например, розничная компания может отправлять данные из точек продаж во вспомогательный офис или региональный центр дистрибуции для пополнения запасов и сбора сведений о товарах. В этом сценарии клиентское приложение отправляет сообщения в очередь служебной шины и получает сообщения из нее.
-
-![очередь](./media/service-bus-quickstart-powershell/quick-start-queue.png)
-
 В этом кратком руководстве описано, как отправлять и получать сообщения через очередь служебной шины, создав с помощью PowerShell пространство имен для обмена сообщениями и очередь в этом пространстве имен, а также как получить учетные данные для авторизации в этом пространстве имен. Далее в этой процедуре демонстрируется отправка и получение сообщений через созданную очередь с применением [библиотеки .NET Standard](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus).
 
-Если у вас еще нет подписки Azure, создайте [бесплатная учетная запись][], прежде чем начинать работу.
-
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+[!INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
+
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуются:
 
-- [Visual Studio 2017 с обновлением 3 (версия 15.3, 26730.01)](https://www.visualstudio.com/vs) или более новая версия.
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][], прежде чем начинать работу. 
+- [Visual Studio 2017 с обновлением 3 (версия 15.3, 26730.01)](https://www.visualstudio.com/vs) или более новая версия. Используйте Visual Studio для сборки примера, который отправляет сообщения в очередь и получает сообщения из очереди. Этот пример необходим для тестирования очереди, созданной вами на портале. 
 - [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows) версии 2.0 или более новой.
 
-Для работы с этим кратким руководством требуется последняя версия Azure PowerShell. Если вам нужно выполнить установку или обновление, см. руководство по [установке и настройке Azure PowerShell][].
+Для работы с этим кратким руководством требуется последняя версия Azure PowerShell. Если вам нужно выполнить установку или обновление, см. руководство по [установке и настройке Azure PowerShell][]. Если уже работали с Azure Cloud Shell, можно использовать эту оболочку, не устанавливая Azure PowerShell на компьютере. Дополнительные сведения об Azure Cloud Shell см. в разделе [Обзор Azure Cloud Shell](../cloud-shell/overview.md).
 
-## <a name="log-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 1. Прежде всего установите модуль служебной шины для PowerShell, если у вас его еще нет:
 
@@ -167,7 +165,7 @@ static void Main(string[] args)
 
 ### <a name="message-loop"></a>Цикл обработки сообщений
 
-Метод MainAsync() создает клиент очереди, используя аргументы командной строки, затем вызывает обработчик получения сообщений с именем `RegisterOnMessageHandlerAndReceiveMessages()` и отправляет набор сообщений:
+Метод MainAsync() создает клиент очереди, используя аргументы командной строки, затем вызывает обработчик получения сообщений с именем `RegisterOnMessageHandlerAndReceiveMessages()` и отправляет набор сообщений.
 
 ```csharp
 static async Task MainAsync(string ServiceBusConnectionString, string QueueName)
@@ -259,10 +257,10 @@ static async Task ProcessMessagesAsync(Message message, CancellationToken token)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-С помощью этой статьи вы создали пространство имен служебной шины и другие ресурсы, необходимые для отправки и получения сообщений через очередь. Чтобы лучше изучить код, выполняющий отправку и получение сообщений, см. следующее руководство по служебной шине:
+С помощью этой статьи вы создали пространство имен служебной шины и другие ресурсы, необходимые для отправки и получения сообщений через очередь. См. подробнее о **создании кода для отправки и получения сообщений**. 
 
 > [!div class="nextstepaction"]
-> [Обновление информации о запасах с помощью PowerShell, разделов и подписок](./service-bus-tutorial-topics-subscriptions-powershell.md)
+> [Отправка и получение сообщений](service-bus-dotnet-get-started-with-queues.md)
 
-[Бесплатная учетная запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+[бесплатная учетная запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
 [Установка и настройка Azure PowerShell]: /powershell/azure/install-Az-ps

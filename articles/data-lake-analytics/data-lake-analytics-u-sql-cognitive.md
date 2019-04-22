@@ -10,10 +10,10 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 06/05/2018
 ms.openlocfilehash: b8d43188c337e0c12db60b51dee053ef7259701a
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59492946"
 ---
 # <a name="get-started-with-the-cognitive-capabilities-of-u-sql"></a>Начало работы с когнитивными возможностями U-SQL
@@ -32,6 +32,6 @@ ms.locfileid: "59492946"
 Прежде чем начать, выполните действия, описанные в этой статье, чтобы зарегистрировать когнитивные возможности U-SQL. [Регистрация когнитивные возможности U-SQL](/u-sql/objects-and-extensions/cognitive-capabilities-in#registeringExtensions).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [U-SQL примеры использования Когнитивных](https://github.com/Azure-Samples?utf8=✓&q=usql%20cognitive)
-* [Разработка скриптов U-SQL, с помощью средств Data Lake для Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
+* [Примеры использования когнитивных возможностей в U-SQL](https://github.com/Azure-Samples?utf8=✓&q=usql%20cognitive)
+* [Разработка сценариев U-SQL с помощью средств озера данных для Visual Studio.](data-lake-analytics-data-lake-tools-get-started.md)
 * [Использование оконных функций U-SQL для заданий в службе аналитики озера данных Azure](data-lake-analytics-use-window-functions.md)

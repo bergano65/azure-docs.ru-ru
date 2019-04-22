@@ -1,7 +1,7 @@
 ---
 title: Создание многоконтейнерного приложения с помощью Docker Compose в Службе приложений Azure
 description: Разверните свое первое многоконтейнерное приложение на платформе Azure "Веб-приложение для контейнеров" за считаные минуты
-keywords: служба приложений azure, веб-приложение, linux, docker, compose, многоконтейнерное, несколько контейнеров, веб-приложение для контейнеров, много контейнеров, контейнер, kubernetes, wordpress, azure db для mysql, рабочая база данных с контейнерами
+keywords: служба приложений azure, веб-приложение, linux, docker, compose, многоконтейнерное, несколько контейнеров, веб-приложение для контейнеров, много контейнеров, контейнер, wordpress, azure db для mysql, рабочая база данных с контейнерами
 services: app-service\web
 documentationcenter: ''
 author: msangapu
@@ -12,19 +12,19 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 06/22/2018
+ms.date: 03/27/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 404be7a064e0e4b09178830b7802192e8775e121
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 543ba3ee4e72c5d31708e9b4983e7889421940ca
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53316586"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59546245"
 ---
 # <a name="create-a-multi-container-preview-app-using-a-docker-compose-configuration"></a>Создание многоконтейнерного приложения (предварительная версия) с использованием конфигурации Docker Compose
 
-Платформа [Веб-приложение для контейнеров](app-service-linux-intro.md) предоставляет гибкие возможности для использования образов Docker. В этом кратком руководстве показано, как в [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) развернуть многоконтейнерное приложение на платформе "Веб-приложение для контейнеров", используя конфигурацию Docker Compose. Для получения дополнительных сведений о Kubernetes и комплексном решении с базой данных Azure для MySQL см. [руководство по многоконтейнерным приложениям](tutorial-multi-container-app.md).
+Платформа [Веб-приложение для контейнеров](app-service-linux-intro.md) предоставляет гибкие возможности для использования образов Docker. В этом кратком руководстве показано, как в [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) развернуть многоконтейнерное приложение на платформе "Веб-приложение для контейнеров", используя конфигурацию Docker Compose.
 
 Действия, описанные в этом руководстве, выполняются в Cloud Shell, но эти же команды можно выполнить локально в [Azure CLI](/cli/azure/install-azure-cli) (2.0.32 или более поздней версии). 
 
@@ -138,7 +138,10 @@ az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Создание многоконтейнерного приложения WordPress на платформе Azure "Веб-приложение для контейнеров"](tutorial-multi-container-app.md)
+> [Руководство Приложение Wordpress с несколькими контейнерами](tutorial-multi-container-app.md)
+
+> [!div class="nextstepaction"]
+> [Настройка пользовательского контейнера](configure-custom-container.md)
 
 <!--Image references-->
 [1]: ./media/tutorial-multi-container-app/azure-multi-container-wordpress-install.png

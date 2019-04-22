@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: overview
-ms.date: 03/01/2019
+ms.date: 04/03/2019
 ms.author: aahi
-ms.openlocfilehash: 59763b1146986b9920b87152101fd1dcdb00fece
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.openlocfilehash: 054f0cf91904497b77fd08165808f9b4c381ecca
+ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58904769"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59500388"
 ---
 # <a name="what-is-text-analytics-api"></a>Что такое API анализа текста?
 
@@ -58,6 +58,18 @@ API — это компонент [Microsoft Cognitive Services](https://docs.m
 Выходные данные возвращаются как единый документ JSON с результатами для каждого опубликованного текстового документа на основе идентификатора. Впоследствии можно проанализировать, визуализировать или разделить результаты и превратить их в практические аналитические сведения.
 
 Данные не хранятся в учетной записи. В операциях, выполняемых API анализа текста, не отслеживается состояние. Это означает, что предоставляемый текст обрабатывается и результаты возвращаются сразу.
+
+## <a name="text-analytics-for-multiple-programming-experience-levels"></a>Анализ текста для разных уровней программирования
+
+Вы можете начать использовать API Анализа текста в своих процессах, даже если у вас мало опыта в программировании. В этих руководствах описано, как можно разными способами использовать API для анализа текста с учетом ваших навыков. 
+
+* Минимальный опыт программирования:
+    * [Использование API Анализа текста и MS Flow для определения тональности комментариев в группе Yammer](https://docs.microsoft.com/Yammer/integrate-yammer-with-other-apps/sentiment-analysis-flow-azure?toc=%2F%2Fazure%2Fcognitive-services%2Ftext-analytics%2Ftoc.json&bc=%2F%2Fazure%2Fbread%2Ftoc.json)
+    * [Интеграция Power BI с API Анализа текста для анализа отзывов пользователей](tutorials/tutorial-power-bi-key-phrases.md)
+* Рекомендуемый опыт программирования:
+    * [оценке тональности сообщений при потоковой передаче данных с использованием Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/databricks-sentiment-analysis-cognitive-services?toc=%2F%2Fazure%2Fcognitive-services%2Ftext-analytics%2Ftoc.json&bc=%2F%2Fazure%2Fbread%2Ftoc.json)
+    * [Использование Flask для перевода текста, анализа тональности и синтеза речи](https://docs.microsoft.com/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis?toc=%2F%2Fazure%2Fcognitive-services%2Ftext-analytics%2Ftoc.json&bc=%2F%2Fazure%2Fbread%2Ftoc.json)
+
 
 <a name="supported-languages"></a>
 

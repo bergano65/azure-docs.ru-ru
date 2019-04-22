@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Azure Active Directory версии 2 для Android | Документация Майкрософт
-description: В этой статье описано, как приложения Android могут вызывать API, которому необходимы маркеры доступа, с помощью конечной точки Azure Active Directory версии 2.0.
+title: Краткое руководство. Использование приложений Android с платформой удостоверений Майкрософт | Azure
+description: Узнайте, как приложения Android могут вызывать API, которому требуются маркеры доступа от конечной точки платформы удостоверений Майкрософт.
 services: active-directory
 documentationcenter: dev-center-name
 author: danieldobalian
@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/01/2019
+ms.date: 04/11/2019
 ms.author: dadobali
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd78e6acd801f3b973cc45609b72f86b257f4d43
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.openlocfilehash: f1f174229da565627c0e5791f53031b338880cb3
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58862766"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59495317"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из приложения Android
 
@@ -30,7 +30,7 @@ ms.locfileid: "58862766"
 
 В этом кратком руководстве содержится пример кода, который демонстрирует, как приложение Android может входить в личные или рабочие и учебные учетные записи, получать маркер доступа и вызывать API Microsoft Graph.
 
-![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-android/android-intro-updated.png)
+![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-android/android-intro.svg)
 
 > [!NOTE]
 > **Предварительные требования**
@@ -47,7 +47,7 @@ ms.locfileid: "58862766"
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 > #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 > Регистрация приложения:
-> 1. Откройте [Регистрация приложений (предварительная версия)](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AndroidQuickstartPage/sourceType/docs) на портале Azure.
+> 1. Откройте на [портале Azure новую панель регистрации приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AndroidQuickstartPage/sourceType/docs).
 > 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 > 1. Следуйте инструкциям, чтобы быстро скачать и автоматически настроить новое приложение.
 >
@@ -58,7 +58,8 @@ ms.locfileid: "58862766"
 >
 > 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 > 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
-> 1. В области навигации слева выберите службу **Azure Active Directory**, а затем выберите **Регистрация приложений (предварительная версия)** > **Новая регистрация**.
+> 1. Перейдите на страницу [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) Платформы удостоверений Майкрософт для разработчиков.
+> 1. Выберите **Новая регистрация**.
 > 1. После появления страницы **Регистрация приложения** введите сведения о регистрации приложения:
 >      - В разделе **Имя** введите понятное имя приложения, которое будет отображаться пользователям приложения, например `Android-Quickstart`.
 >      - Нажмите кнопку `Register`.
@@ -145,7 +146,7 @@ ms.locfileid: "58862766"
 
 ### <a name="msal"></a>MSAL
 
-MSAL ([com.microsoft.identity.client](https://javadoc.io/doc/com.microsoft.identity.client/msal)) — это библиотека, используемая для входа пользователей и запросов маркеров, которые используются для доступа к API, защищенному Microsoft Azure Active Directory (Azure AD). Вы можете использовать Gradle для его установки, добавив следующее в **Gradle Scripts** > **build.gradle (Module: app)** в разделе **Зависимости**.
+MSAL ([com.microsoft.identity.client](https://javadoc.io/doc/com.microsoft.identity.client/msal)) — это библиотека, используемая для выполнения входа пользователей и запросов маркеров, которые нужны для доступа к API, защищенному платформой удостоверений Майкрософт. Вы можете использовать Gradle для его установки, добавив следующее в **Gradle Scripts** > **build.gradle (Module: app)** в разделе **Зависимости**.
 
 ```gradle  
 implementation 'com.android.volley:volley:1.1.1'
@@ -178,7 +179,7 @@ import com.microsoft.identity.client.*;
 
 #### <a name="getting-a-user-token-interactively"></a>Интерактивное получение маркера пользователя
 
-Некоторые ситуации требуют принуждения пользователей к взаимодействию с конечной точкой Azure Active Directory версии 2.0, что приводит к переключению контекста в системный браузер для проверки учетных данных пользователей или для получения согласия. Некоторые примеры:
+Некоторые ситуации требуют принудительного взаимодействия пользователей с конечной точкой платформы удостоверений Майкрософт. Это приводит к переключению контекста на системный браузер для проверки учетных данных пользователей или получения согласия. Некоторые примеры:
 
 * первый вход пользователей в приложение;
 * когда пользователям может потребоваться повторно ввести учетные данные, так как истек срок действия пароля;

@@ -14,26 +14,25 @@ ms.workload: infrastructure-services
 ms.date: 05/11/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: bd535aeb034a17f1844c1d19379c1811b43d27e5
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: c9e62cf3dfc259d7064be9fd6b80cad0140336eb
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59260244"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59549275"
 ---
 # <a name="quickstart-create-a-sql-server-2017-windows-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины SQL Server 2017 на платформе Windows с помощью портала Azure
 
 > [!div class="op_single_selector"]
-> * [ Windows](quickstart-sql-vm-create-portal.md)
+> * [Windows](quickstart-sql-vm-create-portal.md)
 > * [Linux](../../linux/sql/provision-sql-server-linux-virtual-machine.md)
 
 В этом кратком руководстве перечислены основные действия по созданию виртуальной машины SQL Server с помощью портала Azure.
 
-> [!TIP]
-> В этом кратком руководстве приводятся инструкции по быстрой подготовке виртуальной машины SQL Server и подключению к ней. Дополнительные сведения о других вариантах подготовки виртуальных машин SQL Server см. в [руководстве по подготовке виртуальных машин SQL Server на платформе Windows с помощью портала Azure](virtual-machines-windows-portal-sql-server-provision.md).
 
-> [!TIP]
-> Если у вас есть вопросы по виртуальным машинам SQL Server, см. раздел [часто задаваемых вопросов](virtual-machines-windows-sql-server-iaas-faq.md).
+  > [!TIP]
+  > - В этом кратком руководстве приводятся инструкции по быстрой подготовке виртуальной машины SQL Server и подключению к ней. Дополнительные сведения о других вариантах подготовки виртуальных машин SQL Server см. в [руководстве по подготовке виртуальных машин SQL Server на платформе Windows с помощью портала Azure](virtual-machines-windows-portal-sql-server-provision.md).
+  > - Если у вас есть вопросы по виртуальным машинам SQL Server, см. раздел [часто задаваемых вопросов](virtual-machines-windows-sql-server-iaas-faq.md).
 
 ## <a id="subscription"></a> Оформление подписки Azure
 
@@ -47,12 +46,10 @@ ms.locfileid: "59260244"
 
 1. В поле поиска введите `SQL Server 2017 Developer on Windows Server 2016` и нажмите клавишу ВВОД.
 
-1. Выберите образ **Free SQL Server License: SQL Server 2017 Developer on Windows Server 2016** (Бесплатная лицензия на SQL Server: SQL Server 2017 Developer на базе Windows Server 2016).
+1. Выберите образ **Free SQL Server License: SQL Server 2017 Developer on Windows Server 2016** (Бесплатная лицензия на SQL Server: SQL Server 2017 Developer на базе Windows Server 2016). В этом руководстве используется выпуск Developer, так как это полнофункциональный выпуск SQL Server, предоставляемый бесплатно для тестирования в процессе разработки. Вы оплачиваете только стоимость выполнения виртуальной машины. Полные рекомендации по ценам приведены в разделе [Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure](virtual-machines-windows-sql-server-pricing-guidance.md).
 
    ![Окно поиска](./media/quickstart-sql-vm-create-portal/newsearch.png)
 
-   > [!TIP]
-   > В этом руководстве используется выпуск Developer, так как это полнофункциональный выпуск SQL Server, предоставляемый бесплатно для тестирования в процессе разработки. Вы оплачиваете только стоимость выполнения виртуальной машины. Полные рекомендации по ценам приведены в разделе [Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure](virtual-machines-windows-sql-server-pricing-guidance.md).
 
 1. Нажмите кнопку **Создать**.
 
@@ -99,19 +96,14 @@ ms.locfileid: "59260244"
 
 На вкладке **Отзыв и создание** просмотрите сводные данные и выберите **Создать**, чтобы создать SQL Server, группу ресурсов и ресурсы, указанные для этой виртуальной машины.
 
-Развертывание можно отслеживать на портале Azure. Если нажать кнопку **Уведомления** в верхней части окна, будут показаны основные сведения о состоянии развертывания.
-
-> [!TIP]
-> Развертывание виртуальной машины Windows Server SQL может занять несколько минут.
+Развертывание можно отслеживать на портале Azure. Если нажать кнопку **Уведомления** в верхней части окна, будут показаны основные сведения о состоянии развертывания. Развертывание может занять несколько минут. 
 
 ## <a name="connect-to-sql-server"></a>Подключение к SQL Server
 
 1. На портале в разделе **Обзор** свойств виртуальной машины найдите **общедоступный IP-адрес** виртуальной машины SQL Server.
 
-1. На другом компьютере, подключенном к сети Интернет, откройте SQL Server Management Studio (SSMS).
+1. На другом компьютере, подключенном к сети Интернет, откройте [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
 
-   > [!TIP]
-   > Если у вас нет SQL Server Management Studio, его можно скачать [здесь](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms).
 
 1. В диалоговом окне **Подключение к серверу** или **Подключение к ядру СУБД** измените значение **Имя сервера**. Введите общедоступный IP-адрес своей виртуальной машины. Затем добавьте запятую и введите пользовательский порт **1401**, который был указан при настройке новой виртуальной машины. Например, `11.22.33.444,1401`.
 
@@ -145,4 +137,4 @@ ms.locfileid: "59260244"
 В этом кратком руководстве вы создали виртуальную машину SQL Server 2017 на портале Azure. Чтобы узнать больше о том, как перенести данные на новый сервер SQL Server, ознакомьтесь со следующей статьей.
 
 > [!div class="nextstepaction"]
-> [Миграция базы данных на виртуальную машину SQL](virtual-machines-windows-migrate-sql.md)
+> [Миграция базы данных SQL Server в экземпляр SQL Server на виртуальной машине Azure](virtual-machines-windows-migrate-sql.md)

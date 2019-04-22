@@ -16,10 +16,10 @@ ms.date: 01/31/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5a2472e78a9da223b0c651551d7cc8e05ab6eea9
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58905500"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-slack"></a>Руководство по Интеграция Azure Active Directory со Slack
@@ -107,16 +107,16 @@ ms.locfileid: "58905500"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Slack](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.slack.com`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.slack.com`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом. `https://slack.com`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://slack.com`
 
     > [!NOTE]
     > Значение URL-адреса входа приведено только для примера. Для входа укажите фактический URL-адрес. Чтобы получить это значение, обратитесь к [группе поддержки клиентов Slack](https://slack.com/help/contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. Приложение Slack ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
     > [!NOTE] 
     > Если у вас есть пользователи, которым предоставлен **адрес электронной почты** без использования лицензии Office 365, то утверждение **User.Email** не будет присутствовать в маркере SAML. В таких случаях мы советуем указать **user.userprincipalname** в качестве значения атрибута **User.Email**, чтобы использовать сопоставление с параметром **Уникальный идентификатор**.
@@ -132,9 +132,9 @@ ms.locfileid: "58905500"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -263,4 +263,4 @@ ms.locfileid: "58905500"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Настройка подготовки пользователей](slack-provisioning-tutorial.md)
+- [Руководство по настройке Google Apps для автоматической подготовки пользователей](slack-provisioning-tutorial.md)

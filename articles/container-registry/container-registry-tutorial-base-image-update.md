@@ -9,10 +9,10 @@ ms.date: 09/24/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
 ms.openlocfilehash: a5d89051ef479cf9d87ca8f921e05c6d0be12b8c
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58892183"
 ---
 # <a name="tutorial-automate-container-image-builds-when-a-base-image-is-updated-in-an-azure-container-registry"></a>Руководство. автоматизации сборок образов контейнера при обновлении базового образа в службе "Реестр контейнеров Azure" 
@@ -45,9 +45,9 @@ ms.locfileid: "58892183"
 
 Если вы еще этого не сделали, завершите работу с первыми двумя руководствами, а затем вернитесь к этому руководству:
 
-[Создание образов контейнера в облаке с помощью Задач Реестра контейнеров Azure](container-registry-tutorial-quick-task.md)
+[Руководство. Создание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"](container-registry-tutorial-quick-task.md)
 
-[Автоматизация сборок образов контейнера с помощью Задач Реестра контейнеров Azure](container-registry-tutorial-build-task.md)
+[Руководство. Автоматизация сборок образов контейнера с помощью задач службы "Реестр контейнеров Azure"](container-registry-tutorial-build-task.md)
 
 ### <a name="configure-the-environment"></a>Настройка среды
 
@@ -244,7 +244,7 @@ az ad sp delete --id http://$ACR_NAME-pull
 Из этого руководства вы узнали, как использовать задачу, чтобы автоматически активировать сборки образа контейнера при обновлении базового образа. Теперь рассмотрим аутентификацию реестра контейнеров.
 
 > [!div class="nextstepaction"]
-> [Аутентификация с помощью Реестра контейнеров Azure](container-registry-authentication.md)
+> [Аутентификация с помощью частного реестра контейнеров Docker](container-registry-authentication.md)
 
 <!-- LINKS - External -->
 [base-alpine]: https://hub.docker.com/_/alpine/

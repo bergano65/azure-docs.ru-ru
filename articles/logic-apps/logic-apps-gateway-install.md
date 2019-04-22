@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/01/2018
-ms.openlocfilehash: 91d1369b9197f6ef941d981aa9cf7539b4554d0c
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
-ms.translationtype: HT
+ms.openlocfilehash: 67a918b227ad3b33a2f63b17f86b94f36fbc9fa3
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54065806"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59679131"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
@@ -49,7 +49,7 @@ ms.locfileid: "54065806"
 
 <a name="requirements"></a>
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * [Рабочая или учебная учетная запись](../active-directory/fundamentals/sign-up-organization.md), у которой есть [подписка Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption-guide/adoption-intro/subscription-explainer). 
 
@@ -435,26 +435,6 @@ TcpTestSucceeded       : True
 
    ![Просмотр журналов событий шлюза](./media/logic-apps-gateway-install/event-viewer.png)
 
-### <a name="telemetry"></a>Телеметрия
-
-Можно активировать дополнительные функции наблюдения и устранения неполадок и собирать данные телеметрии. 
-
-1. Перейдите в расположение клиентского каталога локального шлюза данных. Обычно его можно найти по адресу ```C:\Program Files\On-premises data gateway```
-
-   В противном случае для поиска расположения клиента откройте консоль служб на том же компьютере, найдите **On-premises data gateway service** (служба "Локальный шлюз данных") и просмотрите свойство **Path to executable** (Путь к исполняемому файлу).
-
-2. Откройте этот файл *конфигурации*: **Microsoft.PowerBI.DataMovement.Pipeline.GatewayCore.dll.config**
-
-3. Измените значение **SendTelemetry** на **true**.
-
-   ```html
-   <setting name="SendTelemetry" serializeAs="String">
-      <value>true</value>
-   </setting>
-   ```
-
-4. Сохраните изменения и перезапустите службу Windows.
-
 ### <a name="review-slow-query-performance"></a>Обзор производительности медленных запросов
 
 Если будет обнаружено, что запросы медленно работают через шлюз, можно включить дополнительное ведение журнала, которое выводит запросы и их длительность. Эти журналы могут указать, какие из запросов медленные или долго выполняются. Чтобы настроить производительность запросов, может потребоваться изменить источник данных, например настроить индексы запросов SQL Server.
@@ -526,9 +506,9 @@ TcpTestSucceeded       : True
 
 ### <a name="trace-traffic-with-fiddler"></a>Трассировка трафика с помощью Fiddler
 
-[Fiddler](http://www.telerik.com/fiddler) — это бесплатный инструмент от компании Telerik, который отслеживает трафик HTTP. Вы можете просмотреть трафик с помощью службы Power BI с клиентского компьютера. Эта служба позволит выявить ошибки и другие сопутствующие сведения.
+[Fiddler](https://www.telerik.com/fiddler) — это бесплатный инструмент от компании Telerik, который отслеживает трафик HTTP. Вы можете просмотреть трафик с помощью службы Power BI с клиентского компьютера. Эта служба позволит выявить ошибки и другие сопутствующие сведения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
     
 * [Подключение к локальным данным из приложений логики](../logic-apps/logic-apps-gateway-connection.md)
 * [Возможности интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md)

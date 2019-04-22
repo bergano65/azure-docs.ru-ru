@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 94e0b365d159ef18d7c0e6216ac9f5babb0d6231
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59262811"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-recognize"></a>Руководство по Интеграция Azure Active Directory с Recognize
@@ -51,7 +51,7 @@ ms.locfileid: "59262811"
 
 Чтобы настроить интеграцию Recognize с Azure AD, необходимо добавить Recognize из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Recognize из коллекции, сделайте следующее:**
+**Чтобы добавить Recognize из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -229,7 +229,7 @@ ms.locfileid: "59262811"
 
 Это приложение не поддерживает подготовку SCIM, но предусматривает альтернативный механизм синхронизации для подготовки пользователей. 
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Войдите на корпоративный сайт Recognize в качестве администратора.
 

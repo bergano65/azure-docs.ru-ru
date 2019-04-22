@@ -8,12 +8,12 @@ ms.date: 06/14/2018
 ms.author: anshan
 manager: cshankar
 ms.custom: seodec18
-ms.openlocfilehash: a9baf36221c99ece0703e2caa3f3e6c3b9364480
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: fe8b6113646589e30ff839c8bd47968138d98b03
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58312212"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59521441"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-single-page-web-app"></a>Руководство. Создание одностраничного веб-приложения службы "Аналитика временных рядов Azure"
 
@@ -179,7 +179,7 @@ ms.locfileid: "58312212"
 Код ошибки и состояние | ОПИСАНИЕ
 ---------------------| -----------
 *AADSTS50011. Для приложения не зарегистрирован адрес ответа* | В регистрации Azure AD отсутствует свойство "URL-адрес ответа". Перейдите на страницу **Параметры** / **URL-адреса ответа** для регистрации приложения Azure AD. Убедитесь, что присутствует URL-адрес **входа**, указанный в шаге 3 из раздела [Регистрация приложения с помощью Azure AD](#register-the-application-with-azure-ad). 
-*AADSTS50011. Указанный в запросе URL-адрес ответа не соответствует URL-адресам ответа, настроенным для приложения: "<Application ID GUID>".* | Параметр `postLogoutRedirectUri`, указанный в шаге 4.b раздела [Создание и публикация веб-приложения](#build-and-publish-the-web-application), должен соответствовать значению, указанному в свойстве **Параметры** / **URL-адреса ответа** в вашей регистрации приложения Azure AD. Необходимо также изменить **URL-адрес назначения** для использования `https` на шаге 5.e раздела [Создание и публикация веб-приложения](#build-and-publish-the-web-application)
+*AADSTS50011. The reply url specified in the request does not match the reply urls configured for the application: '\<Application ID GUID>'.* (Указанный в запросе URL-адрес ответа не соответствует URL-адресам ответа, настроенным для приложения: <глобальный уникальный идентификатор приложения>.) | Параметр `postLogoutRedirectUri`, указанный в шаге 4.b раздела [Создание и публикация веб-приложения](#build-and-publish-the-web-application), должен соответствовать значению, указанному в свойстве **Параметры** / **URL-адреса ответа** в вашей регистрации приложения Azure AD. Необходимо также изменить **URL-адрес назначения** для использования `https` на шаге 5.e раздела [Создание и публикация веб-приложения](#build-and-publish-the-web-application)
 Загрузка веб-приложения, но имеет страницу входа только с текстом и белым фоном без стилей. | Убедитесь, что пути, обсуждаемые на шаге 4.а из раздела [Создание и публикация веб-приложения](#build-and-publish-the-web-application) заданы правильно. Если веб-приложение не может найти файлы CSS, страница не будет правильно отображаться.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

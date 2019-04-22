@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: quickstart
-ms.date: 02/20/2019
-ms.author: aahi
-ms.openlocfilehash: 8e3379a086eb09745142f4e3997ed195eb4d1de5
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.date: 04/02/2019
+ms.author: aahill
+ms.openlocfilehash: 0a1260de6428f6ebc70757261cdcc3002820ec7b
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56885913"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59547770"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-nodejs"></a>Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и Node.js
 
-В этом кратком руководстве показано, как отправить первый вызов к REST API "Проверка орфографии Bing". Этот простое приложение Python отправляет запрос к API и возвращает список нераспознанных слов вместе с предлагаемыми исправлениями. Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/nodejs/Search/BingSpellCheckv7.js).
+В этом кратком руководстве показано, как отправить первый вызов к REST API "Проверка орфографии Bing". Это простое приложение Node отправляет запрос к API и возвращает список слов, которые не удалось распознать, с предлагаемыми исправлениями. Хотя это приложение создано на языке Node.js, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/nodejs/Search/BingSpellCheckv7.js).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,18 +30,18 @@ ms.locfileid: "56885913"
 
 ## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
-1. Создайте файл JavaScript в используемой вами интегрированной среде разработки или редакторе. Установите степень строгости и добавьте требование использования протокола HTTPS. Затем создайте переменные для узла конечной точки API, пути и ключа подписки.
+1. Создайте файл JavaScript в используемой вами интегрированной среде разработки или редакторе. Установите степень строгости и добавьте требование использования протокола `https`. Затем создайте переменные для узла конечной точки API, пути и ключа подписки.
 
     ```javascript
     'use strict';
     let https = require ('https');
-    
+
     let host = 'api.cognitive.microsoft.com';
     let path = '/bing/v7.0/spellcheck';
-    let key = 'ENTER KEY HERE';
+    let key = '<ENTER-KEY-HERE>';
     ```
 
-2. Создайте переменные для вашей отрасли, режима проверки орфографии и текста, который требуется проверить. Затем создайте строку, содержащую параметр `?mkt=` со значением вашей отрасли и параметр `&mode=` со значением вашего режима.
+2. Создайте переменные для параметров поиска и текста, который требуется проверить. Добавьте код рынка после `mkt=`. Код рынка определяет страну, из которой выполняется запрос. Кроме того, добавьте режим проверки орфографии после `&mode=`. Можно указать режим `proof` (выявляет большинство орфографических и грамматических ошибок) или `spell` (выявляет большинство орфографических ошибок, но не так много грамматических ошибок).
 
     ```javascript
     let mkt = "en-US";
@@ -78,7 +78,8 @@ let response_handler = function (response) {
         body += d;
     });
     response.on ('end', function () {
-        console.log (body);
+        let body_ = JSON.parse (body);
+        console.log (body_);
     });
     response.on ('error', function (e) {
         console.log ('Error: ' + e.message);
@@ -98,7 +99,7 @@ req.end ();
 
 ## <a name="example-json-response"></a>Пример ответа в формате JSON
 
-Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
+Успешный ответ возвращается в формате JSON, как показано в примере ниже.
 
 ```json
 {

@@ -16,12 +16,12 @@ ms.date: 06/25/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82b2b75d5505ddda91232bf1055bd70a68d333d0
-ms.sourcegitcommit: ad3e63af10cd2b24bf4ebb9cc630b998290af467
+ms.openlocfilehash: be67a6f287e2d6e77070928cbe12542857696011
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58792405"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59680287"
 ---
 # <a name="azure-ad-connect-sync-service-features"></a>Функции службы синхронизации Azure AD Connect
 
@@ -96,7 +96,7 @@ Set-MsolDirSyncFeature -Feature EnableSoftMatchOnUpn -Enable $true
 
 Дополнительные сведения см. в статье [User names in Office 365, Azure, or Intune don't match the on-premises UPN or alternate login ID](https://support.microsoft.com/kb/2523192) (Имена пользователей в Office 365, Azure или Intune не совпадают с локальным именем участника-пользователя или альтернативным именем для входа).
 
-Включение этой функции позволяет модулю синхронизации обновлять атрибут userPrincipalName при его изменении в локальной среде и при использовании синхронизации хэша паролей. Если используется федерация, эта функция не будет работать.
+Включение этой функции позволяет модулю синхронизации обновлять атрибут userPrincipalName, когда он является меняются в локальной и использовать пароль хэш синхронизации или сквозной проверкой подлинности. Если используется федерация, эта функция не будет работать.
 
 Эта функция по умолчанию включена для создаваемых каталогов Azure AD. Чтобы увидеть, включена ли эта функция, выполните следующую команду:  
 

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: db01c2f51e9069e8fc9ee979eacf746bee8dbdd2
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 3e33eef430db627a82bb82e8c22ddc861d08982b
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59260924"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59546278"
 ---
 # <a name="find-routes-for-different-modes-of-travel-using-azure-maps"></a>Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
 
@@ -216,7 +216,7 @@ ms.locfileid: "59260924"
     var routeURL = new atlas.service.RouteURL(pipeline);
     ```
 
-   `SubscriptionKeyCredential` создает `SubscriptionKeyCredentialPolicy` для проверки подлинности HTTP-запросов для Azure Maps с помощью ключа подписки. `atlas.service.MapsURL.newPipeline()` принимает политику `SubscriptionKeyCredential` и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-iot-typescript-latest). `routeURL` представляет собой URL-адрес [для операций маршрута](https://docs.microsoft.com/rest/api/maps/route) Azure Maps.
+   `SubscriptionKeyCredential` создает политику `SubscriptionKeyCredentialPolicy` для аутентификации HTTP-запросов для Azure Maps с помощью ключа подписки. `atlas.service.MapsURL.newPipeline()` принимает политику `SubscriptionKeyCredential` и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-iot-typescript-latest). `routeURL` представляет собой URL-адрес [для операций маршрута](https://docs.microsoft.com/rest/api/maps/route) Azure Maps.
 
 2. После настройки учетных данных и URL-адреса добавьте следующий код JavaScript для создания маршрута из начальной точки в конечную точку для грузовика с грузом типа USHazmatClass2 и отображения результатов.
 
@@ -283,11 +283,11 @@ ms.locfileid: "59260924"
 > * Создание запросов маршрута по видам транспорта.
 > * Отображение нескольких маршрутов на карте.
 
-Пример кода, используемый при работе с этим руководством, приведен здесь:
+> [!div class="nextstepaction"]
+> [Просмотр полного исходного кода](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/truckRoute.html)
 
-> [Несколько маршрутов с Azure Maps](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/truckRoute.html)
-
-[Ознакомьтесь с примером в интерактивном режиме](https://azuremapscodesamples.azurewebsites.net/?sample=Multiple%20routes%20by%20mode%20of%20travel)
+> [!div class="nextstepaction"]
+> [Просмотр примера, работающего в реальном времени](https://azuremapscodesamples.azurewebsites.net/?sample=Multiple%20routes%20by%20mode%20of%20travel)
 
 В этом руководстве показано, как создать простой указатель магазинов с помощью Azure Maps.
 

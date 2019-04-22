@@ -13,14 +13,14 @@ ms.topic: overview
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 2/28/2019
+ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: a1c74f0ed9fd9b9abccfb7c2762cadf948c8fce0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ba0f584e8026fe3828ec79c4b6c0ff5a0bb89f5a
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57884801"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59492368"
 ---
 # <a name="connect-data-sources"></a>Подключение источников данных
 
@@ -34,32 +34,32 @@ ms.locfileid: "57884801"
 
 ![Сборщики данных](./media/collect-data/collect-data-page.png)
 
-## <a name="data-collection-methods"></a>Методы сбора данных
+## <a name="data-connection-methods"></a>Методы подключения к данным
 
-Azure Sentinel поддерживает следующие методы сбора данных.
+Azure Sentinel поддерживает следующие методы подключения к данным:
 
 - **Службы Майкрософт**.<br> Службы Майкрософт подключены в собственном коде с помощью платформы Azure для готовой интеграции. Следующие решения можно подключить несколькими щелчками мыши.
     - [Office 365](connect-office-365.md)
-    - [Данные для входа и журналы аудита Azure AD](connect-azure-active-directory.md)
+    - [Данные для входа и журналы аудита Azure AD](connect-azure-active-directory.md)
     - [Действия Azure](connect-azure-activity.md)
-    - [Защита идентификации Azure AD](connect-azure-ad-Identity-protection.md)
+    - [защиту идентификации Azure AD](connect-azure-ad-Identity-protection.md)
     - [Центр безопасности Azure](connect-azure-security-center.md)
     - [Azure Information Protection](connect-azure-information-protection.md)
-    - [Расширенная защита от угроз Azure](connect-azure-atp.md)
+    - [Azure Advanced Threat Protection](connect-azure-atp.md)
     - [Cloud App Security](connect-cloud-app-security.md)
     - [События безопасности Windows](connect-windows-security-events.md) 
     - [Брандмауэр Windows](connect-windows-firewall.md)
 
 - **Внешние решения через API**. Некоторые источники данных подключены с помощью интерфейсов API, предоставляемых подключенным источником данных. Как правило, большинство технологий безопасности предоставляют набор API, с помощью которых можно получить журналы событий. API подключаются к Azure Sentinel и собирают определенные типы данных, а затем отправляют их в Azure Log Analytics. Устройства, подключенные с помощью API:
     - [Barracuda](connect-barracuda.md)
-    - Symantec
+    - [Symantec](connect-symantec.md)
 - **Внешние решения через агента**. Azure Sentinel может подключаться ко всем источникам данных, которые могут выполнять потоковую передачу журнала в режиме реального времени с помощью протокола Syslog, через агента. <br>Большинство устройств использует протокол Syslog для отправки сообщений о событиях, которые включают сам журнал и данные о нем. Журналы имеют разный формат, но большинство устройств поддерживает стандарт общего формата событий (CEF). <br>Агент Azure Sentinel, основанный на агенте OMS, преобразует журналы в формате CEF в формат, который принимается службой Log Analytics. В зависимости от типа устройства агент устанавливается или непосредственно на устройстве, или на выделенном сервере Linux. Агент для Linux получает события из управляющей программы Syslog по протоколу UDP. В случаях, когда машина Linux должна собирать большое количество событий Syslog, они отправляются по протоколу TCP из управляющей программы Syslog в агент, а затем — в Log Analytics.
     - Брандмауэры, прокси-серверы и конечные точки.
         - [F5](connect-f5.md)
         - [Check Point](connect-checkpoint.md)
         - [Cisco ASA](connect-cisco.md)
         - [Fortinet](connect-fortinet.md)
-        - [Palo Alto](connect-paloalto.md)
+        - [Пало-Альто](connect-paloalto.md)
         - [Другие устройства CEF](connect-common-event-format.md)
         - [Другие устройства Syslog](connect-syslog.md)
     - Решения DLP

@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 03/27/2019
 ms.author: pafarley
-ms.openlocfilehash: 0c48b85e48153eb70400fc6da4822271f49b7fbe
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.openlocfilehash: 280143d54e516fb626bb2d5afd01653e03d8a82c
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58630183"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59490452"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-php"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и PHP
 
@@ -26,6 +26,7 @@ ms.locfileid: "58630183"
 - Ключ подписки на API распознавания лиц. Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на API распознавания лиц и свой ключ.
 - Редактор кода, например [Visual Studio Code](https://code.visualstudio.com/download).
 - PHP-пакет [HTTP_Request2](https://pear.php.net/package/HTTP_Request2).
+- Веб-браузер с поддержкой PHP. Если вы еще не настроили его, вы можете сделать это, установив и настроив [XAMPP](https://www.apachefriends.org/) на своем компьютере.
 
 ## <a name="initialize-the-html-file"></a>Инициализация HTML-файла
 

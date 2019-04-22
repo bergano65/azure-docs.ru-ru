@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 743246881463d9cb5156677a0c3ec719d80a079c
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59264358"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-promapp"></a>Руководство. Интеграция Azure Active Directory с Promapp
@@ -53,7 +53,7 @@ ms.locfileid: "59264358"
 
 Чтобы настроить интеграцию Promapp с Azure AD, необходимо добавить Promapp из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Promapp из коллекции, сделайте следующее:**
+**Чтобы добавить Promapp из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -121,7 +121,7 @@ ms.locfileid: "59264358"
     > [!NOTE] 
     > Сейчас интеграция Azure AD с Promapp настроена только для аутентификации, инициированной службой. Например, при переходе по URL-адресу Promapp инициируется процесс аутентификации. Но поле "URL-адрес ответа" является обязательным.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<DOMAINNAME>.promapp.com/azuread/saml/authenticate.aspx`
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<DOMAINNAME>.promapp.com/azuread/saml/authenticate.aspx`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 

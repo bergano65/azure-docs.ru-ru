@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 04/11/2019
 ms.author: magoedte
 ms.openlocfilehash: 4476bb0a5a343fd43ce5ed70cf0e493d0ccae0e9
-ms.sourcegitcommit: f24b62e352e0512dfa2897362021b42e0cb9549d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59505640"
 ---
 # <a name="collect-and-analyze-azure-activity-logs-in-log-analytics-workspace-in-azure-monitor"></a>Сбор и анализ журналов действий Azure в рабочую область Log Analytics в Azure Monitor
@@ -50,12 +50,12 @@ ms.locfileid: "59505640"
 
 В отличие от большинства других решений Azure Monitor данные не собираются журналы действий для агентов. Все данные, используемые решением, поступают непосредственно из Azure.
 
-| Подключенный источник | Поддерживаются | Описание |
+| Подключенный источник | Поддерживаются | ОПИСАНИЕ |
 | --- | --- | --- |
 | [Агенты Windows](agent-windows.md) | Нет  | Решение не собирает сведения из агентов Windows. |
 | [Агенты Linux](../learn/quick-collect-linux-computer.md) | Нет  | Решение не собирает сведения из агентов Linux. |
 | [Группа управления System Center Operations Manager](om-agents.md) | Нет  | Решение не собирает сведения из агентов, предоставляющих отчеты в группу управления Operations Manager. |
-| [Учетная запись хранения Azure.](collect-azure-metrics-logs.md) | Нет  | Решение не собирает сведения из службы хранилища Azure. |
+| [Учетная запись хранения Azure](collect-azure-metrics-logs.md) | Нет  | Решение не собирает сведения из службы хранилища Azure. |
 
 ## <a name="prerequisites"></a>Технические условия
 

@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 9/18/2018
 ms.author: aanandr
 ms.custom: ''
-ms.openlocfilehash: 82836c7686d9b0f376268ef7919a188a8f78944e
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 2ebc678bffbbbe5d512d620b8f77ac0a245c0aff
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57548785"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59579127"
 ---
 # <a name="enable-containers-to-use-azure-virtual-network-capabilities"></a>Включение контейнеров для использования возможностей виртуальной сети Azure
 
@@ -60,8 +60,8 @@ ms.locfileid: "57548785"
 Подключаемый модуль можно использовать одним из следующих способов для обеспечения базового подключения виртуальной сети контейнеров Pod или Docker:
 
 - **Служба Azure Kubernetes**. Подключаемый модуль интегрируется в службу Azure Kubernetes (AKS) и может использоваться при выборе параметра *Расширенная сеть*. Расширенная сеть позволяет развернуть кластер Kubernetes в существующей или новой виртуальной сети. Дополнительные сведения о расширенной сети и ее настройке см. в разделе [Конфигурация сети в Службе Azure Kubernetes (AKS)](../aks/networking-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-- **Обработчик ACS**. Обработчик ACS является средством, которое создает шаблон Azure Resource Manager для развертывания кластера Kubernetes в Azure. Подробные инструкции см. в разделе [Развертывание подключаемого модуля для кластера Kubernetes с обработчиком ACS](deploy-container-networking.md#deploy-plug-in-for-acs-engine-kubernetes-cluster).
-- **Создание кластера Kubernetes в Azure** Подключаемый модуль можно использовать для предоставления основных сетей для контейнеров Pod в кластерах Kubernetes, которые вы развертываете самостоятельно, не полагаясь на AKS и такие средства, как обработчик ACS. В этом случае подключаемый модуль установлен и включен на каждой виртуальной машине в кластере. Подробные инструкции см. в разделе [Развертывание подключаемого модуля для кластера Kubernetes](deploy-container-networking.md#deploy-plug-in-for-a-kubernetes-cluster).
+- **Обработчик AKS**: является средством, которое создает шаблон Azure Resource Manager для развертывания кластера Kubernetes в Azure. Подробные инструкции см. в разделе [Развертывание подключаемого модуля для кластера Kubernetes с обработчиком AKS](deploy-container-networking.md#deploy-the-azure-virtual-network-container-network-interface-plug-in).
+- **Создание кластера Kubernetes в Azure** Подключаемый модуль можно использовать для предоставления основных сетей для контейнеров Pod в кластерах Kubernetes, которые вы развертываете самостоятельно, не полагаясь на AKS и такие средства, как обработчик AKS. В этом случае подключаемый модуль установлен и включен на каждой виртуальной машине в кластере. Подробные инструкции см. в разделе [Развертывание подключаемого модуля для кластера Kubernetes](deploy-container-networking.md#deploy-plug-in-for-a-kubernetes-cluster).
 - **Подключение виртуальной сети к контейнерам Docker в Azure**. Подключаемый модуль может использоваться в тех случаях, когда вы не хотите создавать кластер Kubernetes, а хотите создать контейнеры Docker с подключением виртуальной сети в виртуальных машинах. Подробные инструкции см. в разделе [Развертывание подключаемого модуля для контейнеров Docker](deploy-container-networking.md#deploy-plug-in-for-docker-containers).
 
 ## <a name="next-steps"></a>Дополнительная информация

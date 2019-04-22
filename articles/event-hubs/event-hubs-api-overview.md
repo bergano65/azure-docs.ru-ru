@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/02/2018
 ms.author: shvija
-ms.openlocfilehash: dcfc2480cd9a62b57255163132373998db328034
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 80566b0246179064d2a479b8c9bf3c79a2a93aac
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58075805"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59681290"
 ---
 # <a name="available-event-hubs-apis"></a>Доступные интерфейсы API Центров событий
 
@@ -36,7 +36,7 @@ ms.locfileid: "58075805"
 | .NET Standard | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/) | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.EventHubs.Processor/) | [GitHub](https://github.com/azure/azure-event-hubs-dotnet) |
 | .NET Framework | [NuGet](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost/) | Н/Д |
 | Java | [Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs%22) | [Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs-eph%22) | [GitHub](https://github.com/Azure/azure-event-hubs-java) |
-| Узел | [NPM](https://www.npmjs.com/package/azure-event-hubs) | Н/Д | [GitHub](https://github.com/Azure/azure-event-hubs-node) |
+| Узел | [NPM](https://www.npmjs.com/package/azure-event-hubs) | Н/Д | [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs) |
 | C | Н/Д | Н/Д | [GitHub](https://github.com/Azure/azure-event-hubs-c) |
 
 ### <a name="additional-information"></a>Дополнительная информация
@@ -47,7 +47,7 @@ ms.locfileid: "58075805"
 
 #### <a name="node"></a>Узел
 
-Сейчас доступна предварительная версия [библиотеки Node.js](https://github.com/Azure/azure-event-hubs-node). Она поддерживается как параллельный проект сотрудниками корпорации Майкрософт и внешними соавторами. Все добавляемые материалы, включая исходный код, принимаются и проверяются.
+Сейчас доступна предварительная версия [библиотеки Node.js](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs). Она поддерживается как параллельный проект сотрудниками корпорации Майкрософт и внешними соавторами. Все добавляемые материалы, включая исходный код, принимаются и проверяются.
 
 ## <a name="management-apis"></a>API управления
 

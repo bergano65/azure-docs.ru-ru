@@ -16,10 +16,10 @@ ms.date: 12/24/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 93990a11860e8b8181bee0ba67351b095d940878
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58880004"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ultipro"></a>Руководство по Интеграция Azure Active Directory с приложением UltiPro
@@ -51,7 +51,7 @@ ms.locfileid: "58880004"
 
 Чтобы настроить интеграцию UltiPro с Azure AD, необходимо добавить UltiPro из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить UltiPro из коллекции, выполните следующие действия:**
+**Чтобы добавить UltiPro из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 

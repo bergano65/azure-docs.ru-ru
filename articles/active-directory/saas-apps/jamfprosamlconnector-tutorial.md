@@ -16,10 +16,10 @@ ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 18b575b74c80499f2ddd6648bf051b5245077d2f
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58906146"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jamf-pro"></a>Руководство по Интеграция Azure Active Directory с Jamf Pro
@@ -105,9 +105,9 @@ ms.locfileid: "58906146"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Jamf Pro](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<subdomain>.jamfcloud.com/saml/metadata`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.jamfcloud.com/saml/metadata`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.jamfcloud.com/saml/SSO`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.jamfcloud.com/saml/SSO`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -126,11 +126,11 @@ ms.locfileid: "58906146"
 
 1. Для автоматизации настройки в Jamf Pro необходимо установить **Расширение браузера "Безопасный вход в мои приложения"**, щелкнув **Установить расширение**.
 
-    ![изображение](./media/jamfprosamlconnector-tutorial/install_extension.png)
+    ![image](./media/jamfprosamlconnector-tutorial/install_extension.png)
 
 2. После добавления расширения в браузере щелкните **Установка Jamf Pro**, чтобы перейти к приложению Jamf Pro. После этого укажите учетные данные администратора для входа в Jamf Pro. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–7.
 
-    ![изображение](./media/jamfprosamlconnector-tutorial/d1_saml.png)
+    ![image](./media/jamfprosamlconnector-tutorial/d1_saml.png)
 
 3. Если необходимо вручную настроить Jamf Pro, откройте новое окно веб-браузера, зайдите на сайт компании Jamf Pro в роли администратора и выполните следующие шаги.
 
@@ -228,7 +228,7 @@ ms.locfileid: "58906146"
 
 Чтобы пользователи Azure AD могли выполнять вход в Jamf Pro, они должны быть подготовлены в Jamf Pro. В случае с Jamf Pro подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Войдите на веб-сайт Jamf Pro организации в качестве администратора.
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с JIRA SAML SSO by Microsoft | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с JIRA SAML SSO by Microsoft | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в JIRA SAML SSO by Microsoft.
 services: active-directory
 documentationCenter: na
@@ -8,19 +8,20 @@ manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 4b663047-7f88-443b-97bd-54224b232815
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 12/19/2018
+ms.date: 04/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 90c3d4731883991f867b49eb3d4884ee1b7d4a6b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9a0911588141552e616e8555380b14c910225840
+ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57882103"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59501392"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jira-saml-sso-by-microsoft"></a>Руководство по Интеграция Azure Active Directory с JIRA SAML SSO by Microsoft
 
@@ -64,6 +65,9 @@ ms.locfileid: "57882103"
 * JIRA Core и JIRA Software: 6.0–7.12
 * Jira Service Desk: версии 3.0.0–3.5.0;
 * JIRA поддерживает также 5.2. Дополнительные сведения см. в статье об [использовании единого входа Microsoft Azure Active Directory для JIRA 5.2](jira52microsoft-tutorial.md).
+
+> [!NOTE]
+> Обратите внимание на то, что JIRA также поддерживает Linux Ubuntu версии 16.04.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -129,11 +133,11 @@ ms.locfileid: "57882103"
 
     ![Сведения о домене и URL-адресах единого входа для приложения JIRA SAML SSO by Microsoft](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<domain:port>/plugins/servlet/saml/auth`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<domain:port>/plugins/servlet/saml/auth`
 
-    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<domain:port>/`.
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<domain:port>/`
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<domain:port>/plugins/servlet/saml/auth`.
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<domain:port>/plugins/servlet/saml/auth`
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Если это именованный URL-адрес, то порт указывать необязательно. Эти значения предоставляются во время настройки подключаемого модуля JIRA, которая описывается далее в этом руководстве.
@@ -186,12 +190,12 @@ ms.locfileid: "57882103"
 
     c. В поле **Имя кнопки входа** введите имя кнопки, которую должны видеть на экране входа пользователи вашей организации.
 
-    d. Для параметра **SAML User ID Locations** (Расположения идентификатора пользователя SAML) выберите значение **User ID is in the NameIdentifier element of the Subject statement** (Идентификатор пользователя указан в элементе NameIdentifier утверждения Subject) или **User ID is in an Attribute element** (Идентификатор пользователя указан в элементе Attribute).  Этим идентификатором должен быть идентификатор пользователя JIRA. Если идентификатор пользователя не совпадет, система не позволит пользователям выполнить вход.
+    d. Для параметра **Расположения идентификатора пользователя SAML** укажите значение **Идентификатор пользователя указан в элементе NameIdentifier утверждения Subject** или **Идентификатор пользователя указан в элементе Attribute**.  Этим идентификатором должен быть идентификатор пользователя JIRA. Если идентификатор пользователя не совпадет, система не позволит пользователям выполнить вход.
 
     > [!Note]
     > По умолчанию идентификатор пользователя SAML указан в идентификаторе имени. Его можно заменить атрибутом и ввести имя соответствующего атрибута.
 
-    д. Если выбран параметр **Идентификатор пользователя указан в элементе Attribute**, то в текстовом поле **Имя атрибута** введите имя атрибута, в котором ожидается идентификатор пользователя.
+    д. Если выбран параметр **User ID is in an Attribute element** (Идентификатор пользователя указан в элементе Attribute), введите в текстовое поле **Attribute name** (Имя атрибута) имя атрибута, в котором ожидается идентификатор пользователя.
 
     Е. При использовании федеративного домена (например, AD FS и т. д.) для Azure AD выберите параметр **Включить обнаружение домашней области** и настройте **доменное имя**.
 
@@ -222,8 +226,7 @@ ms.locfileid: "57882103"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
-    Например BrittaSimon@contoso.com.
+    b. В поле **Имя пользователя** введите `brittasimon\@yourcompanydomain.extension`. Например, BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -259,7 +262,7 @@ ms.locfileid: "57882103"
 
 Чтобы пользователи Azure AD могли выполнять вход на локальный сервер JIRA, их необходимо подготовить в JIRA SAML SSO by Microsoft. Для JIRA SAML SSO by Microsoft подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
+**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
 
 1. Войдите на локальный сервер JIRA в качестве администратора.
 

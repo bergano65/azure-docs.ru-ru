@@ -9,17 +9,17 @@ ms.assetid: b97bd4e6-dff0-4976-ac20-d5c109a559a8
 ms.service: app-service
 ms.devlang: go
 ms.topic: quickstart
-ms.date: 01/17/2018
+ms.date: 03/28/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 3335163c15319e39858003032ae7113c9c26a3fd
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: 88c9996ce3f2d89ae58881c913f6bd4e549b5814
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58438586"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59547310"
 ---
-# <a name="deploy-a-dockergo-web-app-in-web-app-for-containers"></a>Развертывание веб-приложения Docker или Go в Веб-приложении для контейнеров
+# <a name="run-a-custom-linux-container-in-azure-app-service"></a>Запуск пользовательского контейнера Linux в Службе приложений Azure
 
 [Служба приложений в Linux](app-service-linux-intro.md) предоставляет предопределенные стеки приложений на платформе Linux с поддержкой определенных языков (например, .NET, PHP, Node.js и т. д.). Вы также можете использовать пользовательский образ Docker для запуска веб-приложения в стеке приложений, который еще не определен в Azure. В этом кратком руководстве показано, как создать веб-приложение и развернуть образ Go из центра Docker. Создайте веб-приложение с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli).
 
@@ -75,4 +75,10 @@ http://<app_name>.azurewebsites.net/hello
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Использование пользовательского образа Docker](tutorial-custom-docker-image.md)
+> [Руководство по развертыванию из частного репозитория контейнеров](tutorial-custom-docker-image.md)
+
+> [!div class="nextstepaction"]
+> [Настройка пользовательского контейнера](configure-custom-container.md)
+
+> [!div class="nextstepaction"]
+> [Руководство по приложению WordPress с несколькими контейнерами](tutorial-multi-container-app.md)

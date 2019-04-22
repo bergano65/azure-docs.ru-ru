@@ -11,13 +11,13 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab
 manager: craigg
-ms.date: 04/09/2019
-ms.openlocfilehash: a6abaf9b444ca9b3f14093dde1239d9158dfd3ff
-ms.sourcegitcommit: 6e32f493eb32f93f71d425497752e84763070fad
+ms.date: 04/10/2019
+ms.openlocfilehash: d94e00c8a475e29ddd671004b8137ba4e6efd107
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2019
-ms.locfileid: "59469647"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59495043"
 ---
 # <a name="quickstart-create-an-azure-sql-database-managed-instance"></a>Краткое руководство. Создание управляемого экземпляра Базы данных SQL Azure
 
@@ -52,6 +52,7 @@ ms.locfileid: "59469647"
    |**Collation**|Параметры сортировки для управляемого экземпляра|При переносе баз данных SQL Server необходимо проверить параметры сортировки источника с помощью `SELECT SERVERPROPERTY(N'Collation')` и использовать это значение. Сведения о параметрах сортировки см. в статье [Задание или изменение параметров сортировки сервера](https://docs.microsoft.com/sql/relational-databases/collations/set-or-change-the-server-collation).|
    |**Расположение**|Расположение, в котором хотите создать управляемый экземпляр|Дополнительные сведения о регионах Azure см. [здесь](https://azure.microsoft.com/regions/).|
    |**Виртуальная сеть**|Щелкните **Создать виртуальную сеть** или выберите допустимую виртуальную сеть и подсеть.| Если поля сети и подсети недоступны, прежде чем выбирать эти значения в качестве целевого объекта для нового управляемого экземпляра, нужно [изменить их в соответствии с требованиями сети](sql-database-managed-instance-configure-vnet-subnet.md). Сведения о требованиях к настройке сетевой среды для управляемого экземпляра см. в статье [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md). |
+   |**Тип подключения**|Выберите тип соединения: прокси-сервер или перенаправление|Подробные сведения о типах соединений см. в. разделе о [политике подключений SQL Azure](sql-database-connectivity-architecture.md#connection-policy).|
    |**Группа ресурсов**|Новая или существующая группа ресурсов|Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions).|
 
    ![форма управляемого экземпляра](./media/sql-database-managed-instance-get-started/managed-instance-create-form.png)

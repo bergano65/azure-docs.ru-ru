@@ -16,12 +16,12 @@ ms.workload: identity
 ms.date: 09/24/2018
 ms.author: andret
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73d762e5bb358964b439d1dc6027abc01332da21
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: a6119baf79b9323a5c1ad06d75e1410f632015f0
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58007611"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59548565"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт
 
@@ -32,7 +32,7 @@ ms.locfileid: "58007611"
 По завершении работы с данным руководством приложение будет принимать операции входа с помощью рабочих и учебных учетных записей из организаций, интегрированных с Azure Active Directory (Azure AD).
 
 > [!NOTE]
-> Если вы планируете включить вход для личных учетных записей помимо рабочих и учебных учетных записей, можно использовать [конечную точку версии 2](azure-ad-endpoint-comparison.md). Дополнительные сведения о текущих ограничениях конечной точки версии 2 см. в статье [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](tutorial-v2-asp-webapp.md), а также в [этой статье](active-directory-v2-limitations.md).
+> Если вы планируете включить вход для личных учетных записей помимо рабочих и учебных учетных записей, можно использовать *[конечную точку платформы удостоверений Майкрософт](azure-ad-endpoint-comparison.md)*. Дополнительные сведения приведены в [этом руководстве по ASP.NET](tutorial-v2-asp-webapp.md), а также [в этой статье](active-directory-v2-limitations.md) о *конечной точке платформы удостоверений Майкрософт*.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

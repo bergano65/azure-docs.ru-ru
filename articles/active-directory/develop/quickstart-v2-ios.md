@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Azure Active Directory версии 2 для iOS | Документация Майкрософт
+title: Краткое руководство. Использование приложений iOS с платформой удостоверений Майкрософт | Azure
 description: Узнайте, как осуществлять вход пользователям и запрашивать Microsoft Graph в собственном приложении iOS.
 services: active-directory
 documentationcenter: dev-center-name
@@ -17,12 +17,12 @@ ms.date: 03/20/2019
 ms.author: dadobali
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57aabb25b960c1135704c62c30b5724026078b08
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: e6340e0f349d66ecf6baaca481722396a6d786c5
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58439268"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59496135"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-native-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из собственного приложения iOS
 
@@ -30,7 +30,7 @@ ms.locfileid: "58439268"
 
 В этом кратком руководстве содержится пример кода, который демонстрирует, как собственное приложение iOS может входить в личные, рабочие и школьные учетные записи, получать маркер доступа и вызывать Microsoft Graph API.
 
-![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-ios/ios-intro-updated.png)
+![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-ios/ios-intro.svg)
 
 > [!div renderon="docs"]
 > ## <a name="register-and-download"></a>Регистрация и загрузка
@@ -53,7 +53,7 @@ ms.locfileid: "58439268"
 
 #### <a name="step-2-download-your-web-server-or-project"></a>Шаг 2. Скачивание веб-сервера или проекта
 
-- [Загрузка проекта XCode](https://github.com/Azure-Samples/active-directory-ios-swift-native-v2/archive/master.zip)
+- [Скачайте проект XCode.](https://github.com/Azure-Samples/active-directory-ios-swift-native-v2/archive/master.zip)
 
 #### <a name="step-3-configure-your-project"></a>Шаг 3. Настройка проекта
 
@@ -147,7 +147,7 @@ self.applicationContext = try MSALPublicClientApplication(clientId: kClientID, a
 > |Описание ||
 > |---------|---------|
 > | `clientId` | Идентификатор зарегистрированного приложения на *portal.azure.com* |
-> | `authority` | Конечная точка Azure AD версии 2.0. В большинстве случаев это будет *https<span/>://login.microsoftonline.com/common* |
+> | `authority` | Конечная точка платформы удостоверений Майкрософт. В большинстве случаев это будет *https<span/>://login.microsoftonline.com/common* |
 
 ### <a name="requesting-tokens"></a>Запрос маркеров
 
@@ -155,7 +155,7 @@ MSAL имеет два метода получения маркеров безо
 
 #### <a name="getting-an-access-token-interactively"></a>Интерактивное получение маркера доступа
 
-Некоторые ситуации требуют принуждения пользователей взаимодействовать с конечной точкой Azure Active Directory (Azure AD) версии 2.0, что приведет к переключению контекста в системный браузер для проверки учетных данных пользователей или для получения согласия. Некоторые примеры:
+Некоторые ситуации требуют принудительного взаимодействия пользователей с конечной точкой платформы удостоверений Майкрософт. Это приводит к переключению контекста на системный браузер для проверки учетных данных пользователей или получения согласия. Некоторые примеры:
 
 * первый вход пользователей в приложение;
 * когда пользователям может потребоваться повторно ввести учетные данные, так как истек срок действия пароля;
@@ -190,6 +190,6 @@ applicationContext.acquireTokenSilent(forScopes: self.kScopes, account: applicat
 ### <a name="learn-the-steps-to-create-the-application-used-in-this-quickstart"></a>Изучите этапы создания приложения, используемые в этом кратком руководстве
 
 > [!div class="nextstepaction"]
-> [Вызов API Microsoft Graph из приложения iOS](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-ios)
+> [Вызов API Graph из приложения iOS](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-ios)
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]

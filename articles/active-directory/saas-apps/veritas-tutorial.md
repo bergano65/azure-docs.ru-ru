@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 59012bf32a4e1f0532b4d42e510d431180c35730
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59264188"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-veritas-enterprise-vaultcloud-sso"></a>Руководство по Интеграция Azure Active Directory с Veritas Enterprise Vault.cloud SSO
@@ -105,7 +105,7 @@ ms.locfileid: "59264188"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Veritas Enterprise Vault.cloud SSO](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://personal.ap.archive.veritas.com/CID=<CUSTOMERID>`
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://personal.ap.archive.veritas.com/CID=<CUSTOMERID>`.
 
     b. В поле **Идентификатор** введите URL-адрес соответствующего центра обработки данных:
 

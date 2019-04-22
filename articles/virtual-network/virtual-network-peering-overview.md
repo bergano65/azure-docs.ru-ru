@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/01/2019
 ms.author: anavin
-ms.openlocfilehash: e6c5a9aa3e4e173ecfc79f4072d091493677afed
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: b65bad57a300d941774f5d3e5d01967f0c13d684
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59489987"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59678485"
 ---
 # <a name="virtual-network-peering"></a>Пиринг между виртуальными сетями
 
@@ -63,8 +63,7 @@ ms.locfileid: "59489987"
 
 ![Транзит в пиринговой виртуальной сети](./media/virtual-networks-peering-overview/figure04.png)
 
-Транзит через шлюз поддерживается для Пиринга виртуальной сети и глобальный Пиринг (Предварительная версия). Можно использовать удаленные шлюзы или разрешить Транзит шлюзов в пиринговые виртуальные сети на этапе предварительной версии. Предварительная версия доступна во всех регионах Azure, Китай облачных регионах и регионы облака для государственных организаций. Нет список разрешений необходим. Можно проверить в предварительной версии с помощью интерфейса командной строки, PowerShell, шаблонов или API. Портал не поддерживается в предварительной версии.
-Транзит через шлюз между виртуальными сетями, созданными с помощью разных моделей развертывания (Resource Manager и классическая модель) поддерживается только в том случае, если шлюз находится в виртуальной сети (Resource Manager). См. дополнительные сведения о [настройке VPN-шлюза для передачи данных с помощью пиринга между виртуальными сетями](../vpn-gateway/vpn-gateway-peering-gateway-transit.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+Транзит через шлюз поддерживается для Пиринга и Пиринга глобальной виртуальной сети. Транзит через шлюз между виртуальными сетями, созданными с помощью разных моделей развертывания (Resource Manager и классическая модель) поддерживается только в том случае, если шлюз находится в виртуальной сети (Resource Manager). См. дополнительные сведения о [настройке VPN-шлюза для передачи данных с помощью пиринга между виртуальными сетями](../vpn-gateway/vpn-gateway-peering-gateway-transit.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 Трафик между пиринговыми виртуальными сетями, которые используют одно подключение Azure ExpressRoute, передается по пиринговой связи (т. е. через магистральную сеть Azure). Вы по-прежнему можете использовать в каждой виртуальной сети локальные шлюзы для подключения к локальному каналу. или настроить транзит через общий шлюз для локального подключения.
 
@@ -99,9 +98,9 @@ ms.locfileid: "59489987"
 
     |Модель развертывания Azure             | Подписка  |
     |---------                          |---------|
-    |Обе — диспетчер ресурсов              |[Аналогично](tutorial-connect-virtual-networks-portal.md)|
+    |Обе — диспетчер ресурсов              |[Та же](tutorial-connect-virtual-networks-portal.md)|
     |                                   |[Разные](create-peering-different-subscriptions.md)|
-    |Одна — диспетчер ресурсов, вторая — классическая  |[Аналогично](create-peering-different-deployment-models.md)|
+    |Одна — диспетчер ресурсов, вторая — классическая  |[Та же](create-peering-different-deployment-models.md)|
     |                                   |[Разные](create-peering-different-deployment-models-subscriptions.md)|
 
 * См. сведения о создании [звездообразной топологии сети](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?toc=%2fazure%2fvirtual-network%2ftoc.json).

@@ -5,19 +5,19 @@ services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 01/08/2019
+ms.date: 04/15/2019
 ms.topic: tutorial
 ms.service: azure-blockchain
 ms.reviewer: brendal
 manager: femila
-ms.openlocfilehash: 55207e1eb8fe1b88df7f9bfb84a1da505d0e0252
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.openlocfilehash: 89c83ed6d02a60978bd54fb97d37063e34f6c0c7
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54332223"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59578856"
 ---
-# <a name="tutorial-using-applications-in-azure-blockchain-workbench"></a>Руководство. Использование приложений в Azure Blockchain Workbench
+# <a name="tutorial-using-applications-in-azure-blockchain-workbench"></a>Руководство по Использование приложений в Azure Blockchain Workbench
 
 Blockchain Workbench позволяет создавать контракты и выполнять действия по ним. Также вы здесь можете просмотреть некоторые сведения, например текущее состояние и журнал транзакций.
 
@@ -40,7 +40,7 @@ Blockchain Workbench позволяет создавать контракты и
 
 Необходимо выполнить вход от имени члена Blockchain Workbench. Если в списке нет приложений, значит вы являетесь членом Blockchain Workbench, но не являетесь членом какого-либо приложения. Назначить членство в приложении может администратор Blockchain Workbench.
 
-## <a name="create-new-contract"></a>Создание контракта 
+## <a name="create-new-contract"></a>Создание контракта
 
 Чтобы создать новый контракт, необходимо быть членом, который указан как **инициатор** контракта. Сведения об определении ролей приложения и инициаторов контракта см. в разделе [Рабочие процессы](configuration.md#workflows). Сведения о назначении членам ролей приложения см. в разделе [Добавление участника в приложение](manage-users.md#add-member-to-application).
 

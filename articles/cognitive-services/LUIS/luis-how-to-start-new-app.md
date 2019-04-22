@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 03/28/2019
+ms.date: 04/16/2019
 ms.author: diberry
-ms.openlocfilehash: 72c4f23f47e0a2c6d9a96dbbe36716bc3ab665f1
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: daffbe3f3158bb232f7db7ac90d766661e937643
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58891435"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59679658"
 ---
 # <a name="create-a-new-luis-app-in-the-luis-portal"></a>Создание приложения LUIS на портале LUIS
 Создать приложение LUIS можно двумя способами: на портале [LUIS](https://www.luis.ai) или с помощью [API-интерфейсов](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f) разработки LUIS.
@@ -67,10 +67,19 @@ ms.locfileid: "58891435"
 
 * Приложение с таким именем уже существует. Повторный импорт приложения и задайте **необязательное имя** на новое имя. 
 
-## <a name="export-app"></a>Экспорт приложения
+## <a name="export-app-for-backup"></a>Экспортировать приложение для резервного копирования
 
-1. На странице **Мои приложения** выберите **Import new app** (Импорт нового приложения).
-1. В диалоговом окне **Импорт нового приложения** выберите JSON-файл, определяющий приложение LUIS.
+1. На **Мои приложения** выберите **Экспорт**.
+1. Выберите **экспортировать в формате JSON**. Ваш браузер загружает активной версии приложения.
+1. Добавьте этот файл в систему резервного копирования для архивации модели.
+
+## <a name="export-app-for-containers"></a>Экспорт приложения для контейнеров
+
+1. На **Мои приложения** выберите **Экспорт**.
+1. Выберите **экспортировать в виде контейнера** выберите, какие опубликованного слоте (производственного или рабочей области), вы хотите экспортировать.
+1. Используйте этот файл с вашей [контейнера LUIS](luis-container-howto.md). 
+
+    Если вы заинтересованы в экспорта обученную, но не еще опубликованной модели для использования с контейнером LUIS, перейдите на страницу **версии** странице и экспортировать из него. 
 
 ## <a name="delete-app"></a>Удаление приложения
 

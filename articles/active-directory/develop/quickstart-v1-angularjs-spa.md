@@ -18,12 +18,12 @@ ms.author: celested
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c508c402707663489fc383dccd958559df6b217f
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 6596d1d8251bafd1ff013961555b20475e3a06d3
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56194688"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59544946"
 ---
 # <a name="quickstart-build-an-angularjs-single-page-app-for-sign-in-and-sign-out-with-azure-active-directory"></a>Краткое руководство. Создание одностраничного приложения AngularJS для входа и выхода с помощью Azure Active Directory
 
@@ -45,6 +45,9 @@ ms.locfileid: "56194688"
 1. Зарегистрировать приложения в Azure AD.
 2. Установить библиотеку ADAL и настроить одностраничное приложение.
 3. Применить ADAL для защиты страниц одностраничного приложения.
+
+> [!NOTE]
+> Если вы планируете включить вход для личных учетных записей помимо рабочих и учебных учетных записей, можно использовать *[конечную точку платформы удостоверений Майкрософт](azure-ad-endpoint-comparison.md)*. Дополнительные сведения приведены в [этом руководстве по JavaScript SPA](tutorial-v2-javascript-spa.md), а также [в этой статье](active-directory-v2-limitations.md) о *конечной точке платформы удостоверений Майкрософт*. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 

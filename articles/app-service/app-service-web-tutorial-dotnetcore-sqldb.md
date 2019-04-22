@@ -1,5 +1,5 @@
 ---
-title: Создание веб-приложения .NET Core с базой данных SQL в Службе приложений Azure| Документация Майкрософт
+title: ASP.NET Core с Базой данных SQL — Служба приложений Azure | Документация Майкрософт
 description: Узнайте, как создать приложение .NET Core, работающее в службе приложений Azure, с подключением к базе данных SQL.
 services: app-service\web
 documentationcenter: dotnet
@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.date: 01/31/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: d62e74c5d81cdf3331bde349a9ec5dfe3071e7f8
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
+ms.openlocfilehash: c83e14d65b30775f0dad54ab9ade1a7bed5ac821
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55510703"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59548873"
 ---
-# <a name="tutorial-build-a-net-core-and-sql-database-app-in-azure-app-service"></a>Руководство. Создание приложения .NET Core с Базой данных SQL в Службе приложений Azure
+# <a name="tutorial-build-an-aspnet-core-and-sql-database-app-in-azure-app-service"></a>Руководство по Создание приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure
 
 > [!NOTE]
 > В этой статье мы развернем приложение в службе приложений на платформе Windows. Дополнительные сведения о развертывании в Службе приложений в _Linux_ см. в руководстве по [созданию приложения .NET Core с Базой данных SQL в Службе приложений Azure в Linux](./containers/tutorial-dotnetcore-sqldb-app.md).

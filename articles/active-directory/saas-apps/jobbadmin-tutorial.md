@@ -16,10 +16,10 @@ ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ad55656ba91c2f344024700344550849a36ed9b6
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59264001"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jobbadmin"></a>Руководство по Интеграция Azure Active Directory с Jobbadmin
@@ -105,11 +105,11 @@ ms.locfileid: "59264001"
 
     ![Сведения о домене и URL-адресах единого входа приложения Jobbadmin](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<instancename>.jobbnorge.no/auth/saml2/login.ashx`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<instancename>.jobbnorge.no/auth/saml2/login.ashx`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<instancename>.jobnorge.no`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<instancename>.jobnorge.no`.
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<instancename>.jobbnorge.no/auth/saml2/login.ashx`
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<instancename>.jobbnorge.no/auth/saml2/login.ashx`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Вместо них необходимо указать фактические значения URL-адреса входа, идентификатора и URL-адреса ответа. Чтобы получить их, обратитесь в [службу поддержки клиентов Jobbadmin](https://www.jobbnorge.no/om-oss/kontakt-oss). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

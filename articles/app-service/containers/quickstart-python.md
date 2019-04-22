@@ -12,25 +12,21 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 02/08/2019
+ms.date: 03/27/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 5cca0d866442583c87665b3a1db8c65c66d12f0a
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: 04f08965d161e35a9ae4423ad5d3cf80cb407b8a
+ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58285383"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59607778"
 ---
 # <a name="create-a-python-app-in-azure-app-service-on-linux-preview"></a>Создание приложения Python в Службе приложений Azure в Linux (предварительная версия)
 
-[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как развернуть приложение Python на основе встроенного образа Python (предварительная версия) в службе приложений в Linux с помощью [Azure CLI](/cli/azure/install-azure-cli).
-
-Выполните инструкции, приведенные в этом руководстве, с помощью компьютера Mac, Windows или Linux.
+В этом кратком руководстве вы развернете простое приложение Python в [Службе приложений на платформе Linux](app-service-linux-intro.md), которая предоставляет высокомасштабируемую веб-службу размещения с самостоятельной установкой исправлений. В руководстве используется интерфейс командной строки Azure ([Azure CLI](/cli/azure/install-azure-cli)) в интерактивной браузерной оболочке Azure Cloud Shell. Поэтому все инструкции можно выполнять на компьютере Mac, Linux или Windows.
 
 ![Пример приложения, выполняющегося в Azure](media/quickstart-python/hello-world-in-browser.png)
-
-[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -38,6 +34,7 @@ ms.locfileid: "58285383"
 
 * <a href="https://www.python.org/downloads/" target="_blank">установите Python 3.7</a>;
 * <a href="https://git-scm.com/" target="_blank">установите Git</a>;
+* Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начать работу.
 
 ## <a name="download-the-sample-locally"></a>Скачать пример на локальный компьютер
 
@@ -109,7 +106,7 @@ Checking connectivity... done.
 
 Перейдите в каталог, в котором содержится пример кода, и выполните команду `az webapp up`.
 
-В следующем примере замените <app-name> уникальным именем приложения.
+В следующем примере замените `<app-name>` уникальным именем приложения.
 
 ```bash
 cd python-docs-hello-world
@@ -174,10 +171,10 @@ return "Hello Azure!"
 
 Сохраните изменения и выйдите из редактора. Выполните команду `^S`, чтобы сохранить файл, и `^Q` — чтобы выйти.
 
-Теперь можно повторно развернуть приложение. Замените `<app-name>` именем своего приложения.
+Повторно разверните приложение с помощью команды [`az webapp up`](/cli/azure/ext/webapp/webapp?view=azure-cli-latest.md#ext-webapp-az-webapp-up). Замените `<app-name>` на имя приложения и укажите расположение вместо `<location-name>` (с помощью одного из значений в выходных данных команды [`az account list-locations`](/cli/azure/appservice?view=azure-cli-latest.md#az-appservice-list-locations)).
 
 ```bash
-az webapp up -n <app-name>
+az webapp up -n <app-name> -l <location-name>
 ```
 
 После завершения развертывания перейдите в окно браузера, открытое на шаге **перехода в приложение**, и обновите страницу.
@@ -205,13 +202,10 @@ az webapp up -n <app-name>
 Сейчас встроенный образ Python в Службе приложений на платформе Linux доступен в предварительной версии. Вы можете настроить команду для запуска приложения. Также приложения Python для рабочей среды можно создавать с помощью настраиваемого контейнера.
 
 > [!div class="nextstepaction"]
-> [Использование Python и PostgreSQL](tutorial-python-postgresql-app.md)
+> [Руководство по использованию приложения Python с PostgreSQL](tutorial-python-postgresql-app.md)
 
 > [!div class="nextstepaction"]
-> [Настройка пользовательской команды запуска](how-to-configure-python.md#customize-startup-command)
+> [Настройка приложения Python](how-to-configure-python.md)
 
 > [!div class="nextstepaction"]
-> [Устранение неполадок](how-to-configure-python.md#troubleshooting)
-
-> [!div class="nextstepaction"]
-> [Использование пользовательского образа Docker для платформы "Веб-приложения для контейнеров"](tutorial-custom-docker-image.md)
+> [Руководство. Запуск приложения Python в настраиваемом контейнере](tutorial-custom-docker-image.md)

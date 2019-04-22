@@ -19,10 +19,10 @@ ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e6aed38c8c670c751ee51de95e6622685caea1ce
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59500929"
 ---
 # <a name="microsoft-identity-platform-and-the-oauth-20-client-credentials-flow"></a>Платформа Microsoft identity и поток учетных данных клиента OAuth 2.0
@@ -48,8 +48,8 @@ ms.locfileid: "59500929"
 
 Как правило, приложение получает прямую авторизацию на доступ к ресурсу двумя способами:
 
-* [через список управления доступом (ACL) в ресурсе;](#access-control-lists)
-* [путем назначения разрешений приложению в Azure AD.](#application-permissions)
+* [с помощью списка управления доступом (ACL) в ресурсе](#access-control-lists);
+* [путем назначения разрешений приложению в Azure AD](#application-permissions).
 
 Эти два метода являются самыми распространенными в Azure AD, и их рекомендуется использовать для клиентов и ресурсов, применяющих поток учетных данных клиента. Ресурс также может выбрать другой способ авторизации клиентов. Каждый сервер ресурсов может выбрать метод, являющийся наиболее оптимальным для приложения.
 

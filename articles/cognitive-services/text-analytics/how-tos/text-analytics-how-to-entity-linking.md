@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 02/13/2019
 ms.author: aahi
 ms.openlocfilehash: dfbb31ce9f61ee28fef046120474a6a170906512
-ms.sourcegitcommit: f24b62e352e0512dfa2897362021b42e0cb9549d
-ms.translationtype: MT
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59505581"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics-preview"></a>Как использовать распознавание именованных сущностей в API анализа текста (предварительная версия)
@@ -96,7 +96,7 @@ ms.locfileid: "59505581"
 
 + Создайте запрос **POST**. Ознакомьтесь с документацию по API для этого запроса: [API связывания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/5ac4251d5b4ccd1554da7634)
 
-+ Настройка конечной точки HTTP для извлечения сущностей. Она должна включать `/entities` ресурсов: `https://[your-region].api.cognitive.microsoft.com/text/analytics/v2.1-preview/entities`
++ Настройка конечной точки HTTP для извлечения сущностей. Она должна включать ресурс `/entities`: `https://[your-region].api.cognitive.microsoft.com/text/analytics/v2.1-preview/entities`
 
 + Задайте заголовок запроса, чтобы включить ключ доступа для операций Анализа текста. Дополнительные сведения см. в статье [о поиске конечных точек и ключей доступа](text-analytics-how-to-access-key.md).
 
@@ -287,9 +287,9 @@ ms.locfileid: "59505581"
 
 ## <a name="see-also"></a>См. также 
 
- [Обзор Анализа текста](../overview.md)  
+ [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)  
  [Часто задаваемые вопросы](../text-analytics-resource-faq.md)</br>
- [Текстовая страница продукта Analytics](//go.microsoft.com/fwlink/?LinkID=759712) 
+ [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712) 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

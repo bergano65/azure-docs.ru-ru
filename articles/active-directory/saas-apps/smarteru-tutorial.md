@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
 ms.openlocfilehash: d1b2d80a1960abb37262ef7429ee5b99665986b4
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59265140"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-smarteru"></a>Руководство по Интеграция Azure Active Directory со SmarterU
@@ -51,7 +51,7 @@ ms.locfileid: "59265140"
 
 Чтобы настроить интеграцию SmarterU с Azure AD, необходимо добавить SmarterU из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить SmarterU из коллекции, сделайте следующее:**
+**Чтобы добавить SmarterU из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -202,7 +202,7 @@ ms.locfileid: "59265140"
 
 Чтобы пользователи Azure AD могли входить в SmarterU, их необходимо подготовить для SmarterU. В случае SmarterU подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Выполните вход в клиент **SmarterU**.
 

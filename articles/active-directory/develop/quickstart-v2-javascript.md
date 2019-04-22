@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство по Azure Active Directory версии 2 для JavaScript | Документация Майкрософт
-description: Узнайте, как приложения JavaScript могут вызывать API, которому необходимы маркеры доступа, с помощью конечной точки Azure Active Directory версии 2.0.
+title: Краткое руководство. Использование приложений JavaScript с платформой удостоверений Майкрософт | Azure
+description: Узнайте, как приложения JavaScript могут вызывать API, которому необходимы маркеры доступа от платформы удостоверений Майкрософт.
 services: active-directory
 documentationcenter: dev-center-name
 author: navyasric
@@ -12,24 +12,32 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 03/20/2019
+ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe8c2287da7a7eabc26ff134d8bb44c5e45085f1
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: 2021c5028637a6f7e732df61b6f7c034ef79324f
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58203053"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59547403"
 ---
-# <a name="quickstart-sign-in-users-and-acquire-an-access-token-from-a-javascript-application"></a>Краткое руководство. Выполнение входа пользователей и получение маркера доступа из приложения JavaScript
+# <a name="quickstart-sign-in-users-and-acquire-an-access-token-from-a-javascript-single-page-application-spa"></a>Краткое руководство. Выполнение входа пользователей и получение маркера доступа от одностраничного приложения JavaScript (SPA)
 
 [!INCLUDE [active-directory-develop-applies-v2-msal](../../../includes/active-directory-develop-applies-v2-msal.md)]
 
-Из этого краткого руководства вы узнаете, как использовать пример кода, демонстрирующий, как одностраничное приложение (SPA) JavaScript может выполнять вход с помощью личных, рабочих и учебных учетных записей, а также получать маркер доступа, чтобы вызывать API Microsoft Graph или любой другой веб-API.
+Из этого краткого руководства вы узнаете, как использовать пример кода, демонстрирующий, как одностраничное приложение (SPA) JavaScript может выполнять вход с помощью личных, рабочих и учебных учетных записей, а также как получить маркер доступа, чтобы вызывать API Microsoft Graph или любой другой веб-API.
 
-![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-javascript/javascriptspa-intro-updated.png)
+![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-javascript/javascriptspa-intro.svg)
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Для работы с этим руководством необходимо сделать следующее:
+* Чтобы запускать проект на сервере Node.js:
+    * Установите [Node.js](https://nodejs.org/en/download/)
+    * Установите [Visual Studio Code](https://code.visualstudio.com/download) для внесения правок в файлы проекта.
+* Чтобы запустить проект как решение Visual Studio, установите [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/).
 
 > [!div renderon="docs"]
 > ## <a name="register-and-download-your-quickstart-application"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
@@ -39,7 +47,9 @@ ms.locfileid: "58203053"
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
-> 1. Откройте [Регистрация приложений (предварительная версия)](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/JavascriptSpaQuickstartPage/sourceType/docs) на портале Azure.
+> 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+> 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
+> 1. Откройте на [портале Azure новую панель регистрации приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/JavascriptSpaQuickstartPage/sourceType/docs).
 > 1. Введите имя своего приложения и щелкните **Зарегистрировать**.
 > 1. Следуйте инструкциям для загрузки и автоматической настройки нового приложения одним щелчком мыши.
 >
@@ -47,9 +57,10 @@ ms.locfileid: "58203053"
 >
 > #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 >
-> 1. Чтобы зарегистрировать приложение, войдите на [портал Azure](https://portal.azure.com/).
+> 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 > 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
-> 1. В области навигации слева выберите службу **Azure Active Directory**, а затем выберите **App registrations (Preview) (Регистрация приложений (предварительная версия)) > Новая регистрация**.
+> 1. Перейдите на страницу [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) Платформы удостоверений Майкрософт для разработчиков.
+> 1. Выберите **Новая регистрация**.
 > 1. Когда откроется страница **Register an application** (Регистрация приложения), введите имя приложения.
 > 1. В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт).
 > 1. Выберите платформу **Веб** в разделе **URI перенаправления** и установите значение `http://localhost:30662/`.
@@ -121,14 +132,16 @@ var applicationConfig = {
 
 * Если вы используете **Visual Studio**, выберите решение проекта и нажмите клавишу [F5](https://visualstudio.microsoft.com/downloads/), чтобы запустить проект.
 
+Когда приложение загрузится в браузере, щелкните **Войти**.  После первого входа предоставьте приложению разрешение на использование данных вашего профиля для входа. После успешного входа на странице отобразятся данные вашего профиля пользователя.
+
 ## <a name="more-information"></a>Дополнительные сведения
 
 ### <a name="msaljs"></a>*msal.js*
 
-MSAL — это библиотека, используемая для выполнения входа пользователей и запросов маркеров, используемых для доступа к API, защищенному Microsoft Azure Active Directory (Azure AD). В файле *index.html*, используемом в кратком руководстве, содержится ссылка на библиотеку:
+MSAL — это библиотека, используемая для выполнения входа пользователей и запросов маркеров, которые нужны для доступа к API, защищенному платформой удостоверений Майкрософт. В файле *index.html*, используемом в кратком руководстве, содержится ссылка на библиотеку:
 
 ```html
-<script src="https://secure.aadcdn.microsoftonline-p.com/lib/0.2.3/js/msal.min.js"></script>
+<script src="https://secure.aadcdn.microsoftonline-p.com/lib/0.2.4/js/msal.min.js"></script>
 ```
 
 Кроме того, если у вас установлен Node, можно загрузить его через npm:
@@ -189,14 +202,14 @@ myMSALObj.acquireTokenSilent(applicationConfig.graphScopes).then(function (acces
 
 #### <a name="get-a-user-token-interactively"></a>Интерактивное получение маркера пользователя
 
-Иногда требуется настроить принудительное взаимодействие пользователей с конечной точкой Azure AD версии 2.0. Например: 
+Иногда требуется настроить принудительное взаимодействие пользователей с конечной точкой платформы удостоверений Майкрософт. Например: 
 * Пользователям может потребоваться повторно ввести учетные данные, так как истек срок действия пароля.
 * Ваше приложение запрашивает доступ к дополнительным областям ресурса, на обращение к которым пользователь должен дать согласие.
 * Требуется двухфакторная проверка подлинности
 
 Обычный рекомендуемый шаблон для большинства приложений — вызов `acquireTokenSilent`, перехват исключения, а затем вызов `acquireTokenRedirect` (или `acquireTokenPopup`) для запуска интерактивного запроса.
 
-После вызова `acquireTokenPopup(scope)` отображается всплывающее окно для входа (или `acquireTokenRedirect(scope)` перенаправляет пользователей на конечную точку Azure AD версии 2.0), где пользователям нужно подтвердить свои учетные данные, предоставить согласие на доступ к требуемому ресурсу или пройти двухфакторную аутентификацию.
+После вызова `acquireTokenPopup(scope)` отображается всплывающее окно для входа (или `acquireTokenRedirect(scope)` перенаправляет пользователей на конечную точку платформы удостоверений Майкрософт), где пользователям нужно подтвердить свои учетные данные, предоставить согласие на доступ к требуемому ресурсу или пройти двухфакторную проверку подлинности.
 
 ```javascript
 myMSALObj.acquireTokenPopup(applicationConfig.graphScopes).then(function (accessToken) {

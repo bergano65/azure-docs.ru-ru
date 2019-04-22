@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 09/05/2018
 ms.author: barclayn
 ms.custom: mvc
-ms.openlocfilehash: c7bf6a22da89f0bf1e3897ec8fc30238b86b7b75
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 9aa7c4a5464230abe9ac7e75854a7422534f40f6
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58882756"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59522310"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-by-using-a-node-web-app"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node 
 
@@ -150,7 +150,7 @@ npm install
     ```
     http://<app name>.azurewebsites.net
     ```
-Предыдущая команда также создает приложение с поддержкой Git, что позволяет развертывать Azure из локального репозитория Git. Локальный репозиторий Git настроен со следующим URL-адресом: https://<username>@<app_name>.scm.azurewebsites.net/<app_name>.git.
+Предыдущая команда также создает приложение с поддержкой Git, что позволяет развертывать Azure из локального репозитория Git. Локальный репозиторий Git настроен с таким URL-адресом: `https://<username>@<app_name>.scm.azurewebsites.net/<app_name>.git`.
 
 После выполнения предыдущей команды в локальный репозиторий Git можно добавить удаленное приложение Azure. Замените `<url>` на URL-адрес репозитория Git.
 
@@ -194,9 +194,9 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <PrincipalId> --s
 git push azure master
 ```
 
-После этого при переходе на https://<app_name>.azurewebsites.net отобразится секретное значение. Убедитесь, что вы заменили имя <YourKeyVaultName> именем своего хранилища.
+После этого вы можете перейти по адресу `https://<app_name>.azurewebsites.net`, чтобы просмотреть значение секрета. Убедитесь, что вы заменили имя `<YourKeyVaultName>` именем своего хранилища.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Пакет SDK Azure для Node](https://docs.microsoft.com/javascript/api/overview/azure/key-vault)
+> [пакетов SDK Azure для Node](https://docs.microsoft.com/javascript/api/overview/azure/key-vault)

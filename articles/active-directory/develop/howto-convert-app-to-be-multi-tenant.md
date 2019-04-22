@@ -19,10 +19,10 @@ ms.reviewer: jmprieur, lenalepa, sureshja
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c2054a873d73bce7048ef9e48adabf3fb5279df9
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59500402"
 ---
 # <a name="how-to-sign-in-any-azure-active-directory-user-using-the-multi-tenant-application-pattern"></a>Практическое руководство: Вход любого пользователя Azure Active Directory с помощью шаблона мультитенантного приложения
@@ -36,8 +36,8 @@ ms.locfileid: "59500402"
 
 Преобразовать приложение в мультитенантное приложение Azure AD можно с помощью четырех простых шагов:
 
-1. [Обновите регистрацию приложения, изменив ее на мультитенантную.](#update-registration-to-be-multi-tenant)
-2. [Обновите код для отправки запросов в конечную точку "/common".](#update-your-code-to-send-requests-to-common)
+1. [Измените тип регистрации вашего приложения на мультитенантную.](#update-registration-to-be-multi-tenant)
+2. [Обновите код для отправки запросов в конечную точку /common.](#update-your-code-to-send-requests-to-common)
 3. [Обновите код для обработки нескольких значений издателя.](#update-your-code-to-handle-multiple-issuer-values)
 4. [Изучите особенности получения согласия пользователя и администратора и внесите соответствующие изменения в код.](#understand-user-and-admin-consent)
 

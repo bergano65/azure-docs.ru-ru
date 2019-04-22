@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 12/10/2018
 ms.author: routlaw
 ms.custom: seodec18
-ms.openlocfilehash: bab6510af98b153ecb61db8fc49b5124aae04598
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.openlocfilehash: 5c9f70650f518c72a75d9a7826e7cbc30a95a00c
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59500470"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59680882"
 ---
 # <a name="java-developers-guide-for-app-service-on-linux"></a>Руководство разработчика для Java для службы приложений в Linux
 
@@ -28,9 +28,9 @@ ms.locfileid: "59500470"
 
 ## <a name="deploying-your-app"></a>Развертывание приложения
 
-Вы можете использовать модуль Maven для развертывания файлов JAR и WAR. Дополнительные сведения о модуле Maven см. в [Руководстве разработчика для Java для службы приложений в Linux](https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme?view=azure-java-stable).
+Можно использовать [подключаемого модуля Maven для службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) для развертывания WAR-файлы и .jar файлов. Развертывание с помощью популярных интегрированных сред разработки также поддерживается с [набора средств Azure для IntelliJ](/java/azure/intellij/azure-toolkit-for-intellij) или [средств Azure для Eclipse](/java/azure/eclipse/azure-toolkit-for-eclipse).
 
-Если вы не используете Maven, метод развертывания будет зависеть от типа вашего архива.
+В противном случае метод развертывания будет зависеть от вашей тип архива:
 
 - Чтобы развернуть файлы WAR в Tomcat, используйте конечную точку `/api/wardeploy/` для публикации файла архива. Дополнительные сведения об этом API см. в [этой документации](https://docs.microsoft.com/azure/app-service/deploy-zip#deploy-war-file).
 - Чтобы развернуть файлы JAR в образах Java SE, используйте конечную точку `/api/zipdeploy/` сайта Kudu. Дополнительные сведения об этом API см. в [этой документации](https://docs.microsoft.com/azure/app-service/deploy-zip#rest).
@@ -79,11 +79,11 @@ az webapp log tail --name webappname --resource-group myResourceGroup
 
 ## <a name="customization-and-tuning"></a>Настройка
 
-Служба приложений Azure для Linux поддерживает настройку с помощью портала Azure и интерфейса командной строки. Ознакомьтесь со следующими статьями о настройке конкретных веб-приложений не на платформе Java:
+Служба приложений Azure для Linux поддерживает поле настройки и настройки с помощью портала Azure и интерфейса командной строки. Ознакомьтесь со следующими статьями о настройке конкретных веб-приложений не на платформе Java:
 
 - [Настройка параметров службы приложений](/azure/app-service/web-sites-configure?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
 - [Настройка личного домена](/azure/app-service/app-service-web-tutorial-custom-domain?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
-- [Включить SSL](/azure/app-service/app-service-web-tutorial-custom-ssl?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
+- [Включение SSL](/azure/app-service/app-service-web-tutorial-custom-ssl?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
 - [Добавление CDN](/azure/cdn/cdn-add-to-web-app?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
 - [Настройка на сайт Kudu](https://github.com/projectkudu/kudu/wiki/Configurable-settings#linux-on-app-service-settings)
 
@@ -93,7 +93,7 @@ az webapp log tail --name webappname --resource-group myResourceGroup
 
 На портале Azure в разделе **Параметры приложения** для веб-приложения создайте параметр приложения `JAVA_OPTS`, включающий в себя дополнительные параметры, такие как `-Xms512m -Xmx1204m`.
 
-Чтобы настроить параметр приложения из подключаемого модуля Maven, добавьте значение параметра/тегов в разделе подключаемый модуль Azure. В следующем примере задаются минимальный и максимальный размеры кучи для Java.
+Чтобы настроить параметр приложения из подключаемого модуля Maven, добавьте значение параметра/тегов в разделе подключаемый модуль Azure. В следующем примере задается конкретных минимальный и максимальный размер кучи Java:
 
 ```xml
 <appSettings>
@@ -156,7 +156,7 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 
 ### <a name="authenticate-users"></a>Проверка подлинности пользователей
 
-Настройте аутентификацию приложения на портале Azure с помощью параметра **Проверка подлинности и авторизация**. Вы можете включить аутентификацию с помощью Azure Active Directory или имен для входа в социальные сети, таких как Facebook, Google или GitHub. На портале Azure можно настроить только один поставщик аутентификации.  Дополнительные сведения приведены в разделе [Настройка приложения службы приложений для использования входа с помощью Azure Active Directory](/azure/app-service/configure-authentication-provider-aad) и связанных статьях о других поставщиках удостоверений.
+Настроить проверку подлинности приложений на портале Azure с помощью **проверки подлинности и авторизации** параметр. Вы можете включить аутентификацию с помощью Azure Active Directory или имен для входа в социальные сети, таких как Facebook, Google или GitHub. На портале Azure можно настроить только один поставщик аутентификации.  Дополнительные сведения приведены в разделе [Настройка приложения службы приложений для использования входа с помощью Azure Active Directory](/azure/app-service/configure-authentication-provider-aad) и связанных статьях о других поставщиках удостоверений.
 
 Если необходимо включить несколько поставщиков входа, следуйте инструкциям в статье [Настройка проверки подлинности и авторизации в службе приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-authentication-how-to).
 
@@ -182,9 +182,9 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 
 | База данных   | Имя класса драйвера                             | Драйвер JDBC                                                                      |
 |------------|-----------------------------------------------|------------------------------------------------------------------------------------------|
-| PostgreSQL | `org.postgresql.Driver`                        | [Download (Скачать)](https://jdbc.postgresql.org/download.html)                                    |
+| PostgreSQL | `org.postgresql.Driver`                        | [Загрузить](https://jdbc.postgresql.org/download.html)                                    |
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Скачать](https://dev.mysql.com/downloads/connector/j/) (выберите "Platform Independent" (Независимо от платформы)) |
-| SQL Server; | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Download (Скачать)](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
+| SQL Server; | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
 
 Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или Java Persistence API (JPA), сначала настройте переменную среды `CATALINA_OPTS`, считываемую Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
@@ -297,7 +297,7 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 
     Эта строка подключения имеет доступ к нашему приложению как переменную среды с именем `CUSTOMCONNSTR_<your-string-name>`. Например, строка подключения, созданных ранее будет называться `CUSTOMCONNSTR_exampledb`.
 
-2. В вашей `application.properties` файл, ссылаются на эту строку подключения — с именем переменной среды. В нашем примере мы используем следующее выражение.
+2. В вашей `application.properties` файл, ссылаются на эту строку подключения с именем переменной среды. В нашем примере мы используем следующее выражение.
 
     ```yml
     app.datasource.url=${CUSTOMCONNSTR_exampledb}

@@ -5,14 +5,14 @@ author: msmbaldwin
 ms.service: security
 ms.topic: article
 ms.author: mbaldwin
-ms.date: 04/05/2019
+ms.date: 04/16/2019
 ms.custom: seodec18
-ms.openlocfilehash: d7ccf370ae2f3f9add2b73797e8938d4580d81dd
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: 2a5fb822a84792cec059aa6c78b66b3a628f25af
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59493150"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59679284"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
 
@@ -45,8 +45,9 @@ Server дистрибутивы Linux не поддерживается в Azure
 
 | Дистрибутив Linux | Version (версия) | Тип тома, для которого поддерживается шифрование|
 | --- | --- |--- |
+| Ubuntu | 18,04| Диск операционной системы и данных |
 | Ubuntu | 16.04| Диск операционной системы и данных |
-| Ubuntu | 14.04.5</br>[с помощью Azure настроены обновлен до 4.15 или более поздняя версия ядра](azure-security-disk-encryption-tsg.md#bkmk_Ubuntu14) | Диск операционной системы и данных |
+| Ubuntu | 14.04.5</br>[с ядром, оптимизированным для Azure, обновленным до версии 4.15 или более поздней версии](azure-security-disk-encryption-tsg.md#bkmk_Ubuntu14) | Диск операционной системы и данных |
 | RHEL | 7.6 | Диск операционной системы и данных * |
 | RHEL | 7.5 | Диск операционной системы и данных * |
 | RHEL | 7.4 | Диск операционной системы и данных * |
@@ -170,6 +171,6 @@ XFS тома поддерживаются для шифрования диско
 ## <a name="next-steps"></a>Дальнейшие действия
 Из этого документа вы получили ответы на самые распространенные вопросы, связанные с шифрованием дисков Azure. Дополнительные сведения об этой службе см. в следующих статьях:
 
-- [Общие сведения о шифровании дисков Azure](azure-security-disk-encryption-overview.md)
+- [Шифрование дисков Azure для виртуальных машин IaaS](azure-security-disk-encryption-overview.md)
 - [Шифрование диска в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-apply-disk-encryption)
-- [Шифрование неактивных данных Azure](https://docs.microsoft.com/azure/security/azure-security-encryption-atrest)
+- [Шифрование неактивных данных в Azure](https://docs.microsoft.com/azure/security/azure-security-encryption-atrest)

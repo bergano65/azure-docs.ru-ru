@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 08/30/2018
+ms.date: 03/27/2019
 ms.author: iainfou
-ms.openlocfilehash: 56e7f9a7760fc270df40dd4524f70b5ddce57198
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.openlocfilehash: 4a648bd2704e93abedeefae14aee66ae8bfeecef
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54847447"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59678128"
 ---
 # <a name="create-an-ingress-controller-to-an-internal-virtual-network-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика для внутренней виртуальной сети в Службе Azure Kubernetes (AKS)
 
@@ -31,7 +31,7 @@ ms.locfileid: "54847447"
 
 В этой статье для установки контроллера входящего трафика NGINX cert-manager и примера веб-приложения используется Helm. Поэтому необходимо инициализировать Helm в кластере AKS и использовать учетную запись службы для Tiller. Дополнительную информацию о настройке и использовании Helm см. в статье [Использование Helm со службой Azure Kubernetes][use-helm].
 
-Для этой статьи требуется Azure CLI версии 2.0.41 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
+Здесь также предполагается, что вы используете Azure CLI версии 2.0.61 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 ## <a name="create-an-ingress-controller"></a>Создание контроллера входящего трафика
 
@@ -50,11 +50,15 @@ controller:
 Разверните диаграмму *nginx ingress* с помощью Helm. Чтобы использовать файл манифеста, созданный на предыдущем шаге, добавьте параметр `-f internal-ingress.yaml`. Для обеспечения дополнительной избыточности развертываются две реплики контроллеров входящего трафика NGINX с использованием параметра `--set controller.replicaCount`. Чтобы максимально эффективно использовать реплики контроллера входящего трафика, убедитесь, что в кластере AKS используется несколько узлов.
 
 > [!TIP]
-> В следующем примере контроллер входящего трафика устанавливается в пространстве имен `kube-system`. При необходимости вы можете указать другое пространство имен для своей среды. Если в кластере AKS не включено RBAC, добавьте `--set rbac.create=false` в команду.
+> В следующем примере создается пространство имен Kubernetes для входящего трафика ресурсов с именем *входящих данных basic*. Укажите необходимые пространства имен для конкретной среды. Если кластер AKS не включена RBAC, добавьте `--set rbac.create=false` командам Helm.
 
 ```console
+# Create a namespace for your ingress resources
+kubectl create namespace ingress-basic
+
+# Use Helm to deploy an NGINX ingress controller
 helm install stable/nginx-ingress \
-    --namespace kube-system \
+    --namespace ingress-basic \
     -f internal-ingress.yaml \
     --set controller.replicaCount=2
 ```
@@ -62,7 +66,7 @@ helm install stable/nginx-ingress \
 При создании службы распределения нагрузки Kubernetes для контроллера входящего трафика NGINX назначается внутренний IP-адрес, как показано в следующем примере выходных данных.
 
 ```
-$ kubectl get service -l app=nginx-ingress --namespace kube-system
+$ kubectl get service -l app=nginx-ingress --namespace ingress-basic
 
 NAME                                              TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)                      AGE
 alternating-coral-nginx-ingress-controller        LoadBalancer   10.0.97.109   10.240.0.42   80:31507/TCP,443:30707/TCP   1m
@@ -84,13 +88,16 @@ helm repo add azure-samples https://azure-samples.github.io/helm-charts/
 Создайте первую демонстрационную версию приложения из диаграммы Helm с помощью такой команды:
 
 ```console
-helm install azure-samples/aks-helloworld
+helm install azure-samples/aks-helloworld --namespace ingress-basic
 ```
 
 Установите второй экземпляр демонстрационной версии приложения. Укажите новый заголовок для второго экземпляра, чтобы оба приложения визуально отличались. Также задайте уникальное имя службы:
 
 ```console
-helm install azure-samples/aks-helloworld --set title="AKS Ingress Demo" --set serviceName="ingress-demo"
+helm install azure-samples/aks-helloworld \
+    --namespace ingress-basic \
+    --set title="AKS Ingress Demo" \
+    --set serviceName="ingress-demo"
 ```
 
 ## <a name="create-an-ingress-route"></a>Создание маршрута для входящего трафика
@@ -106,6 +113,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: hello-world-ingress
+  namespace: ingress-basic
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
@@ -137,7 +145,7 @@ ingress.extensions/hello-world-ingress created
 Чтобы проверить маршруты для контроллера входящего трафика, перейдите в два приложения с помощью веб-клиента. При необходимости вы можете быстро проверить эту внутреннюю функцию системного модуля pod в кластере AKS. Создайте тестовый системный модуль pod и свяжите с ним сеанс терминала.
 
 ```console
-kubectl run -it --rm aks-ingress-test --image=debian
+kubectl run -it --rm aks-ingress-test --image=debian --namespace ingress-basic
 ```
 
 Установите `curl` в модуле pod с помощью `apt-get`:
@@ -180,7 +188,25 @@ $ curl -L -k http://10.240.0.42/hello-world-two
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-В этой статье для установки компонентов обработки входящего трафика, сертификатов и примеров приложений используется Helm. При развертывании диаграммы Helm создается несколько ресурсов Kubernetes. К ним относятся элементы pod, развертывания и службы. Чтобы очистить эти ресурсы, с помощью команды `helm list` необходимо перечислить выпуски Helm. Найдите диаграммы *nginx-ingress* и *aks-helloworld*, как показано в следующем примере выходных данных.
+В этой статье для установки компонентов обработки входящего трафика, сертификатов и примеров приложений используется Helm. При развертывании диаграммы Helm создается несколько ресурсов Kubernetes. К ним относятся элементы pod, развертывания и службы. Для очистки этих ресурсов, можно либо удалить пространство имен пример целиком или отдельные ресурсы.
+
+### <a name="delete-the-sample-namespace-and-all-resources"></a>Удалить пространство имен примера и все ресурсы
+
+Чтобы удалить пространство имен весь пример, используйте `kubectl delete` команду и укажите имя пространства имен. Будут удалены все ресурсы в пространстве имен.
+
+```console
+kubectl delete namespace ingress-basic
+```
+
+Удалите из репозитория Helm для приложения hello world AKS:
+
+```console
+helm repo remove azure-samples
+```
+
+### <a name="delete-resources-individually"></a>Удаление ресурсов по отдельности
+
+Кроме того более детализированный подход — удалить отдельные ресурсы, созданные. Список Helm освобождает с `helm list` команды. Найдите диаграммы *nginx-ingress* и *aks-helloworld*, как показано в следующем примере выходных данных.
 
 ```
 $ helm list
@@ -207,13 +233,19 @@ release "pioneering-wombat" deleted
 helm repo remove azure-samples
 ```
 
-Наконец, удалите маршрут входящего трафика, направлявший трафик в пример приложения.
+Удалите маршрут входящего трафика, направлявший трафик в пример приложения.
 
 ```console
 kubectl delete -f hello-world-ingress.yaml
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+Наконец вы можете удалить сам пространства имен. Используйте `kubectl delete` команду и укажите имя пространства имен:
+
+```console
+kubectl delete namespace ingress-basic
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 В данной статье упоминаются некоторые внешние компоненты для AKS. Чтобы узнать больше об этих компонентах, см. следующие страницы проекта:
 

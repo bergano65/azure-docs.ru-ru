@@ -106,8 +106,8 @@ sections:
         style: ordered
         items:
           - html: Создание приложения с помощью <a href="/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase">.NET с базой данных SQL Azure</a> или <a href="/azure/app-service/app-service-web-tutorial-nodejs-mongodb-app">Node.js с MongoDB</a>
-          - html: <a href="/azure/app-service/app-service-web-tutorial-custom-domain">Сопоставление имени личного домена с приложением </a>
-          - html: <a href="/azure/app-service/app-service-web-tutorial-custom-SSL">Привязка существующего SSL-сертификата к приложению</a>
+          - html: <a href="/azure/app-service/app-service-web-tutorial-custom-domain">Сопоставление имени личного домена DNS с веб-приложением Azure</a>
+          - html: <a href="/azure/app-service/app-service-web-tutorial-custom-SSL">Bind an existing custom SSL certificate to Azure Web Apps</a> (Привязка существующего SSL-сертификата к приложению)
           - html: <a href="/azure/app-service/app-service-web-tutorial-content-delivery-network">Добавление CDN в приложение</a>
   - title: Развитие навыков с помощью Microsoft Learn
     items:
@@ -147,7 +147,7 @@ sections:
         className: spaced noBullet
         items:
           - html: <a href="/powershell/azureps-cmdlets-docs">Azure PowerShell</a>
-          - html: <a href="/cli/azure/appservice">Инфраструктура CLI Azure</a>
+          - html: <a href="/cli/azure/appservice">Интерфейс командной строки Azure</a>
   - title: Справочные материалы
     items:
       - type: list
@@ -155,7 +155,7 @@ sections:
         className: cardsD
         items:
           - title: Командная строка
-            html: <p><a href="/powershell/azureps-cmdlets-docs">Azure PowerShell</a></p><p><a href="/cli/azure/appservice">Инфраструктура CLI Azure</a></p>
+            html: <p><a href="/powershell/azureps-cmdlets-docs">Azure PowerShell</a></p><p><a href="/cli/azure/appservice">Интерфейс командной строки Azure</a></p>
           - title: Languages
             html: <p><a href="/dotnet/api">.NET</a></p><p><a href="/java/api/">Java</a></p>
           - title: REST

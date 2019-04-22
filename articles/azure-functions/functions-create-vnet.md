@@ -8,16 +8,16 @@ ms.service: azure-functions
 ms.topic: article
 ms.date: 4/11/2019
 ms.author: alkarche
-ms.openlocfilehash: f8ddcbcb25dc45ee71304ffa1bc5c0c4d3751b61
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
-ms.translationtype: MT
+ms.openlocfilehash: 749e211c9844f644e04d5135f99d71918d65b66b
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59523738"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59680359"
 ---
 # <a name="integrate-a-function-app-with-an-azure-virtual-network"></a>Интеграция приложения-функции с виртуальной сетью Azure
 
-В этом пошаговом руководстве показано, как подключиться из Функций Azure к ресурсам в виртуальной сети Azure.
+Этом руководстве показано, как с помощью функций Azure для подключения к ресурсам в виртуальной сети Azure.
 
 В этом руководстве мы Развернем веб-сайта WordPress на виртуальной Машине в частной, недоступные из Интернета доступны, виртуальной сети. Затем мы развернем Функцию, у которой будет доступ как к Интернету, так и к виртуальной сети. Мы будем использовать эту функцию для доступа к ресурсам из сайта WordPress, развертываются в виртуальной сети.
 

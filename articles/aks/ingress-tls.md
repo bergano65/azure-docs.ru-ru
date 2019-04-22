@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 03/06/2019
+ms.date: 03/27/2019
 ms.author: iainfou
-ms.openlocfilehash: 879b3cabcab6f10d46904bd3a479568756d877b4
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 10690f156e81c4adebe6cf11d651791f7c05e735
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57777810"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59681069"
 ---
 # <a name="create-an-https-ingress-controller-on-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика HTTPS в Службе Azure Kubernetes (AKS)
 
@@ -41,10 +41,14 @@ ms.locfileid: "57777810"
 Чтобы создать контроллер входящего трафика, установите *nginx ingress* с помощью `Helm`. Для обеспечения дополнительной избыточности развертываются две реплики контроллеров входящего трафика NGINX с использованием параметра `--set controller.replicaCount`. Чтобы максимально эффективно использовать реплики контроллера входящего трафика, убедитесь, что в кластере AKS используется несколько узлов.
 
 > [!TIP]
-> В следующем примере контроллер входящего трафика устанавливается в пространстве имен `kube-system`. При необходимости вы можете указать другое пространство имен для своей среды. Если в кластере AKS не включено RBAC, добавьте `--set rbac.create=false` в команду.
+> В следующем примере создается пространство имен Kubernetes для входящего трафика ресурсов с именем *входящих данных basic*. Укажите необходимые пространства имен для конкретной среды. Если кластер AKS не включена RBAC, добавьте `--set rbac.create=false` командам Helm.
 
 ```console
-helm install stable/nginx-ingress --namespace kube-system --set controller.replicaCount=2
+# Create a namespace for your ingress resources
+kubectl create namespace ingress-basic
+
+# Use Helm to deploy an NGINX ingress controller
+helm install stable/nginx-ingress --namespace ingress-basic --set controller.replicaCount=2
 ```
 
 Во время установки для контроллера входящего трафика создается общедоступный IP-адрес Azure. Этот IP-адрес является статическим только на время жизненного цикла контроллера входящего трафика. При удалении контроллера входящего трафика этот общедоступный IP-адрес теряется. Если создать дополнительный контроллер входящего трафика, ему назначается новый общедоступный IP-адрес. Чтобы сохранить общедоступный IP-адрес, создайте вместо этого [контроллер со статическим общедоступным IP-адресом][aks-ingress-static-tls].
@@ -52,7 +56,7 @@ helm install stable/nginx-ingress --namespace kube-system --set controller.repli
 Чтобы получить общедоступный IP-адрес, используйте команду `kubectl get service`. Назначение службе IP-адреса занимает несколько минут.
 
 ```
-$ kubectl get service -l app=nginx-ingress --namespace kube-system
+$ kubectl get service -l app=nginx-ingress --namespace ingress-basic
 
 NAME                                             TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)                      AGE
 billowing-kitten-nginx-ingress-controller        LoadBalancer   10.0.182.160   51.145.155.210  80:30920/TCP,443:30426/TCP   20m
@@ -93,36 +97,27 @@ az network public-ip update --ids $PUBLICIPID --dns-name $DNSNAME
 Чтобы установить контроллер cert-manager в кластере с поддержкой RBAC, используйте следующую команду `helm install`:
 
 ```console
-kubectl label namespace kube-system certmanager.k8s.io/disable-validation=true
+# Install the CustomResourceDefinition resources separately
+kubectl apply -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.7/deploy/manifests/00-crds.yaml
 
-kubectl apply \
-    -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.6/deploy/manifests/00-crds.yaml
-    
-helm install stable/cert-manager \
-    --namespace kube-system \
-    --set ingressShim.defaultIssuerName=letsencrypt-staging \
-    --set ingressShim.defaultIssuerKind=ClusterIssuer \
-    --version v0.6.6
-```
+# Create the namespace for cert-manager
+kubectl create namespace cert-manager
 
-> [!TIP]
-> Если появляется сообщение об ошибке, такие как `Error: failed to download "stable/cert-manager"`, убедитесь, что вы успешно запустили `helm repo update` для получения списка последних доступных диаграмм Helm.
+# Label the cert-manager namespace to disable resource validation
+kubectl label namespace cert-manager certmanager.k8s.io/disable-validation=true
 
-Если кластер не поддерживает RBAC, используйте следующую команду:
+# Add the Jetstack Helm repository
+helm repo add jetstack https://charts.jetstack.io
 
-```console
-kubectl label namespace kube-system certmanager.k8s.io/disable-validation=true
+# Update your local Helm chart repository cache
+helm repo update
 
-kubectl apply \
-    -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.6/deploy/manifests/00-crds.yaml
-    
-helm install stable/cert-manager \
-    --namespace kube-system \
-    --set ingressShim.defaultIssuerName=letsencrypt-staging \
-    --set ingressShim.defaultIssuerKind=ClusterIssuer \
-    --set rbac.create=false \
-    --set serviceAccount.create=false \
-    --version v0.6.6
+# Install the cert-manager Helm chart
+helm install \
+  --name cert-manager \
+  --namespace cert-manager \
+  --version v0.7.0 \
+  jetstack/cert-manager
 ```
 
 Дополнительные сведения о конфигурации cert-manager см. в описании [проекта cert-manager][cert-manager].
@@ -138,6 +133,7 @@ apiVersion: certmanager.k8s.io/v1alpha1
 kind: ClusterIssuer
 metadata:
   name: letsencrypt-staging
+  namespace: ingress-basic
 spec:
   acme:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
@@ -155,54 +151,6 @@ $ kubectl apply -f cluster-issuer.yaml
 clusterissuer.certmanager.k8s.io/letsencrypt-staging created
 ```
 
-## <a name="create-a-certificate-object"></a>Создание объекта сертификата
-
-Далее нужно создать ресурс сертификата. Этот ресурс сертификата определяет необходимый сертификат X.509. Дополнительные сведения см. в описании [сертификатов cert-manager][cert-manager-certificates].
-
-Скорее всего, CERT-manager автоматически создается объект сертификата с помощью оболочек совместимости входящий трафик, который развертывается с помощью диспетчера сертификатов с момента v0.2.2. Дополнительные сведения см. в [документации по ingress-shim][ingress-shim].
-
-Чтобы убедиться, что сертификат был успешно создан, используйте команду `kubectl describe certificate tls-secret`. Если сертификат был выдан, выходные данные в *события* результат, аналогичный приведенному ниже:
-
-```
-Type    Reason          Age   From          Message
-----    ------          ----  ----          -------
-  Normal  CreateOrder     11m   cert-manager  Created new ACME order, attempting validation...
-  Normal  DomainVerified  10m   cert-manager  Domain "demo-aks-ingress.eastus.cloudapp.azure.com" verified with "http-01" validation
-  Normal  IssueCert       10m   cert-manager  Issuing certificate...
-  Normal  CertObtained    10m   cert-manager  Obtained certificate from ACME server
-  Normal  CertIssued      10m   cert-manager  Certificate issued successfully
-```
-
-Если вам нужно создать ресурс сертификата, это можно сделать с помощью приведенный ниже пример манифест. Обновите *dnsNames* и *домены*, указав для них DNS-имя, которое вы создали на предыдущем шаге. Если вы используете только внутренний контроллер входящего трафика, укажите внутреннее имя DNS для службы.
-
-```yaml
-apiVersion: certmanager.k8s.io/v1alpha1
-kind: Certificate
-metadata:
-  name: tls-secret
-spec:
-  secretName: tls-secret
-  dnsNames:
-  - demo-aks-ingress.eastus.cloudapp.azure.com
-  acme:
-    config:
-    - http01:
-        ingressClass: nginx
-      domains:
-      - demo-aks-ingress.eastus.cloudapp.azure.com
-  issuerRef:
-    name: letsencrypt-staging
-    kind: ClusterIssuer
-```
-
-Чтобы создать ресурс сертификата, используйте команду `kubectl apply -f certificates.yaml`.
-
-```
-$ kubectl apply -f certificates.yaml
-
-certificate.certmanager.k8s.io/tls-secret created
-```
-
 ## <a name="run-demo-applications"></a>Запуск демонстрационных версий приложений
 
 Контроллер входящего трафика и решение по управлению сертификатами настроены. Теперь запустите две демонстрационные версии приложения в своем кластере AKS. В этом примере для развертывания двух экземпляров простого приложения Hello World применяется Helm.
@@ -216,13 +164,16 @@ helm repo add azure-samples https://azure-samples.github.io/helm-charts/
 Создайте первую демонстрационную версию приложения из диаграммы Helm с помощью такой команды:
 
 ```console
-helm install azure-samples/aks-helloworld
+helm install azure-samples/aks-helloworld --namespace ingress-basic
 ```
 
 Установите второй экземпляр демонстрационной версии приложения. Укажите новый заголовок для второго экземпляра, чтобы оба приложения визуально отличались. Также задайте уникальное имя службы:
 
 ```console
-helm install azure-samples/aks-helloworld --set title="AKS Ingress Demo" --set serviceName="ingress-demo"
+helm install azure-samples/aks-helloworld \
+    --namespace ingress-basic \
+    --set title="AKS Ingress Demo" \
+    --set serviceName="ingress-demo"
 ```
 
 ## <a name="create-an-ingress-route"></a>Создание маршрута для входящего трафика
@@ -238,6 +189,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: hello-world-ingress
+  namespace: ingress-basic
   annotations:
     kubernetes.io/ingress.class: nginx
     certmanager.k8s.io/cluster-issuer: letsencrypt-staging
@@ -269,6 +221,56 @@ $ kubectl apply -f hello-world-ingress.yaml
 ingress.extensions/hello-world-ingress created
 ```
 
+## <a name="create-a-certificate-object"></a>Создание объекта сертификата
+
+Далее нужно создать ресурс сертификата. Этот ресурс сертификата определяет необходимый сертификат X.509. Дополнительные сведения см. в описании [сертификатов cert-manager][cert-manager-certificates].
+
+cert-manager скорее всего автоматически создал объект сертификата с помощью ingress-shim — оболочки совместимости, которая автоматически развертывается с помощью cert-manager, начиная с версии 0.2.2. Дополнительные сведения см. в [документации по ingress-shim][ingress-shim].
+
+Чтобы убедиться, что сертификат был успешно создан, используйте команду `kubectl describe certificate tls-secret --namespace ingress-basic`.
+
+Если сертификат был выдан, отобразятся выходные данные, аналогичные этим.
+```
+Type    Reason          Age   From          Message
+----    ------          ----  ----          -------
+  Normal  CreateOrder     11m   cert-manager  Created new ACME order, attempting validation...
+  Normal  DomainVerified  10m   cert-manager  Domain "demo-aks-ingress.eastus.cloudapp.azure.com" verified with "http-01" validation
+  Normal  IssueCert       10m   cert-manager  Issuing certificate...
+  Normal  CertObtained    10m   cert-manager  Obtained certificate from ACME server
+  Normal  CertIssued      10m   cert-manager  Certificate issued successfully
+```
+
+Если вам нужно создать дополнительный ресурс сертификата, вы можете это сделать с помощью приведенного ниже примера манифеста. Обновите *dnsNames* и *домены*, указав для них DNS-имя, которое вы создали на предыдущем шаге. Если вы используете только внутренний контроллер входящего трафика, укажите внутреннее имя DNS для службы.
+
+```yaml
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: tls-secret
+  namespace: ingress-basic
+spec:
+  secretName: tls-secret
+  dnsNames:
+  - demo-aks-ingress.eastus.cloudapp.azure.com
+  acme:
+    config:
+    - http01:
+        ingressClass: nginx
+      domains:
+      - demo-aks-ingress.eastus.cloudapp.azure.com
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+```
+
+Чтобы создать ресурс сертификата, используйте команду `kubectl apply -f certificates.yaml`.
+
+```
+$ kubectl apply -f certificates.yaml
+
+certificate.certmanager.k8s.io/tls-secret created
+```
+
 ## <a name="test-the-ingress-configuration"></a>Проверка конфигурации входящего трафика
 
 Откройте в браузере адрес с полным доменным именем вашего контроллера входящего трафика Kubernetes, например *https://demo-aks-ingress.eastus.cloudapp.azure.com*.
@@ -291,7 +293,25 @@ ingress.extensions/hello-world-ingress created
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-В этой статье для установки компонентов обработки входящего трафика, сертификатов и примеров приложений используется Helm. При развертывании диаграммы Helm создается несколько ресурсов Kubernetes. К ним относятся элементы pod, развертывания и службы. Чтобы очистить их, необходимо сначала удалить ресурсы сертификатов.
+В этой статье для установки компонентов обработки входящего трафика, сертификатов и примеров приложений используется Helm. При развертывании диаграммы Helm создается несколько ресурсов Kubernetes. К ним относятся элементы pod, развертывания и службы. Для очистки этих ресурсов, можно либо удалить пространство имен пример целиком или отдельные ресурсы.
+
+### <a name="delete-the-sample-namespace-and-all-resources"></a>Удалить пространство имен примера и все ресурсы
+
+Чтобы удалить пространство имен весь пример, используйте `kubectl delete` команду и укажите имя пространства имен. Будут удалены все ресурсы в пространстве имен.
+
+```console
+kubectl delete namespace ingress-basic
+```
+
+Удалите из репозитория Helm для приложения hello world AKS:
+
+```console
+helm repo remove azure-samples
+```
+
+### <a name="delete-resources-individually"></a>Удаление ресурсов по отдельности
+
+Кроме того более детализированный подход — удалить отдельные ресурсы, созданные. Во-первых удалите ресурсы сертификата:
 
 ```console
 kubectl delete -f certificates.yaml
@@ -325,6 +345,12 @@ release "linting-echidna" deleted
 
 ```console
 helm repo remove azure-samples
+```
+
+Удаление самого пространства имен. Используйте `kubectl delete` команду и укажите имя пространства имен:
+
+```console
+kubectl delete namespace ingress-basic
 ```
 
 Наконец, удалите маршрут входящего трафика, направлявший трафик в пример приложения.

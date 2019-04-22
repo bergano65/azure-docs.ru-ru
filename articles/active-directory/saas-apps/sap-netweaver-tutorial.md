@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5a1034a55bc4d516244e11d035f17fcc3b94929
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b648b8458c7f91cae6edb079fbd2ac78553dd969
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57855645"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59523789"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sap-netweaver"></a>Руководство. Интеграция Azure Active Directory с SAP NetWeaver
+# <a name="tutorial-azure-active-directory-integration-with-sap-netweaver"></a>Руководство по Интеграция Azure Active Directory с SAP NetWeaver
 
 В этом руководстве описано, как интегрировать SAP NetWeaver с Azure Active Directory.
 Интеграция SAP NetWeaver с Azure AD обеспечивает следующие преимущества:
@@ -135,7 +135,7 @@ ms.locfileid: "57855645"
 6. Замените **Имя поставщика** T01122, указав `http://T01122`, и щелкните **Сохранить**.
 
     > [!NOTE]
-    > Имя поставщика по умолчанию указывается в формате <sid><client>, но Azure AD ожидает имя в формате <protocol>://<name>, рекомендуя поддерживать имя поставщика как https://<sid><client>, чтобы разрешить многим обработчикам SAP NetWeaver ABAP выполнять настройку в Azure AD.
+    > Имя поставщика по умолчанию указывается в формате `<sid><client>`, но Azure AD ожидает имя в формате `<protocol>://<name>`, рекомендуя использовать имя поставщика в формате `https://<sid><client>`, чтобы разрешить многим обработчикам SAP NetWeaver ABAP выполнять настройку в Azure AD.
 
     ![Ссылка для скачивания сертификата](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_providername.png)
 
@@ -316,7 +316,7 @@ ms.locfileid: "57855645"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

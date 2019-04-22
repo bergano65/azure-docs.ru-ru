@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Универсальная платформа Windows для Azure Active Directory версии 2 | Документация Майкрософт
-description: Здесь описывается, как приложение универсальной платформы Windows (XAML) может получить маркер доступа и вызвать API, защищенный конечной точкой Azure Active Directory версии 2.0.
+title: Краткое руководство. Использование приложений Windows UWP с платформой удостоверений Майкрософт | Azure
+description: Узнайте, как приложение универсальной платформы Windows (XAML) может получить маркер доступа и вызвать API, защищенный конечной точкой платформы удостоверений Майкрософт.
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/01/2019
+ms.date: 04/12/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3cf4ec48942cbe345b12d2a358afc3dadbe63a96
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.openlocfilehash: e7ed2830b704d379e2ecc5a5e548f831800af56d
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59360116"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59526390"
 ---
 # <a name="quickstart-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Краткое руководство. Вызов API Microsoft Graph из приложения для универсальной платформы Windows (UWP)
 
@@ -30,7 +30,7 @@ ms.locfileid: "59360116"
 
 В этом кратком руководстве содержится пример кода, который демонстрирует, как приложение универсальной платформы Windows (UWP) может входить от имени пользователей в личные, рабочие, а также учебные учетные записи, получать маркер доступа и вызывать API Microsoft Graph.
 
-![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-uwp/uwp-intro-updated.png)
+![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-uwp/uwp-intro.svg)
 
 > [!div renderon="docs"]
 > ## <a name="register-and-download-your-quickstart-app"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
@@ -41,7 +41,7 @@ ms.locfileid: "59360116"
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
-> 1. Откройте [Регистрация приложения](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/UwpQuickstartPage/sourceType/docs) на портале Azure.
+> 1. Откройте на [портале Azure новую панель регистрации приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/UwpQuickstartPage/sourceType/docs).
 > 1. Введите имя своего приложения и щелкните **Зарегистрировать**.
 > 1. Следуйте инструкциям для загрузки и автоматической настройки нового приложения одним щелчком мыши.
 >
@@ -51,7 +51,8 @@ ms.locfileid: "59360116"
 > Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение, сделайте следующее:
 > 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 > 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
-> 1. В области навигации слева выберите службу **Azure Active Directory**, а затем выберите **Регистрация приложений (предварительная версия)** > **Новая регистрация**.
+> 1. Перейдите на страницу [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) Платформы удостоверений Майкрософт для разработчиков.
+> 1. Выберите **Новая регистрация**.
 > 1. После появления страницы **Регистрация приложения** введите сведения о регистрации приложения:
 >      - В разделе **Имя** введите понятное имя приложения, которое будет отображаться пользователям приложения, например `UWP-App-calling-MsGraph`.
 >      - В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts (for example, Skype, Xbox, Outlook.com)** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт (например, Skype, Xbox, Outlook.com)).
@@ -71,29 +72,32 @@ ms.locfileid: "59360116"
 
 #### <a name="step-2-download-your-visual-studio-project"></a>Шаг 2. Скачивание проекта Visual Studio
 
- - [Скачать проект Visual Studio 2017.](https://github.com/Azure-Samples/active-directory-dotnet-native-uwp-v2/archive/master.zip)
+ - [Загрузить проект Visual Studio 2017](https://github.com/Azure-Samples/active-directory-dotnet-native-uwp-v2/archive/msal3x.zip)
 
 #### <a name="step-3-configure-your-visual-studio-project"></a>Шаг 3. Настройка проекта Visual Studio
 
 1. Извлеките ZIP-файл в локальную папку, расположенную как можно ближе к корню диска (например, **C:\Azure-Samples**).
-1. Откройте проект в Visual Studio.
-1. Измените файл **App.Xaml.cs**, заменив значения полей `ClientId` и `Tenant` следующим кодом:
+1. Откройте проект в Visual Studio. Может появиться запрос на установку пакета SDK UWP. Примите его.
+1. Измените файл **MainPage.Xaml.cs**, заменив значение поля `ClientId`:
 
     ```csharp
-    private static string ClientId = "Enter_the_Application_Id_here";
-    private static string Tenant = "Enter_the_Tenant_Info_Here";
+    private const string ClientId = "Enter_the_Application_Id_here";
     ```
 
 > [!div renderon="docs"]
 > Описание
 > - `Enter_the_Application_Id_here` — идентификатор регистрируемого приложения.
-> - `Enter_the_Tenant_Info_Here` — один из следующих вариантов:
->   - Если ваше приложение поддерживает вариант **Только моя организация**, замените это значение на **идентификатор клиента** или **имя клиента** (например contoso.onmicrosoft.com).
->   - Если ваше приложение поддерживает вариант **Учетные записи в любом каталоге организации**, замените это значение на `organizations`
->   - Если приложение поддерживает вариант **Все пользователи с учетными записями Майкрософт**, замените это значение на `common`
 >
 > > [!TIP]
-> > Чтобы найти значения параметров *Идентификатор приложения*, *Идентификатор каталога (клиента)* и *Поддерживаемые типы учетных записей*, перейдите на страницу **Обзор**.
+> > Чтобы найти *идентификатор приложения*, перейдите на страницу **Обзор**.
+
+#### <a name="step-4-run-your-application"></a>Шаг 4. Запуск приложения
+
+Для работы с этим кратким руководством на компьютере Windows:
+
+1. На панели инструментов Visual Studio выберите нужную платформу (**x64** или **x86**, но не ARM).
+   > Проследите, чтобы значение для целевого устройства изменилось с *Устройство* на *Локальный компьютер*.
+1. Выберите "Отладка", а затем — **Запуск без отладки**.
 
 ## <a name="more-information"></a>Дополнительные сведения
 
@@ -101,10 +105,10 @@ ms.locfileid: "59360116"
 
 ### <a name="msalnet"></a>MSAL.NET
 
-MSAL ([Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)) — это библиотека, используемая для входа пользователей и запросов маркеров, используемых для доступа к API, защищенному Microsoft Azure Active Directory. MSAL можно установить, выполнив в *консоли диспетчера пакетов* Visual Studio следующую команду.
+MSAL ([Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)) — это библиотека, используемая для выполнения входа пользователей и запросов маркеров безопасности. Маркеры безопасности нужны для доступа к API, защищенному платформой удостоверений Майкрософт для разработчиков. MSAL можно установить, выполнив в *консоли диспетчера пакетов* Visual Studio следующую команду.
 
 ```powershell
-Install-Package Microsoft.Identity.Client -Pre
+Install-Package Microsoft.Identity.Client -IncludePrerelease
 ```
 
 ### <a name="msal-initialization"></a>Инициализация MSAL
@@ -118,7 +122,9 @@ using Microsoft.Identity.Client;
 Затем выполните инициализацию MSAL с помощью следующего кода.
 
 ```csharp
-public static PublicClientApplication PublicClientApp = new PublicClientApplication(ClientId);
+public static IPublicClientApplication PublicClientApp;
+PublicClientApp = new PublicClientApplicationBuilder.Create(ClientId)
+                                                    .Build();
 ```
 
 > |Описание ||
@@ -127,19 +133,20 @@ public static PublicClientApplication PublicClientApp = new PublicClientApplicat
 
 ### <a name="requesting-tokens"></a>Запрос маркеров
 
-В MSAL есть два метода получения маркеров: `AcquireTokenAsync` и `AcquireTokenSilentAsync`.
+В MSAL используются два метода интерактивного получения маркеров: `AcquireTokenInteractive` и `AcquireTokenSilent`.
 
 #### <a name="get-a-user-token-interactively"></a>Интерактивное получение маркера пользователя
 
-В некоторых ситуациях необходимо принудительное взаимодействие пользователя с конечной точкой Azure AD версии 2.0 через всплывающее окно, чтобы подтвердить его учетные данные или предоставить согласие. Некоторые примеры:
+В некоторых ситуациях необходимо принудительное взаимодействие пользователя с конечной точкой платформы удостоверений Майкрософт через всплывающее окно, чтобы подтвердить учетные данные или предоставить согласие. Некоторые примеры:
 
 - первый вход пользователей в приложение;
 - когда пользователям может потребоваться повторно ввести учетные данные, так как истек срок действия пароля;
-- когда ваше приложение запрашивает доступ к ресурсу, на обращение к которому пользователь должен дать согласие.
+- когда ваше приложение запрашивает доступ к ресурсу, для чего пользователь должен предоставить согласие;
 - когда требуется двухфакторная проверка подлинности.
 
 ```csharp
-authResult = await App.PublicClientApp.AcquireTokenAsync(scopes);
+authResult = await App.PublicClientApp.AcquireTokenInteractive(scopes)
+                      .ExecuteAsync();
 ```
 
 > |Описание||
@@ -148,17 +155,19 @@ authResult = await App.PublicClientApp.AcquireTokenAsync(scopes);
 
 #### <a name="get-a-user-token-silently"></a>Автоматическое получение маркера пользователя
 
-Вы не хотите требовать от пользователя проверки своих учетных данных каждый раз, когда ему необходимо получить доступ к ресурсу. Большую часть времени вы хотите приобретать и обновлять маркеры без какого-либо взаимодействия с пользователем. Можно использовать метод `AcquireTokenSilentAsync`, чтобы получить маркеры безопасности для доступа к защищенным ресурсам после первоначального метода `AcquireTokenAsync`:
+Вы не хотите требовать от пользователя проверки своих учетных данных каждый раз, когда ему необходимо получить доступ к ресурсу. Большую часть времени вы хотите приобретать и обновлять маркеры без какого-либо взаимодействия с пользователем. Можно использовать метод `AcquireTokenSilent`, чтобы получить маркеры безопасности для доступа к защищенным ресурсам после первоначального метода `AcquireTokenAsync`:
 
 ```csharp
 var accounts = await App.PublicClientApp.GetAccountsAsync();
-authResult = await App.PublicClientApp.AcquireTokenSilentAsync(scopes, accounts.FirstOrDefault());
+var firstAccount = accounts.FirstOrDefault();
+authResult = await App.PublicClientApp.AcquireTokenSilent(scopes, firstAccount)
+                                      .ExecuteAsync();
 ```
 
 > |Описание ||
 > |---------|---------|
 > | `scopes` | Содержит запрашиваемые области (такие как `{ "user.read" }` для Microsoft Graph или `{ "api://<Application ID>/access_as_user" }` для пользовательских веб-API) |
-> | `accounts.FirstOrDefault()` | Указывает первого пользователя в кэше (MSAL поддерживает нескольких пользователей в одном приложении) |
+> | `firstAccount` | Указывает первую учетную запись пользователя в кэше (MSAL поддерживает нескольких пользователей в одном приложении) |
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 

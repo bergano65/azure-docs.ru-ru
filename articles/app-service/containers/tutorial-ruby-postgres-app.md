@@ -1,23 +1,23 @@
 ---
-title: Создание приложения Ruby с подключением к базе данных PostgreSQL на платформе Linux в Службе приложений Azure | Документация Майкрософт
-description: Узнайте, как создать приложение Ruby, работающее в Azure, с подключением к базе данных PostgreSQL в Azure.
+title: Создание приложения Ruby (Rails) с базой данных Postgres в Linux в Службе приложений Azure | Документация Майкрософт
+description: Узнайте, как создать приложение Ruby, работающее в Azure, с подключением к базе данных PostgreSQL в Azure. В этом руководстве используется Rails.
 services: app-service\web
 documentationcenter: ''
 author: cephalin
-manager: cfowler
+manager: jeconnoc
 ms.service: app-service-web
 ms.workload: web
 ms.devlang: ruby
 ms.topic: tutorial
-ms.date: 06/15/2018
+ms.date: 03/27/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: e42d9592d74e845410441097fa6082cfb3f4ac5e
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 3ec19b1c564c09406ab1f29c38aef6332d80f8f1
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53713885"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59544694"
 ---
 # <a name="build-a-ruby-and-postgres-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе Ruby и Postgres в Службе приложений Azure в Linux
 
@@ -65,7 +65,7 @@ sudo -u postgres psql
 С помощью своего имени пользователя для входа в Linux создайте пользователя Postgres, который сможет создавать базы данных, выполняя следующую команду:
 
 ```bash
-sudo -u postgres createuser -d <signed_in_user>
+sudo -u postgres createuser -d <signed-in-user>
 ```
 
 <a name="step2"></a>
@@ -125,10 +125,10 @@ rails server
 
 Создайте сервер PostgreSQL с помощью команды [`az postgres server create`](/cli/azure/postgres/server?view=azure-cli-latest#az-postgres-server-create).
 
-Выполните следующую команду в Cloud Shell и замените уникальное имя сервера заполнителем  *\<имя_сервера_postgres>*. Имя сервера должно быть уникальным на всех серверах в Azure. 
+Выполните следующую команду в Cloud Shell и замените заполнитель *\<postgres-server-name>* уникальным именем сервера. Имя сервера должно быть уникальным на всех серверах в Azure. 
 
 ```azurecli-interactive
-az postgres server create --location "West Europe" --resource-group myResourceGroup --name <postgres_server_name> --admin-user adminuser --admin-password My5up3r$tr0ngPa$w0rd! --sku-name GP_Gen4_2
+az postgres server create --location "West Europe" --resource-group myResourceGroup --name <postgres-server-name> --admin-user adminuser --admin-password My5up3r$tr0ngPa$w0rd! --sku-name GP_Gen4_2
 ```
 
 После создания сервера базы данных Azure для PostgreSQL в Azure CLI отображаются следующие сведения.
@@ -137,10 +137,10 @@ az postgres server create --location "West Europe" --resource-group myResourceGr
 {
   "administratorLogin": "adminuser",
   "earliestRestoreDate": "2018-06-15T12:38:25.280000+00:00",
-  "fullyQualifiedDomainName": "<postgres_server_name>.postgres.database.azure.com",
-  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.DBforPostgreSQL/servers/<postgres_server_name>",
+  "fullyQualifiedDomainName": "<postgres-server-name>.postgres.database.azure.com",
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.DBforPostgreSQL/servers/<postgres-server-name>",
   "location": "westeurope",
-  "name": "<postgres_server_name>",
+  "name": "<postgres-server-name>",
   "resourceGroup": "myResourceGroup",
   "sku": {
     "capacity": 2,
@@ -155,10 +155,10 @@ az postgres server create --location "West Europe" --resource-group myResourceGr
 
 ### <a name="configure-server-firewall"></a>Настройка брандмауэра сервера
 
-В Cloud Shell создайте правило брандмауэра для сервера Postgres, выполнив команду [`az postgres server firewall-rule create`](/cli/azure/postgres/server/firewall-rule?view=azure-cli-latest#az-postgres-server-firewall-rule-create), чтобы разрешить подключения клиентов. Если для начального и конечного IP-адресов задано значение 0.0.0.0, брандмауэр открыт только для других ресурсов Azure. Замените уникальное имя сервера заполнителем *\<имя_сервера_postgres>*.
+В Cloud Shell создайте правило брандмауэра для сервера Postgres, выполнив команду [`az postgres server firewall-rule create`](/cli/azure/postgres/server/firewall-rule?view=azure-cli-latest#az-postgres-server-firewall-rule-create), чтобы разрешить подключения клиентов. Если для начального и конечного IP-адресов задано значение 0.0.0.0, брандмауэр открыт только для других ресурсов Azure. Замените заполнитель *\<postgres-server-name>* уникальным именем сервера.
 
 ```azurecli-interactive
-az postgres server firewall-rule create --resource-group myResourceGroup --server <postgres_server_name> --name AllowAllIps --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
+az postgres server firewall-rule create --resource-group myResourceGroup --server <postgres-server-name> --name AllowAllIps --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
 ```
 
 > [!TIP] 
@@ -167,10 +167,10 @@ az postgres server firewall-rule create --resource-group myResourceGroup --serve
 
 ### <a name="connect-to-production-postgres-server-locally"></a>Локальное подключение к рабочему серверу Postgres
 
-В Cloud Shell установите соединение с сервером Postgres в Azure. Используйте значение, указанное ранее для заполнителей _&lt;имя_сервера_postgres>_.
+В Cloud Shell установите соединение с сервером Postgres в Azure. Используйте значение, указанное ранее для заполнителей _&lt;postgres-server-name>_.
 
 ```bash
-psql -U adminuser@<postgres_server_name> -h <postgres_server_name>.postgres.database.azure.com postgres
+psql -U adminuser@<postgres-server-name> -h <postgres-server-name>.postgres.database.azure.com postgres
 ```
 
 При появлении запроса на ввод пароля используйте пароль _My5up3r$tr0ngPa$w0rd!_, указанный во время создания сервера базы данных.
@@ -188,7 +188,7 @@ CREATE DATABASE sampledb;
 Создайте пользователя базы данных с именем _railsappuser_ и предоставьте ему все привилегии в базе данных `sampledb`.
 
 ```sql
-CREATE USER railsappuser WITH PASSWORD 'MyPostgresAzure2017'; 
+CREATE USER railsappuser WITH PASSWORD 'MyPostgresAzure2017';
 GRANT ALL PRIVILEGES ON DATABASE sampledb TO railsappuser;
 ```
 
@@ -220,13 +220,13 @@ production:
 Вернитесь в окно терминала на локальном компьютере и установите следующие переменные среды:
 
 ```bash
-export DB_HOST=<postgres_server_name>.postgres.database.azure.com
+export DB_HOST=<postgres-server-name>.postgres.database.azure.com
 export DB_DATABASE=sampledb 
-export DB_USERNAME=railsappuser@<postgres_server_name>
+export DB_USERNAME=railsappuser@<postgres-server-name>
 export DB_PASSWORD=MyPostgresAzure2017
 ```
 
-Выполните перенос базы данных Rails с настроенными рабочими значениями для создания таблиц в базе данных Postgres Базы данных Azure для PostgreSQL. 
+Выполните перенос базы данных Rails с настроенными рабочими значениями для создания таблиц в базе данных Postgres Базы данных Azure для PostgreSQL.
 
 ```bash
 rake db:migrate RAILS_ENV=production
@@ -247,8 +247,8 @@ rails secret
 Сохраните секретный ключ в соответствующих переменных, используемых в рабочей среде Rails. Для удобства используйте один ключ для обеих переменных.
 
 ```bash
-export RAILS_MASTER_KEY=<output_of_rails_secret>
-export SECRET_KEY_BASE=<output_of_rails_secret>
+export RAILS_MASTER_KEY=<output-of-rails-secret>
+export SECRET_KEY_BASE=<output-of-rails-secret>
 ```
 
 Включите обработку файлов JavaScript и CSS в рабочей среде Rails.
@@ -302,15 +302,15 @@ git commit -m "database.yml updates"
 
 В службе приложений переменные среды задаются в качестве _параметров приложения_ с помощью команды [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell.
 
-Команда Cloud Shell ниже позволяет настроить параметры приложения `DB_HOST`, `DB_DATABASE`, `DB_USERNAME` и `DB_PASSWORD`. Замените заполнители _&lt;имя_приложения>_ и _&lt;имя_сервера_postgres>_.
+Команда Cloud Shell ниже позволяет настроить параметры приложения `DB_HOST`, `DB_DATABASE`, `DB_USERNAME` и `DB_PASSWORD`. Замените заполнители _&lt;appname>_ и _&lt;postgres-server-name>_.
 
 ```azurecli-interactive
-az webapp config appsettings set --name <app_name> --resource-group myResourceGroup --settings DB_HOST="<postgres_server_name>.postgres.database.azure.com" DB_DATABASE="sampledb" DB_USERNAME="railsappuser@<postgres_server_name>" DB_PASSWORD="MyPostgresAzure2017"
+az webapp config appsettings set --name <app-name> --resource-group myResourceGroup --settings DB_HOST="<postgres-server-name>.postgres.database.azure.com" DB_DATABASE="sampledb" DB_USERNAME="railsappuser@<postgres-server-name>" DB_PASSWORD="MyPostgresAzure2017"
 ```
 
 ### <a name="configure-rails-environment-variables"></a>Настройка переменных среды Rails
 
-В окне терминала на локальном компьютере создайте секретный ключ для рабочей среды Rails в Azure.
+В окне терминала на локальном компьютере [создайте новый секрет](configure-language-ruby.md#set-secret_key_base-manually) для рабочей среды Rails в Azure.
 
 ```bash
 rails secret
@@ -318,20 +318,20 @@ rails secret
 
 Настройте переменные, необходимые для рабочей среды Rails.
 
-В следующей команде Cloud Shell замените два заполнителя _&lt;output_of_rails_secret>_ новым секретным ключом, созданным в окне терминала на локальном компьютере.
+В следующей команде Cloud Shell замените два заполнителя _&lt;output-of-rails-secret>_ новым секретным ключом, созданным в окне терминала на локальном компьютере.
 
 ```azurecli-interactive
-az webapp config appsettings set --name <app_name> --resource-group myResourceGroup --settings RAILS_MASTER_KEY="<output_of_rails_secret>" SECRET_KEY_BASE="<output_of_rails_secret>" RAILS_SERVE_STATIC_FILES="true" ASSETS_PRECOMPILE="true"
+az webapp config appsettings set --name <app-name> --resource-group myResourceGroup --settings RAILS_MASTER_KEY="<output-of-rails-secret>" SECRET_KEY_BASE="<output-of-rails-secret>" RAILS_SERVE_STATIC_FILES="true" ASSETS_PRECOMPILE="true"
 ```
 
-Свойство со значением `ASSETS_PRECOMPILE="true"` указывает контейнеру Ruby по умолчанию предварительно компилировать ресурсы во время каждого развертывания Git.
+Свойство со значением `ASSETS_PRECOMPILE="true"` указывает контейнеру Ruby по умолчанию предварительно компилировать ресурсы во время каждого развертывания Git. См. подробнее о [предварительно компилируемых ресурсах](configure-language-ruby.md#precompile-assets) и [обслуживании статических ресурсов](configure-language-ruby.md#serve-static-assets).
 
 ### <a name="push-to-azure-from-git"></a>Публикация в Azure из Git
 
 В окне терминала на локальном компьютере добавьте удаленное приложение Azure в локальный репозиторий Git.
 
 ```bash
-git remote add azure <paste_copied_url_here>
+git remote add azure <paste-copied-url-here>
 ```
 
 Выполните публикацию в удаленную службу приложений Azure, чтобы развернуть приложение Ruby on Rails. После этого введите пароль, указанный ранее в процессе создания пользователя развертывания.
@@ -359,7 +359,7 @@ remote: Running deployment command...
 
 ### <a name="browse-to-the-azure-app"></a>Переход к приложению Azure
 
-Перейдите по адресу `http://<app_name>.azurewebsites.net` и добавьте несколько задач в список.
+Перейдите по адресу `http://<app-name>.azurewebsites.net` и добавьте несколько задач в список.
 
 ![Приложение Ruby on Rails, работающее в службе приложений Azure](./media/tutorial-ruby-postgres-app/ruby-postgres-in-azure.png)
 
@@ -476,11 +476,15 @@ git push azure master
 
 Добавленные задачи сохраняются в базе данных. Изменения в схеме данных не влияют на имеющиеся данные.
 
+## <a name="stream-diagnostic-logs"></a>Потоковая передача журналов диагностики
+
+[!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-no-h.md)]
+
 ## <a name="manage-the-azure-app"></a>Управление приложением Azure
 
 Перейдите на [портал Azure](https://portal.azure.com), чтобы управлять созданным приложением.
 
-В меню слева щелкните **Службы приложений**, а затем выберите имя своего приложения Azure.
+В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
 
 ![Переход к приложению Azure на портале](./media/tutorial-php-mysql-app/access-portal.png)
 
@@ -509,4 +513,9 @@ git push azure master
 Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](../app-service-web-tutorial-custom-domain.md)
+> [Руководство Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
+
+Также ознакомьтесь с другими ресурсами:
+
+> [!div class="nextstepaction"]
+> [Настройка приложения Ruby](configure-language-ruby.md)

@@ -1,5 +1,5 @@
 ---
-title: Архитектура управления устройствами на основе унифицированной архитектуры OPC Интернета вещей Azure | Документация Майкрософт
+title: Архитектура OPC Twin — Azure | Документация Майкрософт
 description: Архитектура двойника OPC
 author: dominicbetts
 ms.author: dobett
@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: iot-industrialiot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 904c889866d3aa24e1da387af44b3f589b7769aa
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: d1c10e056de1bc61b5365550bf2543d2cdf61229
+ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58759795"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59495026"
 ---
 # <a name="opc-twin-architecture"></a>Архитектура двойника OPC
 

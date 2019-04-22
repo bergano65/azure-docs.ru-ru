@@ -9,12 +9,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 11/08/2018
-ms.openlocfilehash: 8405624831c572f194fa0afaad2f0caa40bcf9ba
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 7e66f374a1f5f4fb050f366fdad0e787292101f8
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58001281"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59526747"
 ---
 # <a name="create-a-terraform-base-template-in-azure-using-yeoman"></a>Создание базового шаблона Terraform в Azure с использованием Yeoman
 
@@ -73,8 +73,8 @@ ms.locfileid: "58001281"
 1. Перейдите к родительскому каталогу, который будет содержать новый, пустой каталог, которой будет создан.
 1. Укажите `mkdir <new-directory-name>`.
 
-    >[!NOTE]
-    >Замените <new-directory-name> на имя созданного каталога. Например, новый каталог с именем `GeneratorDocSample`.
+    > [!NOTE]
+    > Замените `<new-directory-name>` именем нового каталога. Например, новый каталог с именем `GeneratorDocSample`.
 
     ![mkdir](media/terraform-vscode-module-generator/ymg-mkdir-GeneratorDocSample.png)
 
@@ -250,7 +250,7 @@ ms.locfileid: "58001281"
 
 1. Создайте папку $GOPATH, если она еще не существует. Укажите `mkdir ~/go`.
 
-1. Создайте папку в папке $GOPATH: Укажите `mkdir ~/go/src`. Эта папка будет использоваться для хранения и упорядочения различных папок проекта, которые вы создадите, например папки <имя_модуля>, которую мы создадим на следующем шаге.
+1. Создайте папку в папке $GOPATH: Укажите `mkdir ~/go/src`. Эта папка будет использоваться для хранения и упорядочения различных папок проекта, которые вы создадите, например папки `<your-module-name>`, которую мы создадим на следующем шаге.
 
 1. Создайте папку для хранения вашего модуля Terraform: Укажите `mkdir ~/go/src/<your-module-name>`.
 

@@ -10,10 +10,10 @@ ms.topic: tutorial
 ms.service: service-bus-messaging
 ms.custom: mvc
 ms.openlocfilehash: 845fc32d527158258304a92c6855017c9d8c0492
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59049563"
 ---
 # <a name="tutorial-update-inventory-using-powershell-and-topicssubscriptions"></a>Руководство по Обновление информации о запасах с помощью PowerShell, разделов и подписок
@@ -289,4 +289,4 @@ static async Task ProcessMessagesAsync(Message message, CancellationToken token)
 > [Обновление информации о запасах с помощью PowerShell, разделов и подписок](service-bus-tutorial-topics-subscriptions-cli.md)
 
 [бесплатная учетная запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
-[Установка и настройка Azure PowerShell]: /powershell/azure/install-Az-ps
+[установке и настройке Azure PowerShell]: /powershell/azure/install-Az-ps

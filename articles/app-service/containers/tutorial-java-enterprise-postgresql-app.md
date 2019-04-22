@@ -11,18 +11,18 @@ ms.topic: tutorial
 ms.date: 11/13/2018
 ms.author: jafreebe
 ms.custom: seodec18
-ms.openlocfilehash: a4bf2ef252b5a948f2e3614e3e7cf64a4cb19277
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 472ff85adaf72f91948c4072b12cca3ff8e59f37
+ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57772064"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59545356"
 ---
 # <a name="tutorial-build-a-java-ee-and-postgres-web-app-in-azure"></a>Руководство. Создание веб-приложения Java EE с подключением к базе данных Postgres в Azure
 
 В этом руководстве приведены сведения о создании веб-приложения Java Enterprise Edition (EE) в Службе приложений Azure, а также подключении его к базе данных Postgres. Когда вы выполните инструкции из руководства, у вас будет приложение [WildFly](https://www.wildfly.org/about/), данные которого хранятся в [базе данных Azure для Postgres](https://azure.microsoft.com/services/postgresql/), работающей в [Службе приложений Azure в Linux](app-service-linux-intro.md).
 
-Из этого учебника вы узнаете следующее:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * Развертывание приложения Java EE в Azure с помощью Maven.
 > * Создание базы данных Postgres в Azure
@@ -158,7 +158,9 @@ az postgres server create -n <desired-name> -g <same-resource-group> --sku-name 
 
 ## <a name="configure-the-wildfly-application-server"></a>Настройка сервера приложений WildFly
 
-Перед развертыванием измененного приложения необходимо обновить сервер приложений WildFly для добавления модуля Postgres и его зависимостей. Для настройки сервера нам понадобятся четыре файла в каталоге `wildfly_config/`:
+Перед развертыванием измененного приложения необходимо обновить сервер приложений WildFly для добавления модуля Postgres и его зависимостей. Дополнительные сведения о конфигурации можно найти в разделе [Configure WildFly server](configure-language-java.md#configure-wildfly-server) (Настройка сервера WildFly).
+
+Для настройки сервера нам понадобятся четыре файла в каталоге `wildfly_config/`:
 
 - **postgresql-42.2.5.jar:** JAR-файл, представляющий собой драйвер JDBC для Postgres. Дополнительные сведения см. [на официальном веб-сайте](https://jdbc.postgresql.org/index.html).
 - **postgres-module.xml:** XML-файл, объявляющий имя модуля Postgres (org.postgres). Он также указывает ресурсы и зависимости, необходимые для использования модуля.
@@ -172,7 +174,6 @@ az postgres server create -n <desired-name> -g <same-resource-group> --sku-name 
 Нам нужно будет передать содержимое `wildfly_config/` в экземпляр службы приложений по протоколу FTP. Чтобы получить учетные данные FTP, нажмите кнопку **Get Publish Profile** (Получить профиль публикации) в колонке службы приложений на портале Azure. Ваше имя пользователя и пароль FTP будут находиться в скачанном XML-документе. Дополнительные сведения о профиле публикации см. в статье [Настройка учетных данных развертывания службы приложений Azure](https://docs.microsoft.com/azure/app-service/deploy-configure-credentials).
 
 С помощью любого инструмента FTP перенесите четыре файла из `wildfly_config/` в `/home/site/deployments/tools/`. (Обратите внимание, что нужно перемещать не каталог, а сами файлы.)
-
 
 ### <a name="finalize-app-service"></a>Завершение подготовки службы приложений
 
@@ -195,9 +196,26 @@ mvn clean install -DskipTests azure-webapp:deploy
 Если эти ресурсы не требуются для изучения другого руководства (см. раздел "Дополнительная информация"), их можно удалить, выполнив следующие команды:
 
 ```bash
-az group delete --name <your_resource_group> 
+az group delete --name <your-resource-group>
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Теперь, когда у вас есть приложение Java EE, развернутое в службе приложений, [ознакомьтесь со сведениями о настройке служб, устранении неполадок и масштабировании приложения](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-java).
+Из этого руководства вы узнали, как выполнить следующие задачи:
+
+> [!div class="checklist"]
+> * Развертывание приложения Java EE в Azure с помощью Maven.
+> * Создание базы данных Postgres в Azure
+> * Настройка сервера WildFly для использования Postgres.
+> * Обновление и повторное развертывание приложения
+> * Запуск модульных тестов в WildFly.
+
+Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
+
+> [!div class="nextstepaction"]
+> [Руководство. Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
+
+Также ознакомьтесь с другими ресурсами:
+
+> [!div class="nextstepaction"]
+> [Настройка приложения Java](configure-language-java.md)

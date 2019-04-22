@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/22/2019
 ms.author: jeedes
-ms.openlocfilehash: 2ae0aefe194ca8bca6ea62420314b4fbdb1e0187
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.openlocfilehash: 539a06398675dc7851017ec5d428e0942e54ce1f
+ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59357922"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59564771"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tableau-server"></a>Руководство. Интеграция Azure Active Directory с Tableau Server
 
@@ -105,11 +105,11 @@ ms.locfileid: "59357922"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Tableau Server](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://azure.<domain name>.link`
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://azure.<domain name>.link`.
 
-    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://azure.<domain name>.link`
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://azure.<domain name>.link`.
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://azure.<domain name>.link/wg/saml/SSO/index.html`
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://azure.<domain name>.link/wg/saml/SSO/index.html`.
 
     > [!NOTE]
     > Приведенные выше значения используются только для примера. Их необходимо изменить на фактические URL-адрес и идентификатор, которые можно найти на странице конфигурации Tableau Server (объясняется далее в этом руководстве).
@@ -206,7 +206,7 @@ ms.locfileid: "59357922"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите `brittasimon@yourcompanydomain.extension`  
+    b. В поле **Имя пользователя** введите `brittasimon@yourcompanydomain.extension`.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -256,9 +256,9 @@ ms.locfileid: "59357922"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [ Список учебников по интеграции приложений SaaS с Azure Active Directory ](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory? ](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

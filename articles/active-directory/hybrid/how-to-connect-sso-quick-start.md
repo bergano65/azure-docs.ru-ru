@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/08/2019
+ms.date: 04/16/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f8483eb0ce8f5ea890e453828d36afda61ef86f
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 06566ab81b6af847a7eb174731105b7f43a7197f
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59256895"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59680912"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quick-start"></a>Простой единый вход Azure Active Directory: Быстрый запуск
 
@@ -93,7 +93,7 @@ ms.locfileid: "59256895"
 ![Портал Azure: область Azure AD Connect](./media/how-to-connect-sso-quick-start/sso10.png)
 
 >[!IMPORTANT]
-> Простой единый вход создает учетную запись компьютера с именем `AZUREADSSOACC` в вашей локальной Active Directory (AD) в каждом лесу AD. `AZUREADSSOACC` Учетная запись компьютера должна быть обеспечены надежной защитой по соображениям безопасности. Управление учетной записью компьютера можно только "Администраторы домена". Убедитесь, что делегирование Kerberos на учетную запись компьютера отключена. Store учетной записи компьютера в подразделение (OU), где они безопасны от случайных удалений и только администраторы домена имеют доступ.
+> Простой единый вход создает учетную запись компьютера с именем `AZUREADSSOACC` в вашей локальной Active Directory (AD) в каждом лесу AD. `AZUREADSSOACC` Учетная запись компьютера должна быть обеспечены надежной защитой по соображениям безопасности. Управление учетной записью компьютера можно только "Администраторы домена". Убедитесь, делегирование Kerberos в учетной записи компьютера была отключена, а не другой учетной записи в Active Directory имеет разрешения на делегирование `AZUREADSSOACC` учетной записи компьютера. Store учетной записи компьютера в подразделение (OU), где они безопасны от случайных удалений и только администраторы домена имеют доступ.
 
 >[!NOTE]
 > При использовании архитектуры Pass--Hash и устранения рисков кражи учетных данных в локальной среде, внести соответствующие изменения, чтобы убедиться, что `AZUREADSSOACC` учетная запись компьютера не помещаться в карантин контейнера. 

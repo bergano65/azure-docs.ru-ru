@@ -8,14 +8,14 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 01/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 412bf66902f156c6c8720a720973f97d1d7b1d8f
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 79854c71410c7e796961f23c8c31a4d0809cd69c
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55751622"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59527988"
 ---
-# <a name="tutorial-copy-data-to-azure-data-box-blob-storage-via-rest-apis"></a>Руководство. Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API  
+# <a name="tutorial-copy-data-to-azure-data-box-blob-storage-via-rest-apis"></a>Руководство по Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API  
 
 В этом руководстве описываются процедуры по подключению к хранилищу BLOB-объектов Azure Data Box через REST API по протоколу *HTTP* или *HTTPS*. Рассматриваются также шаги после подключения, необходимые для копирования данных в хранилище BLOB-объектов Data Box и подготовки Data Box к отправке.
 
@@ -79,7 +79,7 @@ ms.locfileid: "55751622"
 
 1. Войдите на портал Azure.
 2. Перейдите к заказу Data Box, а затем к разделу **Общие > Сведения об устройстве**.
-3. В разделе **Учетные данные устройства** перейдите к **API доступа к устройству**. Щелкните элемент **Загрузить**. После этого будет скачан файл сертификата **<your order name>.cer**. **Сохраните** этот файл. Этот сертификат следует установить на компьютере клиента или узла, который будет использоваться для подключения к устройству.
+3. В разделе **Учетные данные устройства** перейдите к **API доступа к устройству**. Щелкните элемент **Загрузить**. После этого будет скачан файл сертификата **\<имя_заказа>.cer**. **Сохраните** этот файл. Этот сертификат следует установить на компьютере клиента или узла, который будет использоваться для подключения к устройству.
 
     ![Скачивание сертификата с помощью портала Azure](media/data-box-deploy-copy-data-via-rest/download-cert-1.png)
  

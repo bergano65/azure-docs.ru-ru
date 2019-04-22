@@ -9,10 +9,10 @@ ms.date: 12/14/2017
 ms.author: rogarana
 ms.subservice: common
 ms.openlocfilehash: 40138a69baf9cd621b2f287b2fe035225bfd9bec
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58877505"
 ---
 #  <a name="tutorial-migrate-on-premises-data-to-cloud-storage-by-using-azcopy"></a>Руководство по Миграция локальных данных в службу хранилища Azure с помощью AzCopy
@@ -59,7 +59,7 @@ ms.locfileid: "58877505"
 
 С помощью AzCopy вы можете передать все файлы из определенной папки в [Windows](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy#upload-blobs-to-blob-storage) или [Linux](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-linux#blob-download) в хранилище больших двоичных объектов. Чтобы передать все большие двоичные объекты, содержащиеся в папке, введите следующую команду AzCopy:
 
-# [<a name="linux"></a>Linux](#tab/linux)
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
     azcopy \
         --source /mnt/myfolder \
@@ -67,7 +67,7 @@ ms.locfileid: "58877505"
         --dest-key <key> \
         --recursive
 
-# [<a name="windows"></a> Windows](#tab/windows)
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
     AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:<key> /S
 ---
@@ -82,7 +82,7 @@ ms.locfileid: "58877505"
 
 Если вы хотите скопировать только те ресурсы, которые существуют в папке источника и отсутствуют в целевой папке, укажите параметры `--exclude-older` и `--exclude-newer` (для Linux) или `/XO` и `/XN` (для Windows) в команде AzCopy. AzCopy передаст только обновленные данные, учитывая отметки времени файлов.
 
-# [<a name="linux"></a>Linux](#tab/linux)
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
     azcopy \
     --source /mnt/myfolder \
@@ -91,7 +91,7 @@ ms.locfileid: "58877505"
     --recursive \
     --exclude-older
 
-# [<a name="windows"></a> Windows](#tab/windows)
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
     AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:<key> /S /XO
 ---
@@ -102,11 +102,11 @@ ms.locfileid: "58877505"
 
 Скопируйте команду AzCopy в текстовый редактор. Замените значения параметров в команде AzCopy подходящими значениями. Сохраните файл AzCopy с именем `script.sh` (для Linux) или `script.bat` (для Windows).
 
-# [<a name="linux"></a>Linux](#tab/linux)
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
     azcopy --source /mnt/myfiles --destination https://myaccount.blob.core.windows.net/mycontainer --dest-key <key> --recursive --exclude-older --exclude-newer --verbose >> Path/to/logfolder/`date +\%Y\%m\%d\%H\%M\%S`-cron.log
 
-# [<a name="windows"></a> Windows](#tab/windows)
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
     cd C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy
     AzCopy /Source: C:\myfolder  /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:<key> /V /XO /XN >C:\Path\to\logfolder\azcopy%date:~-4,4%%date:~-7,2%%date:~-10,2%%time:~-11,2%%time:~-8,2%%time:~-5,2%.log
@@ -117,7 +117,7 @@ AzCopy может выполняться в режиме подробных св
 В этом руководстве мы применим [Schtasks](https://msdn.microsoft.com/library/windows/desktop/bb736357(v=vs.85).aspx) для создания в Windows запланированной задачи. Команда [Crontab](http://crontab.org/) позволяет создать задание cron в Linux.
  **Schtasks** позволяет администратору создавать, удалять, просматривать, изменять, выполнять или завершать запланированные задачи на локальном или удаленном компьютере. **Cron** в Linux и Unix дает пользователям возможность выполнять команды или скрипты в определенное время определенного дня с помощью [выражений cron](https://en.wikipedia.org/wiki/Cron#CRON_expression).
 
-# [<a name="linux"></a>Linux](#tab/linux)
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
 Чтобы создать в Linux задание cron, введите в терминале следующую команду:
 
@@ -128,7 +128,7 @@ crontab -e
 
 Если в команде указано выражение cron `*/5 * * * *`, то скрипт оболочки `script.sh` будет выполняться каждые пять минут. Вы можете назначить выполнение скрипта на определенное время ежедневно, ежемесячно или ежегодно. Дополнительные сведения о настройке даты и времени для выполнения заданий вы найдете в документации по [выражениям cron](https://en.wikipedia.org/wiki/Cron#CRON_expression).
 
-# [<a name="windows"></a> Windows](#tab/windows)
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
 Чтобы создать в Windows назначенную задачу, введите в командной строке или в PowerShell следующую команду:
 

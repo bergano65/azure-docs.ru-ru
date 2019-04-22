@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: d68c8a63dd3adaee0c04f5438f91da68f3903aea
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59262267"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sumtotalcentral"></a>Руководство по Интеграция Azure Active Directory с SumTotalCentral
@@ -51,7 +51,7 @@ ms.locfileid: "59262267"
 
 Чтобы настроить интеграцию SumTotalCentral с Azure AD, необходимо добавить приложение SumTotalCentral из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить SumTotalCentral из коллекции, сделайте следующее:**
+**Чтобы добавить SumTotalCentral из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59262267"
 
     ![Сведения о домене и URL-адресах единого входа для приложения SumTotalCentral](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.sumtotalsystems.com/sites/default`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.sumtotalsystems.com/sites/default`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите значение: `SumTotalFederationGateway`
+    b. В текстовом поле **Идентификатор (сущности)** введите значение следующим образом: `SumTotalFederationGateway`.
 
     > [!NOTE]
     > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов SumTotalCentral](http://www.sumtotalsystems.com/support/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

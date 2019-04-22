@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/02/2018
 ms.author: rkarlin
-ms.openlocfilehash: ee28bfebb6732c7bb3b689cf08b9b876adb74b1b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9f4e001909fb739aa368e5201649e85cce9906d3
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58104681"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59521926"
 ---
 # <a name="quickstart-onboard-linux-computers-to-azure-security-center"></a>Краткое руководство. Подключение компьютеров Linux к Центру безопасности Azure
 После подключения подписок Azure можно включить центр безопасности для ресурсов под управлением Linux, работающих вне среды Azure, например в локальной среде или в других облаках, подготовив агент Linux.
@@ -57,7 +57,7 @@ ms.locfileid: "58104681"
 
    ![Установка агента.][5]
 
-Журналы агента центра безопасности для Linux можно найти по адресу: */var/opt/microsoft/omsagent/<workspace id>/log/*
+Журналы агента Центра безопасности для Linux можно найти здесь: */var/opt/microsoft/omsagent/\<ИД_рабочей_области>/log/*
 
   ![Журналы агента][6]
 

@@ -12,15 +12,15 @@ ms.topic: tutorial
 ms.date: 04/09/2018
 ms.author: abnarain
 ms.openlocfilehash: 26bc6861602cae349c8ebaafefe070c119a93e87
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59261531"
 ---
 # <a name="copy-data-from-an-on-premises-sql-server-database-to-azure-blob-storage-by-using-the-copy-data-tool"></a>Копирование данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure с помощью средства копирования данных
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
+> * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](tutorial-hybrid-copy-data-tool.md)
 
 В этом руководстве вы создадите фабрику данных с помощью портала Azure. После этого вы примените средство копирования данных для копирования данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure.
@@ -285,4 +285,4 @@ ms.locfileid: "59261531"
 Информацию о копировании данных в пакетном режиме из источника в место назначения см. в следующем руководстве:
 
 > [!div class="nextstepaction"]
->[Копирование данных в пакетном режиме](tutorial-bulk-copy-portal.md)
+>[Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure](tutorial-bulk-copy-portal.md)

@@ -85,8 +85,8 @@ items:
     href: add-native-application.md
   - name: Настройка проверки возраста
     href: basic-age-gating.md
-  - name: Настройка маркеров
-    href: active-directory-b2c-token-session-sso.md
+  - name: Настройка поведения сеанса
+    href: session-behavior.md
   - name: Настройка языка
     href: active-directory-b2c-reference-language-customization.md
   - name: Настройка пароля
@@ -111,8 +111,6 @@ items:
       href: active-directory-b2c-ui-customization-custom.md
     - name: Настройка динамического содержимого в пользовательском интерфейсе
       href: active-directory-b2c-ui-customization-custom-dynamic.md
-    - name: Настройка маркеров
-      href: active-directory-b2c-reference-manage-sso-and-token-configuration.md
     - name: Определение настраиваемых атрибутов
       href: active-directory-b2c-create-custom-attributes-profile-edit-custom.md
     - name: Включение возможности оставаться в системе
@@ -147,8 +145,6 @@ items:
         href: active-directory-b2c-custom-setup-twitter-idp.md
     - name: Контракт страницы
       href: page-contract.md
-    - name: Передача маркера доступа
-      href: idp-pass-through-custom.md
     - name: Сложность пароля
       href: active-directory-b2c-reference-password-complexity-custom.md
     - name: Изменение пароля
@@ -159,6 +155,12 @@ items:
         href: active-directory-b2c-custom-setup-adfs2016-idp.md
       - name: Salesforce
         href: active-directory-b2c-setup-sf-app-custom.md
+    - name: Маркеры
+      items:
+      - name: Настройка маркеров
+        href: active-directory-b2c-reference-manage-sso-and-token-configuration.md
+      - name: Передача маркера доступа
+        href: idp-pass-through-custom.md
     - name: Отслеживание поведения пользователя
       href: active-directory-b2c-custom-guide-eventlogger-appins.md
     - name: Справочные материалы
@@ -272,10 +274,6 @@ items:
       href: active-directory-b2c-devquickstarts-ios.md
     - name: Использование Android и AppAuth
       href: active-directory-b2c-devquickstarts-android.md
-  - name: Получение маркеров доступа
-    href: active-directory-b2c-access-tokens.md
-  - name: Передача маркера доступа
-    href: idp-pass-through-user-flow.md
   - name: Отчеты об использовании
     href: active-directory-b2c-reference-usage-reporting-api.md
   - name: Учетные данные владельца ресурса
@@ -284,6 +282,14 @@ items:
     href: direct-signin.md
   - name: Настройка самостоятельного сброса пароля
     href: active-directory-b2c-reference-sspr.md
+  - name: Маркеры
+    items:
+    - name: Настройка маркеров
+      href: configure-tokens.md
+    - name: Передача маркера доступа
+      href: idp-pass-through-user-flow.md
+    - name: Запрос маркера доступа
+      href: active-directory-b2c-access-tokens.md
   - name: Использование b2clogin.com
     href: b2clogin.md
   - name: Использование API Graph Azure AD
@@ -326,9 +332,9 @@ items:
     href: active-directory-b2c-support.md
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory-b2c
-ms.openlocfilehash: cebc59a7d10ce669fd8187687b80f291a07d1c06
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: de9ae82220bd464cbee7345b7f2421d02f0fc545
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58886579"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59681137"

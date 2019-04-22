@@ -16,10 +16,10 @@ ms.date: 12/20/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d55ae4077b3ec14cb8dc2226714b094574ed9522
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58905653"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dropbox-for-business"></a>Руководство по Интеграция Azure Active Directory с Dropbox for Business
@@ -53,7 +53,7 @@ ms.locfileid: "58905653"
 
 Чтобы настроить интеграцию Dropbox for Business с Azure AD, необходимо добавить Dropbox for Business из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Dropbox for Business из коллекции, выполните указанные ниже действия:**
+**Чтобы добавить Dropbox for Business из коллекции, выполните указанные ниже действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -107,9 +107,9 @@ ms.locfileid: "58905653"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Dropbox for Business](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.dropbox.com/sso/<id>`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.dropbox.com/sso/<id>`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите значение: `Dropbox`
+    b. В текстовом поле **Идентификатор (сущности)** введите значение следующим образом: `Dropbox`.
 
     > [!NOTE]
     > Приведенное выше значение "URL-адрес для входа" используется только для примера. Вы замените это значение на фактический URL-адрес для входа, который описывается далее в этом руководстве.

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 71feb455457fdf75fb19121bac1927b42fe38b67
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59265888"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wdesk"></a>Руководство по Интеграция Azure Active Directory с Wdesk
@@ -51,7 +51,7 @@ ms.locfileid: "59265888"
 
 Чтобы настроить интеграцию приложения Wdesk с Azure AD, вам нужно добавить это приложение из коллекции в свой список управляемых приложений SaaS.
 
-**Чтобы добавить приложение Wdesk из коллекции, сделайте следующее:**
+**Добавление приложения Wdesk из коллекции**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59265888"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Wdesk](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<subdomain>.wdesk.com/auth/saml/sp/metadata/<instancename>`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.wdesk.com/auth/saml/sp/metadata/<instancename>`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.wdesk.com/auth/saml/sp/consumer/<instancename>`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.wdesk.com/auth/saml/sp/consumer/<instancename>`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -222,7 +222,7 @@ ms.locfileid: "59265888"
 
 Чтобы пользователи Azure Active Directory могли выполнять вход во Wdesk, их следует подготовить во Wdesk. В Wdesk подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Войдите в приложение Wdesk с правами администратора безопасности.
 

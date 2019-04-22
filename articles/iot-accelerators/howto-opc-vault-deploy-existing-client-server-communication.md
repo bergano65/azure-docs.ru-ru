@@ -9,10 +9,10 @@ ms.service: iot-industrialiot
 services: iot-industrialiot
 manager: philmea
 ms.openlocfilehash: 5ba2dba02585598b3797dd1b490976ebe34b489e
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59495300"
 ---
 # <a name="secure-opc-ua-client-and-opc-ua-server-application"></a>Защита OPC UA, клиента и сервера OPC UA 
@@ -34,14 +34,14 @@ ms.locfileid: "59495300"
 - Задайте переменную среды `$env:_OPCVAULTID` на строку, которая позволяет попытку поиска данных в хранилище OPC. Рекомендуется установить его из 6 цифр. Например «123456» использовался как значение для переменной.
 - Убедитесь в том не docker `opcclient` или `opcplc`. Уточните `docker volume ls` и удалить их с `docker volume rm <volumename>`. Необходимо также удалить контейнеры с `docker rm <containerid>` если тома по-прежнему используются в контейнере.
 
-**Быстрый запуск**
+**Краткое руководство**
 1. Перейдите к [хранилище OPC веб-сайта](https://opcvault.azurewebsites.net/)
 
-1. Выберите пункт `Register New`
+1. Выберите `Register New`
 
 1. Введите информацию OPC PLC, как было показано в предыдущем характеристики выходные данные журнала `CreateSigningRequest information` область в поля ввода на `Register New OPC UA Application` выберите `Server` как тип приложения.
 
-1. Выберите пункт `Register`
+1. Выберите `Register`
 
 1. На следующей странице `Request New Certificate for OPC UA Application` выберите `Request new KeyPair and Certificate`
 
@@ -51,7 +51,7 @@ ms.locfileid: "59495300"
 
 1. На следующей странице `Generate a new KeyPair and for an OPC UA Application` введите `CN=OpcPlc` как имя субъекта, `opcplc-<_OPCVAULTID>` (Замените `<_OPCVAULTID>` с вашими) как имя домена, выберите `PEM` как PrivateKeyFormat и введите пароль (мы называем позднее на него в качестве `<certpassword-string>`)
 
-1. Выберите пункт `Generate New KeyPair`
+1. Выберите `Generate New KeyPair`
 
 1. Теперь перемещается вперед `View Certificate Request Details`. На этой странице можно загрузить все необходимые сведения, чтобы подготовить хранилище сертификатов `opc-plc`.
 
@@ -75,7 +75,7 @@ ms.locfileid: "59495300"
     > [!NOTE] 
     > При работе с этим сценарием, вы может распознать, `<addissuercertbase64-string>` и `<updatecrlbase64-string>` значения идентичны для `opcplc` и `opcclient`. Это справедливо для наших вариантов использования и может сэкономить время при выполнении действия.
 
-**Быстрый запуск**
+**Краткое руководство**
 
 В корне репозитория, выполните следующую команду PowerShell:
 
@@ -136,7 +136,7 @@ opcclient-123456 | [13:40:12 INF] Value (ActionId: 000 ActionType: 'OpcTestActio
 
 ### <a name="a-testbed-for-opc-publisher"></a>Характеристики для издателя OPC ###
 
-**Быстрый запуск**
+**Краткое руководство**
 
 В корне репозитория, выполните следующую команду PowerShell:
 ```

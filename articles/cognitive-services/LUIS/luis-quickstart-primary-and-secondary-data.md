@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 02/19/2019
+ms.date: 04/01/2019
 ms.author: diberry
-ms.openlocfilehash: b9ddd82d18b7f67f61e5c1589511ea6db4fa18a3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ea9a2df1f06ba6836ef88bc57dc3f95fd31e1ee9
+ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58100298"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59526575"
 ---
 # <a name="tutorial-extract-names-with-simple-entity-and-a-phrase-list"></a>Руководство по Извлечение имен с использованием простой сущности и списка фраз
 
@@ -48,7 +48,7 @@ ms.locfileid: "58100298"
 * данные имеют неверный формат, например регулярное выражение;
 * данные необычные, например предварительно созданная сущность телефонного номера или данных;
 * данные не соответствуют точному списку известных слов, например сущность списка;
-* данные не содержат другие элементы данных, например составную или иерархическую сущность.
+* данные не содержат другие элементы данных, например составную сущность или контекстно-зависимые роли.
 
 Рассмотрите следующие высказывания чат-бота.
 

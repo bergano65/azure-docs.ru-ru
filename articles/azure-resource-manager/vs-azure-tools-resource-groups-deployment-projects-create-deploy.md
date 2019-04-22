@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 02/21/2019
 ms.author: tomfitz
 ms.openlocfilehash: 442551424fea353aa7eddef6e7eba6e934f95691
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58905857"
 ---
 # <a name="creating-and-deploying-azure-resource-groups-through-visual-studio"></a>Создание и развертывание групп ресурсов Azure с помощью Visual Studio
@@ -315,4 +315,4 @@ ms.locfileid: "58905857"
 В этом кратком руководстве вы узнали, как создать и развернуть шаблоны с помощью Visual Studio. В следующем руководстве показано, как в справочнике по шаблону найти информацию, чтобы создать зашифрованную учетную запись хранения Azure.
 
 > [!div class="nextstepaction"]
-> [Создание зашифрованной учетной записи хранения](./resource-manager-tutorial-create-encrypted-storage-accounts.md)
+> [Создание шаблона Azure Resource Manager для развертывания зашифрованной учетной записи хранения](./resource-manager-tutorial-create-encrypted-storage-accounts.md)

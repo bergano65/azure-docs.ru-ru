@@ -11,13 +11,13 @@ author: vainolo
 ms.author: arib
 ms.reviewer: vanto
 manager: craigg
-ms.date: 04/08/2019
-ms.openlocfilehash: 9fac8291799216b4ca4527b482aefee169f7fc59
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.date: 04/16/2019
+ms.openlocfilehash: add3521a3961f230188e04ff23dda5aac537571a
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59361277"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59680389"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Приступая к работе с аудитом базы данных SQL
 
@@ -88,6 +88,9 @@ ms.locfileid: "59361277"
     ![Область навигации][3]
 
 5. **Новое.** Теперь есть несколько вариантов настройки расположения для записи журналов аудита. Можно записывать журналы в учетную запись хранилища Azure, в рабочую область Log Analytics для использования Azure Monitor журналов или в концентратор событий для использования с помощью концентратора событий. Вы также можете настроить любое сочетание этих вариантов, и журналы аудита будут записываться в каждый из них.
+
+   > [!WARNING]
+   > Включение аудита для Log Analytics приведет к дополнительным затратам, на основе тарифов для приема. Имейте в виду стоимости, связанные с с помощью этого [параметр](https://azure.microsoft.com/en-us/pricing/details/monitor/), или рассмотрите возможность хранения Аудит журналов в учетную запись хранилища Azure.
 
     ![варианты хранилищ](./media/sql-database-auditing-get-started/auditing-select-destination.png)
 
@@ -231,7 +234,7 @@ ms.locfileid: "59361277"
 
 - [Создание или обновление политики (Set-AzSqlDatabaseAuditing) аудита базы данных](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabaseauditing)
 - [Создание или обновление политики аудита сервера (Set-AzSqlServerAuditing)](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserverauditing)
-- [Получение политики аудита базы данных (Get-AzSqlDatabaseAuditing)](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaseauditing)
+- [Получение политики аудита баз данных (Get-AzSqlDatabaseAuditing)](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaseauditing)
 - [Получение политики аудита (Get-AzSqlServerAuditing) сервера](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlserverauditing)
 
 Пример сценария см. в статье [Настройка аудита и обнаружения угроз для базы данных SQL с помощью PowerShell](scripts/sql-database-auditing-and-threat-detection-powershell.md).
@@ -256,9 +259,9 @@ ms.locfileid: "59361277"
 
 Вы можете управлять аудитом базы данных Azure SQL с помощью шаблонов [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), как показано в следующих примерах.
 
-- [Развертывание сервера SQL Azure с помощью аудит, чтобы записывать журналы аудита в учетной записи хранения BLOB-объектов Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-blob-storage)
-- [Развертывание сервера SQL Azure с помощью аудит, чтобы записывать журналы аудита в Log Analytics](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-oms)
-- [Развертывание сервера SQL Azure с аудит, чтобы записывать журналы аудита для концентраторов событий](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-eventhub)
+- [Deploy an Azure SQL Server with Auditing enabled to write audit logs to Azure Blob storage account](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-blob-storage) (Развертывание Azure SQL Server с поддержкой аудита, чтобы записывать журналы аудита в учетную запись хранения BLOB-объектов Azure).
+- [Развертывание сервера SQL Azure с поддержкой аудита, чтобы записывать журналы аудита в Log Analytics](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-oms)
+- [Развертывание сервера SQL Azure с поддержкой аудита, чтобы записывать журналы аудита в Центры событий](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-eventhub)
 
 > [!NOTE]
 > Связанные образцы на внешнего общедоступного репозитория и предоставляются «как is», без гарантии и не поддерживаются в рамках любой программы поддержки Microsoft/service.

@@ -3,7 +3,7 @@ title: Краткое руководство по работе с Центром
 description: В этом кратком руководстве объясняется, как подготовить расширение виртуальной машины "Azure Monitor, Update and Configuration Management" на виртуальных машинах Azure Stack.
 services: security-center
 documentationcenter: na
-author: monhaber
+author: pipposera
 manager: dsavage
 editor: ''
 ms.assetid: 8982348a-0624-40c7-8a1e-642a523c7f6b
@@ -14,13 +14,13 @@ ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/02/2019
-ms.author: monhaber
-ms.openlocfilehash: 9efd6514b722168f8ecb1235159e7463ce318118
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.author: fiseraci
+ms.openlocfilehash: 7a630acee079301b95e7e05f5c5333dd116abb68
+ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58904021"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59563800"
 ---
 # <a name="quickstart--onboard-your-azure-stack-virtual-machines-to-security-center"></a>Краткое руководство.  Подключение виртуальных машин Azure Stack к Центру безопасности
 После подключения подписки Azure можете включить Центр безопасности, чтобы защитить виртуальные машины, работающие в Azure Stack, добавив расширение виртуальной машины **Azure Monitor, Update and Configuration Management** из Azure Stack Marketplace.
@@ -32,7 +32,7 @@ ms.locfileid: "58904021"
 
 Для работы с этим руководством требуется подписка Azure и Центр безопасности с ценовой категорией "Стандартный". См. руководство по [подключению подписки Azure к центру безопасности с ценовой категорией "Стандартный"](security-center-get-started.md). Вы можете использовать Центр безопасности ценовой категории "Стандартный" бесплатно в течение 30 дней. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/security-center/).
 
-## <a name="add-an-azure-stack-virtual-machine"></a>Добавление виртуальной машины Azure Stack
+## <a name="select-your-workspace-in-azure-security-center"></a>Выберите рабочую область в Центре безопасности Azure.
 
 1. Войдите на [портал Azure](https://azure.microsoft.com/features/azure-portal/).
 2. В меню **Microsoft Azure** выберите пункт **Центр безопасности**. Откроется окно **Security Center - Overview** (Центр безопасности — обзор). 
@@ -65,8 +65,12 @@ ms.locfileid: "58904021"
 3. Выберите **Расширения**. Появится список расширений виртуальных машин, которые установлены на этой виртуальной машине.
 4. Откройте вкладку **Добавить**. Откроется колонка меню **Новый ресурс** и отобразится список доступных расширений виртуальных машин. 
 5. Выберите расширение **Azure Monitor, Управление конфигурацией и обновлением** и нажмите кнопку **Создать**. Откроется колонка конфигурации **Установить расширение**.
+
+>[!NOTE]
+> Если расширение **Azure Monitor, Update and Configuration Management** отсутствует в marketplace, обратитесь к оператору Azure Stack, чтобы получить это расширение.
+
 6. В колонке конфигурации **Установить расширение** вставьте **идентификатор рабочей области** и **ключ рабочей области (первичный ключ)**, скопированные в Блокнот в ходе предыдущей процедуры.
-7.  Когда укажите все необходимые параметры конфигурации, нажмите кнопку **ОК**.
+7.  Указав все необходимые параметры конфигурации, нажмите кнопку **ОК**.
 8. После завершения установки для расширения будет отображаться состояние **Подготовка успешно завершена**. Виртуальная машина отобразится на портале Центра безопасности в течение часа.
 
 Дополнительные сведения об установке и настройке агента для Windows см. в разделе [Подключение компьютеров Windows](../azure-monitor/platform/agent-windows.md#install-the-agent-using-setup-wizard).
@@ -97,7 +101,7 @@ ms.locfileid: "58904021"
 При работе с этим кратким руководством вы подготовили расширение "Azure Monitor, Update and Configuration Management" на виртуальной машине, работающей в Azure Stack. Дополнительные сведения об использовании центра безопасности см. в руководстве по настройке политики безопасности и оценке безопасности ресурсов.
 
 > [!div class="nextstepaction"]
-> [Руководство по Определение и оценка политик безопасности](tutorial-security-policy.md)
+> [Руководство Определение и оценка политик безопасности](tutorial-security-policy.md)
 
 <!--Image references-->
 [2]: ./media/quick-onboard-windows-computer/overview.png

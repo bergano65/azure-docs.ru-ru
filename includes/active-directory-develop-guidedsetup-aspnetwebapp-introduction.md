@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: include
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 03/20/2019
+ms.date: 04/11/2019
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: 5a1ff10901d10fb274a6fa1418f04e1f20113cb7
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
-ms.translationtype: MT
+ms.openlocfilehash: 86113246fab399e8364653198e9a6971317e3f2c
+ms.sourcegitcommit: f24b62e352e0512dfa2897362021b42e0cb9549d
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58203638"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59505810"
 ---
 # <a name="add-sign-in-with-microsoft-to-an-aspnet-web-app"></a>Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт
 
@@ -27,11 +27,11 @@ ms.locfileid: "58203638"
 
 В конце этого руководства ваше приложение сможет принимать операции входа с помощью личных учетных записей (включая outlook.com, live.com и другие), а также рабочих и учебных учетных записей из любой компании или организации, которая использует Azure Active Directory.
 
-> Для работы с этим руководством требуется Visual Studio 2015 с обновлением 3 или Visual Studio 2017.  У вас его нет?  [Скачайте Visual Studio 2017 бесплатно.](https://www.visualstudio.com/downloads/)
+> Для работы с этим руководством требуется Visual Studio 2017.  У вас его нет?  [Скачайте Visual Studio 2017 бесплатно](https://www.visualstudio.com/downloads/)
 
 ## <a name="how-the-sample-app-generated-by-this-guide-works"></a>Как работает пример приложения, созданный в этом руководстве
 
-![Показано, как в примере приложения создаются, это работает, учебники](media/active-directory-develop-guidedsetup-aspnetwebapp-intro/aspnetbrowsergeneral-updated.png)
+![Работа примера приложения, созданного при работе с этими руководствами.](media/active-directory-develop-guidedsetup-aspnetwebapp-intro/aspnetbrowsergeneral.svg)
 
 Пример приложения, создающегося в рамках этого руководства, основан на сценарии, в котором пользователь с помощью браузера получает доступ к веб-сайту ASP.NET. При этом пользователь должен выполнить аутентификацию, воспользовавшись кнопкой входа. В этом сценарии большая часть работы по отображению веб-страницы происходит на стороне сервера.
 

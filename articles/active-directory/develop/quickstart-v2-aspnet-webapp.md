@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по веб-серверу ASP.NET для Azure AD версии 2.0 | Документация Майкрософт
+title: Краткое руководство. Использование веб-сервера ASP.NET с платформой удостоверений Майкрософт | Azure
 description: Узнайте, как реализовать единый вход Майкрософт в веб-приложении ASP.NET с помощью OpenID Connect.
 services: active-directory
 documentationcenter: dev-center-name
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 03/20/2019
+ms.date: 04/11/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ae388798716565c1fdeeb10b274c2a168ca86ea
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: 4b83f5e6735f5b2554af2f5e6c74a7c9095d23fd
+ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58200265"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59579484"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт
 
@@ -29,7 +29,7 @@ ms.locfileid: "58200265"
 
 В этом кратком руководстве вы узнаете, как веб-приложение ASP.NET позволяет войти в личные учетные записи (hotmail.com, outlook.com и т. д.), а также рабочие и учебные учетные записи из любого экземпляра Azure Active Directory (Azure AD).
 
-![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-aspnet-webapp/aspnetwebapp-intro-updated.png)
+![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-aspnet-webapp/aspnetwebapp-intro.svg)
 
 > [!div renderon="docs"]
 > ## <a name="register-and-download-your-quickstart-app"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
@@ -39,7 +39,7 @@ ms.locfileid: "58200265"
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
-> 1. Откройте [Регистрация приложений (предварительная версия)](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetWebAppQuickstartPage/sourceType/docs) на портале Azure.
+> 1. Откройте на [портале Azure новую панель регистрации приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetWebAppQuickstartPage/sourceType/docs).
 > 1. Введите имя своего приложения и щелкните **Зарегистрировать**.
 > 1. Следуйте инструкциям для загрузки и автоматической настройки нового приложения одним щелчком мыши.
 >
@@ -50,10 +50,11 @@ ms.locfileid: "58200265"
 >
 > 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 > 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
-> 1. В области навигации слева выберите службу **Azure Active Directory**, а затем выберите **Регистрация приложений (предварительная версия)** > **Новая регистрация**.
+> 1. Перейдите на страницу [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) Платформы удостоверений Майкрософт для разработчиков.
+> 1. Выберите **Новая регистрация**.
 > 1. После появления страницы **Регистрация приложения** введите сведения о регистрации приложения:
 >      - В разделе **Имя** введите понятное имя приложения, которое будет отображаться пользователям приложения, например `ASPNET-Quickstart`.
->      - В поле **URL-адрес ответа** добавьте `https://localhost:44368/` и щелкните **Зарегистрировать**.
+>      - В поле **URI перенаправления** добавьте `https://localhost:44368/` и щелкните **Зарегистрировать**.
 Выберите меню **Проверка подлинности**, установите значение **Токен идентификатора** в разделе **Неявное предоставление**, а затем нажмите кнопку **Сохранить**.
 
 > [!div class="sxs-lookup" renderon="portal"]
@@ -132,7 +133,7 @@ public void Configuration(IAppBuilder app)
             // To allow users from only a list of specific organizations, set ValidateIssuer to true and use ValidIssuers parameter
             TokenValidationParameters = new TokenValidationParameters()
             {
-                ValidateIssuer = false
+                ValidateIssuer = false // Simplification (see note below)
             },
             // OpenIdConnectAuthenticationNotifications configures OWIN to send notification of failed authentications to OnAuthenticationFailed method
             Notifications = new OpenIdConnectAuthenticationNotifications
@@ -148,12 +149,17 @@ public void Configuration(IAppBuilder app)
 > |---------|---------|
 > | `ClientId`     | Идентификатор приложения, зарегистрированного на портале Azure |
 > | `Authority`    | Конечная точка STS для проверки подлинности пользователей. Обычно это <https://login.microsoftonline.com/{tenant}/v2.0> для общедоступного облака, где {tenant} — имя вашего клиента, идентификатор клиента или *common* для ссылки на общую конечную точку (используется для мультитенантных приложений). |
-> | `RedirectUri`  | URL-адрес, куда пользователи переходят после проверки подлинности на конечной точке Azure AD версии 2.0 |
+> | `RedirectUri`  | URL-адрес, куда пользователи переходят после проверки подлинности на конечной точке платформы удостоверений Майкрософт |
 > | `PostLogoutRedirectUri`     | URL-адрес, куда пользователи переходят после выхода |
 > | `Scope`     | Список запрашиваемых областей, разделенных пробелами |
 > | `ResponseType`     | Запрос, в котором указано, что ответ после проверки подлинности содержит маркер идентификации |
 > | `TokenValidationParameters`     | Список параметров для проверки маркеров. В этом случае для `ValidateIssuer` задано значение `false`, чтобы указать, что приложение может принимать операции входа с любых типов личных, рабочих или учебных учетных записей |
 > | `Notifications`     | Список делегатов, которые могут выполняться для разных сообщений *OpenIdConnect* |
+
+
+> [!NOTE]
+> Параметр `ValidateIssuer = false` приводится в этом кратком руководстве для упрощения. В реальных приложениях необходимо проверить издателя.
+> См. примеры кода, чтобы узнать, как это сделать.
 
 ### <a name="initiate-an-authentication-challenge"></a>Инициирование запроса проверки подлинности
 
