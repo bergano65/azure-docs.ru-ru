@@ -9,10 +9,10 @@ ms.date: 02/24/2019
 ms.topic: how-to
 ms.service: azure-spatial-anchors
 ms.openlocfilehash: 3dd4fbedd51e11e84303f997cef0bb28bf79b241
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58918184"
 ---
 # <a name="how-to-create-and-locate-anchors-using-azure-spatial-anchors-in-objective-c"></a>Как создать и найдите привязки, использующие Azure пространственных привязки Objective-c
@@ -22,10 +22,10 @@ ms.locfileid: "58918184"
 > * [Objective-C](create-locate-anchors-objc.md)
 > * [Swift](create-locate-anchors-swift.md)
 > * [Android Java](create-locate-anchors-java.md)
-> * [C + +/ NDK](create-locate-anchors-cpp-ndk.md)
-> * [C + +/ WinRT](create-locate-anchors-cpp-winrt.md)
+> * [C++/NDK](create-locate-anchors-cpp-ndk.md)
+> * [C++/WinRT](create-locate-anchors-cpp-winrt.md)
 
-Пространственные привязки Azure позволяют вам совместно использовать привязки на различных устройствах. Он поддерживает несколько сред разработки. В этой статье мы подробно рассмотрим использование пространственных привязки пакета SDK Azure, в Objective-C, для:
+Пространственные привязки Azure позволяют вам совместно использовать привязки на различных устройствах. Служба поддерживает несколько сред разработки. В этой статье мы подробно рассмотрим использование пространственных привязки пакета SDK Azure, в Objective-C, для:
 
 - Правильно настроить и управление ими в сеансе Azure пространственных привязки.
 - Создание и задание свойств для локального привязки.
@@ -36,8 +36,8 @@ ms.locfileid: "58918184"
 
 Чтобы выполнить в этом руководстве, убедитесь, что у вас есть:
 
-- Прочтите [Обзор привязки пространственных Azure](../overview.md).
-- Одно из [5-минутными руководствами](../index.yml).
+- Прочесть статью [Описание службы "Пространственные привязки Azure"](../overview.md).
+- Выполнить одно из [5-минутных руководств](../index.yml).
 - Базовые знания на Objective-C.
 - Базовые знания о <a href="https://developer.apple.com/arkit/" target="_blank">ARKit</a>.
 

@@ -10,10 +10,10 @@ ms.date: 09/27/2017
 ms.author: seguler
 ms.subservice: common
 ms.openlocfilehash: 0641a097761530285c2dd9aa176ddd8c2c159001
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58878746"
 ---
 # <a name="transfer-data-with-the-microsoft-azure-storage-data-movement-library"></a>Передача данных с использованием библиотеки перемещения данных службы хранилища Microsoft Azure
@@ -34,7 +34,7 @@ ms.locfileid: "58878746"
 
 **Необходимые компоненты:**
 
-* [Visual Studio Code.](https://code.visualstudio.com/)
+* [Visual Studio Code](https://code.visualstudio.com/)
 *  [учетная запись хранения Azure](storage-quickstart-create-account.md)
 
 > [!NOTE]
@@ -49,12 +49,12 @@ ms.locfileid: "58878746"
 3. Откройте этот каталог в Visual Studio Code. Этот шаг можно быстро выполнить, введя в командной строке `code .` в Windows.
 4. Установите [расширение C# ](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) из Marketplace для Visual Studio Code. Перезапустите Visual Studio Code.
 5. На этом этапе должны отобразиться два запроса. Первый — для добавления необходимых ресурсов для сборки. Щелкните "Да". Второй запрос — для восстановления неразрешенных зависимостей. Щелкните "Восстановить".
-6. Измените `launch.json` в `.vscode`, чтобы использовать внешний терминал в качестве консоли. Этот параметр следует читать как `"console": "externalTerminal"`
+6. Измените `launch.json` в `.vscode`, чтобы использовать внешний терминал в качестве консоли. Этот параметр следует читать как `"console": "externalTerminal"`.
 7. Visual Studio Code позволяет отлаживать приложения .NET Core. Нажмите клавишу `F5`, чтобы запустить приложение и проверить настройки. Вы должны увидеть текст "Hello World!" в консоли.
 
 ## <a name="add-data-movement-library-to-your-project"></a>Добавление в проект библиотеки перемещения данных
 
-1. Добавьте последнюю версию библиотеки перемещения данных в раздел `dependencies` файла `<project-name>.csproj`. Во время написания этой статьи эта версия будет `"Microsoft.Azure.Storage.DataMovement": "0.6.2"`
+1. Добавьте последнюю версию библиотеки перемещения данных в раздел `dependencies` файла `<project-name>.csproj`. На момент написания статьи это версия `"Microsoft.Azure.Storage.DataMovement": "0.6.2"`.
 2. Должен появиться запрос на восстановление проекта. Нажмите кнопку "Восстановить". Можно также восстановить проект из командной строки, введя команду `dotnet restore` в корневом каталоге проекта.
 
 Измените `<project-name>.csproj`.

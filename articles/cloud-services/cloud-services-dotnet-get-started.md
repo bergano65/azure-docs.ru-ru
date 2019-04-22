@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: jeconnoc
 ms.openlocfilehash: a2eff2ca2e72ad263e3e23d0827e7603bca3fdcb
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58917482"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
@@ -775,7 +775,7 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 
 Для получения дополнительных сведений см. следующие ресурсы:
 
-* [Azure Cloud Services часть 1. Общие сведения](https://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
-* [Как управлять облачными службами](cloud-services-how-to-manage-portal.md)
+* [Облачные службы Azure. Часть 1: введение](https://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
+* [Управление облачными службами](cloud-services-how-to-manage-portal.md)
 * [Хранилище Azure](https://docs.microsoft.com/azure/storage/)
 * [Как выбрать поставщика облачных служб](https://azure.microsoft.com/overview/choosing-a-cloud-service-provider/)

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: 82301a17bb461b6d8733d5f046fe791ffbcf3ecb
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58885712"
 ---
 # <a name="use-service-bus-from-net-with-amqp-10"></a>Использование служебной шины на платформе .NET с протоколом AMQP 1.0
@@ -116,7 +116,7 @@ ms.locfileid: "58885712"
 
 Хотите узнать больше? Перейдите по следующим ссылкам:
 
-* [Обзор AMQP для служебной шины]
+* [Протокол AMQP служебной шины — обзор]
 * [Руководство по использованию протокола AMQP 1.0]
 
 [Create a Service Bus namespace using the Azure portal]: service-bus-create-namespace-portal.md
@@ -126,6 +126,6 @@ ms.locfileid: "58885712"
 [OperationTimeout]: /dotnet/api/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_MessagingFactorySettings_OperationTimeout
 [NuGet]: https://nuget.org/packages/WindowsAzure.ServiceBus/
 [Azure portal]: https://portal.azure.com
-[Обзор AMQP для служебной шины]: service-bus-amqp-overview.md
+[Протокол AMQP служебной шины — обзор]: service-bus-amqp-overview.md
 [Руководство по использованию протокола AMQP 1.0]: service-bus-amqp-protocol-guide.md
 

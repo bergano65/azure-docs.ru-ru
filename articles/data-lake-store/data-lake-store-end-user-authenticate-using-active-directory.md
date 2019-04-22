@@ -12,16 +12,16 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: c0fe63e395ee08cb65e9bbbadc4ce1f03032ce95
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58880089"
 ---
 # <a name="end-user-authentication-with-azure-data-lake-storage-gen1-using-azure-active-directory"></a>Проверка подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory
 > [!div class="op_single_selector"]
 > * [Аутентификация пользователей](data-lake-store-end-user-authenticate-using-active-directory.md)
-> * [Взаимодействие между службами](data-lake-store-service-to-service-authenticate-using-active-directory.md)
+> * [Аутентификация между службами](data-lake-store-service-to-service-authenticate-using-active-directory.md)
 > 
 > 
 
@@ -118,8 +118,8 @@ Azure Data Lake Storage 1-го поколения (ADLS 1-го поколени�
 ## <a name="next-steps"></a>Дальнейшие действия
 В этой статье мы создали собственное приложение Azure AD и собрали сведения, необходимые в клиентских приложениях, создаваемых с помощью пакетов SDK для .NET, Java, REST API и др. Из следующих статей вы узнаете, как с помощью веб-приложения Azure AD проходить проверку подлинности в Data Lake Storage 1-го поколения, а затем выполнить другие операции в хранилище.
 
-* [Пользователей-аутентификация в поколение 1 хранилища Озера данных с помощью пакета SDK для Java](data-lake-store-end-user-authenticate-java-sdk.md)
-* [Аутентификация пользователей в поколение 1 хранилища Озера данных с помощью пакета SDK для .NET](data-lake-store-end-user-authenticate-net-sdk.md)
-* [Аутентификация пользователей в поколение 1 хранилища Озера данных с помощью Python](data-lake-store-end-user-authenticate-python.md)
-* [Аутентификация пользователей в поколение 1 хранилища Озера данных с помощью REST API](data-lake-store-end-user-authenticate-rest-api.md)
+* [Проверка подлинности пользователей в Data Lake Storage 1-го поколения с помощью Java SDK](data-lake-store-end-user-authenticate-java-sdk.md)
+* [Проверка подлинности пользователей в Data Lake Storage 1-го поколения с помощью .NET SDK](data-lake-store-end-user-authenticate-net-sdk.md)
+* [Проверка подлинности пользователей в Data Lake Storage 1-го поколения с помощью Python](data-lake-store-end-user-authenticate-python.md)
+* [Проверка подлинности пользователей в Data Lake Storage 1-го поколения с помощью REST API](data-lake-store-end-user-authenticate-rest-api.md)
 

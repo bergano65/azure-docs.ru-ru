@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: twooley
 ms.openlocfilehash: b3f1888a73baf2b7f9efa9f5e7cdb3305aa9f90d
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58878117"
 ---
 # <a name="disaster-recovery-guidance-for-data-in-azure-data-lake-storage-gen1"></a>Руководство по аварийному восстановлению данных в Azure Data Lake Storage 1-го поколения
@@ -42,6 +42,6 @@ Azure Data Lake Storage 1-го поколения предоставляет л�
 Организации могут также включить [ведение журнала диагностики](data-lake-store-diagnostic-logs.md) для своих учетных записей Data Lake Storage 1-го поколения. Это позволит собирать журналы аудита доступа к данным, содержащие сведения о пользователях, которые могли удалить или обновить файл.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Начало работы с Gen1 хранилища Озера данных Azure](data-lake-store-get-started-portal.md)
-* [Защита данных в поколение 1 хранилища Озера данных](data-lake-store-secure-data.md)
+* [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md)
+* [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
 

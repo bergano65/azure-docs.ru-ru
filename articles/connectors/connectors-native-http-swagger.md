@@ -12,10 +12,10 @@ tags: connectors
 ms.topic: article
 ms.date: 07/18/2016
 ms.openlocfilehash: 9408b66f74391b080ef46c758b07850b2ae8de57
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58893406"
 ---
 # <a name="call-rest-endpoints-with-http--swagger-connector-in-azure-logic-apps"></a>Вызов конечных точек REST с помощью соединителя HTTP + Swagger в Azure Logic Apps
@@ -115,9 +115,9 @@ ms.locfileid: "58893406"
 
 | ИМЯ | ОПИСАНИЕ |
 | --- | --- |
-| 200 |ОК |
+| 200 |OК |
 | 202 |Принято |
-| 400 |Недопустимый запрос |
+| 400 |Ошибочный запрос |
 | 401 |Не авторизовано |
 | 403 |Запрещено |
 | 404 |Не найдено |

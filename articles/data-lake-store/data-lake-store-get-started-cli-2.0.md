@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
 ms.openlocfilehash: 9431cc7fa12b86371ce6b2325aca8e13d264442e
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58880582"
 ---
 # <a name="get-started-with-azure-data-lake-store-using-azure-cli"></a>Начало работы с Azure Data Lake Store с помощью Azure CLI
@@ -22,9 +22,9 @@ ms.locfileid: "58880582"
 [!INCLUDE [data-lake-storage-gen1-rename-note.md](../../includes/data-lake-storage-gen1-rename-note.md)]
 
 > [!div class="op_single_selector"]
-> * [Microsoft Azure](data-lake-store-get-started-portal.md)
+> * [Портал](data-lake-store-get-started-portal.md)
 > * [PowerShell](data-lake-store-get-started-powershell.md)
-> * [Инфраструктура CLI Azure](data-lake-store-get-started-cli-2.0.md)
+> * [Интерфейс командной строки Azure](data-lake-store-get-started-cli-2.0.md)
 >
 > 
 
@@ -233,7 +233,7 @@ az dls account delete --account mydatalakestoragegen1
 При появлении запроса введите **Y** , чтобы удалить учетную запись.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Использовать Gen1 хранилища Озера данных Azure для потребностей больших данных](data-lake-store-data-scenarios.md) 
-* [Защита данных в поколение 1 хранилища Озера данных](data-lake-store-secure-data.md)
-* [Использование Azure Data Lake Analytics с Gen1 хранилища Озера данных](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
-* [Использование Azure HDInsight с Gen1 хранилища Озера данных](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Использование Azure Data Lake Storage 1-го поколения для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md) 
+* [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
+* [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)

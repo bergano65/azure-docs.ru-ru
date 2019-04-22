@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
 ms.openlocfilehash: 92e8435e4336c68982e4becc2a95f99b2c776c0e
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58861848"
 ---
 # <a name="protocol-support-for-http-headers-in-azure-front-door-service"></a>Поддержка протокола для заголовков HTTP в службе Azure передовой линии
@@ -33,7 +33,7 @@ ms.locfileid: "58861848"
 
 Служба двери включает заголовки из входящего запроса, если не удалены из-за ограничений. Входной двери также добавляет следующие заголовки:
 
-| Заголовок  | Пример и описание |
+| Верхний колонтитул  | Пример и описание |
 | ------------- | ------------- |
 | Via |  С помощью: 1.1 azure </br> Версия HTTP клиента а затем добавляет входной двери *Azure* как значение заголовка Via. Это указывает на версию клиента HTTP, а этот входной двери был получателю промежуточных для запроса между клиентом и серверной части.  |
 | X-Azure-ClientIP | X-Azure-ClientIP: 127.0.0.1 </br> Представляет IP-адрес клиента, связанный с запросом, который обрабатывается. Например запрос, поступающих из учетной записи-посредника добавить заголовок X-Forwarded-For, чтобы указать IP-адрес исходного заявителя. |
@@ -48,13 +48,13 @@ ms.locfileid: "58861848"
 
 Все заголовки, отправляемые двери из серверной части, также передаются клиенту. Ниже приведены заголовки, отправленные из входной двери клиентам.
 
-| Заголовок  | Пример |
+| Верхний колонтитул  | Пример |
 | ------------- | ------------- |
 | X-Azure-Ref |  *X-Azure-Ref: 0zxV+XAAAAABKMMOjBv2NT4TY6SQVjC0zV1NURURHRTA2MTkANDM3YzgyY2QtMzYwYS00YTU0LTk0YzMtNWZmNzA3NjQ3Nzgz* </br> Это уникальная эталонная строка, которая идентифицирует запрос, обслуженный Front Door. Это крайне важно для устранения неполадок, так как он используется для поиска в журналах доступа.|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Создание профиля Front Door](quickstart-create-front-door.md)
+- [Создание передовой линии](quickstart-create-front-door.md)
 - [Как работает передовой линии](front-door-routing-architecture.md)
 
 <!--Image references-->

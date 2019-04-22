@@ -9,10 +9,10 @@ ms.date: 02/24/2019
 ms.topic: how-to
 ms.service: azure-spatial-anchors
 ms.openlocfilehash: d1c5f906fef495f7ef1dde5df38a84629a6d6c61
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58915957"
 ---
 # <a name="how-to-create-and-locate-anchors-using-azure-spatial-anchors-in-unity"></a>Как создать и найдите привязки, использующие привязки пространственных Azure в Unity
@@ -22,10 +22,10 @@ ms.locfileid: "58915957"
 > * [Objective-C](create-locate-anchors-objc.md)
 > * [Swift](create-locate-anchors-swift.md)
 > * [Android Java](create-locate-anchors-java.md)
-> * [C + +/ NDK](create-locate-anchors-cpp-ndk.md)
-> * [C + +/ WinRT](create-locate-anchors-cpp-winrt.md)
+> * [C++/NDK](create-locate-anchors-cpp-ndk.md)
+> * [C++/WinRT](create-locate-anchors-cpp-winrt.md)
 
-Пространственные привязки Azure позволяют вам совместно использовать привязки на различных устройствах. Он поддерживает несколько сред разработки. В этой статье мы подробно рассмотрим использование пространственных привязки пакета SDK Azure, в Unity для:
+Пространственные привязки Azure позволяют вам совместно использовать привязки на различных устройствах. Служба поддерживает несколько сред разработки. В этой статье мы подробно рассмотрим использование пространственных привязки пакета SDK Azure, в Unity для:
 
 - Правильно настроить и управление ими в сеансе Azure пространственных привязки.
 - Создание и задание свойств для локального привязки.
@@ -36,10 +36,10 @@ ms.locfileid: "58915957"
 
 Чтобы выполнить в этом руководстве, убедитесь, что у вас есть:
 
-- Прочтите [Обзор привязки пространственных Azure](../overview.md).
-- Одно из [5-минутными руководствами](../index.yml).
-- Базовые знания о C# и Unity.
-- Базовые знания о <a href="https://developers.google.com/ar/discover/" target="_blank">ARCore</a> Если вы хотите использовать Android, или <a href="https://developer.apple.com/arkit/" target="_blank">ARKit</a> Если вы хотите использовать операций ввода-вывода.
+- Прочесть статью [Описание службы "Пространственные привязки Azure"](../overview.md).
+- Выполнить одно из [5-минутных руководств](../index.yml).
+- Базовые знания C# и Unity.
+- Базовые знания <a href="https://developers.google.com/ar/discover/" target="_blank">ARCore</a>, если вы хотите использовать Android, или <a href="https://developer.apple.com/arkit/" target="_blank">ARKit</a>, если вы хотите использовать iOS.
 
 [!INCLUDE [Start](../../../includes/spatial-anchors-create-locate-anchors-start.md)]
 

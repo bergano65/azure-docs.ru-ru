@@ -15,16 +15,16 @@ ms.workload: na
 ms.date: 03/27/2019
 ms.author: mlottner
 ms.openlocfilehash: 4a53bcf77696d3aa53a4a404bfacd6f6d468885b
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58862108"
 ---
 # <a name="deploy-azure-security-center-for-iot-c-based-security-agent-for-linux"></a>Развертывание центра безопасности Azure для IoT C#-основе security agent для Linux
 
 > [!IMPORTANT]
-> Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
+> Центр безопасности Azure для Интернета вещей сейчас предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В этом руководстве объясняется, как установить и развернуть центр безопасности Azure (ASC) для Интернета вещей C#-агент безопасности на базе Linux.
@@ -52,7 +52,7 @@ ms.locfileid: "58862108"
 
 1. Извлеките содержимое пакета и перейдите в папку _/Install_.
 
-1. Добавьте разрешения, запущенного для **InstallSecurityAgent сценарий** , выполнив `chmod +x InstallSecurityAgent.sh` 
+1. Добавьте права на выполнение к **скрипту InstallSecurityAgent**, выполнив следующую команду `chmod +x InstallSecurityAgent.sh`. 
 
 1. Затем выполните приведенную ниже команду: 
 
@@ -75,7 +75,7 @@ ms.locfileid: "58862108"
 - Настройка агента с предоставленными параметрами проверки подлинности.
 
 
-Для получения дополнительной справки запустите скрипт с параметром –help: `./InstallSecurityAgent.sh --help`
+Для получения дополнительной справки запустите скрипт с параметром –help: `./InstallSecurityAgent.sh --help`.
 
 ### <a name="uninstall-the-agent"></a>Удаление агента
 
@@ -118,7 +118,7 @@ ms.locfileid: "58862108"
 
    1. Просмотрите дополнительные сведения о сбое в файле журнала.  
 
-       — Расположение файла журнала: `/var/ASCIoTAgent/IotAgentLog.log`
+       Расположение файла журнала: `/var/ASCIoTAgent/IotAgentLog.log`.
 
        Измените путь к расположению файла в соответствии с именем, выбранным для значения **logFilePath** на шаге 2. 
 

@@ -1,6 +1,6 @@
 ---
-title: Как создать и найдите привязки, использующие Azure пространственных привязки в C + +/ NDK | Документация Майкрософт
-description: Подробные сведения о способах создания и найдите привязки, использующие Azure пространственных привязки в C + +/ NDK.
+title: Как создать и найдите привязки, использующие Azure пространственных привязки в C++/NDK | Документация Майкрософт
+description: Подробные сведения о способах создания и найдите привязки, использующие Azure пространственных привязки в C++/NDK.
 author: ramonarguelles
 manager: vicenterivera
 services: azure-spatial-anchors
@@ -9,23 +9,23 @@ ms.date: 02/24/2019
 ms.topic: how-to
 ms.service: azure-spatial-anchors
 ms.openlocfilehash: 09809270d6b42a5491d322628f1d98c580f65206
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
-ms.translationtype: MT
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58915941"
 ---
-# <a name="how-to-create-and-locate-anchors-using-azure-spatial-anchors-in-cndk"></a>Как создать и найдите привязки, использующие Azure пространственных привязки в C + +/ NDK
+# <a name="how-to-create-and-locate-anchors-using-azure-spatial-anchors-in-cndk"></a>Как создать и найдите привязки, использующие Azure пространственных привязки в C++/NDK
 
 > [!div  class="op_single_selector"]
 > * [Unity](create-locate-anchors-unity.md)
 > * [Objective-C](create-locate-anchors-objc.md)
 > * [Swift](create-locate-anchors-swift.md)
 > * [Android Java](create-locate-anchors-java.md)
-> * [C + +/ NDK](create-locate-anchors-cpp-ndk.md)
-> * [C + +/ WinRT](create-locate-anchors-cpp-winrt.md)
+> * [C++/NDK](create-locate-anchors-cpp-ndk.md)
+> * [C++/WinRT](create-locate-anchors-cpp-winrt.md)
 
-Пространственные привязки Azure позволяют вам совместно использовать привязки на различных устройствах. Он поддерживает несколько сред разработки. В этой статье мы подробно рассмотрим использование пространственных привязки пакета SDK Azure, в C + +/ NDK, чтобы:
+Пространственные привязки Azure позволяют вам совместно использовать привязки на различных устройствах. Служба поддерживает несколько сред разработки. В этой статье мы подробно рассмотрим использование пространственных привязки пакета SDK Azure, в C++/NDK, чтобы:
 
 - Правильно настроить и управление ими в сеансе Azure пространственных привязки.
 - Создание и задание свойств для локального привязки.
@@ -36,8 +36,8 @@ ms.locfileid: "58915941"
 
 Чтобы выполнить в этом руководстве, убедитесь, что у вас есть:
 
-- Прочтите [Обзор привязки пространственных Azure](../overview.md).
-- Одно из [5-минутными руководствами](../index.yml).
+- Прочесть статью [Описание службы "Пространственные привязки Azure"](../overview.md).
+- Выполнить одно из [5-минутных руководств](../index.yml).
 - Базовые знания о C++ и <a href="https://developer.android.com/ndk/" target="_blank">Android Native Development Kit</a>.
 - Базовые знания о <a href="https://developers.google.com/ar/discover/" target="_blank">ARCore</a> 1.5.
 

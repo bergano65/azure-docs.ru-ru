@@ -16,10 +16,10 @@ ms.topic: conceptual
 ms.date: 07/07/2017
 ms.author: ergreenl
 ms.openlocfilehash: fbd876ad46342dec7e2e73b92d3aafbd37cc205b
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58892302"
 ---
 # <a name="how-to-decide-if-azure-ad-domain-services-is-right-for-your-use-case"></a>Как определить, подходят ли вам доменные службы Azure AD
@@ -34,23 +34,23 @@ ms.locfileid: "58892302"
 ## <a name="compare-azure-ad-domain-services-to-diy-ad-domain-in-azure"></a>Сравнение доменных служб Azure AD и самостоятельно развернутого домена AD в Azure
 Следующая таблица поможет выбрать между использованием доменных служб Azure AD и управлением инфраструктурой AD в Azure.
 
-| **Функция** | **Доменные службы Azure AD** | **Самостоятельное развертывание AD на виртуальных машинах Azure** |
+| **Компонент** | **Доменные службы Azure AD** | **Самостоятельное развертывание AD на виртуальных машинах Azure** |
 | --- |:---:|:---:|
 | [**Управляемая служба**](active-directory-ds-comparison.md#managed-service) |**&#x2713;** |**&#x2715;** |
 | [**Защищенные развернутые службы**](active-directory-ds-comparison.md#secure-deployments) |**&#x2713;** |Администратор должен обеспечить безопасное развертывание. |
-| [**Сервер DNS**](active-directory-ds-comparison.md#dns-server) |**&#x2713;** (управляемая служба) |**&#x2713;** |
-| [**Права администратора домена или предприятия**](active-directory-ds-comparison.md#domain-or-enterprise-administrator-privileges) |**&#x2715;** |**&#x2713;** |
+| [**Сервер DNS**](active-directory-ds-comparison.md#dns-server) | **&#x2713;** (управляемая служба) |**&#x2713;** |
+| [**Domain or Enterprise administrator privileges**](active-directory-ds-comparison.md#domain-or-enterprise-administrator-privileges) |**&#x2715;** |**&#x2713;** |
 | [**Присоединение к домену**](active-directory-ds-comparison.md#domain-join) |**&#x2713;** |**&#x2713;** |
 | [**Аутентификация в домене с помощью NTLM и Kerberos**](active-directory-ds-comparison.md#domain-authentication-using-ntlm-and-kerberos) |**&#x2713;** |**&#x2713;** |
 | [**Ограниченное делегирование Kerberos**](active-directory-ds-comparison.md#kerberos-constrained-delegation)|на основе ресурсов|на основе ресурсов и на основе учетных записей|
 | [**Структура пользовательских подразделений**](active-directory-ds-comparison.md#custom-ou-structure) |**&#x2713;** |**&#x2713;** |
 | [**Расширения схемы**](active-directory-ds-comparison.md#schema-extensions) |**&#x2715;** |**&#x2713;** |
-| [**Отношения доверия с доменом AD и лесом**](active-directory-ds-comparison.md#ad-domain-or-forest-trusts) |**&#x2715;** |**&#x2713;** |
-| [**Чтение LDAP**](active-directory-ds-comparison.md#ldap-read) |**&#x2713;** |**&#x2713;** |
-| [**Защищенный LDAP (LDAPS)**](active-directory-ds-comparison.md#secure-ldap) |**&#x2713;** |**&#x2713;** |
-| [**Записи LDAP**](active-directory-ds-comparison.md#ldap-write) |**&#x2715;** |**&#x2713;** |
-| [**Групповая политика**](active-directory-ds-comparison.md#group-policy) |**&#x2713;** |**&#x2713;** |
-| [**Географически распределенных развертываний**](active-directory-ds-comparison.md#geo-dispersed-deployments) |**&#x2715;** |**&#x2713;** |
+| [**Отношения доверия между доменом AD и лесом**](active-directory-ds-comparison.md#ad-domain-or-forest-trusts) |**&#x2715;** |**&#x2713;** |
+| [**LDAP read**](active-directory-ds-comparison.md#ldap-read) |**&#x2713;** |**&#x2713;** |
+| [**Защищенный протокол LDAP (LDAPS)**](active-directory-ds-comparison.md#secure-ldap) |**&#x2713;** |**&#x2713;** |
+| [**LDAP write**](active-directory-ds-comparison.md#ldap-write) |**&#x2715;** |**&#x2713;** |
+| [**Group Policy**](active-directory-ds-comparison.md#group-policy) |**&#x2713;** |**&#x2713;** |
+| [**Географически распределенные развертывания**](active-directory-ds-comparison.md#geo-dispersed-deployments) |**&#x2715;** |**&#x2713;** |
 
 #### <a name="managed-service"></a>Управляемая служба
 Доменами доменных служб Azure AD управляет корпорация Майкрософт. Вам не нужно беспокоиться об установке исправлений и обновлений, мониторинге, архивации и обеспечении доступности домена. Эти задачи управления предлагаются как услуга Microsoft Azure для ваших управляемых доменов.
@@ -118,6 +118,6 @@ ms.locfileid: "58892302"
 Корпорация Майкрософт опубликовала [рекомендации по развертыванию Windows Server Active Directory на виртуальных машинах Azure](/windows-server/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100) , чтобы облегчить самостоятельные установки.
 
 ## <a name="related-content"></a>Похожий контент
-* [Свойства — доменные службы Azure AD](active-directory-ds-features.md)
-* [Сценарии развертывания - доменных служб Azure AD](active-directory-ds-scenarios.md)
+* [Возможности доменных служб Azure AD](active-directory-ds-features.md)
+* [Сценарии развертывания доменных служб Azure AD](active-directory-ds-scenarios.md)
 * [Рекомендации по развертыванию Windows Server Active Directory на виртуальных машинах Azure](/windows-server/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100)

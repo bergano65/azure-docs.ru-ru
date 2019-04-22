@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 07/05/2017
 ms.author: jeconnoc
 ms.openlocfilehash: 59bfa83ab3432adb7a4df5112367f87014a0b292
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58917623"
 ---
 # <a name="how-to-configure-and-run-startup-tasks-for-a-cloud-service"></a>Как настроить и выполнить задачи запуска для облачной службы
@@ -99,8 +99,8 @@ EXIT /B 0
 
 **executionContext** — задает уровень привилегий для задачи запуска. Уровень привилегий может быть ограничен или повышен:
 
-* **Limited**  
-   Задача запуска выполняется с теми же привилегиями, что и роль. Если атрибут **executionContext** элемента [Runtime] также имеет значение **limited**, то используются привилегии пользователя.
+* **limited**  
+   Задача запуска выполняется с теми же привилегиями, что и роль. Если атрибут **executionContext** элемента [Среда выполнения] также имеет значение **limited**, то используются привилегии пользователя.
 * **elevated**  
    Задача запуска выполняется с привилегиями администратора. Это позволяет задачам запуска устанавливать программы, вносить изменения в конфигурацию IIS, вносить изменения в реестр и выполнять другие административные задачи без увеличения уровня привилегий самой роли.  
 
@@ -111,7 +111,7 @@ EXIT /B 0
 
 **taskType** — указывает способ выполнения задачи запуска.
 
-* **Простой**  
+* **Простые**  
   Задачи выполняются синхронно, поочередно и в порядке, указанном в файле [ServiceDefinition.csdef] . Если одна задача запуска **simple** завершается **errorlevel**, равным нулю, выполняется следующая задача запуска **simple**. Если больше нет задач запуска **simple** для выполнения, запускается сама роль.   
   
   > [!NOTE]
@@ -122,13 +122,13 @@ EXIT /B 0
     Чтобы убедиться, что пакетный файл завершается нулевым **errorlevel**, выполните команду `EXIT /B 0` в конце обработки пакетного файла.
 * **background**  
    Задачи выполняются асинхронно, параллельно с запуском роли.
-* **Передний план**  
+* **переднего плана**  
    Задачи выполняются асинхронно, параллельно с запуском роли. Основное различие между задачами **foreground** и **background** состоит в том, что задача **foreground** не разрешает перезапуск или завершение работы роли до завершения задачи. Задачи **background** не имеют этого ограничения.
 
 ## <a name="environment-variables"></a>Переменные среды
 Переменные среды — это способ передачи информации в задачу запуска. Например, можно передать путь к большому двоичному объекту, содержащему программу для установки, или номера портов, которые будет использовать роль, или параметры для управления функциями задачи запуска.
 
-Существует два типа переменных среды для задачи запуска: статические переменные среды и переменные среды на основе членов класса [RoleEnvironment] . Оба они находятся в разделе [Environment] файла [ServiceDefinition.csdef] и используют элемент [Variable] и атрибут **name**.
+Существует два типа переменных среды для задачи запуска: статические переменные среды и переменные среды на основе членов класса [RoleEnvironment] . Оба они находятся в разделе [Среда] файла [ServiceDefinition.csdef] и используют элемент [Variable] и атрибут **name**.
 
 Статические переменные среды используют атрибут **value** элемента [Variable] . В примере выше создается переменная среды **MyVersionNumber**, которая имеет статическое значение **1.0.0.0**. Другим примером может служить создание переменной среды **StagingOrProduction**, которой можно вручную присвоить значение **staging** или **production**, чтобы выполнять различные действия запуска в зависимости от значения переменной среды **StagingOrProduction**.
 
@@ -161,10 +161,10 @@ EXIT /B 0
 [Упакуйте](cloud-services-model-and-package.md) облачную службу.  
 
 [ServiceDefinition.csdef]: cloud-services-model-and-package.md#csdef
-[Задача]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
-[Запуск]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
+[Task]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
+[Startup]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
 [Среда выполнения]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
 [Среда]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
-[Переменная]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
+[Variable]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
