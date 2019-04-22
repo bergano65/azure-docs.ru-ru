@@ -7,12 +7,12 @@ ms.date: 03/14/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: ca473474c62d0cb57c3ee76095740568398c67d7
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: c54d8aedb9464364f93a087de4bdb00c693a96ae
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59272756"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59698917"
 ---
 # <a name="overview-of-the-iso-27001-shared-services-blueprint-sample"></a>Обзор примера схемы "ISO 27001: общие службы"
 
@@ -36,7 +36,7 @@ ms.locfileid: "59272756"
 - Служба [Log Analytics](../../../../azure-monitor/overview.md) развертывается первой в Azure, чтобы обеспечить регистрацию всех действий и служб в центральном расположении с момента запуска безопасного развертывания.
 - Виртуальная сеть с поддержкой подсетей для обратной связи с локальным центром обработки данных, стека входящего и исходящего трафика для подключения к Интернету и подсети общей службы с использованием групп безопасности сети и групп безопасности приложения для полной микросегментации, включая следующее:
   - jumpbox или узел-бастион, используемый для управления, доступ к которому можно получить, развернув [Брандмауэр Azure](../../../../firewall/overview.md) в подсети стека входящего трафика;
-  - две виртуальные машины, в которых работают службы каталогов Active Directory (ADDS) и DNS, с доступом только посредством jumpbox и возможностью настройки только для репликации AD через подключение VPN или [ExpressRoute](../../../../expressroute/expressroute-introduction.md) (не развертывается в рамках схемы);
+  - две виртуальные машины, в которых работают доменные службы Active Directory (ADDS) и DNS, доступные только с использованием jumpbox и настраиваемые только для репликации AD через подключение VPN или [ExpressRoute](../../../../expressroute/expressroute-introduction.md) (не развертывается схемой);
   - использование [Наблюдателя за сетями Azure](../../../../network-watcher/network-watcher-monitoring-overview.md) и стандартной защиты от атак DDoS.
 - Экземпляр [Azure Key Vault](../../../../key-vault/key-vault-whatis.md) для размещения секретов, используемых для виртуальных машин, которые развернуты в среде общих служб.
 

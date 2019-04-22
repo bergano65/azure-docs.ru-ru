@@ -1,281 +1,276 @@
-items:
 - name: Документация по службам мультимедиа
   href: ./index.yml
 - name: Обзор
   items:
-  - name: Сведения о службах мультимедиа
-    href: media-services-overview.md
+    - name: Сведения о службах мультимедиа
+      href: media-services-overview.md
 - name: Быстрое начало работы
-  items:
-  - name: Потоковая передача видеофайлов с помощью .NET
-    href: stream-files-dotnet-quickstart.md
-  - name: Потоковая передача видеофайлов с помощью CLI
-    href: stream-files-cli-quickstart.md
-  - name: Потоковая передача видеофайлов с помощью Node.js
-    href: stream-files-nodejs-quickstart.md
   expanded: true
+  items:
+    - name: Потоковая передача видеофайлов с помощью .NET
+      href: stream-files-dotnet-quickstart.md
+    - name: Потоковая передача видеофайлов с помощью CLI
+      href: stream-files-cli-quickstart.md
+    - name: Потоковая передача видеофайлов с помощью Node.js
+      href: stream-files-nodejs-quickstart.md
 - name: Учебники
   items:
-  - name: Кодирование удаленных файлов и потокового видео — REST
-    displayName: encoding, job, transform
-    href: stream-files-tutorial-with-rest.md
-  - name: Кодирование отправленных файлов и потокового видео — .NET
-    displayName: encode, encoding, job, transform
-    href: stream-files-tutorial-with-api.md
-  - name: Потоковая передача в реальном времени — .NET
-    href: stream-live-tutorial-with-api.md
-  - name: Анализ видео — .NET
-    displayName: job, transform
-    href: analyze-videos-tutorial-with-api.md
-  - name: Динамическое шифрование AES-128 — .NET
-    href: protect-with-aes128.md
+    - name: "Кодирование удаленных файлов и потокового видео\_— REST"
+      displayName: 'encoding, job, transform'
+      href: stream-files-tutorial-with-rest.md
+    - name: "Кодирование отправленных файлов и потокового видео\_— .NET"
+      displayName: 'encode, encoding, job, transform'
+      href: stream-files-tutorial-with-api.md
+    - name: "Потоковая передача в реальном времени\_— .NET"
+      href: stream-live-tutorial-with-api.md
+    - name: "Анализ видео\_— .NET"
+      displayName: 'job, transform'
+      href: analyze-videos-tutorial-with-api.md
+    - name: "Динамическое шифрование AES-128\_— .NET"
+      href: protect-with-aes128.md
 - name: Примеры
   items:
-  - name: Примеры кода Azure
-    href: https://azure.microsoft.com/resources/samples/?sort=0&service=media-services&term=v3
-  - name: Инфраструктура CLI Azure
-    href: cli-samples.md
+    - name: Примеры кода Azure
+      href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=media-services&term=v3'
+    - name: Инфраструктура CLI Azure
+      href: cli-samples.md
 - name: Основные понятия
   href: concepts-overview.md
   items:
-  - name: Передача в облако и хранение
-    items:
-    - name: Хранилище
-      href: storage-account-concept.md
-    - name: Активы
-      href: assets-concept.md
-  - name: Кодирование
-    items:
-    - name: Обзор
-      displayName: Presets
-      href: encoding-concept.md
-    - name: Преобразования и задания
-      href: transforms-jobs-concept.md
-    - name: Форматы Media Encoder Standard
-      displayName: containers, codecs
-      href: media-encoder-standard-formats.md
-    - name: Автоматическое создание схемы передачи с переменной скоростью
-      href: autogen-bitrate-ladder.md
-    - name: Кодирование с учетом содержимого
-      href: cae-experimental.md
-  - name: Аналитика мультимедиа
-    items:
-    - name: Обзор
-      displayName: Presets
-      href: analyzing-video-audio-files-concept.md
-    - name: Преобразования и задания
-      href: transforms-jobs-concept.md
-  - name: Упаковка, доставка и защита
-    items:
-    - name: Упаковка
+    - name: Передача в облако и хранение
       items:
-      - name: Динамическая упаковка
-        displayName: packager
-        href: dynamic-packaging-overview.md
-      - name: Динамические манифесты
-        href: filters-dynamic-manifest-overview.md
-      - name: Фильтры
-        href: filters-concept.md
-    - name: Защита содержимого
+        - name: Хранилище
+          href: storage-account-concept.md
+        - name: Активы
+          href: assets-concept.md
+    - name: Кодирование
       items:
-      - name: Протоколы потоковой передачи и типы шифрования
-        displayName: Dynamic encryption
-        href: content-protection-overview.md
-      - name: Система с несколькими DRM и управлением доступом
-        href: design-multi-drm-system-with-access-control.md
-      - name: Лицензии DRM
-        items:
-        - name: Шаблон лицензии PlayReady
-          href: playready-license-template-overview.md
-        - name: Шаблон лицензии Widevine
-          href: widevine-license-template-overview.md
-        - name: Требования лицензий FairPlay
-          href: fairplay-license-overview.md
-    - name: Конечные точки и источник потоковой передачи
-      displayName: origins, cdn
-      href: streaming-endpoint-concept.md
-    - name: Указатели потоковой передачи
-      displayName: URLs
-      href: streaming-locators-concept.md
-    - name: Политики потоковой передачи
-      href: streaming-policy-concept.md
-    - name: Политики ключа содержимого
-      href: content-key-policy-concept.md
-  - name: Потоковая передача в реальном времени
-    items:
-    - name: Обзор
-      href: live-streaming-overview.md
-    - name: События и выходные данные прямой трансляции
-      href: live-events-outputs-concept.md
-    - name: Рекомендуемые динамические кодировщики
-      href: recommended-on-premises-live-encoders.md
-    - name: Использование DVR в облаке
-      displayName: archive
-      href: live-event-cloud-dvr.md
-    - name: Сравнение возможностей
-      href: live-event-types-comparison.md
-    - name: Состояния и выставление счетов
-      href: live-event-states-billing.md
-    - name: Latency
-      href: live-event-latency.md
-  - name: Мониторинг
-    items:
-    - name: События в Сетке событий
-      href: reacting-to-media-services-events.md
-    - name: Схемы службы "Сетка событий"
-      href: media-services-event-schemas.md
-    - name: Метрики и журналы диагностики
-      href: media-services-metrics-diagnostic-logs.md
-    - name: Схемы для журналов диагностики
-      href: media-services-diagnostic-logs-schema.md
-  - name: Клиенты в Проигрывателе
-    items:
-    - name: Проигрыватель мультимедиа Azure
-      href: use-azure-media-player.md
-  - name: Разработка с использованием API-интерфейсов версии 3
-    href: media-services-apis-overview.md
-    items:
-    - name: Разбиение на страницы, фильтрация и упорядочение сущностей
-      href: entities-overview.md
-    - name: RBAC
-      href: rbac-overview.md
-  - name: Руководство по миграции из версии 2 в версию 3
-    href: migrate-from-v2-to-v3.md
+        - name: Обзор
+          href: encoding-concept.md
+          displayName: Presets
+        - name: Преобразования и задания
+          href: transforms-jobs-concept.md
+        - name: Форматы Media Encoder Standard
+          displayName: 'containers, codecs'
+          href: media-encoder-standard-formats.md
+        - name: Автоматическое создание схемы передачи с переменной скоростью
+          href: autogen-bitrate-ladder.md
+        - name: Кодирование с учетом содержимого
+          href: cae-experimental.md
+    - name: Аналитика мультимедиа
+      items:
+        - name: Обзор
+          href: analyzing-video-audio-files-concept.md
+          displayName: Presets
+        - name: Преобразования и задания
+          href: transforms-jobs-concept.md
+    - name: 'Упаковка, доставка и защита'
+      items:
+        - name: Упаковка
+          items:
+            - name: Динамическая упаковка
+              displayName: packager
+              href: dynamic-packaging-overview.md
+            - name: Динамические манифесты
+              href: filters-dynamic-manifest-overview.md
+            - name: Фильтры
+              href: filters-concept.md
+        - name: Защита содержимого
+          items:
+            - name: Протоколы потоковой передачи и типы шифрования
+              displayName: Dynamic encryption
+              href: content-protection-overview.md
+            - name: Система с несколькими DRM и управлением доступом
+              href: design-multi-drm-system-with-access-control.md
+            - name: Лицензии DRM
+              items:
+                - name: Шаблон лицензии PlayReady
+                  href: playready-license-template-overview.md
+                - name: Шаблон лицензии Widevine
+                  href: widevine-license-template-overview.md
+                - name: Требования лицензий FairPlay
+                  href: fairplay-license-overview.md
+        - name: Конечные точки и источник потоковой передачи
+          displayName: 'origins, cdn'
+          href: streaming-endpoint-concept.md
+        - name: Указатели потоковой передачи
+          displayName: URLs
+          href: streaming-locators-concept.md
+        - name: Политики потоковой передачи
+          href: streaming-policy-concept.md
+        - name: Политики ключа содержимого
+          href: content-key-policy-concept.md
+    - name: Потоковая передача в реальном времени
+      items:
+        - name: Обзор
+          href: live-streaming-overview.md
+        - name: События и выходные данные прямой трансляции
+          href: live-events-outputs-concept.md
+        - name: Рекомендуемые динамические кодировщики
+          href: recommended-on-premises-live-encoders.md
+        - name: Использование DVR в облаке
+          displayName: archive
+          href: live-event-cloud-dvr.md
+        - name: Сравнение возможностей
+          href: live-event-types-comparison.md
+        - name: Состояния и выставление счетов
+          href: live-event-states-billing.md
+        - name: Latency
+          href: live-event-latency.md
+    - name: Мониторинг
+      items:
+        - name: События в Сетке событий
+          href: reacting-to-media-services-events.md
+        - name: Схемы службы "Сетка событий"
+          href: media-services-event-schemas.md
+        - name: Метрики и журналы диагностики
+          href: media-services-metrics-diagnostic-logs.md
+        - name: Схемы для журналов диагностики
+          href: media-services-diagnostic-logs-schema.md
+    - name: Клиенты в Проигрывателе
+      items:
+        - name: Проигрыватель мультимедиа Azure
+          href: use-azure-media-player.md
+    - name: "Разработка с использованием API-интерфейсов версии\_3"
+      href: media-services-apis-overview.md
+      items:
+        - name: 'Разбиение на страницы, фильтрация и упорядочение сущностей'
+          href: entities-overview.md
+        - name: RBAC
+          href: rbac-overview.md
+    - name: Руководство по миграции из версии 2 в версию 3
+      href: migrate-from-v2-to-v3.md
 - name: Практические руководства
   items:
-  - name: Начало работы
-    items:
-    - name: Создание учетной записи — CLI
-      href: create-account-cli-how-to.md
-    - name: Доступ к API — CLI
-      href: access-api-cli-how-to.md
-    - name: 'Масштабирование зарезервированных единиц мультимедиа: CLI'
-      href: media-reserved-units-cli-how-to.md
-    - name: Разработка с использованием REST
+    - name: Начало работы
       items:
-      - name: Подключение с помощью Postman
-        href: media-rest-apis-with-postman.md
-    - name: Разработка с использованием пакетов SDK
-      href: developers-guide.md
+        - name: "Создание учетной записи\_— CLI"
+          href: create-account-cli-how-to.md
+        - name: "Доступ к API\_— CLI"
+          href: access-api-cli-how-to.md
+        - name: 'Масштабирование зарезервированных единиц мультимедиа: CLI'
+          href: media-reserved-units-cli-how-to.md
+        - name: Разработка с использованием REST
+          items:
+            - name: Подключение с помощью Postman
+              href: media-rest-apis-with-postman.md
+        - name: Разработка с использованием пакетов SDK
+          href: developers-guide.md
+          items:
+            - name: Подключение с помощью Java
+              href: configure-connect-java-howto.md
+            - name: Подключение с помощью .NET
+              href: configure-connect-dotnet-howto.md
+            - name: Подключение с помощью Node.js
+              href: configure-connect-nodejs-howto.md
+            - name: Подключение с помощью Python
+              href: configure-connect-python-howto.md
+    - name: Передача содержимого
       items:
-      - name: Подключение с помощью Java
-        href: configure-connect-java-howto.md
-      - name: Подключение с помощью .NET
-        href: configure-connect-dotnet-howto.md
-      - name: Подключение с помощью Node.js
-        href: configure-connect-nodejs-howto.md
-  - name: Передача содержимого
-    items:
-    - name: HTTPS — .NET
-      displayName: upload
-      href: job-input-from-http-how-to.md
-    - name: Локальный файл — .NET
-      displayName: upload
-      href: job-input-from-local-file-how-to.md
-    - name: Локальный файл — REST
-      displayName: upload
-      href: upload-files-rest-how-to.md
-  - name: Кодирование контента
-    items:
-    - name: URL-адрес HTTPS в качестве входных данных для задания — .NET
-      displayName: encode, encoding
-      href: job-input-from-http-how-to.md
-    - name: Локальный файл в качестве входных данных для задания — .NET
-      displayName: encode, encoding
-      href: job-input-from-local-file-how-to.md
-    - name: Кодирование с помощью пользовательского преобразования
+        - name: "HTTPS\_— .NET"
+          displayName: upload
+          href: job-input-from-http-how-to.md
+        - name: Локальный файл — .NET
+          displayName: upload
+          href: job-input-from-local-file-how-to.md
+        - name: Локальный файл — REST
+          displayName: upload
+          href: upload-files-rest-how-to.md
+    - name: Кодирование контента
       items:
-      - name: Использование .NET
-        href: customize-encoder-presets-how-to.md
-      - name: С помощью интерфейса командной строки
-        href: custom-preset-cli-howto.md
-      - name: С помощью REST
-        href: custom-preset-rest-howto.md
-  - name: Использование Сетки событий
-    items:
-    - name: Мониторинг событий (портал)
-      href: monitor-events-portal-how-to.md
-    - name: Мониторинг событий (CLI)
-      href: job-state-events-cli-how-to.md
-  - name: Защита содержимого
-    items:
-    - name: Получение политики ключа содержимого — .NET
-      href: get-content-key-policy-dotnet-howto.md
-    - name: Динамическое шифрование DRM — .NET
-      href: protect-with-drm.md
-    - name: FairPlay для iOS (автономный режим)
-      href: offline-fairplay-for-ios.md
-    - name: Widevine для Android (автономный режим)
-      href: offline-widevine-for-android.md
-    - name: PlayReady для Windows 10 (автономный режим)
-      href: offline-plaready-streaming-for-windows-10.md
-  - name: Создание фильтров
-    items:
-    - name: Использование .NET
-      href: filters-dynamic-manifest-dotnet-howto.md
-    - name: С помощью REST
-      href: filters-dynamic-manifest-rest-howto.md
-    - name: С помощью интерфейса командной строки
-      href: filters-dynamic-manifest-cli-howto.md
+        - name: "URL-адрес HTTPS в качестве входных данных для задания\_— .NET"
+          displayName: 'encode, encoding'
+          href: job-input-from-http-how-to.md
+        - name: "Локальный файл в качестве входных данных для задания\_— .NET"
+          displayName: 'encode, encoding'
+          href: job-input-from-local-file-how-to.md
+        - name: Кодирование с помощью пользовательского преобразования
+          items:
+            - name: Использование .NET
+              href: customize-encoder-presets-how-to.md
+            - name: С помощью интерфейса командной строки
+              href: custom-preset-cli-howto.md
+            - name: С помощью REST
+              href: custom-preset-rest-howto.md
+    - name: Использование Сетки событий
+      items:
+        - name: Мониторинг событий (портал)
+          href: monitor-events-portal-how-to.md
+        - name: Мониторинг событий (CLI)
+          href: job-state-events-cli-how-to.md
+    - name: Защита содержимого
+      items:
+        - name: "Получение политики ключа содержимого\_— .NET"
+          href: get-content-key-policy-dotnet-howto.md
+        - name: "Динамическое шифрование DRM\_— .NET"
+          href: protect-with-drm.md
+        - name: FairPlay для iOS (автономный режим)
+          href: offline-fairplay-for-ios.md
+        - name: Widevine для Android (автономный режим)
+          href: offline-widevine-for-android.md
+        - name: "PlayReady для Windows\_10 (автономный режим)"
+          href: offline-plaready-streaming-for-windows-10.md
+    - name: Создание фильтров
+      items:
+        - name: Использование .NET
+          href: filters-dynamic-manifest-dotnet-howto.md
+        - name: С помощью REST
+          href: filters-dynamic-manifest-rest-howto.md
+        - name: С помощью интерфейса командной строки
+          href: filters-dynamic-manifest-cli-howto.md
 - name: Справочные материалы
   items:
-  - name: Спецификация OpenAPI (Swagger)
-    href: https://aka.ms/ams-v3-rest-sdk
-  - name: REST
-    href: https://aka.ms/ams-v3-rest-ref
-  - name: Инфраструктура CLI Azure
-    href: https://aka.ms/ams-v3-cli-ref
-  - name: Пакеты SDK
-    items:
-    - name: .NET
-      href: https://aka.ms/ams-v3-dotnet-ref
-    - name: Java
-      href: https://aka.ms/ams-v3-java-ref
-    - name: Python
-      href: https://aka.ms/ams-v3-python-ref
-    - name: Node.js
-      href: https://aka.ms/ams-v3-nodejs-ref
-    - name: Go
-      href: https://aka.ms/ams-v3-go-ref
-  - name: Шаблон Resource Manager
-    href: /azure/templates/microsoft.media/allversions
+    - name: Спецификация OpenAPI (Swagger)
+      href: 'https://aka.ms/ams-v3-rest-sdk'
+    - name: REST
+      href: 'https://aka.ms/ams-v3-rest-ref'
+    - name: Инфраструктура CLI Azure
+      href: 'https://aka.ms/ams-v3-cli-ref'
+    - name: Пакеты SDK
+      items:
+        - name: .NET
+          href: 'https://aka.ms/ams-v3-dotnet-ref'
+        - name: Java
+          href: 'https://aka.ms/ams-v3-java-ref'
+        - name: Python
+          href: 'https://aka.ms/ams-v3-python-ref'
+        - name: Node.js
+          href: 'https://aka.ms/ams-v3-nodejs-ref'
+        - name: Go
+          href: 'https://aka.ms/ams-v3-go-ref'
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.media/allversions
 - name: Ресурсы
   items:
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=web-mobile
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/media-services/
-  - name: Видеоролики
-    href: https://azure.microsoft.com/resources/videos/index/?services=media-services
-  - name: Спецификация OpenAPI (Swagger)
-    href: https://aka.ms/ams-v3-rest-sdk
-  - name: Пакеты SDK и инструменты
-    items:
-    - name: Инфраструктура CLI Azure
-      href: https://aka.ms/ams-v3-cli
-    - name: .NET
-      href: https://aka.ms/ams-v3-dotnet-sdk
-    - name: Java
-      href: https://aka.ms/ams-v3-java-sdk
-    - name: Python
-      href: https://aka.ms/ams-v3-python-sdk
-    - name: Node.js
-      href: https://aka.ms/ams-v3-nodejs-sdk
-    - name: Ruby
-      href: https://aka.ms/ams-v3-ruby-sdk
-  - name: AMSE
-    href: https://github.com/Azure/Azure-Media-Services-Explorer
-  - name: Заметки о выпуске
-    href: release-notes.md
-  - name: Квоты и ограничения
-    href: limits-quotas-constraints.md
-  - name: Часто задаваемые вопросы
-    href: frequently-asked-questions.md
-  - name: Облака и регионы Azure
-    href: azure-clouds-regions.md
-ms.openlocfilehash: adea36543cd734e61f10cb64bfba2e9557db8cf6
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59563532"
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=web-mobile'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/media-services/'
+    - name: Видеоролики
+      href: 'https://azure.microsoft.com/resources/videos/index/?services=media-services'
+    - name: Спецификация OpenAPI (Swagger)
+      href: 'https://aka.ms/ams-v3-rest-sdk'
+    - name: Пакеты SDK и инструменты
+      items:
+        - name: Инфраструктура CLI Azure
+          href: 'https://aka.ms/ams-v3-cli'
+        - name: .NET
+          href: 'https://aka.ms/ams-v3-dotnet-sdk'
+        - name: Java
+          href: 'https://aka.ms/ams-v3-java-sdk'
+        - name: Python
+          href: 'https://aka.ms/ams-v3-python-sdk'
+        - name: Node.js
+          href: 'https://aka.ms/ams-v3-nodejs-sdk'
+        - name: Ruby
+          href: 'https://aka.ms/ams-v3-ruby-sdk'
+    - name: AMSE
+      href: 'https://github.com/Azure/Azure-Media-Services-Explorer'
+    - name: Заметки о выпуске
+      href: release-notes.md
+    - name: Квоты и ограничения
+      href: limits-quotas-constraints.md
+    - name: Часто задаваемые вопросы
+      href: frequently-asked-questions.md
+    - name: Облака и регионы Azure
+      href: azure-clouds-regions.md

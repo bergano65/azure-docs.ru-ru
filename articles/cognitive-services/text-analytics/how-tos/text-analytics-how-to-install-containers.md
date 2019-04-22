@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 03/25/2019
+ms.date: 04/16/2019
 ms.author: diberry
-ms.openlocfilehash: d6c0d04966d3a713493485d52ca4e81ba25ab743
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
-ms.translationtype: MT
+ms.openlocfilehash: 3fd2f257119595311e9d31ad2068fd12c8cf51ee
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58521488"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59683382"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>Установка и запуск контейнеров API анализа текста
 
@@ -36,7 +36,7 @@ ms.locfileid: "58521488"
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
-|Ресурс API анализа текста |Для использования контейнера необходимо следующее:<br><br>Ресурс Azure [_API анализа текста_](text-analytics-how-to-access-key.md), чтобы получить связанный ключ выставления счетов и URI конечной точки выставления счетов. Оба значения доступны на страницах "Обзор" и "Ключи" API анализа текста на портале Azure и необходимы для запуска контейнера.<br><br>**{BILLING_KEY}**: ключ ресурса<br><br>**{BILLING_ENDPOINT_URI}**: пример URI конечной точки: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0`|
+|`Cognitive Services` Ресурс |Для использования контейнера необходимо следующее:<br><br>Объект [ _Cognitive Services_ ](text-analytics-how-to-access-key.md) ресурсов Azure, чтобы получить связанный ключ выставления счетов и выставления счетов URI конечной точки. Оба значения доступны на страницах Общие сведения о Cognitive Services и ключей на портале Azure и необходимые для запуска контейнера. Необходимо добавить `text/analytics/v2.0` маршрутизации URI конечной точки, как показано в следующем примере BILLING_ENDPOINT_URI.<br><br>**{BILLING_KEY}**: ключ ресурса<br><br>**{BILLING_ENDPOINT_URI}**: пример URI конечной точки: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0`|
 
 ### <a name="the-host-computer"></a>Главный компьютер
 
@@ -112,8 +112,10 @@ docker pull mcr.microsoft.com/azure-cognitive-services/sentiment:latest
 
 | Placeholder | Значение |
 |-------------|-------|
-|{BILLING_KEY} | Этот ключ используется для запуска контейнера и доступен на странице API анализа текста на портале Azure.  |
-|{BILLING_ENDPOINT_URI} | Значение URI конечной точки выставления счетов доступно на странице обзора API анализа текста на портале Azure.|
+|{BILLING_KEY} | Этот ключ используется для запуска контейнера, а также доступна на портале Azure `Cognitive Services` страницы "ключи".  |
+|{BILLING_ENDPOINT_URI} | Выставления счетов значение URI конечной точки можно найти в Azure `Cognitive Services` странице "Обзор". <br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/text/analytics/v2.0`|
+
+Необходимо добавить `text/analytics/v2.0` маршрутизации URI конечной точки, как показано в приведенном выше примере BILLING_ENDPOINT_URI.
 
 В следующем примере команды `docker run` замените имена параметров собственными значениями.
 
@@ -159,7 +161,7 @@ ApiKey={BILLING_KEY}
 
 ## <a name="billing"></a>Выставление счетов
 
-Контейнеры API анализа текста отправляют данные для выставления счетов в Azure с помощью ресурса _API анализа текста_ в учетной записи Azure. 
+Отправить контейнеры анализа текста, выставления счетов в Azure, с помощью _Cognitive Services_ ресурсов на учетную запись Azure. 
 
 [!INCLUDE [Container's Billing Settings](../../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 

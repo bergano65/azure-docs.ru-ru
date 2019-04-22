@@ -4,12 +4,12 @@ ms.author: robinsh
 ms.service: iot-hub
 ms.topic: include
 ms.date: 10/26/2018
-ms.openlocfilehash: a47c07c3a59b7dbb677d61de9765b570b7beefd5
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: e6ae89c8b14cfdcd1ac63863448d143b486be07b
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59055696"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59684571"
 ---
 > [!NOTE]
-> Прежде чем начать работу с руководством, настройте устройство, как описано в статье [Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)](../articles/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started.md). В этой статье описывается настройка устройства Интернета вещей Azure и Центра Интернета Вещей и развертывание примера приложения для выполнения на устройстве. Приложение отправляет собранные с датчиков данные в Центр Интернета вещей.
+> Перед началом работы с руководством, выполните [онлайн-симулятор Raspberry Pi](../articles/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started.md) руководства или одним из руководств устройства; например, [Raspberry Pi с помощью node.js](../articles/iot-hub/iot-hub-raspberry-pi-kit-node-get-started.md). В следующих статьях настройкой устройств Azure IoT и центра Интернета вещей и развернете пример приложения для запуска на устройстве. Приложение отправляет собранные с датчиков данные в Центр Интернета вещей.

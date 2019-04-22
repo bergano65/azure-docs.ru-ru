@@ -1,7 +1,7 @@
 ---
 title: Интерпретируемость модели
 titleSuffix: Azure Machine Learning service
-description: Сведения об использовании Interpretability пакета SDK для Azure Machine Learning, чтобы объяснить, почему ваша модель осуществляет прогнозирование. Данное свойство можно использовать во время обучения и выводов, чтобы понять, как модели прогнозов.
+description: Узнайте, как объяснить, почему ваша модель делает прогнозы с использованием Interpretability пакета SDK для Azure Machine Learning. Данное свойство можно использовать во время обучения и выводов, чтобы понять, как модели прогнозов.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,14 +10,14 @@ ms.author: mesameki
 author: mesameki
 ms.reviewer: larryfr
 ms.date: 04/09/2019
-ms.openlocfilehash: fbcafb61ecd69f58bb3c14d1b15f36f1b21f2833
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: 668551603dfa2a9c42f4538fd9a66ee646e1feb7
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59494446"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59682463"
 ---
-# <a name="azure-machine-learning-interpretability-sdk"></a>Interpretability машинного обучения Azure SDK
+# <a name="model-interpretability-with-azure-machine-learning-service"></a>Interpretability модели со службой машинного обучения Azure
 
 В этой статье вы узнаете, как объяснить, почему ваша модель приняли прогнозы сделал с помощью Interpretability пакета SDK для Azure Machine Learning. Описание вашей модели является возможность важно по следующим причинам:
 
@@ -25,9 +25,10 @@ ms.locfileid: "59494446"
 * Как специалист по обработке данных, необходимо понять **как запрос к модели, чтобы получать ценные сведения о**. Необходимо также средства для принятия обоснованных решений на **как улучшить модель**.
 * Как компания, необходимо понимать **поведение модели с различными ввода дистрибутивов** и **модели поведения во время анализа определенных входных данных**.
 
-Machine learning interpretability важно в два этапа цикла разработки в машинном обучении: **обучения** времени и **выводов** времени:
+Machine learning interpretability важно в два этапа цикла разработки в машинном обучении: 
 
 * Во время **обучения**: Конструкторы моделей и оценивающих требуют interpretability средства для объяснения выходные данные модели заинтересованным лицам, чтобы установить доверие. Они также должны ценные сведения о модели, чтобы они могли отладка модели и принимать решения о том, совпадает ли поведение своих задач. Наконец необходимо убедиться, что модель не настроена.
+
 * Во время **выводов**: Прогнозы должны быть или для использования модели. Например, почему модели запрета ссуды ипотеки или предсказать, что портфелем капиталовложений выполняет подвергается риску?
 
 Interpretability пакета SDK для Azure Machine Learning включает в себя технологии разработанных корпорацией Майкрософт и проверенные сторонних библиотек (например, ФИГУРЫ и ТРАВЯНОЙ). Пакет SDK создает общий API через встроенной библиотеки и интегрирует службы машинного обучения Azure. Используя этот пакет SDK, вы сможете разъяснить моделей машинного обучения **глобально ко всем данным**, или **локально на точку данных** с использованием технологий современных образом-удобное и масштабируемое.
@@ -91,7 +92,7 @@ __Meta explainers__ автоматически выбрать подходящи
 
 Ниже показана связь между двумя наборами direct и meta explainers.
 
-[![M— Machine Learning Interpretability архитектура](./media/machine-learning-interpretability-explainability/interpretability-architecture.png)](./media/machine-learning-interpretability-explainability/interpretability-architecture.png#lightbox)
+[![В машинном обучении Interpretability архитектуры](./media/machine-learning-interpretability-explainability/interpretability-architecture.png)](./media/machine-learning-interpretability-explainability/interpretability-architecture.png#lightbox)
 
 ### <a name="models-supported"></a>Поддерживаемые модели
 

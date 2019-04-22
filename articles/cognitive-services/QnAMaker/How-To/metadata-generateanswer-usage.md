@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 02/21/2019
+ms.date: 04/16/2019
 ms.author: tulasim
-ms.openlocfilehash: d14e2897183a97da5e84a76b699def529f1d167e
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.openlocfilehash: c18ededc428b215720f8a6a6857a2eabd93bff8b
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59579416"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59683618"
 ---
 # <a name="get-a-knowledge-answer-with-the-generateanswer-api-and-metadata"></a>Получение ответа базы знаний с помощью GenerateAnswer API и метаданные
 
@@ -46,7 +46,7 @@ API GenerateAnswer можно использовать в боте или при
 После публикации базы знаний с помощью [портала QnA Maker](https://www.qnamaker.ai) или [API](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff) можно получить сведения о конечной точке GenerateAnswer.
 
 Вот как это можно сделать.
-1. Войдите на сайт [https://www.qnamaker.ai](https://www.qnamaker.ai).
+1. Войдите на портал [https://www.qnamaker.ai](https://www.qnamaker.ai).
 1. В разделе **My knowledge bases** (Мои базы знаний) щелкните **View Code** (Просмотреть код) для своей базы знаний.
     Раздел ![My knowledge bases](../media/qnamaker-how-to-metadata-usage/my-knowledge-bases.png) (Мои базы знаний)
 1. Получите сведения о конечной точке GenerateAnswer.
@@ -64,7 +64,7 @@ API GenerateAnswer можно использовать в боте или при
 **URL-адрес запроса** имеет следующий формат: 
 
 ```
-https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer?isTest=true
+https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer
 ```
 
 |Свойство запроса HTTP|ИМЯ|type|Назначение|
@@ -84,7 +84,7 @@ https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer?i
 |`top`|необязательный|целое число|Количество ранжированных результатов в выходных данных. Значение по умолчанию — 1.|
 |`userId`|необязательный|строка|Уникальный идентификатор для определения пользователя. Этот идентификатор будет записываться в журналы чата.|
 |`isTest`|необязательный|Логическое|Если установлено значение true, возвращает результаты из `testkb` индекса поиска вместо опубликованного индекса.|
-|`strictFilters`|необязательный|строка|Если указан, QnA Maker будет возвращать только ответы с указанными метаданными.|
+|`strictFilters`|необязательный|строка|Если указан, QnA Maker будет возвращать только ответы с указанными метаданными. Используйте `none` для указания, ответ должен иметь ни одного фильтра метаданных. |
 
 Пример текста JSON выглядит как:
 

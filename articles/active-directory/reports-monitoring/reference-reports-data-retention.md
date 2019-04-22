@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 126eee1664d810850f63e702abe78b241649d665
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: f1423fddc13a6912e90b6a239921cf2a4d2662ec
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58438824"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59683739"
 ---
 # <a name="azure-active-directory-report-retention-policies"></a>Политики хранения отчетов Azure Active Directory
 
@@ -32,7 +32,7 @@ ms.locfileid: "58438824"
 
 | Выпуск Azure AD | Начало сбора |
 | :--              | :--   |
-| Azure AD Premium P1 <br /> Azure AD Premium P2 | Когда регистрироваться для оформления подписки |
+| Azure AD Premium P1 <br /> Azure AD Premium P2 | Когда регистрироваться для оформления подписки |
 | Azure AD уровня "Бесплатный" <br /> Azure AD Basic | При первом открытии [колонки Azure Active Directory](https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) или использовании [API-интерфейсов отчетности](https://aka.ms/aadreports)  |
 
 ---
@@ -66,17 +66,17 @@ ms.locfileid: "58438824"
 
 **Отчеты о действиях**    
 
-| Отчет                 | Azure AD уровня "Бесплатный" | Azure AD Basic | Azure AD Premium P1 | Azure AD Premium P2 |
+| Отчет                 | Azure AD уровня "Бесплатный" | Azure AD Basic | Azure AD Premium P1 | Azure AD Premium P2 |
 | :--                    | :--           | :--            | :--                 | :--                 |
-| Аудит каталога        | 7 дней        |  7 дней        | 30 дней             | 30 дней             |
-| Действия при входе       | Н/Д           |  Н/Д           | 30 дней             | 30 дней             |
+| Журналы аудита             | 7 дней        |  7 дней        | 30 дней             | 30 дней             |
+| Вход в систему               | Н/Д           |  Н/Д           | 30 дней             | 30 дней             |
 | Использование Azure MFA        | 30 дней       |  30 дней       | 30 дней             | 30 дней             |
 
 Данные о действиях аудита и входа в систему можно хранить дольше указанных выше сроков хранения по умолчанию, направив их в учетную запись хранения с помощью Azure Monitor. Дополнительные сведения см. в статье [Архивация журналов Azure AD в учетной записи хранения Azure](quickstart-azure-monitor-route-logs-to-storage-account.md).
 
 **Сигналы системы безопасности**
 
-| Отчет         | Azure AD уровня "Бесплатный" | Azure AD Basic | Azure AD Premium P1 | Azure AD Premium P2 |
+| Отчет         | Azure AD уровня "Бесплатный" | Azure AD Basic | Azure AD Premium P1 | Azure AD Premium P2 |
 | :--            | :--           | :--            | :--                 | :--                 |
 | пользователи под угрозой;  | 7 дней        | 7 дней         | 30 дней             | 90 дней             |
 | Вход, представляющий риск | 7 дней        | 7 дней         |  30 дней            | 90 дней             |

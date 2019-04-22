@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/11/2018
 ms.author: spelluru
-ms.openlocfilehash: 4585d151e286917c67586a02539a10ade32bdd4c
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
-ms.translationtype: HT
+ms.openlocfilehash: 9d5b7f32cb298315a5816562f548bcdafbdeb5cf
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47094544"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59682314"
 ---
 # <a name="import-vms-from-another-lab-in-azure-devtest-labs"></a>Импорт виртуальной машины из другой лаборатории в Azure DevTest Labs
 Служба Azure DevTest Labs значительно улучшает управление виртуальными машинами для операций разработки и тестирования. Она позволяет перемещать виртуальную машину из одной лаборатории в другую в случае изменения потребностей команды или требований к инфраструктуре. Ниже приведены несколько распространенных сценариев импорта: 
@@ -42,7 +42,7 @@ Azure DevTest Labs позволяет владельцу лаборатории 
 В настоящее время вы можете импортировать виртуальную машину из одной лаборатории в другую только с помощью Azure PowerShell и REST API.
 
 ### <a name="use-powershell"></a>Использование PowerShell
-Загрузите файл сценария PowerShell ImportVirtualMachines.ps1 из [репозитория Git Azure DevTest Lab](https://github.com/Azure/azure-devtestlab/tree/master/Scripts/ImportVirtualMachines) на локальный диск. 
+Загрузите файл сценария PowerShell ImportVirtualMachines.ps1 из [репозитория Git Azure DevTest Lab](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Scripts/ImportVirtualMachines) на локальный диск. 
 
 #### <a name="import-a-single-vm"></a>Импорт одной виртуальной машины
 Выполните сценарий ImportVirtualMachines.ps1, чтобы импортировать одну виртуальную машину из исходной лаборатории в лабораторию назначения. Вы можете указать новое имя для копируемой виртуальной машины с помощью параметра DestinationVirtualMachineName. 
@@ -78,7 +78,7 @@ POST https://management.azure.com/subscriptions/<ID of the target/destination su
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об изменении размера виртуальной машины см. в [этой статье](devtest-lab-resize-vm.md).
 - Сведения о повторном развертывании виртуальной машины см. в [этой статье](devtest-lab-redeploy-vm.md).

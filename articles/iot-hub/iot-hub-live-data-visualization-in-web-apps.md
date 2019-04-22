@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
 ms.author: robinsh
-ms.openlocfilehash: b870c432ea8021d9eeb14eec85ff9912b96ddc96
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 070f37a969411cfc4caf5f2d2b089ccfae759ca2
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59270886"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59683204"
 ---
 # <a name="visualize-real-time-sensor-data-from-your-azure-iot-hub-by-using-the-web-apps-feature-of-azure-app-service"></a>Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью веб-приложений службы приложений Azure
 
@@ -35,13 +35,13 @@ ms.locfileid: "59270886"
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
-* [Настройте свое устройство](iot-hub-raspberry-pi-kit-node-get-started.md). У вас должны быть следующие компоненты:
+* Завершить [онлайн-симулятор Raspberry Pi](iot-hub-raspberry-pi-web-simulator-get-started.md) руководства или одним из руководств устройства; например, [Raspberry Pi с помощью node.js](iot-hub-raspberry-pi-kit-node-get-started.md). Они охватывают следующие требования:
 
   * активная подписка Azure;
   * Центр Интернета вещей в подписке;
   * клиентское приложение, которое отправляет сообщения в Центр Интернета вещей.
 
-* [Загрузить Git](https://www.git-scm.com/downloads)
+* [Скачайте Git](https://www.git-scm.com/downloads).
 
 ## <a name="create-a-web-app"></a>Создание веб-приложения
 
@@ -61,7 +61,7 @@ ms.locfileid: "59270886"
 
 2. Щелкните **Параметры приложения**, а затем в разделе **Параметры приложения** добавьте следующие пары "ключ — значение":
 
-   | Раздел                                   | Значение                                                        |
+   | Ключ                                   | Значение                                                        |
    |---------------------------------------|--------------------------------------------------------------|
    | Azure.IoT.IoTHub.ConnectionString     | Из интерфейса командной строки Azure                                      |
    | Azure.IoT.IoTHub.ConsumerGroup        | Имя группы потребителей, добавленной в Центр Интернета вещей.  |

@@ -9,22 +9,22 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 03/22/2019
+ms.date: 04/16/2019
 ms.author: diberry
-ms.openlocfilehash: ca9b08cdccd43a093ca8b5001d3e30be0e5258b5
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
-ms.translationtype: MT
+ms.openlocfilehash: 54a51c567e8dd655ee3a575d1d4887ec6e094e40
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58894684"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59684062"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
-Контейнер Интеллектуальной службы распознавания речи (LUIS) загружает обученную или опубликованную модель Интеллектуальной службы распознавания речи ([приложение LUIS](https://www.luis.ai)) в контейнер Docker и предоставляет доступ к прогнозам запросов из конечных точек API контейнера. Можно собирать журналы запросов из контейнера и отправлять их обратно в модель Интеллектуальной службы распознавания речи Azure для повышения точности прогнозов приложения.
+Контейнер Интеллектуальной службы распознавания речи (LUIS) загружает обученную или опубликованную модель Интеллектуальной службы распознавания речи ([приложение LUIS](https://www.luis.ai)) в контейнер Docker и предоставляет доступ к прогнозам запросов из конечных точек API контейнера. Можно собирать журналы запросов из контейнера и отправить их обратно в приложение Language Understanding, чтобы повысить точность прогнозов приложения.
 
 В следующем видео показаны способы использования этого контейнера.
 
-[![CДемонстрация стили для Cognitive Services](./media/luis-container-how-to/luis-containers-demo-video-still.png)](https://aka.ms/luis-container-demo)
+[![Демонстрация контейнера для Cognitive Services](./media/luis-container-how-to/luis-containers-demo-video-still.png)](https://aka.ms/luis-container-demo)
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -36,7 +36,14 @@ ms.locfileid: "58894684"
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
-|Ресурс Интеллектуальной службы распознавания речи (LUIS) и связанное приложение |Для использования контейнера необходимо следующее:<br><br>* [Ресурс _Интеллектуальной службы распознавания речи_ Azure](luis-how-to-azure-subscription.md) и связанный ключ конечной точки и URI конечной точки (используется в качестве конечной точки выставления счетов).<br>* Обученное или опубликованное приложение, упакованное в виде подключенных входных данных к контейнеру со связанным идентификатором приложения.<br>* Ключ разработки для скачивания пакета установки, если эти действия выполняются из API.<br><br>Эти требования используются для передачи аргументов командной строки в следующие переменные:<br><br>**{AUTHORING_KEY}**. Этот ключ используется для получения упакованного приложения из службы LUIS в облаке и отправки журналов запросов обратно в облако. Формат — `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.<br><br>**{APPLICATION_ID}**. Этот идентификатор используется для выбора приложения. Формат — `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.<br><br>**{ENDPOINT_KEY}**. Этот ключ используется для запуска контейнера. Ключ конечной точки можно найти в двух местах: на портале Azure в списке ключей ресурса _Language Understanding_, а также на портале LUIS на странице параметров ключей и конечных точек. Не используйте ключ starter.<br><br>**{BILLING_ENDPOINT}**. Значение конечной точки выставления счетов доступно на странице обзора Интеллектуальной службы распознавания речи на портале Azure. Пример: `https://westus.api.cognitive.microsoft.com/luis/v2.0`.<br><br>[Ключ разработки и ключ конечной точки](luis-boundaries.md#key-limits) служат для разных целей. Не используйте их как взаимозаменяемые. |
+|Azure `Cognitive Services` ресурсов и LUIS [упакованных приложений](/luis-how-to-start-new-app.md#export-app-for-containers) файла |Для использования контейнера необходимо следующее:<br><br>* A _Cognitive Services_ ресурсов Azure и соответствующее выставление счетов ключа выставления счетов URI конечной точки. Оба значения доступны на страницах Обзор и ключи для ресурса и необходимые для запуска контейнера. Необходимо добавить `luis/v2.0` маршрутизации URI конечной точки, как показано в следующем примере BILLING_ENDPOINT_URI. <br>* Обученное или опубликованное приложение, упакованное в виде подключенных входных данных к контейнеру со связанным идентификатором приложения. Файл в пакете можно получить с помощью LUIS портала или API-интерфейсов разработки. Если вы получаете LUIS упакованных приложений из [разработка API-интерфейсов](#authoring-apis-for-package-file), вам также потребуется вашей _создания ключа_.<br><br>Эти требования используются для передачи аргументов командной строки в следующие переменные:<br><br>**{AUTHORING_KEY}**. Этот ключ используется для получения упакованного приложения из службы LUIS в облаке и отправки журналов запросов обратно в облако. Формат — `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.<br><br>**{APPLICATION_ID}**. Этот идентификатор используется для выбора приложения. Формат — `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.<br><br>**{ENDPOINT_KEY}**. Этот ключ используется для запуска контейнера. Ключ конечной точки можно найти в двух местах: Во-первых, на портале Azure в составе _Cognitive Services_ список ключей ресурса. а также на портале LUIS на странице параметров ключей и конечных точек. Не используйте ключ starter.<br><br>**{BILLING_ENDPOINT}**. Пример: `https://westus.api.cognitive.microsoft.com/luis/v2.0`.<br><br>[Ключ разработки и ключ конечной точки](luis-boundaries.md#key-limits) служат для разных целей. Не используйте их как взаимозаменяемые. |
+
+### <a name="authoring-apis-for-package-file"></a>Разработка API-интерфейсов для файла пакета
+
+Разработка API-интерфейсов для упакованных приложений:
+
+* [Опубликованный пакет API](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/apps-packagepublishedapplicationasgzip)
+* [API пакета не опубликован, только для обучения](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/apps-packagetrainedapplicationasgzip)
 
 ### <a name="the-host-computer"></a>Главный компьютер
 
@@ -114,7 +121,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 
 |Требования к упаковке|Сведения|
 |--|--|
-|Экземпляр ресурса _Интеллектуальной службы распознавания речи_ Azure|Поддерживаемые регионы:<br><br>Западная часть США (```westus```)<br>Западная Европа (```westeurope```)<br>Восточная Австралия (```australiaeast```)|
+|Azure _Cognitive Services_ экземпляра ресурса|Поддерживаемые регионы:<br><br>Западная часть США (```westus```)<br>Западная Европа (```westeurope```)<br>Восточная Австралия (```australiaeast```)|
 |Обученное или опубликованное приложение LUIS|Без [неподдерживаемых зависимостей](#unsupported-dependencies). |
 |Доступ к файловой системе [главного компьютера](#the-host-computer) |Главный компьютер должен разрешать [входные подключения](luis-container-configuration.md#mount-settings).|
   
@@ -166,7 +173,7 @@ Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 |{APPLICATION_ID} | Идентификатор опубликованного приложения LUIS. |
 |{APPLICATION_ENVIRONMENT} | Среда опубликованного приложения LUIS. Используйте одно из следующих значений:<br/>```PRODUCTION```<br/>```STAGING``` |
 |{AUTHORING_KEY} | Ключ разработки учетной записи LUIS для опубликованного приложения LUIS.<br/>Ключ разработки можно получить на странице **User Settings** (Параметры пользователя) на портале LUIS. |
-|{AZURE_REGION} | Соответствующий регион Azure:<br/><br/>```westus``` -Западная часть США<br/>```westeurope``` — Западная Европа<br/>```australiaeast``` -Юго Восток |
+|{AZURE_REGION} | Соответствующий регион Azure:<br/><br/>```westus``` — западная часть США<br/>```westeurope``` — Западная Европа<br/>```australiaeast``` — Восточная Австралия |
 
 С помощью следующей команды CURL скачайте опубликованный пакет, подставив собственные значения:
 
@@ -194,7 +201,7 @@ Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 |{APPLICATION_ID} | Идентификатор обученного приложения LUIS. |
 |{APPLICATION_VERSION} | Версия обученного приложения LUIS. |
 |{AUTHORING_KEY} | Ключ разработки учетной записи LUIS для опубликованного приложения LUIS.<br/>Ключ разработки можно получить на странице **User Settings** (Параметры пользователя) на портале LUIS.  |
-|{AZURE_REGION} | Соответствующий регион Azure:<br/><br/>```westus``` -Западная часть США<br/>```westeurope``` — Западная Европа<br/>```australiaeast``` -Юго Восток |
+|{AZURE_REGION} | Соответствующий регион Azure:<br/><br/>```westus``` — западная часть США<br/>```westeurope``` — Западная Европа<br/>```australiaeast``` — Восточная Австралия |
 
 С помощью следующей команды CURL скачайте обученный пакет:
 
@@ -214,7 +221,7 @@ https://{AZURE_REGION}.api.cognitive.microsoft.com/luis/api/v2.0/package/{APPLIC
 | Placeholder | Значение |
 |-------------|-------|
 |{ENDPOINT_KEY} | Этот ключ используется для запуска контейнера. Не используйте ключ starter. |
-|{BILLING_ENDPOINT} | Значение конечной точки выставления счетов доступно на странице обзора Интеллектуальной службы распознавания речи на портале Azure.|
+|{BILLING_ENDPOINT} | На портале Azure доступен выставления счетов значение конечной точки `Cognitive Services` странице "Обзор". Необходимо добавить `luis/v2.0` маршрутизации URI конечной точки, как показано в следующем примере: `https://westus.api.cognitive.microsoft.com/luis/v2.0`.|
 
 В следующем примере команды `docker run` замените имена параметров собственными значениями.
 
@@ -245,7 +252,7 @@ ApiKey={ENDPOINT_KEY}
 
 > [!IMPORTANT]
 > Для выполнения контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
-> Значение ApiKey содержит **ключ**, который можно получить на странице параметров ключей и конечной точки на портале LUIS или на странице ключей ресурса Интеллектуальной службы распознавания речи Azure.  
+> Значение ApiKey **ключ** доступна также на Azure и из ключей и конечные точки страницы на портале LUIS `Cognitive Services` страницу ключей ресурсов.  
 
 [!INCLUDE [Running multiple containers on the same host](../../../includes/cognitive-services-containers-run-multiple-same-host.md)]
 
@@ -324,7 +331,7 @@ curl -X GET \
 
 ## <a name="billing"></a>Выставление счетов
 
-Контейнер LUIS отправляет в Azure данные для выставления счетов, используя соответствующий ресурс _Интеллектуальной службы распознавания речи_ в учетной записи Azure. 
+Отправляет контейнер LUIS, выставления счетов в Azure, с помощью _Cognitive Services_ ресурсов на учетную запись Azure. 
 
 [!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 

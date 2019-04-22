@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 08/15/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8491acfd28524ee3bbbd06c788afb668c40c98b9
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.openlocfilehash: cdd2b24e6f833ee0acb229a37c7cd3b8b6f36339
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54450589"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59682055"
 ---
 # <a name="deploy-a-new-simulated-device"></a>Развертывание нового имитированного устройства
 
@@ -35,7 +35,7 @@ ms.locfileid: "54450589"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы следовать этому пошаговому руководству, вам необходимы следующие компоненты.
 
@@ -75,13 +75,9 @@ ms.locfileid: "54450589"
       depends_on:
         - storageadapter
       environment:
-        - PCS_IOTHUB_CONNSTRING
-        - PCS_STORAGEADAPTER_WEBSERVICE_URL=http://storageadapter:9022/v1
-        - PCS_AUTH_ISSUER
-        - PCS_AUTH_AUDIENCE
-        - PCS_AUTH_REQUIRED
-        - PCS_CORS_WHITELIST
-        - PCS_APPLICATION_SECRET
+        - PCS_KEYVAULT_NAME
+        - PCS_AAD_APPID
+        - PCS_AAD_APPSECRET
       # How one could mount custom device models
       volumes:
         - /tmp/devicemodels:/app/webservice/data/devicemodels:ro
@@ -145,6 +141,6 @@ ms.locfileid: "54450589"
 
 Если вам больше не нужен ускоритель решения, удалите его со страницы [Подготовленные решения](https://www.azureiotsolutions.com/Accelerators#dashboard), а затем щелкните **Удалить решение**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом практическом руководстве показано, как развернуть пользовательские модели устройств в акселератор решения для удаленного мониторинга. Далее мы предлагаем вам ознакомиться со статьей [Подключение устройства к предварительно настроенному решению для удаленного мониторинга (Node.js)](iot-accelerators-connecting-devices-node.md).

@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 02/14/2019
 ms.reviewer: sergkanz
 ms.author: lagayhar
-ms.openlocfilehash: cc2d45aee170517d7e41cbda6d92bc21067732d1
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: 565f08f0c69aef393a9296f3cce90570a3f0bc2c
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59493643"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59683032"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -102,7 +102,7 @@ public void ConfigureServices(IServiceCollection services)
 
 #### <a name="enable-w3c-distributed-tracing-support-for-java-apps"></a>Включение поддержки распределенной трассировки консорциума W3C для приложений Java
 
-- **Конфигурация входящих подключений**
+- **Входящая конфигурация**
 
   - Для приложений Java EE добавьте следующее к тегу `<TelemetryModules>` в ApplicationInsights.xml:
 
@@ -117,7 +117,7 @@ public void ConfigureServices(IServiceCollection services)
     - `azure.application-insights.web.enable-W3C=true`
     - `azure.application-insights.web.enable-W3C-backcompat-mode=true`
 
-- **Конфигурация исходящего**
+- **Исходящая конфигурация**
 
   Добавьте к файлу AI-Agent.xml следующее:
 
@@ -143,8 +143,8 @@ public void ConfigureServices(IServiceCollection services)
 
 | Application Insights                  | OpenTracing                                       |
 |------------------------------------   |-------------------------------------------------  |
-| `Request`, `PageView`                 | `Span` на `span.kind = server`                  |
-| `Dependency`                          | `Span` на `span.kind = client`                  |
+| `Request`, `PageView`                 | `Span` с `span.kind = server`                  |
+| `Dependency`                          | `Span` с `span.kind = client`                  |
 | `Id` из `Request` и `Dependency`    | `SpanId`                                          |
 | `Operation_Id`                        | `TraceId`                                         |
 | `Operation_ParentId`                  | `Reference` типа `ChildOf` (родительский диапазон)   |
@@ -158,17 +158,17 @@ public void ConfigureServices(IServiceCollection services)
 Со временем в .NET было определено несколько способов корреляции данных телеметрии и журналов диагностики:
 
 - `System.Diagnostics.CorrelationManager` позволяет отслеживать [LogicalOperationStack и ActivityId](https://msdn.microsoft.com/library/system.diagnostics.correlationmanager.aspx). 
-- `System.Diagnostics.Tracing.EventSource` и определение трассировки событий для Windows (ETW) [SetCurrentThreadActivityId](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.setcurrentthreadactivityid.aspx) метод.
+- `System.Diagnostics.Tracing.EventSource` и трассировка событий Windows(ETW) определяет метод [SetCurrentThreadActivityId](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.setcurrentthreadactivityid.aspx).
 - `ILogger` использует [области журналов](https://docs.microsoft.com/aspnet/core/fundamentals/logging#log-scopes). 
 - Windows Communication Foundation (WCF) и HTTP подключают распространение "текущего" контекста.
 
-Однако эти методы не обеспечивали поддержку автоматической распределенной трассировки. `DiagnosticSource` служит для поддержки автоматической корреляции между компьютерами. Библиотеки .NET поддерживают DiagnosticsSource и разрешают автоматическое распространение контекста корреляции между компьютерами, используя транспортный протокол, например HTTP.
+Однако эти методы не обеспечивали поддержку автоматической распределенной трассировки. `DiagnosticSource` — это способ обеспечить поддержку автоматической корреляции между компьютерами. Библиотеки .NET поддерживают DiagnosticsSource и разрешают автоматическое распространение контекста корреляции между компьютерами, используя транспортный протокол, например HTTP.
 
 В [руководстве пользователя по классу Activity](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md) в `DiagnosticSource` представлены общие сведения об отслеживании действий.
 
 ASP.NET Core 2.0 поддерживает извлечение заголовков HTTP и запуск нового действия.
 
-`System.Net.HttpClient`, начиная с версии 4.1.0, поддерживает автоматическое внедрение заголовков HTTP корреляции и отслеживание вызова HTTP как действия.
+`System.Net.HttpClient`, начиная с версии 4.1.0, поддерживает автоматическое внедрение заголовков HTTP корреляции и отслеживание вызова HTTP как действия.
 
 Для классического ASP.NET доступен новый HTTP-модуль [Microsoft.AspNet.TelemetryCorrelation](https://www.nuget.org/packages/Microsoft.AspNet.TelemetryCorrelation/). Этот модуль реализует корреляцию данных телеметрии с помощью `DiagnosticSource`. Он запускает действие, исходя из заголовков входящего запроса. Он также сопоставляет данные телеметрии с разных этапов обработки запросов, даже в тех случаях, когда каждый этап обработки Internet Information Services (IIS) работает на другом управляемом потоке.
 
@@ -217,7 +217,7 @@ ASP.NET Core 2.0 поддерживает извлечение заголовк
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Напишите [пользовательскую телеметрию](../../azure-monitor/app/api-custom-events-metrics.md).
-- Узнайте об [установке свойства cloud_RoleName](../../azure-monitor/app/app-map.md#set-cloud_rolename) для других пакетов SDK.
+- Узнайте об [установке свойства cloud_RoleName](../../azure-monitor/app/app-map.md#set-cloud-role-name) для других пакетов SDK.
 - Подключите все компоненты своей микрослужбы с помощью Application Insights. Ознакомьтесь со сведениями о [поддерживаемых платформах](../../azure-monitor/app/platforms.md).
 - В [этой статье](../../azure-monitor/app/data-model.md) представлена модель данных для Application Insights.
 - Вы можете узнать, как [расширять и фильтровать данные телеметрии](../../azure-monitor/app/api-filtering-sampling.md).

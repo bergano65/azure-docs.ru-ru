@@ -1,223 +1,216 @@
-items:
 - name: Документация по службе "Карты Azure"
   href: index.yml
 - name: Обзор
   items:
-  - name: Что такое Azure Maps?
-    href: about-azure-maps.md
+    - name: Что такое Azure Maps?
+      href: about-azure-maps.md
 - name: Быстрое начало работы
   items:
-  - name: Создание веб-приложения
-    href: quick-demo-map-app.md
+    - name: Создание веб-приложения
+      href: quick-demo-map-app.md
 - name: Учебники
   items:
-  - name: Учебные материалы по веб-пакетам SDK
-    items:
-    - name: Поиск точки интереса
-      href: tutorial-search-location.md
-    - name: Построение маршрута к месту назначения
-      href: tutorial-route-location.md
-    - name: Несколько маршрутов по видам транспорта
-      href: tutorial-prioritized-routes.md
-    - name: Создание указателя магазинов
-      href: tutorial-create-store-locator.md
-  - name: Руководства по REST API
-    items:
-    - name: Настройка геозоны
-      href: tutorial-geofence.md
+    - name: Учебные материалы по веб-пакетам SDK
+      items:
+        - name: Поиск точки интереса
+          href: tutorial-search-location.md
+        - name: Построение маршрута к месту назначения
+          href: tutorial-route-location.md
+        - name: Несколько маршрутов по видам транспорта
+          href: tutorial-prioritized-routes.md
+        - name: Создание указателя магазинов
+          href: tutorial-create-store-locator.md
+    - name: Руководства по REST API
+      items:
+        - name: Настройка геозоны
+          href: tutorial-geofence.md
 - name: Основные понятия
   items:
-  - name: Аутентификация в Azure Maps
-    href: azure-maps-authentication.md
-  - name: Интеграция Сетки событий Azure Maps
-    href: azure-maps-event-grid-integration.md
-  - name: Выбор ценовой категории
-    href: choose-pricing-tier.md
-  - name: Покрытие
-    items:
-    - name: Наличие информации о геокодировании
-      href: geocoding-coverage.md
-    - name: Наличие информации о дорожном движении
-      href: traffic-coverage.md
-    - name: Наличие информации об отображении
-      href: render-coverage.md
-    - name: Наличие информации о маршрутизации
-      href: routing-coverage.md
-  - name: Поддерживаемые языки
-    href: supported-languages.md
-  - name: Поддерживаемые стили карт
-    href: supported-map-styles.md
-  - name: Браузеры, поддерживаемые в веб-пакетах SDK
-    href: supported-browsers.md
-  - name: Уровни увеличения и параметры сетки
-    href: zoom-levels-and-tile-grid.md
+    - name: Аутентификация в Azure Maps
+      href: azure-maps-authentication.md
+    - name: Интеграция Сетки событий Azure Maps
+      href: azure-maps-event-grid-integration.md
+    - name: Выбор ценовой категории
+      href: choose-pricing-tier.md
+    - name: Покрытие
+      items:
+        - name: Наличие информации о геокодировании
+          href: geocoding-coverage.md
+        - name: Наличие информации о дорожном движении
+          href: traffic-coverage.md
+        - name: Наличие информации об отображении
+          href: render-coverage.md
+        - name: Наличие информации о маршрутизации
+          href: routing-coverage.md
+    - name: Поддерживаемые языки
+      href: supported-languages.md
+    - name: Поддерживаемые стили карт
+      href: supported-map-styles.md
+    - name: 'Браузеры, поддерживаемые в веб-пакетах SDK'
+      href: supported-browsers.md
+    - name: Уровни увеличения и параметры сетки
+      href: zoom-levels-and-tile-grid.md
 - name: Практические руководства
   items:
-  - name: Управление учетными записями службы "Карты"
-    items:
-    - name: Управление учетными записями
-      href: how-to-manage-account-keys.md
-    - name: Управление аутентификацией
-      href: how-to-manage-authentication.md
-    - name: Управление ценовой категорией
-      href: how-to-manage-pricing-tier.md
-    - name: Просмотр метрик использования
-      href: how-to-view-api-usage.md
-  - name: Получение данных карты из REST API
-    items:
-    - name: Поиск адреса
-      href: how-to-search-for-address.md
-    - name: Рекомендации по поиску
-      href: how-to-use-best-practices-for-search.md
-    - name: Отображение пользовательских данных на статической карте
-      href: how-to-render-custom-data.md
-  - name: Разработка с помощью веб-пакета SDK
-    items:
-    - name: Управление картами
+    - name: Управление учетными записями службы "Карты"
       items:
-      - name: Использование элемента управления картой
-        href: how-to-use-map-control.md
-      - name: Создание карты
-        href: map-create.md
-      - name: Выбор стиля карты
-        href: choose-map-style.md
-      - name: Добавление элементов управления на карту
-        href: map-add-controls.md
-      - name: Добавление слоя символов
-        href: map-add-pin.md
-      - name: Добавление контекстного меню
-        href: map-add-popup.md
-      - name: Добавление слоя пузырьков
-        href: map-add-bubble-layer.md
-      - name: Добавление фигур
-        href: map-add-shape.md
-      - name: Добавление слоя тепловой карты
-        href: map-add-heat-map-layer.md
-      - name: Данные точек кластера
-        href: clustering-point-data-web-sdk.md
-      - name: Использование стилистических выражений на основе данных
-        href: data-driven-style-expressions-web-sdk.md
-      - name: Наложение изображения
-        href: map-add-image-layer.md
-      - name: Добавление слоев фрагмента карты
-        href: map-add-tile-layer.md
-      - name: HTML-метки
-        href: map-add-custom-html.md
-      - name: Отображение трафика
-        href: map-show-traffic.md
-      - name: Взаимодействие с событиями мыши
-        href: map-events.md
-      - name: Добавление специальных возможностей в приложение
-        href: map-accessibility.md
-    - name: Модуль служб
+        - name: Управление учетными записями
+          href: how-to-manage-account-keys.md
+        - name: Управление аутентификацией
+          href: how-to-manage-authentication.md
+        - name: Управление ценовой категорией
+          href: how-to-manage-pricing-tier.md
+        - name: Просмотр метрик использования
+          href: how-to-view-api-usage.md
+    - name: Получение данных карты из REST API
       items:
-      - name: Использование модуля служб
-        href: how-to-use-services-module.md
-      - name: Показать результаты поиска
-        href: map-search-location.md
-      - name: Получение сведений из координат
-        href: map-get-information-from-coordinate.md
-      - name: Отображение направлений от точки А до точки Б
-        href: map-route.md
-  - name: Разработка с помощью пакета SDK для Android
-    items:
-    - name: Как использовать элемент управления картой в Android
-      href: how-to-use-android-map-control-library.md
+        - name: Поиск адреса
+          href: how-to-search-for-address.md
+        - name: Рекомендации по поиску
+          href: how-to-use-best-practices-for-search.md
+        - name: Отображение пользовательских данных на статической карте
+          href: how-to-render-custom-data.md
+    - name: Разработка с помощью веб-пакета SDK
+      items:
+        - name: Управление картами
+          items:
+            - name: Использование элемента управления картой
+              href: how-to-use-map-control.md
+            - name: Создание карты
+              href: map-create.md
+            - name: Выбор стиля карты
+              href: choose-map-style.md
+            - name: Добавление элементов управления на карту
+              href: map-add-controls.md
+            - name: Добавление слоя символов
+              href: map-add-pin.md
+            - name: Добавление контекстного меню
+              href: map-add-popup.md
+            - name: Добавление слоя пузырьков
+              href: map-add-bubble-layer.md
+            - name: Добавление фигур
+              href: map-add-shape.md
+            - name: Добавление слоя тепловой карты
+              href: map-add-heat-map-layer.md
+            - name: Данные точек кластера
+              href: clustering-point-data-web-sdk.md
+            - name: Использование стилистических выражений на основе данных
+              href: data-driven-style-expressions-web-sdk.md
+            - name: Наложение изображения
+              href: map-add-image-layer.md
+            - name: Добавление слоев фрагмента карты
+              href: map-add-tile-layer.md
+            - name: HTML-метки
+              href: map-add-custom-html.md
+            - name: Отображение трафика
+              href: map-show-traffic.md
+            - name: Взаимодействие с событиями мыши
+              href: map-events.md
+            - name: Добавление специальных возможностей в приложение
+              href: map-accessibility.md
+        - name: Модуль служб
+          items:
+            - name: Использование модуля служб
+              href: how-to-use-services-module.md
+            - name: Показать результаты поиска
+              href: map-search-location.md
+            - name: Получение сведений из координат
+              href: map-get-information-from-coordinate.md
+            - name: Отображение направлений от точки А до точки Б
+              href: map-route.md
+    - name: Разработка с помощью пакета SDK для Android
+      items:
+        - name: Как использовать элемент управления картой в Android
+          href: how-to-use-android-map-control-library.md
 - name: Справочные материалы
   items:
-  - name: Расширения параметров и API
-    items:
-    - name: Модель использования транспорта
-      href: consumption-model.md
-    - name: Расширение формата GeoJSON
-      href: extend-geojson.md
-    - name: Формат GeoJSON для геозоны
-      href: geofence-geojson.md
-    - name: Поддерживаемые категории поиска
-      href: supported-search-categories.md
-  - name: REST
-    items:
-    - name: Служба данных
-      href: https://docs.microsoft.com/rest/api/maps/data
-    - name: Служба геолокации
-      href: https://docs.microsoft.com/rest/api/maps/geolocation
-    - name: Служба отрисовки
-      href: https://docs.microsoft.com/rest/api/maps/render
-    - name: Служба построения маршрутов
-      href: https://docs.microsoft.com/rest/api/maps/route
-    - name: Служба поиска
-      href: https://docs.microsoft.com/rest/api/maps/search
-    - name: Служба пространственных данных
-      href: https://docs.microsoft.com/rest/api/maps/spatial
-    - name: Служба часового пояса
-      href: https://docs.microsoft.com/rest/api/maps/timezone
-    - name: Служба отслеживания дорожного движения
-      href: https://docs.microsoft.com/rest/api/maps/traffic
-    - name: Управление учетными записями службы Maps
-      href: https://docs.microsoft.com/rest/api/maps-management
-  - name: JavaScript
-    items:
-    - name: Управление картами
-      href: https://docs.microsoft.com/javascript/api/azure-maps-javascript/
-    - name: Модуль службы
-      href: https://docs.microsoft.com/javascript/api/azure-maps-rest/
-  - name: Шаблон Resource Manager
-    href: /azure/templates/microsoft.maps/accounts
+    - name: Расширения параметров и API
+      items:
+        - name: Модель использования транспорта
+          href: consumption-model.md
+        - name: Расширение формата GeoJSON
+          href: extend-geojson.md
+        - name: Формат GeoJSON для геозоны
+          href: geofence-geojson.md
+        - name: Поддерживаемые категории поиска
+          href: supported-search-categories.md
+    - name: REST
+      items:
+        - name: Служба данных
+          href: 'https://docs.microsoft.com/rest/api/maps/data'
+        - name: Служба геолокации
+          href: 'https://docs.microsoft.com/rest/api/maps/geolocation'
+        - name: Служба отрисовки
+          href: 'https://docs.microsoft.com/rest/api/maps/render'
+        - name: Служба построения маршрутов
+          href: 'https://docs.microsoft.com/rest/api/maps/route'
+        - name: Служба поиска
+          href: 'https://docs.microsoft.com/rest/api/maps/search'
+        - name: Служба пространственных данных
+          href: 'https://docs.microsoft.com/rest/api/maps/spatial'
+        - name: Служба часового пояса
+          href: 'https://docs.microsoft.com/rest/api/maps/timezone'
+        - name: Служба отслеживания дорожного движения
+          href: 'https://docs.microsoft.com/rest/api/maps/traffic'
+        - name: Управление учетными записями службы Maps
+          href: 'https://docs.microsoft.com/rest/api/maps-management'
+    - name: JavaScript
+      items:
+        - name: Управление картами
+          href: 'https://docs.microsoft.com/javascript/api/azure-maps-javascript/'
+        - name: Модуль службы
+          href: 'https://docs.microsoft.com/javascript/api/azure-maps-rest/'
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.maps/accounts
 - name: Ресурсы
   items:
-  - name: Условия использования Azure Maps
-    href: https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31
-  - name: Цены на Azure Maps
-    href: https://azure.microsoft.com/pricing/details/azure-maps
-  - name: Калькулятор цен
-    href: https://azure.microsoft.com/pricing/calculator/
-  - name: Переполнение стека
-    href: https://stackoverflow.com/questions/tagged/azure-maps
-  - name: Форум MSDN
-    href: https://social.msdn.microsoft.com/Forums/azure/home?forum=azurelbs
-  - name: Видео об Azure Maps
-    href: https://aka.ms/AzureMapsVideos
-  - name: Глоссарий Azure Maps
-    href: glossary.md
-  - name: Обновления службы
-    href: https://azure.microsoft.com/updates
-  - name: Центр разработчика IoT Azure
-    href: https://azure.microsoft.com/develop/iot/
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=iot
-  - name: Технические примеры использования
-    href: https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured
-  - name: Azure Maps в IoT School
-    href: https://iotschool.microsoft.com/learning-paths/4ZktHn3KEUIiUw64C0Aieo
+    - name: Условия использования Azure Maps
+      href: 'https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31'
+    - name: Цены на Azure Maps
+      href: 'https://azure.microsoft.com/pricing/details/azure-maps'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/azure-maps'
+    - name: Форум MSDN
+      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=azurelbs'
+    - name: Видео об Azure Maps
+      href: 'https://aka.ms/AzureMapsVideos'
+    - name: Глоссарий Azure Maps
+      href: glossary.md
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates'
+    - name: Центр разработчика IoT Azure
+      href: 'https://azure.microsoft.com/develop/iot/'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=iot'
+    - name: Технические примеры использования
+      href: 'https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured'
+    - name: Azure Maps в IoT School
+      href: 'https://iotschool.microsoft.com/learning-paths/4ZktHn3KEUIiUw64C0Aieo'
 - name: Сопутствующие материалы
   items:
-  - name: Решения
-    items:
-    - name: Акселераторы решений для Интернета вещей
-      href: /azure/iot-suite
-    - name: IoT Central
-      href: https://docs.microsoft.com/microsoft-iot-central/
-  - name: Службы платформы
-    items:
-    - name: Центр Интернета вещей
-      href: /azure/iot-hub
-    - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
-      href: /azure/iot-dps
-    - name: Карты
-      href: /azure/azure-maps
-    - name: Пакеты SDK службы
-      href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
-    - name: Аналитика временных рядов Azure
-      href: /azure/time-series-insights
-  - name: IoT Edge
-    items:
+    - name: Решения
+      items:
+        - name: Акселераторы решений для Интернета вещей
+          href: /azure/iot-suite
+        - name: IoT Central
+          href: 'https://docs.microsoft.com/microsoft-iot-central/'
+    - name: Службы платформы
+      items:
+        - name: Центр Интернета вещей
+          href: /azure/iot-hub
+        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
+          href: /azure/iot-dps
+        - name: Карты
+          href: /azure/azure-maps
+        - name: Пакеты SDK службы
+          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
+        - name: Аналитика временных рядов Azure
+          href: /azure/time-series-insights
     - name: IoT Edge
-      href: /azure/iot-edge
-    - name: Пакеты SDK для устройств IoT
-      href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
-ms.openlocfilehash: 94e02b599bffd24e9c9aa65560e4a74bd05ecea6
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59263605"
+      items:
+        - name: IoT Edge
+          href: /azure/iot-edge
+        - name: Пакеты SDK для устройств IoT
+          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/10/2019
 ms.author: absha
 ms.custom: mvc
-ms.openlocfilehash: 16f59ecaf934813890cd25e89896182378f376ed
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.openlocfilehash: 9d52114f5d01beca53ed48ee2114dc98cc20f3a2
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59549073"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59682430"
 ---
 # <a name="rewrite-http-request-and-response-headers-with-azure-application-gateway---azure-portal"></a>Перепишите заголовки запросов и ответов HTTP со шлюзом приложений Azure — портал Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "59549073"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Необходимо иметь шлюз приложений версии 2, SKU, так как возможность перезаписи заголовок не поддерживается для v1 SKU. Если у вас нет v2 SKU, создать [SKU шлюза приложений версии 2](https://docs.microsoft.com/azure/application-gateway/tutorial-autoscale-ps>) перед началом работы.
+Необходимо иметь шлюз приложений версии 2, SKU, так как возможность перезаписи заголовок не поддерживается для v1 SKU. Если у вас нет v2 SKU, создать [SKU шлюза приложений версии 2](<https://docs.microsoft.com/azure/application-gateway/tutorial-autoscale-ps>) перед началом работы.
 
 ## <a name="what-is-required-to-rewrite-a-header"></a>Что такое требуется переписать заголовок
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 06/26/2018
 ms.author: bwren
-ms.openlocfilehash: aac58cc0887c566c7377edf08f5a86e2d12cdf28
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.openlocfilehash: 6da2b63b7a9c8dc490bd30bb02ae6e7d932b2f7b
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55993247"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59683925"
 ---
 # <a name="data-collection-details-for-management-solutions-in-azure"></a>Информация о сборе данных для решений по управлению в Azure
 Эта статья содержит список [решений по управлению](solutions.md), предлагаемых корпорацией Майкрософт, со ссылками на подробную документацию по ним.  Здесь вы также найдете сведения о методах и частоте сбора данных в Azure Monitor.  Сведения в этой статье помогут вам оценить доступные решения и изучить потоки данных и требования к подключению для разных решений по управлению. 
@@ -58,8 +58,8 @@ ms.locfileid: "55993247"
 | [Службы анализа SQL Azure (предварительная версия)](../../azure-monitor/insights/azure-sql.md) |  Windows | | | | | | 1 минута |
 | [Архивация](https://azure.microsoft.com/resources/templates/101-backup-oms-monitoring/) | Таблицы Azure |  |  |  |  |  | при уведомлении |
 | [Емкость и производительность (предварительная версия)](../../azure-monitor/insights/capacity-performance.md) | Windows |&#8226; |&#8226; | | |&#8226; |При получении |
-| [Отслеживание изменений](../../automation/automation-change-tracking.md) | Windows |&#8226; |&#8226; | | |&#8226; |Ежечасно |
-| [Отслеживание изменений](../../automation/automation-change-tracking.md) |Linux |&#8226; | | | | |Ежечасно |
+| [Отслеживание изменений](../../automation/automation-change-tracking.md) | Windows |&#8226; |&#8226; | | |&#8226; |[зависит от](../../automation/automation-change-tracking.md#change-tracking-data-collection-details) |
+| [Отслеживание изменений](../../automation/automation-change-tracking.md) |Linux |&#8226; | | | | |[зависит от](../../automation/automation-change-tracking.md#change-tracking-data-collection-details) |
 | [Контейнеры](../../azure-monitor/insights/containers.md) | Windows и Linux | &#8226; | &#8226; |  |  |  | 3 минуты |
 | [Анализ хранилища ключей](../../azure-monitor/insights/azure-key-vault.md) | Windows | | | | | |при уведомлении |
 | [Оценка вредоносных программ](../../security-center/security-center-install-endpoint-protection.md) | Windows |&#8226; |&#8226; | | |&#8226; |Ежечасно |
@@ -79,5 +79,5 @@ ms.locfileid: "55993247"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [создавать запросы](../../azure-monitor/log-query/log-query-overview.md) для анализа данных, собранных решением по управлению.

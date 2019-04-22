@@ -16,12 +16,12 @@ ms.date: 12/28/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd3aac6a7fb0904089f135c9af7b136eda73701f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2746775c72976159cdcdb6bdd86e39a5dbe3a4fc
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57835475"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59683673"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure AD Connect.
@@ -49,6 +49,7 @@ ms.locfileid: "57835475"
 
 ### <a name="azure-ad-connect-server"></a>Сервер Azure AD Connect
 * Службу Azure AD Connect нельзя установить на версии Small Business Server или Windows Server Essentials, которые предшествуют версиям 2019 года (поддерживается Windows Server Essentials 2019). Сервер должен использовать Windows Server Standard или более поздней версии.
+* Установка Azure AD Connect на контроллере домена не рекомендуется из-за по обеспечению безопасности и более строгие параметры, может препятствовать правильной установке Azure AD Connect
 * На сервере Azure AD Connect должен быть установлен полный графический интерфейс пользователя. Установка на ядро сервера **не поддерживается**.
 * Azure AD Connect необходимо установить на сервер под управлением Windows Server 2008 R2 или более поздней версии. Этот сервер должен быть присоединен домена и может быть контроллером домена или рядовой сервер.
 * При установке Azure AD Connect на сервер Windows Server 2008 R2 обязательно примените последние обновления из Центра обновления Windows. Установка на сервер без обновлений невозможна.
@@ -60,6 +61,19 @@ ms.locfileid: "57835475"
 * При развертывании служб федерации Active Directory необходимы [SSL-сертификаты](#ssl-certificate-requirements).
 * При развертывании служб федерации Active Directory необходимо настроить [разрешение имен](#name-resolution-for-federation-servers).
 * Если глобальные администраторы активировали MFA, то URL-адрес **https://secure.aadcdn.microsoftonline-p.com** должен быть в списке надежных сайтов. Если он не добавлен, вам будет предложено добавить этот сайт в список надежных сайтов перед появлением запроса MFA. Добавить его в список надежных сайтов можно в Internet Explorer.
+* Корпорация Майкрософт рекомендует ограниченный режим работы сервера Azure AD Connect для уменьшения поверхности атаки безопасности этой важнейшей частью ИТ-средой.  Выполнив приведенные ниже рекомендации будет уменьшить угрозу безопасности для вашей организации.
+
+* Развертывание Azure AD Connect на сервере присоединены к домену и ограничить административный доступ к администраторов домена или другие группы строго контролируемыми безопасности.
+
+Дополнительные сведения см. на следующих ресурсах: 
+
+* [Группы "Администраторы" обеспечение безопасности](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-g--securing-administrators-groups-in-active-directory)
+
+* [Защита учетных записей для встроенной учетной записи администратора](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-d--securing-built-in-administrator-accounts-in-active-directory)
+
+* [Улучшения безопасности и sustainment путем уменьшения поверхности атаки](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#2-reduce-attack-surfaces )
+
+* [Снизить риск атак Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface)
 
 ### <a name="sql-server-used-by-azure-ad-connect"></a>SQL Server, используемый Azure AD Connect
 * Azure AD Connect требуется база данных SQL Server для хранения учетных данных. По умолчанию устанавливается SQL Server 2012 Express LocalDB (облегченная версия SQL Server Express). Размер экземпляра SQL Server Express может достигать 10 ГБ, позволяя управлять примерно 100 000 объектов. Если вам нужно управлять более значительным числом объектов каталога, в мастере установки укажите другую установку SQL Server.

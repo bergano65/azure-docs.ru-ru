@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 1/17/2019
 ms.author: srrengar
-ms.openlocfilehash: b8e1958947ced5ea2d0bd8b34667210bf935072d
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 36d01a9e6e55ae54377ba3f983f779dbc692c49a
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58662913"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59681528"
 ---
 # <a name="eventstore-service-overview"></a>Общие сведения о службе EventStore
 
@@ -72,7 +72,7 @@ ms.locfileid: "58662913"
 
 ### <a name="azure-cluster"></a>Кластер Azure
 
-В шаблоне Azure Resource Manager кластера можно включить службу EventStore, выполнив [обновление конфигурации кластера](service-fabric-cluster-config-upgrade-azure.md) и добавив следующий код. Раздел `upgradeDescription` настраивает обновление конфигурации, чтобы активировать перезапуск узлов. Раздел можно удалить в другом обновлении.
+В шаблоне Azure Resource Manager кластера, можно включить службу EventStore, выполняя [обновление конфигурации кластера](service-fabric-cluster-config-upgrade-azure.md) и добавив следующий код, можно использовать ограничения размещения для размещения реплики EventStore Служба на конкретных NodeType например NodeType, предназначенный для системных служб. Раздел `upgradeDescription` настраивает обновление конфигурации, чтобы активировать перезапуск узлов. Раздел можно удалить в другом обновлении.
 
 ```json
     "fabricSettings": [
@@ -89,6 +89,10 @@ ms.locfileid: "58662913"
               {
                 "name": "MinReplicaSetSize",
                 "value": "1"
+              }
+              {
+                "name": "PlacementConstraints",
+                "value": "(NodeType==<node_type_name_here>)"
               }
             ]
           }

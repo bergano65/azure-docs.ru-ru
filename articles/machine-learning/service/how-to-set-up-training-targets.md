@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: d75deaca7ce052d40274f1f57a8f6603a3ecdfd2
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: 9c97f23c2dfc2b1c0ff794aa20ffb58cd8b8741a
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59046161"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59683908"
 ---
 # <a name="set-up-compute-targets-for-model-training"></a>Настройка целевых объектов вычислений для обучения моделей
 
@@ -90,8 +90,8 @@ ms.locfileid: "59046161"
 Чтобы настроить эти целевые объекты вычислений, используйте следующие разделы.
 
 * [Локальный компьютер](#local)
-* [Вычислительная среда Машинного обучения Azure;](#amlcompute)
-* [Удаленным виртуальным машинам](#vm)
+* [Вычислительная среда Машинного обучения Azure](#amlcompute)
+* [Удаленные виртуальные машины](#vm)
 * [Azure HDInsight](#hdinsight)
 
 
@@ -377,7 +377,6 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 
 Дополнительные сведения см. в разделе [Управление ресурсами](reference-azure-machine-learning-cli.md#resource-management).
 
-
 ## <a id="submit"></a>Отправка запуска на выполнение обучения
 
 После создания конфигурации запуска, используйте ее для выполнения эксперимента.  Шаблон кода для отправки запуска на выполнение обучения одинаковый для всех типов целевых объектов вычислений.
@@ -385,6 +384,13 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 1. Создание эксперимента для запуска
 1. Выполните прогон.
 1. Дождитесь завершения прогона.
+
+> [!IMPORTANT]
+> При отправке выполнения обучения, моментальный снимок в каталог, содержащий скрипты обучения создается и отправляется целевого объекта вычислений. Он также сохранится как часть эксперимента в рабочей области. Если изменить файлы и отправьте запуска еще раз, будет отправляться только измененные файлы.
+>
+> Чтобы заблокировать развертывание файлов, включаемого в моментальном снимке, создайте [.gitignore](https://git-scm.com/docs/gitignore) или `.amlignore` в каталоге и добавьте файлы к нему. `.amlignore` Файл использует тот же синтаксис и шаблоны как [.gitignore](https://git-scm.com/docs/gitignore) файла. Если существуют оба файла, `.amlignore` файл имеет приоритет.
+> 
+> Дополнительные сведения см. в разделе о [моментальных снимках](concept-azure-machine-learning-architecture.md#snapshot).
 
 ### <a name="create-an-experiment"></a>Создание эксперимента
 
@@ -399,8 +405,6 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 * **source_directory**: исходный каталог, который содержит сценарий обучения.
 * **script**: определение сценария обучения.
 * **run_config**: конфигурация запуска, которая, в свою очередь, определяет, где будет проходить обучение.
-
-При отправке запуска на выполнение обучения создается моментальный снимок каталога, содержащего сценарии обучения, и отправляется на целевой объект вычислений. Дополнительные сведения см. в разделе о [моментальных снимках](concept-azure-machine-learning-architecture.md#snapshot).
 
 Например, чтобы использовать [локальную конфигурацию](#local) целевого объекта, выполните следующее.
 
@@ -418,8 +422,8 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 ## <a name="notebook-examples"></a>Примеры записных книжек
 
 Посмотрите примеры обучения различных целевых объектов вычислений в следующих записных книжках.
-* [практические-в-использование azureml обучения](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training)
-* [учебники по/img классификации part1-training.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/img-classification-part1-training.ipynb)
+* [how-to-use-azureml/training](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training)
+* [tutorials/img-classification-part1-training.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/img-classification-part1-training.ipynb)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
@@ -428,4 +432,4 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 * [Руководство по обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md). В нем используется управляемый целевой объект вычислений для обучения модели.
 * После обучения модели узнайте о [способах и расположениях развертывания моделей](how-to-deploy-and-where.md).
 * Обзор справочника по пакету SDK [класса RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.runconfiguration?view=azure-ml-py).
-* [Использовать службы машинного обучения Azure с виртуальными сетями Azure](how-to-enable-virtual-network.md)
+* [Securely run experiments and inferencing inside an Azure Virtual Network](how-to-enable-virtual-network.md) (Безопасное выполнение экспериментов и формирование выводов внутри виртуальной сети Azure)

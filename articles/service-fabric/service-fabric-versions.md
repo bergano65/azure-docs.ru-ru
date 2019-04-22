@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 9/24/2018
 ms.author: aljo
-ms.openlocfilehash: de5522e68d1329ce2b80a4d3c7045d38c13169e5
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
-ms.translationtype: MT
+ms.openlocfilehash: d99000e1682b662f4bceb28096395243c894282f
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57191653"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59681613"
 ---
 # <a name="supported-service-fabric-versions"></a>Поддерживаемые версии Service Fabric
 
@@ -30,7 +30,9 @@ ms.locfileid: "57191653"
 - [Обновление до версии Service Fabric в кластере Azure](service-fabric-cluster-upgrade.md)
 - [Обновление до версии Service Fabric в изолированном кластере windows server](service-fabric-cluster-upgrade-windows-server.md)
 
-Ниже приведен список поддерживаемых версий Service Fabric и их даты окончания поддержки.
+## <a name="supported-versions"></a>Поддерживаемые версии
+
+Ниже перечислены поддерживаемые версии Service Fabric и их даты окончания поддержки.
 
 | **Среда выполнения Service Fabric в кластере** | **Обновление непосредственно версии кластера** |**Совместимые версии пакета SDK и NuGet** | **Дата окончания поддержки** |
 | --- | --- |--- | --- |
@@ -45,3 +47,18 @@ ms.locfileid: "57191653"
 | 6.2.* | 6.0.232.* |Не выше версии 3.1 |26 октября 2018 г   |
 | 6.3.* | 6.1.480.* |Не выше версии 3.2. |Март 31,2019  |
 | 6.4.* | 6.2.301.* |Версия 3.3 или более ранняя |Текущая версия, дата окончания поддержки не определена. |
+
+## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
+
+ Ниже перечислены поддерживаемые операционные системы, для поддерживаемых версий Service Fabric.
+
+| **Операционная система** | **Самой ранней поддерживаемой версии Service Fabric** |
+| --- | --- |
+| Windows Server 2012 R2 | Все версии |
+| Windows Server 2016 | Все версии |
+| Windows Server 1709; | 6,0 |
+| Windows Server 1803. | 6.4 |
+| Windows Server 1809 | 6.4.654.9590 |
+| Windows Server 2019 | 6.4.654.9590 |
+| Linux Ubuntu 16.04 | 6,0 |
+

@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: hrasheed
-ms.openlocfilehash: 186a9bafe70ab9644666868f11d5ddd865a66b8d
-ms.sourcegitcommit: 3341598aebf02bf45a2393c06b136f8627c2a7b8
-ms.translationtype: MT
+ms.openlocfilehash: 7e21d4c6705213cb57f058c062fff0ff4957a52a
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58802547"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59681868"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight
 
@@ -38,7 +38,7 @@ Gen2 хранилища Озера данных доступен в качест
 
 ### <a name="create-a-data-lake-storage-gen2-account"></a>Создание учетной записи Azure Data Lake Storage 2-го поколения
 
-Создайте учетную запись хранения Azure Data Lake Storage 2-го поколения. Убедитесь, что **иерархического пространства имен** включен параметр. Дополнительные сведения см. в [кратком руководстве Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-quickstart-create-account.md).
+Создайте учетную запись хранения Azure Data Lake Storage 2-го поколения. Убедитесь, что **иерархического пространства имен** включен параметр. Дополнительные сведения см. в разделе [ Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-quickstart-create-account.md).
 
 ![Снимок экрана, на котором показано создание учетной записи хранения на портале Azure](./media/hdinsight-hadoop-data-lake-storage-gen2/azure-data-lake-storage-account-create-advanced.png)
 
@@ -139,6 +139,5 @@ RBAC использует назначения ролей, чтобы эффек
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Use Azure Data Lake Storage Gen2 Preview with Azure HDInsight clusters](../storage/blobs/data-lake-storage-use-hdi-cluster.md) (Использование хранилища Azure Data Lake Storage 2-го поколения (предварительная версия) с кластерами Azure HDInsight)
 * [Azure HDInsight integration with Data Lake Storage Gen2 preview - ACL and security update](https://azure.microsoft.com/blog/azure-hdinsight-integration-with-data-lake-storage-gen-2-preview-acl-and-security-update/) (Интеграция Azure HDInsight с Data Lake Storage 2-го поколения (предварительная версия) — обновление списка управления доступом и системы безопасности)
 * [Общие сведения о хранилище Data Lake Storage 2-го поколения (предварительная версия)](../storage/blobs/data-lake-storage-introduction.md)

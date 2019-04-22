@@ -11,20 +11,20 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/09/2019
+ms.date: 04/16/2019
 ms.author: juliako
-ms.openlocfilehash: 9177a1ae1f2939979d1f824c98b6018a83c2779f
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
-ms.translationtype: MT
+ms.openlocfilehash: 27a4a30dd0eb449726a99d02f2409632aa327567
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59502268"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59683432"
 ---
 # <a name="connect-to-media-services-v3-api---java"></a>Подключение к API v3 служб мультимедиа — Java
 
 В этой статье показано, как соединиться с Java версии 3 пакета SDK служб мультимедиа Azure с помощью субъекта-службы входа, в методе.
 
-В этой статье Visual Studio Code используется для разработки приложений.
+В этой статье Visual Studio Code используется для разработки примера приложения.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -54,9 +54,9 @@ mvn archetype:generate -DgroupId=com.azure.ams -DartifactId=testAzureApp -Darche
 
 ## <a name="add-dependencies"></a>Добавление зависимостей
 
-1. В Visual Studio Code откройте папку, где находится проект. 
-1. Найдите и откройте `pom.xml`. 
-1. Добавьте нужные зависимости. Один из них — [com.microsoft.azure.mediaservices.v2018_07_01:azure-mgmt мультимедиа](https://search.maven.org/artifact/com.microsoft.azure.mediaservices.v2018_07_01/azure-mgmt-media/1.0.0-beta/jar).
+1. В Visual Studio Code откройте папку, где находится проект
+1. Поиск и открытие `pom.xml`
+1. Добавьте нужные зависимости
 
     ```xml
     <dependency>
@@ -74,7 +74,6 @@ mvn archetype:generate -DgroupId=com.azure.ams -DartifactId=testAzureApp -Darche
       <artifactId>azure-client-authentication</artifactId>
       <version>1.6.5</version>
     </dependency>
-    </dependency>
     ```
 
 ## <a name="connect-to-the-java-client"></a>Подключиться к клиенту Java
@@ -84,7 +83,7 @@ mvn archetype:generate -DgroupId=com.azure.ams -DartifactId=testAzureApp -Darche
     ```java
     package com.azure.ams;
     ```
-2. Под оператором statement добавьте следующие операторы import:
+1. Под оператором statement добавьте следующие операторы import:
    
    ```java
    import com.microsoft.azure.AzureEnvironment;
@@ -92,7 +91,7 @@ mvn archetype:generate -DgroupId=com.azure.ams -DartifactId=testAzureApp -Darche
    import com.microsoft.azure.management.mediaservices.v2018_07_01.implementation.MediaManager;
    import com.microsoft.rest.LogLevel;
    ```
-2. Чтобы создать учетные данные Active Directory, необходимые для выполнения запросов, добавьте следующий код в метод main класса App и задайте значения, которые вы получили [доступ к API](access-api-cli-how-to.md):
+1. Чтобы создать учетные данные Active Directory, необходимые для выполнения запросов, добавьте следующий код в метод main класса App и задайте значения, которые вы получили [доступ к API](access-api-cli-how-to.md):
    
    ```java
    final String clientId = "00000000-0000-0000-0000-000000000000";
@@ -115,16 +114,15 @@ mvn archetype:generate -DgroupId=com.azure.ams -DartifactId=testAzureApp -Darche
       System.out.println(e.toString());
    }
    ```
+1. Запустите приложение.
 
 ## <a name="see-also"></a>См. также
 
-- [Основные понятия служб мультимедиа](concepts-overview.md)
-- [Пакет SDK для Java](https://aka.ms/ams-v3-java-sdk)
+- [Основные понятия служб мультимедиа Azure](concepts-overview.md)
+- [пакет SDK для Java](https://aka.ms/ams-v3-java-sdk)
 - [Справочник по Java](https://aka.ms/ams-v3-java-ref)
-- [https://search.maven.org/](https://search.maven.org/)
+- [com.microsoft.azure.mediaservices.v2018_07_01:azure-mgmt-media](https://search.maven.org/artifact/com.microsoft.azure.mediaservices.v2018_07_01/azure-mgmt-media/1.0.0-beta/jar)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь можно включать `import com.microsoft.azure.management.mediaservices.v2018_07_01.Asset;` и начать управлять тестируемым сущностей.<br/>
-Например, получите все ресурсы в вашей учетной записи: `Observable<Asset> asyncAssets = 
-                    manager.assets().listAsync(groupId, accountId).last();`
+Теперь можно включать `import com.microsoft.azure.management.mediaservices.v2018_07_01.*;` и начать управлять тестируемым сущностей.

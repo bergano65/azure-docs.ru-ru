@@ -10,12 +10,12 @@ ms.reviewer: klam
 ms.assetid: 3ef16fab-d18a-48ba-8e56-3f3e0a1bcb92
 ms.topic: conceptual
 ms.date: 08/18/2016
-ms.openlocfilehash: 67f51b078b8e92592e9593d7d254e6985265eee8
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: d701fba39685d781d1a4c2d8a6cf194ca7eb2908
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58651275"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59683058"
 ---
 # <a name="concepts-terminology-and-entities-in-azure-scheduler"></a>Основные понятия, терминология и сущности планировщика Azure
 
@@ -39,21 +39,27 @@ REST API планировщика Azure предоставляет и испол
 
 ### <a name="job-management"></a>Управление заданиями
 
-Поддерживает операции для создания и изменения заданий. Все задания должны входить в уже существующую коллекцию, поэтому неявное создание коллекций не предусмотрено. Дополнительные сведения см. в разделе [REST API планировщика — задания](https://docs.microsoft.com/rest/api/scheduler/jobs). Вот URI-адрес для этих операций:
+Поддерживает операции для создания и изменения заданий. Все задания должны входить в уже существующую коллекцию, поэтому неявное создание коллекций не предусмотрено. Дополнительные сведения см. в разделе [REST API планировщика — задания](https://docs.microsoft.com/rest/api/scheduler/jobs). Вот URI-адрес для выполнения этих операций:
 
-`https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}`
+```
+https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}
+```
 
 ### <a name="job-collection-management"></a>Управление коллекциями заданий
 
-Поддерживает операции создания и изменения заданий и коллекций заданий, которые сопоставляются с квотами и общими настройками. В качестве примеров квот можно привести максимальное число заданий и наименьший интервал повторения. Дополнительные сведения см. в разделе [REST API планировщика — коллекции заданий](https://docs.microsoft.com/rest/api/scheduler/jobcollections). Вот URI-адрес для этих операций:
+Поддерживает операции создания и изменения заданий и коллекций заданий, которые сопоставляются с квотами и общими настройками. В качестве примеров квот можно привести максимальное число заданий и наименьший интервал повторения. Дополнительные сведения см. в разделе [REST API планировщика — коллекции заданий](https://docs.microsoft.com/rest/api/scheduler/jobcollections). Вот URI-адрес для выполнения этих операций:
 
-`https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}`
+```
+https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}
+```
 
 ### <a name="job-history-management"></a>Управление журналами заданий
 
-Поддержка операции GET для извлечения журнала заданий за последние 60 дней, например с указанием времени и результатов выполнения задания. Включает поддержку строкового параметра запроса для фильтрации результатов по состоянию и статусу. Дополнительные сведения см. в разделе [REST API планировщика — журнал выполнения заданий](https://docs.microsoft.com/rest/api/scheduler/jobs/listjobhistory). Вот URI-адрес для этой операции:
+Поддержка операции GET для извлечения журнала заданий за последние 60 дней, например с указанием времени и результатов выполнения задания. Включает поддержку строкового параметра запроса для фильтрации результатов по состоянию и статусу. Дополнительные сведения см. в разделе [REST API планировщика — журнал выполнения заданий](https://docs.microsoft.com/rest/api/scheduler/jobs/listjobhistory). Вот URI-адрес для этой операции.
 
-`https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}/history`
+```
+https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}/history
+```
 
 ## <a name="job-types"></a>Типы заданий
 
@@ -245,7 +251,7 @@ REST API планировщика Azure предоставляет и испол
 | **interval** | Нет  | От 1 до 1000 включительно. | Положительное целое число, которое определяет количество единиц времени между каждым повторением на основании значения **frequency**. | 
 | **schedule** | Нет  | Varies | Сведения о более сложных и расширенных расписаниях. См. параметры **hours**, **minutes**, **weekDays**, **months** и **monthDays**. | 
 | **hours** | Нет  | От 1 до 60. | Массив, содержащий часы, который задает время запуска задания. | 
-| **minutes** | Нет  | От 1 до 60. | Массив, содержащий минуты, который задает время запуска задания. | 
+| **minutes** | Нет  | от 0 до 59 | Массив, содержащий минуты, который задает время запуска задания. | 
 | **months** | Нет  | От 1 до 12. | Массив, содержащий месяцы, который задает время запуска задания. | 
 | **monthDays** | Нет  | Varies | Массив, содержащий дни месяца, который задает время запуска задания. | 
 | **weekDays** | Нет  | "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday". | Массив, содержащий дни недели, который задает время запуска задания. | 

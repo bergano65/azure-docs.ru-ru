@@ -55,7 +55,7 @@ SQL Server с [Always Encrypted](https://docs.microsoft.com/sql/relational-datab
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type необходимо задать значение **SqlServer** | Yes |
+| type | Свойству type необходимо задать значение **SqlServer** | Yes |
 | connectionString |Укажите сведения о параметре connectionString, необходимые для подключения к базе данных SQL Server с помощью проверки подлинности SQL или Windows. Ознакомьтесь с приведенными ниже примерами.<br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы также можете поместить пароль в Azure Key Vault, и если это аутентификация SQL, извлеките конфигурацию `password` из строки подключения. Ознакомьтесь с примером JSON под таблицей и с подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). |Yes |
 | userName |При использовании проверки подлинности Windows укажите имя пользователя. Например, **domainname\\username**. |Нет  |
 | password |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Нет  |
@@ -148,7 +148,7 @@ SQL Server с [Always Encrypted](https://docs.microsoft.com/sql/relational-datab
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type набора данных необходимо задать следующее значение: **SqlServerTable**. | Yes |
+| type | Для свойства type набора данных необходимо задать следующее значение: **SqlServerTable**. | Yes |
 | tableName |Имя таблицы или представления экземпляра базы данных SQL Server, на который ссылается связанная служба. | "Нет" для источника, "Да" для приемника |
 
 **Пример.**
@@ -180,7 +180,7 @@ SQL Server с [Always Encrypted](https://docs.microsoft.com/sql/relational-datab
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type источника действия копирования необходимо задать значение **SqlSource**. | Yes |
+| type | Свойству type источника действия копирования необходимо задать значение **SqlSource**. | Yes |
 | sqlReaderQuery |Используйте пользовательский SQL-запрос для чтения данных. Пример: `select * from MyTable`. |Нет  |
 | sqlReaderStoredProcedureName |Имя хранимой процедуры, которая считывает данные из исходной таблицы. Последней инструкцией SQL должна быть инструкция SELECT в хранимой процедуре. |Нет  |
 | storedProcedureParameters |Параметры для хранимой процедуры.<br/>Допустимые значения: пары "имя — значение". Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. |Нет  |
@@ -283,7 +283,7 @@ GO
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство type приемника действия копирования должно иметь следующее значение: **SqlSink**. | Yes |
+| type | Свойство type приемника действия копирования должно иметь следующее значение: **SqlSink**. | Yes |
 | writeBatchSize |Количество строк для вставки в таблицу SQL **в пакете**.<br/>Допустимые значения: целое число (количество строк). |Нет (по умолчанию 10 000) |
 | writeBatchTimeout |Время ожидания до выполнения операции пакетной вставки, пока не завершится срок ее действия.<br/>Допустимые значения: промежуток времени. Пример: "00:30:00" (30 минут). |Нет  |
 | preCopyScript |Укажите SQL-запрос для действия копирования, выполняемый перед записью данных в базу данных SQL Server. Он будет однократно вызываться при каждом запуске копирования. Это свойство можно использовать для очистки предварительно загруженных данных. |Нет  |
@@ -513,16 +513,16 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 |:--- |:--- |
 | bigint |Int64 |
 | binary |Byte[] |
-| bit |Логическое |
+| bit |Boolean |
 | char |String, Char[] |
-| дата |DateTime |
+| date |DateTime |
 | DateTime |DateTime |
 | datetime2; |DateTime |
 | Datetimeoffset |DateTimeOffset |
 | Decimal |Decimal |
 | FILESTREAM attribute (varbinary(max)) |Byte[] |
-| Float |Двойное с плавающей запятой |
-| изображение |Byte[] |
+| Float |Double |
+| image |Byte[] |
 | int |Int32 |
 | money; |Decimal |
 | nchar |String, Char[] |
@@ -534,9 +534,9 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 | smalldatetime; |DateTime |
 | smallint |Int16 |
 | smallmoney; |Decimal |
-| sql_variant |Объект. |
+| sql_variant |Object |
 | text |String, Char[] |
-| Twitter в режиме реального |TimeSpan |
+| time |TimeSpan |
 |  timestamp |Byte[] |
 | tinyint |Int16 |
 | uniqueidentifier |Guid |

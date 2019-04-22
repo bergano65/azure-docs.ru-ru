@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: container-service
 ms.date: 12/03/2018
 ms.author: iainfou
-ms.openlocfilehash: 54c8e44685bb69e845c819b0c2846b188a771d71
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 38b2654c8f3e8d302a66cac335913583bd4426ef
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58878236"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59682973"
 ---
 # <a name="preview---create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-using-the-azure-cli"></a>Предварительный просмотр - Создание и настройка кластера службы Azure Kubernetes (AKS) для использования виртуальных узлов, с помощью Azure CLI
 
@@ -57,6 +57,16 @@ az provider register --namespace Microsoft.ContainerInstance
 * Западная Европа (westeurope).
 * Западная часть США (westus).
 
+## <a name="known-limitations"></a>Известные ограничения
+Виртуальные узлы функциональные возможности сильно зависит от набора функций в ACI. Приведенные ниже еще не поддерживается в виртуальных узлов
+
+* С помощью субъекта-службы для получения образов ACR. [Инструкции по решению](https://github.com/virtual-kubelet/virtual-kubelet/blob/master/providers/azure/README.md#Private-registry) заключается в использовании [секреты Kubernetes](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#create-a-secret-by-providing-credentials-on-the-command-line)
+* [Ограничения виртуальной сети](../container-instances/container-instances-vnet.md) включая пиринг виртуальной сети, политик сети Kubernetes и исходящий трафик в Интернет с помощью групп безопасности сети.
+* Контейнеры init
+* [Псевдонимы узлов](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/)
+* [Аргументы](../container-instances/container-instances-exec.md#restrictions) для exec в ACI
+* [Наборы Daemonset](concepts-clusters-workloads.md#statefulsets-and-daemonsets) не будет выполнять развертывание модулей на виртуальный узел
+
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
 
 Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью.
@@ -93,7 +103,7 @@ az network vnet subnet create \
     --resource-group myResourceGroup \
     --vnet-name myVnet \
     --name myVirtualNodeSubnet \
-    --address-prefix 10.241.0.0/16
+    --address-prefixes 10.241.0.0/16
 ```
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
@@ -338,7 +348,7 @@ az network vnet subnet update --resource-group $RES_GROUP --vnet-name myVnet --n
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
 [node-selector]:https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
 [toleration]: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
-[aks-github]: https://github.com/azure/aks/issues]
+[aks-github]: https://github.com/azure/aks/issues
 [virtual-node-autoscale]: https://github.com/Azure-Samples/virtual-node-autoscale
 [virtual-kubelet-repo]: https://github.com/virtual-kubelet/virtual-kubelet
 
