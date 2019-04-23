@@ -80,9 +80,9 @@ ms.locfileid: "52443633"
   
 |Свойство|type|ОПИСАНИЕ|  
 |--------------|----------|-----------------|  
-|Разбиение по страницам|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции продуктов.|  
-|Фильтрация|Сущность [фильтрации](api-management-template-data-model-reference.md#Filtering).|Сведения о фильтрации для страницы со списком продуктов.|  
-|Продукты|Коллекция сущностей [Продукт](api-management-template-data-model-reference.md#Product).|Все продукты, которые доступны для текущего пользователя.|  
+|Paging|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции продуктов.|  
+|Filtering|Сущность [фильтрации](api-management-template-data-model-reference.md#Filtering).|Сведения о фильтрации для страницы со списком продуктов.|  
+|Products|Коллекция сущностей [Продукт](api-management-template-data-model-reference.md#Product).|Все продукты, которые доступны для текущего пользователя.|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   
@@ -205,14 +205,14 @@ ms.locfileid: "52443633"
   
 |Свойство|type|ОПИСАНИЕ|  
 |--------------|----------|-----------------|  
-|Продукт|[Продукт](api-management-template-data-model-reference.md#Product)|Выбранный продукт.|  
+|Product|[Продукт](api-management-template-data-model-reference.md#Product)|Выбранный продукт.|  
 |IsDeveloperSubscribed|Логическое|Указывает, подписан ли текущий пользователь на этот продукт.|  
 |SubscriptionState|number|Состояние подписки. Возможны следующие состояния.<br /><br /> —-    `0 - suspended`: подписка заблокирована, и подписчик не может вызвать ни один API продукта.<br />— -   `1 - active`: подписка активна.<br />— -   `2 - expired`: срок действия подписки истек, и она была деактивирована.<br />— -   `3 - submitted`: запрос разработчика на подписку выполнен, но еще не был утвержден или отклонен.<br />—-    `4 - rejected`: администратор отклонил запрос на подписку.<br />-   `5 - cancelled`: подписка отменена разработчиком или администратором.|  
-|Ограничения|array|Это свойство является устаревшим и не должно использоваться.|  
+|Limits|array|Это свойство является устаревшим и не должно использоваться.|  
 |DelegatedSubscriptionEnabled|Логическое|Указывает, включено ли [делегирование](https://azure.microsoft.com/documentation/articles/api-management-howto-setup-delegation/) для этой подписки.|  
 |DelegatedSubscriptionUrl|строка|Если делегирование включено, содержит URL-адрес делегированной подписки.|  
 |IsAgreed|Логическое|Указывает, принял ли текущий пользователь условия использования продукта, если они определены.|  
-|Подписки|Коллекция сущностей [Сводка по подписке](api-management-template-data-model-reference.md#SubscriptionSummary).|Подписки на продукт.|  
+|Subscriptions|Коллекция сущностей [Сводка по подписке](api-management-template-data-model-reference.md#SubscriptionSummary).|Подписки на продукт.|  
 |Apis|Коллекция сущностей [API](api-management-template-data-model-reference.md#API).|API-интерфейсы, существующие для этого продукта.|  
 |CannotAddBecauseSubscriptionNumberLimitReached|Логическое|Определяет, имеет ли текущий пользователь право подписаться на этот продукт в контексте лимита подписки.|  
 |CannotAddBecauseMultipleSubscriptionsNotAllowed|Логическое|Определяет, имеет ли текущий пользователь право подписаться на этот продукт в контексте допустимости нескольких подписок.|  
