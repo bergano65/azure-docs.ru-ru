@@ -12,11 +12,11 @@ ms.workload: na
 ms.date: 04/08/2019
 ms.author: tomfitz
 ms.openlocfilehash: d2de802b2170feb6130cdce8007e16cc37561f5e
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59265395"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59791290"
 ---
 # <a name="azure-resource-manager-deployment-modes"></a>Режимы развертывания в Azure Resource Manager
 

@@ -9,11 +9,11 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/15/2019
 ms.openlocfilehash: 6f89e27b06179c33857d581c0c6e3fc78c683d48
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59045974"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59793461"
 ---
 # <a name="glossary-of-iot-hub-terms"></a>Глоссарий терминов, связанных с Центром Интернета вещей
 В этой статье перечислены некоторые распространенные термины, используемые в статьях на тему Центра Интернета вещей.

@@ -9,11 +9,11 @@ ms.date: 1/29/2019
 ms.author: victorh
 ms.topic: conceptual
 ms.openlocfilehash: a814fc6e9a72ba92d915821bd1e1694366844555
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59277428"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59791766"
 ---
 # <a name="web-application-firewall-request-size-limits-and-exclusion-lists"></a>Предельный размер запросов брандмауэра веб-приложения и списки исключений
 
@@ -40,7 +40,7 @@ WAF также позволяет настроить ручку, включаю�
 
 * Заголовки запроса
 * Объекты cookie запросов
-* Тело запроса
+* Текст запроса
 
    * Данные формы с разделителем
    * XML

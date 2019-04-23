@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.openlocfilehash: 38cf6decb8e61768faa9680058f6366e1550ba40
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59274729"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59793278"
 ---
 # <a name="author-policies-for-array-properties-on-azure-resources"></a>Автор политики для свойства массива для ресурсов Azure
 
@@ -185,7 +185,7 @@ ms.locfileid: "59274729"
 
 Следующие результаты являются результатом сочетания условие правила политики в примере и массива из существующих значений выше:
 
-|Условие |Результат |Объяснение |
+|Условие |Результат |Пояснение |
 |-|-|-|
 |`{<field>,"notEquals":"127.0.0.1"}` |Nothing |Один элемент массива результатом является значение false (127.0.0.1! = 127.0.0.1) и один — как true (127.0.0.1! = 192.168.1.1), поэтому **notEquals** условие _false_ и эффект не срабатывает. |
 |`{<field>,"notEquals":"10.0.4.1"}` |Действия политики |Оба элемента массива, интерпретируются как true (10.0.4.1! = 127.0.0.1 и 10.0.4.1! = 192.168.1.1), поэтому **notEquals** условие _true_ и активируется эффект. |

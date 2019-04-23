@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 04/02/2019
 ms.author: diberry
 ms.openlocfilehash: 9eb73db6f641d3a5f5bb82901bd12ea291eada58
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58894087"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59793556"
 ---
 # <a name="api-v1-to-v2-migration-guide-for-luis-apps"></a>Руководство по переходу с API версии 1 на API версии 2 для приложений на основе LUIS
 API-интерфейсы [конечных точек](https://aka.ms/v1-endpoint-api-docs) и [разработки](https://aka.ms/v1-authoring-api-docs) версии 1 объявлены устаревшими. Используйте это руководство, чтобы перейти на API [конечных точек](https://aka.ms/luis-endpoint-apis) и [разработки](https://aka.ms/luis-authoring-apis) версии 2. 

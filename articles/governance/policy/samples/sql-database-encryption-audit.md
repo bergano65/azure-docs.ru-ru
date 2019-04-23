@@ -8,11 +8,11 @@ ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
 ms.openlocfilehash: e8ee800ff9f286f901a84a039e3c433442ae11b2
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59270427"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59789584"
 ---
 # <a name="sample---audit-sql-database-encryption"></a>Пример проверки на предмет шифрования базы данных SQL
 

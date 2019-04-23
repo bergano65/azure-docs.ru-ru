@@ -7,15 +7,15 @@ ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 04/05/2019
 ms.openlocfilehash: 892a0909f68d89acc463d37edd466dba6a721177
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
-ms.translationtype: MT
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59277698"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59792154"
 ---
 # <a name="how-to-discover-data-sources-in-azure-data-catalog"></a>Обнаружение источников данных в каталоге данных Azure
 
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Общие сведения
 
 Каталог данных Azure — это полностью управляемая облачная служба, выполняющая функции системы регистрации и обнаружения корпоративных источников данных. Другими словами каталог данных помогает пользователям обнаруживать, оценивать и использовать источники данных. Она помогает организациям получать большую ценность имеющейся информации. После того как источник данных зарегистрирован в каталоге данных, служба индексирует его метаданные, чтобы можно было легко найти необходимые данные.
 

@@ -7,17 +7,17 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 04/05/2019
 ms.openlocfilehash: b5e0336a290090ed6bd7f5af508e691677780a80
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59265294"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59789433"
 ---
 # <a name="create-and-manage-read-replicas-from-the-azure-cli"></a>Создание и управление ими чтения реплик с помощью Azure CLI
 
 В этой статье вы узнаете, как создавать и управлять ими чтения реплик в базе данных Azure для PostgreSQL с помощью Azure CLI. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 - [Сервер службы "База данных Azure для PostgreSQL"](quickstart-create-server-up-azure-cli.md) в качестве главного.
 
 [!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
@@ -46,10 +46,10 @@ ms.locfileid: "59265294"
 
 [Az postgres server реплике создайте](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-create) команды необходимо задать следующие параметры:
 
-| Настройка | Пример значения | Описание  |
+| Параметр | Пример значения | ОПИСАНИЕ  |
 | --- | --- | --- |
 | resource-group | myresourcegroup |  Группа ресурсов, в которой будут создаваться на сервер-реплику.  |
-| имя | mydemoserver реплики | Имя нового сервера реплики, который создается. |
+| name | mydemoserver реплики | Имя нового сервера реплики, который создается. |
 | source-server | mydemoserver | Имя или ресурса идентификатор существующего главного сервера для репликации из. |
 
 ```azurecli-interactive

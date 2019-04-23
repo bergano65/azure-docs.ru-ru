@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 04/01/2019
 ms.author: magoedte
 ms.openlocfilehash: ebe2c2b488e3d71597dd24f5504a14dd7ce6671e
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
-ms.translationtype: MT
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59282293"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59791547"
 ---
 # <a name="how-to-set-up-alerts-for-performance-problems-in-azure-monitor-for-containers"></a>Как настроить оповещения для проблем производительности в Azure Monitor для контейнеров
 Azure Monitor для контейнеров отслеживает производительность рабочих нагрузок контейнеров, которые развертываются экземпляры контейнеров Azure или на управляемых кластеров Kubernetes, размещенных в службе Azure Kubernetes (AKS).

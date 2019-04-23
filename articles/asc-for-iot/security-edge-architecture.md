@@ -15,16 +15,16 @@ ms.workload: na
 ms.date: 03/25/2019
 ms.author: mlottner
 ms.openlocfilehash: c6ac3d9dbbb16caed51243fea852adea541b9f04
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58862239"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59790048"
 ---
 # <a name="azure-iot-edge-security-module"></a>Модуль безопасности Azure IoT Edge
 
 > [!IMPORTANT]
-> Центр безопасности Azure для Интернета вещей находится в общедоступной предварительной версии.
+> Центр безопасности Azure для Интернета вещей сейчас предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для производственных worklo§1ads. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/) предоставляет широкие возможности для управления и выполнения бизнес-процессов на границе.

@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 10/08/2018
 ms.author: glenga
 ms.openlocfilehash: 4e67e91e93ef3a2e2acf88a87b97eaab56ca6479
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59489560"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59793765"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Разработка Функций Azure с помощью Visual Studio  
 
@@ -207,9 +207,9 @@ For an example of how to test a queue triggered function, see the [queue trigger
 
 ## <a name="monitoring-functions"></a>Мониторинг функций
 
-Рекомендуемый способ наблюдения за выполнение функций является интеграция приложения-функции с помощью Azure Application Insights. При создании приложения-функции на портале Azure эта интеграция выполняется по умолчанию. Тем не менее при создании приложения-функции во время публикации в Visual Studio интеграция в приложении-функции в Azure не происходит.
+Рекомендуемый способ наблюдения за выполнением этой функции — интеграция приложения-функции в Azure Application Insights. При создании приложения-функции на портале Azure эта интеграция выполняется по умолчанию. Тем не менее при создании приложения-функции во время публикации в Visual Studio интеграция в приложении-функции в Azure не происходит.
 
-Чтобы включить Application Insights для приложения-функции:
+Чтобы настроить Application Insights для приложения-функции, сделайте следующее:
 
 [!INCLUDE [functions-connect-new-app-insights.md](../../includes/functions-connect-new-app-insights.md)]
 

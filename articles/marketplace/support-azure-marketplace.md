@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/05/2018
 ms.author: yijenj
 ms.openlocfilehash: de31ceea4faeecabd54c0d23e9263cbb4090925d
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59491344"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59791826"
 ---
 # <a name="support-for-the-marketplace"></a>Поддержка Marketplace  
 Ниже приведены варианты поддержки Marketplace.  
@@ -38,7 +38,7 @@ ms.locfileid: "59491344"
 
 ## <a name="technical"></a>Технические требования  
 
-| Канал поддержки | Описание |  
+| Канал поддержки | ОПИСАНИЕ |  
 |:--- |:--- |  
 | Форумы MSDN: По Marketplace, расположенные по адресу [social.msdn.microsoft.com/Forums/azure/home?forum=DataMarket](https://social.msdn.microsoft.com/Forums/azure/home?forum=DataMarket) | Форум Microsoft Developer Network. |  
 | Stack Overflow. Вопросы по Azure, расположенные по адресу [stackoverflow.com/questions/tagged/azure](https://stackoverflow.com/questions/tagged/azure) | Среда Stack Overflow, где можно получить решения и задать вопросы, относящиеся к Azure и Marketplace:<ul> <li>Stack Overflow. Вопросы по Azure Marketplace, расположенные по адресу [stackoverflow.com/questions/tagged/azure-marketplace](https://stackoverflow.com/questions/tagged/azure-marketplace)</li> <li>Stack Overflow. Вопросы по Azure Resource Manager, расположенные по адресу [stackoverflow.com/questions/tagged/azure-resource-manager](https://stackoverflow.com/questions/tagged/azure-resource-manager)</li> <li>Stack Overflow. Вопросы по виртуальным машинам Azure, расположенные по адресу [stackoverflow.com/questions/tagged/azure-virtual-machine](https://stackoverflow.com/questions/tagged/azure-virtual-machine)</li> <li>Stack Overflow. Вопросы по контейнерам Azure, расположенные по адресу [stackoverflow.com/search?q=azure+container](https://stackoverflow.com/search?q=azure+container)</li> </ul> |

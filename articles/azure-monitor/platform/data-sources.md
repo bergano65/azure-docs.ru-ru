@@ -13,11 +13,11 @@ ms.workload: infrastructure-services
 ms.date: 11/13/2018
 ms.author: bwren
 ms.openlocfilehash: 6d03c219025c8cd39214bd8ab6807125709f9742
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58849674"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59790882"
 ---
 # <a name="sources-of-data-in-azure-monitor"></a>Источники данных в Azure Monitor
 В этой статье описываются источники данных, собранные Azure Monitor для мониторинга работоспособности и производительности ваших ресурсов, а также выполняющихся на их базе приложений. Эти ресурсы могут находиться в Azure, в другом облаке или в локальной среде.  Подробную информацию о том, как эти данные хранятся и как вы можете их просматривать, см. в разделе [Сбор данных мониторинга в Azure](data-platform.md).
