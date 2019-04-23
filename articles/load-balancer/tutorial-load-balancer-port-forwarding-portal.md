@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/26/2019
 ms.author: kumud
 ms.custom: seodec18
-ms.openlocfilehash: 44b9e592d60c541e6b1e7f0e8c639b641af414e4
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: db94f1d241223a9c54a6e3d516840dd17fd0c576
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58118363"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60007514"
 ---
 # <a name="tutorial-configure-port-forwarding-in-azure-load-balancer-using-the-portal"></a>Руководство. Настройка перенаправления портов в Azure Load Balancer с помощью портала
 
@@ -60,7 +60,7 @@ ms.locfileid: "58118363"
     |Зона доступности| Выберите **Zone redundant** (Избыточно в пределах зоны).    |
      
     >[!NOTE]
-     >Убедитесь в создании Load Balancer и всех необходимых ресурсов в расположении, которое поддерживает Зоны доступности. Дополнительные сведения см. в разделе [Регионы с поддержкой Зон доступности](../availability-zones/az-overview.md#regions-that-support-availability-zones). 
+     >Убедитесь в создании Load Balancer и всех необходимых ресурсов в расположении, которое поддерживает Зоны доступности. Дополнительные сведения см. в разделе [Регионы с поддержкой Зон доступности](../availability-zones/az-overview.md#services-support-by-region). 
 
 3. На вкладке **Отзыв и создание** щелкните **Создать**.  
   

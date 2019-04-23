@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/26/2018
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: 38e776a5398ea5217a0d7e385d6ebb45d2199d51
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: 0e5137a8183f378ee5960846e281222c6ecaaa47
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59044613"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59995716"
 ---
 # <a name="tutorial-remove-a-service-fabric-cluster-running-in-azure"></a>Руководство по Удаление кластера Service Fabric, работающего в Azure
 
@@ -35,9 +35,9 @@ ms.locfileid: "59044613"
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * создание безопасного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в Azure с помощью шаблона;
-> * [мониторинг кластера;](service-fabric-tutorial-monitor-cluster.md)
-> * [увеличение или уменьшение масштаба кластера;](service-fabric-tutorial-scale-cluster.md)
-> * [обновление среды выполнения кластера;](service-fabric-tutorial-upgrade-cluster.md)
+> * [мониторинг кластера](service-fabric-tutorial-monitor-cluster.md);
+> * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
+> * [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
 > * Удаление кластера
 
 
@@ -48,7 +48,7 @@ ms.locfileid: "59044613"
 Перед началом работы с этим руководством выполните следующие действия:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Установите [Azure Powershell](https://docs.microsoft.com/powershell/azure//install-Az-ps) или [Azure CLI](/cli/azure/install-azure-cli).
+* Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure//install-Az-ps) или [Azure CLI](/cli/azure/install-azure-cli).
 * Создание защищенного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в Azure
 
 ## <a name="delete-the-resource-group-containing-the-service-fabric-cluster"></a>Удаление группы ресурсов, содержащей кластер Service Fabric
@@ -121,4 +121,3 @@ az resource delete --name "<name of the Resource>" --resource-type "Microsoft.Se
 * Узнайте, как проверять кластер Service Fabric и управлять им с помощью [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md).
 * Узнайте, как [установить исправления операционной системы Windows](service-fabric-patch-orchestration-application.md) на узлах кластера.
 * Узнайте, как агрегировать и собирать события [кластеров Windows](service-fabric-diagnostics-event-aggregation-wad.md) и выполнять [настройку Log Analytics](service-fabric-diagnostics-oms-setup.md) для мониторинга событий кластера.
-ms-setup.md) для наблюдения за событиями кластера.

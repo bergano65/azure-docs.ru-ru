@@ -1,68 +1,61 @@
-items:
 - name: Таблицы Azure
   tocHref: /azure/
   topicHref: /azure/index
   items:
-  - name: Key Vault
-    tocHref: /azure/
-    topicHref: /azure/key-vault/index
+    - name: Key Vault
+      tocHref: /azure/
+      topicHref: /azure/key-vault/index
 - name: Таблицы Azure
   tocHref: /java/
   topicHref: /azure/index
   items:
-  - name: Key Vault
-    tocHref: /java/azure/
-    topicHref: /azure/key-vault/
-    items:
-    - name: Spring
-      tocHref: /java/azure/spring-framework/
-      topicHref: /java/azure/spring-framework/
+    - name: Key Vault
+      tocHref: /java/azure/
+      topicHref: /azure/key-vault/
+      items:
+        - name: Spring
+          tocHref: /java/azure/spring-framework/
+          topicHref: /java/azure/spring-framework/
 - name: Таблицы Azure
   tocHref: /powershell/
   topicHref: /azure/index
   items:
-  - name: Key Vault
-    tocHref: /powershell/module/
-    topicHref: /azure/key-vault/
-    items:
-    - name: Командлеты PowerShell для хранилища ключей
-      tocHref: /powershell/module/az.keyvault/
-      topicHref: /powershell/module/az.keyvault/
+    - name: Key Vault
+      tocHref: /powershell/module/
+      topicHref: /azure/key-vault/
+      items:
+        - name: Командлеты PowerShell для хранилища ключей
+          tocHref: /powershell/module/az.keyvault/
+          topicHref: /powershell/module/az.keyvault/
 - name: Таблицы Azure
   tocHref: /cli/
   topicHref: /azure/index
   items:
-  - name: Key Vault
-    tocHref: /cli/azure/
-    topicHref: /azure/key-vault/
-    items:
-    - name: Справочник по CLI для хранилища ключей
-      tocHref: /cli/azure/keyvault/
+    - name: Key Vault
+      tocHref: /cli/azure/
       topicHref: /azure/key-vault/
       items:
-      - name: Сертификаты
-        tocHref: /cli/azure/keyvault/certificate
-        topicHref: /azure/key-vault/
-      - name: ключей
-        tocHref: /cli/azure/keyvault/key
-        topicHref: /azure/key-vault/
-      - name: Секреты
-        tocHref: /cli/azure/keyvault/secret
-        topicHref: /azure/key-vault/
+        - name: Справочник по CLI для хранилища ключей
+          tocHref: /cli/azure/keyvault/
+          topicHref: /azure/key-vault/
+          items:
+            - name: Сертификаты
+              tocHref: /cli/azure/keyvault/certificate
+              topicHref: /azure/key-vault/
+            - name: ключей
+              tocHref: /cli/azure/keyvault/key
+              topicHref: /azure/key-vault/
+            - name: Секреты
+              tocHref: /cli/azure/keyvault/secret
+              topicHref: /azure/key-vault/
 - name: Таблицы Azure
   tocHref: /sccm/
   topicHref: /azure/index
   items:
-  - name: Key Vault
-    tocHref: /sccm/apps/
-    topicHref: /azure/key-vault/index
-    items:
-    - name: Выполнение сценариев SCCM
-      tocHref: /sccm/apps/deploy-use/
+    - name: Key Vault
+      tocHref: /sccm/apps/
       topicHref: /azure/key-vault/index
-ms.openlocfilehash: 3a11cee3221ccff773291ede56415af09d80120b
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58848812"
+      items:
+        - name: Выполнение сценариев SCCM
+          tocHref: /sccm/apps/deploy-use/
+          topicHref: /azure/key-vault/index
