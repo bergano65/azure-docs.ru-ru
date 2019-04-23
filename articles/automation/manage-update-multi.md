@@ -10,11 +10,11 @@ ms.date: 04/02/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 16fe2d23fdd07f8f150cc010b0a1d232c761c77f
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58884930"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59798678"
 ---
 # <a name="manage-updates-for-multiple-machines"></a>Управление обновлениями для нескольких виртуальных машин
 
@@ -135,7 +135,7 @@ ms.locfileid: "58884930"
 
   ![Область "Новое развертывание обновления"](./media/manage-update-multi/update-select-computers.png)
 
-- **Классификация обновлений**. Выберите типы программного обеспечения, которые будут включены в развертывание обновления. Описание типов классификации обновлений см. в этом [разделе](automation-update-management.md#update-classifications). Ниже приведены типы классификации:
+- **Классификации обновлений**. Выберите типы программного обеспечения, которые будут включены в развертывание обновления. Описание типов классификации обновлений см. в этом [разделе](automation-update-management.md#update-classifications). Ниже приведены типы классификации:
   - критические обновления;
   - обновления для системы безопасности;
   - накопительные пакеты обновления;
