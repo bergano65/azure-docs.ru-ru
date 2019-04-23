@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: danlep
 ms.openlocfilehash: b97db09c477a940ca36129316613f5ceb4eb13b1
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59256198"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59789116"
 ---
 # <a name="automate-os-and-framework-patching-with-acr-tasks"></a>Автоматизация установки исправлений ОС и платформы с помощью службы "Задачи ACR"
 
@@ -99,7 +99,7 @@ ms.locfileid: "59256198"
 
 Когда вы будете готовы для автоматизации операционной системы и установки исправлений framework путем создания образов контейнеров в облаке, ознакомьтесь с трех частей [серии руководств задачи ACR](container-registry-tutorial-quick-task.md).
 
-При необходимости установите [расширение Docker для Visual Studio Code](https://code.visualstudio.com/docs/azure/docker) и [учетной записи Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) расширения для работы с вашей реестров контейнеров Azure. По запросу и отправка образов в реестр контейнеров Azure или выполнение ACR, в Visual Studio Code.
+При необходимости установите [расширение Docker для Visual Studio Code](https://code.visualstudio.com/docs/azure/docker) и расширение [учетной записи Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) для работы со своими реестрами контейнеров Azure. Извлекайте и отправляйте образы в реестр контейнеров Azure или запускайте Задачи ACR в Visual Studio Code.
 
 <!-- LINKS - External -->
 [base-alpine]: https://hub.docker.com/_/alpine/

@@ -10,10 +10,10 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 ms.openlocfilehash: 4c759462d603a35e738f76a505abd04b832afc3f
-ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59426347"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-net-core"></a>Начало работы в Azure Dev Spaces с .NET Core
@@ -226,9 +226,9 @@ public IActionResult About()
 
 В браузере обновите веб-приложение и перейдите на страницу About (Сведения). Вы должны увидеть настраиваемое сообщение в пользовательском интерфейсе.
 
-**Теперь у вас есть метод быстрой итерации кода и отладки непосредственно в Kubernetes.** Далее вы узнаете, как создать и вызвать второй контейнер.
+**Теперь у вас есть метод быстрой итерации кода и отладки непосредственно в Kubernetes**. Далее вы узнаете, как создать и вызвать второй контейнер.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Разработка с использованием нескольких служб](multi-service-netcore.md)
+> [Узнайте больше о разработке с использованием нескольких служб](multi-service-netcore.md)

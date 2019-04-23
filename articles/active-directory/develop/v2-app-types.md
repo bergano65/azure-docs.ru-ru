@@ -19,11 +19,11 @@ ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 562b45f30bf057feba38a716e040ab2efc15da90
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59283330"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59785978"
 ---
 # <a name="application-types-for-microsoft-identity-platform"></a>Типы приложений для платформы удостоверений Microsoft
 
@@ -59,7 +59,7 @@ https://login.microsoftonline.com/common/oauth2/v2.0/token
 
 Чтобы увидеть этот сценарий в действии, изучите один из примеров кода одностраничного приложения в [платформы удостоверений Microsoft Приступая к работе](v2-overview.md#getting-started) раздел.
 
-## <a name="web-apps"></a>Веб-приложения
+## <a name="web-apps"></a>веб-приложений:
 
 Для веб-приложений (.NET, PHP, Java, Ruby, Python, Node), доступных пользователю через браузер, для входа пользователей можно использовать [OpenID Connect](active-directory-v2-protocols.md). В OpenID Connect веб-приложение получает маркер идентификации. Это маркер безопасности, который проверяет удостоверение пользователя и предоставляет сведения о пользователе в форме утверждений.
 

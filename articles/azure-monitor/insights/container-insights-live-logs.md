@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: magoedte
 ms.openlocfilehash: 6fe8cccf60e60ada34e3b7847964958cf6e03c4a
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
-ms.translationtype: MT
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58904752"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59788841"
 ---
 # <a name="how-to-view-container-logs-real-time-with-azure-monitor-for-containers-preview"></a>Как представить журналы контейнеров в реальном времени с помощью службы "Azure Monitor для контейнеров" (предварительная версия)
 Эта функция, которая в настоящее время находится в предварительной версии, обеспечивает представление журналов контейнеров Службы Azure Kubernetes (stdout/stderr) в реальном времени без необходимости выполнять команды kubectl. Если выбрать этот вариант, в представлении **Контейнеры** под таблицей данных производительности контейнеров появится новая область.  В ней будет показано динамическое ведение журнала, создаваемое модулем контейнера для помощи в устранении проблем в режиме реального времени. **Участник** доступ к ресурсу кластера необходим для работы этой функции.

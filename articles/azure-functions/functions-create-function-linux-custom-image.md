@@ -12,10 +12,10 @@ ms.custom: mvc
 ms.devlang: azure-cli
 manager: jeconnoc
 ms.openlocfilehash: 03e1ec58b0ef3ad50a04f82ced7d20119ab3ef5b
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59491463"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-image"></a>Создание функции на Linux с помощью пользовательского образа
@@ -302,4 +302,4 @@ az functionapp deployment container config --enable-cd \
 Узнайте, как включить функцию непрерывной интеграции, встроенную в основную платформу службы приложений. Вы можете настроить приложение-функцию, чтобы контейнер повторно развертывался при обновлении образа в центре Docker.
 
 > [!div class="nextstepaction"] 
-> [Непрерывное развертывание с использованием платформы Azure "Веб-приложения для контейнеров"](../app-service/containers/app-service-linux-ci-cd.md)
+> [Непрерывное развертывание с использованием платформы Azure "Веб-приложение для контейнеров"](../app-service/containers/app-service-linux-ci-cd.md).

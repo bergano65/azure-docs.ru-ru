@@ -19,13 +19,13 @@ ms.reviewer: elisol, bryanla
 ms.custom: aaddev, seoapril2019
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1b5ec950a91f3ed0099873e40c7235a9d59f0cb2
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59283585"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59787396"
 ---
-# <a name="how-to-list-your-application-in-the-azure-active-directory-application-gallery"></a>Практическое руководство. Добавление приложения в коллекцию приложений Azure Active Directory
+# <a name="how-to-list-your-application-in-the-azure-active-directory-application-gallery"></a>Практическое руководство: Добавление приложения в коллекцию приложений Azure Active Directory
 
 В этой статье показано, как включить приложение в коллекции приложений Azure AD, реализовать единый вход (SSO) и управления списка.
 
@@ -38,7 +38,7 @@ ms.locfileid: "59283585"
 - Нашим общим клиентам предлагается пошаговое руководство по настройке.
 - Клиенты, которые пользуются SCIM, могут использовать подготовку для того же приложения.
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Технические условия
 
 - Федеративные приложения (Open ID и SAML/WS-Fed) должны поддерживать модель SaaS, чтобы попасть в коллекцию Azure AD. Приложения из корпоративной коллекции должны поддерживать несколько конфигураций клиента, а не какую-либо конкретную конфигурацию.
 
@@ -123,7 +123,7 @@ ms.locfileid: "59283585"
 
 ![Клиент запросил потока приложения](./media/howto-app-gallery-listing/customer-request.png)
 
-## <a name="timelines"></a>Временные шкалы
+## <a name="timelines"></a>График выполнения процессов
 
 Процесс включения приложения SAML 2.0 или WS-Fed в коллекцию занимает 7–10 рабочих дней.
 

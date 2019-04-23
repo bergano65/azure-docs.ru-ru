@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 09/06/2016
 ms.author: jeconnoc
 ms.openlocfilehash: b20fa7a1f43369cde85c2535637eec7ceb1d3c29
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58918337"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59787190"
 ---
 # <a name="enable-diagnostics-in-azure-cloud-services-using-powershell"></a>Включение диагностики в облачных службах Azure с помощью PowerShell 
 Для сбора диагностических данных, таких как журналы приложений, счетчики производительности и т. д., из облачной службы можно использовать расширение системы диагностики Azure. В этой статье описывается включение расширения диагностики Azure для облачной службы с помощью PowerShell.  Сведения о компонентах, которые потребуются для выполнения инструкций в этой статье, см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview).

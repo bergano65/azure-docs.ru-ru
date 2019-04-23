@@ -8,19 +8,20 @@ manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 65b2979d-9e2f-4530-bc08-546975269ebc
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 12/19/2018
+ms.date: 04/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9b847fd424e14eba492018887dbc28c44100f61
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.openlocfilehash: 5e55399337e06314a5079f9d0e692a771855f8ca
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58885355"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59683619"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-goodpractice-toolkit"></a>Руководство по Интеграция Azure Active Directory с GoodPractice Toolkit
 
@@ -52,7 +53,7 @@ ms.locfileid: "58885355"
 
 Чтобы настроить интеграцию GoodPractice Toolkit с Azure AD, необходимо добавить GoodPractice Toolkit из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить GoodPractice Toolkit из коллекции, выполните следующие действия:**
+**Чтобы добавить GoodPractice Toolkit из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -69,7 +70,7 @@ ms.locfileid: "58885355"
 4. В поле поиска введите **GoodPractice Toolkit**, выберите **GoodPractice Toolkit** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
      ![GoodPractice Toolkit в списке результатов](common/search-new-app.png)
-   ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
 В этом разделе описана настройка и проверка единого входа Azure AD в GoodPractice Toolkit с использованием тестового пользователя **Britta Simon**.
 Для обеспечения работы единого входа необходимо установить связь между пользователем Azure Active Directory и соответствующим пользователем GoodPractice Toolkit.
@@ -79,9 +80,9 @@ ms.locfileid: "58885355"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Настройка единого входа в GoodPractice Toolkit](#configure-goodpractice-toolkit-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Создание тестового пользователя GoodPractice Toolkit](#create-goodpractice-toolkit-test-user)** требуется для того, чтобы в GoodPractice Toolkit существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-5. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя GoodPractice Toolkit](#create-goodpractice-toolkit-test-user)** требуется для того, чтобы в GoodPractice Toolkit существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -120,9 +121,9 @@ ms.locfileid: "58885355"
 
     а) URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-goodpractice-toolkit-single-sign-on"></a>Настройка единого входа GoodPractice Toolkit
 
@@ -146,8 +147,7 @@ ms.locfileid: "58885355"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
-    Например BrittaSimon@contoso.com.
+    b. В поле **Имя пользователя** введите `brittasimon\@yourcompanydomain.extension`. Например, BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

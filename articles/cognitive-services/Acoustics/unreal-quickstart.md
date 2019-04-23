@@ -11,10 +11,10 @@ ms.topic: quickstart
 ms.date: 03/20/2019
 ms.author: kegodin
 ms.openlocfilehash: 691f49e9be8aabe9a3e229bfd3b35ab183f9fed9
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59492418"
 ---
 # <a name="project-acoustics-unrealwwise-quickstart"></a>Краткое руководство по использованию Project Acoustics с Unreal и Wwise
@@ -50,7 +50,7 @@ ms.locfileid: "59492418"
 
     ![Снимок экрана с проводником Windows окно — скрипт для исправления проекта Wwise](media/patch-wwise-script.png)
 
-* Если у вас нет установленного пакета SDK для DirectX, вам потребуется закомментировать строку, содержащую DXSDK_DIR в `AcousticsGame\Plugins\Wwise\Source\AkAudio\AkAudio.Build.cs`
+* Если у вас нет установленного пакета SDK для DirectX, вам потребуется закомментировать строку, содержащую DXSDK_DIR в `AcousticsGame\Plugins\Wwise\Source\AkAudio\AkAudio.Build.cs`.
 
     ![Снимок экрана с редактором кода — комментирование строки DXSDK](media/directx-sdk-comment.png)
 

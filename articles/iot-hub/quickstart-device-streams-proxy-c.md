@@ -11,10 +11,10 @@ ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: rezas
 ms.openlocfilehash: 1468268e407eeac6196c8e8e4db0fc5a52ca09c7
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59501575"
 ---
 # <a name="quickstart-sshrdp-over-iot-hub-device-streams-using-c-proxy-application-preview"></a>Краткое руководство. SSH/RDP через потоки устройств Центра Интернета вещей с помощью приложения прокси C (предварительная версия)
@@ -52,7 +52,7 @@ ms.locfileid: "59501575"
 
 * Предварительная версия потоков устройств сейчас поддерживается только в Центрах Интернета вещей, созданных в следующих регионах.
 
-  * **Центральный регион США**
+  * **Центральная часть США**
   * **Центральная часть США (EUAP)**
 
 * Установите [Visual Studio 2017](https://www.visualstudio.com/vs/) с включенной рабочей нагрузкой [Разработка классических приложений на C++](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/).
@@ -210,4 +210,4 @@ ssh <username>@localhost -p 2222
 Используйте приведенные ниже ссылки для получения дополнительных сведений о потоках устройства:
 
 > [!div class="nextstepaction"]
-> [IoT Hub Device Streams (preview) (Потоки устройств Центра Интернета вещей (предварительная версия)](./iot-hub-device-streams-overview.md)
+> [IoT Hub Device Streams (preview)](./iot-hub-device-streams-overview.md) (Потоки устройств (предварительная версия))

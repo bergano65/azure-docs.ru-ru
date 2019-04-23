@@ -11,10 +11,10 @@ ms.topic: quickstart
 ms.date: 03/12/2019
 ms.author: aahi
 ms.openlocfilehash: d31be245d906ba0405a44d4482272051982c943c
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59488343"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-c"></a>Краткое руководство. Отправка запросов для поиска в REST API Поиска сущностей Bing с помощью C#
@@ -174,7 +174,7 @@ ms.locfileid: "59488343"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Создание одностраничного веб-приложения](../tutorial-bing-entities-search-single-page-app.md)
+> [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-entities-search-single-page-app.md)
 
 * [Основные сведения об API Bing для поиска сущностей](../overview.md )
-* [Bing Entity Search API Reference (Справочник по API Bing для поиска сущностей)](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference)
+* [Справочник по API Bing для поиска сущностей](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference)

@@ -9,10 +9,10 @@ ms.topic: tutorial
 ms.service: backup
 manager: carmonm
 ms.openlocfilehash: 139ce3fd81c14f9bf97e45c8aebb83d2fb1bbe10
-ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59426619"
 ---
 # <a name="questions-about-backing-up-azure-files"></a>Вопросы о резервном копировании файлов Azure
@@ -112,6 +112,6 @@ ms.locfileid: "59426619"
 
 ## <a name="see-also"></a>См. также
 Здесь представлены сведения только о резервном копировании файлов Azure. Чтобы узнать больше о других областях службы Azure Backup, см. следующие разделы с часто задаваемыми вопросами.
--  [Recovery Services vault FAQ (Хранилище Служб восстановления — вопросы и ответы)](backup-azure-backup-faq.md)
--  [Azure VM backup FAQ (Часто задаваемые вопросы о резервном копировании виртуальных машин Azure)](backup-azure-vm-backup-faq.md)
--  [Часто задаваемые вопросы об агенте службы Azure Backup](backup-azure-file-folder-backup-faq.md)
+-  [Часто задаваемые вопросы о службах восстановления](backup-azure-backup-faq.md).
+-  [Часто задаваемые вопросы о резервном копировании виртуальных машин Azure](backup-azure-vm-backup-faq.md).
+-  [Часто задаваемые вопросы об агенте службы Azure Backup](backup-azure-file-folder-backup-faq.md).

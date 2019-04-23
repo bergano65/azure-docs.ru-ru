@@ -11,10 +11,10 @@ ms.custom: mvc
 ms.date: 04/10/2019
 ms.author: wesmc
 ms.openlocfilehash: 1299b627c70b23714ea48dbc62af36ca1f27290e
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59499909"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-c"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (C)
@@ -202,4 +202,4 @@ ms.locfileid: "59499909"
 Чтобы узнать больше о разработке с помощью пакета SDK Центра Интернета вещей Azure для C, перейдите к следующему практическому руководству:
 
 > [!div class="nextstepaction"]
-> [Разработка с использованием пакета SDK для Центра Интернета вещей для C](iot-hub-devguide-develop-for-constrained-devices.md)
+> [Разработка с использованием пакета SDK Центра Интернета вещей для C](iot-hub-devguide-develop-for-constrained-devices.md)

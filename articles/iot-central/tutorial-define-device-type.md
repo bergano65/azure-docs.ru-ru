@@ -9,14 +9,14 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: e4c5942dfba62a2c869e4eeceb9018fc926d9de9
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: 884381cc3b9aaeec29f5697485cd90c28b2bd97e
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259553"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59681256"
 ---
-# <a name="tutorial-define-a-new-device-type-in-your-azure-iot-central-application-new-ui-design"></a>Руководство. Определение типа нового устройства в приложении Azure IoT Central (новый пользовательский интерфейс)
+# <a name="tutorial-define-a-new-device-type-in-your-azure-iot-central-application"></a>Руководство по Определение типа нового устройства в приложении Azure IoT Central
 
 В этом руководстве показано, как разработчики могут использовать шаблон устройства для определения типа нового устройства в приложении Microsoft Azure IoT Central. Шаблон устройства определяет телеметрию, состояние, свойства и параметры для типа устройства.
 
@@ -323,7 +323,7 @@ ms.locfileid: "58259553"
     | -------------------- | ----------------------- |
     | Отображаемое имя         | Версия встроенного ПО        |
     | Имя поля           | FirmwareVersion         |
-    | Тип данных            | текст                    |
+    | Тип данных            | text                    |
     | ОПИСАНИЕ          | Версия встроенного ПО кондиционера |
 
     ![Настройка версии встроенного ПО](./media/tutorial-define-device-type/configureproperties3.png)
@@ -338,7 +338,7 @@ ms.locfileid: "58259553"
     | -------------------- | ----------------------- |
     | Отображаемое имя         | Серийный номер           |
     | Имя поля           | SerialNumber            |
-    | Тип данных            | текст                    |
+    | Тип данных            | text                    |
     | ОПИСАНИЕ          | Серийный номер кондиционера  |
 
     ![Настройка серийного номера](./media/tutorial-define-device-type/configureproperties4.png)
@@ -363,7 +363,7 @@ ms.locfileid: "58259553"
     | Отображаемое имя         | Команда вывода на экран    |
     | Имя поля           | echo (вывод на экран)            |
     | Default Timeout (Время ожидания по умолчанию)      | 30              |
-    | Display Type (Отображаемый тип)         | текст            |
+    | Display Type (Отображаемый тип)         | text            |
     | ОПИСАНИЕ          | Команда устройства  |  
 
     Вы можете добавить дополнительные входные данные для команды, выбрав **+** в разделе **Поля ввода**.

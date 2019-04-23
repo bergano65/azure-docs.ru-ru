@@ -14,13 +14,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 03/28/2018
-ms.openlocfilehash: 570f0a825f679ec5f0cc4c62b0608ec517148161
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 04/20/2019
+ms.openlocfilehash: 7a2bd8ebf2e96cf2251d98501bbf42007d43a660
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57894008"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59683007"
 ---
 # <a name="what-is-azure-machine-learning-studio"></a>Что такое Студия машинного обучения Azure
 Студия машинного обучения Microsoft Azure — это инструмент для совместной работы, поддерживающий функцию перетаскивания объектов и предназначенный для создания, тестирования и развертывания решений для прогнозного анализа данных. Студия машинного обучения публикует модели как веб-службы, которые затем можно использовать в пользовательских приложениях и средствах бизнес-аналитики (например, в Excel).
@@ -108,7 +108,7 @@ ms.locfileid: "57894008"
 ## <a name="deploying-a-predictive-analytics-web-service"></a>Развертывание веб-службы прогнозной аналитики
 После подготовки модели прогнозной аналитики можно развернуть ее как веб-службу непосредственно из Студии машинного обучения. Дополнительные сведения о том, как это сделать, см. в статье [Развертывание веб-службы машинного обучения Azure](publish-a-machine-learning-web-service.md).
 
-
+<a name="compare"></a>
 ## <a name="how-is-machine-learning-studio-different-from-azure-machine-learning-service"></a>Чем Студия машинного обучения Azure отличается от Службы машинного обучения Azure?
 
 [Служба машинного обучения Azure](../service/overview-what-is-azure-ml.md) предоставляет пакеты SDK и службы, позволяющие быстро подготавливать данные, а также обучать и развертывать модели машинного обучения. Повышайте эффективность и сокращайте затраты, используя автомасштабируемые вычисления и конвейеры. Использовать эти возможности можно с помощью платформ Python с открытым кодом, например PyTorch, TensorFlow и scikit-learn. 

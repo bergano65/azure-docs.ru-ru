@@ -10,10 +10,10 @@ services: iot-central
 ms.custom: mvc
 manager: peterpr
 ms.openlocfilehash: 201b438601c9929e5ca3d292f9fc3d7b7ff64de8
-ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59425939"
 ---
 # <a name="tutorial-add-a-real-device-to-your-azure-iot-central-application"></a>Руководство по Добавление реального устройства в приложение Azure IoT Central
@@ -352,14 +352,14 @@ ms.locfileid: "59425939"
 
 Будучи оператором, вы можете научиться, как:
 
-* [управление устройствами.](howto-manage-devices.md)
-* [Использование наборов устройств](howto-use-device-sets.md)
-* [Создание настраиваемой функции аналитики](howto-use-device-sets.md)
+* [Управление устройствами](howto-manage-devices.md)
+* [использовать наборы устройств](howto-use-device-sets.md);
+* [создавать настраиваемую аналитику](howto-use-device-sets.md).
 
 Как разработчик устройств вы можете научиться, как:
 
-* [подготовить и подключить устройство DevKit (C);](howto-connect-devkit.md)
-* [Подготовка и подключение Raspberry Pi (Python)](howto-connect-raspberry-pi-python.md)
-* [Подготовка и подключение Raspberry Pi (C#)](howto-connect-raspberry-pi-csharp.md)
-* [подготовить и подключить устройство Windows 10 IoT Core (C#);](howto-connect-windowsiotcore.md)
-* [подключить универсальный клиент Node.js к приложению Azure IoT Central.](howto-connect-nodejs.md)
+* [подключить устройство MXChip IoT DevKit к приложению Azure IoT Central](howto-connect-devkit.md);
+* [подключить устройство Raspberry Pi к приложению Azure IoT Central (Python)](howto-connect-raspberry-pi-python.md);
+* [подключить устройство Raspberry Pi к приложению Azure IoT Central (C#)](howto-connect-raspberry-pi-csharp.md);
+* [подключить устройство Windows 10 IoT Core к приложению Azure IoT Central](howto-connect-windowsiotcore.md);
+* [Подключение универсального клиентского приложения к приложению Azure IoT Central (Node.js)](howto-connect-nodejs.md)

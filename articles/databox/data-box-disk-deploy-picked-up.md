@@ -10,10 +10,10 @@ ms.date: 04/08/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
 ms.openlocfilehash: 7c62ec722e5bb909c13b21a7b98d86dd72d9e665
-ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59425956"
 ---
 # <a name="tutorial-return-azure-data-box-disk-and-verify-data-upload-to-azure"></a>Руководство по Возврат Диска Azure Data Box и проверка передачи данных в Azure
@@ -156,8 +156,8 @@ Body:
 
 - Учетная запись службы хранения Azure. При копировании через Data Box данные передаются в одно из следующих расположений в учетной записи службы хранилища Azure в зависимости от типа данных.
 
-  - Блочные и страничные BLOB-объекты: `https://<storage_account_name>.blob.core.windows.net/<containername>/files/a.txt`
-  - Файлы Azure: `https://<storage_account_name>.file.core.windows.net/<sharename>/files/a.txt`
+  - Для блочных и страничных BLOB-объектов: `https://<storage_account_name>.blob.core.windows.net/<containername>/files/a.txt`.
+  - Для службы файлов Azure: `https://<storage_account_name>.file.core.windows.net/<sharename>/files/a.txt`.
 
     Кроме того, вы можете перейти к этим данным из учетной записи хранения Azure на портале Azure.
 
@@ -200,6 +200,6 @@ Body:
 Перейдите к следующему руководству, чтобы узнать, как управлять диском Data Box с портала Azure.
 
 > [!div class="nextstepaction"]
-> [Администрирование Диска Data Box с помощью портала Azure](./data-box-portal-ui-admin.md)
+> [Use Azure portal to administer your Data Box (Preview)](./data-box-portal-ui-admin.md) (Использование портала Azure для управления диском Data Box (предварительная версия))
 
 

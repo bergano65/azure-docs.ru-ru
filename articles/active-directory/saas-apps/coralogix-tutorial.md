@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 1/2/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26c25c57dec14a81e5bcfcfa044cf5d5302e1c88
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.openlocfilehash: d0095a825f5582dc795f5bebdcf08be07a92946e
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59578838"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59678298"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-coralogix"></a>Руководство по Интеграция Azure Active Directory с Coralogix
 
@@ -120,7 +120,7 @@ ms.locfileid: "59578838"
 
 5. Приложение Coralogix ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Значениями этих атрибутов можно управлять в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения с помощью значка **Изменить**. Кроме того, вы можете добавлять утверждения с помощью команды **Добавить новое утверждение**, которая позволяет настроить атрибут токена SAML, как показано на предыдущем рисунке. Затем выполните следующие действия:
     
@@ -214,7 +214,7 @@ ms.locfileid: "59578838"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Apex Portal | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Apex Portal | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Apex Portal.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,22 @@ manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: db204a46-6460-4ace-bdbb-4353846723ad
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/17/2019
+ms.date: 04/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10ffd7207367d0bbdd670fb8402775b26952ae5d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9d9f83e0b6136a27c0cd519a345e085040f47cc6
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57852599"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59680134"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-apex-portal"></a>Руководство. Интеграция Azure Active Directory с Apex Portal
+# <a name="tutorial-azure-active-directory-integration-with-apex-portal"></a>Руководство по Интеграция Azure Active Directory с Apex Portal
 
 В этом руководстве описано, как интегрировать Apex Portal с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Apex Portal обеспечивает следующие преимущества:
@@ -68,7 +69,7 @@ ms.locfileid: "57852599"
 
 4. В поле поиска введите **Apex Portal**, выберите **Apex Portal** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![Apex Portal в списке результатов](common/search-new-app.png)
+    ![Apex Portal в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -106,21 +107,21 @@ ms.locfileid: "57852599"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Apex Portal](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<customer name>.apexanalytix.com/saml/sso.aspx`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<customer name>.apexportal.net/saml/sso.aspx`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<customer name>.apexanalytix.com/saml/sso.aspx`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<customer name>.apexportal.net/saml/sso.aspx`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Apex Portal](mailto:support@apexanalytix.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. Приложение Apex Portal ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
     | ИМЯ | Исходный атрибут|
-    | ------------------- | -------------------- |
+    | -------- | --------- |
     | FIRSTNAME | user.givenname |
     | LASTNAME | user.surname |
     | MAIL | user.mail |
@@ -128,9 +129,9 @@ ms.locfileid: "57852599"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -154,9 +155,9 @@ ms.locfileid: "57852599"
 
     а) URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-apex-portal-single-sign-on"></a>Настройка единого входа для Apex Portal
 
@@ -180,8 +181,7 @@ ms.locfileid: "57852599"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
-    Например BrittaSimon@contoso.com.
+    b. В поле **Имя пользователя** введите `brittasimon\@yourcompanydomain.extension`. Например, BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -233,4 +233,3 @@ ms.locfileid: "57852599"
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-

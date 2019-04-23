@@ -11,10 +11,10 @@ ms.topic: quickstart
 ms.date: 03/13/2019
 ms.author: erhopf
 ms.openlocfilehash: f7120e80d079723ed8265320ba4b38d76a825a00
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59499824"
 ---
 # <a name="quickstart-translate-speech-with-the-speech-sdk-for-c"></a>Краткое руководство. Перевод речи с помощью пакета SDK службы "Речь" для C++
@@ -65,7 +65,7 @@ ms.locfileid: "59499824"
 Дополнительные примеры, например чтение речи из звукового файла и вывод переведенного текста в виде синтезированной речи, доступны на сайте GitHub.
 
 > [!div class="nextstepaction"]
-> [Ознакомьтесь с примерами для C++ на сайте GitHub.](https://aka.ms/csspeech/samples)
+> [Примеры для C++ на сайте GitHub](https://aka.ms/csspeech/samples)
 
 ## <a name="see-also"></a>См. также
 

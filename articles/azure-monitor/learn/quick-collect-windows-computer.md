@@ -15,10 +15,10 @@ ms.date: 04/09/2019
 ms.author: magoedte
 ms.custom: mvc
 ms.openlocfilehash: d1403b35319df6ef9ec45c07dc56d6f2ca38fa60
-ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59426636"
 ---
 # <a name="configure-log-analytics-agent-for-windows-computers-in-a-hybrid-environment"></a>Настройка агента Log Analytics для компьютеров Windows в гибридной среде
@@ -135,4 +135,4 @@ Log Analytics может собирать события из журналов �
 Чтобы узнать, как просматривать и анализировать данные, перейдите к следующему руководству.   
 
 > [!div class="nextstepaction"]
-> [Просмотр и анализ данных в Log Analytics](tutorial-viewdata.md)
+> [Просмотр и анализ данных, собранных с помощью поиска по журналам Log Analytics](tutorial-viewdata.md)

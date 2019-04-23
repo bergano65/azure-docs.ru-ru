@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 08/01/2016
 ms.author: mlearned
 ms.openlocfilehash: a2a730e2c3ca466a2705f053d7db0db12d7941da
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59047335"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59786947"
 ---
 # <a name="continuous-integration-in-azure-devops-services-using-azure-resource-group-deployment-projects"></a>Непрерывная интеграция в Azure DevOps Services с использованием проектов развертывания группы ресурсов Azure
 Чтобы развернуть шаблон Azure, выполните задачи на разных этапах. Сборка, тестирование, копирование в Azure (также называется «Staging») и развертывание шаблона. Существует два разных способа развертывания шаблонов в Azure DevOps Services. Оба метода обеспечивают одинаковые результаты, поэтому выберите самый оптимальный для своего рабочего процесса.

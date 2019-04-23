@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: spelluru
 ms.openlocfilehash: d80328943ae818b3bad9c0a275b74968ee33d4b7
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
-ms.translationtype: MT
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58887252"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59789063"
 ---
 # <a name="start-virtual-machines-in-a-lab-in-order-by-using-azure-automation-runbooks"></a>Запуск виртуальных машин в лаборатории в порядке с помощью модулей Runbook службы автоматизации Azure
 [Автозапуска](devtest-lab-set-lab-policy.md#set-autostart) особенностью DevTest Labs позволяет настроить виртуальные машины для автоматического запуска в указанное время. Тем не менее эта функция не поддерживает машины для запуска в определенном порядке. Существует несколько сценариев, где может потребоваться автоматизацию такого рода.  Один из сценариев — где виртуальной Машине Jumpbox в лаборатории должна быть запущена во-первых, перед другим виртуальным машинам, поскольку Jumpbox используется как точка доступа к другим виртуальным машинам.  В этой статье показано, как настроить учетную запись службы автоматизации Azure модуль Runbook PowerShell, выполняющий скрипт. Сценарий использует теги на виртуальных машинах в лабораторной среде, чтобы можно было управлять порядком запуска без изменения сценария.
