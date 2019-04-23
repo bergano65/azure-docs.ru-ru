@@ -1,85 +1,78 @@
-items:
 - name: Документация по Azure Databricks
   href: index.yml
 - name: Обзор
   items:
-  - name: Что такое Azure Databricks?
-    href: what-is-azure-databricks.md
+    - name: Что такое Azure Databricks?
+      href: what-is-azure-databricks.md
 - name: Быстрое начало работы
-  items:
-  - name: Создание рабочей области Databricks с помощью портала
-    href: quickstart-create-databricks-workspace-portal.md
-  - name: Создание рабочей области Databricks с помощью шаблона Resource Manager
-    href: quickstart-create-databricks-workspace-resource-manager-template.md
-  - name: Создание рабочей области Databricks с помощью виртуальной сети
-    href: quickstart-create-databricks-workspace-vnet-injection.md
   expanded: true
+  items:
+    - name: Создание рабочей области Databricks с помощью портала
+      href: quickstart-create-databricks-workspace-portal.md
+    - name: Создание рабочей области Databricks с помощью шаблона Resource Manager
+      href: quickstart-create-databricks-workspace-resource-manager-template.md
+    - name: Создание рабочей области Databricks с помощью виртуальной сети
+      href: quickstart-create-databricks-workspace-vnet-injection.md
 - name: Учебники
   items:
-  - name: Отправка запроса к платформе SQL Server, запущенной в контейнере Docker
-    href: vnet-injection-sql-server.md
-  - name: Выполнение операций ETL
-    href: databricks-extract-load-sql-data-warehouse.md
-  - name: Потоковая передача данных с помощью Центров событий
-    href: databricks-stream-from-eventhubs.md
-  - name: Анализ тональности с помощью Cognitive Services
-    href: databricks-sentiment-analysis-cognitive-services.md
-  - name: Потоковая передача данных из HDInsight Kafka
-    href: https://docs.azuredatabricks.net/spark/latest/structured-streaming/kafka.html
+    - name: 'Отправка запроса к платформе SQL Server, запущенной в контейнере Docker'
+      href: vnet-injection-sql-server.md
+    - name: Выполнение операций ETL
+      href: databricks-extract-load-sql-data-warehouse.md
+    - name: Потоковая передача данных с помощью Центров событий
+      href: databricks-stream-from-eventhubs.md
+    - name: Анализ тональности с помощью Cognitive Services
+      href: databricks-sentiment-analysis-cognitive-services.md
+    - name: Потоковая передача данных из HDInsight Kafka
+      href: 'https://docs.azuredatabricks.net/spark/latest/structured-streaming/kafka.html'
 - name: Практические руководства
   items:
-  - name: Создание кластера Spark
-    href: https://docs.azuredatabricks.net/user-guide/clusters/index.html
-  - name: Работа с записными книжками
-    href: https://docs.azuredatabricks.net/user-guide/notebooks/index.html
-  - name: Запуск заданий Spark
-    href: https://docs.azuredatabricks.net/user-guide/jobs.html
-  - name: Подключение к источникам данных
-    href: databricks-connect-to-data-sources.md
-  - name: Внедрение виртуальной сети
-    href: vnet-injection.md
-  - name: Использование с помощью Фабрики данных Azure
-    href: ../data-factory/transform-data-using-databricks-notebook.md
-    maintainContext: true
-  - name: Подключение с помощью Excel, R и Python
-    href: connect-databricks-excel-python-r.md
-  - name: Использование интерфейса командной строки Databricks через Azure Cloud Shell
-    href: databricks-cli-from-azure-cloud-shell.md
-  - name: Использование средств бизнес-аналитики
-    href: https://docs.azuredatabricks.net/user-guide/bi/index.html
-  - name: Планирование аварийного восстановления
-    href: howto-regional-disaster-recovery.md
-  - name: Руководство по MLflow
-    href: https://docs.azuredatabricks.net/applications/mlflow/index.html
+    - name: Создание кластера Spark
+      href: 'https://docs.azuredatabricks.net/user-guide/clusters/index.html'
+    - name: Работа с записными книжками
+      href: 'https://docs.azuredatabricks.net/user-guide/notebooks/index.html'
+    - name: Запуск заданий Spark
+      href: 'https://docs.azuredatabricks.net/user-guide/jobs.html'
+    - name: Подключение к источникам данных
+      href: databricks-connect-to-data-sources.md
+    - name: Внедрение виртуальной сети
+      href: vnet-injection.md
+    - name: Использование с помощью Фабрики данных Azure
+      href: ../data-factory/transform-data-using-databricks-notebook.md
+      maintainContext: true
+    - name: 'Подключение с помощью Excel, R и Python'
+      href: connect-databricks-excel-python-r.md
+    - name: Использование интерфейса командной строки Databricks через Azure Cloud Shell
+      href: databricks-cli-from-azure-cloud-shell.md
+    - name: Использование средств бизнес-аналитики
+      href: 'https://docs.azuredatabricks.net/user-guide/bi/index.html'
+    - name: Планирование аварийного восстановления
+      href: howto-regional-disaster-recovery.md
+    - name: Руководство по MLflow
+      href: 'https://docs.azuredatabricks.net/applications/mlflow/index.html'
 - name: Справочные материалы
   items:
-  - name: REST API
-    href: /rest/api/databricks
-  - name: Шаблон Resource Manager
-    href: /azure/templates/microsoft.databricks/workspaces
+    - name: REST API
+      href: /rest/api/databricks
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.databricks/workspaces
 - name: Ресурсы
   items:
-  - name: Часто задаваемые вопросы
-    href: frequently-asked-questions-databricks.md
-  - name: Заметки о выпуске
-    href: https://docs.azuredatabricks.net/release-notes/index.html
-  - name: Документация по Databricks
-    href: https://docs.azuredatabricks.net/user-guide/index.html
-  - name: Руководство для разработчиков R
-    href: ../machine-learning/r-developers-guide.md
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=analytics
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/databricks/
-  - name: Переполнение стека
-    href: https://stackoverflow.com/questions/tagged/azure-databricks
-  - name: Регионы доступности
-    href: https://azure.microsoft.com/regions/services/
-  - name: Варианты поддержки
-    href: https://azure.microsoft.com/support/options/
-ms.openlocfilehash: 1f0b7bcc369a3f857fe974f8b8ec68b801516589
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59256402"
+    - name: Часто задаваемые вопросы
+      href: frequently-asked-questions-databricks.md
+    - name: Заметки о выпуске
+      href: 'https://docs.azuredatabricks.net/release-notes/index.html'
+    - name: Документация по Databricks
+      href: 'https://docs.azuredatabricks.net/user-guide/index.html'
+    - name: Руководство для разработчиков R
+      href: ../machine-learning/r-developers-guide.md
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=analytics'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/databricks/'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/azure-databricks'
+    - name: Регионы доступности
+      href: 'https://azure.microsoft.com/regions/services/'
+    - name: Варианты поддержки
+      href: 'https://azure.microsoft.com/support/options/'

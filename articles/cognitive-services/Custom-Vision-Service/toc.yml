@@ -1,109 +1,102 @@
-items:
 - name: Документация по Пользовательской службе визуального распознавания
   href: index.yml
 - name: Обзор
   items:
-  - name: Что собой представляет Пользовательское визуальное распознавание
-    href: home.md
+    - name: Что собой представляет Пользовательское визуальное распознавание
+      href: home.md
 - name: Быстрое начало работы
   items:
-  - name: С помощью пакета SDK для .NET
-    items:
-    - name: Классификация изображений
-      href: csharp-tutorial.md
-    - name: Обнаружение объектов
-      href: csharp-tutorial-od.md
-  - name: Использование пакета SDK для Python
-    items:
-    - name: Классификация изображений
-      href: python-tutorial.md
-    - name: Обнаружение объектов
-      href: python-tutorial-od.md
-  - name: Использование пакета SDK для Java
-    items:
-    - name: Классификация изображений
-      href: java-tutorial.md
-    - name: Обнаружение объектов
-      href: java-tutorial-od.md
-  - name: С помощью пакета SDK для Node.js
-    items:
-    - name: Классификация изображений
-      href: node-tutorial.md
-    - name: Обнаружение объектов
-      href: node-tutorial-object-detection.md
-  - name: Использование пакета SDK для Go
-    items:
-    - name: Классификация изображений
-      href: go-tutorial.md
-    - name: Обнаружение объектов
-      href: go-tutorial-object-detection.md
+    - name: С помощью пакета SDK для .NET
+      items:
+        - name: Классификация изображений
+          href: csharp-tutorial.md
+        - name: Обнаружение объектов
+          href: csharp-tutorial-od.md
+    - name: Использование пакета SDK для Python
+      items:
+        - name: Классификация изображений
+          href: python-tutorial.md
+        - name: Обнаружение объектов
+          href: python-tutorial-od.md
+    - name: Использование пакета SDK для Java
+      items:
+        - name: Классификация изображений
+          href: java-tutorial.md
+        - name: Обнаружение объектов
+          href: java-tutorial-od.md
+    - name: С помощью пакета SDK для Node.js
+      items:
+        - name: Классификация изображений
+          href: node-tutorial.md
+        - name: Обнаружение объектов
+          href: node-tutorial-object-detection.md
+    - name: Использование пакета SDK для Go
+      items:
+        - name: Классификация изображений
+          href: go-tutorial.md
+        - name: Обнаружение объектов
+          href: go-tutorial-object-detection.md
 - name: Учебники
   items:
-  - name: Логотип средства обнаружения для мобильных устройств
-    href: logo-detector-mobile.md
+    - name: Логотип средства обнаружения для мобильных устройств
+      href: logo-detector-mobile.md
 - name: Практические руководства
   items:
-  - name: Построение классификатора
-    href: getting-started-build-a-classifier.md
-  - name: Тестирование модели
-    href: test-your-model.md
-  - name: Усовершенствование классификатора
-    href: getting-started-improving-your-classifier.md
-  - name: Использование API-интерфейса прогнозирования
-    href: use-prediction-api.md
-  - name: Экспорт моделей
-    items:
-    - name: Экспорт модели на мобильное устройство
-      href: export-your-model.md
-    - name: Использование модели ONNX с Windows ML
-      href: custom-vision-onnx-windows-ml.md
-    - name: Запуск модели TensorFlow в среде Python
-      href: export-model-python.md
-  - name: Экспорт или удаление данных учетной записи
-    href: ./export-delete-data.md
-  - name: Перемещение проекта ограниченной пробной версии в Azure
-    href: ./move-your-project-to-azure.md
-  - name: Обновление приложения до API 3.0
-    href: ./update-application-to-3.0-sdk.md
+    - name: Построение классификатора
+      href: getting-started-build-a-classifier.md
+    - name: Тестирование модели
+      href: test-your-model.md
+    - name: Усовершенствование классификатора
+      href: getting-started-improving-your-classifier.md
+    - name: Использование API-интерфейса прогнозирования
+      href: use-prediction-api.md
+    - name: Экспорт моделей
+      items:
+        - name: Экспорт модели на мобильное устройство
+          href: export-your-model.md
+        - name: Использование модели ONNX с Windows ML
+          href: custom-vision-onnx-windows-ml.md
+        - name: Запуск модели TensorFlow в среде Python
+          href: export-model-python.md
+    - name: Экспорт или удаление данных учетной записи
+      href: ./export-delete-data.md
+    - name: Перемещение проекта ограниченной пробной версии в Azure
+      href: ./move-your-project-to-azure.md
+    - name: "Обновление приложения до API\_3.0"
+      href: ./update-application-to-3.0-sdk.md
 - name: Справочные материалы
   items:
-  - name: Пользовательский API визуального обучения
-    href: https://go.microsoft.com/fwlink/?linkid=865446
-  - name: Пользовательский API визуального прогнозирования
-    href: https://go.microsoft.com/fwlink/?linkid=865445
-  - name: Глоссарий
-    href: glossary-of-terms.md
-  - name: Пакеты SDK
-    items:
-    - name: .NET
-      href: https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/customvision?view=azure-dotnet
-    - name: Java
-      href: https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/customvision?view=azure-java-stable
-    - name: Python
-      href: https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/customvision?view=azure-python
-    - name: Go — обучение
-      href: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/customvision/training
-    - name: Go — прогнозирование
-      href: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.1/customvision/prediction
+    - name: Пользовательский API визуального обучения
+      href: 'https://go.microsoft.com/fwlink/?linkid=865446'
+    - name: Пользовательский API визуального прогнозирования
+      href: 'https://go.microsoft.com/fwlink/?linkid=865445'
+    - name: Глоссарий
+      href: glossary-of-terms.md
+    - name: Пакеты SDK
+      items:
+        - name: .NET
+          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/customvision?view=azure-dotnet'
+        - name: Java
+          href: 'https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/customvision?view=azure-java-stable'
+        - name: Python
+          href: 'https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/customvision?view=azure-python'
+        - name: "Go\_— обучение"
+          href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/customvision/training'
+        - name: "Go\_— прогнозирование"
+          href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.1/customvision/prediction'
 - name: Ресурсы
   items:
-  - name: Примеры
-    href: https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision
-  - name: Ограничения и квоты
-    href: limits-and-quotas.md
-  - name: UserVoice
-    href: https://cognitive.uservoice.com/forums/598141-custom-vision-service
-  - name: Переполнение стека
-    href: https://stackoverflow.com/questions/tagged/microsoft-cognitive
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/updates/?product=cognitive-services
-  - name: Доступ по регионам
-    href: https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services
-  - name: Заметки о выпуске
-    href: release-notes.md
-ms.openlocfilehash: df39e49ac586fc8e74a0b94074d94e7a6293e4e5
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59044765"
+    - name: Примеры
+      href: 'https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision'
+    - name: Ограничения и квоты
+      href: limits-and-quotas.md
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/598141-custom-vision-service'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/microsoft-cognitive'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/updates/?product=cognitive-services'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+    - name: Заметки о выпуске
+      href: release-notes.md

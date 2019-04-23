@@ -1,60 +1,53 @@
-items:
 - name: API Azure для FHIR
   href: index.yml
 - name: Обзор
   items:
-  - name: Обзор API Azure для FHIR
-    href: overview.md
-  - name: Обзор FHIR Server для Azure
-    href: overview-open-source-server.md
+    - name: Обзор API Azure для FHIR
+      href: overview.md
+    - name: Обзор FHIR Server для Azure
+      href: overview-open-source-server.md
 - name: Быстрое начало работы
-  items:
-  - name: Развертывание API Azure для FHIR — портал
-    href: fhir-paas-portal-quickstart.md
-  - name: Развертывание API Azure для FHIR — PowerShell
-    href: fhir-paas-powershell-quickstart.md
-  - name: Развертывание API Azure для FHIR — CLI
-    href: fhir-paas-cli-quickstart.md
-  - name: Развертывание FHIR Server для Azure — портал
-    href: fhir-oss-portal-quickstart.md
-  - name: Развертывание FHIR Server для Azure — PowerShell
-    href: fhir-oss-powershell-quickstart.md
-  - name: Развертывание FHIR Server для Azure — CLI
-    href: fhir-oss-cli-quickstart.md
-  - name: Настройка CORS
-    href: configure-cross-origin-resource-sharing.md
   expanded: true
+  items:
+    - name: "Развертывание API Azure для FHIR\_— портал"
+      href: fhir-paas-portal-quickstart.md
+    - name: "Развертывание API Azure для FHIR\_— PowerShell"
+      href: fhir-paas-powershell-quickstart.md
+    - name: "Развертывание API Azure для FHIR\_— CLI"
+      href: fhir-paas-cli-quickstart.md
+    - name: "Развертывание FHIR Server для Azure\_— портал"
+      href: fhir-oss-portal-quickstart.md
+    - name: "Развертывание FHIR Server для Azure\_— PowerShell"
+      href: fhir-oss-powershell-quickstart.md
+    - name: "Развертывание FHIR Server для Azure\_— CLI"
+      href: fhir-oss-cli-quickstart.md
+    - name: Настройка CORS
+      href: configure-cross-origin-resource-sharing.md
 - name: Учебники
-  items:
-  - name: Получение доступа к API FHIR с помощью Postman
-    href: access-fhir-postman-tutorial.md
-  - name: Использование прокси-сервера SMART on FHIR
-    href: use-smart-on-fhir-proxy.md
   expanded: false
+  items:
+    - name: Получение доступа к API FHIR с помощью Postman
+      href: access-fhir-postman-tutorial.md
+    - name: Использование прокси-сервера SMART on FHIR
+      href: use-smart-on-fhir-proxy.md
 - name: Практические руководства
-  items:
-  - name: Регистрация приложения-ресурса
-    href: register-resource-azure-ad-client-app.md
-  - name: Регистрация конфиденциального клиентского приложения
-    href: register-confidential-azure-ad-client-app.md
-  - name: Регистрация общедоступного клиентского приложения
-    href: register-public-azure-ad-client-app.md
-  - name: Регистрация клиентского приложения службы
-    href: register-service-azure-ad-client-app.md
-  - name: Получение маркера для API Azure для FHIR — CLI
-    href: get-healthcare-apis-access-token-cli.md
-  - name: Поиск идентификаторов объектов удостоверений
-    href: find-identity-object-ids.md
   expanded: false
+  items:
+    - name: Регистрация приложения-ресурса
+      href: register-resource-azure-ad-client-app.md
+    - name: Регистрация конфиденциального клиентского приложения
+      href: register-confidential-azure-ad-client-app.md
+    - name: Регистрация общедоступного клиентского приложения
+      href: register-public-azure-ad-client-app.md
+    - name: Регистрация клиентского приложения службы
+      href: register-service-azure-ad-client-app.md
+    - name: "Получение маркера для API Azure для FHIR\_— CLI"
+      href: get-healthcare-apis-access-token-cli.md
+    - name: Поиск идентификаторов объектов удостоверений
+      href: find-identity-object-ids.md
 - name: Ресурсы
   items:
-  - name: Часто задаваемые вопросы
-    href: fhir-faq.md
-  - name: Поддерживаемые функции
-    href: fhir-features-supported.md
-ms.openlocfilehash: e120b0775e9f0920a1deab4bd1e126f4ad06e132
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58862834"
+    - name: Часто задаваемые вопросы
+      href: fhir-faq.md
+    - name: Поддерживаемые функции
+      href: fhir-features-supported.md

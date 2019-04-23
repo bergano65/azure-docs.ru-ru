@@ -11,11 +11,11 @@ ms.date: 04/02/2019
 ms.author: cakarst
 ms.reviewer: igorstan
 ms.openlocfilehash: 8a53a63b7425935e117d7af951717999bc9340b7
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58893378"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59794834"
 ---
 # <a name="using-stored-procedures-in-sql-data-warehouse"></a>Использование хранимых процедур в хранилище данных SQL
 Советы по реализации хранимых процедур в хранилище данных SQL Azure для разработки решений.

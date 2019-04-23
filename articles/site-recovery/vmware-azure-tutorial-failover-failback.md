@@ -10,11 +10,11 @@ ms.date: 04/08/2019
 ms.author: raynew
 ms.custom: MVC
 ms.openlocfilehash: 9206e751fadab7a09c696fbe262aecdde002ae74
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59357208"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59797671"
 ---
 # <a name="fail-over-and-fail-back-vmware-vms"></a>Отработка отказа и восстановление размещения виртуальных машин VMware
 
@@ -33,7 +33,7 @@ ms.locfileid: "59357208"
 > В учебниках описан самый простой способ развертывания для определенного сценария. В них везде, где возможно, используются значения по умолчанию, и описаны не все возможные параметры и пути. Дополнительные сведения об отработке отказа см. в [этой статье](site-recovery-failover.md).
 
 ## <a name="before-you-start"></a>Перед началом работы
-Выполните инструкции, приведенные в предыдущих учебниках.
+Выполните инструкции, приведенные в предыдущих учебниках:
 
 1. [Настройте Azure](tutorial-prepare-azure.md) для локального аварийного восстановления виртуальных машин VMware, Hyper-V и физических компьютеров в Azure.
 2. Подготовьте локальную среду [VMware](vmware-azure-tutorial-prepare-on-premises.md) или [Hyper-V](hyper-v-prepare-on-premises-tutorial.md) для аварийного восстановления. Если вы настраиваете аварийное восстановление для физических серверов, ознакомьтесь с [матрицей поддержки](vmware-physical-secondary-support-matrix.md).

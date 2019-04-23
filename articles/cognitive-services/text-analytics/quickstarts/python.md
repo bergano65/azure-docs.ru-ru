@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 03/28/2019
+ms.date: 04/16/2019
 ms.author: aahi
-ms.openlocfilehash: 6edcb4501feb0ac2911fed075ed4866aa267a80e
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.openlocfilehash: 69eb3789586233b824da1ef6a9c338b07281f324
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58893084"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60001394"
 ---
 # <a name="quickstart-using-python-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование Python для вызова API анализа текста Cognitive Services 
 <a name="HOLTop"></a>
@@ -65,23 +65,22 @@ pip install requests
     Далее добавьте эту строку, затем убедитесь, что регион в `text_analytics_base_url` соответствует тому, который вы указали при настройке службы. Если вы используете ключ бесплатной пробной версии, ничего изменять не нужно.
     
     ```python
-    text_analytics_base_url = "https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.0/"
+    text_analytics_base_url = "https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/"
     ```
 
 <a name="Detect"></a>
 
 ## <a name="detect-languages"></a>Распознавание языков
 
-API распознавания языка определяет язык текстового документа, используя [метод распознавания языка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7). Конечная точка API распознавания языка доступна через следующий URL-адрес:
+API распознавания языка определяет язык текстового документа, используя [метод распознавания языка](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7). Конечная точка API распознавания языка доступна через следующий URL-адрес:
 
 ```python
 language_api_url = text_analytics_base_url + "languages"
 print(language_api_url)
 ```
 
-```url
-https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.0/languages
-```
+    https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/languages
+
 
 Полезные данные этого API состоят из списка объектов `documents`, каждый из которых содержит `id` и атрибут `text`. Атрибут `text` содержит текст для анализа. 
 
@@ -137,7 +136,7 @@ HTML("<table><tr><th>Text</th><th>Detected languages(scores)</th></tr>{0}</table
 
 ## <a name="analyze-sentiment"></a>Анализ тональности
 
-API анализа тональности определяет тональность (диапазон между положительным и отрицательным) набора текстовых записей с помощью [метода определения тональности](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9). В следующем примере выполняется оценка двух документов — на английском и на испанском языках.
+API анализа тональности определяет тональность (диапазон между положительным и отрицательным) набора текстовых записей с помощью [метода определения тональности](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c9). В следующем примере выполняется оценка двух документов — на английском и на испанском языках.
 
 Конечная точка службы определения тональности доступна в вашем регионе через следующий URL-адрес:
 
@@ -145,7 +144,8 @@ API анализа тональности определяет тонально�
 sentiment_api_url = text_analytics_base_url + "sentiment"
 print(sentiment_api_url)
 ```
-    https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment
+
+    https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/sentiment
 
 Как и в примере распознавания языка, этой службе передается словарь с ключом `documents`, который содержит список документов. Каждый документ представляет собой кортеж, состоящий из `id`, `text` для анализа и `language` для текста. Вы можете использовать API распознавания языка из предыдущего раздела, чтобы заполнить это поле.
 
@@ -182,7 +182,7 @@ pprint(sentiments)
 
 ## <a name="extract-key-phrases"></a>Извлечение ключевых фраз
 
-API извлечения ключевых фраз извлекает ключевые фразы из текстового документа с помощью [метода ключевых фраз](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6). В этом разделе пошагового руководства показано, как извлекаются ключевые фразы из документов на английском и испанском языках.
+API извлечения ключевых фраз извлекает ключевые фразы из текстового документа с помощью [метода ключевых фраз](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6). В этом разделе пошагового руководства показано, как извлекаются ключевые фразы из документов на английском и испанском языках.
 
 Конечная точка службы для извлечения ключевых фраз доступна через следующий URL-адрес:
 
@@ -190,7 +190,8 @@ API извлечения ключевых фраз извлекает ключе
 key_phrase_api_url = text_analytics_base_url + "keyPhrases"
 print(key_phrase_api_url)
 ```
-    https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases
+
+    https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/keyPhrases
 
 Здесь используется та же коллекция документов, что и для анализа тональности.
 
@@ -235,7 +236,7 @@ pprint(key_phrases)
 
 ## <a name="identify-entities"></a>Определение сущностей
 
-API сущностей определяет известные сущности в текстовом документе, используя [метод Entities](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634). Следующий пример определяет сущности в документах на английском языке.
+API сущностей определяет известные сущности в текстовом документе, используя [метод Entities](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634). Следующий пример определяет сущности в документах на английском языке.
 
 Конечная точка службы для связывания сущностей доступна через следующий URL-адрес:
 
@@ -244,14 +245,13 @@ entity_linking_api_url = text_analytics_base_url + "entities"
 print(entity_linking_api_url)
 ```
 
-    https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1-preview/entities
+    https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/entities
 
 Ниже представлена коллекция документов.
 
 ```python
 documents = {'documents' : [
-  {'id': '1', 'text': 'Jeff bought three dozen eggs because there was a 50% discount.'},
-  {'id': '2', 'text': 'The Great Depression began in 1929. By 1933, the GDP in America fell by 25%.'}
+  {'id': '1', 'text': 'Microsoft is an It company.'}
 ]}
 ```
 Теперь эти документы можно передать в API анализа текста для получения ответа.
@@ -264,167 +264,56 @@ entities = response.json()
 
 Успешный ответ JSON:
 ```json
-{
-    "Documents": [
-        {
-            "Id": "1",
-            "Entities": [
-                {
-                    "Name": "Jeff",
-                    "Matches": [
-                        {
-                            "Text": "Jeff",
-                            "Offset": 0,
-                            "Length": 4
-                        }
-                    ],
-                    "Type": "Person"
-                },
-                {
-                    "Name": "three dozen",
-                    "Matches": [
-                        {
-                            "Text": "three dozen",
-                            "Offset": 12,
-                            "Length": 11
-                        }
-                    ],
-                    "Type": "Quantity",
-                    "SubType": "Number"
-                },
-                {
-                    "Name": "50",
-                    "Matches": [
-                        {
-                            "Text": "50",
-                            "Offset": 49,
-                            "Length": 2
-                        }
-                    ],
-                    "Type": "Quantity",
-                    "SubType": "Number"
-                },
-                {
-                    "Name": "50%",
-                    "Matches": [
-                        {
-                            "Text": "50%",
-                            "Offset": 49,
-                            "Length": 3
-                        }
-                    ],
-                    "Type": "Quantity",
-                    "SubType": "Percentage"
-                }
-            ]
-        },
-        {
-            "Id": "2",
-            "Entities": [
-                {
-                    "Name": "Great Depression",
-                    "Matches": [
-                        {
-                            "Text": "The Great Depression",
-                            "Offset": 0,
-                            "Length": 20
-                        }
-                    ],
-                    "WikipediaLanguage": "en",
-                    "WikipediaId": "Great Depression",
-                    "WikipediaUrl": "https://en.wikipedia.org/wiki/Great_Depression",
-                    "BingId": "d9364681-98ad-1a66-f869-a3f1c8ae8ef8"
-                },
-                {
-                    "Name": "1929",
-                    "Matches": [
-                        {
-                            "Text": "1929",
-                            "Offset": 30,
-                            "Length": 4
-                        }
-                    ],
-                    "Type": "DateTime",
-                    "SubType": "DateRange"
-                },
-                {
-                    "Name": "By 1933",
-                    "Matches": [
-                        {
-                            "Text": "By 1933",
-                            "Offset": 36,
-                            "Length": 7
-                        }
-                    ],
-                    "Type": "DateTime",
-                    "SubType": "DateRange"
-                },
-                {
-                    "Name": "Gross domestic product",
-                    "Matches": [
-                        {
-                            "Text": "GDP",
-                            "Offset": 49,
-                            "Length": 3
-                        }
-                    ],
-                    "WikipediaLanguage": "en",
-                    "WikipediaId": "Gross domestic product",
-                    "WikipediaUrl": "https://en.wikipedia.org/wiki/Gross_domestic_product",
-                    "BingId": "c859ed84-c0dd-e18f-394a-530cae5468a2"
-                },
-                {
-                    "Name": "United States",
-                    "Matches": [
-                        {
-                            "Text": "America",
-                            "Offset": 56,
-                            "Length": 7
-                        }
-                    ],
-                    "WikipediaLanguage": "en",
-                    "WikipediaId": "United States",
-                    "WikipediaUrl": "https://en.wikipedia.org/wiki/United_States",
-                    "BingId": "5232ed96-85b1-2edb-12c6-63e6c597a1de",
-                    "Type": "Location"
-                },
-                {
-                    "Name": "25",
-                    "Matches": [
-                        {
-                            "Text": "25",
-                            "Offset": 72,
-                            "Length": 2
-                        }
-                    ],
-                    "Type": "Quantity",
-                    "SubType": "Number"
-                },
-                {
-                    "Name": "25%",
-                    "Matches": [
-                        {
-                            "Text": "25%",
-                            "Offset": 72,
-                            "Length": 3
-                        }
-                    ],
-                    "Type": "Quantity",
-                    "SubType": "Percentage"
-                }
-            ]
-        }
-    ],
-    "Errors": []
+{  
+   "documents":[  
+      {  
+         "id":"1",
+         "entities":[  
+            {  
+               "name":"Microsoft",
+               "matches":[  
+                  {  
+                     "wikipediaScore":0.20872054383103444,
+                     "entityTypeScore":0.99996185302734375,
+                     "text":"Microsoft",
+                     "offset":0,
+                     "length":9
+                  }
+               ],
+               "wikipediaLanguage":"en",
+               "wikipediaId":"Microsoft",
+               "wikipediaUrl":"https://en.wikipedia.org/wiki/Microsoft",
+               "bingId":"a093e9b9-90f5-a3d5-c4b8-5855e1b01f85",
+               "type":"Organization"
+            },
+            {  
+               "name":"Technology company",
+               "matches":[  
+                  {  
+                     "wikipediaScore":0.82123868042800585,
+                     "text":"It company",
+                     "offset":16,
+                     "length":10
+                  }
+               ],
+               "wikipediaLanguage":"en",
+               "wikipediaId":"Technology company",
+               "wikipediaUrl":"https://en.wikipedia.org/wiki/Technology_company",
+               "bingId":"bc30426e-22ae-7a35-f24b-454722a47d8f"
+            }
+         ]
+      }
+   ],
+    "errors":[]
 }
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Анализ текста с использованием Power BI](../tutorials/tutorial-power-bi-key-phrases.md)
+> [Text Analytics with Power BI](../tutorials/tutorial-power-bi-key-phrases.md) (Анализ текста с использованием Power BI)
 
 ## <a name="see-also"></a>См. также 
 
- [Обзор Анализа текста](../overview.md)  
+ [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)  
  [Часто задаваемые вопросы](../text-analytics-resource-faq.md)

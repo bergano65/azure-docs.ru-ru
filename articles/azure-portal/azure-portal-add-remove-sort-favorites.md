@@ -11,13 +11,13 @@ ms.service: azure-portal
 ms.custom: ''
 manager: mtillman
 ms.openlocfilehash: ff3549ce77a2b691dcaaa94b6a59e9c011ff6e21
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59053007"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59796109"
 ---
-# <a name="add-remove-and-sort-favorites"></a>Добавление, удаление и Сортировка "Избранное"
+# <a name="add-remove-and-sort-favorites"></a>Добавление, удаление и сортировка избранного
 
 Добавлять или удалять элементы из вашей **"Избранное"** списке таким образом, можно быстро перейти к службам, которые наиболее часто. Мы уже добавили некоторые общие службы для вашего **"Избранное"** списка, но вы скорее всего захотите настроить его. Вы являетесь единственным, кто видит изменения, внесенные в **"Избранное"**.
 

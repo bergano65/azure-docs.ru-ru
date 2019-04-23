@@ -9,11 +9,11 @@ ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
 ms.openlocfilehash: fe06e7081e4e3691aeb054985f9f2f3f6dc7d19e
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59283449"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59794999"
 ---
 # <a name="remediate-non-compliant-resources-with-azure-policy"></a>Исправление несоответствующих ресурсов с помощью службы "Политика Azure"
 
@@ -138,7 +138,7 @@ if ($roleDefinitionIds.Count -gt 0)
 
 1. Запустите службу "Политика Azure" на портале Azure, щелкнув **Все службы**, а затем выполнив поиск и выбрав **Политика**.
 
-   ![Поиск политики во всех службах](../media/remediate-resources/search-policy.png)
+   ![Поиск политики в разделе "Все службы"](../media/remediate-resources/search-policy.png)
 
 1. Выберите **Исправление** на странице службы "Политика Azure" слева.
 

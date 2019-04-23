@@ -1,98 +1,91 @@
-items:
 - name: ACS с DC/OS и Swarm
   href: ./index.yml
 - name: Обзор
   items:
-  - name: Общие сведения о службе контейнеров
-    href: container-service-intro.md
+    - name: Общие сведения о службе контейнеров
+      href: container-service-intro.md
 - name: Быстрое начало работы
-  items:
-  - name: Docker Swarm
-    href: container-service-swarm-mode-walkthrough.md
-  - name: DC/OS
-    href: container-service-dcos-quickstart.md
   expanded: true
+  items:
+    - name: Docker Swarm
+      href: container-service-swarm-mode-walkthrough.md
+    - name: DC/OS
+      href: container-service-dcos-quickstart.md
 - name: Учебники
   items:
-  - name: 1. Создание кластеров и управление ими
-    href: container-service-dcos-manage-tutorial.md
-  - name: 2. Приложения для распределения нагрузки
-    href: container-service-load-balancing.md
-  - name: 3. Управление томами данных
-    href: container-service-dcos-fileshare.md
-  - name: 4. Интеграция с ACR
-    href: container-service-dcos-acr.md
+    - name: 1. Создание кластеров и управление ими
+      href: container-service-dcos-manage-tutorial.md
+    - name: 2. Приложения для распределения нагрузки
+      href: container-service-load-balancing.md
+    - name: 3. Управление томами данных
+      href: container-service-dcos-fileshare.md
+    - name: 4. Интеграция с ACR
+      href: container-service-dcos-acr.md
 - name: Основные понятия
   items:
-  - name: Безопасные контейнеры
-    href: container-service-security.md
+    - name: Безопасные контейнеры
+      href: container-service-security.md
 - name: Практические руководства
   items:
-  - name: Масштабирование кластера ACS
-    href: container-service-scale.md
-  - name: DC/OS
-    items:
-    - name: Управление контейнерами — пользовательский интерфейс DC/OS
-      href: container-service-mesos-marathon-ui.md
-    - name: Управление контейнерами с помощью REST API в DC/OS
-      href: container-service-mesos-marathon-rest.md
-    - name: Пулы агентов DC/OS
-      href: container-service-dcos-agents.md
-    - name: Открытие общего доступа в DC/OS
-      href: container-service-enable-public-access.md
-    - name: Оркестратор для пользователей или приложений в DC/OS
-      href: container-service-application-specific-marathon.md
-    - name: Ранний выпуск и Vamp
-      href: container-service-dcos-vamp-canary-release.md
-    - name: Отслеживание DC/OS
+    - name: Масштабирование кластера ACS
+      href: container-service-scale.md
+    - name: DC/OS
       items:
-      - name: Мониторинг с помощью ELK
-        href: container-service-monitoring-elk.md
-      - name: Мониторинг с помощью OMS
-        href: container-service-monitoring-oms.md
-      - name: Мониторинг с помощью Datadog
-        href: container-service-monitoring.md
-      - name: Мониторинг с помощью Sysdig
-        href: container-service-monitoring-sysdig.md
-      - name: Мониторинг с помощью Dynatrace
-        href: container-service-monitoring-dynatrace.md
-  - name: Docker Swarm
-    items:
-    - name: Краткое руководство Docker CE
-      href: container-service-swarm-mode-walkthrough.md
-    - name: Docker и Docker Compose
-      href: container-service-docker-swarm.md
-    - name: CI/CD с использованием Docker Swarm и Azure DevOps
-      href: container-service-docker-swarm-setup-ci-cd.md
-    - name: CI/CD с использованием Docker Swarm (обработчика ACS) и Azure DevOps
-      href: container-service-docker-swarm-mode-setup-ci-cd-acs-engine.md
+        - name: "Управление контейнерами\_— пользовательский интерфейс DC/OS"
+          href: container-service-mesos-marathon-ui.md
+        - name: Управление контейнерами с помощью REST API в DC/OS
+          href: container-service-mesos-marathon-rest.md
+        - name: Пулы агентов DC/OS
+          href: container-service-dcos-agents.md
+        - name: Открытие общего доступа в DC/OS
+          href: container-service-enable-public-access.md
+        - name: Оркестратор для пользователей или приложений в DC/OS
+          href: container-service-application-specific-marathon.md
+        - name: Ранний выпуск и Vamp
+          href: container-service-dcos-vamp-canary-release.md
+        - name: Отслеживание DC/OS
+          items:
+            - name: Мониторинг с помощью ELK
+              href: container-service-monitoring-elk.md
+            - name: Мониторинг с помощью OMS
+              href: container-service-monitoring-oms.md
+            - name: Мониторинг с помощью Datadog
+              href: container-service-monitoring.md
+            - name: Мониторинг с помощью Sysdig
+              href: container-service-monitoring-sysdig.md
+            - name: Мониторинг с помощью Dynatrace
+              href: container-service-monitoring-dynatrace.md
+    - name: Docker Swarm
+      items:
+        - name: Краткое руководство Docker CE
+          href: container-service-swarm-mode-walkthrough.md
+        - name: Docker и Docker Compose
+          href: container-service-docker-swarm.md
+        - name: CI/CD с использованием Docker Swarm и Azure DevOps
+          href: container-service-docker-swarm-setup-ci-cd.md
+        - name: CI/CD с использованием Docker Swarm (обработчика ACS) и Azure DevOps
+          href: container-service-docker-swarm-mode-setup-ci-cd-acs-engine.md
 - name: Справочные материалы
   items:
-  - name: Инфраструктура CLI Azure
-    href: /cli/azure/acs
-  - name: PowerShell
-    href: /powershell/module/az.compute
-  - name: REST
-    href: /rest/api/container-service
+    - name: Инфраструктура CLI Azure
+      href: /cli/azure/acs
+    - name: PowerShell
+      href: /powershell/module/az.compute
+    - name: REST
+      href: /rest/api/container-service
 - name: Ресурсы
   items:
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/
-  - name: Часто задаваемые вопросы
-    href: container-service-faq.md
-  - name: Шаблоны — модуль ACS
-    href: https://github.com/Azure/acs-engine
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/container-service/
-  - name: Регионы доступности
-    href: https://azure.microsoft.com/regions/services/
-  - name: Переполнение стека
-    href: https://stackoverflow.com/questions/tagged/azure-container-service
-  - name: Видеоролики
-    href: https://azure.microsoft.com/resources/videos/index/?services=container-service&sort=newest
-ms.openlocfilehash: 52376d4cfff4fe96f07b38a2b9eb09e896769617
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58848111"
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Часто задаваемые вопросы
+      href: container-service-faq.md
+    - name: "Шаблоны\_— модуль\_ACS"
+      href: 'https://github.com/Azure/acs-engine'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/container-service/'
+    - name: Регионы доступности
+      href: 'https://azure.microsoft.com/regions/services/'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/azure-container-service'
+    - name: Видеоролики
+      href: 'https://azure.microsoft.com/resources/videos/index/?services=container-service&sort=newest'

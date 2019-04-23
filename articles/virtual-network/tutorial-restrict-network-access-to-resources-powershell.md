@@ -18,11 +18,11 @@ ms.date: 03/14/2018
 ms.author: jdial
 ms.custom: ''
 ms.openlocfilehash: bf69fe0b817011f63ef0a792e01084aedfb83ddc
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58881296"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59795140"
 ---
 # <a name="restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints-using-powershell"></a>Ограничение сетевого доступа к ресурсам PaaS посредством конечных точек службы виртуальной сети с помощью PowerShell
 
@@ -368,7 +368,7 @@ Get-AzStorageFile `
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если больше не нужен, можно использовать [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) для удаления группы ресурсов и все содержащиеся в ней ресурсы:
+Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы с помощью командлета [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup):
 
 ```azurepowershell-interactive 
 Remove-AzResourceGroup -Name myResourceGroup -Force

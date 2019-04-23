@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: spelluru
 ms.openlocfilehash: bb8b5f7d6578390fd0f48c3de154cfdb034ac6c1
-ms.sourcegitcommit: 04716e13cc2ab69da57d61819da6cd5508f8c422
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58852003"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59795534"
 ---
 # <a name="connect-an-environment-to-your-labs-virtual-network-in-azure-devtest-labs"></a>Подключение среды к виртуальной сети в лаборатории в Azure DevTest Labs
 Azure DevTest Labs упрощает процесс создания виртуальных машин в лаборатории с [встроенные сети](devtest-lab-configure-vnet.md). Он имеет высокую степень гибкости с возможностью [Создание сред со множеством виртуальных Машин](devtest-lab-test-env.md). В этой статье показано, как подключить виртуальные машины в среде виртуальной сети лаборатории. Один сценарий, где используется эта функция — Настройка N-уровневого приложения с помощью SQL Server уровня данных, подключенный к лабораторной сети позволяют тестовых виртуальных машин в лаборатории для доступа к нему.  

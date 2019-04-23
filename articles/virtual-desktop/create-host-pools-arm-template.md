@@ -8,11 +8,11 @@ ms.topic: how-to
 ms.date: 04/05/2019
 ms.author: helohr
 ms.openlocfilehash: ba98328002cafbcede855b1187881d39f1de8fc5
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59279233"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59796432"
 ---
 # <a name="create-a-host-pool-with-an-azure-resource-manager-template"></a>Создание пула узлов с помощью шаблона Azure Resource Manager
 
@@ -77,4 +77,4 @@ Add-RdsAppGroupUser <tenantname> <hostpoolname> "Desktop Application Group" -Use
 Когда вы выполните эти действия, пользователи, которым назначена группа классических приложений, смогут войти в Виртуальный рабочий стол Windows с помощью поддерживаемых клиентов удаленного рабочего стола, чтобы просматривать ресурсы для рабочего стола сеанса.
 
 >[!IMPORTANT]
->Для помощи в защите вашей среде виртуального рабочего стола Windows в Azure, мы рекомендуем не откройте входящий порт 3389 на виртуальных машинах. Виртуальный рабочий стол Windows не требуется открыть входящий порт 3389 пользователям доступ к виртуальным машинам в пуле узлов. Если необходимо открыть порт 3389 для устранения неполадок, мы рекомендуем использовать [доступ к виртуальной Машине just-in-time](https://docs.microsoft.com/en-us/azure/security-center/security-center-just-in-time).
+>Чтобы усилить защиту среды Виртуального рабочего стола Windows в Azure, мы рекомендуем не открывать входящий порт 3389 для виртуальных машин. Виртуальный рабочий стол Windows не требует открытия входящего порта 3389, чтобы пользователи могли получить доступ к виртуальным машинам пула узла. Если вам все же нужно открыть порт 3389 для устранения неполадок, мы рекомендуем использовать[JIT-доступ к виртуальным машинам](https://docs.microsoft.com/en-us/azure/security-center/security-center-just-in-time).

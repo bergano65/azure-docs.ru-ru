@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 07/18/2017
 ms.author: jeconnoc
 ms.openlocfilehash: 13f500b32bb85bdc0f84b812ef4ef9188a257771
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58916314"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59798021"
 ---
 # <a name="customize-the-lifecycle-of-a-web-or-worker-role-in-net"></a>Адаптируйте жизненный цикл веб-роли или рабочей роли в .NET
 Создавая рабочую роль, вы расширяете класс [RoleEntryPoint](/previous-versions/azure/reference/ee758619(v=azure.100)) , который предоставляет вам методы переопределения, которые позволяют реагировать на события жизненного цикла. Этот класс необязателен для веб-ролей, поэтому его следует использовать для реагирования на события жизненного цикла.

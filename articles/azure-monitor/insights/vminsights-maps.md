@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 10/25/2018
 ms.author: magoedte
 ms.openlocfilehash: 34e6ce7f3b38dfd583aa557d2f1d7340ea444da9
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58916739"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59798049"
 ---
 # <a name="using-azure-monitor-for-vms-preview-map-to-understand-application-components"></a>Использование сопоставления Azure Monitor для виртуальных машин (предварительная версия), чтобы получать сведения о компонентах приложения
 При просмотре обнаруженных компонентов приложений в виртуальных машинах с ОС Windows и Linux, работающих в Azure, за средой можно наблюдать двумя способами с помощью Azure Monitor для виртуальных машин: непосредственно из виртуальной машины либо в группах виртуальных машин в Azure Monitor. 

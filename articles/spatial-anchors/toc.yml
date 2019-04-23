@@ -1,90 +1,83 @@
-items:
 - name: Документация по службе "Пространственные привязки"
   href: index.yml
 - name: Обзор
   items:
-  - name: Сведения о службе "Пространственные привязки"
-    href: overview.md
+    - name: Сведения о службе "Пространственные привязки"
+      href: overview.md
 - name: Быстрое начало работы
   items:
-  - name: Создание приложения Unity
-    href: unity-overview.yml
-    items:
-    - name: HoloLens
-      href: quickstarts/get-started-unity-hololens.md
-    - name: Android
-      href: quickstarts/get-started-unity-android.md
-    - name: iOS
-      href: quickstarts/get-started-unity-ios.md
-    expanded: true
-  - name: Создание приложения iOS
-    href: quickstarts/get-started-ios.md
-  - name: Создание приложения Android
-    href: quickstarts/get-started-android.md
-  - name: Создание приложения HoloLens
-    href: quickstarts/get-started-hololens.md
+    - name: Создание приложения Unity
+      href: unity-overview.yml
+      expanded: true
+      items:
+        - name: HoloLens
+          href: quickstarts/get-started-unity-hololens.md
+        - name: Android
+          href: quickstarts/get-started-unity-android.md
+        - name: iOS
+          href: quickstarts/get-started-unity-ios.md
+    - name: Создание приложения iOS
+      href: quickstarts/get-started-ios.md
+    - name: Создание приложения Android
+      href: quickstarts/get-started-android.md
+    - name: Создание приложения HoloLens
+      href: quickstarts/get-started-hololens.md
 - name: Учебники
   items:
-  - name: Совместное использование в Unity
-    href: tutorials/tutorial-share-anchors-across-devices.md
-  - name: Совместное использование в Unity с помощью Azure Cosmos DB
-    href: tutorials/tutorial-use-cosmos-db-to-store-anchors.md
-  - name: Запуск приложения Android
-    href: tutorials/tutorial-new-android-app.md
+    - name: Совместное использование в Unity
+      href: tutorials/tutorial-share-anchors-across-devices.md
+    - name: "Совместное использование в Unity с помощью Azure Cosmos\_DB"
+      href: tutorials/tutorial-use-cosmos-db-to-store-anchors.md
+    - name: Запуск приложения Android
+      href: tutorials/tutorial-new-android-app.md
 - name: Инструкции
   items:
-  - name: Создание и поиск привязок
-    href: create-locate-anchors-overview.md
-    items:
-    - name: В Unity
-      href: how-tos/create-locate-anchors-unity.md
-    - name: В Objective-C
-      href: how-tos/create-locate-anchors-objc.md
-    - name: В Swift
-      href: how-tos/create-locate-anchors-swift.md
-    - name: В Java
-      href: how-tos/create-locate-anchors-java.md
-    - name: В C++/NDK
-      href: how-tos/create-locate-anchors-cpp-ndk.md
-    - name: В C++/WinRT
-      href: how-tos/create-locate-anchors-cpp-winrt.md
+    - name: Создание и поиск привязок
+      href: create-locate-anchors-overview.md
+      items:
+        - name: В Unity
+          href: how-tos/create-locate-anchors-unity.md
+        - name: В Objective-C
+          href: how-tos/create-locate-anchors-objc.md
+        - name: В Swift
+          href: how-tos/create-locate-anchors-swift.md
+        - name: В Java
+          href: how-tos/create-locate-anchors-java.md
+        - name: В C++/NDK
+          href: how-tos/create-locate-anchors-cpp-ndk.md
+        - name: В C++/WinRT
+          href: how-tos/create-locate-anchors-cpp-winrt.md
 - name: Примеры
   items:
-  - name: Примеры пространственных привязок Azure (GitHub)
-    href: https://github.com/Azure/azure-spatial-anchors-samples
+    - name: Примеры пространственных привязок Azure (GitHub)
+      href: 'https://github.com/Azure/azure-spatial-anchors-samples'
 - name: Основные понятия
   items:
-  - name: Связи между привязками
-    href: concepts/anchor-relationships-way-finding.md
-  - name: Рекомендации по работе
-    href: concepts/guidelines-effective-anchor-experiences.md
-  - name: Ведение журнала и диагностика
-    href: concepts/logging-diagnostics.md
+    - name: Связи между привязками
+      href: concepts/anchor-relationships-way-finding.md
+    - name: Рекомендации по работе
+      href: concepts/guidelines-effective-anchor-experiences.md
+    - name: Ведение журнала и диагностика
+      href: concepts/logging-diagnostics.md
 - name: Ссылки
   items:
-  - name: Пакет SDK для Unity
-    href: https://docs.microsoft.com/dotnet/api/Microsoft.Azure.SpatialAnchors/
-  - name: Пакет SDK для Objective-C в iOS
-    href: https://docs.microsoft.com/objectivec/api/spatial-anchors/
-  - name: Пакет SDK для Java в Android
-    href: https://docs.microsoft.com/java/api/com.microsoft.azure.spatialanchors/
-  - name: Пакет SDK для NDK в Android
-    href: https://docs.microsoft.com/cpp/api/spatial-anchors/ndk/
-  - name: Пакет SDK для C++/WinRT на устройстве HoloLens
-    href: https://docs.microsoft.com/cpp/api/spatial-anchors/winrt/
+    - name: Пакет SDK для Unity
+      href: 'https://docs.microsoft.com/dotnet/api/Microsoft.Azure.SpatialAnchors/'
+    - name: Пакет SDK для Objective-C в iOS
+      href: 'https://docs.microsoft.com/objectivec/api/spatial-anchors/'
+    - name: Пакет SDK для Java в Android
+      href: 'https://docs.microsoft.com/java/api/com.microsoft.azure.spatialanchors/'
+    - name: Пакет SDK для NDK в Android
+      href: 'https://docs.microsoft.com/cpp/api/spatial-anchors/ndk/'
+    - name: Пакет SDK для C++/WinRT на устройстве HoloLens
+      href: 'https://docs.microsoft.com/cpp/api/spatial-anchors/winrt/'
 - name: Ресурсы
   items:
-  - name: Часто задаваемые вопросы
-    href: spatial-anchor-faq.md
-  - name: Отзыв о продукте
-    href: https://feedback.azure.com/forums/919252-azure-spatial-anchors
-  - name: Переполнение стека
-    href: https://stackoverflow.com/questions/tagged/azure-spatial-anchors
-  - name: Поддержка
-    href: spatial-anchor-support.md
-ms.openlocfilehash: 69465b1f2184476f8c18738474a6585fdd681bb2
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58915855"
+    - name: Часто задаваемые вопросы
+      href: spatial-anchor-faq.md
+    - name: Отзыв о продукте
+      href: 'https://feedback.azure.com/forums/919252-azure-spatial-anchors'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/azure-spatial-anchors'
+    - name: Поддержка
+      href: spatial-anchor-support.md

@@ -1,299 +1,298 @@
-items:
 - name: Документация по системе безопасности Azure
   href: index.md
 - name: Архитектура и разработка
   href: azure-security.md
-  items:
-  - name: Расширенные возможности обнаружения угроз
-    displayName: vulnerability, virus, ids, incident
-    href: azure-threat-detection.md
-  - name: Ведение журналов и аудит Azure
-    displayName: incident
-    href: azure-log-audit.md
-  - name: Сетевая безопасность Azure
-    displayName: firewall, ssl, vpn, ids, gateway, https, application gateway, azure application gateway, ips, waf
-    href: abstract-azure-network-security.md
-  - name: Безопасность бессерверной платформы Azure
-    href: abstract-serverless-platform-security.md
-  - name: Защита контейнеров в Azure
-    href: abstract-container-security-microsoft-azure.md
-  - name: Включение функций операционной безопасности
-    displayName: policy, policies, azure monitor, soc
-    href: abstract-azure-operational-security.md
-  - name: Изоляция в облаке Azure
-    displayName: trust boundary
-    href: azure-isolation.md
-  - name: Архитектура защищенной гибридной сети
-    displayName: trust boundary
-    href: https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json
-  - name: Технические возможности обеспечения безопасности
-    href: azure-security-technical-capabilities.md
-  - name: Разработка безопасных приложений в Azure
-    href: abstract-develop-secure-apps.md
   expanded: false
+  items:
+    - name: Расширенные возможности обнаружения угроз
+      displayName: 'vulnerability, virus, ids, incident'
+      href: azure-threat-detection.md
+    - name: Ведение журналов и аудит Azure
+      displayName: incident
+      href: azure-log-audit.md
+    - name: Сетевая безопасность Azure
+      displayName: 'firewall, ssl, vpn, ids, gateway, https, application gateway, azure application gateway, ips, waf'
+      href: abstract-azure-network-security.md
+    - name: Безопасность бессерверной платформы Azure
+      href: abstract-serverless-platform-security.md
+    - name: Защита контейнеров в Azure
+      href: abstract-container-security-microsoft-azure.md
+    - name: Включение функций операционной безопасности
+      displayName: 'policy, policies, azure monitor, soc'
+      href: abstract-azure-operational-security.md
+    - name: Изоляция в облаке Azure
+      displayName: trust boundary
+      href: azure-isolation.md
+    - name: Архитектура защищенной гибридной сети
+      displayName: trust boundary
+      href: 'https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json'
+    - name: Технические возможности обеспечения безопасности
+      href: azure-security-technical-capabilities.md
+    - name: Разработка безопасных приложений в Azure
+      href: abstract-develop-secure-apps.md
 - name: Шифрование и обеспечение защиты данных
   href: security-azure-encryption-overview.md
   items:
-  - name: Безопасность базы данных
-    href: azure-database-security-overview.md
-    items:
-    - name: Рекомендации
-      href: azure-database-security-best-practices.md
-    - name: Контрольный список безопасности
-      href: azure-database-security-checklist.md
-  - name: Шифрование дисков
-    items:
-    - name: Рекомендации
-      displayName: transit
-      href: azure-security-data-encryption-best-practices.md
-    - name: Шифрование неактивных данных
-      href: azure-security-encryption-atrest.md
-    - name: Шифрование дисков для виртуальных машин IaaS
+    - name: Безопасность базы данных
+      href: azure-database-security-overview.md
       items:
-      - name: Общие сведения о шифровании дисков Azure
-        displayName: bitlocker, bek
-        href: azure-security-disk-encryption-overview.md
-      - name: Быстрое начало работы
-        items:
-        - name: Шифрование виртуальных машин с помощью Azure PowerShell
-          href: quick-encrypt-vm-powershell.md
-      - name: Дисковое шифрование Azure
-        href: azure-security-disk-encryption-appendix.md
-        items:
-        - name: Предварительные требования для шифрования дисков
-          href: azure-security-disk-encryption-prerequisites.md
-        - name: Шифрование дисков для виртуальных машин Windows
-          href: azure-security-disk-encryption-windows.md
-        - name: Шифрование дисков для виртуальных машин Linux
-          href: azure-security-disk-encryption-linux.md
-        - name: Шифрование диска с помощью последовательности расширений VMSS
-          href: azure-security-disk-encryption-extension-sequencing.md
-        - name: Приложение для шифрования дисков
-      - name: Часто задаваемые вопросы о шифровании дисков
-        href: azure-security-disk-encryption-faq.md
-      - name: Устранение неполадок
-        href: azure-security-disk-encryption-tsg.md
-      - name: Шифрование дисков Azure с использованием приложения Azure AD (предыдущий выпуск)
-        displayName: active directory
-        items:
-        - name: Предварительные требования для шифрования дисков с использованием приложения Azure AD
-          displayName: active directory
-          href: azure-security-disk-encryption-prerequisites-aad.md
-        - name: Шифрование дисков виртуальных машин Windows с использованием приложения Azure AD
-          displayName: active directory
-          href: azure-security-disk-encryption-windows-aad.md
-        - name: Шифрование дисков виртуальных машин Linux с использованием приложения Azure AD
-          displayName: active directory
-          href: azure-security-disk-encryption-linux-aad.md
-  - name: Безопасность службы хранилища Azure
-    href: security-storage-overview.md
-  - name: Руководство по безопасности хранилища
-    href: ../storage/common/storage-security-guide.md?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json
+        - name: Рекомендации
+          href: azure-database-security-best-practices.md
+        - name: Контрольный список безопасности
+          href: azure-database-security-checklist.md
+    - name: Шифрование дисков
+      items:
+        - name: Рекомендации
+          displayName: transit
+          href: azure-security-data-encryption-best-practices.md
+        - name: Шифрование неактивных данных
+          href: azure-security-encryption-atrest.md
+        - name: Шифрование дисков для виртуальных машин IaaS
+          items:
+            - name: Общие сведения о шифровании дисков Azure
+              displayName: 'bitlocker, bek'
+              href: azure-security-disk-encryption-overview.md
+            - name: Быстрое начало работы
+              items:
+                - name: Шифрование виртуальных машин с помощью Azure PowerShell
+                  href: quick-encrypt-vm-powershell.md
+            - name: Дисковое шифрование Azure
+              items:
+                - name: Предварительные требования для шифрования дисков
+                  href: azure-security-disk-encryption-prerequisites.md
+                - name: Шифрование дисков для виртуальных машин Windows
+                  href: azure-security-disk-encryption-windows.md
+                - name: Шифрование дисков для виртуальных машин Linux
+                  href: azure-security-disk-encryption-linux.md
+                - name: Шифрование диска с помощью последовательности расширений VMSS
+                  href: azure-security-disk-encryption-extension-sequencing.md
+                - name: Приложение для шифрования дисков
+              href: azure-security-disk-encryption-appendix.md
+            - name: Часто задаваемые вопросы о шифровании дисков
+              href: azure-security-disk-encryption-faq.md
+            - name: Устранение неполадок
+              href: azure-security-disk-encryption-tsg.md
+            - name: Шифрование дисков Azure с использованием приложения Azure AD (предыдущий выпуск)
+              displayName: active directory
+              items:
+                - name: Предварительные требования для шифрования дисков с использованием приложения Azure AD
+                  displayName: active directory
+                  href: azure-security-disk-encryption-prerequisites-aad.md
+                - name: Шифрование дисков виртуальных машин Windows с использованием приложения Azure AD
+                  displayName: active directory
+                  href: azure-security-disk-encryption-windows-aad.md
+                - name: Шифрование дисков виртуальных машин Linux с использованием приложения Azure AD
+                  displayName: active directory
+                  href: azure-security-disk-encryption-linux-aad.md
+    - name: Безопасность службы хранилища Azure
+      href: security-storage-overview.md
+    - name: Руководство по безопасности хранилища
+      href: ../storage/common/storage-security-guide.md?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json
 - name: Платформа и инфраструктура
   items:
-  - name: Безопасность инфраструктуры
-    href: azure-security-infrastructure.md
-    items:
-    - name: Физическая безопасность
-      href: azure-physical-security.md
-    - name: Доступность
-      href: azure-infrastructure-availability.md
-    - name: Компоненты и границы
-      href: azure-infrastructure-components.md
-    - name: Сетевая архитектура
-      displayName: ssl, https
-      href: azure-infrastructure-network.md
-    - name: Рабочая сеть
-      href: azure-production-network.md
-    - name: База данных SQL
-      href: azure-infrastructure-sql.md
-    - name: Операции
-      href: azure-infrastructure-operations.md
-    - name: Мониторинг
-      href: azure-infrastructure-monitoring.md
-    - name: Целостность
-      href: azure-infrastructure-integrity.md
-    - name: Защита данных
-      href: azure-protection-of-customer-data.md
-  - name: Антивредоносное ПО Майкрософт
-    displayName: virus
-    href: azure-security-antimalware.md
-  - name: Безопасность IaaS
-    href: security-virtual-machines-overview.md
-    items:
-    - name: Рекомендации по рабочим нагрузкам IaaS
-      displayName: patch
-      href: azure-security-iaas.md
-    - name: Образы из Azure Marketplace
-      href: security-recommendations-azure-marketplace-images.md
-  - name: Управление удостоверениями
-    href: security-identity-management-overview.md
-    items:
-    - name: Выбор аутентификации Azure AD
-      displayName: identity, active directory, seamless sso
-      href: azure-ad-choose-authn.md
-    - name: Контрольный список безопасности
-      displayName: identity, active directory, password
-      href: azure-ad-secure-steps.md
-    - name: Рекомендации
-      displayName: password, identity, active directory
-      href: azure-security-identity-management-best-practices.md
-    - name: Применение MFA для администраторов подписки
-      displayName: identity
-      href: azure-security-global-admin.md
-  - name: Безопасность сети
-    displayName: firewall, ssl, vpn, ids, gateway, https, azure application gateway, application gateway, ips, waf
-    href: security-network-overview.md
-    items:
-    - name: Рекомендации
-      href: azure-security-network-security-best-practices.md
-    - name: Защита от атак DDoS
-      href: azure-ddos-best-practices.md
-    - name: Защита границ
-      href: ../best-practices-network-security.md?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json
+    - name: Безопасность инфраструктуры
+      href: azure-security-infrastructure.md
+      items:
+        - name: Физическая безопасность
+          href: azure-physical-security.md
+        - name: Доступность
+          href: azure-infrastructure-availability.md
+        - name: Компоненты и границы
+          href: azure-infrastructure-components.md
+        - name: Сетевая архитектура
+          displayName: 'ssl, https'
+          href: azure-infrastructure-network.md
+        - name: Рабочая сеть
+          href: azure-production-network.md
+        - name: База данных SQL
+          href: azure-infrastructure-sql.md
+        - name: Операции
+          href: azure-infrastructure-operations.md
+        - name: Мониторинг
+          href: azure-infrastructure-monitoring.md
+        - name: Целостность
+          href: azure-infrastructure-integrity.md
+        - name: Защита данных
+          href: azure-protection-of-customer-data.md
+    - name: Антивредоносное ПО Майкрософт
+      displayName: virus
+      href: azure-security-antimalware.md
+    - name: Безопасность IaaS
+      href: security-virtual-machines-overview.md
+      items:
+        - name: Рекомендации по рабочим нагрузкам IaaS
+          displayName: patch
+          href: azure-security-iaas.md
+        - name: Образы из Azure Marketplace
+          href: security-recommendations-azure-marketplace-images.md
+    - name: Управление удостоверениями
+      href: security-identity-management-overview.md
+      items:
+        - name: Выбор аутентификации Azure AD
+          displayName: 'identity, active directory, seamless sso'
+          href: azure-ad-choose-authn.md
+        - name: Контрольный список безопасности
+          displayName: 'identity, active directory, password'
+          href: azure-ad-secure-steps.md
+        - name: Рекомендации
+          displayName: 'password, identity, active directory'
+          href: azure-security-identity-management-best-practices.md
+        - name: Применение MFA для администраторов подписки
+          displayName: identity
+          href: azure-security-global-admin.md
+    - name: Безопасность сети
+      displayName: 'firewall, ssl, vpn, ids, gateway, https, azure application gateway, application gateway, ips, waf'
+      href: security-network-overview.md
+      items:
+        - name: Рекомендации
+          href: azure-security-network-security-best-practices.md
+        - name: Защита от атак DDoS
+          href: azure-ddos-best-practices.md
+        - name: Защита границ
+          href: ../best-practices-network-security.md?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json
 - name: Приложение
   items:
-  - name: PaaS
-    href: security-paas-deployments.md
-    items:
-    - name: Служба приложений Azure для PaaS
-      href: security-paas-applications-using-app-services.md
-    - name: Служба хранилища Azure для PaaS
-      href: security-paas-applications-using-storage.md
-    - name: Рекомендации по базам данных для PaaS
-      href: security-paas-applications-using-sql.md
-  - name: Интернет вещей
-    href: security-internet-of-things-overview.md
-    items:
-    - name: Рекомендации по обеспечению безопасности Интернета вещей
-      href: ../iot-accelerators/iot-security-best-practices.md?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json
-    - name: Безопасность Интернета вещей
-      href: ../iot-accelerators/iot-security-architecture.md?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json#security-in-iot
-    - name: Защита развертывания IoT
-      href: ../iot-accelerators/iot-accelerators-security-deployment.md?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json
-  - name: Безопасность Azure Service Fabric
-    href: azure-service-fabric-security-overview.md
-    items:
-    - name: Рекомендации
-      href: azure-service-fabric-security-best-practices.md
-    - name: Контрольный список безопасности
-      href: azure-service-fabric-security-checklist.md
-- name: Мониторинг, аудит и операции
+    - name: PaaS
+      href: security-paas-deployments.md
+      items:
+        - name: Служба приложений Azure для PaaS
+          href: security-paas-applications-using-app-services.md
+        - name: Служба хранилища Azure для PaaS
+          href: security-paas-applications-using-storage.md
+        - name: Рекомендации по базам данных для PaaS
+          href: security-paas-applications-using-sql.md
+    - name: Интернет вещей
+      href: security-internet-of-things-overview.md
+      items:
+        - name: Рекомендации по обеспечению безопасности Интернета вещей
+          href: ../iot-accelerators/iot-security-best-practices.md?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json
+        - name: Безопасность Интернета вещей
+          href: '../iot-accelerators/iot-security-architecture.md?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json#security-in-iot'
+        - name: Защита развертывания IoT
+          href: ../iot-accelerators/iot-accelerators-security-deployment.md?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json
+    - name: Безопасность Azure Service Fabric
+      href: azure-service-fabric-security-overview.md
+      items:
+        - name: Рекомендации
+          href: azure-service-fabric-security-best-practices.md
+        - name: Контрольный список безопасности
+          href: azure-service-fabric-security-checklist.md
+- name: 'Мониторинг, аудит и операции'
   href: security-management-and-monitoring-overview.md
   items:
-  - name: Аудит и ведение журнала
-    items:
-    - name: Управление безопасностью
-      displayName: vulnerability, incident, virus,
-      href: ../security-center/security-center-intro.md?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json
-    - name: Безопасность удаленного управления
-      href: azure-security-management.md
-    - name: Служба интеграции журналов Azure
+    - name: Аудит и ведение журнала
       items:
-      - name: Введение
-        href: security-azure-log-integration-overview.md
-      - name: Начало работы
-        href: security-azure-log-integration-get-started.md
-      - name: Интеграция журналов аудита Azure AD
-        displayName: active directory
-        href: security-azure-log-integration-ad.md
-      - name: Интеграция оповещений центра безопасности
-        displayName: splunk
-        href: ../security-center/security-center-export-data-to-siem.md?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json
-      - name: Интеграция журналов из Key Vault
-        displayName: keyvault
-        href: security-azure-log-integration-keyvault-eventhub.md
-      - name: Часто задаваемые вопросы
-        href: security-azure-log-integration-faq.md
-  - name: Операционная безопасность
-    href: azure-operational-security-overview.md
-    items:
-    - name: Рекомендации
-      href: azure-operational-security-best-practices.md
-    - name: Контрольный список безопасности
-      href: azure-operational-security-checklist.md
+        - name: Управление безопасностью
+          displayName: 'vulnerability, incident, virus,'
+          href: ../security-center/security-center-intro.md?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json
+        - name: Безопасность удаленного управления
+          href: azure-security-management.md
+        - name: Служба интеграции журналов Azure
+          items:
+            - name: Введение
+              href: security-azure-log-integration-overview.md
+            - name: Начало работы
+              href: security-azure-log-integration-get-started.md
+            - name: Интеграция журналов аудита Azure AD
+              displayName: active directory
+              href: security-azure-log-integration-ad.md
+            - name: Интеграция оповещений центра безопасности
+              displayName: splunk
+              href: ../security-center/security-center-export-data-to-siem.md?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json
+            - name: Интеграция журналов из Key Vault
+              displayName: keyvault
+              href: security-azure-log-integration-keyvault-eventhub.md
+            - name: Часто задаваемые вопросы
+              href: security-azure-log-integration-faq.md
+    - name: Операционная безопасность
+      href: azure-operational-security-overview.md
+      items:
+        - name: Рекомендации
+          href: azure-operational-security-best-practices.md
+        - name: Контрольный список безопасности
+          href: azure-operational-security-checklist.md
 - name: Система управления и соответствие требованиям
-  displayName: blueprint, privacy, certifications
+  displayName: 'blueprint, privacy, certifications'
   items:
-  - name: AU PROTECTED
-    displayName: blueprint, privacy, certifications
-    items:
-    - name: Веб-приложение IaaS
-      href: ./blueprints/au-protected-iaaswa-overview.md
-    - name: Веб-приложение PaaS
-      href: ./blueprints/au-protected-paaswa-overview.md
-  - name: FedRAMP
-    displayName: blueprint, privacy, certifications
-    items:
-    - name: Аналитика данных
-      href: ./blueprints/fedramp-analytics-overview.md
-    - name: Хранилище данных
-      href: ./blueprints/fedramp-datawarehouse-overview.md
-    - name: Веб-приложение IaaS
-      href: ./blueprints/fedramp-iaaswa-overview.md
-    - name: Веб-приложение PaaS
-      href: ./blueprints/fedramp-paaswa-overview.md
-  - name: FFIEC
-    displayName: blueprint, privacy, certifications
-    items:
-    - name: Аналитика данных
-      href: ./blueprints/ffiec-analytics-overview.md
-    - name: Хранилище данных
-      href: ./blueprints/ffiec-dw-overview.md
-    - name: Веб-приложение IaaS
-      href: ./blueprints/ffiec-iaaswa-overview.md
-    - name: Веб-приложение PaaS
-      href: ./blueprints/ffiec-paaswa-overview.md
-  - name: HIPAA/HITRUST
-    displayName: blueprint, privacy, certifications
-    items:
-    - name: Искусственный интеллект и данные о работоспособности
-      href: ./blueprints/azure-health.md
-  - name: NIST SP 800-171
-    displayName: blueprint, privacy, certifications
-    items:
-    - name: Аналитика данных
-      href: ./blueprints/nist171-analytics-overview.md
-    - name: Хранилище данных
-      href: ./blueprints/nist171-datawarehouse-overview.md
-    - name: Веб-приложение IaaS
-      href: ./blueprints/nist171-iaaswa-overview.md
-    - name: Веб-приложение PaaS
-      href: ./blueprints/nist171-paaswa-overview.md
-  - name: PCI DSS
-    displayName: blueprint, privacy, certifications
-    items:
-    - name: Аналитика данных
-      href: ./blueprints/pcidss-analytics-overview.md
-    - name: Хранилище данных
-      href: ./blueprints/pcidss-dw-overview.md
-    - name: Веб-приложение IaaS
-      href: ./blueprints/pcidss-iaaswa-overview.md
-    - name: Веб-приложение PaaS
-      href: ./blueprints/pcidss-paaswa-overview.md
-  - name: Доверительное интернет-соединение
-    displayName: blueprint, privacy, certifications
-    items:
-    - name: Доверительное интернет-соединение с Azure
-      href: ./compliance/compliance-tic.md
-  - name: UK NHS
-    displayName: blueprint, privacy, certifications
-    items:
-    - name: Аналитика данных
-      href: ./blueprints/uknhs-analytics-overview.md
-    - name: Хранилище данных
-      href: ./blueprints/uknhs-datawarehouse-overview.md
-    - name: Веб-приложение IaaS
-      href: ./blueprints/uknhs-iaaswa-overview.md
-    - name: Веб-приложение PaaS
-      href: ./blueprints/uknhs-paaswa-overview.md
-  - name: UK OFFICIAL
-    displayName: blueprint, privacy, certifications
-    items:
-    - name: Веб-приложение IaaS
-      href: ./blueprints/ukofficial-iaaswa-overview.md
-    - name: Веб-приложение PaaS
-      href: ./blueprints/ukofficial-paaswa-overview.md
+    - name: AU PROTECTED
+      displayName: 'blueprint, privacy, certifications'
+      items:
+        - name: Веб-приложение IaaS
+          href: ./blueprints/au-protected-iaaswa-overview.md
+        - name: Веб-приложение PaaS
+          href: ./blueprints/au-protected-paaswa-overview.md
+    - name: FedRAMP
+      displayName: 'blueprint, privacy, certifications'
+      items:
+        - name: Аналитика данных
+          href: ./blueprints/fedramp-analytics-overview.md
+        - name: Хранилище данных
+          href: ./blueprints/fedramp-datawarehouse-overview.md
+        - name: Веб-приложение IaaS
+          href: ./blueprints/fedramp-iaaswa-overview.md
+        - name: Веб-приложение PaaS
+          href: ./blueprints/fedramp-paaswa-overview.md
+    - name: FFIEC
+      displayName: 'blueprint, privacy, certifications'
+      items:
+        - name: Аналитика данных
+          href: ./blueprints/ffiec-analytics-overview.md
+        - name: Хранилище данных
+          href: ./blueprints/ffiec-dw-overview.md
+        - name: Веб-приложение IaaS
+          href: ./blueprints/ffiec-iaaswa-overview.md
+        - name: Веб-приложение PaaS
+          href: ./blueprints/ffiec-paaswa-overview.md
+    - name: HIPAA/HITRUST
+      displayName: 'blueprint, privacy, certifications'
+      items:
+        - name: Искусственный интеллект и данные о работоспособности
+          href: ./blueprints/azure-health.md
+    - name: NIST SP 800-171
+      displayName: 'blueprint, privacy, certifications'
+      items:
+        - name: Аналитика данных
+          href: ./blueprints/nist171-analytics-overview.md
+        - name: Хранилище данных
+          href: ./blueprints/nist171-datawarehouse-overview.md
+        - name: Веб-приложение IaaS
+          href: ./blueprints/nist171-iaaswa-overview.md
+        - name: Веб-приложение PaaS
+          href: ./blueprints/nist171-paaswa-overview.md
+    - name: PCI DSS
+      displayName: 'blueprint, privacy, certifications'
+      items:
+        - name: Аналитика данных
+          href: ./blueprints/pcidss-analytics-overview.md
+        - name: Хранилище данных
+          href: ./blueprints/pcidss-dw-overview.md
+        - name: Веб-приложение IaaS
+          href: ./blueprints/pcidss-iaaswa-overview.md
+        - name: Веб-приложение PaaS
+          href: ./blueprints/pcidss-paaswa-overview.md
+    - name: Доверительное интернет-соединение
+      displayName: 'blueprint, privacy, certifications'
+      items:
+        - name: Доверительное интернет-соединение с Azure
+          href: ./compliance/compliance-tic.md
+    - name: UK NHS
+      displayName: 'blueprint, privacy, certifications'
+      items:
+        - name: Аналитика данных
+          href: ./blueprints/uknhs-analytics-overview.md
+        - name: Хранилище данных
+          href: ./blueprints/uknhs-datawarehouse-overview.md
+        - name: Веб-приложение IaaS
+          href: ./blueprints/uknhs-iaaswa-overview.md
+        - name: Веб-приложение PaaS
+          href: ./blueprints/uknhs-paaswa-overview.md
+    - name: UK OFFICIAL
+      displayName: 'blueprint, privacy, certifications'
+      items:
+        - name: Веб-приложение IaaS
+          href: ./blueprints/ukofficial-iaaswa-overview.md
+        - name: Веб-приложение PaaS
+          href: ./blueprints/ukofficial-paaswa-overview.md
 - name: Технические документы
   href: security-white-papers.md
 - name: Службы безопасности Azure
@@ -304,64 +303,58 @@ items:
   href: security-best-practices-and-patterns.md
 - name: Ресурсы
   items:
-  - name: Общие атрибуты безопасности
-    href: common-security-attributes.md
-  - name: Программа специалистов MVP по вопросам обеспечения безопасности в Azure
-    href: azure-security-mvp.md
-  - name: Консультация по кибербезопасности
-    href: azure-security-cyber-services.md
-  - name: Регистрация поданного в службу поддержки запроса о событии, которое связано с безопасностью
-    href: azure-security-event-support-ticket.md
-  - name: Тестирование на проникновение
-    displayName: penetration
-    href: azure-security-pen-testing.md
-  - name: Microsoft Threat Modeling Tool
-    displayName: stride
-    href: azure-security-threat-modeling-tool.md
-    items:
-    - name: Приступая к работе
-      href: azure-security-threat-modeling-tool-getting-started.md
-    - name: Обзор возможностей
-      href: azure-security-threat-modeling-tool-feature-overview.md
-    - name: Риски
-      href: azure-security-threat-modeling-tool-threats.md
-    - name: Выпуски
-      href: azure-security-threat-modeling-tool-releases.md
+    - name: Общие атрибуты безопасности
+      href: common-security-attributes.md
+    - name: Программа специалистов MVP по вопросам обеспечения безопасности в Azure
+      href: azure-security-mvp.md
+    - name: Консультация по кибербезопасности
+      href: azure-security-cyber-services.md
+    - name: 'Регистрация поданного в службу поддержки запроса о событии, которое связано с безопасностью'
+      href: azure-security-event-support-ticket.md
+    - name: Тестирование на проникновение
+      displayName: penetration
+      href: azure-security-pen-testing.md
+    - name: Microsoft Threat Modeling Tool
+      displayName: stride
+      href: azure-security-threat-modeling-tool.md
       items:
-      - name: Средство моделирования угроз, выпуск общедоступной версии 7.1.5091.2  — 12.09.2018
-        href: azure-security-threat-modeling-tool-releases-71509112.md
-      - name: Threat Modeling Tool, выпуск обновления 7.1.51023.1 — 1.11.2018
-        href: azure-security-threat-modeling-tool-releases-71510231.md
-      - name: Threat Modeling Tool, выпуск обновления 7.1.60126.1 от 29.01.2019
-        href: azure-security-threat-modeling-tool-releases-71601261.md
-      - name: Threat Modeling Tool, выпуск обновления 7.1.60408.1 от 09.04.2019
-        href: azure-security-threat-modeling-tool-releases-71604081.md
-    - name: Устранение проблем
-      href: azure-security-threat-modeling-tool-mitigations.md
-      items:
-      - name: Аудит и ведение журнала
-        href: azure-security-threat-modeling-tool-auditing-and-logging.md
-      - name: Authentication
-        href: azure-security-threat-modeling-tool-authentication.md
-      - name: Авторизация
-        href: azure-security-threat-modeling-tool-authorization.md
-      - name: Безопасность обмена данными
-        href: azure-security-threat-modeling-tool-communication-security.md
-      - name: Управление конфигурацией
-        href: azure-security-threat-modeling-tool-configuration-management.md
-      - name: Шифрование
-        href: azure-security-threat-modeling-tool-cryptography.md
-      - name: Управление исключениями
-        href: azure-security-threat-modeling-tool-exception-management.md
-      - name: проверок входных данных;
-        href: azure-security-threat-modeling-tool-input-validation.md
-      - name: Конфиденциальные данные
-        href: azure-security-threat-modeling-tool-sensitive-data.md
-      - name: Управление сеансом
-        href: azure-security-threat-modeling-tool-session-management.md
-ms.openlocfilehash: 3802b1dd5aa9293f7c32f1aabbd2cd0d100829bd
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59490505"
+        - name: Приступая к работе
+          href: azure-security-threat-modeling-tool-getting-started.md
+        - name: Обзор возможностей
+          href: azure-security-threat-modeling-tool-feature-overview.md
+        - name: Риски
+          href: azure-security-threat-modeling-tool-threats.md
+        - name: Выпуски
+          href: azure-security-threat-modeling-tool-releases.md
+          items:
+            - name: "Средство моделирования угроз, выпуск общедоступной версии\_7.1.5091.2\_ — 12.09.2018"
+              href: azure-security-threat-modeling-tool-releases-71509112.md
+            - name: "Threat Modeling Tool, выпуск обновления\_7.1.51023.1\_— 1.11.2018"
+              href: azure-security-threat-modeling-tool-releases-71510231.md
+            - name: "Threat Modeling Tool, выпуск обновления\_7.1.60126.1 от 29.01.2019"
+              href: azure-security-threat-modeling-tool-releases-71601261.md
+            - name: "Threat Modeling Tool, выпуск обновления\_7.1.60408.1 от 09.04.2019"
+              href: azure-security-threat-modeling-tool-releases-71604081.md
+        - name: Устранение проблем
+          href: azure-security-threat-modeling-tool-mitigations.md
+          items:
+            - name: Аудит и ведение журнала
+              href: azure-security-threat-modeling-tool-auditing-and-logging.md
+            - name: Authentication
+              href: azure-security-threat-modeling-tool-authentication.md
+            - name: Авторизация
+              href: azure-security-threat-modeling-tool-authorization.md
+            - name: Безопасность обмена данными
+              href: azure-security-threat-modeling-tool-communication-security.md
+            - name: Управление конфигурацией
+              href: azure-security-threat-modeling-tool-configuration-management.md
+            - name: Шифрование
+              href: azure-security-threat-modeling-tool-cryptography.md
+            - name: Управление исключениями
+              href: azure-security-threat-modeling-tool-exception-management.md
+            - name: проверок входных данных;
+              href: azure-security-threat-modeling-tool-input-validation.md
+            - name: Конфиденциальные данные
+              href: azure-security-threat-modeling-tool-sensitive-data.md
+            - name: Управление сеансом
+              href: azure-security-threat-modeling-tool-session-management.md

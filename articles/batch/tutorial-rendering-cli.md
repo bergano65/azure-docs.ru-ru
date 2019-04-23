@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 12/11/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 10e8a7dd256f796160b81b8ec1f566c5ed7e4cad
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 5abc2e673438a1ffa22e8d010bf2ee395cd521ae
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55750211"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60149934"
 ---
 # <a name="tutorial-render-a-scene-with-azure-batch"></a>Руководство. Отрисовка сцены с помощью пакетной службы Azure 
 
@@ -33,7 +33,7 @@ ms.locfileid: "55750211"
 
 Вам потребуется подписка с оплатой по мере использования или другой вариант приобретения Azure для использования приложениями для рендеринга в пакетной службе Azure по принципу оплаты по мере использования. **Лицензирование с оплатой за использование не поддерживается, если использовать бесплатное предложение Azure, которое предоставляет денежной кредит.**
 
-Примеры сцены 3ds Max и скрипта Bash, а также файлы конфигурации JSON для этого руководства находятся на сайте [GitHub](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/batch/render-scene). Сцена 3ds Max получена из [примера файлов Autodesk 3ds Max](http://download.autodesk.com/us/support/files/3dsmax_sample_files/2017/Autodesk_3ds_Max_2017_English_Win_Samples_Files.exe). (Примеры файлов Autodesk 3ds Max доступны в соответствии с лицензией Creative Commons Attribution-NonCommercial-Share Alike. Copyright © Autodesk, Inc.)
+Примеры сцены 3ds Max и скрипта Bash, а также файлы конфигурации JSON для этого руководства находятся на сайте [GitHub](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/batch/render-scene). Сцена 3ds Max получена из [примера файлов Autodesk 3ds Max](https://download.autodesk.com/us/support/files/3dsmax_sample_files/2017/Autodesk_3ds_Max_2017_English_Win_Samples_Files.exe). (Примеры файлов Autodesk 3ds Max доступны в соответствии с лицензией Creative Commons Attribution-NonCommercial-Share Alike. Copyright © Autodesk, Inc.)
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
