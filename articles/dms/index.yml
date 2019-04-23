@@ -1,15 +1,9 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 62d81da206e60c90c636e8c7dd0193d7761ba9b4
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58183600"
 documentType: LandingData
 title: Документация по Azure Database Migration Service
 metadata:
   document_id: 83ceabb5-fb4f-a709-3fd2-37d024409f31
-  title: 'Документация по Azure Database Migration Service: руководства | Документация Майкрософт'
+  title: "Документация по Azure Database Migration Service: руководства\_| Документация Майкрософт"
   meta.description: Learn how to enable seamless migrations from multiple database sources to Azure Data platforms with minimal downtime by using Azure Database Migration Service.
   services: functions
   author: HJToland3
@@ -21,60 +15,60 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/12/2019
 abstract:
-  description: Azure Database Migration Service обеспечивает бесперебойную миграцию из нескольких источников баз данных на платформы данных Azure с минимальным временем простоя. Служба использует Помощник по миграции данных для создания экспертных отчетов с рекомендациями по изменениям, которые необходимы для переноса данных. Когда вы будете готовы приступить к переносу, Azure Database Migration Service выполнит все необходимые действия.
+  description: 'Azure Database Migration Service обеспечивает бесперебойную миграцию из нескольких источников баз данных на платформы данных Azure с минимальным временем простоя. Служба использует Помощник по миграции данных для создания экспертных отчетов с рекомендациями по изменениям, которые необходимы для переноса данных. Когда вы будете готовы приступить к переносу, Azure Database Migration Service выполнит все необходимые действия.'
   aside:
     image:
-      alt: 
+      alt: null
       height: 110
       src: media/video-thumb-intro2dms.png
       width: 250
-    title: Введение в Azure DMS (1:30)
-    href: https://www.microsoft.com/en-us/videoplayer/embed/RE2IqVu
+    title: "Введение в Azure\_DMS (1:30)"
+    href: 'https://www.microsoft.com/en-us/videoplayer/embed/RE2IqVu'
     width: 250
 sections:
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: 'Узнайте, как перенести данные из локального экземпляра SQL Server в Базу данных SQL Azure с помощью Database Migration Service:'
-  - type: list
-    style: icon48
+  - title: 5-минутные руководства по началу работы
     items:
-    - image:
-        src: https://docs.microsoft.com/media/common/i_portal.svg
-      text: Портал Azure
-      href: /azure/dms/quickstart-create-data-migration-service-portal
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: 'Узнайте, как переносить базы данных с помощью Database Migration Service:'
-  - type: list
-    style: ordered
+      - type: paragraph
+        text: 'Узнайте, как перенести данные из локального экземпляра SQL Server в Базу данных SQL Azure с помощью Database Migration Service:'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_portal.svg'
+            text: Портал Azure
+            href: /azure/dms/quickstart-create-data-migration-service-portal
+  - title: Пошаговые руководства
     items:
-    - html: <a href="/azure/dms/tutorial-sql-server-to-azure-sql">Перенос баз данных из SQL Server в Базу данных SQL Azure в автономном режиме с помощью DMS</a>
-    - html: <a href="/azure/dms/tutorial-sql-server-azure-sql-online">Перенос баз данных SQL Server в базу данных SQL Azure с помощью DMS по сети</a>
-    - html: <a href="/azure/dms/tutorial-sql-server-to-managed-instance">Перенос баз данных SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме</a>
-    - html: <a href="/azure/dms/tutorial-sql-server-managed-instance-online">Перенос баз данных SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме</a>
-    - html: <a href="/azure/dms/tutorial-rds-sql-server-azure-sql-and-managed-instance-online">Перенос баз данных RDS SQL Server в Базу данных SQL Azure или управляемый экземпляр Базы данных SQL Azure по сети с помощью DMS</a>
-    - html: <a href="/azure/dms/tutorial-mysql-azure-mysql-online">Интерактивный перенос баз данных MySQL в Базу данных Azure для MySQL с помощью DMS</a>
-    - html: <a href="/azure/dms/tutorial-postgresql-azure-postgresql-online">Перенос баз данных PostgreSQL в Базу данных Azure для PostgreSQL через Интернет с помощью DMS</a>
-    - html: <a href="/azure/dms/tutorial-mongodb-cosmos-db">Перенос MongoDB в API Mongo Azure Cosmos DB в автономном режиме с помощью DMS</a>
-    - html: <a href="/azure/dms/tutorial-mongodb-cosmos-db-online">Перенос баз данных MongoDB в API Mongo Azure Cosmos DB по сети с помощью DMS</a>
-- title: Примеры
-  items:
-  - type: list
-    style: unordered
-    className: spaced noBullet
+      - type: paragraph
+        text: 'Узнайте, как переносить базы данных с помощью Database Migration Service:'
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="/azure/dms/tutorial-sql-server-to-azure-sql">Перенос баз данных из SQL Server в Базу данных SQL Azure в автономном режиме с помощью DMS</a>
+          - html: <a href="/azure/dms/tutorial-sql-server-azure-sql-online">Перенос баз данных SQL Server в базу данных SQL Azure с помощью DMS по сети</a>
+          - html: <a href="/azure/dms/tutorial-sql-server-to-managed-instance">Перенос баз данных SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме</a>
+          - html: <a href="/azure/dms/tutorial-sql-server-managed-instance-online">Перенос баз данных SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме</a>
+          - html: <a href="/azure/dms/tutorial-rds-sql-server-azure-sql-and-managed-instance-online">Перенос баз данных RDS SQL Server в Базу данных SQL Azure или управляемый экземпляр Базы данных SQL Azure по сети с помощью DMS</a>
+          - html: <a href="/azure/dms/tutorial-mysql-azure-mysql-online">Интерактивный перенос баз данных MySQL в Базу данных Azure для MySQL с помощью DMS</a>
+          - html: <a href="/azure/dms/tutorial-postgresql-azure-postgresql-online">Перенос баз данных PostgreSQL в Базу данных Azure для PostgreSQL через Интернет с помощью DMS</a>
+          - html: <a href="/azure/dms/tutorial-mongodb-cosmos-db">Перенос MongoDB в API Mongo Azure Cosmos DB в автономном режиме с помощью DMS</a>
+          - html: <a href="/azure/dms/tutorial-mongodb-cosmos-db-online">Перенос баз данных MongoDB в API Mongo Azure Cosmos DB по сети с помощью DMS</a>
+  - title: Примеры
     items:
-    - html: <a href="/azure/dms/howto-sql-server-to-azure-sql-powershell">Перенос баз данных из локального экземпляра SQL Server в Базу данных SQL Azure с помощью Azure PowerShell</a>
-    - html: <a href="/azure/dms/howto-sql-server-to-azure-sql-mi-powershell">Перенос баз данных из локального экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью Azure PowerShell</a>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: unordered
-    className: spaced noBullet
+      - type: list
+        style: unordered
+        className: spaced noBullet
+        items:
+          - html: <a href="/azure/dms/howto-sql-server-to-azure-sql-powershell">Перенос баз данных из локального экземпляра SQL Server в Базу данных SQL Azure с помощью Azure PowerShell</a>
+          - html: <a href="/azure/dms/howto-sql-server-to-azure-sql-mi-powershell">Перенос баз данных из локального экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью Azure PowerShell</a>
+  - title: Справочные материалы
     items:
-    - html: <a href="/azure/dms/resource-scenario-status">Состояние сценариев миграции, поддерживаемых службой Azure Database Migration Service</a>
-    - html: <a href="/azure/dms/pre-reqs">Предварительные требования для использования службы Azure Database Migration Service</a>
-    - html: <a href="/azure/dms/faq">Часто задаваемые вопросы о службе Azure Database Migration Service</a>
-    - html: <a href="/azure/dms/known-issues-azure-sql-online">Известные проблемы и ограничения при сетевых миграциях в Базу данных SQL Azure</a>
-    - html: <a href="/azure/dms/dms-tools-matrix">Службы и средства для сценариев переноса данных</a>
+      - type: list
+        style: unordered
+        className: spaced noBullet
+        items:
+          - html: '<a href="/azure/dms/resource-scenario-status">Состояние сценариев миграции, поддерживаемых службой Azure Database Migration Service</a>'
+          - html: <a href="/azure/dms/pre-reqs">Предварительные требования для использования службы Azure Database Migration Service</a>
+          - html: <a href="/azure/dms/faq">Часто задаваемые вопросы о службе Azure Database Migration Service</a>
+          - html: <a href="/azure/dms/known-issues-azure-sql-online">Известные проблемы и ограничения при сетевых миграциях в Базу данных SQL Azure</a>
+          - html: <a href="/azure/dms/dms-tools-matrix">Службы и средства для сценариев переноса данных</a>

@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/01/2019
+ms.date: 04/16/2019
 ms.author: juliako
-ms.openlocfilehash: 2e715e5280794172451a333624a954340a1a60fe
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 4a29da2b070133f87ca5fdab0be607368c83790f
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58881024"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59999456"
 ---
 # <a name="streaming-endpoints"></a>Конечные точки потоковой передачи
 
@@ -52,7 +52,6 @@ ms.locfileid: "58881024"
 ---|---|---
 Бесплатно первые 15 дней| Yes |Нет 
 Пропускная способность |До 600 Мбит/с, когда Azure CDN не используется. Масштабирование с использованием CDN.|200 Мбит/с на единицу потоковой передачи. Масштабирование с использованием CDN.
-Соглашение об уровне обслуживания | 99,9|99,9 (200 Мбит/с на единицу потоковой передачи).
 CDN|Azure CDN, CDN сторонних поставщиков или без CDN.|Azure CDN, CDN сторонних поставщиков или без CDN.
 Пропорциональное выставление счетов| Ежедневно|Ежедневно
 Динамическое шифрование|Yes|Yes

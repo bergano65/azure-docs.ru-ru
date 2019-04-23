@@ -1,107 +1,100 @@
-items:
 - name: Документация по Front Door Service
   href: index.yml
 - name: Обзор
   items:
-  - name: Что такое Azure Front Door Service?
-    href: front-door-overview.md
+    - name: Что такое Azure Front Door Service?
+      href: front-door-overview.md
 - name: Быстрое начало работы
   items:
-  - name: Создание профиля Front Door
-    href: quickstart-create-front-door.md
+    - name: Создание профиля Front Door
+      href: quickstart-create-front-door.md
 - name: Учебники
   items:
-  - name: Добавление личного домена в службу Front Door
-    href: front-door-custom-domain.md
-  - name: Включение HTTPS для личного домена
-    href: front-door-custom-domain-https.md
-  - name: Настройка политики геофильтрации для службы AFD
-    href: front-door-tutorial-geo-filtering.md
+    - name: Добавление личного домена в службу Front Door
+      href: front-door-custom-domain.md
+    - name: Включение HTTPS для личного домена
+      href: front-door-custom-domain-https.md
+    - name: Настройка политики геофильтрации для службы AFD
+      href: front-door-tutorial-geo-filtering.md
 - name: Примеры
   items:
-  - name: Шаблоны Resource Manager
-    href: front-door-quickstart-template-samples.md
+    - name: Шаблоны Resource Manager
+      href: front-door-quickstart-template-samples.md
 - name: Основные понятия
   items:
-  - name: Серверные компоненты и серверные пулы
-    href: front-door-backend-pool.md
-  - name: Кэширование с помощью Front Door
-    href: front-door-caching.md
-  - name: Геофильтрация
-    href: front-door-geo-filtering.md
-  - name: Пробы работоспособности.
-    href: front-door-health-probes.md
-  - name: Подбор правила маршрутизации для запроса в службе Front Door
-    href: front-door-route-matching.md
-  - name: Поддержка HTTP/2
-    href: front-door-http2.md
-  - name: Поддержка заголовков протокола HTTP
-    href: front-door-http-headers-protocol.md
-  - name: Балансировка нагрузки с помощью набора служб Azure для предоставления приложения
-    href: front-door-lb-with-azure-app-delivery-suite.md
-  - name: Мониторинг
-    href: front-door-diagnostics.md
-  - name: Архитектура решений для маршрутизации
-    href: front-door-routing-architecture.md
-  - name: Методы маршрутизации трафика
-    href: front-door-routing-methods.md
-  - name: Переопределение URL-адреса
-    href: front-door-url-rewrite.md
-  - name: WAF
-    items:
-    - name: Обзор
-      href: waf-overview.md
-    - name: Настраиваемые правила
-      href: waf-front-door-custom-rules.md
-    - name: Параметры политики
-      href: waf-front-door-policy-settings.md
-    - name: Мониторинг и ведение журнала
-      href: waf-front-door-monitor.md
+    - name: Серверные компоненты и серверные пулы
+      href: front-door-backend-pool.md
+    - name: Кэширование с помощью Front Door
+      href: front-door-caching.md
+    - name: Геофильтрация
+      href: front-door-geo-filtering.md
+    - name: Пробы работоспособности.
+      href: front-door-health-probes.md
+    - name: Подбор правила маршрутизации для запроса в службе Front Door
+      href: front-door-route-matching.md
+    - name: Поддержка HTTP/2
+      href: front-door-http2.md
+    - name: Поддержка заголовков протокола HTTP
+      href: front-door-http-headers-protocol.md
+    - name: Балансировка нагрузки с помощью набора служб Azure для предоставления приложения
+      href: front-door-lb-with-azure-app-delivery-suite.md
+    - name: Мониторинг
+      href: front-door-diagnostics.md
+    - name: Архитектура решений для маршрутизации
+      href: front-door-routing-architecture.md
+    - name: Методы маршрутизации трафика
+      href: front-door-routing-methods.md
+    - name: Переопределение URL-адреса
+      href: front-door-url-rewrite.md
+    - name: WAF
+      items:
+        - name: Обзор
+          href: waf-overview.md
+        - name: Настраиваемые правила
+          href: waf-front-door-custom-rules.md
+        - name: Параметры политики
+          href: waf-front-door-policy-settings.md
+        - name: Мониторинг и ведение журнала
+          href: waf-front-door-monitor.md
 - name: Практические руководства
   items:
-  - name: Устранение неполадок
-    items:
-    - name: Устранение проблем с маршрутизацией
-      href: front-door-troubleshoot-routing.md
-    - name: Разрешенные центры сертификации
-      href: front-door-troubleshoot-allowed-ca.md
-  - name: Настройка WAF
-    items:
-    - name: Настройка политики WAF — портал
-      href: waf-front-door-create-portal.md
-    - name: Настройка политики WAF — Azure PowerShell
-      href: waf-front-door-custom-rules-powershell.md
-    - name: Настройка кода отклика
-      href: waf-front-door-configure-custom-response-code.md
-    - name: Настройка ограничения скорости WAF — Azure PowerShell
-      href: waf-front-door-rate-limit-powershell.md
+    - name: Устранение неполадок
+      items:
+        - name: Устранение проблем с маршрутизацией
+          href: front-door-troubleshoot-routing.md
+        - name: Разрешенные центры сертификации
+          href: front-door-troubleshoot-allowed-ca.md
+    - name: Настройка WAF
+      items:
+        - name: "Настройка политики WAF\_— портал"
+          href: waf-front-door-create-portal.md
+        - name: "Настройка политики WAF\_— Azure PowerShell"
+          href: waf-front-door-custom-rules-powershell.md
+        - name: Настройка кода отклика
+          href: waf-front-door-configure-custom-response-code.md
+        - name: "Настройка ограничения скорости WAF\_— Azure PowerShell"
+          href: waf-front-door-rate-limit-powershell.md
 - name: Часто задаваемые вопросы
   items:
-  - name: Часто задаваемые вопросы о службе Front Door
-    href: front-door-faq.md
-  - name: Часто задаваемые вопросы о WAF
-    href: waf-faq.md
+    - name: Часто задаваемые вопросы о службе Front Door
+      href: front-door-faq.md
+    - name: Часто задаваемые вопросы о WAF
+      href: waf-faq.md
 - name: Справочные материалы
   items:
-  - name: Инфраструктура CLI Azure
-    href: /cli/azure/ext/front-door/
-  - name: Azure PowerShell
-    href: /powershell/module/az.frontdoor
-  - name: REST API
-    href: /rest/api/frontdoor
+    - name: Инфраструктура CLI Azure
+      href: /cli/azure/ext/front-door/
+    - name: Azure PowerShell
+      href: /powershell/module/az.frontdoor
+    - name: REST API
+      href: /rest/api/frontdoor
 - name: Ресурсы
   items:
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/frontdoor/
-  - name: Калькулятор цен
-    href: https://azure.microsoft.com/pricing/calculator/
-  - name: Обновления службы
-    href: https://azure.microsoft.com/updates/?product=frontdoor
-ms.openlocfilehash: 7ac4e84bf714dabdbfb0c587122287d02b6b3bbe
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59680117"
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/frontdoor/'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=frontdoor'

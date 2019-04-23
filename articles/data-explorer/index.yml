@@ -1,83 +1,77 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 34de58f7a3f9307714ccc4594d9ac92523c55f69
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58482223"
 documentType: LandingData
 title: Документация по обозревателю данных Azure
 metadata:
-  title: Документация по Azure Data Explorer. Краткие руководства, учебные материалы и справочники по языку и API
-  description: Обозреватель данных Azure — это облачная платформа Log Analytics, оптимизированная для ad-hoc-обработки запросов больших данных.
+  title: 'Документация по Azure Data Explorer. Краткие руководства, учебные материалы и справочники по языку и API'
+  description: "Обозреватель данных Azure\_— это облачная платформа Log Analytics, оптимизированная для ad-hoc-обработки запросов больших данных."
   author: orspod
   ms.author: orspodek
   ms.service: data-explorer
   ms.topic: landing-page
   ms.date: 03/24/2019
 abstract:
-  description: <p>Azure Data Explorer — это быстрая и полностью управляемая служба для анализа большого объема потоковых данных в реальном времени, поступающих из приложений, а также с веб-сайтов, устройств Интернета вещей и т. д. С помощью Azure Data Explorer вы можете собирать, хранить и анализировать разные данные, чтобы улучшать качество продуктов, создавать новые возможности для клиентов, выполнять мониторинг устройств и повышать производительность.</p><p>Узнайте, как использовать обозреватель данных Azure, ознакомившись с нашими краткими руководствами и справочными материалами.</p>
+  description: "<p>Azure Data Explorer\_— это быстрая и полностью управляемая служба для анализа большого объема потоковых данных в реальном времени, поступающих из приложений, а также с веб-сайтов, устройств Интернета вещей и т.\_д. С помощью Azure Data Explorer вы можете собирать, хранить и анализировать разные данные, чтобы улучшать качество продуктов, создавать новые возможности для клиентов, выполнять мониторинг устройств и повышать производительность.</p><p>Узнайте, как использовать обозреватель данных Azure, ознакомившись с нашими краткими руководствами и справочными материалами.</p>"
   aside:
     image:
-      alt: 
+      alt: null
       height: 110
       src: media/index/video.png
       width: 250
-    title: Что такое обозреватель данных Azure? (19:47)
-    href: https://youtu.be/D_AJk2lAepw
+    title: 'Что такое обозреватель данных Azure? (19:47)'
+    href: 'https://youtu.be/D_AJk2lAepw'
     width: 250
 sections:
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: 'Узнайте, как подготовить к работе и использовать обозреватель данных Azure:'
-  - type: list
-    style: icon48
+  - title: 5-минутные руководства по началу работы
     items:
-    - image:
-        src: /azure/data-explorer/media/index/portal.svg
-      text: Создание кластера и базы данных
-      href: /azure/data-explorer/create-cluster-database-portal
-    - image:
-        src: /azure/data-explorer/media/index/portal.svg
-      text: Прием данных потоковой передачи из Центров событий
-      href: /azure/data-explorer/ingest-data-event-hub
-    - image:
-        src: /azure/data-explorer/media/index/portal.svg
-      text: Запрашивание данных с помощью пользовательского веб-интерфейса
-      href: /azure/data-explorer/web-query-data
-    - image:
-        src: /azure/data-explorer/media/index/logo-python.svg
-      text: Прием запрашиваемых данных с помощью Python
-      href: /azure/data-explorer/python-ingest-data
-    - image:
-        src: /azure/data-explorer/media/index/logo-python.svg
-      text: Запрашивание данных с помощью Python
-      href: /azure/data-explorer/python-query-data
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: 'Узнайте, как создавать комплексные решения:'
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: 'Узнайте, как подготовить к работе и использовать обозреватель данных Azure:'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: /azure/data-explorer/media/index/portal.svg
+            text: Создание кластера и базы данных
+            href: /azure/data-explorer/create-cluster-database-portal
+          - image:
+              src: /azure/data-explorer/media/index/portal.svg
+            text: Прием данных потоковой передачи из Центров событий
+            href: /azure/data-explorer/ingest-data-event-hub
+          - image:
+              src: /azure/data-explorer/media/index/portal.svg
+            text: Запрашивание данных с помощью пользовательского веб-интерфейса
+            href: /azure/data-explorer/web-query-data
+          - image:
+              src: /azure/data-explorer/media/index/logo-python.svg
+            text: Прием запрашиваемых данных с помощью Python
+            href: /azure/data-explorer/python-ingest-data
+          - image:
+              src: /azure/data-explorer/media/index/logo-python.svg
+            text: Запрашивание данных с помощью Python
+            href: /azure/data-explorer/python-query-data
+  - title: Пошаговые руководства
     items:
-    - html: <a href="/azure/data-explorer/visualize-power-bi">Визуализация данных из обозревателя данных Azure в Power BI</a>
-- title: Бесплатные видеоуроки PluralSight
-  items:
-  - type: list
-    style: cards
-    className: cardsFTitle
+      - type: paragraph
+        text: 'Узнайте, как создавать комплексные решения:'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/azure/data-explorer/visualize-power-bi">Визуализация данных из обозревателя данных Azure в Power BI</a>
+  - title: Бесплатные видеоуроки PluralSight
     items:
-    - title: Язык запросов для обозревателя данных Azure
-      href: https://app.pluralsight.com/library/courses/kusto-query-language-kql-from-scratch
-      image:
-        src: /azure/data-explorer/media/index/logo-pluralsight.svg
-        href: https://app.pluralsight.com/library/courses/kusto-query-language-kql-from-scratch
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: list
+        style: cards
+        className: cardsFTitle
+        items:
+          - title: Язык запросов для обозревателя данных Azure
+            href: 'https://app.pluralsight.com/library/courses/kusto-query-language-kql-from-scratch'
+            image:
+              src: /azure/data-explorer/media/index/logo-pluralsight.svg
+              href: 'https://app.pluralsight.com/library/courses/kusto-query-language-kql-from-scratch'
+  - title: Справочные материалы
     items:
-    - title: Языки и API
-      html: <p><a href="https://aka.ms/kustolangref">Язык запросов, команды управления и API</a>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Языки и API
+            html: '<p><a href="https://aka.ms/kustolangref">Язык запросов, команды управления и API</a>'

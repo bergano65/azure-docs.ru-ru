@@ -1,78 +1,71 @@
-items:
 - name: Документация по управлению устройствами
   href: index.yml
 - name: Обзор
   items:
-  - name: Общие сведения об управлении устройствами в Azure AD
-    href: overview.md
-  - name: Служба Enterprise State Roaming
-    href: enterprise-state-roaming-overview.md
+    - name: Общие сведения об управлении устройствами в Azure AD
+      href: overview.md
+    - name: Служба Enterprise State Roaming
+      href: enterprise-state-roaming-overview.md
 - name: Учебники
-  items:
-  - name: Настройка гибридного присоединения к Azure AD для управляемых доменов
-    href: hybrid-azuread-join-managed-domains.md
-  - name: Настройка гибридного присоединения к Azure AD для федеративных доменов
-    href: hybrid-azuread-join-federated-domains.md
-  - name: Настройка гибридного присоединения к Azure AD вручную
-    href: hybrid-azuread-join-manual.md
-  - name: Настройка присоединения к Azure AD во время первого запуска Windows 10
-    href: azuread-joined-devices-frx.md
   expanded: false
+  items:
+    - name: Настройка гибридного присоединения к Azure AD для управляемых доменов
+      href: hybrid-azuread-join-managed-domains.md
+    - name: Настройка гибридного присоединения к Azure AD для федеративных доменов
+      href: hybrid-azuread-join-federated-domains.md
+    - name: Настройка гибридного присоединения к Azure AD вручную
+      href: hybrid-azuread-join-manual.md
+    - name: Настройка присоединения к Azure AD во время первого запуска Windows 10
+      href: azuread-joined-devices-frx.md
 - name: Основные понятия
-  items:
-  - name: Единый вход для доступа к локальным ресурсам
-    href: azuread-join-sso.md
   expanded: false
-- name: Практические руководства
   items:
-  - name: Управление устройствами с помощью портала Azure
-    href: device-management-azure-portal.md
-  - name: Управление устаревшими устройствами
-    href: manage-stale-devices.md
-  - name: Планирование реализации присоединения к Azure AD
-    href: azureadjoin-plan.md
-  - name: Планирование реализации гибридного присоединения к Azure AD
-    href: hybrid-azuread-join-plan.md
-  - name: Управление гибридным присоединением устройств к Azure AD
-    href: hybrid-azuread-join-control.md
-  - name: Назначение локальных администраторов присоединенным к Azure AD устройствам
-    href: assign-local-admin.md
-  - name: Включение службы Enterprise State Roaming
-    href: enterprise-state-roaming-enable.md
-  - name: Устранение неполадок с текущими устройствами Windows, присоединенными к гибридной среде Azure AD
-    href: troubleshoot-hybrid-join-windows-current.md
-  - name: Устранение неполадок с устаревшими устройствами Windows, присоединенными к гибридной среде Azure AD
-    href: troubleshoot-hybrid-join-windows-legacy.md
-  - name: Устранение неполадок с Enterprise State Roaming
-    href: enterprise-state-roaming-troubleshooting.md
-  - name: Часто задаваемые вопросы
-    href: faq.md
-  - name: Вопросы и ответы об Enterprise State Roaming
-    href: enterprise-state-roaming-faqs.md
+    - name: Единый вход для доступа к локальным ресурсам
+      href: azuread-join-sso.md
+- name: Практические руководства
   expanded: true
+  items:
+    - name: Управление устройствами с помощью портала Azure
+      href: device-management-azure-portal.md
+    - name: Управление устаревшими устройствами
+      href: manage-stale-devices.md
+    - name: "Планирование реализации присоединения к Azure\_AD"
+      href: azureadjoin-plan.md
+    - name: Планирование реализации гибридного присоединения к Azure AD
+      href: hybrid-azuread-join-plan.md
+    - name: Управление гибридным присоединением устройств к Azure AD
+      href: hybrid-azuread-join-control.md
+    - name: Назначение локальных администраторов присоединенным к Azure AD устройствам
+      href: assign-local-admin.md
+    - name: Включение службы Enterprise State Roaming
+      href: enterprise-state-roaming-enable.md
+    - name: 'Устранение неполадок с текущими устройствами Windows, присоединенными к гибридной среде Azure AD'
+      href: troubleshoot-hybrid-join-windows-current.md
+    - name: 'Устранение неполадок с устаревшими устройствами Windows, присоединенными к гибридной среде Azure AD'
+      href: troubleshoot-hybrid-join-windows-legacy.md
+    - name: Устранение неполадок с Enterprise State Roaming
+      href: enterprise-state-roaming-troubleshooting.md
+    - name: Часто задаваемые вопросы
+      href: faq.md
+    - name: Вопросы и ответы об Enterprise State Roaming
+      href: enterprise-state-roaming-faqs.md
 - name: Справочные материалы
   items:
-  - name: Параметры GPO для службы Enterprise State Roaming
-    href: enterprise-state-roaming-group-policy-settings.md
-  - name: Параметры Windows для службы Enterprise State Roaming
-    href: enterprise-state-roaming-windows-settings-reference.md
+    - name: Параметры GPO для службы Enterprise State Roaming
+      href: enterprise-state-roaming-group-policy-settings.md
+    - name: Параметры Windows для службы Enterprise State Roaming
+      href: enterprise-state-roaming-windows-settings-reference.md
 - name: Ресурсы
   items:
-  - name: Форум отзывов и предложений по Azure
-    href: https://feedback.azure.com/forums/169401-azure-active-directory
-  - name: Форум MSDN
-    href: https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/active-directory/
-  - name: Обновления службы
-    href: ../fundamentals/whats-new.md
-  - name: Переполнение стека
-    href: https://stackoverflow.com/questions/tagged/azure-active-directory
-  - name: Видеоролики
-    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
-ms.openlocfilehash: c55f0c43b8af390d95c0dc3b70ff7037793ac7bc
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54388283"
+    - name: Форум отзывов и предложений по Azure
+      href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
+    - name: Форум MSDN
+      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/active-directory/'
+    - name: Обновления службы
+      href: ../fundamentals/whats-new.md
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/azure-active-directory'
+    - name: Видеоролики
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=active-directory'

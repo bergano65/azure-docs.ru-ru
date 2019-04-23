@@ -1,80 +1,74 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 9fb6f65c05f6789177923a3e62e8978bb5cdf457
-ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56992113"
 documentType: LandingData
 title: Документация по базе данных Azure для PostgreSQL
 metadata:
   document_id: c0fe8cd3-35da-e3e5-718e-8f3cf2f87f34
   title: Документация по Azure PostgreSQL. Руководства и справочник по API
-  description: База данных Azure для PostgreSQL — это служба реляционных баз данных на платформе Microsoft Cloud, созданная для разработчиков на основе СУБД PostgreSQL с открытым кодом.
+  description: "База данных Azure для PostgreSQL\_— это служба реляционных баз данных на платформе Microsoft Cloud, созданная для разработчиков на основе СУБД PostgreSQL с открытым кодом."
   author: rachel-msft
   ms.author: raagyema
   ms.service: postgresql
   ms.topic: landing-page
   ms.date: 02/25/2019
 abstract:
-  description: База данных Azure для PostgreSQL — это служба реляционной базы данных на основе СУБД PostgreSQL с открытым исходным кодом.  Это полностью управляемая база данных как услуга, которая может обслуживать критически важные рабочие нагрузки, обеспечивая прогнозируемую производительность и безопасность, а также высокий уровень доступности и динамическое масштабирование.  Разрабатывайте приложения на основе Базы данных Azure для PostgreSQL, используя привычные средства с открытым исходным кодом и платформу.  Узнайте, как использовать базу данных Azure для PostgreSQL, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.
+  description: 'База данных Azure для PostgreSQL — это служба реляционной базы данных на основе СУБД PostgreSQL с открытым исходным кодом.  Это полностью управляемая база данных как услуга, которая может обслуживать критически важные рабочие нагрузки, обеспечивая прогнозируемую производительность и безопасность, а также высокий уровень доступности и динамическое масштабирование.  Разрабатывайте приложения на основе Базы данных Azure для PostgreSQL, используя привычные средства с открытым исходным кодом и платформу.  Узнайте, как использовать базу данных Azure для PostgreSQL, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.'
 sections:
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: 'Узнайте, как создать базу данных PostgreSQL с помощью следующих средств:'
-  - type: list
-    style: icon48
+  - title: 5-минутные руководства по началу работы
     items:
-    - image:
-        src: https://docs.microsoft.com/azure/sql-database/media/index/portal.svg
-      text: Портал Azure
-      href: /azure/postgresql/quickstart-create-server-database-portal
-    - image:
-        src: https://docs.microsoft.com/azure/sql-database/media/index/cli.svg
-      text: Инфраструктура CLI Azure
-      href: /azure/postgresql/quickstart-create-server-database-azure-cli
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: 'Вы узнаете, как выполнять следующие задачи:'
-  - type: list
-    style: ordered
+      - type: paragraph
+        text: 'Узнайте, как создать базу данных PostgreSQL с помощью следующих средств:'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/azure/sql-database/media/index/portal.svg'
+            text: Портал Azure
+            href: /azure/postgresql/quickstart-create-server-database-portal
+          - image:
+              src: 'https://docs.microsoft.com/azure/sql-database/media/index/cli.svg'
+            text: Инфраструктура CLI Azure
+            href: /azure/postgresql/quickstart-create-server-database-azure-cli
+  - title: Пошаговые руководства
     items:
-    - html: 'Проектирование базы данных: <a href="/azure/postgresql/tutorial-design-database-using-azure-portal">портал Azure</a> | <a href="/azure/postgresql/tutorial-design-database-using-azure-cli">Azure CLI</a>'
-    - html: <a href="/azure/app-service/containers/tutorial-python-postgresql-app?toc=%2fazure%2fpostgresql%2ftoc.json">Создание веб-приложения с помощью Python и CLI</a>
-    - html: <a href="/azure/postgresql/tutorial-monitor-and-tune">Мониторинг и настройка службы</a>
-- title: Развитие навыков с помощью Microsoft Learn
-  items:
-  - type: list
-    style: cards
-    className: cardsFTitle
+      - type: paragraph
+        text: 'Вы узнаете, как выполнять следующие задачи:'
+      - type: list
+        style: ordered
+        items:
+          - html: 'Проектирование базы данных: <a href="/azure/postgresql/tutorial-design-database-using-azure-portal">портал Azure</a> | <a href="/azure/postgresql/tutorial-design-database-using-azure-cli">Azure CLI</a>'
+          - html: <a href="/azure/app-service/containers/tutorial-python-postgresql-app?toc=%2fazure%2fpostgresql%2ftoc.json">Создание веб-приложения с помощью Python и CLI</a>
+          - html: <a href="/azure/postgresql/tutorial-monitor-and-tune">Мониторинг и настройка службы</a>
+  - title: Развитие навыков с помощью Microsoft Learn
     items:
-    - title: Создание сервера базы данных Azure для PostgreSQL
-      href: /learn/modules/create-azure-db-for-postgresql-server/
-      image:
-        src: /learn/achievements/create-azure-db-for-postgresql-server.svg
-        href: /learn/modules/create-azure-db-for-postgresql-server/
-  - type: paragraph
-    text: <a href="/learn/browse/?products=azure">Другие интерактивные руководства</a>
-- title: Примеры
-  items:
-  - type: paragraph
-    text: Поиск скриптов для выполнения типовых задач.
-  - type: list
-    style: unordered
-    className: spaced noBullet
+      - type: list
+        style: cards
+        className: cardsFTitle
+        items:
+          - title: Создание сервера базы данных Azure для PostgreSQL
+            href: /learn/modules/create-azure-db-for-postgresql-server/
+            image:
+              src: /learn/achievements/create-azure-db-for-postgresql-server.svg
+              href: /learn/modules/create-azure-db-for-postgresql-server/
+      - type: paragraph
+        text: <a href="/learn/browse/?products=azure">Другие интерактивные руководства</a>
+  - title: Примеры
     items:
-    - html: <a href="/azure/postgresql/sample-scripts-azure-cli">Интерфейс командной строки Azure</a>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: paragraph
+        text: Поиск скриптов для выполнения типовых задач.
+      - type: list
+        style: unordered
+        className: spaced noBullet
+        items:
+          - html: <a href="/azure/postgresql/sample-scripts-azure-cli">Интерфейс командной строки Azure</a>
+  - title: Справочные материалы
     items:
-    - title: Командная строка
-      html: <p><a href="/cli/azure/postgres">Интерфейс командной строки Azure</a></p>
-    - title: REST
-      html: <p><a href="/rest/api/postgresql">REST API</a></p>
-    - title: Azure Resource Manager
-      html: <p><a href="/azure/templates/microsoft.dbforpostgresql/allversions">Шаблоны Resource Manager</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Командная строка
+            html: <p><a href="/cli/azure/postgres">Интерфейс командной строки Azure</a></p>
+          - title: REST
+            html: <p><a href="/rest/api/postgresql">REST API</a></p>
+          - title: Azure Resource Manager
+            html: <p><a href="/azure/templates/microsoft.dbforpostgresql/allversions">Шаблоны Resource Manager</a></p>

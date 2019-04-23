@@ -1,16 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 2f8e833088ffdf819e387fd28ae88508d5fe6d00
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58519938"
 abstract:
-  description: Узнайте, как встраивать интеллектуальные алгоритмы в приложения и веб-сайты, используя решения "Машинное обучение Azure".  Руководства, краткие инструкции, справочники по API и примеры использования.
+  description: 'Узнайте, как встраивать интеллектуальные алгоритмы в приложения и веб-сайты, используя решения "Машинное обучение Azure".  Руководства, краткие инструкции, справочники по API и примеры использования.'
 documentType: LandingData
 metadata:
   author: j-martens
-  description: Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, позволяющие видеть, слышать, говорить и понимать потребности клиентов с помощью обычных средств связи. Руководства, краткие инструкции, справочники по API и примеры использования.
+  description: 'Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, позволяющие видеть, слышать, говорить и понимать потребности клиентов с помощью обычных средств связи. Руководства, краткие инструкции, справочники по API и примеры использования.'
   ms.author: jmartens
   ms.subservice: core
   ms.date: 12/04/2018
@@ -21,84 +15,84 @@ metadata:
   services: machine-learning
   title: Документация по Службе "Машинное обучение Azure". Руководства и справочник по API | Документация Майкрософт
 sections:
-- items:
-  - className: cardsM
-    columns: 2
-    items:
-    - href: /azure/machine-learning/service/overview-what-is-azure-ml
-      html: <p>Узнайте, как эта служба помогает специалистам по обработке и анализу данных разрабатывать и администрировать решения ИИ<br/> с помощью Azure CLI и средств Python, а также библиотек с разными службами обработки данных и службами вычислений Azure. Подробнее</p>
-      image:
-        src: /azure/machine-learning/media/index/i_machine-learning.svg
-      title: Служба "Машинное обучение Azure"
-    style: cards
-    type: list
-- items:
-  - text: Установка и начало работы со службой "Машинное обучение Azure"
-    type: paragraph
-  - text: <b>Краткие руководства</b>
-    type: paragraph
   - items:
-    - html: <a href="service/quickstart-run-cloud-notebook">Запуск эксперимента в облаке</a> (установка не требуется).
-    - html: <a href="service/quickstart-run-local-notebook">Запуск эксперимента с использованием сервера записных книжек</a> (локальная установка пакета SDK).
-    style: unordered
-    type: list
-  - text: <b>Руководство по классификации изображений с использованием данных MNIST</b>
-    type: paragraph
+      - className: cardsM
+        columns: 2
+        items:
+          - href: /azure/machine-learning/service/overview-what-is-azure-ml
+            html: '<p>Узнайте, как эта служба помогает специалистам по обработке и анализу данных разрабатывать и администрировать решения ИИ<br/> с помощью Azure CLI и средств Python, а также библиотек с разными службами обработки данных и службами вычислений Azure. Подробнее</p>'
+            image:
+              src: /azure/machine-learning/media/index/i_machine-learning.svg
+            title: Служба "Машинное обучение Azure"
+        style: cards
+        type: list
   - items:
-    - html: Часть 1. <a href="service/tutorial-train-models-with-aml">Обучение собственной модели</a>
-    - html: Часть 2. <a href="service/tutorial-deploy-models-with-aml">Развертывание этой модели</a>
-    style: unordered
-    type: list
-  - text: <b>Руководство по моделированию регрессии с данными о поездках в такси Нью-Йорка</b>
-    type: paragraph
+      - text: Установка и начало работы со службой "Машинное обучение Azure"
+        type: paragraph
+      - text: <b>Краткие руководства</b>
+        type: paragraph
+      - items:
+          - html: <a href="service/quickstart-run-cloud-notebook">Запуск эксперимента в облаке</a> (установка не требуется).
+          - html: <a href="service/quickstart-run-local-notebook">Запуск эксперимента с использованием сервера записных книжек</a> (локальная установка пакета SDK).
+        style: unordered
+        type: list
+      - text: <b>Руководство по классификации изображений с использованием данных MNIST</b>
+        type: paragraph
+      - items:
+          - html: Часть 1. <a href="service/tutorial-train-models-with-aml">Обучение собственной модели</a>
+          - html: Часть 2. <a href="service/tutorial-deploy-models-with-aml">Развертывание этой модели</a>
+        style: unordered
+        type: list
+      - text: <b>Руководство по моделированию регрессии с данными о поездках в такси Нью-Йорка</b>
+        type: paragraph
+      - items:
+          - html: Часть 1. <a href="service/tutorial-data-prep">Подготовка данных для построения модели</a>
+          - html: Часть 2. <a href="service/tutorial-auto-train-models">Автоматическое обучение моделей в службе "Машинное обучение"</a>
+        style: unordered
+        type: list
+      - text: <b>Работа с собственными моделями</b>
+        type: paragraph
+      - items:
+          - html: <a href="service/how-to-consume-web-service">Использование модели для запроса и получения данных</a>
+          - html: <a href="service/how-to-run-batch-predictions">Пакетное прогнозирование с помощью конвейеров машинного обучения</a>
+        style: unordered
+        type: list
+    title: Краткие руководства
   - items:
-    - html: Часть 1. <a href="service/tutorial-data-prep">Подготовка данных для построения модели</a>
-    - html: Часть 2. <a href="service/tutorial-auto-train-models">Автоматическое обучение моделей в службе "Машинное обучение"</a>
-    style: unordered
-    type: list
-  - text: <b>Работа с собственными моделями</b>
-    type: paragraph
-  - items:
-    - html: <a href="service/how-to-consume-web-service">Использование модели для запроса и получения данных</a>
-    - html: <a href="service/how-to-run-batch-predictions">Пакетное прогнозирование с помощью конвейеров машинного обучения</a>
-    style: unordered
-    type: list
-  title: Краткие руководства
-- items:
-  - className: cardsM
-    columns: 2
-    items:
-    - href: /azure/cognitive-services/
-      html: <p>API, предоставляющие интеллектуальные алгоритмы для приложений, веб-сайтов и программ-роботов.</p>
-      image:
-        src: /azure/machine-learning/media/index/cognitive-services.png
-      title: Cognitive Services
-    - href: /azure/machine-learning/studio/
-      html: <p>Инструмент для совместной работы, поддерживающий функцию перетаскивания объектов и предназначенный для создания, тестирования и развертывания решений для прогнозной аналитики с помощью R или Python. </p>
-      image:
-        src: /azure/machine-learning/media/index/machine-learning-studio.svg
-      title: Студия машинного обучения Azure
-    - href: /sql/advanced-analytics/r/r-services
-      html: <p>Аналитика в базе данных с поддержкой R и Python.</p>
-      image:
-        src: /azure/machine-learning/media/index/logo_sql.png
-      title: Службы машинного обучения SQL Server
-    - href: /machine-learning-server/
-      html: <p>Гибкая корпоративная платформа машинного обучения, поддерживающая развертывания R и Python в Windows и Linux, а также в кластерах HDInsight Spark и Hadoop.</p>
-      image:
-        src: /azure/machine-learning/media/index/ml-server.png
-      title: Сервер машинного обучения Майкрософт.
-    - href: /azure/machine-learning/team-data-science-process
-      html: <p>Командный процесс обработки и анализа данных, который позволяет специалистам эффективно доставлять решения прогнозной аналитики и интеллектуальные приложения.</p>
-      image:
-        src: /azure/machine-learning/media/index/tdsp.png
-      title: Процесс обработки и анализа данных группы
-    - href: /azure/machine-learning/data-science-virtual-machine/
-      html: <p>Эксперименты, выполняемые без установки и настройки программного обеспечения, с использованием Виртуальных машин для обработки и анализа данных и глубокого обучения. Популярные средства аналитики данных, машинного обучения и ИИ являются предварительно установленными.</p>
-      image:
-        src: /azure/machine-learning/media/index/virtualmachine.svg
-      title: Виртуальная машина для обработки и анализа данных
-    style: cards
-    type: list
-  title: Другие технологии машинного обучения Майкрософт
+      - className: cardsM
+        columns: 2
+        items:
+          - href: /azure/cognitive-services/
+            html: '<p>API, предоставляющие интеллектуальные алгоритмы для приложений, веб-сайтов и программ-роботов.</p>'
+            image:
+              src: /azure/machine-learning/media/index/cognitive-services.png
+            title: Cognitive Services
+          - href: /azure/machine-learning/studio/
+            html: "<p>Инструмент для совместной работы, поддерживающий функцию перетаскивания объектов и предназначенный для создания, тестирования и развертывания решений для прогнозной аналитики с помощью R или Python.\_</p>"
+            image:
+              src: /azure/machine-learning/media/index/machine-learning-studio.svg
+            title: Студия машинного обучения Azure
+          - href: /sql/advanced-analytics/r/r-services
+            html: <p>Аналитика в базе данных с поддержкой R и Python.</p>
+            image:
+              src: /azure/machine-learning/media/index/logo_sql.png
+            title: Службы машинного обучения SQL Server
+          - href: /machine-learning-server/
+            html: '<p>Гибкая корпоративная платформа машинного обучения, поддерживающая развертывания R и Python в Windows и Linux, а также в кластерах HDInsight Spark и Hadoop.</p>'
+            image:
+              src: /azure/machine-learning/media/index/ml-server.png
+            title: Сервер машинного обучения Майкрософт.
+          - href: /azure/machine-learning/team-data-science-process
+            html: '<p>Командный процесс обработки и анализа данных, который позволяет специалистам эффективно доставлять решения прогнозной аналитики и интеллектуальные приложения.</p>'
+            image:
+              src: /azure/machine-learning/media/index/tdsp.png
+            title: Процесс обработки и анализа данных группы
+          - href: /azure/machine-learning/data-science-virtual-machine/
+            html: '<p>Эксперименты, выполняемые без установки и настройки программного обеспечения, с использованием Виртуальных машин для обработки и анализа данных и глубокого обучения. Популярные средства аналитики данных, машинного обучения и ИИ являются предварительно установленными.</p>'
+            image:
+              src: /azure/machine-learning/media/index/virtualmachine.svg
+            title: Виртуальная машина для обработки и анализа данных
+        style: cards
+        type: list
+    title: Другие технологии машинного обучения Майкрософт
 title: Документация по машинному обучению Azure

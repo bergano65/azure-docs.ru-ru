@@ -1,55 +1,48 @@
-items:
 - name: Документация по Записным книжкам Azure
   href: index.yml
 - name: Обзор
   items:
-  - name: Общие сведения о Записных книжках Azure
-    href: azure-notebooks-overview.md
+    - name: Общие сведения о Записных книжках Azure
+      href: azure-notebooks-overview.md
 - name: Быстрое начало работы
   items:
-  - name: Вход и настройка идентификатора пользователя
-    href: quickstart-sign-in-azure-notebooks.md
-  - name: Создание и совместное использование записной книжки
-    href: quickstart-create-share-jupyter-notebook.md
-  - name: Клонирование записной книжки
-    href: quickstart-clone-jupyter-notebook.md
-  - name: Перенос локальной записной книжки Jupyter
-    href: quickstart-migrate-local-jupyter-notebook.md
-  - name: Использование настраиваемой среды
-    href: quickstart-create-jupyter-notebook-project-environment.md
+    - name: Вход и настройка идентификатора пользователя
+      href: quickstart-sign-in-azure-notebooks.md
+    - name: Создание и совместное использование записной книжки
+      href: quickstart-create-share-jupyter-notebook.md
+    - name: Клонирование записной книжки
+      href: quickstart-clone-jupyter-notebook.md
+    - name: Перенос локальной записной книжки Jupyter
+      href: quickstart-migrate-local-jupyter-notebook.md
+    - name: Использование настраиваемой среды
+      href: quickstart-create-jupyter-notebook-project-environment.md
 - name: Учебники
   items:
-  - name: Создание и запуск записной книжки
-    href: tutorial-create-run-jupyter-notebook.md
+    - name: Создание и запуск записной книжки
+      href: tutorial-create-run-jupyter-notebook.md
 - name: Примеры
   items:
-  - name: Примеры записных книжек
-    href: azure-notebooks-samples.md
+    - name: Примеры записных книжек
+      href: azure-notebooks-samples.md
 - name: Основные понятия
   items:
-  - name: учетные записи;
-    href: azure-notebooks-user-account.md
-  - name: Профили
-    href: azure-notebooks-user-profile.md
+    - name: учетные записи;
+      href: azure-notebooks-user-account.md
+    - name: Профили
+      href: azure-notebooks-user-profile.md
 - name: Практические руководства
   items:
-  - name: Создание и клонирование проектов
-    href: create-clone-jupyter-notebooks.md
-  - name: Администрирование и настройка проектов
-    href: configure-manage-azure-notebooks-projects.md
-  - name: Установка пакетов в записной книжке
-    href: install-packages-jupyter-notebook.md
-  - name: Представление слайд-шоу
-    href: present-jupyter-notebooks-slideshow.md
-  - name: Работа с файлами данных
-    href: work-with-project-data-files.md
-  - name: Доступ к ресурсам данных
-    href: access-data-resources-jupyter-notebooks.md
-  - name: Работа со Службами машинного обучения Azure
-    href: use-machine-learning-services-jupyter-notebooks.md
-ms.openlocfilehash: 95122e9ec45fb606e07a29e474e411d6e49278c0
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52852414"
+    - name: Создание и клонирование проектов
+      href: create-clone-jupyter-notebooks.md
+    - name: Администрирование и настройка проектов
+      href: configure-manage-azure-notebooks-projects.md
+    - name: Установка пакетов в записной книжке
+      href: install-packages-jupyter-notebook.md
+    - name: Представление слайд-шоу
+      href: present-jupyter-notebooks-slideshow.md
+    - name: Работа с файлами данных
+      href: work-with-project-data-files.md
+    - name: Доступ к ресурсам данных
+      href: access-data-resources-jupyter-notebooks.md
+    - name: Работа со Службами машинного обучения Azure
+      href: use-machine-learning-services-jupyter-notebooks.md

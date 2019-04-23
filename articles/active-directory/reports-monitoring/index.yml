@@ -1,16 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 854e944d91c5d43131cf6a9c05e69d5684267022
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55161806"
 documentType: LandingData
 title: Создание отчетов и мониторинг в Azure Active Directory
 metadata:
-  document_id: 
-  title: 'Документация по отчетам и мониторингу Azure Active Directory B2B: руководства, краткие инструкции, основные понятия | Документация Майкрософт'
-  description: Узнайте, как настроить и протестировать решения Azure Active Directory для создания отчетов и мониторинга
+  document_id: null
+  title: "Документация по отчетам и мониторингу Azure Active Directory B2B: руководства, краткие инструкции, основные понятия\_| Документация Майкрософт"
+  description: 'Узнайте, как настроить и протестировать решения Azure Active Directory для создания отчетов и мониторинга'
   services: active-directory
   ms.subservice: report-monitor
   author: priyamohanram
@@ -22,33 +16,33 @@ metadata:
   ms.date: 08/14/2018
   ms.author: priyamo
 abstract:
-  description: Узнайте, как просматривать отчеты о безопасности и аудите для своей среды или выполнять мониторинг в динамике, чтобы получать ценные сведения об особенностях использования ресурсов. Отчеты Azure Active Directory (Azure AD) содержат ценные сведения о безопасности и особенностях использования ресурсов в вашей среде. Например, вы можете получить ответы на следующие вопросы:<ul><li>Как именно пользователи используют приложения или службы?</li><li>Каковы потенциальные риски, которые могут повлиять на работоспособность среды?</li><li>Как устранить неполадки, влияющие на работу пользователей?</li>
+  description: "Узнайте, как просматривать отчеты о безопасности и аудите для своей среды или выполнять мониторинг в динамике, чтобы получать ценные сведения об особенностях использования ресурсов. Отчеты Azure Active Directory (Azure\_AD) содержат ценные сведения о безопасности и особенностях использования ресурсов в вашей среде. Например, вы можете получить ответы на следующие вопросы:<ul><li>Как именно пользователи используют приложения или службы?</li><li>Каковы потенциальные риски, которые могут повлиять на работоспособность среды?</li><li>Как устранить неполадки, влияющие на работу пользователей?</li>"
 sections:
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: Узнайте, как скачать отчеты о действиях и передать журналы в учетную запись хранения Azure
-  - type: list
-    style: unordered
+  - title: 5-минутные руководства по началу работы
     items:
-    - html: <a href="/azure/active-directory/reports-monitoring/quickstart-download-sign-in-report">Скачивание отчета о действиях входа</a>
-    - html: <a href="/azure/active-directory/reports-monitoring/quickstart-download-audit-report">Скачивание отчета об аудите</a>
-    - html: <a href="/azure/active-directory/reports-monitoring/quickstart-install-power-bi-content-pack">Установка пакета содержимого Power BI для отчетов</a>
-    - html: <a href="/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account">Передача журналов в учетную запись хранения</a>
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: Узнайте, как получить доступ к отчетам и выполнять потоковую передачу журналов действий в систему мониторинга по своему усмотрению
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: 'Узнайте, как скачать отчеты о действиях и передать журналы в учетную запись хранения Azure'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/azure/active-directory/reports-monitoring/quickstart-download-sign-in-report">Скачивание отчета о действиях входа</a>
+          - html: <a href="/azure/active-directory/reports-monitoring/quickstart-download-audit-report">Скачивание отчета об аудите</a>
+          - html: "<a href=\"/azure/active-directory/reports-monitoring/quickstart-install-power-bi-content-pack\">Установка пакета содержимого Power\_BI для отчетов</a>"
+          - html: <a href="/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account">Передача журналов в учетную запись хранения</a>
+  - title: Пошаговые руководства
     items:
-    - html: <a href="/azure/active-directory/reports-monitoring/tutorial-access-api-with-certificates">Программный доступ к API отчетов с использованием сертификатов</a>
-    - html: <a href="/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub">Потоковая передача журналов действий в концентратор событий</a>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: 'Узнайте, как получить доступ к отчетам и выполнять потоковую передачу журналов действий в систему мониторинга по своему усмотрению'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/azure/active-directory/reports-monitoring/tutorial-access-api-with-certificates">Программный доступ к API отчетов с использованием сертификатов</a>
+          - html: <a href="/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub">Потоковая передача журналов действий в концентратор событий</a>
+  - title: Справочные материалы
     items:
-    - html: <a href="/azure/active-directory/reports-monitoring/reference-sign-ins-error-codes">Коды ошибок входа</a>
-    - html: <a href="/azure/active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema">Схема журналов аудита Azure AD в Azure Monitor</a>
-    - html: <a href="/azure/active-directory/reports-monitoring/reference-azure-monitor-sign-ins-log-schema">Схема журналов входа Azure AD в Azure Monitor</a>
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/azure/active-directory/reports-monitoring/reference-sign-ins-error-codes">Коды ошибок входа</a>
+          - html: "<a href=\"/azure/active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema\">Схема журналов аудита Azure\_AD в Azure Monitor</a>"
+          - html: "<a href=\"/azure/active-directory/reports-monitoring/reference-azure-monitor-sign-ins-log-schema\">Схема журналов входа Azure\_AD в Azure Monitor</a>"

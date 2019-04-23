@@ -1,52 +1,45 @@
-items:
 - name: Документация по Project Acoustics
 - name: Обзор
   items:
-  - name: Что такое Project Acoustics?
-    href: what-is-acoustics.md
+    - name: Что такое Project Acoustics?
+      href: what-is-acoustics.md
 - name: Быстрое начало работы
   items:
-  - name: Краткое руководство по использованию Unity
-    href: unity-quickstart.md
-  - name: Краткое руководство по использованию Unreal
-    href: unreal-quickstart.md
+    - name: Краткое руководство по использованию Unity
+      href: unity-quickstart.md
+    - name: Краткое руководство по использованию Unreal
+      href: unreal-quickstart.md
 - name: Учебники
   items:
-  - name: Unity
-    items:
-    - name: Акустическое моделирование с помощью Unity
-      href: unity-baking.md
-    - name: Рабочий процесс разработки для Unity
-      href: unity-workflow.md
-  - name: Unreal/Wwise
-    items:
-    - name: Акустическое моделирование с помощью Unreal/Wwise
-      href: unreal-baking.md
-    - name: Рабочий процесс разработки для Unreal/Wwise
-      href: unreal-workflow.md
+    - name: Unity
+      items:
+        - name: Акустическое моделирование с помощью Unity
+          href: unity-baking.md
+        - name: Рабочий процесс разработки для Unity
+          href: unity-workflow.md
+    - name: Unreal/Wwise
+      items:
+        - name: Акустическое моделирование с помощью Unreal/Wwise
+          href: unreal-baking.md
+        - name: Рабочий процесс разработки для Unreal/Wwise
+          href: unreal-workflow.md
 - name: Основные понятия
   items:
-  - name: Принципы разработки с использованием акустического моделирования
-    href: design-process.md
-  - name: Разрешение в акустическом моделировании
-    href: bake-resolution.md
+    - name: Принципы разработки с использованием акустического моделирования
+      href: design-process.md
+    - name: Разрешение в акустическом моделировании
+      href: bake-resolution.md
 - name: Инструкции
   items:
-  - name: Создание учетной записи пакетной службы Azure
-    href: create-azure-account.md
-  - name: Интеграция Project Acoustics с Unity
-    href: unity-integration.md
-  - name: Интеграция Project Acoustics с Unreal и Wwise
-    href: unreal-integration.md
+    - name: Создание учетной записи пакетной службы Azure
+      href: create-azure-account.md
+    - name: Интеграция Project Acoustics с Unity
+      href: unity-integration.md
+    - name: Интеграция Project Acoustics с Unreal и Wwise
+      href: unreal-integration.md
 - name: Ресурсы
   items:
-  - name: Часто задаваемые вопросы
-    href: faq.md
-  - name: Известные проблемы
-    href: known-issues.md
-ms.openlocfilehash: 0a445890369e48f61dfa545d7107f46e3d0675a1
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59787889"
+    - name: Часто задаваемые вопросы
+      href: faq.md
+    - name: Известные проблемы
+      href: known-issues.md

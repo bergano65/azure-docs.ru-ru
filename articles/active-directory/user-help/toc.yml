@@ -1,113 +1,106 @@
-items:
 - name: Справочная документация для пользователей
   href: index.md
 - name: Справка по двухфакторной проверке подлинности
   items:
-  - name: Обзор
-    href: user-help-two-step-verification-overview.md
-  - name: Настройка учетной записи
-    href: multi-factor-authentication-end-user-first-time.md
-  - name: Управление параметрами
-    href: multi-factor-authentication-end-user-manage-settings.md
-  - name: Получение справки
-    href: multi-factor-authentication-end-user-troubleshoot.md
-  - name: Управление паролями приложений
-    href: multi-factor-authentication-end-user-app-passwords.md
-  - name: Вход
-    href: user-help-sign-in.md?toc=./toc.json
+    - name: Обзор
+      href: user-help-two-step-verification-overview.md
+    - name: Настройка учетной записи
+      href: multi-factor-authentication-end-user-first-time.md
+    - name: Управление параметрами
+      href: multi-factor-authentication-end-user-manage-settings.md
+    - name: Получение справки
+      href: multi-factor-authentication-end-user-troubleshoot.md
+    - name: Управление паролями приложений
+      href: multi-factor-authentication-end-user-app-passwords.md
+    - name: Вход
+      href: user-help-sign-in.md?toc=./toc.json
 - name: Справка по сбросу пароля
   items:
-  - name: Обзор
-    href: user-help-password-reset-overview.md
-  - name: Регистрация для сброса пароля
-    href: active-directory-passwords-reset-register.md
-  - name: Сброс пароля
-    href: user-help-reset-password.md
+    - name: Обзор
+      href: user-help-password-reset-overview.md
+    - name: Регистрация для сброса пароля
+      href: active-directory-passwords-reset-register.md
+    - name: Сброс пароля
+      href: user-help-reset-password.md
 - name: Справка по приложению Microsoft Authenticator
   items:
-  - name: Обзор
-    href: user-help-auth-app-overview.md
-  - name: Скачивание и установка приложения
-    href: user-help-auth-app-download-install.md
-  - name: Общие сведения о добавлении учетных записей
-    href: user-help-auth-app-add-account-overview.md
-    items:
-    - name: Добавление рабочей или учебной учетной записи
-      href: user-help-auth-app-add-work-school-account.md
-    - name: Добавление личной учетной записи Майкрософт
-      href: user-help-auth-app-add-personal-ms-account.md
-    - name: Добавление учетной записи стороннего поставщика (не Майкрософт)
-      href: user-help-auth-app-add-non-ms-account.md
-    - name: Добавление учетной записи вручную
-      href: user-help-auth-app-add-account-manual.md
-  - name: Вход с помощью приложения Microsoft Authenticator
-    href: user-help-auth-app-sign-in.md
-  - name: Резервное копирование и восстановление учетных записей
-    href: user-help-auth-app-backup-recovery.md
-  - name: Часто задаваемые вопросы
-    href: user-help-auth-app-faq.md
+    - name: Обзор
+      href: user-help-auth-app-overview.md
+    - name: Скачивание и установка приложения
+      href: user-help-auth-app-download-install.md
+    - name: Общие сведения о добавлении учетных записей
+      href: user-help-auth-app-add-account-overview.md
+      items:
+        - name: Добавление рабочей или учебной учетной записи
+          href: user-help-auth-app-add-work-school-account.md
+        - name: Добавление личной учетной записи Майкрософт
+          href: user-help-auth-app-add-personal-ms-account.md
+        - name: Добавление учетной записи стороннего поставщика (не Майкрософт)
+          href: user-help-auth-app-add-non-ms-account.md
+        - name: Добавление учетной записи вручную
+          href: user-help-auth-app-add-account-manual.md
+    - name: Вход с помощью приложения Microsoft Authenticator
+      href: user-help-auth-app-sign-in.md
+    - name: Резервное копирование и восстановление учетных записей
+      href: user-help-auth-app-backup-recovery.md
+    - name: Часто задаваемые вопросы
+      href: user-help-auth-app-faq.md
 - name: Справка по предварительной версии параметра "Мой профиль" на портале
   items:
-  - name: Обзор
-    href: myprofile-portal-overview.md
-  - name: Управление сведениями для защиты
-    href: user-help-security-info-overview.md
-  - name: Управление организациями
-    href: myprofile-portal-organizations-page.md
-  - name: Управление подключенными устройствами
-    href: myprofile-portal-devices-page.md
-  - name: Просмотр сведений, связанных с конфиденциальностью
-    href: myprofile-portal-privacy-page.md
+    - name: Обзор
+      href: myprofile-portal-overview.md
+    - name: Управление сведениями для защиты
+      href: user-help-security-info-overview.md
+    - name: Управление организациями
+      href: myprofile-portal-organizations-page.md
+    - name: Управление подключенными устройствами
+      href: myprofile-portal-devices-page.md
+    - name: 'Просмотр сведений, связанных с конфиденциальностью'
+      href: myprofile-portal-privacy-page.md
 - name: Справка по сведениям для защиты (предварительная версия)
   items:
-  - name: Обзор
-    href: user-help-security-info-overview.md
-  - name: Добавление сведений для защиты при входе в систему
-    href: security-info-setup-signin.md
-  - name: Обзор методов добавления или обновления сведений для защиты
-    href: security-info-add-update-methods-overview.md
-    items:
-    - name: Настройка приложения Authenticator
-      href: security-info-setup-auth-app.md
-    - name: Настройка обмена текстовыми сообщениями
-      href: security-info-setup-text-msg.md
-    - name: Настройка телефонных звонков
-      href: security-info-setup-phone-number.md
-    - name: Настройка адреса электронной почты
-      href: security-info-setup-email.md
-    - name: Настройка контрольных вопросов
-      href: security-info-setup-questions.md
-  - name: Управление паролями приложений
-    href: security-info-app-passwords.md
-  - name: Вход
-    href: user-help-sign-in.md?toc=./toc.json
+    - name: Обзор
+      href: user-help-security-info-overview.md
+    - name: Добавление сведений для защиты при входе в систему
+      href: security-info-setup-signin.md
+    - name: Обзор методов добавления или обновления сведений для защиты
+      href: security-info-add-update-methods-overview.md
+      items:
+        - name: Настройка приложения Authenticator
+          href: security-info-setup-auth-app.md
+        - name: Настройка обмена текстовыми сообщениями
+          href: security-info-setup-text-msg.md
+        - name: Настройка телефонных звонков
+          href: security-info-setup-phone-number.md
+        - name: Настройка адреса электронной почты
+          href: security-info-setup-email.md
+        - name: Настройка контрольных вопросов
+          href: security-info-setup-questions.md
+    - name: Управление паролями приложений
+      href: security-info-app-passwords.md
+    - name: Вход
+      href: user-help-sign-in.md?toc=./toc.json
 - name: Справка по управлению устройствами
   items:
-  - name: Обзор
-    href: user-help-device-mgmt-overview.md
-  - name: Присоединение рабочего устройства
-    href: user-help-join-device-on-network.md
-  - name: Регистрация личного устройства для работы
-    href: user-help-register-device-on-network.md
-  - name: Устранение проблемы с доступом
-    href: user-help-device-remediation.md
+    - name: Обзор
+      href: user-help-device-mgmt-overview.md
+    - name: Присоединение рабочего устройства
+      href: user-help-join-device-on-network.md
+    - name: Регистрация личного устройства для работы
+      href: user-help-register-device-on-network.md
+    - name: Устранение проблемы с доступом
+      href: user-help-device-remediation.md
 - name: Справка по порталу "Мои приложения"
   items:
-  - name: Обзор
-    href: my-apps-portal-end-user-overview.md
-  - name: Доступ к порталу "Мои приложения" и его использование
-    href: my-apps-portal-end-user-access.md
-  - name: Изменение или обновление данных профиля
-    href: my-apps-portal-end-user-update-profile.md
-  - name: Обновление сведений о группах
-    href: my-apps-portal-end-user-groups.md
-  - name: Выполнение собственных проверок доступа
-    href: my-apps-portal-end-user-access-reviews.md
-  - name: Устранение неполадок
-    href: my-apps-portal-end-user-troubleshoot.md
-ms.openlocfilehash: be7c20053ab6ee3a18f81aec9dc973a3032aa5c6
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58339557"
+    - name: Обзор
+      href: my-apps-portal-end-user-overview.md
+    - name: Доступ к порталу "Мои приложения" и его использование
+      href: my-apps-portal-end-user-access.md
+    - name: Изменение или обновление данных профиля
+      href: my-apps-portal-end-user-update-profile.md
+    - name: Обновление сведений о группах
+      href: my-apps-portal-end-user-groups.md
+    - name: Выполнение собственных проверок доступа
+      href: my-apps-portal-end-user-access-reviews.md
+    - name: Устранение неполадок
+      href: my-apps-portal-end-user-troubleshoot.md

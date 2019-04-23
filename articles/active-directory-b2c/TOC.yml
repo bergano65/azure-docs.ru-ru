@@ -1,340 +1,333 @@
-items:
 - name: Документация по Azure AD B2C
   href: index.yml
 - name: Обзор
   items:
-  - name: Общие сведения об Azure AD B2C
-    href: active-directory-b2c-overview.md
-    expanded: true
+    - name: Общие сведения об Azure AD B2C
+      expanded: true
+      href: active-directory-b2c-overview.md
 - name: Быстрое начало работы
-  items:
-  - name: Настройка входа (ASP.NET)
-    href: active-directory-b2c-quickstarts-web-app.md
-  - name: Настройка входа (классические приложения)
-    href: active-directory-b2c-quickstarts-desktop-app.md
-  - name: Настройка входа (одностраничные приложения)
-    href: active-directory-b2c-quickstarts-spa.md
   expanded: true
+  items:
+    - name: Настройка входа (ASP.NET)
+      href: active-directory-b2c-quickstarts-web-app.md
+    - name: Настройка входа (классические приложения)
+      href: active-directory-b2c-quickstarts-desktop-app.md
+    - name: Настройка входа (одностраничные приложения)
+      href: active-directory-b2c-quickstarts-spa.md
 - name: Учебники
   items:
-  - name: 1. Создание клиента B2C
-    href: tutorial-create-tenant.md
-  - name: 2. Регистрация приложения
-    href: tutorial-register-applications.md
-  - name: 3. Создание потоков пользователей
-    href: tutorial-create-user-flows.md
-  - name: Добавление поставщиков удостоверений
-    href: tutorial-add-identity-providers.md
-  - name: Настройка пользовательского интерфейса
-    href: tutorial-customize-ui.md
-  - name: Аутентификация учетных записей
-    items:
-    - name: 'ASP.NET:'
-      href: active-directory-b2c-tutorials-web-app.md
-    - name: Классические приложения
-      href: active-directory-b2c-tutorials-desktop-app.md
-    - name: Одностраничное приложение
-      href: active-directory-b2c-tutorials-spa.md
-  - name: Предоставление доступа через API
-    items:
-    - name: 'ASP.NET:'
-      href: active-directory-b2c-tutorials-web-api.md
-    - name: Классические приложения
-      href: active-directory-b2c-tutorials-desktop-app-webapi.md
-    - name: Одностраничное приложение
-      href: active-directory-b2c-tutorials-spa-webapi.md
+    - name: 1. Создание клиента B2C
+      href: tutorial-create-tenant.md
+    - name: "2.\_Регистрация приложения"
+      href: tutorial-register-applications.md
+    - name: "3.\_Создание потоков пользователей"
+      href: tutorial-create-user-flows.md
+    - name: Добавление поставщиков удостоверений
+      href: tutorial-add-identity-providers.md
+    - name: Настройка пользовательского интерфейса
+      href: tutorial-customize-ui.md
+    - name: Аутентификация учетных записей
+      items:
+        - name: 'ASP.NET:'
+          href: active-directory-b2c-tutorials-web-app.md
+        - name: Классические приложения
+          href: active-directory-b2c-tutorials-desktop-app.md
+        - name: Одностраничное приложение
+          href: active-directory-b2c-tutorials-spa.md
+    - name: Предоставление доступа через API
+      items:
+        - name: 'ASP.NET:'
+          href: active-directory-b2c-tutorials-web-api.md
+        - name: Классические приложения
+          href: active-directory-b2c-tutorials-desktop-app-webapi.md
+        - name: Одностраничное приложение
+          href: active-directory-b2c-tutorials-spa-webapi.md
 - name: Примеры
   href: code-samples.md
 - name: Основные понятия
   items:
-  - name: Типы приложений
-    href: active-directory-b2c-apps.md
-  - name: Протоколы проверки подлинности
-    href: active-directory-b2c-reference-protocols.md
-  - name: Инфраструктура процедур идентификации
-    items:
-    - name: Пользовательские политики
-      href: active-directory-b2c-overview-custom.md
-    - name: Доступ пользователей
-      href: manage-user-access.md
-  - name: OAuth 2.0
-    href: active-directory-b2c-reference-oauth-code.md
-  - name: OpenID Connect
-    href: active-directory-b2c-reference-oidc.md
-  - name: Одностраничный вход в систему
-    href: active-directory-b2c-reference-spa.md
-  - name: Маркеры
-    href: active-directory-b2c-reference-tokens.md
-  - name: Учетные записи пользователей
-    href: user-overview.md
-  - name: Пользовательские данные
-    href: manage-user-data.md
-  - name: Маршруты пользователей
-    href: active-directory-b2c-reference-policies.md
-  - name: Использование JavaScript в пользовательских потоках
-    href: user-flow-javascript-overview.md
-  - name: Настройка пользовательского интерфейса
-    href: customize-ui-overview.md
+    - name: Типы приложений
+      href: active-directory-b2c-apps.md
+    - name: Протоколы проверки подлинности
+      href: active-directory-b2c-reference-protocols.md
+    - name: Инфраструктура процедур идентификации
+      items:
+        - name: Пользовательские политики
+          href: active-directory-b2c-overview-custom.md
+        - name: Доступ пользователей
+          href: manage-user-access.md
+    - name: "OAuth\_2.0"
+      href: active-directory-b2c-reference-oauth-code.md
+    - name: OpenID Connect
+      href: active-directory-b2c-reference-oidc.md
+    - name: Одностраничный вход в систему
+      href: active-directory-b2c-reference-spa.md
+    - name: Маркеры
+      href: active-directory-b2c-reference-tokens.md
+    - name: Учетные записи пользователей
+      href: user-overview.md
+    - name: Пользовательские данные
+      href: manage-user-data.md
+    - name: Маршруты пользователей
+      href: active-directory-b2c-reference-policies.md
+    - name: Использование JavaScript в пользовательских потоках
+      href: user-flow-javascript-overview.md
+    - name: Настройка пользовательского интерфейса
+      href: customize-ui-overview.md
 - name: Практические руководства
   items:
-  - name: Доступ к журналам аудита
-    href: active-directory-b2c-reference-audit-logs.md
-  - name: Добавление приложения веб-API
-    href: add-web-application.md
-  - name: Добавление собственного клиентского приложения
-    href: add-native-application.md
-  - name: Настройка проверки возраста
-    href: basic-age-gating.md
-  - name: Настройка поведения сеанса
-    href: session-behavior.md
-  - name: Настройка языка
-    href: active-directory-b2c-reference-language-customization.md
-  - name: Настройка пароля
-    href: active-directory-b2c-reference-password-complexity.md
-  - name: Определение настраиваемых атрибутов
-    href: active-directory-b2c-reference-custom-attr.md
-  - name: Отключение проверки по электронной почте
-    href: active-directory-b2c-reference-disable-ev.md
-  - name: Включение MFA
-    href: active-directory-b2c-reference-mfa.md
-  - name: Инфраструктура процедур идентификации
-    items:
-    - name: Сбор журналов с помощью Application Insights
-      href: active-directory-b2c-troubleshoot-custom.md
-    - name: Настройка ROPC
-      href: ropc-custom.md
-    - name: Настройка пользовательского ввода
-      href: active-directory-b2c-configure-signup-self-asserted-custom.md
-    - name: Создание настраиваемой политики
-      href: active-directory-b2c-get-started-custom.md
-    - name: Настройка пользовательского интерфейса
-      href: active-directory-b2c-ui-customization-custom.md
-    - name: Настройка динамического содержимого в пользовательском интерфейсе
-      href: active-directory-b2c-ui-customization-custom-dynamic.md
+    - name: Доступ к журналам аудита
+      href: active-directory-b2c-reference-audit-logs.md
+    - name: Добавление приложения веб-API
+      href: add-web-application.md
+    - name: Добавление собственного клиентского приложения
+      href: add-native-application.md
+    - name: Настройка проверки возраста
+      href: basic-age-gating.md
+    - name: Настройка поведения сеанса
+      href: session-behavior.md
+    - name: Настройка языка
+      href: active-directory-b2c-reference-language-customization.md
+    - name: Настройка пароля
+      href: active-directory-b2c-reference-password-complexity.md
     - name: Определение настраиваемых атрибутов
-      href: active-directory-b2c-create-custom-attributes-profile-edit-custom.md
-    - name: Включение возможности оставаться в системе
-      href: active-directory-b2c-reference-kmsi-custom.md
-    - name: Интеграции API-интерфейсов RESTful
+      href: active-directory-b2c-reference-custom-attr.md
+    - name: Отключение проверки по электронной почте
+      href: active-directory-b2c-reference-disable-ev.md
+    - name: Включение MFA
+      href: active-directory-b2c-reference-mfa.md
+    - name: Инфраструктура процедур идентификации
       items:
-      - name: Проверка вводимых пользователем данных
-        href: active-directory-b2c-rest-api-validation-custom.md
-      - name: Получение дополнительных утверждений
-        href: active-directory-b2c-rest-api-step-custom.md
-      - name: Добавление собственных REST API
-        href: active-directory-b2c-custom-rest-api-netfw.md
-      - name: Защита REST API с помощью обычной аутентификации
-        href: active-directory-b2c-custom-rest-api-netfw-secure-basic.md
-      - name: Защита REST API с помощью аутентификации на основе сертификата
-        href: active-directory-b2c-custom-rest-api-netfw-secure-cert.md
-    - name: Поставщики OIDC/OAUTH
+        - name: Сбор журналов с помощью Application Insights
+          href: active-directory-b2c-troubleshoot-custom.md
+        - name: Настройка ROPC
+          href: ropc-custom.md
+        - name: Настройка пользовательского ввода
+          href: active-directory-b2c-configure-signup-self-asserted-custom.md
+        - name: Создание настраиваемой политики
+          href: active-directory-b2c-get-started-custom.md
+        - name: Настройка пользовательского интерфейса
+          href: active-directory-b2c-ui-customization-custom.md
+        - name: Настройка динамического содержимого в пользовательском интерфейсе
+          href: active-directory-b2c-ui-customization-custom-dynamic.md
+        - name: Определение настраиваемых атрибутов
+          href: active-directory-b2c-create-custom-attributes-profile-edit-custom.md
+        - name: Включение возможности оставаться в системе
+          href: active-directory-b2c-reference-kmsi-custom.md
+        - name: Интеграции API-интерфейсов RESTful
+          items:
+            - name: Проверка вводимых пользователем данных
+              href: active-directory-b2c-rest-api-validation-custom.md
+            - name: Получение дополнительных утверждений
+              href: active-directory-b2c-rest-api-step-custom.md
+            - name: Добавление собственных REST API
+              href: active-directory-b2c-custom-rest-api-netfw.md
+            - name: Защита REST API с помощью обычной аутентификации
+              href: active-directory-b2c-custom-rest-api-netfw-secure-basic.md
+            - name: Защита REST API с помощью аутентификации на основе сертификата
+              href: active-directory-b2c-custom-rest-api-netfw-secure-cert.md
+        - name: Поставщики OIDC/OAUTH
+          items:
+            - name: Amazon
+              href: setup-amazon-custom.md
+            - name: Azure AD (один клиент)
+              href: active-directory-b2c-setup-aad-custom.md
+            - name: Azure AD (несколько клиентов)
+              href: active-directory-b2c-setup-commonaad-custom.md
+            - name: Google
+              href: active-directory-b2c-custom-setup-goog-idp.md
+            - name: LinkedIn
+              href: active-directory-b2c-custom-setup-li-idp.md
+            - name: Учетная запись Майкрософт
+              href: active-directory-b2c-custom-setup-msa-idp.md
+            - name: Twitter
+              href: active-directory-b2c-custom-setup-twitter-idp.md
+        - name: Контракт страницы
+          href: page-contract.md
+        - name: Сложность пароля
+          href: active-directory-b2c-reference-password-complexity-custom.md
+        - name: Изменение пароля
+          href: active-directory-b2c-reference-password-change-custom.md
+        - name: Поставщики SAML
+          items:
+            - name: ADFS
+              href: active-directory-b2c-custom-setup-adfs2016-idp.md
+            - name: Salesforce
+              href: active-directory-b2c-setup-sf-app-custom.md
+        - name: Маркеры
+          items:
+            - name: Настройка маркеров
+              href: active-directory-b2c-reference-manage-sso-and-token-configuration.md
+            - name: Передача маркера доступа
+              href: idp-pass-through-custom.md
+        - name: Отслеживание поведения пользователя
+          href: active-directory-b2c-custom-guide-eventlogger-appins.md
+        - name: Справочные материалы
+          items:
+            - name: Арбитры утверждений
+              href: claim-resolver-overview.md
+            - name: Схема инфраструктуры процедур идентификации
+              items:
+                - name: TrustFrameworkPolicy
+                  href: trustframeworkpolicy.md
+                - name: BuildingBlocks
+                  href: buildingblocks.md
+                  items:
+                    - name: ClaimsSchema
+                      href: claimsschema.md
+                    - name: ClaimsTransformations
+                      href: claimstransformations.md
+                      items:
+                        - name: Логическое
+                          href: boolean-transformations.md
+                        - name: Дата
+                          href: date-transformations.md
+                        - name: Общие сведения
+                          href: general-transformations.md
+                        - name: 'Целое число '
+                          href: integer-transformations.md
+                        - name: JSON
+                          href: json-transformations.md
+                        - name: Учетные записи социальных сетей
+                          href: social-transformations.md
+                        - name: StringCollection
+                          href: stringcollection-transformations.md
+                        - name: Строка
+                          href: string-transformations.md
+                    - name: Предикаты
+                      href: predicates.md
+                    - name: ContentDefinitions
+                      href: contentdefinitions.md
+                    - name: Локализация
+                      href: localization.md
+                      items:
+                        - name: Идентификаторы строк локализации
+                          href: localization-string-ids.md
+                - name: ClaimsProviders
+                  href: claimsproviders.md
+                  items:
+                    - name: TechnicalProfiles
+                      href: technicalprofiles.md
+                      items:
+                        - name: Сведения о технических профилях
+                          href: technical-profiles-overview.md
+                        - name: Azure Active Directory
+                          href: active-directory-technical-profile.md
+                        - name: Преобразование утверждений
+                          href: claims-transformation-technical-profile.md
+                        - name: Поставщик токенов JWT
+                          href: jwt-issuer-technical-profile.md
+                        - name: OAuth1
+                          href: oauth1-technical-profile.md
+                        - name: OAuth2
+                          href: oauth2-technical-profile.md
+                        - name: OpenID Connect
+                          href: openid-connect-technical-profile.md
+                        - name: REST
+                          href: restful-technical-profile.md
+                        - name: SAML
+                          href: saml-technical-profile.md
+                        - name: Профиль с самостоятельным подтверждением
+                          href: self-asserted-technical-profile.md
+                        - name: Сеанс единого входа
+                          href: active-directory-b2c-reference-sso-custom.md
+                        - name: Проверка
+                          href: validation-technical-profile.md
+                - name: UserJourneys
+                  href: userjourneys.md
+                - name: RelyingParty
+                  href: relyingparty.md
+            - name: Примеры для JavaScript
+              href: javascript-samples.md
+            - name: Заметки для разработчиков
+              href: active-directory-b2c-developer-notes-custom.md
+            - name: Определение инфраструктуры доверия
+              href: active-directory-b2c-reference-trustframeworks-defined-ief-custom.md
+    - name: Поставщики удостоверений
       items:
-      - name: Amazon
-        href: setup-amazon-custom.md
-      - name: Azure AD (один клиент)
-        href: active-directory-b2c-setup-aad-custom.md
-      - name: Azure AD (несколько клиентов)
-        href: active-directory-b2c-setup-commonaad-custom.md
-      - name: Google
-        href: active-directory-b2c-custom-setup-goog-idp.md
-      - name: LinkedIn
-        href: active-directory-b2c-custom-setup-li-idp.md
-      - name: Учетная запись Майкрософт
-        href: active-directory-b2c-custom-setup-msa-idp.md
-      - name: Twitter
-        href: active-directory-b2c-custom-setup-twitter-idp.md
-    - name: Контракт страницы
-      href: page-contract.md
-    - name: Сложность пароля
-      href: active-directory-b2c-reference-password-complexity-custom.md
-    - name: Изменение пароля
-      href: active-directory-b2c-reference-password-change-custom.md
-    - name: Поставщики SAML
+        - name: Amazon
+          href: active-directory-b2c-setup-amzn-app.md
+        - name: Azure AD (для одного клиента)
+          href: active-directory-b2c-setup-oidc-azure-active-directory.md
+        - name: Учетная запись Майкрософт
+          href: active-directory-b2c-setup-msa-app.md
+        - name: Facebook
+          href: active-directory-b2c-setup-fb-app.md
+        - name: GitHub
+          href: active-directory-b2c-setup-github-app.md
+        - name: Google
+          href: active-directory-b2c-setup-goog-app.md
+        - name: LinkedIn
+          href: active-directory-b2c-setup-li-app.md
+        - name: OpenID Connect
+          href: active-directory-b2c-setup-oidc-idp.md
+        - name: Twitter
+          href: active-directory-b2c-setup-twitter-app.md
+    - name: Перенос пользователей
+      href: active-directory-b2c-user-migration.md
+    - name: Миграция пользователей с удостоверениями социальных сетей
+      href: active-directory-b2c-social-migration.md
+    - name: Классические и мобильные приложения
       items:
-      - name: ADFS
-        href: active-directory-b2c-custom-setup-adfs2016-idp.md
-      - name: Salesforce
-        href: active-directory-b2c-setup-sf-app-custom.md
+        - name: Использование iOS ObjC и AppAuth
+          href: active-directory-b2c-devquickstarts-ios.md
+        - name: Использование Android и AppAuth
+          href: active-directory-b2c-devquickstarts-android.md
+    - name: Отчеты об использовании
+      href: active-directory-b2c-reference-usage-reporting-api.md
+    - name: Учетные данные владельца ресурса
+      href: configure-ropc.md
+    - name: Настройка прямого входа в систему
+      href: direct-signin.md
+    - name: Настройка самостоятельного сброса пароля
+      href: active-directory-b2c-reference-sspr.md
     - name: Маркеры
       items:
-      - name: Настройка маркеров
-        href: active-directory-b2c-reference-manage-sso-and-token-configuration.md
-      - name: Передача маркера доступа
-        href: idp-pass-through-custom.md
-    - name: Отслеживание поведения пользователя
-      href: active-directory-b2c-custom-guide-eventlogger-appins.md
+        - name: Настройка маркеров
+          href: configure-tokens.md
+        - name: Передача маркера доступа
+          href: idp-pass-through-user-flow.md
+        - name: Запрос маркера доступа
+          href: active-directory-b2c-access-tokens.md
+    - name: Использование b2clogin.com
+      href: b2clogin.md
+    - name: Использование API Graph Azure AD
+      href: active-directory-b2c-devquickstarts-graph-dotnet.md
     - name: Справочные материалы
       items:
-      - name: Арбитры утверждений
-        href: claim-resolver-overview.md
-      - name: Схема инфраструктуры процедур идентификации
-        items:
-        - name: TrustFrameworkPolicy
-          href: trustframeworkpolicy.md
-        - name: BuildingBlocks
-          href: buildingblocks.md
-          items:
-          - name: ClaimsSchema
-            href: claimsschema.md
-          - name: ClaimsTransformations
-            href: claimstransformations.md
-            items:
-            - name: Логическое
-              href: boolean-transformations.md
-            - name: Дата
-              href: date-transformations.md
-            - name: Общие сведения
-              href: general-transformations.md
-            - name: 'Целое число '
-              href: integer-transformations.md
-            - name: JSON
-              href: json-transformations.md
-            - name: Учетные записи социальных сетей
-              href: social-transformations.md
-            - name: StringCollection
-              href: stringcollection-transformations.md
-            - name: Строка
-              href: string-transformations.md
-          - name: Предикаты
-            href: predicates.md
-          - name: ContentDefinitions
-            href: contentdefinitions.md
-          - name: Локализация
-            href: localization.md
-            items:
-            - name: Идентификаторы строк локализации
-              href: localization-string-ids.md
-        - name: ClaimsProviders
-          href: claimsproviders.md
-          items:
-          - name: TechnicalProfiles
-            href: technicalprofiles.md
-            items:
-            - name: Сведения о технических профилях
-              href: technical-profiles-overview.md
-            - name: Azure Active Directory
-              href: active-directory-technical-profile.md
-            - name: Преобразование утверждений
-              href: claims-transformation-technical-profile.md
-            - name: Поставщик токенов JWT
-              href: jwt-issuer-technical-profile.md
-            - name: OAuth1
-              href: oauth1-technical-profile.md
-            - name: OAuth2
-              href: oauth2-technical-profile.md
-            - name: OpenID Connect
-              href: openid-connect-technical-profile.md
-            - name: REST
-              href: restful-technical-profile.md
-            - name: SAML
-              href: saml-technical-profile.md
-            - name: Профиль с самостоятельным подтверждением
-              href: self-asserted-technical-profile.md
-            - name: Сеанс единого входа
-              href: active-directory-b2c-reference-sso-custom.md
-            - name: Проверка
-              href: validation-technical-profile.md
-        - name: UserJourneys
-          href: userjourneys.md
-        - name: RelyingParty
-          href: relyingparty.md
-      - name: Примеры для JavaScript
-        href: javascript-samples.md
-      - name: Заметки для разработчиков
-        href: active-directory-b2c-developer-notes-custom.md
-      - name: Определение инфраструктуры доверия
-        href: active-directory-b2c-reference-trustframeworks-defined-ief-custom.md
-  - name: Поставщики удостоверений
-    items:
-    - name: Amazon
-      href: active-directory-b2c-setup-amzn-app.md
-    - name: Azure AD (для одного клиента)
-      href: active-directory-b2c-setup-oidc-azure-active-directory.md
-    - name: Учетная запись Майкрософт
-      href: active-directory-b2c-setup-msa-app.md
-    - name: Facebook
-      href: active-directory-b2c-setup-fb-app.md
-    - name: GitHub
-      href: active-directory-b2c-setup-github-app.md
-    - name: Google
-      href: active-directory-b2c-setup-goog-app.md
-    - name: LinkedIn
-      href: active-directory-b2c-setup-li-app.md
-    - name: OpenID Connect
-      href: active-directory-b2c-setup-oidc-idp.md
-    - name: Twitter
-      href: active-directory-b2c-setup-twitter-app.md
-  - name: Перенос пользователей
-    href: active-directory-b2c-user-migration.md
-  - name: Миграция пользователей с удостоверениями социальных сетей
-    href: active-directory-b2c-social-migration.md
-  - name: Классические и мобильные приложения
-    items:
-    - name: Использование iOS ObjC и AppAuth
-      href: active-directory-b2c-devquickstarts-ios.md
-    - name: Использование Android и AppAuth
-      href: active-directory-b2c-devquickstarts-android.md
-  - name: Отчеты об использовании
-    href: active-directory-b2c-reference-usage-reporting-api.md
-  - name: Учетные данные владельца ресурса
-    href: configure-ropc.md
-  - name: Настройка прямого входа в систему
-    href: direct-signin.md
-  - name: Настройка самостоятельного сброса пароля
-    href: active-directory-b2c-reference-sspr.md
-  - name: Маркеры
-    items:
-    - name: Настройка маркеров
-      href: configure-tokens.md
-    - name: Передача маркера доступа
-      href: idp-pass-through-user-flow.md
-    - name: Запрос маркера доступа
-      href: active-directory-b2c-access-tokens.md
-  - name: Использование b2clogin.com
-    href: b2clogin.md
-  - name: Использование API Graph Azure AD
-    href: active-directory-b2c-devquickstarts-graph-dotnet.md
-  - name: Справочные материалы
-    items:
-    - name: Примеры кода
-      href: https://azure.microsoft.com/resources/samples/?service=active-directory-b2c
-    - name: Определения файлов cookie
-      href: cookie-definitions.md
-    - name: Доступность в регионах и размещение данных
-      href: active-directory-b2c-reference-tenant-type.md
-    - name: Включение выставления счетов
-      href: active-directory-b2c-how-to-enable-billing.md
-    - name: Управление угрозами
-      href: active-directory-b2c-reference-threat-management.md
-    - name: Приложение расширений
-      href: active-directory-b2c-reference-extensions-app.md
-    - name: Версии потоков на уровне пользователя
-      href: user-flow-versions.md
+        - name: Примеры кода
+          href: 'https://azure.microsoft.com/resources/samples/?service=active-directory-b2c'
+        - name: Определения файлов cookie
+          href: cookie-definitions.md
+        - name: Доступность в регионах и размещение данных
+          href: active-directory-b2c-reference-tenant-type.md
+        - name: Включение выставления счетов
+          href: active-directory-b2c-how-to-enable-billing.md
+        - name: Управление угрозами
+          href: active-directory-b2c-reference-threat-management.md
+        - name: Приложение расширений
+          href: active-directory-b2c-reference-extensions-app.md
+        - name: Версии потоков на уровне пользователя
+          href: user-flow-versions.md
 - name: Ресурсы
   items:
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=security-identity
-  - name: Часто задаваемые вопросы
-    href: active-directory-b2c-faqs.md
-  - name: Получение справки
-    href: /azure/active-directory/develop/developer-support-help-options
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/active-directory-b2c/
-  - name: Калькулятор цен
-    href: https://azure.microsoft.com/pricing/calculator/
-  - name: Обновления службы
-    href: https://azure.microsoft.com/updates/?product=active-directory-b2c
-  - name: Обучение по решениям
-    href: solution-articles.md
-  - name: Переполнение стека
-    href: https://stackoverflow.com/questions/tagged/azure-ad-b2c+identity-experience-framework
-  - name: Поддержка
-    href: active-directory-b2c-support.md
-  - name: Видеоролики
-    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory-b2c
-ms.openlocfilehash: de9ae82220bd464cbee7345b7f2421d02f0fc545
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59681137"
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
+    - name: Часто задаваемые вопросы
+      href: active-directory-b2c-faqs.md
+    - name: Получение справки
+      href: /azure/active-directory/develop/developer-support-help-options
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/active-directory-b2c/'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=active-directory-b2c'
+    - name: Обучение по решениям
+      href: solution-articles.md
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/azure-ad-b2c+identity-experience-framework'
+    - name: Поддержка
+      href: active-directory-b2c-support.md
+    - name: Видеоролики
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=active-directory-b2c'

@@ -1,84 +1,77 @@
-items:
 - name: Документации по брандмауэру Azure
   href: index.yml
 - name: Обзор
   items:
-  - name: Что такое брандмауэр Azure?
-    href: overview.md
+    - name: Что такое брандмауэр Azure?
+      href: overview.md
 - name: Учебники
-  items:
-  - name: Развертывание и настройка
-    href: tutorial-firewall-deploy-portal.md
-  - name: Развертывание в гибридной сети
-    href: tutorial-hybrid-ps.md
-  - name: Фильтрация входящего трафика с помощью DNAT
-    href: tutorial-firewall-dnat.md
-  - name: Мониторинг журналов диагностики
-    href: tutorial-diagnostics.md
   expanded: true
+  items:
+    - name: Развертывание и настройка
+      href: tutorial-firewall-deploy-portal.md
+    - name: Развертывание в гибридной сети
+      href: tutorial-hybrid-ps.md
+    - name: Фильтрация входящего трафика с помощью DNAT
+      href: tutorial-firewall-dnat.md
+    - name: Мониторинг журналов диагностики
+      href: tutorial-diagnostics.md
 - name: Примеры
   items:
-  - name: Azure PowerShell
-    href: sample-powershell.md
-  - name: Журналы Azure Monitor
-    href: log-analytics-samples.md
+    - name: Azure PowerShell
+      href: sample-powershell.md
+    - name: Журналы Azure Monitor
+      href: log-analytics-samples.md
 - name: Основные понятия
   items:
-  - name: теги FQDN;
-    href: fqdn-tags.md
-  - name: FQDN инфраструктуры
-    href: infrastructure-fqdns.md
-  - name: Журналы и метрики
-    href: logs-and-metrics.md
-  - name: Анализ угроз
-    href: threat-intel.md
-  - name: Логика обработки правил
-    href: rule-processing.md
-  - name: Теги служб
-    href: service-tags.md
+    - name: теги FQDN;
+      href: fqdn-tags.md
+    - name: FQDN инфраструктуры
+      href: infrastructure-fqdns.md
+    - name: Журналы и метрики
+      href: logs-and-metrics.md
+    - name: Анализ угроз
+      href: threat-intel.md
+    - name: Логика обработки правил
+      href: rule-processing.md
+    - name: Теги служб
+      href: service-tags.md
 - name: Практические руководства
   items:
-  - name: Развертывание с помощью Azure PowerShell
-    href: deploy-ps.md
-  - name: Развертывание с помощью шаблона
-    href: deploy-template.md
-  - name: Интеграция с подсистемой балансировки нагрузки
-    href: integrate-lb.md
+    - name: "Развертывание с помощью Azure\_PowerShell"
+      href: deploy-ps.md
+    - name: Развертывание с помощью шаблона
+      href: deploy-template.md
+    - name: Интеграция с подсистемой балансировки нагрузки
+      href: integrate-lb.md
 - name: Справочные материалы
   items:
-  - name: Инфраструктура CLI Azure
-    href: /cli/azure/network
-  - name: Azure PowerShell
-    href: /powershell/module/az.network/new-azfirewall
-  - name: .NET
-    href: /dotnet/api
-  - name: Java
-    href: /java/api
-  - name: Node.js
-    href: https://azure.microsoft.com/develop/nodejs/#azure-sdk
-  - name: Python
-    href: https://azure.microsoft.com/develop/python/
-  - name: REST
-    href: /rest/api/firewall
-  - name: Azure Resource Manager
-    href: ../azure-resource-manager/resource-group-overview.md
+    - name: Инфраструктура CLI Azure
+      href: /cli/azure/network
+    - name: Azure PowerShell
+      href: /powershell/module/az.network/new-azfirewall
+    - name: .NET
+      href: /dotnet/api
+    - name: Java
+      href: /java/api
+    - name: Node.js
+      href: 'https://azure.microsoft.com/develop/nodejs/#azure-sdk'
+    - name: Python
+      href: 'https://azure.microsoft.com/develop/python/'
+    - name: REST
+      href: /rest/api/firewall
+    - name: Azure Resource Manager
+      href: ../azure-resource-manager/resource-group-overview.md
 - name: Ресурсы
   items:
-  - name: Часто задаваемые вопросы
-    href: firewall-faq.md
-  - name: Создание шаблонов
-    href: ../azure-resource-manager/resource-group-authoring-templates.md
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/
-  - name: Шаблоны сообщества
-    href: https://azure.microsoft.com/documentation/templates
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/azure-firewall/
-  - name: Доступ по регионам
-    href: https://azure.microsoft.com/regions/services/
-ms.openlocfilehash: a5f0125020cd0ed340127bb39c727bbe070721c6
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59792189"
+    - name: Часто задаваемые вопросы
+      href: firewall-faq.md
+    - name: Создание шаблонов
+      href: ../azure-resource-manager/resource-group-authoring-templates.md
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Шаблоны сообщества
+      href: 'https://azure.microsoft.com/documentation/templates'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/azure-firewall/'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/regions/services/'

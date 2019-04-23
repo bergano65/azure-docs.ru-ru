@@ -1,63 +1,56 @@
-items:
 - name: Документация по SQL Server Stretch Database
   href: index.md
 - name: Обзор
   items:
-  - name: Что такое Stretch Database?
-    href: /sql/sql-server/stretch-database/stretch-database
-  - name: Проблемы, связанные с ограничениями и блокировкой
-    href: /sql/sql-server/stretch-database/limitations-for-stretch-database
+    - name: Что такое Stretch Database?
+      href: /sql/sql-server/stretch-database/stretch-database
+    - name: 'Проблемы, связанные с ограничениями и блокировкой'
+      href: /sql/sql-server/stretch-database/limitations-for-stretch-database
 - name: Начало работы
   items:
-  - name: Выявление баз данных и таблиц
-    href: /sql/sql-server/stretch-database/stretch-database-databases-and-tables-stretch-database-advisor
-  - name: Запуск мастера
-    href: /sql/sql-server/stretch-database/get-started-by-running-the-enable-database-for-stretch-wizard
+    - name: Выявление баз данных и таблиц
+      href: /sql/sql-server/stretch-database/stretch-database-databases-and-tables-stretch-database-advisor
+    - name: Запуск мастера
+      href: /sql/sql-server/stretch-database/get-started-by-running-the-enable-database-for-stretch-wizard
 - name: Практическое руководство
   items:
-  - name: Включение
-    items:
-    - name: Включение базы данных
-      href: /sql/sql-server/stretch-database/enable-stretch-database-for-a-database
-    - name: Включение таблицы
-      href: /sql/sql-server/stretch-database/enable-stretch-database-for-a-table
-    - name: Выбор строк для переноса
-      href: /sql/sql-server/stretch-database/select-rows-to-migrate-by-using-a-filter-function-stretch-database
-  - name: управление
-    items:
-    - name: Отслеживание переноса данных
-      href: /sql/sql-server/stretch-database/monitor-and-troubleshoot-data-migration-stretch-database
-    - name: Приостановка и возобновление переноса
-      href: /sql/sql-server/stretch-database/pause-and-resume-data-migration-stretch-database
-    - name: Управление и устранение неисправностей
-      href: /sql/sql-server/stretch-database/manage-and-troubleshoot-stretch-database
-    - name: Резервное копирование
-      href: /sql/sql-server/stretch-database/backup-stretch-enabled-databases-stretch-database
-    - name: восстановление;
-      href: /sql/sql-server/stretch-database/restore-stretch-enabled-databases-stretch-database
-    - name: Отключение Stretch Database
-      href: /sql/sql-server/stretch-database/disable-stretch-database-and-bring-back-remote-data
+    - name: Включение
+      items:
+        - name: Включение базы данных
+          href: /sql/sql-server/stretch-database/enable-stretch-database-for-a-database
+        - name: Включение таблицы
+          href: /sql/sql-server/stretch-database/enable-stretch-database-for-a-table
+        - name: Выбор строк для переноса
+          href: /sql/sql-server/stretch-database/select-rows-to-migrate-by-using-a-filter-function-stretch-database
+    - name: управление
+      items:
+        - name: Отслеживание переноса данных
+          href: /sql/sql-server/stretch-database/monitor-and-troubleshoot-data-migration-stretch-database
+        - name: Приостановка и возобновление переноса
+          href: /sql/sql-server/stretch-database/pause-and-resume-data-migration-stretch-database
+        - name: Управление и устранение неисправностей
+          href: /sql/sql-server/stretch-database/manage-and-troubleshoot-stretch-database
+        - name: Резервное копирование
+          href: /sql/sql-server/stretch-database/backup-stretch-enabled-databases-stretch-database
+        - name: восстановление;
+          href: /sql/sql-server/stretch-database/restore-stretch-enabled-databases-stretch-database
+        - name: Отключение Stretch Database
+          href: /sql/sql-server/stretch-database/disable-stretch-database-and-bring-back-remote-data
 - name: Справочные материалы
   items:
-  - name: Примеры кода
-    href: https://azure.microsoft.com/resources/samples/?service=sql-server-database
+    - name: Примеры кода
+      href: 'https://azure.microsoft.com/resources/samples/?service=sql-server-database'
 - name: Ресурсы
   items:
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/
-  - name: Блог
-    href: https://blogs.technet.microsoft.com/dataplatforminsider/tag/stretch-database/
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/sql-server-stretch-database/
-  - name: Калькулятор цен
-    href: https://azure.microsoft.com/pricing/calculator/
-  - name: Обновления службы
-    href: https://azure.microsoft.com/updates/?product=sql-server-stretch-database
-  - name: Видеоролики
-    href: https://azure.microsoft.com/documentation/videos/index/?services=sql-server-stretch-database
-ms.openlocfilehash: ba3a3cfe763f17e07dc4bcd0c3106acbc352577f
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58340665"
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Блог
+      href: 'https://blogs.technet.microsoft.com/dataplatforminsider/tag/stretch-database/'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/sql-server-stretch-database/'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=sql-server-stretch-database'
+    - name: Видеоролики
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=sql-server-stretch-database'

@@ -13,11 +13,11 @@ ms.workload: infrastructure-services
 ms.date: 03/29/2017
 ms.author: kumud
 ms.openlocfilehash: 3f41edef56b238d8789264d00d73998794fec7eb
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55882001"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60188719"
 ---
 # <a name="traffic-manager-endpoints"></a>Конечные точки диспетчера трафика
 С помощью диспетчера трафика Microsoft Azure можно управлять распределением сетевого трафика среди приложений, развернутых в различных центрах обработки данных. В диспетчере трафика каждое развертывание приложения необходимо настроить в качестве конечной точки. Когда диспетчер трафика получает запрос DNS, затем выбирает доступную конечную точку и возвращает ее в ответе DNS. Выбор конечной точки зависит от ее текущего состояния и метода маршрутизации трафика. Дополнительные сведения см. в статье [Как работает диспетчер трафика](traffic-manager-how-it-works.md).
@@ -90,7 +90,7 @@ PublicIPAddress — это ресурсы Azure Resource Manager. Они отс
 Если все конечные точки в профиле отключены или отключен сам профиль, диспетчер трафика в ответ на новый запрос DNS отправляет ответ NXDOMAIN.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о том, [как работает диспетчер трафика](traffic-manager-how-it-works.md).
 * Узнайте больше о [мониторинге конечных точек и автоматической отработке отказов](traffic-manager-monitoring.md)диспетчера трафика.

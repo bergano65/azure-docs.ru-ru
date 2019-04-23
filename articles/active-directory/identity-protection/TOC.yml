@@ -1,83 +1,76 @@
-items:
 - name: Документация по службе "Защита идентификации"
   href: index.yml
 - name: Обзор
   items:
-  - name: Сведения о службе "Защита идентификации Azure AD"
-    href: overview.md
+    - name: "Сведения о службе \"Защита идентификации Azure\_AD\""
+      href: overview.md
 - name: Быстрое начало работы
   items:
-  - name: Блокировка доступа при обнаружении риска безопасности сеанса
-    href: quickstart-sign-in-risk-policy.md
+    - name: Блокировка доступа при обнаружении риска безопасности сеанса
+      href: quickstart-sign-in-risk-policy.md
 - name: Основные понятия
-  items:
-  - name: Сведения об уязвимостях
-    href: vulnerabilities.md
-  - name: Сведения об уведомлениях
-    href: notifications.md
-  - name: Сведения о вариантах входа в систему
-    href: flows.md
   expanded: false
-- name: Практические руководства
   items:
-  - name: Защита идентификации
-    items:
-    - name: Включение Защиты идентификации Azure AD
-      href: enable.md
-    - name: Настройка политики регистрации многофакторной идентификации
-      href: howto-mfa-policy.md
-    - name: Настройка политики минимизации рисков при входе
-      href: howto-sign-in-risk-policy.md
-    - name: Настройка политики минимизации рисков для пользователей
-      href: howto-user-risk-policy.md
-    - name: Закрытие активных событий риска
-      href: howto-close-active-risk-events.md
-    - name: Разблокировка пользователей
-      href: howto-unblock-user.md
-    - name: Моделирование событий риска
-      href: playbook.md
-    - name: Часто задаваемые вопросы
-      href: faqs.md
-  - name: Защита идентификации (обновление)
-    items:
-    - name: Обзор
-      href: overview-v2.md
-    - name: Обзор безопасности
-      href: security-overview.md
-    - name: Изучение действий пользователей и операций входа, которые могут представлять риск
-      href: howto-investigate-risky-users-signins.md
-    - name: Настройка политик риска
-      href: howto-configure-risk-policies.md
-    - name: Повышение точности обнаружения
-      href: howto-improve-detection-accuracy.md
-    - name: Часто задаваемые вопросы и известные проблемы
-      href: known-issues.md
+    - name: Сведения об уязвимостях
+      href: vulnerabilities.md
+    - name: Сведения об уведомлениях
+      href: notifications.md
+    - name: Сведения о вариантах входа в систему
+      href: flows.md
+- name: Практические руководства
   expanded: true
+  items:
+    - name: Защита идентификации
+      items:
+        - name: "Включение Защиты идентификации Azure\_AD"
+          href: enable.md
+        - name: Настройка политики регистрации многофакторной идентификации
+          href: howto-mfa-policy.md
+        - name: Настройка политики минимизации рисков при входе
+          href: howto-sign-in-risk-policy.md
+        - name: Настройка политики минимизации рисков для пользователей
+          href: howto-user-risk-policy.md
+        - name: Закрытие активных событий риска
+          href: howto-close-active-risk-events.md
+        - name: Разблокировка пользователей
+          href: howto-unblock-user.md
+        - name: Моделирование событий риска
+          href: playbook.md
+        - name: Часто задаваемые вопросы
+          href: faqs.md
+    - name: Защита идентификации (обновление)
+      items:
+        - name: Обзор
+          href: overview-v2.md
+        - name: Обзор безопасности
+          href: security-overview.md
+        - name: 'Изучение действий пользователей и операций входа, которые могут представлять риск'
+          href: howto-investigate-risky-users-signins.md
+        - name: Настройка политик риска
+          href: howto-configure-risk-policies.md
+        - name: Повышение точности обнаружения
+          href: howto-improve-detection-accuracy.md
+        - name: Часто задаваемые вопросы и известные проблемы
+          href: known-issues.md
 - name: Справочные материалы
   items:
-  - name: Использование API Microsoft Graph
-    href: graph-get-started.md
-  - name: События риска
-    href: risk-events-reference.md
-  - name: Глоссарий
-    href: glossary.md
+    - name: Использование API Microsoft Graph
+      href: graph-get-started.md
+    - name: События риска
+      href: risk-events-reference.md
+    - name: Глоссарий
+      href: glossary.md
 - name: Ресурсы
   items:
-  - name: Форум отзывов и предложений по Azure
-    href: https://feedback.azure.com/forums/169401-azure-active-directory
-  - name: Форум MSDN
-    href: https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/active-directory/
-  - name: Обновления службы
-    href: ../fundamentals/whats-new.md
-  - name: Переполнение стека
-    href: https://stackoverflow.com/questions/tagged/azure-active-directory
-  - name: Видеоролики
-    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
-ms.openlocfilehash: 8c48b383ccd2ac30dc9598cd2da0f043afae43dc
-ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54910952"
+    - name: Форум отзывов и предложений по Azure
+      href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
+    - name: Форум MSDN
+      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/active-directory/'
+    - name: Обновления службы
+      href: ../fundamentals/whats-new.md
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/azure-active-directory'
+    - name: Видеоролики
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=active-directory'
