@@ -15,11 +15,11 @@ ms.date: 04/10/2019
 ms.author: jmprieur
 ms.custom: include file
 ms.openlocfilehash: a11b291ab89dc9f8159e00e1f2304706f041068e
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59502667"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59804997"
 ---
 ## <a name="test-your-code"></a>Тестирование кода
 
@@ -41,7 +41,7 @@ ms.locfileid: "59502667"
 
 После входа вы увидите сведения о профиле пользователя, который возвращается вызовом Microsoft Graph API. Результаты отображаются в поле **API Call Results** (Результаты вызова API). Основные сведения о токене, полученном при вызове `AcquireTokenInteractive` или `AcquireTokenSilent`, должны отображаться в поле **Token Info** (Сведения о токене). Результаты содержат следующие свойства:
 
-|Свойство  |Формат  |Описание |
+|Свойство  |Формат  |ОПИСАНИЕ |
 |---------|---------|---------|
 
 |**Имя пользователя**  | <span> user@domain.com </span> | Имя пользователя, который используется для идентификации пользователя. | | **Истечения срока действия маркера** | DateTime | Время истечения срока действия маркера. MSAL продлевает срок действия, обновив маркер при необходимости. |

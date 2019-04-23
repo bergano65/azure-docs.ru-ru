@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Использование Обозревателя службы хранилища Azure для создания большого двоичного объекта в хранилище объекта
+title: Краткое руководство. Создание большого двоичного объекта в хранилище объектов с помощью Обозревателя службы хранилища Azure
 description: В этом кратком руководстве вы научитесь использовать Обозреватель службы хранилища Azure для создания контейнера и большого двоичного объекта. Далее вы узнаете, как загружать большой двоичный объект на локальный компьютер и как просматривать все большие двоичные объекты в контейнере. Вы также узнаете, как создавать моментальный снимок большого двоичного объекта, управлять политиками доступа к контейнерам и создавать подпись общего доступа.
 services: storage
 author: tamram
@@ -8,14 +8,14 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 11/15/2018
 ms.author: tamram
-ms.openlocfilehash: eef05a5b52e807a4db058682f034f6762cb93b9f
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.openlocfilehash: 3424b46dff8f2904f41d0e8c1acf96788c51773f
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51711197"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59994475"
 ---
-# <a name="quickstart-use-azure-storage-explorer-to-create-a-blob-in-object-storage"></a>Краткое руководство. Использование Обозревателя службы хранилища Azure для создания большого двоичного объекта в хранилище объекта
+# <a name="quickstart-use-azure-storage-explorer-to-create-a-blob-in-object-storage"></a>Краткое руководство. Создание большого двоичного объекта в хранилище объектов с помощью Обозревателя службы хранилища Azure
 
 В этом кратком руководстве вы научитесь использовать [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) для создания контейнера и большого двоичного объекта. Далее вы узнаете, как загружать большой двоичный объект на локальный компьютер и как просматривать все большие двоичные объекты в контейнере. Вы также узнаете, как создавать моментальный снимок большого двоичного объекта, управлять политиками доступа к контейнерам и создавать подпись общего доступа.
 
@@ -39,7 +39,7 @@ ms.locfileid: "51711197"
 
 ![Обозреватель службы хранилища Microsoft Azure — окно подключения](media/storage-quickstart-blobs-storage-explorer/connect.png)
 
-После подключения загружается обозреватель службы хранилища Azure с вкладкой **Обозреватель**. В этом представлении вы можете просматривать сведения обо всех учетных записях хранения Azure, а также о локальном хранилище, настроенном с помощью учетных записей [эмулятора службы хранилища Azure](../common/storage-use-emulator.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json), [Cosmos DB](../../cosmos-db/storage-explorer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) или сред [Azure Stack](../../azure-stack/user/azure-stack-storage-connect-se.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
+После подключения загружается обозреватель службы хранилища Azure с вкладкой **Обозреватель**. В этом представлении вы можете просматривать сведения обо всех учетных записях хранения Azure, а также о локальном хранилище, настроенном с помощью учетных записей [эмулятора службы хранилища Azure](../common/storage-use-emulator.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json), [Cosmos DB](../../cosmos-db/storage-explorer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) или сред [Azure Stack](/azure-stack/user/azure-stack-storage-connect-se?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
 ![Обозреватель службы хранилища Microsoft Azure — окно подключения](media/storage-quickstart-blobs-storage-explorer/mainpage.png)
 

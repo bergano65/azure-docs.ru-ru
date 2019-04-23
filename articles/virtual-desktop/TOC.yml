@@ -1,61 +1,54 @@
-items:
 - name: Виртуальный рабочий стол Windows
   href: index.yml
 - name: Обзор
   items:
-  - name: Виртуальный рабочий стол Windows
-    href: overview.md
+    - name: Виртуальный рабочий стол Windows
+      href: overview.md
 - name: Учебники
   items:
-  - name: 1. Создание клиента в Виртуальном рабочем столе Windows
-    href: tenant-setup-azure-active-directory.md
-  - name: 2. Создание пула узлов с помощью Azure Marketplace
-    href: create-host-pools-azure-marketplace.md
-  - name: 3. Управление группами приложений
-    href: manage-app-groups.md
-  - name: 4. Создание субъектов-служб и назначений ролей с помощью PowerShell
-    href: create-service-principal-role-powershell.md
+    - name: 1. Создание клиента в Виртуальном рабочем столе Windows
+      href: tenant-setup-azure-active-directory.md
+    - name: 2. Создание пула узлов с помощью Azure Marketplace
+      href: create-host-pools-azure-marketplace.md
+    - name: 3. Управление группами приложений
+      href: manage-app-groups.md
+    - name: 4. Создание субъектов-служб и назначений ролей с помощью PowerShell
+      href: create-service-principal-role-powershell.md
 - name: Инструкции
   items:
-  - name: Подключение к ресурсам Виртуального рабочего стола Windows
-    items:
-    - name: Подключение к Windows 7 и Windows 10
-      href: connect-windows-7-and-10.md
-    - name: Подключение к веб-клиенту
-      href: connect-web.md
-  - name: Создание пула узлов с помощью шаблона Azure Resource Manager
-    href: create-host-pools-arm-template.md
-  - name: Создание пула узлов с помощью PowerShell
-    href: create-host-pools-powershell.md
-  - name: Настройка общей папки профиля пользователя в пуле узлов
-    href: create-host-pools-user-profile.md
-  - name: Настройка метода балансировки нагрузки Виртуального рабочего стола Windows
-    href: configure-host-pool-load-balancing.md
-  - name: Выявление проблем с функцией диагностики
-    href: diagnostics-role-service.md
-  - name: Подготовка и настройка главного образа VHD
-    href: set-up-customize-master-image.md
-  - name: Автоматическое масштабирование узлов сеанса
-    href: set-up-scaling-script.md
+    - name: Подключение к ресурсам Виртуального рабочего стола Windows
+      items:
+        - name: "Подключение к Windows\_7 и Windows\_10"
+          href: connect-windows-7-and-10.md
+        - name: Подключение к веб-клиенту
+          href: connect-web.md
+    - name: Создание пула узлов с помощью шаблона Azure Resource Manager
+      href: create-host-pools-arm-template.md
+    - name: Создание пула узлов с помощью PowerShell
+      href: create-host-pools-powershell.md
+    - name: Настройка общей папки профиля пользователя в пуле узлов
+      href: create-host-pools-user-profile.md
+    - name: Настройка метода балансировки нагрузки Виртуального рабочего стола Windows
+      href: configure-host-pool-load-balancing.md
+    - name: Выявление проблем с функцией диагностики
+      href: diagnostics-role-service.md
+    - name: Подготовка и настройка главного образа VHD
+      href: set-up-customize-master-image.md
+    - name: Автоматическое масштабирование узлов сеанса
+      href: set-up-scaling-script.md
 - name: Основные понятия
   items:
-  - name: Среда Виртуального рабочего стола Windows
-    href: environment-setup.md
-  - name: Делегированный доступ в Виртуальном рабочем столе Windows
-    href: delegated-access-virtual-desktop.md
-  - name: Методы балансировки нагрузки пула узлов
-    href: host-pool-load-balancing.md
+    - name: Среда Виртуального рабочего стола Windows
+      href: environment-setup.md
+    - name: Делегированный доступ в Виртуальном рабочем столе Windows
+      href: delegated-access-virtual-desktop.md
+    - name: Методы балансировки нагрузки пула узлов
+      href: host-pool-load-balancing.md
 - name: Справочные материалы
   items:
-  - name: PowerShell
-    href: /powershell/windows-virtual-desktop/overview
+    - name: PowerShell
+      href: /powershell/windows-virtual-desktop/overview
 - name: Ресурсы
   items:
-  - name: Группа поддержки технического сообщества
-    href: https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop
-ms.openlocfilehash: 3f3f332f8ab9b2764dd513777860627dda9b4c45
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59496341"
+    - name: Группа поддержки технического сообщества
+      href: 'https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop'
