@@ -1,0 +1,7 @@
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+    - name: Служба Azure Kubernetes (AKS)
+      tocHref: /virtualization/windowscontainers/
+      topicHref: /azure/aks/index

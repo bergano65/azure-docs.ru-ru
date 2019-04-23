@@ -1,6 +1,6 @@
 ---
-title: Общие определения оповещений схемы для функции веб-перехватчик или логику приложений и Azure
-description: Основные сведения о стандартные определения оповещений схемы для функции веб-перехватчик или логику приложений и Azure
+title: Общие определения оповещений схемы для веб-перехватчик или логику приложения или Azure функции и автоматизацию Runbook
+description: Основные сведения о стандартные определения оповещений схемы для веб-перехватчик или логику приложения или Azure функции и автоматизацию Runbook
 author: anantr
 services: azure-monitor
 ms.service: azure-monitor
@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: anantr
 ms.component: alerts
-ms.openlocfilehash: 0ca9d63f62de6a0b2385b3fb9651c34379b846d7
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: e29a1f5d1e258ab66540010dc12f9326b8fd57a2
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59010402"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60149416"
 ---
 # <a name="common-alert-schema-definitions"></a>Определения общей схемы оповещений
 
-В этой статье описывается [стандартные определения оповещений схемы](https://aka.ms/commonAlertSchemaDocs) для функций веб-перехватчик или логику приложений/Azure. 
+В этой статье описывается [стандартные определения оповещений схемы](https://aka.ms/commonAlertSchemaDocs) для веб-перехватчик или логику приложения или Azure функции и автоматизацию Runbook. 
 
 ## <a name="overview"></a>Обзор
 

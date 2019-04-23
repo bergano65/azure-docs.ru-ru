@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/11/2018
 ms.author: mikeray
-ms.openlocfilehash: 3bb829e7cc99ee0d6e2d02f7ed3880d6c0226123
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
-ms.translationtype: MT
+ms.openlocfilehash: a758cce85645e72bfd9434a69393133d3da6b57d
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58486324"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60011373"
 ---
 # <a name="configure-sql-server-failover-cluster-instance-on-azure-virtual-machines"></a>Настройка экземпляра отказоустойчивого кластера SQL Server на виртуальных машинах Azure
 
@@ -399,7 +399,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
    - **Имя.** Имя для проверки работоспособности.
    - **Протокол**: Протокол TCP.
-   - **Порт**: Задайте значение доступного порта TCP. Для этого порта требуется открытый порт брандмауэра. Используйте [тот же порт,](#ports) который вы задали для проверки работоспособности в брандмауэре.
+   - **Порт**: Порт, который вы создали в брандмауэре для проверки работоспособности в [этот шаг](#ports). В этой статье, в примере используется TCP-порт `59999`.
    - **Интервал.** 5 секунд.
    - **Пороговое значение сбоя**. 2 последовательных сбоя.
 
@@ -421,7 +421,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
    - **Зонд работоспособности**. Используйте проверку работоспособности, настроенную ранее.
    - **Сохранение сеанса**. Отсутствует.
    - **Время ожидания простоя (в минутах)**. 4.
-   - **Плавающий IP-адрес (прямой ответ от сервера)**. Включено
+   - **Плавающий IP-адрес (прямой ответ от сервера)**. Enabled
 
 1. Последовательно выберите **ОК**.
 

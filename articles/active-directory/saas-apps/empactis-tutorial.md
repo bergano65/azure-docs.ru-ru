@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
 ms.openlocfilehash: d4d9e988f54abc52eedf0dfc26c78a2d16f72032
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59277736"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-empactis"></a>Руководство по Интеграция Azure Active Directory с Empactis
@@ -51,7 +51,7 @@ ms.locfileid: "59277736"
 
 Чтобы настроить интеграцию Empactis с Azure AD, необходимо добавить Empactis из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Empactis из коллекции, сделайте следующее:**
+**Чтобы добавить Empactis из коллекции, сделайте следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 

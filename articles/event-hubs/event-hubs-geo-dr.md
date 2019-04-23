@@ -14,12 +14,12 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 3a7cc7703a6b33eef4c7a10f927b4747bc1d417c
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.openlocfilehash: 56077d018c1ae62809d51fc66d7f5aff93fb4c02
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55562211"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60002703"
 ---
 # <a name="azure-event-hubs---geo-disaster-recovery"></a>Геоизбыточное аварийное восстановление в службе "Центры событий Azure" 
 
@@ -107,13 +107,13 @@ ms.locfileid: "55562211"
 Номер SKU уровня "Стандартный" для Центров событий поддерживает функцию [Зоны доступности](../availability-zones/az-overview.md), предоставляя изолированные от сбоев расположения в регионе Azure. 
 
 > [!NOTE]
-> Поддержка Зон доступности Центров событий Azure ценовой категории "Стандартный" доступна только в [регионах Azure](../availability-zones/az-overview.md#regions-that-support-availability-zones), в которых представлены зоны доступности.
+> Поддержка Зон доступности Центров событий Azure ценовой категории "Стандартный" доступна только в [регионах Azure](../availability-zones/az-overview.md#services-support-by-region), в которых представлены зоны доступности.
 
 Вы можете включить эту функцию только в новых пространствах имен с помощью портала Azure. Центры событий не поддерживает перенос существующих пространств имен. Вы не можете отключить избыточность в пределах зоны после ее включения в пространстве имен.
 
 ![3][]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * В разделе с [примером на сайте GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/GeoDRClient) рассматривается простой рабочий процесс, который создает геосвязь и инициирует отработку отказа для сценария аварийного восстановления.
 * В [справочнике для REST API](/rest/api/eventhub/disasterrecoveryconfigs) описываются программные интерфейсы, позволяющие настроить географическое аварийное восстановление.

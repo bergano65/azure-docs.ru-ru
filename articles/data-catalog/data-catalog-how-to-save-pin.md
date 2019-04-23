@@ -2,21 +2,21 @@
 title: Сохранение поисков и закрепление ресурсов данных в каталоге данных Azure
 description: Это практическое руководство описывает возможности каталога данных Azure, позволяющие сохранять источники и ресурсы данных для последующего использования.
 services: data-catalog
-author: markingmyname
-ms.author: maghan
+author: JasonWHowell
+ms.author: jasonh
 ms.assetid: 6bd00a81-820d-4b7c-91fa-ab09e575474c
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 01/18/2018
-ms.openlocfilehash: f22dd0911a8e86e6a9e370c7e08add935c31e936
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: df3220ddb80ebc329ed6b0024ca4eefd2bdfb321
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47409938"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60002023"
 ---
 # <a name="save-searches-and-pin-data-assets-in-azure-data-catalog"></a>Сохранение поисков и закрепление ресурсов данных в каталоге данных Azure
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Общие сведения
 Каталог данных Azure предоставляет возможности для обнаружения источников данных. Вы можете выполнять быстрый поиск и фильтрацию в каталоге, чтобы находить источники данных и понимать их назначение. Это упрощает поиск нужной информации для текущего задания.
 
 Но что делать, если нужно регулярно работать с одними и теми же данными? А если при этом вы и другие пользователи регулярно добавляете информацию в одни и те же источники данных в каталоге? В таких ситуациях повторный поиск по одним и тем же запросам может оказаться неэффективным. Здесь вам могут помочь сохраненные поиски и закрепленные ресурсы данных.

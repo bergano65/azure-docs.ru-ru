@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: absha
-ms.openlocfilehash: 40c5444a54f4e483a9dcacb958c18f66da45019a
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 4b8e04babfffaf49d3719d8a7e90af16598814f4
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58906129"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59998912"
 ---
 # <a name="application-gateway-configuration-overview"></a>Общие сведения о конфигурации шлюза приложений
 
@@ -228,9 +228,9 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 ![Диалоговое окно компоненты шлюза приложения](./media/configuration-overview/configure-redirection.png)
 
 Дополнительные сведения о перенаправлении HTTP-HTTPS см. в разделе:
-- [Перенаправление HTTP-HTTP с помощью портала Azure](https://docs.microsoft.com/azure/application-gateway/redirect-http-to-https-portal)
-- [Перенаправление HTTP-HTTP с помощью PowerShell](https://docs.microsoft.com/azure/application-gateway/redirect-http-to-https-powershell)
-- [Перенаправление HTTP для HTTP-ЗАПРОСОВ с помощью Azure CLI](https://docs.microsoft.com/azure/application-gateway/redirect-http-to-https-cli)
+- [Перенаправление HTTP-HTTPS с помощью портала Azure](https://docs.microsoft.com/azure/application-gateway/redirect-http-to-https-portal)
+- [Перенаправление HTTP-HTTPS с помощью PowerShell](https://docs.microsoft.com/azure/application-gateway/redirect-http-to-https-powershell)
+- [Перенаправление HTTP-HTTPS с помощью Azure CLI](https://docs.microsoft.com/azure/application-gateway/redirect-http-to-https-cli)
 
 ##### <a name="external-site"></a>Внешний сайт
 

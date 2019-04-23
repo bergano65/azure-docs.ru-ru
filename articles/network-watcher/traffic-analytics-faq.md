@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: jdial
-ms.openlocfilehash: 3938427c23993f0546e7df62da88dadaf3353118
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.openlocfilehash: 0a5bbc0bb4b934ae9e60cbd8233b5efbae2a6e6e
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59549377"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60149294"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Часто задаваемые вопросы по Аналитике трафика Azure
 
@@ -130,12 +130,6 @@ ms.locfileid: "59549377"
 ## <a name="what-if-i-cant-configure-an-nsg-for-traffic-analytics-due-to-a-not-found-error"></a>Что делать, если я не могу настроить NSG для Аналитики трафика из-за ошибки "Не найдено"?
 
 Выберите поддерживаемый регион. Если выбрать регион, который не поддерживается, вы получите сообщение об ошибке «Не найдено». Поддерживаемые регионы были перечислены ранее в этой статье.
-
-## <a name="why-am-i-getting-the-error-failed-to-update-flow-logs-settings-for--internalservererror-when-enabling-nsgs-in-us-gov-virginia"></a>Почему я получаю ошибку «не удалось обновить параметры журналов последовательностей для... InternalServerError...» При включении группы безопасности сети в Виргиния?
-
-Это из-за ошибки, когда поставщик ресурсов «Microsoft.Network» не повторная регистрация для подписки в US Gov Virginia. Команда работает над способ устранения этой проблемы. Обойти это ограничение, потребовалось бы [вручную повторно зарегистрировать «Microsoft.Network» RP](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-register-provider-errors). 
-
-В случае неудачи обратитесь в службу поддержки. 
 
 ## <a name="what-if-i-am-getting-the-status-failed-to-load-under-the-nsg-flow-logs-page"></a>Что делать, если на странице журналов потоков NSG отображается состояние "Не удалось загрузить"?
 

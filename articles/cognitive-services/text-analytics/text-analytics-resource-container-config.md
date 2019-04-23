@@ -11,12 +11,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: diberry
-ms.openlocfilehash: 137d7aa48595e3f21ee99c6ebe23babd7a2d32b5
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 1333aefc145e95223624f42a28ec0bb31ab70065
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59677771"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60011764"
 ---
 # <a name="configure-text-analytics-docker-containers"></a>Настройка контейнеров Docker API анализа текста
 
@@ -51,9 +51,9 @@ ms.locfileid: "59677771"
 
 Необходимо добавить `text/analytics/v2.0` маршрутизации URI конечной точки, как показано в следующем примере BILLING_ENDPOINT_URI.
 
-|Обязательно для заполнения| ИМЯ | Тип данных | ОПИСАНИЕ |
+|Обязательно для заполнения| Name | Тип данных | ОПИСАНИЕ |
 |--|------|-----------|-------------|
-|Да| `Billing` | Строка | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/text/analytics/v2.0` |
+|Да| `Billing` | String | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/text/analytics/v2.1` |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -79,10 +79,10 @@ ms.locfileid: "59677771"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того,расположение подключения на [главном компьютере](how-tos/text-analytics-how-to-install-containers.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположения подключения к узлу. 
 
-|Необязательно| ИМЯ | Тип данных | ОПИСАНИЕ |
+|Необязательно| Name | Тип данных | ОПИСАНИЕ |
 |-------|------|-----------|-------------|
-|Не разрешено| `Input` | Строка | Контейнеры API анализа текста не используют этот элемент.|
-|Необязательно| `Output` | Строка | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Не разрешено| `Input` | String | Контейнеры API анализа текста не используют этот элемент.|
+|Необязательно| `Output` | String | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
@@ -95,18 +95,18 @@ ms.locfileid: "59677771"
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
-| Placeholder | Значение | Формат или пример |
+| Placeholder | Value | Формат или пример |
 |-------------|-------|---|
 |{BILLING_KEY} | Ключ конечной точки `Cognitive Services` ресурсов, доступных на Azure `Cognitive Services` страницы "ключи". |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
-|{BILLING_ENDPOINT_URI} | Значение конечной точки выставления счетов можно найти в Azure `Cognitive Services` странице "Обзор".|`https://westus.api.cognitive.microsoft.com/text/analytics/v2.0`|
+|{BILLING_ENDPOINT_URI} | Значение конечной точки выставления счетов можно найти в Azure `Cognitive Services` странице "Обзор".|`https://westus.api.cognitive.microsoft.com/text/analytics/v2.1`|
 
 > [!IMPORTANT]
 > Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](how-tos/text-analytics-how-to-install-containers.md#billing).
 > Значение ApiKey **ключ** от Azure `Cognitive Services` страницу ключей ресурсов. 
 
-## <a name="keyphrase-extraction-container-docker-examples"></a>Примеры контейнеров Docker для извлечения ключевой фразы
+## <a name="key-phrase-extraction-container-docker-examples"></a>Примеры docker контейнера извлечение ключевых фраз
 
-Следующие примеры Docker предназначены для контейнера извлечения ключевой фразы. 
+В следующих примерах docker предназначены для контейнера извлечение ключевых фраз. 
 
 ### <a name="basic-example"></a>Простой пример 
 

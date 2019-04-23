@@ -6,19 +6,25 @@ author: rimman
 manager: kfile
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 03/13/2019
+ms.date: 04/13/2019
 ms.author: banders
 ms.reviewer: sngun
-ms.openlocfilehash: 8386d1c43761cfb27746b003d136419f72d7d4ae
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
-ms.translationtype: MT
+ms.openlocfilehash: d5a13e4466234d73bafe8dbe76cae92955cf64bd
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58648543"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60010302"
 ---
 # <a name="understand-how-the-reservation-discount-is-applied-to-azure-cosmos-db"></a>Общие сведения о применении скидки на резервирование в Azure Cosmos DB
 
 После покупки зарезервированной емкости Azure Cosmos DB скидка на резервирование автоматически применяется к ресурсам Azure Cosmos DB с соответствующими атрибутами и числом резервирований. Резервирование покрывает расходы на пропускную способность, подготовленную для ресурсов Azure Cosmos DB. Но оно не покрывает сборы с программного обеспечения, сети, хранилища или контейнеров.
+
+## <a name="how-reservation-discount-is-applied"></a>Применение скидки резервирования
+
+Скидка резервирования "*использования ИТ или потерять ИТ-*«. Таким образом Если у вас нет сопоставления ресурсов для данного часа, тогда у вас не количество резервирований для этого часа. Не удается выполнить пересылать неиспользуемые зарезервированные часов.
+
+При завершении работы ресурса скидка на резервирование автоматически применяется к другим соответствующий ресурс в указанной области. Если нет соответствия ресурсов находятся в указанной области, а затем зарезервированный часы: *потеряны*.
 
 ## <a name="reservation-discount-applied-to-azure-cosmos-db-accounts"></a>Скидка на резервирование, примененная к учетным записям Azure Cosmos DB
 

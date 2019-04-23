@@ -6,12 +6,12 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/12/2019
-ms.openlocfilehash: b5c833798f8533e7c6fbe3595a726ac6ce56e2d2
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: e4bbfdbcf7a295089570d4c8b77b07fd7270b3fd
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59682820"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59998266"
 ---
 # <a name="compatibility-level-for-azure-stream-analytics-jobs"></a>Уровень совместимости заданий Azure Stream Analytics
 
@@ -75,7 +75,7 @@ Azure Stream Analytics поддерживает Геопространствен
 
 **Предыдущих уровней:** Поведение upsert было *Вставка или слияние*.
 
-**1.2 уровень:** Собственный интерфейс API массового интеграции с выходными данными CosmosDB увеличивает пропускную способность и эффективно обрабатывает запросы на регулирование.
+**1.2 уровень:** Собственный интерфейс API массового интеграции с выходными данными CosmosDB увеличивает пропускную способность и эффективно обрабатывает запросы на регулирование. Дополнительные сведения см. в разделе [выходные данные Azure Stream Analytics в Azure Cosmos DB страницы](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-documentdb-output#improved-throughput-with-compatibility-level-12).
 
 Поведение upsert *Вставка или замена*.
 

@@ -11,12 +11,12 @@ ms.date: 01/14/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6510105af8c019b1aca5333f516a10667edaadb5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 6911b19c680c2fdb8c372347c4dd0fca60bb0e0b
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58000870"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60007565"
 ---
 # <a name="azure-ad-connectconfigure-ad-ds-connector-account-permissions"></a>Azure AD Connect выполняет следующие функции: Настройка разрешений учетной записи соединителя AD DS 
 
@@ -69,13 +69,19 @@ Get-Command -Module AdSyncConfig
 
 Каждый командлет имеет те же параметры для ввода учетной записи соединителя AD DS и коммутатора AdminSDHolder. Чтобы указать учетную запись соединителя AD DS, можно предоставить имя учетной записи и домен или только различающееся имя (DN) учетной записи.
 
-Например: 
+Например:
 
-`Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountName ADaccount -ADConnectorAccountDomain Contoso`
+```powershell
+Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountName <ADAccountName> -ADConnectorAccountDomain <ADDomainName>
+```
 
-Или; 
+Или;
 
-`Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountDN 'CN=ADaccount,OU=AADconnect,DC=Contoso,DC=com'`
+```powershell
+Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountDN <ADAccountDN>
+```
+
+Не забудьте заменить `<ADAccountName>`, `<ADDomainName>` и `<ADAccountDN>` с соответствующими значениями для вашей среды.
 
 Если вы не хотите изменить разрешения на контейнере AdminSDHolder, используйте параметр `-SkipAdminSdHolders`. 
 
@@ -130,7 +136,7 @@ Set-ADSyncBasicReadPermissions -ADConnectorAccountDN <String> [-ADobjectDN <Stri
 Этот командлет задаст следующие разрешения: 
  
 
-|type |ИМЯ |Access |Применяется к| 
+|type |Name |Access |Применяется к| 
 |-----|-----|-----|-----|
 |РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Чтение всех свойств |Дочерние объекты устройств| 
 |РАЗРЕШИТЬ |Учетная запись соединителя AD DS|Чтение всех свойств |Дочерние объекты InetOrgPerson| 
@@ -156,7 +162,7 @@ Set-ADSyncMsDsConsistencyGuidPermissions -ADConnectorAccountDN <String> [-ADobje
 
 Этот командлет задаст следующие разрешения: 
 
-|type |ИМЯ |Access |Применяется к|
+|type |Name |Access |Применяется к|
 |-----|-----|-----|-----| 
 |РАЗРЕШИТЬ|Учетная запись соединителя AD DS|Свойство чтения/записи|Дочерние объекты пользователя|
 
@@ -176,7 +182,7 @@ Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountDN <String> [<CommonPar
 
 Этот командлет задаст следующие разрешения: 
 
-|type |ИМЯ |Access |Применяется к|
+|type |Name |Access |Применяется к|
 |-----|-----|-----|-----| 
 |РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Репликация изменений каталога |Только в этом объекте (корневой домен)| 
 |РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Репликация всех изменений каталога |Только в этом объекте (корневой домен)| 
@@ -196,7 +202,7 @@ Set-ADSyncPasswordWritebackPermissions -ADConnectorAccountDN <String> [-ADobject
 ```
 Этот командлет задаст следующие разрешения: 
 
-|type |ИМЯ |Access |Применяется к|
+|type |Name |Access |Применяется к|
 |-----|-----|-----|-----| 
 |РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Сброс пароля |Дочерние объекты пользователя| 
 |РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Запись свойства lockoutTime |Дочерние объекты пользователя| 
@@ -216,7 +222,7 @@ Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN <String> [-ADob
  
 Этот командлет задаст следующие разрешения: 
 
-|type |ИМЯ |Access |Применяется к|
+|type |Name |Access |Применяется к|
 |-----|-----|-----|-----| 
 |РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Универсальное чтение/запись |Все атрибуты группы типов объектов и дочерних объектов| 
 |РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Создать/удалить дочерний объект |Все атрибуты группы типов объектов и дочерних объектов| 
@@ -239,7 +245,7 @@ Set-ADSyncExchangeHybridPermissions -ADConnectorAccountDN <String> [-ADobjectDN 
 Этот командлет задаст следующие разрешения:  
  
 
-|type |ИМЯ |Access |Применяется к|
+|type |Name |Access |Применяется к|
 |-----|-----|-----|-----| 
 |РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Чтение/запись всех свойств |Дочерние объекты пользователя| 
 |РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Чтение/запись всех свойств |Дочерние объекты InetOrgPerson| 
@@ -261,7 +267,7 @@ Set-ADSyncExchangeMailPublicFolderPermissions -ADConnectorAccountDN <String> [-A
 ```
 Этот командлет задаст следующие разрешения: 
 
-|type |ИМЯ |Access |Применяется к|
+|type |Name |Access |Применяется к|
 |-----|-----|-----|-----| 
 |РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Чтение всех свойств |Дочерние объекты PublicFolder| 
 
@@ -286,7 +292,7 @@ Set-ADSyncRestrictedPermissions -ADConnectorAccountDN'CN=ADConnectorAccount,CN=U
 
 Этот командлет задаст следующие разрешения: 
 
-|type |ИМЯ |Access |Применяется к|
+|type |Name |Access |Применяется к|
 |-----|-----|-----|-----| 
 |РАЗРЕШИТЬ |SYSTEM |Полный доступ |этому объекту 
 |РАЗРЕШИТЬ |Администраторы предприятия |Полный доступ |этому объекту 
