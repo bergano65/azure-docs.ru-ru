@@ -8,10 +8,10 @@ ms.topic: overview
 ms.service: azure-policy
 manager: carmonm
 ms.openlocfilehash: 0e66327a04d1390061580d82716b44b25139bf67
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59259462"
 ---
 # <a name="overview-of-the-azure-policy-service"></a>Обзор службы "Политика Azure"
@@ -35,7 +35,7 @@ ms.locfileid: "59259462"
 В службе "Политика Azure" предусмотрено несколько разрешений, известных как операции, двух разных поставщиков ресурсов:
 
 - [Microsoft.Authorization](../../role-based-access-control/resource-provider-operations.md#microsoftauthorization)
-- [Microsoft.PolicyInsights](../../role-based-access-control/resource-provider-operations.md#microsoftpolicyinsights)
+- [Microsoft.PolicyInsights](../../role-based-access-control/resource-provider-operations.md#microsoftpolicyinsights).
 
 Большинство встроенных ролей предоставляют разрешения на доступ к ресурсам службы "Политика Azure". Пользователь с ролью **участника политики ресурсов (предварительная версия)** получает доступ к большинству операций с политиками. Пользователь с ролью **владелец** имеет полные права. **Участник** и **читатель** могут использовать все операции чтения Политики, но **участник** также может активировать исправление.
 
@@ -144,8 +144,8 @@ ms.locfileid: "59259462"
 
 После знакомства с обзором службы "Политика Azure" и некоторыми представленными ключевыми концепциями можно выполнять следующие шаги.
 
-- [Создание назначения политики для идентификации ресурсов, не соответствующих требованиям](assign-policy-portal.md)
-- [Создание назначения политики для идентификации ресурсов, не соответствующих требованиям, с помощью Azure CLI](assign-policy-azurecli.md)
-- [Создание назначения политики для идентификации ресурсов, не соответствующих требованиям, с помощью Azure PowerShell](assign-policy-powershell.md)
+- [Назначение определения политики на портале](assign-policy-portal.md)
+- [Create a policy assignment to identify non-compliant resources in your Azure environment with the Azure CLI](assign-policy-azurecli.md) (Создание назначения политики для определения несоответствующих ресурсов в среде Azure с помощью Azure CLI)
+- [Create a policy assignment to identify non-compliant resources in your Azure environment using PowerShell](assign-policy-powershell.md) (Создание назначения политики для определения несоответствующих ресурсов в среде Azure с помощью PowerShell)
 - См. дополнительные сведения о группе управления в разделе [Упорядочение ресурсов с помощью групп управления Azure](..//management-groups/overview.md)
 - См. [Govern your Azure environment through Azure Policy](https://channel9.msdn.com/events/Build/2018/THR2030) (Система управления средой Azure с помощью службы "Политика Azure") на канале Channel 9

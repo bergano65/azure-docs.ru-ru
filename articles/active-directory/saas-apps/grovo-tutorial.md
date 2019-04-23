@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 02/18/2019
 ms.author: jeedes
 ms.openlocfilehash: fc0ef38193bbd6e5044764a26a5793a4d115348d
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59278145"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-grovo"></a>Руководство по Интеграция Azure Active Directory с Grovo
@@ -106,13 +106,13 @@ ms.locfileid: "59278145"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Grovo](common/idp-relay.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<subdomain>.grovo.com/sso/saml2/metadata`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.grovo.com/sso/saml2/metadata`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.grovo.com/sso/saml2/saml-assertion`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.grovo.com/sso/saml2/saml-assertion`.
 
     c. Щелкните **Задать дополнительные URL-адреса**.
 
-    d. В текстовом поле **Состояние ретранслятора** введите URL-адрес в следующем формате: `https://<subdomain>.grovo.com`
+    d. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://<subdomain>.grovo.com`.
 
 5. Если вы хотите настроить приложение в **режиме, инициированном поставщиком услуг**, выполните следующие действия.
 
@@ -125,7 +125,7 @@ ms.locfileid: "59278145"
 
 6. Приложение Grovo ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Grovo ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 7. В дополнение к описанному выше приложение Grovo ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
@@ -138,9 +138,9 @@ ms.locfileid: "59278145"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

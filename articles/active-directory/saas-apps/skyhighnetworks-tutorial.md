@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 4836cdec546b7da7351d18d5217e4f87d749aa79
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59275000"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skyhigh-networks"></a>Руководство по Интеграция Azure Active Directory с Skyhigh Networks
@@ -51,7 +51,7 @@ ms.locfileid: "59275000"
 
 Чтобы настроить интеграцию Skyhigh Networks с Azure AD, необходимо добавить приложение Skyhigh Networks из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Skyhigh Networks из коллекции, выполните следующие действия:**
+**Чтобы добавить Skyhigh Networks из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59275000"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Skyhigh Networks](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<ENV>.myshn.net/shndash/saml/Azure_SSO`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<ENV>.myshn.net/shndash/saml/Azure_SSO`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<ENV>.myshn.net/shndash/response/saml-postlogin`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<ENV>.myshn.net/shndash/response/saml-postlogin`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 

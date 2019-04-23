@@ -9,10 +9,10 @@ ms.date: 04/08/2019
 ms.author: raynew
 ms.custom: MVC
 ms.openlocfilehash: fc15db91b8f4cc6dbdecd0e7321abdbf81744f08
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59357976"
 ---
 # <a name="migrate-on-premises-machines-to-azure"></a>Миграция локальных компьютеров в Azure
@@ -59,7 +59,7 @@ ms.locfileid: "59357976"
 
 ## <a name="set-up-the-source-environment"></a>Настройка исходной среды
 
-**Сценарий** | **Сведения**
+**Сценарий** | **Дополнительные сведения**
 --- | --- 
 VMware | Настройте [исходную среду](vmware-azure-set-up-source.md) и [сервер конфигурации](vmware-azure-deploy-configuration-server.md).
 Физический компьютер | [Настройте](physical-azure-set-up-source.md) исходную среду и сервер конфигурации.
@@ -78,7 +78,7 @@ Hyper-V. | Настройте [исходную среду](hyper-v-azure-tutori
 
 ## <a name="set-up-a-replication-policy"></a>Настройка политики репликации
 
-**Сценарий** | **Сведения**
+**Сценарий** | **Дополнительные сведения**
 --- | --- 
 VMware | Настройте [политику репликации](vmware-azure-set-up-replication.md) для виртуальных машин VMware.
 Физический компьютер | Настройте [политику репликации](physical-azure-disaster-recovery.md#create-a-replication-policy) для физических компьютеров.
@@ -86,7 +86,7 @@ Hyper-V. | Настройте [политику репликации](hyper-v-az
 
 ## <a name="enable-replication"></a>Включение репликации
 
-**Сценарий** | **Сведения**
+**Сценарий** | **Дополнительные сведения**
 --- | --- 
 VMware | [Включите репликацию](vmware-azure-enable-replication.md) виртуальных машин VMware.
 Физический компьютер | [Включите репликацию](physical-azure-disaster-recovery.md#enable-replication) для физических компьютеров.

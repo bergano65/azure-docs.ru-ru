@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 02/04/2019
 ms.openlocfilehash: 1e2f55d334d432544ffc185e5c68dfe4325b2b09
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59356818"
 ---
 # <a name="azure-resource-manager-templates-for-azure-sql-database"></a>Шаблоны Azure Resource Manager для Базы данных SQL Azure
@@ -33,7 +33,7 @@ ms.locfileid: "59356818"
 | [Логический сервер](https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-logical-server) | Этот шаблон Azure Resource Manager создает логический сервер Базы данных SQL Azure. |
 | [Эластичный пул](https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-elastic-pool-create) | Этот шаблон позволяет развернуть новый эластичный пул с новым связанным сервером SQL Server и новой Базой данных SQL, назначенной ему. |
 | [Группы отработки отказа](https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-with-failover-group) | Этот шаблон создает два логических сервера SQL Azure, базу данных SQL и группу отработки отказа.|
-| [Advanced Threat Protection](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-advanced-threat-protection-server-policy) | Этот шаблон позволяет развернуть логический сервер SQL Azure с включенной Расширенной защитой от угроз и дополнительной Базой данных SQL Azure. Служба "Расширенная защита от угроз SQL" представляет собой унифицированный пакет расширенных возможностей безопасности SQL.|
+| [Расширенная защита от угроз](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-advanced-threat-protection-server-policy) | Этот шаблон позволяет развернуть логический сервер SQL Azure с включенной Расширенной защитой от угроз и дополнительной Базой данных SQL Azure. Служба "Расширенная защита от угроз SQL" представляет собой унифицированный пакет расширенных возможностей безопасности SQL.|
 | [Обнаружение угроз](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-threat-detection-db-policy-multiple-databases) | Этот шаблон позволяет развернуть логический сервер SQL Azure и набор Баз данных SQL Azure с включенным обнаружением угроз и адресом электронной почты для оповещений для каждой базы данных. Обнаружение угроз является частью предложения Расширенной защиты от угроз (ATP) и предоставляет слой безопасности, который отвечает на потенциальные угрозы через серверы и базы данных SQL.|
 | [Аудит в хранилище BLOB-объектов Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-blob-storage) | Этот шаблон позволяет развернуть логический сервер SQL Azure с включенным аудитом для записи журналов аудита в хранилище BLOB-объектов. Аудит Базы данных SQL Azure отслеживает события базы данных и записывает их в журнал аудита, который можно разместить в учетной записи хранения Azure, рабочей области OMS или Центрах событий.|
 | [Аудит в концентраторе событий Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-eventhub) | Этот шаблон позволяет развернуть сервер SQL Azure с включенным аудитом для записи журналов аудита в имеющийся концентратор событий. Чтобы отправить события аудита в концентратор событий, задайте параметры аудита с помощью `Enabled` `State` и задайте `IsAzureMonitorTargetEnabled` значение `true`. Кроме того, настройте параметры диагностики с помощью категории журналов диагностики `SQLSecurityAuditEvents` в базе данных `master` (для аудита на уровне обслуживания). Аудит Базы данных SQL Azure и Хранилища данных SQL отслеживает события базы данных и записывает их в журнал аудита, который можно разместить в учетной записи хранения Azure, в рабочей области OMS или в Центрах событий.|

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
 ms.openlocfilehash: 00154ac3c94a1f43872aff3be29ddd108a4173f0
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59268847"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-springer-link"></a>Руководство по Интеграция Azure Active Directory со Springer Link
@@ -107,7 +107,7 @@ ms.locfileid: "59268847"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://fsso.springer.com`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес: `https://fsso.springer.com/federation/Consumer/metaAlias/SpringerServiceProvider`
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://fsso.springer.com/federation/Consumer/metaAlias/SpringerServiceProvider`
 
     c. Щелкните **Задать дополнительные URL-адреса**.
 

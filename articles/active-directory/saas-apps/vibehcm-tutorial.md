@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: cf414f9dd0f3a7ab638dc72e50aa8f3997308cc7
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59279743"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-vibe-hcm"></a>Руководство по Интеграция Azure Active Directory с Vibe HCM
@@ -51,7 +51,7 @@ ms.locfileid: "59279743"
 
 Чтобы настроить интеграцию Vibe HCM с Azure AD, необходимо добавить Vibe HCM из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Vibe HCM из коллекции, сделайте следующее:**
+**Чтобы добавить Vibe HCM из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 

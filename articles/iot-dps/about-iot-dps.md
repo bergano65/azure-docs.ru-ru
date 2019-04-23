@@ -9,10 +9,10 @@ ms.service: iot-dps
 services: iot-dps
 manager: briz
 ms.openlocfilehash: 89e0b6b5bedf36c89bf3a54f4baf42f7019625c0
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59051477"
 ---
 # <a name="provisioning-devices-with-azure-iot-hub-device-provisioning-service"></a>Подготовка устройств с помощью службы подготовки устройств к добавлению в Центр Интернета вещей
@@ -110,7 +110,7 @@ Microsoft Azure предоставляет широкий набор интег�
 
 Дополнительные сведения об ограничениях квоты:
 
-* [Ограничения службы для подписки Azure](../azure-subscription-service-limits.md)
+* [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md)
 
 ## <a name="related-azure-components"></a>Связанные компоненты Azure
 Служба подготовки устройств автоматизирует подготовку устройств с помощью Центра Интернета вещей. См. дополнительные сведения о [Центре Интернета вещей](https://docs.microsoft.com/azure/iot-hub/).

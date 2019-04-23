@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 2a96364d486ed6c0db2762256798ac56afa69a78
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59268462"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-moconavi"></a>Руководство по Интеграция Azure Active Directory с moconavi
@@ -50,7 +50,7 @@ ms.locfileid: "59268462"
 
 Чтобы настроить интеграцию moconavi с Azure AD, необходимо добавить moconavi из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить moconavi из коллекции, сделайте следующее:**
+**Чтобы добавить moconavi из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -104,11 +104,11 @@ ms.locfileid: "59268462"
 
     ![Сведения о домене и URL-адресах для единого входа для приложения moconavi](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<yourserverurl>/moconavi-saml2/saml/login`
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<yourserverurl>/moconavi-saml2/saml/login`.
 
-    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<yourserverurl>/moconavi-saml2`
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<yourserverurl>/moconavi-saml2`.
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<yourserverurl>/moconavi-saml2/saml/SSO`
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<yourserverurl>/moconavi-saml2/saml/SSO`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов moconavi](mailto:support@recomot.co.jp). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

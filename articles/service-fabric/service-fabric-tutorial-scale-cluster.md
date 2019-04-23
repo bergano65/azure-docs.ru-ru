@@ -16,10 +16,10 @@ ms.date: 03/19/2019
 ms.author: aljo
 ms.custom: mvc
 ms.openlocfilehash: fa9b091beacbc98c6939ec0454bd04da2b7561e7
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59278706"
 ---
 # <a name="tutorial-scale-a-service-fabric-cluster-in-azure"></a>Руководство по Масштабирование кластера Service Fabric в Azure
@@ -36,9 +36,9 @@ ms.locfileid: "59278706"
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * создание безопасного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в Azure с помощью шаблона;
-> * [мониторинг кластера;](service-fabric-tutorial-monitor-cluster.md)
+> * [Мониторинг кластера](service-fabric-tutorial-monitor-cluster.md)
 > * увеличение или уменьшение масштаба кластера;
-> * [обновление среды выполнения кластера;](service-fabric-tutorial-upgrade-cluster.md)
+> * [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
 > * [Удаление кластера](service-fabric-tutorial-delete-cluster.md)
 
 
@@ -882,7 +882,7 @@ az group deployment create --resource-group sfclustertutorialgroup --template-fi
 
 Теперь перейдите к следующему руководству, чтобы узнать, как обновить среду выполнения кластера.
 > [!div class="nextstepaction"]
-> [обновление среды выполнения кластера;](service-fabric-tutorial-upgrade-cluster.md)
+> [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
 
 [durability]: service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster
 [reliability]: service-fabric-cluster-capacity.md#the-reliability-characteristics-of-the-cluster

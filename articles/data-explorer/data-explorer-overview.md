@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: overview
 ms.date: 09/24/2018
 ms.openlocfilehash: 02b239922f481240341225ea68d8d0ee7492c48b
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59044180"
 ---
 # <a name="what-is-azure-data-explorer"></a>Что такое обозреватель данных Azure?
@@ -44,11 +44,11 @@ ms.locfileid: "59044180"
 
 Как правило, работа с обозревателем данных Azure осуществляется по следующей схеме.
 
-1. **Создание базы данных.** Создайте *кластер*, а затем создайте в нем одну или несколько *баз данных*. [Краткое руководство. Создание кластера и базы данных Azure Data Explorer](create-cluster-database-portal.md)
+1. **Создание базы данных.** Создайте *кластер*, а затем создайте в нем одну или несколько *баз данных*. [Краткое руководство Создание кластера и базы данных Azure Data Explorer](create-cluster-database-portal.md)
 
-1. **Прием данных.** Загрузите данные в таблицы базы данных, чтобы к ним можно было выполнять запросы. [Краткое руководство. Прием данных из концентратора событий в Azure Data Explorer](ingest-data-event-hub.md)
+1. **Прием данных.** Загрузите данные в таблицы базы данных, чтобы к ним можно было выполнять запросы. [Краткое руководство Прием данных из концентратора событий в Azure Data Explorer](ingest-data-event-hub.md)
 
-1. **Выполнение запросов базы данных.** Используйте веб-приложение для запуска, просмотра и совместного использования запросов и результатов. Оно доступно на портале Azure и в виде отдельного приложения. Кроме того, можно отправлять запросы программным способом (с помощью пакета SDK) или отправлять их в конечную точку REST API. [Краткое руководство. Запрос данных в Azure Data Explorer](web-query-data.md)
+1. **Выполнение запросов базы данных.** Используйте веб-приложение для запуска, просмотра и совместного использования запросов и результатов. Оно доступно на портале Azure и в виде отдельного приложения. Кроме того, можно отправлять запросы программным способом (с помощью пакета SDK) или отправлять их в конечную точку REST API. [Краткое руководство Запрос данных в Azure Data Explorer](web-query-data.md)
 
 ## <a name="query-experience"></a>Работа с запросом
 
@@ -63,15 +63,15 @@ ms.locfileid: "59044180"
 Мы будем рады получить ваши отзывы об обозревателе данных Azure и его языке запросов на следующих ресурсах:
 
 - Получение справки
-  - [Переполнение стека](https://stackoverflow.com/questions/tagged/azure-data-explorer)
+  - [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-data-explorer)
   - [Техническое сообщество Майкрософт](https://techcommunity.microsoft.com/t5/Azure-Data-Explorer/bd-p/Kusto)
   - [MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureKusto)
-- [Вы можете внести предложения по продукту на сайте User Voice.](https://aka.ms/AzureDataExplorer.UserVoice)
+- [Внести предложения по продукту на сайте User Voice](https://aka.ms/AzureDataExplorer.UserVoice)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Краткое руководство. Создание кластера и базы данных Azure Data Explorer](create-cluster-database-portal.md)
+[Краткое руководство Создание кластера и базы данных Azure Data Explorer](create-cluster-database-portal.md)
 
-[Краткое руководство. Прием данных из концентратора событий в Azure Data Explorer](ingest-data-event-hub.md)
+[Краткое руководство Прием данных из концентратора событий в Azure Data Explorer](ingest-data-event-hub.md)
 
-[Краткое руководство. Запрос данных в Azure Data Explorer](web-query-data.md)
+[Краткое руководство Запрос данных в Azure Data Explorer](web-query-data.md)

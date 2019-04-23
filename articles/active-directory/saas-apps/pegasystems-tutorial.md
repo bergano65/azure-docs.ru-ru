@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
 ms.openlocfilehash: 34fe5d85829d909989513214406ba96ea5be0aa8
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59271107"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pega-systems"></a>Руководство по Интеграция Azure Active Directory с Pega Systems
@@ -105,9 +105,9 @@ ms.locfileid: "59271107"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Pega Systems](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/sp/<INSTANCEID>`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/sp/<INSTANCEID>`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/PRRestService/WebSSO/SAML/AssertionConsumerService`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/PRRestService/WebSSO/SAML/AssertionConsumerService`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -115,14 +115,14 @@ ms.locfileid: "59271107"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес для входа.
 
-    b. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://<CUSTOMERNAME>.pegacloud.io/prweb/sso`
+    b. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://<CUSTOMERNAME>.pegacloud.io/prweb/sso`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените эти значения фактическим идентификатором, URL-адресом ответа, URL-адресом для входа и URL-адресом состояния ретранслятора. Далее в этом руководстве объясняется, как найти значения идентификатора и URL-адреса ответа в приложении Pega Systems. Чтобы получить значение состояния ретрансляции, обратитесь к [группе поддержки клиентов Pega Systems](https://www.pega.com/contact-us). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 6. Приложение Pega Systems ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 7. В дополнение к описанному выше приложение Pega Systems ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
@@ -143,9 +143,9 @@ ms.locfileid: "59271107"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

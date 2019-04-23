@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 02/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 01d39cfd5b87f9547659c79f3b748c7b23a87c77
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59278502"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-explanation-based-auditing-system"></a>Руководство по Интеграция Azure Active Directory с Explanation-Based Auditing System
@@ -52,7 +52,7 @@ ms.locfileid: "59278502"
 
 Чтобы настроить интеграцию Explanation-Based Auditing System с Azure AD, необходимо добавить Explanation-Based Auditing System из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить приложение Explanation-Based Auditing System из коллекции, сделайте следующее:**
+**Чтобы добавить приложение Explanation-Based Auditing System из коллекции, сделайте следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 

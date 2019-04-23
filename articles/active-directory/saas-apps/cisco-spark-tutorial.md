@@ -16,10 +16,10 @@ ms.date: 02/28/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 05127e8ecfe68b4cb6330f838f252557bbd5e11d
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59272705"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cisco-webex"></a>Руководство по Интеграция Azure Active Directory с Cisco Webex
@@ -53,7 +53,7 @@ ms.locfileid: "59272705"
 
 Чтобы настроить интеграцию Cisco Webex с Azure AD, необходимо добавить Cisco Webex из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Cisco Webex из коллекции, выполните следующие действия:**
+**Чтобы добавить Cisco Webex из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -107,16 +107,16 @@ ms.locfileid: "59272705"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Cisco Webex](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес формате `https://web.ciscospark.com/#/signin`
+    a. В текстовом поле **Sign on URL** (URL-адрес входа) введите URL-адрес в формате: `https://web.ciscospark.com/#/signin`
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://idbroker.webex.com/<Org Id>`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://idbroker.webex.com/<Org Id>`.
 
     > [!NOTE]
     > Значение идентификатора не является реальным. Вместо него нужно указать фактический идентификатор. Если у вас есть файл метаданных поставщика услуг, отправьте его в разделе **Базовая конфигурация SAML** и значение параметра **Идентификатор (сущности)** заполнится автоматически.
 
 5. Приложение Cisco Webex ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы добавить атрибуты.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В дополнение к описанному выше приложение Cisco Webex ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
     
@@ -126,9 +126,9 @@ ms.locfileid: "59272705"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -265,4 +265,4 @@ ms.locfileid: "59272705"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Настройка подготовки пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/cisco-spark-provisioning-tutorial) 
+- [Руководство по настройке Google Apps для автоматической подготовки пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/cisco-spark-provisioning-tutorial) 

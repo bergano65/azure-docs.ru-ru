@@ -11,10 +11,10 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 02/22/2019
 ms.openlocfilehash: fc219d9e3e5b365f341b2997804586e67275c1b7
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59046518"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-net"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством (.NET)
@@ -174,4 +174,4 @@ az iot hub show-connection-string --name YourIoTHubName --output table
 Чтобы узнать, как маршрутизировать сообщения с устройства в облако в разные расположения в облаке, перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
-> [Руководство по Использование Azure CLI и портала Azure для настройки маршрутизации сообщений Центра Интернета вещей](tutorial-routing.md)
+> [Руководство. Маршрутизация телеметрии в разные конечные точки для обработки](tutorial-routing.md)

@@ -11,10 +11,10 @@ ms.topic: quickstart
 ms.date: 2/20/2019
 ms.author: fmegen
 ms.openlocfilehash: fe565d63e72b5ec2798dde03ba4f4bd9ff4f48a7
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59009405"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-java"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Java
@@ -84,6 +84,6 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
 
 ## <a name="see-also"></a>См. также
 
-- [Краткое руководство. Перевод речи с помощью Java (Windows, Linux)](quickstart-translate-speech-java-jre.md)
+- [Краткое руководство Перевод речи с помощью пакета SDK службы "Речь" для Java"](quickstart-translate-speech-java-jre.md)
 - [Настройка акустических моделей](how-to-customize-acoustic-models.md)
 - [Настройка языковых моделей](how-to-customize-language-model.md)

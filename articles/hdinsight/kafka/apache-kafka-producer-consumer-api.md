@@ -10,10 +10,10 @@ ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 04/02/2019
 ms.openlocfilehash: 6b77cd9939e244fd031788164cdfe391c3e2b9d5
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58916399"
 ---
 # <a name="tutorial-use-the-apache-kafka-producer-and-consumer-apis"></a>Руководство. Использование API производителя и потребителя Apache Kafka
@@ -225,6 +225,6 @@ tmux new-session 'java -jar kafka-producer-consumer.jar consumer myTest $KAFKABR
 
 Из этого документа вы узнали, как использовать API производителя и потребителя Apache Kafka для Kafka в HDInsight. Дополнительные сведения о работе с Kafka см. в следующих материалах.
 
-* [Анализ журналов Apache Kafka](apache-kafka-log-analytics-operations-management.md)
+* [Анализ журналов для Apache Kafka в HDInsight](apache-kafka-log-analytics-operations-management.md)
 * [Репликация данных между кластерами Apache Kafka](apache-kafka-mirroring.md)
-* [API потоков Apache Kafka в HDInsight](apache-kafka-streams-api.md)
+* [API потоков Kafka в HDInsight](apache-kafka-streams-api.md)

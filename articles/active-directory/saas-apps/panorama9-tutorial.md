@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: ff26acc1050a6104525ec44304fd9fee21d6d3cb
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59275584"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-panorama9"></a>Руководство. Интеграция Azure Active Directory с Panorama9
@@ -51,7 +51,7 @@ ms.locfileid: "59275584"
 
 Чтобы настроить интеграцию Panorama9 с Azure AD, необходимо добавить Panorama9 из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Panorama9 из коллекции, сделайте следующее:**
+**Чтобы добавить Panorama9 из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59275584"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Panorama9](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://dashboard.panorama9.com/saml/access/3262`
+    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://dashboard.panorama9.com/saml/access/3262`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://www.panorama9.com/saml20/<tenant-name>`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://www.panorama9.com/saml20/<tenant-name>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Panorama9](https://support.panorama9.com/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

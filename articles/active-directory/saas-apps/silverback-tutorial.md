@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: d02ec23e7e6ce936fdbcce63d1394e3a8681c65b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59268642"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-silverback"></a>Руководство по Интеграция Azure Active Directory с Silverback
@@ -105,11 +105,11 @@ ms.locfileid: "59268642"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Silverback](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YOURSILVERBACKURL>.com/ssp`
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YOURSILVERBACKURL>.com/ssp`.
 
-    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `<YOURSILVERBACKURL>.com`
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `<YOURSILVERBACKURL>.com`.
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<YOURSILVERBACKURL>.com/sts/authorize/login`
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<YOURSILVERBACKURL>.com/sts/authorize/login`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Silverback](mailto:helpdesk@matrix42.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -201,7 +201,7 @@ ms.locfileid: "59268642"
 
 Чтобы пользователи Azure AD могли выполнять вход в Silverback, они должны быть подготовлены в Silverback. В Silverback подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Войдите на сервер Silverback с правами администратора.
 

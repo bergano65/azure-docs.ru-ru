@@ -19,10 +19,10 @@ ms.reviewer: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b0a20c2e6524b0c466f5c45578e0ba8eaad351ea
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58881891"
 ---
 # <a name="quickstart-build-a-xamarin-app-that-integrates-microsoft-sign-in"></a>Краткое руководство. Создание приложения Xamarin, которое интегрирует функцию входа в Майкрософт
@@ -104,7 +104,7 @@ ms.locfileid: "58881891"
 
 Практически вся логика для проверки подлинности приложения находится в `DirectorySearcher.SearchByAlias(...)`. Специфические для платформы проекты должны отправлять контекстный параметр в PCL `DirectorySearcher`.
 
-1. Откройте файл DirectorySearcher.cs, а затем добавьте новый параметр в метод `SearchByAlias(...)`. `IPlatformParameters` — это контекстный параметр, инкапсулирующий специфические для платформы объекты, которые нужны ADAL для проверки подлинности.
+1. Откройте файл DirectorySearcher.cs, а затем добавьте новый параметр в метод `SearchByAlias(...)`. `IPlatformParameters` — это контекстный параметр, инкапсулирующий специфические для платформы объекты, которые нужны ADAL для проверки подлинности.
 
     ```csharp
     public static async Task<List<User>> SearchByAlias(string alias, IPlatformParameters parent)
@@ -130,7 +130,7 @@ ms.locfileid: "58881891"
     ...
     ```
 
-    `AcquireTokenAsync(...)` сначала попытается вернуть маркер безопасности для запрошенного ресурса (в данном случае API Graph) и не будет предлагать пользователю вводить учетные данные (путем кэширования или обновления старых маркеров безопасности). При необходимости перед получением запрошенного маркера для пользователя отображается страница входа в Azure AD.
+    `AcquireTokenAsync(...)` сначала попытается вернуть маркер для запрошенного ресурса (в данном случае API Graph) и не будет предлагать пользователю вводить учетные данные (путем кэширования или обновления старых маркеров). При необходимости перед получением запрошенного маркера для пользователя отображается страница входа в Azure AD.
 4. Присоедините маркер доступа к запросу API Graph в заголовке **авторизации**:
 
     ```csharp

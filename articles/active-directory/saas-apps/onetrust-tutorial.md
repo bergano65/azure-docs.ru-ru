@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
 ms.openlocfilehash: 490ef95e061da4a008bf50ef664aaa379d5b3062
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59258833"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-onetrust-privacy-management-software"></a>Руководство по Интеграция Azure Active Directory с OneTrust Privacy Management Software
@@ -53,7 +53,7 @@ ms.locfileid: "59258833"
 
 Чтобы настроить интеграцию OneTrust Privacy Management Software с Azure AD, необходимо добавить OneTrust Privacy Management Software из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить OneTrust Privacy Management Software из коллекции, сделайте следующее:**
+**Чтобы добавить OneTrust Privacy Management Software из коллекции, выполните следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -109,7 +109,7 @@ ms.locfileid: "59258833"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://www.onetrust.com/saml2`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.onetrust.com/auth/consumerservice`
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.onetrust.com/auth/consumerservice`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 

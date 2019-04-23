@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: ffb5da8abd9673d4922aeb4854b3dfa80349f284
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59268336"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-targetprocess"></a>Руководство. Интеграция Azure Active Directory с TargetProcess
@@ -52,7 +52,7 @@ ms.locfileid: "59268336"
 
 Чтобы настроить интеграцию приложения TargetProcess с Azure AD, необходимо добавить TargetProcess из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить TargetProcess из коллекции, выполните следующие действия:**
+**Чтобы добавить TargetProcess из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,9 +106,9 @@ ms.locfileid: "59268336"
 
     ![Сведения о домене и URL-адресах единого входа для приложения TargetProcess](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.tpondemand.com/`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.tpondemand.com/`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.tpondemand.com/`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.tpondemand.com/`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов TargetProcess](mailto:support@targetprocess.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -131,7 +131,7 @@ ms.locfileid: "59268336"
 
 1. Для автоматизации настройки в **TargetProcess** необходимо установить **Расширение браузера "Безопасный вход в мои приложения"**, щелкнув **Установить расширение**.
 
-    ![изображение](./media/target-process-tutorial/install_extension.png)
+    ![image](./media/target-process-tutorial/install_extension.png)
 
 2. После добавления расширения в браузере щелкните **Установка TargetProcess**, чтобы перейти к приложению TargetProcess. После этого укажите учетные данные администратора для входа в TargetProcess. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–7.
 

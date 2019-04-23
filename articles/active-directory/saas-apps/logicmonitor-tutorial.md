@@ -16,10 +16,10 @@ ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4a953ae52f37b8d48f9e2e0566325691dbb08307
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59258102"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-logicmonitor"></a>Руководство по Интеграция Azure Active Directory с LogicMonitor
@@ -51,7 +51,7 @@ ms.locfileid: "59258102"
 
 Чтобы настроить интеграцию LogicMonitor с Azure AD, необходимо добавить LogicMonitor из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить LogicMonitor из коллекции, сделайте следующее:**
+**Чтобы добавить LogicMonitor из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59258102"
 
     ![Сведения о домене и URL-адресах единого входа для приложения LogicMonitor](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.logicmonitor.com`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.logicmonitor.com`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.logicmonitor.com`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.logicmonitor.com`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов LogicMonitor](https://www.logicmonitor.com/contact/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 14313567df69b26b000f9bddd98e009aeed2dcd7
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59272043"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-people"></a>Руководство по Интеграция Azure Active Directory с приложением "Люди"
@@ -105,11 +105,11 @@ ms.locfileid: "59272043"
 
     ![Сведения о домене и URL-адресах единого входа приложения "Люди"](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.peoplehr.net`
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.peoplehr.net`.
 
-    b. В поле **Идентификатор** введите URL-адрес: `https://www.peoplehr.com`
+    b. В поле **Идентификатор** введите URL-адрес `https://www.peoplehr.com`.
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<company name>.peoplehr.net/Pages/Saml/ConsumeAzureAD.aspx`
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<company name>.peoplehr.net/Pages/Saml/ConsumeAzureAD.aspx`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения URL-адреса входа и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки People](mailto:customerservices@peoplehr.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

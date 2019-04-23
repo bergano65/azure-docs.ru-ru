@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: b8d7b6fee973379516e7dbf58b27cfafe1e1edc0
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59276547"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-reflektive"></a>Руководство по Интеграция Azure Active Directory с Reflektive
@@ -51,7 +51,7 @@ ms.locfileid: "59276547"
 
 Чтобы настроить интеграцию Reflektive с Azure AD, необходимо добавить Reflektive из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Reflektive из коллекции, сделайте следующее:**
+**Чтобы добавить Reflektive из коллекции, сделайте следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -115,7 +115,7 @@ ms.locfileid: "59276547"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![изображение](common/both-preintegrated-signon.png)
+    ![image](common/both-preintegrated-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес: `https://www.reflektive.com/app`.
 

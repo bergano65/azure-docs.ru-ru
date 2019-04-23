@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.openlocfilehash: cf3185b7deee59439bb9c1ba2ac6017c348ed270
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59262165"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mobi"></a>Руководство по Интеграция Azure Active Directory с MOBI
@@ -104,9 +104,9 @@ ms.locfileid: "59262165"
 
     ![Сведения о домене и URL-адресах единого входа для приложения MOBI](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<subdomain>.thefutureis.mobi`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.thefutureis.mobi`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.thefutureis.mobi/saml_consume`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.thefutureis.mobi/saml_consume`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 

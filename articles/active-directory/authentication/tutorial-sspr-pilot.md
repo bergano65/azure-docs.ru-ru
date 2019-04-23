@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a6e1095cc2c5937fa5de762f91a9830161b8d2a5
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59362123"
 ---
 # <a name="tutorial-complete-an-azure-ad-self-service-password-reset-pilot-roll-out"></a>Руководство по Выполнение пилотного развертывания самостоятельного сброса пароля Azure AD
@@ -81,4 +81,4 @@ ms.locfileid: "59362123"
 В этом руководстве было произведено включение самостоятельного сброса пароля Azure AD. Перейдите к следующему руководству по интеграции локальной инфраструктуры доменных служб Active Directory в интерфейс самостоятельного сброса пароля.
 
 > [!div class="nextstepaction"]
-> [Руководство по Включение компонента обратной записи паролей](tutorial-enable-writeback.md)
+> [Tutorial: Enabling password writeback](tutorial-enable-writeback.md) (Руководство. Включение обратной записи паролей)

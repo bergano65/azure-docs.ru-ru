@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: bd1ed30d56e8d23057e560b1180c35e0a29542b6
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59274949"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-intime"></a>Руководство по Интеграция Azure Active Directory с InTime
@@ -51,7 +51,7 @@ ms.locfileid: "59274949"
 
 Чтобы настроить интеграцию InTime с Azure AD, необходимо добавить InTime из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить InTime из коллекции, сделайте следующее:**
+**Чтобы добавить InTime из коллекции, сделайте следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,13 +105,13 @@ ms.locfileid: "59274949"
 
     ![Сведения о домене и URL-адресах единого входа приложения InTime](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://intime6.intimesoft.com/mytime/login/login.xhtml`
+    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://intime6.intimesoft.com/mytime/login/login.xhtml`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом. `https://auth.intimesoft.com/auth/realms/master`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://auth.intimesoft.com/auth/realms/master`
 
 5. Приложение InTime ожидает утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение InTime ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 

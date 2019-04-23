@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 03/26/2019
 ms.author: mlottner
 ms.openlocfilehash: 64a04861b14e48eaa14a369546dd9d54bf59f019
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58861927"
 ---
 # <a name="quickstart-configure-your-iot-solution"></a>Краткое руководство. Настройка решения Интернета вещей
@@ -61,4 +61,4 @@ ASC для Интернета вещей теперь отслеживает н�
 Чтобы узнать, как создавать модули безопасности, перейдите к следующей статье.
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Создание ASC для двойника модуля Интернета вещей](quickstart-create-security-twin.md)
+> [Quickstart: Create an azureiotsecurity module twin](quickstart-create-security-twin.md) (Краткое руководство по созданию модуля двойника устройства azureiotsecurity)

@@ -13,10 +13,10 @@ ms.reviewer: sstein, carlrab, bonova
 manager: craigg
 ms.date: 12/14/2018
 ms.openlocfilehash: 5cf9046a26edae3e6076ee1effe32930f15f4569
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59356837"
 ---
 # <a name="quickstart-restore-a-database-to-a-managed-instance"></a>Краткое руководство. Восстановление базы данных в Управляемый экземпляр
@@ -36,7 +36,7 @@ ms.locfileid: "59356837"
 - Используйте ресурсы из статьи [Краткое руководство. Создание Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-get-started.md).
 - Необходимо, чтобы на вашем компьютере была установлена последняя версия [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms).
 - SSMS используется для подключения к Управляемому экземпляру. Ознакомьтесь с этими краткими руководствами по подключению.
-  - [Подключение к Управляемому экземпляру Базы данных SQL Azure с виртуальной машины Azure](sql-database-managed-instance-configure-vm.md)
+  - [Connect to an Azure SQL Database Managed Instance from an Azure VM](sql-database-managed-instance-configure-vm.md) (Подключение к Управляемому экземпляру Базы данных SQL Azure с виртуальной машины Azure).
   - [Краткое руководство. Настройка подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure с локального компьютера](sql-database-managed-instance-configure-p2s.md).
 
 > [!NOTE]

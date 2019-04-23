@@ -16,10 +16,10 @@ ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0f20c917a889450f0eacd34e86683b4346681cfc
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59258850"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lyndacom"></a>Руководство по Интеграция Azure Active Directory с Lynda.com
@@ -52,7 +52,7 @@ ms.locfileid: "59258850"
 
 Чтобы настроить интеграцию Lynda.com с Azure AD, необходимо добавить Lynda.com из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Lynda.com из коллекции, сделайте следующее:**
+**Чтобы добавить Lynda.com из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 

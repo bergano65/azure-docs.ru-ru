@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 45ffcaa1d5bccb0746ce86ec0f98342ce5e9bcc9
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59270104"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-quickhelp"></a>Руководство по Интеграция Azure Active Directory с QuickHelp
@@ -53,7 +53,7 @@ ms.locfileid: "59270104"
 
 Чтобы настроить интеграцию QuickHelp с Azure AD, необходимо добавить QuickHelp из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить QuickHelp из коллекции, сделайте следующее:**
+**Чтобы добавить QuickHelp из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -107,9 +107,9 @@ ms.locfileid: "59270104"
 
     ![Сведения о домене и URL-адресах единого входа приложения QuickHelp](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://quickhelp.com/<ROUTEURL>`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://quickhelp.com/<ROUTEURL>`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом. `https://auth.quickhelp.com`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://auth.quickhelp.com`
 
     > [!NOTE]
     > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Обратитесь к администратору QuickHelp вашей организации или менеджеру по работе с клиентами BrainStorm, чтобы получить это значение. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

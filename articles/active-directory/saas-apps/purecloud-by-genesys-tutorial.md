@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 764ad8f1ca19238e1986d1d187d19c405963a832
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59267401"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-purecloud-by-genesys"></a>Руководство по Интеграция Azure Active Directory с PureCloud от Genesys
@@ -50,7 +50,7 @@ ms.locfileid: "59267401"
 
 Чтобы настроить интеграцию PureCloud от Genesys с Azure AD, необходимо добавить PureCloud от Genesys из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить PureCloud от Genesys из коллекции, сделайте следующее:**
+**Чтобы добавить PureCloud от Genesys из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -140,7 +140,7 @@ ms.locfileid: "59267401"
 
 6. Приложение PureCloud от Genesys ожидает проверочные утверждения SAML в определенном формате, поэтому вам требуется добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 7. В дополнение к описанному выше приложение PureCloud от Genesys ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
@@ -151,9 +151,9 @@ ms.locfileid: "59267401"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -260,7 +260,7 @@ ms.locfileid: "59267401"
 
 Чтобы пользователи Azure AD могли выполнять вход в PureCloud от Genesys, их нужно подготовить к работе в PureCloud от Genesys. В PureCloud от Genesys такая подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Войдите в PureCloud от Genesys с правами администратора.
 

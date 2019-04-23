@@ -11,17 +11,17 @@ ms.date: 04/08/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: a1cf72d9e3f5c2c6e919304d4d886a607c54f359
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59282667"
 ---
 # <a name="quickstart-use-built-in-portal-tools-for-azure-search-import-indexing-and-queries"></a>Краткое руководство. Использование встроенных инструментов на портале для импорта, индексирования и отправки запросов в Поиске Azure
 > [!div class="op_single_selector"]
-> * [Microsoft Azure](search-get-started-portal.md)
+> * [Портал](search-get-started-portal.md)
 > * [PowerShell](search-howto-dotnet-sdk.md)
-> * [postman](search-fiddler.md)
+> * [Postman](search-fiddler.md)
 > * [C#](search-create-index-dotnet.md)
 >*
 
@@ -272,6 +272,6 @@ ms.locfileid: "59282667"
 
 Вы можете более детально изучить службу "Поиск Azure" с помощью программных средств, следуя инструкциям в таких статьях:
 
-* [Краткое руководство. Часть 1. Создание индекса службы "Поиск Azure" с помощью C#](https://docs.microsoft.com/azure/search/search-create-index-dotnet)
-* [Create an index using REST APIs (Создание индекса службы поиска Azure с помощью REST API)](https://docs.microsoft.com/azure/search/search-create-index-rest-api)
-* [Краткое руководство. Работа с REST API службы "Поиск Azure" с помощью Postman или Fiddler](search-fiddler.md)
+* [Создание индекса службы поиска Azure с помощью пакета SDK для .NET](https://docs.microsoft.com/azure/search/search-create-index-dotnet)
+* [Создание индекса службы поиска Azure с помощью REST API](https://docs.microsoft.com/azure/search/search-create-index-rest-api)
+* [Создание индекса с помощью Postman или Fiddler и API REST Поиска Azure](search-fiddler.md)

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
 ms.openlocfilehash: 5fe23b74531a5769ac62544a5a54f5919ca9e79e
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59261145"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-projectplace"></a>Руководство по Интеграция Azure Active Directory с Projectplace
@@ -51,7 +51,7 @@ ms.locfileid: "59261145"
 
 Чтобы настроить интеграцию Projectplace с Azure AD, необходимо добавить Projectplace из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Projectplace из коллекции, сделайте следующее:**
+**Чтобы добавить Projectplace из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -185,7 +185,7 @@ ms.locfileid: "59261145"
 
 Чтобы пользователи Azure AD могли выполнять вход в Projectplace, они должны быть подготовлены для Projectplace. В случае с Projectplace подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Выполните вход на сайт **Projectplace** компании в качестве администратора.
 

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: b599eaf36eed69cd693e0dc4e20ef2123e42e60b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59270750"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skills-manager"></a>Руководство по Интеграция Azure Active Directory со Skills Manager
@@ -105,9 +105,9 @@ ms.locfileid: "59270750"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Skills Manager](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<SUBDOMAIN>.skills-manager.com/kennametal`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.skills-manager.com/kennametal`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<SUBDOMAIN>.skills-manager.com/public/SamlLogin2.aspx`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.skills-manager.com/public/SamlLogin2.aspx`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Для получения этих значений обратитесь к [группе поддержки клиентов Skills Manager](https://www.ibm.com/support/uk/?lnk=msu_uk). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

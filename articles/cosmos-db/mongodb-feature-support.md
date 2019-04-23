@@ -8,10 +8,10 @@ ms.date: 12/26/2018
 author: sivethe
 ms.author: sivethe
 ms.openlocfilehash: 168b5cdf4f65992bad886352921e9aaff6d5b09c
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58885793"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-supported-features-and-syntax"></a>API Azure Cosmos DB для MongoDB — поддержка возможностей и синтаксиса
@@ -340,4 +340,4 @@ Cosmos DB поддерживает автоматическое сегменти
 - Узнайте, как [использовать Robo 3T](mongodb-robomongo.md) с API Azure Cosmos DB для MongoDB.
 - Ознакомьтесь с [примерами](mongodb-samples.md) MongoDB с API Azure Cosmos DB для MongoDB.
 
-<sup>Примечание. В этой статье описывается функция Azure Cosmos DB, обеспечивающая совместимость сетевого протокола с базами данных MongoDB. Корпорация Майкрософт не использует базы данных MongoDB для предоставления этой службы. Служба Azure Cosmos DB не связана с MongoDB, Inc.</sup>
+<sup>Примечание. В этой статье описывается функция Azure Cosmos DB, обеспечивающая совместимость сетевого протокола с базами данных MongoDB. Корпорация Майкрософт не использует базы данных MongoDB для предоставления этой службы. Azure Cosmos DB не связана с MongoDB, Inc.</sup>

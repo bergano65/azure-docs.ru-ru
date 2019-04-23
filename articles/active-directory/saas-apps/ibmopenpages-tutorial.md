@@ -16,10 +16,10 @@ ms.date: 02/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 699e4830b6399fbce07dfc125e69513b58f58dd1
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59260125"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ibm-openpages"></a>Руководство по Интеграция Azure Active Directory с IBM OpenPages
@@ -51,7 +51,7 @@ ms.locfileid: "59260125"
 
 Чтобы настроить интеграцию IBM OpenPages с Azure AD, необходимо добавить IBM OpenPages из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить IBM OpenPages из коллекции, выполните следующие действия:**
+**Чтобы добавить IBM OpenPages из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59260125"
 
     ![Сведения о домене и URL-адресах единого входа для приложения IBM OpenPages](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `http://<subdomain>.ibm.com:<ID>/openpages`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `http://<subdomain>.ibm.com:<ID>/openpages`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.ibm.com:<ID>/samlsps/op`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.ibm.com:<ID>/samlsps/op`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов IBM OpenPages](https://www.ibm.com/support/home/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

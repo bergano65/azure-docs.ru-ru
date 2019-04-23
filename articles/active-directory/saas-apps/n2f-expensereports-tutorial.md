@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
 ms.openlocfilehash: 7380cf6727817d99edbedf5552c8bea42f177074
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59261689"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-n2f---expense-reports"></a>Руководство по Интеграция Azure Active Directory с N2F - Expense reports
@@ -50,7 +50,7 @@ ms.locfileid: "59261689"
 
 Чтобы настроить интеграцию N2F - Expense reports с Azure AD, необходимо добавить N2F - Expense reports из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить N2F - Expense reports из коллекции, сделайте следующее:**
+**Чтобы добавить N2F - Expense reports из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -209,7 +209,7 @@ ms.locfileid: "59261689"
 
 Чтобы разрешить пользователям Azure AD вход в N2F - Expense reports, их необходимо подготовить для N2F - Expense reports. В случае с N2F - Expense reports подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Выполните вход на сайт компании N2F - Expense reports в качестве администратора.
 

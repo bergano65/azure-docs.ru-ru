@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: a18971125724e6e2fdc6b37de15894efb8b9071a
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59258952"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sd-elements"></a>Руководство по Интеграция Azure Active Directory с SD Elements
@@ -51,7 +51,7 @@ ms.locfileid: "59258952"
 
 Чтобы настроить интеграцию SD Elements с Azure AD, необходимо добавить SD Elements из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить SD Elements из коллекции, выполните следующие действия:**
+**Чтобы добавить SD Elements из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,16 +105,16 @@ ms.locfileid: "59258952"
 
     ![Сведения о домене и URL-адресах единого входа для приложения SD Elements](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<tenantname>.sdelements.com/sso/saml2/metadata`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<tenantname>.sdelements.com/sso/saml2/metadata`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<tenantname>.sdelements.com/sso/saml2/acs/`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<tenantname>.sdelements.com/sso/saml2/acs/`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки SD Elements](mailto:support@sdelements.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. Приложение SD Elements ожидает проверочных утверждений SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
@@ -126,9 +126,9 @@ ms.locfileid: "59258952"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -233,7 +233,7 @@ ms.locfileid: "59258952"
 
 Цель этого раздела — создать в приложении SD Elements пользователя с именем Britta Simon. Пользователи SD Elements создаются вручную.
 
-**Чтобы создать пользователя с именем Britta Simon в SD Elements, выполните следующие действия:**
+**Чтобы создать пользователя с именем Britta Simon в SD Elements, выполните следующие действия.**
 
 1. Откройте браузер и войдите на корпоративный сайт SD Elements с правами администратора.
 

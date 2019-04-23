@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 2fce8b628798ef38889f64d9409bf586a85463b8
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59269679"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mindwireless"></a>Руководство по Интеграция Azure Active Directory с mindWireless
@@ -50,7 +50,7 @@ ms.locfileid: "59269679"
 
 Чтобы настроить интеграцию mindWireless с Azure AD, необходимо добавить mindWireless из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить mindWireless из коллекции, сделайте следующее:**
+**Чтобы добавить mindWireless из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -104,16 +104,16 @@ ms.locfileid: "59269679"
 
     ![Сведения о домене и URL-адресах единого входа для приложения mindWireless](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<subdomain>.mwsmart.com/`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.mwsmart.com/`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.mwsmart.com/SAML/AssertionConsumerService.aspx`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.mwsmart.com/SAML/AssertionConsumerService.aspx`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов mindWireless](mailto:sdulloor@mindwireless.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. Приложение mindWireless ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Утверждение всегда будет носить имя **Employee ID** и иметь значение, сопоставленное с параметром **user.employeeid**, который содержит идентификатор сотрудника (EmployeeID) для этого пользователя. Здесь выполняется сопоставление пользователя из Azure AD с mindWireless по значению EmployeeID, однако его можно сопоставить с другим значением, учитывая параметры приложения. Вместе со [службой поддержки mindWireless](mailto:sdulloor@mindwireless.com) выполните действия по использованию правильного идентификатора пользователя и его сопоставлению с утверждением **Employee ID**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В дополнение к описанному выше приложение mindWireless ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
@@ -123,9 +123,9 @@ ms.locfileid: "59269679"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

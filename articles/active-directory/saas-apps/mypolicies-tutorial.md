@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
 ms.openlocfilehash: 240291c7ec1d989e52a2896dc696f69afbee0093
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59279369"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mypolicies"></a>Руководство по Интеграция Azure Active Directory с myPolicies
@@ -50,7 +50,7 @@ ms.locfileid: "59279369"
 
 Чтобы настроить интеграцию myPolicies с Azure AD, необходимо добавить myPolicies из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить myPolicies из коллекции, сделайте следующее:**
+**Чтобы добавить myPolicies из коллекции, сделайте следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -104,9 +104,9 @@ ms.locfileid: "59279369"
 
     ![Сведения о домене и URL-адресах единого входа для приложения myPolicies](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<tenantname>.mypolicies.com/`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<tenantname>.mypolicies.com/`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<tenantname>.mypolicies.com/users/auth/saml/callback`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<tenantname>.mypolicies.com/users/auth/saml/callback`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов myPolicies](mailto:support@mypolicies.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

@@ -16,10 +16,10 @@ ms.date: 03/13/2019
 ms.author: aljo
 ms.custom: mvc
 ms.openlocfilehash: dabbefa8ca2073e30948f1c70782f730bceae030
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59050012"
 ---
 # <a name="tutorial-deploy-a-service-fabric-cluster-running-windows-into-an-azure-virtual-network"></a>Руководство по развертыванию кластера Service Fabric на платформе Windows в виртуальной сети Azure
@@ -45,9 +45,9 @@ ms.locfileid: "59050012"
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * создание защищенного кластера в Azure;
-> * [мониторинг кластера;](service-fabric-tutorial-monitor-cluster.md)
-> * [увеличение или уменьшение масштаба кластера;](service-fabric-tutorial-scale-cluster.md)
-> * [обновление среды выполнения кластера;](service-fabric-tutorial-upgrade-cluster.md)
+> * [Мониторинг кластера](service-fabric-tutorial-monitor-cluster.md)
+> * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
+> * [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
 > * [Удаление кластера](service-fabric-tutorial-delete-cluster.md)
 
 

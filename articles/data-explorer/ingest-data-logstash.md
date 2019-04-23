@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 01/14/2019
 ms.openlocfilehash: e0d81454e6036d09bb74af6f522063a1aed5fffe
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59046416"
 ---
 # <a name="quickstart-ingest-data-from-logstash-to-azure-data-explorer"></a>Краткое руководство. Прием данных из Logstash в Azure Data Explorer
@@ -113,7 +113,7 @@ output {
 | **app_id**, **app_key**, и **app_tenant**| Учетные данные, необходимые для подключения к Azure Data Explorer. Обязательно используйте приложение с привилегиями приема. |
 | **database**| Имя базы данных для размещения событий. |
 | **таблица** | Имя целевой таблицы для размещения событий. |
-| **mapping** | Сопоставление используется для сопоставления строки в формате JSON входящего события в правильный формат строки (определяет, какое свойство входит в какой столбец). |
+| **сопоставление** | Сопоставление используется для сопоставления строки в формате JSON входящего события в правильный формат строки (определяет, какое свойство входит в какой столбец). |
 
 ## <a name="run-logstash"></a>Запуск Logstash
 

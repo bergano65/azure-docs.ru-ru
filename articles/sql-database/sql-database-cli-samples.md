@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 02/03/2019
 ms.openlocfilehash: 7a1132b5857cf6c54d0566ca29bb76ce1ef88513
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59359443"
 ---
 # <a name="azure-cli-samples-for-azure-sql-database"></a>Примеры Azure CLI для базы данных SQL Azure
@@ -51,7 +51,7 @@ ms.locfileid: "59359443"
 
 | |  |
 |---|---|
-| [Создание управляемого экземпляра](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../create-azure-sql-managed-instance-using-azure-cli/) | В этом скрипте CLI показано, как создать Управляемый экземпляр. |
+| [Создание Управляемого экземпляра](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../create-azure-sql-managed-instance-using-azure-cli/) | В этом скрипте CLI показано, как создать Управляемый экземпляр. |
 | [Обновление Управляемого экземпляра](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../modify-azure-sql-database-managed-instance-using-azure-cli/) | В этом скрипте CLI показано, как обновить Управляемый экземпляр. |
 | [Перемещение базы данных в другой Управляемый экземпляр](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../cross-instance-point-in-time-restore-in-azure-sql-database-managed-instance/) | В этом скрипте CLI показано, как восстановить резервную копию базы данных из одного экземпляра в другой. |
 |||

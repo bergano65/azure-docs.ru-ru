@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 21cbef1532928d51ba0c9f11e80304933df505b1
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59261757"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-oc-tanner---appreciatehub"></a>Руководство по Интеграция Azure Active Directory с O.C. Tanner — AppreciateHub
@@ -193,7 +193,7 @@ ms.locfileid: "59261757"
 
 Цель этого раздела — создать пользователя с именем Britta Simon в O.C. Tanner — AppreciateHub.
 
-**Чтобы создать пользователя с именем Britta Simon в O.C. Tanner — AppreciateHub, выполните следующие действия.**
+**Чтобы создать пользователя с именем Britta Simon в O.C. Tanner — AppreciateHub, выполните следующие действия.**
 
 Попросите [службу поддержки O.C. Tanner — AppreciateHub](mailto:sso@octanner.com) создать пользователя, у которого значение атрибута nameID совпадает с именем пользователя Britta Simon в Azure AD.
 

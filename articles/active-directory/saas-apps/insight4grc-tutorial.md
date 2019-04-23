@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 1ad101d209415acdceb0091dba5fbedeb8b0aa4b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59280525"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insight4grc"></a>Руководство по Интеграция Azure Active Directory с Insight4GRC
@@ -52,7 +52,7 @@ ms.locfileid: "59280525"
 
 Чтобы настроить интеграцию Insight4GRC с Azure AD, необходимо добавить Insight4GRC из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Insight4GRC из коллекции, сделайте следующее:**
+**Чтобы добавить Insight4GRC из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,9 +106,9 @@ ms.locfileid: "59280525"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Insight4GRC](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<subdomain>.Insight4GRC.com/SAML`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.Insight4GRC.com/SAML`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.Insight4GRC.com/Public/SAML/ACS.aspx`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.Insight4GRC.com/Public/SAML/ACS.aspx`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 

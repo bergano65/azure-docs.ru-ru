@@ -11,10 +11,10 @@ ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: rezas
 ms.openlocfilehash: 4b546b91634e153fa0074adfb863596a1bf36242
-ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59006436"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-nodejs-via-iot-hub-device-streams-preview"></a>Краткое руководство. Взаимодействие с приложением устройства в Node.js с помощью потоков устройств Центра Интернета вещей (предварительная версия)
@@ -41,7 +41,7 @@ ms.locfileid: "59006436"
 
 Предварительная версия потоков устройств сейчас поддерживается только в Центрах Интернета вещей, созданных в следующих регионах.
 
-  - **Центральный регион США**
+  - **Центральная часть США**
   - **Центральная часть США (EUAP)**
 
 Для запуска приложения на стороне службы в этом руководстве вам понадобится Node.js версии 4.x.x или более поздней версии на компьютере разработчика.
@@ -153,4 +153,4 @@ az extension add --name azure-cli-iot-ext
 Используйте приведенные ниже ссылки для получения дополнительных сведений о потоках устройства:
 
 > [!div class="nextstepaction"]
-> [IoT Hub Device Streams (preview) (Потоки устройств Центра Интернета вещей (предварительная версия)](./iot-hub-device-streams-overview.md)
+> [IoT Hub Device Streams (preview)](./iot-hub-device-streams-overview.md) (Потоки устройств (предварительная версия))

@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
 ms.openlocfilehash: cc5d8e4791bc109f4a804aad33bfc258eed97a25
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59281885"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-netdocuments"></a>Руководство по Интеграция Azure Active Directory с NetDocuments
@@ -50,7 +50,7 @@ ms.locfileid: "59281885"
 
 Чтобы настроить интеграцию NetDocuments с Azure AD, необходимо добавить NetDocuments из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить NetDocuments из коллекции, сделайте следующее:**
+**Чтобы добавить NetDocuments из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -104,9 +104,9 @@ ms.locfileid: "59281885"
 
     ![Сведения о домене и URL-адресах единого входа для приложения NetDocuments](common/sp-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<user identifier>`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<user identifier>`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<user identifier>`
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<user identifier>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями URL-адреса входа и URL-адреса ответа. Обратитесь к [группе поддержки клиентов NetDocuments](https://support.netdocuments.com/hc/), чтобы получить эти значения. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -205,7 +205,7 @@ ms.locfileid: "59281885"
 Чтобы разрешить пользователям Azure AD вход в NetDocuments, их необходимо подготовить для NetDocuments.  
 В случае с NetDocuments подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Войдите на сайт компании **NetDocuments** от имени администратора.
 

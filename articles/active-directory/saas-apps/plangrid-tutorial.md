@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
 ms.openlocfilehash: b922e048b2787eedfc0bfc40e553e79f433277dc
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59279471"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-plangrid"></a>Руководство по Интеграция Azure Active Directory с PlanGrid
@@ -51,7 +51,7 @@ ms.locfileid: "59279471"
 
 Чтобы настроить интеграцию PlanGrid с Azure AD, необходимо добавить PlanGrid из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить PlanGrid из коллекции, сделайте следующее:**
+**Чтобы добавить PlanGrid из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -109,7 +109,7 @@ ms.locfileid: "59279471"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![изображение](common/both-preintegrated-signon.png)
+    ![image](common/both-preintegrated-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес: `https://app.plangrid.com/login`.
 

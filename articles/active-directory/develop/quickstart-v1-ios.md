@@ -19,10 +19,10 @@ ms.custom: aaddev
 ms.reviewer: brandwe
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9d986ccbf92192c1fb7375e9db1fb398ed86a829
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58879970"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из приложения iOS
@@ -113,7 +113,7 @@ ms.locfileid: "58879970"
 1. В проекте QuickStart откройте файл `settings.plist`.
 1. Замените значения элементов в соответствующем разделе на значения, указанные на портале Azure. Ваш код будет ссылаться на эти значения при каждом использовании ADAL.
     * `tenant` — это домен вашего клиента Azure AD, например contoso.onmicrosoft.com.
-    * `clientId` — это идентификатор клиента приложения, скопированный с портала.
+    * Для `clientId` укажите скопированный на портале идентификатор клиента приложения.
     * `redirectUri` — это URL-адрес перенаправления, зарегистрированный на портале.
 
 ## <a name="step-4-use-adal-to-get-tokens-from-azure-ad"></a>Шаг 4. Использование ADAL для получения маркеров из Azure AD
@@ -259,5 +259,5 @@ ms.locfileid: "58879970"
 
 Теперь можно приступить к изучению других сценариев. Мы рекомендуем ознакомиться со следующими.
 
-* [Защита веб-API Node.JS с помощью Azure AD](quickstart-v1-nodejs-webapi.md)
+* [Безопасность веб-API с Azure AD для Node.JS](quickstart-v1-nodejs-webapi.md)
 * См. раздел [Включение единого входа в нескольких приложениях iOS с помощью ADAL](howto-v1-enable-sso-ios.md).  

@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 02/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 7fa4c78269464b1a38507acd6512e5f44ed94945
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59267673"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mixpanel"></a>Руководство по Интеграция Azure Active Directory с Mixpanel
@@ -50,7 +50,7 @@ ms.locfileid: "59267673"
 
 Чтобы настроить интеграцию Mixpanel с Azure AD, необходимо добавить Mixpanel из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Mixpanel из коллекции, сделайте следующее:**
+**Чтобы добавить Mixpanel из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 06a10cab81b1253658f505b3cd3f2c520ef9cea8
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59266347"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hrworks-single-sign-on"></a>Руководство по Интеграция Azure Active Directory с HRworks для включения единого входа
@@ -51,7 +51,7 @@ ms.locfileid: "59266347"
 
 Чтобы настроить интеграцию Azure AD с HRworks для включения единого входа, вам необходимо добавить это приложение из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить HRworks из коллекции, сделайте следующее:**
+**Чтобы добавить HRworks из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -196,7 +196,7 @@ ms.locfileid: "59266347"
 
 Чтобы пользователи Azure AD могли выполнять вход в HRworks (единый вход), они должны быть подготовлены в нем. В HRworks подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Войдите в HRworks с правами администратора.
 

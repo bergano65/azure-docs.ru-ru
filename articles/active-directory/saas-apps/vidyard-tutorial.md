@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 94e5893caa4dc19702f45e9b42727aab4f884bcd
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59273861"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-vidyard"></a>Руководство по Интеграция Azure Active Directory с Vidyard
@@ -107,9 +107,9 @@ ms.locfileid: "59273861"
 
     ![Сведения о домене и URL-адресах единого входа приложения Vidyard](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://secure.vidyard.com/sso/saml/<unique id>/metadata`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://secure.vidyard.com/sso/saml/<unique id>/metadata`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://secure.vidyard.com/sso/saml/<unique id>/consume`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://secure.vidyard.com/sso/saml/<unique id>/consume`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 

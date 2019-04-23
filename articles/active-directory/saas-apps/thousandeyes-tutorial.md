@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 587d6f8ecdc447672c14ce400ebc64609e4d472d
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59273912"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-thousandeyes"></a>Руководство по Интеграция Azure Active Directory с ThousandEyes
@@ -53,7 +53,7 @@ ms.locfileid: "59273912"
 
 Чтобы настроить интеграцию ThousandEyes с Azure AD, необходимо добавить ThousandEyes из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить ThousandEyes из коллекции, сделайте следующее:**
+**Чтобы добавить ThousandEyes из коллекции, сделайте следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -255,4 +255,4 @@ ms.locfileid: "59273912"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Настройка подготовки пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/thousandeyes-provisioning-tutorial)
+- [Руководство по настройке Google Apps для автоматической подготовки пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/thousandeyes-provisioning-tutorial)

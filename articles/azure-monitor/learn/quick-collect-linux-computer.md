@@ -15,10 +15,10 @@ ms.date: 11/13/2018
 ms.author: magoedte
 ms.custom: mvc
 ms.openlocfilehash: 15b7c052d0e4d51cb033607c156a55c581f722b1
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58893968"
 ---
 # <a name="configure-log-analytics-agent-for-linux-computers-in-a-hybrid-environment"></a>Настройка агента Log Analytics для компьютеров Linux в гибридной среде
@@ -72,7 +72,7 @@ ms.locfileid: "58893968"
 
 Если требуется подключение компьютера Linux через прокси-сервер к Log Analytics, конфигурацию прокси-сервера можно указать в командной строке, включив `-p [protocol://][user:password@]proxyhost[:port]`.  Свойство *proxyhost* принимает полное доменное имя или IP-адрес прокси-сервера. 
 
-Например:  `https://user01:password@proxy01.contoso.com:30443`
+Например: `https://user01:password@proxy01.contoso.com:30443`
 
 1. Чтобы настроить компьютер Linux для подключения к Log Analytics, выполните следующую команду, указав идентификатор рабочей области и первичный ключ, скопированные ранее. Следующая команда скачивает агент, проверяет его контрольную сумму и устанавливает его. 
     
@@ -148,4 +148,4 @@ Log Analytics может собирать события из системног
 Чтобы узнать, как просматривать и анализировать данные, перейдите к следующему руководству.   
 
 > [!div class="nextstepaction"]
-> [Просмотр и анализ данных в Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md)
+> [Просмотр и анализ данных, собранных с помощью поиска по журналам Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md)

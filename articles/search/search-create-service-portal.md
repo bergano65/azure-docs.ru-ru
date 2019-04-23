@@ -10,10 +10,10 @@ ms.date: 04/05/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: c48acf7e9074ac3c5a7d19765a9524a411fa26c8
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59264035"
 ---
 # <a name="create-an-azure-search-service-in-the-portal"></a>Создание службы "Поиск Azure" на портале
@@ -22,7 +22,7 @@ ms.locfileid: "59264035"
 
 В этой статье вы узнаете, как создать ресурс "Поиск Azure" на [портале Azure](https://portal.azure.com/).
 
-[![AАнимированный GIF-файл](./media/search-create-service-portal/AnimatedGif-AzureSearch-small.gif)](./media/search-create-service-portal/AnimatedGif-AzureSearch.gif#lightbox)
+[![Анимированный GIF-файл](./media/search-create-service-portal/AnimatedGif-AzureSearch-small.gif)](./media/search-create-service-portal/AnimatedGif-AzureSearch.gif#lightbox)
 
 Предпочитаете использовать PowerShell? Используйте [шаблон службы](https://azure.microsoft.com/resources/templates/101-azure-search-create/) Azure Resource Manager. Сведения для начала работы см. в статье [Управление службой поиска Azure с помощью PowerShell](search-manage-powershell.md).
 
@@ -143,4 +143,4 @@ ms.locfileid: "59264035"
 После подготовки службы "Поиск Azure" вы можете продолжить на портале, чтобы создать свой первый индекс.
 
 > [!div class="nextstepaction"]
-> [Руководство по Использование встроенных инструментов на портале для импорта, индексирования и отправки запросов в Поиске Azure](search-get-started-portal.md)
+> [Руководство Использование встроенных инструментов на портале для отправки запросов и индексирования в службе поиска Azure](search-get-started-portal.md)

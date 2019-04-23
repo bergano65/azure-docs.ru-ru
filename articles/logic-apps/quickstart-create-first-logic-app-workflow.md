@@ -12,10 +12,10 @@ ms.date: 07/20/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.openlocfilehash: 577a047fb88208d7e14e8ba06a1b9e7e87c5ef91
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58884246"
 ---
 # <a name="quickstart-create-your-first-automated-workflow-with-azure-logic-apps---azure-portal"></a>Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure
@@ -44,11 +44,11 @@ ms.locfileid: "58884246"
 
    | Свойство | Значение | ОПИСАНИЕ | 
    |----------|-------|-------------| 
-   | **ИМЯ** | MyFirstLogicApp | Имя приложения логики. | 
+   | **Имя** | MyFirstLogicApp | Имя приложения логики. | 
    | **Подписка** | <*Имя вашей подписки Azure*> | Имя подписки Azure. | 
    | **Группа ресурсов** | My-First-LA-RG | Имя [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md), используемой для упорядочения связанных ресурсов. | 
-   | **Расположение** | Запад США | Регион для хранения сведений приложения логики | 
-   | **Log Analytics** | Отключить | Сохраните параметр **Выкл.** для журнала ведения диагностики. | 
+   | **Местоположение.** | Запад США | Регион для хранения сведений приложения логики | 
+   | **Служба Log Analytics** | Отключить | Сохраните параметр **Выкл.** для журнала ведения диагностики. | 
    |||| 
 
 3. После развертывания приложения в Azure открывается конструктор Logic Apps и отображается страница с вводным видео и часто используемыми триггерами. В разделе **Шаблоны** выберите **Пустое приложение логики**.

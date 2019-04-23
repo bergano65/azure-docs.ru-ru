@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
 ms.openlocfilehash: 375b58f47454a7f5904bcdbd132b8318091e9ebd
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59275085"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks---aperture"></a>Руководство по Интеграция Azure Active Directory с Palo Alto Networks - Aperture
@@ -51,7 +51,7 @@ ms.locfileid: "59275085"
 
 Чтобы настроить интеграцию Palo Alto Networks - Aperture с Azure AD, необходимо добавить Palo Alto Networks - Aperture из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Palo Alto Networks - Aperture из коллекции, сделайте следующее:**
+**Чтобы добавить Palo Alto Networks - Aperture из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59275085"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Palo Alto Networks - Aperture](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<subdomain>.aperture.paloaltonetworks.com/d/users/saml/metadata`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.aperture.paloaltonetworks.com/d/users/saml/metadata`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.aperture.paloaltonetworks.com/d/users/saml/auth`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.aperture.paloaltonetworks.com/d/users/saml/auth`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 

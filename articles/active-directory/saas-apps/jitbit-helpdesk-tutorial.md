@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 851b28d10bdf0b2df67e1c0782a683e790b711bc
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59266500"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jitbit-helpdesk"></a>Руководство по Интеграция Azure Active Directory с Jitbit Helpdesk
@@ -115,7 +115,7 @@ ms.locfileid: "59266500"
     > [!NOTE] 
     > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь в [службу поддержки клиентов Jitbit Helpdesk](https://www.jitbit.com/support/).
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в формате `https://www.jitbit.com/web-helpdesk/`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://www.jitbit.com/web-helpdesk/`
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -210,7 +210,7 @@ ms.locfileid: "59266500"
 
 Чтобы пользователи Azure AD могли выполнять вход в Jitbit Helpdesk, они должны быть подготовлены для Jitbit Helpdesk. В случае с Jitbit Helpdesk подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Выполните вход в клиент **Jitbit Helpdesk**.
 

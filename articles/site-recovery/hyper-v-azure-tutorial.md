@@ -9,10 +9,10 @@ ms.date: 04/08/2019
 ms.author: raynew
 ms.custom: MVC
 ms.openlocfilehash: da643a4d7a1dc74385b3854c1952af5ba93bd241
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59358099"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Настройка аварийного восстановления локальных виртуальных машин Hyper-V в Azure
@@ -31,7 +31,7 @@ c
 ## <a name="before-you-begin"></a>Перед началом работы
 Это третье руководство в серии. В этом руководстве предполагается, что вы уже выполнили задачи в предыдущих руководствах:
 
-1. [Подготовка Azure](tutorial-prepare-azure.md)
+1. [Подготовка Azure](tutorial-prepare-azure.md).
 2. [Подготовка локальных серверов Hyper-V](tutorial-prepare-on-premises-hyper-v.md)
 
 
@@ -144,4 +144,4 @@ Site Recovery проверяет наличие одной или несколь
 
 ## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"]
-> [Выполнение отработки аварийного восстановления](tutorial-dr-drill-azure.md)
+> [Run a disaster recovery drill to Azure](tutorial-dr-drill-azure.md) (Выполнение отработки аварийного восстановления в Azure)

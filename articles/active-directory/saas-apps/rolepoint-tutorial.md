@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/15/2019
 ms.author: jeedes
 ms.openlocfilehash: 96b33b8d7a52f836a5950a28b4f1f035619f185f
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59267622"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rolepoint"></a>Руководство по Интеграция Azure Active Directory с RolePoint
@@ -51,7 +51,7 @@ ms.locfileid: "59267622"
 
 Чтобы настроить интеграцию RolePoint с Azure AD, необходимо добавить RolePoint из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить RolePoint из коллекции, сделайте следующее.**
+**Чтобы добавить RolePoint из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59267622"
 
     ![Сведения о домене и URL-адресах единого входа для приложения RolePoint](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.rolepoint.com/login`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.rolepoint.com/login`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://app.rolepoint.com/<instancename>`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://app.rolepoint.com/<instancename>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Мы рекомендуем использовать уникальное значение строки идентификатора. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов RolePoint](mailto:info@rolepoint.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

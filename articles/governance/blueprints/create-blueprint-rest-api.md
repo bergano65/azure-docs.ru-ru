@@ -9,10 +9,10 @@ ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
 ms.openlocfilehash: 043b67d4b4c708f2d243f9be04fb2a706591947b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59273164"
 ---
 # <a name="define-and-assign-an-azure-blueprint-with-rest-api"></a>Определение и назначение схемы Azure с помощью REST API
@@ -70,7 +70,7 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
 
 В каждом универсальном коде ресурса (URI) REST API есть переменные, которые необходимо заменить собственными значениями:
 
-- `{YourMG}` — замените это значение идентификатором своей группы управления.
+- `{YourMG}` — замените это значение идентификатором своей группы управления.
 - `{subscriptionId}` — замените это значение идентификатором своей подписки.
 
 > [!NOTE]
@@ -336,8 +336,8 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
 
 В каждом универсальном коде ресурса (URI) REST API есть переменные, которые необходимо заменить собственными значениями:
 
-- `{tenantId}` — замените своим идентификатором клиента.
-- `{YourMG}` — замените это значение идентификатором своей группы управления.
+- `{tenantId}` — замените своим идентификатором клиента.
+- `{YourMG}` — замените это значение идентификатором своей группы управления.
 - `{subscriptionId}` — замените это значение идентификатором своей подписки.
 
 1. Предоставьте субъекту-службе Azure Blueprint роль **владельца** в целевой подписке. Идентификатор AppId является статическим (`f71766dc-90d9-4b7d-bd9d-4499c4331c3f`), но идентификаторы субъекта-службы у клиентов различны. Подробные сведения для своего клиента можно запросить с помощью приведенного ниже REST API. Он использует [API Graph Azure Active Directory](../../active-directory/develop/active-directory-graph-api.md), схема авторизации которого отличается.

@@ -10,10 +10,10 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 ms.openlocfilehash: dc84844738e501a30f73104a76ff80bf00adff24
-ms.sourcegitcommit: ef20235daa0eb98a468576899b590c0bc1a38394
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59425828"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-nodejs"></a>Начало работы с Node.js в Azure Dev Spaces
@@ -160,7 +160,7 @@ Azure Dev Spaces — это не просто среда выполнения к
 Откройте веб-приложение на мобильном устройстве с помощью общедоступного URL-адреса для webfrontend. Чтобы не вводить длинный адрес, можно скопировать и отправить URL-адрес с рабочего стола на устройство. Когда веб-приложение загрузится на мобильном устройстве, вы заметите, что пользовательский интерфейс не отображается должным образом на устройстве небольшого размера.
 
 Чтобы исправить проблему, добавьте мета-тег `viewport`:
-1. Откройте файл `./public/index.html`
+1. Откройте файл `./public/index.html`.
 1. Добавьте метатег `viewport` в имеющийся элемент `head`:
 
     ```html
@@ -265,10 +265,10 @@ app.get('/api', function (req, res) {
 1. Измените сообщение hello снова на `server.js` и сохраните файл.
 1. Обновите браузер или нажмите кнопку *​​Say It Again* (Повторить это), чтобы увидеть свои изменения.
 
-**Теперь у вас есть метод быстрой итерации кода и отладки непосредственно в Kubernetes.** Далее вы узнаете, как создать и вызвать второй контейнер.
+**Теперь у вас есть метод быстрой итерации кода и отладки непосредственно в Kubernetes**. Далее вы узнаете, как создать и вызвать второй контейнер.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Разработка с использованием нескольких служб](multi-service-nodejs.md)
+> [Узнайте больше о разработке с использованием нескольких служб](multi-service-nodejs.md)
 

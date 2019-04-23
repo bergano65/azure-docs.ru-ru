@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: a41bdda303c9e636929fba00a2fe4279002e42b3
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59280763"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wingspan-etmf"></a>Руководство по Интеграция Azure Active Directory с Wingspan eTMF
@@ -105,11 +105,11 @@ ms.locfileid: "59280763"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Wingspan eTMF](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<customer name>.<instance name>.mywingspan.com/saml`
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<customer name>.<instance name>.mywingspan.com/saml`.
 
-    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `http://saml.<instance name>.wingspan.com/shibboleth`
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `http://saml.<instance name>.wingspan.com/shibboleth`.
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<customer name>.<instance name>.mywingspan.com/`
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<customer name>.<instance name>.mywingspan.com/`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить их, обратитесь в [службу поддержки клиентов Wingspan eTMF](http://www.wingspan.com/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

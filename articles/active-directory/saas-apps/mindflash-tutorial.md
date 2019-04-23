@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 571ab38dd52d83f1391b555bc4dfc8c091f1fd1b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59256708"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mindflash"></a>Руководство по Интеграция Azure Active Directory с Mindflash
@@ -50,7 +50,7 @@ ms.locfileid: "59256708"
 
 Чтобы настроить интеграцию Mindflash с Azure AD, необходимо добавить Mindflash из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Mindflash из коллекции, сделайте следующее:**
+**Чтобы добавить Mindflash из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -104,9 +104,9 @@ ms.locfileid: "59256708"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Mindflash](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.mindflash.com`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.mindflash.com`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.mindflash.com`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.mindflash.com`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Mindflash](https://www.mindflash.com/contact/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

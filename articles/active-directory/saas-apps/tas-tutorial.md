@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
 ms.openlocfilehash: 11ba7cd9be59f13081bdc5a543c52ca5f9d66e09
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59272501"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tas"></a>Руководство по интеграции Azure Active Directory с приложением TAS
@@ -51,7 +51,7 @@ ms.locfileid: "59272501"
 
 Чтобы настроить интеграцию TAS с Azure AD, необходимо добавить TAS из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить TAS из коллекции, сделайте следующее:**
+**Чтобы добавить TAS из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59272501"
 
     ![Сведения о домене и URL-адресах единого входа приложения TAS](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://taseu.combtas.com/<DOMAIN>`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://taseu.combtas.com/<DOMAIN>`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://taseu.combtas.com/<ENVIRONMENTNAME>/AssertionService.aspx`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://taseu.combtas.com/<ENVIRONMENTNAME>/AssertionService.aspx`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
 ms.openlocfilehash: dbd7189b1761a9ea88ce32dae3d7b45a88301ff6
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59278128"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-uservoice"></a>Руководство по Интеграция Azure Active Directory с UserVoice
@@ -51,7 +51,7 @@ ms.locfileid: "59278128"
 
 Чтобы настроить интеграцию UserVoice с Azure AD, необходимо добавить UserVoice из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить UserVoice из коллекции, сделайте следующее.**
+**Чтобы добавить UserVoice из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59278128"
 
     ![Сведения о домене и URL-адресах единого входа для приложения UserVoice](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenantname>.UserVoice.com`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenantname>.UserVoice.com`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<tenantname>.UserVoice.com`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<tenantname>.UserVoice.com`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов UserVoice](https://www.uservoice.com/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

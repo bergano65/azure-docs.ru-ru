@@ -10,10 +10,10 @@ services: azure-maps
 manager: timlt
 ms.custom: mvc
 ms.openlocfilehash: 6afe76aca388f1f6bd479f53eb4e18cc62c10584
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59268676"
 ---
 # <a name="create-an-interactive-search-map-by-using-azure-maps"></a>Создание карты с интерактивным поиском с помощью службы Azure Maps
@@ -78,7 +78,7 @@ ms.locfileid: "59268676"
 Дополнительные примеры кода и сведения о возможностях интерактивного программирования см. в следующих практических руководствах:
 
 > [!div class="nextstepaction"]
-> [Find an address by using the Azure Maps search service (Поиск адреса с помощью службы поиска Azure Maps)](how-to-search-for-address.md)
+> [Поиск адреса с помощью службы поиска Azure Maps](how-to-search-for-address.md)
 
 > [!div class="nextstepaction"]
 > [Использование библиотеки Map Control в службе Azure Maps](how-to-use-map-control.md)

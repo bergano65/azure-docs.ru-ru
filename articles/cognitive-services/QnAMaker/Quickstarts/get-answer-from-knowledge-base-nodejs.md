@@ -11,10 +11,10 @@ ms.topic: quickstart
 ms.date: 02/28/2019
 ms.author: diberry
 ms.openlocfilehash: a1caec1cd0c05fbc306b1a19c88fbe469be7fa6d
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58881755"
 ---
 # <a name="get-answers-to-a-question-from-a-knowledge-base-with-nodejs"></a>Получение ответов на вопрос из базы знаний с помощью Node.js
@@ -24,7 +24,7 @@ ms.locfileid: "58881755"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Node.js](https://nodejs.org/en/download/)
-* [Visual Studio Code.](https://code.visualstudio.com/)
+* [Visual Studio Code](https://code.visualstudio.com/)
 * У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ, выберите **Ключи** в разделе **Управление ресурсами** на панели мониторинга ресурса QnA Maker на портале Azure. 
 * Параметры страницы **Публикация**. Если у вас нет опубликованной базы знаний, создайте новую, импортируйте ее на странице **Параметры**, а затем опубликуйте ее. Можно скачать и использовать [эту простую базу знаний](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/knowledge-bases/basic-kb.tsv). 
 
@@ -85,4 +85,4 @@ node get-answer.js
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Справочник по REST API QnA Maker (версия 4)](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff)
+> [QnA Maker (V4) REST API Reference](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff) (Справочник по API REST QnA Maker (V4))

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 31bc5622c6c6c3dd00bc59b5d8f3aa349055d125
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59279250"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-intacct"></a>Руководство по Интеграция Azure Active Directory с Intacct
@@ -51,7 +51,7 @@ ms.locfileid: "59279250"
 
 Чтобы настроить интеграцию Intacct с Azure AD, необходимо добавить Intacct из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Intacct из коллекции, выполните следующие действия:**
+**Чтобы добавить Intacct из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -211,7 +211,7 @@ ms.locfileid: "59279250"
 
 Чтобы пользователи Azure AD могли входить в Intacct, их необходимо подготовить для Intacct. Эта подготовка для Intacct выполняется вручную.
 
-**Чтобы подготовить учетные записи пользователей, выполните следующие действия:**
+**Чтобы подготовить учетные записи пользователей, выполните следующие действия.**
 
 1. Войдите в клиент **Intacct**.
 

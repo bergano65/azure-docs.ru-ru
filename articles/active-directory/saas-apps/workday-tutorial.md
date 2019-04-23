@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
 ms.openlocfilehash: 8451fd692409933803f5f8023f1e1161c3a97daf
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59278537"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workday"></a>Руководство по интеграции Azure Active Directory с Workday
@@ -50,7 +50,7 @@ ms.locfileid: "59278537"
 
 Чтобы настроить интеграцию Workday с Azure AD, необходимо добавить Workday из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Workday из коллекции, сделайте следующее:**
+**Чтобы добавить Workday из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -104,9 +104,9 @@ ms.locfileid: "59278537"
 
     ![Сведения о домене и URL-адресах для единого входа для приложения Workday](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https:\//impl.workday.com/<tenant>/login-saml2.flex`
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https:\//impl.workday.com/<tenant>/login-saml2.flex`.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://www.workday.com`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.workday.com`.
 
 5. Щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -120,7 +120,7 @@ ms.locfileid: "59278537"
 
 6. Приложение Workday ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Workday ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, **UPN** и т. д., поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
     > [!NOTE]
     > Здесь по умолчанию идентификатор имени сопоставлен с именем участника-пользователя (user.userprincipalname). Для успешной работы SSO вам необходимо сопоставить идентификатор имени с фактическим идентификатором пользователя в вашей учетной записи Workday (ваш адрес электронной почты, имя участника-пользователя и т. д.).

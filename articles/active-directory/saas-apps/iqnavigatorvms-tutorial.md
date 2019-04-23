@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
 ms.openlocfilehash: ad6bf2576d7f033f8ae029338dc94635dbba0fe7
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59267435"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-iqnavigator-vms"></a>Руководство по Интеграция Azure Active Directory c IQNavigator VMS
@@ -51,7 +51,7 @@ ms.locfileid: "59267435"
 
 Чтобы настроить интеграцию IQNavigator VMS с Azure AD, необходимо добавить IQNavigator VMS из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить IQNavigator VMS из коллекции, сделайте следующее:**
+**Чтобы добавить IQNavigator VMS из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -107,18 +107,18 @@ ms.locfileid: "59267435"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `iqn.com`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.iqnavigator.com/security/login?client_name=https://sts.window.net/<instance name>`
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.iqnavigator.com/security/login?client_name=https://sts.window.net/<instance name>`.
 
     c. Щелкните **Задать дополнительные URL-адреса**.
 
-    d. В текстовом поле **Состояние ретранслятора** введите URL-адрес в следующем формате: `https://<subdomain>.iqnavigator.com`
+    d. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://<subdomain>.iqnavigator.com`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими URL-адресом ответа и значением состояния ретранслятора. Чтобы получить эти значения, обратитесь к [группе поддержки IQNavigator VMS](https://www.beeline.com/iqn-product-support/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. Приложение IQNavigator ожидает в утверждении идентификатора имени значение уникального идентификатора пользователя. Клиент может сопоставить правильное значение для утверждения идентификатора имени. В данном случае для примера мы сопоставили user.UserPrincipalName. Однако вам нужно сопоставить правильное значение, соответствующее параметрам вашей организации.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы копировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 

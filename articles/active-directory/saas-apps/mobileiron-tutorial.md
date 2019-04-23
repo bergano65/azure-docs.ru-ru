@@ -16,10 +16,10 @@ ms.date: 12/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0e37b35f87920016f81bda60fe8a9b6f1714eaae
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59277270"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mobileiron"></a>Руководство. Интеграция Azure Active Directory с MobileIron
@@ -51,7 +51,7 @@ ms.locfileid: "59277270"
 
 Чтобы настроить интеграцию MobileIron с Azure AD, необходимо добавить MobileIron из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить MobileIron из коллекции, сделайте следующее:**
+**Чтобы добавить MobileIron из коллекции, выполните инструкции ниже.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59277270"
 
     ![Сведения о домене и URL-адресах единого входа для приложения MobileIron](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://www.mobileiron.com/<key>`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.mobileiron.com/<key>`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<host>.mobileiron.com/saml/SSO/alias/<key>`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<host>.mobileiron.com/saml/SSO/alias/<key>`.
 
     c. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -194,7 +194,7 @@ ms.locfileid: "59277270"
 Чтобы пользователи Azure AD могли выполнять вход в MobileIron, они должны быть подготовлены для MobileIron.  
 Для MobileIron подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Выполните вход на корпоративный веб-сайт MobileIron в качестве администратора.
 

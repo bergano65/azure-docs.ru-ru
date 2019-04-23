@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 05/18/2018
 ms.author: aljo
 ms.openlocfilehash: 33f742c7de340df41f5d946c891e9896d7d2a012
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59048475"
 ---
 # <a name="tutorial-deploy-a-net-application-in-a-windows-container-to-azure-service-fabric"></a>Руководство по Развертывание приложения .NET в контейнере Windows в Azure Service Fabric
@@ -149,7 +149,7 @@ $registry = New-AzContainerRegistry -ResourceGroupName $acrresourcegroupname -Na
 
 Вы можете:
 - Создать тестовый кластер с помощью Visual Studio. Этот вариант позволяет создать безопасный кластер непосредственно из Visual Studio с нужными конфигурациями. 
-- [Создать безопасный кластер из шаблона.](service-fabric-tutorial-create-vnet-and-windows-cluster.md)
+- [Создать безопасный кластер из шаблона](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
 
 В этом руководстве создается кластер из Visual Studio, который идеально подходит для сценариев тестирования. При создании кластера другим способом или использовании имеющегося кластера можно скопировать и вставить конечную точку подключения или выбрать ее из подписки. 
 

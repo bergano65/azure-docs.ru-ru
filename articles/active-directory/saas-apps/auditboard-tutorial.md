@@ -16,10 +16,10 @@ ms.date: 04/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b5a54fb179b9baac9e72e003b1f9b0c6697ae74b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59258799"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-auditboard"></a>Руководство по Интеграция Azure Active Directory с AuditBoard
@@ -51,7 +51,7 @@ ms.locfileid: "59258799"
 
 Чтобы настроить интеграцию AuditBoard с Azure AD, необходимо добавить AuditBoard из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить AuditBoard из коллекции, сделайте следующее:**
+**Чтобы добавить AuditBoard из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,13 +105,13 @@ ms.locfileid: "59258799"
 
     ![Сведения о домене и URL-адресах единого входа для AuditBoard](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<SUBDOMAIN>.auditboardapp.com/api/v1/sso/saml/metadata.xml`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.auditboardapp.com/api/v1/sso/saml/metadata.xml`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<SUBDOMAIN>.auditboardapp.com/api/v1/sso/saml/assert`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.auditboardapp.com/api/v1/sso/saml/assert`.
 
     c. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие:
 
-    d. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.auditboardapp.com/`
+    d. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.auditboardapp.com/`.
 
     ![Сведения о домене и URL-адресах единого входа для AuditBoard](common/metadata-upload-additional-signon.png)
 

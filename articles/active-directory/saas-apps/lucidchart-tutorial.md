@@ -16,10 +16,10 @@ ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 97bbb6b802f4a7a6378f283efd02cfb74873a903
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59266823"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lucidchart"></a>Руководство по Интеграция Azure Active Directory с Lucidchart
@@ -52,7 +52,7 @@ ms.locfileid: "59266823"
 
 Чтобы настроить интеграцию Lucidchart с Azure AD, необходимо добавить Lucidchart из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Lucidchart из коллекции, сделайте следующее:**
+**Чтобы добавить Lucidchart из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 

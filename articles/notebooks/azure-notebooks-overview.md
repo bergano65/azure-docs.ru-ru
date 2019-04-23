@@ -14,17 +14,17 @@ ms.topic: overview
 ms.date: 04/05/2019
 ms.author: kraigb
 ms.openlocfilehash: 4840a9839fe1f2a31470d4a67b3755b82077fd90
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59280117"
 ---
 # <a name="overview-of-azure-notebooks"></a>Общие сведения о службе "Записные книжки Azure"
 
 Записные книжки Azure — это бесплатная размещенная служба для разработки и запуска записных книжек Jupyter в облаке без их установки. [Jupyter](https://jupyter.org/) (прежнее название — IPython) — это проект с открытым кодом, который позволяет легко объединять текст с разметкой, исполняемый код, хранимые данные, графики и визуализации на одном общем холсте, который называется *записной книжкой* (изображение предоставлено сайтом jupyter.org):
 
-[![EПримеры записных книжек Jupyter](https://jupyter.org/assets/jupyterpreview.png)](https://jupyter.org/assets/jupyterpreview.png#lightbox)
+[![Примеры записных книжек Jupyter](https://jupyter.org/assets/jupyterpreview.png)](https://jupyter.org/assets/jupyterpreview.png#lightbox)
 
 Из-за мощного сочетания кода, графики и пояснений Jupyter стал популярным для различных целей, включая инструкции по обработке и анализу данных, очистку и преобразование данных, цифровое и статистическое моделирование, а также разработку моделей машинного обучения.
 
@@ -97,7 +97,7 @@ ms.locfileid: "59280117"
 
 ## <a name="next-steps"></a>Дополнительная информация  
 
-- [Примеры записных книжек](azure-notebooks-samples.md)
+- [Обзор примеров записных книжек](azure-notebooks-samples.md)
 
 - Краткие руководства:
 

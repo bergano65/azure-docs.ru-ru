@@ -11,10 +11,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 02/20/2019
 ms.openlocfilehash: 5d168264cbc392e1ba426707429f47dea70d1ea8
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58882061"
 ---
 # <a name="tutorial-managed-instance-security-in-azure-sql-database-using-azure-ad-server-principals-logins"></a>Руководство по Обеспечение безопасности управляемого экземпляра в Базе данных SQL Azure с помощью субъектов сервера (имен для входа) Azure AD
@@ -50,8 +50,8 @@ ms.locfileid: "58882061"
 - Управляемый экземпляр Базы данных SQL Azure.
   - Следуйте инструкциям из этой статьи: [Краткое руководство Создание Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-get-started.md).
 - Возможность доступа к управляемому экземпляру и [подготовленный пользователь с правами администратора Azure AD для управляемого экземпляра](sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-managed-instance). Дополнительные сведения см. на следующих ресурсах:
-    - [Подключение приложения к Управляемому экземпляру Базы данных SQL](sql-database-managed-instance-connect-app.md) 
-    - [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md)
+    - [Подключение приложения к Управляемому экземпляру Базы данных SQL](sql-database-managed-instance-connect-app.md). 
+    - [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md).
     - [Настройка и администрирование аутентификации Azure Active Directory с помощью SQL](sql-database-aad-authentication-configure.md)
 
 ## <a name="limiting-access-to-your-managed-instance"></a>Ограничение доступа к управляемому экземпляру
@@ -65,8 +65,8 @@ ms.locfileid: "58882061"
 
 Первый субъект сервера (имя для входа) Azure AD должен быть создан с помощью стандартной учетной записи SQL Server (не Azure AD), то есть `sysadmin`. Примеры подключения к управляемому экземпляру см. в следующих статьях:
 
-- [Краткое руководство. Настройка виртуальной машины Azure для подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-configure-vm.md)
-- [Краткое руководство. Настройка соединения "точка — сеть" с помощью управляемого экземпляра базы данных SQL Azure](sql-database-managed-instance-configure-p2s.md)
+- [Краткое руководство Настройка виртуальной машины Azure для подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-configure-vm.md)
+- [Краткое руководство Настройка соединения "точка — сеть" с помощью управляемого экземпляра базы данных SQL Azure](sql-database-managed-instance-configure-p2s.md)
 
 > [!IMPORTANT]
 > Учетную запись администратора Azure AD, используемую для настройки управляемого экземпляра, нельзя применять для создания субъекта сервера (имени для входа) Azure AD в управляемом экземпляре. Необходимо создать первый субъект сервера (имя для входа) Azure AD с помощью учетной записи SQL Server — `sysadmin`. Это временное ограничение, которое будет устранено, как только субъекты сервера (имена для входа) Azure AD станут общедоступными. При попытке использования учетной записи администратора Azure AD для создания имени для входа отобразится следующая ошибка: `Msg 15247, Level 16, State 1, Line 1 User does not have permission to perform this action.`
@@ -453,4 +453,4 @@ ms.locfileid: "58882061"
 Полный обзор возможностей управляемого экземпляра см. по следующей ссылке:
 
 > [!div class="nextstepaction"]
-> [Возможности управляемого экземпляра](sql-database-managed-instance.md)
+> [Возможности Управляемого экземпляра](sql-database-managed-instance.md)

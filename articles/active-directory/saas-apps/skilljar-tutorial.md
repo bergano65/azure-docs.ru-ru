@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: ea7982290cdcd51ba09ca97aa3f23086222516df
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59277296"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skilljar"></a>Руководство. Интеграция Azure Active Directory со Skilljar
@@ -52,7 +52,7 @@ ms.locfileid: "59277296"
 
 Чтобы настроить интеграцию Skilljar с Azure AD, необходимо добавить Skilljar из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Skilljar из коллекции, сделайте следующее:**
+**Чтобы добавить Skilljar из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,9 +106,9 @@ ms.locfileid: "59277296"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Skilljar](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.skilljar.com/`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.skilljar.com/`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.skilljar.com/`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.skilljar.com/`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Skilljar](https://support.skilljar.com/hc/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

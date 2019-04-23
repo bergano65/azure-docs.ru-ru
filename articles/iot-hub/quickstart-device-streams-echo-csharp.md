@@ -11,10 +11,10 @@ ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: rezas
 ms.openlocfilehash: 2853bd5539a40e3b38927f619756fe37a4cec984
-ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59006857"
 ---
 # <a name="quickstart-communicate-to-device-applications-in-c-via-iot-hub-device-streams-preview"></a>Краткое руководство. Взаимодействие с приложениями устройств в C# с помощью потоков устройств Центра Интернета вещей (предварительная версия)
@@ -33,7 +33,7 @@ ms.locfileid: "59006857"
 
 Предварительная версия потоков устройств сейчас поддерживается только в Центрах Интернета вещей, созданных в следующих регионах.
 
-  - **Центральный регион США**
+  - **Центральная часть США**
   - **Центральная часть США (EUAP)**
 
 Примеры приложений, запускаемые в рамках этого краткого руководства, написаны на языке C#. На компьютере, на котором ведется разработка, необходимо установить пакет SDK для .NET Core версии 2.1.0 или более поздней.
@@ -171,4 +171,4 @@ dotnet run <DeviceConnectionString>
 Используйте приведенные ниже ссылки для получения дополнительных сведений о потоках устройства:
 
 > [!div class="nextstepaction"]
-> [IoT Hub Device Streams (preview) (Потоки устройств Центра Интернета вещей (предварительная версия)](./iot-hub-device-streams-overview.md)
+> [IoT Hub Device Streams (preview)](./iot-hub-device-streams-overview.md) (Потоки устройств (предварительная версия))

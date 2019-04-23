@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: c034e12c372e0514fa6cbb1f35af48cbdb4bf865
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59278451"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-vxmaintain"></a>Руководство по Интеграция Azure Active Directory с vxMaintain
@@ -51,7 +51,7 @@ ms.locfileid: "59278451"
 
 Чтобы настроить интеграцию vxMaintain с Azure AD, необходимо добавить vxMaintain из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить vxMaintain из коллекции, сделайте следующее.**
+**Чтобы добавить vxMaintain из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59278451"
 
     ![Сведения о домене и URL-адресах единого входа для приложения vxMaintain](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<company name>.verisae.com`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<company name>.verisae.com`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<company name>.verisae.com/DataNett/action/ssoConsume/mobile?_log=true`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<company name>.verisae.com/DataNett/action/ssoConsume/mobile?_log=true`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов vxMaintain](https://www.hubspot.com/company/contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

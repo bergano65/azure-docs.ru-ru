@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 655f8555f9e7fb04d69f35048b7fdec0fb1cebce
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59275595"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-moxi-engage"></a>Руководство по Интеграция Azure Active Directory с Moxi Engage
@@ -50,7 +50,7 @@ ms.locfileid: "59275595"
 
 Чтобы настроить интеграцию приложения Moxi Engage с Azure AD, вам нужно добавить это приложение из коллекции в свой список управляемых приложений SaaS.
 
-**Чтобы добавить приложение Moxi Engage из коллекции, сделайте следующее:**
+**Добавление приложения Moxi Engage из коллекции**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 

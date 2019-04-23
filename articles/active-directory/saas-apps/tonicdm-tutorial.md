@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: b648c51b1b169c02f149493c53b6ef738b736e61
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59281902"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tonicdm"></a>Руководство по Интеграция Azure Active Directory с TonicDM
@@ -107,9 +107,9 @@ ms.locfileid: "59281902"
 
     ![Сведения о домене и URL-адресах единого входа для приложения TonicDM](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://tonicdm.com/`
+    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://tonicdm.com/`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом. `https://tonicdm.com/saml/metadata`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://tonicdm.com/saml/metadata`
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 

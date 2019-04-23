@@ -16,10 +16,10 @@ ms.date: 02/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 850f5e3f96439e1fea0a77b94f2ed733cc451bdf
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59267265"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-heybuddy"></a>Руководство по Интеграция Azure Active Directory с HeyBuddy
@@ -52,7 +52,7 @@ ms.locfileid: "59267265"
 
 Чтобы настроить интеграцию HeyBuddy с Azure AD, необходимо добавить HeyBuddy из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить HeyBuddy из коллекции, сделайте следующее:**
+**Чтобы добавить HeyBuddy из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,16 +106,16 @@ ms.locfileid: "59267265"
 
     ![Сведения о домене и URL-адресах для единого входа в приложение HeyBuddy](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://api.heybuddy.com/auth/<ENTITY ID>`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://api.heybuddy.com/auth/<ENTITY ID>`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `YourCompanyInstanceofHeyBuddy`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `YourCompanyInstanceofHeyBuddy`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором (идентификатор сущности). Идентификатор `Entity ID` в URL-адресе входа автоматически создается для каждой организации. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов HeyBuddy](mailto:support@heybuddy.com).
 
 5. Приложение HeyBuddy предусматривает использование проверочных утверждений SAML в определенном формате, что предполагает добавление настраиваемых сопоставлений атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить** , чтобы открыть диалоговое окно "Атрибуты пользователя".
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
     > [!NOTE]
     > Сведения о настройке и установке ролей для приложения см. по [этой ссылке](https://docs.microsoft.com/azure/active-directory/develop/active-directory-enterprise-app-role-management).
@@ -129,9 +129,9 @@ ms.locfileid: "59267265"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

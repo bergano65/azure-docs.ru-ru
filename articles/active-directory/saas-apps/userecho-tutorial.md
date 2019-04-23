@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
 ms.openlocfilehash: 15cfa025bde3367c57255ce50f95c69293b63f92
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59283381"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-userecho"></a>Руководство по Интеграция Azure Active Directory с UserEcho
@@ -51,7 +51,7 @@ ms.locfileid: "59283381"
 
 Чтобы настроить интеграцию UserEcho с Azure AD, необходимо добавить UserEcho из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить UserEcho из коллекции, сделайте следующее.**
+**Чтобы добавить UserEcho из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59283381"
 
     ![Сведения о домене и URL-адресах единого входа для приложения UserEcho](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.userecho.com/`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.userecho.com/`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.userecho.com/saml/metadata/`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.userecho.com/saml/metadata/`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь к [группе поддержки клиентов UserEcho](https://feedback.userecho.com/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -210,7 +210,7 @@ ms.locfileid: "59283381"
 
 Цель этого раздела — создать в приложении UserEcho пользователя с именем Britta Simon.
 
-**Чтобы создать пользователя с именем Britta Simon в UserEcho, сделайте следующее.**
+**Чтобы создать пользователя с именем Britta Simon в UserEcho, выполните следующие действия.**
 
 1. Войдите на корпоративный сайт UserEcho с правами администратора.
 

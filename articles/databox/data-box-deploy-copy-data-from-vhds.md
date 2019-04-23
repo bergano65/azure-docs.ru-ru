@@ -9,10 +9,10 @@ ms.topic: tutorial
 ms.date: 02/27/2019
 ms.author: alkohli
 ms.openlocfilehash: ec2013a793f766221a66912d6de9d8da8b8106dd
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59282565"
 ---
 # <a name="tutorial-use-data-box-to-import-data-as-managed-disks-in-azure"></a>Руководство по Использование Data Box для импорта данных в качестве управляемых дисков в Azure.
@@ -142,8 +142,8 @@ ms.locfileid: "59282565"
 
 В зависимости от того, производится ли подключение через SMB или NFS вы можете:
 
-- [Копирование данных по протоколу SMB](data-box-deploy-copy-data.md#copy-data-to-data-box)
-- [Копирование данных по протоколу NFS](data-box-deploy-copy-data-via-nfs.md#copy-data-to-data-box)
+- [копировать данные по протоколу SMB](data-box-deploy-copy-data.md#copy-data-to-data-box);
+- [копировать данные по протоколу NFS](data-box-deploy-copy-data-via-nfs.md#copy-data-to-data-box).
 
 Дождитесь окончания заданий копирования. Прежде чем переходить к следующему шагу убедитесь, что задания копирования завершены без ошибок.
 
@@ -179,5 +179,5 @@ ms.locfileid: "59282565"
 Перейдите к следующему руководству, чтобы узнать, как отправить свой Data Box обратно в корпорацию Майкрософт.
 
 > [!div class="nextstepaction"]
-> [Руководство. Отправка Azure Data Box и проверка передачи данных в Azure](./data-box-deploy-picked-up.md)
+> [Отправка Azure Data Box в корпорацию Майкрософт](./data-box-deploy-picked-up.md)
 

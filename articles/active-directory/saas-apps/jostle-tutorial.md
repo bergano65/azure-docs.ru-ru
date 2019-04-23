@@ -16,10 +16,10 @@ ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6304f4afa05850ced8b88bb81c0f94e4a31fb5be
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59277278"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jostle"></a>Руководство по Интеграция Azure Active Directory с Jostle
@@ -105,11 +105,11 @@ ms.locfileid: "59277278"
 
     ![Сведения о домене и URL-адресах единого входа приложения Jostle](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://login-prod.jostle.us`
+    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://login-prod.jostle.us`.
 
-    b. В поле **Идентификатор** введите URL-адрес: `https://jostle.us`
+    b. В поле **Идентификатор** введите следующий URL-адрес: `https://jostle.us`.
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес: `https://login-prod.jostle.us/saml/SSO/alias/newjostle.us`
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://login-prod.jostle.us/saml/SSO/alias/newjostle.us`
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 

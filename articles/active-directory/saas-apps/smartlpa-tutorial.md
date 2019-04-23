@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 2b3101e747ef70a669ca7f81128cb701aa6d9720
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59272195"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-smartlpa"></a>Руководство по Интеграция Azure Active Directory со SmartLPA
@@ -51,7 +51,7 @@ ms.locfileid: "59272195"
 
 Чтобы настроить интеграцию SmartLPA с Azure AD, необходимо добавить SmartLPA из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить SmartLPA из коллекции, сделайте следующее:**
+**Чтобы добавить SmartLPA из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59272195"
 
     ![Сведения о домене и URL-адресах единого входа для приложения SmartLPA](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<TENANTNAME>.smartlpa.com/`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<TENANTNAME>.smartlpa.com/`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<TENANTNAME>.smartlpa.com/<UNIQUE ID>`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<TENANTNAME>.smartlpa.com/<UNIQUE ID>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов SmartLPA](mailto:support@smartlpa.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
 ms.openlocfilehash: 294146446ac45594ba8f25e8b17534e5922ebec9
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59259768"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-merchlogix"></a>Руководство. Интеграция Azure Active Directory с Merchlogix
@@ -50,7 +50,7 @@ ms.locfileid: "59259768"
 
 Чтобы настроить интеграцию Merchlogix с Azure AD, необходимо добавить Merchlogix из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Merchlogix из коллекции, сделайте следующее:**
+**Чтобы добавить Merchlogix из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -104,9 +104,9 @@ ms.locfileid: "59259768"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Merchlogix](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<DOMAIN>/login.php?saml=true`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<DOMAIN>/login.php?saml=true`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<DOMAIN>/simplesaml/module.php/saml/sp/metadata.php/<SAML_NAME>`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<DOMAIN>/simplesaml/module.php/saml/sp/metadata.php/<SAML_NAME>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Merchlogix](https://www.merchlogix.com/contact/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

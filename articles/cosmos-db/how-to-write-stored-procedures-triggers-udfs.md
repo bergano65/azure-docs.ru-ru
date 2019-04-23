@@ -7,10 +7,10 @@ ms.topic: sample
 ms.date: 12/11/2018
 ms.author: mjbrown
 ms.openlocfilehash: c94509fb39d1c5ebb9aec1acfe1cbacc9cd6fd4a
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59268428"
 ---
 # <a name="how-to-write-stored-procedures-triggers-and-user-defined-functions-in-azure-cosmos-db"></a>Как писать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB
@@ -320,8 +320,8 @@ function tax(income) {
 
 * [Как зарегистрировать и использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB](how-to-use-stored-procedures-triggers-udfs.md)
 
-* [Как записывать хранимые процедуры и триггеры в Azure Cosmos DB с помощью API запросов JavaScript](how-to-write-javascript-query-api.md)
+* [How to write stored procedures and triggers in Azure Cosmos DB by using the JavaScript query API](how-to-write-javascript-query-api.md) (Как записывать хранимые процедуры и триггеры с помощью API запросов JavaScript в Azure Cosmos DB)
 
-* [Working with Azure Cosmos DB stored procedures, triggers, and user-defined functions (Работа с хранимыми процедурами, триггерами и определяемыми пользователем функциями в Azure Cosmos DB)](stored-procedures-triggers-udfs.md)
+* [Working with Azure Cosmos DB stored procedures, triggers, and user-defined functions](stored-procedures-triggers-udfs.md) (Работа с хранимыми процедурами, триггерами и определяемыми пользователем функциями в Azure Cosmos DB)
 
-* [API для выполнения запросов JavaScript в Azure Cosmos DB](javascript-query-api.md)
+* [Working with JavaScript language-integrated query API with Azure Cosmos DB](javascript-query-api.md) (Работа с API запросов на основе языка JavaScript в Azure Cosmos DB)

@@ -16,10 +16,10 @@ ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 35f9a8949f5b51f88b9297890fc5562e7b8dd591
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59273385"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-help-scout"></a>Руководство по Интеграция Azure Active Directory с Help Scout
@@ -106,9 +106,9 @@ ms.locfileid: "59273385"
 
     ![Сведения о домене и URL-адресах единого входа приложения Help Scout](common/idp-intiated.png)
 
-    a. **Идентификатор** — это **Audience URI (Service Provider Entity ID)** (URI аудитории (идентификатор сущности поставщика службы) из Help Scout, который начинается с `urn:`
+    a. **Идентификатор** — это **URI аудитории (идентификатор сущности поставщика службы)** из Help Scout, который начинается с `urn:`
 
-    b. **URL-адрес ответа** — это **Post-back URL (Assertion Consumer Service URL)** (URL-адрес обратной отправки (URL-адрес службы обработчика утверждений) из Help Scout, который начинается с `https://` 
+    b. **URL-адрес ответа** — это **URL-адрес обратной отправки (URL-адрес службы обработчика утверждений)** из Help Scout, который начинается с `https://` 
 
     > [!NOTE]
     > Значения этих URL-адресов приведены только в качестве примера. Замените эти значения фактическими URL-адресом ответа и идентификатором. Эти значения можно найти на вкладке **Single Sign-On** (Единый вход) в разделе Authentication (Аутентификация), как описано далее в этом руководстве.
@@ -117,7 +117,7 @@ ms.locfileid: "59273385"
 
     ![Сведения о домене и URL-адресах единого входа приложения Help Scout](common/metadata-upload-additional-signon.png)
 
-    В текстовом поле **URL-адрес для входа** введите URL-адрес. `https://secure.helpscout.net/members/login/`
+    В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://secure.helpscout.net/members/login/`.
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 

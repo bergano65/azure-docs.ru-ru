@@ -16,10 +16,10 @@ ms.date: 02/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a9bcb465f76e09675333e6e608249cba11f722e3
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59274661"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ilms"></a>Руководство по Интеграция Azure Active Directory с iLMS
@@ -107,17 +107,17 @@ ms.locfileid: "59274661"
 
     a. В текстовое поле **Идентификатор** вставьте значение **идентификатора**, которое необходимо скопировать в разделе параметров SAML **Service Provider** (Поставщик услуг) на портале администрирования iLMS.
 
-    b. В текстовое поле **URL-адрес ответа** вставьте значение **URL-адреса конечной точки**, которое необходимо скопировать в разделе параметров SAML **Service Provider** (Поставщик служб) на портале администрирования iLMS, в виде `https://www.inspiredlms.com/Login/<instanceName>/consumer.aspx`
+    b. В текстовое поле **URL-адрес ответа** вставьте значение **URL-адреса конечной точки**, которое необходимо скопировать в разделе параметров SAML **Service Provider** (Поставщик услуг) на портале администрирования iLMS, в виде `https://www.inspiredlms.com/Login/<instanceName>/consumer.aspx`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения iLMS](common/metadata-upload-additional-signon.png)
 
-    В текстовое поле **URL-адрес входа** вставьте значение **URL-адреса конечной точки**, которое необходимо скопировать в разделе параметров SAML **Service Provider** (Поставщик служб) на портале администрирования iLMS, в виде `https://www.inspiredlms.com/Login/<instanceName>/consumer.aspx`
+    В текстовое поле **URL-адрес входа** вставьте значение **URL-адреса конечной точки**, которое необходимо скопировать в разделе параметров SAML **Service Provider** (Поставщик услуг) на портале администрирования iLMS, в виде `https://www.inspiredlms.com/Login/<instanceName>/consumer.aspx`.
 
 6. Чтобы включить JIT-подготовку, приложение iLMS ожидает предоставления проверочных утверждений SAML в определенном формате, поэтому вам требуется добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить** , чтобы открыть диалоговое окно "Атрибуты пользователя".
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
     > [!NOTE]
     > В iLMS необходимо установить флажок **Create Un-recognized User Account** (Создать учетную запись неопознанного пользователя) для сопоставления этих атрибутов. Следуйте указаниям, приведенным [здесь](http://support.inspiredelearning.com/customer/portal/articles/2204526), чтобы получить представление о конфигурации атрибутов.
@@ -132,9 +132,9 @@ ms.locfileid: "59274661"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

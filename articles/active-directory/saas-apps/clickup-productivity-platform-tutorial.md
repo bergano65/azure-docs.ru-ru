@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
 ms.openlocfilehash: 3244140999dc61560549db077d4c402b3986956b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59282650"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clickup-productivity-platform"></a>Руководство по Интеграция Azure Active Directory с ClickUp Productivity Platform
@@ -50,7 +50,7 @@ ms.locfileid: "59282650"
 
 Чтобы настроить интеграцию ClickUp Productivity Platform с Azure AD, необходимо добавить ClickUp Productivity Platform из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить ClickUp Productivity Platform из коллекции, сделайте следующее:**
+**Чтобы добавить ClickUp Productivity Platform из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -104,9 +104,9 @@ ms.locfileid: "59282650"
 
     ![Сведения о домене и URL-адресах единого входа для приложения ClickUp Productivity Platform](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://app.clickup.com/login/sso`
+    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://app.clickup.com/login/sso`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://api.clickup.com/v1/team/<team_id>/microsoft`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://api.clickup.com/v1/team/<team_id>/microsoft`.
 
     > [!NOTE]
     > Значение идентификатора приведено для примера и не является реальным. Замените его на фактический идентификатор, как описано далее в этом руководстве.

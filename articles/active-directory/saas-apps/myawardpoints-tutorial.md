@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
 ms.openlocfilehash: bfb858930bef87239021d049b59c282197bb49ef
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59276224"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-my-award-points-top-subtop-team"></a>Руководство по Интеграция Azure Active Directory с My Award Points Top Sub/Top Team
@@ -50,7 +50,7 @@ ms.locfileid: "59276224"
 
 Чтобы настроить интеграцию My Award Points Top Sub/Top Team с Azure AD, нужно добавить My Award Points Top Sub/Top Team из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить My Award Points Top Sub/Top Team из коллекции, сделайте следующее:**
+**Чтобы добавить My Award Points Top Sub/Top Team из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 

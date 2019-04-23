@@ -11,10 +11,10 @@ ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: wolfma
 ms.openlocfilehash: 9a00dfd1186d19ce9432db8e636bffa40eb977af
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59280542"
 ---
 # <a name="tutorial-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>Руководство по Распознавание намерений в речи с помощью пакета SDK службы "Речь" для C#
@@ -133,7 +133,7 @@ static async Task RecognizeIntentAsync()
 
 Для добавления намерений требуется три аргумента. Модель LUIS (которая была создана с именем `model`), имя намерения и его идентификатор. Разница между идентификатором и именем приведена в следующей таблице.
 
-|`AddIntent()` — аргумент|Назначение|
+|Аргумент `AddIntent()`|Назначение|
 |--------|-------|
 |intentName |Имя намерения, определенного в приложении LUIS. Оно должно совпадать с именем намерения LUIS.|
 |intentID    |Идентификатор, присвоенный намерению, распознанному пакетом SDK для службы "Речь". Он может быть любым. Он не обязательно должен соответствовать имени намерения, определенному в приложении LUIS. Для обработки нескольких намерений может использоваться один код, как и один идентификатор используется для всех намерений.|
@@ -188,4 +188,4 @@ result.Properties.GetProperty(PropertyId.LanguageUnderstandingServiceResponse_Js
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для .NET Core](how-to-recognize-speech-csharp.md)
+> [Как распознавать речь](how-to-recognize-speech-csharp.md).

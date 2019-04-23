@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/08/2019
 ms.author: jeedes
 ms.openlocfilehash: 385092cb9c760e6f9fa848449bd61663541573b9
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59256760"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ibm-kenexa-survey-enterprise"></a>Руководство по Интеграция Azure Active Directory с IBM Kenexa Survey Enterprise
@@ -51,7 +51,7 @@ ms.locfileid: "59256760"
 
 Чтобы настроить интеграцию IBM Kenexa Survey Enterprise в Azure AD, необходимо добавить IBM Kenexa Survey Enterprise из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить IBM Kenexa Survey Enterprise из коллекции, сделайте следующее:**
+**Чтобы добавить IBM Kenexa Survey Enterprise из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59256760"
 
     ![Сведения о домене и URL-адресах IBM Kenexa Survey Enterprise](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://surveys.kenexa.com/<companycode>`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://surveys.kenexa.com/<companycode>`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://surveys.kenexa.com/<companycode>/tools/sso.asp`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://surveys.kenexa.com/<companycode>/tools/sso.asp`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов IBM Kenexa Survey Enterprise](https://www.ibm.com/support/home/?lnk=fcw). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -116,7 +116,7 @@ ms.locfileid: "59256760"
 
     По умолчанию Azure AD в качестве идентификатора пользователя задает значение имени участника-пользователя (UPN). Это значение можно изменить на вкладке **Атрибуты пользователя**, как показано на следующем снимке экрана. Интеграция заработает только после правильной настройки сопоставления.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 

@@ -16,10 +16,10 @@ ms.date: 11/28/2017
 ms.author: aljo
 ms.custom: mvc
 ms.openlocfilehash: 7e48684024d370d64f44b55cb4df0efb8f16cd3b
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59046246"
 ---
 # <a name="tutorial-upgrade-the-runtime-of-a-service-fabric-cluster-in-azure"></a>Руководство по Обновление среды выполнения кластера Service Fabric в Azure
@@ -40,8 +40,8 @@ ms.locfileid: "59046246"
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * создание безопасного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в Azure с помощью шаблона;
-> * [мониторинг кластера;](service-fabric-tutorial-monitor-cluster.md)
-> * [увеличение или уменьшение масштаба кластера;](service-fabric-tutorial-scale-cluster.md)
+> * [мониторинг кластера](service-fabric-tutorial-monitor-cluster.md);
+> * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
 > * обновление среды выполнения кластера;
 > * [Удаление кластера](service-fabric-tutorial-delete-cluster.md)
 
@@ -53,7 +53,7 @@ ms.locfileid: "59046246"
 Перед началом работы с этим руководством выполните следующие действия:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Установите [Azure Powershell](https://docs.microsoft.com/powershell/azure/install-Az-ps) или [Azure CLI](/cli/azure/install-azure-cli).
+* Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps) или [Azure CLI](/cli/azure/install-azure-cli).
 * Создание защищенного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в Azure
 * Настройте среду разработки Windows. [Установите Visual Studio 2017](https://www.visualstudio.com), а также рабочие нагрузки **разработка Azure**, **ASP.NET и веб-разработка** и **кроссплатформенная разработка .NET Core**.  Теперь настройте [среду разработки .NET](service-fabric-get-started.md).
 

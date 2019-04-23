@@ -16,10 +16,10 @@ ms.date: 04/27/2018
 ms.author: jdial
 ms.custom: mvc
 ms.openlocfilehash: 4f5fbbb9d06f9fcb8858625b57957fc18c5c1f1f
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59046917"
 ---
 # <a name="tutorial-diagnose-a-communication-problem-between-networks-using-the-azure-portal"></a>Руководство по Диагностика проблем с обменом данными между сетями на портале Azure
@@ -115,4 +115,4 @@ ms.locfileid: "59046917"
 Из этого руководства вы узнали, как выполнить диагностику проблемы с помощью шлюза виртуальной сети. Вы можете сделать запись о сетевом обмене данными с виртуальной машиной, чтобы иметь возможность проверить журнал на наличие аномалий. Чтобы узнать, как сделать это, перейдите к изучению следующего руководства.
 
 > [!div class="nextstepaction"]
-> [Руководство. Регистрация потока входящего и исходящего сетевого трафика виртуальной машины с помощью портала Azure](network-watcher-nsg-flow-logging-portal.md)
+> [Запись сетевого входящего и исходящего трафика виртуальной машины в журнал](network-watcher-nsg-flow-logging-portal.md)

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 4edd445fe526b9be5c421b21b25f9b095c734f43
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59269900"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sumologic"></a>Руководство по Интеграция Azure Active Directory с SumoLogic
@@ -105,7 +105,7 @@ ms.locfileid: "59269900"
 
     ![Сведения о домене и URL-адресах единого входа приложения SumoLogic](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenantname>.SumoLogic.com`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenantname>.SumoLogic.com`.
 
    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
 
@@ -225,7 +225,7 @@ ms.locfileid: "59269900"
 
 Чтобы пользователи Azure AD могли входить в SumoLogic, их необходимо подготовить для SumoLogic. В случае SumoLogic подготовка пользователей осуществляется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Войдите в клиент **SumoLogic**.
 

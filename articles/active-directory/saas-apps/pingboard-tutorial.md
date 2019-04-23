@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: d69271f65c326237a380624d994d8f5339537114
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59271124"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pingboard"></a>Руководство по Интеграция Azure Active Directory с Pingboard
@@ -109,7 +109,7 @@ ms.locfileid: "59271124"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `http://app.pingboard.com/sp`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<entity-id>.pingboard.com/auth/saml/consume`
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<entity-id>.pingboard.com/auth/saml/consume`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -253,4 +253,4 @@ ms.locfileid: "59271124"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Настройка подготовки пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/pingboard-provisioning-tutorial)
+- [Руководство по настройке Google Apps для автоматической подготовки пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/pingboard-provisioning-tutorial)

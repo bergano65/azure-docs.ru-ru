@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
 ms.openlocfilehash: a98ec0d460e050f8158ffee1262dd85f0cd07d9a
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59256420"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-peakon"></a>Руководство по Интеграция Azure Active Directory с Peakon
@@ -51,7 +51,7 @@ ms.locfileid: "59256420"
 
 Чтобы настроить интеграцию Peakon с Azure AD, необходимо добавить Peakon из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Peakon из коллекции, сделайте следующее:**
+**Чтобы добавить Peakon из коллекции, сделайте следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59256420"
 
     ![Сведения о домене и URL-адресах единого входа приложения Peakon](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://app.peakon.com/saml/<companyid>/metadata`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://app.peakon.com/saml/<companyid>/metadata`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://app.peakon.com/saml/<companyid>/assert`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://app.peakon.com/saml/<companyid>/assert`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -220,7 +220,7 @@ ms.locfileid: "59256420"
 Чтобы пользователи Azure AD могли выполнять вход в Peakon, они должны быть подготовлены для Peakon.  
 В случае с Peakon подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Войдите на корпоративный сайт Peakon в качестве администратора.
 

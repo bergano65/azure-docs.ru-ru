@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 10/25/2018
 ms.openlocfilehash: d530ed3710a3406e5cd8115d615e91d5056a5f8c
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59047659"
 ---
 # <a name="quickstart-ingest-data-using-the-azure-data-explorer-node-library"></a>Краткое руководство. Прием данных с помощью библиотеки Node в Azure Data Explorer

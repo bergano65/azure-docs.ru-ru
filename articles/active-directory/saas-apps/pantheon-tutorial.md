@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 30f431c1806c6a0697a6b74b43f1cc35660fc85e
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59261740"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pantheon"></a>Руководство по Интеграция Azure Active Directory с Pantheon
@@ -51,7 +51,7 @@ ms.locfileid: "59261740"
 
 Чтобы настроить интеграцию Pantheon с Azure AD, необходимо добавить Pantheon из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Pantheon из коллекции, сделайте следующее:**
+**Чтобы добавить Pantheon из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,16 +105,16 @@ ms.locfileid: "59261740"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Pantheon](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `urn:auth0:pantheon:<orgname>-SSO`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `urn:auth0:pantheon:<orgname>-SSO`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://pantheon.auth0.com/login/callback?connection=<orgname>-SSO`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://pantheon.auth0.com/login/callback?connection=<orgname>-SSO`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Pantheon](https://pantheon.io/docs/getting-support/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. Приложение Pantheon ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Pantheon ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 

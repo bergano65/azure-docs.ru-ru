@@ -11,10 +11,10 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 02/27/2019
 ms.openlocfilehash: 1fca4f6e3aacfee52f348f338806b98d6e61994b
-ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59006419"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-nodejs"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством (Node.js)
@@ -165,4 +165,4 @@ az extension add --name azure-cli-iot-ext
 Чтобы узнать, как маршрутизировать сообщения с устройства в облако в разные расположения в облаке, перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
-> [Руководство по Использование Azure CLI и портала Azure для настройки маршрутизации сообщений Центра Интернета вещей](tutorial-routing.md)
+> [Руководство. Маршрутизация телеметрии в разные конечные точки для обработки](tutorial-routing.md)

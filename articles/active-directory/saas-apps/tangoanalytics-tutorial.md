@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 7252fcd0ce3e12c411729002e9594d1a75a49885
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59258537"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tango-analytics"></a>Руководство по Интеграция Azure Active Directory с Tango Analytics
@@ -51,7 +51,7 @@ ms.locfileid: "59258537"
 
 Чтобы настроить интеграцию Tango Analytics с Azure AD, необходимо добавить Tango Analytics из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Tango Analytics из коллекции, сделайте следующее:**
+**Чтобы добавить Tango Analytics из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59258537"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Tango Analytics](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите значение: `TACORE_SSO`
+    a. В текстовом поле **Идентификатор** введите значение: `TACORE_SSO`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://mts.tangoanalytics.com/saml2/sp/acs/post`
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://mts.tangoanalytics.com/saml2/sp/acs/post`.
 
     > [!NOTE]
     > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь в [группу поддержки клиентов Tango Analytics](mailto:support@tangoanalytics.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

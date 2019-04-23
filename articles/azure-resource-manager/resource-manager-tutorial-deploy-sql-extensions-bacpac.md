@@ -14,10 +14,10 @@ ms.date: 04/08/2019
 ms.topic: tutorial
 ms.author: jgao
 ms.openlocfilehash: 7339c975bf979907bd1f9bbb46546b58ef7ae6e5
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59282361"
 ---
 # <a name="tutorial-import-sql-bacpac-files-with-azure-resource-manager-templates"></a>Руководство. Импорт BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager
@@ -175,4 +175,4 @@ New-AzResourceGroupDeployment `
 В этом руководстве вы развернули SQL Server, Базу данных SQL и импортированный BACPAC-файл. BACPAC-файл хранится в учетной записи хранения Azure. К нему может получить доступ любой пользователь, у которого есть URL-адрес. Сведения о защите BACPAC-файла (артефакта) см. в следующем ресурсе:
 
 > [!div class="nextstepaction"]
-> [Руководство. Защита артефактов в развертываниях шаблонов Azure Resource Manager](./resource-manager-tutorial-secure-artifacts.md)
+> [Защита артефактов](./resource-manager-tutorial-secure-artifacts.md)

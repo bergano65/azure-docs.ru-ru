@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
 ms.openlocfilehash: 95a138a6dd499df18789e9b587e770a9b7bf7dab
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59279675"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-meta-networks-connector"></a>Руководство по Интеграция Azure Active Directory с Meta Networks Connector
@@ -52,7 +52,7 @@ ms.locfileid: "59279675"
 
 Чтобы настроить интеграцию Meta Networks Connector с Azure AD, нужно добавить Meta Networks Connector из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Meta Networks Connector из коллекции, сделайте следующее:**
+**Чтобы добавить Meta Networks Connector из коллекции, сделайте следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,24 +106,24 @@ ms.locfileid: "59279675"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Meta Networks Connector](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://login.nsof.io/v1/<ORGANIZATION-SHORT-NAME>/saml/metadata`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://login.nsof.io/v1/<ORGANIZATION-SHORT-NAME>/saml/metadata`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://login.nsof.io/v1/<ORGANIZATION-SHORT-NAME>/sso/saml`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://login.nsof.io/v1/<ORGANIZATION-SHORT-NAME>/sso/saml`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Meta Networks Connector](common/both-advanced-urls.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<ORGANIZATION-SHORT-NAME>.metanetworks.com/login`
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<ORGANIZATION-SHORT-NAME>.metanetworks.com/login`.
 
-    b. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://<ORGANIZATION-SHORT-NAME>.metanetworks.com/#/`
+    b. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://<ORGANIZATION-SHORT-NAME>.metanetworks.com/#/`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа, которые описываются далее в этом руководстве.
 
 6. Приложение Meta Networks Connector ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
     
 7. В дополнение к описанному выше приложение Meta Networks Connector ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
     
@@ -137,9 +137,9 @@ ms.locfileid: "59279675"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

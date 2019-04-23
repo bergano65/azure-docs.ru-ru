@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 33c2d211fad16a81a307a5c0f2a9d048ef07bf4d
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59259904"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-questetra-bpm-suite"></a>Руководство по Интеграция Azure Active Directory с Questetra BPM Suite
@@ -51,7 +51,7 @@ ms.locfileid: "59259904"
 
 Чтобы настроить интеграцию Questetra BPM Suite в Azure AD, необходимо добавить Questetra BPM Suite из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Questetra BPM Suite из коллекции, выполните следующие действия:**
+**Чтобы добавить Questetra BPM Suite из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59259904"
 
     ![Сведения о домене и URL-адресах единого входа приложения Questetra BPM Suite](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.questetra.net/saml/SSO/alias/bpm`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.questetra.net/saml/SSO/alias/bpm`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.questetra.net/`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.questetra.net/`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Вы можете получить эти значения в разделе **SP Information** (Сведения о SP) на своем корпоративном сайте **Questetra BPM Suite**. Как это сделать, описывается далее в этом руководстве. Вы можете также обратиться к [группе поддержки клиентов Questetra BPM Suite](https://www.questetra.com/contact/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -216,7 +216,7 @@ ms.locfileid: "59259904"
 
 Цель этого раздела — создать пользователя с именем Britta Simon в Questetra BPM Suite.
 
-**Чтобы создать пользователя с именем Britta Simon в Questetra BPM Suite, выполните следующие действия:**
+**Чтобы создать пользователя с именем Britta Simon в Questetra BPM Suite, выполните следующие действия.**
 
 1. Войдите на корпоративный сайт Questetra BPM Suite в качестве администратора.
 

@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
 ms.openlocfilehash: ab4a36fa117793724a897de4f6d8f03d7f46504e
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59276309"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lean"></a>Руководство по Интеграция Azure Active Directory с Lean
@@ -52,7 +52,7 @@ ms.locfileid: "59276309"
 
 Чтобы настроить интеграцию Lean с Azure AD, необходимо добавить Lean из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Lean из коллекции, сделайте следующее:**
+**Чтобы добавить Lean из коллекции, сделайте следующее.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,9 +106,9 @@ ms.locfileid: "59276309"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Lean](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.goodpractice.net/api/gpsso`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.goodpractice.net/api/gpsso`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `bloom-goodpractice-<SUBDOMAIN>`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `bloom-goodpractice-<SUBDOMAIN>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Lean](mailto:support@goodpractice.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

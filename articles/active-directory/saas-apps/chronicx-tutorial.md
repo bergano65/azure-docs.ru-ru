@@ -16,10 +16,10 @@ ms.date: 02/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 499cbcada19728a0d0eba1831460ea38245b7f5c
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59267418"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-chronicx"></a>Руководство по Интеграция Azure Active Directory с ChronicX®
@@ -106,9 +106,9 @@ ms.locfileid: "59267418"
 
     ![Сведения о домене и URL-адресах единого входа для приложения ChronicX®](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.chronicx.com/ups/processlogonSSO.jsp`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.chronicx.com/ups/processlogonSSO.jsp`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом. `ups.chronicx.com`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `ups.chronicx.com`
 
     > [!NOTE]
     >Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки ChronicX®](https://www.casebank.com/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

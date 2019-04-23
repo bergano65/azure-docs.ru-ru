@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 2e6916cc96f9d9778cc829e39f82ef7204e137bc
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59269475"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-synergi"></a>Руководство по Интеграция Azure Active Directory с Synergi
@@ -105,9 +105,9 @@ ms.locfileid: "59269475"
 
     ![Сведения о домене и URL-адресах единого входа приложения Synergi](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<company name>.irmsecurity.com`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<company name>.irmsecurity.com`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<company name>.irmsecurity.com/sso/<organization id>`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<company name>.irmsecurity.com/sso/<organization id>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Synergi](https://www.irmsecurity.com/contact/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

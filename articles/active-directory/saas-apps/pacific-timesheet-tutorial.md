@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 8b145755f88c7a2be215ccfd78538298433331fd
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59277006"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pacific-timesheet"></a>Руководство. Интеграция Azure Active Directory с Pacific Timesheet
@@ -105,9 +105,9 @@ ms.locfileid: "59277006"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Pacific Timesheet](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://<InstanceID>.pacifictimesheet.com/timesheet/home.do`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<InstanceID>.pacifictimesheet.com/timesheet/home.do`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<InstanceID>.pacifictimesheet.com/timesheet/home.do`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<InstanceID>.pacifictimesheet.com/timesheet/home.do`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Pacific Timesheet](https://www.pacifictimesheet.com/support). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

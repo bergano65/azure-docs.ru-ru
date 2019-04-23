@@ -16,10 +16,10 @@ ms.date: 12/17/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ab329574ef425e8133ac746c185050efcc8bc15a
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59261451"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-netsuite"></a>Руководство по Интеграция Azure Active Directory с NetSuite
@@ -53,7 +53,7 @@ ms.locfileid: "59261451"
 
 Чтобы настроить интеграцию NetSuite с Azure AD, нужно добавить NetSuite из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить NetSuite из коллекции, сделайте следующее:**
+**Чтобы добавить NetSuite из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -126,7 +126,7 @@ ms.locfileid: "59261451"
 
 5. Приложение NetSuite ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
     
@@ -136,9 +136,9 @@ ms.locfileid: "59261451"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -330,5 +330,5 @@ ms.locfileid: "59261451"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Настройка подготовки пользователей](NetSuite-provisioning-tutorial.md)
+- [Руководство по настройке Google Apps для автоматической подготовки пользователей](NetSuite-provisioning-tutorial.md)
 

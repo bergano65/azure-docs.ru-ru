@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cd5ab513034d6e2946dcb31f3a31dbf86f14873e
-ms.sourcegitcommit: 0a3efe5dcf56498010f4733a1600c8fe51eb7701
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58895991"
 ---
 # <a name="quickstart-require-mfa-for-specific-apps-with-azure-active-directory-conditional-access"></a>Краткое руководство. Требование Многофакторной идентификации для конкретных приложений с помощью условного доступа Azure Active Directory
@@ -42,7 +42,7 @@ ms.locfileid: "58895991"
 
 Целью этого шага является ознакомление со входом в систему без политики условного доступа.
 
-**Чтобы инициализировать среду:**
+**Инициализация среды:**
 
 1. Войдите на портал Azure с учетной записью Isabella Simonsen.
 1. Выполните выход.
@@ -64,7 +64,7 @@ ms.locfileid: "58895991"
 
 ![Развернутое меню создания политики условного доступа](./media/app-based-mfa/31.png)
 
-**Чтобы настроить политику условного доступа, выполните следующие действия:**
+**Чтобы настроить политику условного доступа, выполните следующие действия.**
 
 1. Войдите на [портал Azure](https://portal.azure.com) с правами глобального администратора, администратора безопасности или администратора условного доступа.
 
@@ -152,7 +152,7 @@ ms.locfileid: "58895991"
 
 ![Инструмент политики What If](./media/app-based-mfa/23.png)
 
-**Чтобы оценить политику условного доступа, выполните следующие действия:**
+**Чтобы оценить политику условного доступа, выполните следующие действия.**
 
 1. На странице [Условный доступ — политики](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/Policies) в меню в верхней части нажмите кнопку **What If**.  
 

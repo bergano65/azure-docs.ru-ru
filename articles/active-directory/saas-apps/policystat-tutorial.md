@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 98ab9904f8afc5c74d9f043b0964bc56b49670cc
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59269781"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-policystat"></a>Руководство по Интеграция Azure Active Directory с PolicyStat
@@ -53,7 +53,7 @@ ms.locfileid: "59269781"
 
 Чтобы настроить интеграцию PolicyStat с Azure AD, необходимо добавить PolicyStat из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить PolicyStat из коллекции, сделайте следующее:**
+**Чтобы добавить PolicyStat из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -107,9 +107,9 @@ ms.locfileid: "59269781"
 
     ![Сведения о домене и URL-адресах единого входа для приложения PolicyStat](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.policystat.com`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.policystat.com`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.policystat.com/saml2/metadata/`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.policystat.com/saml2/metadata/`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов PolicyStat](http://www.policystat.com/support/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -120,7 +120,7 @@ ms.locfileid: "59269781"
 
 5. Приложение PolicyStat ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В дополнение к описанному выше приложение PolicyStat ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
@@ -130,9 +130,9 @@ ms.locfileid: "59269781"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
     
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](./media/policystat-tutorial/attribute01.png)
+    ![image](./media/policystat-tutorial/attribute01.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

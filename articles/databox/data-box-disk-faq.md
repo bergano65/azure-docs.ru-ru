@@ -9,10 +9,10 @@ ms.topic: overview
 ms.date: 04/08/2019
 ms.author: alkohli
 ms.openlocfilehash: 27200406f0866697100e1cf9b32c199203ad600d
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59258782"
 ---
 # <a name="what-is-azure-data-box-disk"></a>Что такое диск Azure Data Box
@@ -129,8 +129,8 @@ ms.locfileid: "59258782"
  - **Средство Split Copy Диска Data Box**. Применяйте этот инструмент при использовании нескольких дисков и при наличии большого набора данных, который нужно разделить и скопировать на все диски. Сейчас это средство доступно для ОС семейства Windows. Это средство не поддерживается с управляемыми дисками. Оно также выполняет проверку по мере копирования данных, поэтому вы можете пропустить этот шаг при использовании этого средства.
 
 Набор средств доступен для ОС Windows и Linux. Это средство вы можете скачать по ссылкам, приведенным далее.
-- [Скачать набор средств для Диска Data Box для Windows](https://aka.ms/databoxdisktoolswin) 
-- [Скачать набор средств для Диска Data Box для Linux](https://aka.ms/databoxdisktoolslinux)
+- [Скачать набор средств для диска Data Box для Windows](https://aka.ms/databoxdisktoolswin) 
+- [Скачать набор средств для диска Data Box для Linux](https://aka.ms/databoxdisktoolslinux)
  
 ### <a name="q-can-i-use-data-box-disk-to-transfer-data-to-azure-files-and-then-use-the-data-with-azure-file-sync"></a>В. Можно ли использовать диск Data Box для передачи данных в службу "Файлы Azure", а затем использовать данные с помощью функции "Синхронизация файлов Azure"? 
 О. Службу "Файлы Azure" можно использовать с Диском Data Box, но она не будет работать надлежащим образом при применении функции "Синхронизация файлов Azure". Метаданные не сохраняются, если данные файла впоследствии используются функцией "Синхронизация файлов Azure".

@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
 ms.openlocfilehash: 926deea2f9754febb76e8ccc81933a792f3a9dbc
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59283177"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-neota-logic-studio"></a>Руководство по Интеграция Azure Active Directory с Neota Logic Studio
@@ -50,7 +50,7 @@ ms.locfileid: "59283177"
 
 Чтобы настроить интеграцию Neota Logic Studio с Azure AD, необходимо добавить Neota Logic Studio из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Neota Logic Studio из коллекции, сделайте следующее:**
+**Чтобы добавить Neota Logic Studio из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -104,9 +104,9 @@ ms.locfileid: "59283177"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Neota Logic Studio](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<sub domain>.neotalogic.com/a/<sub application>`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<sub domain>.neotalogic.com/a/<sub application>`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<sub domain>.neotalogic.com/wb`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<sub domain>.neotalogic.com/wb`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Neota Logic Studio](https://www.neotalogic.com/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

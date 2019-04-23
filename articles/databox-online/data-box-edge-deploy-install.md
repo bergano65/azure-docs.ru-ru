@@ -10,10 +10,10 @@ ms.date: 03/20/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to install Data Box Edge in datacenter so I can use it to transfer data to Azure.
 ms.openlocfilehash: 46192d32e70e371325abeafd4da26fa29e491b13
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59278485"
 ---
 # <a name="tutorial-install-azure-data-box-edge"></a>Руководство по установке Azure Data Box Edge
@@ -221,6 +221,6 @@ ms.locfileid: "59278485"
 Перейдите к следующему руководству, чтобы научиться подключать, настраивать и активировать устройство.
 
 > [!div class="nextstepaction"]
-> [Подключение, настройка и активация Data Box Edge](./data-box-edge-deploy-connect-setup-activate.md)
+> [Руководство. Подключение, настройка и активация Azure Data Box Edge (предварительная версия)](./data-box-edge-deploy-connect-setup-activate.md)
 
 

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 0d5c697f8c6c2365539ce5147ad5bafff1e6c396
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59282199"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-origami"></a>Руководство по Интеграция Azure Active Directory с Origami
@@ -51,7 +51,7 @@ ms.locfileid: "59282199"
 
 Чтобы настроить интеграцию Origami с Azure AD, необходимо добавить Origami из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Origami из коллекции, сделайте следующее.**
+**Чтобы добавить Origami из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 

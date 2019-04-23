@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 79223a7f5c1f16eaf09de8efd05e0ec096ac73ab
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59279454"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-smartrecruiters"></a>Руководство по Интеграция Azure Active Directory с SmartRecruiters
@@ -51,7 +51,7 @@ ms.locfileid: "59279454"
 
 Чтобы настроить интеграцию SmartRecruiters с Azure AD, необходимо добавить SmartRecruiters из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить SmartRecruiters из коллекции, сделайте следующее:**
+**Чтобы добавить SmartRecruiters из коллекции, выполните инструкции ниже.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59279454"
 
     ![Сведения о домене и URL-адресах единого входа для приложения SmartRecruiters](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://www.smartrecruiters.com/web-sso/saml/<companyname>`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.smartrecruiters.com/web-sso/saml/<companyname>`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://www.smartrecruiters.com/web-sso/saml/<companyname>/callback`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://www.smartrecruiters.com/web-sso/saml/<companyname>/callback`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 

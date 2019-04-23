@@ -10,10 +10,10 @@ ms.date: 04/08/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: 161d3ff3e00f7e9e979527533f6b8ac365c41490
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59265021"
 ---
 # <a name="quickstart-create-an-ai-indexing-pipeline-using-cognitive-skills-and-sample-data"></a>Краткое руководство. Создание конвейера индексирования ИИ с использованием когнитивных навыков и примера данных
@@ -183,4 +183,4 @@ ms.locfileid: "59265021"
 Кроме того, этот пример данных и созданные службы можно использовать повторно, чтобы узнать, как выполнять эти же задания программно в следующем руководстве. 
 
 > [!div class="nextstepaction"]
-> [Руководство по REST API когнитивного поиска](cognitive-search-tutorial-blob.md)
+> [Руководство. REST API когнитивного поиска](cognitive-search-tutorial-blob.md)

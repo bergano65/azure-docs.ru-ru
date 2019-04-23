@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
 ms.openlocfilehash: 9214f438df57ca9cd95fd1f5827db8ab82f5a136
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59261910"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mcm"></a>Руководство. Интеграция Azure Active Directory с МСМ
@@ -104,9 +104,9 @@ ms.locfileid: "59261910"
 
     ![Сведения о домене и URL-адресах единого входа для приложения MCM](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://myaba.co.uk/client-access/<companyname>/saml.php`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://myaba.co.uk/client-access/<companyname>/saml.php`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://myaba.co.uk/<companyname>`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://myaba.co.uk/<companyname>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов MCM](https://mcmtechnology.com/support/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

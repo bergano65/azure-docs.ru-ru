@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 7f5996b41da68adc83c26e836c9fb1a175107337
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59277807"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-infogix-data3sixty-govern"></a>Руководство по Интеграция Azure Active Directory с Infogix Data3Sixty Govern
@@ -52,7 +52,7 @@ ms.locfileid: "59277807"
 
 Чтобы настроить интеграцию Infogix Data3Sixty Govern с Azure AD, необходимо добавить Infogix Data3Sixty Govern из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Infogix Data3Sixty Govern из коллекции, сделайте следующее:**
+**Чтобы добавить Infogix Data3Sixty Govern из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -108,7 +108,7 @@ ms.locfileid: "59277807"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://data3sixty.com/ui`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.data3sixty.com/sso/acs`
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.data3sixty.com/sso/acs`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -121,7 +121,7 @@ ms.locfileid: "59277807"
 
 6. Приложение Infogix Data3Sixty Govern ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 7. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
@@ -133,9 +133,9 @@ ms.locfileid: "59277807"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 61be963f4edc2dc50f176087f2c817c5f485588b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59276564"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-patentsquare"></a>Руководство по Интеграция Azure Active Directory с PatentSQUARE
@@ -51,7 +51,7 @@ ms.locfileid: "59276564"
 
 Чтобы настроить интеграцию PatentSQUARE с Azure AD, нужно добавить PatentSQUARE из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить PatentSQUARE из коллекции, сделайте следующее:**
+**Чтобы добавить PatentSQUARE из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59276564"
 
     ![Сведения о домене и URL-адресах единого входа приложения PatentSQUARE](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companysubdomain>.pat-dss.com:443/patlics/secure/aad`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companysubdomain>.pat-dss.com:443/patlics/secure/aad`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companysubdomain>.pat-dss.com:443/patlics`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companysubdomain>.pat-dss.com:443/patlics`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов PatentSQUARE](https://www.panasonic.com/jp/business/its/patentsquare.html). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

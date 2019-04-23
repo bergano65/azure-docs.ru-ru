@@ -16,10 +16,10 @@ ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f1beb825eda7e4d6a59810aada7063863b48d8ec
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59260907"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-appraisd"></a>Руководство по Интеграция Azure Active Directory с Appraisd
@@ -51,7 +51,7 @@ ms.locfileid: "59260907"
 
 Чтобы настроить интеграцию Appraisd с Azure AD, необходимо добавить Appraisd из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Appraisd из коллекции, выполните следующие действия:**
+**Чтобы добавить Appraisd из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -109,14 +109,14 @@ ms.locfileid: "59260907"
 
     b. В текстовом поле **Состояние ретранслятора** введите такой URL-адрес: `<TENANTCODE>`
 
-    c. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком служб**, тогда в текстовом поле **URL-адрес входа** введите URL-адрес, используя следующий шаблон: `https://app.appraisd.com/saml/<TENANTCODE>`
+    c. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком услуг**, тогда в текстовом поле **URL-адрес входа** введите URL-адрес, используя следующий шаблон: `https://app.appraisd.com/saml/<TENANTCODE>`
 
     > [!NOTE]
     > Фактические значения URL-адреса входа и состояния ретранслятора можно получить на странице настройки единого входа в Appraisd, как описано далее в этом руководстве.
 
 5. Приложение Appraisd ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
@@ -127,9 +127,9 @@ ms.locfileid: "59260907"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -163,15 +163,15 @@ ms.locfileid: "59260907"
 
 2. В верхнем правом углу страницы щелкните значок **Параметры**, затем перейдите на экран **Конфигурация**.
 
-    ![изображение](./media/appraisd-tutorial/tutorial_appraisd_sett.png)
+    ![image](./media/appraisd-tutorial/tutorial_appraisd_sett.png)
 
 3. В левой части меню щелкните на **Единый вход SAML**.
 
-    ![изображение](./media/appraisd-tutorial/tutorial_appraisd_single.png)
+    ![image](./media/appraisd-tutorial/tutorial_appraisd_single.png)
 
 4. На странице **SAML 2.0 Single Sign-On configuration** (Конфигурация единого входа SAML 2.0) выполните следующие действия.
 
-    ![изображение](./media/appraisd-tutorial/tutorial_appraisd_saml.png)
+    ![image](./media/appraisd-tutorial/tutorial_appraisd_saml.png)
 
     a. Скопируйте значение **Default Relay State** (Состояние ретрансляции по умолчанию) и вставьте его в текстовое поле **Состояние ретранслятора** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -179,7 +179,7 @@ ms.locfileid: "59260907"
 
 5. Прокрутите эту страницу вниз до раздела **Идентификация пользователей** и выполните следующие действия.
 
-    ![изображение](./media/appraisd-tutorial/tutorial_appraisd_identifying.png)
+    ![image](./media/appraisd-tutorial/tutorial_appraisd_identifying.png)
 
     a. В текстовое поле **Identity Provider Single Sign-On URL** (URL-адрес единого входа поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure. Нажмите кнопку **Save** (Сохранить).
 
@@ -242,21 +242,21 @@ ms.locfileid: "59260907"
 
 Чтобы пользователи Azure AD могли выполнять вход в Appraisd, они должны быть подготовлены для Appraisd. В Appraisd подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Войдите в Appraisd с правами администратора безопасности.
 
 2. В верхнем правом углу страницы щелкните значок **Settings** (Параметры), затем перейдите на экран **Administration centre** (Центр администрирования).
 
-    ![изображение](./media/appraisd-tutorial/tutorial_appraisd_admin.png)
+    ![image](./media/appraisd-tutorial/tutorial_appraisd_admin.png)
 
 3. На панели инструментов в верхней части страницы щелкните **People** (Пользователи), затем выберите **Add a new user** (Добавить нового пользователя).
 
-    ![изображение](./media/appraisd-tutorial/tutorial_appraisd_user.png)
+    ![image](./media/appraisd-tutorial/tutorial_appraisd_user.png)
 
 4. На странице **Add a new user** (Добавление нового пользователя) выполните следующие действия.
 
-    ![изображение](./media/appraisd-tutorial/tutorial_appraisd_newuser.png)
+    ![image](./media/appraisd-tutorial/tutorial_appraisd_newuser.png)
 
     a. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 

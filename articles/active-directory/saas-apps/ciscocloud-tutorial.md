@@ -16,10 +16,10 @@ ms.date: 02/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5a59dbd934ba1a449f7671d433529513b9f14c80
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59282888"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cisco-cloud"></a>Руководство по Интеграция Azure Active Directory с Cisco Cloud
@@ -51,7 +51,7 @@ ms.locfileid: "59282888"
 
 Чтобы настроить интеграцию Cisco Cloud с Azure AD, необходимо добавить Cisco Cloud из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Cisco Cloud из коллекции, выполните следующие действия:**
+**Чтобы добавить Cisco Cloud из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -105,9 +105,9 @@ ms.locfileid: "59282888"
 
     ![Сведения о домене и URL-адресах единого входа приложения Cisco Cloud](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `<subdomain>.cisco.com`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `<subdomain>.cisco.com`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<subdomain>.cisco.com/sp/ACS.saml2`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.cisco.com/sp/ACS.saml2`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -120,7 +120,7 @@ ms.locfileid: "59282888"
 
 6. Приложение Cisco Cloud ожидает проверочные утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить** , чтобы открыть диалоговое окно "Атрибуты пользователя".
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 7. В дополнение к описанному выше приложение Cisco Cloud ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
@@ -132,9 +132,9 @@ ms.locfileid: "59282888"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 11/14/2018
 ms.openlocfilehash: 4a3a688adaae8fe66c336617cdd0a4807f16ec68
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59045513"
 ---
 # <a name="quickstart-visualize-data-using-the-azure-data-explorer-connector-for-power-bi"></a>Краткое руководство. Визуализация данных с помощью соединителя Azure Data Explorer для Power BI
@@ -85,4 +85,4 @@ Azure Data Explorer поддерживает три варианта подкл�
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Визуализация данных с помощью соединителя Azure Data Explorer для Power BI](power-bi-connector.md)
+> [Краткое руководство Визуализация данных с помощью запроса, импортированного в Power BI](power-bi-connector.md)

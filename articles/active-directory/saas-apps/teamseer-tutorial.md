@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: ef11011ec37f72003dd6c238ce748d417bfcd505
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59256623"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-teamseer"></a>Руководство. Интеграция Azure Active Directory с TeamSeer
@@ -213,7 +213,7 @@ ms.locfileid: "59256623"
 
 Чтобы пользователи Azure AD могли выполнить вход в TeamSeer, они должны быть подготовлены в TeamSeer. В случае с TeamSeer подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Войдите на веб-сайт **TeamSeer** вашей компании в качестве администратора.
 

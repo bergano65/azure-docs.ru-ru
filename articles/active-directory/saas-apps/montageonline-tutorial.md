@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 28d52a6eb5018aac8ebeb48b0a2a60a1dd9e1a43
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59260261"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-montage-online"></a>Руководство по Интеграция Azure Active Directory с Montage Online
@@ -50,7 +50,7 @@ ms.locfileid: "59260261"
 
 Чтобы настроить интеграцию Montage Online с Azure AD, нужно добавить Montage Online из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Montage Online из коллекции, сделайте следующее:**
+**Чтобы добавить Montage Online из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 

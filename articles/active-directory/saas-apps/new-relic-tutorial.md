@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
 ms.openlocfilehash: 4d50c4366128edb5b4bc76408eb1085817af1ce3
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59271906"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-new-relic"></a>Руководство по Интеграция Azure Active Directory с New Relic
@@ -50,7 +50,7 @@ ms.locfileid: "59271906"
 
 Чтобы настроить интеграцию New Relic с Azure AD, необходимо добавить New Relic из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить New Relic из коллекции, выполните следующие действия:**
+**Чтобы добавить New Relic из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,7 +106,7 @@ ms.locfileid: "59271906"
 
     a. В поле **URL-адрес входа** введите URL-адрес, используя следующий шаблон: `https://rpm.newrelic.com/accounts/{acc_id}/sso/saml/login`. Не забудьте подставить собственный идентификатор учетной New Relic.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом. `rpm.newrelic.com`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `rpm.newrelic.com`
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 

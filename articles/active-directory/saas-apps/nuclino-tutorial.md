@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
 ms.openlocfilehash: 4788b65201792292d79cd8c4d1b22f22c5e67eb6
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59278808"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-nuclino"></a>Руководство по Интеграция Azure Active Directory с Nuclino
@@ -52,7 +52,7 @@ ms.locfileid: "59278808"
 
 Чтобы настроить интеграцию Nuclino с Azure AD, необходимо добавить Nuclino из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Nuclino из коллекции, сделайте следующее:**
+**Чтобы добавить Nuclino из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,9 +106,9 @@ ms.locfileid: "59278808"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Nuclino](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате: `https://api.nuclino.com/api/sso/<UNIQUE-ID>/metadata`
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://api.nuclino.com/api/sso/<UNIQUE-ID>/metadata`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://api.nuclino.com/api/sso/<UNIQUE-ID>/acs`
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://api.nuclino.com/api/sso/<UNIQUE-ID>/acs`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора и URL-адреса ответа из раздела **Authentication** (Проверка подлинности), который описывается далее в этом руководстве.
@@ -124,7 +124,7 @@ ms.locfileid: "59278808"
 
 6. Приложение Nuclino ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 7. В дополнение к описанному выше приложение Nuclino ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
@@ -135,9 +135,9 @@ ms.locfileid: "59278808"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

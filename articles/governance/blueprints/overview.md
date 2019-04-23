@@ -8,10 +8,10 @@ ms.topic: overview
 ms.service: blueprints
 manager: carmonm
 ms.openlocfilehash: 960b8145e5f53c6c37820604fd634ccf5fd77c6b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59259428"
 ---
 # <a name="overview-of-the-azure-blueprints-service"></a>Обзор службы Azure Blueprints
@@ -85,9 +85,9 @@ ms.locfileid: "59259428"
 
 Чтобы использовать схемы, вам должны быть предоставлены разрешения с помощью [управления доступом на основе ролей](../../role-based-access-control/overview.md) (RBAC). Для создания схем ваша учетная запись должна иметь следующие разрешения:
 
-- `Microsoft.Blueprint/blueprints/write` — создание определения схемы;
-- `Microsoft.Blueprint/blueprints/artifacts/write` — создание артефактов в определении схемы;
-- `Microsoft.Blueprint/blueprints/versions/write` — публикация схемы.
+- `Microsoft.Blueprint/blueprints/write` — создание определения схемы
+- `Microsoft.Blueprint/blueprints/artifacts/write` — создание артефактов в определении схемы
+- `Microsoft.Blueprint/blueprints/versions/write` — публикация схемы
 
 Для удаления схем ваша учетная запись должна иметь следующие разрешения:
 
@@ -100,8 +100,8 @@ ms.locfileid: "59259428"
 
 Для назначения или отмены назначения схем ваша учетная запись должна иметь следующие разрешения:
 
-- `Microsoft.Blueprint/blueprintAssignments/write` — назначение схемы;
-- `Microsoft.Blueprint/blueprintAssignments/delete` — отмена назначения схемы.
+- `Microsoft.Blueprint/blueprintAssignments/write` — назначение схемы
+- `Microsoft.Blueprint/blueprintAssignments/delete` — отмена назначения схемы
 
 > [!NOTE]
 > Так как назначения схем создаются в подписке, разрешения на назначение и отмену назначения схем должны быть предоставлены в области подписки или унаследованы в области подписки.
@@ -119,5 +119,5 @@ ms.locfileid: "59259428"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Создание схемы с помощью портала](create-blueprint-portal.md)
-- [Создание схемы с помощью REST API](create-blueprint-rest-api.md)
+- [Создание схемы°— портал](create-blueprint-portal.md)
+- [Создание схемы°— REST API](create-blueprint-rest-api.md)

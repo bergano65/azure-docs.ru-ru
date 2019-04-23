@@ -8,10 +8,10 @@ ms.topic: sample
 ms.date: 01/31/2019
 ms.author: dacoulte
 ms.openlocfilehash: a7a76fbde74ab80f8aa0f5e67e6445504c3aafa5
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59276666"
 ---
 # <a name="sample---enforce-tag-and-its-value-on-resource-groups"></a>Пример: принудительное применение тега и его значения для группы ресурсов
@@ -22,7 +22,7 @@ ms.locfileid: "59276666"
 
 - [портал Azure](#azure-portal).
 - [Azure PowerShell](#azure-powershell)
-- [Инфраструктура CLI Azure](#azure-cli)
+- [Интерфейс командной строки Azure](#azure-cli)
 - [REST API](#rest-api)
 
 [!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
@@ -220,8 +220,8 @@ az policy definition delete --name `echo $definition | jq '.name' -r`
 |---|---|---|---|
 | Управление ресурсами | Определения политик | [Создание](/rest/api/resources/policydefinitions/createorupdate) | Создается новое определение политики Azure в подписке. Альтернативный вариант: [создание группы управления](/rest/api/resources/policydefinitions/createorupdateatmanagementgroup) |
 | Управление ресурсами | Назначения политик | [Создание](/rest/api/resources/policyassignments/create) | Создается новое назначение политики Azure. В этом примере политики предоставляется определение, но она также может взять на себя инициативу. |
-| Управление ресурсами | Назначения политик | [Delete (Удалить)](/rest/api/resources/policyassignments/delete) | Удаление существующего назначения политики Azure. |
-| Управление ресурсами | Определения политик | [Delete (Удалить)](/rest/api/resources/policydefinitions/delete) | Удаление существующего определения политики Azure. Альтернативный вариант: [удаление группы управления](/rest/api/resources/policydefinitions/deleteatmanagementgroup) |
+| Управление ресурсами | Назначения политик | [Удалить](/rest/api/resources/policyassignments/delete) | Удаление существующего назначения политики Azure. |
+| Управление ресурсами | Определения политик | [Удалить](/rest/api/resources/policydefinitions/delete) | Удаление существующего определения политики Azure. Альтернативный вариант: [удаление группы управления](/rest/api/resources/policydefinitions/deleteatmanagementgroup) |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

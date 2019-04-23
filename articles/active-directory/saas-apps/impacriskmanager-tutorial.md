@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 73a19fa97a898e2c51912a18f46751e855ee0303
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59272093"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-impac-risk-manager"></a>Руководство по Интеграция Azure Active Directory с IMPAC Risk Manager
@@ -51,7 +51,7 @@ ms.locfileid: "59272093"
 
 Чтобы настроить интеграцию IMPAC Risk Manager в Azure AD, необходимо добавить IMPAC Risk Manager из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить IMPAC Risk Manager из коллекции, сделайте следующее:**
+**Чтобы добавить IMPAC Risk Manager из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 

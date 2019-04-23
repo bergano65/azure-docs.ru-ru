@@ -10,10 +10,10 @@ ms.date: 03/25/2018
 ms.author: robinsh
 ms.custom: mvc
 ms.openlocfilehash: 1417ecdaf6a85f491e1accfb9564e27d15e13445
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59045839"
 ---
 # <a name="tutorial-part-2---view-the-routed-messages"></a>Руководство по Часть 2. Просмотр маршрутизированных сообщений
@@ -274,7 +274,7 @@ ms.locfileid: "59045839"
 
 ### <a name="use-the-azure-cli-to-clean-up-resources"></a>Очистка ресурсов с помощью Azure CLI
 
-Чтобы удалить группу ресурсов, используйте команду [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete). `$resourceGroup` было присвоено **ContosoResources** в начале работы с этим руководством.
+Чтобы удалить группу ресурсов, используйте команду [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete). Значение `$resourceGroup` было присвоено **ContosoResources** в начале работы с этим руководством.
 
 ```azurecli-interactive
 az group delete --name $resourceGroup
@@ -282,7 +282,7 @@ az group delete --name $resourceGroup
 
 ### <a name="use-powershell-to-clean-up-resources"></a>Очистка ресурсов с помощью PowerShell
 
-Чтобы удалить группу ресурсов, используйте команду [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup). `$resourceGroup` было присвоено **ContosoResources** в начале работы с этим руководством.
+Чтобы удалить группу ресурсов, используйте команду [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup). Значение `$resourceGroup` было присвоено **ContosoResources** в начале работы с этим руководством.
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name $resourceGroup
@@ -310,4 +310,4 @@ Remove-AzResourceGroup -Name $resourceGroup
 Перейдите к следующему руководству, чтобы узнать, как управлять состоянием устройств IoT. 
 
 > [!div class="nextstepaction"]
-> [Руководство. Настройка и использование метрик и журналов диагностики с Центром Интернета вещей](tutorial-use-metrics-and-diags.md)
+> [Tutorial: Set up and use metrics and diagnostic logs with an IoT hub](tutorial-use-metrics-and-diags.md) (Руководство. Настройка и использование метрик и журналов диагностики с Центром Интернета вещей)

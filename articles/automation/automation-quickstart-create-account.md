@@ -10,10 +10,10 @@ ms.service: automation
 ms.subservice: process-automation
 ms.custom: mvc
 ms.openlocfilehash: 7f7905a4b09e685ad98a1663333aa32bc1d7ae90
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59009518"
 ---
 # <a name="create-an-azure-automation-account"></a>Создание учетной записи службы автоматизации Azure
@@ -66,5 +66,5 @@ ms.locfileid: "59009518"
 В этом кратком руководстве вы развернули учетную запись службы автоматизации, запустили задание runbook и просмотрели его результаты. Дополнительные сведения о службе автоматизации Azure см. в следующем кратком руководстве по созданию первого модуля runbook.
 
 > [!div class="nextstepaction"]
-> [Создание runbook службы автоматизации Azure](./automation-quickstart-create-runbook.md)
+> [Краткое руководство по службе автоматизации. Создание runbook](./automation-quickstart-create-runbook.md)
 

@@ -11,10 +11,10 @@ ms.author: rogarana
 ms.custom: mvc
 ms.subservice: blobs
 ms.openlocfilehash: a5b6c22b3917784b20ad11bddf200d1546c48597
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58882875"
 ---
 # <a name="create-a-virtual-machine-and-storage-account-for-a-scalable-application"></a>Создание виртуальной машины и учетной записи хранения для масштабируемого приложения
@@ -136,4 +136,4 @@ Set-AzVMCustomScriptExtension -ResourceGroupName myResourceGroup `
 Перейдите к изучению второй части, чтобы узнать, как передавать большие объемы данных в учетную запись хранения с использованием экспоненциального повторения и параллелизма.
 
 > [!div class="nextstepaction"]
-> [Передача больших файлов больших объемов в параллельном режиме в учетную запись хранения](storage-blob-scalable-app-upload-files.md)
+> [Передача больших объемов случайных данных в параллельном режиме в службу хранилища Azure](storage-blob-scalable-app-upload-files.md)

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 11d0a0a67d1ce5049166cab3d9ca3e4903b6b460
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59277210"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-teamphoria"></a>Руководство по Интеграция Azure Active Directory с Teamphoria
@@ -51,7 +51,7 @@ ms.locfileid: "59277210"
 
 Чтобы настроить интеграцию Teamphoria с Azure AD, необходимо добавить Teamphoria из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Teamphoria из коллекции, выполните следующие действия.**
+**Чтобы добавить Teamphoria из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -205,7 +205,7 @@ ms.locfileid: "59277210"
 
 Чтобы пользователи Azure AD могли выполнить вход в Teamphoria, они должны быть подготовлены для Teamphoria. В случае с Teamphoria подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Войдите на корпоративный сайт Teamphoria в качестве администратора.
 

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 060e071a5c54baa607733cd4fe7342fd981cf827
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59257813"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skills-base"></a>Руководство по Интеграция Azure Active Directory со Skills Base
@@ -52,7 +52,7 @@ ms.locfileid: "59257813"
 
 Чтобы настроить интеграцию Skills Base с Azure AD, необходимо добавить Skills Base из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Skills Base из коллекции, выполните следующие действия:**
+**Чтобы добавить Skills Base из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 

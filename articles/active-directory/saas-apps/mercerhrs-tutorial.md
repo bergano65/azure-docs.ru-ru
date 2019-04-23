@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
 ms.openlocfilehash: 8944e4533448f5787f5c85c12e4ab2747eb96e4e
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59278094"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mercer-benefitscentral-mbc"></a>Руководство по Интеграция Azure Active Directory с Mercer BenefitsCentral (MBC)
@@ -50,7 +50,7 @@ ms.locfileid: "59278094"
 
 Чтобы настроить интеграцию Mercer BenefitsCentral (MBC) с Azure AD, необходимо добавить Mercer BenefitsCentral (MBC) из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Mercer BenefitsCentral (MBC) из коллекции, сделайте следующее:**
+**Чтобы добавить Mercer BenefitsCentral (MBC) из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,7 +106,7 @@ ms.locfileid: "59278094"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `stg.mercerhrs.com/saml2.0`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://ssous-stg.mercerhrs.com/SP2/Saml2AssertionConsumer.aspx`
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://ssous-stg.mercerhrs.com/SP2/Saml2AssertionConsumer.aspx`.
 
     > [!NOTE]
     > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Обратитесь в [группу поддержки клиентов Mercer BenefitsCentral (MBC)](https://www.mercer.com/contact-us.html), чтобы получить это значение. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

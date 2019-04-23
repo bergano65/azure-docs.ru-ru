@@ -11,10 +11,10 @@ ms.topic: quickstart
 ms.date: 04/03/2019
 ms.author: wolfma
 ms.openlocfilehash: be4c5d6187e6367ba04ce7debcc0701937e87ae9
-ms.sourcegitcommit: e43ea344c52b3a99235660960c1e747b9d6c990e
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59012351"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-macos-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C++ для macOS с помощью пакета SDK для службы "Речь"
@@ -109,7 +109,7 @@ ms.locfileid: "59012351"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Ознакомьтесь с примерами для C++ на сайте GitHub](https://aka.ms/csspeech/samples)
+> [Ознакомьтесь с примерами на C++ на сайте GitHub](https://aka.ms/csspeech/samples)
 
 ## <a name="see-also"></a>См. также
 

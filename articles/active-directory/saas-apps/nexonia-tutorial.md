@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
 ms.openlocfilehash: d5f2f31f87bc3732b7b3a5593217ebde4ee213c9
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59261128"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-nexonia"></a>Руководство по Интеграция Azure Active Directory с Nexonia
@@ -50,7 +50,7 @@ ms.locfileid: "59261128"
 
 Чтобы настроить интеграцию Nexonia с Azure AD, необходимо добавить Nexonia из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Nexonia из коллекции, сделайте следующее:**
+**Чтобы добавить Nexonia из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -106,7 +106,7 @@ ms.locfileid: "59261128"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `Nexonia`
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://system.nexonia.com/assistant/saml.do?orgCode=<organizationcode>`
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://system.nexonia.com/assistant/saml.do?orgCode=<organizationcode>`.
 
     > [!NOTE]
     > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь к [группе поддержки клиентов Nexonia](https://nexonia.zendesk.com/hc/requests/new). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

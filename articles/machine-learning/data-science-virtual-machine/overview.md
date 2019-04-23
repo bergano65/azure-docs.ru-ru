@@ -16,10 +16,10 @@ ms.topic: overview
 ms.date: 10/27/2017
 ms.author: gokuma
 ms.openlocfilehash: 74fe2345af5d1249d6704c7560b42323561bc623
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58918252"
 ---
 # <a name="introduction-to-azure-data-science-virtual-machine-for-linux-and-windows"></a>Общие сведения о виртуальных машинах Linux и Windows для обработки и анализа данных
@@ -63,10 +63,10 @@ ms.locfileid: "58918252"
 | [Microsoft Office](https://products.office.com/en-us/business/office-365-proplus-business-software) Pro Plus с общей активацией — Excel, Word и PowerPoint   |Да                      |Нет              |
 | [Anaconda Python](https://www.continuum.io/) 2.7, 3.5 с предустановленными популярными пакетами    |Да                      |Да              |
 | [JuliaPro](https://juliacomputing.com/products/juliapro.html) с предварительно установленными популярными пакетами для языка Julia                         |Да                      |Да              |
-| Реляционные базы данных                                                            | [SQL Server 2017](https://www.microsoft.com/sql-server/sql-server-2017) <br/> Developer Edition| [PostgreSQL](https://www.postgresql.org/) (CentOS)<br/>[SQL Server 2017](https://www.microsoft.com/sql-server/sql-server-2017) <br/> Developer Edition (Ubuntu) |
+| Реляционные базы данных                                                            | [SQL Server 2017](https://www.microsoft.com/sql-server/sql-server-2017) <br/> Developer Edition| [PostgreSQL](https://www.postgresql.org/) (CentOS)<br/>[SQL Server 2017](https://www.microsoft.com/sql-server/sql-server-2017) <br/> Developer Edition (Ubuntu) |
 | Инструменты базы данных                                                       | * SQL Server Management Studio <br/>* SQL Server Integration Services<br/>* [bcp, sqlcmd](https://docs.microsoft.com/sql/tools/command-prompt-utility-reference-database-engine)<br /> * Драйверы ODBC и JDBC| * [SQuirreL SQL](http://squirrel-sql.sourceforge.net/) (инструмент запросов), <br /> * bcp, sqlcmd <br /> * Драйверы ODBC и JDBC|
 | Масштабируемое аналитическое решение в базе данных со службами ML SQL Server (R, Python) | Да     |Нет              |
-| **[Jupyter Notebook Server](https://jupyter.org/) со следующими ядрами,**                                  | Да     | Да |
+| **[Jupyter Notebook Server](https://jupyter.org/) со следующими ядрами**                                  | Да     | Да |
 |     &nbsp;&nbsp;&nbsp;&nbsp;* R | Да | Да |
 |     &nbsp;&nbsp;&nbsp;&nbsp;* Python | Да | Да |
 |     &nbsp;&nbsp;&nbsp;&nbsp;* Julia | Да | Да |
@@ -100,7 +100,7 @@ ms.locfileid: "58918252"
 | &nbsp;&nbsp;&nbsp;&nbsp;* [Шлюз управления данными Майкрософт](https://msdn.microsoft.com/library/dn879362.aspx): перемещение данных между локальной средой и облаком | Да | Нет |
 | &nbsp;&nbsp;&nbsp;&nbsp;* Служебные программы командной строки Unix/Linux | Да | Да |
 | [Apache Drill](https://drill.apache.org) для просмотра данных | Да | Да |
-| **Средства машинного обучения** |||
+| **Инструменты машинного обучения** |||
 | &nbsp;&nbsp;&nbsp;&nbsp;* Средства, интегрирующиеся с [Машинным обучением Azure](https://azure.microsoft.com/services/machine-learning/) (R, Python) | Да | Да |
 | &nbsp;&nbsp;&nbsp;&nbsp;* [Xgboost](https://github.com/dmlc/xgboost) | Да | Да |
 | &nbsp;&nbsp;&nbsp;&nbsp;* [Vowpal Wabbit](https://github.com/JohnLangford/vowpal_wabbit) | Да | Да |
@@ -109,7 +109,7 @@ ms.locfileid: "58918252"
 | &nbsp;&nbsp;&nbsp;&nbsp;* [LightGBM](https://github.com/Microsoft/LightGBM) | Нет | Да (только Ubuntu) |
 | &nbsp;&nbsp;&nbsp;&nbsp;* [CatBoost](https://tech.yandex.com/catboost/) | Нет | Да (только Ubuntu) |
 | &nbsp;&nbsp;&nbsp;&nbsp;* [H2O](https://www.h2o.ai/h2o/), [Sparkling Water](https://www.h2o.ai/sparkling-water/) | Нет | Да (только Ubuntu) |
-| **Инструменты глубокого обучения** <br>Все средства используют GPU или ЦП |  |  |
+| **Deep Learning Tools** <br>Все средства используют GPU или ЦП |  |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;* [Microsoft Cognitive Toolkit (CNTK)](https://docs.microsoft.com/cognitive-toolkit/) (Windows 2016) | Да | Да |
 | &nbsp;&nbsp;&nbsp;&nbsp;* [TensorFlow](https://www.tensorflow.org/) | Y (Windows 2016) | Да |
 | &nbsp;&nbsp;&nbsp;&nbsp;* [Horovod](https://github.com/uber/horovod) | Нет | Y (Ubuntu) |
@@ -125,7 +125,7 @@ ms.locfileid: "58918252"
 | &nbsp;&nbsp;&nbsp;&nbsp;* [TensorFlow Serving](https://www.tensorflow.org/serving/) | Нет | Да |
 | &nbsp;&nbsp;&nbsp;&nbsp;* [TensorRT](https://developer.nvidia.com/tensorrt) | Нет | Да |
 | &nbsp;&nbsp;&nbsp;&nbsp;* [CUDA, cuDNN, NVIDIA Driver](https://developer.nvidia.com/cuda-toolkit) | Да | Да |
-| **Платформа для больших данных (только DevTest)**|||
+| **Платформа для больших данных (только Devtest)**|||
 | &nbsp;&nbsp;&nbsp;&nbsp;* Локальный изолированный экземпляр [Spark](https://spark.apache.org/) | Да | Да |
 | &nbsp;&nbsp;&nbsp;&nbsp;* Локальный экземпляр [Hadoop](https://hadoop.apache.org/) (HDFS, YARN) | Нет | Да |
 
@@ -139,4 +139,4 @@ ms.locfileid: "58918252"
 * Пошаговое руководство по некоторым общим задачам обработки и анализа данных на виртуальных машинах Linux (CentOS и Ubuntu) см. в статье [Обработка и анализ данных с использованием специально подготовленной виртуальной машины Linux](linux-dsvm-walkthrough.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
-[Руководство по разработке на R в Azure](/azure/architecture/data-guide/technology-choices/r-developers-guide)
+[Руководство для разработчика R по Azure](/azure/architecture/data-guide/technology-choices/r-developers-guide)

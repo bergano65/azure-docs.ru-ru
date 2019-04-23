@@ -16,10 +16,10 @@ ms.date: 10/23/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d70dfceb0101c4f6dbd76f3c6b34d85e5255aa72
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59261468"
 ---
 # <a name="what-is-managed-identities-for-azure-resources"></a>Что такое управляемые удостоверения для ресурсов Azure?
@@ -95,7 +95,7 @@ ms.locfileid: "59261468"
    > [!Note]
    > Также данное действие можно выполнить перед шагом 3.
 
-5. Код, выполняющийся на виртуальной машине, может запросить маркер из конечной точки удостоверения Службы метаданных экземпляров Azure, доступной только на виртуальной машине: `http://169.254.169.254/metadata/identity/oauth2/token`
+5. Код, выполняющийся на виртуальной машине, может запросить маркер из конечной точки Службы метаданных экземпляров Azure, доступной только на виртуальной машине: `http://169.254.169.254/metadata/identity/oauth2/token`
     - Параметр ресурса указывает службу, в которую отправляется маркер. Для проверки подлинности в Azure Resource Manager необходимо использовать `resource=https://management.azure.com/`.
     - Параметр идентификатора клиента определяет удостоверение, для которого запрашивается маркер. Это значение необходимо для устранения неоднозначности, когда на одной виртуальной машине доступны несколько назначаемых пользователем удостоверений.
     - Параметры версии API указывают версию Службы метаданных экземпляров Azure. Используйте `api-version=2018-02-01` или более поздней версии.
@@ -116,29 +116,29 @@ ms.locfileid: "59261468"
 См. дополнительные сведения об использовании управляемого удостоверения для виртуальной машины Windows:
 
 * [Доступ к Azure Data Lake Store](tutorial-windows-vm-access-datalake.md)
-* [Доступ к Azure Resource Manager](tutorial-windows-vm-access-arm.md)
+* [Получение доступа к Azure Resource Manager с помощью управляемого удостоверения службы виртуальной машины Linux](tutorial-windows-vm-access-arm.md)
 * [Доступ к Azure SQL](tutorial-windows-vm-access-sql.md)
-* [Доступ к службе хранилища Azure с помощью ключа доступа](tutorial-windows-vm-access-storage.md)
-* [Доступ к службе хранилища Azure с помощью подписанных URL-адресов](tutorial-windows-vm-access-storage-sas.md)
-* [Доступ к ресурсу за пределами Azure Active Directory с помощью Azure Key Vault](tutorial-windows-vm-access-nonaad.md)
+* [Доступ к службе хранилища Azure с помощью управляемого удостоверения виртуальной машины Linux](tutorial-windows-vm-access-storage.md)
+* [Руководство по использованию управляемого удостоверения службы виртуальной машины Linux для доступа к службе хранилища Azure с учетными данными SAS](tutorial-windows-vm-access-storage-sas.md)
+* [Доступ к Azure Key Vault с помощью управляемого удостоверения службы виртуальной машины Linux](tutorial-windows-vm-access-nonaad.md)
 
 См. дополнительные сведения об использовании управляемого удостоверения для виртуальной машины Linux:
 
 * [Доступ к Azure Data Lake Store](tutorial-linux-vm-access-datalake.md)
-* [Доступ к Azure Resource Manager](tutorial-linux-vm-access-arm.md)
-* [Доступ к службе хранилища Azure с помощью ключа доступа](tutorial-linux-vm-access-storage.md)
-* [Доступ к службе хранилища Azure с помощью подписанных URL-адресов](tutorial-linux-vm-access-storage-sas.md)
-* [Доступ к ресурсу за пределами Azure Active Directory с помощью Azure Key Vault](tutorial-linux-vm-access-nonaad.md)
+* [Получение доступа к Azure Resource Manager с помощью управляемого удостоверения службы виртуальной машины Linux](tutorial-linux-vm-access-arm.md)
+* [Доступ к службе хранилища Azure с помощью управляемого удостоверения виртуальной машины Linux](tutorial-linux-vm-access-storage.md)
+* [Руководство по использованию управляемого удостоверения службы виртуальной машины Linux для доступа к службе хранилища Azure с учетными данными SAS](tutorial-linux-vm-access-storage-sas.md)
+* [Доступ к Azure Key Vault с помощью управляемого удостоверения службы виртуальной машины Linux](tutorial-linux-vm-access-nonaad.md)
 
 См. дополнительные сведения об использовании управляемого удостоверения для других служб Azure:
 
-* [Служба приложений Azure](/azure/app-service/overview-managed-identity)
+* [службе приложений Azure](/azure/app-service/overview-managed-identity)
 * [Функции Azure](/azure/app-service/overview-managed-identity)
 * [Azure Logic Apps](/azure/logic-apps/create-managed-service-identity)
-* [Azure Service Bus](../../service-bus-messaging/service-bus-managed-service-identity.md)
+* [служебной шине Azure](../../service-bus-messaging/service-bus-managed-service-identity.md)
 * [Центры событий Azure](../../event-hubs/event-hubs-managed-service-identity.md)
-* [Cлужба управления Azure API ](../../api-management/api-management-howto-use-managed-service-identity.md)
-* [Экземпляры контейнеров Azure](../../container-instances/container-instances-managed-identity.md)
+* [Управление API Azure](../../api-management/api-management-howto-use-managed-service-identity.md)
+* [Экземпляры контейнеров Azure](../../container-instances/container-instances-managed-identity.md);
 
 ## Службы Azure, в которых поддерживается данная функция.<a name="which-azure-services-support-managed-identity"></a>
 

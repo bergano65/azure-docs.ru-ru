@@ -16,10 +16,10 @@ ms.date: 01/17/2019
 ms.author: aljo
 ms.custom: mvc
 ms.openlocfilehash: a8f4e89adec0a6be001f3e6d6df1a252677c5916
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59045736"
 ---
 # <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство по Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
@@ -38,8 +38,8 @@ ms.locfileid: "59045736"
 
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
-> * [Создание приложения .NET Service Fabric.](service-fabric-tutorial-deploy-app-to-party-cluster.md)
-> * [Развертывание приложения в удаленном кластере.](service-fabric-tutorial-deploy-app-to-party-cluster.md)
+> * [Создание приложения .NET Service Fabric](service-fabric-tutorial-deploy-app-to-party-cluster.md).
+> * [Развертывание приложения в удаленном кластере](service-fabric-tutorial-deploy-app-to-party-cluster.md).
 > * Добавление конечной точки HTTPS к интерфейсной службе ASP.NET Core.
 > * [Настройка CI/CD с помощью Azure Pipelines](service-fabric-tutorial-deploy-app-with-cicd-vsts.md)
 > * [Настройка мониторинга и диагностики приложения](service-fabric-tutorial-monitoring-aspnet.md)
@@ -53,7 +53,7 @@ ms.locfileid: "59045736"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Установите Visual Studio 2017](https://www.visualstudio.com/) версии 15.5 или более поздней версии, а также рабочие нагрузки **разработка Azure** и **ASP.NET и веб-разработка**.
-* [Установите пакет SDK для Service Fabric.](service-fabric-get-started.md)
+* [Установите пакет SDK для Service Fabric](service-fabric-get-started.md)
 
 ## <a name="obtain-a-certificate-or-create-a-self-signed-development-certificate"></a>Получение сертификата или создание самозаверяющего сертификат разработки
 

@@ -11,18 +11,18 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 04/08/2019
 ms.openlocfilehash: 83842893e0ffc6bb954832cd65b6312b59bbcaa3
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59269050"
 ---
 # <a name="quickstart-1---create-an-azure-search-index-in-c"></a>Краткое руководство. Часть 1. Создание индекса службы "Поиск Azure" с помощью C#
 > [!div class="op_single_selector"]
 > * [C#](search-create-index-dotnet.md)
-> * [Microsoft Azure](search-get-started-portal.md)
+> * [Портал](search-get-started-portal.md)
 > * [PowerShell](search-howto-dotnet-sdk.md)
-> * [postman](search-fiddler.md)
+> * [Postman](search-fiddler.md)
 >*
 
 Эта статья описывает создание [индекса службы "Поиск Azure"](search-what-is-an-index.md) с помощью C# и [пакета SDK для .NET](https://aka.ms/search-sdk). Это первый из трех уроков по созданию и загрузке индекса, а также выполнению к нему запроса. Создание индекса предусматривает выполнение следующих задач:
@@ -219,4 +219,4 @@ serviceClient.Indexes.Delete("hotels");
 В следующем кратком руководстве этой серии рассматривается загрузка индекса с доступным для поиска содержимым.
 
 > [!div class="nextstepaction"]
-> [Загрузка данных в индекс Поиска Azure с помощью C#](search-import-data-dotnet.md)
+> [Отправка данных в службу поиска Azure с помощью пакета SDK для .NET](search-import-data-dotnet.md)

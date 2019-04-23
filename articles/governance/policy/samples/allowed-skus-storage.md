@@ -8,10 +8,10 @@ ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
 ms.openlocfilehash: 088dd8414c93b609326e7cd72828426dcb00fc28
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59274575"
 ---
 # <a name="sample---allowed-skus-for-storage-accounts-and-virtual-machines"></a>Пример: допустимые номера SKU для учетных записей хранения и виртуальных машин
@@ -28,7 +28,7 @@ ms.locfileid: "59274575"
 
 ## <a name="deploy-with-the-portal"></a>Развертывание с помощью портала
 
-[![DРазвертывание примера политики в Azure](https://azuredeploy.net/deploybutton.png)](https://aka.ms/getpolicy)
+[![Развертывание примера политики в Azure](https://azuredeploy.net/deploybutton.png)](https://aka.ms/getpolicy)
 
 ## <a name="deploy-with-powershell"></a>Развертывание с помощью PowerShell
 

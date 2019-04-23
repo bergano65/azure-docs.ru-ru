@@ -12,10 +12,10 @@ ms.custom: mvc, tutorial
 ms.topic: article
 ms.date: 04/03/2019
 ms.openlocfilehash: cf285c18d2204da625c970a367177f86474149ab
-ms.sourcegitcommit: a60a55278f645f5d6cda95bcf9895441ade04629
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58880990"
 ---
 # <a name="tutorial-migrate-sql-server-to-an-azure-sql-database-managed-instance-offline-using-dms"></a>Руководство по Перенос баз данных SQL Server в управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме
@@ -183,8 +183,8 @@ Azure Database Migration Service можно использовать для пе
 
     | | |
     |--------|---------|
-    |**Выбор исходных резервных копий** | Выберите вариант **I will provide latest backup files** (Я предоставлю файлы последних резервных копий), если у вас есть файлы полных резервных копий, которые DMS может использовать для переноса базы данных. Выберите вариант **I will let Azure Database Migration Service create backup files** (Я разрешу Azure Database Migration Service создавать файлы резервных копий), если нужно, чтобы служба DMS сначала создала полную резервную копию базы данных-источника и использовала ее для миграции. |
-    |**Локальная общая сетевая папка** | Локальная сетевая папка SMB, в которую Azure Database Migration Service может поместить резервные копии базы данных-источника. Учетная запись службы, в которой выполняется исходный экземпляр SQL Server, должна иметь права записи для этой сетевой папки. Укажите полное доменное имя или IP-адрес сервера и сетевую папку, например "\\\servername.domainname.com\backupfolder" или "\\\IP address\backupfolder".|
+    |**Выбор исходного архива** | Выберите вариант **I will provide latest backup files** (Я предоставлю файлы последних резервных копий), если у вас есть файлы полных резервных копий, которые DMS может использовать для переноса базы данных. Выберите вариант **I will let Azure Database Migration Service create backup files** (Я разрешу Azure Database Migration Service создавать файлы резервных копий), если нужно, чтобы служба DMS сначала создала полную резервную копию базы данных-источника и использовала ее для миграции. |
+    |**Общая сетевая папка** | Локальная сетевая папка SMB, в которую Azure Database Migration Service может поместить резервные копии базы данных-источника. Учетная запись службы, в которой выполняется исходный экземпляр SQL Server, должна иметь права записи для этой сетевой папки. Укажите полное доменное имя или IP-адрес сервера и сетевую папку, например "\\\servername.domainname.com\backupfolder" или "\\\IP address\backupfolder".|
     |**Имя пользователя** | Убедитесь, что пользователь Windows имеет полное право доступа к указанной ранее сетевой папке. Служба Azure Database Migration Service будет олицетворять пользователя с этими учетными данными, чтобы отправить файлы резервных копий в контейнер службы хранилища Azure для операции восстановления. В случае выбора для миграции баз данных с поддержкой TDE указанный ранее пользователь Windows должен иметь встроенную учетную запись администратора, а режим [Контроль учетных записей](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/user-account-control-overview) должен быть отключен для Azure Database Migration Service, чтобы отправлять и удалять файлы сертификатов. |
     |**Пароль** | Пароль для пользователя |
     |**Параметры учетной записи хранения** | Код URI SAS, который позволяет Azure Database Migration Service обращаться к контейнеру учетной записи хранения для отправки файлов резервных копий, используемых для переноса базы данных в управляемый экземпляр Базы данных SQL Azure. [Получение SAS для контейнера больших двоичных объектов](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-blobs#get-the-sas-for-a-blob-container).|

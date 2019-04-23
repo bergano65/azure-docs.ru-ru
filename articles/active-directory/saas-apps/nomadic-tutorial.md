@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
 ms.openlocfilehash: 91ba5de6a6e0a18d494a449acfdea330234bcc9b
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59258816"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-nomadic"></a>Руководство по Интеграция Azure Active Directory с Nomadic
@@ -104,7 +104,7 @@ ms.locfileid: "59258816"
 
     ![Сведения о домене и URL-адресах единого входа приложения Nomadic](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.nomadic.fm/signin`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.nomadic.fm/signin`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
     

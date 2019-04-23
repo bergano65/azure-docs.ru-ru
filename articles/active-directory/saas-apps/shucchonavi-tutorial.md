@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 9d3c2c646cc713b4590a85def9813ca102198229
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59277142"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-shuccho-navi"></a>Руководство по Интеграция Azure Active Directory со Shuccho Navi
@@ -51,7 +51,7 @@ ms.locfileid: "59277142"
 
 Чтобы настроить интеграцию Shuccho Navi с Azure AD, необходимо добавить приложение Shuccho Navi из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Shuccho Navi из коллекции, сделайте следующее:**
+**Чтобы добавить Shuccho Navi из коллекции, выполните следующие действия.**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 

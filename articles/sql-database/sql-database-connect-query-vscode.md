@@ -14,10 +14,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 03/25/2019
 ms.openlocfilehash: 8901855ad68a5edb4710853dcde9311216fa2d61
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59357118"
 ---
 # <a name="quickstart-use-visual-studio-code-to-connect-and-query-an-azure-sql-database"></a>Краткое руководство. Подключение и запрос Базы данных SQL Azure с помощью Visual Studio Code
@@ -30,8 +30,8 @@ ms.locfileid: "59357118"
 
   || Отдельная база данных | Управляемый экземпляр |
   |:--- |:--- |:---|
-  | Создание| [Microsoft Azure](sql-database-single-database-get-started.md) | [Microsoft Azure](sql-database-managed-instance-get-started.md) |
-  || [Интерфейс командной строки](scripts/sql-database-create-and-configure-database-cli.md) | [Интерфейс командной строки](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
+  | Создание| [Портал](sql-database-single-database-get-started.md) | [Портал](sql-database-managed-instance-get-started.md) |
+  || [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](scripts/sql-database-create-and-configure-database-cli.md) | [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
   || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md) |
   | Настройка | [Правило брандмауэра IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
   |||[Подключение "точка — сеть"](sql-database-managed-instance-configure-p2s.md)
@@ -48,7 +48,7 @@ ms.locfileid: "59357118"
 
 ## <a name="configure-visual-studio-code"></a>Откройте Visual Studio Code.
 
-### **<a name="mac-os"></a>MacOS**
+### <a name="mac-os"></a>**Mac OS**
 
 Для macOS необходимо установить OpenSSL. Это предварительное требование для платформы .NET Core, используемой для расширения mssql. Откройте терминал и введите следующие команды для установки **brew** и **OpenSSL**.
 
@@ -61,11 +61,11 @@ ln -s /usr/local/opt/openssl/lib/libcrypto.1.0.0.dylib /usr/local/lib/
 ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 ```
 
-### **<a name="linux-ubuntu"></a>Linux (Ubuntu)**
+### <a name="linux-ubuntu"></a>**Linux (Ubuntu)**
 
 Специальная настройка не требуется.
 
-### **<a name="windows"></a> Windows**
+### <a name="windows"></a>**Windows**
 
 Специальная настройка не требуется.
 
@@ -106,15 +106,15 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 4. Следуйте инструкциям на экране, чтобы указать свойства для нового профиля подключения. Укажите все значения и нажмите клавишу **ВВОД** для продолжения.
 
-   | Свойство       | Рекомендуемое значение | Описание |
+   | Свойство       | Рекомендуемое значение | ОПИСАНИЕ |
    | ------------ | ------------------ | ------------------------------------------------- |
-   | **Имя сервера** | Полное имя сервера | Примерно такое: **mynewserver20170313.database.windows.net**. |
-   | **Имя базы данных** | mySampleDatabase | База данных для подключения. |
-   | **Authentication** | Имя для входа в SQL| В этом руководстве используется проверка подлинности SQL. |
+   | **Server name** (Имя сервера) | Полное имя сервера | Примерно такое: **mynewserver20170313.database.windows.net**. |
+   | **Database name** (Имя базы данных) | mySampleDatabase | База данных для подключения. |
+   | **Проверка подлинности** | Имя для входа в SQL| В этом руководстве используется проверка подлинности SQL. |
    | **Имя пользователя** | Имя пользователя | Имя пользователя учетной записи администратора сервера, используемое для создания сервера. |
-   | **Password (SQL Login) (Пароль для входа в SQL)** | Пароль | Пароль учетной записи администратора сервера, используемый для создания сервера. |
-   | **Save Password? (Сохранить пароль?)** | "Да" или "Нет" | Выберите **Да**, если вы не хотите вводить пароль каждый раз. |
-   | **Enter a name for this profile (Укажите имя этого профиля)** | Имя профиля, например **mySampleProfile** | Сохраненный профиль повышает скорость подключения при последующих входах. |
+   | **Password (SQL Login)** (Пароль для входа в SQL) | Пароль | Пароль учетной записи администратора сервера, используемый для создания сервера. |
+   | **Save Password?** (Сохранить пароль?) | "Да" или "Нет" | Выберите **Да**, если вы не хотите вводить пароль каждый раз. |
+   | **Укажите имя для этого профиля** | Имя профиля, например **mySampleProfile** | Сохраненный профиль повышает скорость подключения при последующих входах. |
 
    В случае успешного выполнения появится уведомление о том, что профиль создан и подключен.
 

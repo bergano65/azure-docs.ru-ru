@@ -12,10 +12,10 @@ ms.date: 09/22/2018
 ms.custom: mvc
 ms.author: aschhab
 ms.openlocfilehash: dd73fd8105de2a5fd24ffa8ad5db85da5e52228c
-ms.sourcegitcommit: f093430589bfc47721b2dc21a0662f8513c77db1
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58918847"
 ---
 # <a name="what-is-azure-service-bus"></a>Что такое служебная шина Azure?
@@ -115,17 +115,17 @@ ms.locfileid: "58918847"
 
 Служебная шина полностью интегрируется со следующими службами Azure:
 
-- [Сетка событий Azure](https://azure.microsoft.com/services/event-grid/) 
+- [Сетка событий](https://azure.microsoft.com/services/event-grid/) 
 - [Logic Apps](https://azure.microsoft.com/services/logic-apps/) 
-- [Функции Azure](https://azure.microsoft.com/services/functions/) 
-- [Dynamics 365](https://dynamics.microsoft.com)
-- [Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)
+- [Функции](https://azure.microsoft.com/services/functions/) 
+- [Dynamics 365](https://dynamics.microsoft.com)
+- [Анализ потока](https://azure.microsoft.com/services/stream-analytics/)
  
 ## <a name="next-steps"></a>Дополнительная информация
 
 Сведения о начале работы с обменом сообщениями через служебную шину см. в следующих статьях:
 
-* [Сравнение служб обмена сообщениями Azure](../event-grid/compare-messaging-services.md?toc=%2fazure%2fservice-bus-messaging%2ftoc.json&bc=%2fazure%2fservice-bus-messaging%2fbreadcrumb%2ftoc.json)
+* [Сравнение служб обмена сообщениями Azure](../event-grid/compare-messaging-services.md?toc=%2fazure%2fservice-bus-messaging%2ftoc.json&bc=%2fazure%2fservice-bus-messaging%2fbreadcrumb%2ftoc.json).
 * Сведения о Служебной шине Azure [категории "Стандартный" и "Премиум"](https://azure.microsoft.com/pricing/details/service-bus/) и цены на нее.
-* [Производительность и задержки для Служебной шины Azure (цен. категория "Премиум")](https://techcommunity.microsoft.com/t5/Service-Bus-blog/Premium-Messaging-How-fast-is-it/ba-p/370722)
+* [Performance and Latency of Azure Service Bus Premium tier](https://techcommunity.microsoft.com/t5/Service-Bus-blog/Premium-Messaging-How-fast-is-it/ba-p/370722) (Производительность и задержки для Служебной шины Azure категории "Премиум").
 * Также вы можете изучить краткие руководства для [.NET](service-bus-dotnet-get-started-with-queues.md), [Java](service-bus-java-how-to-use-queues.md) или [JMS](service-bus-java-how-to-use-jms-api-amqp.md).
