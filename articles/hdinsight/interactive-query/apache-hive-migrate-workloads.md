@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: howto
 ms.date: 04/15/2019
-ms.openlocfilehash: 708df64802ace17fa77b4e0a695c9f1c3bd18a77
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
-ms.translationtype: MT
+ms.openlocfilehash: 958a3249fd2e8af9faeb827f07efc21c8184a100
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59610268"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60006987"
 ---
 # <a name="migrate-azure-hdinsight-36-hive-workloads-to-hdinsight-40"></a>Перенос рабочих нагрузок Azure HDInsight 3.6 Hive в HDInsight 4.0
 
@@ -54,7 +54,31 @@ ms.locfileid: "59610268"
 alter table myacidtable compact 'major';
 ```
 
-Это сжатие не требуется, поскольку таблицы HDInsight 3.6 и HDInsight 4.0 ACID понять ACID разностные данные другой. Сжатие обеспечивает нуля, гарантирует согласованность таблицы. После завершения сжатия предыдущие шаги для миграции хранилища метаданных и таблица будет достаточно, чтобы использовать любые таблицы HDInsight 3.6 ACID в HDInsight 4.0.
+Это сжатие не требуется, поскольку таблицы HDInsight 3.6 и HDInsight 4.0 ACID понять ACID «дельты», по-разному. Сжатие обеспечивает нуля, гарантирует согласованность. Раздел 4 [Hive документации по миграции](https://docs.hortonworks.com/HDPDocuments/Ambari-2.7.3.0/bk_ambari-upgrade-major/content/prepare_hive_for_upgrade.html) содержатся рекомендации по массовой сжатие таблиц HDInsight 3.6 ACID.
+
+После завершения действия миграции и сжатие хранилища метаданных, вы можете перенести фактическое хранилище. После завершения миграции хранилища Hive, в хранилище HDInsight 4.0 будет иметь следующие свойства:
+
+* Внешние таблицы в HDInsight 3.6 будет внешних таблиц в HDInsight 4.0
+* Нетранзакционный управляемых таблицы в HDInsight 3.6 будет внешних таблиц в HDInsight 4.0
+* Транзакций управляемых таблицы в HDInsight 3.6 будет управляемых таблиц в HDInsight 4.0
+
+Может потребоваться настроить свойства хранилища перед выполнением миграции. Например, если предполагается, что некоторые таблицы будут доступны для третьих лиц (включая кластер HDInsight 3.6), что таблица должна быть внешних после завершения миграции. В HDInsight 4.0 все управляемые таблицы являются транзакционными. Таким образом управляемый таблиц в HDInsight 4.0 должны быть доступны только с кластерами HDInsight 4.0.
+
+Когда свойства таблицы заданы правильно, запустите средство переноса хранилища Hive один из головных узлов кластера с помощью оболочки SSH:
+
+1. Подключиться к головному узлу кластера по протоколу SSH. Инструкции см. в разделе [подключение к HDInsight с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md)
+1. Откройте оболочка входа от имени пользователя Hive, выполнив `sudo su - hive`
+1. Определение версии стека Hortonworks Data Platform, выполнив `ls /usr/hdp`. При этом отобразится строка версии, следует использовать в следующей команде.
+1. Выполните следующую команду из оболочки. Замените `${{STACK_VERSION}}` со строкой версии из предыдущего шага:
+
+```bash
+/usr/hdp/${{STACK_VERSION}}/hive/bin/hive --config /etc/hive/conf --service  strictmanagedmigration --hiveconf hive.strict.managed.tables=true  -m automatic  automatic  --modifyManagedTables --oldWarehouseRoot /apps/hive/warehouse
+```
+
+После завершения работы средства миграции на складе Hive будет готова для HDInsight 4.0. 
+
+> [!Important]
+> Управляемые таблиц в HDInsight 4.0 (включая таблиц перенесено из 3.6) не должен осуществляться с другими службами или приложениями, включая кластеры HDInsight 3.6.
 
 ## <a name="secure-hive-across-hdinsight-versions"></a>Защитите Hive в HDInsight версий
 
@@ -74,9 +98,9 @@ alter table myacidtable compact 'major';
 
 В HDInsight 3.6 клиентское приложение для взаимодействия с сервером Hive является представление Hive Ambari. HDInsight 4.0 заменяет представления Hive с Hortonworks Data Analytics Studio (DAS). DAS не поставляются с HDInsight кластеров out-of-box и не является официально поддерживаемых пакетом. Тем не менее DAS может устанавливаться в кластере следующим образом:
 
-1. Скачайте [DAS упаковать сценарий установки](https://hdiconfigactions.blob.core.windows.net/dasinstaller/install-das-mpack.sh) и запустите его на обоих головных узлах кластера. Не выполняйте этот скрипт как действия сценария.
-2. Скачайте [DAS службы сценарий установки](https://hdiconfigactions.blob.core.windows.net/dasinstaller/install-das-component.sh) и запустите его как действия сценария. Выберите **головных узлов** как тип узла, по выбору из интерфейса действие сценария.
-3. По завершении действия скрипта, перейдите к Ambari и выберите **Studio для аналитики данных** из списка служб. При остановке всех служб DAS. В правом верхнем углу, выберите **действия** и **запустить**. Теперь можно выполнять и отлаживать запросы с DAS.
+Действие сценария в кластере, с «Головных узла» запустите от имени типа узла для выполнения. Вставьте следующий URI в текстовое поле, помеченные «URI Bash-скрипта»: https://hdiconfigactions.blob.core.windows.net/dasinstaller/LaunchDASInstaller.sh
+
+
 
 После установки DAS, если вы не видите запросов, которые вы запустили в средстве просмотра запросов, выполните следующие действия:
 

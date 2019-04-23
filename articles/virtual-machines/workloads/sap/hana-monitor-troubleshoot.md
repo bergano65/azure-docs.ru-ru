@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 71970a74817665c97a9522fbc9a68dd3834252b9
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
-ms.translationtype: MT
+ms.openlocfilehash: 15b3fb4ae483e5b0e4f930d0dc08de6d198d0e5f
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59616362"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60005253"
 ---
 # <a name="monitoring-and-troubleshooting-from-hana-side"></a>Мониторинг и устранение неполадок со стороны HANA
 
@@ -63,7 +63,7 @@ ms.locfileid: "59616362"
 
 ![На графике Load (Нагрузка) может быть показан высокий уровень потребления ресурсов ЦП или высокий уровень потребления в прошлом](./media/troubleshooting-monitoring/image4-load-graph.png)
 
-Оповещение, возникшее из-за высокой загрузки ЦП, могло быть вызвано несколькими причинами, включая, помимо прочего, выполнение определенных операций, загрузку данных, зависание заданий, долго выполняющиеся инструкции SQL и снижение производительности запросов (например, при использовании кубов BW или HANA).
+Оповещение запускается из-за высокой загрузки ЦП может быть вызвано несколькими причинами, включая, но не ограничиваясь: выполнение определенных операций, загрузку данных, задания, которые не отвечают, долго выполняющиеся инструкции SQL и снижение производительности запросов (например, с помощью BW в HANA кубы).
 
 Ссылаться на [SAP HANA, устранение неполадок: Вызывает, связанных с ЦП и решения](https://help.sap.com/saphelp_hanaplatform/helpdata/en/4f/bc915462db406aa2fe92b708b95189/content.htm?frameset=/en/db/6ca50424714af8b370960c04ce667b/frameset.htm&amp;current_toc=/en/85/d132c3f05e40a2b20c25aa5fd6331b/plain.htm&amp;node_id=46&amp;show_children=false) сайта подробные инструкции по устранению.
 

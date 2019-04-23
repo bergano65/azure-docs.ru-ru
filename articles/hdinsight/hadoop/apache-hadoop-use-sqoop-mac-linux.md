@@ -9,113 +9,80 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 02/15/2019
-ms.openlocfilehash: 0f96ee3a24a811d7e3ab7e65ba4ff14050541638
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
-ms.translationtype: MT
+ms.date: 04/15/2019
+ms.openlocfilehash: 75a77843bd7634e8a3fe7a6b46177efe54878682
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58443379"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60148889"
 ---
 # <a name="use-apache-sqoop-to-import-and-export-data-between-apache-hadoop-on-hdinsight-and-sql-database"></a>Использование Apache Sqoop для импорта и экспорта между Apache Hadoop в HDInsight и базой данных SQL
 
 [!INCLUDE [sqoop-selector](../../../includes/hdinsight-selector-use-sqoop.md)]
 
-Узнайте, как использовать Apache Sqoop для импорта и экспорта между кластером Apache Hadoop в Azure HDInsight и Базой данных SQL Azure или базой данных Microsoft SQL Server. В этом руководстве используется команда `sqoop` ​​непосредственно из головного узла кластера Hadoop. В этом документе вы подключитесь к головному узлу, используя SSH, и выполните команды.
+Узнайте, как использовать Apache Sqoop для импорта и экспорта между кластером Apache Hadoop в Azure HDInsight и Базой данных SQL Azure или базой данных Microsoft SQL Server. В этом руководстве используется команда `sqoop` ​​непосредственно из головного узла кластера Hadoop. В этом документе вы подключитесь к головному узлу, используя SSH, и выполните команды. Эта статья является продолжением [использование Apache Sqoop с Hadoop в HDInsight](./hdinsight-use-sqoop.md).
 
-> [!IMPORTANT]  
-> Шаги, описанные в этом документе, можно применять только к кластерам HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).
+## <a name="prerequisites"></a>Технические условия
 
-> [!WARNING]  
-> В инструкциях в этом документе предполагается, что вы уже создали базу данных SQL Azure с именем `sqooptest`.
->
-> В этом документе содержатся инструкции T-SQL, используемые для создания таблицы в базе данных SQL и отправки запросов к этой таблице. Эти инструкции можно использовать с базой данных SQL в разных клиентах. Мы рекомендуем использовать следующие клиенты:
->
-> * [SQL Server Management Studio](../../sql-database/sql-database-connect-query-ssms.md)
-> * [Visual Studio Code](../../sql-database/sql-database-connect-query-vscode.md)
-> * служебная программа [sqlcmd](https://docs.microsoft.com/sql/tools/sqlcmd-utility).
+* Завершение [Настройка тестовой среды](./hdinsight-use-sqoop.md#create-cluster-and-sql-database) из [использование Apache Sqoop с Hadoop в HDInsight](./hdinsight-use-sqoop.md).
 
-## <a name="create-the-table-in-sql-database"></a>Создание таблицы в базе данных SQL
+* Клиент в базе данных Azure SQL. Рассмотрите возможность использования [SQL Server Management Studio](../../sql-database/sql-database-connect-query-ssms.md) или [Visual Studio Code](../../sql-database/sql-database-connect-query-vscode.md).
 
-> [!IMPORTANT]  
-> Если вы используете кластер HDInsight и базу данных SQL, созданные при изучении руководства [Использование Sqoop с Hadoop в HDInsight](hdinsight-use-sqoop.md), пропустите действия, описанные в этом разделе. База данных и таблица были созданы при выполнении действий, описанных в документе [Использование Sqoop с Hadoop в HDInsight (SSH)](hdinsight-use-sqoop.md).
-
-Используйте клиент SQL для подключения к базе данных `sqooptest` в базе данных SQL. Затем используйте следующую инструкцию T-SQL, чтобы создать таблицу `mobiledata`:
-
-```sql
-CREATE TABLE [dbo].[mobiledata](
-[clientid] [nvarchar](50),
-[querytime] [nvarchar](50),
-[market] [nvarchar](50),
-[deviceplatform] [nvarchar](50),
-[devicemake] [nvarchar](50),
-[devicemodel] [nvarchar](50),
-[state] [nvarchar](50),
-[country] [nvarchar](50),
-[querydwelltime] [float],
-[sessionid] [bigint],
-[sessionpagevieworder] [bigint])
-GO
-CREATE CLUSTERED INDEX mobiledata_clustered_index on mobiledata(clientid)
-GO
-```
+* Клиент SSH. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
 ## <a name="sqoop-export"></a>Экспорт Sqoop
 
-1. Подключитесь к кластеру HDInsight с помощью SSH. Например, следующая команда подключается к основному головному узлу кластера с именем `mycluster`:
+Из Hive в SQL Server.
 
-    ```bash
-    ssh mycluster-ssh.azurehdinsight.net
+1. Подключитесь к кластеру HDInsight с помощью SSH. Замените `CLUSTERNAME` с именем кластера, введите команду:
+
+    ```cmd
+    ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
     ```
 
-    Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).
-
-2. Чтобы проверить, видно ли в Sqoop базу данных SQL, используйте следующую команду:
+2. Замените `MYSQLSERVER` на имя вашего сервера SQL Server. Чтобы убедиться, что Sqoop может просматривать свою базу данных SQL, введите указанную ниже команду в открыть SSH-подключение. Введите пароль для имени входа SQL Server, при появлении запроса. Эта команда возвращает список баз данных.
 
     ```bash
-    sqoop list-databases --connect jdbc:sqlserver://<serverName>.database.windows.net:1433 --username <adminLogin> -P
+    sqoop list-databases --connect jdbc:sqlserver://MYSQLSERVER.database.windows.net:1433 --username sqluser -P
     ```
-    При появлении запроса введите пароль пользователя базы данных SQL.
 
-    Эта команда возвращает список баз данных, включая использованную ранее базу данных **sqooptest**.
-
-3. Для экспорта данных из таблицы Hive **hivesampletable** в таблицу **mobiledata** в базе данных SQL используйте следующую команду:
+3. Замените `MYSQLSERVER` с именем вашего сервера SQL и `MYDATABASE` с именем базы данных SQL. Чтобы экспортировать данные из Hive `hivesampletable` таблицу `mobiledata` таблица в базе данных SQL, введите указанную ниже команду в открыть SSH-подключение. Введите пароль для имени входа SQL Server, при появлении запроса
 
     ```bash
-    sqoop export --connect 'jdbc:sqlserver://<serverName>.database.windows.net:1433;database=sqooptest' --username <adminLogin> -P -table 'mobiledata' --hcatalog-table hivesampletable
+    sqoop export --connect 'jdbc:sqlserver://MYSQLSERVER.database.windows.net:1433;database=MYDATABASE' --username sqluser -P -table 'mobiledata' --hcatalog-table hivesampletable
     ```
 
-4. Чтобы убедиться, что данные экспортированы, выполните следующий запрос из клиента SQL для просмотра экспортированных данных:
+4. Чтобы убедиться, что данные экспортированы, используйте следующие запросы из клиента SQL для просмотра экспортированных данных:
 
     ```sql
-    SET ROWCOUNT 50;
-    SELECT * FROM mobiledata;
+    SELECT COUNT(*) FROM [dbo].[mobiledata] WITH (NOLOCK);
+    SELECT TOP(25) * FROM [dbo].[mobiledata] WITH (NOLOCK);
     ```
-
-    Эта команда выводит 50 строк, импортированных в таблицу.
 
 ## <a name="sqoop-import"></a>Импорт Sqoop
 
-1. Для импорта данных из таблицы **mobiledata** базы данных SQL в каталог **wasb:///tutorials/usesqoop/importeddata** в HDInsight используйте следующую команду:
+Из SQL Server в службу хранилища Azure.
+
+1. Замените `MYSQLSERVER` с именем вашего сервера SQL и `MYDATABASE` с именем базы данных SQL. Введите указанную ниже команду в Открытие SSH-подключения для импорта данных из `mobiledata` таблицы в базе данных SQL, `wasb:///tutorials/usesqoop/importeddata` каталог на HDInsight. Введите пароль для имени входа SQL Server, при появлении запроса. Поля в данных разделены знаками табуляции, а строки завершаются символом новой строки.
 
     ```bash
-    sqoop import --connect 'jdbc:sqlserver://<serverName>.database.windows.net:1433;database=sqooptest' --username <adminLogin> -P --table 'mobiledata' --target-dir 'wasb:///tutorials/usesqoop/importeddata' --fields-terminated-by '\t' --lines-terminated-by '\n' -m 1
+    sqoop import --connect 'jdbc:sqlserver://MYSQLSERVER.database.windows.net:1433;database=MYDATABASE' --username sqluser -P --table 'mobiledata' --target-dir 'wasb:///tutorials/usesqoop/importeddata' --fields-terminated-by '\t' --lines-terminated-by '\n' -m 1
     ```
 
-    Поля в данных разделены знаками табуляции, а строки завершаются символом новой строки.
-
-    > [!IMPORTANT]  
-    > Путь `wasb:///` применяется к кластерам, которые используют службу хранилища Azure в качестве хранилища данных кластера по умолчанию. Для кластеров, использующих Azure Data Lake Storage 2-го поколения, применяйте `abfs:///`. Для кластеров, использующих Azure Data Lake Storage 1-го поколения, применяйте `adl:///`.
-
-2. После завершения импорта используйте следующую команду для вывода списка данных в новом каталоге:
+2. После завершения операции импорта, введите следующую команду в открыть SSH-подключение для вывода списка данных в новый каталог:
 
     ```bash
     hdfs dfs -text /tutorials/usesqoop/importeddata/part-m-00000
     ```
 
-## <a name="using-sql-server"></a>Использование SQL Server
+## <a name="limitations"></a>Ограничения
 
-Sqoop можно также использовать для импорта и экспорта данных в SQL Server. Ниже приведены различия между использованием базы данных SQL и SQL Server:
+* Массовый экспорт: при использовании HDInsight на основе Linux соединитель Sqoop, применяемый для экспорта данных на сервер Microsoft SQL Server или в базу данных SQL Azure, не поддерживает операции массовой вставки.
+
+* Пакетная обработка: при использовании HDInsight на основе Linux, когда для выполнения вставок применяется параметр`-batch`, Sqoop выполняет несколько вставок вместо пакетной обработки операций вставки.
+
+## <a name="important-considerations"></a>Важные сведения
 
 * HDInsight и SQL Server должны находиться в одной виртуальной сети Azure.
 
@@ -127,35 +94,6 @@ Sqoop можно также использовать для импорта и э
 
 * Необходимо настроить SQL Server для удаленных соединений. Дополнительные сведения см. в документе [How to troubleshoot connecting to the SQL Server database engine](https://social.technet.microsoft.com/wiki/contents/articles/2102.how-to-troubleshoot-connecting-to-the-sql-server-database-engine.aspx) (Устранение неполадок при подключении к ядру СУБД SQL Server).
 
-* Используйте следующие инструкции Transact-SQL для создания таблицы **mobiledata**.
-
-    ```sql
-    CREATE TABLE [dbo].[mobiledata](
-    [clientid] [nvarchar](50),
-    [querytime] [nvarchar](50),
-    [market] [nvarchar](50),
-    [deviceplatform] [nvarchar](50),
-    [devicemake] [nvarchar](50),
-    [devicemodel] [nvarchar](50),
-    [state] [nvarchar](50),
-    [country] [nvarchar](50),
-    [querydwelltime] [float],
-    [sessionid] [bigint],
-    [sessionpagevieworder] [bigint])
-    ```
-
-* При подключении к SQL Server из HDInsight может потребоваться использовать IP-адрес SQL Server. Например: 
-
-    ```bash
-    sqoop import --connect 'jdbc:sqlserver://10.0.1.1:1433;database=sqooptest' --username <adminLogin> -P -table 'mobiledata' --target-dir 'wasb:///tutorials/usesqoop/importeddata' --fields-terminated-by '\t' --lines-terminated-by '\n' -m 1
-    ```
-
-## <a name="limitations"></a>Ограничения
-
-* Массовый экспорт: при использовании HDInsight на основе Linux соединитель Sqoop, применяемый для экспорта данных на сервер Microsoft SQL Server или в базу данных SQL Azure, не поддерживает операции массовой вставки.
-
-* Пакетная обработка: при использовании HDInsight на основе Linux, когда для выполнения вставок применяется параметр`-batch`, Sqoop выполняет несколько вставок вместо пакетной обработки операций вставки.
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы узнали, как использовать Sqoop. Дополнительные сведения см. на следующих ресурсах:
@@ -163,16 +101,3 @@ Sqoop можно также использовать для импорта и э
 * [Использование Apache Oozie с HDInsight](../hdinsight-use-oozie-linux-mac.md). Используйте действие Sqoop в рабочем процессе Oozie.
 * [Анализ данных о задержке рейсов с помощью HDInsight](../hdinsight-analyze-flight-delay-data-linux.md). Используйте Apache Hive для анализа данных о задержке рейсов, а затем используйте Sqoop для экспорта данных в базу данных SQL Azure.
 * [Отправка данных в HDInsight](../hdinsight-upload-data.md). Узнайте о других способах отправки данных в HDInsight или хранилище BLOB-объектов Azure.
-
-[hdinsight-versions]:  ../hdinsight-component-versioning.md
-[hdinsight-provision]: hdinsight-hadoop-provision-linux-clusters.md
-[hdinsight-get-started]:apache-hadoop-linux-tutorial-get-started.md
-[hdinsight-storage]: ../hdinsight-hadoop-use-blob-storage.md
-[hdinsight-submit-jobs]:submit-apache-hadoop-jobs-programmatically.md
-[sqldatabase-get-started]: ../sql-database-get-started.md
-
-[powershell-start]: https://technet.microsoft.com/library/hh847889.aspx
-[powershell-install]: /powershell/azureps-cmdlets-docs
-[powershell-script]: https://technet.microsoft.com/library/ee176949.aspx
-
-[sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html

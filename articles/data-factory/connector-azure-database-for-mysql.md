@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/01/2019
+ms.date: 04/19/2019
 ms.author: jingwang
-ms.openlocfilehash: 99a29536ccf9d4ad87bcd0aa29659306c3553972
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: 4c388f012cd52f0adea93ae62cc31832488fca74
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58119400"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59997637"
 ---
 # <a name="copy-data-from-azure-database-for-mysql-using-azure-data-factory"></a>Копирование данных из базы данных Azure для MySQL с помощью фабрики данных Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "58119400"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type необходимо задать значение **AzureMySql** | Yes |
+| type | Свойству type необходимо задать значение **AzureMySql** | Yes |
 | connectionString | Укажите сведения, необходимые для подключения к экземпляру базы данных Azure для MySQL. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `password` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
 
@@ -110,7 +110,7 @@ ms.locfileid: "58119400"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type набора данных необходимо задать следующее значение: **AzureMySqlTable** | Yes |
+| type | Для свойства type набора данных необходимо задать следующее значение: **AzureMySqlTable** | Yes |
 | tableName | Имя таблицы в базе данных MySQL. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -141,8 +141,9 @@ ms.locfileid: "58119400"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type источника действия копирования необходимо задать значение **AzureMySqlSource** | Yes |
+| type | Свойству type источника действия копирования необходимо задать значение **AzureMySqlSource** | Yes |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
+| queryCommandTimeout | Время ожидания до истечения срока запроса. Значение по умолчанию — 120 минут (02: 00:00) | Нет  |
 
 **Пример.**
 

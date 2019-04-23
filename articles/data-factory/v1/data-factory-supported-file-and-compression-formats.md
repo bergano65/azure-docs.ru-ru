@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 9f417bf992dae116c889d3786a609614a6202e1f
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
-ms.translationtype: MT
+ms.openlocfilehash: 6adad9dfbb5a8e0a41bfbf6595d54c07c4a5dbe1
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57542800"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60150104"
 ---
 # <a name="file-and-compression-formats-supported-by-azure-data-factory"></a>Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure
 *Эта статья применима к следующим соединителям: [Amazon S3](data-factory-amazon-simple-storage-service-connector.md), [большой двоичный объект Azure](data-factory-azure-blob-connector.md), [Azure Data Lake Store](data-factory-azure-datalake-connector.md), [файловая система](data-factory-onprem-file-system-connector.md), [FTP](data-factory-ftp-connector.md), [HDFS](data-factory-hdfs-connector.md), [HTTP](data-factory-http-connector.md) и [SFTP](data-factory-sftp-connector.md).*
@@ -46,7 +46,7 @@ ms.locfileid: "57542800"
 | encodingName |Имя кодировки. |Допустимое имя кодировки. Ознакомьтесь с описанием свойства [Encoding.EncodingName](https://msdn.microsoft.com/library/system.text.encoding.aspx). Пример: windows-1250 или shift_jis. **По умолчанию** используется **UTF-8**. |Нет  |
 | firstRowAsHeader |Указывает, следует ли рассматривать первую строки в качестве заголовка. Фабрика данных считывает первую строку входного набора данных как заголовок. Фабрика данных записывает первую строку как заголовок в выходной набор данных. <br/><br/>Примеры сценариев см. в разделе [Сценарии использования `firstRowAsHeader` и `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount). |Истина<br/><b>False (по умолчанию)</b> |Нет  |
 | skipLineCount |Указывает количество строк, которые нужно пропустить при чтении данных из входных файлов. Если указаны skipLineCount и firstRowAsHeader, то сначала пропускаются строки, после чего из входного файла считываются данные заголовка. <br/><br/>Примеры сценариев см. в разделе [Сценарии использования `firstRowAsHeader` и `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount). |Целое число  |Нет  |
-| treatEmptyAsNull |Указывает, следует ли интерпретировать строки со значением NULL или пустые строки как значение NULL при чтении данных из входного файла. |**True (по умолчанию)**<br/>Ложь |Нет  |
+| treatEmptyAsNull |Указывает, следует ли интерпретировать строки со значением NULL или пустые строки как значение NULL при чтении данных из входного файла. |**True (по умолчанию)**<br/>False |Нет  |
 
 ### <a name="textformat-example"></a>Пример TextFormat
 В следующем определении JSON для набора данных задаются некоторые необязательные свойства.
@@ -433,7 +433,7 @@ ms.locfileid: "57542800"
 Обратите внимание на следующие моменты.
 
 * Данные сложных типов (STRUCT, MAP, LIST, UNION) не поддерживаются.
-* Для ORC-файлов используется три [параметра сжатия](http://hortonworks.com/blog/orcfile-in-hdp-2-better-compression-better-performance/): NONE, ZLIB и SNAPPY. Фабрика данных поддерживает чтение данных из ORC-файла в любом из этих форматов. Для чтения данных используется кодек сжатия из метаданных. Однако при записи в ORC-файл фабрика данных по умолчанию выбирает ZLIB. В настоящее время изменить это поведение нельзя.
+* Для ORC-файлов используется три [параметра сжатия](https://hortonworks.com/blog/orcfile-in-hdp-2-better-compression-better-performance/): NONE, ZLIB и SNAPPY. Фабрика данных поддерживает чтение данных из ORC-файла в любом из этих форматов. Для чтения данных используется кодек сжатия из метаданных. Однако при записи в ORC-файл фабрика данных по умолчанию выбирает ZLIB. В настоящее время изменить это поведение нельзя.
 
 ## <a name="parquet-format"></a>Формат Parquet
 Если требуется проанализировать файлы Parquet или записать данные в формате Parquet, установите для свойства `format` `type` значение **ParquetFormat**. Вам не нужно указывать какие-либо свойства в подразделе Format раздела typeProperties. Пример:

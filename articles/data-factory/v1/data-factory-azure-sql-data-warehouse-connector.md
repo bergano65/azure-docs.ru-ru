@@ -15,7 +15,7 @@ ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: dfd0443dafbc4fcc221937f248bf6d2f292b528f
 ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/29/2019
 ms.locfileid: "58651757"
@@ -315,18 +315,18 @@ All columns of the table must be specified in the INSERT BULK statement.
 | SmallMoney | SmallMoney |
 | Binary | Binary |
 | Varbinary | Varbinary (до 8000) |
-| Date | Date |
-| DateTime | DateTime |
+| Дата | Дата |
+| Datetime | Datetime |
 | DateTime2 | DateTime2 |
-| Time | Time |
+| Время | Время |
 | DateTimeOffset | DateTimeOffset |
 | SmallDateTime | SmallDateTime |
 | Text | Varchar (до 8000) |
 | NText | NVarChar (до 4000) |
-| Image | VarBinary (до 8000) |
+| Image | Varbinary (до 8000) |
 | UniqueIdentifier | UniqueIdentifier |
 | Char | Char |
-| NChar | NChar |
+| NCHAR | NCHAR |
 | VarChar | Varchar (до 8000) |
 | NVarChar | NVarChar (до 4000) |
 | Xml | Varchar (до 8000) |
@@ -349,9 +349,9 @@ All columns of the table must be specified in the INSERT BULK statement.
 | binary |Byte[] |
 | bit |Boolean |
 | char |String, Char[] |
-| date |DateTime |
-| Datetime |DateTime |
-| datetime2 |DateTime |
+| date |Datetime |
+| Datetime |Datetime |
+| datetime2 |Datetime |
 | Datetimeoffset |DateTimeOffset |
 | Decimal |Decimal |
 | FILESTREAM attribute (varbinary(max)) |Byte[] |
@@ -365,18 +365,18 @@ All columns of the table must be specified in the INSERT BULK statement.
 | nvarchar |String, Char[] |
 | real |Single |
 | rowversion |Byte[] |
-| smalldatetime |DateTime |
+| smalldatetime |Datetime |
 | smallint |Int16 |
 | smallmoney |Decimal |
 | sql_variant |Object * |
-| text |String, Char[] |
+| Text |String, Char[] |
 | time |TimeSpan |
-| timestamp |Byte[] |
+|  timestamp |Byte[] |
 | tinyint |Byte |
 | uniqueidentifier |Guid |
 | varbinary |Byte[] |
 | varchar |String, Char[] |
-| xml |Xml |
+| Xml |Xml |
 
 Также можно сопоставить столбцы из набора данных, используемого в качестве источника, со столбцами из приемника в определении действия копирования. Дополнительные сведения см. в статье [Сопоставление столбцов исходного набора данных со столбцами целевого набора данных](data-factory-map-columns.md).
 

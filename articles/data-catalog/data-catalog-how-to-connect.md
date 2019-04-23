@@ -2,21 +2,21 @@
 title: Как подключаться к источникам данных в Каталоге данных Azure
 description: В статье описывается подключение к источникам данных, обнаруженных в каталоге данных Azure.
 services: data-catalog
-author: markingmyname
-ms.author: maghan
+author: JasonWHowell
+ms.author: jasonh
 ms.assetid: 4e6b27a5-cf75-4012-b88c-333c1fe638e8
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 01/18/2018
-ms.openlocfilehash: 973077b56f1a777d917a94f9c1470e6f8c15a489
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: c64340491dba11870364610a6c2ff62e25c1328a
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47405060"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60000578"
 ---
 # <a name="how-to-connect-to-data-sources"></a>Подключение к источникам данных
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Общие сведения
 **Каталог данных Microsoft Azure** — это полностью управляемая облачная служба, выполняющая функции систем регистрации и обнаружения корпоративных источников данных. Проще говоря, **каталог данных Azure** помогает пользователям обнаруживать, оценивать и использовать источники данных, что, в свою очередь, повышает для организаций ценность их существующей информации. Использование данных — ключевой аспект этого сценария. Когда пользователь обнаруживает источник данных и распознает его назначение, следующим шагом является подключение к источнику данных, обеспечивающее возможность использования этих данных.
 
 ## <a name="data-source-locations"></a>Расположение источника данных

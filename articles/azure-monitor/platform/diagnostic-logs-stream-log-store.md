@@ -5,15 +5,15 @@ author: johnkemnetz
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 04/04/2018
+ms.date: 04/18/2019
 ms.author: johnkem
 ms.subservice: logs
-ms.openlocfilehash: 33d8f2e7c65a786d1ecb389574fe186efb6fb705
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
-ms.translationtype: MT
+ms.openlocfilehash: b17978da3195b364f868d33ab7ad9faa1544e9ec
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58630790"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60006800"
 ---
 # <a name="stream-azure-diagnostic-logs-to-log-analytics-workspace-in-azure-monitor"></a>Stream журналов диагностики в рабочую область Log Analytics в Azure Monitor
 
@@ -107,7 +107,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
  
 В таблице AzureDiagnostics будет выглядеть следующим образом, с демонстрационными данными:  
  
-| ResourceProvider | Категория | A | b | C | D | E | F | G. | H | I |
+| ResourceProvider | Category | A | b | C | D | E | F | G. | H | I |
 | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
 | Microsoft.Resource1 | AuditLogs | x1 | y1 | z1 |
 | Microsoft.Resource2 | ErrorLogs | | | | Вопрос 1 | W1 | e1 |
@@ -124,7 +124,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
 - *Параметры пользователя, определенные для любого действия в конвейере*: будет новый столбец, созданный для каждого параметра пользователя с уникальным именем для любого действия. 
 - *Вводимые и выдаваемые действиями*: они различаются деятельности к и формироваться большое число столбцов, из-за своей природе verbose. 
  
-Как с широкой предложения решение ниже, рекомендуется выделить ADF журналы в собственной рабочей области, чтобы свести к минимуму вероятность возникновения этих журналов, влияя на другие типы журналов, собираемых в рабочие области. Мы планируем специально подобрали журналы для фабрики данных Azure доступны по середине апреля 2019 г.
+Как с широкой предложения решение ниже, рекомендуется выделить ADF журналы в собственной рабочей области, чтобы свести к минимуму вероятность возникновения этих журналов, влияя на другие типы журналов, собираемых в рабочие области. Мы планируем специально подобрали журналы для фабрики данных Azure доступен ближайшее время.
  
 #### <a name="workarounds"></a>Обходные пути
 Короткий срок, пока не будет переопределена ограничение 500 столбцов, рекомендуется разделить на отдельные рабочие области, чтобы снизить вероятность превышения ограничения на типы подробные данные.

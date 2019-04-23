@@ -11,19 +11,19 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 08/23/2018
+ms.date: 04/19/2019
 ms.author: alkohli
-ms.openlocfilehash: c27244af6da01163fa9ab554b6b9c1d9c99bab23
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: d107a9dae29f18b90ba7c23198c0cc1f97d83c70
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58104579"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60003094"
 ---
 # <a name="migrate-data-from-storsimple-5000-7000-series-to-azure-file-sync"></a>Перенос данных с устройств StorSimple серий 5000–7000 в службу "Синхронизация файлов Azure"
 
 > [!IMPORTANT]
-> 31 июля 2019 года поддержка устройств StorSimple серий 5000/7000 будет прекращена. Мы рекомендуем клиентам устройств StorSimple серий 5000 и 7000 перейти на один из альтернативных вариантов, описанных в этом документе.
+> На 9 июля 2019 серии StorSimple 5000/7000 подойдет к концу состоянии поддержки (EOS). Мы рекомендуем клиентам устройств StorSimple серий 5000 и 7000 перейти на один из альтернативных вариантов, описанных в этом документе.
 
 Перенос данных — это перемещение данных из одного места хранения в другое. В результате создается точная копия текущих данных организации и перемещается с одного устройства на другое, желательно без нарушения работы или отключения активных приложений, а затем все операции ввода-вывода перенаправляются на новое устройство. 
 

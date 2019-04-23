@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/30/2018
 ms.author: johnkem
 ms.subservice: logs
-ms.openlocfilehash: b84238e8a659358f2c065eb1533f0d21a5335d43
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: be2f5fdebc5ae4f779fe6e3da74ad7ea583226ef
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59496885"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59995665"
 ---
 # <a name="monitor-subscription-activity-with-the-azure-activity-log"></a>Мониторинг действий подписки с помощью журнала действий Azure
 
@@ -65,6 +65,9 @@ ms.locfileid: "59496885"
 * Обращение к журналу с помощью командлетов PowerShell, интерфейса командной строки или REST API.
 
 ## <a name="query-the-activity-log-in-the-azure-portal"></a>Запрос журнала действий на портале Azure
+
+> [!NOTE] 
+> Журнал действий хранятся в серверной части течение 90 дней. Если вы хотите хранить данные, кроме того, настройте **профиль журнала** как описано ниже. 
 
 На портале Azure журнал действий можно просмотреть в нескольких расположениях:
 * В области **Журнал действий**, к которой можно перейти, выполнив поиск журнала действий в разделе **Все службы** на панели навигации слева.

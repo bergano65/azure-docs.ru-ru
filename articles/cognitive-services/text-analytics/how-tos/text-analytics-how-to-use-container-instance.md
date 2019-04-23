@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 01/22/2019
 ms.author: diberry
-ms.openlocfilehash: 3541376331725fddcd58d94625f5d761ef159c97
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
-ms.translationtype: MT
+ms.openlocfilehash: 95ba3c905541d2168dcbbc1bb2c1bc1d05468cb5
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59526509"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60006426"
 ---
 # <a name="deploy-the-language-detection-container-to-azure-kubernetes-service"></a>Развертывание контейнера распознавания языка в Службе Azure Kubernetes
 
@@ -325,7 +325,7 @@ ms.locfileid: "59526509"
     |Строка 78<br> Свойство `image`|Расположение образа распознавания языка в Реестре контейнеров<br>`<container-registry-name>.azurecr.io/language:1.1.006770001-amd64-preview`|
     |Строка 95<br> Свойство `name`|Секрет Реестра контейнера для образа, который указан в параметре `<client-secret>` в предыдущем разделе.|
     |Строка 91<br> Свойство `apiKey`|Ключ ресурса анализа текста|
-    |Строка 92<br> Свойство `billing`|Конечная точка выставления счетов для ресурса анализа текста.<br>`https://westus.api.cognitive.microsoft.com/text/analytics/v2.0`|
+    |Строка 92<br> Свойство `billing`|Конечная точка выставления счетов для ресурса анализа текста.<br>`https://westus.api.cognitive.microsoft.com/text/analytics/v2.1`|
 
     Параметр **apiKey** и **конечная точка выставления счетов** задаются в определении оркестрации Kubernetes, поэтому контейнеру веб-сайта не нужно знать их значения или передавать их в запросе. Контейнер веб-сайта обращается к контейнеру распознавания языка по имени оркестратора `language`. 
 

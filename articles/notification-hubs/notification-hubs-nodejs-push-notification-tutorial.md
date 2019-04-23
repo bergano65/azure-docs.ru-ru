@@ -15,12 +15,12 @@ ms.devlang: javascript
 ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: d90f23f52ca4c0cce3d853114acf673aa085d3c5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: bdeba401e99ad16555b9f6ea00017fc525302983
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57889794"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59995012"
 ---
 # <a name="sending-push-notifications-with-azure-notification-hubs-and-nodejs"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure и Node.js
 
@@ -63,25 +63,24 @@ ms.locfileid: "57889794"
 > Дополнительные сведения об установке NPM доступны в официальном [блоге о NPM](https://blog.npmjs.org/post/85484771375/how-to-install-npm).
 
 ### <a name="import-the-module"></a>Импорт модуля
-
 С помощью текстового редактора добавьте в начало файла `server.js` приложения следующее:
 
-    ```javascript
-    var azure = require('azure');
-    ```
+```javascript
+var azure = require('azure-sb');
+```
 
 ### <a name="set-up-an-azure-notification-hub-connection"></a>Настройка подключения к центру уведомлений Azure
 
 Объект `NotificationHubService` позволяет работать с концентраторами уведомлений. Следующий код создает объект `NotificationHubService` для центра уведомлений `hubname`. Добавьте его в начало файла `server.js` после оператора импорта модуля Аzure.
 
-    ```javascript
-    var notificationHubService = azure.createNotificationHubService('hubname','connectionstring');
-    ```
+```javascript
+var notificationHubService = azure.createNotificationHubService('hubname','connectionstring');
+```
 
 Получите значение `connectionstring` подключения на [портал Azure], выполнив следующие действия.
 
 1. В области навигации слева щелкните **Обзор**.
-2. Выберите **Центры уведомлений**, затем щелкните центр, который хотите использовать. Если вам нужна помощь в создании центра уведомлений, обратитесь к учебнику по [началу работы с центрами уведомлений для Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md) .
+2. Выберите **Центры уведомлений**, затем щелкните центр, который хотите использовать. Можно ссылаться на [учебнике Приступая к работе Windows Store](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md) Если вам нужна помощь с созданием нового центра уведомлений.
 3. Выберите элемент **Параметры**.
 4. Щелкните **Политики доступа**. Вы увидите строки подключения как для общего, так и для полного доступа.
 
@@ -111,18 +110,18 @@ ms.locfileid: "57889794"
 
 В следующем коде для отправки push-уведомления всем зарегистрированным клиентам используется экземпляр `GcmService`, предоставляемый `NotificationHubService`.
 
-    ```javascript
-    var payload = {
-      data: {
-        message: 'Hello!'
-      }
-    };
-    notificationHubService.gcm.send(null, payload, function(error){
-      if(!error){
-        //notification sent
-      }
-    });
-    ```
+```javascript
+var payload = {
+  data: {
+    message: 'Hello!'
+  }
+};
+notificationHubService.gcm.send(null, payload, function(error){
+  if(!error){
+    //notification sent
+  }
+});
+```
 
 ### <a name="how-to-send-push-notifications-to-ios-applications"></a>Практическое руководство: Отправка push-уведомлений в приложения iOS
 
@@ -136,16 +135,16 @@ ms.locfileid: "57889794"
 
 В следующем коде используется экземпляр `ApnsService`, предоставляемый `NotificationHubService`, для отправки оповещений всем клиентам:
 
-    ```javascript
-    var payload={
-        alert: 'Hello!'
-      };
-    notificationHubService.apns.send(null, payload, function(error){
-      if(!error){
-         // notification sent
-      }
-    });
-    ```
+```javascript
+var payload={
+    alert: 'Hello!'
+  };
+notificationHubService.apns.send(null, payload, function(error){
+  if(!error){
+      // notification sent
+  }
+});
+```
 
 ### <a name="how-to-send-push-notifications-to-windows-phone-applications"></a>Практическое руководство: Отправка push-уведомлений в приложения Windows Phone
 
@@ -162,14 +161,14 @@ ms.locfileid: "57889794"
 
 В следующем примере кода для отправки всплывающего push-уведомления используется экземпляр `MpnsService`, предоставляемый `NotificationHubService`.
 
-    ```javascript
-    var payload = '<?xml version="1.0" encoding="utf-8"?><wp:Notification xmlns:wp="WPNotification"><wp:Toast><wp:Text1>string</wp:Text1><wp:Text2>string</wp:Text2></wp:Toast></wp:Notification>';
-    notificationHubService.mpns.send(null, payload, 'toast', 22, function(error){
-      if(!error){
-        //notification sent
-      }
-    });
-    ```
+```javascript
+var payload = '<?xml version="1.0" encoding="utf-8"?><wp:Notification xmlns:wp="WPNotification"><wp:Toast><wp:Text1>string</wp:Text1><wp:Text2>string</wp:Text2></wp:Toast></wp:Notification>';
+notificationHubService.mpns.send(null, payload, 'toast', 22, function(error){
+  if(!error){
+    //notification sent
+  }
+});
+```
 
 ### <a name="how-to-send-push-notifications-to-universal-windows-platform-uwp-applications"></a>Практическое руководство: Отправка push-уведомлений в приложения универсальной платформы Windows (UWP)
 
@@ -185,14 +184,14 @@ ms.locfileid: "57889794"
 
 В следующем коде для отправки всплывающего push-уведомления в приложение UWP используется экземпляр `WnsService`, предоставляемый `NotificationHubService`.
 
-    ```javascript
-    var payload = '<toast><visual><binding template="ToastText01"><text id="1">Hello!</text></binding></visual></toast>';
-    notificationHubService.wns.send(null, payload , 'wns/toast', function(error){
-      if(!error){
-         // notification sent
-      }
-    });
-    ```
+```javascript
+var payload = '<toast><visual><binding template="ToastText01"><text id="1">Hello!</text></binding></visual></toast>';
+notificationHubService.wns.send(null, payload , 'wns/toast', function(error){
+  if(!error){
+      // notification sent
+  }
+});
+```
 
 ## <a name="next-steps"></a>Следующие шаги
 

@@ -8,12 +8,12 @@ ms.author: ramonarguelles
 ms.date: 02/24/2019
 ms.topic: how-to
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 09809270d6b42a5491d322628f1d98c580f65206
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 7de83b14617245eb2c046eb7cd2f5f26c509517c
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58915941"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59999575"
 ---
 # <a name="how-to-create-and-locate-anchors-using-azure-spatial-anchors-in-cndk"></a>Как создать и найдите привязки, использующие Azure пространственных привязки в C++/NDK
 
@@ -39,7 +39,7 @@ ms.locfileid: "58915941"
 - Прочесть статью [Описание службы "Пространственные привязки Azure"](../overview.md).
 - Выполнить одно из [5-минутных руководств](../index.yml).
 - Базовые знания о C++ и <a href="https://developer.android.com/ndk/" target="_blank">Android Native Development Kit</a>.
-- Базовые знания о <a href="https://developers.google.com/ar/discover/" target="_blank">ARCore</a> 1.5.
+- Базовые знания о <a href="https://developers.google.com/ar/discover/" target="_blank">ARCore</a> 1.7.
 
 [!INCLUDE [Start](../../../includes/spatial-anchors-create-locate-anchors-start.md)]
 

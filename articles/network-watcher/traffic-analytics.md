@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/15/2018
 ms.author: yagup;jdial
-ms.openlocfilehash: cb61366a672a48cdc84e14f40d889e646e0e23b8
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.openlocfilehash: 2f283421a851914822f5b0c9d05ed6bc929d28c4
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59545405"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60150019"
 ---
 # <a name="traffic-analytics"></a>Аналитика трафика
 
@@ -130,14 +130,6 @@ ms.locfileid: "59545405"
 ### <a name="enable-network-watcher"></a>Включение Наблюдателя за сетями
 
 Чтобы проанализировать трафик, у вас должен быть Наблюдатель за сетями или нужно [включить Наблюдатель за сетями](network-watcher-create.md) в каждом регионе, в котором есть группы NSG, для которых нужно проанализировать трафик. Решение "Аналитика трафика" можно включить для групп NSG, расположенных в любом [поддерживаемом регионе](#supported-regions).
-
-### <a name="re-register-the-network-resource-provider"></a>Повторная регистрация поставщика сетевых ресурсов
-
-Прежде чем использовать решение "Аналитика трафика", нужно повторно зарегистрировать поставщик сетевых ресурсов. Щелкните **Try It** (Попробовать) в поле кода ниже, чтобы открыть Azure Cloud Shell. Cloud Shell выполнит автоматический вход в подписку Azure. Когда Cloud Shell откроется, введите следующую команду, чтобы повторно зарегистрировать поставщик сетевых ресурсов:
-
-```azurepowershell-interactive
-Register-AzResourceProvider -ProviderNamespace "Microsoft.Network"
-```
 
 ### <a name="select-a-network-security-group"></a>Выбор группы безопасности сети
 

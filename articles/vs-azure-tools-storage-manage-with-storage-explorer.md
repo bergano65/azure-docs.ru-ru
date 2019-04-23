@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2017
 ms.author: cawa
-ms.openlocfilehash: 61bb5601cf20e9f6e4fba1300d8f84c9d039e564
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
-ms.translationtype: MT
+ms.openlocfilehash: 38a857b1d309b92c48137a46655155e0e131908c
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58225099"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60002686"
 ---
 # <a name="get-started-with-storage-explorer"></a>Начало работы с Обозревателем службы хранилища
 
@@ -99,7 +99,7 @@ ms.locfileid: "58225099"
 
 2. В области слева отображаются все учетные записи Azure, в которые вы вошли. Чтобы подключиться к другой учетной записи, выберите **Добавить учетную запись**.
 
-3. Если вы хотите войти в учетную запись в национальном облаке или в Azure Stack, щелкните раскрывающийся список **Окружение Azure**, чтобы выбрать нужное облако Azure. После выбора окружения нажмите кнопку **входа**. Если вы входите в Azure Stack, см. дополнительные сведения в статье [Подключение обозревателя службы хранилища к подписке Azure Stack](azure-stack/user/azure-stack-storage-connect-se.md).
+3. Если вы хотите войти в учетную запись в национальном облаке или в Azure Stack, щелкните раскрывающийся список **Окружение Azure**, чтобы выбрать нужное облако Azure. После выбора окружения нажмите кнопку **входа**. Если вы входите в Azure Stack, см. дополнительные сведения в статье [Подключение обозревателя службы хранилища к подписке Azure Stack](/azure-stack/user/azure-stack-storage-connect-se).
 
     ![Вариант входа][2]
 

@@ -1,6 +1,6 @@
 ---
-title: Анализ журналов действий Azure Active Directory с помощью журналов Azure Monitor (предварительная версия) | Документация Майкрософт
-description: Узнайте, как анализировать журналы действий Azure Active Directory с помощью журналов Azure Monitor (предварительная версия)
+title: Анализ журналов действий Azure Active Directory с помощью журналов Azure Monitor | Документация Майкрософт
+description: Узнайте, как анализировать журналы действий Azure Active Directory с помощью журналов Azure Monitor
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -13,18 +13,18 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 11/13/2018
-ms.author: markvi
-ms.reviewer: dhanyahk
+ms.date: 04/18/2019
+ms.author: priyamo
+ms.reviewer: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e195dd0e52b4938e829ea0aec1f4cc3ef7107c0
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
-ms.translationtype: MT
+ms.openlocfilehash: 1651bb2898a2bd1e3e0c3fbbce77dc4106d76e7a
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58436818"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60005542"
 ---
-# <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs-preview"></a>Анализ журналов действий Azure AD с помощью журналов Azure Monitor (предварительная версия)
+# <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs"></a>Azure AD анализировать журналы действий с помощью журналов Azure Monitor
 
 После [интеграции журналов действий Azure AD с журналами Azure Monitor](howto-integrate-activity-logs-with-log-analytics.md) вы можете использовать возможности журналов Azure Monitor, чтобы получить полезные сведения о своей среде. Вы также можете установить [представления анализа журналов для журналов действий Azure AD ](howto-install-use-log-analytics-views.md), чтобы получить доступ к предварительно созданным отчетам о событиях аудита и входа в вашу среду.
 

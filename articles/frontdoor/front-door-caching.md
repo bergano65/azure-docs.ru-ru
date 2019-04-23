@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
-ms.openlocfilehash: e022a7661997d231e291a4d09611bb6e95bee262
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
-ms.translationtype: MT
+ms.openlocfilehash: fb00c09680c6a80bc093c6f02ccd8d7269b8748c
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59528328"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60149484"
 ---
 # <a name="caching-with-azure-front-door-service"></a>Кэширование с помощью Azure Front Door Service
 В данном документе описывается поведение Front Door с правилами маршрутизации, в которых включено кэширование.
@@ -104,7 +104,7 @@ Front Door кэшируют ресурсы до истечения срока ж
 2. Cache-Control: maxage =\<секунд >
 3. Срок действия истекает: \<http-date >
 
-Учитываются заголовки ответа Cache-Control, которые указывают, что ответ не будет сохранен в кэше, например Cache-Control: private, Cache-Control: no-cache и Cache-Control: no-store. Тем не менее при отправке нескольких запросов на лету к серверу POP для одного и того же URL-адреса они могут вернуть одинаковый ответ.
+Учитываются заголовки ответа Cache-Control, которые указывают, что ответ не будет сохранен в кэше, например Cache-Control: private, Cache-Control: no-cache и Cache-Control: no-store. Тем не менее при отправке нескольких запросов на лету к серверу POP для одного и того же URL-адреса они могут вернуть одинаковый ответ. При наличии не Cache-Control поведение по умолчанию — что AFD будет кэшировать ресурс для X количество времени, где X случайным образом выбирается от 1 до 3 дней.
 
 
 ## <a name="request-headers"></a>Заголовки запросов

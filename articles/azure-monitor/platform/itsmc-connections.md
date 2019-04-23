@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: v-jysur
-ms.openlocfilehash: 64a4e7a181f7bd24e305ef5ee8d3d6657c3f394b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 0ff73e342a668fef6d405783c130cf216f8003b4
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58081293"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60149979"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](../../azure-monitor/platform/itsmc-overview.md).
@@ -185,11 +185,12 @@ ms.locfileid: "58081293"
 ### <a name="prerequisites"></a>Технические условия
 Выполните указанные ниже предварительные требования.
 - ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](../../azure-monitor/platform/itsmc-overview.md#adding-the-it-service-management-connector-solution) (Добавление решения "Соединитель управления ИТ-услугами").
-- Установлена поддерживаемая версия ServiceNow: Kingston, Jakarta, Istanbul, Helsinki или Geneva.
+- Установлена поддерживаемая версия ServiceNow: Лондон, Kingston, Jakarta, Istanbul, Helsinki, Geneva.
 
 **Администраторы ServiceNow должны выполнить в экземплярах ServiceNow следующие действия:**
 - Создать идентификатор и секрет клиента для продукта ServiceNow. Дополнительные сведения о том, как создать идентификатор и секрет клиента, см. в соответствующих разделах:
 
+    - [Настройка OAuth для Лондон](https://docs.servicenow.com/bundle/london-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
     - [Настройка OAuth для версии Kingston](https://docs.servicenow.com/bundle/kingston-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
     - [Настройка OAuth для версии Jakarta](https://docs.servicenow.com/bundle/jakarta-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
     - [Настройка OAuth для версии Istanbul](https://docs.servicenow.com/bundle/istanbul-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)

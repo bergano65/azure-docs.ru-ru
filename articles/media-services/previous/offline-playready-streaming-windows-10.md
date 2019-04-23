@@ -12,20 +12,23 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 04/16/2019
 ms.author: willzhan
-ms.openlocfilehash: 75073058647f8e27a048e5ba0673a3d7e3f6a465
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
-ms.translationtype: MT
+ms.openlocfilehash: 974062b06c58ee23a001066a70a08675e2e94e48
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58311260"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60008126"
 ---
 # <a name="offline-playready-streaming-for-windows-10"></a>Потоковая передача содержимого с технологией PlayReady для Windows 10 (автономный режим)  
 
 > [!div class="op_single_selector" title1="Select the version of Media Services that you are using:"]
 > * [Версия 3](../latest/offline-plaready-streaming-for-windows-10.md)
 > * [Версия 2](offline-playready-streaming-windows-10.md)
+
+> [!NOTE]
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
 
 Службы мультимедиа Azure поддерживают автономное скачивание и воспроизведение содержимого с защитой DRM. В этой статье рассматривается автономная поддержка Служб мультимедиа Azure для клиентов Windows 10 с PlayReady. Вы можете прочесть о поддержке автономного режима для устройств iOS с FairPlay и Android с Widevine в следующих статьях:
 

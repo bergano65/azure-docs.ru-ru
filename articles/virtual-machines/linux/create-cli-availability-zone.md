@@ -16,18 +16,18 @@ ms.workload: infrastructure
 ms.date: 04/05/2018
 ms.author: danlep
 ms.custom: ''
-ms.openlocfilehash: ee714cd87676c519c1bbfca2c08b62287299114e
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: cdd9910bfef96f56cfa8c8e81363ff9bdb40f444
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55700627"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60005508"
 ---
 # <a name="create-a-linux-virtual-machine-in-an-availability-zone-with-the-azure-cli"></a>Создание виртуальной машины Linux в зоне доступности с помощью Azure CLI
 
 В этой статье рассматривается использование Azure CLI для создания виртуальной машины Linux в зоне доступности Azure. [Зона доступности](../../availability-zones/az-overview.md) представляет собой физически отдельную зону в регионе Azure. Зоны доступности позволяют защитить приложения и данные от маловероятных сбоев и потери всего центра обработки данных.
 
-Чтобы использовать зону доступности, создайте виртуальную машину в [поддерживаемом регионе Azure](../../availability-zones/az-overview.md#regions-that-support-availability-zones).
+Чтобы использовать зону доступности, создайте виртуальную машину в [поддерживаемом регионе Azure](../../availability-zones/az-overview.md#services-support-by-region).
 
 Обязательно установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index).
 
@@ -102,7 +102,7 @@ az vm create --resource-group myResourceGroupVM --name myVM --location eastus2 -
 
 При развертывании виртуальной машины в зоне доступности диск виртуальной машины создается в той же зоне доступности. По умолчанию общедоступный IP-адрес также создается в этой зоне. В примерах ниже содержатся сведения об этих ресурсах.
 
-Чтобы убедиться, что диск виртуальной машины находится в зоне доступности, необходимо воспользоваться командой [az vm show](/cli/azure/vm), показывающей идентификатор диска. В этом примере идентификатор диска хранится в переменной, которая будет использоваться дальше. 
+Чтобы убедиться, что управляемого диска виртуальной Машины в зоне доступности, используйте [az vm show](/cli/azure/vm) команду, чтобы получить идентификатор диска. В этом примере идентификатор диска хранится в переменной, которая используется на более позднем этапе. 
 
 ```azurecli-interactive
 osdiskname=$(az vm show -g myResourceGroupVM -n myVM --query "storageProfile.osDisk.name" -o tsv)
@@ -196,7 +196,7 @@ az network public-ip show --resource-group myResourceGroupVM --name $ipaddressna
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статье вы узнали, как создать виртуальную машину в зоне доступности. Узнайте о [регионах и доступности](regions-and-availability.md) виртуальных машин Azure.
 

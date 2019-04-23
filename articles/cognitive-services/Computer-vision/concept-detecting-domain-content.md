@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 92859667e1dc53b9c6ca9e46a2db1c6dc335ae37
-ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
-ms.translationtype: MT
+ms.openlocfilehash: e4b64e00f71768a8821c83a73b019f77089e1b3a
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57339017"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59994492"
 ---
 # <a name="detect-domain-specific-content"></a>Обнаружение содержимого, связанного с определенными предметными областями
 
@@ -30,7 +30,7 @@ ms.locfileid: "57339017"
 
 Ниже приведен пример ответа JSON, возвращаемого API **models/celebrities/analysis** для следующего изображения.
 
-![Сатья Наделла (Satya Nadella)](./images/satya.jpeg)
+![Репутацию, улыбающихся (satya nadella)](./images/satya.jpeg)
 
 ```json
 {
@@ -100,7 +100,7 @@ ms.locfileid: "57339017"
 
 Сейчас Компьютерное зрение поддерживает следующие модели для предметной области.
 
-| ИМЯ | ОПИСАНИЕ |
+| Name | ОПИСАНИЕ |
 |------|-------------|
 | celebrities | Распознавание знаменитостей; поддерживается для изображений, которые были классифицированы как относящиеся к категории `people_` |
 | landmarks | Распознавание ориентиров; поддерживается для изображений, которые были классифицированы как относящиеся к категории `outdoor_` или `building_` |

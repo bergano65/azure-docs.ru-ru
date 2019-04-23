@@ -12,12 +12,12 @@ ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
 ms.date: 03/20/2019
-ms.openlocfilehash: a0b565be2edba7dcf1ba4c1b17284ce05b4cea2f
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
-ms.translationtype: MT
+ms.openlocfilehash: b3514eca8db5d5b68b3e5784ee95e8583813945c
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58620552"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60008976"
 ---
 # <a name="resource-limits-for-single-databases-using-the-dtu-based-purchasing-model"></a>Ограничения ресурсов для одиночных баз данных в модели приобретения на основе DTU
 
@@ -83,7 +83,7 @@ ms.locfileid: "58620552"
 \* От 1024 до 4096 ГБ с шагом в 256 ГБ
 
 > [!IMPORTANT]
-> В настоящее время на уровне Premium предоставляется более 1 ТБ хранилища, за исключением следующих регионов: Восточный Китай, Северный Китай, Центральная Германия, Северо-Восточная Германия, центрально-западная часть США, регионы US DoD и центральная часть для государственных организаций США. В этих регионах максимальный объем хранилища категории "Премиум" ограничен 1 ТБ.  Дополнительные сведения см. в разделе [о действующих ограничениях для P11-P15](sql-database-single-database-scale.md#dtu-based-purchasing-model-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
+> В настоящее время на уровне Premium предоставляется более 1 ТБ хранилища, за исключением следующих регионов: Восточный Китай, Северный Китай, Центральная Германия, Северо-Восточная Германия, центрально-западная часть США, регионы US DoD и центральная часть для государственных организаций США. В этих регионах максимальный объем хранилища категории "Премиум" ограничен 1 ТБ.  Дополнительные сведения см. в разделе [о действующих ограничениях для P11-P15](sql-database-single-database-scale.md#p11-and-p15-constraints-when-max-size-greater-than-1-tb).  
 > [!NOTE]
 > Для `tempdb` ограничения, см. в разделе [ограничения tempdb](https://docs.microsoft.com/sql/relational-databases/databases/tempdb-database?view=sql-server-2017#tempdb-database-in-sql-database).
 

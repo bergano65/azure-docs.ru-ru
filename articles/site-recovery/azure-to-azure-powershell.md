@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 3/29/2019
 ms.author: sutalasi
-ms.openlocfilehash: 997b358a6daf2f5450c38fcbe484a584d06bf5c4
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: d11ebad3eaa629a1b03d22c6548f3b7ad591cf5b
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59787115"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60003814"
 ---
 # <a name="set-up-disaster-recovery-for-azure-virtual-machines-using-azure-powershell"></a>Настройка аварийного восстановления для виртуальных машин Azure с помощью Azure PowerShell
 
@@ -44,7 +44,7 @@ ms.locfileid: "59787115"
 Перед началом работы:
 - Вам должны быть понятны [архитектура и компоненты сценария](azure-to-azure-architecture.md).
 - [Ознакомьтесь](azure-to-azure-support-matrix.md) с требованиями поддержки для всех компонентов.
-- У вас есть Azure PowerShell `Az` модуля. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/install-az-ps).
+- У вас есть Azure PowerShell `Az` модуля. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="log-in-to-your-microsoft-azure-subscription"></a>Вход в подписку Microsoft Azure
 

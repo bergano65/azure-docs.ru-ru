@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: 00f64deaa5e02f9bb74baaf86bfdf71690a3345d
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: ec79f6a9b255d44e66b901a0aae263c8dbbf2863
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51248254"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60149866"
 ---
 # <a name="scale-quotas-and-limits-in-devtest-labs"></a>Масштабирование квот и ограничений в DevTest Labs
 При работе в DevTest Labs вы, вероятно, замечали, что для некоторых ресурсов Azure существуют определенные ограничения по умолчанию, которые могут влиять на работу службы DevTest Labs. Такие ограничения называют **квотами**.
@@ -28,7 +28,7 @@ ms.locfileid: "51248254"
 
 Каждый ресурс Azure можно использовать, пока не достигнута его квота. Каждая подписка имеет свои квоты, а процесс использования отслеживается отдельно для каждой подписки.
 
-Например, что каждой подписки задана квота по умолчанию в 20 ядер. Таким образом, при создании в лаборатории виртуальных машин, каждая из которых имеет четыре ядра, можно создать только пять виртуальных машин. 
+Например, что каждой подписки задана квота по умолчанию в 20 ядер. Таким образом, при создании в лаборатории виртуальных машин, каждая из которых имеет четыре ядра, можно создать только пять виртуальных машин.
 
 В статье [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-subscription-service-limits) перечислены некоторые наиболее распространенные квоты для ресурсов Azure. К ресурсам, которые чаще всего используются в лаборатории и для которых могут быть квоты, относятся ядра виртуальных машин, общедоступные IP-адреса, сетевой интерфейс, управляемые диски, назначение ролей RBAC и каналы ExpressRoute.
 
@@ -66,5 +66,5 @@ ms.locfileid: "51248254"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-### <a name="next-steps"></a>Дополнительная информация
-* Изучите [коллекцию шаблонов быстрого запуска Azure Resource Manager для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/Samples).
+### <a name="next-steps"></a>Дальнейшие действия
+* Изучите [коллекцию шаблонов быстрого запуска Azure Resource Manager для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).

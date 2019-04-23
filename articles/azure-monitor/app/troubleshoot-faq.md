@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 12/17/2018
 ms.author: mbullwin
-ms.openlocfilehash: 6834ab15f3d46b8b7116a48b0e970f553eb65ba8
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
-ms.translationtype: MT
+ms.openlocfilehash: 46c387ab175bfd3613e00be8e7b3a899aa025a7f
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58521828"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60149291"
 ---
 # <a name="application-insights-frequently-asked-questions"></a>Application Insights. Часто задаваемые вопросы
 
@@ -134,7 +134,7 @@ ms.locfileid: "58521828"
 
 ## <a name="how-are-city-country-and-other-geo-location-data-calculated"></a>Как определяются данные по городу, стране и другие данные по географическому расположению?
 
-Мы определяем IP-адрес (IPv4 или IPv6) веб-клиента с помощью [GeoLite2](http://dev.maxmind.com/geoip/geoip2/geolite2/).
+Мы определяем IP-адрес (IPv4 или IPv6) веб-клиента с помощью [GeoLite2](https://dev.maxmind.com/geoip/geoip2/geolite2/).
 
 * Телеметрия браузера: мы собираем сведения об IP-адресе отправителя.
 * Телеметрия сервера: модуль Application Insights собирает сведения об IP-адресе клиента. Эти сведения не собираются, если задан заголовок `X-Forwarded-For`.

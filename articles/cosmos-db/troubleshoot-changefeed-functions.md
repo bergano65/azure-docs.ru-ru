@@ -7,12 +7,12 @@ ms.date: 04/16/2019
 ms.author: maquaran
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: 5416c576e6392b7c5714ef83f152453aeff8d964
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 40d9aba4ff8fd78f6369729ddc16238e65bfc169
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59685857"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60010896"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-cosmos-db-trigger-in-azure-functions"></a>Диагностика и устранение неполадок при использовании триггер Azure Cosmos DB в функциях Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "59685857"
 
 Основные функциональные возможности пакета расширения является предоставление поддержки для триггера Azure Cosmos DB и привязки. Он также включает [пакета SDK .NET Azure Cosmos DB](sql-api-sdk-dotnet-core.md), что очень удобно, если вы хотите взаимодействовать с Azure Cosmos DB программным способом без использования триггеров и привязок.
 
-Если для требуется использовать пакет SDK для Azure Cosmos DB, убедитесь, что вы не добавлять в проект другой ссылки на пакет NuGet. Вместо этого **позволяют устранить через пакет расширения "функции Azure справочнике по SDK**.
+Если нужно использовать пакет SDK для Azure Cosmos DB, убедитесь, что вы не добавлять в проект другой ссылки на пакет NuGet. Вместо этого **позволяют устранить через пакет расширения "функции Azure справочнике по SDK**.
 
 Кроме того Если вы вручную создаете собственный экземпляр [клиентского пакета SDK для Azure Cosmos DB](./sql-api-sdk-dotnet-core.md), должно соответствовать шаблону наличия только одного экземпляра клиента [принципу одноэлементный шаблон](../azure-functions/manage-connections.md#documentclient-code-example-c) . Этот процесс позволит избежать потенциальных проблем сокетов во время выполнения операций.
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/07/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 0462ae68194fa22d99339b2ef369e3bbe3deabb2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 85a339d2638e2223815a4ae539f37c439a4eac91
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58077468"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60000121"
 ---
 # <a name="add-adfs-as-a-saml-identity-provider-using-custom-policies-in-azure-active-directory-b2c"></a>Добавление ADFS в качестве поставщика удостоверений SAML с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -33,7 +33,7 @@ ms.locfileid: "58077468"
 Вам необходимо сохранить сертификат в клиенте Azure AD B2C.
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
-2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите **фильтр каталога и подписки** в верхнем меню и выберите каталог, содержащий вашего клиента.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. На странице "Обзор" выберите **Identity Experience Framework — предварительная версия**.
 5. Выберите **Ключи политики**, а затем щелкните **Добавить**.
@@ -71,7 +71,7 @@ ms.locfileid: "58077468"
             <Key Id="SamlMessageSigning" StorageReferenceId="B2C_1A_ADFSSamlCert"/>
           </CryptographicKeys>
           <OutputClaims>
-            <OutputClaim ClaimTypeReferenceId="socialIdpUserId" PartnerClaimType="userPrincipalName" />
+            <OutputClaim ClaimTypeReferenceId="issuerUserId" PartnerClaimType="userPrincipalName" />
             <OutputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="given_name"/>
             <OutputClaim ClaimTypeReferenceId="surname" PartnerClaimType="family_name"/>
             <OutputClaim ClaimTypeReferenceId="email" PartnerClaimType="email"/>
@@ -127,14 +127,14 @@ ms.locfileid: "58077468"
 
 Теперь, когда у вас есть кнопка, вам необходимо связать ее с действием. В этом случае действие — это возможность взаимодействия Azure AD B2C с учетной записью ADFS для получения токена.
 
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути взаимодействия пользователя.
-2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для **Id** можно использовать то же значение, которое было использовано для **TargetClaimsExchangeId**:
+1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
+2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для идентификатора используется то же значение, которое использовалось для **TargetClaimsExchangeId**.
 
     ```XML
     <ClaimsExchange Id="ContosoExchange" TechnicalProfileReferenceId="Contoso-SAML2" />
     ```
     
-    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение **Id** ранее созданного технического профиля. Например, `Contoso-SAML2`.
+    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `Contoso-SAML2`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 
@@ -151,7 +151,7 @@ https://login.microsoftonline.com/te/your-tenant/your-policy/samlp/metadata?idpt
 
 - **your-tenant** — именем собственного клиента, например your-tenant.onmicrosoft.com.
 - **your-policy** — именем собственной политики. Например, B2C_1A_signup_signin_adfs.
-- **your-technical-profile** — именем технического профиля поставщика удостоверений SAML. Например, Contoso-SAML2.
+- **Ваш Технический профиль** именем Технический профиль поставщика удостоверений SAML. Например, Contoso-SAML2.
  
 Откройте браузер и перейдите по URL-адресу. Убедитесь, что ввели правильный URL-адрес и что имеете доступ к XML-файлу метаданных. Чтобы добавить новое отношение доверия с проверяющей стороной с помощью оснастки управления AD FS и вручную настроить параметры, выполните указанную ниже процедуру на сервере федерации. Для этого необходимо по крайней мере входить в группу **Администраторы** или аналогичную группу на локальном компьютере.
 

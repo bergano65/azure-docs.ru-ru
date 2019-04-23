@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: b885098ff0efeb4d723cbaaac46fbb57cb40f2ea
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 4df8e5d4560a813c47319833a8cd91726abcb8e6
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59791000"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60149464"
 ---
 # <a name="troubleshooting-cdn-file-compression"></a>Устранение неполадок со сжатием файлов CDN
 Эта статья поможет вам устранить неполадки со [сжатием файлов CDN](cdn-improve-performance.md).
@@ -117,5 +117,5 @@ ms.locfileid: "59791000"
 HTTP-заголовок **Via** указывает веб-серверу, что запрос передается через прокси-сервер.  Если запрос содержит заголовок **Via** , веб-серверы Microsoft IIS по умолчанию не сжимают ответы.  Чтобы изменить это поведение, сделайте следующее.
 
 * **IIS 6**: [Задайте HcNoCompressionForProxies = «ЛОЖЬ» в свойствах метабазы IIS](/previous-versions/iis/6.0-sdk/ms525390(v=vs.90))
-* **IIS 7 и более**: [Задайте для обоих **noCompressionForHttp10** и **noCompressionForProxies** значение False в конфигурации сервера](http://www.iis.net/configreference/system.webserver/httpcompression)
+* **IIS 7 и более**: [Задайте для обоих **noCompressionForHttp10** и **noCompressionForProxies** значение False в конфигурации сервера](https://www.iis.net/configreference/system.webserver/httpcompression)
 

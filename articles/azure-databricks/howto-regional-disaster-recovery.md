@@ -8,12 +8,12 @@ ms.service: azure-databricks
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 03/13/2019
-ms.openlocfilehash: 354f6014e3230b65a0c4f1cd7507e58ca94474dd
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
-ms.translationtype: MT
+ms.openlocfilehash: bd91d9201e81c884b48b41de27146c186eeb9598
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58188107"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60000850"
 ---
 # <a name="regional-disaster-recovery-for-azure-databricks-clusters"></a>Региональное аварийное восстановление кластеров Azure Databricks
 
@@ -247,7 +247,7 @@ ms.locfileid: "58188107"
 
 8. **Перенос хранилища BLOB-объектов Azure и подключений Azure Data Lake Store**
 
-   Вручную установите все точки подключения [хранилища BLOB-объектов Azure](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-storage.html) и [Azure Data Lake Store (1-го поколения)](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake.html) с помощью решения на основе записной книжки. Ресурсы хранилища были бы подключены в основной рабочей области, и это следует повторить в дополнительной рабочей области. Внешних API для подключений не существует.
+   Вручную подключите все [хранилище BLOB-объектов Azure](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-storage.html) и [Azure Data Lake Store (Gen 2)](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) с помощью решения на основе записной книжки точки подключения. Ресурсы хранилища были бы подключены в основной рабочей области, и это следует повторить в дополнительной рабочей области. Внешних API для подключений не существует.
 
 9. **Перенос скриптов инициализации кластеров**
 

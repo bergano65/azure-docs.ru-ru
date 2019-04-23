@@ -10,12 +10,12 @@ ms.subservice: bing-custom-search
 ms.topic: conceptual
 ms.date: 09/25/2018
 ms.author: v-gedod
-ms.openlocfilehash: 942e61b0ee69402d516982c66a852d5e26304809
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: e395fc96c560c6c6c1671e472840ba0f2a316d98
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55859443"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60006783"
 ---
 # <a name="language-and-region-support-for-the-bing-custom-search-api"></a>Поддержка языков и регионов в API пользовательского поиска Bing
 
@@ -86,7 +86,7 @@ API пользовательского поиска Bing поддерживае�
 |Финляндия|Финский|fi-FI|
 |Франция|Французский|fr-FR|
 |Германия|Немецкий|de-DE|
-|Гонконг, САР|Китайский, традиционное письмо|zh-HK|
+|Гонконг|Китайский, традиционное письмо|zh-HK|
 |Индия|Английский|en-IN|
 |Индонезия|Английский|en-ID|
 |Италия|Итальянский|it-IT|

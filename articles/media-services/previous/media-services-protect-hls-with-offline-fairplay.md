@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/19/2019
+ms.date: 04/16/2019
 ms.author: willzhan, dwgeo
-ms.openlocfilehash: a0e3b0758f8c70bec14d533ef62ce75f57a198cb
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
-ms.translationtype: MT
+ms.openlocfilehash: 31da745727d567e1b3b85b3508df368d78ad84a0
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259658"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60002669"
 ---
 # <a name="offline-fairplay-streaming-for-ios"></a>Потоковая передача FairPlay в автономном режиме для iOS 
 
@@ -27,7 +27,10 @@ ms.locfileid: "58259658"
 > * [Версия 3](../latest/offline-fairplay-for-ios.md)
 > * [Версия 2](media-services-protect-hls-with-offline-fairplay.md)
 
- Службы мультимедиа Azure предоставляют набор хорошо спроектированных [служб системы защиты содержимого](https://azure.microsoft.com/services/media-services/content-protection/), которые охватывают:
+> [!NOTE]
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
+
+Службы мультимедиа Azure предоставляют набор хорошо спроектированных [служб системы защиты содержимого](https://azure.microsoft.com/services/media-services/content-protection/), которые охватывают:
 
 - Microsoft PlayReady
 - Google Widevine

@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
-ms.openlocfilehash: 7f850cdfe99fce81c9be045b4882dc42bf2aa5f0
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.openlocfilehash: 1e5faa8d356b891d825586414c0a1a1b9fa47090
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59551102"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60001887"
 ---
 # <a name="configure-a-custom-linux-container-for-azure-app-service"></a>Настройка пользовательского контейнера Linux для службы приложений Azure
 
@@ -121,7 +121,9 @@ SSH обеспечивает безопасный обмен данными ме
 az webapp config appsettings set --resource-group <resource-group-name> --name <app-name> --settings WEBSITES_ENABLE_APP_SERVICE_STORAGE=TRUE
 ```
 
-В вашей *docker-compose.yml* файл "," Карта `volumes` равным `${WEBAPP_STORAGE_HOME}`. `WEBAPP_STORAGE_HOME` — это переменная среды в Службе приложений, которая сопоставляется с постоянным хранилищем для вашего приложения. Например: 
+В вашей *docker-compose.yml* файл "," Карта `volumes` равным `${WEBAPP_STORAGE_HOME}`. 
+
+`WEBAPP_STORAGE_HOME` — это переменная среды в Службе приложений, которая сопоставляется с постоянным хранилищем для вашего приложения. Например: 
 
 ```yaml
 wordpress:
@@ -130,6 +132,19 @@ wordpress:
   - ${WEBAPP_STORAGE_HOME}/site/wwwroot:/var/www/html
   - ${WEBAPP_STORAGE_HOME}/phpmyadmin:/var/www/phpmyadmin
   - ${WEBAPP_STORAGE_HOME}/LogFiles:/var/log
+```
+
+### <a name="use-custom-storage-in-docker-compose"></a>Использование пользовательского хранилища в Docker Compose
+
+Хранилище Azure (файлы Azure или BLOB-объектов Azure) можно подключить с многоконтейнерных приложений с помощью пользовательских id. Чтобы просмотреть имя custom-id, выполните [ `az webapp config storage-account list --name <app_name> --resource-group <resource_group>` ](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-list).
+
+В вашей *docker-compose.yml* файл "," Карта `volumes` равным `custom-id`. Например: 
+
+```yaml
+wordpress:
+  image: wordpress:latest
+  volumes:
+  - <custom-id>:<path_in_container>
 ```
 
 ### <a name="preview-limitations"></a>Ограничения предварительной версии
@@ -148,7 +163,7 @@ wordpress:
 - command
 - entrypoint;
 - Среда
-- изображение
+- image
 - ports;
 - restart
 - services;
@@ -172,7 +187,7 @@ wordpress:
 - args
 - command
 - containers
-- изображение
+- image
 - name
 - ports;
 - spec.
@@ -184,7 +199,7 @@ wordpress:
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство Развертывание из репозитория закрытый контейнер](tutorial-custom-docker-image.md)
+> [Руководство по развертыванию из частного репозитория контейнеров](tutorial-custom-docker-image.md)
 
 > [!div class="nextstepaction"]
-> [Руководство Приложение WordPress несколькими контейнерами](tutorial-multi-container-app.md)
+> [Руководство по приложению WordPress с несколькими контейнерами](tutorial-multi-container-app.md)

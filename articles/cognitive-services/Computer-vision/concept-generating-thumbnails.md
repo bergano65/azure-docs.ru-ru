@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/11/2018
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: cea8522a9f3eb8fa98821c1cb08d92a9524d5ce4
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: 8bbc86f5c6fe0f30968a1ba5bd5fa28160ef6963
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57876805"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60002448"
 ---
 # <a name="generating-smart-cropped-thumbnails-with-computer-vision"></a>Использование компьютерного зрения для создания эскизов с примененной интеллектуальной обрезкой
 
@@ -38,15 +38,15 @@ ms.locfileid: "57876805"
 
 Создаваемые эскизы могут существенно различаться в зависимости от настроенных высоты, ширины и интеллектуальной обрезки, как показано на рисунке ниже.
 
-![Эскизы](./Images/thumbnail-demo.png)
+![Образ mountain рядом с различных конфигураций обрезки](./Images/thumbnail-demo.png)
 
 В приведенной ниже таблице показаны типичные эскизы, создаваемые компьютерным зрением для примеров изображений. Эти эскизы были созданы для заданных конечных высоты и ширины, равных 50 пикселям, с включенной интеллектуальной обрезкой.
 
-| Образ — | Эскиз |
+| Image | Эскиз |
 |-------|-----------|
-|![Человек, стоящий на скале на закате](./Images/mountain_vista.png) | ![Эскиз горы](./Images/mountain_vista_thumbnail.png) |
+|![Outdoor Mountain закате с силуэт человека](./Images/mountain_vista.png) | ![Эскиз Outdoor Mountain закате с силуэт человека](./Images/mountain_vista_thumbnail.png) |
 |![Белый цветок на зеленом фоне](./Images/flower.png) | ![Анализ изображения. Эскиз цветка](./Images/flower_thumbnail.png) |
-|![Женщина на крыше жилого дома](./Images/woman_roof.png) | ![Эскиз женщины на крыше](./Images/woman_roof_thumbnail.png) |
+|![Женщина на крыше жилого дома](./Images/woman_roof.png) | ![эскиз женщиной на крыше построения подразделения](./Images/woman_roof_thumbnail.png) |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

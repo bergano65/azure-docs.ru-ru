@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/15/2019
 ms.author: sedusch
-ms.openlocfilehash: b8f4fdb3ab3e1107a8753db14dcbb68c6d97a104
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
-ms.translationtype: MT
+ms.openlocfilehash: b5dea8a64410e23f3b92feb8ce757646435697d3
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58652507"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60003417"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver-on-red-hat-enterprise-linux"></a>Обеспечение высокого уровня доступности SAP NetWeaver в виртуальных машинах Azure с Red Hat Enterprise Linux
 
@@ -74,6 +74,7 @@ ms.locfileid: "58652507"
   * [Администрирование надстройки для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_administration/index)
   * [Справочник по надстройке для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_reference/index)
   * [Настройка ASCS/ERS для SAP Netweaver с автономными ресурсами в RHEL 7.5](https://access.redhat.com/articles/3569681)
+  * [Настройка S/4HANA SAP ASCS/ERS с сервером постановки в очередь автономных 2 (ENSA2) в Pacemaker на RHEL ](https://access.redhat.com/articles/3974941)
 * Документация по RHEL для Azure:
   * [Политики поддержки для кластеров высокой доступности RHEL — виртуальные машины Microsoft Azure как члены кластера](https://access.redhat.com/articles/3131341)
   * [Установка и настройка кластера высокой доступности Red Hat Enterprise Linux 7.4 (и более поздних версий) в Microsoft Azure](https://access.redhat.com/articles/3252491)
@@ -480,6 +481,8 @@ SAP NetWeaver требует общее хранилище для каталог
 
 1. **[1]** Создайте кластерные ресурсы SAP.
 
+  Если в рамках архитектуры сервера 1 постановки в очередь (ENSA1) определите ресурсы следующим образом:
+
    <pre><code>sudo pcs property set maintenance-mode=true
    
    sudo pcs resource create rsc_sap_<b>NW1</b>_ASCS00 SAPInstance \
@@ -495,12 +498,36 @@ SAP NetWeaver требует общее хранилище для каталог
       
    sudo pcs constraint colocation add g-<b>NW1</b>_AERS with g-<b>NW1</b>_ASCS -5000
    sudo pcs constraint location rsc_sap_<b>NW1</b>_ASCS<b>00</b> rule score=2000 runs_ers_<b>NW1</b> eq 1
-   
    sudo pcs constraint order g-<b>NW1</b>_ASCS then g-<b>NW1</b>_AERS kind=Optional symmetrical=false
    
    sudo pcs node unstandby <b>nw1-cl-0</b>
    sudo pcs property set maintenance-mode=false
    </code></pre>
+
+   SAP введена поддержка сервер постановки в очередь 2, включая репликацию, начиная с SAP NW 7.52. Начиная с платформы 1809 ABAP, сервер постановки в очередь 2 устанавливается по умолчанию. См. в разделе SAP Примечание [2630416](https://launchpad.support.sap.com/#/notes/2630416) для поддержки сервера 2 постановки в очередь.
+   При использовании архитектуры сервера 2 постановки в очередь ([ENSA2](https://help.sap.com/viewer/cff8531bc1d9416d91bb6781e628d4e0/1709%20001/en-US/6d655c383abf4c129b0e5c8683e7ecd8.html)), установите агент ресурсов resource агентов sap-4.1.1-12.el7.x86_64 или более поздней версии и определите ресурсы следующим образом:
+
+<pre><code>sudo pcs property set maintenance-mode=true
+   
+   sudo pcs resource create rsc_sap_<b>NW1</b>_ASCS00 SAPInstance \
+    InstanceName=<b>NW1</b>_ASCS00_<b>nw1-ascs</b> START_PROFILE="/sapmnt/<b>NW1</b>/profile/<b>NW1</b>_ASCS00_<b>nw1-ascs</b>" \
+    AUTOMATIC_RECOVER=false \
+    meta resource-stickiness=5000 \
+    --group g-<b>NW1</b>_ASCS
+   
+   sudo pcs resource create rsc_sap_<b>NW1</b>_ERS<b>02</b> SAPInstance \
+    InstanceName=<b>NW1</b>_ERS02_<b>nw1-aers</b> START_PROFILE="/sapmnt/<b>NW1</b>/profile/<b>NW1</b>_ERS02_<b>nw1-aers</b>" \
+    AUTOMATIC_RECOVER=false IS_ERS=true \
+    --group g-<b>NW1</b>_AERS
+      
+   sudo pcs constraint colocation add g-<b>NW1</b>_AERS with g-<b>NW1</b>_ASCS -5000
+   sudo pcs constraint order g-<b>NW1</b>_ASCS then g-<b>NW1</b>_AERS kind=Optional symmetrical=false
+   
+   sudo pcs node unstandby <b>nw1-cl-0</b>
+   sudo pcs property set maintenance-mode=false
+   </code></pre>
+
+   Если вы обновляете более старой версии и переключение на сервер постановки в очередь 2, см. Примечание sap [2641322](https://launchpad.support.sap.com/#/notes/2641322). 
 
    Убедитесь, что состояние кластера — "ОК" и что запущены все ресурсы. Не важно, на каком узле выполняются ресурсы.
 

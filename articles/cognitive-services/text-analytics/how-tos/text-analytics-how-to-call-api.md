@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 02/13/2019
+ms.date: 02/26/2019
 ms.author: aahi
-ms.openlocfilehash: 9d0a803f8a397d3c24f083188b6186acf4dde809
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 720a6c57d4f1a6079f78244559a25018349bd378
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58122881"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60011261"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>Как вызвать REST API службы "Анализ текста"
 
@@ -26,7 +26,7 @@ ms.locfileid: "58122881"
 Напомним, что служба "Анализ текста" не учитывает состояние, поэтому ресурсы данных, которыми необходимо управлять, отсутствуют. Текст будет отправлен и проанализирован после получения, а результаты немедленно будут возвращены в вызывающее приложение.
 
 > [!Tip]
-> Чтобы увидеть, как работает API, вы можете отправить одноразовые запросы POST из встроенной **консоли тестирования API**, доступной на любой [странице документации по API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6). Никаких настроек выполнять не нужно. Единственные требования — вставить ключ доступа и документы JSON в запрос. 
+> Чтобы увидеть, как работает API, вы можете отправить одноразовые запросы POST из встроенной **консоли тестирования API**, доступной на любой [странице документации по API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6). Никаких настроек выполнять не нужно. Единственные требования — вставить ключ доступа и документы JSON в запрос. 
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -60,10 +60,10 @@ ms.locfileid: "58122881"
 
    Конечные точки ресурсов имеют такой вид (ваш регион может отличаться):
 
-   + `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment`
-   + `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases`
-   + `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/languages`
-   + `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1-preview/entities`
+   + `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/sentiment`
+   + `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/keyPhrases`
+   + `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/languages`
+   + `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/entities`
 
 2. Задайте три заголовка запроса:
 
@@ -81,10 +81,10 @@ ms.locfileid: "58122881"
 
 5. Вставьте несколько документов JSON в формате, который допустим для предполагаемого анализа. Дополнительные сведения о конкретном анализе см. в статьях ниже:
 
-   + [Пример. Как определить язык с помощью Анализа текста](text-analytics-how-to-language-detection.md)  
-   + [Пример. Как извлечь ключевые фразы с помощью Анализа текста](text-analytics-how-to-keyword-extraction.md)  
-   + [Пример. Как определить тональность с помощью Анализа текста](text-analytics-how-to-sentiment-analysis.md)  
-   + [Обнаружение связанных сущностей в службе "Анализ текста" (предварительная версия)](text-analytics-how-to-entity-linking.md)  
+  + [Пример. Как определить язык с помощью Анализа текста](text-analytics-how-to-language-detection.md)  
+  + [Пример. Как извлечь ключевые фразы с помощью Анализа текста](text-analytics-how-to-keyword-extraction.md)  
+  + [Пример. Как определить тональность с помощью Анализа текста](text-analytics-how-to-sentiment-analysis.md)  
+  + [Распознавание сущностей](text-analytics-how-to-entity-linking.md)  
 
 
 6. Щелкните **Отправить**, чтобы отправить запрос. Вы можете отправлять до 100 запросов в минуту. 

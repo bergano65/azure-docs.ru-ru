@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: spelluru
-ms.openlocfilehash: 28f963ab807cbd679b7efe8b034ab91f2893198e
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
-ms.translationtype: MT
+ms.openlocfilehash: 6985bd0bbae858ad258e723ef4d6d6d687b2c86e
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58659462"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60005355"
 ---
 # <a name="enable-and-use-remote-desktop-for-linux-virtual-machines-in-a-lab-in-azure-lab-services"></a>Включение и использование удаленного рабочего стола для виртуальных машин Linux в лаборатории в лаборатории служб Azure
 В этой статье показано, как выполнить следующие задачи:
@@ -35,6 +35,7 @@ ms.locfileid: "58659462"
 > [!IMPORTANT] 
 > Включение **удаленный рабочий стол** открывает только **RDP** порт на компьютерах Linux. Вы, как преподаватель, подключитесь к компьютеру Linux с помощью SSH в первый раз и установить пакеты RDP и графического пользовательского интерфейса, таким образом, можно подключиться к машине Linux по протоколу RDP позже. Затем вы **публикации** изображение, чтобы учащиеся могут RDP в для учащихся виртуальных машин Linux. 
 
+## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 В настоящее время удаленного рабочего стола поддерживается для следующих операционных систем:
 
 - openSUSE Leap 42.3

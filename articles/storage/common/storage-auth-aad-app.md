@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/21/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 8fdc4445e28a420b6b4f7935443d7d991d9e8a4d
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
-ms.translationtype: MT
+ms.openlocfilehash: c4959d6abd1b33c81f731ad0479bd59d271c7797
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58446063"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60149169"
 ---
 # <a name="authenticate-with-azure-active-directory-from-an-application-for-access-to-blobs-and-queues"></a>Пройти проверку подлинности с помощью Azure Active Directory с приложения для доступа к большим двоичным объектам и очередям
 
@@ -192,5 +192,5 @@ Authorization: Bearer eyJ0eXAiOnJKV1...Xd6j
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о ролях RBAC для службы хранилища Azure, см. в разделе [управление права доступа к данным хранилища с помощью RBAC](storage-auth-aad-rbac.md).
-- Дополнительные сведения об использовании управляемых удостоверений для ресурсов Azure со службой хранилища Azure, см. в разделе [проверка подлинности доступа к BLOB-объектов и очередей с помощью Azure управляемые удостоверения для ресурсов Azure](storage-auth-aad-msi.md).
-- Чтобы узнать, как для входа Azure CLI и PowerShell с помощью удостоверения Azure AD, см. в разделе [использование удостоверения Azure AD для доступа к хранилищу Azure с помощью интерфейса командной строки или PowerShell](storage-auth-aad-script.md).
+- Дополнительные сведения об использовании управляемых удостоверений для ресурсов Azure со службой хранилища Azure, см. в разделе [проверки подлинности доступа к BLOB-объектов и очередей с Azure Active Directory и управляемых удостоверений для ресурсов Azure](storage-auth-aad-msi.md).
+- Чтобы узнать, как для выполнения команд Azure CLI и PowerShell учетные данные Azure AD, см. в разделе [команды запуска интерфейса командной строки Azure или PowerShell учетные данные Azure AD для доступа к данным BLOB-объектов или очередей](storage-auth-aad-script.md).

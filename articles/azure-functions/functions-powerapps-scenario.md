@@ -12,12 +12,12 @@ ms.date: 12/14/2017
 ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: ''
-ms.openlocfilehash: 49000d4fd61e7cd061b415d50545a7f5ee56f3fb
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: afb97c1c14422f15a3fc2c00b2101c4a36675556
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45579129"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60002493"
 ---
 # <a name="call-a-function-from-powerapps"></a>Вызов функции из PowerApps
 Платформа [PowerApps](https://powerapps.microsoft.com) позволяет бизнес-экспертами создавать приложения без традиционного кода. Профессиональные разработчики могут расширить возможности PowerApps с помощью функций Azure, избавляя при этом разработчиков приложений PowerApps от технических деталей.
@@ -39,7 +39,10 @@ ms.locfileid: "45579129"
 > * Добавление элементов управления для вызова функции и отображения данных.
 > * запустили приложения для определения экономичности аварийного ремонта ветроэлектрической установки.
 
-## <a name="prerequisites"></a>Предварительные требования
+> [!IMPORTANT]
+> Сейчас функция OpenAPI предоставляется в предварительной версии и доступна только для версии 1.x среды выполнения Функций Azure.
+
+## <a name="prerequisites"></a>Технические условия
 
 + Активная [учетная запись PowerApps](https://docs.microsoft.com/powerapps/maker/signup-for-powerapps) с такими же учетными данными, что и в учетной записи Azure. 
 + Excel и [пример файла Excel](https://procsi.blob.core.windows.net/docs/turbine-data.xlsx), который будет использоваться как источник данных для вашего приложения.
@@ -215,7 +218,7 @@ ms.locfileid: "45579129"
 
 1. Попробуйте выбрать другие турбины, чтобы увидеть остальные данные, возвращаемые функцией.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы выполнили следующие действия:
 
 > [!div class="checklist"]

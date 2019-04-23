@@ -1,22 +1,22 @@
 ---
 title: Определение лиц. Компьютерное зрение
 titleSuffix: Azure Cognitive Services
-description: Понятия, связанные с функцией определения лиц API компьютерного зрения.
+description: Сведения о концепциях, связанных с функцией обнаружения лиц из API компьютерного зрения.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 02/11/2019
+ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 1056b8be113d56342aea8f83d5325737f7ecb93b
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: 699192aba87bb009d7dbddddcc9579883bb71db9
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56308457"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59996158"
 ---
 # <a name="face-detection-with-computer-vision"></a>Определение лиц с помощью компьютерного зрения
 
@@ -111,6 +111,6 @@ ms.locfileid: "56308457"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании функции обнаружения лиц см. в справочной документации по[анализу образа](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa).

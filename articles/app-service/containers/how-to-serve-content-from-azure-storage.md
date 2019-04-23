@@ -7,20 +7,19 @@ ms.service: app-service
 ms.workload: web
 ms.topic: article
 ms.date: 2/04/2019
-ms.author: msangapu
-ms.custom: seodec18
-ms.openlocfilehash: 29f2b725972f5ce92e756cb21621a19850ba9386
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.author: msangapu-msft
+ms.openlocfilehash: 02ebd0629fed9037054a5c22931f3e99c09073c4
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55732946"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59998606"
 ---
 # <a name="serve-content-from-azure-storage-in-app-service-on-linux"></a>Обработка содержимого из службы хранилища Azure в Службе приложений на платформе Linux
 
-В этом руководстве показано, как обрабатывать статическое содержимое в Службе приложений на платформе Linux с помощью [службы хранилища Azure](/azure/storage/common/storage-introduction). Преимущества включают защищенное содержимое, его переносимость, доступ к нескольким приложениям и несколько методов для передачи. В этом руководстве вы узнаете, как передавать содержимое в службе хранилища Azure, [настраивая пользовательское хранилище](https://blogs.msdn.microsoft.com/appserviceteam/2018/09/24/announcing-bring-your-own-storage-to-app-service/).
+В этом руководстве показано, как обрабатывать статическое содержимое в Службе приложений на платформе Linux с помощью [службы хранилища Azure](/azure/storage/common/storage-introduction). Преимущества включают защищенное содержимое, его переносимость, доступ к нескольким приложениям и несколько методов для передачи. В этом руководстве вы узнаете, как передавать содержимое в службе хранилища Azure, настроив пользовательского хранилища.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Существующее веб-приложение (Служба приложений в Linux или Веб-приложение для контейнеров).
 - [Azure CLI](/cli/azure/install-azure-cli) (2.0.46 или более поздней версии).
@@ -71,6 +70,6 @@ az webapp config storage-account add --resource-group <group_name> --name <app_n
 az webapp config storage-account list --resource-group <group_name> --name <app_name>
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка веб-приложений в службе приложений Azure](https://docs.microsoft.com/azure/app-service/web-sites-configure).

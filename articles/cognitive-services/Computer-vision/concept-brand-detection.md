@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 01/26/2019
+ms.date: 04/17/2019
 ms.author: pafarley
-ms.openlocfilehash: abeca204296bcb3933013f2b7434b8c558f62e50
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
-ms.translationtype: MT
+ms.openlocfilehash: d32beaa51471ccab19804122bfbcb33a6b1a5e3d
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58496593"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60003111"
 ---
-# <a name="brand-detection"></a>Обнаружение торговых марок
+# <a name="detect-popular-brands-in-images"></a>Определение популярных торговых марках на изображениях
 
 Обнаружение торговых марок — это специализированный режим [обнаружения объектов](concept-object-detection.md), который использует базу данных тысяч международных логотипов для идентификации коммерческих торговых марок на изображениях или видео. Вы можете использовать эту функцию, например, чтобы узнать, какие торговые марки наиболее популярны в социальных сетях или наиболее распространены при размещении медиа-продуктов.
 
@@ -94,5 +94,5 @@ ms.locfileid: "58496593"
 
 Функция обнаружения торговых марок является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa). Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включить `Brands` в **visualFeatures** параметр запроса. Затем, когда вы получаете полный ответ JSON, просто синтаксический анализ строки для содержимого `"brands"` раздел.
 
-* [Краткое руководство Анализ изображений с помощью пакета SDK для .NET](./quickstarts-sdk/csharp-analyze-sdk.md)
-* [Краткое руководство Анализ изображений с помощью REST API](./quickstarts/csharp-analyze.md)
+* [Краткое руководство. Анализ изображений с помощью пакета SDK для .NET](./quickstarts-sdk/csharp-analyze-sdk.md)
+* [Краткое руководство. Анализ изображений с помощью REST API](./quickstarts/csharp-analyze.md)

@@ -5,15 +5,15 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
-ms.topic: overview
+ms.topic: article
 ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: e85e006a54fcb4bb677932b3e1ff9fa79352dba9
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 73bff460db8428332a92d8deb68bf062ca4134ae
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58519839"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60003162"
 ---
 # <a name="use-the-azure-portal-to-manage-shares-on-your-azure-data-box-edge"></a>Управление общими папками в Azure Data Box Edge с помощью портала Azure
 
@@ -212,6 +212,6 @@ ms.locfileid: "58519839"
 > Это действие достаточно выполнить один раз для каждой учетной записи хранения. Не нужно повторять это действие для всех общих папок, связанных с одной учетной записью.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [управлять пользователями с помощью портала Azure](data-box-edge-manage-users.md).

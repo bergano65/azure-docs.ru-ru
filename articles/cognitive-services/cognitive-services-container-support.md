@@ -10,12 +10,12 @@ ms.service: cognitive-services
 ms.topic: article
 ms.date: 04/16/2019
 ms.author: diberry
-ms.openlocfilehash: d84ebcdbd557a56c4c20600be67f26a084d43ed2
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 172774c90633c96c3a8e2c128df050fedeb8b52b
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59681817"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60005967"
 ---
 # <a name="container-support-in-azure-cognitive-services"></a>Поддержка контейнеров в Azure Cognitive Services
 
@@ -33,7 +33,7 @@ ms.locfileid: "59681817"
 
 - **Контроль над данными**. Позвольте клиентам выбирать, где Cognitive Services будут обрабатывать их данные. Это особенно важно для тех клиентов, у которых есть потребность в технологии Cognitive Services, но нет возможности отправлять данные в облако. Поддержка согласованности в гибридной среде, в том числе данных, управления, идентификатора и безопасности.
 - **Контроль над обновлениями модели**. Предоставьте клиентам гибкость в управлении версиями и обновлением моделей, развернутых в своих решениях.
-- **Переносимая архитектура**. Позвольте создавать архитектуру переносимого приложения, которое можно развернуть в Azure, в локальной среде или на пограничном устройстве. Контейнеры можно развертывать непосредственно в [Службе Azure Kubernetes](../aks/index.yml), [Экземплярах контейнеров Azure](../container-instances/index.yml) или в кластере [Kubernetes](https://kubernetes.io/), развернутом в [Azure Stack](../azure-stack/index.yml). Дополнительные сведения см. в статье [Развертывание Kubernetes в Azure Stack](../azure-stack/user/azure-stack-solution-template-kubernetes-deploy.md).
+- **Переносимая архитектура**. Позвольте создавать архитектуру переносимого приложения, которое можно развернуть в Azure, в локальной среде или на пограничном устройстве. Контейнеры можно развертывать непосредственно в [Службе Azure Kubernetes](../aks/index.yml), [Экземплярах контейнеров Azure](../container-instances/index.yml) или в кластере [Kubernetes](https://kubernetes.io/), развернутом в [Azure Stack](/azure-stack/operator). Дополнительные сведения см. в статье [Развертывание Kubernetes в Azure Stack](/azure-stack/user/azure-stack-solution-template-kubernetes-deploy).
 - **Высокая пропускная способность и низкая задержка.** Обеспечьте клиентам возможность масштабировать требования для повышения пропускной способности и снижения задержек, позволив выполнение Cognitive Services поблизости от физического расположения логики и данных приложения. Контейнеры не ограничивают число транзакций в секунду (TPS), и их можно увеличивать и уменьшать для удовлетворения спроса, предоставив необходимые аппаратные ресурсы. 
 
 

@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из Azure Data Explorer или обратно с помощью Фабрики данных Azure | Документация Майкрософт
+title: Копирование данных из Azure Data Explorer или обратно с помощью Фабрики данных Azure
 description: Узнайте, как копировать данные из Azure Data Explorer или обратно с помощью действия копирования в конвейере Фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/16/2019
-ms.author: orspod
-ms.openlocfilehash: 756ede9cc90655163d6d53aa3ca920d2a15fb43d
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.author: orspodek
+ms.openlocfilehash: f501257903f3b7c621512f06d1c8c7109e22db1e
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59682497"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60009367"
 ---
 # <a name="copy-data-to-or-from-azure-data-explorer-using-azure-data-factory"></a>Копирование данных из Azure Data Explorer или обратно с помощью Фабрики данных Azure
 
@@ -219,4 +219,7 @@ ms.locfileid: "59682497"
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.
+
+* В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.
+
+* Дополнительные сведения о [копирование данных из фабрики данных Azure в Azure Data Explorer](/azure/data-explorer/data-factory-load-data).

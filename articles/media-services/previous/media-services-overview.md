@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/01/2019
+ms.date: 04/19/2019
 ms.author: juliako
-ms.openlocfilehash: 7a98d3acc3f45772f9e28c23a639f495b75bea0a
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: efdc3f657712794325f8af6f1b0178915e7a8e6b
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58850060"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60000306"
 ---
 # <a name="azure-media-services-overview"></a>Общие сведения о службах мультимедиа Azure 
 
@@ -75,12 +75,6 @@ ms.locfileid: "58850060"
 Дополнительные сведения см. в статье [Scenarios and availability of features and services across data centers](scenarios-and-availability.md) (Сценарии и доступность функций служб мультимедиа в центрах обработки данных).
 
 ## <a name="service-level-agreement-sla"></a>Соглашение об уровне обслуживания (SLA):
-
-* для кодирования с помощью служб мультимедиа мы гарантируем доступность транзакций через интерфейс REST API на уровне 99,9 %;
-* Для потоковой передачи мы будем успешно обслуживать запросы с гарантией доступности на уровне 99,9 % для существующего мультимедийного содержимого, если приобретена одна конечная точка потоковой передачи уровня "Стандартный" или "Премиум".
-* для динамических каналов мы гарантируем возможность внешнего подключения запущенных каналов в течение как минимум 99,9 % времени;
-* для защиты содержимого мы гарантируем, что мы будет успешно выполнять ключевые запросы по крайней мере 99,9 % времени;
-* для индексатора мы будет успешно обслуживать запросы задачи индексатора, обработанные с помощью зарезервированной единицы кодирования, в течение 99,9 % времени.
 
 Дополнительные сведения можно найти в разделе [Соглашение об уровне обслуживания Microsoft Azure](https://azure.microsoft.com/support/legal/sla/).
 

@@ -10,18 +10,18 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: a13ca362bf08b86297641061992f0820f0b624c5
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: e8bfa5a3e60efe860b5e7197d96ebe5ce3a86030
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58916773"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60001411"
 ---
 # <a name="define-an-openid-connect-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определения технического профиля на OpenId Connect в настраиваемую политику Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Azure Active Directory (Azure AD) B2C поддерживает протокол [OpenId Connect](https://openid.net/2015/04/17/openid-connect-certification-program/) для поставщиков удостоверений. OpenID Connect 1.0 определяет уровень идентификации поверх OAuth 2.0 и представляет собой оптимизированный протокол среди современных протоколов аутентификации.  С помощью технического профиля OpenId Connect можно создавать федерацию с поставщиками удостоверений на основе OpenId Connect, что позволяет пользователям выполнять вход с применением удостоверений для социальных или корпоративных сетей.
+Azure Active Directory (Azure AD) B2C поддерживает протокол [OpenId Connect](https://openid.net/2015/04/17/openid-connect-certification-program/) для поставщиков удостоверений. OpenID Connect 1.0 определяет уровень идентификации поверх OAuth 2.0 и представляет собой оптимизированный протокол среди современных протоколов аутентификации. С помощью OpenId Connect технического профиля можно использовать для федерации с поставщиком удостоверений на основе OpenId Connect, таких как Azure AD. Федеративные отношения с поставщиком удостоверений позволяет пользователям вход с помощью существующие социальных сетей или корпоративными удостоверениями.
 
 ## <a name="protocol"></a>Протокол
 
@@ -52,7 +52,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 
 В этом примере показаны утверждения, возвращаемые поставщиком удостоверений Microsoft Account:
 
-- утверждение **sub**, которое сопоставляется с утверждением **socialIdpUserId**;
+- **Sub** утверждения, который сопоставляется с **issuerUserId** утверждения.
 - утверждение **name**, которое сопоставляется с утверждением **displayName**;
 - утверждение **email** без сопоставления с именем.
 
@@ -65,7 +65,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 <OutputClaims>
   <OutputClaim ClaimTypeReferenceId="identityProvider" DefaultValue="live.com" />
   <OutputClaim ClaimTypeReferenceId="authenticationSource" DefaultValue="socialIdpAuthentication" />
-  <OutputClaim ClaimTypeReferenceId="socialIdpUserId" PartnerClaimType="sub" />
+  <OutputClaim ClaimTypeReferenceId="issuerUserId" PartnerClaimType="sub" />
   <OutputClaim ClaimTypeReferenceId="displayName" PartnerClaimType="name" />
   <OutputClaim ClaimTypeReferenceId="email" />
 </OutputClaims>
@@ -81,7 +81,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 | ProviderName | Нет  | Имя поставщика удостоверений. |
 | response_types | Нет  | Тип ответа в соответствии со спецификацией OpenID Connect Core 1.0. Возможные значения: `id_token`, `code` или `token`. |
 | response_mode | Нет  | Метод, который использует поставщик удостоверений, чтобы отправить результат обратно в Azure AD B2C. Возможные значения: `query`, `form_post` (по умолчанию) или `fragment`. |
-| scope | Нет  | Область запроса на доступ, определенная в соответствии со спецификацией OpenID Connect Core 1.0. Например, `openid`, `profile` и `email`. |
+| scope | Нет  | Область запроса, который определен в соответствии со спецификацией OpenID Connect Core 1.0. Возможные значения: `openid`, `profile` и `email`. |
 | HttpBinding | Нет  | Ожидаемая привязка HTTP для маркера доступа и конечных точек маркера утверждений. Возможные значения: `GET` или `POST`.  |
 | ValidTokenIssuerPrefixes | Нет  | Ключ, который можно использовать для входа во все клиенты при использовании мультитенантного поставщика удостоверений, например Azure Active Directory. |
 | UsePolicyInRedirectUri | Нет  | Указывает, следует ли использовать политику при создании универсального кода ресурса (URI) перенаправления. При настройке приложения в поставщике удостоверений необходимо указать URI перенаправления. URI перенаправления указывает на Azure AD B2C `https://login.microsoftonline.com/te/{tenant}/oauth2/authresp` (login.microsoftonline.com можно изменить с помощью your-tenant-name.b2clogin.com).  Если вы указываете `false`, необходимо добавить URI перенаправления для каждой используемой политики. Например, `https://login.microsoftonline.com/te/{tenant}/{policy}/oauth2/authresp`. |
@@ -98,7 +98,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 
 ## <a name="redirect-uri"></a>URI перенаправления
  
-При настройке URI перенаправления поставщика удостоверений введите `https://login.microsoftonline.com/te/tenant/oauth2/authresp`. Замените **tenant** именем своего клиента (например, contosob2c.onmicrosoft.com) или идентификатором клиента. URI перенаправления должен содержать только строчные символы.
+При настройке URI перенаправления поставщика удостоверений введите `https://login.microsoftonline.com/te/tenant/oauth2/authresp`. Не забудьте заменить **клиента** с именем вашего клиента (например, contosob2c.onmicrosoft.com) или идентификатор клиента. URI перенаправления должен содержать только строчные символы.
 
 Если вы используете домен **b2clogin.com** вместо **login.microsoftonline.com**, удостоверьтесь, что єто действительно требуется.
 

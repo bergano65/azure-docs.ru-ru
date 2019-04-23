@@ -8,14 +8,14 @@ ms.reviewer: jasonh
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 04/15/2019
-ms.openlocfilehash: c3c5484d865c73a6f478ffc9ad4c3fc86c2c8170
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
-ms.translationtype: MT
+ms.openlocfilehash: 64856d53168a7676cf279da2d8675ce81e1985f7
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59619211"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60005372"
 ---
-# <a name="copy-data-from-azure-data-factory-to-azure-data-explorer"></a>Копирование данных из фабрики данных Azure в обозреватель данных Azure
+# <a name="copy-data-to-azure-data-explorer-using-azure-data-factory"></a>Копирование данных в обозреватель данных Azure с помощью фабрики данных Azure 
 
 Обозреватель данных Azure — это служба аналитики быстрое, полностью управляемое данных для анализа в режиме реального времени на больших объемов данных, потоковая передача из многих источников, таких как приложения, веб-сайтов и устройств Интернета вещей. Итеративно изучения данных и определения шаблонов и аномалий, чтобы улучшить качество продуктов, расширить возможности клиентов, наблюдение за устройствами и повышать операций. Исследуйте новые вопросы и получайте ответы на них за считаные минуты. Фабрика данных Azure — это полностью управляемая облачная служба интеграции данных. Службу можно использовать для заполнения базы данных Azure Data Explorer данными из имеющейся системы и сэкономить время при построении решений аналитики.
 
@@ -32,7 +32,7 @@ ms.locfileid: "59619211"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 * [Обозреватель данных Azure кластера и базы данных](create-cluster-database-portal.md)
-* Amazon S3.
+* Источник данных.
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 
@@ -147,10 +147,6 @@ ms.locfileid: "59619211"
 
     ![ADX целевое хранилище данных](media/data-factory-load-data/destination-data-store.png)
 
-1. В **Выбор выходного файла или папки**, введите имя папки выходных данных, определение параметров и выберите **Далее**.
-
-    ![Укажите выходную папку.](media/data-factory-load-data/specify-path.png)
-
 1. В **сопоставление таблиц**, задайте имя целевой таблицы и выберите **Далее**.
 
     ![Сопоставление таблиц набора данных назначения](media/data-factory-load-data/destination-dataset-table-mapping.png)
@@ -186,6 +182,8 @@ ms.locfileid: "59619211"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения об изменении связанных служб, наборов данных и конвейеры в [пользовательский Интерфейс фабрики данных](/azure/data-factory/quickstart-create-data-factory-portal)
+* Дополнительные сведения о [соединитель Azure Data Explorer](/azure/data-factory/connector-azure-data-explorer) в фабрике данных Azure.
+
+* Дополнительные сведения об изменении связанных служб, наборов данных и конвейеры в [пользовательский Интерфейс фабрики данных](/azure/data-factory/quickstart-create-data-factory-portal).
 
 * Дополнительные сведения о [запросы обозревателя данных Azure](/azure/data-explorer/web-query-data) для выполнения запросов к данным.

@@ -9,12 +9,12 @@ ms.service: media-services
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 73ceb0a92b97e90b1fdb0c5562d623505e86b870
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: fe3466dcccf6381f26c823ce3deb2126c9534548
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59784898"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60006494"
 ---
 # <a name="embed-video-indexer-widgets-into-your-applications"></a>Внедрение мини-приложений Индексатора видео в приложения
 
@@ -28,7 +28,7 @@ ms.locfileid: "59784898"
 
 Мини-приложение **Cognitive Insights** содержит все визуальные аналитические сведения, извлеченные при индексировании видео. Это мини-приложение поддерживает следующие необязательные параметры URL-адреса:
 
-|ИМЯ|Определение|ОПИСАНИЕ|
+|Name|Определение|ОПИСАНИЕ|
 |---|---|---|
 |widgets|Строки, разделенные запятыми.|Позволяет управлять аналитическими сведениями, которые нужно преобразовать для просмотра. <br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,search` преобразует для просмотра в пользовательском интерфейсе только аналитические сведения о людях и торговых марках.<br/>Доступные значения: people, keywords, annotations, brands, sentiments, transcript, search.<br/>Не поддерживается с помощью URL-адреса, если используется version=2.<br/><br/>**Примечание.** Param URL-адрес мини-приложения не поддерживается в версии 2. |
 
@@ -36,7 +36,7 @@ ms.locfileid: "59784898"
 
 Мини-приложение **Player** позволяет выполнять потоковую передачу видео с переменной скоростью. Это мини-приложение поддерживает следующие необязательные параметры URL-адреса:
 
-|ИМЯ|Определение|ОПИСАНИЕ|
+|Name|Определение|ОПИСАНИЕ|
 |---|---|---|
 |t|Число секунд от начала видео.|Позволяет проигрывателю воспроизводить видео с определенной точки во времени.<br/>Пример: t=60|
 |captions|Код языка|Позволяет получать субтитры на указанном языке при загрузке мини-приложения, чтобы они были доступны в соответствующем меню.<br/>Пример: captions=en-Us.|
@@ -69,9 +69,9 @@ ms.locfileid: "59784898"
 
 `https://www.videoindexer.ai/embed/[insights | player]/<accountId>/<videoId>/?accessToken=<accessToken>`
     
-Используйте API [**Get Insights Widget**](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-insights-widget?), чтобы получить содержимое мини-приложения Cognitive Insights, или используйте API [**Get Video Access Token**](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Video-Access-Token?), добавив его в качестве параметра запроса в URL-адрес, как показано выше. Укажите этот URL-адрес как значение атрибута **iframe** **src**.
+Используйте API [**Get Insights Widget**](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Insights-Widget?&pattern=widget), чтобы получить содержимое мини-приложения Cognitive Insights, или используйте API [**Get Video Access Token**](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Video-Access-Token?), добавив его в качестве параметра запроса в URL-адрес, как показано выше. Укажите этот URL-адрес как значение атрибута **iframe** **src**.
 
-Чтобы включить редактирование аналитических сведений (например, как в нашем веб-приложении) во внедряемом мини-приложении, нужно передать маркер доступа с разрешениями на редактирование. Используйте API [**Get Insights Widget**](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-insights-widget?) или [**Get Video Access Token**](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Video-Access-Token?) с указанным параметром **&allowEdit=true**. 
+Чтобы включить редактирование аналитических сведений (например, как в нашем веб-приложении) во внедряемом мини-приложении, нужно передать маркер доступа с разрешениями на редактирование. Используйте API [**Get Insights Widget**](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Insights-Widget?&pattern=widget) или [**Get Video Access Token**](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Video-Access-Token?) с указанным параметром **&allowEdit=true**. 
 
 ## <a name="widgets-interaction"></a>Взаимодействие с мини-приложениями
 

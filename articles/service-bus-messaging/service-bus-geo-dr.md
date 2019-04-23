@@ -9,12 +9,12 @@ ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 9446bbd4783aaf20f1bc9079ec43f7050274bf11
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: a0581ef43e8a3c02126612a21122db559a941370
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55095622"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60009180"
 ---
 # <a name="azure-service-bus-geo-disaster-recovery"></a>Географическое аварийное восстановление в служебной шине Azure
 
@@ -129,13 +129,13 @@ ms.locfileid: "55095622"
 SKU уровня "Премиум" служебной шины также поддерживает [зоны доступности](../availability-zones/az-overview.md), предоставляя изолированные от сбоев места в регионе Azure.
 
 > [!NOTE]
-> Поддержка Зон доступности Служебной шины Azure ценовой категории "Премицм"доступна только в [регионах Azure](../availability-zones/az-overview.md#regions-that-support-availability-zones), в которых представлены зоны доступности.
+> Поддержка Зон доступности Служебной шины Azure ценовой категории "Премицм"доступна только в [регионах Azure](../availability-zones/az-overview.md#services-support-by-region), в которых представлены зоны доступности.
 
 Вы можете включить эту функцию только в новых пространствах имен с помощью портала Azure. Служебная шина не поддерживает миграцию существующих пространств имен. Вы не можете отключить избыточность в пределах зоны после ее включения в пространстве имен.
 
 ![3][]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со справочными материалами по [REST API для географического аварийного восстановления](/rest/api/servicebus/disasterrecoveryconfigs).
 - Запустите пример географического аварийного восстановления [на GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/GeoDR/SBGeoDR2/SBGeoDR2).

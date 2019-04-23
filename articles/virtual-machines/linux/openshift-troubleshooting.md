@@ -4,7 +4,7 @@ description: Устранение неполадок с развертывани
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: haroldwongms
-manager: joraio
+manager: mdotson
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 02/02/2019
+ms.date: 04/19/2019
 ms.author: haroldw
-ms.openlocfilehash: c65e76fb9453e93e856c76f397d187f9ee740fbd
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
-ms.translationtype: MT
+ms.openlocfilehash: af6746e7246b8783e5bdbef34cf1b57427aa7ebb
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58540352"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60001122"
 ---
 # <a name="troubleshoot-openshift-deployment-in-azure"></a>Устранение неполадок с развертыванием OpenShift в Azure
 
@@ -42,9 +42,9 @@ ms.locfileid: "58540352"
 
 ## <a name="log-files"></a>Файлы журналов
 
-Файлы журналов (STDERR и STDOUT) для скриптов подготовки узла находятся в каталоге /var/lib/waagent/custom-script/download/0 на всех узлах. Если произошла ошибка во время подготовки узла, просмотрите файлы журналов, чтобы определить ошибку.
+Файлы журналов (stderr и stdout) для сценариев подготовки узла находятся в `/var/lib/waagent/custom-script/download/0` на всех узлах. Если произошла ошибка во время подготовки узла, просмотрите файлы журналов, чтобы определить ошибку.
 
-Если скрипты подготовки выполнены успешно, необходимо проверить файлы журналов в каталоге /var/lib/waagent/custom-script/download/1 узла со сборником схем Ansible. Если ошибка произошла во время фактической установки OpenShift, в файле STDOUT она будет указана. Используйте эту информацию при обращении в службу поддержки за помощью.
+Если скрипты подготовки выполнен успешно, то файлы журналов в `/var/lib/waagent/custom-script/download/1` каталога узла playbook ansible необходимо проверить. Если ошибка произошла во время фактической установки OpenShift, в файле STDOUT она будет указана. Используйте эту информацию при обращении в службу поддержки за помощью.
 
 Пример выходных данных
 
@@ -93,11 +93,11 @@ Failure summary:
 
 ### <a name="private-key-has-a-passphrase"></a>Закрытый ключ имеет парольную фразу
 
-Выдается ошибка об отказе в разрешении для SSH-подключения. Выполните подключение по SSH к узлу со сборником схем Ansible, чтобы проверить парольную фразу для закрытого ключа.
+Вы увидите ошибку, которая запрещено разрешение для ssh. SSH к узлу playbook ansible для проверки парольную фразу для закрытого ключа.
 
 ### <a name="key-vault-secret-with-private-key-wasnt-created-correctly"></a>Секрет хранилища ключей с закрытым ключом не был правильно создан
 
-Закрытый ключ внедряется в узле со сборником схем Ansible — ~/.ssh/id_rsa. Убедитесь, что этот файл исправен. Проверьте его, установив SSH-подключение между узлом со сборником схем Ansible и одним из узлов кластера.
+Закрытый ключ копируется в узел playbook ansible — ~/.ssh/id_rsa. Убедитесь, что этот файл исправен. Проверьте его, установив SSH-подключение между узлом со сборником схем Ansible и одним из узлов кластера.
 
 ### <a name="service-principal-credentials-were-entered-incorrectly"></a>Учетные данные субъекта-службы были введены неправильно
 

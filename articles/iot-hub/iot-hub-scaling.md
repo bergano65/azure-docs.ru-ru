@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/02/2018
 ms.author: wesmc
-ms.openlocfilehash: 0214fbbe1ecc0d0b6b20b740ec898f24cf5b58ec
-ms.sourcegitcommit: e89b9a75e3710559a9d2c705801c306c4e3de16c
-ms.translationtype: MT
+ms.openlocfilehash: 8be2e59898ea5fcca1dbf1710974d0420941973e
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59571300"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60002142"
 ---
 # <a name="choose-the-right-iot-hub-tier-for-your-solution"></a>Выбор правильного уровня Центра Интернета вещей для решения
 
@@ -83,7 +83,7 @@ ms.locfileid: "59571300"
 | [Отправка события устройства](https://docs.microsoft.com/rest/api/iothub/device/senddeviceevent) | Yes | Yes |
 | Отправка события модуля | Yes | Yes |
 | [Обновление состояния отправки устройства](https://docs.microsoft.com/rest/api/iothub/device/updatefileuploadstatus) | Yes | Yes |
-| [Массовые операции устройств](/rest/api/iot-dps/runbulkenrollmentoperation/runbulkenrollmentoperation) | Да, за исключением возможностей IoT Edge | Yes | 
+| [Массовые операции устройств](/rest/api/iot-dps/runbulkenrollmentoperation/runbulkenrollmentgroupoperation) | Да, за исключением возможностей IoT Edge | Yes | 
 | [Очистка очереди команд](https://docs.microsoft.com/rest/api/iothub/service/purgecommandqueue) |   | Yes |
 | [Получение двойника устройства](https://docs.microsoft.com/rest/api/iothub/service/gettwin) |   | Yes |
 | Получение двойника модуля |   | Yes |

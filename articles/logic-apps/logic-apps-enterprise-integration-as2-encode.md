@@ -4,18 +4,18 @@ description: Кодирование сообщений AS в Azure Logic Apps с
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
-author: divyaswarnkar
-ms.author: divswa
-ms.reviewer: jonfan, estfan, LADocs
+author: ecfan
+ms.author: estfan
+ms.reviewer: jonfan, divswa, LADocs
 ms.topic: article
 ms.assetid: 332fb9e3-576c-4683-bd10-d177a0ebe9a3
 ms.date: 08/08/2018
-ms.openlocfilehash: 6bb19199929a004ee5668a3a6e057a69c24dd752
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: 455056feaa1b13022be3ab3c15880a87c50dedd9
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43122719"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60003553"
 ---
 # <a name="encode-as2-messages-with-azure-logic-apps-and-enterprise-integration-pack"></a>Кодирование сообщений AS2 в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
@@ -83,6 +83,6 @@ ms.locfileid: "43122719"
 ## <a name="view-the-swagger"></a>Просмотр Swagger
 Ознакомьтесь с [дополнительными сведениями о Swagger](/connectors/as2/). 
 
-## <a name="next-steps"></a>Дополнительная информация
-[Обзор пакета интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Обзор пакета интеграции Enterprise") 
+## <a name="next-steps"></a>Дальнейшие действия
+[Узнайте больше о пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Узнайте о пакете интеграции Enterprise.") 
 

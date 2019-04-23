@@ -1,24 +1,24 @@
 ---
 title: Создание правил и конечных точек службы виртуальной сети базы данных Azure для MySQL и управление ими с помощью Azure CLI | Документация Майкрософт
 description: В этой статье описывается, как создать конечные точки службы виртуальной сети и правила базы данных Azure для MySQL и управлять ими с помощью командной строки Azure CLI.
-author: mbolz
+author: bolzmj
 ms.author: mbolz
 manager: jhubbard
 ms.service: mysql
 ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 10/23/2018
-ms.openlocfilehash: 5c0364e2629bbf466e97d473fbd261444317de55
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
+ms.openlocfilehash: 199a5ead9856c5f9cba404ce89611efe2d78de8d
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56427996"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60004386"
 ---
 # <a name="create-and-manage-azure-database-for-mysql-vnet-service-endpoints-using-azure-cli"></a>Создание конечных точек службы виртуальной сети базы данных Azure для MySQL и управление ими с помощью Azure CLI
 Правила и конечные точки служб виртуальной сети расширяют частное адресное пространство виртуальной сети на сервер базы данных Azure для MySQL. С помощью удобных команд интерфейса командной строки Azure (CLI) можно создавать, обновлять, удалять, выводить списки и просматривать правила и конечные точки службы виртуальной сети для управления сервером. Общие сведения о конечных точках службы виртуальной сети базы данных Azure для MySQL, включая ограничения, см. в [этой статье](concepts-data-access-and-security-vnet.md). Конечные точки службы виртуальной сети доступны во всех поддерживаемых регионах Базы данных Azure для MySQL.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - Установите [Azure CLI](/cli/azure/install-azure-cli) или используйте Azure Cloud Shell в браузере.
 - [Сервер и база данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-cli.md).

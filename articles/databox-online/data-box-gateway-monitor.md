@@ -5,15 +5,15 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: gateway
-ms.topic: overview
+ms.topic: article
 ms.date: 04/15/2019
 ms.author: alkohli
-ms.openlocfilehash: d75591298771c6024309d09251239768ea87d4e2
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.openlocfilehash: 61da2454d6a72d43a7b4600d7ea85e6a3f82958f
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59618890"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59997212"
 ---
 # <a name="monitor-your-azure-data-box-gateway"></a>Мониторинг Шлюза Azure Data Box
 
@@ -24,7 +24,7 @@ ms.locfileid: "59618890"
 > [!div class="checklist"]
 > * Просмотр событий устройства и соответствующих оповещений
 > * Просмотр метрик емкости и транзакций устройства
-> * Настройка оповещений и управление ими
+> * Настройка оповещений и управление ими.
 
 ## <a name="view-device-events"></a>Просмотр событий устройства
 
@@ -38,6 +38,6 @@ ms.locfileid: "59618890"
 
 [!INCLUDE [Supported OS for clients connected to device](../../includes/data-box-edge-gateway-manage-alerts.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте об [управлении пропускной способностью](data-box-gateway-manage-bandwidth-schedules.md).

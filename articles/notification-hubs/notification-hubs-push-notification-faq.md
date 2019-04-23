@@ -15,12 +15,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: jowargo
-ms.openlocfilehash: 60dbef0f0d6532c9cd30c59902236b7ae4e70b0e
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
-ms.translationtype: MT
+ms.openlocfilehash: 642e586371a0ce6abe362f8b10b54bfd8baff678
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59524197"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59998929"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure: Часто задаваемые вопросы
 
@@ -53,17 +53,6 @@ ms.locfileid: "59524197"
 
 > [!NOTE]
 > Так как push-уведомления зависят от систем отправки уведомлений платформы сторонних поставщиков (например, Apple APNS и Google FCM), в соглашениях об уровне обслуживания не предусмотрено никаких гарантий по доставке этих сообщений. После того как Центр уведомлений передаст пакеты системам отправки уведомлений платформы (с поддержкой соглашений об уровне обслуживания), непосредственная доставка push-уведомлений возлагается на эти системы (без поддержки соглашений об уровне обслуживания).
-
-### <a name="which-customers-are-using-notification-hubs"></a>Какие клиенты используют концентраторы уведомлений
-
-Центры уведомлений использует множество клиентов. Далее перечислены несколько самых значимых из них:
-
-* Sochi 2014. Это сотни групп интересов, более 3 миллионов устройств, более 150 миллионов уведомлений, отправленных за 2 недели. [Анализ примера. Sochi]
-* Skanska. [Анализ примера. Skanska]
-* Seattle Times. [Анализ примера. Seattle Times]
-* Mural.ly. [Анализ примера. Mural.ly]
-* 7Digital. [Анализ примера. 7Digital]
-* Приложения Bing. Это десятки миллионов устройств, отправляющих 3 миллиона уведомлений ежедневно.
 
 ### <a name="how-do-i-upgrade-or-downgrade-my-hub-or-namespace-to-a-different-tier"></a>Как мне повысить или понизить уровень для узла или пространства имен?
 
@@ -219,11 +208,6 @@ Push-уведомления поддерживаются на платформа
 [портал Azure]: https://portal.azure.com
 [Цены на центры уведомлений]: https://azure.microsoft.com/pricing/details/notification-hubs/
 [Notification Hubs SLA]: https://azure.microsoft.com/support/legal/sla/
-[Анализ примера. Sochi]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=7942
-[Анализ примера. Skanska]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=5847
-[Анализ примера. Seattle Times]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=8354
-[Анализ примера. Mural.ly]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=11592
-[Анализ примера. 7Digital]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=3684
 [Использование интерфейса REST центров уведомлений]: https://msdn.microsoft.com/library/azure/dn530746.aspx
 [Отправка push-уведомлений с помощью центров уведомлений Azure в iOS]: https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
 [учебником по приложениям Chrome]: https://azure.microsoft.com/documentation/articles/notification-hubs-chrome-get-started/

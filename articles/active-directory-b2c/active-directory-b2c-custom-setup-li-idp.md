@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 5dad12596dde13cfa7e0c2031d58f605061b0e20
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 5bf1126a7015e668f3770835535b81c93d01cbda
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58862800"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60008112"
 ---
 # <a name="set-up-sign-in-with-a-linkedin-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи LinkedIn с использованием пользовательских политик
 
@@ -94,7 +94,7 @@ ms.locfileid: "58862800"
             <Key Id="client_secret" StorageReferenceId="B2C_1A_LinkedInSecret" />
           </CryptographicKeys>
           <OutputClaims>
-            <OutputClaim ClaimTypeReferenceId="socialIdpUserId" PartnerClaimType="id" />
+            <OutputClaim ClaimTypeReferenceId="issuerUserId" PartnerClaimType="id" />
             <OutputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="firstName" />
             <OutputClaim ClaimTypeReferenceId="surname" PartnerClaimType="lastName" />
             <OutputClaim ClaimTypeReferenceId="identityProvider" DefaultValue="linkedin.com" />
@@ -191,14 +191,14 @@ ms.locfileid: "58862800"
 
 Теперь, когда у вас есть кнопка, вам необходимо связать ее с действием. В нашем примере действие — это взаимодействие Azure AD B2C с учетной записью LinkedIn для получения маркера.
 
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути взаимодействия пользователя.
-2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для **Id** можно использовать то же значение, которое было использовано для **TargetClaimsExchangeId**:
+1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
+2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для идентификатора используется то же значение, которое использовалось для **TargetClaimsExchangeId**.
 
     ```XML
     <ClaimsExchange Id="LinkedInExchange" TechnicalProfileReferenceId="LinkedIn-OAUTH" />
     ```
     
-    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение **Id** ранее созданного технического профиля. Например, `LinkedIn-OAUTH`.
+    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `LinkedIn-OAUTH`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 
@@ -207,7 +207,7 @@ ms.locfileid: "58862800"
 Связь с Azure AD B2C осуществляется с помощью приложения, созданного в вашем клиенте. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите **фильтр каталога и подписки** в верхнем меню и выберите каталог, содержащий вашего клиента.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Щелкните **Приложения**, а затем выберите **Добавить**.
 5. Задайте имя для приложения, например *testapp1*.
@@ -251,14 +251,14 @@ ms.locfileid: "58862800"
 
 Теперь, когда у вас есть кнопка, вам необходимо связать ее с действием. В нашем примере действие — это взаимодействие Azure AD B2C с учетной записью LinkedIn для получения маркера.
 
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути взаимодействия пользователя.
-2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для **Id** можно использовать то же значение, которое было использовано для **TargetClaimsExchangeId**:
+1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
+2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для идентификатора используется то же значение, которое использовалось для **TargetClaimsExchangeId**.
 
     ```XML
     <ClaimsExchange Id="LinkedInExchange" TechnicalProfileReferenceId="LinkedIn-OAUTH" />
     ```
     
-    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение **Id** ранее созданного технического профиля. Например, `LinkedIn-OAUTH`.
+    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `LinkedIn-OAUTH`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 
@@ -267,7 +267,7 @@ ms.locfileid: "58862800"
 Связь с Azure AD B2C осуществляется с помощью приложения, созданного в вашем клиенте. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите **фильтр каталога и подписки** в верхнем меню и выберите каталог, содержащий вашего клиента.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Щелкните **Приложения**, а затем выберите **Добавить**.
 5. Задайте имя для приложения, например *testapp1*.

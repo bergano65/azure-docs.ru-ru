@@ -3,16 +3,16 @@ title: Определение причин несоответствия треб
 description: Если ресурс является несоответствующим, существует множество возможных причин. Узнайте, как выяснения причины несоответствия.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 02/26/2019
+ms.date: 03/30/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 8a593e92d7f24885c35043b874528e881d2e021e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 0af3fd8596bf558f9d5cc97c95be773aa40954cc
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59276105"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59995016"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Определение причин несоответствия требованиям
 
@@ -124,6 +124,8 @@ ms.locfileid: "59276105"
    ![Политика изменения журнала Visual Diff на странице журнала изменений](../media/determine-non-compliance/change-history-visual-diff.png)
 
 _Отличия между визуальными элементами_ позволяют обнаружить изменения ресурса. Обнаружены изменения не могут быть связаны с текущее состояние соответствия ресурса.
+
+Предоставляемые данных журнала изменений [график ресурсов Azure](../../resource-graph/overview.md). Чтобы запросить эти сведения за пределами портала Azure, см. в разделе [получить изменения ресурсов](../../resource-graph/how-to/get-resource-changes.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

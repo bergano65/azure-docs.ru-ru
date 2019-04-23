@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 12/21/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: c719bcaca91f9a6e77d79735283cf2c68404ef16
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: b0d1722df2bfe5116de2676dfc930d6050731bbd
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59680542"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60005032"
 ---
 # <a name="define-a-saml-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля SAML в настраиваемой политике Azure Active Directory B2C
 
@@ -96,7 +96,7 @@ https://your-tenant-name.b2clogin.com/your-tenant-name/your-policy/samlp/metadat
  
 В этом примере показаны утверждения, возвращаемые поставщиком удостоверений Facebook:
 
-- Утверждение **socialIdpUserId** сопоставляется с утверждением **assertionSubjectName**.
+- **IssuerUserId** утверждения сопоставляется **assertionSubjectName** утверждения.
 - Утверждение **first_name** сопоставляется с утверждением **givenName**.
 - Утверждение **last_name** сопоставляется с утверждением **surname**.
 - Утверждение **displayName** не сопоставляется с именем.
@@ -109,7 +109,7 @@ https://your-tenant-name.b2clogin.com/your-tenant-name/your-policy/samlp/metadat
  
 ```xml
 <OutputClaims>
-  <OutputClaim ClaimTypeReferenceId="socialIdpUserId" PartnerClaimType="assertionSubjectName" />
+  <OutputClaim ClaimTypeReferenceId="issuerUserId" PartnerClaimType="assertionSubjectName" />
   <OutputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="first_name" />
   <OutputClaim ClaimTypeReferenceId="surname" PartnerClaimType="last_name" />
   <OutputClaim ClaimTypeReferenceId="displayName" PartnerClaimType="name" />
@@ -124,7 +124,7 @@ https://your-tenant-name.b2clogin.com/your-tenant-name/your-policy/samlp/metadat
 | Атрибут | Обязательно для заполнения | ОПИСАНИЕ |
 | --------- | -------- | ----------- |
 | PartnerEntity | Yes | URL-адрес метаданных поставщика удостоверений SAML. Скопируйте метаданные поставщика удостоверений и добавьте их в элемент CDATA `<![CDATA[Your IDP metadata]]>` |
-| WantsSignedRequests | Нет  | Указывает, требуется ли для технического профиля, чтобы все исходящие запросы аутентификации были подписаны. Возможные значения: `true` или `false`. По умолчанию используется значение `true`. Если присвоено значение `true`, криптографический ключ **SamlMessageSigning** должен быть указан и все исходящие запросы аутентификации должны быть подписаны. Если присвоено значение `false`, параметры **SigAlg** и **Signature** (строка запроса или параметр отправки) не включаются в запрос. Эти метаданные также определяют атрибут **AuthnRequestsSigned** метаданных, который представляет собой выходные данные в метаданных технического профиля Azure AD B2C, совместно используемого с поставщиком удостоверений. Azure AD B2C не подписывает запрос, если атрибут **WantsSignedRequests** в метаданных технического профиля имеет значение `false` и атрибут **WantAuthnRequestsSigned** метаданных поставщика удостоверений имеет значение `false` или не указан. |
+| WantsSignedRequests | Нет  | Указывает, требуется ли для технического профиля, чтобы все исходящие запросы аутентификации были подписаны. Возможные значения: `true` или `false`. По умолчанию используется значение `true`. Если присвоено значение `true`, криптографический ключ **SamlMessageSigning** должен быть указан и все исходящие запросы аутентификации должны быть подписаны. Если присвоено значение `false`, параметры **SigAlg** и **Signature** (строка запроса или параметр отправки) не включаются в запрос. Эти метаданные также определяют атрибут **AuthnRequestsSigned** метаданных, который представляет собой выходные данные в метаданных технического профиля Azure AD B2C, совместно используемого с поставщиком удостоверений. Azure AD B2C не подписи запроса, если значение **WantsSignedRequests** в Технический профиль имеет значение метаданных `false` и метаданные поставщика удостоверений **WantAuthnRequestsSigned** — значение `false` или не указан. |
 | XmlSignatureAlgorithm | Нет  | Метод, который Azure AD B2C использует для подписывания запроса SAML. Эти метаданные определяют значение параметра **SigAlg** (строка запроса или параметр отправки) в запросе SAML. Возможные значения: `Sha256`, `Sha384`, `Sha512` или `Sha1`. Настройте алгоритм подписи на обеих сторонах, используя одно и то же значение. Используйте только тот алгоритм, который поддерживается вашим сертификатом. | 
 | WantsSignedAssertions | Нет  | Указывает, требуется ли для технического профиля, чтобы все входящие утверждения были подписаны. Возможные значения: `true` или `false`. По умолчанию используется значение `true`. Если присвоено значение `true`, весь раздел утверждений `saml:Assertion`, отправленный поставщиком удостоверений в Azure AD B2C, должен быть подписан. Если присвоено значение `false`, поставщик удостоверений не должен подписывать утверждения, но даже если он подпишет, Azure AD B2C не проверит его подпись. Эти метаданные также определяют флаг **WantsAssertionsSigned** метаданных, который представляет собой выходные данные в метаданных технического профиля Azure AD B2C, совместно используемого с поставщиком удостоверений. Если отключить проверку утверждений, также может понадобиться отключить проверку подписи ответа (дополнительные сведения см. в разделе **ResponsesSigned**). |
 | ResponsesSigned | Нет  | Возможные значения: `true` или `false`. По умолчанию используется значение `true`. Если присвоено значение `false`, поставщик удостоверений не должен подписывать ответ SAML, но даже если он подпишет, Azure AD B2C не проверит его подпись. Если присвоено значение `true`, ответ SAML, отправляемый поставщиком удостоверений в Azure AD B2C, подписан и должен быть проверен. Если отключить проверку ответов SAML, также может понадобиться отключить проверку подписи утверждений (дополнительные сведения см. в разделе **WantsSignedAssertions**). |

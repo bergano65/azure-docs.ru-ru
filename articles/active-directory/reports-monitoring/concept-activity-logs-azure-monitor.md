@@ -1,6 +1,6 @@
 ---
-title: Журналы действий Azure Active Directory в Azure Monitor (предварительная версия) | Документация Майкрософт
-description: Знакомство с журналами действий Azure Active Directory в Azure Monitor (предварительная версия)
+title: Журналы действий Azure Active Directory в Azure Monitor | Документация Майкрософт
+description: Введение в Azure Active Directory действие входит в Azure Monitor
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -13,20 +13,20 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 11/13/2018
+ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0469f69f026c578de9598401e69262279669d19f
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
-ms.translationtype: MT
+ms.openlocfilehash: 7fbb90e95c07c66f45d49076f0570ac028c37244
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58436308"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60011407"
 ---
-# <a name="azure-ad-activity-logs-in-azure-monitor-preview"></a>Журналы действий Azure AD в Azure Monitor (предварительная версия)
+# <a name="azure-ad-activity-logs-in-azure-monitor"></a>Журналы действий Azure AD в Azure Monitor
 
-Теперь журналы действий Azure Active Directory (Azure AD) можно перенаправлять в несколько конечных точек для долгосрочного хранения и анализа данных. Общедоступная предварительная версия журналов Azure AD в Azure Monitor позволяет:
+Журналы действий Azure Active Directory (Azure AD) можно направлять в несколько конечных точек для долго срока хранения и данные аналитики. Эта функция позволяет:
 
 * архивировать журналы действий Azure AD в учетной записи хранения Azure, чтобы сохранять данные долгое время;
 * выполнять потоковую передачу журналов действий Azure AD в концентратор событий Azure для получения аналитики с использованием популярных инструментов управления информационной безопасностью и событиями безопасности (SIEM), такие как Splunk и QRadar;

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95d19068e482722bf6cd01e44d27c2719bc419a3
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
-ms.translationtype: MT
+ms.openlocfilehash: a945316df27460fef48a8bb4d43e46d412d2ae81
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59564537"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60009720"
 ---
 # <a name="integrate-your-existing-nps-infrastructure-with-azure-multi-factor-authentication"></a>Интеграция существующей инфраструктуры NPS с Многофакторной идентификацией Azure
 
@@ -76,14 +76,14 @@ Windows Server 2008 R2 с пакетом обновления 1 (SP1) или б�
 
 Необходимо обеспечить обмен данными между сервером NPS и указанными ниже URL-адресами через порты 80 и 443.
 
-* https://adnotifications.windowsazure.com  
-* https://login.microsoftonline.com
+* https:\//adnotifications.windowsazure.com  
+* https:\//login.microsoftonline.com
 
 Кроме того, для выполнения требуется подключение к следующим URL-адресам [установки адаптера, используя предоставленный сценарий PowerShell](#run-the-powershell-script)
 
-- https://login.microsoftonline.com
-- https://provisioningapi.microsoftonline.com
-- https://aadcdn.msauth.net
+- https:\//login.microsoftonline.com
+- https:\//provisioningapi.microsoftonline.com
+- https:\//aadcdn.msauth.net
 
 ## <a name="prepare-your-environment"></a>Подготовка среды
 

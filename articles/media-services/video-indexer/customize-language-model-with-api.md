@@ -9,12 +9,12 @@ ms.service: media-services
 ms.topic: article
 ms.date: 02/10/2019
 ms.author: anzaman
-ms.openlocfilehash: c2c722331c95e72bae5605606564a2083e2802e3
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: ca1e66d20b19c1a5b85a4f4ff1c433331116bee7
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58075038"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60002040"
 ---
 # <a name="customize-a-language-model-with-the-video-indexer-apis"></a>Настройка языковой модели с помощью API Индексатора видео
 
@@ -47,7 +47,7 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 --data-ascii "{body}" 
 ```
 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Create-PersonModel?).
+[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Create-Person-Model?).
 
 ### <a name="request-parameters"></a>Параметры запроса
 
@@ -59,14 +59,14 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 |modelName|строка|Yes|Имя языковой модели|
 |Язык|строка|Yes|Язык языковой модели <br/>Параметру **язык** необходимо присвоить язык в формате BCP-47 "тег языка – регион" (например, en-US). Поддерживаемые языки: английский (en-US), немецкий (de-DE), испанский (es-SP), арабский (ar-EG), французский (fr-FR), хинди (hi-HI), итальянский (it-IT), японский (ja-JP), португальский (pt-BR), русский (ru-RU) и китайский (zh-CN).  |
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Чтобы передать файлы, которые будут добавлены в языковую модель, необходимо передать файлы в тексте, используя данные формы в дополнение к предоставлению значений для обязательных параметров выше. Это можно осуществить двумя путями: 
 
 1. Ключом будет имя файла, а значением будет TXT-файл.
 2. Ключом будет имя файла, а значением будет URL-адрес текстового файла.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 В ответе содержатся метаданные для вновь созданной языковой модели вместе с метаданными для каждого файла модели, используя формат в примере выходных данных JSON.
 
@@ -118,7 +118,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Langua
 curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Train?accessToken={accessToken}"
 ```
  
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/5ae5bac3cf761779a6c2ab27?).
+[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Train-Language-Model?&pattern=train).
 
 ### <a name="request-parameters"></a>Параметры запроса
 
@@ -129,11 +129,11 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 |modelId|строка|Yes|Идентификатор языковой модели (создается при создании языковой модели)|
 |accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 В ответе содержатся метаданные для только что обученной языковой модели вместе с метаданными для каждого файла модели, используя формат в примере выходных данных JSON.
 
@@ -183,7 +183,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Langua
 curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}?accessToken={accessToken}"
 ```
  
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/5ae5ba53782606e91f65be9d?).
+[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Language-Model?&pattern=delete).
 
 ### <a name="request-parameters"></a>Параметры запроса 
 
@@ -194,11 +194,11 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 |modelId|строка|Yes|Идентификатор языковой модели (создается при создании языковой модели)|
 |accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 При успешном удалении языковой модели содержимое не возвращается.
 
@@ -225,7 +225,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 --data-ascii "{body}" 
 ```
  
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/5ae5b3ce85f4684240bdb78f?).
+[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Language-Model?&pattern=update).
 
 ### <a name="request-parameters"></a>Параметры запроса 
 
@@ -238,14 +238,14 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 |modelName|строка|Нет |Новое имя, которое можно предоставить к модели|
 |enable|Логическое|Нет |Выберите, все ли файлы этой модели включены (true) или отключены (false)|
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Чтобы передать файлы, которые будут добавлены в языковую модель, необходимо передать файлы в тексте, используя данные формы в дополнение к предоставлению значений для обязательных параметров выше. Это можно осуществить двумя путями: 
 
 1. Ключом будет имя файла, а значением будет TXT-файл.
 2. Ключом будет имя файла, а значением будет URL-адрес текстового файла.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 В ответе содержатся метаданные для только что обученной языковой модели вместе с метаданными для каждого файла модели, используя формат в примере выходных данных JSON.
 
@@ -294,7 +294,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Langua
 curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Files/{fileId}?accessToken={accessToken}?fileName={string}&enable={string}"
 ```
  
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/5ae5b60547f33c1c2b2d1375?).
+[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Language-Model-file?&pattern=update).
 
 ### <a name="request-parameters"></a>Параметры запроса 
 
@@ -308,11 +308,11 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 |fileName|строка|Нет |Имя обновляемого файла|
 |enable|Логическое|Нет |Обновление, является ли этот файл включен (true) или отключен (false) в языковой модели|
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 В ответе содержатся метаданные файла, который был обновлен в соответствии с форматом выходных данных JSON, приведенных в примере ниже.
 
@@ -344,7 +344,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Langua
 curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}?accessToken={accessToken}"
 ```
  
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/5ae5b4fcbd9b437d27d53f16).
+[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Language-Model?&pattern=get).
 
 ### <a name="request-parameters-and-request-body"></a>Параметры и текст запроса
 
@@ -355,11 +355,11 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 |modelId|строка|Yes|Идентификатор языковой модели (создается при создании языковой модели)|
 |accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 В ответе содержатся метаданные для указанной языковой модели вместе с метаданными для каждого файла модели, используя формат выходных данных JSON, приведенных в примере ниже.
 
@@ -409,7 +409,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Langua
 curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language?accessToken={accessToken}"
 ```
  
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/5ae5b4979e6ecbd30faa6f75?).
+[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Language-Models?&pattern=get).
 
 ### <a name="request-parameters"></a>Параметры запроса
 
@@ -419,11 +419,11 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 |accountID|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
 |accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 В ответе содержатся метаданные для конкретной языковой модели вместе с метаданными для каждого файла модели, используя формат выходных данных JSON, приведенных в примере ниже.
 
@@ -480,7 +480,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Langua
 curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Files/{fileId}?accessToken={accessToken}"
 ```
  
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/5ae5b57b5de51e64ee52242e).
+[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Language-Model-File?&pattern=delete).
 
 ### <a name="request-parameters"></a>Параметры запроса 
 
@@ -492,11 +492,11 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 |fileId|строка|Yes|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
 |accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 При успешном удалении файла из языковой модели содержимое не возвращается.
 
@@ -517,7 +517,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Person
 curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Files/{fileId}?accessToken={accessToken}"
 ```
  
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/5ae5b73f9e6416d7a9965b42).
+[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Language-Model-File-Data?&pattern=get%20language%20model).
 
 ### <a name="request-parameters"></a>Параметры запроса 
 
@@ -529,11 +529,11 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 |fileId|строка|Yes|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
 |accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 Ответ предоставляет содержимое и метаданные файла в формате JSON следующего вида.
 
@@ -566,7 +566,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Langua
 curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Files/{fileId}/download?accessToken={accessToken}"
 ```
  
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/5ae5b99e522cb47bd9679122).
+[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Download-Language-Model-File-Content?).
 
 ### <a name="request-parameters"></a>Параметры запроса 
 
@@ -578,11 +578,11 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 |fileId|строка|Yes|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
 |accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
-### <a name="request-body"></a>Тело запроса 
+### <a name="request-body"></a>Текст запроса 
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 Ответом будет загрузка текстового файла с содержимым файла в формате JSON. 
 

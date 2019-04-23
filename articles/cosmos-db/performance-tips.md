@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 01/24/2018
 ms.author: sngun
-ms.openlocfilehash: cf90f7231362d147914e22419c9008d2628a483f
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: 81adf643541b5a4486694026acec49129ef8e5a6
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57861899"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60000629"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net"></a>Советы по повышению производительности для .NET в Azure Cosmos DB
 
@@ -85,6 +85,11 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 4. **Увеличение количества потоков или задач**
 
     Так как вызовы Cosmos DB выполняются по сети, может потребоваться изменить степень параллелизма запросов, чтобы клиентское приложение тратило минимальное количество времени на ожидание между запросами. Например, если вы используете [библиотеку параллельных задач .NET](https://msdn.microsoft.com//library/dd460717.aspx), создайте несколько сотен задач для чтения или записи в Azure Cosmos DB.
+
+5. **Включить функцию ускорения сети**
+
+   Чтобы уменьшить задержки и флуктуации ЦП, мы рекомендуем, что клиентские виртуальные машины ускоренную сеть. См. в разделе [Создание виртуальной машины Windows с ускоренной сетью](../virtual-network/create-vm-accelerated-networking-powershell.md) или [Создание виртуальной машины Linux с ускоренной сетью](../virtual-network/create-vm-accelerated-networking-cli.md) статей, чтобы включить функцию ускорения сети.
+
 
 ## <a name="sdk-usage"></a>Использование пакета SDK
 1. **Установка последней версии пакета SDK**

@@ -10,18 +10,18 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: fde556c60f823f4bd287ca5672503158c7292f51
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: e92378cca445191f42708bd6348b1c75b29da1a1
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58918932"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60009843"
 ---
 # <a name="define-an-oauth2-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определить OAuth2 технического профиля в настраиваемую политику Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Azure Active Directory (Azure AD) B2C поддерживает протокол OAuth2 для поставщиков удостоверений. Это основной протокол для авторизации и делегированной аутентификации. Дополнительные сведения см. в документе [RFC 6749 о системе авторизации OAuth 2.0](https://tools.ietf.org/html/rfc6749). С помощью технического профиля OAuth2 можно создавать федерацию с поставщиками удостоверений на основе OAuth2, такими как Facebook и Live.com. Это позволяет пользователям входить в систему с помощью своих удостоверений для социальных или корпоративных сетей.
+Azure Active Directory (Azure AD) B2C поддерживает протокол OAuth2 для поставщиков удостоверений. OAuth2 — это основной протокол для авторизации и делегирование проверки подлинности. Дополнительные сведения см. в документе [RFC 6749 о системе авторизации OAuth 2.0](https://tools.ietf.org/html/rfc6749). С помощью OAuth2 технического профиля можно использовать для федерации с поставщиком удостоверений на основе OAuth2, например Facebook. Федеративные отношения с поставщиком удостоверений позволяет пользователям вход с помощью существующие социальных сетей или корпоративными удостоверениями.
 
 ## <a name="protocol"></a>Протокол
 
@@ -54,7 +54,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 
 - Утверждение **first_name** сопоставляется с утверждением **givenName**.
 - Утверждение **last_name** сопоставляется с утверждением **surname**.
-- Утверждение **DisplayName** не сопоставляется с именем.
+- **DisplayName** утверждения без сопоставления имени.
 - Утверждение **email** не сопоставляется с именем.
 
 Технический профиль также возвращает утверждения, которые не возвращаются поставщиком удостоверений: 
@@ -64,7 +64,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 
 ```xml
 <OutputClaims>
-  <OutputClaim ClaimTypeReferenceId="socialIdpUserId" PartnerClaimType="id" />
+  <OutputClaim ClaimTypeReferenceId="issuerUserId" PartnerClaimType="id" />
   <OutputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="first_name" />
   <OutputClaim ClaimTypeReferenceId="surname" PartnerClaimType="last_name" />
   <OutputClaim ClaimTypeReferenceId="displayName" PartnerClaimType="name" />
@@ -90,7 +90,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 | ClaimsEndpointFormat | Нет  | Значение для параметра строки запроса на формат. Например, можно задать значение `json` для этой конечной точки утверждений LinkedIn: `https://api.linkedin.com/v1/people/~?format=json`. | 
 | ProviderName | Нет  | Имя поставщика удостоверений. |
 | response_mode | Нет  | Метод, который использует поставщик удостоверений, чтобы отправить результат обратно в Azure AD B2C. Возможные значения: `query`, `form_post` (по умолчанию) или `fragment`. |
-| scope | Нет  | Область запроса доступа, определенная в соответствии со спецификацией поставщика удостоверений OAuth2. Возможные значения: `openid`, `profile` и `email`. |
+| scope | Нет  | Область запроса, который определен в соответствии со спецификацией поставщика удостоверений OAuth2. Возможные значения: `openid`, `profile` и `email`. |
 | HttpBinding | Нет  | Ожидаемая привязка HTTP для маркера доступа и конечных точек маркера утверждений. Возможные значения: `GET` или `POST`.  |
 | ResponseErrorCodeParamName | Нет  | Имя параметра, который содержит сообщение об ошибке, возвращаемое по HTTP 200 (ОК). |
 | ExtraParamsInAccessTokenEndpointResponse | Нет  | Содержит дополнительные параметры, которые могут возвращать в ответе от **AccessTokenEndpoint** некоторые поставщики удостоверений. Например, ответ от **AccessTokenEndpoint** содержит дополнительный параметр, такой как `openid`, который является обязательным параметром, помимо access_token, в строке запроса **ClaimsEndpoint**. При указании нескольких имен параметров их следует экранировать, разделяя запятой (,). |
@@ -102,7 +102,7 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 
 | Атрибут | Обязательно для заполнения | ОПИСАНИЕ |
 | --------- | -------- | ----------- |
-| client_secret | Yes | Секрет клиента приложения поставщика удостоверений. Ключ шифрования является обязательным, только если для метаданных **response_types** задано значение `code`. В этом случае Azure AD B2C выполняет другой вызов для обмена кода авторизации на маркер доступа. Если для метаданных задано значение `id_token`, криптографический ключ можно не указывать.  |  
+| client_secret | Yes | Секрет клиента приложения поставщика удостоверений. Ключ шифрования является обязательным, только если для метаданных **response_types** задано значение `code`. В этом случае Azure AD B2C выполняет другой вызов для обмена кода авторизации на маркер доступа. Если задано значение метаданных `id_token`, можно опустить криптографический ключ. |  
 
 ## <a name="redirect-uri"></a>URI перенаправления
 

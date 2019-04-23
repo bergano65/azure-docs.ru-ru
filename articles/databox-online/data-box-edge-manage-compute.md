@@ -5,15 +5,15 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
-ms.topic: overview
+ms.topic: article
 ms.date: 03/26/2019
 ms.author: alkohli
-ms.openlocfilehash: f2416bd3393ae05a74665fe7e11bd1c8c04c91d7
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: 58c4f42859f735a81a3e3edc801daff5d26194a0
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58499036"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59997654"
 ---
 # <a name="manage-compute-on-your-azure-data-box-edge"></a>Управление вычислениями в Azure Data Box Edge
 
@@ -151,6 +151,6 @@ ms.locfileid: "58499036"
     ![Включение параметров вычислений](media/data-box-edge-manage-compute/compute-settings-1.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [управлять пользователями с помощью портала Azure](data-box-edge-manage-users.md).

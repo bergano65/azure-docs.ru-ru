@@ -5,15 +5,15 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: gateway
-ms.topic: overview
+ms.topic: article
 ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 105996cf72e2a96a06a4478518e68765d3d158f5
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 9284400254860b47f3aea6de5c79ab4c2a77f199
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58516898"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60005083"
 ---
 # <a name="use-the-azure-portal-to-manage-shares-on-your-azure-data-box-gateway"></a>Управление общими папками в Шлюзе Azure Data Box с помощью портала Azure 
 
@@ -131,6 +131,6 @@ ms.locfileid: "58516898"
 > Это действие достаточно выполнить один раз для каждой учетной записи хранения. Не нужно повторять это действие для всех общих папок, связанных с одной учетной записью.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [управлять пользователями с помощью портала Azure](data-box-gateway-manage-users.md).

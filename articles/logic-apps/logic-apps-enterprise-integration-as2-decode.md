@@ -4,18 +4,18 @@ description: Декодирование сообщений AS в Azure Logic App
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
-author: divyaswarnkar
-ms.author: divswa
-ms.reviewer: jonfan, estfan, LADocs
+author: ecfan
+ms.author: estfan
+ms.reviewer: jonfan, divswa, LADocs
 ms.topic: article
 ms.assetid: cf44af18-1fe5-41d5-9e06-cc57a968207c
 ms.date: 08/08/2018
-ms.openlocfilehash: 06ffa6bddc1340ad548f9baf30eba65ba503bf73
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: ca297e1b4a007db3020b4369132b190608484738
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43128287"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60001632"
 ---
 # <a name="decode-as2-messages-with-azure-logic-apps-and-enterprise-integration-pack"></a>Декодирование сообщений AS2 в Azure Logic Apps с помощью Пакета интеграции Enterprise 
 
@@ -95,6 +95,6 @@ ms.locfileid: "43128287"
 ## <a name="view-the-swagger"></a>Просмотр Swagger
 Ознакомьтесь с [дополнительными сведениями о Swagger](/connectors/as2/). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Обзор Пакета интеграции Enterprise](logic-apps-enterprise-integration-overview.md) 
 

@@ -6,18 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 02/05/2019
+ms.date: 04/19/2019
 ms.author: alkohli
-ms.openlocfilehash: 5770cd9a4955013100b7e58698eed77da10c0583
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: 71e0ebf7d7851ae65a6fba67a1695d755fd98bb1
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58012263"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60004573"
 ---
 # <a name="azure-data-box-blob-storage-requirements"></a>Требования к хранилищу BLOB-объектов Azure Data Box
 
-В этой статье перечислены версии API-интерфейсов Azure, пакетов SDK и средств, поддерживаемых хранилищем BLOB-объектов Data Box. Хранилище BLOB-объектов Data Box предоставляет функции управления большими двоичными объектами с помощью семантики, согласованной с Azure. В этой статье также перечислены известные различия между хранилищем BLOB-объектов Azure Data Box и службой хранилища Azure.
+В этой статье перечислены версии API-интерфейсы Azure, клиентских библиотек Azure и средств, поддерживаемых с хранилищем BLOB-объект поля данных. Хранилище BLOB-объектов Data Box предоставляет функции управления большими двоичными объектами с помощью семантики, согласованной с Azure. В этой статье также перечислены известные различия между хранилищем BLOB-объектов Azure Data Box и службой хранилища Azure.
 
 Прежде чем подключиться к хранилищу BLOB-объектов Data Box, советуем внимательно ознакомиться с приведенной информацией и при необходимости обращаться к ней.
 
@@ -38,7 +38,7 @@ ms.locfileid: "58012263"
 
 Следующие версии API служб хранилища Azure поддерживаются с хранилищем BLOB-объектов Data Box:
 
-Общедоступная предварительная версия (Azure Data Box 1.8 и более поздняя)
+Azure Data Box версии 1.8 и более поздние
 
 - [2017-11-09](/rest/api/storageservices/version-2017-11-09)
 - [2017-07-29](/rest/api/storageservices/version-2017-07-29)
@@ -46,20 +46,7 @@ ms.locfileid: "58012263"
 - [2016-05-31](/rest/api/storageservices/version-2016-05-31);
 - [2015-12-11](/rest/api/storageservices/version-2015-12-11);
 - [2015-07-08](/rest/api/storageservices/version-2015-07-08);
-- [2015-04-05](/rest/api/storageservices/version-2015-04-05).
-
-## <a name="supported-sdk-versions"></a>Поддерживаемые версии пакета SDK
-
-|     Клиентская библиотека     |     Поддерживаемая версия хранилища BLOB-объектов службы Data Box     |     Ссылка             |     Спецификация конечной точки         |
-|------------------------|-------------------------------------------------|---------------------------------------------|------------------------------------|
-|    .NET                |    От 6.2.0 до 8.7.0                         |    пакет Nuget: https://www.nuget.org/packages/WindowsAzure.Storage/ <br>Выпуск GitHub: https://github.com/Azure/azure-storage-net/releases                                                                      |    Файл app.config                 |
-|    Java                |    От 4.1.0 до 6.1.0                          |    Пакет Maven: https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-java/releases                                                      |    Настройка строки подключения         |
-|    Node.js             |    От 1.1.0 до 2.7.0                          |    Ссылка на NPM:   https://www.npmjs.com/package/azure-storage (Например: выполните команду "npm install azure-storage@2.7.0")   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-node/releases                            |    Объявление экземпляра службы    |
-|    C++                 |    От 2.4.0 до 3.1.0                          |    Пакет NuGet: https://www.nuget.org/packages/wastorage.v140/   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-cpp/releases                                                                            |    Настройка строки подключения         |
-|    PHP                 |    От 0.15.0 до 1.0.0                         |    Выпуск GitHub: https://github.com/Azure/azure-storage-php/releases   <br>Установка через компоновщик (подробности см. ниже)                                                                                                   |    Настройка строки подключения         |
-|    Python              |    От 0.30.0 до 1.0.0                         |    Выпуск GitHub: https://github.com/Azure/azure-storage-python/releases                                                                                                                                              |    Объявление экземпляра службы    |
-|    Ruby                |    От 0.12.1 до 1.0.1                         |    Пакет RubyGems:<br>Общая версия: https://rubygems.org/gems/azure-storage-common/   <br>Большой двоичный объект: https://rubygems.org/gems/azure-storage-blob/      <br>Выпуск GitHub: https://github.com/Azure/azure-storage-ruby/releases    |                                   |
-
+- [2015-04-05](/rest/api/storageservices/version-2015-04-05) |
 ## <a name="supported-azure-client-libraries"></a>Поддерживаемые клиентские библиотеки Azure
 
 Для хранилища BLOB-объектов службы Data Box существуют определенные клиентские библиотеки и определенные требования к суффиксу конечной точки. Конечные точки хранилища BLOB-объектов Data Box не имеют полного соответствия с последней версией REST API хранилища BLOB-объектов Azure. Сведения см. в разделе [Поддерживаемые версии API](#supported-api-versions). Для клиентских библиотек хранилища вам необходимо знать версию, совместимую с REST API.
@@ -68,12 +55,12 @@ ms.locfileid: "58012263"
 
 | Клиентская библиотека     |Поддерживаемая версия хранилища BLOB-объектов службы Data Box     | Ссылка   |     Спецификация конечной точки      |
 |--------------------|--------------------------------------------|--------|---------------------------------|
-|    .NET                |    8.7.0                                           |    Пакет NuGet: https://www.nuget.org/packages/WindowsAzure.Storage/8.7.0    <br>Выпуск GitHub: https://github.com/Azure/azure-storage-net/releases/tag/v8.7.0                                                                                                                                                                                               |    Файл app.config                 |
-|    Java                |    6.1.0                                           |    Пакет Maven: https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/6.1.0   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-java/releases/tag/v6.1.0                                                                                                                                                                              |    Настройка строки подключения         |
-|    Node.js             |    2.7.0                                           |    Ссылка на NPM:   https://www.npmjs.com/package/azure-storage (Выполните команду npm install azure-storage@2.7.0)   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-node/releases/tag/v2.7.0                                                                                                                                                                        |    Объявление экземпляра службы    |
-|    C++                 |    3.1.0                                           |    Пакет NuGet: https://www.nuget.org/packages/wastorage.v140/3.1.0   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-cpp/releases/tag/v3.1.0                                                                                                                                                                                                     |    Настройка строки подключения         |
-|    PHP                 |    1.0.0                                           |    Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-php/releases/tag/v1.0.0-common   <br>Большой двоичный объект: https://github.com/Azure/azure-storage-php/releases/tag/v1.0.0-blob      <br>Установка через компоновщик (дополнительные сведения см. ниже)                                                                                                             |    Настройка строки подключения         |
-|    Python              |    1.0.0                                           |    Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-python/releases/tag/v1.0.0-common <br>Большой двоичный объект: https://github.com/Azure/azure-storage-python/releases/tag/v1.0.0-blob                                                                                                                                                                          |    Объявление экземпляра службы    |
+|    .NET                |    9.2.0                                           |    Пакет NuGet: https://www.nuget.org/packages/WindowsAzure.Storage/9.2.0    <br>Выпуск GitHub: https://github.com/Azure/azure-storage-net/releases/tag/v9.2.0                                                                                                                                                                                               |    Файл app.config                 |
+|    Java                |    7.0.0                                           |    Пакет Maven: https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/6.1.0   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-java/releases/tag/v7.0.0                                                                                                                                                                              |    Настройка строки подключения         |
+|    Node.js             |    2.8.3                                           |    Ссылка на NPM:   https://www.npmjs.com/package/azure-storage   (Запуска: `npm install azure-storage@2.7.0`)   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-node/releases/tag/v2.8.3                                                                                                                                                                        |    Объявление экземпляра службы    |
+|    C++                 |    5.2.0                                           |    Пакет NuGet: https://www.nuget.org/packages/wastorage.v140/5.2.0   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-cpp/releases/tag/v5.2.0                                                                                                                                                                                                     |    Настройка строки подключения         |
+|    PHP                 |    1.2.0                                           |    Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-common   <br>Большой двоичный объект: https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-blob      <br>Установка через компоновщик (дополнительные сведения см. ниже)                                                                                                             |    Настройка строки подключения         |
+|    Python              |    1.1.0                                           |    Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-python/releases/tag/v1.0.0-common <br>Большой двоичный объект: https://github.com/Azure/azure-storage-python/releases/tag/v1.1.0-blob                                                                                                                                                                          |    Объявление экземпляра службы    |
 |    Ruby                |    1.0.1                                           |    Пакет RubyGems:<br>Общая версия: https://rubygems.org/gems/azure-storage-common/versions/1.0.1   <br>Большой двоичный объект: https://rubygems.org/gems/azure-storage-blob/versions/1.0.1         <br>Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-common   <br>Большой двоичный объект: https://github.com/Azure/azure-storage-ruby/releases/tag/v1.0.1-blob          |    Настройка строки подключения         |
 
 
@@ -81,22 +68,22 @@ ms.locfileid: "58012263"
 ### <a name="install-php-client-via-composer---current"></a>Установка клиента PHP через компоновщик — текущая версия
 
 Для установки через компоновщик сделайте следующее (возьмите для примера большой двоичный объект).
-Создайте файл с именем composer.json в корневом каталоге проекта со следующим кодом.
+1. Создайте файл с именем composer.json в корневом каталоге проекта со следующим кодом.
 
-```
- {
-   "require": {
-   "Microsoft/azure-storage-blob":"1.0.0"
-   }
-```
+    ```
+    {
+    "require": {
+    "Microsoft/azure-storage-blob":"1.2.0"
+    }
+    ```
 
-Загрузите `composer.phar` в корневую папку проекта.
+2. Загрузите `composer.phar` в корневую папку проекта.
 
-Выполните команду: установка php composer.phar.
+3. Выполните команду: установка php composer.phar.
 
 ### <a name="endpoint-declaration"></a>Объявление конечной точки
 
-Конечная точка хранилища BLOB-объектов службы Azure Data Box содержит две части: имя региона и домен Data Box. В пакета SDK для хранилища BLOB-объектов поле данных, конечная точка по умолчанию является \<последовательной нет. устройства >. microsoftdatabox.com.  Дополнительные сведения о конечной точке службы BLOB-объектов см. в статье [Руководство. Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API](data-box-deploy-copy-data-via-rest.md).
+Конечная точка хранилища BLOB-объектов службы Azure Data Box содержит две части: имя региона и домен Data Box. В пакета SDK для хранилища BLOB-объектов поле данных, конечная точка по умолчанию является `\<serial no. of the device>.microsoftdatabox.com`.  Дополнительные сведения о конечной точке службы BLOB-объектов см. в статье [Руководство. Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API](data-box-deploy-copy-data-via-rest.md).
  
 ## <a name="examples"></a>Примеры
 

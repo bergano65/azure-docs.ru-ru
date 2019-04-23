@@ -1,23 +1,23 @@
 ---
 title: Создание правил и конечных точек службы виртуальной сети базы данных Azure для PostgreSQL и управление ими с помощью Azure CLI
 description: В этой статье описывается, как создать конечные точки службы виртуальной сети и правила базы данных Azure для PostgreSQL и управлять ими с помощью командной строки Azure CLI.
-author: mbolz
+author: bolzmj
 ms.author: mbolz
 ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 10/23/2018
-ms.openlocfilehash: 67ca81e385bbb7aaddddc6af9aa9bcbd45005e20
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
+ms.openlocfilehash: 7dc5a49e8b27d1a4e4126bef1cce638373e056fb
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56416740"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60008738"
 ---
 # <a name="create-and-manage-azure-database-for-postgresql-vnet-service-endpoints-using-azure-cli"></a>Создание конечных точек службы виртуальной сети базы данных Azure для PostgreSQL и управление ими с помощью Azure CLI
 Правила и конечные точки служб виртуальной сети расширяют частное адресное пространство виртуальной сети на сервер базы данных Azure для PostgreSQL. С помощью удобных команд интерфейса командной строки Azure (CLI) можно создавать, обновлять, удалять, выводить списки и просматривать правила и конечные точки службы виртуальной сети для управления сервером. Общие сведения о конечных точках службы виртуальной сети базы данных Azure для PostgreSQL, включая ограничения, см. в [этой статье](concepts-data-access-and-security-vnet.md). Конечные точки службы виртуальной сети доступны во всех поддерживаемых регионах базы данных Azure для PostgreSQL.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - Установите [Azure CLI](/cli/azure/install-azure-cli) или используйте Azure Cloud Shell в браузере.
 - [сервер и база данных Azure для PostgreSQL](quickstart-create-server-database-azure-cli.md);

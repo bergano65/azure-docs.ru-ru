@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: conceptual
 ms.date: 4/17/2019
 ms.author: victorh
-ms.openlocfilehash: a89a7e3abbb94465a2ea5eb61eda3e967c26d1f0
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: fcff4ff141dbac84d0b96c166c36018b0cc09d8e
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59680832"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59997569"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -137,7 +137,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 № Правила NAT позволяют неявно добавить соответствующее правило сети, чтобы разрешить преобразованный трафик. Чтобы переопределить эту реакцию, явно добавьте коллекцию правил сети с запрещающими правилами, которые соответствуют преобразованному трафику. Дополнительные сведения о логике обработки правил Брандмауэра Azure см. в [соответствующей статье](/articles/firewall/rule-processing.md).
 
-## <a name="how-to-wildcards-work-in-an-application-rule-target-fqdn"></a>Как подстановочные знаки? в целевой объект правила приложения полное доменное имя
+## <a name="how-do-wildcards-work-in-an-application-rule-target-fqdn"></a>Как работают подстановочные знаки в целевой объект правила приложения полное доменное имя?
 
 Если вы настраиваете ***. contoso.com**, он позволяет *anyvalue*. contoso.com, но не contoso.com (вершине домена). Если вы хотите разрешить на вершине домена, вы явным образом настроить его в качестве полного доменного ИМЕНИ целевого объекта.
 

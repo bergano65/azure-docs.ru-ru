@@ -12,20 +12,23 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 04/16/2019
 ms.author: willzhan, dwgeo
-ms.openlocfilehash: 9570982e18f2698400c2798dd3e29b0ca6160b8c
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
-ms.translationtype: MT
+ms.openlocfilehash: 55d59871ee72f755fcd881e4f89e56e6d6d1d84e
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58309748"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59995325"
 ---
 # <a name="offline-widevine-streaming-for-android"></a>Потоковая передача Widevine для Android (автономный режим)  
 
 > [!div class="op_single_selector" title1="Select the version of Media Services that you are using:"]
 > * [Версия 3](../latest/offline-widevine-for-android.md)
 > * [Версия 2](offline-widevine-for-android.md)
+
+> [!NOTE]
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
 
 Помимо защиты содержимого для автономной потоковой передачи подписка содержимого мультимедиа и службы аренды предоставляют содержимое, которое можно загрузить. Это подходит при отсутствии подключения к Интернету. Возможно, потребуется загрузить содержимое на ваш телефон или планшет для воспроизведения в режиме "в самолете", когда во время полета нет подключения к сети. Дополнительные сценарии, в которых может потребоваться загрузить содержимое:
 

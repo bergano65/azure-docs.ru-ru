@@ -13,20 +13,20 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/19/2019
+ms.date: 04/17/2019
 ms.author: joflore
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b563b0fb8dc12cbdcdd256a97134f9ff02988915
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: abd1049551d7dbc4823636dfdc00f64afab72cdf
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59698968"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60008602"
 ---
 # <a name="how-to-configure-the-multi-factor-authentication-registration-policy"></a>Практическое руководство. Настройка политики регистрации с многофакторной проверкой подлинности
 
-Защита идентификации Azure AD помогает управлять развертыванием регистрации многофакторной проверки подлинности (MFA), настроив политику, чтобы требовать регистрацию многофакторной проверки Подлинности. В этой статье объясняется, что можно сделать с помощью этой политики и как ее настроить.
+Защита идентификации Azure AD помогает управлять развертыванием регистрации многофакторной проверки подлинности (MFA), настроив политику, чтобы требовать регистрацию многофакторной проверки Подлинности. Эта статья объясняет, что политика может использоваться для и способах его настройки.
 
 ## <a name="what-is-the-multi-factor-authentication-registration-policy"></a>Что такое политика регистрации с многофакторной проверкой подлинности?
 

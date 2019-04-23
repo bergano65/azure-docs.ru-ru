@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 4bcc51c3efce95178dbb190eb86cb7ac8e224cd0
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.openlocfilehash: 842d9497333d02a9f7918d86cd7d76e84b504063
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55187527"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60002122"
 ---
 # <a name="set-up-sign-in-with-a-microsoft-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи Майкрософт с использованием пользовательских политик
 
@@ -23,7 +23,7 @@ ms.locfileid: "55187527"
 
 В этой статье описывается включение входа пользователей из учетных записей Майкрософт с помощью [пользовательских политик](active-directory-b2c-overview-custom.md) в Azure Active Directory (Azure AD) B2C.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 - Создайте учетную запись Майкрософт на сайте [https://www.live.com/](https://www.live.com/), если у вас ее еще нет.
@@ -35,7 +35,7 @@ ms.locfileid: "55187527"
 1. Войдите на [портал регистрации приложений Майкрософт](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/documentation/articles&deeplink=/appList) и войдите учетные данные от учетной записи Майкрософт.
 2. В правом верхнем углу выберите **Добавить приложение**.
 3. Заполните поле **Имя приложения** и щелкните **Создать**. 
-4. Выберите **Создать новый пароль** и скопируйте пароль. Он понадобится вам при настройке поставщика удостоверений. Скопируйте также **идентификатор приложения**. 
+4. Выберите **Создать новый пароль** и скопируйте пароль. Он понадобится вам при настройке поставщика удостоверений. Кроме того, скопируйте идентификатор приложения. 
 5. Введите значение `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` в поле **Redirect URLs** (URI перенаправления). Замените `your-tenant-name` именем вашего клиента.
 6. Щелкните **Сохранить**.
 
@@ -44,7 +44,7 @@ ms.locfileid: "55187527"
 Вам необходимо сохранить пароль, созданный ранее и записанный в клиенте Azure AD B2C.
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
-2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите **фильтр каталога и подписки** в верхнем меню и выберите каталог, содержащий вашего клиента.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. На странице "Обзор" выберите **Identity Experience Framework — предварительная версия**.
 5. Выберите **Ключи политики**, а затем щелкните **Добавить**.
@@ -88,7 +88,7 @@ ms.locfileid: "55187527"
           <OutputClaims>
             <OutputClaim ClaimTypeReferenceId="identityProvider" DefaultValue="live.com" />
             <OutputClaim ClaimTypeReferenceId="authenticationSource" DefaultValue="socialIdpAuthentication" />
-            <OutputClaim ClaimTypeReferenceId="socialIdpUserId" PartnerClaimType="sub" />
+            <OutputClaim ClaimTypeReferenceId="issuerUserId" PartnerClaimType="sub" />
             <OutputClaim ClaimTypeReferenceId="displayName" PartnerClaimType="name" />
             <OutputClaim ClaimTypeReferenceId="email" />
           </OutputClaims>
@@ -140,14 +140,14 @@ ms.locfileid: "55187527"
 
 Теперь, когда у вас есть кнопка, вам необходимо связать ее с действием. В этом случае действие — это возможность взаимодействия Azure AD B2C с учетной записью Twitter для получения токена.
 
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути взаимодействия пользователя.
-2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для **Id** можно использовать то же значение, которое было использовано для **TargetClaimsExchangeId**:
+1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
+2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для идентификатора используется то же значение, которое использовалось для **TargetClaimsExchangeId**.
 
     ```xml
     <ClaimsExchange Id="MicrosoftAccountExchange" TechnicalProfileReferenceId="MSA-OIDC" />
     ```
     
-    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение **Id** ранее созданного технического профиля. Например, `MSA-OIDC`.
+    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `MSA-OIDC`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 
@@ -156,7 +156,7 @@ ms.locfileid: "55187527"
 Связь с Azure AD B2C осуществляется с помощью приложения, созданного в вашем клиенте. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите **фильтр каталога и подписки** в верхнем меню и выберите каталог, содержащий вашего клиента.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Щелкните **Приложения**, а затем выберите **Добавить**.
 5. Задайте имя для приложения, например *testapp1*.

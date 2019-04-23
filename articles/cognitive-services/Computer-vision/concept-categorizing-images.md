@@ -8,17 +8,17 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 02/11/2019
+ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 07fdaa22532f48cc39b6c524d85fdfe625f8b80c
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
-ms.translationtype: MT
+ms.openlocfilehash: 257da397e11843ee96e93f7b3e9bc5ada29822cf
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337145"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59995580"
 ---
-# <a name="categorize-images"></a>Классификация изображений
+# <a name="categorize-images-by-subject-matter"></a>Классификация изображений по теме
 
 В дополнение к тегам и описанию, компьютерное зрение возвращает основанные на таксономии категории, обнаруженные в изображении. В отличие от тегов, категории организованы в иерархии родительского или дочернего наследования, и их меньше (86, в отличие от тысяч тегов). Все категории имен указаны на английском языке. Классификация может быть выполнена сама по себе или вместе с более новой моделью тегов.
 
@@ -53,7 +53,7 @@ ms.locfileid: "58337145"
 
 В приведенной ниже таблице показаны типичный набор изображений и категория, возвращаемая компьютерным зрением для каждого из них.
 
-| Образ — | Категория |
+| Image | Category |
 |-------|----------|
 | ![Четыре человека позируют как семья](./Images/family_photo.png) | people_group |
 | ![Щенок, сидящий на лужайке](./Images/cute_dog.png) | animal_dog |

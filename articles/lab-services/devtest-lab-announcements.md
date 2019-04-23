@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: fca78c86849ef8210bb3aaeb8ad96e1fba3d7c05
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
-ms.translationtype: MT
+ms.openlocfilehash: 2fe31271fa84bc4170bd431a4aadbcafc0df9086
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57542494"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60148974"
 ---
 # <a name="post-an-announcement-to-a-lab-in-azure-devtest-labs"></a>Публикация объявления в лабораторию в Azure DevTest Labs
 
@@ -37,8 +37,8 @@ ms.locfileid: "57542494"
 
 1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 1. При необходимости щелкните **Все службы**, а затем выберите в списке **DevTest Labs**. Возможно, лаборатория уже отображается на панели мониторинга в разделе **Все ресурсы**.
-1. Из списка лабораторий выберите ту, в которой вы намерены опубликовать объявление.  
-1. В области лаборатории **Обзор** выберите **Configuration and policies** (Конфигурация и политики).  
+1. Из списка лабораторий выберите ту, в которой вы намерены опубликовать объявление.
+1. В области лаборатории **Обзор** выберите **Configuration and policies** (Конфигурация и политики).
 
     ![Кнопка Configuration and Policies (Конфигурация и политики)](./media/devtest-lab-announcements/devtestlab-config-and-policies.png)
 
@@ -83,7 +83,7 @@ ms.locfileid: "57542494"
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
 ## <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
-Объявление можно указать как часть шаблона Azure Resource Manager, как показано в следующем примере: 
+Объявление можно указать как часть шаблона Azure Resource Manager, как показано в следующем примере:
 
 ```json
 {
@@ -119,7 +119,7 @@ ms.locfileid: "57542494"
                 "support": {
                     "markdown": "",
                     "enabled": "Enabled"
-                }                
+                }
             },
             "resources": [
                 {
@@ -167,4 +167,4 @@ ms.locfileid: "57542494"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Когда вы изменяете или создаете политику лаборатории, об этом можно сообщить пользователям с помощью объявления. Статья [Управление всеми политиками лаборатории в Azure DevTest Labs](devtest-lab-set-lab-policy.md) содержит сведения о применении ограничений и соглашений для всей подписки с помощью настраиваемых политик.
-* Изучите [коллекцию шаблонов быстрого запуска Azure Resource Manager для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/Samples).
+* Изучите [коллекцию шаблонов быстрого запуска Azure Resource Manager для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).

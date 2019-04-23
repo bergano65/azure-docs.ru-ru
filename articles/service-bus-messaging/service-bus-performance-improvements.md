@@ -10,12 +10,12 @@ ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 09/14/2018
 ms.author: aschhab
-ms.openlocfilehash: edd7a397598bcb5941f3ac1b29d385d6eac40f8d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: f5ce8a237bc2ba7fe15acfcd6afa0edcda7ef713
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59501643"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59996029"
 ---
 # <a name="best-practices-for-performance-improvements-using-service-bus-messaging"></a>Рекомендации по повышению производительности с помощью обмена сообщениями через служебную шину
 
@@ -94,6 +94,15 @@ MessagingFactory messagingFactory = MessagingFactory.Create(namespaceUri, mfs);
 ```
 
 Пакетная обработка не влияет на количество оплачиваемых операций обмена сообщениями и доступна только для протокола клиента служебной шины с использованием библиотеки [Microsoft.ServiceBus.Messaging](https://www.nuget.org/packages/WindowsAzure.ServiceBus/). Протокол HTTP не поддерживает пакетную обработку.
+
+> [!NOTE]
+> Установка BatchFlushInterval гарантирует, что Пакетная обработка является неявным с точки зрения приложения. т. е. приложения SendAsync() и CompleteAsync() вызывает и не выполняет определенные вызовы пакетной службы.
+>
+> Пакетная обработка на стороне клиента явные можно реализовать за счет использования ниже вызов метода - 
+> ```csharp
+> Task SendBatchAsync (IEnumerable<BrokeredMessage> messages);
+> ```
+> Здесь общий размер сообщений должен быть меньше, чем максимальный размер, поддерживаемый программным ценовую категорию.
 
 ## <a name="batching-store-access"></a>Пакетный доступ к хранилищу
 

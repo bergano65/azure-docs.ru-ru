@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 02/05/2019
 ms.author: sedusch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a9e12171a8596bc9caba3bf9065bbb943139ccde
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: d4798f8c3e262129135a6677ccf90dc0fb3be7f2
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59501337"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59999541"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению
 
@@ -1141,8 +1141,8 @@ az vm disk attach --disk <new disk name or managed disk id> --resource-group <re
 
 Далее представлен базовый логический поток командлета PowerShell.
 
-* Создайте контекст учетной записи хранения для **источника** учетной записи хранения с *New AzStorageContext* -см. в разделе <https://docs.microsoft.com/powershell/module/azure.storage/new-AzStoragecontext>
-* Создайте контекст учетной записи хранения для **целевой** учетной записи хранения с *New AzStorageContext* -см. в разделе <https://docs.microsoft.com/powershell/module/azure.storage/new-AzStoragecontext>
+* Создайте контекст учетной записи хранения для **источника** учетной записи хранения с *New AzStorageContext* -см. в разделе <https://docs.microsoft.com/powershell/module/az.storage/new-AzStoragecontext>
+* Создайте контекст учетной записи хранения для **целевой** учетной записи хранения с *New AzStorageContext* -см. в разделе <https://docs.microsoft.com/powershell/module/az.storage/new-AzStoragecontext>
 * Запустите копирование:
 
 ```powershell

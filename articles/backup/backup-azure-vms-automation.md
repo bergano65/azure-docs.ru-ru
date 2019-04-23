@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: raynew
-ms.openlocfilehash: f0959ff8b8ea5ce8d5516d25fdf0faf29dbcd994
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
-ms.translationtype: MT
+ms.openlocfilehash: 62ad2e2b294a0589c9d52ddbce1339b8d55062e4
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58629596"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60149042"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Резервное копирование и восстановление виртуальных машин Azure с помощью PowerShell
 
@@ -31,7 +31,6 @@ ms.locfileid: "58629596"
 - [Дополнительные сведения](backup-azure-recovery-services-vault-overview.md) о хранилищах служб восстановления.
 - [Просмотрите](backup-architecture.md#architecture-direct-backup-of-azure-vms) архитектуры для резервного копирования виртуальных Машин Azure, [Дополнительные сведения о](backup-azure-vms-introduction.md) процесс резервного копирования и [просмотрите](backup-support-matrix-iaas.md) поддержки, ограничений и необходимых компонентов.
 - Просмотр иерархии объектов PowerShell для служб восстановления.
-
 
 ## <a name="recovery-services-object-hierarchy"></a>Иерархия объектов служб восстановления
 
@@ -54,7 +53,7 @@ ms.locfileid: "58629596"
     ```powershell
     Get-Command *azrecoveryservices*
     ```
- 
+
     Отображаются псевдонимы и командлеты для службы архивации Azure, Azure Site Recovery и хранилища служб восстановления. Ниже приведен пример того, что вы увидите. Это не полный список командлетов.
 
     ![Список служб восстановления](./media/backup-azure-vms-automation/list-of-recoveryservices-ps.png)
@@ -77,9 +76,11 @@ ms.locfileid: "58629596"
     ```
 
 6. Вы можете проверить, зарегистрированы ли поставщики, выполнив следующие команды:
+
     ```powershell
     Get-AzResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
     ```
+
     В выходных данных команды для **RegistrationState** должно быть установлено значение **Registered**. Если нет, просто запустите **[Register-AzResourceProvider](https://docs.microsoft.com/powershell/module/az.resources/register-azresourceprovider)** командлет еще раз.
 
 
@@ -152,7 +153,7 @@ Set-AzRecoveryServicesBackupProperties -Vault $vault -BackupStorageRedundancy Ge
 ```
 
 > [!NOTE]
-> Избыточность хранилища можно изменить только в том случае, если нет резервной копии элементов, защищенных в хранилище.
+> Избыточность хранилища можно изменить только в том случае, если в хранилище нет защищенных резервных копий.
 
 ### <a name="create-a-protection-policy"></a>Создание политики защиты
 
@@ -241,9 +242,49 @@ Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGro
 > Если вы используете облако Azure для государственных организаций, используйте значение ff281ffe-705c-4f53-9f37-a40e6f2c68f3 для параметра ServicePrincipalName в [AzKeyVaultAccessPolicy набора](https://docs.microsoft.com/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy) командлета.
 >
 
+## <a name="monitoring-a-backup-job"></a>Наблюдение за выполнением задания резервного копирования
+
+Вы можете отслеживать длительные операции, например задания резервного копирования, без использования портала Azure. Чтобы получить состояние выполняющегося задания, используйте [Get AzRecoveryservicesBackupJob](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupjob) командлета. Этот командлет возвращает задания резервного копирования для конкретного хранилища, и это хранилище указывается в контексте хранилища. Следующий пример возвращает состояние выполняющегося задания в виде массива и сохраняет состояние в переменной $joblist.
+
+```powershell
+$joblist = Get-AzRecoveryservicesBackupJob –Status "InProgress"
+$joblist[0]
+```
+
+Вы должны увидеть результат, аналогичный приведенному ниже.
+
+```
+WorkloadName     Operation            Status               StartTime                 EndTime                   JobID
+------------     ---------            ------               ---------                 -------                   ----------
+V2VM             Backup               InProgress            4/23/2016                5:00:30 PM                cf4b3ef5-2fac-4c8e-a215-d2eba4124f27
+```
+
+Вместо опроса этих заданий — это дополнительного кода — использовать [AzRecoveryServicesBackupJob ожидания](https://docs.microsoft.com/powershell/module/az.recoveryservices/wait-azrecoveryservicesbackupjob) командлета. Он приостанавливает выполнение сценария до завершения задания или до достижения конкретного значения времени ожидания.
+
+```powershell
+Wait-AzRecoveryServicesBackupJob -Job $joblist[0] -Timeout 43200
+```
+
+## <a name="manage-azure-vm-backups"></a>Управление резервными копиями виртуальных машин Azure
+
 ### <a name="modify-a-protection-policy"></a>Изменение политики защиты
 
 Чтобы изменить политику защиты, используйте [AzRecoveryServicesBackupProtectionPolicy набора](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupprotectionpolicy) для изменения объектов SchedulePolicy или RetentionPolicy.
+
+#### <a name="modifying-scheduled-time"></a>Изменение запланированного времени
+
+При создании политики защиты, ему назначается время начала по умолчанию. Ниже показано, как изменить время начала применения политики защиты.
+
+````powershell
+$SchPol = Get-AzRecoveryServicesBackupSchedulePolicyObject -WorkloadType "AzureVM"
+$UtcTime = Get-Date -Date "2019-03-20 01:00:00Z" (This is the time that the customer wants to start the backup)
+$UtcTime = $UtcTime.ToUniversalTime()
+$SchPol.ScheduleRunTimes[0] = $UtcTime
+$pol = Get-AzRecoveryServicesBackupProtectionPolicy -Name "NewPolicy"
+Set-AzRecoveryServicesBackupProtectionPolicy -Policy $pol  -SchedulePolicy $SchPol
+````
+
+#### <a name="modifying-retention"></a>Изменение хранения
 
 В следующем примере количество дней хранения точки восстановления изменяется на 365.
 
@@ -267,14 +308,15 @@ PS C:\> Set-AzureRmRecoveryServicesBackupProtectionPolicy -policy $bkpPol
 
 Значение по умолчанию будет равен 2, пользователь может задать значение min 1 и до 5. Еженедельное резервное копирование политиках, период равен 5 и не может быть изменено.
 
-## <a name="trigger-a-backup"></a>Активация архивации
+### <a name="trigger-a-backup"></a>Активация архивации
 
-Используйте [AzRecoveryServicesBackupItem резервного копирования](https://docs.microsoft.com/powershell/module/az.recoveryservices/backup-azrecoveryservicesbackupitem) для запуска задания резервного копирования. Если это начальная архивация, она будет полной. При последующем выполнении архивации резервная копия будет добавочной. Обязательно используйте **[набора AzRecoveryServicesVaultContext](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesvaultcontext)** задать контекст хранилища перед запуском задания резервного копирования. В следующем примере предполагается, что контекст хранилища уже был задан.
+Используйте [AzRecoveryServicesBackupItem резервного копирования](https://docs.microsoft.com/powershell/module/az.recoveryservices/backup-azrecoveryservicesbackupitem) для запуска задания резервного копирования. Если это начальная архивация, она будет полной. При последующем выполнении архивации резервная копия будет добавочной. В следующем примере извлекается виртуальная машина резервных копий хранятся в течение 60 дней.
 
 ```powershell
 $namedContainer = Get-AzRecoveryServicesBackupContainer -ContainerType "AzureVM" -Status "Registered" -FriendlyName "V2VM"
 $item = Get-AzRecoveryServicesBackupItem -Container $namedContainer -WorkloadType "AzureVM"
-$job = Backup-AzRecoveryServicesBackupItem -Item $item
+$endDate = (Get-Date).AddDays(60).ToUniversalTime()
+$job = Backup-AzRecoveryServicesBackupItem -Item $item -VaultId $targetVault.ID -ExpiryDateTimeUTC $endDate
 ```
 
 Вы должны увидеть результат, аналогичный приведенному ниже.
@@ -290,28 +332,42 @@ V2VM              Backup              InProgress          4/23/2016             
 >
 >
 
-## <a name="monitoring-a-backup-job"></a>Наблюдение за выполнением задания резервного копирования
+### <a name="change-policy-for-backup-items"></a>Изменение политики для архивных элементов
 
-Вы можете отслеживать длительные операции, например задания резервного копирования, без использования портала Azure. Чтобы получить состояние выполняющегося задания, используйте [Get AzRecoveryservicesBackupJob](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupjob) командлета. Этот командлет возвращает задания резервного копирования для конкретного хранилища, и это хранилище указывается в контексте хранилища. Следующий пример возвращает состояние выполняющегося задания в виде массива и сохраняет состояние в переменной $joblist.
+Пользователя можно изменить существующую политику или изменить политику элемента резервных копий с политика 1 на политика 2. Для переключения политики для резервных копий элемента, просто получить нужную политику и резервное копирование элемента и использовать [Enable AzRecoveryServices](https://docs.microsoft.com/powershell/module/az.recoveryservices/Enable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) с архивного элемента в качестве параметра.
+
+````powershell
+$TargetPol1 = Get-AzRecoveryServicesBackupProtectionPolicy -Name <PolicyName>
+$anotherBkpItem = Get-AzRecoveryServicesBackupItem -WorkloadType AzureVM -BackupManagementType AzureVM -Name "<BackupItemName>"
+Enable-AzRecoveryServicesBackupProtection -Item $anotherBkpItem -Policy $TargetPol1
+````
+
+Команда ожидает, пока завершится Настройка архивации и возвращает следующие выходные данные.
 
 ```powershell
-$joblist = Get-AzRecoveryservicesBackupJob –Status "InProgress"
-$joblist[0]
-```
-
-Вы должны увидеть результат, аналогичный приведенному ниже.
-
-```
 WorkloadName     Operation            Status               StartTime                 EndTime                   JobID
-------------     ---------            ------               ---------                 -------                   ----------
-V2VM             Backup               InProgress            4/23/2016                5:00:30 PM                cf4b3ef5-2fac-4c8e-a215-d2eba4124f27
+------------     ---------            ------               ---------                 -------                   -----
+TestVM           ConfigureBackup      Completed            3/18/2019 8:00:21 PM      3/18/2019 8:02:16 PM      654e8aa2-4096-402b-b5a9-e5e71a496c4e
 ```
 
-Вместо опроса этих заданий — это дополнительного кода — использовать [AzRecoveryServicesBackupJob ожидания](https://docs.microsoft.com/powershell/module/az.recoveryservices/wait-azrecoveryservicesbackupjob) командлета. Он приостанавливает выполнение сценария до завершения задания или до достижения конкретного значения времени ожидания.
+### <a name="stop-protection"></a>остановка защиты;
 
-```powershell
-Wait-AzRecoveryServicesBackupJob -Job $joblist[0] -Timeout 43200
-```
+#### <a name="retain-data"></a>Сохранить данные
+
+Если пользователь хочет остановить защиту, они могут использовать [Disable AzRecoveryServicesBackupProtection](https://docs.microsoft.com/powershell/module/az.recoveryservices/Disable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) командлета PS. Это приведет к остановке плановых резервных копий, но данные резервного копирования до теперь сохраняется навсегда.
+
+````powershell
+$bkpItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureVM -WorkloadType AzureVM -Name "<backup item name>" -VaultId $targetVault.ID
+Disable-AzRecoveryServicesBackupProtection -Item $bkpItem -VaultId $targetVault.ID
+````
+
+#### <a name="delete-backup-data"></a>удаление резервных копий;
+
+Чтобы полностью удалить данные резервных копий хранятся в хранилище, просто добавьте "-RemoveRecoveryPoints флаг/переключиться в режим [защиты команду «Отключить»](#retain-data).
+
+````powershell
+Disable-AzRecoveryServicesBackupProtection -Item $bkpItem -VaultId $targetVault.ID -RemoveRecoveryPoints
+````
 
 ## <a name="restore-an-azure-vm"></a>Восстановление виртуальной машины Azure
 

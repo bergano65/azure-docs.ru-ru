@@ -11,13 +11,13 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlr
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 93be58ac231ff2b88c6618c549c9d1975977b91f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.date: 04/16/2019
+ms.openlocfilehash: 886f06e8640891ac09d1e4624335a7bfebcd3def
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59799156"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60009384"
 ---
 # <a name="how-to-use-a-managed-instance-in-azure-sql-database"></a>Использование управляемого экземпляра в Базе данных SQL Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "59799156"
 - [Настройка имеющейся виртуальной сети для Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-configure-vnet-subnet.md). Если вы хотите настроить существующую виртуальную сеть и подсеть для развертывания в них управляемых экземпляров, здесь вы можете найти сценарий, который проверяет [требования к сети](sql-database-managed-instance-connectivity-architecture.md#network-requirements) и выполняет настройку вашей подсети в соответствии с этими требованиями.
 - [Настройка пользовательской службы DNS для Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-custom-dns.md). Необходимо настроить пользовательскую службу DNS, если вы хотите получать доступ к внешним ресурсам в личных доменах из управляемого экземпляра через связанный сервер профилей компонента Database Mail.
 - [Синхронизация конфигурации сети для плана размещения Службы приложений Azure](sql-database-managed-instance-sync-network-configuration.md). Несмотря на [интеграцию приложения с виртуальной сетью Azure](../app-service/web-sites-integrate-with-vnet.md), бывает так, что установить подключение к управляемому экземпляру не удается. В этом случае вам нужно обновить конфигурацию сети для своего плана обслуживания.
-- [Определение IP-адреса конечной точки управления](sql-database-managed-instance-find-management-endpoint-ip-address.md). Управляемый экземпляр использует общедоступную конечную точку только для целей управления. IP-адрес конечной точки управления можно определить, используя сценарий, описанный здесь.
+- [Найти IP-адрес конечной точки управления](sql-database-managed-instance-find-management-endpoint-ip-address.md) — управляемый экземпляр использует общедоступную конечную точку для целей управления. IP-адрес конечной точки управления можно определить, используя сценарий, описанный здесь.
 - [Проверка встроенного брандмауэра Управляемого экземпляра](sql-database-managed-instance-management-endpoint-verify-built-in-firewall.md). Управляемый экземпляр защищен с помощью встроенного брандмауэра, который разрешает трафик только для необходимых портов. Встроенные правила брандмауэра можно проверить, используя сценарий, описанный в этом руководстве.
 - [Подключение приложения к Управляемому экземпляру Базы данных SQL](sql-database-managed-instance-connect-app.md). Управляемый экземпляр помещается в собственную частную виртуальную сеть Azure с частным IP-адресом. Узнайте о различных шаблонах подключения приложений к управляемому экземпляру.
 

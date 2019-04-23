@@ -1,6 +1,6 @@
 ---
-title: Установка и использование представлений Log Analytics для Azure Active Directory (предварительная версия) | Документация Майкрософт
-description: Узнайте, как установить и использовать представления Log Analytics для Azure Active Directory (предварительная версия).
+title: Как установить и использовать представления log analytics для Azure Active Directory | Документация Майкрософт
+description: Узнайте, как установить и использовать представления log analytics для Azure Active Directory
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 11/13/2018
+ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7d1b2262f8f57b2ad180650fa6d4c08fbabfef5
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
-ms.translationtype: MT
+ms.openlocfilehash: 92a5d9539d254eb7d52e3277691c9d8ff5a41821
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58437311"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60005066"
 ---
 # <a name="install-and-use-the-log-analytics-views-for-azure-active-directory"></a>Установка и использование представлений Log Analytics для Azure Active Directory
 

@@ -1,20 +1,19 @@
 ---
-title: Производный столбец для преобразования потоков данных Фабрики данных Azure
-description: Производный столбец для преобразования потоков данных Фабрики данных Azure
+title: Сопоставление потока данных фабрики данных Azure производный столбец преобразования
+description: Как преобразовать данные в масштабе с помощью Azure данных фабрики сопоставление данных поток преобразования "Производный столбец"
 author: kromerm
 ms.author: makromer
-ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/08/2018
-ms.openlocfilehash: 1335b86431bcf345f452ead0c95926d295ae185f
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
-ms.translationtype: MT
+ms.openlocfilehash: f53e122eb1b2a5b6dabb9a44aef42394d0c7edb6
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56728766"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59999491"
 ---
-# <a name="azure-data-factory-data-flow-derived-column-transformation"></a>Производный столбец для преобразования потоков данных Фабрики данных Azure
+# <a name="mapping-data-flow-derived-column-transformation"></a>Сопоставление потока данных производный столбец преобразования
 
 [!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
@@ -27,3 +26,13 @@ ms.locfileid: "56728766"
 В поле "Столбец" либо выберите существующий столбец, чтобы перезаписать его новым производным значением, либо нажмите "Создать новый столбец" с новым производным значением.
 
 В текстовом поле "Выражение" откроется построитель выражений, где вы можете построить выражение для производных столбцов, используя их функции.
+
+## <a name="column-patterns"></a>Шаблоны столбцов
+
+Если имена таких столбцов переменной из источников, вы можете создавать преобразования внутри производный столбец вместо использования именованных столбцов шаблоны столбцов. См. в разделе [смещение схемы](concepts-data-flow-schema-drift.md) Дополнительные сведения.
+
+![шаблон столбца](media/data-flow/columnpattern.png "шаблоны столбцов")
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Дополнительные сведения о [язык выражений фабрики данных для преобразований](http://aka.ms/dataflowexpressions) и [построитель выражений](concepts-data-flow-expression-builder.md)

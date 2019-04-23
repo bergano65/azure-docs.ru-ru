@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: xiaoharper
 ms.author: amlstudiodocs
 ms.date: 04/25/2019
-ms.openlocfilehash: 4d867a8befb9333ebf33b9ac7ba179e25f0b9f9b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: e3c2587fceed265c9768b6ea6f2ecf3b9a8b7b1a
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59698577"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60011356"
 ---
 # <a name="powershell-modules-for-azure-machine-learning-studio"></a>Модули PowerShell для Студии машинного обучения Microsoft Azure
 
@@ -50,20 +50,17 @@ PowerShell — Классическая модель может устанавл
 
 ## <a name="support-table"></a> Таблица поддержки PowerShell
 
- **Рабочие области Студии** | **Az** |  **AzureRM** | **PowerShell — классическая модель** |
-| --- | --- | --- | --- |
-| Создавать и удалять рабочие области | [Шаблоны Resource Manager](https://docs.microsoft.com/azure/machine-learning/studio/deploy-with-resource-manager-template) | [Шаблоны Resource Manager](https://docs.microsoft.com/azure/machine-learning/studio/deploy-with-resource-manager-template) |  |
-| Управление пользователями рабочей области |  |  | [Add-AmlWorkspaceUsers](https://github.com/hning86/azuremlps#add-amlworkspaceusers)|
-| Управление тарифными планами с обязательствами | [New-AzMlCommitmentPlan](https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlcommitmentplan) | New-AzureRmMlCommitmentPlan |
-|||
-| **Веб-службы** | **Az** | **AzureRM** | **PowerShell — классическая модель** |
-| Управление веб-службами | [New-AzMlWebService](https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlwebservice) <br> («new» веб-службы) | New-AzureRmMlWebService <br> («new» веб-службы) |[New-AmlWebService](https://github.com/hning86/azuremlps#manage-classic-web-service) <br> («классический» веб-службы) |
-| Управление конечными точками и ключами |  [Get-AzMlWebServiceKeys](https://docs.microsoft.com/powershell/module/az.machinelearning/get-azmlwebservicekeys) <br> («new» веб-службы) | Get-AzureRmMlWebServiceKeys <br> («new» веб-службы) | [Add-AmlWebServiceEndpoint](https://github.com/hning86/azuremlps#manage-classic-web-servcie-endpoint) <br> («классический» веб-службы) |
-|||
-| **Ресурсы пользователя** | **Az** | **AzureRM** | **PowerShell — классическая модель** |
-| Управление наборами данных и обученными моделями |  |  | [Get-AmlDataset](https://github.com/hning86/azuremlps#manage-user-assets-dataset-trained-model-transform) |
-| Управление экспериментами |  |  | [Start-AmlExperiment](https://github.com/hning86/azuremlps#manage-experiment) |
-| Управление настраиваемыми модулями |  |  | [New-AmlCustomModule](https://github.com/hning86/azuremlps#manage-custom-module) |
+
+| | **Az** |  **PowerShell — классическая модель** |
+| --- | --- | --- |
+| Создавать и удалять рабочие области | [Шаблоны Resource Manager](https://docs.microsoft.com/azure/machine-learning/studio/deploy-with-resource-manager-template) |  |
+| Управление рабочей планов | [New-AzMlCommitmentPlan](https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlcommitmentplan) | |
+| Управление пользователями рабочей области |  | [Add-AmlWorkspaceUsers](https://github.com/hning86/azuremlps#add-amlworkspaceusers)|
+| Управление веб-службами | [New-AzMlWebService](https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlwebservice) <br>(«new» веб-службы)|| [New-AmlWebService](https://github.com/hning86/azuremlps#manage-classic-web-service) <br>(«классический» веб-службы) |
+| Управление конечными точками службы web и ключи |  [Get-AzMlWebServiceKeys](https://docs.microsoft.com/powershell/module/az.machinelearning/get-azmlwebservicekeys)|  [Add-AmlWebServiceEndpoint](https://github.com/hning86/azuremlps#manage-classic-web-servcie-endpoint)|
+| Управление наборами данных или обученной модели пользователя| | [Get-AmlDataset](https://github.com/hning86/azuremlps#manage-user-assets-dataset-trained-model-transform) |
+| Управление пользователем экспериментов |  | [Start-AmlExperiment](https://github.com/hning86/azuremlps#manage-experiment) |
+| Управление настраиваемыми модулями | | [New-AmlCustomModule](https://github.com/hning86/azuremlps#manage-custom-module) |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

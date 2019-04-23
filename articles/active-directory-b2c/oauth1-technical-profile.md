@@ -10,18 +10,18 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 86de73394d96d1122abce44504d2b0fd99a01841
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 3fe839de8cbaa0b321b0b0602b000b7575224dde
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58915788"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60010064"
 ---
 # <a name="define-an-oauth1-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определить OAuth1 технического профиля в настраиваемую политику Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Azure Active Directory (Azure AD) B2C поддерживает [протокол OAuth 1.0](https://tools.ietf.org/html/rfc5849) для поставщиков удостоверений. В этой статье описаны особенности технического профиля для взаимодействия с поставщиком утверждений, который поддерживает этот стандартизированный протокол. С помощью технического профиля OAuth1 можно создавать федерацию с поставщиками удостоверений на основе OAuth1, таким как Twitter, что позволяет пользователям выполнять вход с применением удостоверений для социальных или корпоративных сетей.
+Azure Active Directory (Azure AD) B2C поддерживает [протокол OAuth 1.0](https://tools.ietf.org/html/rfc5849) для поставщиков удостоверений. В этой статье описаны особенности технического профиля для взаимодействия с поставщиком утверждений, который поддерживает этот стандартизированный протокол. С помощью OAuth1 технического профиля можно использовать для федерации с поставщиком удостоверений на основе OAuth1, таких как Twitter. Федеративные отношения с поставщиком удостоверений позволяет пользователям вход с помощью существующие социальных сетей или корпоративными удостоверениями.
 
 ## <a name="protocol"></a>Протокол
 
@@ -46,7 +46,7 @@ Azure Active Directory (Azure AD) B2C поддерживает [протокол
 
 В этом примере показаны утверждения, возвращаемые поставщиком удостоверений Twitter:
 
-- Утверждение **user_id**, которое сопоставляется с утверждением **socialIdpUserId**.
+- **User_id** утверждения, который сопоставляется с **issuerUserId** утверждения.
 - Утверждение **screen_name**, которое сопоставляется с утверждением **displayName**.
 - Утверждение **email** не сопоставляется с именем.
 
@@ -57,7 +57,7 @@ Azure Active Directory (Azure AD) B2C поддерживает [протокол
 
 ```xml
 <OutputClaims>
-  <OutputClaim ClaimTypeReferenceId="socialIdpUserId" PartnerClaimType="user_id" />
+  <OutputClaim ClaimTypeReferenceId="issuerUserId" PartnerClaimType="user_id" />
   <OutputClaim ClaimTypeReferenceId="displayName" PartnerClaimType="screen_name" />
   <OutputClaim ClaimTypeReferenceId="email" />
   <OutputClaim ClaimTypeReferenceId="identityProvider" DefaultValue="twitter.com" />
@@ -87,7 +87,7 @@ Azure Active Directory (Azure AD) B2C поддерживает [протокол
 
 ## <a name="redirect-uri"></a>URI перенаправления
 
-При настройке URL-адреса перенаправления поставщика удостоверений введите `https://login.microsoftonline.com/te/tenant/policyId/oauth1/authresp`. Замените **tenant** именем своего клиента (например contosob2c.onmicrosoft.com), а **policyId** — идентификатором политики (например b2c_1a_policy). URI перенаправления должен содержать только строчные символы. Следует добавить URI перенаправления для всех политик, использующих вход поставщика удостоверений. 
+При настройке URL-адреса перенаправления поставщика удостоверений введите `https://login.microsoftonline.com/te/tenant/policyId/oauth1/authresp`. Замените **tenant** именем своего клиента (например contosob2c.onmicrosoft.com), а **policyId** — идентификатором политики (например b2c_1a_policy). URI перенаправления должен содержать только строчные символы. Добавьте URL-адрес перенаправления для всех политик, использующих имя входа поставщика удостоверений. 
 
 Если вы используете домен **b2clogin.com** вместо **login.microsoftonline.com**, удостоверьтесь, что єто действительно требуется.
 

@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/09/2019
+ms.date: 04/17/2019
 ms.author: magoedte
-ms.openlocfilehash: 3261c2389a9706537366bcd60e00517bbcfb5f48
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 8fb1d0083796671119de2b4d7feefe738b602fe2
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59426398"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60004046"
 ---
 # <a name="understand-aks-cluster-performance-with-azure-monitor-for-containers"></a>Общие сведения о производительности кластера AKS с Azure Monitor для контейнеров 
 С помощью диаграмм производительности и состояния работоспособности в Azure Monitor для контейнеров вы можете наблюдать производительность кластеров Службы Azure Kubernetes (AKS) с двух перспектив: напрямую из кластера AKS или всех AKS кластеров в подписке из Azure Monitor. Просмотр Экземпляров контейнеров Azure (ACI) возможен также при мониторинге конкретного кластера AKS.
@@ -40,8 +40,9 @@ Azure Monitor обеспечивает мультикластерное пред
 На вкладке **Monitored clusters** (Отслеживаемые кластеры) можно получить следующие сведения.
 
 1. Сколько кластеров находятся в критическом состоянии или в состоянии неработоспособности, а сколько — работоспособны или не передают данные (то есть имеют неизвестное состояние).
-1. Все ли мои развертывания [подсистемы Azure Kubernetes (подсистема AKS)](https://github.com/Azure/aks-engine) работоспособны?
-1. Сколько узлов, пользовательских и системных модулей pod развертывается на кластер.  
+2. Все ли мои развертывания [подсистемы Azure Kubernetes (подсистема AKS)](https://github.com/Azure/aks-engine) работоспособны?
+3. Сколько узлов, пользователей и групп POD системы развертываются на кластер?
+4. Место на диске доступен и проблема существует емкости?
 
 Здесь используются следующие состояния работоспособности: 
 
@@ -55,7 +56,7 @@ Azure Monitor обеспечивает мультикластерное пред
 * **Неверно настроено**. Azure Monitor для контейнеров неправильно настроено в указанной рабочей области.
 * **Нет данных**. За последние 30 минут данные не поступали в рабочую область.
 
-Состояние работоспособности вычисляет общее состояние кластера как *наихудшее из* трех состояний с одним исключением: если любое из трех состояний *неизвестно*, общее состояние кластера будет отображаться как **Неизвестно**.  
+Состояние работоспособности вычисляет общее состояние кластера, как *наихудшему* трех состояний за одним исключением — Если выполняется одно из трех состояний *Неизвестный*, будет показано общее состояние кластера **Unknown**.  
 
 В следующей таблице приведена разбивка вычисления, управляющего состояниями работоспособности для отслеживаемого кластера в мультикластерном представлении.
 
@@ -131,9 +132,9 @@ Azure Monitor для контейнеров также поддерживает 
 
 ![Пример панели свойств перспектив Kubernetes](./media/container-insights-analyze/perspectives-preview-pane-01.png)
 
-При развертывании объектов в иерархии панель свойств обновляется на основе выбранного объекта. На панели вы также можете просмотреть события Kubernetes с заранее определенными поисками по журналам. Для этого щелкните ссылку **Просмотреть журналы событий Kubernetes** в верхней части панели. Дополнительные сведения о просмотре данных журнала Kubernetes см. в разделе [Поиск по журналам для анализа данных](#search-logs-to-analyze-data). При просмотре ваших контейнеров в представление**Контейнеры** вы увидите контейнер журналов в реальном времени. Дополнительные сведения об этой функции и конфигурации, необходимых для предоставления и управления доступом, см. в разделе [How to view container logs real time with Azure Monitor for containers (Preview)](container-insights-live-logs.md) Просмотр контейнера журналов в реальном времени с помощью Azure Monitor для контейнеров (предварительная версия). 
+При развертывании объектов в иерархии панель свойств обновляется на основе выбранного объекта. На панели вы также можете просмотреть события Kubernetes с заранее определенными поисками по журналам. Для этого щелкните ссылку **Просмотреть журналы событий Kubernetes** в верхней части панели. Дополнительные сведения о просмотре данных журнала Kubernetes см. в разделе [Поиск по журналам для анализа данных](container-insights-log-search.md). При просмотре ваших контейнеров в представление**Контейнеры** вы увидите контейнер журналов в реальном времени. Дополнительные сведения об этой функции и конфигурации, необходимых для предоставления и управления доступом, см. в разделе [How to view container logs real time with Azure Monitor for containers (Preview)](container-insights-live-logs.md) Просмотр контейнера журналов в реальном времени с помощью Azure Monitor для контейнеров (предварительная версия). 
 
-Используйте параметр **+ Добавить фильтр** в верхней части страницы, чтобы отфильтровать результаты для представления по **службе**, **узлу** или **пространству имен**. После выбора области фильтра выберите одно из значений в поле **Выбрать значения**.  После настройки фильтра он применяется глобально при просмотре любой перспективы кластера AKS.  Формула поддерживает только знак равенства.  Поверх первого фильтра можно добавить дополнительные фильтры, чтобы сузить диапазон результатов.  Например, если указана фильтрация по **узлу**, вторым фильтром можно выбрать только **службу** или **пространство имен**.  
+Используйте **+ добавить фильтр** параметр в верхней части страницы, чтобы отфильтровать результаты для представления с **службы**, **узел**, **пространства имен**, или  **Узлов в пуле** и выбрав область фильтра, вы выберите одно из значений, приведенных в **выберите значения** поля.  После настройки фильтра он применяется глобально при просмотре любой перспективы кластера AKS.  Формула поддерживает только знак равенства.  Поверх первого фильтра можно добавить дополнительные фильтры, чтобы сузить диапазон результатов.  Например, если указана фильтрация по **узлу**, вторым фильтром можно выбрать только **службу** или **пространство имен**.  
 
 ![Пример с использованием фильтра, чтобы сузить диапазон результатов](./media/container-insights-analyze/add-filter-option-01.png)
 
@@ -172,7 +173,7 @@ Azure Monitor для контейнеров также поддерживает 
 
 | столбец | ОПИСАНИЕ | 
 |--------|-------------|
-| ИМЯ | Имя узла. |
+| Name | Имя узла. |
 | Статус | Представление Kubernetes о состоянии узла. |
 | Avg&nbsp;%, Min&nbsp;%, Max&nbsp;%, 50&nbsp;%, 90&nbsp;% | Средний процент для узла на основе процентиля в течение выбранного периода времени. |
 | Avg, Min, Max, 50, 90 | Среднее фактическое значение для узла на основе процентиля в течение выбранного периода времени. Среднее значение измеряется на основании лимита ЦП и памяти, установленного для узла. Для модулей pod и контейнеров это среднее значение, сообщаемое узлом. |
@@ -201,7 +202,7 @@ Azure Monitor для контейнеров также поддерживает 
 
 | столбец | ОПИСАНИЕ | 
 |--------|-------------|
-| ИМЯ | Имя контроллера.|
+| Name | Имя контроллера.|
 | Статус | Состояние сводного числа контейнеров после завершения выполнения, например *ОК*, *Завершено*, *Сбой*, *Остановлено* или *Приостановлено*. Если контейнер выполняется, но его состояние было неправильно представлено или не было выбрано агентом и не передавалось более 30 минут, то значением состояния будет *Неизвестно*. В таблице ниже приведены дополнительные сведения о значке состояния.|
 | Avg&nbsp;%, Min&nbsp;%, Max&nbsp;%, 50&nbsp;%, 90&nbsp;% | Сводный среднее средний процент каждой сущности для выбранной метрики и процентиля. |
 | Avg, Min, Max, 50, 90  | Сводное среднее значение производительности ЦП (в миллиядрах) или памяти для контейнера для выбранного процентиля. Среднее значение измеряется на основании лимита ресурсов ЦП и памяти, установленного для pod. |
@@ -238,7 +239,7 @@ Azure Monitor для контейнеров также поддерживает 
 
 | столбец | ОПИСАНИЕ | 
 |--------|-------------|
-| ИМЯ | Имя контроллера.|
+| Name | Имя контроллера.|
 | Статус | Состояния контейнеров (при наличии). В таблице ниже приведены дополнительные сведения о значке состояния.|
 | Avg&nbsp;%, Min&nbsp;%, Max&nbsp;%, 50&nbsp;%, 90&nbsp;% | Сводное значение среднего процента каждой сущности для выбранной метрики и процентиля. |
 | Avg, Min, Max, 50, 90  | Сводное среднее значение производительности ЦП (в миллиардах) или памяти контейнера для выбранного процентиля. Среднее значение измеряется на основании лимита ресурсов ЦП и памяти, установленного для pod. |
@@ -258,49 +259,6 @@ Azure Monitor для контейнеров также поддерживает 
 | ![Значок состояния "Завершено"](./media/container-insights-analyze/containers-terminated-icon.png) | Успешно остановлено или не удалось остановить|  
 | ![Значок состояния "Сбой"](./media/container-insights-analyze/containers-failed-icon.png) | Состояние сбоя |  
 
-
-## <a name="container-data-collection-details"></a>Сведения о сборе данных из контейнеров
-Служба аналитики для контейнеров собирает данные различных метрик производительности и данные журналов из узлов контейнеров и контейнеров. Эти данные собираются каждые три минуты.
-
-### <a name="container-records"></a>Записи контейнеров
-
-В таблице ниже приведены примеры записей, собранных Azure Monitor для контейнеров, и типов данных, которые отображаются в результатах поиска по журналам.
-
-| Тип данных | Тип данных, используемый для поиска в журналах | Поля |
-| --- | --- | --- |
-| Производительность узлов и контейнеров | `Perf` | Computer, ObjectName, CounterName &#40;%Processor Time, Disk Reads MB, Disk Writes MB, Memory Usage MB, Network Receive Bytes, Network Send Bytes, Processor Usage sec, Network&#41;, CounterValue, TimeGenerated, CounterPath, SourceSystem |
-| Список контейнеров | `ContainerInventory` | TimeGenerated, Computer, container name, ContainerHostname, Image, ImageTag, ContainerState, ExitCode, EnvironmentVar, Command, CreatedTime, StartedTime, FinishedTime, SourceSystem, ContainerID, ImageID |
-| Список образов контейнеров | `ContainerImageInventory` | TimeGenerated, Computer, Image, ImageTag, ImageSize, VirtualSize, Running, Paused, Stopped, Failed, SourceSystem, ImageID, TotalContainer |
-| Журнал контейнеров | `ContainerLog` | TimeGenerated, Computer, image ID, container name, LogEntrySource, LogEntry, SourceSystem, ContainerID |
-| Журнал службы контейнеров | `ContainerServiceLog`  | TimeGenerated, Computer, TimeOfCommand, Image, Command, SourceSystem, ContainerID |
-| Список узлов контейнеров | `ContainerNodeInventory_CL`| TimeGenerated, Computer, ClassName_s, DockerVersion_s, OperatingSystem_s, Volume_s, Network_s, NodeRole_s, OrchestratorType_s, InstanceID_g, SourceSystem|
-| Процесс контейнера | `ContainerProcess_CL` | TimeGenerated, Computer, Pod_s, Namespace_s, ClassName_s, InstanceID_s, Uid_s, PID_s, PPID_s, C_s, STIME_s, Tty_s, TIME_s, Cmd_s, Id_s, Name_s, SourceSystem |
-| Список модулей pod в кластере Kubernetes | `KubePodInventory` | TimeGenerated, Computer, ClusterId, ContainerCreationTimeStamp, PodUid, PodCreationTimeStamp, ContainerRestartCount, PodRestartCount, PodStartTime, ContainerStartTime, ServiceName, ControllerKind, ControllerName, ContainerStatus, ContainerID, ContainerName, Name, PodLabel, Namespace, PodStatus, ClusterName, PodIp, SourceSystem |
-| Список узлов кластера Kubernetes | `KubeNodeInventory` | TimeGenerated, Computer, ClusterName, ClusterId, LastTransitionTimeReady, Labels, Status, KubeletVersion, KubeProxyVersion, CreationTimeStamp, SourceSystem | 
-| События Kubernetes | `KubeEvents_CL` | TimeGenerated, Computer, ClusterId_s, FirstSeen_t, LastSeen_t, Count_d, ObjectKind_s, Namespace_s, Name_s, Reason_s, Type_s, TimeGenerated_s, SourceComponent_s, ClusterName_s, Message,  SourceSystem | 
-| Службы в кластере Kubernetes | `KubeServices_CL` | TimeGenerated, ServiceName_s, Namespace_s, SelectorLabels_s, ClusterId_s, ClusterName_s, ClusterIP_s, ServiceType_s, SourceSystem | 
-| Метрики производительности для узлов кластера Kubernetes | Perf &#124; where ObjectName == "K8SNode" | Computer, ObjectName, CounterName &#40;cpuUsageNanoCores, , memoryWorkingSetBytes, memoryRssBytes, networkRxBytes, networkTxBytes, restartTimeEpoch, networkRxBytesPerSec, networkTxBytesPerSec, cpuAllocatableNanoCores, memoryAllocatableBytes, cpuCapacityNanoCores, memoryCapacityBytes&#41;,CounterValue, TimeGenerated, CounterPath, SourceSystem | 
-| Метрики производительности контейнеров кластера Kubernetes | Perf &#124; where ObjectName == “K8SContainer” | CounterName &#40;cpuUsageNanoCores, memoryWorkingSetBytes, memoryRssBytes, restartTimeEpoch, cpuRequestNanoCores, memoryRequestBytes, cpuLimitNanoCores, memoryLimitBytes&#41;,CounterValue, TimeGenerated, CounterPath, SourceSystem | 
-
-## <a name="search-logs-to-analyze-data"></a>Поиск по журналам для анализа данных
-Log Analytics помогает выявлять тренды, диагностировать узкие места, составлять прогнозы и сопоставлять данные, с помощью которых можно определить, оптимальна ли текущая конфигурация кластера. Вам доступны предопределенные запросы поиска по журналам, которые можно использовать без изменений или настроить для получения сведений нужным вам образом. 
-
-Можно выполнить интерактивный анализ данных в рабочей области, выбрав параметр **просмотра журналов событий Kubernetes** или **просмотра журналов контейнера**, доступный в области предварительного просмотра. Страница **поиска по журналам** появится в правой области страницы портала Azure, которую вы использовали.
-
-![Анализ данных в Log Analytics](./media/container-insights-analyze/container-health-log-search-example.png)   
-
-Выходные данные журналов контейнеров, которые передаются в Log Analytics: STDOUT и STDERR. Так как Azure Monitor отслеживает среду Kubernetes (AKS) под управлением Azure, сейчас сведения о системе Kube не собираются ввиду большого объема создаваемых данных. 
-
-### <a name="example-log-search-queries"></a>Примеры запросов для поиска по журналам
-При создании запросов часто бывает полезно начать с одного-двух примеров, внося затем в них изменения в соответствии со своими требованиями. Можно поэкспериментировать с приведенными ниже примерами запросов, чтобы научиться создавать более сложные запросы.
-
-| Запрос | ОПИСАНИЕ | 
-|-------|-------------|
-| ContainerInventory<br> &#124; project Computer, Name, Image, ImageTag, ContainerState, CreatedTime, StartedTime, FinishedTime<br> &#124; render table | Вывод всех сведений о жизненном цикле контейнера| 
-| KubeEvents_CL<br> &#124; where not(isempty(Namespace_s))<br> &#124; sort by TimeGenerated desc<br> &#124; render table | События Kubernetes|
-| ContainerImageInventory<br> &#124; summarize AggregatedValue = count() by Image, ImageTag, Running | Инвентаризация образа | 
-| **Выберите вариант отображения графика**.<br> Perf<br> &#124; where ObjectName == "K8SContainer" and CounterName == "cpuUsageNanoCores" &#124; summarize AvgCPUUsageNanoCores = avg(CounterValue) by bin(TimeGenerated, 30m), InstanceName | Ресурсы ЦП контейнера. | 
-| **Выберите вариант отображения графика**.<br> Perf<br> &#124; where ObjectName == "K8SContainer" and CounterName == "memoryRssBytes" &#124; summarize AvgUsedRssMemoryBytes = avg(CounterValue) by bin(TimeGenerated, 30m), InstanceName | Память контейнера |
-
 ## <a name="next-steps"></a>Дальнейшие действия
-Azure Monitor для контейнеров не содержит предопределенный набор оповещений, которые можно скопировать и изменить в соответствии со вспомогательными процессами и процедурами. Просмотрите статью о [создании оповещений производительности с помощью Azure Monitor для контейнеров](container-insights-alerts.md), чтобы научиться создавать рекомендуемые оповещения при высокой загрузке ЦП и памяти.  
+- Просмотрите [Создание предупреждения о производительности с помощью Azure Monitor для контейнеров](container-insights-alerts.md) вы научитесь создавать оповещения для высокой загрузки ЦП и памяти для поддержки DevOps или рабочие процессы и процедуры. 
+- Представление [журнала примеры запросов](container-insights-log-search.md#search-logs-to-analyze-data) предопределенных запросов и примеры для настройки предупреждений, визуализация и анализ кластеров и оценки.

@@ -5,14 +5,14 @@ author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 03/01/2019
+ms.date: 04/18/2019
 ms.author: mayg
-ms.openlocfilehash: 55ccfd17a39a19bec01924e263d8f4892bd6101d
-ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
-ms.translationtype: MT
+ms.openlocfilehash: 0597f185df35a92696ed9287d23778180319b3de
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57216753"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60005695"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-vmware-to-azure"></a>О Планировщике развертывания Azure Site Recovery для восстановления виртуальных машин VMware в Azure
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
@@ -66,7 +66,7 @@ ms.locfileid: "57216753"
 | | **VMware в VMware** |**Hyper-V в Azure**|**Из Azure в Azure**|**Из Hyper-V на дополнительный сайт**|**Из VMware на дополнительный сайт**
 --|--|--|--|--|--
 Поддерживаемые сценарии использования. |Yes|Да|Нет |Да*|Нет 
-Поддерживаемая версия | vCenter 6.5, 6.0 или 5.5| Windows Server 2016, Windows Server 2012 R2 | Нет данных |Windows Server 2016, Windows Server 2012 R2|Нет данных
+Поддерживаемая версия | vCenter, 6.7, 6.5, 6.0 или 5.5| Windows Server 2016, Windows Server 2012 R2 | Нет данных |Windows Server 2016, Windows Server 2012 R2|Нет данных
 Поддерживаемая конфигурация|vCenter, ESXi| Кластер Hyper-V, узел Hyper-V|Нет данных|Кластер Hyper-V, узел Hyper-V|Нет данных|
 Число серверов, которые можно профилировать для каждого запущенного экземпляра планировщика развертывания Site Recovery. |Один (одновременно можно профилировать виртуальные машины на одном сервере vCenter Server или ESXi)|Несколько (одновременно можно профилировать виртуальные машины на нескольких узлах или кластерах узлов)| Нет данных |Несколько (одновременно можно профилировать виртуальные машины на нескольких узлах или кластерах узлов)| Нет данных
 
@@ -117,7 +117,7 @@ ms.locfileid: "57216753"
 
 
 ## <a name="version-history"></a>Журнал версий
-Последняя версия Планировщика развертывания Site Recovery — 2.3.
+Последняя версия средства планировщика развертывания Site Recovery — 2.4.
 Описание исправлений, добавляемых при каждом обновлении, см. на странице [журнала версий планировщика развертывания Site Recovery](https://social.technet.microsoft.com/wiki/contents/articles/51049.asr-deployment-planner-version-history.aspx).
 
 ## <a name="next-steps"></a>Дальнейшие действия

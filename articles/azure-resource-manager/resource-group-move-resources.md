@@ -10,14 +10,14 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/04/2019
+ms.date: 04/19/2019
 ms.author: tomfitz
-ms.openlocfilehash: f5ff43102c42823891f2035c3f577e7def87fcb7
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
-ms.translationtype: MT
+ms.openlocfilehash: dfe2a103005cc48860c7bbeb3036afe94ff3a559
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59528243"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60004063"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -63,7 +63,7 @@ ms.locfileid: "59528243"
 * База данных Azure для MariaDB
 * База данных Azure для MySQL
 * База данных Azure для PostgreSQL
-* Azure DevOps. Организации Azure DevOps с приобретенными расширениями сторонних производителей должны [отменить свои приобретения](https://go.microsoft.com/fwlink/?linkid=871160), прежде чем смогут перемещать учетную запись между подписками.
+* Azure DevOps — выполните действия, чтобы [изменить подписку Azure, используемой для выставления счетов](/azure/devops/organizations/billing/change-azure-subscription?view=azure-devops).
 * Карты Azure
 * Журналы Azure Monitor
 * Ретранслятор Azure
@@ -74,7 +74,7 @@ ms.locfileid: "59528243"
 * CDN
 * Облачные службы — см. раздел [Ограничения классического развертывания](#classic-deployment-limitations).
 * Cognitive Services
-* Реестр контейнеров — реестр контейнеров нельзя переместить, если включена географическая репликация.
+* Реестр контейнеров
 * Content Moderator
 * Управление затратами
 * Customer Insights

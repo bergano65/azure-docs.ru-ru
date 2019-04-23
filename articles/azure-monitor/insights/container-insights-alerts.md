@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/01/2019
+ms.date: 04/17/2019
 ms.author: magoedte
-ms.openlocfilehash: ebe2c2b488e3d71597dd24f5504a14dd7ce6671e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: bbd7c733c7c089328d2fbe016426fe9de3a6b5ce
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59791547"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59998657"
 ---
 # <a name="how-to-set-up-alerts-for-performance-problems-in-azure-monitor-for-containers"></a>Как настроить оповещения для проблем производительности в Azure Monitor для контейнеров
 Azure Monitor для контейнеров отслеживает производительность рабочих нагрузок контейнеров, которые развертываются экземпляры контейнеров Azure или на управляемых кластеров Kubernetes, размещенных в службе Azure Kubernetes (AKS).
@@ -285,5 +285,5 @@ let endDateTime = now();
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Представление [журнала примеры запросов](container-insights-analyze.md#search-logs-to-analyze-data) Дополнительные сведения о предопределенных запросов и примеры для оценки и настройки для других оповещений сценариев.
-* Дополнительные сведения об Azure Monitor и отслеживать другие аспекты кластера AKS, см. в разделе [службе Azure Kubernetes представление работоспособности](container-insights-analyze.md).
+- Представление [журнала примеры запросов](container-insights-log-search.md#search-logs-to-analyze-data) предопределенных запросов и примеры для настройки предупреждений, визуализация и анализ кластеров и оценки.
+- Дополнительные сведения об Azure Monitor и отслеживать другие аспекты кластера AKS, см. в разделе [службе Azure Kubernetes представление работоспособности](container-insights-analyze.md).

@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/25/2019
 ms.author: spelluru
-ms.openlocfilehash: e51c56f54a4e30b5e9094388ed92aa0a62ba0840
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: cf1bb31614c04d6073bc40c510fc43b2f8e4e189
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59796316"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60148991"
 ---
 # <a name="create-a-custom-image-factory-in-azure-devtest-labs"></a>Создание фабрики пользовательского образа в Azure DevTest Labs
-В этой статье показано, как настроить фабрику пользовательского образа, используя примеры сценариев, доступных в [репозиторий Git](https://github.com/Azure/azure-devtestlab/tree/master/Scripts/ImageFactory).
+В этой статье показано, как настроить фабрику пользовательского образа, используя примеры сценариев, доступных в [репозиторий Git](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Scripts/ImageFactory).
 
 ## <a name="whats-an-image-factory"></a>Что такое фабрика образов?
 Фабрика образов — это решение конфигурация как код, который создает и распространяет образы автоматически на регулярной основе с требуемой конфигурации. Образы в фабрике изображения всегда доступны актуальные и текущего обслуживания практически нулевой после весь процесс выполняется автоматически. И, поскольку все необходимые конфигурации уже находятся в образе, они сокращают время, от настройки системы вручную после создания виртуальной Машины с базовой ОС.
@@ -39,7 +39,7 @@ ms.locfileid: "59796316"
 
 ![Высокоуровневый обзор решения](./media/create-image-factory/high-level-view-of-solution.png)
 
-Существует [расширения VSTS для DevTest Labs](https://marketplace.visualstudio.com/items?itemName=ms-azuredevtestlabs.tasks) , позволяющий выполнить эти отдельные действия: 
+Существует [расширения VSTS для DevTest Labs](https://marketplace.visualstudio.com/items?itemName=ms-azuredevtestlabs.tasks) , позволяющий выполнить эти отдельные действия:
 
 - Создание пользовательского образа
 - Создание виртуальной машины

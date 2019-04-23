@@ -16,16 +16,16 @@ ms.date: 03/22/2019
 ms.author: joflore
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: acf17971bde840743d17dd0b66078630c2d4e7c1
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
-ms.translationtype: MT
+ms.openlocfilehash: af10596fb1ddf4a4f9eba2b8265eb77221a19f4c
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58518802"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59996073"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Часто задаваемые вопросы об управлении устройствами в Azure Active Directory
 
-###<a name="q-i-registered-the-device-recently-why-cant-i-see-the-device-under-my-user-info-in-the-azure-portal-or-why-is-the-device-owner-marked-as-na-for-hybrid-azure-active-directory-azure-ad-joined-devices"></a>Вопрос. Мной недавно было зарегистрировано устройство. Почему оно отсутствует в моих сведениях о пользователе на портале Azure? Или почему владелец устройства отмечена как устройства, присоединенные к нет данных для гибридного Azure Active Directory (Azure AD)?
+### <a name="q-i-registered-the-device-recently-why-cant-i-see-the-device-under-my-user-info-in-the-azure-portal-or-why-is-the-device-owner-marked-as-na-for-hybrid-azure-active-directory-azure-ad-joined-devices"></a>Вопрос. Мной недавно было зарегистрировано устройство. Почему оно отсутствует в моих сведениях о пользователе на портале Azure? Или почему владелец устройства отмечена как устройства, присоединенные к нет данных для гибридного Azure Active Directory (Azure AD)?
 
 **Ответ.** Устройства Windows 10, использующие гибридное присоединение к Azure AD, не отображаются в списке **устройств пользователей**.
 Откройте представление **Все устройства** на портале Azure. Вы также можете использовать командлет PowerShell [Get-MsolDevice](https://docs.microsoft.com/powershell/module/msonline/get-msoldevice?view=azureadps-1.0).

@@ -5,16 +5,16 @@ author: dalekoetke
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 08/11/2018
+ms.date: 04/18/2019
 ms.author: mbullwin
 ms.reviewer: Dale.Koetke
 ms.subservice: ''
-ms.openlocfilehash: 2e59699b667215d4b09e4d87c1776431631348e8
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
-ms.translationtype: MT
+ms.openlocfilehash: 7117e7287f601b306893cb02dc5d7599d7c6224d
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58754246"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60007701"
 ---
 # <a name="monitoring-usage-and-estimated-costs-in-azure-monitor"></a>Использование мониторинга и ожидаемые затраты в Azure Monitor
 
@@ -102,155 +102,14 @@ ms.locfileid: "58754246"
 
 ## <a name="moving-to-the-new-pricing-model"></a>Переход на новую модель ценообразования
 
-Если необходимо внедрить новую модель ценообразования для подписки, выберите параметр **Выбор модели ценообразования** в верхней части страницы **Usage and estimated costs** (Использование и ожидаемые затраты):
+Если вы решили внедрить новую модель ценообразования для данной подписки, перейдите к каждому ресурсу Application Insights, откройте **использование и ожидаемые затраты** и убедитесь, что она находится в ценового уровня Basic, а затем перейдите к каждой Log Analytics Рабочая область, открытых **Ценовая** страницы и изменить на **за ГБ (2018 г.)** Ценовая категория. 
 
-![Снимок экрана: мониторинг использования и ожидаемых затрат в новой модели ценообразования](./media/usage-estimated-costs/006.png)
-
-Откроется страница **Выбор модели ценообразования**. На странице перечислены все подписки, просматриваемые на предыдущей странице:
-
-![Снимок экрана выбора модели ценообразования](./media/usage-estimated-costs/007.png)
-
-Чтобы переместить подписку на новую модель ценообразования, установите флажок, а затем выберите **Сохранить**. Аналогичным образом можно вернуться к старой модели ценообразования. Имейте в виду, что для изменения модели ценообразования требуется разрешение владельца либо участника подписки.
+> [!NOTE]
+> Требование, что все ресурсы Application Insights и рабочих областей Log Analytics в рамках данной подписки внедрить последнюю модель ценообразования теперь были удалены, обеспечивающую большую гибкость работы, так и упрощенную конфигурацию. 
 
 ## <a name="automate-moving-to-the-new-pricing-model"></a>Автоматизация перехода на новую модель ценообразования
 
-В следующих сценариях требуется модуль Azure PowerShell. Чтобы узнать, как проверить наличие последней версии, см. раздел [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps).
+Как отмечалось выше, больше не требуется переместить все ресурсы для мониторинга в подписке на новую модель ценообразования в то же время и, следовательно ``migratetonewpricingmodel`` действия больше не будет иметь эффекта. Теперь можно перемещать ресурсы Application Insights и рабочие области Log Analytics отдельно в новые ценовые категории.  
 
-После установки ​​последней версии Azure PowerShell нужно запустить ``Connect-AzAccount``.
+Автоматизация этого изменения описана для Application Insights с использованием [набора AzureRmApplicationInsightsPricingPlan](https://docs.microsoft.com/powershell/module/azurerm.applicationinsights/set-azurermapplicationinsightspricingplan) с ``-PricingPlan "Basic"`` и Log Analytics с помощью [Set-AzureRmOperationalInsightsWorkspace](https://docs.microsoft.com/powershell/module/AzureRM.OperationalInsights/Set-AzureRmOperationalInsightsWorkspace) с ``-sku "PerGB2018"``. 
 
-``` PowerShell
-# To check if your subscription is eligible to adjust pricing models.
-$ResourceID ="/subscriptions/<Subscription-ID-Here>/providers/microsoft.insights"
-Invoke-AzResourceAction `
- -ResourceId $ResourceID `
- -ApiVersion "2017-10-01" `
- -Action listmigrationdate `
- -Force
-```
-
-Результатом значения True в разделе GrandFatherableSubscription является то, что модель ценообразования этой подписки можно переносить между разными моделями ценообразования. Пустое значение в группе optedInDate означает, что эта подписка настроена для старой модели ценообразования.
-
-```
-isGrandFatherableSubscription optedInDate
------------------------------ -----------
-                         True            
-```
-
-Чтобы перенести эту подписку для новой модели ценообразования, выполните:
-
-```powershell
-$ResourceID ="/subscriptions/<Subscription-ID-Here>/providers/microsoft.insights"
-Invoke-AzResourceAction `
- -ResourceId $ResourceID `
- -ApiVersion "2017-10-01" `
- -Action migratetonewpricingmodel `
- -Force
-```
-
-Чтобы проверить, внесены ли изменения, запустите повторно:
-
-```powershell
-$ResourceID ="/subscriptions/<Subscription-ID-Here>/providers/microsoft.insights"
-Invoke-AzResourceAction `
- -ResourceId $ResourceID `
- -ApiVersion "2017-10-01" `
- -Action listmigrationdate `
- -Force
-```
-
-При успешном переносе результат должен выглядеть так:
-
-```
-isGrandFatherableSubscription optedInDate                      
------------------------------ -----------                      
-                         True 2018-05-31T13:52:43.3592081+00:00
-```
-
-OptInDate теперь содержит метку времени, которая показывает, когда эта подписка была выбрана для новой модели ценообразования.
-
-Если требуется вернуться к старой модели ценообразования, выполните:
-
-```powershell
- $ResourceID ="/subscriptions/<Subscription-ID-Here>/providers/microsoft.insights"
-Invoke-AzResourceAction `
- -ResourceId $ResourceID `
- -ApiVersion "2017-10-01" `
- -Action rollbacktolegacypricingmodel `
- -Force
-```
-
-Если перезапустить предыдущий сценарий, который имеет ``-Action listmigrationdate``, отобразится пустое значение optedInDate, указывающее возврат подписки к прежней модели ценообразования.
-
-Если у вас несколько подписок в одном клиенте, которые нужно перенести, можно создать собственный вариант, используя фрагменты следующих сценариев:
-
-```powershell
-#Query tenant and create an array comprised of all of your tenants subscription IDs
-$TenantId = <Your-tenant-id>
-$Tenant =Get-AzSubscription -TenantId $TenantId
-$Subscriptions = $Tenant.Id
-```
-
-Чтобы проверить пригодность всех подписок своего клиента для новой модели ценообразования, можно запустить:
-
-```powershell
-Foreach ($id in $Subscriptions)
-{
-$ResourceID ="/subscriptions/$id/providers/microsoft.insights"
-Invoke-AzResourceAction `
- -ResourceId $ResourceID `
- -ApiVersion "2017-10-01" `
- -Action listmigrationdate `
- -Force
-}
-```
-
-Этот сценарий можно улучшить, создав сценарий, который генерирует три массива. Один массив будет состоять из всех подписок идентификаторов в ```isGrandFatherableSubscription``` присвоено значение True и optedInDate в настоящее время не имеет значения. Второй массив возможных подписок в данный момент на новой модели ценообразования. И третий массив заполняется только идентификаторы подписки в клиенте, не подходящих для новой модели ценообразования:
-
-```powershell
-[System.Collections.ArrayList]$Eligible= @{}
-[System.Collections.ArrayList]$NewPricingEnabled = @{}
-[System.Collections.ArrayList]$NotEligible = @{}
-
-Foreach ($id in $Subscriptions)
-{
-$ResourceID ="/subscriptions/$id/providers/microsoft.insights"
-$Result= Invoke-AzResourceAction `
- -ResourceId $ResourceID `
- -ApiVersion "2017-10-01" `
- -Action listmigrationdate `
- -Force
-
-     if ($Result.isGrandFatherableSubscription -eq $True -and [bool]$Result.optedInDate -eq $False)
-     {
-     $Eligible.Add($id)
-     }
-
-     elseif ($Result.isGrandFatherableSubscription -eq $True -and [bool]$Result.optedInDate -eq $True)
-     {
-     $NewPricingEnabled.Add($id)
-     }
-
-     elseif ($Result.isGrandFatherableSubscription -eq $False)
-     {
-     $NotEligible.add($id)
-     }
-}
-```
-
-> [!NOTE]
-> В зависимости от количества подписок приведенных выше, выполнение сценария может занять некоторое время. Благодаря использованию метода .add() окно PowerShell будет повторять возрастающие значения по мере добавления элементов в каждый массив.
-
-Теперь, когда подписки разделены на три массива, следует внимательно просмотреть результаты. Можете сделать резервную копию содержимого массивов, чтобы при необходимости легко вернуть изменения в будущем. Если нужно преобразовать все подходящие подписки, которые находятся в данный момент на старой модели ценообразования, в новую модель, эту задачу можно выполнить таким способом:
-
-```powershell
-Foreach ($id in $Eligible)
-{
-$ResourceID ="/subscriptions/$id/providers/microsoft.insights"
-Invoke-AzResourceAction `
- -ResourceId $ResourceID `
- -ApiVersion "2017-10-01" `
- -Action migratetonewpricingmodel `
- -Force
-}
-
-```

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: cdca2823962c442c9142fa439795269f419aa489
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
-ms.translationtype: MT
+ms.openlocfilehash: fa4487b07f130947ac5da2a5dbae6776b06acbe7
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58189688"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60009908"
 ---
 # <a name="input-metadata"></a>Входные метаданные 
 
@@ -38,7 +38,7 @@ ms.locfileid: "58189688"
 
 Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
-| ИМЯ | ОПИСАНИЕ |
+| Name | ОПИСАНИЕ |
 | --- | --- |
 | **AssetFile**<br /><br /> minOccurs="1" maxOccurs="unbounded" |Один дочерний элемент. Дополнительные сведения см. в разделе [Элемент AssetFile](media-services-input-metadata-schema.md#AssetFile). |
 
@@ -48,7 +48,7 @@ ms.locfileid: "58189688"
  Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
-| ИМЯ | Тип | ОПИСАНИЕ |
+| Name | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | **Имя**<br /><br /> Обязательно для заполнения |**xs:string** |Имя файла ресурса-контейнера. |
 | **Размер**<br /><br /> Обязательно для заполнения |**xs:long** |Размер файла ресурса-контейнера в байтах. |
@@ -65,7 +65,7 @@ ms.locfileid: "58189688"
 > 
 
 ### <a name="child-elements"></a>Дочерние элементы
-| ИМЯ | Тип | ОПИСАНИЕ |
+| Name | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | **Programs**<br /><br /> minOccurs="0" | |Коллекция всех [элементов Programs](media-services-input-metadata-schema.md#Programs), если файл ресурса-контейнера имеет формат MPEG-TS. |
 | **VideoTracks**<br /><br /> minOccurs="0" | |Каждый физический файл ресурса может содержать ноль или более видеодорожек, чередуемых в соответствующем формате ресурса. Этот элемент содержит коллекцию всех [элементов VideoTracks](media-services-input-metadata-schema.md#VideoTracks), которые являются частью файла ресурса. |
@@ -76,7 +76,7 @@ ms.locfileid: "58189688"
 Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
-| ИМЯ | Тип | ОПИСАНИЕ |
+| Name | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | **Id**<br /><br /> Обязательно для заполнения |**xs:int** |Отсчитываемый от нуля индекс аудио- или видеодорожки.<br /><br /> MP4-файл не обязательно должен содержать идентификатор дорожки. |
 | **Codec** |**xs:string** |Строка кодека видеодорожки. |
@@ -92,7 +92,7 @@ ms.locfileid: "58189688"
 > 
 
 ### <a name="child-elements"></a>Дочерние элементы
-| ИМЯ | Тип | ОПИСАНИЕ |
+| Name | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | **Disposition**<br /><br /> minOccurs="0" maxOccurs="1" |[StreamDispositionType](media-services-input-metadata-schema.md#StreamDispositionType) |Содержит сведения о презентации (например, указывает, предназначена ли конкретная звуковая дорожка для людей с нарушениями зрения). |
 | **Metadata**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[MetadataType](media-services-input-metadata-schema.md#MetadataType) |Общие строки "ключ —значение", которые можно использовать для хранения различных сведений. Например, key="language" и value="eng". |
@@ -105,7 +105,7 @@ ms.locfileid: "58189688"
  Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
-| ИМЯ | Тип | ОПИСАНИЕ |
+| Name | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | **SampleFormat** |**xs:string** |Формат выборки. |
 | **ChannelLayout** |**xs: string** |Структура канала. |
@@ -122,7 +122,7 @@ ms.locfileid: "58189688"
 Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
-| ИМЯ | Тип | ОПИСАНИЕ |
+| Name | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | **FourCC**<br /><br /> Обязательно для заполнения |**xs:string** |Код FourCC видеокодека. |
 | **Профиль** |**xs: string** |Профиль видеодорожки. |
@@ -146,7 +146,7 @@ ms.locfileid: "58189688"
 Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
-| ИМЯ | Тип | ОПИСАНИЕ |
+| Name | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | **key**<br /><br /> Обязательно для заполнения |**xs:string** |Ключ в паре "ключ — значение". |
 | **значение**<br /><br /> Обязательно для заполнения |**xs:string** |Значение в паре "ключ — значение". |
@@ -155,7 +155,7 @@ ms.locfileid: "58189688"
 **ProgramType** — глобальный сложный тип, описывающий программу.  
 
 ### <a name="attributes"></a>Атрибуты
-| ИМЯ | Тип | ОПИСАНИЕ |
+| Name | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | **ProgramId**<br /><br /> Обязательно для заполнения |**xs:int** |Идентификатор программы |
 | **NumberOfPrograms**<br /><br /> Обязательно для заполнения |**xs:int** |Количество программ. |
@@ -170,7 +170,7 @@ ms.locfileid: "58189688"
 Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
-| ИМЯ | Тип | ОПИСАНИЕ |
+| Name | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | **По умолчанию**<br /><br /> Обязательно для заполнения |**xs: int** |Установите значение 1, чтобы указать, что это презентация по умолчанию. |
 | **Dub**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что это дубликат презентации. |
@@ -179,7 +179,7 @@ ms.locfileid: "58189688"
 | **Lyrics**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что эта дорожка содержит слова композиции. |
 | **Karaoke**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что это караоке-дорожка (фонограмма без вокала). |
 | **Forced**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что это принудительная презентация. |
-| **HearingImpaired**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что эта дорожка предназначена для пользователей с нарушениями слуха. |
+| **HearingImpaired**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что эта дорожка предназначена для людей с нарушениями слуха. |
 | **VisualImpaired**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что эта дорожка предназначена для пользователей с нарушениями зрения. |
 | **CleanEffects**<br /><br /> Обязательно для заполнения |**xs: int** |Установите значение 1, чтобы указать, что эта дорожка содержит чистые эффекты. |
 | **AttachedPic**<br /><br /> Обязательно для заполнения |**xs: int** |Установите значение 1, чтобы указать, что эта дорожка содержит изображения. |
@@ -188,7 +188,7 @@ ms.locfileid: "58189688"
 Оболочечный элемент, содержащий несколько элементов **Program**.  
 
 ### <a name="child-elements"></a>Дочерние элементы
-| ИМЯ | Тип | ОПИСАНИЕ |
+| Name | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | **Program**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[ProgramType](media-services-input-metadata-schema.md#ProgramType) |Содержит сведения о программах в файле ресурса-контейнера (в формате MPEG-TS). |
 
@@ -198,7 +198,7 @@ ms.locfileid: "58189688"
  Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="child-elements"></a>Дочерние элементы
-| ИМЯ | Тип | ОПИСАНИЕ |
+| Name | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | **VideoTrack**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[VideoTrackType (наследуется из TrackType)](media-services-input-metadata-schema.md#VideoTrackType) |Содержит сведения о видеодорожках в файле ресурса-контейнера. |
 
@@ -208,7 +208,7 @@ ms.locfileid: "58189688"
  Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="elements"></a>элементы
-| ИМЯ | Тип | ОПИСАНИЕ |
+| Name | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | **AudioTrack**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[AudioTrackType (наследуется из TrackType)](media-services-input-metadata-schema.md#AudioTrackType) |Содержит сведения о звуковых дорожках в файле ресурса-контейнера. |
 

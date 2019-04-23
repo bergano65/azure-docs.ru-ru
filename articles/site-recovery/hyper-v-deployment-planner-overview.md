@@ -2,17 +2,17 @@
 title: Сведения об использовании Планировщика развертывания Azure Site Recovery для аварийного восстановления виртуальных машин Hyper-V в Azure | Документация Майкрософт
 description: Узнайте об использовании Планировщика развертывания Azure Site Recovery для аварийного восстановления ресурсов Hyper-V в Azure.
 author: mayurigupta13
-manager: garavd
+manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 4/9/2019
+ms.date: 4/18/2019
 ms.author: mayg
-ms.openlocfilehash: 43431c401f13117af1f60d3affd284fc125be7eb
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: e40a6b69b1cc4785b3055eaa31905c9ee88170e2
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59360278"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60001513"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-hyper-v-disaster-recovery-to-azure"></a>Сведения об использовании Планировщика развертывания Azure Site Recovery для аварийного восстановления виртуальных машин Hyper-V в Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "59360278"
 | | **VMware в VMware** |**Hyper-V в Azure**|**Из Azure в Azure**|**Из Hyper-V на дополнительный сайт**|**Из VMware на дополнительный сайт**
 --|--|--|--|--|--
 Поддерживаемые сценарии использования. |Yes|Да|Нет |Да*|Нет 
-Поддерживаемая версия | vCenter 6.5, 6.0 или 5.5| Windows Server 2016, Windows Server 2012 R2 | Нет данных |Windows Server 2016, Windows Server 2012 R2|Нет данных
+Поддерживаемая версия | vCenter, 6.7, 6.5, 6.0 или 5.5| Windows Server 2016, Windows Server 2012 R2 | Нет данных |Windows Server 2016, Windows Server 2012 R2|Нет данных
 Поддерживаемая конфигурация|vCenter, ESXi| Кластер Hyper-V, узел Hyper-V|Нет данных|Кластер Hyper-V, узел Hyper-V|Нет данных|
 Число серверов, которые можно профилировать для каждого запущенного экземпляра планировщика развертывания Azure Site Recovery. |Один (одновременно можно профилировать виртуальные машины на одном сервере vCenter Server или ESXi)|Несколько (одновременно можно профилировать виртуальные машины на нескольких узлах или кластерах узлов)| Нет данных |Несколько (одновременно можно профилировать виртуальные машины на нескольких узлах или кластерах узлов)| Нет данных
 
@@ -132,7 +132,7 @@ E:\ASR Deployment Planner_v2.3\ASRDeploymentPlanner.exe
   >Каждое обновление планировщика ресурсов с использованием ZIP-файла является накопительным. Не нужно копировать файлы новой версии в папку со старой версией. Вы можете создать и использовать папку.
 
 ## <a name="version-history"></a>Журнал версий
-Последняя версия средства планировщика развертывания Azure Site Recovery — 2.3.
+Последняя версия средства планировщика развертывания Azure Site Recovery — 2.4.
 Ссылаться на [журнала версий планировщика развертывания восстановления сайта Azure](https://social.technet.microsoft.com/wiki/contents/articles/51049.asr-deployment-planner-version-history.aspx) странице Описание исправлений, которые добавляются при каждом обновлении.
 
 

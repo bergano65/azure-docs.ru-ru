@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 2/7/2019
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: ad3b5a1d684c500eff3d20832d7aa290a13849b9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: e5078176b14835938c190daa031c12055ba9ffc3
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58918643"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59996362"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Планирование развертывания службы синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -113,7 +113,7 @@ ms.locfileid: "58918643"
 ### <a name="system-requirements"></a>Требования к системе
 - Сервер под управлением Windows Server 2012 R2, Windows Server 2016 или Windows Server 2019.
 
-    | Version (версия) | Поддерживаемые номера SKU | Поддерживаемые варианты развертывания |
+    | Version | Поддерживаемые номера SKU | Поддерживаемые варианты развертывания |
     |---------|----------------|------------------------------|
     | Windows Server 2019 | Datacenter и Standard | Полное (сервер с пользовательским интерфейсом) |
     | Windows Server 2016 | Datacenter и Standard | Полное (сервер с пользовательским интерфейсом) |

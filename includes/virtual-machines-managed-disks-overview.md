@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/11/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 4563bb0de688a8328796badffc8a133a33f64fcc
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
-ms.translationtype: MT
+ms.openlocfilehash: 9d96bd76a4d284e9b4390c564446e8b27c43d591
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59566550"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60118830"
 ---
 ## <a name="benefits-of-managed-disks"></a>Преимущества управляемых дисков
 
@@ -61,7 +61,7 @@ ms.locfileid: "59566550"
 
 ### <a name="temporary-disk"></a>Временный диск
 
-Каждая виртуальная машина содержит временный диск, который не является управляемым диском. Он выступает в качестве временного хранилища для приложений и процессов и предназначен только для хранения данных, таких как страничные файлы или файлы подкачки. Данные на временном диске могут быть потеряны во время [событий обслуживания](../articles/virtual-machines/windows/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#understand-vm-reboots---maintenance-vs-downtime) событие или когда вы [повторно развернуть виртуальную Машину](../articles/virtual-machines/troubleshooting/redeploy-to-new-node-windows.md?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json). Во время стандартной корректной перезагрузки виртуальной машины данные на временном диске сохраняются.
+Каждая виртуальная машина содержит временный диск, который не является управляемым диском. Он выступает в качестве временного хранилища для приложений и процессов и предназначен только для хранения данных, таких как страничные файлы или файлы подкачки. Данные на временном диске могут быть потеряны во время [событий обслуживания](../articles/virtual-machines/windows/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#understand-vm-reboots---maintenance-vs-downtime) событие или когда вы [повторно развернуть виртуальную Машину](../articles/virtual-machines/troubleshooting/redeploy-to-new-node-windows.md?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json). В виртуальных машинах Azure временный диск будет/dev/sdb, по умолчанию и на виртуальных машинах Windows временный диск E: по умолчанию. Во время успешной обычной перезагрузки виртуальной машины данные на временном диске будут сохраняться.
 
 ## <a name="managed-disk-snapshots"></a>Моментальные снимки управляемых дисков
 

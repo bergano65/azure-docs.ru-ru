@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 02/13/2019
+ms.date: 04/16/2019
 ms.author: aahi
-ms.openlocfilehash: dfbb31ce9f61ee28fef046120474a6a170906512
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: c179620d6858658dface5f706f7994d51f1a199b
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59505581"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59997314"
 ---
-# <a name="how-to-use-named-entity-recognition-in-text-analytics-preview"></a>Как использовать распознавание именованных сущностей в API анализа текста (предварительная версия)
+# <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованной сущности в текстовой аналитики
 
-[API распознавания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634) принимает неструктурированный текст и для каждого документа JSON возвращает список неоднозначных сущностей со ссылками на дополнительную информацию в Интернете (Википедия и Bing). 
+[С именем API распознавания сущностей](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634) принимает неструктурированного текста и для каждого документа JSON, возвращает список сущностей, которые отличаются, со ссылками на дополнительные сведения в Интернете (Википедия и Bing). 
 
 ## <a name="entity-linking-and-named-entity-recognition"></a>Связывание сущностей и распознавание именованных сущностей
 
@@ -28,12 +28,10 @@ ms.locfileid: "59505581"
 ### <a name="entity-linking"></a>Связывание сущностей
 Связывание сущностей позволяет идентифицировать сущности, обнаруженные в тексте, и устранить неоднозначности (например, упоминание слова "Марс" может обозначать планету или римского бога войны). Этот процесс требует наличия базы знаний, с которыми будут связываться распознанные сущности. Например, конечная точка `entities` Текстовой аналитики использует в качестве такой базы знаний сайт Википедии.
 
-В Анализе текста [версии 2.0](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/5ac4251d5b4ccd1554da7634) доступно только связывание сущностей.
-
 ### <a name="named-entity-recognition-ner"></a>Распознавание именованных сущностей (NER)
 Распознавание именованных сущностей (NER) позволяет идентифицировать различные сущности в тексте и классифицировать их в предварительно определенные классы. Ниже перечислены поддерживаемые классы сущностей.
 
-В Анализе текста [версии 2.1-Preview](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634) доступно и связывание сущностей, и распознавание именованных сущностей (NER).
+В текстовой аналитики [версии 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634), связывание сущностей и распознавания именованных сущностей (NER) доступны.
 
 ### <a name="language-support"></a>Поддержка языков
 
@@ -44,7 +42,7 @@ ms.locfileid: "59505581"
 | type  | SubType | Пример |
 |:-----------   |:------------- |:---------|
 | Person        | Недоступно\*         | "Джеф", "Билл Гейтс"     |
-| Расположение      | Недоступно\*         | "Редмонд, штат Вашингтон", "Париж"  |
+| Location      | Недоступно\*         | "Редмонд, штат Вашингтон", "Париж"  |
 | План  | Недоступно\*         | "Майкрософт"   |
 | Количество      | Number        | "6", "шесть"     | 
 | Количество      | Процент    | "50 %", "пятьдесят процентов"| 
@@ -54,14 +52,14 @@ ms.locfileid: "59505581"
 | Количество      | Валюта      | "10,99 долл. США"     | 
 | Количество      | Измерение     | "10 миль", "40 см"     | 
 | Количество      | температура;   | "32 градуса"    |
-| DateTime      | Недоступно\*         | "18:30 4 февраля 2012 г."      | 
-| DateTime      | Дата          | "2 мая 2017 г.", "02.05.2017"   | 
-| DateTime      | Время          | "8 утра", "8:00"  | 
-| DateTime      | Диапазон дат     | "с 2 по 5 мая"    | 
-| DateTime      | Диапазон времени     | "6:00–17:00"     | 
-| DateTime      | Duration      | "1 минута и 45 секунд"   | 
-| DateTime      | Set           | "каждый вторник"     | 
-| DateTime      | TimeZone      |    | 
+| Datetime      | Недоступно\*         | "18:30 4 февраля 2012 г."      | 
+| Datetime      | Дата          | "2 мая 2017 г.", "02.05.2017"   | 
+| Datetime      | Время          | "8 утра", "8:00"  | 
+| Datetime      | Диапазон дат     | "с 2 по 5 мая"    | 
+| Datetime      | Диапазон времени     | "6:00–17:00"     | 
+| Datetime      | Duration      | "1 минута и 45 секунд"   | 
+| Datetime      | Set           | "каждый вторник"     | 
+| Datetime      | TimeZone      |    | 
 | URL-адрес           | Недоступно\*         | «https:\//www.bing.com»    |
 | Email         | Недоступно\*         | "support@contoso.com" |
 
@@ -71,7 +69,7 @@ ms.locfileid: "59505581"
 
 ## <a name="preparation"></a>Подготовка
 
-Необходимо иметь документы JSON в следующем формате: "идентификатор","текст","язык"
+Необходимо иметь документов JSON в следующем формате: Идентификатор, текст, язык
 
 Поддерживаемые языки перечислены в [этом списке](../text-analytics-supported-languages.md).
 
@@ -94,16 +92,16 @@ ms.locfileid: "59505581"
 
 Сведения об определении запроса можно найти в статье [How to call the Text Analytics REST API](text-analytics-how-to-call-api.md) (Способ вызова REST API анализа текста). Для удобства повторим следующие моменты.
 
-+ Создайте запрос **POST**. Ознакомьтесь с документацию по API для этого запроса: [API связывания сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/5ac4251d5b4ccd1554da7634)
++ Создайте запрос **POST**. Ознакомьтесь с документацию по API для этого запроса: [API связывания сущностей](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
 
-+ Настройка конечной точки HTTP для извлечения сущностей. Она должна включать ресурс `/entities`: `https://[your-region].api.cognitive.microsoft.com/text/analytics/v2.1-preview/entities`
++ Настройка конечной точки HTTP для извлечения сущностей. Она должна включать ресурс `/entities`: `https://[your-region].api.cognitive.microsoft.com/text/analytics/v2.1/entities`
 
 + Задайте заголовок запроса, чтобы включить ключ доступа для операций Анализа текста. Дополнительные сведения см. в статье [о поиске конечных точек и ключей доступа](text-analytics-how-to-access-key.md).
 
 + В тексте запроса укажите набор документов JSON, которые подготовлены для этого анализа
 
 > [!Tip]
-> Используйте [Postman](text-analytics-how-to-call-api.md) или откройте **консоль тестирования API** в [документации](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634), чтобы структурировать запрос и передать его (используя метод POST) в службу.
+> Используйте [Postman](text-analytics-how-to-call-api.md) или откройте **консоль тестирования API** в [документации](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634), чтобы структурировать запрос и передать его (используя метод POST) в службу.
 
 ## <a name="step-2-post-the-request"></a>Шаг 2. Передача запроса
 
@@ -280,18 +278,16 @@ ms.locfileid: "59505581"
 
 В этой статье рассматриваются основные понятия и рабочий процесс связывания сущностей в службе Текстовой аналитики Cognitive Services. В разделе "Сводка" сделайте следующее.
 
-+ [Сущности API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634) доступны для выбранных языков.
-+ В тексте запроса передаются документы JSON, которые содержат идентификатор, текст и код языка.
-+ Отправьте запрос POST на конечную точку `/entities`, используя правильные значения [ключа доступа и конечной точки](text-analytics-how-to-access-key.md) из вашей подписки.
++ [Сущности API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634) доступны для выбранных языков.
++ Документы JSON в тексте запроса включают идентификатор, текст, а также код языка.
++ Запрос POST передается в конечную точку `/entities`, используя личный [ключ доступа и конечную точку](text-analytics-how-to-access-key.md), допустимые для вашей подписки.
 + Ответ будет содержать выходные данные, содержащие связанные сущности (включая оценки уверенности, смещения и веб-ссылки для каждого идентификатора документа), которые можно использовать в любом приложении
-
-## <a name="see-also"></a>См. также 
-
- [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)  
- [Часто задаваемые вопросы](../text-analytics-resource-faq.md)</br>
- [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712) 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [API анализа текста](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1-Preview/operations/5ac4251d5b4ccd1554da7634)
+> [API анализа текста](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
+
+* [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)  
+* [Часто задаваемые вопросы](../text-analytics-resource-faq.md)</br>
+* [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712) 

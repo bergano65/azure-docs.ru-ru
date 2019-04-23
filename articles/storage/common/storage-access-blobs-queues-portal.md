@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: b56cbfbc9dfde8b1a7d43d55ee85c34fde385902
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 5eba650ac2a052f264d82260e9fc07bf195235da
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58846381"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60148940"
 ---
 # <a name="use-the-azure-portal-to-access-blob-or-queue-data"></a>С помощью портала Azure для доступа к данным BLOB-объектов или очередей
 
@@ -41,13 +41,13 @@ ms.locfileid: "58846381"
 Для доступа к BLOB-объектов или очередей данные на портале Azure, используя учетную запись Azure AD, оба из следующих инструкций должны соблюдаться для вас:
 
 - Вам назначены Azure Resource Manager [чтения](../../role-based-access-control/built-in-roles.md#reader) роли, как минимум, областью действия которых будет уровень учетной записи хранения или более поздней версии. **Чтения** роль предоставляет самые ограниченные разрешения, но также допускается другой роли Azure Resource Manager, которая предоставляет доступ к ресурсам управления учетной записи хранения.
-- Вам назначена либо стандартной или пользовательской роли, который предоставляет доступ к BLOB-объектов или очередей.
+- Вам назначена либо стандартной или пользовательской роли, который предоставляет доступ к данным BLOB-объектов или очередей.
 
 **Чтения** назначение ролей или другой назначение ролей Azure Resource Manager необходима, чтобы пользователь может просматривать и переход к ресурсам управления учетной записи хранения на портале Azure. Роли RBAC, которые предоставляют доступ к данным BLOB-объектов или очередей не имеет доступа к ресурсам управления учетной записи хранения. Чтобы получить доступ к данным BLOB-объектов или очередей на портале, пользователь должен разрешения на доступ к ресурсам учетной записи хранения. Дополнительные сведения об этом требовании см. в разделе [назначить роль читателя для доступа к порталу](../common/storage-auth-aad-rbac-portal.md#assign-the-reader-role-for-portal-access).
 
 Встроенные роли, которые поддерживают доступ к данным BLOB-объектов или очередей включают:
 
-- [Владелец данных хранилища BLOB-объектов](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner): Для POSIX управление доступом для Gen2 хранилища Озера данных Azure (Предварительная версия).
+- [Владелец данных хранилища BLOB-объектов](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner): Для управления доступом POSIX для Gen2 хранилища Озера данных Azure.
 - [Участник для данных больших двоичных объектов хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor): Разрешения на чтение, запись и удаление для больших двоичных объектов.
 - [Модуль чтения данных хранилища BLOB-объектов](../../role-based-access-control/built-in-roles.md#storage-blob-data-reader): Разрешения только на чтение для больших двоичных объектов.
 - [Участник для данных очереди хранилища](../../role-based-access-control/built-in-roles.md#storage-queue-data-contributor): Чтение, запись и удаление разрешений для очередей.

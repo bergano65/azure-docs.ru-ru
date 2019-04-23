@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: c2afc96ca5f7e30d5474f66bdad0cfec88a89580
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 84dddf5ed9c31e8585480319af189d31e39163e5
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59700224"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59998997"
 ---
 # <a name="tutorial-integrate-with-azure-managed-identities"></a>Руководство по интеграции с управляемыми удостоверениями Azure
 
@@ -75,7 +75,7 @@ ms.locfileid: "59700224"
 
 ## <a name="use-a-managed-identity"></a>Администрирование управляемого удостоверения
 
-1. Откройте *appsettings.json* и добавьте следующий скрипт. Замените  *\<service_endpoint >*, включая скобки, URL-адресом в хранилище конфигурации приложения:
+1. Откройте *appsettings.json* и добавьте следующий скрипт. Замените заполнитель *\<<service_endpoint>* (со скобками) URL-адресом вашего хранилища конфигураций приложений:
 
     ```json
     "AppConfig": {
@@ -194,8 +194,6 @@ http://<app_name>.azurewebsites.net
 [!INCLUDE [azure-app-configuration-cleanup](../../includes/azure-app-configuration-cleanup.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
-
-По инструкциям из этого руководства вы добавили управляемое удостоверение службы Azure, чтобы упростить доступ к службе "Конфигурация приложений" и улучшить управление учетными данными для вашего приложения. Чтобы узнать больше об использовании службы "Конфигурация приложений", перейдите к примерам скриптов Azure CLI.
 
 > [!div class="nextstepaction"]
 > [Примеры интерфейса командной строки](./cli-samples.md)

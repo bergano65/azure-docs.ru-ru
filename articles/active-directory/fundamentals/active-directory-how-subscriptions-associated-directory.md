@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3322e49c6fdc590b785806f67b5081700bf8b37b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: b141de4c22ba1ba1325982d8e027fa46e0909fbb
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59788636"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60009860"
 ---
 # <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Связывание или добавление подписки Azure в клиент Azure Active Directory
 
@@ -76,7 +76,7 @@ ms.locfileid: "59788636"
 
 1. Если у вас есть все хранилищ ключей, необходимо изменить идентификатор клиента хранилища ключей. Дополнительные сведения см. в разделе [изменение идентификатора клиента хранилища ключей после перемещения подписки](../../key-vault/key-vault-subscription-move-fix.md).
 
-2. Если вы зарегистрировались с помощью этой подписки Azure Stack, необходимо повторно зарегистрировать. Дополнительные сведения см. в разделе [зарегистрировать Azure Stack с помощью Azure](../../azure-stack/azure-stack-registration.md).
+2. Если вы зарегистрировались с помощью этой подписки Azure Stack, необходимо повторно зарегистрировать. Дополнительные сведения см. в разделе [зарегистрировать Azure Stack с помощью Azure](/azure-stack/operator/azure-stack-registration).
 
 
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/05/2018
 ms.author: spelluru
-ms.openlocfilehash: dc6e218fe048e1781f53c53935308eb193fcd094
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
-ms.translationtype: MT
+ms.openlocfilehash: 7720189c0eb7cee31fb43f8d3ff055e1d19ff142
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58487164"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60149118"
 ---
 # <a name="create-a-custom-image-from-a-vhd-file-using-powershell"></a>Создание пользовательского образа из VHD-файла с помощью PowerShell
 
@@ -35,31 +35,31 @@ ms.locfileid: "58487164"
 
 Чтобы создать пользовательский образ из VHD-файла с помощью PowerShell, сделайте следующее:
 
-1. В командной строке PowerShell войдите в учетную запись Azure, вызвав **Connect AzAccount** командлета.  
-    
+1. В командной строке PowerShell войдите в учетную запись Azure, вызвав **Connect AzAccount** командлета.
+
     ```powershell
     Connect-AzAccount
     ```
 
-1.  Выберите необходимую подписку Azure, вызвав **AzSubscription выберите** командлета. Замените заполнитель для переменной **$subscriptionId** на идентификатор действующей подписки Azure. 
+1.  Выберите необходимую подписку Azure, вызвав **AzSubscription выберите** командлета. Замените заполнитель для переменной **$subscriptionId** на идентификатор действующей подписки Azure.
 
     ```powershell
     $subscriptionId = '<Specify your subscription ID here>'
     Select-AzSubscription -SubscriptionId $subscriptionId
     ```
 
-1.  Получите объект лаборатории, вызвав **Get AzResource** командлета. Замените заполнители для переменных **$labRg** и **$labName** на соответствующие значения для своей среды. 
+1.  Получите объект лаборатории, вызвав **Get AzResource** командлета. Замените заполнители для переменных **$labRg** и **$labName** на соответствующие значения для своей среды.
 
     ```powershell
     $labRg = '<Specify your lab resource group name here>'
     $labName = '<Specify your lab name here>'
     $lab = Get-AzResource -ResourceId ('/subscriptions/' + $subscriptionId + '/resourceGroups/' + $labRg + '/providers/Microsoft.DevTestLab/labs/' + $labName)
     ```
- 
-1.  Получите значения учетной записи хранения лаборатории и ключа этой учетной записи из объекта лаборатории. 
+
+1.  Получите значения учетной записи хранения лаборатории и ключа этой учетной записи из объекта лаборатории.
 
     ```powershell
-    $labStorageAccount = Get-AzResource -ResourceId $lab.Properties.defaultStorageAccount 
+    $labStorageAccount = Get-AzResource -ResourceId $lab.Properties.defaultStorageAccount
     $labStorageAccountKey = (Get-AzStorageAccountKey -ResourceGroupName $labStorageAccount.ResourceGroupName -Name $labStorageAccount.ResourceName)[0].Value
     ```
 
@@ -77,18 +77,18 @@ ms.locfileid: "58487164"
 
     $parameters = @{existingLabName="$($lab.Name)"; existingVhdUri=$vhdUri; imageOsType='windows'; isVhdSysPrepped=$false; imageName=$customImageName; imageDescription=$customImageDescription}
 
-    New-AzResourceGroupDeployment -ResourceGroupName $lab.ResourceGroupName -Name CreateCustomImage -TemplateUri 'https://raw.githubusercontent.com/Azure/azure-devtestlab/master/Samples/201-dtl-create-customimage-from-vhd/azuredeploy.json' -TemplateParameterObject $parameters
+    New-AzResourceGroupDeployment -ResourceGroupName $lab.ResourceGroupName -Name CreateCustomImage -TemplateUri 'https://raw.githubusercontent.com/Azure/azure-devtestlab/master/samples/DevTestLabs/QuickStartTemplates/201-dtl-create-customimage-from-vhd/azuredeploy.json' -TemplateParameterObject $parameters
     ```
 
 ## <a name="powershell-script-to-create-a-custom-image-from-a-vhd-file"></a>Создание пользовательского образа из VHD-файла с помощью сценария PowerShell
 
-Следующий сценарий PowerShell позволяет создать пользовательский образ из VHD-файла. Замените заполнители, выделенные угловыми скобками, на необходимые значения. 
+Следующий сценарий PowerShell позволяет создать пользовательский образ из VHD-файла. Замените заполнители, выделенные угловыми скобками, на необходимые значения.
 
 ```powershell
-# Log in to your Azure account.  
+# Log in to your Azure account.
 Connect-AzAccount
 
-# Select the desired Azure subscription. 
+# Select the desired Azure subscription.
 $subscriptionId = '<Specify your subscription ID here>'
 Select-AzSubscription -SubscriptionId $subscriptionId
 
@@ -98,10 +98,10 @@ $labName = '<Specify your lab name here>'
 $lab = Get-AzResource -ResourceId ('/subscriptions/' + $subscriptionId + '/resourceGroups/' + $labRg + '/providers/Microsoft.DevTestLab/labs/' + $labName)
 
 # Get the lab storage account and lab storage account key values.
-$labStorageAccount = Get-AzResource -ResourceId $lab.Properties.defaultStorageAccount 
+$labStorageAccount = Get-AzResource -ResourceId $lab.Properties.defaultStorageAccount
 $labStorageAccountKey = (Get-AzStorageAccountKey -ResourceGroupName $labStorageAccount.ResourceGroupName -Name $labStorageAccount.ResourceName)[0].Value
 
-# Set the URI of the VHD file.  
+# Set the URI of the VHD file.
 $vhdUri = '<Specify the VHD URI here>'
 
 # Set the custom image name and description values.
@@ -111,8 +111,8 @@ $customImageDescription = '<Specify the custom image description>'
 # Set up the parameters object.
 $parameters = @{existingLabName="$($lab.Name)"; existingVhdUri=$vhdUri; imageOsType='windows'; isVhdSysPrepped=$false; imageName=$customImageName; imageDescription=$customImageDescription}
 
-# Create the custom image. 
-New-AzResourceGroupDeployment -ResourceGroupName $lab.ResourceGroupName -Name CreateCustomImage -TemplateUri 'https://raw.githubusercontent.com/Azure/azure-devtestlab/master/Samples/201-dtl-create-customimage-from-vhd/azuredeploy.json' -TemplateParameterObject $parameters
+# Create the custom image.
+New-AzResourceGroupDeployment -ResourceGroupName $lab.ResourceGroupName -Name CreateCustomImage -TemplateUri 'https://raw.githubusercontent.com/Azure/azure-devtestlab/master/samples/DevTestLabs/QuickStartTemplates/201-dtl-create-customimage-from-vhd/azuredeploy.json' -TemplateParameterObject $parameters
 ```
 
 ## <a name="related-blog-posts"></a>Связанные записи в блогах

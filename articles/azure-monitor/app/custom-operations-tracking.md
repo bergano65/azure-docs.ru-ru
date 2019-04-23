@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 06/30/2017
 ms.reviewer: sergkanz
 ms.author: mbullwin
-ms.openlocfilehash: 8e082f15cff616b9dc63fbf4ad51e94d078a04f3
-ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
+ms.openlocfilehash: ae6e0e186f5cc0c9e3f0cd02d45d57c079eb3539
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53811296"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59995546"
 ---
 # <a name="track-custom-operations-with-application-insights-net-sdk"></a>Отслеживание пользовательских операций с помощью пакета SDK Application Insights для .NET
 
@@ -384,12 +384,13 @@ public async Task Process(MessagePayload message)
 Обработка каждого сообщения должна выполняться в собственном асинхронном потоке управления. Дополнительные сведения см. в разделе [Отслеживание исходящих зависимостей](#outgoing-dependencies-tracking).
 
 ## <a name="long-running-background-tasks"></a>Длительные фоновые задачи
+
 Некоторые приложения запускают длительные операции, которые могут быть вызваны запросами пользователей. С точки зрения трассировки и инструментирования это ничем не отличается от инструментирования запроса или зависимости. 
 
 ```csharp
 async Task BackgroundTask()
 {
-    var operation = telemetryClient.StartOperation<RequestTelemetry>(taskName);
+    var operation = telemetryClient.StartOperation<DependencyTelemetry>(taskName);
     operation.Telemetry.Type = "Background";
     try
     {
@@ -414,9 +415,9 @@ async Task BackgroundTask()
 }
 ```
 
-В этом примере `telemetryClient.StartOperation` создает `RequestTelemetry` и заполняет контекст корреляции. Предположим, имеется родительская операция, которая была создана входящими запросами, запланировавшими эту операцию. Так как `BackgroundTask` запускается в том же асинхронном потоке управления, что и входящий запрос, он сопоставляется с этой родительской операцией. `BackgroundTask` и все вложенные элементы телеметрии автоматически сопоставляются с запросом, вызвавшим ее, даже после завершения запроса.
+В этом примере `telemetryClient.StartOperation` создает `DependencyTelemetry` и заполняет контекст корреляции. Предположим, имеется родительская операция, которая была создана входящими запросами, запланировавшими эту операцию. Так как `BackgroundTask` запускается в том же асинхронном потоке управления, что и входящий запрос, он сопоставляется с этой родительской операцией. `BackgroundTask` и все вложенные элементы телеметрии автоматически сопоставляются с запросом, вызвавшим ее, даже после завершения запроса.
 
-Если задача запущена из фонового потока, с которым не связана ни одна операция (`Activity`), у задачи `BackgroundTask` отсутствуют какие-либо родительские элементы. Тем не менее у нее могут быть вложенные операции. Все элементы телеметрии, полученные от этой задачи, сопоставляются с элементом `RequestTelemetry`, созданным в `BackgroundTask`.
+Если задача запущена из фонового потока, с которым не связана ни одна операция (`Activity`), у задачи `BackgroundTask` отсутствуют какие-либо родительские элементы. Тем не менее у нее могут быть вложенные операции. Все элементы телеметрии, полученные от этой задачи, сопоставляются с элементом `DependencyTelemetry`, созданным в `BackgroundTask`.
 
 ## <a name="outgoing-dependencies-tracking"></a>Отслеживание исходящих зависимостей
 Можно отслеживать собственный тип зависимостей или операцию, не поддерживаемую Application Insights.
@@ -494,7 +495,7 @@ public async Task RunAllTasks()
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Изучите основы [корреляции данных телеметрии](correlation.md) в Application Insights.
 - В [этой статье](../../azure-monitor/app/data-model.md) представлены типы данных и модель данных для Application Insights.

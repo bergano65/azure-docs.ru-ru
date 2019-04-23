@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 707e0aecdaf2a579d086e012519182078c1a6303
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
-ms.translationtype: MT
+ms.openlocfilehash: e0277180f0d768bbcc83a0d8d05fbc4b8b25301e
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58313232"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60006035"
 ---
 # <a name="frequently-asked-questions-about-azure-multi-factor-authentication"></a>Часто задаваемые вопросы о Многофакторной идентификации Azure
 
@@ -142,7 +142,7 @@ ms.locfileid: "58313232"
 > [!NOTE]
 > Современная аутентификация для клиентов Office 2013
 >
-> Пароли необходимы только для тех приложений, которые не поддерживают современные методы проверки подлинности. Клиенты Office 2013 поддерживают современные протоколы проверки подлинности, но их необходимо настроить. Более новые клиенты Office по умолчанию поддерживают современные протоколы проверки подлинности. Дополнительные сведения см. в записи блога [Office 2013 modern authentication public preview announced](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/) (Анонсирована общедоступная предварительная версия современной службы многофакторной идентификации для Office 2013).
+> Пароли необходимы только для тех приложений, которые не поддерживают современные методы проверки подлинности. Клиенты Office 2013 поддерживают современные протоколы проверки подлинности, но их необходимо настроить. Теперь доступен для любого клиента под управлением обновления марта 2015 г. или более поздней версии для Office 2013, современные методы проверки подлинности. Дополнительные сведения см. в разделе [Office 2013 современную проверку подлинности общедоступной предварительной версии объявила о](https://www.microsoft.com/en-us/microsoft-365/blog/2015/03/23/office-2013-modern-authentication-public-preview-announced/).
 
 **Вопрос. Что делать пользователю, если текстовое сообщение не приходит или при ответе на двустороннее текстовое сообщение истекает время ожидания проверки?**
 

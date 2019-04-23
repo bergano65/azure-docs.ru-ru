@@ -13,15 +13,15 @@ ms.topic: article
 ms.date: 04/12/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
-ms.openlocfilehash: 67bb81675dabd8aef28693a958a0ac39b1b441e7
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.openlocfilehash: e1d119f3c7c5d6dbdb570d362c53b80dad7886bd
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59549258"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60149008"
 ---
 # <a name="set-up-azure-devtest-labs-infrastructure-in-your-enterprise"></a>Настройка инфраструктуры DevTest Labs Azure на предприятии
-Предприятиям быстро внедряют облака, из-за его [преимущества](/architecture/cloud-adoption/business-strategy/cloud-migration-business-case) , которые включают динамичность, гибкость и экономики. Распространенные первым шагом для использования в облаке — начать с рабочих нагрузок разработки и тестирования.  DevTest Labs предоставляет [функции](devtest-lab-concepts.md) , преимущества enterprise и поддержки [ключевых сценариев использования и тестированию enterprise](devtest-lab-guidance-get-started.md).
+Предприятиям быстро внедряют облака, из-за его [преимущества](/azure/architecture/cloud-adoption/business-strategy/cloud-migration-business-case) , которые включают динамичность, гибкость и экономики. Распространенные первым шагом для использования в облаке — начать с рабочих нагрузок разработки и тестирования.  DevTest Labs предоставляет [функции](devtest-lab-concepts.md) , преимущества enterprise и поддержки [ключевых сценариев использования и тестированию enterprise](devtest-lab-guidance-get-started.md).
 
 При миграции этих рабочих нагрузок в облако, есть набор стандартных проблем:
 
@@ -35,6 +35,10 @@ ms.locfileid: "59549258"
 
 ## <a name="intended-audience"></a>Целевая аудитория
 Документация, ориентированному на интересы предприятия предназначена для ИТ-планировщиков, архитекторов и менеджеров, отвечающих за установку и просмотра общей развертываний и отслеживает выполнение операций и рекомендации. Таким образом в этом документе особое внимание уделяется общий процесс и рекомендуется принципы проектирования, чтобы среду безопасной и стабильной разработки и тестирования, который в конечном счете управляет внедрения Azure DevTest Labs в организации.
+
+## <a name="enterprise-customers"></a>Корпоративные клиенты
+
+Многие текущего DevTest Labs корпоративные клиенты успешно использовать DevTest Labs, для разработки и тестирования рабочих нагрузок в своих организациях. [Узнайте больше](https://azure.microsoft.com/en-us/case-studies/?term=DevTest+labs).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Эталонная архитектура для предприятия](devtest-lab-reference-architecture.md)

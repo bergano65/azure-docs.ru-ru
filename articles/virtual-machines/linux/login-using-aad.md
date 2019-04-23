@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/17/2018
 ms.author: cynthn
-ms.openlocfilehash: a1743e677e1005e5b4479c1d431b6b8bdbe77c8f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: d1db228f4c73cc00cd32ca6ae5b86056db68f05b
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57848700"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60148957"
 ---
 # <a name="log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход на виртуальную машину Linux в Azure с аутентификацией Azure Active Directory (предварительная версия)
 
@@ -43,7 +43,7 @@ ms.locfileid: "57848700"
 
 В режиме предварительной версии этой функции сейчас поддерживаются следующие дистрибутивы Linux:
 
-| Дистрибутив | Version (версия) |
+| Дистрибутив | Version |
 | --- | --- |
 | CentOS | CentOS 6, CentOS 7 |
 | Debian | Debian 9 |
@@ -83,7 +83,7 @@ az vm create \
 
 ## <a name="install-the-azure-ad-login-vm-extension"></a>Установка расширения для входа на виртуальную машину с помощью Azure AD
 
-Для входа на виртуальную машину Linux с учетными данными Azure AD установите расширение виртуальной машины для входа с помощью Azure Active Directory. Расширения виртуальных машин — это небольшие приложения, которые выполняют задачи настройки и автоматизации после развертывания виртуальных машин Azure. С помощью команды [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set) установите расширение *AADLoginForLinux* на виртуальную машину с именем *myVM* в группе ресурсов *myResourceGroup*:
+Чтобы войти виртуальную Машину Linux с помощью учетных данных Azure AD, установите входа Azure Active Directory расширения виртуальной Машины. Расширения виртуальных машин — это небольшие приложения, которые выполняют задачи настройки и автоматизации после развертывания виртуальных машин Azure. С помощью команды [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set) установите расширение *AADLoginForLinux* на виртуальную машину с именем *myVM* в группе ресурсов *myResourceGroup*:
 
 ```azurecli-interactive
 az vm extension set \

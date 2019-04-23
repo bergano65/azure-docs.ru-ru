@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 87e1e57a969fc5e65302dcce44231773f7e74b3a
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.openlocfilehash: 33d8e18dcec98710443623c03651aa568aa37009
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59548839"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60010387"
 ---
 # <a name="configure-automated-machine-learning-experiments"></a>Настройка экспериментов автоматического машинного обучения
 
@@ -112,7 +112,7 @@ automl_config = AutoMLConfig(****, data_script=project_folder + "/get_data.py", 
 
 Сценарий `get_data` может вернуть:
 
-Ключ | type | Взаимно исключают друг друга с помощью    | Описание
+Ключ | type | Взаимно исключают друг друга с помощью    | ОПИСАНИЕ
 ---|---|---|---
 X | Кадр данных Pandas или массив Numpy | data_train, метка, столбцы |  Все признаки для обучения
 y | Кадр данных Pandas или массив Numpy |   label   | Данные метки для обучения. Для классификации это должен быть массив целых чисел
@@ -179,7 +179,7 @@ y = dprep.read_csv(simple_example_data_root + 'y.csv').to_long(dprep.ColumnSelec
 
 ## <a name="configure-your-experiment-settings"></a>Настройка параметров эксперимента
 
-Доступно несколько параметров, с помощью которых можно настроить эксперименты автоматического машинного обучения. Эти параметры задаются путем создания экземпляра объекта `AutoMLConfig`. Полный список параметров см. в статье [AutoMLConfig class](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py) (Класс AutoMLConfig).  
+Доступно несколько параметров, с помощью которых можно настроить эксперименты автоматического машинного обучения. Эти параметры задаются путем создания экземпляра объекта `AutoMLConfig`. Полный список параметров см. в статье [AutoMLConfig class](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py) (Класс AutoMLConfig).  
 
 Некоторые примеры:
 
@@ -210,7 +210,7 @@ y = dprep.read_csv(simple_example_data_root + 'y.csv').to_long(dprep.ColumnSelec
         n_cross_validations=5)
     ```
 
-С тремя `task` значения параметра определить список алгоритмов для применения.  Используйте параметры `whitelist` или `blacklist` для дополнительного изменения итераций с помощью доступных алгоритмов для включения или исключения. Список поддерживаемых моделей можно найти на [SupportedAlgorithms-класс](https://docs.microsoft.com/en-us/python/api/azureml-train-automl/azureml.train.automl.constants.supportedalgorithms?view=azure-ml-py)
+С тремя `task` значения параметра определить список алгоритмов для применения.  Используйте параметры `whitelist` или `blacklist` для дополнительного изменения итераций с помощью доступных алгоритмов для включения или исключения. Список поддерживаемых моделей можно найти на [SupportedAlgorithms класс](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.constants.supportedalgorithms?view=azure-ml-py).
 
 ## <a name="primary-metric"></a>Основная метрика
 Основной показатель; как показано в приведенных выше примерах, определяет метрику для использования во время обучения модели для оптимизации. Основным показателем, который можно выбрать определяется тип задачи, который выбран. Ниже приведен список доступных метрик.
@@ -240,43 +240,6 @@ y = dprep.read_csv(simple_example_data_root + 'y.csv').to_long(dprep.ColumnSelec
 
 ## <a name="ensemble-models"></a>Защищенными моделями совокупности
 Совокупного обучения улучшает результаты обучения компьютера и производительность прогнозирования объединение множество моделей, а не с помощью одной модели. Когда с помощью автоматизированных машинного обучения, вы можете обучить с помощью модели совокупности [Caruana алгоритм выбора совокупности с отсортированный инициализации совокупности](http://www.niculescu-mizil.org/papers/shotgun.icml04.revised.rev2.pdf). В совокупности итерации отображается в виде последней итерации выполнения.
-
-## <a name="time-series-forecasting"></a>Прогнозирование временных рядов
-Для типа задачи прогнозирования ряда времени у вас есть дополнительные параметры для определения.
-1. time_column_name — это обязательный параметр, который определяет имя столбца, содержащего даты и времени ряда обучающих данных. 
-1. max_horizon - определяет продолжительность времени, который требуется спрогнозировать основании периодичности обучающих данных. Например при наличии данных для обучения с ежедневной интервалов времени, вы определить, насколько далеко в днях должна обучить модель.
-1. grain_column_names - определяет имена столбцов, которые содержат данные отдельных временных рядов в обучающих данных. Например если выполнить прогноз продаж по магазинам отдельной марки, хранилище и торговой марки столбцы бы определить как столбцы детализации.
-
-См. пример из этих параметров ниже, пример записной книжки доступен [здесь](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-orange-juice-sales/auto-ml-forecasting-orange-juice-sales.ipynb).
-
-```python
-# Setting Store and Brand as grains for training.
-grain_column_names = ['Store', 'Brand']
-nseries = data.groupby(grain_column_names).ngroups
-
-# View the number of time series data with defined grains
-print('Data contains {0} individual time-series.'.format(nseries))
-```
-
-```python
-time_series_settings = {
-    'time_column_name': time_column_name,
-    'grain_column_names': grain_column_names,
-    'drop_column_names': ['logQuantity'],
-    'max_horizon': n_test_periods
-}
-
-automl_config = AutoMLConfig(task='forecasting',
-                             debug_log='automl_oj_sales_errors.log',
-                             primary_metric='normalized_root_mean_squared_error',
-                             iterations=10,
-                             X=X_train,
-                             y=y_train,
-                             n_cross_validations=5,
-                             path=project_folder,
-                             verbosity=logging.INFO,
-                             **time_series_settings)
-```
 
 ## <a name="run-experiment"></a>Выполнение эксперимента
 

@@ -7,12 +7,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 02/18/2019
-ms.openlocfilehash: 6c9cb7282ba9d99ea643bbd023d876b8fbe3904c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 891d2acc42f8d6f03976f0553e2e3127bc6d16f7
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59045600"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60011267"
 ---
 # <a name="azure-data-explorer-data-ingestion"></a>Прием данных в обозревателе данных Azure
 
@@ -52,7 +52,7 @@ Azure Data Explorer сейчас поддерживает:
 
 ### <a name="ingestion-using-integration-services"></a>Прием данных с помощью служб интеграции
 
-* Фабрика данных Azure (ADF), полностью управляемая служба интеграции данных для аналитических рабочих нагрузок в Azure, чтобы скопировать данные и обратно с помощью обозревателя данных Azure [поддерживаемые хранилища данных и форматы](/azure/data-factory/copy-activity-overview#supported-data-stores-and-formats). Дополнительные сведения см. в статье [Копирование данных из Azure Data Explorer или обратно с помощью Фабрики данных Azure](/azure/data-factory/connector-azure-data-explorer).
+* Фабрика данных Azure (ADF), полностью управляемая служба интеграции данных для аналитических рабочих нагрузок в Azure, чтобы скопировать данные и обратно с помощью обозревателя данных Azure [поддерживаемые хранилища данных и форматы](/azure/data-factory/copy-activity-overview#supported-data-stores-and-formats). Дополнительные сведения см. в разделе [копирование данных из фабрики данных Azure в Azure Data Explorer](/azure/data-explorer/data-factory-load-data).
 
 ### <a name="programmatic-ingestion"></a>Прием данных программным образом
 

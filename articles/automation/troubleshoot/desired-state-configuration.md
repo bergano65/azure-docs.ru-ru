@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: ''
 author: georgewallace
 ms.author: gwallace
-ms.date: 06/19/2018
+ms.date: 04/16/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: c067d6f02ceeca9bf390ab5421dcfe463e9f758d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 63bb5c6338cf230c2bb47cb0a2c03810053f970a
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59699087"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60002584"
 ---
 # <a name="troubleshoot-desired-state-configuration-dsc"></a>Устранение неполадок с платформой Desired State Configuration (DSC)
 
@@ -41,6 +41,31 @@ An error occurred while deleting the DSC configuration '<name>'.  Error-details:
 * Az командлет «Remove-AzAutomationDscConfiguration» предназначена для удаления конфигурации.
 * Документация по этому командлету еще не обновлены.  До тех пор обратитесь к документации для модуля AzureRM.
   * [Remove-AzureRmAutomationDSCConfiguration](/powershell/module/azurerm.automation/Remove-AzureRmAutomationDscConfiguration)
+
+### <a name="failed-to-register-agent"></a>Сценарий. Не удалось зарегистрировать агент Dsc
+
+#### <a name="issue"></a>Проблема
+
+При попытке запуска `Set-DscLocalConfigurationManager` или другим командлетом DSC, сообщение об ошибке:
+
+```error
+Registration of the Dsc Agent with the server
+https://<location>-agentservice-prod-1.azure-automation.net/accounts/00000000-0000-0000-0000-000000000000 failed. The
+underlying error is: Failed to register Dsc Agent with AgentId 00000000-0000-0000-0000-000000000000 with the server htt
+ps://<location>-agentservice-prod-1.azure-automation.net/accounts/00000000-0000-0000-0000-000000000000/Nodes(AgentId='00000000-0000-0000-0000-000000000000'). .
+    + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
+    + FullyQualifiedErrorId : RegisterDscAgentCommandFailed,Microsoft.PowerShell.DesiredStateConfiguration.Commands.Re
+   gisterDscAgentCommand
+    + PSComputerName        : <computerName>
+```
+
+#### <a name="cause"></a>Причина:
+
+Эта ошибка обычно вызвана брандмауэром, компьютера, к которому за прокси-сервер или другие сетевые ошибки.
+
+#### <a name="resolution"></a>Способы устранения:
+
+Убедитесь, что компьютер имеет доступ в соответствующие контрольные точки для DSC службы автоматизации Azure и повторите попытку. Список портов и адресов, необходимых, см. в разделе [Планирование сетей](../automation-dsc-overview.md#network-planning)
 
 ### <a name="failed-not-found"></a>Сценарий. Узел находится в состоянии сбоя с ошибкой "Не найдено"
 

@@ -12,18 +12,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/21/2019
 ms.author: spelluru
-ms.openlocfilehash: 9cd2e5e211fcda7c59469d3b09e9c9e5bdefdbd6
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.openlocfilehash: ca6ed58cfabb5027830828812c4820c1b586875c
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59546597"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60148906"
 ---
 # <a name="import-virtual-machines-from-another-lab-in-azure-devtest-labs"></a>Импорт виртуальных машин из другой лабораторию в Azure DevTest Labs
-В этой статье сведения о том, как импортировать виртуальные машины из другой лаборатории в лаборатории. 
+В этой статье сведения о том, как импортировать виртуальные машины из другой лаборатории в лаборатории.
 
 ## <a name="scenarios"></a>Сценарии
-Ниже приведены некоторые сценарии, где необходимо импортировать виртуальные машины из одной лаборатории в другой лаборатории. 
+Ниже приведены некоторые сценарии, где необходимо импортировать виртуальные машины из одной лаборатории в другой лаборатории.
 
 - Сотрудник группы перемещается в другую группу на предприятии и хочет воспользоваться рабочего стола разработчика для новой группы DevTest Labs.
 - Группе достиг [квоту уровня подписки](../azure-subscription-service-limits.md) и хочет, чтобы разделить команды в несколько подписок
@@ -34,8 +34,8 @@ ms.locfileid: "59546597"
 
 Процесс занять некоторое время и зависит от следующих факторов:
 
-- Количество и размеры создаваемых дисков, подключенных на исходный компьютер (так как это операция копирования и не операция перемещения) 
-- Расстояние в место назначения (например, восточная часть США регион для Юго-Восточная Азия).  
+- Количество и размеры создаваемых дисков, подключенных на исходный компьютер (так как это операция копирования и не операция перемещения)
+- Расстояние в место назначения (например, восточная часть США регион для Юго-Восточная Азия).
 
 По завершении процесса исходной виртуальной машины остается завершение работы и новые, котором запущены в целевой лабораторной среде.
 
@@ -47,12 +47,12 @@ ms.locfileid: "59546597"
 - В настоящее время эта функция поддерживается только через Powershell и REST API.
 
 ## <a name="use-powershell"></a>Использование PowerShell
-Загрузите файл ImportVirtualMachines.ps1 с [GitHub](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Scripts/ImportVirtualMachines). Скрипт можно использовать для импорта одной виртуальной Машины или всех виртуальных машин в лаборатории источника в целевой лабораторной среде. 
+Загрузите файл ImportVirtualMachines.ps1 с [GitHub](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Scripts/ImportVirtualMachines). Скрипт можно использовать для импорта одной виртуальной Машины или всех виртуальных машин в лаборатории источника в целевой лабораторной среде.
 
 ### <a name="use-powershell-to-import-a-single-vm"></a>Для импорта одной виртуальной Машины с помощью PowerShell
 Этот сценарий powershell для выполнения требуется определение исходной виртуальной Машины и назначения лаборатории и при необходимости указав новое имя для использования на целевом компьютере:
 
-```powershell 
+```powershell
 ./ImportVirtualMachines.ps1 -SourceSubscriptionId "<ID of the subscription that contains the source lab>" `
                             -SourceDevTestLabName "<Name of the source lab>" `
                             -SourceVirtualMachineName "<Name of the VM to be imported from the source lab> " `
@@ -63,7 +63,7 @@ ms.locfileid: "59546597"
 
 ### <a name="use-powershell-to-import-all-vms-in-the-source-lab"></a>Чтобы импортировать все виртуальные машины в лаборатории источника с помощью PowerShell
 Если исходная виртуальная машина не указан, сценарий автоматически импортирует все виртуальные машины в DevTest Labs.  Например: 
- 
+
 ```powershell
 ./ImportVirtualMachines.ps1 -SourceSubscriptionId "<ID of the subscription that contains the source lab>" `
                             -SourceDevTestLabName "<Name of the source lab>" `
@@ -83,7 +83,7 @@ POST https://management.azure.com/subscriptions/<DestinationSubscriptionID>/reso
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Ознакомьтесь со следующими статьями: 
+Ознакомьтесь со следующими статьями:
 
 - [Управление базовыми политиками лаборатории в Azure DevTest Labs](devtest-lab-get-started-with-lab-policies.md)
 - [Часто задаваемые вопросы](devtest-lab-faq.md)

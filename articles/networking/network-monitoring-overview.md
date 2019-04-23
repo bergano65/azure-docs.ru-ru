@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: ajaycode
-ms.openlocfilehash: 617dbae67c71eac4bfc38de4e63c1ba05516ff61
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
-ms.translationtype: MT
+ms.openlocfilehash: 42fb5d69a1f32d669ad5191e342b3f2f880b8c98
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56984056"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60006680"
 ---
 # <a name="network-monitoring-solutions"></a>Решения для мониторинга сетей 
 
@@ -86,7 +86,7 @@ NPM для ExpressRoute предоставляет комплексные воз
 
 Дополнительные сведения см. в следующих статьях:
 
-* [Service Endpoint Monitor](https://aka.ms/applicationconnectivitymonitorguide) (Мониторинг конечных точек службы)
+* [Service Endpoint Monitor](../azure-monitor/insights/network-performance-monitor-service-connectivity.md#configuration) (Мониторинг конечных точек службы)
 * [Запись блога](https://aka.ms/svcendptmonitor)
 
 ## <a name="traffic-analytics"></a>Аналитика трафика

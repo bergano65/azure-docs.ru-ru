@@ -13,12 +13,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/15/2019
 ms.author: alkohli
-ms.openlocfilehash: 78508c1227c0b278041b86c3fdd698c6ad27c132
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
-ms.translationtype: MT
+ms.openlocfilehash: 1e637f58b392b2de67a5ead9d57a6a87ab705b93
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59608221"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60007244"
 ---
 # <a name="options-to-migrate-data-from-storsimple-5000-7000-series"></a>Варианты переноса данных с устройств StorSimple серий 5000–7000 
 
@@ -43,7 +43,7 @@ ms.locfileid: "59608221"
 
 Это совершенно новый вариант миграции, который позволяет клиентам хранить файловые ресурсы организации в службе "Синхронизация файлов Azure". Затем эти файловые ресурсы централизуются для локального доступа с помощью службы "Синхронизация файлов Azure" (AFS). AFS можно развернуть на узле Windows Server. Фактический перенос данных выполняется с помощью средства миграции или путем перемещения копии узла.
 
-Дополнительные сведения о том, как перенести данные в службу "Синхронизация файлов Azure", см. в статье [Варианты переноса данных с устройств StorSimple серий 5000–7000](https://aka.ms/StorSimpleMigrationAFS).
+Дополнительные сведения о том, как перенести данные в службу "Синхронизация файлов Azure", см. в статье [Варианты переноса данных с устройств StorSimple серий 5000–7000](storsimple-5000-7000-afs-migration.md).
 
 ### <a name="third-party-options"></a>Сторонние решения
 

@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: troubleshooting
 ms.date: 11/05/2018
 ms.author: seanmck
-ms.openlocfilehash: 01095ac4ed8e362f1a89a53b10b5da6a547feb57
-ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
+ms.openlocfilehash: 29f98e334b0d2527b5159e1a5394109c5041024a
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51218646"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60000136"
 ---
 # <a name="checking-for-kubernetes-best-practices-in-your-cluster"></a>Проверка применения рекомендаций Kubernetes в кластере
 
@@ -27,7 +27,7 @@ ms.locfileid: "51218646"
 
 ## <a name="running-kube-advisor"></a>Запуск kube-advisor
 
-Чтобы запустить средство в кластере, для которого настроено [управление доступом на основе ролей (RBAC)](aad-integration.md), используйте приведенные ниже команды. Первая команда создает учетную запись службы Kubernetes. Вторая команда запускает средство в pod с помощью этой учетной записи службы и настраивает удаление pod после выхода. 
+Чтобы запустить средство в кластере, для которого настроено [управление доступом на основе ролей (RBAC)](azure-ad-integration.md), используйте приведенные ниже команды. Первая команда создает учетную запись службы Kubernetes. Вторая команда запускает средство в pod с помощью этой учетной записи службы и настраивает удаление pod после выхода. 
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/Azure/kube-advisor/master/sa.yaml
@@ -65,7 +65,7 @@ kubectl delete -f https://raw.githubusercontent.com/Azure/kube-advisor/master/sa
 
 Если средство выполняется применительно к кластеру, для которого не включено управление RBAC, очистка не требуется.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Устранение неполадок со службой Azure Kubernetes](troubleshooting.md)
 

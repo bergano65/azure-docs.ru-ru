@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 04/12/2019
 ms.author: absha
-ms.openlocfilehash: bfafc74cbcb97f28cc085196a2cbaf4e9bf2e871
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.openlocfilehash: 405bc9aed4605e9728e112595f33c879bf55ec7f
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59548325"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60005627"
 ---
 # <a name="rewrite-http-request-and-response-headers-with-azure-application-gateway---azure-powershell"></a>Перепишите заголовки запросов и ответов HTTP со шлюзом приложений Azure — Azure PowerShell
 
@@ -26,7 +26,7 @@ ms.locfileid: "59548325"
 ## <a name="prerequisites"></a>Технические условия
 
 - Для работы с этим руководством требуется запустить Azure PowerShell в локальной среде. Необходим модуль Az 1.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Import-Module Az`, а затем команду `Get-Module Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps). После проверки версии PowerShell выполните командлет `Login-AzAccount`, чтобы создать подключение к Azure.
-- Необходимо иметь шлюз приложений версии 2, SKU, так как возможность перезаписи заголовок не поддерживается для v1 SKU. Если у вас нет v2 SKU, создать [SKU шлюза приложений версии 2](https://docs.microsoft.com/azure/application-gateway/tutorial-autoscale-ps>) перед началом работы.
+- Необходимо иметь шлюз приложений версии 2, SKU, так как возможность перезаписи заголовок не поддерживается для v1 SKU. Если у вас нет v2 SKU, создать [SKU шлюза приложений версии 2](https://docs.microsoft.com/azure/application-gateway/tutorial-autoscale-ps) перед началом работы.
 
 ## <a name="what-is-required-to-rewrite-a-header"></a>Что такое требуется переписать заголовок
 

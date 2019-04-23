@@ -6,14 +6,14 @@ author: dlepow
 manager: jeconnoc
 ms.service: container-registry
 ms.topic: article
-ms.date: 10/31/2018
+ms.date: 04/18/2019
 ms.author: danlep
-ms.openlocfilehash: e7155604339bc634078fd022e05ede5f902bc0d8
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: fe129847e685c7151a9b7ad7ea65abbd38530733
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51634848"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59997076"
 ---
 # <a name="content-formats-supported-in-azure-container-registry"></a>Форматы содержимого, поддерживаемые в Реестре контейнеров Azure
 
@@ -21,18 +21,21 @@ ms.locfileid: "51634848"
 
 ## <a name="docker-compatible-container-images"></a>Образы контейнеров, совместимые с Docker
 
+Поддерживаются следующие форматы изображений контейнера Docker:
+
 * [Манифест версии 2 образа Docker, схема 1](https://docs.docker.com/registry/spec/manifest-v2-1/)
 
 * [Манифест версии 2 образа Docker, схема 2](https://docs.docker.com/registry/spec/manifest-v2-2/) — включает в себя списки манифестов, которые позволяют реестрам хранить многоплатформенные образы в одной ссылке "image: tag"
 
-* [Спецификация формата образа Open Container Initiative (OCI)](https://github.com/opencontainers/image-spec/blob/master/spec.md) 
+## <a name="oci-images"></a>OCI образов
 
+Реестр контейнеров Azure также поддерживает образы, которые соответствуют [спецификации формата изображения откройте контейнер инициативе Initiative](https://github.com/opencontainers/image-spec/blob/master/spec.md). Упаковка форматы включают [формат изображения Сингулярность (SIF)](https://www.sylabs.io/2018/03/sif-containing-your-containers/).
 
 ## <a name="helm-charts"></a>Чарты Helm
 
-Реестр контейнеров Azure также может размещать репозитории для [чартов Helm](https://helm.sh/), формата упаковки, используемого для быстрого управления приложениями для Kubernetes и их развертывания. [Клиент Helm](https://docs.helm.sh/using_helm/#installing-helm) версии 2.11.0 или более поздней поддерживается.
+Реестр контейнеров Azure можно разместить репозиториев для [Helm диаграммы](https://helm.sh/), формат упаковки, позволяет быстро приступить к развертыванию приложений для Kubernetes. [Клиент Helm](https://docs.helm.sh/using_helm/#installing-helm) версии 2.11.0 или более поздней поддерживается.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [принудительно отправлять и извлекать](container-registry-get-started-docker-cli.md) образы с помощью Реестра контейнеров Azure.
 

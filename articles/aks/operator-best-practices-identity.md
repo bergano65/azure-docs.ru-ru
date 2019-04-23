@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/26/2018
 ms.author: iainfou
-ms.openlocfilehash: 201fef6b3e773daa18ae252d1d5734d8d87419b5
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
-ms.translationtype: MT
+ms.openlocfilehash: 42f6fefa930a36fbfcca7b3f792cc749723f7b99
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58287134"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60001496"
 ---
 # <a name="best-practices-for-authentication-and-authorization-in-azure-kubernetes-service-aks"></a>Рекомендации по аутентификации и авторизации в службе Azure Kubernetes (AKS)
 
@@ -84,6 +84,8 @@ roleRef:
 
 Когда *developer1\@contoso.com* проходит проверку подлинности для кластера AKS, они имеют полный доступ к ресурсам в *процент приложений* пространства имен. Таким образом, вы логически разделяете и контролируете доступ к ресурсам. RBAC Kubernetes следует использовать вместе с интеграцией с Azure AD, как описано в предыдущем разделе.
 
+Как использовать группы Azure AD для управления доступом к ресурсам Kubernetes с помощью RBAC см. в разделе [управления доступом к ресурсам кластера, используя элементы управления доступом на основе ролей и удостоверения Azure Active Directory в AKS] [ azure-ad-rbac].
+
 ## <a name="use-pod-identities"></a>Использование удостоверений pod
 
 **Рекомендация**. Не используйте фиксированные учетные данные в контейнерах pod или образах контейнеров из-за высокого риска раскрытия или применения не по назначению. Используйте удостоверения pod для автоматического запроса доступа с помощью центрального решения для идентификации Azure AD.
@@ -128,8 +130,9 @@ Pod управляемого удостоверения — это проект 
 
 <!-- INTERNAL LINKS -->
 [aks-concepts-identity]: concepts-identity.md
-[aks-aad]: aad-integration.md
+[aks-aad]: azure-ad-integration-cli.md
 [managed-identities:]: ../active-directory/managed-identities-azure-resources/overview.md
 [aks-best-practices-scheduler]: operator-best-practices-scheduler.md
 [aks-best-practices-advanced-scheduler]: operator-best-practices-advanced-scheduler.md
 [aks-best-practices-cluster-isolation]: operator-best-practices-cluster-isolation.md
+[azure-ad-rbac]: azure-ad-rbac.md

@@ -2,51 +2,61 @@
 author: wesmc7777
 ms.service: redis-cache
 ms.topic: include
-ms.date: 11/21/2018
+ms.date: 04/02/2019
 ms.author: wesmc
-ms.openlocfilehash: dd9700c9472e07daf294eca12b766e3dc4832955
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 498a7ee28b9404d0733e4615f4df635a8c904b51
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53111823"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60118828"
 ---
 ### <a name="cacheskuname"></a>Параметр cacheSKUName
+
 Ценовая категория нового кэша Azure для Redis.
 
+```json
     "cacheSKUName": {
       "type": "string",
       "allowedValues": [
         "Basic",
-        "Standard"
+        "Standard",
+        "Premium"
       ],
       "defaultValue": "Basic",
       "metadata": {
         "description": "The pricing tier of the new Azure Cache for Redis."
       }
     },
+```
 
-В шаблоне определены значения, допустимые для этого параметра (Basic и Standard). Если значение не указано, параметру назначается значение по умолчанию (Basic). Уровень Basic предоставляет один узел с различными размерами (до 53 ГБ).
-Уровень Standard предоставляет два узла (основной и реплика) с различными размерами (до 53 ГБ) и соглашением об уровне обслуживания 99,9 %.
+Шаблон определяет значения, разрешенные для этого параметра (Basic, Standard или Premium) и присваивает значение по умолчанию (Basic), если значение не указано. Уровень Basic предоставляет один узел с различными размерами (до 53 ГБ). Уровень Standard предоставляет два узла (основной и реплика) с различными размерами (до 53 ГБ) и соглашением об уровне обслуживания 99,9 %.
 
 ### <a name="cacheskufamily"></a>Параметр cacheSKUFamily
+
 Семейство для SKU.
 
+```json
     "cacheSKUFamily": {
       "type": "string",
-      "allowedValues": [
-        "C"
+      "allowedValue/s": [
+        "C",
+        "P"
       ],
       "defaultValue": "C",
       "metadata": {
         "description": "The family for the sku."
       }
     },
-
+```
 
 ### <a name="cacheskucapacity"></a>Параметр cacheSKUCapacity
-Создает экземпляр кэша Azure для Redis. 
 
+Создает экземпляр кэша Azure для Redis.
+
+Для семейства "Basic" и "стандартный":
+
+```json
     "cacheSKUCapacity": {
       "type": "int",
       "allowedValues": [
@@ -63,7 +73,20 @@ ms.locfileid: "53111823"
         "description": "The size of the new Azure Cache for Redis instance. "
       }
     }
+```
 
+Емкость кэша уровня "премиум" значение определяется запуска одинаково, за исключением допустимые значения от 1 до 5 вместо от 0 до 6.
 
-В шаблоне определены значения, допустимые для этого параметра (0, 1, 2, 3, 4, 5 или 6). Если значение не указано, параметру назначается значение по умолчанию (0). Эти числа соответствуют следующим размерам кэша: 0 = 250 МБ, 1 = 1 ГБ, 2 = 2,5 ГБ, 3 = 6 ГБ, 4 = 13 ГБ, 5 = 26 ГБ, 6 = 53 ГБ
+Шаблон определяет целые значения, разрешенные для этого параметра (0 – 6 для семейств Basic и Standard; 1 – 5 для семейства "премиум"). Если значение не указано, шаблон назначает значение по умолчанию 0 Basic и Standard, 1 для уровня "премиум".
 
+Значения соответствуют следующим размерам кэша:
+
+| Value | Basic и Standard<br>Размер кэша | Премиум<br>Размер кэша |
+| :---: | :------------------------------: | :-------------------: |
+| 0     | 250 МБ (по умолчанию)                 | Недоступно                   |
+| 1     | 1 GB                             | 6 ГБ (по умолчанию)        |
+| 2     | 2,5 ГБ                           | 13 ГБ                 |
+| 3     | 6 ГБ                             | 26 ГБ                 |
+| 4.     | 13 ГБ                            | 53 ГБ                 |
+| 5     | 26 ГБ                            | 120 ГБ                |
+| 6     | 53 ГБ                            | Недоступно                   |

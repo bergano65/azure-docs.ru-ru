@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: magoedte
-ms.openlocfilehash: 6fe8cccf60e60ada34e3b7847964958cf6e03c4a
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: c8baa4d2355adf99ce188d632ac50901db29a758
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59788841"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59997705"
 ---
 # <a name="how-to-view-container-logs-real-time-with-azure-monitor-for-containers-preview"></a>Как представить журналы контейнеров в реальном времени с помощью службы "Azure Monitor для контейнеров" (предварительная версия)
 Эта функция, которая в настоящее время находится в предварительной версии, обеспечивает представление журналов контейнеров Службы Azure Kubernetes (stdout/stderr) в реальном времени без необходимости выполнять команды kubectl. Если выбрать этот вариант, в представлении **Контейнеры** под таблицей данных производительности контейнеров появится новая область.  В ней будет показано динамическое ведение журнала, создаваемое модулем контейнера для помощи в устранении проблем в режиме реального времени. **Участник** доступ к ресурсу кластера необходим для работы этой функции.
@@ -65,7 +65,7 @@ ms.locfileid: "59788841"
 2. Создайте привязку правила кластера, выполнив следующую команду: `kubectl create -f LogReaderRBAC.yaml`. 
 
 ## <a name="configure-aks-with-azure-active-directory"></a>Настройка AKS с Azure Active Directory
-Службу Azure Kubernetes можно настроить на использование Azure Active Directory (AD) для аутентификации пользователей. Если вы выполняете настройку впервые, ознакомьтесь со статьей [Интеграция Azure Active Directory со Службой Azure Kubernetes](../../aks/aad-integration.md). Во время создания [клиентского приложения](../../aks/aad-integration.md#create-client-application) и указания **универсального кода ресурса (URI) перенаправления** вам требуется добавить другой URI в список `https://ininprodeusuxbase.microsoft.com/*`.  
+Службу Azure Kubernetes можно настроить на использование Azure Active Directory (AD) для аутентификации пользователей. Если вы выполняете настройку впервые, ознакомьтесь со статьей [Интеграция Azure Active Directory со Службой Azure Kubernetes](../../aks/azure-ad-integration.md). Во время создания [клиентского приложения](../../aks/azure-ad-integration.md#create-client-application) и указания **универсального кода ресурса (URI) перенаправления** вам требуется добавить другой URI в список `https://ininprodeusuxbase.microsoft.com/*`.  
 
 >[!NOTE]
 >Настройку аутентификации с помощью Azure Active Directory для единого входа можно выполнить только при первоначальном развертывании нового кластера AKS. Настроить единый вход для кластера AKS, который уже развернут, невозможно.  
@@ -92,4 +92,5 @@ ms.locfileid: "59788841"
 ![Представление в реальном времени, в котором приостановлено извлечение, в области динамических журналов](./media/container-insights-live-logs/live-logs-pane-pause-01.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Чтобы продолжить изучение способов использования Azure Monitor и отслеживать другие аспекты кластера AKS, ознакомьтесь со статьей [Общие сведения о мониторинге производительности кластера AKS с помощью Azure Monitor для контейнеров (предварительная версия)](container-insights-analyze.md).
+- Чтобы продолжить изучение способов использования Azure Monitor и отслеживать другие аспекты кластера AKS, ознакомьтесь со статьей [Общие сведения о мониторинге производительности кластера AKS с помощью Azure Monitor для контейнеров (предварительная версия)](container-insights-analyze.md).
+- Представление [журнала примеры запросов](container-insights-log-search.md#search-logs-to-analyze-data) предопределенных запросов и примеры для настройки предупреждений, визуализация и анализ кластеров и оценки.

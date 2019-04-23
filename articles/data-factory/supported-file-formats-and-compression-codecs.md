@@ -9,12 +9,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: jingwang
-ms.openlocfilehash: 9e30337eb8acaa6dc3386f5e60285faa80dd6307
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: d7e2ecd9c9c27140fff4d483e01eaaca632e929a
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59257915"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60150038"
 ---
 # <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Поддерживаемые форматы файлов и кодеки сжатия в фабрике данных Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "59257915"
 | quoteChar |Знак, используемый в качестве кавычки для заключения строкового значения. Разделители столбцов и строк внутри знаков кавычек будут рассматриваться как часть строкового значения. Это свойство применимо к входным и выходным наборам данных.<br/><br/>Для таблицы нельзя указать и escapeChar, и quoteChar. |Допускается только один знак. Значение по умолчанию отсутствует. <br/><br/>Например, если в качестве разделителя столбцов используется запятая (,) и нужно, чтобы этот знак встречался в тексте (например, <Hello, world>), то можно в качестве знака кавычек определить двойную кавычку (") и использовать в исходном тексте строку "Hello, world". |Нет  |
 | nullValue |Один или несколько знаков, используемых для представления значения NULL. |Один или несколько знаков. Значения **по умолчанию**: **\N и NULL** для чтения и **\N** для записи. |Нет  |
 | encodingName |Имя кодировки. |Допустимое имя кодировки. Ознакомьтесь с описанием свойства [Encoding.EncodingName](https://msdn.microsoft.com/library/system.text.encoding.aspx). Пример: windows-1250 или shift_jis. **По умолчанию** используется **UTF-8**. |Нет  |
-| firstRowAsHeader |Указывает, следует ли рассматривать первую строки в качестве заголовка. Фабрика данных считывает первую строку входного набора данных как заголовок. Фабрика данных записывает первую строку как заголовок в выходной набор данных. <br/><br/>Примеры сценариев см. в разделе [Сценарии использования `firstRowAsHeader` и `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount). |Да<br/><b>False (по умолчанию)</b> |Нет  |
+| firstRowAsHeader |Указывает, следует ли рассматривать первую строки в качестве заголовка. Фабрика данных считывает первую строку входного набора данных как заголовок. Фабрика данных записывает первую строку как заголовок в выходной набор данных. <br/><br/>Примеры сценариев см. в разделе [Сценарии использования `firstRowAsHeader` и `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount). |Истина<br/><b>False (по умолчанию)</b> |Нет  |
 | skipLineCount |Указывает количество **непустых** строк, которые нужно пропустить при чтении данных из входных файлов. Если указаны skipLineCount и firstRowAsHeader, то сначала пропускаются строки, после чего из входного файла считываются данные заголовка. <br/><br/>Примеры сценариев см. в разделе [Сценарии использования `firstRowAsHeader` и `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount). |Целое число  |Нет  |
 | treatEmptyAsNull |Указывает, следует ли интерпретировать строки со значением NULL или пустые строки как значение NULL при чтении данных из входного файла. |**True (по умолчанию)**<br/>False |Нет  |
 
@@ -442,7 +442,7 @@ ms.locfileid: "59257915"
 
 | Тип промежуточных данных фабрики данных | Тип-примитив Parquet | Исходный тип Parquet (десериализация) | Исходный тип Parquet (сериализация) |
 |:--- |:--- |:--- |:--- |
-| Логическое | Логическое | Н/Д | Н/Д |
+| Boolean | Boolean | Н/Д | Н/Д |
 | SByte | Int32 | Int8 | Int8 |
 | Byte | Int32 | UInt8 | Int16 |
 | Int16 | Int32 | Int16 | Int16 |
@@ -452,10 +452,10 @@ ms.locfileid: "59257915"
 | Int64 | Int64 | Int64 | Int64 |
 | UInt64 | Binary или Int64 | UInt64 | Decimal |
 | Single | Float | Н/Д | Н/Д |
-| Двойное с плавающей запятой | Двойное с плавающей запятой | Н/Д | Н/Д |
+| Double | Double | Н/Д | Н/Д |
 | Decimal | Binary | Decimal | Decimal |
-| Строка | Binary | Utf8 | Utf8 |
-| DateTime | Int96 | Н/Д | Н/Д |
+| String | Binary | Utf8 | Utf8 |
+| Datetime | Int96 | Н/Д | Н/Д |
 | TimeSpan | Int96 | Н/Д | Н/Д |
 | DateTimeOffset | Int96 | Н/Д | Н/Д |
 | ByteArray | Binary | Н/Д | Н/Д |
@@ -478,7 +478,7 @@ ms.locfileid: "59257915"
 
 * Данные сложных типов (STRUCT, MAP, LIST, UNION) не поддерживаются.
 * Пробелы в именах столбцов не поддерживаются.
-* Для ORC-файлов используется три [параметра сжатия](http://hortonworks.com/blog/orcfile-in-hdp-2-better-compression-better-performance/): NONE, ZLIB и SNAPPY. Фабрика данных поддерживает чтение данных из ORC-файла в любом из этих форматов. Для чтения данных используется кодек сжатия из метаданных. Однако при записи в ORC-файл фабрика данных по умолчанию выбирает ZLIB. В настоящее время изменить это поведение нельзя.
+* Для ORC-файлов используется три [параметра сжатия](https://hortonworks.com/blog/orcfile-in-hdp-2-better-compression-better-performance/): NONE, ZLIB и SNAPPY. Фабрика данных поддерживает чтение данных из ORC-файла в любом из этих форматов. Для чтения данных используется кодек сжатия из метаданных. Однако при записи в ORC-файл фабрика данных по умолчанию выбирает ZLIB. В настоящее время изменить это поведение нельзя.
 
 > [!IMPORTANT]
 > Для копирования посредством локальной среды выполнения интеграции (IR), то есть между локальным и облачным хранилищами данных, если вы не копируете файлы ORC **как есть**, на компьютере среды выполнения интеграции необходимо установить **64-разрядную JRE 8 (среда выполнения Java) или OpenJDK**. Подробные сведения приведены в следующем абзаце.
@@ -492,7 +492,7 @@ ms.locfileid: "59257915"
 
 | Тип промежуточных данных фабрики данных | Типы ORC |
 |:--- |:--- |
-| Логическое | Логическое |
+| Boolean | Boolean |
 | SByte | Byte |
 | Byte | Сокращение |
 | Int16 | Сокращение |
@@ -500,16 +500,16 @@ ms.locfileid: "59257915"
 | Int32 | Int |
 | UInt32 | длинное целое |
 | Int64 | длинное целое |
-| UInt64 | Строка |
+| UInt64 | String |
 | Single | Float |
-| Двойное с плавающей запятой | Двойное с плавающей запятой |
+| Double | Double |
 | Decimal | Decimal |
-| Строка | Строка |
-| DateTime | Timestamp |
+| String | String |
+| Datetime | Timestamp |
 | DateTimeOffset | Timestamp |
 | TimeSpan | Timestamp |
 | ByteArray | Binary |
-| Guid | Строка |
+| Guid | String |
 | Char | Char(1) |
 
 ## <a name="avro-format"></a>Формат Avro

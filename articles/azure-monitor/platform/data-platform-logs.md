@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 0203/26/2019
 ms.author: bwren
-ms.openlocfilehash: 59213c5391b5b652eeead05c4a5af761571fcece
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: ec037b16840afe669ac3934beaa832f850cdcfb0
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59798952"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60003689"
 ---
 # <a name="logs-in-azure-monitor"></a>Журналы в Azure Monitor
 
@@ -112,7 +112,7 @@ Azure Monitor может собирать данные журнала из ра�
 
 | Данные | ОПИСАНИЕ |
 |:---|:---|
-| Azure Monitor для контейнеров | Собранные данные инвентаризации и производительности [Azure Monitor для контейнеров](../insights/container-insights-overview.md). См. в разделе [сведения о сбора данных контейнеров](../insights/container-insights-analyze.md#container-data-collection-details) список таблиц. |
+| Azure Monitor для контейнеров | Собранные данные инвентаризации и производительности [Azure Monitor для контейнеров](../insights/container-insights-overview.md). См. в разделе [сведения о сбора данных контейнеров](../insights/container-insights-log-search.md#container-records) список таблиц. |
 | Azure Monitor для виртуальных машин | Данные карты и производительности, собранные [Azure Monitor для виртуальных машин](../insights/vminsights-overview.md). См. в разделе [как запроса журналов из Azure Monitor для виртуальных машин](../insights/vminsights-log-search.md) подробные сведения о запросах эти данные. |
 
 ### <a name="custom"></a>Пользовательская 

@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.author: jowargo
 ms.date: 04/08/2019
-ms.openlocfilehash: 559dd5ecfa4615e42e4f7ac40008e69c9210e2a4
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 64c2cd0ed1572fdaaa42f4731519ba6d5c320f1c
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59799479"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60149135"
 ---
 # <a name="registration-management"></a>Управление регистрацией
 
@@ -36,11 +36,11 @@ ms.locfileid: "59799479"
 Регистрация связывает маркер службы отправки уведомлений платформы (PNS) для устройства с тегами и, возможно, шаблоном. Маркером PNS может быть ChannelURI, маркер устройства или регистрационный идентификатор FCM. Теги используются для направления уведомлений правильному набору маркеров устройств. Дополнительные сведения см. в статье [Маршрутизация и выражения тегов](notification-hubs-tags-segment-push-message.md). Шаблоны используются для преобразований в рамках регистрации. Дополнительные сведения см. в статье [Шаблоны](notification-hubs-templates-cross-platform-push-messages.md).
 
 > [!NOTE]
-> Центры уведомлений Azure поддерживают не более 60 тегов для каждой регистрации.
+> Центры уведомлений Azure поддерживает не более 60 теги на каждом устройстве.
 
 ### <a name="installations"></a>Установка
 
-Установка — это расширенная регистрация, включающая набор свойств, связанных с push-уведомлениями. Это новый и рекомендуемый способ регистрации устройств. Однако в настоящее время он не поддерживается пакетом SDK .NET на стороне клиента ([пакетом SDK центра уведомлений для серверных операций](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)).  Это означает, что при регистрации с самого клиентского устройства вам потребуется использовать [REST API концентраторов уведомлений](https://msdn.microsoft.com/library/mt621153.aspx) для поддержки установки. При использовании внутренней службы должна иметься возможность применения [пакета SDK концентратора уведомлений для серверных операций](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/).
+Установка — это расширенная регистрация, включающая набор свойств, связанных с push-уведомлениями. Это новый и рекомендуемый способ регистрации устройств. Однако в настоящее время он не поддерживается пакетом SDK .NET на стороне клиента ([пакетом SDK центра уведомлений для серверных операций](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)).  Это означает, что при регистрации с самого клиентского устройства вам потребуется использовать [REST API концентраторов уведомлений](https://docs.microsoft.com/en-us/rest/api/notificationhubs/create-overwrite-installation) для поддержки установки. При использовании внутренней службы должна иметься возможность применения [пакета SDK концентратора уведомлений для серверных операций](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/).
 
 Ниже приведены некоторые ключевые преимущества регистрации через установку.
 
@@ -48,7 +48,7 @@ ms.locfileid: "59799479"
 - Модель установки поддерживает формат специальный тег (`$InstallationId:{INSTALLATION_ID}`), позволяющий отправки уведомления непосредственно для конкретного устройства. Например, если в код приложения задает идентификатор установки `joe93developer` для этого конкретного устройства, разработчик предназначенных для этого устройства при отправке уведомления `$InstallationId:{joe93developer}` тега. Это позволяет для конкретного устройства без необходимости создавать дополнительный код.
 - Установка также позволяет частично обновлять регистрацию. Частичное обновление установки запрашивается с помощью метода PATCH из [стандарта JSON-Patch](https://tools.ietf.org/html/rfc6902). Это удобно в тех случаях, когда нужно обновить теги в регистрации. Нет необходимости удалять всю регистрацию и заново отправлять все прошлые теги.
 
-Установка может содержать следующие свойства. Полный список свойств установки см. в статье об [установке или перезаписи установки с помощью REST API](https://msdn.microsoft.com/library/azure/mt621153.aspx) или в статье [Класс Installation](https://msdn.microsoft.com/library/azure/microsoft.azure.notificationhubs.installation_properties.aspx).
+Установка может содержать следующие свойства. Полный список свойств установки см. в статье об [установке или перезаписи установки с помощью REST API](https://docs.microsoft.com/en-us/rest/api/notificationhubs/create-overwrite-installation) или в статье [Класс Installation](https://msdn.microsoft.com/library/azure/microsoft.azure.notificationhubs.installation_properties.aspx).
 
 ```json
 // Example installation format to show some supported properties

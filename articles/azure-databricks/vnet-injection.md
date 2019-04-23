@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: azure-databricks
 ms.topic: conceptual
 ms.date: 03/18/2019
-ms.openlocfilehash: c29d2e1df0979481c0c8a1e1f2cd4d22b013212a
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
-ms.translationtype: MT
+ms.openlocfilehash: 2db588a0cf67d7826408139e8facb43a2e897951
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58227710"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60003451"
 ---
 # <a name="deploy-azure-databricks-in-your-virtual-network-preview"></a>Развертывание Azure Databricks в вашей виртуальной сети (Предварительная версия)
 
@@ -37,7 +37,7 @@ ms.locfileid: "58227710"
 
 Развертывание рабочей области Azure Databricks для выбранной виртуальной сети должна отвечать следующим требованиям:
 
-### <a name="location"></a>Расположение
+### <a name="location"></a>Location
 
 Виртуальная сеть должны находиться в том же расположении, что рабочей области Azure Databricks.
 
@@ -121,7 +121,7 @@ ms.locfileid: "58227710"
 
 Если вы не используете [портала Azure](https://docs.azuredatabricks.net/administration-guide/cloud-configurations/azure/vnet-inject.html#vnet-inject-portal) или [шаблонов Azure Resource Manager](https://docs.azuredatabricks.net/administration-guide/cloud-configurations/azure/vnet-inject.html#vnet-inject-advanced) Создание групп безопасности сети, необходимо вручную список разрешений следующие трафика в подсети.
 
-|Направление|Протокол|Источник|Исходный порт|Место назначения|Конечный порт|
+|Direction|Протокол|Источник|Исходный порт|Место назначения|Конечный порт|
 |---------|--------|------|-----------|-----------|----------------|
 |Входящий трафик|\*|Виртуальная сеть|\*|\*|\*|
 |Входящий трафик|\*|IP-адресов NAT плоскости управления|\*|\*|22|
@@ -188,7 +188,7 @@ ms.locfileid: "58227710"
 
 ### <a name="notebook-command-errors"></a>Ошибки команды записной книжки
 
-**Команда зависла**
+**Команда не отвечает**
 
 Возможная причина: рабочей роли для рабочей роли обмен данными блокируется. Исправление, убедившись, что правила безопасности для входящего трафика соответствуют требованиям.
 

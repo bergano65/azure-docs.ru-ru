@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 03/14/2019
+ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: aeaf8fb5112fe9f6d8f2ca77ed9c1fd244fd9603
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: 1347e28fe36ffe9595516252aea102d817a705a7
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57877077"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60000051"
 ---
 # <a name="azure-media-services-community"></a>Сообщество служб мультимедиа Azure  
 
@@ -37,10 +37,13 @@ ms.locfileid: "57877077"
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="discussion"></a>Обсуждение
+
 ### <a name="twitter"></a>Twitter
+
 Используйте имя пользователя Twitter [@MSFTAzureMedia](https://twitter.com/MSFTAzureMedia) для связи с нами и отслеживания новостей в Twitter. Вы можете использовать дескриптор [@AzureSupport](https://twitter.com/azuresupport) для запроса поддержки в Twitter.  
 
 ### <a name="online-forums"></a>Интернет-форумы
+
 Можно использовать указанные ниже форумы для отправки вопросов о существующих продуктах и функциях.
 
 Сейчас MSDN —это основной форум сообщества разработчиков Служб мультимедиа.
@@ -48,9 +51,11 @@ ms.locfileid: "57877077"
 [![MSDN](./media/media-services-community/msdn.png)](https://social.msdn.microsoft.com/forums/azure/home?forum=MediaServices) 
 
 Команда разработчиков также отслеживает вопросы с тегом "azure-media-services" на сайте Stack Overflow.
+
 [![StackOverflow](./media/media-services-community/stack-overflow.png)](https://stackoverflow.com/questions/tagged/azure-media-services) 
 
 ## <a name="contact-the-team"></a>Связаться с командой
+
 Службы мультимедиа Azure, является основной поддержки по электронной почте: **amshelp\@microsoft.com**.
 
 В следующей таблице перечислены адреса электронной почты подгрупп разработчиков различных функций.

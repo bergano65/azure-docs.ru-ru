@@ -6,20 +6,20 @@ author: dlepow
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: article
-ms.date: 11/29/2018
+ms.date: 04/17/2019
 ms.author: danlep
-ms.openlocfilehash: cc47ca07a843daf5cc35d23b838761166d39bdcc
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
-ms.translationtype: MT
+ms.openlocfilehash: 5073b68f6ef3de330671e3ea25056e0cae976360
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351377"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60000663"
 ---
 # <a name="deploy-container-instances-that-use-gpu-resources"></a>Развертывание экземпляров контейнеров, использующих ресурсы GPU
 
 Чтобы выполнить определенные ресурсоемкие рабочие нагрузки в Экземплярах контейнеров Azure, разверните [группы контейнеров](container-instances-container-groups.md) с *ресурсами GPU*. Экземпляры контейнеров в группе могут получить доступ к одному графическому процессору NVIDIA Tesla или нескольким при выполнении рабочих нагрузок контейнеров, таких как CUDA и приложения глубокого обучения.
 
-Как указано в этой статье, вы можете добавлять ресурсы GPU при развертывании группы контейнеров с использованием [файла YAML](container-instances-multi-container-yaml.md) или [шаблона Resource Manager](container-instances-multi-container-group.md).
+В этой статье показано, как добавить ресурсы графического Процессора при развертывании группы контейнеров с помощью [yaml-файл](container-instances-multi-container-yaml.md) или [шаблона Resource Manager](container-instances-multi-container-group.md). Можно также указать ресурсы графического Процессора при развертывании экземпляра контейнера с помощью портала Azure.
 
 > [!IMPORTANT]
 > Сейчас эта функция доступна в предварительной версии, и применяются [некоторые ограничения](#preview-limitations). Предварительные версии предоставляются только в том случае, если вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
@@ -61,7 +61,7 @@ ms.locfileid: "58351377"
 
 * **Цены**. Аналогично группам контейнеров без ресурсов GPU, Azure выставляет счета за ресурсы, потребляемые в течение *длительности использования* группы контейнеров с ресурсами GPU. Длительность использования рассчитывается с момента извлечения первого образа контейнера до момента завершения работы группы контейнеров. Она не включает время, затрачиваемое на развертывание группы контейнеров.
 
-  Цены для групп контейнеров с ресурсами GPU выше цен для групп контейнеров без ресурсов. См. сведения о [ценах](https://azure.microsoft.com/pricing/details/container-instances/).
+  См. сведения о [ценах](https://azure.microsoft.com/pricing/details/container-instances/).
 
 * **Драйверы CUDA**. Экземпляры контейнеров с ресурсами GPU предварительно снабжены драйверами NVIDIA CUDA и средами выполнения контейнеров, поэтому вы можете использовать образы контейнеров, разработанные для рабочих нагрузок CUDA.
 

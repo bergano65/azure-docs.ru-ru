@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/29/2019
 ms.author: jingwang
-ms.openlocfilehash: b86aef7de048690d689a87d4fb844f77ea986445
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: 5d2d5948d817cbe80d00b74ef104ebaffcb511fb
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55297495"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59995818"
 ---
 # <a name="copy-data-from-office-365-into-azure-using-azure-data-factory-preview"></a>Копирование данных из Office 365 с помощью Фабрики данных Azure (предварительная версия) 
 
@@ -27,7 +27,7 @@ ms.locfileid: "55297495"
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
-Сейчас с помощью одного действия копирования вы можете только **скопировать данные из Office 365 в [хранилище BLOB-объектов Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md) и [Azure Data Lake Storage 2-го поколения (предварительная версия)](connector-azure-data-lake-storage.md) в формате JSON** (тип setOfObjects). Если вы хотите загрузить данные Office 365 в хранилища других типов или в других форматах, добавьте к первому действию копирования дополнительные действия, которые передадут эти данные в любое [поддерживаемое ADF целевое хранилище](copy-activity-overview.md#supported-data-stores-and-formats) (см. столбец "Поддерживается в качестве приемника" в таблице "Поддерживаемые хранилища и форматы данных").
+Сейчас в пределах отдельного действия копирования вы можете только **копировать данные из Office 365 в [хранилище BLOB-объектов](connector-azure-blob-storage.md), [Gen1 хранилища Озера данных Azure](connector-azure-data-lake-store.md), и [Gen2 хранилища Озера данных Azure ](connector-azure-data-lake-storage.md) в формате JSON** (тип setOfObjects). Если вы хотите загрузить данные Office 365 в хранилища других типов или в других форматах, добавьте к первому действию копирования дополнительные действия, которые передадут эти данные в любое [поддерживаемое ADF целевое хранилище](copy-activity-overview.md#supported-data-stores-and-formats) (см. столбец "Поддерживается в качестве приемника" в таблице "Поддерживаемые хранилища и форматы данных").
 
 >[!IMPORTANT]
 >- Подписка Azure, содержащая фабрику данных и целевое хранилище данных должны размещаться в том же клиенте Azure Active Directory (AAD), что и клиент Office 365.
@@ -35,7 +35,7 @@ ms.locfileid: "55297495"
 >-  Если вы загружаете данные из Office 365 в **хранилище BLOB-объектов Azure**, при определении связанных служб для хранилища BLOB-объектов Azure обязательно используйте **[аутентификацию субъекта-службы](connector-azure-blob-storage.md#service-principal-authentication)**, а не [ключ учетной записи](connector-azure-blob-storage.md#account-key-authentication), [подписанные URL-адреса](connector-azure-blob-storage.md#shared-access-signature-authentication) или [управляемые удостоверения для ресурсов Azure](connector-azure-blob-storage.md#managed-identity).
 >-  Если вы загружаете данные из Office 365 в **Azure Data Lake Storage 1-го поколения**, при определении связанных служб для Azure Data Lake Storage 1-го поколения обязательно используйте [**аутентификацию субъекта-службы**](connector-azure-data-lake-store.md#use-service-principal-authentication), а не [управляемые удостоверения для ресурсов Azure](connector-azure-data-lake-store.md#managed-identity).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы скопировать данные из Office 365 в Azure, выполните следующие предварительные требования:
 
@@ -77,9 +77,9 @@ ms.locfileid: "55297495"
 
 Для связанной службы Office 365 поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type необходимо задать следующее значение: **Office365** | Yes |
+| type | Свойству type необходимо задать следующее значение: **Office365** | Yes |
 | office365TenantId | Идентификатор клиента Azure, которому принадлежит учетная запись Office 365. | Yes |
 | servicePrincipalTenantId | Укажите сведения о клиенте, в котором находится веб-приложение AAD. | Yes |
 | servicePrincipalId | Укажите идентификатора клиента приложения. | Yes |
@@ -117,9 +117,9 @@ ms.locfileid: "55297495"
 
 Для копирования данных из Office 365 поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type набора данных необходимо задать следующее значение: **Office365Table** | Yes |
+| type | Для свойства type набора данных необходимо задать следующее значение: **Office365Table** | Yes |
 | tableName | Имя набора данных, который нужно извлечь из Office 365. [Здесь](https://github.com/OfficeDev/MS-Graph-Data-Connect/wiki/Capabilities#datasets) вы найдете список наборов данных, доступных для извлечения из Office 365. | Yes |
 | predicate | Выражение предиката, которое позволяет фильтровать определенные строки при извлечении данных из Office 365.  В [этой статье](https://github.com/OfficeDev/MS-Graph-Data-Connect/wiki/Capabilities#filters) указано, какие столбцы можно использовать в предикате фильтрации для каждой таблицы, и описан формат выражения фильтра. | Нет <br>(Если предиката не указан, по умолчанию настраивается извлечение данных за последние 30 дней.) |
 
@@ -287,5 +287,5 @@ ms.locfileid: "55297495"
 ]
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 03/12/2019
+ms.date: 04/18/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 51f5355e365d0dcf7a103deab3356f015e75641e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 58f6d6cf8bf16f7c35bab35a69cfcdf8759f66ae
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57897526"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60006834"
 ---
 # <a name="boundaries-for-your-luis-model-and-keys"></a>Границы модели LUIS и ключи
 У LUIS есть несколько областей границ. Первая — [граница модели](#model-boundaries), которая управляет намерениями, сущностями и возможностями в LUIS. Вторая область — [пределы квот](#key-limits) на основе типа ключа. Третья область границ — [сочетания клавиш](#keyboard-controls) для управления веб-сайтом LUIS. Четвертая область — [сопоставление региона мира](luis-reference-regions.md) между веб-сайтом разработки LUIS и API-интерфейсами [конечной точки](luis-glossary.md#endpoint) LUIS. 
@@ -47,16 +47,16 @@ ms.locfileid: "57897526"
 
 * Макс. кол-во символов по умолчанию — 50. 
 
-## <a name="intent-and-entity-naming"></a>Именование намерений и сущностей
-В именах сущностей и намерений нельзя использовать следующие символы:
+<a name="intent-and-entity-naming"></a>
 
-|Character|ИМЯ|
+## <a name="object-naming"></a>Именование объектов
+
+Не используйте следующие символы в следующие имена.
+
+|Object|Исключить символов|
 |--|--|
-|`{`|Открывающая фигурная скобка|
-|`}`|Закрывающая фигурная скобка|
-|`[`|Открывающая квадратная скобка|
-|`]`|Закрывающая квадратная скобка|
-|`\`|Обратная косая черта|
+|Имена Intent, сущности и роли|`:`<br>`$`|
+|Имя версии|`\`<br> `/`<br> `:`<br> `?`<br> `&`<br> `=`<br> `*`<br> `+`<br> `(`<br> `)`<br> `%`<br> `@`<br> `$`<br> `~`<br> `!`<br> `#`|
 
 ## <a name="key-usage"></a>Использование ключа
 

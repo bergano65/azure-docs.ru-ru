@@ -7,17 +7,17 @@ ms.subservice: performance
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: juliemsft
-ms.author: jrasnick
+author: stevestein
+ms.author: sstein
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 03/20/2019
-ms.openlocfilehash: c6dc49204c0a7e1cb0d1116e29746eed2fe52f8d
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
-ms.translationtype: MT
+ms.date: 04/18/2019
+ms.openlocfilehash: 471ded9cd94623929630155f1a3c613bf00576a8
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58286267"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60006256"
 ---
 # <a name="scale-single-database-resources-in-azure-sql-database"></a>Масштабирование ресурсов отдельной базы данных в Базе данных SQL Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "58286267"
 > [!IMPORTANT]
 > Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
 
-## <a name="change-compute-resources-vcores-or-dtus"></a>Для изменения вычислительных ресурсов (виртуальных ядер или Dtu)
+## <a name="change-compute-size-vcores-or-dtus"></a>Изменение размера вычислений (количество виртуальных ядер или Dtu)
 
 Изначально выбрав количество виртуальных ядер и Dtu, можно масштабировать отдельную базу данных вверх или вниз динамически на основе фактического использования с помощью [портала Azure](sql-database-single-databases-manage.md#manage-an-existing-sql-database-server), [Transact-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current#examples-1), [ PowerShell](/powershell/module/az.sql/set-azsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update), или [REST API](https://docs.microsoft.com/rest/api/sql/databases/update).
 
@@ -67,6 +67,37 @@ ms.locfileid: "58286267"
 > [!TIP]
 > Для отслеживания выполняемых операций см. разделы [Управление операциями с помощью SQL REST API](https://docs.microsoft.com/rest/api/sql/operations/list), [Управление операциями с помощью интерфейса командной строки](/cli/azure/sql/db/op), [Отслеживание операций с помощью T-SQL](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) и следующие две команды PowerShell: [Get-AzSqlDatabaseActivity](/powershell/module/az.sql/get-azsqldatabaseactivity) и [Stop AzSqlDatabaseActivity](/powershell/module/az.sql/stop-azsqldatabaseactivity).
 
+### <a name="cancelling-service-tier-changes-or-compute-rescaling-operations"></a>Отмена изменения уровня службы или вычислений, при изменении масштаба операций
+
+Уровень службы, изменить или вычислений при изменении масштаба операции могут быть отменены.
+
+#### <a name="azure-portal"></a>Портал Azure
+
+В колонке обзора базы данных, перейдите к **уведомления** и щелкните плитку, уведомляющее о текущей операции:
+
+![Текущие операции](media/sql-database-single-database-scale/ongoing-operations.png)
+
+Затем щелкните кнопку с надписью **отменить эту операцию**.
+
+![Отменить текущую операцию](media/sql-database-single-database-scale/cancel-ongoing-operation.png)
+
+#### <a name="powershell"></a>PowerShell
+
+Из командной строки PowerShell, установите `$ResourceGroupName`, `$ServerName`, и `$DatabaseName`, а затем выполните следующую команду:
+
+```PowerShell
+$OperationName = (az sql db op list --resource-group $ResourceGroupName --server $ServerName --database $DatabaseName --query "[?state=='InProgress'].name" --out tsv)
+if(-not [string]::IsNullOrEmpty($OperationName))
+    {
+        (az sql db op cancel --resource-group $ResourceGroupName --server $ServerName --database $DatabaseName --name $OperationName)
+        "Operation " + $OperationName + " has been canceled"
+    }
+    else
+    {
+        "No service tier change or compute rescaling operation found"
+    }
+```
+
 ### <a name="additional-considerations-when-changing-service-tier-or-rescaling-compute-size"></a>Дополнительные соображения при изменении службы уровня или при изменении масштаба объем вычислений
 
 - При переходе к более высокому уровню служб или объему вычислительных ресурсов максимальный размер базы данных не увеличивается, если явно не указать для него большее значение (maxsize).
@@ -77,7 +108,7 @@ ms.locfileid: "58286267"
 - Предложения службы восстановления отличаются для разных уровней служб. При понижении до уровня **Базовый** уменьшится период хранения резервной копии. Ознакомьтесь со статьей [Подробнее об автоматически создаваемых резервных копиях в базе данных SQL](sql-database-automated-backups.md).
 - Новые свойства базы данных не применяются до тех пор, пока изменение не завершится.
 
-### <a name="billing-during-rescaling"></a>Выставление счетов при масштабировании
+### <a name="billing-during-compute-rescaling"></a>Выставление счетов во время вычислений при изменении масштаба
 
 Плата взимается за каждый час существования базы данных с учетом самого высокого уровня служб и объема вычислительных ресурсов, которые использовались в течение этого часа, даже если база данных использовалась или была активна менее часа. Например, если вы создадите отдельную базу данных и через 5 минут удалите ее, вам будет выставлен счет за 1 час использования базы данных.
 
@@ -102,9 +133,9 @@ ms.locfileid: "58286267"
 > [!IMPORTANT]
 > Иногда требуется сжать базу данных, чтобы освободить неиспользуемое пространство. Дополнительные сведения см. в статье об [управлении файловым пространством в Базе данных SQL Azure](sql-database-file-space-management.md).
 
-## <a name="dtu-based-purchasing-model-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb"></a>Модель покупки на основе единиц DTU — ограничения P11 и P15 при максимальном размере, превышающем 1 ТБ
+## <a name="p11-and-p15-constraints-when-max-size-greater-than-1-tb"></a>Ограничения P11 и P15, если максимальный размер больше 1 ТБ
 
-В настоящее время на уровне Premium предоставляется более 1 ТБ хранилища, за исключением следующих регионов: Восточный Китай, Северный Китай, Центральная Германия, Северо-Восточная Германия, центрально-западная часть США, регионы US DoD и центральная часть для государственных организаций США. В этих регионах максимальный объем хранилища категории "Премиум" ограничен 1 ТБ. Дополнительные сведения см. в разделе [о действующих ограничениях для P11-P15](sql-database-single-database-scale.md#dtu-based-purchasing-model-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb). Ниже приведены рекомендации и ограничения для баз данных P11 и P15 с максимальным размером, превышающим 1 ТБ.
+В настоящее время на уровне Premium предоставляется более 1 ТБ хранилища, за исключением следующих регионов: Восточный Китай, Северный Китай, Центральная Германия, Северо-Восточная Германия, центрально-западная часть США, регионы US DoD и центральная часть для государственных организаций США. В этих регионах максимальный объем хранилища категории "Премиум" ограничен 1 ТБ. Ниже приведены рекомендации и ограничения для баз данных P11 и P15 с максимальным размером, превышающим 1 ТБ.
 
 - Если максимальный размер для базы данных P11 или P15 была когда-либо значение больше 1 ТБ, то можно его только восстановить или копируются в базу данных P11 или P15.  Как следствие базы данных можно преобразована шкала для размер различных вычислительных предоставляемый объем пространства, выделенного во время операции при изменении масштаба не превышает максимальный размер ограничений размера вычислений.
 - Для сценариев активной георепликации:
