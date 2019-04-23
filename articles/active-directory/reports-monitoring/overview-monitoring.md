@@ -1,5 +1,5 @@
 ---
-title: Мониторинг в Azure Active Directory (предварительная версия) | Документация Майкрософт
+title: Мониторинг в Azure Active Directory | Документация Майкрософт
 description: Общие сведения о мониторинге в Azure Active Directory.
 services: active-directory
 documentationcenter: ''
@@ -13,18 +13,18 @@ ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 11/13/2018
+ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de416d18505d0258da446318b3dc6a9853ff13e7
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: d63f8440ca527a746f73574bc156037d85fc3599
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58434863"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60009048"
 ---
-# <a name="what-is-azure-active-directory-monitoring-preview"></a>Мониторинг в Azure Active Directory (предварительная версия)
+# <a name="what-is-azure-active-directory-monitoring"></a>Мониторинг в Azure Active Directory
 
 Теперь функция мониторинга Azure Active Directory (Azure AD) позволяет направлять журналы действий в различные конечные точки. Эти журналы затем можно сохранить для долговременного использования или интегрировать со сторонними средствами для управления сведениями и событиями безопасности (SIEM), чтобы получать аналитические сведения о своей среде.
 
@@ -61,12 +61,12 @@ ms.locfileid: "58434863"
 
 ## <a name="send-logs-to-azure-monitor-logs"></a>Отправка данных в журналы Azure Monitor
 
-[Azure Monitor Logs](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) — это решение, которое консолидирует данные мониторинга из различных источников, а также предоставляет язык запросов и аналитическую систему для получения сведений о работе приложений и ресурсов. Отправляя журналы действий Azure AD в Azure Monitor Logs вы можете быстро извлекать и отслеживать собранные данные, а также создавать на их основе оповещения. См. дополнительные сведения об [отправке данных в журналы Azure Monitor](howto-integrate-activity-logs-with-log-analytics.md).
+[Журналы Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) — это решение, которое консолидирует данные мониторинга из различных источников, а также предоставляет язык запросов и аналитическую систему для получения сведений о работе приложений и ресурсов. Отправляя журналы действий Azure AD в Azure Monitor Logs вы можете быстро извлекать и отслеживать собранные данные, а также создавать на их основе оповещения. См. дополнительные сведения об [отправке данных в журналы Azure Monitor](howto-integrate-activity-logs-with-log-analytics.md).
 
-Вы также можете установить готовые представления для журналов действий Azure AD, чтобы отслеживать распространенные сценарии, связанные со входом в систему и событиями аудита. См. сведения об [установке и использовании представлений Log Analytics для журналов действий Azure AD](howto-install-use-log-analytics-views.md).
+Вы также можете установить готовые представления для журналов действий Azure AD, чтобы отслеживать распространенные сценарии, связанные со входом в систему и событиями аудита. См. сведения об [установке и использовании предоставлений анализа журналов для журналов действий Azure AD](howto-install-use-log-analytics-views.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Журналы действий в Azure Monitor](concept-activity-logs-azure-monitor.md)
 * [Потоковая передача журналов в концентратор событий](tutorial-azure-monitor-stream-logs-to-event-hub.md)
-* [Отправка журналов в решение Azure Monitor Logs](howto-integrate-activity-logs-with-log-analytics.md)
+* [Send logs to Azure Monitor logs](howto-integrate-activity-logs-with-log-analytics.md) (Отправка данных в журналы Azure Monitor)
