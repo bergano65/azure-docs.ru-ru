@@ -8,12 +8,12 @@ ms.service: mysql
 ms.topic: article
 ms.date: 05/10/2017
 ms.author: sewatson
-ms.openlocfilehash: a1d5458a2b815591fc7126d429bd16a718910b30
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 2ff389f52da0db4e394e8f6a6c37955a5f0c3861
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23073900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60475758"
 ---
 # <a name="azure-database-for-mysql-documentation"></a>Документация по базе данных Azure для MySQL
 
@@ -23,21 +23,21 @@ ms.locfileid: "23073900"
 
 Узнайте, как создать базу данных MySQL в Azure с помощью следующих средств:
 
-- [портале Azure](/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal)
-- [интерфейс командной строки Azure](/azure/mysql/quickstart-create-mysql-server-database-using-azure-cli)
+- [портал Azure](/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal)
+- [Интерфейс командной строки Azure](/azure/mysql/quickstart-create-mysql-server-database-using-azure-cli)
 
 ## <a name="step-by-step-tutorials"></a>Пошаговые руководства
 
 Узнайте, как проектировать базы данных и разрабатывать приложения:
 
-- Проектирование базы данных: [портал Azure](/azure/mysql/tutorial-design-database-using-portal) |  [Azure CLI](/azure/mysql/tutorial-design-database-using-cli)
+- Проектирование базы данных: [портал Azure](/azure/mysql/tutorial-design-database-using-portal) |  [Azure CLI](/azure/mysql/tutorial-design-database-using-cli)
 - Создание веб-приложения: [Wordpress — портал](https://portal.azure.com/#create/WordPress.WordPress) |  [PHP — Azure CLI](/azure/app-service/app-service-web-tutorial-php-mysql?toc=%2fazure%2fmysql%2ftoc.json)
 
 ## <a name="samples"></a>Примеры 
 
 Поиск скриптов для выполнения типовых задач.
 
-- [интерфейс командной строки Azure](/azure/mysql/reference-azure-cli)
+- [Интерфейс командной строки Azure](/azure/mysql/reference-azure-cli)
 
 ## <a name="more"></a>Подробнее
 

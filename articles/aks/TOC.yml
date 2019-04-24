@@ -108,8 +108,6 @@
         - name: Удаление кластера AKS
           href: '/cli/azure/aks#az-aks-delete'
           maintainContext: true
-        - name: Включение AKS в Azure AD
-          href: aad-integration.md
         - name: Создание виртуальных узлов (предварительная версия)
           items:
             - name: Инфраструктура CLI Azure
@@ -172,8 +170,18 @@
           href: control-kubeconfig-access.md
         - name: Защита трафика для групп pod с помощью политик сети (предварительная версия)
           href: use-network-policies.md
+        - name: Использование политик безопасности pod (предварительная версия)
+          href: use-pod-security-policies.md
         - name: Обновление учетных данных субъекта-службы кластера
           href: update-credentials.md
+        - name: Включение интеграции с Azure Active Directory
+          items:
+            - name: Использование Azure CLI
+              href: azure-ad-integration-cli.md
+            - name: Использование портала Azure
+              href: azure-ad-integration.md
+        - name: "Использование RBAC Kubernetes при интеграции с Azure\_AD"
+          href: azure-ad-rbac.md
         - name: Аутентификация с помощью ACR
           href: ../container-registry/container-registry-auth-aks.md
           maintainContext: true

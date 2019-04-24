@@ -1,149 +1,142 @@
-items:
 - name: Документация по обозревателю данных Azure
   href: index.yml
 - name: Обзор
   items:
-  - name: Что такое обозреватель данных?
-    href: data-explorer-overview.md
+    - name: Что такое обозреватель данных?
+      href: data-explorer-overview.md
 - name: Быстрое начало работы
-  items:
-  - name: Создание кластера и базы данных
-    items:
-    - name: Портал Azure
-      href: create-cluster-database-portal.md
-    - name: Инфраструктура CLI Azure
-      href: create-cluster-database-cli.md
-    - name: PowerShell
-      href: create-cluster-database-powershell.md
-    - name: C#
-      href: create-cluster-database-csharp.md
-    - name: Python
-      href: create-cluster-database-python.md
-  - name: Прием данных
-    items:
-    - name: Потоковая передача данных — концентратор событий
-      href: ingest-data-event-hub.md
-    - name: Потоковая передача данных — Сетка событий
-      href: ingest-data-event-grid.md
-    - name: Потоковая передача данных — Kafka
-      href: ingest-data-kafka.md
-    - name: Пакетная обработка данных — Python
-      href: python-ingest-data.md
-    - name: Пакетная обработка данных — пакет SDK для Node
-      href: node-ingest-data.md
-    - name: Пакетная обработка данных — пакет SDK для .NET Standard
-      href: net-standard-ingest-data.md
-    - name: Пакетная обработка данных — Logstash
-      href: ingest-data-logstash.md
-  - name: Запрос данных
-    items:
-    - name: Веб-интерфейс
-      href: web-query-data.md
-    - name: Python
-      href: python-query-data.md
-  - name: Визуализируйте данные
-    items:
-    - name: Power BI — соединитель
-      href: power-bi-connector.md
-    - name: Power BI — импортированный запрос
-      href: power-bi-imported-query.md
-    - name: Power BI — SQL-запрос
-      href: power-bi-sql-query.md
   expanded: true
+  items:
+    - name: Создание кластера и базы данных
+      items:
+        - name: Портал Azure
+          href: create-cluster-database-portal.md
+        - name: Инфраструктура CLI Azure
+          href: create-cluster-database-cli.md
+        - name: PowerShell
+          href: create-cluster-database-powershell.md
+        - name: 'C#'
+          href: create-cluster-database-csharp.md
+        - name: Python
+          href: create-cluster-database-python.md
+    - name: Прием данных
+      items:
+        - name: "Потоковая передача данных\_— концентратор событий"
+          href: ingest-data-event-hub.md
+        - name: "Потоковая передача данных\_— Сетка событий"
+          href: ingest-data-event-grid.md
+        - name: "Потоковая передача данных\_— Kafka"
+          href: ingest-data-kafka.md
+        - name: "Пакетная обработка данных\_— Python"
+          href: python-ingest-data.md
+        - name: "Пакетная обработка данных\_— пакет SDK для Node"
+          href: node-ingest-data.md
+        - name: "Пакетная обработка данных\_— пакет SDK для .NET\_Standard"
+          href: net-standard-ingest-data.md
+        - name: "Пакетная обработка данных\_— Logstash"
+          href: ingest-data-logstash.md
+    - name: Запрос данных
+      items:
+        - name: Веб-интерфейс
+          href: web-query-data.md
+        - name: Python
+          href: python-query-data.md
+    - name: Визуализируйте данные
+      items:
+        - name: "Power\_BI\_— соединитель"
+          href: power-bi-connector.md
+        - name: "Power\_BI\_— импортированный запрос"
+          href: power-bi-imported-query.md
+        - name: "Power\_BI\_— SQL-запрос"
+          href: power-bi-sql-query.md
 - name: Учебники
   items:
-  - name: Прием данных без использования кода
-    href: ingest-data-no-code.md
-  - name: Визуализация данных в Power BI
-    href: visualize-power-bi.md
+    - name: Прием данных без использования кода
+      href: ingest-data-no-code.md
+    - name: Визуализация данных в Power BI
+      href: visualize-power-bi.md
 - name: Основные понятия
   items:
-  - name: Общие сведения о приеме данных
-    displayName: pipelines, connectors, plugins, Python, .NET, Java, Node, REST
-    href: ingest-data-overview.md
-  - name: Аналитика временных рядов
-    href: time-series-analysis.md
+    - name: Общие сведения о приеме данных
+      displayName: 'pipelines, connectors, plugins, Python, .NET, Java, Node, REST'
+      href: ingest-data-overview.md
+    - name: Аналитика временных рядов
+      href: time-series-analysis.md
 - name: Практические руководства
   items:
-  - name: Начало работы
-    items:
-    - name: Написание запросов
-      href: write-queries.md
-    - name: Принятие демонстрационных данных
-      href: ingest-sample-data.md
-  - name: управление
-    items:
-    - name: Управление разрешениями базы данных
-      href: manage-database-permissions.md
-    - name: Проверка работоспособности кластера
-      href: check-cluster-health.md
-    - name: Управление расширением кластера
-      href: manage-cluster-scale-out.md
-    - name: Управление увеличением масштаба кластера
-      href: manage-cluster-scale-up.md
-    - name: Удаление данных
-      href: delete-data.md
-    - name: Обработка дублированных данных
-      href: dealing-with-duplicates.md
-  - name: Мониторинг
-    items:
-    - name: Мониторинг работоспособности кластера с использованием метрик
-      href: using-metrics.md
-  - name: Работа с другими средствами
-    items:
-    - name: Подключение из Databricks с помощью Python
-      href: connect-from-databricks.md
-    - name: Анализ данных в Jupyter Notebook и Kqlmagic
-      href: kqlmagic.md
-    - name: Копирование данных в Фабрике данных Azure
-      href: data-factory-load-data.md
-    - name: Визуализация данных в Grafana
-      href: grafana.md
-    - name: Подключение с помощью ODBC
-      href: connect-odbc.md
-  - name: Устранение неполадок
-    items:
-    - name: Создание кластера
-      href: troubleshoot-create-cluster.md
-    - name: Подключение к кластеру
-      href: troubleshoot-connect-cluster.md
-    - name: Работа с базами данных и таблицами
-      href: troubleshoot-database-table.md
+    - name: Начало работы
+      items:
+        - name: Написание запросов
+          href: write-queries.md
+        - name: Принятие демонстрационных данных
+          href: ingest-sample-data.md
+    - name: управление
+      items:
+        - name: Управление разрешениями базы данных
+          href: manage-database-permissions.md
+        - name: Проверка работоспособности кластера
+          href: check-cluster-health.md
+        - name: Управление расширением кластера
+          href: manage-cluster-scale-out.md
+        - name: Управление увеличением масштаба кластера
+          href: manage-cluster-scale-up.md
+        - name: Удаление данных
+          href: delete-data.md
+        - name: Обработка дублированных данных
+          href: dealing-with-duplicates.md
+    - name: Мониторинг
+      items:
+        - name: Мониторинг работоспособности кластера с использованием метрик
+          href: using-metrics.md
+    - name: Работа с другими средствами
+      items:
+        - name: Подключение из Databricks с помощью Python
+          href: connect-from-databricks.md
+        - name: Анализ данных в Jupyter Notebook и Kqlmagic
+          href: kqlmagic.md
+        - name: Копирование данных с помощью Фабрики данных Azure
+          href: data-factory-load-data.md
+        - name: Визуализация данных в Grafana
+          href: grafana.md
+        - name: Подключение с помощью ODBC
+          href: connect-odbc.md
+    - name: Устранение неполадок
+      items:
+        - name: Создание кластера
+          href: troubleshoot-create-cluster.md
+        - name: Подключение к кластеру
+          href: troubleshoot-connect-cluster.md
+        - name: Работа с базами данных и таблицами
+          href: troubleshoot-database-table.md
 - name: Справочные материалы
   items:
-  - name: Язык запросов
-    href: /azure/kusto/query/
-  - name: Команды управления
-    href: /azure/kusto/management/
-  - name: Интерфейсы API
-    href: /azure/kusto/api/
-  - name: Средства
-    href: /azure/kusto/tools/
-  - name: Основные понятия
-    href: /azure/kusto/concepts/
+    - name: Язык запросов
+      href: /azure/kusto/query/
+    - name: Команды управления
+      href: /azure/kusto/management/
+    - name: Интерфейсы API
+      href: /azure/kusto/api/
+    - name: Средства
+      href: /azure/kusto/tools/
+    - name: Основные понятия
+      href: /azure/kusto/concepts/
 - name: Ресурсы
   items:
-  - name: Блог
-    href: https://azure.microsoft.com/blog/tag/azure-data-explorer/
-  - name: Форумы
-    items:
-    - name: Переполнение стека
-      href: https://stackoverflow.com/questions/tagged/azure-data-explorer
-    - name: Техническое сообщество Майкрософт
-      href: https://techcommunity.microsoft.com/t5/Azure-Data-Explorer/bd-p/Kusto
-    - name: Форум MSDN
-      href: https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureKusto
-  - name: Отзыв о продукте
-    href: https://aka.ms/adefeedback
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/data-explorer/
-  - name: Калькулятор стоимости
-    href: https://aka.ms/adecostestimator
-  - name: Обновления службы
-    href: https://azure.microsoft.com/updates/?product=data-explorer
-ms.openlocfilehash: c582b82f4b4caf0ee3bb007934cc4d50163fe139
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59616821"
+    - name: Блог
+      href: 'https://azure.microsoft.com/blog/tag/azure-data-explorer/'
+    - name: Форумы
+      items:
+        - name: Переполнение стека
+          href: 'https://stackoverflow.com/questions/tagged/azure-data-explorer'
+        - name: Техническое сообщество Майкрософт
+          href: 'https://techcommunity.microsoft.com/t5/Azure-Data-Explorer/bd-p/Kusto'
+        - name: Форум MSDN
+          href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureKusto'
+    - name: Отзыв о продукте
+      href: 'https://aka.ms/adefeedback'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/data-explorer/'
+    - name: Калькулятор стоимости
+      href: 'https://aka.ms/adecostestimator'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=data-explorer'

@@ -17,18 +17,18 @@ ms.date: 04/12/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7ed2830b704d379e2ecc5a5e548f831800af56d
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: d9d2e9aa5e5e805b302763f5417110cdd078eb3b
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59526390"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59997603"
 ---
 # <a name="quickstart-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Краткое руководство. Вызов API Microsoft Graph из приложения для универсальной платформы Windows (UWP)
 
 [!INCLUDE [active-directory-develop-applies-v2-msal](../../../includes/active-directory-develop-applies-v2-msal.md)]
 
-В этом кратком руководстве содержится пример кода, который демонстрирует, как приложение универсальной платформы Windows (UWP) может входить от имени пользователей в личные, рабочие, а также учебные учетные записи, получать маркер доступа и вызывать API Microsoft Graph.
+В этом кратком руководстве содержится пример кода, который демонстрирует, как приложение универсальной платформы Windows (UWP) может входить от имени пользователей в личные, рабочие и учебные учетные записи, получать маркер доступа и вызывать API Microsoft Graph.
 
 ![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-uwp/uwp-intro.svg)
 
@@ -72,7 +72,7 @@ ms.locfileid: "59526390"
 
 #### <a name="step-2-download-your-visual-studio-project"></a>Шаг 2. Скачивание проекта Visual Studio
 
- - [Загрузить проект Visual Studio 2017](https://github.com/Azure-Samples/active-directory-dotnet-native-uwp-v2/archive/msal3x.zip)
+ - [Скачайте проект Visual Studio](https://github.com/Azure-Samples/active-directory-dotnet-native-uwp-v2/archive/msal3x.zip)
 
 #### <a name="step-3-configure-your-visual-studio-project"></a>Шаг 3. Настройка проекта Visual Studio
 
@@ -89,7 +89,7 @@ ms.locfileid: "59526390"
 > - `Enter_the_Application_Id_here` — идентификатор регистрируемого приложения.
 >
 > > [!TIP]
-> > Чтобы найти *идентификатор приложения*, перейдите на страницу **Обзор**.
+> > Чтобы найти *идентификатор приложения*, перейдите в раздел **Обзор** на портале.
 
 #### <a name="step-4-run-your-application"></a>Шаг 4. Запуск приложения
 
@@ -119,7 +119,7 @@ Install-Package Microsoft.Identity.Client -IncludePrerelease
 using Microsoft.Identity.Client;
 ```
 
-Затем выполните инициализацию MSAL с помощью следующего кода.
+Затем выполните инициализацию MSAL с помощью следующего кода:
 
 ```csharp
 public static IPublicClientApplication PublicClientApp;
@@ -133,7 +133,7 @@ PublicClientApp = new PublicClientApplicationBuilder.Create(ClientId)
 
 ### <a name="requesting-tokens"></a>Запрос маркеров
 
-В MSAL используются два метода интерактивного получения маркеров: `AcquireTokenInteractive` и `AcquireTokenSilent`.
+В MSAL есть два метода получения маркеров в приложении UWP: `AcquireTokenInteractive` и `AcquireTokenSilent`.
 
 #### <a name="get-a-user-token-interactively"></a>Интерактивное получение маркера пользователя
 
@@ -155,7 +155,7 @@ authResult = await App.PublicClientApp.AcquireTokenInteractive(scopes)
 
 #### <a name="get-a-user-token-silently"></a>Автоматическое получение маркера пользователя
 
-Вы не хотите требовать от пользователя проверки своих учетных данных каждый раз, когда ему необходимо получить доступ к ресурсу. Большую часть времени вы хотите приобретать и обновлять маркеры без какого-либо взаимодействия с пользователем. Можно использовать метод `AcquireTokenSilent`, чтобы получить маркеры безопасности для доступа к защищенным ресурсам после первоначального метода `AcquireTokenAsync`:
+Используйте метод `AcquireTokenSilent`, чтобы получить маркеры безопасности для доступа к защищенным ресурсам после первоначального метода `AcquireTokenAsync`. Вы не хотите требовать от пользователя проверки своих учетных данных каждый раз, когда ему необходимо получить доступ к ресурсу. Большую часть времени вы хотите приобретать и обновлять маркеры без какого-либо взаимодействия с пользователем.
 
 ```csharp
 var accounts = await App.PublicClientApp.GetAccountsAsync();

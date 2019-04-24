@@ -1,130 +1,127 @@
-items:
 - name: Документация по Azure Data Box. Автономная передача данных
   href: /azure/databox
   items:
-  - name: Data Box
-    items:
-    - name: Обзор
+    - name: Data Box
       items:
-      - name: Что такое Data Box?
-        href: data-box-overview.md
-    - name: Быстрое начало работы
+        - name: Обзор
+          items:
+            - name: Что такое Data Box?
+              href: data-box-overview.md
+        - name: Быстрое начало работы
+          expanded: true
+          items:
+            - name: Настройка (портал Azure)
+              href: data-box-quickstart-portal.md
+        - name: Учебники
+          items:
+            - name: 1. Заказ
+              href: data-box-deploy-ordered.md
+            - name: 2. Настройка
+              href: data-box-deploy-set-up.md
+            - name: "3.\_Подключение и копирование"
+              items:
+                - name: По SMB
+                  href: data-box-deploy-copy-data.md
+                - name: Через NFS
+                  href: data-box-deploy-copy-data-via-nfs.md
+                - name: Через REST
+                  href: data-box-deploy-copy-data-via-rest.md
+                - name: С помощью службы копирования данных
+                  href: data-box-deploy-copy-data-via-copy-service.md
+                - name: На управляемые диски
+                  href: data-box-deploy-copy-data-from-vhds.md
+            - name: '4. Возврат, отправка, проверка'
+              href: data-box-deploy-picked-up.md
+        - name: Основные понятия
+          items:
+            - name: Руководство по безопасности
+              href: data-box-safety.md
+            - name: Обзор требований
+              items:
+                - name: Для Data Box
+                  href: data-box-system-requirements.md
+                - name: Для хранилища BLOB-объектов службы Data Box
+                  href: data-box-system-requirements-rest.md
+            - name: Изучение ограничений
+              href: data-box-limits.md
+            - name: Проверка состояния защиты
+              href: data-box-security.md
+            - name: Часто задаваемые вопросы
+              href: data-box-faq.md
+        - name: Практическое руководство
+          items:
+            - name: Управление через портал Azure
+              href: data-box-portal-admin.md
+            - name: Управление с помощью локального пользовательского веб-интерфейса
+              href: data-box-local-web-ui-admin.md
+            - name: Перемещение данных на уровень больших двоичных объектов
+              href: data-box-how-to-set-data-tier.md
+            - name: подключение кабелей к устройству.
+              href: data-box-cable-options.md
+            - name: Обратиться в службу поддержки
+              href: data-box-disk-contact-microsoft-support.md
+            - name: Миграция
+              items:
+                - name: В SharePoint Online
+                  href: 'https://docs.microsoft.com/sharepointmigration/how-to-migrate-file-share-content-to-spo-using-azuredatabox?context=/azure/databox/context/context'
+                - name: В службу "Синхронизация файлов Azure"
+                  href: ../storage/files/storage-sync-offline-data-transfer.md?toc=/azure/databox/toc.json&bc=/azure/databox/breadcrumb/toc.json
+                - name: Из хранилища HDFS
+                  href: ../storage/blobs/data-lake-storage-migrate-on-premises-hdfs-cluster.md?toc=/azure/databox/toc.json&bc=/azure/databox/breadcrumb/toc.json
+            - name: Устранение неполадок
+              items:
+                - name: Проблемы с хранилищем BLOB-объектов Data Box
+                  href: data-box-troubleshoot-rest.md
+    - name: Диск Data Box
       items:
-      - name: Настройка (портал Azure)
-        href: data-box-quickstart-portal.md
-      expanded: true
-    - name: Учебники
+        - name: Обзор
+          items:
+            - name: Что такое Data Box Disk?
+              href: data-box-disk-overview.md
+        - name: Быстрое начало работы
+          expanded: true
+          items:
+            - name: Настройка (портал Azure)
+              href: data-box-disk-quickstart-portal.md
+        - name: Учебники
+          items:
+            - name: 1. Заказ
+              href: data-box-disk-deploy-ordered.md
+            - name: 2. Настройка
+              href: data-box-disk-deploy-set-up.md
+            - name: "3.\_Копирование и проверки"
+              href: data-box-disk-deploy-copy-data.md
+            - name: '4. Возврат, отправка, проверка'
+              href: data-box-disk-deploy-picked-up.md
+        - name: Основные понятия
+          items:
+            - name: Обзор требований
+              href: data-box-disk-system-requirements.md
+            - name: Изучение ограничений
+              href: data-box-disk-limits.md
+            - name: Проверка состояния защиты
+              href: data-box-disk-security.md
+            - name: Часто задаваемые вопросы
+              href: data-box-disk-faq.md
+        - name: Практическое руководство
+          items:
+            - name: Управление через портал Azure
+              href: data-box-portal-ui-admin.md
+            - name: Устранение неполадок с дисками
+              href: data-box-disk-troubleshoot.md
+            - name: Обратиться в службу поддержки
+              href: data-box-disk-contact-microsoft-support.md
+    - name: Data Box Heavy
       items:
-      - name: 1. Заказ
-        href: data-box-deploy-ordered.md
-      - name: 2. Настройка
-        href: data-box-deploy-set-up.md
-      - name: 3. Подключение и копирование
-        items:
-        - name: По SMB
-          href: data-box-deploy-copy-data.md
-        - name: Через NFS
-          href: data-box-deploy-copy-data-via-nfs.md
-        - name: Через REST
-          href: data-box-deploy-copy-data-via-rest.md
-        - name: С помощью службы копирования данных
-          href: data-box-deploy-copy-data-via-copy-service.md
-        - name: На управляемые диски
-          href: data-box-deploy-copy-data-from-vhds.md
-      - name: 4. Возврат, отправка, проверка
-        href: data-box-deploy-picked-up.md
-    - name: Основные понятия
+        - name: Обзор
+          items:
+            - name: Что такое Data Box Heavy?
+              href: data-box-heavy-overview.md
+    - name: Ресурсы
       items:
-      - name: Руководство по безопасности
-        href: data-box-safety.md
-      - name: Обзор требований
-        items:
-        - name: Для Data Box
-          href: data-box-system-requirements.md
-        - name: Для хранилища BLOB-объектов службы Data Box
-          href: data-box-system-requirements-rest.md
-      - name: Изучение ограничений
-        href: data-box-limits.md
-      - name: Проверка состояния защиты
-        href: data-box-security.md
-      - name: Часто задаваемые вопросы
-        href: data-box-faq.md
-    - name: Практическое руководство
-      items:
-      - name: Управление через портал Azure
-        href: data-box-portal-admin.md
-      - name: Управление с помощью локального пользовательского веб-интерфейса
-        href: data-box-local-web-ui-admin.md
-      - name: Перемещение данных на уровень больших двоичных объектов
-        href: data-box-how-to-set-data-tier.md
-      - name: подключение кабелей к устройству.
-        href: data-box-cable-options.md
-      - name: Обратиться в службу поддержки
-        href: data-box-disk-contact-microsoft-support.md
-      - name: Миграция
-        items:
-        - name: В SharePoint Online
-          href: https://docs.microsoft.com/sharepointmigration/how-to-migrate-file-share-content-to-spo-using-azuredatabox?context=/azure/databox/context/context
-        - name: В службу "Синхронизация файлов Azure"
-          href: ../storage/files/storage-sync-offline-data-transfer.md?toc=/azure/databox/toc.json&bc=/azure/databox/breadcrumb/toc.json
-        - name: Из хранилища HDFS
-          href: ../storage/blobs/data-lake-storage-migrate-on-premises-hdfs-cluster.md?toc=/azure/databox/toc.json&bc=/azure/databox/breadcrumb/toc.json
-  - name: Диск Data Box
-    items:
-    - name: Обзор
-      items:
-      - name: Что такое Data Box Disk?
-        href: data-box-disk-overview.md
-    - name: Быстрое начало работы
-      items:
-      - name: Настройка (портал Azure)
-        href: data-box-disk-quickstart-portal.md
-      expanded: true
-    - name: Учебники
-      items:
-      - name: 1. Заказ
-        href: data-box-disk-deploy-ordered.md
-      - name: 2. Настройка
-        href: data-box-disk-deploy-set-up.md
-      - name: 3. Копирование и проверки
-        href: data-box-disk-deploy-copy-data.md
-      - name: 4. Возврат, отправка, проверка
-        href: data-box-disk-deploy-picked-up.md
-    - name: Основные понятия
-      items:
-      - name: Обзор требований
-        href: data-box-disk-system-requirements.md
-      - name: Изучение ограничений
-        href: data-box-disk-limits.md
-      - name: Проверка состояния защиты
-        href: data-box-disk-security.md
-      - name: Часто задаваемые вопросы
-        href: data-box-disk-faq.md
-    - name: Практическое руководство
-      items:
-      - name: Управление через портал Azure
-        href: data-box-portal-ui-admin.md
-      - name: Устранение неполадок с дисками
-        href: data-box-disk-troubleshoot.md
-      - name: Обратиться в службу поддержки
-        href: data-box-disk-contact-microsoft-support.md
-  - name: Data Box Heavy
-    items:
-    - name: Обзор
-      items:
-      - name: Что такое Data Box Heavy?
-        href: data-box-heavy-overview.md
-  - name: Ресурсы
-    items:
-    - name: Продукт Data Box
-      href: https://azure.microsoft.com/services/storage/databox/data/
-    - name: Цены на Data Box
-      href: https://azure.microsoft.com/pricing/details/storage/databox/
-    - name: Цены на Диск Data Box
-      href: https://azure.microsoft.com/pricing/details/storage/databox/disk/
-ms.openlocfilehash: 159fbf5782e51cc316e2b7f4474a5ddc94cf8a59
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59794012"
+        - name: Продукт Data Box
+          href: 'https://azure.microsoft.com/services/storage/databox/data/'
+        - name: Цены на Data Box
+          href: 'https://azure.microsoft.com/pricing/details/storage/databox/'
+        - name: Цены на Диск Data Box
+          href: 'https://azure.microsoft.com/pricing/details/storage/databox/disk/'

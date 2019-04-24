@@ -17,6 +17,8 @@
   items:
     - name: 'Отправка запроса к платформе SQL Server, запущенной в контейнере Docker'
       href: vnet-injection-sql-server.md
+    - name: "Использование конечной точки службы Cosmos\_DB"
+      href: service-endpoint-cosmosdb.md
     - name: Выполнение операций ETL
       href: databricks-extract-load-sql-data-warehouse.md
     - name: Потоковая передача данных с помощью Центров событий

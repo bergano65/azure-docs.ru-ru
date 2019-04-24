@@ -29,6 +29,8 @@
           href: azure-to-azure-tutorial-migrate.md
         - name: Перенос виртуальных машин Azure в Зоны доступности
           href: move-Azure-VMs-AVset-Azone.md
+        - name: Перенос виртуальных машин Azure между общедоступными регионами и регионами для государственных организаций
+          href: region-move-cross-geos.md
     - name: Аварийное восстановление виртуальной машины VMware в Azure
       items:
         - name: Подготовка Azure
@@ -175,6 +177,10 @@
               href: azure-to-azure-autoupdate.md
             - name: Обновления в Azure Site Recovery
               href: service-updates-how-to.md
+            - name: Удаление серверов и отключение защиты
+              href: site-recovery-manage-registration-and-protection.md
+            - name: Удаление хранилища
+              href: delete-vault.md
     - name: Аварийное восстановление VMware в Azure
       items:
         - name: Настройка сети

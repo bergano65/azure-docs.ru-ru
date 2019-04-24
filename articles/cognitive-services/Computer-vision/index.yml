@@ -1,15 +1,9 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 8153bc1865d1c1fbbb1affb950bd5c245d87ad1a
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56888922"
 documentType: LandingData
 title: Документация по API компьютерного зрения
 metadata:
   title: Документация по API. API компьютерного зрения в Azure Cognitive Services | Документация Майкрософт
-  description: Сведения об использовании компьютерного зрения для обработки изображений и получения сведений. В руководствах описано, как создавать приложения, использующие API.
+  description: 'Сведения об использовании компьютерного зрения для обработки изображений и получения сведений. В руководствах описано, как создавать приложения, использующие API.'
   services: cognitive-services
   author: nitinme
   manager: cgronlun
@@ -22,84 +16,92 @@ metadata:
   ms.author: nitinme
 ms.custom: seodec18
 abstract:
-  description: Облачный API компьютерного зрения предоставляет разработчикам доступ к расширенным алгоритмам обработки изображений и возврата данных. После загрузки изображения или указания его URL-адреса алгоритмы компьютерного зрения от Майкрософт могут по-разному анализировать визуальное содержимое на основе входных данных и выбора пользователя. Узнайте, как анализировать визуальное содержимое разными способами с помощью кратких руководств, примеров и других материалов.
+  description: 'Облачный API компьютерного зрения предоставляет разработчикам доступ к расширенным алгоритмам обработки изображений и возврата данных. После загрузки изображения или указания его URL-адреса алгоритмы компьютерного зрения от Майкрософт могут по-разному анализировать визуальное содержимое на основе входных данных и выбора пользователя. Узнайте, как анализировать визуальное содержимое разными способами с помощью кратких руководств, примеров и других материалов.'
   aside:
     image:
-      alt: 
+      alt: null
       height: 110
       src: ../media/index/computer-vision-landing-page-video.png
       width: 250
-    title: Создание интеллектуальных приложений с помощью интерфейсов API компьютерного зрения (05:41)
-    href: https://azure.microsoft.com/resources/videos/connect-2017-microsoft-cognitive-services-put-intelligence-into-your-business-apps/
+    title: 'Создание интеллектуальных приложений с помощью интерфейсов API компьютерного зрения (05:41)'
+    href: 'https://azure.microsoft.com/resources/videos/connect-2017-microsoft-cognitive-services-put-intelligence-into-your-business-apps/'
     width: 250
 sections:
-- items:
-  - type: list
-    style: cards
-    className: cardsM
-    columns: 3
+  - items:
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 3
+        items:
+          - href: /azure/cognitive-services/computer-vision/home
+            html: <p>Узнайте об API компьютерного зрения.</p>
+            image:
+              src: ../media/index/i_overview.svg
+              alt: Значок "Обзор"
+            title: Что собой представляет компьютерное зрение
+          - href: /azure/cognitive-services/computer-vision/concept-recognizing-text
+            html: <p>Ознакомьтесь с основными понятиями распознавания текста.</p>
+            image:
+              src: ../media/index/i_tasks.svg
+              alt: Значок списка задач
+            title: Распознавание печатного и рукописного текста
+          - href: /azure/cognitive-services/computer-vision/vision-api-how-to-topics/howtocallvisionapi
+            html: <p>Ознакомьтесь с основами вызова API компьютерного зрения.</p>
+            image:
+              src: ../media/index/i_tasks.svg
+              alt: Значок списка задач
+            title: Вызов API компьютерного зрения
+  - title: 5-минутные руководства по началу работы
     items:
-    - href: /azure/cognitive-services/computer-vision/home
-      html: <p>Узнайте об API компьютерного зрения.</p>
-      image:
-        src: ../media/index/i_overview.svg
-      title: Что собой представляет компьютерное зрение
-    - href: /azure/cognitive-services/computer-vision/vision-api-how-to-topics/howtosubscribe
-      html: <p>Узнайте, как получить ключи подписки для API компьютерного зрения.</p>
-      image:
-        src: ../media/index/i_tasks.svg
-      title: Ключи подписки для API компьютерного зрения
-    - href: /azure/cognitive-services/computer-vision/vision-api-how-to-topics/howtocallvisionapi
-      html: <p>Ознакомьтесь с основами вызова API компьютерного зрения.</p>
-      image:
-        src: ../media/index/i_tasks.svg
-      title: Вызов API компьютерного зрения
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: 'Анализ изображений, создание эскизов и извлечение текста из изображений с помощью:'
-  - type: list
-    style: icon48
+      - type: paragraph
+        text: 'Анализ изображений, создание эскизов и извлечение текста из изображений с помощью:'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: media/index/logo_Csharp.svg
+            text: 'C&#35;'
+            alt: "Логотип C\_Sharp"
+            href: quickstarts-sdk/csharp-analyze-sdk
+          - image:
+              src: media/index/logo_java.svg
+            text: Java
+            alt: Логотип Java
+            href: QuickStarts/java-analyze
+          - image:
+              src: media/index/logo_nodejs.svg
+            text: Node.js
+            alt: Логотип Node.js
+            href: QuickStarts/node-analyze
+          - image:
+              src: media/index/logo_python.svg
+            text: Python
+            alt: Логотип CPython
+            href: quickstarts-sdk/python-sdk
+          - image:
+              src: media/index/logo_go.svg
+            text: Go
+            alt: Логотип Go
+            href: QuickStarts/go-analyze
+  - title: Пошаговые руководства
     items:
-    - image:
-        src: media/index/logo_Csharp.svg
-      text: C&#35;
-      href: quickstarts-sdk/csharp-analyze-sdk
-    - image:
-        src: media/index/logo_java.svg
-      text: Java
-      href: QuickStarts/java-analyze
-    - image:
-        src: media/index/logo_nodejs.svg
-      text: Node.js
-      href: QuickStarts/node-analyze
-    - image:
-        src: media/index/logo_python.svg
-      text: Python
-      href: quickstarts-sdk/python-sdk
-    - image:
-        src: media/index/logo_go.svg
-      text: Go
-      href: QuickStarts/go-analyze
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: Узнайте, как разрабатывать приложения с использованием API компьютерного зрения.
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: 'Узнайте, как разрабатывать приложения с использованием API компьютерного зрения.'
+      - type: list
+        style: unordered
+        items:
+          - html: '<a href="Tutorials/CSharpTutorial.md">Создание приложения для API компьютерного зрения с помощью C#</a>'
+  - title: Справочные материалы
     items:
-    - html: <a href="Tutorials/CSharpTutorial.md">Создание приложения для API компьютерного зрения с помощью C#</a>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
-    items:
-    - title: Интерфейсы API
-      html: <p><a href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44">API компьютерного зрения версии 2.0</a></p> <p><a href="https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739">API компьютерного зрения версии 1.0</a></p>
-    - title: Пакеты SDK
-      html: <p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/computervision?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/javascript/api/overview/azure/cognitiveservices/computervision?view=azure-node-latest">Node.js</a></p> <p><a href="https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/computervision?view=azure-python">Python</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.0/computervision">GO</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/computervision?view=azure-java-stable">Android (Java)</a></p> <p><a href="https://github.com/DanilaVladi/Microsoft-Cognitive-Services-Swift-SDK">Swift</a></p>
-    - title: PowerShell
-      html: <p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>
-    - title: Интерфейс командной строки
-      html: <p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list">Интерфейс командной строки Azure</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Интерфейсы API
+            html: '<p><a href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44">API компьютерного зрения версии 2.0</a></p> <p><a href="https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739">API компьютерного зрения версии 1.0</a></p>'
+          - title: Пакеты SDK
+            html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/computervision?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/javascript/api/azure-cognitiveservices-computervision?view=azure-node-latest">Node.js</a></p> <p><a href="https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/computervision?view=azure-python">Python</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.0/computervision">GO</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/computervision?view=azure-java-stable">Android (Java)</a></p> <p><a href="https://github.com/DanilaVladi/Microsoft-Cognitive-Services-Swift-SDK">Swift</a></p>'
+          - title: PowerShell
+            html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
+          - title: Интерфейс командной строки
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list">Интерфейс командной строки Azure</a></p>'

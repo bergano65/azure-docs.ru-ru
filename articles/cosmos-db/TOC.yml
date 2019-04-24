@@ -138,15 +138,11 @@
         - name: Индексация
           items:
             - name: Обзор
+              displayName: 'range, spatial'
               href: index-overview.md
-            - name: Политика индексирования
+            - name: Политики индексирования
               displayName: 'consistent, none'
               href: index-policy.md
-            - name: Типы индексов
-              displayName: 'hash, range, spatial'
-              href: index-types.md
-            - name: Пути индекса
-              href: index-paths.md
         - name: Веб-канал изменений
           items:
             - name: Обзор
@@ -165,6 +161,17 @@
           href: unique-keys.md
         - name: Управление транзакциями и оптимистической блокировкой
           href: database-transactions-optimistic-concurrency.md
+    - name: Веб-канал изменений
+      items:
+        - name: Обзор
+          href: change-feed.md
+        - name: Чтение канала изменений
+          href: read-change-feed.md
+        - name: Обработчик канала изменений
+          href: change-feed-processor.md
+        - name: Активация Функций Azure
+          displayName: change feed
+          href: change-feed-functions.md
     - name: Программирование на стороне сервера
       items:
         - name: 'Хранимые процедуры, триггеры и определяемые пользователем функции'
@@ -216,7 +223,61 @@
 - name: 'Cassandra, MongoDB и другие API'
   expanded: true
   items:
-    - name: API Azure Cosmos DB для MongoDB
+    - name: API Cassandra
+      items:
+        - name: Введение
+          href: cassandra-introduction.md
+        - name: Поддержка коммуникационного протокола
+          href: cassandra-support.md
+        - name: Быстрое начало работы
+          items:
+            - name: .NET
+              href: create-cassandra-dotnet.md
+            - name: Java
+              href: create-cassandra-java.md
+            - name: Node.js
+              href: create-cassandra-nodejs.md
+            - name: Python
+              href: create-cassandra-python.md
+        - name: Учебники
+          items:
+            - name: "1.\_Создание данных и управление ими"
+              href: create-cassandra-api-account-java.md
+            - name: 2. Загрузка данных
+              href: cassandra-api-load-data.md
+            - name: "3.\_Запрос данных"
+              href: cassandra-api-query-data.md
+            - name: 4. Перенос данных
+              displayName: import
+              href: cassandra-import-data.md
+        - name: Практические руководства
+          items:
+            - name: Хранение данных и управление ими с помощью Spring Data
+              href: /java/azure/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db
+              maintainContext: true
+            - name: Cassandra и Spark
+              items:
+                - name: Введение
+                  href: cassandra-spark-generic.md
+                - name: Подключение с помощью Databricks
+                  href: cassandra-spark-databricks.md
+                - name: Подключение с помощью HDInsight
+                  href: cassandra-spark-hdinsight.md
+                - name: Создание пространства ключей и таблицы
+                  href: cassandra-spark-ddl-ops.md
+                - name: Добавление данных
+                  href: cassandra-spark-create-ops.md
+                - name: Считывание данных
+                  href: cassandra-spark-read-ops.md
+                - name: Операция upsert с данными
+                  href: cassandra-spark-upsert-ops.md
+                - name: Удаление данных
+                  href: cassandra-spark-delete-ops.md
+                - name: Операции статистического вычисления
+                  href: cassandra-spark-aggregation-ops.md
+                - name: Копирование данных таблицы
+                  href: cassandra-spark-table-copy-ops.md
+    - name: API MongoDB
       items:
         - name: Введение
           href: mongodb-introduction.md
@@ -260,13 +321,18 @@
                   href: tutorial-develop-mongodb-react.md
             - name: "2.\_Перенос данных"
               displayName: import
-              href: 'https://docs.microsoft.com/azure/dms/tutorial-mongodb-cosmos-db?toc=/azure/cosmos-db/toc.json'
+              href: /azure/dms/tutorial-mongodb-cosmos-db
+              maintainContext: true
             - name: "3.\_Запрос данных"
               href: tutorial-query-mongodb.md
             - name: "4.\_Глобальное распределение данных"
               href: tutorial-global-distribution-mongodb.md
         - name: Практические руководства
           items:
+            - name: Руководство по подготовке к миграции
+              href: mongodb-pre-migration.md
+            - name: Руководство по действиям после миграции
+              href: mongodb-post-migration.md
             - name: Получение строки подключения
               href: connect-mongodb-account.md
             - name: "Подключение с помощью Studio\_3T"
@@ -324,60 +390,6 @@
             - name: Хранение данных и управление ими с помощью Spring Data
               href: /java/azure/spring-framework/configure-spring-data-gremlin-java-app-with-cosmos-db
               maintainContext: true
-    - name: API Cassandra
-      items:
-        - name: Введение
-          href: cassandra-introduction.md
-        - name: Поддержка коммуникационного протокола
-          href: cassandra-support.md
-        - name: Быстрое начало работы
-          items:
-            - name: .NET
-              href: create-cassandra-dotnet.md
-            - name: Java
-              href: create-cassandra-java.md
-            - name: Node.js
-              href: create-cassandra-nodejs.md
-            - name: Python
-              href: create-cassandra-python.md
-        - name: Учебники
-          items:
-            - name: "1.\_Создание данных и управление ими"
-              href: create-cassandra-api-account-java.md
-            - name: 2. Загрузка данных
-              href: cassandra-api-load-data.md
-            - name: "3.\_Запрос данных"
-              href: cassandra-api-query-data.md
-            - name: 4. Перенос данных
-              displayName: import
-              href: cassandra-import-data.md
-        - name: Практические руководства
-          items:
-            - name: Хранение данных и управление ими с помощью Spring Data
-              href: /java/azure/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db
-              maintainContext: true
-            - name: Cassandra и Spark
-              items:
-                - name: Введение
-                  href: cassandra-spark-generic.md
-                - name: Подключение с помощью Databricks
-                  href: cassandra-spark-databricks.md
-                - name: Подключение с помощью HDInsight
-                  href: cassandra-spark-hdinsight.md
-                - name: Создание пространства ключей и таблицы
-                  href: cassandra-spark-ddl-ops.md
-                - name: Добавление данных
-                  href: cassandra-spark-create-ops.md
-                - name: Считывание данных
-                  href: cassandra-spark-read-ops.md
-                - name: Операция upsert с данными
-                  href: cassandra-spark-upsert-ops.md
-                - name: Удаление данных
-                  href: cassandra-spark-delete-ops.md
-                - name: Операции статистического вычисления
-                  href: cassandra-spark-aggregation-ops.md
-                - name: Копирование данных таблицы
-                  href: cassandra-spark-table-copy-ops.md
     - name: API таблицы
       items:
         - name: Введение
@@ -420,7 +432,8 @@
             - name: Ruby
               href: table-storage-how-to-use-ruby.md
             - name: 'F#'
-              href: 'https://docs.microsoft.com/dotnet/articles/fsharp/using-fsharp-on-azure/table-storage'
+              href: /dotnet/articles/fsharp/using-fsharp-on-azure/table-storage
+              maintainContext: true
         - name: Практические руководства
           items:
             - name: Создание приложений с помощью API таблицы
@@ -483,10 +496,8 @@
           href: storage-explorer.md
         - name: Работа с данными с помощью обозревателя Azure Cosmos
           href: data-explorer.md
-        - name: Индексация
-          items:
-            - name: Управление индексированием
-              href: how-to-manage-indexing-policy.md
+        - name: Управление политиками индексирования
+          href: how-to-manage-indexing-policy.md
     - name: Канал изменений
       items:
         - name: "Использование нескольких триггеров Azure Cosmos\_DB"
@@ -526,7 +537,8 @@
         - name: Ведения журнала диагностики
           href: logging.md
         - name: Вход в приложения с помощью Logic Apps
-          href: 'https://docs.microsoft.com/azure/logic-apps/logic-apps-scenario-error-and-exception-handling?toc=/azure/cosmos-db/toc.json'
+          href: /azure/logic-apps/logic-apps-scenario-error-and-exception-handling
+          maintainContext: true
     - name: Мониторинг
       items:
         - name: Мониторинг с помощью метрик
@@ -545,7 +557,7 @@
       href: tutorial-setup-ci-cd.md
     - name: Типы данных
       items:
-        - name: DateTime
+        - name: Datetime
           href: working-with-dates.md
         - name: Геопространственные данные
           href: geospatial.md
@@ -578,17 +590,21 @@
         - name: Служба приложений Azure
           href: create-website.md
         - name: Индексатор Поиска Azure
-          href: 'https://docs.microsoft.com/azure/search/search-howto-index-cosmosdb?toc=/azure/cosmos-db/toc.json'
+          href: /azure/search/search-howto-index-cosmosdb
+          maintainContext: true
         - name: Функции Azure
           items:
             - name: Бессерверные вычисления
               href: serverless-computing-database.md
             - name: Привязки Функций Azure
-              href: 'https://docs.microsoft.com/azure/azure-functions/functions-bindings-cosmosdb?toc=/azure/cosmos-db/toc.json'
+              href: /azure/azure-functions/functions-bindings-cosmosdb
+              maintainContext: true
         - name: Фабрика данных Azure
-          href: 'https://docs.microsoft.com/azure/data-factory/connector-azure-cosmos-db?toc=/azure/cosmos-db/toc.json'
+          href: /azure/data-factory/connector-azure-cosmos-db
+          maintainContext: true
         - name: Azure Stream Analytics
-          href: '../stream-analytics/stream-analytics-define-outputs.md#azure-cosmos-db'
+          href: '/azure/stream-analytics/stream-analytics-define-outputs#azure-cosmos-db'
+          maintainContext: true
         - name: Logic Apps и Служебная шина Azure
           href: change-feed-hl7-fhir-logic-apps.md
         - name: Центры событий Azure и Служба хранилища Azure
@@ -601,7 +617,8 @@
         - name: Azure Databricks (соединитель Spark)
           href: spark-connector.md
         - name: Spark и Kafka
-          href: 'https://docs.microsoft.com/azure/hdinsight/apache-kafka-spark-structured-streaming-cosmosdb?toc=/azure/cosmos-db/toc.json'
+          href: /azure/hdinsight/apache-kafka-spark-structured-streaming-cosmosdb
+          maintainContext: true
         - name: Драйвер ODBC
           href: odbc-driver.md
     - name: Библиотека массового исполнителя

@@ -15,11 +15,20 @@ metadata:
   ms.author: yegu
 abstract:
   description: "Конфигурация приложений Azure\_— это управляемая служба, которая обеспечивает простую и безопасную централизацию настройки приложений для разработчиков."
+  aside:
+    image:
+      alt: null
+      height: 110
+      src: media/videos/getting-started.png
+      width: 250
+    title: 'Приступая к работе (14:41)'
+    href: 'https://channel9.msdn.com/Shows/Azure-Friday/Getting-started-with-Azure-App-Configuration'
+    width: 250
 sections:
   - title: 5-минутные руководства по началу работы
     items:
       - type: paragraph
-        text: 'Узнайте, как разработать свое первое веб-приложение с помощью службы "Конфигурация приложений Azure":'
+        text: 'Узнайте, как разработать свое первое приложение с помощью службы "Конфигурация приложений Azure":'
       - type: list
         style: icon48
         items:

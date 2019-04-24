@@ -17,12 +17,12 @@ ms.author: celested
 ms.custom: aaddev
 ms.reviewer: lenalepa, sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ef499e49fc4d1a0dc79dfc4efb818f7330b57b6
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 93e88cedfd098f450e8faeea894f7fdfc796cf17
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57995197"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59999592"
 ---
 # <a name="quickstart-configure-a-client-application-to-access-web-apis-preview"></a>Краткое руководство. Настройка клиентского приложения для доступа к веб-API (предварительная версия)
 
@@ -38,8 +38,8 @@ ms.locfileid: "57995197"
 
 В этом кратком руководстве мы покажем, как настроить приложение для выполнения следующих задач:
 
-* [Добавление URI перенаправления в приложение](#add-redirect-uris-to-your-application).
-* [Добавьте учетные данные в веб-приложение](#add-credentials-to-your-web-application).
+* [Добавьте URI перенаправления в приложение](#add-redirect-uris-to-your-application).
+* [Добавление учетных данных в веб-приложение](#add-credentials-to-your-web-application)
 * [Добавьте разрешения для доступа к веб-API](#add-permissions-to-access-web-apis).
 
 ## <a name="prerequisites"></a>Предварительные требования

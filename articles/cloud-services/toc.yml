@@ -1,206 +1,201 @@
-items:
 - name: Документация по облачным службам
   href: index.md
 - name: Обзор
   items:
-  - name: Что такое облачные службы Microsoft Azure
-    href: cloud-services-choose-me.md
-  - name: Упаковка и файлы конфигурации облачной службы
-    href: cloud-services-model-and-package.md
+    - name: Что такое облачные службы Microsoft Azure
+      href: cloud-services-choose-me.md
+    - name: Упаковка и файлы конфигурации облачной службы
+      href: cloud-services-model-and-package.md
 - name: Начало работы
   items:
-  - name: Пример облачной службы .NET
-    href: cloud-services-dotnet-get-started.md
-  - name: Пример создания облачной службы на языке Python в Visual Studio
-    href: cloud-services-python-ptvs.md
+    - name: Пример облачной службы .NET
+      href: cloud-services-dotnet-get-started.md
+    - name: Пример создания облачной службы на языке Python в Visual Studio
+      href: cloud-services-python-ptvs.md
 - name: Практическое руководство
   items:
-  - name: План
-    items:
-    - name: Размер виртуальных машин
-      href: cloud-services-sizes-specs.md
-    - name: Обновления
-      href: cloud-services-update-azure-service.md
-  - name: Разработка
-    items:
-    - name: Создание веб-ролей и рабочих ролей PHP
-      href: ../cloud-services-php-create-web-role.md
-    - name: Сборка и развертывание приложения Node.js
-      href: cloud-services-nodejs-develop-deploy-app.md
-    - name: Сборка веб-приложения Node.js с использованием параметра "Экспресс"
-      href: cloud-services-nodejs-develop-deploy-express-app.md
-    - name: Хранилище и Visual Studio
+    - name: План
       items:
-      - name: Хранилище BLOB-объектов и подключенные службы
-        href: ../visual-studio/vs-storage-cloud-services-getting-started-blobs.md
-      - name: Хранилище очередей и подключенные службы
-        href: ../visual-studio/vs-storage-cloud-services-getting-started-queues.md
-      - name: Хранилище таблиц и подключенные службы
-        href: ../visual-studio/vs-storage-cloud-services-getting-started-tables.md
-    - name: Настройка правил трафика для роли
-      href: cloud-services-enable-communication-role-instances.md
-    - name: Обработка событий жизненного цикла облачной службы
-      href: cloud-services-role-lifecycle-dotnet.md
-    - name: Socket.io (Node.js)
-      href: cloud-services-nodejs-chat-app-socketio.md
-    - name: Использование Twilio для телефонных звонков (.NET)
-      href: ../partner-twilio-cloud-services-dotnet-phone-call-web-role.md
-    - name: Настройка задач запуска
+        - name: Размер виртуальных машин
+          href: cloud-services-sizes-specs.md
+        - name: Обновления
+          href: cloud-services-update-azure-service.md
+    - name: Разработка
       items:
-      - name: Создание задач запуска
-        href: cloud-services-startup-tasks.md
-      - name: Распространенные задачи запуска
-        href: cloud-services-startup-tasks-common.md
-      - name: Установка .NET в роли облачной службы с помощью задачи
-        href: cloud-services-dotnet-install-dotnet.md
-    - name: Настройка удаленного рабочего стола
+        - name: Создание веб-ролей и рабочих ролей PHP
+          href: ../cloud-services-php-create-web-role.md
+        - name: Сборка и развертывание приложения Node.js
+          href: cloud-services-nodejs-develop-deploy-app.md
+        - name: Сборка веб-приложения Node.js с использованием параметра "Экспресс"
+          href: cloud-services-nodejs-develop-deploy-express-app.md
+        - name: Хранилище и Visual Studio
+          items:
+            - name: Хранилище BLOB-объектов и подключенные службы
+              href: ../visual-studio/vs-storage-cloud-services-getting-started-blobs.md
+            - name: Хранилище очередей и подключенные службы
+              href: ../visual-studio/vs-storage-cloud-services-getting-started-queues.md
+            - name: Хранилище таблиц и подключенные службы
+              href: ../visual-studio/vs-storage-cloud-services-getting-started-tables.md
+        - name: Настройка правил трафика для роли
+          href: cloud-services-enable-communication-role-instances.md
+        - name: Обработка событий жизненного цикла облачной службы
+          href: cloud-services-role-lifecycle-dotnet.md
+        - name: Socket.io (Node.js)
+          href: cloud-services-nodejs-chat-app-socketio.md
+        - name: Использование Twilio для телефонных звонков (.NET)
+          href: ../partner-twilio-cloud-services-dotnet-phone-call-web-role.md
+        - name: Настройка задач запуска
+          items:
+            - name: Создание задач запуска
+              href: cloud-services-startup-tasks.md
+            - name: Распространенные задачи запуска
+              href: cloud-services-startup-tasks-common.md
+            - name: Установка .NET в роли облачной службы с помощью задачи
+              href: cloud-services-dotnet-install-dotnet.md
+        - name: Настройка удаленного рабочего стола
+          items:
+            - name: Microsoft Azure
+              href: cloud-services-role-enable-remote-desktop-new-portal.md
+            - name: PowerShell
+              href: cloud-services-role-enable-remote-desktop-powershell.md
+            - name: Visual Studio
+              href: cloud-services-role-enable-remote-desktop-visual-studio.md
+    - name: Развертывание
       items:
-      - name: Microsoft Azure
-        href: cloud-services-role-enable-remote-desktop-new-portal.md
-      - name: PowerShell
-        href: cloud-services-role-enable-remote-desktop-powershell.md
-      - name: Visual Studio
-        href: cloud-services-role-enable-remote-desktop-visual-studio.md
-  - name: Развертывание
-    items:
-    - name: Создание и развертывание облачной службы на портале
-      href: cloud-services-how-to-create-deploy-portal.md
-    - name: Создание пустого контейнера облачной службы в PowerShell
-      href: cloud-services-powershell-create-cloud-container.md
-    - name: Настройка пользовательского имени домена
-      href: cloud-services-custom-domain-name-portal.md
-    - name: Подключение к пользовательскому контроллеру домена
-      href: cloud-services-connect-to-custom-domain.md
-  - name: Управление службой
-    items:
-    - name: Общие задачи управления
-      href: cloud-services-how-to-manage-portal.md
-    - name: Настройка облачной службы
-      href: cloud-services-how-to-configure-portal.md
-    - name: Управление облачной службой с помощью службы автоматизации Azure
-      href: automation-manage-cloud-services.md
-    - name: Настройка автоматического масштабирования
-      href: cloud-services-how-to-scale-portal.md
-    - name: Использование языка Python для управления ресурсами Azure
-      href: cloud-services-python-how-to-use-service-management.md
-    - name: Устранение уязвимостей, связанных со спекулятивным выполнением команд
-      href: mitigate-se.md
-    - name: Исправления гостевой ОС
-      href: cloud-services-guestos-msrc-releases.md
-    - name: Прекращение использования гостевой ОС
+        - name: Создание и развертывание облачной службы на портале
+          href: cloud-services-how-to-create-deploy-portal.md
+        - name: Создание пустого контейнера облачной службы в PowerShell
+          href: cloud-services-powershell-create-cloud-container.md
+        - name: Настройка пользовательского имени домена
+          href: cloud-services-custom-domain-name-portal.md
+        - name: Подключение к пользовательскому контроллеру домена
+          href: cloud-services-connect-to-custom-domain.md
+    - name: Управление службой
       items:
-      - name: Политика прекращения использования
-        href: cloud-services-guestos-retirement-policy.md
-      - name: Уведомление о прекращении использования семейства версий 1
-        href: cloud-services-guestos-family1-retirement.md
-    - name: Новости о выпуске гостевой ОС
-      href: cloud-services-guestos-update-matrix.md
-    - name: Памятка по конфигурации XPath для роли облачных служб
-      href: cloud-services-role-config-xpath.md
-  - name: Управление сертификатами
-    items:
-    - name: Облачные службы и сертификаты управления
-      href: cloud-services-certs-create.md
-    - name: Настройка SSL
-      href: cloud-services-configure-ssl-certificate-portal.md
-  - name: Мониторинг
-    items:
-    - name: Мониторинг облачной службы
-      href: cloud-services-how-to-monitor.md
-    - name: Использование счетчиков производительности
-      href: diagnostics-performance-counters.md
-    - name: Тестирование производительности
-      href: /visualstudio/azure/vs-azure-tools-performance-profiling-cloud-services?toc=/azure/cloud-services/toc.json
+        - name: Общие задачи управления
+          href: cloud-services-how-to-manage-portal.md
+        - name: Настройка облачной службы
+          href: cloud-services-how-to-configure-portal.md
+        - name: Управление облачной службой с помощью службы автоматизации Azure
+          href: automation-manage-cloud-services.md
+        - name: Настройка автоматического масштабирования
+          href: cloud-services-how-to-scale-portal.md
+        - name: Использование языка Python для управления ресурсами Azure
+          href: cloud-services-python-how-to-use-service-management.md
+        - name: 'Устранение уязвимостей, связанных со спекулятивным выполнением команд'
+          href: mitigate-se.md
+        - name: Исправления гостевой ОС
+          href: cloud-services-guestos-msrc-releases.md
+        - name: Прекращение использования гостевой ОС
+          items:
+            - name: Политика прекращения использования
+              href: cloud-services-guestos-retirement-policy.md
+            - name: "Уведомление о прекращении использования семейства версий\_1"
+              href: cloud-services-guestos-family1-retirement.md
+        - name: Новости о выпуске гостевой ОС
+          href: cloud-services-guestos-update-matrix.md
+        - name: Памятка по конфигурации XPath для роли облачных служб
+          href: cloud-services-role-config-xpath.md
+    - name: Управление сертификатами
       items:
-      - name: Тестирование с помощью профилировщика Visual Studio
-        href: cloud-services-performance-testing-visual-studio-profiler.md
-    - name: Включение диагностики
+        - name: Облачные службы и сертификаты управления
+          href: cloud-services-certs-create.md
+        - name: Настройка SSL
+          href: cloud-services-configure-ssl-certificate-portal.md
+    - name: Мониторинг
       items:
-      - name: Azure PowerShell
-        href: cloud-services-diagnostics-powershell.md
-      - name: .NET
-        href: cloud-services-dotnet-diagnostics.md
-      - name: Visual Studio
-        href: /visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?toc=/azure/cloud-services/toc.json
-    - name: Хранение и просмотр диагностических данных в хранилище Azure
-      href: ../azure-monitor/platform/diagnostics-extension-to-storage.md?toc=%2fazure%2fcloud-services%2ftoc.json
-    - name: Трассировка облачной службы с помощью системы диагностики
-      href: cloud-services-dotnet-diagnostics-trace-flow.md
-  - name: Устранение неполадок
-    items:
-    - name: Отладка
+        - name: Мониторинг облачной службы
+          href: cloud-services-how-to-monitor.md
+        - name: Использование счетчиков производительности
+          href: diagnostics-performance-counters.md
+        - name: Тестирование производительности
+          href: /visualstudio/azure/vs-azure-tools-performance-profiling-cloud-services?toc=/azure/cloud-services/toc.json
+          items:
+            - name: Тестирование с помощью профилировщика Visual Studio
+              href: cloud-services-performance-testing-visual-studio-profiler.md
+        - name: Включение диагностики
+          items:
+            - name: Azure PowerShell
+              href: cloud-services-diagnostics-powershell.md
+            - name: .NET
+              href: cloud-services-dotnet-diagnostics.md
+            - name: Visual Studio
+              href: /visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?toc=/azure/cloud-services/toc.json
+        - name: Хранение и просмотр диагностических данных в хранилище Azure
+          href: ../azure-monitor/platform/diagnostics-extension-to-storage.md?toc=%2fazure%2fcloud-services%2ftoc.json
+        - name: Трассировка облачной службы с помощью системы диагностики
+          href: cloud-services-dotnet-diagnostics-trace-flow.md
+    - name: Устранение неполадок
       items:
-      - name: Параметры отладки для облачной службы
-        href: /visualstudio/azure/vs-azure-tools-debugging-cloud-services-overview?toc=/azure/cloud-services/toc.json
-      - name: Отладка локальной облачной службы с помощью Visual Studio
-        href: /visualstudio/azure/vs-azure-tools-debug-cloud-services-virtual-machines?toc=/azure/cloud-services/toc.json
-      - name: Отладка опубликованной облачной службы с помощью Visual Studio
-        href: /visualstudio/azure/vs-azure-tools-intellitrace-debug-published-cloud-services?toc=/azure/cloud-services/toc.json
-    - name: Сбой выделения ресурсов для облачной службы
-      href: cloud-services-allocation-failures.md
-    - name: Распространенные причины перезапуска ролей облачной службы
-      href: cloud-services-troubleshoot-common-issues-which-cause-roles-recycle.md
-    - name: Используемый по умолчанию размер папки TEMP недостаточен для роли
-      href: cloud-services-troubleshoot-default-temp-folder-size-too-small-web-worker-role.md
-    - name: Распространенные проблемы с развертыванием
-      href: cloud-services-troubleshoot-deployment-problems.md
-    - name: Роль не запускается
-      href: cloud-services-troubleshoot-roles-that-fail-start.md
-    - name: Инструкции по восстановлению
-      href: cloud-services-disaster-recovery-guidance.md
-    - name: Часто задаваемые вопросы об облачных службах
-      items:
-      - name: Часто задаваемые вопросы о доступности приложений и служб
-        href: cloud-services-application-and-service-availability-faq.md
-      - name: Часто задаваемые вопросы о настройке и управлении
-        href: cloud-services-configuration-and-management-faq.md
-      - name: Часто задаваемые вопросы о возможности подключения и сетях
-        href: cloud-services-connectivity-and-networking-faq.md
-      - name: Часто задаваемые вопросы о развертывании
-        href: cloud-services-deployment-faq.md
+        - name: Отладка
+          items:
+            - name: Параметры отладки для облачной службы
+              href: /visualstudio/azure/vs-azure-tools-debugging-cloud-services-overview?toc=/azure/cloud-services/toc.json
+            - name: Отладка локальной облачной службы с помощью Visual Studio
+              href: /visualstudio/azure/vs-azure-tools-debug-cloud-services-virtual-machines?toc=/azure/cloud-services/toc.json
+            - name: Отладка опубликованной облачной службы с помощью Visual Studio
+              href: /visualstudio/azure/vs-azure-tools-intellitrace-debug-published-cloud-services?toc=/azure/cloud-services/toc.json
+        - name: Сбой выделения ресурсов для облачной службы
+          href: cloud-services-allocation-failures.md
+        - name: Распространенные причины перезапуска ролей облачной службы
+          href: cloud-services-troubleshoot-common-issues-which-cause-roles-recycle.md
+        - name: Используемый по умолчанию размер папки TEMP недостаточен для роли
+          href: cloud-services-troubleshoot-default-temp-folder-size-too-small-web-worker-role.md
+        - name: Распространенные проблемы с развертыванием
+          href: cloud-services-troubleshoot-deployment-problems.md
+        - name: Роль не запускается
+          href: cloud-services-troubleshoot-roles-that-fail-start.md
+        - name: Инструкции по восстановлению
+          href: cloud-services-disaster-recovery-guidance.md
+        - name: Рабочий процесс для архитектуры классической виртуальной машины
+          href: cloud-services-workflow-process.md
+        - name: Часто задаваемые вопросы об облачных службах
+          items:
+            - name: Часто задаваемые вопросы о доступности приложений и служб
+              href: cloud-services-application-and-service-availability-faq.md
+            - name: Часто задаваемые вопросы о настройке и управлении
+              href: cloud-services-configuration-and-management-faq.md
+            - name: Часто задаваемые вопросы о возможности подключения и сетях
+              href: cloud-services-connectivity-and-networking-faq.md
+            - name: Часто задаваемые вопросы о развертывании
+              href: cloud-services-deployment-faq.md
 - name: Справочные материалы
   items:
-  - name: Примеры кода
-    href: https://azure.microsoft.com/resources/samples/?service=cloud-services
-  - name: Схема XML (файл .csdef)
-    href: schema-csdef-file.md
-    items:
-    - name: Схема LoadBalancerProbe
-      href: schema-csdef-loadbalancerprobe.md
-    - name: Схема WebRole
-      href: schema-csdef-webrole.md
-    - name: Схема WorkerRole
-      href: schema-csdef-workerrole.md
-    - name: Схема NetworkTrafficRules
-      href: schema-csdef-networktrafficrules.md
-  - name: Схема XML (файл .cscfg)
-    href: schema-cscfg-file.md
-    items:
-    - name: Схема Role
-      href: schema-cscfg-role.md
-    - name: Схема NetworkConfiguration
-      href: schema-cscfg-networkconfiguration.md
-  - name: REST
-    href: /rest/api/compute/cloudservices/
+    - name: Примеры кода
+      href: 'https://azure.microsoft.com/resources/samples/?service=cloud-services'
+    - name: Схема XML (файл .csdef)
+      href: schema-csdef-file.md
+      items:
+        - name: Схема LoadBalancerProbe
+          href: schema-csdef-loadbalancerprobe.md
+        - name: Схема WebRole
+          href: schema-csdef-webrole.md
+        - name: Схема WorkerRole
+          href: schema-csdef-workerrole.md
+        - name: Схема NetworkTrafficRules
+          href: schema-csdef-networktrafficrules.md
+    - name: Схема XML (файл .cscfg)
+      href: schema-cscfg-file.md
+      items:
+        - name: Схема Role
+          href: schema-cscfg-role.md
+        - name: Схема NetworkConfiguration
+          href: schema-cscfg-networkconfiguration.md
+    - name: REST
+      href: /rest/api/compute/cloudservices/
 - name: Ресурсы
   items:
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=compute
-  - name: Схема обучения
-    href: https://azure.microsoft.com/documentation/learning-paths/cloud-services/
-  - name: Форум MSDN
-    href: https://social.msdn.microsoft.com/Forums/en-us/home?forum=windowsazuredevelopment
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/cloud-services/
-  - name: Калькулятор цен
-    href: https://azure.microsoft.com/pricing/calculator/
-  - name: Обновления службы
-    href: https://azure.microsoft.com/updates/?product=cloud-services&updatetype=&platform=
-  - name: Видеоролики
-    href: https://azure.microsoft.com/documentation/videos/index/?services=cloud-services
-ms.openlocfilehash: 426de5d59de97e949996a1484d44276f8cf6e9aa
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54390527"
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=compute'
+    - name: Схема обучения
+      href: 'https://azure.microsoft.com/documentation/learning-paths/cloud-services/'
+    - name: Форум MSDN
+      href: 'https://social.msdn.microsoft.com/Forums/en-us/home?forum=windowsazuredevelopment'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cloud-services/'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=cloud-services&updatetype=&platform='
+    - name: Видеоролики
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=cloud-services'
