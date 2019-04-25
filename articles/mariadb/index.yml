@@ -1,64 +1,58 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: dcd0461e185fa97853bcd84e53bb43aacc5799c0
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58517018"
 documentType: LandingData
 title: Документация по Базе данных Azure для MariaDB
 metadata:
   title: Документация по Базе данных Azure для MariaDB. Руководства и справочник по API
-  description: База данных Azure для MariaDB — это служба реляционных баз данных на платформе Microsoft Cloud, созданная для разработчиков на основе СУБД MariaDB с открытым кодом.
+  description: "База данных Azure для MariaDB\_— это служба реляционных баз данных на платформе Microsoft Cloud, созданная для разработчиков на основе СУБД MariaDB с открытым кодом."
   author: ajlam
   ms.author: andrela
   ms.service: mariadb
   ms.topic: landing-page
   ms.date: 03/25/2019
 abstract:
-  description: База данных Azure для MariaDB — это служба реляционных баз данных на основе ядра СУБД MariaDB с открытым кодом.  Это полностью управляемая база данных как услуга, которая может обслуживать критически важные рабочие нагрузки, обеспечивая прогнозируемую производительность и безопасность и динамическое масштабирование. Разрабатывайте приложения на основе Базы данных Azure для MariaDB, используя привычные средства с открытым кодом и платформу. Узнайте, как использовать Базу данных Azure для MariaDB, ознакомившись с нашими краткими руководствами и примерами.
+  description: "База данных Azure для MariaDB\_— это служба реляционных баз данных на основе ядра СУБД MariaDB с открытым кодом.  Это полностью управляемая база данных как услуга, которая может обслуживать критически важные рабочие нагрузки, обеспечивая прогнозируемую производительность и безопасность и динамическое масштабирование. Разрабатывайте приложения на основе Базы данных Azure для MariaDB, используя привычные средства с открытым кодом и платформу. Узнайте, как использовать Базу данных Azure для MariaDB, ознакомившись с нашими краткими руководствами и примерами."
 sections:
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: 'Узнайте, как создать Базу данных MariaDB с помощью следующих средств:'
-  - type: list
-    style: icon48
+  - title: 5-минутные руководства по началу работы
     items:
-    - image:
-        src: /azure/virtual-machines/linux/media/index/portal.svg
-      text: Портал Azure
-      href: /azure/mariadb/quickstart-create-mariadb-server-database-using-azure-portal
-    - image:
-        src: /azure/virtual-machines/linux/media/index/cli.svg
-      text: Инфраструктура CLI Azure
-      href: /azure/mariadb/quickstart-create-mariadb-server-database-using-azure-cli
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: 'Узнайте, как проектировать базы данных и разрабатывать приложения:'
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: 'Узнайте, как создать Базу данных MariaDB с помощью следующих средств:'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: /azure/virtual-machines/linux/media/index/portal.svg
+            text: Портал Azure
+            href: /azure/mariadb/quickstart-create-mariadb-server-database-using-azure-portal
+          - image:
+              src: /azure/virtual-machines/linux/media/index/cli.svg
+            text: Инфраструктура CLI Azure
+            href: /azure/mariadb/quickstart-create-mariadb-server-database-using-azure-cli
+  - title: Пошаговые руководства
     items:
-    - html: 'Проектирование базы данных: <a href="/azure/mariadb/tutorial-design-database-using-portal">портал Azure</a> | <a href="/azure/mariadb/tutorial-design-database-cli">Azure CLI</a>'
-- title: Примеры
-  items:
-  - type: paragraph
-    text: Поиск скриптов для выполнения типовых задач.
-  - type: list
-    style: unordered
-    className: spaced noBullet
+      - type: paragraph
+        text: 'Узнайте, как проектировать базы данных и разрабатывать приложения:'
+      - type: list
+        style: unordered
+        items:
+          - html: 'Проектирование базы данных: <a href="/azure/mariadb/tutorial-design-database-using-portal">портал Azure</a> | <a href="/azure/mariadb/tutorial-design-database-cli">Azure CLI</a>'
+  - title: Примеры
     items:
-    - html: <a href="/azure/mariadb/sample-scripts-azure-cli">Интерфейс командной строки Azure</a>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: paragraph
+        text: Поиск скриптов для выполнения типовых задач.
+      - type: list
+        style: unordered
+        className: spaced noBullet
+        items:
+          - html: <a href="/azure/mariadb/sample-scripts-azure-cli">Интерфейс командной строки Azure</a>
+  - title: Справочные материалы
     items:
-    - title: Командная строка
-      html: <p><a href="/cli/azure/mariadb">Интерфейс командной строки Azure</a></p>
-    - title: REST
-      html: <p><a href="/rest/api/mariadb/">REST API</a></p>
-    - title: Azure Resource Manager
-      html: <p><a href="/azure/templates/microsoft.dbformariadb/allversions">Шаблоны Resource Manager</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Командная строка
+            html: <p><a href="/cli/azure/mariadb">Интерфейс командной строки Azure</a></p>
+          - title: REST
+            html: <p><a href="/rest/api/mariadb/">REST API</a></p>
+          - title: Azure Resource Manager
+            html: <p><a href="/azure/templates/microsoft.dbformariadb/allversions">Шаблоны Resource Manager</a></p>

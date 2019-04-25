@@ -1,17 +1,11 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 89376bf654a23b37e004a1b9b00e32a0c2ac3e2a
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55495078"
 documentType: LandingData
 title: Azure для контейнеров
 metadata:
-  document_id: 
+  document_id: null
   title: 'Azure для контейнеров: краткие руководства, учебные материалы, справочники по API'
-  description: Приступайте к управлению контейнерными приложениями и их развертыванию в Azure с помощью кратких руководств, учебных материалов и средств для контейнеров.
-  keywords: Azure, Containers, Docker, API, Kubernetes
+  description: 'Приступайте к управлению контейнерными приложениями и их развертыванию в Azure с помощью кратких руководств, учебных материалов и средств для контейнеров.'
+  keywords: 'Azure, Containers, Docker, API, Kubernetes'
   author: dlepow
   ms.author: danlep
   manager: jeconnoc
@@ -19,68 +13,69 @@ metadata:
   ms.topic: article
   ms.prod: azure
   featureFlags:
-  - clicktale
+    - clicktale
   ms.technology: azure
   ms.devlang: multiple
   ms.service: multiple
 sections:
-- items:
-  - type: markdown
-    text: "Приступайте к управлению приложениями-контейнерами и их развертыванию с помощью средств и служб для контейнеров Azure. \n"
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: Сведения об использовании контейнеров и служб Azure.
-  - type: list
-    style: cards
-    className: cardsM
-    columns: 2
+  - items:
+      - type: markdown
+        text: |
+          Приступайте к управлению приложениями-контейнерами и их развертыванию с помощью средств и служб для контейнеров Azure. 
+  - title: 5-минутные руководства по началу работы
     items:
-    - href: ../aks/kubernetes-walkthrough.md
-      title: Создание кластера Kubernetes с помощью службы Azure Kubernetes (AKS)
-      image:
-        src: /azure/media/index/ContainerService.svg
-    - href: https://docs.microsoft.com/azure/service-fabric/service-fabric-quickstart-containers
-      title: Развертывание приложения-контейнера Windows в Service Fabric
-      image:
-        src: /azure/media/index/Fabric.svg
-    - href: https://docs.microsoft.com/azure/app-service/containers/quickstart-docker-go
-      title: Создание контейнерного приложения с помощью веб-приложения Azure для контейнеров
-      image:
-        src: https://docs.microsoft.com/media/logos/logo_linux.svg
-    - href: https://docs.microsoft.com/azure/container-registry/container-registry-get-started-azure-cli
-      title: Создание частного реестра Docker в реестре контейнеров Azure
-      image:
-        src: /azure/media/index/container-registry.svg
-    - href: https://docs.microsoft.com/azure/container-instances/container-instances-quickstart
-      title: Запуск приложения-контейнера по запросу в службе "Экземпляры контейнеров Azure"
-      image:
-        src: /azure/media/index/containerinstances.svg
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: Узнайте, как развертывать и обновлять приложения-контейнеры, а также управлять ими с помощью служб Azure
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: Сведения об использовании контейнеров и служб Azure.
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 2
+        items:
+          - href: ../aks/kubernetes-walkthrough.md
+            title: Создание кластера Kubernetes с помощью службы Azure Kubernetes (AKS)
+            image:
+              src: /azure/media/index/ContainerService.svg
+          - href: 'https://docs.microsoft.com/azure/service-fabric/service-fabric-quickstart-containers'
+            title: Развертывание приложения-контейнера Windows в Service Fabric
+            image:
+              src: /azure/media/index/Fabric.svg
+          - href: 'https://docs.microsoft.com/azure/app-service/containers/quickstart-docker-go'
+            title: Создание контейнерного приложения с помощью веб-приложения Azure для контейнеров
+            image:
+              src: 'https://docs.microsoft.com/media/logos/logo_linux.svg'
+          - href: 'https://docs.microsoft.com/azure/container-registry/container-registry-get-started-azure-cli'
+            title: Создание частного реестра Docker в реестре контейнеров Azure
+            image:
+              src: /azure/media/index/container-registry.svg
+          - href: 'https://docs.microsoft.com/azure/container-instances/container-instances-quickstart'
+            title: Запуск приложения-контейнера по запросу в службе "Экземпляры контейнеров Azure"
+            image:
+              src: /azure/media/index/containerinstances.svg
+  - title: Пошаговые руководства
     items:
-    - html: <a href="/azure/aks/tutorial-kubernetes-prepare-app">Создание и развертывание контейнера в Службе Azure Kubernetes</a>
-    - html: <a href="/azure/service-fabric/service-fabric-host-app-in-a-container">Создание и развертывание приложения-контейнера .NET в Azure Service Fabric</a>
-    - html: <a href="/azure/app-service/containers/tutorial-multi-container-app">Создание многоконтейнерного приложения на платформе Azure "Веб-приложение для контейнеров"</a>
-    - html: <a href="/azure/container-registry/container-registry-tutorial-quick-task">Создание и развертывание образов контейнера с помощью службы "Задачи Реестра контейнеров Azure"</a>
-    - html: <a href="/azure/container-instances/container-instances-tutorial-prepare-app">Создание и развертывание контейнера в службе "Экземпляры контейнеров Azure"</a>
-- title: Развитие навыков с помощью Microsoft Learn
-  items:
-  - type: list
-    style: cards
-    className: cardsFTitle
+      - type: paragraph
+        text: 'Узнайте, как развертывать и обновлять приложения-контейнеры, а также управлять ими с помощью служб Azure'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/azure/aks/tutorial-kubernetes-prepare-app">Создание и развертывание контейнера в Службе Azure Kubernetes</a>
+          - html: <a href="/azure/service-fabric/service-fabric-host-app-in-a-container">Создание и развертывание приложения-контейнера .NET в Azure Service Fabric</a>
+          - html: <a href="/azure/app-service/containers/tutorial-multi-container-app">Создание многоконтейнерного приложения на платформе Azure "Веб-приложение для контейнеров"</a>
+          - html: <a href="/azure/container-registry/container-registry-tutorial-quick-task">Создание и развертывание образов контейнера с помощью службы "Задачи Реестра контейнеров Azure"</a>
+          - html: <a href="/azure/container-instances/container-instances-tutorial-prepare-app">Создание и развертывание контейнера в службе "Экземпляры контейнеров Azure"</a>
+  - title: Развитие навыков с помощью Microsoft Learn
     items:
-    - title: Запуск контейнеров Docker с помощью службы "Экземпляры контейнеров Azure"
-      href: /learn/modules/run-docker-with-azure-container-instances/
-      image:
-        src: /learn/achievements/run-docker-with-azure-container-instances.svg
-        href: /learn/modules/run-docker-with-azure-container-instances/
-    - title: Создание и хранение образов контейнеров с помощью службы "Реестр контейнеров Azure"
-      href: /learn/modules/build-and-store-container-images/
-      image:
-        src: /learn/achievements/build-and-store-container-images.svg
-        href: /learn/modules/build-and-store-container-images/
+      - type: list
+        style: cards
+        className: cardsFTitle
+        items:
+          - title: Запуск контейнеров Docker с помощью службы "Экземпляры контейнеров Azure"
+            href: /learn/modules/run-docker-with-azure-container-instances/
+            image:
+              src: /learn/achievements/run-docker-with-azure-container-instances.svg
+              href: /learn/modules/run-docker-with-azure-container-instances/
+          - title: Создание и хранение образов контейнеров с помощью службы "Реестр контейнеров Azure"
+            href: /learn/modules/build-and-store-container-images/
+            image:
+              src: /learn/achievements/build-and-store-container-images.svg
+              href: /learn/modules/build-and-store-container-images/

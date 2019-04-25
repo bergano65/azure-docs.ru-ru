@@ -12,11 +12,11 @@ ms.date: 09/18/2018
 ms.author: zhouwang
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 09b7e8961e59bd6fad49408c28e9ee9a4a209cae
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56669438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60515292"
 ---
 # <a name="quickstart-use-the-bing-speech-recognition-api-in-objective-c-on-ios"></a>Краткое руководство. Использование API распознавания речи Bing в Objective-C на платформе iOS
 
@@ -133,7 +133,7 @@ Speech API — элемент Cognitive Services (ранее Project Oxford). В
 
 Можно вложить различные обработчики событий в созданный клиент.
 
-* **Событие с частичными результатами.** Это событие вызывается каждый раз, когда Speech Service предсказывает, что вы можете сказать, даже до того, как вы закончите разговор (если вы используете ) или отправку данных (если вы используете ).
+* **Событие с частичными результатами.** Это событие вызывается каждый раз, когда Speech Service предсказывает, что вы можете сказать, даже до того, как вы закончите разговор (если вы используете `MicrophoneRecognitionClient`) или отправку данных (если вы используете `DataRecognitionClient`).
 * **События ошибок.** Вызываются, когда служба обнаруживает ошибку.
 * **События с намерением.** Вызываются на клиентах "WithIntent" (только в режиме ShortPhrase) после синтаксического анализа распознавания окончательного результата в структурированном намерении JSON.
 * **События результатов**.

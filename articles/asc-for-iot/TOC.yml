@@ -1,77 +1,70 @@
-items:
 - name: Документация по предварительной версии Центра безопасности Azure (ASC) для Интернета вещей
   href: index.yml
 - name: Обзор
   href: overview.md
   items:
-  - name: Архитектура решения
-    href: architecture.md
-  - name: Агенты безопасности
-    href: security-agent-architecture.md
-  - name: Модуль безопасности Edge
-    href: security-edge-architecture.md
-  - name: Предварительные требования службы
-    href: service-prerequisites.md
-  - name: Начало работы с ASC для Интернета вещей
-    href: getting-started.md
+    - name: Архитектура решения
+      href: architecture.md
+    - name: Агенты безопасности
+      href: security-agent-architecture.md
+    - name: Модуль безопасности Edge
+      href: security-edge-architecture.md
+    - name: Предварительные требования службы
+      href: service-prerequisites.md
+    - name: Начало работы с ASC для Интернета вещей
+      href: getting-started.md
 - name: Быстрое начало работы
-  items:
-  - name: Включение ASC для Интернета вещей в Центре Интернета вещей
-    href: quickstart-onboard-iot-hub.md
-  - name: Настройка решения
-    href: quickstart-configure-your-solution.md
-  - name: Создание ASC для двойника модуля Интернета вещей
-    href: quickstart-create-security-twin.md
-  - name: Создание пользовательских оповещений системы безопасности
-    href: quickstart-create-custom-alerts.md
   expanded: true
+  items:
+    - name: Включение ASC для Интернета вещей в Центре Интернета вещей
+      href: quickstart-onboard-iot-hub.md
+    - name: Настройка решения
+      href: quickstart-configure-your-solution.md
+    - name: Создание ASC для двойника модуля Интернета вещей
+      href: quickstart-create-security-twin.md
+    - name: Создание пользовательских оповещений системы безопасности
+      href: quickstart-create-custom-alerts.md
 - name: Основные понятия
   items:
-  - name: Аутентификация агентов безопасности
-    href: concept-security-agent-authentication-methods.md
-  - name: Модуль безопасности
-    href: concept-security-module.md
-  - name: Оповещения безопасности
-    href: concept-security-alerts.md
-  - name: Рекомендации по обеспечению безопасности
-    href: concept-recommendations.md
-  - name: Цены и связанные затраты
-    href: concept-pricing.md
+    - name: Аутентификация агентов безопасности
+      href: concept-security-agent-authentication-methods.md
+    - name: Модуль безопасности
+      href: concept-security-module.md
+    - name: Оповещения безопасности
+      href: concept-security-alerts.md
+    - name: Рекомендации по обеспечению безопасности
+      href: concept-recommendations.md
+    - name: Цены и связанные затраты
+      href: concept-pricing.md
 - name: Практические руководства
   items:
-  - name: Какой агент нужно развернуть?
-    items:
-    - name: Выбор агента для развертывания
-      href: how-to-deploy-agent.md
-    - name: Развертывание агента безопасности на основе C# на устройстве Windows
-      href: how-to-deploy-windows-cs.md
-    - name: Развертывание агента безопасности на основе C# на устройстве Linux
-      href: how-to-deploy-linux-cs.md
-    - name: Развертывание агента безопасности на основе C на устройстве Linux
-      href: how-to-deploy-linux-c.md
-  - name: Развертывание модуля безопасности Edge
-    href: how-to-deploy-edge.md
-  - name: Настройка агентов безопасности
-    href: how-to-agent-configuration.md
-  - name: Отправить собственных сообщений безопасности
-    href: how-to-send-security-messages.md
-  - name: Доступ к необработанным данным безопасности
-    href: how-to-security-data-access.md
-  - name: Исследование устройства
-    href: how-to-investigate-device.md
+    - name: Какой агент нужно развернуть?
+      items:
+        - name: Выбор агента для развертывания
+          href: how-to-deploy-agent.md
+        - name: 'Развертывание агента безопасности на основе C# на устройстве Windows'
+          href: how-to-deploy-windows-cs.md
+        - name: 'Развертывание агента безопасности на основе C# на устройстве Linux'
+          href: how-to-deploy-linux-cs.md
+        - name: Развертывание агента безопасности на основе C на устройстве Linux
+          href: how-to-deploy-linux-c.md
+    - name: Развертывание модуля безопасности Edge
+      href: how-to-deploy-edge.md
+    - name: Настройка агентов безопасности
+      href: how-to-agent-configuration.md
+    - name: Отправить собственных сообщений безопасности
+      href: how-to-send-security-messages.md
+    - name: Доступ к необработанным данным безопасности
+      href: how-to-security-data-access.md
+    - name: Исследование устройства
+      href: how-to-investigate-device.md
 - name: Ресурсы
   items:
-  - name: Часто задаваемые вопросы
-    href: resources-frequently-asked-questions.md
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=security-identity
-  - name: Блог по безопасности, конфиденциальности и соответствию нормам Azure
-    href: http://blogs.msdn.com/b/azuresecurity/
-  - name: Доступ по регионам
-    href: https://azure.microsoft.com/regions/services/
-ms.openlocfilehash: 1d9d2b51fb1a07081c4ac2f4b115363c74cca6d0
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58754582"
+    - name: Часто задаваемые вопросы
+      href: resources-frequently-asked-questions.md
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
+    - name: 'Блог по безопасности, конфиденциальности и соответствию нормам Azure'
+      href: 'http://blogs.msdn.com/b/azuresecurity/'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/regions/services/'

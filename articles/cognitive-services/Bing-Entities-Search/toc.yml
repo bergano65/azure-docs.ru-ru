@@ -1,102 +1,95 @@
-items:
 - name: Документация по API Bing для поиска сущностей
   href: index.yml
 - name: Обзор
   items:
-  - name: Что такое Поиск сущностей Bing?
-    href: overview.md
-  - name: Сравнение API-интерфейсов поиска Bing
-    href: ../Bing-Web-Search/bing-api-comparison.md
-    maintainContext: true
+    - name: Что такое Поиск сущностей Bing?
+      href: overview.md
+    - name: Сравнение API-интерфейсов поиска Bing
+      href: ../Bing-Web-Search/bing-api-comparison.md
+      maintainContext: true
 - name: Краткие руководства по REST API
-  items:
-  - name: REST API
-    items:
-    - name: Использование C#
-      href: quickstarts/csharp.md
-    - name: Использование Java
-      href: quickstarts/java.md
-    - name: Использование Node.js
-      href: quickstarts/nodejs.md
-    - name: Использование PHP
-      href: quickstarts/php.md
-    - name: Использование Python
-      href: quickstarts/python.md
-    - name: Использование Ruby
-      href: quickstarts/ruby.md
-  - name: SDK
-    items:
-    - name: Использование C#
-      href: quickstarts/entity-sdk-csharp-quickstart.md
-    - name: Использование Node.js
-      href: quickstarts/entity-sdk-node-quickstart.md
-    - name: Использование Python
-      href: quickstarts/entity-sdk-python-quickstart.md
-    - name: Использование Java
-      href: quickstarts/entity-sdk-java-quickstart.md
   expanded: true
+  items:
+    - name: REST API
+      items:
+        - name: 'Использование C#'
+          href: quickstarts/csharp.md
+        - name: Использование Java
+          href: quickstarts/java.md
+        - name: Использование Node.js
+          href: quickstarts/nodejs.md
+        - name: Использование PHP
+          href: quickstarts/php.md
+        - name: Использование Python
+          href: quickstarts/python.md
+        - name: Использование Ruby
+          href: quickstarts/ruby.md
+    - name: SDK
+      items:
+        - name: 'Использование C#'
+          href: quickstarts/entity-sdk-csharp-quickstart.md
+        - name: Использование Node.js
+          href: quickstarts/entity-sdk-node-quickstart.md
+        - name: Использование Python
+          href: quickstarts/entity-sdk-python-quickstart.md
+        - name: Использование Java
+          href: quickstarts/entity-sdk-java-quickstart.md
 - name: Учебники
   items:
-  - name: Создание одностраничного веб-приложения
-    href: tutorial-bing-entities-search-single-page-app.md
+    - name: Создание одностраничного веб-приложения
+      href: tutorial-bing-entities-search-single-page-app.md
 - name: Примеры
   items:
-  - name: Примеры кода
-    href: https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+Entity+Search
+    - name: Примеры кода
+      href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+Entity+Search'
 - name: Практические руководства
   items:
-  - name: Изменение размера и обрезка эскизов
-    href: resize-and-crop-thumbnails.md
+    - name: Изменение размера и обрезка эскизов
+      href: resize-and-crop-thumbnails.md
 - name: Основные понятия
   items:
-  - name: Поиск сущностей
-    href: concepts/search-for-entities.md
-  - name: Отправка поисковых запросов
-    href: concepts/sending-requests.md
+    - name: Поиск сущностей
+      href: concepts/search-for-entities.md
+    - name: Отправка поисковых запросов
+      href: concepts/sending-requests.md
 - name: Справочные материалы
   items:
-  - name: Требования к использованию и отображению API-интерфейсов поиска Bing
-    href: ../Bing-Web-Search/use-display-requirements.md
-    maintainContext: true
-  - name: API Bing для поиска сущностей версии 7
-    href: https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference
-  - name: Пакеты SDK
-    items:
-    - name: .NET
-      href: https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingentitysearchapi?view=azure-dotnet
-    - name: Java
-      href: https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/entitysearch?view=azure-java-stable
-    - name: Python
-      href: https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/entitysearch?view=azure-python
-    - name: Node.js
-      href: https://docs.microsoft.com/javascript/api/overview/azure/cognitiveservices/entitysearch?view=azure-node-latest
-    - name: Go
-      href: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/entitysearch
+    - name: Требования к использованию и отображению API-интерфейсов поиска Bing
+      href: ../Bing-Web-Search/use-display-requirements.md
+      maintainContext: true
+    - name: API Bing для поиска сущностей версии 7
+      href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference'
+    - name: Пакеты SDK
+      items:
+        - name: .NET
+          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingentitysearchapi?view=azure-dotnet'
+        - name: Java
+          href: 'https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/entitysearch?view=azure-java-stable'
+        - name: Python
+          href: 'https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/entitysearch?view=azure-python'
+        - name: Node.js
+          href: 'https://docs.microsoft.com/javascript/api/overview/azure/cognitiveservices/entitysearch?view=azure-node-latest'
+        - name: Go
+          href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/entitysearch'
 - name: Ресурсы
   items:
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/cognitive-services/bing-entity-search-api/
-  - name: UserVoice
-    href: https://cognitive.uservoice.com/forums/601036-bing-entity-search-api
-  - name: Переполнение стека
-    href: https://stackoverflow.com/search?q=bing+entity+search
-  - name: Доступ по регионам
-    href: https://azure.microsoft.com/global-infrastructure/services/
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/
-  - name: База знаний
-    href: https://cognitive.uservoice.com/knowledgebase/topics/127875-bing-search-web-image-video-news-autosuggest
-  - name: Получение ключа API
-    href: https://azure.microsoft.com/try/cognitive-services/?api=bing-entities-search-api
-  - name: Тестирование
-    href: https://dev.cognitive.microsoft.com/docs/services/7a3fb374be374859a823b79fd938cc65/
-  - name: Конечная точка API Bing для поиска сущностей
-    href: entity-search-endpoint.md
-  - name: Аналитика для API Bing для поиска сущностей
-    href: bing-entity-stats.md
-ms.openlocfilehash: 6574b06a9aced43f381bcb106e0b6426bd6f4fd7
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55755803"
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/bing-entity-search-api/'
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/601036-bing-entity-search-api'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/search?q=bing+entity+search'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: База знаний
+      href: 'https://cognitive.uservoice.com/knowledgebase/topics/127875-bing-search-web-image-video-news-autosuggest'
+    - name: Получение ключа API
+      href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-entities-search-api'
+    - name: Тестирование
+      href: 'https://dev.cognitive.microsoft.com/docs/services/7a3fb374be374859a823b79fd938cc65/'
+    - name: Конечная точка API Bing для поиска сущностей
+      href: entity-search-endpoint.md
+    - name: Аналитика для API Bing для поиска сущностей
+      href: bing-entity-stats.md

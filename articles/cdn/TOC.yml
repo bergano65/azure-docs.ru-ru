@@ -1,193 +1,186 @@
-items:
 - name: Документация по CDN
   href: index.yml
 - name: Обзор
   items:
-  - name: Что такое Azure CDN?
-    href: cdn-overview.md
-  - name: Сравнение характеристик продукта
-    href: cdn-features.md
+    - name: Что такое Azure CDN?
+      href: cdn-overview.md
+    - name: Сравнение характеристик продукта
+      href: cdn-features.md
 - name: Быстрое начало работы
   items:
-  - name: Создание профиля и конечной точки
-    href: cdn-create-new-endpoint.md
-  - name: Интеграция учетной записи хранения
-    href: cdn-create-a-storage-account-with-cdn.md
-  - name: Создание профиля с помощью шаблона Azure Resource Manager
-    href: create-profile-resource-manager-template.md
+    - name: Создание профиля и конечной точки
+      href: cdn-create-new-endpoint.md
+    - name: Интеграция учетной записи хранения
+      href: cdn-create-a-storage-account-with-cdn.md
+    - name: Создание профиля с помощью шаблона Azure Resource Manager
+      href: create-profile-resource-manager-template.md
 - name: Учебники
   items:
-  - name: Добавление Azure CDN в веб-приложение
-    href: cdn-add-to-web-app.md
-  - name: Доступ к BLOB-объектам с использованием личного домена и протокола HTTPS
-    href: cdn-storage-custom-domain-https.md
-  - name: Добавление личного домена
-    href: cdn-map-content-to-custom-domain.md
-  - name: Настройка HTTPS в личном домене
-    href: cdn-custom-ssl.md
-  - name: Настройка правил кэширования
-    href: cdn-caching-rules-tutorial.md
+    - name: Добавление Azure CDN в веб-приложение
+      href: cdn-add-to-web-app.md
+    - name: Доступ к BLOB-объектам с использованием личного домена и протокола HTTPS
+      href: cdn-storage-custom-domain-https.md
+    - name: Добавление личного домена
+      href: cdn-map-content-to-custom-domain.md
+    - name: Настройка HTTPS в личном домене
+      href: cdn-custom-ssl.md
+    - name: Настройка правил кэширования
+      href: cdn-caching-rules-tutorial.md
 - name: Примеры
   items:
-  - name: Примеры кода
-    href: https://azure.microsoft.com/resources/samples/?service=cdn
+    - name: Примеры кода
+      href: 'https://azure.microsoft.com/resources/samples/?service=cdn'
 - name: Основные понятия
   items:
-  - name: Как выполняется кэширование
-    href: cdn-how-caching-works.md
-  - name: Доставка содержимого для Китая
-    href: cdn-china-delivery.md
-  - name: Поддержка HTTP/2
-    href: cdn-http2.md
-  - name: Получение списка точек POP для Verizon
-    href: cdn-pop-list-api.md
-  - name: Перенос из Verizon уровня "Стандартный" в Verizon уровня "Премиум"
-    href: cdn-migrate.md
-  - name: Защита от атак DDoS
-    href: cdn-ddos.md
+    - name: Как выполняется кэширование
+      href: cdn-how-caching-works.md
+    - name: Доставка содержимого для Китая
+      href: cdn-china-delivery.md
+    - name: Поддержка HTTP/2
+      href: cdn-http2.md
+    - name: Получение списка точек POP для Verizon
+      href: cdn-pop-list-api.md
+    - name: Перенос из Verizon уровня "Стандартный" в Verizon уровня "Премиум"
+      href: cdn-migrate.md
+    - name: Защита от атак DDoS
+      href: cdn-ddos.md
 - name: Практические руководства
   items:
-  - name: Оптимизация содержимого
-    href: cdn-optimization-overview.md
-    items:
-    - name: Оптимизация больших файлов
-      href: cdn-large-file-optimization.md
-    - name: Оптимизация потоковой передачи мультимедиа
-      href: cdn-media-streaming-optimization.md
-    - name: Динамическое ускорение сайтов
-      href: cdn-dynamic-site-acceleration.md
-  - name: управление
-    items:
-    - name: Создание конечной точки
-      href: cdn-create-endpoint-how-to.md
-    - name: Управление с помощью Azure PowerShell
-      href: cdn-manage-powershell.md
-    - name: Ограничение доступа в зависимости от страны
-      href: cdn-restrict-access-by-country.md
-    - name: Увеличьте производительность путем сжатия файлов
-      href: cdn-improve-performance.md
-    - name: Управление поведением кэширования
+    - name: Оптимизация содержимого
+      href: cdn-optimization-overview.md
       items:
-      - name: Управление поведением кэширования с помощью правил
-        href: cdn-caching-rules.md
-      - name: Кэширование содержимого по строкам запросов
-        items:
-        - name: Уровень Standard
-          href: cdn-query-string.md
-        - name: Уровень Premium
-          href: cdn-query-string-premium.md
-      - name: Удаление кэшированных ресурсов
-        href: cdn-purge-endpoint.md
-      - name: Предварительная загрузка кэшированных ресурсов
-        href: cdn-preload-endpoint.md
-    - name: Настройка срока жизни
+        - name: Оптимизация больших файлов
+          href: cdn-large-file-optimization.md
+        - name: Оптимизация потоковой передачи мультимедиа
+          href: cdn-media-streaming-optimization.md
+        - name: Динамическое ускорение сайтов
+          href: cdn-dynamic-site-acceleration.md
+    - name: управление
       items:
-      - name: Веб-содержимое Azure
-        href: cdn-manage-expiration-of-cloud-service-content.md
-      - name: Хранилище больших двоичных объектов Azure
-        href: cdn-manage-expiration-of-blob-content.md
-    - name: Аутентификация на основе маркера
-      href: cdn-token-auth.md
-    - name: Поддержка хранилища SAS
-      href: cdn-sas-storage-support.md
-    - name: Общий доступ к ресурсам независимо от источника
-      href: cdn-cors.md
-    - name: Мониторинг ресурсов
-      href: cdn-resource-health.md
-    - name: Блокировка поведения с помощью правил
-      href: cdn-rules-engine.md
-    - name: Использование диспетчера трафика
-      href: cdn-traffic-manager.md
-  - name: Анализ
-    href: cdn-log-analysis.md
-    items:
-    - name: Журналы диагностики Azure
-      href: cdn-azure-diagnostic-logs.md
-    - name: Средства аналитики для Azure CDN от Verizon
+        - name: Создание конечной точки
+          href: cdn-create-endpoint-how-to.md
+        - name: Управление с помощью Azure PowerShell
+          href: cdn-manage-powershell.md
+        - name: Ограничение доступа в зависимости от страны
+          href: cdn-restrict-access-by-country.md
+        - name: Увеличьте производительность путем сжатия файлов
+          href: cdn-improve-performance.md
+        - name: Управление поведением кэширования
+          items:
+            - name: Управление поведением кэширования с помощью правил
+              href: cdn-caching-rules.md
+            - name: Кэширование содержимого по строкам запросов
+              items:
+                - name: Уровень Standard
+                  href: cdn-query-string.md
+                - name: Уровень Premium
+                  href: cdn-query-string-premium.md
+            - name: Удаление кэшированных ресурсов
+              href: cdn-purge-endpoint.md
+            - name: Предварительная загрузка кэшированных ресурсов
+              href: cdn-preload-endpoint.md
+        - name: Настройка срока жизни
+          items:
+            - name: Веб-содержимое Azure
+              href: cdn-manage-expiration-of-cloud-service-content.md
+            - name: Хранилище больших двоичных объектов Azure
+              href: cdn-manage-expiration-of-blob-content.md
+        - name: Аутентификация на основе маркера
+          href: cdn-token-auth.md
+        - name: Поддержка хранилища SAS
+          href: cdn-sas-storage-support.md
+        - name: Общий доступ к ресурсам независимо от источника
+          href: cdn-cors.md
+        - name: Мониторинг ресурсов
+          href: cdn-resource-health.md
+        - name: Блокировка поведения с помощью правил
+          href: cdn-rules-engine.md
+        - name: Использование диспетчера трафика
+          href: cdn-traffic-manager.md
+    - name: Анализ
+      href: cdn-log-analysis.md
       items:
-      - name: Основные отчеты Verizon
-        href: cdn-analyze-usage-patterns.md
-      - name: Пользовательские отчеты из Verizon
-        href: cdn-verizon-custom-reports.md
-    - name: Средства аналитики для Azure CDN уровня "Премиум" от Verizon
+        - name: Журналы диагностики Azure
+          href: cdn-azure-diagnostic-logs.md
+        - name: Средства аналитики для Azure CDN от Verizon
+          items:
+            - name: Основные отчеты Verizon
+              href: cdn-analyze-usage-patterns.md
+            - name: Пользовательские отчеты из Verizon
+              href: cdn-verizon-custom-reports.md
+        - name: Средства аналитики для Azure CDN уровня "Премиум" от Verizon
+          items:
+            - name: Создание расширенных отчетов HTTP
+              href: cdn-advanced-http-reports.md
+            - name: Просмотр статистики в реальном времени
+              href: cdn-real-time-stats.md
+            - name: Анализ производительности граничного узла
+              href: cdn-edge-performance.md
+            - name: Получение оповещений в реальном времени
+              href: cdn-real-time-alerts.md
+    - name: Разработка
       items:
-      - name: Создание расширенных отчетов HTTP
-        href: cdn-advanced-http-reports.md
-      - name: Просмотр статистики в реальном времени
-        href: cdn-real-time-stats.md
-      - name: Анализ производительности граничного узла
-        href: cdn-edge-performance.md
-      - name: Получение оповещений в реальном времени
-        href: cdn-real-time-alerts.md
-  - name: Разработка
-    items:
-    - name: .NET
-      href: cdn-app-dev-net.md
-    - name: Node.js
-      href: cdn-app-dev-node.md
-  - name: Устранение неполадок
-    items:
-    - name: Состояние 404
-      href: cdn-troubleshoot-endpoint.md
-    - name: Сжатие файлов
-      href: cdn-troubleshoot-compression.md
-    - name: Разрешенные центры сертификации
-      href: cdn-troubleshoot-allowed-ca.md
+        - name: .NET
+          href: cdn-app-dev-net.md
+        - name: Node.js
+          href: cdn-app-dev-node.md
+    - name: Устранение неполадок
+      items:
+        - name: Состояние 404
+          href: cdn-troubleshoot-endpoint.md
+        - name: Сжатие файлов
+          href: cdn-troubleshoot-compression.md
+        - name: Разрешенные центры сертификации
+          href: cdn-troubleshoot-allowed-ca.md
 - name: Справочные материалы
   items:
-  - name: Обработчик правил Azure CDN
-    href: cdn-rules-engine-reference.md
-    items:
-    - name: Условные выражения обработчика правил Azure CDN
-      href: cdn-rules-engine-reference-conditional-expressions.md
-    - name: Условия соответствия для обработчика правил Azure CDN
-      href: cdn-rules-engine-reference-match-conditions.md
-    - name: Функции обработчика правил Azure CDN
-      href: cdn-rules-engine-reference-features.md
-    - name: Переменные HTTP
-      href: cdn-http-variables.md
-  - name: HTTP-заголовки (Verizon)
-    href: cdn-verizon-http-headers.md
-    items:
-    - name: Заголовки X-EC-Debug
-      href: cdn-http-debug-headers.md
-  - name: Azure PowerShell
-    href: /powershell/module/az.cdn
-  - name: .NET
-    href: /dotnet/api/microsoft.azure.management.cdn
-  - name: Java
-    href: /java/api/com.microsoft.azure.management.cdn
-  - name: REST
-    href: /rest/api/cdn/
-  - name: Шаблон Resource Manager
-    href: /azure/templates/microsoft.cdn/allversions
+    - name: Обработчик правил Azure CDN
+      href: cdn-rules-engine-reference.md
+      items:
+        - name: Условные выражения обработчика правил Azure CDN
+          href: cdn-rules-engine-reference-conditional-expressions.md
+        - name: Условия соответствия для обработчика правил Azure CDN
+          href: cdn-rules-engine-reference-match-conditions.md
+        - name: Функции обработчика правил Azure CDN
+          href: cdn-rules-engine-reference-features.md
+        - name: Переменные HTTP
+          href: cdn-http-variables.md
+    - name: HTTP-заголовки (Verizon)
+      href: cdn-verizon-http-headers.md
+      items:
+        - name: Заголовки X-EC-Debug
+          href: cdn-http-debug-headers.md
+    - name: Azure PowerShell
+      href: /powershell/module/az.cdn
+    - name: .NET
+      href: /dotnet/api/microsoft.azure.management.cdn
+    - name: Java
+      href: /java/api/com.microsoft.azure.management.cdn
+    - name: REST
+      href: /rest/api/cdn/
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.cdn/allversions
 - name: Ресурсы
   items:
-  - name: Расположение узлов POP сети Azure CDN
-    items:
-    - name: Расположения POP по региону
-      href: cdn-pop-locations.md
-    - name: Расположения POP по аббревиатуре
-      href: cdn-pop-abbreviations.md
-  - name: Общие сведения о выставлении счетов в Azure CDN
-    href: cdn-billing.md
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/
-  - name: Форум MSDN
-    href: https://social.msdn.microsoft.com/Forums/home?forum=azurecdn
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/cdn/
-  - name: Калькулятор цен
-    href: https://azure.microsoft.com/pricing/calculator/
-  - name: Обновления службы
-    href: https://azure.microsoft.com/updates/?product=cdn
-  - name: Переполнение стека
-    href: https://stackoverflow.com/questions/tagged/azure-cdn
-  - name: Видеоролики
-    href: https://azure.microsoft.com/documentation/videos/index/?services=cdn
-ms.openlocfilehash: ae458ff96b209af011d01738211fd9baf2da21b4
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58664613"
+    - name: Расположение узлов POP сети Azure CDN
+      items:
+        - name: Расположения POP по региону
+          href: cdn-pop-locations.md
+        - name: Расположения POP по аббревиатуре
+          href: cdn-pop-abbreviations.md
+    - name: Общие сведения о выставлении счетов в Azure CDN
+      href: cdn-billing.md
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Форум MSDN
+      href: 'https://social.msdn.microsoft.com/Forums/home?forum=azurecdn'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cdn/'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=cdn'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/azure-cdn'
+    - name: Видеоролики
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=cdn'

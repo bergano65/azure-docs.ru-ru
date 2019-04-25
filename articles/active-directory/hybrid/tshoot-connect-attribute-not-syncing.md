@@ -16,11 +16,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a639b14c9313179816f6376aa0c5642a645ea344
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56180831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60455999"
 ---
 # <a name="troubleshoot-an-attribute-not-synchronizing-in-azure-ad-connect"></a>Устранение неполадок атрибута, связанных с отсутствием синхронизации в Azure AD Connect
 
@@ -43,7 +43,7 @@ ms.locfileid: "56180831"
 
 * Импорт из AAD. Объекты Azure Active Directory переносятся в CS AAD.
 
-* Синхронизация. **Правила входящей синхронизации** и Правила исходящей синхронизации выполняются в порядке номера приоритета от меньшего к большему. Чтобы просмотреть правила синхронизации, можно перейти в **Редактор правил синхронизации** из приложений рабочего стола. **Правила входящей синхронизации** перемещают данные из CS в MV. **Правила исходящей синхронизации** перемещают данные из MV в CS.
+* Синхронизация. **Правила входящей синхронизации** и **Правила исходящей синхронизации** выполняются в порядке номера приоритета от меньшего к большему. Чтобы просмотреть правила синхронизации, можно перейти в **Редактор правил синхронизации** из приложений рабочего стола. **Правила входящей синхронизации** перемещают данные из CS в MV. **Правила исходящей синхронизации** перемещают данные из MV в CS.
 
 * Экспорт в AD. После выполнения синхронизации объекты экспортируются из CS AD в **Active Directory**.
 
@@ -88,7 +88,7 @@ ms.locfileid: "56180831"
 * [Синхронизация Azure AD Connect: общие сведения о пользователях, группах и контактах](https://docs.microsoft.com/azure/active-directory/hybrid/concept-azure-ad-connect-sync-user-and-contacts)
 * [Синхронизация Azure AD Connect: теневые атрибуты](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-syncservice-shadow-attributes)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Синхронизация Azure AD Connect: общие сведения о синхронизации и ее настройка](how-to-connect-sync-whatis.md).
 - [Что собой представляет гибридная идентификация](whatis-hybrid-identity.md).

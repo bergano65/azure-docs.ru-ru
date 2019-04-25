@@ -1,351 +1,344 @@
-items:
 - name: Документация по службе "Политика Azure"
   href: index.yml
 - name: Обзор
   items:
-  - name: Общие сведения о политике Azure
-    displayName: rbac, assign, initiative, parameters, count
-    href: overview.md
+    - name: Общие сведения о политике Azure
+      displayName: 'rbac, assign, initiative, parameters, count'
+      href: overview.md
 - name: Быстрое начало работы
-  items:
-  - name: Назначение политики с помощью портала
-    displayName: assign, compliance
-    href: assign-policy-portal.md
-  - name: Назначение политики с помощью PowerShell
-    displayName: assign, compliance
-    href: assign-policy-powershell.md
-  - name: Назначение политики с помощью Azure CLI
-    displayName: assign, compliance
-    href: assign-policy-azurecli.md
-  - name: Назначение политики с помощью шаблона
-    displayName: assign, compliance, resource manager, ARM
-    href: assign-policy-template.md
   expanded: true
+  items:
+    - name: Назначение политики с помощью портала
+      displayName: 'assign, compliance'
+      href: assign-policy-portal.md
+    - name: Назначение политики с помощью PowerShell
+      displayName: 'assign, compliance'
+      href: assign-policy-powershell.md
+    - name: Назначение политики с помощью Azure CLI
+      displayName: 'assign, compliance'
+      href: assign-policy-azurecli.md
+    - name: Назначение политики с помощью шаблона
+      displayName: 'assign, compliance, resource manager, ARM'
+      href: assign-policy-template.md
 - name: Учебники
   items:
-  - name: Создание политики Azure и управление ею
-    displayName: assign, definition, compliance, exempt, exclusion
-    href: ./tutorials/create-and-manage.md
-  - name: Создание определения пользовательской политики
-    displayName: disabled, parameters, rule, mode
-    href: ./tutorials/create-custom-policy-definition.md
-  - name: Практические занятия. Изучение службы "Политика Azure"
-    displayName: create, policy, training, learn
-    href: https://handsonlabs.microsoft.com/handsonlabs/SelfPacedLabs?storyId=story://content-private/content/sp-azuregovernance/1-azpolicy/a-policy
+    - name: Создание политики Azure и управление ею
+      displayName: 'assign, definition, compliance, exempt, exclusion'
+      href: ./tutorials/create-and-manage.md
+    - name: Создание определения пользовательской политики
+      displayName: 'disabled, parameters, rule, mode'
+      href: ./tutorials/create-custom-policy-definition.md
+    - name: Практические занятия. Изучение службы "Политика Azure"
+      displayName: 'create, policy, training, learn'
+      href: 'https://handsonlabs.microsoft.com/handsonlabs/SelfPacedLabs?storyId=story://content-private/content/sp-azuregovernance/1-azpolicy/a-policy'
 - name: Примеры
   items:
-  - name: Индекс
-    displayName: list, examples
-    href: ./samples/index.md
-  - name: Общие сведения
-    items:
-    - name: Именование
+    - name: Индекс
+      displayName: 'list, examples'
+      href: ./samples/index.md
+    - name: Общие сведения
       items:
-      - name: Разрешение на использование нескольких шаблонов имен
-        displayName: deny, indexed
-        href: samples/allow-multiple-name-patterns.md
-      - name: Требование шаблона схожести
-        displayName: deny, indexed
-        href: samples/enforce-like-pattern.md
-      - name: Требование шаблона соответствия
-        displayName: deny, indexed
-        href: samples/enforce-match-pattern.md
-      - name: Требование шаблона соответствия тегов
-        displayName: deny, all
-        href: samples/enforce-tag-match-pattern.md
-    - name: Теги
+        - name: Именование
+          items:
+            - name: Разрешение на использование нескольких шаблонов имен
+              displayName: 'deny, indexed'
+              href: samples/allow-multiple-name-patterns.md
+            - name: Требование шаблона схожести
+              displayName: 'deny, indexed'
+              href: samples/enforce-like-pattern.md
+            - name: Требование шаблона соответствия
+              displayName: 'deny, indexed'
+              href: samples/enforce-match-pattern.md
+            - name: Требование шаблона соответствия тегов
+              displayName: 'deny, all'
+              href: samples/enforce-tag-match-pattern.md
+        - name: Теги
+          items:
+            - name: Применение тега и его значения по умолчанию
+              displayName: 'append, builtin, concat'
+              href: samples/apply-tag-default-value.md
+            - name: Инициатива политики тегов для выставления счетов
+              href: samples/billing-tags-policy-initiative.md
+            - name: принудительно применять тег и его значение;
+              displayName: 'deny, concat, builtin'
+              href: samples/enforce-tag-value.md
+            - name: Принудительное применение тега и его значения для группы ресурсов
+              displayName: 'deny, concat'
+              href: samples/enforce-tag-on-resource-groups.md
+        - name: Расположения
+          items:
+            - name: Allowed locations;
+              displayName: 'deny, builtin, location'
+              href: samples/allowed-locations.md
+        - name: Типы ресурсов
+          items:
+            - name: Допустимые типы ресурсов
+              displayName: 'deny, builtin, resourceTypes'
+              href: samples/allowed-resource-types.md
+            - name: Not allowed resource types;
+              displayName: 'deny, builtin, resourceTypes'
+              href: samples/not-allowed-resource-types.md
+    - name: Службы вычислений
       items:
-      - name: Применение тега и его значения по умолчанию
-        displayName: append, builtin, concat
-        href: samples/apply-tag-default-value.md
-      - name: Инициатива политики тегов для выставления счетов
-        href: samples/billing-tags-policy-initiative.md
-      - name: принудительно применять тег и его значение;
-        displayName: deny, concat, builtin
-        href: samples/enforce-tag-value.md
-      - name: Принудительное применение тега и его значения для группы ресурсов
-        displayName: deny, concat
-        href: samples/enforce-tag-on-resource-groups.md
-    - name: Расположения
+        - name: Виртуальные машины
+          items:
+            - name: Разрешение использования пользовательского образа виртуальной машины из группы ресурсов
+              displayName: 'deny, concat, ExistingResourceGroups'
+              href: samples/allow-custom-vm-image.md
+            - name: Допустимые номера SKU для учетных записей хранения и виртуальных машин
+              displayName: 'initiative, vmSKUs, storageSKUs'
+              href: samples/allowed-skus-storage.md
+            - name: Утвержденные образы виртуальных машин
+              displayName: deny
+              href: samples/allowed-custom-images.md
+            - name: Проверка наличия расширения
+              displayName: auditIfNotExists
+              href: samples/audit-extension-not-exist.md
+            - name: Запрет использования определенных расширений виртуальной машины
+              displayName: deny
+              href: samples/not-allowed-vm-extension.md
+        - name: наборы для масштабирования виртуальных машин
+          items:
+            - name: Проверка использования виртуальных дисков виртуальной машиной
+              displayName: audit
+              href: samples/create-vm-managed-disk.md
+            - name: 'Создание виртуальной машины, использующей управляемый диск'
+              displayName: deny
+              href: samples/use-managed-disk-vm.md
+            - name: Запрет на использование программы преимуществ гибридного использования
+              displayName: deny
+              href: samples/deny-hybrid-use.md
+            - name: Разрешение использования только некоторых образов платформы виртуальной машины
+              displayName: deny
+              href: samples/allow-certain-vm-image.md
+    - name: Озеро данных
       items:
-      - name: Allowed locations;
-        displayName: deny, builtin, location
-        href: samples/allowed-locations.md
-    - name: Типы ресурсов
+        - name: Требование шифрования данных для Data Lake Store
+          displayName: deny
+          href: samples/enforce-data-lake-store-encryption.md
+    - name: Гостевая конфигурация
       items:
-      - name: Допустимые типы ресурсов
-        displayName: deny, builtin, resourceTypes
-        href: samples/allowed-resource-types.md
-      - name: Not allowed resource types;
-        displayName: deny, builtin, resourceTypes
-        href: samples/not-allowed-resource-types.md
-  - name: Службы вычислений
-    items:
-    - name: Виртуальные машины
+        - name: 'Аудит приложений, установленных в Linux'
+          displayName: 'audit, vm'
+          href: samples/guest-configuration-applications-installed-linux.md
+    - name: Хранилища ключей
       items:
-      - name: Разрешение использования пользовательского образа виртуальной машины из группы ресурсов
-        displayName: deny, concat, ExistingResourceGroups
-        href: samples/allow-custom-vm-image.md
-      - name: Допустимые номера SKU для учетных записей хранения и виртуальных машин
-        displayName: initiative, vmSKUs, storageSKUs
-        href: samples/allowed-skus-storage.md
-      - name: Утвержденные образы виртуальных машин
-        displayName: deny
-        href: samples/allowed-custom-images.md
-      - name: Проверка наличия расширения
-        displayName: auditIfNotExists
-        href: samples/audit-extension-not-exist.md
-      - name: Запрет использования определенных расширений виртуальной машины
-        displayName: deny
-        href: samples/not-allowed-vm-extension.md
-    - name: наборы для масштабирования виртуальных машин
+        - name: Аудит хранилищ для обнаружения экземпляров без конечных точек виртуальной сети
+          displayName: 'audit, KeyVault, indexed'
+          href: samples/keyvault-no-vnet-rules.md
+    - name: Мониторинг
       items:
-      - name: Проверка использования виртуальных дисков виртуальной машиной
-        displayName: audit
-        href: samples/create-vm-managed-disk.md
-      - name: Создание виртуальной машины, использующей управляемый диск
-        displayName: deny
-        href: samples/use-managed-disk-vm.md
-      - name: Запрет на использование программы преимуществ гибридного использования
-        displayName: deny
-        href: samples/deny-hybrid-use.md
-      - name: Разрешение использования только некоторых образов платформы виртуальной машины
-        displayName: deny
-        href: samples/allow-certain-vm-image.md
-  - name: Озеро данных
-    items:
-    - name: Требование шифрования данных для Data Lake Store
-      displayName: deny
-      href: samples/enforce-data-lake-store-encryption.md
-  - name: Гостевая конфигурация
-    items:
-    - name: Аудит приложений, установленных в Linux
-      displayName: audit, vm
-      href: samples/guest-configuration-applications-installed-linux.md
-  - name: Хранилища ключей
-    items:
-    - name: Аудит хранилищ для обнаружения экземпляров без конечных точек виртуальной сети
-      displayName: audit, KeyVault, indexed
-      href: samples/keyvault-no-vnet-rules.md
-  - name: Мониторинг
-    items:
-    - name: Аудит параметров диагностики
-      displayName: auditIfNotExists, resourceTypes
-      href: samples/audit-diagnostic-setting.md
-  - name: Сеть
-    items:
-    - name: Сетевые интерфейсы
+        - name: Аудит параметров диагностики
+          displayName: 'auditIfNotExists, resourceTypes'
+          href: samples/audit-diagnostic-setting.md
+    - name: Сеть
       items:
-      - name: Конкретная группа безопасности сети на каждой сетевой карте
-        displayName: deny
-        href: samples/nsg-on-nic.md
-      - name: Использование утвержденной подсети для сетевых интерфейсов виртуальной машины
-        displayName: deny
-        href: samples/use-approved-subnet-vm-nics.md
-      - name: Использование утвержденной виртуальной сети для сетевых интерфейсов виртуальной машины
-        displayName: deny, concat
-        href: samples/use-approved-vnet-vm-nics.md
-    - name: виртуальные сети;
+        - name: Сетевые интерфейсы
+          items:
+            - name: Конкретная группа безопасности сети на каждой сетевой карте
+              displayName: deny
+              href: samples/nsg-on-nic.md
+            - name: Использование утвержденной подсети для сетевых интерфейсов виртуальной машины
+              displayName: deny
+              href: samples/use-approved-subnet-vm-nics.md
+            - name: Использование утвержденной виртуальной сети для сетевых интерфейсов виртуальной машины
+              displayName: 'deny, concat'
+              href: samples/use-approved-vnet-vm-nics.md
+        - name: виртуальные сети;
+          items:
+            - name: Разрешенные SKU для шлюзов приложений
+              displayName: deny
+              href: samples/allowed-app-gateway-sku.md
+            - name: Допустимые номера SKU шлюза виртуальной сети
+              displayName: deny
+              href: samples/allowed-vnet-gateway-sku.md
+            - name: Допустимые номера SKU подсистемы балансировки нагрузки
+              displayName: deny
+              href: samples/allowed-load-balancer-skus.md
+            - name: Запрет пиринга сетей для сети ExpressRoute
+              displayName: 'deny, all, concat, ExistingResourceGroups'
+              href: samples/no-peering-express-route-network.md
+            - name: Запрет определяемой пользователем таблицы маршрутов
+              displayName: 'deny, all'
+              href: samples/no-user-defined-route-table.md
+            - name: NSG x для каждой подсети
+              displayName: 'deny, all'
+              href: samples/nsg-on-subnet.md
+            - name: Использование утвержденной подсети для сетевых интерфейсов виртуальной машины
+              displayName: deny
+              href: samples/use-approved-subnet-vm-nics.md
+            - name: Использование утвержденной виртуальной сети для сетевых интерфейсов виртуальной машины
+              displayName: deny
+              href: samples/use-approved-vnet-vm-nics.md
+        - name: Группы безопасности сети
+          items:
+            - name: Конкретная группа безопасности сети на каждой сетевой карте
+              displayName: deny
+              href: samples/nsg-on-nic.md
+            - name: NSG x для каждой подсети
+              displayName: 'deny, all'
+              href: samples/nsg-on-subnet.md
+        - name: ExpressRoute
+          items:
+            - name: Допустимая пропускная способность ExpressRoute
+              displayName: deny
+              href: samples/allowed-express-route-bandwidth.md
+            - name: Допустимые номера SKU ExpressRoute
+              displayName: deny
+              href: samples/allowed-express-route-skus.md
+            - name: Допустимые регионы для пиринга ExpressRoute
+              displayName: 'deny, Location'
+              href: samples/allowed-express-route-peering.md
+        - name: Наблюдатели за сетями
+          items:
+            - name: Проверка отключения службы "Наблюдатель за сетями" для региона
+              displayName: 'auditIfNotExists, Location'
+              href: samples/network-watcher-not-enabled.md
+        - name: Шлюзы приложений
+          items:
+            - name: Разрешенные SKU для шлюзов приложений
+              displayName: deny
+              href: samples/allowed-app-gateway-sku.md
+    - name: SQL
       items:
-      - name: Разрешенные SKU для шлюзов приложений
-        displayName: deny
-        href: samples/allowed-app-gateway-sku.md
-      - name: Допустимые номера SKU шлюза виртуальной сети
-        displayName: deny
-        href: samples/allowed-vnet-gateway-sku.md
-      - name: Допустимые номера SKU подсистемы балансировки нагрузки
-        displayName: deny
-        href: samples/allowed-load-balancer-skus.md
-      - name: Запрет пиринга сетей для сети ExpressRoute
-        displayName: deny, all, concat, ExistingResourceGroups
-        href: samples/no-peering-express-route-network.md
-      - name: Запрет определяемой пользователем таблицы маршрутов
-        displayName: deny, all
-        href: samples/no-user-defined-route-table.md
-      - name: NSG x для каждой подсети
-        displayName: deny, all
-        href: samples/nsg-on-subnet.md
-      - name: Использование утвержденной подсети для сетевых интерфейсов виртуальной машины
-        displayName: deny
-        href: samples/use-approved-subnet-vm-nics.md
-      - name: Использование утвержденной виртуальной сети для сетевых интерфейсов виртуальной машины
-        displayName: deny
-        href: samples/use-approved-vnet-vm-nics.md
-    - name: Группы безопасности сети
+        - name: Серверы SQL Server
+          items:
+            - name: Проверка назначения роли администратора Azure Active Directory
+              displayName: auditIfNotExists
+              href: samples/audit-no-aad-admin.md
+            - name: Аудит параметра обнаружения угроз на уровне сервера
+              displayName: auditIfNotExists
+              href: samples/audit-sql-server-threat-detection-setting.md
+            - name: Проверка параметров аудита SQL Server
+              displayName: 'auditIfNotExists, builtin'
+              href: samples/sql-server-audit.md
+            - name: Аудит параметров аудита уровня SQL Server
+              displayName: auditIfNotExists
+              href: samples/audit-sql-server-audit-setting.md
+            - name: Require SQL Server version 12.0;
+              displayName: 'deny, builtin'
+              href: samples/require-sql-12.md
+        - name: Базы данных SQL
+          items:
+            - name: Допустимые номера SKU базы данных SQL
+              displayName: deny
+              href: samples/allowed-sql-db-skus.md
+            - name: Аудит параметра обнаружения угроз на уровне базы данных SQL
+              displayName: auditIfNotExists
+              href: samples/audit-db-threat-detection-setting.md
+            - name: Шифрование аудита баз данных SQL
+              displayName: 'auditIfNotExists, disabled, indexed, builtin'
+              href: samples/sql-database-encryption-audit.md
+            - name: Аудит параметров аудита уровня базы данных SQL
+              displayName: auditIfNotExists
+              href: samples/audit-sql-db-audit-setting.md
+    - name: Хранилище
       items:
-      - name: Конкретная группа безопасности сети на каждой сетевой карте
-        displayName: deny
-        href: samples/nsg-on-nic.md
-      - name: NSG x для каждой подсети
-        displayName: deny, all
-        href: samples/nsg-on-subnet.md
-    - name: ExpressRoute
-      items:
-      - name: Допустимая пропускная способность ExpressRoute
-        displayName: deny
-        href: samples/allowed-express-route-bandwidth.md
-      - name: Допустимые номера SKU ExpressRoute
-        displayName: deny
-        href: samples/allowed-express-route-skus.md
-      - name: Допустимые регионы для пиринга ExpressRoute
-        displayName: deny, Location
-        href: samples/allowed-express-route-peering.md
-    - name: Наблюдатели за сетями
-      items:
-      - name: Проверка отключения службы "Наблюдатель за сетями" для региона
-        displayName: auditIfNotExists, Location
-        href: samples/network-watcher-not-enabled.md
-    - name: Шлюзы приложений
-      items:
-      - name: Разрешенные SKU для шлюзов приложений
-        displayName: deny
-        href: samples/allowed-app-gateway-sku.md
-  - name: SQL
-    items:
-    - name: Серверы SQL Server
-      items:
-      - name: Проверка назначения роли администратора Azure Active Directory
-        displayName: auditIfNotExists
-        href: samples/audit-no-aad-admin.md
-      - name: Аудит параметра обнаружения угроз на уровне сервера
-        displayName: auditIfNotExists
-        href: samples/audit-sql-server-threat-detection-setting.md
-      - name: Проверка параметров аудита SQL Server
-        displayName: auditIfNotExists, builtin
-        href: samples/sql-server-audit.md
-      - name: Аудит параметров аудита уровня SQL Server
-        displayName: auditIfNotExists
-        href: samples/audit-sql-server-audit-setting.md
-      - name: Require SQL Server version 12.0;
-        displayName: deny, builtin
-        href: samples/require-sql-12.md
-    - name: Базы данных SQL
-      items:
-      - name: Допустимые номера SKU базы данных SQL
-        displayName: deny
-        href: samples/allowed-sql-db-skus.md
-      - name: Аудит параметра обнаружения угроз на уровне базы данных SQL
-        displayName: auditIfNotExists
-        href: samples/audit-db-threat-detection-setting.md
-      - name: Шифрование аудита баз данных SQL
-        displayName: auditIfNotExists, disabled, indexed, builtin
-        href: samples/sql-database-encryption-audit.md
-      - name: Аудит параметров аудита уровня базы данных SQL
-        displayName: auditIfNotExists
-        href: samples/audit-sql-db-audit-setting.md
-  - name: Хранилище
-    items:
-    - name: Допустимые номера SKU для учетной записи хранения и виртуальных машин
-      displayName: initiative, vmSKUs, storageSKUs
-      href: samples/allowed-skus-storage.md
-    - name: Allowed storage account SKUs;
-      displayName: deny, builtin, storageSKUs
-      href: samples/allowed-storage-account-skus.md
-    - name: Запрет на распределение по холодным уровням доступа для учетных записей хранения
-      displayName: deny, all
-      href: samples/deny-cool-access-tiering.md
-    - name: Использование HTTPS-трафика для учетной записи хранения
-      displayName: deny, all
-      href: samples/ensure-https-storage-account.md
-    - name: Обеспечение шифрования файлов хранилища
-      displayName: deny, all
-      href: samples/ensure-storage-file-encryption.md
-    - name: Require storage account encryption.
-      displayName: deny, builtin
-      href: samples/require-storage-account-encryption.md
+        - name: Допустимые номера SKU для учетной записи хранения и виртуальных машин
+          displayName: 'initiative, vmSKUs, storageSKUs'
+          href: samples/allowed-skus-storage.md
+        - name: Allowed storage account SKUs;
+          displayName: 'deny, builtin, storageSKUs'
+          href: samples/allowed-storage-account-skus.md
+        - name: Запрет на распределение по холодным уровням доступа для учетных записей хранения
+          displayName: 'deny, all'
+          href: samples/deny-cool-access-tiering.md
+        - name: Использование HTTPS-трафика для учетной записи хранения
+          displayName: 'deny, all'
+          href: samples/ensure-https-storage-account.md
+        - name: Обеспечение шифрования файлов хранилища
+          displayName: 'deny, all'
+          href: samples/ensure-storage-file-encryption.md
+        - name: Require storage account encryption.
+          displayName: 'deny, builtin'
+          href: samples/require-storage-account-encryption.md
 - name: Основные понятия
   items:
-  - name: Структура определения службы "Политика Azure"
-    displayName: parameters, location, rule, alias, initiatives
-    href: ./concepts/definition-structure.md
-  - name: Сведения о действии политики
-    displayName: order, evaluation
-    href: ./concepts/effects.md
-  - name: Аудит виртуальных машин с гостевой конфигурацией
-    displayName: provider, tools, definition
-    href: ./concepts/guest-configuration.md
+    - name: Структура определения службы "Политика Azure"
+      displayName: 'parameters, location, rule, alias, initiatives'
+      href: ./concepts/definition-structure.md
+    - name: Сведения о действии политики
+      displayName: 'order, evaluation'
+      href: ./concepts/effects.md
+    - name: Аудит виртуальных машин с гостевой конфигурацией
+      displayName: 'provider, tools, definition'
+      href: ./concepts/guest-configuration.md
 - name: Практические руководства
   items:
-  - name: Программное создание политик
-    displayName: assign, definition
-    href: ./how-to/programmatically-create.md
-  - name: Создание политик для свойств массива
-    displayName: array property, alias, aliases, in, notIn, type, defaultValue
-    href: ./how-to/author-policies-for-arrays.md
-  - name: Получение данных о соответствии
-    displayName: evaluation, scan, summarize, query, events, log analytics
-    href: ./how-to/get-compliance-data.md
-  - name: Определение причин несоответствия требованиям
-    displayName: reasons, compliance details
-    href: ./how-to/determine-non-compliance.md
-  - name: Исправление несоответствующих ресурсов
-    displayName: managed identity, task, definition, roleDefinitionIds
-    href: ./how-to/remediate-resources.md
+    - name: Программное создание политик
+      displayName: 'assign, definition'
+      href: ./how-to/programmatically-create.md
+    - name: Создание политик для свойств массива
+      displayName: 'array property, alias, aliases, in, notIn, type, defaultValue'
+      href: ./how-to/author-policies-for-arrays.md
+    - name: Получение данных о соответствии
+      displayName: 'evaluation, scan, summarize, query, events, log analytics'
+      href: ./how-to/get-compliance-data.md
+    - name: Определение причин несоответствия требованиям
+      displayName: 'reasons, compliance details'
+      href: ./how-to/determine-non-compliance.md
+    - name: Исправление несоответствующих ресурсов
+      displayName: 'managed identity, task, definition, roleDefinitionIds'
+      href: ./how-to/remediate-resources.md
 - name: Справочные материалы
   items:
-  - name: Инфраструктура CLI Azure
-    href: /cli/azure/policy
-  - name: Azure PowerShell
-    items:
-    - name: Политика
-      href: /powershell/module/az.resources/#policies
-    - name: Policy Insights
-      href: /powershell/module/az.policyinsights#policy_insights
-    - name: Гостевая конфигурация
-      href: https://www.powershellgallery.com/packages/Az.GuestConfiguration
-  - name: REST
-    items:
-    - name: События
-      href: /rest/api/policy-insights/policyevents
-    - name: States
-      href: /rest/api/policy-insights/policystates
-    - name: Назначения
-      href: /rest/api/resources/policyassignments
-    - name: Определения политик
-      href: /rest/api/resources/policydefinitions
-    - name: Определения инициатив
-      href: /rest/api/resources/policysetdefinitions
-    - name: Отслеживаемые политикой ресурсы
-      href: /rest/api/policy-insights/policytrackedresources
-    - name: Исправления
-      href: /rest/api/policy-insights/remediations
-    - name: Гостевая конфигурация
-      href: /rest/api/guestconfiguration/
-  - name: Шаблоны диспетчера ресурсов
-    items:
-    - name: Назначения
-      href: /azure/templates/microsoft.authorization/policyassignments
-    - name: Определения политик
-      href: /azure/templates/microsoft.authorization/policydefinitions
-    - name: Определения инициатив
-      href: /azure/templates/microsoft.authorization/policysetdefinitions
+    - name: Инфраструктура CLI Azure
+      href: /cli/azure/policy
+    - name: Azure PowerShell
+      items:
+        - name: Политика
+          href: '/powershell/module/az.resources/#policies'
+        - name: Policy Insights
+          href: '/powershell/module/az.policyinsights#policy_insights'
+        - name: Гостевая конфигурация
+          href: 'https://www.powershellgallery.com/packages/Az.GuestConfiguration'
+    - name: REST
+      items:
+        - name: События
+          href: /rest/api/policy-insights/policyevents
+        - name: States
+          href: /rest/api/policy-insights/policystates
+        - name: Назначения
+          href: /rest/api/resources/policyassignments
+        - name: Определения политик
+          href: /rest/api/resources/policydefinitions
+        - name: Определения инициатив
+          href: /rest/api/resources/policysetdefinitions
+        - name: Отслеживаемые политикой ресурсы
+          href: /rest/api/policy-insights/policytrackedresources
+        - name: Исправления
+          href: /rest/api/policy-insights/remediations
+        - name: Гостевая конфигурация
+          href: /rest/api/guestconfiguration/
+    - name: Шаблоны диспетчера ресурсов
+      items:
+        - name: Назначения
+          href: /azure/templates/microsoft.authorization/policyassignments
+        - name: Определения политик
+          href: /azure/templates/microsoft.authorization/policydefinitions
+        - name: Определения инициатив
+          href: /azure/templates/microsoft.authorization/policysetdefinitions
 - name: Ресурсы
   items:
-  - name: 'GitHub: примеры для Политики Azure'
-    href: https://github.com/Azure/azure-policy
-  - name: 'Видео: Build 2018'
-    href: https://channel9.msdn.com/events/Build/2018/THR2030
-  - name: Канал на YouTube, посвященный системе управления
-    href: https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ
-  - name: Видео по гостевой конфигурации
-    items:
-    - name: Приступая к работе
-      href: https://www.youtube.com/watch?v=mjJw9_EIyHo
-    - name: Основные сведения об инициативах
-      href: https://www.youtube.com/watch?v=4JZH3kuG8bI
-    - name: Назначение политики
-      href: https://www.youtube.com/watch?v=fbZBaxcjA-Y
-    - name: Задача исправления
-      href: https://www.youtube.com/watch?v=URE4DUYMgmg
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/
-  - name: Калькулятор цен
-    href: https://azure.microsoft.com/pricing/calculator/
-  - name: UserVoice
-    href: https://feedback.azure.com/forums/915958-azure-governance
-ms.openlocfilehash: 730222484658019c78fb2dfef94c474f3031769b
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58226136"
+    - name: 'GitHub: примеры для Политики Azure'
+      href: 'https://github.com/Azure/azure-policy'
+    - name: 'Видео: Build 2018'
+      href: 'https://channel9.msdn.com/events/Build/2018/THR2030'
+    - name: 'Канал на YouTube, посвященный системе управления'
+      href: 'https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ'
+    - name: Видео по гостевой конфигурации
+      items:
+        - name: Приступая к работе
+          href: 'https://www.youtube.com/watch?v=mjJw9_EIyHo'
+        - name: Основные сведения об инициативах
+          href: 'https://www.youtube.com/watch?v=4JZH3kuG8bI'
+        - name: Назначение политики
+          href: 'https://www.youtube.com/watch?v=fbZBaxcjA-Y'
+        - name: Задача исправления
+          href: 'https://www.youtube.com/watch?v=URE4DUYMgmg'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: UserVoice
+      href: 'https://feedback.azure.com/forums/915958-azure-governance'

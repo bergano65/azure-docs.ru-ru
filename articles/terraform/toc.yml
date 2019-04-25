@@ -1,96 +1,89 @@
-items:
 - name: Документация по Terraform в Azure
   href: index.yml
 - name: Обзор
   items:
-  - name: Сведения о Terraform в Azure
-    href: terraform-overview.md
+    - name: Сведения о Terraform в Azure
+      href: terraform-overview.md
 - name: Быстрое начало работы
-  items:
-  - name: Создание приложения на базе нескольких служб
-    href: terrafom-quickstart.md
-  - name: Установка и настройка Terraform
-    href: /azure/virtual-machines/linux/terraform-install-configure
-    maintainContext: true
-  - name: Создание виртуальной машины Linux
-    href: /azure/virtual-machines/linux/terraform-create-complete-vm
-    maintainContext: true
   expanded: true
+  items:
+    - name: Создание приложения на базе нескольких служб
+      href: terrafom-quickstart.md
+    - name: Установка и настройка Terraform
+      href: /azure/virtual-machines/linux/terraform-install-configure
+      maintainContext: true
+    - name: Создание виртуальной машины Linux
+      href: /azure/virtual-machines/linux/terraform-create-complete-vm
+      maintainContext: true
 - name: Учебники
   items:
-  - name: Служба приложений
-    items:
-    - name: Слоты развертывания поставщика Azure и Terraform
-      href: terraform-slot-walkthru.md
-  - name: Контейнеры
-    items:
-    - name: Создание кластера Kubernetes с помощью AKS
-      href: terraform-create-k8s-cluster-with-tf-and-aks.md
-    - name: Создание кластера Kubernetes с помощью AKS со шлюзом приложений в качестве контроллера входящего трафика
-      href: terraform-create-k8s-cluster-with-aks-applicationgateway-ingress.md
-  - name: Инфраструктура
-    items:
-    - name: Создание виртуальной машины Terraform с поддержкой MSI
-      href: terraform-vm-msi.md
-    - name: Создание кластера виртуальных машин с помощью модулей Terraform
-      href: terraform-create-vm-cluster-module.md
-    - name: Создание кластера виртуальных машин с помощью Terraform и HCL
-      href: terraform-create-vm-cluster-with-infrastructure.md
-    - name: Подготовка масштабируемого набора виртуальных машин с инфраструктурой
-      href: terraform-create-vm-scaleset-network-disks-hcl.md
-    - name: Подготовка масштабируемого набора виртуальных машин из пользовательского образа Packer
-      href: terraform-create-vm-scaleset-network-disks-using-packer-hcl.md
-  - name: Сети
-    items:
-    - name: Звездообразная топология
+    - name: Служба приложений
       items:
-      - name: 1. Создание звездообразной топологии
-        href: terraform-hub-spoke-introduction.md
-      - name: 2. Создание локальной виртуальной сети
-        href: terraform-hub-spoke-on-prem.md
-      - name: 3. Создание центральной виртуальной сети
-        href: terraform-hub-spoke-hub-network.md
-      - name: 4. Создание сетевого устройства для центральной виртуальной сети
-        href: terraform-hub-spoke-hub-nva.md
-      - name: 5. Создание периферийной сети
-        href: terraform-hub-spoke-spoke-network.md
-      - name: 6. Проверка подключения в топологии сети
-        href: terraform-hub-spoke-validation.md
-  - name: Средства
-    items:
-    - name: Установка расширения Visual Studio Code для Terraform
-      href: terraform-vscode-extension.md
-    - name: Создание базового шаблона Terraform с использованием Yeoman
-      href: terraform-vscode-module-generator.md
-    - name: Тестирование модулей Terraform с помощью Terratest
-      href: terratest-in-terraform-modules.md
+        - name: Слоты развертывания поставщика Azure и Terraform
+          href: terraform-slot-walkthru.md
+    - name: Контейнеры
+      items:
+        - name: Создание кластера Kubernetes с помощью AKS
+          href: terraform-create-k8s-cluster-with-tf-and-aks.md
+        - name: Создание кластера Kubernetes с помощью AKS со шлюзом приложений в качестве контроллера входящего трафика
+          href: terraform-create-k8s-cluster-with-aks-applicationgateway-ingress.md
+    - name: Инфраструктура
+      items:
+        - name: Создание виртуальной машины Terraform с поддержкой MSI
+          href: terraform-vm-msi.md
+        - name: Создание кластера виртуальных машин с помощью модулей Terraform
+          href: terraform-create-vm-cluster-module.md
+        - name: Создание кластера виртуальных машин с помощью Terraform и HCL
+          href: terraform-create-vm-cluster-with-infrastructure.md
+        - name: Подготовка масштабируемого набора виртуальных машин с инфраструктурой
+          href: terraform-create-vm-scaleset-network-disks-hcl.md
+        - name: Подготовка масштабируемого набора виртуальных машин из пользовательского образа Packer
+          href: terraform-create-vm-scaleset-network-disks-using-packer-hcl.md
+    - name: Сети
+      items:
+        - name: Звездообразная топология
+          items:
+            - name: 1. Создание звездообразной топологии
+              href: terraform-hub-spoke-introduction.md
+            - name: 2. Создание локальной виртуальной сети
+              href: terraform-hub-spoke-on-prem.md
+            - name: 3. Создание центральной виртуальной сети
+              href: terraform-hub-spoke-hub-network.md
+            - name: 4. Создание сетевого устройства для центральной виртуальной сети
+              href: terraform-hub-spoke-hub-nva.md
+            - name: 5. Создание периферийной сети
+              href: terraform-hub-spoke-spoke-network.md
+            - name: 6. Проверка подключения в топологии сети
+              href: terraform-hub-spoke-validation.md
+    - name: Средства
+      items:
+        - name: Установка расширения Visual Studio Code для Terraform
+          href: terraform-vscode-extension.md
+        - name: Создание базового шаблона Terraform с использованием Yeoman
+          href: terraform-vscode-module-generator.md
+        - name: Тестирование модулей Terraform с помощью Terratest
+          href: terratest-in-terraform-modules.md
 - name: Примеры
   items:
-  - name: Шаблоны конфигурации
-    href: https://github.com/terraform-providers/terraform-provider-azurerm/tree/master/examples
+    - name: Шаблоны конфигурации
+      href: 'https://github.com/terraform-providers/terraform-provider-azurerm/tree/master/examples'
 - name: Основные понятия
   items:
-  - name: Интеграция Azure Cloud Shell
-    href: terraform-cloud-shell.md
+    - name: Интеграция Azure Cloud Shell
+      href: terraform-cloud-shell.md
 - name: Практические руководства
   items:
-  - name: Хранение состояния в Службе хранилища Azure
-    href: terraform-backend.md
+    - name: Хранение состояния в Службе хранилища Azure
+      href: terraform-backend.md
 - name: Справочные материалы
   items:
-  - name: Реестр модулей Azure
-    href: https://registry.terraform.io/modules/Azure
-  - name: Справочник по Terraform
-    href: https://aka.ms/terraform
+    - name: Реестр модулей Azure
+      href: 'https://registry.terraform.io/modules/Azure'
+    - name: Справочник по Terraform
+      href: 'https://aka.ms/terraform'
 - name: Ресурсы
   items:
-  - name: Azure и Terraform
-    href: https://azure.microsoft.com/solutions/devops/terraform/
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/
-ms.openlocfilehash: d83e1cbd4f3cd5d8a0a9ec167e197b53f20e0630
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57999449"
+    - name: Azure и Terraform
+      href: 'https://azure.microsoft.com/solutions/devops/terraform/'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'

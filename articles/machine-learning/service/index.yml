@@ -1,15 +1,9 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: a97c11b49574d0014ea7fa97f42420b22f9568d7
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58371162"
 documentType: LandingData
 title: Документация по службе "Машинное обучение Azure"
 metadata:
   title: 'Документация по службе "Машинное обучение Azure": руководства и справочник по API | Документация Майкрософт'
-  description: Служба машинного обучения Azure предоставляет пакеты SDK и службы, позволяющие быстро подготавливать данные, а также обучать и развертывать модели машинного обучения. Повышайте эффективность и сокращайте затраты, используя автомасштабируемые вычисления и конвейеры. Использовать эти возможности можно с помощью платформ Python с открытым кодом, например PyTorch, TensorFlow и scikit-learn. Наши краткие руководства и другие учебные материалы помогут приступить к работе.
+  description: 'Служба машинного обучения Azure предоставляет пакеты SDK и службы, позволяющие быстро подготавливать данные, а также обучать и развертывать модели машинного обучения. Повышайте эффективность и сокращайте затраты, используя автомасштабируемые вычисления и конвейеры. Использовать эти возможности можно с помощью платформ Python с открытым кодом, например PyTorch, TensorFlow и scikit-learn. Наши краткие руководства и другие учебные материалы помогут приступить к работе.'
   services: machine-learning
   ms.service: machine-learning
   ms.subservice: core
@@ -22,60 +16,60 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
 abstract:
-  description: Служба машинного обучения Azure предоставляет пакеты SDK и службы, позволяющие быстро подготавливать данные, а также обучать и развертывать модели машинного обучения. Повышайте эффективность и сокращайте затраты, используя автомасштабируемые вычисления и конвейеры. Использовать эти возможности можно с помощью платформ Python с открытым кодом, например PyTorch, TensorFlow и scikit-learn. Наши краткие руководства и другие учебные материалы помогут приступить к работе.
+  description: 'Служба машинного обучения Azure предоставляет пакеты SDK и службы, позволяющие быстро подготавливать данные, а также обучать и развертывать модели машинного обучения. Повышайте эффективность и сокращайте затраты, используя автомасштабируемые вычисления и конвейеры. Использовать эти возможности можно с помощью платформ Python с открытым кодом, например PyTorch, TensorFlow и scikit-learn. Наши краткие руководства и другие учебные материалы помогут приступить к работе.'
   aside:
     image:
-      alt: 
+      alt: null
       height: 130
       src: media/index/video.png
       width: 250
-    title: Просмотрите видео (9:58)
-    href: https://www.youtube.com/watch?v=GBDSBInvz08
+    title: 'Просмотрите видео (9:58)'
+    href: 'https://www.youtube.com/watch?v=GBDSBInvz08'
     width: 250
 sections:
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: 'Когда вы  <a href="setup-create-workspace">создадите рабочую область</a> для Службы машинного обучения Azure, можно будет приступать к работе с помощью этих кратких руководств:'
-  - type: list
-    style: unordered
+  - title: 5-минутные руководства по началу работы
     items:
-    - html: <a href="quickstart-run-cloud-notebook">Запуск эксперимента в облаке</a> (установка не требуется).
-    - html: <a href="quickstart-run-local-notebook">Запуск эксперимента с использованием сервера записных книжек</a> (локальная установка пакета SDK).
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: 'Узнайте, как подготовить данные, настроить эксперименты, а также обучить и ввести в эксплуатацию модели машинного обучения:'
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: "Когда вы\_ <a href=\"setup-create-workspace\">создадите рабочую область</a> для Службы машинного обучения Azure, можно будет приступать к работе с помощью этих кратких руководств:"
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="quickstart-run-cloud-notebook">Запуск эксперимента в облаке</a> (установка не требуется).
+          - html: <a href="quickstart-run-local-notebook">Запуск эксперимента с использованием сервера записных книжек</a> (локальная установка пакета SDK).
+  - title: Пошаговые руководства
     items:
-    - html: <a href="tutorial-train-models-with-aml">Обучение</a> и <a href="tutorial-deploy-models-with-aml">развертывание</a> моделей классификации изображений (<b>руководство в двух частях</b>).
-    - html: <a href="tutorial-data-prep">Подготовка данных</a> и <a href="tutorial-auto-train-models">использование автоматического машинного обучения</a> для обучения и настройки моделей регрессии (<b>руководство в двух частях</b>).
-- title: Примеры
-  items:
-  - type: paragraph
-    text: Ознакомьтесь с возможностями службы с помощью <a href="samples-notebooks">записных книжек Jupyter</a> на сайте GitHub.
-- title: Справочные материалы
-  items:
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: 'Узнайте, как подготовить данные, настроить эксперименты, а также обучить и ввести в эксплуатацию модели машинного обучения:'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="tutorial-train-models-with-aml">Обучение</a> и <a href="tutorial-deploy-models-with-aml">развертывание</a> моделей классификации изображений (<b>руководство в двух частях</b>).
+          - html: <a href="tutorial-data-prep">Подготовка данных</a> и <a href="tutorial-auto-train-models">использование автоматического машинного обучения</a> для обучения и настройки моделей регрессии (<b>руководство в двух частях</b>).
+  - title: Примеры
     items:
-    - html: '<a href="https://aka.ms/aml-sdk">Основной пакет SDK для Python</a>: ключевые функции, автоматическое машинное обучение, конвейеры и многое другое.'
-    - html: 'Пакет SDK для Python <a href="https://aka.ms/data-prep-sdk">для подготовки данных</a>: подготовка и преобразование данных.'
-    - html: 'Пакет SDK для Python <a href="https://aka.ms/aml-monitoring-sdk">для мониторинга</a>: сбор данных о развернутых веб-службах.'
-- title: Другие технологии службы "Машинное обучение Azure"
-  items:
-  - type: list
-    style: cards
-    className: cardsFTitle
+      - type: paragraph
+        text: Ознакомьтесь с возможностями службы с помощью <a href="samples-notebooks">записных книжек Jupyter</a> на сайте GitHub.
+  - title: Справочные материалы
     items:
-    - title: Студия машинного обучения Azure
-      href: /azure/machine-learning/studio/
-      image:
-        src: media/index/machine-learning-studio.svg
-        href: /azure/machine-learning/studio/
-    - title: Виртуальная машина для обработки и анализа данных
-      href: /azure/machine-learning/data-science-virtual-machine/
-      image:
-        src: media/index/virtual-machines.svg
-        href: /azure/machine-learning/data-science-virtual-machine/
+      - type: list
+        style: unordered
+        items:
+          - html: '<a href="https://aka.ms/aml-sdk">Основной пакет SDK для Python</a>: ключевые функции, автоматическое машинное обучение, конвейеры и многое другое.'
+          - html: 'Пакет SDK для Python <a href="https://aka.ms/data-prep-sdk">для подготовки данных</a>: подготовка и преобразование данных.'
+          - html: 'Пакет SDK для Python <a href="https://aka.ms/aml-monitoring-sdk">для мониторинга</a>: сбор данных о развернутых веб-службах.'
+  - title: Другие технологии службы "Машинное обучение Azure"
+    items:
+      - type: list
+        style: cards
+        className: cardsFTitle
+        items:
+          - title: Студия машинного обучения Azure
+            href: /azure/machine-learning/studio/
+            image:
+              src: media/index/machine-learning-studio.svg
+              href: /azure/machine-learning/studio/
+          - title: Виртуальная машина для обработки и анализа данных
+            href: /azure/machine-learning/data-science-virtual-machine/
+            image:
+              src: media/index/virtual-machines.svg
+              href: /azure/machine-learning/data-science-virtual-machine/

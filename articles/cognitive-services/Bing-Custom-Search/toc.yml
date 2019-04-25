@@ -1,119 +1,112 @@
-items:
 - name: Документация по Пользовательскому поиску Bing
   href: index.yml
 - name: Обзор
-  items:
-  - name: Знакомство с API пользовательского поиска Bing
-    href: overview.md
-  - name: Сравнение API-интерфейсов поиска Bing
-    href: ../Bing-Web-Search/bing-api-comparison.md
-    maintainContext: true
   expanded: true
+  items:
+    - name: Знакомство с API пользовательского поиска Bing
+      href: overview.md
+    - name: Сравнение API-интерфейсов поиска Bing
+      href: ../Bing-Web-Search/bing-api-comparison.md
+      maintainContext: true
 - name: Быстрое начало работы
-  items:
-  - name: Создание экземпляра пользовательского поиска
-    href: quick-start.md
-  - name: Получить результаты поиска из экземпляра
-    items:
-    - name: REST API
-      items:
-      - name: Использование C#
-        href: call-endpoint-csharp.md
-      - name: Использование Java
-        href: call-endpoint-java.md
-      - name: Использование Node.js
-        href: call-endpoint-nodejs.md
-      - name: Использование Python
-        href: call-endpoint-python.md
-    - name: SDK
-      items:
-      - name: Использование C#
-        href: sdk-csharp-quick-start.md
-      - name: Использование Python
-        href: sdk-python-quickstart.md
   expanded: true
+  items:
+    - name: Создание экземпляра пользовательского поиска
+      href: quick-start.md
+    - name: Получить результаты поиска из экземпляра
+      items:
+        - name: REST API
+          items:
+            - name: 'Использование C#'
+              href: call-endpoint-csharp.md
+            - name: Использование Java
+              href: call-endpoint-java.md
+            - name: Использование Node.js
+              href: call-endpoint-nodejs.md
+            - name: Использование Python
+              href: call-endpoint-python.md
+        - name: SDK
+          items:
+            - name: 'Использование C#'
+              href: sdk-csharp-quick-start.md
+            - name: Использование Python
+              href: sdk-python-quickstart.md
 - name: Учебники
   items:
-  - name: Создание веб-страницы пользовательского поиска
-    href: ./tutorials/custom-search-web-page.md
+    - name: Создание веб-страницы пользовательского поиска
+      href: ./tutorials/custom-search-web-page.md
 - name: Примеры
   items:
-  - name: Примеры кода
-    href: https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+Custom+Search
+    - name: Примеры кода
+      href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+Custom+Search'
 - name: Практические руководства
   items:
-  - name: Настройка режима пользовательского поиска
-    href: define-your-custom-view.md
-  - name: Вызов экземпляра пользовательского поиска
-    href: search-your-custom-view.md
-  - name: Настройка и интеграция размещенного пользовательского интерфейса
-    href: hosted-ui.md
-  - name: Совместное использование экземпляра пользовательского поиска
-    href: share-your-custom-search.md
-  - name: Получение изображений из экземпляра поиска
-    href: get-images-from-instance.md
-  - name: Получение видео из экземпляра поиска
-    href: get-videos-from-instance.md
-  - name: Настройка пользовательского автозаполнения
-    href: define-custom-suggestions.md
-  - name: Обработка выделения совпадений
-    href: hit-highlighting.md
-  - name: Просмотр результатов поиска веб-страниц
-    href: page-webpages.md
+    - name: Настройка режима пользовательского поиска
+      href: define-your-custom-view.md
+    - name: Вызов экземпляра пользовательского поиска
+      href: search-your-custom-view.md
+    - name: Настройка и интеграция размещенного пользовательского интерфейса
+      href: hosted-ui.md
+    - name: Совместное использование экземпляра пользовательского поиска
+      href: share-your-custom-search.md
+    - name: Получение изображений из экземпляра поиска
+      href: get-images-from-instance.md
+    - name: Получение видео из экземпляра поиска
+      href: get-videos-from-instance.md
+    - name: Настройка пользовательского автозаполнения
+      href: define-custom-suggestions.md
+    - name: Обработка выделения совпадений
+      href: hit-highlighting.md
+    - name: Просмотр результатов поиска веб-страниц
+      href: page-webpages.md
 - name: Справочные материалы
   items:
-  - name: Справочник по API пользовательского автозаполнения Bing
-    href: https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-autosuggest-api-v7-reference
-  - name: Справочник по API поиска пользовательских изображений Bing
-    href: https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-images-api-v7-reference
-  - name: Справочник по API пользовательского поиска Bing
-    href: https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-search-api-v7-reference
-  - name: Справочник по API Bing для пользовательского поиска видео
-    href: https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-videos-api-v7-reference
-  - name: Требования к использованию и отображению API-интерфейсов поиска Bing
-    href: ../Bing-Web-Search/use-display-requirements.md
-    maintainContext: true
-  - name: Пакеты SDK
-    items:
-    - name: .NET
-      href: https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-dotnet
-    - name: Java — пользовательский поиск
-      href: https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/customsearch?view=azure-java-stable
-    - name: Java — пользовательский поиск изображений
-      href: https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/customimagesearch?view=azure-java-stable
-    - name: Python
-      href: https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/customsearch?view=azure-python
-    - name: Node.js
-      href: https://docs.microsoft.com/javascript/api/overview/azure/cognitiveservices/customsearch?view=azure-node-latest
-    - name: Go — пользовательский поиск
-      href: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/customsearch
-    - name: Go — пользовательский поиск изображений
-      href: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/customimagesearch
+    - name: Справочник по API пользовательского автозаполнения Bing
+      href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-autosuggest-api-v7-reference'
+    - name: Справочник по API поиска пользовательских изображений Bing
+      href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-images-api-v7-reference'
+    - name: Справочник по API пользовательского поиска Bing
+      href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-search-api-v7-reference'
+    - name: Справочник по API Bing для пользовательского поиска видео
+      href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-videos-api-v7-reference'
+    - name: Требования к использованию и отображению API-интерфейсов поиска Bing
+      href: ../Bing-Web-Search/use-display-requirements.md
+      maintainContext: true
+    - name: Пакеты SDK
+      items:
+        - name: .NET
+          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-dotnet'
+        - name: "Java\_— пользовательский поиск"
+          href: 'https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/customsearch?view=azure-java-stable'
+        - name: "Java\_— пользовательский поиск изображений"
+          href: 'https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/customimagesearch?view=azure-java-stable'
+        - name: Python
+          href: 'https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/customsearch?view=azure-python'
+        - name: Node.js
+          href: 'https://docs.microsoft.com/javascript/api/overview/azure/cognitiveservices/customsearch?view=azure-node-latest'
+        - name: "Go\_— пользовательский поиск"
+          href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/customsearch'
+        - name: "Go\_— пользовательский поиск изображений"
+          href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/customimagesearch'
 - name: Ресурсы
   items:
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/cognitive-services/bing-custom-search/
-  - name: UserVoice
-    href: https://cognitive.uservoice.com/forums/598147-bing-custom-search-api
-  - name: Переполнение стека
-    href: https://stackoverflow.com/search?q=bing+custom+search
-  - name: Доступ по регионам
-    href: https://azure.microsoft.com/global-infrastructure/services/
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/
-  - name: База знаний
-    href: https://cognitive.uservoice.com/knowledgebase/topics/127875-bing-search-web-image-video-news-autosuggest
-  - name: Получение ключа API
-    href: https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search-api
-  - name: Тестирование
-    href: https://aka.ms/bingcustomsearchtryit
-  - name: Конечные точки Пользовательского поиска Bing
-    href: endpoint-custom.md
-  - name: Поддержка языков и региональных параметров
-    href: language-support.md
-ms.openlocfilehash: eee327b77fa3c0d46d47bb3ac6644fb175249618
-ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57568904"
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/bing-custom-search/'
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/598147-bing-custom-search-api'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/search?q=bing+custom+search'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: База знаний
+      href: 'https://cognitive.uservoice.com/knowledgebase/topics/127875-bing-search-web-image-video-news-autosuggest'
+    - name: Получение ключа API
+      href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search-api'
+    - name: Тестирование
+      href: 'https://aka.ms/bingcustomsearchtryit'
+    - name: Конечные точки Пользовательского поиска Bing
+      href: endpoint-custom.md
+    - name: Поддержка языков и региональных параметров
+      href: language-support.md

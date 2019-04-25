@@ -1,195 +1,188 @@
-items:
 - name: Документация по Центрам событий
   href: ./index.yml
 - name: Обзор
   items:
-  - name: Что такое Центры событий?
-    href: event-hubs-about.md
-  - name: Центры событий для Apache Kafka
-    href: event-hubs-for-kafka-ecosystem-overview.md
-  - name: Функция "Сбор" в Центрах событий
-    href: event-hubs-capture-overview.md
-  - name: Выделенные Центры событий
-    href: event-hubs-dedicated-overview.md
+    - name: Что такое Центры событий?
+      href: event-hubs-about.md
+    - name: Центры событий для Apache Kafka
+      href: event-hubs-for-kafka-ecosystem-overview.md
+    - name: Функция "Сбор" в Центрах событий
+      href: event-hubs-capture-overview.md
+    - name: Выделенные Центры событий
+      href: event-hubs-dedicated-overview.md
 - name: Быстрое начало работы
-  items:
-  - name: Создание концентратора событий
-    items:
-    - name: Портал Azure
-      href: event-hubs-create.md
-    - name: Инфраструктура CLI Azure
-      href: event-hubs-quickstart-cli.md
-    - name: Azure PowerShell
-      href: event-hubs-quickstart-powershell.md
-    - name: Шаблон Azure Resource Manager
-      href: event-hubs-resource-manager-namespace-event-hub.md
-  - name: Отправка и получение событий
-    items:
-    - name: .NET Core
-      href: event-hubs-dotnet-standard-getstarted-send.md
-    - name: .NET Framework
-      href: event-hubs-dotnet-framework-getstarted-send.md
-    - name: Java
-      href: event-hubs-java-get-started-send.md
-    - name: Python
-      href: event-hubs-python-get-started-send.md
-    - name: Node.js
-      href: event-hubs-node-get-started-send.md
-    - name: Go
-      href: event-hubs-go-get-started-send.md
-    - name: C (только отправка)
-      href: event-hubs-c-getstarted-send.md
-    - name: Apache Storm (только получение)
-      href: event-hubs-storm-getstarted-receive.md
-  - name: Регистрация событий
-    items:
-    - name: Использование портала Azure для включения функции "Сбор" в Центрах событий
-      href: event-hubs-capture-enable-through-portal.md
-    - name: Использование шаблона Resource Manager для включения функции "Сбор" в Центрах событий
-      href: event-hubs-resource-manager-namespace-event-hub-enable-capture.md
-    - name: Сбор данных в Центрах событий с помощью Python
-      href: event-hubs-capture-python.md
-  - name: Потоковая передача данных в Центры событий для Apache Kafka
-    href: event-hubs-quickstart-kafka-enabled-event-hubs.md
   expanded: true
+  items:
+    - name: Создание концентратора событий
+      items:
+        - name: Портал Azure
+          href: event-hubs-create.md
+        - name: Инфраструктура CLI Azure
+          href: event-hubs-quickstart-cli.md
+        - name: Azure PowerShell
+          href: event-hubs-quickstart-powershell.md
+        - name: Шаблон Azure Resource Manager
+          href: event-hubs-resource-manager-namespace-event-hub.md
+    - name: Отправка и получение событий
+      items:
+        - name: .NET Core
+          href: event-hubs-dotnet-standard-getstarted-send.md
+        - name: .NET Framework
+          href: event-hubs-dotnet-framework-getstarted-send.md
+        - name: Java
+          href: event-hubs-java-get-started-send.md
+        - name: Python
+          href: event-hubs-python-get-started-send.md
+        - name: Node.js
+          href: event-hubs-node-get-started-send.md
+        - name: Go
+          href: event-hubs-go-get-started-send.md
+        - name: C (только отправка)
+          href: event-hubs-c-getstarted-send.md
+        - name: Apache Storm (только получение)
+          href: event-hubs-storm-getstarted-receive.md
+    - name: Регистрация событий
+      items:
+        - name: Использование портала Azure для включения функции "Сбор" в Центрах событий
+          href: event-hubs-capture-enable-through-portal.md
+        - name: Использование шаблона Resource Manager для включения функции "Сбор" в Центрах событий
+          href: event-hubs-resource-manager-namespace-event-hub-enable-capture.md
+        - name: Сбор данных в Центрах событий с помощью Python
+          href: event-hubs-capture-python.md
+    - name: Потоковая передача данных в Центры событий для Apache Kafka
+      href: event-hubs-quickstart-kafka-enabled-event-hubs.md
 - name: Учебники
   items:
-  - name: Визуализация аномальных данных в потоках данных Центров событий
-    href: event-hubs-tutorial-visualize-anomalies.md
-  - name: Хранение собранных данных в Хранилище данных SQL
-    href: store-captured-data-data-warehouse.md
-  - name: Потоковая передача данных в Azure Databricks при помощи Центров событий
-    href: ../azure-databricks/databricks-stream-from-eventhubs.md
-    maintainContext: true
-  - name: Обеспечение интеграции виртуальных сетей и брандмауэров с пространством имен Центров событий
-    href: event-hubs-tutorial-virtual-networks-firewalls.md
-  - name: Центры событий для Apache Kafka
-    items:
-    - name: Зеркальное отображение брокера Kafka в концентраторе событий с поддержкой Apache Kafka
-      href: event-hubs-kafka-mirror-maker-tutorial.md
-    - name: Подключение Apache Spark к концентратору событий с поддержкой Apache Kafka
-      href: event-hubs-kafka-spark-tutorial.md
-    - name: Подключение Apache Flink к концентраторам событий с поддержкой Apache Kafka
-      href: event-hubs-kafka-flink-tutorial.md
-    - name: Интеграция поддержки Apache Kafka Connect в концентратор событий (предварительная версия)
-      href: event-hubs-kafka-connect-tutorial.md
-    - name: Подключение Akka Streams к концентраторам событий с поддержкой Apache Kafka
-      href: event-hubs-kafka-akka-streams-tutorial.md
+    - name: Визуализация аномальных данных в потоках данных Центров событий
+      href: event-hubs-tutorial-visualize-anomalies.md
+    - name: Хранение собранных данных в Хранилище данных SQL
+      href: store-captured-data-data-warehouse.md
+    - name: Потоковая передача данных в Azure Databricks при помощи Центров событий
+      href: ../azure-databricks/databricks-stream-from-eventhubs.md
+      maintainContext: true
+    - name: Обеспечение интеграции виртуальных сетей и брандмауэров с пространством имен Центров событий
+      href: event-hubs-tutorial-virtual-networks-firewalls.md
+    - name: Центры событий для Apache Kafka
+      items:
+        - name: Зеркальное отображение брокера Kafka в концентраторе событий с поддержкой Apache Kafka
+          href: event-hubs-kafka-mirror-maker-tutorial.md
+        - name: Подключение Apache Spark к концентратору событий с поддержкой Apache Kafka
+          href: event-hubs-kafka-spark-tutorial.md
+        - name: Подключение Apache Flink к концентраторам событий с поддержкой Apache Kafka
+          href: event-hubs-kafka-flink-tutorial.md
+        - name: Интеграция поддержки Apache Kafka Connect в концентратор событий (предварительная версия)
+          href: event-hubs-kafka-connect-tutorial.md
+        - name: Подключение Akka Streams к концентраторам событий с поддержкой Apache Kafka
+          href: event-hubs-kafka-akka-streams-tutorial.md
 - name: Примеры
   href: event-hubs-samples.md
 - name: Основные понятия
   items:
-  - name: Особенности Центров событий
-    href: event-hubs-features.md
-  - name: Общие сведения об узле обработчика событий
-    href: event-hubs-event-processor-host.md
-  - name: Руководство по программированию
-    href: event-hubs-programming-guide.md
-  - name: Управляемое удостоверение для ресурсов Azure
-    href: event-hubs-managed-service-identity.md
-  - name: Управление доступом на основе ролей (предварительная версия)
-    href: event-hubs-role-based-access-control.md
-  - name: Геоизбыточное аварийное восстановление и георепликация
-    href: event-hubs-geo-dr.md
-  - name: Общие сведения об аутентификации и безопасности
-    href: event-hubs-authentication-and-security-model-overview.md
-  - name: Доступность и согласованность
-    href: event-hubs-availability-and-consistency.md
-  - name: Руководство по использованию протокола AMQP 1.0
-    href: ../service-bus-messaging/service-bus-amqp-protocol-guide.md
-    maintainContext: true
+    - name: Особенности Центров событий
+      href: event-hubs-features.md
+    - name: Общие сведения об узле обработчика событий
+      href: event-hubs-event-processor-host.md
+    - name: Руководство по программированию
+      href: event-hubs-programming-guide.md
+    - name: Управляемое удостоверение для ресурсов Azure
+      href: event-hubs-managed-service-identity.md
+    - name: Управление доступом на основе ролей (предварительная версия)
+      href: event-hubs-role-based-access-control.md
+    - name: Геоизбыточное аварийное восстановление и георепликация
+      href: event-hubs-geo-dr.md
+    - name: Общие сведения об аутентификации и безопасности
+      href: event-hubs-authentication-and-security-model-overview.md
+    - name: Доступность и согласованность
+      href: event-hubs-availability-and-consistency.md
+    - name: "Руководство по использованию протокола AMQP\_1.0"
+      href: ../service-bus-messaging/service-bus-amqp-protocol-guide.md
+      maintainContext: true
 - name: Практические руководства
   items:
-  - name: Отправка, получение и запись событий с помощью Python
-    href: event-hubs-python.md
-  - name: Настройка журналов диагностики
-    href: event-hubs-diagnostic-logs.md
-  - name: Центры событий для Apache Kafka
-    items:
-    - name: Создание концентраторов событий с поддержкой Apache Kafka
-      href: event-hubs-create-kafka-enabled.md
-    - name: Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics
-      href: event-hubs-kafka-stream-analytics.md
-  - name: управление
-    items:
-    - name: Мониторинг Центров событий с помощью Azure Monitor
-      href: event-hubs-metrics-azure-monitor.md
-    - name: Библиотеки управления Центров событий
-      href: event-hubs-management-libraries.md
-  - name: Получение строки подключения Центров событий
-    href: event-hubs-get-connection-string.md
-  - name: Разработка Java
-    items:
+    - name: 'Отправка, получение и запись событий с помощью Python'
+      href: event-hubs-python.md
+    - name: Настройка журналов диагностики
+      href: event-hubs-diagnostic-logs.md
+    - name: Центры событий для Apache Kafka
+      items:
+        - name: Создание концентраторов событий с поддержкой Apache Kafka
+          href: event-hubs-create-kafka-enabled.md
+        - name: Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics
+          href: event-hubs-kafka-stream-analytics.md
+    - name: управление
+      items:
+        - name: Мониторинг Центров событий с помощью Azure Monitor
+          href: event-hubs-metrics-azure-monitor.md
+        - name: Библиотеки управления Центров событий
+          href: event-hubs-management-libraries.md
+    - name: Получение строки подключения Центров событий
+      href: event-hubs-get-connection-string.md
+    - name: Разработка Java
+      items:
+        - name: Создание приложения Spring Cloud Stream Binder
+          href: /java/azure/spring-framework/configure-spring-cloud-stream-binder-java-app-azure-event-hub
+        - name: Использование начального приложения Spring Boot для Apache Kafka
+          href: /java/azure/spring-framework/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub
+    - name: Устранение неполадок
+      items:
+        - name: Исключения
+          href: event-hubs-messaging-exceptions.md
+    - name: Использование брандмауэров
+      href: event-hubs-ip-filtering.md
+    - name: Использование конечных точек службы виртуальной сети
+      href: event-hubs-service-endpoints.md
+    - name: Автоматическое масштабирование единиц пропускной способности
+      href: event-hubs-auto-inflate.md
+    - name: Потоковая передача данных системы диагностики Azure с помощью Центров событий
+      href: event-hubs-streaming-azure-diags-data.md
+    - name: Обмен событиями между приложениями с использованием разных протоколов
+      href: event-hubs-exchange-events-different-protocols.md
     - name: Создание приложения Spring Cloud Stream Binder
-      href: /java/azure/spring-framework/configure-spring-cloud-stream-binder-java-app-azure-event-hub
-    - name: Использование начального приложения Spring Boot для Apache Kafka
-      href: /java/azure/spring-framework/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub
-  - name: Устранение неполадок
-    items:
-    - name: Исключения
-      href: event-hubs-messaging-exceptions.md
-  - name: Использование брандмауэров
-    href: event-hubs-ip-filtering.md
-  - name: Использование конечных точек службы виртуальной сети
-    href: event-hubs-service-endpoints.md
-  - name: Автоматическое масштабирование единиц пропускной способности
-    href: event-hubs-auto-inflate.md
-  - name: Потоковая передача данных системы диагностики Azure с помощью Центров событий
-    href: event-hubs-streaming-azure-diags-data.md
-  - name: Обмен событиями между приложениями с использованием разных протоколов
-    href: event-hubs-exchange-events-different-protocols.md
-  - name: Создание приложения Spring Cloud Stream Binder
-    href: /java/azure/spring-framework/configure-spring-cloud-stream-binder-java-app-azure-event-hub?view=azure-java-stable
-    maintainContext: true
+      href: /java/azure/spring-framework/configure-spring-cloud-stream-binder-java-app-azure-event-hub?view=azure-java-stable
+      maintainContext: true
 - name: Справочные материалы
   items:
-  - name: Java
-    items:
-    - name: com.microsoft.azure.eventhubs
-      href: /java/api/com.microsoft.azure.eventhubs
-    - name: com.microsoft.azure.eventprocessorhost
-      href: /java/api/com.microsoft.azure.eventprocessorhost
-  - name: .NET
-    items:
-    - name: Microsoft.Azure.EventHubs
-      href: /dotnet/api/microsoft.azure.eventhubs
-    - name: Microsoft.Azure.EventHubs.Processor
-      href: /dotnet/api/microsoft.azure.eventhubs.processor
-    - name: Microsoft.ServiceBus.Messaging
-      href: /dotnet/api/microsoft.servicebus.messaging
-    - name: Microsoft.ServiceBus.Messaging.EventProcessorHost
-      href: /dotnet/api/microsoft.servicebus.messaging.eventprocessorhost
-    - name: Microsoft.Azure.Management.EventHub
-      href: /dotnet/api/microsoft.azure.management.eventhub
-  - name: Node.js
-    href: /javascript/api/overview/azure/event-hub?view=azure-node-latest
-  - name: REST
-    href: /rest/api/eventhub
-  - name: Шаблон Resource Manager
-    href: /azure/templates/microsoft.eventhub/allversions
-  - name: Квоты
-    href: event-hubs-quotas.md
+    - name: Java
+      items:
+        - name: com.microsoft.azure.eventhubs
+          href: /java/api/com.microsoft.azure.eventhubs
+        - name: com.microsoft.azure.eventprocessorhost
+          href: /java/api/com.microsoft.azure.eventprocessorhost
+    - name: .NET
+      items:
+        - name: Microsoft.Azure.EventHubs
+          href: /dotnet/api/microsoft.azure.eventhubs
+        - name: Microsoft.Azure.EventHubs.Processor
+          href: /dotnet/api/microsoft.azure.eventhubs.processor
+        - name: Microsoft.ServiceBus.Messaging
+          href: /dotnet/api/microsoft.servicebus.messaging
+        - name: Microsoft.ServiceBus.Messaging.EventProcessorHost
+          href: /dotnet/api/microsoft.servicebus.messaging.eventprocessorhost
+        - name: Microsoft.Azure.Management.EventHub
+          href: /dotnet/api/microsoft.azure.management.eventhub
+    - name: Node.js
+      href: /javascript/api/overview/azure/event-hub?view=azure-node-latest
+    - name: REST
+      href: /rest/api/eventhub
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.eventhub/allversions
+    - name: Квоты
+      href: event-hubs-quotas.md
 - name: Ресурсы
   items:
-  - name: Развитие навыков с помощью Microsoft Learn
-    href: /learn/browse/?products=azure-event-hubs
-  - name: Часто задаваемые вопросы
-    href: event-hubs-faq.md
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=iot
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/event-hubs/
-  - name: Калькулятор цен
-    href: https://azure.microsoft.com/pricing/calculator/
-  - name: Обновления службы
-    href: https://azure.microsoft.com/updates/?product=event-hubs
-  - name: Переполнение стека
-    href: https://stackoverflow.com/questions/tagged/azure-eventhub
-  - name: Видеоролики
-    href: https://azure.microsoft.com/documentation/videos/index/?services=event-hubs
-ms.openlocfilehash: 76b72dfcd7db1e27be5a94af35da1e83f104e75e
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59681001"
+    - name: Развитие навыков с помощью Microsoft Learn
+      href: /learn/browse/?products=azure-event-hubs
+    - name: Часто задаваемые вопросы
+      href: event-hubs-faq.md
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=iot'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/event-hubs/'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=event-hubs'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/azure-eventhub'
+    - name: Видеоролики
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=event-hubs'

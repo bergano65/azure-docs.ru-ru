@@ -1,10 +1,4 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: f0d4a689e783f8c460ee54b3613ac0fe432b59ad
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57862800"
 documentType: LandingData
 title: Edge Интернета вещей Azure
 metadata:
@@ -18,46 +12,46 @@ metadata:
   ms.date: 03/13/2019
   ms.author: kgremban
 abstract:
-  description: Azure IoT Edge — это служба Интернета вещей на основе Центра Интернета вещей. Эта служба предназначена для клиентов, которым необходимо анализировать данные на так называемых пограничных устройствах, а не в облаке. В результате перемещения части рабочей нагрузки в пограничную область устройства тратят меньше времени на отправку сообщений в облако и быстрее реагируют на изменения в состоянии.
+  description: 'Azure IoT Edge — это служба Интернета вещей на основе Центра Интернета вещей. Эта служба предназначена для клиентов, которым необходимо анализировать данные на так называемых пограничных устройствах, а не в облаке. В результате перемещения части рабочей нагрузки в пограничную область устройства тратят меньше времени на отправку сообщений в облако и быстрее реагируют на изменения в состоянии.'
   aside:
     image:
-      alt: 
+      alt: null
       height: 110
       src: ./media/index/iot-edge-thumbnail.png
       width: 250
-    title: Создание интеллектуальной границы с помощью Azure IoT Edge (6:59)
-    href: https://channel9.msdn.com/Shows/Internet-of-Things-Show/Creating-the-intelligent-edge-with-Azure-IoT-Edge
+    title: 'Создание интеллектуальной границы с помощью Azure IoT Edge (6:59)'
+    href: 'https://channel9.msdn.com/Shows/Internet-of-Things-Show/Creating-the-intelligent-edge-with-Azure-IoT-Edge'
     width: 250
 sections:
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: Создайте виртуальную машину Azure, настройте ее для запуска в качестве устройства IoT Edge и разверните в ней код.
-  - type: list
-    style: icon48
+  - title: 5-минутные руководства по началу работы
     items:
-    - image:
-        src: https://docs.microsoft.com/media/logos/logo_Windows.svg
-      text: " Windows"
-      href: /azure/iot-edge/quickstart
-    - image:
-        src: https://docs.microsoft.com/media/logos/logo_linux-color.svg
-      text: Linux
-      href: /azure/iot-edge/quickstart-linux
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: Узнайте, как установить и настроить IoT Edge, развернуть модули и использовать службы Azure, например Stream Analytics и Пользовательскую службу визуального распознавания, на пограничных устройствах.
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: "Создайте виртуальную машину Azure, настройте ее для запуска в качестве устройства IoT\_Edge и разверните в ней код."
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/logos/logo_Windows.svg'
+            text: ' Windows'
+            href: /azure/iot-edge/quickstart
+          - image:
+              src: 'https://docs.microsoft.com/media/logos/logo_linux-color.svg'
+            text: Linux
+            href: /azure/iot-edge/quickstart-linux
+  - title: Пошаговые руководства
     items:
-    - html: <a href="/azure/iot-edge/tutorial-deploy-function">Фильтрация сообщений с помощью службы "Функции Azure"</a>
-    - html: <a href="/azure/iot-edge/tutorial-deploy-stream-analytics">Определение средних значений с помощью решения Azure Stream Analytics, используемого в качестве модуля</a>
-    - html: <a href="/azure/iot-edge/tutorial-deploy-machine-learning">Оценка данных с помощью службы "Машинное обучение Azure", используемой в качестве модуля</a>
-    - html: <a href="/azure/iot-edge/tutorial-deploy-custom-vision">Классификация изображений с использованием Пользовательской службы визуального распознавания в качестве модуля</a>
-    - html: <a href="/azure/iot-edge/tutorial-csharp-module">Фильтрация данных с помощью модуля C#</a>
-    - html: <a href="/azure/iot-edge/tutorial-python-module">Фильтрация данных с помощью модуля Python</a>
-    - html: <a href="/azure/iot-edge/tutorial-node-module">Фильтрация данных с помощью модуля Node.js</a>
-    - html: <a href="/azure/iot-edge/tutorial-java-module">Фильтрация данных с помощью модуля Java</a>
-    - html: <a href="/azure/iot-edge/tutorial-c-module">Фильтрация данных с помощью модуля C</a>
-    - html: <a href="/azure/iot-edge/tutorial-store-data-sql-server">Хранение данных в граничной системе с помощью SQL Server</a>
+      - type: paragraph
+        text: 'Узнайте, как установить и настроить IoT Edge, развернуть модули и использовать службы Azure, например Stream Analytics и Пользовательскую службу визуального распознавания, на пограничных устройствах.'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/azure/iot-edge/tutorial-deploy-function">Фильтрация сообщений с помощью службы "Функции Azure"</a>
+          - html: '<a href="/azure/iot-edge/tutorial-deploy-stream-analytics">Определение средних значений с помощью решения Azure Stream Analytics, используемого в качестве модуля</a>'
+          - html: '<a href="/azure/iot-edge/tutorial-deploy-machine-learning">Оценка данных с помощью службы "Машинное обучение Azure", используемой в качестве модуля</a>'
+          - html: <a href="/azure/iot-edge/tutorial-deploy-custom-vision">Классификация изображений с использованием Пользовательской службы визуального распознавания в качестве модуля</a>
+          - html: '<a href="/azure/iot-edge/tutorial-csharp-module">Фильтрация данных с помощью модуля C#</a>'
+          - html: <a href="/azure/iot-edge/tutorial-python-module">Фильтрация данных с помощью модуля Python</a>
+          - html: <a href="/azure/iot-edge/tutorial-node-module">Фильтрация данных с помощью модуля Node.js</a>
+          - html: <a href="/azure/iot-edge/tutorial-java-module">Фильтрация данных с помощью модуля Java</a>
+          - html: <a href="/azure/iot-edge/tutorial-c-module">Фильтрация данных с помощью модуля C</a>
+          - html: <a href="/azure/iot-edge/tutorial-store-data-sql-server">Хранение данных в граничной системе с помощью SQL Server</a>

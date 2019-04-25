@@ -1,25 +1,18 @@
-items:
 - name: Интернет вещей Azure
   href: index.md
 - name: Обзор
   items:
-  - name: Введение
-    href: iot-introduction.md
-  - name: Службы и технологии безопасности служб Azure IoT
-    href: iot-services-and-technologies.md
+    - name: Введение
+      href: iot-introduction.md
+    - name: Службы и технологии безопасности служб Azure IoT
+      href: iot-services-and-technologies.md
 - name: Безопасность
   items:
-  - name: Архитектура безопасности
-    href: iot-security-architecture.md
-  - name: Рекомендации по обеспечению безопасности
-    href: iot-security-best-practices.md
-  - name: Безопасное развертывание
-    href: iot-security-deployment.md
-  - name: Все аспекты безопасности
-    href: iot-security-ground-up.md
-ms.openlocfilehash: dc5c08ea2a3376b4213e83495ff1dce697338d82
-ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57336722"
+    - name: Архитектура безопасности
+      href: iot-security-architecture.md
+    - name: Рекомендации по обеспечению безопасности
+      href: iot-security-best-practices.md
+    - name: Безопасное развертывание
+      href: iot-security-deployment.md
+    - name: Все аспекты безопасности
+      href: iot-security-ground-up.md

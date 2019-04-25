@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: jeconnoc
 ms.openlocfilehash: a2eff2ca2e72ad263e3e23d0827e7603bca3fdcb
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58917482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60520920"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
@@ -232,7 +232,7 @@ ms.locfileid: "58917482"
 1. В **обозревателе решений** щелкните правой кнопкой мыши пункт **ContosoAdsWeb** в области **Роли** проекта **ContosoAdsCloudService**, а затем выберите **Свойства**.
 
     ![Свойства роли](./media/cloud-services-dotnet-get-started/roleproperties.png)
-2. Перейдите на вкладку **Параметры** . В раскрывающемся списке Конфигурация службы выберите значение **Облако**.
+2. Перейдите на вкладку **Параметры** . В раскрывающемся списке **Конфигурация службы** выберите значение **Облако**.
 
     ![Конфигурация облака](./media/cloud-services-dotnet-get-started/sccloud.png)
 3. Выберите запись **StorageConnectionString**, и вы увидите кнопку с многоточием (**...**) в правом конце строки. Нажмите эту кнопку с многоточием, чтобы открыть диалоговое окно **Создание строки подключения учетной записи хранения** .
@@ -391,7 +391,7 @@ ms.locfileid: "58917482"
 8. Там же в окне свойств **ContosoAdsWorker [роль]** добавьте другую строку подключения:
 
    * Имя: ContosoAdsDbConnectionString.
-   * Тип: Строка
+   * Тип: String
    * Значение: вставьте ту же строку подключения, которая была использована для проекта веб-роли. (Этот пример предназначен для Visual Studio 2013. Не забудьте изменить источник данных при копировании этого примера для Visual Studio 2015 или более поздней версии.)
 
        ```

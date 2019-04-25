@@ -1,16 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 8385fe5ecb9a6e17d872795ba4eff5c038e4df47
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58199875"
 documentType: LandingData
 title: Документация по поиску Azure
 metadata:
-  document_id: 
-  title: Документация по службе "Поиск Azure". Учебные материалы, краткие руководства и справочники по API
-  description: Узнайте, как создать решение для корпоративного поиска по частному разнородному контенту с помощью службы "Поиск Azure". В руководствах, справочниках по API и другой документации описано, как объединить доступное для поиска содержимое в один быстрый индекс, запрашиваемый с помощью расширяемого синтаксиса для различных сценариев.
+  document_id: null
+  title: 'Документация по службе "Поиск Azure". Учебные материалы, краткие руководства и справочники по API'
+  description: 'Узнайте, как создать решение для корпоративного поиска по частному разнородному контенту с помощью службы "Поиск Azure". В руководствах, справочниках по API и другой документации описано, как объединить доступное для поиска содержимое в один быстрый индекс, запрашиваемый с помощью расширяемого синтаксиса для различных сценариев.'
   services: search
   author: HeidiSteen
   manager: cgronlun
@@ -20,55 +14,55 @@ metadata:
   ms.date: 01/18/2019
   ms.author: heidist
 abstract:
-  description: Узнайте, как создать решение для корпоративного поиска по частному разнородному контенту с помощью службы "Поиск Azure". В руководствах, справочниках по API и другой документации описано, как объединить доступное для поиска содержимое в один быстрый индекс, запрашиваемый с помощью расширяемого синтаксиса для различных сценариев. <p/><a href="/azure/search/cognitive-search-concept-intro"><b>Предварительная версия новой функции "Когнитивный поиск".</b></a> Используйте предварительную версию REST API для привязки на алгоритмов на основе ИИ к конвейеру индексирования. Извлекайте данные и осуществляйте обработку естественного языка, а также изображений, чтобы преобразовать необработанное и неструктурированное содержимое в доступные для поиска материалы с помощью индексирования в службе "Поиск Azure". <p/>Изучите возможности когнитивного поиска с помощью <a href="/azure/search/cognitive-search-quickstart-blob">ресурсов и примеров данных</a> или ознакомьтесь с <a href="/azure/search/cognitive-search-concept-intro">основными понятиями</a>.
+  description: 'Узнайте, как создать решение для корпоративного поиска по частному разнородному контенту с помощью службы "Поиск Azure". В руководствах, справочниках по API и другой документации описано, как объединить доступное для поиска содержимое в один быстрый индекс, запрашиваемый с помощью расширяемого синтаксиса для различных сценариев. <p/><a href="/azure/search/cognitive-search-concept-intro"><b>Предварительная версия новой функции "Когнитивный поиск".</b></a> Используйте предварительную версию REST API для привязки на алгоритмов на основе ИИ к конвейеру индексирования. Извлекайте данные и осуществляйте обработку естественного языка, а также изображений, чтобы преобразовать необработанное и неструктурированное содержимое в доступные для поиска материалы с помощью индексирования в службе "Поиск Azure". <p/>Изучите возможности когнитивного поиска с помощью <a href="/azure/search/cognitive-search-quickstart-blob">ресурсов и примеров данных</a> или ознакомьтесь с <a href="/azure/search/cognitive-search-concept-intro">основными понятиями</a>.'
   aside:
     image:
-      alt: 
+      alt: null
       height: 110
-      src: https://docs.microsoft.com/azure/search/media/index/search-page-callouts3.png
+      src: 'https://docs.microsoft.com/azure/search/media/index/search-page-callouts3.png'
       width: 250
-    title: Что такое Поиск Azure (1:27)
-    href: https://channel9.msdn.com/Blogs/Azure/What-is-Azure-Search/player
+    title: 'Что такое Поиск Azure (1:27)'
+    href: 'https://channel9.msdn.com/Blogs/Azure/What-is-Azure-Search/player'
     width: 250
 sections:
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: Начните работу со службой "Поиск" на портале, чтобы определять, загружать и отправлять запросы к индексам на C# или REST.
-  - type: list
-    style: icon48
+  - title: 5-минутные руководства по началу работы
     items:
-    - image:
-        src: /azure/search/media/index/portal.svg
-      text: Портал Azure
-      href: https://docs.microsoft.com/azure/search/search-create-service-portal
-    - image:
-        src: /azure/search/media/index/logo_Csharp.svg
-      text: .NET
-      href: https://docs.microsoft.com/azure/search/search-create-index-dotnet
-    - image:
-        src: /azure/search/media/index/rest.svg
-      text: REST
-      href: https://docs.microsoft.com/azure/search/search-fiddler
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: Напишите код на .NET или REST или попробуйте быстро протестировать концепцию с помощью портала.
-  - type: list
-    style: ordered
+      - type: paragraph
+        text: 'Начните работу со службой "Поиск" на портале, чтобы определять, загружать и отправлять запросы к индексам на C# или REST.'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: /azure/search/media/index/portal.svg
+            text: Портал Azure
+            href: 'https://docs.microsoft.com/azure/search/search-create-service-portal'
+          - image:
+              src: /azure/search/media/index/logo_Csharp.svg
+            text: .NET
+            href: 'https://docs.microsoft.com/azure/search/search-create-index-dotnet'
+          - image:
+              src: /azure/search/media/index/rest.svg
+            text: REST
+            href: 'https://docs.microsoft.com/azure/search/search-fiddler'
+  - title: Пошаговые руководства
     items:
-    - html: <a href="/azure/search/cognitive-search-tutorial-blob">Индексирование с помощью средств ИИ (Cognitive Services)</a>
-    - html: <a href="/azure/search/search-howto-dotnet-sdk">Использование службы "Поиск Azure" в приложении .NET</a>
-    - html: <a href="/azure/search/search-indexer-tutorial">Индексирование содержимого Базы данных SQL Microsoft Azure с использованием .NET</a>
-    - html: <a href="/azure/search/search-semi-structured-data">Индексирование частично структурированных данных в хранилище BLOB-объектов с использованием REST</a>
-    - html: <a href="/azure/search/search-get-started-portal">Индексирование и тестирование запросов на портале</a>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: paragraph
+        text: Напишите код на .NET или REST или попробуйте быстро протестировать концепцию с помощью портала.
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="/azure/search/cognitive-search-tutorial-blob">Индексирование с помощью средств ИИ (Cognitive Services)</a>
+          - html: <a href="/azure/search/search-howto-dotnet-sdk">Использование службы "Поиск Azure" в приложении .NET</a>
+          - html: <a href="/azure/search/search-indexer-tutorial">Индексирование содержимого Базы данных SQL Microsoft Azure с использованием .NET</a>
+          - html: <a href="/azure/search/search-semi-structured-data">Индексирование частично структурированных данных в хранилище BLOB-объектов с использованием REST</a>
+          - html: <a href="/azure/search/search-get-started-portal">Индексирование и тестирование запросов на портале</a>
+  - title: Справочные материалы
     items:
-    - title: Languages
-      html: <p><a href="/dotnet/api/?term=microsoft.azure.search">.NET</a></p><p><a href="/dotnet/api/?term=microsoft.azure.management.search">.NET (управление)</a></p><p><a href="https://docs.microsoft.com/python/api/?view=azure-python&term=search">Python (управление)</a></p>
-    - title: REST
-      html: <p><a href="/rest/api/searchservice">Справочник по API службы</a></p><p><a href="/rest/api/searchmanagement">Справочник по API для управления</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Languages
+            html: '<p><a href="/dotnet/api/?term=microsoft.azure.search">.NET</a></p><p><a href="/dotnet/api/?term=microsoft.azure.management.search">.NET (управление)</a></p><p><a href="https://docs.microsoft.com/python/api/?view=azure-python&term=search">Python (управление)</a></p>'
+          - title: REST
+            html: <p><a href="/rest/api/searchservice">Справочник по API службы</a></p><p><a href="/rest/api/searchmanagement">Справочник по API для управления</a></p>

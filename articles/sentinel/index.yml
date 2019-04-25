@@ -1,14 +1,8 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 5f1d6005dd94bc700682e749f08c47356fcdc829
-ms.sourcegitcommit: f7f4b83996640d6fa35aea889dbf9073ba4422f0
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56993339"
 documentType: LandingData
 title: Документация по Azure Sentinel (предварительная версия)
 metadata:
-  title: Документация по Azure Sentinel (предварительная версия). Руководства и краткие инструкции | Документация Майкрософт
+  title: "Документация по Azure Sentinel (предварительная версия). Руководства и краткие инструкции\_| Документация Майкрософт"
   meta.description: Azure Sentinel is a cloud-native SIEM that provides intelligent security analytics for your entire enterprise at cloud scale.
   services: sentinel
   author: cmcclister
@@ -20,49 +14,49 @@ metadata:
   ms.date: 02/28/19
   ms.author: cmcclister
 abstract:
-  description: Azure Sentinel (предварительная версия) — это облачная служба управления информационной безопасностью и событиями безопасности, которая обеспечивает интеллектуальную аналитику безопасности всего предприятия в масштабах облака. Неограниченная облачная скорость и масштабируемость позволят вам сосредоточиться на том, что действительно важно. Легко собирайте данные из всех своих облачных и локальных ресурсов, а также из Office 365, ресурсов Azure и других облаков. Успешно обнаруживайте угрозы благодаря встроенному машинному обучению от экспертов по аналитике безопасности корпорации Майкрософт. Автоматизируйте реагирование на угрозы с помощью встроенных сборников схем для оркестрации и автоматизации.
+  description: "Azure Sentinel (предварительная версия)\_— это облачная служба управления информационной безопасностью и событиями безопасности, которая обеспечивает интеллектуальную аналитику безопасности всего предприятия в масштабах облака. Неограниченная облачная скорость и масштабируемость позволят вам сосредоточиться на том, что действительно важно. Легко собирайте данные из всех своих облачных и локальных ресурсов, а также из Office\_365, ресурсов Azure и других облаков. Успешно обнаруживайте угрозы благодаря встроенному машинному обучению от экспертов по аналитике безопасности корпорации Майкрософт. Автоматизируйте реагирование на угрозы с помощью встроенных сборников схем для оркестрации и автоматизации."
 sections:
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: Узнайте, как подключиться к Azure Sentinel, чтобы отслеживать свои данные и потенциальные угрозы.
-  - type: list
-    style: icon48
+  - title: 5-минутные руководства по началу работы
     items:
-    - image:
-        src: media/index/deploy.svg
-      text: Подключение к Azure Sentinel
-      href: /azure/sentinel/quickstart-onboard
-    - image:
-        src: media/index/get-started.svg
-      text: Начало работы с Azure Sentinel
-      href: /azure/sentinel/quickstart-get-visibility
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: Узнайте, как определить политики безопасности, защитить ресурсы от вредоносных действий и реагировать на предупреждения и инциденты безопасности.
-  - type: list
-    style: ordered
+      - type: paragraph
+        text: 'Узнайте, как подключиться к Azure Sentinel, чтобы отслеживать свои данные и потенциальные угрозы.'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: media/index/deploy.svg
+            text: Подключение к Azure Sentinel
+            href: /azure/sentinel/quickstart-onboard
+          - image:
+              src: media/index/get-started.svg
+            text: Начало работы с Azure Sentinel
+            href: /azure/sentinel/quickstart-get-visibility
+  - title: Пошаговые руководства
     items:
-    - html: <a href="/azure/sentinel/tutorial-detect-threats">Обнаружение угроз с помощью Azure Sentinel</a>
-    - html: <a href="/azure/sentinel/tutorial-respond-threats-playbook">Настройка автоматического реагирования на угрозы</a>
-- title: Развитие навыков с помощью Microsoft Learn
-  items:
-  - type: list
-    style: cards
-    className: cardsFTitle
+      - type: paragraph
+        text: 'Узнайте, как определить политики безопасности, защитить ресурсы от вредоносных действий и реагировать на предупреждения и инциденты безопасности.'
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="/azure/sentinel/tutorial-detect-threats">Обнаружение угроз с помощью Azure Sentinel</a>
+          - html: <a href="/azure/sentinel/tutorial-respond-threats-playbook">Настройка автоматического реагирования на угрозы</a>
+  - title: Развитие навыков с помощью Microsoft Learn
     items:
-    - title: Общие сведения о системе безопасности в Azure
-      href: https://docs.microsoft.com/learn/azure
-      image:
-        src: media/index/tutorial.svg
-        href: https://docs.microsoft.com/learn/azure
-  - type: paragraph
-    text: <a href="/learn/browse/?term=security">Другие интерактивные руководства</a>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: list
+        style: cards
+        className: cardsFTitle
+        items:
+          - title: Общие сведения о системе безопасности в Azure
+            href: 'https://docs.microsoft.com/learn/azure'
+            image:
+              src: media/index/tutorial.svg
+              href: 'https://docs.microsoft.com/learn/azure'
+      - type: paragraph
+        text: <a href="/learn/browse/?term=security">Другие интерактивные руководства</a>
+  - title: Справочные материалы
     items:
-    - html: <a href="https://azure.microsoft.com/updates/?product=sentinel">Обновления службы</a>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - html: '<a href="https://azure.microsoft.com/updates/?product=sentinel">Обновления службы</a>'

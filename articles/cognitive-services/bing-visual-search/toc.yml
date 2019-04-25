@@ -1,99 +1,92 @@
-items:
 - name: Документация по API для визуального поиска
   href: index.yml
 - name: Обзор
   items:
-  - name: Что такое API для визуального поиска?
-    href: overview.md
-  - name: Сравнение API-интерфейсов поиска Bing
-    href: ../Bing-Web-Search/bing-api-comparison.md
-    maintainContext: true
+    - name: Что такое API для визуального поиска?
+      href: overview.md
+    - name: Сравнение API-интерфейсов поиска Bing
+      href: ../Bing-Web-Search/bing-api-comparison.md
+      maintainContext: true
 - name: Быстрое начало работы
   items:
-  - name: REST API
-    items:
-    - name: Использование C#
-      href: quickstarts/csharp.md
-    - name: Использование Java
-      href: quickstarts/java.md
-    - name: Использование Node.js
-      href: quickstarts/nodejs.md
-    - name: Использование Python
-      href: quickstarts/python.md
-    - name: Использование Ruby
-      href: quickstarts/ruby.md
-    - name: Использование Go
-      href: quickstarts/go.md
-    expanded: true
-  - name: SDK
-    items:
-    - name: Использование C#
-      href: visual-search-sdk-c-sharp.md
-    - name: Использование Node.js
-      href: visual-search-sdk-node.md
-    - name: Использование Python
-      href: visual-search-sdk-python.md
-    expanded: true
+    - name: REST API
+      expanded: true
+      items:
+        - name: 'Использование C#'
+          href: quickstarts/csharp.md
+        - name: Использование Java
+          href: quickstarts/java.md
+        - name: Использование Node.js
+          href: quickstarts/nodejs.md
+        - name: Использование Python
+          href: quickstarts/python.md
+        - name: Использование Ruby
+          href: quickstarts/ruby.md
+        - name: Использование Go
+          href: quickstarts/go.md
+    - name: SDK
+      expanded: true
+      items:
+        - name: 'Использование C#'
+          href: visual-search-sdk-c-sharp.md
+        - name: Использование Node.js
+          href: visual-search-sdk-node.md
+        - name: Использование Python
+          href: visual-search-sdk-python.md
 - name: Учебники
   items:
-  - name: Отправка изображения
-    href: tutorial-visual-search-image-upload.md
-  - name: Обрезка и поиск области изображения
-    href: tutorial-visual-search-crop-area-results.md
+    - name: Отправка изображения
+      href: tutorial-visual-search-image-upload.md
+    - name: Обрезка и поиск области изображения
+      href: tutorial-visual-search-crop-area-results.md
 - name: Примеры
   items:
-  - name: Примеры кода
-    href: https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+Visual+Search
+    - name: Примеры кода
+      href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+Visual+Search'
 - name: Основные понятия
   items:
-  - name: Отправка запросов
-    href: concepts/sending-queries.md
-  - name: Сведения об изображениях по умолчанию
-    href: default-insights-tag.md
-  - name: Использование аналитики Bing
-    href: bing-insights-usage.md
-  - name: Аналитика для API визуального поиска
-    href: bing-visual-search-stats.md
+    - name: Отправка запросов
+      href: concepts/sending-queries.md
+    - name: Сведения об изображениях по умолчанию
+      href: default-insights-tag.md
+    - name: Использование аналитики Bing
+      href: bing-insights-usage.md
+    - name: Аналитика для API визуального поиска
+      href: bing-visual-search-stats.md
 - name: Практические руководства
   items:
-  - name: Получение сведений с помощью маркеров
-    href: use-insights-token.md
-  - name: Изменение размера и обрезка эскизов
-    href: resize-and-crop-thumbnails.md
-  - name: Поиск изображения с помощью токенов аналитических сведений об изображении
-    href: tutorial-visual-search-insights-token.md
-  - name: Создание одностраничного веб-приложения
-    href: tutorial-bing-visual-search-single-page-app.md
+    - name: Получение сведений с помощью маркеров
+      href: use-insights-token.md
+    - name: Изменение размера и обрезка эскизов
+      href: resize-and-crop-thumbnails.md
+    - name: Поиск изображения с помощью токенов аналитических сведений об изображении
+      href: tutorial-visual-search-insights-token.md
+    - name: Создание одностраничного веб-приложения
+      href: tutorial-bing-visual-search-single-page-app.md
 - name: Справочные материалы
   items:
-  - name: REST API версии 7
-    href: https://aka.ms/bingvisualsearchreferencedoc
-  - name: Пакеты SDK
-    items:
-    - name: .NET
-      href: https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingvisualsearch?view=azure-dotnet
-    - name: Java
-      href: https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/visualsearch?view=azure-java-stable
-    - name: Python
-      href: https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/visualsearch?view=azure-python
-  - name: Требования к использованию и отображению
-    href: ../Bing-Web-Search/use-display-requirements.md
-    maintainContext: true
+    - name: REST API версии 7
+      href: 'https://aka.ms/bingvisualsearchreferencedoc'
+    - name: Пакеты SDK
+      items:
+        - name: .NET
+          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingvisualsearch?view=azure-dotnet'
+        - name: Java
+          href: 'https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/visualsearch?view=azure-java-stable'
+        - name: Python
+          href: 'https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/visualsearch?view=azure-python'
+    - name: Требования к использованию и отображению
+      href: ../Bing-Web-Search/use-display-requirements.md
+      maintainContext: true
 - name: Ресурсы
   items:
-  - name: Поддержка языков и региональных параметров
-    href: language-support.md
-  - name: Получение бесплатной учетной записи
-    href: https://azure.microsoft.com/try/cognitive-services/?api=bing-visual-search-api
-  - name: Тестирование
-    href: https://aka.ms/bingvisualsearchtryforfree
-  - name: Переполнение стека
-    href: https://stackoverflow.com/questions/tagged/bing-search
-  - name: Мнение пользователей
-    href: https://cognitive.uservoice.com/forums/555907-bing-search
-ms.openlocfilehash: 13e61130d7cd1225b00251991540a963c61b0b83
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57314897"
+    - name: Поддержка языков и региональных параметров
+      href: language-support.md
+    - name: Получение бесплатной учетной записи
+      href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-visual-search-api'
+    - name: Тестирование
+      href: 'https://aka.ms/bingvisualsearchtryforfree'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/bing-search'
+    - name: Мнение пользователей
+      href: 'https://cognitive.uservoice.com/forums/555907-bing-search'

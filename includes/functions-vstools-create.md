@@ -5,15 +5,16 @@ services: functions
 author: ggailey777
 ms.service: azure-functions
 ms.topic: include
-ms.date: 03/05/2019
-ms.author: glenga
+origin.date: 03/05/2019
+ms.date: 03/25/2019
+ms.author: v-junlch
 ms.custom: include file
 ms.openlocfilehash: 6c430f22a9d4fa0fad95bcaa41675545fffd91ec
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58227224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60403868"
 ---
 С помощью шаблона проекта функций Azure в Visual Studio можно создать проект, который затем можно опубликовать в приложении-функции в Azure. Вы можете использовать приложение-функцию, чтобы группировать функции в логические единицы для развертывания и совместного использования ресурсов, а также управления ими.
 
@@ -38,3 +39,4 @@ ms.locfileid: "58227224"
     > Убедитесь, что для **прав доступа** установлено значение `Anonymous`. Если вы выберете для `Function` уровень по умолчанию, вы должны указать [функциональную клавишу](../articles/azure-functions/functions-bindings-http-webhook.md#authorization-keys) в запросах на доступ к конечной точке функции.
     
 4. Нажмите кнопку **ОК**, чтобы создать проект функции и функцию, активируемую с помощью HTTP.
+

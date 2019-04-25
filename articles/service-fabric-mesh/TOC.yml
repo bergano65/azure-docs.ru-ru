@@ -1,108 +1,101 @@
-items:
 - name: Документация по Сетке Service Fabric
   href: index.yml
 - name: Обзор
-  items:
-  - name: Сведения о Сетке Service Fabric
-    href: service-fabric-mesh-overview.md
   expanded: true
+  items:
+    - name: Сведения о Сетке Service Fabric
+      href: service-fabric-mesh-overview.md
 - name: Быстрое начало работы
   items:
-  - name: Развертывание приложения Hello World
-    href: service-fabric-mesh-quickstart-deploy-container.md
-  - name: Создание веб-приложения с помощью Visual Studio
-    href: service-fabric-mesh-quickstart-dotnet-core.md
+    - name: Развертывание приложения Hello World
+      href: service-fabric-mesh-quickstart-deploy-container.md
+    - name: Создание веб-приложения с помощью Visual Studio
+      href: service-fabric-mesh-quickstart-dotnet-core.md
 - name: Учебники
   items:
-  - name: Создание и развертывание приложения для Сетки в Visual Studio
-    items:
-    - name: 1. Создание приложения для Сетки
-      href: service-fabric-mesh-tutorial-create-dotnetcore.md
-    - name: 2. Отладка приложения для Сетки
-      href: service-fabric-mesh-tutorial-debug-service-fabric-mesh-app.md
-    - name: 3. Развертывание приложения для Сетки
-      href: service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md
-    - name: 4. Обновление приложения для Сетки
-      href: service-fabric-mesh-tutorial-upgrade.md
-    - name: 5. Очистка ресурсов Сетки
-      href: service-fabric-mesh-tutorial-cleanup-resources.md
-  - name: Развертывание, масштабирование и обновление приложения для Сетки Service Fabric с помощью шаблона
-    items:
-    - name: 1. Развертывание приложения для Сетки Service Fabric
-      href: service-fabric-mesh-tutorial-template-deploy-app.md
-    - name: 2. Масштабирование служб в приложении
-      href: service-fabric-mesh-tutorial-template-scale-services.md
-    - name: 3. Обновление приложения
-      href: service-fabric-mesh-tutorial-template-upgrade-app.md
-    - name: 4. Удаление приложения
-      href: service-fabric-mesh-tutorial-template-remove-app.md
+    - name: Создание и развертывание приложения для Сетки в Visual Studio
+      items:
+        - name: 1. Создание приложения для Сетки
+          href: service-fabric-mesh-tutorial-create-dotnetcore.md
+        - name: 2. Отладка приложения для Сетки
+          href: service-fabric-mesh-tutorial-debug-service-fabric-mesh-app.md
+        - name: 3. Развертывание приложения для Сетки
+          href: service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md
+        - name: 4. Обновление приложения для Сетки
+          href: service-fabric-mesh-tutorial-upgrade.md
+        - name: 5. Очистка ресурсов Сетки
+          href: service-fabric-mesh-tutorial-cleanup-resources.md
+    - name: 'Развертывание, масштабирование и обновление приложения для Сетки Service Fabric с помощью шаблона'
+      items:
+        - name: 1. Развертывание приложения для Сетки Service Fabric
+          href: service-fabric-mesh-tutorial-template-deploy-app.md
+        - name: 2. Масштабирование служб в приложении
+          href: service-fabric-mesh-tutorial-template-scale-services.md
+        - name: 3. Обновление приложения
+          href: service-fabric-mesh-tutorial-template-upgrade-app.md
+        - name: 4. Удаление приложения
+          href: service-fabric-mesh-tutorial-template-remove-app.md
 - name: Основные понятия
   items:
-  - name: Терминология
-    href: service-fabric-mesh-terminology.md
-  - name: Ресурсы Service Fabric
-    href: service-fabric-mesh-service-fabric-resources.md
-  - name: Сети и шлюзы
-    href: service-fabric-mesh-networks-and-gateways.md
-  - name: Масштабируемость службы
-    href: service-fabric-mesh-scalability.md
-  - name: Мониторинг и диагностика.
-    href: service-fabric-mesh-monitoring-diagnostics.md
-  - name: Хранение сведений о состояниях
-    href: service-fabric-mesh-storing-state.md
-  - name: Секреты
-    href: service-fabric-mesh-secrets-overview.md
+    - name: Терминология
+      href: service-fabric-mesh-terminology.md
+    - name: Ресурсы Service Fabric
+      href: service-fabric-mesh-service-fabric-resources.md
+    - name: Сети и шлюзы
+      href: service-fabric-mesh-networks-and-gateways.md
+    - name: Масштабируемость службы
+      href: service-fabric-mesh-scalability.md
+    - name: Мониторинг и диагностика.
+      href: service-fabric-mesh-monitoring-diagnostics.md
+    - name: Хранение сведений о состояниях
+      href: service-fabric-mesh-storing-state.md
+    - name: Секреты
+      href: service-fabric-mesh-secrets-overview.md
 - name: Практические руководства
   items:
-  - name: Настройка среды разработки
-    href: service-fabric-mesh-howto-setup-developer-environment-sdk.md
-  - name: Настройка CLI для Сетки Service Fabric
-    href: service-fabric-mesh-howto-setup-cli.md
-  - name: Контейнеризация существующего приложения .NET
-    href: service-fabric-mesh-howto-containerize-vs.md
-  - name: Оптимизация производительности Visual Studio
-    href: service-fabric-mesh-howto-optimize-vs.md
-  - name: Настройка ресурсов шлюза
-    href: service-fabric-mesh-howto-configure-gateways.md
-  - name: Автоматическое масштабирование служб
-    href: service-fabric-mesh-howto-auto-scale-services.md
-  - name: Хранение сведений о состояниях в томе службы файлов Azure
-    href: service-fabric-mesh-howto-deploy-app-azurefiles-volume.md
-  - name: Хранение сведений о состоянии в томе надежного диска Service Fabric
-    href: service-fabric-mesh-howto-deploy-app-sfreliable-disk-volume.md
-  - name: Управление секретами
-    href: service-fabric-mesh-howto-manage-secrets.md
-  - name: Поиск примеров
-    href: service-fabric-mesh-howto-find-samples.md
+    - name: Настройка среды разработки
+      href: service-fabric-mesh-howto-setup-developer-environment-sdk.md
+    - name: Настройка CLI для Сетки Service Fabric
+      href: service-fabric-mesh-howto-setup-cli.md
+    - name: Контейнеризация существующего приложения .NET
+      href: service-fabric-mesh-howto-containerize-vs.md
+    - name: Оптимизация производительности Visual Studio
+      href: service-fabric-mesh-howto-optimize-vs.md
+    - name: Настройка ресурсов шлюза
+      href: service-fabric-mesh-howto-configure-gateways.md
+    - name: Автоматическое масштабирование служб
+      href: service-fabric-mesh-howto-auto-scale-services.md
+    - name: Хранение сведений о состояниях в томе службы файлов Azure
+      href: service-fabric-mesh-howto-deploy-app-azurefiles-volume.md
+    - name: Хранение сведений о состоянии в томе надежного диска Service Fabric
+      href: service-fabric-mesh-howto-deploy-app-sfreliable-disk-volume.md
+    - name: Управление секретами
+      href: service-fabric-mesh-howto-manage-secrets.md
+    - name: Поиск примеров
+      href: service-fabric-mesh-howto-find-samples.md
 - name: Справочные материалы
   items:
-  - name: Интерфейсы REST API поставщика ресурсов службы "Сетка Service Fabric"
-    href: /rest/api/servicefabric/sfmeshrp-index
-  - name: Интерфейсы REST API ресурсов клиента Service Fabric
-    href: /rest/api/servicefabric/sfclient-index#service-fabric-resource-model
-  - name: Справочник по CLI Maven для Service Fabric
-    href: service-fabric-mesh-reference-maven.md
-  - name: Шаблон Resource Manager
-    href: /azure/templates/microsoft.servicefabricmesh/allversions
+    - name: Интерфейсы REST API поставщика ресурсов службы "Сетка Service Fabric"
+      href: /rest/api/servicefabric/sfmeshrp-index
+    - name: Интерфейсы REST API ресурсов клиента Service Fabric
+      href: '/rest/api/servicefabric/sfclient-index#service-fabric-resource-model'
+    - name: Справочник по CLI Maven для Service Fabric
+      href: service-fabric-mesh-reference-maven.md
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.servicefabricmesh/allversions
 - name: Ресурсы
   items:
-  - name: Часто задаваемые вопросы
-    href: service-fabric-mesh-faq.md
-  - name: Примеры приложений
-    href: https://github.com/Azure-Samples/service-fabric-mesh
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=service-fabric-mesh
-  - name: Переполнение стека
-    href: https://stackoverflow.com/search?q=service-fabric-mesh
-  - name: Видеоролики
-    href: https://azure.microsoft.com/documentation/videos/index/?services=service-fabric
-  - name: Обновления службы
-    href: https://azure.microsoft.com/updates/?product=service-fabric-mesh
-  - name: Доступ по регионам
-    href: https://azure.microsoft.com/regions/services/
-ms.openlocfilehash: dc098445928ca07eb29260c650321e17f00c7dfe
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54353980"
+    - name: Часто задаваемые вопросы
+      href: service-fabric-mesh-faq.md
+    - name: Примеры приложений
+      href: 'https://github.com/Azure-Samples/service-fabric-mesh'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=service-fabric-mesh'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/search?q=service-fabric-mesh'
+    - name: Видеоролики
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=service-fabric'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=service-fabric-mesh'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/regions/services/'

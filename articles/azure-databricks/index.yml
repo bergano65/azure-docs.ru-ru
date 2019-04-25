@@ -1,15 +1,9 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 0a1c495362ef38723c61eace25ebb13ec9ed3a6a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57883650"
 documentType: LandingData
 title: Документация по Azure Databricks
 metadata:
   title: Документация по Azure Databricks
-  description: Узнайте, как использовать Azure Databricks, из кратких руководств и других материалов, ссылки на которые приведены здесь. Azure Databricks — это платформа аналитики на основе Apache Spark, оптимизированная для платформы облачных служб Microsoft Azure.
+  description: 'Узнайте, как использовать Azure Databricks, из кратких руководств и других материалов, ссылки на которые приведены здесь. Azure Databricks — это платформа аналитики на основе Apache Spark, оптимизированная для платформы облачных служб Microsoft Azure.'
   services: azure-databricks
   author: mamccrea
   ms.service: azure-databricks
@@ -17,48 +11,48 @@ metadata:
   ms.date: 03/19/2018
   ms.author: mamccrea
 abstract:
-  description: Узнайте, как использовать Azure Databricks, платформу для аналитики на базе Apache Spark. Платформа настраивается одним щелчком, упрощает рабочие процессы и предоставляет интерактивную рабочую область, в которой могут совместно работать инженеры данных, бизнес-аналитики, а также специалисты по обработке и анализу данных. В кратких руководствах и учебных материалах объясняется, как приступить к работе с Azure Databricks и интегрировать ее с другими службами Azure.
+  description: 'Узнайте, как использовать Azure Databricks, платформу для аналитики на базе Apache Spark. Платформа настраивается одним щелчком, упрощает рабочие процессы и предоставляет интерактивную рабочую область, в которой могут совместно работать инженеры данных, бизнес-аналитики, а также специалисты по обработке и анализу данных. В кратких руководствах и учебных материалах объясняется, как приступить к работе с Azure Databricks и интегрировать ее с другими службами Azure.'
   aside:
     image:
-      alt: 
+      alt: null
       height: 110
       src: media/index/video.png
       width: 250
-    title: Общие сведения об Azure Databricks (3:38)
-    href: https://azure.microsoft.com/resources/videos/connect-2017-introduction-to-azure-databricks/
+    title: 'Общие сведения об Azure Databricks (3:38)'
+    href: 'https://azure.microsoft.com/resources/videos/connect-2017-introduction-to-azure-databricks/'
     width: 250
 sections:
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: 'Узнайте, как создать рабочую область Azure Databricks и кластер Spark, а затем запускать задания с помощью следующих средств:'
-  - type: list
-    style: icon48
+  - title: 5-минутные руководства по началу работы
     items:
-    - image:
-        src: /azure/azure-databricks/media/index/portal.svg
-      text: Портал Azure
-      href: /azure/azure-databricks/quickstart-create-databricks-workspace-portal
-    - image:
-        src: /azure/azure-databricks/media/index/logo_azure_resource_manager.svg
-      text: Шаблон Resource Manager
-      href: /azure/azure-databricks/quickstart-create-databricks-workspace-resource-manager-template
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: 'Сведения о работе с Azure Databricks:'
-  - type: list
-    style: ordered
+      - type: paragraph
+        text: 'Узнайте, как создать рабочую область Azure Databricks и кластер Spark, а затем запускать задания с помощью следующих средств:'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: /azure/azure-databricks/media/index/portal.svg
+            text: Портал Azure
+            href: /azure/azure-databricks/quickstart-create-databricks-workspace-portal
+          - image:
+              src: /azure/azure-databricks/media/index/logo_azure_resource_manager.svg
+            text: Шаблон Resource Manager
+            href: /azure/azure-databricks/quickstart-create-databricks-workspace-resource-manager-template
+  - title: Пошаговые руководства
     items:
-    - html: <a href="/azure/azure-databricks/databricks-extract-load-sql-data-warehouse">Извлечение, преобразование и загрузка данных</a>
-    - html: <a href="/azure/azure-databricks/databricks-stream-from-eventhubs">Потоковая передача данных из Центров событий</a>
-    - html: <a href="/azure/azure-databricks/databricks-sentiment-analysis-cognitive-services">Анализ тональности с помощью Cognitive Services</a>
-    - html: <a href="https://docs.azuredatabricks.net/spark/latest/structured-streaming/kafka.html" target="_blank">Потоковая передача данных из HDInsight Kafka</a>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: paragraph
+        text: 'Сведения о работе с Azure Databricks:'
+      - type: list
+        style: ordered
+        items:
+          - html: '<a href="/azure/azure-databricks/databricks-extract-load-sql-data-warehouse">Извлечение, преобразование и загрузка данных</a>'
+          - html: <a href="/azure/azure-databricks/databricks-stream-from-eventhubs">Потоковая передача данных из Центров событий</a>
+          - html: <a href="/azure/azure-databricks/databricks-sentiment-analysis-cognitive-services">Анализ тональности с помощью Cognitive Services</a>
+          - html: '<a href="https://docs.azuredatabricks.net/spark/latest/structured-streaming/kafka.html" target="_blank">Потоковая передача данных из HDInsight Kafka</a>'
+  - title: Справочные материалы
     items:
-    - title: REST
-      html: <p><a href="/rest/api/databricks">REST API</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: REST
+            html: <p><a href="/rest/api/databricks">REST API</a></p>

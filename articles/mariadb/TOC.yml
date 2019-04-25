@@ -1,174 +1,167 @@
-items:
 - name: Документация по базе данных Azure для MariaDB
   href: index.yml
 - name: Обзор
   items:
-  - name: Что такое База данных Azure для MariaDB?
-    href: overview.md
+    - name: Что такое База данных Azure для MariaDB?
+      href: overview.md
 - name: Быстрое начало работы
-  items:
-  - name: Создание базы данных с помощью портала
-    href: quickstart-create-mariadb-server-database-using-azure-portal.md
-  - name: Создание базы данных с помощью Azure CLI
-    href: quickstart-create-mariadb-server-database-using-azure-cli.md
-  - name: Подключение и запросы
-    items:
-    - name: MySQL Workbench
-      href: connect-workbench.md
   expanded: true
+  items:
+    - name: Создание базы данных с помощью портала
+      href: quickstart-create-mariadb-server-database-using-azure-portal.md
+    - name: Создание базы данных с помощью Azure CLI
+      href: quickstart-create-mariadb-server-database-using-azure-cli.md
+    - name: Подключение и запросы
+      items:
+        - name: MySQL Workbench
+          href: connect-workbench.md
 - name: Учебники
   items:
-  - name: Проектирование базы данных
-    items:
-    - name: Портал Azure
-      href: tutorial-design-database-using-portal.md
-    - name: Инфраструктура CLI Azure
-      href: tutorial-design-database-cli.md
+    - name: Проектирование базы данных
+      items:
+        - name: Портал Azure
+          href: tutorial-design-database-using-portal.md
+        - name: Инфраструктура CLI Azure
+          href: tutorial-design-database-cli.md
 - name: Примеры
   items:
-  - name: Инфраструктура CLI Azure
-    href: sample-scripts-azure-cli.md
+    - name: Инфраструктура CLI Azure
+      href: sample-scripts-azure-cli.md
 - name: Основные понятия
   items:
-  - name: Серверы и базы данных
-    items:
-    - name: Серверы
-      href: concepts-servers.md
-    - name: Поддерживаемые версии
-      href: concepts-supported-versions.md
-    - name: высокую доступность;
-      href: concepts-high-availability.md
-  - name: Ресурсы
-    items:
-    - name: Ценовые категории
-      href: concepts-pricing-tiers.md
-    - name: Ограничения
-      href: concepts-limits.md
-  - name: Доступ к данным и безопасность
-    items:
-    - name: Правила файрволла
-      href: concepts-firewall-rules.md
-    - name: Настройка SSL
-      href: concepts-ssl-connection-security.md
-    - name: Виртуальная сеть
-      href: concepts-data-access-security-vnet.md
-  - name: Непрерывность бизнес-процессов
-    items:
-    - name: Обзор
-      href: concepts-business-continuity.md
-    - name: Архивация и восстановление
-      href: concepts-backup.md
-  - name: Мониторинг
-    items:
+    - name: Серверы и базы данных
+      items:
+        - name: Серверы
+          href: concepts-servers.md
+        - name: Поддерживаемые версии
+          href: concepts-supported-versions.md
+        - name: высокую доступность;
+          href: concepts-high-availability.md
+    - name: Ресурсы
+      items:
+        - name: Ценовые категории
+          href: concepts-pricing-tiers.md
+        - name: Ограничения
+          href: concepts-limits.md
+    - name: Доступ к данным и безопасность
+      items:
+        - name: Правила файрволла
+          href: concepts-firewall-rules.md
+        - name: Настройка SSL
+          href: concepts-ssl-connection-security.md
+        - name: Виртуальная сеть
+          href: concepts-data-access-security-vnet.md
+    - name: Непрерывность бизнес-процессов
+      items:
+        - name: Обзор
+          href: concepts-business-continuity.md
+        - name: Архивация и восстановление
+          href: concepts-backup.md
     - name: Мониторинг
-      href: concepts-monitoring.md
-    - name: Журналы сервера
-      href: concepts-server-logs.md
-  - name: Разработка
-    items:
-    - name: Совместимость драйверов и инструментов
-      href: concepts-compatibility.md
-    - name: Устойчивость подключения
-      href: concepts-connectivity.md
-  - name: Репликация
-    items:
-    - name: Репликация входных данных
-      href: concepts-data-in-replication.md
+      items:
+        - name: Мониторинг
+          href: concepts-monitoring.md
+        - name: Журналы сервера
+          href: concepts-server-logs.md
+    - name: Разработка
+      items:
+        - name: Совместимость драйверов и инструментов
+          href: concepts-compatibility.md
+        - name: Устойчивость подключения
+          href: concepts-connectivity.md
+    - name: Репликация
+      items:
+        - name: Репликация входных данных
+          href: concepts-data-in-replication.md
 - name: Практические руководства
   items:
-  - name: Правила файрволла
-    items:
-    - name: Портал Azure
-      href: howto-manage-firewall-portal.md
-    - name: Инфраструктура CLI Azure
-      href: howto-manage-firewall-cli.md
-  - name: Восстановление сервера
-    items:
-    - name: Портал Azure
-      href: howto-restore-server-portal.md
-    - name: Инфраструктура CLI Azure
-      href: howto-restore-server-cli.md
-  - name: Перенос базы данных
-    items:
-    - name: Дамп и восстановление
-      href: howto-migrate-dump-restore.md
-  - name: Подключение приложений
-    items:
-    - name: Создание пользователей
-      href: howto-create-users.md
-    - name: Строки подключения
-      href: howto-connection-string.md
-    - name: Настройка SSL
-      href: howto-configure-ssl.md
-  - name: Настройка параметров сервера
-    items:
-    - name: Портал Azure
-      href: howto-server-parameters.md
-    - name: Инфраструктура CLI Azure
-      href: howto-configure-server-parameters-cli.md
-  - name: Доступ к журналам сервера
-    items:
-    - name: Портал Azure
-      href: howto-configure-server-logs-portal.md
-    - name: Инфраструктура CLI Azure
-      href: howto-configure-server-logs-cli.md
-  - name: Мониторинг
-    items:
-    - name: Создание оповещений на основе метрик
-      href: howto-alert-metric.md
-  - name: Репликация
-    items:
-    - name: Настройка репликации входных данных
-      href: howto-data-in-replication.md
-  - name: Устранение неполадок
-    items:
-    - name: Устранение ошибок подключения
-      href: howto-troubleshoot-common-connection-issues.md
-    - name: Решение проблем с производительностью запросов
-      href: howto-troubleshoot-query-performance.md
-  - name: Виртуальная сеть
-    items:
-    - name: Портал Azure
-      href: howto-manage-vnet-portal.md
-    - name: Инфраструктура CLI Azure
-      href: howto-manage-vnet-cli.md
-  - name: Перезапуск сервера
-    items:
-    - name: Портал Azure
-      href: howto-restart-server-portal.md
-    - name: Инфраструктура CLI Azure
-      href: howto-restart-server-cli.md
+    - name: Правила файрволла
+      items:
+        - name: Портал Azure
+          href: howto-manage-firewall-portal.md
+        - name: Инфраструктура CLI Azure
+          href: howto-manage-firewall-cli.md
+    - name: Восстановление сервера
+      items:
+        - name: Портал Azure
+          href: howto-restore-server-portal.md
+        - name: Инфраструктура CLI Azure
+          href: howto-restore-server-cli.md
+    - name: Перенос базы данных
+      items:
+        - name: Дамп и восстановление
+          href: howto-migrate-dump-restore.md
+    - name: Подключение приложений
+      items:
+        - name: Создание пользователей
+          href: howto-create-users.md
+        - name: Строки подключения
+          href: howto-connection-string.md
+        - name: Настройка SSL
+          href: howto-configure-ssl.md
+    - name: Настройка параметров сервера
+      items:
+        - name: Портал Azure
+          href: howto-server-parameters.md
+        - name: Инфраструктура CLI Azure
+          href: howto-configure-server-parameters-cli.md
+    - name: Доступ к журналам сервера
+      items:
+        - name: Портал Azure
+          href: howto-configure-server-logs-portal.md
+        - name: Инфраструктура CLI Azure
+          href: howto-configure-server-logs-cli.md
+    - name: Мониторинг
+      items:
+        - name: Создание оповещений на основе метрик
+          href: howto-alert-metric.md
+    - name: Репликация
+      items:
+        - name: Настройка репликации входных данных
+          href: howto-data-in-replication.md
+    - name: Устранение неполадок
+      items:
+        - name: Устранение ошибок подключения
+          href: howto-troubleshoot-common-connection-issues.md
+        - name: Решение проблем с производительностью запросов
+          href: howto-troubleshoot-query-performance.md
+    - name: Виртуальная сеть
+      items:
+        - name: Портал Azure
+          href: howto-manage-vnet-portal.md
+        - name: Инфраструктура CLI Azure
+          href: howto-manage-vnet-cli.md
+    - name: Перезапуск сервера
+      items:
+        - name: Портал Azure
+          href: howto-restart-server-portal.md
+        - name: Инфраструктура CLI Azure
+          href: howto-restart-server-cli.md
 - name: Справочные материалы
   items:
-  - name: Инфраструктура CLI Azure
-    href: /cli/azure/mariadb
-  - name: REST API
-    href: /rest/api/mariadb
-  - name: Шаблон Resource Manager
-    href: /azure/templates/microsoft.dbformariadb/allversions
-  - name: Хранимые процедуры репликации входных данных
-    href: reference-data-in-stored-procedures.md
+    - name: Инфраструктура CLI Azure
+      href: /cli/azure/mariadb
+    - name: REST API
+      href: /rest/api/mariadb
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.dbformariadb/allversions
+    - name: Хранимые процедуры репликации входных данных
+      href: reference-data-in-stored-procedures.md
 - name: Ресурсы
   items:
-  - name: Шаблоны развертывания
-    href: https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Dbformariadb
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=databases
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/mariadb/
-  - name: Форум MSDN
-    href: https://social.msdn.microsoft.com/forums/en-US/home?forum=AzureDatabaseforMariaDB
-  - name: Переполнение стека
-    href: https://stackoverflow.com/questions/tagged/azure-database-mariadb
-  - name: Запрос функции
-    href: https://feedback.azure.com/forums/915439-azure-database-for-mariadb
-  - name: Регионы доступности
-    href: https://azure.microsoft.com/regions/services/
-  - name: Варианты поддержки
-    href: https://azure.microsoft.com/support/options/
-ms.openlocfilehash: 1ad8ddc0cf189189b9457dabe6c2c2d665c838c3
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58621131"
+    - name: Шаблоны развертывания
+      href: 'https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Dbformariadb'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=databases'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/mariadb/'
+    - name: Форум MSDN
+      href: 'https://social.msdn.microsoft.com/forums/en-US/home?forum=AzureDatabaseforMariaDB'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/azure-database-mariadb'
+    - name: Запрос функции
+      href: 'https://feedback.azure.com/forums/915439-azure-database-for-mariadb'
+    - name: Регионы доступности
+      href: 'https://azure.microsoft.com/regions/services/'
+    - name: Варианты поддержки
+      href: 'https://azure.microsoft.com/support/options/'

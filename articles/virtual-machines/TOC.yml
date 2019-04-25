@@ -1,4 +1,3 @@
-items:
 - name: Документация по виртуальным машинам
   href: index.yml
 - name: Виртуальные машины Linux в Azure
@@ -9,29 +8,23 @@ items:
   href: extensions/overview.md
 - name: Рабочие нагрузки
   items:
-  - name: Oracle
-    href: workloads/oracle/oracle-considerations.md
-  - name: SAP
-    href: workloads/sap/get-started.md
-  - name: Повторное размещение мейнфреймов
-    href: workloads/mainframe-rehosting/overview.md
+    - name: Oracle
+      href: workloads/oracle/oracle-considerations.md
+    - name: SAP
+      href: workloads/sap/get-started.md
+    - name: Повторное размещение мейнфреймов
+      href: workloads/mainframe-rehosting/overview.md
 - name: Классические развертывания
   items:
-  - name: Виртуальные машины Linux (классическое развертывание)
-    href: linux/overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json
-  - name: Виртуальные машины Windows (классическое развертывание)
-    href: windows/overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json
+    - name: Виртуальные машины Linux (классическое развертывание)
+      href: linux/overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json
+    - name: Виртуальные машины Windows (классическое развертывание)
+      href: windows/overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json
 - name: Ресурсы
   items:
-  - name: Развитие навыков с помощью Microsoft Learn
-    href: /learn/browse/?products=azure-virtual-machines
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=compute
-  - name: Калькулятор цен
-    href: https://azure.microsoft.com/pricing/calculator/
-ms.openlocfilehash: 7f253c1ed2b4910e18acd65367cd8e0e10574c0d
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56737762"
+    - name: Развитие навыков с помощью Microsoft Learn
+      href: /learn/browse/?products=azure-virtual-machines
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=compute'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'

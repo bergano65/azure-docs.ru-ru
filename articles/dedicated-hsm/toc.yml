@@ -1,39 +1,32 @@
-items:
 - name: Документация по выделенному устройству HSM
   href: index.yml
 - name: Обзор
   items:
-  - name: Общие сведения о выделенном устройстве HSM
-    href: overview.md
+    - name: Общие сведения о выделенном устройстве HSM
+      href: overview.md
 - name: Учебники
   items:
-  - name: Развертывание устройств HSM в существующей виртуальной сети с помощью CLI
-    href: tutorial-deploy-hsm-cli.md
-  - name: Развертывание устройств HSM в существующей виртуальной сети с помощью PowerShell
-    href: tutorial-deploy-hsm-powershell.md
+    - name: Развертывание устройств HSM в существующей виртуальной сети с помощью CLI
+      href: tutorial-deploy-hsm-cli.md
+    - name: Развертывание устройств HSM в существующей виртуальной сети с помощью PowerShell
+      href: tutorial-deploy-hsm-powershell.md
 - name: Основные понятия
   items:
-  - name: высокую доступность;
-    href: high-availability.md
-  - name: Мониторинг
-    href: monitoring.md
-  - name: Сеть
-    href: Networking.md
-  - name: Физическая безопасность
-    href: physical-security.md
-  - name: Возможности поддержки
-    href: supportability.md
+    - name: высокую доступность;
+      href: high-availability.md
+    - name: Мониторинг
+      href: monitoring.md
+    - name: Сеть
+      href: Networking.md
+    - name: Физическая безопасность
+      href: physical-security.md
+    - name: Возможности поддержки
+      href: supportability.md
 - name: Практические руководства
   items:
-  - name: Выбор архитектуры развертывания
-    href: deployment-architecture.md
+    - name: Выбор архитектуры развертывания
+      href: deployment-architecture.md
 - name: Ресурсы
   items:
-  - name: Часто задаваемые вопросы
-    href: faq.md
-ms.openlocfilehash: f0efd79e23aef90f54a38602694a8636e0789804
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52317982"
+    - name: Часто задаваемые вопросы
+      href: faq.md

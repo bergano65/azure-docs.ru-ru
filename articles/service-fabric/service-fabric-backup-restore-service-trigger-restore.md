@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 10/30/2018
 ms.author: aagup
 ms.openlocfilehash: a82004fdd6bbb4eda0842670f210f846f9446384
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58667180"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60310882"
 ---
 # <a name="restoring-backup-in-azure-service-fabric"></a>Восстановление резервной копии в Azure Service Fabric
 
@@ -158,7 +158,7 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 
 Можно отслеживать ход восстановления с помощью TrackRestoreProgress.
 
-### <a name="data-restore-for-data-corruptiondata-loss"></a>Восстановление данных в случае _повреждения или потери данных_
+### <a name="data-restore-for-data-corruptiondata-loss"></a>Восстановление данных в случае _повреждения или потери данных_/__
 
 В случае _потери_ или _повреждения_ данных можно восстановить секции надежной службы с отслеживанием состояния и Reliable Actors из любой выбранной резервной копии (если они были созданы).
 

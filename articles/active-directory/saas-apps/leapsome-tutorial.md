@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Leapsome | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Leapsome | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Leapsome.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 06/22/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 37549cc76e1490b0758de8e296523b0e70c98dbf
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56191237"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60260628"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-leapsome"></a>Руководство. Интеграция Azure Active Directory с Leapsome
+# <a name="tutorial-azure-active-directory-integration-with-leapsome"></a>Руководство по Интеграция Azure Active Directory с Leapsome
 
 В этом руководстве описано, как интегрировать Leapsome с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56191237"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с приложением Leapsome, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "56191237"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://www.leapsome.com`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://www.leapsome.com/api/users/auth/saml/<CLIENTID>/assert`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://www.leapsome.com/api/users/auth/saml/<CLIENTID>/assert`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -143,11 +143,11 @@ ms.locfileid: "56191237"
 
     ![Настройка единого входа](./media/leapsome-tutorial/tutorial_attribute_05.png)
     
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    2. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
-    4.3. В текстовом поле **Пространство имен** введите URI пространства имен для этой строки.
+    d. В текстовом поле **Пространство имен** введите URI пространства имен для этой строки.
     
     д. Нажмите кнопку **ОК**.
 
@@ -175,11 +175,11 @@ ms.locfileid: "56191237"
 
     a. Установите флажок **Единый вход на основе SAML**.
 
-    б) Скопируйте значение в поле **Login URL (point your users here to start login) (URL-адрес входа, укажите его, чтобы пользователи начали вход)** и вставьте его в текстовое поле **URL-адрес входа** в разделе **домены и URL-адреса Leapsome** на портале Azure.
+    2. Скопируйте значение в поле **Login URL (point your users here to start login) (URL-адрес входа, укажите его, чтобы пользователи начали вход)** и вставьте его в текстовое поле **URL-адрес входа** в разделе **домены и URL-адреса Leapsome** на портале Azure.
 
     c. Скопируйте значение в поле **Reply URL (receives response from your identity provider)** (URL-адрес ответа (получает ответ от поставщика удостоверений)) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Домены и URL-адреса приложения Leapsome** на портале Azure.
 
-    4.3. В текстовое поле **SSO Login URL (provided by identity provider)** (URL-адрес единого входа, предоставленный поставщиком удостоверений) вставьте значение поля **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
+    d. В текстовое поле **SSO Login URL (provided by identity provider)** (URL-адрес единого входа, предоставленный поставщиком удостоверений) вставьте значение поля **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
 
     д. Скопируйте сертификат, скачанный на портале Azure, без комментариев --BEGIN CERTIFICATE и END CERTIFICATE--, и вставьте его в текстовое поле **Certificate (provided by identity provider)** (Сертификат (предоставленный поставщиком удостоверений)).
 
@@ -215,11 +215,11 @@ ms.locfileid: "56191237"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-leapsome-test-user"></a>Создание тестового пользователя Leapsome
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Leapsome. Обратитесь в  [службу поддержки клиентов Leapsome](mailto:support@leapsome.com), чтобы добавить домен или пользователей, которых нужно включить в список разрешенных на платформе Leapsome. Когда служба поддержки добавит домен, его пользователи будут автоматически подготовлены для платформы Leapsome. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении Leapsome. Обратитесь в  [службу поддержки клиентов Leapsome](mailto:support@leapsome.com), чтобы добавить домен или пользователей, которых нужно включить в список разрешенных на платформе Leapsome.  Когда служба поддержки добавит домен, его пользователи будут автоматически подготовлены для платформы Leapsome. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

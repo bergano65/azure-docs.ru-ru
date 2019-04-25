@@ -1,150 +1,143 @@
-items:
 - name: Реестр контейнеров Azure
   href: ./index.yml
 - name: Обзор
   items:
-  - name: Сведения о реестре контейнеров
-    href: container-registry-intro.md
+    - name: Сведения о реестре контейнеров
+      href: container-registry-intro.md
 - name: Быстрое начало работы
-  items:
-  - name: Создание реестра контейнеров — CLI
-    href: container-registry-get-started-azure-cli.md
-  - name: Создание реестра контейнеров — портал
-    href: container-registry-get-started-portal.md
-  - name: Создание реестра контейнеров — PowerShell
-    href: container-registry-get-started-powershell.md
-  - name: Создание и запуск образа — CLI
-    href: container-registry-quickstart-task-cli.md
-  - name: Отправка событий в Сетку событий — CLI
-    href: container-registry-event-grid-quickstart.md
   expanded: true
+  items:
+    - name: "Создание реестра контейнеров\_— CLI"
+      href: container-registry-get-started-azure-cli.md
+    - name: "Создание реестра контейнеров\_— портал"
+      href: container-registry-get-started-portal.md
+    - name: "Создание реестра контейнеров\_— PowerShell"
+      href: container-registry-get-started-powershell.md
+    - name: "Создание и запуск образа\_— CLI"
+      href: container-registry-quickstart-task-cli.md
+    - name: "Отправка событий в Сетку событий\_— CLI"
+      href: container-registry-event-grid-quickstart.md
 - name: Учебники
   items:
-  - name: Создание образов контейнеров
-    items:
-    - name: 1. Создание образов в Azure
-      href: container-registry-tutorial-quick-task.md
-    - name: 2. Автоматизация создания образов
-      href: container-registry-tutorial-build-task.md
-    - name: 3. Создание обновлений базовых образов
-      href: container-registry-tutorial-base-image-update.md
-  - name: Георепликация реестра
-    items:
-    - name: 1. Подготовка реестра контейнеров
-      href: container-registry-tutorial-prepare-registry.md
-    - name: 2. Развертывание веб-приложения
-      href: container-registry-tutorial-deploy-app.md
-    - name: 3. Обновление веб-приложения
-      href: container-registry-tutorial-deploy-update.md
+    - name: Создание образов контейнеров
+      items:
+        - name: 1. Создание образов в Azure
+          href: container-registry-tutorial-quick-task.md
+        - name: 2. Автоматизация создания образов
+          href: container-registry-tutorial-build-task.md
+        - name: 3. Создание обновлений базовых образов
+          href: container-registry-tutorial-base-image-update.md
+    - name: Георепликация реестра
+      items:
+        - name: 1. Подготовка реестра контейнеров
+          href: container-registry-tutorial-prepare-registry.md
+        - name: 2. Развертывание веб-приложения
+          href: container-registry-tutorial-deploy-app.md
+        - name: 3. Обновление веб-приложения
+          href: container-registry-tutorial-deploy-update.md
 - name: Основные понятия
   items:
-  - name: Номера SKU реестра контейнеров
-    href: container-registry-skus.md
-  - name: Хранилище изображений
-    href: container-registry-storage.md
-  - name: Форматы содержимого
-    href: container-registry-image-formats.md
-  - name: Георепликация
-    href: container-registry-geo-replication.md
-  - name: Роли и разрешения
-    href: container-registry-roles.md
-  - name: Рекомендации по использованию реестра
-    href: container-registry-best-practices.md
+    - name: Номера SKU реестра контейнеров
+      href: container-registry-skus.md
+    - name: Хранилище изображений
+      href: container-registry-storage.md
+    - name: Форматы содержимого
+      href: container-registry-image-formats.md
+    - name: Георепликация
+      href: container-registry-geo-replication.md
+    - name: Роли и разрешения
+      href: container-registry-roles.md
+    - name: Рекомендации по использованию реестра
+      href: container-registry-best-practices.md
 - name: Практические руководства
   items:
-  - name: Операции с реестром
-    items:
-    - name: Передача и получение образа
-      href: container-registry-get-started-docker-cli.md
-    - name: Просмотр списка репозиториев
-      href: container-registry-repositories.md
-    - name: Импорт образов контейнеров
-      href: container-registry-import-images.md
-    - name: Блокирование образов контейнеров
-      href: container-registry-image-lock.md
-    - name: Удаление образов контейнеров
-      href: container-registry-delete.md
-    - name: Обновление классического реестра
-      href: container-registry-upgrade.md
-    - name: Использование веб-перехватчиков ACR
-      href: container-registry-webhook.md
-    - name: Репозитории с чартами Helm (предварительная версия)
-      href: container-registry-helm-repos.md
-  - name: Безопасность и проверка подлинности
-    items:
-    - name: Ограничение доступа с помощью виртуальной сети (предварительная версия)
-      href: container-registry-vnet.md
-    - name: Общие сведения об аутентификации
-      href: container-registry-authentication.md
+    - name: Операции с реестром
       items:
-      - name: Проверка подлинности субъекта-службы
-        href: container-registry-auth-service-principal.md
-      - name: Проверка подлинности управляемого удостоверения
-        href: container-registry-authentication-managed-identity.md
-      - name: Проверка подлинности из службы "Экземпляры контейнеров Azure"
-        href: container-registry-auth-aci.md
-      - name: Проверка подлинности из Службы Azure Kubernetes (AKS)
-        href: container-registry-auth-aks.md
-    - name: Доверие к содержимому (предварительная версия)
-      href: container-registry-content-trust.md
-  - name: Сборка и применение исправлений
-    items:
-    - name: Задачи ACR
-      href: container-registry-tasks-overview.md
-    - name: Многошаговые задачи
-      href: container-registry-tasks-multi-step.md
-  - name: Реестры и другие службы Azure
-    items:
-    - name: Экземпляры контейнеров Azure
-      href: ../container-instances/container-instances-tutorial-prepare-app.md
-    - name: Служба Azure Kubernetes (AKS)
-      href: ../aks/tutorial-kubernetes-prepare-app.md
-    - name: Service Fabric
-      href: ../service-fabric/service-fabric-tutorial-create-container-images.md
+        - name: Передача и получение образа
+          href: container-registry-get-started-docker-cli.md
+        - name: Просмотр списка репозиториев
+          href: container-registry-repositories.md
+        - name: Импорт образов контейнеров
+          href: container-registry-import-images.md
+        - name: Блокирование образов контейнеров
+          href: container-registry-image-lock.md
+        - name: Удаление образов контейнеров
+          href: container-registry-delete.md
+        - name: Обновление классического реестра
+          href: container-registry-upgrade.md
+        - name: Использование веб-перехватчиков ACR
+          href: container-registry-webhook.md
+        - name: Репозитории с чартами Helm (предварительная версия)
+          href: container-registry-helm-repos.md
+    - name: Безопасность и проверка подлинности
+      items:
+        - name: Ограничение доступа с помощью виртуальной сети (предварительная версия)
+          href: container-registry-vnet.md
+        - name: Общие сведения об аутентификации
+          href: container-registry-authentication.md
+          items:
+            - name: Проверка подлинности субъекта-службы
+              href: container-registry-auth-service-principal.md
+            - name: Проверка подлинности управляемого удостоверения
+              href: container-registry-authentication-managed-identity.md
+            - name: Проверка подлинности из службы "Экземпляры контейнеров Azure"
+              href: container-registry-auth-aci.md
+            - name: Проверка подлинности из Службы Azure Kubernetes (AKS)
+              href: container-registry-auth-aks.md
+        - name: Доверие к содержимому (предварительная версия)
+          href: container-registry-content-trust.md
+    - name: Сборка и применение исправлений
+      items:
+        - name: Задачи ACR
+          href: container-registry-tasks-overview.md
+        - name: Многошаговые задачи
+          href: container-registry-tasks-multi-step.md
+    - name: Реестры и другие службы Azure
+      items:
+        - name: Экземпляры контейнеров Azure
+          href: ../container-instances/container-instances-tutorial-prepare-app.md
+        - name: Служба Azure Kubernetes (AKS)
+          href: ../aks/tutorial-kubernetes-prepare-app.md
+        - name: Service Fabric
+          href: ../service-fabric/service-fabric-tutorial-create-container-images.md
 - name: Справочные материалы
   items:
-  - name: Инфраструктура CLI Azure
-    href: /cli/azure/acr
-  - name: REST
-    href: /rest/api/containerregistry
-  - name: PowerShell
-    href: /powershell/module/az.containerregistry
-  - name: .NET
-    href: /dotnet/api/overview/azure/containerregistry
-  - name: Python
-    href: /python/api/overview/azure/container-registry
-  - name: Java
-    href: /java/api/overview/azure/containerregistry
-  - name: Node.js
-    href: /javascript/api/overview/azure/container-registry
-  - name: Шаблон Resource Manager
-    href: /azure/templates/microsoft.containerregistry/registries
-  - name: Задачи ACR — YAML
-    href: container-registry-tasks-reference-yaml.md
-  - name: Схема веб-перехватчика
-    href: container-registry-webhook-reference.md
-  - name: Схема "Сетка событий"
-    href: ../event-grid/event-schema-container-registry.md
-    maintainContext: true
+    - name: Инфраструктура CLI Azure
+      href: /cli/azure/acr
+    - name: REST
+      href: /rest/api/containerregistry
+    - name: PowerShell
+      href: /powershell/module/az.containerregistry
+    - name: .NET
+      href: /dotnet/api/overview/azure/containerregistry
+    - name: Python
+      href: /python/api/overview/azure/container-registry
+    - name: Java
+      href: /java/api/overview/azure/containerregistry
+    - name: Node.js
+      href: /javascript/api/overview/azure/container-registry
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.containerregistry/registries
+    - name: "Задачи ACR\_— YAML"
+      href: container-registry-tasks-reference-yaml.md
+    - name: Схема веб-перехватчика
+      href: container-registry-webhook-reference.md
+    - name: Схема "Сетка событий"
+      href: ../event-grid/event-schema-container-registry.md
+      maintainContext: true
 - name: Ресурсы
   items:
-  - name: Развитие навыков с помощью Microsoft Learn
-    href: /learn/browse/?products=azure-container-registry
-  - name: Регионы доступности
-    href: https://azure.microsoft.com/regions/services/
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/container-registry/
-  - name: Стратегия
-    href: https://aka.ms/acr/roadmap
-  - name: Отзыв о продукте
-    href: https://feedback.azure.com/forums/903958-azure-container-registry
-  - name: Переполнение стека
-    href: https://stackoverflow.com/questions/tagged/azure-container-registry
-  - name: Видеоролики
-    href: https://azure.microsoft.com/resources/videos/index/?services=container-registry&sort=newest
-ms.openlocfilehash: 987b70f527afe9b9d09eeef70c7fa706c3e58932
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59787655"
+    - name: Развитие навыков с помощью Microsoft Learn
+      href: /learn/browse/?products=azure-container-registry
+    - name: Регионы доступности
+      href: 'https://azure.microsoft.com/regions/services/'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/container-registry/'
+    - name: Стратегия
+      href: 'https://aka.ms/acr/roadmap'
+    - name: Отзыв о продукте
+      href: 'https://feedback.azure.com/forums/903958-azure-container-registry'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/azure-container-registry'
+    - name: Видеоролики
+      href: 'https://azure.microsoft.com/resources/videos/index/?services=container-registry&sort=newest'

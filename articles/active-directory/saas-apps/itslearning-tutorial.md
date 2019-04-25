@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с itslearning | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с itslearning | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении itslearning.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 06/17/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1a12fb0123e96c592a8af9fe04f6ff17f8fea62a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57900766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60270170"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-itslearning"></a>Руководство. Интеграция Azure Active Directory с itslearning
+# <a name="tutorial-azure-active-directory-integration-with-itslearning"></a>Руководство по Интеграция Azure Active Directory с itslearning
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением itslearning.
 
@@ -169,7 +169,7 @@ ms.locfileid: "57900766"
  
 ### <a name="creating-an-itslearning-test-user"></a>Создание тестового пользователя itslearning
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении itslearning. Чтобы добавить пользователей на платформу itslearning, обратитесь к [группе поддержки клиентов itslearning](mailto:support@itslearning.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении itslearning. Чтобы добавить пользователей на платформу itslearning, обратитесь к [группе поддержки клиентов itslearning](mailto:support@itslearning.com).  Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

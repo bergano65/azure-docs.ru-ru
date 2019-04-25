@@ -1,84 +1,77 @@
-items:
 - name: Документация по API автозаполнения Bing
   href: index.yml
 - name: Обзор
   items:
-  - name: Что такое API автозаполнения Bing?
-    href: get-suggested-search-terms.md
-  - name: Сравнение API-интерфейсов поиска Bing
-    href: ../Bing-Web-Search/bing-api-comparison.md
-    maintainContext: true
+    - name: Что такое API автозаполнения Bing?
+      href: get-suggested-search-terms.md
+    - name: Сравнение API-интерфейсов поиска Bing
+      href: ../Bing-Web-Search/bing-api-comparison.md
+      maintainContext: true
 - name: Краткие руководства по REST API
-  items:
-  - name: C#
-    href: quickstarts/csharp.md
-  - name: Java
-    href: quickstarts/java.md
-  - name: Node.js
-    href: quickstarts/nodejs.md
-  - name: PHP
-    href: quickstarts/php.md
-  - name: Python
-    href: quickstarts/python.md
-  - name: Ruby
-    href: quickstarts/ruby.md
   expanded: true
+  items:
+    - name: 'C#'
+      href: quickstarts/csharp.md
+    - name: Java
+      href: quickstarts/java.md
+    - name: Node.js
+      href: quickstarts/nodejs.md
+    - name: PHP
+      href: quickstarts/php.md
+    - name: Python
+      href: quickstarts/python.md
+    - name: Ruby
+      href: quickstarts/ruby.md
 - name: Учебники
   items:
-  - name: Одностраничные веб-приложения
-    href: tutorials/autosuggest.md
+    - name: Одностраничные веб-приложения
+      href: tutorials/autosuggest.md
 - name: Практические руководства
   items:
-  - name: Обновление с версии 5 до версии 7
-    href: bing-autosuggest-upgrade-guide-v5-to-v7.md
+    - name: Обновление с версии 5 до версии 7
+      href: bing-autosuggest-upgrade-guide-v5-to-v7.md
 - name: Основные понятия
   items:
-  - name: Предложение терминов запроса
-    href: concepts/get-suggestions.md
-  - name: Отправка запросов
-    href: concepts/sending-requests.md
+    - name: Предложение терминов запроса
+      href: concepts/get-suggestions.md
+    - name: Отправка запросов
+      href: concepts/sending-requests.md
 - name: Справочные материалы
   items:
-  - name: API автозаполнения Bing версии 7
-    href: https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v7-reference
-  - name: API автозаполнения Bing версии 5
-    href: https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference
-  - name: Пакеты SDK
-    items:
-    - name: .NET
-      href: https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingautosuggest?view=azure-dotnet
-    - name: Java
-      href: https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/autosuggest?view=azure-java-stable
-    - name: Go
-      href: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/autosuggest
-  - name: Требования к использованию и отображению
-    href: ../Bing-Web-Search/use-display-requirements.md
-    maintainContext: true
+    - name: API автозаполнения Bing версии 7
+      href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v7-reference'
+    - name: API автозаполнения Bing версии 5
+      href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference'
+    - name: Пакеты SDK
+      items:
+        - name: .NET
+          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingautosuggest?view=azure-dotnet'
+        - name: Java
+          href: 'https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/autosuggest?view=azure-java-stable'
+        - name: Go
+          href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/autosuggest'
+    - name: Требования к использованию и отображению
+      href: ../Bing-Web-Search/use-display-requirements.md
+      maintainContext: true
 - name: Ресурсы
   items:
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/cognitive-services/autosuggest-api/
-  - name: UserVoice
-    href: https://cognitive.uservoice.com/forums/598198-bing-autosuggest
-  - name: Переполнение стека
-    href: https://stackoverflow.com/search?q=bing+autosuggest
-  - name: Доступ по регионам
-    href: https://azure.microsoft.com/global-infrastructure/services/
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/
-  - name: База знаний
-    href: https://cognitive.uservoice.com/knowledgebase/topics/127875-bing-search-web-image-video-news-autosuggest
-  - name: Получение ключа API
-    href: https://azure.microsoft.com/try/cognitive-services/?api=autosuggest-api
-  - name: Тестирование
-    href: https://azure.microsoft.com/services/cognitive-services/autosuggest/
-  - name: Поддержка языков и региональных параметров
-    href: language-support.md
-  - name: Аналитика для API автозаполнения Bing
-    href: bing-autosuggest-stats.md
-ms.openlocfilehash: 5e0a0f0734b694a098cc6685e337aa24b41962d5
-ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "57011540"
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/autosuggest-api/'
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/598198-bing-autosuggest'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/search?q=bing+autosuggest'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: База знаний
+      href: 'https://cognitive.uservoice.com/knowledgebase/topics/127875-bing-search-web-image-video-news-autosuggest'
+    - name: Получение ключа API
+      href: 'https://azure.microsoft.com/try/cognitive-services/?api=autosuggest-api'
+    - name: Тестирование
+      href: 'https://azure.microsoft.com/services/cognitive-services/autosuggest/'
+    - name: Поддержка языков и региональных параметров
+      href: language-support.md
+    - name: Аналитика для API автозаполнения Bing
+      href: bing-autosuggest-stats.md

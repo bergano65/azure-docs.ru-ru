@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: spelluru
 ms.openlocfilehash: 145960db27247a8535eb96640000b86d810619c0
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57838414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60420210"
 ---
 # <a name="expose-an-on-premises-wcf-service-to-a-web-application-in-the-cloud-by-using-azure-relay"></a>Предоставление локальной службы WCF для веб-приложения в облаке с помощью Azure Relay 
 В этой статье показано, как создать гибридное облачное приложение с помощью Microsoft Azure и Visual Studio. Вы создадите приложение, которое использует несколько ресурсов Azure и выполняется в облаке.
@@ -185,7 +185,7 @@ ms.locfileid: "57838414"
         }
     }
     ```
-12. В обозревателе решений дважды щелкните файл **App.config**, чтобы открыть его в редакторе Visual Studio. В нижней части `<system.ServiceModel>` элемента (но не выходя за рамки `<system.ServiceModel>`), добавьте следующий код XML: Не забудьте заменить yourServiceNamespace именем пространства имен, а *yourKey* — ключом SAS, полученным ранее на портале.
+12. В обозревателе решений дважды щелкните файл **App.config**, чтобы открыть его в редакторе Visual Studio. В нижней части `<system.ServiceModel>` элемента (но не выходя за рамки `<system.ServiceModel>`), добавьте следующий код XML: Не забудьте заменить *yourServiceNamespace* именем пространства имен, а *yourKey* — ключом SAS, полученным ранее на портале.
 
     ```xml
     <system.serviceModel>
@@ -350,7 +350,7 @@ ms.locfileid: "57838414"
 
    ![Добавление в виде ссылки][24]
 
-6. Теперь откройте **HomeController.cs** в редакторе Visual Studio и замените определение пространства имен следующим кодом: Замените yourServiceNamespace на имя пространства имен вашей службы, а *yourKey* — на ключ SAS. Это позволит клиенту вызывать локальную службу, возвращая результат вызова.
+6. Теперь откройте **HomeController.cs** в редакторе Visual Studio и замените определение пространства имен следующим кодом: Замените *yourServiceNamespace* на имя пространства имен вашей службы, а *yourKey* — на ключ SAS. Это позволит клиенту вызывать локальную службу, возвращая результат вызова.
 
    ```csharp
    namespace ProductsWeb.Controllers

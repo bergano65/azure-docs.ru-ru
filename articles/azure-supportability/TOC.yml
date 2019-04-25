@@ -1,4 +1,3 @@
-items:
 - name: Создание запроса на поддержку Azure
   href: how-to-create-azure-support-request.md
 - name: Отправка файлов для обращения в службу поддержки
@@ -11,19 +10,13 @@ items:
   href: sku-series-unavailable.md
 - name: Справочные материалы
   items:
-  - name: Инфраструктура CLI Azure
-    href: /cli/azure
-  - name: Azure PowerShell
-    href: /powershell/azure
+    - name: Инфраструктура CLI Azure
+      href: /cli/azure
+    - name: Azure PowerShell
+      href: /powershell/azure
 - name: Ресурсы
   items:
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=monitoring-management
-  - name: Калькулятор цен
-    href: https://azure.microsoft.com/pricing/calculator/
-ms.openlocfilehash: 31120ea857d0e080bc9629d781ac2cdd73d31bc0
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58340920"
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=monitoring-management'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
