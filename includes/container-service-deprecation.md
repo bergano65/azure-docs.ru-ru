@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/27/2018
 ms.author: iainfou
 ms.openlocfilehash: c7a34256bff46247ed6c97bc2931942f631bbf09
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56589460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60430664"
 ---
 > [!WARNING]
 >  **Служба контейнеров Azure (ACS) выводится из эксплуатации. В нее больше не добавляются новые компоненты или функциональные возможности. Все API, интерфейс портала, команды CLI и документы помечаются как нерекомендуемые.**

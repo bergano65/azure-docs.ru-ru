@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 01/24/2019
+ms.date: 04/19/2019
 ms.author: alkohli
-ms.openlocfilehash: 79854c71410c7e796961f23c8c31a4d0809cd69c
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: 2a4c4c7431752ade60161af84b4cc15f010af656
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59527988"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59995750"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-blob-storage-via-rest-apis"></a>Руководство по Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API  
 
@@ -39,9 +39,14 @@ ms.locfileid: "59527988"
 5. [Скачайте AzCopy 7.1.0](https://aka.ms/azcopyforazurestack20170417) на главный компьютер. Вы используете AzCopy для копирования данных в хранилище BLOB-объектов Azure Data Box с главного компьютера.
 
 
-## <a name="connect-to-data-box-blob-storage"></a>Подключение хранилища BLOB-объектов Data Box
+## <a name="connect-via-http-or-https"></a>Подключение по протоколу HTTP или HTTPS
 
-Вы можете подключиться к хранилищу BLOB-объектов Data Box по протоколу *HTTP* или *HTTPS*. В общем случае *HTTPS* — это безопасный и рекомендуемый способ подключения к хранилищу BLOB-объектов Data Box. *HTTP* используется при подключении через доверенные сети. В зависимости от того, как устанавливается подключение к хранилищу BLOB-объектов Data Box (по *HTTP* или *HTTPS*), действия могут различаться.
+Вы можете подключиться к хранилищу BLOB-объектов Data Box по протоколу *HTTP* или *HTTPS*.
+
+- *HTTPS* — это безопасный и рекомендуемый способ подключения к хранилищу BLOB-объектов Data Box.
+- *HTTP* используется при подключении через доверенные сети.
+
+Подключение к хранилищу BLOB-объектов Data Box по протоколам *HTTP* и *HTTPS* происходит по-разному.
 
 ## <a name="connect-via-http"></a>Подключение по протоколу HTTP
 
@@ -52,11 +57,11 @@ ms.locfileid: "59527988"
 
 Каждое из этих действий описано в следующих разделах.
 
-#### <a name="add-device-ip-address-and-blob-service-endpoint-to-the-remote-host"></a>Добавление IP-адреса устройства и конечной точки службы BLOB-объектов к удаленному узлу
+### <a name="add-device-ip-address-and-blob-service-endpoint"></a>Добавление IP-адреса устройства и конечной точки службы BLOB-объектов
 
 [!INCLUDE [data-box-add-device-ip](../../includes/data-box-add-device-ip.md)]
 
-#### <a name="configure-partner-software-and-verify-connection"></a>Настройка партнерского программного обеспечения и проверка подключения
+### <a name="configure-partner-software-and-verify-connection"></a>Настройка партнерского программного обеспечения и проверка подключения
 
 [!INCLUDE [data-box-configure-partner-software](../../includes/data-box-configure-partner-software.md)]
 
@@ -67,8 +72,8 @@ ms.locfileid: "59527988"
 Для подключения к REST API хранилища BLOB-объектов Azure по протоколу HTTP необходимо выполнить следующие действия:
 
 - скачать сертификат на портале Azure;
-- подготовить главный компьютер к удаленному управлению;
-- добавить IP-адрес устройства и конечную точку службы BLOB-объектов к удаленному узлу;
+- импортировать сертификат на клиенте или удаленном узле;
+- добавить IP-адрес устройства и конечную точку службы BLOB-объектов к клиенту или удаленному узлу;
 - настроить стороннее программное обеспечение и проверить подключение.
 
 Каждое из этих действий описано в следующих разделах.
@@ -83,20 +88,15 @@ ms.locfileid: "59527988"
 
     ![Скачивание сертификата с помощью портала Azure](media/data-box-deploy-copy-data-via-rest/download-cert-1.png)
  
-### <a name="prepare-the-host-for-remote-management"></a>Подготовка узла для удаленного управления
+### <a name="import-certificate"></a>Импорт сертификата 
 
-Выполните следующие действия, чтобы подготовить клиент Windows для удаленного подключения, которое использует сеанс *HTTPS*:
+Для доступа к хранилищу BLOB-объектов Data Box через протокол HTTPS требуется SSL-сертификат для устройства. Этот сертификат предоставляется клиентскому приложению по-разному в зависимости от приложения, операционной системы и дистрибутива. Некоторые приложения получают доступ к сертификату после его импорта в хранилище сертификатов системы, в других приложениях не используется этот механизм.
 
-- Импортируйте CER-файл в корневое хранилище клиента или удаленного узла.
-- Добавьте IP-адрес устройства и конечную точку службы BLOB-объектов в файл hosts на клиентском компьютере Windows.
+В этом разделе описаны особенности доступа к сертификату для некоторых приложений. Дополнительные сведения для других приложений см. в документации по этим приложениям и используемой операционной системе.
 
-Каждая из этих процедур описана ниже.
+Выполните следующие действия, чтобы импортировать файл `.cer` в корневое хранилище клиента Windows или Linux. В системе Windows для импорта и установки сертификата можно использовать Windows PowerShell или пользовательский интерфейс Windows Server.
 
-#### <a name="import-the-certificate-on-the-remote-host"></a>Импорт сертификата на удаленном узле
-
-Импортировать и установить сертификат на главной системе можно с помощью Windows PowerShell или пользовательского интерфейса Windows Server.
-
-**PowerShell**
+#### <a name="use-windows-powershell"></a>Использование Windows PowerShell
 
 1. Запустите сеанс Windows PowerShell от имени администратора.
 2. В командной строке выполните следующую команду:
@@ -105,9 +105,9 @@ ms.locfileid: "59527988"
     Import-Certificate -FilePath C:\temp\localuihttps.cer -CertStoreLocation Cert:\LocalMachine\Root
     ```
 
-**Использование пользовательского интерфейса Windows Server**
+#### <a name="use-windows-server-ui"></a>Использование пользовательского интерфейса Windows Server
 
-1.  Щелкните правой кнопкой мыши на CER-файле и выберите **Установить сертификат**. Откроется мастер импорта сертификатов.
+1.  Щелкните правой кнопкой мыши файл `.cer` и выберите **Установить сертификат**. Запустится мастер импорта сертификатов.
 2.  В качестве **Расположения хранилища** выберите **Локальный компьютер**, а затем нажмите кнопку **Далее**.
 
     ![Импорт сертификата с помощью PowerShell](media/data-box-deploy-copy-data-via-rest/import-cert-ws-1.png)
@@ -120,13 +120,29 @@ ms.locfileid: "59527988"
 
     ![Импорт сертификата с помощью PowerShell](media/data-box-deploy-copy-data-via-rest/import-cert-ws-3.png)
 
-### <a name="to-add-device-ip-address-and-blob-service-endpoint-to-the-remote-host"></a>Добавление IP-адреса устройства и конечной точки службы BLOB-объектов к удаленному узлу
+#### <a name="use-a-linux-system"></a>Использование системы Linux
 
-Действия аналогичны тем, которые использовалось при подключении через *HTTP*.
+Метод импорта сертификата зависит от дистрибутива.
 
-### <a name="configure-partner-software-to-establish-connection"></a>Настройка партнерского программного обеспечения и установка подключения
+В некоторых дистрибутивах, например Ubuntu и Debian, используется команда `update-ca-certificates`.  
 
-Действия аналогичны тем, которые использовалось при подключении через *HTTP*. Единственное отличие — не устанавливайте флажок для *использования HTTP*.
+- Переименуйте файл сертификата с кодировкой Base64, чтобы у него было расширение `.crt`, а затем скопируйте его в расположение `/usr/local/share/ca-certificates directory`.
+- Выполните команду `update-ca-certificates`.
+
+В последних версиях RHEL, Fedora и CentOS используется команда `update-ca-trust`.
+
+- Скопируйте файл сертификата в каталог `/etc/pki/ca-trust/source/anchors`.
+- Запустите `update-ca-trust`.
+
+Дополнительные сведения см. в документации по своему дистрибутиву.
+
+### <a name="add-device-ip-address-and-blob-service-endpoint"></a>Добавление IP-адреса устройства и конечной точки службы BLOB-объектов 
+
+Выполните те же действия для [добавления IP-адреса устройства и конечной точки службы BLOB-объектов, что и при подключении по протоколу *HTTP*](#add-device-ip-address-and-blob-service-endpoint).
+
+### <a name="configure-partner-software-and-verify-connection"></a>Настройка партнерского программного обеспечения и проверка подключения
+
+Выполните шаги для [настройки партнерского программного обеспечения, которые вы выполняли при подключении по протоколу *HTTP*](#configure-partner-software-and-verify-connection). Единственное отличие — не устанавливайте флажок для *использования HTTP*.
 
 ## <a name="copy-data-to-data-box"></a>копирование данных в Data Box;
 
@@ -199,7 +215,6 @@ ms.locfileid: "59527988"
 #### <a name="windows"></a> Windows
 
     AzCopy /Source:C:\myfolder /Dest:https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ /DestKey:<key> /S /XO
-
 
 Следующий шаг — подготовка устройства к отправке.
 

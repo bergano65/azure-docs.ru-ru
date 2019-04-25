@@ -11,10 +11,10 @@ ms.topic: tutorial
 ms.date: 04/02/2019
 ms.author: erhopf
 ms.openlocfilehash: 69e6797e91fc645e3bd3e3b300cea6852a662214
-ms.sourcegitcommit: 045406e0aa1beb7537c12c0ea1fbf736062708e8
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59007407"
 ---
 # <a name="tutorial-build-a-flask-app-with-azure-cognitive-services"></a>Руководство по Создание приложения Flask в Azure Cognitive Services
@@ -42,14 +42,14 @@ Flask — это микроплатформа для создания веб-п
 Для тех, кто хочет узнать больше после работы с этим руководством, мы предлагаем несколько полезных ссылок:
 
 * [Документация по Flask](http://flask.pocoo.org/)
-* [Flask для чайников — руководство по Flask для начинающих](https://codeburst.io/flask-for-dummies-a-beginners-guide-to-flask-part-uno-53aec6afc5b1)
+* [Flask for Dummies - A Beginner's Guide to Flask](https://codeburst.io/flask-for-dummies-a-beginners-guide-to-flask-part-uno-53aec6afc5b1) (Flask для чайников — руководство по Flask для начинающих)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Давайте перечислим программное обеспечение и ключи подписки, которые вам потребуются в этом руководстве.
 
-* [Python 3.5.2 или более поздней версии.](https://www.python.org/downloads/)
-* [Средства Git.](https://git-scm.com/downloads)
+* [Python 3.5.2 или последующей версии](https://www.python.org/downloads/).
+* [Средства Git](https://git-scm.com/downloads).
 * Среда разработки или редактор кода, например [Visual Studio Code](https://code.visualstudio.com/) или [Atom](https://atom.io/).  
 * Браузер [Chrome](https://www.google.com/chrome/browser/) или [Firefox](https://www.mozilla.org/firefox).
 * Ключ подписки для службы **Перевод текстов** (обратите внимание, что регион выбирать не обязательно).
@@ -95,7 +95,7 @@ Flask — это микроплатформа для создания веб-п
    ```
    Мы явным образом объявили, что виртуальное окружение будет использовать Python 3. Это гарантирует, что пользователи с несколькими установками Python будут использовать правильную версию.
 
-   **Командная строка или bash в Windows:**
+   **Командная строка или Bash в Windows:**
    ```
    virtualenv venv
    ```
@@ -959,6 +959,6 @@ flask run
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Справочник по API Перевода текстов](https://docs.microsoft.com/azure/cognitive-services/Translator/reference/v3-0-reference)
-* [Справочник по API Анализа текста](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7)
+* [Справочник по API перевода текстов](https://docs.microsoft.com/azure/cognitive-services/Translator/reference/v3-0-reference)
+* [Справочник по API анализа текста](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7)
 * [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-text-to-speech)
