@@ -16,7 +16,7 @@ ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: 984c5d6b5e6e2010489533a3889501c5b524a6bd
 ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/21/2019
 ms.locfileid: "58311328"
@@ -140,7 +140,7 @@ MPEG-DASH протокол поддерживает следующие форм�
 |"Обзор"|Шифрование|
 |---|---|
 |Chrome|Widevine|
-|Edge, IE 11|PlayReady|
+|Microsoft Edge, IE 11|PlayReady|
 |Firefox|Widevine|
 |Opera|Widevine|
 |Safari|FairPlay|

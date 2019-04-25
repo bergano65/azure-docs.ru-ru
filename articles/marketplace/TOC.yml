@@ -43,7 +43,7 @@
               href: ./marketplace-saas-applications-technical-publishing-guide.md
             - name: Контейнеры
               href: ./marketplace-containers.md
-            - name: Модули Edge Интернета вещей
+            - name: Модули IoT Edge
               href: ./iot-edge-module.md
             - name: Консультационная услуга
               href: ./consulting-services.md
