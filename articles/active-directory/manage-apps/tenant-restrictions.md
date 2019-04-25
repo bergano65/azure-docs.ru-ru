@@ -16,11 +16,11 @@ ms.author: celested
 ms.reviewer: richagi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b78897e2e03085a20f07ce8724226f0e0171861e
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59545871"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60291248"
 ---
 # <a name="use-tenant-restrictions-to-manage-access-to-saas-cloud-applications"></a>Использовать ограничение клиентов для управления доступом к облачным приложениям SaaS
 

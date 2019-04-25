@@ -12,11 +12,11 @@ ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 00710183828892c81d3ea887e4394237288eb6bb
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55452521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60303542"
 ---
 # <a name="deployment-stage-of-the-team-data-science-process-lifecycle"></a>Этап развертывания в жизненном цикле командного процесса обработки и анализа данных
 
@@ -59,7 +59,7 @@ ms.locfileid: "55452521"
 * Документированная окончательная архитектура решения.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены ссылки на каждый этап жизненного цикла процесса обработки и анализа данных группы:
 

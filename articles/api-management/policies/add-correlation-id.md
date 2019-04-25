@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
 ms.openlocfilehash: 126701674b6dc529404f5a7854cda9b31c336170
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52868435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60306789"
 ---
 # <a name="add-a-header-containing-a-correlation-id"></a>Добавление заголовка, который содержит идентификатор корреляции
 
@@ -30,7 +30,7 @@ ms.locfileid: "52868435"
 
 [!code-xml[Main](../../../api-management-policy-samples/examples/Add correlation id to inbound request.policy.xml)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее о политиках службы управления API:
 

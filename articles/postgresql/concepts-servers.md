@@ -7,11 +7,11 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/07/2018
 ms.openlocfilehash: a5b6db9f4bfbe9a11119270e9236580b41fae8c7
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53540868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60422105"
 ---
 # <a name="azure-database-for-postgresql-servers"></a>Серверы службы "База данных Azure для PostgreSQL"
 В этой статье приведены рекомендации и указания по работе с серверами базы данных Azure для PostgreSQL.
@@ -62,7 +62,7 @@ ms.locfileid: "53540868"
 Так как База данных Azure для PostgreSQL — это управляемая служба для Postgres, настраиваемые параметры в ней являются подмножеством параметров локального экземпляра Postgres. Дополнительные сведения о параметрах Postgres см. в [документации PostgreSQL](https://www.postgresql.org/docs/9.6/static/runtime-config.html). При создании сервера Базы данных Azure для PostgreSQL для его параметров устанавливаются стандартные значения. Пользователи не могут настраивать некоторые параметры, для изменения которых требуется перезагрузка сервера или права суперпользователя.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Общие сведения о службе приведены в статье  [Что такое База данных Azure для PostgreSQL](overview.md).
 - Сведения о квотах и ограничениях для конкретных ресурсов с учетом вашего  **уровня служб** см. в статье об  [уровнях обслуживания](concepts-pricing-tiers.md).
 - Сведения о подключении к службе см. в статье  [Библиотеки подключений для Базы данных Azure для PostgreSQL](concepts-connection-libraries.md).

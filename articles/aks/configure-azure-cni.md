@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 10/11/2018
 ms.author: iainfou
 ms.openlocfilehash: 4bd934c710d6300e95c60742d5873f5b71bdae59
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58002183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60466559"
 ---
 # <a name="configure-azure-cni-networking-in-azure-kubernetes-service-aks"></a>Настройка сети Azure CNI в Службе Azure Kubernetes (AKS)
 
@@ -64,7 +64,7 @@ IP-адреса для контейнеров pod и узлов кластера
 | -- | :--: | :--: | -- |
 | Инфраструктура CLI Azure | 110 | 30 | Да (до 110) |
 | Шаблон Resource Manager | 110 | 30 | Да (до 110) |
-| Microsoft Azure | 110 | 30 | Нет  |
+| Портал | 110 | 30 | Нет  |
 
 ### <a name="configure-maximum---new-clusters"></a>Настройка максимального числа. Новые кластеры
 

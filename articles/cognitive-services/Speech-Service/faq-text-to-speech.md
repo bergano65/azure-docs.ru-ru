@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 06/11/2018
 ms.author: panosper
 ms.openlocfilehash: d93de4ff3f6dd00ac049ea9d83aebb7aad07137e
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55883293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60539015"
 ---
 # <a name="text-to-speech-frequently-asked-questions"></a>Часто задаваемые вопросы о преобразовании текста в речь
 
@@ -61,7 +61,7 @@ ms.locfileid: "55883293"
 
 **Ответ**. REST API ограничивает количество запросов до 25 за 5 секунд. Подробные сведения можно найти на наших страницах о [преобразовании текста в речь](text-to-speech.md). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок](troubleshooting.md)
 * [Заметки о выпуске](releasenotes.md)

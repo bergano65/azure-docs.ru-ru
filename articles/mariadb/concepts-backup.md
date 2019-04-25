@@ -7,11 +7,11 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: d6141c3184c8915c36f22d010db39aef2460dd1c
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56233546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60483057"
 ---
 # <a name="backup-and-restore-in-azure-database-for-mariadb"></a>Резервное копирование и восстановление в службе "База данных Azure для MariaDB"
 
@@ -77,7 +77,7 @@ ms.locfileid: "56233546"
 - Убедитесь, что заданы соответствующие данные для входа и разрешений уровня базы данных.
 - Настройте оповещения соответствующим образом.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о непрерывности бизнес-процессов см. в  [этой статье](concepts-business-continuity.md).
 - Сведения о восстановлении базы данных до точки во времени с помощью портала Azure см. в  [этой статье](howto-restore-server-portal.md).

@@ -16,11 +16,11 @@ ms.workload: tbd
 ms.date: 04/08/2019
 ms.author: kwill
 ms.openlocfilehash: 7c8459a6694663a49203b6ec21a760d3e6bd60c3
-ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60150526"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60480760"
 ---
 #    <a name="workflow-of-windows-azure-classic-vm-architecture"></a>Рабочий процесс из классической виртуальной Машины архитектуры Windows Azure 
 В этой статье Обзор рабочих процессов, возникающих при развертывании или обновлении ресурс Azure, например, виртуальная машина. 

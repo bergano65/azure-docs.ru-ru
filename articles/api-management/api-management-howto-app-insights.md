@@ -14,17 +14,17 @@ ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
 ms.openlocfilehash: 69f36773b702d9f0059e0cd27dbb864ccd7f7b2b
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54262767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60527595"
 ---
 # <a name="how-to-integrate-azure-api-management-with-azure-application-insights"></a>Интеграция управления API Azure в Azure Application Insights
 
 Управление API Azure может быть легко интегрировано в Azure Application Insights. Azure Application Insights — это расширяемая служба управления производительностью приложений (APM), предназначенная для веб-разработчиков, создающих приложения и управляющих ими на нескольких платформах. В этом руководстве описываются все этапы этой интеграции и стратегии для снижения влияния интеграции на производительность вашего экземпляра службы управления API.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для выполнения действий, описанных в этом руководстве, вам потребуется экземпляр службы управления API. Если у вас его нет, выполните действия, указанные в [этом руководстве](get-started-create-service-instance.md).
 
@@ -123,7 +123,7 @@ Azure Application Insights получает следующие данные:
 >
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 + Дополнительные сведения об [Azure Application Insights](https://docs.microsoft.com/azure/application-insights/).
 + См. раздел [ведение журналов с помощью Центров событий Azure](api-management-howto-log-event-hubs.md).

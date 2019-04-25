@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 02/10/2019
 ms.author: anzaman
 ms.openlocfilehash: c4ccc189c0f8ed3de868c9965d7068ad9670cbcb
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56004100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60535416"
 ---
 # <a name="customize-a-language-model-with-video-indexer"></a>Настройка языковой модели с помощью Индексатора видео
 
@@ -39,7 +39,7 @@ ms.locfileid: "56004100"
 * Избегайте включения необычных символов (~, # @ % &), так как они будут отклонены. Предложения, в которых они появляются, также будут отклонены.
 * Избегайте размещения слишком больших входных данных, например тысячи предложений, так как это может ослабить эффект бустинга.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Customize a Language model with the Video Indexer APIs](customize-language-model-with-api.md) (Настройка языковой модели с помощью API Индексатора видео)
 

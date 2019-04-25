@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 09/28/2018
 ms.author: terrylan
 ms.openlocfilehash: 6e5034d0ff8f14a9fc381f6fd1a214a91ad4d1ed
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56107979"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60444407"
 ---
 # <a name="best-practices-for-securing-paas-web-and-mobile-applications-using-azure-app-service"></a>Рекомендации по защите мобильных приложений и веб-приложений PaaS с помощью Службы приложений Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "56107979"
 ## <a name="restrict-incoming-source-ip-addresses"></a>Ограничение исходных IP-адресов входящего трафика
 В [среде службы приложений](../app-service/environment/intro.md) есть возможность интеграции виртуальных сетей, которая помогает ограничить IP-адреса входящего трафика с помощью групп безопасности сети (NSG). Если вы не знакомы с виртуальными сетями Azure, вот краткое описание. Эта функция позволяет размещать множество ресурсов Azure в сети, недоступной из Интернета, а также самостоятельно управлять доступом к ним. Дополнительные сведения см. в статье [Интеграция приложения с виртуальной сетью Azure](../app-service/web-sites-integrate-with-vnet.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье был представлен набор рекомендаций по безопасности службы приложений, предназначенных для защиты веб-приложений и мобильных приложений PaaS. Дополнительные сведения о безопасности развернутых служб PaaS см. в следующих статьях:
 
 - [Защита развернутых приложений PaaS](security-paas-deployments.md)

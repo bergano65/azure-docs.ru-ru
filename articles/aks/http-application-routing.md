@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 04/25/2018
 ms.author: laevenso
 ms.openlocfilehash: d6e1cc033416c90e27b5caf4bba310400e55b3a5
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56312293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60466332"
 ---
 # <a name="http-application-routing"></a>Маршрутизация приложений HTTP
 
@@ -58,7 +58,7 @@ Result
 9f9c1fe7-21a1-416d-99cd-3543bb92e4c3.eastus.aksapp.io
 ```
 
-## <a name="deploy-http-routing-portal"></a>Развертывание маршрутизации HTTP-трафика Microsoft Azure
+## <a name="deploy-http-routing-portal"></a>Развертывание маршрутизации HTTP-трафика Портал
 
 При развертывании кластера службы AKS надстройку для маршрутизации приложений HTTP можно активировать на портале Azure.
 
@@ -273,7 +273,7 @@ service "party-clippy" deleted
 ingress "party-clippy" deleted
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об установке контроллера защищенного входящего HTTPS-трафика в AKS см. в статье [Входящий трафик HTTPS в Службе Azure Kubernetes (AKS)][ingress-https].
 

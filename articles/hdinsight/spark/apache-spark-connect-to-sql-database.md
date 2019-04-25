@@ -1,7 +1,6 @@
 ---
 title: Чтение данных из Базы данных SQL Azure и запись в нее с использованием Apache Spark
 description: Узнайте, как настроить подключение между кластером HDInsight Spark и базой данных SQL Azure для чтения данных из базы данных SQL, а также записи и потоковой передачи данных в нее.
-services: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -10,17 +9,17 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/15/2018
 ms.openlocfilehash: 2b818350c19d1d9ff34bcdac0e438def0f859e40
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54381905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60327044"
 ---
 # <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>Чтение данных из базы данных SQL Azure и запись в нее с использованием кластера HDInsight Spark
 
 Узнайте, как подключить кластер Apache Spark в Azure HDInsight с помощью базы данных SQL Azure, а также как выполнять чтение из базы данных SQL, запись и потоковую передачу данных в нее. В приведенных здесь инструкциях для выполнения фрагментов кода Scala используется [Jupyter Notebook](https://jupyter.org/). Тем не менее вы можете создать изолированное приложение на языке Scala или Python и выполнять такие же задачи. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * **Кластер Azure HDInsight Spark**.  Инструкции см. в статье [Создание кластера Apache Spark в Azure HDInsight](apache-spark-jupyter-spark-sql.md).
 
@@ -151,7 +150,7 @@ ms.locfileid: "54381905"
 
     ![Подключение к базе данных SQL с помощью SSMS](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms.png "Подключение к базе данных SQL с помощью SSMS")
 
-    b. В обозревателе объектов разверните узел "База данных SQL Azure" и "Таблица", чтобы увидеть созданную таблицу **dbo.hvactable**.
+    2. В обозревателе объектов разверните узел "База данных SQL Azure" и "Таблица", чтобы увидеть созданную таблицу **dbo.hvactable**.
 
     ![Подключение к базе данных SQL с помощью SSMS](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms-locate-table.png "Подключение к базе данных SQL с помощью SSMS")
 
@@ -230,7 +229,7 @@ ms.locfileid: "54381905"
 
         SELECT COUNT(*) FROM hvactable
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование кластера HDInsight Spark для анализа данных в Data Lake Storage](apache-spark-use-with-data-lake-store.md)
 * [Структурированная потоковая передача Apache Spark в HDInsight для обработки событий из концентраторов событий](apache-spark-eventhub-structured-streaming.md)

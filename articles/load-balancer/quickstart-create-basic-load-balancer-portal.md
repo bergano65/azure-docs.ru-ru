@@ -16,11 +16,11 @@ ms.date: 02/26/2019
 ms.author: kumud
 ms.custom: seodec18
 ms.openlocfilehash: fe095b8f5a0080c0f28ec570303c9dc23962dfc8
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57869818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60507971"
 ---
 # <a name="quickstart-create-a-basic-load-balancer-by-using-the-azure-portal"></a>Краткое руководство. Создание Load Balancer категории "Базовый" на портале Azure
 
@@ -37,11 +37,11 @@ ms.locfileid: "57869818"
 1. В верхней левой части экрана выберите **Создать ресурс** > **Сети** > **Балансировщик нагрузки**.
 2. На вкладке **Основные сведения** страницы **Создание подсистемы балансировки нагрузки** введите или выберите следующие сведения, примите значения по умолчанию для остальных параметров и нажмите кнопку **Review + create** (Проверить и создать).
 
-    | Параметр                 | Значение                                              |
+    | Параметр                 | Value                                              |
     | ---                     | ---                                                |
     | Подписка               | Выберите свою подписку.    |    
     | Группа ресурсов         | Выберите **Создать** и введите *MyResourceGroupLB* в текстовом поле.|
-    | ИМЯ                   | *myLoadBalancer*                                   |
+    | Name                   | *myLoadBalancer*                                   |
     | Регион         | Выберите **Западная Европа**.                                        |
     | type          | Щелкните **Общедоступный**.                                        |
     | SKU           | Выберите **Базовый**.                          |

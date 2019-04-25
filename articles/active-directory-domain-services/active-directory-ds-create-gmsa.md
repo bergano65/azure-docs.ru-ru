@@ -16,11 +16,11 @@ ms.topic: conceptual
 ms.date: 06/26/2018
 ms.author: ergreenl
 ms.openlocfilehash: ef21383db52d45d996f2c6c1d6900ebba2349635
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55203085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60359404"
 ---
 # <a name="create-a-group-managed-service-account-gmsa-on-an-azure-ad-domain-services-managed-domain"></a>Создание групповой управляемой учетной записи службы в управляемом домене доменных служб AAD
 В этой статье показано, как создать управляемые учетные записи службы в управляемом домене доменных служб AAD.
@@ -67,7 +67,7 @@ http/WebFarmSvc/contoso100.com, http/WebFarmSvc/contoso100  `
 - [командлет New-ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/New-ADServiceAccount).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Создание подразделения в управляемом домене доменных служб Azure AD](active-directory-ds-admin-guide-create-ou.md)
 - [Group Managed Service Accounts Overview](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview) (Обзор групповых управляемых учетных записей служб);
 - [Getting Started with Group Managed Service Accounts](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts) (Начало работы с групповыми управляемыми учетными записями служб).

@@ -12,11 +12,11 @@ ms.date: 05/19/2018
 ms.author: tdsp
 ms.custom: seodec18, previous-author=weig, previous-ms.author=weig
 ms.openlocfilehash: 10692fcb720be819dcf94a8ecbc541983ffc8853
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55478038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60336700"
 ---
 # <a name="data-science-code-testing-on-azure-with-the-team-data-science-process-and-azure-devops-services"></a>Тестирование кода обработки и анализа данных в Azure с помощью командного процесса обработки и анализа данных и Azure DevOps Services
 В этой статье приведены предварительные рекомендации по тестированию кода в рабочем потоке обработки и анализа данных. Такое тестирование предоставляет специалистам по обработке и анализу данных системный и эффективный способ проверки качества и ожидаемого результата выполнения созданного кода. Мы продемонстрируем тестирование кода на примере [проекта для командного процесса обработки и анализа данных (TDSP), основанного на наборе данных UCI с данными о доходе совершеннолетних лиц](https://github.com/Azure/MachineLearningSamples-TDSPUCIAdultIncome), который мы опубликовали ранее. 
@@ -116,7 +116,7 @@ ms.locfileid: "55478038"
 
        ![Selections for starting a new build process](./media/code-test/create_new_build.PNG)
 
-    b. Следуйте инструкциям на экране, чтобы выбрать расположение исходного кода, имя проекта, репозиторий и сведения о ветви.
+    2. Следуйте инструкциям на экране, чтобы выбрать расположение исходного кода, имя проекта, репозиторий и сведения о ветви.
     
        ![Source, name, repository, and branch information](./media/code-test/fill_in_build_info.PNG)
 
@@ -150,7 +150,7 @@ ms.locfileid: "55478038"
 
 ![Уведомление в Azure DevOps об успешной сборке](./media/code-test/vs_online_build_succeed.PNG)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * В [репозитории прогноза доходов UCI](https://github.com/Azure/MachineLearningSamples-TDSPUCIAdultIncome) представлены конкретные примеры модульных тестов для сценариев обработки и анализа данных.
 * Выполните приведенные выше рекомендации и примеры для сценария прогнозирования доходов UCI в собственных проектах обработки и анализа данных.
 

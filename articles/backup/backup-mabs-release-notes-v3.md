@@ -10,11 +10,11 @@ ms.date: 11/22/2018
 ms.author: v-jysur
 ms.asset: 0c4127f2-d936-48ef-b430-a9198e425d81
 ms.openlocfilehash: d37245d7eed39ee9d219578db9e0a50d758ba9a2
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55660873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60499704"
 ---
 # <a name="release-notes-for-microsoft-azure-backup-server"></a>Заметки о выпуске Microsoft Azure Backup Server
 В этой статье представлены известные проблемы и их решения для Microsoft Azure Backup Server (MABS) версии 3.
@@ -75,6 +75,6 @@ ms.locfileid: "55660873"
 9.  Запустите службу MSDPM.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Новые возможности в Microsoft Azure Backup Server](backup-mabs-whats-new-mabs.md)

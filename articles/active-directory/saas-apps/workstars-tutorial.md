@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Workstars | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Workstars | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Workstars.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 07/25/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0a9c1d13c1d51eeadae3ef9dad71e64618d1a5fe
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57444707"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60523033"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-workstars"></a>Руководство. Интеграция Azure Active Directory с Workstars
+# <a name="tutorial-azure-active-directory-integration-with-workstars"></a>Руководство по Интеграция Azure Active Directory с Workstars
 
 В этом учебнике описано, как интегрировать приложение Workstars с Azure Active Directory (Azure AD).
 

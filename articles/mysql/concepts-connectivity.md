@@ -8,11 +8,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 11/09/2018
 ms.openlocfilehash: 8942223ce233d424e2368e90d2fbac92b1a443f3
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53544079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60525469"
 ---
 # <a name="handling-of-transient-connectivity-errors-for-azure-database-for-mysql"></a>Обработка временных ошибок подключения к Базе данных Azure для MySQL
 
@@ -44,6 +44,6 @@ ms.locfileid: "53544079"
 
 Не забудьте проверить логику повторных попыток. Например, попробуйте выполнить свой код, увеличивая или уменьшая число вычислительных ресурсов сервера Базы данных Azure для MySQL. Ваше приложение должно без каких-либо проблем справиться с небольшим простоем во время этой операции.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Узнайте, как устранить проблемы с подключением к Базе данных Azure для MySQL](howto-troubleshoot-common-connection-issues.md)

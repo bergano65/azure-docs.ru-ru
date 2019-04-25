@@ -9,11 +9,11 @@ ms.date: 10/04/2018
 ms.author: cherylmc
 Customer intent: As a Virtual WAN software-defined connectivity provider, I want to set up a provisioning environment.
 ms.openlocfilehash: a4664e628af5824b7b197cbdb5c5af602a3a4476
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49958692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60459943"
 ---
 # <a name="virtual-wan-partners"></a>Участники Виртуальной глобальной сети
 
@@ -274,7 +274,7 @@ ms.locfileid: "49958692"
 * Алгоритм проверки целостности IPsec
 * Группа PFS
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Виртуальной глобальной сети см. в разделе [Сведения о Виртуальной глобальной сети Azure](virtual-wan-about.md) и [Часто задаваемые вопросы о Виртуальной глобальной сети Azure (WAN)](virtual-wan-faq.md).
 

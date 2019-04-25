@@ -10,11 +10,11 @@ ms.date: 04/12/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 6465fd069e73a571e0671d528f5d0b4da4602dc7
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59551192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60499469"
 ---
 # <a name="credential-assets-in-azure-automation"></a>Ресурсы учетных данных в службе автоматизации Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "59551192"
 
 Для AzureRM командлеты, представленные в следующей таблице, используются для создания ресурсов учетных данных службы автоматизации и управления ими с помощью Windows PowerShell.  Они поставляются как часть [модуля AzureRM.Automation](/powershell/azure/overview), которая доступна для использования в модулях Runbook службы автоматизации и конфигурации DSC.
 
-| Командлеты | Описание |
+| Командлеты | ОПИСАНИЕ |
 |:--- |:--- |
 | [Get-AzureRMAutomationCredential](/powershell/module/azurerm.automation/get-azurermautomationcredential) |Извлекает сведения о ресурсе учетных данных. Это не возвращает объект PSCredential.  |
 | [New-AzureRMAutomationCredential](/powershell/module/azurerm.automation/new-azurermautomationcredential) |Создает новые учетные данные службы автоматизации. |
@@ -51,7 +51,7 @@ ms.locfileid: "59551192"
 
 Действия в следующей таблице используются для доступа к учетным данным в модуле Runbook и конфигурациях DSC.
 
-| Действия | Описание |
+| Действия | ОПИСАНИЕ |
 |:--- |:--- |
 | Get-AutomationPSCredential |Получает учетные данные для использования в модуле Runbook или в конфигурации DSC. Возвращает объект [System.Management.Automation.PSCredential](/dotnet/api/system.management.automation.pscredential) . |
 

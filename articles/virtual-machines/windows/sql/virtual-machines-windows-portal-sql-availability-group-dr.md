@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mikeray
-ms.openlocfilehash: 542505c5a6c3af91669ebe28287ae6e1477e214d
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 8f5b470cb3f75f434033a245f4aaa185aeb665c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58487182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60325990"
 ---
 # <a name="configure-an-always-on-availability-group-on-azure-virtual-machines-in-different-regions"></a>Настройка группы доступности AlwaysOn на виртуальных машинах Azure в разных регионах
 
@@ -165,7 +165,7 @@ ms.locfileid: "58487182"
 
 После проверки подключения верните первичную реплику в основной центр обработки данных и восстановите обычные рабочие параметры режима доступности. В таблице ниже приведены обычные рабочие параметры для архитектуры, описанной в этом документе.
 
-| Расположение | Экземпляр сервера | Роль | Режим доступности | Режим отработки отказа
+| Location | Экземпляр сервера | Роль | Режим доступности | Режим отработки отказа
 | ----- | ----- | ----- | ----- | -----
 | Основной центр обработки данных | SQL-1 | Первичная | Синхронный | Автоматический
 | Основной центр обработки данных | SQL-2 | Вторичная | Синхронный | Автоматический

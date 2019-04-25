@@ -17,11 +17,11 @@ ms.author: celested
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 89c01202e0d7d7ca0f37b89d5473f96873c52606
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56210906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60292152"
 ---
 # <a name="unexpected-error-when-performing-consent-to-an-application"></a>Непредвиденная ошибка при предоставлении согласия для приложения
 
@@ -73,7 +73,7 @@ ms.locfileid: "56210906"
 
     -   Добавление приложения из коллекции приложений Azure AD
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 [Приложения, разрешения и согласие в Azure Active Directory (конечная точка версии 1)](https://docs.microsoft.com/azure/active-directory/active-directory-apps-permissions-consent)<br>
 

@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 01/24/2019
 ms.author: diberry
 ms.openlocfilehash: 8e11b6d5a9c9df10e789c8e0be3a90d94ecf3d23
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55874402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60505682"
 ---
 # <a name="add-prebuilt-intents-for-common-intents"></a>Добавление предварительно созданных типичных намерений 
 
@@ -50,6 +50,6 @@ ms.locfileid: "55874402"
 
     ![Тестирование предварительно созданного намерения](./media/luis-prebuilt-intents/test.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Предварительно созданные сущности](./luis-prebuilt-entities.md)

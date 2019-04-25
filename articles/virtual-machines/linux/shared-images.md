@@ -17,11 +17,11 @@ ms.date: 09/19/2018
 ms.author: akjosh; cynthn
 ms.custom: ''
 ms.openlocfilehash: 08c7e84a27a4c8e9527083360dbd08296bd86775
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54190097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60542482"
 ---
 # <a name="preview-create-a-shared-image-gallery-with-the-azure-cli"></a>Предварительный просмотр: Создание коллекции общих образов с помощью Azure CLI
 
@@ -60,7 +60,7 @@ az vm create\
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 
 - [Создание коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-create/)

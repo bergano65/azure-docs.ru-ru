@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка Salesforce для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка Salesforce для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Salesforce.
 services: active-directory
 documentationCenter: na
@@ -16,17 +16,17 @@ ms.date: 10/08/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 712cc5ce62225987f8cc3ea13b5e4fd10a7d5eaf
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56172728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60515766"
 ---
-# <a name="tutorial-configure-salesforce-for-automatic-user-provisioning"></a>Руководство. Настройка Salesforce для автоматической подготовки пользователей
+# <a name="tutorial-configure-salesforce-for-automatic-user-provisioning"></a>Руководство по Настройка Salesforce для автоматической подготовки пользователей
 
 Цель этого учебника — показать, как в Salesforce и Azure AD необходимо выполнять автоматическую подготовку и отмену подготовки учетных записей пользователей из Azure AD в Salesforce.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -78,7 +78,7 @@ ms.locfileid: "56172728"
 
     a. В текстовом поле **Имя администратора** введите имя учетной записи Salesforce с профилем **системного администратора** в Salesforce.com.
 
-    б) В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
+    2. В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
 
 6. Для получения маркера безопасности Salesforce откройте новую вкладку и выполните вход с этой учетной записью администратора Salesforce. В правом верхнем углу страницы щелкните свое имя и выберите **Параметры**.
 

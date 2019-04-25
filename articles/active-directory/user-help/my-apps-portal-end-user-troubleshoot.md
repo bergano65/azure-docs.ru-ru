@@ -14,11 +14,11 @@ ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a6e87ae0a8adf28176d9a97cbf1b78943179884a
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58340114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60475033"
 ---
 # <a name="troubleshoot-problems-with-the-my-apps-portal"></a>Устранение неполадок с помощью портала Мои приложения
 Если у вас возникают проблемы с вход в или с помощью **Мои приложения** портала, попробуйте советы по устранению неполадок, прежде чем обращаться в службу технической поддержки или к администратору за помощью.

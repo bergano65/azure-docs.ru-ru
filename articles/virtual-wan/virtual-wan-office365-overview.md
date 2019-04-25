@@ -7,12 +7,12 @@ services: virtual-wan
 ms.topic: article
 ms.date: 9/24/2018
 ms.author: cherylmc
-ms.openlocfilehash: 815b91295540e93f8f0ffbc002fcf02ce1c13365
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
-ms.translationtype: HT
+ms.openlocfilehash: cb91c1364a91c101ecf8362acd7aab01440143fc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46992683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60458606"
 ---
 # <a name="office-365-control-plane-in-virtual-wan"></a>Уровень управления Office 365 в Виртуальной глобальной сети
 
@@ -53,5 +53,5 @@ ms.locfileid: "46992683"
 ### <a name="what-if-i-have-already-specified-my-o365-policies-via-my-sdwan-provider"></a>Что будет происходить, если политики Office 365 уже указаны с помощью поставщика SDWAN?
 Если политики были одновременно указаны с помощью пользовательского интерфейса SDWAN и Виртуальной глобальной сети Azure, то политики, заданные в Виртуальной глобальной сети, будут иметь приоритет.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [Виртуальной глобальной сети](virtual-wan-about.md).

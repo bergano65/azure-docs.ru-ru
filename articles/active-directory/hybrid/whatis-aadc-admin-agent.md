@@ -12,11 +12,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e33143626e136523b4af086e841b92e9ad30fa86
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59577615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60295024"
 ---
 # <a name="what-is-the-azure-ad-connect-admin-agent"></a>Общие сведения об агенте администратора Azure AD Connect 
 Агент Azure AD Connect администрирования является новым компонентом Azure Active Directory Connect, установленного на сервере Azure Active Directory Connect. Он позволяет собирать определенные данные из вашей среды Active Directory, которая помогает поддержки инженера, устранение неполадок при обратиться в службу поддержки корпорации Майкрософт.

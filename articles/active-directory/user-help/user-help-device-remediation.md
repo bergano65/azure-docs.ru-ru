@@ -15,11 +15,11 @@ ms.reviewer: jairoc
 ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a317680a39d4594aacdf84ccdf963bb84bfbf07b
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57452044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60473809"
 ---
 # <a name="potential-reasons-for-the-you-cant-get-there-from-here-error-message"></a>Возможные причины сообщения об отказе в доступе
 При попытке доступа к внутренним веб-приложениям или службам организации вы можете получить сообщение об **отказе в доступе**. Это сообщение означает, что организация применила политику, которая препятствует доступу вашего устройства к ресурсам организации. Хотя вам может понадобиться обратиться в службу поддержки, чтобы исправить эту проблему, можно попробовать сначала выполнить некоторые действия.

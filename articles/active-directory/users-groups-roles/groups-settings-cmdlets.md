@@ -16,11 +16,11 @@ ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5773924e98b7ea13c180979dba1325eb8919ff3a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58090633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60469901"
 ---
 # <a name="azure-active-directory-cmdlets-for-configuring-group-settings"></a>Настройка параметров групп с помощью командлетов Azure Active Directory
 Эта статья содержит инструкции по использованию командлетов PowerShell в Azure Active Directory (Azure AD) для создания и изменения групп. Это содержимое относится только к группам Office 365, также известным как единые группы. 
@@ -95,19 +95,19 @@ ms.locfileid: "58090633"
 
 | **Параметр** | **Описание** |
 | --- | --- |
-|  <ul><li>EnableGroupCreation<li>Тип: Логическое<li>Значение по умолчанию: Истина |Флаг, указывающий, разрешено ли пользователям без прав администратора создание группы Office 365 в каталоге. Для этого параметра не требуется лицензия Azure Active Directory Premium P1.|
-|  <ul><li>GroupCreationAllowedGroupId<li>Тип: Строка<li>Default: “” |Идентификатор GUID группы безопасности, участникам которой разрешено создавать группы Office 365, даже когда EnableGroupCreation == false. |
-|  <ul><li>UsageGuidelinesUrl<li>Тип: Строка<li>Default: “” |Ссылка на правила использования группы. |
-|  <ul><li>ClassificationDescriptions<li>Тип: Строка<li>Default: “” | Разделенный запятыми список описаний классификаций. Значение ClassificationDescriptions допустимо только в следующем формате:<br>$setting [«ClassificationDescriptions»] = «Классификации: Description, классификации: описание»<br>где классификация соответствует строк в ClassificationList.|
-|  <ul><li>DefaultClassification<li>Тип: Строка<li>Default: “” | Классификация, которая должна использоваться по умолчанию для группы, если не была указана иная классификация.|
-|  <ul><li>PrefixSuffixNamingRequirement<li>Тип: Строка<li>Default: “” | Строка с максимальной длиной 64 символа, которая определяет соглашение об именовании, настроенное для групп Office 365. Дополнительные сведения см. в статье [Принудительное применение политики именования для групп Office 365](groups-naming-policy.md). |
-| <ul><li>CustomBlockedWordsList<li>Тип: Строка<li>Default: “” | Строка фраз с разделителями-запятыми, которые не разрешено использовать в именах или псевдонимах групп. Дополнительные сведения см. в статье [Принудительное применение политики именования для групп Office 365](groups-naming-policy.md). |
-| <ul><li>EnableMSStandardBlockedWords<li>Тип: Логическое<li>Значение по умолчанию: False | Не используйте.
-|  <ul><li>AllowGuestsToBeGroupOwner<li>Тип: Логическое<li>Значение по умолчанию: Ложь | Логическое значение, указывающее, может ли гостевой пользователь быть владельцем группы. |
-|  <ul><li>AllowGuestsToAccessGroups<li>Тип: Логическое<li>Значение по умолчанию: Истина | Логическое значение, указывающее, может ли гостевой пользователь иметь доступ к содержимому групп Office 365.  Для этого параметра не требуется лицензия Azure Active Directory Premium P1.|
-|  <ul><li>GuestUsageGuidelinesUrl<li>Тип: Строка<li>Default: “” | URL-адрес ссылки на правила использования гостя. |
-|  <ul><li>AllowToAddGuests<li>Тип: Логическое<li>Значение по умолчанию: Истина | Логическое значение, указывающее, разрешено ли добавлять гостей в этот каталог.|
-|  <ul><li>ClassificationList<li>Тип: Строка<li>Default: “” |Разделенный запятыми список допустимых значений классификации, которые можно применять к группам Office 365. |
+|  <ul><li>EnableGroupCreation<li>Тип: Boolean<li>Значение по умолчанию: Истина |Флаг, указывающий, разрешено ли пользователям без прав администратора создание группы Office 365 в каталоге. Для этого параметра не требуется лицензия Azure Active Directory Premium P1.|
+|  <ul><li>GroupCreationAllowedGroupId<li>Тип: String<li>Default: “” |Идентификатор GUID группы безопасности, участникам которой разрешено создавать группы Office 365, даже когда EnableGroupCreation == false. |
+|  <ul><li>UsageGuidelinesUrl<li>Тип: String<li>Default: “” |Ссылка на правила использования группы. |
+|  <ul><li>ClassificationDescriptions<li>Тип: String<li>Default: “” | Разделенный запятыми список описаний классификаций. Значение ClassificationDescriptions допустимо только в следующем формате:<br>$setting [«ClassificationDescriptions»] = «Классификации: Description, классификации: описание»<br>где классификация соответствует строк в ClassificationList.|
+|  <ul><li>DefaultClassification<li>Тип: String<li>Default: “” | Классификация, которая должна использоваться по умолчанию для группы, если не была указана иная классификация.|
+|  <ul><li>PrefixSuffixNamingRequirement<li>Тип: String<li>Default: “” | Строка с максимальной длиной 64 символа, которая определяет соглашение об именовании, настроенное для групп Office 365. Дополнительные сведения см. в статье [Принудительное применение политики именования для групп Office 365](groups-naming-policy.md). |
+| <ul><li>CustomBlockedWordsList<li>Тип: String<li>Default: “” | Строка фраз с разделителями-запятыми, которые не разрешено использовать в именах или псевдонимах групп. Дополнительные сведения см. в статье [Принудительное применение политики именования для групп Office 365](groups-naming-policy.md). |
+| <ul><li>EnableMSStandardBlockedWords<li>Тип: Boolean<li>Значение по умолчанию: False | Не используйте.
+|  <ul><li>AllowGuestsToBeGroupOwner<li>Тип: Boolean<li>Значение по умолчанию: False | Логическое значение, указывающее, может ли гостевой пользователь быть владельцем группы. |
+|  <ul><li>AllowGuestsToAccessGroups<li>Тип: Boolean<li>Значение по умолчанию: Истина | Логическое значение, указывающее, может ли гостевой пользователь иметь доступ к содержимому групп Office 365.  Для этого параметра не требуется лицензия Azure Active Directory Premium P1.|
+|  <ul><li>GuestUsageGuidelinesUrl<li>Тип: String<li>Default: “” | URL-адрес ссылки на правила использования гостя. |
+|  <ul><li>AllowToAddGuests<li>Тип: Boolean<li>Значение по умолчанию: Истина | Логическое значение, указывающее, разрешено ли добавлять гостей в этот каталог.|
+|  <ul><li>ClassificationList<li>Тип: String<li>Default: “” |Разделенный запятыми список допустимых значений классификации, которые можно применять к группам Office 365. |
 
 ## <a name="read-settings-at-the-directory-level"></a>Чтение параметров на уровне каталога
 Далее приведены действия, необходимые для чтения параметров на уровне каталога, применимые ко всем группам Office в каталоге.

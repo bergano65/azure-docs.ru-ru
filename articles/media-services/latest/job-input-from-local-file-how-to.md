@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 02/18/2019
 ms.author: juliako
 ms.openlocfilehash: 3eb16034cc6507944ca7bebb59893e0d72a6f4c9
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56415465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60322589"
 ---
 # <a name="create-a-job-input-from-a-local-file"></a>Создание входных данных задания из локального файла
 
@@ -38,6 +38,6 @@ ms.locfileid: "56415465"
 
 См. статью о [кодах ошибок](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание входных данных задания из URL-адреса HTTPS](job-input-from-http-how-to.md)

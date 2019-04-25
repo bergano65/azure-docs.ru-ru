@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 8ac0fbb1c62e4162e1c4ad040365a16d055e4552
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58310023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60483235"
 ---
 # <a name="setup-your-application-in-the-publishing-portal"></a>Настройка приложения на портале публикации
 
@@ -59,7 +59,7 @@ ms.locfileid: "58310023"
 
 Этот раскрывающийся список позволяет выбрать профиль издателя, используемый для публикации этого предложения. После активации предложения это поле блокируется.
 
-### <a name="name"></a>ИМЯ
+### <a name="name"></a>Name
 
 Это отображаемое имя для предложения. Это же имя будет отображаться в [AppSource](https://appsource.microsoft.com/). Его длина не должна превышать 50 символов.
 
@@ -106,7 +106,7 @@ ms.locfileid: "58310023"
 
 Выберите отрасли, к которым лучше всего подходит ваше приложение. Если приложение относится к нескольким отраслям, оставьте это поле пустым.
 
-### <a name="categories"></a>Категории
+### <a name="categories"></a>Categories
 
 Выберите категории, относящиеся к вашему приложению. Можно выбрать не более 3 значений.
 

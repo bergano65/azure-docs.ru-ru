@@ -11,11 +11,11 @@ ms.topic: article
 ms.service: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: bc441e2bbd36c8d078eb67aff48e58684a026289
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54232181"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60444998"
 ---
 # <a name="azure-iot-edge-security-manager"></a>Диспетчер безопасности Azure IoT Edge
 
@@ -120,7 +120,7 @@ API рабочей нагрузки представляет собой API-ин
 
 Цель диспетчера безопасности IoT Edge — определить и изолировать компоненты, которые повышают безопасность и обеспечивают целостность платформы Azure IoT Edge. Третьи стороны, например изготовители, должны применять пользовательские функции безопасности, доступные для оборудования их устройств.  Изучите следующий раздел со ссылками, демонстрирующими усиление защиты диспетчера безопасности Интернета вещей Azure с помощью доверенного платформенного модуля (TPM) на платформах Linux и Windows. В этих примерах используется программное обеспечение или виртуальные модули TPM, но они непосредственно применяются к дискретным устройствам TPM.  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите блог, посвященный [обеспечению безопасности интеллектуальной границы](https://azure.microsoft.com/blog/securing-the-intelligent-edge/).
 

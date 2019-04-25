@@ -13,11 +13,11 @@ ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 696b6b14b2a369e8b80ac615fc77fa7f48f51c57
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56959941"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60474305"
 ---
 # <a name="manually-add-an-account-to-the-app"></a>Добавление учетной записи в приложение вручную
 Если камере не удается сканировать QR-код, вы можете вручную добавить сведения о своей учетной записи в приложение Microsoft Authenticator для двухфакторной проверки подлинности. Это подходит для рабочих или учебных учетных записей и учетных записей сторонних производителей.

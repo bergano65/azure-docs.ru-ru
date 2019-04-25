@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/11/2019
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: 7b47d4fc3aa4a1a50e441e668a856703c67045ae
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.openlocfilehash: 3ceaed2b1e27a1f5b910865f6e9d0e70ef347b71
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59581017"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60515393"
 ---
 # <a name="webhooks-for-speech-services"></a>Веб-перехватчики для службы распознавания речи
 
@@ -38,6 +38,8 @@ ms.locfileid: "59581017"
 ## <a name="create-a-webhook"></a>Создание веб-перехватчика
 
 Давайте создадим веб-перехватчика для автономных транскрипции. Сценарий: пользователь имеет длительную звуковой файл, они хотели транскрипция асинхронно с помощью API пакетной службы расшифровка дикторского текста. 
+
+Для создания https:// POST ловушка web<region>.cris.ai/api/speechtotext/v2.1/transcriptions/hooks
 
 Параметры конфигурации для запроса, представлены в формате JSON:
 
@@ -133,6 +135,50 @@ POST https://westus.cris.ai/api/speechtotext/v2.1/transcriptions/hooks/:id/test 
 ### <a name="run-a-test"></a>Выполнение теста
 
 Можно сделать быстрой проверки на веб-сайте https://bin.webhookrelay.com. После этого вы можете получить вызов резервного URL-адреса, передаваемый в качестве параметра запроса HTTP POST для создания веб-перехватчика, описанные ранее в этом документе.
+
+Щелкните «Создать контейнер» и следуйте инструкциям на экране инструкциям для получения обработчик. Затем используйте информацию, опубликованная на этой странице для регистрации ловушка службе распознавания речи. Полезные данные ретранслятор message - в ответ на завершение транскрипцию выглядит следующим образом:
+
+```json
+{
+    "results": [],
+    "recordingsUrls": [
+        "my recording URL"
+    ],
+    "models": [
+        {
+            "modelKind": "AcousticAndLanguage",
+            "datasets": [],
+            "id": "a09c8c8b-1090-443c-895c-3b1cf442dec4",
+            "createdDateTime": "2019-03-26T12:48:46Z",
+            "lastActionDateTime": "2019-03-26T14:04:47Z",
+            "status": "Succeeded",
+            "locale": "en-US",
+            "name": "v4.13 Unified",
+            "description": "Unified",
+            "properties": {
+                "Purpose": "OnlineTranscription,BatchTranscription,LanguageAdaptation",
+                "ModelClass": "unified-v4"
+            }
+        }
+    ],
+    "statusMessage": "None.",
+    "id": "d41615e1-a60e-444b-b063-129649810b3a",
+    "createdDateTime": "2019-04-16T09:35:51Z",
+    "lastActionDateTime": "2019-04-16T09:38:09Z",
+    "status": "Succeeded",
+    "locale": "en-US",
+    "name": "Simple transcription",
+    "description": "Simple transcription description",
+    "properties": {
+        "PunctuationMode": "DictatedAndAutomatic",
+        "ProfanityFilterMode": "Masked",
+        "AddWordLevelTimestamps": "True",
+        "AddSentiment": "True",
+        "Duration": "00:00:02"
+    }
+}
+```
+Сообщение содержит URL-адрес записи и моделей, используемых переписывать записи.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

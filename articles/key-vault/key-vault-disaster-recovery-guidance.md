@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: barclayn
 ms.openlocfilehash: dd1d2af174f93cceabccd62a78d45a0e4fbed502
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56104522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60305447"
 ---
 # <a name="azure-key-vault-availability-and-redundancy"></a>Доступность и избыточность хранилища ключей Azure
 

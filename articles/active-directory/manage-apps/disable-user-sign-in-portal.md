@@ -17,11 +17,11 @@ ms.reviewer: asteen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a168c3415996ff97137c4e312348f74a48e9531b
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59564998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60291455"
 ---
 # <a name="disable-user-sign-ins-for-an-enterprise-app-in-azure-active-directory"></a>Отключение входа пользователя в корпоративное приложение в Azure Active Directory
 Его можно легко отключить корпоративное приложение, чтобы пользователи не могут войти в него в Azure Active Directory (Azure AD). Потребуются соответствующие разрешения для управления корпоративным приложением. И необходимо быть глобальным администратором для каталога.

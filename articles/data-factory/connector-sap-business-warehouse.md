@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 08/07/2018
 ms.author: jingwang
 ms.openlocfilehash: 9a0abcd70b4aeb2369604bafa924136122206e0a
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54022297"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60309119"
 ---
 # <a name="copy-data-from-sap-business-warehouse-using-azure-data-factory"></a>Копирование данных из SAP Business Warehouse с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -36,7 +36,7 @@ ms.locfileid: "54022297"
 - Копирование данных из **InfoCubes и QueryCubes** (включая запросы BEx) с помощью запросов многомерных выражений.
 - Копирование данных с помощью базовой проверки подлинности.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы использовать этот соединитель SAP Business Warehouse, сделайте следующее:
 
@@ -58,9 +58,9 @@ ms.locfileid: "54022297"
 
 Для связанной службы SAP Business Warehouse (BW) поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type необходимо задать значение **SapBw**. | Yes |
+| type | Свойству type необходимо задать значение **SapBw**. | Yes |
 | server | Имя сервера, на котором размещен экземпляр SAP Business Warehouse. | Yes |
 | systemNumber | Номер системы SAP Business Warehouse.<br/>Допустимые значения: двузначное десятичное число, представленное в виде строки. | Yes |
 | clientid | Идентификатор клиента в системе SAP Business Warehouse.<br/>Допустимые значения: трехзначное десятичное число, представленное в виде строки. | Yes |
@@ -123,9 +123,9 @@ ms.locfileid: "54022297"
 
 Чтобы копировать данные из SAP BW, установите тип источника в действии копирования **RelationalSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type источника действия копирования необходимо задать значение **RelationalSource**. | Yes |
+| type | Свойству type источника действия копирования необходимо задать значение **RelationalSource**. | Yes |
 | query | Указывает запрос многомерных выражений для чтения данных из экземпляра SAP Business Warehouse. | Yes |
 
 **Пример.**
@@ -190,5 +190,5 @@ ms.locfileid: "54022297"
 | TIMS | String |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

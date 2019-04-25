@@ -16,13 +16,13 @@ ms.date: 05/26/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ec0cfaaf0d4ae692581d63c7745660ffeacfb11f
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56175750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60439732"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-23-video"></a>Руководство. Интеграция Azure Active Directory с 23 Video
+# <a name="tutorial-azure-active-directory-integration-with-23-video"></a>Руководство по Интеграция Azure Active Directory с 23 Video
 
 В этом руководстве объясняется, как интегрировать приложение 23 Video с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56175750"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с 23 Video, вам потребуется:
 
@@ -163,11 +163,11 @@ ms.locfileid: "56175750"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-23-video-test-user"></a>Создание тестового пользователя 23 Video
 
@@ -193,7 +193,7 @@ ms.locfileid: "56175750"
 
     a. В текстовом поле **E-mail addresses** (Адреса электронной почты) введите адрес электронной почты пользователя Britta Simon в Azure AD.  
  
-    б) Щелкните **Add the user**(Добавить пользователя).   
+    2. Щелкните **Add the user**(Добавить пользователя).   
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

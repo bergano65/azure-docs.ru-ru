@@ -16,11 +16,11 @@ ms.date: 09/11/2018
 ms.author: celested
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 90f24d787c09de99f076d1edffabb3dbbbe19a57
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56174152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60299844"
 ---
 # <a name="how-to-recognize-differences-between-delegated-and-application-permissions"></a>Как понять разницу между делегированными разрешениями и разрешениями приложения
 
@@ -30,5 +30,5 @@ ms.locfileid: "56174152"
 - Пошаговые инструкции по [настройке запросов разрешений для клиентского приложения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications)
 - Вы можете ознакомиться с более подробными сведениями о том, как приложения-ресурсы предоставляют [области](https://docs.microsoft.com/azure/active-directory/develop/active-directory-dev-glossary#scopes) и [роли приложения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-dev-glossary#roles) клиентским приложениям, которые на портале Azure называются делегированными разрешениями и разрешениями приложения, соответственно. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [StackOverflow в AzureAD](https://stackoverflow.com/questions/tagged/azure-active-directory)

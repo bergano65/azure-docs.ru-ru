@@ -1,7 +1,6 @@
 ---
 title: Визуализация данных Hive из кластера Interactive Query с помощью Power BI в Azure HDInsight
 description: Использование Microsoft Power BI для визуализации данных Interactive Query Hive из Azure HDInsight
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -10,11 +9,11 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/25/2018
 ms.openlocfilehash: d9639a4a116e06e17005ebddbb26379882491b33
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56867836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60483786"
 ---
 # <a name="visualize-interactive-query-apache-hive-data-with-microsoft-power-bi-using-direct-query-in-azure-hdinsight"></a>Визуализация данных Apache Hive из кластера Interactive Query с Microsoft Power BI с использованием прямого запроса в Azure HDInsight
 
@@ -48,7 +47,7 @@ ms.locfileid: "56867836"
 
 6. В **HDInsight Interactive Query** окно, введите следующие сведения, а затем выберите **ОК**:
 
-    |Свойство | Значение |
+    |Свойство | Value |
     |---|---|
     |сервер; |Введите имя кластера, например *myiqcluster.azurehdinsight.net*.|
     |База данных |Введите **по умолчанию** для этой статьи.|

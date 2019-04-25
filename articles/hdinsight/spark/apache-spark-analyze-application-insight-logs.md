@@ -1,7 +1,6 @@
 ---
 title: Анализ журналов Application Insights с помощью Spark в Azure HDInsight
 description: Узнайте, как экспортировать журналы Application Insights в хранилище BLOB-объектов, а затем проанализировать их с помощью Spark в HDInsight.
-services: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -10,11 +9,11 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/09/2018
 ms.openlocfilehash: 806e5b6f764797d2e038cc7ed58ec1d04f678e2b
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54120382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60326654"
 ---
 # <a name="analyze-application-insights-telemetry-logs-with-apache-spark-on-hdinsight"></a>Анализ журналов телеметрии Application Insights с помощью Apache Spark в HDInsight
 
@@ -22,7 +21,7 @@ ms.locfileid: "54120382"
 
 [Visual Studio Application Insights](../../azure-monitor/app/app-insights-overview.md) — это служба аналитики, которая отслеживает ваши веб-приложения. Данные телеметрии, созданные службой Application Insights, можно экспортировать в службу хранилища Azure. Затем вы можете использовать HDInsight, чтобы проанализировать их.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Приложение, настроенное для использования службы Application Insights.
 
@@ -360,7 +359,7 @@ Application Insights предоставляет сведения об [эксп�
         ...
         +---------+
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные примеры применения Apache Spark при работе с данными и службами в Azure см. в следующих документах:
 

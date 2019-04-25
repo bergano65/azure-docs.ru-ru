@@ -14,11 +14,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8794ffa1654e49690f3bd31a380ba2051b4b1da7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56177144"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60294976"
 ---
 # <a name="what-is-federation-with-azure-ad"></a>Использование федерации с Azure Active Directory
 
@@ -33,7 +33,7 @@ ms.locfileid: "56177144"
 > Если вы решите использовать федерацию со службами федерации Active Directory (AD FS), вы сможете дополнительно настроить синхронизацию хэша паролей как дополнительную защиту на случай сбоя в инфраструктуре AD FS.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Что собой представляет гибридная идентификация](whatis-phs.md)
 - [Использование Azure AD Connect с расширением Azure AD Connect Health](whatis-azure-ad-connect.md)

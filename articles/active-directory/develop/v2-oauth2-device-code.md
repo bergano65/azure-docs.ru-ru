@@ -18,11 +18,11 @@ ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 703416788d123798774802613d71b30e8fbdaa9b
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59999813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60299420"
 ---
 # <a name="microsoft-identity-platform-and-the-oauth-20-device-code-flow"></a>Поток кода платформы удостоверений и устройств OAuth 2.0
 

@@ -12,11 +12,11 @@ ms.date: 05/09/2018
 ms.author: slivkins
 ms.reviewer: marcozo
 ms.openlocfilehash: c56aef180f5e16d2ec1931caabe04295ef288ca9
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55980692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60509787"
 ---
 # <a name="register-your-application"></a>Регистрация приложения
 
@@ -36,7 +36,7 @@ ms.locfileid: "55980692"
 
 5. Чтобы зарегистрировать свое приложение, установите флажок **Пользовательское приложение** в левом нижнем углу. Введите [строку подключения](../../storage/common/storage-configure-connection-string.md) для учетной записи хранения Azure, где регистрируются данные вашего приложения. Дополнительные сведения о том, как создать учетную запись хранения, см. в руководстве по [созданию, администрированию и удалению учетных записей](../../storage/common/storage-create-storage-account.md).
 
-### <a name="next-steps"></a>Дополнительная информация
+### <a name="next-steps"></a>Дальнейшие действия
 
 * Приступите к оптимизации [веб-страницы](custom-decision-service-get-started-browser.md) или [приложения для смартфона](custom-decision-service-get-started-app.md).
 * Ознакомьтесь с [руководством](custom-decision-service-tutorial-news.md) с более подробным примером.

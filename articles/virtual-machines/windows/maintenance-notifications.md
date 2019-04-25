@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/02/2018
 ms.author: shants
-ms.openlocfilehash: db8fd40b9c573d04d9442c64fb058902a771eca0
-ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
+ms.openlocfilehash: cfd88118b483067f4c6ee62ee013a2202f0d7e67
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58418879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60301769"
 ---
 # <a name="handling-planned-maintenance-notifications-for-windows-virtual-machines"></a>Обработка плановых уведомлений по обслуживанию для виртуальных машин Windows
 
@@ -81,7 +81,7 @@ Azure периодически выполняет обновления, чтоб
  
 Сведения об обслуживании возвращаются, только если имеется запланированное обслуживание. Если нет запланированного обслуживания, влияющего на виртуальную машину, командлет не возвращает информацию об обслуживании. 
 
-[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
+[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 
 ```powershell
 Get-AzVM -ResourceGroupName rgName -Name vmName -Status
@@ -89,7 +89,7 @@ Get-AzVM -ResourceGroupName rgName -Name vmName -Status
 
 В разделе MaintenanceRedeployStatus возвращаются следующие свойства: 
 
-| Значение | ОПИСАНИЕ   |
+| Value | ОПИСАНИЕ   |
 |-------|---------------|
 | IsCustomerInitiatedMaintenanceAllowed | Указывает, можно ли сейчас запустить обслуживание на виртуальной машине |
 | PreMaintenanceWindowStartTime         | Начало периода самообслуживания, когда можно инициировать обслуживание на виртуальной машине |

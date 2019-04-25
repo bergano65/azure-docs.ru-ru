@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 02/07/2018
 ms.author: jingwang
 ms.openlocfilehash: cdd83c3ff9d34a5e8b7f2c164136ab82f498ffb5
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54022977"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60343772"
 ---
 # <a name="copy-data-from-sap-hana-using-azure-data-factory"></a>Копирование данных из SAP HANA с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -39,7 +39,7 @@ ms.locfileid: "54022977"
 > [!NOTE]
 > Чтобы скопировать данные **в** хранилище данных SAP HANA, используйте универсальный соединитель ODBC. Подробные сведения см. в разделе о [приемнике SAP HANA](connector-odbc.md#sap-hana-sink). Обратите внимание, что связанные службы для соединителя SAP HANA и соединитель ODBC нельзя использовать повторно, так как они имеют разные типы.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы использовать этот соединитель SAP HANA, сделайте следующее:
 
@@ -56,9 +56,9 @@ ms.locfileid: "54022977"
 
 Для связанной службы SAP HANA поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type необходимо задать значение **SapHana** | Yes |
+| type | Свойству type необходимо задать значение **SapHana** | Yes |
 | server | Имя сервера, на котором размещен экземпляр SAP HANA. Если ваш сервер использует настроенный порт, укажите `server:port`. | Yes |
 | authenticationType | Тип проверки подлинности, используемый для подключения к базе данных SAP HANA.<br/>Допустимые значения: **Basic** и **Windows**. | Yes |
 | userName | Имя пользователя, имеющего доступ к серверу SAP. | Yes |
@@ -119,9 +119,9 @@ ms.locfileid: "54022977"
 
 Чтобы копировать данные из SAP HANA, установите тип источника в действии копирования **RelationalSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type источника действия копирования необходимо задать значение **RelationalSource** | Yes |
+| type | Свойству type источника действия копирования необходимо задать значение **RelationalSource**. | Yes |
 | query | Указывает SQL-запрос для чтения данных из экземпляра SAP HANA. | Yes |
 
 **Пример.**
@@ -162,7 +162,7 @@ ms.locfileid: "54022977"
 
 | Тип данных SAP HANA | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
-| ALPHANUM | Строка |
+| ALPHANUM | String |
 | BIGINT | Int64 |
 | BLOB | Byte[] |
 | BOOLEAN | Byte |
@@ -171,14 +171,14 @@ ms.locfileid: "54022977"
 | DECIMAL | Decimal |
 | DOUBLE | Single |
 | INT | Int32 |
-| NVARCHAR | Строка |
+| NVARCHAR | String |
 | REAL | Single |
 | SECONDDATE | Datetime |
 | SMALLINT | Int16 |
-| TIME | Интервал времени |
+| TIME | TimeSpan |
 | TIMESTAMP | Datetime |
 | TINYINT | Byte |
-| VARCHAR | Строка |
+| VARCHAR | String |
 
 ## <a name="known-limitations"></a>Известные ограничения
 
@@ -190,5 +190,5 @@ ms.locfileid: "54022977"
 - Допустимый диапазон дат: 30.12.1899–31.12.9999.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

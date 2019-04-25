@@ -13,11 +13,11 @@ ms.author: celested
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ac94574ac297da7b3555be8d92ba3c5b62a990c5
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56174764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60292608"
 ---
 # <a name="remote-access-to-on-premises-applications-through-azure-active-directorys-application-proxy"></a>Удаленный доступ к локально размещенным приложениям через Azure Active Directory Application Proxy. 
 
@@ -66,7 +66,7 @@ Application Proxy поддерживает единый вход. Дополни
 | Active Directory | Active Directory работает локально и выполняет аутентификацию доменных учетных записей. Если настроен единый вход, соединитель взаимодействует со службой Active Directory для выполнения дополнительной аутентификации.
 | Локальное приложение | Когда весь этот процесс завершится, пользователь получает доступ к локальному приложению. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы начать использовать Application Proxy, воспользуйтесь статьей [Руководство. Добавление локального приложения для удаленного доступа через Application Proxy в Azure Active Directory](application-proxy-add-on-premises-application.md). 
 
 Последние новости и обновления вы найдете в [блоге, посвященном Application Proxy](https://blogs.technet.com/b/applicationproxyblog/).

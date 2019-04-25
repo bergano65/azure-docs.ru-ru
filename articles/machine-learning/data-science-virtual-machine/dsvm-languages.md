@@ -18,11 +18,11 @@ ms.topic: conceptual
 ms.date: 09/11/2017
 ms.author: gokuma
 ms.openlocfilehash: 586f37ff972a6102da351794365f719a185857fc
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58877420"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60502262"
 ---
 # <a name="languages-supported-on-the-data-science-virtual-machine"></a>Языки, поддерживаемые на виртуальных машинах для обработки и анализа данных 
 

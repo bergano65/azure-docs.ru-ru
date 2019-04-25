@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: bwren
 ms.openlocfilehash: 8947d235894ffc021243a64244b4904c5ca7f128
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55990434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60453182"
 ---
 # <a name="common-questions-for-transition-from-oms-portal-to-azure-portal-for-log-analytics-users"></a>Часто задаваемые вопросы о переходе от портала OMS к порталу Azure для пользователей Log Analytics
 В Log Analytics изначально существовал собственный портал для управления конфигурацией и анализа собранных данных, известный как портал OMS.  Теперь все функциональные возможности этого портала перемещены на портал Azure, где и будут совершенствоваться далее.
@@ -122,7 +122,7 @@ ms.locfileid: "55990434"
 ## <a name="can-i-still-use-the-classic-portal"></a>Можно ли по-прежнему пользоваться классическим порталом?
 На ограниченное время доступ к старому порталу сохранится по этому URL-адресу: https://\<имя_рабочей_области\>. portal.mms.microsoft.com (укажите правильное имя рабочей области). Но мы рекомендуем перейти на портал Azure. Информацию о блокирующих проблемах вы можете сообщить нам по адресу LAUpgradeFeedback@microsoft.com.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Решения по управлению в Azure](../insights/solutions.md) — сведения о поиске и установке решений с помощью портала Azure.
 - [Порталы для создания и изменения запросов к журналу в службе Azure Log Analytics](../log-query/portals.md).

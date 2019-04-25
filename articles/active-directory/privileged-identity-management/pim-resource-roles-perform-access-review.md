@@ -17,11 +17,11 @@ ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dc503e5c11f8e3a00fe9c258ad2a7cad5b6ade7e
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58575085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60287482"
 ---
 # <a name="perform-an-access-review-of-my-azure-resource-roles-in-pim"></a>Выполнение проверки доступа своих ролей ресурсов Azure в PIM
 Azure Active Directory (Azure AD) Privileged Identity Management (PIM) упрощает управление привилегированным доступом к ресурсам в Azure. 

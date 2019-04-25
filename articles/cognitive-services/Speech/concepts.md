@@ -12,11 +12,11 @@ ms.date: 09/18/2018
 ms.author: zhouwang
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: c114c726bea34465972a282acac6b8acbbf9a80f
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56670440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60514983"
 ---
 # <a name="basic-concepts"></a>Основные понятия
 
@@ -160,7 +160,7 @@ https://speech.platform.bing.com/speech/recognition/conversation/cognitiveservic
 
 - `RecognitionStatus` указывает состояние распознавания. В таблице ниже приведены возможные значения.
 
-| Status | ОПИСАНИЕ |
+| Статус | ОПИСАНИЕ |
 | ------------- | ---------------- |
 | Успешно | Распознавание успешно завершено; присутствует поле DisplayText (отображаемый текст) |
 | NoMatch | В аудиопотоке был обнаружена речь, но не были сопоставлены слова в целевом языке. Дополнительные сведения см. в документации для  [NoMatch Recognition Status(#nomatch-recognition-status)  |

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с RunMyProcess | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с RunMyProcess | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в RunMyProcess.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 07/12/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dfef1371b7ac61712c0f70efd48c0e791c4c729d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56162685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60518274"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-runmyprocess"></a>Руководство. Интеграция Azure Active Directory с RunMyProcess
+# <a name="tutorial-azure-active-directory-integration-with-runmyprocess"></a>Руководство по Интеграция Azure Active Directory с RunMyProcess
 
 В этом руководстве описано, как интегрировать RunMyProcess с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56162685"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с клиентом RunMyProcess, вам потребуется:
 
@@ -142,11 +142,11 @@ ms.locfileid: "56162685"
 
     a. Для параметра **Method** (Метод) выберите значение **SSO with Samlv2** (Единый вход с помощью SAML версии 2). 
 
-    б) В текстовое поле **SSO redirect** (Перенаправление для единого входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    2. В текстовое поле **SSO redirect** (Перенаправление для единого входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. В текстовое поле **Logout redirect** (Перенаправление для выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
-    4.3. В текстовое поле **Name Id Format** (Формат идентификатора имени) введите следующий **формат**: **urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress**.
+    d. В текстовое поле **Name Id Format** (Формат идентификатора имени) введите следующий **формат**: **urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress**.
 
     д. Скопируйте содержимое скачанного файла сертификата и вставьте его в **соответствующее** текстовое поле. 
  
@@ -181,11 +181,11 @@ ms.locfileid: "56162685"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-runmyprocess-test-user"></a>Создание тестового пользователя RunMyProcess
 
@@ -205,11 +205,11 @@ ms.locfileid: "56162685"
   
     a. Заполните текстовые поля **Name** (Имя) и **E-mail** (Электронная почта) данными действительной учетной записи Azure AD, которую необходимо подготовить. 
 
-    б) Выберите значения параметров **IDE language** (Язык интегрированной среды разработки), **Language** (Язык) и **Profile** (Профиль). 
+    2. Выберите значения параметров **IDE language** (Язык интегрированной среды разработки), **Language** (Язык) и **Profile** (Профиль). 
 
     c. Установите флажок **Отправить сообщение о создании учетной записи**. 
 
-    4.3. Выберите команду **Сохранить**.
+    d. Выберите команду **Сохранить**.
    
     >[!NOTE]
     >Вы можете использовать любые другие инструменты создания учетных записей пользователя RunMyProcess или API, предоставляемые RunMyProcess для подготовки учетных записей пользователя AAD. 

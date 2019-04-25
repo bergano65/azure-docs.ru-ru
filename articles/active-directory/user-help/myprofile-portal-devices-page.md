@@ -13,11 +13,11 @@ ms.date: 02/19/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b303a1cd3da7010573ce34dd4762616f4b6581d0
-ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57729103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60475877"
 ---
 # <a name="manage-your-connected-devices-from-the-my-profile-preview-portal"></a>Управление подключенными устройствами с портала "Мой профиль" (предварительная версия)
 Со страницы **Устройства** портала **Мой профиль** вы можете управлять подключенными устройствами, с помощью своей рабочей или учебной учетной записи, отключая те, которые вам больше не принадлежат.

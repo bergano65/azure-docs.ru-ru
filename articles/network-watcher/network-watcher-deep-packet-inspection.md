@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
 ms.openlocfilehash: 1c30e679b250c2d6c6b03a1fe5d70dbd06acf052
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55818368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60535714"
 ---
 # <a name="packet-inspection-with-azure-network-watcher"></a>Проверка пакетов в службе наблюдения за сетями Azure
 
@@ -123,7 +123,7 @@ tcp.port == 111
 
 В полученных результатах мы видим, что весь этот трафик поступает от локальной виртуальной машины из той же подсети. Если этого нам недостаточно для понимания характера трафика, мы можем дополнительно изучить отдельные пакеты. Возможно, это поможет понять, зачем они передаются на порт 111. Благодаря этим сведениям вы сможете предпринять необходимые действия.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о других диагностических возможностях Наблюдателя за сетями см. в [этом обзоре](network-watcher-monitoring-overview.md).
 

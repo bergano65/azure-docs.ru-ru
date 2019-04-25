@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 11/08/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 01b93a667fef8c56d6b7c78e8c6346357a2ff36c
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52266685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60527488"
 ---
 # <a name="cloud-partner-portal-tour"></a>Знакомство с Порталом Cloud Partner
 
@@ -41,6 +41,6 @@ ms.locfileid: "52266685"
 - Страница [Аналитические сведения](./cpp-insights-page.md) содержит различные панели мониторинга, которые относятся к компоненту портала *Seller Insights*.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующей статье о [навигации портала Cloud Partner](./cpp-portal-navigation.md) проверяются различные механизмы навигации, доступные на сайте.

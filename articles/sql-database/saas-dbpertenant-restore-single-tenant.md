@@ -13,11 +13,11 @@ ms.reviewer: billgib
 manager: craigg
 ms.date: 12/04/2018
 ms.openlocfilehash: 4059b0f979e7e6856905f1759129167d62d7b5f5
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53274434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60326368"
 ---
 # <a name="restore-a-single-tenant-with-a-database-per-tenant-saas-application"></a>Восстановление отдельного клиента приложения SaaS, использующего одну базу данных на клиент
 
@@ -124,7 +124,7 @@ ms.locfileid: "53274434"
 
 После восстановления базы данных нужно снова подождать 10–15 минут, прежде чем появится полная резервная копия, доступная для восстановления данных.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 

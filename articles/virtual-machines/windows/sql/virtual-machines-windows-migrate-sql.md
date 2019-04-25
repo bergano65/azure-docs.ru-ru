@@ -17,11 +17,11 @@ ms.date: 08/18/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 95acda60935e82b226a1a0e860b5fa8effb8e47e
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54332138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60325704"
 ---
 # <a name="migrate-a-sql-server-database-to-sql-server-in-an-azure-vm"></a>Миграция базы данных SQL Server в экземпляр SQL Server на виртуальной машине Azure
 
@@ -96,7 +96,7 @@ ms.locfileid: "54332138"
 ## <a name="ship-hard-drive"></a>Отправка жестких дисков
 Для передачи больших объемов данных в хранилище больших двоичных объектов Azure в ситуациях, когда отправка этих данных по сети чрезвычайно дорога или невыполнима, можно использовать [службу импорта и экспорта Windows](../../../storage/common/storage-import-export-service.md) . При использовании этой службы можно отправить один или несколько жестких дисков с данными в центр обработки данных Azure, где данные будут перемещены в вашу учетную запись хранения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Подробные сведения о работе SQL Server на виртуальных машинах Azure см. в разделе [Общие сведения об SQL Server на виртуальных машинах Azure](virtual-machines-windows-sql-server-iaas-overview.md).
 
 > [!TIP]

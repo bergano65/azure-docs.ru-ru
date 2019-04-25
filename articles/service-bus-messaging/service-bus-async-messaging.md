@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: 50778ae742c1ec66857a6c2fa6250dc3d67e5601
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56301576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60531112"
 ---
 # <a name="asynchronous-messaging-patterns-and-high-availability"></a>Шаблоны асинхронного обмена сообщениями и высокий уровень доступности
 
@@ -64,7 +64,7 @@ ms.locfileid: "56301576"
 
 В таких случаях клиентское приложение создает исключение [System.TimeoutException][System.TimeoutException] или исключение [MessagingException][MessagingException]. Служебная шина содержит средство для устранения этой проблемы, которое реализовано в виде автоматизированной логики повтора для клиента. Если период повторных попыток исчерпан, а сообщение все еще не доставлено, можно использовать другие возможности, описанные в статье [Рекомендации по изолированию приложений от простоев и аварий служебной шины][handling outages and disasters].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Вы ознакомились с основами асинхронного обмена сообщениями в служебной шине. Дополнительные сведения см. в статье [Рекомендации по изолированию приложений от простоев и аварий служебной шины][handling outages and disasters].
 
 [ServerBusyException]: /dotnet/api/microsoft.servicebus.messaging.serverbusyexception

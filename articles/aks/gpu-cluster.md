@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 02/28/2019
 ms.author: zarhoads
 ms.openlocfilehash: 150eaa6a4df558ed0c737d99cbcc8010baf63e96
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58758229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60466398"
 ---
 # <a name="use-gpus-for-compute-intensive-workloads-on-azure-kubernetes-service-aks"></a>Использование процессоров GPU для интенсивных вычислительных рабочих нагрузок в Службе Azure Kubernetes (AKS)
 

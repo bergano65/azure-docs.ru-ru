@@ -11,11 +11,11 @@ ms.date: 11/28/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 9d8ae3a95262b1554e7e97fac8375a44743bf4df
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55731467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60344671"
 ---
 # <a name="execute-data-science-tasks-exploration-modeling-and-deployment"></a>Выполнение задач обработки и анализа данных: изучение, моделирование и развертывание
 
@@ -106,7 +106,7 @@ ms.locfileid: "55731467"
 Если в рабочей среде используется несколько моделей, удобно выполнять [A/B-тестирование](https://en.wikipedia.org/wiki/A/B_testing), чтобы сравнить их эффективность. 
 
  
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В разделе [Ход выполнения проектов обработки и анализа данных](track-progress.md) показано, как специалист по обработке и анализу данных может отслеживать ход выполнения проекта обработки и анализа данных.
 

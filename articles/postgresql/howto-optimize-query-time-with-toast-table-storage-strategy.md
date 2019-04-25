@@ -1,17 +1,19 @@
 ---
 title: Оптимизация времени выполнения запросов на сервере Базы данных Azure для PostgreSQL с помощью стратегии хранения таблицы TOAST
 description: В этой статье описывается, как оптимизировать время выполнения запроса на сервере Базы данных Azure для PostgreSQL с помощью стратегии хранения таблицы TOAST.
-author: dianaputnam
-ms.author: dianas
+author: WenJason
+ms.author: v-jay
+editor: jasonwhowell
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 10/22/2018
+origin.date: 10/22/2018
+ms.date: 02/18/2019
 ms.openlocfilehash: 96793cb1785a7ffa86331285f401453641b50dac
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55820884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60421062"
 ---
 # <a name="optimize-query-time-with-the-toast-table-storage-strategy"></a>Оптимизация времени выполнения запросов с помощью стратегии хранения таблицы TOAST 
 В этой статье описывается, как оптимизировать время выполнения запросов, применяя стратегию хранения таблицы TOAST.
@@ -28,7 +30,7 @@ ms.locfileid: "55820884"
 
 При наличии рабочей нагрузки, использующей схему с широкими таблицами и большим количеством символов, рассмотрите возможность применения таблиц TOAST PostgreSQL. Например, таблица клиентов содержит больше чем 350 столбцов с несколькими столбцами, в которых есть 255 знаков. После перехода на основную стратегию таблицы TOAST время выполнения запроса сократилось с 4203 до 467 секунд, что на 89 процентов больше.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Проверьте рабочую нагрузку с учетом представленных ранее характеристик. 
 
 Ознакомьтесь со следующей документацией PostgreSQL: 

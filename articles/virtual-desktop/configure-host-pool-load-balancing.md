@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: helohr
 ms.openlocfilehash: 0c4702dada17e759d89c33be99b3155f4b15ad9e
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58399860"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60328890"
 ---
 # <a name="configure-the-windows-virtual-desktop-preview-load-balancing-method"></a>Настройка метода балансировки нагрузки Апробация виртуального рабочего стола Windows
 
@@ -25,7 +25,7 @@ ms.locfileid: "58399860"
 
 Балансировка нагрузки по ширине является конфигурацией по умолчанию для новых пулов непостоянный узла. Балансировка нагрузки по ширине распределяет новых пользовательских сеансов для всех узлов в пуле узлов, доступных сеансов. При настройке балансировки нагрузки по ширине, вы может ограничить максимальное число сеансов для каждого узла сеанса в пуле узлов.
 
-Во-первых, [Загрузите и импортируйте модуль PowerShell для виртуальных рабочих столов Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell, если у вас еще нет.
+Сначала [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell (если вы еще это не сделали).
 
 Чтобы настроить пул узлов для выполнения преимущественно балансировку нагрузки без настройки ограничивает продолжительность сеанса, выполните следующий командлет PowerShell:
 

@@ -14,11 +14,11 @@ ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 20842c8c644a351b59322569661abf82bb524449
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56187157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60472613"
 ---
 # <a name="view-and-assign-administrator-roles-in-azure-active-directory"></a>Просмотр и назначение ролей администратора в Azure Active Directory
 
@@ -51,7 +51,7 @@ ms.locfileid: "56187157"
 ![список разрешений для роли администратора](./media/directory-manage-roles-portal/role-description.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Вы можете оставить комментарий на [форуме об административных ролях Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 * Дополнительные сведения о ролях и назначении роли администратора см. в разделе [Назначение ролей администратора](directory-assign-admin-roles.md).

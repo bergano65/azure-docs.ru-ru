@@ -11,11 +11,11 @@ ms.date: 11/28/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: adf713fc3f875168f99b302b0a9affef88e8414f
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55457691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60327903"
 ---
 # <a name="agile-development-of-data-science-projects"></a>Гибкая разработка проектов обработки и анализа данных
 
@@ -176,7 +176,7 @@ ms.locfileid: "55457691"
     ![18](./media/agile-development/18-workitems.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В разделе [Совместное программирование с помощью Git](collaborative-coding-with-git.md) описывается совместная разработка кода для проектов обработки и анализа данных с использованием Git в качестве платформы разработки общего кода. В нем также описывается связывание этих действий программирования с запланированной работой с помощью гибкого процесса.
 

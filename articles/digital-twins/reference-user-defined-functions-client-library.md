@@ -10,11 +10,11 @@ ms.date: 12/27/2018
 ms.author: alinast
 ms.custom: seodec18
 ms.openlocfilehash: d309765e6c4b0b0cc8a7e92977134d4135a69a13
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53995476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60535593"
 ---
 # <a name="user-defined-functions-client-library-reference"></a>Справочник по клиентским библиотекам определяемых пользователем функций
 
@@ -221,7 +221,7 @@ ms.locfileid: "53995476"
 | ------ | ------------------- | ------------ |
 | *sensorId* | `guid` | Идентификатор датчика |
 | *dataType*  | `string` | Тип данных датчика |
-| *значение*  | `string` | Значение |
+| *значение*  | `string` | Value |
 
 ### <a name="setspacevaluespaceid-datatype-value"></a>setSpaceValue(spaceId, dataType, value)
 
@@ -233,7 +233,7 @@ ms.locfileid: "53995476"
 | ------ | ------------------- | ------------ |
 | *spaceId* | `guid` | Идентификатор пространства |
 | *dataType* | `string` | Тип данных |
-| *значение* | `string` | Значение |
+| *значение* | `string` | Value |
 
 ### <a name="logmessage"></a>log(Message)
 
@@ -420,7 +420,7 @@ ms.locfileid: "53995476"
 | ------ | ------------------- | ------------ |
 | *payload* | `string` | полезные данные JSON, которые будут включены в уведомление |
 
-### <a name="value"></a>Значение
+### <a name="value"></a>Value
 
 ```JSON
 {
@@ -439,7 +439,7 @@ ms.locfileid: "53995476"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. статью [Обработка данных и определяемые пользователем функции](./concepts-user-defined-functions.md).
 

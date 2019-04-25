@@ -18,11 +18,11 @@ ms.topic: article
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 646119f223067fac5ee36574fb10273819251cce
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59547062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60296050"
 ---
 # <a name="how-to-investigate-risky-users-and-sign-ins"></a>Практическое руководство. Изучение действий пользователей и операций входа, которые могут представлять риск 
 
@@ -46,7 +46,7 @@ ms.locfileid: "59547062"
 
 Отчеты о пользователях, выполняющих рискованные действия, отображают по умолчанию.
 
-- ИМЯ
+- Name
 
 - Состояние риска
 
@@ -58,7 +58,7 @@ ms.locfileid: "59547062"
 
 - type
 
-- Status
+- Статус
  
 
 ![Отчет о пользователях, выполняющих рискованные действия](./media/howto-investigate-risky-users-signins/03.png)
@@ -105,7 +105,7 @@ ms.locfileid: "59547062"
 
 Для сужения результатов до нужного уровня вы можете отфильтровать данные о пользователях, выполняющих рискованные действия, используя следующие поля по умолчанию:
 
-- ИМЯ
+- Name
 
 - Имя пользователя
 
@@ -115,7 +115,7 @@ ms.locfileid: "59547062"
 
 - type
 
-- Status
+- Статус
 
 ![Отчет о пользователях, выполняющих рискованные действия](./media/howto-investigate-risky-users-signins/06.png)
 

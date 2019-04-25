@@ -17,11 +17,11 @@ ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 21e101dee878a48cce1005d51ad5e59166b0cfa1
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56193124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60293325"
 ---
 # <a name="how-to-enable-native-client-apps-to-interact-with-proxy-applications"></a>Включение собственных клиентских приложений для взаимодействия с приложениями прокси
 
@@ -95,7 +95,7 @@ HttpResponseMessage response = await httpClient.GetAsync("< Proxy App API Url >"
 
 После изменения этих параметров в ADAL ваши пользователи смогут выполнять проверку подлинности в собственных клиентских приложениях за пределами корпоративной сети. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о блок-схеме собственного приложения см. в разделе [Из нативного приложения к веб-интерфейсу API](../develop/native-app.md).
 

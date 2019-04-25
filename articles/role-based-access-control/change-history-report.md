@@ -16,11 +16,11 @@ ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: b808654baded5bbe721866441a8d1115eff7bcaa
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59997909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60308917"
 ---
 # <a name="view-activity-logs-for-rbac-changes-to-azure-resources"></a>Просмотр журналов действий для изменений RBAC в ресурсах Azure
 

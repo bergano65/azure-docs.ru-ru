@@ -3,7 +3,7 @@ title: Настройка входа с помощью поставщика SAML
 description: Настройте вход с помощью поставщика SAML Salesforce, используя пользовательские политики Azure в Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
@@ -11,11 +11,11 @@ ms.date: 09/21/2018
 ms.author: davidmu
 ms.subservice: B2C
 ms.openlocfilehash: ca96dbd2073540d47fe09caaa8a337e292445590
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58486773"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60316346"
 ---
 # <a name="set-up-sign-in-with-a-salesforce-saml-provider-by-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа с помощью поставщика SAML Salesforce, используя пользовательские политики Azure в Active Directory B2C
 

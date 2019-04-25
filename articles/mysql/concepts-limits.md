@@ -7,11 +7,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 12/6/2018
 ms.openlocfilehash: 55106f855d1f2cab82b751b306a3a289bd740e9e
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55895352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60525420"
 ---
 # <a name="limitations-in-azure-database-for-mysql"></a>Ограничения в службе "База данных Azure для MySQL"
 В следующих разделах приводятся ограничения, касающиеся емкости, поддерживаемых подсистем хранилища, поддерживаемых разрешений, поддерживаемых инструкций языка обработки данных и функциональных возможностей в службе базы данных. Кроме того, ознакомьтесь с [общими ограничениями](https://dev.mysql.com/doc/mysql-reslimits-excerpt/5.6/en/limits.html), применимыми к ядру СУБД базы данных MySQL.
@@ -84,6 +84,6 @@ ms.locfileid: "55895352"
 ## <a name="current-known-issues"></a>Известные на данный момент проблемы
 - После установки подключения для экземпляра сервера MySQL отображается неправильная версия сервера. Чтобы получить правильную версию ядра экземпляра сервера, используйте команду `select version();`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Параметры и производительность базы данных Azure для MySQL: возможности разных ценовых категорий](concepts-pricing-tiers.md)
 - [Поддерживаемые версии базы данных PostgreSQL](concepts-supported-versions.md)

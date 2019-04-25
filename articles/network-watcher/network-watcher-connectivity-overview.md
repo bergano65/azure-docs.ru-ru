@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/11/2017
 ms.author: jdial
-ms.openlocfilehash: 0268c7e54aa82df12243f98fd72de836fbc82070
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
-ms.translationtype: HT
+ms.openlocfilehash: 4b1164c3dedc5d8a2fa02d70f66ff00afe604836
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "30834005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60532474"
 ---
 # <a name="introduction-to-connection-troubleshoot-in-azure-network-watcher"></a>Общие сведения об устранении неполадок подключения в службе "Наблюдатель за сетями Azure"
 
@@ -27,7 +27,7 @@ ms.locfileid: "30834005"
 > [!IMPORTANT]
 > Чтобы устранить неполадки подключения на виртуальной машине, установите на ней расширение `AzureNetworkWatcherExtension`. Информацию об установке расширения для виртуальной машины Windows см. в статье [Расширение виртуальной машины агента Наблюдателя за сетями для Windows](../virtual-machines/windows/extensions-nwa.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json), а для виртуальной машины Linux — в статье [Расширение виртуальной машины агента Наблюдателя за сетями для Linux](../virtual-machines/linux/extensions-nwa.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json). Эта расширение не нужно устанавливать на целевой конечной точке.
 
-## <a name="response"></a>Ответ
+## <a name="response"></a>Отклик
 
 В таблице ниже приведены свойства, возвращаемые после устранения неполадок подключения.
 
@@ -83,6 +83,6 @@ ms.locfileid: "30834005"
 |NetworkSecurityRule    | Трафик блокируется правилом группы безопасности сети (возвращается правило).        |
 |UserDefinedRoute|Трафик сбрасывается из-за определенного пользователем или системой маршрута. |
 
-### <a name="next-steps"></a>Дополнительная информация
+### <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как устранить неполадки подключения с помощью [портала Azure](network-watcher-connectivity-portal.md), [PowerShell](network-watcher-connectivity-powershell.md), [Azure CLI](network-watcher-connectivity-cli.md) или [REST API](network-watcher-connectivity-rest.md).

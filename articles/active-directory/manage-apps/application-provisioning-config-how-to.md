@@ -17,11 +17,11 @@ ms.author: celested
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 028c93e1d250606ccf1516e9393bf61140961831
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56174798"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60442902"
 ---
 # <a name="how-to-configure-user-provisioning-to-an-azure-ad-gallery-application"></a>Как настроить подготовку пользователей для приложения из коллекции Azure AD
 
@@ -54,6 +54,6 @@ ms.locfileid: "56174798"
 
 При настройке подготовки важно просмотреть и настроить сопоставления атрибутов и рабочие процессы, которые определяют, какие свойства пользователя (или группы) передаются из Azure AD в приложение. К ним относится "свойство сопоставления", используемое для уникальной идентификации и сопоставления пользователей или групп между двумя системами. Дополнительные сведения об этом важном процессе см. в разделах, указанных ниже.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-customizing-attribute-mappings)
 

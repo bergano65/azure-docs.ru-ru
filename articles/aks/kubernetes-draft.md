@@ -2,17 +2,18 @@
 title: Использование Draft с AKS и реестром контейнеров Azure
 description: Использование Draft с AKS и реестром контейнеров Azure
 services: container-service
-author: zr-msft
+author: rockboyfor
 ms.service: container-service
 ms.topic: article
-ms.date: 08/15/2018
-ms.author: zarhoads
+origin.date: 08/15/2018
+ms.date: 04/08/2019
+ms.author: v-yeche
 ms.openlocfilehash: 462cfd6ec0a6b25f85dda0245dd4f5feed7cb712
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58755666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60465159"
 ---
 # <a name="use-draft-with-azure-kubernetes-service-aks"></a>Использование Draft со службой Azure Kubernetes (AKS)
 
@@ -76,7 +77,7 @@ az role assignment create --assignee $AKS_SP_ID --scope $ACR_RESOURCE_ID --role 
 1. Задайте значение *registry* в файле конфигурации Draft. В следующих командах замените `<acrName>` именем своего реестра ACR:
 
     ```console
-    draft config set registry <acrName>.azurecr.io
+    draft config set registry <acrName>.azurecr.cn
     ```
 
 1. Войдите в реестр ACR, выполнив команду [az acr login][az-acr-login]:
@@ -270,4 +271,4 @@ Hello World, I'm Java in AKS!
 [aks-helm]: ./kubernetes-helm.md
 [kubernetes-ingress]: ./ingress-basic.md
 [aks-quickstart]: ./kubernetes-walkthrough.md
-[az-acr-login]: /cli/azure/acr#az-acr-login
+[az-acr-login]: https://docs.azure.cn/zh-cn/cli/acr?view=azure-cli-latest#az-acr-login

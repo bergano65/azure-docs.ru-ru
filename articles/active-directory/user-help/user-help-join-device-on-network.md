@@ -14,11 +14,11 @@ ms.author: lizross
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dfd38e775ba418fbe31cafa8df5f37b45c3b0643
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59524378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60474539"
 ---
 # <a name="join-your-work-device-to-your-organizations-network"></a>Присоединения рабочего устройства к сети организации
 Присоедините свое рабочее устройство Windows 10 к сети вашей организации, чтобы вы могли получать доступ к потенциально ограниченным ресурсам.

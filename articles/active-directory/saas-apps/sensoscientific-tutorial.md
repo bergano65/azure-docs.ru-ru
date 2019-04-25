@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с беспроводной системой мониторинга температуры SensoScientific | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с беспроводной системой мониторинга температуры SensoScientific | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и беспроводной системой мониторинга температуры SensoScientific.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 04/19/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 33a625e82f41bee1b8e3980192076d24a7471953
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56183417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60340721"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sensoscientific-wireless-temperature-monitoring-system"></a>Руководство. Интеграция Azure Active Directory с беспроводной системой мониторинга температуры SensoScientific
+# <a name="tutorial-azure-active-directory-integration-with-sensoscientific-wireless-temperature-monitoring-system"></a>Руководство по Интеграция Azure Active Directory с беспроводной системой мониторинга температуры SensoScientific
 
 Это руководство содержит сведения об интеграции беспроводной системы мониторинга температуры SensoScientific с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56183417"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с беспроводной системой мониторинга температуры SensoScientific, вам потребуется:
 
@@ -135,11 +135,11 @@ ms.locfileid: "56183417"
  
     a. В качестве **имени издателя** выберите Azure AD.
     
-    б) Вставьте **идентификатор сущности SAML**, скопированный на портале Azure, в текстовое поле Issuer URL (URL-адрес издателя).
+    2. Вставьте **идентификатор сущности SAML**, скопированный на портале Azure, в текстовое поле Issuer URL (URL-адрес издателя).
     
     c. Вставьте **URL-адрес службы единого входа SAML**, скопированный на портале Azure, в текстовое поле Single Sign-On Service URL (URL-адрес службы единого входа).
 
-    4.3. Вставьте **URL-адрес выхода**, скопированный на портале Azure, в текстовое поле Single Sign-Out Service URL (URL-адрес службы единого входа).
+    d. Вставьте **URL-адрес выхода**, скопированный на портале Azure, в текстовое поле Single Sign-Out Service URL (URL-адрес службы единого входа).
 
     д. Перейдите к сертификату, скачанному на портале Azure, и загрузите его сюда.
     
@@ -173,11 +173,11 @@ ms.locfileid: "56183417"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-sensoscientific-wireless-temperature-monitoring-system-test-user"></a>Создание текстового пользователя беспроводной системы мониторинга температуры SensoScientific
 

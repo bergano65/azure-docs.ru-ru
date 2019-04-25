@@ -5,15 +5,16 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 01/07/2019
-ms.openlocfilehash: ecd6466d8d7a7e4497d076ced0c9f2375d5dfb7f
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
-ms.translationtype: HT
+ms.date: 3/13/2019
+ms.openlocfilehash: e7e81632b2be135fb74d375ab8a11f1b4b3ef39d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54106042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60525936"
 ---
 # <a name="supported-azure-database-for-mysql-server-versions"></a>Поддерживаемые версии сервера базы данных Azure для MySQL
+
 Служба "База данных Azure для MySQL" разработана на базе [MySQL Community Edition](https://www.mysql.com/products/community/) с использованием подсистемы InnoDB.
 
 MySQL использует схему именования X.Y.Z. X является основным номером версии, Y является дополнительным номером версии, а Z — выпуском для исправления ошибок. Дополнительные сведения о схеме см. в [документации MySQL](https://dev.mysql.com/doc/refman/5.7/en/which-version.html).
@@ -22,15 +23,15 @@ MySQL использует схему именования X.Y.Z. X являет
 
 ## <a name="mysql-version-56"></a>MySQL версии 5.6
 
-Выпуск для исправления ошибок: 5.6.39
+Выпуск для исправления ошибок: 5.6.42
 
-Сведения об улучшениях и исправлениях в MySQL 5.6.39 см. в заметках о выпуске MySQL см. [здесь](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-39.html).
+См. MySQL [заметки о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-42.html) Дополнительные сведения об улучшениях и исправлениях в MySQL 5.6.42.
 
 ## <a name="mysql-version-57"></a>MySQL версии 5.7
 
-Выпуск для исправления ошибок: 5.7.21
+Выпуск для исправления ошибок: 5.7.24
 
-Сведения об улучшениях и исправлениях в MySQL 5.7.21 см. в заметках о выпуске MySQL [здесь](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-21.html).
+См. MySQL [заметки о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-24.html) Дополнительные сведения об улучшениях и исправлениях в MySQL 5.7.24.
 
 > [!NOTE]
 > В службе для перенаправления подключений к экземплярам сервера используется шлюз. После установки подключения в клиенте MySQL отображается версия MySQL, установленная в шлюзе, а не фактическая версия, которая работает на вашем экземпляре сервера MySQL. Чтобы определить версию MySQL на экземпляре сервера, выполните команду `SELECT VERSION();` в командной строке MySQL.
@@ -40,6 +41,6 @@ MySQL использует схему именования X.Y.Z. X являет
 
 Сейчас обновления основного и дополнительного номера версии не поддерживаются. Например, обновление с версии MySQL 5.6 до MySQL 5.7 не поддерживается. Чтобы выполнить обновление с версии 5.6 до 5.7, создайте дамп и восстановите его на сервере, который был создан с новой версией ядра. Для дополнительных сведений см. [эту статью](./concepts-migrate-dump-restore.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о квотах и ограничениях для конкретных ресурсов с учетом вашего **уровня служб** представлены в статье [Уровни служб в базе данных Azure для MySQL](./concepts-pricing-tiers.md).

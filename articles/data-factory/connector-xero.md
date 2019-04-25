@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: jingwang
 ms.openlocfilehash: 6793fbcc50711e10231b87fa6e1f11f54f90d325
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54018438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60445440"
 ---
 # <a name="copy-data-from-xero-using-azure-data-factory-preview"></a>Копирование данных из Xero с помощью фабрики данных Azure (предварительная версия)
 
@@ -47,9 +47,9 @@ ms.locfileid: "54018438"
 
 Для связанной службы Xero поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type необходимо задать следующее значение: **Xero** | Yes |
+| type | Свойству type необходимо задать следующее значение: **Xero** | Yes |
 | host | Конечная точка сервера Xero (`api.xero.com`).  | Yes |
 | consumerKey | Ключ пользователя, связанный с приложением Xero. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | privateKey | Закрытый ключ из PEM-файла, созданный для частного приложения Xero. Дополнительные сведения см. в статье [Create a public/private key pair](https://developer.xero.com/documentation/api-guides/create-publicprivate-key) (Создание открытого и закрытого ключей). Примечание для **создания privatekey.pem с numbits 512** с использованием `openssl genrsa -out privatekey.pem 512`; 1024 не поддерживается. Включает весь текст из PEM-файла, в том числе окончания строк Unix (\n). Пример см. ниже.<br/><br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
@@ -93,9 +93,9 @@ ms.locfileid: "54018438"
 
 Чтобы копировать данные из Xero, установите свойство type набора данных **XeroObject**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type набора данных необходимо задать следующее значение: **XeroObject** | Yes |
+| type | Для свойства type набора данных необходимо задать следующее значение: **XeroObject** | Yes |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -122,9 +122,9 @@ ms.locfileid: "54018438"
 
 Чтобы копировать данные из HTTP, установите тип источника **XeroSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь следующее значение: **XeroSource** | Yes |
+| type | Свойство type источника действия копирования должно иметь следующее значение: **XeroSource** | Yes |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Contacts"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
@@ -213,5 +213,5 @@ ms.locfileid: "54018438"
 - Complete.Receipt_Line_Item_Tracking 
 - Complete.Tracking_Category_Options
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Список источников данных, которые поддерживает действие копирования, приведен в таблице [поддерживаемых хранилищ данных и форматов](copy-activity-overview.md#supported-data-stores-and-formats).

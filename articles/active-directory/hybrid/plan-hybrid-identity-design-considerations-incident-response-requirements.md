@@ -18,11 +18,11 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 32efe76ac2fce4c4541287e96c3a495f3eb9031b
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56161498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60455811"
 ---
 # <a name="determine-incident-response-requirements-for-your-hybrid-identity-solution"></a>Определение требований к реагированию на инциденты для решения для гибридной идентификации
 В средних и крупных организациях скорее всего будет развернута [политика реагирования на инциденты безопасности](https://technet.microsoft.com/library/cc700825.aspx) , которая поможет IT-специалистам предпринять необходимые действия в соответствии с уровнем инцидента. Систему управления идентификацией является важным компонентом в процессе реагирования на инциденты, поскольку с ее помощью можно определить лицо, выполнившее указанное действие по отношению к целевому ресурсу. Решение для гибридной идентификации также должно предоставить возможности мониторинга и составления отчетов, с помощью которых ИТ-специалисты смогут выявить и устранить потенциальные угрозы. Типичный план реагирования на инциденты будет состоять из следующих фаз:
@@ -64,7 +64,7 @@ ms.locfileid: "56161498"
 > 
 > 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Определение стратегии защиты данных](plan-hybrid-identity-design-considerations-data-protection-strategy.md)
 
 ## <a name="see-also"></a>См. также

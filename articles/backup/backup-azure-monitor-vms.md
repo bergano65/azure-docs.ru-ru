@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: raynew
 ms.openlocfilehash: c5c3f498f62d6399534333f8166a514a10f044c5
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56310172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60464430"
 ---
 # <a name="monitor-alerts-for-azure-virtual-machine-backups"></a>Мониторинг предупреждений в резервных копиях виртуальных машин Azure
 
@@ -128,7 +128,7 @@ ms.locfileid: "56310172"
 1. Оповещения активируются на всех виртуальных машинах в хранилище служб восстановления. Оповещения нельзя настроить для подмножества виртуальных машин в хранилище служб восстановления.
 2. Оповещения отправляются с адреса "alerts-noreply@mail.windowsazure.com". В настоящее время невозможно изменить отправителя электронной почты.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о восстановлении виртуальных машин из точки восстановления см. в статье [Восстановление виртуальных машин в Azure](backup-azure-arm-restore-vms.md).
 

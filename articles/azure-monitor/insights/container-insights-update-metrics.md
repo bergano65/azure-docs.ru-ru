@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 03/27/2019
 ms.author: magoedte
 ms.openlocfilehash: 2f500ea127d3f2042e7c97eeace592b4da8d8d0e
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995988"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60494851"
 ---
 # <a name="how-to-update-azure-monitor-for-containers-to-enable-metrics"></a>Как обновить Azure Monitor для контейнеров, чтобы включить метрики
 Azure Monitor для контейнеров предоставляет поддержку для сбора метрик из узлов кластеров службы Azure Kubernetes (AKS) и модулей и их записи в хранилище данных метрик Azure Monitor. Это изменение призван обеспечивают улучшенную своевременность при представлении статистические вычисления (Avg, Count, Max, Min, Sum), на диаграммах производительности, поддержку закрепления диаграмм производительности в панели мониторинга портала Azure и поддерживают оповещения на основе метрик.

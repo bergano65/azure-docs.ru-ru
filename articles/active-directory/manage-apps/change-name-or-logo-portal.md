@@ -17,11 +17,11 @@ ms.reviewer: asteen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 62578fe037dc1c9672bd0a4cf28500c658344c53
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56182924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60440404"
 ---
 # <a name="change-the-name-or-logo-of-an-enterprise-app-in-azure-active-directory"></a>Изменение имени или логотипа корпоративного приложения в Azure Active Directory
 Вы можете легко изменить имя или логотип настраиваемого корпоративного приложения в Azure Active Directory (Azure AD). Для внесения этих изменений необходимо иметь соответствующие разрешения и быть создателем пользовательского приложения.
@@ -42,7 +42,7 @@ ms.locfileid: "56182924"
     ![Изменение свойств для логотипа или имени приложения](./media/change-name-or-logo-portal/change-logo.png)
 8. Щелкните **Сохранить** .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Просмотр всех моих групп](../fundamentals/active-directory-groups-view-azure-portal.md)
 * [Назначение корпоративному приложению пользователя или группы](assign-user-or-group-access-portal.md)
 * [Удаление назначения пользователя или группы из корпоративного приложения](remove-user-or-group-access-portal.md)

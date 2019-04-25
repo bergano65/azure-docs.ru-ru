@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: pbutlerm
 ms.openlocfilehash: e543c24a8e3549bc53d6074c7008f3d01fcc96c4
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54228765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60335004"
 ---
 # <a name="azure-and-dynamics-365-consulting-service-offer"></a>Предложение консультационных услуг в Dynamics 365 и Azure
 
@@ -50,6 +50,6 @@ ms.locfileid: "54228765"
     - [Вкладка со сведениями об онлайн-магазине](./cpp-consulting-service-storefront-details.md).
 - [Публикация предложения консультационных услуг](./cpp-consulting-service-publish-offer.md) описывается, как запустить предложения для публикации.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Прежде чем выполнять эти действия по публикации предложения консультационных услуг, необходимо выполнить [предварительные требования](./cpp-consulting-service-prerequisites.md) для публикации предложения консультационных услуг.

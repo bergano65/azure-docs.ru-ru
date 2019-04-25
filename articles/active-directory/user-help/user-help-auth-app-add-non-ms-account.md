@@ -13,11 +13,11 @@ ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e6f94ba30c06fc6975ab212c895cecefe5d383fa
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56453653"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60473912"
 ---
 # <a name="add-your-non-microsoft-accounts"></a>Добавление учетных записей сторонних поставщиков
 Сведения о добавлении учетных записей сторонних поставщиков, таких как Google, Facebook или GitHub, в приложение Microsoft Authenticator для двухфакторной проверки подлинности. Приложение Microsoft Authenticator работает с любым приложением, использующим двухфакторную проверку подлинности, и с любой учетной записью, поддерживающей стандарты одноразовых паролей с ограниченным сроком действия (TOTP).
@@ -186,7 +186,7 @@ ms.locfileid: "56453653"
     >Дополнительные сведения о двухфакторной проверке подлинности и учетной записи Amazon см. в статьях [About Two-Step Verification](https://www.amazon.com/gp/help/customer/display.html?nodeId=201596330) (О двухфакторной проверке подлинности) и [Signing in with Two-Step Verification](https://www.amazon.com/gp/help/customer/display.html?nodeId=201962440) (Вход с использованием двухфакторной проверки подлинности).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Добавив учетные записи в приложение, вы можете использовать их для входа с помощью приложения Authenticator на мобильном устройстве. Дополнительные сведения см. в статье [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md).
 

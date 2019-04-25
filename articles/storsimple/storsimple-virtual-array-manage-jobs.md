@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/11/2016
 ms.author: alkohli
 ms.openlocfilehash: dbab2aaab2c12bef07748f54e5864d042f1c982a
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52333570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60302505"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-view-jobs-for-the-storsimple-virtual-array"></a>Использование службы диспетчера устройств StorSimple для просмотра заданий виртуального массива StorSimple
 ## <a name="overview"></a>Обзор
@@ -59,10 +59,10 @@ ms.locfileid: "52333570"
 #### <a name="job-failures-when-the-virtual-machine-is-paused-in-the-hypervisor"></a>Сбои заданий при приостановке виртуальной машины в гипервизоре
 Если задание выполняется в виртуальном массиве StorSimple и устройство (виртуальная машина, подготовленная в гипервизоре) приостанавливается более чем на 15 минут, задание завершится ошибкой. Это происходит из-за нарушения синхронизации времени виртуального массива StorSimple и Microsoft Azure. 
 
-Отобразится следующая ошибка: Your device time is out of sync with the Microsoft Azure time by more than 15 minutes (Время на устройстве и время Microsoft Azure отличаются более чем на 15 минут). Ensure that the hypervisor and the device times are synchronized with an NTP server (Убедитесь, что время гипервизора и устройства синхронизировано с сервером NTP). Verify that there are no connectivity issues (Проверьте наличие проблем с подключением). To troubleshoot connectivity issues, run diagnostic tests from the local web UI of your virtual device (Чтобы устранить проблемы с подключением, выполните диагностические тесты в локальном веб-интерфейсе виртуального устройства).
+Отобразится следующая ошибка: «Время на устройстве не синхронизировано с временем Microsoft Azure более чем 15 минут. Ensure that the hypervisor and the device times are synchronized with an NTP server (Убедитесь, что время гипервизора и устройства синхронизировано с сервером NTP). Verify that there are no connectivity issues (Проверьте наличие проблем с подключением). To troubleshoot connectivity issues, run diagnostic tests from the local web UI of your virtual device (Чтобы устранить проблемы с подключением, выполните диагностические тесты в локальном веб-интерфейсе виртуального устройства).
 
 Эти ошибки свойственны заданиям резервного копирования, восстановления, обновления и отработки отказа. Если виртуальная машина подготовлена в Hyper-V, она в конечном итоге синхронизирует время с гипервизором. После этого можно перезапустить задание.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Узнайте, как с помощью локального веб-интерфейса администрировать виртуальный массив StorSimple](storsimple-ova-web-ui-admin.md).
 

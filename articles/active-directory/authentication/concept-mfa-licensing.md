@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 765b9aff898cbea763d66a20db91b3390cc48bb4
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58310006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60415690"
 ---
 # <a name="how-to-get-azure-multi-factor-authentication"></a>Как получить службу Многофакторной идентификации Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "58310006"
 
 В следующей таблице описываются различия между тремя версиями службы многофакторной идентификации.
 
-| Version (версия) | ОПИСАНИЕ |
+| Version | ОПИСАНИЕ |
 | --- | --- |
 | Многофакторная проверка подлинности для Office 365 <br> Microsoft 365 бизнес |Эта версия работает исключительно с приложениями Office 365, и ей можно управлять с портала Office 365 или Microsoft 365. Администраторы могут [защитить свои ресурсы Office 365 с помощью двухшаговой проверки подлинности](https://support.office.com/article/Set-up-multi-factor-authentication-for-Office-365-users-8f0454b2-f51a-4d9c-bcde-2c48e41621c6). Эта версия является частью подписки Office 365 или Microsoft 365 бизнес. |
 | Многофакторная идентификация для администраторов Azure AD | Пользователи, которым назначена роль глобального администратора Azure AD в клиентах Azure AD, могут включить двухфакторную проверку подлинности без дополнительных затрат.|

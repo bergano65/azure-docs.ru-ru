@@ -10,11 +10,11 @@ ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/01/2018
 ms.openlocfilehash: 2b9e1c153c3fa9b17145eb6c3c8f3ed02e3bf40f
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54064072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60304186"
 ---
 # <a name="connect-to-on-premises-data-sources-from-azure-logic-apps"></a>Подключение к локальным источникам данных из Azure Logic Apps
 
@@ -30,7 +30,7 @@ ms.locfileid: "54064072"
 * [Управление локальным шлюзом данных в PowerApps](https://powerapps.microsoft.com/tutorials/gateway-management/)
 * [Локальный шлюз данных](../analysis-services/analysis-services-gateway.md)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Имеется [загруженный и установленный шлюз данных на локальном компьютере](../logic-apps/logic-apps-gateway-install.md).
 
@@ -158,7 +158,7 @@ ms.locfileid: "54064072"
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Защита приложений логики](./logic-apps-securing-a-logic-app.md)
 * [Распространенные примеры и сценарии использования приложений логики](./logic-apps-examples-and-scenarios.md)

@@ -13,11 +13,11 @@ ms.date: 03/16/2018
 ms.author: kumud
 ms.custom: ''
 ms.openlocfilehash: fd37ef739522955ae8227db39a41aecf199d65c3
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54052825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60329587"
 ---
 # <a name="traffic-manager-real-user-measurements-overview"></a>Общие сведения об измерениях на стороне пользователей в диспетчере трафика
 
@@ -35,7 +35,7 @@ ms.locfileid: "54052825"
 
 При использовании этой функции счета выставляются в зависимости от количества измерений, отправленных диспетчеру трафика. Дополнительные сведения о ценах см. на [странице цен на диспетчер трафика](https://azure.microsoft.com/pricing/details/traffic-manager/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте об использовании [измерений на стороне пользователей с веб-страницами](traffic-manager-create-rum-web-pages.md).
 - Узнайте о том, [как работает диспетчер трафика](traffic-manager-overview.md)
 - Дополнительные сведения о Mobile Center см. [здесь](https://docs.microsoft.com/mobile-center/).

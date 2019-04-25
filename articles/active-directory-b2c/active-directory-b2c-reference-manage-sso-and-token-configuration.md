@@ -7,15 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/09/2018
-ms.author: davidmu
+origin.date: 10/09/2018
+ms.date: 04/01/2019
+ms.author: v-junlch
 ms.subservice: B2C
 ms.openlocfilehash: c0f5be7fd77ae195b66f8a8fb052ab8573d48171
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55856365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60317179"
 ---
 # <a name="manage-sso-and-token-customization-using-custom-policies-in-azure-active-directory-b2c"></a>Управление единым входом и настройкой токенов с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -100,3 +101,4 @@ ms.locfileid: "55856365"
 - **Включение единого входа (SSO).** Включение единого входа (SSO) настроено с помощью **SingleSignOn**. Применимые значения — `Tenant`, `Application`, `Policy` и `Suppressed`. 
 - **Время существования сеанса веб-приложения (в минутах).** Время существования сеанса веб-приложения устанавливается с помощью элемента **SessionExpiryInSeconds**. Значение по умолчанию составляет 86400 секунд (1440 минут).
 - **Время ожидания сеанса веб-приложения.** Время ожидания сеанса веб-приложения устанавливается с помощью элемента **SessionExpiryType**. Применимые значения — `Absolute` и `Rolling`.
+

@@ -10,17 +10,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 01/31/2019
+ms.date: 03/18/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9aba12a2bca882b5f0e6e95d8e4f6014b318a12e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 58ca814551d8c7d309328f236052e1d07ac6f035
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58119754"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60469134"
 ---
 # <a name="delegate-app-administrator-roles-in-azure-active-directory"></a>Делегирование ролей администратора приложения в Azure Active Directory
 
@@ -58,7 +58,7 @@ ms.locfileid: "58119754"
 
 ## <a name="delegate-app-ownership"></a>Делегирование прав владения приложениями
 
-Владельцы приложений и владельцы регистрации приложений могут управлять только собственными приложениями или регистрациями приложений. Например, при добавлении владельца в приложение Salesforce он может управлять доступом к приложению Salesforce и его настройкой, но не к другим приложениям. У приложения может быть много владельцев. Пользователь может владеть многими приложениями.
+Владельцам приложений и владельцев приложений регистрации можно каждого управлять только приложения и регистрации приложений, которыми они владеют. Например, при добавлении владельца в приложение Salesforce он может управлять доступом к приложению Salesforce и его настройкой, но не к другим приложениям. У приложения может быть много владельцев. Пользователь может владеть многими приложениями.
 
 Владелец приложения может:
 

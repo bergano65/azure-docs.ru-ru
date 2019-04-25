@@ -8,16 +8,16 @@ ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 02/28/2018
 ms.openlocfilehash: 207e9965f6600477e1df93845bc41bd33b5c028c
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53547037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60525480"
 ---
 # <a name="configure-and-access-server-logs-by-using-azure-cli"></a>Настройка журналов сервера и получение к ним доступа с помощью Azure CLI
 Скачать журналы сервера из службы "База данных Azure для MySQL" можно с помощью портала Azure или Azure CLI, служебной программы командной строки Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - [сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-cli.md).
 - [Azure CLI](/cli/azure/install-azure-cli) или Azure Cloud Shell в браузере.
@@ -52,5 +52,5 @@ az mysql server-logs list --resource-group myresourcegroup --server mydemoserver
 az mysql server-logs download --name 20170414-mydemoserver-mysql.log --resource-group myresourcegroup --server mydemoserver
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Ознакомьтесь со сведениями о [журналах сервера в службе "База данных Azure для MySQL"](concepts-server-logs.md).

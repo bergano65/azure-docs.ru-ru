@@ -1,5 +1,5 @@
 ---
-title: 'Microsoft Genomics: ответы на часто задаваемые вопросы | Документы Майкрософт'
+title: 'Microsoft Genomics: Часто задаваемые вопросы — часто задаваемые вопросы | Документация Майкрософт'
 titleSuffix: Azure
 description: Ответы на часто задаваемые клиентами вопросы о Microsoft Genomics.
 services: genomics
@@ -9,14 +9,14 @@ ms.author: grhuynh
 ms.service: genomics
 ms.topic: article
 ms.date: 12/07/2017
-ms.openlocfilehash: 56256a6c10ecb0d06dfd6194668b9c32c5540c0e
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
-ms.translationtype: HT
+ms.openlocfilehash: 7198e64a11a3aa23643cc2bfb5ecff884c6a1b48
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51683906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60445555"
 ---
-# <a name="microsoft-genomics-common-questions"></a>Microsoft Genomics: часто задаваемые вопросы
+# <a name="microsoft-genomics-common-questions"></a>Microsoft Genomics: Часто задаваемые вопросы
 
 В этой статье перечислены самые популярные вопросы, связанные с Microsoft Genomics. Дополнительные сведения о службе Microsoft Genomics см. в [этой статье](overview-what-is-genomics.md). Дополнительные сведения об устранении неполадок см. в [этом руководстве](troubleshooting-guide-genomics.md). 
 
@@ -73,6 +73,7 @@ ms.locfileid: "51683906"
 ## <a name="what-genome-references-can-i-use"></a>Какие референсные геномы можно использовать?
 
 Поддерживаются следующие референсные геномы:
+
  |Справочные материалы              | Значение `-pa/--process-args` |
  |:-------------         |:-------------                 |
  |b37                    | `R=b37m1`                     |
@@ -84,19 +85,19 @@ ms.locfileid: "51683906"
 
 msgen распознает файлы конфигурации в следующем формате:
 * Все параметры предоставляются как пары "ключ-значение" (через двоеточие).
-Пробелы игнорируются.
+  Пробелы игнорируются.
 * Строки, начинающиеся с `#`, игнорируются.
 * Любой аргумент командной строки в полном формате можно преобразовать в ключ, удалив начальные тире и заменив тире между словами на символы подчеркивания. Ниже приведены некоторые примеры преобразований.
 
- |Аргумент командной строки            | Строка в файле конфигурации |
- |:-------------                   |:-------------                 |
- |`-u/--api-url-base https://url`  | *api_url_base:https://url*    |
- |`-k/--access-key KEY`            | *access_key:KEY*              |      
- |`-pa/--process-args R=B37m1`     | *process_args:R-b37m1*        |  
+  |Аргумент командной строки            | Строка в файле конфигурации |
+  |:-------------                   |:-------------                 |
+  |`-u/--api-url-base https://url`  | *api_url_base:https://url*    |
+  |`-k/--access-key KEY`            | *access_key:KEY*              |      
+  |`-pa/--process-args R=B37m1`     | *process_args:R-b37m1*        |  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте следующие ресурсы, чтобы приступить к работе с Microsoft Genomics:
-- Приступите к работе, запустив первый рабочий процесс с помощью службы Microsoft Genomics. [Краткое руководство: запуск рабочего процесса в службе Microsoft Genomics](quickstart-run-genomics-workflow-portal.md)
+- Приступить к работе, запустив первый рабочий процесс с помощью службы Microsoft Genomics. [Запуск рабочего процесса в службе Microsoft Genomics](quickstart-run-genomics-workflow-portal.md)
 - Отправить свои данные для обработки в службу Microsoft Genomics. Дополнительные сведения см. в статьях [Отправка рабочего процесса с помощью входных FASTQ-файлов](quickstart-input-pair-FASTQ.md) | [Отправка рабочего процесса с помощью входного BAM-файла](quickstart-input-BAM.md) | [Отправка рабочего процесса с помощью нескольких входных данных из одного примера](quickstart-input-multiple.md) 
 

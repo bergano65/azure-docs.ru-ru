@@ -2,24 +2,25 @@
 author: PatAltimore
 ms.service: active-directory-b2c
 ms.topic: include
-ms.date: 11/30/2018
-ms.author: patricka
+origin.date: 11/30/2018
+ms.date: 04/04/2019
+ms.author: v-junlch
 ms.openlocfilehash: f23d2b02bc2a23c5333a48a50532c03f3aa6a031
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "58115738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60455660"
 ---
 [!INCLUDE [active-directory-b2c-portal-navigate-b2c-service](active-directory-b2c-portal-navigate-b2c-service.md)]
 
 В разделе **Управление**выберите **Потоки пользователей** и нажмите кнопку +**Новый поток пользователя**.
 
-![Выберите "Новый поток пользователя"](media/active-directory-b2c-create-sign-in-sign-up-policy/add-b2c-signup-signin-user-flow.png)
+![Выберите "Новый поток пользователя"](./media/active-directory-b2c-create-sign-in-sign-up-policy/add-b2c-signup-signin-user-flow.png)
 
 На вкладке **Рекомендуется** щелкните **Регистрация и вход**.
 
-![Выберите "Регистрация и вход" для потока пользователя](media/active-directory-b2c-create-sign-in-sign-up-policy/add-b2c-signup-signin-user-flow-type.png)
+![Выберите "Регистрация и вход" для потока пользователя](./media/active-directory-b2c-create-sign-in-sign-up-policy/add-b2c-signup-signin-user-flow-type.png)
 
 Введите **Имя** потока пользователя, на которое будет ссылаться приложение. Например, введите `SiUpIn`.
 
@@ -27,7 +28,7 @@ ms.locfileid: "58115738"
 
 В разделе **Многофакторная идентификация** выберите **Включено** или **Отключено**.
 
-![Введите имя и выберите "Регистрация по электронной почте" в разделе "Поставщики удостоверений"](media/active-directory-b2c-create-sign-in-sign-up-policy/add-b2c-signup-signin-name-identity-providers.png)
+![Введите имя и выберите "Регистрация по электронной почте" в разделе "Поставщики удостоверений"](./media/active-directory-b2c-create-sign-in-sign-up-policy/add-b2c-signup-signin-name-identity-providers.png)
 
 В разделе **Атрибуты пользователя и утверждения** выберите **Показать больше**, чтобы увидеть полный список атрибутов и утверждений для выбора.
 
@@ -37,15 +38,15 @@ ms.locfileid: "58115738"
 
 Последовательно выберите **ОК**.
 
-![Выберите несколько атрибутов пользователя и утверждений и нажмите кнопку "ОК"](media/active-directory-b2c-create-sign-in-sign-up-policy/add-b2c-signup-signin-sign-up-all-attributes.png)
+![Выберите несколько атрибутов пользователя и утверждений и нажмите кнопку "ОК"](./media/active-directory-b2c-create-sign-in-sign-up-policy/add-b2c-signup-signin-sign-up-all-attributes.png)
 
 Щелкните **Создать**, чтобы добавить поток пользователя. Отобразится поток с именем **B2C_1_SiUpIn**. **B2C_1_**  — это префикс, добавленный к имени.
 
 Выберите **Выполнить поток пользователя**. Просмотрите параметры, указанные в таблице, и щелкните **Выполнить поток пользователя**.
 
-![Выберите "Выполнить поток пользователя"](media/active-directory-b2c-create-sign-in-sign-up-policy/run-user-flow-b2c-signup-signin.png)
+![Выберите "Выполнить поток пользователя"](./media/active-directory-b2c-create-sign-in-sign-up-policy/run-user-flow-b2c-signup-signin.png)
 
-| Параметр      | Значение  |
+| Параметр      | Value  |
 | ------------ | ------ |
 | **Приложения** | Приложение Contoso B2C |
 | **URL-адрес ответа** | `https://localhost:44316/` |
@@ -55,3 +56,4 @@ ms.locfileid: "58115738"
 > [!NOTE]
 > Создание, обновление и выполнение потока пользователя занимает около минуты.
 >
+

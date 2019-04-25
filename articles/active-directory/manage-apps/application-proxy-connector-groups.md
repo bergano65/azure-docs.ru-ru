@@ -15,11 +15,11 @@ ms.author: celested
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e57a953f99a5e0259c346836c156a0e4fe3e4c03
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56170896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60293444"
 ---
 # <a name="publish-applications-on-separate-networks-and-locations-using-connector-groups"></a>Публикация приложений в отдельных сетях и расположениях с помощью групп соединителей
 
@@ -32,7 +32,7 @@ ms.locfileid: "56170896"
 >[!TIP] 
 >При наличии большого развертывания прокси приложения не назначайте какие-либо приложения в группу соединителей по умолчанию. Таким образом новые соединители не будут принимать текущий трафик, пока вы не добавите их в активную группу соединителей. Такая конфигурация позволяет переводить соединители в режим простоя, перемещая их в группу по умолчанию, чтобы можно было выполнить обслуживание без ущерба для работы пользователей.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Чтобы сгруппировать соединители, необходимо убедиться, что вы [установили несколько соединителей](application-proxy-add-on-premises-application.md). При установке нового соединителя он автоматически присоединяется к группе соединителей **по умолчанию** .
 
 ## <a name="create-connector-groups"></a>Создание групп соединителей
@@ -123,7 +123,7 @@ ms.locfileid: "56170896"
 
 ![Azure AD без групп соединителей](./media/application-proxy-connector-groups/application-proxy-sample-config-3.png)
  
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о соединителях прокси приложения Azure AD](application-proxy-connectors.md)
 * [Включение единого входа](what-is-single-sign-on.md)

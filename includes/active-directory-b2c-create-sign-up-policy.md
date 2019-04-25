@@ -2,14 +2,15 @@
 author: PatAltimore
 ms.service: active-directory-b2c
 ms.topic: include
-ms.date: 11/30/2018
-ms.author: patricka
+origin.date: 11/30/2018
+ms.date: 04/04/2019
+ms.author: v-junlch
 ms.openlocfilehash: 17c0213d63879687e9c6d5f8dca06b9113c44af8
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "58116049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60456906"
 ---
 Если вам нужно добавить в приложение только функцию регистрации, воспользуйтесь потоком пользователя **регистрации**. Этот поток описывает действия, которые пользователь должен выполнить во время регистрации, и содержимое токенов, которые приложение получает при успешной регистрации.
 
@@ -44,3 +45,4 @@ ms.locfileid: "58116049"
 > [!NOTE]
 > Создание, обновление и выполнение потока пользователя занимает около минуты.
 >
+

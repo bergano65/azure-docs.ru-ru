@@ -3,7 +3,7 @@ title: Настройка потока учетных данных пароля 
 description: Узнайте, как настроить поток учетных данных пароля владельца ресурса в Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
@@ -11,11 +11,11 @@ ms.date: 12/06/2018
 ms.author: davidmu
 ms.subservice: B2C
 ms.openlocfilehash: 265f1405a8779cdca101f18cf37b64f1933c2ff3
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58400759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60419193"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-active-directory-b2c-using-a-custom-policy"></a>Настройка потока учетных данных пароля владельца ресурса в Azure Active Directory B2C с помощью пользовательской политики
 
@@ -267,7 +267,7 @@ ms.locfileid: "58400759"
 - Замените `your-tenant-name` именем вашего клиента Azure AD B2C.
 - Замените `B2C_1A_ROPC_Auth` полным именем политики учетных данных пароля владельца ресурса.
 
-| Ключ | Значение |
+| Ключ | Value |
 | --- | ----- |
 | Имя пользователя | `user-account` |
 | password | `password1` |
@@ -312,7 +312,7 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 - Замените `your-tenant-name` именем вашего клиента Azure AD B2C.
 - Замените `B2C_1A_ROPC_Auth` полным именем политики учетных данных пароля владельца ресурса.
 
-| Ключ | Значение |
+| Ключ | Value |
 | --- | ----- |
 | grant_type | refresh_token |
 | response_type | id_token |

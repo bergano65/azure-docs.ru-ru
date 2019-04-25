@@ -9,11 +9,11 @@ ms.date: 12/19/2018
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: f13dd1282a6384a0acca4c6936fe7900a051795f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58896029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60497407"
 ---
 # <a name="connecting-to-on-premises-data-sources-with-on-premises-data-gateway"></a>Подключение к локальным источникам данных с помощью локального шлюза данных
 Локальный шлюз данных обеспечивает защищенную передачу данных между локальными источниками данных и серверами служб Azure Analysis Services в облаке. Последняя версия шлюза работает с несколькими серверами служб Azure Analysis Services в том же регионе, а также с Azure Logic Apps, Power BI, Power Apps и Microsoft Flow. Несколько служб в одном регионе и одной подписке можно связать с одним шлюзом. 

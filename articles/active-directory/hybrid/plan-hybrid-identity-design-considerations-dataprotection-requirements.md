@@ -18,11 +18,11 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e734b932976896b2fb4d86e2627b7827d40a2545
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56189895"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60454893"
 ---
 # <a name="plan-for-enhancing-data-security-through-a-strong-identity-solution"></a>Планирование повышения безопасности данных благодаря надежному решению для идентификации
 Первым шагом в защите данных является определение того, кто может получить доступ к этим данным. Кроме того, у вас должно быть решение для идентификации, которое можно интегрировать с вашей системой для обеспечения возможностей аутентификации и авторизации. Проверку подлинности и авторизацию часто путают друг с другом, понимая их роли неправильно. На самом деле между ними есть различия, как показано на рисунке ниже.
@@ -84,7 +84,7 @@ ms.locfileid: "56189895"
 > 
 > 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
  [Определение требований к управлению содержимым](plan-hybrid-identity-design-considerations-contentmgt-requirements.md)
 
 ## <a name="see-also"></a>См. также

@@ -17,11 +17,11 @@ ms.date: 07/12/2017
 ms.author: danlep
 ms.subservice: disks
 ms.openlocfilehash: 7d5b2d2ee7e7320fb8bf91c8a62a0f46c403c977
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55459559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60328771"
 ---
 # <a name="move-files-to-and-from-a-linux-vm-using-scp"></a>Перемещение файлов на виртуальную машину Linux и с нее с помощью SCP
 
@@ -75,6 +75,6 @@ scp -r azureuser@myserver.eastus.cloudapp.com:/home/azureuser/logs/. /tmp/
 
 Если в командной строке используется флаг `-r`, SCP рекурсивно копирует файлы и каталоги из места в каталоге, указанного в команде.  Обратите также внимание, что синтаксис для командной строки аналогичен синтаксису команды копирования `cp`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление пользователями, SSH и проверка или восстановление дисков в виртуальных машинах Azure с помощью расширения VMAccess](using-vmaccess-extension.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 10/12/2018
 ms.author: bwren
 ms.openlocfilehash: 1b86bc015b187fe75e79ba04df60a6bc5257a9b8
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55994029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60497426"
 ---
 # <a name="continuous-monitoring-with-azure-monitor"></a>Непрерывный мониторинг с помощью Azure Monitor
 
@@ -89,7 +89,7 @@ ms.locfileid: "55994029"
 - Используйте [анализ влияния](../azure-monitor/app/usage-impact.md), чтобы расставить приоритеты, на каких сферах сосредоточиться для достижения важных ключевых показателей эффективности.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о различных компонентах см. в статье [Общие сведения о службе Azure Monitor](overview.md).
 - [Добавьте постоянный мониторинг](../azure-monitor/app/continuous-monitoring.md) к конвейеру выпуска.

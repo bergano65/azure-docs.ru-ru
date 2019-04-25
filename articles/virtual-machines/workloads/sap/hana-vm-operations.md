@@ -17,11 +17,11 @@ ms.date: 12/04/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: acccc553c5b63b2acd0f9793b0397b25145449dd
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59699344"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60477476"
 ---
 # <a name="sap-hana-infrastructure-configurations-and-operations-on-azure"></a>Конфигурации инфраструктуры SAP HANA и работа с ней в Azure
 Статья содержит рекомендации о том, как настроить Azure инфраструктуры и эксплуатации систем SAP HANA, развернутых на виртуальных машинах Azure (ВМ). В этой статье также содержатся сведения о конфигурации для масштабного развертывания SAP HANA для M128s номера SKU. В этой статье не предназначен для замены стандартной документации SAP, который включает в себя следующее содержимое:

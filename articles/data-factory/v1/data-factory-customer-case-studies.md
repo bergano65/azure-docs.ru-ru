@@ -14,11 +14,11 @@ ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 952a8aa2dbfdabfb7f0df198a7453b847c33f7e2
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54019086"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60486980"
 ---
 # <a name="azure-data-factory---customer-case-studies"></a>Фабрика данных Azure: примеры реальных клиентов
 Фабрика данных представляет собой облачную службу управления информацией, которая автоматизирует перемещение и преобразование данных. Клиенты из многих отраслей используют фабрику данных и другие службы Azure для построения аналитических конвейеров и решения проблем бизнеса.  Узнайте от самих клиентов, как и почему они используют фабрику данных.

@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 09/04/2018
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d0d72a9ef592579b21d082111ab8ad00f8995de2
-ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
-ms.translationtype: HT
+ms.openlocfilehash: 7d403c284eefc1351aabb632977832f2bf11757a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44031038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60477128"
 ---
 # <a name="sizing"></a>Определение размера
 
@@ -27,7 +27,7 @@ ms.locfileid: "44031038"
 
 - [SAP Note #1793345 — Sizing for SAP Suite on HANA (Примечание SAP № 1793345. Определение размера для SAP Suite в HANA)](https://launchpad.support.sap.com/#/notes/1793345);
 - [SAP Note #1872170 — Suite on HANA and S/4 HANA sizing report (Примечание SAP № 1872170. Отчет для определения размера Suite в HANA и S/4 HANA)](https://launchpad.support.sap.com/#/notes/1872170);
-- [SAP Note #2121330 — FAQ: SAP BW on HANA Sizing Report](https://launchpad.support.sap.com/#/notes/2121330) (Примечание SAP № 2121330. Часто задаваемые вопросы: отчет для определения размера SAP BW в HANA);
+- [SAP Note #2121330 - часто задаваемые вопросы: SAP BW в HANA, изменение размера отчета](https://launchpad.support.sap.com/#/notes/2121330)
 - [SAP Note #1736976 — Sizing Report for BW on HANA](https://launchpad.support.sap.com/#/notes/1736976) (Примечание SAP № 1736976. Отчет для определения размера BW в HANA);
 - [SAP Note #2296290 — New Sizing Report for BW on HANA](https://launchpad.support.sap.com/#/notes/2296290) (Примечание SAP № 2296290. Новый отчет для определения размера BW в HANA).
 

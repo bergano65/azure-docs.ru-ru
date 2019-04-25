@@ -12,17 +12,17 @@ ms.topic: article
 ms.date: 01/30/2019
 ms.author: diberry
 ms.openlocfilehash: 314d121e8964ba1cdbb457260826d85bf8505fbc
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55883259"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60494903"
 ---
 # <a name="build-a-luis-app-programmatically-using-nodejs"></a>Создание приложения LUIS программным способом с помощью Node.js
 
 Служба LUIS предоставляет программный API, выполняющий те же задачи, что и веб-сайт [LUIS](luis-reference-regions.md). Это позволит сэкономить время при уже имеющихся данных, поэтому создавать приложение LUIS программным способом можно быстрее, чем путем ввода информации вручную. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Войдите на веб-сайт [LUIS](luis-reference-regions.md) и на странице "Параметры учетной записи" найдите [ключ разработки](luis-concept-keys.md#authoring-key). Этот ключ используется для вызова API разработки.
 * Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
@@ -172,7 +172,7 @@ upload done
 ![Намерение TurnOn](./media/luis-tutorial-node-import-utterances-csv/imported-utterances-661.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Проверьте и обучите свое приложение на веб-сайте LUIS](luis-interactive-test.md)

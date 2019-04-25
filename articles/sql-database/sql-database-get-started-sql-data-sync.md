@@ -13,11 +13,11 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 01/14/2019
 ms.openlocfilehash: 82b85ffd685df52e702db15e5a5b57a53a3b4f64
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58486008"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60342241"
 ---
 # <a name="tutorial-set-up-sql-data-sync-between-azure-sql-database-and-sql-server-on-premises"></a>Руководство по Настройка синхронизации данных SQL между Базой данных SQL Azure и локальным сервером SQL Server
 
@@ -30,7 +30,7 @@ ms.locfileid: "58486008"
 Примеры команд PowerShell для настройки Синхронизации данных SQL см. в статьях об использовании PowerShell для синхронизации данных [между несколькими базами данных SQL](scripts/sql-database-sync-data-between-sql-databases.md), а также [между базой данных SQL и локальной базой данных SQL Server](scripts/sql-database-sync-data-between-azure-onprem.md).
 
 > [!IMPORTANT]
-> Служба "Синхронизация данных SQL Azure" пока **не** поддерживает Управляемые экземпляры Базы данных SQL Azure.
+> Служба синхронизации данных SQL Azure пока **не** поддерживает управляемые экземпляры Базы данных SQL Azure.
 
 ## <a name="create-sync-group"></a>Создание группы синхронизации
 
