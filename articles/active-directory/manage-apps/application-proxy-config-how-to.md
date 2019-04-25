@@ -17,11 +17,11 @@ ms.author: celested
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 95f22f064043467bf52c23cab547a7e6c8ba2205
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56172320"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60443204"
 ---
 # <a name="how-to-configure-an-application-proxy-application"></a>Как настроить приложение прокси приложения
 
@@ -75,5 +75,5 @@ ms.locfileid: "56172320"
 
    ![Уведомление](./media/application-proxy-config-how-to/error-message2.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Публикация приложений с помощью прокси приложения Azure AD](application-proxy-add-on-premises-application.md)

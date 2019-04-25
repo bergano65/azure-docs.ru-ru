@@ -19,11 +19,11 @@ ms.custom: aaddev
 ms.reviewer: jmprieur, saeeda, jesakowi, nacanuma, dadobali
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 968da9212b52c1e7ea09d1472b312671c7a73449
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59565551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60410390"
 ---
 # <a name="microsoft-identity-platform-developer-glossary"></a>Глоссарий разработчика платформы удостоверений Microsoft
 
@@ -192,7 +192,7 @@ ms.locfileid: "59565551"
 
 Отмена аутентификации пользователя, при которой отключается отслеживание состояния пользователя, связанное с сеансом [клиентского приложения](#client-application) при [входе](#sign-in).
 
-## <a name="tenant"></a>tenant
+## <a name="tenant"></a>клиент
 
 Экземпляр каталога Azure AD, который называют клиентом Azure AD. Он обеспечивает несколько функций, включая следующие:
 

@@ -2,14 +2,15 @@
 author: PatAltimore
 ms.service: active-directory-b2c
 ms.topic: include
-ms.date: 11/30/2018
-ms.author: patricka
+origin.date: 11/30/2018
+ms.date: 04/04/2019
+ms.author: v-junlch
 ms.openlocfilehash: 78abb190dccd27c5bf70dfe12f978e1118601815
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "58114558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60456951"
 ---
 Для разрешения детального сброса паролей для приложения используется поток пользователя **сброса паролей**. Обратите внимание, что сброс паролей в пределах клиента описан [здесь](../articles/active-directory-b2c/active-directory-b2c-reference-sspr.md). Этот поток пользователя описывает действия, которые выполнит пользователь при сбросе пароля, и содержимое маркеров, которое получит приложение при успешном изменении.
 
@@ -17,7 +18,7 @@ ms.locfileid: "58114558"
 
 В разделе **Управление** выберите **Потоки пользователей** и нажмите кнопку +**Создать поток пользователя**.
 
-![Выбор "Создать поток пользователя"](media/active-directory-b2c-create-password-reset-policy/add-b2c-new-user-flow.png)
+![Выбор "Создать поток пользователя"](./media/active-directory-b2c-create-password-reset-policy/add-b2c-new-user-flow.png)
 
 На вкладке **Рекомендуется** щелкните **Сброс пароля**.
 
@@ -25,21 +26,21 @@ ms.locfileid: "58114558"
 
 В разделе **Поставщики удостоверений** щелкните **Reset password using email address** (Сброс пароля с использованием адреса электронной почты).
 
-![Ввод имени и выбор "Сброс пароля с использованием адреса электронной почты" в качестве поставщика удостоверений](media/active-directory-b2c-create-password-reset-policy/add-b2c-password-reset-identity-providers.png)
+![Ввод имени и выбор "Сброс пароля с использованием адреса электронной почты" в качестве поставщика удостоверений](./media/active-directory-b2c-create-password-reset-policy/add-b2c-password-reset-identity-providers.png)
 
 В разделе **Утверждения приложений** щелкните **Больше** и выберите утверждения, которые необходимо вернуть в маркерах проверки подлинности, отправляемых приложению после успешного действия сброса пароля. Например, выберите **ИД объекта пользователя**.
 
 Последовательно выберите **ОК**.
 
-![Выбор нескольких утверждений приложения и нажатие кнопки "ОК"](media/active-directory-b2c-create-password-reset-policy/add-b2c-password-reset-application-claims.png)
+![Выбор нескольких утверждений приложения и нажатие кнопки "ОК"](./media/active-directory-b2c-create-password-reset-policy/add-b2c-password-reset-application-claims.png)
 
 Для добавления потока пользователя щелкните **Создать**. Поток пользователя имеет имя **B2C_1_SSPR**. **B2C_1_**  — это префикс, добавленный к имени.
 
 Щелкните **Выполнить поток пользователя**. Просмотрите параметры, указанные в таблице, а затем щелкните **Выполнить поток пользователя**.
 
-![Выбор потока пользователя и его выполнение](media/active-directory-b2c-create-password-reset-policy/add-b2c-sspr-run-user-flow.png)
+![Выбор потока пользователя и его выполнение](./media/active-directory-b2c-create-password-reset-policy/add-b2c-sspr-run-user-flow.png)
 
-| Параметр      | Значение  |
+| Параметр      | Value  |
 | ------------ | ------ |
 | **Приложения** | Приложение Contoso B2C |
 | **Выбор URL-адреса ответа** | `https://localhost:44316/` |
@@ -49,3 +50,4 @@ ms.locfileid: "58114558"
 > [!NOTE]
 > Создание, обновление и вступление политики в силу занимает около минуты.
 >
+

@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 07/11/2018
 ms.author: meirm
 ms.openlocfilehash: 97d8d6fac93ebabac8fb319ce2f1ab8719f5f86b
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58756564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60452659"
 ---
 # <a name="azure-monitor-for-service-providers"></a>Azure Monitor для поставщиков услуг
 Рабочие области log Analytics в Azure Monitor может помочь поставщикам управляемых служб (MSP), крупных предприятий, независимых поставщиков программного обеспечения (ISV) и поставщикам услуг размещения управлять серверами и их мониторинг в клиента в локальной или облачной инфраструктуры. 

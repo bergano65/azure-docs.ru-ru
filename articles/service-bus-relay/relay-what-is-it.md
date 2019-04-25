@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: spelluru
 ms.openlocfilehash: 47fbce7ea26bcb7224fe2624d593d85cd178d610
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57776314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60420319"
 ---
 # <a name="what-is-azure-relay"></a>Что такое ретранслятор Azure?
 Служба Azure Relay позволяет безопасно предоставлять службы, выполняющиеся в корпоративной сети в общедоступном облаке. Для этого вам не нужно открывать порт брандмауэра или вносить значительные изменения в инфраструктуру корпоративной сети. 

@@ -1,17 +1,19 @@
 ---
 title: Создание пользователей на сервере службы "База данных Azure для PostgreSQL"
 description: В этой статье описывается создание учетных записей пользователей для взаимодействия с сервером службы "База данных Azure для PostgreSQL".
-author: rachel-msft
-ms.author: raagyema
+author: WenJason
+ms.author: v-jay
+editor: jasonwhowell
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 10/16/2018
+origin.date: 10/16/2018
+ms.date: 12/03/2018
 ms.openlocfilehash: 33c107c46b314136fa3d43f8e7881e096afa374c
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351088"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60422276"
 ---
 # <a name="create-users-in-azure-database-for-postgresql-server"></a>Создание пользователей на сервере службы "База данных Azure для PostgreSQL" 
 В этой статье описывается создание пользователей на сервере службы "База данных Azure для PostgreSQL".
@@ -72,7 +74,7 @@ ms.locfileid: "58351088"
 5. Чтобы войти на сервер, укажите эту базу данных и введите новое имя пользователя и пароль. В этом примере показана командная строка psql. После ввода этой команды вам будет предложено ввести пароль для имени пользователя. Укажите собственные имя сервера, имя базы данных и имя пользователя.
 
    ```azurecli-interactive
-   psql --host=mydemoserver.postgres.database.azure.com --port=5432 --username=db_user@mydemoserver --dbname=newdb
+   psql --host=mydemoserver.postgres.database.chinacloudapi.cn --port=5432 --username=db_user@mydemoserver --dbname=newdb
    ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

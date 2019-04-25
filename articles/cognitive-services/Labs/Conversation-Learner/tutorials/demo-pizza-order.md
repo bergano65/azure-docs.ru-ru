@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
 ms.openlocfilehash: 3fe11bef6c505771ee1e3f2e12e647eafc7c45d1
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55212449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60431001"
 ---
 # <a name="demo-pizza-order"></a>Демонстрация: заказ пиццы
 В этой демонстрации показан бот для заказа пиццы, который позволяет заказать одну пиццу за счет решения следующих задач:
@@ -104,7 +104,7 @@ ms.locfileid: "55212449"
 
 ![](../media/tutorial_pizza_apicalls.PNG)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Развертывание бота приложения Conversation Learner](../deploy-to-bf.md)

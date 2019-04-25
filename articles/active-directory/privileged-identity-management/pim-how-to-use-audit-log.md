@@ -15,11 +15,11 @@ ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c080173af8ddd31b077bb820ea19d82eb2b29300
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58576154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60440801"
 ---
 # <a name="view-audit-history-for-azure-ad-roles-in-pim"></a>Просмотреть журнал аудита для ролей Azure AD в PIM
 Журнал аудита Azure Active Directory (Azure AD) Privileged Identity Management (PIM) можно использовать для просмотра всех назначенных пользователям и активированных за заданный период времени для всех привилегированных ролей. Если требуется просмотреть весь журнал аудита действий в клиенте, включая действия администратора, пользователя и действия при синхронизации, можно использовать [отчеты о доступе и использовании Azure Active Directory.](../reports-monitoring/overview-reports.md)

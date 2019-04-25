@@ -18,11 +18,11 @@ ms.reviewer: saeeda, jmprieur, andret
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ef180fb444e32e8b055837fd418e21162ff58339
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56191475"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60411202"
 ---
 # <a name="application-types-in-v10"></a>Типы приложений в версии 1.0
 
@@ -80,6 +80,6 @@ Azure Active Directory (Azure AD) поддерживает проверку по
 
 Каждый сценарий, рассматриваемый в этом документе, содержит подраздел, где описываются соответствующие требования по подготовке. Подробнее о подготовке приложения в Azure AD, а также о различиях между однотенантными и мультитенантными приложениями можно узнать в статье [Интеграция приложений с Azure Active Directory](quickstart-v1-integrate-apps-with-azure-ad.md). Продолжим рассмотрение типичных сценариев работы приложений в Azure AD.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [основными сведениями о проверке подлинности](authentication-scenarios.md) в Azure AD.

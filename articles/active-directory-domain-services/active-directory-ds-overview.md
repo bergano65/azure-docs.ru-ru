@@ -16,11 +16,11 @@ ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: ergreenl
 ms.openlocfilehash: c9833ac1dd6f5b046a89a1c2d9007e2cd5c9f813
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55185028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60416710"
 ---
 # <a name="azure-active-directory-ad-domain-services"></a>Доменные службы Azure Active Directory (AD)
 ## <a name="overview"></a>Обзор
@@ -92,7 +92,7 @@ ms.locfileid: "55185028"
 * **Экономия** — используя службы доменов Azure AD, вы можете минимизировать расходы на инфраструктуру и управление инфраструктурой удостоверений для поддержки традиционных приложений с поддержкой каталогов. Такие приложения можно переместить в службы инфраструктуры Azure, что позволит существенно сократить эксплуатационные расходы.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 ### <a name="learn-more-about-azure-ad-domain-services"></a>Дополнительные сведения о доменных службах Azure AD
 * [Функции](active-directory-ds-features.md)
 * [Сценарии развертывания и варианты использования](active-directory-ds-scenarios.md)

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Atomic Learning | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Atomic Learning | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложение Atomic Learning.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 06/14/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 74df7bd7073716dbbb372a43af809bf56c6cd32c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56209291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60440170"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-atomic-learning"></a>Руководство. Интеграция Azure Active Directory с Atomic Learning
+# <a name="tutorial-azure-active-directory-integration-with-atomic-learning"></a>Руководство по Интеграция Azure Active Directory с Atomic Learning
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Atomic Learning.
 
@@ -34,7 +34,7 @@ ms.locfileid: "56209291"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Atomic Learning, вам потребуется:
 
@@ -156,11 +156,11 @@ ms.locfileid: "56209291"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-an-atomic-learning-test-user"></a>Создание тестового пользователя Atomic Learning
 

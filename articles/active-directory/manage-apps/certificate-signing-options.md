@@ -17,11 +17,11 @@ ms.reviewer: jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bede53ef2bc05750be21f831fc0cb790a001c6c5
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59549343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60442783"
 ---
 # <a name="advanced-certificate-signing-options-in-the-saml-token-for-gallery-apps-in-azure-active-directory"></a>Расширенные параметры подписи сертификата в маркере SAML для приложений коллекции в Azure Active Directory
 

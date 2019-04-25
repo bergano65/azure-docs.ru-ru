@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 01/30/2019
 tags: connectors
 ms.openlocfilehash: 24963a35bc3e54b2d140bf4ed1d169b213bd9b2a
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56673691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60448058"
 ---
 # <a name="improve-threat-protection-by-integrating-security-operations-with-microsoft-graph-security--azure-logic-apps"></a>Улучшение защиты от угроз путем интеграции операций обеспечения безопасности с Microsoft Graph Security — Azure Logic Apps
 
@@ -36,7 +36,7 @@ ms.locfileid: "56673691"
 
 * Чтобы использовать соединитель Microsoft Graph Security, необходимо *явно предоставить* согласие администратора клиента Azure Active Directory (AD), которое является частью [требований проверки подлинности Microsoft Graph Security](https://aka.ms/graphsecurityauth). Для этого согласия требуется идентификатор и имя приложения соединителя Microsoft Graph Security, которые также можно найти на портале [Azure](https://portal.azure.com).
 
-   | Свойство | Значение |
+   | Свойство | Value |
    |----------|-------|
    | **Имя приложения** | `MicrosoftGraphSecurityConnector` |
    | **Идентификатор приложения** | `c4829704-0edc-4c3d-a347-7c4a67586f3c` |

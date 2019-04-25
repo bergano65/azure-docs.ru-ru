@@ -3,7 +3,7 @@ title: Определение технического профиля прове
 description: Определение технического профиля Azure Active Directory в пользовательской политике Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
@@ -11,11 +11,11 @@ ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
 ms.openlocfilehash: 466ed4c2bd353e4a5ec3bec5535b70a90446ee0b
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58483902"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60418298"
 ---
 # <a name="define-a-validation-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля проверки в пользовательской политике в Azure Active Directory B2C
 
@@ -72,7 +72,7 @@ ms.locfileid: "58483902"
 
 | Элемент | Вхождения | ОПИСАНИЕ |
 | ------- | ----------- | ----------- |
-| Значение | 1:n | Данные, используемые при проверке. Если тип этой проверки равен `ClaimsExist`, то это поле задает ClaimTypeReferenceId для запроса. Если тип проверки равен `ClaimEquals`, то это поле задает ClaimTypeReferenceId для запроса. А другой элемент значения содержит значение, для которого необходимо выполнить проверку.|
+| Value | 1:n | Данные, используемые при проверке. Если тип этой проверки равен `ClaimsExist`, то это поле задает ClaimTypeReferenceId для запроса. Если тип проверки равен `ClaimEquals`, то это поле задает ClaimTypeReferenceId для запроса. А другой элемент значения содержит значение, для которого необходимо выполнить проверку.|
 | Действие | 1:1 | Действие, которое требуется выполнить, если в результате проверки предварительного условия в рамках шага оркестрации получено значение true. Значение **Action** установлено в `SkipThisValidationTechnicalProfile`. Указывает, что не следует выполнять связанный технический профиль проверки. |
 
 ### <a name="example"></a>Пример

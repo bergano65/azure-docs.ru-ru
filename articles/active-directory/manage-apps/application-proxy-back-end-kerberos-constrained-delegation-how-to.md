@@ -17,11 +17,11 @@ ms.author: celested
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b83b08c442a7f10d6b29122fe7959bedf8f3cff0
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56177535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60441246"
 ---
 # <a name="troubleshoot-kerberos-constrained-delegation-configurations-for-application-proxy"></a>Устранение неполадок конфигураций ограниченного делегирования Kerberos для прокси-сервера приложения
 
@@ -41,7 +41,7 @@ ms.locfileid: "56177535"
 
 -   Целевое приложение опубликовано в клиенте Azure с включенной предварительной проверкой подлинности. Пользователи должны входить в Azure с помощью проверки подлинности на основе форм. Расширенные сценарии проверки подлинности клиента не рассматриваются в этой статье, но будут добавлены в будущем.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Компонент Azure AD Application Proxy можно развернуть в инфраструктуре или среде любого из множества типов. Конкретная архитектура зависит от потребностей организации. Наиболее распространенными причинами возникновения проблем, связанных с ограниченным делегированием Kerberos, являются не столько сами среды, сколько неправильная настройка или общий контроль.
 
@@ -181,5 +181,5 @@ ms.locfileid: "56177535"
 
 - Проверка подлинности с несколькими прыжками — обычно используется в сценариях с многоуровневым приложением, где проверка подлинности требуется как для серверной, так и для интерфейсной части (например, SQL Server Reporting Services). Сведения о настройке сценария с несколькими прыжками см. в статье [Kerberos Constrained Delegation May Require Protocol Transition in Multi-hop Scenarios](https://support.microsoft.com/help/2005838/kerberos-constrained-delegation-may-require-protocol-transition-in-mul) (Ограниченное делегирование Kerberos: изменение протокола в сценариях с несколькими прыжками).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Настройка ограниченного делегирования Kerberos в управляемом домене](../../active-directory-domain-services/active-directory-ds-enable-kcd.md)

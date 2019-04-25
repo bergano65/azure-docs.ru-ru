@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 01/29/2019
 ms.author: jingwang
 ms.openlocfilehash: 5d2d5948d817cbe80d00b74ef104ebaffcb511fb
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60405976"
 ---
 # <a name="copy-data-from-office-365-into-azure-using-azure-data-factory-preview"></a>Копирование данных из Office 365 с помощью Фабрики данных Azure (предварительная версия) 
 

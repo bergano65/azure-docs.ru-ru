@@ -17,11 +17,11 @@ ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: gokuma
 ms.openlocfilehash: 0609cabd5a9898900580580d1f5f412722637bcf
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55242830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60407047"
 ---
 # <a name="using-the-deep-learning-virtual-machine"></a>Использование виртуальной машины для глубокого обучения
 
@@ -42,6 +42,6 @@ ms.locfileid: "55242830"
 
 - [Классификация текстовых документов](https://github.com/anargyri/lstm_han). В этом пошаговом руководстве показано, как создать и обучить две разные архитектуры нейронных сетей: сеть, ориентированную на иерархию, и сеть долгой краткосрочной памяти (LSTM). Эти нейронные сети выполняют классификацию текстовых документов с помощью API Keras для глубокого обучения. Keras — это интерфейс для трех самых популярных платформ машинного обучения: Microsoft Cognitive Toolkit, TensorFlow и Theano.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Страница примеров](dsvm-samples-and-walkthroughs.md) содержит указатели на примеры кода, предварительно загруженные в виртуальную машину для каждой платформы, которые помогут быстро начать работу. 

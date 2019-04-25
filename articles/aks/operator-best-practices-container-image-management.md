@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: iainfou
 ms.openlocfilehash: 1cc91f55d3895f06176875cb9ae620685dc09a26
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53605557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60464819"
 ---
 # <a name="best-practices-for-container-image-management-and-security-in-azure-kubernetes-service-aks"></a>Рекомендации по управлению и защите образов контейнеров в Службе Azure Kubernetes (AKS)
 
@@ -57,7 +57,7 @@ ms.locfileid: "53605557"
 
 Дополнительные сведения см. в статьи [Руководство. автоматизации сборок образов контейнера при обновлении базового образа в службе "Реестр контейнеров Azure"][acr-base-image-update].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Эта статья посвящена вопросам безопасности контейнеров. Для реализации части этих рекомендаций требуются сведения, опубликованные в следующих статьях:
 

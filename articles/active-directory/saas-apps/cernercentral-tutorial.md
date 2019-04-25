@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Cerner Central | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Cerner Central | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Cerner Central.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 05/10/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c097fb045db1afe65a84a2a96dc202c57e8a449e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57975548"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60428735"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cerner-central"></a>Руководство. Интеграция Azure Active Directory с Cerner Central
+# <a name="tutorial-azure-active-directory-integration-with-cerner-central"></a>Руководство по Интеграция Azure Active Directory с Cerner Central
 
 В этом руководстве описано, как интегрировать Cerner Central с Azure Active Directory (Azure AD).
 

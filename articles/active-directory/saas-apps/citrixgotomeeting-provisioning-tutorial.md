@@ -16,17 +16,17 @@ ms.date: 01/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6e3145d0faaa3aecb90b582b3b6ef0063572ff43
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56175971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60430795"
 ---
 # <a name="tutorial-configure-gotomeeting-for-automatic-user-provisioning"></a>Руководство по Настройка GoToMeeting для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как настроить автоматическую подготовку и отмену подготовки учетных записей пользователей Azure AD в GoToMeeting.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -71,7 +71,7 @@ ms.locfileid: "56175971"
    
     a. В текстовом поле **Имя пользователя администратора GoToMeeting** введите имя пользователя администратора.
 
-    б) В текстовом поле **Пароль администратора GoToMeeting** введите пароль администратора.
+    2. В текстовом поле **Пароль администратора GoToMeeting** введите пароль администратора.
 
 1. На портале Azure щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к приложению GoToMeeting. Если подключение отсутствует, убедитесь, что у учетной записи GoToMeeting есть права администратора команды, и повторите шаг **"Учетные данные администратора"**.
 

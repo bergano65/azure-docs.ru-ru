@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 10/31/2018
 ms.author: v-erkell
 ms.openlocfilehash: 9fd9eaf1e62d063026e0e656346baaaade87064f
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54187150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60410148"
 ---
 # <a name="avere-cluster-dns-configuration"></a>Настройка DNS для кластера Avere
 
@@ -41,7 +41,7 @@ ms.locfileid: "54187150"
 
 Слева отображается кластер vserver, а IP-адреса отображаются в центре и справа. Укажите для каждой точки доступа клиента записи и указатели A, как показано на рисунке.
 
-![Схема DNS с циклическим перебором кластера Avere](media/avere-vfxt-rrdns-diagram.png) 
+![Циклический перебор DNS Avere кластера схемы](media/avere-vfxt-rrdns-diagram.png) 
 <!--- separate text description file provided  [diagram text description](avere-vfxt-rrdns-alt-text.md) -->
 
 Каждый IP-адрес, обращенный к клиенту, должен иметь уникальное имя для внутреннего использования кластером. (На этой схеме клиентские IP-адреса называются vs1-client-IP-* для ясности, но в рабочей среде вам, вероятно, следует использовать более точное определение, например, client*.)

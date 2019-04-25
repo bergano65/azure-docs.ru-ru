@@ -19,11 +19,11 @@ ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3c4ee1ce56723e4a2c9ab80c12456bbc1b66f6d5
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56162804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60411423"
 ---
 # <a name="certificate-credentials-for-application-authentication"></a>Учетные данные сертификата для аутентификации приложения
 
@@ -34,7 +34,7 @@ Azure Active Directory (Azure AD) позволяет приложению исп
 ## <a name="assertion-format"></a>Формат утверждения
 Чтобы вычислить утверждение, можно использовать одну из множества библиотек [JSON Web Token](https://jwt.ms/) на удобном для вас языке. Маркер содержит следующие сведения:
 
-### <a name="header"></a>Заголовок
+### <a name="header"></a>Верхний колонтитул
 
 | Параметр |  Комментарий |
 | --- | --- |

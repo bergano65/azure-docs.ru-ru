@@ -16,11 +16,11 @@ ms.topic: conceptual
 ms.date: 12/11/2017
 ms.author: ergreenl
 ms.openlocfilehash: d3586293574cc71011ad96fece5e5a4fdfa0b70f
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55191998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60417237"
 ---
 # <a name="resolve-mismatched-directory-errors-for-existing-azure-ad-domain-services-managed-domains"></a>Устранение ошибок несоответствия каталога для существующих управляемых доменов доменных служб Azure AD
 У вас есть управляемый домен доменных служб Azure AD. При переходе на портал Azure и просмотре управляемого домена может появиться следующее сообщение об ошибке:

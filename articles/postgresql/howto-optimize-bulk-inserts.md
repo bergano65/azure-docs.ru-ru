@@ -1,17 +1,18 @@
 ---
 title: Оптимизация операций массовой вставки на сервере службы "База данных Azure для PostgreSQL"
 description: В этой статье описывается оптимизация операций массовой вставки на сервере службы "База данных Azure для PostgreSQL".
-author: dianaputnam
-ms.author: dianas
+author: WenJason
+ms.author: v-jay
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 10/22/2018
+origin.date: 10/22/2018
+ms.date: 03/04/2019
 ms.openlocfilehash: a82984ce4c2a2e44306abaa63265e0c25cc6ace4
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56310297"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60422123"
 ---
 # <a name="optimize-bulk-inserts-and-use-transient-data-on-an-azure-database-for-postgresql-server"></a>Оптимизация операций массовой вставки и использование временных данных на сервере службы "База данных Azure для PostgreSQL" 
 В этой статье описывается оптимизация операций массовой вставки и использование временных данных на сервере службы "База данных Azure для PostgreSQL".
@@ -34,7 +35,7 @@ ms.locfileid: "56310297"
 
 При некоторых клиентских рабочих нагрузках наблюдается повышение производительности примерно от 15 до 20 % в случае использования нерегистрируемых таблиц.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Проверьте свою рабочую нагрузку на использование временных данных и массовой вставки. Ознакомьтесь со следующей документацией PostgreSQL:
  
 - [Сведения о командах SQL для создания таблиц](https://www.postgresql.org/docs/current/static/sql-createtable.html)

@@ -9,11 +9,11 @@ ms.date: 06/04/2018
 ms.author: vinagara
 ms.subservice: alerts
 ms.openlocfilehash: 9d734f74c4e12b369e46c15dcb9d01a8185dddd6
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55103383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60431176"
 ---
 # <a name="extend-alerts-from-log-analytics-into-azure-alerts"></a>Расширение оповещений из Log Analytics в оповещения Azure
 На портале OMS функция оповещения заменяется на "Оповещения Azure" в облаке Azure для государственных организаций. В рамках этого процесса оповещения, которые были изначально настроены в Log Analytics, будут расширены в Azure. Если вы не хотите ждать, когда они будут перенесены в Azure автоматически, то процесс инициализации можно запустить:
@@ -237,7 +237,7 @@ armclient POST  /subscriptions/<subscriptionId>/resourceGroups/<resourceGroupNam
     После устранения проблемы с помощью действий, приведенных в статье, Operations Management Suite расширяет оповещения в Azure на следующий день в рамках запланированного запуска. Выполнять дальнейшие действия или инициировать что-либо не требуется.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в статье [Функция "Унифицированные оповещения" в Azure Monitor](../../azure-monitor/platform/alerts-overview.md).
 * Дополнительные сведения см. в статье [Оповещения журнала в Azure Monitor. Оповещения Azure (предварительная версия)](alerts-unified-log.md).

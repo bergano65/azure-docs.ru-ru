@@ -10,11 +10,11 @@ ms.suite: integration
 ms.topic: article
 ms.date: 03/29/2019
 ms.openlocfilehash: 8445b67fa049116d93f3710ff108f904ca7ecd77
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59010555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60428151"
 ---
 # <a name="authenticate-and-access-resources-with-managed-identities-in-azure-logic-apps"></a>Проверка подлинности и получение доступа к ресурсам с помощью управляемых удостоверений в Azure Logic Apps
 
@@ -59,7 +59,7 @@ ms.locfileid: "59010555"
 
    ![Глобальные уникальные идентификаторы для идентификатора объекта](./media/create-managed-service-identity/object-id.png)
 
-   | Свойство | Значение | ОПИСАНИЕ | 
+   | Свойство | Value | ОПИСАНИЕ | 
    |----------|-------|-------------| 
    | **Идентификатор объекта** | <*identity-resource-ID*> | Глобальный уникальный идентификатор (GUID), который представляет присвоенное системой управляемое удостоверение приложения логики в клиенте Azure AD | 
    ||| 
@@ -111,7 +111,7 @@ ms.locfileid: "59010555"
 }
 ```
 
-| Свойство | Значение | ОПИСАНИЕ | 
+| Свойство | Value | ОПИСАНИЕ | 
 |----------|-------|-------------|
 | **principalId** | <*ИД субъекта*> | Глобальный уникальный идентификатор (GUID), который представляет приложение логики в клиенте Azure AD и иногда появляется в качестве идентификатора объекта или `objectID` | 
 | **tenantId** | <*ИД клиента Azure AD*> | Глобальный уникальный идентификатор (GUID), представляющий клиент Azure AD, участником которого является приложение логики. В клиенте Azure AD субъект-служба имеет то же имя, что и экземпляр приложения логики. | 

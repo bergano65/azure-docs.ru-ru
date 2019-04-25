@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: jingwang
 ms.openlocfilehash: 3fa7612b9e4cd8a714e60879229bd0d39349494f
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57441446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60405942"
 ---
 # <a name="copy-data-from-and-to-oracle-by-using-azure-data-factory"></a>Копирование данных из Oracle и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -281,25 +281,25 @@ ms.locfileid: "57441446"
 |:--- |:--- |
 | BFILE |Byte[] |
 | BLOB |Byte[]<br/>(поддерживается только в Oracle 10g и более поздних версий) |
-| CHAR |Строка |
-| CLOB |Строка |
-| DATE |DateTime |
+| CHAR |String |
+| CLOB |String |
+| DATE |Datetime |
 | FLOAT |десятичное число, строка (если точность больше 28) |
 | INTEGER |десятичное число, строка (если точность больше 28) |
-| LONG |Строка |
+| LONG |String |
 | LONG RAW |Byte[] |
-| NCHAR |Строка |
-| NCLOB |Строка |
+| NCHAR |String |
+| NCLOB |String |
 | NUMBER |десятичное число, строка (если точность больше 28) |
-| NVARCHAR2 |Строка |
+| NVARCHAR2 |String |
 | RAW |Byte[] |
-| ROWID |Строка |
-| TIMESTAMP |DateTime |
-| TIMESTAMP WITH LOCAL TIME ZONE |Строка |
-| TIMESTAMP WITH TIME ZONE |Строка |
+| ROWID |String |
+| TIMESTAMP |Datetime |
+| TIMESTAMP WITH LOCAL TIME ZONE |String |
+| TIMESTAMP WITH TIME ZONE |String |
 | UNSIGNED INTEGER |NUMBER |
-| VARCHAR2 |Строка |
-| XML |Строка |
+| VARCHAR2 |String |
+| XML |String |
 
 > [!NOTE]
 > Типы данных INTERVAL YEAR TO MONTH и INTERVAL DAY TO SECOND не поддерживаются.

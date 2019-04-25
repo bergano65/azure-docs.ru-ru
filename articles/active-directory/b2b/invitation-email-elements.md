@@ -13,22 +13,22 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7015abcfe3c53e2180d617bd2c78ecd44c42af7a
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58295629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60412830"
 ---
 # <a name="the-elements-of-the-b2b-collaboration-invitation-email---azure-active-directory"></a>Элементы сообщения с приглашением службы совместной работы B2B Azure Active Directory
 
 Сообщение с приглашением является важнейшим компонентом, необходимым для подключения партнеров в качестве пользователей службы совместной работы B2B в Azure AD. Их можно использовать, чтобы повысить уровень доверия получателя. Вы можете придать сообщению законность и социальную значимость, чтобы получатель был спокоен, нажимая кнопку **Начало работы** и принимая приглашение. Это доверие является ключевым компонентом в процессе налаживания совместной работы. И, конечно же, вам бы хотелось, чтобы это сообщение отлично выглядело!
 
-![Снимок экрана, показывающий сообщения с приглашением B2B](media/invitation-email-elements/invitation-email.png)
+![Снимок экрана с приглашением](media/invitation-email-elements/invitation-email.png)
 
 ## <a name="explaining-the-email"></a>Из чего состоит сообщение
 Давайте рассмотрим основные элементы сообщения, чтобы понять, как лучше использовать их возможности.
 
-### <a name="subject"></a>Субъект
+### <a name="subject"></a>Subject
 Тема сообщения электронной почты формируется по следующей схеме. Приглашаем вас в организацию &lt;имя_клиента&gt;
 
 ### <a name="from-address"></a>Адрес отправителя

@@ -10,11 +10,11 @@ ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/01/2018
 ms.openlocfilehash: 67a918b227ad3b33a2f63b17f86b94f36fbc9fa3
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59679131"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60405183"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
@@ -418,7 +418,7 @@ TcpTestSucceeded       : True
 
 Различные журналы можно найти в других расположениях, приведенных ниже.
 
-| Тип журнала | Расположение | 
+| Тип журнала | Location | 
 |----------|----------| 
 | **Журналы установщика** | %localappdata%\Temp\On-premises_data_gateway_<*ггггммдд*>.<*номер*>.log | 
 | **Журналы конфигурации** | C:\Users\<*имя пользователя*>\AppData\Local\Microsoft\On-premises data gateway\GatewayConfigurator<*ггггммдд*>.<*номер*>.log | 

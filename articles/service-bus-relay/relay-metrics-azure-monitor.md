@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/28/2018
 ms.author: spelluru
 ms.openlocfilehash: bd62624406adb006fdcd7d59f72db3fb5e1848a0
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59798029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60421813"
 ---
 # <a name="azure-relay-metrics-in-azure-monitor-preview"></a>Метрики ретранслятора Azure в Azure Monitor (предварительная версия)
 Метрики Azure Relay предоставляют состояние ресурсов в подписке Azure. Используя обширный набор данных метрик, можно оценить общую работоспособность ресурсов ретранслятора не только на уровне пространства имен, но также и на уровне сущности. Эти статистические данные могут быть важны, так как они позволяют отслеживать состояние ретранслятора Azure. Кроме того, метрики могут помочь в устранении первопричин проблем без необходимости обращения в службу поддержки Azure.

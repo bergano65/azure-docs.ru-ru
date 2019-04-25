@@ -3,18 +3,19 @@ title: Информация о том, как модули запускают п
 description: Модули Azure IoT Edge — это контейнерные единицы приложений логики, которые можно развертывать и которыми можно управлять удаленно, чтобы запускать приложения бизнес-логики на устройствах IoT Edge
 author: kgremban
 manager: philmea
-ms.author: kgremban
-ms.date: 03/21/2019
+ms.author: v-yiso
+origin.date: 03/21/2019
+ms.date: 04/08/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: d1e2e35dafd90c16e9d0dbf38afb1e981653d1fe
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58311107"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60445049"
 ---
 # <a name="understand-azure-iot-edge-modules"></a>Общие сведения о модулях IoT Edge Azure
 
@@ -43,7 +44,6 @@ As use cases for Azure IoT Edge grow, new types of module images and instances w
 ## <a name="module-identities"></a>Идентификаторы модулей
 
 Когда в среде выполнения IoT Edge создается новый экземпляр модуля, он сопоставляется с определенным идентификатором модуля. Идентификатор модуля хранится в Центре Интернета вещей и работает как область адресации и безопасности для всех локальных и облачных взаимодействий с конкретным экземпляром модуля.
-
 Имя идентификатора составляется из идентификатора устройства, на котором запущен этот экземпляр, и имени модуля, указанного в вашем решении. Например, когда вы вызываете модуль `insight`, в котором используется Azure Stream Analytics, и развертываете его на устройстве `Hannover01`, среда выполнения IoT Edge создает для него идентификатор модуля с именем `/devices/Hannover01/modules/insight`.
 
 Иногда нужно развернуть один образ модуля несколько раз на одном устройстве. В таком случае для экземпляров будут использоваться разные имена.
@@ -83,3 +83,12 @@ Azure IoT Edge поддерживает автономные операции с
  - [Сведения о требованиях и средствах разработки модулей IoT Edge](module-development.md)
  - [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md)
 
+<!-- Images -->
+[1]: ./media/iot-edge-modules/image_instance.png
+[2]: ./media/iot-edge-modules/identity.png
+
+<!-- Links -->
+[lnk-device-identity]: ../iot-hub/iot-hub-devguide-identity-registry.md
+[lnk-device-twin]: ../iot-hub/iot-hub-devguide-device-twins.md
+[lnk-runtime]: iot-edge-runtime.md
+[lnk-mod-dev]: module-development.md
