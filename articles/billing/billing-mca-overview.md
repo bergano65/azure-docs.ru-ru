@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 02/28/2019
 ms.author: banders
 ms.openlocfilehash: ea625a61ed600dbaa22fef85987e9570a6fb7dbc
-ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57337419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60371468"
 ---
 # <a name="get-started-with-your-billing-account-for-a-microsoft-customer-agreement"></a>Начало работы с учетной записью выставления счетов для клиента соглашение Microsoft
 
@@ -30,7 +30,7 @@ ms.locfileid: "57337419"
 
 Учетная запись выставления счетов для клиентов соглашения Microsoft содержит один или несколько профилей-выставления счетов, которые позволяют управлять счета-фактуры и способы оплаты. Каждый профиль выставления счетов содержит один или несколько разделов счета, которая позволяет организовать затраты на профиль выставления счетов.
 
-Следующей схеме показана связь между учетную запись выставления счетов, выставления счетов профили и разделы счетов.
+На схеме ниже показана связь между учетной записью выставления счетов, профилями выставления счетов и разделами счета.
 
 ![Схема, показывающая иерархии выставления счетов для клиентов соглашения Microsoft](./media/billing-mca-overview/mca-billing-hierarchy.png)
 

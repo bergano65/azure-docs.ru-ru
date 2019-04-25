@@ -13,11 +13,11 @@ ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bc136cdc88c67e3b26aefc4982f49a2547e456db
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58370097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60474033"
 ---
 # <a name="sign-in-to-your-accounts-using-the-microsoft-authenticator-app"></a>Вход в учетные записи с помощью приложения Microsoft Authenticator
 Приложение Microsoft Authenticator позволяет войти в учетные записи при использовании двухфакторной проверки подлинности. которая обеспечивает более безопасный доступ к учетным записям, особенно когда просматривается конфиденциальная информация. Так как пользователи могут забыть пароли и их могут украсть или скомпрометировать, двухфакторная проверка подлинности — это дополнительный этап обеспечения безопасности, который усиливает защиту учетной записи от несанкционированного доступа.

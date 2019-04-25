@@ -16,17 +16,17 @@ ms.topic: article
 ms.date: 08/16/2017
 ms.author: monicar
 ms.openlocfilehash: 9a93786759941def4cf8677509b1b2565cac5090
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56823864"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60325431"
 ---
 # <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Словарь терминов Microsoft Azure: словарь терминов, связанных с облаком на платформе Azure.
 
 Словарь терминов Microsoft Azure — это краткий словарь терминов, связанных с облаком на платформе Azure. См. также:
 
-* [Microsoft Azure и веб-службы Amazon](https://azure.microsoft.com/campaigns/azure-vs-aws/mapping/) — определения служб Azure и их аналогов в AWS.<!-- I propose to link to https://azure.microsoft.com/services/ instead of this -->
+* [Microsoft Azure и Amazon Web Services](https://azure.microsoft.com/campaigns/azure-vs-aws/mapping/) -определения служб Azure и их аналогов в AWS.<!-- I propose to link to https://azure.microsoft.com/services/ instead of this -->
 * [Термины облачных вычислений](https://azure.microsoft.com/overview/cloud-computing-dictionary/) — общие термины облачной индустрии.
 
 ## <a name="account"></a>учетная запись
@@ -66,10 +66,10 @@ ms.locfileid: "56823864"
 
 ## <a name="geo-replication"></a>георепликация
 Процесс автоматической репликации такого содержимого, как BLOB-объекты, таблицы и очереди, в паре регионов.  
-Ознакомьтесь с [активной георепликацией для базы данных SQL Azure](sql-database/sql-database-geo-replication-overview.md)
-<!-- The meaning of "geo" in this term seems to be different than the meaning provided in the "geo" entry -->.
+См. статью [Активная георепликация для базы данных SQL Azure](sql-database/sql-database-geo-replication-overview.md).
+<!-- The meaning of "geo" in this term seems to be different than the meaning provided in the "geo" entry -->
 
-## <a name="image"></a>изображение
+## <a name="image"></a>image
 Файл с конфигурацией операционной системы и приложения, который можно использовать для создания любого количества виртуальных машин. В Azure можно использовать два типа образов: образ виртуальной машины и образ ОС. Образ виртуальной машины включает операционную систему и все диски, присоединенные к виртуальной машине на момент создания образа. Образ ОС содержит только общие сведения об операционной системе и не включает конфигурации дисков данных.  
 См. статью [Просмотр и выбор образов виртуальных машин Windows в Azure с помощью оболочки PowerShell или интерфейса командной строки](virtual-machines/windows/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 

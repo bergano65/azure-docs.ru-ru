@@ -8,15 +8,15 @@ ms.topic: article
 ms.date: 3/11/2019
 ms.author: victorh
 ms.openlocfilehash: 4ef9089c94d9e806cc519c4f8243cdcb7e73953a
-ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57730531"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60194053"
 ---
 # <a name="azure-firewall-threat-intelligence-based-filtering---public-preview"></a>Фильтрация на основе аналитики угроз Azure брандмауэра - общедоступной предварительной версии
 
-Фильтрация угроз на основе аналитики можно включить для брандмауэра с предупреждением и запрещают трафик в известных вредоносных IP-адресов и доменов. IP-адресов и доменов, поступают из веб-канала функции анализа угроз Майкрософт. [Intelligent Security Graph](https://www.microsoft.com/en-us/security/operations/intelligence) лежащих в основе анализа угроз Майкрософт и используется несколько служб, включая Центр безопасности Azure.
+Фильтрация на основе Microsoft Threat Intelligence может быть включена в брандмауэре с целю создания оповещений и запрета трафика, поступающего с известных вредоносных IP-адресов и доменов, а также передающегося на них. IP-адреса и домены также передаются из канала Microsoft Threat Intelligence. [Intelligent Security Graph](https://www.microsoft.com/en-us/security/operations/intelligence) лежащих в основе анализа угроз Майкрософт и используется несколько служб, включая Центр безопасности Azure.
 
 ![Анализ угроз брандмауэра](media/threat-intel/firewall-threat.png)
 

@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 10/22/2018
 ms.author: kumud
 ms.openlocfilehash: 6fb6b3e4476efec87b15d175d354afab777e6830
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54228832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60330266"
 ---
 # <a name="nested-traffic-manager-profiles"></a>Вложенные профили диспетчера трафика
 
@@ -95,7 +95,7 @@ ms.locfileid: "54228832"
 
 ![Мониторинг диспетчером трафика конечных точек с индивидуальными параметрами][10]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о [профилях диспетчера трафика](traffic-manager-overview.md).
 

@@ -16,11 +16,11 @@ ms.topic: conceptual
 ms.date: 10/27/2017
 ms.author: ergreenl
 ms.openlocfilehash: a2abdbf1409564f94356279332d253627c5b447a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58111928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60359500"
 ---
 # <a name="disable-azure-active-directory-domain-services-using-the-azure-portal"></a>Отключение доменных служб Azure Active Directory с помощью портала Azure
 В этой статье объясняется, как с помощью портала Azure отключить доменные службы Azure Active Directory (AD) для каталога Azure AD.

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с SECURE DELIVER | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с SECURE DELIVER | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SECURE DELIVER.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 07/11/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e08c8c4c576f9dd0ee6896b7adf53279afc9f53c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56171355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60340342"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-secure-deliver"></a>Руководство. Интеграция Azure Active Directory с SECURE DELIVER
+# <a name="tutorial-azure-active-directory-integration-with-secure-deliver"></a>Руководство по Интеграция Azure Active Directory с SECURE DELIVER
 
 В этом руководстве описано, как интегрировать SECURE DELIVER с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56171355"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с SECURE DELIVER, вам потребуется следующее.
 
@@ -163,11 +163,11 @@ ms.locfileid: "56171355"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-secure-deliver-test-user"></a>Создание тестового пользователя в SECURE DELIVER
 

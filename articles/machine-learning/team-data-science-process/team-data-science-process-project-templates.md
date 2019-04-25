@@ -12,11 +12,11 @@ ms.date: 11/27/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: bbedaa554e9c97a24e26c7927c1bf9c94d5cd507
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55474468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60253055"
 ---
 # <a name="team-data-science-process-project-planning"></a>Планирование проекта командного процесса обработки и анализа данных
 
@@ -56,7 +56,7 @@ ms.locfileid: "55474468"
 
 Используйте этот [репозиторий шаблонов проектов](https://github.com/Azure/Azure-TDSP-ProjectTemplate), чтобы обеспечить эффективное выполнение проекта и совместную работу над ним. Этот репозиторий предоставляет стандартизированную структуру каталогов и шаблоны документов, которые можно использовать для собственного проекта TDSP.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Гибкая разработка проектов обработки и анализа данных](agile-development.md). Из этого документа вы узнаете, как с помощью командного процесса обработки и анализа данных выполнять проекты по обработке и анализу данных с соблюдением системного подхода, контролем версий и поддержкой совместной работы.
 

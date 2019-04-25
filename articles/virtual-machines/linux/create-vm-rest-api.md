@@ -16,11 +16,11 @@ ms.workload: infrastructure
 ms.date: 06/05/2018
 ms.author: cynthn
 ms.openlocfilehash: 2b078cd769a9b4e5e66fe132fd4ef73ec4621efc
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57447852"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60391367"
 ---
 # <a name="create-a-linux-virtual-machine-that-uses-ssh-authentication-with-the-rest-api"></a>Создание виртуальной машины Linux, в которой используется проверка подлинности по SSH с интерфейсом REST API
 
@@ -63,7 +63,7 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 Для создания текста запроса используются следующие общие определения.
 
-| ИМЯ                       | Обязательно для заполнения | type                                                                                | ОПИСАНИЕ  |
+| Name                       | Обязательно для заполнения | type                                                                                | ОПИСАНИЕ  |
 |----------------------------|----------|-------------------------------------------------------------------------------------|--------------|
 | location                   | Истина     | строка                                                                              | Расположение ресурса. |
 | name                       |          | строка                                                                              | Имя виртуальной машины. |
@@ -137,9 +137,9 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 Существует два успешных ответа для операции по созданию или обновлению виртуальной машины.
 
-| ИМЯ        | Тип                                                                              | ОПИСАНИЕ |
+| Name        | Тип                                                                              | ОПИСАНИЕ |
 |-------------|-----------------------------------------------------------------------------------|-------------|
-| 200 ОК      | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | ОК          |
+| 200 ОК      | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | OК          |
 | 201 Создано | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | Создано     |
 
 Сокращенный ответ *201 Создано*, полученный из предыдущего примера текста запроса, который создает виртуальную машину, показывает, что *vmId* был назначен, и что *ProvisionState* находится в состоянии *Создание*.

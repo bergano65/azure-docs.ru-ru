@@ -18,11 +18,11 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 494ccc3b90b8c249ee935087dcf0f0b5264b02ca
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56172256"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60386777"
 ---
 # <a name="azure-active-directory-pass-through-authentication-upgrade-preview-authentication-agents"></a>Сквозная проверка подлинности Azure Active Directory Обновление предварительной версии агентов аутентификации
 
@@ -88,5 +88,5 @@ ms.locfileid: "56172256"
 >[!NOTE]
 >Если просмотреть колонку "Сквозная проверка подлинности" в [центре администрирования Azure Active Directory](https://aad.portal.azure.com) после завершения предыдущих шагов, то вы увидите по две записи агентов аутентификации на каждом сервере. При этом один из агентов аутентификации **активен**, а другой **неактивен**. Это _ожидаемое поведение_. **Неактивная** запись автоматически удалится через несколько дней.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [**Устранение неполадок**](tshoot-connect-pass-through-authentication.md). Узнайте, как устранить самые распространенные проблемы с этой функцией.

@@ -3,7 +3,7 @@ title: Элемент UserJourneys | Документация Майкрософ
 description: Сведения об указании элемента UserJourneys настраиваемой политики в Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
@@ -11,11 +11,11 @@ ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
 ms.openlocfilehash: ccc1f94b9411a158b5c60509e09bd3edc0a61640
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59795163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60359880"
 ---
 # <a name="userjourneys"></a>UserJourneys
 
@@ -99,7 +99,7 @@ ms.locfileid: "59795163"
 
 | Элемент | Вхождения | ОПИСАНИЕ |
 | ------- | ----------- | ----------- |
-| Значение | 1:n | Атрибут ClaimTypeReferenceId, для которого необходимо выполнить запрос. Другой элемент значения содержит значение, для которого необходимо выполнить проверку.</li></ul>|
+| Value | 1:n | Атрибут ClaimTypeReferenceId, для которого необходимо выполнить запрос. Другой элемент значения содержит значение, для которого необходимо выполнить проверку.</li></ul>|
 | Действие | 1:1 | Действие, которое требуется выполнить, если в результате проверки предварительного условия в рамках шага оркестрации получено значение true. Если для `Action` присвоено значение `SkipThisOrchestrationStep`, не нужно выполнять сопоставленный элемент `OrchestrationStep`. | 
 
 #### <a name="preconditions-examples"></a>Примеры предварительных условий

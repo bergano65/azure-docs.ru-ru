@@ -1,5 +1,5 @@
 ---
-title: Настройка BGP на VPN-шлюзе Azure с помощью Resource Manager и интерфейса командной строки | Документация Майкрософт
+title: 'Настройка BGP на VPN-шлюз Azure: Resource Manager и интерфейса командной строки | Документация Майкрософт'
 description: В этой статье описана поэтапная настройка протокола BGP для VPN-шлюза Azure с помощью Azure Resource Manager и интерфейса командной строки.
 services: vpn-gateway
 documentationcenter: na
@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 09/25/2018
 ms.author: yushwang
 ms.openlocfilehash: f0367a360de97d3935c7fa8de9f3dafa6555811e
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49471362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60390688"
 ---
 # <a name="how-to-configure-bgp-on-an-azure-vpn-gateway-by-using-cli"></a>Настройка BGP на VPN-шлюзе Azure с помощью интерфейса командной строки
 
@@ -50,7 +50,7 @@ ms.locfileid: "49471362"
 
 Установите последнюю версию команд интерфейса командной строки (версии 2.0 или более позднюю). См. дополнительные сведения об [установке Azure CLI 2.0](/cli/azure/install-azure-cli) и [начале работы с Azure CLI 2.0](/cli/azure/get-started-with-azure-cli).
 
-### <a name="step-1-create-and-configure-testvnet1"></a>Шаг 1. Создание и настройка TestVNet1
+### <a name="step-1-create-and-configure-testvnet1"></a>Шаг 1. Создание и настройка TestVNet1
 
 #### <a name="Login"></a>1. Подключение к подписке
 
@@ -66,28 +66,28 @@ az group create --name TestBGPRG1 --location eastus
 
 #### <a name="3-create-testvnet1"></a>3. Создание TestVNet1
 
-В примере ниже создается виртуальная сеть с именем TestVNet1 и три подсети: GatewaySubnet, FrontEnd и BackEnd. При замене значений важно, чтобы вы назвали подсеть шлюза именем GatewaySubnet. Если вы используете другое имя, создание шлюза завершится сбоем.
+В следующем примере создается виртуальная сеть TestVNet1 и три подсети: GatewaySubnet, FrontEnd и BackEnd. При замене значений важно, чтобы вы назвали подсеть шлюза именем GatewaySubnet. Если вы используете другое имя, создание шлюза завершится сбоем.
 
 Первая команда создает адресное пространство переднего плана и подсеть FrontEnd. Вторая команда создает дополнительное адресное пространство для подсети BackEnd. Третья и четвертая команды создают подсеть BackEnd и GatewaySubnet.
 
 ```azurecli
-az network vnet create -n TestVNet1 -g TestBGPRG1 --address-prefix 10.11.0.0/16 -l eastus --subnet-name FrontEnd --subnet-prefix 10.11.0.0/24 
- 
-az network vnet update -n TestVNet1 --address-prefixes 10.11.0.0/16 10.12.0.0/16 -g TestBGPRG1 
- 
-az network vnet subnet create --vnet-name TestVNet1 -n BackEnd -g TestBGPRG1 --address-prefix 10.12.0.0/24 
- 
-az network vnet subnet create --vnet-name TestVNet1 -n GatewaySubnet -g TestBGPRG1 --address-prefix 10.12.255.0/27 
+az network vnet create -n TestVNet1 -g TestBGPRG1 --address-prefix 10.11.0.0/16 -l eastus --subnet-name FrontEnd --subnet-prefix 10.11.0.0/24 
+ 
+az network vnet update -n TestVNet1 --address-prefixes 10.11.0.0/16 10.12.0.0/16 -g TestBGPRG1 
+ 
+az network vnet subnet create --vnet-name TestVNet1 -n BackEnd -g TestBGPRG1 --address-prefix 10.12.0.0/24 
+ 
+az network vnet subnet create --vnet-name TestVNet1 -n GatewaySubnet -g TestBGPRG1 --address-prefix 10.12.255.0/27 
 ```
 
-### <a name="step-2-create-the-vpn-gateway-for-testvnet1-with-bgp-parameters"></a>Шаг 2. Создание VPN-шлюза для TestVNet1 с параметрами BGP
+### <a name="step-2-create-the-vpn-gateway-for-testvnet1-with-bgp-parameters"></a>Шаг 2. Создание VPN-шлюза для TestVNet1 с параметрами BGP
 
 #### <a name="1-create-the-public-ip-address"></a>1. Создание общедоступного IP-адреса
 
 Запросите общедоступный IP-адрес. VPN-шлюзу, созданному для виртуальной сети, выделяется общедоступный IP-адрес.
 
 ```azurecli
-az network public-ip create -n GWPubIP -g TestBGPRG1 --allocation-method Dynamic 
+az network public-ip create -n GWPubIP -g TestBGPRG1 --allocation-method Dynamic 
 ```
 
 #### <a name="2-create-the-vpn-gateway-with-the-as-number"></a>2. Создание VPN-шлюза с номером AS
@@ -107,14 +107,14 @@ az network vnet-gateway create -n VNet1GW -l eastus --public-ip-address GWPubIP 
 Выполните следующую команду и проверьте раздел `bgpSettings` в верхней части выходных данных:
 
 ```azurecli
-az network vnet-gateway list -g TestBGPRG1 
- 
-  
-"bgpSettings": { 
-      "asn": 65010, 
-      "bgpPeeringAddress": "10.12.255.30", 
-      "peerWeight": 0 
-    }
+az network vnet-gateway list -g TestBGPRG1 
+ 
+  
+"bgpSettings": { 
+      "asn": 65010, 
+      "bgpPeeringAddress": "10.12.255.30", 
+      "peerWeight": 0 
+    }
 ```
 
 С помощью созданного шлюза можно установить подключение между локальными или виртуальными сетями с использованием BGP.
@@ -126,7 +126,7 @@ az network vnet-gateway list -g TestBGPRG1
 ![BGP между локальными сетями](./media/vpn-gateway-bgp-resource-manager-ps/bgp-crossprem.png)
 
 
-### <a name="step-1-create-and-configure-the-local-network-gateway"></a>Шаг 1. Создание и настройка локального сетевого шлюза
+### <a name="step-1-create-and-configure-the-local-network-gateway"></a>Шаг 1. Создание и Настройка локального сетевого шлюза
 
 В этом подразделе мы продолжим создание конфигурации, которая представлена на схеме. Не забудьте заменить значения теми, которые вы хотите использовать для конфигурации. При работе со шлюзами локальной сети учитывайте следующее:
 
@@ -137,12 +137,12 @@ az network vnet-gateway list -g TestBGPRG1
 Прежде чем продолжить, убедитесь, что выполнены шаги из раздела [Включение BGP для VPN-шлюза](#enablebgp) этой статьи и что вы по-прежнему подключены к подписке 1. Обратите внимание, что в этом примере создается группа ресурсов. Обратите внимание также на два дополнительных параметра локального сетевого шлюза: `Asn` и `BgpPeerAddress`.
 
 ```azurecli
-az group create -n TestBGPRG5 -l eastus2 
- 
+az group create -n TestBGPRG5 -l eastus2 
+ 
 az network local-gateway create --gateway-ip-address 23.99.221.164 -n Site5 -g TestBGPRG5 --local-address-prefixes 10.51.255.254/32 --asn 65050 --bgp-peering-address 10.51.255.254
 ```
 
-### <a name="step-2-connect-the-vnet-gateway-and-local-network-gateway"></a>Шаг 2. Подключение шлюза виртуальной сети к локальному сетевому шлюзу
+### <a name="step-2-connect-the-vnet-gateway-and-local-network-gateway"></a>Шаг 2. Подключение шлюза виртуальной сети и шлюза локальной сети
 
 На этом шаге вы создадите подключение между TestVNet1 и Site5. Необходимо указать параметр `--enable-bgp`, чтобы включить протокол BGP для этого подключения. 
 
@@ -161,18 +161,18 @@ az network vnet-gateway show -n VNet1GW -g TestBGPRG1
 Выходные данные примера:
 
 ```
-{ 
-  "activeActive": false, 
-  "bgpSettings": { 
-    "asn": 65010, 
-    "bgpPeeringAddress": "10.12.255.30", 
-    "peerWeight": 0 
-  }, 
-  "enableBgp": true, 
-  "etag": "W/\"<your etag number>\"", 
-  "gatewayDefaultSite": null, 
-  "gatewayType": "Vpn", 
-  "id": "/subscriptions/<subscription ID>/resourceGroups/TestBGPRG1/providers/Microsoft.Network/virtualNetworkGateways/VNet1GW",
+{ 
+  "activeActive": false, 
+  "bgpSettings": { 
+    "asn": 65010, 
+    "bgpPeeringAddress": "10.12.255.30", 
+    "peerWeight": 0 
+  }, 
+  "enableBgp": true, 
+  "etag": "W/\"<your etag number>\"", 
+  "gatewayDefaultSite": null, 
+  "gatewayType": "Vpn", 
+  "id": "/subscriptions/<subscription ID>/resourceGroups/TestBGPRG1/providers/Microsoft.Network/virtualNetworkGateways/VNet1GW",
 ```
 
 Скопируйте значения после `"id":` в текстовый редактор, например Блокнот, чтобы их можно было быстро вставить при создании подключения. 
@@ -219,7 +219,7 @@ eBGP Multihop        : Ensure the "multihop" option for eBGP is enabled on your 
 
 Приведенные ниже инструкции продолжают действия, описанные в предыдущих разделах. Выполните шаги из раздела [Включение BGP для VPN-шлюза](#enablebgp), чтобы создать и настроить TestVNet1 и VPN-шлюз с BGP.
 
-### <a name="step-1-create-testvnet2-and-the-vpn-gateway"></a>Шаг 1. Создание TestVNet2 и VPN-шлюза
+### <a name="step-1-create-testvnet2-and-the-vpn-gateway"></a>Шаг 1. Создание TestVNet2 и VPN-шлюза
 
 Важно убедиться в том, что пространство IP-адресов для новой виртуальной сети TestVNet2 не пересекается с диапазонами любой из ваших виртуальных сетей.
 
@@ -236,12 +236,12 @@ az group create -n TestBGPRG2 -l westus
 Первая команда создает адресное пространство переднего плана и подсеть FrontEnd. Вторая команда создает дополнительное адресное пространство для подсети BackEnd. Третья и четвертая команды создают подсеть BackEnd и GatewaySubnet.
 
 ```azurecli
-az network vnet create -n TestVNet2 -g TestBGPRG2 --address-prefix 10.21.0.0/16 -l westus --subnet-name FrontEnd --subnet-prefix 10.21.0.0/24 
- 
-az network vnet update -n TestVNet2 --address-prefixes 10.21.0.0/16 10.22.0.0/16 -g TestBGPRG2 
- 
-az network vnet subnet create --vnet-name TestVNet2 -n BackEnd -g TestBGPRG2 --address-prefix 10.22.0.0/24 
- 
+az network vnet create -n TestVNet2 -g TestBGPRG2 --address-prefix 10.21.0.0/16 -l westus --subnet-name FrontEnd --subnet-prefix 10.21.0.0/24 
+ 
+az network vnet update -n TestVNet2 --address-prefixes 10.21.0.0/16 10.22.0.0/16 -g TestBGPRG2 
+ 
+az network vnet subnet create --vnet-name TestVNet2 -n BackEnd -g TestBGPRG2 --address-prefix 10.22.0.0/24 
+ 
 az network vnet subnet create --vnet-name TestVNet2 -n GatewaySubnet -g TestBGPRG2 --address-prefix 10.22.255.0/27
 ```
 
@@ -256,16 +256,16 @@ az network public-ip create -n GWPubIP2 -g TestBGPRG2 --allocation-method Dynami
 #### <a name="4-create-the-vpn-gateway-with-the-as-number"></a>4. Создание VPN-шлюза с номером AS
 
 Создайте шлюз для виртуальной сети TestVNet2. Номер ASN по умолчанию необходимо переопределить для ваших VPN-шлюзов Azure. Номера ASN для подключенных виртуальных сетей должны быть разными, чтобы работал протокол BGP и транзитная маршрутизация.
- 
+ 
 ```azurecli
 az network vnet-gateway create -n VNet2GW -l westus --public-ip-address GWPubIP2 -g TestBGPRG2 --vnet TestVNet2 --gateway-type Vpn --sku Standard --vpn-type RouteBased --asn 65020 --no-wait
 ```
 
-### <a name="step-2-connect-the-testvnet1-and-testvnet2-gateways"></a>Шаг 2. Подключение шлюзов TestVNet1 и TestVNet2
+### <a name="step-2-connect-the-testvnet1-and-testvnet2-gateways"></a>Шаг 2. Подключение шлюзов TestVNet1 и TestVNet2
 
 На этом шаге вы создадите подключение между TestVNet1 и Site5. Необходимо указать параметр `--enable-bgp`, чтобы включить протокол BGP для этого подключения.
 
-В следующем примере шлюз виртуальной и локальной сети находятся в разных группах ресурсов. Если шлюзы находятся в разных группах ресурсов, необходимо полностью указать идентификатор ресурса двух шлюзов, чтобы настроить подключение между виртуальными сетями. 
+В следующем примере шлюз виртуальной и локальной сети находятся в разных группах ресурсов. Если шлюзы находятся в разных группах ресурсов, необходимо полностью указать идентификатор ресурса двух шлюзов, чтобы настроить подключение между виртуальными сетями. 
 
 #### <a name="1-get-the-resource-id-of-vnet1gw"></a>1. Получение идентификатора ресурса VNet1GW 
 
@@ -302,6 +302,6 @@ az network vpn-connection create -n VNet2ToVNet1 -g TestBGPRG2 --vnet-gateway1 /
 
 Подключение будет установлено через несколько минут после выполнения этих действий. Сразу после создания подключения между виртуальными сетями начнется сеанс пиринга BGP.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Пошаговые инструкции см. в статье о [создании виртуальной машины](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b7def733a80aea1be77825bb9069217f5f43e003
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56173340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60347810"
 ---
 # <a name="more-details-about-features-in-preview"></a>Дополнительная информация о функциях в предварительной версии
 В этой статье описывается, как использовать функции, которые сейчас доступны в предварительной версии.
@@ -51,7 +51,7 @@ ms.locfileid: "56173340"
 >
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Продолжите [выборочную установку Azure AD Connect](how-to-connect-install-custom.md).
 
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

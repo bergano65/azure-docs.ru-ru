@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: pbutlerm
 ms.openlocfilehash: b5fdcb3269a63e6f0d961bf2ab9f5f2a4a4005ab
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51038863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60398338"
 ---
 # <a name="dynamics-365-business-central-offer"></a>Предложение Dynamics 365 Business Central
 
@@ -48,7 +48,7 @@ ms.locfileid: "51038863"
 5. Опубликуйте приложение, как описано в последующих статьях этого раздела.  Также эту информацию можно найти в техническом документе [Step 3 - Publish your app](https://go.microsoft.com/fwlink/?linkid=841517) (Шаг 3. Публикация приложения).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о процессе публикации в статье [Перенос приложения Microsoft Dynamics 365 Business Central в Microsoft AppSource](./d365-finance-overview-publish-your-app.md).
 

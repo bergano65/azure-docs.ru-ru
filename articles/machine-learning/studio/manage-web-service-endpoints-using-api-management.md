@@ -11,11 +11,11 @@ ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 11/03/2017
 ms.openlocfilehash: 0d79bc167ea0416218a4d4822bcd6221699643ca
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57852898"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60347384"
 ---
 # <a name="manage-azure-machine-learning-studio-web-services-using-api-management"></a>Управление веб-службами Студии машинного обучения Azure с помощью службы управления API
 ## <a name="overview"></a>Обзор
@@ -168,7 +168,7 @@ ms.locfileid: "57852898"
 ### <a name="creating-the-experiment"></a>Создание эксперимента
 Ниже описаны действия, которые нужно выполнить, чтобы создать простой эксперимент AzureML и развернуть его в качестве веб-службы. Веб-служба принимает столбец случайного текста и возвращает набор функций в виде целых чисел. Например: 
 
-| текст | Хэшированный текст |
+| Text | Хэшированный текст |
 | --- | --- |
 | This is a good day |1 1 2 2 0 0 2 1 |
 

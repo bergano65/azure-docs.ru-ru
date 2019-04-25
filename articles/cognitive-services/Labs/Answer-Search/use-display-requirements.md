@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 04/13/2018
 ms.author: rosh
 ms.openlocfilehash: 085cb20e4dad92ed55b5ba0914c677aa50f3ac97
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55875337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60345759"
 ---
 # <a name="project-answer-search-use-and-display-requirements"></a>Требования к использованию и отображению для API поиска ответов в проекте
 
@@ -105,5 +105,5 @@ ms.locfileid: "55875337"
 - Необходимо обеспечить соблюдение действующих законов и прав третьих лиц при применении данных (включая URL-адреса), полученных с помощью интерфейсов API поиска.
 - Нельзя использовать данные (включая URL-адреса), полученные из API поиска, в рамках индексации поиска, машинного обучения или аналогичного алгоритмического действия для обучения, оценки либо улучшения ваших или сторонних служб.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Общие сведения о поиске ответов](overview.md)

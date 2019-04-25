@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: 8665d0a1fccecf5521a553a894e2a55e52384ec3
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54851391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60402724"
 ---
 # <a name="message-sequencing-and-timestamps"></a>Последовательность сообщений и метки времени
 
@@ -46,7 +46,7 @@ ms.locfileid: "54851391"
 
 Так как эта функция привязана к отдельным сообщениям, а они могут быть поставлены в очередь только один раз, служебная шина не поддерживает повторяющиеся расписания для сообщений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

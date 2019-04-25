@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 11/26/2018
 ms.author: apimpm
 ms.openlocfilehash: eae36aa6e60e3da03c59952a1d9e035e6a773d2d
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54156703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60531076"
 ---
 # <a name="feature-based-comparison-of-the-azure-api-management-tiers"></a>Сравнение возможностей категорий управления API Azure
 
@@ -26,19 +26,19 @@ ms.locfileid: "54156703"
 
 | Функция                                                                                      | Потребление<sup>ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ</sup> | Developer      | базовая;          | Стандартная       | Премиум        |
 | -------------------------------------------------------------------------------------------- | ----------------------------- | -------------- | -------------- | -------------- | -------------- |
-| Интеграция Azure AD<sup>1</sup>                                                             | Нет                             | Yes            | Нет              | Yes            | Yes            |
-| Поддержка виртуальной сети                                                               | Нет                             | Yes            | Нет              | Нет              | Yes            |
-| Развертывание в нескольких регионах                                                                      | Нет                             | Нет              | Нет              | Нет              | Yes            |
-| Несколько личных доменных имен                                                                 | Нет                             | Нет              | Нет              | Нет              | Yes            |
-| Портал разработчика<sup>2</sup>                                                                 | Нет                             | Yes            | Да            | Да            | Yes            |
-| Встроенный кэш                                                                               | Нет                             | Yes            | Да            | Да            | Yes            |
-| Встроенная аналитика                                                                           | Нет                             | Yes            | Да            | Да            | Yes            |
-| [Параметры SSL](api-management-howto-manage-protocols-ciphers.md)                             | Нет                             | Yes            | Да            | Да            | Yes            |
+| Интеграция Azure AD<sup>1</sup>                                                             | Нет                             | Yes            | Нет             | Да            | Yes            |
+| Поддержка виртуальной сети                                                               | Нет                             | Yes            | Нет              | Нет             | Yes            |
+| Развертывание в нескольких регионах                                                                      | Нет                             | Нет              | Нет              | Нет             | Yes            |
+| Несколько личных доменных имен                                                                 | Нет                             | Нет              | Нет              | Нет             | Yes            |
+| Портал разработчика<sup>2</sup>                                                                 | Нет                             | Да            | Да            | Да            | Yes            |
+| Встроенный кэш                                                                               | Нет                             | Да            | Да            | Да            | Yes            |
+| Встроенная аналитика                                                                           | Нет                             | Да            | Да            | Да            | Yes            |
+| [Параметры SSL](api-management-howto-manage-protocols-ciphers.md)                             | Нет                             | Да            | Да            | Да            | Yes            |
 | [Внешний кэш](https://aka.ms/apimbyoc)                                                    | Yes                           | Нет<sup>3</sup> | Нет<sup>3</sup> | Нет<sup>3</sup> | Нет<sup>3</sup> |
 | [Аутентификация на основе сертификата клиента](api-management-howto-mutual-certificates-for-clients.md) | Нет<sup>4</sup>                | Yes            | Да            | Да            | Yes            |
-| [Резервное копирование и восстановление](api-management-howto-disaster-recovery-backup-restore.md)               | Нет                             | Yes            | Да            | Да            | Yes            |
-| [Управление через Git](api-management-configuration-repository-git.md)                        | Нет                             | Yes            | Да            | Да            | Yes            |
-| API прямого управления                                                                        | Нет                             | Yes            | Да            | Да            | Yes            |
+| [Резервное копирование и восстановление](api-management-howto-disaster-recovery-backup-restore.md)               | Нет                             | Да            | Да            | Да            | Yes            |
+| [Управление через Git](api-management-configuration-repository-git.md)                        | Нет                             | Да            | Да            | Да            | Yes            |
+| API прямого управления                                                                        | Нет                             | Да            | Да            | Да            | Yes            |
 | Журналы и метрики Azure Monitor                                                               | Нет<sup>5</sup>                | Yes            | Да            | Да            | Yes            |
 
 <sup>1</sup> Позволяет использовать Azure AD (и Azure AD B2C) в качестве поставщика удостоверений для входа пользователя на портал разработчика.<br/>

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с LinkedIn Elevate | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с LinkedIn Elevate | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и LinkedIn Elevate.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 05/16/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6ca8e537f261b59fb4e069d47d24e21abbdeca46
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56202016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60260033"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-linkedin-elevate"></a>Руководство по Интеграция Azure Active Directory с LinkedIn Elevate
 
@@ -34,7 +34,7 @@ ms.locfileid: "56202016"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с LinkedIn Elevate, вам потребуется:
 
@@ -122,7 +122,7 @@ ms.locfileid: "56202016"
 
     a. В текстовом поле **Идентификатор** введите **идентификатор сущности**, скопированный с портала LinkedIn. 
 
-    б) В текстовом поле **URL-адрес ответа** введите **URL-адрес службы обработчика утверждений (ACS)**, скопированный с портала LinkedIn.
+    2. В текстовом поле **URL-адрес ответа** введите **URL-адрес службы обработчика утверждений (ACS)**, скопированный с портала LinkedIn.
 
 1. Если вы хотите настроить единый вход в режиме, **инициированном поставщиком услуг**, то установите флажок "Показать дополнительные параметры URL-адресов" в разделе настроек и настройте URL-адрес входа в таком формате:
 
@@ -146,7 +146,7 @@ ms.locfileid: "56202016"
 
       ![Создание тестового пользователя Azure AD](./media/linkedinelevate-tutorial/adduserattribute.png)
 
-      б) Нажмите кнопку **ОК**, чтобы сохранить атрибут.
+      2. Нажмите кнопку **ОК**, чтобы сохранить атрибут.
 
       c. Измените имя атрибута **emailaddress** на **email**.
 
@@ -191,11 +191,11 @@ ms.locfileid: "56202016"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="creating-a-linkedin-elevate-test-user"></a>Создание тестового пользователя LinkedIn Elevate
 

@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: bwren
 ms.openlocfilehash: c01cdb967fd7f9516b4403aa4f0c76f2577d5050
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58294728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60394529"
 ---
 # <a name="standard-properties-in-azure-monitor-log-records"></a>Стандартные свойства в записях журнала Azure Monitor
 Данные журнала Azure Monitor [хранятся в виде набора записей](../log-query/log-query-overview.md), каждая из которых содержит определенный тип данных с уникальным набором свойств. Большинство типов данных имеют стандартные свойства, которые являются общими для нескольких типов. В этой статье описаны эти свойства и приведены примеры по их использованию в запросах.

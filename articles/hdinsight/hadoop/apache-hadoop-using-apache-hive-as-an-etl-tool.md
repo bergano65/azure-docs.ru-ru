@@ -1,7 +1,6 @@
 ---
 title: Использование Apache Hive как средства для извлечения, преобразования и загрузки в Azure HDInsight
 description: Apache Hive можно использовать в Azure HDInsight для извлечения, преобразования и загрузки данных.
-services: hdinsight
 ms.service: hdinsight
 author: ashishthaps
 ms.author: ashishth
@@ -10,11 +9,11 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/14/2017
 ms.openlocfilehash: f8fb036eaca35e41d89b0a9610ebcd68e65f40f9
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53630264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60343382"
 ---
 # <a name="use-apache-hive-as-an-extract-transform-and-load-etl-tool"></a>Использование Apache Hive как средства для извлечения, преобразования и загрузки
 
@@ -88,7 +87,7 @@ ms.locfileid: "53630264"
 
 Если в процессе извлечения, преобразования и загрузки вам нужно выполнять несколько операций с данными, уделите внимание координации этих действий. Если операции управляются внешней программой, а не внутренним рабочим процессом, важно оценить возможность параллельного выполнения некоторых операций и правильно определять, когда завершается каждое задание. Зачастую проще применить механизм управления рабочим процессом, например Oozie в среде Hadoop, чем самостоятельно распределять последовательность операций внешними скриптами или программами. Дополнительные сведения о средстве Oozie вы найдете в статье [об оркестрации рабочих процессов и заданий](https://msdn.microsoft.com/library/dn749829.aspx).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [ETL в масштабе](apache-hadoop-etl-at-scale.md)
 * [Ввод в эксплуатацию конвейера данных](../hdinsight-operationalize-data-pipeline.md)

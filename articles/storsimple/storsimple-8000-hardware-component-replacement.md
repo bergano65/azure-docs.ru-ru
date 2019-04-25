@@ -16,11 +16,11 @@ ms.date: 06/02/2017
 ms.author: alkohli
 ms.custom: ''
 ms.openlocfilehash: e05a37122647d4979089f0ba00b1fc15f9b84b0f
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57433660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60321829"
 ---
 # <a name="replace-a-hardware-component-on-your-storsimple-8000-series-device"></a>Замена аппаратного компонента на устройстве StorSimple серии 8000
 
@@ -34,7 +34,7 @@ ms.locfileid: "57433660"
 ### <a name="safety-icon-conventions"></a>Условные обозначения сведений о безопасности
 В следующей таблице описаны условные обозначения сведений о безопасности, используемые в данных учебниках. Обращайте пристальное внимание на эти условные обозначения при выполнении действий по снятию и замене компонентов устройства.
 
-| Значок | текст | Дополнительная информация |
+| Значок | Text | Дополнительная информация |
 |:--- |:--- |:--- |
 | ![Значок "Внимание!"](./media/storsimple-hardware-component-replacement/Warning.png) |**ОПАСНОСТЬ!** |Указывает на опасную ситуацию, которая наверняка приведет к смерти или серьезной травме. Это сигнальное слово применяется только к самым крайним случаям. |
 | ![Значок "Внимание!"](./media/storsimple-hardware-component-replacement/Warning.png) |**ВНИМАНИЕ!** |Указывает на опасную ситуацию, которая может привести к смерти или серьезной травме. |

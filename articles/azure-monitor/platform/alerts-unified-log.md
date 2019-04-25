@@ -9,20 +9,20 @@ ms.date: 2/20/2019
 ms.author: vinagara
 ms.subservice: alerts
 ms.openlocfilehash: 194fba3296359f5f7d29a37425a938fe08f1332b
-ms.sourcegitcommit: 75fef8147209a1dcdc7573c4a6a90f0151a12e17
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56452888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60345896"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Оповещения журнала в Azure Monitor
 
 В этой статье рассматриваются оповещения журнала. Это один из типов оповещений, которые поддерживаются в системе [оповещений Azure](../../azure-monitor/platform/alerts-overview.md) и позволяют пользователям применять платформу аналитики Azure в качестве основы для оповещений.
 
-Оповещение журнала состоит из правил поиска по журналам, созданных для [журналов Azure Monitor](../../azure-monitor/learn/tutorial-viewdata.md) или [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostics-events). Дополнительные сведения о его использовании см. в сведениях о [создании оповещений журнала в Azure](../../azure-monitor/platform/alerts-log.md).
+Оповещение журнала состоит из правил поиска по журналам, созданных для [Azure Monitor Logs](../../azure-monitor/learn/tutorial-viewdata.md) или [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostics-events). Дополнительные сведения о его использовании см. в сведениях о [создании оповещений журнала в Azure](../../azure-monitor/platform/alerts-log.md).
 
 > [!NOTE]
-> Часто используемые данные из [журналов Azure Monitor](../../azure-monitor/learn/tutorial-viewdata.md) теперь доступны на платформе метрик в Azure Monitor. Более подробную информацию см. в статье [Create Metric Alerts for Logs in Azure Monitor](../../azure-monitor/platform/alerts-metric-logs.md) (Создание оповещений метрик для журналов в Azure Monitor).
+> Часто используемые данные из [Azure Monitor Logs](../../azure-monitor/learn/tutorial-viewdata.md) теперь доступны на платформе метрик в Azure Monitor. Более подробную информацию см. в статье [Create Metric Alerts for Logs in Azure Monitor](../../azure-monitor/platform/alerts-metric-logs.md) (Создание оповещений метрик для журналов в Azure Monitor).
 
 
 ## <a name="log-search-alert-rule---definition-and-types"></a>Правило генерации оповещений для поиска по журналам: определения и типы
@@ -43,7 +43,7 @@ ms.locfileid: "56452888"
 
 - **Пороговое значение**.  Чтобы определить, следует ли создавать оповещение, оцениваются результаты поиска по журналам.  Для каждого типа правил генерации оповещений для поиска по журналам определяется собственное пороговое значение.
 
-Для [журналов Azure Monitor](../../azure-monitor/learn/tutorial-viewdata.md) и для [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostics-events) используются правила поиска по журналам двух типов. Каждый из этих типов подробно описан в последующих разделах.
+Для [Azure Monitor Logs](../../azure-monitor/learn/tutorial-viewdata.md) и для [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostics-events) используются правила поиска по журналам двух типов. Каждый из этих типов подробно описан в последующих разделах.
 
 - **[Число результатов](#number-of-results-alert-rules)**. Если число записей, возвращенных в результатах поиска по журналам, превышает указанное количество, создается оповещение.
 - **[Измерение метрик](#metric-measurement-alert-rules)**.  Оповещение, созданное для каждого объекта в результатах поиска по журналам со значением, превышающим указанное пороговое значение.
@@ -102,13 +102,13 @@ ms.locfileid: "56452888"
 - **Период времени:** 30 минут<br>
 - **Частота предупреждений:** 5 минут.<br>
 - **Логика оповещений — условие и пороговое значение:** больше 90.<br>
-- **Группировка по полю (агрегация по):** Компьютер
+- **Группировка по полю (агрегация по):** Computer
 - **Активировать оповещение на основе:** общее число нарушений превышает 2.<br>
 
 Запрос вернет среднее значение для каждого компьютера с интервалом в 5 минут.  Этот запрос выполняется каждые 5 минут для данных, собранных в течение предыдущих 30 минут. Так как в "Группировка по полю (агрегация по)" выбрано группировку по столбцу "Компьютер", значение AggregatedValue разделено для различных значений "Компьютер" и среднее использование процессора для каждого компьютера определено временем ячейки в 5 минут.  Примерный результат запроса для трех компьютеров будет выглядеть следующим образом.
 
 
-|TimeGenerated [UTC] |Компьютер  |AggregatedValue  |
+|TimeGenerated [UTC] |Computer  |AggregatedValue  |
 |---------|---------|---------|
 |20xx-xx-xxT01:00:00Z     |   Srv01.contoso.com      |    72     |
 |20xx-xx-xxT01:00:00Z     |   SRV02.contoso.com      |    91     |
@@ -155,7 +155,7 @@ ms.locfileid: "56452888"
 - [Изменить используемый API для правил генерации оповещений в рабочей области Log Analytics](../../azure-monitor/platform/alerts-log-api-switch.md) и перейти на совместимый с Azure Resource Manager [API-интерфейс scheduledQueryRules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) без потери существующих правил генерации оповещений или мониторинга. Это действие позволит отказаться от скрытых фиктивных правил генерации оповещений, которые вы создавали для выставления счетов.
 - Если нет желания переключать используемый API, следует **удалить** исходное расписание и действие оповещения через [устаревший API Log Analytics](api-alerts.md) или [удалить исходное правило генерации оповещений для журнала через портал Azure](../../azure-monitor/platform/alerts-log.md#view--manage-log-alerts-in-azure-portal).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [создании оповещений журнала в Azure](../../azure-monitor/platform/alerts-log.md).
 * Информация о [веб-перехватчиках в оповещениях журналов в Azure](alerts-log-webhook.md).

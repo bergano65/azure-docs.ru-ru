@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: magoedte
 ms.openlocfilehash: b0b221a9fe6c6482e8759664c297dbd25d0ee776
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59699276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60396433"
 ---
 # <a name="connect-computers-without-internet-access-by-using-the-log-analytics-gateway-in-azure-monitor"></a>Подключение компьютеров без доступа к Интернету с помощью шлюза Log Analytics в Azure Monitor
 
@@ -364,7 +364,7 @@ Msiexec.exe /I “oms gateway.msi” /qn PORTNUMBER=8080 PROXY=”10.80.2.200”
 | **Командлет** | **Параметры** | **Описание** | **Пример** |
 | --- | --- | --- | --- |  
 | `Get-OMSGatewayConfig` |Ключ |Получает конфигурацию службы |`Get-OMSGatewayConfig` |  
-| `Set-OMSGatewayConfig` |Ключ (обязательно) <br> Значение |Изменяет конфигурацию службы |`Set-OMSGatewayConfig -Name ListenPort -Value 8080` |  
+| `Set-OMSGatewayConfig` |Ключ (обязательно) <br> Value |Изменяет конфигурацию службы |`Set-OMSGatewayConfig -Name ListenPort -Value 8080` |  
 | `Get-OMSGatewayRelayProxy` | |Получает адрес (и учетные данные) прокси-сервера ретрансляции (вышестоящего) |`Get-OMSGatewayRelayProxy` |  
 | `Set-OMSGatewayRelayProxy` |Адрес<br> Имя пользователя<br> Пароль |Задает адрес (и учетные данные) прокси-сервера ретрансляции (вышестоящего) |1. Задайте прокси-сервер ретрансляции и учетные данные:<br> `Set-OMSGatewayRelayProxy`<br>`-Address http://www.myproxy.com:8080`<br>`-Username user1 -Password 123` <br><br> 2. Задайте прокси-сервер ретрансляции, для которого не требуется проверка подлинности: `Set-OMSGatewayRelayProxy`<br> `-Address http://www.myproxy.com:8080` <br><br> 3. Очистите параметры прокси-сервера ретрансляции:<br> `Set-OMSGatewayRelayProxy` <br> `-Address ""` |  
 | `Get-OMSGatewayAllowedHost` | |Получает разрешенный в настоящее время узел (только локально настроенные Разрешенные узлы, загружается автоматически не разрешенные узлы) |`Get-OMSGatewayAllowedHost` | 

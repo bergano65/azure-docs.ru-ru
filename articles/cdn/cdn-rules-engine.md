@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 06/11/2018
 ms.author: magattus
 ms.openlocfilehash: 2ac43b472758f3403bc87bf3d64321eb97109f53
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49092404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60335612"
 ---
 # <a name="override-http-behavior-using-the-azure-cdn-rules-engine"></a>Переопределение режима HTTP с помощью обработчика правил Azure CDN
 [!INCLUDE [cdn-premium-feature](../../includes/cdn-premium-feature.md)]
@@ -102,4 +102,4 @@ ms.locfileid: "49092404"
 * [Условия соответствия для обработчика правил Azure CDN](cdn-rules-engine-reference-match-conditions.md)
 * [Условные выражения обработчика правил Azure CDN](cdn-rules-engine-reference-conditional-expressions.md)
 * [Функции обработчика правил Azure CDN](cdn-rules-engine-reference-features.md)
-* [Пятничный видеоролик об Azure. Azure CDN's powerful new Premium Features](https://azure.microsoft.com/documentation/videos/azure-cdns-powerful-new-premium-features/) (Новые возможности Azure CDN уровня "Премиум")
+* [Пятница с Azure: Мощные новые функции уровня "премиум" Azure CDN](https://azure.microsoft.com/documentation/videos/azure-cdns-powerful-new-premium-features/) (видео)

@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 03/13/2019
 ms.author: banders
 ms.openlocfilehash: daa7f6a116578fa8d1f2b5bf825a6f4cd48f7f64
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58648305"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60370696"
 ---
 # <a name="understand-azure-reservation-usage-for-your-enterprise-enrollment"></a>Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise
 
@@ -31,7 +31,7 @@ ms.locfileid: "58648305"
 
 В следующем разделе предполагается, что запущена виртуальная машина Windows Standard_D1_v2 в регионе "Восточная часть США", и данные резервирования имеют вид, как в приведенной ниже таблице:
 
-| Поле | Значение |
+| Поле | Value |
 |---| --- |
 |Идентификатор резервирования |8f82d880-d33e-4e0d-bcb5-6bcb5de0c719|
 |Количество |1|
@@ -57,7 +57,7 @@ ms.locfileid: "58648305"
 
 Предполагается, что запущена База данных SQL 4-го поколения в регионе "Восточная часть США", а данные резервирования выглядят, как в приведенной ниже таблице:
 
-| Поле | Значение |
+| Поле | Value |
 |---| --- |
 |Идентификатор резервирования |8244e673-83e9-45ad-b54b-3f5295d37cae|
 |Количество |2|

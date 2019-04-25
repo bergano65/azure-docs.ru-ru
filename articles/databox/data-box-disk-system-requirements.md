@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 02/22/2019
 ms.author: alkohli
 ms.openlocfilehash: 067bb6b806ddd9b83d4ea755876a980ca45d76e9
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57407635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60387474"
 ---
 # <a name="azure-data-box-disk-system-requirements"></a>Системные требования для Диска Azure Data Box
 
@@ -62,7 +62,7 @@ ms.locfileid: "57407635"
 | --- | --- |
 | Классический | Стандартная |
 | Общего назначения  |"Стандартный" (поддерживаются версии V1 и V2). Поддерживаются "горячий" и "холодный" уровни. |
-| Учетная запись хранения BLOB-объектов | |
+| Учетная запись хранения больших двоичных объектов | |
 
 >[!NOTE]
 > Учетные записи второго поколения Azure Data Lake Storage не поддерживаются.

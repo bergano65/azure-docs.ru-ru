@@ -16,11 +16,11 @@ ms.workload: na
 ms.date: 02/28/2019
 ms.author: cshoe
 ms.openlocfilehash: f0d4a607676285ed4f0f91d8ce8c83ddf1313b89
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58437804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60306839"
 ---
 # <a name="signalr-service-bindings-for-azure-functions"></a>Привязки службы SignalR для службы "Функции Azure"
 
@@ -48,7 +48,7 @@ ms.locfileid: "58437804"
 ```
 
 > [!NOTE]
-> Для использования привязки службы SignalR на языке Java, убедитесь в том, что вы используете версию 2.4.419 или более поздней версии основных инструментов функций Azure (версия узла 2.0.12332).
+> Чтобы использовать привязку Службы SignalR в Java, версия основных инструментов службы "Функции Azure" должна быть 2.4.419 или более поздней (версия узла 2.0.12332).
 
 ## <a name="using-signalr-service-with-azure-functions"></a>С помощью службы SignalR с помощью функций Azure
 

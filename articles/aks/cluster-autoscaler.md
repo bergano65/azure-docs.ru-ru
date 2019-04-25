@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 01/29/2019
 ms.author: iainfou
 ms.openlocfilehash: d8e095303161002d10914ca7c3213ac0c6894e5d
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58444023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60467140"
 ---
 # <a name="preview---automatically-scale-a-cluster-to-meet-application-demands-on-azure-kubernetes-service-aks"></a>Preview — автоматическое масштабирование кластера в соответствии с требованиями приложения в службе Azure Kubernetes (AKS)
 

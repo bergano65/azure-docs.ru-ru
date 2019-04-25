@@ -9,11 +9,11 @@ ms.date: 10/10/2016
 ms.author: richcar
 ms.custom: seodec18
 ms.openlocfilehash: a03ab7bbdadad2728f54127583583c22bd2ec07a
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58650382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60367597"
 ---
 # <a name="expressroute-for-cloud-solution-providers-csp"></a>ExpressRoute для поставщиков облачных решений (CSP)
 Корпорация Майкрософт предоставляет традиционным торговым посредникам и распространителям (CSP) гипермасштабируемые службы, с помощью которых вы сможете быстро подготавливать к работе новые службы и решения для своих клиентов, не вкладывая средства в их разработку. Чтобы разрешить CSP управлять новыми службами напрямую, корпорация Майкрософт предоставляет программы и API, позволяющие CSP управлять ресурсами Microsoft Azure от имени клиентов. Один из этих ресурсов — ExpressRoute. Благодаря ExpressRoute CSP может подключать существующие ресурсы клиента к службам Azure. ExpressRoute представляет собой высокоскоростной частный канал связи со службами в среде Azure. 

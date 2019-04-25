@@ -2,14 +2,15 @@
 author: PatAltimore
 ms.service: active-directory-b2c
 ms.topic: include
-ms.date: 11/30/2018
-ms.author: patricka
+origin.date: 11/30/2018
+ms.date: 04/04/2019
+ms.author: v-junlch
 ms.openlocfilehash: 0d9f0a24d84bd18bdf1fac84c744cc34a7d89ab3
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "58114772"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60456044"
 ---
 Чтобы добавить в приложение возможность изменения профиля, используется поток пользователя **изменения профиля**. Этот поток пользователя описывает действия, которые необходимо выполнить для изменения профиля, и содержимое маркеров, которые должно получить приложение при успешном изменении.
 
@@ -17,7 +18,7 @@ ms.locfileid: "58114772"
 
 В разделе **Управление**выберите **Потоки пользователей** и нажмите кнопку +**Новый поток пользователя**.
 
-![Выберите "Новый поток пользователя"](media/active-directory-b2c-create-profile-editing-policy/add-b2c-new-user-flow.png)
+![Выберите "Новый поток пользователя"](./media/active-directory-b2c-create-profile-editing-policy/add-b2c-new-user-flow.png)
 
 На вкладке **Рекомендуется** щелкните **Изменение профиля**.
 
@@ -25,7 +26,7 @@ ms.locfileid: "58114772"
 
 В разделе **Поставщики удостоверений** установите флажок **Локальная учетная запись для входа**. При необходимости можно также выбрать поставщиков удостоверений в социальных сетях, если они уже настроены.
 
-![Выбор локальной учетной записи для входа в качестве поставщика удостоверений и нажатие кнопки "ОК"](media/active-directory-b2c-create-profile-editing-policy/add-b2c-profile-editing-identity-providers.png)
+![Выбор локальной учетной записи для входа в качестве поставщика удостоверений и нажатие кнопки "ОК"](./media/active-directory-b2c-create-profile-editing-policy/add-b2c-profile-editing-identity-providers.png)
 
 В разделе **Атрибуты пользователя** щелкните **Показать еще**. В столбце **Собрать атрибут** выберите атрибуты, которые пользователь может просматривать и изменять в своем профиле. Например, выберите **Страна или регион**, **Отображаемое имя** и **Почтовый индекс**.
 
@@ -33,15 +34,15 @@ ms.locfileid: "58114772"
 
 Последовательно выберите **ОК**.
 
-![Выбор нескольких утверждений приложения и нажатие кнопки "ОК"](media/active-directory-b2c-create-profile-editing-policy/add-b2c-user-attributes.png)
+![Выбор нескольких утверждений приложения и нажатие кнопки "ОК"](./media/active-directory-b2c-create-profile-editing-policy/add-b2c-user-attributes.png)
 
 Щелкните **Создать**, чтобы добавить поток пользователя. Отобразится поток с именем **B2C_1_SiPe**. **B2C_1_**  — это префикс, добавленный к имени.
 
 Выберите **Выполнить поток пользователя**. Просмотрите параметры, указанные в таблице, и щелкните **Выполнить поток пользователя**.
 
-![Выбор потока пользователя и его выполнение](media/active-directory-b2c-create-profile-editing-policy/add-b2c-profile-editing-run-user-flow.png)
+![Выбор потока пользователя и его выполнение](./media/active-directory-b2c-create-profile-editing-policy/add-b2c-profile-editing-run-user-flow.png)
 
-| Параметр      | Значение  |
+| Параметр      | Value  |
 | ------------ | ------ |
 | **Приложения** | Приложение Contoso B2C |
 | **URL-адрес ответа** | `https://localhost:44316/` |
@@ -51,3 +52,4 @@ ms.locfileid: "58114772"
 > [!NOTE]
 > Создание, обновление и выполнение потока пользователя занимает около минуты.
 >
+

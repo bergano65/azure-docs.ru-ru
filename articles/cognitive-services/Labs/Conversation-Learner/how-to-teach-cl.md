@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
 ms.openlocfilehash: 8c55bb27ce5a413c5ceae22371ad61a5acf47281
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55220269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60322895"
 ---
 # <a name="how-to-teach-with-conversation-learner"></a>Использование приложения Conversation Learner (Обучение диалогам) 
 
@@ -72,7 +72,7 @@ ms.locfileid: "55220269"
 
 Так как обучение выполняется асинхронно, возможно, что внесенные вами изменения отразятся не сразу.  Если извлечение сущности или выбор действия работают не так, как ожидалось, в зависимости от изменений, внесенных за последние 5–10 секунд, причиной может быть именно это.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Default values and boundaries](./cl-values-and-boundaries.md) (Значение и границы по умолчанию)

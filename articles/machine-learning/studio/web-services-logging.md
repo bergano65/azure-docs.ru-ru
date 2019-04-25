@@ -16,11 +16,11 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 06/15/2017
 ms.openlocfilehash: 727379edb60756ca8cb3e5ebdc29cd38858945e4
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57857561"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60345657"
 ---
 # <a name="enable-logging-for-azure-machine-learning-studio-web-services"></a>Включение ведения журнала веб-служб Студии машинного обучения Azure
 В этом документе представлена информация о возможности ведения журналов в веб-службах Студии машинного обучения. Ведение журнала предоставляет дополнительные сведения, помимо номера ошибки и сообщения о ней. Эти сведения могут помочь устранить неполадки, связанные с вызовами интерфейсов API Студии машинного обучения.  

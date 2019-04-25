@@ -7,17 +7,17 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/28/2018
 ms.openlocfilehash: e0701d2e10b366a6bf849512484fb216c42823bc
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53544963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60525863"
 ---
 # <a name="configure-and-access-server-logs-in-the-azure-portal"></a>Настройка журналов сервера и получение к ним доступа с помощью портала Azure
 
 Чтобы настроить [журналы сервера в базе данных Azure для MySQL](concepts-server-logs.md), получить их список и скачать их, можно воспользоваться порталом Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - [сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md).
 
@@ -62,7 +62,7 @@ ms.locfileid: "53544963"
    ![Щелчок значка "Скачать"](./media/howto-configure-server-logs-in-portal/5-download.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Ознакомьтесь с разделом [Настройка журналов сервера и получение к ним доступа с помощью Azure CLI](howto-configure-server-logs-in-cli.md), чтобы узнать, как скачать журналы программно.
 - Узнайте больше о [журналах сервера](concepts-server-logs.md) в базе данных Azure для MySQL. 
 - Дополнительные сведения об определениях параметров и ведении журнала MySQL см. в документации MySQL по [журналам](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html).

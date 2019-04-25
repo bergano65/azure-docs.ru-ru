@@ -10,12 +10,13 @@ ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: priyar
-ms.openlocfilehash: 61bd1879a4b1bf8281ac03c8254fb3d48c07a139
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ROBOTS: NOINDEX,NOFOLLOW
+ms.openlocfilehash: a046bec5d81d828d88716d31c84e9cbcdcea1a08
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55215866"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60515425"
 ---
 # <a name="bing-text-to-speech-api"></a>API преобразования текста в речь Bing
 
@@ -40,7 +41,7 @@ Content-Length: 0
 
 Обязательная информация заголовка для маркера доступа выглядит так.
 
-ИМЯ| Формат | ОПИСАНИЕ
+Name| Формат | ОПИСАНИЕ
 ----|----|----
 Ocp-Apim-Subscription-Key | ASCII | Ваш ключ подписки
 
@@ -59,7 +60,7 @@ Ocp-Apim-Subscription-Key | ASCII | Ваш ключ подписки
 
 В следующей таблице показаны заголовки HTTP, которые используются для запросов синтеза голоса.
 
-Заголовок |Значение |Комментарии
+Верхний колонтитул |Value |Комментарии
 ----|----|----
 Content-Type | application/ssml+xml | Тип входного содержимого.
 X-Microsoft-OutputFormat | **1.** ssml-16khz-16bit-mono-tts <br> **2.** raw-16khz-16bit-mono-pcm <br>**3.** audio-16khz-16kbps-mono-siren <br> **4.** riff-16khz-16kbps-mono-siren <br> **5.** riff-16khz-16bit-mono-pcm <br> **6.** audio-16khz-128kbitrate-mono-mp3 <br> **7.** audio-16khz-64kbitrate-mono-mp3 <br> **8.** audio-16khz-32kbitrate-mono-mp3 | Формат выходного звука.
@@ -70,7 +71,7 @@ User-Agent | имя приложения; | Обязательным также 
 
 ### <a name="InputParam"></a>Входные параметры
 
-Запросы к API преобразования текста в речь Bing выполняются с помощью вызовов HTTP POST. Заголовки указаны в предыдущем разделе. Текст содержит входные данные языка разметки синтеза речи (SSML), представляющие текст для синтезирования. Описание разметки, используемой для управления аспектами речи, такими как язык и пол говорящего, см. в статье о [спецификации SSML W3C](http://www.w3.org/TR/speech-synthesis/).
+Запросы к API преобразования текста в речь Bing выполняются с помощью вызовов HTTP POST. Заголовки указаны в предыдущем разделе. Текст содержит входные данные языка разметки синтеза речи (SSML), представляющие текст для синтезирования. Описание разметки, используемой для управления аспектами речи, такими как язык и пол говорящего, см. в статье о [спецификации SSML W3C](https://www.w3.org/TR/speech-synthesis/).
 
 >[!NOTE]
 >Максимально поддерживаемый размер входных данных SSML — 1024 символа, включая все теги.
@@ -140,43 +141,43 @@ Voice name not supported
 
 ## <a name="ChangeSSML"></a>Изменение голосовых выходных данных через SSML
 
-API преобразования текста в речь Майкрософт поддерживает SSML 1.0, как определено в [языке разметки синтеза речи (SSML) версии 1.0](http://www.w3.org/TR/2009/REC-speech-synthesis-20090303/) W3C. В этом разделе приведены примеры изменения определенных характеристик созданных голосовых выходных данных, таких как скорость речи, произношение и т. д., с помощью тегов SSML.
+API преобразования текста в речь Майкрософт поддерживает SSML 1.0, как определено в [языке разметки синтеза речи (SSML) версии 1.0](https://www.w3.org/TR/2009/REC-speech-synthesis-20090303/) W3C. В этом разделе приведены примеры изменения определенных характеристик созданных голосовых выходных данных, таких как скорость речи, произношение и т. д., с помощью тегов SSML.
 
 1. Добавление разрыва
 
-  ```
-  <speak version='1.0' xmlns="http://www.w3.org/2001/10/synthesis" xml:lang='en-US'><voice  name='Microsoft Server Speech Text to Speech Voice (en-US, BenjaminRUS)'> Welcome to use Microsoft Cognitive Services <break time="100ms" /> Text-to-Speech API.</voice> </speak>
-  ```
+   ```
+   <speak version='1.0' xmlns="https://www.w3.org/2001/10/synthesis" xml:lang='en-US'><voice  name='Microsoft Server Speech Text to Speech Voice (en-US, BenjaminRUS)'> Welcome to use Microsoft Cognitive Services <break time="100ms" /> Text-to-Speech API.</voice> </speak>
+   ```
 
 2. Изменение скорости речи
 
-  ```
-  <speak version='1.0' xmlns="http://www.w3.org/2001/10/synthesis" xml:lang='en-US'><voice  name='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'><prosody rate="+30.00%">Welcome to use Microsoft Cognitive Services Text-to-Speech API.</prosody></voice> </speak>
-  ```
+   ```
+   <speak version='1.0' xmlns="https://www.w3.org/2001/10/synthesis" xml:lang='en-US'><voice  name='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'><prosody rate="+30.00%">Welcome to use Microsoft Cognitive Services Text-to-Speech API.</prosody></voice> </speak>
+   ```
 
 3. Произношение
 
-  ```
-  <speak version='1.0' xmlns="http://www.w3.org/2001/10/synthesis" xml:lang='en-US'><voice  name='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'> <phoneme alphabet="ipa" ph="t&#x259;mei&#x325;&#x27E;ou&#x325;"> tomato </phoneme></voice> </speak>
-  ```
+   ```
+   <speak version='1.0' xmlns="https://www.w3.org/2001/10/synthesis" xml:lang='en-US'><voice  name='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'> <phoneme alphabet="ipa" ph="t&#x259;mei&#x325;&#x27E;ou&#x325;"> tomato </phoneme></voice> </speak>
+   ```
 
 4. Изменение громкости
 
-  ```
-  <speak version='1.0' xmlns="http://www.w3.org/2001/10/synthesis" xml:lang='en-US'><voice  name='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'><prosody volume="+20.00%">Welcome to use Microsoft Cognitive Services Text-to-Speech API.</prosody></voice> </speak>
-  ```
+   ```
+   <speak version='1.0' xmlns="https://www.w3.org/2001/10/synthesis" xml:lang='en-US'><voice  name='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'><prosody volume="+20.00%">Welcome to use Microsoft Cognitive Services Text-to-Speech API.</prosody></voice> </speak>
+   ```
 
 5. Изменение тона
 
-  ```
-  <speak version='1.0' xmlns="http://www.w3.org/2001/10/synthesis" xml:lang='en-US'><voice  name='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'>Welcome to use <prosody pitch="high">Microsoft Cognitive Services Text-to-Speech API.</prosody></voice> </speak>
-  ```
+   ```
+   <speak version='1.0' xmlns="https://www.w3.org/2001/10/synthesis" xml:lang='en-US'><voice  name='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'>Welcome to use <prosody pitch="high">Microsoft Cognitive Services Text-to-Speech API.</prosody></voice> </speak>
+   ```
 
 6. Изменение контура ударения
 
-  ```
-  <speak version='1.0' xmlns="http://www.w3.org/2001/10/synthesis" xml:lang='en-US'><voice  name='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'><prosody contour="(80%,+20%) (90%,+30%)" >Good morning.</prosody></voice> </speak>
-  ```
+   ```
+   <speak version='1.0' xmlns="https://www.w3.org/2001/10/synthesis" xml:lang='en-US'><voice  name='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'><prosody contour="(80%,+20%) (90%,+30%)" >Good morning.</prosody></voice> </speak>
+   ```
 
 > [!NOTE]
 > Обратите внимание, что звуковые данные должны быть WAV-файлом 8k или 16k в следующем формате: **Код CRC** (CRC-32): 4 байта (DWORD) с допустимым диапазоном 0x00000000 ~ 0xFFFFFFFF; **Флаг аудиоформата**: 4 байта (DWORD) с допустимым диапазоном 0x00000000 ~ 0xFFFFFFFF; **Число для примера**: 4 байта (DWORD) с допустимым диапазоном 0x00000000 ~ 0x7FFFFFFF; **Размер двоичного основного текста**: 4 байта (DWORD) с допустимым диапазоном 0x00000000 ~ 0x7FFFFFFF; **Двоичный основной текст**: n байт.
@@ -269,6 +270,7 @@ zh-HK | Male | "Голос для преобразования текста в �
 zh-TW | Female | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (zh-TW, Yating, Apollo)"
 zh-TW | Female | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (zh-TW, HanHanRUS)"
 zh-TW | Male | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (zh-TW, Zhiwei, Apollo)"
+
  *ar-EG поддерживает современный арабский литературный язык (MSA).
 
 > [!NOTE]

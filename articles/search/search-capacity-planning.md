@@ -10,11 +10,11 @@ ms.date: 03/22/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: 6879dd975f97ba2746165e87a135e5d90e8b229f
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58620647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60308762"
 ---
 # <a name="scale-partitions-and-replicas-for-query-and-indexing-workloads-in-azure-search"></a>Масштабирование секций и реплик для запросов и индексирования рабочих нагрузок в службе поиска Azure
 После [выбора ценовой категории](search-sku-tier.md) и [подготовки службы поиска](search-create-service-portal.md) следующим шагом является необязательное увеличение количества реплик или секций, используемых службой. Каждый уровень предоставляет фиксированное число единиц выставления счетов. В этой статье объясняется, как выделять эти единицы для достижения оптимальной конфигурации, позволяющей сбалансировать ваши требования к для выполнению запросов, индексированию и хранению данных.

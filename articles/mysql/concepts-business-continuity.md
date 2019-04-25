@@ -7,11 +7,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.openlocfilehash: a09c1934ecb34518b191a8e730a72efecc85aa2f
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55692935"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60525435"
 ---
 # <a name="overview-of-business-continuity-with-azure-database-for-mysql"></a>Обзор обеспечения непрерывности бизнес-процессов с помощью службы "База данных Azure для MySQL"
 
@@ -48,7 +48,7 @@ ms.locfileid: "55692935"
 > [!IMPORTANT]
 > Геовосстановление возможно только в том случае, если сервер был подготовлен с геоизбыточным хранилищем резервных копий. Если вы хотите переключиться с локально избыточных на геоизбыточные резервные копии на существующем сервере, необходимо с помощью mysqldump сделать дамп имеющегося сервера и восстановить его на только что созданном сервере, где настроено геоизбыточное резервное копирование.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об автоматическом создании резервных копий в Базе данных Azure для MySQL см. в [этой статье](concepts-backup.md).
 - Узнайте, как выполнить восстановление с помощью [портала Azure](howto-restore-server-portal.md) или [Azure CLI](howto-restore-server-cli.md).

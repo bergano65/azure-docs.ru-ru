@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a65af5a5ea0629b617c4e736d8c110cbb9aa540c
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58438307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60348807"
 ---
 # <a name="identity-synchronization-and-duplicate-attribute-resiliency"></a>Синхронизация удостоверений и устойчивость повторяющихся атрибутов
 Устойчивость повторяющихся атрибутов — это компонент Azure Active Directory, устраняющий проблемы из-за конфликтов атрибутов **UserPrincipalName** и **ProxyAddress** при запуске средств синхронизации Майкрософт.

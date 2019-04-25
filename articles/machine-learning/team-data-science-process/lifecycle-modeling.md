@@ -12,11 +12,11 @@ ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: c22c75b4fe900ecb96d016251c09e9ad6ec31f7c
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55474026"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60306230"
 ---
 # <a name="modeling-stage-of-the-team-data-science-process-lifecycle"></a>Этап моделирования в жизненном цикле процесса обработки и анализа данных группы
 
@@ -78,7 +78,7 @@ ms.locfileid: "55474026"
      * Отвечает ли модель на поставленный вопрос по тестовым данным достаточно надежно? 
      * Не нужно ли рассмотреть альтернативные решения, например собрать дополнительные данные, повторить этап проектирования признаков или проверить другие алгоритмы?
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены ссылки на каждый этап жизненного цикла процесса обработки и анализа данных группы:
 

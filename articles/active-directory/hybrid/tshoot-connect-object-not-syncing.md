@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 931865803328189d89c0fbae15caa801c3f7f7c6
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56416927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60455236"
 ---
 # <a name="troubleshoot-an-object-that-is-not-synchronizing-with-azure-active-directory"></a>Устранение неполадок синхронизации объекта с Azure Active Directory
 
@@ -73,7 +73,7 @@ ms.locfileid: "56416927"
 
 Столбец **Status** (Состояние) содержит самую важную информацию, он показывает наиболее серьезные проблемы при выполнении. Ниже приводится краткая сводка наиболее распространенных состояний в порядке приоритета исследования (где * означает, что возможно несколько строк ошибки).
 
-| Status | Комментарий |
+| Статус | Комментарий |
 | --- | --- |
 | stopped-* |Не удалось завершить выполнение. Это могло случиться, например, по причине того, что удаленная система не работает и с ней не удается связаться. |
 | stopped-error-limit |Обнаружено более 5000 ошибок. Выполнение было автоматически остановлено из-за большого количества ошибок. |
@@ -208,6 +208,6 @@ ms.locfileid: "56416927"
 
 Из вкладки **соединителей** также можно перейти к [объекту пространства соединителя](#connector-space-object-properties). Выберите строку и щелкните **Свойства**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Синхронизация Azure AD Connect: общие сведения о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
 - [Что собой представляет гибридная идентификация](whatis-hybrid-identity.md)

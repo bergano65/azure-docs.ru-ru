@@ -13,11 +13,11 @@ ms.date: 02/27/2019
 ms.author: billmath
 author: billmath
 ms.openlocfilehash: 622a3ce0f80bd09bd09fa7ff097f68155318142d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58080362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60351295"
 ---
 # <a name="configure-group-claims-for-applications-with-azure-active-directory-public-preview"></a>Настройка утверждений о группах для приложений с Azure Active Directory (общедоступная Предварительная версия)
 
@@ -152,7 +152,7 @@ Azure Active Directory можно предоставить сведения о �
    }
    ```
 
-   | Необязательные утверждения схемы | Значение |
+   | Необязательные утверждения схемы | Value |
    |----------|-------------|
    | **Имя:** | Должен быть «группы» |
    | **Источник:** | Не используется. Не указан или указано значение null |

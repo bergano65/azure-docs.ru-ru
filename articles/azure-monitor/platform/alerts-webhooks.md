@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 04/03/2017
 ms.author: snmuvva
-ms.subservice: alerts
+ms.component: alerts
 ms.openlocfilehash: 264f3eb042a3c29523ed93df93dfa6d45c00ae87
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54465672"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60345794"
 ---
 # <a name="have-a-classic-metric-alert-notify-a-non-azure-system-using-a-webhook"></a>Уведомление с помощью веб-перехватчика и классического оповещения метрики для системы за пределами Azure
 С помощью веб-перехватчика можно направлять уведомления об оповещениях Azure в другие системы для постобработки или выполнения настраиваемых действий. Веб-перехватчик можно использовать, чтобы направить оповещение к службам, которые отправляют SMS-сообщения, ведут журналы об ошибках, уведомляют членов команды в чате или службах обмена сообщениями либо выполняют другие действия. 
@@ -90,7 +90,7 @@ ms.locfileid: "54465672"
 | имя_группы_ресурсов |Да | |Имя группы ресурсов для затронутого ресурса. |
 | resourceName |Да | |Имя затронутого ресурса. |
 | тип_ресурса |Да | |Тип ресурса затронутого ресурса. |
-| ResourceId |Да | |Идентификатор ресурса затронутого ресурса. |
+| resourceId |Да | |Идентификатор ресурса затронутого ресурса. |
 | resourceRegion |Да | |Регион или расположение затронутого ресурса. |
 | portalLink |Да | |Прямая ссылка на страницу сводки по ресурсу на портале. |
 | properties |Нет |Необязательно |Набор пар "ключ — значение", содержащих подробные сведения о событии. Например, `Dictionary<String, String>`. Поле свойства не является обязательным. В настраиваемом пользовательском интерфейсе или в рабочем процессе на основе приложения логики пользователи могут вводить пары "ключ — значение" для передачи в виде полезных сведений. Еще один способ передачи пользовательских свойств в веб-перехватчик — через сам универсальный код ресурса (URI) веб-перехватчика (в виде параметров запросов). |
@@ -100,10 +100,9 @@ ms.locfileid: "54465672"
 >
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения об оповещениях Azure и веб-перехватчиках см. в видео, посвященном [интеграции оповещений Azure с PagerDuty](https://go.microsoft.com/fwlink/?LinkId=627080).
 * Узнайте больше о [выполнении скриптов службы автоматизации Azure для оповещений Azure](https://go.microsoft.com/fwlink/?LinkId=627081).
 * Узнайте, как [использовать приложение логики для отправки сообщения SMS с помощью Twilio из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app).
 * Узнайте, как [использовать приложение логики для отправки сообщения Slack из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app).
 * Узнайте, как [использовать приложение логики для отправки сообщения в очередь Azure из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app).
-

@@ -17,13 +17,13 @@ ms.date: 04/16/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6cd4f9e561a55c010273b48fb4232348baad3582
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56200944"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60397666"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-xaitporter"></a>Руководство. Интеграция Azure Active Directory с XaitPorter
+# <a name="tutorial-azure-active-directory-integration-with-xaitporter"></a>Руководство по Интеграция Azure Active Directory с XaitPorter
 
 В этом руководстве описано, как интегрировать XaitPorter с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56200944"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с XaitPorter, вам потребуется:
 
@@ -144,11 +144,11 @@ ms.locfileid: "56200944"
 
     a. Выберите **Enable Single Sign-On Authentication** (Включить аутентификацию с помощью единого входа).
 
-    б) В текстовое поле **Параметры поставщика удостоверений** вставьте **URL-адрес метаданных федерации приложений**, скопированный на портале Azure, и нажмите кнопку **Fetch** (Получить).
+    2. В текстовое поле **Параметры поставщика удостоверений** вставьте **URL-адрес метаданных федерации приложений**, скопированный на портале Azure, и нажмите кнопку **Fetch** (Получить).
 
     c. Выберите **Enable Autocreation of Users** (Включить автоматическое создание пользователей).
 
-    4.3. Последовательно выберите **ОК**.
+    d. Последовательно выберите **ОК**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -180,7 +180,7 @@ ms.locfileid: "56200944"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-xaitporter-test-user"></a>Создание тестового пользователя XaitPorter
 

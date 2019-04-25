@@ -3,7 +3,7 @@ title: Примеры преобразования утверждений дат
 description: Примеры преобразования утверждений даты для схемы инфраструктуры процедур идентификации Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
@@ -11,11 +11,11 @@ ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
 ms.openlocfilehash: d36abb669490b3d3f6818c018b3844a82ecd0617
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55564801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60384250"
 ---
 # <a name="date-claims-transformations"></a>Преобразования утверждений даты
 
@@ -91,7 +91,7 @@ ms.locfileid: "55564801"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | InputClaim | дата | ClaimType, который необходимо преобразовать. |
+| InputClaim | InputClaim | date | ClaimType, который необходимо преобразовать. |
 | outputClaim | outputClaim | dateTime | ClaimType, который создается после вызова ClaimsTransformation. |
 
 В следующем примере показано преобразование утверждения `dateOfBirth` (тип данных date) в другое утверждение `dateOfBirthWithTime` (тип данных dateTime).

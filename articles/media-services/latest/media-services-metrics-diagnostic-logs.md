@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/05/2019
 ms.author: juliako
 ms.openlocfilehash: 23c87ae92a0f22b4a1a31c054df730af2efc07d1
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59785091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60322103"
 ---
 # <a name="monitor-media-services-metrics-and-diagnostic-logs"></a>Отслеживание метрик службы мультимедиа и журналы диагностики
 
@@ -34,7 +34,7 @@ ms.locfileid: "59785091"
 
 В настоящее время следующие службы мультимедиа [конечными точками потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingendpoints) метрики передаются в Azure:
 
-|ИМЯ|ОПИСАНИЕ|
+|Name|ОПИСАНИЕ|
 |---|---|
 |Requests|Предоставляет сведения, общее число запросов, обслуживаемых конечной точки потоковой передачи.|
 |Исходящие|Общее число исходящих байтов. Например выполняют потоковую передачу конечная точка потоковой передачи байтов.|
@@ -54,7 +54,7 @@ az monitor metrics list --resource \
 
 В настоящее время можно получить следующие журналы диагностики:
 
-|ИМЯ|ОПИСАНИЕ|
+|Name|ОПИСАНИЕ|
 |---|---|
 |Запрос службы доставки ключей|Журналы, которые показывают сведения о запросе службы доставки ключей. Дополнительные сведения см. в разделе [схемы](media-services-diagnostic-logs-schema.md).|
 

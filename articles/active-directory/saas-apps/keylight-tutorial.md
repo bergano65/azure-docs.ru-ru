@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с LockPath Keylight | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с LockPath Keylight | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в LockPath Keylight.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 07/05/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4bc5121f6604fae9a28b52db1bfb308d7cdb968d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56205092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60263545"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lockpath-keylight"></a>Руководство по Интеграция Azure Active Directory с LockPath Keylight
 
@@ -34,7 +34,7 @@ ms.locfileid: "56205092"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с LockPath Keylight, вам потребуется:
 
@@ -138,7 +138,7 @@ ms.locfileid: "56205092"
    
     a. Войдите в учетную запись LockPath Keylight в качестве администратора.
     
-    б) В меню вверху щелкните **Person** (Пользователь) и выберите **Keylight Setup** (Настройка Keylight).
+    2. В меню вверху щелкните **Person** (Пользователь) и выберите **Keylight Setup** (Настройка Keylight).
    
     ![Настройка единого входа](./media/keylight-tutorial/401.png) 
 
@@ -146,7 +146,7 @@ ms.locfileid: "56205092"
    
     ![Настройка единого входа](./media/keylight-tutorial/402.png) 
 
-    4.3. В диалоговом окне **SAML Settings** (Параметры SAML) нажмите кнопку **Edit** (Изменить).
+    d. В диалоговом окне **SAML Settings** (Параметры SAML) нажмите кнопку **Edit** (Изменить).
    
     ![Настройка единого входа](./media/keylight-tutorial/404.png) 
 
@@ -156,11 +156,11 @@ ms.locfileid: "56205092"
    
     a. Задайте для параметра **SAML authentication** (Аутентификация SAML) значение **Active** (Активно).
 
-    б) Вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure, в текстовое поле **Identity Provider Login URL** (URL-адрес входа поставщика удостоверений).
+    2. Вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure, в текстовое поле **Identity Provider Login URL** (URL-адрес входа поставщика удостоверений).
 
     c. Вставьте значение **URL-адрес службы единого выхода**, скопированное на портале Azure, в текстовое поле **Identity Provider Logout URL** (URL-адрес выхода поставщика удостоверений).
 
-    4.3. Щелкните **Choose File** (Выбрать файл), чтобы выбрать скачанный сертификат LockPath Keylight, а затем нажмите кнопку **Open** (Открыть), чтобы передать этот сертификат.
+    d. Щелкните **Choose File** (Выбрать файл), чтобы выбрать скачанный сертификат LockPath Keylight, а затем нажмите кнопку **Open** (Открыть), чтобы передать этот сертификат.
 
     д. В поле **SAML User Id location** (Расположение идентификатора пользователя SAML) выберите значение **NameIdentifier element of the subject statement** (Элемент NameIdentifier оператора Subject).
     
@@ -210,11 +210,11 @@ ms.locfileid: "56205092"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-lockpath-keylight-test-user"></a>Создание тестового пользователя LockPath Keylight
 

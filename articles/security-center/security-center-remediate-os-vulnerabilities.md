@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 10/28/2018
 ms.author: rkarlin
 ms.openlocfilehash: f4558c6fdb1e5e4f0ffb7a4b4fdb1ab62eb4cfa9
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58121287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60332998"
 ---
 # <a name="remediate-security-configurations-in-azure-security-center"></a>Исправление конфигурации системы безопасности в центре безопасности Azure
 Центр безопасности Azure ежедневно анализирует операционную систему виртуальных машин и компьютеров, чтобы определить конфигурацию, повышающую риск атак на них. Центр безопасности рекомендует устранять уязвимости, если конфигурация операционной системы не соответствует правилам рекомендуемой конфигурации безопасности, и изменять конфигурацию, чтобы устранить эти уязвимости.

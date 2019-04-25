@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: jingwang
 ms.openlocfilehash: 28d8c077f106f12812f7ed710217febd24d81efc
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59267163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60387796"
 ---
 # <a name="copy-activity-in-azure-data-factory"></a>Действие копирования в фабрике данных Azure
 
@@ -182,9 +182,9 @@ ms.locfileid: "59267163"
 | rowsSkipped | Число пропущенных несовместимых строк. Эту возможность можно включить, задав свойству enableSkipIncompatibleRow значение true. | Значение Int64 (не единица измерения) |
 | throughput | Отношение, с которым передаются данные. | Число с плавающей запятой (**КБ/с**) |
 | copyDuration | Длительность копирования. | Значение Int32 в секундах |
-| sqlDwPolyBase | Если при копировании данных в хранилище данных SQL используется PolyBase. | Логическое |
-| redshiftUnload | Если при копировании данных из Redshift используется команда UNLOAD. | Логическое |
-| hdfsDistcp | Если при копировании данных из HDFS используется DistCp. | Логическое |
+| sqlDwPolyBase | Если при копировании данных в хранилище данных SQL используется PolyBase. | Boolean |
+| redshiftUnload | Если при копировании данных из Redshift используется команда UNLOAD. | Boolean |
+| hdfsDistcp | Если при копировании данных из HDFS используется DistCp. | Boolean |
 | effectiveIntegrationRuntime | Показывает, какие среды Integration Runtime используются для выполнения действия, в формате `<IR name> (<region if it's Azure IR>)`. | Текст (string) |
 | usedDataIntegrationUnits | Единицы интеграции актуальных данных во время копирования. | Значение Int32 |
 | usedParallelCopies | Использованное количество параллельных процессов копирования. | Значение Int32|

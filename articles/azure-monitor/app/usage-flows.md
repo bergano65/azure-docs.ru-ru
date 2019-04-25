@@ -14,11 +14,11 @@ ms.reviewer: mbullwin
 ms.pm_owner: daviste;NumberByColors
 ms.author: daviste
 ms.openlocfilehash: 91274fad4e56c69777333c81ea3b32dccdcf64ff
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54045515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60373300"
 ---
 # <a name="analyze-user-navigation-patterns-with-user-flows-in-application-insights"></a>Анализ шаблонов навигации пользователя с помощью инструмента "Маршруты пользователя"в Azure Application Insights
 
@@ -94,7 +94,7 @@ ms.locfileid: "54045515"
 1. В меню **Событие** выберите событие, которые необходимо разбить.
 2. В меню **Измерение** выберите измерение. Например, для события с именем "Нажата кнопка" попробуйте применить пользовательское свойство "Имя кнопки".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Общие сведения об использовании](usage-overview.md)
 * [Анализ пользователей, сеансов и событий в Application Insights](usage-segmentation.md)

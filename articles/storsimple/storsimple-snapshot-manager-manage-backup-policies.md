@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: v-sharos
-ms.openlocfilehash: 218c89e403673c16c72da95aa2c1d685bbed5a86
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 7dac26b058b959011e38b4373369b8a1115d2705
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23109282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60303269"
 ---
 # <a name="use-storsimple-snapshot-manager-to-create-and-manage-backup-policies"></a>Создание политик архивации и управление ими с помощью диспетчера моментальных снимков StorSimple
 ## <a name="overview"></a>Обзор
@@ -67,7 +67,7 @@ ms.locfileid: "23109282"
 * **Группа томов** — группа томов, связанная с политикой.
 * **Хранение** — количество сохраняемых моментальных снимков (не более 64).
 * **Создано** — дата создания политики.
-* **Включено** — указывает, активирована ли политика в настоящий момент. Значение **True** означает, что политика активирована, а значение **False** — что она отключена.
+* **Включить** — ли политика в настоящий момент: **Значение true,** указывает, что он применяется; **False** указывает, что он не действует.
 
 ## <a name="edit-a-backup-policy"></a>внесение изменений в политику архивации;
 Выполните указанные ниже действия, чтобы внести изменения в имеющуюся политику архивации.
@@ -91,6 +91,6 @@ ms.locfileid: "23109282"
 
     ![Подтверждение удаления политики архивации](./media/storsimple-snapshot-manager-manage-backup-policies/HCS_SSM_Delete_BU_policy.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [использовать диспетчер моментальных снимков StorSimple для администрирования решения StorSimple](storsimple-snapshot-manager-admin.md).
 * Узнайте о [просмотре заданий архивации и управлении ими с помощью диспетчера моментальных снимков StorSimple](storsimple-snapshot-manager-manage-backup-jobs.md).

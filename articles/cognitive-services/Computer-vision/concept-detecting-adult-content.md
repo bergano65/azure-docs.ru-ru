@@ -12,11 +12,11 @@ ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
 ms.openlocfilehash: 69a4c136e9c210dd40e004b8d5e1c1a2a8fceaa7
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56312552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60368357"
 ---
 # <a name="detect-adult-and-racy-content"></a>Обнаружение содержимого для взрослых и содержимого непристойного характера
 
@@ -37,6 +37,6 @@ API [анализа](https://westus.dev.cognitive.microsoft.com/docs/services/5a
 
 Метод анализа изображений возвращает в ответе JSON два логических свойства, `isAdultContent` и `isRacyContent`, которые обозначают содержимое для взрослых и содержимое непристойного характера соответственно. Метод также возвращает два свойства, `adultScore` и `racyScore`, которые представляют степень достоверности при определении содержимого для взрослых и содержимого непристойного характера соответственно.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с принципами [обнаружения содержимого, связанного с определенными предметными областями](concept-detecting-domain-content.md), и [определения лиц](concept-detecting-faces.md).

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка Netsuite OneWorld для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка Netsuite OneWorld для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Сведения о том, как настроить единый вход Azure Active Directory в Netsuite OneWorld.
 services: active-directory
 documentationCenter: na
@@ -16,17 +16,17 @@ ms.date: 01/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 928070ae7e5c9077c6f77e8cb7beb36815f47d6a
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56202780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60515817"
 ---
-# <a name="tutorial-configuring-netsuite-for-automatic-user-provisioning"></a>Руководство. Настройка Netsuite для автоматической подготовки пользователей
+# <a name="tutorial-configuring-netsuite-for-automatic-user-provisioning"></a>Руководство по Настройка Netsuite для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как в Netsuite OneWorld и Azure AD настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в Netsuite.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -73,7 +73,7 @@ ms.locfileid: "56202780"
    
     a. В текстовом поле **Имя пользователя администратора** введите имя учетной записи Netsuite, которой на сайте Netsuite.com назначен профиль **System Administrator** (Системный администратор).
    
-    б) В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
+    2. В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
       
 1. На портале Azure щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к приложению Netsuite.
 

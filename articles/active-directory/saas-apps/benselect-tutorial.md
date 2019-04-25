@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с BenSelect | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с BenSelect | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и BenSelect.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 06/23/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 699afd4703efc5e8f63bb13fe1dd753a0c72594d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56209444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60282709"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-benselect"></a>Руководство по Интеграция Azure Active Directory с BenSelect
 
@@ -34,7 +34,7 @@ ms.locfileid: "56209444"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с BenSelect, вам потребуется:
 
@@ -130,7 +130,7 @@ ms.locfileid: "56209444"
 
     a. Из раскрывающегося списка **Идентификатор пользователя** выберите **ExtractMailPrefix**.
 
-    б) Из раскрывающегося списка **Электронная почта** выберите **user.userprincipalname**.
+    2. Из раскрывающегося списка **Электронная почта** выберите **user.userprincipalname**.
 
 1. Нажмите кнопку **Сохранить** .
 
@@ -173,11 +173,11 @@ ms.locfileid: "56209444"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-benselect-test-user"></a>Создание тестового пользователя BenSelect
 

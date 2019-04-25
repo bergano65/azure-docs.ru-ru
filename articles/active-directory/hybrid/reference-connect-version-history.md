@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 26f3fe9c2483dda3b9350c110b2e8adf60dcd21e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58803160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60387219"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect выполняет следующие функции: Журнал выпуска версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -387,7 +387,7 @@ ms.locfileid: "58803160"
 *   Удаление всех элементов управления доступом в конкретном объекте, кроме элементов управления доступом, характерных для SELF. При работе с SELF нужно сохранять разрешения по умолчанию без изменений.
 *   Назначение указанных ниже специальных разрешений.
 
-type     | ИМЯ                          | Access               | Применяется к
+type     | Name                          | Access               | Применяется к
 ---------|-------------------------------|----------------------|--------------|
 РАЗРЕШИТЬ    | SYSTEM                        | Полный доступ         | этому объекту  |
 РАЗРЕШИТЬ    | Администраторы предприятия             | Полный доступ         | этому объекту  |

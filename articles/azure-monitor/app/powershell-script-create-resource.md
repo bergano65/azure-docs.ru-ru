@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 11/19/2016
 ms.author: mbullwin
 ms.openlocfilehash: 8a7b19dd6e5bc08c0c7e278b514ecaa9dc13a00e
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58485244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60254497"
 ---
 # <a name="powershell-script-to-create-an-application-insights-resource"></a>Сценарий PowerShell для создания ресурса Application Insights
 
@@ -37,7 +37,7 @@ ms.locfileid: "58485244"
 ## <a name="script-to-create-an-application-insights-resource"></a>Сценарий для создания ресурса Application Insights
 См. спецификацию соответствующего командлета:
 
-* [Новый AzResource](https://msdn.microsoft.com/library/mt652510.aspx)
+* [New-AzResource](https://msdn.microsoft.com/library/mt652510.aspx)
 * [New-AzRoleAssignment](https://msdn.microsoft.com/library/mt678995.aspx)
 
 *Сценарий PowerShell*  

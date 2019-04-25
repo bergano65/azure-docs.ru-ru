@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: 66ee211856bb451caad7af02103aa306d76e8f97
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59799241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60323709"
 ---
 # <a name="troubleshooting-azure-cdn-endpoints-that-return-a-404-status-code"></a>Устранение неполадок с конечными точками Azure CDN, которые возвращают код состояния 404
 Сведения в этой статье позволяют устранить неполадки, связанные с конечными точками сети доставки содержимого (CDN) Azure, которые возвращают ответы с кодом состояния HTTP 404.

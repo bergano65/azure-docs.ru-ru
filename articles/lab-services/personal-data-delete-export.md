@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 11/13/2018
 ms.author: spelluru
 ms.openlocfilehash: e681652c13e521bd33524e247db65088f47a794c
-ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51637146"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60394986"
 ---
 # <a name="export-or-delete-personal-data-from-azure-devtest-labs"></a>Экспорт или удаление персональных данных из Azure DevTest Labs
 В этой статье описываются действия по удалению и экспорту персональных данных из службы Azure DevTest Labs. 
@@ -74,7 +74,7 @@ DevTest Labs использует адрес электронной почты �
 
     ![Скачивание CSV-файла](./media/personal-data-delete-export/download-csv-file.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими статьями: 
 
 - [Управление базовыми политиками лаборатории в Azure DevTest Labs](devtest-lab-get-started-with-lab-policies.md)

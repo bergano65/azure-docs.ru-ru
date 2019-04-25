@@ -10,11 +10,11 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: 376ee74732daf526b31129fa8c93cbaa32350eae
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58107820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60318212"
 ---
 # <a name="understand-iot-edge-automatic-deployments-for-single-devices-or-at-scale"></a>Общие сведения об автоматических развертываниях IoT Edge для отдельных устройств или в требуемом масштабе
 
@@ -51,7 +51,7 @@ Azure IoT Edge предоставляет два способа настройк
 
 Метаданные конфигурации для каждого модуля содержат: 
 
-* Version (версия) 
+* Version 
 * type 
 * состояние (например, работает или остановлен); 
 * Политика перезапуска 

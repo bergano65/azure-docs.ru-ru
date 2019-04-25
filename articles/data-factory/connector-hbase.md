@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: jingwang
 ms.openlocfilehash: 3bc91b1c20bb4cf4ae755ca47c8d8e0581eb3a1f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57995380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60400717"
 ---
 # <a name="copy-data-from-hbase-using-azure-data-factory"></a>Копирование данных из HBase с помощью фабрики данных Azure 
 
@@ -41,7 +41,7 @@ ms.locfileid: "57995380"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **HBase** | Yes |
+| type | Для свойства type необходимо задать значение **HBase** | Yes |
 | host | IP-адрес или имя узла сервера HBase. (т. е.  `[clustername].azurehdinsight.net`, `192.168.222.160`)  | Yes |
 | порт | TCP-порт, используемый экземпляром HBase для прослушивания клиентских подключений. По умолчанию используется значение 9090. При подключении к Azure HDInsights укажите порт 443. | Нет  |
 | httpPath | Частичный URL-адрес, соответствующий серверу HBase, например `/hbaserest0` при использовании кластера HDInsights. | Нет  |
@@ -122,7 +122,7 @@ ms.locfileid: "57995380"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство type для набора данных должно иметь значение **HBaseObject** | Yes |
+| type | Свойство type для набора данных должно иметь значение **HBaseObject** | Yes |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -151,7 +151,7 @@ ms.locfileid: "57995380"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **HBaseSource** | Yes |
+| type | Свойство type источника действия копирования должно иметь значение **HBaseSource** | Yes |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**

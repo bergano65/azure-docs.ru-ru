@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: roiyz
 ms.openlocfilehash: 5adc86b161770f2502b6ef9cf5ec2189ec3d4f99
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58619931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60388681"
 ---
 # <a name="nvidia-gpu-driver-extension-for-windows"></a>Расширение драйвера GPU NVIDIA для Windows
 
@@ -35,7 +35,7 @@ ms.locfileid: "58619931"
 
 Это расширение поддерживает следующие операционные системы:
 
-| Дистрибутив | Version (версия) |
+| Дистрибутив | Version |
 |---|---|
 | Windows 10 (до версии 1803)| Core |
 | Windows Server 2016 | Core |
@@ -71,9 +71,9 @@ ms.locfileid: "58619931"
 
 ### <a name="properties"></a>properties
 
-| ИМЯ | Значение и пример | Тип данных |
+| Name | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| версия_API | 2015-06-15 | дата |
+| версия_API | 2015-06-15 | date |
 | publisher | Microsoft.HpcCompute | строка |
 | Тип | NvidiaGpuDriverWindows | строка |
 | typeHandlerVersion | 1.2 | int |

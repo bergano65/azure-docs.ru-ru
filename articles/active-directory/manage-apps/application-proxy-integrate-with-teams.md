@@ -17,11 +17,11 @@ ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 660d05146e82ab85136cac715b56cb1ee89b002f
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56210957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60292970"
 ---
 # <a name="access-your-on-premises-applications-through-microsoft-teams"></a>Доступ к приложениям в локальной среде через Microsoft Teams
 
@@ -54,7 +54,7 @@ ms.locfileid: "56210957"
 
 После того как один из участников команды добавит вкладку, она будет отображаться для всех пользователей в канале. Все пользователи, имеющие доступ к приложению, получают возможность единого входа с помощью учетных данных, которые они используют для доступа к Microsoft Teams. Для пользователей, у которых нет доступа к приложению, будет отображаться соответствующая вкладка в Teams, однако они будут заблокированы, пока вы не предоставите им разрешения на доступ к локальному приложению и его версии, опубликованной на портале Azure. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Подробнее о [публикации локальных сайтов SharePoint](application-proxy-integrate-with-sharepoint-server.md) с помощью прокси приложения.
 - Настройка приложений для использования [личных доменов](application-proxy-configure-custom-domain.md) для их внешних URL-адресов. 

@@ -13,11 +13,11 @@ ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9c1620be30d8cdf3a592ab0fc118938783579689
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58085088"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60474999"
 ---
 # <a name="set-up-security-info-preview-to-use-phone-calls"></a>Настройка использования звонков в сведениях для защиты (предварительная версия)
 Ниже приведены инструкции по добавлению двухфакторной проверки подлинности и описаны способы сброса пароля. После первоначальной настройки вы можете вернуться к странице **Сведения для защиты**, чтобы добавить, обновить или удалить сведения для защиты.

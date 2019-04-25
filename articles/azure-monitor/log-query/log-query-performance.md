@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 01/17/2019
 ms.author: bwren
 ms.openlocfilehash: 25d6b582ed4d4e24df3841f4191471296e25abd8
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54436338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60519370"
 ---
 # <a name="writing-efficient-log-queries-in-azure-monitor"></a>Написание эффективных запросов журналов в Azure Monitor
 Эта статья содержит рекомендации для написания эффективных запросов журналов в Azure Monitor. Применяя эти стратегии, вы сможете гарантировать, что ваши запросы будут выполняться быстро и с минимальными усилиями.
@@ -104,5 +104,5 @@ customEvents
 При использовании оператора [join](/azure/kusto/query/joinoperator) укажите таблицу с меньшим числом строк в левой части запроса.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в статье [с рекомендациями по выполнению запросов](/azure/kusto/query/best-practices).

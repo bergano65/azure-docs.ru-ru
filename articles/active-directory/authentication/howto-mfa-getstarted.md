@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6c2c5006eb050b70b783ab8199724e0e98766381
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59358109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60359347"
 ---
 # <a name="planning-a-cloud-based-azure-multi-factor-authentication"></a>Планирование облачных многофакторной идентификации Azure
 
@@ -304,7 +304,7 @@ Get-MsolUser -All | where {$_.StrongAuthenticationMethods.Count -eq 0} | Select-
 
 Многофакторная Идентификация Azure предоставляет отчеты на портале Azure:
 
-| Отчет | Расположение | ОПИСАНИЕ |
+| Отчет | Location | ОПИСАНИЕ |
 | --- | --- | --- |
 | Предупреждения об использовании и о мошенничестве | "Azure AD > События входа" | Сведения об общем использовании, сводка пользователей, сведения о пользователях, а также история предупреждений о мошенничестве, отправленных в течение указанного диапазона дат. |
 

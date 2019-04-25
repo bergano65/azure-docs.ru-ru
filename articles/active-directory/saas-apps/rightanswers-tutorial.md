@@ -16,13 +16,13 @@ ms.date: 06/09/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7a4f7fef8a1f73bb7c3e19ae32756d13273ddf2d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56208543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60255272"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-rightanswers"></a>Руководство. Интеграция Azure Active Directory с RightAnswers
+# <a name="tutorial-azure-active-directory-integration-with-rightanswers"></a>Руководство по Интеграция Azure Active Directory с RightAnswers
 
 В этом учебнике описано, как интегрировать приложение RightAnswers с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56208543"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с RightAnswers, вам потребуется:
 
@@ -162,11 +162,11 @@ ms.locfileid: "56208543"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-rightanswers-test-user"></a>Создание тестового пользователя RightAnswers
 

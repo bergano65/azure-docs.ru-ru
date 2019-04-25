@@ -12,11 +12,11 @@ ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 91d645e6120040870c7c1696c7bfd8f68509cb35
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55451909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60303576"
 ---
 # <a name="customer-acceptance-stage-of-the-team-data-science-process-lifecycle"></a>Этап приема клиентом в жизненном цикле командного процесса обработки и анализа данных
 
@@ -48,7 +48,7 @@ ms.locfileid: "55451909"
 Основной артефакт, создаваемый на последнем этапе процесса — это документ под названием **Окончательный отчет по проекту для клиента**. Этот технический отчет содержит все подробные сведения о проекте, необходимые для обучения работе с системой. Процесс обработки и анализа данных группы предоставляет шаблон [окончательного отчета](https://github.com/Azure/Azure-TDSP-ProjectTemplate/blob/master/Docs/Project/Exit%20Report.md). Шаблон можно использовать как таковой или можно настроить его для нужд конкретного клиента. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены ссылки на каждый этап жизненного цикла процесса обработки и анализа данных группы:
 

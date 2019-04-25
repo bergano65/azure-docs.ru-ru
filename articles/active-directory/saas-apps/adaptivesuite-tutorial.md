@@ -16,11 +16,11 @@ ms.date: 10/16/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d42c86ec262cd9d3d3db3035d252429e44c1208f
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57884886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60285288"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adaptive-insights"></a>Руководство по Интеграция Azure Active Directory с Adaptive Insights
 
@@ -62,19 +62,19 @@ ms.locfileid: "57884886"
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
-    ![изображение](./media/adaptivesuite-tutorial/selectazuread.png)
+    ![image](./media/adaptivesuite-tutorial/selectazuread.png)
 
 2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
-    ![изображение](./media/adaptivesuite-tutorial/a_select_app.png)
+    ![image](./media/adaptivesuite-tutorial/a_select_app.png)
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![изображение](./media/adaptivesuite-tutorial/a_new_app.png)
+    ![image](./media/adaptivesuite-tutorial/a_new_app.png)
 
 4. В поле поиска введите **Adaptive Insights**, выберите **Adaptive Insights** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![изображение](./media/adaptivesuite-tutorial/tutorial_adaptivesuite_addfromgallery.png)
+     ![image](./media/adaptivesuite-tutorial/tutorial_adaptivesuite_addfromgallery.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -98,19 +98,19 @@ ms.locfileid: "57884886"
 
 1. Откройте [портал Azure](https://portal.azure.com/) и на странице интеграции с приложением **Adaptive Insights** выберите **Единый вход**.
 
-    ![изображение](./media/adaptivesuite-tutorial/B1_B2_Select_SSO.png)
+    ![image](./media/adaptivesuite-tutorial/B1_B2_Select_SSO.png)
 
 2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML**, чтобы включить единый вход.
 
-    ![изображение](./media/adaptivesuite-tutorial/b1_b2_saml_sso.png)
+    ![image](./media/adaptivesuite-tutorial/b1_b2_saml_sso.png)
 
 3. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![изображение](./media/adaptivesuite-tutorial/b1-domains_and_urlsedit.png)
+    ![image](./media/adaptivesuite-tutorial/b1-domains_and_urlsedit.png)
 
 4. Чтобы настроить приложение в режиме, инициируемом **IDP**, в разделе **Базовая конфигурация SAML** выполните указанные ниже действия.
 
-    ![изображение](./media/adaptivesuite-tutorial/tutorial_adaptivesuite_url.png)
+    ![image](./media/adaptivesuite-tutorial/tutorial_adaptivesuite_url.png)
 
     a. В текстовое поле **Identifier (Entity ID)** (Идентификатор (ИД сущности)) введите URL-адрес в следующем формате: `https://login.adaptiveinsights.com:443/samlsso/<unique-id>`
 
@@ -121,7 +121,7 @@ ms.locfileid: "57884886"
  
 5. На странице **Настройка единого входа с помощью SAML** откройте раздел **Сертификат подписи SAML** и щелкните ссылку **Скачать** рядом с пунктом **Сертификат (Base64)**, затем сохраните этот сертификат на компьютере.
 
-    ![изображение](./media/adaptivesuite-tutorial/tutorial_adaptivesuite_certficate.png) 
+    ![image](./media/adaptivesuite-tutorial/tutorial_adaptivesuite_certficate.png) 
 
 6. В разделе **Настройка Adaptive Insights** скопируйте соответствующий требуемый URL-адрес.
 
@@ -133,7 +133,7 @@ ms.locfileid: "57884886"
 
     в) URL-адрес выхода.
 
-    ![изображение](./media/adaptivesuite-tutorial/d1_samlsonfigure.png) 
+    ![image](./media/adaptivesuite-tutorial/d1_samlsonfigure.png) 
 
 7. В другом окне веб-браузера войдите на корпоративный сайт Adaptive Insights с правами администратора.
 
@@ -179,19 +179,19 @@ ms.locfileid: "57884886"
 
 1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-    ![изображение](./media/adaptivesuite-tutorial/d_users_and_groups.png)
+    ![image](./media/adaptivesuite-tutorial/d_users_and_groups.png)
 
 2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![изображение](./media/adaptivesuite-tutorial/d_adduser.png)
+    ![image](./media/adaptivesuite-tutorial/d_adduser.png)
 
 3. В разделе свойств пользователя сделайте следующее:
 
-    ![изображение](./media/adaptivesuite-tutorial/d_userproperties.png)
+    ![image](./media/adaptivesuite-tutorial/d_userproperties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    2. В **имя пользователя** тип поля **brittasimon\@yourcompanydomain.extension**  
+    2. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -233,19 +233,19 @@ ms.locfileid: "57884886"
 
 1. На портале Azure перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![изображение](./media/adaptivesuite-tutorial/d_all_applications.png)
+    ![image](./media/adaptivesuite-tutorial/d_all_applications.png)
 
 2. Из списка приложений выберите **Adaptive Insights**.
 
-    ![изображение](./media/adaptivesuite-tutorial/tutorial_adaptivesuite_app.png)
+    ![image](./media/adaptivesuite-tutorial/tutorial_adaptivesuite_app.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
-    ![изображение](./media/adaptivesuite-tutorial/d_leftpaneusers.png)
+    ![image](./media/adaptivesuite-tutorial/d_leftpaneusers.png)
 
 4. Нажмите кнопку **Добавить**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![изображение](./media/adaptivesuite-tutorial/d_assign_user.png)
+    ![image](./media/adaptivesuite-tutorial/d_assign_user.png)
 
 4. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 

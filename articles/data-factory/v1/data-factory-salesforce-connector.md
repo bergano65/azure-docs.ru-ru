@@ -14,11 +14,11 @@ ms.date: 07/18/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: aac1ed82a01477b081f4bc146f199eba87d97859
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58312144"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60309210"
 ---
 # <a name="move-data-from-salesforce-by-using-azure-data-factory"></a>Перемещение данных из Salesforce с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -69,7 +69,7 @@ ms.locfileid: "58312144"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
-| Тип |Свойству type необходимо задать значение **Salesforce**. |Yes |
+| type |Свойству type необходимо задать значение **Salesforce**. |Yes |
 | environmentUrl | Укажите URL-адрес экземпляра Salesforce. <br><br> -Значение по умолчанию — «https:\//login.salesforce.com». <br> Чтобы скопировать данные из песочницы, укажите https://test.salesforce.com. <br> — Чтобы скопировать данные из пользовательского домена, укажите URL-адрес, например https://[домен].my.salesforce.com. |Нет  |
 | Имя пользователя |Укажите имя пользователя для учетной записи пользователя. |Yes |
 | password |Укажите пароль для учетной записи пользователя. |Yes |
@@ -286,25 +286,25 @@ ms.locfileid: "58312144"
 
 | Тип данных Salesforce | Тип на основе .NET |
 | --- | --- |
-| Автонумерация |Строка |
-| Флажок |Логическое |
+| Автонумерация |String |
+| Флажок |Boolean |
 | Валюта |Decimal |
-| Дата |DateTime |
-| Дата и время |DateTime |
-| Email |Строка |
-| Идентификатор |Строка |
-| Связь для подстановки |Строка |
-| Список множественного выбора |Строка |
+| Дата |Datetime |
+| Дата и время |Datetime |
+| Email |String |
+| Идентификатор |String |
+| Связь для подстановки |String |
+| Список множественного выбора |String |
 | Number |Decimal |
 | Процент |Decimal |
-| Номер телефона |Строка |
-| Список выбора |Строка |
-| текст |Строка |
-| Текстовое поле |Строка |
-| Текстовое поле (длинное) |Строка |
-| Текстовое поле (расширенное) |Строка |
-| Текст (зашифрованный) |Строка |
-| URL-адрес |Строка |
+| Номер телефона |String |
+| Список выбора |String |
+| Text |String |
+| Текстовое поле |String |
+| Текстовое поле (длинное) |String |
+| Текстовое поле (расширенное) |String |
+| Текст (зашифрованный) |String |
+| URL-адрес |String |
 
 > [!NOTE]
 > Сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в [этой статье](data-factory-map-columns.md).

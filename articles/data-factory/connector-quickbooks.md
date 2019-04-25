@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: jingwang
 ms.openlocfilehash: 8f5e3958588a597bde04ae1c8e4873006b281458
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57992210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60405823"
 ---
 # <a name="copy-data-from-quickbooks-online-using-azure-data-factory-preview"></a>Копирование данных из QuickBooks Online с помощью Фабрики данных Azure (предварительная версия)
 
@@ -46,7 +46,7 @@ ms.locfileid: "57992210"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **QuickBooks**. | Yes |
+| type | Для свойства type необходимо задать значение **QuickBooks**. | Yes |
 | endpoint | Конечная точка сервера QuickBooks Online. (это quickbooks.api.intuit.com).  | Yes |
 | companyId | Идентификатор компании QuickBooks для авторизации. Сведения о том, как найти идентификатор компании см. в [этой статье](https://quickbooks.intuit.com/community/Getting-Started/How-do-I-find-my-Company-ID/m-p/185551). | Yes |
 | consumerKey | Ключ объекта-получателя для аутентификации OAuth 1.0. | Yes |
@@ -92,7 +92,7 @@ ms.locfileid: "57992210"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство type для набора данных должно иметь значение **QuickBooksObject**. | Yes |
+| type | Свойство type для набора данных должно иметь значение **QuickBooksObject**. | Yes |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -121,7 +121,7 @@ ms.locfileid: "57992210"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **QuickBooksSource**. | Yes |
+| type | Свойство type источника действия копирования должно иметь значение **QuickBooksSource**. | Yes |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM "Bill" WHERE Id = '123'"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**

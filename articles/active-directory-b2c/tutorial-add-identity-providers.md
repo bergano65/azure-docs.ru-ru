@@ -3,7 +3,7 @@ title: Руководство. Добавление поставщиков уд�
 description: Узнайте, как добавить поставщики удостоверений своим приложениям в Azure Active Directory B2C с помощью портала Azure.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: article
@@ -11,13 +11,13 @@ ms.date: 02/01/2019
 ms.author: davidmu
 ms.subservice: B2C
 ms.openlocfilehash: ef264622be1e66c98f8c7f17cf3e04b3239e8553
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58338281"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60360101"
 ---
-# <a name="tutorial-add-identity-providers-to-your-applications-in-azure-active-directory-b2c"></a>Руководство. Добавление поставщиков удостоверений приложениям в Azure Active Directory B2C
+# <a name="tutorial-add-identity-providers-to-your-applications-in-azure-active-directory-b2c"></a>Руководство по Добавление поставщиков удостоверений приложениям в Azure Active Directory B2C
 
 В своих приложениях вы можете разрешить пользователям входить с разными поставщиками удостоверений. *Поставщик удостоверений* создает, поддерживает и управляет сведениями об удостоверении, одновременно предоставляя приложениям службы проверки подлинности. С помощью портала Azure вы можете добавить поставщики удостоверений, которые поддерживаются Azure Active Directory (Azure AD) B2C, в свои [потоки пользователя](active-directory-b2c-reference-policies.md).
 

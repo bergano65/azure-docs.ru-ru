@@ -3,21 +3,21 @@ title: Руководство. Настройка удобного для пол
 description: Узнайте, как настроить пользовательский интерфейс своих приложений в Azure Active Directory B2C с помощью портала Azure.
 services: B2C
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: f3bc1789d0b521b0d91ca42ebe472fed0225d87b
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 0996c64acaa5e65061d80974fc428bad2dd8d4ad
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55752387"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60360339"
 ---
-# <a name="tutorial-customize-the-interface-of-user-experiences-in-azure-active-directory-b2c"></a>Руководство. Настройка удобного для пользователей интерфейса в Azure Active Directory B2C
+# <a name="tutorial-customize-the-interface-of-user-experiences-in-azure-active-directory-b2c"></a>Руководство по Настройка удобного для пользователей интерфейса в Azure Active Directory B2C
 
 Для наиболее распространенных операций пользователя, таких как регистрация, вход и редактирование профиля, в Azure Active Directory (Azure AD) B2C можно использовать [потоки пользователя](active-directory-b2c-reference-policies.md). Сведения в этом руководстве помогут вам узнать, как [настроить пользовательский интерфейс](customize-ui-overview.md) этих функций, используя собственные HTML- и CSS-файлы.
 
@@ -30,7 +30,7 @@ ms.locfileid: "55752387"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [Создайте поток пользователя](tutorial-create-user-flows.md), чтобы пользователи могли зарегистрироваться и войти в ваше приложение.
 
@@ -155,7 +155,7 @@ ms.locfileid: "55752387"
 
     ![Результаты потока пользователя](./media/tutorial-customize-ui/run-now.png) 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как выполнять следующие задачи:
 

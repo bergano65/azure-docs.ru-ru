@@ -16,13 +16,13 @@ ms.date: 07/06/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5b367befb90ec28ece963d67b479749e1c8ad363
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56175325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60340003"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-securew2-joinnow-connector"></a>Руководство. Интеграция Azure Active Directory с SecureW2 JoinNow Connector
+# <a name="tutorial-azure-active-directory-integration-with-securew2-joinnow-connector"></a>Руководство по Интеграция Azure Active Directory с SecureW2 JoinNow Connector
 
 В этом руководстве описано, как интегрировать SecureW2 JoinNow Connector с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56175325"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с SecureW2 JoinNow Connector, вам потребуется:
 
@@ -155,7 +155,7 @@ ms.locfileid: "56175325"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-securew2-joinnow-connector-test-user"></a>Создание тестового пользователя SecureW2 JoinNow Connector
 
@@ -197,7 +197,7 @@ ms.locfileid: "56175325"
 
 a. Откройте клиент SecureW2 JoinNow Connector, выберите соответствующее устройство в списке и нажмите кнопку **Вход**.
 
-б) Открывается браузер по умолчанию, и выполняется переход на портал Azure для проверки подлинности.
+2. Открывается браузер по умолчанию, и выполняется переход на портал Azure для проверки подлинности.
 
 c. После прохождения проверки должен быть выполнен возврат на начальную целевую страницу SecureW2 JoinNow Connector.
 

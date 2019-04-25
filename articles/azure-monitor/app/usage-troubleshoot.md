@@ -14,11 +14,11 @@ ms.reviewer: mbullwin
 ms.pm_owner: daviste;NumberByColors
 ms.author: daviste
 ms.openlocfilehash: eabc47c2acb33d8c6ee03477b5e8c7783edebbb7
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58258787"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60371858"
 ---
 # <a name="troubleshoot-user-behavior-analytics-tools-in-application-insights"></a>Устранение неполадок со средствами для анализа поведения пользователей в Application Insights
 Возможно, у вас возникли вопросы о [средствах для анализа поведения пользователей в Application Insights](usage-overview.md), таких как [Пользователи, сеансы, события](usage-segmentation.md), [Воронки](usage-funnels.md), [Маршруты пользователей](usage-flows.md), [Удержание](usage-retention.md) или Когорты. Ниже приведен ряд ответов.

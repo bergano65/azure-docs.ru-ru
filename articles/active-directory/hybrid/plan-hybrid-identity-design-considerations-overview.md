@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e7f8dd49f3668b8f68753681123a04d21edac46c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56167870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60381491"
 ---
 # <a name="azure-active-directory-hybrid-identity-design-considerations"></a>Рекомендации по разработке архитектуры гибридной идентификации в Azure Active Directory
 Потребительские устройства распространяются в корпоративной среде, и облачные приложения, использующие принцип "Программное обеспечение как услуга" (SaaS), можно легко адаптировать для этих устройств. В результате усложняется управление доступом к приложениям пользователей в различных внутренних центрах обработки данных и облачных платформах.  
@@ -63,6 +63,6 @@ ms.locfileid: "56167870"
 | Планирование повышения безопасности данных благодаря надежному решению для идентификации |[Определение требований к защите данных](plan-hybrid-identity-design-considerations-dataprotection-requirements.md) <br> [Определение требований к управлению содержимым](plan-hybrid-identity-design-considerations-contentmgt-requirements.md)<br> [Определение требований к контролю доступа](plan-hybrid-identity-design-considerations-accesscontrol-requirements.md)<br> [Определение требований по реагированию на инциденты](plan-hybrid-identity-design-considerations-incident-response-requirements.md) <br> [Определение стратегии защиты данных](plan-hybrid-identity-design-considerations-data-protection-strategy.md) |
 | Планирование жизненного цикла гибридной идентификации |[Определение задач управления гибридной идентификацией](plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md) <br> [Управление синхронизацией](plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md)<br> [Определение стратегии внедрения гибридной идентификации](plan-hybrid-identity-design-considerations-lifecycle-adoption-strategy.md) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Определение требований к идентификации](plan-hybrid-identity-design-considerations-business-needs.md)
 
