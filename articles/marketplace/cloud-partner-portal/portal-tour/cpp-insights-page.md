@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 11/14/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 93cc8e84f13988357a363a70c44a479bed8f462c
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52266697"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60318247"
 ---
 # <a name="insights-page"></a>Страница "Аналитические сведения"
 
@@ -44,7 +44,7 @@ ms.locfileid: "52266697"
 ![Сводная панель мониторинга страницы Seller Insights](./media/insights-page1.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании Seller Insights для оптимизации продаж см. в статье [Начало работы с Seller Insights](./../../cloud-partner-portal-orig/si-getting-started.md).
 

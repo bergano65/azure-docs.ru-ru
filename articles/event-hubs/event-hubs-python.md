@@ -16,11 +16,11 @@ ms.workload: na
 ms.date: 11/26/2018
 ms.author: shvija
 ms.openlocfilehash: 88fdaec9e19c082a6fe981dc4d9a0e015335f1e2
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55818624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60202979"
 ---
 # <a name="how-to-use-azure-event-hubs-from-a-python-application"></a>Как использовать Центры событий Azure из приложения Python
 Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Дополнительные сведения см. в статье [Центры событий Azure представляют собой платформу потоковой передачи и службу приема событий.](event-hubs-what-is-event-hubs.md) 
@@ -31,7 +31,7 @@ ms.locfileid: "55818624"
 - [получение событий из концентратора событий](#receive-events-from-event-hubs);
 - чтение собранных данных о событиях из хранилища Azure. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 - Создайте концентратор событий, используя одно из кратких руководств в зависимости от используемого средства: [портал Azure](event-hubs-create.md), [Azure CLI](event-hubs-quickstart-cli.md), [Azure PowerShell](event-hubs-quickstart-powershell.md), [шаблон Azure Resource Manager](event-hubs-resource-manager-namespace-event-hub.md). 
 - Python 3.4 или более поздней версии, установленный на компьютере.
 
@@ -164,5 +164,5 @@ startProcessing('YOUR STORAGE ACCOUNT NAME', 'YOUR KEY', 'capture')
 ## <a name="github-samples"></a>Примеры GitHub
 Вы можете просмотреть больше примеров Python в репозитории Git [azure-event-hubs-python](https://github.com/Azure/azure-event-hubs-python/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со статьями в разделе "Основные понятия" статьи [об общих сведениях о возможностях Центров событий](event-hubs-features.md).

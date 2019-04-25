@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 04/17/2019
 ms.author: magoedte
 ms.openlocfilehash: 8fb1d0083796671119de2b4d7feefe738b602fe2
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60004046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60497376"
 ---
 # <a name="understand-aks-cluster-performance-with-azure-monitor-for-containers"></a>Общие сведения о производительности кластера AKS с Azure Monitor для контейнеров 
 С помощью диаграмм производительности и состояния работоспособности в Azure Monitor для контейнеров вы можете наблюдать производительность кластеров Службы Azure Kubernetes (AKS) с двух перспектив: напрямую из кластера AKS или всех AKS кластеров в подписке из Azure Monitor. Просмотр Экземпляров контейнеров Azure (ACI) возможен также при мониторинге конкретного кластера AKS.

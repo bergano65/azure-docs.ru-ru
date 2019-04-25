@@ -9,11 +9,11 @@ ms.date: 04/11/2018
 ms.author: sngun
 ms.subservice: tables
 ms.openlocfilehash: f56946702011968a0fcb31f6fbecbaacdc89ea42
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55470422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60326009"
 ---
 # <a name="encrypt-table-data"></a>Шифрование данных таблиц
 Клиентская библиотека хранилища Azure для .NET поддерживает шифрование строковых свойств для операций вставки и замены. Зашифрованные строки хранятся в службе в виде двоичных свойств. Они преобразуются обратно в строки после расшифровки.    
@@ -26,7 +26,7 @@ ms.locfileid: "55470422"
 
 Дополнительные сведения о шифровании данных таблицы см. в статье [Шифрование на стороне клиента для службы хранилища Microsoft Azure](../common/storage-client-side-encryption.md).  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Шаблоны для разработки таблиц](table-storage-design-patterns.md)
 - [Моделирование отношений](table-storage-design-modeling.md)

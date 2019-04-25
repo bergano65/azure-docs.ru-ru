@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 08/15/2018
 ms.author: erikre
 ms.openlocfilehash: d3db4166810da981ff0117536d8550a6b2203924
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56106194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60370991"
 ---
 # <a name="review-azure-resource-usage-using-the-rest-api"></a>Просмотр использования ресурса службы Azure с помощью REST API
 
@@ -156,5 +156,5 @@ Authorization: Bearer
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Начало работы с Azure REST API](https://docs.microsoft.com/rest/api/azure/)   

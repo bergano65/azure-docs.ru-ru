@@ -17,13 +17,13 @@ ms.date: 03/13/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cddd239bba7d9b0f0a90e23f146263777806b187
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56192308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60256263"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-loginradius"></a>Руководство. Интеграция Azure Active Directory с LoginRadius
+# <a name="tutorial-azure-active-directory-integration-with-loginradius"></a>Руководство по Интеграция Azure Active Directory с LoginRadius
 
 В этом руководстве описано, как интегрировать LoginRadius с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56192308"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с LoginRadius, вам потребуется:
 
@@ -111,7 +111,7 @@ ms.locfileid: "56192308"
 
     a.  В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://secure.loginradius.com/login`.
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес: `https://LoginRadius.hub.loginradius.com/`
+    2. В текстовом поле **Идентификатор** введите URL-адрес: `https://LoginRadius.hub.loginradius.com/`
      
     > [!NOTE] 
     > Откройте страницу "URL-адрес входа". Откройте вкладку **Единый вход** и введите **имя подключаемого модуля**, предоставленное [группой поддержки LoginRadius](mailto:support@loginradius.com). Затем нажмите кнопку **Войти**, чтобы перейти к странице Azure AD для входа. 
@@ -159,7 +159,7 @@ ms.locfileid: "56192308"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-loginradius-test-user"></a>Создание тестового пользователя LoginRadius
 

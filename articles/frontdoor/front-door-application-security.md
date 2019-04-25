@@ -12,11 +12,11 @@ ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
 ms.openlocfilehash: c7b99548e2fe1ad0c1cab39953e28a97e7ebff4b
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56984407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60193923"
 ---
 # <a name="application-layer-security-with-front-door"></a>Защита на прикладном уровне с помощью Front Door
 Azure Front Door Service предоставляет возможность защитить веб-приложения от сетевых атак и распространенных веб-уязвимостей, например от атак путем внедрения кода SQL или выполнения межсайтовых сценариев (XSS). Благодаря поддержке внешних интерфейсов HTTP(s) безопасность на прикладном уровне Front Door является глобально распределенной и непрерывной, что позволяет отражать вредоносные атаки на границе сети Azure, далеко от ваших внутренних серверов. Благодаря повышенной безопасности и оптимизации производительности Front Door обеспечивает быструю и безопасную работу веб-приложений пользователей.

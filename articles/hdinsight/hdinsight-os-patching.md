@@ -1,7 +1,6 @@
 ---
 title: Настройка расписания обновления путем частичной замены ОС для кластеров HDInsight в Azure
 description: Узнайте, как настроить расписание обновления путем частичной замены ОС для кластеров HDInsight.
-services: hdinsight
 author: omidm1
 ms.author: omidm
 ms.service: hdinsight
@@ -9,11 +8,11 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/24/2019
 ms.openlocfilehash: ef57608d092c05b30be63a54bb41ba87558eabc3
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55694624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60333695"
 ---
 # <a name="os-patching-for-hdinsight"></a>Обновление путем частичной замены ОС для кластеров HDInsight 
 
@@ -51,7 +50,7 @@ ms.locfileid: "55694624"
 > [!NOTE]  
 > Этот сценарий необходимо пометить как сохраняемый, если он применяется к существующему кластеру. В противном случае все новые узлы, созданные операциями масштабирования, будут использовать расписание обновления путем частичной замены ОС по умолчанию.  Если применить сценарий при создании кластера, он сохраняется автоматически.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Инструкции по использованию действия сценария см. в следующих разделах статьи [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md):
 

@@ -12,11 +12,11 @@ ms.workload: na
 ms.date: 02/28/2019
 ms.author: banders
 ms.openlocfilehash: 21d6c1671c57341d785c002f360c05cc5c610657
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57551625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60371614"
 ---
 # <a name="create-sections-on-your-invoice-to-organize-your-costs"></a>Создать разделы на вашем счете, чтобы упорядочить свои затраты на
 
@@ -38,7 +38,7 @@ ms.locfileid: "57551625"
 
    ![Снимок экрана, показывающий поиск на портале Azure](./media/billing-mca-section-invoice/billing-mca-list-invoice-sections.png)
 
-4. В верхней части страницы выберите **добавить**.
+4. В верхней части страницы выберите **Добавить**.
 
 5. Введите имя в разделе счета.
 

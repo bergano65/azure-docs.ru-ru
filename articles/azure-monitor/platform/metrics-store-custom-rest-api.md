@@ -1,19 +1,19 @@
 ---
 title: Отправка пользовательских метрик для ресурса Azure в хранилище метрик Azure Monitor с использованием REST API
 description: Отправка пользовательских метрик для ресурса Azure в хранилище метрик Azure Monitor с использованием REST API
-author: anirudhcavale
+author: lingliw
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.author: ancav
+ms.date: 04/12/19
+ms.author: v-lingwu
 ms.subservice: metrics
 ms.openlocfilehash: aa842979bf86410e9dab97d6209f336eb6b02bd3
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58621912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60253872"
 ---
 # <a name="send-custom-metrics-for-an-azure-resource-to-the-azure-monitor-metric-store-by-using-a-rest-api"></a>Отправка пользовательских метрик для ресурса Azure в хранилище метрик Azure Monitor с использованием REST API
 
@@ -39,7 +39,7 @@ ms.locfileid: "58621912"
 Откройте командную строку и выполните следующую команду:
 
 ```shell
-curl -X POST https://login.microsoftonline.com/<yourtenantid>/oauth2/token -F "grant_type=client_credentials" -F "client_id=<insert clientId from earlier step>" -F "client_secret=<insert client secret from earlier step>" -F "resource=https://monitoring.azure.com/"
+curl -X POST https://login.partner.microsoftonline.cn/<yourtenantid>/oauth2/token -F "grant_type=client_credentials" -F "client_id=<insert clientId from earlier step> " -F "client_secret=<insert client secret from earlier step>" -F "resource=https://monitoring.azure.com/"
 ```
 Сохраните маркер доступа из ответа
 
@@ -77,7 +77,7 @@ curl -X POST https://login.microsoftonline.com/<yourtenantid>/oauth2/token -F "g
     } 
     ``` 
 
-1. В окне командной строки опубликуйте данные метрики: 
+2. В окне командной строки опубликуйте данные метрики: 
    - **azureRegion.** Регион Azure, в котором развернут ресурс, для которого генерируются метрики. 
    - **resourceID.**  Идентификатор ресурса Azure, по которому вы отслеживаете метрику.  
    - **AccessToken.** Вставьте сюда маркер, полученный ранее.
@@ -85,8 +85,8 @@ curl -X POST https://login.microsoftonline.com/<yourtenantid>/oauth2/token -F "g
      ```Shell 
      curl -X POST https://<azureRegion>.monitoring.azure.com/<resourceId>/metrics -H "Content-Type: application/json" -H "Authorization: Bearer <AccessToken>" -d @custommetric.json 
      ```
-1. Измените метку времени и значения в JSON-файле. 
-1. Повторите предыдущие два шага несколько раз, чтобы у вас были данные за несколько минут.
+3. Измените метку времени и значения в JSON-файле. 
+4. Повторите предыдущие два шага несколько раз, чтобы у вас были данные за несколько минут.
 
 ## <a name="troubleshooting"></a>Устранение неполадок 
 Если на любом этапе процесса появится сообщение об ошибке, изучите следующие сведения об устранении неполадок:
@@ -119,4 +119,3 @@ curl -X POST https://login.microsoftonline.com/<yourtenantid>/oauth2/token -F "g
  
 ## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](../../azure-monitor/platform/metrics-custom-overview.md).
-

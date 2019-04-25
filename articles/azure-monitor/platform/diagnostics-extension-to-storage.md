@@ -9,11 +9,11 @@ ms.date: 08/01/2016
 ms.author: jeconnoc
 ms.subservice: diagnostic-extension
 ms.openlocfilehash: 23379e9d9bb29efb7fb026260e8245e8eb8a2d71
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54468528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60395073"
 ---
 # <a name="store-and-view-diagnostic-data-in-azure-storage"></a>Хранение и просмотр диагностических данных в хранилище Azure
 Диагностические данные не хранятся долго. Для длительного хранения их необходимо переместить в эмулятор хранения Microsoft Azure или в хранилище Azure. Поместив данные в хранилище, вы можете просматривать их с помощью одного из нескольких доступных средств.
@@ -77,7 +77,7 @@ ms.locfileid: "54468528"
 * [Обозреватель службы хранилища Microsoft Azure](../../vs-azure-tools-storage-manage-with-storage-explorer.md) — это автономное приложение, которое упрощает работу с данными из службы хранилища Azure на платформе Windows, OSX и Linux.
 * [Azure Management Studio](https://www.cerebrata.com/products/azure-management-studio/introduction) содержит диспетчер диагностики Azure, который позволяет просматривать и скачивать данные диагностики, которые собирают выполняемые в Azure приложения, а также управлять этими данными.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Трассировка потока в приложении облачных служб с помощью системы диагностики Azure](../../cloud-services/cloud-services-dotnet-diagnostics-trace-flow.md)
 
 

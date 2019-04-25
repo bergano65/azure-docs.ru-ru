@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: v-sharos
-ms.openlocfilehash: 48f439a566a8067e153aab4fb789937d2f91268d
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: be761f0a2e59878139ae54dba62634a53b172711
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23109972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60303032"
 ---
 # <a name="use-the-mmc-menu-actions-in-storsimple-snapshot-manager"></a>Использование действий меню MMC в диспетчере моментальных снимков StorSimple
 
@@ -98,7 +98,7 @@ ms.locfileid: "23109972"
 1. Щелкните соответствующий значок на рабочем столе, чтобы запустить диспетчер моментальных снимков StorSimple.
 2. На панели **Область** щелкните правой кнопкой мыши любой узел либо разверните узел и щелкните правой кнопкой мыши элемент на панели **Результаты**, а затем щелкните **Справка**. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [пользовательском интерфейсе диспетчера моментальных снимков StorSimple](storsimple-use-snapshot-manager.md).
 * Узнайте больше об [использовании диспетчера моментальных снимков StorSimple для администрирования решения StorSimple](storsimple-snapshot-manager-admin.md).
 

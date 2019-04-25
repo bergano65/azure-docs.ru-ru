@@ -2,17 +2,18 @@
 title: Рекомендации для разработчиков. Обеспечение безопасности групп pod в Службе контейнеров Azure (AKS)
 description: Рекомендации для разработчиков по защите групп pod в службе контейнеров Azure (AKS)
 services: container-service
-author: zr-msft
+author: rockboyfor
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 12/06/2018
-ms.author: zarhoads
+origin.date: 12/06/2018
+ms.date: 04/08/2019
+ms.author: v-yeche
 ms.openlocfilehash: 1c2c5cbee91ddaee5f1f6af8ec17c48326f68e84
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58755054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60466890"
 ---
 # <a name="best-practices-for-pod-security-in-azure-kubernetes-service-aks"></a>Рекомендации по защите групп pod в Службе контейнеров Azure (AKS)
 
@@ -53,7 +54,7 @@ metadata:
 spec:
   containers:
     - name: security-context-demo
-      image: nginx:1.15.5
+      image: dockerhub.azk8s.cn/nginx:1.15.5
     securityContext:
       runAsUser: 1000
       fsGroup: 2000

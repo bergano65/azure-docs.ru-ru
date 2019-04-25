@@ -16,11 +16,11 @@ ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 49b93cb7852692e4dad65fcbd72cd749db1b16fb
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58540913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60350581"
 ---
 # <a name="risky-ip-report-public-preview"></a>Рискованные IP-адрес отчета (Предварительная версия)
 Клиенты AD FS могут предоставлять конечные точки проверки пароля в Интернете, чтобы предоставлять службы проверки подлинности пользователям для получения доступа к приложениям SaaS, таким как Office 365. В этом случае вредоносный субъект может попытаться выполнить вход в систему AD FS, чтобы угадать пароль пользователя и получить доступ к ресурсам приложения. AD FS предоставляют функцию блокировки учетной записи экстрасети для предотвращения этих типов атак, начиная с AD FS в Windows Server 2012 R2. Если используется более ранняя версия, настоятельно рекомендуется обновить систему AD FS до Windows Server 2016. <br />

@@ -16,11 +16,11 @@ ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: abed56ee64cbca8646c1aa1d24fea292aa4d8de3
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56201828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60245418"
 ---
 # <a name="monitor-azure-ad-connect-sync-with-azure-ad-connect-health"></a>Мониторинг синхронизации Azure AD Connect с помощью Azure AD Connect Health
 Приведенная ниже документация относится к мониторингу синхронизации Azure AD Connect с помощью Azure AD Connect Health.  Сведения о мониторинге AD FS с помощью Azure AD Connect Health см. в [этой статье](how-to-connect-health-adfs.md). Кроме того, сведения о мониторинге доменных служб Active Directory с помощью Azure AD Connect Health можно найти [здесь](how-to-connect-health-adds.md).
@@ -80,7 +80,7 @@ ms.locfileid: "56201828"
 ### <a name="categorization-of-errors"></a>Классификация ошибок
 Имеющиеся ошибки синхронизации группируются в отчете по следующим категориям.
 
-| Категория | ОПИСАНИЕ |
+| Category | ОПИСАНИЕ |
 | --- | --- |
 | Повторяющийся атрибут |Ошибки при попытках Azure AD Connect создать или обновить объекты с повторяющимися значениями одного или нескольких атрибутов в Azure AD, которые должны быть уникальными в клиенте, такие как proxyAddresses, UserPrincipalName. |
 | Несоответствие данных |Ошибки синхронизации, возникшие в результате сбоя мягкого сопоставления объектов. |

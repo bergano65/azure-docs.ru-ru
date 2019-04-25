@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 3/12/2018
 ms.author: dukek
-ms.subservice: alerts
+ms.component: alerts
 ms.openlocfilehash: 11fd6a2c58671cc5d0bcf0593239eb9e62aca834
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58109497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60346654"
 ---
 # <a name="rate-limiting-for-voice-sms-emails-azure-app-push-notifications-and-webhook-posts"></a>Ограничение частоты отправки для голосовых сообщений, SMS-сообщений, сообщений электронной почты, push-уведомлений приложений Azure и записей веб-перехватчиков
 Ограничение частоты означает приостановку уведомлений, которые слишком часто отправляются на указанный номер телефона, адрес электронной почты или устройство. Ограничение скорости гарантирует управляемость и действенность оповещений.
@@ -35,4 +35,3 @@ ms.locfileid: "58109497"
 * Дополнительные сведения о поведении SMS-оповещений в группе действий см. в [этой статье](alerts-sms-behavior.md).
 * Изучите [обзор оповещений журнала действий](alerts-overview.md) и узнайте, как получать оповещения.  
 * Узнайте, как [настроить оповещения при поступлении уведомлений о работоспособности службы](../../azure-monitor/platform/alerts-activity-log-service-notifications.md).
-

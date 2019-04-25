@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: v-sharos
-ms.openlocfilehash: 03e306b62250f2bb033cc14e856a59760b5406c3
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: c34ff487f03d90b16b6660fbad77c3a16699e165
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23109862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60303491"
 ---
 # <a name="use-storsimple-snapshot-manager-to-view-and-manage-backup-jobs"></a>Просмотр заданий архивации и управление ими с помощью диспетчера моментальных снимков StorSimple
 
@@ -84,7 +84,7 @@ ms.locfileid: "23109862"
      ![Выполняющиеся задания](./media/storsimple-snapshot-manager-manage-backup-jobs/HCS_SSM_Jobs_running.png)
 3. Чтобы выполнить дополнительные действия для конкретного задания, щелкните правой кнопкой мыши имя задания на панели **Результаты** и выберите необходимые параметры меню.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [использовать диспетчер моментальных снимков StorSimple для администрирования решения StorSimple](storsimple-snapshot-manager-admin.md).
 * Узнайте об [использовании диспетчера моментальных снимков StorSimple для управления каталогом резервных копий](storsimple-snapshot-manager-manage-backup-catalog.md).
 

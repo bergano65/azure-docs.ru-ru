@@ -16,11 +16,11 @@ ms.date: 07/12/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 22c136225e5a8526afd482e5ef8400198947422f
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56199691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60264240"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kanbanize"></a>Руководство по интеграции Azure Active Directory с Kanbanize
 
@@ -34,7 +34,7 @@ ms.locfileid: "56199691"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Kanbanize, вам потребуется:
 
@@ -110,11 +110,11 @@ ms.locfileid: "56199691"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.kanbanize.com/`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.kanbanize.com/saml/acs`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.kanbanize.com/saml/acs`.
 
     c. Установите флажок **Показать дополнительные параметры URL-адресов**,
 
-    4.3.  В текстовом поле **Состояние ретрансляции** введите такой URL-адрес: `/ctrl_login/saml_login`
+    d.  В текстовом поле **Состояние ретрансляции** введите такой URL-адрес: `/ctrl_login/saml_login`
 
     д. Если вы хотите настроить приложение в режиме, инициированном **поставщиком услуг**, тогда в текстовом поле **URL-адрес входа** введите URL-адрес, используя следующий шаблон: `https://<subdomain>.kanbanize.com`
      
@@ -157,11 +157,11 @@ ms.locfileid: "56199691"
 
     a. В текстовое поле **IDP Entity ID** (Идентификатор сущности IdP) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
-    б) В текстовое поле **IdP Login Endpoint** (Конечная точка входа IdP) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    2. В текстовое поле **IdP Login Endpoint** (Конечная точка входа IdP) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. В текстовое поле **IdP Logout Endpoint** (Конечная точка выхода IdP) вставьте значение **Sign-Out URL** (URL-адрес выхода), скопированное на портале Azure.
 
-    4.3. В поле **Attribute name for Email** (Имя атрибута для электронной почты) введите это значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    d. В поле **Attribute name for Email** (Имя атрибута для электронной почты) введите это значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
     д. В поле **Attribute name for First Name** (Имя атрибута для имени) введите это значение: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
 
@@ -205,7 +205,7 @@ ms.locfileid: "56199691"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-kanbanize-test-user"></a>Создание тестового пользователя Kanbanize
 

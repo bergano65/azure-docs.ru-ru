@@ -2,18 +2,19 @@
 title: Моделирование отношений в структуре таблиц службы хранилища Azure | Документация Майкрософт
 description: Сведения о процессе моделирования при разработке решения хранилища таблиц.
 services: storage
-author: MarkMcGeeAtAquent
+author: WenJason
 ms.service: storage
 ms.topic: article
-ms.date: 04/23/2018
-ms.author: sngun
+origin.date: 04/23/2018
+ms.date: 02/25/2019
+ms.author: v-jay
 ms.subservice: tables
 ms.openlocfilehash: 5d83e61282d2f21a3016997e324d0f58eff15e78
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55813013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60502542"
 ---
 # <a name="modeling-relationships"></a>Моделирование отношений
 В этой статье рассматривается процесс моделирования при разработке решений хранилища таблиц Azure.
@@ -120,7 +121,7 @@ ms.locfileid: "55813013"
 Дополнительные сведения о работе с несколькими типами сущностей в одной таблице в клиентском коде см. в разделе "Работа с разными типами сущностей" в этом руководстве. Там приводятся примеры определения типа сущности в клиентском коде.  
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Шаблоны для разработки таблиц](table-storage-design-patterns.md)
 - [Разработка для запросов](table-storage-design-for-query.md)

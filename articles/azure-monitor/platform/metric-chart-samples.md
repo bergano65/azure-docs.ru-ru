@@ -9,11 +9,11 @@ ms.date: 01/29/2019
 ms.author: vitalyg
 ms.subservice: metrics
 ms.openlocfilehash: bbfeb428d38c23955df4497242184499349aecf9
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55302985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60256715"
 ---
 # <a name="metric-chart-samples"></a>Примеры диаграмм метрик
 
@@ -51,7 +51,7 @@ ms.locfileid: "55302985"
 
 Во время выбора метрики необходимо выбрать учетную запись хранения и метрику **Транзакции**. Измените тип диаграммы на **Линейчатая диаграмма**. Щелкните **Apply splitting** (Применить разделение) и выберите **API-имя** измерения. После этого щелкните **Добавить фильтр** и еще раз выберите измерение **API-имя**. В диалоговом окне фильтра выберите API, которые необходимо отобразить на диаграмме.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о Azure Monitor см. в статье [Создание интерактивных отчетов с книгами Azure Monitor](../../azure-monitor/app/usage-workbooks.md).
 * Ознакомьтесь со статьей [Обозреватель метрик Azure Monitor](metrics-charts.md).

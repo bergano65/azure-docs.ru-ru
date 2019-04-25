@@ -10,11 +10,11 @@ ms.date: 03/13/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: fa7f5d3fb38eb1dbca51dec9b73dca3c998436aa
-ms.sourcegitcommit: b8f9200112cae265155b8877f7e1621c4bcc53fc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57905360"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60500401"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Управление модули в службе автоматизации Azure
 
@@ -55,7 +55,7 @@ New-AzureRmAutomationModule -Name <ModuleName> -ContentLinkUri <ModuleUri> -Reso
 
 Ниже приведен список командлетов во внутреннем `Orchestrator.AssetManagement.Cmdlets` модуль, который импортируется в каждой учетной записи службы автоматизации. Эти командлеты доступны в модулях Runbook и конфигурациях DSC и позволяют взаимодействовать с ресурсами в учетной записи службы автоматизации. Кроме того, внутренняя командлеты, которые позволяют получать секреты из зашифрованы **переменной** значения, **учетные данные**и зашифрованные **подключения** поля. Командлеты Azure PowerShell не удалось извлечь эти секреты. Эти командлеты не требуется явно подключиться к Azure, при их использовании. Это полезно для сценариев, где имеется подключение, например Run As Account, необходимо использовать для проверки подлинности в Azure.
 
-|ИМЯ|ОПИСАНИЕ|
+|Name|ОПИСАНИЕ|
 |---|---|
 |Get-AutomationCertificate|`Get-AutomationCertificate [-Name] <string> [<CommonParameters>]`|
 |Get-AutomationConnection|`Get-AutomationConnection [-Name] <string> [-DoNotDecrypt] [<CommonParameters>]` |

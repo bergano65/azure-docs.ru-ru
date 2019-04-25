@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: rajanaki
-ms.openlocfilehash: a3d6f84de103596e27c22cbb11d709bb1a85dc91
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
-ms.translationtype: HT
+ms.openlocfilehash: ea6d969ed6612f947e3c73c438738bd98ac2bb30
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52836854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60362277"
 ---
 # <a name="add-a-vmm-script-to-a-recovery-plan"></a>Добавление скрипта VMM в план восстановления
 
@@ -20,7 +20,7 @@ ms.locfileid: "52836854"
 
 Комментарии или вопросы можно добавить в конце этой статьи или на [форуме по службам восстановления Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 В планах восстановления можно использовать скрипты PowerShell. Чтобы он был доступен в плане восстановления, этот скрипт необходимо создать и поместить в библиотеку VMM. При создании скрипта необходимо учитывать следующее.
 
@@ -51,7 +51,7 @@ ms.locfileid: "52836854"
 
      a. Откройте консоль **PowerShell 64-разрядной версии Windows** с правами администратора.
      
-     b. Введите **Set-executionpolicy bypass**. Дополнительные сведения см. в статье [Библиотека технической информации для Windows Server](https://technet.microsoft.com/library/ee176961.aspx).
+     2. Введите **Set-executionpolicy bypass**. Дополнительные сведения см. в статье [Библиотека технической информации для Windows Server](https://technet.microsoft.com/library/ee176961.aspx).
 
      > [!IMPORTANT]
      > Задайте командлет **Set-executionpolicy bypass** только для 64-разрядной консоли PowerShell. Если задать его для 32-разрядной консоли PowerShell, скрипты не выполняются.
@@ -76,6 +76,6 @@ ms.locfileid: "52836854"
 1. Чтобы убедиться в исправной работе скрипта, выполните тестовую отработку отказа плана восстановления.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Дополнительные сведения](site-recovery-failover.md) о выполнении отработки отказа.
 

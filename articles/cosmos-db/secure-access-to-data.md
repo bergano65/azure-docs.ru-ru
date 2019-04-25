@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 08/19/2018
 ms.author: rimman
 ms.openlocfilehash: 133181fcc76d759a57725df1ff965966f3797399
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60446522"
 ---
 # <a name="secure-access-to-data-in-azure-cosmos-db"></a>Защита доступа к данным в Azure Cosmos DB
 
@@ -192,6 +192,6 @@ Azure Cosmos DB позволяет искать, выбирать, изменя�
 
 [!INCLUDE [GDPR-related guidance](../../includes/gdpr-dsr-and-stp-note.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * См. дополнительные сведения о [безопасности базы данных Cosmos DB](database-security.md).
 * Сведения о создании маркеров проверки подлинности Azure Cosmos DB см. в статье [Access control in the DocumentDB API](https://docs.microsoft.com/rest/api/cosmos-db/access-control-on-cosmosdb-resources) (Управление доступом в API DocumentDB).

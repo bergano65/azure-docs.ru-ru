@@ -14,11 +14,11 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d69bd931f2f8c72fd1e6fc79c16662ea367617d6
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58802020"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60248223"
 ---
 # <a name="restore-or-remove-a-recently-deleted-user-using-azure-active-directory"></a>Восстановление или удаление недавно удаленного пользователя с помощью Azure Active Directory
 После удаления пользователя его учетная запись остается в заблокированном состоянии в течение 30 дней. В течение этого времени учетную запись пользователя и все ее свойства можно восстановить. По истечении 30 дней пользователь удаляется автоматически без возможности восстановления.

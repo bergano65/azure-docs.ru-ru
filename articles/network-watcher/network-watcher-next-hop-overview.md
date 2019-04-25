@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
 ms.openlocfilehash: 40f1790806aac6756979f28ad29442b7abf96019
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55096897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60532297"
 ---
 # <a name="use-next-hop-to-diagnose-virtual-machine-routing-problems"></a>Используйте следующий прыжок для диагностики проблем маршрутизации виртуальной машины
 
@@ -40,6 +40,6 @@ ms.locfileid: "55096897"
 
 Дополнительные сведения о каждом типе следующего прыжка см. в [этой статье](../virtual-network/virtual-networks-udr-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы научиться использовать следующий прыжок для диагностики проблем маршрутизации сети виртуальных машин, ознакомьтесь с диагностикой проблем с маршрутизацией в сети виртуальной машины с помощью [портала Azure](diagnose-vm-network-routing-problem.md), [PowerShell](diagnose-vm-network-routing-problem-powershell.md) или [Azure CLI](diagnose-vm-network-routing-problem-cli.md).

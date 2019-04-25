@@ -15,11 +15,11 @@ ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 090a066afb24c4776f9844b8850264ffad842c59
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56187056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60350154"
 ---
 # <a name="azure-active-directory-connect-health-operations"></a>Операции Azure Active Directory Connect Health
 В этой статье описаны различные операции, которые можно выполнить с помощью Azure Active Directory (Azure AD) Connect Health.
@@ -105,7 +105,7 @@ Azure AD Connect Health поддерживает следующие встрое
 | Роль | Разрешения |
 | --- | --- |
 | Владелец. |Владельцы могут *управлять доступом* (например, назначать роль пользователю или группе), *просматривать все сведения* (например, предупреждения) на портале, а также *изменять параметры* (например, параметры отправки уведомлений по электронной почте) в Azure AD Connect Health. <br>По умолчанию данная роль назначается глобальным администраторам Azure AD и не может быть изменена. |
-| участник; |Участники могут *просматривать все сведения* (например, предупреждения) на портале, а также *изменять параметры* (например, параметры отправки уведомлений по электронной почте) в Azure AD Connect Health. |
+| Участник |Участники могут *просматривать все сведения* (например, предупреждения) на портале, а также *изменять параметры* (например, параметры отправки уведомлений по электронной почте) в Azure AD Connect Health. |
 | Читатель |Читатели могут *просматривать все сведения* (например, предупреждения) на портале в Azure AD Connect Health. |
 
 Все остальные роли (например, "Администраторы доступа пользователя" или "Пользователи лаборатории для разработки и тестирования") никакого влияния на доступ в Azure AD Connect Health не оказывают, даже если они доступны на портале.
@@ -159,7 +159,7 @@ Azure AD Connect Health поддерживает управление досту
 
 [//]: # (Конец раздела RBAC)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Azure AD Connect Health](whatis-hybrid-identity-health.md)
 * [Установка агента Azure AD Connect Health](how-to-connect-health-agent-install.md)
 * [Использование Azure AD Connect Health с AD FS](how-to-connect-health-adfs.md)

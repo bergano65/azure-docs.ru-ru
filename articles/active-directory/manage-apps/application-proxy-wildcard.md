@@ -17,11 +17,11 @@ ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5fb57052cc550a659dcd8a514fbb71ad0f7d8df5
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56192410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60442493"
 ---
 # <a name="wildcard-applications-in-the-azure-active-directory-application-proxy"></a>Приложения с подстановочным знаком в прокси приложения Azure Active Directory 
 
@@ -53,7 +53,7 @@ ms.locfileid: "56192410"
 При создании приложения с подстановочным знаком используется тот же [процесс публикации приложения](application-proxy-add-on-premises-application.md), что и для всех других приложений. Единственное отличие заключается в добавлении подстановочного знака в URL-адреса и, возможно, настройке единого входа.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 ### <a name="custom-domains"></a>Личные домены
 
@@ -210,7 +210,7 @@ ms.locfileid: "56192410"
 Если вы опубликовали несколько приложений для финансового отдела и используете проверенный домен `finance.adventure-works.com`, то можно опубликовать другое приложение с подстановочным знаком `*.finance.adventure-works.com`. Так как оно определено точнее, чем общее приложение `*.adventure-works.com`, оно имеет более высокий приоритет в случае, когда пользователь обращается к приложению в домене finance.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь также с информацией по смежным темам:
 

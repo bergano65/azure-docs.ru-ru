@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: v-jysur
 ms.openlocfilehash: abbd26779cefaf52c6f2247a5d27db25f280c930
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58118056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60395871"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
@@ -192,14 +192,14 @@ ServiceDeskWorkItemType_s="Incident"
 - Closed By (Кем закрыто);
 - Источник
 - Кому назначено
-- Категория
+- Category
 - Название
 - ОПИСАНИЕ
 - "Дата создания";
 - Closed Date (Дата закрытия);
 - Resolved Date (Дата разрешения);
 - "Дата последнего изменения";
-- Компьютер
+- Computer
 
 
 **Рабочий элемент:** **Запросы на изменение**
@@ -215,7 +215,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 - Кому назначено
 - Название
 - type
-- Категория
+- Category
 - Состояние
 - Escalation (Эскалация);
 - Conflict Status (Состояние конфликта);
@@ -233,7 +233,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 - Work Start Date (Дата начала работы);
 - Work End Date (Дата окончания работы);
 - ОПИСАНИЕ
-- Компьютер
+- Computer
 
 ## <a name="output-data-for-a-servicenow-incident"></a>Выходные данные инцидента ServiceNow
 
@@ -249,13 +249,13 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | ClosedBy_s  | Closed By (Кем закрыто) |
 | Source_s| Contact type (Тип контакта) |
 | AssignedTo_s | Кому назначено  |
-| Category_s | Категория |
+| Category_s | Category |
 | Title_s|  Краткое описание |
 | Description_s|  Примечания |
 | CreatedDate_t|  Opened (Открыто) |
 | ClosedDate_t| closed|
 | ResolvedDate_t|"Разрешено"|
-| Компьютер  | Элемент конфигурации |
+| Computer  | Элемент конфигурации |
 
 ## <a name="output-data-for-a-servicenow-change-request"></a>Выходные данные запроса на изменение ServiceNow
 
@@ -267,7 +267,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | AssignedTo_s | Кому назначено  |
 | Title_s|  Краткое описание |
 | Type_s|  type |
-| Category_s|  Категория |
+| Category_s|  Category |
 | CRState_s|  Состояние|
 | Urgency_s|  "Срочность"; |
 | Priority_s| Приоритет|
@@ -280,7 +280,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | WorkStartDate_t  | Actual start date (Фактическая дата начала) |
 | WorkEndDate_t | Actual end date (Фактическая дата окончания)|
 | Description_s | ОПИСАНИЕ |
-| Компьютер  | Элемент конфигурации |
+| Computer  | Элемент конфигурации |
 
 
 ## <a name="troubleshoot-itsm-connections"></a>Устранение неполадок с подключениями ITSM

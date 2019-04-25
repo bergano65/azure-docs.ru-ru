@@ -14,11 +14,11 @@ ms.custom: it-pro, seodec18
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3dafdf4c67e8d3d74109b3879fb0deacd79b1774
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56182244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60249091"
 ---
 # <a name="add-or-remove-group-members-using-azure-active-directory"></a>Добавление или удаление членов группы с помощью Azure Active Directory
 С помощью Azure Active Directory можно добавлять и удалять участников группы.
@@ -53,7 +53,7 @@ ms.locfileid: "56182244"
 
     ![Страница сведений об участниках с параметром "Удалить"](media/active-directory-groups-members-azure-portal/remove-members-from-group.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Просмотр групп и участников](active-directory-groups-view-azure-portal.md)
 

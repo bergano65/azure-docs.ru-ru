@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: bwren
 ms.openlocfilehash: 8fcab1ead4ab6135e715dc173829178e43f8af2a
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59522716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60236902"
 ---
 # <a name="windows-event-log-data-sources-in-azure-monitor"></a>Источники данных для журнала событий Windows в Azure Monitor
 Журналы событий Windows — это один из самых распространенных [источников данных](agent-data-sources.md), используемый для сбора данных агентами Windows, так как он применяется большинством приложений для записи сведений.  События можно собирать из стандартных журналов, таких как журналы системы и приложений, а также указывать пользовательские журналы приложений, которые необходимо отслеживать.
@@ -46,7 +46,7 @@ Azure Monitor собирает события только из журналов
 
 | Свойство | ОПИСАНИЕ |
 |:--- |:--- |
-| Компьютер |Имя компьютера, с которого было получено событие. |
+| Computer |Имя компьютера, с которого было получено событие. |
 | EventCategory |Категория события. |
 | EventData |Все данные событий в формате RAW. |
 | EventID |Номер события. |

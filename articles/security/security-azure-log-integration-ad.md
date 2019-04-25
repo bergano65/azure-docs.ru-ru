@@ -15,12 +15,12 @@ ums.workload: na
 ms.date: 01/14/2019
 ms.author: barclayn
 ms.custom: azlog
-ms.openlocfilehash: 473f9db7eb507fa910657696590bb656a8aff52f
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.openlocfilehash: db065c78008e47326155e9e2b3a0f65031ec4cd9
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56109883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60478435"
 ---
 # <a name="integrate-azure-active-directory-audit-logs"></a>Интеграция журналов аудита Azure Active Directory
 
@@ -70,7 +70,7 @@ ms.locfileid: "56109883"
 
 Можно также отправить [запрос в службу поддержки](../azure-supportability/how-to-create-azure-support-request.md). Выберите **Интеграция с журналом** в качестве службы, в которую необходимо отправить запрос поддержки.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы узнать больше об интеграции журналов Azure, ознакомьтесь со следующей информацией:
 
 * [Microsoft Azure Log Integration for Azure logs](https://www.microsoft.com/download/details.aspx?id=53324) (Служба "Интеграция журналов данных Microsoft Azure"). На этой странице Центра загрузки можно получить дополнительные сведения, изучить требования к системе и получить инструкции по установке службы "Интеграция журналов Azure".

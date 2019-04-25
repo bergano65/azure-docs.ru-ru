@@ -13,18 +13,18 @@ ms.author: celested
 ms.reviewer: arvindh
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d35f8b440fe748f91c9e01003fe83a3a5343c8df
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56203732"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60291591"
 ---
 # <a name="configure-the-way-end-users-consent-to-an-application-in-azure-active-directory"></a>Настройка методов получения согласия пользователей для приложения в Azure Active Directory
 Сведения о том, как настроить метод для получения согласия пользователя на разрешения приложения. Взаимодействие с пользователем можно упростить, предоставив согласие администратора. В этой статье приводятся различные способы, позволяющие настроить согласие пользователя. Эти методы применяются для всех пользователей в клиенте Azure Active Directory (AAD). 
 
 Дополнительные сведения о предоставлении согласия для приложений см. в статье [Платформа предоставления согласия Azure Active Directory](../develop/consent-framework.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы предоставить согласие администратора, следует войти от имени глобального администратора, администратора приложения или администратора облачных приложений.
 
@@ -70,7 +70,7 @@ ms.locfileid: "56203732"
 
 Вы можете потребовать, чтобы пользователи предоставляли согласие для приложения при каждом входе, добавив строку `&prompt=consent` к URL-адресу запроса проверки подлинности.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Согласие и интеграция приложений с Azure Active Directory](../develop/quickstart-v1-integrate-apps-with-azure-ad.md)
 

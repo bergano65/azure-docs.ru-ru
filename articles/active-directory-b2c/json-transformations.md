@@ -3,7 +3,7 @@ title: Примеры преобразования утверждений JSON �
 description: Примеры преобразования утверждений JSON для схемы инфраструктуры процедур идентификации Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
@@ -11,11 +11,11 @@ ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
 ms.openlocfilehash: 88d447f86dd54fc9479a6d7d2006b9a8639ad09e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58089239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60396854"
 ---
 # <a name="json-claims-transformations"></a>Преобразования утверждений JSON
 
@@ -191,7 +191,7 @@ ms.locfileid: "58089239"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | xml | строка | Параметр ClaimTypes, используемый в преобразовании утверждений для преобразования данных из языка XML в формат JSON. |
+| InputClaim | Xml | строка | Параметр ClaimTypes, используемый в преобразовании утверждений для преобразования данных из языка XML в формат JSON. |
 | outputClaim | json | строка | ClaimType, который создается после вызова ClaimsTransformation (данные в формате JSON). |
 
 ```XML

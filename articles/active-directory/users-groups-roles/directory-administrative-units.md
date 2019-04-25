@@ -16,11 +16,11 @@ ms.reviewer: elkuzmen
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 77f1a6e5b1e8191c1497e437cc26e1caf1255ba7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56210362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60472373"
 ---
 # <a name="administrative-units-management-in-azure-active-directory-public-preview"></a>Управление административными единицами в Azure Active Directory (общедоступная предварительная версия)
 
@@ -40,5 +40,5 @@ ms.locfileid: "56210362"
 
 Дополнительные сведения о требованиях к программному обеспечению и установке модуля Azure AD, а также информацию о командлетах управления административными единицами через модуль Azure AD, включая синтаксис, описание параметров и примеры, см. в разделе [Управление Azure AD с помощью Windows PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-2.0).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Выпуски Azure Active Directory](../fundamentals/active-directory-whatis.md)

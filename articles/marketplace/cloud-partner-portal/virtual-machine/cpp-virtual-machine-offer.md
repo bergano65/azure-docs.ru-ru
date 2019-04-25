@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 12/04/2018
 ms.author: pbutlerm
 ms.openlocfilehash: bbe757ccd1d6a37cbcf04f3ecd6dd088ef1ff211
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54353028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60343140"
 ---
 # <a name="virtual-machine-offer"></a>Предложение виртуальной машины
 
@@ -49,6 +49,6 @@ ms.locfileid: "54353028"
  
 4. Сертификация и публикация предложения. Оформив предложение и выполнив технические требования, вы можете отправить предложение на публикацию. После отправки начнется процесс публикации, в ходе которого решение тестируется, проверяется, сертифицируется и активируется на Marketplace.  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Прежде чем следовать этим действиям, необходимо выполнить [технические и бизнес-требования](./cpp-prerequisites.md) для публикации виртуальной машины в Microsoft Azure Marketplace. 

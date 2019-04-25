@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 543c1a6706f794b81c4f93fc6fff3a61ed3fb9e3
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56171831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60246330"
 ---
 # <a name="azure-ad-connect-sync-understanding-declarative-provisioning"></a>Синхронизация Azure AD Connect: Общие сведения о декларативной подготовке
 В этой статье объясняется используемая в Azure AD Connect модель конфигурации, именуемая декларативной подготовкой. Она позволяет без труда вносить изменения в конфигурацию. Некоторые сложные аспекты, описанные в этой статье, не предназначены для большинства клиентских сценариев.
@@ -151,7 +151,7 @@ ms.locfileid: "56171831"
 В рамках этого сценария необходимо изменить область правил синхронизации, что, в свою очередь, позволит использовать для объектов источника разные правила синхронизации. Таким образом, можно определить другие значения приоритета.  
 ![Несколько объектов, присоединенных к одному объекту метавселенной](./media/concept-azure-ad-connect-sync-declarative-provisioning/multiple2.png)  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о языке выражений см. в статье [Служба синхронизации Azure AD Connect: общие сведения о выражениях декларативной подготовки](concept-azure-ad-connect-sync-declarative-provisioning-expressions.md).
 * Примеры стандартного использования декларативной подготовки см. в статье [Службы синхронизации Azure AD Connect: рекомендации по изменению конфигурации по умолчанию](concept-azure-ad-connect-sync-default-configuration.md).
 * Инструкции по практическим изменениям с помощью декларативной подготовки см. в статье [Службы синхронизации Azure AD Connect: изменение конфигурации по умолчанию](how-to-connect-sync-change-the-configuration.md).

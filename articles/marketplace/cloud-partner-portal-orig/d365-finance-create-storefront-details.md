@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 09/17/2018
 ms.author: pbutlerm
 ms.openlocfilehash: f69a7f9ca94c0a83098300f01e9413b342bd4ae8
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49389385"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60397963"
 ---
 <a name="how-to-fill-out-the-storefront-details-form"></a>Инструкции по заполнению формы для сведений об онлайн-магазине
 ===========================================
@@ -42,7 +42,7 @@ ms.locfileid: "49389385"
 
 Выберите отрасли, к которым лучше всего подходит ваше приложение. Если приложение относится к нескольким отраслям, оставьте это поле пустым.
 
-### <a name="categories"></a>Категории
+### <a name="categories"></a>Categories
 
 Выберите категории, относящиеся к вашему приложению. Выберите хотя бы одну категорию, но не более трех. Выбирайте тщательно, так как клиенты могут проводить поиск в AppSource на основе категорий.
 
@@ -119,7 +119,7 @@ ms.locfileid: "49389385"
 
 ### <a name="lead-destination"></a>Назначения потенциального клиента
 
-Выберите систему CRM, где будут храниться сведения о потенциальных клиентах. В этом разделе выберите \"Azure Table\" (Таблица Azure), если вы пользуетесь одной из следующих систем CRM: Salesforce, Marketo, Microsoft Dynamics CRM. В выбранной вами системе CRM мы будем записывать сведения о пользователях, которые тестируют ваше приложение в AppSource (потенциальные клиенты). В зависимости от выбранной системы CRM щелкните соответствующий URL-адрес ниже, чтобы узнать, как заполнить следующий набор полей.
+Выберите систему CRM, где будут храниться сведения о потенциальных клиентах. Выберите \"таблиц Azure\" здесь, если у вас один из следующих систем CRM: Salesforce, Marketo, Microsoft Dynamics CRM. В выбранной вами системе CRM мы будем записывать сведения о пользователях, которые тестируют ваше приложение в AppSource (потенциальные клиенты). В зависимости от выбранной системы CRM щелкните соответствующий URL-адрес ниже, чтобы узнать, как заполнить следующий набор полей.
 
 -   [Таблица Azure](./cloud-partner-portal-lead-management-instructions-azure-table.md)
 -   [Marketo](./cloud-partner-portal-lead-management-instructions-marketo.md)

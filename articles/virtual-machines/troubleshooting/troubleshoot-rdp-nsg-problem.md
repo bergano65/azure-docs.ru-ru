@@ -14,11 +14,11 @@ ms.workload: infrastructure
 ms.date: 11/20/2018
 ms.author: genli
 ms.openlocfilehash: c32612c411f275220f549eea79276fa5a7232fd0
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52954618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60318941"
 ---
 #  <a name="cannot-connect-remotely-to-a-vm-because-rdp-port-is-not-enabled-in-nsg"></a>Ошибка удаленного подключения к виртуальной машине из-за отключенного порта RDP в NSG
 
@@ -58,7 +58,7 @@ ms.locfileid: "52954618"
 > [!NOTE]
 > RDP-порт 3389 доступен через Интернет. Поэтому мы рекомендуем использовать этот порт только для тестирования. Для рабочих сред мы рекомендуем использовать VPN или частное подключение.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если порт RDP уже включен в NSG, ознакомьтесь со статьей [Устранение общей ошибки RDP на виртуальной машине Azure](./troubleshoot-rdp-general-error.md).
 

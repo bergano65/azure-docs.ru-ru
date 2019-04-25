@@ -13,11 +13,11 @@ ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ea9e4ae21ecc6538b33aed1566c10ddcd22b86c7
-ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57341040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60482276"
 ---
 # <a name="set-up-security-info-preview-to-use-text-messaging"></a>Настройка использования обмена текстовыми сообщениями в сведениях для защиты (предварительная версия)
 Ниже приведены инструкции по добавлению двухфакторной проверки подлинности и описаны способы сброса пароля. После первоначальной настройки вы можете вернуться к странице **Сведения для защиты**, чтобы добавить, обновить или удалить сведения для защиты.

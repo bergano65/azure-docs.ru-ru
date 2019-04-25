@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: diberry
 ms.openlocfilehash: d546951cf283cf15874b1b6d95da75549a8a93ac
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55884942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60496872"
 ---
 # <a name="add-luis-results-to-application-insights-with-a-bot-in-c"></a>Добавление результатов LUIS в Application Insights с помощью бота на C#
 
@@ -31,7 +31,7 @@ ms.locfileid: "55884942"
 > * запись и отправка результатов запроса LUIS в Application Insights;
 > * отправка запроса в Application Insights для получения основных намерений, оценки и фрагментов речи.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Бот веб-приложения LUIS из **[предыдущего руководства](luis-csharp-tutorial-build-bot-framework-sample.md)** с включенным компонентом Application Insights.
 * [Visual Studio 2017](https://www.visualstudio.com/downloads/), локально установленная на компьютере.
@@ -249,7 +249,7 @@ Application Insights позволяет выполнять запросы дан
 
 Дополнительные сведения о [платформе Bot Framework](https://dev.botframework.com/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Другие данные, которые может потребоваться добавить в данные Application Insights, включают идентификатор приложения, идентификатор версии, время последнего изменения модели, дату последнего обучения, дату последней публикации. Эти значения можно получить из URL-адреса конечной точки (идентификатор приложения и идентификатор версии) или из вызова [API разработки](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c3d), задания в параметрах бота веб-приложения и получения из этих параметров.  
 

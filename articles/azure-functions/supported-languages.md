@@ -11,11 +11,11 @@ ms.topic: reference
 ms.date: 08/02/2018
 ms.author: glenga
 ms.openlocfilehash: 5f55122b3bf4bb7160459d524b20dd1303cc0fd8
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52835426"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60325466"
 ---
 # <a name="supported-languages-in-azure-functions"></a>Поддерживаемые языки в решении "Функции Azure"
 
@@ -47,7 +47,7 @@ ms.locfileid: "52835426"
 
 Среда выполнения версии 2.x разработана для обеспечения [расширяемости языка](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Language-Extensibility). Языки JavaScript и Java в среде выполнения 2.x поддерживают эту расширяемость.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведений о том, как в решении "Функции Azure" использовать один из языков, предоставляемых в режиме общедоступной или экспериментальной версии, см. в следующих ресурсах:
 

@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: bwren
 ms.openlocfilehash: 481b643f2f7201a2a1745c7aef9ddd81883da020
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58629272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60498531"
 ---
 # <a name="azure-key-vault-analytics-solution-in-azure-monitor"></a>Решение Azure Key Vault Analytics в Azure Monitor
 
@@ -108,7 +108,7 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 | type |*AzureDiagnostics* |
 | SourceSystem |*Таблицы Azure* |
 | CallerIpAddress |IP-адрес клиента, отправившего запрос. |
-| Категория | *AuditEvent* |
+| Category | *AuditEvent* |
 | CorrelationId |Необязательный GUID, который клиент может передавать для сопоставления журналов на стороне клиента с журналами на стороне службы (хранилища ключей). |
 | DurationMs |Время обслуживания запроса REST API в миллисекундах. Это время не включает в себя задержку сети, поэтому время, зарегистрированное на стороне клиента, может не соответствовать этому значению. |
 | HttpStatusCode_d |Код состояния HTTP, возвращаемый запросом (например, *200*) |
@@ -119,7 +119,7 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 | requestUri_s |URI запроса |
 | Ресурс |Имя хранилища ключей. |
 | ResourceGroup |Группа ресурсов хранилища ключей. |
-| ResourceId |Идентификатор ресурса диспетчера ресурсов Azure. Для журналов хранилища ключей это идентификатор ресурса хранилища ключей. |
+| resourceId |Идентификатор ресурса диспетчера ресурсов Azure. Для журналов хранилища ключей это идентификатор ресурса хранилища ключей. |
 | ResourceProvider |*MICROSOFT.KEYVAULT* |
 | ResourceType | *VAULTS* |
 | ResultSignature |Код состояния HTTP (например, *ОК*) |

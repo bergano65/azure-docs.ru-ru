@@ -14,11 +14,11 @@ ms.reviewer: beengen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2e07c53192ea2c8b792256af944c81c9c909dc55
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58368132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60469684"
 ---
 # <a name="consent-to-linkedin-account-connections-for-an-azure-active-directory-organization"></a>Согласие для подключений к учетной записи LinkedIn для организации Azure Active Directory
 
@@ -59,7 +59,7 @@ ms.locfileid: "58368132"
 4. Создайте объект групповой политики со следующими параметрами: **Конфигурация пользователя** > **Административные шаблоны** > **Microsoft Office 2016** > **Разное** > **Показывать функции LinkedIn в приложениях Office**.
 5. Выберите **Включено** или **Отключено**.
   
-   Состояние | Результат
+   Состояние | Эффект
    ------ | ------
    **Включено** | Параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в Office 2016 включен. Пользователи в вашей организации можно использовать функции LinkedIn в приложениях Office 2016.
    **Disabled** | Параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в Office 2016 отключен, и пользователи не могут изменить это. Пользователи в вашей организации не могут использовать функции LinkedIn в приложениях Office 2016.

@@ -9,11 +9,11 @@ ms.date: 10/20/2018
 ms.author: cherylmc;ganesr
 ms.custom: seodec18
 ms.openlocfilehash: 16f3ad1aa037dca2e7b8c3e68ae952c27b952711
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58103032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60366553"
 ---
 # <a name="create-and-modify-an-expressroute-circuit"></a>Создание и изменение канала ExpressRoute
 
@@ -84,19 +84,19 @@ ms.locfileid: "58103032"
 Вновь созданный канал ExpressRoute будет имеет следующее состояние:
 
 Состояние поставщика: Не подготовлено<BR>
-Состояние канала: Включено
+Состояние канала: Enabled
 
 ![Инициация процесса подготовки](./media/expressroute-howto-circuit-portal-resource-manager/status.png)
 
 Когда поставщик услуг подключения находится в процессе его включения, канал переходит в следующее состояние:
 
 Состояние поставщика: Подготовка<BR>
-Состояние канала: Включено
+Состояние канала: Enabled
 
 Для того чтобы канал ExpressRoute можно было использовать, он должен находиться в следующем состоянии:
 
 Состояние поставщика: Подготовлено<BR>
-Состояние канала: Включено
+Состояние канала: Enabled
 
 ### <a name="5-periodically-check-the-status-and-the-state-of-the-circuit-key"></a>5. Периодическая проверка состояния и статуса ключа канала
 

@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: jingwang
 ms.openlocfilehash: 35ac227bd420b614525d468f2d3332a2a02b5388
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58111095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60390913"
 ---
 # <a name="copy-data-from-azure-database-for-postgresql-using-azure-data-factory"></a>Копирование данных из базы данных Azure для PostgreSQL с помощью фабрики данных Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "58111095"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **AzurePostgreSql**. | Yes |
+| type | Для свойства type необходимо задать значение **AzurePostgreSql**. | Yes |
 | connectionString | Строка подключения к базе данных Azure для PostgreSQL через интерфейс ODBC.<br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `password` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
 
@@ -102,7 +102,7 @@ ms.locfileid: "58111095"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для набора данных необходимо задать значение **AzurePostgreSqlTable**. | Yes |
+| type | Для набора данных необходимо задать значение **AzurePostgreSqlTable**. | Yes |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -131,7 +131,7 @@ ms.locfileid: "58111095"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type источника действия копирования необходимо задать значение **AzurePostgreSqlSource**. | Yes |
+| type | Для свойства type источника действия копирования необходимо задать значение **AzurePostgreSqlSource**. | Yes |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**

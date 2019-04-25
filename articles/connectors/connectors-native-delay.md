@@ -16,11 +16,11 @@ ms.workload: na
 ms.date: 07/18/2016
 ms.author: jehollan
 ms.openlocfilehash: 15e581454b60319ab734f2fa5faf0d90e0a7c8bf
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58893730"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60448035"
 ---
 # <a name="get-started-with-the-delay-and-delay-until-actions"></a>Начало работы с действиями "Задержка" и "Задержка до"
 С помощью действий "Задержка" и "Задержка до" можно выполнять сценарии рабочих процессов.

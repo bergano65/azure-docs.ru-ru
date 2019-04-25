@@ -9,11 +9,11 @@ ms.date: 05/02/2018
 ms.topic: article
 manager: carmonm
 ms.openlocfilehash: ec34ff874eae9bbdd53470f135bcf0c182d5daed
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55983344"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60251061"
 ---
 # <a name="run-scripts-in-your-windows-vm"></a>Запуск сценариев в виртуальной машине Windows
 
@@ -64,7 +64,7 @@ ms.locfileid: "55983344"
 * Войдите в систему с помощью учетной записи локального пользователя.
 * Можно использовать, когда доступ к виртуальной машине необходим независимо от состояния сети или операционной системы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о различных доступных возможностях, для выполнения сценариев и команд в виртуальных машинах.
 

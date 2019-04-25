@@ -10,15 +10,15 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
 ms.openlocfilehash: f372c2a85a9a03c7ead779bd4db64722891c9a4c
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54321574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60201516"
 ---
 # <a name="build-an-iot-solution-by-using-stream-analytics"></a>Создание решения IoT с помощью Stream Analytics
 
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Общие сведения
 В этой статье содержатся инструкции по анализу данных в режиме реального времени с использованием Azure Stream Analytics. Разработчики могут легко объединять потоки данных, такие как сведения о посещении, данные журналов и созданные устройствами события, с историческими записями или справочными данными для получения бизнес-информации. Являясь полностью управляемой службой потоковой обработки в режиме реального времени, которая размещена на платформе Microsoft Azure, Azure Stream Analytics обеспечивает высокую надежность, малую задержку и масштабируемую обработку, что помогает приступить к работе за считаные минуты.
 
 Завершив работу с этой статьей, вы сможете выполнить следующие задачи:
@@ -29,7 +29,7 @@ ms.locfileid: "54321574"
 * Уверенно разрабатывать решения потоковой передачи для клиентов с помощью Stream Analytics.
 * Использовать процедуры мониторинга и ведения журнала для устранения неполадок.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для создания описанного здесь решения вам потребуется:
 *  [Подписка Azure](https://azure.microsoft.com/pricing/free-trial/)
 

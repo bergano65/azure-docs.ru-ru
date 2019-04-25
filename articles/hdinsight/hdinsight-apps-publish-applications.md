@@ -1,7 +1,6 @@
 ---
 title: Публикация приложений Azure HDInsight
 description: Узнайте, как создать приложение HDInsight, а затем опубликовать его в Azure Marketplace.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -10,11 +9,11 @@ ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: hrasheed
 ms.openlocfilehash: fd6d47d8300872f5bcdf36aec492289f93858504
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55814211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60253507"
 ---
 # <a name="publish-an-hdinsight-application-in-the-azure-marketplace"></a>Публикация приложения HDInsight в Azure Marketplace
 Вы можете установить приложения Azure HDInsight в кластере HDInsight под управлением Linux. В этой статье описано, как опубликовать приложение HDInsight в Azure Marketplace. Общие сведения о публикации в Azure Marketplace см. в статье [Публикация предложения и управление им в Azure Marketplace](../marketplace/marketplace-publishers-guide.md).
@@ -26,7 +25,7 @@ ms.locfileid: "55814211"
 * [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md). Узнайте, как установить приложение HDInsight в кластерах.
 * [Установка пользовательских приложений Hadoop в Azure HDInsight](hdinsight-apps-install-custom-applications.md). Узнайте, как устанавливать и тестировать пользовательские приложения HDInsight.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Чтобы отправить пользовательское приложение в Marketplace, необходимо сначала [создать и протестировать его](hdinsight-apps-install-custom-applications.md).
 
 Также вы должны зарегистрировать учетную запись разработчика. Дополнительные сведения см. в статье [Публикация предложения и управление им в Azure Marketplace](../marketplace/marketplace-publishers-guide.md) и [Создание учетной записи разработчика Майкрософт](../marketplace/marketplace-publishers-guide.md).
@@ -97,7 +96,7 @@ ms.locfileid: "55814211"
 8. Отправьте ZIP-файл, созданный при создании пакета приложения.  
 9. Выберите **Request Certification** (Запросить сертификацию). Команда сертификации Майкрософт проверяет файлы и выполняет сертификацию топологии.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Инструкции по [установке приложений HDInsight](hdinsight-apps-install-applications.md) в кластерах.
 * Инструкции по [установке пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md) и развертывании в HDInsight неопубликованного приложения HDInsight.
 * Инструкции по [настройке кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md) и добавлению других приложений. 

@@ -13,11 +13,11 @@ ms.reviewer: martincoetzer
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3a3a57fbe5df690e4dbdba8cbab85e62648bb298
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56192580"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60295384"
 ---
 # <a name="factors-influencing-the-performance-of-azure-ad-connect"></a>Факторы, влияющие на производительность Azure AD Connect
 
@@ -188,5 +188,5 @@ Azure AD Connect синхронизирует ваш Active Directory с Azure A
 - Постарайтесь завершить цикл синхронизации изменений в течение 30 минут. Если профиль синхронизации изменений не завершается в течение 30 минут, добавьте в частоту синхронизации по умолчанию цикл полной синхронизации изменений.
 - Отслеживайте [работоспособность синхронизации Azure AD Connect](how-to-connect-health-agent-install.md) в Azure AD.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

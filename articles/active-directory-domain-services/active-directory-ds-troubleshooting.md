@@ -16,11 +16,11 @@ ms.topic: conceptual
 ms.date: 01/08/2018
 ms.author: ergreenl
 ms.openlocfilehash: 48831767f72dd1b978fad5b0a9a8f2c7a11ec89d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58893118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60416387"
 ---
 # <a name="azure-ad-domain-services---troubleshooting-guide"></a>Доменные службы Azure AD: руководство по устранению неполадок
 В этой статье приводятся советы по устранению проблем, с которыми вы можете столкнуться при настройке или администрировании доменных служб Azure Active Directory (AD).

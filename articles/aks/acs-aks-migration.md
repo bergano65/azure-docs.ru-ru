@@ -10,11 +10,11 @@ ms.date: 06/13/2018
 ms.author: nobun
 ms.custom: mvc
 ms.openlocfilehash: 910c96988ec0a8b8aa7b6ac8ce287c4fdc59e177
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58649974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60467567"
 ---
 # <a name="migrating-from-azure-container-service-acs-to-azure-kubernetes-service-aks"></a>Миграция со службы контейнеров Azure (ACS) на службу Azure Kubernetes (AKS)
 
@@ -48,7 +48,7 @@ ms.locfileid: "58649974"
 
 Пример:
 
-| ИМЯ | Количество | Размер виртуальной машины | Операционная система |
+| Name | Количество | Размер виртуальной машины | Операционная система |
 | --- | --- | --- | --- |
 | agentpool0 | 3 | Standard_D8_v2 | Linux |
 | agentpool1 | 1 | Standard_D2_v2 |  Windows |

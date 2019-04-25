@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 04/13/2019
 ms.author: banders
 ms.openlocfilehash: 246278df61d4f13e2634a1cdfc5ff6b635cecbbf
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60008222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60371212"
 ---
 # <a name="apis-for-azure-reservation-automation"></a>API-интерфейсы для автоматизации резервирования Azure
 

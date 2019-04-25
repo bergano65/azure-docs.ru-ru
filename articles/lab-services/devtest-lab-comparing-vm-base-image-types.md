@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/05/2018
 ms.author: spelluru
-ms.openlocfilehash: 37288fd4a9c7558d05728b8ce03df505117e0232
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: ae7556eda817b9eb7be84f9d4a23ea91d3d5440d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38611276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60311324"
 ---
 # <a name="comparing-custom-images-and-formulas-in-devtest-labs"></a>Сравнение пользовательских образов и формул в DevTest Labs
 В качестве основы для [создания виртуальных машин](devtest-lab-add-vm.md) можно использовать как [пользовательские образы](devtest-lab-create-template.md), так и [формулы](devtest-lab-manage-formulas.md). Но основное различие между пользовательскими образами и формулами заключается в том, что пользовательский образ — это просто образ на основе виртуального жесткого диска, а формула — это образ на основе виртуального жесткого диска *с дополнительными* предварительно настроенными параметрами, такими как размер виртуальной машины, виртуальная сеть, подсеть и артефакты. Для этих предварительно настроенных параметров задаются значения по умолчанию, которые можно переопределить при создании виртуальной машины. В этой статье описываются некоторые преимущества и недостатки использования пользовательских образов и формул.
@@ -54,5 +54,5 @@ ms.locfileid: "38611276"
 ## <a name="related-blog-posts"></a>Связанные записи в блогах
 * [Custom images or formulas? (Пользовательские изображения или формулы?)](https://blogs.msdn.microsoft.com/devtestlab/2016/04/06/custom-images-or-formulas/)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Часто задаваемые вопросы о DevTest Labs](devtest-lab-faq.md)

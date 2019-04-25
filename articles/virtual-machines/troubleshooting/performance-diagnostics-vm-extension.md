@@ -15,11 +15,11 @@ ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: 769305cc3d838832f8f445ac9623a1724603f968
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58002738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60307937"
 ---
 # <a name="azure-performance-diagnostics-vm-extension-for-windows"></a>Расширение виртуальной машины для диагностики производительности Azure для Windows
 
@@ -81,7 +81,7 @@ ms.locfileid: "58002738"
 |storPortTrace|s|Параметр, позволяющий включить трассировку StorPort. Допустимые значения: **s** или пустое значение. Если вы не хотите записывать данные трассировки, оставьте значение пустым.
 |srNumber|123452016365929|Номер запроса в службу поддержки (если доступно). Если его нет, оставьте значение поля пустым.
 |requestTimeUtc|2017-09-28T22:08:53.736Z|Текущая дата и время в формате UTC. Если вы устанавливали расширение с помощью портала, это значение можно не указывать.
-|ResourceId|/subscriptions/{ИД_подписки}/resourceGroups/{имя_группы_ресурсов}/providers/{пространство_имен_поставщика_ресурса}/{тип_ресурса}/{имя_ресурса}|Уникальный идентификатор виртуальной машины.
+|resourceId|/subscriptions/{ИД_подписки}/resourceGroups/{имя_группы_ресурсов}/providers/{пространство_имен_поставщика_ресурса}/{тип_ресурса}/{имя_ресурса}|Уникальный идентификатор виртуальной машины.
 |storageAccountName|mystorageaccount|Имя учетной записи хранения для хранения журналов диагностики и результатов.
 |storageAccountKey|lDuVvxuZB28NNP…hAiRF3voADxLBTcc==|Ключ для учетной записи хранения.
 

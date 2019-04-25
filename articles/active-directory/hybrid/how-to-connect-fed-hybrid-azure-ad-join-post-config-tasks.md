@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a9af969700f4f2dfbedc4833badd7e7349696302
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56199737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60244594"
 ---
 # <a name="post-configuration-tasks-for-hybrid-azure-ad-join"></a>Задачи постконфигурации для гибридного присоединения устройств к Azure AD
 
@@ -96,5 +96,5 @@ ms.locfileid: "56199737"
 >[!NOTE]
 >Настройки политики для версии 2012R2 находятся в следующем расположении: **Конфигурация компьютера > Политики > Административные шаблоны > Компоненты Windows > Присоединение к рабочей области > Automatically workplace join client computers (Автоматическое присоединение к рабочей области клиентских компьютеров)**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Azure AD Connect: включение обратной записи устройств](how-to-connect-device-writeback.md)

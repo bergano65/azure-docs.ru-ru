@@ -3,7 +3,7 @@ title: Арбитры утверждений в пользовательских
 description: Сведения об использовании арбитров утверждений в пользовательской политике Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
@@ -11,11 +11,11 @@ ms.date: 01/25/2019
 ms.author: davidmu
 ms.subservice: B2C
 ms.openlocfilehash: 44ac4a5fd14d262fdbd1f6fcd36bb2351d08f754
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55692448"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60313840"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Арбитры утверждений в пользовательских политиках Azure Active Directory B2C
 
@@ -65,14 +65,14 @@ ms.locfileid: "55692448"
 
 | Утверждение | ОПИСАНИЕ | Пример |
 | ----- | ----------- | --------|
-| {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Недоступно |
+| {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Н/Д |
 | {OIDC:ClientId} |Параметр `client_id` строки запроса. | 00000000-0000-0000-0000-000000000000 |
 | {OIDC:DomainHint} |Параметр `domain_hint` строки запроса. | facebook.com |
 | {OIDC:LoginHint} |  Параметр `login_hint` строки запроса. | someone@contoso.com |
-| {OIDC:MaxAge} | `max_age`. | Недоступно |
+| {OIDC:MaxAge} | `max_age`. | Н/Д |
 | {OIDC:Nonce} |Параметр `Nonce` строки запроса. | defaultNonce |
 | {OIDC:Prompt} | Параметр `prompt` строки запроса. | вход |
-| {OIDC:Resource} |Параметр `resource` строки запроса. | Недоступно |
+| {OIDC:Resource} |Параметр `resource` строки запроса. | Н/Д |
 | {OIDC:scope} |Параметр `scope` строки запроса. | OpenId |
 
 ### <a name="context"></a>Context
@@ -95,13 +95,13 @@ ms.locfileid: "55692448"
 | {OAUTH-KV:campaignId} | Параметр строки запроса. | Гавайи |
 | {OAUTH-KV:app_session} | Параметр строки запроса. | A3C5R |
 | {OAUTH-KV:loyalty_number} | Параметр строки запроса. | 1234 |
-| {OAUTH-KV:any custom query string} | Параметр строки запроса. | Недоступно |
+| {OAUTH-KV:any custom query string} | Параметр строки запроса. | Н/Д |
 
 ### <a name="oauth2"></a>OAuth2
 
 | Утверждение | ОПИСАНИЕ | Пример |
 | ----- | ----------------------- | --------|
-| {oauth2:access_token} | Маркер доступа. | Недоступно |
+| {oauth2:access_token} | Маркер доступа. | Н/Д |
 
 ## <a name="how-to-use-claim-resolvers"></a>Как использовать арбитры утверждений
 

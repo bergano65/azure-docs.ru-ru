@@ -13,12 +13,12 @@ ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 74ba9b8d0ce86a5c663eb9fbb6190e2bcf4513d7
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
-ms.translationtype: HT
+ms.openlocfilehash: f510a111a6c8846b300c09f368a3a2a05b2bb7ad
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47413112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60306992"
 ---
 # <a name="troubleshoot-deployment-issues-with-restarting-or-resizing-an-existing-windows-vm-in-azure"></a>Устранение неполадок в развертывании при перезагрузке или изменении размера существующей виртуальной машины Windows в Azure
 Когда вы запускаете остановленную виртуальную машину Azure или изменяете размер существующей виртуальной машины Azure, часто возникает ошибка выделения ресурсов. Это происходит, когда кластер или регион не имеют доступных ресурсов или не поддерживают запрашиваемый размер виртуальной машины.
@@ -30,9 +30,9 @@ ms.locfileid: "47413112"
 
 [Просмотр операций развертывания с помощью Azure Resource Manager](../../azure-resource-manager/resource-manager-deployment-operations.md)
 
-[Операции аудита с помощью диспетчера ресурсов](../../resource-group-audit.md)
+[Просмотр журналов действий для управления ресурсами Azure](../../resource-group-audit.md)
 
-## <a name="issue-error-when-starting-a-stopped-vm"></a>Проблема: ошибка во время запуска остановленной виртуальной машины
+## <a name="issue-error-when-starting-a-stopped-vm"></a>Проблема Ошибка во время запуска остановленной виртуальной Машины
 При попытке запустить остановленную виртуальную машину отображается сообщение об ошибке выделения.
 
 ### <a name="cause"></a>Причина:
@@ -45,7 +45,7 @@ ms.locfileid: "47413112"
   2. После остановки всех виртуальных машин выберите каждую из них и нажмите кнопку "Пуск".
 * Повторите запрос на перезапуск позже.
 
-## <a name="issue-error-when-resizing-an-existing-vm"></a>Проблема: ошибка при изменении размера существующей виртуальной машины
+## <a name="issue-error-when-resizing-an-existing-vm"></a>Проблема Ошибка при изменении размера существующей виртуальной Машины
 При попытке изменить размер существующей виртуальной машины отображается сообщение об ошибке выделения.
 
 ### <a name="cause"></a>Причина:
@@ -61,6 +61,6 @@ ms.locfileid: "47413112"
   2. После остановки всех виртуальных машин увеличьте размер требуемой виртуальной машины.
   3. Выберите виртуальную машину с измененным размером, нажмите кнопку **Запустить**и запустите каждую из остановленных виртуальных машин.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 При возникновении проблем во время создания виртуальной машины Windows в Azure ознакомьтесь со статьей, посвященной [устранению неполадок в развертывании](../windows/troubleshoot-deployment-new-vm.md).
 

@@ -18,11 +18,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 15d0d537a23e21eeda3b284e7ec706cde2b443e7
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58014081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60241687"
 ---
 # <a name="changing-the-azure-ad-connect-sync-service-account-password"></a>Изменение пароля учетной записи Azure AD Connect Sync
 Если вы измените пароль учетной записи для Azure AD Connect Sync, служба синхронизации не сможет правильно запуститься, пока вы не сбросите ключ шифрования и не выполните повторную инициализацию пароля учетной записи для Azure AD Connect. 

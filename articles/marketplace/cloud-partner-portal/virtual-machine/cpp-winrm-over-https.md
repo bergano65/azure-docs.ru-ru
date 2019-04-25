@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 11/26/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 99c41dc010ae589cc43c093646fd1c05c1333f7e
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54265130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60342820"
 ---
 # <a name="windows-remote-management-over-https"></a>Служба удаленного управления Windows по протоколу HTTPS
 
@@ -44,5 +44,5 @@ ms.locfileid: "54265130"
 - После развертывания — на имеющейся виртуальной машине, размещенной в Azure.  Этот подход используется в том случае, если у вас уже есть развернутое в Azure решение (виртуальная машина), для которого необходимо включить удаленное управление.  Этот подход требует внесения изменений вручную на портале Azure и выполнения скрипта на целевой виртуальной машине. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Если вы создаете новую виртуальную машину, вы можете включить WinRM во время [развертывания виртуальной машины с виртуального жесткого диска](./cpp-deploy-vm-vhd.md).  В противном случае можно включить WinRM на имеющейся виртуальной машине.  

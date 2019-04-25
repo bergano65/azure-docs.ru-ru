@@ -3,7 +3,7 @@ title: Обмен утверждениями REST API как этап оркес
 description: В этой статье описывается интеграция пользовательских политик Azure Active Directory B2C с API.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
@@ -11,11 +11,11 @@ ms.date: 04/24/2017
 ms.author: davidmu
 ms.subservice: B2C
 ms.openlocfilehash: 55740b74aef5ce3d2def5ad22cfe3ededa1204d8
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55189703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60316890"
 ---
 # <a name="walkthrough-integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-as-an-orchestration-step"></a>Пошаговое руководство Интеграция обмена утверждениями REST API в пути взаимодействия пользователя Azure AD B2C как этап оркестрации
 
@@ -41,7 +41,7 @@ ms.locfileid: "55189703"
 2. Получение места регистрации пользователя.
 3. Возвращение этого атрибута как утверждения обратно в приложение.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Клиент Azure AD B2C, необходимый для регистрации или входа с использованием локальной учетной записи, как описано в статье [Azure Active Directory B2C. Приступая к работе с настраиваемыми политиками](active-directory-b2c-get-started-custom.md).
 - Конечная точка REST API, с которой устанавливается взаимодействие. В этом пошаговом руководстве в качестве примера используется простой веб-перехватчик приложения-функции Azure.
@@ -257,7 +257,7 @@ return request.CreateResponse<ResponseContent>(
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Walkthrough: Integrate REST API claims exchanges in your Azure AD B2C user journeys as validation on user input](active-directory-b2c-rest-api-validation-custom.md) (Пошаговое руководство. Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных)
 

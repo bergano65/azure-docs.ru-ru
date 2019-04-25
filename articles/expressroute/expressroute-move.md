@@ -9,11 +9,11 @@ ms.date: 12/07/2018
 ms.author: ganesr
 ms.custom: seodec18
 ms.openlocfilehash: dfa2bbc735a79555da0421f64ca644adbd7a1701
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53135922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60363846"
 ---
 # <a name="moving-expressroute-circuits-from-the-classic-to-the-resource-manager-deployment-model"></a>Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager
 В этой статье описывается перемещение канала Azure ExpressRoute из классической модели развертывания в модель развертывания с помощью Azure Resource Manager.
@@ -91,7 +91,7 @@ ms.locfileid: "53135922"
 ## <a name="configuration"></a>Параметр Configuration
 Следуйте указаниям в статье [Перемещение каналов ExpressRoute из классической модели развертывания в модель Resource Manager](expressroute-howto-move-arm.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Перенос связанных виртуальных сетей ExpressRoute из классической модели на модель Resource Manager](expressroute-migration-classic-resource-manager.md)
 * Сведения о рабочем процессе см. в статье [Процедуры ExpressRoute для подготовки каналов и состояний каналов](expressroute-workflows.md).
 * Чтобы создать подключение ExpressRoute, выполните действия в следующих статьях:

@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 05/09/2018
 ms.author: alkohli
 ms.openlocfilehash: eb1fe69a7fb99949ac95291c33e76c1a32bf5439
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56310063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60506693"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-8000-series-devices"></a>Развертывание службы диспетчера устройств StorSimple для устройств StorSimple серии 8000
 
@@ -209,7 +209,7 @@ ms.locfileid: "56310063"
 | Включение и выключение контроллеров устройства                                                                                              | Yes            |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [процессе развертывания StorSimple](storsimple-8000-deployment-walkthrough-u2.md).
 * Узнайте больше об [управлении учетной записью хранения StorSimple](storsimple-8000-manage-storage-accounts.md).
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

@@ -12,11 +12,11 @@ ms.date: 02/13/2019
 ms.author: diberry
 ms.custom: seodec18
 ms.openlocfilehash: e732417daada836dc7de58fadf69e8edb4ebcb14
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56244646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60240743"
 ---
 # <a name="how-to-use-the-qna-maker-rest-api-with-python"></a>Использование REST API службы QnA Maker с Python
 <a name="HOLTop"></a>
@@ -40,7 +40,7 @@ ms.locfileid: "56244646"
 
 [!INCLUDE [Code is available in Azure-Samples GitHub repo](../../../../includes/cognitive-services-qnamaker-python-repo-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для выполнения этого кода потребуется [Python 3.x](https://www.python.org/downloads/).
 
@@ -1149,7 +1149,7 @@ print (pretty_print(result))
 
 [Вверх](#HOLTop)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [QnA Maker (V4) REST API Reference](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff) (Справочник по API REST QnA Maker (V4))

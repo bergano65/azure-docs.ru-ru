@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 06/06/2018
 ms.author: erikre
 ms.openlocfilehash: 15725989ef786f94421eddf647f101e3e73633fb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57890769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60370821"
 ---
 # <a name="review-subscription-billing-using-rest-apis"></a>Проверка данных о выставлении счетов по подписке с помощью интерфейсов REST API
 
@@ -50,7 +50,7 @@ Authorization: Bearer
 |*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|
 |*Authorization:*|Обязательный элемент. Задайте в качестве значения [допустимый токен доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |
 
-## <a name="response"></a>Ответ
+## <a name="response"></a>Отклик
 
 Код состояния 200 (ОК) возвращается в случае успешного ответа, который содержит список затрат с подробными сведениями для учетной записи.
 

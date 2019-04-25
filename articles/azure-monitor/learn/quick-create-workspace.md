@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 03/12/2019
 ms.author: magoedte
 ms.openlocfilehash: a68e40b7b1caf184fabb5df62d8b461fa2fa11e2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57834478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60539235"
 ---
 # <a name="create-a-log-analytics-workspace-in-the-azure-portal"></a>Создание рабочей области Log Analytics на портале Azure
 Используйте меню **Рабочие области Log Analytics**, чтобы создать рабочую область Log Analytics с помощью портала Azure. Рабочая область Log Analytics — это уникальная среда для данных журналов Azure Monitor. Каждая рабочая область имеет свои репозиторий данных и конфигурации, при этом источники данных и решения настроены для хранения данных в определенной рабочей области. Вам понадобится рабочая область Log Analytics, если вы собираете данные из следующих источников:
@@ -52,7 +52,7 @@ ms.locfileid: "57834478"
    * Выберите доступное **расположение**.  Дополнительные сведения см. в разделе которой [регионах, доступны в Log Analytics](https://azure.microsoft.com/regions/services/) и выполните поиск Azure Monitor от **поиск продукта** поля.  
    * При создании рабочей области в новой подписке, созданной после 2 апреля 2018 г., будет автоматически использоваться тарифный план *За ГБ*, и выбор ценовой категории будет недоступен.  При создании рабочей области в существующей подписке, созданной до 2 апреля, или в подписке, которая была привязана к существующей регистрации Соглашения Enterprise (EA), выберите нужную ценовую категорию.  Дополнительные сведения о конкретной ценовой категории см. в статье [Цены на Log Analytics](https://azure.microsoft.com/pricing/details/log-analytics/).
 
-        ![Создать колонку ресурса Log Analytics](media/quick-create-workspace/create-loganalytics-workspace-02.png)  
+        ![Колонка создания ресурса Log Analytics](media/quick-create-workspace/create-loganalytics-workspace-02.png)  
 
 3. После ввода необходимых сведений в области **Рабочая область Log Analytics** щелкните **OK**.  
 

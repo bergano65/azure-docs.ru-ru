@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 02/28/2019
 ms.author: banders
 ms.openlocfilehash: 105b8481486c088a05e3acb95081d3ee55b55f52
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57897117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60372022"
 ---
 # <a name="create-an-additional-azure-subscription-for-microsoft-customer-agreement"></a>Создайте дополнительную подписку Azure для клиентов соглашения Microsoft
 
@@ -67,7 +67,7 @@ ms.locfileid: "57897117"
 
 4. Выберите **управления доступом (IAM)** со стороны левого верхнего.
 
-5. В верхней части страницы выберите **добавить**.
+5. В верхней части страницы выберите **Добавить**.
 
 6. Выберите **создатель подписки Azure** для роли.
 

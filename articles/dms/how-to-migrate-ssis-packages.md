@@ -12,11 +12,11 @@ ms.custom: mvc
 ms.topic: article
 ms.date: 03/12/2019
 ms.openlocfilehash: 884af4624c1e92ee765353c90fd189220664381d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58183430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60532453"
 ---
 # <a name="migrate-sql-server-integration-services-packages-to-azure"></a>Перенос пакетов SQL Server Integration Services в Azure
 Если вы используете SQL Server Integration Services (SSIS) и хотите перенести проекты или пакеты SSIS из исходной SSISDB, размещенной на SQL Server, в целевую SSISDB, расположенную на сервере Базы данных SQL Azure или в Управляемом экземпляре Базы данных SQL Azure, вы можете повторно развернуть их с помощью мастера развертывания Integration Services. Мастер можно запустить из SQL Server Management Studio (SSMS).

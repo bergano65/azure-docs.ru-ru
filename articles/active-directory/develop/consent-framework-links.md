@@ -16,11 +16,11 @@ ms.date: 09/11/2018
 ms.author: celested
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 517ae30eab178a508fb2ee23ef99b02a8254088f
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56185474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60299810"
 ---
 # <a name="how-application-consent-works"></a>Как действует согласие для приложения
 
@@ -33,5 +33,5 @@ ms.locfileid: "56185474"
 - Получите более подробные сведения об [использовании инфраструктуры согласия в мультитенантном приложении](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview), чтобы реализовать согласие пользователя и администратора, с поддержкой нескольких дополнительных шаблонов многоуровневого приложения.
 - Узнайте подробнее о том, [как согласие поддерживается на уровне протокола OAuth 2.0 во время предоставления кода авторизации.](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-oauth-code#request-an-authorization-code)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [StackOverflow в AzureAD](https://stackoverflow.com/questions/tagged/azure-active-directory)

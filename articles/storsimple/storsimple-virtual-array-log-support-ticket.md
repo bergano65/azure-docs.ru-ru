@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2016
 ms.author: manuaery
-ms.openlocfilehash: 658afbc178814389fefd7941e2ca030741bd08e8
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 9ac87bbf5089dd20b8c6eeec0b970a7767b3dcda
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23110002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60302624"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-log-a-support-request-for-the-storsimple-virtual-array"></a>Использование службы диспетчера устройств StorSimple для регистрации запроса в службу поддержки для виртуального массива StorSimple
 
@@ -65,7 +65,7 @@ ms.locfileid: "23110002"
 
 ![Управление запросами на поддержку](./media/storsimple-virtual-array-log-support-ticket/manage-support-tickets.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Устранение неполадок виртуального массива StorSimple с помощью диспетчера устройств StorSimple](storsimple-virtual-array-diagnose-problems.md)
 

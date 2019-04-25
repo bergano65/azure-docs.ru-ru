@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 11/21/2018
 ms.author: banders
 ms.openlocfilehash: 98ed28af8df246549fb521a81f1968e1f5c28cc4
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54901570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60370719"
 ---
 # <a name="understand-azure-enterprise-agreement-administrative-roles-in-azure"></a>Сведения об административных ролях для соглашения Azure Enterprise в Azure
 
@@ -95,13 +95,13 @@ ms.locfileid: "54901570"
 |---|---|---|---|
 |Владелец учетной записи или администратор отдела|✔ Включено|Владелец.|Цены по Соглашению Enterprise для организации|
 |Владелец учетной записи или администратор отдела|✘ Отключено|Владелец.|Розничная цена|
-|Владелец учетной записи или администратор отдела|✔ Включено |Нет|Нет данных о ценах|
-|Владелец учетной записи или администратор отдела|✘ Отключено |Нет|Нет данных о ценах|
+|Владелец учетной записи или администратор отдела|✔ Включено |нет|Нет данных о ценах|
+|Владелец учетной записи или администратор отдела|✘ Отключено |нет|Нет данных о ценах|
 |Нет|Не применяется |Владелец.|Розничная цена|
 
 Роль администратора предприятия и политики просмотра расходов настраиваются на Enterprise Portal. Роль RBAC можно изменить на портале Azure. Дополнительные сведения см. в статье [Управление доступом с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление доступом к сведениям о счетах Azure с помощью управления доступом на основе ролей](billing-manage-access.md)
 - [Управление доступом с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md)

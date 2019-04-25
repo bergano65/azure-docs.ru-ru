@@ -2,17 +2,18 @@
 title: Представление журналов kubelet в Службе Azure Kubernetes (AKS)
 description: Узнайте, как просмотреть сведения об устранении неполадок в журналы kubelet из узлов службы Azure Kubernetes (AKS)
 services: container-service
-author: iainfoulds
+author: rockboyfor
 ms.service: container-service
 ms.topic: article
-ms.date: 03/05/2019
-ms.author: iainfou
+origin.date: 03/05/2019
+ms.date: 04/08/2019
+ms.author: v-yeche
 ms.openlocfilehash: b381145fef7e6fb399fac3387ab01fdc9a51b154
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57534026"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60465025"
 ---
 # <a name="get-kubelet-logs-from-azure-kubernetes-service-aks-cluster-nodes"></a>Получение журналов kubelet из узлов кластера Службы Azure Kubernetes (AKS)
 

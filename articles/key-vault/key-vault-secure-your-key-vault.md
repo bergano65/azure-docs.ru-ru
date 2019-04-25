@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: ambapat
 ms.openlocfilehash: 20c58647b8a6283de4ca2b90c830fe54db927095
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58484192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60304954"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Безопасный доступ к хранилищу ключей
 
@@ -200,7 +200,7 @@ Set-AzKeyVaultAccessPolicy -VaultName ContosoKeyVault -ObjectId (Get-AzADGroup -
 
 * [Управление доступом с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md)
 
-* [Сведения о встроенных ролях встроенные роли](../role-based-access-control/built-in-roles.md).
+* [Встроенные роли встроенные роли](../role-based-access-control/built-in-roles.md).
 
 * [Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов](../azure-resource-manager/resource-manager-deployment-model.md) 
 

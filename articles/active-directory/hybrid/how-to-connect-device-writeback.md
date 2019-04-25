@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b7ed6fd0a4a1de3fb02b3d8583c0e5c0cecac211
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56205517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60351840"
 ---
 # <a name="azure-ad-connect-enabling-device-writeback"></a>Azure AD Connect выполняет следующие функции: включение обратной записи устройств
 > [!NOTE]
@@ -60,7 +60,7 @@ ms.locfileid: "56205517"
 
     a. **Предоставление учетных данных администратора предприятия**. Если учетные данные администратора предприятия предоставлены для леса, в который необходимо выполнить обратную запись устройств, Azure AD Connect автоматически подготовит лес во время настройки обратной записи устройства.
 
-    б) **Скачивание сценария PowerShell** . Azure AD Connect автоматически создает сценарий PowerShell, который может подготовить Active Directory для обратной записи устройства. Если учетные данные администратора предприятия не могут быть предоставлены в Azure AD Connect, предлагаем загрузить сценарий PowerShell. Предоставьте загруженный сценарий PowerShell **CreateDeviceContainer.psq** администратору предприятия леса, в который будет выполнена обратная запись устройств.
+    2. **Скачивание сценария PowerShell** . Azure AD Connect автоматически создает сценарий PowerShell, который может подготовить Active Directory для обратной записи устройства. Если учетные данные администратора предприятия не могут быть предоставлены в Azure AD Connect, предлагаем загрузить сценарий PowerShell. Предоставьте загруженный сценарий PowerShell **CreateDeviceContainer.psq** администратору предприятия леса, в который будет выполнена обратная запись устройств.
     ![Подготовка леса Active Directory](./media/how-to-connect-device-writeback/devicecontainercreds.png)
     
     Для подготовки леса Active Directory выполняются следующие операции:
@@ -128,6 +128,6 @@ ms.locfileid: "56205517"
 * [Управление рисками с помощью условного доступа](../active-directory-conditional-access-azure-portal.md)
 * [Настройка локального условного доступа с помощью регистрации устройств в Azure Active Directory](../../active-directory/active-directory-device-registration-on-premises-setup.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
 

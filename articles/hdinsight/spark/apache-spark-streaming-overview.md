@@ -2,19 +2,27 @@
 title: Потоковая передача Spark в Azure HDInsight
 description: Инструкции по использованию приложений потоковой передачи Spark в кластерах HDInsight Spark.
 services: hdinsight
+documentationcenter: ''
+tags: azure-portal
+author: maxluk
+manager: jhubbard
+editor: cgronlun
+ms.assetid: ''
 ms.service: hdinsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.custom: hdinsightactive
-ms.topic: conceptual
-ms.date: 03/11/2019
+ms.workload: big-data
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: article
+origin.date: 03/11/2019
+ms.date: 04/15/2019
+ms.author: v-yiso
 ms.openlocfilehash: 3ecabd683ed4303a7ff54780299ed0e83aa14c26
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57892085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60539321"
 ---
 # <a name="overview-of-apache-spark-streaming"></a>Общие сведения о потоковой передаче Apache Spark
 
@@ -34,7 +42,7 @@ ms.locfileid: "57892085"
 
 Каждый набор RDD содержит события, собранные за определяемый пользователем период времени, называемый *интервалом пакетной обработки*. По окончании каждого интервала пакетов создается новый набор RDD, содержащий все данные из этого интервала. Непрерывный набор RDD собирается в поток DStream. Например, если интервал пакетов составляет одну секунду, ваш поток DStream каждую секунду выдает пакет, содержащий один набор RDD со всеми данными, полученными на протяжении этой секунды. При обработке потока DStream событие температуры появляется в одном из этих пакетов. Приложение потоковой передачи Spark обрабатывает пакеты, содержащие события, и в конечном счете работает с данными, хранящимися в каждом наборе RDD.
 
-![Пример потока DStream с событиями температуры](./media/apache-spark-streaming-overview/hdinsight-spark-streaming-example.png)
+![Пример потока DStream с событиями температуры ](./media/apache-spark-streaming-overview/hdinsight-spark-streaming-example.png)
 
 ## <a name="structure-of-a-spark-streaming-application"></a>Структура приложения потоковой передачи Spark
 
@@ -54,8 +62,7 @@ ms.locfileid: "57892085"
 Это определение является статическим, обработка данных начинается только после запуска приложения.
 
 #### <a name="create-a-streamingcontext"></a>Создание объекта StreamingContext
-
-Создайте объект StreamingContext из объекта SparkContext, указывающего на ваш кластер. При создании объекта StreamingContext необходимо указать размер пакета в секундах, например:  
+Создайте объект StreamingContext из объекта SparkContext, указывающего на ваш кластер. При создании объекта StreamingContext необходимо указать размер пакета в секундах, например:
 
 ```
 import org.apache.spark._
@@ -91,7 +98,6 @@ wordCounts.print()
 ```
 
 ### <a name="run-the-application"></a>Выполнение приложения
-
 Запустите приложение потоковой передачи и продолжайте его работу, пока не будет получен сигнал завершения.
 
 ```
@@ -106,44 +112,44 @@ ssc.awaitTermination()
 ```
 class DummySource extends org.apache.spark.streaming.receiver.Receiver[(Int, Long)](org.apache.spark.storage.StorageLevel.MEMORY_AND_DISK_2) {
 
-    /** Start the thread that simulates receiving data */
-    def onStart() {
-        new Thread("Dummy Source") { override def run() { receive() } }.start()
-    }
+        /** Start the thread that simulates receiving data */
+        def onStart() {
+            new Thread("Dummy Source") { override def run() { receive() } }.start()
+        }
 
-    def onStop() {  }
+        def onStop() {  }
 
-    /** Periodically generate a random number from 0 to 9, and the timestamp */
-    private def receive() {
-        var counter = 0  
-        while(!isStopped()) {
+        /** Periodically generate a random number from 0 to 9, and the timestamp */
+        private def receive() {
+            var counter = 0  
+            while(!isStopped()) {
             store(Iterator((counter, System.currentTimeMillis)))
             counter += 1
             Thread.sleep(5000)
+            }
         }
     }
-}
 
-// A batch is created every 30 seconds
-val ssc = new org.apache.spark.streaming.StreamingContext(spark.sparkContext, org.apache.spark.streaming.Seconds(30))
+    // A batch is created every 30 seconds
+    val ssc = new org.apache.spark.streaming.StreamingContext(spark.sparkContext, org.apache.spark.streaming.Seconds(30))
 
-// Set the active SQLContext so that we can access it statically within the foreachRDD
-org.apache.spark.sql.SQLContext.setActive(spark.sqlContext)
+    // Set the active SQLContext so that we can access it statically within the foreachRDD
+    org.apache.spark.sql.SQLContext.setActive(spark.sqlContext)
 
-// Create the stream
-val stream = ssc.receiverStream(new DummySource())
+    // Create the stream
+    val stream = ssc.receiverStream(new DummySource())
 
-// Process RDDs in the batch
-stream.foreachRDD { rdd =>
+    // Process RDDs in the batch
+    stream.foreachRDD { rdd =>
 
-    // Access the SQLContext and create a table called demo_numbers we can query
-    val _sqlContext = org.apache.spark.sql.SQLContext.getOrCreate(rdd.sparkContext)
-    _sqlContext.createDataFrame(rdd).toDF("value", "time")
-        .registerTempTable("demo_numbers")
-} 
+        // Access the SQLContext and create a table called demo_numbers we can query
+        val _sqlContext = org.apache.spark.sql.SQLContext.getOrCreate(rdd.sparkContext)
+        _sqlContext.createDataFrame(rdd).toDF("value", "time")
+            .registerTempTable("demo_numbers")
+    } 
 
-// Start the stream processing
-ssc.start()
+    // Start the stream processing
+    ssc.start()
 ```
 
 Подождите около 30 секунд после запуска приложения в выше.  Затем можно запрашивать кадр данных периодически, чтобы просмотреть текущий набор значений, в пакете, например с помощью SQL-запроса:
@@ -155,7 +161,7 @@ SELECT * FROM demo_numbers
 
 Результат выглядит примерно так:
 
-| value | Twitter в режиме реального |
+| value | time |
 | --- | --- |
 |10 | 1497314465256 |
 |11 | 1497314470272 |
@@ -223,7 +229,7 @@ ssc.start()
 
 После истечения первой минуты будут получены 12 записей — по шесть записей из каждого из двух пакетов, собранных в окне.
 
-| value | Twitter в режиме реального |
+| value | time |
 | --- | --- |
 | 1 | 1497316294139 |
 | 2 | 1497316299158

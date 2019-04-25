@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dcb825a193071d263d800dafdd6296246eb74aec
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 77154ef35242c55724becb77595dbd5ecf8a4da9
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57878199"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60359064"
 ---
 # <a name="password-management-frequently-asked-questions"></a>Вопросы и ответы об управлении паролями
 
@@ -46,7 +46,7 @@ ms.locfileid: "57878199"
   >
 * **Вопрос.  Могу ли я определять данные для сброса паролей от имени пользователей?**
 
-  > **Ответ.** Да, это можно сделать с помощью Azure AD Connect, PowerShell, а также на [портале Azure](https://portal.azure.com) или в центре администрирования Office 365. Дополнительные сведения см. в статье [Развертывание сброса пароля без регистрации пользователя](howto-sspr-authenticationdata.md).
+  > **Ответ.** Да, это можно сделать с помощью Azure AD Connect, PowerShell, [портала Azure](https://portal.azure.com), или [Центр администрирования Microsoft 365](https://admin.microsoft.com). Дополнительные сведения см. в статье [Развертывание сброса пароля без регистрации пользователя](howto-sspr-authenticationdata.md).
   >
   >
 * **Вопрос.  Могу ли я синхронизировать данные для контрольных вопросов из локальной среды?**

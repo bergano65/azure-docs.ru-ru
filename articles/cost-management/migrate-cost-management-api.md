@@ -11,11 +11,11 @@ ms.service: cost-management
 manager: micflan
 ms.custom: ''
 ms.openlocfilehash: e4c5607089efb247620766fb311b97cae3772770
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59279879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60311954"
 ---
 # <a name="migrate-from-enterprise-agreement-to-microsoft-customer-agreement-apis"></a>Переход с соглашения Enterprise на API-интерфейсы Microsoft Customer соглашения
 
@@ -180,14 +180,14 @@ API получения Сводка баланса заменяется Microsof
 | Использованная служба | consumedService | Точное строковые значения могут отличаться. |
 | ИД использованной службы | Нет | &nbsp; |
 | CostCenter | costCenter | &nbsp; |
-| Дата и usageStartDate | дата | &nbsp;  |
+| Дата и usageStartDate | date | &nbsp;  |
 | День | Нет | Выполняет синтаксический анализ день из даты. |
 | ИД отдела | invoiceSectionId | Точные значения отличаются. |
 | DepartmentName | invoiceSectionName | Точное строковые значения могут отличаться. Настройте разделы счетов в соответствии с отделами, при необходимости. |
 | ExtendedCost и затрат | costInBillingCurrency | &nbsp;  |
-| InstanceId | ResourceId | &nbsp;  |
+| InstanceId | resourceId | &nbsp;  |
 | Является повторяющимся платежом | Нет | &nbsp;  |
-| Расположение | location | &nbsp;  |
+| Location | location | &nbsp;  |
 | Категория единицы измерения | meterCategory | Точное строковые значения могут отличаться. |
 | Значение MeterId | meterId | Точная строка значения отличаются. |
 | Имя единицы измерения | meterName | Точное строковые значения могут отличаться. |
@@ -218,7 +218,7 @@ API получения Сводка баланса заменяется Microsof
 | Параметр SubscriptionName | subscriptionName | &nbsp;  |
 | Теги | tags | Свойство tags применяется к корневой объект, не к свойству вложенных свойств. |
 | Единица измерения | unitOfMeasure | Точная строка значения отличаются. |
-| usageEndDate | дата | &nbsp;  |
+| usageEndDate | date | &nbsp;  |
 | Год | Нет | Выполняет синтаксический анализ год с момента. |
 | (новая) | billingCurrency | Валюта, используемая для расходов. |
 | (новая) | billingProfileId | Уникальный идентификатор для профиля выставления счетов (аналогично регистрации). |

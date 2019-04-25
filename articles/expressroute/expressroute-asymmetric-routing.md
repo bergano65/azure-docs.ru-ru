@@ -10,11 +10,11 @@ ms.date: 10/10/2016
 ms.author: osamam
 ms.custom: seodec18
 ms.openlocfilehash: 6ece48d892f46a4f8bbeb66d3ebda9f532b621b8
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53076667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60367795"
 ---
 # <a name="asymmetric-routing-with-multiple-network-paths"></a>Асимметричная маршрутизация с использованием нескольких сетевых путей
 В этой статье объясняется, как прямой и обратный сетевой трафик может проходить по разным маршрутам, если между исходным и целевым сетевыми расположениями есть несколько путей.

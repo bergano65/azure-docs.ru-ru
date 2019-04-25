@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/27/2018
 ms.author: tomfitz
-ms.openlocfilehash: cd4d1aed666b2c64ade700a768df0525029b392c
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
-ms.translationtype: HT
+ms.openlocfilehash: 0dcd8ba1b1bacd990c91ce90ef0013caac446cdc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37062746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60251562"
 ---
 # <a name="microsoftcommontextblock-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.TextBlock
 Элемент управления, с помощью которого можно добавить текст в интерфейс портала.
@@ -48,6 +48,6 @@ ms.locfileid: "37062746"
 "Please provide the configuration values for your application. Learn more"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 * Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

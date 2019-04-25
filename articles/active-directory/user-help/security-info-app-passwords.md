@@ -13,11 +13,11 @@ ms.date: 02/13/2018
 ms.author: lizross
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 55dfab0c60e77b86157a005db34c37917a5e08d2
-ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57341109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60475118"
 ---
 # <a name="manage-app-passwords-from-your-security-info-preview-page"></a>Управление паролями приложений на странице сведений для защиты (предварительная версия)
 Некоторые приложения, например Outlook 2010, не поддерживают двухфакторную проверку подлинности. Это означает, что такое приложение не будет работать, если вы включите в организации двухфакторную проверку подлинности. Чтобы избежать этой проблемы, помимо обычного пароля, создайте автоматически сгенерированный пароль для использования с каждым внебраузерным приложением.

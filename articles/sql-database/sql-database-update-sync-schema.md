@@ -13,11 +13,11 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 11/14/2018
 ms.openlocfilehash: 712ccfa71c85629111428a4e0c7acaea050942b8
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58483749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60331356"
 ---
 # <a name="automate-the-replication-of-schema-changes-in-azure-sql-data-sync"></a>Автоматическая репликация изменений схемы при синхронизации данных SQL Azure
 
@@ -230,7 +230,7 @@ END
         -  [Использование PowerShell для синхронизации данных между базой данных SQL Azure и локальной базой данных SQL Server](scripts/sql-database-sync-data-between-azure-onprem.md)
 -   Агент синхронизации данных: [Агент синхронизации данных для синхронизации данных SQL Azure](sql-database-data-sync-agent.md).
 -   Рекомендации: [Рекомендации по синхронизации данных SQL](sql-database-best-practices-data-sync.md).
--   Монитор — [входит мониторинг синхронизации данных SQL с помощью Azure Monitor](sql-database-sync-monitor-oms.md)
+-   Мониторинг: [Мониторинг синхронизации данных SQL с помощью журналов Azure Monitor](sql-database-sync-monitor-oms.md)
 -   Устранение неполадок: [Устранение неполадок с синхронизацией данных SQL](sql-database-troubleshoot-data-sync.md).
 -   Обновление схемы синхронизации
     -   С помощью PowerShell: [Использование PowerShell для обновления схемы синхронизации в существующей группе синхронизации](scripts/sql-database-sync-update-schema.md).

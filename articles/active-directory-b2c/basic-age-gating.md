@@ -3,7 +3,7 @@ title: Включение фильтрации по возрасту в Azure Ac
 description: Сведения о том, как определять несовершеннолетних пользователей вашего приложения.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
@@ -11,11 +11,11 @@ ms.date: 11/13/2018
 ms.author: davidmu
 ms.subservice: B2C
 ms.openlocfilehash: f8309424b8e1eed97d66fbd168444418cc1f98fd
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55562442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60383938"
 ---
 # <a name="enable-age-gating-in-azure-active-directory-b2c"></a>Включение фильтрации по возрасту в Azure Active Directory B2C
 

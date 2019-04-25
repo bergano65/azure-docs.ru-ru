@@ -16,13 +16,13 @@ ms.date: 01/19/2019
 ms.author: chmutali
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d34bd9d7f80f72b3c6c0821ad48e6be1fd260be9
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59524639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60386081"
 ---
-# <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство. Настройка Workday для автоматической подготовки пользователей
+# <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство по Настройка Workday для автоматической подготовки пользователей
 
 Цель этого руководства — показать, какие действия необходимо выполнить для импорта профилей работников из Workday в Active Directory и Azure Active Directory с необязательной обратной записью электронного адреса в Workday.
 

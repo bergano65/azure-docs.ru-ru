@@ -15,11 +15,11 @@ ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f828ff83e6b9c60eb08edef7f47e88185fb5aef8
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58199687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60472176"
 ---
 # <a name="create-a-dynamic-group-and-check-status"></a>Создание динамической группы и проверка состояния
 
@@ -48,9 +48,9 @@ ms.locfileid: "58199687"
 
 Если правило, которое вы ввели не подходит, объяснение, почему не удалось обработать правило отображается в правом верхнем углу портала. Прочитайте его осторожно, чтобы понять, как исправить правило.
 
-## <a name="turn-on-or-off-welcome-email"></a>Включение и отключение приветственное сообщение электронной почты
+## <a name="turn-on-or-off-welcome-email"></a>Отключение отправки приветственного сообщения электронной почты
 
-При создании новой группы Office 365, приветствия уведомление отправляется пользователей, которые добавляются в группу. Позже при изменении любых атрибутов пользователя или устройства, для изменения членства обрабатываются все правила динамических групп в организации. Затем пользователи, добавляются также получают приветствия уведомление. Вы можете отключить это поведение в [Exchange PowerShell](https://docs.microsoft.com/powershell/module/exchange/users-and-groups/Set-UnifiedGroup?view=exchange-ps). 
+При создании новой группы Office 365, приветствия уведомление отправляется пользователей, которые добавляются в группу. Позже при изменении любых атрибутов пользователя или устройства, для изменения членства обрабатываются все правила динамических групп в организации. После этого добавляемым пользователям также отправляются приветственные уведомления. Вы можете отключить это поведение в [Exchange PowerShell](https://docs.microsoft.com/powershell/module/exchange/users-and-groups/Set-UnifiedGroup?view=exchange-ps). 
 
 ## <a name="check-processing-status-for-a-rule"></a>Проверьте состояние обработки для правила
 

@@ -9,11 +9,11 @@ ms.date: 01/28/2018
 ms.author: robb
 ms.subservice: alerts
 ms.openlocfilehash: 6fb49baf8ab58ae6cfe7639cedcc4466810c8b96
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56003318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60347488"
 ---
 # <a name="overview-of-alerts-in-microsoft-azure"></a>Обзор оповещений в Microsoft Azure 
 
@@ -108,7 +108,7 @@ ms.locfileid: "56003318"
 
 Чтобы открыть другую страницу, щелкните соответствующие значения вверху страницы "Оповещения".
 
-| Значение | ОПИСАНИЕ |
+| Value | ОПИСАНИЕ |
 |:---|:---|
 | Всего оповещений | Общее количество оповещений, которые соответствуют выбранным критериям. Чтобы открыть представление "Все оповещения" без применения фильтра, щелкните это значение. |
 | Смарт-группы | Общее количество смарт-групп, которые созданы из оповещений, соответствующих выбранным критериям. Чтобы открыть список смарт-групп в представлении "Все оповещения", щелкните это значение.
@@ -179,7 +179,7 @@ ms.locfileid: "56003318"
 Дополнительные сведения см. в статье [Что такое классические оповещения в Microsoft Azure?](./../../azure-monitor/platform/alerts-classic.overview.md)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Дополнительные сведения о смарт-группах](https://aka.ms/smart-groups)
 - [Дополнительные сведения о группах действий](../../azure-monitor/platform/action-groups.md)

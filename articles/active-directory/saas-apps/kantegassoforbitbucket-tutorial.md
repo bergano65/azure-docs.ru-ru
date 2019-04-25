@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Kantega SSO for Bitbucket | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Kantega SSO for Bitbucket | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Kantega SSO for Bitbucket.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 07/12/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d7f24c211e057447782c7fab596c9be73106c552
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56165304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60266088"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-bitbucket"></a>Руководство. Интеграция Azure Active Directory с Kantega SSO for Bitbucket
+# <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-bitbucket"></a>Руководство по Интеграция Azure Active Directory с Kantega SSO for Bitbucket
 
 В этом руководстве описано, как интегрировать Kantega SSO for Bitbucket с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56165304"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Kantega SSO for Bitbucket, вам потребуется:
 
@@ -115,7 +115,7 @@ ms.locfileid: "56165304"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
 
 1. Чтобы использовать режим, инициируемый **поставщиком услуг**, установите флажок **Показать дополнительные параметры URL-адресов**.
 
@@ -174,7 +174,7 @@ ms.locfileid: "56165304"
 
     a. Скопируйте значение **App ID URI** (URI кода приложения) и используйте его как **идентификатор, URL-адрес ответа и URL-адрес входа** в разделе **Домены и URL-адреса приложения Kantega SSO for Bitbucket** на портале Azure.
 
-    б) Щелкните **Далее**.
+    2. Нажмите кнопку **Далее**.
 
 1. В разделе **Metadata import** (Импорт метаданных) выполните следующие действия.
 
@@ -182,7 +182,7 @@ ms.locfileid: "56165304"
 
     a. Щелкните **Metadata file on my computer** (Файл метаданных на моем компьютере) и передайте файл метаданных, который вы скачали с портала Azure.
 
-    б) Щелкните **Далее**.
+    2. Нажмите кнопку **Далее**.
 
 1. В разделе **Name and SSO location** (Имя и расположение единого входа) выполните следующее.
 
@@ -190,7 +190,7 @@ ms.locfileid: "56165304"
 
     a. В текстовом поле **Provider Name** (Имя поставщика) введите имя поставщика (например, Azure AD).
 
-    б) Щелкните **Далее**.
+    2. Нажмите кнопку **Далее**.
 
 1. Проверьте сертификат для подписи и нажмите кнопку **Next** (Далее).   
 
@@ -202,7 +202,7 @@ ms.locfileid: "56165304"
 
     a. Щелкните переключатель **Create users in Bitbucket's internal Directory if needed** (При необходимости создать пользователей во внутреннем каталоге Bitbucket) и введите соответствующее имя группы пользователей (это может быть несколько групп, разделенных запятой).
 
-    б) Щелкните **Далее**.
+    2. Нажмите кнопку **Далее**.
 
 1. Нажмите кнопку **Готово**
 
@@ -214,7 +214,7 @@ ms.locfileid: "56165304"
 
     a. Щелкните **Known domains** (Известные домены) на левой панели страницы.
 
-    б) Введите имя домена в текстовое поле **Known domains** (Известные домены).
+    2. Введите имя домена в текстовое поле **Known domains** (Известные домены).
 
     c. Выберите команду **Сохранить**.  
 
@@ -247,11 +247,11 @@ ms.locfileid: "56165304"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-kantega-sso-for-bitbucket-test-user"></a>Создание тестового пользователя Kantega SSO for Bitbucket
 
@@ -279,11 +279,11 @@ ms.locfileid: "56165304"
 
     a. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
     
-    б) В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например Britta Simon.
+    2. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например Britta Simon.
     
     c. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
-    4.3. В текстовом поле **Password** (Пароль) введите пароль пользователя.  
+    d. В текстовом поле **Password** (Пароль) введите пароль пользователя.  
 
     д. В текстовом поле **Confirm Password** (Подтверждение пароля) введите пароль еще раз.
 

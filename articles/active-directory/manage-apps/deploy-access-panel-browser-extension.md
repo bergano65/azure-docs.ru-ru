@@ -17,11 +17,11 @@ ms.reviewer: asteen
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c7dfdd46714d367b61248d9376ce3e8888bb1ef7
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56176974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60292560"
 ---
 # <a name="how-to-deploy-the-access-panel-extension-for-internet-explorer-using-group-policy"></a>Развертывание расширения панели доступа для Internet Explorer с помощью групповой политики
 В этом руководстве описывается удаленная установка расширения панели доступа для Internet Explorer на компьютерах пользователей с помощью групповой политики. Это расширение является обязательным для пользователей Internet Explorer, выполняющих вход в приложения, для которых настроен [единый вход по паролю](what-is-single-sign-on.md#password-based-sso).
@@ -30,7 +30,7 @@ ms.locfileid: "56176974"
 
 Также существует расширение панели доступа для браузеров [Chrome](https://go.microsoft.com/fwLink/?LinkID=311859) и [Firefox](https://go.microsoft.com/fwLink/?LinkID=626998). Для их установки права администратора не требуются.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * Вы уже настроили [доменные службы Active Directory](https://msdn.microsoft.com/library/aa362244%28v=vs.85%29.aspx)и подключили компьютеры пользователей к домену.
 * У вас есть разрешение на изменение параметров для редактирования объекта групповой политики. По умолчанию это разрешение имеют члены следующих групп безопасности: "Администраторы домена", "Администраторы предприятия" и "Владельцы-создатели групповой политики". [Подробнее.](https://technet.microsoft.com/library/cc781991%28v=ws.10%29.aspx)
 

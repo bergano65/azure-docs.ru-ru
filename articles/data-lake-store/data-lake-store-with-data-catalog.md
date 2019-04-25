@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: fd887560c0011fb1ec2141e33f02f7e3d8a39c81
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58877890"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60196614"
 ---
 # <a name="register-data-from-azure-data-lake-storage-gen1-in-azure-data-catalog"></a>Регистрация данных из Azure Data Lake Storage 1-го поколения в каталоге данных Azure
 В этой статье вы узнаете, как интегрировать Azure Data Lake Storage 1-го поколения со службой "Каталог данных Azure", чтобы в организации можно было обнаруживать данные с помощью интеграции с каталогом данных. Дополнительные сведения о каталогизации данных см. в статье [Каталог данных Azure](../data-catalog/data-catalog-what-is-data-catalog.md). Чтобы понять, в каких сценариях можно использовать каталог данных, см. статью [Типичные сценарии каталога данных Azure](../data-catalog/data-catalog-common-scenarios.md).

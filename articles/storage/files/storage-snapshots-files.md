@@ -2,18 +2,18 @@
 title: Обзор моментальных снимков общих ресурсов для службы файлов Azure | Документация Майкрософт
 description: Моментальный снимок общих ресурсов — это версия общих файловых ресурсов Azure только для чтения на определенный момент времени, позволяющая создать резервную копию общих ресурсов.
 services: storage
-author: RenaShahMSFT
+author: roygara
 ms.service: storage
 ms.topic: article
 ms.date: 01/17/2018
-ms.author: renash
+ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 8d6bca12ae1df0cab7be3e1c54467d32063bacaf
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57195314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60444101"
 ---
 # <a name="overview-of-share-snapshots-for-azure-files"></a>Общие сведения о моментальных снимках общих ресурсов для службы файлов Azure 
 Служба "Файлы Azure" предоставляет возможность создать моментальные снимки общих ресурсов для файловых ресурсов. В моментальные снимки общих ресурсов записывается состояние общего ресурса на определенный момент времени. В этой статье описаны возможности, предоставляемые моментальными снимками общих ресурсов, а также то, как можно воспользоваться их преимуществами в своих вариантах.

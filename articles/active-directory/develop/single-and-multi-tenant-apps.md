@@ -18,11 +18,11 @@ ms.reviewer: justhu
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 57ec1939dd1f5445583200776e489f7596f572f0
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56178453"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60250322"
 ---
 # <a name="tenancy-in-azure-active-directory"></a>Аренда в Azure Active Directory
 
@@ -50,6 +50,6 @@ Azure Active Directory (Azure AD) дает возможность организ
 * Следуйте принципу наименьшего доступа для пользователей, чтобы убедиться, что ваше приложение запрашивает только те разрешения, которые ему действительно нужны. Избегайте запрашивать разрешения, которые требуют разрешения администратора, поскольку в общем это может помешать пользователям приобретать ваше приложение в некоторых организациях. 
 * Укажите соответствующие имена и описания для всех разрешений, предоставляемых в рамках приложения. Это поможет пользователям и администраторам понять, на что они соглашаются, когда пытаются использовать API вашего приложения. Дополнительные сведения см. в разделе рекомендаций в [руководстве по разрешениям](v1-permissions-and-consent.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Как преобразовать приложение в мультитенантное](howto-convert-app-to-be-multi-tenant.md)

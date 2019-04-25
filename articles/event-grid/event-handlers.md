@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 01/21/2019
 ms.author: spelluru
 ms.openlocfilehash: 33604a16f5895e20d4475d1dd8b27c34184feb72
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54478473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60345487"
 ---
 # <a name="event-handlers-in-azure-event-grid"></a>Обработчики событий в службе "Сетка событий Azure"
 
@@ -91,7 +91,7 @@ ms.locfileid: "54478473"
 | [Быстрое руководство по отправке событий реестра контейнеров](../container-registry/container-registry-event-grid-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Содержит сведения об отправке событий Реестра контейнеров с помощью Azure CLI. |
 | [Общие сведения. Получение событий через конечную точку HTTP](receive-events.md) | В этой статье описывается, как проверить получение событий на конечную точку HTTP из подписки на события, а также как получать события и десериализировать их. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).
 * Сведения о том, как быстро приступить к использованию службы "Сетка событий", см. в разделе [Создание и перенаправление пользовательского события со службой "Сетка событий Azure"](custom-event-quickstart.md).

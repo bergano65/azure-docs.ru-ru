@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 09/14/2018
 ms.openlocfilehash: b035be727df2dfecb613da79681affd740c69bec
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59544824"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60333882"
 ---
 # <a name="how-to-set-up-a-cicd-pipeline-for-azure-data-lake-analytics"></a>Настройка конвейера CI/CD для Azure Data Lake Analytics  
 
@@ -463,7 +463,7 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 
 #### <a name="parameter-for-local-deployment"></a>Параметр для локального развертывания
 
-|Параметр|Описание|По умолчанию|Обязательно для заполнения|
+|Параметр|ОПИСАНИЕ|По умолчанию|Обязательно для заполнения|
 |---------|-----------|-------------|--------|
 |DataRoot|Локальный путь к корневой папке данных.|null|Да|
 

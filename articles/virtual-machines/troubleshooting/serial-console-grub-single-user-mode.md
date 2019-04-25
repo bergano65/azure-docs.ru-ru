@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
 ms.openlocfilehash: ca2523a1101a21740a318a304f9bec491d4de2f9
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58106242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60307108"
 ---
 # <a name="use-serial-console-to-access-grub-and-single-user-mode"></a>Использование последовательной консоли для доступа к GRUB и однопользовательскому режиму
 GRUB — это универсальный загрузчик с титулом GRand, который, вероятнее всего, является первым, что вы увидите при загрузке виртуальной машины. Так как он отображается до запуска операционной системы, он недоступен по протоколу SSH. GRUB, помимо всего прочего, дает возможность изменить конфигурацию для загрузки в однопользовательский режим.

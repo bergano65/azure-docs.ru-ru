@@ -16,11 +16,11 @@ ms.author: celested
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1223c96bffdf125da0c47fc932d46cfa84fa45c8
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56187786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60291268"
 ---
 # <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a>Руководство по интеграции Azure Active Directory с приложениями
 
@@ -90,7 +90,7 @@ ms.locfileid: "56187786"
 * [Назначение групп для приложения](../active-directory-applications-guiding-developers-assigning-groups.md)
 * [Совместное использование учетных записей.](../active-directory-sharing-accounts.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Для получения подробных сведений можно скачать планы развертывания Azure Active Directory с сайта [GitHub](https://aka.ms/deploymentplans). Для приложений из коллекции вы можете скачать планы развертывания для единого входа, условного доступа и подготовки пользователей на [портале Azure](https://portal.azure.com). 
 
 Чтобы скачать план развертывания на портале Azure, сделайте следующее.

@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 01/15/2019
 ms.author: adgera
 ms.openlocfilehash: 16bb148a0b3a424c9ba3aaae422f423ebd40793b
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54358819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60536990"
 ---
 # <a name="security-best-practices"></a>Рекомендации по обеспечению безопасности
 
@@ -68,7 +68,7 @@ Azure Digital Twins используют Azure Active Directory для ауте�
 
 [!INCLUDE [digital-twins-rbac-best-practices](../../includes/digital-twins-rbac-best-practices.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Рекомендации по Интернету вещей Azure см. в [этой статье](../iot-fundamentals/iot-security-best-practices.md).
 

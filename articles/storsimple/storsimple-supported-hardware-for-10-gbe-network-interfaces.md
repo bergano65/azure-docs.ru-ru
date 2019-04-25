@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 09/21/2016
 ms.author: alkohli
-ms.openlocfilehash: db03b3cd668bf8e35913872ac4225de6d4d3edd1
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 8303195f0f3228ee145cbba9e322ea4e5e4c1264
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23110572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60302540"
 ---
 # <a name="supported-hardware-for-the-10-gbe-network-interfaces-on-your-storsimple-device"></a>Поддерживаемое оборудование для сетевых интерфейсов 10 GbE на устройстве StorSimple
 ## <a name="overview"></a>Обзор
@@ -34,7 +34,7 @@ ms.locfileid: "23110572"
 | Cisco |SFP-10G-SR |
 
 ### <a name="cables"></a>Кабели
-| S. Нет. | Убедитесь, | Модель |
+| S. № | Убедитесь, | Модель |
 | --- | --- | --- |
 | 1. |Cisco |SFP-H10GB-CU1M |
 | 2. |Cisco |SFP-H10GB-CU2M |
@@ -42,7 +42,7 @@ ms.locfileid: "23110572"
 | 4. |Tripp-Lite |N820-05M (OM3) |
 
 ### <a name="switches"></a>Коммутаторы
-| S. Нет. | Убедитесь, | Модель |
+| S. № | Убедитесь, | Модель |
 | --- | --- | --- |
 | 1. |Cisco |N3K-C3172PQ-10GE |
 | 2. |Cisco |N3K-C3048-ZM-F |
@@ -51,16 +51,16 @@ ms.locfileid: "23110572"
 ## <a name="list-of-devices-tested-in-the-field"></a>Список устройств, протестированных на местах
 В этом разделе содержится список устройств, которые были успешно развернуты на местах клиентами StorSimple. Они не были проверены корпорацией Майкрософт, но, скорее всего, подходят для работы с устройством StorSimple.
 
-| Параметр | Значение |
+| Параметр | Value |
 | --- | --- |
 | Производитель коммутатора |Juniper |
 | Модель коммутатора |ex4550-32F |
 | Версия операционной системы коммутатора |JunOS 12.3R9.4 |
 | Модель блейд-модуля |Встроенные порты (PIC 0) |
 | Производитель приемопередатчика |Juniper |
-| Модель приемопередатчика |Артикул 740-021308  <br></br> Артикул 740-030658 |
+| Модель приемопередатчика |Артикул 740-021308  <br></br>  Артикул 740-030658 |
 | Версия встроенного ПО приемопередатчика |Редакция 01 версии 0.0 (сообщенная) |
-| Модель кабеля |Дуплекс jumper LC/LC 50/125µ, OM3, LSZH |
+| Модель кабеля |Перемычек дуплексной LC/LC 50/125µ, OM3, LSZH |
 | Модель StorSimple |8600 |
 | Версия программного обеспечения StorSimple |6.3.9600.17491 |
 
@@ -70,7 +70,7 @@ Mellanox проверила следующие подключаемые прие
 ### <a name="cables-and-modules-supported-by-mellanox"></a>Кабели и модули, поддерживаемые Mellanox
 Ниже перечислены кабели и модули, поддерживаемые Mellanox. Они не были проверены корпорацией Майкрософт, но, скорее всего, подходят для работы с устройством StorSimple.
 
-| S. Нет. | Speed | Модель | ОПИСАНИЕ | Убедитесь, |
+| S. № | Speed | Модель | ОПИСАНИЕ | Убедитесь, |
 | --- | --- | --- | --- | --- |
 | 1. |10 GbE |CAB-SFP-SFP-1M |Пассивный медный кабель SFP + 10 Гбит/с, 1 м |Arista |
 | 2. |10 GbE |CAB-SFP-SFP-2M |Пассивный медный кабель SFP + 10 Гбит/с, 2 м |Arista |
@@ -111,7 +111,7 @@ Mellanox проверила следующие подключаемые прие
 ### <a name="switches-supported-by-mellanox"></a>Коммутаторы, поддерживаемые Mellanox
 Ниже перечислены коммутаторы, поддерживаемые Mellanox. Они не были проверены корпорацией Майкрософт, но, скорее всего, подходят для работы с устройством StorSimple.
 
-| S. Нет. | Speed | Модель | ОПИСАНИЕ | Убедитесь, |
+| S. № | Speed | Модель | ОПИСАНИЕ | Убедитесь, |
 | --- | --- | --- | --- | --- |
 | 1. |10GbE |516733-B21 |Коммутатор HP ProCurve 6120XG 10GbE Ethernet Blade Switch |HP |
 | 2) |10GbE |538113-B21 |Переходный модуль (PTM) HP 10GbE |HP |
@@ -121,6 +121,6 @@ Mellanox проверила следующие подключаемые прие
 | 6. |1GbE |438030-B21 |Модуль коммутатора HP 1GbE — GbE2c Layer 2/3 Ethernet Blade Switch |HP |
 | 7. |1GbE |6120G |Колонка коммутатора HP ProCurve 6120G/XG 1GbE |HP |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Дополнительные сведения об аппаратных компонентах и состоянии StorSimple](storsimple-monitor-hardware-status.md).
 

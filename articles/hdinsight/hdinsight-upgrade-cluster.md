@@ -4,22 +4,25 @@ description: Узнайте, как установить новую версию
 services: hdinsight
 ms.service: hdinsight
 author: omidm1
-ms.author: omidm
+ms.author: v-yiso
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 04/04/2017
+origin.date: 04/04/2017
+ms.date: 02/04/2019
 ms.openlocfilehash: 266de596633201b5590a6433d078cc05f2a267b4
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53994527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60306179"
 ---
 # <a name="upgrade-hdinsight-cluster-to-a-newer-version"></a>Обновление кластера HDInsight до более новой версии
 Чтобы воспользоваться преимуществами новых возможностей HDInsight, мы рекомендуем обновить кластеры HDInsight до последней версии. Выполните следующие инструкции, чтобы обновить версию кластера HDInsight.
 
-> [!NOTE]  
+> [!NOTE]
 > См. дополнительные сведения о [поддерживаемых версиях компонентов HDInsight](hdinsight-component-versioning.md#supported-hdinsight-versions).
+>
+>
 
 ## <a name="upgrade-tasks"></a>Задачи обновления
 Рабочий процесс для обновления кластера HDInsight выглядит так.
@@ -40,7 +43,7 @@ ms.locfileid: "53994527"
 4.  Импортируйте все временные данные из резервной копии.
 5.  Запустите задания и продолжите обработку с помощью нового кластера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Узнайте, как создавать кластеры HDInsight под управлением Linux](hdinsight-hadoop-provision-linux-clusters.md)
 * [Подключитесь к HDInsight с помощью протокола SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
 * [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md)

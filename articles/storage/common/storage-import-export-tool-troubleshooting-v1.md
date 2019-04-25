@@ -9,11 +9,11 @@ ms.date: 01/15/2017
 ms.author: muralikk
 ms.subservice: common
 ms.openlocfilehash: 9a4e47143515c7f9c21d701809c35d61853d91ec
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55471918"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60320454"
 ---
 # <a name="troubleshooting-the-azure-importexport-tool"></a>Устранение неполадок со средством импорта и экспорта Azure
 В случае возникновения проблем инструмент импорта и экспорта Microsoft Azure возвращает сообщения об ошибках. В этом разделе приведены некоторые распространенные проблемы, с которыми могут столкнуться пользователи.  
@@ -31,7 +31,7 @@ ms.locfileid: "55471918"
 ## <a name="i-lost-the-journal-file-can-i-still-create-the-job"></a>Файл журнала утерян, могу ли я по-прежнему создать задание?  
  Файл журнала для диска содержит полную информацию о копировании данных на этот диск. Он необходим для добавления дополнительных файлов на диск и будет использоваться для создания задания импорта. Если файл журнала утерян, то необходимо повторить все сеансы копирования для диска.  
   
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
  
 * [Настройка средства импорта и экспорта Azure](../storage-import-export-tool-setup-v1.md)   
 * [Подготовка жестких дисков для задания импорта](../storage-import-export-tool-preparing-hard-drives-import-v1.md)   

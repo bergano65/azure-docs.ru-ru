@@ -3,8 +3,8 @@ title: Устранение неполадок конфигураций и по�
 description: Эта статья содержит ссылки на статьи об устранении неполадок конфигурации VPN-шлюза, неполадок подключения и проверке пропускной способности.
 services: vpn-gateway
 documentationcenter: na
-author: cherylmc
-manager: timlt
+author: WenJason
+manager: digimobile
 editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: ''
@@ -13,14 +13,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 01/31/2018
-ms.author: cherylmc
-ms.openlocfilehash: bb1074e361610cf3a8810aaeeb83717f791eb8bf
-ms.sourcegitcommit: 9d317dabf4a5cca13308c50a10349af0e72e1b7e
-ms.translationtype: HT
+origin.date: 01/31/2018
+ms.date: 04/01/2018
+ms.author: v-jay
+ms.openlocfilehash: 263c1010ec6cf5f6140c4dc9323dd9bd149b2368
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
-ms.locfileid: "28934656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60456398"
 ---
 # <a name="troubleshoot-vpn-gateway"></a>Устранение неполадок VPN-шлюза
 
@@ -36,6 +37,6 @@ ms.locfileid: "28934656"
 
 * [Подключения типа "сеть — сеть"](vpn-gateway-troubleshoot-site-to-site-cannot-connect.md)<br>После настройки подключения VPN типа "сеть — сеть" между локальной сетью и виртуальной сетью Azure VPN-подключение внезапно завершается сбоем и его невозможно восстановить. В этой статье приведены действия по устранению этой проблемы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Эту процедуру можно также использовать, чтобы [проверить подключения виртуальной сети и VPN-подключения](https://support.microsoft.com/help/4032151/configuring-and-validating-vnet-or-vpn-connections).

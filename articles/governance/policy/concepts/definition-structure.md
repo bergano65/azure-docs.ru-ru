@@ -9,11 +9,11 @@ ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
 ms.openlocfilehash: 7bb25aa1f77a49363fe2e08d1430282b9b33caae
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59549360"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60311647"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -27,7 +27,7 @@ ms.locfileid: "59549360"
 - mode;
 - parameters
 - display name
-- Описание
+- description
 - policy rule
   - logical evaluation
   - effect
@@ -287,7 +287,7 @@ ms.locfileid: "59549360"
 }
 ```
 
-### <a name="value"></a>Значение
+### <a name="value"></a>Value
 
 Условия также можно настраивать с помощью **value**. **value** проверяет условия на соответствие [параметрам](#parameters), [поддерживаемым функциям шаблонов](#policy-functions) или литералам.
 **value** используется в паре с любым поддерживаемым [условием](#conditions).
@@ -373,7 +373,7 @@ ms.locfileid: "59549360"
 
 Измененная политика правило с `if()` проверяет длину **имя** перед попыткой получения `substring()` на значении с менее чем из трех символов. Если **имя** слишком короткий, значение «не запускается с abc» вместо этого возвращается и по сравнению с **abc**. Ресурс с короткое имя, которое не начинается с **abc** по-прежнему не соответствует правилу политики, но больше не приводит к ошибке во время оценки.
 
-### <a name="effect"></a>Результат
+### <a name="effect"></a>Эффект
 
 Политика поддерживает следующие типы действий:
 

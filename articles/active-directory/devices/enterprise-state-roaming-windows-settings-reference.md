@@ -18,11 +18,11 @@ ms.date: 01/30/2019
 ms.author: joflore
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e6c80ee5d2a4d72be131c6a781cf793d1981e780
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58521080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60353261"
 ---
 # <a name="windows-10-roaming-settings-reference"></a>Справочник по перемещаемым параметрам в Windows 10
 Ниже приведен полный список всех параметров, для которых в Windows 10 будет выполнено перемещение или резервное копирование. 

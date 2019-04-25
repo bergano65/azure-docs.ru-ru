@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: jingwang
 ms.openlocfilehash: 234b78a97c2663121d0d585154695887a58b9522
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54351749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60203420"
 ---
 # <a name="copy-data-from-servicenow-using-azure-data-factory"></a>Копирование данных из ServiceNow с помощью фабрики данных Azure
 
@@ -39,9 +39,9 @@ ms.locfileid: "54351749"
 
 Для связанной службы ServiceNow поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type необходимо задать следующее значение: **ServiceNow** | Yes |
+| type | Свойству type необходимо задать следующее значение: **ServiceNow** | Yes |
 | endpoint | Конечная точка сервера ServiceNow (`http://<instance>.service-now.com`).  | Yes |
 | authenticationType | Тип проверки подлинности. <br/>Допустимые значения: **Basic**, **OAuth2** | Yes |
 | Имя пользователя | Имя пользователя, используемое для подключения к серверу ServiceNow для обычной проверки подлинности и OAuth2.  | Yes |
@@ -78,9 +78,9 @@ ms.locfileid: "54351749"
 
 Чтобы скопировать данные из ServiceNow, установите свойство type набора данных **ServiceNowObject**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type набора данных необходимо задать следующее значение: **ServiceNowObject** | Yes |
+| type | Для свойства type набора данных необходимо задать следующее значение: **ServiceNowObject** | Yes |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -107,9 +107,9 @@ ms.locfileid: "54351749"
 
 Чтобы копировать данные из ServiceNow, установите тип источника **ServiceNowSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь следующее значение: **ServiceNowSource** | Yes |
+| type | Свойство type источника действия копирования должно иметь следующее значение: **ServiceNowSource** | Yes |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Actual.alm_asset"`. | Нет (если для набора данных задано свойство tableName) |
 
 Указывая в запросе схему и столбец для ServiceNow, обратите внимание на следующую информацию. Также просмотрите **советы по [улучшению производительности](#performance-tips) копирования**.
@@ -164,5 +164,5 @@ ms.locfileid: "54351749"
 
 Индекс таблицы ServiceNow может помочь повысить производительность запросов. Подробности см. [здесь](https://docs.servicenow.com/bundle/geneva-servicenow-platform/page/administer/table_administration/task/t_CreateCustomIndex.html).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

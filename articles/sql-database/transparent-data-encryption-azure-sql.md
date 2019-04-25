@@ -13,11 +13,11 @@ ms.reviewer: vanto
 manager: craigg
 ms.date: 04/19/2019
 ms.openlocfilehash: 8ed7d144b886cc29592418007b9103b4aa94e8ab
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60002618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60331083"
 ---
 # <a name="transparent-data-encryption-for-sql-database-and-data-warehouse"></a>Прозрачное шифрование данных для хранилища данных и Базы данных SQL
 

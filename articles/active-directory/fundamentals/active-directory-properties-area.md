@@ -13,11 +13,11 @@ ms.reviewer: bpham
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 98b4e3585f25a0b081e30c5524678a0f7bb27942
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56187276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60248496"
 ---
 # <a name="add-your-organizations-privacy-info-using-azure-active-directory"></a>Добавление сведений о конфиденциальности организации в Azure Active Directory
 В этой статье объясняется, как администратор клиента может добавить сведения о конфиденциальности в клиент организации Azure Active Directory (Azure AD) на портале Azure.
@@ -54,6 +54,6 @@ ms.locfileid: "56187276"
 
 4.  Щелкните **Сохранить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Azure Active Directory B2B collaboration invitation redemption](https://aka.ms/b2bredemption) (Активация приглашения службы совместной работы Azure Active Directory B2B)
 - [Добавление или изменение данных профиля пользователя в Azure Active Directory](active-directory-users-profile-azure-portal.md)

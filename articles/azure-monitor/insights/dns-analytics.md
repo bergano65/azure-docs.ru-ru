@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 03/20/2018
 ms.author: magoedte
 ms.openlocfilehash: 6dd5872d5ec3e79e3c76b1807aea946015fb0eac
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58521029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60496497"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Сбор сведений об инфраструктуре DNS с помощью решения аналитики DNS (предварительной версии)
 
@@ -189,4 +189,4 @@ ms.locfileid: "58521029"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы получить дополнительные сведения о записях журнала DNS, см. статью [Analyze log data in Azure Monitor](../log-query/log-query-overview.md) (Анализ данных журнала в Azure Monitor).
+Чтобы получить дополнительные сведения о записях журнала DNS, см. статью [Analyze log data in Azure Monitor](../log-query/log-query-overview.md) (Анализ данных журналов в Azure Monitor).

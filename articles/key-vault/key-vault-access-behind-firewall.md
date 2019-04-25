@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: ambapat
 ms.openlocfilehash: 36b431d07ad517d495316963fd6710dafab6c297
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56108642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60305430"
 ---
 # <a name="access-azure-key-vault-behind-a-firewall"></a>Доступ к хранилищу ключей Azure из-за брандмауэра
 
@@ -69,6 +69,6 @@ ms.locfileid: "56108642"
 
 В службе хранилища ключей используются другие ресурсы Azure, такие как инфраструктура PaaS. Поэтому невозможно предоставить определенный диапазон IP-адресов, которые будут иметь конечные точки службы хранилища ключей в любой определенный момент времени. Если брандмауэр поддерживает только диапазоны IP-адресов, ознакомьтесь с документом [Microsoft Azure Datacenter IP Ranges](https://www.microsoft.com/download/details.aspx?id=41653) (Диапазоны IP-адресов центра обработки данных Microsoft Azure). Служба аутентификации и идентификации (Azure Active Directory) является глобальным решением, для которого без уведомления может выполняться отработка отказа в другие регионы или перемещаться трафик. В таком случае в брандмауэр нужно добавить все диапазоны IP-адресов, перечисленные в разделе для [службы аутентификации и идентификации](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2#bkmk_identity_ip).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас возникли вопросы о хранилище ключей, посетите [форумы хранилища ключей Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureKeyVault).
