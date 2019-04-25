@@ -8,11 +8,11 @@ ms.date: 02/13/2019
 ms.author: robb
 ms.subservice: diagnostic-extension
 ms.openlocfilehash: 8a287f118c126967d2cf8cad77a434cfecc098eb
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58078545"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60236235"
 ---
 # <a name="what-is-azure-diagnostics-extension"></a>Расширение Диагностики Azure
 Расширение диагностики Azure — это агент, который позволяет выполнять сбор диагностических данных о развернутом приложении. Можно использовать модуль диагностики из различных источников. Сейчас поддерживаются веб-роль и рабочая роль облачной службы Azure (классические), виртуальные машины, масштабируемые наборы виртуальных машин и Service Fabric. Для других служб Azure предусмотрены другие методы диагностики. Ознакомьтесь с [общими сведениями о мониторинге в Azure](../../azure-monitor/overview.md).

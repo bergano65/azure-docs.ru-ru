@@ -12,11 +12,11 @@ ms.date: 04/16/2019
 ms.author: diberry
 ms.custom: seodec18
 ms.openlocfilehash: aba8f9b2b4e62420ed5d318be40bbc4ada544866
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59679607"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60203216"
 ---
 # <a name="install-and-run-recognize-text-containers"></a>Установка и запуск контейнеров распознавания текста
 
@@ -89,7 +89,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-recognize-t
 
 Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. В команде используются следующие параметры:
 
-| Placeholder | Значение |
+| Placeholder | Value |
 |-------------|-------|
 |{BILLING_KEY} | Этот ключ используется для запуска контейнера, а также доступна в Azure `Cognitive Services` страницы "ключи".  |
 |{BILLING_ENDPOINT_URI} | Значение URI конечной точки выставления счетов. Ниже приведен пример: `https://westus.api.cognitive.microsoft.com/vision/v2.0`|

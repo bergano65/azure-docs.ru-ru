@@ -14,11 +14,11 @@ ms.reviewer: vincesm
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 26178066b2f5353cba99c5965bb2f3055556784c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57894280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60246549"
 ---
 # <a name="what-are-the-default-user-permissions-in-azure-active-directory"></a>Разрешения пользователя по умолчанию в Azure Active Directory
 В Azure Active Directory (Azure AD) набор разрешений по умолчанию предоставляется всем пользователям. Доступ пользователей зависит от типа пользователя, [назначений ролей](active-directory-users-assign-role-azure-portal.md) и владения отдельными объектами. В этой статье описываются эти разрешения по умолчанию и содержится сравнение значений по умолчанию для участников и гостевых пользователей. Разрешения пользователя по умолчанию можно изменить только в параметрах пользователя в Azure AD.

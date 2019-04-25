@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.custom: seodec18
 ms.openlocfilehash: d4a80358535429f53b582abe8560757028159070
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53557790"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60197841"
 ---
 # <a name="add-an-event-hub-event-source-to-your-time-series-insights-environment"></a>Добавление источника событий концентратора событий в среду "Аналитика временных рядов Azure"
 
@@ -25,7 +25,7 @@ ms.locfileid: "53557790"
 > [!NOTE]
 > Действия, описанные в этой статье, применяются к средам "Аналитика временных рядов"общедоступной и предварительной версий.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Создайте среду "Аналитика временных рядов". Дополнительные сведения см. в статье [Руководство. Настройка среды "Аналитика временных рядов Azure" (предварительная версия)](./time-series-insights-update-create-environment.md).
 - Создайте концентратор событий. Дополнительные сведения о Центрах событий см. в статье [Краткое руководство. Создание концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md).
@@ -105,8 +105,10 @@ ms.locfileid: "53557790"
 
    После создания источника событий Аналитика временных рядов автоматически запустит потоковую передачу данных в среду.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Определите политики доступа к данным](time-series-insights-data-access.md), чтобы защитить ваши данные.
+
 * [Отправьте события](time-series-insights-send-events.md) в источник событий.
+
 * Получите доступ к своей среде в [обозревателе службы "Аналитика временных рядов"](https://insights.timeseries.azure.com).

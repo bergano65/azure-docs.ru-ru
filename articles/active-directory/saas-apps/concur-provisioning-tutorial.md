@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка Concur для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка Concur для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Concur.
 services: active-directory
 documentationCenter: na
@@ -16,17 +16,17 @@ ms.date: 01/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 441aa9805f2a453e22f207238315125d2a281838
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56205687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60280406"
 ---
-# <a name="tutorial-configure-concur-for-automatic-user-provisioning"></a>Руководство. Настройка Concur для автоматической подготовки пользователей
+# <a name="tutorial-configure-concur-for-automatic-user-provisioning"></a>Руководство по Настройка Concur для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как в Concur и Azure AD необходимо выполнять автоматическую подготовку и отмену подготовки учетных записей пользователей из Azure AD в Concur.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 

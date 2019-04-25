@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 4a8126d658f227d9eed372cd51cf06f8f12c99f9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58885533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60194983"
 ---
 # <a name="use-the-azure-importexport-service-for-offline-copy-of-data-to-azure-data-lake-storage-gen1"></a>Автономное копирование данных в Azure Data Lake Storage 1-го поколения с помощью службы импорта и экспорта Azure
 В этой статье описано, как скопировать огромные наборы данных (>200 ГБ) в Azure Data Lake Storage 1-го поколения, используя методы автономного копирования, такие как [служба импорта и экспорта Azure](../storage/common/storage-import-export-service.md). В частности, в качестве примера в этой статье используется файл размером 339 420 860 416 байт, т. е. 319 ГБ на диске. Давайте назовем этот файл 319GB.tsv.

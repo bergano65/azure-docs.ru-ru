@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 06/25/2018
 ms.author: kumud
 ms.openlocfilehash: 1caa8e7554024c3b2e3d86436d3d494d7995169a
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53142025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60516674"
 ---
 # <a name="create-a-public-load-balancer-with-ipv6-using-azure-cli"></a>Создание общедоступной подсистемы балансировки нагрузки с поддержкой IPv6 с помощью Azure CLI
 
@@ -296,7 +296,7 @@ Azure Load Balancer является балансировщиком нагруз
     az vm create --resource-group $rgname --name $vm2Name --image $imageurn --admin-username $vmUserName --admin-password $mySecurePassword --nics $nic2Id --location $location --availability-set $availabilitySetName --size "Standard_A1" 
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Приступая к настройке внутренней подсистемы балансировки нагрузки](load-balancer-get-started-ilb-arm-cli.md)  
 [Настройка режима распределения подсистемы балансировки нагрузки](load-balancer-distribution-mode.md)  

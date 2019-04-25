@@ -16,11 +16,11 @@ ms.date: 09/11/2018
 ms.author: celested
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7a0962e5381a6e0a8da96bc7379c38aae73ee400
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56207030"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60250341"
 ---
 # <a name="how-to-configure-endpoints"></a>Как настроить конечные точки
 
@@ -36,5 +36,5 @@ ms.locfileid: "56207030"
 
 -   Используйте соответствующую конечную точку для протокола аутентификации в сочетании с идентификатором приложения, чтобы создать запрос на аутентификацию для своего приложения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Руководство разработчика по Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-developers-guide)

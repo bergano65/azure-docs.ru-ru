@@ -12,11 +12,11 @@ ms.date: 04/16/2019
 ms.author: diberry
 ms.custom: seodec18
 ms.openlocfilehash: 42c08864c6908e92a7ecea336f8b1bd0606760db
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59678689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60203555"
 ---
 # <a name="configure-recognize-text-docker-containers"></a>Настройка контейнера Распознавания текста в Docker
 
@@ -51,9 +51,9 @@ ms.locfileid: "59678689"
 
 Не забудьте добавить `vision/v1.0` маршрутизации URI конечной точки, как показано в следующей таблице. 
 
-|Обязательно для заполнения| ИМЯ | Тип данных | ОПИСАНИЕ |
+|Обязательно для заполнения| Name | Тип данных | ОПИСАНИЕ |
 |--|------|-----------|-------------|
-|Да| `Billing` | Строка | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0` |
+|Да| `Billing` | String | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0` |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -79,10 +79,10 @@ ms.locfileid: "59678689"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того, расположение подключения на [главном компьютере](computer-vision-how-to-install-containers.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположением подключения к узлу. 
 
-|Необязательно| ИМЯ | Тип данных | ОПИСАНИЕ |
+|Необязательно| Name | Тип данных | ОПИСАНИЕ |
 |-------|------|-----------|-------------|
-|Не разрешено| `Input` | Строка | Контейнеры API компьютерного зрения не используют этот элемент.|
-|Необязательно| `Output` | Строка | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Не разрешено| `Input` | String | Контейнеры API компьютерного зрения не используют этот элемент.|
+|Необязательно| `Output` | String | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
@@ -95,7 +95,7 @@ ms.locfileid: "59678689"
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
-| Placeholder | Значение | Формат или пример |
+| Placeholder | Value | Формат или пример |
 |-------------|-------|---|
 |{BILLING_KEY} | Ключ конечной точки ресурса Cognitive Services. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
 |{BILLING_ENDPOINT_URI} | Количество выставленных счетов за конечную точку, включая регион.|`https://westcentralus.api.cognitive.microsoft.com/vision/v1.0`|

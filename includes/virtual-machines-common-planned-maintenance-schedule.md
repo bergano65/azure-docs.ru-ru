@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: c7fe0d6f8e03501cca7a8b98f95286b6a21c0476
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "58114881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60232796"
 ---
 ## <a name="multi-and-single-instance-vms"></a>Многоэкземплярные и одноэкземплярные виртуальные машины
 Для многих клиентов, работающих в Azure, критически важна возможность самостоятельно планировать, когда проводить плановое техническое обслуживание виртуальных машин, так как оно сопровождается простоем (примерно 15 минут). Можно использовать группы доступности для управления временем планового обслуживания подготовленных виртуальных машин.

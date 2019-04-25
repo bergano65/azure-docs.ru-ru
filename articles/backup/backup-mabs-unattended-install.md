@@ -2,18 +2,19 @@
 title: Автоматическая установка Azure Backup Server версии 2
 description: Использование скрипта PowerShell для автоматической установки Azure Backup Server версии 2. Этот тип установки также называется "тихой" установкой.
 services: backup
-author: rayne-wiselman
-manager: carmonm
+author: lingliw
+manager: digimobile
 ms.service: backup
 ms.topic: conceptual
-ms.date: 11/13/2018
-ms.author: raynew
+origin.date: 11/13/2018
+ms.date: 11/26/2018
+ms.author: v-lingwu
 ms.openlocfilehash: 66ed5765a91b607bc5b765926c5df87d13ff6a24
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58109854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60253840"
 ---
 # <a name="run-an-unattended-installation-of-azure-backup-server"></a>Запуск автоматической установки Azure Backup Server
 
@@ -67,3 +68,5 @@ ms.locfileid: "58109854"
 - [Резервное копирование сервера VMware в Azure](backup-azure-backup-server-vmware.md)
 - [Архивация баз данных SQL Server в Azure с помощью Azure Backup Server](backup-azure-sql-mabs.md)
 - [Добавление хранилища на Azure Backup Server версии 2](backup-mabs-add-storage.md)
+
+<!-- Update_Description: link update -->

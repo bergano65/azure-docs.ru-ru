@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 05/23/2017
 ms.author: cynthn
 ROBOTS: NOINDEX
-ms.openlocfilehash: a7181c91424e1d905329eefd13f926d0b2700081
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: e1ed419892412c1fb9334fed74b82c53154723ed
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56864980"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60252416"
 ---
 # <a name="how-to-create-an-unmanaged-vm-image-from-an-azure-vm"></a>Создание неуправляемого образа виртуальной машины на основе виртуальной машины Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "56864980"
 
 В этой статье показано, как использовать Azure PowerShell для создания образа универсальной виртуальной машины Azure с помощью учетной записи хранения. Такой образ можно затем использовать для создания другой виртуальной машины. Этот образ включает в себя диск операционной системы и другие диски данных, присоединенные к виртуальной машине. Образ не включает ресурсы виртуальной сети, поэтому их придется настроить при создании виртуальной машины. 
 
-[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
+[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 
 ## <a name="generalize-the-vm"></a>Подготовка виртуальной машины к использованию 
 В этом разделе содержатся сведения о том, как обобщить виртуальную машину Windows для ее дальнейшего использования в качестве образа. При подготовке виртуальной машины удаляются все сведения о вашей учетной записи и выполняется настройка ВМ для использования в качестве образа. Дополнительные сведения о Sysprep см. в статье [How to Use Sysprep: An Introduction (Использование средства Sysprep: введение). статье](https://technet.microsoft.com/library/bb457073.aspx).

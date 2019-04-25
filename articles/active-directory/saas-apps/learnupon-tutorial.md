@@ -16,13 +16,13 @@ ms.date: 06/23/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 70d4e507087e645c9bfd41e7ef6b90098079ab1d
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56202440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60259035"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-learnupon"></a>Руководство. Интеграция Azure Active Directory с LearnUpon
+# <a name="tutorial-azure-active-directory-integration-with-learnupon"></a>Руководство по Интеграция Azure Active Directory с LearnUpon
 
 В этом руководстве описано, как интегрировать LearnUpon с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56202440"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с LearnUpon, вам потребуется:
 
@@ -148,11 +148,11 @@ ms.locfileid: "56202440"
   
     a. Щелкните **Включено**.
 
-    б) Для параметра **Версия** установите значение **2.0**.
+    2. Для параметра **Версия** установите значение **2.0**.
 
     c. Для параметра **Пропустить условия** установите значение **Нет**.
 
-    4.3. В текстовое поле **SAML Token Post param name** (Имя параметра POST для токена SAML) введите имя параметра POST, передаваемого в запросе на указанный выше URL-адрес клиента SAML (в нем содержится требующее проверки и аутентификации утверждение SAML, например **SAMLResponse**).
+    d. В текстовое поле **SAML Token Post param name** (Имя параметра POST для токена SAML) введите имя параметра POST, передаваемого в запросе на указанный выше URL-адрес клиента SAML (в нем содержится требующее проверки и аутентификации утверждение SAML, например **SAMLResponse**).
 
     д. В текстовое поле **Name Identifier Format** (Формат идентификатора имени) введите значение, которое определяет позицию идентификатора пользователя (адрес электронной почты) в утверждении SAML (например, **urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress**).
   
@@ -168,7 +168,7 @@ ms.locfileid: "56202440"
  
     a. В текстовом поле **First Name Identifier Format** (Формат идентификатора имени) введите значение, которое обозначает расположение имени пользователя в утверждении SAML, например: **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname**.
   
-    б) В текстовом поле **Last Name Identifier Format** (Формат идентификатора фамилии) введите значение, которое обозначает расположение фамилии пользователя в утверждении SAML, например: **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname**.
+    2. В текстовом поле **Last Name Identifier Format** (Формат идентификатора фамилии) введите значение, которое обозначает расположение фамилии пользователя в утверждении SAML, например: **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname**.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -199,11 +199,11 @@ ms.locfileid: "56202440"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-learnupon-test-user"></a>Создание тестового пользователя LearnUpon
 

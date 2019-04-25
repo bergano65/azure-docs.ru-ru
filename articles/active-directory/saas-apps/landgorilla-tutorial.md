@@ -16,11 +16,11 @@ ms.date: 03/13/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b2e1288885476aeeba01f966b615c23c5fe51081
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56199516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60261005"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-land-gorilla-client"></a>Руководство по Интеграция Azure Active Directory с Land Gorilla Client
 
@@ -35,7 +35,7 @@ ms.locfileid: "56199516"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Land Gorilla Client, вам потребуется:
 
@@ -125,7 +125,7 @@ ms.locfileid: "56199516"
     
     `https://www.<customer domain>.landgorilla.com`
 
-    б) В текстовое поле **URL-адрес ответа** введите URL-адрес, используя один из следующих форматов:
+    2. В текстовое поле **URL-адрес ответа** введите URL-адрес, используя один из следующих форматов:
 
     `https://<customer domain>.landgorilla.com/simplesaml/module.php/core/authenticate.php`
 
@@ -174,11 +174,11 @@ ms.locfileid: "56199516"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**. 
+    d. Нажмите кнопку **Создать**. 
 
 ### <a name="creating-a-land-gorilla-test-user"></a>Создание тестового пользователя Land Gorilla
 

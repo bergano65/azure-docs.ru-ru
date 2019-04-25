@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: diberry
 ms.openlocfilehash: 202b9632b7a7faaf955874a0300edbe5134b7fa1
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59521260"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60196703"
 ---
 # <a name="how-to-add-patterns-to-improve-prediction-accuracy"></a>Добавление шаблонов для повышения точности прогнозов
 После того как приложения LUIS получает фразы конечной точки, используйте [шаблон](luis-concept-patterns.md) для повышения точности прогнозов для фразы, которые раскрывают шаблон в порядок слов и выбора слов. Шаблоны используются определенные [синтаксис](luis-concept-patterns.md#pattern-syntax) для указания расположения: [сущностей](luis-concept-entity-types.md), сущности [ролей](luis-concept-roles.md)и необязательный текст.

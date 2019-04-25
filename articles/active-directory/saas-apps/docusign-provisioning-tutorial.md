@@ -16,17 +16,17 @@ ms.date: 01/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 121d147a3f8c91f17e955120b2c14f7dbd3da592
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56191849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60280120"
 ---
-# <a name="tutorial-configure-docusign-for-automatic-user-provisioning"></a>Руководство. Настройка DocuSign для автоматической подготовки пользователей
+# <a name="tutorial-configure-docusign-for-automatic-user-provisioning"></a>Руководство по Настройка DocuSign для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как настроить автоматическую подготовку и отмену подготовки учетных записей из Azure AD в DocuSign.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -76,7 +76,7 @@ ms.locfileid: "56191849"
    
     a. В текстовом поле **Имя пользователя администратора** введите имя учетной записи DocuSign, для которой в DocuSign.com назначен профиль **Системный администратор**.
    
-    б) В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
+    2. В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
 
 1. На портале Azure щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к приложению DocuSign.
 

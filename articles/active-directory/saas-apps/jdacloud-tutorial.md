@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с JDA Cloud | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с JDA Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и JDA Cloud.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 08/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 86f2dfaf281130115ff04ff84b413e224f54cfcf
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56168346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60268039"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-jda-cloud"></a>Руководство. Интеграция Azure Active Directory с JDA Cloud
+# <a name="tutorial-azure-active-directory-integration-with-jda-cloud"></a>Руководство по Интеграция Azure Active Directory с JDA Cloud
 
 В этом руководстве описано, как интегрировать приложение JDA Cloud с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56168346"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с приложением JDA Cloud, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "56168346"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.jdadelivers.com`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.jdadelivers.com/sp/ACS.saml2`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.jdadelivers.com/sp/ACS.saml2`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -167,7 +167,7 @@ ms.locfileid: "56168346"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="create-a-jda-cloud-test-user"></a>Создание тестового пользователя JDA Cloud
 

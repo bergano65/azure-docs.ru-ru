@@ -18,11 +18,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4dc6993586063c9c99a287c51d799b44f921768d
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58286097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60245126"
 ---
 # <a name="install-azure-ad-connect-using-an-existing-adsync-database"></a>Установка Azure AD Connect с помощью имеющейся базы данных ADSync
 Azure AD Connect требуется база данных SQL Server для хранения данных. Можно использовать выпуск SQL Server 2012 Express LocalDB по умолчанию, установленный с помощью Azure AD Connect, или полную версию SQL Server. Ранее при установке Azure AD Connect всегда создавалась база данных с именем ADSync. В Azure AD Connect версии 1.1.613.0 (или более поздней) имеется возможность установить Azure AD Connect, указав имеющуюся базу данных ADSync.

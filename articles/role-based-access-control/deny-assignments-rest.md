@@ -16,18 +16,18 @@ ms.date: 03/13/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 59bcf2b33d203ae216b4965b963a727a6b34ae72
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57998406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60194673"
 ---
 # <a name="list-deny-assignments-for-azure-resources-using-the-rest-api"></a>Вывод списка запретов назначений для ресурсов Azure с помощью REST API
 
 [Запрещающие назначения](deny-assignments.md) блокируют выполнение определенных действий ресурсов Azure пользователями, даже если назначение роли предоставляет им доступ. В этой статье описывается использование REST API для списка запретить назначения.
 
 > [!NOTE]
-> В настоящее время единственным способом, вы можете добавить собственные запретить назначения — с помощью Azure чертежей. Дополнительные сведения см. в разделе [защитить новые ресурсы с помощью блокировки ресурсов Azure чертежей](../governance/blueprints/tutorials/protect-new-resources.md).
+> В настоящее время единственный способ добавить собственный запрет назначений обеспечивает — использовать Azure Blueprints. Дополнительные сведения см. в статье о [защите новых ресурсов с помощью блокировок ресурсов Azure Blueprints](../governance/blueprints/tutorials/protect-new-resources.md).
 
 ## <a name="prerequisites"></a>Технические условия
 

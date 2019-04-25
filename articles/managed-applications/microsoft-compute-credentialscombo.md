@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 09/29/2018
 ms.author: tomfitz
 ms.openlocfilehash: 0412d55fe60524cde404e6a640723d3259e020e1
-ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47586246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60251378"
 ---
 # <a name="microsoftcomputecredentialscombo-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Compute.CredentialsCombo
 Группа элементов управления со встроенной проверкой паролей и открытых ключей SSH для Windows и Linux.
@@ -121,6 +121,6 @@ ms.locfileid: "47586246"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 * Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

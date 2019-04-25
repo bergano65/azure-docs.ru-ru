@@ -19,11 +19,11 @@ ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2f4a7f2a4fe0e1ca455b1140e83f31f6b30a7511
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59523466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60250086"
 ---
 # <a name="microsoft-identity-platform-and-openid-connect-protocol"></a>Платформой Microsoft identity и протокол OpenID Connect
 
@@ -52,7 +52,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 
 `{tenant}` может принимать одно из четырех значений.
 
-| Значение | ОПИСАНИЕ |
+| Value | ОПИСАНИЕ |
 | --- | --- |
 | `common` |Пользователи с личной учетной записи Майкрософт и рабочей или учебной учетной записи из Azure AD могут входить в приложение. |
 | `organizations` |Вход в приложение могут выполнять только пользователи с рабочими или учебными учетными записями Azure AD. |
@@ -110,7 +110,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 > Чтобы выполнить этот запрос, щелкните приведенную ниже ссылку. После входа в систему в браузере будет выполнен переход по адресу `https://localhost/myapp/` с указанием маркера идентификации в адресной строке. Обратите внимание, что в этом запросе используется `response_mode=fragment` (исключительно в демонстрационных целях). Мы рекомендуем использовать `response_mode=form_post`.
 > <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=id_token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=openid&response_mode=fragment&state=12345&nonce=678910" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>;
 
-| Параметр | Условие | Описание |
+| Параметр | Условие | ОПИСАНИЕ |
 | --- | --- | --- |
 | `tenant` | Обязательно для заполнения | Значение `{tenant}` в пути запроса можно использовать для того, чтобы контролировать вход пользователей в приложение. Допустимые значения: `common`, `organizations`, `consumers`, а также идентификаторы клиента. Чтобы узнать больше, ознакомьтесь с [основами протокола](active-directory-v2-protocols.md#endpoints). |
 | `client_id` | Обязательно для заполнения | **Идентификатор приложения (клиент)** , [портал Azure — регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) опыт, полученный вашим приложением. |
@@ -166,7 +166,7 @@ error=access_denied&error_description=the+user+canceled+the+authentication
 
 В таблице ниже описаны коды ошибок, которые могут возвращаться в параметре `error` сообщения об ошибке.
 
-| Код ошибки | Описание | Действие клиента |
+| Код ошибки | ОПИСАНИЕ | Действие клиента |
 | --- | --- | --- |
 | `invalid_request` | Ошибка протокола, например отсутствует обязательный параметр. |Исправьте запрос и отправьте его повторно. Это ошибка разработки, которая, как правило, обнаруживается во время первоначального тестирования. |
 | `unauthorized_client` | Клиентское приложение не может запрашивать код авторизации. |Обычно это происходит, когда клиентское приложение не зарегистрировано в Azure AD или не добавляется к клиенту Azure AD пользователя. Приложение может отобразить для пользователя запрос с инструкцией по установке приложения и его добавлению в Azure AD. |

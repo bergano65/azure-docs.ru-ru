@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 06/22/2018
 ms.author: jeconnoc
 ms.openlocfilehash: 4b6aeb2968d7642881535753cb6c8434cfe10886
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57534077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60409313"
 ---
 # <a name="install-net-on-azure-cloud-services-roles"></a>Установка .NET для ролей облачных служб Azure
 В этой статье описывается установка версий платформы .NET Framework, которые не входят в состав гостевой ОС Azure. .NET в гостевой ОС можно использовать для настройки веб-ролей и рабочих ролей облачной службы.

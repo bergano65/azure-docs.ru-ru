@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/13/2018
 ms.author: spelluru
-ms.openlocfilehash: d93818cd875c4050b1b35f21ce580933776c5bc5
-ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
-ms.translationtype: HT
+ms.openlocfilehash: 2cd6998c7ac11638ead67fde384bdf4599692781
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "40234780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60201795"
 ---
 # <a name="configure-and-use-public-environments-in-azure-devtest-labs"></a>Настройка и использование общедоступных сред в Azure DevTest Labs
 Azure DevTest Labs имеет [общедоступный репозиторий шаблонов Azure Resource Manager](https://github.com/Azure/azure-devtestlab/tree/master/Environments), который можно использовать, чтобы создавать среды без необходимости самостоятельно подключаться к внешнему источнику GitHub. В этом репозитории содержатся часто используемые шаблоны, такие как веб-приложения Azure, кластер Service Fabric и среда фермы SharePoint для разработки. Этот компонент похож на общедоступный репозиторий артефактов, включенный для каждой лаборатории, которую вы создаете. Репозиторий среды позволяет быстро приступить к работе с помощью предварительно созданных шаблонов с минимальным количеством входных параметров, чтобы вы могли быстро приступить к работе с ресурсами PaaS в лаборатории. 
@@ -46,5 +46,5 @@ Azure DevTest Labs имеет [общедоступный репозиторий
 
 ![Шаблоны общедоступной среды](media/devtest-lab-configure-use-public-environments/public-environment-templates.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Это репозиторий с открытым исходным кодом, в который вы можете добавлять собственные часто используемые и полезные шаблоны Resource Manager. Чтобы добавить шаблон, просто отправьте запрос на включение внесенных изменений в репозиторий.  

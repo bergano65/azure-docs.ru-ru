@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 03/22/2019
 ms.author: magoedte
 ms.openlocfilehash: 41ea6222689516f224fc23ce6a658d17f7f81866
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58372307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60240845"
 ---
 # <a name="syslog-data-sources-in-azure-monitor"></a>Источники данных Syslog в Azure Monitor
 Системный журнал (Syslog) — это протокол ведения журнала событий, который обычно используется в Linux. Приложения отправляют сообщения, которые могут храниться на локальном компьютере или передаваться в сборщик системного журнала. При установке агента Log Analytics для Linux он настраивает локальную управляющую программу Syslog для пересылки сообщений в агент. Затем агент отправляет сообщение в Azure Monitor, где создается соответствующая запись.  
@@ -203,7 +203,7 @@ ms.locfileid: "58372307"
 
 | Свойство | ОПИСАНИЕ |
 |:--- |:--- |
-| Компьютер |Компьютер, с которого было получено событие. |
+| Computer |Компьютер, с которого было получено событие. |
 | Facility |Определяет часть системы, которая создала сообщение. |
 | HostIP |IP-адрес системы, отправившей сообщение. |
 | HostName |Имя системы, отправившей сообщение. |

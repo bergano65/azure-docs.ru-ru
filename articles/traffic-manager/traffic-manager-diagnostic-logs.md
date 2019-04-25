@@ -12,11 +12,11 @@ ms.workload: infrastructure-services
 ms.date: 01/25/2019
 ms.author: kumud
 ms.openlocfilehash: a7d6893c42028790ec565961f2a2cb54035aefa1
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56106467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60204065"
 ---
 # <a name="enable-diagnostic-logging-in-azure-traffic-manager"></a>Включение журнала ведения диагностики диспетчера трафика Azure
 
@@ -72,11 +72,11 @@ ms.locfileid: "56106467"
 |||||
 |----|----|---|---|
 |**Имя поля**|**Тип поля**|**Определение**|**Пример**|
-|EndpointName|Строка|Имя конечной точки диспетчера трафика, для которой выполняется запись состояния работоспособности.|*myPrimaryEndpoint*|
-|Status|Строка|Состояние работоспособности проверенной конечной точки диспетчера трафика. Состояние может иметь значение **Работает** или **Не работает**.|**Работает**.|
+|EndpointName|String|Имя конечной точки диспетчера трафика, для которой выполняется запись состояния работоспособности.|*myPrimaryEndpoint*|
+|Статус|String|Состояние работоспособности проверенной конечной точки диспетчера трафика. Состояние может иметь значение **Работает** или **Не работает**.|**Работает**.|
 |||||
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в статье [Мониторинг конечных точек в диспетчере трафика](traffic-manager-monitoring.md).
 

@@ -15,11 +15,11 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1e7a3f80067adb3093bd27e34a45b3afd72b4993
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58286862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60247645"
 ---
 # <a name="assign-or-remove-licenses-using-the-azure-active-directory-portal"></a>Назначение или удаление лицензий с помощью портала Azure Active Directory
 Многие службы Azure Active Directory (Azure AD) требуют активации продукта Azure AD и наличия лицензии для каждого пользователя или группы (и их участников). Только пользователи с действующими лицензиями могут использовать лицензированные службы Azure AD.

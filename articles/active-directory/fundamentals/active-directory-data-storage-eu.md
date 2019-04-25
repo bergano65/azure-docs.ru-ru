@@ -13,11 +13,11 @@ ms.date: 03/04/2019
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b21f82dc0a1eb8edf571da13e0d34fecae5f401b
-ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57337691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60249733"
 ---
 # <a name="identity-data-storage-for-european-customers-in-azure-active-directory"></a>Хранение данных удостоверений клиентов из ЕС — Azure Active Directory
 Azure Active Directory (Azure AD) помогает управлять удостоверениями пользователей и создавать политики доступа на основе аналитики для защиты ресурсов организации. Данные удостоверений хранятся в расположении, которое основывается на адресе организации, указанном при оформлении подписки на службу. Например, при оформлении подписки на Office 365 или Azure. Определенные сведения о том, где хранятся данные удостоверений, можно найти в разделе [Где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) Центра управления безопасностью Майкрософт.

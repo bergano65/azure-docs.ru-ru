@@ -10,17 +10,17 @@ ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: mamccrea
 ms.openlocfilehash: c57550a8b683ad8f184884374c4f09216417fc40
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52995619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60236348"
 ---
 # <a name="connect-to-azure-databricks-from-excel-python-or-r"></a>Подключение к Azure Databricks из Excel, Python или R
 
 В этой статье представлены сведения об использовании драйвера ODBC Databricks для подключения Azure Databricks к Microsoft Excel, средам разработки для языков R и Python. После установки подключения вы можете получить доступ к данным в Azure Databricks из клиентов Excel, Python или R, которые также можно использовать для дальнейшего анализа данных. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Необходима рабочая область Azure Databricks, кластер Spark и образцы данных, связанные с кластером. Если у вас еще нет этих компонентов, выполните инструкции, приведенные в кратком руководстве [Запуск задания Spark в Azure Databricks с помощью портала Azure](quickstart-create-databricks-workspace-portal.md).
 
@@ -54,7 +54,7 @@ ms.locfileid: "52995619"
 
     В следующей таблице содержатся сведения о значениях, которые необходимо указать в диалоговом окне.
     
-    |Поле  | Значение  |
+    |Поле  | Value  |
     |---------|---------|
     |**Имя источника данных**     | Укажите имя источника данных.        |
     |**Узлы**     | Укажите скопированное из рабочей области Databricks значение *имени узла сервера*.        |
@@ -164,7 +164,7 @@ for row in cursor.fetchall():
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об источниках, из которых можно выполнить импорт данных Azure Databricks см. [здесь](https://docs.azuredatabricks.net/spark/latest/data-sources/index.html#).
 

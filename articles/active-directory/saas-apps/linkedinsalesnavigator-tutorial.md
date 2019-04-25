@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с LinkedIn Sales Navigator | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с LinkedIn Sales Navigator | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в LinkedInSalesNavigator.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 06/12/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 63e3e98c2c3dc8f99e733174c86965304fe483ce
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56182006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60257746"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-linkedin-sales-navigator"></a>Руководство по Интеграция Azure Active Directory с LinkedIn Sales Navigator
 
@@ -34,7 +34,7 @@ ms.locfileid: "56182006"
 
 Подробнее об интеграции приложений SaaS с Azure AD можно узнать в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с LinkedIn Sales Navigator, вам потребуется:
 
@@ -125,7 +125,7 @@ ms.locfileid: "56182006"
 
     a. В текстовом поле **Идентификатор** введите **идентификатор сущности**, скопированный с портала LinkedIn. 
 
-    б) В текстовом поле **URL-адрес ответа** введите **URL-адрес службы обработчика утверждений (ACS)**, скопированный с портала LinkedIn.
+    2. В текстовом поле **URL-адрес ответа** введите **URL-адрес службы обработчика утверждений (ACS)**, скопированный с портала LinkedIn.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**.
 
@@ -154,11 +154,11 @@ ms.locfileid: "56182006"
     
     ![Создание тестового пользователя Azure AD](./media/linkedinsalesnavigator-tutorial/tutorial_attribute_05.png)
    
-    б) В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    2. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
-    4.3. Нажмите кнопку **ОК**.
+    d. Нажмите кнопку **ОК**.
 
 1. Выполните следующие действия с атрибутом **name**.
 
@@ -166,7 +166,7 @@ ms.locfileid: "56182006"
 
     ![Настройка единого входа](./media/linkedinsalesnavigator-tutorial/url_update.png)
 
-    б) Удалите значение URL-адреса из **пространства имен**.
+    2. Удалите значение URL-адреса из **пространства имен**.
     
     c. Нажмите кнопку **ОК**, чтобы сохранить настройки.
 
@@ -216,11 +216,11 @@ ms.locfileid: "56182006"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-linkedin-sales-navigator-test-user"></a>Создание тестового пользователя LinkedIn Sales Navigator
 

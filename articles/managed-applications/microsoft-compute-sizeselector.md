@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/27/2018
 ms.author: tomfitz
-ms.openlocfilehash: 9009d29e281ace179ad1dd2021c7cf35e3dc611a
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
-ms.translationtype: HT
+ms.openlocfilehash: e5be5635964ebeedc7be4d1d1f5403e4d281b55c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37084813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60251309"
 ---
 # <a name="microsoftcomputesizeselector-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Compute.SizeSelector
 Элемент управления для выбора размера одного или нескольких экземпляров виртуальной машины.
@@ -80,6 +80,6 @@ ms.locfileid: "37084813"
 "Standard_D1"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 * Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

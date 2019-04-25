@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 03/25/2019
 ms.author: mlottner
 ms.openlocfilehash: c6ac3d9dbbb16caed51243fea852adea541b9f04
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59790048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60505414"
 ---
 # <a name="azure-iot-edge-security-module"></a>Модуль безопасности Azure IoT Edge
 
@@ -44,7 +44,7 @@ ASC для модуля безопасности Интернета вещей �
 
 - Анализ манифесты развертывания IoT Edge.
 
-- Объединяет события необработанной безопасности в сообщения, проходящие через [концентратор Edge Интернета вещей](https://docs.microsoft.com/en-us/azure/iot-edge/iot-edge-runtime#iot-edge-hub).
+- Объединяет события необработанной безопасности в сообщения, проходящие через [центр IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/iot-edge-runtime#iot-edge-hub).
 
 - Удалите конфигурацию с помощью двойника модуля безопасности.
 

@@ -11,11 +11,11 @@ ms.date: 11/28/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 7745a53084f4477f7b736ea9d130ffd3eed771f4
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55451994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60252571"
 ---
 # <a name="tracking-the-progress-of-data-science-projects"></a>Отслеживание хода выполнения проектов обработки и анализа данных
 
@@ -47,6 +47,6 @@ ms.locfileid: "55451994"
 
 Описание способов построения диаграмм приведено в кратких руководствах и руководствах по [панелям мониторинга](https://docs.microsoft.com/azure/devops/report/dashboards/).
  
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Также доступны пошаговые руководства, которые демонстрируют все этапы процесса для **конкретных сценариев**. Эти этапы с иллюстрациями и краткими описаниями перечислены в статье [Пошаговые руководства по процессу обработки и анализа данных группы](walkthroughs.md). В них показано, как объединить облачные и локальные средства и службы в единый рабочий процесс или конвейер, чтобы создать интеллектуальное приложение. 

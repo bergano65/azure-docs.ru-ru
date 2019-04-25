@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 10/01/2018
 ms.author: jonbeck
 ms.openlocfilehash: 543629e8b14039ce6e9a229d7bd5be05ade4d3ec
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48855346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60252157"
 ---
 # <a name="general-purpose-virtual-machine-sizes"></a>Размеры виртуальных машин общего назначения
 
@@ -37,6 +37,6 @@ ms.locfileid: "48855346"
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
 

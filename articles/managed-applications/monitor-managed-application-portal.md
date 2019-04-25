@@ -10,11 +10,11 @@ ms.tgt_pltfrm: na
 ms.date: 10/04/2018
 ms.author: tomfitz
 ms.openlocfilehash: 754d2a246a86585e9f05f8a070c51e158f73affd
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53342601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60253579"
 ---
 # <a name="monitor-a-deployed-instance-of-a-managed-application"></a>Мониторинг развернутого экземпляра управляемого приложения
 
@@ -50,7 +50,7 @@ ms.locfileid: "53342601"
 
 В управляемом приложении, для его экземпляра или ресурсов можно создать оповещения. Сведения о создании оповещений см. в статье [Обзор оповещений в Microsoft Azure](../azure-monitor/platform/alerts-overview.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о [примерах проектов для управляемых приложений Azure](sample-projects.md).
 * Сведения о том, как развернуть экземпляр управляемого приложения, см. в статье [Развертывание приложения из каталога служб с помощью портала Azure](deploy-service-catalog-quickstart.md).

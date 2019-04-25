@@ -9,11 +9,11 @@ ms.date: 07/18/2018
 ms.author: dukek
 ms.subservice: alerts
 ms.openlocfilehash: e69158a6ee4d8415f52cf458c028cab56f481d8b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58121134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60235141"
 ---
 # <a name="how-to-trigger-complex-actions-with-azure-monitor-alerts"></a>Как активировать сложные действия с помощью оповещений Azure Monitor
 
@@ -281,11 +281,11 @@ ms.locfileid: "58121134"
        
        !["Условие для полезных данных оповещения метрики"](media/action-groups-logic-app/metric-alert-payload-condition.png "Metric alert payload condition")
 
-  1. В условии **Если истинно** добавьте цикл **For each** и действие Microsoft Teams. Определите сообщение, используя сочетание кода HTML и динамического содержимого.
+  2. В условии **Если истинно** добавьте цикл **For each** и действие Microsoft Teams. Определите сообщение, используя сочетание кода HTML и динамического содержимого.
 
       !["Действие публикации для условия true оповещения метрики"](media/action-groups-logic-app/metric-alert-true-condition-post-action.png "Metric alert true condition post action")
 
-  1. В условии **Если ложно** определите действие Microsoft Teams, которое сообщает, что оповещение метрики не соответствует ожиданиям приложения логики. Включите полезные данные JSON. Обратите внимание на то, как указываются ссылки на динамическое содержимое `triggerBody` в выражении `json()`.
+  3. В условии **Если ложно** определите действие Microsoft Teams, которое сообщает, что оповещение метрики не соответствует ожиданиям приложения логики. Включите полезные данные JSON. Обратите внимание на то, как указываются ссылки на динамическое содержимое `triggerBody` в выражении `json()`.
 
       !["Действие публикации для условия false оповещения метрики"](media/action-groups-logic-app/metric-alert-false-condition-post-action.png "Metric alert false condition post action")
 
@@ -298,4 +298,3 @@ ms.locfileid: "58121134"
 * Изучите [обзор оповещений журнала действий Azure](../../azure-monitor/platform/alerts-overview.md) и узнайте, как получать оповещения.  
 * Узнайте, как [настроить оповещения при поступлении уведомлений о Работоспособности служб Azure](../../azure-monitor/platform/alerts-activity-log-service-notifications.md).
 * Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md).
-

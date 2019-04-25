@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 3/01/2019
 ms.author: pullabhk
 ms.openlocfilehash: 22ada6f9bb614bdc3698c58c6aa8ec3dd5def868
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60240113"
 ---
 # <a name="recover-files-from-azure-virtual-machine-backup"></a>Восстановление файлов из резервной копии виртуальной машины Azure
 
@@ -213,7 +213,7 @@ $ mount [RAID Disk Path] [/mountpath]
 
 Сценарию также требуется компоненты python и bash для выполнения операций и безопасного подключения к точке восстановления.
 
-|Компонент | Version (версия)  |
+|Компонент | Version  |
 | --------------- | ---- |
 | bash | 4 и выше |
 | python | 2.6.6 и выше  |

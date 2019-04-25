@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 03/01/2019
 ms.author: diberry
 ms.openlocfilehash: 7315c80ad74eae07e41577fb2ac13742002e729e
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57781703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60198654"
 ---
 # <a name="using-subscription-keys-with-your-luis-app"></a>Использование ключей подписки с приложением LUIS
 
@@ -122,7 +122,7 @@ ms.locfileid: "57781703"
 
     Этот API POST принимает указанные ниже параметры.
 
-    |Заголовок|Значение|
+    |Верхний колонтитул|Value|
     |--|--|
     |`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.| 
     |`Ocp-Apim-Subscription-Key`|Ваш [ключ разработки](luis-how-to-account-settings.md).|
@@ -133,11 +133,11 @@ ms.locfileid: "57781703"
 
     Этот API POST принимает указанные ниже параметры.
 
-    |type|Параметр|Значение|
+    |type|Параметр|Value|
     |--|--|--|
-    |Заголовок|`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.|
-    |Заголовок|`Ocp-Apim-Subscription-Key`|Ваш [ключ разработки](luis-how-to-account-settings.md).|
-    |Заголовок|`Content-type`|`application/json`|
+    |Верхний колонтитул|`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.|
+    |Верхний колонтитул|`Ocp-Apim-Subscription-Key`|Ваш [ключ разработки](luis-how-to-account-settings.md).|
+    |Верхний колонтитул|`Content-type`|`application/json`|
     |Строка запроса|`appid`|Идентификатор приложения LUIS. 
     |Текст||{"AzureSubscriptionId":"ddda2925-af7f-4b05-9ba1-2155c5fe8a8e",<br>"ResourceGroup": "resourcegroup-2",<br>"AccountName": "luis-uswest-S0-2"}|
 

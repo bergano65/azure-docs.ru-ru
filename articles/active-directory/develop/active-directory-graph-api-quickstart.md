@@ -20,11 +20,11 @@ ms.reviewer: sureshja
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2dfbf920a0e1fc002f3bcbe90164e1fd13a0b978
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56168058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60411509"
 ---
 # <a name="how-to-use-the-azure-ad-graph-api"></a>Практическое руководство: Использование API Graph Azure AD
 
@@ -124,7 +124,7 @@ API Graph Azure Active Directory (Azure AD) обеспечивает прогр�
 
 Дополнительные сведения о сущностях и типах Azure AD, доступ к которым можно получить с помощью Graph, а также сведения об операциях, которые можно с ними выполнять с помощью Graph, см. в [справочнике по Azure AD Graph REST API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [API Graph Azure AD](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog)
 * Дополнительная информация: [Azure AD Graph API Permission Scopes](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes)

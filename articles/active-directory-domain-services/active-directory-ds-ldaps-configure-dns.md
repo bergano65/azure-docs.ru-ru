@@ -16,11 +16,11 @@ ms.topic: conceptual
 ms.date: 08/01/2018
 ms.author: ergreenl
 ms.openlocfilehash: 122282d168246e34aaa4a6369f7433b167355887
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55153000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60416744"
 ---
 # <a name="configure-dns-to-access-an-azure-ad-domain-services-managed-domain-using-secure-ldap-ldaps"></a>Настройка DNS для доступа к управляемому домену доменных служб Azure AD по защищенному протоколу LDAP (LDAPS)
 

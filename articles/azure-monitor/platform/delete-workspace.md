@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 05/07/2018
 ms.author: magoedte
 ms.openlocfilehash: a6542838acba3143123dc90d96746179a2b4469b
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55989174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60236142"
 ---
 # <a name="delete-an-azure-log-analytics-workspace-with-the-azure-portal"></a>Удаление рабочей области Azure Log Analytics на портале Azure
 В этой статье показано, как использовать портал Azure для удаления рабочей области Log Analytics, которая больше не нужна. 

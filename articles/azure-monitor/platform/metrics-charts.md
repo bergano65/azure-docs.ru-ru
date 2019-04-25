@@ -1,19 +1,19 @@
 ---
 title: Расширенные возможности обозревателя метрик Azure
 description: Дополнительные сведения о расширенных функциях обозреватель метрик Azure Monitor
-author: vgorbenko
+author: lingliw
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 01/22/2019
-ms.author: vitalyg
+ms.date: 04/12/19
+ms.author: v-lingwu
 ms.subservice: metrics
 ms.openlocfilehash: 67e4281b24a7489cf202d82bdddbe99992aac095
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59271685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60256786"
 ---
 # <a name="advanced-features-of-azure-metrics-explorer"></a>Расширенные возможности обозревателя метрик Azure
 
@@ -77,7 +77,7 @@ ms.locfileid: "59271685"
 
 Метрики можно разделить по измерениям, чтобы визуализировать сравнения между различными сегментами метрики и идентифицировать внешние сегменты измерения.
 
-### <a name="apply-splitting"></a>Применить разделение
+### <a name="apply-splitting"></a>Применение разделения
 
 1. Щелкните **Применить разделение** над диаграммой.
  
@@ -149,4 +149,3 @@ ms.locfileid: "59271685"
 ## <a name="next-steps"></a>Дальнейшие действия
 
   Дополнительные сведения о рекомендациях по созданию готовых к работе панелей мониторинга с метриками см. в статье [Create custom KPI dashboards using Azure Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-tutorial-dashboards) (Создание пользовательских панелей мониторинга KPI с помощью Azure Application Insights).
-

@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 08/09/2018
 ms.author: magoedte
 ms.openlocfilehash: d2736e397827373949da1634a99056420dc13b8a
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56003862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60200096"
 ---
 # <a name="create-a-data-pipeline-with-the-data-collector-api"></a>Создание конвейера данных с помощью API сборщика данных
 
@@ -172,5 +172,5 @@ app("fabrikamprod").pageViews
 * Отправляя несколько разных типов данных, разделите их на отдельные папки в контейнере больших двоичных объектов и создайте логику, чтобы разделить логику на основе типа данных. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о том, как записать данные из любого клиента REST API в рабочую область Log Analytics, см. в статье [Отправка данных в Log Analytics с помощью API сборщика данных HTTP (общедоступная предварительная версия)](data-collector-api.md).

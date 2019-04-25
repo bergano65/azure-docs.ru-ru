@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 1/10/2019
 ms.author: v-gedod
 ms.openlocfilehash: f94ebb9b46ade0c03f65fdeb78bc7be96794a3d2
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55866753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60201420"
 ---
 # <a name="language-and-region-support-for-the-bing-news-search-api"></a>Поддержка языков и регионов в API Bing для поиска новостей
 
@@ -161,5 +161,5 @@ API Bing для поиска новостей поддерживает рабо�
 |Великобритания|GB|  
 |США|США|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о конечных точках API Bing для поиска новостей см. в [справочнике по API Bing для поиска новостей версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference).

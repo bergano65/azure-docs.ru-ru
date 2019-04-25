@@ -18,11 +18,11 @@ ms.reviewer: saeeda, jmprieur, andret
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b477171be0f306431b0f7c5965ebede4f4680c22
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56201913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60249926"
 ---
 # <a name="web-api"></a>Веб-интерфейс API
 
@@ -78,7 +78,7 @@ ms.locfileid: "56201913"
 
 Если веб-приложение использует свой код авторизации для получения маркера доступа JWT, оно также получает маркер обновления JWT. Когда срок действия маркера доступа истечет, можно использовать маркер обновления для повторной аутентификации пользователя без необходимости его повторного входа в систему. Затем этот маркер обновления используется для проверки подлинности пользователя, в результате чего появляется новый маркер доступа и маркер обновления.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. дополнительные сведения о других [типах приложений и сценариях](app-types.md).
 - Ознакомьтесь с основными понятиями аутентификации в статье [Сценарии проверки подлинности в Azure AD](authentication-scenarios.md)

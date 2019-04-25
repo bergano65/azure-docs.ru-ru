@@ -12,16 +12,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/26/2018
+origin.date: 02/26/2018
+ms.date: 04/09/2019
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: v-junlch
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6269d00c9a6a8f827a4e31044d9d20efb0f8471b
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58092588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60243551"
 ---
 # <a name="install-azure-ad-connect-using-sql-delegated-administrator-permissions"></a>Установка Azure AD Connect с использованием делегированных разрешений администратора SQL
 До последней сборки Azure AD Connect административное делегирование при развертывании конфигураций, для которых требовался SQL, не поддерживалось.  Пользователям, которые хотят установить Azure AD Connect, необходимо иметь разрешения администратора сервера на сервере SQL.
@@ -67,3 +68,5 @@ ms.locfileid: "58092588"
 - [Приступая к работе с Azure AD Connect с использованием стандартных параметров](how-to-connect-install-express.md)
 - [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md)
 - [Установка Azure AD Connect с помощью имеющейся базы данных ADSync](how-to-connect-install-existing-database.md)  
+
+<!-- Update_Description: wording update -->

@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 09/21/2018
 ms.author: aschhab
 ms.openlocfilehash: b90e87310bf6dec505176b7f4d4cb9e15ac57c20
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55891816"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60307783"
 ---
 # <a name="service-bus-messaging-exceptions"></a>Исключения обмена сообщениями служебной шины
 В этой статье перечислены некоторые исключения, создаваемые API обмена сообщениями служебной шины Microsoft Azure. Этот справочник может измениться, поэтому следите за обновлениями.
@@ -105,7 +105,7 @@ ConnectionsQuotaExceeded for namespace xxx.
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Полные справочные материалы по API служебной шины для .NET доступны в [справочнике по API Azure для .NET](/dotnet/api/overview/azure/service-bus).
 

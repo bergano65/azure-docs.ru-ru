@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 05/30/2018
 ms.author: twooley
 ms.openlocfilehash: d3dbacd58b3bda3fbf8ee8ad5f175eccc2cb2a24
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58877556"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60194949"
 ---
 # <a name="stream-data-from-azure-storage-blob-into-azure-data-lake-storage-gen1-using-azure-stream-analytics"></a>Потоковая передача данных из большого двоичного объекта службы хранилища Azure в Azure Data Lake Storage 1-го поколения с помощью Azure Stream Analytics
 Из этой статьи вы узнаете, как использовать Azure Data Lake Storage 1-го поколения в качестве источника выходных данных для задания Azure Stream Analytics. В этой статье показан простой сценарий, в котором данные считываются из большого двоичного объекта службы хранилища Azure (входные данные) и записываются в Data Lake Storage 1-го поколения (выходные данные).

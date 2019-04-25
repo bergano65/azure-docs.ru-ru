@@ -18,11 +18,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 620255896e02319675928396c3d6e5e0d9865c0c
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56181734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60244400"
 ---
 # <a name="federate-multiple-instances-of-azure-ad-with-single-instance-of-ad-fs"></a>Федерация нескольких экземпляров Azure AD с одним экземпляром AD FS
 
@@ -65,5 +65,5 @@ ms.locfileid: "56181734"
  
 Вышеуказанная операция добавит домен fabrikam.com в федерацию с тем же экземпляром AD FS. Параметры обоих доменов можно проверить с помощью командлета Get-MsolDomainFederationSettings.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Подключение Active Directory к Azure Active Directory](whatis-hybrid-identity.md)

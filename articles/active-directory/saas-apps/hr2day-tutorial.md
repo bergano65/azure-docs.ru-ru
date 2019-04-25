@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с HR2day by Merces | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с HR2day by Merces | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и HR2day от Merces.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 06/24/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 378aab82fac5298c3785f752478e3bfc3c6e325b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58103151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60275453"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hr2day-by-merces"></a>Руководство. Интеграция Azure Active Directory с HR2day by Merces
+# <a name="tutorial-azure-active-directory-integration-with-hr2day-by-merces"></a>Руководство по Интеграция Azure Active Directory с HR2day by Merces
 
 В этом руководстве описано, как интегрировать приложение HR2day от Merces с Azure Active Directory (Azure AD).
 

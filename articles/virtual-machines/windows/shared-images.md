@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/11/2018
 ms.author: cynthn
 ms.custom: ''
-ms.openlocfilehash: 07912369179a1d1226c750a8e86837fdc6887922
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 6ea98792e6a1b7fef32e3be1ddfbb29743f50c6a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55984177"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60250757"
 ---
 # <a name="preview-create-a-shared-image-gallery-with-azure-powershell"></a>Предварительный просмотр: Создание коллекции общих образов с помощью Azure PowerShell 
 
@@ -40,7 +40,7 @@ ms.locfileid: "55984177"
 | **Определение образа** | Образы определяются в пределах коллекции и содержат в себе сведения об образе и требования для его использования. Эти сведения включают в себя: определение, относится ли этот образ к Windows или к Linux, заметки о выпуске, а также минимальные и максимальные требования к памяти. Это определение типа образа. |
 | **Версия образа** | **Версия образа** используется для создания виртуальной машины с помощью коллекции. В зависимости от требований для вашей среды, у вас может быть несколько версий образа. Так же как и управляемый образ при использовании **версии образа** для создания виртуальной машины, версия образа используется для создания новых дисков для виртуальной машины. Версии образов можно использовать несколько раз. |
 
-[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
+[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -77,7 +77,7 @@ New-AzVm `
 Remove-AzResourceGroup -Name myGalleryRG
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 

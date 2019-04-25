@@ -11,7 +11,7 @@ ms.author: kgremban
 ms.custom: seodec18
 ms.openlocfilehash: 1c9855f982b888e8e1d68bfe5233983db8c826ad
 ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/26/2019
 ms.locfileid: "56873769"

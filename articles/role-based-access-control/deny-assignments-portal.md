@@ -15,18 +15,18 @@ ms.date: 03/13/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 2dcbcbec9054b31312043ef6642f59fa64728b30
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58005804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60194367"
 ---
 # <a name="view-deny-assignments-for-azure-resources-using-the-azure-portal"></a>Просмотр запрещающих назначений для ресурсов Azure с помощью портала Azure
 
 [Запрещающие назначения](deny-assignments.md) блокируют выполнение определенных действий ресурсов Azure пользователями, даже если назначение роли предоставляет им доступ. В этой статье описывается, как просмотреть запрещающие назначения с помощью портала Azure.
 
 > [!NOTE]
-> В настоящее время единственным способом, вы можете добавить собственные запретить назначения — с помощью Azure чертежей. Дополнительные сведения см. в разделе [защитить новые ресурсы с помощью блокировки ресурсов Azure чертежей](../governance/blueprints/tutorials/protect-new-resources.md).
+> В настоящее время единственный способ добавить собственный запрет назначений обеспечивает — использовать Azure Blueprints. Дополнительные сведения см. в статье о [защите новых ресурсов с помощью блокировок ресурсов Azure Blueprints](../governance/blueprints/tutorials/protect-new-resources.md).
 
 ## <a name="prerequisites"></a>Технические условия
 

@@ -16,11 +16,11 @@ ms.workload: tbd
 ms.date: 08/30/2017
 ms.author: yegu
 ms.openlocfilehash: ff410db561879089c4c1f20acb7cb349f0484fda
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56233835"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60234311"
 ---
 # <a name="get-the-hostname-ports-and-keys-for-azure-cache-for-redis"></a>Получение имени узла, портов и ключей для кэша Redis для Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "56233835"
 | [az redis list-keys](https://docs.microsoft.com/cli/azure/redis) | Извлекает ключи доступа для экземпляра кэша Redis для Azure. |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

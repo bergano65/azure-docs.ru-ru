@@ -15,11 +15,11 @@ ms.date: 09/10/2018
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 2f4c74076f2763addc1f2b971d8ea0ca29ce6fd0
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49393004"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60203981"
 ---
 # <a name="additional-network-requirements-for-large-instances"></a>Дополнительные требования к сети для крупных экземпляров
 
@@ -67,6 +67,6 @@ ms.locfileid: "49393004"
 
 Чтобы удалить дополнительный канал ExpressRoute SAP HANA в Azure (крупные экземпляры), отправьте запрос на поддержку Azure в службу поддержки решения "SAP HANA для управления службами Майкрософт" и укажите, что нужно удалить канал. В подписке Azure вы можете по желанию удалить или оставить виртуальную сеть. Тем не менее нужно удалить подключение между каналом ExpressRoute крупных экземпляров HANA и связанным шлюзом виртуальной сети.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Как установить и настроить SAP HANA в Azure (крупные экземпляры)](hana-installation.md)

@@ -11,11 +11,11 @@ ms.date: 04/17/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: ff2b843e00ffdf005d952cf62eab6b93c9434913
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59699172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60193160"
 ---
 # <a name="service-limits-in-azure-search"></a>Ограничения поиска Azure
 Максимальные ограничения хранилища, рабочих нагрузок и количества индексов, документов и других объектов зависят от того вы [подготовили службу поиска Azure](search-create-service-portal.md) в **бесплатный**, **основные**,  **Стандартный**, или **, оптимизированные для хранилища** ценовые категории.
