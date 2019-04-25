@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 8f2a5fdaf2222de7a802e8ff2a1f6fdb37dae4c3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 003e9beb3a319802754397efae3b636f51de9e52
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57880053"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59995903"
 ---
 # <a name="quickstart-create-an-android-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложения Android с помощью Пространственных привязок Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "57880053"
   - Если вы используете macOS, установите Git с помощью Homebrew. Введите в одну строку терминала такую команду: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. Затем выполните `brew install git`.
   - Чтобы создать пример NDK, вам также необходимо установить пакет NDK и SDK Tools CMake 3.6 в Android Studio.
 - Устройство Android с включенным <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">режимом разработчика</a> и поддержкой <a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">ARCore</a>.
-- Приложение должно быть ориентировано на ARCore 1.5 (поддержка ARCore 1.6+ ожидается в ближайшее время)
+- Целевой ОС для вашего приложения должна быть ARCore 1.7.
 
 [!INCLUDE [Create Spatial Anchors resource](../../../includes/spatial-anchors-get-started-create-resource.md)]
 
@@ -45,7 +45,7 @@ ms.locfileid: "57880053"
 
 [!INCLUDE [Clone Sample Repo](../../../includes/spatial-anchors-clone-sample-repository.md)]
 
-Если вы создаете пример пакета NDK для Android, вам нужно скачать `arcore_c_api.h` [здесь](https://raw.githubusercontent.com/google-ar/arcore-android-sdk/v1.5.0/libraries/include/arcore_c_api.h) и поместить его в `Android\NDK\libraries\include`.
+Если вы создаете пример пакета NDK для Android, вам нужно скачать `arcore_c_api.h` [здесь](https://raw.githubusercontent.com/google-ar/arcore-android-sdk/v1.7.0/libraries/include/arcore_c_api.h) и поместить его в `Android\NDK\libraries\include`.
 
 Откройте Android Studio.
 

@@ -1,16 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 2f0465b954e48822470374abeadb13e90a03fa3a
-ms.sourcegitcommit: 4bf542eeb2dcdf60dcdccb331e0a336a39ce7ab3
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56408737"
 documentType: LandingData
 title: Документация по RBAC для ресурсов в Azure
 metadata:
-  document_id: 
-  title: Документация по управлению доступом к ресурсам на основе ролей (RBAC) в Azure | Документация Майкрософт
-  description: Дополнительные сведения об управлении доступом на основе ролей (RBAC) для управления доступом пользователей к ресурсам Azure, включая настройку разрешений на выполнение операций с этими ресурсами и определением областей доступа.
+  document_id: null
+  title: "Документация по управлению доступом к ресурсам на основе ролей (RBAC) в Azure\_| Документация Майкрософт"
+  description: 'Дополнительные сведения об управлении доступом на основе ролей (RBAC) для управления доступом пользователей к ресурсам Azure, включая настройку разрешений на выполнение операций с этими ресурсами и определением областей доступа.'
   services: active-directory
   author: rolyon
   manager: mtillman
@@ -21,42 +15,42 @@ metadata:
   ms.date: 02/16/2019
   ms.author: rolyon
 abstract:
-  description: Управление доступом на основе ролей (RBAC) обеспечивает точное управление доступом к ресурсам в Azure. С помощью RBAC вы можете распределить обязанности внутри команды и предоставить пользователям доступ на уровне, который им необходим для выполнения поставленных задач.
+  description: 'Управление доступом на основе ролей (RBAC) обеспечивает точное управление доступом к ресурсам в Azure. С помощью RBAC вы можете распределить обязанности внутри команды и предоставить пользователям доступ на уровне, который им необходим для выполнения поставленных задач.'
   aside:
     image:
-      alt: 
+      alt: null
       height: 112
       src: media/index/video-thumb-get-started.png
       width: 200
-    title: Блокировка доступа к Azure (1:16)
-    href: https://www.youtube.com/embed/FKBoWWKRnvI
+    title: 'Блокировка доступа к Azure (1:16)'
+    href: 'https://www.youtube.com/embed/FKBoWWKRnvI'
     width: 200
 sections:
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: list
-    style: unordered
+  - title: 5-минутные руководства по началу работы
     items:
-    - html: <a href="/azure/role-based-access-control/check-access">Просмотр разрешений на доступ пользователя</a>
-- title: Пошаговые руководства
-  items:
-  - type: list
-    style: unordered
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/azure/role-based-access-control/check-access">Просмотр разрешений на доступ пользователя</a>
+  - title: Пошаговые руководства
     items:
-    - html: <a href="/azure/role-based-access-control/quickstart-assign-role-user-portal">Предоставление доступа пользователю — портал</a>
-    - html: <a href="/azure/role-based-access-control/tutorial-role-assignments-group-powershell">Предоставление доступа группе — PowerShell</a>
-    - html: <a href="/azure/role-based-access-control/tutorial-custom-role-powershell">Создание настраиваемой роли с помощью PowerShell</a>
-    - html: <a href="/azure/role-based-access-control/tutorial-custom-role-cli">Создание настраиваемой роли с помощью CLI</a>
-- title: Развитие навыков с помощью Microsoft Learn
-  items:
-  - type: list
-    style: cards
-    className: cardsFTitle
+      - type: list
+        style: unordered
+        items:
+          - html: "<a href=\"/azure/role-based-access-control/quickstart-assign-role-user-portal\">Предоставление доступа пользователю\_— портал</a>"
+          - html: "<a href=\"/azure/role-based-access-control/tutorial-role-assignments-group-powershell\">Предоставление доступа группе\_— PowerShell</a>"
+          - html: <a href="/azure/role-based-access-control/tutorial-custom-role-powershell">Создание настраиваемой роли с помощью PowerShell</a>
+          - html: <a href="/azure/role-based-access-control/tutorial-custom-role-cli">Создание настраиваемой роли с помощью CLI</a>
+  - title: Развитие навыков с помощью Microsoft Learn
     items:
-    - title: Обеспечение безопасности ресурсов Azure с помощью управления доступом на основе ролей (RBAC)
-      href: /learn/modules/secure-azure-resources-with-rbac/
-      image:
-        src: /learn/achievements/secure-azure-resources-with-rbac.svg
-        href: /learn/modules/secure-azure-resources-with-rbac/
-  - type: paragraph
-    text: <a href="/learn/browse/?products=azure-active-directory">Другие интерактивные руководства</a>
+      - type: list
+        style: cards
+        className: cardsFTitle
+        items:
+          - title: Обеспечение безопасности ресурсов Azure с помощью управления доступом на основе ролей (RBAC)
+            href: /learn/modules/secure-azure-resources-with-rbac/
+            image:
+              src: /learn/achievements/secure-azure-resources-with-rbac.svg
+              href: /learn/modules/secure-azure-resources-with-rbac/
+      - type: paragraph
+        text: <a href="/learn/browse/?products=azure-active-directory">Другие интерактивные руководства</a>

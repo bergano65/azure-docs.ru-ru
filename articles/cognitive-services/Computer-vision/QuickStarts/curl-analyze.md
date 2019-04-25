@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 03/11/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 96088d1e4f42edc47f1b4a1a7a4effacca02b3c9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 7c363e19fbd5b387e1384afed068f94c00e4a768
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57875572"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60010268"
 ---
 # <a name="quickstart-analyze-a-remote-image-using-the-rest-api-and-curl-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API компьютерного зрения и cURL
 
@@ -27,7 +27,7 @@ ms.locfileid: "57875572"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - [cURL](https://curl.haxx.se/windows).
-- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- У вас должен быть ключ подписки для Компьютерного зрения. На странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) можно получить бесплатную пробную версию ключа. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
 
 ## <a name="create-and-run-the-sample-command"></a>Создание и запуск примера команды
 

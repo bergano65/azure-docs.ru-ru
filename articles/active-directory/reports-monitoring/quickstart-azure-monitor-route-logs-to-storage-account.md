@@ -1,6 +1,6 @@
 ---
-title: Руководство. Архивация журналов Azure Active Directory в учетной записи хранения (предварительная версия) | Документация Майкрософт
-description: Узнайте, как настроить систему диагностики Azure для отправки журналов Azure Active Directory в учетную запись хранения (предварительная версия)
+title: Руководство. Архивация журналов Azure Active Directory в учетную запись хранения | Документация Майкрософт
+description: Узнайте, как настроить службу "Диагностика Azure" для принудительной отправки журналов Azure Active Directory в учетную запись хранения.
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -13,18 +13,18 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 11/13/2018
+ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d34b41e780466d9ab734b9dbd0e58016dba7b10
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: 0198fe1ce61c8f78e315d1166a7ea03aae20d592
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58434727"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59999507"
 ---
-# <a name="tutorial-archive-azure-ad-logs-to-an-azure-storage-account-preview"></a>Руководство по Архивация журналов Azure AD в учетную запись хранения Azure (предварительная версия)
+# <a name="tutorial-archive-azure-ad-logs-to-an-azure-storage-account"></a>Руководство по Архивация журналов Azure AD в учетную запись хранения Azure
 
 В этом руководстве вы узнаете, как настроить параметры диагностики Azure Monitor для передачи журналов Azure Active Directory (Azure AD) в учетную запись хранения Azure.
 
@@ -75,6 +75,6 @@ ms.locfileid: "58434727"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Интерпретация схемы журналов аудита в Azure Monitor](reference-azure-monitor-audit-log-schema.md)
+* [Interpret the Azure AD audit logs schema in Azure Monitor (preview)](reference-azure-monitor-audit-log-schema.md) (Интерпретация схемы журналов аудита Azure Active Directory в Azure Monitor (предварительная версия))
 * [Interpret the Azure AD sign-in logs schema in Azure Monitor (preview)](reference-azure-monitor-sign-ins-log-schema.md) (Интерпретация схемы журналов входа Azure Active Directory в Azure Monitor (предварительная версия))
 * [Часто задаваемые вопросы и известные проблемы](concept-activity-logs-azure-monitor.md#frequently-asked-questions)

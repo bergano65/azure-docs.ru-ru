@@ -8,10 +8,10 @@ ms.topic: overview
 ms.date: 01/02/2018
 ms.author: lbosq
 ms.openlocfilehash: fd49cc6810f4a3a479748180ddb0c44aedf04e89
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59275561"
 ---
 # <a name="azure-cosmos-db-gremlin-graph-support"></a>Поддержка графа Gremlin в базе данных Azure Cosmos DB
@@ -158,9 +158,9 @@ TinkerPop — это стандартная платформа, которая 
 | `addV` | Добавляет вершину в граф. | [Шаг addV](https://tinkerpop.apache.org/docs/current/reference/#addvertex-step) |
 | `and` | Обеспечивает возвращение значения для всех обходов. | [Шаг and](https://tinkerpop.apache.org/docs/current/reference/#and-step) |
 | `as` | Модулятор шага для назначения переменной выходным данным шага. | [Шаг as](https://tinkerpop.apache.org/docs/current/reference/#as-step) |
-| `by` | Модулятор шага, используемый с `group` и `order` | [Шаг by](https://tinkerpop.apache.org/docs/current/reference/#by-step) |
+| `by` | Модулятор шага, используемый с `group` и `order`. | [Шаг by](https://tinkerpop.apache.org/docs/current/reference/#by-step) |
 | `coalesce` | Возвращает первый обход, который возвращает результат. | [Шаг coalesce](https://tinkerpop.apache.org/docs/current/reference/#coalesce-step) |
-| `constant` | Возвращает постоянное значение. Используется с `coalesce`| [Шаг constant](https://tinkerpop.apache.org/docs/current/reference/#constant-step) |
+| `constant` | Возвращает постоянное значение. Используется с `coalesce`.| [Шаг constant](https://tinkerpop.apache.org/docs/current/reference/#constant-step) |
 | `count` | Возвращает число из обхода. | [Шаг count](https://tinkerpop.apache.org/docs/current/reference/#count-step) |
 | `dedup` | Возвращает значения с удаленными повторяющимися значениями. | [Шаг dedup](https://tinkerpop.apache.org/docs/current/reference/#dedup-step) |
 | `drop` | Удаляет значения (вершины или ребра). | [Шаг drop](https://tinkerpop.apache.org/docs/current/reference/#drop-step) |

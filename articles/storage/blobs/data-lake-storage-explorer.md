@@ -1,6 +1,6 @@
 ---
 title: 'Краткое руководство. Управление данными в Azure Data Lake Storage 2-го поколения с помощью Обозревателя службы хранилища Azure '
-description: В этом кратком руководстве вы узнаете, как использовать Обозреватель службы хранилища Azure для создания файловой системы в учетной записи Azure Data Lake Storage 2-го поколения, а также каталога и файла. Далее вы узнаете, как загружать файл на локальный компьютер и как просматривать все файлы в каталоге.
+description: В этом кратком руководстве описано, как использовать Обозреватель службы хранилища Azure для создания в учетной записи Azure Data Lake Storage 2-го поколения файловой системы, а также каталога и файла. Далее вы узнаете, как загружать файл на локальный компьютер и как просматривать все файлы в каталоге.
 services: storage
 author: tamram
 ms.subservice: data-lake-storage-gen2
@@ -9,12 +9,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 12/05/2018
 ms.author: tamram
-ms.openlocfilehash: 6f3aa81f0fa2497db02d069e93e007b43c37beb9
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: b6add3c2402df9c0db2284945269d3fbaa1c65e1
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55250458"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59995478"
 ---
 # <a name="quickstart-use-azure-storage-explorer-to-manage-data-in-an-azure-data-lake-storage-gen2-account"></a>Краткое руководство. Управление данными в учетной записи Azure Data Lake Storage 2-го поколения с помощью Обозревателя службы хранилища Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "55250458"
 
 Для работы с этим кратким руководством необходимо установить Обозреватель службы хранилища Azure. Чтобы установить Обозреватель службы хранилища Azure для Windows, Macintosh или Linux, см. раздел [Обозреватель хранилищ Azure](https://azure.microsoft.com/features/storage-explorer/).
 
-## <a name="log-in-to-storage-explorer"></a>Вход в обозреватель службы хранилища
+## <a name="sign-in-to-storage-explorer"></a>Вход в Обозреватель службы хранилища
 
 При первом запуске откроется окно **подключения обозревателя службы хранилища Microsoft Azure**. Хотя Обозреватель службы хранилища предоставляет несколько способов подключения к учетным записям хранения, в настоящее время поддерживается только один из способов управления ACL.
 
@@ -38,17 +38,17 @@ ms.locfileid: "55250458"
 
 ![Обозреватель службы хранилища Microsoft Azure — окно подключения](media/storage-quickstart-blobs-storage-explorer/connect.png)
 
-После подключения загружается обозреватель службы хранилища Azure с вкладкой **Обозреватель**. В этом представлении вы можете просматривать сведения обо всех учетных записях хранения Azure, а также о локальном хранилище, настроенном с помощью учетных записей [эмулятора службы хранилища Azure](../common/storage-use-emulator.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json), [Cosmos DB](../../cosmos-db/storage-explorer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) или сред [Azure Stack](../../azure-stack/user/azure-stack-storage-connect-se.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
+После подключения загружается обозреватель службы хранилища Azure с вкладкой **Обозреватель**. В этом представлении вы можете просматривать сведения обо всех учетных записях хранения Azure, а также о локальном хранилище, настроенном с помощью учетных записей [эмулятора службы хранилища Azure](../common/storage-use-emulator.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json), [Cosmos DB](../../cosmos-db/storage-explorer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) или сред [Azure Stack](/azure-stack/user/azure-stack-storage-connect-se?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
 ![Обозреватель службы хранилища Microsoft Azure — окно подключения](media/storage-quickstart-blobs-storage-explorer/mainpage.png)
 
-## <a name="create-a-filesystem"></a>Создание файловой системы
+## <a name="create-a-file-system"></a>Создание файловой системы
 
 Большие двоичные объекты всегда отправляются в каталог. Это позволяет упорядочивать группы BLOB-объектов аналогично организации файлов в папки на компьютере.
 
-Чтобы создать каталог, разверните учетную запись хранения, созданную на предыдущем шаге. Щелкните правой кнопкой мыши элемент **Контейнеры больших двоичных объектов** и выберите пункт **Создать контейнер BLOB-объектов**. Введите имя файловой системы. Нажмите клавишу **ВВОД**, чтобы создать файловую систему. После успешного создания каталога больших двоичных объектов он отобразится в папке **Контейнеры больших двоичных объектов** выбранной учетной записи хранения.
+Чтобы создать каталог, разверните учетную запись хранения, созданную на предыдущем шаге. Щелкните правой кнопкой мыши элемент **Контейнеры больших двоичных объектов** и выберите пункт **Создать контейнер BLOB-объектов**. Укажите имя файловой системы. Нажмите клавишу **ВВОД**, чтобы создать файловую систему. После успешного создания каталога больших двоичных объектов он отобразится в папке **Контейнеры больших двоичных объектов** выбранной учетной записи хранения.
 
-![Обозреватель службы хранилища Microsoft Azure — создание файловой системы](media/storage-quickstart-blobs-storage-explorer/creating-a-filesystem.png)
+![Обозреватель службы хранилища Microsoft Azure. Создание файловой системы](media/storage-quickstart-blobs-storage-explorer/creating-a-filesystem.png)
 
 ## <a name="upload-blobs-to-the-directory"></a>Отправка больших двоичных объектов в каталог
 

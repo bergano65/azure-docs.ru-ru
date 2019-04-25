@@ -11,17 +11,17 @@ ms.topic: quickstart
 ms.date: 4/02/2019
 ms.author: scottwhi
 ms.openlocfilehash: 2fe4e9dad0b198fe54e06ce07100d231f1f7d157
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59046450"
 ---
 # <a name="quickstart-get-image-insights-using-the-bing-visual-search-rest-api-and-java"></a>Краткое руководство. Получение аналитических сведений об изображениях с помощью REST API визуального поиска Bing и Java
 
 В этом кратком руководстве вы узнаете, как сделать первый вызов API Визуального поиска Bing и просмотреть результаты. Это приложение Java отправляет изображение в API и отображает возвращенные данные о нем. Хотя это приложение создано на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-При отправке локального изображения данные формы должны содержать заголовок `Content-Disposition`. Необходимо задать для его параметра `name` значение "image", а для параметра `filename` можно присвоить любую строку. Форма содержит двоичные данные изображения. Максимально допустимый размер отправляемого изображения — 1 МБ.
+При отправке локального изображения данные формы должны содержать заголовок `Content-Disposition`. Вам необходимо задать для его параметра `name` значение "image", а для параметра `filename` — любую строку. Форма содержит двоичные данные изображения. Максимально допустимый размер отправляемого изображения — 1 МБ.
 
 ```
 --boundary_1234-abcd
@@ -36,7 +36,7 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 
 * [Комплект SDK Java (JDK) 7 или 8](https://aka.ms/azure-jdks).
 * [Библиотеки Gson Java](https://github.com/google/gson).
-* [Apache HttpComponents.](https://hc.apache.org/downloads.cgi)
+* [Apache HttpComponents](https://hc.apache.org/downloads.cgi).
 
 [!INCLUDE [cognitive-services-bing-visual-search-signup-requirements](../../../../includes/cognitive-services-bing-visual-search-signup-requirements.md)]
 
@@ -129,4 +129,4 @@ System.out.println(prettify(json));
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Создание одностраничного веб-приложения Визуального поиска](../tutorial-bing-visual-search-single-page-app.md)
+> [Build a Visual Search single-page web app](../tutorial-bing-visual-search-single-page-app.md) (Создание одностраничного веб-приложения Визуального поиска)

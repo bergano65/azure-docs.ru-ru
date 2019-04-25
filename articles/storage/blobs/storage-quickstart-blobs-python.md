@@ -8,16 +8,16 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 12/14/2018
 ms.author: tamram
-ms.openlocfilehash: a1a931573967f12eb7abc791bd951dc6e1e9e60b
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
+ms.openlocfilehash: 8dff81d3f3594798a1b08184af0098f3bd86c12c
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59607404"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60011050"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-with-python"></a>Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью Python
 
-Из этого краткого руководства вы узнаете, как использовать Python для отправки, скачивания и перечисления блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure. Большие двоичные объекты — это просто объекты, которые могут содержать любое количество текстовых или двоичных данных (например, изображения, документы, потоковые данные мультимедиа, архивные данные и т. д.). Они отличаются от общих папок, бессхемных таблиц и очередей сообщений в службе хранилища Azure. (Дополнительную информацию см. в разделе [Общие сведения о службе хранилища Azure](/azure/storage/common/storage-introduction.md).)
+Из этого краткого руководства вы узнаете, как использовать Python для отправки, скачивания и перечисления блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure. Большие двоичные объекты — это просто объекты, которые могут содержать любое количество текстовых или двоичных данных (например, изображения, документы, потоковые данные мультимедиа, архивные данные и т. д.). Они отличаются от общих папок, бессхемных таблиц и очередей сообщений в службе хранилища Azure. (Дополнительную информацию см. в разделе [Общие сведения о службе хранилища Azure](/azure/storage/common/storage-introduction).)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -45,7 +45,7 @@ git clone https://github.com/Azure-Samples/storage-blobs-python-quickstart.git
 В приложении нужно указать имя и ключ учетной записи хранения, чтобы создать объект `BlockBlobService`. Откройте файл *example.py* с помощью обозревателя решений в IDE. Замените значения `accountname` и `accountkey` именем и ключом учетной записи. 
 
 ```python 
-block_blob_service = BlockBlobService(account_name='accountname', account_key='accountkey') 
+block_blob_service = BlockBlobService(account_name = 'accountname', account_key = 'accountkey') 
 ```
 
 ## <a name="run-the-sample"></a>Запуск примера
@@ -92,11 +92,11 @@ Downloading blob to C:\Users\azureuser\Documents\QuickStart_9f4ed0f9-22d3-43e1-9
 В этом разделе вы создадите экземпляры объектов и контейнер, а затем зададите для контейнера разрешения на общий доступ к BLOB-объектам. Контейнер называется **quickstartblobs**. 
 
 ```python 
-# Create the BlockBlockService that is used to call the Blob service for the storage account
-block_blob_service = BlockBlobService(account_name='accountname', account_key='accountkey') 
+# Create the BlockBlockService that is used to call the Blob service for the storage account.
+block_blob_service = BlockBlobService(account_name = 'accountname', account_key = 'accountkey') 
  
 # Create a container called 'quickstartblobs'.
-container_name ='quickstartblobs'
+container_name = 'quickstartblobs'
 block_blob_service.create_container(container_name) 
 
 # Set the permission so the blobs are public.
@@ -106,29 +106,29 @@ block_blob_service.set_container_acl(container_name, public_access=PublicAccess.
 
 Хранилище BLOB-объектов поддерживает блочные, добавочные и страничные BLOB-объекты. Чаще всего используются блочные BLOB-объекты. Именно этот тип представлен в этом кратком руководстве.  
 
-Чтобы отправить файл в большой двоичный объект, получите полный путь к файлу, соединив имя каталога и имя файла на локальном диске. Затем вы можете передать файл по указанному пути, используя метод `create\_blob\_from\_path`. 
+Чтобы отправить файл в большой двоичный объект, получите полный путь к файлу, соединив имя каталога и имя файла на локальном диске. Затем вы можете передать файл по указанному пути, используя метод `create_blob_from_path`. 
 
-В примере кода создается локальный файл, который будет использоваться для передачи и скачивания. Передаваемый файл сохраняется как `file\_path\_to\_file`, и большому двоичному объекту присваивается имя `local\_file\_name`. В приведенном ниже примере файл отправляется в контейнер с именем **quickstartblobs**.
+Этот пример кода создает локальный файл, который будет использоваться для отправки и скачивания. Он сохраняет отправляемый файл в переменной *full_path_to_file*, а имя BLOB-объекта — в переменной *local_file_name*. В приведенном ниже примере файл отправляется в контейнер с именем **quickstartblobs**.
 
 ```python
 # Create a file in Documents to test the upload and download.
-local_path=os.path.expanduser("~\Documents")
-local_file_name ="QuickStart_" + str(uuid.uuid4()) + ".txt"
-full_path_to_file =os.path.join(local_path, local_file_name)
+local_path = os.path.expanduser("~\Documents")
+local_file_name = "QuickStart_" + str(uuid.uuid4()) + ".txt"
+full_path_to_file = os.path.join(local_path, local_file_name)
 
 # Write text to the file.
-file = open(full_path_to_file,  'w')
+file = open(full_path_to_file, 'w')
 file.write("Hello, World!")
 file.close()
 
 print("Temp file = " + full_path_to_file)
 print("\nUploading to Blob storage as blob" + local_file_name)
 
-# Upload the created file, use local_file_name for the blob name
+# Upload the created file, use local_file_name for the blob name.
 block_blob_service.create_blob_from_path(container_name, local_file_name, full_path_to_file)
 ```
 
-Существует несколько методов отправки, которые можно использовать с хранилищем BLOB-объектов. Например, если у вас есть поток памяти, вы можете использовать метод `create\_blob\_from\_stream`, а не `create\_blob\_from\_path`. 
+Существует несколько методов отправки, которые можно использовать с хранилищем BLOB-объектов. Например, если у вас есть поток памяти, вы можете использовать метод `create_blob_from_stream`, а не `create_blob_from_path`. 
 
 Блочные BLOB-объекты могут иметь размер 4,7 ТБ и представлять собой любые объекты, начиная от электронных таблиц Excel до больших видеофайлов. Страничные BLOB-объекты в основном используются для файлов VHD, применяемых для поддержки виртуальных машин IaaS. Добавочные BLOB-объекты используются для ведения журнала, например если требуется выполнить запись в файл и затем добавлять дополнительные сведения. Большинство объектов, находящихся в хранилище BLOB-объектов, представляют собой блочные BLOB-объекты.
 
@@ -137,7 +137,7 @@ block_blob_service.create_blob_from_path(container_name, local_file_name, full_p
 Список файлов в контейнере можно получить с помощью метода `list_blobs`. Этот метод возвращает генератор. Следующий код извлекает список больших двоичных объектов и &mdash;поочередно перебирает их&mdash;, отображая имена найденных в контейнере больших двоичных объектов.  
 
 ```python
-# List the blobs in the container
+# List the blobs in the container.
 print("\nList blobs in the container")
 generator = block_blob_service.list_blobs(container_name)
 for blob in generator:
@@ -146,21 +146,21 @@ for blob in generator:
 
 ### <a name="download-the-blobs"></a>Скачивание больших двоичных объектов
 
-Чтобы скачать большие двоичные объекты на локальный диск, используйте метод `the get\_blob\_to\_path`. Следующий код скачивает BLOB-объект, который мы передали в предыдущем разделе. К имени большого двоичного объекта добавляется суффикс *_DOWNLOADED*, чтобы на локальном диске сохранились оба файла. 
+Чтобы скачать большие двоичные объекты на локальный диск, используйте метод `get_blob_to_path`. Следующий код скачивает BLOB-объект, который мы передали в предыдущем разделе. К имени большого двоичного объекта добавляется суффикс *_DOWNLOADED*, чтобы на локальном диске сохранились оба файла. 
 
 ```python
 # Download the blob(s).
 # Add '_DOWNLOADED' as prefix to '.txt' so you can see both files in Documents.
-full_path_to_file2 = os.path.join(local_path, string.replace(local_file_name ,'.txt', '_DOWNLOADED.txt'))
+full_path_to_file2 = os.path.join(local_path, string.replace(local_file_name, '.txt', '_DOWNLOADED.txt'))
 print("\nDownloading blob to " + full_path_to_file2)
 block_blob_service.get_blob_to_path(container_name, local_file_name, full_path_to_file2)
 ```
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
-Если большие двоичные объекты, отправленные при работе с этим руководством, больше не нужны, удалите весь контейнер с помощью метода `delete\_container`. Для удаления отдельных файлов используйте метод `delete\_blob`.
+Если большие двоичные объекты, отправленные при работе с этим руководством, больше не нужны, удалите весь контейнер с помощью метода `delete_container`. Для удаления отдельных файлов используйте метод `delete_blob`.
 
 ```python
-# Clean up resources. This includes the container and the temp files
+# Clean up resources. This includes the container and the temp files.
 block_blob_service.delete_container(container_name)
 os.remove(full_path_to_file)
 os.remove(full_path_to_file2)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ASP.NET Core
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: 6c9b257ab88b3564253b0f48d953094f84a1d71d
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: 29cea7e72d6bd7f64f6cf2a68b7620090ea4eef3
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59051445"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59995939"
 ---
 # <a name="quickstart-create-an-aspnet-core-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения ASP.NET Core с помощью службы "Конфигурация приложений Azure"
 
@@ -38,6 +38,17 @@ ASP.NET Core создает один объект конфигурации на 
 ## <a name="create-an-app-configuration-store"></a>Создание хранилища конфигураций приложений
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
+
+6. Выберите **Обозреватель ключей и значений** > **+ Создать**, чтобы добавить следующие пары "ключ-значение":
+
+    | Ключ | Значение |
+    |---|---|
+    | TestApp:Settings:BackgroundColor | Белый |
+    | TestApp:Settings:FontSize | 24 |
+    | TestApp:Settings:FontColor | Черный |
+    | TestApp:Settings:FontSize | Данные из конфигурации приложения Azure |
+
+    Поля **Метка** и **Тип контента** пока заполнять не нужно.
 
 ## <a name="create-an-aspnet-core-web-app"></a>Создание веб-приложения ASP.NET Core
 
@@ -191,4 +202,4 @@ ASP.NET Core создает один объект конфигурации на 
 В этом кратком руководстве вы создали хранилище конфигураций приложения и использовали его с веб-приложением ASP.NET Core с помощью [поставщика Конфигурации приложений](https://go.microsoft.com/fwlink/?linkid=2074664). Ознакомьтесь с дополнительными сведениями об использовании службы "Конфигурация приложений" в следующем учебнике, посвященном проверке подлинности.
 
 > [!div class="nextstepaction"]
-> [Управляемые удостоверения для интеграции с ресурсами Azure](./integrate-azure-managed-service-identity.md)
+> [Руководство по интеграции с управляемыми удостоверениями Azure](./howto-integrate-azure-managed-service-identity.md)

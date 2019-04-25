@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 03/21/2019
 ms.author: kefre
 ms.custom: seodec18
-ms.openlocfilehash: fb684a59362e0f7b6ccdc2ca05fda1b89def2835
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.openlocfilehash: feafb983a7b9e4aea6091753842b03a65ccd3ca5
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351853"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60001564"
 ---
 # <a name="how-to-analyze-videos-in-real-time"></a>Анализ видео в реальном времени
 
@@ -216,7 +216,7 @@ namespace VideoFrameConsoleApplication
 
 ## <a name="summary"></a>Сводка
 
-В этом руководстве описано, как запустить анализ потокового видео практически в реальном времени с использованием API распознавания лиц и эмоций, а также API компьютерного зрения, и приступить к работе с использованием наших примеров кода. Вы можете создать свое приложения, используя бесплатные ключи API на [странице регистрации Microsoft Cognitive Services](https://azure.microsoft.com/try/cognitive-services/). 
+В этом руководстве описано, как запустить анализ потокового видео практически в реальном времени с использованием API распознавания лиц и эмоций, а также API компьютерного зрения, и приступить к работе с использованием наших примеров кода. Вы можете создать свое приложения, используя бесплатные ключи API на [странице регистрации Azure Cognitive Services](https://azure.microsoft.com/try/cognitive-services/). 
 
 Отправляйте отзывы и предложения в [репозиторий GitHub](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/), а более подробные отзывы об API — на наш [сайт UserVoice](https://cognitive.uservoice.com/).
 

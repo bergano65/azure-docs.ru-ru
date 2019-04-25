@@ -15,11 +15,11 @@ ms.workload: tbd
 ms.date: 5/21/2017
 ms.author: raiye
 ms.openlocfilehash: d6429766b6aac547fd99279659acb1067298e77c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51244684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60518967"
 ---
 # <a name="guest-os-family-1-retirement-notice"></a>Уведомление о прекращении использования семейства версий 1 гостевой ОС
 О прекращении использования семейства версий 1 операционной системы было впервые объявлено 1 июня 2013 г.
@@ -37,7 +37,7 @@ ms.locfileid: "51244684"
 2. Если не указано явным образом значение для osFamily в файле ServiceConfiguration.cscfg облачной службы. В настоящий момент в такой ситуации системой используется значение по умолчанию, равное "1".
 3. На портале Azure в качестве семейства операционных систем на виртуальной машине указано "Windows Server 2008".
 
-Чтобы узнать, какие облачные службы работают под управлением какого семейства ОС, можно запустить указанный ниже скрипт в Azure PowerShell, однако сначала необходимо [настроить Azure PowerShell](/powershell/azureps-cmdlets-docs). Дополнительные сведения об этом скрипте см. в записи блога [Azure Guest OS Family 1 End of Life: June 2014](https://blogs.msdn.com/b/ryberry/archive/2014/04/02/azure-guest-os-family-1-end-of-life-june-2014.aspx) (Окончание срока жизни семейства версий 1 гостевой ОС Azure, июнь 2014 г.).
+Чтобы узнать, какие облачные службы работают под управлением какого семейства ОС, можно запустить указанный ниже скрипт в Azure PowerShell, однако сначала необходимо [настроить Azure PowerShell](/powershell/azureps-cmdlets-docs). Дополнительные сведения об этом скрипте см. в разделе [Azure гостевой ОС 1 окончания срока службы семейства: Июнь 2014 г.](https://blogs.msdn.com/b/ryberry/archive/2014/04/02/azure-guest-os-family-1-end-of-life-june-2014.aspx).
 
 ```Powershell
 foreach($subscription in Get-AzureSubscription) {
@@ -72,5 +72,5 @@ foreach($subscription in Get-AzureSubscription) {
 ## <a name="extended-support-for-guest-os-family-1-ended-nov-3-2014"></a>Расширенная поддержка семейства версий 1 гостевой ОС окончена 3 ноября 2014 г.
 Облачные службы в семействе версий 1 гостевой ОС более не поддерживаются. Переходите от использования операционной системы семейства 1 к ОС другого семейства, чтобы избежать прерывания работы службы.  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите последние [выпуски гостевой ОС](cloud-services-guestos-update-matrix.md).

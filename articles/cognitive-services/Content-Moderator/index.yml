@@ -1,15 +1,9 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: e22366672ef6dbc4b6ce11e8d77d270eca2532cc
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56730539"
 documentType: LandingData
 title: Документация по Content Moderator
 metadata:
-  title: Документация по Content Moderator. Краткие руководства, учебные материалы и справочник по API. Azure Cognitive Services | Документация Майкрософт
-  description: Узнайте, как с помощью Content Moderator проверить текст, изображение или видео на наличие материалов, которые являются потенциально оскорбительными, опасными или нежелательными по иным причинам.
+  title: 'Документация по Content Moderator. Краткие руководства, учебные материалы и справочник по API. Azure Cognitive Services | Документация Майкрософт'
+  description: 'Узнайте, как с помощью Content Moderator проверить текст, изображение или видео на наличие материалов, которые являются потенциально оскорбительными, опасными или нежелательными по иным причинам.'
   services: cognitive-services
   author: nitinme
   manager: cgronlun
@@ -21,89 +15,89 @@ metadata:
   ms.date: 12/20/2018
   ms.author: nitinme
 abstract:
-  description: API Azure Content Moderator — это когнитивная служба, которая проверяет текст, изображения и видео на наличие материалов, потенциально оскорбительных, представляющих риск или нежелательных по иным причинам. При обнаружении таких материалов служба применяет к содержимому соответствующие метки (флаги). Затем приложение может обрабатывать помеченное содержимое для обеспечения соответствия нормативным требованиям или оставлять его как предполагаемую среду для пользователей.
+  description: 'API Azure Content Moderator — это когнитивная служба, которая проверяет текст, изображения и видео на наличие материалов, потенциально оскорбительных, представляющих риск или нежелательных по иным причинам. При обнаружении таких материалов служба применяет к содержимому соответствующие метки (флаги). Затем приложение может обрабатывать помеченное содержимое для обеспечения соответствия нормативным требованиям или оставлять его как предполагаемую среду для пользователей.'
   aside:
     image:
-      alt: 
+      alt: null
       height: 110
       src: ../media/index/content-moderator-landing-page-video.png
       width: 250
-    title: Модерация видео с помощью Content Moderator (15:42)
-    href: https://channel9.msdn.com/Shows/AI-Show/Video-Moderation-with-Content-Moderator?term=content%20moderator&lang-en=true
+    title: 'Модерация видео с помощью Content Moderator (15:42)'
+    href: 'https://channel9.msdn.com/Shows/AI-Show/Video-Moderation-with-Content-Moderator?term=content%20moderator&lang-en=true'
     width: 250
 sections:
-- items:
-  - type: list
-    style: cards
-    className: cardsM
-    columns: 3
+  - items:
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 3
+        items:
+          - href: /azure/cognitive-services/content-moderator/overview
+            html: <p>Дополнительные сведения об API Content Moderator.</p>
+            image:
+              src: ../media/index/i_overview.svg
+            title: Что такое Content Moderator?
+          - href: /azure/cognitive-services/content-moderator/text-moderation-api
+            html: <p>Дополнительные сведения о модерации текста.</p>
+            image:
+              src: ../media/index/i_overview.svg
+            title: API модерации текста
+          - href: /azure/cognitive-services/content-moderator/image-moderation-api
+            html: <p>Дополнительные сведения о модерации изображений.</p>
+            image:
+              src: ../media/index/i_overview.svg
+            title: API модерации изображений
+  - title: 5-минутные руководства по началу работы
     items:
-    - href: /azure/cognitive-services/content-moderator/overview
-      html: <p>Дополнительные сведения об API Content Moderator.</p>
-      image:
-        src: ../media/index/i_overview.svg
-      title: Что такое Content Moderator?
-    - href: /azure/cognitive-services/content-moderator/text-moderation-api
-      html: <p>Дополнительные сведения о модерации текста.</p>
-      image:
-        src: ../media/index/i_overview.svg
-      title: API модерации текста
-    - href: /azure/cognitive-services/content-moderator/image-moderation-api
-      html: <p>Дополнительные сведения о модерации изображений.</p>
-      image:
-        src: ../media/index/i_overview.svg
-      title: API модерации изображений
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: Узнайте, как приступить к работе с Content Moderator, щелкнув ссылку в виде стрелки <img src="images/index/link.jpg" height="15" width="15"></img>.
-  - type: table
-    style: dataMatrix
-    columns:
-    - image:
-        src: images/index/i_portal.svg
-    - image:
-        src: images/index/logo_csharp.svg
-    - image:
-        src: images/index/logo_python.svg
-    rows:
-    - title: Анализ текстового содержимого
-      values:
-      - href: quick-start
-      - href: text-moderation-quickstart-dotnet
-      - href: text-moderation-quickstart-python
-    - title: Анализ графического содержимого
-      values:
-      - href: 
-      - href: image-moderation-quickstart-dotnet
-      - href: 
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: 'Узнайте, как разрабатывать приложения с использованием Content Moderator:'
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: 'Узнайте, как приступить к работе с Content Moderator, щелкнув ссылку в виде стрелки <img src="images/index/link.jpg" height="15" width="15"></img>.'
+      - type: table
+        style: dataMatrix
+        columns:
+          - image:
+              src: images/index/i_portal.svg
+          - image:
+              src: images/index/logo_csharp.svg
+          - image:
+              src: images/index/logo_python.svg
+        rows:
+          - title: Анализ текстового содержимого
+            values:
+              - href: quick-start
+              - href: text-moderation-quickstart-dotnet
+              - href: text-moderation-quickstart-python
+          - title: Анализ графического содержимого
+            values:
+              - href: null
+              - href: image-moderation-quickstart-dotnet
+              - href: null
+  - title: Пошаговые руководства
     items:
-    - html: <a href="ecommerce-retail-catalog-moderation.md">Модерация изображений товаров для электронной коммерции</a>
-- title: Примеры
-  items:
-  - type: paragraph
-    text: 'Поиск примеров для API Content Moderator:'
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: 'Узнайте, как разрабатывать приложения с использованием Content Moderator:'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="ecommerce-retail-catalog-moderation.md">Модерация изображений товаров для электронной коммерции</a>
+  - title: Примеры
     items:
-    - html: <a href="https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=content+moderator&sort=Relevance">Примеры кода</a>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: paragraph
+        text: 'Поиск примеров для API Content Moderator:'
+      - type: list
+        style: unordered
+        items:
+          - html: '<a href="https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=content+moderator&sort=Relevance">Примеры кода</a>'
+  - title: Справочные материалы
     items:
-    - title: Интерфейсы API
-      html: <p><a href="https://docs.microsoft.com/azure/cognitive-services/content-moderator/api-reference">REST API</a></p>
-    - title: Пакеты SDK
-      html: <p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/contentmoderator?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/contentmoderator?view=azure-java-stable">Java</a></p> <p><a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-contentmoderator/?view=azure-python">Python</a></p> <p><a href="https://docs.microsoft.com/javascript/api/azure-cognitiveservices-contentmoderator/?view=azure-node-latest">Node.js</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/contentmoderator">GO</a></p>
-    - title: PowerShell
-      html: <p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>
-    - title: Интерфейс командной строки
-      html: <p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Интерфейс командной строки Azure</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Интерфейсы API
+            html: '<p><a href="https://docs.microsoft.com/azure/cognitive-services/content-moderator/api-reference">REST API</a></p>'
+          - title: Пакеты SDK
+            html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/contentmoderator?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/contentmoderator?view=azure-java-stable">Java</a></p> <p><a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-contentmoderator/?view=azure-python">Python</a></p> <p><a href="https://docs.microsoft.com/javascript/api/azure-cognitiveservices-contentmoderator/?view=azure-node-latest">Node.js</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/contentmoderator">GO</a></p>'
+          - title: PowerShell
+            html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
+          - title: Интерфейс командной строки
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Интерфейс командной строки Azure</a></p>'

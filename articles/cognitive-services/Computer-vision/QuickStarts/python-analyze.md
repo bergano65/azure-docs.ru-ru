@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 03/27/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 23a85a84cfd2f938bd32e42925c07177203bf636
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.openlocfilehash: fddf853b90297cb75ffbd7c74cf81dd368370aa1
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58630227"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60011220"
 ---
 # <a name="quickstart-analyze-a-remote-image-using-the-rest-api-and-python-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API компьютерного зрения и Python
 
@@ -31,9 +31,9 @@ ms.locfileid: "58630227"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Установите [Python](https://www.python.org/downloads/), если хотите выполнить этот пример кода в локальной среде.
-- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- У вас должен быть ключ подписки для Компьютерного зрения. На странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) можно получить бесплатную пробную версию ключа. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
 - Должны быть установлены указанные ниже пакеты Python. Чтобы установить пакеты Python, можно использовать [pip](https://packaging.python.org/tutorials/installing-packages/).
-    - [requests](http://docs.python-requests.org/en/master/)
+    - requests
     - [matplotlib](https://matplotlib.org/).
     - [pillow](https://python-pillow.org/)
 

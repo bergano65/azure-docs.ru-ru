@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/25/2019
+ms.date: 04/18/2019
 ms.author: mlottner
-ms.openlocfilehash: 59021d09f2af9d430b118acdeb8aa977094e683e
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.openlocfilehash: cac2f740c1b2ae109f29ce44cd035fc6a83dd148
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58862392"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60010566"
 ---
 # <a name="quickstart-enable-service-in-iot-hub"></a>Краткое руководство. Включение службы в Центре Интернета вещей
 
@@ -45,7 +45,7 @@ ms.locfileid: "58862392"
 Чтобы включить систему безопасности в Центре Интернета вещей, сделайте следующее: 
 
 1. Откройте **Центр Интернета вещей** на портале Azure. 
-2. Щелкните и откройте **Безопасность** в меню слева. 
+2. В меню **Security** (безопасность) щелкните **Overview** (Обзор), а затем — **Start preview** (Начать просмотр). 
 3. Выберите **Enable IoT Security** (Включить систему безопасности Интернета вещей). 
 4. Укажите сведения о рабочей области Log Analytics. 
    - Выберите хранение **необработанных событий** в дополнение к хранению типов сведений по умолчанию, оставив переключатель **необработанных событий** в положении **Вкл**. 
@@ -60,4 +60,4 @@ ms.locfileid: "58862392"
 Чтобы узнать, как настроить решение, перейдите к следующей статье.
 
 > [!div class="nextstepaction"]
-> [Настройка решения](quickstart-configure-your-solution.md)
+> [Quickstart: Configure your IoT solution](quickstart-configure-your-solution.md) (Краткое руководство. Настройка решения Интернета вещей)

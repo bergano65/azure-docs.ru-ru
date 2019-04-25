@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Содержимое изображения предметной области — REST, Python
+title: Краткое руководство. Содержимое предметной области — REST, Python
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы будете использовать модели предметной области для распознавания знаменитостей и достопримечательностей на изображении с помощью API компьютерного зрения c Python.
 services: cognitive-services
@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 02/21/2019
+ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: bdbff3777949298fbefec80ecb6608d6af10037b
-ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.openlocfilehash: e4ba3ee0b2138cb83796be50efe129a993d07a8a
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56651657"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59996498"
 ---
 # <a name="quickstart-use-a-domain-model-using-the-rest-api-and-python-in-computer-vision"></a>Краткое руководство. Использование модели предметной области с помощью REST API компьютерного зрения и Python
 
@@ -31,7 +31,7 @@ ms.locfileid: "56651657"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Установите [Python](https://www.python.org/downloads/), если хотите выполнить этот пример кода в локальной среде.
-- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- У вас должен быть ключ подписки для Компьютерного зрения. На странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) можно получить бесплатную пробную версию ключа. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
 
 ## <a name="create-and-run-the-landmarks-sample"></a>Создание и запуск образца для распознавания достопримечательностей
 

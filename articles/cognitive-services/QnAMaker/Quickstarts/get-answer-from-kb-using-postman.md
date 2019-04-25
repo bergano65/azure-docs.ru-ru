@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
-ms.date: 04/05/2019
+ms.date: 04/16/2019
 ms.author: diberry
-ms.openlocfilehash: d12051821faa60940bf2acc569c6552561b4b3ee
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 24bd6731faa9788dc336db199aa9776813e7348f
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59267946"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59683449"
 ---
 # <a name="quickstart-get-an-answer-from-knowledge-base-using-postman"></a>Краткое руководство. Получение ответа из базы знаний с помощью Postman
 
@@ -36,44 +36,42 @@ ms.locfileid: "59267946"
 
 Желтые цифры на следующем рисунке обозначают пары "имя – значение", которые нужно использовать на следующих этапах.
 
-[![Pпубликовать результаты](../media/qnamaker-quickstart-get-answer-with-postman/publish-settings.png)](../media/qnamaker-quickstart-get-answer-with-postman/publish-settings.png#lightbox)
+[![Публикация результатов](../media/qnamaker-quickstart-get-answer-with-postman/publish-settings.png)](../media/qnamaker-quickstart-get-answer-with-postman/publish-settings.png#lightbox)
 
 Для создания ответа с помощью Postman выполните следующие действия:
 
 1. Откройте Postman. Если вам необходимо выбрать стандартный блок, выберите **Базовый запрос**. Укажите в качестве **имени запроса** `Generate QnA Maker answer`, а в качестве **коллекции** — `Generate QnA Maker answers`. Нажмите кнопку **Отмена**, чтобы не сохранять коллекцию.
 1. В рабочей области выберите метод HTTP **POST**.
 
-    [![IМетод POST назначен в Postman](../media/qnamaker-quickstart-get-answer-with-postman/postman-select-post-method.png)](../media/qnamaker-quickstart-get-answer-with-postman/postman-select-post-method.png#lightbox)
+    [![Метод POST назначен в Postman](../media/qnamaker-quickstart-get-answer-with-postman/postman-select-post-method.png)](../media/qnamaker-quickstart-get-answer-with-postman/postman-select-post-method.png#lightbox)
 
 1. В строке URL-адреса объедините значения HOST (#2 на изображении) и POST (#1 на изображении), чтобы создать полный URL-адрес. Пример URL-адреса выглядит так: 
 
     `https://qnamaker-f0.azurewebsites.net/qnamaker/knowledgebases/e1115f8c-d01b-4698-a2ed-85b0dbf3348c/generateAnswer`
 
-    [![IВведение полного URL-адреса в Postman](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-method-and-url.png)](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-method-and-url.png#lightbox)
+    [![Введение полного URL-адреса в Postman](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-method-and-url.png)](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-method-and-url.png#lightbox)
 
 1. Выберите вкладку **Headers** (Заголовки) под строкой URL-адреса, а затем выберите **Bulk Edit** (Массовое изменение). 
 
 1. Скопируйте заголовки (#3 и #4 из изображения) в текстовую область.
 
-    [![IУказание заголовков в Postman](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-headers.png)](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-headers.png#lightbox)
+    [![Указание заголовков в Postman](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-headers.png)](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-headers.png#lightbox)
 
 1. Выберите вкладку **Body** (Текст).
 1. Выберите формат **необработанных данных** и введите JSON (#5 из изображения), что представляет вопрос.
 
     `{"question":"How do I programmatically update my Knowledge Base?"}`
 
-    [![IУказание значения JSON текста в Postman](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-body-json-value.png)](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-body-json-value.png#lightbox)
+    [![Указание значения JSON текста в Postman](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-body-json-value.png)](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-body-json-value.png#lightbox)
 
 1. Нажмите кнопку **Send** (Отправить).
 1. Будет возвращен ответ, а также другие сведения, которые могут быть важны для клиентского приложения. 
 
-    [![IУказание значения JSON текста в Postman](../media/qnamaker-quickstart-get-answer-with-postman/receive-postman-response.png)](../media/qnamaker-quickstart-get-answer-with-postman/receive-postman-response.png#lightbox)
+    [![Указание значения JSON текста в Postman](../media/qnamaker-quickstart-get-answer-with-postman/receive-postman-response.png)](../media/qnamaker-quickstart-get-answer-with-postman/receive-postman-response.png#lightbox)
 
 ## <a name="use-staging-endpoint"></a>Использование промежуточной конечной точки
 
-Если вы хотите получить ответ от промежуточной конечной точки, добавьте к URL-адресу логический параметр `isTest` строки запроса со значением `true`.
-
-`?isTest=true`
+Если вы хотите получить ответ от промежуточной конечной точки, добавьте к URL-адресу свойство текста `isTest`.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

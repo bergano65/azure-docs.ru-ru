@@ -1,6 +1,6 @@
 ---
-title: Руководство. Потоковая передача журналов Azure Active Directory в концентратор событий Azure (предварительная версия) | Документация Майкрософт
-description: Узнайте, как настроить систему диагностики Azure для передачи журналов Azure Active Directory в концентратор событий (предварительная версия)
+title: Руководство. Потоковая передача журналов Azure Active Directory в концентратор событий Azure | Документация Майкрософт
+description: Узнайте, как настроить Диагностику Azure для передачи журналов Azure Active Directory в концентратор событий
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -13,18 +13,18 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 11/13/2018
+ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e85a3c43054aeb758eb1e0da9ce1086bfa653180
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: 906da7ac6b0086e4efca7c38171668a08f687d19
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58436937"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59995604"
 ---
-# <a name="tutorial-stream-azure-active-directory-logs-to-an-azure-event-hub-preview"></a>Руководство по Потоковая передача журналов Azure Active Directory в концентратор событий Azure (предварительная версия)
+# <a name="tutorial-stream-azure-active-directory-logs-to-an-azure-event-hub"></a>Руководство по Потоковая передача журналов Azure Active Directory в концентратор событий Azure
 
 В этом руководстве описано, как настроить параметры диагностики Azure Monitor для потоковой передачи журналов Azure Active Directory (Azure AD) в концентратор событий Azure. Используйте этот механизм для интеграции своих журналов со сторонними инструментами управления информационной безопасностью и событиями безопасности (SIEM), такими как Splunk и QRadar.
 
@@ -89,5 +89,5 @@ ms.locfileid: "58436937"
 
 * [Integrate Azure AD logs with Splunk by using Azure Monitor (preview)](tutorial-integrate-activity-logs-with-splunk.md) (Интеграция журналов Azure AD со Splunk с помощью Azure Monitor (предварительная версия))
 * [Интеграция журналов Azure AD с SumoLogic с помощью Azure Monitor](howto-integrate-activity-logs-with-sumologic.md)
-* [Интерпретация схемы журналов аудита в Azure Monitor](reference-azure-monitor-audit-log-schema.md)
+* [Interpret the Azure AD audit logs schema in Azure Monitor (preview)](reference-azure-monitor-audit-log-schema.md) (Интерпретация схемы журналов аудита Azure Active Directory в Azure Monitor (предварительная версия))
 * [Interpret the Azure AD sign-in logs schema in Azure Monitor (preview)](reference-azure-monitor-sign-ins-log-schema.md) (Интерпретация схемы журналов входа Azure Active Directory в Azure Monitor (предварительная версия))

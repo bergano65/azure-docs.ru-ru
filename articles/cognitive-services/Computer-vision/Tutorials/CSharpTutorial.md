@@ -1,22 +1,22 @@
 ---
 title: 'Пример: изучение приложения для обработки изображений на C#'
-titleSuffix: Computer Vision - Cognitive Services - Azure
-description: Изучите базовое приложение Windows, в котором используется API компьютерного зрения в Microsoft Cognitive Services. Узнайте, как выполнять распознавание текста, создавать эскизы и работать с визуальными компонентами в изображении.
+titleSuffix: Azure Cognitive Services
+description: Изучите базовое приложение для Windows, в котором используется API компьютерного зрения в Azure Cognitive Services. Узнайте, как выполнять распознавание текста, создавать эскизы и работать с визуальными компонентами в изображении.
 services: cognitive-services
 author: PatrickFarley
 manager: nolachar
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: sample
-ms.date: 02/08/2019
+ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: a23e45cb1e75305f41c81077c90282352327b72d
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: 63b5130e3cade54a2fbc432b2391ad3ee1ea8a1a
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56310955"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60004029"
 ---
 # <a name="sample-explore-an-image-processing-app-with-c"></a>Пример: изучение приложения для обработки изображений с использованием C#
 
@@ -33,7 +33,7 @@ ms.locfileid: "56310955"
 Прежде чем исследовать пример приложения, убедитесь, что выполнены следующие предварительные требования:
 
 * У вас должна быть [Visual Studio 2015 или более поздней версии](https://visualstudio.microsoft.com/downloads/).
-* У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+* У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
 
 ## <a name="get-the-sample-app"></a>Получение примера приложения
 

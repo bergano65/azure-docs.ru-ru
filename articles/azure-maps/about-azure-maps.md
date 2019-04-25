@@ -10,10 +10,10 @@ services: azure-maps
 manager: timlt
 ms.custom: mvc
 ms.openlocfilehash: 944a111ac0c31e755b3991f9ea101ba652c676d3
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59268778"
 ---
 # <a name="what-is-azure-maps"></a>Что такое Azure Maps?
@@ -139,9 +139,9 @@ Azure Maps разрабатываются для мобильности и мо�
 Дополнительные сведения о новых возможностях службы Azure Maps доступны по ссылкам ниже.
 
 > [!div class="nextstepaction"]
-> [Матрица маршрута, изохроны, поиск IP-адресов и другие новые возможности](https://azure.microsoft.com/blog/route-matrix-isochrones-ip-lookup-and-more-added-to-azure-maps/)
+> [Route Matrix, isochrones, IP lookup, and more added to Azure Maps](https://azure.microsoft.com/blog/route-matrix-isochrones-ip-lookup-and-more-added-to-azure-maps/) (Матрица маршрута, изохроны, поиск IP-адресов и другие новые возможности в Azure Maps)
 
 Получите демонстрацию возможностей Azure Maps с помощью примера приложения:
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Создание веб-приложения](quick-demo-map-app.md)
+> [Краткое руководство Создание карты с интерактивным поиском с помощью службы Azure Maps](quick-demo-map-app.md)

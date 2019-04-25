@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: sngun
-ms.openlocfilehash: a8d144b2cb8ee18c69dc4c4768b09422d44bade2
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.openlocfilehash: 64aef17663fdc28a467172bbe8954fc06fdb7ff0
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59617327"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59680405"
 ---
 # <a name="build-a-net-console-app-to-manage-data-in-azure-cosmos-db-sql-api-account"></a>Создание консольного приложения .NET для управления данными в учетной записи API SQL для Azure Cosmos DB
 
@@ -91,7 +91,10 @@ Visual Studio 2017 с установленной рабочей нагрузк�
 1. Найдите и выберите **Microsoft.Azure.DocumentDB**. Щелкните **Установить**, если этот пакет еще не установлен.
    
    Идентификатором пакета для клиентской библиотеки API SQL Azure Cosmos DB является [Microsoft Azure Cosmos DB Client Library](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/).
-   
+
+   > [!NOTE]
+   > Если вы используете .NET Core, см. [документацию по .NET Core](./sql-api-dotnetcore-get-started.md).
+
    ![Снимок экрана меню NuGet для поиска пакета SDK клиента Azure Cosmos DB](./media/sql-api-get-started/nosql-tutorial-manage-nuget-pacakges-2.png)
    
    Если появится сообщение о предварительном просмотре изменений в решении, нажмите кнопку **ОК**. Если появится сообщение о принятии условий лицензионного соглашения, щелкните **Я принимаю**.

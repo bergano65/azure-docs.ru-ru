@@ -1,4 +1,3 @@
-items:
 - name: Служба "Машинное обучение Azure"
   href: service/index.yml
 - name: Студия машинного обучения Azure
@@ -6,9 +5,3 @@ items:
 - name: Сравнение продуктов Машинного обучения от корпорации Майкрософт
   href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning
   maintainContext: true
-ms.openlocfilehash: 59852fe858e9b4796fec476c1bfe41c0e0d0381e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58175868"

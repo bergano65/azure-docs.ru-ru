@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/21/2019
 ms.author: kumud;tyao
-ms.openlocfilehash: a7b4975a81c0966e5cbff0c8b940c9231e66f32b
-ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
+ms.openlocfilehash: 1d6343705e8d27fb2d22827cf792de332861456e
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58407646"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60007973"
 ---
 # <a name="what-is-geo-filtering-on-a-domain-for-azure-front-door"></a>Сведения о геофильтрации в домене для Azure Front Door
 
@@ -132,15 +132,15 @@ ms.locfileid: "58407646"
 | LT | Литва|
 | LU | Люксембург|
 | LV | Латвия|
-| LY | Ливия|
+| LY | Ливия |
 | MA | Марокко|
 | MD | Молдова, Республика|
 | MG | Мадагаскар|
-| MK | Бывшая югославская Республика Македония|
+| MK | Северная Македония|
 | ML | Мали|
 | ММ | Мьянма|
 | MN | Монголия|
-| MO | Макао, САР|
+| MO | Макао (САР)|
 | Магический квадрант | Мартиника|
 | MR | Мавритания|
 | MT | Мальта|

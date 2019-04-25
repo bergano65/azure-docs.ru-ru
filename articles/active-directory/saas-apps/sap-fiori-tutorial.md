@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/11/2019
 ms.author: jeedes
 ms.openlocfilehash: e94fe3156677a507eab91eee339ed29bf7b4ad2e
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59257643"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-fiori"></a>Руководство по интеграции Azure Active Directory с SAP Fiori
@@ -175,8 +175,7 @@ ms.locfileid: "59257643"
 
     ![Сведения о домене и URL-адресах для единого входа в приложение SAP Fiori](common/sp-identifier-reply.png)
 
-    d. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
-    `https://<your company instance of SAP Fiori>`
+    d. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<your company instance of SAP Fiori>`.
 
     > [!NOTE]
     > Нам известно, что некоторые клиенты получают сообщение об ошибке, связанной с неправильным URL-адресом ответа, указанным для их экземпляра. Если у вас появляется такая ошибка, устраните проблему с помощью следующего скрипта PowerShell, чтобы указать правильный URL-адрес ответа для своего экземпляра.
@@ -187,15 +186,15 @@ ms.locfileid: "59257643"
 
 12. Приложение SAP Fiori ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 13. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
     a. Щелкните **значок редактирования**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](./media/sapfiori-tutorial/nameidattribute.png)
+    ![image](./media/sapfiori-tutorial/nameidattribute.png)
 
-    ![изображение](./media/sapfiori-tutorial/nameidattribute1.png)
+    ![image](./media/sapfiori-tutorial/nameidattribute1.png)
 
     b. Из списка **Преобразование** выберите **ExtractMailPrefix()**.
 

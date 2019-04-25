@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/08/2019
 ms.author: diberry
 ms.openlocfilehash: 299dd61055503f0b5a11cbe97e137e4760edadda
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59266959"
 ---
 # <a name="tutorial-from-qna-maker-portal-create-a-knowledge-base"></a>Руководство по На портале QnA Maker создайте базу знаний.
@@ -67,7 +67,7 @@ ms.locfileid: "59266959"
     |Имя параметра|Значение параметра|Назначение|
     |--|--|--|
     |URL-адрес|`https://docs.microsoft.com/azure/cognitive-services/qnamaker/faqs` |Содержимое вопросов и ответов по указанному URL-адресу находится в формате: сначала вопрос, а потом ответ. QnA Maker может интерпретировать этот формат, чтобы извлечь вопросы и связанные с ними ответы.|
-    |Файл |_не используется в этом руководстве_|Этот файл позволяет отправить файлы для вопросов и ответов. |
+    |Файл |_Не используется в этом руководстве_|Этот файл позволяет отправить файлы для вопросов и ответов. |
     |Chit-chat (Беседа)|Друг|Это придает непринужденность общим вопросам и ответам. Эти вопросы и ответы можно изменить позже. |
 
     ![Шаг 4 процесса создания базы знаний](../media/qnamaker-tutorial-create-publish-query-in-portal/create-kb-step-4.png)

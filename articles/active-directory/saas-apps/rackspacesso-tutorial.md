@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 03/27/2019
+ms.date: 04/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 61466f3574ba7a88665a8d78818d0a4c12716bbf
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: fd420ea3fc4faae7fe4510a72204d71acaa3549a
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59269798"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60009941"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rackspace-sso"></a>Руководство по Интеграция Azure Active Directory с Rackspace SSO
 
@@ -38,7 +38,7 @@ ms.locfileid: "59269798"
 
 Чтобы настроить интеграцию Azure AD с Rackspace SSO, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Rackspace SSO с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -72,7 +72,7 @@ ms.locfileid: "59269798"
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
 В этом разделе описаны настройка и проверка единого входа Azure AD в Rackspace SSO с использованием тестового пользователя **Britta Simon**.
-Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Rackspace SSO.
+При использовании единого входа с Rackspace пользователи Rackspace будут автоматически созданы при первом входе на портал Rackspace. 
 
 Чтобы настроить и проверить единый вход Azure AD в Rackspace SSO, вам потребуется выполнить действия в следующих стандартных блоках.
 
@@ -80,8 +80,8 @@ ms.locfileid: "59269798"
 2. **[Настройка единого входа в Rackspace SSO](#configure-rackspace-sso-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя Rackspace SSO](#create-rackspace-sso-test-user)** требуется для того, чтобы в Rackspace SSO существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
+1. **[Настройка сопоставления атрибутов на панели управления Rackspace](#set-up-attribute-mapping-in-the-rackspace-control-panel)** требуется для назначения ролей Rackspace пользователям Azure AD.
+1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -101,31 +101,41 @@ ms.locfileid: "59269798"
 
     ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
+4. В разделе **Базовая конфигурация SAML** отправьте **файл метаданных поставщика службы**, который можно скачать по этому [URL-адресу](https://login.rackspace.com/federate/sp.xml), и выполните следующие действия:
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Rackspace SSO](common/sp-signonurl.png)
+    a. Щелкните **Отправить файл метаданных**.
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес: `https://login.rackspace.com/federate/`.
+    ![изображение](common/upload-metadata.png)
+
+    b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+
+    ![изображение](common/browse-upload-metadata.png)
+
+    c. После успешной передачи файла метаданных соответствующее значение URL-адреса будет добавлено автоматически.
+
+    d. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://login.rackspace.com/federate/`.
+
+    ![Сведения о домене и URL-адресах единого входа для приложения Rackspace SSO](common/sp-signonurl.png)   
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-6. Из раздела **Настройка Rackspace SSO** скопируйте требуемый URL-адрес.
-
-    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
-
-    а) URL-адрес входа.
-
-    b. Идентификатор Azure AD
-
-    c. URL-адрес выхода.
+Этот файл будет передан в Rackspace, чтобы заполнить необходимые параметры конфигурации федерации удостоверений.
 
 ### <a name="configure-rackspace-sso-single-sign-on"></a>Настройка единого входа Rackspace SSO
 
-Чтобы настроить единый вход на стороне **Rackspace SSO**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Rackspace SSO](https://support.rackspace.com/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Rackspace SSO**, выполните следующие действия:
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
+1. См. документацию по [добавлению поставщика удостоверений на панель управления](https://developer.rackspace.com/docs/rackspace-federation/gettingstarted/add-idp-cp/).
+1. Вы сможете выполнить следующие действия:
+    1. Создание поставщика удостоверений
+    1. Укажите домен электронной почты, с помощью которого пользователи будут идентифицировать вашу компанию при входе в систему.
+    1. Отправьте **XML-файл метаданных федерации**, ранее скачанный на панели управления Azure.
+
+Так вы сможете правильно настроить основные параметры единого входа, требуемые для подключения Azure и Rackspace.
+
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
@@ -143,7 +153,7 @@ ms.locfileid: "59269798"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите brittasimon@yourcompanydomain.extension. Например BrittaSimon@contoso.com.
+    b. В поле **Имя пользователя** введите `brittasimon@yourcompanydomain.extension`. Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -175,15 +185,58 @@ ms.locfileid: "59269798"
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-### <a name="create-rackspace-sso-test-user"></a>Создание тестового пользователя Rackspace SSO c единым входом
+### <a name="set-up-attribute-mapping-in-the-rackspace-control-panel"></a>Настройка сопоставления атрибутов на панели управления Rackspace
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Rackspace SSO. Обратитесь в  [группу поддержки единого входа Rackspace](https://support.rackspace.com/), чтобы добавить пользователей на платформу Rackspace с единым входом. Перед использованием единого входа необходимо создать и активировать пользователей.
+Rackspace использует **политику сопоставления атрибутов** для назначения ролей и групп Rackspace пользователям единого входа. **Политика сопоставления атрибутов** преобразует утверждения SAML в Azure AD в поля конфигурации пользователя, требуемые в Rackspace. См. дополнительные сведения в [документации по основам сопоставления атрибутов в Rackspace](https://developer.rackspace.com/docs/rackspace-federation/attribmapping-basics/). Некоторые замечания:
 
-### <a name="test-single-sign-on"></a>Проверка единого входа 
+* Если вы хотите назначить разные уровни доступа Rackspace с использованием групп Azure AD, необходимо включить утверждение групп в параметрах единого входа Azure для **Rackspace SSO**. **Политика сопоставления атрибутов** будет использоваться для сопоставления этих групп с требуемыми ролями и группами Rackspace:
+
+    ![Параметры утверждения групп](common/sso-groups-claim.png)
+
+* По умолчанию Azure AD отправляет в утверждении SAML идентификатор пользователя групп Azure AD, а не имя группы. Тем не менее при синхронизации локального экземпляра Active Directory с Azure AD вы можете отправить используемые имена групп:
+
+    ![Параметры имен утверждения групп](common/sso-groups-claims-names.png)
+
+В приведенном ниже примере **политики сопоставления атрибутов** выполняются следующие действия:
+1. Определение имени пользователя Rackspace для утверждения SAML `user.name`. Можно использовать любое утверждение, но чаще всего выбирается поле, содержащее адрес электронной почты пользователя.
+1. Определение ролей Rackspace `admin` и `billing:admin` для пользователя путем сопоставления группы Azure AD по имени группы или идентификатору пользователя группы. Выполняется *подстановка* значения `"{0}"` в поле `roles` и замена с использованием результатов выражений правил `remote`.
+1. С помощью *подстановки по умолчанию* `"{D}"` Rackspace может получить дополнительные поля SAML путем поиска стандартных и хорошо известных утверждений SAML в замене SAML.
+
+```yaml
+---
+mapping:
+    rules:
+    - local:
+        user:
+          domain: "{D}"
+          name: "{At(http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name)}"
+          email: "{D}"
+          roles:
+              - "{0}"
+          expire: "{D}"
+      remote:
+          - path: |
+              (
+                if (mapping:get-attributes('http://schemas.microsoft.com/ws/2008/06/identity/claims/groups')='7269f9a2-aabb-9393-8e6d-282e0f945985') then ('admin', 'billing:admin') else (),
+                if (mapping:get-attributes('http://schemas.microsoft.com/ws/2008/06/identity/claims/groups')='MyAzureGroup') then ('admin', 'billing:admin') else ()
+              )
+            multiValue: true
+  version: RAX-1
+```
+> [!TIP]
+> Убедитесь, что используется текстовый редактор, который проверяет синтаксис YAML при редактировании файла политики.
+
+См. дополнительные примеры в [документации по основам сопоставления атрибутов в Rackspace](https://developer.rackspace.com/docs/rackspace-federation/attribmapping-basics/).
+
+### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Rackspace SSO на Панели доступа, вы автоматически войдете в приложение Rackspace SSO, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+
+Можно также использовать кнопку **Validate** (Проверить) в параметрах единого входа **Rackspace SSO**:
+
+   ![Кнопка Validate (Проверить) в параметрах единого входа](common/sso-validate-sign-on.png)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

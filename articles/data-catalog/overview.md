@@ -1,17 +1,17 @@
 ---
 title: Введение в Каталог данных Azure
 description: В этой статье приведен обзор каталога данных Microsoft Azure и его возможностей. В ней также рассказывается, какие проблемы он позволяет решить. Каталог данных позволяет любому пользователю регистрировать, обнаруживать, распознавать и использовать источники данных.
-author: markingmyname
-ms.author: maghan
+author: JasonWHowell
+ms.author: jasonh
 ms.service: data-catalog
 ms.topic: overview
 ms.date: 04/05/2019
-ms.openlocfilehash: cd20fc6ae71a0dd96a0006de8c81050bb0646905
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 87c86ddeaa24693d393d250e1dc699b9a15ea84b
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59288983"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60010166"
 ---
 # <a name="what-is-azure-data-catalog"></a>Что такое каталог данных Azure?
 
@@ -63,14 +63,14 @@ ms.locfileid: "59288983"
 * [Создание заметок к источникам данных](data-catalog-how-to-annotate.md)
 * [Как создать документацию по источникам данных](data-catalog-how-to-documentation.md)
 * [Подключение к источникам данных](data-catalog-how-to-connect.md)
-* [Работа с большими данными](data-catalog-how-to-big-data.md)
+* [Работа с источниками больших данных в каталоге данных Azure](data-catalog-how-to-big-data.md)
 * [Как управлять ресурсами данных](data-catalog-how-to-manage.md)
-* [Как настроить бизнес-глоссарий](data-catalog-how-to-business-glossary.md)
+* [Как настроить бизнес-глоссарий для регулируемого добавления тегов](data-catalog-how-to-business-glossary.md)
 * [Часто задаваемые вопросы](data-catalog-frequently-asked-questions.md)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Чтобы начать работу с Каталогом данных, перейдите к следующим ресурсам:
 
-* [Краткое руководство. Создание каталога данных Azure](data-catalog-get-started.md)
-* [Откройте Каталог данных Azure](https://www.azuredatacatalog.com)
+* [Краткое руководство Создание каталога данных Azure](data-catalog-get-started.md)
+* [Войти в Каталог данных Azure](https://www.azuredatacatalog.com)

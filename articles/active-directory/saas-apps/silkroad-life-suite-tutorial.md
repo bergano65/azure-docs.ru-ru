@@ -1,305 +1,289 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с SilkRoad Life Suite | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с SilkRoad Life Suite | Документация Майкрософт
 description: Узнайте, как настроить единый вход для Azure Active Directory и SilkRoad Life Suite.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 3cd92319-7964-41eb-8712-444f5c8b4d15
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 12/12/2017
+ms.topic: tutorial
+ms.date: 04/16/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7f047d784796b9e7c59d95863aa74b3f72da324
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: bcad6232de7fa257b58fe6d84f2c2ff794b64589
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57995625"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60005423"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-silkroad-life-suite"></a>Руководство. Интеграция Azure Active Directory с SilkRoad Life Suite
+# <a name="tutorial-azure-active-directory-integration-with-silkroad-life-suite"></a>Руководство по Интеграция Azure Active Directory с SilkRoad Life Suite
 
 В этом руководстве описано, как интегрировать SilkRoad Life Suite с Azure Active Directory (Azure AD).
-
 Интеграция SilkRoad Life Suite с Azure AD обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к SilkRoad Life Suite.
-- Вы можете включить автоматический вход пользователей в SilkRoad Life Suite (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно на портале Azure.
+* С помощью Azure AD вы можете контролировать доступ к SilkRoad Life Suite.
+* Можно включить автоматический вход пользователей в SilkRoad Life Suite (единый вход) с помощью учетных записей Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с SilkRoad Life Suite, вам потребуется следующее:
 
-- подписка Azure AD;
-- подписка SilkRoad Life Suite с активированной функцией единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка SilkRoad Life Suite с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление SilkRoad Life Suite из коллекции.
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* SilkRoad Life Suite поддерживает единый вход, инициируемый **поставщиком услуг**.
 
 ## <a name="adding-silkroad-life-suite-from-the-gallery"></a>Добавление SilkRoad Life Suite из коллекции.
+
 Чтобы настроить интеграцию SilkRoad Life Suite в Azure AD, необходимо добавить SilkRoad Life Suite из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить SilkRoad Life Suite из коллекции, выполните следующие действия:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Кнопка "Создать приложение"][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **SilkRoad Life Suite**, выберите **SilkRoad Life Suite** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![SilkRoad Life Suite в списке результатов](./media/silkroad-life-suite-tutorial/tutorial_silkroadlifesuite_addfromgallery.png)
+4. В поле поиска введите **SilkRoad Life Suite**, выберите **SilkRoad Life Suite** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+
+    ![SilkRoad Life Suite в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в приложение SilkRoad Life Suite с использованием тестового пользователя Britta Simon.
-
-Чтобы единый вход работал, Azure AD необходимо знать, какой пользователь в SilkRoad Life Suite соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в SilkRoad Life Suite.
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в SilkRoad Life Suite.
+В этом разделе описана настройка и проверка единого входа Azure AD в приложение SilkRoad Life Suite с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в SilkRoad Life Suite.
 
 Чтобы настроить и проверить единый вход Azure AD в SilkRoad Life Suite, вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя SilkRoad Life Suite](#create-a-silkroad-life-suite-test-user)** требуется для создания пользователя Britta Simon в SilkRoad Life Suite, связанного с соответствующим представлением в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в SilkRoad Life Suite](#configure-silkroad-life-suite-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя SilkRoad Life Suite](#create-silkroad-life-suite-test-user)** требуется для того, чтобы в SilkRoad Life Suite существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе мы включим на портале Azure единый вход Azure AD и настроим его в приложении SilkRoad Life Suite.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход в Azure AD в SilkRoad Life Suite, выполните следующие действия:**
+Чтобы настроить единый вход в Azure AD в SilkRoad Life Suite, выполните следующие действия.
 
-1. На портале Azure на странице интеграции с приложением **SilkRoad Life Suite** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **SilkRoad Life Suite** щелкните **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/silkroad-life-suite-tutorial/tutorial_silkroadlifesuite_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения SilkRoad Life Suite** сделайте следующее.
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Сведения о домене и URL-адресах единого входа приложения SilkRoad Life Suite](./media/silkroad-life-suite-tutorial/tutorial_silkroadlifesuite_url1.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.silkroad-eng.com/Authentication/`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    2. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
+4. Если у вас есть **файл метаданных поставщика служб**, выполните следующие действия в разделе **Базовая конфигурация SAML**:
+
+    > [!NOTE]
+    > Как получить **файл метаданных поставщика услуг** описано далее в этом руководстве.
+
+    a. Щелкните **Отправить файл метаданных**.
+
+    ![изображение](common/upload-metadata.png)
+
+    b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+
+    ![изображение](common/browse-upload-metadata.png)
+
+    c. После успешной передачи файла метаданных значения **Идентификатор** и **URL-адрес ответа** в разделе "Базовая конфигурация SAML" заполнятся автоматически.
+
+    ![image](common/sp-identifier-reply.png)
+
+    > [!Note]
+    > Если поля **Идентификатор** и **URL-адрес ответа** автоматически не заполняются значениями, введите эти значения вручную в соответствии со своими требованиями.
+
+    d. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.silkroad-eng.com/Authentication/`.
+
+5. Если у вас нет **файла метаданных поставщика услуг**, выполните следующие действия в разделе **Базовая конфигурация SAML**.
+
+    ![Сведения о домене и URL-адресах единого входа приложения SilkRoad Life Suite](common/sp-identifier-reply.png)
+
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.silkroad-eng.com/Authentication/`.
+
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате:
 
     | |
     |--|
-    | `https://<subdomain>.silkroad-eng.com/Authentication/SP` |
-    | `https://<subdomain>.silkroad.com/Authentication/SP` |
+    | `https://<subdomain>.silkroad-eng.com/Authentication/SP`|
+    | `https://<subdomain>.silkroad.com/Authentication/SP`|
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
-    
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
+
     | |
     |--|
-    | `https://<subdomain>.silkroad-eng.com/Authentication/` |
-    | `https://<subdomain>.silkroad.com/Authentication/` |
-     
-    > [!NOTE] 
-    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов SilkRoad Life Suite](https://www.silkroad.com/locations/). 
+    | `https://<subdomain>.silkroad-eng.com/Authentication/`|
+    | `https://<subdomain>.silkroad.com/Authentication/`|
 
-1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+    > [!NOTE]
+    > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов SilkRoad Life Suite](https://www.silkroad.com/locations/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    ![Ссылка для скачивания сертификата](./media/silkroad-life-suite-tutorial/tutorial_silkroadlifesuite_certificate.png) 
+6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
-1. Нажмите кнопку **Сохранить** .
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/silkroad-life-suite-tutorial/tutorial_general_400.png)
-    
-1. В разделе **Настройка SilkRoad Life Suite** щелкните **Настроить SilkRoad Life Suite**, чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
+7. Требуемые URL-адреса можно скопировать из раздела **Настройка SilkRoad Life Suite**.
 
-    ![Настройка SilkRoad Life Suite](./media/silkroad-life-suite-tutorial/tutorial_silkroadlifesuite_configure.png) 
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-1. Войдите на сайт компании SilkRoad от имени администратора. 
- 
-    >[!NOTE] 
+    а) URL-адрес входа.
+
+    b. Идентификатор Azure AD
+
+    c. URL-адрес выхода.
+
+### <a name="configure-silkroad-life-suite-single-sign-on"></a>Настройка единого входа в SilkRoad Life Suite
+
+1. Войдите на сайт компании SilkRoad в качестве администратора.
+
+    > [!NOTE]
     > Чтобы получить доступ к приложению SilkRoad Life Suite Authentication для настройки федерации с Microsoft Azure AD, обратитесь в службу поддержки компании SilkRoad или к представителю отдела обслуживания клиентов компании SilkRoad.
 
-1. В разделе **Service Provider** (Поставщик услуг) щелкните **Federation Details** (Сведения о федерации). 
-   
-    ![единого входа Azure AD][10]
+1. В разделе **Service Provider** (Поставщик услуг) щелкните **Federation Details** (Сведения о федерации).
 
-1. Щелкните **Download Federation Metadata**(Загрузить метаданные федерации), а затем сохраните файл метаданных на вашем компьютере.
-   
-    ![единого входа Azure AD][11] 
+    ![единого входа Azure AD](./media/silkroad-life-suite-tutorial/tutorial_silkroad_06.png)
+
+1. Щелкните **Download Federation Metadata**(Загрузить метаданные федерации), а затем сохраните файл метаданных на вашем компьютере. Укажите скачанный файл метаданных федерации как **файл метаданных поставщика услуг** в разделе **Базовая конфигурация SAML** на портале Azure.
+
+    ![единого входа Azure AD](./media/silkroad-life-suite-tutorial/tutorial_silkroad_07.png)
 
 1. В приложении **SilkRoad** щелкните **Authentication Sources** (Источники проверки подлинности).
-   
-    ![единого входа Azure AD][12] 
 
-1. Щелкните **Add Authentication Source**(Добавить источник аутентификации). 
-   
-    ![единого входа Azure AD][13] 
+    ![единого входа Azure AD](./media/silkroad-life-suite-tutorial/tutorial_silkroad_08.png) 
 
-1. В разделе **Add Authentication Source** (Добавление источника аутентификации) выполните следующие действия: 
-   
-    ![единого входа Azure AD][14]
+1. Щелкните **Add Authentication Source**(Добавить источник аутентификации).
+
+    ![единого входа Azure AD](./media/silkroad-life-suite-tutorial/tutorial_silkroad_09.png)
+
+1. В разделе **Add Authentication Source** (Добавление источника аутентификации) выполните следующие действия:
+
+    ![единого входа Azure AD](./media/silkroad-life-suite-tutorial/tutorial_silkroad_10.png)
   
     a. В разделе **Option 2 - Metadata File** (Вариант 2 — файл метаданных) нажмите кнопку **Browse** (Обзор), чтобы отправить скачанный файл метаданных с портала Azure.
   
-    2. Нажмите кнопку **Создать поставщик удостоверений с помощью данных из файла**.
+    b. Нажмите кнопку **Создать поставщик удостоверений с помощью данных из файла**.
 
-1. В разделе **Authentication Sources** (Источники проверки подлинности) нажмите кнопку **Edit** (Изменить). 
-    
-     ![единого входа Azure AD][15] 
+1. В разделе **Authentication Sources** (Источники проверки подлинности) нажмите кнопку **Edit** (Изменить).
 
-1. В диалоговом окне **Edit Authentication Source** (Изменение источника аутентификации) выполните следующие действия: 
-    
-     ![единого входа Azure AD][16] 
+    ![единого входа Azure AD](./media/silkroad-life-suite-tutorial/tutorial_silkroad_11.png)
+
+1. В диалоговом окне **Edit Authentication Source** (Изменение источника аутентификации) выполните следующие действия:
+
+    ![единого входа Azure AD](./media/silkroad-life-suite-tutorial/tutorial_silkroad_12.png)
 
     a. В поле **Enabled** (Включено) выберите **Yes** (Да).
 
-    2. В текстовое поле **Идентификатор сущности** вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
-   
+    b. В текстовое поле **EntityId** (Идентификатор сущности) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
+
     c. В текстовом поле **IdP Description** (Описание IdP) введите описание своей конфигурации (например, *Azure AD SSO*).
 
     d. В текстовом поле **Файл метаданных** передайте файл **метаданных**, загруженный с портала Azure.
   
     д. В текстовом поле **IdP Name** (Имя IdP) введите уникальное имя своей конфигурации (например, *Azure SP*).
   
-    Е. В текстовое поле **Logout Service URL** (URL-адрес службы выхода) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
+    Е. В текстовое поле **Logout Service URL** (URL-адрес службы выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
-    ж. В текстовое поле **Sign-on service URL** (URL-адрес службы входа) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
+    ж. В текстовом поле **Sign-On service URL** (URL-адрес службы входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
     h. Выберите команду **Сохранить**.
 
-1. Отключите все остальные источники аутентификации. 
-    
-     ![единого входа Azure AD][17]
+1. Отключите все остальные источники аутентификации.
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
+    ![единого входа Azure AD](./media/silkroad-life-suite-tutorial/tutorial_silkroad_13.png)
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-   ![Создание тестового пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка Azure Active Directory](./media/silkroad-life-suite-tutorial/create_aaduser_01.png)
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+3. В разделе свойств пользователя сделайте следующее:
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/silkroad-life-suite-tutorial/create_aaduser_02.png)
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+    а. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите `brittasimon@yourcompanydomain.extension`.  
+    Например BrittaSimon@contoso.com.
 
-    ![Кнопка "Добавить"](./media/silkroad-life-suite-tutorial/create_aaduser_03.png)
-
-1. В диалоговом окне **Пользователь** сделайте следующее.
-
-    ![Диалоговое окно "Пользователь"](./media/silkroad-life-suite-tutorial/create_aaduser_04.png)
-
-    a. В поле **Имя** введите **BrittaSimon**.
-
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
- 
-### <a name="create-a-silkroad-life-suite-test-user"></a>Создание тестового пользователя SilkRoad Life Suite
-
-В этом разделе описано, как создать пользователя Britta Simon в приложении SilkRoad Life Suite. Обратитесь к  [группе поддержки клиентов SilkRoad Life Suite](https://www.silkroad.com/locations/) для добавления пользователей на платформу SilkRoad Life Suite. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе мы предоставим пользователю Britta Simon доступ к SilkRoad Life Suite, чтобы он мог использовать единый вход Azure.
 
-![Назначение роли пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **SilkRoad Life Suite**.
 
-**Чтобы назначить Britta Simon в SilkRoad Life Suite, выполните следующие действия:**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **SilkRoad Life Suite**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка SilkRoad Life Suite в списке приложений](common/all-applications.png)
 
-1. В списке приложений выберите **SilkRoad Life Suite**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка SilkRoad Life Suite в списке приложений](./media/silkroad-life-suite-tutorial/tutorial_silkroadlifesuite_app.png)  
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Область "Добавление назначения"][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-silkroad-life-suite-test-user"></a>Создание тестового пользователя SilkRoad Life Suite
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
+В этом разделе описано, как создать пользователя Britta Simon в приложении SilkRoad Life Suite. Сотрудничайте со [службой поддержки клиентов SilkRoad Life Suite](https://www.silkroad.com/locations/) для добавления пользователей на платформу SilkRoad Life Suite. Перед использованием единого входа необходимо создать и активировать пользователей.
+
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку SilkRoad Life Suite на панели доступа, вы автоматически войдете в приложение SilkRoad Life Suite.
-Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув элемент "SilkRoad Life Suite" на Панели доступа, вы автоматически войдете в приложение SilkRoad Life Suite, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/silkroad-life-suite-tutorial/tutorial_general_01.png
-[2]: ./media/silkroad-life-suite-tutorial/tutorial_general_02.png
-[3]: ./media/silkroad-life-suite-tutorial/tutorial_general_03.png
-[4]: ./media/silkroad-life-suite-tutorial/tutorial_general_04.png
-
-[100]: ./media/silkroad-life-suite-tutorial/tutorial_general_100.png
-
-[200]: ./media/silkroad-life-suite-tutorial/tutorial_general_200.png
-[201]: ./media/silkroad-life-suite-tutorial/tutorial_general_201.png
-[202]: ./media/silkroad-life-suite-tutorial/tutorial_general_202.png
-[203]: ./media/silkroad-life-suite-tutorial/tutorial_general_203.png
-[10]: ./media/silkroad-life-suite-tutorial/tutorial_silkroad_06.png
-[11]: ./media/silkroad-life-suite-tutorial/tutorial_silkroad_07.png
-[12]: ./media/silkroad-life-suite-tutorial/tutorial_silkroad_08.png
-[13]: ./media/silkroad-life-suite-tutorial/tutorial_silkroad_09.png
-[14]: ./media/silkroad-life-suite-tutorial/tutorial_silkroad_10.png
-[15]: ./media/silkroad-life-suite-tutorial/tutorial_silkroad_11.png
-[16]: ./media/silkroad-life-suite-tutorial/tutorial_silkroad_12.png
-[17]: ./media/silkroad-life-suite-tutorial/tutorial_silkroad_13.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

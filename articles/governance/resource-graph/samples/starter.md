@@ -9,10 +9,10 @@ ms.service: resource-graph
 manager: carmonm
 ms.custom: seodec18
 ms.openlocfilehash: 2ba48e2a21bdee0c5698bdfa314dd3bf462c1c7e
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59267775"
 ---
 # <a name="starter-resource-graph-queries"></a>Запросы к Resource Graph для начинающих
@@ -166,8 +166,8 @@ Search-AzGraph -Query "where type contains 'storage' | distinct type"
 ## <a name="list-publicip"></a>Вывод списка общедоступных IP-адресов
 
 Аналогично предыдущему примеру этот запрос ищет все ресурсы, тип которых содержит слово **publicIPAddresses**.
-Этот запрос расширяет данный шаблон, чтобы включить в результаты только ресурсы, у которых **properties.ipAddress** имеет значение 
-`isnotempty`, и возвращать только ресурсы с действительным значением **properties.ipAddress**. Кроме того, число результатов ограничено (`limit`) первыми
+Этот запрос расширяет данный шаблон, чтобы включить в результаты только ресурсы, у которых **properties.ipAddress**
+ имеет значение `isnotempty`, и возвращать только ресурсы с действительным значением **properties.ipAddress**. Кроме того, число результатов ограничено (`limit`) первыми
 100. В зависимости от выбранной оболочки может потребоваться экранировать кавычки.
 
 ```Query
@@ -251,7 +251,7 @@ Search-AzGraph -Query "where type =~ 'Microsoft.Storage/storageAccounts' | where
 ```
 
 > [!NOTE]
-> В этом примере для сопоставления используется условный оператор `==` вместо `=~`. `==` : при использовании учитывается регистр.
+> В этом примере для сопоставления используется условный оператор `==` вместо `=~`. При использовании `==` учитывается регистр.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

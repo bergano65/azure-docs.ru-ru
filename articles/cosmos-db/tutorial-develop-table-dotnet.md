@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: sample
 ms.date: 03/11/2019
-ms.openlocfilehash: 0f324d39db38b17d436583277d60d87b2878d131
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f2f207b62522ceef9fe72d47026f4c2f8ed02e3b
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57880797"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60149603"
 ---
 # <a name="get-started-with-azure-cosmos-db-table-api-and-azure-table-storage-using-the-net-sdk"></a>Начало работы с API таблиц Azure Cosmos DB и хранилищем таблиц Azure с помощью пакета SDK для .NET
 
@@ -170,7 +170,7 @@ public static async Task<CloudTable> CreateTableAsync(string tableName)
 
 Сущности сопоставляются с объектами C# с помощью настраиваемого класса, производного от [TableEntity](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tableentity.aspx). Чтобы добавить сущность в таблицу, создайте класс, который определяет свойства сущности.
 
-Щелкните проект **CosmosTableSamples** правой кнопкой мыши. Выберите **Добавить**, **Новая папка** и присвойте ей имя **Model**. В папку Model добавьте класс с именем **CustimerEntity.cs** и добавьте следующий код.
+Щелкните проект **CosmosTableSamples** правой кнопкой мыши. Выберите **Добавить**, **Новая папка** и присвойте ей имя **Model**. В папку Model добавьте класс с именем **CustomerEntity.cs** и добавьте следующий код.
 
 ```csharp
 namespace CosmosTableSamples.Model

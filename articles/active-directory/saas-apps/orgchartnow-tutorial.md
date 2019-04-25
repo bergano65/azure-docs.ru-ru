@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: cc2bbd0c1220a37de640bde6294eb096b25e5398
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59258204"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-orgchart-now"></a>Руководство по Интеграция Azure Active Directory с OrgChart Now
@@ -109,12 +109,12 @@ ms.locfileid: "59258204"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![изображение](common/both-preintegrated-signon.png)
+    ![image](common/both-preintegrated-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://sso2.orgchartnow.com/Shibboleth.sso/Login?entityID=<YourEntityID>&target=https://sso2.orgchartnow.com`.
 
     > [!NOTE]
-    > `<YourEntityID>` это **идентификатор Azure AD**. Его можно скопировать из раздела **Настройка OrgChart Now**, как описывается далее в этом учебнике.
+    > `<YourEntityID>` — это идентификатор **Azure AD**. Его можно скопировать из раздела **Настройка OrgChart Now**, как описано далее в этом руководстве.
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 

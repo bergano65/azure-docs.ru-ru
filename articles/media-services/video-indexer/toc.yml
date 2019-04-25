@@ -1,97 +1,90 @@
-items:
 - name: Документация по Индексатору видео
   href: ./index.yml
 - name: Обзор
   items:
-  - name: Что такое Индексатор видео?
-    href: video-indexer-overview.md
+    - name: Что такое Индексатор видео?
+      href: video-indexer-overview.md
 - name: Быстрое начало работы
-  items:
-  - name: Начало работы
-    href: video-indexer-get-started.md
   expanded: true
+  items:
+    - name: Начало работы
+      href: video-indexer-get-started.md
 - name: Учебники
   items:
-  - name: Использование API Индексатора видео
-    href: video-indexer-use-apis.md
+    - name: Использование API Индексатора видео
+      href: video-indexer-use-apis.md
 - name: Основные понятия
   href: video-indexer-concepts.md
   items:
-  - name: Сравнение предустановок Индексатора видео и Служб мультимедиа
-    href: compare-video-indexer-with-media-services-presets.md
-  - name: Управление несколькими арендаторами
-    href: manage-multiple-tenants.md
-  - name: Настройка моделей содержимого
-    items:
-    - name: Торговые марки
-      href: customize-brands-model-overview.md
-    - name: Язык
-      href: customize-language-model-overview.md
-    - name: Person
-      href: customize-person-model-overview.md
+    - name: Сравнение предустановок Индексатора видео и Служб мультимедиа
+      href: compare-video-indexer-with-media-services-presets.md
+    - name: Управление несколькими арендаторами
+      href: manage-multiple-tenants.md
+    - name: Настройка моделей содержимого
+      items:
+        - name: Торговые марки
+          href: customize-brands-model-overview.md
+        - name: Язык
+          href: customize-language-model-overview.md
+        - name: Person
+          href: customize-person-model-overview.md
 - name: Практические руководства
   items:
-  - name: Подключение к Azure
-    href: connect-to-azure.md
-  - name: Управление учетной записью, подключенной к Azure
-    href: manage-account-connected-to-azure.md
-  - name: Отправка и индексация видео с помощью API
-    href: upload-index-videos.md
-  - name: Анализ выходных данных Индексатора видео
-    href: video-indexer-output-json-v2.md
-  - name: Поиск конкретных кадров в видео
-    href: video-indexer-search.md
-  - name: Сцены, снимки и опорные кадры
-    href: scenes-shots-keyframes.md
-  - name: Просмотр и редактирование аналитических сведений Индексатора видео
-    href: video-indexer-view-edit.md
-  - name: Использование редактора для создания проектов
-    href: use-editor-create-project.md
-  - name: Создание аналитических сведений из существующих видео
-    href: video-indexer-create-new.md
-  - name: Внедрение мини-приложений в приложение
-    href: video-indexer-embed-widgets.md
-  - name: Настройка моделей содержимого
-    items:
-    - name: Person
+    - name: Подключение к Azure
+      href: connect-to-azure.md
+    - name: 'Управление учетной записью, подключенной к Azure'
+      href: manage-account-connected-to-azure.md
+    - name: Отправка и индексация видео с помощью API
+      href: upload-index-videos.md
+    - name: Анализ выходных данных Индексатора видео
+      href: video-indexer-output-json-v2.md
+    - name: Поиск конкретных кадров в видео
+      href: video-indexer-search.md
+    - name: 'Сцены, снимки и опорные кадры'
+      href: scenes-shots-keyframes.md
+    - name: Просмотр и редактирование аналитических сведений Индексатора видео
+      href: video-indexer-view-edit.md
+    - name: Использование редактора для создания проектов
+      href: use-editor-create-project.md
+    - name: Создание аналитических сведений из существующих видео
+      href: video-indexer-create-new.md
+    - name: Внедрение мини-приложений в приложение
+      href: video-indexer-embed-widgets.md
+    - name: Настройка моделей содержимого
       items:
-      - name: Использование веб-сайта Индексатора видео
-        href: customize-person-model-with-website.md
-      - name: Использование API Индексатора видео
-        href: customize-person-model-with-api.md
-    - name: Торговые марки
-      items:
-      - name: Использование веб-сайта Индексатора видео
-        href: customize-brands-model-with-website.md
-      - name: Использование API Индексатора видео
-        href: customize-brands-model-with-api.md
-    - name: Язык
-      items:
-      - name: Использование веб-сайта Индексатора видео
-        href: customize-language-model-with-website.md
-      - name: Использование API Индексатора видео
-        href: customize-language-model-with-api.md
+        - name: Person
+          items:
+            - name: Использование веб-сайта Индексатора видео
+              href: customize-person-model-with-website.md
+            - name: Использование API Индексатора видео
+              href: customize-person-model-with-api.md
+        - name: Торговые марки
+          items:
+            - name: Использование веб-сайта Индексатора видео
+              href: customize-brands-model-with-website.md
+            - name: Использование API Индексатора видео
+              href: customize-brands-model-with-api.md
+        - name: Язык
+          items:
+            - name: Использование веб-сайта Индексатора видео
+              href: customize-language-model-with-website.md
+            - name: Использование API Индексатора видео
+              href: customize-language-model-with-api.md
 - name: Справочные материалы
   items:
-  - name: API индексатора видео
-    href: https://api-portal.videoindexer.ai/
+    - name: API индексатора видео
+      href: 'https://api-portal.videoindexer.ai/'
 - name: Ресурсы
   items:
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=web-mobile
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/media-services/
-  - name: Доступ по регионам
-    href: https://azure.microsoft.com/regions/services/
-  - name: регионы
-    href: regions.md
-  - name: Часто задаваемые вопросы
-    href: faq.md
-  - name: Соответствие нормативным требованиям
-    href: https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942
-ms.openlocfilehash: f6caade807d37dfbf38e3f0dd47ab7f801c36a9a
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59793342"
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=web-mobile'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/media-services/'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/regions/services/'
+    - name: регионы
+      href: regions.md
+    - name: Часто задаваемые вопросы
+      href: faq.md
+    - name: Соответствие нормативным требованиям
+      href: 'https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942'

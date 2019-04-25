@@ -1,103 +1,96 @@
-items:
 - name: Документация по службе "Миграция Azure"
   href: index.yml
 - name: Обзор
   items:
-  - name: Сведения о службе "Миграция Azure"
-    href: migrate-overview.md
+    - name: Сведения о службе "Миграция Azure"
+      href: migrate-overview.md
 - name: Учебники
   items:
-  - name: Обнаружение и оценка виртуальных машин VMware
-    href: tutorial-assessment-vmware.md
+    - name: Обнаружение и оценка виртуальных машин VMware
+      href: tutorial-assessment-vmware.md
 - name: Основные понятия
   items:
-  - name: О сборщике
-    href: concepts-collector.md
-  - name: Обновления версии сборщика
-    href: concepts-collector-upgrade.md
-  - name: Вычисление оценок
-    href: concepts-assessment-calculation.md
-  - name: Сведения о визуализации зависимостей
-    href: concepts-dependency-visualization.md
+    - name: О сборщике
+      href: concepts-collector.md
+    - name: Обновления версии сборщика
+      href: concepts-collector-upgrade.md
+    - name: Вычисление оценок
+      href: concepts-assessment-calculation.md
+    - name: Сведения о визуализации зависимостей
+      href: concepts-dependency-visualization.md
 - name: Практические руководства
   items:
-  - name: Рекомендации по миграции
-    items:
-    - name: Рекомендации по обеспечению безопасности и управлению после миграции
-      href: migrate-best-practices-security-management.md
-    - name: Рекомендации по работе с сетями после миграции
-      href: migrate-best-practices-networking.md
-    - name: Рекомендации по оценке затрат и определению размеров системы после миграции
-      href: migrate-best-practices-costs.md
-  - name: 'Миграция Contoso: серия'
-    items:
-    - name: '1. Миграция Contoso: обзор'
-      href: contoso-migration-overview.md
-    - name: '2. Contoso: развертывание инфраструктуры Azure'
-      href: contoso-migration-infrastructure.md
-    - name: '3. Contoso: оценка готовности локальных компьютеров к переносу в Azure'
-      href: contoso-migration-assessment.md
-    - name: '4. Contoso: повторное размещение приложения на виртуальных машинах Azure и в Управляемом экземпляре Базы данных SQL Azure'
-      href: contoso-migration-rehost-vm-sql-managed-instance.md
-    - name: '5. Contoso: повторное размещение приложения на виртуальных машинах Azure'
-      href: contoso-migration-rehost-vm.md
-    - name: '6. Contoso: повторное размещение приложения на виртуальных машинах Azure и в группах доступности AlwaysOn SQL Server'
-      href: contoso-migration-rehost-vm-sql-ag.md
-    - name: '7. Contoso: повторное размещение приложения Linux на виртуальных машинах Azure'
-      href: contoso-migration-rehost-linux-vm.md
-    - name: '8. Contoso: повторное размещение приложения Linux на виртуальных машинах Azure и в Azure MySQL'
-      href: contoso-migration-rehost-linux-vm-mysql.md
-    - name: '9. Contoso: рефакторинг приложения в веб-приложениях Azure и Базе данных Azure SQL'
-      href: contoso-migration-refactor-web-app-sql.md
-    - name: '10. Contoso: рефакторинг приложения Linux в веб-приложениях Azure и Azure MySQL'
-      href: contoso-migration-refactor-linux-app-service-mysql.md
-    - name: '11. Contoso: перенос Team Foundation Server в Azure DevOps Services'
-      href: contoso-migration-tfs-vsts.md
-    - name: '12. Contoso: повторное проектирование приложения в контейнерах Azure и Базе данных SQL Azure'
-      href: contoso-migration-rearchitect-container-sql.md
-    - name: '13. Contoso: повторная сборка приложения в Azure'
-      href: contoso-migration-rebuild.md
-    - name: '14. Contoso: масштабирование миграции'
-      href: contoso-migration-scale.md
-  - name: Обнаружение и оценка крупной среды
-    href: how-to-scale-assessment.md
-  - name: Группирование компьютеров
-    href: how-to-create-a-group.md
-  - name: Группирование компьютеров на основе зависимостей
-    href: how-to-create-group-machine-dependencies.md
-  - name: Уточнение группы с помощью групповых зависимостей
-    href: how-to-create-group-dependencies.md
-  - name: Настройка оценки
-    href: how-to-modify-assessment.md
-  - name: Перенос компьютеров после оценки
-    href: how-to-get-migration-tool.md
-  - name: Автоматизация переноса большого количества виртуальных машин
-    href: how-to-migrate-at-scale.md
-  - name: Устранение неполадок в службе "Миграция Azure"
-    href: troubleshooting-general.md
+    - name: Рекомендации по миграции
+      items:
+        - name: Рекомендации по обеспечению безопасности и управлению после миграции
+          href: migrate-best-practices-security-management.md
+        - name: Рекомендации по работе с сетями после миграции
+          href: migrate-best-practices-networking.md
+        - name: Рекомендации по оценке затрат и определению размеров системы после миграции
+          href: migrate-best-practices-costs.md
+    - name: 'Миграция Contoso: серия'
+      items:
+        - name: '1. Миграция Contoso: обзор'
+          href: contoso-migration-overview.md
+        - name: '2. Contoso: развертывание инфраструктуры Azure'
+          href: contoso-migration-infrastructure.md
+        - name: '3. Contoso: оценка готовности локальных компьютеров к переносу в Azure'
+          href: contoso-migration-assessment.md
+        - name: '4. Contoso: повторное размещение приложения на виртуальных машинах Azure и в Управляемом экземпляре Базы данных SQL Azure'
+          href: contoso-migration-rehost-vm-sql-managed-instance.md
+        - name: '5. Contoso: повторное размещение приложения на виртуальных машинах Azure'
+          href: contoso-migration-rehost-vm.md
+        - name: '6. Contoso: повторное размещение приложения на виртуальных машинах Azure и в группах доступности AlwaysOn SQL Server'
+          href: contoso-migration-rehost-vm-sql-ag.md
+        - name: '7. Contoso: повторное размещение приложения Linux на виртуальных машинах Azure'
+          href: contoso-migration-rehost-linux-vm.md
+        - name: '8. Contoso: повторное размещение приложения Linux на виртуальных машинах Azure и в Azure MySQL'
+          href: contoso-migration-rehost-linux-vm-mysql.md
+        - name: '9. Contoso: рефакторинг приложения в веб-приложениях Azure и Базе данных Azure SQL'
+          href: contoso-migration-refactor-web-app-sql.md
+        - name: '10. Contoso: рефакторинг приложения Linux в веб-приложениях Azure и Azure MySQL'
+          href: contoso-migration-refactor-linux-app-service-mysql.md
+        - name: '11. Contoso: перенос Team Foundation Server в Azure DevOps Services'
+          href: contoso-migration-tfs-vsts.md
+        - name: '12. Contoso: повторное проектирование приложения в контейнерах Azure и Базе данных SQL Azure'
+          href: contoso-migration-rearchitect-container-sql.md
+        - name: '13. Contoso: повторная сборка приложения в Azure'
+          href: contoso-migration-rebuild.md
+        - name: '14. Contoso: масштабирование миграции'
+          href: contoso-migration-scale.md
+    - name: Обнаружение и оценка крупной среды
+      href: how-to-scale-assessment.md
+    - name: Группирование компьютеров
+      href: how-to-create-a-group.md
+    - name: Группирование компьютеров на основе зависимостей
+      href: how-to-create-group-machine-dependencies.md
+    - name: Уточнение группы с помощью групповых зависимостей
+      href: how-to-create-group-dependencies.md
+    - name: Настройка оценки
+      href: how-to-modify-assessment.md
+    - name: Перенос компьютеров после оценки
+      href: how-to-get-migration-tool.md
+    - name: Автоматизация переноса большого количества виртуальных машин
+      href: how-to-migrate-at-scale.md
+    - name: Устранение неполадок в службе "Миграция Azure"
+      href: troubleshooting-general.md
 - name: Ресурсы
   items:
-  - name: Часто задаваемые вопросы
-    href: resources-faq.md
-  - name: REST API
-    href: https://docs.microsoft.com/rest/api/migrate/
-  - name: Шаблон Resource Manager
-    href: /azure/templates/microsoft.migrate/allversions
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/azure-migrate/
-  - name: UserVoice
-    href: https://aka.ms/AzureMigrateUservoice
-  - name: Форум
-    href: https://aka.ms/AzureMigrateForum
-  - name: Блог
-    href: https://azure.microsoft.com/blog/tag/azure-migrate/
-  - name: Служба "Миграция Azure"
-    href: https://azure.microsoft.com/migrate
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/
-ms.openlocfilehash: d07d8e94f15dc6ba549d96c5950931963e5bbfc9
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57837676"
+    - name: Часто задаваемые вопросы
+      href: resources-faq.md
+    - name: REST API
+      href: 'https://docs.microsoft.com/rest/api/migrate/'
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.migrate/allversions
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/azure-migrate/'
+    - name: UserVoice
+      href: 'https://aka.ms/AzureMigrateUservoice'
+    - name: Форум
+      href: 'https://aka.ms/AzureMigrateForum'
+    - name: Блог
+      href: 'https://azure.microsoft.com/blog/tag/azure-migrate/'
+    - name: Служба "Миграция Azure"
+      href: 'https://azure.microsoft.com/migrate'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'

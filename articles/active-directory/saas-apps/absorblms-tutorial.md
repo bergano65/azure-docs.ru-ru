@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Absorb LMS | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Absorb LMS | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Absorb LMS.
 services: active-directory
 documentationCenter: na
@@ -8,19 +8,20 @@ manager: daveba
 ms.reviewer: barbkess
 ms.assetid: ba9f1b3d-a4a0-4ff7-b0e7-428e0ed92142
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 12/31/2018
+ms.date: 04/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e86ae61a6aec6c546b36c52f3f3875cbebdc838e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b46135366c76abf8da5387ff0698b4dc7634d79c
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57861933"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59698548"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-absorb-lms"></a>Руководство по Интеграция Azure Active Directory с Absorb LMS
 
@@ -38,7 +39,7 @@ ms.locfileid: "57861933"
 
 Чтобы настроить интеграцию Azure AD с Absorb LMS, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Absorb LMS с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -120,19 +121,23 @@ ms.locfileid: "57861933"
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Absorb LMS](https://support.absorblms.com/hc/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных**, и сохраните его на компьютере.
+5. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**.
+
+    ![image](common/edit-attribute.png)
+
+6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-6. Скопируйте требуемый URL-адрес из раздела **Настройка Absorb LMS**.
+7. Скопируйте требуемый URL-адрес из раздела **Настройка Absorb LMS**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
     а) URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-absorb-lms-single-sign-on"></a>Настройка единого входа Absorb LMS
 
@@ -162,7 +167,7 @@ ms.locfileid: "57861933"
 
     d. В поле **Mode** (Режим) выберите **Identity Provider Initiated** (Инициируемый поставщиком удостоверений).
 
-    д. В поле **Id Property** (Свойство идентификатора) выберите атрибут, который вы настроили в качестве идентификатора пользователя в Azure AD. Например, если вы выбрали в Azure AD *userPrincipalName*, то выберите атрибут **Username**.
+    д. В поле **Id Property** (Свойство идентификатора) выберите атрибут, который вы настроили в качестве идентификатора пользователя в Azure AD. Например, если вы выбрали в Azure AD *nameidentifier*, то выберите атрибут **Username**.
 
     Е. Выберите **Sha256** в качестве **типа подписи**.
 
@@ -194,7 +199,7 @@ ms.locfileid: "57861933"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите `brittasimon\@yourcompanydomain.extension`.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

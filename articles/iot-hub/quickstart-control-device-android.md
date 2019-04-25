@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/15/2019
 ms.author: wesmc
-ms.openlocfilehash: e3b0c0703cb46087db38121055117b50f97ad03f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 4f9f4ccb53f9530122f0a2463f8f45b596856282
+ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59006573"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60149688"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-android"></a>Краткое руководство. Управление подключенным к Центру Интернета вещей устройством Android
 
@@ -125,15 +125,13 @@ az iot hub show-connection-string --name YourIoTHubName --output table
    > * Версии плагина Android Gradle и Gradle, указанные в проекте, устарели для вашей версии Android Studio. Выполните [эти инструкции](https://developer.android.com/studio/releases/gradle-plugin), чтобы установить надлежащие версии плагина и Gradle, а также добавить на них ссылки.
    > * Лицензионное соглашение для пакета SDK для Android не подписано. Следуйте инструкциям в выходных данных сборки, чтобы подписать лицензионное соглашение и скачать пакет SDK.
 
-
 4. По завершении сборки щелкните **Run (Запуск)** > **Run "app" (Запустить "app")**. Настройте приложение для запуска на физическом устройстве Android или в эмуляторе Android. Дополнительные сведения о запуске приложения Android на физическом устройстве или в эмуляторе см. в [этой статье](https://developer.android.com/training/basics/firstapp/running-app).
 
 5. После загрузки приложения нажмите кнопку **Start** (Начать), чтобы начать отправку данных телеметрии в Центр Интернета вещей:
 
-    ![Приложение](media/quickstart-send-telemetry-android/sample-screenshot.png)
+    ![Снимок экрана примера приложения Android на клиентском устройстве](media/quickstart-control-device-android/sample-screenshot.png)
 
 Не завершайте работу этого приложения на физическом устройстве или в эмуляторе при выполнении примера пакета SDK для службы, чтобы изменить интервал телеметрии во время выполнения.
-
 
 ## <a name="read-the-telemetry-from-your-hub"></a>Чтение данных телеметрии из концентратора
 
@@ -146,12 +144,12 @@ az iot hub show-connection-string --name YourIoTHubName --output table
     ```azurecli-interactive
     az iot hub monitor-events --hub-name YourIoTHubName --output table
     ```
+
     На следующем снимке экрана показан пример выходных данных, когда центр Интернета вещей получает данные телеметрии, отправленные устройством Android:
 
-      ![Чтение сообщений устройства с помощью Azure CLI](media/quickstart-send-telemetry-android/read-data.png)
+      ![Чтение сообщений устройства с помощью Azure CLI](media/quickstart-control-device-android/read-data.png)
 
 По умолчанию приложение телеметрии отправляет данные телеметрии с устройства Android каждые 5 секунд. В рамках следующего раздела вы вызовете прямой метод, чтобы изменить интервал телеметрии для устройства Android, подключенного к Интернету вещей.
-
 
 ## <a name="call-the-direct-method"></a>Вызов прямого метода
 
@@ -180,7 +178,6 @@ az iot hub show-connection-string --name YourIoTHubName --output table
    > * Версии плагина Android Gradle и Gradle, указанные в проекте, устарели для вашей версии Android Studio. Выполните [эти инструкции](https://developer.android.com/studio/releases/gradle-plugin), чтобы установить надлежащие версии плагина и Gradle, а также добавить на них ссылки.
    > * Лицензионное соглашение для пакета SDK для Android не подписано. Следуйте инструкциям в выходных данных сборки, чтобы подписать лицензионное соглашение и скачать пакет SDK.
 
-
 4. По завершении сборки щелкните **Run (Запуск)** > **Run "app" (Запустить "app")**. Настройте приложение для запуска на отдельном физическом устройстве Android или в эмуляторе Android. Дополнительные сведения о запуске приложения Android на физическом устройстве или в эмуляторе см. в [этой статье](https://developer.android.com/training/basics/firstapp/running-app).
 
 5. После загрузки приложения для параметра **Set Messaging Interval** (Задать интервал отправки сообщений) укажите значение **1000** и нажмите кнопку **Invoke** (Вызвать).
@@ -192,8 +189,6 @@ az iot hub show-connection-string --name YourIoTHubName --output table
 6. В приложении вы получите уведомление, указывающее, успешно ли выполнен метод.
 
     ![Подтверждение выполнения прямого метода](media/quickstart-control-device-android/direct-method-ack.png)
-
-
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

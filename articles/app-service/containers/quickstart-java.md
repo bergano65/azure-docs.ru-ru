@@ -1,6 +1,7 @@
 ---
 title: Создание веб-приложения Java в Службе приложений Azure в Linux
 description: В этом кратком руководстве описывается, как быстро развернуть ваше первое приложение Java Hello World в службе приложений Azure в Linux.
+keywords: azure, app service, web app, linux, java, maven, quickstart
 services: app-service\web
 documentationcenter: ''
 author: msangapu
@@ -15,17 +16,20 @@ ms.topic: quickstart
 ms.date: 03/27/2019
 ms.author: msangapu
 ms.custom: mvc
-ms.openlocfilehash: af1256b4432e42f91209b622239ca55901929a1b
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: c97d4a373970514b920581aa258b61c1b1cb978c
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59544744"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59684010"
 ---
 # <a name="quickstart-create-a-java-app-in-app-service-on-linux"></a>Краткое руководство. Создание приложения Java в Службе приложений на платформе Linux
 
-[Служба приложений на Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как использовать [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) (Azure CLI) с [подключаемым модулем Maven для веб-приложений Azure (предварительная версия)](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin), чтобы развернуть файл веб-архива (WAR) Java.
-
+[Служба приложений на Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. Узнайте, как использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) с [подключаемым модулем Maven для Службы приложений Azure](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin), чтобы развернуть файл Java веб-архива (WAR).
+> [!NOTE]
+>
+> То же самое можно выполнить с помощью популярных интегрированных сред разработки, например IntelliJ и Eclipse. См. подробнее об [Azure Toolkit for IntelliJ](/java/azure/intellij/azure-toolkit-for-intellij-create-hello-world-web-app) и [Azure Toolkit for Eclipse](/java/azure/eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app).
+>
 ![Пример приложения, выполняющегося в Azure](media/quickstart-java/java-hello-world-in-browser.png)
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
@@ -58,15 +62,32 @@ code pom.xml
     <plugin>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-webapp-maven-plugin</artifactId>
-        <version>1.5.3</version>
+        <version>1.5.4</version>
         <configuration>
+            <!-- Specify v2 schema -->
+            <schemaVersion>v2</schemaVersion>
             <!-- App information -->
+            <subscriptionId>${SUBSCRIPTION_ID}</subscriptionId>
             <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
             <appName>${WEBAPP_NAME}</appName>
             <region>${REGION}</region>
    
             <!-- Java Runtime Stack for App on Linux-->
-            <linuxRuntime>tomcat 8.5-jre8</linuxRuntime> 
+            <runtime>
+                <os>linux</os>
+                <javaVersion>jre8</javaVersion>
+                <webContainer>tomcat 8.5</webContainer>
+            </runtime> 
+            <deployment>
+                <resources>
+                    <resource>
+                        <directory>${project.basedir}/target</directory>
+                        <includes>
+                            <include>*.war</include>
+                        </includes>
+                    </resource>
+                </resources>
+            </deployment>
         </configuration>
     </plugin>
 </plugins>
@@ -81,6 +102,7 @@ code pom.xml
 
 | Placeholder | ОПИСАНИЕ |
 | ----------- | ----------- |
+| `SUBSCRIPTION_ID` | Уникальный идентификатор подписки, в которой вы хотите развернуть приложение. Идентификатор подписки по умолчанию можно получить в Cloud Shell или CLI с помощью команды `az account show`. Для всех доступных подписок используйте команду `az account list`.|
 | `RESOURCEGROUP_NAME` | Имя новой группы ресурсов, в которой создается приложение. Поместив все ресурсы для приложения в группу, вы можете управлять ими совместно. Например, при удалении группы ресурсов все ресурсы, связанные с приложением, также удаляются. Укажите вместо этого значения уникальное имя новой группы ресурсов, например *TestResources*. Это имя группы ресурсов будет использоваться для удаления всех ресурсов Azure в следующем разделе. |
 | `WEBAPP_NAME` | Имя приложения будет частью имени узла для приложения, которое будет развернуто в Azure (WEBAPP_NAME.azurewebsites.net). Измените значение этого параметра на уникальное имя нового приложения службы приложений, в котором будет размещено ваше приложение Java, например *contoso*. |
 | `REGION` | Регион Azure, в котором размещено приложение, например `westus2`. Список регионов можно получить из Cloud Shell или CLI с помощью команды `az account list-locations`. |
@@ -111,3 +133,6 @@ mvn package azure-webapp:deploy
 
 > [!div class="nextstepaction"]
 > [CI/CD с использованием Jenkins](/azure/jenkins/deploy-jenkins-app-service-plugin)
+
+> [!div class="nextstepaction"]
+> [Другие ресурсы по Azure для разработчиков Java](/java/azure/)

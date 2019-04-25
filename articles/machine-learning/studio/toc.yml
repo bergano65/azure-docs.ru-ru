@@ -1,197 +1,190 @@
-items:
 - name: Документация по Студии машинного обучения
   href: index.yml
 - name: Обзор
-  items:
-  - name: Студия машинного обучения
-    displayName: overview
-    href: what-is-ml-studio.md
-  - name: Сравнить наши продукты Машинного обучения
-    href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning
-    maintainContext: true
   expanded: true
+  items:
+    - name: Студия машинного обучения
+      displayName: overview
+      href: what-is-ml-studio.md
+    - name: Сравнить наши продукты Машинного обучения
+      href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning
+      maintainContext: true
 - name: Учебники
   items:
-  - name: Создание первого эксперимента
-    displayName: quickstart
-    href: create-experiment.md
-  - name: Создание прогнозного решения
-    items:
-    - name: 1. Создание эксперимента
-      href: tutorial-part1-credit-risk.md
-    - name: 2. Обучение и анализ
-      href: tutorial-part2-credit-risk-train.md
-    - name: 3. Развертывание веб-службы
-      href: tutorial-part3-credit-risk-deploy.md
+    - name: Создание первого эксперимента
+      displayName: quickstart
+      href: create-experiment.md
+    - name: Создание прогнозного решения
+      items:
+        - name: "1.\_Создание эксперимента"
+          href: tutorial-part1-credit-risk.md
+        - name: "2.\_Обучение и анализ"
+          href: tutorial-part2-credit-risk-train.md
+        - name: "3.\_Развертывание веб-службы"
+          href: tutorial-part3-credit-risk-deploy.md
 - name: Примеры
   items:
-  - name: Доступные наборы данных
-    href: use-sample-datasets.md
-  - name: Коллекция решений ИИ Azure
-    href: gallery-how-to-use-contribute-publish.md
+    - name: Доступные наборы данных
+      href: use-sample-datasets.md
+    - name: Коллекция решений ИИ Azure
+      href: gallery-how-to-use-contribute-publish.md
 - name: Основные понятия
   items:
-  - name: Обработка и анализ данных для начинающих
-    items:
-    - name: 1. Пять вопросов
-      href: data-science-for-beginners-the-5-questions-data-science-answers.md
-    - name: 2. Подготовили ли вы данные?
-      href: data-science-for-beginners-is-your-data-ready-for-data-science.md
-    - name: 3. Правильные вопросы
-      href: data-science-for-beginners-ask-a-question-you-can-answer-with-data.md
-    - name: 4. Прогнозирование ответа
-      href: data-science-for-beginners-predict-an-answer-with-a-simple-model.md
-    - name: 5. Копирование работ других пользователей
-      href: data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md
-  - name: Управление моделями
-    displayName: deploy, consume, web service
-    href: deploy-consume-web-service-guide.md
+    - name: Обработка и анализ данных для начинающих
+      items:
+        - name: 1. Пять вопросов
+          href: data-science-for-beginners-the-5-questions-data-science-answers.md
+        - name: 2. Подготовили ли вы данные?
+          href: data-science-for-beginners-is-your-data-ready-for-data-science.md
+        - name: 3. Правильные вопросы
+          href: data-science-for-beginners-ask-a-question-you-can-answer-with-data.md
+        - name: 4. Прогнозирование ответа
+          href: data-science-for-beginners-predict-an-answer-with-a-simple-model.md
+        - name: 5. Копирование работ других пользователей
+          href: data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md
+    - name: Управление моделями
+      displayName: 'deploy, consume, web service'
+      href: deploy-consume-web-service-guide.md
 - name: Практические руководства
   items:
-  - name: Управление рабочей областью
-    items:
-    - name: Создание
-      href: create-workspace.md
-    - name: управление
-      href: manage-workspace.md
-    - name: Устранение неполадок
-      href: troubleshooting-creating-ml-workspace.md
-    - name: Развертывание с помощью ARM
-      href: deploy-with-resource-manager-template.md
-  - name: Импорт данных для обучения
-    items:
-    - name: Импорт данных
-      href: import-data.md
-    - name: Использование данных с локального сервера SQL
-      displayName: on-premises
-      href: use-data-from-an-on-premises-sql-server.md
-  - name: Обучение моделей
-    items:
-    - name: Управление жизненным циклом эксперимента
-      href: version-control.md
-    - name: Управление итерациями эксперимента
-      href: manage-experiment-iterations.md
-    - name: Создание моделей с помощью PowerShell
-      displayName: endpoint, endpoints
-      href: create-models-and-endpoints-with-powershell.md
-    - name: Попробуйте провести эксперимент в Коллекции решений ИИ
-      displayName: gallery
-      href: sample-experiments.md
-    - name: Оценка и интерпретация результатов
+    - name: Управление рабочей областью
       items:
-      - name: Оценка производительности
-        href: evaluate-model-performance.md
-      - name: Оптимизация параметров
-        displayName: optimization
-        href: algorithm-parameters-optimize.md
-      - name: Интерпретация результатов
-        href: interpret-model-results.md
-      - name: Отладка
-        href: debug-models.md
-    - name: Повторное обучение моделей
+        - name: Создание
+          href: create-workspace.md
+        - name: управление
+          href: manage-workspace.md
+        - name: Устранение неполадок
+          href: troubleshooting-creating-ml-workspace.md
+        - name: Развертывание с помощью ARM
+          href: deploy-with-resource-manager-template.md
+    - name: Импорт данных для обучения
       items:
-      - name: Новые веб-службы
-        href: retrain-machine-learning-model.md
-      - name: Классические веб-службы
-        href: retrain-classic-web-service.md
-    - name: Использование R и Python
+        - name: Импорт данных
+          href: import-data.md
+        - name: Использование данных с локального сервера SQL
+          displayName: on-premises
+          href: use-data-from-an-on-premises-sql-server.md
+    - name: Обучение моделей
       items:
-      - name: Начало работы с R
-        href: r-get-started.md
-      - name: Выполнение скриптов R
-        href: extend-your-experiment-with-r.md
-      - name: Создание пользовательских модулей R
-        href: custom-r-modules.md
-      - name: Выполнение скриптов Python
-        href: execute-python-scripts.md
-  - name: Выбор алгоритма
-    items:
-    - name: Выбор алгоритмов
-      href: algorithm-choice.md
-    - name: Памятка по алгоритмам
-      href: algorithm-cheat-sheet.md
-    - name: Примеры алгоритмов
-      displayName: infographic, studio basics
-      href: basics-infographic-with-algorithm-examples.md
-  - name: Развертывание моделей
-    items:
-    - name: Развертывание веб-службы
-      displayName: publish, multiple regions
-      href: publish-a-machine-learning-web-service.md
-    - name: Принцип работы
-      href: model-progression-experiment-to-web-service.md
-    - name: Подготовка к развертыванию
-      href: convert-training-experiment-to-scoring-experiment.md
-    - name: Использование внешних данных
-      displayName: import, export
-      href: web-services-that-use-import-export-modules.md
-    - name: Использование параметров веб-службы
-      href: web-service-parameters.md
-    - name: Включение ведения журналов
-      href: web-services-logging.md
-  - name: Управление веб-службами
-    items:
-    - name: Использование портала веб-служб
-      href: manage-new-webservice.md
-    - name: Управление с помощью интерфейсов API
-      displayName: endpoint, endpoints
-      href: manage-web-service-endpoints-using-api-management.md
-    - name: Создание конечных точек
-      displayName: scale, scaling
-      href: create-endpoint.md
-  - name: Использование моделей
-    items:
-    - name: Обзор
-      href: consume-web-services.md
-    - name: Использование Excel
-      href: consuming-from-excel.md
-    - name: Использование надстройки Excel
-      href: excel-add-in-for-web-services.md
-    - name: Использование пула пакетной службы
-      href: dedicated-capacity-for-bes-jobs.md
-  - name: Варианты использования
-    items:
-    - name: Отток клиентов
-      href: azure-ml-customer-churn-scenario.md
-    - name: Анализ мнений
-      href: text-analytics-module-tutorial.md
-    - name: Перенос аналитики из Excel в Студию
-      href: linear-regression-in-azure.md
-  - name: Удаление и экспортирование данных клиента
-    items:
-    - name: Данные в Студии
-      displayName: export
-      href: export-delete-personal-data-dsr.md
-    - name: Данные в Коллекции решений
-      displayName: export
-      href: ai-gallery-control-personal-data-dsr.md
+        - name: Управление жизненным циклом эксперимента
+          href: version-control.md
+        - name: Управление итерациями эксперимента
+          href: manage-experiment-iterations.md
+        - name: Создание моделей с помощью PowerShell
+          displayName: 'endpoint, endpoints'
+          href: create-models-and-endpoints-with-powershell.md
+        - name: Попробуйте провести эксперимент в Коллекции решений ИИ
+          displayName: gallery
+          href: sample-experiments.md
+        - name: Оценка и интерпретация результатов
+          items:
+            - name: Оценка производительности
+              href: evaluate-model-performance.md
+            - name: Оптимизация параметров
+              displayName: optimization
+              href: algorithm-parameters-optimize.md
+            - name: Интерпретация результатов
+              href: interpret-model-results.md
+            - name: Отладка
+              href: debug-models.md
+        - name: Повторное обучение моделей
+          items:
+            - name: Новые веб-службы
+              href: retrain-machine-learning-model.md
+            - name: Классические веб-службы
+              href: retrain-classic-web-service.md
+        - name: Использование R и Python
+          items:
+            - name: Начало работы с R
+              href: r-get-started.md
+            - name: Выполнение скриптов R
+              href: extend-your-experiment-with-r.md
+            - name: Создание пользовательских модулей R
+              href: custom-r-modules.md
+            - name: Выполнение скриптов Python
+              href: execute-python-scripts.md
+    - name: Выбор алгоритма
+      items:
+        - name: Выбор алгоритмов
+          href: algorithm-choice.md
+        - name: Памятка по алгоритмам
+          href: algorithm-cheat-sheet.md
+        - name: Примеры алгоритмов
+          displayName: 'infographic, studio basics'
+          href: basics-infographic-with-algorithm-examples.md
+    - name: Развертывание моделей
+      items:
+        - name: Развертывание веб-службы
+          displayName: 'publish, multiple regions'
+          href: publish-a-machine-learning-web-service.md
+        - name: Принцип работы
+          href: model-progression-experiment-to-web-service.md
+        - name: Подготовка к развертыванию
+          href: convert-training-experiment-to-scoring-experiment.md
+        - name: Использование внешних данных
+          displayName: 'import, export'
+          href: web-services-that-use-import-export-modules.md
+        - name: Использование параметров веб-службы
+          href: web-service-parameters.md
+        - name: Включение ведения журналов
+          href: web-services-logging.md
+    - name: Управление веб-службами
+      items:
+        - name: Использование портала веб-служб
+          href: manage-new-webservice.md
+        - name: Управление с помощью интерфейсов API
+          displayName: 'endpoint, endpoints'
+          href: manage-web-service-endpoints-using-api-management.md
+        - name: Создание конечных точек
+          displayName: 'scale, scaling'
+          href: create-endpoint.md
+    - name: Использование моделей
+      items:
+        - name: Обзор
+          href: consume-web-services.md
+        - name: Использование Excel
+          href: consuming-from-excel.md
+        - name: Использование надстройки Excel
+          href: excel-add-in-for-web-services.md
+        - name: Использование пула пакетной службы
+          href: dedicated-capacity-for-bes-jobs.md
+    - name: Варианты использования
+      items:
+        - name: Отток клиентов
+          href: azure-ml-customer-churn-scenario.md
+        - name: Анализ мнений
+          href: text-analytics-module-tutorial.md
+        - name: Перенос аналитики из Excel в Студию
+          href: linear-regression-in-azure.md
+    - name: Удаление и экспортирование данных клиента
+      items:
+        - name: Данные в Студии
+          displayName: export
+          href: export-delete-personal-data-dsr.md
+        - name: Данные в Коллекции решений
+          displayName: export
+          href: ai-gallery-control-personal-data-dsr.md
 - name: Справочные материалы
   items:
-  - name: Справочник по алгоритмам и модулям
-    href: /azure/machine-learning/studio-module-reference/machine-learning-studio-algorithm-and-module-help
-  - name: Модули Azure PowerShell
-    href: powershell-module.md
-  - name: Коды ошибок веб-службы
-    href: web-service-error-codes.md
-  - name: API управления REST
-    href: /rest/api/machinelearning
+    - name: Справочник по алгоритмам и модулям
+      href: /azure/machine-learning/studio-module-reference/machine-learning-studio-algorithm-and-module-help
+    - name: Модули Azure PowerShell
+      href: powershell-module.md
+    - name: Коды ошибок веб-службы
+      href: web-service-error-codes.md
+    - name: API управления REST
+      href: /rest/api/machinelearning
 - name: Ресурсы
   items:
-  - name: Обновления службы
-    href: https://azure.microsoft.com/updates/?product=machine-learning-studio
-  - name: Получение поддержки
-    href: support-aml-studio.md
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/
-  - name: Доступ по регионам
-    href: https://azure.microsoft.com/regions/services/
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/machine-learning/
-  - name: Пользовательские нейронные сети (Net#)
-    href: azure-ml-netsharp-reference-guide.md
-ms.openlocfilehash: 4dacfd217bf089dac87128107901a17805117b4e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58183787"
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=machine-learning-studio'
+    - name: Получение поддержки
+      href: support-aml-studio.md
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/regions/services/'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/machine-learning/'
+    - name: 'Пользовательские нейронные сети (Net#)'
+      href: azure-ml-netsharp-reference-guide.md

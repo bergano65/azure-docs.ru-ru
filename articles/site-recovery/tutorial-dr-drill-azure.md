@@ -10,10 +10,10 @@ ms.date: 04/08/2019
 ms.author: raynew
 ms.custom: MVC
 ms.openlocfilehash: b93fb92c9170f3e0fb7bd6ee754dde5df729e299
-ms.sourcegitcommit: 43b85f28abcacf30c59ae64725eecaa3b7eb561a
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59358187"
 ---
 # <a name="run-a-disaster-recovery-drill-to-azure"></a>Выполнение отработки аварийного восстановления в Azure
@@ -90,4 +90,4 @@ ms.locfileid: "59358187"
 > [!div class="nextstepaction"]
 > [Отработка отказа и восстановление размещения виртуальных машин VMware и физических серверов, реплицированных в Azure](vmware-azure-tutorial-failover-failback.md).
 > [Отработка отказа и восстановление размещения виртуальных машин Hyper-V, реплицированных в Azure](hyper-v-azure-failover-failback-tutorial.md).
-> [Выполнение отработки отказа и восстановления размещения для физических компьютеров](physical-to-azure-failover-failback.md)
+> [Run a failover and failback for physical machines](physical-to-azure-failover-failback.md) (Выполнение отработки отказа и восстановления размещения для физических компьютеров)

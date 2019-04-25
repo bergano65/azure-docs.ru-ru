@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 03/01/2018
 ms.author: ghogen
 ms.custom: seodec18
-ms.openlocfilehash: 6a576f2817069d7095ea863198168be083d0c6b5
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 3e83c1629848083ae4d899ae01ae32c2c946b2b3
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57450952"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59995070"
 ---
 # <a name="use-connected-services-in-visual-studio-to-connect-to-the-computer-vision-api"></a>Подключение к API компьютерного зрения с помощью компонента "Подключенные службы" в Visual Studio
 
@@ -38,15 +38,15 @@ ms.locfileid: "57450952"
 1. В **обозревателе решений** выберите **Добавить** > **Подключенная служба**.
    Откроется страница "Подключенная служба" с перечнем служб, которые можно добавить в проект.
 
-   ![Снимок экрана с меню, вызванным щелчком правой кнопки мыши, в проекте Visual Studio. Добавить > Подключенная служба](../media/vs-common/Connected-Service-Menu.PNG)
+   ![Контекстное меню проекта Visual Studio: Добавить > Подключенная служба](../media/vs-common/Connected-Service-Menu.PNG)
 
 1. В меню доступных служб выберите **Cognitive Services Computer Vision API** (API компьютерного зрения в Cognitive Services).
 
-   ![Меню "Подключенные службы", выделение анализа изображения с помощью компьютерного зрения](./media/vs-computer-vision-connected-service/Cog-Vision-Connected-Service-0.PNG)
+   ![Меню "Подключенные службы": Выделен пункт "Анализ изображений..."](./media/vs-computer-vision-connected-service/Cog-Vision-Connected-Service-0.PNG)
 
    Если вы выполнили вход в Visual Studio и с вашей учетной записью связана подписка Azure, отобразится страница с раскрывающимся списком ваших подписок.
 
-   ![Выделено окно Visual Studio "API компьютерного зрения" с раскрывающимся списком "Подписка"](media/vs-computer-vision-connected-service/Cog-Vision-Connected-Service-1.PNG)
+   ![Выделено окно "API компьютерного зрения" с раскрывающимся списком "Подписка"](media/vs-computer-vision-connected-service/Cog-Vision-Connected-Service-1.PNG)
 
 1. Выберите подписку, которую необходимо использовать, придумайте имя для API компьютерного зрения или выберите ссылку "Изменить", чтобы изменить автоматически созданное имя, а затем выберите группу ресурсов и ценовую категорию.
 

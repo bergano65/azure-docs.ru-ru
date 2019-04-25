@@ -2,7 +2,7 @@
 - name: Обзор
   expanded: true
   items:
-    - name: Что такое поиск ответов в проектах?
+    - name: Общие сведения о службе поиска ответов в проекте
       href: overview.md
 - name: Быстрое начало работы
   expanded: true

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
-ms.openlocfilehash: 14732b02e56d56baa032b8a3728ca892f4ad7d2f
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: af849fa6790dfdb57d8073b17f6d31a3f59a532d
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59563605"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59999763"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-foresee-cx-suite"></a>Руководство. Интеграция Azure Active Directory с ForeSee CX Suite
 
@@ -119,7 +119,7 @@ ms.locfileid: "59563605"
 
     a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://cxsuite.foresee.com/`.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: https://www.okta.com/saml2/service-provider/<UniqueID>.
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: https:\//www.okta.com/saml2/service-provider/<UniqueID>.
 
     > [!Note]
     > Если значение поля **Идентификатор** автоматически не заполняется, введите его вручную в указанном выше формате. Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Для получения этого значения обратитесь в [группу поддержки клиентов ForeSee CX Suite](mailto:support@foresee.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

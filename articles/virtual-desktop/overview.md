@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: overview
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: 6385838064c408ccfa23dacbd5785f8e82f3cc8b
-ms.sourcegitcommit: 8313d5bf28fb32e8531cdd4a3054065fa7315bfd
+ms.openlocfilehash: 58fb1d73509ab52551bead4526dfb47588cf1ec6
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2019
-ms.locfileid: "59049444"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60004590"
 ---
 # <a name="what-is-windows-virtual-desktop-preview"></a>Общие сведения о Виртуальном рабочем столе Windows (предварительная версия) 
 
@@ -54,13 +54,16 @@ ms.locfileid: "59049444"
 
 Есть несколько вещей, которые необходимо настроить для Виртуального рабочего стола Windows, чтобы успешно подключить пользователей к рабочим столам и приложениям Windows.
 
-Во-первых, у вас должны быть [соответствующие лицензии](https://azure.microsoft.com/pricing/details/virtual-desktop/) для пользователей на основе рабочего стола и приложений, которые вы планируете развернуть:
+Виртуальный рабочий стол Windows сейчас поддерживает только следующие две операционные системы:
+- Windows 10 Корпоративная с поддержкой нескольких сеансов
+- Windows Server 2016
+
+Мы планируем добавить поддержку приведенных ниже операционных систем. Поэтому убедитесь, что у вас есть [соответствующие лицензии](https://azure.microsoft.com/pricing/details/virtual-desktop/) для пользователей в соответствии с рабочим столом и приложениями, которые вы планируете развернуть.
 
 |ОС|Требуемая лицензия|
 |---|---|
-|Windows 10 Корпоративная с поддержкой нескольких сеансов или Windows 10 с поддержкой одного сеанса|Microsoft 365 E3, E5, A3, A5, бизнес, F1<br>Windows E3, E5, A3, A5|
-|Windows 7|Microsoft 365 E3, E5, A3, A5, бизнес, F1<br>Windows E3, E5, A3, A5|
-|Windows Server 2012 R2, 2016, 2019|Клиентская лицензия служб удаленных рабочих столов с поддержкой программы Software Assurance|
+
+|Windows 10 Корпоративная с поддержкой нескольких сеансов или Windows 10 Корпоративная|Microsoft E3, E5, A3, A5, Business<br>Windows E3, E5, A3, A5| |Windows 7 Корпоративная |Microsoft E3, E5, A3, A5, Business<br>Windows E3, E5, A3, A5| |Windows Server 2012 R2, 2016, 2019|Клиентская лицензия служб удаленных рабочих столов с поддержкой программы Software Assurance|
 
 Требования к инфраструктуре для включения поддержки Виртуального рабочего стола Windows следующие:
 

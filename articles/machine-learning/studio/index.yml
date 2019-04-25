@@ -1,15 +1,9 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 4428bf710df5eae3b06c8abd38eb85d6128a574d
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56959431"
 documentType: LandingData
 title: Документация по Студии машинного обучения
 metadata:
-  title: Документация по Студии машинного обучения Azure. Руководства и справочник | Документация Майкрософт
-  description: Студия машинного обучения — это инструмент для совместной работы, поддерживающий функцию перетаскивания объектов и предназначенный для создания, тестирования и развертывания решений для прогнозного анализа данных. В руководствах, видеороликах и примерах моделей объясняется, как с помощью студии создавать и развертывать модели машинного обучения.
+  title: "Документация по Студии машинного обучения Azure. Руководства и справочник\_| Документация Майкрософт"
+  description: "Студия машинного обучения\_— это инструмент для совместной работы, поддерживающий функцию перетаскивания объектов и предназначенный для создания, тестирования и развертывания решений для прогнозного анализа данных. В руководствах, видеороликах и примерах моделей объясняется, как с помощью студии создавать и развертывать модели машинного обучения."
   services: machine-learning
   ms.service: machine-learning
   ms.subservice: studio
@@ -20,44 +14,44 @@ metadata:
   ms.devlang: na
   ms.date: 02/24/2019
 abstract:
-  description: Студия машинного обучения Azure — это инструмент для совместной работы, поддерживающий функцию перетаскивания объектов и предназначенный для создания, тестирования и развертывания решений для прогнозного анализа данных. В руководствах, видеороликах и примерах моделей объясняется, как с помощью студии создавать и развертывать модели машинного обучения.
+  description: "Студия машинного обучения Azure\_— это инструмент для совместной работы, поддерживающий функцию перетаскивания объектов и предназначенный для создания, тестирования и развертывания решений для прогнозного анализа данных. В руководствах, видеороликах и примерах моделей объясняется, как с помощью студии создавать и развертывать модели машинного обучения."
 sections:
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: 'В расширенных руководствах приводятся пошаговые инструкции по созданию и развертыванию моделей:'
-  - type: list
-    style: unordered
+  - title: Пошаговые руководства
     items:
-    - html: <a href="create-experiment">Ознакомьтесь со сведениями о создании первого эксперимента в Студии.</a>
-    - html: <a href="tutorial-part1-credit-risk">Создание и развертывание решения для прогнозирования кредитного риска</a>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: paragraph
+        text: 'В расширенных руководствах приводятся пошаговые инструкции по созданию и развертыванию моделей:'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="create-experiment">Ознакомьтесь со сведениями о создании первого эксперимента в Студии.</a>
+          - html: <a href="tutorial-part1-credit-risk">Создание и развертывание решения для прогнозирования кредитного риска</a>
+  - title: Справочные материалы
     items:
-    - title: Командная строка
-      html: <p><a href="powershell-module">Модули PowerShell</a></p>
-    - title: модули
-      html: <p><a href="https://msdn.microsoft.com/library/azure/dn905974.aspx">Справочник по алгоритмам и модулям</a></p>
-    - title: REST
-      html: <p><a href="https://docs.microsoft.com/rest/api/machinelearning/">API-интерфейсы управления REST</a></p><p><a href="web-service-error-codes">Коды ошибок веб-службы</a></p>
-- title: Другие технологии машинного обучения Azure
-  items:
-  - type: paragraph
-    text: 'Другие технологии, доступные в службе "Машинное обучение Microsoft Azure":'
-  - type: list
-    style: cards
-    className: cardsFTitle
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Командная строка
+            html: <p><a href="powershell-module">Модули PowerShell</a></p>
+          - title: модули
+            html: '<p><a href="https://msdn.microsoft.com/library/azure/dn905974.aspx">Справочник по алгоритмам и модулям</a></p>'
+          - title: REST
+            html: '<p><a href="https://docs.microsoft.com/rest/api/machinelearning/">API-интерфейсы управления REST</a></p><p><a href="web-service-error-codes">Коды ошибок веб-службы</a></p>'
+  - title: Другие технологии машинного обучения Azure
     items:
-    - title: Служба "Машинное обучение Azure"
-      href: /azure/machine-learning/service/
-      image:
-        src: media/index/i_machine-learning.svg
-        href: /azure/machine-learning/service/
-    - title: Виртуальная машина для обработки и анализа данных
-      href: /azure/machine-learning/data-science-virtual-machine/
-      image:
-        src: media/index/virtual-machines.svg
-        href: /azure/machine-learning/data-science-virtual-machine/
+      - type: paragraph
+        text: 'Другие технологии, доступные в службе "Машинное обучение Microsoft Azure":'
+      - type: list
+        style: cards
+        className: cardsFTitle
+        items:
+          - title: Служба "Машинное обучение Azure"
+            href: /azure/machine-learning/service/
+            image:
+              src: media/index/i_machine-learning.svg
+              href: /azure/machine-learning/service/
+          - title: Виртуальная машина для обработки и анализа данных
+            href: /azure/machine-learning/data-science-virtual-machine/
+            image:
+              src: media/index/virtual-machines.svg
+              href: /azure/machine-learning/data-science-virtual-machine/

@@ -4,12 +4,12 @@ ms.service: azure-spatial-anchors
 ms.topic: include
 ms.date: 12/13/2018
 ms.author: crtreasu
-ms.openlocfilehash: dc8d3c2d400204f53b05bb5536af95679541f3f6
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: 32f4545a45eda8acddd7c93cc4917dbadca9ad4d
+ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58305113"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58632934"
 ---
 ## <a name="create-a-spatial-anchors-resource"></a>Создание ресурса Пространственных привязок
 
@@ -25,7 +25,7 @@ ms.locfileid: "58305113"
 
 В диалоговом окне **Учетная запись Пространственных привязок**:
 
-- Введите уникальное имя ресурса.
+- Введите уникальное имя ресурса, используя обычные буквенно-цифровые символы.
 - Выберите подписку, к которой нужно присоединить ресурс.
 - Создайте группу ресурсов, нажав **Создать**. Назовите ее **myResourceGroup** и нажмите **ОК**.
       [!INCLUDE [resource group intro text](resource-group.md)]
@@ -34,7 +34,11 @@ ms.locfileid: "58305113"
 
    ![Создание ресурса](./media/spatial-anchors-get-started-create-resource/create-resource-form.png)
 
-После создания ресурса вы можете просмотреть его свойства. Скопируйте значение **идентификатора учетной записи** ресурса в текстовый редактор, так как оно понадобится позднее.
+После создания ресурса на портале Azure отобразится оповещение о завершении развертывания. Щелкните **Перейти к ресурсу**.
+
+![Развертывание завершено](./media/spatial-anchors-get-started-create-resource/deployment-complete.png)
+
+Теперь можно просмотреть свойства ресурса. Скопируйте значение **идентификатора учетной записи** ресурса в текстовый редактор, так как оно понадобится позднее.
 
    ![Свойства ресурса](./media/spatial-anchors-get-started-create-resource/view-resource-properties.png)
 

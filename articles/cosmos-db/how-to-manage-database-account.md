@@ -7,10 +7,10 @@ ms.topic: sample
 ms.date: 04/08/2019
 ms.author: rimman
 ms.openlocfilehash: b2b5e58ca480aa3abaa0766319977b8d1160ebeb
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59283007"
 ---
 # <a name="manage-an-azure-cosmos-account"></a>Управление учетной записью Azure Cosmos
@@ -283,11 +283,11 @@ az cosmosdb failover-priority-change --name <Azure Cosmos account name> --resour
 
 Ознакомьтесь со следующими статьями:
 
-* [Управление согласованностью](how-to-manage-consistency.md)
+* [Управление уровнями согласованности в Azure Cosmos DB](how-to-manage-consistency.md)
 * [Управление конфликтами между регионами](how-to-manage-conflicts.md)
 * [Глобальное распределение (взгляд изнутри)](global-dist-under-the-hood.md)
-* [Настройка нескольких источников в приложениях](how-to-multi-master.md)
+* [Настройка нескольких источников в приложениях в Azure Cosmos DB](how-to-multi-master.md)
 * [Настройка клиентов для поддержки нескольких веб-сайтов](how-to-manage-database-account.md#configure-clients-for-multi-homing)
 * [Добавление и удаление регионов из учетной записи Azure Cosmos DB](how-to-manage-database-account.md#addremove-regions-from-your-database-account)
-* [Создание политики разрешения конфликтов](how-to-manage-conflicts.md#create-a-custom-conflict-resolution-policy)
+* [Создание пользовательской политики разрешения конфликтов](how-to-manage-conflicts.md#create-a-custom-conflict-resolution-policy)
 

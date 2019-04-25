@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 03/21/2019
 ms.author: kefre
 ms.custom: seodec18
-ms.openlocfilehash: e6ebd4ff465565be49d98162cd9ca67c194593a4
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: 0e2767660edf2a9dbcb8617b07a6b9f71fedb743
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59563376"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60011250"
 ---
 # <a name="example-how-to-call-the-computer-vision-api"></a>Пример: вызов API компьютерного зрения
 
@@ -47,8 +47,7 @@ ms.locfileid: "59563376"
 
 Каждый вызов API компьютерного зрения требует ключ подписки. Этот ключ должен быть либо передан через параметр строки запроса, либо указан в заголовке запроса.
 
-Чтобы получить ключ подписки, см. раздел [Как получить ключи подписки](../Vision-API-How-to-Topics/HowToSubscribe.md
-).
+На странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) можно получить бесплатную пробную версию ключа. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
 
 1. В качестве примера API компьютерного зрения см. приведенную ниже передачу ключа подписки через параметр строки запроса.
 

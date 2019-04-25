@@ -12,10 +12,10 @@ ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.date: 04/02/2019
 ms.openlocfilehash: 10ed3ec8b29048a7ede51a6d98e9f1ebb7f44cf6
-ms.sourcegitcommit: d83fa82d6fec451c0cb957a76cfba8d072b72f4f
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58862987"
 ---
 # <a name="quickstart-create-automated-tasks-processes-and-workflows-with-azure-logic-apps---visual-studio"></a>Краткое руководство. Создание автоматизированных задач, операций и рабочих процессов с помощью Azure Logic Apps в Visual Studio
@@ -119,7 +119,7 @@ ms.locfileid: "58862987"
    | Список профилей пользователя | Contoso <br> jamalhartnett@contoso.com | По умолчанию это учетная запись, используемая для входа |
    | **Подписка** | Оплата по мере использования <br> (jamalhartnett@contoso.com) | Имя подписки Azure и связанной учетной записи |
    | **Группа ресурсов** | MyLogicApp-RG <br> (Западная часть США) | Группа ресурсов Azure и расположение для хранения и развертывания ресурсов приложения логики |
-   | **Расположение** | MyLogicApp-RG2 <br> (Западная часть США) | Другое расположение, если вы не хотите использовать расположение группы ресурсов |
+   | **Местоположение.** | MyLogicApp-RG2 <br> (Западная часть США) | Другое расположение, если вы не хотите использовать расположение группы ресурсов |
    ||||
 
 1. Открывается конструктор Logic Apps и отображается страница с вводным видео и часто используемыми триггерами. 

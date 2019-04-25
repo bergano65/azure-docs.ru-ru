@@ -1,17 +1,17 @@
 ---
 title: Сведения об управлении согласованностью в Azure Cosmos DB
 description: Сведения об управлении согласованностью в Azure Cosmos DB
-author: christopheranderson
+author: rimman
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 10/17/2018
-ms.author: chrande
-ms.openlocfilehash: 7dfc299c32b25ddf939aa3efcb927697307887a2
-ms.sourcegitcommit: 9f4eb5a3758f8a1a6a58c33c2806fa2986f702cb
+ms.date: 04/17/2019
+ms.author: rimman
+ms.openlocfilehash: a93bf9a9f43a0929aeb5f3d3121092739396c6a8
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58904327"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59678451"
 ---
 # <a name="manage-consistency-levels-in-azure-cosmos-db"></a>Управление уровнями согласованности в Azure Cosmos DB
 
@@ -21,7 +21,7 @@ ms.locfileid: "58904327"
 
 ## <a name="configure-the-default-consistency-level"></a>Настройка уровня согласованности по умолчанию
 
-Клиенты по умолчанию используют стандартный уровень согласованности. Они могут его переопределить.
+Клиенты по умолчанию используют [стандартный уровень согласованности](consistency-levels.md). Они могут его переопределить в любой момент.
 
 ### <a name="cli"></a>Интерфейс командной строки
 
@@ -35,7 +35,7 @@ az cosmosdb update --name <name of Cosmos DB Account> --resource-group <resource
 
 ### <a name="powershell"></a>PowerShell
 
-В этом примере создается новая учетная запись Azure Cosmos DB с поддержкой нескольких мастеров в восточной и западной части США. Политика согласованности по умолчанию установлена ​​как сеанс.
+В этом примере создается учетная запись Azure Cosmos DB с поддержкой нескольких регионов для записи в восточной и западной части США. Задан уровень согласованности по умолчанию *Сеанс*.
 
 ```azurepowershell-interactive
 $locations = @(@{"locationName"="East US"; "failoverPriority"=0},
@@ -59,15 +59,15 @@ New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
   -Properties $CosmosDBProperties
 ```
 
-### <a name="portal"></a>Microsoft Azure
+### <a name="azure-portal"></a>Портал Azure
 
-Чтобы просмотреть или изменить уровень согласованности по умолчанию, войдите на портал Azure. Найдите учетную запись Azure Cosmos DB и откройте панель **Согласованность по умолчанию**. Выберите требуемый уровень согласованности в качестве нового значения по умолчанию, а затем выберите **Сохранить**.
+Чтобы просмотреть или изменить уровень согласованности по умолчанию, войдите на портал Azure. Найдите учетную запись Azure Cosmos DB и откройте область **Согласованность по умолчанию**. Выберите требуемый уровень согласованности в качестве нового значения по умолчанию, а затем выберите **Сохранить**.
 
 ![Меню согласованности на портале Azure](./media/how-to-manage-consistency/consistency-settings.png)
 
 ## <a name="override-the-default-consistency-level"></a>Переопределение уровня согласованности по умолчанию
 
-Клиенты могут переопределить уровень согласованности по умолчанию, который задается службой. Этот параметр можно настроить для клиента или на один запрос.
+Клиенты могут переопределить уровень согласованности по умолчанию, который задается службой. Уровень согласованности можно задать для каждого запроса. В этом случае будет переопределен уровень согласованности по умолчанию на уровне учетной записи.
 
 ### <a id="override-default-consistency-dotnet"></a>Пакет SDK для .NET
 
@@ -131,6 +131,8 @@ client = cosmos_client.CosmosClient(self.account_endpoint, {'masterKey': self.ac
 ```
 
 ## <a name="utilize-session-tokens"></a>Использование маркеров сеанса
+
+Один из этих уровней согласованности в Azure Cosmos DB — согласованность *сеансов*. Этот уровень по умолчанию применяются к учетным записям Cosmos. Если задана согласованность *сеансов*, то клиент будет использовать внутренний маркер сеанса для каждой операции чтения или запроса, чтобы обеспечить соблюдение заданного уровня согласованности.
 
 Чтобы управлять токенами сеанса вручную, получите токен сеанса из ответа и установите их для каждого запроса. Если у вас нет необходимости управлять токенами сеанса вручную, то вам не нужно использовать эти примеры. Пакет SDK отслеживает токены сеанса автоматически. Если токен сеанса не задан вручную, по умолчанию в пакете SDK используется последний.
 
@@ -209,15 +211,18 @@ item = client.ReadItem(doc_link, options)
 
 ## <a name="monitor-probabilistically-bounded-staleness-pbs-metric"></a>Мониторинг метрики вероятностного ограниченного устаревания (PBS)
 
-Чтобы просмотреть метрики PBS, перейдите к учетной записи Azure Cosmos DB на портале Azure. Откройте панель **Метрики** и выберите вкладку **Согласованность**. Просмотрите график с названием **Probability of strongly consistent reads based on your workload (see PBS)** (Вероятность строго согласованных операций чтения на основании вашей рабочей нагрузки (см. PBS)).
+Насколько итоговая согласованность является итоговой? В среднем мы можем предложить границы устаревания с учетом журнала версий и времени. Метрика [**Probabilistically Bounded Staleness (PBS)**](http://pbs.cs.berkeley.edu/) (Вероятностное ограниченное устаревание) пытается количественно оценить вероятность устаревания и отображает полученные результаты. Чтобы просмотреть метрику PBS, перейдите к учетной записи Azure Cosmos DB на портале Azure. Откройте панель **Метрики** и выберите вкладку **Согласованность**. Просмотрите график с названием **Probability of strongly consistent reads based on your workload (see PBS)** (Вероятность строго согласованных операций чтения на основании вашей рабочей нагрузки (см. PBS)).
 
 ![График PBS на портале Azure](./media/how-to-manage-consistency/pbs-metric.png)
 
-Чтобы просмотреть эту метрику, используйте меню метрик в Azure Cosmos DB. Она не будет отображаться в интерфейсе метрик в службе Azure Monitor.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Узнайте больше о том, как управлять конфликтами данных, или перейдите к следующей ключевой концепции в Azure Cosmos DB. Ознакомьтесь со следующими статьями:
 
+* [Настраиваемые уровни согласованности данных в Azure Cosmos DB](consistency-levels.md)
 * [Управление конфликтами между регионами](how-to-manage-conflicts.md)
-* [Распределение данных и секционирование](partition-data.md)
+* [Секционирование и масштабирование в Azure Cosmos DB](partition-data.md)
+* [Consistency Tradeoffs in Modern Distributed Database Systems Design](https://www.computer.org/csdl/magazine/co/2012/02/mco2012020037/13rRUxjyX7k) (Достижение компромиссов согласованности в современных распределенных базах данных)
+* [Высокая доступность](high-availability.md)
+* [Соглашение об уровне обслуживания для Azure Cosmos DB](https://azure.microsoft.com/support/legal/sla/cosmos-db/v1_2/)

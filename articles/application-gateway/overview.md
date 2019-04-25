@@ -6,14 +6,14 @@ author: vhorne
 ms.service: application-gateway
 ms.topic: overview
 ms.custom: mvc
-ms.date: 03/20/2019
+ms.date: 4/18/2019
 ms.author: victorh
-ms.openlocfilehash: 447c5b1e94b848e9e560db1188a767f2040740c0
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 91e94c70444430725ffec836d1663aef99eb5496
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59546856"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60003366"
 ---
 # <a name="what-is-azure-application-gateway"></a>Что такое шлюз приложений Azure?
 
@@ -51,7 +51,7 @@ ms.locfileid: "59546856"
 
 ## <a name="azure-kubernetes-service-aks-ingress-controller-preview"></a>Общедоступная версия контроллера входящего трафика Службы Azure Kubernetes 
 
-Контроллер входящего трафика Шлюза приложений работает в качестве модуля pod в кластере AKS и позволяет Шлюзу приложений выполнять функции входа для кластера AKS. 
+Контроллер входящего трафика Шлюза приложений работает в качестве модуля pod в кластере AKS и позволяет Шлюзу приложений выполнять функции входа для кластера AKS. Это поддерживает только шлюз приложений версии 2.
 
 Дополнительные сведения см. в статье [Azure Application Gateway Ingress Controller](https://azure.github.io/application-gateway-kubernetes-ingress/) (Контроллер входящего трафика Шлюза приложений Azure).
 

@@ -9,10 +9,10 @@ ms.date: 4/9/2019
 ms.author: victorh
 ms.custom: mvc
 ms.openlocfilehash: cd7797ae3b79fb874bafc89437943b084020d800
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59492320"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-using-the-azure-portal"></a>Руководство по Развертывание и настройка службы "Брандмауэр Azure" с помощью портала Azure
@@ -108,7 +108,7 @@ ms.locfileid: "59492320"
    |Имя виртуальной машины     |**Srv-Jump**|
    |Регион     |Аналогично предыдущему|
    |Имя пользователя для администратора     |**azureuser**|
-   |Пароль     |**Azure123456!**|
+   |Пароль     |**Azure123456!** —|
 
 4. В разделе **Правила входящего порта** для параметра **Общедоступные входящие порты** выберите **Разрешить выбранные порты**.
 5. В поле **Выбрать входящие порты** выберите **RDP (3389)**.
@@ -126,8 +126,8 @@ ms.locfileid: "59492320"
 |Параметр  |Значение  |
 |---------|---------|
 |Подсеть|**Workload-SN**|
-|Общедоступный IP-адрес|**Нет**|
-|Общедоступные входящие порты|**Нет**|
+|Общедоступный IP-адрес|**None**|
+|Общедоступные входящие порты|**None**|
 
 ## <a name="deploy-the-firewall"></a>Развертывание брандмауэра
 
@@ -257,4 +257,4 @@ ms.locfileid: "59492320"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)
+> [Руководство Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)

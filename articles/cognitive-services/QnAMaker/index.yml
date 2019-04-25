@@ -1,15 +1,9 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 8eb7d6e920f09d6ad230813503a7cf942427ea80
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55227860"
 documentType: LandingData
 title: Документация по QnA Maker
 metadata:
   title: Документация по QnA Maker. Microsoft Cognitive Services | Документация Майкрософт
-  description: Ознакомьтесь со службой QnA Maker и узнайте, как с помощью баз знаний в этой службе обрабатываются ваши вопросы и ответы.
+  description: 'Ознакомьтесь со службой QnA Maker и узнайте, как с помощью баз знаний в этой службе обрабатываются ваши вопросы и ответы.'
   services: cognitive-services
   author: tulasim88
   manager: cgronlun
@@ -21,79 +15,79 @@ metadata:
   ms.date: 12/18/2018
   ms.author: tulasim
 abstract:
-  description: QnA Maker — это облачная служба API, которая позволяет работать с данными в форме вопросов и ответов. QnA Maker представляет собой службу для отправки вопросов и получения ответов из частично структурированного содержимого, например документов с часто задаваемыми вопросами, URL-адресов и руководств по продуктам. Служба QnA Maker отвечает на сформулированные на естественном языке вопросы, сопоставляя их с наиболее точным ответом в базе знаний вопросов и ответов.
+  description: 'QnA Maker — это облачная служба API, которая позволяет работать с данными в форме вопросов и ответов. QnA Maker представляет собой службу для отправки вопросов и получения ответов из частично структурированного содержимого, например документов с часто задаваемыми вопросами, URL-адресов и руководств по продуктам. Служба QnA Maker отвечает на сформулированные на естественном языке вопросы, сопоставляя их с наиболее точным ответом в базе знаний вопросов и ответов.'
   aside:
     image:
-      alt: 
+      alt: null
       height: 110
       src: ../media/index/qnamaker-landing-page-video.png
       width: 250
-    title: Создание бота за несколько минут с помощью QnA Maker (8:54)
-    href: https://channel9.msdn.com/Shows/AI-Show/Build-a-Bot-in-Minutes-with-QnA-Maker
+    title: 'Создание бота за несколько минут с помощью QnA Maker (8:54)'
+    href: 'https://channel9.msdn.com/Shows/AI-Show/Build-a-Bot-in-Minutes-with-QnA-Maker'
     width: 250
 sections:
-- items:
-  - type: list
-    style: cards
-    className: cardsM
-    columns: 3
+  - items:
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 3
+        items:
+          - href: /azure/cognitive-services/qnamaker/overview/overview
+            html: <p>Подробнее о QnA Maker.</p>
+            image:
+              src: ../media/index/i_overview.svg
+            title: Общие сведения о QnA Maker
+          - href: /azure/cognitive-services/qnamaker/quickstarts/create-publish-knowledge-base
+            html: '<p>Сведения о создании, обучении и публикации базы знаний.</p>'
+            image:
+              src: ../media/index/i_tasks.svg
+            title: 'Создание, обучение и публикация базы знаний'
+          - href: /azure/cognitive-services/qnamaker/concepts/data-sources-supported
+            html: <p>Сведения о публикации базы знаний.</p>
+            image:
+              src: ../media/index/i_tasks.svg
+            title: Общие сведения об источниках данных
+  - title: 5-минутные руководства по началу работы
     items:
-    - href: /azure/cognitive-services/qnamaker/overview/overview
-      html: <p>Подробнее о QnA Maker.</p>
-      image:
-        src: ../media/index/i_overview.svg
-      title: Общие сведения о QnA Maker
-    - href: /azure/cognitive-services/qnamaker/quickstarts/create-publish-knowledge-base
-      html: <p>Сведения о создании, обучении и публикации базы знаний.</p>
-      image:
-        src: ../media/index/i_tasks.svg
-      title: Создание, обучение и публикация базы знаний
-    - href: /azure/cognitive-services/qnamaker/concepts/data-sources-supported
-      html: <p>Сведения о публикации базы знаний.</p>
-      image:
-        src: ../media/index/i_tasks.svg
-      title: Общие сведения об источниках данных
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: 'Создайте базу знаний для содержимого вопросов и ответов:'
-  - type: list
-    style: icon48
+      - type: paragraph
+        text: 'Создайте базу знаний для содержимого вопросов и ответов:'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: media/index/logo_Csharp.svg
+            text: 'C&#35;'
+            href: Quickstarts/create-new-kb-csharp
+          - image:
+              src: media/index/Go-Logo_Blue.svg
+            text: Go
+            href: Quickstarts/create-new-kb-go
+          - image:
+              src: media/index/logo_java.svg
+            text: Java
+            href: Quickstarts/create-new-kb-java
+          - image:
+              src: media/index/logo_nodejs.svg
+            text: Node.js
+            href: Quickstarts/create-new-kb-nodejs
+          - image:
+              src: media/index/logo_python.svg
+            text: Python
+            href: Quickstarts/create-new-kb-python
+  - title: Пошаговые руководства
     items:
-    - image:
-        src: media/index/logo_Csharp.svg
-      text: C&#35;
-      href: Quickstarts/create-new-kb-csharp
-    - image:
-        src: media/index/Go-Logo_Blue.svg
-      text: Go
-      href: Quickstarts/create-new-kb-go
-    - image:
-        src: media/index/logo_java.svg
-      text: Java
-      href: Quickstarts/create-new-kb-java
-    - image:
-        src: media/index/logo_nodejs.svg
-      text: Node.js
-      href: Quickstarts/create-new-kb-nodejs
-    - image:
-        src: media/index/logo_python.svg
-      text: Python
-      href: Quickstarts/create-new-kb-python
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: 'Узнайте, как разрабатывать приложения с использованием QnA Maker:'
-  - type: list
-    style: unordered
+      - type: paragraph
+        text: 'Узнайте, как разрабатывать приложения с использованием QnA Maker:'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/azure/cognitive-services/qnamaker/tutorials/create-publish-query-in-portal">Создание базы знаний и предоставление ответов на вопросы</a></li>
+          - html: <a href="/azure/cognitive-services/qnamaker/tutorials/create-qna-bot">Создание бота QnA Maker</a></li>
+  - title: Справочные материалы
     items:
-    - html: <a href="/azure/cognitive-services/qnamaker/tutorials/create-publish-query-in-portal">Создание базы знаний и предоставление ответов на вопросы</a></li>
-    - html: <a href="/azure/cognitive-services/qnamaker/tutorials/create-qna-bot">Создание бота QnA Maker</a></li>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
-    items:
-    - title: API
-      html: <p><a href="https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff">API службы QnA Maker</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: API
+            html: '<p><a href="https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff">API службы QnA Maker</a></p>'

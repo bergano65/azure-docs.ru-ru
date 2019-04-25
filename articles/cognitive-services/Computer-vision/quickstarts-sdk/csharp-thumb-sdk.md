@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 02/12/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: fc6657af66adffbf4c702f50a7934efc56fb7acf
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: ea03aa8242358833d32029918ce2e381182f6ba2
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56309394"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59998334"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-computer-vision-sdk-and-c"></a>Краткое руководство. Создание эскиза с помощью пакета SDK для API компьютерного зрения и C#
 
@@ -24,7 +24,7 @@ ms.locfileid: "56309394"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Чтобы использовать API компьютерного зрения, требуется ключ подписки. Его получение описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+* Ключ подписки на Компьютерное зрение. На странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) можно получить бесплатную пробную версию ключа. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
 * Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/).
 * Пакет NuGet клиентской библиотеки [Microsoft.Azure.CognitiveServices.Vision.ComputerVision](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.ComputerVision). Скачивать пакет не нужно. Инструкции по установке приведены ниже.
 

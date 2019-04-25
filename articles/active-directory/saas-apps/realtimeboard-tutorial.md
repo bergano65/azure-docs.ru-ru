@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: fb7302497d4331a9e39c8a3c50393646b663f7d8
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.openlocfilehash: 81aa38c1c7783c7e0357f8f69f4d4484d26873e9
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59283143"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60006959"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-realtimeboard"></a>Руководство по Интеграция Azure Active Directory с RealtimeBoard
 
@@ -111,7 +111,7 @@ ms.locfileid: "59283143"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![изображение](common/both-preintegrated-signon.png)
+    ![image](common/both-preintegrated-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес: `https://realtimeboard.com/sso/saml`.
 
@@ -131,7 +131,7 @@ ms.locfileid: "59283143"
 
 ### <a name="configure-realtimeboard-single-sign-on"></a>Настройка единого входа в RealtimeBoard
 
-Чтобы настроить единый вход на стороне **RealtimeBoard**, вам необходимо отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки RealtimeBoard](). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **RealtimeBoard**, вам необходимо отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, группе поддержки RealtimeBoard. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 

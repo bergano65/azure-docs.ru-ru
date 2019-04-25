@@ -7,18 +7,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 02/13/2019
+ms.date: 02/26/2019
 ms.author: aahi
-ms.openlocfilehash: 8197d091763709282c42379a7ca0ea802e5c6fdf
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.openlocfilehash: 4ccb8665c9880e21897c81ed4b4ff534e52bb6d1
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56886797"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60002278"
 ---
 # <a name="example-how-to-detect-language-with-text-analytics"></a>Пример: Как определить язык с помощью API "Анализ текста"
 
-[API распознавания языка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7) оценивает текст входных данных каждого документа и возвращает идентификаторы языка с оценкой, указывающая степень анализа. Анализ текста распознает до 120 языков.
+[API распознавания языка](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7) оценивает текст входных данных каждого документа и возвращает идентификаторы языка с оценкой, указывающая степень анализа. Анализ текста распознает до 120 языков.
 
 Эта возможность нужна для содержимого хранилищ, которое собирает произвольный текст, где язык неизвестен. Вы можете проанализировать результаты этого анализа, чтобы определить, какой язык используется во входном документе. Оценка, указывающая на достоверность модели (значение между 0 и 1) также возвращается в ответе.
 
@@ -27,7 +27,7 @@ ms.locfileid: "56886797"
 
 ## <a name="preparation"></a>Подготовка
 
-Необходимо иметь документы JSON в следующем формате: "идентификатор" и"текст"
+Необходимы документы JSON в следующем формате: идентификатор, текст
 
 Документ должен содержать менее 5120 символов и иметь до 1000 элементов (идентификаторов) в коллекции. Коллекция передается в тексте запроса. Ниже приведен пример содержимого, который вы можете представить для обнаружение языка.
 
@@ -62,16 +62,16 @@ ms.locfileid: "56886797"
 
 Сведения об определении запроса можно найти в статье [How to call the Text Analytics REST API](text-analytics-how-to-call-api.md) (Способ вызова REST API анализа текста). Для удобства повторим следующие моменты.
 
-+ Создайте запрос **POST**. Ознакомьтесь с документацию по API для этого запроса: [API распознавания языка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7).
++ Создайте запрос **POST**. Ознакомьтесь с документацию по API для этого запроса: [API распознавания языка](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7).
 
-+ Задайте конечную точку HTTP для распознавания языка с помощью ресурса API анализа текста в Azure или экземпляра [контейнера API анализа текста](text-analytics-how-to-install-containers.md). Она должна включать ресурс `/languages`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/languages`
++ Задайте конечную точку HTTP для распознавания языка с помощью ресурса API анализа текста в Azure или экземпляра [контейнера API анализа текста](text-analytics-how-to-install-containers.md). Она должна включать ресурс `/languages`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/languages`
 
 + Задайте заголовок запроса, чтобы включить ключ доступа для операций Анализа текста. Дополнительные сведения см. в статье [о поиске конечных точек и ключей доступа](text-analytics-how-to-access-key.md).
 
 + В тексте запроса укажите набор документов JSON, которые подготовлены для этого анализа
 
 > [!Tip]
-> Используйте [Postman](text-analytics-how-to-call-api.md) или откройте **консоль тестирования API** в [документации](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7), чтобы структурировать запрос и передать его (используя метод POST) в службу.
+> Используйте [Postman](text-analytics-how-to-call-api.md) или откройте **консоль тестирования API** в [документации](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7), чтобы структурировать запрос и передать его (используя метод POST) в службу.
 
 ## <a name="step-2-post-the-request"></a>Шаг 2. Передача запроса
 
@@ -206,7 +206,7 @@ ms.locfileid: "56886797"
 
 В этой статье рассматриваются основные понятия и рабочий процесс распознавания языка с помощью Анализа текста в Cognitive Services. Ниже приведены краткие напоминания о главных особенностях, которые были описаны и продемонстрированы.
 
-+ [API распознавания языка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7) доступен для 120 языков.
++ [API распознавания языка](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7) доступен для 120 языков.
 + В тексте запроса передаются документы JSON, которые содержат идентификатор и текст.
 + Запрос POST передается в конечную точку `/languages`, используя личный [ключ доступа и конечную точку](text-analytics-how-to-access-key.md), допустимые для вашей подписки.
 + Выходные данные ответа, состоящие из идентификаторов языка для каждого идентификатора документа, могут передаваться в любое приложение, принимающее JSON, включая Excel и Power BI (лишь некоторые из них).

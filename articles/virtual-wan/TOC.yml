@@ -1,61 +1,54 @@
-items:
 - name: Документация по виртуальной глобальной сети (WAN)
   href: index.yml
 - name: Обзор
   items:
-  - name: Общие сведения о виртуальной глобальной сети (WAN)
-    href: virtual-wan-about.md
+    - name: Общие сведения о виртуальной глобальной сети (WAN)
+      href: virtual-wan-about.md
 - name: Учебники
   items:
-  - name: Создание подключения "сеть — сеть"
-    href: virtual-wan-site-to-site-portal.md
-  - name: Создание подключения ExpressRoute
-    href: virtual-wan-expressroute-portal.md
-  - name: Создание подключения "точка — сеть"
-    href: virtual-wan-point-to-site-portal.md
+    - name: Создание подключения "сеть — сеть"
+      href: virtual-wan-site-to-site-portal.md
+    - name: Создание подключения ExpressRoute
+      href: virtual-wan-expressroute-portal.md
+    - name: Создание подключения "точка — сеть"
+      href: virtual-wan-point-to-site-portal.md
 - name: Основные понятия
   items:
-  - name: Расположения и партнеры
-    href: virtual-wan-locations-partners.md
-  - name: Уровень управления Office 365 в Виртуальной глобальной сети
-    href: virtual-wan-office365-overview.md
+    - name: Расположения и партнеры
+      href: virtual-wan-locations-partners.md
+    - name: Уровень управления Office 365 в Виртуальной глобальной сети
+      href: virtual-wan-office365-overview.md
 - name: Практические руководства
   items:
-  - name: Маршрутизация трафика из виртуального концентратора в виртуальный сетевой модуль
-    items:
-    - name: Портал Azure
-      href: virtual-wan-route-table-portal.md
-    - name: Azure PowerShell
-      href: virtual-wan-route-table.md
-  - name: Участники Виртуальной глобальной сети — автоматизация
-    href: virtual-wan-configure-automation-providers.md
+    - name: Маршрутизация трафика из виртуального концентратора в виртуальный сетевой модуль
+      items:
+        - name: Портал Azure
+          href: virtual-wan-route-table-portal.md
+        - name: Azure PowerShell
+          href: virtual-wan-route-table.md
+    - name: Участники Виртуальной глобальной сети — автоматизация
+      href: virtual-wan-configure-automation-providers.md
 - name: Справочные материалы
   items:
-  - name: Azure PowerShell
-    href: /powershell/module/az.network#networking
-  - name: REST
-    href: /rest/api/azure
-  - name: Инфраструктура CLI Azure
-    href: /cli/azure/ext/virtual-wan
+    - name: Azure PowerShell
+      href: '/powershell/module/az.network#networking'
+    - name: REST
+      href: /rest/api/azure
+    - name: Инфраструктура CLI Azure
+      href: /cli/azure/ext/virtual-wan
 - name: Ресурсы
   items:
-  - name: Часто задаваемые вопросы
-    href: virtual-wan-faq.md
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=networking
-  - name: Блог
-    href: https://azure.microsoft.com/blog/topics/networking
-  - name: Ограничения подписки и службы
-    href: ../azure-subscription-service-limits.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/virtual-wan
-  - name: Калькулятор цен
-    href: https://azure.microsoft.com/pricing/calculator/
-  - name: Соглашение об уровне обслуживания
-    href: https://azure.microsoft.com/support/legal/sla
-ms.openlocfilehash: 555af48950df4afab512951a7c3ae53e41663427
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58579739"
+    - name: Часто задаваемые вопросы
+      href: virtual-wan-faq.md
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=networking'
+    - name: Блог
+      href: 'https://azure.microsoft.com/blog/topics/networking'
+    - name: Ограничения подписки и службы
+      href: ../azure-subscription-service-limits.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/virtual-wan'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Соглашение об уровне обслуживания
+      href: 'https://azure.microsoft.com/support/legal/sla'

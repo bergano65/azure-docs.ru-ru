@@ -13,17 +13,17 @@ ms.devlang: multiple
 ms.topic: overview
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 03/29/2019
+ms.date: 04/18/2019
 ms.author: juliako
 ms.custom: mvc
-ms.openlocfilehash: c65c797612e179a9f3c02696d827131f5c830b3c
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 6876ffd76c5a7ba5745e8014bca2abdc5e5264a2
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58755904"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59999830"
 ---
-# <a name="what-is-azure-media-services-v3"></a>Что такое Службы мультимедиа Azure версии 3?
+# <a name="azure-media-services-v3-overview"></a>Что такое Службы мультимедиа Azure версии 3?
 
 Службы мультимедиа Azure — это облачная платформа, которая позволяет создавать решения для потоковой передачи видео широковещательного уровня. Она повышает доступность и уровень распространения, дает возможность анализировать содержимое и предоставляет многие другие функции. Службы мультимедиа позволяют создавать приложения для обработки данных мультимедиа высокого качества для крупных аудиторий на самых популярных современных мобильных устройствах и браузерах для всевозможных сфер деятельности (разработчик приложения, центр обработки вызовов, государственное учреждение или компания, специализирующаяся в сфере индустрии развлечений). 
 
@@ -79,6 +79,10 @@ ms.locfileid: "58755904"
 * [Monitor events - Portal](monitor-events-portal-how-to.md) (Создание и мониторинг событий Служб мультимедиа Azure с помощью Сетки событий и портала Azure)
 * [Encrypt dynamically with multi-DRM - .NET](protect-with-drm.md) (Динамическое шифрование с помощью DRM и службы доставки лицензий) 
 * [How to encode with a custom transform - CLI](custom-preset-cli-howto.md) (Кодирование с помощью пользовательского преобразования с помощью CLI)
+
+## <a name="provide-feedback"></a>Отзывы
+
+Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

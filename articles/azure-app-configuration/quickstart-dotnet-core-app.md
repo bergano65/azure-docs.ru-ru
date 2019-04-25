@@ -14,18 +14,20 @@ ms.tgt_pltfrm: .NET Core
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: 7c84a5c39b1a3b4a52505c053fdcfc92030237c3
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: 34eafe8a13d126ebdbb08084d8820646ca43534a
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58575783"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59998096"
 ---
 # <a name="quickstart-create-a-net-core-app-with-app-configuration"></a>Краткое руководство. Создание приложения .NET Core с помощью службы "Конфигурация приложений"
 
 Конфигурация приложений Azure — это служба для управления конфигурациями в Azure. С ее помощью вы можете централизовано хранить и администрировать все параметры приложения отдельно от кода. В этом кратком руководстве показано, как интегрировать службу с консольным приложением .NET Core.
 
 Шаги из этого краткого руководства можно выполнять в любом редакторе кода. [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, который доступен на платформах Windows, macOS и Linux.
+
+![Запуск примера приложения](./media/quickstarts/dotnet-core-app-run.png)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -36,6 +38,14 @@ ms.locfileid: "58575783"
 ## <a name="create-an-app-configuration-store"></a>Создание хранилища конфигураций приложений
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
+
+6. Выберите **Обозреватель ключей и значений** > **+ Создать**, чтобы добавить следующие пары "ключ-значение":
+
+    | Ключ | Значение |
+    |---|---|
+    | TestApp:Settings:FontSize | Данные из конфигурации приложения Azure |
+
+    Поля **Метка** и **Тип контента** пока заполнять не нужно.
 
 ## <a name="create-a-net-core-console-app"></a>Создание консольного приложения .NET Core
 
@@ -99,8 +109,6 @@ ms.locfileid: "58575783"
 
         dotnet run
 
-    ![Запуск примера приложения](./media/quickstarts/dotnet-core-app-run.png)
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [azure-app-configuration-cleanup](../../includes/azure-app-configuration-cleanup.md)]
@@ -110,4 +118,4 @@ ms.locfileid: "58575783"
 В этом кратком руководстве вы создали хранилище конфигураций приложения и использовали его с консольным приложением .NET Core с помощью [поставщика Конфигурации приложений](https://go.microsoft.com/fwlink/?linkid=2074664). Ознакомьтесь с дополнительными сведениями об использовании службы "Конфигурация приложений" в следующем учебнике, посвященном проверке подлинности.
 
 > [!div class="nextstepaction"]
-> [Руководство. Интеграция с управляемыми удостоверениями Azure](./integrate-azure-managed-service-identity.md)
+> [Руководство по интеграции с управляемыми удостоверениями Azure](./howto-integrate-azure-managed-service-identity.md)

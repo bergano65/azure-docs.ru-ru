@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с BlueJeans | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с BlueJeans | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и BlueJeans.
 services: active-directory
 documentationCenter: na
@@ -8,6 +8,7 @@ manager: daveba
 ms.reviewer: barbkess
 ms.assetid: dfc634fd-1b55-4ba8-94a8-b8288429b6a9
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +16,14 @@ ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b22a7a86862f02c3320b7c14cc1ed878a57bd23d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0d1c10d9df85b04cf7b8ea7e0020bc8e802a0d5d
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57901956"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59698934"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-bluejeans"></a>Руководство. Интеграция Azure Active Directory с BlueJeans
+# <a name="tutorial-azure-active-directory-integration-with-bluejeans"></a>Руководство по Интеграция Azure Active Directory с BlueJeans
 
 В этом руководстве описано, как интегрировать BlueJeans с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением BlueJeans обеспечивает следующие преимущества:
@@ -38,7 +39,7 @@ ms.locfileid: "57901956"
 
 Чтобы настроить интеграцию Azure AD с BlueJeans, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * Подписка BlueJeans с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,14 +106,16 @@ ms.locfileid: "57901956"
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения BlueJeans](common/sp-signonurl.png)
+    ![Сведения о домене и URL-адресах единого входа для приложения BlueJeans](common/sp-identifier.png)
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<companyname>.BlueJeans.com`.
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.BlueJeans.com`.
+
+    b. В текстовом поле **Идентификатор** введите URL-адрес: `http://samlsp.bluejeans.com`
 
     > [!NOTE]
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [группу поддержки BlueJeans](https://support.bluejeans.com/contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [группу поддержки BlueJeans](https://support.bluejeans.com/contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
@@ -122,21 +125,21 @@ ms.locfileid: "57901956"
 
     а) URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-bluejeans-single-sign-on"></a>Настройка единого входа в BlueJeans
 
-1. В другом окне веб-браузера войдите на свой корпоративный веб-сайт **BlueJeans** в качестве администратора.
+1. В другом окне веб-браузера войдите на свой корпоративный веб-сайт **BlueJeans** с правами администратора.
 
 2. Последовательно щелкните **ADMIN \> GROUP SETTINGS \> SECURITY** (Администратор > Параметры группы > Безопасность).
 
-    ![Администратор](./media/bluejeans-tutorial/IC785868.png "Администратор")
+    ![Администратор](./media/bluejeans-tutorial/ic785868.png "Администратор")
 
 3. В разделе **SECURITY** (Безопасность) выполните следующие действия:
 
-    ![Единый вход SAML](./media/bluejeans-tutorial/IC785869.png "Единый вход SAML")
+    ![Единый вход SAML](./media/bluejeans-tutorial/ic785869.png "Единый вход SAML")
 
     a. Выберите параметр **SAML Single Sign On**(Единый вход SAML).
 
@@ -144,7 +147,7 @@ ms.locfileid: "57901956"
 
 4. После этого выполните следующие действия.
 
-    ![Путь к сертификату](./media/bluejeans-tutorial/IC785870.png "Путь к сертификату")
+    ![Путь к сертификату](./media/bluejeans-tutorial/ic785870.png "Путь к сертификату")
 
     a. Щелкните **Choose a File** (Выбрать файл), чтобы отправить сертификат в кодировке Base64, скачанный с портала Azure.
 
@@ -156,9 +159,9 @@ ms.locfileid: "57901956"
 
 5. После этого выполните следующие действия.
 
-    ![Сохранение изменений](./media/bluejeans-tutorial/IC785874.png "Сохранение изменений")
+    ![Сохранение изменений](./media/bluejeans-tutorial/ic785874.png "Сохранение изменений")
 
-    a. В текстовое поле **User id** (Идентификатор пользователя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+    a. В текстовое поле **User Id** (Идентификатор пользователя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
     b. В текстовое поле **Email** (Электронная почта) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
@@ -182,8 +185,7 @@ ms.locfileid: "57901956"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
-    Например BrittaSimon@contoso.com.
+    b. В поле **Имя пользователя** введите `brittasimon\@yourcompanydomain.extension`. Например, BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -221,18 +223,18 @@ ms.locfileid: "57901956"
 
 **Если необходимо создать пользователя вручную, выполните следующие действия:**
 
-1. Выполните вход на веб-сайт компании **BlueJeans** в качестве администратора.
+1. Войдите на свой корпоративный веб-сайт **BlueJeans** с правами администратора.
 
 2. Последовательно выберите пункты **ADMIN \> MANAGE USERS \> ADD USER** (Администратор > Управление пользователями > Добавить пользователя).
 
-    ![Администратор](./media/bluejeans-tutorial/IC785877.png "Администратор")
+    ![Администратор](./media/bluejeans-tutorial/ic785877.png "Администратор")
 
-    >[!IMPORTANT]
-    >Вкладка **ADD USER** (Добавить пользователя) доступна, только если на вкладке **SECURITY** (Безопасность) снят флажок **Enable automatic provisioning** (Включить автоматическую подготовку). 
+    > [!IMPORTANT]
+    > Вкладка **ADD USER** (Добавить пользователя) доступна, только если на вкладке **SECURITY** (Безопасность) снят флажок **Enable automatic provisioning** (Включить автоматическую подготовку).
 
 3. В разделе **ADD USER** (Добавление пользователя) выполните следующие действия.
 
-    ![Добавление пользователя](./media/bluejeans-tutorial/IC785886.png "Добавление пользователя")
+    ![Добавление пользователя](./media/bluejeans-tutorial/ic785886.png "Добавление пользователя")
 
     a. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
@@ -244,7 +246,7 @@ ms.locfileid: "57901956"
 
     д. В текстовое поле **Company** (Компания) введите название компании.
 
-    Е. В текстовом поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
+    Е. В текстовое поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя, например `brittasimon\@contoso.com`.
 
     ж. В текстовое поле **Create a BlueJeans Meeting I.D** (Создать идентификатор собрания BlueJeans) введите идентификатор собрания.
 
@@ -252,7 +254,7 @@ ms.locfileid: "57901956"
 
     i. Щелкните **CONTINUE** (Продолжить).
 
-    ![Добавление пользователя](./media/bluejeans-tutorial/IC785887.png "Добавление пользователя")
+    ![Добавление пользователя](./media/bluejeans-tutorial/ic785887.png "Добавление пользователя")
 
     Дж. Нажмите кнопку **Add user** (Добавить пользователя).
 
@@ -272,4 +274,3 @@ ms.locfileid: "57901956"
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-

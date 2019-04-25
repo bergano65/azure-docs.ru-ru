@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Содержимое изображения предметной области — REST, PHP
+title: Краткое руководство. Содержимое предметной области — REST, PHP
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как использовать модель предметной области для распознавания достопримечательностей с помощью API компьютерного зрения в PHP.
 services: cognitive-services
@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 03/11/2019
+ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 2c1801296247ace081a34a137fe3f3bea7a55974
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 902894ccce28ee1ba05430c7e697c3ca47887795
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57877026"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60011118"
 ---
 # <a name="quickstart-recognize-domain-specific-content-using-the-rest-api-and-php-with-computer-vision"></a>Краткое руководство. Распознавание содержимого предметной области с использованием REST API компьютерного зрения и PHP
 
@@ -28,7 +28,7 @@ ms.locfileid: "57877026"
 
 - Необходимо установить [PHP](https://secure.php.net/downloads.php).
 - Необходимо установить [Pear](https://pear.php.net).
-- У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+- У вас должен быть ключ подписки для Компьютерного зрения. На странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) можно получить бесплатную пробную версию ключа. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
 
 ## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 

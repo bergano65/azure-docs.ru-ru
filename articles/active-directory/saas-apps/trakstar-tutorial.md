@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 04/02/2019
 ms.author: jeedes
 ms.openlocfilehash: ac21071b958942d7d689f1e9c2c49f02a3599ac4
-ms.sourcegitcommit: 62d3a040280e83946d1a9548f352da83ef852085
+ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59257898"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-trakstar"></a>Руководство по Интеграция Azure Active Directory с Trakstar
@@ -107,9 +107,9 @@ ms.locfileid: "59257898"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Trakstar](common/sp-identifier.png)
 
-    a. Вставьте в текстовое поле **URL-адрес входа** значение, скопированное в Trakstar в поле **URL-адреса службы обработчика утверждений (объект-получатель)** в настройках параметров, проверки подлинности и единого входа, в следующем формате: `https://app.trakstar.com/auth/saml/callback?namespace=<YOUR_NAMESPACE>`
+    a. Вставьте в текстовое поле **URL-адрес входа** значение, скопированное в Trakstar в поле **URL-адреса службы обработчика утверждений** в настройках параметров, аутентификации и единого входа, в следующем формате: `https://app.trakstar.com/auth/saml/callback?namespace=<YOUR_NAMESPACE>`
 
-    b. В текстовом поле **Идентификатор (сущности)** оставьте значение по умолчанию: `https://app.trakstar.com`
+    b. В текстовом поле **Идентификатор (сущности)** оставьте значение по умолчанию `https://app.trakstar.com`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Войдите в Trakstar от имени администратора, чтобы получить эти значения.

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: .NET
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: b4cb571653cbe69939a1cbdc92338663e4e7125f
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: 33deea0805ffa89bcc6a64f34a97a4e080690da9
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58576078"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60008823"
 ---
 # <a name="quickstart-create-a-net-framework-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения на .NET Framework с помощью службы конфигурации приложений Azure
 
@@ -36,6 +36,14 @@ ms.locfileid: "58576078"
 ## <a name="create-an-app-configuration-store"></a>Создание хранилища конфигураций приложений
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
+
+6. Выберите **Обозреватель ключей и значений** > **+ Создать**, чтобы добавить следующие пары "ключ-значение":
+
+    | Ключ | Значение |
+    |---|---|
+    | TestApp:Settings:FontSize | Данные из конфигурации приложения Azure |
+
+    Поля **Метка** и **Тип контента** пока заполнять не нужно.
 
 ## <a name="create-a-net-console-app"></a>Создайте консольное приложение .NET
 
@@ -106,4 +114,4 @@ ms.locfileid: "58576078"
 В этом кратком руководстве описано, как создать хранилище конфигурации приложения и использовать его с консольным приложением на основе .NET Framework. Ознакомьтесь с дополнительными сведениями об использовании службы "Конфигурация приложений" в следующем учебнике, посвященном проверке подлинности.
 
 > [!div class="nextstepaction"]
-> [Руководство. Интеграция с управляемыми удостоверениями Azure](./integrate-azure-managed-service-identity.md)
+> [Руководство по интеграции с управляемыми удостоверениями Azure](./howto-integrate-azure-managed-service-identity.md)

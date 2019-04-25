@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 04/08/2019
+ms.date: 04/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df6720d888aae313a2e6ad2ce4df458adba8742f
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: b05c91138f3140abe6a08964fa06caef988e5f49
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59565365"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59999269"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-greenorbit"></a>Руководство по интеграции Azure Active Directory с GreenOrbit
 
@@ -64,7 +64,7 @@ ms.locfileid: "59565365"
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, нажмите кнопку **Новое приложение** в верхней части диалогового окна.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
@@ -108,9 +108,9 @@ ms.locfileid: "59565365"
 
     ![Сведения о домене и URL-адресах единого входа для приложения GreenOrbit](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.GreenOrbit.com`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.yourcompanydomain.extension`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `http://<SUBDOMAIN>.trial.GreenOrbit.com`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.yourcompanydomain.extension`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов GreenOrbit](mailto:support@greenorbit.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

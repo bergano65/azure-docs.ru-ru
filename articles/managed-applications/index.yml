@@ -1,10 +1,4 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 353616141e37e8024695fad81a16c9c2f3b82625
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56107350"
 documentType: LandingData
 title: Документация по управляемым приложениям Azure
 metadata:
@@ -20,37 +14,37 @@ metadata:
   ms.date: 10/25/2017
   ms.author: tomfitz
 abstract:
-  description: Управляемые приложения Azure позволяют предлагать облачные решения внутренним и внешним клиентам. Вы самостоятельно определяете инфраструктуру решения, а также условия управления решением. Счета за использование решения обрабатываются в службе Azure по выставлению счетов.
+  description: 'Управляемые приложения Azure позволяют предлагать облачные решения внутренним и внешним клиентам. Вы самостоятельно определяете инфраструктуру решения, а также условия управления решением. Счета за использование решения обрабатываются в службе Azure по выставлению счетов.'
 sections:
-- title: 5-минутные руководства по началу работы
-  items:
-  - type: paragraph
-    text: Узнайте, как опубликовать и развернуть управляемое приложение.
-  - type: list
-    style: icon48
+  - title: 5-минутные руководства по началу работы
     items:
-    - image:
-        src: /azure/managed-applications/media/index/cli.svg
-      text: Инфраструктура CLI Azure
-      href: /azure/managed-applications/managed-apps-quickstart-cli
-- title: Пошаговые руководства
-  items:
-  - type: paragraph
-    text: Узнайте, как разрабатывать управляемые приложения и предлагать их в Azure Marketplace.
-  - type: list
-    style: ordered
+      - type: paragraph
+        text: 'Узнайте, как опубликовать и развернуть управляемое приложение.'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: /azure/managed-applications/media/index/cli.svg
+            text: Инфраструктура CLI Azure
+            href: /azure/managed-applications/managed-apps-quickstart-cli
+  - title: Пошаговые руководства
     items:
-    - html: <a href="/azure/managed-applications/publish-service-catalog-app">Публикация управляемого приложения для внутренних пользователей.</a>
-    - html: <a href="/azure/managed-applications/publish-marketplace-app">Публикация управляемого приложения для внешних пользователей.</a>
-- title: Справочные материалы
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: paragraph
+        text: 'Узнайте, как разрабатывать управляемые приложения и предлагать их в Azure Marketplace.'
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="/azure/managed-applications/publish-service-catalog-app">Публикация управляемого приложения для внутренних пользователей.</a>
+          - html: <a href="/azure/managed-applications/publish-marketplace-app">Публикация управляемого приложения для внешних пользователей.</a>
+  - title: Справочные материалы
     items:
-    - title: Командная строка
-      html: <p><a href="/cli/azure/managedapp">Интерфейс командной строки Azure</a></p><p><a href="/powershell/module/az.resources">PowerShell</a></p>
-    - title: Интерфейсы API REST
-      html: <p><a href="/rest/api/resources/">REST</a></p>
-    - title: Пользовательский интерфейс
-      html: <p><a href="/azure/managed-applications/create-uidefinition-elements">Элементы пользовательского интерфейса</a></p><p><a href="/azure/managed-applications/create-uidefinition-functions">Функции пользовательского интерфейса</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Командная строка
+            html: <p><a href="/cli/azure/managedapp">Интерфейс командной строки Azure</a></p><p><a href="/powershell/module/az.resources">PowerShell</a></p>
+          - title: Интерфейсы API REST
+            html: <p><a href="/rest/api/resources/">REST</a></p>
+          - title: Пользовательский интерфейс
+            html: <p><a href="/azure/managed-applications/create-uidefinition-elements">Элементы пользовательского интерфейса</a></p><p><a href="/azure/managed-applications/create-uidefinition-functions">Функции пользовательского интерфейса</a></p>

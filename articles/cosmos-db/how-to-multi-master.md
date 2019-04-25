@@ -1,21 +1,21 @@
 ---
 title: Настройка нескольких источников в Azure Cosmos DB
 description: Сведения о том, как настроить несколько источников в приложениях в Azure Cosmos DB
-author: markjbrown
+author: rimman
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 2/12/2019
-ms.author: mjbrown
-ms.openlocfilehash: 84c8e2921602bb653c0b1ef0adffd3d89e91bd78
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.date: 04/15/2019
+ms.author: rimman
+ms.openlocfilehash: b862c59002369662d37b6d6a9de28370b0000497
+ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56312146"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59682276"
 ---
 # <a name="how-to-configure-multi-master-in-your-applications-that-use-azure-cosmos-db"></a>Настройка нескольких источников в приложениях, использующих Azure Cosmos DB
 
-Чтобы использовать несколько источников в своих приложениях, нужно включить выполнение операций записи в нескольких регионах и настроить множественную адресацию. Для настройки множественной адресации нужно указать текущий регион, в котором развертывается приложение.
+Чтобы использовать несколько источников в своих приложениях, нужно включить выполнение операций записи в нескольких регионах и настроить множественную адресацию в Azure Cosmos DB. Для настройки множественной адресации нужно указать регион, в котором развертывается приложение.
 
 ## <a id="netv2"></a>Пакет SDK для .NET версии 2
 
@@ -43,7 +43,7 @@ CosmosClient client = new CosmosClient(config);
 
 ## <a id="java"></a>Пакет SDK для Java (асинхронная модель)
 
-Чтобы включить несколько источников в своем приложении, укажите для параметра `policy.setUsingMultipleWriteLocations(true)` значение true, а для параметра `policy.setPreferredLocations` — регион, в котором развертывается приложение и реплицируется Cosmos DB.
+Чтобы включить несколько источников в своем приложении, настройте параметр `policy.setUsingMultipleWriteLocations(true)` и укажите для параметра `policy.setPreferredLocations` регион, в котором развертывается приложение и реплицируется Cosmos DB.
 
 ```java
 ConnectionPolicy policy = new ConnectionPolicy();
@@ -89,14 +89,14 @@ client = cosmos_client.CosmosClient(self.account_endpoint, {'masterKey': self.ac
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения об использовании нескольких источников, глобальном распределении и согласованности в Azure Cosmos DB: Ознакомьтесь со следующими статьями:
+См. подробнее:
 
 * [Использование маркеров сеанса](how-to-manage-consistency.md#utilize-session-tokens)
-
 * [Типы конфликтов и политики их устранения](conflict-resolution-policies.md)
-
 * [Высокий уровень доступности при использовании Azure Cosmos DB](high-availability.md)
-
+* [Настраиваемые уровни согласованности данных в Azure Cosmos DB](consistency-levels.md)
 * [Выбор правильного уровня согласованности](consistency-levels-choosing.md)
-
 * [Компромиссы согласованности, доступности и производительности](consistency-levels-tradeoffs.md)
+* [Достижение компромисса между доступностью и быстродействием для разных уровней согласованности](consistency-levels-tradeoffs.md)
+* [Масштабирование пропускной способности в Azure Cosmos DB](scaling-throughput.md)
+* [Глобальное распределение (взгляд изнутри)](global-dist-under-the-hood.md)

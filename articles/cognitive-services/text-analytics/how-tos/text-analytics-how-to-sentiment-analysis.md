@@ -7,18 +7,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 02/13/2019
+ms.date: 02/26/2019
 ms.author: aahi
-ms.openlocfilehash: 7287a9ddbd84960dcde790d813a6204e9e790094
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.openlocfilehash: 0c42e7f8b1fffb9cf998f4cee8d30405a8df74a4
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56887426"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60011305"
 ---
 # <a name="example-how-to-detect-sentiment-with-text-analytics"></a>Пример: как определить тональность в службе "Анализ текста"
 
-[API анализа тональности](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9) вычисляет ввод текста и возвращает оценку тональности для каждого документа в диапазоне от 0 (отрицательное значение) до 1 (положительное значение).
+[API анализа тональности](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c9) вычисляет ввод текста и возвращает оценку тональности для каждого документа в диапазоне от 0 (отрицательное значение) до 1 (положительное значение).
 
 Эта возможность нужна для обнаружения положительных и отрицательных тональностей в социальных сетях, отзывах клиентов и на форумах. Содержимое предоставляете вы, а модели и данные для обучения — служба.
 
@@ -37,7 +37,7 @@ ms.locfileid: "56887426"
 
 Анализ тональности дает более качественный результат, когда ему передаются более мелкие блоки текста. Это является противоположностью извлечению ключевой фразы, которая выполняется лучше на более крупных блоках текста. Для получения наилучших результатов обеих операций советуем реструктуризировать входные данные соответствующим образом.
 
-Необходимо иметь документы JSON в следующем формате: "идентификатор","текст","язык"
+Необходимо иметь документы JSON в следующем формате: "идентификатор","текст","язык".
 
 Документ должен содержать менее 5120 символов и иметь до 1000 элементов (идентификаторов) в коллекции. Коллекция передается в тексте запроса. Ниже приведен пример содержимого, который вы можете представить для анализа тональности.
 
@@ -77,16 +77,16 @@ ms.locfileid: "56887426"
 
 Сведения об определении запроса можно найти в статье [How to call the Text Analytics REST API](text-analytics-how-to-call-api.md) (Способ вызова REST API анализа текста). Для удобства повторим следующие моменты.
 
-+ Создайте запрос **POST**. Ознакомьтесь с документацию по API для этого запроса: [API для анализа тональности](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9)
++ Создайте запрос **POST**. Ознакомьтесь с документацию по API для этого запроса: [API для анализа тональности](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c9)
 
-+ Задайте конечную точку HTTP для анализа тональности с помощью ресурса API анализа текста в Azure или экземпляра [контейнера API анализа текста](text-analytics-how-to-install-containers.md). Она должна включать ресурс `/sentiment`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment`
++ Задайте конечную точку HTTP для анализа тональности с помощью ресурса API анализа текста в Azure или экземпляра [контейнера API анализа текста](text-analytics-how-to-install-containers.md). Она должна включать ресурс `/sentiment`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/sentiment`
 
 + Задайте заголовок запроса, чтобы включить ключ доступа для операций Анализа текста. Дополнительные сведения см. в статье [о поиске конечных точек и ключей доступа](text-analytics-how-to-access-key.md).
 
 + В тексте запроса укажите набор документов JSON, которые подготовлены для этого анализа.
 
 > [!Tip]
-> Используйте [Postman](text-analytics-how-to-call-api.md) или откройте **консоль тестирования API** в [документации](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9), чтобы структурировать запрос и передать его (используя метод POST) в службу.
+> Используйте [Postman](text-analytics-how-to-call-api.md) или откройте **консоль тестирования API** в [документации](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c9), чтобы структурировать запрос и передать его (используя метод POST) в службу.
 
 ## <a name="step-2-post-the-request"></a>Шаг 2. Передача запроса
 
@@ -135,7 +135,7 @@ ms.locfileid: "56887426"
 
 В этой статье рассматриваются основные понятия и рабочий процесс анализа тональности в службе Анализ текста Cognitive Services. В разделе "Сводка" сделайте следующее.
 
-+ [API анализа тональности](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9) доступен для некоторых языков.
++ [API анализа тональности](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c9) доступен для некоторых языков.
 + В тексте запроса передаются документы JSON, которые содержат идентификатор, текст и код языка.
 + Запрос POST передается в конечную точку `/sentiment`, используя личный [ключ доступа и конечную точку](text-analytics-how-to-access-key.md), допустимые для вашей подписки.
 + Выходные данные ответа, состоящие из оценки тональности для каждого идентификатора документа, могут передаваться в любое приложение, принимающее JSON, включая Excel и Power BI (лишь некоторые из них).

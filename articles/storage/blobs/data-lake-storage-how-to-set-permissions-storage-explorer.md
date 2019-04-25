@@ -9,12 +9,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 12/11/2018
 ms.author: rogarana
-ms.openlocfilehash: d1e941e41871de4a11641254f40c53285b096807
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: f2569b29ab6124f1cfa22fa745d45082c213a6be
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57546317"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60003482"
 ---
 # <a name="set-file-and-directory-level-permissions-using-azure-storage-explorer-with-azure-data-lake-storage-gen2"></a>Установка разрешений на уровне файлов и каталогов в Azure Data Lake Storage 2-го поколения с помощью Обозревателя службы хранилища Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "57546317"
 
 ## <a name="managing-access"></a>Управление доступом
 
-Разрешения можно задавать в корне вашей файловой системы. Чтобы сделать это, вам нужно войти в обозреватель службы хранилища Azure с помощью своей учетной записи с правами на это (в отличие от строки подключения). Щелкните правой кнопкой мыши свою файловую систему и выберите **Управление разрешениями**, чтобы вызвать диалоговое окно **Управление разрешениями**.
+Разрешения можно задавать на уровне корня файловой системы. Чтобы сделать это, вам нужно войти в обозреватель службы хранилища Azure с помощью своей учетной записи с правами на это (в отличие от строки подключения). Щелкните правой кнопкой мыши файловую систему и выберите **Управление разрешениями**, чтобы открыть диалоговое окно **Управление разрешениями**.
 
 ![Обозреватель службы хранилища Microsoft Azure — управление доступом к каталогу](media/storage-quickstart-blobs-storage-Explorer/manageperms.png)
 
