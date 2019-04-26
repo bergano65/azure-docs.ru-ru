@@ -9,11 +9,11 @@ ms.date: 01/28/2019
 ms.author: juliako
 ms.custom: include file
 ms.openlocfilehash: 8439da94c770bee313a1ae1d1da5df30683cd2ad
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57964269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61224319"
 ---
 ## <a name="cli-shell"></a>Оболочка CLI
 
@@ -45,6 +45,6 @@ ms.locfileid: "57964269"
 * `@ "/usr/home/mytestfile.json"`
 *   `@"c:\tmp\user\mytestfile.json"`
 
-Используйте `{file}` Если команда запрашивает путь к файлу. Например, `az ams transform create -a amsaccount -g resourceGroup -n custom --preset .\customPreset.json`. <br/> Используйте `@{file}` Если команда будет загрузить указанный файл. Например, `az ams account-filter create -a amsaccount -g resourceGroup -n filterName --tracks @tracks.json`.
+Если для команды нужно указать путь к файлу, используйте `{file}`. Например, `az ams transform create -a amsaccount -g resourceGroup -n custom --preset .\customPreset.json`. <br/> Если с помощью команды будет загружаться указанный файл, используйте `@{file}`. Например, `az ams account-filter create -a amsaccount -g resourceGroup -n filterName --tracks @tracks.json`.
 
 [Передача файлов]: ./media/media-services-cli/upload-download-files.png
