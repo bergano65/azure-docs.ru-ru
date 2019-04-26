@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 04/24/2018
 ms.author: daveba
 ms.custom: include file
-ms.openlocfilehash: 4ae995e69d1241d94584529572df3ffd3fe59144
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
-ms.translationtype: MT
+ms.openlocfilehash: 4311cd2174500df51e5006ff8f274d0737cc74d1
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "58115624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60291009"
 ---
 |  |
 |--|
-|Пользователь, которому назначен управляемых удостоверений — это компонент предварительной версии Azure Active Directory. Прежде чем начинать, ознакомьтесь с [известными проблемами](~/articles/active-directory/managed-identities-azure-resources/known-issues.md). См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
+|В Azure Active Directory доступна предварительная версия функции управляемых удостоверений, назначенных пользователем. Прежде чем начинать, ознакомьтесь с [известными проблемами](~/articles/active-directory/managed-identities-azure-resources/known-issues.md). См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
 |
 
 
