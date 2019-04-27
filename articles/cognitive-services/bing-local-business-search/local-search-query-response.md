@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 11/01/2018
 ms.author: rosh; v-gedod
 ms.openlocfilehash: 79219de775be96f35bd11ac85640efcc4a04a93b
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57779799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60582452"
 ---
 # <a name="sending-and-using-bing-local-business-search-api-queries-and-responses"></a>Отправка и использование запросов и ответов API Bing Local Business Search
 
@@ -61,7 +61,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search[?q][&localC
 * name
 * routeablePoint
 * telephone
-* URL-адрес
+* url
 
 Дополнительные сведения о заголовках, параметрах, кодах рынков, объектах ответов, ошибках и т. д. см. в статье [Справочник по API Bing Local Business Search версии 7](local-search-reference.md).
 

@@ -3,8 +3,8 @@ title: 'Наблюдатель за сетями Azure: общие сведен�
 description: Эта страница содержит обзорные сведения о функции записи пакетов в службе наблюдения за сетями
 services: network-watcher
 documentationcenter: na
-author: jimdial
-manager: timlt
+author: KumudD
+manager: twooley
 editor: ''
 ms.assetid: 3a81afaa-ecd9-4004-b68e-69ab56913356
 ms.service: network-watcher
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
-ms.author: jdial
-ms.openlocfilehash: 152cc8fb61aa6115c7b5863e4d798db9e7aa5b7c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.author: kumud
+ms.openlocfilehash: 3ca9619dcfe9054ab69d248e20f6d8e59324d308
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23036839"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60727035"
 ---
 # <a name="introduction-to-variable-packet-capture-in-azure-network-watcher"></a>Общие сведения о возможностях записи пакетов в Наблюдателе за сетями Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "23036839"
 |**Удаленный IP-адрес** | Это значение фильтрует запись пакетов по указанному удаленному IP-адресу.|
 |**Удаленный порт** | Это значение фильтрует запись пакетов по указанному удаленному порту.|
 
-### <a name="next-steps"></a>Дополнительная информация
+### <a name="next-steps"></a>Дальнейшие действия
 
 См. дополнительные сведения об управлении записью пакетов [на портале Azure](network-watcher-packet-capture-manage-portal.md) и [с помощью PowerShell](network-watcher-packet-capture-manage-powershell.md).
 

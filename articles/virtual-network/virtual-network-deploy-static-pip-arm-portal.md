@@ -3,8 +3,8 @@ title: Создание виртуальной машины со статиче�
 description: Узнайте, как создать виртуальную машину со статическим общедоступным IP-адресом с помощью портала Azure.
 services: virtual-network
 documentationcenter: na
-author: jimdial
-manager: jeconnoc
+author: KumudD
+manager: twooley
 editor: ''
 tags: azure-resource-manager
 ms.assetid: e9546bcc-f300-428f-b94a-056c5bd29035
@@ -14,13 +14,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/08/2018
-ms.author: jdial
+ms.author: kumud
 ms.openlocfilehash: 42e035b9dca6168fe77e6982505692cf18bfcb40
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58106429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60743178"
 ---
 # <a name="create-a-virtual-machine-with-a-static-public-ip-address-using-the-azure-portal"></a>Создание виртуальной машины со статическим общедоступным IP-адресом с помощью портала Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "58106429"
     |Пароль| Введите выбранный пароль. Пароль должен включать минимум 12 символов и соответствовать [определенным требованиям к сложности](../virtual-machines/windows/faq.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).|
     |Подписка| Выберите свою подписку.|
     |Группа ресурсов| Щелкните **Использовать существующую** и выберите **myResourceGroup**.|
-    |Расположение| Выберите **Восточная часть США**.|
+    |Location| Выберите **Восточная часть США**.|
 
 4. Выберите размер виртуальной машины и щелкните **Выбрать**.
 5. В разделе **Параметры** выберите **Общедоступный IP-адрес**.

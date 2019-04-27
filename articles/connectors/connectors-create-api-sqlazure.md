@@ -11,12 +11,12 @@ services: logic-apps
 ms.reviewer: klam, LADocs
 ms.suite: integration
 tags: connectors
-ms.openlocfilehash: dccb91c782408a5fed5c3ef1b68f9918823ce402
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 29d53c7fbd26d3c8e2356ce82ff25c7e1b165728
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38544029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60541157"
 ---
 # <a name="connect-to-sql-server-or-azure-sql-database-from-azure-logic-apps"></a>Подключение к SQL Server или Базе данных SQL Azure из Azure Logic Apps
 
@@ -24,9 +24,9 @@ ms.locfileid: "38544029"
 
 Вы можете создавать приложения логики, которые активируются событиями в базе данных SQL или в других системах, таких как Dynamics CRM Online. Приложения логики могут получать, вставлять или удалять данные, а также выполнять хранимые процедуры и запросы SQL. Например, вы можете создать приложение логики, которое автоматически проверяет наличие новых записей в Dynamics CRM Online, добавляет элементы в Базу данных SQL для новых записей, а затем отправляет оповещения по электронной почте.
 
-Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. Если вы не работали с приложениями логики, см. руководства по [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [созданию первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md). См. технические сведения о <a href="https://docs.microsoft.com/connectors/sql/" target="blank">соединителях SQL Server</a>.
+Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. Если вы не знакомы с приложениями логики, ознакомьтесь со статьями [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md). См. технические сведения о <a href="https://docs.microsoft.com/connectors/sql/" target="blank">соединителях SQL Server</a>.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Приложения логики с возможностью доступа к базе данных SQL. Чтобы запустить приложение логики с помощью триггера SQL, требуется [пустое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md). 
 
@@ -56,7 +56,7 @@ ms.locfileid: "38544029"
 
 2. В поле поиска введите "sql server" в качестве условия фильтра. В списке триггеров выберите нужный триггер SQL. 
 
-   Например, выберите этот триггер: **SQL Server — при создании элемента**.
+   Например выберите этот триггер: **SQL Server — при создании элемента**
 
    ![Выбор триггера "SQL Server — при создании элемента"](./media/connectors-create-api-sqlazure/sql-server-trigger.png)
 
@@ -94,7 +94,7 @@ ms.locfileid: "38544029"
 
 2. В поле поиска введите "sql server" в качестве условия фильтра. В списке действий выберите любое необходимое действие SQL. 
 
-   Например, выберите действие, которое возвращает одну запись: **SQL Server — получение строки**.
+   Например выберите это действие, которое возвращает одну запись: **SQL Server — получить строку**
 
    ![Ввод "sql server" и выбор "SQL Server — получение строки"](./media/connectors-create-api-sqlazure/select-sql-get-row.png) 
 
@@ -138,7 +138,7 @@ ms.locfileid: "38544029"
 
 См. дополнительные технические сведения о [триггерах, действиях и ограничениях этого соединителя](/connectors/sql/). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).
 

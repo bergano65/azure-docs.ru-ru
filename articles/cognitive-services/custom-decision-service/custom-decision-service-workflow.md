@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 06/04/2018
 ms.author: nolachar
 ms.openlocfilehash: 086858f88a1b058e0e94fb356fbd06cf299b14f3
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55858184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60580055"
 ---
 # <a name="custom-decision-service-workflow"></a>Рабочий процесс Пользовательской службы принятия решений
 
@@ -25,7 +25,7 @@ ms.locfileid: "55858184"
 
 Добавьте [строку подключения к службе хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-configure-connection-string).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Зарегистрируйте приложение](custom-decision-service-get-started-register.md) в Пользовательской службе принятия решений.
 * Приступите к оптимизации [веб-страницы](custom-decision-service-get-started-browser.md) или [приложения для смартфона](custom-decision-service-get-started-app.md).

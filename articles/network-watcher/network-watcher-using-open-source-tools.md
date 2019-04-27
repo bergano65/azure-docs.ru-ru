@@ -3,8 +3,8 @@ title: Визуализация распределения сетевого тр
 description: На этой странице описывается, как использовать захват пакетов Наблюдателя за сетями со средством CapAnalysis для визуализации распределения входящего и исходящего трафика на виртуальных машинах.
 services: network-watcher
 documentationcenter: na
-author: jimdial
-manager: timlt
+author: KumudD
+manager: twooley
 editor: ''
 ms.assetid: 936d881b-49f9-4798-8e45-d7185ec9fe89
 ms.service: network-watcher
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
-ms.author: jdial
-ms.openlocfilehash: 7b1e1383e8e244a7cdb30be1e08514a6a4dd7b14
-ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
+ms.author: kumud
+ms.openlocfilehash: 7c239bbf577645ddb8ab12c525d1b3a8832421df
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36302239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60680561"
 ---
 # <a name="visualize-network-traffic-patterns-to-and-from-your-vms-using-open-source-tools"></a>Визуализация распределения входящего и исходящего трафика на виртуальных машинах с помощью средств с открытым кодом
 
@@ -92,11 +92,11 @@ CapAnalysis предлагает много возможностей для ви
 
 Функция захвата пакетов Наблюдателя за сетями позволяет сохранять полезные данные для экспертизы сети и понимания характеристик сетевого трафика. На этом примере мы показали, как можно легко интегрировать захват пакетов Наблюдателя за сетями со средствами визуализации с открытым кодом. Используя средства с открытым кодом для визуализации захвата пакетов, например CapAnalysis, вы можете тщательно проверять сетевые пакеты и быстро выявлять тенденции трафика в сети.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Информацию о журналах потоков для групп безопасности сети см. [в этой статье](network-watcher-nsg-flow-logging-overview.md).
 
-Дополнительные сведения см. в статье [Визуализация журналов потоков для групп безопасности сети с помощью Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md)
+Ознакомьтесь со статьей [Visualizing Network Security Group flow logs with Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md) (Визуализация журналов потоков для групп безопасности сети с помощью Power BI).
 <!--Image references-->
 
 [1]: ./media/network-watcher-using-open-source-tools/figure1.png
