@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/16/2019
+ms.date: 04/19/2019
 ms.author: jingwang
-ms.openlocfilehash: e3fc5a3dc5dc40078ca3a4733f6a2ba11da450f1
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: b97d21503e8dcd75906581faf1851533bcd69fa6
+ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59681222"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60009350"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you're using:"]
@@ -399,22 +399,29 @@ GO
 
 Применение [PolyBase](https://docs.microsoft.com/sql/relational-databases/polybase/polybase-guide) — это эффективный способ загрузки большого объема данных в хранилище данных SQL Azure с высокой пропускной способностью. Используя PolyBase вместо стандартного механизма BULKINSERT, можно значительно увеличить пропускную способность. Подробное сравнение см. в разделе [Базовые показатели производительности](copy-activity-performance.md#performance-reference). Пошаговое руководство и пример использования см. в статье [Загрузка 1 ТБ в хранилище данных SQL Azure с помощью фабрики данных менее чем за 15 минут](https://docs.microsoft.com/azure/data-factory/v1/data-factory-load-sql-data-warehouse).
 
-* Если исходные данные находятся в хранилище BLOB-объектов Azure или в Azure Data Lake Store и их формат соответствует требованиям PolyBase, то копирование можно выполнять напрямую в хранилище данных SQL Azure, используя PolyBase. Дополнительные сведения см. в разделе **[Прямое копирование с помощью PolyBase](#direct-copy-by-using-polybase)**.
+* Если исходные данные находятся в **BLOB-объектов Azure, Gen1 хранилища Озера данных Azure или Gen2 хранилища Озера данных Azure**и **имеет формат, совместимый PolyBase**, действие копирования можно использовать для непосредственного вызова PolyBase для Azure Хранилище данных SQL извлекать данные из источника. Дополнительные сведения см. в разделе **[Прямое копирование с помощью PolyBase](#direct-copy-by-using-polybase)**.
 * Если хранилище и формат исходных данных изначально не поддерживаются PolyBase, то можно использовать функцию **[промежуточного копирования с помощью PolyBase](#staged-copy-by-using-polybase)**. Промежуточное копирование также обеспечивает лучшую пропускную способность. Оно автоматически преобразует данные в формат, совместимый с PolyBase. И он хранит данные в хранилище BLOB-объектов Azure. После этого данные загружаются в хранилище данных SQL.
 
 ### <a name="direct-copy-by-using-polybase"></a>Прямое копирование с помощью PolyBase
 
-PolyBase хранилища данных SQL напрямую поддерживает хранилище BLOB-объектов Azure и Azure Data Lake Store. При этом используется субъект-служба в качестве источника и есть определенные требования к формату файла. Если исходные данные соответствуют критериям, описанным в этом разделе, используйте PolyBase, чтобы выполнять копирование напрямую из исходного хранилища данных в хранилище данных SQL Azure. В противном случае см. сведения в разделе [Промежуточное копирование с помощью PolyBase](#staged-copy-by-using-polybase).
+PolyBase хранилища данных SQL напрямую поддерживает BLOB-объектов Azure, Gen1 хранилища Озера данных Azure и Gen2 хранилища Озера данных Azure. Если исходные данные соответствуют критериям, описанным в этом разделе, с помощью PolyBase для копирования непосредственно из исходного хранилища данных в хранилище данных SQL Azure. В противном случае см. сведения в разделе [Промежуточное копирование с помощью PolyBase](#staged-copy-by-using-polybase).
 
 > [!TIP]
-> Дополнительные сведения об эффективном копировании данных из Data Lake Store в хранилище данных SQL см. в [этой записи блога](https://blogs.msdn.microsoft.com/azuredatalake/2017/04/08/azure-data-factory-makes-it-even-easier-and-convenient-to-uncover-insights-from-data-when-using-data-lake-store-with-sql-data-warehouse/).
+> Чтобы эффективно копировать данные в хранилище данных SQL, ознакомьтесь с дополнительными [фабрики данных Azure упрощает и делает более удобным для анализа данных на основе данных при использовании Data Lake Store с хранилищем данных SQL](https://blogs.msdn.microsoft.com/azuredatalake/2017/04/08/azure-data-factory-makes-it-even-easier-and-convenient-to-uncover-insights-from-data-when-using-data-lake-store-with-sql-data-warehouse/).
 
 Если требования не выполняются, фабрика данных Azure проверяет параметры и автоматически возвращается к механизму перемещения данных BULKINSERT.
 
-1. **Связанная служба источника** тип — хранилище BLOB-объектов Azure (**AzureBLobStorage**/**AzureStorage**) с **ключа проверки подлинности учетной записи**  или Gen1 хранилища Озера данных Azure (**AzureDataLakeStore**) с **аутентификация субъекта-службы**.
-2. Тип **входного набора данных** — **AzureBlob** или **AzureDataLakeStoreFile**. Тип формата в свойствах типа `type` — **OrcFormat**, **ParquetFormat** или **TextFormat** со следующими конфигурациями:
+1. **Связанная служба источника** — с помощью методов проверки подлинности и следующих типов:
 
-   1. `fileName` не содержит фильтр подстановочных знаков.
+    | Тип хранилища поддерживаемого в качестве источника данных | Поддерживаемый тип проверки подлинности источника |
+    |:--- |:--- |
+    | [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | Проверка подлинности на основе ключа учетной записи |
+    | [Хранилище Azure Data Lake Gen1](connector-azure-data-lake-store.md) | Проверка подлинности субъекта-службы |
+    | [Хранилище Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | Проверка подлинности на основе ключа учетной записи |
+
+2. **Формат набора данных источника** имеет **ParquetFormat**, **OrcFormat**, или **TextFormat**, со следующими конфигурациями:
+
+   1. `folderPath` и `fileName` не содержат фильтр с подстановочными знаками.
    2. Параметр `rowDelimiter` должен иметь значение **\n**.
    3. Параметру `nullValue` задается **пустая строка** ("") или значение по умолчанию, а параметр `treatEmptyAsNull` остается со значением по умолчанию или ему задается значение true.
    4. Параметру `encodingName` присваивается значение **utf-8**, которое является значением по умолчанию.
@@ -423,7 +430,7 @@ PolyBase хранилища данных SQL напрямую поддержив
 
       ```json
       "typeProperties": {
-        "folderPath": "<blobpath>",
+        "folderPath": "<path>",
         "format": {
             "type": "TextFormat",
             "columnDelimiter": "<any delimiter>",
@@ -431,10 +438,6 @@ PolyBase хранилища данных SQL напрямую поддержив
             "nullValue": "",
             "encodingName": "utf-8",
             "firstRowAsHeader": <any>
-        },
-        "compression": {
-            "type": "GZip",
-            "level": "Optimal"
         }
       },
       ```
@@ -573,7 +576,7 @@ All columns of the table must be specified in the INSERT BULK statement.
 | Datetimeoffset | DateTimeOffset |
 | Decimal | Decimal |
 | FILESTREAM attribute (varbinary(max)) | Byte[] |
-| Float | Двойное с плавающей запятой |
+| Float | Double |
 | image | Byte[] |
 | int | Int32 |
 | money | Decimal |
