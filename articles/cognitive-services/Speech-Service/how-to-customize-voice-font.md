@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 01/28/2019
 ms.author: panosper
 ms.openlocfilehash: 24b98ce8cd2c587f0d39390954eb8a64747ca2ab
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55868333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60654083"
 ---
 # <a name="creating-custom-voice-fonts"></a>Создание настраиваемого голоса
 
@@ -25,7 +25,7 @@ ms.locfileid: "55868333"
 
 Для подтверждения концепции можно начать с небольшого количества данных. Однако чем больше данных вы предоставите, тем более естественно и профессионально будет звучать голос.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Вам потребуется учетная запись Azure и подписка на службу "Речь". [Создайте ее](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started), если это еще не сделано. Подключите подписку к порталу Custom Voice, как показано далее.
 
@@ -236,7 +236,7 @@ ms.locfileid: "55868333"
 > [!NOTE]
 > Обучение французского, немецкого и итальянского голоса начинается с набора данных, состоящего из более чем 2000 высказываний. Китайско-английские двуязычные модели также поддерживаются с помощью набора данных, состоящего из более чем 2000 высказываний.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 - [Как записывать образцы голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)

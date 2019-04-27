@@ -3,8 +3,8 @@ title: Общие сведения о представлении групп бе
 description: Эта страница содержит обзор представления системы безопасности в Наблюдателе за сетями.
 services: network-watcher
 documentationcenter: na
-author: jimdial
-manager: timlt
+author: KumudD
+manager: twooley
 editor: ''
 ms.assetid: ad27ab85-9d84-4759-b2b9-e861ef8ea8d8
 ms.service: network-watcher
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/26/2017
-ms.author: jdial
-ms.openlocfilehash: 15f6bd0d7da63924e52db8ec7e2cbb0ee7483f82
-ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
+ms.author: kumud
+ms.openlocfilehash: aae57603dea9b7142956065dd65727e59014dcb7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44391544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60684352"
 ---
 # <a name="introduction-to-network-security-group-view-in-azure-network-watcher"></a>Общие сведения о представлении групп безопасности сети в Наблюдателе за сетями Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "44391544"
 
 ![Детализация][2]
 
-### <a name="next-steps"></a>Дополнительная информация
+### <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как выполнять аудит параметров группы безопасности сети, ознакомившись с разделом [Automate NSG auditing with Azure Network Watcher Security group view](network-watcher-nsg-auditing-powershell.md) (Автоматизация аудита NSG с помощью представления групп безопасности Наблюдателя за сетями Azure).
 

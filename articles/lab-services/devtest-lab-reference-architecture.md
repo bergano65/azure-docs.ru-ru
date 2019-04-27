@@ -14,11 +14,11 @@ ms.date: 04/12/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: bcb154f7cffb92ef23fc2606e1f604bb12f8d1a3
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59996617"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60561527"
 ---
 # <a name="azure-devtest-labs---reference-architecture-for-an-enterprise"></a>Azure DevTest Labs — эталонной архитектуры для предприятия
 В этой статье предоставляет эталонную архитектуру для развертывания решений на базе Azure DevTest Labs на предприятии. Он включает в себя локальные подключения через Express Route, шлюза удаленных рабочих столов для удаленного входа в виртуальные машины, подключение к репозиторию артефактов для частные артефакты и других служб PaaS, используемых в лаборатории.

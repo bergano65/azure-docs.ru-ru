@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
 ms.openlocfilehash: cca7b42c83be3ca428509ea48c387a1c35ddb35a
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55206736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60640196"
 ---
 # <a name="how-to-use-branching-and-undo-operations"></a>Как использовать операции ветвления и отмены
 В этом руководстве мы рассмотрим операции ветвления и отмены.
@@ -81,7 +81,7 @@ ms.locfileid: "55206736"
     - Второе — версия с ветвлением, которую вы только что сохранили.
     - Щелкните каждое из обучений, чтобы убедиться, что его поведение соответствует ожидаемому.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Управление версиями и добавление тегов](./18-version-tag.md)

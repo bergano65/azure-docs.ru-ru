@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 04/02/2019
 ms.author: diberry
 ms.openlocfilehash: eb125133138c6de173fdeb90024a9e5d961a929d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58895162"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60597098"
 ---
 # <a name="export-and-delete-your-customer-data-in-language-understanding-luis-in-cognitive-services"></a>Экспорт и удаление данных клиентов в Интеллектуальной службе распознавания речи (LUIS) в Cognitive Services
 
@@ -66,7 +66,7 @@ LUIS пользователи имеют полный доступ для про
 
 * Европа
 * Франция
-* Великобритания
+* Соединенное королевство
 
 При развертывании на этих географических расположений Azure, фразы, полученных от конечной точки, от конечных пользователей приложения будут храниться в регионе Azure по Европе для активное обучение. Вы можете отключить активное обучение, см. в разделе [отключить активное Обучение](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Для управления хранимых фразы, см. в разделе [удалить utterance](luis-how-to-review-endpoint-utterances.md#delete-utterance). 
 

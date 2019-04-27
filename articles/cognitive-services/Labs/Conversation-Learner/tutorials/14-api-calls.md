@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
 ms.openlocfilehash: aba3c2eb925370704ea52364891502a7a09cc9ec
-ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55212553"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60635761"
 ---
 # <a name="how-to-add-api-calls-to-a-conversation-learner-model"></a>Добавление вызовов API в модель Conversation Learner
 
@@ -97,7 +97,7 @@ ms.locfileid: "55212553"
 
 Итак, вы узнали, как зарегистрировать обратные вызовы API, увидели типичные примеры их использования, научились определять аргументы и передавать в них значения и сущности.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Карты. Часть 1](./15-cards.md)
