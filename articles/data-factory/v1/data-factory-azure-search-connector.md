@@ -58,8 +58,8 @@ ms.locfileid: "54330013"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 | -------- | ----------- | -------- |
-| Тип | Свойству type необходимо задать значение **AzureSearch**. | Yes |
-| URL-адрес | URL-адрес службы Поиска Azure. | Yes |
+| type | Свойству type необходимо задать значение **AzureSearch**. | Yes |
+| url | URL-адрес службы Поиска Azure. | Yes |
 | key | Ключ администратора службы Поиска Azure. | Yes |
 
 ## <a name="dataset-properties"></a>Свойства набора данных
@@ -68,7 +68,7 @@ ms.locfileid: "54330013"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 | -------- | ----------- | -------- |
-| Тип | Для свойства type необходимо задать значение **AzureSearchIndex**| Yes |
+| type | Для свойства type необходимо задать значение **AzureSearchIndex**| Yes |
 | indexName | Имя индекса Поиска Azure. Фабрика данных не создает индекс. Индекс должен существовать в Поиске Azure. | Yes |
 
 
@@ -100,13 +100,13 @@ AzureSearchSink проявляет два типа поведения upsert (с
 
 | Тип данных Поиска Azure | Поддерживается в приемнике Поиска Azure |
 | ---------------------- | ------------------------------ |
-| Строка | Да |
+| String | Да |
 | Int32 | Да |
 | Int64 | Да |
 | Double | Да |
-| Логическое | Да |
+| Boolean | Да |
 | DataTimeOffset | Да |
-| Массив строк | Нет |
+| String Array | Нет |
 | GeographyPoint | Нет |
 
 ## <a name="json-example-copy-data-from-on-premises-sql-server-to-azure-search-index"></a>Пример JSON. Копирование данных с локального SQL Server в индекс поиска Azure
