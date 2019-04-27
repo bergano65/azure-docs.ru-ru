@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alch
 ms.openlocfilehash: 5d47b938560fb1bd15adfe1a1c2d35b7359d47a3
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57977417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61339137"
 ---
 # <a name="graph-search-method"></a>Метод поиска с помощью графа
 
@@ -30,7 +30,7 @@ https://westus.api.cognitive.microsoft.com/academic/v1.0/graph/search?
 
 ## <a name="request-parameters"></a>Параметры запроса  
 
-ИМЯ     | Значение | Обязательный?  | ОПИСАНИЕ
+ИМЯ     | Value | Обязательный?  | ОПИСАНИЕ
 -----------|-----------|---------|--------
 **режим**       | Текстовая строка | Yes | Имя режима, который необходимо использовать. Значение равно *json* или *lambda*.
 

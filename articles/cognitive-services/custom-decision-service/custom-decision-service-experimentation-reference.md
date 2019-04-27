@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 05/10/2018
 ms.author: marossi
 ms.openlocfilehash: b5f8c853218a1db53f4dd23e7254b35990a7132b
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55870271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60829180"
 ---
 # <a name="experimentation"></a>Экспериментирование
 
@@ -52,7 +52,7 @@ ms.locfileid: "55870271"
 
 Более подробно приведенные выше аргументы рассмотрены в описании [аргументов командной строки Vowpal Wabbit](https://github.com/JohnLangford/vowpal_wabbit/wiki/Command-line-arguments).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 - Vowpal Wabbit: установлен и указан в пути.
   - Windows: [используйте установщик `.msi`](https://github.com/eisber/vowpal_wabbit/releases).
   - Другие платформы: [получите исходный код](https://github.com/JohnLangford/vowpal_wabbit/releases).
@@ -80,7 +80,7 @@ python Experimentation.py [-h] -f FILE_PATH [-b BASE_COMMAND] [-p N_PROC]
 | Входные данные | ОПИСАНИЕ | значение по умолчанию |
 | --- | --- | --- |
 | `-h`, `--help` | Отображение справочного сообщения и выход. | |
-| `-f FILE_PATH`, `--file_path FILE_PATH` | Путь к файлу данных (в формате `.json` или `.json.gz`, каждая строка — `dsjson`). | Обязательно |  
+| `-f FILE_PATH`, `--file_path FILE_PATH` | Путь к файлу данных (в формате `.json` или `.json.gz`, каждая строка — `dsjson`). | Обязательно для заполнения |  
 | `-b BASE_COMMAND`, `--base_command BASE_COMMAND` | Базовая команда Vowpal Wabbit.  | `vw --cb_adf --dsjson -c` |  
 | `-p N_PROC`, `--n_proc N_PROC` | Количество используемых параллельных процессов. | Логические процессоры. |  
 | `-s SHARED_NAMESPACES, --shared_namespaces SHARED_NAMESPACES` | Общие пространства имен компонентов (например, `abc` означает пространства имен `a`, `b` и `c`).  | Автоматическое определение из файла данных. |  

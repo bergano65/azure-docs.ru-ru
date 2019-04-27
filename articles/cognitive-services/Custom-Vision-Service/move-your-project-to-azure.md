@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: anroth
 ms.openlocfilehash: 6fac6531ea0a39796de13f95aee33b30dc91f131
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59274456"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60816520"
 ---
 # <a name="how-to-move-your-limited-trial-project-to-azure"></a>Как переместить проект ограниченной пробной версии в Azure
 

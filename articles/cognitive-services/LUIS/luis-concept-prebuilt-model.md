@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 01/24/2019
 ms.author: diberry
 ms.openlocfilehash: 5d2ea9d971eff22ddeed4122c9697ca3096697b0
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55882851"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60813880"
 ---
 # <a name="prebuilt-domain-intent-and-entity-models"></a>Предварительно созданные модели предметной области, намерения и сущности
 
@@ -63,6 +63,6 @@ ms.locfileid: "55882851"
 > [!NOTE]
 > Сущность **builtin.datetime** не рекомендуется. Она заменяется на [**builtin.datetimeV2**](luis-reference-prebuilt-datetimev2.md), которая обеспечивает распознавание диапазонов дат и времени, а также улучшенное распознавание неоднозначных дат и времени.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [добавить предварительно созданные сущности](luis-prebuilt-entities.md) в приложение.

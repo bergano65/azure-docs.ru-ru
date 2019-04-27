@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 02/28/2019
 ms.author: diberry
 ms.openlocfilehash: 5ef7ccb58533161d8397ad42e70de1999908dc36
-ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57338320"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61473269"
 ---
 # <a name="keyphrase-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность keyPhrase для приложения LUIS
 keyPhrase извлекает различные ключевые фразы из высказывания. Добавление в приложение примеров высказываний, содержащих keyPhrase, не требуется. Сущность keyPhrase поддерживается во [многих языках и региональных параметрах](luis-language-support.md#languages-supported) как часть функции [текстовой аналитики](../text-analytics/overview.md). 

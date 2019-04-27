@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 01/16/2019
 ms.author: diberry
 ms.openlocfilehash: bdf2d87e558726937fa4221a0d95179216c66051
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55859206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60813814"
 ---
 # <a name="convert-data-format-of-utterances"></a>Преобразование формата данных высказываний
 LUIS использует службу Cognitive Services Speech, чтобы преобразовать высказывания из произнесенной речи в текст перед получением прогноза. 
@@ -33,7 +33,7 @@ LUIS использует службу Cognitive Services Speech, чтобы п�
 ### <a name="quota-usage"></a>Использование квоты
 Информацию вы найдете в разделе об [ограничениях для ключей](luis-boundaries.md#key-limits). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Использование преобразования речи в текст](luis-tutorial-speech-to-intent.md)

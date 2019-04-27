@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 03/26/2016
 ms.author: paulhsu
 ms.openlocfilehash: 51a812762659bcc67762b82e9c120772065aab53
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59549693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60814419"
 ---
 # <a name="schema-format"></a>Формат схемы
 
@@ -41,7 +41,7 @@ ms.locfileid: "59549693"
 
 Ниже приведен список поддерживаемых типов данных атрибутов.
 
-| type | Описание | Операции | Пример |
+| type | ОПИСАНИЕ | Операции | Пример |
 |------|-------------|------------|---------|
 | `String` | Строка (1–1024 знака) | equals, starts_with | "hello world" |
 | `Int32` | 32-разрядное целое число со знаком | equals, starts_with, is_between | 2016 |

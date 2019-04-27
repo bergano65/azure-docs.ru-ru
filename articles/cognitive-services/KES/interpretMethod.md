@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 03/26/2016
 ms.author: paulhsu
 ms.openlocfilehash: 88776e2f4167c950d60c0405dcf950b5173fb989
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55870934"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60814133"
 ---
 # <a name="interpret-method"></a>Метод interpret
 
@@ -25,7 +25,7 @@ ms.locfileid: "55870934"
 
 `http://<host>/interpret?query=<query>[&<options>]`
 
-ИМЯ|Значение| ОПИСАНИЕ
+ИМЯ|Value| ОПИСАНИЕ
 ----|----|----
 query    | Текстовая строка | Запрос, введенный пользователем.  Если для параметра complete установлено значение 1, запрос будет интерпретироваться как префикс для создания автозавершения запросов.        
 complete | 0 (по умолчанию) или 1 | Значение 1 означает, что предложения автозавершения создаются на основе грамматики и данных индекса.         
