@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 4/05/2019
 ms.author: scottwhi
 ms.openlocfilehash: e42e56e6361b1fde7ab13655d3c57a90d7235938
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59493881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60831934"
 ---
 # <a name="use-an-insights-token-to-get-insights-for-an-image"></a>Использовать маркер insights получение аналитики для изображения
 
@@ -475,7 +475,7 @@ if __name__ == '__main__':
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Создание визуального поиска одностраничных веб-приложения](tutorial-bing-visual-search-single-page-app.md)  
+[Create a Visual Search single-page web app](tutorial-bing-visual-search-single-page-app.md) (Создание одностраничного веб-приложения Визуального поиска)  
 [Что такое API визуального поиска Bing?](overview.md)  
 [Пробная версия Cognitive Services](https://aka.ms/bingvisualsearchtryforfree)  
 [Получить ключ доступа бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-visual-search-api)  

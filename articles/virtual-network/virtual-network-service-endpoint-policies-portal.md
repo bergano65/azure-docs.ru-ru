@@ -4,20 +4,20 @@ titlesuffix: Azure Virtual Network
 description: В этой статье вы узнаете, как настроить и связать политики конечной точки службы с помощью портала Azure.
 services: virtual-network
 documentationcenter: virtual-network
-author: anithaa
+author: KumudD
 ms.service: virtual-network
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 09/18/2018
-ms.author: anithaa
+ms.author: kumud
 ms.openlocfilehash: aaa07759ed8b10578d024d5838ac1d2658778695
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57999888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61034646"
 ---
 # <a name="create-change-or-delete-service-endpoint-policy-using-the-azure-portal"></a>Создание, изменение или удаление политик конечной точки службы с помощью портала Azure
 

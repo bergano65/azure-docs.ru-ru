@@ -12,11 +12,11 @@ ms.date: 12/17/2018
 ms.author: tulasim
 ms.custom: seodec18
 ms.openlocfilehash: 20ebcb502e03f2d817fe18624d8c790e920c667f
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55861253"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61372053"
 ---
 # <a name="test-your-knowledge-base-interactively-in-qna-maker"></a>Интерактивное тестирование базы знаний в QnA Maker
 
@@ -74,7 +74,7 @@ ms.locfileid: "55861253"
 > [!NOTE]
 > Все изменения в базе знаний сохраняются только при нажатии кнопки **Сохранить и Обучать**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Публикация базы знаний](./publish-knowledge-base.md)

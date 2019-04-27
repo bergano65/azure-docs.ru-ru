@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 07/26/2018
 ms.author: wolfma
 ms.openlocfilehash: bf0916f197ff5bf1a9531fde98fe8cefc8d7727f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59358069"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61460309"
 ---
 # <a name="support-and-help-options"></a>Возможности получения поддержки и справки
 

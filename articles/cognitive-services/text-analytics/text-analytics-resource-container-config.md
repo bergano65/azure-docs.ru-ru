@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: diberry
 ms.openlocfilehash: 1333aefc145e95223624f42a28ec0bb31ab70065
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60011764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60828128"
 ---
 # <a name="configure-text-analytics-docker-containers"></a>Настройка контейнеров Docker API анализа текста
 
@@ -51,7 +51,7 @@ ms.locfileid: "60011764"
 
 Необходимо добавить `text/analytics/v2.0` маршрутизации URI конечной точки, как показано в следующем примере BILLING_ENDPOINT_URI.
 
-|Обязательно для заполнения| Name | Тип данных | ОПИСАНИЕ |
+|Обязательно для заполнения| ИМЯ | Тип данных | ОПИСАНИЕ |
 |--|------|-----------|-------------|
 |Да| `Billing` | String | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/text/analytics/v2.1` |
 
@@ -79,7 +79,7 @@ ms.locfileid: "60011764"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того,расположение подключения на [главном компьютере](how-tos/text-analytics-how-to-install-containers.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположения подключения к узлу. 
 
-|Необязательно| Name | Тип данных | ОПИСАНИЕ |
+|Необязательно| ИМЯ | Тип данных | ОПИСАНИЕ |
 |-------|------|-----------|-------------|
 |Не разрешено| `Input` | String | Контейнеры API анализа текста не используют этот элемент.|
 |Необязательно| `Output` | String | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|

@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 02/05/2019
 ms.author: rajanaki
 ms.openlocfilehash: e27dee213baf8365c3ad4efc69602f66e2081abe
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58311158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036063"
 ---
 # <a name="service-updates-in-azure-site-recovery"></a>Обновления службы в Azure Site Recovery
 Каждая организация стремится обеспечить безопасное хранение данных, а также выполнение приложений и рабочих нагрузок при запланированных и незапланированных простоях. Azure Site Recovery поддерживает стратегию непрерывности бизнес-процессов и аварийного восстановления (BCDR), сохраняя доступность приложений на виртуальных машинах и физических серверах при сбоях сайта. Site Recovery реплицирует рабочие нагрузки, выполняющиеся на виртуальных машинах и физических серверах, чтобы они были доступны во вторичном расположении, если основной сайт недоступен. Служба восстанавливает рабочие нагрузки на основном сайте, когда его работа возобновляется.

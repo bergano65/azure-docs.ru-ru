@@ -12,11 +12,11 @@ ms.date: 03/28/2019
 ms.author: tulasim
 ms.custom: seodec18
 ms.openlocfilehash: 0f94a1fdc01825b5bf78644f84c72e6b031109c0
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58621980"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61379232"
 ---
 # <a name="best-practices-of-a-qna-maker-knowledge-base"></a>Рекомендации по использованию базы знаний QnA Maker
 Руководства по [жизненному циклу разработки базы знаний](../Concepts/development-lifecycle-knowledge-base.md) помогут полостью управлять базой знаний. Используйте эти рекомендации, чтобы улучшить базу знаний и предоставлять лучшие результаты пользователям приложения или чат-бота.

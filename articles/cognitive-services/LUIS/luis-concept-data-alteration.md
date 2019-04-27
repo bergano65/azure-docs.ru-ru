@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: diberry
 ms.openlocfilehash: c43d3738b23037432ecdfe3aa872950f6a7b863e
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55860598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60812795"
 ---
 # <a name="alter-utterance-data-before-or-during-prediction"></a>Изменение данных высказываний до или во время прогнозирования
 LUIS предоставляет способы управления высказыванием до или во время прогнозирования. К ним относятся исправление орфографических ошибок или ошибок с часовым поясом для предварительно созданной сущности datetimeV2. 
@@ -30,7 +30,7 @@ LUIS предоставляет способы управления высказ
 
 Чтобы исправления орфографических ошибок вступили в силу, конечной точке требуется два параметра.
 
-|Параметр|Значение|
+|Параметр|Value|
 |--|--|
 |`spellCheck`|Логическое|
 |`bing-spell-check-subscription-key`|Ключ конечной точки [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/)|
@@ -58,7 +58,7 @@ API проверки орфографии Bing, используемый в LUIS
 ### <a name="endpoint-querystring-parameter"></a>Параметр QueryString конечной точки
 Часовой пояс исправляется путем добавления часового пояса пользователя к [конечной точке](https://aka.ms/luis-endpoint-apis) с помощью параметра `timezoneOffset`. Чтобы изменить время, значение `timezoneOffset` должно быть положительным или отрицательным числом в минутах.  
 
-|Параметр|Значение|
+|Параметр|Value|
 |--|--|
 |`timezoneOffset`|положительное или отрицательное число в минутах|
 
@@ -90,7 +90,7 @@ DateTime cstDatetime = TimeZoneInfo.ConvertTimeFromUtc(utcDatetime, targetZone);
 int timezoneOffset = (int)((cstDatetime - utcDatetime).TotalMinutes);
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Исправление орфографических ошибок с помощью этого руководства](luis-tutorial-bing-spellcheck.md)

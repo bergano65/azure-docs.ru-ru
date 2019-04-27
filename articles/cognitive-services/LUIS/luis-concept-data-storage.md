@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 03/28/2019
 ms.author: diberry
 ms.openlocfilehash: a1093c2a6303b453a17a52058303913de5ecfa8d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58893203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60812953"
 ---
 # <a name="data-storage-and-removal-in-language-understanding-luis-cognitive-services"></a>Хранение и удаление данных в службе "Распознавание речи" (LUIS) Cognitive Services
 LUIS хранит данные в зашифрованном виде в хранилище данных Azure, соответствующем региону, который указан ключом. Эти данные хранятся в течение 30 дней. 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с RFPIO | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с RFPIO | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и RFPIO.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 06/16/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c6b8109c8d3834f932ba492eddb8d6332acc1707
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57443628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61080999"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rfpio"></a>Руководство по Интеграция Azure Active Directory с RFPIO
 

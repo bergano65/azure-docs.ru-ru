@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
 ms.openlocfilehash: b679f1da0ada3e61fca79cdb985a43dc445877ce
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57975497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61338458"
 ---
 # <a name="interpret-method"></a>Метод интерпретации
 
@@ -29,7 +29,7 @@ ms.locfileid: "57975497"
 
 ## <a name="request-parameters"></a>Параметры запроса
 
-ИМЯ     | Значение | Обязательный?  | ОПИСАНИЕ
+ИМЯ     | Value | Обязательный?  | ОПИСАНИЕ
 ---------|---------|---------|---------
 **query**    | Текстовая строка | Yes | Запрос, введенный пользователем.  Если для параметра complete установлено значение 1, запрос будет интерпретироваться как префикс для создания автозавершения запросов.        
 **model**    | Текстовая строка | Нет   | Имя модели, которую необходимо запросить.  В настоящее время значение по умолчанию соответствует *latest*.        

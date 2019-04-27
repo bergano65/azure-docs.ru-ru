@@ -3,8 +3,8 @@ title: Планирование виртуальных сетей Azure | Док
 description: Узнайте, как планировать виртуальные сети на основе требований к изоляции, подключению и расположению.
 services: virtual-network
 documentationcenter: na
-author: jimdial
-manager: jeconnoc
+author: KumudD
+manager: twooley
 editor: ''
 ms.assetid: 3a4a9aea-7608-4d2e-bb3c-40de2e537200
 ms.service: virtual-network
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/16/2018
-ms.author: jdial
+ms.author: kumud
 ms.openlocfilehash: acd7a88acb31b9d3bd3ba714387561e91b3524a6
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56339522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61034745"
 ---
 # <a name="plan-virtual-networks"></a>Планирование виртуальных сетей
 
@@ -115,6 +115,6 @@ Azure использует [управление доступом на осно�
 
 Политики применяются согласно следующей иерархии: подписка, группа управления и группа ресурсов. Узнайте больше о [политике Azure](../governance/policy/overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или разверните некоторые примеры [шаблона политики](policy-samples.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. дополнительные сведения обо всех задачах, параметрах и вариантах для [виртуальной сети](manage-virtual-network.md), [подсети и конечной точкой службы](virtual-network-manage-subnet.md), [сетевого интерфейса](virtual-network-network-interface.md), [пиринга](virtual-network-manage-peering.md), [группы безопасности сети и приложений](manage-network-security-group.md) или [таблицы маршрутов](manage-route-table.md).

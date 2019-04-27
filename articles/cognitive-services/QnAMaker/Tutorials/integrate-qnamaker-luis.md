@@ -12,11 +12,11 @@ ms.date: 01/30/2019
 ms.author: diberry
 ms.custom: seodec18
 ms.openlocfilehash: fa79f519c8f3eb8baeaab04870f22a1cfefa59ab
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55884330"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61431351"
 ---
 # <a name="use-bot-with-qna-maker-and-luis-to-distribute-your-knowledge-base"></a>Использование бота с QnA Maker и LUIS для распределения базы знаний
 По мере роста базы знаний QnA Maker становится трудно поддерживать ее как единый монолитный набор, поэтому базу знаний необходимо разделить на маленькие логические блоки.
@@ -237,7 +237,7 @@ ms.locfileid: "55884330"
 
 ![тест веб-чата](../media/qnamaker-tutorials-qna-luis/qnamaker-web-chat.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Create a business continuity plan for your QnA Maker service](../How-To/business-continuity-plan.md) (Создание плана по обеспечению непрерывности бизнеса для службы QnA Maker)

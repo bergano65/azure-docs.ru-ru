@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 05/09/2018
 ms.author: slivkins
 ms.openlocfilehash: 2b356e2f0fe9235d49dffa7417cd3894059f9caf
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55867568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60829163"
 ---
 # <a name="call-api-from-a-browser"></a>Вызов API из браузера
 
@@ -66,7 +66,7 @@ $.ajax({
 
 Здесь каждый элемент `<item>` верхнего уровня описывает одну статью. Элемент `<link>` является обязательным и используется Пользовательской службой принятия решений как идентификатор действия. При наличии более 15 статей укажите `<date>` (в стандартном формате RSS). Используются 15 последних статей. Элемент `<title>` необязателен и используется для создания связанных с текстом признаков статьи.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Изучите [руководство](custom-decision-service-tutorial-news.md) с более подробным примером.
 * Обратитесь к справочнику по [API](custom-decision-service-api-reference.md), чтобы получить дополнительные сведения о предоставляемых возможностях.

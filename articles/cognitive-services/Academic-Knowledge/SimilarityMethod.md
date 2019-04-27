@@ -10,12 +10,12 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 01/18/2017
 ms.author: alch
-ms.openlocfilehash: 44930ad0f941ea174d95658f220db7aa95012133
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 7f692c08f8af322bf7e6ab576e2e6f516594a6c4
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55868690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61336523"
 ---
 # <a name="similarity-method"></a>Метод сходства
 
@@ -28,26 +28,34 @@ https://westus.api.cognitive.microsoft.com/academic/v1.0/similarity?
 ```
 
 ## <a name="request-parameters"></a>Параметры запроса
-Параметр        |Тип данных      |Обязательно | ОПИСАНИЕ
+
+Параметр        |Тип данных      |Обязательно для заполнения | ОПИСАНИЕ
 ----------|----------|----------|------------
-**s1**        |Строка   |Yes  |Строка* для сравнения
-**s2**        |Строка   |Yes  |Строка* для сравнения
+**s1**        |String   |Yes  |Строка* для сравнения
+**s2**        |String   |Yes  |Строка* для сравнения
+
 <sub> *Строки для сравнения имеют максимальную длину 1 МБ. </sub>
 <br>
-## <a name="response"></a>Ответ
+
+## <a name="response"></a>Отклик
+
 ИМЯ | ОПИСАНИЕ
 --------|---------
 **SimilarityScore**        |Значение с плавающей запятой, представляющее косинус,подобный s1 и s2, со значениями, близкими к 1.0, означает более похожие и близкие значения к -1.0, что означает меньше
+
 <br>
 
 ## <a name="successerror-conditions"></a>Условия успеха или ошибки
-Состояние HTTP | Причина | Ответ
+
+Состояние HTTP | Причина | Отклик
 -----------|----------|--------
 **200**         |Успешно | Число с плавающей запятой
 **400**         | Ошибочный или недопустимый запрос | Сообщение об ошибке      
 **500**         |Внутренняя ошибка сервера | Сообщение об ошибке
 **Истекло время ожидания**     | Истекло время ожидания для запроса.  | Сообщение об ошибке
+
 <br>
+
 ## <a name="example-calculate-similarity-of-two-partial-abstracts"></a>Пример: рассчитать сходство двух частично выполненных тезисов
 #### <a name="request"></a>Запрос:
 ```

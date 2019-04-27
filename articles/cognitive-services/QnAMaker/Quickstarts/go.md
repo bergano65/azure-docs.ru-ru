@@ -12,11 +12,11 @@ ms.date: 02/13/2019
 ms.author: diberry
 ms.custom: seodec18
 ms.openlocfilehash: f16909a9504b2868c1eecf849b9a1fd537cd6048
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56244264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60913554"
 ---
 # <a name="how-to-use-the-qna-maker-rest-api-with-go"></a>Использование REST API службы QnA Maker с Go 
 <a name="HOLTop"></a>
@@ -38,7 +38,7 @@ ms.locfileid: "56244264"
 - [Получать текущий набор вариантов слов без учета регистра.](#GetAlterations)
 - [Заменять текущий набор вариантов слов без учета регистра.](#PutAlterations)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для запуска этого кода понадобится [Go 1.10.1](https://golang.org/dl/).
 
@@ -1442,7 +1442,7 @@ func main() {
 
 [Вверх](#HOLTop)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [QnA Maker (V4) REST API Reference](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff) (Справочник по API REST QnA Maker (V4))

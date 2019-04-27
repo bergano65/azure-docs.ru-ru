@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 03/26/2016
 ms.author: paulhsu
 ms.openlocfilehash: 26f8d885f8cf85ab849ba221392df206e492aac4
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55860819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60814472"
 ---
 # <a name="semantic-interpretation"></a>Семантическая интерпретация
 
@@ -35,7 +35,7 @@ ms.locfileid: "55860819"
 
 |type|ОПИСАНИЕ|Примеры|
 |----|----|----|
-|Строка|Последовательность, содержащая 0 или более знаков.|"Hello World!"<br/>""|
+|String|Последовательность, содержащая 0 или более знаков.|"Hello World!"<br/>""|
 |Bool|Логическое значение.|Да<br/>false|
 |Int32|32-разрядное целое число со знаком.  –2,1e9…2,1e9|123<br/>–321|
 |Int64|64-разрядное целое число со знаком. -9,2e18 и 9,2e18|9 876 543 210|
@@ -139,7 +139,7 @@ And(Composite(Query("academic#Author.Name", "harry shum"),
 
 Системные переменные предопределены службой и могут использоваться для получения различных статистических данных о текущем состоянии системы.  Ниже приведен набор поддерживаемых системных переменных.
 
-|ИМЯ|type|ОПИСАНИЕ|
+|ИМЯ|Тип|ОПИСАНИЕ|
 |----|----|----|
 |IsAtEndOfQuery|Bool|Имеет значение true, если достигнут конец входного запроса для текущего поиска интерпретаций.|
 |IsBeyondEndOfQuery|Bool|Имеет значение true, если для текущего поиска интерпретаций предложены варианты завершения, выходящие за пределы текста входного запроса.|

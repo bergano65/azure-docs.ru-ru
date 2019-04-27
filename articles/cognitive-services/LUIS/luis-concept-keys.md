@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 01/18/2019
 ms.author: diberry
 ms.openlocfilehash: 1f5aab607c5046df0dee4db5caf36b0b7de53c4d
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57998743"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60813934"
 ---
 # <a name="authoring-and-query-prediction-endpoint-keys-in-luis"></a>Ключи разработки и запрашивания конечной точки прогнозирования в LUIS
 В LUIS используются два ключа: [разработки](#programmatic-key) и [конечных точек](#endpoint-key). Ключ разработки формируется автоматически при создании учетной записи LUIS. Когда вы будете готовы опубликовать свое приложение LUIS, потребуется [создать ключ конечной точки](luis-how-to-azure-subscription.md), [назначить его](luis-how-to-azure-subscription.md) приложению LUIS и [использовать его в запросе к конечной точке](#use-endpoint-key-in-query). 

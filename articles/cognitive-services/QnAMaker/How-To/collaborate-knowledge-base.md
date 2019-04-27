@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 01/14/2019
 ms.author: tulasim
 ms.openlocfilehash: ca754f197a46fc41b6f1b432611a2177ec0afafa
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55857045"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61374860"
 ---
 # <a name="collaborate-on-your-knowledge-base"></a>Совместная работа с базой знаний
 
@@ -47,7 +47,7 @@ QnA Maker позволяет нескольким пользователям с�
 
 Помните, что доступ к конкретной базе знаний в службе QnA Maker предоставить невозможно. Если требуется более детальное управление доступом, рекомендуем распределить базы знаний по разным службам QnA Maker.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Тестирование базы знаний](./test-knowledge-base.md)

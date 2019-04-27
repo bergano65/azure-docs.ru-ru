@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Tangoe Command Premium Mobile | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Tangoe Command Premium Mobile | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Tangoe Command Premium Mobile.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 07/20/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8c9f410fa890df7aac3c3bf4d89468b92e69ba38
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56883238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60869389"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-tangoe-command-premium-mobile"></a>Руководство. Интеграция Azure Active Directory с Tangoe Command Premium Mobile
+# <a name="tutorial-azure-active-directory-integration-with-tangoe-command-premium-mobile"></a>Руководство по Интеграция Azure Active Directory с Tangoe Command Premium Mobile
 
 В этом учебнике описано, как интегрировать Tangoe Command Premium Mobile с Azure Active Directory (Azure AD).
 

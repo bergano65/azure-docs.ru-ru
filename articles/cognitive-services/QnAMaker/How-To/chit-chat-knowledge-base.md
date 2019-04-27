@@ -12,11 +12,11 @@ ms.date: 01/14/2019
 ms.author: tulasim
 ms.custom: seodec18
 ms.openlocfilehash: d40330f257694e81704bf6fffa1fd2df8ed86c06
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55858048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61376116"
 ---
 # <a name="add-chit-chat-to-a-knowledge-base"></a>Добавление беседы в базу знаний
 
@@ -24,7 +24,8 @@ ms.locfileid: "55858048"
 
 Этот набор данных содержит около 100 сценариев бесед в трех тонах: профессионала, друга и комика. Выберите персонажа, тон которого больше всего напоминает тон бота. QnA Maker получает пользовательский запрос и пытается сопоставить его с наиболее близкой по теме беседой в разделе "Вопросы и ответы". 
 
-Некоторые примеры разных персонажей: <!-- added quotes so acrolinx doesn't score these sentences -->.
+Некоторые примеры различных особенностей:
+<!-- added quotes so acrolinx doesn't score these sentences -->
 |Пользовательский запрос|Профессионал|Друг|Комик|
 |--|--|--|--|
 |`You are awesome`|`I aim to serve.`|`That's so nice of you!`|`Flattery. I like it.`|
@@ -61,7 +62,7 @@ ms.locfileid: "55858048"
 
 ![Удаление беседы из базы знаний](../media/qnamaker-how-to-chit-chat/delete-chit-chat.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Импорт базы знаний](../Tutorials/migrate-knowledge-base.md)

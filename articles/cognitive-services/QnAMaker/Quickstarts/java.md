@@ -12,11 +12,11 @@ ms.date: 02/13/2019
 ms.author: diberry
 ms.custom: seodec18
 ms.openlocfilehash: 0e91aefb800eba42b715cb70d42ce09ad134fabb
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56243812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60912469"
 ---
 # <a name="how-to-use-the-qna-maker-rest-api-with-java"></a>Использование REST API службы QnA Maker с Java 
 <a name="HOLTop"></a>
@@ -40,7 +40,7 @@ ms.locfileid: "56243812"
 
 [!INCLUDE [Code is available in Azure-Samples GitHub repo](../../../../includes/cognitive-services-qnamaker-java-repo-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для компиляции и запуска этого кода вам потребуется [пакет JDK 7 или 8](https://aka.ms/azure-jdks). При желании можно воспользоваться интегрированной средой разработки Java, но и обычного текстового редактора будет достаточно.
 
@@ -2128,7 +2128,7 @@ public class PutAlterations {
 
 [Вверх](#HOLTop)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [QnA Maker (V4) REST API Reference](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff) (Справочник по API REST QnA Maker (V4))

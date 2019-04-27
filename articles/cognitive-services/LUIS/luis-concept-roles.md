@@ -12,15 +12,15 @@ ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: diberry
 ms.openlocfilehash: 5fa922cb91d34483256faf4dcf70569aa2f17b97
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59522492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60813825"
 ---
 # <a name="entity-roles-for-contextual-subtypes"></a>Сущности роли для контекстных подтипы
 
-Роли дают сущностей иметь именованные подтипы. Роли можно использовать с любым типом готовых или настраиваемых сущностей и используемые в примере фразы и шаблоны. 
+Роли дают сущностей иметь именованные подтипы. Роли можно использовать с любым предварительно созданным или настраиваемым типом сущности. Они используются в примерах речевых фрагментов и шаблонов. 
 
 <a name="example-role-for-entities"></a>
 <a name="roles-with-prebuilt-entities"></a>
@@ -37,8 +37,8 @@ buy a ticket from New York to London
 
 |Тип сущности|Имя сущности|Роль|Назначение|
 |--|--|--|--|
-|Простая|Расположение|origin|откуда вылетает самолет|
-|Простая|Расположение|ресурс destination|куда прилетает самолет|
+|Простая|Location|origin|откуда вылетает самолет|
+|Простая|Location|ресурс destination|куда прилетает самолет|
 
 ## <a name="non-machine-learned-entity-example-of-roles"></a>Пример сущности без машин узнали ролей
 
@@ -48,7 +48,7 @@ buy a ticket from New York to London
 Schedule the meeting from 8 to 9
 ```
 
-|Тип сущности|Имя роли|Значение|
+|Тип сущности|Имя роли|Value|
 |--|--|--|
 |Предварительно созданная сущность datetimeV2|время начала|8|
 |Предварительно созданная сущность datetimeV2|время окончания|9|
