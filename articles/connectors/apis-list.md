@@ -9,12 +9,12 @@ ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.topic: article
 ms.date: 08/23/2018
-ms.openlocfilehash: 59c8effb4c5feae99755b7937f4796e8f11fde46
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 221bcbfb2517efae41005641321a651dfdf8e39f
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58895889"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63759444"
 ---
 # <a name="connectors-for-azure-logic-apps"></a>Соединители для Azure Logic Apps
 
@@ -117,7 +117,7 @@ ms.locfileid: "58895889"
 
 |   |   |   |   | 
 |---|---|---|---| 
-| [![Значок API][as2-icon]<br/>**Декодирование</br>AS2**][as2-decode-doc] | [![Значок API][as2-icon]<br/>**Кодирование</br>AS2**][as2-encode-doc] | [![Значок API][edifact-icon]<br/>**Декодирование</br>EDIFACT**][edifact-decode-doc] | [![Значок API][edifact-icon]<br/>**Кодирование</br>EDIFACT**][edifact-encode-doc] | 
+| [![Значок API][as2-icon]<br/>**Декодирование</br>AS2**][as2-doc] | [![Значок API][as2-icon]<br/>**Кодирование</br>AS2**][as2-doc] | [![Значок API][edifact-icon]<br/>**Декодирование</br>EDIFACT**][edifact-decode-doc] | [![Значок API][edifact-icon]<br/>**Кодирование</br>EDIFACT**][edifact-encode-doc] | 
 | [![Значок API][flat-file-decode-icon]<br/>**Декодирование</br>неструктурированного файла**][flat-file-decode-doc] | [![Значок API][flat-file-encode-icon]<br/>**Кодирование</br>неструктурированного файла**][flat-file-encode-doc] | [![Значок API][integration-account-icon]<br/>**Учетная запись<br/>интеграции**][integration-account-doc] | [![Значок API][liquid-icon]<br/>**Преобразование**</br>**Liquid**][json-liquid-transform-doc] | 
 | [![Значок API][x12-icon]<br/>**Декодирование</br>Х12**][x12-decode-doc] | [![Значок API][x12-icon]<br/>**Кодирование</br>Х12**][x12-encode-doc] | [![Значок API][xml-transform-icon]<br/>**Преобразование**</br>**XML**][xml-transform-doc] | [![Значок API][xml-validate-icon]<br/>**Проверка<br/>XML**][xml-validate-doc] |  
 ||||| 
@@ -257,8 +257,6 @@ ms.locfileid: "58895889"
 
 <!--Enterprise Intregation Pack doc links-->
 [as2-doc]: ../logic-apps/logic-apps-enterprise-integration-as2.md "Дополнительные сведения об AS2 в рамках корпоративной интеграции."
-[as2-decode-doc]: ../logic-apps/logic-apps-enterprise-integration-as2-decode.md "Дополнительные сведения о декодировании AS2 в рамках корпоративной интеграции."
-[as2-encode-doc]:../logic-apps/logic-apps-enterprise-integration-as2-encode.md "Дополнительные сведения о кодировке AS2 в рамках корпоративной интеграции."
 [edifact-decode-doc]: ../logic-apps/logic-apps-enterprise-integration-EDIFACT-decode.md "Дополнительные сведения о декодировании EDIFACT в рамках корпоративной интеграции."
 [edifact-encode-doc]: ../logic-apps/logic-apps-enterprise-integration-EDIFACT-encode.md "Дополнительные сведения о кодировке EDIFACT в рамках корпоративной интеграции."
 [flat-file-decode-doc]:../logic-apps/logic-apps-enterprise-integration-flatfile.md "Дополнительные сведения о неструктурированном файле в рамках корпоративной интеграции."

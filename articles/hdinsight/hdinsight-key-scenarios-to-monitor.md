@@ -1,7 +1,6 @@
 ---
 title: Мониторинг производительности кластера в Azure HDInsight
 description: Описывается, как отслеживать кластер HDInsight для обеспечения необходимой емкости и производительности.
-services: hdinsight
 author: maxluk
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: arindamc
-ms.openlocfilehash: 83cbb2a54ed712f8aa5084408ab852432470b73c
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
+ms.openlocfilehash: 22484885663a4f9a908ae988882b87612129251a
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53742479"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63763776"
 ---
 # <a name="monitor-cluster-performance"></a>Мониторинг производительности кластера
 
@@ -83,7 +82,7 @@ YARN позволяет выделять ресурсы для этих очер
 * [Рекомендации по настройке производительности для MapReduce в HDInsight и Azure Data Lake Storage](../data-lake-store/data-lake-store-performance-tuning-mapreduce.md)
 * [Рекомендации по настройке производительности для Storm в HDInsight и Azure Data Lake Storage](../data-lake-store/data-lake-store-performance-tuning-storm.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перейдите по следующим ссылкам, чтобы получить дополнительные сведения об устранении неполадок и мониторинге кластеров:
 

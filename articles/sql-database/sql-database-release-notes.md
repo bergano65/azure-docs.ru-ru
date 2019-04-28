@@ -8,14 +8,14 @@ ms.service: sql-database
 ms.subservice: service
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/10/2019
+ms.date: 04/23/2019
 ms.author: carlrab
-ms.openlocfilehash: 9b961436c81282381f963d16c6c6dd5f289d1259
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: e6d702c7a3194f07f9d04139acbc9b6101b296ea
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59495111"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63759453"
 ---
 # <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 
@@ -45,6 +45,22 @@ ms.locfileid: "59495111"
 |Аналитика SQL|Сведения см. в разделе [аналитика SQL Azure](../azure-monitor/insights/azure-sql.md)|
 | Поддержку часовых поясов для управляемых экземпляров|Дополнительные сведения см. в разделе [часовой пояс в базе данных управляемого экземпляра SQL Azure](sql-database-managed-instance-timezone.md)|
 |||
+
+## <a name="april-2019"></a>Апреля 2019 г.
+
+### <a name="service-improvements"></a>Улучшения службы
+
+| Улучшения службы | Сведения |
+| --- | --- |
+| Общедоступные конечные точки для управляемого экземпляра | Дополнительные сведения см. в разделе [с помощью базы данных SQL управляемого экземпляра безопасно с общедоступной конечной точки](sql-database-managed-instance-public-endpoint-securely.md)
+| Поддержку часовых поясов для управляемого экземпляра | Дополнительные сведения см. в разделе [часовой пояс в базе данных управляемого экземпляра SQL Azure (Предварительная версия)](sql-database-managed-instance-timezone.md)
+
+### <a name="documentation-improvements"></a>Улучшения документации
+
+| Улучшения документации | Сведения |
+| --- | --- |
+| Общедоступные конечные точки для управляемого экземпляра | Дополнительные сведения см. в разделе [с помощью базы данных SQL управляемого экземпляра безопасно с общедоступной конечной точки](sql-database-managed-instance-public-endpoint-securely.md)
+| Поддержку часовых поясов для управляемого экземпляра | Дополнительные сведения см. в разделе [часовой пояс в базе данных управляемого экземпляра SQL Azure (Предварительная версия)](sql-database-managed-instance-timezone.md)
 
 ## <a name="march-2019"></a>Марта 2019 г.
 

@@ -7,18 +7,20 @@ ms.service: container-service
 ms.topic: article
 ms.date: 04/16/2019
 ms.author: iainfou
-ms.openlocfilehash: 86b9609d5141798be40f53aab8b18897484bbef8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c403d809aa1fc6cdbb0555eef414f79b02ab5a8a
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60467584"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63764125"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli"></a>Интеграция Azure Active Directory со службой Azure Kubernetes с помощью Azure CLI
 
 Службу Azure Kubernetes (AKS) можно настроить на использование Azure Active Directory (AD) для проверки подлинности пользователей. В этой конфигурации вы можете войти в кластер AKS с помощью маркера проверки подлинности Azure AD. Операторы кластера можно также настроить на основе участия пользователя удостоверения или directory группе управления Kubernetes доступа на основе ролей (RBAC).
 
 В этой статье показано, как создать необходимые компоненты Azure AD, затем развертывание Azure AD с поддержкой кластера и создать базовый роль RBAC в кластере AKS. Вы также можете [выполните следующие действия, с помощью портала Azure][azure-ad-portal].
+
+Полный пример сценария, используемом в этой статье, см. в разделе [примеры Azure CLI - AKS интеграции с Azure AD][complete-script].
 
 Действительны следующие ограничения.
 

@@ -1,19 +1,18 @@
 ---
 title: Устранение неполадок с HDFS в Azure HDInsight
 description: Получите ответы на распространенные вопросы о работе с HDFS и Azure HDInsight.
-services: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: fca763d04cc8cbf22d1578b18d504ec3ce9656d9
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
+ms.openlocfilehash: 0a310eaeb9baf6ed2438b9f824cd6ad7eb492915
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53993031"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63764004"
 ---
 # <a name="troubleshoot-apache-hadoop-hdfs-by-using-azure-hdinsight"></a>Устранение неполадок рабочих нагрузок Apache Hadoop HDFS с помощью Azure HDInsight
 

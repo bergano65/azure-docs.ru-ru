@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: 7422d2d5-b1c7-4a11-8c9b-0d8cfa463164
 ms.date: 01/31/2017
-ms.openlocfilehash: 6665ea8bc4016c9d64005f9c742115cf785ed5ba
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: f06e213dbae31c9d7c4e212d605cc962aba71d2d
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57842147"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766533"
 ---
 # <a name="exchange-x12-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Обмен сообщениями X12 для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
@@ -53,11 +53,11 @@ ms.locfileid: "57842147"
 4. Выберите **Обзор**, а затем щелкните плитку **Соглашения**. 
    Если плитка "Соглашения" отсутствует, добавьте ее. 
 
-   ![Выбор плитки "Соглашения"](./media/logic-apps-enterprise-integration-as2/agreement-1.png)
+   ![Выбор плитки "Соглашения"](./media/logic-apps-enterprise-integration-x12/agreement-1.png)
 
 5. В разделе **Соглашения** щелкните **Добавить**.
 
-   ![Кнопка "Добавить"](./media/logic-apps-enterprise-integration-as2/agreement-2.png)     
+   ![Кнопка "Добавить"](./media/logic-apps-enterprise-integration-x12/agreement-2.png)     
 
 6. В колонке **Добавить** введите **имя** соглашения. 
    Для типа соглашения выберите **X12**. 
@@ -122,7 +122,7 @@ ms.locfileid: "57842147"
 
 | Свойство | ОПИСАНИЕ |
 | --- | --- |
-| Version (версия) |Выберите версию X12. |
+| Version |Выберите версию X12. |
 | Transaction Type (ST01) (Тип транзакции (ST01)) |Выберите тип транзакции. |
 | Sender Application (GS02) (Приложение отправителя (GS02)) |Выберите приложение отправителя. |
 | Схема |Выберите файл схемы для использования. Схемы добавляются в учетную запись интеграции. |
@@ -216,7 +216,7 @@ ms.locfileid: "57842147"
 
 | Свойство | ОПИСАНИЕ |
 | --- | --- |
-| Version (версия) |Выберите версию X12. |
+| Version |Выберите версию X12. |
 | Transaction Type (ST01) (Тип транзакции (ST01)) |Выберите тип транзакции. |
 | Схема |Выберите схему для использования. Схемы находятся в вашей учетной записи интеграции. Если вы сначала выберете схему, будут автоматически настроены версия и тип транзакции.  |
 

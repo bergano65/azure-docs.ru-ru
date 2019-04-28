@@ -9,12 +9,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 02/28/2019
 ms.author: ellacroi
-ms.openlocfilehash: 5a07ea4d1d27dcc054d64cb4ce8893a13adc4aad
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 394ec230b836d55e4ce29a444566221c14efe296
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60007667"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63762798"
 ---
 # <a name="geographic-availability-and-currency-support"></a>Географическая доступность и поддержка валюты
 
@@ -117,7 +117,7 @@ ms.locfileid: "60007667"
 | Норвегия                              | НЕТ        | NOK          |
 | Оман                                | OM        | USD          |
 | Пакистан                            | PK        | USD          |
-| Палестинская                           | PS        | USD          |
+| Палестинская Автономия               | PS        | USD          |
 | Панама                              | PA        | USD          |
 | Парагвай                            | PY        | USD          |
 | Перу                                | PE        | USD          |
@@ -154,7 +154,7 @@ ms.locfileid: "60007667"
 | Уганда                              | UG        | USD          |
 | Украина                             | UA        | USD          |
 | Объединенные Арабские Эмираты                | AE        | USD          |
-| Великобритания                      | GB        | GBP          |
+| Соединенное королевство                      | GB        | GBP          |
 | США                       | США        | USD          |
 | Уругвай                             | UY        | USD          |
 | Узбекистан                          | UZ        | USD          |

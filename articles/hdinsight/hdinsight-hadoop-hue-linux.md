@@ -2,7 +2,6 @@
 title: Использование Hue с Hadoop в кластерах HDInsight на платформе Linux в Azure
 description: Узнайте, как установить Hue на кластер HDInsight и задействовать туннелирование для направления запросов на Hue. Используйте Hue для просмотра хранилища и выполнения Hive или Pig.
 keywords: hue hadoop
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -10,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 12/11/2017
 ms.author: hrasheed
-ms.openlocfilehash: 9a5a3e7354d3d89a53e94553ed504df7c8117922
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
-ms.translationtype: MT
+ms.openlocfilehash: b0354803a117e8e2c2382ae888bde94a502f24c6
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58315000"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63760621"
 ---
 # <a name="install-and-use-hue-on-hdinsight-hadoop-clusters"></a>Установка и использование Hue на кластерах HDInsight Hadoop
 

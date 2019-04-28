@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 09/21/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 871eb1663d6cba550f1403215b1d3ce5fe8278d3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1851e9b2bb5ff86583228136dee977001cf0a3fd
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60444944"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63763487"
 ---
 # <a name="cloud-tiering-overview"></a>Общие сведения о распределении по уровням в облаке
 Распределение по уровням в облаке — дополнительная функция Синхронизации файлов Azure, в которой часто используемые файлы кэшируются локально на сервере, а все другие файлы распределяются по уровням в файлах Azure на основе параметров политики. При распределении файла фильтр файловой системы службы синхронизации файлов Azure (StorageSync.sys) локально заменяет файл указателем или точкой повторного анализа. Точка повторного анализа представляет URL-адрес к файлу в службе "Файлы Azure". Распределенный по уровням файл имеет автономный атрибут и набор атрибутов FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS в NTFS, чтобы сторонние приложения могли идентифицировать такие файлы.

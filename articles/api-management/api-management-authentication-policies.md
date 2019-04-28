@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/27/2017
 ms.author: apimpm
-ms.openlocfilehash: 9ee4a9fb5c63061eed32389b5672652aad01208a
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: c0f8da779ca656cf357c418b8766a53307643695
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59994955"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63764332"
 ---
 # <a name="api-management-authentication-policies"></a>Политики аутентификации в службе управления API
 В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](https://go.microsoft.com/fwlink/?LinkID=398186).  
@@ -49,13 +49,13 @@ ms.locfileid: "59994955"
   
 ### <a name="elements"></a>Элементы  
   
-|Name|ОПИСАНИЕ|Обязательно для заполнения|  
+|ИМЯ|ОПИСАНИЕ|Обязательно для заполнения|  
 |----------|-----------------|--------------|  
 |authentication-basic|Корневой элемент.|Yes|  
   
 ### <a name="attributes"></a>Атрибуты  
   
-|Name|ОПИСАНИЕ|Обязательно для заполнения|значение по умолчанию|  
+|ИМЯ|ОПИСАНИЕ|Обязательно для заполнения|значение по умолчанию|  
 |----------|-----------------|--------------|-------------|  
 |Имя пользователя|Задает имя пользователя для обычных учетных данных.|Yes|Н/Д|  
 |password|Задает пароль для обычных учетных данных.|Yes|Н/Д|  
@@ -73,26 +73,32 @@ ms.locfileid: "59994955"
 ### <a name="policy-statement"></a>Правило политики  
   
 ```xml  
-<authentication-certificate thumbprint="thumbprint" />  
+<authentication-certificate thumbprint="thumbprint" certificate-id="resource name"/>  
 ```  
   
-### <a name="example"></a>Пример  
+### <a name="examples"></a>Примеры  
   
+В этом примере клиент сертификат идентифицируется по его отпечатку.
 ```xml  
-<authentication-certificate thumbprint="....." />  
+<authentication-certificate thumbprint="CA06F56B258B7A0D4F2B05470939478651151984" />  
+``` 
+В этом примере сертификат клиента идентифицируется по имени ресурса.
+```xml  
+<authentication-certificate certificate-id="544fe9ddf3b8f30fb490d90f" />  
 ```  
-  
+
 ### <a name="elements"></a>Элементы  
   
-|Name|ОПИСАНИЕ|Обязательно для заполнения|  
+|ИМЯ|ОПИСАНИЕ|Обязательно для заполнения|  
 |----------|-----------------|--------------|  
 |authentication-certificate|Корневой элемент.|Yes|  
   
 ### <a name="attributes"></a>Атрибуты  
   
-|Name|ОПИСАНИЕ|Обязательно для заполнения|значение по умолчанию|  
+|ИМЯ|ОПИСАНИЕ|Обязательно для заполнения|значение по умолчанию|  
 |----------|-----------------|--------------|-------------|  
-|thumbprint|Отпечаток для сертификата клиента.|Yes|Н/Д|  
+|thumbprint|Отпечаток для сертификата клиента.|Либо `thumbprint` или `certificate-id` должен присутствовать.|Н/Д|  
+|Идентификатор сертификата|Имя ресурса сертификата.|Либо `thumbprint` или `certificate-id` должен присутствовать.|Н/Д|  
   
 ### <a name="usage"></a>Использование  
  Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
@@ -118,13 +124,13 @@ ms.locfileid: "59994955"
   
 ### <a name="elements"></a>Элементы  
   
-|Name|ОПИСАНИЕ|Обязательно для заполнения|  
+|ИМЯ|ОПИСАНИЕ|Обязательно для заполнения|  
 |----------|-----------------|--------------|  
 |управляемое удостоверение проверки подлинности |Корневой элемент.|Yes|  
   
 ### <a name="attributes"></a>Атрибуты  
   
-|Name|ОПИСАНИЕ|Обязательно для заполнения|значение по умолчанию|  
+|ИМЯ|ОПИСАНИЕ|Обязательно для заполнения|значение по умолчанию|  
 |----------|-----------------|--------------|-------------|  
 |resource|Строка. URI идентификатора приложения целевого веб-API (защищенный ресурс) в Azure Active Directory.|Yes|Н/Д|  
 |выходные данные — токен variable-name|Строка. Имя переменной контекста, который будет получать значение маркера в качестве типа объекта `string`.|Нет |Н/Д|  

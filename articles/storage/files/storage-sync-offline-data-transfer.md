@@ -2,18 +2,18 @@
 title: Перенос данных в службу синхронизации файлов Azure с помощью Azure Data Box, а также другие методы
 description: Перенесите данные массового способом, который совместим со службой синхронизации файлов Azure.
 services: storage
-author: fauhse
+author: roygara
 ms.service: storage
 ms.topic: article
 ms.date: 02/12/2019
-ms.author: fauhse
+ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 04b13c1e511f54c1fcf7b632d3a368fde16bf319
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.openlocfilehash: d1ec5168b898d0aa75c12e6eb435e20c09de1929
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59549043"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63759367"
 ---
 # <a name="migrate-bulk-data-to-azure-file-sync"></a>Перенос массовых данных в службу синхронизации файлов Azure
 Службы синхронизации файлов Azure можно перенести массовых данных двумя способами:

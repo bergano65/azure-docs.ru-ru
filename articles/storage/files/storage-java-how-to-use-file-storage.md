@@ -2,19 +2,19 @@
 title: Разработка для файлов Azure с использованием языка Java | Документы Майкрософт
 description: Узнайте, как разрабатывать приложения и службы Java, использующие файлы Azure для хранения файлов данных.
 services: storage
-author: wmgries
+author: roygara
 ms.service: storage
 ms.devlang: Java
 ms.topic: article
 ms.date: 09/19/2017
-ms.author: renash
+ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 62a771b831c88f73df91c50f34ba6de0d95b832e
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
+ms.openlocfilehash: 238e5971e79b192e0ef422dcd452859ff7566580
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55453099"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63763482"
 ---
 # <a name="develop-for-azure-files-with-java"></a>Разработка для файлов Azure с использованием языка Java
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -223,13 +223,13 @@ if ( file.deleteIfExists() ) {
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Если вы хотите узнать больше о других API-интерфейсах Azure, пожалуйста перейдите по следующим ссылкам.
 
 * [Azure for Java developers](/java/azure) (Azure для разработчиков Java)
 * [Пакет SDK для службы хранилища Azure для Java](https://github.com/azure/azure-storage-java)
 * [Microsoft Azure Storage SDK for Android](https://github.com/azure/azure-storage-android)
-* [Справочник по пакету SDK для клиента хранилища Azure](http://dl.windowsazure.com/storage/javadoc/)
+* [справочнике по пакету SDK для клиента службы хранилища Azure](http://dl.windowsazure.com/storage/javadoc/)
 * [API-интерфейс REST служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355.aspx)
 * [Блог рабочей группы службы хранилища Azure](https://blogs.msdn.com/b/windowsazurestorage/)
 * [Приступая к работе со служебной программой командной строки AzCopy](../common/storage-use-azcopy.md)

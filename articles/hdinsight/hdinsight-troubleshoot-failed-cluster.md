@@ -1,7 +1,6 @@
 ---
 title: Устранение задержки в работе или сбоя кластера в Azure HDInsight
 description: Диагностика и устранение задержки работы или сбоя кластера HDInsight.
-services: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -9,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/19/2019
-ms.openlocfilehash: 685731aee9396efbfa9f7bb554ec7ce20270935f
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
-ms.translationtype: MT
+ms.openlocfilehash: 785eac065e10c64b99839ab8667e9b613f62aeb9
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58314745"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63764041"
 ---
 # <a name="troubleshoot-a-slow-or-failing-hdinsight-cluster"></a>Устранение задержки работы или сбоя кластера HDInsight
 
@@ -77,7 +76,7 @@ az hdinsight show --resource-group <ResourceGroup> --name <ClusterName>
 * Проверьте наличие ограничений использования службы Azure. 
 * Проверьте конфигурацию подсети виртуальной сети Azure.  
 
-### <a name="view-cluster-configuration-settings-with-the-ambari-ui"></a>Просмотр параметров конфигурации кластера в пользовательском интерфейсе Ambari
+### <a name="view-cluster-configuration-settings-with-the-ambari-ui"></a>Просмотр параметров конфигурации кластера с помощью пользовательского интерфейса Ambari
 
 Apache Ambari обеспечивает управление и мониторинг кластера HDInsight с помощью веб-интерфейса и REST API. Ambari есть в кластерах HDInsight на основе Linux. Выберите область **Панель мониторинга кластера** на странице HDInsight на портале Azure.  Выберите область **Панель мониторинга кластера HDInsight**, чтобы открыть пользовательский интерфейс Ambari, и введите учетные данные для входа на кластер.  
 
@@ -263,7 +262,7 @@ Templeton вызывает YARN для выполнения заданий, а �
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md)
-* [Устранение неполадок при помощи Azure HDInsight](hdinsight-debug-jobs.md)
+* [Анализ журналов HDInsight](hdinsight-debug-jobs.md)
 * [Доступ входа приложения Apache Hadoop YARN в HDInsight под управлением Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md)
 * [Включение дампов кучи для служб Apache Hadoop в HDInsight под управлением Linux](hdinsight-hadoop-collect-debug-heap-dump-linux.md)
 * [Известные проблемы в работе кластера Apache Spark в HDInsight](hdinsight-apache-spark-known-issues.md)

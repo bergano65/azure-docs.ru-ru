@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/13/2018
+ms.date: 03/25/2019
 ms.author: b-juche
-ms.openlocfilehash: 1cac267be026d0e472db9a7a321f5fff6ab3e917
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
-ms.translationtype: MT
+ms.openlocfilehash: fd8e380ad68b86b9ffd0f1e40efde8bdadfb19c5
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58434778"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63763311"
 ---
 # <a name="delegate-a-subnet-to-azure-netapp-files"></a>Делегирование подсети в Azure NetApp Files 
 
@@ -30,7 +30,7 @@ ms.locfileid: "58434778"
 * В каждой виртуальной сети Azure можно делегировать только одну подсеть для Azure NetApp Files.
 * В делегированной подсети невозможно назначить группу безопасности сети или конечную точку службы. Попытка к сбою делегирования подсети.
 * Доступ к тому из глобально пиринговой виртуальной сети в настоящее время не поддерживается.
-* Создание [пользовательские настраиваемые маршруты](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#custom-routes) в подсетях виртуальной Машины с адресом префикс (назначение) в подсети, делегировать NetApp службы файлов Azure не поддерживается и влияет на связи с виртуальными Машинами.
+* Создание [пользовательские настраиваемые маршруты](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#custom-routes) в подсетях виртуальной Машины с адресом префикс (назначение) в подсети, делегировать NetApp службы файлов Azure не поддерживается. Это повлияет на подключение виртуальной Машины.
 
 ## <a name="steps"></a>Действия 
 1.  Перейдите к колонке **Виртуальные сети** на портале Azure и выберите виртуальную сеть, которую нужно использовать для Azure NetApp Files.    

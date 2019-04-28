@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 01/28/2019
+ms.date: 04/22/2019
 ms.author: juliako
-ms.openlocfilehash: 30cd77799837f9b1ef08a9c609e518fd679b9b15
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 393b87aeed759950b946ccb45a008da9af4b7ebe
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60322307"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766845"
 ---
 # <a name="live-event-latency-in-media-services"></a>Задержка события потоковой трансляции в Службах мультимедиа
 
@@ -27,7 +27,7 @@ ms.locfileid: "60322307"
 Чтобы использовать новую функцию **LowLatency**, настройте для параметра **StreamOptionsFlag** значение **LowLatency** в **LiveEvent**. При создании [LiveOutput](https://docs.microsoft.com/rest/api/media/liveoutputs) для воспроизведения HLS задайте для [LiveOutput.Hls.fragmentsPerTsSegment](https://docs.microsoft.com/rest/api/media/liveoutputs/create#hls) значение 1. Когда поток запущен и работает, можно использовать демонстрационную страницу [проигрывателя мультимедиа Azure](https://ampdemo.azureedge.net/) (AMP) и установить параметры воспроизведения так, чтобы использовался профиль Low Latency Heuristics Profile (Эвристический профиль малой задержки).
 
 > [!NOTE]
-> В настоящее время Low Latency Heuristic Profile в проигрывателе мультимедиа Azure предназначен для воспроизведения потоков в протоколе DASH или HLS с CMAF. Если ваше решение предназначено для устройств MacOS или iOS и используется HLS с транспортным потоком (например, `format=m3u8-aapl` или `format=m3u8-aapl-v3`), не следует использовать этот параметр, так как в этом случае AMP напрямую использует собственный проигрыватель, предоставленный ОС.
+> В настоящее время LowLatency HeuristicProfile в проигрывателе мультимедиа Azure предназначен для воспроизведения потоков в протоколе MPEG-DASH, CSF или CMAF формате (например, `format=mdp-time-csf` или `format=mdp-time-cmaf`). 
 
 В следующем примере .NET показано, как задать **LowLatency** в **LiveEvent**:
 

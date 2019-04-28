@@ -1,7 +1,6 @@
 ---
 title: Использование SSH c Hadoop в Azure HDInsight
 description: Вы можете получить доступ к HDInsight с помощью Secure Shell (SSH). Этот документ содержит сведения о подключении к HDInsight из клиентов Windows, Linux, Unix или macOS с помощью команд SSH и SCP.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 keywords: команды hadoop в linux, команды linux hadoop, hadoop на платформе macos, ssh hadoop, кластер ssh hadoop
@@ -10,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: ffae3e8c23a30e683db85ad6745ab30cfee93f2e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: cc60a8ca0e0b04a5fcec5300fbeb1a0f34d1c7b4
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59283997"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766495"
 ---
 # <a name="connect-to-hdinsight-apache-hadoop-using-ssh"></a>Подключение к HDInsight (Apache Hadoop) с помощью SSH
 

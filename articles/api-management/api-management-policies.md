@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: 7f1352b018fe9ea46b0f0824ba53ee0204c7dc7c
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 711f6395959b3718ca0a094a03c07c4381892104
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60005525"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63762856"
 ---
 # <a name="api-management-policies"></a>Политики управления API
 В этом разделе рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](api-management-howto-policies.md).  
@@ -53,7 +53,7 @@ ms.locfileid: "60005525"
 -   [Политики аутентификации](api-management-authentication-policies.md#AuthenticationPolicies)  
     -   [Обычная проверка подлинности](api-management-authentication-policies.md#Basic) – обычная проверка подлинности внутренней службы.  
     -   [Аутентификация с помощью сертификата клиента](api-management-authentication-policies.md#ClientCertificate) – аутентификация внутренней службы с помощью сертификатов клиентов.  
-    -   [Проверка подлинности с помощью управляемого удостоверения](api-management-authentication-policies.md#ManagedIdentity) -проверка подлинности с помощью серверной службы с помощью сертификатов клиента.  
+    -   [Проверка подлинности с помощью управляемого удостоверения](api-management-authentication-policies.md#ManagedIdentity) -проверка подлинности с помощью серверной службы с помощью [управляемого удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).  
 -   [Политики кэширования](api-management-caching-policies.md#CachingPolicies)  
     -   [Получение из кэша](api-management-caching-policies.md#GetFromCache) – выполнение операции поиска в кэше и возврат допустимого кэшированного ответа при его наличии.  
     -   [Сохранение в кэше](api-management-caching-policies.md#StoreToCache) – помещение в кэш ответа в соответствии с заданной конфигурацией управления кэшем.  

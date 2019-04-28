@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: alkohli
-ms.openlocfilehash: 522dddde4994bb019e6547fcd18465b201f048d8
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
-ms.translationtype: MT
+ms.openlocfilehash: c2803ba598895834bb197f4a06ff0635354fcaca
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58401729"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63759977"
 ---
 # <a name="develop-a-c-iot-edge-module-to-move-files-on-data-box-edge"></a>Разработка C# модуля IoT Edge для перемещения файлов в Edge поле данных
 
@@ -36,7 +36,7 @@ ms.locfileid: "58401729"
 2. Генератор файловых событий создает файловое событие для каждого файла, сохраненного в общий локальный ресурс. Файл событий также создаются при изменении файла. Эти файловые события отправляются в концентратор IoT Edge, который расположен в среде выполнения IoT Edge.
 3. Пользовательский модуль IoT Edge обрабатывает файловое событие и создает объект файлового события с относительным путем к соответствующему файлу. Модуль вычисляет абсолютный путь, используя этот относительный путь, и копирует файл из общего локального ресурса в общий облачный ресурс. Затем модуль удаляет файл из общего локального ресурса.
 
-![Как работает модуль Azure IoT Edge на устройстве Data Box Edge](./media/data-box-edge-create-iot-edge-module/how-module-works.png)
+![Как работает модуль Azure IoT Edge на устройстве Data Box Edge](./media/data-box-edge-create-iot-edge-module/how-module-works-1.png)
 
 Как только файл попадает в общий облачный ресурс, он автоматически загружается в учетную запись хранения Azure.
 

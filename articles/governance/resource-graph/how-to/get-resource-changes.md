@@ -1,5 +1,5 @@
 ---
-title: Получить изменения ресурсов
+title: Получение данных об изменении ресурса
 description: Понять, как найти изменения ресурса и получить список свойств, которые изменены.
 services: resource-graph
 author: DCtheGeek
@@ -8,20 +8,20 @@ ms.date: 04/20/2019
 ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: f4618e945db443e8d7cf9fdcc49e20e5a09ebd39
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 0ae85b45dfcd80056316ed5f2099aab4057d24c8
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60014608"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63760815"
 ---
-# <a name="get-resource-changes"></a>Получить изменения ресурсов
+# <a name="get-resource-changes"></a>Получение данных об изменении ресурса
 
 Ресурсы получить изменены на протяжении всей ежедневного перенастройки и даже повторного развертывания.
 Изменения могут поступать от отдельного лица или автоматическим процессом. Большинство изменений сделано намеренно, но иногда это не так. За последние 14 дней журнал изменений график ресурсов Azure позволяют:
 
-- Поиск при обнаружении изменения в свойстве Azure Resource Manager.
-- См. в разделе, изменить как часть этого события изменения свойства.
+- просмотр времени обнаружения изменений для свойства Azure Resource Manager;
+- просмотр свойств, которые были изменены в ходе этого события изменения.
 
 Обнаружение изменений и сведения можно использовать для следующих примеров сценариев:
 
@@ -39,7 +39,7 @@ ms.locfileid: "60014608"
 
 ## <a name="find-when-changes-were-detected"></a>Найти, если обнаружены изменения
 
-Видите, что изменилось в ресурсе первым делом для поиска событий изменения, относящиеся к этому ресурсу в пределах периода времени. Этот шаг выполняется с помощью [resourceChanges](/rest/api/azureresourcegraph/resourceChanges) конечной точки REST.
+Видите, что изменилось в ресурсе первым делом для поиска событий изменения, относящиеся к этому ресурсу в пределах периода времени. Этот шаг выполняется с помощью **resourceChanges** конечной точки REST.
 
 **ResourceChanges** конечной точки требуется два параметра в тексте запроса:
 
@@ -95,7 +95,7 @@ POST https://management.azure.com/providers/Microsoft.ResourceGraph/resourceChan
 
 ## <a name="see-what-properties-changed"></a>Увидеть измененные свойства
 
-С помощью **changeId** из **resourceChanges** конечной точки, [resourceChangeDetails](/rest/api/azureresourcegraph/resourceChangeDetails) конечной точки REST затем используется для получения события изменения.
+С помощью **changeId** из **resourceChanges** конечной точки, **resourceChangeDetails** конечной точки REST затем используется для получения события изменения.
 
 **ResourceChangeDetails** конечной точки требуется два параметра в тексте запроса:
 
@@ -108,7 +108,6 @@ POST https://management.azure.com/providers/Microsoft.ResourceGraph/resourceChan
 {
     "resourceId": "/subscriptions/{subscriptionId}/resourceGroups/MyResourceGroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount",
     "changeId": "53dc0515-b86b-4bc2-979b-e4694ab4a556"
-    }
 }
 ```
 

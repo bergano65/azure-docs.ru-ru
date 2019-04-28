@@ -1,18 +1,17 @@
 ---
 title: Устранение неполадок с YARN в Azure HDInsight
 description: Получите ответы на распространенные вопросы о работе с Apache Hadoop YARN и Azure HDInsight.
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.openlocfilehash: d5582038c35ba3b599be89b7b7939e644d55ea78
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 4ca3dddb2b5ea4897ff82f1d91e88dc656305453
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53408836"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63764285"
 ---
 # <a name="troubleshoot-apache-hadoop-yarn-by-using-azure-hdinsight"></a>Устранение неполадок рабочих нагрузок Apache Hadoop YARN с помощью Azure HDInsight
 
@@ -25,8 +24,9 @@ ms.locfileid: "53408836"
 Чтобы создать очередь YARN и выполнить балансировку выделения емкости для всех очередей, выполните следующие шаги с помощью Ambari. 
 
 В этом примере емкость двух имеющихся очередей (**default** и **thriftsvr**) изменяется с 50 % на 25 %, что позволяет обеспечить для новой очереди (spark) емкость 50 %.
+
 | Очередь | Capacity | Максимальная емкость |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | по умолчанию | 25 % | 50 % |
 | thrftsvr | 25 % | 50 % |
 | spark | 50 % | 50 % |

@@ -1,19 +1,18 @@
 ---
 title: Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight
 description: Сведения об использовании Gen2 хранилища Озера данных Azure с кластерами Azure HDInsight.
-services: hdinsight
 author: hrasheed-msft
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: hrasheed
-ms.openlocfilehash: 43f335bdd8b918fa717d9084d3c9c30d97920c10
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 6452e73b2429ab89a466b1c3b59cc892eca31205
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60004964"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766923"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight
 
@@ -69,7 +68,7 @@ Gen2 хранилища Озера данных доступен в качест
         ![Параметры удостоверения для Azure Data Lake Storage 2-го поколения с HDInsight](./media/hdinsight-hadoop-data-lake-storage-gen2/managed-identity-cluster-creation.png)
         
 > [!Note]
-> Один или несколько учетных записей Gen2 хранилища Озера данных можно добавить в качестве дополнительного хранилища в одном кластере. Просто повторите описанные выше действия для каждой учетной записи Gen2 хранилища Озера данных, который вы хотите добавить, используйте то же удостоверение управляемый.
+> Добавление дополнительной учетной записи Gen2 хранилища Озера данных, на уровне учетной записи хранения, просто назначьте управляемого удостоверения, созданного ранее, новую учетную запись хранения Gen2 хранилища Озера данных, которую нужно добавить. Помните, что добавление дополнительной учетной записи Gen2 хранилища Озера данных в колонке «дополнительные учетные записи хранения» в HDInsight не поддерживается. 
 
 ## <a name="create-a-cluster-with-data-lake-storage-gen2-through-the-azure-cli"></a>Создание кластера с Gen2 хранилища Озера данных с помощью Azure CLI
 

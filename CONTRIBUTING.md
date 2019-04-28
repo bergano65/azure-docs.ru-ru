@@ -1,14 +1,12 @@
 ---
-ms.openlocfilehash: a1a57cbcd9284489e00bf36b25baf7e04fbea9e6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 55adc512447160b409af0002a72ec2473409d796
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60306807"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63759507"
 ---
 # <a name="contributing-to-microsoft-azure-documentation"></a>Дополнение к документации по Microsoft Azure
-
-> В период с 5 по 9 марта 2019 г. будет выполняться перенос репозитория MicrosoftDocs/azure-docs с текущего обработчика Markdown в обработчик [Markdig](https://github.com/lunet-io/markdig). Чтобы обеспечить успешное выполнение миграции, в течение этого времени будет отключена возможность приостанавливать слияние открытых запросов на вытягивание.
 
 Спасибо, что уделили время и участия в разработке документации Microsoft Azure.
 

@@ -12,15 +12,15 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
-ms.date: 05/22/2017
+ms.date: 04/17/2019
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5583ccb6076dae2f33e265b95387bcd35aa9fa4d
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
-ms.translationtype: MT
+ms.openlocfilehash: 79b45bd423ed6715cdb7cc7c0e079c150eefede5
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57547288"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63763697"
 ---
 # <a name="run-tasks-concurrently-to-maximize-usage-of-batch-compute-nodes"></a>Параллельное выполнение задач для эффективного использования вычислительных узлов пакетной службы 
 
@@ -41,7 +41,7 @@ ms.locfileid: "57547288"
 ## <a name="enable-parallel-task-execution"></a>Включение параллельного выполнения задач
 Настройка параллельного выполнения задач для вычислительных узлов выполняется на уровне пула. С помощью библиотеки .NET пакетной службы задайте свойство [CloudPool.MaxTasksPerComputeNode][maxtasks_net] при создании пула. Если вы используете REST API пакетной службы, включите элемент [maxTasksPerNode][rest_addpool] в текст запроса при создании пула.
 
-Пакетная служба Azure позволяет задать для каждого узла максимальное количество задач, в 4 раза превышающее количество ядер узла. Например, если для пула настроены узлы размера "Большой" (четыре ядра), для параметра `maxTasksPerNode` можно задать значение 16. Сведения о количестве ядер для каждого узла см. в статье [Размеры для облачных служб](../cloud-services/cloud-services-sizes-specs.md). Дополнительные сведения об ограничениях службы см. в статье [Квоты и ограничения пакетной службы Azure](batch-quota-limit.md).
+Пакетная служба Azure позволяет задавать задач на каждом узле до (4 x) количество узлов core. Например, если для пула настроены узлы размера "Большой" (четыре ядра), для параметра `maxTasksPerNode` можно задать значение 16. Тем не менее независимо от того, сколько ядер у узла, не могут превышать 256 задач на каждом узле. Сведения о количестве ядер для каждого узла см. в статье [Размеры для облачных служб](../cloud-services/cloud-services-sizes-specs.md). Дополнительные сведения об ограничениях службы см. в статье [Квоты и ограничения пакетной службы Azure](batch-quota-limit.md).
 
 > [!TIP]
 > Обязательно учитывайте значение параметра `maxTasksPerNode` при создании [формулы автомасштабирования][enable_autoscaling] для пула. Например, если в формуле учитывается параметр `$RunningTasks`, изменение количества задач существенно повлияет на результат ее применения. Дополнительные сведения см. в статье [Автоматическое масштабирование вычислительных узлов в пуле пакетной службы Azure](batch-automatic-scaling.md).

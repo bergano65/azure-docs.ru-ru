@@ -2,17 +2,17 @@
 title: Обзор проверки подлинности Azure Active Directory по протоколу SMB для файлов Azure (предварительная версия) — служба хранилища Azure
 description: Служба файлов Azure поддерживает проверку подлинности на основе удостоверений по протоколу SMB (Server Message Block) (предварительная версия) через доменные службы Azure Active Directory (Azure AD). Присоединенные к домену виртуальные машины Windows будут иметь доступ к файловым ресурсам Azure с помощью учетных данных Azure AD.
 services: storage
-author: tamram
+author: roygara
 ms.service: storage
 ms.topic: article
 ms.date: 09/19/2018
-ms.author: tamram
-ms.openlocfilehash: 1962a3237fb54409d17fefa314605bafa91c3e9c
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.author: rogarana
+ms.openlocfilehash: 7010425ba8acff4ed223e2a402d7a927a91c06b6
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49427643"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766483"
 ---
 # <a name="overview-of-azure-active-directory-authentication-over-smb-for-azure-files-preview"></a>Обзор проверки подлинности Azure Active Directory по протоколу SMB для файлов Azure (предварительная версия)
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -87,7 +87,7 @@ Azure AD по протоколу SMB для файлов Azure обладает 
 ## <a name="pricing"></a>Цены
 Включить проверку подлинности Azure AD по протоколу SMB для учетной записи хранения можно бесплатно. Дополнительные сведения о ценах см. в разделах [Цены на файлы Azure](https://azure.microsoft.com/pricing/details/storage/files/) и [Цены на доменные службы Azure AD](https://azure.microsoft.com/pricing/details/active-directory-ds/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о файлах Azure и проверке подлинности Azure AD по протоколу SMB см. в следующих ресурсах:
 
 - [Общие сведения о службе файлов Azure](storage-files-introduction.md)

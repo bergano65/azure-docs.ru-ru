@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 4617e878f2af446608ede4e0aed644848564a074
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
-ms.translationtype: MT
+ms.openlocfilehash: 044e997703f5b274215fb05c7152186948b331b4
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59609081"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63761405"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -296,7 +296,7 @@ Container image build failed
 ## <a name="azure-dev-spaces-proxy-can-interfere-with-other-pods-running-in-a-dev-space"></a>Прокси-сервер Azure Dev Spaces может конфликтовать с модулями pod, запущенными в пространстве разработки
 
 ### <a name="reason"></a>Причина
-При включении Dev Spaces в пространстве имен кластера AKS дополнительный контейнер _mindaro-proxy_ устанавливается в каждом модуле pod, выполняющемся в этом пространстве имен. Этот контейнер перехватывает вызовы к службам в модуле pod, который является неотъемлемой частью возможностей, реализованных командой Dev Spaces, однако он может мешать определенным службам в этих модулях pod. Известно, что он конфликтует с модулями, выполняющими кэш Azure для Redis, вызывая ошибки подключения и сбои при обмене данными по модели "ведущий/ведомый".
+При включении Dev Spaces в пространстве имен кластера AKS дополнительный контейнер _mindaro-proxy_ устанавливается в каждом модуле pod, выполняющемся в этом пространстве имен. Этот контейнер перехватывает вызовы к службам в модуле pod, который является неотъемлемой частью возможностей, реализованных командой Dev Spaces, однако он может мешать определенным службам в этих модулях pod. Известно, мешают модулей запуск кэша Azure для Redis, в результате чего подключения ошибки и сбои в связи с основным и дополнительным.
 
 ### <a name="try"></a>Попробуйте выполнить следующее.
 Вы можете переместить затронутые модули pod в пространство имен внутри кластера, в котором _не включены_ Dev Spaces. Остальная часть приложения может продолжать работу в пространстве имен с поддержкой Dev Spaces. Dev Spaces не будет устанавливать контейнер _mindaro-proxy_ в пространствах имен, в которых не включен Dev Spaces.

@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 12/06/2018
+ms.date: 04/23/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b10be061e015686c68684723fd2d73c1431c7266
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: a440494b183d18c1d888b5d39836eb4317190d02
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59699412"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63764328"
 ---
 # <a name="automation-with-service-principals"></a>Автоматизация с помощью субъектов-служб
 
@@ -47,13 +47,37 @@ ms.locfileid: "59699412"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-При использовании субъекта-службы для операций управления ресурсами с помощью [Az.AnalysisServices](/powershell/module/az.analysisservices) модуля, используйте `Connect-AzAccount` командлета. При выполнении операций сервера с модулем [SQLServer](https://www.powershellgallery.com/packages/SqlServer) с помощью субъекта-службы используйте командлет `Add-AzAnalysisServicesAccount`. 
+#### <a name="a-nameazmodule-using-azanalysisservices-module"></a><a name="azmodule" />С помощью модуля Az.AnalysisServices
+
+При использовании субъекта-службы для операций управления ресурсами с помощью [Az.AnalysisServices](/powershell/module/az.analysisservices) модуля, используйте `Connect-AzAccount` командлета. 
+
+В следующем примере appID и пароль используются для выполнения операции уровня управления для синхронизации реплик только для чтения и масштабирования вверх/out:
+
+```powershell
+Param (
+        [Parameter(Mandatory=$true)] [String] $AppId,
+        [Parameter(Mandatory=$true)] [String] $PlainPWord,
+        [Parameter(Mandatory=$true)] [String] $TenantId
+       )
+$PWord = ConvertTo-SecureString -String $PlainPWord -AsPlainText -Force
+$Credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $AppId, $PWord
+
+# Connect using Az module
+Connect-AzAccount -Credential $Credential -SubscriptionId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx"
+
+# Syncronize a database for query scale out
+Sync-AzAnalysisServicesInstance -Instance "asazure://westus.asazure.windows.net/testsvr" -Database "testdb"
+
+# Scale up the server to an S1, set 2 read-only replicas, and remove the primary from the query pool. The new replicas will hydrate from the synchronized data.
+Set-AzAnalysisServicesServer -Name "testsvr" -ResourceGroupName "testRG" -Sku "S1" -ReadonlyReplicaCount 2 -DefaultConnectionMode Readonly
+```
+
+#### <a name="using-sqlserver-module"></a>С помощью модуля SQLServer
 
 В следующем примере идентификатор приложения и пароль используются для выполнения операции обновления шаблона базы данных:
 
 ```powershell
 Param (
-
         [Parameter(Mandatory=$true)] [String] $AppId,
         [Parameter(Mandatory=$true)] [String] $PlainPWord,
         [Parameter(Mandatory=$true)] [String] $TenantId
