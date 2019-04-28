@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: c44b39effdc6d8fcdc144915ec7b51489e3798cd
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55302365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60405430"
 ---
 Очень важно обеспечить безопасность виртуальной машины для выполняемых приложений. Для защиты виртуальных машин можно применить одну или несколько служб или функций Azure, которые обеспечивают безопасный доступ к виртуальным машинам и безопасное хранение данных. Из этой статьи вы узнаете, как обеспечить защиту своих виртуальных машин и приложений.
 
@@ -52,5 +52,5 @@ ms.locfileid: "55302365"
 С помощью [управления доступом на основе ролей (RBAC)](../articles/role-based-access-control/overview.md) вы можете распределить обязанности внутри команды и предоставить пользователям виртуальной машины доступ на уровне, который им необходим для выполнения поставленных задач. Вместо того чтобы предоставлять всем неограниченные разрешения для виртуальной машины, можно разрешить только определенные действия. Вы можете настроить управление доступом для виртуальной машины на [портале Azure](../articles/role-based-access-control/role-assignments-portal.md) с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/role) или [Azure PowerShell](../articles/role-based-access-control/role-assignments-powershell.md).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Выполните действия для мониторинга безопасности виртуальной машины в центре безопасности Azure для [Linux](../articles/virtual-machines/linux/tutorial-azure-security.md) или [Windows](../articles/virtual-machines/windows/tutorial-azure-security.md).

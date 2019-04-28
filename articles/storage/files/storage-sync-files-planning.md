@@ -2,18 +2,18 @@
 title: Планирование развертывания службы "Синхронизация файлов Azure" | Документация Майкрософт
 description: Узнайте, что необходимо учесть при планировании развертывания службы "Файлы Azure".
 services: storage
-author: wmgries
+author: roygara
 ms.service: storage
 ms.topic: article
 ms.date: 2/7/2019
-ms.author: wgries
+ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: e5078176b14835938c190daa031c12055ba9ffc3
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: f29625ed8ddd6eabf8b75380d84d7a7b64396d7a
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59996362"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766864"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Планирование развертывания службы синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -245,6 +245,8 @@ ms.locfileid: "59996362"
 | Восточная Азия | Гонконг, САР |
 | Восточная часть США | Виргиния |
 | Восток США 2 | Виргиния |
+| Центральная Корея| Сеул |
+| Южная Корея| Пусан |
 | Восточная часть Японии | Токио, Сайтама |
 | Западная часть Японии | Осака |
 | Центрально-северная часть США | Иллинойс |

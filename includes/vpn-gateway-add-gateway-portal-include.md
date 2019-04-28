@@ -9,11 +9,11 @@ ms.date: 10/24/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 35f987f26ce47c19e3d5eb1ca5d2bb32d0c7ad1b
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53444350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60407804"
 ---
 1. На странице портала слева щелкните **+** и выполните поиск по запросу "Шлюз виртуальной сети". В **результатах** найдите и щелкните **Шлюз виртуальной сети**.
 2. Щелкните **Создать** в нижней части страницы "Шлюз виртуальной сети". Откроется страница **Создание шлюза виртуальной сети**.

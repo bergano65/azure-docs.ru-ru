@@ -12,11 +12,11 @@ ms.date: 03/13/2019
 ms.author: erhopf
 ms.custom: seodec18
 ms.openlocfilehash: 95682612b4b0fdb1baa5038039630e74abddb1a9
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57890481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61460326"
 ---
 # <a name="what-is-speech-translation"></a>Что такое перевода речи
 
@@ -69,9 +69,9 @@ ms.locfileid: "57890481"
 * [Пакет SDK для речевых устройств](speech-devices-sdk.md)
 * [REST API: Преобразование речи в текст](rest-speech-to-text.md)
 * [REST API: Преобразование текста в речь](rest-text-to-speech.md)
-* [REST API: Расшифровка дикторского текста для пакетной службы и их настройка](https://westus.cris.ai/swagger/ui/index)
+* [REST API: Пакетное транскрибирование и настройка](https://westus.cris.ai/swagger/ui/index)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Получите ключ подписки Speech Services бесплатно](get-started.md)
+* [Получите ключ подписки для Служб речи бесплатно](get-started.md)
 * [Получить Speech SDK](speech-sdk.md)

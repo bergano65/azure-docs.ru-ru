@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 3c008e77116a9b42a2ea137069529c5e241adddd
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56213177"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61456906"
 ---
 Вы можете легко [автоматически масштабировать](../articles/azure-monitor/platform/autoscale-best-practices.md) свои [виртуальные машины](../articles/virtual-machines/windows/overview.md) при использовании [масштабируемых наборов виртуальных машин](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) и [функции автоматического масштабирования Azure Monitor](../articles/azure-monitor/platform/autoscale-overview.md). Для автоматического масштабирования виртуальные машины должны входить в масштабируемый набор. Эта статья поможет вам лучше понять, как выполнять горизонтальное и вертикальное масштабирование виртуальных машин автоматически и вручную.
 
@@ -63,7 +63,7 @@ ms.locfileid: "56213177"
 
 Можно вручную изменить размер виртуальных машин на портале Azure в окне размера для масштабируемого набора. Вы можете использовать Azure PowerShell с Get-AzVmss, задав свойство номера SKU для ссылки на образ, а затем использовав [Update-AzVmss](https://docs.microsoft.com/powershell/module/az.compute/update-azvmss) и [Update-AzVmssInstance](https://docs.microsoft.com/powershell/module/az.compute/update-azvmssinstance).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с дополнительными сведениями о масштабируемых наборах в статье [Рекомендации по проектированию масштабируемых наборов](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-design-overview.md).
 

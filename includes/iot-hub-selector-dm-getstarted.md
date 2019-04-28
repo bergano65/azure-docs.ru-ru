@@ -1,15 +1,10 @@
 ---
-author: wesmc7777
-ms.author: wesmc
-ms.service: iot-hub
-ms.topic: include
-ms.date: 10/26/2018
 ms.openlocfilehash: 19331f35ea2fa773325ec61e728677e37767ab54
-ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "57011821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60346282"
 ---
 > [!div class="op_single_selector"]
 > * [Устройство: Служба node.js: Node.js](../articles/iot-hub/iot-hub-node-node-device-management-get-started.md) (Веб-приложения в Службе приложений Azure: Node.js)
@@ -20,7 +15,6 @@ ms.locfileid: "57011821"
 Внутренние приложения могут использовать примитивы Центра Интернета вещей, а именно [двойники устройств][lnk-devtwin] и [прямые методы][lnk-c2dmethod], чтобы удаленно запускать и отслеживать на устройствах действия по управлению ими. В этом руководстве показано, как серверное приложение и приложение для устройства взаимодействуют для запуска и отслеживания процесса удаленной перезагрузки устройства с помощью Центра Интернета вещей.
 
 [!INCLUDE [iot-hub-basic](iot-hub-basic-whole.md)]
-
 Прямой метод используется для запуска действий по управлению устройствами (таких как перезагрузка, сброс к параметрам по умолчанию и обновление встроенного ПО) из внутреннего приложения в облаке. Устройство отвечает за следующие действия:
 
 * Обработка запроса метода, отправленного из Центра Интернета вещей.
