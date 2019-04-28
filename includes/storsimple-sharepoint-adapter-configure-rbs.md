@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: f84fe995e65d2b67aaaf4ff9acc4a6a44ce607dc
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55889574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60633417"
 ---
 > [!NOTE]
 > При внесении изменений в адаптер StorSimple для настройки SharePoint RBS вы должны войти в систему с учетной записью, входящей в группу «Администраторы домена». Кроме того, необходимо получить доступ к странице «Конфигурация» из браузера, работающего на том же узле центра администрирования.

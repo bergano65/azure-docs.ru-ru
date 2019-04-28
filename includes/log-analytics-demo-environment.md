@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: magoedte
 ms.openlocfilehash: 8f13ab01efb99ddd371b7672b21b4d603e7b7147
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52271998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60519650"
 ---
 > [!NOTE]
 > Вы можете выполнить это упражнение в собственной среде Log Analytics или воспользоваться нашей [демонстрационной средой](https://portal.loganalytics.io/demo), которая содержит множество образцов данных.

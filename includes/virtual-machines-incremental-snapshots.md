@@ -9,11 +9,11 @@ ms.date: 09/15/2018
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 06e6e491fa1e9a047527efb78149855b125771ef
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49960185"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60543812"
 ---
 # <a name="back-up-azure-unmanaged-vm-disks-with-incremental-snapshots"></a>Архивация неуправляемых дисков виртуальной машины Azure с помощью добавочных моментальных снимков
 ## <a name="overview"></a>Обзор
@@ -58,7 +58,7 @@ ms.locfileid: "49960185"
 * BLOB-объект был создан 1 января 2016 г. или позже.
 * BLOB-объект не был перезаписан с помощью операций [PutPage](https://docs.microsoft.com/rest/api/storageservices/Put-Page) или [копирования BLOB-объекта](https://docs.microsoft.com/rest/api/storageservices/Copy-Blob) между двумя моментальными снимками.
 
-**Примечание**. Эта функция доступна для страничных BLOB-объектов Azure класса Premium или "Стандартный".
+**Примечание**. Эта функция доступна для Premium и Standard Azure страничных BLOB-объектов.
 
 При наличии пользовательской стратегии резервного копирования, в которой используются моментальные снимки, копирование моментальных снимков из одной учетной записи хранения в другую может выполняться медленно и требует большого объема хранилища. Вместо копирования всего моментального снимка в учетную запись хранения архивов вы можете записывать в архивный страничный BLOB-объект только данные, изменившиеся между последовательными снимками. Это позволяет значительно сократить время копирования и место в хранилище для резервных копий.
 
@@ -109,7 +109,7 @@ ms.locfileid: "49960185"
 
 ![Восстановление диска из моментальных снимков](../articles/virtual-machines/windows/media/incremental-snapshots/storage-incremental-snapshots-2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о создании моментальных снимков BLOB-объектов и планировании инфраструктуры резервного копирования виртуальных машин см. по следующим ссылкам:
 
 * [Создание моментального снимка большого двоичного объекта](https://docs.microsoft.com/rest/api/storageservices/Creating-a-Snapshot-of-a-Blob)

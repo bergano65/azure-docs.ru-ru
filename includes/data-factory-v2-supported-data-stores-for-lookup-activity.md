@@ -5,21 +5,20 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: include
-ms.date: 02/15/2019
+ms.date: 02/22/2019
 ms.author: jingwang
 ms.custom: include file
-ms.openlocfilehash: d9562bb9c91700e817c120934e59c0c308d1e55b
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.openlocfilehash: 498a4471d1ba6803d68e0b497c7c8352f19ff743
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56323402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60768663"
 ---
-| Категория | Хранилище данных |
+| Category | Хранилище данных |
 |:--- |:--- |
 | **Таблицы Azure** |[хранилище BLOB-объектов Azure](../articles/data-factory/connector-azure-blob-storage.md) |
 | &nbsp; |[Azure Cosmos DB (SQL API)](../articles/data-factory/connector-azure-cosmos-db.md) |
-| &nbsp; |[API Azure Cosmos DB для MongoDB](../articles/data-factory/connector-azure-cosmos-db-mongodb-api.md) |
 | &nbsp; |[Обозреватель данных Azure](../articles/data-factory/connector-azure-data-explorer.md) |
 | &nbsp; |[Хранилище Azure Data Lake Gen1](../articles/data-factory/connector-azure-data-lake-store.md) |
 | &nbsp; |[Хранилище Azure Data Lake Storage 2-го поколения](../articles/data-factory/connector-azure-data-lake-storage.md) |
@@ -58,7 +57,6 @@ ms.locfileid: "56323402"
 | &nbsp; |[Vertica](../articles/data-factory/connector-vertica.md) |
 | **NoSQL** |[Cassandra](../articles/data-factory/connector-cassandra.md) |
 | &nbsp; |[Couchbase (предварительная версия)](../articles/data-factory/connector-couchbase.md) |
-| &nbsp; |[MongoDB](../articles/data-factory/connector-mongodb.md) |
 | **File** |[Amazon S3](../articles/data-factory/connector-amazon-simple-storage-service.md) |
 | &nbsp; |[Перемещение данных в локальную файловую систему или из нее с помощью фабрики данных Azure](../articles/data-factory/connector-file-system.md) |
 | &nbsp; |[FTP](../articles/data-factory/connector-ftp.md) |
@@ -68,7 +66,6 @@ ms.locfileid: "56323402"
 | **Универсальный протокол** |[Базовый HTTP-запрос](../articles/data-factory/connector-http.md) |
 | &nbsp; |[Generic OData](../articles/data-factory/connector-odata.md) |
 | &nbsp; |[Универсальные данные ODBC](../articles/data-factory/connector-odbc.md) |
-| &nbsp; |[Универсальные данные REST](../articles/data-factory/connector-rest.md) |
 | **Службы и приложения** |[Веб-служба Amazon Marketplace (предварительная версия)](../articles/data-factory/connector-amazon-marketplace-web-service.md) |
 | &nbsp; |[Common Data Service для приложений](../articles/data-factory/connector-dynamics-crm-office-365.md) |✓
 | &nbsp; |[Concur (предварительная версия)](../articles/data-factory/connector-concur.md) |
@@ -82,7 +79,8 @@ ms.locfileid: "56323402"
 | &nbsp; |[Marketo (предварительная версия)](../articles/data-factory/connector-marketo.md) |
 | &nbsp; |[Oracle Eloqua (предварительная версия)](../articles/data-factory/connector-oracle-eloqua.md) |
 | &nbsp; |[Oracle Responsys (предварительная версия)](../articles/data-factory/connector-oracle-responsys.md) |
-| &nbsp; |[Oracle Service Cloud (предварительная версия)](../articles/data-factory/connector-oracle-service-cloud.md) || &nbsp; |[Paypal (предварительная версия)](../articles/data-factory/connector-paypal.md) |
+| &nbsp; |[Oracle Service Cloud (предварительная версия)](../articles/data-factory/connector-oracle-service-cloud.md) |
+| &nbsp; |[Paypal (предварительная версия)](../articles/data-factory/connector-paypal.md) |
 | &nbsp; |[QuickBooks (предварительная версия)](../articles/data-factory/connector-quickbooks.md) |
 | &nbsp; |[Salesforce](../articles/data-factory/connector-salesforce.md) |
 | &nbsp; |[Облачная служба SalesForce](../articles/data-factory/connector-salesforce.md) |

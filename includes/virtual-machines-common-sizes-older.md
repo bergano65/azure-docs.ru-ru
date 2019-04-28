@@ -9,11 +9,11 @@ ms.date: 04/11/2019
 ms.author: lahugh
 ms.custom: include file
 ms.openlocfilehash: d89a9c4c4498e249dbfbd453ef9772d18ffd213f
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59550158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60541630"
 ---
 Этот раздел содержит сведения о размерах виртуальных машин предыдущих поколений. Эти размеры по-прежнему поддерживаются, но не будут получать дополнительную емкость. Существуют более новые или альтернативные размеры, которые являются общедоступными. Обратитесь к [Windows для размеров виртуальных машин в Azure](../articles/virtual-machines/windows/sizes.md) или [размеры виртуальных машин Linux в Azure](../articles/virtual-machines/linux/sizes.md) размеры, которые будут лучше всего выбрать виртуальную Машину соответствии с потребностями.  
 

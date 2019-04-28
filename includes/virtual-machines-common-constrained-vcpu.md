@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/09/2018
 ms.author: azcspmt;jonbeck;cynthn
 ms.custom: include file
-ms.openlocfilehash: eaf490979167ea5cbfe5846e62444526310452f8
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
-ms.translationtype: HT
+ms.openlocfilehash: 82cbffb257d85197848b8bca14231e5363d6d45c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36269550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60729854"
 ---
 Некоторые рабочие нагрузки баз данных, например SQL Server или Oracle, требуют большого объема памяти, хранилища и пропускной способности ввода-вывода, но не требуют наличия большого количества ядер. Многие рабочие нагрузки баз данных не нагружают процессор. Azure предлагает определенные размеры виртуальных машин, в которых вы можете ограничить количество виртуальных ЦП, чтобы снизить затраты на лицензирование программного обеспечения, сохранив при этом те же ресурсы памяти, хранилища и пропускную способность ввода-вывода.
 

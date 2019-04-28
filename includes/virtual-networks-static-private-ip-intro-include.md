@@ -1,15 +1,15 @@
 ---
-author: genlin
+author: rockboyfor
 ms.service: virtual-network
 ms.topic: include
-ms.date: 02/27/2019
-ms.author: genli
+origin.date: 02/27/2019
+ms.date: 04/01/2019
+ms.author: v-yeche
 ms.openlocfilehash: 63853ee34d99516b139b0356f609f41637ac2b39
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56963367"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60516412"
 ---
 Виртуальной машины (VM) автоматически назначается частный IP-адрес из диапазона, указать, на основе которой она развернута в подсети. Адрес сохраняется с помощью виртуальной Машины, пока не будет удалена виртуальная машина. Azure динамически назначает следующий доступный частный IP-адрес из подсети, к которой вы создаете виртуальную Машину в. Назначьте статический IP-адрес, если вы хотите использовать конкретный IP-адрес из подсети, назначенный виртуальной Машине.
-

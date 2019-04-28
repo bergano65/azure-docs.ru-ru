@@ -2,18 +2,19 @@
 title: включение файла
 description: включение файла
 services: virtual-network
-author: genlin
+author: rockboyfor
 ms.service: virtual-network
 ms.topic: include
-ms.date: 04/13/2018
-ms.author: genli
+origin.date: 04/13/2018
+ms.date: 06/11/2018
+ms.author: v-yeche
 ms.custom: include file
-ms.openlocfilehash: b91ae155761f6357e286f4742d57b97cf96d909a
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
-ms.translationtype: HT
+ms.openlocfilehash: 40b81904daabfdad7e45571d8ab86cf32cac8964
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31805164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60743386"
 ---
 ## <a name="scenario"></a>Сценарий
 Чтобы лучше проиллюстрировать процесс создания определяемых пользователем маршрутов, в этом документе будет использоваться представленный ниже сценарий.
@@ -28,4 +29,3 @@ ms.locfileid: "31805164"
   * **RouteToFrontend**. Этот маршрут отправляет весь трафик, адресованный в интерфейсную подсеть, на виртуальную машину **FW1**.
 
 Сочетание этих маршрутов гарантирует, что любой трафик, передаваемый из одной подсети в другую, будет направляться на виртуальную машину **FW1**, которая используется в качестве виртуального модуля. Необходимо также включить IP-пересылку для виртуальной машины **FW1**, чтобы она могла получать трафик, предназначенный для других виртуальных машин.
-

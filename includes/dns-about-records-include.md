@@ -1,15 +1,16 @@
 ---
-author: vhorne
+author: WenJason
 ms.service: dns
 ms.topic: include
-ms.date: 11/25/2018
-ms.author: victorh
+origin.date: 11/25/2018
+ms.date: 12/24/2018
+ms.author: v-jay
 ms.openlocfilehash: f7fa018225d82e2db4a3c51b333aea6fcb9a1514
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52331411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60563391"
 ---
 ### <a name="record-names"></a>Имена записей
 
@@ -21,7 +22,7 @@ ms.locfileid: "52331411"
 
 У каждой записи DNS есть имя и тип. Записи разделяются на разные типы в зависимости от данных, которые они содержат. Наиболее распространенный тип — запись A, которая сопоставляет имя с IPv4-адресом. Другой распространенный тип — запись MX, которая сопоставляет имя с почтовым сервером.
 
-Azure DNS поддерживает все общие типы записей DNS: A, AAAA, CAA, CNAME, MX, NS, PTR, SOA, SRV и TXT. Обратите внимание, что [записи SPF, представлены в виде записей TXT](../articles/dns/dns-zones-records.md#spf-records).
+Azure DNS поддерживает все общие типы DNS-записей: A, AAAA, CAA, CNAME, MX, NS, PTR, SOA, SRV, and TXT. Обратите внимание, что [записи SPF, представлены в виде записей TXT](../articles/dns/dns-zones-records.md#spf-records).
 
 ### <a name="record-sets"></a>Наборы записей
 

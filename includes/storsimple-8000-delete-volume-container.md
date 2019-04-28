@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/08/2018
 ms.author: alkohli
 ms.custom: include file
-ms.openlocfilehash: e7f3f80c886f90a8bc3ae8c38e7d101c506439a6
-ms.sourcegitcommit: 50f82f7682447245bebb229494591eb822a62038
-ms.translationtype: HT
+ms.openlocfilehash: e683d17422321b780a1c01b3011292f2e2c631cb
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35250228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60724738"
 ---
 Чтобы удалить контейнер томов, нужно
  - удалить тома в контейнере томов. Если с контейнером связаны тома, сначала потребуется перевести их в автономный режим. Следуйте указаниям по [отключению тома](../articles/storsimple/storsimple-8000-manage-volumes-u2.md#take-a-volume-offline). После перевода томов в автономный режим их можно удалить. 

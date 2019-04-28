@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: danlep
 ms.openlocfilehash: 2ed74a4ba19af3a441bcf26a48890f033e6c365f
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53002260"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60509868"
 ---
 [!INCLUDE [ACS deprecation](container-service-deprecation.md)]
 
@@ -64,7 +64,7 @@ Azure CLI возвращает строку JSON, представляющую �
 * В зависимости от того, какой оркестратор развернут в кластере, можно отдельно масштабировать число экземпляров контейнера, работающих в кластере. Например, в кластере DC/OS [пользовательский интерфейс Marathon](../articles/container-service/dcos-swarm/container-service-mesos-marathon-ui.md) позволяет изменять число экземпляров для приложения контейнера.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Изучите [дополнительные примеры](../articles/container-service/dcos-swarm/container-service-create-acs-cluster-cli.md) использования команд Azure CLI для работы со Службой контейнеров Azure.
 * См. дополнительные сведения о [пулах агентов DC/OS](../articles/container-service/dcos-swarm/container-service-dcos-agents.md) в службе контейнеров Azure.
 

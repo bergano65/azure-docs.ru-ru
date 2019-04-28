@@ -9,15 +9,15 @@ ms.date: 06/21/2018
 ms.author: mbullwin
 ms.custom: include file
 ms.openlocfilehash: 31ff6ae66b13eb5e5abcde94e8d3df7f6e32f63c
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58407821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60794411"
 ---
 Существуют некоторые ограничения на количество метрики и события каждого приложения, то есть каждого ключа инструментирования. Ограничения зависят от выбранного [ценового плана](https://azure.microsoft.com/pricing/details/application-insights/).
 
-| Ресурс | Ограничение по умолчанию | Примечание
+| Resource | Ограничение по умолчанию | Примечание
 | --- | --- | --- |
 | Общий объем данных в день | 100 ГБ | Объем данных можно сократить, задав ограничение. Если требуется больше данных, на портале можно увеличить граничное значение до 1000 ГБ. Для емкостей более 1000 ГБ, отправьте сообщение по адресу AIDataCap@microsoft.com.
 | Регулирование | 32 000 событий в секунду | Ограничение измеряется каждую минуту.

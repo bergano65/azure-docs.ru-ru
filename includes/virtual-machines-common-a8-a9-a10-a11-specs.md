@@ -9,11 +9,11 @@ ms.date: 05/29/2018
 ms.author: azcspmt;jonbeck;cynthn;danlep
 ms.custom: include file
 ms.openlocfilehash: c12fff63cdb7241d89e7511a3dac2ff9c1363ae6
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49346110"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60540489"
 ---
 ## <a name="deployment-considerations"></a>Рекомендации по развертыванию
 * **Подписка Azure.** Чтобы развернуть большое число экземпляров для ресурсоемких вычислений, рекомендуем подписку с оплатой по мере использования или другие варианты покупки. Если вы используете [бесплатную учетную запись Azure](https://azure.microsoft.com/free/), вам доступно ограниченное количество вычислительных ядер Azure.

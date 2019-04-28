@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/18/2018
 ms.author: jeconnoc
 ms.custom: include file
-ms.openlocfilehash: d1a6ff8dbd17d2792709a1ce065bcf793154e585
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
-ms.translationtype: HT
+ms.openlocfilehash: ca4063d31d93aab3814abed202b6b91b7726185f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37780678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60542938"
 ---
 # <a name="platform-supported-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Поддерживаемый платформой перенос ресурсов IaaS из классической модели в модель Azure Resource Manager
 В этой статье описывается, как перенести ресурсы IaaS (инфраструктура как услуга) из классической модели развертывания в модель развертывания с помощью Resource Manager. Также в ней описывается, как подключить ресурсы из двух моделей, сосуществующих в вашей подписке, с помощью шлюзов виртуальных сетей "сеть — сеть". Вы можете узнать больше о [возможностях и преимуществах Azure Resource Manager](../articles/azure-resource-manager/resource-group-overview.md). 

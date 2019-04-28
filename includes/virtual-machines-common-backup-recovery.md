@@ -2,18 +2,19 @@
 title: включение файла
 description: включение файла
 services: virtual-machines
-author: cynthn
+author: rockboyfor
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 03/09/2018
-ms.author: cynthn
+origin.date: 03/09/2018
+ms.date: 04/16/2018
+ms.author: v-yeche
 ms.custom: include file
-ms.openlocfilehash: 3dfc72ff0347a93c6c6dce0e7ec763dd8241c55b
-ms.sourcegitcommit: 8aab1aab0135fad24987a311b42a1c25a839e9f3
-ms.translationtype: HT
+ms.openlocfilehash: be71b269e618d13a126e4005754b307e9c6517d7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2018
-ms.locfileid: "29958815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60543723"
 ---
 ## <a name="azure-backup"></a>Служба архивации Azure
 
@@ -22,7 +23,6 @@ ms.locfileid: "29958815"
 Простое практическое введение в Azure Backup для виртуальных машин Azure см. в руководствах по резервному копированию виртуальных машин Azure для [Linux](../articles/virtual-machines/linux/tutorial-backup-vms.md) и [Windows](../articles/virtual-machines/windows/tutorial-backup-vms.md).
 
 Дополнительные сведения о работе Azure Backup см. в статье [Планирование инфраструктуры резервного копирования виртуальных машин в Azure](../articles/backup/backup-azure-vms-introduction.md).
-
 
 ## <a name="azure-site-recovery"></a>Azure Site Recovery
 
@@ -41,7 +41,5 @@ Azure Site Recovery позволяет защитить виртуальные �
 * [Создание копии диска VHD, хранящегося в виде управляемого диска, с использованием моментальных снимков в Windows](../articles/virtual-machines/windows/snapshot-copy-managed-disk.md)
 * [Создание копии диска VHD, хранящегося в виде управляемого диска, с использованием моментальных снимков в Linux](../articles/virtual-machines/linux/snapshot-copy-managed-disk.md)
 
-
-
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Вы можете опробовать Azure Backup, следуя инструкциям из руководств по резервному копированию виртуальных машин для [Linux](../articles/virtual-machines/linux/tutorial-backup-vms.md) или [Windows](../articles/virtual-machines/windows/tutorial-backup-vms.md).
