@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alch
 ms.openlocfilehash: ffb159dc684b4b6663dcb966706d4745ab88a403
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55872584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61337811"
 ---
 # <a name="journal-entity"></a>Сущность журнала
 
@@ -24,7 +24,7 @@ ms.locfileid: "55872584"
 ИМЯ    |ОПИСАНИЕ                            |type       | Операции
 ------- | ------------------------------------- | --------- | ----------------------------
 Идентификатор      |Идентификатор сущности                              |Int64      |Равно
-DJN     |Нормализованное имя журнала                |Строка     |Нет
-JN      |Отображаемое имя журнала                   |Строка     |Равно
-CC      |Общий показатель цитируемости журнала           |Int32      |Нет  
-ECC     |Общий расчетный показатель цитируемости журнала |Int32      |Нет
+DJN     |Нормализованное имя журнала                |String     |нет
+JN      |Отображаемое имя журнала                   |String     |Равно
+CC      |Общий показатель цитируемости журнала           |Int32      |нет  
+ECC     |Общий расчетный показатель цитируемости журнала |Int32      |нет
