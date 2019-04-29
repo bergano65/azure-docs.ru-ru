@@ -1,15 +1,16 @@
 ---
 author: diberry
-ms.author: diberry
+ms.author: v-junlch
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 01/24/2019
+origin.date: 01/24/2019
+ms.date: 02/21/2019
 ms.openlocfilehash: 11a336bbcf75c6c4de61f1bb681ab6ee7aa05650
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56741023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60815628"
 ---
 Прежде всего необходимо заполнить и отправить [форму запроса к контейнерам Cognitive Services Vision](https://aka.ms/VisionContainersPreview), чтобы запросить доступ к контейнеру. В форме нужно указать сведения о себе, компании и пользовательском сценарии, для которого будет использоваться контейнер. Когда вы отправите форму, команда Azure Cognitive Services просмотрит ее, чтобы проверить, соблюдаются ли критерии доступа к частному реестру контейнеров.
 
@@ -34,3 +35,5 @@ docker login containerpreview.azurecr.io -u <username> -p <password>
 cat <passwordFile> | docker login containerpreview.azurecr.io -u <username> --password-stdin
 ```
 
+
+<!-- ms.date: 02/21/2019 -->

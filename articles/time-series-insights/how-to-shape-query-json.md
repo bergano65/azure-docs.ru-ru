@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 05/24/2018
 ms.author: anshan
 ms.custom: seodec18
-ms.openlocfilehash: c076d425a7740bd0eb6398e6b8720fa873f2fc30
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
+ms.openlocfilehash: 2d42b7ebdee291e7c71351fa2c3a5583a121b79e
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54201267"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63760675"
 ---
 # <a name="how-to-shape-json-to-maximize-query-performance"></a>Формирование JSON для достижения максимальной производительности запросов 
 
@@ -198,6 +198,6 @@ ms.locfileid: "54201267"
   - В первом примере существует несколько свойств, которые имеют несколько значений, поэтому их оптимально реализовать в виде отдельных свойств. 
   - Однако во втором примере видно, что меры указаны не в виде отдельных свойств, а в виде массива значений и мер под общим свойством series. Передается новый ключ **tagId**, который создает новый столбец **series.tagId** в таблице, преобразованной в плоскую структуру. Создаются новые свойства **type** и **unit** с использованием эталонных данных, что позволяет предотвратить достижение ограничения на число свойств.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для практического применения этих рекомендаций см. статью [Azure Time Series Insights query syntax](/rest/api/time-series-insights/ga-query-syntax) (Синтаксис запросов Аналитики временных рядов Azure). Она содержит дополнительные сведения о синтаксисе запросов к данным TSI интерфейса REST API.
