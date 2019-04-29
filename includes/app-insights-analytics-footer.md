@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: mbullwin
 ms.openlocfilehash: 669aac4903b2de03fe845193b55e6538a3bf9d6c
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53730689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60692375"
 ---
 ## <a name="analytics"></a>Analytics
 * [Обзор](../articles/azure-monitor/app/analytics.md)

@@ -1,15 +1,16 @@
 ---
 author: diberry
-ms.author: diberry
+ms.author: v-junlch
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 03/25/2019
+origin.date: 03/25/2019
+ms.date: 04/23/2019
 ms.openlocfilehash: 94e95864d8bac2d6dc0ff690a2a8f53bd2db5a40
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58522526"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60598812"
 ---
 ## <a name="validate-container-is-running"></a>Проверка выполняется контейнер. 
 
@@ -22,3 +23,4 @@ ms.locfileid: "58522526"
 |`http://localhost:5000/swagger`|Контейнер предоставляет полный набор документации для конечных точек, а также функцию `Try it now`. Эта функция позволяет ввести параметры в веб-форму HTML и создать запрос без необходимости писать код. После возвращения результатов запроса предоставляется пример команды CURL с примером требуемого формата HTTP-заголовков и текста. |
 
 ![Домашняя страница контейнера](./media/cognitive-services-containers-api-documentation/container-webpage.png)
+

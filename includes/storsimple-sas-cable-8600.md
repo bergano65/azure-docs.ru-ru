@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 51e1fd18b52d7e215ba43be540156199fb41778e
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55889631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60482778"
 ---
 #### <a name="to-attach-the-sas-cables"></a>Чтобы присоединить кабели SAS:
 1. Определите, какой корпус основной, а какой EBOD. Корпуса можно идентифицировать, изучив их задние панели. Руководствуйтесь следующим рисунком. 
