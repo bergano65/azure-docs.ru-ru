@@ -3,8 +3,8 @@ title: Azure преобразование хранилища управляем�
 description: Преобразуемый Azure управляемых дисков "стандартный" от "премиум" или "премиум" на Standard с помощью Azure PowerShell.
 services: virtual-machines-windows
 documentationcenter: ''
-author: ramankumarlive
-manager: kavithag
+author: roygara
+manager: twooley
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -14,20 +14,20 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: na
 ms.topic: article
 ms.date: 02/22/2019
-ms.author: ramankum
+ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: f97140ffeed9115a0308215ea082baee611501fb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: abd893c68f2e9cac713e09dd0bdafb7f277ae889
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58009885"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63766094"
 ---
 # <a name="update-the-storage-type-of-a-managed-disk"></a>Обновление типа хранилища управляемого диска
 
 Существует четыре варианта для Azure управляемые диски: Azure Ultra дисковый накопитель, "премиум" SSD, стандартная SSD и Standard жесткого диска. Можно переключаться между этими типами хранилища, в зависимости от потребностей производительности с минимальным временем простоя. Эта функция не поддерживается для неуправляемых дисков. Но вы можете легко [преобразовать неуправляемый диск в управляемый диск](convert-unmanaged-to-managed-disks.md) возможность переключаться между типы дисков.
 
-[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
+[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Технические условия
 
