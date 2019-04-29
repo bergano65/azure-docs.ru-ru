@@ -11,11 +11,11 @@ ms.assetid: 63b0b843-f6b0-4d9a-98d0-17500be17385
 ms.topic: article
 ms.date: 07/29/2016
 ms.openlocfilehash: 58e59e4faa135e24124f494d90437b49caa30129
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55098669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60599503"
 ---
 # <a name="scenario-exception-handling-and-error-logging-for-logic-apps"></a>Сценарий. Сценарий обработки исключений и ведения журнала ошибок для приложений логики
 
@@ -481,7 +481,7 @@ ms.locfileid: "55098669"
 
 Исходный код для приложения API, используемого для управления исключениями приложений логики, доступен в [репозитории GitHub](https://github.com/HEDIDIN/LogicAppsExceptionManagementApi "API управления исключениями приложений логики").
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Примеры приложений логики и распространенные сценарии](../logic-apps/logic-apps-examples-and-scenarios.md)
 * [Мониторинг приложений логики](../logic-apps/logic-apps-monitor-your-logic-apps.md)

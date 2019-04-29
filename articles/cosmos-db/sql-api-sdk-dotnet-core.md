@@ -9,11 +9,11 @@ ms.topic: reference
 ms.date: 03/22/2018
 ms.author: sngun
 ms.openlocfilehash: bae180e2ceae6fe0768a5f7951c18dc5147870fa
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59545252"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60626831"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для .NET Core для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -235,7 +235,7 @@ ms.locfileid: "59545252"
 
 ## <a name="release--retirement-dates"></a>Даты выпуска и выбытия
 
-| Version (версия) | Дата выпуска | Дата вывода |
+| Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
 | [2.2.3](#2.2.3) |11 марта 2019 г. |--- |
 | [2.2.2](#2.2.2) |06 февраля 2019 г. |--- |

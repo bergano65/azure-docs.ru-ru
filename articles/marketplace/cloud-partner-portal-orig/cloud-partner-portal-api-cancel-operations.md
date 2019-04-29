@@ -15,11 +15,11 @@ ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 18f00391beded0744c80eab73bb1efe1c6ab8dbc
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60625046"
 ---
 <a name="cancel-operation"></a>Отмена операции 
 =================
@@ -35,13 +35,13 @@ ms.locfileid: "48807204"
 
 |  **Имя**    |      **Описание**                                  |    **Тип данных**  |
 | ------------ |     ----------------                                  |     -----------   |
-| publisherid  |  Идентификатор издателя, например `contoso`         |   Строка          |
-| offerId      |  Идентификатор предложения                                     |   Строка          |
+| publisherid  |  Идентификатор издателя, например `contoso`         |   String          |
+| offerId      |  Идентификатор предложения                                     |   String          |
 | api-version  |  Текущая версия клиента API                               |    Дата           |
 |  |  |  |
 
 
-<a name="header"></a>Заголовок
+<a name="header"></a>Верхний колонтитул
 ------
 
 |  **Имя**              |  **Значение**         |
@@ -51,7 +51,7 @@ ms.locfileid: "48807204"
 |  |  |
 
 
-<a name="body-example"></a>Пример текста
+<a name="body-example"></a>Пример текста запроса
 ------------
 
 ### <a name="request"></a>Запрос
@@ -72,7 +72,7 @@ ms.locfileid: "48807204"
 |  |  |
 
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
   `Operation-Location: https://cloudpartner.azure.com/api/publishers/contoso/offers/contoso-virtualmachineoffer/operations/56615b67-2185-49fe-80d2-c4ddf77bb2e8`
 

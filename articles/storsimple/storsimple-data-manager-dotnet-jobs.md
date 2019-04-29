@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 01/16/2018
 ms.author: alkohli
 ms.openlocfilehash: 80f01a926b94deebab59f8ef91bfc36a4600b5f0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57885056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60632408"
 ---
 # <a name="use-the-net-sdk-to-initiate-data-transformation"></a>Запуск преобразования данных с помощью пакета SDK .NET
 

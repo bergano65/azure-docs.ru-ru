@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: spelluru
 ms.openlocfilehash: b6abb0048dcc722241a2cd87354224b0fd7fa2f9
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56234192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60561551"
 ---
 # <a name="event-sources-in-azure-event-grid"></a>Источники событий в службе "Сетка событий Azure"
 
@@ -142,7 +142,7 @@ ms.locfileid: "56234192"
 | [Схема событий службы "Сетка событий Azure" для подписок](event-schema-azure-maps.md) | Отображает поля в событиях службы Azure Maps. |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).
 * Сведения о том, как быстро приступить к использованию службы "Сетка событий", см. в разделе [Создание и перенаправление пользовательского события со службой "Сетка событий Azure"](custom-event-quickstart.md).

@@ -15,16 +15,16 @@ ms.workload: na
 ms.date: 03/20/2019
 ms.author: rkarlin
 ms.openlocfilehash: a0a16fbda662ee1d3718dbafc4231de67aab277e
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58400673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60614814"
 ---
-# <a name="tutorial-detect-threats-with-azure-sentinel-preview"></a>Руководство. Обнаружение угроз с предварительной версией Sentinel Azure
+# <a name="tutorial-detect-threats-with-azure-sentinel-preview"></a>Руководство по Обнаружение угроз с предварительной версией Sentinel Azure
 
 > [!IMPORTANT]
-> Azure Sentinel сейчас находится в общедоступной предварительной версии.
+> Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 После того как вы [подключенных источников данных](quickstart-onboard.md) Azure Sentinel, чтобы получать уведомления, когда происходит что-то подозрительные. Чтобы позволяют это сделать, Azure Sentinel возможность создать дополнительные правила генерации оповещений, которые создают случаи, которые можно назначить и глубоко изучить аномалии и угроз в вашей среде с помощью. 

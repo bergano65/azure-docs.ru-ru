@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 03/21/2018
 ms.author: atsenthi
 ms.openlocfilehash: 3e892e443f5e3309add48f939f26ba14eaf5a51b
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58670410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60614191"
 ---
 # <a name="assign-a-security-access-policy-for-http-and-https-endpoints"></a>Назначение политики безопасности доступа для конечных точек HTTP и HTTPS
 Если применяется политика запуска от имени и в манифесте службы объявляются ресурсы конечной точки HTTP, необходимо указать **SecurityAccessPolicy**.  **SecurityAccessPolicy** гарантирует, что к порты, выделенные для этих конечных точек, будут ограничены учетной записью пользователя, в которой выполняется служба. В противном случае файл **http.sys** не получит доступа к службе, а вызовы от клиента будут завершаться ошибками. В следующем примере учетная запись Customer1 применяется к конечной точке с именем **EndpointName**, предоставляя ей права полного доступа.

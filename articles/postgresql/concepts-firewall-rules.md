@@ -7,11 +7,11 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 02/28/2018
 ms.openlocfilehash: 793a68ee829d87a8433d5bdd77fe7b43e2f3af19
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53548846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60560253"
 ---
 # <a name="azure-database-for-postgresql-server-firewall-rules"></a>Правила брандмауэра сервера базы данных Azure для PostgreSQL
 База данных Azure для брандмауэра сервера PostgreSQL запрещает любой доступ к серверу базы данных, пока вы не укажете компьютеры, у которых есть разрешение на доступ. Брандмауэр предоставляет доступ к серверу на основе исходного IP-адреса каждого запроса.
@@ -60,7 +60,7 @@ ms.locfileid: "53548846"
 
 * Получите статические IP-адреса для клиентских компьютеров, а затем добавьте статические IP-адреса как правила брандмауэра.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ниже перечислены статьи о создании правил брандмауэра уровня сервера и уровня базы данных.
 * [Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью портала Azure](howto-manage-firewall-using-portal.md)
 * [Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью Azure CLI](howto-manage-firewall-using-cli.md)

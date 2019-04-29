@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: jingwang
 ms.openlocfilehash: e3a27ab15c72289dd28e31d832b81407a66dc754
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59256793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60546269"
 ---
 # <a name="copy-data-from-azure-data-lake-storage-gen1-to-gen2-with-azure-data-factory"></a>Копирование данных из Azure Data Lake Storage 1-го поколения в Azure Data Lake Storage 2-го поколения с помощью Фабрики данных Azure
 

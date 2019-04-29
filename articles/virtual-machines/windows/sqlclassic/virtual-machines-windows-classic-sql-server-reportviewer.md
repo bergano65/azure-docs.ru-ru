@@ -16,11 +16,11 @@ ms.workload: iaas-sql-server
 ms.date: 01/11/2017
 ms.author: maghan
 ms.openlocfilehash: b554dc1fa33519d87aa0c9c5ba9130b47cbea142
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53971756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60580074"
 ---
 # <a name="use-reportviewer-in-a-web-site-hosted-in-azure"></a>Использование ReportViewer для веб-сайта, размещенного в Azure
 > [!IMPORTANT]
@@ -37,7 +37,7 @@ ms.locfileid: "53971756"
 * **Настроить** проверку подлинности и авторизацию
 * **Опубликовать** веб-приложение ASP.NET в Azure
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Просмотрите раздел "Общие советы и рекомендации" статьи [Бизнес-аналитика SQL Server на виртуальных машинах Azure](../classic/ps-sql-bi.md).
 
 > [!NOTE]

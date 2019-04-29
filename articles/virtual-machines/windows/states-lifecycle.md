@@ -14,18 +14,18 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/09/2018
 ms.author: vashan
-ms.openlocfilehash: d2a0c0dcaa37dd90550f34b92b61f6a990198880
-ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
-ms.translationtype: HT
+ms.openlocfilehash: 921da2808757255a2a39ae8e7b927dbfde2fc627
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2018
-ms.locfileid: "40043526"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60583565"
 ---
 # <a name="virtual-machines-lifecycle-and-states"></a>Жизненный цикл и состояния виртуальных машин
 
 [!INCLUDE [virtual-machines-common-states-lifecycle](../../../includes/virtual-machines-common-states-lifecycle.md)]
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Мониторинг виртуальных машин в Azure](monitor.md).

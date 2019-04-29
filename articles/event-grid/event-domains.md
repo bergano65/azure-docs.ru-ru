@@ -8,11 +8,11 @@ ms.author: babanisa
 ms.topic: conceptual
 ms.date: 01/08/2019
 ms.openlocfilehash: 131a55d130e7ebf619ee283e943c0b0a7b45edfd
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54472863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60562036"
 ---
 # <a name="understand-event-domains-for-managing-event-grid-topics"></a>Общие сведения о доменах событий, используемых для управления разделами службы "Сетка событий Azure"
 
@@ -114,6 +114,6 @@ RBAC в доменах событий работает так же, как [уп
 
 Операции работают в доменах событий точно так же, как и в настраиваемых разделах. Каждое поступление события в домене событий является операцией, и каждая попытка отправки события также является операцией.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о настройке доменов событий, создании разделов, оформлении подписок на события и публикации событий см. в статье [Управление разделами и публикация событий с помощью Доменов событий](./how-to-event-domains.md).

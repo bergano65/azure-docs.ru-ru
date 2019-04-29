@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: tomfitz
 ms.openlocfilehash: 6554c05f40f580a6d7ae086e1d09834298f86621
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54109479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60550773"
 ---
 # <a name="authenticate-requests-across-tenants"></a>Запросы на аутентификацию в разных клиентах
 
@@ -41,6 +41,6 @@ ms.locfileid: "54109479"
 
 Если запрос ссылается на ресурс из другого клиента, Resource Manager проверяет вспомогательные токены, чтобы определить, может ли запрос быть обработан. Все вспомогательные токены в заголовке должны быть допустимыми и действующими. Если срок действия токена истек, Resource Manager возвращает код отклика 401. Ответ включает идентификатор клиента и идентификатор арендатора токена, который недопустим. Если дополнительный заголовок содержит допустимый для клиента токен, запрос между клиентами обрабатывается.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения об отправке запросов на аутентификацию с помощью API Azure Resource Manager см. в статье [Использование API аутентификации Resource Manager для доступа к подпискам](resource-manager-api-authentication.md).
 * Дополнительные сведения о токенах см. в статье [Маркеры доступа в Azure Active Directory](/azure/active-directory/develop/access-tokens).

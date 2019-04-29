@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 07/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 784d3ce9d8f926b00ac1c6fbf48a05c0b04f900a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 1d88af2c0739c30b2562bad7660015b890e8159c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23108262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60578323"
 ---
 # <a name="use-the-device-summary-in-storsimple-device-manager-service"></a>Использование сводки по устройству в службе диспетчера устройств StorSimple
 
@@ -93,7 +93,7 @@ ms.locfileid: "23108262"
     ![Щелкните диаграмму использования](./media/storsimple-8000-device-dashboard/device-summary13.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше об [использовании колонки сводки службы StorSimple](storsimple-8000-service-dashboard.md)
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

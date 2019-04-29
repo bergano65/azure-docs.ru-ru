@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/21/2017
 ms.author: terrylan
 ms.openlocfilehash: f06c8ec60831314dad30673fec4d2ea5901e11b6
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56115221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60597857"
 ---
 # <a name="azure-security-courses-from-microsoft-virtual-academy"></a>Microsoft Virtual Academy: курсы по безопасности в Azure
 Microsoft Virtual Academy предлагает бесплатное интерактивное обучение, помогающее разработчикам, ИТ-специалистам, специалистам по обработке данных и студентам узнать о новейших технологиях, усовершенствовать навыки и подняться по карьерной лестнице.

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/15/2017
 ms.author: tomfitz
-ms.openlocfilehash: 59003e71324f5342cb2b724f670603fd6b67afe4
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
-ms.translationtype: HT
+ms.openlocfilehash: ab777b487159b009bf2cac6086bb09cc71714b0d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34305231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60587756"
 ---
 # <a name="create-azure-portal-user-interface-for-your-managed-application"></a>Создание пользовательского интерфейса портала Azure для управляемого приложения
 В этом документе описывается файл createUiDefinition.json. На основе этого файла портал Azure создает пользовательский интерфейс для создания управляемого приложения.
@@ -74,7 +74,7 @@ CreateUiDefinition всегда содержит три свойства:
 ## <a name="functions"></a>Функции Azure
 Аналогично функциям шаблонов в Azure Resource Manager (и синтаксис, и функции) CreateUiDefinition предоставляет функции для работы с входными и выходными данными элементов, а также условные выражения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Файл createUiDefinition.json имеет простую схему. Его реальные возможности основаны на поддерживаемых элементах и функциях. Эти элементы более подробно описаны здесь:
 
 - [CreateUiDefinition elements](create-uidefinition-elements.md) (Элементы CreateUiDefinition)

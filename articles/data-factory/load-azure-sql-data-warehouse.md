@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: jingwang
 ms.openlocfilehash: 6a7e0a27d3cda4193a04467d541f851a9e57fa46
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58446716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60549092"
 ---
 # <a name="load-data-into-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Загрузка данных в службу "Хранилище данных SQL Azure" с помощью службы "Фабрика данных Azure"
 
@@ -45,7 +45,7 @@ ms.locfileid: "58446716"
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 
-1. В меню слева, выберите **создать ресурс** > **данные и аналитика** > **фабрики данных**: 
+1. В меню слева выберите **Создать ресурс** > **Данные и аналитика** > **Фабрика данных**. 
    
    ![Выбор фабрики данных в области "Создать"](./media/quickstart-create-data-factory-portal/new-azure-data-factory-menu.png)
 

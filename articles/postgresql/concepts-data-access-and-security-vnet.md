@@ -1,17 +1,18 @@
 ---
 title: Обзор конечных точек служб виртуальной сети базы данных Azure для сервера PostgreSQL
 description: Описание работы конечных точек служб виртуальной сети сервера базы данных Azure для PostgreSQL.
-author: bolzmj
-ms.author: mbolz
+author: WenJason
+ms.author: v-jay
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 08/20/2018
+origin.date: 08/20/2018
+ms.date: 04/22/2019
 ms.openlocfilehash: c6549ad170a0fc3b4387d5bc5163ca0548b92119
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60009197"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60560133"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-postgresql"></a>Использование конечных точек службы и правил виртуальной сети для Базы данных Azure для PostgreSQL
 

@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 01/14/2019
 ms.author: terrylan
 ms.openlocfilehash: 76f5627a28c2c0ab326197893a9b9739628af0fb
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56108082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60597847"
 ---
 # <a name="application-architecture-on-azure"></a>Архитектура приложения в Azure
 Для защиты облачных решений на платформе Microsoft Azure крайне важно иметь надежную архитектурную основу. Глубокое понимание архитектуры приложений и служб обеспечит серьезные преимущества архитекторам, проектировщикам и разработчикам программного обеспечения. Эти базовые знания помогут вам понять все компоненты облачных решений и упростить интеграцию решений по обеспечению безопасности на всех этапах разработки и реализации.

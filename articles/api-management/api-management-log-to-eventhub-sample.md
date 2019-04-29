@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 01/23/2018
 ms.author: apimpm
 ms.openlocfilehash: c52a1942bda9881f8f782a227c81feaa4813722d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58793649"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60656749"
 ---
 # <a name="monitor-your-apis-with-azure-api-management-event-hubs-and-moesif"></a>Мониторинг API-интерфейсов с помощью Управления API Azure, Центров событий и Moesif
 [Служба управления API](api-management-key-concepts.md) предоставляет множество возможностей для улучшения обработки HTTP-запросов, адресованных API-интерфейсу HTTP. Однако запросы и ответы существуют очень недолго. Созданный запрос проходит через службу управления API на серверный API вашей службы. API обрабатывает запрос и отправляет ответ обратно потребителю API. Служба управления API частично сохраняет важные статистические данные об интерфейсах API и отображает их на панели мониторинга портала Azure, но вся остальная информация теряется безвозвратно.

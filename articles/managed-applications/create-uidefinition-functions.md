@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 10/12/2017
 ms.author: tomfitz
 ms.openlocfilehash: 80fd593eecf189d516a8c9d7ef2a94ec9f23fc39
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54063800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60587926"
 ---
 # <a name="createuidefinition-functions"></a>Функции CreateUiDefinition
 Этот раздел содержит подписи для всех поддерживаемых функций CreateUiDefinition.
@@ -526,7 +526,7 @@ ms.locfileid: "54063800"
 "[float(2.9)]"
 ```
 
-### <a name="string"></a>строка
+### <a name="string"></a>string
 Преобразует параметр в строку. Эта функция поддерживает параметры всех типов данных JSON.
 
 В следующем примере возвращается `"1"`.
@@ -786,6 +786,6 @@ ms.locfileid: "54063800"
 "[addHours('1990-12-31T23:59:59Z', 1)]"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Общие сведения об Azure Resource Manager см. в [этой статье](../azure-resource-manager/resource-group-overview.md).
 

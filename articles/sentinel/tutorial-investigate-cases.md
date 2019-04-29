@@ -15,16 +15,16 @@ ms.workload: na
 ms.date: 3/6/2019
 ms.author: rkarlin
 ms.openlocfilehash: 6b3357ec06c89645b9c41e9efdb582a18af40672
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58074681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60614636"
 ---
-# <a name="tutorial-investigate-cases-with-azure-sentinel-preview"></a>Руководство. Изучите варианты с предварительной версией Sentinel Azure
+# <a name="tutorial-investigate-cases-with-azure-sentinel-preview"></a>Руководство по Изучите варианты с предварительной версией Sentinel Azure
 
 > [!IMPORTANT]
-> Azure Sentinel сейчас находится в общедоступной предварительной версии.
+> Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Это руководство поможет вам обнаруживать угрозы с помощью Azure Sentinel.

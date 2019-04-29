@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 10/22/2018
 ms.author: jingwang
 ms.openlocfilehash: fe3a3b673f6512856f3640b3e103db8623570a88
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58445774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60548292"
 ---
 # <a name="load-data-from-office-365-by-using-azure-data-factory"></a>Загрузка данных из Office 365 с помощью Фабрики данных Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "58445774"
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 
-1. В меню слева, выберите **создать ресурс** > **данные и аналитика** > **фабрики данных**: 
+1. В меню слева выберите **Создать ресурс** > **Данные и аналитика** > **Фабрика данных**. 
    
    ![Выбор фабрики данных в области "Создать"](./media/quickstart-create-data-factory-portal/new-azure-data-factory-menu.png)
 

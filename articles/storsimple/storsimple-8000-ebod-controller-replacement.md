@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/02/2017
 ms.author: alkohli
-ms.openlocfilehash: 45699c267d1009c4884dd164fd3f2950d6d5f555
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: b05d1f36d1e74b3d915e216676859654fbcbacf3
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23108222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60578697"
 ---
 # <a name="replace-an-ebod-controller-on-your-storsimple-device"></a>Замена контроллера EBOD на устройстве StorSimple
 
@@ -98,6 +98,6 @@ ms.locfileid: "23108222"
    | 8 |Корпус EBOD |
    | 9 |Блоки распределения питания |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте подробнее о [замене компонентов оборудования StorSimple](storsimple-8000-hardware-component-replacement.md).
 

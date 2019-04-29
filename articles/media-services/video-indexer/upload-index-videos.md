@@ -9,12 +9,12 @@ ms.service: media-services
 ms.topic: article
 ms.date: 03/05/2019
 ms.author: juliako
-ms.openlocfilehash: e6dead0f08f50b32dd963832824d9166ff2467c0
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 89903d3f65c74da6903e53284f168d2d6a12168a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58893458"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60559914"
 ---
 # <a name="upload-and-index-your-videos"></a>Отправка и индексирование видео  
 
@@ -32,7 +32,7 @@ API Индексатора видео позволяет загружать ви
 
 - При загрузке видео на основе URL-адреса (предпочтительно) конечная точка должна быть защищена с использованием протокола TLS версии 1.2 (или выше).
 - Размер передачи с помощью параметра URL-адреса ограничено до 30 ГБ
-- В большинстве браузеров длина URL-адреса ограничена 2000 знаков
+- Длина URL-адреса запроса должна превышать 2048 символов
 - Размер видео, передаваемого с использованием массива байтов, ограничено до 2 ГБ.
 - При последнем варианте время ожидания передачи истекает через 30 мин.
 - URL-адрес, указанный в параметре `videoURL`, нужно закодировать.

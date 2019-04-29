@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
 ms.openlocfilehash: c70e88a572bc261ad9d25f9a742b1987d0c19b44
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58540845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60656715"
 ---
 # <a name="issue-templates-in-azure-api-management"></a>Шаблоны проблем в службе управления API Azure
 Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью этих шаблонов вы можете гибко настраивать содержимое страниц, используя синтаксис [DotLiquid](http://dotliquidmarkup.org/), любой удобный текстовый редактор, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и предоставленный набор локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления страницы](api-management-page-controls.md).  
@@ -103,7 +103,7 @@ ms.locfileid: "58540845"
 |`Paging`|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции приложений.|  
 |`IsAuthenticated`|Логическое|Указывает, выполнил ли текущий пользователь вход на портал разработчика.|  
 |`CanReportIssues`|Логическое|Указывает, имеет ли текущий пользователь разрешения на сообщение о проблеме.|  
-|`Search`|строка|Это свойство является устаревшим и не должно использоваться.|  
+|`Search`|string|Это свойство является устаревшим и не должно использоваться.|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   

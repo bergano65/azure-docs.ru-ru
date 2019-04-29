@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
 ms.openlocfilehash: 20bf38b87ce29f8506a5611ecd25cf38f6d4ed61
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56824989"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60550758"
 ---
 # <a name="manage-azure-resources-by-using-the-azure-portal"></a>Управлять ресурсами Azure с помощью портала Azure
 
@@ -103,7 +103,7 @@ ms.locfileid: "56824989"
 Добавление тегов позволяет логически Упорядочить группу ресурсов и ресурсы. 
 
 1. Откройте ресурс на портале. Действия, см. в разделе [открывать ресурсы](#open-resources).
-2. Выберите **теги**. На следующем рисунке показан параметры управления для учетной записи хранения.
+2. Нажмите **Теги**. На следующем рисунке показан параметры управления для учетной записи хранения.
 
     ![тег azure ресурсов](./media/manage-resources-portal/manage-azure-resources-portal-tag-resource.png)
 3. Укажите свойства тега, а затем выберите **Сохранить**.

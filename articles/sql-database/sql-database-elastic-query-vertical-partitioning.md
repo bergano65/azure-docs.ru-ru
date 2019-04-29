@@ -7,17 +7,18 @@ ms.subservice: scale-out
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: MladjoA
-ms.author: mlandzic
+author: WenJason
+ms.author: v-jay
 ms.reviewer: sstein
-manager: craigg
-ms.date: 01/25/2019
+manager: digimobile
+origin.date: 01/25/2019
+ms.date: 02/25/2019
 ms.openlocfilehash: e7ba8057cd22c5cc1080b4a6d95f17bf76d4acb2
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55459440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60585427"
 ---
 # <a name="query-across-cloud-databases-with-different-schemas-preview"></a>Запрос к нескольким облачным базам данных с разными схемами (предварительная версия)
 
@@ -25,7 +26,7 @@ ms.locfileid: "55459440"
 
 Базы данных с вертикальным секционированием используют разные наборы таблиц в разных базах данных. Это означает, что схемы разных баз данных различаются. Например, все таблицы, связанные с данными инвентаризации, хранятся в одной базе данных, а таблицы, связанные с учетом, — в другой. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Пользователь должен иметь разрешение ALTER ANY EXTERNAL DATA SOURCE. Это разрешение включено в разрешение ALTER DATABASE.
 * Для обращения к базовому источнику данных необходимы разрешения ALTER ANY EXTERNAL DATA SOURCE.
@@ -61,8 +62,8 @@ ms.locfileid: "55459440"
     <External_Data_Source> ::=
     CREATE EXTERNAL DATA SOURCE <data_source_name> WITH 
                (TYPE = RDBMS,
-                LOCATION = ’<fully_qualified_server_name>’,
-                DATABASE_NAME = ‘<remote_database_name>’,  
+                LOCATION = '<fully_qualified_server_name>',
+                DATABASE_NAME = '<remote_database_name>',  
                 CREDENTIAL = <credential_name> 
                 ) [;] 
 
@@ -78,7 +79,7 @@ ms.locfileid: "55459440"
     WITH 
     ( 
         TYPE=RDBMS, 
-        LOCATION='myserver.database.windows.net', 
+        LOCATION='myserver.database.chinacloudapi.cn', 
         DATABASE_NAME='ReferenceData', 
         CREDENTIAL= SqlUser 
     ); 
@@ -194,7 +195,7 @@ ms.locfileid: "55459440"
 * Убедитесь, что эластичный запрос к конечной базе данных имеет доступ к удаленной базе данных. Для этого откройте доступ для служб Azure в конфигурации брандмауэра базы данных SQL. Кроме того, убедитесь, что учетные данные, указанные в определении внешнего источника данных, позволяют войти в удаленную базу данных и имеют разрешения на доступ к удаленной таблице.  
 * Эластичные запросы оптимальны, когда основная часть вычислений может быть выполнена в удаленной базе данных. Обычно наиболее эффективны запросы с предикатами выборочных фильтров, дающие возможность вычисления в удаленных базах данных, или соединениями, которые могут быть полностью выполнены в удаленной базе данных. Для других шаблонов запросов может потребоваться загрузка больших объемов данных из удаленной базы данных, и эти шаблоны могут сработать неэффективно. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения об эластичных запросах см. в разделе [Обзор эластичных запросов к базе данных SQL Azure (предварительная версия)](sql-database-elastic-query-overview.md).
 * Руководств по вертикальному секционированию см. в статье [Приступая к работе с межбазовыми запросами (вертикальное секционирование) (предварительная версия)](sql-database-elastic-query-getting-started-vertical.md).

@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 09/06/2016
 ms.author: kfollis
 ms.openlocfilehash: 693e973fb988a57c15b4ea2fae47f16b4ff39011
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56818584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60552709"
 ---
 # <a name="create-and-share-dashboards-in-the-azure-portal"></a>Создание панелей мониторинга на портале Azure и предоставление общего доступа к ним
 Можно создать несколько панелей мониторинга и предоставить к ним общий доступ другим пользователям, у которых есть доступ к вашим подпискам Azure.  В этой статье представлены основные сведения о создании, изменении и публикации панелей мониторинга, а также об управлении доступом к ним.

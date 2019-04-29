@@ -12,11 +12,11 @@ ms.date: 08/17/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 98595ea0ef5b6d9d4cef0f239390b364fb1e4e75
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55476985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60589057"
 ---
 # <a name="walkthroughs-executing-the-team-data-science-process"></a>Пошаговые руководства по процессу обработки и анализа данных группы
 
@@ -36,7 +36,7 @@ ms.locfileid: "55476985"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Описание ключевых компонентов, составляющих процесс обработки и анализа данных группы, см. в статье [Жизненный цикл процесса обработки и анализа данных группы](overview.md).
 

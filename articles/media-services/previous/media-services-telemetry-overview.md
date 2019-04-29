@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
 ms.openlocfilehash: 8e8b493881662483e66dd835d1cc68a471b18454
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58803314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60545526"
 ---
 # <a name="azure-media-services-telemetry"></a>Телеметрия Служб мультимедиа Azure  
 
@@ -74,7 +74,7 @@ ms.locfileid: "58803314"
 
 Данные телеметрии хранятся в одной таблице, TelemetryMetrics20160321, где 20160321 — дата ее создания. Система телеметрии создает отдельную таблицу для данных по каждому новому дню в 00:00 (UTC). Таблица используется для хранения повторяющихся значений, например скорости приема в пределах заданного периода времени, количества отправленных байтов и т. д. 
 
-Свойство|Значение|Примеры и примечания
+Свойство|Value|Примеры и примечания
 ---|---|---
 PartitionKey|{ИД_учетной_записи}_{ИД_сущности}|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66<br/<br/>Идентификатор учетной записи добавляется в ключ секции для упрощения рабочих процессов, в которых несколько учетных записей служб мультимедиа записывают данные в одну учетную запись хранения.
 RowKey|{число секунд до полуночи}_{случайное значение}|01688_00199<br/><br/>Ключ строки начинается с числа секунд до полуночи, чтобы сделать возможным выполнение запросов получения N первых элементов в секции. Дополнительные сведения см. в [этой статье](../../cosmos-db/table-storage-design-guide.md#log-tail-pattern). 
@@ -95,7 +95,7 @@ ServiceID|{ИД_службы}|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 
 **Конечная точка потоковой передачи**
 
-Свойство|Значение|Примеры
+Свойство|Value|Примеры
 ---|---|---
 PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66
 RowKey|RowKey|01688_00199
@@ -114,7 +114,7 @@ E2ELatency|Средняя совокупная задержка.|250
 
 **Динамический канал**
 
-Свойство|Значение|Примеры и примечания
+Свойство|Value|Примеры и примечания
 ---|---|---
 PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66
 RowKey|RowKey|01688_00199
@@ -132,14 +132,14 @@ OverlapCount|Перекрытие при приеме.|0
 DiscontinuityCount|Прерывание дорожки.|0
 LastTimestamp|Метка времени последнего получения данных.|1800488800
 NonincreasingCount|Число фрагментов, отклоненных из-за невозрастающей метки времени.|2
-UnalignedKeyFrames|Получены ли фрагменты (для уровней качества), в которых ключевые кадры не выровнены. |Да
-UnalignedPresentationTime|Получены ли фрагменты (для уровней качества или дорожек), в которых время презентации не согласовано.|Да
-UnexpectedBitrate|Значение True, если расчетная или фактическая скорость для аудио- или видеодорожки превышает 40 000 бит/с и значение IncomingBitrate равно 0 ЛИБО значения IncomingBitrate и actualBitrate отличаются на 50 %. |Да
-Healthy|Значение True, если значения <br/>overlapCount, <br/>DiscontinuityCount, <br/>NonIncreasingCount, <br/>UnalignedKeyFrames, <br/>UnalignedPresentationTime и <br/>UnexpectedBitrate<br/> равны 0.|Да<br/><br/>Healthy — это составная функция, которая возвращает значение false, если выполнено любое из следующих условий:<br/><br/>- OverlapCount > 0<br/>- DiscontinuityCount > 0<br/>- NonincreasingCount > 0<br/>- UnalignedKeyFrames = True<br/>- UnalignedPresentationTime = True<br/>- UnexpectedBitrate = True
+UnalignedKeyFrames|Получены ли фрагменты (для уровней качества), в которых ключевые кадры не выровнены. |Истина
+UnalignedPresentationTime|Получены ли фрагменты (для уровней качества или дорожек), в которых время презентации не согласовано.|Истина
+UnexpectedBitrate|Значение True, если расчетная или фактическая скорость для аудио- или видеодорожки превышает 40 000 бит/с и значение IncomingBitrate равно 0 ЛИБО значения IncomingBitrate и actualBitrate отличаются на 50 %. |Истина
+Healthy|Значение True, если значения <br/>overlapCount, <br/>DiscontinuityCount, <br/>NonIncreasingCount, <br/>UnalignedKeyFrames, <br/>UnalignedPresentationTime и <br/>UnexpectedBitrate<br/> равны 0.|Истина<br/><br/>Healthy — это составная функция, которая возвращает значение false, если выполнено любое из следующих условий:<br/><br/>- OverlapCount > 0<br/>- DiscontinuityCount > 0<br/>- NonincreasingCount > 0<br/>- UnalignedKeyFrames = True<br/>- UnalignedPresentationTime = True<br/>- UnexpectedBitrate = True
 
 **Динамический архив**
 
-Свойство|Значение|Примеры и примечания
+Свойство|Value|Примеры и примечания
 ---|---|---
 PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66
 RowKey|RowKey|01688_00199

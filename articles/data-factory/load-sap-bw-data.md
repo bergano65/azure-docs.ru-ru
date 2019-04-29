@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: jingwang
 ms.openlocfilehash: 9a123ed45b5857aa40fc9853a95c528833ba8aa9
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59523194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60549246"
 ---
 # <a name="copy-data-from-sap-business-warehouse-by-using-azure-data-factory"></a>Копирование данных из SAP Business Warehouse с помощью фабрики данных Azure
 

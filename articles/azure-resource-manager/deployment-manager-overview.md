@@ -13,11 +13,11 @@ ms.date: 12/09/2018
 ms.author: tomfitz
 ms.custom: seodec18
 ms.openlocfilehash: a615ab26e4ea046ced70ce2c154a0c304b741986
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53138353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60550928"
 ---
 # <a name="enable-safe-deployment-practices-with-azure-deployment-manager-private-preview"></a>Методики безопасного развертывания с помощью диспетчера развертывания Azure (закрытая предварительная версия)
 
@@ -335,7 +335,7 @@ ms.locfileid: "53138353"
 
 Для управления развертываниями с управлением версиями создаются новые папки, пути к которым передаются в качестве корня во время развертывания. Этот путь передается в шаблон, который развертывает ресурсы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали о диспетчере развертывания. Перейдите к следующей статье, чтобы узнать, как выполнить развертывание с помощью диспетчера развертывания.
 

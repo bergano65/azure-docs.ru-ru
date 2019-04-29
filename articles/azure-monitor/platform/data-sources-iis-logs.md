@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: bwren
 ms.openlocfilehash: 402cd4723791c0bc33db22c8857d1b785862f596
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59797848"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60614512"
 ---
 # <a name="collect-iis-logs-in-azure-monitor"></a>Сбор журналов IIS в Azure Monitor
 Службы IIS (Internet Information Services) хранят данные об активности пользователей в файлах журналов, собираемых службой Azure Monitor и сохраняемых как [данные журнала](data-platform.md).
@@ -42,7 +42,7 @@ ms.locfileid: "59797848"
 
 | Свойство | ОПИСАНИЕ |
 |:--- |:--- |
-| Компьютер |Имя компьютера, с которого было получено событие. |
+| Computer |Имя компьютера, с которого было получено событие. |
 | cIP |IP-адрес клиента. |
 | csMethod |Метод запроса, такой как GET или POST. |
 | csReferer |Сайт, с которого пользователь перешел на текущий сайт. |

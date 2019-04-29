@@ -15,11 +15,11 @@ ms.date: 02/12/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 1c5c5f4c8125f801edc89d47851871d8eb06a2f9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58762877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60591291"
 ---
 # <a name="use-azure-sql-vm-cli-to-configure-always-on-availability-group-for-sql-server-on-an-azure-vm"></a>Настройка группы доступности AlwaysOn для SQL Server на виртуальной Машине Azure с помощью CLI виртуальной Машины SQL Azure
 В этой статье описывается использование [виртуальной Машины SQL Azure CLI](/cli/azure/sql/vm?view=azure-cli-latest/) для развертывания Windows отказоустойчивого кластера (WSFC) и добавить в кластер виртуальных машин SQL Server, а также создание внутренней подсистемы балансировки нагрузки и прослушивателя для группы доступности Always On.  Фактическое развертывание группы доступности Always On по-прежнему выполняется вручную через SQL Server Management Studio (SSMS). 

@@ -12,11 +12,11 @@ ms.date: 09/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: c545e73e51ea33db1ced546bf47465197b3fb8e4
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55457638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60589134"
 ---
 # <a name="sql-data-warehouse-data-science-walkthroughs-using-t-sql-and-python-on-azure"></a>Пошаговые руководства обработки и анализа данных хранилища данных SQL с помощью T-SQL и Python в Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "55457638"
 В пошаговом руководстве [Процесс обработки и анализа данных группы на практике: использование хранилища данных SQL](sqldw-walkthrough.md) показано создание и развертывание модели машинного обучения с использованием хранилища данных SQL для общедоступного набора данных о поездках и тарифах в такси Нью-Йорка.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Описание ключевых компонентов, составляющих процесс обработки и анализа данных группы, см. в статье [Жизненный цикл процесса обработки и анализа данных группы](overview.md).
 

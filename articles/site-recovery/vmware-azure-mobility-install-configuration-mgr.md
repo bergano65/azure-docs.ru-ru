@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 04/14/2019
 ms.author: ramamill
 ms.openlocfilehash: 35c317c4b73e9a22e3b0d6192abcfc2a596066b8
-ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60150002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60598267"
 ---
 # <a name="automate-mobility-service-installation-with-system-center-configuration-manager"></a>Автоматизация установки Mobility Service с помощью System Center Configuration Manager
 
@@ -172,7 +172,7 @@ IF NOT %ERRORLEVEL% EQU 0 (
 
    | **Имя параметра** | **Значение** |
    |--|--|
-   | Name | Установка Microsoft Azure Mobility Service (Windows) |
+   | ИМЯ | Установка Microsoft Azure Mobility Service (Windows) |
    | Командная строка | install.bat |
    | Программа может запускаться | Независимо от входа пользователя в систему |
 
@@ -397,7 +397,7 @@ cd /tmp
 
     | **Имя параметра** | **Значение** |
    |--|--|
-   | Name | Установка Microsoft Azure Mobility Service (Linux) |
+   | ИМЯ | Установка Microsoft Azure Mobility Service (Linux) |
    | Команда | ./install_linux.sh |
    | Программа может запускаться | Независимо от входа пользователя в систему |
 

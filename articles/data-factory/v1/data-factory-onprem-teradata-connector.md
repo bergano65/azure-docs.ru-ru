@@ -14,11 +14,11 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: d22318f4d9e233a57d521fe36f0827b9fc3af3e0
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55746342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60610742"
 ---
 # <a name="move-data-from-teradata-using-azure-data-factory"></a>Перемещение данных из Teradata с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -32,7 +32,7 @@ ms.locfileid: "55746342"
 
 Вы можете скопировать данные из локального хранилища данных Teradata в любой поддерживаемый приемник данных. Список хранилищ данных, которые поддерживаются в качестве приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Сейчас фабрика данных поддерживает только перемещение данных из локального хранилища данных Teradata в другие хранилища данных, но не наоборот.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Фабрика данных поддерживает подключение к локальным источникам Teradata с помощью шлюза управления данными. В статье [Перемещение данных между локальными и облачными ресурсами](data-factory-move-data-between-onprem-and-cloud.md) приведены сведения о шлюзе управления данными и пошаговые инструкции по его настройке.
 
 Шлюз является обязательным, даже если база данных Teradata размещается на виртуальной машине (ВМ) Azure IaaS. Шлюз можно установить на той же ВМ IaaS, на которой размещается хранилище данных, или на другой ВМ. Важно, чтобы шлюз мог подключиться к базе данных.
@@ -62,9 +62,9 @@ ms.locfileid: "55746342"
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 В следующей таблице содержится описание элементов JSON, которые относятся к связанной службе Teradata.
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
-| Тип |Свойству type необходимо задать значение **OnPremisesTeradata**. |Yes |
+| type |Свойству type необходимо задать значение **OnPremisesTeradata**. |Yes |
 | server |Имя сервера Teradata. |Yes |
 | authenticationType |Тип проверки подлинности, используемый для подключения к базе данных Teradata. Возможные значения: Anonymous, Basic и Windows. |Yes |
 | Имя пользователя |При использовании обычной проверки подлинности или проверки подлинности Windows укажите имя пользователя. |Нет  |
@@ -83,7 +83,7 @@ ms.locfileid: "55746342"
 
 Если источник относится к типу **RelationalSource** (который содержит Teradata), то в разделе **typeProperties** доступны следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно |
+| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | query |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. |Yes |
 
@@ -285,11 +285,11 @@ ms.locfileid: "55746342"
 
 | Тип базы данных Teradata | Тип .NET Framework |
 | --- | --- |
-| Char |Строка |
-| Clob |Строка |
-| Graphic |Строка |
-| VarChar |Строка |
-| VarGraphic |Строка |
+| Char |String |
+| Clob |String |
+| Graphic |String |
+| VarChar |String |
+| VarGraphic |String |
 | BLOB-объект |Byte[] |
 | Byte |Byte[] |
 | VarByte |Byte[] |
@@ -302,7 +302,7 @@ ms.locfileid: "55746342"
 | SmallInt |Int16 |
 | Дата |DateTime |
 | Время |TimeSpan |
-| Time With Time Zone |Строка |
+| Time With Time Zone |String |
 | Timestamp |DateTime |
 | Timestamp With Time Zone |DateTimeOffset |
 | Interval Day |TimeSpan |
@@ -315,15 +315,15 @@ ms.locfileid: "55746342"
 | Interval Minute |TimeSpan |
 | Interval Minute To Second |TimeSpan |
 | Interval Second |TimeSpan |
-| Interval Year |Строка |
-| Interval Year To Month |Строка |
-| Interval Month |Строка |
-| Period(Date) |Строка |
-| Period(Time) |Строка |
-| Period(Time With Time Zone) |Строка |
-| Period(Timestamp) |Строка |
-| Period(Timestamp With Time Zone) |Строка |
-| xml |Строка |
+| Interval Year |String |
+| Interval Year To Month |String |
+| Interval Month |String |
+| Period(Date) |String |
+| Period(Time) |String |
+| Period(Time With Time Zone) |String |
+| Period(Timestamp) |String |
+| Period(Timestamp With Time Zone) |String |
+| Xml |String |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника
 Дополнительные сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в [этой статье](data-factory-map-columns.md).

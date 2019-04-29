@@ -9,11 +9,11 @@ ms.date: 09/24/2018
 ms.author: anantr
 ms.subservice: alerts
 ms.openlocfilehash: cb93f38c05156d7ab5acb89ffff810949583e507
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58089409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60551878"
 ---
 # <a name="manage-alert-instances"></a>Управление экземплярами оповещений
 С помощью [унифицированного интерфейса оповещений](https://aka.ms/azure-alerts-overview) Azure Monitor можно увидеть все типы оповещений Azure, охватывая несколько подписок, на одной панели. В этой статье рассказывается, как можно просмотреть свои экземпляры оповещения и где на портале найти конкретные экземпляры оповещений для устранения неполадок.

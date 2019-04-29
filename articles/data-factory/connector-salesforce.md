@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 04/19/2019
 ms.author: jingwang
 ms.openlocfilehash: 6056df9aa9079887bfb06ca20ad564eb52baff38
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60008704"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60546578"
 ---
 # <a name="copy-data-from-and-to-salesforce-by-using-azure-data-factory"></a>Копирование данных в Salesforce и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -318,8 +318,8 @@ ms.locfileid: "60008704"
 | Автонумерация |String |
 | Флажок |Boolean |
 | Валюта |Decimal |
-| Дата |Datetime |
-| Дата и время |Datetime |
+| Дата |DateTime |
+| Дата и время |DateTime |
 | Email |String |
 | Идентификатор |String |
 | Связь для подстановки |String |

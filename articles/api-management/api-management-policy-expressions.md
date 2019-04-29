@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/22/2019
 ms.author: apimpm
 ms.openlocfilehash: 90b2dfdbec0d6dc81a05b845832fda92fe36d98c
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58403097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60656597"
 ---
 # <a name="api-management-policy-expressions"></a>Выражения политики в службе управления API
 В этой статье описывается синтаксис выражений политики C# 7. У каждого выражения есть доступ к неявно заданной переменной [контекста](api-management-policy-expressions.md#ContextVariables) и разрешенному [подмножеству](api-management-policy-expressions.md#CLRTypes) типов .NET Framework.
@@ -210,7 +210,7 @@ ms.locfileid: "58403097"
 
 |Переменная контекста|Допустимые методы, свойства и значения параметров|
 |----------------------|-------------------------------------------------------|
-|context|Api: IApi<br /><br /> Развертывание<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> LastError<br /><br /> Операция<br /><br /> Продукт<br /><br /> Запрос<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> Ответ<br /><br /> Подписка<br /><br /> Timestamp: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> Пользователь<br /><br /> Variables: IReadOnlyDictionary<строка, объект><br /><br /> void Trace(message: строка)|
+|context|Api: IApi<br /><br /> Развертывание<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> lastError<br /><br /> Операция<br /><br /> Продукт<br /><br /> Запрос<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> Отклик<br /><br /> Подписка<br /><br /> Timestamp: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> Пользователь<br /><br /> Variables: IReadOnlyDictionary<строка, объект><br /><br /> void Trace(message: строка)|
 |context.Api|Id: строка<br /><br /> IsCurrentRevision: bool<br /><br />  Name: строка<br /><br /> Path: строка<br /><br /> Revision: строка<br /><br /> ServiceUrl: IUrl<br /><br /> Version: строка |
 |context.Deployment|Region: строка<br /><br /> ServiceName: строка<br /><br /> Certificates: IReadOnlyDictionary<строка, X509Certificate2>|
 |context.LastError|Source: строка<br /><br /> Reason: строка<br /><br /> Message: строка<br /><br /> Scope: строка<br /><br /> Section: строка<br /><br /> Path: строка<br /><br /> PolicyId: строка<br /><br /> Дополнительные сведения о переменной context.LastError см. в разделе [Error handling](api-management-error-handling-policies.md) (Обработка ошибок).|

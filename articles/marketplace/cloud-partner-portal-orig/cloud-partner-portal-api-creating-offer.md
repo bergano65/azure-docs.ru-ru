@@ -15,11 +15,11 @@ ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pbutlerm
 ms.openlocfilehash: c7aed97c442c414e86c9531f9b0a8431e22b8b44
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60624995"
 ---
 <a name="create-or-modify-an-offer"></a>Создание или изменение предложения
 =========================
@@ -34,12 +34,12 @@ ms.locfileid: "48807154"
 
 |  **Имя**         |  **Описание**                      |  **Тип данных**  |
 |  --------         |  ----------------                     |  -------------  |
-| publisherid       |  Идентификатор издателя, например `contoso` |   Строка |
-| offerId           |  Идентификатор предложения                     |   Строка        |
+| publisherid       |  Идентификатор издателя, например `contoso` |   String |
+| offerId           |  Идентификатор предложения                     |   String        |
 | api-version       |  Последняя версия API            |   Дата           |
 |  |  |  |
 
-<a name="header"></a>Заголовок
+<a name="header"></a>Верхний колонтитул
 ------
 
 |  **Имя**        |  **Значение**               |
@@ -49,7 +49,7 @@ ms.locfileid: "48807154"
 |  |  |
 
 
-<a name="body-example"></a>Пример текста
+<a name="body-example"></a>Пример текста запроса
 ------------
 
 В примере ниже показано создание предложения с помощью offerID `contosovirtualmachine`.
@@ -134,7 +134,7 @@ ms.locfileid: "48807154"
 ```
 
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 ``` json
  {

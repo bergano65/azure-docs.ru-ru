@@ -11,11 +11,11 @@ ms.service: cost-management
 manager: alavital
 ms.custom: ''
 ms.openlocfilehash: feb7fcdd9005ef131acadfc63defbe4caeaca014
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57991932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60576585"
 ---
 # <a name="use-cost-alerts-to-monitor-usage-and-spending"></a>Использование оповещений о затратах для мониторинга потребления и расходов
 
@@ -49,7 +49,7 @@ ms.locfileid: "57991932"
 
 ## <a name="view-cost-alerts"></a>Просмотр оповещений о затратах
 
-Чтобы просмотреть оповещения затрат, откройте требуемой области в на портале Azure и выберите **бюджеты** в меню. Используйте **область** поглощений переключиться на другую область. Выберите **затрат оповещения** в меню. Дополнительные сведения об областях см. в разделе [общие принципы и работы с областями](understand-work-scopes.md).
+Чтобы просмотреть оповещения затрат, откройте требуемой области в на портале Azure и выберите **бюджеты** в меню. Используйте **область** поглощений переключиться на другую область. Выберите **затрат оповещения** в меню. См. [основные сведения об областях и работе с ними](understand-work-scopes.md).
 
 ![Пример изображения оповещений, показанных в Управлении затратами](./media/cost-mgt-alerts-monitor-usage-spending/budget-alerts-fullscreen.png)
 

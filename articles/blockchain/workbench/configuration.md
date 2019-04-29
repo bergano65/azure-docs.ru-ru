@@ -11,11 +11,11 @@ ms.service: azure-blockchain
 ms.reviewer: brendal
 manager: femila
 ms.openlocfilehash: 4d29d8e86a30f105c4aa50ec9615f8165fa238d3
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59578753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60578987"
 ---
 # <a name="azure-blockchain-workbench-configuration-reference"></a>Справочник по конфигурации Azure Blockchain Workbench
 
@@ -79,11 +79,11 @@ ms.locfileid: "59578753"
 | contract | Адрес типа контракта. |
 | enum     | Перечисляемый набор именованных значений. При использовании типа enum следует также указать список значений EnumValues. Каждое значение ограничено 255 символами. Допустимые символы в значениях — прописные и строчные буквы латинского алфавита (A–Z, a–z) и цифры (0–9). Ознакомьтесь с [примером конфигурации и использованием в Solidity](#example-configuration-of-type-enum). |
 | int      | Целочисленный тип данных. |
-| money;    | Денежный тип данных. |
+| money    | Денежный тип данных. |
 | state    | Состояние рабочего процесса. |
-| строка  | Строковый тип данных. Не более 4000 знаков. Ознакомьтесь с [примером конфигурации](#example-configuration-of-type-string). |
+| string  | Строковый тип данных. Не более 4000 знаков. Ознакомьтесь с [примером конфигурации](#example-configuration-of-type-string). |
 | user     | Адрес типа пользователя. |
-| Twitter в режиме реального     | Временной тип данных. |
+| time     | Временной тип данных. |
 |`[ Application Role Name ]`| Любое имя, указанное в роли приложения. Ограничивает пользователей этим типом роли. |
 
 ### <a name="example-configuration-of-type-array"></a>Пример конфигурации типа array

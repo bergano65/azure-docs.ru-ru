@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: jgao
 ms.openlocfilehash: cb1eb5ac27c53f4c0d48fe3644febc62f848486d
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58484701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60551320"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-the-azure-portal"></a>Управление группами ресурсов Azure Resource Manager с помощью портала Azure
 
@@ -123,7 +123,7 @@ ms.locfileid: "58484701"
 Этот метод экспортирует шаблоны для некоторых развертываний. Если вы изменили ресурсы на портале или добавление или удаление ресурсов в несколько развертываний, см. в разделе [Экспорт шаблонов из групп ресурсов](#export-templates-from-resource-groups).
 
 1. Откройте группу ресурсов, которые вы хотите экспортировать.  См. в разделе [откройте групп ресурсов](#open-resource-groups).
-2. В левой области выберите **развертываний**, или щелкните ссылку под **развертываний**.  На следующем снимке экрана показано **4 Succeeded** из-за четыре отдельных развертываний с помощью четырех имена различных развертываний. Может появиться **1 успешно**.
+2. На панели слева выберите **Развертывания** или щелкните ссылку под элементом **Развертывания**.  На следующем снимке экрана показано **4 Succeeded** из-за четыре отдельных развертываний с помощью четырех имена различных развертываний. Может появиться **1 успешно**.
 
     ![шаблоны для экспорта групп ресурсов Azure](./media/manage-resource-groups-portal/manage-resource-groups-export-templates-deployment-history.png)
 

@@ -14,12 +14,12 @@ ms.devlang: nodejs
 ms.topic: article
 ms.date: 08/17/2016
 ms.author: tarcher
-ms.openlocfilehash: 045250f0b0f97cbefe05b36f1c8d4480244a172d
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
-ms.translationtype: HT
+ms.openlocfilehash: 08f3a2dcf9d36eb76b2f657232a426b078066273
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45575853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60634927"
 ---
 # <a name="using-nodejs-modules-with-azure-applications"></a>Использование модулей Node.js с приложениями Azure
 Этот документ содержит указания по использованию модулей Node.js с приложениями, размещенными в Azure. В нем описывается, как обеспечить использование конкретной версии модуля приложением и использовать собственные модули в Azure.
@@ -84,7 +84,7 @@ ms.locfileid: "45575853"
 > 
 > 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы научились использовать модули Node.js с Azure, узнайте, как [указать версию Node.js](https://github.com/squillace/staging/blob/master/articles/nodejs-specify-node-version-azure-apps.md), [создать и развернуть веб-приложение Node.js](app-service/app-service-web-get-started-nodejs.md) и [использовать интерфейс командной строки Azure для Mac и Linux](https://azure.microsoft.com/blog/using-windows-azure-with-the-command-line-tools-for-mac-and-linux/).
 
 Дополнительную информацию см. в [центре разработчиков Node.js](/nodejs/azure/).

@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 03/15/2018
 ms.author: douglasl
 ms.openlocfilehash: 60aafd983d1c21777276683a8685376a247d11f5
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57541712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60589206"
 ---
 # <a name="transform-data-by-running-a-python-activity-in-azure-databricks"></a>Преобразование данных с помощью выполнения действий Python в Azure Databricks
 
