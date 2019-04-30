@@ -5,20 +5,20 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: ccc2b574ea054a1b0ecf32a1e59691050fb66fcf
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50226726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62108310"
 ---
 ## <a name="tagging-a-virtual-machine-through-templates"></a>Пометка виртуальной машины с помощью шаблонов
-Для начала рассмотрим пометку с помощью шаблонов. [Этот шаблон](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-tags) добавляет теги к следующим ресурсам: Compute (виртуальная машина), Storage (учетная запись хранения) и Network (общедоступный IP-адрес, виртуальная сеть и сетевой интерфейс). (Это шаблон для виртуальной машины Windows, но его можно приспособить для виртуальных машин Linux.)
+Для начала рассмотрим пометку с помощью шаблонов. [Этот шаблон](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-tags) заключает теги к следующим ресурсам: COMPUTE (виртуальная машина), хранилища (учетная запись хранения) и сеть (общедоступный IP-адрес, виртуальная сеть и сетевой интерфейс). (Это шаблон для виртуальной машины Windows, но его можно приспособить для виртуальных машин Linux.)
 
 Нажмите кнопку **Развернуть в Azure** , после того как перейдете по [ссылке на шаблон](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-tags). Откроется [портал Azure](https://portal.azure.com/) , где можно развернуть этот шаблон.
 
 ![Простое развертывание с тегами](./media/virtual-machines-common-tag/deploy-to-azure-tags.png)
 
-Этот шаблон включает следующие теги: *Отдел*, *Приложение* и *Создано*. Вы можете добавлять и редактировать эти теги непосредственно в шаблоне, если вам нужно изменить их имена.
+Этот шаблон включает следующие теги: *Отдел*, *приложения*, и *созданные*. Вы можете добавлять и редактировать эти теги непосредственно в шаблоне, если вам нужно изменить их имена.
 
 ![Теги Azure в шаблоне](./media/virtual-machines-common-tag/azure-tags-in-a-template.png)
 

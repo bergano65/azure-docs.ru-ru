@@ -11,11 +11,11 @@ ms.date: 11/26/2018
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.openlocfilehash: 519eae012db30d772a388865380e4909d91b711a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57878148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61476861"
 ---
 # <a name="best-practices-for-azure-sql-data-warehouse"></a>Рекомендации по использованию хранилища данных SQL Azure
 В этой статье содержится ряд рекомендаций, которые помогут достичь оптимальной производительности хранилища данных SQL Azure.  Некоторые понятия, рассмотренные в этой статье, достаточно простые и понятные, но есть и понятия, предназначенные для более опытных пользователей, поэтому они рассмотрены лишь в общих чертах.  Здесь представлены основные рекомендации и сведения относительно важных моментов, которые следует учитывать при создании хранилища данных.  В каждом разделе содержится краткое описание определенных понятий и ссылки на статьи с более подробными сведениями.
@@ -97,7 +97,7 @@ ms.locfileid: "57878148"
 
 Дополнительные сведения см. в статьях [Мониторинг рабочей нагрузки с помощью динамических административных представлений][Monitor your workload using DMVs], [Использование меток для инструментирования запросов в хранилище данных SQL][LABEL], [Предложение OPTION (Transact-SQL)][OPTION], [sys.dm_exec_sessions (Transact-SQL)][sys.dm_exec_sessions], [sys.dm_pdw_exec_requests (Transact-SQL)][sys.dm_pdw_exec_requests], [sys.dm_pdw_request_steps][sys.dm_pdw_request_steps], [sys.dm_pdw_request_steps (Transact-SQL)][sys.dm_pdw_sql_requests], [ys.dm_pdw_dms_workers (Transact-SQL)], [DBCC PDW_SHOWEXECUTIONPLAN (Transact-SQL)][DBCC PDW_SHOWEXECUTIONPLAN] и [sys.dm_pdw_waits (Transact-SQL)][sys.dm_pdw_waits].
 
-## <a name="other-resources"></a>Другие ресурсы:
+## <a name="other-resources"></a>Другие ресурсы
 Дополнительные сведения о распространенных проблемах и способах их решения см. в статье [Устранение неполадок хранилища данных SQL Azure][Troubleshooting].
 
 Если вы не нашли нужных сведений в этой статье, попробуйте использовать поиск по документации в левой части страницы, чтобы найти все документы, связанные с хранилищем данных SQL Azure.  На [форуме по хранилищу данных SQL Azure][Azure SQL Data Warehouse MSDN Forum] можно задать вопросы другим пользователям и разработчикам хранилища данных SQL.  Мы регулярно просматриваем этот форум и следим за тем, чтобы другие пользователи или наши специалисты ответили на интересующие вас вопросы.  Вопросы также можно задавать на [форуме по хранилищу данных SQL Azure на сайте Stack Overflow][Azure SQL Data Warehouse Stack Overflow Forum].

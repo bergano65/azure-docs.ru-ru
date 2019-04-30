@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako;cenkdin;anilmur
 ms.openlocfilehash: d0da69601bfc6fd09c10b30d45195722781d87d6
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57890055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61232138"
 ---
 # <a name="use-the-wirecast-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика Wirecast для отправки односкоростного обновляющегося потока 
 > [!div class="op_single_selector"]
@@ -44,7 +44,7 @@ ms.locfileid: "57890055"
 * Для получения необходимой пропускной способности рекомендуется удвоить скорость потоковой передачи. Это требование не является обязательным, но оно поможет уменьшить влияние перегрузки сети на пропускную способность.
 * При использовании программных кодировщиков закройте все ненужные программы.
 
-## <a name="create-a-channel"></a>Создание канала
+## <a name="create-a-channel"></a>Создать канал
 1. В средстве AMSE откройте вкладку **Live** (Передача) и щелкните правой кнопкой мыши в области канала. Выберите **Создать канал...**  в меню.
 
     ![Wirecast](./media/media-services-wirecast-live-encoder/media-services-wirecast1.png)
@@ -106,7 +106,7 @@ ms.locfileid: "57890055"
    * Кодировщик: MainConcept H.264
    * Кадров в секунду: 30
    * Средняя скорость: 5000 кбит/сек (это значение можно изменить в зависимости от ограничений сети)
-   * Профиль: Главная
+   * Профиль: Основной
    * Ключевой кадр: каждые 60 кадров
 
      **Звук:**

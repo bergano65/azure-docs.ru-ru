@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/19/2019
+ms.date: 04/23/2019
 ms.author: jingwang
-ms.openlocfilehash: b97d21503e8dcd75906581faf1851533bcd69fa6
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 8f1e2aebae88d34334200504915be4043f32013b
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60009350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62107385"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you're using:"]
@@ -35,9 +35,6 @@ ms.locfileid: "60009350"
 - копирование данных с использованием аутентификации SQL и аутентификации на основе маркеров приложения Azure Active Directory (Azure AD) с субъектом-службой или управляемыми удостоверениями ресурсов Azure;
 - извлечение данных с использованием SQL-запроса или хранимой процедуры (в качестве источника);
 - загрузку данных с помощью технологии PolyBase или массовой вставки (в качестве приемника). Для лучшей производительности копирования рекомендуется использовать технологию PolyBase.
-
-> [!IMPORTANT]
-> Обратите внимание, что PolyBase поддерживает только проверку подлинности SQL, но не проверку подлинности Azure AD.
 
 > [!IMPORTANT]
 > При копировании данных с использованием среды выполнения интеграции фабрики данных Azure настройте [брандмауэр Azure SQL Server](https://msdn.microsoft.com/library/azure/ee621782.aspx#ConnectingFromAzure) таким образом, чтобы он разрешал службам Azure получать доступ к серверу.

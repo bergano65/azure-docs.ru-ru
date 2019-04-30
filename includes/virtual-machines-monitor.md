@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 01/27/2019
 ms.author: cynthn
 ms.openlocfilehash: 2978da7f2e7ec27ded6b5994570fa50a9032d0d2
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55985496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61473984"
 ---
 Работу виртуальных машин можно отслеживать с помощью сбора, просмотра и анализа данных диагностики и журнала. Для простого [мониторинга](../articles/azure-monitor/overview.md) виртуальной машины вы можете воспользоваться экраном обзора на портале Azure. При помощи [расширений](../articles/virtual-machines/windows/extensions-features.md) можно настроить на виртуальных машинах диагностику для сбора дополнительных данных метрик. Кроме того, вы можете использовать дополнительные возможности мониторинга, такие как [Application Insights](../articles/azure-monitor/app/app-insights-overview.md) и [Log Analytics](../articles/azure-monitor/log-query/log-query-overview.md).
 
@@ -72,6 +72,6 @@ ms.locfileid: "55985496"
 
 - [Azure Monitor для виртуальных машин](../articles/azure-monitor/insights/vminsights-overview.md) отслеживает виртуальные машины Azure в масштабе, анализируя производительность и работоспособность виртуальных машин Windows и Linux, включая различные процессы и взаимосвязанные зависимости от других ресурсов и внешних процессов. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Выполните инструкции в статьях [Мониторинг виртуальных машин Windows с помощью Azure PowerShell](../articles/virtual-machines/windows/tutorial-monitoring.md) или [Мониторинг виртуальных машин Linux в Azure](../articles/virtual-machines/linux/tutorial-monitoring.md).
 - Ознакомьтесь с рекомендациями по [мониторингу и диагностике](https://docs.microsoft.com/azure/architecture/best-practices/monitoring).

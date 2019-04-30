@@ -16,11 +16,11 @@ ms.workload: iaas-sql-server
 ms.date: 05/30/2017
 ms.author: maghan
 ms.openlocfilehash: 29e851772e665b4130ee58b04c264d55bcd54523
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58317788"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60609466"
 ---
 # <a name="sql-server-business-intelligence-in-azure-virtual-machines"></a>Бизнес-аналитика SQL Server на виртуальных машинах Azure
 > [!IMPORTANT] 
@@ -78,11 +78,11 @@ ms.locfileid: "58317788"
 
 | Компонент бизнес-аналитики SQL Server | Установлен в образе коллекции | Примечания |
 | --- | --- | --- |
-| **Собственный режим служб Reporting Services** |Yes |Установлен, но требует настройки, включая URL-адрес диспетчера отчетов. См. раздел [Настройка служб Reporting Services](#configure-reporting-services). |
-| **Режим SharePoint служб Reporting Services** |Нет  |Образ коллекции виртуальных машин Microsoft Azure не включает в себя SharePoint или файлы установки SharePoint. <sup>1</sup> |
-| **Многомерный и интеллектуальный анализ данных в службах Analysis Services (OLAP)** |Yes |Установлен и настроен в качестве экземпляра служб Analysis Services по умолчанию. |
-| **Табличный режим служб Analysis Services** |Нет  |Поддерживается в образах SQL Server 2012, 2014 и 2016, но не устанавливается по умолчанию. Установите другой экземпляр служб Analysis Services. Ознакомьтесь с подразделом "Установка других служб и компонентов SQL Server" этого раздела. |
-| **Power Pivot служб Analysis Services для SharePoint** |Нет  |Образ коллекции виртуальных машин Microsoft Azure не включает в себя SharePoint или файлы установки SharePoint. <sup>1</sup> |
+| **Собственный режим служб Reporting Services** |Да |Установлен, но требует настройки, включая URL-адрес диспетчера отчетов. См. раздел [Настройка служб Reporting Services](#configure-reporting-services). |
+| **Режим SharePoint служб Reporting Services** |Нет |Образ коллекции виртуальных машин Microsoft Azure не включает в себя SharePoint или файлы установки SharePoint. <sup>1</sup> |
+| **Многомерный и интеллектуальный анализ данных в службах Analysis Services (OLAP)** |Да |Установлен и настроен в качестве экземпляра служб Analysis Services по умолчанию. |
+| **Табличный режим служб Analysis Services** |Нет |Поддерживается в образах SQL Server 2012, 2014 и 2016, но не устанавливается по умолчанию. Установите другой экземпляр служб Analysis Services. Ознакомьтесь с подразделом "Установка других служб и компонентов SQL Server" этого раздела. |
+| **Power Pivot служб Analysis Services для SharePoint** |Нет |Образ коллекции виртуальных машин Microsoft Azure не включает в себя SharePoint или файлы установки SharePoint. <sup>1</sup> |
 
 <sup>1</sup> Дополнительные сведения о SharePoint и виртуальных машинах Azure см. в статьях [Архитектуры Microsoft Azure для SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx) и [Развертывание SharePoint на виртуальных машинах Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=34598).
 
@@ -224,11 +224,11 @@ ms.locfileid: "58317788"
 
 1. Создайте конечную точку для виртуальной машины через TCP-порт 80. Дополнительные сведения см. в разделе [Конечные точки виртуальной машины и порты брандмауэра](#virtual-machine-endpoints-and-firewall-ports) этого документа.
 2. Откройте порт 80 в брандмауэре виртуальной машины.
-3. Перейдите к веб-порталу или диспетчеру отчетов, используя **DNS-имя** виртуальной машины Azure в качестве имени сервера в URL-адресе. Например: 
+3. Перейдите к веб-порталу или диспетчеру отчетов, используя **DNS-имя** виртуальной машины Azure в качестве имени сервера в URL-адресе. Пример.
    
     **Сервер отчетов**: http://uebi.cloudapp.net/reportserver  **Веб-портал**: http://uebi.cloudapp.net/reports
    
-    [Настройка брандмауэра для доступа к серверу отчетов](https://msdn.microsoft.com/library/bb934283.aspx)
+    [настроить брандмауэр для доступа к серверу отчетов](https://msdn.microsoft.com/library/bb934283.aspx)
 
 ### <a name="to-create-and-publish-reports-to-the-azure-virtual-machine"></a>Создание и публикация отчетов на виртуальной машине Azure
 В следующей таблице перечислены некоторые параметры, доступные для публикации существующих отчетов с локального компьютера на сервер отчетов, размещенный на виртуальной машине Microsoft Azure.
@@ -317,7 +317,7 @@ ms.locfileid: "58317788"
   * Создайте конечные точки виртуальной машины для указанных портов (*).
 * Если виртуальная машина присоединена к домену с помощью VPN-туннеля, такого как виртуальная сеть Azure, конечные точки не требуются. Однако следует открыть порты в брандмауэре на виртуальной машине.
   
-  | Порт | type | ОПИСАНИЕ |
+  | Port | type | Описание |
   | --- | --- | --- |
   | **80** |TCP |Удаленный доступ к серверу отчетов (*). |
   | **1433** |TCP |SQL Server Management Studio (*). |

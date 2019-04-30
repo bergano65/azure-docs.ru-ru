@@ -11,11 +11,11 @@ ms.date: 12/08/2016
 ms.author: rogarana
 ms.subservice: queues
 ms.openlocfilehash: 7c2fbc168c663cc4dc5981071d40540cfc4797ca
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58648492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62108948"
 ---
 # <a name="how-to-use-queue-storage-from-java"></a>Использование хранилища очередей из Java
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -66,7 +66,7 @@ String storageConnectionString =
 
 В приведенных ниже примерах предполагается, что вы использовали одно из этих двух определений для получения строки подключения к хранилищу.
 
-## <a name="how-to-create-a-queue"></a>Практическое руководство: Создание очереди
+## <a name="how-to-create-a-queue"></a>Практическое руководство: Создать очередь
 Объект **CloudQueueClient** позволяет ссылаться на объекты очередей. Следующий код создает объект **CloudQueueClient**. (Примечание. Существуют также другие способы создания объектов **CloudStorageAccount**. Дополнительные сведения см. в разделе **CloudStorageAccount** [справочнике по пакету SDK для клиента службы хранилища Azure].
 
 С помощью объекта **CloudqueueClient** получите ссылку на очередь, которую необходимо использовать. Очередь можно создать, если она не существует.

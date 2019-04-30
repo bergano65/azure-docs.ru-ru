@@ -8,11 +8,11 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/12/2019
 ms.openlocfilehash: 6764d8d812789c9f54fa59e10b2a3e416e583a9c
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59565858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62129405"
 ---
 # <a name="use-apache-sqoop-with-hadoop-in-hdinsight"></a>Использование Apache Sqoop с Hadoop в HDInsight
 [!INCLUDE [sqoop-selector](../../../includes/hdinsight-selector-use-sqoop.md)]
@@ -45,14 +45,14 @@ ms.locfileid: "59565858"
   
   | Поле | Тип данных |
   | --- | --- |
-  | clientid |строка |
-  | querytime |строка |
-  | market |строка |
-  | deviceplatform |строка |
-  | devicemake |строка |
-  | devicemodel |строка |
-  | state |строка |
-  | country |строка |
+  | clientid |string |
+  | querytime |string |
+  | market |string |
+  | deviceplatform |string |
+  | devicemake |string |
+  | devicemodel |string |
+  | состояние |string |
+  | country |string |
   | querydwelltime |Double |
   | sessionid |bigint |
   | sessionpagevieworder |bigint |
@@ -80,8 +80,8 @@ ms.locfileid: "59565858"
     |---|---|
     |Подписка |Выберите подписку Azure из раскрывающегося списка.|
     |Группа ресурсов |Выберите свою группу ресурсов из раскрывающегося списка или создайте новую|
-    |Расположение |Выберите регион из раскрывающегося списка.|
-    |Имя кластера, |Введите имя кластера Hadoop. Используйте только буквы нижнего регистра.|
+    |Location |Выберите регион из раскрывающегося списка.|
+    |Имя кластера |Введите имя кластера Hadoop. Используйте только буквы нижнего регистра.|
     |Имя пользователя для входа в кластер |Сохранить предварительно заполненного значения `admin`.|
     |Пароль для входа в кластер |Введите пароль.|
     |Имя пользователя SSH |Сохранить предварительно заполненного значения `sshuser`.|
@@ -91,7 +91,7 @@ ms.locfileid: "59565858"
     |расположение артефактов | Используйте значение по умолчанию, если вы не хотите использовать собственный bacpac-файл в другом месте.|
     |Маркер Sas расположения артефактов |Не указывайте.|
     |Имя bacpac-файла |Используйте значение по умолчанию, если вы не хотите использовать собственный bacpac-файл.|
-    |Расположение |Используйте значение по умолчанию.|
+    |Location |Используйте значение по умолчанию.|
 
     Имя сервера SQL Azure будет `<ClusterName>dbserver`. Имя базы данных будет `<ClusterName>db`. Имя учетной записи хранения по умолчанию будет `e6qhezrh2pdqu`.
 

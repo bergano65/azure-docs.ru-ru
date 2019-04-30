@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 09/21/2018
 ms.author: roiyz
 ms.openlocfilehash: 6bd3ea4e664523fe8014be40c51d573ed5158ecf
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58089171"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60800264"
 ---
 # <a name="chef-vm-extension-for-linux-and-windows"></a>Расширение Chef виртуальной машины для Linux и Windows
 
@@ -71,8 +71,8 @@ Chef работает во всех [операционных системах, 
 | ИМЯ | Значение и пример | Тип данных
 | ---- | ---- | ---- 
 | версия_API | `2017-12-01` | Строка (дата) |
-| publisher | `Chef.Bootstrap.WindowsAzure` | строка |
-| Тип | `LinuxChefClient` (Linux), `ChefClient` (Windows) | строка |
+| publisher | `Chef.Bootstrap.WindowsAzure` | string |
+| тип | `LinuxChefClient` (Linux), `ChefClient` (Windows) | string |
 | typeHandlerVersion | `1210.12` | Строка (двойная) |
 
 ### <a name="settings"></a>Параметры
@@ -80,14 +80,14 @@ Chef работает во всех [операционных системах, 
 | ИМЯ | Значение и пример | Тип данных | Обязательный?
 | ---- | ---- | ---- | ----
 | settings/параметры_начальной_загрузки/URL-адрес_сервера_Chef | `https://api.chef.io/organizations/myorg` | Строка (URL-адрес) | Да |
-| settings/параметры_начальной_загрузки/имя_клиента_для_проверки | `myorg-validator` | строка | Да |
-| settings/runlist | `recipe[mycookbook::default]` | строка | Да |
+| settings/параметры_начальной_загрузки/имя_клиента_для_проверки | `myorg-validator` | string | Да |
+| settings/runlist | `recipe[mycookbook::default]` | string | Да |
 
 ### <a name="protected-settings"></a>Защищенные параметры
 
 | ИМЯ | Пример | Тип данных | Обязательный?
 | ---- | ---- | ---- | ---- |
-| protectedSettings/ключ_проверки | `-----BEGIN RSA PRIVATE KEY-----\nKEYDATA\n-----END RSA PRIVATE KEY-----` | строка | Да |
+| protectedSettings/ключ_проверки | `-----BEGIN RSA PRIVATE KEY-----\nKEYDATA\n-----END RSA PRIVATE KEY-----` | string | Да |
 
 <!--
 ### Linux-specific settings

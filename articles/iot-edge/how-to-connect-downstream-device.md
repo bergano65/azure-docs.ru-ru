@@ -10,11 +10,11 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: 5a05b8f0f9484ea49fbfb0bbe8818aa9cd0d66ee
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58757133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62126432"
 ---
 # <a name="connect-a-downstream-device-to-an-azure-iot-edge-gateway"></a>Подключение подчиненного устройства к шлюзу Azure IoT Edge
 
@@ -125,7 +125,7 @@ sudo update-ca-certificates
 
     Например, `<path>/azure-iot-test-only.root.ca.cert.pem`. 
 
-### <a name="nodejs"></a>NodeJS
+### <a name="nodejs"></a>NodeJs
 
 Этот раздел содержит пример приложения для подключения клиентского устройства Azure IoT NodeJS к шлюзу IoT Edge. Для узлов Linux и Windows необходимо установить сертификат корневого ЦС на уровне приложения, как показано здесь, так как приложения NodeJS не используют хранилище сертификатов операционной системы. 
 

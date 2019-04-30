@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: crdun
 ms.openlocfilehash: 8c1c52790065015977add7e32a06063057b24dad
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57445914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62128155"
 ---
 # <a name="add-authentication-to-your-ios-app"></a>Добавление проверки подлинности в приложение iOS
 [!INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
@@ -212,7 +212,7 @@ ms.locfileid: "57445914"
 
 5. Нажмите кнопку *Выполнить*, чтобы запустить приложение, и войдите в систему. После входа вы должны увидеть список Todo и сможете вносить изменения.
 
-Для аутентификации службы приложений используется технология взаимодействия приложений Apple.  Дополнительные сведения по этой теме см. [документации Apple][2]
+Для аутентификации службы приложений используется технология взаимодействия приложений Apple.  Дополнительные сведения по этой теме доступны в [документации Apple][2].
 <!-- URLs. -->
 
 [1]: https://developers.facebook.com/docs/ios/ios9#whitelist

@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
 ms.openlocfilehash: f5ffc795e6469971d1eaf335d6683f94d05f0807
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53278626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122444"
 ---
 # <a name="upgrade-your-existing-net-azure-mobile-service-to-app-service"></a>Обновление существующего приложения мобильной службы Azure .NET до службы приложений
 Мобильное приложение службы приложений — это новый способ сборки мобильных приложений с помощью Microsoft Azure. Дополнительные сведения см. в статье [Что представляют собой мобильные приложения?].
@@ -92,7 +92,7 @@ ConfigOptions options = new ConfigOptions();
 HttpConfiguration config = ServiceConfig.Initialize(new ConfigBuilder(options));
 ```
 
-на
+с
 
 ```csharp
 HttpConfiguration config = new HttpConfiguration();
@@ -162,10 +162,10 @@ string schema = System.Configuration.ConfigurationManager.AppSettings.Get("MS_Mo
 
 | Атрибут | type | Примечание |
 | --- | --- | --- |
-| id |Строка, помеченная как обязательная |первичный ключ в удаленном хранилище |
+| идентификатор |Строка, помеченная как обязательная |первичный ключ в удаленном хранилище |
 | дата создания |Дата |(необязательно) сопоставляется с системным свойством createdAt |
 | дата обновления |Дата |(необязательно) сопоставляется с системным свойством updatedAt |
-| версия |Строка |(необязательно) используется для обнаружения конфликтов, сопоставляется со свойством version |
+| версия |String |(необязательно) используется для обнаружения конфликтов, сопоставляется со свойством version |
 
 #### <a name="querying-system-properties"></a>Выполнение запросов к свойствам системы
 В мобильных службах Azure свойства системы не отправляются по умолчанию. Однако это происходит только в том случае, когда они запрашиваются с помощью строки запроса `__systemProperties`. Напротив, свойства системы мобильных приложений Azure **всегда выбираются**, так как они являются частью объектной модели серверного пакета SDK.

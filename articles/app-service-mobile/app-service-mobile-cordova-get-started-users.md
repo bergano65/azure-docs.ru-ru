@@ -14,18 +14,18 @@ ms.devlang: javascript
 ms.topic: article
 ms.date: 10/30/2016
 ms.author: crdun
-ms.openlocfilehash: b5cce832ae7ae83552c2a5ded2f5f5bda0ac76bf
-ms.sourcegitcommit: df4ddc55b42b593f165d56531f591fdb1e689686
-ms.translationtype: HT
+ms.openlocfilehash: 23b5967782cf237ed5af2b802aabbbf9c2f781e7
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2018
-ms.locfileid: "27591952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62114216"
 ---
 # <a name="add-authentication-to-your-apache-cordova-app"></a>Добавление проверки подлинности в приложение Apache Cordova
 [!INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
 
 ## <a name="summary"></a>Сводка
-В этом учебнике вы добавляете проверку подлинности в учебный проект ToDoList для Apache Cordova с помощью поддерживаемого поставщика удостоверений. Этот учебник создан на основе учебника [Начало работы с мобильными службами] , который необходимо изучить в первую очередь.
+В этом учебнике вы добавляете проверку подлинности в учебный проект ToDoList для Apache Cordova с помощью поддерживаемого поставщика удостоверений. Этот учебник создан на основе учебника [Начало работы с мобильными приложениями] , который необходимо изучить в первую очередь.
 
 ## <a name="register"></a>Регистрация приложения для проверки подлинности и настройка службы приложений
 [!INCLUDE [app-service-mobile-register-authentication](../../includes/app-service-mobile-register-authentication.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "27591952"
 
 Теперь можно убедиться, что анонимный доступ к серверной части был отключен. В Visual Studio:
 
-* Откройте проект, созданный при выполнении заданий руководства [Начало работы с мобильными службами].
+* Откройте проект, созданный при выполнении заданий руководства [Начало работы с мобильными приложениями].
 * Запустите приложение в **эмуляторе Google Android**.
 * Проверьте, отображается ли сообщение о непредвиденном сбое подключения после запуска приложения.
 
@@ -60,7 +60,7 @@ ms.locfileid: "27591952"
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'
             data: gap: https://login.microsoftonline.com https://yourapp.azurewebsites.net; style-src 'self'">
 
-    Замените `https://login.microsoftonline.com` узлом OAuth из приведенной выше таблицы.  Дополнительные сведения о метатеге политики безопасности содержимого см. в [документации по политике безопасности содержимого].
+    Замените `https://login.microsoftonline.com` узлом OAuth из приведенной выше таблицы.  Дополнительные сведения о метатеге политики безопасности содержимого см. в [Документация по политике безопасности содержимого].
 
     Некоторые поставщики аутентификации не требуют изменений в политике безопасности содержимого при использовании на соответствующих мобильных устройствах.  Например, изменения в политики безопасности содержимого не требуются, если на устройстве Android используется проверка подлинности Google.
 
@@ -104,9 +104,9 @@ ms.locfileid: "27591952"
 * [Серверный пакет SDK для Node.js]
 
 <!-- URLs. -->
-[Начало работы с мобильными службами]: app-service-mobile-cordova-get-started.md
-[документации по политике безопасности содержимого]: https://cordova.apache.org/docs/en/latest/guide/appdev/whitelist/index.html
-[push-уведомления]: app-service-mobile-cordova-get-started-push.md
+[Начало работы с мобильными приложениями]: app-service-mobile-cordova-get-started.md
+[Документация по политике безопасности содержимого]: https://cordova.apache.org/docs/en/latest/guide/appdev/whitelist/index.html
+[Push-уведомления]: app-service-mobile-cordova-get-started-push.md
 [аутентификации]: app-service-mobile-auth.md
 [Пакет SDK для Apache Cordova]: app-service-mobile-cordova-how-to-use-client-library.md
 [Серверный пакет SDK для ASP.NET]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md

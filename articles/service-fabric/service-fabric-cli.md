@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: d5b6f183a59e3f47aa5867b5e09e06541a6a67db
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58662658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60803243"
 ---
 # <a name="azure-service-fabric-cli"></a>Интерфейс командной строки Azure Service Fabric
 
@@ -37,7 +37,7 @@ ms.locfileid: "58662658"
 | 6.0.0         | 6.3                       |
 | 5.0.0         | 6.2                       |
 | 4.0.0         | 6.1                       |
-| 3.0.0         | 6,0                       |
+| 3.0.0         | 6.0                       |
 | 1.1.0         | 5.6, 5.7                  |
 
 При необходимости можно указать целевую версию интерфейса командной строки для установки, добавив к команде `pip install` суффикс `==<version>`. Например, для версии 1.1.0 синтаксис будет выглядеть следующим образом:
@@ -127,7 +127,7 @@ sudo pip3 install sfctl
 Чтобы протестировать установку, выполните действия из раздела **Подсистема Ubuntu и Windows для Linux**.
 
 <a name = "cli-mac"></a>
-### <a name="macos"></a>MacOS
+### <a name="macos"></a>macOS
 
 Для MacOS мы рекомендуем использовать [диспетчер пакетов HomeBrew](https://brew.sh). Если диспетчер HomeBrew еще не установлен, установите его, выполнив следующую команду:
 

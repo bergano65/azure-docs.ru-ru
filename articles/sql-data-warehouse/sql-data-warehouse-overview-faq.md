@@ -11,11 +11,11 @@ ms.date: 04/17/2018
 ms.author: acomet
 ms.reviewer: igorstan
 ms.openlocfilehash: 596ed857b39cf106ed2e37ad81c5fe9e939cca61
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58001429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60747614"
 ---
 # <a name="sql-data-warehouse-frequently-asked-questions"></a>Часто задаваемые вопросы о хранилище данных SQL
 
@@ -31,7 +31,7 @@ ms.locfileid: "58001429"
 
 В. Можно ли подключить PowerBI?
 
-О.  Да! Служба PowerBI поддерживает прямые запросы, выполняемые из хранилища данных SQL, но она не предназначена для большого количества пользователей или данных в режиме реального времени. В рабочей среде PowerBI рекомендуется использовать службу PowerBI поверх служб Azure Analysis Services или Analysis Service IaaS. 
+О. Да. Служба PowerBI поддерживает прямые запросы, выполняемые из хранилища данных SQL, но она не предназначена для большого количества пользователей или данных в режиме реального времени. В рабочей среде PowerBI рекомендуется использовать службу PowerBI поверх служб Azure Analysis Services или Analysis Service IaaS. 
 
 В. Какие ограничения емкости имеет хранилище данных SQL?
 
@@ -99,7 +99,7 @@ ms.locfileid: "58001429"
 Ответ. HDI может использовать ADLS или WASB в качестве уровня HDFS. Если одна из этих служб используется в качестве уровня HDFS, то можно загрузить данные в хранилище данных SQL. Тем не менее, создание вычислений со стековой памятью для экземпляра HDI невозможно. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о хранилище данных SQL в целом см. на [Обзор].
+Дополнительные сведения о хранилище данных SQL в целом см. на [Обзор набора средств Visual Studio для Unity].
 
 
 <!-- Article references -->
@@ -116,4 +116,4 @@ ms.locfileid: "58001429"
 [Большие двоичные объекты службы хранилища Azure]: ./sql-data-warehouse-load-from-azure-blob-storage-with-polybase.md
 [Запрос на функцию поддержки проектов Базы данных]: https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/13313247-database-project-from-visual-studio-to-support-azu
 [MSDN]: https://msdn.microsoft.com/library/azure/mt163685.aspx
-[Обзор]: ./sql-data-warehouse-overview-faq.md
+[Обзор набора средств Visual Studio для Unity]: ./sql-data-warehouse-overview-faq.md

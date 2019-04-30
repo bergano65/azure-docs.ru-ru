@@ -13,11 +13,11 @@ ms.reviewer: anjangsh,billgib,genemi
 manager: craigg
 ms.date: 09/19/2018
 ms.openlocfilehash: 0146f6ca610a25e57771fb21436a70acbdd5a5ef
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58481388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61486664"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---multi-tenant-app"></a>Получение межклиентской аналитики на основе извлеченных с мультитенантного приложения данных
  
@@ -228,7 +228,7 @@ AverageTicketsSold = DIVIDE(DIVIDE(COUNTROWS(fact_Tickets),DISTINCT(dim_Venues[V
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как:
 
 > [!div class="checklist"]
 > - развернуть клиентскую базу данных аналитики с предварительно определенными таблицами схемы типа "звезда";

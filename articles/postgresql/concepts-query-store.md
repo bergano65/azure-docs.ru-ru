@@ -7,11 +7,11 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 03/26/2019
 ms.openlocfilehash: c904b6e6cd7a4dc0f9d5a442e20738e43595b369
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58485923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60564010"
 ---
 # <a name="monitor-performance-with-the-query-store"></a>Мониторинг производительности с помощью хранилища запросов
 
@@ -86,7 +86,7 @@ SELECT * FROM query_store.pgms_wait_sampling_view;
 
 | **Параметр** | **Описание** | **По умолчанию** | **Range**|
 |---|---|---|---|
-| pg_qs.query_capture_mode | Задает, какие инструкции отслеживаются. | Нет | none, top, all |
+| pg_qs.query_capture_mode | Задает, какие инструкции отслеживаются. | нет | none, top, all |
 | pg_qs.max_query_text_length | Задает максимальную длину запроса, которую можно сохранить. Более длинные запросы будут усечены. | 6000 | 100–10 000 |
 | pg_qs.retention_period_in_days | Задает период хранения. | 7 | 1–30 |
 | pg_qs.track_utility | Задает, будут ли отслеживаться команды служебных программ. | on | on, off |
@@ -95,7 +95,7 @@ SELECT * FROM query_store.pgms_wait_sampling_view;
 
 | **Параметр** | **Описание** | **По умолчанию** | **Range**|
 |---|---|---|---|
-| pgms_wait_sampling.query_capture_mode | Задает, какие инструкции отслеживаются для статистики ожидания. | Нет | none, all|
+| pgms_wait_sampling.query_capture_mode | Задает, какие инструкции отслеживаются для статистики ожидания. | нет | none, all|
 | Pgms_wait_sampling.history_period | Задайте частоту (в миллисекундах) выборки событий ожидания. | 100 | 1–600 000 |
 
 > [!NOTE] 
@@ -158,8 +158,8 @@ SELECT * FROM query_store.pgms_wait_sampling_view;
 |user_id    |oid    |pg_authid.oid  |Идентификатор объекта пользователя, который выполнил инструкцию|
 |db_id  |oid    |pg_database.oid    |Идентификатор объекта базы данных, в которой была выполнена инструкция|
 |query_id   |bigint     ||Внутренний хэш-код, вычисляемый на основе дерева синтаксического анализа инструкции|
-|event_type |текст       ||Тип события, которого ожидает серверный компонент|
-|event  |текст       ||Имя события ожидания, если серверный компонент сейчас находится в состоянии ожидания|
+|event_type |Text       ||Тип события, которого ожидает серверный компонент|
+|event  |Text       ||Имя события ожидания, если серверный компонент сейчас находится в состоянии ожидания|
 |calls  |Целое число         ||Число одинаковых записанных событий|
 
 

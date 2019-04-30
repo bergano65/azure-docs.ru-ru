@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: magoedte
 ms.openlocfilehash: 3f3de81197b05d4f025a3fd8638cffe4b07cecad
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56429522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61424659"
 ---
 # <a name="unify-multiple-azure-monitor-application-insights-resources"></a>Объединение нескольких ресурсов Azure Monitor Application Insights 
 В этой статье описывается выполнение запросов и централизованный просмотр всех данных журнала приложения Application Insights (в качестве замены устаревающему Соединителю Application Insights), даже если они находятся в разных подписках Azure. Вы можете включить в один запрос не более 100 ресурсов Application Insights.  
@@ -106,13 +106,13 @@ applicationsScoping //this brings data from Application Insights resources
 | AvailabilityDuration | длительность |
 | AvailabilityMessage | Message |
 | AvailabilityRunLocation | location |
-| AvailabilityTestId | id |
+| AvailabilityTestId | идентификатор |
 | AvailabilityTestName | name |
 | AvailabilityTimestamp |  timestamp |
 | "Обзор" | client_browser |
-| City | client_city |
+| Город | client_city |
 | ClientIP | client_IP |
-| Компьютер | cloud_RoleInstance | 
+| Computer | cloud_RoleInstance | 
 | Страна | client_CountryOrRegion | 
 | CustomEventCount | itemCount | 
 | CustomEventDimensions | customDimensions |
@@ -122,7 +122,7 @@ applicationsScoping //this brings data from Application Insights resources
 | ExceptionCount | itemCount | 
 | ExceptionHandledAt | handledAt |
 | ExceptionMessage | Message | 
-| ExceptionType | Тип |
+| ExceptionType | тип |
 | OperationID | operation_id |
 | OperationName | operation_Name | 
 | ОС | client_OS | 
@@ -132,7 +132,7 @@ applicationsScoping //this brings data from Application Insights resources
 | ParentOperationID | operation_Id | 
 | RequestCount | itemCount | 
 | RequestDuration | длительность | 
-| RequestID | id | 
+| RequestID | идентификатор | 
 | RequestName | name | 
 | RequestSuccess | Успешное завершение | 
 | ResponseCode | resultCode | 
@@ -140,10 +140,10 @@ applicationsScoping //this brings data from Application Insights resources
 | RoleInstance | cloud_RoleInstance |
 | SessionId | session_Id | 
 | SourceSystem | operation_SyntheticSource |
-| TelemetryTYpe | Тип |
+| TelemetryTYpe | тип |
 | URL-адрес | _url |
 | UserAccountId | user_AccountId |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте [поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просматривать подробные сведения о приложениях Application Insights.

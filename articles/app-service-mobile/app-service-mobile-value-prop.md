@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 10/01/2016
 ms.author: crdun
 ms.openlocfilehash: f3eb781e7f84e8cf03a975f7cb77f6a7ef074d44
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57771815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60861391"
 ---
 # <a name="getting-started"> </a>Компонент "Мобильные приложения" в службе приложений Azure
 Служба приложений Azure — это решение для профессиональных разработчиков на основе полностью управляемой [платформы как услуги](https://azure.microsoft.com/overview/what-is-paas/) (PaaS). Эта служба привносит широкий спектр возможностей в сценарии с использованием Интернета, мобильных устройств и интеграции. 

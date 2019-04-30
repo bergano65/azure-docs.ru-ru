@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
 ms.openlocfilehash: 402511ba3c45e8bd12cb7f92ecd54f6084c8ada2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58009016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62112363"
 ---
 # <a name="working-with-date-time-values-in-azure-monitor-log-queries"></a>Работа со значениями даты и времени в запросах журнала Azure Monitor
 
@@ -37,11 +37,11 @@ ms.locfileid: "58009016"
 
 |сокращение   | единица времени    |
 |:---|:---|
-|d           | day          |
-|h           | hour         |
-|m           | минута       |
-|s           | секунда       |
-|ms          | миллисекунда  |
+|дн.           | day          |
+|ч           | hour         |
+|мин           | минута       |
+|с           | секунда       |
+|мс          | миллисекунда  |
 |микросекунда | микросекунда  |
 |галочка        | наносекунда   |
 
@@ -153,7 +153,7 @@ Event
 
 ## <a name="related-functions"></a>Связанные функции
 
-| Категория | Функция |
+| Category | Функция |
 |:---|:---|
 | Преобразование типов данных | [todatetime](/azure/kusto/query/todatetimefunction)  [totimespan](/azure/kusto/query/totimespanfunction)  |
 | Округление значения до размера ячейки | [bin](/azure/kusto/query/binfunction) |

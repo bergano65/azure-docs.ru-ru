@@ -10,11 +10,11 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: c64db6b35aa2f1daa4484f137c8505b1415c5a0b
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58521760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60998461"
 ---
 # <a name="prepare-to-deploy-your-iot-edge-solution-in-production"></a>Подготовка к развертыванию решения IoT Edge в рабочей среде
 
@@ -208,7 +208,7 @@ ms.locfileid: "58521760"
 
 Добавить (или в конце) эту информацию в файл с именем `daemon.json` и поместите его в надлежащем расположении для вашей платформы устройств.
 
-| платформа | Расположение |
+| платформа | Location |
 | -------- | -------- |
 | Linux | `/etc/docker/` |
 |  Windows | `C:\ProgramData\iotedge-moby-data\config\` |
@@ -217,7 +217,7 @@ ms.locfileid: "58521760"
 
 **Вариант. Настройка параметров журнала для каждого контейнера модуля**
 
-Можно сделать в **createOptions** каждого модуля. Например: 
+Можно сделать в **createOptions** каждого модуля. Пример.
 
     "createOptions": {
         "HostConfig": {

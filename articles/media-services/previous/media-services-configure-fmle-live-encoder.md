@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako;cenkdin;anilmur
 ms.openlocfilehash: 01bb628a6520488dcebf49a1e868213b955abc31
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57895635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61466018"
 ---
 # <a name="use-the-fmle-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика FMLE для отправки односкоростного обновляющегося потока 
 > [!div class="op_single_selector"]
@@ -46,7 +46,7 @@ ms.locfileid: "57895635"
 * Для получения необходимой пропускной способности рекомендуется удвоить скорость потоковой передачи. Это требование не является обязательным, но оно поможет уменьшить влияние перегрузки сети на пропускную способность.
 * При использовании программных кодировщиков закройте все ненужные программы.
 
-## <a name="create-a-channel"></a>Создание канала
+## <a name="create-a-channel"></a>Создать канал
 1. В средстве AMSE откройте вкладку **Live** (Передача) и щелкните правой кнопкой мыши в области канала. Выберите **Создать канал...**  в меню.
 
     ![FMLE](./media/media-services-fmle-live-encoder/media-services-fmle1.png)
@@ -102,8 +102,8 @@ ms.locfileid: "57895635"
      При использовании источников с чересстрочной разверткой установите флажок «Устранить чересстрочную развертку».
 2. Выберите значок гаечного ключа рядом с полем «Формат», там должны быть установлены следующие дополнительные параметры:
 
-   * Профиль: Главная
-   * Уровень: 4,0
+   * Профиль: Основной
+   * Уровень: 4.0
    * Частота опорного кадра: 2 секунды
 
      ![fmle](./media/media-services-fmle-live-encoder/media-services-fmle4.png)

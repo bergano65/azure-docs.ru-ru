@@ -10,11 +10,11 @@ ms.date: 06/13/2018
 ms.author: tamram
 ms.subservice: queues
 ms.openlocfilehash: 5e61d346aab55f9b3c6dd136d3255f2afe0b8534
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57850893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62109425"
 ---
 # <a name="get-started-with-azure-queue-storage-using-net"></a>Приступая к работе с хранилищем очередей Azure с помощью .NET
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "57850893"
 ### <a name="about-this-tutorial"></a>О данном учебнике
 В этом руководстве показано, как написать код .NET для некоторых распространенных сценариев использования хранилища очередей Azure. Эти сценарии включают создание и удаление очередей, а также добавление, чтение и удаление сообщений.
 
-**Предполагаемое время выполнения:** 45 минут
+**Предполагаемое время выполнения:** 45 минут
 
 **Предварительные требования:**
 
@@ -74,7 +74,7 @@ CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
     
 Теперь вы можете написать код, который считывает и записывает данные в хранилище очередей.
 
-## <a name="create-a-queue"></a>Создание очереди
+## <a name="create-a-queue"></a>Создать очередь
 В этом примере показано, как создать очередь, если она не существует:
 
 ```csharp

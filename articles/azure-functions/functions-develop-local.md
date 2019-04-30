@@ -10,22 +10,22 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/04/2018
 ms.author: glenga
-ms.openlocfilehash: 0f1d4fdbb9e5d2b05b8ec43c1393951a4c6a87b8
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
-ms.translationtype: HT
+ms.openlocfilehash: 6486b38040fc92c2ece839801293817c4afc7cf5
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44094768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60614020"
 ---
 # <a name="code-and-test-azure-functions-locally"></a>Как программировать и тестировать Функции Azure в локальной среде
 
-Хотя вы можете разрабатывать и тестировать Функции Azure на [портала Azure], многие разработчики предпочитают локальную среду разработки. Решение "Функции" позволяет с легкостью использовать предпочитаемый редактор кода и средства разработки для создания и тестирования функций на локальном компьютере. Локальные функции можно подключать к действующим службам Azure, а их отладку можно выполнять на локальном компьютере с помощью полной среды выполнения решения "Функции".
+Хотя вы можете разрабатывать и тестировать Функции Azure на [портал Azure], многие разработчики предпочитают локальную среду разработки. Решение "Функции" позволяет с легкостью использовать предпочитаемый редактор кода и средства разработки для создания и тестирования функций на локальном компьютере. Локальные функции можно подключать к действующим службам Azure, а их отладку можно выполнять на локальном компьютере с помощью полной среды выполнения решения "Функции".
 
 ## <a name="local-development-environments"></a>Локальные среды разработки
 
 Способ разработки функций на локальном компьютере зависит от настроек [языка](supported-languages.md) и инструментария. В нижеприведенной таблице указаны среды, которые поддерживают локальную разработку:
 
-|Среда                              |Языки         |ОПИСАНИЕ|
+|Среда                              |Языки         |Описание|
 |-----------------------------------------|------------|---|
 | [Командная строка или терминал](functions-run-local.md) | [C# (библиотека классов)](functions-dotnet-class-library.md), [скрипт C# (CSX)](functions-reference-csharp.md), [JavaScript](functions-reference-node.md) | [Основные инструменты службы "Функции Azure"] предоставляют базовую среду выполнения и шаблоны для создания функций, которые обеспечивают возможность локальной разработки. Версия 2.x поддерживает разработку в Linux, MacOS и Windows. Во всех средах применяют основные инструменты для локальной среды выполнения средства "Функции". |
 |[Visual Studio Code](functions-create-first-function-vs-code.md)| [C# (библиотека классов)](functions-dotnet-class-library.md), [скрипт C# (CSX)](functions-reference-csharp.md), [JavaScript](functions-reference-node.md) | [Расширение Функций Azure для VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) добавляет поддержку средства "Функции" в VS Code. Требуются основные инструменты. Поддерживает разработку на платформах Linux, MacOS и Windows при использовании версии 2.x основных инструментов. Для получения дополнительных сведений см. статью [Создание функции в Azure с помощью Visual Studio Code](functions-create-first-function-vs-code.md). |
@@ -36,7 +36,7 @@ ms.locfileid: "44094768"
 
 Каждая из этих локальных сред разработки позволяет создавать проекты приложений-функций и использовать предопределенные шаблоны решения "Функции" для создания новых функций. Каждая из них использует основные инструменты, чтобы вы могли тестировать и отлаживать функции в реальной среде выполнения решения "Функции" на своем компьютере как и любое другое приложение. Вы также можете опубликовать проект приложения-функции из любой из этих сред в Azure.  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 + Дополнительные сведения о локальной разработке скомпилированных функций C# с помощью Visual Studio 2017 см. в статье [Инструменты Функций Azure для Visual Studio](functions-develop-vs.md).
 + Дополнительные сведения о локальной разработке функций с помощью VS Code на компьютерах с ОС Mac, Linux или Windows см. в статье [VS Code documentation for Azure Functions](https://code.visualstudio.com/tutorials/functions-extension/getting-started) (Документация VS Code для Функций Azure).
@@ -45,5 +45,5 @@ ms.locfileid: "44094768"
 <!-- LINKS -->
 
 [Основные инструменты службы "Функции Azure"]: https://www.npmjs.com/package/azure-functions-core-tools
-[портала Azure]: https://portal.azure.com 
+[портал Azure]: https://portal.azure.com 
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows

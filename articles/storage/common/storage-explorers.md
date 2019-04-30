@@ -9,11 +9,11 @@ ms.date: 09/06/2017
 ms.author: dineshmurthy
 ms.subservice: common
 ms.openlocfilehash: ae6ceee33aa6d96c360782c33232e0c7561cf209
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58015332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61483117"
 ---
 # <a name="azure-storage-client-tools"></a>Клиентские инструменты службы хранилища Azure
 Пользователям службы хранилища Azure часто требуется просматривать свои данные или взаимодействовать с ними с помощью клиентского инструмента службы хранилища Azure. В приведенных ниже таблицах перечислен ряд инструментов, которые позволяют это сделать. Соответствующее поле содержит "X", если инструмент позволяет перечислить абстракцию данных и (или) предоставить к ней доступ. В таблице также показано, являются ли инструменты бесплатными. "Пробная версия" означает, что доступна бесплатная пробная версия, но полная версия продукта платная. "Да/нет" указывает, что есть как платная, так и бесплатная версии.
@@ -27,7 +27,7 @@ ms.locfileid: "58015332"
     <th rowspan="2">Клиентский инструмент службы хранилища Azure</th>
     <th rowspan="2">Блочный BLOB-объект</th>
     <th rowspan="2">Страничный BLOB-объект</th>
-    <th rowspan="2">Добавление больших двоичных объектов</th>
+    <th rowspan="2">Добавить BLOB-объект</th>
     <th rowspan="2">Таблицы</th>
     <th rowspan="2">Очереди</th>
     <th rowspan="2">Файлы</th>
@@ -35,7 +35,7 @@ ms.locfileid: "58015332"
     <th colspan="4">платформа</th>
   </tr>
   <tr>
-    <td>Web</td>
+    <td>Интернет</td>
     <td> Windows</td>
     <td>OSX</td>
     <td>Linux</td>
@@ -93,7 +93,7 @@ ms.locfileid: "58015332"
     <th rowspan="2">Клиентский инструмент службы хранилища Azure</th>
     <th rowspan="2">Блочный BLOB-объект</th>
     <th rowspan="2">Страничный BLOB-объект</th>
-    <th rowspan="2">Добавление больших двоичных объектов</th>
+    <th rowspan="2">Добавить BLOB-объект</th>
     <th rowspan="2">Таблицы</th>
     <th rowspan="2">Очереди</th>
     <th rowspan="2">Файлы</th>
@@ -101,7 +101,7 @@ ms.locfileid: "58015332"
     <th colspan="4">платформа</th>
   </tr>
   <tr>
-    <td>Web</td>
+    <td>Интернет</td>
     <td> Windows</td>
     <td>OSX</td>
     <td>Linux</td>

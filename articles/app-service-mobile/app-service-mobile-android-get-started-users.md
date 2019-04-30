@@ -14,12 +14,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/16/2017
 ms.author: crdun
-ms.openlocfilehash: 4ee71e00807fcfe698a7e965979434f338f5b870
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: 7b80c1148cf2716e71308d953ac445c4bb50cbc5
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38595534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62119773"
 ---
 # <a name="add-authentication-to-your-android-app"></a>Добавление проверки подлинности в приложение Android
 [!INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
@@ -61,7 +61,7 @@ ms.locfileid: "38595534"
 ## <a name="cache-tokens"></a>Кэширование маркеров проверки подлинности на клиенте
 [!INCLUDE [mobile-android-authenticate-app-with-token](../../includes/mobile-android-authenticate-app-with-token.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Вы прошли этот учебник по обычной проверке подлинности и теперь можете перейти к одному из следующих учебников:
 
 * [Добавление push-уведомлений в приложение Android](app-service-mobile-android-get-started-push.md).

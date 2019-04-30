@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: 82301a17bb461b6d8733d5f046fe791ffbcf3ecb
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58885712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60749263"
 ---
 # <a name="use-service-bus-from-net-with-amqp-10"></a>Использование служебной шины на платформе .NET с протоколом AMQP 1.0
 
@@ -68,25 +68,25 @@ ms.locfileid: "58885712"
 | ushort |ushort |Значение AMQP |
 | uint |uint |Значение AMQP |
 | ulong |ulong |Значение AMQP |
-| sbyte |byte |Значение AMQP |
+| sbyte |байт |Значение AMQP |
 | short |short |Значение AMQP |
 | int |int |Значение AMQP |
 | длинное целое число |длинное целое число |Значение AMQP |
-| float; |float; |Значение AMQP |
+| float |float |Значение AMQP |
 | Double |Double |Значение AMQP |
 | decimal |decimal128 |Значение AMQP |
-| char; |char; |Значение AMQP |
+| char |char; |Значение AMQP |
 | DateTime | timestamp |Значение AMQP |
 | Guid |uuid |Значение AMQP |
-| byte[] |binary; |Значение AMQP |
-| строка |строка |Значение AMQP |
-| System.Collections.IList |list |Значение AMQP. В коллекции могут содержаться только элементы, которые определены в этой таблице. |
-| System.Array |array |Значение AMQP. В коллекции могут содержаться только элементы, которые определены в этой таблице. |
+| byte[] |binary |Значение AMQP |
+| string |string |Значение AMQP |
+| System.Collections.IList |список |Значение AMQP. В коллекции могут содержаться только элементы, которые определены в этой таблице. |
+| System.Array |массив |Значение AMQP. В коллекции могут содержаться только элементы, которые определены в этой таблице. |
 | System.Collections.IDictionary |map |Значение AMQP. В коллекции могут содержаться только элементы, которые определены в этой таблице. Примечание: поддерживаются только строковые ключи. |
 | URI |Описанный тип string (см. таблицу ниже) |Значение AMQP |
 | DateTimeOffset |Описанный тип long (см. таблицу ниже) |Значение AMQP |
 | TimeSpan |Описанный тип long (см. таблицу ниже) |Значение AMQP |
-| Поток |binary; |Данные AMQP (может быть несколько). Разделы данных содержат необработанные байты из объекта Stream. |
+| Поток |binary |Данные AMQP (может быть несколько). Разделы данных содержат необработанные байты из объекта Stream. |
 | Другой объект |binary; |Данные AMQP (может быть несколько). Содержит сериализованные двоичные данные объекта, который использует DataContractSerializer или предоставленный приложением сериализатор. |
 
 | Тип .NET | Сопоставленный описанный тип AMQP | Примечания |

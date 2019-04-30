@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 10/28/2018
 ms.author: glenga
 ms.openlocfilehash: 4ec2e9b931e6405aca5b4237bc044647af3b8bb3
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53608585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62120676"
 ---
 # <a name="use-azure-functions-to-connect-to-an-azure-sql-database"></a>Подключение к базе данных SQL Azure с помощью Функций Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "53608585"
 
 Если вы впервые работаете с Функциями C#, обратитесь к статье [Справочник разработчика C# по функциям Azure](functions-dotnet-class-library.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 + Выполните шаги, приведенные в статье [Создание первой функции с помощью Visual Studio](functions-create-your-first-function-visual-studio.md), чтобы создать локальное приложение-функцию, предназначенное для среды выполнения версии 2.x. Кроме того, опубликуйте свой проект в приложении-функции в Azure.
 
@@ -129,7 +129,7 @@ ms.locfileid: "53608585"
 
 Если вы планируете [опубликовать эту функцию](functions-develop-vs.md#publish-to-azure), не забудьте указать для атрибута `TimerTrigger` другое [расписание в формате выражения Cron](functions-bindings-timer.md#cron-expressions) (выполнение каждые 15 секунд).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как использовать Функции с Logic Apps для интеграции с другими службами.
 

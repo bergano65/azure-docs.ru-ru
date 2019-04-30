@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: srinathv
 ms.openlocfilehash: 6f10d8bc7f813245a66296988e4bb3792d898e08
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59618198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60550028"
 ---
 # <a name="troubleshoot-azure-virtual-machine-backup"></a>Устранение неполадок при архивации виртуальных машин Azure
 Для устранения неполадок, обнаруженных в ходе использования Azure Backup, можно использовать информацию в таблице, приведенной ниже.
@@ -40,7 +40,7 @@ ms.locfileid: "59618198"
 ### <a name="usererrorfsfreezefailed---failed-to-freeze-one-or-more-mount-points-of-the-vm-to-take-a-file-system-consistent-snapshot"></a>UserErrorFsFreezeFailed - не удалось заморозить одну или несколько точек подключения виртуальной машины, чтобы создать согласованный моментальный снимок файловой системы
 
 Код ошибки: UserErrorFsFreezeFailed <br/>
-Сообщение об ошибке: Не удалось заморозить одну или несколько точек подключения виртуальной машины, чтобы создать согласованный моментальный снимок файловой системы.
+Сообщение об ошибке: Не удалось заморозить одну или несколько точек подключения виртуальной машины для создания моментального снимка, согласованного с файловой системой.
 
 * Проверьте состояние системы файл всех подключенных устройствах с помощью **tune2fs** команды, например **tune2fs -l/dev/sdb1 \\** .\| grep **состоянием файловой системы**.
 * Отключите устройства, для которых не был очищен состояние файловой системы, с помощью **umount** команды.

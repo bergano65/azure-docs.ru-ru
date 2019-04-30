@@ -13,11 +13,11 @@ ms.reviewer: anjangsh,billgib,genemi
 manager: craigg
 ms.date: 12/18/2018
 ms.openlocfilehash: 0be39aaf5526ea288764fc72d6c498cca2d659b7
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58481694"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61486573"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---single-tenant-app"></a>Межклиентская аналитика на основе извлеченных с однотенантного приложения данных
  
@@ -227,7 +227,7 @@ AverageTicketsSold = AVERAGEX( SUMMARIZE( TableName, TableName[Venue Name] ), CA
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как:
 
 > [!div class="checklist"]
 > - развернуть клиентскую базу данных аналитики с предварительно определенными таблицами схемы типа "звезда";

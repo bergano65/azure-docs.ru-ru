@@ -9,11 +9,11 @@ ms.date: 04/15/2019
 ms.author: alkohli
 ms.subservice: common
 ms.openlocfilehash: bc244ecb62655d1e95046fb0eb8548fdacdcc2a1
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59679732"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61478595"
 ---
 # <a name="azure-importexport-system-requirements"></a>Требования к системе для импорта и экспорта Azure
 
@@ -24,14 +24,14 @@ ms.locfileid: "59679732"
 При подготовке жестких дисков с использованием инструмента WAImportExport поддерживаются следующие **64-разрядные ОС с возможностью шифрования диска BitLocker**.
 
 
-|платформа |Version (версия) |
+|платформа |Version |
 |---------|---------|
 | Windows     | Windows 7 Корпоративная, Windows 7 Максимальная <br> Windows 8 Pro, Windows 8 Корпоративная, Windows 8.1 Pro, Windows 8.1 Корпоративная <br> Windows 10        |
-|Windows Server     |Windows Server 2008 R2 <br> Windows Server 2012, Windows Server 2012 R2         |
+|Windows Server     |Windows Server 2008 R2 <br> Windows Server 2012, Windows Server 2012 R2         |
 
 ## <a name="other-required-software-for-windows-client"></a>Другое необходимое программное обеспечение для клиента Windows
 
-|платформа |Version (версия) |
+|платформа |Version |
 |---------|---------|
 |.NET Framework    | 4.5.1       |
 | BitLocker        |  _          |
@@ -57,10 +57,10 @@ ms.locfileid: "59679732"
 Ниже представлен список типов хранилищ, поддерживаемых службой импорта и экспорта Azure.
 
 
-|Задание  |Служба хранилища |Поддерживаются  |Не поддерживается  |
+|Задание  |Служба хранения |Поддерживаются  |Не поддерживается  |
 |---------|---------|---------|---------|
-|Импорт     |  Хранилище больших двоичных объектов Azure <br><br> Хранилище файлов Azure       | Поддерживаются блочные и страничные BLOB-объекты <br><br> Поддерживаются файлы          |
-|экспорт.     |   Хранилище больших двоичных объектов Azure       | Поддерживаются блочные, страничные и добавочные BLOB-объекты         | Служба файлов Azure не поддерживается
+|Импортировать     |  Хранилище BLOB-объектов Azure <br><br> Хранилище файлов Azure       | Поддерживаются блочные и страничные BLOB-объекты <br><br> Поддерживаются файлы          |
+|Экспортировать     |   Хранилище BLOB-объектов Azure       | Поддерживаются блочные, страничные и добавочные BLOB-объекты         | Служба файлов Azure не поддерживается
 
 
 ## <a name="supported-hardware"></a>Поддерживаемое оборудование 

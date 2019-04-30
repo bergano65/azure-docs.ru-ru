@@ -9,11 +9,11 @@ author: wmengmsft
 ms.author: wmeng
 ms.custom: seodec18
 ms.openlocfilehash: 84749332c5b7ab5fec2905c0fc36d89863adc3d2
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56960225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60579649"
 ---
 # <a name="azure-storage-table-design-guide-designing-scalable-and-performant-tables"></a>Руководство по разработке таблиц хранилища Azure. Разработка масштабируемых и производительных таблиц
 
@@ -200,12 +200,12 @@ ms.locfileid: "56960225"
 
 | *Имя столбца* | *Тип данных* |
 | --- | --- |
-| **PartitionKey** (Название отдела) |Строка |
-| **RowKey** (ИД сотрудника) |Строка |
-| **FirstName** |Строка |
-| **LastName** |Строка |
+| **PartitionKey** (Название отдела) |String |
+| **RowKey** (ИД сотрудника) |String |
+| **FirstName** |String |
+| **LastName** |String |
 | **Age** |Целое число  |
-| **EmailAddress** |Строка |
+| **EmailAddress** |String |
 
 В разделе "Информация о службе таблиц Azure" описываются некоторые ключевые особенности службы таблиц Azure, оказывающие прямое влияние на процесс разработки запросов. С их учетом были сформулированы следующие общие рекомендации по разработке запросов службы таблиц. Синтаксис фильтрации, используемый в приведенных ниже примерах, взят из REST API службы таблиц. Дополнительные сведения см. в статье о [сущностях запроса](https://msdn.microsoft.com/library/azure/dd179421.aspx).  
 

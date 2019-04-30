@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 04/04/2019
 ms.author: jowargo
 ms.openlocfilehash: 4fc4175c03baa4ddb81507dd4001fcdbe7c7058b
-ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60149552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61458781"
 ---
 # <a name="diagnose-dropped-notifications-in-azure-notification-hubs"></a>Диагностика пропущенных уведомлений в центрах уведомлений Azure
 
@@ -123,7 +123,7 @@ ms.locfileid: "60149552"
 
 #### <a name="push-notification-service-developer-portal"></a>Портале разработчика службы Push-уведомлений ####
 
-Проверьте учетные данные на соответствующем портале разработчика службы push-уведомлений (APNs, FCM, служба уведомлений Windows и т. д.). Дополнительные сведения см. в статье [Руководство. отправке уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure](https://docs.microsoft.com/en-us/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification).
+Проверьте учетные данные на соответствующем портале разработчика службы push-уведомлений (APNs, FCM, служба уведомлений Windows и т. д.). Дополнительные сведения см. в статье [Руководство отправке уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure](https://docs.microsoft.com/en-us/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification).
 
 #### <a name="azure-portal"></a>Портал Azure ####
 
@@ -160,7 +160,7 @@ ms.locfileid: "60149552"
 > [!NOTE]
 > Visual Studio можно используйте для изменения регистрации только во время разработки и тестирования, а также с помощью ограниченного числа регистраций. Если вам нужно редактирования регистраций в пакетном режиме, рассмотрите возможность использования экспорта и импорта регистраций, описанной в [How To: Экспорт и изменение регистраций в пакетном режиме](https://msdn.microsoft.com/library/dn790624.aspx).
 
-#### <a name="service-bus-explorer"></a>Service Bus Explorer ####
+#### <a name="service-bus-explorer"></a>Обозреватель служебной шины ####
 
 Многие клиенты используют [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer) для просмотра и управления их центров уведомлений. который представляет собой проект с открытым кодом. 
 
@@ -194,7 +194,7 @@ ms.locfileid: "60149552"
 
 Информацию об ошибках службы push-уведомлений можно получить с помощью свойства [Сведения о свойстве EnableTestSend]. Оно автоматически включается при отправке тестового сообщения с портала или клиентского приложения Visual Studio Это свойство позволяет просматривать подробную отладочную информацию, а также через API-интерфейсы. Сейчас его можно использовать в пакете SDK для .NET. Оно будет добавляться ко всем пакетам SDK клиента со временем.
 
-Чтобы использовать свойство `EnableTestSend` с вызовом REST, добавьте параметр строки запроса с именем *test* в конце вызова отправки. Например: 
+Чтобы использовать свойство `EnableTestSend` с вызовом REST, добавьте параметр строки запроса с именем *test* в конце вызова отправки. Пример.
 
 ```text
 https://mynamespace.servicebus.windows.net/mynotificationhub/messages?api-version=2013-10&test

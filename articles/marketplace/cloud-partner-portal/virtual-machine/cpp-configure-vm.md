@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 10/19/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 9cf363bc5f4230306c2fec99eb6287b23e598a4c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57833507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60744352"
 ---
 # <a name="configure-the-azure-hosted-vm"></a>Настройка размещенной в Azure виртуальной машины
 
@@ -62,7 +62,7 @@ ms.locfileid: "57833507"
 Дополнительные сведения о настройке Linux см. в обзоре [расширений и компонентов виртуальной машины для Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/features-linux).
 
 
-## <a name="generalize-the-image"></a>Обобщение образа
+## <a name="generalize-the-image"></a>Образ следует сделать максимально общим по сути
 
 Все образы в Azure Marketplace должны быть доступны для повторного использования в первоначальном виде. Чтобы достичь этой возможности повторного использования, виртуальный жесткий диск для операционной системы необходимо *обобщить*. Эта операция удаляет с виртуальной машины все идентификаторы, относящиеся к определенному экземпляру, и программные драйверы.
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/11/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 3d4c58cd9e7ee0674f42d776c8df6e96faba1ab1
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 9f0d694badaa6f4484a13364c6a56aee2ad1dcfb
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59799496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62123944"
 ---
 ## <a name="supported-distributions-and-drivers"></a>Поддерживаемые дистрибутивы и драйверы
 
@@ -34,7 +34,7 @@ ms.locfileid: "59799496"
 
 | Дистрибутив | Драйвер |
 | --- | -- |
-| Ubuntu 16.04 LTS, 18.04 LTS<br/><br/>Red Hat Enterprise Linux 7.3, 7.4, 7.5, 7.6<br/><br/>Версия 7.3, 7.4, 7.5, 7.6 на основе CentOS | NVIDIA GRID 7.1, ветвь драйверов R410|
+| Ubuntu 16.04 LTS, 18.04 LTS<br/><br/>Red Hat Enterprise Linux 7.3, 7.4, 7.5, 7.6<br/><br/>Версия 7.3, 7.4, 7.5, 7.6 на основе CentOS | NVIDIA GRID 8.0, драйверы ветви R418|
 
 > [!WARNING] 
 > Установка стороннего программного обеспечения на продуктах Red Hat может нарушать условия технической поддержки Red Hat. Ознакомьтесь со [статьей из базы знаний Red Hat](https://access.redhat.com/articles/1067).

@@ -9,11 +9,11 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/04/2018
 ms.openlocfilehash: 40beb620e037061b189762a51e3c29d0fd251b27
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56268505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61362082"
 ---
 # <a name="implement-cicd-for-stream-analytics-on-iot-edge-using-apis"></a>Реализация CI/CD для Stream Analytics на IoT Edge с использованием API
 
@@ -56,9 +56,9 @@ echo $response
  
 Чтобы создать задание Stream Analytics, вызовите метод PUT с помощью API-интерфейса Stream Analytics.
 
-|Метод|Request URL (URL-адрес запроса)|
+|Метод|URL-адрес запроса|
 |------|-----------|
-|ОТПРАВКА|https://management.azure.com/subscriptions/{**идентификатор_подписки**}/resourcegroups/{**имя_группы_ресурсов**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**имя_задания**}?api-version=2017-04-01-preview|
+|PUT|https://management.azure.com/subscriptions/{**идентификатор_подписки**}/resourcegroups/{**имя_группы_ресурсов**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**имя_задания**}?api-version=2017-04-01-preview|
  
 Пример использования команды **curl**:
 
@@ -143,9 +143,9 @@ curl -u { <username:password> }  -H "Content-Type: application/json" -X { <metho
  
 Чтобы опубликовать задание Stream Analytics в IoT Edge, вызовите метод POST с помощью API-интерфейса Edge Package Publish.
 
-|Метод|Request URL (URL-адрес запроса)|
+|Метод|URL-адрес запроса|
 |------|-----------|
-|ПУБЛИКАЦИЯ|https://management.azure.com/subscriptions/{**идентификатор_подписки**}/resourceGroups/{**имя_группы_ресурсов**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**имя_задания**}/publishedgepackage?api-version=2017-04-01-preview|
+|POST|https://management.azure.com/subscriptions/{**идентификатор_подписки**}/resourceGroups/{**имя_группы_ресурсов**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**имя_задания**}/publishedgepackage?api-version=2017-04-01-preview|
 
 Эта асинхронная операция возвращает состояние 202 до того, как задание будет успешно опубликовано. Заголовок ответа расположения содержит универсальный код ресурса (URI), который используется для получения состояния процесса. Во время выполнения процесса вызов универсального кода ресурса (URI) в заголовке расположения возвращает состояние 202. После того как процесс завершится, универсальный код ресурса (URI) возвращает состояние 200. 
 
@@ -256,7 +256,7 @@ curl -d –X GET https://management.azure.com/subscriptions/{subscriptionid}/res
 После того как вы настроите манифест развертывания, ознакомьтесь со статьей о [развертывании модулей Azure IoT Edge с помощью Azure CLI](../iot-edge/how-to-deploy-modules-cli.md), чтобы приступить к развертыванию.
 
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
  
 * [Azure Stream Analytics в IoT Edge (предварительная версия)](stream-analytics-edge.md)
 * [Deploy Azure Stream Analytics as an IoT Edge module - preview](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics) (Развертывание Azure Stream Analytics в качестве модуля IoT Edge (предварительная версия))

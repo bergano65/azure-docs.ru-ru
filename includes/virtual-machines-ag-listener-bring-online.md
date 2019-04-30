@@ -1,15 +1,16 @@
 ---
-author: cynthn
+author: rockboyfor
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 10/26/2018
-ms.author: cynthn
+origin.date: 10/26/2018
+ms.date: 11/26/2018
+ms.author: v-yeche
 ms.openlocfilehash: 760bb5b62e9bba9b7a83f99760f7fe5d8c399dfb
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50226758"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62097747"
 ---
 1. В диспетчере отказоустойчивости кластеров разверните **Роли** и выделите свою группу доступности.  
 
@@ -22,11 +23,11 @@ ms.locfileid: "50226758"
 5. Щелкните правой кнопкой мыши имя прослушивателя, а затем щелкните **Подключить**.
 
 6. После подключения прослушивателя на вкладке **Ресурсы** щелкните правой кнопкой мыши группу доступности и выберите **Свойства**.
-   
+
     ![Настройка ресурса группы доступности](./media/virtual-machines-sql-server-configure-alwayson-availability-group-listener/IC678772.gif)
 
 7. Создайте зависимость для ресурса имени прослушивателя (не имени ресурсов IP-адреса), а затем щелкните **ОК**.
-   
+
     ![Добавление зависимости к имени прослушивателя](./media/virtual-machines-sql-server-configure-alwayson-availability-group-listener/IC678773.gif)
 
 8. Запустите SQL Server Management Studio и подключитесь к основной реплике.
@@ -38,3 +39,4 @@ ms.locfileid: "50226758"
 
 11. В поле **Порт** укажите номер порта для прослушивателя группы доступности с помощью использованного ранее параметра $EndpointPort (в этом руководстве по умолчанию использовалось значение 1433) и нажмите кнопку **ОК**.
 
+<!-- Update_Description: update meta properties -->
