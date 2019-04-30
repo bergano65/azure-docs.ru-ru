@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 10/28/2018
 ms.author: rkarlin
 ms.openlocfilehash: b736bb5549b7d236e746ba7b161cde79209e927b
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56110529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60906588"
 ---
 # <a name="restrict-access-through-internet-facing-endpoints-in-azure-security-center"></a>Ограничение доступа через подключенную к Интернету конечную точку в центре безопасности Azure
 Центр безопасности Azure будет рекомендовать ограничить доступ через подключенную к Интернету конечную точку, если в какой-либо группе безопасности сети есть одно или несколько правил входящего трафика, разрешающих доступ с "любого" исходного IP-адреса. Разрешение доступа с "любого" IP-адреса может позволить злоумышленникам получить доступ к вашим ресурсам. Центр безопасности будет рекомендовать изменить эти правила входящего трафика, чтобы разрешить доступ только с тех исходных IP-адресов, которым он действительно необходим.

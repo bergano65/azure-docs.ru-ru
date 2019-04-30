@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 11/20/2018
 ms.topic: conceptual
 ms.openlocfilehash: 1bd08596a30db7322a72b4269fddfe0b9df19119
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54464227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61447189"
 ---
 # <a name="remote-monitoring-architectural-choices"></a>Сведения об архитектуре решения для удаленного мониторинга
 
@@ -82,7 +82,7 @@ Azure Cosmos DB — это рекомендуемое решение тепло
 
 Вместо Docker вы можете разместить микрослужбы в службах PaaS, таких как Служба приложений Azure. Вместо Kubernetes можно применить оркестраторы, например Service Fabric, DC/OS или Swarm.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Разверните свое решение для удаленного мониторинга [здесь](https://www.azureiotsolutions.com/).
 * Изучите код в GitHub на [C#](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/) и [Java](https://github.com/Azure/azure-iot-pcs-remote-monitoring-java/).  

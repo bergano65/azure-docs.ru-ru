@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 6f9064c6027499fff3a8551ee60722cd66c54dc2
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58883434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60877701"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-by-using-the-azure-portal"></a>Создание кластеров HDInsight, использующих Azure Data Lake Storage 1-го поколения, с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -41,7 +41,7 @@ ms.locfileid: "58883434"
     >Создать субъект-службу может только администратор Azure AD. Администратор Azure AD должен сначала создать субъект-службу, после чего вы сможете создать кластер HDInsight, использующий Data Lake Storage 1-го поколения. При создании субъекта-службы также необходимо использовать сертификат, как описано в разделе [Создание субъекта-службы с использованием сертификата](../active-directory/develop/howto-authenticate-service-principal-powershell.md#create-service-principal-with-self-signed-certificate).
     >
 
-## <a name="create-an-hdinsight-cluster"></a>Создание кластера HDInsight
+## <a name="create-an-hdinsight-cluster"></a>Создать кластер HDInsight
 
 В этом разделе вы создадите кластер HDInsight с учетными записями Data Lake Storage 1-го поколения в качестве хранилища по умолчанию или дополнительного хранилища. В этой статье описывается только часть процесса настройки учетных записей Data Lake Storage 1-го поколения.  Общие сведения о создании кластеров и соответствующие процедуры см. в статье [Создание кластеров Hadoop в HDInsight](../hdinsight/hdinsight-hadoop-provision-linux-clusters.md).
 
@@ -149,7 +149,7 @@ ms.locfileid: "58883434"
 2. Выберите корень хранилища кластера HDInsight, установив флажок слева от папки. В соответствии с предыдущим снимком экрана корнем хранилища кластера является папка __/clusters__, указанная при выборе Data Lake Storage 1-го поколения в качестве хранилища по умолчанию.
 3. Задайте разрешения для папки.  По умолчанию выбраны разрешения на чтение, запись и выполнение.
 4. В нижней части страницы щелкните **Выбрать**.
-5. Щелкните **Выполнить**.
+5. Нажмите кнопку **Запустить**.
 6. Нажмите кнопку **Done**(Готово).
 
 При использовании Data Lake Storage 1-го поколения в качестве дополнительного хранилища необходимо назначить разрешение только для папок, к которым нужен доступ из кластера HDInsight. Например, на снимке экрана ниже предоставляется доступ только к папке **mynewfolder** в учетной записи Data Lake Storage 1-го поколения.

@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: ac2edb4c12e95a915790c1fadfb2dcdcce554aad
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 31738c43756da14ba6c2c92afbcb2882561c8001
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/23/2019
-ms.locfileid: "60536836"
+ms.locfileid: "62121961"
 ---
 # <a name="use-c-user-defined-functions-with-apache-hive-and-apache-pig-streaming-on-apache-hadoop-in-hdinsight"></a>Использование определяемых пользователем функций C# при потоковой передаче Apache Hive и Apache Pig в Apache Hadoop в HDInsight
 
@@ -110,7 +110,7 @@ Hive и Pig могут передавать данные во внешние п�
     }
     ```
 
-3. Создайте проект.
+3. Выполните построение проекта.
 
 ### <a name="apache-pig-udf"></a>Определяемая пользователем функция Apache Pig
 

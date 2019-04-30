@@ -9,11 +9,11 @@ ms.date: 04/08/2019
 ms.author: alkohli
 ms.subservice: common
 ms.openlocfilehash: e60a58a8d2f1c69728a2d049fe1414ca1997893e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59283279"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61479309"
 ---
 # <a name="use-the-azure-importexport-service-to-import-data-to-azure-blob-storage"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в хранилище BLOB-объектов Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "59283279"
     
     В следующей таблице описаны параметры, используемые в этой команде.
 
-    |Параметр  |ОПИСАНИЕ  |
+    |Параметр  |Описание  |
     |---------|---------|
     |/j:     |Имя файла журнала с расширением .jrn. Файл журнала создается для каждого диска. Рекомендуем использовать в качестве имени файла журнала серийный номер диска.         |
     |/id:     |Идентификатор сеанса. Используйте уникальный номер сеанса для каждого экземпляра команды.      |
@@ -79,7 +79,7 @@ ms.locfileid: "59283279"
     > [!IMPORTANT]
     > - Вместе с файлом журнала в той же папке, где находится средство, также создается файл `<Journal file name>_DriveInfo_<Drive serial ID>.xml`. XML-файл используется вместо файла журнала при создании задания, если файл журнала слишком велик. 
 
-## <a name="step-2-create-an-import-job"></a>Шаг 2. создание задания импорта;
+## <a name="step-2-create-an-import-job"></a>Шаг 2. Создать задание импорта
 
 Чтобы создать задание импорта на портале Azure, выполните следующие шаги.
 

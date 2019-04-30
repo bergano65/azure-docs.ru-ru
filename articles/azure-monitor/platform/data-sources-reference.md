@@ -9,11 +9,11 @@ ms.date: 06/12/2018
 ms.author: johnkem
 ms.subservice: ''
 ms.openlocfilehash: c703f735f59a8425c2a14641781f482a6e2d1c78
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58848542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61364523"
 ---
 # <a name="consume-monitoring-data-from-azure"></a>Использование данных мониторинга из Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "58848542"
 
 ## <a name="options-for-data-consumption"></a>Варианты использования данных
 
-| Тип данных | Категория | Поддерживаемые службы | Варианты доступа |
+| Тип данных | Category | Поддерживаемые службы | Варианты доступа |
 | --- | --- | --- | --- |
 | Метрики Azure Monitor уровня платформы | Метрики | [Список доступен здесь](metrics-supported.md). | <ul><li>**REST API:** [API метрик Azure Monitor](https://docs.microsoft.com/rest/api/monitor/metrics)</li><li>**Большой двоичный объект службы хранилища или концентратор событий:** [параметры диагностики](diagnostic-logs-overview.md#diagnostic-settings)</li></ul> |
 | Метрики гостевой ОС (например, счетчики производительности) | Метрики | Виртуальные машины [Windows](/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines) и Linux (версии 2), [облачные службы](../../cloud-services/cloud-services-dotnet-diagnostics-trace-flow.md), [Service Fabric](../../service-fabric/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md). | <ul><li>**Таблица службы хранилища или большой двоичный объект:** [система диагностики Azure (Linux или Windows)](diagnostics-extension-to-storage.md)</li><li>**Концентратор событий:** [система диагностики Azure (Windows)](diagnostics-extension-stream-event-hubs.md)</li></ul> |
@@ -38,7 +38,7 @@ ms.locfileid: "58848542"
 | Оповещения центра безопасности | События | Центр безопасности Azure | <ul><li>**REST API:** [оповещения безопасности](https://msdn.microsoft.com/library/mt704050.aspx)</li></ul> |
 | Отчеты Azure Active Directory | События | Azure Active Directory | <ul><li>**REST API:** [API Graph Azure Active Directory](../../active-directory/reports-monitoring/concept-reporting-api.md)</li></ul> |
 | Состояние ресурсов центра безопасности | Статус | [Все поддерживаемые ресурсы](https://msdn.microsoft.com/library/mt704041.aspx#Anchor_1). | <ul><li>**REST API:** [состояния системы безопасности](https://msdn.microsoft.com/library/mt704041.aspx)</li></ul> |
-| Работоспособность ресурса | Статус | Поддерживаемые службы | <ul><li>**REST API:** [REST API работоспособности ресурсов](https://azure.microsoft.com/blog/reduce-troubleshooting-time-with-azure-resource-health/)</li></ul> |
+| Работоспособность ресурсов | Статус | Поддерживаемые службы | <ul><li>**REST API:** [REST API работоспособности ресурсов](https://azure.microsoft.com/blog/reduce-troubleshooting-time-with-azure-resource-health/)</li></ul> |
 | Оповещения о метриках Azure Monitor | Уведомления | [Список доступен здесь](metrics-supported.md). | <ul><li>**Веб-перехватчик**: [оповещения о метриках Azure](alerts-webhooks.md)</li></ul> |
 | Оповещения журнала действий Azure Monitor | Уведомления | Все службы Azure. | <ul><li>**Веб-перехватчик**: оповещения журнала действий Azure</li></ul> |
 | Уведомления об автомасштабировании | Уведомления | [Список доступен здесь](autoscale-overview.md#supported-services-for-autoscale). | <ul><li>**Веб-перехватчик**: [схема полезных данных веб-перехватчика уведомлений автомасштабирования](autoscale-webhook-email.md#autoscale-notification-webhook-payload-schema)</li></ul> |

@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: conceptual
 ms.date: 4/17/2019
 ms.author: victorh
-ms.openlocfilehash: fcff4ff141dbac84d0b96c166c36018b0cc09d8e
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 5e009d5659a503fe8168f21a26939acff9944f2f
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59997569"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62125261"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -22,10 +22,10 @@ ms.locfileid: "59997569"
 
 ## <a name="what-capabilities-are-supported-in-azure-firewall"></a>Характеристики и функции Брандмауэра Azure:
 
-* Брандмауэр как услуга с отслеживанием состояния.
-* Встроенные функции обеспечения высокой доступности и неограниченная масштабируемость в облаке.
+* Брандмауэр как услуга с отслеживанием состояния
+* Встроенные функции высокой доступности и неограниченная масштабируемость в облаке.
 * фильтрацию FQDN;
-* теги FQDN;
+* Теги полных доменных имен
 * правила фильтрации трафика;
 * поддержку исходящих данных SNAT;
 * Поддержка DNAT для входящего трафика
@@ -40,7 +40,7 @@ ms.locfileid: "59997569"
 
 ## <a name="how-can-i-install-the-azure-firewall"></a>Как установить службу "Брандмауэр Azure"?
 
-Службу "Брандмауэр Azure" можно настроить с помощью портала Azure, PowerShell, REST API или шаблонов. Пошаговые инструкции см. в [руководстве по развертыванию и настройке службы "Брандмауэр Azure" с помощью портала Azure](/articles/firewall/tutorial-firewall-deploy-portal.md).
+Службу "Брандмауэр Azure" можно настроить с помощью портала Azure, PowerShell, REST API или шаблонов. Пошаговые инструкции см. в [руководстве по развертыванию и настройке службы "Брандмауэр Azure" с помощью портала Azure](tutorial-firewall-deploy-portal.md).
 
 ## <a name="what-are-some-azure-firewall-concepts"></a>Каковы некоторые концепции службы "Брандмауэр Azure"?
 
@@ -58,7 +58,7 @@ ms.locfileid: "59997569"
 
 ## <a name="which-logging-and-analytics-services-are-supported-by-the-azure-firewall"></a>Какие службы ведения журнала и аналитики поддерживаются в службе "Брандмауэр Azure"?
 
-Служба "Брандмауэр Azure" интегрирована с Azure Monitor для возможности просмотра и анализа журналов Брандмауэра. Журналы могут отправляться в Log Analytics, службу хранилища Azure или Центры событий. Их можно анализировать в Log Analytics или с помощью различных инструментов, таких как Excel и Power BI. Дополнительные сведения см. в статье [Руководство. Мониторинг журналов и метрик Брандмауэра Azure](/articles/firewall/tutorial-diagnostics.md).
+Служба "Брандмауэр Azure" интегрирована с Azure Monitor для возможности просмотра и анализа журналов Брандмауэра. Журналы могут отправляться в Log Analytics, службу хранилища Azure или Центры событий. Их можно анализировать в Log Analytics или с помощью различных инструментов, таких как Excel и Power BI. Дополнительные сведения см. в статье [Руководство. Мониторинг журналов и метрик Брандмауэра Azure](tutorial-diagnostics.md).
 
 ## <a name="how-does-azure-firewall-work-differently-from-existing-services-such-as-nvas-in-the-marketplace"></a>Как работа службы "Брандмауэр Azure" отличается от работы имеющихся на рынке служб, например виртуальных сетевых модулей?
 
@@ -84,7 +84,7 @@ ms.locfileid: "59997569"
 
 Вы можете использовать методы Azure PowerShell *deallocate* и *allocate*.
 
-Например: 
+Пример.
 
 ```azurepowershell
 # Stop an exisitng firewall
@@ -109,7 +109,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 ## <a name="what-are-the-known-service-limits"></a>Каковы известные ограничения службы?
 
-Ограничения службы брандмауэра Azure, см. в разделе [подписки Azure и ограничения служб, квоты и ограничения](/articles/azure-subscription-service-limits.md#azure-firewall-limits).
+Ограничения службы брандмауэра Azure, см. в разделе [подписки Azure и ограничения служб, квоты и ограничения](../azure-subscription-service-limits.md#azure-firewall-limits).
 
 ## <a name="can-azure-firewall-in-a-hub-virtual-network-forward-and-filter-network-traffic-between-two-spoke-virtual-networks"></a>Может ли Брандмауэр Azure, подключенный к концентратору виртуальной сети, передавать и фильтровать трафик, проходящий между двумя периферийными зонами виртуальной сети?
 
@@ -135,7 +135,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 ## <a name="when-configuring-dnat-for-inbound-network-traffic-do-i-also-need-to-configure-a-corresponding-network-rule-to-allow-that-traffic"></a>Настраивая DNAT для входящего трафика, нужно ли также настроить соответствующее правило сети для разрешения этого трафика?
 
-№ Правила NAT позволяют неявно добавить соответствующее правило сети, чтобы разрешить преобразованный трафик. Чтобы переопределить эту реакцию, явно добавьте коллекцию правил сети с запрещающими правилами, которые соответствуют преобразованному трафику. Дополнительные сведения о логике обработки правил Брандмауэра Azure см. в [соответствующей статье](/articles/firewall/rule-processing.md).
+№ Правила NAT позволяют неявно добавить соответствующее правило сети, чтобы разрешить преобразованный трафик. Чтобы переопределить эту реакцию, явно добавьте коллекцию правил сети с запрещающими правилами, которые соответствуют преобразованному трафику. Дополнительные сведения о логике обработки правил Брандмауэра Azure см. в [соответствующей статье](rule-processing.md).
 
 ## <a name="how-do-wildcards-work-in-an-application-rule-target-fqdn"></a>Как работают подстановочные знаки в целевой объект правила приложения полное доменное имя?
 

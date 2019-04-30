@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 51aa33e4ff387a1030dac42bce8d12cf72343b35
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58317482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61466737"
 ---
 # <a name="streaming-locators"></a>Указатели потоковой передачи
 
@@ -42,5 +42,5 @@ ms.locfileid: "58317482"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Руководство Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md)
+* [Учебник. Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md)
 * [Использование динамического шифрования DRM и службы доставки лицензий](protect-with-drm.md)

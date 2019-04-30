@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 85ab5e3bb963ee692e5b70af3eb90cc68cec361f
-ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
-ms.translationtype: MT
+ms.openlocfilehash: 86fa7f62230c0ae0530b67ff2384942c876083d4
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56593392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62098598"
 ---
 # <a name="chaining-service-bus-entities-with-autoforwarding"></a>Объединение в цепочки сущностей служебной шины с помощью автоматической переадресации
 
@@ -46,6 +46,10 @@ namespaceManager.CreateSubscription(srcSubscription));
 ![Сценарий автоматической пересылки][1]
 
 Если Алиса уйдет в отпуск, то заполнится ее личная очередь, а не очередь раздела ERP. В этом сценарии ни один из разделов ERP не достигнет выделенной квоты, так как торговый представитель не получил ни одного сообщения.
+
+> [!NOTE]
+> При настройке Авто-переадресация, значение AutoDeleteOnIdle в месте назначения автоматически присваивается максимальное значение типа данных.
+> Это делается для убедитесь, что всегда места назначения для пересылки сообщения.
 
 ## <a name="autoforwarding-considerations"></a>Рекомендации по автоматической переадресации
 

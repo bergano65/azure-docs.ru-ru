@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 11/14/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 81f7e46e626bb061881be53e8cace36e1478e0e1
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51683984"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61472852"
 ---
 # <a name="container-skus-tab"></a>Вкладка номеров SKU контейнера
 
@@ -74,6 +74,6 @@ ms.locfileid: "51683984"
 >[!NOTE]
 >Не забудьте добавить **тег тестирования** в образ, чтобы его можно было легко определить во время тестирования.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте вкладку [Marketplace](./cpp-marketplace-tab.md), чтобы создать описание предложения для Marketplace. 

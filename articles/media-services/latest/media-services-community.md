@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 04/19/2019
 ms.author: juliako
-ms.openlocfilehash: ff5d6aef48542ee18f6de91ddc418c0fcab70ece
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6a3c02c1f14c37317a03cb6ebe63bcddc92f3253
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/23/2019
-ms.locfileid: "60322445"
+ms.locfileid: "62117014"
 ---
 # <a name="azure-media-services-community"></a>Сообщество служб мультимедиа Azure  
 
@@ -52,13 +52,11 @@ ms.locfileid: "60322445"
 
 В следующей таблице перечислены адреса электронной почты подгрупп разработчиков различных функций.
 
-| Функция | Email |
+| Компонент | Электронная почта |
 | --- | --- |
-| Аналитика мультимедиа Azure |amsanalytics@microsoft.com |
 | Проигрыватель мультимедиа Azure |ampinfo@microsoft.com |
 | Обозреватель мультимедиа Azure |amse@microsoft.com |
 | Конструктор рабочих процессов |mepd@microsoft.com |
-| Потоковая передача и упаковка файлов |amsstreaming@microsoft.com |
 | Потоковая трансляция и упаковка |amslived@microsoft.com |
 
 ## <a name="next-steps"></a>Дальнейшие действия

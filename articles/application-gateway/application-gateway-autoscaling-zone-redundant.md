@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 3/6/2019
 ms.author: victorh
 ms.openlocfilehash: 95b14a0028134e522206f3595bc3b9ebf9aaf396
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59548733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62128482"
 ---
 # <a name="autoscaling-and-zone-redundant-application-gateway-public-preview"></a>Автоматическое масштабирование и шлюз приложений, избыточный между зонами (общедоступная предварительная версия)
 
@@ -53,7 +53,7 @@ ms.locfileid: "59548733"
 | Перепишите заголовков HTTP (S)                           |          | &#x2713; |
 | Поддержка WebSocket                                 | &#x2713; | &#x2713; |
 | Поддержка HTTP/2                                    | &#x2713; | &#x2713; |
-| фильтрация подключений;                               | &#x2713; | &#x2713; |
+| Очистка подключений                               | &#x2713; | &#x2713; |
 | Azure контроллера входящего трафика службы Kubernetes (AKS) |          | &#x2713; |
 
 ## <a name="supported-regions"></a>Поддерживаемые регионы

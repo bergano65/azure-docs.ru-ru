@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 04/27/2017
 ms.author: bwren
 ms.openlocfilehash: 4082847e1871fc03713471b0c043dddb80f91b0d
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57769239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62110350"
 ---
 # <a name="targeting-monitoring-solutions-in-azure-monitor-preview"></a>Определение решений мониторинга в Azure Monitor (предварительная версия)
 Когда вы добавляете решение для мониторинга в подписку, оно по умолчанию автоматически развертывается на всех агентах Windows и Linux, подключенных к рабочей области Log Analytics.  Вам может потребоваться выполнить управление затратами и ограничить объем данных, собираемых для решения, ограничив его конкретным набором агентов.  В этой статье описывается, как использовать **нацеливание решений**. Это функция, которая позволяет применить к решениям область действия.

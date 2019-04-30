@@ -17,11 +17,11 @@ ms.topic: conceptual
 ms.date: 07/07/2017
 ms.author: crdun
 ms.openlocfilehash: 7014d09bbb62e78c37a9496628e3509b6eaaa4ac
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57768235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62123337"
 ---
 # <a name="create-an-apache-cordova-app"></a>Создание приложения Apache Cordova
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
@@ -61,7 +61,7 @@ ms.locfileid: "57768235"
 Дополнительные сведения об основных понятиях, связанных со службой приложений Azure.
 
 * [Автономные данные]
-* [Проверка подлинности]
+* [Authentication]
 * [Push-уведомления]
 
 Подробнее об использовании пакетов SDK.
@@ -77,7 +77,7 @@ ms.locfileid: "57768235"
 [Visual Studio Community 2017]: https://www.visualstudio.com/
 [Инструменты Visual Studio для Apache Cordova]: https://www.visualstudio.com/en-us/features/cordova-vs.aspx
 [Автономные данные]: app-service-mobile-offline-data-sync.md
-[Проверка подлинности]: app-service-mobile-auth.md
+[Authentication]: app-service-mobile-auth.md
 [Push-уведомления]: ../notification-hubs/notification-hubs-push-notification-overview.md
 [Пакет SDK для Apache Cordova]: app-service-mobile-cordova-how-to-use-client-library.md
 [Серверный пакет SDK для ASP.NET]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md

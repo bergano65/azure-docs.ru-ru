@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: 7375fb2763ad83e049b1ef30a623f164e059a792
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53090811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61479462"
 ---
 # <a name="guarantee-stream-analytics-job-reliability-during-service-updates"></a>Обеспечение надежности заданий Stream Analytics во время обновления служб
 
@@ -30,7 +30,7 @@ _За исключением региона "Центральная Индия"_
 
 Пользователям рекомендуется развертывать идентичные задания на обоих сопряженных регионах. Помимо внутреннего мониторинга Stream Analytics рекомендуется отслеживать **оба** эти задания как задания в рабочей среде. Если выявленное нарушение работы возникло в результате обновления службы Stream Analytics, передайте эту информацию ответственному персоналу и отработайте отказ всех нисходящих потребителей на выходные данные работоспособного задания. Передача этой информации в службу поддержки позволит предотвратить влияние нового развертывания на сопряженный регион и сохранить целостность сопряженных заданий.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое Stream Analytics?](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени](stream-analytics-real-time-fraud-detection.md)

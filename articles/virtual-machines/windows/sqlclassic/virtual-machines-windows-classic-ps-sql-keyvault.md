@@ -17,11 +17,11 @@ ms.date: 02/17/2017
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: e20e2a094e1fd88dfc2a25b586dc6c894f92b418
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58312450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62108477"
 ---
 # <a name="configure-azure-key-vault-integration-for-sql-server-on-azure-virtual-machines-classic"></a>Настройка интеграции хранилища ключей Azure для SQL Server на виртуальных машинах Azure (классическая модель)
 > [!div class="op_single_selector"]
@@ -51,7 +51,7 @@ ms.locfileid: "58312450"
 ### <a name="understand-the-input-parameters"></a>Описание входных параметров
 В следующей таблице перечислены параметры, необходимые для выполнения сценария PowerShell в следующем разделе.
 
-| Параметр | ОПИСАНИЕ | Пример |
+| Параметр | Описание | Пример |
 | --- | --- | --- |
 | **$akvURL** |**URL-адрес хранилища ключей** |«https:\//contosokeyvault.vault.azure.net/» |
 | **$spName** |**Имя субъекта-службы** |fde2b411-33d5-4e11-af04eb07b669ccf2 |

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/29/2016
 ms.author: manuaery
-ms.openlocfilehash: 35413d597c3b6b1c7600241a78572b63f982d175
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: 9edc0b552f5c2f38e646bc4b44dd8df5c16b0457
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23109642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61408512"
 ---
 # <a name="use-the-device-summary-blade-for-storsimple-device-manager-connected-to-storsimple-virtual-array"></a>Использование колонки сводных данных об устройстве в диспетчере устройств StorSimple, подключенному к виртуальному массиву StorSimple
 
@@ -33,7 +33,7 @@ ms.locfileid: "23109642"
 
 
 
-## <a name="management"></a>управления
+## <a name="management"></a>Управление
 
 В колонке устройства StorSimple доступны параметры для управления этим устройством. Команды управления расположены в верхней части колонки, а также с левой стороны. Эти параметры позволяют добавлять общие файловые ресурсы или тома, обновлять виртуальный массив или выполнять отработку отказа для него.
 
@@ -51,8 +51,8 @@ ms.locfileid: "23109642"
 
 * Элемент **Общие файловые ресурсы** или **Тома** содержит сводные данные о количестве общих файловых ресурсов или томов на устройстве, сгруппированные по состоянию. Щелкните определенный элемент, чтобы открыть колонку со списком **общих файловых ресурсов** или **томов**, а затем выберите отдельный общий файловый ресурс или том, чтобы просмотреть или изменить его свойства. Дополнительные сведения см. в статье об [управлении общими файловыми ресурсами](storsimple-virtual-array-manage-shares.md) или [томами](storsimple-virtual-array-manage-volumes.md).
 
-## <a name="next-steps"></a>Дополнительная информация
-Ниже перечислено, что вы можете узнать.
+## <a name="next-steps"></a>Дальнейшие действия
+На вебинаре будут рассматриваться следующие темы:
 - [Управление общими файловыми ресурсами в виртуальном массиве StorSimple](storsimple-virtual-array-manage-shares.md)
     
 - [Управление томами в виртуальном массиве StorSimple](storsimple-virtual-array-manage-volumes.md)

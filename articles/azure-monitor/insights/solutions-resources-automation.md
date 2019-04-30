@@ -15,11 +15,11 @@ ms.date: 05/24/2017
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 1c9b13f44dae068597cb82a0aa803283ad5e67bc
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57763612"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62110367"
 ---
 # <a name="adding-azure-automation-resources-to-a-management-solution-preview"></a>Добавление ресурсов службы автоматизации Azure в решение по управлению (предварительная версия)
 > [!NOTE]
@@ -281,10 +281,10 @@ ms.locfileid: "57763612"
 
 | Тип данных | ОПИСАНИЕ | Пример | Результат разрешения |
 |:--|:--|:--|:--|
-| string   | Заключает значение в две пары кавычек.  | "\"Hello world\"" | "Hello world" |
+| строка   | Заключает значение в две пары кавычек.  | "\"Hello world\"" | "Hello world" |
 | numeric  | Числовое значение с одной парой кавычек.| "64" | 64 |
-| boolean  | Значение **true** или **false** в кавычках.  Обратите внимание, что это значение должно быть в нижнем регистре. | True | Да |
-| datetime | Сериализованное значение даты.<br>Вы можете создать это значение для определенной даты с помощью командлета ConvertTo-Json в PowerShell.<br>Пример: get-date "5/24/2017 13:14:57" \| ConvertTo-Json | "\\/Date(1495656897378)\\/" | 2017-05-24 13:14:57 |
+| Логическое  | Значение **true** или **false** в кавычках.  Обратите внимание, что это значение должно быть в нижнем регистре. | True | Да |
+| Datetime | Сериализованное значение даты.<br>Вы можете создать это значение для определенной даты с помощью командлета ConvertTo-Json в PowerShell.<br>Пример: get-date "5/24/2017 13:14:57" \| ConvertTo-Json | "\\/Date(1495656897378)\\/" | 2017-05-24 13:14:57 |
 
 ## <a name="modules"></a>модули
 Решению для управления не нужно определять [глобальные модули](../../automation/automation-integration-modules.md), используемые в модулях Runbook, так как они будут доступны постоянно в учетной записи службы автоматизации.  Необходимо включить ресурс для любого модуля, используемого в модулях Runbook.

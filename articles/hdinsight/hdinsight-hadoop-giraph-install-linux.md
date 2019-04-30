@@ -1,27 +1,22 @@
 ---
-title: Установка и использование Giraph в кластерах HDInsight (Hadoop) в Azure
-description: Узнайте, как устанавливать Giraph в кластерах HDInsight на основе Linux с помощью действий сценария. Действия сценария позволяют настроить кластер во время создания, изменяя его конфигурацию или устанавливая службы и служебные программы.
-services: hdinsight
+title: Установка и использование Giraph в кластерах Azure HDInsight
+description: Узнайте, как установить Giraph в кластерах HDInsight с помощью действий сценария. Giraph можно использовать для выполнения обработки в Apache Hadoop в облаке Azure graph.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 04/23/2018
-ms.author: hrasheed
-ms.openlocfilehash: a2f964915efda6ce83439c3c1970de58b0467456
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
-ms.translationtype: MT
+ms.date: 04/22/2019
+ms.openlocfilehash: aa13d8dfc65f020f3f27183423913933cd0b9404
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58201727"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61395389"
 ---
 # <a name="install-apache-giraph-on-hdinsight-hadoop-clusters-and-use-giraph-to-process-large-scale-graphs"></a>Установка Apache Giraph в кластерах HDInsight Hadoop и использование Giraph для обработки диаграмм больших объемов
 
 Узнайте, как установить Apache Giraph в кластере HDInsight. Действие сценария в HDInsight позволяет настроить кластер с помощью сценария bash. Сценарии можно использовать для настройки кластеров во время и после создания кластера.
-
-> [!IMPORTANT]  
-> Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
 ## <a name="whatis"></a>Что такое Giraph
 
@@ -58,7 +53,7 @@ ms.locfileid: "58201727"
 > [!NOTE]  
 > Действие сценария может применяться следующими способами:
 > * Azure PowerShell
-> * Классический интерфейс командной строки Azure
+> * Интерфейс командной строки Azure
 > * Пакет SDK для HDInsight .NET
 > * Шаблоны Azure Resource Manager
 > 
@@ -148,7 +143,7 @@ ms.locfileid: "58201727"
 
     Дополнительные сведения об этих и других параметрах, которые используются в примерах Giraph, см. в [кратком руководстве по Giraph](https://giraph.apache.org/quick_start.html).
 
-6. После завершения задания результаты сохраняются в каталоге **/example/out/shotestpaths**. Имена выходных файлов будут начинаться с **part-m-** и заканчиваться числом, указывающим номер файла (первый, второй и т. д.). Чтобы просмотреть выходные данные, используйте следующую команду:
+6. После завершения задания результаты сохраняются в **/example/out/shortestpaths** каталога. Имена выходных файлов будут начинаться с **part-m-** и заканчиваться числом, указывающим номер файла (первый, второй и т. д.). Чтобы просмотреть выходные данные, используйте следующую команду:
 
     ```bash
     hdfs dfs -text /example/output/shortestpaths/*

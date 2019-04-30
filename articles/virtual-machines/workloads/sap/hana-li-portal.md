@@ -17,11 +17,11 @@ ms.date: 04/02/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 8240308b3e0955b1d4d3ef2e82cad215daf95b00
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59009374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61482301"
 ---
 # <a name="azure-hana-large-instances-control-through-azure-portal"></a>Управление крупными экземплярами HANA в Azure с помощью портала Azure
 В этом документе описывается, как способ [крупных экземпляров HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture) будут представлены в [портала Azure](https://portal.azure.com) и какие действия можно выполнять через портал Azure с помощью единиц крупных экземпляров HANA, развернутых для вас. Видимость крупных экземпляров HANA на портале Azure предоставляется через поставщика ресурсов Azure для крупных экземпляров HANA, которая сейчас доступна в общедоступной предварительной версии

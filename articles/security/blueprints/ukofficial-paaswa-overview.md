@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 07/13/2018
 ms.author: jomolesk
 ms.openlocfilehash: 95e10f4727de239016a2e3c88571e74267e3967b
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58482993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62109333"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-hosting-for-uk-official-workloads"></a>Схема безопасности и соответствия требованиям Azure. Размещение веб-приложения PaaS для рабочих нагрузок UK OFFICIAL
 
@@ -61,7 +61,7 @@ ms.locfileid: "58482993"
 - Application Insights
 - Azure Resource Manager
 - Центр безопасности Azure
-- Базы данных SQL Azure
+- База данных SQL Azure
 - Хранилище Azure
 
 ## <a name="deployment-architecture"></a>Архитектура развертывания
@@ -117,7 +117,7 @@ ms.locfileid: "58482993"
 - [оповещения метрик](https://docs.microsoft.com/azure/application-insights/app-insights-alerts); 
 - [Приложения API Azure](https://azure.microsoft.com/services/app-service/api/) 
 
-#### <a name="azure-sql-database"></a>Базы данных SQL Azure
+#### <a name="azure-sql-database"></a>База данных SQL Azure
 
 База данных SQL — это реляционная база данных общего назначения (управляемая служба) в Microsoft Azure, которая поддерживает такие структуры, как реляционные данные, JSON, пространственные данные и XML. База данных SQL предоставляет отдельные управляемые базы данных SQL, управляемые базы данных SQL в [эластичном пуле](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool) и [управляемые экземпляры](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) базы данных SQL (в общедоступной предварительной версии). Она обеспечивает [динамически масштабируемую производительность](https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers) и предоставляет определенные возможности, например [индексы columnstore](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-overview) для экстремального аналитического анализа и отчетности и [выполняющуюся в памяти OLTP](https://docs.microsoft.com/azure/sql-database/sql-database-in-memory) для экстремальной обработки транзакций. Майкрософт быстро и эффективно обрабатывает исправления и обновления базы кода SQL, а также упрощает обслуживание базовой инфраструктуры.
 
@@ -156,7 +156,7 @@ ms.locfileid: "58482993"
 
 ### <a name="secrets-management"></a>Управление секретами
 
-#### <a name="azure-key-vault"></a>Хранилище ключей Azure
+#### <a name="azure-key-vault"></a>Хранилище Azure Key Vault
 
 [Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview) используется для защиты ключей и секретов приложений, чтобы предотвратить доступ к ним посторонних лиц. Оно не предназначено для использования в качестве хранилища паролей пользователей. Оно позволяет создать несколько безопасных контейнеров, называемых хранилищами. Эти хранилища поддерживают аппаратные модули безопасности (HSM). Хранилища позволяют уменьшить вероятность случайной потери информации о безопасности путем централизации хранения секретов приложений. Хранилища Key Vault также контролируют и регистрируют доступ к чему-либо, что хранится в них. Azure Key Vault может обрабатывать запросы и обновлять сертификаты протокола TLS, предоставляя функции, необходимые для надежного решения по управлению жизненным циклом сертификата.
 
@@ -243,7 +243,7 @@ ms.locfileid: "58482993"
 
 [Azure Active Directory B2C](https://azure.microsoft.com/services/active-directory-b2c/) можно реализовать как элемент управления, чтобы пользователи могли регистрировать общедоступные веб-приложения, создавать для них удостоверения, разрешать авторизацию и управлять доступом.
 
-## <a name="disclaimer"></a>Отказ от ответственности
+## <a name="disclaimer"></a>Заявление об отказе
 
 - Этот документ является исключительно информационным. МАЙКРОСОФТ НЕ ПРЕДОСТАВЛЯЕТ НИКАКИХ ГАРАНТИЙ, ЯВНЫХ, КОСВЕННЫХ ИЛИ ПРЕДУСМОТРЕННЫХ ЗАКОНОМ, В ОТНОШЕНИИ ИНФОРМАЦИИ В ЭТОМ ДОКУМЕНТЕ. Данный документ предоставляется "как есть". Сведения и мнения, представленные в данном документе, включая URL-адреса и ссылки на другие веб-сайты, могут быть изменены без предварительного уведомления. Клиенты, читающие этот документ, берут ответственность за его использование на себя.
 - Настоящий документ не предоставляет клиентам юридических прав на интеллектуальную собственность в отношении продуктов или решений корпорации Майкрософт.

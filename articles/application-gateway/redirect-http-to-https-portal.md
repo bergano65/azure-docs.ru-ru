@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 12/7/2018
 ms.author: victorh
 ms.openlocfilehash: 17eef2fc2608ca4ccbabff8179cd63798d275582
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58119638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62101467"
 ---
 # <a name="create-an-application-gateway-with-http-to-https-redirection-using-the-azure-portal"></a>Создание шлюза приложений с перенаправлением трафика HTTP в HTTPS с помощью портала Azure
 
@@ -85,7 +85,7 @@ Export-PfxCertificate `
    - *myAGSubnet* — имя подсети;
    - *10.0.1.0/24* — диапазон адресов подсети.
 
-     ![Создание виртуальной сети](./media/create-url-route-portal/application-gateway-vnet.png)
+     ![Создать виртуальную сеть](./media/create-url-route-portal/application-gateway-vnet.png)
 
 7. Нажмите кнопку **ОК**, чтобы создать виртуальную сеть и подсеть.
 8. В разделе **Интерфейсная IP-конфигурация** убедитесь, что **тип IP-адреса** имеет значение **Общедоступный** и выбрано **Создать**. Введите имя *myAGPublicIPAddress*. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
@@ -215,7 +215,7 @@ Update-AzVmss `
 1. Выберите **myAppGateway**.
 2. На странице **Обзор** запишите IP-адрес в разделе **Общедоступный интерфейсный IP-адрес**.
 
-3. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например http://52.170.203.149.
+3. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например http://52.170.203.149 
 
    ![Предупреждение системы безопасности](./media/redirect-http-to-https-powershell/application-gateway-secure.png)
 

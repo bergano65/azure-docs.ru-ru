@@ -2,19 +2,20 @@
 title: Тестирование производительности приложения в Хранилище дисков Azure — управляемые диски
 description: Узнайте о процессе тестирования производительности приложения в Azure.
 services: virtual-machines-linux,storage
-author: roygara
-ms.author: rogarana
-ms.date: 01/11/2019
+author: rockboyfor
+ms.author: v-yeche
+origin.date: 01/11/2019
+ms.date: 04/01/2019
 ms.topic: article
 ms.service: virtual-machines-linux
 ms.tgt_pltfrm: linux
 ms.subservice: disks
 ms.openlocfilehash: 21ed4e9a6b1da10d0ae4c276612459506e13d94f
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56331803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61474374"
 ---
 # <a name="benchmarking-a-disk"></a>Тестирование производительности диска
 
@@ -26,7 +27,7 @@ ms.locfileid: "56331803"
 
 [!INCLUDE [virtual-machines-disks-benchmarking](../../../includes/virtual-machines-managed-disks-benchmarking.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Прочитайте статью о проектировании для высокой производительности. В ней описано, как создать для прототипа такой же контрольный список, как для существующего приложения. С помощью инструментов тестирования производительности можно смоделировать рабочую нагрузку и измерить производительность прототипа приложения. В результате вы сможете определить, какой из классов диска будет соответствовать требованиям к производительности приложения, а какой превосходить их. Затем те же указания можно применить и для рабочего приложения.
 

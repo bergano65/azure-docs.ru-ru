@@ -11,15 +11,15 @@ ms.workload: infrastructure-services
 ms.date: 01/26/2018
 ms.author: victorh
 ms.openlocfilehash: 85113a5007a171459b831684f584773ba4328b94
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58079952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122420"
 ---
 # <a name="create-an-application-gateway-with-multiple-site-hosting-using-the-azure-portal"></a>Создание шлюза приложений с несколькими сайтами с помощью портала Azure
 
-Чтобы настроить [размещение нескольких веб-сайтов](application-gateway-multi-site-overview.md) при создании [шлюза приложений](application-gateway-introduction.md), можно использовать портал Azure. В этом руководстве мы создадим внутренние пулы с использованием масштабируемых наборов виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика на соответствующие серверы в пулах. Предполагается, что у вас есть несколько доменов и использует примеры *www\.contoso.com* и *www\.fabrikam.com*.
+Чтобы настроить [размещение нескольких веб-сайтов](application-gateway-multi-site-overview.md) при создании [шлюза приложений](application-gateway-introduction.md), можно использовать портал Azure. В этом руководстве мы создадим внутренние пулы с использованием масштабируемых наборов виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика на соответствующие серверы в пулах. В этом руководстве предполагается, что вам принадлежат несколько доменов. Для примера здесь используются домены *www\.contoso.com* и *www\.fabrikam.com*.
 
 В этой статье раскрываются следующие темы:
 
@@ -59,7 +59,7 @@ ms.locfileid: "58079952"
    - *myAGSubnet* — имя подсети;
    - *10.0.0.0/24* — диапазон адресов подсети.
 
-     ![Создание виртуальной сети](./media/application-gateway-create-multisite-portal/application-gateway-vnet.png)
+     ![Создать виртуальную сеть](./media/application-gateway-create-multisite-portal/application-gateway-vnet.png)
 
 6. Нажмите кнопку **ОК**, чтобы создать виртуальную сеть и подсеть.
 7. Щелкните **Выбрать общедоступный IP-адрес**, выберите **Создать**, а затем введите имя общедоступного IP-адреса. В этом примере общедоступный IP-адрес — *myAGPublicIPAddress*. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
@@ -117,7 +117,7 @@ ms.locfileid: "58079952"
       -Settings $publicSettings
     ```
 
-3. Создайте вторую виртуальную машину и установите службы IIS, следуя только что выполненным инструкциям. Введите имена *fabrikamVM* для имени и значения vmname в Set-AzVMExtension.
+3. Создайте вторую виртуальную машину и установите службы IIS, следуя только что выполненным инструкциям. Введите *fabrikamVM* в качестве имени и значения VMName в Set-AzVMExtension.
 
 ## <a name="create-backend-pools-with-the-virtual-machines"></a>Создание серверных пулов с виртуальными машинами
 

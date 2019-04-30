@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
 ms.openlocfilehash: f204f01fae0bd01f9f2f0e242c63ec2070d6d195
-ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52678055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62121166"
 ---
 # <a name="comparing-appsource-and-the-azure-marketplace"></a>Сравнение AppSource и Azure Marketplace
 Онлайн-магазины в [Azure Marketplace](https://azuremarketplace.microsoft.com) и [Microsoft AppSource](https://appsource.microsoft.com) удовлетворяют уникальным требованиям клиентов. В онлайн-магазинах можно определять целевую аудиторию в соответствии с ролями клиентов. Вы можете предложить подходящее решение или службу с учетом требований клиента.
@@ -41,6 +41,6 @@ ms.locfileid: "52678055"
 | **Несколько типов облаков** | Сейчас не поддерживает Azure Stack, Azure для государственных организаций или региональных облаков. | Публикуйте решения для общедоступного облака и локальной среды, используя следующие типы:<ul> <li>Azure Stack</li> <li>Azure Government</li> <li>региональные облака, включая Китай и Германию.</li></ul> |
 | **Контекстная презентация для клиентов** | Привлекайте большее количество клиентов через взаимодействие в приложении для продуктов Майкрософт, таких как Dynamics 365, Power BI и Office 365. | Сделайте свое решение доступным для контекстного поиска с использованием интерфейса Azure. Используйте возможности публикации шаблонов решений для виртуальных машин и приложений Azure. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 *   Просмотрите [Руководство по публикации в Azure Marketplace и AppSource](./marketplace-publishers-guide.md).
 

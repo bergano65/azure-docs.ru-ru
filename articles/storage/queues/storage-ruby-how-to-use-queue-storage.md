@@ -11,11 +11,11 @@ ms.date: 12/08/2016
 ms.author: tamram
 ms.subservice: queues
 ms.openlocfilehash: 7ebb4326a8ec8a3382a5488ce3b966526bef446a
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55456278"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62112010"
 ---
 # <a name="how-to-use-queue-storage-from-ruby"></a>Использование хранилища очередей из Ruby
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -63,7 +63,7 @@ Azure.config.storage_access_key = "<your Azure storage access key>"
 4. В колонке "Ключи доступа" вы увидите ключи доступа 1 и 2. Можно использовать любой из них. 
 5. Щелкните значок копирования, чтобы скопировать ключ в буфер обмена. 
 
-## <a name="how-to-create-a-queue"></a>Практическое руководство. Создание очереди
+## <a name="how-to-create-a-queue"></a>Практическое руководство. Создать очередь
 Следующий пример кода создает объект **Azure::QueueService** , который позволяет работать с очередями.
 
 ```ruby
@@ -150,7 +150,7 @@ message_count, metadata = azure_queue_service.get_queue_metadata(
 azure_queue_service.delete_queue("test-queue")
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
 * Посетите [блог команды разработчиков хранилища Azure](https://blogs.msdn.com/b/windowsazurestorage/)

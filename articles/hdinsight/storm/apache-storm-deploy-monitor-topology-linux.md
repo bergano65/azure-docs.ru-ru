@@ -1,7 +1,6 @@
 ---
 title: Развертывание и администрирование топологий Apache Storm в Azure HDInsight
 description: Узнайте, как развертывать и отслеживать топологии Apache Storm, а также управлять ими с помощью панели мониторинга Storm в HDInsight на основе Linux. Использование инструментов Hadoop для Visual Studio.
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/22/2018
-ms.openlocfilehash: 32ad4434db8c2816fe7792b1b851e020021d543a
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
-ms.translationtype: MT
+ms.openlocfilehash: 8b27ad34bdc6fcbd7a1eb46515fbf33c96d02528
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58447109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62125244"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Развертывание и администрирование топологий Apache Storm в Azure HDInsight 
 
@@ -59,7 +58,7 @@ ms.locfileid: "58447109"
 
 3. В диалоговом окне **Новый проект** разверните **Установленные** > **Шаблоны** и выберите **HDInsight**. В списке шаблонов выберите **Пример Storm**. В нижней части диалогового окна введите имя приложения.
 
-    ![изображение](./media/apache-storm-deploy-monitor-topology-linux/sample.png)
+    ![image](./media/apache-storm-deploy-monitor-topology-linux/sample.png)
 
 4. В **обозревателе решений** щелкните правой кнопкой мыши проект и выберите **Submit to Storm on HDInsight** (Отправить в Storm в HDInsight).
 
@@ -83,7 +82,7 @@ ms.locfileid: "58447109"
     Эта команда запускает пример топологии WordCount в кластере. Эта топология произвольно создает предложения, а затем подсчитывает число вхождений каждого слова в предложениях.
 
    > [!NOTE]  
-   > При отправке топологии в кластер необходимо сначала скопировать jar-файл, содержащий кластер, а затем воспользоваться командой `storm`. Чтобы скопировать файл в кластер, можно использовать команду `scp`. Например `scp FILENAME.jar USERNAME@CLUSTERNAME-ssh.azurehdinsight.net:FILENAME.jar`.
+   > При отправке топологии в кластер необходимо сначала скопировать jar-файл, содержащий кластер, а затем воспользоваться командой `storm`. Чтобы скопировать файл в кластер, можно использовать команду `scp`. Например `scp FILENAME.jar USERNAME@CLUSTERNAME-ssh.azurehdinsight.net:FILENAME.jar` 
    >
    > Пример WordCount и другие начальные примеры использования Storm уже включены в ваш кластер в `/usr/hdp/current/storm-client/contrib/storm-starter/`.
 
@@ -106,7 +105,7 @@ ms.locfileid: "58447109"
 
 Деактивация топологии приостанавливает ее до завершения или повторной активации. Для этих операций используйте кнопки __Отключить__ и __Активировать повторно__ в верхней части окна __Topology Summary__ (Сводка топологии).
 
-### <a name="rebalance"></a>Повторная балансировка
+### <a name="rebalance"></a>Перераспределить
 
 Повторная балансировка топологии позволяет системе пересмотреть параллелизм топологии. Например, если вы изменили размер кластера, добавив дополнительные узлы, повторная балансировка позволит топологии использовать новые узлы.
 

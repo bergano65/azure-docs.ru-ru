@@ -10,17 +10,17 @@ manager: cgronlun
 ms.author: magottei
 ms.custom: seodec2018
 ms.openlocfilehash: b7e7ecd2a82a8d64967288def9c6ede7a292f72a
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57759397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61127587"
 ---
 # <a name="searching-blob-storage-with-azure-search"></a>Поиск в хранилище BLOB-объектов с помощью поиска Azure
 
 Поиск различных типов содержимого в хранилище BLOB-объектов Azure может представлять собой трудную для решения задачу. Тем не менее с помощью поиска Azure можно искать и индексировать содержимое BLOB-объектов несколькими щелчками мыши. Для поиска в хранилище BLOB-объектов необходимо подготовить службу поиска Azure. Ограничения и ценовые категории службы поиска Azure можно найти на [странице цен](https://aka.ms/azspricing).
 
-## <a name="what-is-azure-search"></a>Что такое поиск Azure?
+## <a name="what-is-azure-search"></a>Что такое Поиск Azure?
 [Поиск Azure](https://aka.ms/whatisazsearch) — это служба, с помощью которой разработчики могут легко добавить полнотекстовый поиск в веб-приложения и мобильные приложения. Со службой "Поиск Azure" вам не нужно управлять инфраструктурой поиска. Служба поиска Azure предоставляется с [доступностью в 99,9 % в соответствии с Соглашением об уровне обслуживания](https://aka.ms/azuresearchsla).
 
 ## <a name="index-and-search-enterprise-document-formats"></a>Индексирование и поиск форматов корпоративных документов
@@ -45,7 +45,7 @@ ms.locfileid: "57759397"
 
 Синтаксический анализ JSON сейчас невозможно настроить с помощью портала. [Дополнительные сведения о синтаксическом анализе JSON в поиске Azure.](https://aka.ms/azsjsonblobindexing)
 
-## <a name="quick-start"></a>Быстрый запуск
+## <a name="quick-start"></a>Краткое руководство
 Добавить службу "Поиск Azure" к большим двоичным объектам можно прямо на странице хранилища BLOB-объектов портала.
 
 ![](./media/search-blob-storage-integration/blob-blade.png)

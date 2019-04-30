@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/29/2016
 ms.author: alkohli
-ms.openlocfilehash: 1881a0625b107ae1a90e5b772f5296a4d728973d
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: 9f6e5b606caa661429a3c4d4a53e2021d57730aa
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38688159"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62116961"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-virtual-array"></a>Развертывание службы диспетчера устройств StorSimple для виртуального массива StorSimple
 ## <a name="overview"></a>Обзор
@@ -28,14 +28,14 @@ ms.locfileid: "38688159"
 
 Стандартные задачи, связанные со службой диспетчера устройств StorSimple:
 
-* создание службы;
+* Создание службы
 * удаление службы;
 * Получение регистрационного ключа службы
 * повторное создание ключа регистрации службы.
 
 В этом руководстве описано, как выполнить каждую из этих задач. Сведения в этой статье применимы только к виртуальным массивам StorSimple. Дополнительные сведения о серии StorSimple 8000 см. в разделе о [развертывании службы StorSimple Manager](storsimple-manage-service.md).
 
-## <a name="create-a-service"></a>создание службы;
+## <a name="create-a-service"></a>Создание службы
 
 Для создания службы требуется следующее:
 
@@ -119,7 +119,7 @@ ms.locfileid: "38688159"
    
    Скопируйте этот ключ и сохраните его для регистрации новых устройств в службе.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [приступить к работе](storsimple-virtual-array-deploy1-portal-prep.md) с виртуальным массивом StorSimple.
 * Узнайте, как [администрировать устройство StorSimple](storsimple-ova-web-ui-admin.md).
 

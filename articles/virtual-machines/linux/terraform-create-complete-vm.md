@@ -16,11 +16,11 @@ ms.workload: infrastructure
 ms.date: 09/14/2017
 ms.author: echuvyrov
 ms.openlocfilehash: 8eba59429a3045b929976963b08f33e488055ec7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57875589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62127486"
 ---
 # <a name="create-a-complete-linux-virtual-machine-infrastructure-in-azure-with-terraform"></a>Создание готовой инфраструктуры виртуальных машин Linux в Azure с помощью Terraform
 
@@ -60,7 +60,7 @@ resource "azurerm_resource_group" "myterraformgroup" {
 
 В дополнительных разделах нужно ссылаться на группу ресурсов, используя шаблон *${azurerm_resource_group.myterraformgroup.name}*.
 
-## <a name="create-virtual-network"></a>Создание виртуальной сети
+## <a name="create-virtual-network"></a>Создать виртуальную сеть
 В следующем разделе создается виртуальная сеть с именем *myVnet* в адресном пространстве *10.0.0.0/16*.
 
 ```tf
@@ -88,7 +88,7 @@ resource "azurerm_subnet" "myterraformsubnet" {
 ```
 
 
-## <a name="create-public-ip-address"></a>Создание общедоступного IP-адреса
+## <a name="create-public-ip-address"></a>Создать общедоступный IP-адрес
 Для доступа к ресурсам через Интернет создайте общедоступный IP-адрес и назначьте его виртуальной машине. В следующем разделе создается общедоступный IP-адрес с именем *myPublicIP*:
 
 ```tf

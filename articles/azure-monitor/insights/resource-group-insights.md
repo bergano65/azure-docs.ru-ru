@@ -12,11 +12,11 @@ ms.date: 09/19/2018
 ms.reviewer: mbullwin
 ms.author: daviste
 ms.openlocfilehash: d5c07e0d4aca8bda42ea9f78a1475ea7bb5861f0
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55997029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62119427"
 ---
 # <a name="monitor-resource-groups-with-azure-monitor-preview"></a>Мониторинг групп ресурсов с помощью Azure Monitor (предварительная версия)
 
@@ -119,7 +119,7 @@ Azure Monitor для групп ресурсов зависит от систе�
 * Откройте Azure Monitor для любой группы ресурсов в подписке
 * или перейдите к подписке, нажав кнопку **Поставщики ресурсов**, выбрав **Регистрация для Управления оповещениями**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Изучение и предоставление общего доступа к данным об использовании c интерактивными книгами в Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-usage-workbooks)
 - [Работоспособность ресурсов Azure](https://docs.microsoft.com/azure/service-health/resource-health-overview)

@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: 14e24c1e9a61eb7ea73a949e17ffbf8c5b768f05
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53099075"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61479667"
 ---
 # <a name="rotate-login-credentials-for-inputs-and-outputs-of-a-stream-analytics-job"></a>Смена учетных данных для источников входных данных и мест назначения выходных данных задания Stream Analytics
 
@@ -36,7 +36,7 @@ ms.locfileid: "53099075"
    ![Уведомления после редактирования ключа](media/stream-analytics-login-credentials-inputs-outputs/edited-key-notifications.png)
 8. Перейдите к разделу [Запуск задания с момента последней остановки](#start-your-job-from-the-last-stopped-time).
 
-### <a name="event-hubs"></a>Центры событий
+### <a name="event-hubs"></a>Концентраторы событий
 
 1. Перейдите на портал Azure и войдите в концентратор событий, используемый в качестве входного или выходного для задания Stream Analytics.    
 2. В разделе параметров щелкните **Политики общего доступа** и выберите необходимую политику доступа. На выбор предлагаются **первичный** и **вторичный** ключи. Выберите тот, который не используется заданием, и создайте его повторно:  
@@ -81,7 +81,7 @@ ms.locfileid: "53099075"
 2. Выберите **Во время последней остановки** и щелкните **Start** (Запустить). Обратите внимание, что параметр "Во время последней остановки" отображается, только если задание запускалось ранее и были созданы выходные данные. Задание перезапускается на основе значения последних выходных данных.
    ![Запуск задания Stream Analytics](media/stream-analytics-login-credentials-inputs-outputs/start-stream-analytics-job.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)

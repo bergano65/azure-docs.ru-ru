@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Workspot Control | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Workspot Control | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Workspot Control.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 10/12/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 97f375c6f48d3dc497eb59e76f19fc64cf906b56
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57886513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62098674"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-workspot-control"></a>Руководство. Интеграция Azure Active Directory с Workspot Control
+# <a name="tutorial-azure-active-directory-integration-with-workspot-control"></a>Руководство по Интеграция Azure Active Directory с Workspot Control
 
 В этом руководстве описано, как интегрировать Workspot Control с Azure Active Directory (Azure AD).
 
@@ -62,19 +62,19 @@ ms.locfileid: "57886513"
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
-    ![изображение](./media/workspotcontrol-tutorial/selectazuread.png)
+    ![image](./media/workspotcontrol-tutorial/selectazuread.png)
 
 2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
-    ![изображение](./media/workspotcontrol-tutorial/a_select_app.png)
+    ![image](./media/workspotcontrol-tutorial/a_select_app.png)
     
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![изображение](./media/workspotcontrol-tutorial/a_new_app.png)
+    ![image](./media/workspotcontrol-tutorial/a_new_app.png)
 
 4. В поле поиска введите **Workspot Control**, выберите **Workspot Control** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![изображение](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_addfromgallery.png)
+     ![image](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_addfromgallery.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -98,19 +98,19 @@ ms.locfileid: "57886513"
 
 1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Workspot Control** выберите **Единый вход**.
 
-    ![изображение](./media/workspotcontrol-tutorial/B1_B2_Select_SSO.png)
+    ![image](./media/workspotcontrol-tutorial/B1_B2_Select_SSO.png)
 
 2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML**, чтобы включить единый вход.
 
-    ![изображение](./media/workspotcontrol-tutorial/b1_b2_saml_sso.png)
+    ![image](./media/workspotcontrol-tutorial/b1_b2_saml_sso.png)
 
 3. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![изображение](./media/workspotcontrol-tutorial/b1-domains_and_urlsedit.png)
+    ![image](./media/workspotcontrol-tutorial/b1-domains_and_urlsedit.png)
 
 4. Чтобы настроить приложение в режиме, инициируемом **IDP**, в разделе **Базовая конфигурация SAML** выполните указанные ниже действия.
 
-    ![изображение](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_url.png)
+    ![image](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_url.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<INSTANCENAME>-saml.workspot.com/saml/metadata`.
 
@@ -118,7 +118,7 @@ ms.locfileid: "57886513"
 
     c. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-     ![изображение](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_url1.png)
+     ![image](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_url1.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<INSTANCENAME>-saml.workspot.com/`.
 
@@ -127,7 +127,7 @@ ms.locfileid: "57886513"
 
 5. На странице **Настройка единого входа с помощью SAML** откройте раздел **Сертификат подписи SAML** и щелкните ссылку **Скачать** рядом с пунктом **Сертификат (Base64)**, затем сохраните этот сертификат на компьютере.
 
-    ![изображение](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_certficate.png) 
+    ![image](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_certficate.png) 
 
 6. Требуемый URL-адрес можно скопировать из раздела **Настройка Workspot Control**.
 
@@ -137,19 +137,19 @@ ms.locfileid: "57886513"
 
     б) Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    в) URL-адрес выхода
 
-    ![изображение](./media/workspotcontrol-tutorial/d1_samlsonfigure.png) 
+    ![image](./media/workspotcontrol-tutorial/d1_samlsonfigure.png) 
 
 7. В другом окне браузера войдите в приложение Workspot Control с правами администратора безопасности.
 
 8. На панели инструментов в верхней части страницы щелкните  **Setup** (Настройка) и выберите  **SAML**.
 
-    ![изображение](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_setup.png)
+    ![image](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_setup.png)
 
 9. На странице **Security Assertion Markup Language Configuration** (Конфигурация SAML) выполните следующие действия.
  
-    ![изображение](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_saml.png)
+    ![image](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_saml.png)
 
     a. В текстовое поле **Entity ID** (Идентификатор сущности) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.   
 
@@ -167,20 +167,20 @@ ms.locfileid: "57886513"
 
 1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-    ![изображение](./media/workspotcontrol-tutorial/d_users_and_groups.png)
+    ![image](./media/workspotcontrol-tutorial/d_users_and_groups.png)
 
 2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![изображение](./media/workspotcontrol-tutorial/d_adduser.png)
+    ![image](./media/workspotcontrol-tutorial/d_adduser.png)
 
 3. В разделе свойств пользователя сделайте следующее:
 
-    ![изображение](./media/workspotcontrol-tutorial/d_userproperties.png)
+    ![image](./media/workspotcontrol-tutorial/d_userproperties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    2. В **имя пользователя** тип поля **brittasimon\@yourcompanydomain.extension**  
-    Например BrittaSimon@contoso.com.
+    2. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
+    Например BrittaSimon@contoso.com 
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -196,17 +196,17 @@ ms.locfileid: "57886513"
 
 2. На панели инструментов в верхней части страницы щелкните  **Users** (Пользователи) и выберите  **Add User** (Добавить пользователя).
 
-    ![изображение](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_adduser.png)
+    ![image](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_adduser.png)
 
 3. На странице **Add a New User** (Добавление нового пользователя) выполните следующие действия.
 
-    ![изображение](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_addnewuser.png)
+    ![image](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_addnewuser.png)
 
     a. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
     2. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
-    c. В **электронной почты** текста введите адрес электронной почты пользователя, например **Brittasimon\@contoso.com**.
+    c. В текстовом поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon\@contoso.com**.
 
     d. Выберите соответствующую роль пользователя из раскрывающегося списка **Role** (Роль).
 
@@ -220,25 +220,25 @@ ms.locfileid: "57886513"
 
 1. На портале Azure перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![изображение](./media/workspotcontrol-tutorial/d_all_applications.png)
+    ![image](./media/workspotcontrol-tutorial/d_all_applications.png)
 
 2. Из списка приложений выберите **Workspot Control**.
 
-    ![изображение](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_app.png)
+    ![image](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_app.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
-    ![изображение](./media/workspotcontrol-tutorial/d_leftpaneusers.png)
+    ![image](./media/workspotcontrol-tutorial/d_leftpaneusers.png)
 
 4. Нажмите кнопку **Добавить**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![изображение](./media/workspotcontrol-tutorial/d_assign_user.png)
+    ![image](./media/workspotcontrol-tutorial/d_assign_user.png)
 
 4. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
 5. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Тест единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

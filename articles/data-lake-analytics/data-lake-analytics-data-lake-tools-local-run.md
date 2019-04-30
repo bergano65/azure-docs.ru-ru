@@ -10,12 +10,12 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.workload: big-data
 ms.date: 07/03/2018
-ms.openlocfilehash: 8f110a88558b4479d8fdadb2967c7dedeca60ce9
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
-ms.translationtype: HT
+ms.openlocfilehash: 42e58125fcbc3ab411c0d7503c42c14c28178428
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43043563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62113941"
 ---
 # <a name="run-u-sql-scripts-on-your-local-machine"></a>Запуск скриптов U-SQL на локальном компьютере
 
@@ -27,8 +27,8 @@ ms.locfileid: "43043563"
 
 |Компонент|Локальный запуск|Запуск в облачной среде|
 |---------|---------|---------|
-|служба хранилища.|Корневая локальная папка данных|Учетная запись Azure Data Lake Storage по умолчанию|
-|Службы вычислений|Модуль запуска U-SQL в локальной среде|Служба Azure Data Lake Analytics|
+|Хранилище|Корневая локальная папка данных|Учетная запись Azure Data Lake Storage по умолчанию|
+|Среда выполнения приложений|Модуль запуска U-SQL в локальной среде|Служба Azure Data Lake Analytics|
 |Среда запуска|Рабочая папка на локальном компьютере|Кластер Azure Data Lake Analytics|
 
 В последующих разделах содержатся дополнительные сведения о компонентах локального запуска.
@@ -106,7 +106,7 @@ ms.locfileid: "43043563"
 
 Подробнее о [пакете SDK Azure Data Lake для U-SQL](data-lake-analytics-u-sql-sdk.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка конвейера CI/CD для Azure Data Lake Analytics](data-lake-analytics-cicd-overview.md).
 - [Тестирование кода Azure Data Lake Analytics](data-lake-analytics-cicd-test.md).

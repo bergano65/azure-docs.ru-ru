@@ -16,11 +16,11 @@ ms.date: 04/17/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: a931b303e40e41bc23e8b586e1d37e600625b1a8
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57881067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61415236"
 ---
 # <a name="deploy-storsimple-virtual-array---set-up-as-file-server-via-azure-portal"></a>Развертывание виртуального массива StorSimple. Установка в качестве файлового сервера на портале Azure
 ![](./media/storsimple-virtual-array-deploy3-fs-setup/fileserver4.png)
@@ -166,13 +166,13 @@ ms.locfileid: "57881067"
    
    Теперь вы можете добавить общую папку.
 
-## <a name="step-3-add-a-share"></a>Шаг 3. Добавление общей папки
+## <a name="step-3-add-a-share"></a>Шаг 3. Добавить общий файловый ресурс
 Чтобы создать общую папку, выполните следующие действия на [портале Azure](https://portal.azure.com/).
 
 #### <a name="to-create-a-share"></a>Создание общей папки
 1. Выберите устройство файлового сервера, которое вы настроили на предыдущем шаге, и нажмите кнопку **…** (или щелкните правой кнопкой мыши). В контекстном меню выберите пункт **Добавить общую папку**. Или на панели команд устройства щелкните **+ Добавить общую папку**.
    
-   ![Добавление общей папки](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs15m.png)
+   ![Добавить общий файловый ресурс](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs15m.png)
 2. Укажите следующие параметры общей папки.
 
    1. Уникальное имя общей папки. Оно должно представлять собой строку длиной от 3 до 127 символов.
@@ -190,11 +190,11 @@ ms.locfileid: "57881067"
    
        Вы получите уведомление о том, что общая папка создается.
    
-       ![Добавление общей папки](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs19m.png)
+       ![Добавить общий файловый ресурс](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs19m.png)
    
       После создания общей папки с указанными параметрами колонка **Общие папки** обновится, и в ней появится новая папка. По умолчанию для нее включены мониторинг и резервное копирование.
    
-      ![Добавление общей папки](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs22m.png)
+      ![Добавить общий файловый ресурс](./media/storsimple-virtual-array-deploy3-fs-setup/deployfs22m.png)
 
 ## <a name="step-4-connect-to-the-share"></a>Шаг 4. Подключение к общей папке
 Теперь необходимо подключиться к общим папкам, созданным на предыдущем этапе. Выполните следующие действия на узле Windows Server, который подключен к виртуальному массиву StorSimple.

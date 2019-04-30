@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 01/24/2018
 ms.author: sngun
-ms.openlocfilehash: 81adf643541b5a4486694026acec49129ef8e5a6
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: e03fa427227bed745b53d43aaebc4dc58ad5bb9d
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60000629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62097901"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net"></a>Советы по повышению производительности для .NET в Azure Cosmos DB
 
@@ -48,8 +48,8 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
      |Режим подключения  |Поддерживаемый протокол  |Поддерживаемые пакеты SDK  |API и порт службы  |
      |---------|---------|---------|---------|
      |Шлюз  |   HTTPS    |  Все пакеты SDK    |   SQL(443), Mongo (10250, 10255, 10256), Table(443), Cassandra(10350), Graph(443)    |
-     |Напрямую    |    HTTPS     |  Пакет SDK для .NET и Java    |   Порты в диапазоне 10 000–20 000    |
-     |Напрямую    |     TCP    |  ПАКЕТ SDK .NET    | Порты в диапазоне 10 000–20 000 |
+     |Direct    |    HTTPS     |  Пакет SDK для .NET и Java    |   Порты в диапазоне 10 000–20 000    |
+     |Direct    |     TCP    |  SDK .NET    | Порты в диапазоне 10 000–20 000 |
 
      Azure Cosmos DB предлагает простую и открытую модель программирования RESTful поверх HTTPS. Кроме того, предлагается эффективный протокол TCP, который также является RESTful в своей коммуникационной модели и доступен через клиентский пакет SDK для .NET. Как Direct TCP, так и HTTPS используют SSL для первоначальной аутентификации и шифрования трафика. Чтобы добиться лучшей производительности, рекомендуется по возможности использовать протокол TCP.
 
@@ -57,7 +57,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
      ```csharp
      var serviceEndpoint = new Uri("https://contoso.documents.net");
-     var authKey = new "your authKey from the Azure portal";
+     var authKey = "your authKey from the Azure portal";
      DocumentClient client = new DocumentClient(serviceEndpoint, authKey,
      new ConnectionPolicy
      {
@@ -141,7 +141,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
     Чтобы снизить количество полных обходов сети, необходимых для получения всех соответствующих результатов, можно увеличить размер страницы до 1000 с помощью заголовка запроса [x-ms-max-item-count](https://docs.microsoft.com/rest/api/cosmos-db/common-cosmosdb-rest-request-headers). Чтобы отобразить только некоторые результаты, например, когда пользовательский интерфейс или приложение API возвращает только десять результатов за раз, размер страницы можно уменьшить до 10. Это позволит снизить пропускную способность, используемую на операции чтения и на выполнение запросов.
 
-    Размер страницы также можно изменить с помощью доступных пакетов SDK для Azure Cosmos DB.  Например: 
+    Размер страницы также можно изменить с помощью доступных пакетов SDK для Azure Cosmos DB.  Пример.
 
         IQueryable<dynamic> authorResults = client.CreateDocumentQuery(documentCollection.SelfLink, "SELECT p.Author FROM Pages p WHERE p.Title = 'About Seattle'", new FeedOptions { MaxItemCount = 1000 });
 10. **Увеличение количества потоков или задач**

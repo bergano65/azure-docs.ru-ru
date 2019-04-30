@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: willzhan;kilroyh;yanmf;juliako
 ms.openlocfilehash: 336552c142e504ae7296314512f00688e30d032e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57894365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61466583"
 ---
 # <a name="design-of-a-content-protection-system-with-access-control-using-azure-media-services"></a>Проектирование системы защиты содержимого с управлением доступом с помощью служб мультимедиа Azure 
 
@@ -60,7 +60,7 @@ ms.locfileid: "57894365"
 | **Платформа клиента** | **Поддержка собственного DRM** | **Браузер или приложение** | **Форматы потоковой передачи** |
 | --- | --- | --- | --- |
 | **Смарт-ТВ, операторские STB, OTT STB** |В основном PlayReady и (или) Widevine и (или) другие |Linux, Opera и WebKit, другие |Различные форматы |
-| **Устройства Windows 10 (компьютер с Windows, планшеты с Windows, Windows Phone, Xbox)** |PlayReady |Microsoft Edge, IE 11, EME<br/><br/><br/>Универсальные приложения Windows |DASH (PlayReady не поддерживается для HLS)<br/><br/>DASH, Smooth Streaming (PlayReady не поддерживается для HLS) |
+| **Устройства Windows 10 (компьютер с Windows, планшеты с Windows, Windows Phone, Xbox)** |PlayReady |Microsoft Edge, IE 11, EME<br/><br/><br/>Универсальная платформа Windows |DASH (PlayReady не поддерживается для HLS)<br/><br/>DASH, Smooth Streaming (PlayReady не поддерживается для HLS) |
 | **Устройства Android (телефоны, планшеты, телевизоры)** |Widevine |Chrome или EME |DASH, HLS |
 | **iOS (iPhone, iPad), клиенты OS X и Apple TV** |FairPlay |Safari 8+ или EME |HLS |
 
@@ -214,10 +214,10 @@ ms.locfileid: "57894365"
 
     | **DRM** | **"Обзор"** | **Результат для соответствующего пользователя** | **Результат для не соответствующего пользователя** |
     | --- | --- | --- | --- |
-    | **PlayReady** |Microsoft Edge или Internet Explorer 11 в Windows 10 |Успешно |Fail; |
-    | **Widevine** |Chrome, Firefox, Opera |Успешно |Fail; |
-    | **FairPlay** |Safari в macOS      |Успешно |Fail; |
-    | **AES-128** |Большинство современных браузеров  |Успешно |Fail; |
+    | **PlayReady** |Microsoft Edge или Internet Explorer 11 в Windows 10 |Успешно |Ошибка |
+    | **Widevine** |Chrome, Firefox, Opera |Успешно |Ошибка |
+    | **FairPlay** |Safari в macOS      |Успешно |Ошибка |
+    | **AES-128** |Большинство современных браузеров  |Успешно |Ошибка |
 
 Дополнительные сведения о настройке Azure AD для приложения проигрывателя ASP.NET MVC см. в статье [Integrate Azure Media Services OWIN MVC based app with Azure Active Directory and restrict content key delivery based on JWT claims](http://gtrifonov.com/2015/01/24/mvc-owin-azure-media-services-ad-integration/) (Интеграция приложения на основе OWIN MVC Служб мультимедиа Azure с Azure Active Directory и ограничение доставки ключей содержимого на основе утверждений JWT).
 

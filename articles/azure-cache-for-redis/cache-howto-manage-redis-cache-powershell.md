@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 07/13/2017
 ms.author: yegu
 ms.openlocfilehash: f7f4f9ae6a80052e06b2cafa68cb5c11dfa1333a
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56233852"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62097935"
 ---
 # <a name="manage-azure-cache-for-redis-with-azure-powershell"></a>Управление кэшем Azure для Redis с использованием Azure PowerShell
 > [!div class="op_single_selector"]
@@ -36,7 +36,7 @@ ms.locfileid: "56233852"
 
 Дополнительные сведения о классической модели развертывания см. в статье [Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов](../azure-resource-manager/resource-manager-deployment-model.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Если вы уже установили Azure PowerShell, необходимо использовать Azure PowerShell 1.0.0 или более поздней версии. Установленную версию Azure PowerShell можно узнать в командной строке Azure PowerShell с помощью такой команды:
 
     Get-Module Az | format-table version
@@ -84,8 +84,8 @@ ms.locfileid: "56233852"
 
 Чтобы создать кэш в облаке Azure Government, используйте одно из следующих расположений.
 
-* Правительство штата Вирджиния
-* Правительство штата Айова
+* Вирджиния, США
+* Айова, США
 
 Дополнительные сведения об облаке Azure для государственных организаций см. на странице [Microsoft Azure для государственных организаций](https://azure.microsoft.com/features/gov/) и в [руководстве для разработчиков Microsoft Azure для государственных организаций](../azure-government-developer-guide.md).
 
@@ -100,8 +100,8 @@ ms.locfileid: "56233852"
 
 Чтобы создать кэш в облаке Azure China, используйте одно из следующих расположений.
 
-* Восток Китая
-* Север Китая
+* Восточный Китай
+* Северный Китай
 
 Дополнительные сведения об облаке Azure для Китая см. на странице [AzureChinaCloud для Azure под управлением 21Vianet в Китае](http://www.windowsazure.cn/).
 
@@ -118,23 +118,23 @@ ms.locfileid: "56233852"
 Чтобы создать кэш в Microsoft Azure для Германии, используйте одно из следующих расположений.
 
 * Центральная Германия
-* Северо-восточная Германия
+* Северо-Восточная Германия
 
 Дополнительные сведения о Microsoft Azure для Германии см. [здесь](https://azure.microsoft.com/overview/clouds/germany/).
 
 ### <a name="properties-used-for-azure-cache-for-redis-powershell"></a>Свойства, используемые в командлетах PowerShell кэша Azure для Redis
 Приведенная ниже таблица содержит свойства и описания параметров, часто используемых при создании экземпляров кэша Azure для Redis с помощью Azure PowerShell и управлении такими экземплярами.
 
-| Параметр | ОПИСАНИЕ | значение по умолчанию |
+| Параметр | Описание | значение по умолчанию |
 | --- | --- | --- |
 | ИМЯ |Имя кэша | |
-| Расположение |Расположение кэша | |
+| Location |Расположение кэша | |
 | ResourceGroupName |Имя группы ресурсов, в которой необходимо создать кэш | |
 | Размер |Размер кэша. Допустимые значения: P1, P2, P3, P4, C0, C1, C2, C3, C4, C5, C6, 250 МБ, 1 ГБ, 2,5 ГБ, 6 ГБ, 13 ГБ, 26 ГБ, 53 ГБ |1 ГБ |
 | ShardCount |Число сегментов, которые будут созданы при создании кэша уровня Premium с включенной кластеризацией. Допустимые значения: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 | |
 | SKU |Определяет SKU кэша. Допустимые значения: "Базовый", "Стандартный" и "Премиум" |Стандартная |
 | RedisConfiguration |Задает параметры конфигурации кластера Redis. Подробные сведения о каждом параметре представлены в таблице [Свойства RedisConfiguration](#redisconfiguration-properties) . | |
-| EnableNonSslPort |Определяет, включен ли порт без SSL. |Ложь |
+| EnableNonSslPort |Определяет, включен ли порт без SSL. |False |
 | MaxMemoryPolicy |Этот параметр устарел, вместо него используется параметр RedisConfiguration. | |
 | StaticIP |При размещении кэша в виртуальной сети определяет уникальный IP-адрес подсети для кэша. Если IP-адрес не указан, он автоматически выбирается из подсети. | |
 | Подсеть |При размещении кэша в виртуальной сети определяет имя подсети, в которой будет развернут кэш. | |
@@ -142,7 +142,7 @@ ms.locfileid: "56233852"
 | KeyType |Определяет, какой ключ доступа будет создаваться повторно при обновлении ключей доступа. Допустимые значения: первичный или вторичный | |
 
 ### <a name="redisconfiguration-properties"></a>Свойства RedisConfiguration
-| Свойство | ОПИСАНИЕ | Ценовые категории |
+| Свойство | Описание | Ценовые категории |
 | --- | --- | --- |
 | rdb-backup-enabled |Указывает на то, включен ли параметр [Сохраняемость данных Redis](cache-how-to-premium-persistence.md) . |Только "Премиум" |
 | rdb-storage-connection-string |Строка подключения к учетной записи хранения для параметра [Сохраняемость данных Redis](cache-how-to-premium-persistence.md) |Только "Премиум" |
@@ -155,7 +155,7 @@ ms.locfileid: "56233852"
 | set-max-intset-entries |Настраивает [оптимизацию памяти](https://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
 | zset-max-ziplist-entries |Настраивает [оптимизацию памяти](https://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
 | zset-max-ziplist-value |Настраивает [оптимизацию памяти](https://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
-| databases |Определяет количество баз данных. Это свойство можно настроить только в момент создания кэша. |"Стандартный" и "Премиум" |
+| базы_данных |Определяет количество баз данных. Это свойство можно настроить только в момент создания кэша. |"Стандартный" и "Премиум" |
 
 ## <a name="to-create-an-azure-cache-for-redis"></a>Создание экземпляра кэша Azure для Redis
 Новые экземпляры кэша Azure для Redis создаются с помощью командлета [New-AzRedisCache](https://docs.microsoft.com/powershell/module/az.rediscache/new-azrediscache).
@@ -779,7 +779,7 @@ ms.locfileid: "56233852"
         -Force
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об использовании Windows PowerShell с Azure см. в следующих ресурсах:
 
 * [Документация по командлету кэша Azure для Redis на MSDN](https://docs.microsoft.com/powershell/module/az.rediscache)

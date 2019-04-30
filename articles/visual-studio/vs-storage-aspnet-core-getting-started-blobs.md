@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 12/07/2017
 ms.author: casoper
 ms.openlocfilehash: f8de7f7a263a087abb16ed48d05b2cae9834b4ad
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52961116"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62110518"
 ---
 # <a name="get-started-with-azure-blob-storage-and-visual-studio-connected-services-aspnet-core"></a>Приступая к работе с хранилищем BLOB-объектов Azure и подключенными службами Visual Studio (ASP.NET Core)
 
@@ -33,7 +33,7 @@ ms.locfileid: "52961116"
 
 [!INCLUDE [storage-try-azure-tools-blobs](../../includes/storage-try-azure-tools-blobs.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
 
@@ -231,7 +231,7 @@ ms.locfileid: "52961116"
     CloudBlobContainer container = GetCloudBlobContainer();
     ```
 
-1. Служба хранилища Azure поддерживает различные типы больших двоичных объектов. В этом учебнике используются BLOB-блоки. Чтобы получить ссылку на блочный BLOB-объект, вызовите метод `CloudBlobContainer.GetBlockBlobReference`.
+1. Служба хранилища Azure поддерживает различные типы больших двоичных объектов. В этом учебнике используются блочные BLOB-объекты. Чтобы получить ссылку на блочный BLOB-объект, вызовите метод `CloudBlobContainer.GetBlockBlobReference`.
 
     ```csharp
     CloudBlockBlob blob = container.GetBlockBlobReference("myBlob");
@@ -511,7 +511,7 @@ ms.locfileid: "52961116"
 
 1. Запустите приложение и выберите **Удалить большой двоичный объект**, чтобы удалить большой двоичный объект, указанный в вызове метода `CloudBlobContainer.GetBlockBlobReference`. В браузере должно отобразиться сообщение *success!* (Успешно выполнено) . Нажмите кнопку **Назад** в браузере и выберите **Список BLOB-объектов**, чтобы удостовериться, что большой двоичный объект отсутствует в контейнере.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как сохранять и извлекать большие двоичные объекты, а также выводить их список в службе хранилища Azure с помощью ASP.NET Core. Просмотрите дополнительные руководства, чтобы изучить дополнительные возможности хранения данных в Azure.
 

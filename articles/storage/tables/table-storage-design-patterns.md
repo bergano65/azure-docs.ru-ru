@@ -2,18 +2,19 @@
 title: Конструктивные шаблоны таблиц в службе хранилища Azure | Документация Майкрософт
 description: Использование шаблонов для решений для службы таблиц Azure.
 services: storage
-author: tamram
+author: WenJason
 ms.service: storage
 ms.topic: article
-ms.date: 04/08/2019
-ms.author: tamram
+origin.date: 04/08/2019
+ms.date: 04/22/2019
+ms.author: v-jay
 ms.subservice: tables
 ms.openlocfilehash: a428abd95f955a16d03c4ab86f05644f6db65da5
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59271634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62101437"
 ---
 # <a name="table-design-patterns"></a>Шаблоны для разработки таблиц
 В этой статье приводится описание некоторых шаблонов, которые подходят для использования с решениями для службы таблиц. Кроме того, вы увидите практическое решение ряда проблем и сможете выбрать компромиссный вариант из предлагаемых в других статьях о разработке для хранилища таблиц. На следующей схеме показаны связи между различными шаблонами.  
@@ -263,7 +264,7 @@ ms.locfileid: "59271634"
 ![Сущность отдела и сущность сотрудника](media/storage-table-design-guide/storage-table-design-IMAGE16.png)
 
 ### <a name="solution"></a>Решение
-Вместо хранения данных в двух отдельных сущностях денормализуйте данные и сохраните копию со сведениями о руководителе в сущности отдела. Например:   
+Вместо хранения данных в двух отдельных сущностях денормализуйте данные и сохраните копию со сведениями о руководителе в сущности отдела. Пример.  
 
 ![Сущность отдела](media/storage-table-design-guide/storage-table-design-IMAGE17.png)
 
@@ -348,7 +349,7 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 
 Табличный запрос выглядит следующим образом.  
 
-`https://myaccount.table.core.windows.net/EmployeeExpense(PartitionKey='empid')?$top=10`  
+`https://myaccount.table.core.chinacloudapi.cn/EmployeeExpense(PartitionKey='empid')?$top=10`  
 
 ### <a name="issues-and-considerations"></a>Проблемы и рекомендации
 При принятии решения о реализации этого шаблона необходимо учитывать следующие моменты.  
@@ -723,8 +724,8 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
-<th>Email</th>
+<th>Возраст</th>
+<th>Электронная почта</th>
 </tr>
 <tr>
 <td></td>
@@ -743,8 +744,8 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
-<th>Email</th>
+<th>Возраст</th>
+<th>Электронная почта</th>
 </tr>
 <tr>
 <td></td>
@@ -761,7 +762,7 @@ foreach (var e in entities)
 <td>
 <table>
 <tr>
-<th>DepartmentName</th>
+<th>Название отдела</th>
 <th>EmployeeCount</th>
 </tr>
 <tr>
@@ -780,8 +781,8 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
-<th>Email</th>
+<th>Возраст</th>
+<th>Электронная почта</th>
 </tr>
 <tr>
 <td></td>
@@ -816,8 +817,8 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
-<th>Email</th>
+<th>Возраст</th>
+<th>Электронная почта</th>
 </tr>
 <tr>
 <td>Employee</td>
@@ -838,8 +839,8 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
-<th>Email</th>
+<th>Возраст</th>
+<th>Электронная почта</th>
 </tr>
 <tr>
 <td>Employee</td>
@@ -858,11 +859,11 @@ foreach (var e in entities)
 <table>
 <tr>
 <th>EntityType</th>
-<th>DepartmentName</th>
+<th>Название отдела</th>
 <th>EmployeeCount</th>
 </tr>
 <tr>
-<td>Department</td>
+<td>Отдел</td>
 <td></td>
 <td></td>
 </tr>
@@ -879,8 +880,8 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
-<th>Email</th>
+<th>Возраст</th>
+<th>Электронная почта</th>
 </tr>
 <tr>
 <td>Employee</td>

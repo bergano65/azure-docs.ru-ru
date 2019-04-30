@@ -9,11 +9,11 @@ ms.date: 01/15/2017
 ms.author: muralikk
 ms.subservice: common
 ms.openlocfilehash: 5eaf29623a18f7347ad287e4b8389667f4b4e272
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55467566"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61478493"
 ---
 # <a name="using-the-azure-importexport-tool"></a>Использование средства импорта и экспорта Azure 
 
@@ -30,6 +30,6 @@ ms.locfileid: "55467566"
 - Исправление задания экспорта. 
 - Устранение неполадок средства импорта и экспорта Azure. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Using the Azure Import/Export Tool](storage-import-export-tool-setup.md) (Использование средства импорта и экспорта Azure)

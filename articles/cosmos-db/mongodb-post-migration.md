@@ -8,15 +8,15 @@ ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: roaror
 ms.openlocfilehash: c0c761fef481a1fdaa027f1329e9a4e72d62985a
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60014315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61331220"
 ---
 # <a name="post-migration-optimization-steps-when-using-azure-cosmos-dbs-api-for-mongodb"></a>Действия после миграции оптимизации при использовании API Azure Cosmos DB для MongoDB 
 
-После переноса данных, хранящихся в базе данных MongoDB в API Azure Cosmos DB для MongoDB, можно подключиться к Azure Cosmos DB и управления данными. Это руководство содержит действия, которые следует учитывать после миграции. См. в разделе [перенос MongoDB для Azure Cosmos DB API для MongoDB руководства](../dms/tutorial-mongodb-cosmos-db.md) действия миграции.
+Для управления данными, перенесенными из базы данных MongoDB в API Azure Cosmos DB для MongoDB, можно подключиться к Azure Cosmos DB. Это руководство содержит действия, которые следует учитывать после миграции. См. в разделе [перенос MongoDB для Azure Cosmos DB API для MongoDB руководства](../dms/tutorial-mongodb-cosmos-db.md) действия миграции.
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 - [Подключить приложение](#connect-account)
@@ -64,9 +64,9 @@ Azure Cosmos DB предлагает четко определенную 5 [ур
 * [Подключиться к учетной записи Azure Cosmos DB с помощью Studio 3T](mongodb-mongochef.md)
 * [Как глобально распространить считывает с помощью API Azure Cosmos DB для MongoDB](mongodb-readpreference.md)
 * [Срок действия данных с помощью API Azure Cosmos DB для MongoDB](mongodb-time-to-live.md)
-* [Уровни согласованности в Azure Cosmos DB](consistency-levels.md)
+* [Настраиваемые уровни согласованности данных в Azure Cosmos DB](consistency-levels.md)
 * [Индексирование в Azure Cosmos DB](index-overview.md)
-* [Единицы запросов в Azure Cosmos DB](request-units.md)
+* [Единицы запросов в Azure Cosmos DB](request-units.md)
 
 
 

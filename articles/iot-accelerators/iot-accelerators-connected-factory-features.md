@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 03/08/2019
 ms.author: dobett
 ms.openlocfilehash: 25812e10b4c2b90aa4f40c38610c30a26ab11d9d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58183226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61450013"
 ---
 # <a name="what-is-connected-factory-iot-solution-accelerator"></a>Общие сведения об акселераторе решений IoT для подключенной фабрики
 
@@ -34,7 +34,7 @@ ms.locfileid: "58183226"
 ## <a name="remote-management"></a>Удаленное управление
 
 - Настройка ресурсов OPC UA с помощью облачной панели мониторинга (вызов методов, чтение и запись данных).
-- Публикация и отмена публикации данных телеметрии, получаемых от активов OPC UA через облачную панель мониторинга.
+- Публикация и отмена публикации данных телеметрии, получаемых от ресурсов OPC UA, через облачную панель мониторинга.
 
 ## <a name="cloud-dashboard"></a>Облачная панель мониторинга
 

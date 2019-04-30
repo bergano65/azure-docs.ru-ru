@@ -7,11 +7,11 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: 4c64f920bf56195ad53ac8acbf3f9199090f0a8b
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53536990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61043023"
 ---
 # <a name="overview-of-business-continuity-with-azure-database-for-mariadb"></a>Общие сведения об обеспечении непрерывности бизнес-процессов с помощью службы "База данных Azure для MariaDB"
 
@@ -48,7 +48,7 @@ ms.locfileid: "53536990"
 > [!IMPORTANT]
 > Геовосстановление возможно только в том случае, если сервер был подготовлен с геоизбыточным хранилищем резервных копий.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об автоматическом создании резервных копий см. в статье о [резервном копировании в службе "База данных Azure для MariaDB"](concepts-backup.md).
 - Сведения о восстановлении базы данных до точки во времени с помощью портала Azure см. в  [этой статье](howto-restore-server-portal.md).

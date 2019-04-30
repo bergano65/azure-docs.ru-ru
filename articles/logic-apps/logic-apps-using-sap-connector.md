@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 09/14/2018
 tags: connectors
 ms.openlocfilehash: 468e73c64037a76da612cba8d6c2e9507dd3ac87
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57887091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62120161"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Подключение к системам SAP из Azure Logic Apps
 
@@ -90,7 +90,7 @@ ms.locfileid: "57887091"
 
 1. В конструкторе приложений логики выберите под триггером пункты **Новый шаг** > **Добавить действие**.
 
-   ![Добавление действия](./media/logic-apps-using-sap-connector/add-action.png) 
+   ![Добавить действие](./media/logic-apps-using-sap-connector/add-action.png) 
 
 2. В поле поиска введите слово sap в качестве фильтра. В списке действий выберите действие **Send message to SAP** (Отправить сообщение в SAP)
   
@@ -284,7 +284,7 @@ ms.locfileid: "57887091"
 
 1. В конструкторе приложений логики выберите под триггером пункты **Новый шаг** > **Добавить действие**.
 
-   ![Добавление действия](./media/logic-apps-using-sap-connector/add-action.png) 
+   ![Добавить действие](./media/logic-apps-using-sap-connector/add-action.png) 
 
 2. В поле поиска введите слово sap в качестве фильтра. В списке действий выберите действие **Generate schemas** (Создание схем).
   

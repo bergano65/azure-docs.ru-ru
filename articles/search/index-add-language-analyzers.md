@@ -20,11 +20,11 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 39fbe30ccf4429003dc0c9f11165c5dd057a89cd
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59549158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62121798"
 ---
 # <a name="add-language-analyzers-to-an-azure-search-index"></a>Добавление анализатора языка в индекс Поиска Azure
 
@@ -103,7 +103,7 @@ ms.locfileid: "59549158"
 |Персидский||fa.lucene|  
 |Польский|pl.microsoft|pl.lucene|  
 |Португальский (Бразилия)|pt-Br.microsoft|pt-Br.lucene|  
-|Португальский (Португалия)|pt-Pt.microsoft|pt-Pt.lucene|  
+|португальский (Португалия)|pt-Pt.microsoft|pt-Pt.lucene|  
 |Панджаби|pa.microsoft||  
 |Румынский|ro.microsoft|ro.lucene|  
 |Русский|ru.microsoft|ru.lucene|  

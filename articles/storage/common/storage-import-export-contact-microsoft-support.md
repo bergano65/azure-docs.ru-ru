@@ -9,11 +9,11 @@ ms.date: 03/29/2018
 ms.author: alkohli;
 ms.subservice: common
 ms.openlocfilehash: b01c8a3fe9b0c0856dceb5c05f449504ce8c75d6
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58120369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61483295"
 ---
 # <a name="open-a-support-ticket-for-an-importexport-job"></a>Создание запроса в службу поддержки для задания импорта и экспорта
 
@@ -22,13 +22,13 @@ ms.locfileid: "58120369"
 * Создание запроса на техническую поддержку.
 * Управление жизненным циклом запроса на техническую поддержку на портале.
 
-## <a name="create-a-support-request"></a>Создание запроса на обслуживание
+## <a name="create-a-support-request"></a>Создать запрос на получение поддержки
 
 Для создания запроса на обслуживание выполните следующие действия.
 
 1. Перейдите к заданию импорта и экспорта. Перейдите в раздел **Поддержка и устранение неполадок** и щелкните **Новый запрос в службу поддержки**.
      
-    ![Основы](./media/storage-import-export-contact-microsoft-support/import-export-support1.png)
+    ![Основные сведения](./media/storage-import-export-contact-microsoft-support/import-export-support1.png)
    
 2. В разделе **Новый запрос в службу поддержки** выберите **Основные**. В колонке **Основные** сделайте следующее:
     
@@ -74,15 +74,15 @@ ms.locfileid: "58120369"
 
 1. Чтобы открыть страницу справки и поддержки, последовательно щелкните **Обзор > Справка и поддержка**.
 
-    ![Управление запросами на поддержку](./media/storage-import-export-contact-microsoft-support/manage-support-ticket2.png)   
+    ![Управление запросами в службу поддержки](./media/storage-import-export-contact-microsoft-support/manage-support-ticket2.png)   
 
 2. Список **недавних запросов в службу поддержки** в виде таблицы отображается в разделе **Справка и поддержка**.
 
-    ![Управление запросами на поддержку](./media/storage-import-export-contact-microsoft-support/manage-support-ticket1.png) 
+    ![Управление запросами в службу поддержки](./media/storage-import-export-contact-microsoft-support/manage-support-ticket1.png) 
 
 3. Выберите и щелкните запрос на поддержку. Для запроса можно просмотреть состояние и подробные сведения. Щелкните **+ Новое сообщение**, если нужно следить за этим запросом.
 
-    ![Управление запросами на поддержку](./media/storage-import-export-contact-microsoft-support/manage-support-ticket3.png) 
+    ![Управление запросами в службу поддержки](./media/storage-import-export-contact-microsoft-support/manage-support-ticket3.png) 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

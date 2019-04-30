@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 01/25/2019
 ms.author: chstone
 ms.openlocfilehash: 7fa17528931be40109d81edac0f15a6a6822ec01
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55194829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61291783"
 ---
 # <a name="example-multi-level-facets-in-azure-search"></a>Пример: многоуровневые аспекты в Поиске Azure
 
@@ -87,7 +87,7 @@ categories.count = sum;
   ![Многоуровневый фасетный фильтр](./media/search-example-adventureworks/multi-level-facet.png "Многоуровневый фасетный фильтр")
 
  
-Каждая ссылка в дереве должна применять соответствующий фильтр. Например: 
+Каждая ссылка в дереве должна применять соответствующий фильтр. Пример.
 
 + **taxonomy/any**`(x:x eq 'Accessories')` возвращает все документы в ветви Accessories.
 + **taxonomy/any**`(x:x eq 'Accessories|Bike Racks')` возвращает только документы из подкатегории Bike Racks в ветви Accessories.

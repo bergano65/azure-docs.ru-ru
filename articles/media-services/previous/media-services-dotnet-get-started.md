@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 2d55af3e9ed3ad64f9ba7726799b31acb6b48580
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57884478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61465054"
 ---
 # <a name="get-started-with-delivering-content-on-demand-using-net-sdk"></a>Приступая к работе с доставкой содержимого по запросу с помощью пакета SDK для .NET  
 
@@ -375,7 +375,7 @@ URL-адреса поэтапного скачивания (аудио и вид
 
 Чтобы протестировать поэтапное скачивание, вставьте URL-адрес в браузер (например, Internet Explorer, Chrome или Safari).
 
-Дополнительные сведения см. в следующих статьях:
+Дополнительные сведения см. в следующих разделах:
 
 - [Воспроизведение содержимого с помощью существующих проигрывателей](media-services-playback-content-with-existing-players.md)
 - [Разработка приложений видеопроигрывателя](media-services-develop-video-players.md)

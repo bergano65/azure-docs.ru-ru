@@ -12,11 +12,11 @@ ms.date: 02/22/2019
 ms.author: luisca
 ms.custom: seodec2018
 ms.openlocfilehash: 422b97414142c36669ed449a21c6045fd774581a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57902660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61341973"
 ---
 #   <a name="key-phrase-extraction-cognitive-skill"></a>Когнитивный навык извлечения ключевой фразы
 
@@ -39,16 +39,16 @@ Microsoft.Skills.Text.KeyPhraseExtractionSkill
 
 Параметры зависят от регистра.
 
-| Входные данные                | ОПИСАНИЕ |
+| Входные данные                | Описание |
 |---------------------|-------------|
 | defaultLanguageCode | (Необязательно.) Код языка применяется к документам, в которых не указан язык явным образом.  Если код языка по умолчанию не указан, английский (en) используется как язык по умолчанию. <br/> Ознакомьтесь с [полным списком поддерживаемых языков](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages). |
 | maxKeyPhraseCount   | (Необязательно.) Максимальное количество ключевых фраз для создания. |
 
 ## <a name="skill-inputs"></a>Входные данные навыков
 
-| Входные данные     | ОПИСАНИЕ |
+| Входные данные     | Описание |
 |--------------------|-------------|
-| текст | Анализируемый текст.|
+| Text | Анализируемый текст.|
 | languageCode  |  Строка, указывающая язык записей. Если этот параметр не указан, для анализа записей будет использоваться код языка по умолчанию. <br/>Ознакомьтесь с [полным списком поддерживаемых языков](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages).|
 
 ##  <a name="sample-definition"></a>Пример определения

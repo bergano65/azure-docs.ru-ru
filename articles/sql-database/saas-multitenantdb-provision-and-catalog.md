@@ -13,11 +13,11 @@ ms.reviewer: billgib,andrela,stein
 manager: craigg
 ms.date: 09/24/2018
 ms.openlocfilehash: d29baaad6090cea5eb31f5f50bba444cb3771155
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57835787"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485978"
 ---
 # <a name="provision-and-catalog-new-tenants-in-a-saas-application-using-a-sharded-multi-tenant-azure-sql-database"></a>Подготовка новых клиентов и их каталогизация в приложении SaaS с помощью сегментированной мультитенантной базы данных SQL Azure
 
@@ -103,7 +103,7 @@ ms.locfileid: "57835787"
 
 С приложением SaaS эти изменения необходимо развертывать скоординировано в потенциально большом количестве баз данных клиентов. Чтобы эти изменения были внесены в будущие базы данных клиентов, их нужно включить в процесс подготовки. Эта задача описана далее в руководстве [Управление схемой для нескольких клиентов в мультитенантном приложении, использующем Базу данных SQL Azure](saas-tenancy-schema-management.md).
 
-#### <a name="scripts"></a>Сценарии
+#### <a name="scripts"></a>Скрипты
 
 Скрипты подготовки клиентов в этом руководстве поддерживают оба следующих сценария:
 - подготовка клиента в имеющейся базе данных, используемой совместно с другими клиентами;
@@ -150,7 +150,7 @@ ms.locfileid: "57835787"
 - **Добавление имени клиента в таблицу расширения каталога.** Имя мероприятия добавляется в таблицу клиентов в каталоге.  Это добавление показывает, как можно расширить базу данных каталога для поддержки дополнительных данных приложения.
 - **Открытие страницы событий для нового клиента.** Страница событий *Bushwillow Blues* открыта в браузере.
 
-   ![events](media/saas-multitenantdb-provision-and-catalog/bushwillow.png)
+   ![события](media/saas-multitenantdb-provision-and-catalog/bushwillow.png)
 
 #### <a name="debugger-steps"></a>Действия отладчика
 
@@ -169,7 +169,7 @@ ms.locfileid: "57835787"
 
 4. После остановки выполнения скрипта в точке останова нажмите клавишу **F11**, чтобы пошагово выполнить код.
 
-   ![debug](media/saas-multitenantdb-provision-and-catalog/debug.png)
+   ![отладка](media/saas-multitenantdb-provision-and-catalog/debug.png)
 
 5. Отслеживайте выполнение скрипта и используйте клавиши **F10** и **F11** (меню **Отладка**), чтобы обойти вызываемые функции или перейти в них по очереди.
 
@@ -190,7 +190,7 @@ ms.locfileid: "57835787"
 - **Имя клиента добавляется в каталог.** Имя мероприятия добавляется в таблицу расширения клиентов в каталоге.
 - **Открытие страницы событий для нового клиента.** Страница событий *Sequoia Soccer* открыта в браузере.
 
-   ![events](media/saas-multitenantdb-provision-and-catalog/sequoiasoccer.png)
+   ![события](media/saas-multitenantdb-provision-and-catalog/sequoiasoccer.png)
 
 #### <a name="debugger-steps"></a>Действия отладчика
 

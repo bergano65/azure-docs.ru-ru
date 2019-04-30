@@ -11,11 +11,11 @@ ms.date: 05/24/2018
 ms.author: luisca
 ms.custom: seodec2018
 ms.openlocfilehash: 9369e076517e295a7d17011e024353614ec8ad46
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55751979"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61344551"
 ---
 # <a name="how-to-create-a-skillset-in-an-enrichment-pipeline"></a>Создание набора навыков в конвейере обогащения
 
@@ -173,7 +173,7 @@ Content-Type: application/json
 
 * Навык имеет один выходной параметр с именем ```"organizations"```. Выходные данные существуют только во время обработки. Для связывания этого выходного параметра со входным параметром нижестоящего навыка можно ссылаться на выходной параметр как на ```"/document/organizations"```.
 
-* Для определенного документа значение ```"/document/organizations"``` представляет массив организаций, извлеченный из текста. Например: 
+* Для определенного документа значение ```"/document/organizations"``` представляет массив организаций, извлеченный из текста. Пример.
 
   ```json
   ["Microsoft", "LinkedIn"]
@@ -248,6 +248,6 @@ Content-Type: application/json
 Помните, что эта структура является внутренней. Фактически получить этот граф в коде нельзя.
 
 <a name="next-step"></a>
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали о конвейере обогащения и наборах навыков, переходите к руководствам по [созданию ссылок на аннотации в наборе навыков](cognitive-search-concept-annotations-syntax.md) и [сопоставлению выходных данных с полями в индексе](cognitive-search-output-field-mapping.md). 

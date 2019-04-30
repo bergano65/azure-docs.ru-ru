@@ -15,11 +15,11 @@ ms.devlang: azurecli
 ms.date: 11/01/2018
 ms.author: delhan
 ms.openlocfilehash: 4c783c70217a84bbe5ccf15accc4a2bec0b7cca8
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52959688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485515"
 ---
 # <a name="troubleshoot-azure-vm-rdp-connection-issues-by-event-id"></a>Устранение неполадок с RDP-подключением к виртуальной машине по идентификатору события 
 
@@ -43,7 +43,7 @@ ms.locfileid: "52959688"
 
 Чтобы удаленно подключиться к виртуальной машине, используйте один из методов, описанных в статье [Use remote tools to troubleshoot Azure VM issues](remote-tools-troubleshoot-azure-vm-issues.md) (Использование удаленных средств для устранения проблем с виртуальными машинами Azure).
 
-## <a name="scenario-1"></a>Сценарий 1
+## <a name="scenario-1"></a>Сценарий 1
 
 ### <a name="event-logs"></a>Журналы событий
 
@@ -61,7 +61,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Microsoft-Windo
 **Категория задачи**: Нет <br />
 **Уровень**:         Ошибка <br />
 **Ключевые слова:**      Классический <br />
-**Пользователь**:          Недоступно <br />
+**Пользователь**:          Н/Д <br />
 **Компьютер:** *имя компьютера* <br />
 **Описание.** серверу узла сеансов удаленного рабочего стола не удалось заменить самозаверяющий сертификат с истекшим сроком действия, используемый для аутентификации этого сервера в SSL-подключениях. Соответствующий код состояния: "Отказ в доступе".
 
@@ -72,7 +72,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Microsoft-Windo
 **Категория задачи**: Нет <br />
 **Уровень**:         Ошибка <br />
 **Ключевые слова:**      Классический <br />
-**Пользователь**:          Недоступно <br />
+**Пользователь**:          Н/Д <br />
 **Компьютер:** *имя компьютера* <br />
 **Описание.** серверу узла сеансов удаленного рабочего стола не удалось создать самозаверяющий сертификат для использования при аутентификации этого сервера в SSL-подключениях (код состояния информирует о том, что объект уже существует).
 
@@ -83,7 +83,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Microsoft-Windo
 **Категория задачи**: Нет <br />
 **Уровень**:         Ошибка <br />
 **Ключевые слова:**      Классический <br />
-**Пользователь**:          Недоступно <br />
+**Пользователь**:          Н/Д <br />
 **Компьютер:** *имя компьютера* <br />
 **Описание.** серверу узла сеансов удаленного рабочего стола не удалось создать самозаверяющий сертификат для использования при аутентификации этого сервера в SSL-подключениях. Соответствующий код состояния: "Набор ключей не существует".
 
@@ -206,7 +206,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-T
 reg delete "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v SSLCertificateSHA1Hash
 ```
 
-## <a name="scenario-2"></a>Сценарий 2
+## <a name="scenario-2"></a>Сценарий 2
 
 ### <a name="event-log"></a>Журнал событий
 
@@ -288,7 +288,7 @@ NULL <br />
 
 Чтобы устранить эту проблему, необходимо переустановить роль посредника подключений к удаленному рабочему столу и внутреннюю базу данных Windows.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Сведения о событиях Schannel](https://technet.microsoft.com/library/dn786445(v=ws.11).aspx)
 

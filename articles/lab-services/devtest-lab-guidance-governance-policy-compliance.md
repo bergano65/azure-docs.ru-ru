@@ -14,11 +14,11 @@ ms.date: 02/11/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: e02400ef940efdf42370fbdc1da75bdc7062a8ef
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56243711"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62127367"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---company-policy-and-compliance"></a>Система управления инфраструктурой Azure DevTest Labs. Соответствие политикам компании
 В этой статье описано, как обеспечить соответствие политикам, которые установлены в компании для инфраструктуры Azure DevTest Labs. 
@@ -76,5 +76,5 @@ ms.locfileid: "56243711"
 В целом, подобные ограничения необходимо применить во всей организации. Они также должны учитывать все возможные методы использования съемных носителей или внешних URL-адресов, допускающих отправку содержимого. Для проверки и внедрения политики безопасности необходимо привлечь соответствующего специалиста. Дополнительные рекомендации см. на веб-сайте [Microsoft Cyber Security](https://www.microsoft.com/security/default.aspx?&WT.srch=1&wt.mc_id=AID623240_SEM_sNYnsZDs) (Кибер-безопасность Майкрософт).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 См. рекомендации по [переносу и интеграции приложений](devtest-lab-guidance-governance-application-migration-integration.md).

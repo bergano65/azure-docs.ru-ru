@@ -12,11 +12,11 @@ ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
 ms.openlocfilehash: 0fbd89202796cb4543dbecbeee605c9b87cc9d05
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50230665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62104992"
 ---
 # <a name="monitor-and-manage-twitter-by-using-azure-logic-apps"></a>Мониторинг Twitter и управление им с помощью Azure Logic Apps
 
@@ -27,7 +27,7 @@ ms.locfileid: "50230665"
 
 Вы можете использовать триггеры, которые получают ответы из учетной записи Twitter и делают выходные данные доступными для других действий. Можно использовать действия, которые выполняют задачи с вашей учетной записью Twitter. Кроме того, выходные данные от действий Twitter могут использоваться другими действиями. Например, при появлении нового твита с определенным хэштегом можно отправлять сообщения с помощью соединителя Slack. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. 
 
@@ -70,15 +70,15 @@ ms.locfileid: "50230665"
 
 ## <a name="examples"></a>Примеры
 
-### <a name="twitter-trigger-when-a-new-tweet-is-posted"></a>Триггер Twitter: When a new tweet is posted (При публикации нового твита)
+### <a name="twitter-trigger-when-a-new-tweet-is-posted"></a>Триггер Twitter: Время публикации нового твита
 
 Этот триггер запускает рабочий процесс приложения логики при обнаружении нового твита, например с хэштегом #Seattle. Таким образом, при обнаружении этих твитов в хранилище, такое как учетная запись Dropbox, может добавляться файл с содержимым твитов с помощью соединителя Dropbox. 
 
 При желании можно включить условие, согласно которому подходящие твиты должны поступать от пользователей по крайней мере с минимально определенным количеством подписчиков.
 
-**Корпоративный пример**. Этот триггер можно использовать для мониторинга твитов о вашей компании и передачи содержимого твитов в базу данных SQL.
+**Пример Enterprise**. Этот триггер позволяет отслеживать твиты о вашей компании и передачи контента твиты в базу данных SQL.
 
-### <a name="twitter-action-post-a-tweet"></a>Действие Twitter: Post a tweet (Публикация твита)
+### <a name="twitter-action-post-a-tweet"></a>Действие Twitter: Опубликовать твит
 
 Это действие публикует твит. Однако действие можно настроить таким образом, чтобы твит имел содержимое из твитов, найденных с помощью описанного выше триггера. 
 
@@ -91,6 +91,6 @@ ms.locfileid: "50230665"
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

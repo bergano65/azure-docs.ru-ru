@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 32f533d06b7db0284459951e65f9c04fe0bb0285
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "58115520"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485375"
 ---
 Группа доступности позволяет поддерживать доступность виртуальных машин во время простоев, например связанных с обслуживанием. Размещение двух или более одинаково настроенных виртуальных машин в группе доступности создает избыточность, необходимую для обеспечения доступности приложений или служб, выполняемых на виртуальной машине. См. дополнительные сведения об [управлении доступностью виртуальных машин][Manage the availability of virtual machines].
 

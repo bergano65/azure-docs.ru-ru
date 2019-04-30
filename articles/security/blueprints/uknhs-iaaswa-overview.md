@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 06/15/2018
 ms.author: jomolesk
 ms.openlocfilehash: 5f7f9641e8fc7cd4c0e8dd153b350b9dd876b004
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58168696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62115437"
 ---
 # <a name="azure-security-and-compliance-blueprint-iaas-web-application-for-uk-nhs"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение IaaS для UK NHS
 
@@ -58,8 +58,8 @@ ms.locfileid: "58168696"
         - Порт прослушивания: 443
 - Azure Active Directory
 - Облако-свидетель Azure.
-- Хранилище ключей Azure
-- Azure Load Balancer
+- Хранилище Azure Key Vault
+- Балансировщик нагрузки Azure
 - Azure Monitor
 - Azure Resource Manager
 - Центр безопасности Azure
@@ -163,7 +163,7 @@ Azure по умолчанию шифрует весь обмен данными 
 - [пользовательские пробы работоспособности](https://docs.microsoft.com/azure/application-gateway/application-gateway-create-gateway-portal);
 - [Центр безопасности Azure](https://azure.microsoft.com/services/security-center) и [Помощник Azure](https://docs.microsoft.com/azure/advisor/advisor-security-recommendations) обеспечивают дополнительную защиту и уведомления. Центр безопасности Azure также предоставляет систему репутации.
 
-### <a name="business-continuity"></a>Непрерывность бизнес-процессов
+### <a name="business-continuity"></a>Непрерывная работа
 
 **Высокий уровень доступности**. Решение развертывает все виртуальные машины в группе доступности. Дополнительные сведения см. в [этом руководстве](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-availability-sets). Группа доступности распределяет виртуальные машины между несколькими изолированными аппаратными кластерами, чтобы повысить уровень доступности. Во время планового или внепланового технического обслуживания доступна как минимум одна виртуальная машина, что соответствует соглашению об уровне обслуживания Azure, гарантирующему доступность в течение 99,95 % времени.
 
@@ -213,7 +213,7 @@ Azure по умолчанию шифрует весь обмен данными 
 
 См. [рекомендации](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid) по реализации защищенной гибридной сети, расширяющей локальную сеть в Azure.
 
-## <a name="disclaimer"></a>Отказ от ответственности
+## <a name="disclaimer"></a>Заявление об отказе
 
 - Этот документ является исключительно информационным. МАЙКРОСОФТ НЕ ПРЕДОСТАВЛЯЕТ НИКАКИХ ГАРАНТИЙ, ЯВНЫХ, КОСВЕННЫХ ИЛИ ПРЕДУСМОТРЕННЫХ ЗАКОНОМ, В ОТНОШЕНИИ ИНФОРМАЦИИ В ЭТОМ ДОКУМЕНТЕ. Данный документ предоставляется "как есть". Сведения и мнения, представленные в данном документе, включая URL-адреса и ссылки на другие веб-сайты, могут быть изменены без предварительного уведомления. Клиенты, читающие этот документ, берут ответственность за его использование на себя.
 - Настоящий документ не предоставляет клиентам юридических прав на интеллектуальную собственность в отношении продуктов или решений корпорации Майкрософт.

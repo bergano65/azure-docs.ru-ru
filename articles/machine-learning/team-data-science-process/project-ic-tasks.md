@@ -11,11 +11,11 @@ ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 6a52907fa6c0e2483479031fbb3d1ad68a121d95
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55475564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61043353"
 ---
 # <a name="tasks-for-an-individual-contributor-in-the-team-data-science-process"></a>Задачи отдельного участника в командном процессе обработки и анализа данных
 
@@ -45,7 +45,7 @@ ms.locfileid: "55475564"
 - **D5** — локальный каталог, клонированный из R5.
 
 
-## <a name="step-0-prerequisites"></a>Шаг 0. Предварительные требования
+## <a name="step-0-prerequisites"></a>Шаг 0. Технические условия
 
 Предварительные требования заключаются в выполнении задач, назначенных менеджеру группы. Они описаны в статье [Group Manager tasks](group-manager-tasks.md) (Задачи менеджера группы). Итак, прежде чем приступить к задачам руководителя команды, следует выполнить следующие требования: 
 - Менеджер группы должен настроить репозиторий **GroupUtilities** (если такой имеется). 
@@ -100,7 +100,7 @@ ms.locfileid: "55475564"
 
 Чтобы подключить хранилище файлов Azure к DSVM, см. инструкции в четвертом разделе статьи [Team Lead tasks](team-lead-tasks.md) (Задачи руководителя команды).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены ссылки на подробные описания ролей и задач, определенных командным процессом обработки и анализа данных.
 

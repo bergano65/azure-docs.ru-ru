@@ -1,7 +1,6 @@
 ---
 title: Параметры контекста вычислений для Служб машинного обучения в HDInsight в Azure
 description: Сведения о различных параметрах контекста вычислений, доступных для пользователей Служб машинного обучения служб машинного обучения в HDInsight.
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: 1e01a3db2c0ca1f9024afb3faecf677ac4e3131b
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 9dac7aa19e428c964bd10c3ef62df949393e8d1f
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52494468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62124647"
 ---
 # <a name="compute-context-options-for-ml-services-on-hdinsight"></a>Параметры контекста вычислений для Служб машинного обучения в HDInsight
 
@@ -56,7 +55,7 @@ ms.locfileid: "52494468"
 
 С учетом этих принципов в следующем разделе приведены некоторые общие правила выбора контекста вычислений.
 
-### <a name="local"></a>Local
+### <a name="local"></a>Местного уровня
 * Если нужно проанализировать данные небольшого объема и не требуется повторный анализ, их следует направить потоком прямо в подпрограмму анализа и использовать контекст *local* или *localpar*.
 * Если нужно проанализировать данные небольшого или среднего объема, для которых потребуется повторный анализ, скопируйте их в локальную файловую систему, импортируйте в XDF-формат и проанализируйте в контексте *local* или *localpar*.
 
@@ -73,7 +72,7 @@ ms.locfileid: "52494468"
 
 Также см. [обзор распределенных вычислений](https://docs.microsoft.com/machine-learning-server/r/how-to-revoscaler-distributed-computing) в [документации Machine Learning Server](https://docs.microsoft.com/machine-learning-server/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы ознакомились с параметрами, которые доступны для указания необходимости и способа выполнения параллелизации между ядрами граничного узла или кластера HDInsight. Дополнительные сведения об использовании Служб машинного обучения в кластерах HDInsight см. в следующих статьях:
 
 * [Основные сведения о службах машинного обучения и возможностях открытого кода R в HDInsight](r-server-overview.md)

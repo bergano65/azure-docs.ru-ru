@@ -9,11 +9,11 @@ ms.tgt_pltfrm: arduino
 ms.date: 01/18/2019
 ms.author: junhan
 ms.openlocfilehash: 5b74524a05317cf22160561a4a001e88f9215953
-ms.sourcegitcommit: e89b9a75e3710559a9d2c705801c306c4e3de16c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59571109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61440087"
 ---
 # <a name="use-azure-iot-tools-for-visual-studio-code-to-send-and-receive-messages-between-your-device-and-iot-hub"></a>Обмен сообщениями между устройством и Центром Интернета вещей с помощью расширения набора средств Центра Интернета вещей Azure для Visual Studio Code
 
@@ -68,7 +68,7 @@ ms.locfileid: "59571109"
 
 3. Чтобы остановить мониторинг, щелкните правой кнопкой мыши представление **Выходные данные** и выберите **Stop Monitoring D2C Message** (Остановить мониторинг сообщений D2C).
 
-## <a name="send-cloud-to-device-messages"></a>Отправка сообщений из облака на устройство
+## <a name="send-cloud-to-device-messages"></a>Отправка сообщений между устройством и облаком
 
 Чтобы отправить сообщение из Центра Интернета вещей на устройство, выполните следующие действия.
 

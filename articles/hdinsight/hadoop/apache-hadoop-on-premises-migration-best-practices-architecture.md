@@ -1,7 +1,6 @@
 ---
 title: Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по архитектуре
 description: Ознакомьтесь с рекомендациями по архитектуре в контексте миграции локальных кластеров Hadoop в Azure HDInsight.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: ashishth
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
-ms.openlocfilehash: f1e2b9dfc329e67d94fba998a01d593b992ba90f
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
-ms.translationtype: MT
+ms.openlocfilehash: d1f2b79ff3ae33adb0b6e3ce5a6d96ad38fb1562
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56886814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62129337"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---architecture-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по архитектуре
 
@@ -31,8 +30,8 @@ ms.locfileid: "56886814"
 |Пакетная обработка (ETL/ELT)|Hadoop, Spark|
 |Хранение данных|Hadoop, Spark, Interactive Query|
 |Центр Интернета вещей или потоковая передача|Kafka, Storm, Spark|
-|Обработка транзакций NoSQL|hbase|
-|Кэширование в памяти для обеспечения интерактивных и ускоренных запросов|Interactive Query|
+|Обработка транзакций NoSQL|HBase|
+|Кэширование в памяти для обеспечения интерактивных и ускоренных запросов|Интерактивный запрос|
 |Обработка и анализ данных|Службы машинного обучения, Spark|
 
 В приведенной ниже таблице представлены различные способы создания кластера HDInsight.

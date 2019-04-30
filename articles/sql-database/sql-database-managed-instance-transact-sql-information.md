@@ -13,11 +13,11 @@ manager: craigg
 ms.date: 03/13/2019
 ms.custom: seoapril2019
 ms.openlocfilehash: 5f476aa571ba2827cbe6f4e4f258545b5e9d3ba1
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
-ms.translationtype: MT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59579314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62106361"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server
 
@@ -192,7 +192,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - [Расширение буферного пула](https://docs.microsoft.com/sql/database-engine/configure-windows/buffer-pool-extension) не поддерживается.
 - `ALTER SERVER CONFIGURATION SET BUFFER POOL EXTENSION` не поддерживается. См. статью [ALTER SERVER CONFIGURATION (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-configuration-transact-sql).
 
-### <a name="collation"></a>Collation
+### <a name="collation"></a>Параметры сортировки
 
 Параметр сортировки экземпляра по умолчанию — `SQL_Latin1_General_CP1_CI_AS`. Этот параметр можно указать как параметр создания. См. статью [Параметры сортировки](https://docs.microsoft.com/sql/t-sql/statements/collations).
 
@@ -280,8 +280,8 @@ WITH PRIVATE KEY (<private_key_options>)
   - Шаги задания T-SQL поддерживаются.
   - Поддерживаются следующие задания репликации:
     - Читатель журнала транзакций.
-    - Снимок
-    - Распространитель.
+    - Моментальный снимок
+    - Распространитель
   - Шаги задания SSIS поддерживаются.
   - Другие типы шагов заданий пока не поддерживаются, включая:
     - Шаг задания репликации слиянием не поддерживается.  

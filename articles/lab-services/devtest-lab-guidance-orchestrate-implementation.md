@@ -14,11 +14,11 @@ ms.date: 02/11/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: e0ac09a68bda539fe7abd05fce1739d1a58a3c99
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242997"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62127350"
 ---
 # <a name="orchestrate-the-implementation-of-azure-devtest-labs"></a>Оркестрация внедрения службы Azure DevTest Labs
 В этой статье предоставляется рекомендуемый подход для быстрого развертывания и реализации службы Azure DevTest Labs. На следующем изображении поэтапно представлен весь процесс, который гибко поддерживает различные сценарии и отраслевые требования.
@@ -60,5 +60,5 @@ ms.locfileid: "56242997"
 4. Основываясь на первоначальном использовании, убедитесь, что исходный прогноз пространства IP-адресов по-прежнему разумный и правильный.
 5. Убедитесь, что были выполнены соответствующие проверки обеспечения соответствия и безопасности.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующую статью в этом цикле: [Система управления инфраструктурой Azure DevTest Labs — ресурсы](devtest-lab-guidance-governance-resources.md)

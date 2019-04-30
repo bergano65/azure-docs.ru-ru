@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 11/08/2017
 ms.author: alkohli
 ms.openlocfilehash: df7866d4f87f55523e8139232e48d81cb17c80e4
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57763169"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62117339"
 ---
 # <a name="deploy-and-manage-a-storsimple-cloud-appliance-in-azure-update-3-and-later"></a>Развертывание и администрирование облачного устройства StorSimple в Azure (обновление 3 и более поздние версии)
 
@@ -42,7 +42,7 @@ ms.locfileid: "57763169"
 
 | Модель устройства | 8010<sup>1</sup> | 8020 |
 | --- | --- | --- |
-| **Максимальная емкость** |30 TБ |64 ТБ |
+| **Максимальная емкость** |30 TБ |64 ТБ |
 | **Azure** |Standard_A3 (4 ядра, 7 ГБ памяти)| Standard_DS3 (4 ядра, 14 ГБ памяти)|
 | **Регионы доступности** |Все регионы Azure |Регионы Azure, которые поддерживают хранилища класса Premium и виртуальные машины DS3 Azure<br></br>Используйте [этот список](https://azure.microsoft.com/regions/services/), чтобы узнать, доступны ли в вашем регионе **виртуальные машины серии DS** и соответствующие **хранилища дисков**. |
 | **Тип хранилища** |Использует хранилище Azure класса Standard для локальных дисков<br></br> Узнайте, как [создать учетную запись хранения класса Standard](../storage/common/storage-create-storage-account.md) |Использует хранилище Azure класса Premium для локальных дисков<sup>2</sup> <br></br> |

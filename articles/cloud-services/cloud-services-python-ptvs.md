@@ -1,6 +1,6 @@
 ---
 title: Начало работы с облачными службами Azure и Python | Документация Майкрософт
-description: Обзор использования Python Tools в Visual Studio для создания облачных служб Azure, включая веб-роли и рабочие роли.
+description: Обзор использования средств Python для Visual Studio для создания облачных служб Azure, в том числе веб-ролей и рабочих ролей.
 services: cloud-services
 documentationcenter: python
 author: jpconnock
@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 07/18/2017
 ms.author: jeconnoc
 ms.openlocfilehash: 2cfb8f922819802834d9833ae614f5bc5b4ff886
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57764478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62125446"
 ---
 # <a name="python-web-and-worker-roles-with-python-tools-for-visual-studio"></a>Использование веб-ролей и рабочих ролей Python с помощью средств Python для Visual Studio
 
@@ -312,7 +312,7 @@ if not exist "%DiagnosticStore%\LogFiles" mkdir "%DiagnosticStore%\LogFiles"
 
 ![Свойства запускаемого при включении проекта в решении](./media/cloud-services-python-ptvs/startup.png)
 
-## <a name="publish-to-azure"></a>Публикация в Azure
+## <a name="publish-to-azure"></a>Опубликовать в Azure
 Чтобы опубликовать, щелкните правой кнопкой мыши проект облачной службы в решении и выберите пункт **Опубликовать**.
 
 ![Вход для публикации в Microsoft Azure](./media/cloud-services-python-ptvs/publish-sign-in.png)

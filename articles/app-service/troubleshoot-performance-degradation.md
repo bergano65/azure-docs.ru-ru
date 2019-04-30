@@ -18,11 +18,11 @@ ms.date: 08/03/2016
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: 2d17991854f13f889c4e8c3a8c6f18e933655546
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57884228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62128455"
 ---
 # <a name="troubleshoot-slow-app-performance-issues-in-azure-app-service"></a>Устранение причин низкой производительности приложения в Службе приложений Azure
 Эта статья поможет устранить причины снижения производительности приложения, размещенного в [Службе приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714).
@@ -60,10 +60,10 @@ Microsoft Azure информирует о каждом случае прерыв
 
 Некоторые из этих метрик помогут вам отслеживать работу приложения, например:
 
-* средний размер рабочего набора памяти;
+* Средний рабочий набор памяти
 * Среднее время ответа
 * время ЦП;
-* рабочий набор памяти;
+* Рабочий набор памяти
 * Requests
 
 ![Мониторинг производительности приложения](./media/app-service-web-troubleshoot-performance-degradation/1-monitor-metrics.png)

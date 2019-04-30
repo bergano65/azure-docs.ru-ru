@@ -16,11 +16,11 @@ ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ec88caafa9a6168860a8e9e2ff9e2abe0cfd0e77
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57852983"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62096130"
 ---
 # <a name="azure-ad-connect-health-frequently-asked-questions"></a>Часто задаваемые вопросы об Azure AD Connect Health
 Эта статья содержит ответы на часто задаваемые вопросы о расширении Azure Active Directory (Azure AD) Connect Health. Здесь представлены сведения об использовании службы, в частности о модели выставления счетов, возможностях, ограничениях и поддержке.
@@ -36,9 +36,9 @@ ms.locfileid: "57852983"
 
 |Роль| Версия операционной системы|
 |--|--|
-|Службы федерации Active Directory (AD FS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
+|Службы федерации Active Directory (AD FS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
 |Azure AD Connect | Версия 1.0.9125 или более поздняя|
-|Доменные службы Active Directory (AD DS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
+|Доменные службы Active Directory (AD DS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
 
 Обратите внимание, что функции, предоставляемые службой, могут отличаться в зависимости от роли и операционной системы. Другими словами, не для всех версий операционной системы могут быть доступны все возможности. Ознакомьтесь с описанием функций, чтобы получить дополнительные сведения.
 
@@ -65,12 +65,12 @@ ms.locfileid: "57852983"
 
 Azure AD Connect Health не поддерживается в облаке для Германии, кроме [функции отчетов об ошибках синхронизации](how-to-connect-health-sync.md#object-level-synchronization-error-report).
 
-| Роли | Функции | Поддерживается в облаке для Германии |
+| Роли | Компоненты | Поддерживается в облаке для Германии |
 | ------ | --------------- | --- |
-| Connect Health для синхронизации | Мониторинг, аналитика, оповещения, анализ | Нет  |
-|  | Отчет об ошибках синхронизации | Yes |
-| Connect Health для ADFS | Мониторинг, аналитика, оповещения, анализ | Нет  |
-| Connect Health для доменных служб Active Directory | Мониторинг, аналитика, оповещения, анализ | Нет  |
+| Connect Health для синхронизации | Мониторинг, аналитика, оповещения, анализ | Нет |
+|  | Отчет об ошибках синхронизации | Да |
+| Connect Health для ADFS | Мониторинг, аналитика, оповещения, анализ | Нет |
+| Connect Health для доменных служб Active Directory | Мониторинг, аналитика, оповещения, анализ | Нет |
 
 Чтобы обеспечить подключение агента Connect Health для синхронизации, настройте [требование для установки](how-to-connect-health-agent-install.md#outbound-connectivity-to-the-azure-service-endpoints) соответствующим образом.
 

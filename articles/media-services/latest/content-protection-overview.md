@@ -11,15 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 04/21/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 984c5d6b5e6e2010489533a3889501c5b524a6bd
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 40e7ebcddb5cc215e071f1a34dfa8f3f4ea95141
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58311328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62103723"
 ---
 # <a name="content-protection-with-dynamic-encryption"></a>Защита содержимого при использовании динамического шифрования
 
@@ -168,7 +168,7 @@ MPEG-DASH протокол поддерживает следующие форм�
 * StreamingPolicyWidevineConfiguration.CustomLicenseAcquisitionUrlTemplate - аналогично описанному выше, только для Widevine. 
 * StreamingPolicyFairPlayConfiguration.CustomLicenseAcquisitionUrlTemplate - аналогично описанному выше, только для FairPlay.  
 
-Например: 
+Пример.
 
 ```csharp
 streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://mykeyserver.hostname.com/envelopekey/{AlternativeMediaId}/{ContentKeyId}";
@@ -192,7 +192,7 @@ streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://myk
 
 Чтобы защитить неактивные ресурсы, их нужно зашифровать на стороне хранилища. В следующей таблице показано, как происходит шифрование на стороне хранилища в службах мультимедиа версии 3.
 
-|Вариант шифрования|ОПИСАНИЕ|Службы мультимедиа версии 3|
+|Вариант шифрования|Описание|Службы мультимедиа версии 3|
 |---|---|---|
 |Шифрование хранилища Служб мультимедиа| Шифрование AES-256. Ключами управляют Службы мультимедиа|Не поддерживается<sup>(1)</sup>|
 |[Шифрование службы хранилища для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)|Шифрование на стороне сервера, предоставляемое службой хранилища Azure. Ключами управляет Azure или клиент|Поддерживаются|
@@ -206,6 +206,9 @@ streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://myk
 
 Если возникают ошибки, которые заканчиваются `_NOT_SPECIFIED_IN_URL`, убедитесь, что указывать формат шифрования в URL-адрес. Например, `…/manifest(format=m3u8-cmaf,encryption=cbcs-aapl)`. См. в разделе [потоковых протоколов и типов шифрования](#streaming-protocols-and-encryption-types).
 
+## <a name="provide-feedback"></a>Отзывы
+
+Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

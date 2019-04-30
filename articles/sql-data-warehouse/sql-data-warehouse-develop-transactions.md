@@ -2,25 +2,26 @@
 title: Использование транзакций в хранилище данных Azure SQL | Документация Майкрософт
 description: Советы по реализации транзакций Transact-SQL в хранилище данных SQL Azure для разработки решений.
 services: sql-data-warehouse
-author: ckarst
-manager: craigg
+author: WenJason
+manager: digimobile
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: implement
-ms.date: 03/22/2019
-ms.author: xiaoyul
+origin.date: 03/22/2019
+ms.date: 04/01/2019
+ms.author: v-jay
 ms.reviewer: igorstan
 ms.openlocfilehash: 0b4ce6f4479552f42d32124149f64614b7e3cb70
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58369502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61439185"
 ---
 # <a name="using-transactions-in-sql-data-warehouse"></a>Использование транзакций в хранилище данных Azure SQL
 Советы по реализации транзакций Transact-SQL в хранилище данных SQL Azure для разработки решений.
 
-## <a name="what-to-expect"></a>Основные принципы
+## <a name="what-to-expect"></a>Чего ожидать
 Как и следовало ожидать, хранилище данных SQL поддерживает транзакции как часть своей рабочей нагрузки. Однако, чтобы производительность хранилища данных SQL оставалась на уровне, по сравнению с SQL Server некоторые возможности ограничены. Эта статья посвящена отличиям этого продукта от аналогичных систем. 
 
 ## <a name="transaction-isolation-levels"></a>Уровни изоляции транзакций
@@ -34,7 +35,7 @@ ms.locfileid: "58369502"
 * выполнено равномерное распределение данных; 
 * средняя длина строки составляет 250 байтов.
 
-## <a name="gen2"></a>Поколение 2
+## <a name="gen2"></a>Gen2
 
 | [DWU](sql-data-warehouse-overview-what-is.md) | Ограничение распределения (ГБ) | Число распределений | МАКСИМАЛЬНЫЙ размер транзакции (в ГБ) | # Число строк в распределении | Максимальное число строк на транзакцию |
 | --- | --- | --- | --- | --- | --- |
@@ -55,7 +56,7 @@ ms.locfileid: "58369502"
 | DW15000c |112.5 |60 |6,750 |450,000,000 |27,000,000,000 |
 | DW30000c |225 |60 |13,500 |900 000 000 |54,000,000,000 |
 
-## <a name="gen1"></a>Поколение 1
+## <a name="gen1"></a>Gen1
 
 | [DWU](sql-data-warehouse-overview-what-is.md) | Ограничение распределения (ГБ) | Число распределений | МАКСИМАЛЬНЫЙ размер транзакции (в ГБ) | # Число строк в распределении | Максимальное число строк на транзакцию |
 | --- | --- | --- | --- | --- | --- |

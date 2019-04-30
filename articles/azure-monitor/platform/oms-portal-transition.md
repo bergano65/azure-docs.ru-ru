@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 01/08/2019
 ms.author: bwren
 ms.openlocfilehash: c4950d03449f2b293a87ab88f1ea3f49eee29557
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59790100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62102022"
 ---
 # <a name="oms-portal-moving-to-azure"></a>Перемещение портала OMS в Azure
 
@@ -96,7 +96,7 @@ ms.locfileid: "59790100"
 
 Таким образом, Соединитель Application Insights станет нерекомендуемым и будет удален из Azure Marketplace вместе с устаревшим порталом OMS 30 марта 2019 г., а существующие подключения будут работать до 30 июня 2019 г. В связи с устареванием портала OMS на нем невозможно настроить или удалить существующие подключения. Эта можно будет выполнить с помощью REST API, который будет доступен с января 2019 г. Соответствующее уведомление будет опубликовано в [обновлениях Azure](https://azure.microsoft.com/updates/). 
 
-## <a name="azure-network-security-group-analytics"></a>Анализ групп безопасности сети Azure
+## <a name="azure-network-security-group-analytics"></a>Анализ группы безопасности сети Azure
 Решение [Аналитика групп безопасности сетей Azure](../insights/azure-networking-analytics.md#azure-network-security-group-analytics-solution-in-azure-monitor) будет заменено новой платформой [Аналитика трафика](https://azure.microsoft.com/blog/traffic-analytics-in-preview/), которая отображает действия пользователей и приложений в облачных сетях. Решение "Аналитика трафика" полезно для аудита сетевой активности вашей организации, защиты приложений и данных, оптимизации производительности рабочих нагрузок и обеспечения соответствия требованиям. 
 
 Это решение анализирует журналы потоков NSG и предоставляет следующие сведения:

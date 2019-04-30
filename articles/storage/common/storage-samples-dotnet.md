@@ -10,11 +10,11 @@ ms.date: 01/12/2017
 ms.author: seguler
 ms.subservice: common
 ms.openlocfilehash: c4dcb3f42d97624e66258228ce27e130a05cac70
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55456142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62101398"
 ---
 # <a name="azure-storage-samples-using-net"></a>Примеры для службы хранилища Azure с использованием .NET
 
@@ -25,7 +25,7 @@ ms.locfileid: "55456142"
 <table style="font-size:90%"><thead><tr><th style="font-size:110%">Конечная точка</th><th style="font-size:110%">Сценарий</th><th style="font-size:110%">Пример кода</th></tr></thead><tbody> 
 <tr> 
 <td rowspan="16"><b>Большой двоичный объект</b></td>
-<td>Добавление больших двоичных объектов</td> 
+<td>Добавить BLOB-объект</td> 
 <td><a href="https://msdn.microsoft.com/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.getappendblobreference.aspx">Пример метода CloudBlobContainer.GetAppendBlobReference</a></td> 
 </tr> 
 <tr> 
@@ -206,7 +206,7 @@ ms.locfileid: "55456142"
 * [Приступая к работе со службой таблиц Azure в .NET](../../cosmos-db/table-storage-how-to-use-dotnet.md)
 * [Приступая к работе со службой файлов Azure в .NET](../storage-dotnet-how-to-use-files.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о примерах для других языков см. здесь:
 

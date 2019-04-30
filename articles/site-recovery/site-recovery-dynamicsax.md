@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 11/27/2018
 ms.author: asgang
 ms.openlocfilehash: b97bf56c23dfa96acf7cb5af5ac28b4270de117d
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56879787"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61281483"
 ---
 # <a name="set-up-disaster-recovery-for-a-multitier-dynamics-ax-application"></a>Настройка аварийного восстановления для многоуровневого приложения Dynamics AX   
 
@@ -45,9 +45,9 @@ ms.locfileid: "56879787"
 
 **Сценарий** | **На дополнительный сайт** | **В Azure**
 --- | --- | ---
-**Hyper-V** | Yes | Yes
-**VMware** | Yes | Yes
-**Физический сервер** | Yes | Yes
+**Hyper-V** | Да | Да
+**VMware** | Да | Да
+**Физический сервер** | Да | Да
 
 ## <a name="enable-disaster-recovery-of-the-dynamics-ax-application-by-using-site-recovery"></a>Включение аварийного восстановления приложения Dynamics AX с помощью Site Recovery
 ### <a name="protect-your-dynamics-ax-application"></a>Защита приложения Dynamics AX
@@ -105,7 +105,7 @@ ms.locfileid: "56879787"
 
 3. Выберите **источник** и **цель**. Целью может быть Azure или вторичный сайт. Если вы выберите Azure, необходимо указать модель развертывания.
 
-    ![Создать план восстановления](./media/site-recovery-dynamics-ax/recoveryplancreation1.png)
+    ![Создание плана восстановления](./media/site-recovery-dynamics-ax/recoveryplancreation1.png)
 
 4. Выберите сервер Application Object Server и виртуальные машины клиента в плане восстановления и щелкните значок ✓.
 

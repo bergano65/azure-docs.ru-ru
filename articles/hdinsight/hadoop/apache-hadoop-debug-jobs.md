@@ -1,7 +1,6 @@
 ---
 title: Отладка Apache Hadoop. Просмотр журналов и интерпретация сообщений об ошибках в Azure HDInsight
 description: Познакомьтесь с сообщениями об ошибках, которые могут поступать во время администрирования HDInsight с помощью PowerShell, а также с мерами, которые следует предпринять для восстановления нормальной работоспособности.
-services: hdinsight
 ms.reviewer: jasonh
 author: ashishthaps
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/14/2017
 ms.author: ashishth
-ms.openlocfilehash: a035789af08aa4c0d877a06295d9bd6fdedf6844
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
-ms.translationtype: MT
+ms.openlocfilehash: 31a20f8faa712aef94b69c605ec57985bc334009
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58449486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122087"
 ---
 # <a name="analyze-apache-hadoop-logs"></a>Анализ журналов Apache Hadoop
 
@@ -40,7 +39,7 @@ ms.locfileid: "58449486"
 * ClusterDnsName
 * ComponentName
 * EventTimestamp
-* Узел
+* Хост
 * MALoggingHash
 * Сообщение
 * Нет
@@ -48,7 +47,7 @@ ms.locfileid: "58449486"
 * Роль
 * RowIndex
 * Клиент
-* TIMESTAMP
+* ВРЕМЕННАЯ МЕТКА
 * TraceLevel
 
 ### <a name="tools-for-accessing-the-logs"></a>Средства для доступа к журналам
@@ -90,7 +89,7 @@ Power Query можно установить со страницы скачива
 3. В **Cloud Explorer** выберите **Типы ресурсов**.  Другой доступный вариант — **Группы ресурсов**.
 4. Разверните **Учетные записи хранения**, выберите учетную запись хранения по умолчанию для кластера, а затем выберите **Таблицы**.
 5. Дважды щелкните **hadoopservicelog**.
-6. Добавьте фильтр. Например: 
+6. Добавьте фильтр. Пример.
    
         TraceLevel eq 'ERROR'
    

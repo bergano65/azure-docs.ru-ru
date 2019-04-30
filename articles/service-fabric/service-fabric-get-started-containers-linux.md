@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 1/4/2019
 ms.author: aljo
 ms.openlocfilehash: 9e8f209f1448119ed2e3dfd5d38d42699a4be01c
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58670869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60947918"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Создание первого контейнера-приложения Service Fabric в Linux
 > [!div class="op_single_selector"]
@@ -385,7 +385,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 Чтобы добавить службу контейнеров в приложение, созданное с использованием yeoman, выполните следующие действия:
 
 1. Перейдите в корневой каталог существующего приложения. Например, `cd ~/YeomanSamples/MyApplication`, если `MyApplication` является приложением, созданным с помощью Yeoman.
-2. Запустите `yo azuresfcontainer:AddService`
+2. Выполнить `yo azuresfcontainer:AddService`
 
 <a id="manually"></a>
 

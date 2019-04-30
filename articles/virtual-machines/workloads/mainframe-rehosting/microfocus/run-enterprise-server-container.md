@@ -9,11 +9,11 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.service: multiple
 ms.openlocfilehash: 30d99c3f4767eb50361f7074c0d508fcf309faca
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58896600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61488458"
 ---
 # <a name="run-micro-focus-enterprise-server-40-in-a-docker-container-on-azure"></a>Запуск Micro Focus Enterprise Server 4.0 в контейнере Docker в Azure
 
@@ -36,7 +36,7 @@ Docker добавляет переносимости и изоляции при�
 
 - В документации по [Enterprise Server и Enterprise Developer](https://www.microfocus.com/documentation/enterprise-developer/#").
 
-## <a name="create-a-vm"></a>Создание виртуальной машины
+## <a name="create-a-vm"></a>Создание ВМ
 
 1. Защиту содержимого носителя из ent\_server\_dockerfiles\_4.0\_windows.zip файл. Защитите этот файл лицензирования ES-Docker-Prod-XXXXXXXX.mflic (необходимые для создания образов Docker).
 
@@ -137,7 +137,7 @@ Docker добавляет переносимости и изоляции при�
        docker inspect <containerID> --format="{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}"
     ```
 
-       Например: 
+       Пример.
 
     ```   
         docker inspect 22a0fe3159d0 --format="{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}"

@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
-ms.openlocfilehash: bc876fbf0eb15f887d57d4ddcca2301ef7233afa
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
-ms.translationtype: MT
+ms.openlocfilehash: 84c5dbcf5073ba8c0ae662af019cde590a9adf10
+ms.sourcegitcommit: a95dcd3363d451bfbfea7ec1de6813cad86a36bb
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58577345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62738394"
 ---
-# <a name="web-sdk-supported-browsers"></a>Браузеры, поддерживаемые веб-пакет SDK
+# <a name="web-sdk-supported-browsers"></a>Браузеры, поддерживаемые в веб-пакетах SDK
 
-SDK веб-карты Azure предоставляет вспомогательную функцию [atlas.isSupported](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas?view=azure-iot-typescript-latest#issupported-boolean-) для обнаружения, если браузер имеет минимальное приведенные WebGL компоненты для поддержки загрузки и Подготовка к просмотру элемента управления картой. 
+SDK веб-карты Azure предоставляет вспомогательную функцию, именуемую [atlas.isSupported](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas?view=azure-iot-typescript-latest#issupported-boolean-). Эта функция определяет, имеет ли веб-браузер минимальный набор функций WebGL, должны поддерживать загрузку и отрисовку элемента управления картой. Вот пример того, как использовать функцию:
 
 ```
 if(!atlas.isSupported()) {
@@ -25,35 +25,35 @@ if(!atlas.isSupported()) {
 } else if(!atlas.isSupported(true)) {
     alert('Your browser is supported by Azure Maps, but may have major performance caveats.');
 } else {
-    //Your browser is supported. Add your map code here.
+    // Your browser is supported. Add your map code here.
 }
 ```
 
-## <a name="desktop"></a>Классические приложения
+## <a name="desktop"></a>Рабочий стол
 
-SDK веб-карты Azure поддерживает следующие браузеры рабочего стола.
+SDK веб-карты Azure поддерживает следующие браузеры рабочего стола:
 
-- Текущие и предыдущие версии Microsoft Edge 
-- Текущие и предыдущие версии Chrome 
-- Текущие и предыдущие версии Firefox 
-- Текущие и предыдущие версии Safari (Mac OS X) 
+- Microsoft Edge (текущей и предыдущей версии)
+- Google Chrome (текущей и предыдущей версии)
+- Mozilla Firefox (текущей и предыдущей версии)
+- Apple Safari (Mac OS X) (текущей и предыдущей версии)
 
-См. также [предназначенных для предыдущих версий браузеров](#Target-Legacy-Browsers).
+См. также [предназначенных для предыдущих версий браузеров](#Target-Legacy-Browsers) далее в этой статье.
 
 ## <a name="mobile"></a>Мобильные приложения
 
-SDK веб-карты Azure поддерживает следующие браузеры мобильных устройств.
+SDK веб-карты Azure поддерживает следующие браузеры мобильных устройств:
 
--  Android
-    * Текущая версия Chrome в Android 6.0 +
-    * Chrome WebView Android 6.0 +
+- Android
+  - Текущая версия Chrome на базе Android 6.0 и более поздних версий
+  - Chrome WebView на базе Android 6.0 и более поздних версий
 - iOS
-    * Safari Mobile в текущей и предыдущей основной номер версии iOS
-    * UIWebView и WKWebView на текущим и предыдущим основной номер версии iOS
-    * Текущая версия Chrome для iOS
+  - Safari Mobile в текущей и предыдущей основной номер версии iOS
+  - UIWebView и WKWebView на текущим и предыдущим основной номер версии iOS
+  - Текущая версия Chrome для iOS
 
 > [!TIP]
-> Если вы внедряете карты в мобильных приложений при помощи элемента управления WebView, вы предпочитаете использовать [npm пакета SDK веб-карты Azure](https://www.npmjs.com/package/azure-maps-control) вместо ссылки на CDN размещенной версию пакета SDK. Это позволит уменьшить время загрузки, так как пакет SDK будет уже присутствовать на устройство пользователя и не должны загружаться во время выполнения.
+> Если вы выполняете внедрение карты в мобильных приложениях с помощью элемента управления WebView, можно использовать [npm пакета SDK веб-карты Azure](https://www.npmjs.com/package/azure-maps-control) вместо ссылки на версию пакета SDK, который размещается на доставки содержимого Azure Сеть. Этот подход уменьшает время загрузки, так как пакет SDK уже присутствовать на устройстве пользователя и может не загружаться во время выполнения.
 
 ## <a name="nodejs"></a>Node.js
 
@@ -63,8 +63,9 @@ SDK веб-карты Azure поддерживает следующие брау
 
 ## <a name="Target-Legacy-Browsers"></a>Устаревшие браузеры
 
-Если вам нужно выбрать старых браузерах, которые могут не поддерживать или имеют ограниченную поддержку WebGL, рекомендуется использовать службы Azure Maps в сочетании с элементом управления карты с открытым исходным кодом, такие как [Листовка](https://leafletjs.com/). 
+Может потребоваться целевой старых браузерах, которые не поддерживают WebGL или, только ограниченную поддержку для него. В таких случаях мы рекомендуем использовать службы Azure Maps вместе с элемента управления карты с открытым исходным кодом, например [Листовка](https://leafletjs.com/). Ниже приведен пример:
 
+<br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Azure Maps + Листовка" src="//codepen.io/azuremaps/embed/GeLgyx/?height=500&theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
 См. в разделе пера <a href='https://codepen.io/azuremaps/pen/GeLgyx/'>Azure Maps + Листовка</a> по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
@@ -73,7 +74,7 @@ SDK веб-карты Azure поддерживает следующие брау
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о SDK веб-карт Azure.
+Дополнительные сведения об Azure Maps Web SDK:
 
 > [!div class="nextstepaction"]
 > [Управление картами](how-to-use-map-control.md)

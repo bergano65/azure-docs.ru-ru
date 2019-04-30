@@ -1,7 +1,6 @@
 ---
 title: Использование службы Azure Kubernetes с Kafka HDInsight
 description: Дополнительные сведения об использовании Kafka HDInsight из образов контейнера, размещенных в службе Azure Kubernetes (AKS).
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/07/2018
-ms.openlocfilehash: b9b4af353e5bbd36f1f8d7468c38542a0fabda85
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: 35ef708cdcedc2d7bafedb8bf3686e4b468177df
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58112183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62115365"
 ---
 # <a name="use-azure-kubernetes-service-with-apache-kafka-on-hdinsight"></a>Использование службы Azure Kubernetes с Apache Kafka в HDInsight
 

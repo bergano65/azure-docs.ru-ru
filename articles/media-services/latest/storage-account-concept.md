@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: juliako
 ms.openlocfilehash: 96c3a3eb5e4c07ad9cad8ea5060a27c0c33eec5f
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58621304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61466822"
 ---
 # <a name="cloud-upload-and-storage"></a>Передача в облако и хранение
 
@@ -44,7 +44,7 @@ ms.locfileid: "58621304"
 
 Чтобы защитить неактивные ресурсы, их нужно зашифровать на стороне хранилища. В следующей таблице показано, как происходит шифрование на стороне хранилища в службах мультимедиа версии 3.
 
-|Вариант шифрования|ОПИСАНИЕ|Службы мультимедиа версии 3|
+|Вариант шифрования|Описание|Службы мультимедиа версии 3|
 |---|---|---|
 |Шифрование хранилища Служб мультимедиа| Шифрование AES-256. Ключами управляют Службы мультимедиа|Не поддерживается<sup>(1)</sup>|
 |[Шифрование службы хранилища для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)|Шифрование на стороне сервера, предоставляемое службой хранилища Azure. Ключами управляет Azure или клиент|Поддерживаются|

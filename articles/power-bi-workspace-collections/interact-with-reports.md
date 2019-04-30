@@ -11,12 +11,12 @@ ms.workload: powerbi
 origin.date: 09/26/2018
 ms.date: 03/05/2019
 ms.author: v-junlch
-ms.openlocfilehash: 47bfdc3afed5fd17d7df98c6664e58374410a7f5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 252296af8b2065ae22bed8b421d4d00718b78287
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/23/2019
-ms.locfileid: "60516805"
+ms.locfileid: "62110469"
 ---
 # <a name="interact-with-power-bi-reports-using-the-javascript-api"></a>Взаимодействие с отчетами Power BI с помощью интерфейса API JavaScript
 
@@ -122,7 +122,7 @@ const advancedFilter: pbi.models.IAdvancedFilter = {
 
 - внедрение;
   - загрузка;
-  - error
+  - ошибка
 - Отчеты
   - изменение страницы;
   - выбор данных (ожидается в ближайшее время).

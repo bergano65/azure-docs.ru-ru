@@ -1,7 +1,6 @@
 ---
 title: Использование пакета SDK для .NET HBase в Azure HDInsight
 description: Пакет SDK для .NET HBase позволяет создавать и удалять таблицы, а также считывать и записывать данные.
-services: hdinsight
 author: ashishthaps
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/13/2017
 ms.author: ashishth
-ms.openlocfilehash: 27a013bee98447de591d373917c2cbaae7ca08b3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 707869880c5df619def2d707264b59e22e03c521
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57857663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62123099"
 ---
 # <a name="use-the-net-sdk-for-apache-hbase"></a>С помощью пакета SDK .NET для Apache HBase
 
@@ -39,7 +38,7 @@ client = new HBaseClient(credentials);
 
 Замените CLUSTERNAME именем кластера HDInsight HBase, а USERNAME и PASSWORD — учетными данными Apache Hadoop, указанными при создании кластера. Имя пользователя Hadoop по умолчанию — **admin**.
 
-## <a name="create-a-new-table"></a>Создание таблицы
+## <a name="create-a-new-table"></a>Создать таблицу
 
 В HBase данные хранятся в таблицах. Таблица состоит из *Rowkey* — первичного ключа — и одной или нескольких групп столбцов, называемых *семействами столбцов*. Данные в каждой таблице горизонтально распределяются по диапазонам ключей Rowkey на *области*. У каждой области есть ключ начала и окончания. Таблица может содержать одну или несколько областей. По мере роста данных в таблице HBase большие области разбиваются на меньшие. Области хранятся на *серверах областей*. На одном сервере могут храниться несколько областей.
 
@@ -61,7 +60,7 @@ if (!client.ListTablesAsync().Result.name.Contains("RestSDKTable"))
 
 Эта новая таблица содержит два семейства столбцов — t1 и t2. Так как семейства столбцов хранятся отдельно в разных файлах HFile, есть смысл создать отдельное семейство столбцов для часто запрашиваемых данных. В следующем примере [вставки данных](#insert-data) столбцы добавляются в семейство столбцов t1.
 
-## <a name="delete-a-table"></a>Удаление таблицы
+## <a name="delete-a-table"></a>Удалить таблицу
 
 Чтобы удалить таблицу, выполните следующую команду:
 
@@ -117,7 +116,7 @@ await client.StoreCellsAsync("RestSDKTable", set);
 
 ![Пользователь с ролью "Cluster User" (Пользователь кластера)](./media/apache-hbase-rest-sdk/table.png)
 
-## <a name="select-data"></a>Выбор данных
+## <a name="select-data"></a>Выбрать данные
 
 Для чтения данных из таблицы HBase передайте имя таблицы и ключ строки в метод `GetCellsAsync`, который возвращает `CellSet`.
 

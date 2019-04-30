@@ -17,11 +17,11 @@ ms.topic: conceptual
 ms.date: 09/11/2017
 ms.author: gokuma
 ms.openlocfilehash: 59f88d54d3542738f1a500c8c476995eb1535ecf
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58006496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62130282"
 ---
 # <a name="deep-learning-and-ai-frameworks"></a>Платформы глубокого обучения и искусственного интеллекта
 [Виртуальная машина для обработки и анализа данных](https://aka.ms/dsvm) (DSVM) и [виртуальная машина для глубокого обучения](https://aka.ms/dsvm/deeplearning) поддерживают несколько платформ глубокого обучения для создания приложений с использованием функций искусственного интеллекта (AI), прогнозной аналитики и когнитивных возможностей, включая распознавание изображений и языка.
@@ -79,7 +79,7 @@ ms.locfileid: "58006496"
 | Что это такое?   | Платформа глубокого обучения      |
 | Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Ubuntu     |
 | Настройка и установка на DSVM  | Caffe устанавливается в `/opt/caffe`.    |
-| Как перейти на использование Python 2.7 | Запустите `source activate root` |
+| Как перейти на использование Python 2.7 | Выполнить `source activate root` |
 | Ссылки на примеры      | Примеры находятся в `/opt/caffe/examples`.      |
 | Дополнительные средства на виртуальной машине для обработки и анализа данных      | Caffe2      |
 

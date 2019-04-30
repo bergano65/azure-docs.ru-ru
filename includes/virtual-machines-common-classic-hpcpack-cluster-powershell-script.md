@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 6f0d2d59ed50c743adb19027c404bfa83a1886f1
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58484869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485612"
 ---
 В зависимости от вашей среды и предпочтений скрипт может создать всю инфраструктуру кластера, в том числе виртуальную сеть Azure, учетные записи хранения, облачные службы, контроллер домена, удаленные и локальные базы данных SQL, головной узел и дополнительные узлы кластера. Или скрипт может с помощью уже существующей инфраструктуры Azure ограничиться созданием узлов кластера HPC.
 

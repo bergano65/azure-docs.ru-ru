@@ -15,12 +15,12 @@ ms.custom: ''
 ms.workload: infrastructure-services
 ms.date: 06/07/2017
 ms.author: victorh
-ms.openlocfilehash: b3a4abf4d0f408cdb49020d831b50d943c3467dd
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
-ms.translationtype: HT
+ms.openlocfilehash: 10f115b64f0bd3f7e557da2bedbf3327d0ef483d
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33205049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122301"
 ---
 # <a name="overview-of-integration-between-application-gateway-and-azure-security-center"></a>Общие сведения об интеграции шлюза приложений с центром безопасности Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "33205049"
 
 Выберите **Все службы** > **Безопасность+идентификация** > **Центр безопасности**, а затем в области **Центр безопасности — Обзор** щелкните **Приложения**. Таблица в области **Центр безопасности — Приложения** содержит список приложений, обнаруженных центром безопасности в вашей подписке.
 
-![Веб-приложения][3]
+![— веб-приложения][3]
 
 Если щелкнуть веб-приложение с критической ошибкой, откроется страница **Состояние защиты приложения**. На рисунке ниже показан пример веб-приложение, незащищенного брандмауэром веб-приложения. 
 
@@ -80,7 +80,7 @@ ms.locfileid: "33205049"
  
 ![Сведения в оповещении][9]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о включении брандмауэра веб-приложения в существующем шлюзе приложений см. в статье о [создании шлюза приложений Azure и добавлении в него брандмауэра веб-приложения](application-gateway-web-application-firewall-portal.md).
 

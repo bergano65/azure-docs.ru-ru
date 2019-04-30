@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 03/12/2019
-ms.openlocfilehash: 2f3a8237fff052779afee718837e2b72fc33d9a8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 04/23/2019
+ms.openlocfilehash: 2c8a3f36e04fbedfdd127939d55fab376e3e6b30
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/23/2019
-ms.locfileid: "60532171"
+ms.locfileid: "62097765"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-db-for-postgresql"></a>Известные проблемы и ограничения при сетевых миграциях в базу данных Azure для PostgreSQL
 
@@ -25,6 +25,10 @@ ms.locfileid: "60532171"
 ## <a name="online-migration-configuration"></a>Настройка сетевой миграции
 - На исходном сервере должен использоваться PostgreSQL версии 9.5.11, 9.6.7, 10.3 или более поздней. Дополнительные сведения см. в статье [Поддерживаемые версии базы данных PostgreSQL](../postgresql/concepts-supported-versions.md).
 - Поддерживаются только миграции на ту же версию. Например, миграция PostgreSQL 9.5.11 в базу данных Azure для PostgreSQL 9.6.7 не поддерживается.
+
+    > [!NOTE]
+    > Для PostgreSQL версии 10 в настоящее время DMS поддерживается только для версии 10.3 к базе данных Azure для PostgreSQL. Мы планируем поддерживать более новых версиях PostgreSQL очень скоро.
+
 - Чтобы включить логическую репликацию в **исходном файле PostgreSQL postgresql.conf**, задайте следующие параметры:
     - **wal_level** = logical
     - **max_replication_slots** = [максимальное количество баз данных для миграции]. Если необходимо перенести 4 базы данных, укажите значение 4.

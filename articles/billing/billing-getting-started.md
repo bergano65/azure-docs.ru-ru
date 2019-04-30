@@ -16,11 +16,11 @@ ms.workload: na
 ms.date: 01/24/2018
 ms.author: banders
 ms.openlocfilehash: d215e2ba5d650b532b9d7554ccca9ad5537cf4de
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57842518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60919448"
 ---
 # <a name="prevent-unexpected-charges-with-azure-billing-and-cost-management"></a>Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure
 
@@ -142,7 +142,7 @@ ms.locfileid: "57842518"
 
 Когда цикл выставления счетов завершится, счета станут доступными. Вы также можете [скачать прошлые счета и файлы сведений об использовании](billing-download-azure-invoice-daily-usage-date.md), чтобы убедиться в правильности выставленных счетов. Дополнительные сведения о том, как сравнить данные о ежедневном использовании со счетом, см. в статье [Расшифровка счета за использование Microsoft Azure](billing-understand-your-bill.md).
 
-### <a name="billing-api"></a>API выставления счетов
+### <a name="billing-api"></a>API системы биллинга
 
 Чтобы программно получить данные об использовании, воспользуйтесь интерфейсом API выставления счетов. Для получения сведений об использовании, влияющих на сумму счета, воспользуйтесь совместно API RateCard и API использования. Дополнительные сведения см. в статье [Получение ценных сведений о потреблении ресурсов Microsoft Azure](billing-usage-rate-card-overview.md).
 
@@ -151,7 +151,7 @@ ms.locfileid: "57842518"
 ### <a name="ea-csp-and-sponsorship-customers"></a>Клиенты с соглашением EA, со спонсорским предложением и партнеры по программе CSP
 Чтобы начать работу, обратитесь к своему менеджеру по работе с клиентами или партнеру Azure.
 
-| ПРЕДЛОЖЕНИЕ | Ресурсы |
+| Предложение | Ресурсы |
 |-------------------------------|-----------------------------------------------------------------------------------|
 | Соглашение Enterprise (EA) | [Портал EA](https://ea.azure.com/), [справочные документы](https://ea.azure.com/helpdocs) и [отчет Power BI](https://powerbi.microsoft.com/documentation/powerbi-content-pack-azure-enterprise/) |
 | Поставщик облачных решений (CSP) | Обратитесь к поставщику |
@@ -205,6 +205,6 @@ ms.locfileid: "57842518"
 
 Дополнительные сведения см. в разделе [соглашения об уровне обслуживания](https://azure.microsoft.com/en-us/support/legal/sla/) документации и [Сводка соглашение об уровне ОБСЛУЖИВАНИЯ для служб Azure](https://azure.microsoft.com/en-us/support/legal/sla/summary/) документации.
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
+## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
 
 Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

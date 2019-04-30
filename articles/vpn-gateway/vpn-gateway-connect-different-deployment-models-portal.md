@@ -9,11 +9,11 @@ ms.workload: infrastructure-services
 ms.date: 10/17/2018
 ms.author: cherylmc
 ms.openlocfilehash: bf7d80bbbe63204cda47719a7d7c019013ad800b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58099177"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62124031"
 ---
 # <a name="connect-virtual-networks-from-different-deployment-models-using-the-portal"></a>Подключение виртуальных сетей из разных моделей развертывания с помощью портала
 
@@ -133,7 +133,7 @@ ms.locfileid: "58099177"
 
 В этом разделе вы создадите шлюз виртуальной сети и шлюз локальной сети для виртуальной сети Resource Manager. Снимки экрана приведены в качестве примеров. Обязательно подставьте собственные значения или воспользуйтесь значениями из [примера](#values).
 
-### <a name="1-create-a-virtual-network"></a>1. Создать виртуальную сеть
+### <a name="1-create-a-virtual-network"></a>1. Создание виртуальной сети
 
 **Примеры значений**:
 

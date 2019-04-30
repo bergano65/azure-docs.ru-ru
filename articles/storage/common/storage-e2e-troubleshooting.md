@@ -10,11 +10,11 @@ ms.date: 03/15/2017
 ms.author: tamram
 ms.subservice: common
 ms.openlocfilehash: f88a560d4fa819a055534530ddc0862e4aa330fe
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62098615"
 ---
 # <a name="end-to-end-troubleshooting-using-azure-storage-metrics-and-logging-azcopy-and-message-analyzer"></a>Комплексный поиск и устранение неполадок с помощью метрик службы хранилища Azure и ведения журнала, AzCopy и анализатора сообщений
 [!INCLUDE [storage-selector-portal-e2e-troubleshooting](../../../includes/storage-selector-portal-e2e-troubleshooting.md)]
@@ -310,8 +310,8 @@ AzCopy можно скачать на странице [Загрузки Azure](
 | Общие проблемы авторизации подписи доступа (SAS) |AzureStorageLog.RequestStatus == "SASAuthorizationError" |Сеть |
 | Сообщения HTTP 409 (конфликт) |HTTP.Response.StatusCode == 409 |Сеть |
 | 409 (все) |*StatusCode == 409 |Все |
-| Низкие значения PercentSuccess или присутствие операций с состоянием транзакции ClientOtherErrors в записях журналов аналитики |AzureStorageLog.RequestStatus == "ClientOtherError" |сервер; |
-| Предупреждение Nagle |((AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS) > (AzureStorageLog.ServerLatencyMS * 1.5)) and (AzureStorageLog.RequestPacketSize <1460) and (AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS >= 200) |сервер; |
+| Низкие значения PercentSuccess или присутствие операций с состоянием транзакции ClientOtherErrors в записях журналов аналитики |AzureStorageLog.RequestStatus == "ClientOtherError" |Сервер |
+| Предупреждение Nagle |((AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS) > (AzureStorageLog.ServerLatencyMS * 1.5)) and (AzureStorageLog.RequestPacketSize <1460) and (AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS >= 200) |Сервер |
 | Диапазон времени в журналах сервера и сети |#Timestamp   >= 2014-10-20T16:36:38 and #Timestamp <= 2014-10-20T16:36:39 |Сервер, сеть |
 | Диапазон времени в журналах сервера |AzureStorageLog.Timestamp >= 2014-10-20T16:36:38 and AzureStorageLog.Timestamp <= 2014-10-20T16:36:39 |сервер; |
 

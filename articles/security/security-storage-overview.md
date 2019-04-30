@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 02/01/2019
 ms.author: terrylan
 ms.openlocfilehash: ec0e8ae1bf657cda59f3d133db23106436e184e3
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56326762"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62120898"
 ---
 # <a name="azure-storage-security-overview"></a>Общие сведения о безопасности службы хранилища Azure
 
@@ -82,7 +82,7 @@ SAS — это URI, который в своих параметрах запро
 * [Шифрование службы хранилища Azure](https://azure.microsoft.com/services/storage/) доступно для [хранилища BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/). Сведения о других типах хранилищ Azure приведены в описании таких хранилищ, как [Файлы Azure](https://azure.microsoft.com/services/storage/files/), [Хранилище таблиц](https://azure.microsoft.com/services/storage/tables/) и [Хранилище очередей](https://azure.microsoft.com/services/storage/queues/).
 * [Шифрование службы хранилища Azure для неактивных данных (предварительная версия)](../storage/common/storage-service-encryption.md)
 
-## <a name="azure-disk-encryption"></a>Дисковое шифрование Azure
+## <a name="azure-disk-encryption"></a>Шифрование дисков Azure
 
 Шифрование дисков Azure для виртуальных машин помогает соблюсти требования организации к безопасности и соответствию. Эта служба шифрует диски виртуальной машины (в том числе загрузочные диски и диски данных), используя ключи и политики, которыми можно управлять в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/).
 
@@ -100,11 +100,11 @@ SAS — это URI, который в своих параметрах запро
 
 Дополнительные сведения о службе хранилища Azure брандмауэров и виртуальных сетей см. в разделе [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](../storage/common/storage-network-security.md)
 
-## <a name="azure-data-box"></a>Azure Data Box
+## <a name="azure-data-box"></a>Устройство Azure Data Box
 
 Устройства Data Box, Диск Data Box и Data Box Heavy позволяют передавать большие объемы данных в Azure, когда отсутствует доступ к сети. Эти устройства для автономной передачи данных доставляются из организации в центр обработки данных Azure и обратно. Они используют шифрование AES для защиты передаваемых данных и проходят тщательный процесс очистки после отправки для удаления данных с устройства.
 
-Data Box Edge и Шлюз Data Box являются продуктами для сетевой передачи данных, которые работают подобно шлюзам сетевого хранилища для управления данными между сайтом и Azure. Data Box Edge (локальное сетевое устройство) передает данные в Azure и обратно и использует вычисления Edge с поддержкой искусственного интеллекта (ИИ) для обработки данных. Шлюз Azure Data Box — это виртуальный модуль с возможностями шлюза хранилища.
+Data Box Edge и Шлюз Data Box являются продуктами для сетевой передачи данных, которые работают подобно шлюзам сетевого хранилища для управления данными между сайтом и Azure. Data Box Edge (локальное сетевое устройство) передает данные в Azure и обратно и использует вычисления Edge с поддержкой искусственного интеллекта (ИИ) для обработки данных. Шлюз Azure Data Box — это виртуальный модуль с возможностями шлюза хранилища.
 
 Дополнительные сведения
 
@@ -122,7 +122,7 @@ Data Box Edge и Шлюз Data Box являются продуктами для 
 
 * [Расширенная защита от угроз для службы хранилища Azure](../storage/common/storage-advanced-threat-protection.md)
 
-## <a name="azure-key-vault"></a>Хранилище ключей Azure
+## <a name="azure-key-vault"></a>Хранилище Azure Key Vault
 
 Служба шифрования дисков Azure также использует [Azure Key Vault](https://azure.microsoft.com/services/key-vault/), что позволяет управлять секретами и ключами шифрования дисков в подписке Key Vault и контролировать их. Эта служба обеспечивает шифрование всех неактивных данных на дисках виртуальных машин в службе хранилища Azure. Хранилище ключей следует использовать для аудита ключей и применения политик.
 

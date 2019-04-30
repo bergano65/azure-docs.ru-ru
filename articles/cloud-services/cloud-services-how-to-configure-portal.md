@@ -14,16 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/07/2016
 ms.author: jeconnoc
-ms.openlocfilehash: 904056363c685ef0a16b229ce72383eb80701a39
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
-ms.translationtype: HT
+ms.openlocfilehash: 4d8d3b93ef2a6347076fada53932b5fc56838d20
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39006419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61435873"
 ---
 # <a name="how-to-configure-cloud-services"></a>Настройка облачных служб
 
-Часто используемые параметры облачной службы можно настроить на портале Azure. Также можно напрямую изменить файлы конфигурации. Для этого загрузите и измените нужный файл, а затем отправьте его для обновления конфигурации облачной службы. В любом случае обновления конфигурации применяются ко всем экземплярам ролей.
+Часто используемые параметры облачной службы можно настроить на портале Azure. Также можно напрямую изменить файлы конфигурации. Для этого загрузите и измените нужный файл, а затем отправьте его для обновления конфигурации облачной службы. В обоих случаях обновленная конфигурация будет введена во все экземпляры роли.
 
 Также вы можете управлять экземплярами ролей облачной службы или подключиться к ним с помощью удаленного рабочего стола.
 
@@ -58,11 +58,11 @@ ms.locfileid: "39006419"
 
 Здесь можно настроить оповещение. Раскрывающийся список **Метрика** позволяет настроить оповещение для следующих типов данных.
 
-* Скорость чтения с диска
+* Чтение с диска
 * Скорость записи на диск
 * Входящая скорость сети
 * Исходящая скорость сети
-* Процент использования ЦП
+* Процент ЦП
 
 ![](./media/cloud-services-how-to-configure-portal/cs-alert-item.png)
 
@@ -98,13 +98,13 @@ ms.locfileid: "39006419"
     ![Колонка «Конфигурация»](./media/cloud-services-how-to-configure-portal/cs-settings-config.png)
 3. Нажмите кнопку **Загрузить** .
 
-    ![Загрузка](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-download.png)
+    ![Download (Скачать)](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-download.png)
 4. Чтобы применить обновления конфигурации, передайте новый файл в службу:
 
-    ![Передать](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-upload.png)
+    ![Отправка](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-upload.png)
 5. Выберите файл .cscfg и нажмите **ОК**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [развернуть облачную службу](cloud-services-how-to-create-deploy-portal.md).
 * Настройте [пользовательское доменное имя](cloud-services-custom-domain-name-portal.md).

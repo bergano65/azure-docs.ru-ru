@@ -1,19 +1,20 @@
 ---
-title: Добавление всплывающего элемента в пользовательский интерфейс решения для удаленного мониторинга в Azure | Документация Майкрософт
+title: Добавление всплывающего меню решением для удаленного мониторинга пользовательского интерфейса — Azure | Документация Майкрософт
 description: В этой статье показано, как добавить всплывающий элемент на страницу в веб-интерфейс акселератора решения для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
-ms.author: dobett
+ms.author: v-yiso
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.date: 10/05/2018
+origin.date: 10/05/2018
+ms.date: 11/26/2018
 ms.topic: conceptual
 ms.openlocfilehash: ccb1a7ff6abbc68f42c7632a8ba7a392b2c48794
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49167432"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61447120"
 ---
 # <a name="add-a-custom-flyout-to-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательского всплывающего элемента в веб-интерфейс акселератора решения для удаленного мониторинга
 
@@ -24,7 +25,7 @@ ms.locfileid: "49167432"
 
 Пример всплывающего элемента в этой статье отображается на странице с сеткой, добавление которой описано в статье [Add a custom grid to the Remote Monitoring solution accelerator web UI](iot-accelerators-remote-monitoring-customize-grid.md) (Добавление пользовательской сетки в веб-интерфейс акселератора решения для удаленного мониторинга).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этом руководстве, необходимо установить следующее ПО на локальный компьютер разработки:
 
@@ -35,9 +36,9 @@ ms.locfileid: "49167432"
 
 Прежде чем продолжить, необходимо выполнить шаги, указанные в следующих статьях:
 
-- [Добавление пользовательской страницы в веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-page.md);
-- [Добавление пользовательской службы в веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-service.md)
-- [Добавление пользовательской сетки в веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-grid.md)
+- [Добавление пользовательской страницы в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-page.md);
+- [Добавление пользовательской службы в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-service.md)
+- [Добавление пользовательской сетки в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-grid.md)
 
 ## <a name="add-a-flyout"></a>Добавление всплывающего элемента
 
@@ -49,11 +50,11 @@ ms.locfileid: "49167432"
 
 **exampleFlyout.container.js**
 
-[!code-javascript[Example flyout container](~/remote-monitoring-webui/src/walkthrough/components/pages/pageWithFlyout/flyouts/exampleFlyout/exampleFlyout.container.js?name=flyoutcontainer "Example flyout container")]
+
 
 **exampleFlyout.js**
 
-[!code-javascript[Example flyout](~/remote-monitoring-webui/src/walkthrough/components/pages/pageWithFlyout/flyouts/exampleFlyout/exampleFlyout.js?name=flyout "Example flyout")]
+
 
 Скопируйте папку **src/walkthrough/components/pages/pageWithFlyout/flyouts** в папку **src/components/pages/example**.
 
@@ -135,7 +136,7 @@ npm start
 
 Предыдущая команда запускает пользовательский интерфейс локально по адресу [http://localhost:3000/dashboard](http://localhost:3000/dashboard). Перейдите на страницу **Пример** и щелкните **Открыть всплывающий элемент**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке или добавлении станицы в веб-интерфейсе в акселераторе решения для удаленного мониторинга.
 

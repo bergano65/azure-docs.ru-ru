@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Showpad | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Showpad | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Showpad.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 07/12/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ec16aabeb1c8b956b4e525aca4e1c2eb7b133686
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56188568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62130302"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-showpad"></a>Руководство. Интеграция Azure Active Directory с Showpad
+# <a name="tutorial-azure-active-directory-integration-with-showpad"></a>Руководство по Интеграция Azure Active Directory с Showpad
 
 В этом руководстве описано, как интегрировать Showpad с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56188568"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Showpad, вам потребуется:
 
@@ -67,11 +67,11 @@ ms.locfileid: "56188568"
 
 1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
+    ![Приложения][2]
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![ПРИЛОЖЕНИЯ][3]
+    ![Приложения][3]
 
 1. В поле поиска введите **Showpad**.
 
@@ -148,11 +148,11 @@ ms.locfileid: "56188568"
    
     a. В текстовом поле **Name** (Имя) введите имя поставщика идентификаторов (например, название своей компании).
    
-    б) Для параметра **Metadata Source** (Источник метаданных) выберите значение **XML**.
+    2. Для параметра **Metadata Source** (Источник метаданных) выберите значение **XML**.
    
     c. Скопируйте содержимое XML-файла метаданных, скачанного с портала Azure, и вставьте его в текстовое поле **Metadata XML** (XML метаданных).
    
-    4.3. Выберите параметр **Автоматическая подготовка учетных записей для новых пользователей при первом входе**.
+    d. Выберите параметр **Автоматическая подготовка учетных записей для новых пользователей при первом входе**.
    
     д. Нажмите кнопку **Submit**(Отправить).
 
@@ -185,11 +185,11 @@ ms.locfileid: "56188568"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-showpad-test-user"></a>Создание тестового пользователя Showpad
 

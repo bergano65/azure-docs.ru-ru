@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/31/2017
 ms.author: kmouss;aglick
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 70aec41c885ab81371f5318f7557b0e628ac3308
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
-ms.translationtype: HT
+ms.openlocfilehash: dc71e8564b35f4fdd4153a04c66a3d8c5df88c30
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30915421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61478850"
 ---
 # <a name="what-to-do-in-the-event-that-an-azure-service-disruption-impacts-azure-vms"></a>Что делать, если прерывание работы службы Azure влияет на виртуальные машины Azure
 Корпорация Майкрософт прилагает все усилия для того, чтобы наши службы всегда были доступны. Иногда по независящим от нас обстоятельствам происходят незапланированные нарушения работы служб.
@@ -33,7 +33,7 @@ ms.locfileid: "30915421"
 
 Чтобы помочь вам в таких ситуациях, мы предлагаем следующие рекомендации для виртуальных машин Azure. Эти рекомендации нужно применять в случае сбоя службы во всем регионе, в котором развернуто приложение виртуальной машины Azure.
 
-## <a name="option-1-initiate-a-failover-by-using-azure-site-recovery"></a>Вариант 1. Инициация отработки отказа с помощью Azure Site Recovery
+## <a name="option-1-initiate-a-failover-by-using-azure-site-recovery"></a>Вариант 1. Запуск отработки отказа с помощью Azure Site Recovery
 Для виртуальных машин можно настроить службу Azure Site Recovery, которая позволяет быстро восстановить приложение одним щелчком мыши. Репликацию можно выполнять в выбранном регионе Azure, не ограничиваясь парными регионами. Вы можете начать с [репликации виртуальных машин](https://aka.ms/a2a-getting-started). Вы можете [создать план восстановления](../site-recovery/site-recovery-create-recovery-plans.md), чтобы автоматизировать всю процедуру отработки отказа для вашего приложения. Вы можете заранее [проверить процедуры отработки отказа](../site-recovery/site-recovery-test-failover-to-azure.md) без влияния на рабочее приложение или текущую репликацию. В случае сбоя основного региона вам потребуется просто [запустить отработку отказа](../site-recovery/site-recovery-failover.md) и перенести приложение в целевой регион.
 
 
@@ -48,7 +48,7 @@ ms.locfileid: "30915421"
 >
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Начните [защищать приложения, работающие на виртуальных машинах Azure](https://aka.ms/a2a-getting-started), с помощью Azure Site Recovery
 

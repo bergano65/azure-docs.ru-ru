@@ -10,11 +10,11 @@ ms.date: 01/10/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: 85e574a56380384b10d0916385a8816fd26c2eeb
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54244806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61292476"
 ---
 # <a name="search-explorer-for-querying-data-in-azure-search"></a>Проводник поиска для запроса в Поиске Azure 
 
@@ -137,7 +137,7 @@ ms.locfileid: "54244806"
 + Синтаксис выражений запросов и фильтров должен поддерживаться Поиском Azure. По умолчанию используется [простой синтаксис](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search), но при необходимости можно использовать [полный запрос Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search), чтобы создавать более эффективные запросы. Для [выражений фильтров](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search) используется синтаксис OData.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о синтаксисе запросов и примеры см. в следующих ресурсах.
 

@@ -12,11 +12,11 @@ ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 6838f4db240a0712eece7a97bc2cfe99efb87215
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57454958"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61429753"
 ---
 # <a name="scenarios-for-advanced-analytics-in-azure-machine-learning"></a>Сценарии для расширенной аналитики в Машинном обучении Azure
 В этой статье описаны различные источники примеров данных и типовые сценарии, в которых можно использовать [процесс обработки и анализа данных группы (TDSP)](overview.md). Процесс TDSP предоставляет систематический подход для совместной работы групп над созданием интеллектуальных приложений. В представленных сценариях продемонстрированы варианты рабочих процессов обработки данных на основе характеристик данных, исходных расположений и целевых репозиториев в Azure.
@@ -89,7 +89,7 @@ ms.locfileid: "57454958"
    Вариант \#1. Использование среды SQL Server Management Studio.
    
    * Войдите в виртуальную машину SQL Server.
-   * Запустите среду SQL Server Management Studio.
+   * Запустить среду SQL Server Management Studio.
    * Создайте базу данных и целевые таблицы.
    * Используйте один из методов массового импорта для загрузки локальных файлов виртуальной машины.
    
@@ -128,7 +128,7 @@ ms.locfileid: "57454958"
    
        storage container to local-VM folder.
    
-   c.  Запустите среду SQL Server Management Studio.
+   c.  Запустить среду SQL Server Management Studio.
    
    d.  Создайте базу данных и целевые таблицы.
    
@@ -164,7 +164,7 @@ ms.locfileid: "57454958"
    
    2.  Скачайте файлы данных из контейнера хранилища Azure в локальную папку виртуальной машины.
    
-   c.  Запустите среду SQL Server Management Studio.
+   c.  Запустить среду SQL Server Management Studio.
    
    d.  Создайте базу данных и целевые таблицы.
    
