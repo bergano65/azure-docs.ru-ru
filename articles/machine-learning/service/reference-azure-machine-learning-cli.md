@@ -12,11 +12,11 @@ author: jpe316
 ms.date: 12/04/2018
 ms.custom: seodec18
 ms.openlocfilehash: 2504ca9cb785529a9eab321c2521db46390632b7
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59789179"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60752995"
 ---
 # <a name="use-the-cli-extension-for-azure-machine-learning-service"></a>Использование расширения интерфейса командной строки для Службы машинного обучения Azure
 
@@ -47,7 +47,7 @@ CLI для Машинного обучения Azure является расши
 
 * [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
 
-## <a name="install-the-extension"></a>Установка расширения
+## <a name="install-the-extension"></a>Установить расширение
 
 Чтобы установить расширение интерфейса командной строки Машинного обучения, выполните следующую команду:
 

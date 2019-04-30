@@ -9,11 +9,11 @@ ms.date: 03/06/2019
 ms.author: tamram
 ms.subservice: common
 ms.openlocfilehash: 52226d07595120395909dd5f47d5d896f5cdaa75
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59798799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61483662"
 ---
 # <a name="azure-storage-account-overview"></a>Общие сведения об учетной записи хранения
 
@@ -31,7 +31,7 @@ ms.locfileid: "59798799"
 
 - большие двоичные объекты (все типы: блочные, добавочные, страничные);
 - Файлы
-- диски;
+- Диски
 - Очереди
 - Таблицы
 
@@ -48,7 +48,7 @@ ms.locfileid: "59798799"
 
 - большие двоичные объекты (все типы);
 - Файлы
-- диски;
+- Диски
 - Очереди
 - Таблицы
 

@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 02/27/2017
 ms.author: alkohli
 ms.openlocfilehash: a992851deda0659509c0ee4ea5de76b19734f017
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52867618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62128844"
 ---
 # <a name="use-storsimple-device-manager-to-manage-storage-account-credentials-for-storsimple-virtual-array"></a>Управление учетными данными учетной записи хранения для виртуального массива StorSimple с помощью диспетчера устройств StorSimple
 
@@ -150,6 +150,6 @@ ms.locfileid: "52867618"
    
     ![Синхронизация ключа доступа](./media/storsimple-virtual-array-manage-storage-accounts/ova-sync-access-key.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [администрировать виртуальный массив StorSimple](storsimple-ova-web-ui-admin.md).
 

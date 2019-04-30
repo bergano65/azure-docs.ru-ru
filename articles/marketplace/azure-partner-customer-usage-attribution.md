@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 11/17/2018
 ms.author: yijenj
 ms.openlocfilehash: 078815185ddb6018a394401f57f7557ac3aedb73
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59050158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62123432"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -35,7 +35,7 @@ ms.locfileid: "59050158"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="use-resource-manager-templates"></a>Использование шаблонов Resource Manager
+## <a name="use-resource-manager-templates"></a>Использование шаблонов диспетчера ресурсов
 Многие решения партнеров развертываются в подписке клиента с помощью шаблонов Resource Manager. Если у вас есть шаблон Resource Manager, которая доступна в Azure Marketplace, на сайте GitHub, а также краткое руководство, процесс внесения изменений в шаблон, чтобы включить однозначного соответствия примитивов использования клиента следует очень легко.
 
 Дополнительные сведения о создании и публикации шаблонов решений см. в статье

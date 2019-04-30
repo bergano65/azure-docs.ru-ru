@@ -11,11 +11,11 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
 ms.openlocfilehash: 019945c48342238a1caa7611bdff6d06fd1e2bd9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58883400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60871721"
 ---
 # <a name="how-to-index-cosmos-db-using-an-azure-search-indexer"></a>Как индексировать Cosmos DB с помощью индексатора поиска Azure
 
@@ -169,12 +169,12 @@ ms.locfileid: "58883400"
 
 Текст запроса содержит определение источника данных, который должен включать следующие поля.
 
-| Поле   | ОПИСАНИЕ |
+| Поле   | Описание |
 |---------|-------------|
-| **name** | Обязательный элемент. Выберите любое имя для представления объектом источника данных. |
-|**type**| Обязательный элемент. Этот параметр должен содержать значение `documentdb`. |
-|**credentials** | Обязательный элемент. Должен быть строкой подключения Cosmos DB.<br/>Для коллекций SQL строки подключения, в следующем формате: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/>Для коллекций MongoDB добавьте **типа API = MongoDb** строку подключения:<br/>`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если вы укажете номер порта, служба поиска Azure не сможет индексировать базу данных Azure Cosmos DB.|
-| **container** | содержит следующие элементы: <br/>**name**. Обязательный элемент. Укажите идентификатор коллекции базы данных для индексирования.<br/>**query**. Необязательный элемент. Можно указать запрос на сведение произвольного документа JSON в неструктурированную схему, индексируемую поиском Azure.<br/>Для коллекций MongoDB запросы не поддерживаются. |
+| **name** | Обязательный. Выберите любое имя для представления объектом источника данных. |
+|**type**| Обязательный. Этот параметр должен содержать значение `documentdb`. |
+|**credentials** | Обязательный. Должен быть строкой подключения Cosmos DB.<br/>Для коллекций SQL строки подключения, в следующем формате: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/>Для коллекций MongoDB добавьте **типа API = MongoDb** строку подключения:<br/>`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если вы укажете номер порта, служба поиска Azure не сможет индексировать базу данных Azure Cosmos DB.|
+| **container** | содержит следующие элементы: <br/>**name**. Обязательный. Укажите идентификатор коллекции базы данных для индексирования.<br/>**query**. Необязательный элемент. Можно указать запрос на сведение произвольного документа JSON в неструктурированную схему, индексируемую поиском Azure.<br/>Для коллекций MongoDB запросы не поддерживаются. |
 | **dataChangeDetectionPolicy** | (рекомендуется). Ознакомьтесь с разделом [Индексация измененных документов](#DataChangeDetectionPolicy).|
 |**dataDeletionDetectionPolicy** | Необязательный элемент. Ознакомьтесь с разделом [удаленных документов](#DataDeletionDetectionPolicy).|
 
@@ -250,10 +250,10 @@ ms.locfileid: "58883400"
 ### <a name="mapping-between-json-data-types-and-azure-search-data-types"></a>Сопоставление типов данных JSON и типов данных службы поиска Azure
 | Тип данных JSON | Совместимые типы полей целевого индекса |
 | --- | --- |
-| Bool |Edm.Boolean, Edm.String |
+| Логический |Edm.Boolean, Edm.String |
 | Числа, которые выглядят как целые числа |Edm.Int32, Edm.Int64, Edm.String |
 | Числа, которые выглядят как числа с плавающей запятой |Edm.Double, Edm.String |
-| Строка |Edm.String |
+| String |Edm.String |
 | Массивы типов-примитивов, например [a, b, c] |Collection(Edm.String) |
 | Строки, которые выглядят как даты |Edm.DateTimeOffset, Edm.String |
 | Объекты GeoJSON, например { "type": "Point", "coordinates": [long, lat] } |Edm.GeographyPoint |

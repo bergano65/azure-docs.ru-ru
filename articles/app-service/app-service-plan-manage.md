@@ -17,11 +17,11 @@ ms.date: 11/09/2017
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: 936abe80a66c1dbe99e7d8a255fe8995a2df0803
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53715667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60852301"
 ---
 # <a name="manage-an-app-service-plan-in-azure"></a>Управлением планом службы приложений в Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "53715667"
 
       ![Создание плана службы приложений.][createASP] 
 
-   b. В поле **План службы приложений** укажите имя плана.
+   2. В поле **План службы приложений** укажите имя плана.
 
    c. В поле **Расположение** выберите соответствующее расположение.
 
@@ -110,7 +110,7 @@ ms.locfileid: "53715667"
 > [!IMPORTANT]
 > За планы службы приложений всегда взимается плата, даже если с ними не связано ни одно приложение, так как план всегда резервирует настроенные экземпляры виртуальных машин.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Увеличение масштаба приложения в Azure](web-sites-scale.md)

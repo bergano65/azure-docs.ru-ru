@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 05/10/2018
 ms.author: roiyz
 ms.openlocfilehash: 71aecc1748e70e2119b1f54c21a0f705afc5d5d0
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55731314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60800058"
 ---
 # <a name="manage-administrative-users-ssh-and-check-or-repair-disks-on-linux-vms-using-the-vmaccess-extension-with-the-azure-cli"></a>Управление пользователями с правами администратора, SSH и проверка или восстановление дисков на виртуальных машинах Linux с помощью расширения VMAccess и Azure CLI
 ## <a name="overview"></a>Обзор
@@ -31,12 +31,12 @@ ms.locfileid: "55731314"
 > [!NOTE]
 > Если вы с помощью VMAccess сбрасываете пароль виртуальной машины после установки расширения входа в AAD, это расширение необходимо повторно запустить, чтобы повторно активировать его на виртуальной машине.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 ### <a name="operating-system"></a>Операционная система
 
 Расширение VMAccess можно выполнять с использованием следующих дистрибутивов Linux.
 
-| Дистрибутив | Version (версия) |
+| Дистрибуция | Version |
 |---|---|
 | Ubuntu | 16.04 LTS, 14.04 LTS и 12.04 LTS |
 | Debian | Debian 7.9+, 8.2+ |

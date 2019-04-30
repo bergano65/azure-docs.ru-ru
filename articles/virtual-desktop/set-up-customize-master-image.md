@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 04/03/2019
 ms.author: helohr
 ms.openlocfilehash: aff96931f95442c67d08521e72952dd79dad44e2
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59999881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60870279"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Подготовка и настройка главного образа VHD
 
 В этой статье о том, как подготовить образ master виртуального жесткого диска (VHD) для передачи в Azure, в том числе о способах создания виртуальных машин (ВМ), установите и настройте программное обеспечение на них. Эти инструкции предназначены для конфигурации предварительного просмотра конкретных виртуального рабочего стола Windows, которая может использоваться с существующим процессам вашей организации.
 
-## <a name="create-a-vm"></a>Создание виртуальной машины
+## <a name="create-a-vm"></a>Создание ВМ
 
 Нескольких сеансов Windows 10 Корпоративная доступна в коллекции образов Azure. Существует два варианта для настройки этого образа.
 
@@ -368,7 +368,7 @@ remove CorporateWerServer* from Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\W
 Теперь, когда у вас есть образ, можно создать или обновить пулы узлов. Дополнительные сведения о том, как создавать и обновлять пулы узлов, см. в разделе со следующими статьями:
 
 - [Создание пула узлов с помощью шаблона Azure Resource Manager](create-host-pools-arm-template.md)
-- [Руководство Создание пула узла с помощью Azure Marketplace](create-host-pools-azure-marketplace.md)
+- [Учебник. Создание пула узла с помощью Azure Marketplace](create-host-pools-azure-marketplace.md)
 - [Создание пула узла с помощью PowerShell](create-host-pools-powershell.md)
 - [Настройка общей папки профиля пользователя в пуле узлов](create-host-pools-user-profile.md)
 - [Настройка метода балансировки нагрузки виртуальный рабочий стол Windows](configure-host-pool-load-balancing.md)

@@ -1,7 +1,6 @@
 ---
 title: Настройка параметров Spark для Azure HDInsight
 description: Сведения о настройке Spark для кластера Azure HDInsight.
-services: hdinsight
 author: maxluk
 ms.author: maxluk
 ms.reviewer: jasonh
@@ -9,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: 91f706b882c4f245dbd111b0f9cac269db6fd65f
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: 77f4ec9cce5d02ea4cbcc4968d02773a13edfe5b
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53652241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62098391"
 ---
 # <a name="configure-apache-spark-settings"></a>Настройка параметров Apache Spark
 
@@ -145,7 +144,7 @@ YARN управляет максимальным объемом памяти, и
 
 Существует ряд основных параметров конфигурации, которые необходимо отслеживать и настраивать, чтобы задания Spark выполнялись прогнозируемым и эффективным образом. Эти параметры помогают определить лучшую конфигурацию кластера Spark для конкретных рабочих нагрузок.  Вам также необходимо следить за выполнением длительных или ресурсоемких выполнений заданий Spark.  Наиболее распространенной проблемой является нехватка памяти. Причинами этой проблемы можно назвать неправильные конфигурации (в частности, неправильные размеры исполнителей), длительные операции и задачи, которые приводят к декартовым операциям.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Компоненты и версии Apache Hadoop, доступные в HDInsight](../hdinsight-component-versioning.md)
 * [Управление ресурсами для кластера Apache Spark в HDInsight](apache-spark-resource-manager.md)

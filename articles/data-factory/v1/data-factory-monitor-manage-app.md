@@ -14,11 +14,11 @@ ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 5b70edd4f65538b52c70881258bc500a34b04d80
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54025425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60826753"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-monitoring-and-management-app"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью приложения для мониторинга и управления
 > [!div class="op_single_selector"]
@@ -160,7 +160,7 @@ ms.locfileid: "54025425"
 
 <table>
 <tr>
-    <th align="left">Status</th><th align="left">Подсостояние</th><th align="left">ОПИСАНИЕ</th>
+    <th align="left">Статус</th><th align="left">Подсостояние</th><th align="left">Описание</th>
 </tr>
 <tr>
     <td rowspan="8">Waiting</td><td>ScheduleTime</td><td>Время выполнения окна действий еще не наступило.</td>
@@ -188,7 +188,7 @@ ms.locfileid: "54025425"
 </tr>
 <tr>
 <tr>
-<td rowspan="2">InProgress</td><td>Validating</td><td>Проверка выполняется.</td>
+<td rowspan="2">Выполняется</td><td>Выполняется проверка</td><td>Проверка выполняется.</td>
 </tr>
 <td>-</td>
 <td>Выполняется обработка окна действия.</td>
@@ -197,18 +197,18 @@ ms.locfileid: "54025425"
 <td rowspan="4">Сбой</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
 </tr>
 <tr>
-<td>Canceled</td><td>Окно действий отменено пользователем.</td>
+<td>Отменено</td><td>Окно действий отменено пользователем.</td>
 </tr>
 <tr>
-<td>Проверка</td><td>Сбой проверки.</td>
+<td>Проверка</td><td>Проверка не пройдена.</td>
 </tr>
 <tr>
 <td>-</td><td>Не удалось создать или проверить окно действий.</td>
 </tr>
-<td>Ready</td><td>-</td><td>Окно действия готово к использованию.</td>
+<td>Готово</td><td>-</td><td>Окно действия готово к использованию.</td>
 </tr>
 <tr>
-<td>Skipped</td><td>-</td><td>Окно действий не обработано.</td>
+<td>Пропущен</td><td>-</td><td>Окно действий не обработано.</td>
 </tr>
 <tr>
 <td>Нет</td><td>-</td><td>Окно действий, которое ранее существовало с другим состоянием, но было сброшено.</td>

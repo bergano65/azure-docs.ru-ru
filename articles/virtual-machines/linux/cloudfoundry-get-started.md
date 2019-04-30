@@ -17,13 +17,13 @@ ms.workload: infrastructure-services
 ms.date: 01/19/2017
 ms.author: seanmck
 ms.openlocfilehash: 68ae01b814de08098c0ba6b5713f420cfebc3d97
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58001262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62127033"
 ---
-# <a name="cloud-foundry-on-azure"></a>Cloud Foundry в Azure
+# <a name="cloud-foundry-on-azure"></a>Cloud Foundry на базе Azure
 
 Cloud Foundry — это платформа как услуга (PaaS) с открытым кодом, предназначенная для сборки, развертывания и эксплуатации 12-факторных приложений, разработанных с использованием разных языков и платформ. В этом документе описываются варианты запуска Cloud Foundry в Azure и инструкции по началу работы.
 

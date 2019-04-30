@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: azfuncdf
 ms.openlocfilehash: aa9563266f6b43e3bc2f21fbc0b340c86c5895ae
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59608737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60862091"
 ---
 # <a name="durable-functions-patterns-and-technical-concepts-azure-functions"></a>Устойчивые функции шаблонов и технические концепции (функции Azure)
 
@@ -226,7 +226,7 @@ module.exports = async function (context, req) {
 
 В предыдущих примерах, принимает функцию, активируемую HTTP `functionName` значения из входящего URL-адреса и передает значение [StartNewAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_StartNewAsync_). [CreateCheckStatusResponse](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_CreateCheckStatusResponse_System_Net_Http_HttpRequestMessage_System_String_) затем привязки API возвращает ответ, содержащий `Location` заголовок и Дополнительные сведения об экземпляре. Данные можно использовать позже для поиска состояния запущенного экземпляра или завершить его работу.
 
-### <a name="monitoring"></a>Шаблон 4. Мониторинг
+### <a name="monitoring"></a>Шаблон 4. Монитор
 
 Шаблон монитора представляет процесс гибкая, повторяющихся в рабочем процессе. Примером опрос, пока не будут выполнены определенные условия. Можно использовать обычный [триггера таймера](../functions-bindings-timer.md) для реализации простой сценарий, например задание периодической очистки, но его интервал является статическим, и усложняет управление временем существования экземпляра. Устойчивые функции позволяют создавать гибкие интервалы повторения, управление временем существования задачи и создавать несколько процессов мониторинга в рамках одной оркестрации.
 
@@ -397,7 +397,7 @@ module.exports = async function (context) {
 
 Поведение воспроизведения оркестратора кода создает ограничивает тип кода, который может записывать в функцию оркестратора. Например код оркестратора должен быть детерминированным, так как оно вызов будет воспроизведен несколько раз, и он должен создавать тот же результат при каждом. Полный список ограничений, см. в разделе [ограничения кода оркестратора](durable-functions-checkpointing-and-replay.md#orchestrator-code-constraints).
 
-## <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика.
+## <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика
 
 Расширение устойчивых функций автоматически отправляет структурированные данные отслеживания для [Application Insights](../functions-monitoring.md) Если вы настроили приложение-функцию с помощью ключа инструментирования Azure Application Insights. Данные отслеживания можно использовать для отслеживания хода выполнения ваших оркестраций и действий.
 

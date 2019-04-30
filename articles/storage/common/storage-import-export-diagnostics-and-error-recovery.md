@@ -9,11 +9,11 @@ ms.date: 01/23/2017
 ms.author: muralikk
 ms.subservice: common
 ms.openlocfilehash: 306b94fbe23e0ae92dcd59f7a87b7bb58ef7c3b6
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55454663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61478816"
 ---
 # <a name="diagnostics-and-error-recovery-for-azure-importexport-jobs"></a>Диагностика и восстановление после ошибок для заданий импорта и экспорта Azure
 Для каждого обрабатываемого диска служба импорта и экспорта Azure создает журнал ошибок в соответствующей учетной записи хранения. Можно также включить ведение подробного журнала, задав для свойства `LogLevel` значение `Verbose` при вызове операции [Put Job](/rest/api/storageimportexport/jobs) или [Update Job Properties](/rest/api/storageimportexport/jobs).
@@ -54,6 +54,6 @@ ms.locfileid: "55454663"
 
 Возможны ситуации, когда некоторые части задания импорта или экспорта не завершаются успешно, хотя само задание считается выполненным. В этом случае можно передать или скачать отсутствующие части данных по сети, можно также создать новое задание для передачи данных. Ознакомьтесь со [справочником по инструменту импорта и экспорта Azure](storage-import-export-tool-how-to-v1.md), чтобы узнать, как восстанавливать данные по сети.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование REST API службы импорта и экспорта Azure](storage-import-export-using-the-rest-api.md)

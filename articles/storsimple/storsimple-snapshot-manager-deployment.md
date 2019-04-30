@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: v-sharos
 ms.openlocfilehash: ee17e4b69d1e6c9de465e4241ee2237361e320b7
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55168011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61077741"
 ---
 # <a name="deploy-the-storsimple-snapshot-manager-mmc-snap-in"></a>Развертывание оснастки консоли управления диспетчера моментальных снимков StorSimple (необязательно)
 
@@ -211,7 +211,7 @@ ms.locfileid: "55168011"
    2. На странице **Службы** выберите пункт **Microsoft StorSimple Management Service** (Служба управления Microsoft StorSimple).
    3. В области справа в разделе **Microsoft StorSimple Management Service** (Служба управления Microsoft StorSimple) щелкните **Перезапустить службу**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о StorSimple Snapshot Manager см. в статье [Что такое диспетчер моментальных снимков StorSimple?](storsimple-what-is-snapshot-manager.md)
 * Чтобы узнать больше о пользовательском интерфейсе StorSimple Snapshot Manager, см. статью [Пользовательский интерфейс диспетчера моментальных снимков StorSimple](storsimple-use-snapshot-manager.md).
 * Чтобы узнать больше об использовании StorSimple Snapshot Manager см. статью [Использование диспетчера моментальных снимков StorSimple для администрирования решения StorSimple](storsimple-snapshot-manager-admin.md).

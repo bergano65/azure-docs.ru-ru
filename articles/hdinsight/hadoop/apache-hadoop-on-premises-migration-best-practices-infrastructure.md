@@ -1,7 +1,6 @@
 ---
 title: Миграция локальных кластеров Apache Hadoop в HDInsight Azure — рекомендации по использованию инфраструктуры
 description: Ознакомьтесь с рекомендациями по использованию инфраструктуры в рамках миграции локальных кластеров Hadoop в Azure HDInsight.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonwhowell
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/05/2019
 ms.author: hrasheed
-ms.openlocfilehash: 4fe47feff6ac3a58ba4db8c700a3e34b2cdc0df9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 1bd06507bd8a20cf504c1ff4cd9fe7e3b9196a3c
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59274695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62129320"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---infrastructure-best-practices"></a>Миграция локальных кластеров Apache Hadoop в HDInsight Azure — рекомендации по использованию инфраструктуры
 
@@ -56,7 +55,7 @@ ms.locfileid: "59274695"
 |Ignite|IaaS
 |Jethro|IaaS 
 |Mapador|IaaS 
-|Mongo|IaaS (CosmosDB — альтернатива в Azure)
+|Монго|IaaS (CosmosDB — альтернатива в Azure)
 |NiFi|IaaS 
 |Presto|IaaS или HDInsight граничный узел
 |Python 2;|PaaS 
@@ -68,7 +67,7 @@ ms.locfileid: "59274695"
 |Waterline|HDInsight граничный узел
 |Наборы потоков|HDInsight edge 
 |Palantir|IaaS 
-|Sailpoint|IaaS 
+|SailPoint|IaaS 
 
 Дополнительные сведения см. в статье [Компоненты Hadoop, доступные в разных версиях HDInsight](../hdinsight-component-versioning.md#apache-hadoop-components-available-with-different-hdinsight-versions)
 
@@ -87,8 +86,8 @@ HDInsight предоставляет предварительно созданн
 - установка Presto;
 - установка Solr;
 - установка Giraph;
-- предварительная загрузка библиотек Hive.
-- Установка или обновление Mono
+- Предварительно загрузить библиотеки Hive
+- Установить или обновить Mono
 
 > [!Note]  
 > HDInsight не обеспечивает прямую поддержку пользовательских компонентов Hadoop или компонентов, установленных с помощью действий сценариев.

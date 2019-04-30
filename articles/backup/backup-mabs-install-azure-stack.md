@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: raynew
 ms.openlocfilehash: d3a2ffdedda7f541fb1a3f37a8b40bc7af3dcb57
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59996515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60852145"
 ---
 # <a name="install-azure-backup-server-on-azure-stack"></a>Установка Azure Backup Server в Azure Stack
 
@@ -35,11 +35,11 @@ Azure Backup Server защищает следующие рабочие нагр�
 | Windows Server 2012 R2: Datacenter/Enterprise/Standard | Тома, файлы, папки |
 | Windows Server 2012: Datacenter/Enterprise/Standard | Тома, файлы, папки |
 | Windows Server 2008 R2: Datacenter/Enterprise/Standard | Тома, файлы, папки |
-| SQL Server 2016 | База данных |
-| SQL Server 2014 | База данных |
+| SQL Server 2016 | База данных |
+| SQL Server 2014 | База данных |
 | SQL Server 2012 с пакетом обновления 1 (SP1) | База данных |
 | SharePoint 2016 | Ферма, база данных, внешний интерфейс, веб-сервер |
-| SharePoint 2013 | Ферма, база данных, внешний интерфейс, веб-сервер |
+| SharePoint 2013 | Ферма, база данных, внешний интерфейс, веб-сервер |
 | SharePoint 2010 | Ферма, база данных, внешний интерфейс, веб-сервер |
 
 ## <a name="prerequisites-for-the-azure-backup-server-environment"></a>Предварительные требования для среды Azure Backup Server

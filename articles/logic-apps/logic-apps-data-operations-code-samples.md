@@ -4,18 +4,19 @@ description: Примеры кода для определения действ�
 services: logic-apps
 ms.service: logic-apps
 author: ecfan
-ms.author: estfan
+ms.author: v-yiso
 manager: jeconnoc
 ms.topic: reference
-ms.date: 07/25/2018
+origin.date: 07/25/2018
+ms.date: 12/10/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.openlocfilehash: 8de70e8df50b79f27c19c74307d9321ff8cd1eb5
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50229969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62128555"
 ---
 # <a name="data-operation-code-samples-for-azure-logic-apps"></a>Примеры кода операций с данными для Azure Logic Apps
 
@@ -25,7 +26,7 @@ ms.locfileid: "50229969"
 
 <a name="compose-action-example"></a>
 
-## <a name="compose"></a>Docker Compose
+## <a name="compose"></a>Создание
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Создать**](../logic-apps/logic-apps-perform-data-operations.md#compose-action).
 
@@ -185,7 +186,7 @@ ms.locfileid: "50229969"
 
 <a name="filter-array-action-example"></a>
 
-## <a name="filter-array"></a>Фильтрация массива
+## <a name="filter-array"></a>Фильтр массива
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Фильтровать массив**](../logic-apps/logic-apps-perform-data-operations.md#filter-array-action).
 
@@ -267,7 +268,7 @@ ms.locfileid: "50229969"
 
 <a name="parse-json-action-example"></a>
 
-## <a name="parse-json"></a>Parse JSON
+## <a name="parse-json"></a>Анализ JSON
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Анализ JSON**](../logic-apps/logic-apps-perform-data-operations.md#parse-json-action).
 
@@ -326,7 +327,7 @@ ms.locfileid: "50229969"
 
 <a name="select-action-example"></a>
 
-## <a name="select"></a>Выберите пункт
+## <a name="select"></a>Выберите
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Выбрать пункт**](../logic-apps/logic-apps-perform-data-operations.md#select-action).
 
@@ -372,6 +373,6 @@ ms.locfileid: "50229969"
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Выполнение операций с данными](../logic-apps/logic-apps-perform-data-operations.md)

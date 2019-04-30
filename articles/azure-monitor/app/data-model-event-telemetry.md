@@ -13,11 +13,11 @@ ms.date: 04/25/2017
 ms.reviewer: sergkanz
 ms.author: mbullwin
 ms.openlocfilehash: 8e519e5a5e5fe6b893fa5663e1426630f46f885f
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54118410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60900856"
 ---
 # <a name="event-telemetry-application-insights-data-model"></a>Телеметрия событий. Модель данных Application Insights
 
@@ -39,7 +39,7 @@ ms.locfileid: "54118410"
 
 [!INCLUDE [application-insights-data-model-measurements](../../../includes/application-insights-data-model-measurements.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - В [этой статье](data-model.md) представлены типы данных и модель данных для Application Insights.
 - [Написание пользовательской телеметрии событий](../../azure-monitor/app/api-custom-events-metrics.md#trackevent)

@@ -16,11 +16,11 @@ ms.date: 07/11/2017
 ms.author: stefsch
 ms.custom: seodec18
 ms.openlocfilehash: 35e0dc5dabaf1602b87ec6a8be86ed609f3ea12f
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56107384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62130761"
 ---
 # <a name="how-to-create-an-ilb-ase-using-azure-resource-manager-templates"></a>Создание среды службы приложений с внутренним балансировщиком нагрузки с помощью шаблонов Azure Resource Manager
 
@@ -88,7 +88,7 @@ ms.locfileid: "56107384"
 Ниже перечислены параметры, содержащиеся в файле *azuredeploy.parameters.json* .
 
 * *appServiceEnvironmentName*:  имя настраиваемой ASE с внутренним балансировщиком нагрузки.
-* *existingAseLocation*:  текстовая строка, содержащая регион Azure, где развернута ASE с внутренним балансировщиком нагрузки.  Например:   центрально-южная часть США.
+* *existingAseLocation*:  текстовая строка, содержащая регион Azure, где развернута ASE с внутренним балансировщиком нагрузки.  Пример.  центрально-южная часть США.
 * *pfxBlobString*:  представление PFX-файла в виде строки в кодировке Base64.  Нужно скопировать строку, содержащуюся в файле exportedcert.pfx.b64, и вставить ее в качестве значения атрибута *pfxBlobString* в фрагменте кода выше.
 * *Password*:  пароль, используемый для защиты PFX-файла.
 * *certificateThumbprint*:  отпечаток сертификата.  Если вы получите это значение из Powershell (например, значение *$certificate.Thumbprint* в приведенном выше фрагменте кода), его можно использовать без каких-либо изменений.  Однако если вы скопируете это значение в диалоговом окне сертификатов Windows, в нем нужно удалить лишние пробелы.  *CertificateThumbprin* должен выглядеть примерно так:  AF3143EB61D43F6727842115BB7F17BBCECAECAE

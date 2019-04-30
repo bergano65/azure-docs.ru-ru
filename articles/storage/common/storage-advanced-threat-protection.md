@@ -9,11 +9,11 @@ ms.date: 04/03/2019
 ms.author: monhaber
 ms.manager: shaik
 ms.openlocfilehash: 78338ece1bc70d8410bd71183a34aaf1a52f2d1b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58904123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61484220"
 ---
 # <a name="advanced-threat-protection-for-azure-storage"></a>Расширенная защита от угроз для службы хранилища Azure
 
@@ -30,7 +30,7 @@ Advanced Threat Protection для службы хранилища Azure прин
 
 ## <a name="set-up-advanced-threat-protection"></a>Настройка Advanced Threat Protection 
 
-### <a name="using-the-portal"></a>С помощью портала
+### <a name="using-the-portal"></a>Использование портала
 
 1. Запустите портал Azure: [https://portal.azure.com](https://portal.azure.com/).
 
@@ -70,7 +70,7 @@ Advanced Threat Protection для службы хранилища Azure прин
 
     ![Страница определения политики](./media/storage-advanced-threat-protection/storage-atp-policy1.png)
 
-### <a name="using-rest-api"></a>Использование интерфейса REST API
+### <a name="using-rest-api"></a>Использование REST API
 Команды Rest API для создания, обновления или получить параметры Advanced Threat Protection для определенной учетной записи хранения.
 
 * [Создание Advanced Threat Protection.](https://docs.microsoft.com/rest/api/securitycenter/advancedthreatprotection/create)

@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 02/06/2019
 ms.author: magoedte
 ms.openlocfilehash: 9194d5fe6553607ac5a0bb4e133da97f53790984
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56005358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61424760"
 ---
 # <a name="take-action-with-an-automation-runbook-from-a-log-analytics-log-search-result"></a>Выполнение действия с Runbook службы автоматизации на основе результатов поиска Log Analytics
 
@@ -41,7 +41,7 @@ ms.locfileid: "56005358"
 3. В рабочей области выберите **Журналы (классические)**.  
 4. Выполните поиск на странице "Поиск по журналу".  
 5. В результатах поиска по журналам нажмите кнопку с многоточием слева от полей и в контекстном меню выберите пункт **Выполнить действие с**.<br><br> ![Выбор "Выполнить действие" в результатах поиска](./media/take-action/log-search-takeaction-menuoption.png) 
-6. Нажмите **Запустить Runbook** и выберите модуль Runbook для запуска.  Вы можете выбрать любой runbook в учетной записи службы автоматизации, связанной с рабочей областью Log Analytics.  Обратите внимание на следующее.
+6. Нажмите **Запустить Runbook** и выберите модуль Runbook для запуска.  Вы можете выбрать любой runbook в учетной записи службы автоматизации, связанной с рабочей областью Log Analytics.  Обратите внимание на следующее условия:
 
     * Модули runbook группируются по тегам.
     * Значения входных параметров runbook можно выбрать непосредственно из полей результатов поиска.  Появится раскрывающийся список со всеми доступными для выбора полями в результатах.  
@@ -51,7 +51,7 @@ ms.locfileid: "56005358"
 
 При выборе модуля runbook, который был настроен для [вызова из оповещения Log Analytics](../../automation/automation-create-alert-triggered-runbook.md), он имеет входной параметр с именем **WebhookData** типа **Объект**.  Если входной параметр является обязательным, вам потребуется передать результаты поиска в runbook, чтобы преобразовать строку в формате JSON в тип объекта, что позволит вам выполнить фильтрацию по конкретным элементам, на которые вы будете ссылаться в действиях runbook.  Это можно сделать, выбрав **результат поиска (Объект)** в раскрывающемся списке.<br><br> ![Выбор объекта данных Webhook для параметра runbook](media/take-action/select-runbook-and-properties.png)   
     
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Полный список полей и аспектов для поиска, доступных в Log Analytics, см. в [справочнике по поиску в журналах Log Analytics](../../azure-monitor/log-query/log-query-overview.md).
 * Сведения об автоматическом вызове runbook службы автоматизации см. в статье [Вызов модуля Runbook службы автоматизации Azure из оповещения Log Analytics](../../automation/automation-create-alert-triggered-runbook.md).  

@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 9ee5eec5a5c17e443fe71f0093f09c96cf81ece0
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59998640"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60754816"
 ---
 # <a name="use-the-azure-portal-to-manage-users-on-your-azure-data-box-gateway"></a>Управление пользователями в Шлюзе Azure Data Box с помощью портала Azure 
 
@@ -22,7 +22,7 @@ ms.locfileid: "59998640"
 В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
-> * Добавление пользователей
+> * Добавление пользователя
 > * Изменение пользователя
 > * Удаление пользователя 
 
@@ -36,7 +36,7 @@ ms.locfileid: "59998640"
 Сначала разрешения пользователя определяются при его создании во время создания общей папки. После определения разрешений, связанных с пользователем, их можно изменить с помощью проводника. 
 
 
-## <a name="add-a-user"></a>Добавление пользователей
+## <a name="add-a-user"></a>Добавление пользователя
 
 Выполните на портале Azure шаги ниже, чтобы добавить пользователя.
 

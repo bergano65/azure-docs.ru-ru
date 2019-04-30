@@ -10,11 +10,11 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: 6414f694296ce1f5a8b65ccab30cceaf2172dee7
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53974902"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62126329"
 ---
 # <a name="register-a-new-azure-iot-edge-device-from-the-azure-portal"></a>Регистрация нового устройства Azure IoT Edge на портале Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "53974902"
 
 В этой статье объясняется, как зарегистрировать новое устройство IoT Edge с помощью портала Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) в подписке Azure.
 
@@ -47,6 +47,6 @@ ms.locfileid: "53974902"
 1. На странице **IoT Edge** на портале выберите идентификатор устройства в списке устройств IoT Edge.
 2. Скопируйте значение в поле **Строка подключения (первичный ключ)** или **Строка подключения (вторичный ключ)**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее о [развертывании модулей на устройстве с помощью портала Azure](how-to-deploy-modules-portal.md)

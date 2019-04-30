@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 01/22/2019
 ms.author: spelluru
 ms.openlocfilehash: fdd18b833794c25cb90188ba8bc418d4785492ba
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54464822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60824160"
 ---
 # <a name="monitor-event-grid-message-delivery"></a>Мониторинг доставки сообщений Сетки событий 
 
@@ -76,7 +76,7 @@ ms.locfileid: "54464822"
 
 ![Просмотр метрик событий](./media/monitor-event-delivery/custom-topic-metrics.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о [доставке сообщений и повторных попытках в Сетке событий](delivery-and-retry.md).
 * Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).

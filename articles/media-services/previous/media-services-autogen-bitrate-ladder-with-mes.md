@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.openlocfilehash: bbaf4d490fcebb4cd741a9b83ffc5d7e85699755
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57991866"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61224350"
 ---
 #  <a name="use-azure-media-encoder-standard-to-auto-generate-a-bitrate-ladder"></a>Использование стандартной версии кодировщика мультимедиа Azure для автоматического создания схемы скоростей  
 
@@ -174,7 +174,7 @@ namespace AdaptiveStreamingMESPresest
 ### <a name="example-1"></a>Пример 1
 При исходной высоте 1080 и частоте кадров 29,970 создается 6 слоев видео.
 
-|Слой|Высота:|Ширина|Скорость (кбит/с)|
+|Слой|Высота|Ширина|Скорость (кбит/с)|
 |---|---|---|---|
 |1|1080|1920|6780|
 |2|720|1280|3520|
@@ -186,7 +186,7 @@ namespace AdaptiveStreamingMESPresest
 ### <a name="example-2"></a>Пример 2
 При исходной высоте 720 и частоте кадров 23,970 создается 5 слоев видео.
 
-|Слой|Высота:|Ширина|Скорость (кбит/с)|
+|Слой|Высота|Ширина|Скорость (кбит/с)|
 |---|---|---|---|
 |1|720|1280|2940|
 |2|540|960|1850|
@@ -197,7 +197,7 @@ namespace AdaptiveStreamingMESPresest
 ### <a name="example-3"></a>Пример 3
 При исходной высоте 360 и частоте кадров 29,970 создается 3 слоя видео.
 
-|Слой|Высота:|Ширина|Скорость (кбит/с)|
+|Слой|Высота|Ширина|Скорость (кбит/с)|
 |---|---|---|---|
 |1|360|640|700|
 |2|270|480|440|

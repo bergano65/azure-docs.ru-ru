@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 6dffc7a24bb0c6b006d06a1018364f08abaaee41
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52266700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62128674"
 ---
 # <a name="audit-history-page"></a>Страница "Журнал аудита"
 
@@ -33,6 +33,6 @@ ms.locfileid: "52266700"
 ![Страница "Журнал аудита"](./media/audit-history-page1.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью следующего пункта меню навигации можно получить доступ к функции [Seller Insights](./cpp-insights-page.md) на Портале Cloud Partner, которая предоставляет наборы настраиваемых панелей мониторинга для предложений в Marketplace.

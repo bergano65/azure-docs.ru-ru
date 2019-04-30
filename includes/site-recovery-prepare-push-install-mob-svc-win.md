@@ -1,15 +1,10 @@
 ---
-author: rayne-wiselman
-ms.service: site-recovery
-ms.topic: include
-ms.date: 10/26/2018
-ms.author: raynew
 ms.openlocfilehash: ffc9b09c72ef1bf5180a0d626908d09b6fdd41ca
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "58115741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122799"
 ---
 ### <a name="prepare-for-a-push-installation-on-a-windows-computer"></a>Подготовка к принудительной установке на компьютер Windows
 
@@ -18,12 +13,12 @@ ms.locfileid: "58115741"
 
    > [!NOTE]
    > Если учетная запись домена не используется, на локальном компьютере нужно отключить управление удаленным доступом пользователей. Чтобы отключить контроль доступа удаленных пользователей, в разделе реестра HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System, добавьте параметр DWORD: **LocalAccountTokenFilterPolicy**. Присвойте ему значение **1**. Для этой задачи выполните в командной строке следующую команду:  
-   `REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1`
+   > `REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1`
    >
    >
 1. В брандмауэре Windows на компьютере, который нужно защитить, выберите **Разрешить запуск программы или компонента через брандмауэр Windows**. Активируйте **общий доступ к файлам и принтерам** и **инструментарий управления Windows (WMI)**. Для компьютеров, принадлежащих домену, можно настроить политику брандмауэра с помощью объекта групповой политики.
 
-   ![Параметры брандмауэра](./media/site-recovery-prepare-push-install-mob-svc-win/mobility1.png)
+   ![Настройки брандмауэра](./media/site-recovery-prepare-push-install-mob-svc-win/mobility1.png)
 
 1. Добавьте учетную запись, созданную в CSPSConfigtool. Выполните следующие действия.
 
@@ -36,3 +31,5 @@ ms.locfileid: "58115741"
     d. Добавьте созданную учетную запись.
 
     д. Введите учетные данные, используемые при включении репликации для компьютера.
+<!--Update_Description: wording update-->
+<!--ms.date: 09/17/2018-->

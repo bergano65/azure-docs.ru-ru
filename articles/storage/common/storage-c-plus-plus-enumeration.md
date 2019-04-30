@@ -9,11 +9,11 @@ ms.date: 01/23/2017
 ms.author: dineshm
 ms.subservice: common
 ms.openlocfilehash: 13ddb4d64908421e999174623003acd2fb24024d
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58014895"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61483457"
 ---
 # <a name="list-azure-storage-resources-in-c"></a>Перечисление ресурсов хранилища Azure в C++
 Операции перечисления необходимы для многих сценариев разработки с использованием хранилища Azure. В этой статье описано, как наиболее эффективно перечислять объекты в хранилище Azure с помощью API-интерфейсов, предоставленных в клиентской библиотеке для службы хранилища Microsoft Azure для C++.
@@ -34,7 +34,7 @@ ms.locfileid: "58014895"
 Каждый из этих методов продемонстрирован с использованием различных перегрузок для разных сценариев.
 
 ## <a name="asynchronous-versus-synchronous"></a>Асинхронный или синхронный
-Так как клиентская библиотека хранилища для C++ основана на [библиотеке C++ REST](https://github.com/Microsoft/cpprestsdk), мы поддерживаем асинхронные операции с использованием [pplx::task](https://microsoft.github.io/cpprestsdk/classpplx_1_1task.html). Например: 
+Так как клиентская библиотека хранилища для C++ основана на [библиотеке C++ REST](https://github.com/Microsoft/cpprestsdk), мы поддерживаем асинхронные операции с использованием [pplx::task](https://microsoft.github.io/cpprestsdk/classpplx_1_1task.html). Пример.
 
 ```cpp
 pplx::task<list_blob_item_segment> list_blobs_segmented_async(continuation_token& token) const;

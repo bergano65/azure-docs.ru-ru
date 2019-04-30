@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: f8fc1f7e338f69b42df69d9a8983e8ce3bb409e3
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: d7d1bc95a646527ccdf9d2808aefe6b8f46d7e9a
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59359654"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62111771"
 ---
 # <a name="azure-sql-database-premium-rs-service-tier-preview-is-being-retired---options-for-migration"></a>Прекращение использования уровня служб "Премиум RS" для базы данных SQL Azure (предварительная версия). Параметры миграции
 
@@ -100,5 +100,5 @@ ms.locfileid: "59359654"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о конкретных объемах вычислительных ресурсов и доступных размерах хранилища для отдельной базы данных см. в статье [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md#general-purpose-service-tier-storage-sizes-and-compute-sizes)
+- Дополнительные сведения о конкретных объемах вычислительных ресурсов и доступных размерах хранилища для отдельной базы данных см. в статье [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md#general-purpose-service-tier)
 - Дополнительные сведения о конкретных объемах вычислительных ресурсов и доступных размерах хранилища для эластичных пулов см. в статье [Ограничения для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-elastic-pools.md#general-purpose-service-tier-storage-sizes-and-compute-sizes).

@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 11/29/2017
 ms.author: cshoe
 ms.openlocfilehash: 663283c4dff16194dea78afbf5dd393f1fa833b1
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56823813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61437963"
 ---
 # <a name="azure-functions-sendgrid-bindings"></a>Привязки SendGrid для Функций Azure
 
@@ -253,7 +253,7 @@ public static void Run(
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `SendGrid`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type**|| Обязательное. Необходимо задать значение `sendGrid`.|
 |**direction**|| Обязательное. Необходимо задать значение `out`.|
@@ -262,7 +262,7 @@ public static void Run(
 |**to**|**To**| Электронный адрес получателя. |
 |**from**|**from**| Электронный адрес отправителя. |
 |**subject**|**Тема**| Тема электронного сообщения. |
-|**text**|**текст**| Содержимое электронного сообщения. |
+|**text**|**Text**| Содержимое электронного сообщения. |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -286,9 +286,9 @@ public static void Run(
 }
 ```  
 
-|Свойство  |значение по умолчанию | ОПИСАНИЕ |
+|Свойство  |значение по умолчанию | Описание |
 |---------|---------|---------| 
-|from|Недоступно|Адрес электронной почты для всех функций.| 
+|От|Недоступно|Адрес электронной почты для всех функций.| 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

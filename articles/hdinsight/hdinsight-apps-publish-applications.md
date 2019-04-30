@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: hrasheed
-ms.openlocfilehash: fd6d47d8300872f5bcdf36aec492289f93858504
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e64bf253a73df3a2f8170109dc1dfb9a59613733
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/23/2019
-ms.locfileid: "60253507"
+ms.locfileid: "62097410"
 ---
 # <a name="publish-an-hdinsight-application-in-the-azure-marketplace"></a>Публикация приложения HDInsight в Azure Marketplace
 Вы можете установить приложения Azure HDInsight в кластере HDInsight под управлением Linux. В этой статье описано, как опубликовать приложение HDInsight в Azure Marketplace. Общие сведения о публикации в Azure Marketplace см. в статье [Публикация предложения и управление им в Azure Marketplace](../marketplace/marketplace-publishers-guide.md).
@@ -44,10 +44,10 @@ ms.locfileid: "60253507"
 }
 ```
 
-| Поле | ОПИСАНИЕ | Возможные значения |
+| Поле | Описание | Возможные значения |
 | --- | --- | --- |
 | types |Типы кластеров, совместимые с приложением. |Hadoop, HBase, Storm, Spark (или любое их сочетание) |
-| versions |Версии кластеров HDInsight, совместимые с приложением. |3.4 |
+| версии |Версии кластеров HDInsight, совместимые с приложением. |3.4 |
 
 ## <a name="application-installation-script"></a>Сценарий установки приложения
 После установки приложения в кластере (в имеющемся или в новом) создается граничный узел. Сценарий установки приложения выполняется на граничном узле.

@@ -9,15 +9,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/15/2019
+ms.date: 04/21/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 532701eb2c5e92e5443f69c464b561d6fa242598
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
-ms.translationtype: MT
+ms.openlocfilehash: ed798995807f4037f0127b08e25e04bdd0340d42
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59617637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62103612"
 ---
 # <a name="encoding-with-media-services"></a>Кодирование с помощью Служб мультимедиа
 
@@ -90,6 +90,10 @@ ms.locfileid: "59617637"
 ## <a name="scaling-encoding-in-v3"></a>Масштабирование кодирования в версии 3
 
 Масштабирование обработки мультимедиа см. в разделе [масштабирование с помощью CLI](media-reserved-units-cli-how-to.md).
+
+## <a name="provide-feedback"></a>Отзывы
+
+Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

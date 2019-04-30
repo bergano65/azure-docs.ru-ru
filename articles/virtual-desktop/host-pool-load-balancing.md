@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: helohr
 ms.openlocfilehash: 8b18224339654c067d8ab9b543fa49a9c7d55ddd
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58400179"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60870529"
 ---
-# <a name="host-pool-load-balancing-methods"></a>Методы балансировки нагрузки сервера пула
+# <a name="host-pool-load-balancing-methods"></a>Методы балансировки нагрузки пула узлов
 
 Обзор виртуального рабочего стола Windows поддерживает два метода балансировки нагрузки. Каждый метод определяет, какой узел сеансов будет размещаться сеанса пользователя при подключении к ресурсу в пуле узлов.
 

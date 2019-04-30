@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: kasinh
 ms.openlocfilehash: f119d128b35b93d7e18d514c09d187689d8dffe9
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57306907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62111266"
 ---
 # <a name="prepare-to-back-up-workloads-to-azure-with-system-center-dpm"></a>Подготовка к резервному копированию рабочих нагрузок в Azure с помощью System Center DPM
 
@@ -79,7 +79,7 @@ DPM на виртуальной машине VMware | System Center 2012 R2 с �
 
     ![Список хранилищ службы архивации](./media/backup-azure-dpm-introduction/choose-storage-configuration-rs-vault.png)
 
-## <a name="download-vault-credentials"></a>Скачивание учетных данных хранилища
+## <a name="download-vault-credentials"></a>Скачать учетные данные хранилища
 
 Для регистрации сервера DPM в хранилище вам потребуются учетные данные хранилища.
 
@@ -134,7 +134,7 @@ DPM на виртуальной машине VMware | System Center 2012 R2 с �
 7. И наконец, агент Azure Backup устанавливает .NET Framework 4.5 и Windows PowerShell (если эти компоненты еще не установлены).
 8. После завершения установки агента **закройте** окно.
 
-    ![закройте](../../includes/media/backup-install-agent/dpm_FinishInstallation.png)
+    ![Закрыть](../../includes/media/backup-install-agent/dpm_FinishInstallation.png)
 
 ## <a name="register-the-dpm-server-in-the-vault"></a>Регистрация сервера DPM в хранилище
 

@@ -3,21 +3,22 @@ title: Копирование данных из SAP ECC с помощью фаб
 description: Узнайте, как копировать данные из SAP ECC в поддерживаемые хранилища данных, используемые в качестве приемника, с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
-author: linda33wj
-manager: craigg
+author: WenJason
+manager: digimobile
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/26/2018
-ms.author: jingwang
+origin.date: 04/26/2018
+ms.date: 04/22/2019
+ms.author: v-jay
 ms.openlocfilehash: d86264b632daa09a899fae28e73e117b16322617
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58121967"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62128123"
 ---
 # <a name="copy-data-from-sap-ecc-using-azure-data-factory"></a>Копирование данных из SAP ECC с помощью фабрики данных Azure
 
@@ -53,11 +54,11 @@ ms.locfileid: "58121967"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type необходимо задать значение **SapEcc**. | Yes |
-| URL-адрес | URL-адрес службы SAP ECC OData. | Yes |
-| Имя пользователя | Имя пользователя, применяемое для подключения к SAP ECC. | Нет  |
-| password | Пароль (открытым текстом), применяемый для подключения к SAP ECC. | Нет  |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных является общедоступным). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
+| type | Свойству type необходимо задать значение **SapEcc**. | Да |
+| url | URL-адрес службы SAP ECC OData. | Да |
+| имя пользователя | Имя пользователя, применяемое для подключения к SAP ECC. | Нет |
+| password | Пароль (открытым текстом), применяемый для подключения к SAP ECC. | Нет |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных является общедоступным). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
 **Пример.**
 
@@ -90,7 +91,7 @@ ms.locfileid: "58121967"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| path | Путь к сущности SAP ECC OData. | Yes |
+| путь | Путь к сущности SAP ECC OData. | Да |
 
 **Пример**
 
@@ -120,8 +121,8 @@ ms.locfileid: "58121967"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type источника действия копирования необходимо задать значение **SapEccSource**. | Yes |
-| query | Параметры запроса OData для фильтрации данных. Пример: $select=Name,Description&$top=10.<br/><br/>Соединитель SAP ECC копирует данные из комбинированного URL-адреса: (URL-адрес, указанный в связанной службе)/(путь, указанный в наборе данных)?(запрос, указанный в источнике действия копирования). См. статью о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет  |
+| type | Свойству type источника действия копирования необходимо задать значение **SapEccSource**. | Да |
+| query | Параметры запроса OData для фильтрации данных. Пример: $select=Name,Description&$top=10.<br/><br/>Соединитель SAP ECC копирует данные из комбинированного URL-адреса: (URL-адрес, указанный в связанной службе)/(путь, указанный в наборе данных)?(запрос, указанный в источнике действия копирования). См. статью о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |
 
 **Пример.**
 
@@ -161,14 +162,14 @@ ms.locfileid: "58121967"
 
 | Тип данных OData | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
-| Edm.Binary | Строка |
-| Edm.Boolean | Bool |
-| Edm.Byte | Строка |
+| Edm.Binary | String |
+| Edm.Boolean | Логический |
+| Edm.Byte | String |
 | Edm.DateTime | DateTime |
 | Edm.Decimal | Decimal |
 | Edm.Double | Double |
 | Edm.Single | Single |
-| Edm.Guid | Строка |
+| Edm.Guid | String |
 | Edm.Int16 | Int16 |
 | Edm.Int32 | Int32 |
 | Edm.Int64 | Int64 |

@@ -13,11 +13,11 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: 59e0e4cf82af9851dacf3ec030575ed392571331
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59523772"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61475819"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs"></a>Создание заданий эластичной базы данных и управление ими с помощью Transact-SQL (T-SQL)
 
@@ -406,7 +406,7 @@ EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob'
 
 
 
-|Хранимая процедура  |ОПИСАНИЕ  |
+|Хранимая процедура  |Описание  |
 |---------|---------|
 |[sp_add_job](#sp_add_job)     |     Добавляет новое задание.    |
 |[sp_update_job](#sp_update_job)    |      Обновляет существующее задание.   |
@@ -1211,7 +1211,7 @@ GO
 Отображает журнал выполнения задания.
 
 
-|Имя столбца|   Тип данных   |ОПИСАНИЕ|
+|Имя столбца|   Тип данных   |Описание|
 |---------|---------|---------|
 |**job_execution_id**   |uniqueidentifier|  Уникальный идентификатор экземпляра выполнения задания.
 |**job_name**   |nvarchar(128)  |Имя задания.
@@ -1239,7 +1239,7 @@ GO
 
 Отображает все задания.
 
-|Имя столбца|   Тип данных|  ОПИСАНИЕ|
+|Имя столбца|   Тип данных|  Описание|
 |------|------|-------|
 |**job_name**|  nvarchar(128)   |Имя задания.|
 |**job_id**|    uniqueidentifier    |Уникальный идентификатор задания.|
@@ -1257,7 +1257,7 @@ GO
 
 Отображает все версии задания.
 
-|Имя столбца|   Тип данных|  ОПИСАНИЕ|
+|Имя столбца|   Тип данных|  Описание|
 |------|------|-------|
 |**job_name**|  nvarchar(128)   |Имя задания.|
 |**job_id**|    uniqueidentifier    |Уникальный идентификатор задания.|
@@ -1270,7 +1270,7 @@ GO
 
 Отображает все шаги в текущей версии каждого задания.
 
-|Имя столбца    |Тип данных| ОПИСАНИЕ|
+|Имя столбца    |Тип данных| Описание|
 |------|------|-------|
 |**job_name**   |nvarchar(128)| Имя задания.|
 |**job_id** |uniqueidentifier   |Уникальный идентификатор задания.|
@@ -1285,7 +1285,7 @@ GO
 |**target_group_id**|   uniqueidentifier|   Уникальный идентификатор целевой группы.|
 |**initial_retry_interval_seconds**|    int |Задержка перед первой повторной попыткой. Значение по умолчанию — 1.|
 |**maximum_retry_interval_seconds** |int|   Максимальная задержка между повторными попытками. Если задержка между повторными попытками превышает это значение, она ограничивается указанным значением. Значение по умолчанию — 120.|
-|**retry_interval_backoff_multiplier**  |real;|  Коэффициент, на который умножается значение задержки перед повторной попыткой в случае нескольких попыток выполнения шага задания. Значение по умолчанию — 2,0.|
+|**retry_interval_backoff_multiplier**  |real|  Коэффициент, на который умножается значение задержки перед повторной попыткой в случае нескольких попыток выполнения шага задания. Значение по умолчанию — 2,0.|
 |**retry_attempts** |int|   Число повторных попыток в случае сбоя при выполнении этого шага. Значение по умолчанию — 10. Оно означает отсутствие повторных попыток.|
 |**step_timeout_seconds**   |int|   Интервал времени в минутах между повторными попытками. Значение по умолчанию — 0. Оно означает интервал в 0 минут.|
 |**output_type**    |nvarchar(11)|  Расположение команды. Для текущей предварительной версии допускается только значение по умолчанию — Inline.|
@@ -1340,7 +1340,7 @@ GO
 
 ## <a name="resources"></a>Ресурсы
 
- - ![Значок ссылки на раздел](https://docs.microsoft.com/sql/database-engine/configure-windows/media/topic-link.gif "Значок ссылки на раздел") [Соглашения о синтаксисе Transact-SQL](https://docs.microsoft.com/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql)  
+ - ![Значок ссылки на раздел](https://docs.microsoft.com/sql/database-engine/configure-windows/media/topic-link.gif "Значок ссылки на раздел") [Синтаксические обозначения в Transact-SQL](https://docs.microsoft.com/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql)  
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

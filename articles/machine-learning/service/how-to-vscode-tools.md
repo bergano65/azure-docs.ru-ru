@@ -11,11 +11,11 @@ author: swinner95
 ms.date: 12/04/2018
 ms.custom: seodec18
 ms.openlocfilehash: bbeb0dbbd5e9c919eda4b298dc5bee31965e9bac
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60818748"
 ---
 # <a name="get-started-with-azure-machine-learning-for-visual-studio-code"></a>Приступая к работе с Azure Machine Learning for Visual Studio Code
 
@@ -73,7 +73,7 @@ ms.locfileid: "59995257"
 
    ![Установка пакета SDK Машинного обучения Azure для Python](./media/vscode-tools-for-ai/runtimedependencies.png)
 
-## <a name="get-started-with-azure-machine-learning"></a>Начало работы со службой "Машинное обучение Azure"
+## <a name="get-started-with-azure-machine-learning"></a>Начало работы со средством машинного обучения Azure
 
 Прежде чем начать обучение и развертывание моделей машинного обучения с помощью VS Code, необходимо создать [рабочую область в облачной Службе машинного обучения Azure](concept-azure-machine-learning-architecture.md#workspace), которая будет содержать модели и ресурсы. Ознакомьтесь со сведениями о создании рабочей области и создайте в ней свой первый эксперимент.
 

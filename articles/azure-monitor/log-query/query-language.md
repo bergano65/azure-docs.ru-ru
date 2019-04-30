@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: bwren
 ms.openlocfilehash: ecbea91cef69c80975dd105c35f526b357033a6b
-ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/24/2019
-ms.locfileid: "56749824"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61425968"
 ---
 # <a name="azure-monitor-log-queries"></a>Запросы к журналу в Azure Monitor
 Журналы Azure Monitor построены на базе Azure Data Explorer, поэтому для работы с журналом Azure Monitor используется такой же язык запросов Kusto. См. дополнительные сведения обо всех возможностях языка в [документации по языку запросов Kusto](/azure/kusto/query) — основном источнике информации по созданию запросов к журналам в Azure Monitor. Эта страница содержит ссылки на другие ресурсы с информацией о создании запросов и описание отличий в разных вариантах реализации языка запросов для Azure Monitor.
@@ -48,7 +48,7 @@ ms.locfileid: "56749824"
 
 
 
-## <a name="lessons"></a>Занятия
+## <a name="lessons"></a>Уроки
 
 - В статье о [работе со строками в запросах к журналам Azure Monitor](string-operations.md) описано использование строковых данных.
 - В статье о [работе со значениями даты и времени в запросах к журналам Azure Monitor](datetime-operations.md) описано использование данных в формате даты и времени. 

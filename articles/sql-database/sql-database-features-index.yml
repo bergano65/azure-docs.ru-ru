@@ -1,10 +1,4 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 18be472dfc6a9928b8ceea72fe1b277d77311a63
-ms.sourcegitcommit: b8f9200112cae265155b8877f7e1621c4bcc53fc
-ms.translationtype: MT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57905368"
 documentType: LandingData
 title: База данных Azure SQL — функции
 metadata:
@@ -16,41 +10,41 @@ metadata:
   manager: craigg
   ms.service: sql-database
   ms.tgt_pltfrm: na
-  ms.devlang: 
+  ms.devlang: null
   ms.topic: overview
   ms.date: 02/06/2019
   ms.author: jovanpop-msft
 sections:
-- items:
-  - type: paragraph
-    text: База данных SQL Azure больше, чем механизм классической реляционной базы данных, который позволяет выполнить запрос данных с помощью языка SQL. Функции базы данных в базе данных SQL Azure позволяют выполнять больше операций с помощью эффективных и реализовать дополнительные сценарии.
-  - type: list
-    style: cards
-    className: cardsM
-    columns: 3
+  - items:
+      - type: paragraph
+        text: 'База данных SQL Azure больше, чем механизм классической реляционной базы данных, который позволяет выполнить запрос данных с помощью языка SQL. Функции базы данных в базе данных SQL Azure позволяют выполнять больше операций с помощью эффективных и реализовать дополнительные сценарии.'
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 3
+        items:
+          - title: Технологии in-memory
+            href: /azure/sql-database/sql-database-in-memory
+            html: <p>Реализуйте высокопроизводительных приложений с помощью технологии in-memory.</p>
+          - title: Возможности при использовании нескольких моделей
+            href: /azure/sql-database/sql-database-multi-model-features
+            html: '<p>Дополнительные сведения о Graph, JSON, XML, возможностей обработки пространственных данных в базе данных SQL Azure.</p>'
+          - title: Репликация транзакций
+            href: /azure/sql-database/sql-database-managed-instance-transactional-replication
+            html: <p>Реплицировать данные между таблицами базы данных SQL Azure и SQL Server.</p>
+          - title: Синхронизация данных
+            href: /azure/sql-database/sql-database-sync-data
+            html: <p>Синхронизация данных между несколькими базами данных SQL и экземплярах SQL Server.</p>
+          - title: Автоматизация заданий
+            href: /azure/sql-database/sql-database-job-automation-overview
+            html: <p>Планирование повторяющихся задач с помощью агента SQL и эластичных заданий.</p>
+          - title: Темпоральные таблицы
+            href: /azure/sql-database/sql-database-temporal-tables
+            html: <p>Отслеживать и анализировать полный журнал изменений в данных.</p>
+  - title: Дополнительные ресурсы
     items:
-    - title: Технологии in-memory
-      href: /azure/sql-database/sql-database-in-memory
-      html: <p>Реализуйте высокопроизводительных приложений с помощью технологии in-memory.</p>
-    - title: Возможности при использовании нескольких моделей
-      href: /azure/sql-database/sql-database-multi-model-features
-      html: <p>Дополнительные сведения о Graph, JSON, XML, возможностей обработки пространственных данных в базе данных SQL Azure.</p>
-    - title: Репликация транзакций
-      href: /azure/sql-database/sql-database-managed-instance-transactional-replication
-      html: <p>Реплицировать данные между таблицами базы данных SQL Azure и SQL Server.</p>
-    - title: Синхронизация данных
-      href: /azure/sql-database/sql-database-sync-data
-      html: <p>Синхронизация данных между несколькими базами данных SQL и экземплярах SQL Server.</p>
-    - title: Автоматизация заданий
-      href: /azure/sql-database/sql-database-job-automation-overview
-      html: <p>Планирование повторяющихся задач с помощью агента SQL и эластичных заданий.</p>
-    - title: Временные таблицы
-      href: /azure/sql-database/sql-database-temporal-tables
-      html: <p>Отслеживать и анализировать полный журнал изменений в данных.</p>
-- title: Дополнительные ресурсы
-  items:
-  - type: list
-    style: ordered
-    items:
-    - html: Дополнительные сведения о <a href="/azure/sql-database/sql-database-features">компоненты баз данных различия между SQL Server и Azure SQL</a>.
-    - html: Сведения об использовании этих функций в <a href="/azure/sql-database/sql-database-howto">практические руководства по</a>.
+      - type: list
+        style: ordered
+        items:
+          - html: Дополнительные сведения о <a href="/azure/sql-database/sql-database-features">компоненты баз данных различия между SQL Server и Azure SQL</a>.
+          - html: Сведения об использовании этих функций в <a href="/azure/sql-database/sql-database-howto">практические руководства по</a>.

@@ -10,11 +10,11 @@ services: azure-maps
 manager: timlt
 ms.custom: mvc
 ms.openlocfilehash: a70011b934398ac4e7f74bb67013e93bb5e86e4e
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56007842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60799154"
 ---
 # <a name="react-to-azure-maps-events-by-using-event-grid"></a>Реагирование на события Azure Maps c помощью Сетки событий 
 
@@ -30,7 +30,7 @@ Azure Maps интегрируется с Сеткой событий Azure, чт
 
 Сетка событий использует [подписки на события](https://docs.microsoft.com/azure/event-grid/concepts#event-subscriptions) для маршрутизации сообщений о событиях подписчикам. Учетная запись Azure Maps выводит следующие типы событий. 
 
-| Тип события | ОПИСАНИЕ |
+| Тип события | Описание |
 | ---------- | ----------- |
 | Microsoft.Maps.GeofenceEntered | Создается, когда полученные координаты переходят из заданной геозоны наружу. |
 | Microsoft.Maps.GeofenceExited | Создается, когда полученные координаты переходят из заданной геозоны наружу |
@@ -84,7 +84,7 @@ Azure Maps интегрируется с Сеткой событий Azure, чт
 * Сообщения могут прибывать не по порядку или с задержкой. Используйте поле `X-Correlation-id` в заголовке ответа, чтобы понять, является ли информация об объектах актуальной.
 * При вызове API геозоны Get и POST с параметром режима, которому присвоено значение `EnterAndExit`, событие Enter или Exit генерируется для каждого геометрического объекта в геозоне, для которого изменилось состояние из предыдущего вызова API геозоны.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как использовать геозоны для операций управления на сайте конструкции, см. в статье
 

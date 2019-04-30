@@ -13,11 +13,11 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 12/20/2018
 ms.openlocfilehash: 0b1e3b98fe5b934b712db2a5549ebdc865523bfb
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58487725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61412582"
 ---
 # <a name="best-practices-for-sql-data-sync"></a>Рекомендации по синхронизации данных SQL 
 
@@ -117,7 +117,7 @@ ms.locfileid: "58487725"
 
 Примените предыдущие рекомендации к более сложным конфигурациям групп синхронизации, например со смешанными сценариями перемещения из предприятия в облако и из облака в облако.
 
-## <a name="sync"></a>Sync
+## <a name="sync"></a>Синхронизация
 
 ### <a name="avoid-a-slow-and-costly-initial-synchronization"></a> Избегайте медленной и дорогостоящей начальной синхронизации
 
@@ -129,7 +129,7 @@ ms.locfileid: "58487725"
 
 Если базы данных находятся в разных центрах обработки данных, то каждая строка должна пройти между всеми центрами обработки данных. Это увеличивает затраты на начальную синхронизацию.
 
-#### <a name="recommendation"></a>Рекомендации
+#### <a name="recommendation"></a>Рекомендация
 
 По возможности начинайте с данных только в одной базе данных группы синхронизации.
 
@@ -158,12 +158,12 @@ ms.locfileid: "58487725"
 > [!NOTE]
 > Эти изменения никогда не распространяются. Единственным способом восстановления в этом сценарии является повторное создание группы синхронизации.
 
-#### <a name="recommendation"></a>Рекомендации
+#### <a name="recommendation"></a>Рекомендация
 
 Регулярно отслеживайте состояние группы синхронизации и базы данных через интерфейс портала и журнала.
 
 
-## <a name="maintenance"></a>Обслуживание, 
+## <a name="maintenance"></a>Обслуживание
 
 ### <a name="avoid-out-of-date-databases-and-sync-groups"></a> Избегайте устаревших баз данных и групп синхронизации
 
@@ -229,7 +229,7 @@ ms.locfileid: "58487725"
         -  [Использование PowerShell для синхронизации данных между несколькими базами данных SQL Azure](scripts/sql-database-sync-data-between-sql-databases.md)
         -  [Использование PowerShell для синхронизации данных между базой данных SQL Azure и локальной базой данных SQL Server](scripts/sql-database-sync-data-between-azure-onprem.md)
 -   Агент синхронизации данных: [Агент синхронизации данных для синхронизации данных SQL Azure](sql-database-data-sync-agent.md).
--   Монитор — [входит мониторинг синхронизации данных SQL с помощью Azure Monitor](sql-database-sync-monitor-oms.md)
+-   Мониторинг: [Мониторинг синхронизации данных SQL с помощью журналов Azure Monitor](sql-database-sync-monitor-oms.md)
 -   Устранение неполадок: [Устранение неполадок с синхронизацией данных SQL](sql-database-troubleshoot-data-sync.md).
 -   Обновление схемы синхронизации
     -   С помощью Transact-SQL: [Автоматическая репликация изменений схемы при синхронизации данных SQL Azure](sql-database-update-sync-schema.md).

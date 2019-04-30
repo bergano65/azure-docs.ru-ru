@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 08/30/2018
 ms.author: aschhab
 ms.openlocfilehash: c63e6bf66e4832a1a5b0b5e6fc3dfbbf02d1e490
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54850116"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62125854"
 ---
 # <a name="prefetch-azure-service-bus-messages"></a>Предварительная выборка сообщений служебной шины Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "54850116"
 
 Максимальное число сообщений и длительность блокировки при предварительной выборке, настроенные для очереди или подписки, необходимо сбалансировать таким образом, чтобы время ожидания блокировки по крайней мере превышало общее ожидаемое время обработки сообщений при максимальном заполнении буфера предварительной выборки плюс одно сообщение. Вместе с тем время ожидания блокировки сообщений вовсе не должно превышать их максимальное значение [TimeToLive](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive) в случае, если они случайно удаляются, так как иначе перед их повторной доставкой придется ожидать истечения срока их блокировки.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

@@ -3,17 +3,17 @@ title: Начало работы с примером
 description: В этой статье приведены общие сведения о примере для начала работы с коллекциями рабочих областей Power BI.
 services: power-bi-workspace-collections
 ms.service: power-bi-workspace-collections
-author: markingmyname
-ms.author: maghan
+author: rkarlin
+ms.author: rkarlin
 ms.topic: article
 ms.workload: powerbi
 ms.date: 09/25/2017
-ms.openlocfilehash: 6c80dc2ca4d0062fcb98aeb6431566ce6ca39411
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
-ms.translationtype: MT
+ms.openlocfilehash: 36566d72de1505cd5689aaad737d7948b80801ca
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58519499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62110554"
 ---
 # <a name="get-started-with-power-bi-workspace-collections-sample"></a>Пример для начала работы с коллекциями рабочих областей Power BI
 
@@ -130,7 +130,7 @@ public class ReportViewModel
 Data Source=tcp:MyServer.database.windows.net,1433;Initial Catalog=MyDatabase
 ```
 
-Попытка использования общих атрибутов сервера и базы данных завершается ошибкой. Например:  Server=tcp:MyServer.database.windows.net,1433;Database=MyDatabase,
+Попытка использования общих атрибутов сервера и базы данных завершается ошибкой. Пример. Server=tcp:MyServer.database.windows.net,1433;Database=MyDatabase,
 
 ### <a name="view"></a>Просмотр
 
@@ -138,7 +138,7 @@ Data Source=tcp:MyServer.database.windows.net,1433;Initial Catalog=MyDatabase
 
 **Reports.cshtml**: выполняет итерацию по отчетам **Model.Reports**, чтобы создать **ActionLink**. **ActionLink** формируется следующим образом:
 
-| Часть | ОПИСАНИЕ |
+| Часть | Описание |
 | --- | --- |
 | Название |Имя отчета. |
 | QueryString |Ссылка на идентификатор отчета. |
@@ -170,7 +170,7 @@ Report.cshtml: устанавливает **Model.AccessToken** и лямбда-
 </div>
 ```
 
-### <a name="controller"></a>Controller
+### <a name="controller"></a>Контроллер
 
 **DashboardController.cs**: создает PowerBIClient, передающий **маркер приложения**. Для получения **учетных данных** создается JSON Web Token (JWT) на основе **ключа подписывания**. **Учетные данные** используются для создания экземпляра **PowerBIClient**. После создания экземпляра **PowerBIClient** можно вызвать методы GetReports() и GetReportsAsync().
 

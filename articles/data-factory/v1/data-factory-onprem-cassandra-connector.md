@@ -14,11 +14,11 @@ ms.date: 06/07/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 0a3adbd082c68121e762fd03c2221a0c800f0bc5
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57892648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60823986"
 ---
 # <a name="move-data-from-an-on-premises-cassandra-database-using-azure-data-factory"></a>Перемещение данных из локальной базы данных Cassandra с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -66,14 +66,14 @@ ms.locfileid: "57892648"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
-| Тип |Свойству type необходимо задать значение **OnPremisesCassandra** |Yes |
-| host |Один или несколько IP-адресов или имен узлов серверов Cassandra.<br/><br/>Укажите через запятую список IP-адресов или имен узлов для одновременного подключения ко всем серверам. |Yes |
+| type |Свойству type необходимо задать значение **OnPremisesCassandra** |Да |
+| узел |Один или несколько IP-адресов или имен узлов серверов Cassandra.<br/><br/>Укажите через запятую список IP-адресов или имен узлов для одновременного подключения ко всем серверам. |Да |
 | порт |TCP-порт, используемый сервером Cassandra для прослушивания клиентских подключений |Нет, значение по умолчанию — 9042. |
-| authenticationType |Укажите тип Basic или Anonymous |Yes |
-| Имя пользователя |Укажите имя пользователя для учетной записи пользователя |Да (если для свойства authenticationType задано значение Basic) |
+| authenticationType |Укажите тип Basic или Anonymous |Да |
+| имя пользователя |Укажите имя пользователя для учетной записи пользователя |Да (если для свойства authenticationType задано значение Basic) |
 | password |Укажите пароль для учетной записи пользователя. |Да (если для свойства authenticationType задано значение Basic) |
-| gatewayName |Имя шлюза, который используется для подключения к локальной базе данных Cassandra. |Yes |
-| encryptedCredential |Учетные данные, зашифрованные шлюзом |Нет  |
+| gatewayName |Имя шлюза, который используется для подключения к локальной базе данных Cassandra. |Да |
+| encryptedCredential |Учетные данные, зашифрованные шлюзом |Нет |
 
 >[!NOTE]
 >В настоящее время подключение к Cassandra по протоколу SSL не поддерживается.
@@ -262,20 +262,20 @@ ms.locfileid: "57892648"
 ### <a name="type-mapping-for-cassandra"></a>Сопоставление типов для Cassandra
 | Тип данных Cassandra | Тип данных на основе .NET |
 | --- | --- |
-| ASCII |Строка |
+| ASCII |String |
 | BIGINT |Int64 |
 | BLOB |Byte[] |
 | BOOLEAN |BOOLEAN |
 | DECIMAL |Decimal |
 | DOUBLE |DOUBLE |
 | FLOAT |Single |
-| INET |Строка |
+| INET |String |
 | INT |Int32 |
-| TEXT |Строка |
+| TEXT |String |
 | TIMESTAMP |DateTime |
 | TIMEUUID |Guid |
 | UUID |Guid |
-| VARCHAR |Строка |
+| VARCHAR |String |
 | VARINT |Decimal |
 
 > [!NOTE]
@@ -300,7 +300,7 @@ ms.locfileid: "57892648"
 ### <a name="example"></a>Пример
 Ниже приведен пример таблицы ExampleTable в базе данных Cassandra. В этой таблице содержатся такие столбцы: столбец первичного ключа pk_int (целое число), текстовый столбец "Значение", столбец "Список", "Сопоставление" и StringSet.
 
-| pk_int | Значение | список | Сопоставление | StringSet |
+| pk_int | Value | список | Сопоставление | StringSet |
 | --- | --- | --- | --- | --- |
 | 1 |"пример значения 1" |["1", "2", "3"] |{"S1": "a", "S2": "b"} |{"A", "B", "C"} |
 | 3 |"пример значения 3" |["100", "101", "102", "105"] |{"S1": "t"} |{"A", "E"} |
@@ -309,7 +309,7 @@ ms.locfileid: "57892648"
 
 Ниже приведен пример первой базовой виртуальной таблицы ExampleTable. В этой таблице содержатся те же данные, что и в исходной, но без коллекций. Они развернуты в других виртуальных таблицах.
 
-| pk_int | Значение |
+| pk_int | Value |
 | --- | --- |
 | 1 |"пример значения 1" |
 | 3 |"пример значения 3" |

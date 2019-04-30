@@ -6,18 +6,22 @@ author: sachdevaswati
 manager: vijayts
 ms.service: backup
 ms.topic: conceptual
-ms.date: 03/19/2019
+ms.date: 04/23/2019
 ms.author: sachdevaswati
-ms.openlocfilehash: 8d6323c73e5313a29b7b0df09ebdd24a190879f5
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: 649e50634d901ab48f1cb36c39d7331401c0cc51
+ms.sourcegitcommit: a95dcd3363d451bfbfea7ec1de6813cad86a36bb
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59791899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62733554"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Часто задаваемые вопросы о базах данных SQL Server, работающих под управлением на резервную копию виртуальной Машины Azure
 
 В этой статье содержатся ответы на часто задаваемые вопросы о резервном копировании баз данных SQL Server, работающие на виртуальных машинах (ВМ) и, в которых используется [Azure Backup](backup-overview.md) службы.
+
+## <a name="can-i-use-azure-backup-for-iaas-vm-as-well-as-sql-server-on-the-same-machine"></a>Можно ли использовать Azure backup для виртуальных Машин IaaS, а также SQL Server на одном компьютере?
+Да, можно иметь резервного копирования виртуальных Машин и резервного копирования SQL на той же виртуальной Машине. В этом случае мы внутренне активировать только полной резервной копии на виртуальную Машину, чтобы не выполнять усечение журналов.
+
 
 ## <a name="does-the-solution-retry-or-auto-heal-the-backups"></a>Решение повторите или автоматическое восстановление резервных копий?
 
@@ -45,7 +49,8 @@ ms.locfileid: "59791899"
   `{"DefaultBackupTasksThreshold": 5}`
 
 3. Сохраните изменения и закройте файл.
-4. На экземпляре SQL Server откройте **диспетчер задач**. Перезагрузите службу **AzureWLBackupCoordinatorSvc**.
+4. На экземпляре SQL Server откройте **диспетчер задач**. Перезагрузите службу **AzureWLBackupCoordinatorSvc**.<br/> <br/>
+ Хотя этот метод помогает, если приложение резервного копирования потребляет много ресурсов, SQL Server [регулятора ресурсов](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor?view=sql-server-2017) — это более общий способ задать ограничения на объем ЦП, физических операций ввода-ВЫВОДА и памяти, который можно входящих запросов приложений используете.
 
 > [!NOTE]
 > UX по-прежнему можно пойти дальше и запланировать столько резервных копий в любой момент времени Однако они будут обрабатываться в скользящее окно, скажем, 5, для примера выше.

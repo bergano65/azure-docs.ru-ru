@@ -9,11 +9,11 @@ ms.service: iot-industrialiot
 services: iot-industrialiot
 manager: philmea
 ms.openlocfilehash: f470beb79e69b5a4a3febeb6a433c48490b96cf7
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59491362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61451078"
 ---
 # <a name="deploy-opc-twin-module-and-dependencies-from-scratch"></a>Развертывание OPC Двойника модуля и зависимости с нуля
 
@@ -105,7 +105,7 @@ OPC Двойника модуля выполняется в IoT Edge и пред
 
 ## <a name="deploying-from-azure-portal"></a>Развертывание на портале Azure
 
-Самый простой способ развернуть модули на устройстве шлюза Edge Интернета вещей Azure — через портал Azure.  
+Самый простой способ развернуть модули на устройстве шлюза IoT Edge Azure — через портал Azure.  
 
 ### <a name="prerequisites"></a>Технические условия
 
@@ -178,7 +178,7 @@ OPC Двойника модуля выполняется в IoT Edge и пред
 
 1. Установите последнюю версию [интерфейс командной строки Azure (AZ)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) из [здесь](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-### <a name="quickstart"></a>Быстрый запуск
+### <a name="quickstart"></a>Краткое руководство
 
 1. Сохраните манифест развертывания выше в `deployment.json` файл.  
 
@@ -223,7 +223,7 @@ OPC Двойника модуля выполняется в IoT Edge и пред
 > Установка `iotedgehubdev` для **корневой** в Linux и Mac OS (*не использовать "--пользователя" в этой команде «pip install»*).
 > Убедитесь, что нет среды выполнения Azure IoT Edge, запускать на одном компьютере с iotedgehubdev, так как они требуют одинаковые порты.
 
-### <a name="quickstart"></a>Быстрый запуск
+### <a name="quickstart"></a>Краткое руководство
 
 1. Следуйте инструкциям, чтобы [создайте устройство на портале Azure](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-portal).  Скопируйте строку подключения для устройства edge.
 

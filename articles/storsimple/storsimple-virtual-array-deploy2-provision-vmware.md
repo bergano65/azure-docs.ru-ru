@@ -16,11 +16,11 @@ ms.date: 01/11/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 3c9fe597957057dc61da5c2b1cf6f9216711764a
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54247849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61419308"
 ---
 # <a name="deploy-storsimple-virtual-array---provision-in-vmware"></a>Развертывание виртуального массива StorSimple — подготовка в VMware
 ![](./media/storsimple-virtual-array-deploy2-provision-vmware/vmware4.png)
@@ -120,7 +120,7 @@ ms.locfileid: "54247849"
 14. Вернитесь в окно клиента vSphere. Выбрав сервер ESXi, щелкните правой кнопкой мыши и выберите пункт **New Virtual Machine**(Создать виртуальную машину).
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image15.png)
-15. Отобразится окно **Create New Virtual Machine** (Создание виртуальной машины). На странице **Configuration** (Конфигурация) выберите параметр **Custom** (Настраиваемая). Щелкните **Далее**.
+15. Отобразится окно **Create New Virtual Machine** (Создание виртуальной машины). На странице **Configuration** (Конфигурация) выберите параметр **Custom** (Настраиваемая). Нажмите кнопку **Далее**.
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image16.png)
 16. На странице **Name and Location** (Имя и расположение) укажите имя виртуальной машины. Имя должно соответствовать имени папки (рекомендуется), указанному ранее на шаге 8.
 
@@ -134,10 +134,10 @@ ms.locfileid: "54247849"
 19. На странице **Guest Operating System** (Гостевая операционная система) задайте для параметра **Guest Operating System** (Гостевая операционная система) значение **Windows**. Для параметра **Version** (Версия) в раскрывающемся списке выберите значение **Microsoft Windows Server 2012 (64-bit)** (Microsoft Windows Server 2012 (64-разрядная версия)).
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image20.png)
-20. На странице **CPUs** (Процессоры) настройте параметры **Number of virtual sockets** (Количество виртуальных сокетов) и **Number of cores per virtual socket** (Количество ядер на виртуальный сокет) таким образом, чтобы значение параметра **Total number of cores** (Общее количество ядер) было не меньше 4. Щелкните **Далее**.
+20. На странице **CPUs** (Процессоры) настройте параметры **Number of virtual sockets** (Количество виртуальных сокетов) и **Number of cores per virtual socket** (Количество ядер на виртуальный сокет) таким образом, чтобы значение параметра **Total number of cores** (Общее количество ядер) было не меньше 4. Нажмите кнопку **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image21.png)
-21. На странице **Memory** (Память) укажите 8 ГБ (или больше) ОЗУ. Щелкните **Далее**.
+21. На странице **Memory** (Память) укажите 8 ГБ (или больше) ОЗУ. Нажмите кнопку **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image22.png)
 22. На странице **Network** (Сеть) укажите количество сетевых интерфейсов. Минимальное требование — один сетевой интерфейс.
@@ -146,10 +146,10 @@ ms.locfileid: "54247849"
 23. На странице **SCSI Controller** (SCSI-контроллер) примите значение по умолчанию **LSI Logic SAS controller** (SAS-контроллер с логикой LSI).
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image24.png)
-24. На странице **Select a Disk** (Выбор диска) выберите параметр **Use an existing virtual disk** (Использовать существующий виртуальный диск). Щелкните **Далее**.
+24. На странице **Select a Disk** (Выбор диска) выберите параметр **Use an existing virtual disk** (Использовать существующий виртуальный диск). Нажмите кнопку **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image25.png)
-25. На странице **Select Existing Disk** (Выбор существующего диска) в разделе **Disk File Path** (Путь к файлу диска) нажмите кнопку **Browse** (Обзор). Откроется диалоговое окно **Browse Datastores** (Обзор хранилищ данных). Перейдите к расположению, в которое был передан файл VMDK. Теперь вы увидите в хранилище данных только один файл, так как два файла, которые вы передали, были объединены. Выберите файл и нажмите кнопку **ОК**. Щелкните **Далее**.
+25. На странице **Select Existing Disk** (Выбор существующего диска) в разделе **Disk File Path** (Путь к файлу диска) нажмите кнопку **Browse** (Обзор). Откроется диалоговое окно **Browse Datastores** (Обзор хранилищ данных). Перейдите к расположению, в которое был передан файл VMDK. Теперь вы увидите в хранилище данных только один файл, так как два файла, которые вы передали, были объединены. Выберите файл и нажмите кнопку **ОК**. Нажмите кнопку **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image26.png)
 26. На странице **Advanced Options** (Дополнительные параметры) примите параметры по умолчанию и нажмите кнопку **Next** (Далее).
@@ -164,10 +164,10 @@ ms.locfileid: "54247849"
 29. Откроется окно **Add Hardware** (Установка оборудования). На странице **Device Type** (Тип устройства) в разделе **Choose the type of device you wish to add** (Выберите тип устройства, которое нужно добавить) выберите **Hard Disk** (Жесткий диск) и нажмите кнопку **Next** (Далее).
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image30.png)
-30. На странице **Select a Disk** (Выбор диска) выберите параметр **Create a new virtual disk** (Создать новый виртуальный диск). Щелкните **Далее**.
+30. На странице **Select a Disk** (Выбор диска) выберите параметр **Create a new virtual disk** (Создать новый виртуальный диск). Нажмите кнопку **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image31.png)
-31. На странице **Create a Disk** (Создание диска) измените значение параметра **Disk Size** (Размер диска) на 500 ГБ (или более). Минимальный размер диска — 500 ГБ, но можно подготовить диск большего размера. Обратите внимание, что после подготовки размер диска изменить нельзя. Дополнительные сведения о размере подготавливаемого диска см. в соответствующем разделе [документа с рекомендациями](storsimple-ova-best-practices.md). В разделе **Disk Provisioning** (Подготовка диска) выберите пункт **Thin Provision** (Тонкая подготовка). Щелкните **Далее**.
+31. На странице **Create a Disk** (Создание диска) измените значение параметра **Disk Size** (Размер диска) на 500 ГБ (или более). Минимальный размер диска — 500 ГБ, но можно подготовить диск большего размера. Обратите внимание, что после подготовки размер диска изменить нельзя. Дополнительные сведения о размере подготавливаемого диска см. в соответствующем разделе [документа с рекомендациями](storsimple-ova-best-practices.md). В разделе **Disk Provisioning** (Подготовка диска) выберите пункт **Thin Provision** (Тонкая подготовка). Нажмите кнопку **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image32.png)
 32. На странице **Advanced Options** (Дополнительные параметры) примите параметры по умолчанию.
@@ -244,6 +244,6 @@ ms.locfileid: "54247849"
 * Выполните диагностические тесты для [устранения неполадок при настройке веб-интерфейса](storsimple-ova-web-ui-admin.md#troubleshoot-web-ui-setup-errors).
 * [Создайте пакет журнала и просмотрите файлы журнала](storsimple-ova-web-ui-admin.md#generate-a-log-package).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Deploy StorSimple Virtual Array - Set up as file server (Preview) (Развертывание виртуального массива StorSimple — настройка в качестве файлового сервера (предварительная версия))](storsimple-virtual-array-deploy3-fs-setup.md)
 * [Deploy StorSimple Virtual Array – Set up your virtual device as an iSCSI server (preview) (Развертывание виртуального массива StorSimple — настройка в качестве сервера iSCSI (предварительная версия))](storsimple-virtual-array-deploy3-iscsi-setup.md)

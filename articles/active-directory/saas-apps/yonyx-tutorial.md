@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Yonyx Interactive Guides | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Yonyx Interactive Guides | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Yonyx Interactive Guides.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 07/16/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fce7653770d0fb3134f266137e167125b9161865
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58097599"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60863198"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-yonyx-interactive-guides"></a>Руководство. Интеграция Azure Active Directory с Yonyx Interactive Guides
+# <a name="tutorial-azure-active-directory-integration-with-yonyx-interactive-guides"></a>Руководство по Интеграция Azure Active Directory с Yonyx Interactive Guides
 
 В этом руководстве описано, как интегрировать Yonyx Interactive Guides с Azure Active Directory (Azure AD).
 
@@ -207,7 +207,7 @@ ms.locfileid: "58097599"
 
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Тест единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

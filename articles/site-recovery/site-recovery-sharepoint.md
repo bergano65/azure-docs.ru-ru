@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: sutalasi
 ms.openlocfilehash: 5f477cf20b817d7a6c8be856636bf1e3755b5424
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57443493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61472157"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-sharepoint-application-for-disaster-recovery-using-azure-site-recovery"></a>Настройка аварийного восстановления с помощью Azure Site Recovery для многоуровневого приложения SharePoint | Документация Майкрософт
 
@@ -62,10 +62,10 @@ SharePoint можно развертывать на одном или неско
 
 **Сценарий** | **На дополнительный сайт** | **В Azure**
 --- | --- | ---
-**Hyper-V** | Yes | Yes
-**VMware** | Yes | Yes
-**Физический сервер** | Yes | Yes
-**Таблицы Azure** | Нет данных | Yes
+**Hyper-V** | Да | Да
+**VMware** | Да | Да
+**Физический сервер** | Да | Да
+**Таблицы Azure** | Нет данных | Да
 
 ### <a name="sharepoint-versions"></a>Версии SharePoint
 Поддерживаются следующие версии SharePoint Server.
@@ -109,7 +109,7 @@ SharePoint можно развертывать на одном или неско
 Для сайтов, работающих с Интернетом, [создайте профиль диспетчера трафика типа "Приоритет"](../traffic-manager/traffic-manager-create-profile.md) в подписке Azure. Затем настройте профиль DNS и диспетчера трафика следующим образом.
 
 
-| **Where** | **Источник** | **Цель**|
+| **Where** | **Source** | **Цель**|
 | --- | --- | --- |
 | Общедоступное имя DNS | Общедоступное имя DNS для сайтов SharePoint <br/><br/> Например: sharepoint.contoso.com | Диспетчер трафика <br/><br/> contososharepoint.trafficmanager.net |
 | Локальное имя DNS | sharepointonprem.contoso.com | Общедоступный IP-адрес в локальной ферме |

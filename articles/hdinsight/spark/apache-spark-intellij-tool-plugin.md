@@ -1,7 +1,6 @@
 ---
 title: 'Набор средств Azure для IntelliJ: создание приложений Spark для кластера HDInsight '
 description: Сведения о разработке приложений Spark на языке Scala и их отправке в кластер HDInsight Spark с помощью набора средств Azure для IntelliJ.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: maxluk
-ms.openlocfilehash: 8fa3cd79011ab31349ec44edf52b8fd9048d0d37
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 682b2266442f3aba6696385862844e1b4b93aa3d
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58077978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62124260"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ
 
@@ -66,7 +65,7 @@ ms.locfileid: "58077978"
 
 6. В окне **New Project** (Новый проект) укажите следующую информацию:  
 
-    |  Свойство   | ОПИСАНИЕ   |  
+    |  Свойство   | Описание   |  
     | ----- | ----- |  
     |Имя проекта| Введите имя.  В этом руководстве используется `myApp`.|  
     |Project&nbsp;location (Расположение проекта)| Введите необходимое расположение для сохранения проекта.|
@@ -124,7 +123,7 @@ ms.locfileid: "58077978"
 ## <a name="connect-to-your-hdinsight-cluster"></a>Подключение к кластеру HDInsight
 Пользователь может [войти в подписку Azure](#sign-in-to-your-azure-subscription) или [связать кластер HDInsight](#link-a-cluster) с помощью имени пользователя и пароля Ambari или учетных данных присоединения к домену, чтобы подключить свой кластер HDInsight.
 
-### <a name="sign-in-to-your-azure-subscription"></a>Войдите в свою подписку Azure.
+### <a name="sign-in-to-your-azure-subscription"></a>Войдите в подписку Azure.
 
 1. В строке меню выберите **Представление** > **Окно инструментов** > **Azure Explorer**.
        
@@ -161,11 +160,11 @@ ms.locfileid: "58077978"
 
     * **Кластер HDInsight**  
   
-        |Свойство |Значение |
+        |Свойство |Value |
         |----|----|
         |Link Resource Type (Связать тип ресурса)|Из раскрывающегося списка выберите **HDInsight Cluster** (Кластер HDInsight).|
         |Cluster Name/URL (Имя или URL-адрес кластера)| Введите имя кластера.|
-        |тип проверки подлинности;| Оставьте значение **Basic Authentication** (Обычная аутентификация)|
+        |Тип проверки подлинности| Оставьте значение **Basic Authentication** (Обычная аутентификация)|
         |Имя пользователя| Введите имя пользователя кластера. Значение по умолчанию — admin.|
         |Пароль| Введите пароль для этого имени пользователя.|
     
@@ -173,13 +172,13 @@ ms.locfileid: "58077978"
 
     * **Livy Service** (Служба Livy)  
   
-        |Свойство |Значение |
+        |Свойство |Value |
         |----|----|
         |Link Resource Type (Связать тип ресурса)|Из раскрывающегося списка выберите **Livy Service** (Служба Livy).|
         |Livy Endpoint (Конечная точка Livy)| Введите конечную точку Livy|
-        |Имя кластера,| Введите имя кластера.|
+        |Имя кластера| Введите имя кластера.|
         |Yarn Endpoint (Конечная точка Yarn)|Необязательный элемент.|
-        |тип проверки подлинности;| Оставьте значение **Basic Authentication** (Обычная аутентификация)|
+        |Тип проверки подлинности| Оставьте значение **Basic Authentication** (Обычная аутентификация)|
         |Имя пользователя| Введите имя пользователя кластера. Значение по умолчанию — admin.|
         |Пароль| Введите пароль для этого имени пользователя.|
 
@@ -204,14 +203,14 @@ ms.locfileid: "58077978"
 
 3. В окне **Edit configuration** (Изменить конфигурацию) укажите следующие значения, а затем щелкните **ОК**.
 
-    |Свойство |Значение |
+    |Свойство |Value |
     |----|----|
     |Spark clusters (Linux only) (Кластеры Spark (только для Linux))|Выберите кластер HDInsight Spark, в котором вы хотите запустить приложение.|
     |Select an Artifact to submit (Выбор артефакта для запуска)|Оставьте параметр по умолчанию.|
     |Main class name (Имя основного класса)|В выбранном файле основной класс является значением по умолчанию. Класс можно изменить, выбрав кнопку с многоточием (**...**) и другой класс.|
     |Job configurations (Конфигурация заданий)|Вы можете изменить значения по умолчанию ключами или значениями. Дополнительные сведения см. в статье [Apache Livy REST API](https://livy.incubator.apache.org./docs/latest/rest-api.html).|
     |Аргументы командной строки|При необходимости можно ввести аргументы для основного класса, разделив их пробелом.|
-    |Referenced Jars (Ссылки на JAR-файлы) и Referenced Files (Ссылки на файлы)|Вы можете указать пути ссылки на JAR-файлы и обычные файлы, если они есть. Дополнительные сведения [Apache Spark Configuration](https://spark.apache.org/docs/latest/configuration.html#runtime-environment) (Сведения о конфигурации Spark).  Ознакомьтесь также со статьей [Краткое руководство. Использование Обозревателя службы хранилища Azure для создания большого двоичного объекта в хранилище объекта](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-storage-explorer).|
+    |Referenced Jars (Ссылки на JAR-файлы) и Referenced Files (Ссылки на файлы)|Вы можете указать пути ссылки на JAR-файлы и обычные файлы, если они есть. Дополнительные сведения см. здесь: [Apache Spark Configuration](https://spark.apache.org/docs/latest/configuration.html#runtime-environment) (Сведения о конфигурации Spark).  Ознакомьтесь также со статьей [Краткое руководство. Использование Обозревателя службы хранилища Azure для создания большого двоичного объекта в хранилище объекта](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-storage-explorer).|
     |Job Upload Storage (Хранилище обновлений заданий)|Разверните раздел, чтобы отобразить дополнительные параметры.|
     |тип хранилища;|Из раскрывающегося списка выберите **Use Azure Blob to upload** (Для передачи использовать большой двоичный объект Azure).|
     |Учетная запись хранения|Введите имя своей учетной записи хранения.|
@@ -284,7 +283,7 @@ ms.locfileid: "58077978"
 
 4. Укажите следующие значения, а затем нажмите кнопку **OK**.
 
-    |Свойство |Значение |
+    |Свойство |Value |
     |----|----|
     |Job main class (Основной класс задания)|В выбранном файле основной класс является значением по умолчанию. Класс можно изменить, выбрав кнопку с многоточием (**...**) и другой класс.|
     |Переменные среды|Убедитесь в правильности имени HADOOP_HOME.|
@@ -318,7 +317,7 @@ ms.locfileid: "58077978"
 
 4. Укажите следующие значения, а затем нажмите кнопку **OK**.
 
-    |Свойство |Значение |
+    |Свойство |Value |
     |----|----|
     |Spark clusters (Linux only) (Кластеры Spark (только для Linux))|Выберите кластер HDInsight Spark, в котором вы хотите запустить приложение.|
     |Main class name (Имя основного класса)|В выбранном файле основной класс является значением по умолчанию. Класс можно изменить, выбрав кнопку с многоточием (**...**) и другой класс.|

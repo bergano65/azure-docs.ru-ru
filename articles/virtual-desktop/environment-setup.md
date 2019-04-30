@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: helohr
 ms.openlocfilehash: ceed6a8bb74206b7c6689ce542482148800e4ba9
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58403516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60870325"
 ---
 # <a name="windows-virtual-desktop-preview-environment"></a>Обзор виртуального рабочего стола Windows среды
 
@@ -63,5 +63,5 @@ ms.locfileid: "58403516"
 
 Чтобы узнать, как подключиться к виртуальному рабочему столу Windows, см. в следующих статьях:
 
-- [Подключиться к клиенту удаленного рабочего стола в Windows 7 и Windows 10](connect-windows-7-and-10.md)
-- [Подключение к веб-клиента Апробация виртуального рабочего стола Windows](connect-web.md)
+- [Connect to the Remote Desktop client on Windows 7 and Windows 10](connect-windows-7-and-10.md) (Подключение к клиенту удаленного рабочего стола в Windows 7 и Windows 10)
+- [Connect to the Windows Virtual Desktop Preview web client](connect-web.md) (Подключение к веб-клиенту предварительной версии Виртуального рабочего стола Windows)

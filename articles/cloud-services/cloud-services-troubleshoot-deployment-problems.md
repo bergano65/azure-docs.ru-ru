@@ -16,11 +16,11 @@ ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
 ms.openlocfilehash: cc2a0177525013736445db5fd1befa478dc9b9b8
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59798576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62106919"
 ---
 # <a name="troubleshoot-cloud-service-deployment-problems"></a>Устранение неполадок, которые могут возникнуть при развертывании облачной службы
 При развертывании пакета приложения облачной службы в Azure сведения о развертывании можно получить на панели **Свойства** портала Azure. Сведения, отображающиеся на этой панели, можно использовать для устранения неполадок в работе облачной службы. Кроме того, вы можете передать эту информацию в службу поддержки Azure при открытии нового запроса на поддержку.

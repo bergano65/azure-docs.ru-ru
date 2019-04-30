@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: govindk
 ms.openlocfilehash: 26f2131fd62ddc83c2a6d93c4cff557402a88463
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59281120"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61060871"
 ---
 # <a name="configure-ip-firewall-in-azure-cosmos-db"></a>Настройка брандмауэра IP-адресов в Azure Cosmos DB
 
@@ -40,7 +40,7 @@ ms.locfileid: "59281120"
 |------|----------|
 |Германия|51.4.229.218|
 |Китай|139.217.8.252|
-|Штат в США (для обслуживания государственных организаций США)|52.244.48.71|
+|Государственные организации США|52.244.48.71|
 |Все другие регионы|104.42.195.92,40.76.54.131,52.176.6.30,52.169.50.45,52.187.184.26|
 
 Вы можете включить доступ к порталу Azure, установив флажок **Разрешить доступ с портала Azure**, как показано на следующем снимке экрана: 

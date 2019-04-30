@@ -14,11 +14,11 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 72c88ef10bf1df217ec6e24ac744d0b30386b4a3
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56311534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60824020"
 ---
 # <a name="move-data-from-db2-by-using-azure-data-factory-copy-activity"></a>Перемещение данных из DB2 с помощью действия копирования в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -33,7 +33,7 @@ ms.locfileid: "56311534"
 
 Сейчас фабрика данных поддерживает только перемещение данных из базы данных DB2 в другое [поддерживаемое хранилище-приемник](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Перемещение данных из других хранилищ в базу данных DB2 не поддерживается.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Фабрика данных поддерживает подключение к локальной базе данных DB2 с помощью [шлюза управления данными](data-factory-data-management-gateway.md). Пошаговые инструкции по настройке шлюза для перемещения данных с помощью конвейера см. в статье [Перемещение данных между локальными источниками и облаком с помощью шлюза управления данными](data-factory-move-data-between-onprem-and-cloud.md).
 
 Шлюз является обязательным, даже если база данных DB2 размещается на виртуальной машине Azure IaaS. Шлюз можно установить на ту же виртуальную машину IaaS, что и хранилище данных. Если шлюз может подключиться к базе данных, то можно установить шлюз на другой виртуальной машине.
@@ -79,23 +79,23 @@ ms.locfileid: "56311534"
 ## <a name="db2-linked-service-properties"></a>Свойства связанной службы DB2
 В следующей таблице перечислены свойства JSON, характерные для связанной службы DB2.
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
-| **type** |Этому свойству необходимо задать значение **OnPremisesDB2**. |Yes |
-| **server** |Имя сервера DB2. |Yes |
-| **database** |Имя базы данных DB2. |Yes |
-| **schema** |Имя схемы в базе данных DB2. Это свойство чувствительно к регистру. |Нет  |
-| **authenticationType** |Тип аутентификации, используемый для подключения к базе данных DB2. Вы можете выбрать Anonymous, Basic или Windows. |Yes |
-| **username** |Имя для учетной записи пользователя, если используемая аутентификация имеет тип "Обычная" или "Windows". |Нет  |
-| **password** |Пароль для учетной записи пользователя. |Нет  |
-| **gatewayName** |Имя шлюза, который следует использовать службе фабрики данных для подключения к локальной базе данных DB2. |Yes |
+| **type** |Этому свойству необходимо задать значение **OnPremisesDB2**. |Да |
+| **server** |Имя сервера DB2. |Да |
+| **database** |Имя базы данных DB2. |Да |
+| **schema** |Имя схемы в базе данных DB2. Это свойство чувствительно к регистру. |Нет |
+| **authenticationType** |Тип аутентификации, используемый для подключения к базе данных DB2. Вы можете выбрать Anonymous, Basic или Windows. |Да |
+| **username** |Имя для учетной записи пользователя, если используемая аутентификация имеет тип "Обычная" или "Windows". |Нет |
+| **password** |Пароль для учетной записи пользователя. |Нет |
+| **gatewayName** |Имя шлюза, который следует использовать службе фабрики данных для подключения к локальной базе данных DB2. |Да |
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 Список разделов и свойств, используемых для определения наборов данных, см. в статье [Наборы данных в фабрике данных Azure](data-factory-create-datasets.md). Разделы **structure**, **availability** и **policy** для JSON набора данных одинаковы для всех типов наборов данных (SQL Azure, хранилище BLOB-объектов, хранилище таблиц Azure и т. д.).
 
 Раздел **typeProperties** во всех типах наборов данных разный. В нем содержатся сведения о расположении данных в хранилище данных. Раздел **typeProperties** набора данных с типом **RelationalTable**, который включает набор данных DB2, имеет следующее свойство:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | **tableName** |Имя таблицы в экземпляре базы данных DB2, на которое ссылается связанная служба. Это свойство чувствительно к регистру. |Нет (если указано свойство **query** действия копирования типа **RelationalSource**). |
 
@@ -104,7 +104,7 @@ ms.locfileid: "56311534"
 
 Для действия копирования, когда источник относится к типу **RelationalSource** (который содержит DB2), в разделе **typeProperties** доступны следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно |
+| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | **query** |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например: `"query": "select * from "MySchema"."MyTable""` |Нет (если для свойства **tableName** задано значение dataset). |
 
@@ -316,24 +316,24 @@ ms.locfileid: "56311534"
 | Float |Double |
 | Decimal |Decimal |
 | DecimalFloat |Decimal |
-| Числовой |Decimal |
+| Numeric |Decimal |
 | Дата |DateTime |
 | Время |TimeSpan |
 | Timestamp |Datetime |
-| xml |Byte[] |
-| Char |Строка |
-| VarChar |Строка |
-| LongVarChar |Строка |
-| DB2DynArray |Строка |
+| Xml |Byte[] |
+| Char |String |
+| VarChar |String |
+| LongVarChar |String |
+| DB2DynArray |String |
 | Binary |Byte[] |
 | VarBinary |Byte[] |
 | LongVarBinary |Byte[] |
-| Graphic |Строка |
-| VarGraphic |Строка |
-| LongVarGraphic |Строка |
-| Clob |Строка |
-| BLOB-объект |Byte[] |
-| DbClob |Строка |
+| Graphic |String |
+| VarGraphic |String |
+| LongVarGraphic |String |
+| Clob |String |
+| BLOB-объекты |Byte[] |
+| DbClob |String |
 | SmallInt |Int16 |
 | Целое число  |Int32 |
 | BigInt |Int64 |
@@ -342,12 +342,12 @@ ms.locfileid: "56311534"
 | Float |Double |
 | Decimal |Decimal |
 | DecimalFloat |Decimal |
-| Числовой |Decimal |
+| Numeric |Decimal |
 | Дата |DateTime |
 | Время |TimeSpan |
 | Timestamp |Datetime |
-| xml |Byte[] |
-| Char |Строка |
+| Xml |Byte[] |
+| Char |String |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника
 Сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в статье [Сопоставление столбцов исходного набора данных со столбцами целевого набора данных](data-factory-map-columns.md).

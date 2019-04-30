@@ -7,11 +7,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.openlocfilehash: e291cb46b5f8cb8722348bd8fcd6031ed29beb9a
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56888318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61423452"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-the-azure-cli"></a>Создание реплик чтения и управление ими в Базе данных Azure для MySQL с помощью Azure CLI
 
@@ -35,7 +35,7 @@ az mysql server replica create --name mydemoreplicaserver --source-server mydemo
 
 Для команды `az mysql server replica create` обязательны указанные ниже параметры.
 
-| Параметр | Пример значения | ОПИСАНИЕ  |
+| Параметр | Пример значения | Описание  |
 | --- | --- | --- |
 | resource-group |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
 | name | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
@@ -57,7 +57,7 @@ az mysql server replica stop --name mydemoreplicaserver --resource-group myresou
 
 Для команды `az mysql server replica stop` обязательны указанные ниже параметры.
 
-| Параметр | Пример значения | ОПИСАНИЕ  |
+| Параметр | Пример значения | Описание  |
 | --- | --- | --- |
 | resource-group |  myresourcegroup |  Группа ресурсов, в которой находится сервер реплики.  |
 | name | mydemoreplicaserver | Имя сервера реплики для остановки репликации. |
@@ -91,7 +91,7 @@ az mysql server replica list --server-name mydemoserver --resource-group myresou
 
 Для команды `az mysql server replica list` обязательны указанные ниже параметры.
 
-| Параметр | Пример значения | ОПИСАНИЕ  |
+| Параметр | Пример значения | Описание  |
 | --- | --- | --- |
 | resource-group |  myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
 | server-name | mydemoserver | Имя или идентификатор главного сервера. |

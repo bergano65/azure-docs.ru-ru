@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/04/2016
 ms.author: crdun
 ms.openlocfilehash: 506c59ca24aeafbac59b1508bb78142051302765
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53001829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62127885"
 ---
 # <a name="enable-offline-sync-for-your-xamarinforms-mobile-app"></a>Включение автономной синхронизации мобильного приложения Xamarin.Forms
 [!INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
@@ -40,8 +40,8 @@ ms.locfileid: "53001829"
         #define OFFLINE_SYNC_ENABLED
 3. (Необязательный шаг.) Чтобы обеспечить поддержку устройств Windows, установите один из следующих пакетов среды выполнения SQLite:
 
-   * **Среда выполнения Windows 8.1**: установите [SQLite для Windows 8.1][3].
-   * **Windows Phone 8.1**: установите [SQLite для Windows Phone 8.1][4].
+   * **Среда выполнения Windows 8.1**: установите [SQLite для Windows 8.1][3].
+   * **Windows Phone 8.1**: установите [SQLite для Windows Phone 8.1][4].
    * **Универсальная платформа Windows**: установите [SQLite для универсальной платформы Windows][5].
 
      Хотя это краткое руководство не содержит проект универсальной платформы Windows, платформа поддерживается Xamarin Forms.

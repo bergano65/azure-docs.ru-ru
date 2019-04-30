@@ -2,20 +2,21 @@
 title: Перенос решения в хранилище данных SQL | Документация Майкрософт
 description: Руководство по миграции, с помощью которого вы сможете перенести свое решение в хранилище данных Azure SQL.
 services: sql-data-warehouse
-author: jrowlandjones
-manager: craigg
+author: WenJason
+manager: digimobile
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: implement
-ms.date: 04/17/2018
-ms.author: jrj
+origin.date: 04/17/2018
+ms.date: 03/25/2019
+ms.author: v-jay
 ms.reviewer: igorstan
 ms.openlocfilehash: 04c921282d3591e7326d326c230bf72e7f5c1812
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57313027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60776226"
 ---
 # <a name="migrate-your-solution-to-azure-sql-data-warehouse"></a>Перенос решения в хранилище данных SQL Azure
 Узнайте, что происходит при переносе существующего решения для базы данных в хранилище данных SQL Azure. 
@@ -36,7 +37,6 @@ ms.locfileid: "57313027"
 - необходимость построчной обработки;
 - несовместимые форматы (JSON, XML).
 
-
 ## <a name="plan-the-migration"></a>Планирование переноса
 
 Решив перенести существующее решение в хранилище данных SQL, необходимо предварительно спланировать процесс переноса. 
@@ -51,17 +51,6 @@ ms.locfileid: "57313027"
 -  [Перенос кода](sql-data-warehouse-migrate-code.md)
 -  [Перенос данных](sql-data-warehouse-migrate-data.md) 
 
-<!--
-## Perform the migration
-
-
-## Deploy the solution
-
-
-## Validate the migration
-
--->
-
 ## <a name="next-steps"></a>Дальнейшие действия
 У группы консультирования клиентов (CAT) также есть полезное руководство по хранилищу данных SQL, которое они публикуют в блогах.  Прочитайте их статью [Migrating data to Azure SQL Data Warehouse in practice][Migrating data to Azure SQL Data Warehouse in practice] (Перенос данных в хранилище данных SQL Azure на практике), чтобы ознакомиться с дополнительными рекомендациями по переносу.
 
@@ -73,3 +62,5 @@ ms.locfileid: "57313027"
 
 <!--Other Web references-->
 [Migrating data to Azure SQL Data Warehouse in practice]: https://blogs.msdn.microsoft.com/sqlcat/20../../migrating-data-to-azure-sql-data-warehouse-in-practice/
+
+<!--Update_Description: update meta properties, wording update-->

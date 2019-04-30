@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 04/09/2018
 ms.author: cynthn;davberg
 ms.openlocfilehash: 43d0ab6552847df7f1f2a8599dcc7cb9a8fcb57b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59698835"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60844080"
 ---
 # <a name="compute-benchmark-scores-for-windows-vms"></a>Вычисление результатов теста производительности для виртуальных машин Windows
 Ниже приведены результаты теста производительности SPECInt линейки высокопроизводительных виртуальных машин Azure под управлением Windows Server. Вы можете также ознакомиться с результатами теста производительности для [виртуальных машин Linux](../linux/compute-benchmark-scores.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
@@ -31,7 +31,7 @@ ms.locfileid: "59698835"
 ## <a name="a-series---compute-intensive"></a>Серия А: для ресурсоемких вычислений
 | Размер | Число виртуальных ЦП | Число узлов NUMA | ЦП | Запуски | Ср. базовая производительность | StdDev |
 | --- | --- | --- | --- | --- | --- | --- |
-| Standard_A8 |8 |1 |Intel Xeon E5-2670 с тактовой частотой \@ 2,6 ГГц |10 |236,1 |1,1 |
+| Standard_A8 |8 |1 |Intel Xeon E5-2670 с тактовой частотой \@ 2,6 ГГц |10 |236,1 |1.1 |
 | Standard_A9 |16 |2 |Intel Xeon E5-2670 с тактовой частотой \@ 2,6 ГГц |10 |450,3 |7.0 |
 | Standard_A10 |8 |1 |Intel Xeon E5-2670 с тактовой частотой \@ 2,6 ГГц |5 |235,6 |0.9 |
 | Standard_A11 |16 |2 |Intel Xeon E5-2670 с тактовой частотой \@ 2,6 ГГц |7 |454,7 |4.8 |
@@ -54,8 +54,8 @@ ms.locfileid: "59698835"
 | --- | --- | --- | --- | --- | --- | --- |
 | Standard_G1, Standard_GS1 |2 |1 |Intel Xeon E5-2698B вер. 3 с тактовой частотой \@ 2 ГГц |31 |71,8 |6,5 |
 | Standard_G2, Standard_GS2 |4. |1 |Intel Xeon E5-2698B вер. 3 с тактовой частотой \@ 2 ГГц |5 |133,4 |13,0 |
-| Standard_G3, Standard_GS3 |8 |1 |Intel Xeon E5-2698B вер. 3 с тактовой частотой \@ 2 ГГц |6 |242,3 |6,0 |
-| Standard_G4, Standard_GS4 |16 |1 |Intel Xeon E5-2698B вер. 3 с тактовой частотой \@ 2 ГГц |15 |398,9 |6,0 |
+| Standard_G3, Standard_GS3 |8 |1 |Intel Xeon E5-2698B вер. 3 с тактовой частотой \@ 2 ГГц |6 |242,3 |6.0 |
+| Standard_G4, Standard_GS4 |16 |1 |Intel Xeon E5-2698B вер. 3 с тактовой частотой \@ 2 ГГц |15 |398,9 |6.0 |
 | Standard_G5, Standard_GS5 |32 |2 |Intel Xeon E5-2698B вер. 3 с тактовой частотой \@ 2 ГГц |22 |762,8 |3,7 |
 
 ## <a name="h-series"></a>Серия H

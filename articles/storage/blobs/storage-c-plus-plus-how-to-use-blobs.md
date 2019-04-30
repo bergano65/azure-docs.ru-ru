@@ -9,11 +9,11 @@ ms.date: 03/21/2018
 ms.author: michaelhauss
 ms.subservice: blobs
 ms.openlocfilehash: d86b2c71515900405b0e7714d2c36cd8e4cbc7fc
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57993228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122614"
 ---
 # <a name="how-to-use-blob-storage-from-c"></a>Использование хранилища BLOB-объектов из C++
 
@@ -82,7 +82,7 @@ azure::storage::cloud_storage_account storage_account = azure::storage::cloud_st
 azure::storage::cloud_blob_client blob_client = storage_account.create_cloud_blob_client();  
 ```
 
-## <a name="how-to-create-a-container"></a>Практическое руководство: Создание контейнера
+## <a name="how-to-create-a-container"></a>Практическое руководство: Создать контейнер
 [!INCLUDE [storage-container-naming-rules-include](../../../includes/storage-container-naming-rules-include.md)]
 
 В этом примере показано, как создать контейнер:  

@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: milanga;juliako;
 ms.openlocfilehash: 0fcacf68f4b41ed8945a6a40d7da125aef499947
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58313266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60825545"
 ---
 # <a name="use-azure-media-video-thumbnails-to-create-a-video-summarization"></a>Использование Azure Media Video Thumbnail для формирования сводных данных видео  
 ## <a name="overview"></a>Обзор
@@ -53,7 +53,7 @@ ms.locfileid: "58313266"
 
 В ней можно изменить следующие параметры.
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 | --- | --- |
 | outputAudio |Указывает, есть ли в итоговом видео аудио. <br/>Допустимые значения: Значение True или False. Значение по умолчанию — True. |
 | fadeInFadeOut |Указывает, используются ли плавные переходы при перемещении отдельных эскизов.  <br/>Допустимые значения: Значение True или False.  Значение по умолчанию — True. |

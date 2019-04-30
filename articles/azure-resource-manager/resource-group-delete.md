@@ -13,11 +13,11 @@ ms.date: 12/09/2018
 ms.author: tomfitz
 ms.custom: seodec18
 ms.openlocfilehash: c38b1ccf7f7ccfe57e2b29f236f642238c4706a7
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55492748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61363671"
 ---
 # <a name="azure-resource-manager-resource-group-deletion"></a>Удаление группы ресурсов в Azure Resource Manager
 
@@ -59,14 +59,14 @@ Resource Manager отправляет вызов GET для каждого ре�
 
 Если операция GET возвращает ошибку, Resource Manager повторяет операцию GET для следующего кода ошибки:
 
-* меньше 100;
+* Менее 100
 * 408
 * 429
 * больше 500.
 
 Для других кодов ошибок Resource Manager не выполняет повторных попыток, и удаление ресурса завершается сбоем.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Основные понятия Azure Resource Manager см. в [этой статье](resource-group-overview.md).
 * Команды удаления см. в разделах [PowerShell](/powershell/module/az.resources/Remove-AzResourceGroup), [Azure CLI](/cli/azure/group?view=azure-cli-latest#az-group-delete) и [REST API](/rest/api/resources/resourcegroups/delete).

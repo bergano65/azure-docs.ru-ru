@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с TOPdesk — Public | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с TOPdesk — Public | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и TOPdesk - Public.
 services: active-directory
 documentationCenter: na
@@ -17,11 +17,11 @@ ms.date: 07/25/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 89412040fdea32746574d8ae5bada9c017617b80
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56184998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62129296"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-topdesk---public"></a>Руководство по Интеграция Azure Active Directory с TOPdesk — Public
 
@@ -35,7 +35,7 @@ ms.locfileid: "56184998"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с TOPdesk - Public, вам потребуется следующее:
 
@@ -152,7 +152,7 @@ ms.locfileid: "56184998"
    
     a. Нажмите кнопку **Скачать** , чтобы скачать общедоступный файл метаданных, а затем сохраните его локально на компьютере.
    
-    б) Откройте скачанный файл метаданных и определите местоположение узла **AssertionConsumerService**.
+    2. Откройте скачанный файл метаданных и определите местоположение узла **AssertionConsumerService**.
 
     ![AssertionConsumerService](./media/topdesk-public-tutorial/ic790619.png "AssertionConsumerService")
    
@@ -164,11 +164,11 @@ ms.locfileid: "56184998"
     
     a. Откройте скачанный файл метаданных на портале Azure.
     
-    б) Разверните узел **RoleDescriptor**, содержащий **xsi:type** со значением **fed:ApplicationServiceType**.
+    2. Разверните узел **RoleDescriptor**, содержащий **xsi:type** со значением **fed:ApplicationServiceType**.
     
     c. Скопируйте значение узла **X509Certificate** .
     
-    4.3. Сохраните скопированное значение узла **X509Certificate** локально в файл на компьютере.
+    d. Сохраните скопированное значение узла **X509Certificate** локально в файл на компьютере.
 
 1. В разделе **Public** (Общедоступные) щелкните **Add** (Добавить).
     
@@ -180,11 +180,11 @@ ms.locfileid: "56184998"
     
     a. Чтобы отправить скачанный файл метаданных через портал Azure, напротив пункта **Federation Metadata** (Метаданные федерации) нажмите кнопку **Browse** (Обзор).
 
-    б) Чтобы отправить файл сертификата, напротив пункта **Certificate (RSA)** (Сертификат (RSA)) нажмите кнопку **Browse** (Обзор).
+    2. Чтобы отправить файл сертификата, напротив пункта **Certificate (RSA)** (Сертификат (RSA)) нажмите кнопку **Browse** (Обзор).
 
     c. Чтобы отправить файл с логотипом, полученный от службы поддержки TOPdesk, напротив пункта **Logo icon** (Значок логотипа) нажмите кнопку **Browse** (Обзор).
 
-    4.3. В текстовое поле **Атрибут имени пользователя** введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    d. В текстовое поле **Атрибут имени пользователя** введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
     д. В текстовом поле **Отображаемое имя** введите имя конфигурации.
 
@@ -223,7 +223,7 @@ ms.locfileid: "56184998"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-topdesk---public-test-user"></a>Создание тестового пользователя TOPdesk - Public
 
@@ -243,11 +243,11 @@ ms.locfileid: "56184998"
    
     a. Перейдите на вкладку "Общее".
 
-    б) В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
+    2. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
  
     c. Выберите **Веб-сайт** для этой учетной записи.
  
-    4.3. Выберите команду **Сохранить**.
+    d. Выберите команду **Сохранить**.
 
 > [!NOTE]
 > Для подготовки учетных записей Azure AD вы можете использовать любые другие инструменты или API-интерфейсы создания пользователей, предоставляемые TOPdesk — Public.
@@ -282,7 +282,7 @@ ms.locfileid: "56184998"
 
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Тест единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

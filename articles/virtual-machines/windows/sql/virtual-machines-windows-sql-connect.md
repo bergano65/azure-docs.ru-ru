@@ -16,11 +16,11 @@ ms.date: 12/12/2017
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: a33525e44b2e294b7ce85c7081864dbef0856588
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58650859"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62130816"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure"></a>Подключение к виртуальной машине SQL Server в Azure
 
@@ -40,10 +40,10 @@ ms.locfileid: "58650859"
 
 Варианты подключения:
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 |---|---|
 | **Общедоступное** | Подключение к SQL Server через Интернет |
-| **Частное** | Подключение к SQL Server в пределах одной виртуальной сети |
+| **Закрытые** | Подключение к SQL Server в пределах одной виртуальной сети |
 | **Локальное** | Локальное подключение к SQL Server на одной и той же виртуальной машине | 
 
 В следующих разделах более подробно описаны типы подключения **Общедоступное** и **Частное**.
@@ -134,7 +134,7 @@ Server=mysqlvm;Integrated Security=true
 
 В следующей таблице перечислены требования для подключения к серверу SQL Server, запущенному на виртуальной машине Azure.
 
-| Требование | ОПИСАНИЕ |
+| Требование | Описание |
 |---|---|
 | [Включите режим аутентификации SQL Server](https://docs.microsoft.com/sql/database-engine/configure-windows/change-server-authentication-mode#SSMSProcedure) | Для удаленного подключения к виртуальной машине требуется аутентификация SQL Server, если только не настроена служба Active Directory в виртуальной сети. |
 | [Создайте имя входа SQL](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/create-a-login) | При использовании аутентификации SQL требуется имя входа SQL с именем пользователя и паролем, у которого также имеются разрешения для целевой базы данных. |

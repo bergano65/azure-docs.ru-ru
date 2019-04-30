@@ -15,11 +15,11 @@ ms.workload: azure-vs
 ms.date: 02/18/2019
 ms.author: glenga;david.ebbo;suwatch;pbatum;naren.soni
 ms.openlocfilehash: ede7e2fe3a2ab4c0dfd4efaea5ec789924968194
-ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/24/2019
-ms.locfileid: "56750163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60832409"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio---azure-app-service"></a>Разработка и развертывание веб-заданий в службе приложений Azure с помощью Visual Studio
 
@@ -239,7 +239,7 @@ Visual Studio можно использовать для изменения ве
 | **Параметр** | **Тип**  | **Описание** |
 | ----------- | --------- | --------------- |
 | `is_in_place` | Все | Позволяет задание для запуска на месте без сначала копируются во временную папку. Дополнительные сведения см. в разделе [рабочий каталог веб-заданий](https://github.com/projectkudu/kudu/wiki/WebJobs#webjob-working-directory). |
-| `is_singleton` | Непрерывные | Веб-заданий можно запустите, только на одном экземпляре при масштабировании. Дополнительные сведения см. в разделе [непрерывной задание как одноэлементные](https://github.com/projectkudu/kudu/wiki/WebJobs-API#set-a-continuous-job-as-singleton). |
+| `is_singleton` | Непрерывный | Веб-заданий можно запустите, только на одном экземпляре при масштабировании. Дополнительные сведения см. в разделе [непрерывной задание как одноэлементные](https://github.com/projectkudu/kudu/wiki/WebJobs-API#set-a-continuous-job-as-singleton). |
 | `schedule` | Активируемые | Запуск веб-задания по расписанию на основе CRON. Дополнительные сведения см. в разделе [справочнике по триггерам таймера](../azure-functions/functions-bindings-timer.md#cron-expressions). |
 | `stopping_wait_time`| Все | Позволяет контролировать поведение завершения работы. Дополнительные сведения см. в разделе [нормальное завершение работы](https://github.com/projectkudu/kudu/wiki/WebJobs#graceful-shutdown). |
 

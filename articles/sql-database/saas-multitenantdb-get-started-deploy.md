@@ -13,11 +13,11 @@ ms.reviewer: billgib, stein
 manager: craigg
 ms.date: 10/16/2018
 ms.openlocfilehash: 8f19303dba7fcf2a9edb325464fdd3748220903e
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57994907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61486210"
 ---
 # <a name="deploy-and-explore-a-sharded-multi-tenant-application"></a>Развертывание и изучение сегментированного мультитенантного приложения
 
@@ -133,7 +133,7 @@ ms.locfileid: "57994907"
 
    ![События](./media/saas-multitenantdb-get-started-deploy/fabrikam.png)
 
-### <a name="azure-traffic-manager"></a>Azure Traffic Manager
+### <a name="azure-traffic-manager"></a>Диспетчер трафика Azure
 
 Чтобы управлять распределением входящих запросов, приложение Wingtip использует [диспетчер трафика Azure](../traffic-manager/traffic-manager-overview.md). В URL-адресе страницы событий для каждого клиента содержится его имя. Каждый URL-адрес также включает в себя значение конкретного пользователя. Каждый URL-адрес соответствует показанному формату, используя следующие шаги.
 
@@ -210,7 +210,7 @@ ms.locfileid: "57994907"
 
 1. На [портале Azure](https://portal.azure.com) перейдите к списку групп ресурсов. Откройте группу ресурсов, которая была создана при развертывании приложения.
 
-   ![resource group](./media/saas-multitenantdb-get-started-deploy/resource-group.png)
+   ![Группа ресурсов](./media/saas-multitenantdb-get-started-deploy/resource-group.png)
 
 2. Щелкните сервер **catalog-mt&lt;пользователь&gt;**. На сервере каталога содержится две базы данных с именем *tenantcatalog* и *basetenantdb*. База данных *basetenantdb* — это пустой шаблон базы данных. Он копируется для создания клиентской базы данных, используемой для нескольких клиентов или только для одного.
 

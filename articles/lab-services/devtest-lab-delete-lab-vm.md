@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 07/30/2018
 ms.author: spelluru
 ms.openlocfilehash: 9634c70566aba21bdd28ee016c9fa94464ec9c1b
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52956336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62127418"
 ---
 # <a name="delete-a-lab-or-vm-in-a-lab-in-azure-devtest-labs"></a>Удаление лаборатории или виртуальной машины в лаборатории в Azure DevTest Labs
 В этой статье описано, как удалить лабораторию или виртуальную машину в лаборатории.
@@ -40,7 +40,7 @@ ms.locfileid: "52956336"
     ![Кнопка "Удалить"](media/devtest-lab-delete-lab-vm/delete-button.png)
 4. На странице **подтверждения** введите **имя** лаборатории и нажмите кнопку **Удалить**. 
 
-    ![Подтверждение](media/devtest-lab-delete-lab-vm/confirm-delete.png)
+    ![Подтвердить](media/devtest-lab-delete-lab-vm/confirm-delete.png)
 5. Чтобы просмотреть состояние операции, щелкните значок **Уведомления** (колокольчик). 
 
     ![Уведомления](media/devtest-lab-delete-lab-vm/delete-status.png)
@@ -71,7 +71,7 @@ ms.locfileid: "52956336"
 ![Удаление виртуальной машины на странице виртуальной машины](media/devtest-lab-delete-lab-vm/delete-from-vm-page.png) 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Если вы хотите создать лабораторию, ознакомьтесь со следующими статьями: 
 
 - [Создание лаборатории](devtest-lab-create-lab.md)

@@ -16,11 +16,11 @@ ms.date: 05/04/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: bb051d37f3a1dd82d7d46bfe8b22c2ba1251be85
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59259207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62129891"
 ---
 # <a name="how-to-provision-a-windows-sql-server-virtual-machine-in-the-azure-portal"></a>Как подготовить виртуальную машину SQL Server на платформе Windows на портале Azure
 
@@ -70,14 +70,14 @@ ms.locfileid: "59259207"
 
 Есть несколько вкладок для настройки виртуальной машины с SQL Server. В данном руководстве мы сосредоточимся на следующее: 
 
-| Шаг | ОПИСАНИЕ |
+| Шаг | Описание |
 | --- | --- |
 | **Основы** |[Настройка основных параметров](#1-configure-basic-settings) |
 | **Дополнительные компоненты** |[Настройка дополнительных возможностей](#2-configure-optional-features) |
 | **Параметры SQL Server** |[Настройка параметров SQL Server](#3-configure-sql-server-settings) |
 | **Просмотр и создание** | [Просмотр сводки.](#4-review--create) |
 
-## <a name="1-configure-basic-settings"></a>1. Настройка основных параметров.
+## <a name="1-configure-basic-settings"></a>1. Настройка базовых параметров
 
 
 На вкладке **Основные сведения** укажите следующую информацию.
@@ -109,12 +109,12 @@ ms.locfileid: "59259207"
 
 * В разделе **Правила входящего порта** щелкните **Разрешить выбранные порты**, а затем выберите **RDP (3389)** из раскрывающегося списка. 
 
-   ![Правила для входящих портов](media/quickstart-sql-vm-create-portal/basics-inbound-port-rules.png)
+   ![Правила входящего порта](media/quickstart-sql-vm-create-portal/basics-inbound-port-rules.png)
 
 
-## <a name="2-configure-optional-features"></a>2. Настройка дополнительных возможностей
+## <a name="2-configure-optional-features"></a>2. Настроить дополнительные возможности
 
-### <a name="disks"></a>диски;
+### <a name="disks"></a>Диски
 
 На **дисков** вкладке, настроить параметры диска. 
 
@@ -149,7 +149,7 @@ ms.locfileid: "59259207"
 ![Параметры управления виртуальной Машины SQL](media/virtual-machines-windows-portal-sql-server-provision/azure-sqlvm-management.png)
 
 
-## <a name="3-configure-sql-server-settings"></a>3. Настройка параметров SQL Server
+## <a name="3-configure-sql-server-settings"></a>3. Настройка SQL Server
 
 На **параметры SQL Server** вкладке, настройте нужные параметры и оптимизацию для SQL Server. Ниже приведены параметры, которые можно настроить для SQL Server:
 
@@ -158,7 +158,7 @@ ms.locfileid: "59259207"
 | Параметр |
 | --- |
 | [Соединение](#connectivity) |
-| [Проверка подлинности](#authentication) |
+| [Authentication](#authentication) |
 | [Интеграция с хранилищем ключей Azure](#azure-key-vault-integration) |
 | [Конфигурация хранилища](#storage-configuration) |
 | [Автоматическое исправление](#automated-patching) |
@@ -166,7 +166,7 @@ ms.locfileid: "59259207"
 | [Службы R (Advanced Analytics)](#r-services-advanced-analytics) |
 
 
-### <a name="connectivity"></a>Соединение
+### <a name="connectivity"></a>Подключение
 
 В разделе **Подключение SQL**укажите необходимый тип доступа к экземпляру SQL Server на этой виртуальной машине. В рамках этого пошагового руководства выберите **Общедоступный (Интернет)** для подключения к SQL Server с компьютеров или из служб в Интернете. Этот параметр выбран Azure автоматически настраивает брандмауэр и группу безопасности сети, чтобы разрешить трафик через порт, который выбран.
 
@@ -201,15 +201,15 @@ ms.locfileid: "59259207"
 
 ![Проверка подлинности SQL Server](media/virtual-machines-windows-portal-sql-server-provision/azure-sqlvm-authentication.png)
 
-### <a name="azure-key-vault-integration"></a>Интеграция с хранилищем ключей Azure
+### <a name="azure-key-vault-integration"></a>Интеграция Azure Key Vault
 
 Чтобы хранить в Azure секреты безопасности для шифрования, щелкните **Интеграция хранилища ключей Azure** и выберите значение **Включить**.
 
-![Интеграция с хранилищем ключей Azure](media/virtual-machines-windows-ps-sql-keyvault/azure-sql-arm-akv.png)
+![Интеграция Azure Key Vault](media/virtual-machines-windows-ps-sql-keyvault/azure-sql-arm-akv.png)
 
 В следующей таблице перечислены параметры, необходимые для настройки интеграции с хранилищем ключей Azure.
 
-| ПАРАМЕТР | Описание | ПРИМЕР |
+| ПАРАМЕТР | ОПИСАНИЕ | ПРИМЕР |
 | --- | --- | --- |
 | **URL-адрес хранилища ключей** |Расположение хранилища ключей. |https:\//contosokeyvault.vault.azure.net/ |
 | **Имя субъекта** |Имя субъекта-службы Azure Active Directory. Этот имя также называется идентификатором клиента. |fde2b411-33d5-4e11-af04eb07b669ccf2 |

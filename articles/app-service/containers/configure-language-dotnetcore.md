@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
 ms.openlocfilehash: e203877b2bc939c1d7fb9390df39f3e2451d12d3
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59551117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60852318"
 ---
 # <a name="configure-a-linux-aspnet-core-app-for-azure-app-service"></a>Настройка виртуальных машин Linux приложения ASP.NET Core для службы приложений Azure
 
@@ -50,7 +50,7 @@ az webapp config set --name <app-name> --resource-group <resource-group-name> --
 
 ## <a name="access-environment-variables"></a>Доступ к переменным среды
 
-В службе приложений, вы можете [задать параметры приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings) вне кода приложения. Затем они будут доступны с помощью стандартного шаблона ASP.NET:
+В Службе приложений можно [задать параметры приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings) вне кода приложения. Затем они будут доступны с помощью стандартного шаблона ASP.NET:
 
 ```csharp
 include Microsoft.Extensions.Configuration;
@@ -141,7 +141,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство Приложения ASP.NET Core с базой данных SQL](tutorial-dotnetcore-sqldb-app.md)
+> [Учебник. по приложению ASP.NET Core с Базой данных SQL](tutorial-dotnetcore-sqldb-app.md)
 
 > [!div class="nextstepaction"]
-> [Службы приложений Linux часто задаваемые вопросы](app-service-linux-faq.md)
+> [Служба приложений под управлением Linux: вопросы и ответы](app-service-linux-faq.md)

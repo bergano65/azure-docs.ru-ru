@@ -11,11 +11,11 @@ ms.date: 03/25/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: 6f7fce7eab697f6517b351d00595cb02110d3641
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58499579"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61286435"
 ---
 # <a name="query-examples-using-full-lucene-search-syntax-advanced-queries-in-azure-search"></a>Примеры запросов, используя синтаксис поиска «full» Lucene (сложные запросы в службе поиска Azure)
 
@@ -81,7 +81,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-
 
 Во всех примерах в этой статье задается параметр поиска **queryType=full**, указывающий, что полный синтаксис обрабатывается средством синтаксического анализа запросов Lucene. 
 
-## <a name="example-1-field-scoped-query"></a>Пример 1 Запрос по полям
+## <a name="example-1-field-scoped-query"></a>Пример 1: Запрос по полям
 
 В первом примере не зависящие от Lucene, но мы привести с ним введения первого запроса фундаментальные понятия: вложения. В этом примере задается область выполнения запроса и для ответа определяется всего несколько конкретных полей. Знать, как структурировать читаемый ответ JSON, важно, если используется инструмент Postman или обозреватель поиска. 
 
@@ -111,7 +111,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-
 
 Вы могли заметить оценку поиска в ответе. Универсальная оценка 1 отображается, если приоритет не указан, потому что выполнен поиск не всего текста или не указано условие. Для нулевого поиска без критериев строки возвращаются в произвольном порядке. Когда вы добавите условие поиска, вы увидите, как оценки поиска превратятся в понятные значения.
 
-## <a name="example-2-intra-field-filtering"></a>Пример 2 Фильтрация внутри поля
+## <a name="example-2-intra-field-filtering"></a>Пример 2: Фильтрация внутри поля
 
 Полный синтаксис Lucene поддерживает выражения в поле. В этом примере выполняется поиск должностей, старший термин в них, но не "junior".
 

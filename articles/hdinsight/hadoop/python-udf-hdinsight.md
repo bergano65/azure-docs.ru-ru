@@ -1,7 +1,6 @@
 ---
 title: Использование определяемых пользователем функций Python с Apache Hive и Apache Pig в Azure HDInsight
 description: Узнайте, как использовать определяемые пользователем функции Python стека технологий Apache Hadoop на базе Azure — Apache Hive и Apache Pig в HDInsight.
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 03/15/2019
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: adcfb308bbbc8e3de456c4e7a71c543f988db02a
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
-ms.translationtype: MT
+ms.openlocfilehash: 6f3140f412f9d36ca36cef440bd4e60f1a9197d4
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58497998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62114613"
 ---
 # <a name="use-python-user-defined-functions-udf-with-apache-hive-and-apache-pig-in-hdinsight"></a>Использование определяемых пользователем функций Python с Apache Hive и Apache Pig в HDInsight
 
@@ -74,7 +73,7 @@ ORDER BY clientid LIMIT 50;
 
 <a name="streamingpy"></a>
 
-### <a name="create-file"></a>Создание файла
+### <a name="create-file"></a>Создать файл
 
 В среде разработки создайте текстовый файл с именем `hiveudf.py`. Используйте следующий код в качестве содержимого файла:
 
@@ -317,7 +316,7 @@ DUMP DETAILS;
 3. Затем выполняется итерация по записям в `LOG` и используется инструкция `GENERATE` для вызова метода `create_structure`, содержащегося в скрипте Python или Jython, загруженном как `myfuncs`. `LINE` используется для передачи текущей записи в функцию.
 4. Наконец, выходные данные сбрасываются в поток STDOUT командой `DUMP`. После завершения операции эта команда выведет результат.
 
-### <a name="create-file"></a>Создание файла
+### <a name="create-file"></a>Создать файл
 
 В среде разработки создайте текстовый файл с именем `pigudf.py`. Используйте следующий код в качестве содержимого файла:
 
@@ -582,7 +581,7 @@ Get-AzHDInsightJobOutput `
 | Для данного задания... | Смотрите эти файлы в контейнере |
 | --- | --- |
 | Hive |/HivePython/stderr<p>/HivePython/stdout |
-| Pig, |/PigPython/stderr<p>/PigPython/stdout |
+| Pig |/PigPython/stderr<p>/PigPython/stdout |
 
 ## <a name="next"></a>Дальнейшие действия
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 03/15/2019
 ms.author: alkohli
 ms.openlocfilehash: 3a8d1f93930d2b298eeb7d10a73624b9a19bcc0e
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60007786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60756265"
 ---
 # <a name="troubleshoot-your-azure-data-box-edge-issues"></a>Устранение неполадок в Azure Data Box Edge 
 
@@ -22,7 +22,7 @@ ms.locfileid: "60007786"
 В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
-> * Запуск диагностики
+> * Выполнить диагностику
 > * Сбор пакета поддержки.
 > * Использование журналов для устранения неполадок.
 

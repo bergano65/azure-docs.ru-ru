@@ -15,11 +15,11 @@ ms.date: 12/01/2017
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: 763aadc50a8760b4265dbfc21e9278f909b68433
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53342023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60851125"
 ---
 # <a name="use-an-ssl-certificate-in-your-application-code-in-azure-app-service"></a>Использование SSL-сертификата в коде приложения службы приложений Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "53342023"
 
 Доверив управление SSL-сертификатами службе приложений, вы сможете разделить сертификаты и код приложения, защитив таким образом конфиденциальные данные.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством должны быть выполнены следующие условия.
 
@@ -46,7 +46,7 @@ ms.locfileid: "53342023"
 
 В области навигации слева щелкните **SSL-сертификаты**.
 
-![Сертификат добавлен](./media/app-service-web-tutorial-custom-ssl/certificate-uploaded.png)
+![Сертификат отправлен](./media/app-service-web-tutorial-custom-ssl/certificate-uploaded.png)
 
 Здесь показаны все SSL-сертификаты, загруженные или импортированные для этого веб-приложения, и соответствующие отпечатки. Скопируйте отпечаток того сертификата, который вы хотите использовать.
 

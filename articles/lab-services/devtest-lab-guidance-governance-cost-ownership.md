@@ -14,11 +14,11 @@ ms.date: 02/11/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: 7832691812d8f10342dc7df20a7cfab7265f2d9d
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56243524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60775718"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---manage-cost-and-ownership"></a>Система управления инфраструктурой Azure DevTest Labs — контроль затрат и владение
 Затраты и владение являются основными сложностями при создании собственных сред разработки и тестирования. В этом разделе приведены сведения, которые помогут оптимизировать затраты и согласовать владельца в средах.
@@ -61,5 +61,5 @@ ms.locfileid: "56243524"
 Дополнительные сведения см. в документации [Корпоративный каркас Azure: рекомендуемая система управления подписками](/azure/architecture/cloud-adoption/appendix/azure-scaffold).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со статьей [Governance of Azure DevTest Labs infrastructure - Company policy and compliance](devtest-lab-guidance-governance-policy-compliance.md) (Система управления инфраструктурой Azure DevTest Labs. Политика компании и соответствие требованиям).

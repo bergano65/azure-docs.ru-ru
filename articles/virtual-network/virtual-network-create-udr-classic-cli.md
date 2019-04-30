@@ -15,18 +15,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/15/2016
 ms.author: genli
-ms.openlocfilehash: 0b6c8da03c4a67aadb38280ba958a9b0feb88d1f
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: e1b8bb3544a08b60564ceb5bd7e1666214059e09
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38678584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60743927"
 ---
 # <a name="control-routing-and-use-virtual-appliances-classic-using-the-azure-cli"></a>Управление маршрутизацией и использование виртуальных модулей (классический режим) с помощью интерфейса командной строки Azure
 
 > [!div class="op_single_selector"]
 > * [PowerShell](tutorial-create-route-table-powershell.md)
-> * [интерфейс командной строки Azure](tutorial-create-route-table-cli.md)
+> * [Интерфейс командной строки Azure](tutorial-create-route-table-cli.md)
 > * [PowerShell (классическая модель)](virtual-network-create-udr-classic-ps.md)
 > * [Интерфейс командной строки (классическая модель)](virtual-network-create-udr-classic-cli.md)
 
@@ -87,7 +87,7 @@ ms.locfileid: "38678584"
         info:    Setting route "RouteToBackEnd" in a route table "UDR-FrontEnd"
         info:    network route-table route set command OK
    
-    Параметры
+    Параметры:
    
    * **-r (или --route-table-name)**. Имя таблицы маршрутов, куда будет добавлен маршрут. В данном сценарии это *UDR-FrontEnd*.
    * **-a (или --address-prefix)**. Префикс адреса для подсети, в которую адресованы пакеты. В данном сценарии это *192.168.2.0/24*.
@@ -112,7 +112,7 @@ ms.locfileid: "38678584"
         data:      Routes:
         info:    network vnet subnet route-table add command OK    
    
-    Параметры
+    Параметры:
    
    * **-t (или --vnet-name)**. Имя виртуальной сети, в которой расположена подсеть. В нашем случае это *TestVNet*.
    * **-n (или --subnet-name**). Имя подсети, куда будет добавлена таблица маршрутов. В данном сценарии это *FrontEnd*.

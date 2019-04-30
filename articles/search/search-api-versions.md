@@ -11,11 +11,11 @@ ms.date: 06/28/2018
 ms.author: brjohnst
 ms.custom: seodec2018
 ms.openlocfilehash: c07a0c8f5440033455c69fe40806adf9b548c16f
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53631163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61126965"
 ---
 # <a name="api-versions-in-azure-search"></a>Версии API в службе поиска Azure
 Служба поиска Azure развертывает обновления компонентов на регулярной основе. Иногда (но не всегда) для сохранения обратной совместимости для этих обновлений требуется новая версия API. Публикация новой версии позволяет вам выбирать, когда и как интегрировать обновления службы поиска в код.
@@ -30,13 +30,13 @@ ms.locfileid: "53631163"
 ## <a name="snapshot-of-current-versions"></a>Текущие версии
 В следующей таблице перечислены текущие версии всех интерфейсов программирования в службе поиска Azure.
 
-| Интерфейсы | Последняя основная версия | Status |
+| Интерфейсы | Последняя основная версия | Статус |
 | --- | --- | --- |
 | [ПАКЕТ SDK .NET](https://aka.ms/search-sdk) |5.0 |Общедоступная версия, выпущенная в апреле 2018 г. |
 | [Предварительная версия пакета SDK для .NET](https://aka.ms/search-sdk-preview) |4.0.1-Preview |Предварительная версия, выпущенная в мае 2017 г. |
 | [API REST службы](https://docs.microsoft.com/rest/api/searchservice/) |2017-11-11 |Общедоступная версия |
-| [REST API службы версии 2017-11-11-Preview](search-api-2017-11-11-preview.md) |2017-11-11-Preview |Предварительный просмотр |
-| [Пакет SDK управления для .NET](https://aka.ms/search-mgmt-sdk) |2,0 |Общедоступная версия |
+| [REST API службы версии 2017-11-11-Preview](search-api-2017-11-11-preview.md) |2017-11-11-Preview |Предварительная версия |
+| [Пакет SDK управления для .NET](https://aka.ms/search-mgmt-sdk) |2.0 |Общедоступная версия |
 | [Интерфейс API REST для управления.](https://docs.microsoft.com/rest/api/searchmanagement/) |2015-08-19 |Общедоступная версия |
 
 Для REST API в каждый вызов необходимо добавить `api-version` . Использование версии `api-version` позволяет указать на конкретную версию, например на API в режиме предварительной версии. В следующем примере демонстрируется, как указывать параметр `api-version` .

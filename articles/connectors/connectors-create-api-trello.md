@@ -12,11 +12,11 @@ ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
 ms.openlocfilehash: 31357fa313cfa31c0f8a90c0f7722f627e4394d1
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50229338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62106173"
 ---
 # <a name="monitor-and-manage-trello-with-azure-logic-apps"></a>Мониторинг приложения Trello и управление им с помощью Azure Logic Apps
 
@@ -30,7 +30,7 @@ ms.locfileid: "50229338"
 
 Вы можете использовать триггеры, которые получают ответы из учетной записи Trello и делают выходные данные доступными для других действий. Можно использовать действия, которые выполняют задачи с вашей учетной записью Trello. Кроме того, выходные данные от действий Trello могут использоваться другими действиями. Например, при добавлении новой карты на доску или в список можно отправлять сообщения с помощью соединителя Slack. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. 
 
@@ -72,6 +72,6 @@ ms.locfileid: "50229338"
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

@@ -2,19 +2,18 @@
 title: Отправка заданий MapReduce с использованием пакета SDK HDInsight для .NET в Azure
 description: Узнайте, как отправлять задания MapReduce в Apache Hadoop для Azure HDInsight с помощью пакета SDK для HDInsight .NET.
 ms.reviewer: jasonh
-services: hdinsight
 author: hrasheed-msft
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 67738a810968024e9006c142f5d8b1a975870c54
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 1ac2dda20ba1219c9f62e834b5cd2cfba8a50086
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53436829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62124695"
 ---
 # <a name="run-mapreduce-jobs-using-hdinsight-net-sdk"></a>Выполнение заданий MapReduce с использованием пакета SDK для HDInsight .NET
 [!INCLUDE [mapreduce-selector](../../../includes/hdinsight-selector-use-mapreduce.md)]
@@ -26,7 +25,7 @@ ms.locfileid: "53436829"
 > 
 > 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Перед началом работы с этой статьей необходимо иметь следующее:
 
 * **Кластер Hadoop в HDInsight**. Дополнительные сведения см. в кратком руководстве [Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](apache-hadoop-linux-tutorial-get-started.md).
@@ -168,7 +167,7 @@ ms.locfileid: "53436829"
 
 По завершении задания приложение печатает содержимое выходного файла part-r-00000.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы ознакомились с несколькими способами создания кластера HDInsight. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
 
 * Сведения об отправке задания Hive см. в статье [Выполнение запросов Apache Hive с использованием пакета SDK .NET для HDInsight](apache-hadoop-use-hive-dotnet-sdk.md).

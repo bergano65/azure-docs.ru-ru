@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 12/23/2016
 ms.author: ghogen
 ms.openlocfilehash: 3f3a649308449a8ba4e1dbaebd4db4afbf731c5b
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58105766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62110491"
 ---
 # <a name="get-started-with-azure-queue-storage-and-visual-studio-connected-services-aspnet"></a>Приступая к работе с хранилищем очередей Azure и подключенными службами Visual Studio (ASP.NET)
 
@@ -62,7 +62,7 @@ ms.locfileid: "58105766"
     using Microsoft.WindowsAzure.Storage.Auth;
     using Microsoft.WindowsAzure.Storage.Queue;
     ```
-   ## <a name="create-a-queue"></a>Создание очереди
+   ## <a name="create-a-queue"></a>Создать очередь
 
 Чтобы создать очередь, выполните приведенные ниже действия.
 
@@ -572,7 +572,7 @@ ms.locfileid: "58105766"
 
 1. Запустите приложение и выберите **получение длины очереди** чтобы увидеть результаты, как на снимке экрана ниже:
   
-    ![Удаление очереди.](./media/vs-storage-aspnet-getting-started-queues/delete-queue-results.png)
+    ![Удалить очередь](./media/vs-storage-aspnet-getting-started-queues/delete-queue-results.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите дополнительные руководства, чтобы изучить дополнительные возможности хранения данных в Azure.

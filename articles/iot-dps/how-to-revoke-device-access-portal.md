@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
-ms.openlocfilehash: e66d896a7df48645dad39b5b978c4f7c2f8d8cb9
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
-ms.translationtype: HT
+ms.openlocfilehash: 0dadf0ec248dac01e5cc65779004477bf4afc823
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46954557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62113583"
 ---
 # <a name="how-to-disenroll-a-device-from-azure-iot-hub-device-provisioning-service"></a>Практическое руководство по отзыву регистрации устройства из службы подготовки устройств к добавлению в Центр Интернета вещей Azure
 
@@ -108,7 +108,7 @@ ms.locfileid: "46954557"
 
 После успешного создания регистрации отключенная регистрация устройства появится на вкладке **Индивидуальные регистрации**. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Отзыв регистрации также является частью полного процесса отзыва. Отзыв устройства включает как отзыв регистрации из службы подготовки, так и отмену регистрации в Центре Интернета вещей. Дополнительные сведения о полном процессе см. в статье [Как отменить подготовку устройств, зарегистрированных в службе подготовки](how-to-unprovision-devices.md). 
 

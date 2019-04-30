@@ -7,11 +7,11 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.openlocfilehash: b1d566ac571ddd2b2be3aff160f669e277887209
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55698259"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61456280"
 ---
 # <a name="overview-of-business-continuity-with-azure-database-for-postgresql"></a>Обзор обеспечения непрерывности бизнес-процессов с помощью службы "База данных Azure для PostgreSQL"
 
@@ -48,7 +48,7 @@ ms.locfileid: "55698259"
 > [!IMPORTANT]
 > Геовосстановление возможно только в том случае, если сервер был подготовлен с геоизбыточным хранилищем резервных копий. Если вы хотите переключиться с локально избыточных на геоизбыточные резервные копии на существующем сервере, необходимо с помощью pg_dump сделать дамп имеющегося сервера и восстановить его на только что созданном сервере, где настроено геоизбыточное резервное копирование.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения об автоматическом создании резервных копий см. в [этой статье](concepts-backup.md). 
 - Дополнительные сведения см. в статьях [Как заархивировать и восстановить сервер в базе данных Azure для PostgreSQL с помощью портала Azure](howto-restore-server-portal.md) или [Как выполнить резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL с помощью Azure CLI](howto-restore-server-cli.md).
 - См. дополнительные сведения в статье [Реплики чтения в Базе данных Azure для PostgreSQL](concepts-read-replicas.md).

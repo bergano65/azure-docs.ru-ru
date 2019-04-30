@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/25/2019
+ms.date: 04/21/2019
 ms.author: juliako
-ms.openlocfilehash: 2216deb7a59dda2a7c3b99c55956ef8541925425
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: aa6b4ef76b039e9e24b4a72cfb6e76dcfae8378d
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/23/2019
-ms.locfileid: "60326383"
+ms.locfileid: "62111993"
 ---
 # <a name="tutorial-use-aes-128-dynamic-encryption-and-the-key-delivery-service"></a>Руководство по Использование динамического шифрования AES-128 и службы доставки ключей
 
@@ -89,7 +89,7 @@ ms.locfileid: "60326383"
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/EncryptWithAES/Program.cs#EnsureTransformExists)]
 
-## <a name="submit-job"></a>Отправка задания
+## <a name="submit-job"></a>Отправить задание
 
 Как было указано выше, объект [преобразования](https://docs.microsoft.com/rest/api/media/transforms) является набором инструкций, а [задание](https://docs.microsoft.com/rest/api/media/jobs) — фактическим запросом к Службам мультимедиа для применения этого **преобразования** к данному видео и аудио. **Задание** указывает такую информацию, как расположение входного и выходного видео.
 
@@ -158,6 +158,11 @@ ms.locfileid: "60326383"
 ```azurecli
 az group delete --name amsResourceGroup
 ```
+
+## <a name="provide-feedback"></a>Отзывы
+
+Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]

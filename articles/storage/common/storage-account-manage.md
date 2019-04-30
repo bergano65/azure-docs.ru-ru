@@ -8,17 +8,17 @@ ms.topic: article
 ms.date: 03/05/2019
 ms.author: tamram
 ms.openlocfilehash: fa574558afeec5a7706482a142c0187e6a34bdb3
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58370403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61484281"
 ---
 # <a name="manage-storage-account-settings-in-the-azure-portal"></a>Управление параметрами учетной записи хранения на портале Azure
 
 На [портале Azure](https://portal.azure.com) доступны различные параметры учетной записи хранения. В данной статье описываются некоторые из этих параметров и их применение.
 
-## <a name="access-control"></a>управление доступом;
+## <a name="access-control"></a>Контроль доступа
 
 Служба хранилища Azure поддерживает проверку подлинности с Azure Active Directory для хранилища BLOB-объектов и хранилища очередей с помощью управления доступом на основе ролей (RBAC). Дополнительные сведения о проверке подлинности с помощью Azure AD см. в разделе [проверка подлинности доступа к Azure BLOB-объекты и очереди, используя Azure Active Directory](storage-auth-aad.md).
 

@@ -16,11 +16,11 @@ ms.date: 01/06/2016
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: e6d18222e15f62f12592362827b6dbc4a3d7dfbc
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56820320"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60766925"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Предсказуемые подготовка и развертывание микрослужб в Azure
 В этом руководстве описано, как предсказуемо с помощью шаблонов групп ресурсов JSON и скриптов PowerShell подготовить и развернуть приложение, состоящее из [микрослужб](https://en.wikipedia.org/wiki/Microservices), в [службу приложений Azure](https://azure.microsoft.com/services/app-service/) как единое целое. 
@@ -103,7 +103,7 @@ ms.locfileid: "56820320"
 ### <a name="resources"></a>Ресурсы
 В узле "Ресурсы" можно видеть, что определены четыре ресурса верхнего уровня, включая экземпляр SQL Server, план службы приложений и два приложения. 
 
-#### <a name="app-service-plan"></a>План службы приложений
+#### <a name="app-service-plan"></a>план службы приложений
 Начнем с простого ресурса корневого уровня в JSON. В структуре JSON щелкните план службы приложений с именем **[hostingPlanName]** , чтобы выделить соответствующий код JSON. 
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-3-appserviceplan.png)
@@ -140,7 +140,7 @@ ms.locfileid: "56820320"
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-5-webapproot.png)
 
-##### <a name="app-settings"></a>Параметры приложения
+##### <a name="app-settings"></a>Параметры приложений
 Параметры приложения также определены в качестве вложенного ресурса.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-6-webappsettings.png)

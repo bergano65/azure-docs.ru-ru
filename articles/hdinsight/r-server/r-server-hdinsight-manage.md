@@ -1,7 +1,6 @@
 ---
 title: Управление кластером Служб машинного обучения в HDInsight в Azure
 description: Узнайте, как управлять кластером служб машинного обучения в Azure HDInsight.
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: 6c57dff2e0f0c1edb887ddd8f0e5ca206ba8b912
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 607f85c10183366e88d597d84090f49fc30aff48
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58110398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62124600"
 ---
 # <a name="manage-ml-services-cluster-on-azure-hdinsight"></a>Управление кластером служб машинного обучения в Azure HDInsight
 
@@ -80,7 +79,7 @@ ms.locfileid: "58110398"
 
 ## <a name="connect-remotely-to-microsoft-ml-services"></a>Удаленное подключение к серверу или клиенту служб машинного обучения Microsoft
 
-Вы можете получить доступ к контексту вычислений Spark в HDInsight из удаленного экземпляра ML Client, запущенного на персональном компьютере. Для этого укажите на ПК параметры dfsShareDir, shareDir, sshUsername, sshHostname, sshSwitches и sshProfileScript, определяя контекст вычислений RxSpark. Например: 
+Вы можете получить доступ к контексту вычислений Spark в HDInsight из удаленного экземпляра ML Client, запущенного на персональном компьютере. Для этого укажите на ПК параметры dfsShareDir, shareDir, sshUsername, sshHostname, sshSwitches и sshProfileScript, определяя контекст вычислений RxSpark. Пример.
 
     myNameNode <- "default"
     myPort <- 0
@@ -314,7 +313,7 @@ ms.locfileid: "58110398"
 
    * Установите флажок только для параметра **Рабочая роль**.
 
-   * **Параметры.** Устанавливаемые пакеты R. Например `bitops stringr arules`.
+   * **Параметры.** Устанавливаемые пакеты R. Например `bitops stringr arules` 
 
    * Установите флажок **Persist this script action** (Сохранить это действие скрипта).  
 

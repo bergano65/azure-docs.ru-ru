@@ -12,14 +12,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure services
-ms.date: 08/03/2017
-ms.author: amsriva
+origin.date: 08/03/2017
+ms.date: 02/26/2019
+ms.author: v-junlch
 ms.openlocfilehash: 46a823e4e230656b53a93a97f195d0879fd08bf2
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56731962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122240"
 ---
 # <a name="application-gateway-ssl-policy-overview"></a>Общие сведения о политике SSL шлюза приложений
 
@@ -33,7 +34,7 @@ ms.locfileid: "56731962"
 
 ### <a name="appgwsslpolicy20150501"></a>AppGwSslPolicy20150501
 
-|Свойство  |Значение  |
+|Свойство  |Value  |
 |---|---|
 |ИМЯ     | AppGwSslPolicy20150501        |
 |MinProtocolVersion     | TLSv1_0        |
@@ -42,20 +43,20 @@ ms.locfileid: "56731962"
   
 ### <a name="appgwsslpolicy20170401"></a>AppGwSslPolicy20170401
   
-|Свойство  |Значение  |
+|Свойство  |Value  |
 |   ---      |  ---       |
 |ИМЯ     | AppGwSslPolicy20170401        |
 |MinProtocolVersion     | TLSv1_1        |
-|значение по умолчанию| Ложь |
+|значение по умолчанию| False |
 |CipherSuites     |TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA<br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384<br>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_256_GCM_SHA384<br>TLS_RSA_WITH_AES_128_GCM_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA256<br>TLS_RSA_WITH_AES_128_CBC_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_128_CBC_SHA |
   
 ### <a name="appgwsslpolicy20170401s"></a>AppGwSslPolicy20170401S
 
-|Свойство  |Значение  |
+|Свойство  |Value  |
 |---|---|
 |ИМЯ     | AppGwSslPolicy20170401S        |
 |MinProtocolVersion     | TLSv1_2        |
-|значение по умолчанию| Ложь |
+|значение по умолчанию| False |
 |CipherSuites     |TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 <br>    TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 <br>    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA <br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA <br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384<br>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_256_GCM_SHA384<br>TLS_RSA_WITH_AES_128_GCM_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA256<br>TLS_RSA_WITH_AES_128_CBC_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_128_CBC_SHA<br> |
 
 ## <a name="custom-ssl-policy"></a>Пользовательская политика SSL
@@ -64,9 +65,9 @@ ms.locfileid: "56731962"
  
 ### <a name="ssl-protocol-versions"></a>Версии протокола SSL
 
-* Протоколы SSL 2.0 и 3.0 отключены по умолчанию для всех шлюзов приложений. Эти версии протокола не подлежат настройке.
-* Пользовательской политики SSL дает возможность выбрать один из трех следующих протоколов в качестве минимальной версии протокола SSL для шлюза: TLSv1_0, TLSv1_1 и TLSv1_2.
-* Если политика SSL не определена, то будут включены все три протокола (TLSv1_0, TLSv1_1 и TLSv1_2).
+- Протоколы SSL 2.0 и 3.0 отключены по умолчанию для всех шлюзов приложений. Эти версии протокола не подлежат настройке.
+- Пользовательской политики SSL дает возможность выбрать один из трех следующих протоколов в качестве минимальной версии протокола SSL для шлюза: TLSv1_0, TLSv1_1 и TLSv1_2.
+- Если политика SSL не определена, то будут включены все три протокола (TLSv1_0, TLSv1_1 и TLSv1_2).
 
 ### <a name="cipher-suites"></a>Комплекты шифров
 
@@ -105,3 +106,5 @@ ms.locfileid: "56731962"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о настройке политики SSL см. в статье [Настройка версий политики SSL и комплектов шифров на шлюзе приложений](application-gateway-configure-ssl-policy-powershell.md).
+
+<!-- Update_Description: wording update -->

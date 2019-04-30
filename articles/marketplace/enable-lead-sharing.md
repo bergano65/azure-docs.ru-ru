@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 3fea858f23c6b271a117f2edcc749e0c6b737e27
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
-ms.translationtype: HT
+ms.openlocfilehash: 346ebd9636623a2fc8b08d42c2170a21a5e9a316
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39159999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62121084"
 ---
 # <a name="enable-lead-sharing"></a>Возможность общего доступа к данным о потенциальных клиентах
 Убедитесь, что управление потенциальными клиентами включено для вашего предложения в [Azure Marketplace](https://azuremarketplace.microsoft.com) или [Microsoft AppSource](https://appsource.microsoft.com), чтобы вы могли получать контактную информацию для следующих категорий аудитории.
@@ -45,8 +45,8 @@ ms.locfileid: "39159999"
 
 | Онлайн-магазин | Вывод списка |
 |:--- |:--- |
-| AppSource | <table> <tr><td>Приложение</td></tr> <tr><td>Консультационные услуги</td></tr> </table> |
-| Azure Marketplace | <table> <tr><td>ПРЕДЛОЖЕНИЕ</td></tr> <tr><td>Технология</td></tr> </table> |
+| AppSource | <table> <tr><td>приложение</td></tr> <tr><td>Консультационные услуги</td></tr> </table> |
+| Azure Marketplace | <table> <tr><td>Предложение</td></tr> <tr><td>Технология</td></tr> </table> |
 
 У вас должен быть налажен процесс для работы с потенциальными клиентами, как описано в следующей таблице:
 
@@ -59,5 +59,5 @@ ms.locfileid: "39159999"
 
 Дополнительные сведения о получении доступа к программе совместных продаж см. в статье [Развитие бизнеса с помощью Майкрософт](./promote-your-business-with-microsoft.md).
 
-## <a name="next-steps"></a>Дополнительная информация
-Ознакомьтесь со статьей [Руководство по публикации в Azure Marketplace и AppSource](./marketplace-publishers-guide.md).
+## <a name="next-steps"></a>Дальнейшие действия
+Просмотрите [Руководство по публикации в Azure Marketplace и AppSource](./marketplace-publishers-guide.md).

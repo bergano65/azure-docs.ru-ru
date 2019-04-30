@@ -10,11 +10,11 @@ ms.tgt_pltfrm: arduino
 ms.date: 04/04/2018
 ms.author: liydu
 ms.openlocfilehash: e955d21132dda6caa137ad3b5de9d00ccf7ed1b4
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55811058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61369854"
 ---
 # <a name="mxchip-iot-devkit"></a>MXChip IoT DevKit
 
@@ -108,7 +108,7 @@ ms.locfileid: "55811058"
 > [!NOTE]
 > Вы можете просмотреть необработанные данные двойника устройства на портале Azure. Центр Интернета вещей —\> устройства Интернета вещей —\> *\<ваше устройство\>* -\> Двойник устройства.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как выполнять такие задачи:
 - Подключение устройства MXChip IoT DevKit к акселератору решения Azure IoT для удаленного мониторинга.

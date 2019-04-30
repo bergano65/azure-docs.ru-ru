@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 12/11/2018
 ms.author: cherylmc
 ms.openlocfilehash: 74940f3b89237233acd575aa5df441163e00d178
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58000940"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60845597"
 ---
 # <a name="configure-a-point-to-site-connection-by-using-certificate-authentication-classic"></a>Настройка подключения типа "точка — сеть" с помощью проверки подлинности на основе сертификата (классическая модель)
 
@@ -85,7 +85,7 @@ ms.locfileid: "58000940"
 
 Прежде чем начать, убедитесь в том, что у вас есть подписка Azure. Если у вас нет подписки Azure, вы можете [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details) или [зарегистрировать бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial).
 
-### <a name="part-1-create-a-virtual-network"></a>Часть 1. Создать виртуальную сеть
+### <a name="part-1-create-a-virtual-network"></a>Часть 1. Создание виртуальной сети
 
 Если у вас нет виртуальной сети, создайте ее. Снимки экрана приведены в качестве примеров. Обязательно подставьте собственные значения. Чтобы создать виртуальную сеть на портале Azure, сделайте следующее:
 
@@ -176,7 +176,7 @@ ms.locfileid: "58000940"
 
 4. Щелкните значок папки, чтобы найти CER-файл. Выберите файл и нажмите кнопку **ОК**. Отправленный сертификат отобразится на странице **Сертификаты**.
 
-   ![Передача сертификата](./media/vpn-gateway-howto-point-to-site-classic-azure-portal/upload.png)
+   ![Отправка сертификата](./media/vpn-gateway-howto-point-to-site-classic-azure-portal/upload.png)
 
 
 ## <a name="configure-the-client"></a>Настройка клиента

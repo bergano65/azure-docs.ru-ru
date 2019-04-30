@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: shlo
 ms.openlocfilehash: c02a9393de72b827b7e38b52d06589f042d581b0
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54024779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60787008"
 ---
 # <a name="azure-data-factory---naming-rules"></a>Фабрика данных Azure — правила именования
 В следующей таблице приведены правила именования для артефактов фабрики данных.
@@ -28,5 +28,5 @@ ms.locfileid: "54024779"
 | Связанные службы/наборы данных/конвейеры |Уникально в рамках фабрики данных. Регистр в именах не учитывается. |<ul><li>Имена объектов должны начинаться с буквы, цифры или символа подчеркивания (_).</li><li>Следующие символы не допускаются: ".", "+", "?", "/", "<", ">", "*", "%", "&", ":", "\\".</li><li>Дефисы ("-") запрещены только в именах связанных служб и наборов данных.</li></ul>  |
 | Группа ресурсов |Уникально в рамках Microsoft Azure. Регистр в именах не учитывается. | Дополнительные сведения см. в разделе [Правила именования и ограничения](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions#naming-rules-and-restrictions). |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как создавать фабрики данных, выполнив пошаговые инструкции из [краткого руководства](quickstart-create-data-factory-powershell.md). 

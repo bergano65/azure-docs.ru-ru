@@ -13,11 +13,11 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 03/13/2019
 ms.openlocfilehash: f71fe4ff14e5a6f5fd6b91713970a097e4e56fb9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57844132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61475802"
 ---
 # <a name="migrate-to-the-new-elastic-database-jobs"></a>Миграция к новым заданиям обработки эластичных баз данных
 
@@ -34,7 +34,7 @@ ms.locfileid: "57844132"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-Установка **Az.Sql** 1.1.1-preview модуля, чтобы получить последнюю версию командлетов задания обработки эластичных БД. Выполните приведенные ниже команды в PowerShell с правами администратора.
+Установите модуль **Az.Sql** предварительной версии 1.1.1, чтобы получать актуальные командлеты заданий обработки эластичных баз данных. Выполните приведенные ниже команды в PowerShell с правами администратора.
 
 ```powershell
 # Installs the latest PackageManagement powershell package which PowerShellGet v1.6.5 is dependent on

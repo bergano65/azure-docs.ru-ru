@@ -9,11 +9,11 @@ ms.date: 02/25/2019
 ms.author: tamram
 ms.subservice: blobs
 ms.openlocfilehash: 67d3dcad4ec73ee09ec40282b2fbdea945daefe4
-ms.sourcegitcommit: fbfe56f6069cba027b749076926317b254df65e5
-ms.translationtype: MT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58472775"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122682"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Размещение статических веб-сайтов в службе хранилища Azure
 Учетные записи хранения GPv2 Azure позволяют передавать статическое содержимое (HTML, CSS, JavaScript и файлы изображений) непосредственно из контейнера хранилища с именем *$web*. Преимущества размещения в службе хранилища Azure заключаются в использовании бессерверной архитектуры, в том числе [Функций Azure](/azure/azure-functions/functions-overview) и других служб PaaS.
@@ -63,7 +63,7 @@ https://contoso.z4.web.core.windows.net/image.png
 ## <a name="pricing"></a>Цены
 Размещение статических веб-сайтов осуществляется бесплатно. Дополнительные сведения о ценах на хранилище BLOB-объектов Azure см. на [странице цен](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
-## <a name="quickstart"></a>Быстрый запуск
+## <a name="quickstart"></a>Краткое руководство
 
 ### <a name="azure-portal"></a>Портал Azure
 Сначала зайдите на портал Azure по адресу https://portal.azure.com и выполните следующие действия в вашей учетной записи хранения GPv2:
@@ -167,4 +167,4 @@ az storage blob upload-batch -s <SOURCE_PATH> -d \$web --account-name <ACCOUNT_N
 * [Функции Azure](/azure/azure-functions/functions-overview)
 * [службе приложений Azure](/azure/app-service/overview)
 * [Создание первого бессерверного веб-приложения](https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database)
-* [Руководство по размещению домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md)
+* [Учебник. по размещению домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md)

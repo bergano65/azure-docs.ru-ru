@@ -15,11 +15,11 @@ ms.workload: infrastructure
 ms.date: 12/15/2016
 ms.author: v-livech
 ms.openlocfilehash: 569e90c7908ce435689a80f7917b20275703f537
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57990421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61473745"
 ---
 # <a name="create-a-linux-vm-using-the-azure-classic-cli"></a>Создание виртуальной машины Linux с помощью классического интерфейса командной строки Azure
 
@@ -50,14 +50,14 @@ azure vm quick-create -M ~/.ssh/id_rsa.pub -Q CoreOS
 
 Чтобы быстро выбрать дистрибутив, можно воспользоваться псевдонимами интерфейса командной строки Azure для большинства распространенных дистрибутивов ОС. В следующей таблице перечислены псевдонимы (для интерфейса командной строки Azure версии 0.10). Все развертывания с использованием команды `quick-create` по умолчанию устанавливают резервные виртуальные машины с поддержкой хранилища на основе твердотельных накопителей (SSD), что обеспечивает более быструю подготовку к работе и доступ к диску с высокой производительностью. (Эти псевдонимы представляют лишь небольшую часть дистрибутивов, доступных в Azure. Чтобы найти другие образы в Azure Marketplace, выполните поиск в [PowerShell](../windows/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), [Интернете](https://azure.microsoft.com/marketplace/virtual-machines/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) или [загрузите собственный пользовательский образ](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).)
 
-| Alias | ИЗДАТЕЛЬ | ПРЕДЛОЖЕНИЕ | SKU | Version (версия) |
+| Alias | Издатель | Предложение | SKU | Version |
 |:--- |:--- |:--- |:--- |:--- |
-| CentOS |OpenLogic |CentOS |7,2 |последняя |
-| CoreOS |CoreOS |CoreOS |Stable |последняя |
-| Debian |credativ |Debian |8 |последняя |
-| openSUSE |SUSE |openSUSE |13.2 |последняя |
-| RHEL |Red Hat |RHEL |7,2 |последняя |
-| UbuntuLTS |Canonical |Сервер Ubuntu |14.04.4-LTS |последняя |
+| CentOS |OpenLogic |CentOS |7.2 |latest |
+| CoreOS |CoreOS |CoreOS |Stable |latest |
+| Debian |credativ |Debian |8 |latest |
+| openSUSE |SUSE |openSUSE |13.2 |latest |
+| RHEL |Red Hat |RHEL |7.2 |latest |
+| UbuntuLTS |Canonical |Сервер Ubuntu |14.04.4-LTS |latest |
 
 В следующих разделах для параметра **ImageURN** (`-Q`) используется псевдоним `UbuntuLTS`, чтобы развернуть виртуальную машину на базе сервера Ubuntu 14.04.4 LTS.
 
@@ -67,7 +67,7 @@ azure vm quick-create -M ~/.ssh/id_rsa.pub -Q CoreOS
 * имя виртуальной машины;
 * расположение (по умолчанию можно использовать `westus` или `westeurope`);
 * Linux (для Azure необходимо указать ОС, которую вы предпочитаете использовать);
-* Имя пользователя
+* имя пользователя
 
 В приведенном ниже примере указаны все необходимые значения. Так как в качестве файла открытого ключа формата SSH-RSA используется `~/.ssh/id_rsa.pub`, этот файл работает как есть.
 

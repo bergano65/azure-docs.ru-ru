@@ -1,7 +1,6 @@
 ---
 title: Пакет REST SDK для Phoenix Query Server — Azure HDInsight
 description: Установка и использование пакета REST SDK для Phoenix Query Server в Azure HDInsight.
-services: hdinsight
 ms.service: hdinsight
 author: ashishthaps
 ms.author: ashishth
@@ -9,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/04/2017
-ms.openlocfilehash: b7c94fd2372f1d995c50439b2bd5eaefb237e175
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: 1f468cac29579d8748f61a47b548a67d36ff8279
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53651407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62123065"
 ---
 # <a name="apache-phoenix-query-server-rest-sdk"></a>Пакет REST SDK для Apache Phoenix Query Server
 
@@ -72,7 +71,7 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 
 Ниже приведены некоторые важные свойства.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 | -- | -- |
 | AutoCommit | Логическое значение, обозначающее, включено ли свойство `autoCommit` для транзакций Phoenix. |
 | ReadOnly | Логическое значение, обозначающее, является ли подключение доступным только для чтения. |
@@ -83,7 +82,7 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 
 Возможные значения `TransactionIsolation`:
 
-| Значение изоляции | ОПИСАНИЕ |
+| Значение изоляции | Описание |
 | -- | -- |
 | 0 | Транзакции не поддерживаются. |
 | 1 | Могут возникать операции чтения "грязных" данных, а также неповторяемые и фантомные операции чтения. |
@@ -91,7 +90,7 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 | 4. | Операции чтения "грязных" данных и неповторяемые операции чтения предотвращаются, но могут возникать фантомные операции чтения. |
 | 8 | Все операции чтения "грязных" данных, неповторяемые и фантомные операции чтения предотвращаются. |
 
-## <a name="create-a-new-table"></a>Создание таблицы
+## <a name="create-a-new-table"></a>Создать таблицу
 
 В HBase, как и в любой другой реляционной СУБД, данные хранятся в таблицах. Phoenix использует стандартные запросы SQL для создания новых таблиц при определении первичного ключа и типов столбцов.
 
@@ -394,7 +393,7 @@ finally
 
 В одной тестовой среде вставка 300 новых записей по отдельности заняла почти 2 минуты. А для пакетной вставки 300 записей потребовалось всего 6 секунд.
 
-## <a name="select-data"></a>Выбор данных
+## <a name="select-data"></a>Выбрать данные
 
 В этом примере показано, как повторно использовать одно подключение для выполнения нескольких запросов:
 
@@ -538,7 +537,7 @@ MH: 6
 FM: 5
 ```
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 * [Apache Phoenix в HDInsight](../hdinsight-phoenix-in-hdinsight.md)
 * [Использование пакета REST SDK для Apache HBase](apache-hbase-rest-sdk.md)

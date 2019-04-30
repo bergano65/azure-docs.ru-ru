@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 12/13/2018
 ms.author: danlep
 ms.openlocfilehash: 5d8904b5906adbdab68989b3a5cf9c3975c23533
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55697591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61347087"
 ---
 # <a name="azure-container-registry-authentication-with-service-principals"></a>Аутентификация в реестре контейнеров Azure с помощью субъектов-служб
 
@@ -45,9 +45,9 @@ ms.locfileid: "55697591"
 * [Azure CLI][acr-scripts-cli]
 * [Azure PowerShell][acr-scripts-psh]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Создав субъект-службу и предоставив ему доступ к реестру контейнеров, вы сможете применять его учетные данные в приложениях и службах для автономного взаимодействия с реестром. Учетные данные субъекта-службы можно использовать из любой службы Azure, которая может выполнить проверку подлинности в реестре контейнеров Azure. Примеры приведены ниже.
+Создав субъект-службу и предоставив ему доступ к реестру контейнеров, вы сможете применять его учетные данные в приложениях и службах для автономного взаимодействия с реестром. Учетные данные субъекта-службы можно использовать из любой службы Azure, которая может выполнить проверку подлинности в реестре контейнеров Azure. Примеры.
 
 * [Аутентификация с помощью Реестра контейнеров Azure из службы Azure Kubernetes](container-registry-auth-aks.md)
 * [Authenticate with Azure Container Registry from Azure Container Instances](container-registry-auth-aci.md) (Аутентификация с помощью реестра контейнеров Azure из службы "Экземпляры контейнеров Azure")

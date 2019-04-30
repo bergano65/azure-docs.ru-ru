@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
 manager: craigg
 ms.date: 02/23/2019
-ms.openlocfilehash: 067ea8eee297eb8572bd37e240b8d13afe458ca7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6a027e6c0afd526139484240f288205fa946d557
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/23/2019
-ms.locfileid: "60331865"
+ms.locfileid: "62111805"
 ---
 # <a name="azure-sql-database-service-tiers"></a>Уровни служб в Базе данных SQL Azure
 
@@ -63,5 +63,5 @@ ms.locfileid: "60331865"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о конкретных объемах вычислительных ресурсов и доступных размерах хранилища для отдельной базы данных на уровнях службы "Общее назначение" и "Критически важный для бизнеса" см. в разделе [Отдельная база данных: размеры хранилища и объемы вычислительных ресурсов](sql-database-vcore-resource-limits-single-databases.md#general-purpose-service-tier-storage-sizes-and-compute-sizes).
+- Дополнительные сведения о конкретных объемах вычислительных ресурсов и доступных размерах хранилища для отдельной базы данных на уровнях службы "Общее назначение" и "Критически важный для бизнеса" см. в разделе [Отдельная база данных: размеры хранилища и объемы вычислительных ресурсов](sql-database-vcore-resource-limits-single-databases.md#general-purpose-service-tier).
 - Дополнительные сведения о конкретных объемах вычислительных ресурсов и доступных размерах хранилища для эластичных пулов на уровнях службы "Общее назначение" и "Критически важный для бизнеса" см. в разделе [Эластичный пул: размеры хранилища и объемы вычислительных ресурсов](sql-database-vcore-resource-limits-elastic-pools.md#general-purpose-service-tier-storage-sizes-and-compute-sizes).

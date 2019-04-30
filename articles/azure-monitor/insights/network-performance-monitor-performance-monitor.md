@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: abshamsft
 ms.openlocfilehash: de9e6d5c8c6b4dc9652ae64c9a4fd0e38d7a7b87
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53184769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62109544"
 ---
 # <a name="network-performance-monitor-solution-performance-monitoring"></a>Решение "Монитор производительности сети". Мониторинг производительности
 
@@ -50,7 +50,7 @@ ms.locfileid: "53184769"
 1. Щелкните вкладку **Сети**.
 1. Щелкните  **Добавить сеть** и введите имя и описание сети. 
 2. Выберите одну или несколько подсетей и щелкните **Добавить**. 
-3. Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию. 
+3. Чтобы сохранить конфигурацию, нажмите кнопку **Сохранить**. 
 
 
 ### <a name="create-monitoring-rules"></a>Создание правил мониторинга 
@@ -134,5 +134,5 @@ ms.locfileid: "53184769"
  
 ![Карта топологии с выбранными свойствами узла](media/network-performance-monitor-performance-monitor/topology-dashboard-root-cause.png) 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Выполните поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.

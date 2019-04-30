@@ -1,7 +1,6 @@
 ---
 title: Выполнение заданий Apache Pig с помощью пакета SDK для .NET для Hadoop в Azure HDInsight
 description: Информация об использовании пакета SDK для .NET для Hadoop для отправки заданий Pig в Hadoop в HDInsight.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: hrasheed
-ms.openlocfilehash: 721bb93dc259bd2b4cc9f51d8d0d665c9b921128
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: ebf1f2806a6606294c61860a24fb2f02033a4bf4
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53436846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62110962"
 ---
 # <a name="run-apache-pig-jobs-using-the-net-sdk-for-apache-hadoop-in-hdinsight"></a>Выполнение заданий Apache Pig с помощью пакета SDK для .NET для Apache Hadoop в HDInsight
 
@@ -24,7 +23,7 @@ ms.locfileid: "53436846"
 
 Пакет SDK для HDInsight .NET предоставляет клиентские библиотеки .NET, которые упрощают работу с кластерами HDInsight из .NET. Pig позволяет создавать операции MapReduce путем моделирования ряда преобразований данных. В этом документе вы узнаете, как отправлять задания Pig в кластер HDInsight с помощью базового приложения C#.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
@@ -43,9 +42,9 @@ ms.locfileid: "53436846"
 
 2. Для нового проекта введите или выберите следующие значения.
 
-   | Свойство | Значение |
+   | Свойство | Value |
    | ------ | ------ |
-   | Категория | Templates/Visual C#/Windows |
+   | Category | Templates/Visual C#/Windows |
    | Шаблон | Консольное приложение |
    | ИМЯ | SubmitPigJob |
 
@@ -116,7 +115,7 @@ ms.locfileid: "53436846"
 
 8. Чтобы завершить работу приложения, нажмите клавишу **ВВОД**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о Pig в HDInsight см. в статье [Использование Apache Pig с Apache Hadoop в HDInsight](hdinsight-use-pig.md).
 

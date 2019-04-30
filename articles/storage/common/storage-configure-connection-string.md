@@ -9,11 +9,11 @@ ms.date: 04/12/2017
 ms.author: tamram
 ms.subservice: common
 ms.openlocfilehash: 26670a739bca03a2c9bbe6617cf433c730a7489e
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55473822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62098251"
 ---
 # <a name="configure-azure-storage-connection-strings"></a>Настройка строк подключения службы хранилища Azure
 
@@ -127,7 +127,7 @@ EndpointSuffix=core.chinacloudapi.cn;
 ## <a name="parsing-a-connection-string"></a>Анализ строки подключения
 [!INCLUDE [storage-cloud-configuration-manager-include](../../../includes/storage-cloud-configuration-manager-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Использование эмулятора хранения Azure для разработки и тестирования](storage-use-emulator.md)
 * [Клиентские инструменты службы хранилища Azure](storage-explorers.md)
 * [Использование подписанных URL-адресов (SAS)](storage-dotnet-shared-access-signature-part-1.md)

@@ -1,7 +1,6 @@
 ---
 title: Обработка событий из Центров событий с помощью Storm в Azure HDInsight
 description: Узнайте, как обрабатывать данные службы Центров событий Azure с использованием топологии C# Storm, созданной в Visual Studio с помощью средств HDInsight для Visual Studio.
-services: hdinsight,notification hubs
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/27/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 85d95354d24a3f107fc518b367ab1187da43269d
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: b02945197b20c7fe704d0f8cfa9201a5b9cbc292
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53633782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62125210"
 ---
 # <a name="process-events-from-azure-event-hubs-with-apache-storm-on-hdinsight-c"></a>Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (C#)
 
@@ -106,7 +105,7 @@ topologyBuilder.SetJavaBolt(
 
 Вы можете загрузить полную версию проекта, созданного в этом руководстве, с сайта [GitHub](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub). Но вам нужно будет указать параметры конфигурации, выполнив действия, описанные в этом учебнике.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 * [Кластер Apache Storm в HDInsight версии 3.5 или 3.6](apache-storm-tutorial-get-started-linux.md).
 
@@ -138,8 +137,8 @@ topologyBuilder.SetJavaBolt(
 
    | ИМЯ | Разрешения |
    | --- | --- |
-   | writer |Отправка |
-   | reader |Прослушивание |
+   | writer |Отправить |
+   | reader |Прослушать |
 
     ![Снимок экрана окна политик общего доступа](./media/apache-storm-develop-csharp-event-hub-topology/sas.png)
 
@@ -153,7 +152,7 @@ topologyBuilder.SetJavaBolt(
 
 3. В проекте **EventHubWriter** откройте файл **App.config**. Используйте сведения из концентратора событий, настроенного ранее, чтобы указать значения следующих ключей:
 
-   | Ключ | Значение |
+   | Ключ | Value |
    | --- | --- |
    | EventHubPolicyName |writer (если для политики с разрешением на *отправку* указано другое имя, используйте его). |
    | EventHubPolicyKey |Ключ для политики writer. |
@@ -169,7 +168,7 @@ topologyBuilder.SetJavaBolt(
 
 2. Для **EventHubReader** откройте файл **App.config**. Используйте сведения из концентратора событий, настроенного ранее, чтобы указать значения следующих ключей:
 
-   | Ключ | Значение |
+   | Ключ | Value |
    | --- | --- |
    | EventHubPolicyName |reader (если для политики с разрешением на *прослушивание* указано другое имя, используйте его). |
    | EventHubPolicyKey |Ключ для политики reader. |
@@ -219,7 +218,7 @@ topologyBuilder.SetJavaBolt(
 
 [!INCLUDE [delete-cluster-warning](../../../includes/hdinsight-delete-cluster-warning.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе рассмотрено использование объектов spout и bolt Java службы Центров событий из топологии C# для работы с данными в Центрах событий Azure. Дополнительные сведения о создании топологий C# см. в следующих статьях:
 

@@ -10,11 +10,11 @@ ms.date: 09/13/2016
 ms.author: rogardle
 ms.custom: mvc
 ms.openlocfilehash: 04cc9048271d653bd77fd7f2707c8f510ea8c29f
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52997952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61456570"
 ---
 # <a name="deprecated-container-management-with-docker-swarm"></a>Управление контейнерами с помощью Docker Swarm (не рекомендуется)
 
@@ -112,6 +112,6 @@ caf185d221b7        adtd/web:0.1        "apache2-foreground"   2 minutes ago    
 
 Конечно, вы можете использовать команду `docker-compose ps` для просмотра только контейнеров, определенных в файле `compose.yml`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Дополнительные сведения о Docker Swarm](https://docs.docker.com/swarm/)
 

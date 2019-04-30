@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 02/14/2018
 ms.author: cherylmc
 ms.openlocfilehash: a2d714cae187e4ebcf2eefd37c61484dc48495e0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58002836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62105956"
 ---
 # <a name="create-a-site-to-site-connection-using-the-azure-portal-classic"></a>Создание подключения типа "сеть — сеть" с помощью классического портала Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "58002836"
 * **Имя локального сайта:** Site2.
 * **Адресное пространство клиента:** адресное пространство, которое находится на локальном сайте.
 
-## <a name="CreatVNet"></a>1. Создать виртуальную сеть
+## <a name="CreatVNet"></a>1. Создание виртуальной сети
 
 При создании виртуальной сети для подключения типа "сеть — сеть" убедитесь, что указанные адресные пространства не перекрывают адресные пространства клиента для локальных сайтов, к которым необходимо подключиться. В таком случае подключение не будет работать правильно.
 

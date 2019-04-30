@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 04/14/2019
 ms.author: ramamill
 ms.openlocfilehash: 5f0578026e95378065fc68198434e347a87eb1fe
-ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60149025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62123920"
 ---
 # <a name="set-up-the-configuration-server-for-disaster-recovery-of-physical-servers-to-azure"></a>Настройка сервера конфигурации для аварийного восстановления физических серверов в Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "60149025"
    ![Настройка источника](./media/physical-azure-set-up-source/plus-config-srv.png)
 2. В колонке **Добавление сервера** в поле **Тип сервера** должно быть указано **Сервер конфигурации**.
 4. Скачайте файл единой установки Site Recovery.
-5. Скачайте ключ регистрации хранилища. При запуске программы единой установки вам потребуется ключ регистрации. Ключ действителен в течение пяти дней после создания.
+5. Скачайте ключ регистрации в хранилище. При запуске программы единой установки вам потребуется ключ регистрации. Ключ действителен в течение пяти дней после создания.
 
     ![Настройка источника](./media/physical-azure-set-up-source/set-source2.png)
 6. На компьютере, используемом в качестве сервера конфигурации, запустите **программу единой установки Azure Site Recovery**, чтобы установить сервер конфигурации, сервер обработки и главный целевой сервер.
@@ -66,7 +66,7 @@ ms.locfileid: "60149025"
 > Сервер конфигурации можно установить с помощью командной строки. [Узнайте больше](physical-manage-configuration-server.md#install-from-the-command-line).
 
 
-## <a name="common-issues"></a>Распространенные проблемы
+## <a name="common-issues"></a>Типичные проблемы
 
 [!INCLUDE [site-recovery-vmware-to-azure-install-register-issues](../../includes/site-recovery-vmware-to-azure-install-register-issues.md)]
 

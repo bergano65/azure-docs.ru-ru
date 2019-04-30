@@ -8,95 +8,96 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
-ms.openlocfilehash: e89a4675f867e53c499bb82b239ddb9bec1aed6f
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
-ms.translationtype: MT
+ms.openlocfilehash: f3650d4db06a763308939e9fb1a98fddb0eaa04a
+ms.sourcegitcommit: a95dcd3363d451bfbfea7ec1de6813cad86a36bb
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59521208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62738784"
 ---
-# <a name="using-the-azure-maps-services-module"></a>С помощью модуля службы Azure Maps
+# <a name="use-the-azure-maps-services-module"></a>С помощью модуля службы "карты Azure"
 
-SDK веб-карты Azure предоставляет службы модуля, который находится вспомогательную библиотеку, которая упрощает использование служб Azure Maps REST в или веб-приложений Node.js с помощью JavaScript или TypeScript.
+SDK веб-карты Azure предоставляет *модуль служб*. Этот модуль является вспомогательную библиотеку, которая позволяет легко использовать службы Azure Maps REST в или веб-приложений Node.js с помощью JavaScript или TypeScript.
 
-## <a name="using-the-services-module-in-a-web-page"></a>С помощью модуля службы на веб-странице
+## <a name="use-the-services-module-in-a-webpage"></a>Использование модуля службы в веб-страницы
 
 1. Создайте HTML-файл.
-2. Загрузить в модуле сопоставления служб Azure. Это можно сделать с помощью одного из двух параметров.
+1. Загрузка модуля службы "карты Azure". В него можно загрузить в одном из двух способов:
+    - Используйте глобально размещенной сети доставки содержимого Azure версию модуля службы "карты Azure". Добавьте ссылку на скрипт `<head>` элемент файла:
 
-    a. Использовать CDN глобально размещенную версию модуля службы "карты Azure", добавив ссылку на скрипт `<head>` элемент файла:
-    
-    ```html
-    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas-service.min.js"></script>
-    ```
-    
-    2. Кроме того, загрузить исходный код SDK веб-сопоставляет Azure локально с помощью [azure maps-rest](https://www.npmjs.com/package/azure-maps-rest) NPM упаковки и разместить его в приложении. Этот пакет также включает определения TypeScript.
-    
-    > npm install azure-maps-rest
-    
-    Затем добавьте ссылку на скрипт `<head>` элемент файла:
-    
-    ```html
-    <script src="node_modules/azure-maps-rest/dist/js/atlas-service.min.js"></script>
-    ```
+        ```html
+        <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas-service.min.js"></script>
+        ```
 
-3. Чтобы инициализировать клиент URL-адрес конечной точки службы, необходимо сначала создать конвейер с проверки подлинности. Используйте собственный ключ учетной записи Azure Maps или учетные данные Azure Active Directory (AAD) для проверки подлинности клиента службы поиска. В этом примере будет создан клиент URL-адрес службы поиска. Если вы используете ключ подписки для проверки подлинности:
+    - Кроме того, загрузить исходный код SDK веб-сопоставляет Azure локально с помощью [azure maps-rest](https://www.npmjs.com/package/azure-maps-rest) npm пакета, а затем разместить его с вашим приложением. Этот пакет также включает определения TypeScript. Используйте следующую команду:
+    
+        > **npm install azure-maps-rest**
+    
+        Затем добавьте ссылку на скрипт `<head>` элемент файла:
+
+         ```html
+        <script src="node_modules/azure-maps-rest/dist/js/atlas-service.min.js"></script>
+         ```
+
+1. Создание конвейера проверки подлинности. Прежде чем вы можете инициализировать конечную точку службы URL-адрес клиента необходимо создать конвейер. Используйте собственный ключ учетной записи службы карт Azure или Azure Active Directory (Azure AD) учетные данные для проверки подлинности клиент службы поиска Azure Maps. В этом примере будет создан клиент URL-адрес службы поиска. 
+
+    Если вы используете ключ подписки для проверки подлинности:
 
     ```javascript
-    //Get an Azure Maps key at https://azure.com/maps
+    // Get an Azure Maps key at https://azure.com/maps.
     var subscriptionKey = '<Your Azure Maps Key>';
-    
-    //Use SubscriptionKeyCredential with a subscription key.
+
+    // Use SubscriptionKeyCredential with a subscription key.
     var subscriptionKeyCredential = new atlas.service.SubscriptionKeyCredential(subscriptionKey);
-    
-    //Use subscriptionKeyCredential to create a pipeline.
+
+    // Use subscriptionKeyCredential to create a pipeline.
     var pipeline = atlas.service.MapsURL.newPipeline(subscriptionKeyCredential, {
       retryOptions: { maxTries: 4 } // Retry options
     });
-    
-    //Create an instance of the SearchURL client.
+
+    // Create an instance of the SearchURL client.
     var searchURL = new atlas.service.SearchURL(pipeline);
     ```
-    
-    Если для проверки подлинности используется Azure Active Directory (AAD):
+
+    Если вы используете Azure AD для проверки подлинности:
 
     ```javascript
-    // Enter your Azure Actiuve Directory client ID.
+    // Enter your Azure AD client ID.
     var clientId = "<Your Azure Active Directory Client Id>";
-    
-    // Use TokenCredential with OAuth token (AAD or Anonymous).
+
+    // Use TokenCredential with OAuth token (Azure AD or Anonymous).
     var aadToken = await getAadToken();
     var tokenCredential = new atlas.service.TokenCredential(clientId, aadToken);
-    
-    // Create a repeating timeout that will renew the AAD token.
-    // This timeout must be cleared once the TokenCredential object is no longer needed.
-    // If the timeout is not cleared the memory used by the TokenCredential will never be reclaimed.
+
+    // Create a repeating time-out that will renew the Azure AD token.
+    // This time-out must be cleared when the TokenCredential object is no longer needed.
+    // If the time-out is not cleared, the memory used by the TokenCredential will never be reclaimed.
     var renewToken = async () => {
-        try {
-            console.log("Renewing token");
-            var token = await getAadToken();
-            tokenCredential.token = token;
-            tokenRenewalTimer = setTimeout(renewToken, getExpiration(token));
-        } catch (error) {
-            console.log("Caught error when renewing token");
-            clearTimeout(tokenRenewalTimer);
-            throw error;
-        }
+    try {
+      console.log("Renewing token");
+      var token = await getAadToken();
+      tokenCredential.token = token;
+      tokenRenewalTimer = setTimeout(renewToken, getExpiration(token));
+    } catch (error) {
+      console.log("Caught error when renewing token");
+      clearTimeout(tokenRenewalTimer);
+      throw error;
+    }
     }
     tokenRenewalTimer = setTimeout(renewToken, getExpiration(aadToken));
-    
-    // Use tokenCredential to create a pipeline
+
+    // Use tokenCredential to create a pipeline.
     var pipeline = atlas.service.MapsURL.newPipeline(tokenCredential, {
-        retryOptions: { maxTries: 4 } // Retry options
+    retryOptions: { maxTries: 4 } // Retry options
     });
-    
-    //Create an instance of the SearchURL client.
+
+    // Create an instance of the SearchURL client.
     var searchURL = new atlas.service.SearchURL(pipeline);
 
     function getAadToken() {
-        //Use the logged in auth context to get a token.
+        // Use the signed-in auth context to get a token.
         return new Promise((resolve, reject) => {
-            //The resource should always be https://atlas.microsoft.com/.
+            // The resource should always be https://atlas.microsoft.com/.
             const resource = "https://atlas.microsoft.com/";
             authContext.acquireToken(resource, (error, token) => {
                 if (error) {
@@ -109,13 +110,13 @@ SDK веб-карты Azure предоставляет службы модуля
     }
 
     function getExpiration(jwtToken) {
-        //Decode the JWT token to get the expiration timestamp.
+        // Decode the JSON Web Token (JWT) to get the expiration time stamp.
         const json = atob(jwtToken.split(".")[1]);
         const decode = JSON.parse(json);
 
-        //Return the milliseconds until the token needs renewed.
-        //Reduce the time until renew by 5 minutes to avoid using an expired token.
-        //The exp property is the timestamp of the expiration in seconds.
+        // Return the milliseconds remaining until the token must be renewed.
+        // Reduce the time until renewal by 5 minutes to avoid using an expired token.
+        // The exp property is the time stamp of the expiration, in seconds.
         const renewSkew = 300000;
         return (1000 * decode.exp) - Date.now() - renewSkew;
     }
@@ -123,37 +124,37 @@ SDK веб-карты Azure предоставляет службы модуля
 
     Дополнительные сведения см. в разделе [проверки подлинности с помощью Azure Maps](azure-maps-authentication.md).
 
-4. В следующем коде используется клиент URL-адрес службы поиска только что созданный выполним геокодирование это адрес, с помощью «1 Microsoft Way, Redmond, WA» `searchAddress` функции и отображения результатов в виде таблицы в основной области страницы. 
+1. В следующем коде используется только что созданный клиент URL-адрес службы поиска Azure выполним геокодирование адрес: «1 Microsoft Way, Redmond, WA». Код использует `searchAddress` функцию и отображает результаты в виде таблицы в основной области страницы.
 
     ```javascript
-    //Search for "1 microsoft way, redmond, wa".
+    // Search for "1 microsoft way, redmond, wa".
     searchURL.searchAddress(atlas.service.Aborter.timeout(10000), '1 microsoft way, redmond, wa').then(response => {
       var html = [];
-      
-      //Display the total results.
+
+      // Display the total results.
       html.push('Total results: ', response.summary.numResults, '<br/><br/>');
-     
-      //Create a table of the results.
+
+      // Create a table of the results.
       html.push('<table><tr><td></td><td>Result</td><td>Latitude</td><td>Longitude</td></tr>');
-      
+
       for(var i=0;i<response.results.length;i++){
         html.push('<tr><td>', (i+1), '.</td><td>', 
-                    response.results[i].address.freeformAddress, 
-                    '</td><td>', 
-                    response.results[i].position.lat,
-                    '</td><td>', 
-                    response.results[i].position.lon,
-                    '</td></tr>');
+          response.results[i].address.freeformAddress, 
+          '</td><td>', 
+          response.results[i].position.lat,
+          '</td><td>', 
+          response.results[i].position.lon,
+          '</td></tr>');
       }
-      
+
       html.push('</table>');
-      
-      //Add the result HTML to the body of the page.
+
+      // Add the resulting HTML to the body of the page.
       document.body.innerHTML = html.join('');
     });
     ```
 
-    Ниже приведен полный запуск примера кода.
+    Ниже приведен полный, выполнив пример кода.
 
 <br/>
 
@@ -180,7 +181,7 @@ SDK веб-карты Azure предоставляет службы модуля
 > [!div class="nextstepaction"]
 > [tokenCredential](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.tokencredential?view=azure-iot-typescript-latest)
 
-Ознакомьтесь со следующими статьями, Дополнительные примеры кода для использования модуля служб:
+Дополнительные примеры кода для использования модуля служб см. в статьях:
 
 > [!div class="nextstepaction"]
 > [Показать результаты поиска на карте](./map-search-location.md)

@@ -16,11 +16,11 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: banders
 ms.openlocfilehash: 520d3f6a45b44ba2023dee34642f796689f48221
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58648852"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60919007"
 ---
 # <a name="view-and-download-your-azure-usage-and-charges"></a>Просматривать и скачивать данные об использовании Azure и затратах
 
@@ -104,7 +104,7 @@ ms.locfileid: "58648852"
 ## <a name="check-your-access-to-a-microsoft-customer-agreement"></a>Проверьте доступ к соглашению клиента Microsoft
 [!INCLUDE [billing-check-mca](../../includes/billing-check-mca.md)]
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
+## <a name="need-help-contact-us"></a>Нужна помощь? Свяжитесь с нами
 
 Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 

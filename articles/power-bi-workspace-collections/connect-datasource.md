@@ -3,19 +3,19 @@ title: Подключение к источнику данных в коллек
 description: Сведения о подключении к источнику данных в коллекциях рабочих областей Power BI.
 services: power-bi-workspace-collections
 ms.service: power-bi-workspace-collections
-author: markingmyname
-ms.author: maghan
+author: rkarlin
+ms.author: rkarlin
 ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
-ms.openlocfilehash: 143213b148518fdf936974152d5d9196c42febd8
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
-ms.translationtype: MT
+ms.openlocfilehash: 721458c5725e912d801b307ac05f3fde0776580e
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58521505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62110637"
 ---
-# <a name="connect-to-a-data-source"></a>Подключение к источнику данных
+# <a name="connect-to-a-data-source"></a>Подключение к источникам данных
 
 С помощью **коллекций рабочих областей Power BI** вы сможете вставлять отчеты в свои приложения. При внедрении отчета Power BI в приложение отчет подключается к базовым данным путем **импорта** копии данных или **непосредственного подключения** к источнику данных с помощью **DirectQuery**.
 
@@ -24,7 +24,7 @@ ms.locfileid: "58521505"
 
 Ниже описаны различия между **импортом** и **DirectQuery**.
 
-| Импорт | DirectQuery |
+| Импортировать | DirectQuery |
 | --- | --- |
 | Таблицы, столбцы и *данные* импортируются или копируются в набор данных отчета. Чтобы определить изменения в базовых данных, вам нужно повторно обновить или импортировать готовый текущий набор данных. |В набор данных отчета импортируются или копируются только *таблицы и столбцы* . Вы всегда просматриваете самые последние данные. |
 
@@ -37,7 +37,7 @@ ms.locfileid: "58521505"
 
 **DirectQuery**
 * База данных SQL Azure
-* Хранилище данных SQL Azure
+* Хранилище данных SQL Azure
 
 **Импорт**
 

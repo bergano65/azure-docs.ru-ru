@@ -14,17 +14,17 @@ ms.workload: infrastructure-services
 ms.date: 04/02/2019
 ms.author: magoedte
 ms.openlocfilehash: 5fdee4edce0301a5a4524725879f599b0a2e3532
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59795072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61386384"
 ---
 # <a name="known-issues-with-azure-monitor-for-vms-preview"></a>Известные проблемы в Azure Monitor для виртуальных машин (предварительная версия)
 
 В этой статье рассказывается об известных проблемах с решением "Azure Monitor для виртуальных машин", которое совмещает обнаружение компонентов приложения, а также мониторинг работоспособности и производительности операционной системы виртуальной машины Azure. 
 
-## <a name="health"></a>Health 
+## <a name="health"></a>Здравоохранение 
 Ниже перечислены известные проблемы с функцией проверки работоспособности в текущем выпуске:
 
 - На панели свойств виртуальной машины операционная система Windows Server 2019 отображается как Windows Server 2016. Эта ошибка будет устранена в следующем выпуске.

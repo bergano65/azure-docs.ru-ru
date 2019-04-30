@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 04/05/2019
 ms.author: bwren
 ms.openlocfilehash: 0e5b9b43e528b37fd994f9131f145abadb33c53b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59798482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61425952"
 ---
 # <a name="viewing-and-analyzing-log-data-in-azure-monitor"></a>Просмотр и анализ данных журнала в Azure Monitor
 Log Analytics — это основной интерфейс для работы с данными журнала и создания запросов в Azure Monitor. Откройте Log Analytics в разделе **Журналы** в меню **Azure Monitor**. Чтобы получить общие сведения об этом портале и проверить его возможности см. статью [Начало работы с Log Analytics на портале Azure](get-started-portal.md).
@@ -55,11 +55,11 @@ Log Analytics интегрирует с различными ресурсами 
 ## <a name="firewall-requirements"></a>Требования к брандмауэру
 Ваш браузер запрашивает доступ к следующим адресам, чтобы получить доступ к Log Analytics.  Если браузер обращается к порталу Azure через брандмауэр, необходимо разрешить доступ для этих адресов.
 
-| URI | IP-адрес | порты; |
+| URI | IP | порты; |
 |:---|:---|:---|
-| portal.loganalytics.io | Динамический | 80, 443 |
-| api.loganalytics.io    | Динамический | 80, 443 |
-| docs.loganalytics.io   | Динамический | 80, 443 |
+| portal.loganalytics.io | Динамические | 80, 443 |
+| api.loganalytics.io    | Динамические | 80, 443 |
+| docs.loganalytics.io   | Динамические | 80, 443 |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

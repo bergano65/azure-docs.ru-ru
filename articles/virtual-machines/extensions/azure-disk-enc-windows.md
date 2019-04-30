@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: ejarvi
 ms.openlocfilehash: 46699fb1add42d23a11234d5cd05e4a9627a91fd
-ms.sourcegitcommit: 1afd2e835dd507259cf7bb798b1b130adbb21840
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56983478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60800042"
 ---
 # <a name="azure-disk-encryption-for-windows-microsoftazuresecurityazurediskencryption"></a>Шифрование дисков Azure для Windows (Microsoft.Azure.Security.AzureDiskEncryption)
 
@@ -79,21 +79,21 @@ ms.locfileid: "56983478"
 
 | ИМЯ | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| версия_API | 2015-06-15 | дата |
-| publisher | Microsoft.Azure.Security | строка |
-| Тип | AzureDiskEncryptionForWindows| строка |
+| версия_API | 2015-06-15 | date |
+| publisher | Microsoft.Azure.Security | string |
+| тип | AzureDiskEncryptionForWindows| string |
 | typeHandlerVersion | 1.0, 1.1, 2.2 (VMSS) | int |
 | (Необязательно) AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
-| (Необязательно) AADClientSecret | password | строка |
-| (Необязательно) AADClientCertificate | thumbprint | строка |
-| EncryptionOperation | EnableEncryption | строка | 
-| KeyEncryptionAlgorithm | RSA-OAEP, RSA1_5 | строка |
-| KeyEncryptionKeyURL | URL-адрес | строка |
-| KeyVaultResourceId | uri ресурса | строка |
-| KekVaultResourceId | uri ресурса | строка |
-| KeyVaultURL | URL-адрес | строка |
-| SequenceVersion | uniqueidentifier | строка |
-| VolumeType | ОС, данные, все | строка |
+| (Необязательно) AADClientSecret | password | string |
+| (Необязательно) AADClientCertificate | thumbprint | string |
+| EncryptionOperation | EnableEncryption | string | 
+| KeyEncryptionAlgorithm | RSA-OAEP, RSA1_5 | string |
+| KeyEncryptionKeyURL | url | string |
+| KeyVaultResourceId | uri ресурса | string |
+| KekVaultResourceId | uri ресурса | string |
+| KeyVaultURL | url | string |
+| SequenceVersion | uniqueidentifier | string |
+| VolumeType | ОС, данные, все | string |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 Пример шаблона развертывания см. в руководстве по [созданию зашифрованной виртуальной машины Windows из образа коллекции](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-create-new-vm-gallery-image).

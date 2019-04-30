@@ -13,11 +13,11 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 12/18/2018
 ms.openlocfilehash: 71d2d542d71977f9d8dfe07370dffd7fe508bc92
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57314965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485495"
 ---
 # <a name="multi-tenant-applications-with-elastic-database-tools-and-row-level-security"></a>Мультитенантные приложения со средствами эластичных баз данных и безопасностью на уровне строк
 
@@ -339,7 +339,7 @@ GO
 ```
 
 
-### <a name="maintenance"></a>Обслуживание, 
+### <a name="maintenance"></a>Обслуживание
 
 - **Добавление новых сегментов**. Выполните скрипт T-SQL, чтобы включить политику RLS для всех новых сегментов, иначе запросы в таких сегментах фильтроваться не будут.
 - **Добавление новых таблиц**. Добавляйте предикаты FILTER и BLOCK в политику безопасности на всех сегментах при создании любой новой таблицы. Без этого запросы к такой таблице фильтроваться не будут. Добавление предикатов можно автоматизировать с помощью триггера DDL, как это описано в записи об [автоматическом применении безопасности на уровне строк для вновь созданных таблиц](https://blogs.msdn.com/b/sqlsecurity/archive/20../../apply-row-level-security-automatically-to-newly-created-tables.aspx).

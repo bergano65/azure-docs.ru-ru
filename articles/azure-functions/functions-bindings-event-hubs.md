@@ -10,14 +10,15 @@ ms.assetid: daf81798-7acc-419a-bc32-b5a41c6db56b
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: reference
-ms.date: 11/08/2017
-ms.author: cshoe
+origin.date: 11/08/2017
+ms.date: 03/20/2019
+ms.author: v-junlch
 ms.openlocfilehash: 7ca3ab8e3becf884fdba460f1981430e0c66ef99
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
-ms.translationtype: MT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57433507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62104458"
 ---
 # <a name="azure-event-hubs-bindings-for-azure-functions"></a>Привязки Центров событий Azure для службы "Функции Azure"
 
@@ -46,3 +47,5 @@ ms.locfileid: "57433507"
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)
+
+<!-- Update_Description: wording update -->

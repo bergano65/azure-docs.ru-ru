@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 10/25/2018
 ms.topic: conceptual
 ms.openlocfilehash: 38cde750ce07741a433baa1b8607a584f94ad9b1
-ms.sourcegitcommit: 3dcb1a3993e51963954194ba2a5e42260d0be258
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50753925"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62123664"
 ---
 # <a name="use-an-existing-iot-hub-with-the-device-simulation-solution-accelerator"></a>Использование существующего Центра Интернета вещей с акселератором решений "Симулятор устройств"
 
@@ -37,6 +37,6 @@ ms.locfileid: "50753925"
 
 ![Настройка моделирования](./media/iot-accelerators-device-simulation-choose-hub/configuresimulation.png)
 
-### <a name="next-steps"></a>Дополнительная информация
+### <a name="next-steps"></a>Дальнейшие действия
 
 В этом практическом руководстве вы узнали, как использовать для симуляции существующий Центр Интернета вещей. Теперь вы можете перейти к руководстве по [созданию расширенной модели устройства](iot-accelerators-device-simulation-advanced-device.md) для моделирования.

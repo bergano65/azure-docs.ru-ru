@@ -12,11 +12,11 @@ ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: seoapril2019
 ms.openlocfilehash: 62007624bdf2b5f1b9c387bcc51d58c020860913
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59279777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61474952"
 ---
 # <a name="table-statistics-in-azure-sql-data-warehouse"></a>Статистика таблицы в хранилище данных SQL Azure
 
@@ -46,11 +46,11 @@ SET AUTO_CREATE_STATISTICS ON
 
 Эти инструкции активируют автоматическое создание статистики:
 
-- SELECT
+- ВЫБОР
 - INSERT SELECT
-- CTAS;
-- UPDATE
-- УДАЛИТЬ
+- CTAS
+- ОБНОВИТЬ
+- DELETE
 - ОБЪЯСНИТЕ, если он содержит соединения или обнаружено наличие предикат
 
 > [!NOTE]
@@ -134,7 +134,7 @@ WHERE
 
 Дополнительные сведения см. в разделе об [оценке кратности](/sql/relational-databases/performance/cardinality-estimation-sql-server).
 
-## <a name="examples-create-statistics"></a>Примеры: Создание статистики
+## <a name="examples-create-statistics"></a>Примеры. Создание статистики
 
 Эти примеры показывают, как использовать различные параметры для создания статистики. Параметры, которые можно использовать для каждого столбца, зависят от характеристик данных и того, как столбец будет использован в запросах.
 
@@ -148,7 +148,7 @@ WHERE
 CREATE STATISTICS [statistics_name] ON [schema_name].[table_name]([column_name]);
 ```
 
-Например: 
+Пример.
 
 ```sql
 CREATE STATISTICS col1_stats ON dbo.table1 (col1);
@@ -164,7 +164,7 @@ CREATE STATISTICS col1_stats ON dbo.table1 (col1);
 CREATE STATISTICS [statistics_name] ON [schema_name].[table_name]([column_name]) WITH FULLSCAN;
 ```
 
-Например: 
+Пример.
 
 ```sql
 CREATE STATISTICS col1_stats ON dbo.table1 (col1) WITH FULLSCAN;
@@ -352,7 +352,7 @@ EXEC [dbo].[prc_sqldw_create_stats] 3, 20;
 
 Создание выборочной статистики для всех столбцов в таблице
 
-## <a name="examples-update-statistics"></a>Примеры: обновление статистики
+## <a name="examples-update-statistics"></a>Примеры. обновление статистики
 
 Чтобы обновить статистику, можно:
 
@@ -367,7 +367,7 @@ EXEC [dbo].[prc_sqldw_create_stats] 3, 20;
 UPDATE STATISTICS [schema_name].[table_name]([stat_name]);
 ```
 
-Например: 
+Пример.
 
 ```sql
 UPDATE STATISTICS [dbo].[table1] ([stats_col1]);
@@ -383,7 +383,7 @@ UPDATE STATISTICS [dbo].[table1] ([stats_col1]);
 UPDATE STATISTICS [schema_name].[table_name];
 ```
 
-Например: 
+Пример.
 
 ```sql
 UPDATE STATISTICS dbo.table1;
@@ -406,7 +406,7 @@ UPDATE STATISTICS dbo.table1;
 
 Вот какие системные представления показывают информацию о статистике:
 
-| Представления каталога | ОПИСАНИЕ |
+| Представления каталога | Описание |
 |:--- |:--- |
 | [sys.columns](/sql/relational-databases/system-catalog-views/sys-columns-transact-sql) |Одна строка для каждого столбца. |
 | [sys.objects](/sql/relational-databases/system-catalog-views/sys-objects-transact-sql) |Одна строка для каждого объекта в базе данных. |
@@ -420,7 +420,7 @@ UPDATE STATISTICS dbo.table1;
 
 Эти системные функции полезны для работы со статистикой:
 
-| Системная функция | ОПИСАНИЕ |
+| Системная функция | Описание |
 |:--- |:--- |
 | [STATS_DATE](/sql/t-sql/functions/stats-date-transact-sql) |Дата последнего обновления объекта статистики. |
 | [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql) |Сводная и подробная информация о распределении значений согласно объекту статистики. |
@@ -483,7 +483,7 @@ DBCC SHOW_STATISTICS() отображает данные, хранящиеся �
 DBCC SHOW_STATISTICS([<schema_name>.<table_name>],<stats_name>)
 ```
 
-Например: 
+Пример.
 
 ```sql
 DBCC SHOW_STATISTICS (dbo.table1, stats_col1);
@@ -497,7 +497,7 @@ DBCC SHOW_STATISTICS (dbo.table1, stats_col1);
 DBCC SHOW_STATISTICS([<schema_name>.<table_name>],<stats_name>) WITH stat_header, histogram, density_vector
 ```
 
-Например: 
+Пример.
 
 ```sql
 DBCC SHOW_STATISTICS (dbo.table1, stats_col1) WITH histogram, density_vector

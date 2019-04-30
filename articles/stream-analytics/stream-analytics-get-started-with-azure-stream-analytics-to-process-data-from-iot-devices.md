@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
 ms.openlocfilehash: b883dcf941683d6065c9b6ee5075d2a358f3452a
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55563513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61481501"
 ---
 # <a name="get-started-with-azure-stream-analytics-to-process-data-from-iot-devices"></a>Начало работы с Azure Stream Analytics для обработки данных с устройств IoT
 В этом руководстве вы узнаете, как создать логическую схему обработки потоков для сбора данных с устройств Интернета вещей. Мы рассмотрим сценарии использования Интернета вещей из реальной жизни, чтобы продемонстрировать, как быстро создать решение без лишних затрат.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * [Подписка Azure.](https://azure.microsoft.com/pricing/free-trial/)
 * пример запроса и файлов данных, который можно скачать на сайте [GitHub](https://aka.ms/azure-stream-analytics-get-started-iot)
 
@@ -44,7 +44,7 @@ ms.locfileid: "55563513"
 ## <a name="create-a-stream-analytics-job"></a>Создание задания Stream Analytics
 1. На [портале Azure](https://portal.azure.com) щелкните знак "плюс", а затем в текстовом поле справа введите **Stream Analytics** и в появившемся списке результатов выберите **Задание Stream Analytics**.
    
-    ![Создание нового задания Stream Analytics](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-02.png)
+    ![Создать новое задание Stream Analytics](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-02.png)
 2. Введите уникальное имя задания и убедитесь, что отображается правильная подписка. Затем создайте новую группу ресурсов или выберите существующую в вашей подписке.
 3. После этого выберите расположение для вашего задания. Для повышения скорости обработки данных и сокращения затрат при передаче данных мы советуем выбрать то же расположение, что и для группы ресурсов, а также предполагаемую учетную запись хранения.
    

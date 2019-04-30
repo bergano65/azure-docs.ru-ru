@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 09/13/2017
 ms.author: cynthn
-ms.openlocfilehash: ec3bd5666e6282554e3d242f8ff56019ee41011b
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
-ms.translationtype: HT
+ms.openlocfilehash: b8f63d2a0f69f1eb1b8a1b9c645b1a0bcb3d9469
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30915224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61456314"
 ---
 # <a name="backup-and-restore-options-for-virtual-machines-in-azure"></a>Параметры резервного копирования и восстановления для виртуальных машин в Azure
 Для защиты данных можно создавать архивы с регулярным интервалом. Доступно несколько вариантов резервного копирования для виртуальных машин на основе сценариев использования.
