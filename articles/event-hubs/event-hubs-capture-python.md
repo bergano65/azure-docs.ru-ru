@@ -16,11 +16,11 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
 ms.openlocfilehash: 639bc4ff9c69bca3d5f8bca6967bfc3e8e6a13d4
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56100556"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60822422"
 ---
 # <a name="event-hubs-capture-walkthrough-python"></a>Пошаговое руководство. Использование функции "Сбор" в службе "Центры событий" с Python
 
@@ -36,7 +36,7 @@ ms.locfileid: "56100556"
 4. Отправка данных в концентратор событий с помощью скрипта Python.
 5. Чтение файлов из записи и их обработка с помощью еще одного скрипта Python.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Python 2.7.x.
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
@@ -160,7 +160,7 @@ ms.locfileid: "56100556"
 
    Этот обработчик записи загружает все большие двоичные объекты из учетной записи хранения или контейнера в локальный каталог. Он обрабатывает все непустые файлы и записывает результаты в CSV-файлы в локальном каталоге.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Центрах событий см. по следующим ссылкам:
 

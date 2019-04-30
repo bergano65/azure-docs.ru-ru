@@ -13,11 +13,11 @@ ms.custom: seodec18
 ms.date: 02/15/2019
 ms.author: juliako
 ms.openlocfilehash: f4ce64599aad2b2eebbef6ca8d81acfca2a7a702
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56342513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60733897"
 ---
 # <a name="create-an-azure-media-services-account"></a>Создание учетной записи служб мультимедиа Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "56342513"
 
 В этой статье описаны действия по созданию учетной записи Служб мультимедиа Azure с помощью Azure CLI.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Активная подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 
@@ -44,7 +44,7 @@ az account set --subscription mySubscriptionId
  
 [!INCLUDE [media-services-cli-create-v3-account-include](../../../includes/media-services-cli-create-v3-account-include.md)]
  
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
 

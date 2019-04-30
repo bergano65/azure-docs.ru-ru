@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: c0571e202448951de0994d34f68e1649eabd5519
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61128190"
 ---
 # <a name="configure-content-protection-policies-by-using-the-azure-portal"></a>Настройка политик защиты содержимого с помощью портала Azure
  Службы мультимедиа Azure позволяют защитить данные мультимедиа, покидающие ваш компьютер, на этапах их хранения, обработки и доставки. С помощью служб мультимедиа Azure можно доставлять содержимое, динамически шифруемое с помощью алгоритма AES с 128-разрядным ключом шифрования. При использовании управления цифровыми правами (DRM) PlayReady и (или) Widevine и Apple FairPlay можно использовать шифрование CENC. 
@@ -37,7 +37,7 @@ ms.locfileid: "58259080"
 
     ![Защита содержимого](./media/media-services-portal-content-protection/media-services-content-protection001.png)
 
-## <a name="keylicense-authorization-policy"></a>политику авторизации ключей и лицензий
+## <a name="keylicense-authorization-policy"></a>Политика авторизации ключа или лицензии
 Службы мультимедиа поддерживают несколько способов аутентификации пользователей, запрашивающих ключи или лицензии. Потребуется настроить политику авторизации для ключа содержимого. Чтобы клиенту можно было доставлять ключ или лицензию, он должен соответствовать политике. Для политики авторизации ключа содержимого можно задать одно или несколько ограничений: открытая авторизация или авторизация с помощью маркера.
 
 На портале можно создать единую политику авторизации ключей и лицензий для всех типов шифрования.
@@ -50,7 +50,7 @@ ms.locfileid: "58259080"
 
 При настройке политики ограничения по маркеру необходимо задать такие параметры, как основной ключ проверки, издатель и аудитория. Основной ключ проверки содержит ключ, которым был подписан маркер. Издателем является служба токенов безопасности, которая выдает токен. Аудитория (иногда называется областью) описывает назначение маркера или ресурс, доступ к которому обеспечивает маркер. Служба доставки ключей служб мультимедиа проверяет, соответствуют ли эти значения в маркере значениям в шаблоне.
 
-![политику авторизации ключей и лицензий](./media/media-services-portal-content-protection/media-services-content-protection002.png)
+![Политика авторизации ключа или лицензии](./media/media-services-portal-content-protection/media-services-content-protection002.png)
 
 ## <a name="playready-license-template"></a>Шаблон лицензии PlayReady
 Шаблон лицензии PlayReady позволяет включить функции в лицензии PlayReady. Дополнительные сведения о шаблоне лицензии PlayReady см. в статье [Обзор шаблонов лицензий PlayReady служб мультимедиа](media-services-playready-license-template-overview.md).
@@ -76,10 +76,10 @@ ms.locfileid: "58259080"
 
 ![Расширенная защита содержимого](./media/media-services-portal-content-protection/media-services-content-protection005.png)
 
-## <a name="fairplay-configuration"></a>Настройка FairPlay
+## <a name="fairplay-configuration"></a>Конфигурация FairPlay
 Чтобы включить шифрование FairPlay, выберите **Конфигурация FairPlay**. Выберите **Сертификат приложения** и введите **Секретный ключ приложения**. Дополнительные требования и сведения о конфигурации FairPlay см. в разделе [Защита содержимого HLS с помощью Apple FairPlay или Microsoft PlayReady](media-services-protect-hls-with-FairPlay.md).
 
-![Настройка FairPlay](./media/media-services-portal-content-protection/media-services-content-protection006.png)
+![Конфигурация FairPlay](./media/media-services-portal-content-protection/media-services-content-protection006.png)
 
 ## <a name="apply-dynamic-encryption-to-your-asset"></a>Применение динамического шифрования к ресурсу-контейнеру
 Чтобы воспользоваться преимуществами динамического шифрования, необходимо закодировать исходный файл в набор MP4-файлов с переменной скоростью.

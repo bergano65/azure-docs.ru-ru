@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 8241dc0303b7e60f9ce1e04e56d152c9a0b3906c
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.openlocfilehash: c5a76b9cee8fd6eb09ee4d24c1380202fd17cc6d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56327516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60836357"
 ---
 # <a name="design-and-implement-an-oracle-database-in-azure"></a>Разработка базы данных Oracle и ее реализация в Azure
 
@@ -61,11 +61,11 @@ ms.locfileid: "56327516"
 - Определите скорость увеличения и размер базы данных.
 - Определите требования к числу операций ввода-вывода, которое можно рассчитать на основе отчета Oracle AWR или других средств мониторинга сети.
 
-## <a name="configuration-options"></a>Варианты настройки
+## <a name="configuration-options"></a>Параметры конфигурации
 
 В среде Azure есть четыре области, которые можно настроить для повышения производительности:
 
-- размер виртуальной машины;
+- Размер виртуальной машины
 - Пропускная способность сети
 - Типы дисков и их конфигурации
 - Настройки кэша дисков.
@@ -91,7 +91,7 @@ SQL> @?/rdbms/admin/awrrpt.sql
 - общее число ядер;
 - тактовая частота процессора;
 - общий объем памяти в ГБ;
-- загрузка ЦП;
+- Загрузка ЦП
 - пиковая частота передачи данных;
 - частота изменения числа операций ввода-вывода (чтение и запись);
 - скорость записи в журнал повторяемых операций (Мбит/с);
@@ -100,7 +100,7 @@ SQL> @?/rdbms/admin/awrrpt.sql
 - размер базы данных (в ГБ);
 - число байт, полученных через SQL*Net из клиента и поступивших него.
 
-### <a name="virtual-machine-size"></a>размер виртуальной машины;
+### <a name="virtual-machine-size"></a>Размер виртуальной машины
 
 #### <a name="1-estimate-vm-size-based-on-cpu-memory-and-io-usage-from-the-awr-report"></a>1. Оценка необходимого размера виртуальных машин на основе использования ЦП, памяти или операций ввода-вывода из отчета AWR
 
@@ -221,14 +221,14 @@ SQL> @?/rdbms/admin/awrrpt.sql
 - *Частная сеть* (подсети). Рекомендуем устанавливать службу приложений и базу данных в разных подсетях, чтобы политика NSG могла настроить расширенные возможности управления.
 
 
-## <a name="additional-reading"></a>Дополнительные материалы
+## <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Настройка Oracle ASM](configure-oracle-asm.md)
 - [Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux](configure-oracle-dataguard.md)
 - [Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux](configure-oracle-golden-gate.md)
 - [Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure](oracle-backup-recovery.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство Создание высокодоступных виртуальных машин](../../linux/create-cli-complete.md)
+- [Учебник. Создание высокодоступных виртуальных машин](../../linux/create-cli-complete.md)
 - [Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](../../linux/cli-samples.md).

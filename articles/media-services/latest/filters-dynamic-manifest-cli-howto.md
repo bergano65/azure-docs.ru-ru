@@ -15,11 +15,11 @@ ms.date: 11/26/2018
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: 2ba3de32f4ec3b9f6faf1d5a51da9c1c91e4a2e4
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55099312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60732439"
 ---
 # <a name="creating-filters-with-cli"></a>Создание фильтров с помощью CLI 
 
@@ -27,7 +27,7 @@ ms.locfileid: "55099312"
 
 В этой статье показано, как настроить фильтр для ресурса-контейнера видео по запросу и использовать CLI для Служб мультимедиа версии 3, чтобы создать [фильтры учетных записей](https://docs.microsoft.com/cli/azure/ams/account-filter?view=azure-cli-latest) и [фильтры ресурсов](https://docs.microsoft.com/cli/azure/ams/asset-filter?view=azure-cli-latest). 
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Технические условия 
 
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
 - См. дополнительные сведения о [фильтрах и динамических манифестах](filters-dynamic-manifest-overview.md).

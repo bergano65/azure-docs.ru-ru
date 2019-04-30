@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: pbutlerm
 ms.openlocfilehash: ac383c85938f5cb7dfe4f711714f5bacd0c96b89
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54230957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60865379"
 ---
 # <a name="storefront-details-tab"></a>Вкладка со сведениями об онлайн-магазине
 
@@ -32,7 +32,7 @@ ms.locfileid: "54230957"
 
 ![Создание нового предложения консультационных услуг — вкладка со сведениями об онлайн-магазине](media/consultingoffer-storefront-details.png)
 
-## <a name="offer-details"></a>Offer details (Сведения о предложении)
+## <a name="offer-details"></a>Сведения о предложении
 
 В разделе **Offer details** (Сведения о предложении) содержатся следующие поля:
 
@@ -208,6 +208,6 @@ ms.locfileid: "54230957"
 
 Отправьте до пяти изображений, которые содержат дополнительные сведения о предложении, о конечных результатах предложения или о вашей компании. Например, фрагмент вашей маркетинговой брошюры, соответствующий слайд из презентации или рисунок, изображающий темп развития компании или опыт ее работы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы готовы [к публикации предложения консультационных услуг](./cpp-consulting-service-publish-offer.md).

@@ -8,11 +8,11 @@ ms.date: 3/24/2019
 ms.author: mjbrown
 ms.reviewer: sngun
 ms.openlocfilehash: 1e866560ceab342f08a98ba3db05980a2b0947d2
-ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58407561"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60888515"
 ---
 # <a name="high-availability-with-azure-cosmos-db"></a>Высокий уровень доступности при использовании Azure Cosmos DB
 
@@ -34,7 +34,7 @@ Azure Cosmos DB прозрачно реплицирует данные во вс
 
 |Operation type (Тип операции)  | Один регион |Несколько регионов (один регион записи)|Несколько регионов (несколько регионов записи) |
 |---------|---------|---------|-------|
-|Запись    | 99,99    |99,99   |99,999|
+|Операции записи    | 99,99    |99,99   |99,999|
 |Операции чтения     | 99,99    |99,999  |99,999|
 
 > [!NOTE]
@@ -68,7 +68,7 @@ Azure Cosmos DB прозрачно реплицирует данные во вс
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Далее вы найдете в следующих статьях:
+См. подробнее:
 
 * [Достижение компромисса между доступностью и быстродействием для разных уровней согласованности](consistency-levels-tradeoffs.md)
 * [Масштабирование пропускной способности в Azure Cosmos DB](scaling-throughput.md)

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с TalentLMS | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с TalentLMS | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в TalentLMS.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 07/13/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8fa78ec2b5623dfd010a8fe5709916a47e221a9e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57902201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60732336"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-talentlms"></a>Руководство. Интеграция Azure Active Directory с TalentLMS
+# <a name="tutorial-azure-active-directory-integration-with-talentlms"></a>Руководство по Интеграция Azure Active Directory с TalentLMS
 
 В этом руководстве описано, как интегрировать приложение TalentLMS с Azure Active Directory (Azure AD).
 
@@ -66,11 +66,11 @@ ms.locfileid: "57902201"
 
 1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
+    ![Приложения][2]
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![ПРИЛОЖЕНИЯ][3]
+    ![Приложения][3]
 
 1. В поле поиска введите **TalentLMS**.
 
@@ -219,7 +219,7 @@ ms.locfileid: "57902201"
 
     2. В текстовое поле **Last name** (Фамилия) введите фамилию пользователя, например **Simon**.
  
-    c. В **адрес электронной почты** текстовом поле введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
+    c. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
     d. Нажмите кнопку **Add User**(Добавить пользователя).
 

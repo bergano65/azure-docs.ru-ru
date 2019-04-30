@@ -11,11 +11,11 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
 ms.openlocfilehash: 431fe04461f422274697d1e91c4b56e914ce2d4e
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53102727"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60746664"
 ---
 # <a name="event-hubs-management-libraries"></a>Библиотеки управления Центров событий
 
@@ -27,7 +27,7 @@ ms.locfileid: "53102727"
 * Создание, обновление, удаление концентраторов событий в службе "Центры событий".
 * Создание, обновление, удаление группы потребителей.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы приступить к работе с библиотеками управления Центров событий, нужно пройти аутентификацию в Azure Active Directory (AAD). AAD требует аутентификации в качестве субъекта-службы, предоставляющего доступ к вашим ресурсам Azure. Сведения о создании субъекта-службы см. в одной из приведенных ниже статей:  
 
@@ -73,6 +73,6 @@ ms.locfileid: "53102727"
     await ehClient.EventHubs.CreateOrUpdateAsync(resourceGroupName, namespaceName, EventHubName, ehParams);
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Пример управления для .NET](https://github.com/Azure-Samples/event-hubs-dotnet-management/)
 * [Справочник по Microsoft.Azure.Management.EventHub](/dotnet/api/Microsoft.Azure.Management.EventHub) 

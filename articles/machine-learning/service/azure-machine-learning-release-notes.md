@@ -10,18 +10,23 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 04/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7fc0d3a2e29a2aaa06d88f25828ff676d615939d
-ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.openlocfilehash: e79e610638b5ff271607da2e8855003707ea5932
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60149570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60821287"
 ---
 # <a name="azure-machine-learning-service-release-notes"></a>Заметки о выпуске службы "Машинное обучение Azure"
 
 В статье рассказывается о выпусках службы "Машинное обучения Azure".  Для просмотра полного описания каждого пакета SDK см. следующие ссылки на документы:
 + [**Основной пакет SDK для Python**](https://aka.ms/aml-sdk) Машинного обучения Azure.
 + [**Пакет SDK для подготовки данных**](https://aka.ms/data-prep-sdk) Машинного обучения Azure.
+
+
+## <a name="2019-04-22"></a>2019-04-22
+
+### <a name="azure-machine-learning-sdk-for-python-v1030"></a>Машинного обучения Azure SDK для Python v1.0.30
 
 ## <a name="2019-04-17"></a>2019-04-17
 
@@ -33,7 +38,7 @@ ms.locfileid: "60149570"
   + Теперь можно использовать преобразование Pivot.
     + Руководство: [Записная книжка PIVOT](https://aka.ms/aml-data-prep-pivot-nb)
   + Теперь можно использовать регулярные выражения в собственных функций.
-    + Примеры:
+    + Примеры.
       + `dflow.filter(dprep.RegEx('pattern').is_match(dflow['column_name']))`
       + `dflow.assert_value('column_name', dprep.RegEx('pattern').is_match(dprep.value))`
   + Теперь вы можете использовать `to_upper`  и `to_lower`  функций в язык выражений.
@@ -258,7 +263,7 @@ ms.locfileid: "60149570"
 + **Обновления**
   * [Примеры записных книжек](https://aka.ms/aml-data-prep-notebooks) для руководств по началу работы, примеров использования и практических руководств.
 
-## <a name="2018-12-04-general-availability"></a>04.12.2018: Общедоступная версия
+## <a name="2018-12-04-general-availability"></a>04.12.2018: Общая доступность
 
 Выпущена общедоступная версия Службы машинного обучения Azure.
 

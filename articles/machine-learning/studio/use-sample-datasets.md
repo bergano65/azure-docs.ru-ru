@@ -11,13 +11,13 @@ ms.author: amlstudiodocs
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/19/2018
 ms.openlocfilehash: f86ae4977621927a09d9b83287a00dfa3bc17196
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57880999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60736621"
 ---
-# <a name="use-the-sample-datasets-in-azure-machine-learning-studio"></a>Используйте типовых наборов данных в Azure Machine Learning Studio
+# <a name="use-the-sample-datasets-in-azure-machine-learning-studio"></a>Использование примеров наборов данных в студии машинного обучения Azure
 [top]: #machine-learning-sample-datasets
 
 При создании новой рабочей области в студии машинного обучения Azure, по умолчанию включено множество примеров наборов данных и экспериментов. Многие из этих примеров наборов данных используются в примерах моделей в [коллекции решений ИИ Azure](https://gallery.azure.ai/). Остальные примеры включают примеры различных типов данных, обычно используемых в машинном обучении.

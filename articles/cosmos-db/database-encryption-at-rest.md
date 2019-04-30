@@ -8,11 +8,11 @@ ms.date: 12/06/2018
 ms.author: sngun
 ms.custom: seodec18
 ms.openlocfilehash: 07d5aa752d6613f6733a44c9b34e48f537eb67ae
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60889584"
 ---
 # <a name="data-encryption-in-azure-cosmos-db"></a>Шифрование данных в Azure Cosmos DB 
 
@@ -57,7 +57,7 @@ ms.locfileid: "56245241"
 ### <a name="q-does-the-local-emulator-support-encryption-at-rest"></a>Вопрос. Поддерживает ли локальный эмулятор шифрование неактивных данных?
 Ответ. Эмулятор — это изолированное средство разработки и тестирования, которое не использует службы управления ключами, применяемые управляемой службой Cosmos DB. Мы советуем включить BitLocker на дисках, где хранятся конфиденциальные тестовые данные эмулятора. [Эмулятор поддерживает изменение каталога данных по умолчанию](local-emulator.md), а также использование известного расположения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие сведения о системе безопасности и последних усовершенствованиях Cosmos DB см. в статье [Безопасность базы данных в Azure Cosmos DB](database-security.md).
 Дополнительные сведения о сертификатах Майкрософт см. в [центре управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/).

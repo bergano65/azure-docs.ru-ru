@@ -1,17 +1,17 @@
 ---
 title: Памятка по запросам Azure Cosmos DB (в формате PDF)
 description: Распечатываемая памятка в формате PDF, которая помогает использовать Azure Cosmos DB, MongoDB, API Graph и API таблицы для запроса данных
-author: SnehaGunda
+author: rockboyfor
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 03/20/2018
-ms.author: sngun
+ms.date: 03/18/2019
+ms.author: v-yeche
 ms.openlocfilehash: 848b5a75e4e957b2ad61072ff2e229cacdba2019
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54035091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60928220"
 ---
 # <a name="azure-cosmos-db-query-cheat-sheets"></a>Памятка по запросам Azure Cosmos DB
 
@@ -30,7 +30,7 @@ ms.locfileid: "54035091"
 
 ![Памятка по запросам Azure Cosmos DB формата A3 с описанием запросов и функций API-интерфейсов SQL, JavaScript, MongoDB, Gremlin и API таблиц.](./media/query-cheat-sheet/azure-cosmos-db-cheat-sheet-a3.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о написании запросов см. в следующих статьях.
 * См. дополнительные сведения о [создании запросов с помощью API SQL](tutorial-query-sql-api.md), [SQL-запросах для Azure Cosmos DB](how-to-sql-query.md); также доступен [справочник по SQL-синтаксису](sql-api-query-reference.md)
 * Сведения о запросах MongoDB см. в статьях, посвященных [запросам с использованием API Azure Cosmos DB для MongoDB](tutorial-query-mongodb.md) и [поддержке и синтаксису функции API Azure Cosmos DB для MongoDB](mongodb-feature-support.md).

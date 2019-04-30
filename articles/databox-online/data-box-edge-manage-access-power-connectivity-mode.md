@@ -9,13 +9,13 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 813563b500b9365289285a89536f2724fb87acad
-ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58417808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60757335"
 ---
-# <a name="manage-access-power-and-connectivity-mode-for-your-azure-data-box-edge"></a>Управление доступом, эффективность и режим подключения для Edge поле данных в Azure
+# <a name="manage-access-power-and-connectivity-mode-for-your-azure-data-box-edge"></a>Управление доступом, эффективность и режим подключения для Microsoft Edge в поле данных Azure
 
 В этой статье описывается управление режимом доступа, power и подключение для Edge поле данных в Azure. Эти операции выполняются с помощью локального веб-интерфейса или портала Azure.
 
@@ -38,7 +38,7 @@ ms.locfileid: "58417808"
 1. В локальном пользовательском веб-интерфейсе перейдите в раздел **Обслуживания > Изменение пароля**.
 2. Введите текущий пароль, а затем — новый. Длина пароля должна быть не меньше 8 и не больше 16 знаков. Пароль должен содержать 3 знака из следующих категорий: прописные буквы, строчные буквы, цифры и специальные знаки. Подтвердите новый пароль.
 
-    ![Изменить пароль](media/data-box-edge-manage-access-power-connectivity-mode/change-password-1.png)
+    ![Сменить пароль](media/data-box-edge-manage-access-power-connectivity-mode/change-password-1.png)
 
 3. Щелкните **Изменить пароль**.
  
@@ -83,7 +83,7 @@ ms.locfileid: "58417808"
 1. В локальном пользовательском веб-интерфейсе последовательно выберите **Обслуживание > Настройки питания**.
 2. Выберите **завершение работы** или **перезапустите** в зависимости от того, что требуется сделать.
 
-    ![Параметры питания](media/data-box-edge-manage-access-power-connectivity-mode/shut-down-restart-1.png)
+    ![Настройки питания](media/data-box-edge-manage-access-power-connectivity-mode/shut-down-restart-1.png)
 
 3. При появлении запроса на подтверждение, выберите **Да** для продолжения.
 
@@ -92,4 +92,4 @@ ms.locfileid: "58417808"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, как [Управление общими папками](data-box-edge-manage-shares.md).
+- Сведения об управлении общими папками см. [здесь](data-box-edge-manage-shares.md).

@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 8ab051d49e7ed67e642ef656dfb382ed07763ed2
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58879715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60877439"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-net-sdk"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием .NET SDK
 > [!div class="op_single_selector"]
@@ -41,9 +41,9 @@ ms.locfileid: "58879715"
 2. В меню **Файл** выберите команду **Создать**, а затем — **Проект**.
 3. В окне **Новый проект**введите или выберите следующие значения.
 
-   | Свойство | Значение |
+   | Свойство | Value |
    | --- | --- |
-   | Категория |Templates/Visual C#/Windows |
+   | Category |Templates/Visual C#/Windows |
    | Шаблон |Консольное приложение |
    | ИМЯ |CreateADLApplication |
 4. Нажмите кнопку **ОК** , чтобы создать проект.

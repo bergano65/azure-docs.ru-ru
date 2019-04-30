@@ -11,14 +11,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 3/19/2018
-ms.author: amsriva
+origin.date: 03/19/2018
+ms.date: 04/17/2019
+ms.author: v-junlch
 ms.openlocfilehash: 8e88e0e11b3ccab7cc2c68b2617df2d588680780
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58170060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60715815"
 ---
 # <a name="application-gateway-redirect-overview"></a>Общие сведения о перенаправлении для шлюза приложений
 
@@ -29,7 +30,7 @@ ms.locfileid: "58170060"
 Поддерживаются следующие типы перенаправления:
 
 - 301 постоянное перенаправление
-- 302 — объект найден
+- 302 Found — "найдено"
 - 303 см. в разделе друга
 - 307 Временное перенаправление
 
@@ -50,3 +51,5 @@ ms.locfileid: "58170060"
 ### <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка перенаправления URL-адресов на шлюзе приложений](tutorial-url-redirect-powershell.md)
+
+<!-- Update_Description: wording update -->

@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 11/30/2016
 ms.author: annahar
 ms.openlocfilehash: b1873b770a6b4280b7098c68ecb75cc1411fe453
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58650570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60747023"
 ---
 # <a name="assign-multiple-ip-addresses-to-virtual-machines-using-the-azure-portal"></a>Назначение виртуальным машинам нескольких IP-адресов с помощью портала Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "58650570"
 2. На портале выберите **Больше служб**, введите *виртуальные машины* в поле фильтра, а затем щелкните **Виртуальные машины**.
 3. В области **Виртуальные машины** выберите виртуальную машину, которой вы хотите назначить IP-адреса. Щелкните **Сетевые интерфейсы** в появившейся области "Виртуальные машины" и выберите сетевой интерфейс, к которому вы хотите добавить IP-адреса. В примере на следующем рисунке выбрана сетевая карта *myNIC* виртуальной машины с именем *myVM*.
 
-    ![сетевому интерфейсу](./media/virtual-network-multiple-ip-addresses-portal/figure1.png)
+    ![Сетевой интерфейс](./media/virtual-network-multiple-ip-addresses-portal/figure1.png)
 
 4. Откроется область для выбранного сетевого адаптера. В ней щелкните **Конфигурации IP**.
 

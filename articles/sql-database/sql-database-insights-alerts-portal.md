@@ -13,11 +13,11 @@ ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 11/02/2018
 ms.openlocfilehash: 93337e39a117c1f8d38f24dc416ff8ae95513a34
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57855594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036066"
 ---
 # <a name="create-alerts-for-azure-sql-database-and-data-warehouse-using-azure-portal"></a>Создание оповещений для Базы данных SQL Azure и хранилища данных с помощью портала Azure
 
@@ -77,42 +77,42 @@ ms.locfileid: "57855594"
 
 | Тип ресурса | Имя метрики | Понятное имя | Тип статистической обработки | Минимальный интервал времени для оповещений|
 | --- | --- | --- | --- | --- |
-| База данных SQL | cpu_percent | Процент использования ЦП | Средняя | 5 мин |
-| База данных SQL | physical_data_read_percent | Процент операций ввода/вывода данных | Средняя | 5 мин |
-| База данных SQL | log_write_percent | Log IO percentage | Средняя | 5 мин |
-| База данных SQL | dtu_consumption_percent | Процент использования DTU | Средняя | 5 мин |
-| База данных SQL | storage | Total database size | Максимальная | 30 минут |
+| База данных SQL | cpu_percent | Процент ЦП | Средние | 5 мин |
+| База данных SQL | physical_data_read_percent | Процент операций ввода-вывода данных | Средние | 5 мин |
+| База данных SQL | log_write_percent | Процент операций ввода-вывода журнала | Средние | 5 мин |
+| База данных SQL | dtu_consumption_percent | Процент DTU | Средние | 5 мин |
+| База данных SQL | storage | Total database size | Максимум | 30 минут |
 | База данных SQL | connection_successful | Успешные подключения | Итого | 10 минут |
 | База данных SQL | connection_failed | Неудачные подключения | Итого | 10 минут |
 | База данных SQL | blocked_by_firewall | Заблокировано брандмауэром | Итого | 10 минут |
 | База данных SQL | deadlock | Взаимоблокировки | Итого | 10 минут |
-| База данных SQL | storage_percent | Размер базы данных в процентах | Максимальная | 30 минут |
-| База данных SQL | xtp_storage_percent | In-Memory OLTP storage percent (Preview) | Средняя | 5 мин |
-| База данных SQL | workers_percent | Workers percentage | Средняя | 5 мин |
-| База данных SQL | sessions_percent | Sessions percent | Средняя | 5 мин |
-| База данных SQL | dtu_limit | DTU limit | Средняя | 5 мин |
-| База данных SQL | dtu_used | DTU used | Средняя | 5 мин |
+| База данных SQL | storage_percent | Размер базы данных в процентах | Максимум | 30 минут |
+| База данных SQL | xtp_storage_percent | In-Memory OLTP storage percent (Preview) | Средние | 5 мин |
+| База данных SQL | workers_percent | Процент рабочих ролей | Средние | 5 мин |
+| База данных SQL | sessions_percent | Sessions percent | Средние | 5 мин |
+| База данных SQL | dtu_limit | DTU limit | Средние | 5 мин |
+| База данных SQL | dtu_used | DTU used | Средние | 5 минут |
 ||||||
-| Эластичный пул | cpu_percent | Процент использования ЦП | Средняя | 10 минут |
-| Эластичный пул | physical_data_read_percent | Процент операций ввода/вывода данных | Средняя | 10 минут |
-| Эластичный пул | log_write_percent | Log IO percentage | Средняя | 10 минут |
-| Эластичный пул | dtu_consumption_percent | Процент использования DTU | Средняя | 10 минут |
-| Эластичный пул | storage_percent | Storage percentage | Средняя | 10 минут |
-| Эластичный пул | workers_percent | Workers percentage | Средняя | 10 минут |
-| Эластичный пул | eDTU_limit | eDTU limit | Средняя | 10 минут |
-| Эластичный пул | storage_limit | Storage limit | Средняя | 10 минут |
-| Эластичный пул | eDTU_used | eDTU used | Средняя | 10 минут |
-| Эластичный пул | storage_used | Storage used | Средняя | 10 минут |
+| Эластичный пул | cpu_percent | Процент ЦП | Средние | 10 минут |
+| Эластичный пул | physical_data_read_percent | Процент операций ввода-вывода данных | Средние | 10 минут |
+| Эластичный пул | log_write_percent | Процент операций ввода-вывода журнала | Средние | 10 минут |
+| Эластичный пул | dtu_consumption_percent | Процент DTU | Средние | 10 минут |
+| Эластичный пул | storage_percent | Storage percentage | Средние | 10 минут |
+| Эластичный пул | workers_percent | Процент рабочих ролей | Средние | 10 минут |
+| Эластичный пул | eDTU_limit | eDTU limit | Средние | 10 минут |
+| Эластичный пул | storage_limit | Storage limit | Средние | 10 минут |
+| Эластичный пул | eDTU_used | eDTU used | Средние | 10 минут |
+| Эластичный пул | storage_used | Используемое хранилище | Средние | 10 минут |
 ||||||               
-| Хранилище данных SQL | cpu_percent | Процент использования ЦП | Средняя | 10 минут |
-| Хранилище данных SQL | physical_data_read_percent | Процент операций ввода/вывода данных | Средняя | 10 минут |
+| хранилище данных SQL | cpu_percent | Процент ЦП | Средние | 10 минут |
+| хранилище данных SQL | physical_data_read_percent | Процент операций ввода-вывода данных | Средние | 10 минут |
 | Хранилище данных SQL | connection_successful | Успешные подключения | Итого | 10 минут |
-| Хранилище данных SQL | connection_failed | Неудачные подключения | Итого | 10 минут |
-| Хранилище данных SQL | blocked_by_firewall | Заблокировано брандмауэром | Итого | 10 минут |
-| Хранилище данных SQL | service_level_objective | Уровень служб базы данных | Итого | 10 минут |
-| Хранилище данных SQL | dwu_limit | Лимит DWU. | Максимальная | 10 минут |
-| Хранилище данных SQL | dwu_consumption_percent | DWU percentage | Средняя | 10 минут |
-| Хранилище данных SQL | dwu_used | DWU used | Средняя | 10 минут |
+| хранилище данных SQL | connection_failed | Неудачные подключения | Итого | 10 минут |
+| хранилище данных SQL | blocked_by_firewall | Заблокировано брандмауэром | Итого | 10 минут |
+| хранилище данных SQL | service_level_objective | Уровень служб базы данных | Итого | 10 минут |
+| хранилище данных SQL | dwu_limit | Лимит DWU. | Максимум | 10 минут |
+| хранилище данных SQL | dwu_consumption_percent | DWU percentage | Средние | 10 минут |
+| хранилище данных SQL | dwu_used | DWU used | Средние | 10 минут |
 ||||||
 
 

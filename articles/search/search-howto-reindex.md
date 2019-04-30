@@ -10,11 +10,11 @@ ms.date: 02/13/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: 2595912732389c8a415d1854a84a7b9c182e4dc7
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56341646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60871154"
 ---
 # <a name="how-to-rebuild-an-azure-search-index"></a>Как перестроить индекс службы "Поиск Azure"
 
@@ -26,7 +26,7 @@ ms.locfileid: "56341646"
 
 ## <a name="rebuild-conditions"></a>Условия перестроения
 
-| Условие | ОПИСАНИЕ |
+| Условие | Описание |
 |-----------|-------------|
 | Изменение определения поля | Если вы меняете имя поля, тип данных или определенные [атрибуты индекса](https://docs.microsoft.com/rest/api/searchservice/create-index) (с возможностью поиска, фильтрации, сортировки или поддержкой аспектов), требуется полная перестройка. |
 | Присвоение полю анализатора | [Анализаторы](search-analyzers.md) определяются в индексе, а затем присваиваются полям. Вы можете добавить новое определение анализатора в индекс в любое время, но *присвоить* анализатор можно только при создании поля. Это касается обоих свойств: **analyzer** и **indexAnalyzer**. Свойство **searchAnalyzer** является исключением (его можно присвоить уже существующему полю). |

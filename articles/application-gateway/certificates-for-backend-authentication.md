@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 3/14/2019
 ms.author: absha
 ms.openlocfilehash: 72ee9123ad959c0c7240d4f7a906adc1a4dd1a93
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58260605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60831726"
 ---
 # <a name="create-certificates-for-whitelisting-backend-with-azure-application-gateway"></a>Создание сертификатов для списка разрешенных серверной части шлюза приложений Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "58260605"
 
 1. Чтобы получить из сертификата CER-файл, откройте раздел **Управление сертификатами пользователей**. Найдите сертификат, обычно в «Certificates - Current User\Personal\Certificates» и щелкните правой кнопкой мыши. Щелкните **Все задачи** > **Экспорт**. Откроется **мастера экспорта сертификатов**. Если не удается найти сертификат в разделе <текущий_пользователь>\Personal\Certificates, возможно, вы случайно открыли "Certificates — Local Computer"вместо "Certificates— <текущий_пользователь>". Если вы хотите открыть диспетчер сертификатов в области текущего пользователя с помощью PowerShell, выполните команду *certmgr* в окне консоли.
 
-   ![экспорт.](./media/certificates-for-backend-authentication/export.png)
+   ![Экспортировать](./media/certificates-for-backend-authentication/export.png)
 
 2. В мастере нажмите кнопку **Далее**.
 
@@ -57,7 +57,7 @@ ms.locfileid: "58260605"
 
 6. Нажмите кнопку **Готово** , чтобы экспортировать сертификат.
 
-   ![Готово](./media/certificates-for-backend-authentication/finish.png)
+   ![Завершить](./media/certificates-for-backend-authentication/finish.png)
 
 7. Сертификат успешно экспортирован.
 

@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 01/23/2019
 ms.author: pepogors
 ms.openlocfilehash: a0174a5442de7a10e45e9dc2a2f43f5f401d1a69
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56805076"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60803172"
 ---
 # <a name="azure-service-fabric-application-and-cluster-best-practices"></a>Рекомендации по приложению и кластеру Azure Service Fabric
 
@@ -42,7 +42,7 @@ ms.locfileid: "56805076"
 
 * [Рекомендации по реализации инфраструктуры как кода](service-fabric-best-practices-infrastructure-as-code.md)
 
-## <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика.
+## <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика
 
 * [Рекомендации по мониторингу и диагностике кластеров](service-fabric-best-practices-monitoring.md)
 

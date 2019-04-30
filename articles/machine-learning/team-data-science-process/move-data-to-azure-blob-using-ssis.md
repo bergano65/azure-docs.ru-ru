@@ -12,11 +12,11 @@ ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 688ef059387dc4c312873051c7c9d1eae259b1ae
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57844789"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61429899"
 ---
 # <a name="move-data-to-or-from-azure-blob-storage-using-ssis-connectors"></a>Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью соединителей SSIS
 [Пакет дополнительных компонентов SQL Server Integration Services для Azure](https://msdn.microsoft.com/library/mt146770.aspx) содержит компоненты для подключения к Azure, передачи данных между Azure и локальными источниками данных, а также для обработки данных, хранящихся в Azure.
@@ -64,7 +64,7 @@ ms.locfileid: "57844789"
 
 Ниже описаны параметры, используемые задачей.
 
-| Поле | ОПИСАНИЕ |
+| Поле | Описание |
 | --- | --- |
 | **AzureStorageConnection** |Задает существующий диспетчер подключения к хранилищу Azure или создает новый, который ссылается на учетную запись хранения Azure, указывающую на размещение файлов BLOB-объектов. |
 | **BlobContainer** |Задает имя контейнера больших двоичных объектов, который содержит отправленные файлы в виде больших двоичных объектов. |

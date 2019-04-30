@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 12/27/2018
 ms.author: raynew
 ms.openlocfilehash: eeadfd6a57ff8a26f3f124e2a807fcd66e77b85f
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53976721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036749"
 ---
 # <a name="plan-capacity-for-hyper-v-vm-disaster-recovery"></a>Планирование ресурсов для аварийного восстановления виртуальной машины Hyper-V 
 
@@ -54,7 +54,7 @@ ms.locfileid: "53976721"
 
    a. В списке **Select your scenario** (Выберите сценарий) выберите пункт **Из Hyper-V в Azure** или **Из VMware или физического сервера в Azure**.
 
-   b. В поле **Average daily data change rate (%)** (Средняя частота ежедневного изменения данных (%)) введите данные, полученные с помощью [инструмента планирования ресурсов Hyper-V](site-recovery-capacity-planning-for-hyper-v-replication.md) или [планировщика ресурсов Site Recovery](./site-recovery-deployment-planner.md).
+   2. В поле **Average daily data change rate (%)** (Средняя частота ежедневного изменения данных (%)) введите данные, полученные с помощью [инструмента планирования ресурсов Hyper-V](site-recovery-capacity-planning-for-hyper-v-replication.md) или [планировщика ресурсов Site Recovery](./site-recovery-deployment-planner.md).
 
    c. Параметр **Compression** (Сжатие) не используется при репликации виртуальных машин Hyper-V в Azure. Чтобы использовать сжатие, воспользуйтесь устройством сторонних производителей, например Riverbed.
 
@@ -78,7 +78,7 @@ ms.locfileid: "53976721"
    * **Требуемое число дополнительных серверов обработки**. Показывает, необходимы ли дополнительные серверы обработки кроме сервера обработки, запущенного на сервере конфигурации по умолчанию.
    * **100 % дополнительного хранилища в исходной среде**. Показывает, требуется ли дополнительное хранилище в исходной среде.
 
-      ![Выходные данные](./media/site-recovery-capacity-planner/output.png)
+      ![Выход](./media/site-recovery-capacity-planner/output.png)
 
 ## <a name="run-the-detailed-planner"></a>Запуск средства детального планирования
 
@@ -92,7 +92,7 @@ ms.locfileid: "53976721"
 
    a. В поле **Processor Cores** (Ядра процессора) укажите общее число ядер исходного сервера.
 
-   b. В поле **Memory allocation (in MBs)** (Выделение памяти (в МБ)) укажите объем ОЗУ исходного сервера.
+   2. В поле **Memory allocation (in MBs)** (Выделение памяти (в МБ)) укажите объем ОЗУ исходного сервера.
 
    c. В поле **Number of NICs** (Число сетевых карт) укажите количество сетевых карт исходного сервера.
 
@@ -147,5 +147,5 @@ ms.locfileid: "53976721"
 
    ![Планировщик ресурсов](./media/site-recovery-capacity-planner/capacity-planner.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Узнайте, как запустить](site-recovery-capacity-planning-for-hyper-v-replication.md) инструмент планирования ресурсов.

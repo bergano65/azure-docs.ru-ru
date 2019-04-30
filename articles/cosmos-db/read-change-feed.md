@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: rimman
 ms.openlocfilehash: 459ed4b6f16d3cfe5bb792be7f063a1253a3006e
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242045"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60927806"
 ---
 # <a name="reading-azure-cosmos-db-change-feed"></a>Чтение канала изменений Azure Cosmos DB
 
@@ -33,7 +33,7 @@ ms.locfileid: "56242045"
 
 С помощью пакета SDK вы получаете низкоуровневый контроль над каналом изменений. Вы можете управлять контрольной точкой, обращаться к ключу определенной логической секции и т. д. Если у вас несколько читателей, можно использовать `ChangeFeedOptions`, чтобы распределить нагрузку чтения среди разных потоков или разных клиентов. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете продолжить знакомство с каналом изменений, перейдя к следующим статьям:
 

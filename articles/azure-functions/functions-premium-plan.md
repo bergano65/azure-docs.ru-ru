@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 4/11/2019
 ms.author: jehollan
 ms.openlocfilehash: d327146c4a1fa61e55bb904308038c1ce717123d
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59543767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61031246"
 ---
 # <a name="azure-functions-premium-plan-preview"></a>План "премиум" функции Azure (Предварительная версия)
 
@@ -34,7 +34,7 @@ ms.locfileid: "59543767"
 az functionapp plan create -g <resource-group> -n <plan-name> -l <region> --number-of-workers 1 --sku EP1
 ```
 
-## <a name="features"></a>Функции
+## <a name="features"></a>Компоненты
 
 Следующие функции доступны для функции приложения, развернутые на план "премиум".
 
@@ -99,7 +99,7 @@ az resource update -g <resource_group> -n <premium_plan_name> --set properties.m
 |EP2|2|7 ГБ|250 ГБ|
 |EP3|4.|14 ГБ|250 ГБ|
 
-## <a name="regions"></a>регионы
+## <a name="regions"></a>Регионы
 
 Ниже приведены поддерживаемые в настоящее время регионы для общедоступной предварительной версии.
 
@@ -120,7 +120,7 @@ az resource update -g <resource_group> -n <premium_plan_name> --set properties.m
 |Юго-Восточная Азия|
 |Западная часть Великобритании|
 |Западная Европа|
-|Западная Индия|
+|Запад Индии|
 |Запад США|
 
 ## <a name="known-issues"></a>Известные проблемы

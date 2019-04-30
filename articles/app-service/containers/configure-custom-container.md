@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
 ms.openlocfilehash: 1e5faa8d356b891d825586414c0a1a1b9fa47090
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60001887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60853326"
 ---
 # <a name="configure-a-custom-linux-container-for-azure-app-service"></a>Настройка пользовательского контейнера Linux для службы приложений Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "60001887"
 
 ## <a name="configure-port-number"></a>Номера портов
 
-Веб-сервера в пользовательский образ может использовать порт, отличный от 80. Сообщить Azure, порт, с помощью пользовательских `WEBSITES_PORT` параметр приложения. На странице GitHub с [примером кода Python в этом руководстве](https://github.com/Azure-Samples/docker-django-webapp-linux) показано, что для параметра `WEBSITES_PORT` необходимо задать значение _8000_. Можно разместить его, выполнив [ `az webapp config appsettings set` ](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) команду в Cloud Shell. Например: 
+Веб-сервера в пользовательский образ может использовать порт, отличный от 80. Сообщить Azure, порт, с помощью пользовательских `WEBSITES_PORT` параметр приложения. На странице GitHub с [примером кода Python в этом руководстве](https://github.com/Azure-Samples/docker-django-webapp-linux) показано, что для параметра `WEBSITES_PORT` необходимо задать значение _8000_. Можно разместить его, выполнив [ `az webapp config appsettings set` ](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) команду в Cloud Shell. Пример.
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <resource-group-name> --name <app-name> --settings WEBSITES_PORT=8000
@@ -36,7 +36,7 @@ az webapp config appsettings set --resource-group <resource-group-name> --name <
 
 ## <a name="configure-environment-variables"></a>Настройка переменных среды
 
-Ваш пользовательский контейнер может использовать переменные среды, которые необходимо представить извне. Можно передать их в, запустив [ `az webapp config appsettings set` ](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) команду в Cloud Shell. Например: 
+Ваш пользовательский контейнер может использовать переменные среды, которые необходимо представить извне. Можно передать их в, запустив [ `az webapp config appsettings set` ](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) команду в Cloud Shell. Пример.
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <resource-group-name> --name <app-name> --settings WORDPRESS_DB_HOST="myownserver.mysql.database.azure.com"
@@ -50,7 +50,7 @@ az webapp config appsettings set --resource-group <resource-group-name> --name <
 
 При постоянном хранилище отключено, а затем записывает `/home` каталога не сохраняются между перезагрузками приложения или на нескольких экземплярах. Единственным исключением является `/home/LogFiles` каталог, который используется для хранения журналов Docker и контейнерах. При включении постоянное хранилище, все операции записи `/home` directory сохраняются и доступны для всех экземпляров горизонтально масштабируемого приложения.
 
-По умолчанию является постоянное хранилище *отключена*. Чтобы включить или отключить его, установите `WEBSITES_ENABLE_APP_SERVICE_STORAGE` параметр приложения, выполнив [ `az webapp config appsettings set` ](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) команду в Cloud Shell. Например: 
+По умолчанию является постоянное хранилище *отключена*. Чтобы включить или отключить его, установите `WEBSITES_ENABLE_APP_SERVICE_STORAGE` параметр приложения, выполнив [ `az webapp config appsettings set` ](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) команду в Cloud Shell. Пример.
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <resource-group-name> --name <app-name> --settings WEBSITES_ENABLE_APP_SERVICE_STORAGE=true
@@ -123,7 +123,7 @@ az webapp config appsettings set --resource-group <resource-group-name> --name <
 
 В вашей *docker-compose.yml* файл "," Карта `volumes` равным `${WEBAPP_STORAGE_HOME}`. 
 
-`WEBAPP_STORAGE_HOME` — это переменная среды в Службе приложений, которая сопоставляется с постоянным хранилищем для вашего приложения. Например: 
+`WEBAPP_STORAGE_HOME` — это переменная среды в Службе приложений, которая сопоставляется с постоянным хранилищем для вашего приложения. Пример.
 
 ```yaml
 wordpress:
@@ -138,7 +138,7 @@ wordpress:
 
 Хранилище Azure (файлы Azure или BLOB-объектов Azure) можно подключить с многоконтейнерных приложений с помощью пользовательских id. Чтобы просмотреть имя custom-id, выполните [ `az webapp config storage-account list --name <app_name> --resource-group <resource_group>` ](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-list).
 
-В вашей *docker-compose.yml* файл "," Карта `volumes` равным `custom-id`. Например: 
+В вашей *docker-compose.yml* файл "," Карта `volumes` равным `custom-id`. Пример.
 
 ```yaml
 wordpress:
@@ -151,8 +151,8 @@ wordpress:
 
 Несколькими контейнерами в настоящее время доступна Предварительная версия. Следующие функции платформы службы приложений не поддерживаются:
 
-- проверка подлинности/авторизация;
-- управляемые удостоверения.
+- Проверка подлинности/авторизация
+- Управляемые удостоверения
 
 ### <a name="docker-compose-options"></a>Параметры docker Compose
 
@@ -165,9 +165,9 @@ wordpress:
 - Среда
 - image
 - ports;
-- restart
+- перезагрузить
 - services;
-- volumes.
+- тома
 
 #### <a name="unsupported-options"></a>Неподдерживаемые параметры
 
@@ -186,7 +186,7 @@ wordpress:
 
 - args
 - command
-- containers
+- контейнеры
 - image
 - name
 - ports;
@@ -199,7 +199,7 @@ wordpress:
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство по развертыванию из частного репозитория контейнеров](tutorial-custom-docker-image.md)
+> [Учебник. по развертыванию из частного репозитория контейнеров](tutorial-custom-docker-image.md)
 
 > [!div class="nextstepaction"]
-> [Руководство по приложению WordPress с несколькими контейнерами](tutorial-multi-container-app.md)
+> [Учебник. по приложению WordPress с несколькими контейнерами](tutorial-multi-container-app.md)

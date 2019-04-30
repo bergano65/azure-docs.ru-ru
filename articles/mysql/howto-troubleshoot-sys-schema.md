@@ -7,11 +7,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 08/01/2018
 ms.openlocfilehash: 993c77056c09c1dc21d5317ddbfe8e937341718d
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53542855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61422377"
 ---
 # <a name="how-to-use-sysschema-for-performance-tuning-and-database-maintenance-in-azure-database-for-mysql"></a>Как использовать sys_schema для настройки производительности и обслуживания базы данных в службе "База данных Azure для MySQL"
 
@@ -26,12 +26,12 @@ ms.locfileid: "53542855"
 - Память: использование памяти узлом и пользователями.
 - Схема: информация, связанная со схемой, такая как автоматическое увеличение, индексы и т. д.
 - Statement: информация об инструкциях SQL. Это может быть инструкция, выполнение которой привело к полному сканированию таблицы или длительному времени запроса.
-- User: Потребляемые ресурсы, сгруппированные по пользователям. Примерами являются операции ввода-вывода файлов, подключения и память.
+- Пользователь: Потребляемые ресурсы, сгруппированные по пользователям. Примерами являются операции ввода-вывода файлов, подключения и память.
 - Wait: события ожидания, сгруппированные по узлу или пользователю.
 
 Теперь давайте рассмотрим некоторые общие шаблоны использования sys_schema. Для начала сгруппируем шаблоны использования в две категории: **Настройка производительности** и **Обслуживание баз данных**.
 
-## <a name="performance-tuning"></a>Настройка производительности
+## <a name="performance-tuning"></a>Улучшение производительности
 
 ### <a name="sysusersummarybyfileio"></a>*sys.user_summary_by_file_io*
 
@@ -79,5 +79,5 @@ ms.locfileid: "53542855"
 
 Таким образом, sys_schema является мощным инструментом, который подходит и для настройки производительности, и для обслуживания базы данных. Обязательно воспользуйтесь этой функцией в Базе данных Azure для MySQL. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Чтобы найти ответы на наиболее важные вопросы либо опубликовать новый вопрос или ответ, посетите [Форум MSDN](https://social.msdn.microsoft.com/forums/security/en-US/home?forum=AzureDatabaseforMySQL) или [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-database-mysql).

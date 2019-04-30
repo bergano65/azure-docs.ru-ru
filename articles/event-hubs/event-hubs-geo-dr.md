@@ -15,11 +15,11 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
 ms.openlocfilehash: 56077d018c1ae62809d51fc66d7f5aff93fb4c02
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60002703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60821828"
 ---
 # <a name="azure-event-hubs---geo-disaster-recovery"></a>Геоизбыточное аварийное восстановление в службе "Центры событий Azure" 
 
@@ -78,7 +78,7 @@ ms.locfileid: "60002703"
 
 ![2][]
 
-## <a name="management"></a>управления
+## <a name="management"></a>Управление
 
 Если допущена ошибка, например, во время первоначальной настройки связаны неправильные регионы, связь двух пространств имен можно разорвать в любое время. Если вы хотите использовать сопряженные пространства имен в качестве обычных пространств имен, удалите псевдоним.
 
@@ -102,7 +102,7 @@ ms.locfileid: "60002703"
 
 4. Синхронизация сущностей может занять некоторое время (примерно 50–100 сущностей в минуту).
 
-## <a name="availability-zones"></a>зоны доступности; 
+## <a name="availability-zones"></a>Зоны доступности 
 
 Номер SKU уровня "Стандартный" для Центров событий поддерживает функцию [Зоны доступности](../availability-zones/az-overview.md), предоставляя изолированные от сбоев расположения в регионе Azure. 
 

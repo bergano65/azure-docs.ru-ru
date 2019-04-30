@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: 0364304a203e03faf69868174a45cb41850ce112
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55733320"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60713968"
 ---
 # <a name="overview-of-service-bus-dead-letter-queues"></a>Обзор очередей недоставленных сообщений служебной шины
 
@@ -49,7 +49,7 @@ ms.locfileid: "55733320"
 | !TopicDescription.<br />EnableFilteringMessagesBeforePublishing and SubscriptionDescription.<br />EnableDeadLetteringOnFilterEvaluationExceptions |exception.GetType().Name |exception.Message |
 | EnableDeadLetteringOnMessageExpiration |TTLExpiredException |Время жизни сообщения истекло, и оно было перемещено в очередь недоставленных. |
 | SubscriptionDescription.RequiresSession |Идентификатор сеанса имеет значение null. |Сущность, поддерживающая сеансы, не допускает использование сообщений, идентификатор сеанса которых имеет значение null. |
-| !очередь недоставленных сообщений |MaxTransferHopCountExceeded |Null |
+| !очередь недоставленных сообщений |MaxTransferHopCountExceeded |NULL |
 | Явное перемещение приложением в очередь недоставленных сообщений |Задается приложением |Задается приложением |
 
 ## <a name="exceeding-maxdeliverycount"></a>Превышено значение MaxDeliveryCount
@@ -103,7 +103,7 @@ while(true)
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об очередях служебной шины см. в следующих статьях:
 

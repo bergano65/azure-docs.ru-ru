@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: c0fe63e395ee08cb65e9bbbadc4ce1f03032ce95
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58880089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60878250"
 ---
 # <a name="end-user-authentication-with-azure-data-lake-storage-gen1-using-azure-active-directory"></a>Проверка подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory
 > [!div class="op_single_selector"]
@@ -95,7 +95,7 @@ Azure Data Lake Storage 1-го поколения (ADLS 1-го поколени�
 3. Скопируйте отображенное значение.
 
 
-## <a name="step-3-set-permissions"></a>Шаг 3. Установка разрешений
+## <a name="step-3-set-permissions"></a>Шаг 3. Установить разрешения
 
 1. На портале Azure выберите **Azure Active Directory**, щелкните **Регистрация приложений**, затем найдите и щелкните созданное собственное приложение Azure AD.
 

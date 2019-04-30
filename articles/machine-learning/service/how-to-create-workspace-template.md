@@ -11,11 +11,11 @@ author: Blackmist
 ms.date: 04/02/2019
 ms.custom: seoapril2019
 ms.openlocfilehash: 7349998325e56d5ebb78de5ca30c0127f09102aa
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58883196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60819548"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning-service"></a>Использовать шаблон Azure Resource Manager для создания рабочей области для службы машинного обучения Azure
 
@@ -161,9 +161,9 @@ ms.locfileid: "58883196"
 
 Этот шаблон создает следующие ресурсы Azure:
 
-* группа ресурсов Azure.
+* Группа ресурсов Azure
 * Учетная запись хранения Azure
-* Хранилище ключей Azure
+* Хранилище Azure Key Vault
 * Azure Application Insights
 * Реестр контейнеров Azure
 * Рабочая область службы "Машинное обучение Azure"
@@ -194,7 +194,7 @@ ms.locfileid: "58883196"
    * Подписка: Выберите подписку Azure, которую нужно использовать для этих ресурсов.
    * Группа ресурсов: Выберите или создайте группу ресурсов, которая будет содержать службы.
    * Имя рабочей области: Это имя, которое будет присвоено созданному рабочему пространству Службы машинного обучения Azure. Для имени рабочего пространства допускается длина от 3 до 33 символов. Имя может содержать только буквы, цифры и дефис ("-").
-   * Расположение. Выберите расположение, в котором будут созданы ресурсы.
+   * Расположение: Выберите расположение, в котором будут созданы ресурсы.
 
      ![Параметры шаблона на портале Azure](media/how-to-create-workspace-template/template-parameters.png)
 

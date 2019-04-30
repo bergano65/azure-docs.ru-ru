@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 04/08/2019
 ms.author: sujayt
 ms.openlocfilehash: c7c91a2cf9a25d0a5a4aeed6621e89f9c7cc18f0
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59269628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60789900"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-issues"></a>Устранение неполадок репликации виртуальных машин из Azure в Azure
 
@@ -101,7 +101,7 @@ ms.locfileid: "59269628"
 
       ``# ls -l | grep Baltimore``
 
-    - Выходные данные
+    - Выход
 
       ``lrwxrwxrwx 1 root root   29 Jan  8 09:48 3ad48a91.0 -> Baltimore_CyberTrust_Root.pem
       -rw-r--r-- 1 root root 1303 Jun  5  2014 Baltimore_CyberTrust_Root.pem``
@@ -110,7 +110,7 @@ ms.locfileid: "59269628"
 
       ``# ls -l | grep VeriSign_Class_3_Public_Primary_Certification_Authority_G5``
 
-    - Выходные данные
+    - Выход
 
       ``-rw-r--r-- 1 root root 1774 Jun  5  2014 VeriSign_Class_3_Public_Primary_Certification_Authority_G5.pem
       lrwxrwxrwx 1 root root   62 Jan  8 09:48 facacbc6.0 -> VeriSign_Class_3_Public_Primary_Certification_Authority_G5.pem``
@@ -119,7 +119,7 @@ ms.locfileid: "59269628"
 
       ``# ls -l | grep DigiCert_Global_Root``
 
-    - Выходные данные
+    - Выход
 
       ``lrwxrwxrwx 1 root root   27 Jan  8 09:48 399e7759.0 -> DigiCert_Global_Root_CA.pem
       -rw-r--r-- 1 root root 1380 Jun  5  2014 DigiCert_Global_Root_CA.pem``
@@ -143,7 +143,7 @@ ms.locfileid: "59269628"
 
       ``# ls -l 653b494a.0 b204d74a.0 3513523f.0``
 
-    - Выходные данные
+    - Выход
 
       ``-rw-r--r-- 1 root root 1774 Jan  8 09:52 3513523f.0
       -rw-r--r-- 1 root root 1303 Jan  8 09:52 653b494a.0
@@ -301,7 +301,7 @@ ms.locfileid: "59269628"
 ## <a name="enable-protection-failed-as-device-name-mentioned-in-the-grub-configuration-instead-of-uuid-error-code-151126"></a>Включение защити завершилось сбоем, поскольку имя устройства, указанное в конфигурации GRUB вместо UUID (код ошибки 151126)
 
 **Возможная причина:** </br>
-Файлы конфигурации GRUB ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/boot/grub2/grub.cfg" или "/ etc / default / grub") могут содержать значение для параметров **root** и **resume** в качестве фактических имен устройств вместо UUID. Site Recovery требует наличие подхода UUID, поскольку имя устройства может меняться при перезагрузке виртуальной машины, а виртуальная машина может не выдавать одно и то же имя при сбое, что приводит к ошибкам. Например:  </br>
+Файлы конфигурации GRUB ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/boot/grub2/grub.cfg" или "/ etc / default / grub") могут содержать значение для параметров **root** и **resume** в качестве фактических имен устройств вместо UUID. Site Recovery требует наличие подхода UUID, поскольку имя устройства может меняться при перезагрузке виртуальной машины, а виртуальная машина может не выдавать одно и то же имя при сбое, что приводит к ошибкам. Пример. </br>
 
 
 - Следующая строка из файла GRUB **/boot/grub2/grub.cfg**. <br>
@@ -317,7 +317,7 @@ ms.locfileid: "59269628"
 Имена устройств должны быть заменены на соответствующий UUID.<br>
 
 
-1. Найти идентификатор UUID устройства с помощью команды «blkid \<имя устройства >». Например: <br>
+1. Найти идентификатор UUID устройства с помощью команды «blkid \<имя устройства >». Пример.<br>
    ```
    blkid /dev/sda1
    ```<br>

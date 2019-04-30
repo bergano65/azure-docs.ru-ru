@@ -10,11 +10,11 @@ ms.date: 09/18/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 88fe7740170638e9e0d7398a02dcf83ab81f6ffc
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54421689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61073860"
 ---
 # <a name="use-an-alert-to-trigger-an-azure-automation-runbook"></a>Использование оповещения для активации runbook службы автоматизации Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "54421689"
 
 Когда оповещение вызывает runbook, фактически осуществляется вызов веб-перехватчика с помощью HTTP-запроса POST. Текст запроса POST содержит объект в формате JSON с полезными свойствами, связанными с оповещением. В следующей таблице приведены ссылки на схему полезных данных для каждого типа оповещения.
 
-|Предупреждение  |ОПИСАНИЕ|Схема полезных данных  |
+|Оповещение  |Описание|Схема полезных данных  |
 |---------|---------|---------|
 |[Классическое оповещение о метриках](../monitoring-and-diagnostics/insights-alerts-portal.md?toc=%2fazure%2fautomation%2ftoc.json)    |Отправляет уведомление, когда метрика уровня платформы соответствует определенному условию. Например, если значение метрики **% ЦП** на виртуальной машине превышает **90** в течение последних 5 минут.| [Схема полезных данных классического оповещения о метрике](../azure-monitor/platform/alerts-webhooks.md?toc=%2fazure%2fautomation%2ftoc.json#payload-schema)         |
 |[Оповещение журнала действий](../azure-monitor/platform/activity-log-alerts.md?toc=%2fazure%2fautomation%2ftoc.json)    |Отправляет уведомление, когда какое-либо новое событие в журнале действий Azure соответствует определенным условиям. Например, если в **myProductionResourceGroup** выполняется операция `Delete VM` или возникает новое событие службы "Работоспособность служб Azure" в состоянии **Активное**.| [Схема полезных данных оповещения журнала действий](../azure-monitor/platform/activity-log-alerts-webhook.md)        |
@@ -226,7 +226,7 @@ Runbook будет использовать [учетную запись от и
 1. На странице **Настройка модуля Runbook** для параметра **Источник Runbook** выберите **Пользователь**. Выберите учетную запись службы автоматизации и runbook **Stop-AzureVmInResponsetoVMAlert**. Нажмите кнопку **ОК**.
 1. Нажмите кнопку **OK**, чтобы сохранить правило генерации оповещений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о запуске runbook службы автоматизации с помощью веб-перехватчика см. в разделе [Запуск Runbook службы автоматизации Azure с помощью объекта webhook](automation-webhooks.md).
 * Дополнительные сведения о различных способах запуска модуля Runbook см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).

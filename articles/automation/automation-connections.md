@@ -10,11 +10,11 @@ ms.date: 01/16/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: e7dccc4a396d4cf8af1062057c4c3ce6efe978ed
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58918031"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61074270"
 ---
 # <a name="connection-assets-in-azure-automation"></a>Ресурсы подключений в службе автоматизации Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "58918031"
 
 Командлеты, представленные в следующей таблице, используются для создания подключений и управления ими с помощью Windows PowerShell в службе автоматизации Azure. Они входят в состав [модуля Azure PowerShell](/powershell/azure/overview) , доступного в модулях Runbook и конфигурациях DSC службы автоматизации.
 
-|Командлет|ОПИСАНИЕ|
+|Командлет|Описание|
 |:---|:---|
 |[Get-AzureRmAutomationConnection](/powershell/module/azurerm.automation/get-azurermautomationconnection)|Извлекает подключение. Содержит хэш-таблицу со значениями полей подключения.|
 |[New-AzureRmAutomationConnection](/powershell/module/azurerm.automation/new-azurermautomationconnection)|Создает новое подключение.|
@@ -50,7 +50,7 @@ ms.locfileid: "58918031"
 
 Действия в следующей таблице используются для доступа к подключениям в модуле Runbook или конфигурации DSC.
 
-|Действия|ОПИСАНИЕ|
+|Действия|Описание|
 |---|---|
 |[Get-AutomationConnection](/powershell/module/servicemanagement/azure/get-azureautomationconnection?view=azuresmps-3.7.0)|Получает подключение для использования. Возвращает хэш-таблицу со свойствами подключения.|
 
@@ -61,7 +61,7 @@ ms.locfileid: "58918031"
 ## <a name="python2-functions"></a>Функции Python2 
 Функция, приведенная в следующей таблице, используется для доступа к подключениям в модуле Runbook Python2. 
 
-| Функция | ОПИСАНИЕ | 
+| Функция | Описание | 
 |:---|:---| 
 | automationassets.get_automation_connection | Извлекает подключение. Возвращает словарь со свойствами подключения. | 
 

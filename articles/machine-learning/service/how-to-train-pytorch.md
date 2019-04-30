@@ -12,11 +12,11 @@ ms.reviewer: sgilley
 ms.date: 12/04/2018
 ms.custom: seodec18
 ms.openlocfilehash: 9ae7795381f036bb819ce24554d8cea94ceb5552
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59548557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60818354"
 ---
 # <a name="train-pytorch-models-with-azure-machine-learning-service"></a>Обучение моделей PyTorch с помощью Службы машинного обучения Azure
 
@@ -84,7 +84,7 @@ pt_est = PyTorch(source_directory='./my-pytorch-project',
 
 В этом коде показаны следующие новые параметры конструктора PyTorch:
 
-Параметр | ОПИСАНИЕ | значение по умолчанию
+Параметр | Описание | значение по умолчанию
 --|--|--
 `node_count` |  Количество узлов, которые будут использоваться для задания обучения. | `1`
 `process_count_per_node` |  Количество процессов (или рабочих ролей), запускаемых на каждом узле. | `1`

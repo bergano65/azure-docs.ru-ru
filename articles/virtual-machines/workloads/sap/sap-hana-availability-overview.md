@@ -17,17 +17,17 @@ ms.date: 03/05/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 1db56ad31991b85ffad415818c7c67f0ee30808d
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56328084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60708453"
 ---
 # <a name="sap-hana-high-availability-for-azure-virtual-machines"></a>Обеспечение высокого уровня доступности для SAP HANA на виртуальных машинах Azure
 
 Вы можете использовать многочисленные возможности Azure для развертывания критически важных баз данных, таких как SAP HANA, на виртуальных машинах Azure. Эта статья содержит рекомендации по организации доступа для экземпляров SAP HANA, размещенных на виртуальных машинах Azure. Здесь описаны несколько сценариев, которые можно реализовать на основе инфраструктуры Azure для повышения уровня доступности SAP HANA в Azure. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 В статье предполагается, что вы знакомы с концепцией инфраструктуры как услуги (IaaS) в Azure, т. е. умеете выполнять такие задачи: 
 
@@ -66,7 +66,7 @@ ms.locfileid: "56328084"
 
 Сравните свои требования к уровню доступности с теми параметрами, которые предложены в соглашениях об уровне обслуживания для компонентов Azure. По результатам этого анализа выберите такой сценарий SAP HANA, который обеспечит необходимый уровень доступности.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Доступность SAP HANA в пределах одного региона Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-availability-one-region)
 - [Доступность SAP HANA в разных регионах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-availability-across-regions) 

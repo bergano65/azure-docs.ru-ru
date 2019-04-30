@@ -3,18 +3,18 @@ title: Разработка модулей для Azure IoT Edge | Докуме�
 description: Разработка пользовательских модулей для Azure IoT Edge, способных взаимодействовать со средой выполнения и Центром Интернета вещей
 author: kgremban
 manager: philmea
-ms.author: kgremban
-ms.date: 02/25/2019
+ms.author: v-yiso
+origin.date: 02/25/2019
+ms.date: 03/25/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.custom: seodec18
 ms.openlocfilehash: ea2d1dbcf991ce858f07905bc1bb41809f9bcdd8
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56882745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61322459"
 ---
 # <a name="develop-your-own-iot-edge-modules"></a>Разработка собственных модулей IoT Edge
 
@@ -48,7 +48,7 @@ ms.locfileid: "56882745"
 
 Сообщения с устройства в облако, обрабатываемые концентратором Edge, имеют следующие свойства системы:
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 | -------- | ----------- |
 | $connectionDeviceId | Идентификатор устройства клиента, отправившего сообщение. |
 | $connectionModuleId | Идентификатор модуля, отправившего сообщение. |

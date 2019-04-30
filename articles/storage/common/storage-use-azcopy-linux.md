@@ -2,18 +2,18 @@
 title: Копирование или перемещение данных в службу хранилища Azure с помощью AzCopy для Linux | Документация Майкрософт
 description: Служебная программа AzCopy для Linux позволяет копировать и перемещать данные в BLOB-объект или файл и из него. Копируйте данные в хранилище Azure из локальных файлов, а также внутри учетной записи хранения и из одной такой учетной записи в другую. Легко переносите данные в хранилище Azure.
 services: storage
-author: seguler
+author: tamram
 ms.service: storage
 ms.topic: article
 ms.date: 04/26/2018
-ms.author: seguler
+ms.author: tamram
 ms.subservice: common
 ms.openlocfilehash: 0f87645537576f49ee04b823341acf8853798f88
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58882231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60730061"
 ---
 # <a name="transfer-data-with-azcopy-on-linux"></a>Перенос данных с помощью AzCopy для Linux
 
@@ -211,7 +211,7 @@ azcopy \
     --exclude-older
 ```
 
-## <a name="blob-upload"></a>Большой двоичный объект: Передать
+## <a name="blob-upload"></a>Большой двоичный объект: Отправка
 ### <a name="upload-single-file"></a>Отправка одного файла
 
 ```azcopy
@@ -444,7 +444,7 @@ azcopy \
 
 Обратите внимание на то, что пустые папки не скачиваются.
 
-## <a name="file-upload"></a>File (Файл): Передать
+## <a name="file-upload"></a>File (Файл): Отправка
 ### <a name="upload-single-file"></a>Отправка одного файла
 
 ```azcopy

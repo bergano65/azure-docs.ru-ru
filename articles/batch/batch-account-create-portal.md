@@ -16,11 +16,11 @@ ms.date: 02/26/2019
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 86747b72c436c4dac3bbf0a752fee4d24cb47f60
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57773730"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60722632"
 ---
 # <a name="create-a-batch-account-with-the-azure-portal"></a>Создание учетной записи пакетной службы на портале Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "57773730"
 
 Дополнительные сведения об учетных записях пакетной службы см. в [обзоре функций](batch-api-basics.md).
 
-## <a name="create-a-batch-account"></a>Создание учетной записи Пакетной службы
+## <a name="create-a-batch-account"></a>Создание учетной записи пакетной службы
 
 [!INCLUDE [batch-account-mode-include](../../includes/batch-account-mode-include.md)]
 
@@ -40,7 +40,7 @@ ms.locfileid: "57773730"
 
 1. Введите параметры **новой учетной записи пакетной службы**. Укажите следующие сведения:
 
-    ![Создание учетной записи Пакетной службы][account_portal]
+    ![Создание учетной записи пакетной службы][account_portal]
 
     a. **Подписка**: Подписка, в которой будет создана учетная запись пакетной службы. Если у вас только одна подписка, она будет выбрана по умолчанию.
 

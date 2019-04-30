@@ -11,11 +11,11 @@ description: Использование настраиваемого веб-ка
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
 manager: ghogen
 ms.openlocfilehash: 1a000e378a9b8ecfb09d778fd6444e3f24b3df7b
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57772472"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60686463"
 ---
 #  <a name="use-a-custom-nuget-feed-in-an-azure-dev-space"></a>Использование настраиваемого веб-канала NuGet в Azure Dev Spaces
 
@@ -35,7 +35,7 @@ ms.locfileid: "57772472"
    ```
 
 2. Создайте файл [NuGet.Config](https://docs.microsoft.com/nuget/reference/nuget-config-file) в папке проекта.
-     * В разделе `packageSources` укажите ссылки на расположение веб-канала NuGet. Важно! Веб-канал NuGet должен быть общедоступным.
+     * В разделе `packageSources` укажите ссылки на расположение веб-канала NuGet. Внимание! Веб-канал NuGet должен быть общедоступным.
      * В разделе `packageSourceCredentials` настройте учетные данные: имя пользователя и пароль. 
 
    ```xml

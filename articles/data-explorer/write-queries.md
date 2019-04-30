@@ -8,11 +8,11 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 04/07/2019
 ms.openlocfilehash: b1a7e64cf6b85b517bc027d6541d63c9be729734
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59274638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60773984"
 ---
 # <a name="write-queries-for-azure-data-explorer"></a>Написание запросов для обозревателя данных Azure
 
@@ -110,7 +110,7 @@ StormEvents
 | project StartTime, EndTime, State, EventType, DamageProperty, EpisodeNarrative
 ```
 
-### <a name="where"></a>где:
+### <a name="where"></a>где
 
 [**where**](https://docs.microsoft.com/azure/kusto/query/whereoperator): Отфильтровывает таблицу для подмножества строк, которые удовлетворяют предикату.
 
@@ -682,7 +682,7 @@ LightningStorms
 | distinct State
 ```
 
-### <a name="join"></a>join
+### <a name="join"></a>соединение
 
 [**join**](https://docs.microsoft.com/azure/kusto/query/joinoperator): объединение строк двух таблиц для формирования новой таблицы путем сопоставления значений указанных столбцов каждой таблицы. Kusto поддерживает весь диапазон типов объединения: **fullouter**, **inner**, **innerunique**, **leftanti**, **leftantisemi**, **leftouter**, **leftsemi**, **rightanti**, **rightantisemi**, **rightouter** и **rightsemi**.
 

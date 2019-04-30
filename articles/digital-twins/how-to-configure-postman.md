@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: adgera
 ms.openlocfilehash: 49b073952b0923b940204b19680dcc9a1ffa44b5
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54259280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60926202"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -68,7 +68,7 @@ ms.locfileid: "54259280"
 
 1. Последовательно выберите вкладку **Авторизация**, затем **OAuth 2.0** и **Get New Access Token** (Получить новый маркер доступа).
 
-    | Поле  | Значение |
+    | Поле  | Value |
     |---------|---------|
     | Тип предоставления разрешения | `Implicit` |
     | URL-адрес обратного вызова | `https://www.getpostman.com/oauth2/callback` |
@@ -76,7 +76,7 @@ ms.locfileid: "54259280"
     | Идентификатор клиента | Используйте **идентификатор приложения** для приложения Azure AD, созданного или перепрофилированного на предыдущем шаге |
     | Область | Не указывайте |
     | Состояние | Не указывайте |
-    | Аутентификация клиента | `Send as Basic Auth header` |
+    | Проверка подлинности клиента | `Send as Basic Auth header` |
 
 1. Теперь клиент должен выглядеть следующим образом.
 
@@ -113,7 +113,7 @@ ms.locfileid: "54259280"
 
 1. Наконец щелкните **Отправить**, чтобы отправить составной запрос HTTP POST.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об API управления Digital Twins и их использовании см. в статье [How to use Azure Digital Twins management APIs](how-to-navigate-apis.md) (Как использовать API управления Azure Digital Twins).
 

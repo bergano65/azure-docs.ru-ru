@@ -8,11 +8,11 @@ ms.service: service-health
 ms.workload: Supportability
 ms.date: 11/14/2017
 ms.openlocfilehash: 79a77fff206831c0f9b3bb73ad33f951d99e2c81
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55858845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60782215"
 ---
 # <a name="configure-service-health-alerts-with-opsgenie"></a>Настройка оповещений о работоспособности служб для OpsGenie
 
@@ -47,7 +47,7 @@ ms.locfileid: "55858845"
 
     a. **Тип действия:** *webhook*
 
-    б) **Подробности:** **URL-адрес интеграции** для OpsGenie, который вы сохранили ранее.
+    2. **Подробности:** **URL-адрес интеграции** для OpsGenie, который вы сохранили ранее.
 
     c. **Имя:** имя, псевдоним или идентификатор веб-перехватчика.
 
@@ -64,7 +64,7 @@ ms.locfileid: "55858845"
 
     a. **Тип действия:** *webhook*
 
-    б) **Подробности:** **URL-адрес интеграции** для OpsGenie, который вы сохранили ранее.
+    2. **Подробности:** **URL-адрес интеграции** для OpsGenie, который вы сохранили ранее.
 
     c. **Имя:** имя, псевдоним или идентификатор веб-перехватчика.
 
@@ -86,7 +86,7 @@ ms.locfileid: "55858845"
 
 1. Откройте [OpsGenie](https://www.opsgenie.com/) и убедитесь, что интеграция настроена успешно.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте, [как настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
 - Просмотрите схему веб-перехватчика оповещений журнала действий в статье [Объекты webhook для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md). 
 - Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../azure-monitor/platform/service-notifications.md).

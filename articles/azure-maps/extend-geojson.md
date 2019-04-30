@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: 319f9cba23d088553f361b6a0d648bbde94e0743
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
-ms.translationtype: HT
+ms.openlocfilehash: be3c31951c4721a861f9239c5220419dec11b6bf
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38968567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60799153"
 ---
 # <a name="extending-geojson-geometries"></a>Расширение геометрических объектов GeoJSON
 
@@ -30,7 +30,7 @@ Azure Maps предоставляет список эффективных API-и
 * Point;
 * Polygon.
 
-Некоторые API-интерфейсы Azure Maps (например, [поиск внутри геометрического объекта](https://docs.microsoft.com/rest/api/maps/search/postsearchinsidegeometry)) принимают такие геометрические объекты как "Circle" (круг), которые не являются частью [спецификации GeoJSON][1].
+Некоторые API-интерфейсы Azure Maps (например: [Поиск внутри Geometry](https://docs.microsoft.com/rest/api/maps/search/postsearchinsidegeometry)) примите геометрические объекты, такие как «Circle», которые не являются частью [спецификации GeoJSON][1].
 
 В этой статье приводится подробное объяснение того, как Azure Maps расширяет [спецификацию GeoJSON][1] для представления определенных геометрических объектов.
 
@@ -52,7 +52,7 @@ Azure Maps предоставляет список эффективных API-и
 
 #### <a name="example"></a>Пример
 
-Вот как будет выглядеть круг, размещенный в соответствии со следующими данными (широта: 47,639754, долгота: –122,126986) с радиусом, равным 100 метрам, и применением объекта `GeoJSON Feature`:
+Вот как будет представлять центр в круг (широта: 47.639754, долготы:-122.126986) с радиусом равным 100 метров, с помощью `GeoJSON Feature` объекта:
 
 ```json            
 {

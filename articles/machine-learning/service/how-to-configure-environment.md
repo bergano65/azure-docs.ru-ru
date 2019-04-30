@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 02/24/2019
 ms.custom: seodec18
 ms.openlocfilehash: 720f984feb5675281510962d4ebee63f638d696d
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59548892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60819991"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
 
@@ -284,7 +284,7 @@ Azure Databricks — это среда на основе Apache Spark, в обл
 
 Используйте следующие параметры:
 
-| Параметр |Применяется к| Значение |
+| Параметр |Применимо к| Value |
 |----|---|---|
 | Имя кластера |всегда| yourclustername |
 | Среда выполнения Databricks |всегда| Любая среда выполнения, не относящаяся к Машинному обучению (версии 4.x, 5.x) |

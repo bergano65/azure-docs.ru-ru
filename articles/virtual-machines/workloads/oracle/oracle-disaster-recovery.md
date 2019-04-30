@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 9f525e68502e32a3f9c7e7cebe6d45627f9077c3
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
-ms.translationtype: HT
+ms.openlocfilehash: 09df1421d6deae6db305cef2a46d6c40d0c12ba3
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39495033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60835895"
 ---
 # <a name="disaster-recovery-for-an-oracle-database-12c-database-in-an-azure-environment"></a>Аварийное восстановление базы данных Oracle Database 12c в среде Azure.
 
@@ -32,7 +32,7 @@ ms.locfileid: "39495033"
 ## <a name="goals"></a>Цели
 - Создать топологию и конфигурацию, которые соответствуют вашим требованиям к аварийному восстановлению.
 
-## <a name="scenario-1-primary-and-dr-sites-on-azure"></a>Сценарий 1. Основные сайты и сайты аварийного восстановления в Azure
+## <a name="scenario-1-primary-and-dr-sites-on-azure"></a>Сценарий 1. Основной и сайты аварийного восстановления в Azure
 
 У клиента есть база данных Oracle на основном сайте. Сайт аварийного восстановления находится в другом регионе. Клиент использует Oracle Data Guard для быстрого восстановления между этими сайтами. На основном сайте также создана база данных-получатель для отчетности и других целей. 
 
@@ -52,13 +52,13 @@ ms.locfileid: "39495033"
 
 ![Снимок экрана страницы топологии аварийного восстановления](./media/oracle-disaster-recovery/oracle_topology_01.png)
 
-## <a name="scenario-2-primary-site-on-premises-and-dr-site-on-azure"></a>Сценарий 2. Основной локальный сайт и сайт аварийного восстановления в Azure
+## <a name="scenario-2-primary-site-on-premises-and-dr-site-on-azure"></a>Сценарий 2. Локальный первичный сайт и сайт аварийного восстановления в Azure
 
 Клиент имеет локальную базу данных Oracle (основной сайт). Сайт аварийного восстановления — в Azure. Oracle Data Guard используется для быстрого восстановления между этими сайтами. На основном сайте также создана база данных-получатель для отчетности и других целей. 
 
 Существует два подхода для такой конфигурации.
 
-### <a name="approach-1-direct-connections-between-on-premises-and-azure-requiring-open-tcp-ports-on-the-firewall"></a>Способ 1. Прямые соединения между локальной средой и Azure, для чего в брандмауэре необходимо открыть TCP-порты 
+### <a name="approach-1-direct-connections-between-on-premises-and-azure-requiring-open-tcp-ports-on-the-firewall"></a>Способ 1. Прямые соединения между локальной средой и Azure, требуется открыть TCP-порты в брандмауэре 
 
 Мы не рекомендуем использовать прямые соединения, так как они позволяют открыть внешний доступ к TCP-портам.
 
@@ -78,7 +78,7 @@ ms.locfileid: "39495033"
 
 ![Снимок экрана страницы топологии аварийного восстановления](./media/oracle-disaster-recovery/oracle_topology_02.png)
 
-### <a name="approach-2-site-to-site-vpn"></a>Способ 2. VPN-подключение типа "сеть — сеть"
+### <a name="approach-2-site-to-site-vpn"></a>Способ 2. VPN типа "сеть-сеть"
 Оптимальным способом является использование VPN-подключения типа "сеть — сеть". Дополнительные сведения о настройке VPN см. в статье [Создание виртуальной сети с VPN типа "сеть — сеть" с помощью интерфейса командной строки](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli).
 
 #### <a name="topology"></a>Топология
@@ -96,7 +96,7 @@ ms.locfileid: "39495033"
 
 ![Снимок экрана страницы топологии аварийного восстановления](./media/oracle-disaster-recovery/oracle_topology_03.png)
 
-## <a name="additional-reading"></a>Дополнительные материалы
+## <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Design and implement an Oracle database in Azure](oracle-design.md) (Разработка базы данных Oracle и ее реализация в Azure)
 - [Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux](configure-oracle-dataguard.md)
@@ -104,7 +104,7 @@ ms.locfileid: "39495033"
 - [Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure](oracle-backup-recovery.md)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Изучите [руководство по созданию высокодоступных виртуальных машин](../../linux/create-cli-complete.md).
+- [Учебник. Создание высокодоступных виртуальных машин](../../linux/create-cli-complete.md)
 - [Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](../../linux/cli-samples.md).

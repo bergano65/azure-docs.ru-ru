@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 02/10/2019
 ms.author: juliako
 ms.openlocfilehash: a241f66adecbab1d0b1462f379d3765d6c1de252
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55995396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61466805"
 ---
 # <a name="upload-files-into-a-media-services-account-using-rest"></a>Передача файлов в учетную запись служб мультимедиа с помощью REST
 
@@ -26,7 +26,7 @@ ms.locfileid: "55995396"
 
 В этой статье показано, как отправить локальный файл с помощью REST.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этом разделе, необходимо сделать следующее:
 
@@ -53,7 +53,7 @@ ms.locfileid: "55995396"
 1. Выберите **Ресурсы** -> **Список URL-адресов ресурса**.
 2. Нажмите кнопку **Отправить**.
 
-    ![Отправка файла](./media/upload-files/postman-create-sas-locator.png)
+    ![Отправить файл](./media/upload-files/postman-create-sas-locator.png)
 
 Вы увидите **Ответ** с информацией о URL-адресах ресурса. Скопируйте первый URL-адрес и используйте его для отправки файла.
 
@@ -61,6 +61,6 @@ ms.locfileid: "55995396"
 
 Используйте API службы хранилища Azure или пакеты SDK (например, [API REST службы хранилища](../../storage/common/storage-rest-api-auth.md), [пакет SDK для Java](../../storage/blobs/storage-quickstart-blobs-java-v10.md) или [пакет SDK для .NET](../../storage/blobs/storage-quickstart-blobs-dotnet.md)).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Руководство Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST](stream-files-tutorial-with-rest.md)
+[Учебник. Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST](stream-files-tutorial-with-rest.md)

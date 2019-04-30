@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: willzhan;juliako
 ms.openlocfilehash: 5c86a49cd9dc26f724de12ed2e5e77e645e4ab53
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57886717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61466601"
 ---
 # <a name="hybrid-design-of-drm-subsystems"></a>Гибридная структура подсистем DRM 
 
@@ -96,11 +96,11 @@ ms.locfileid: "57886717"
 
 |**Размещение содержимого и источник**|**Шифрование DRM**|**Доставка лицензий DRM**|**Настройка ключа содержимого**|**Настройка политики доставки для ресурса-контейнера**|**Пример**|
 |---|---|---|---|---|---|
-|AMS|AMS|AMS|Yes|Yes|Пример 1|
-|AMS|AMS|Сторонний производитель|Yes|Yes|Пример 2|
-|AMS|Сторонний производитель|AMS|Yes|Нет |Пример 3|
-|AMS|Сторонний производитель|Внешняя|Нет |Нет |Пример 4|
-|Сторонний производитель|Сторонний производитель|AMS|Yes|Нет |    
+|AMS|AMS|AMS|Да|Да|Пример 1|
+|AMS|AMS|Сторонний производитель|Да|Да|Пример 2|
+|AMS|Сторонний производитель|AMS|Да|Нет|Пример 3|
+|AMS|Сторонний производитель|Внешняя|Нет|Нет|Пример 4|
+|Сторонний производитель|Сторонний производитель|AMS|Да|Нет|    
 
 В примерах защита PlayReady работает как для DASH, так и для Smooth Streaming. Ниже приведены URL-адреса видео, которые являются URL-адресами Smooth Streaming. Чтобы получить соответствующие URL-адреса DASH, просто добавьте "(format=mpd-time-csf)". Для проверки в браузере можно использовать [проигрыватель для тестирования мультимедиа Azure](https://aka.ms/amtest). Он позволяет настроить протокол потоковой передачи для использования с каждой технологией. Internet Explorer 11 и Microsoft Edge в Windows 10 поддерживают PlayReady через EME. Дополнительные сведения см. в записи блога [Azure Media Test Tool](https://blogs.msdn.microsoft.com/playready4/2016/02/28/azure-media-test-tool/) (Средство для тестирования мультимедиа Azure).
 

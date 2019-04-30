@@ -13,11 +13,11 @@ ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 12/18/2018
 ms.openlocfilehash: 5d754ae558d485036a9a55f573a3f40162ed9f84
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55561133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60725437"
 ---
 # <a name="performing-disaster-recovery-drill"></a>Отработка аварийного восстановления
 
@@ -66,7 +66,7 @@ ms.locfileid: "55561133"
 
 Выполните отработку, проверив целостность приложения после восстановления (в том числе проверьте подключение, протестируйте основные функции или выполните другие проверки, требуемые для утверждения отработки).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со [сценариями обеспечения непрерывности для бизнес-процессов](sql-database-business-continuity.md).
 * Чтобы узнать об автоматически создаваемых резервных копиях базы данных SQL Azure, ознакомьтесь с разделом [Общие сведения об автоматическом резервном копировании базы данных SQL](sql-database-automated-backups.md)

@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 8/24/2018
 ms.author: dekapur
 ms.openlocfilehash: f49176f944aa2abfa1d355ce0bd207d1b544c275
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59527056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60772964"
 ---
 # <a name="diagnostic-functionality-for-stateful-reliable-services"></a>Диагностические функции для надежных служб с отслеживанием состояния
 Класс StatefulServiceBase служб Reliable Services с отслеживанием состояния Azure Service Fabric генерирует события [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx), которые можно использовать для отладки. Они позволяют исследовать работу среды выполнения и помогают устранять неполадки.
@@ -50,9 +50,9 @@ ms.locfileid: "59527056"
 ## <a name="performance-counters"></a>Счетчики производительности
 Среда выполнения служб Reliable Services определяет указанные ниже категории счетчиков производительности.
 
-| Категория | ОПИСАНИЕ |
+| Category | Описание |
 | --- | --- |
-| Репликатор транзакций Service Fabric |Счетчики для репликатора транзакций Azure Service Fabric |
+| Транзакционный репликатор Service Fabric |Счетчики для репликатора транзакций Azure Service Fabric |
 | Service Fabric TStore |Счетчики для Azure Service Fabric TStore |
 
 Репликатор транзакций Service Fabric используется [диспетчером надежных состояний](service-fabric-reliable-services-reliable-collections-internals.md) для репликации транзакций в пределах заданного набора [реплик](service-fabric-concepts-replica-lifecycle.md).
@@ -102,7 +102,7 @@ Service Fabric TStore — это компонент, который исполь
 
 Среда выполнения Reliable Services выдает следующие события в категории `Service Fabric Transactional Replicator`.
 
- Имя счетчика | ОПИСАНИЕ |
+ Имя счетчика | Описание |
 | --- | --- |
 | Операций начала транзакций/с | Число новых транзакций записи, создаваемых в секунду.|
 | Операций транзакций/с | Число операций добавления, обновления и удаления, выполненных для надежных коллекций, в секунду.|
@@ -115,7 +115,7 @@ Service Fabric TStore — это компонент, который исполь
 
 Среда выполнения Reliable Services выдает следующие события в категории `Service Fabric TStore`.
 
- Имя счетчика | ОПИСАНИЕ |
+ Имя счетчика | Описание |
 | --- | --- |
 | Число элементов | Число элементов в хранилище.|
 | Размер диска | Общий размер в байтах, занимаемый на диске файлами контрольных точек хранилища.|

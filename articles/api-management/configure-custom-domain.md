@@ -12,13 +12,13 @@ ms.topic: article
 ms.date: 12/14/2017
 ms.author: apimpm
 ms.openlocfilehash: a771b437258046f937b97a9e37ffedbe0a17c1c1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58079802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60693608"
 ---
-# <a name="configure-a-custom-domain-name"></a>Настройка пользовательского имени домена 
+# <a name="configure-a-custom-domain-name"></a>Настройка пользовательского доменного имени 
 
 При создании экземпляра службы управления API (APIM) Azure назначает его поддомену домена azure-api.net (например, `apim-service-name.azure-api.net`). Но доступ к конечным точкам APIM можно предоставлять через собственное доменное имя, например **contoso.com**. В этом руководстве показано, как сопоставить существующее пользовательское DNS-имя с конечными точками, предоставленными экземпляром службы управления API Azure.
 

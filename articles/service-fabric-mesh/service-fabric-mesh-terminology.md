@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.service: service-fabric-mesh
 manager: timlt
 ms.openlocfilehash: 2d2661593ba3d9be2755d81803c8e248a2f7d0e1
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335816"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60810602"
 ---
 # <a name="service-fabric-mesh-terminology"></a>Терминология для службы "Сетка Service Fabric"
 
@@ -58,7 +58,7 @@ ms.locfileid: "58335816"
 ### <a name="docker-compose"></a>Docker Compose 
 [Docker Compose](https://docs.docker.com/compose/) является частью проекта Docker. Service Fabric предоставляет ограниченную поддержку развертывания приложений с помощью модели Docker Compose.
 
-## <a name="environments"></a>средами;
+## <a name="environments"></a>Окружения
 
 Service Fabric — это платформа технологий с открытым кодом, основанная на нескольких различных службах и продуктах. Корпорация Майкрософт предоставляет следующие решения.
 

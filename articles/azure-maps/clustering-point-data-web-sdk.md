@@ -10,11 +10,11 @@ services: azure-maps
 manager: cpendleton
 ms.custom: codepen
 ms.openlocfilehash: d4dc6f0c8fd2dff74a1997c9dca5a31abc70c03a
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58580828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60795930"
 ---
 # <a name="clustering-point-data"></a>Кластеризация точки данных
 
@@ -44,7 +44,7 @@ var datasource = new atlas.source.DataSource(null, {
 
 `DataSource` Класс также содержит следующие методы, относящиеся к кластеризации:
 
-| Метод | Тип возвращаемого значения | ОПИСАНИЕ |
+| Метод | Тип возвращаемого значения | Описание |
 |--------|-------------|-------------|
 | getClusterChildren(clusterId: number) | Обещание&lt;функция&lt;Geometry, любой&gt; \| фигуры&gt; | Получает дочерние узлы данного кластера, на следующий уровень масштаба. Эти дочерние объекты могут представлять собой сочетание фигур и subclusters. Subclusters будет функции, свойства которых соответствуют ClusteredProperties. |
 | getClusterExpansionZoom(clusterId: number) | Обещание&lt;номер&gt; | Вычисляет значение масштаба, по которому запускается расширение или разбить на части кластера. |
@@ -84,12 +84,12 @@ var datasource = new atlas.source.DataSource(null, {
 
 При возникновении событий мыши в слое, содержать кластеризованный доступ к данным, точки кластеризованных данных будет возвращаться к событию как объект функции точки GeoJSON. Эта функция точка будет иметь следующие свойства:
 
-| Имя свойства | type | ОПИСАНИЕ |
+| Имя свойства | type | Описание |
 |---------------|------|-------------|
 | cluster | Логическое | Указывает, представляет ли функция кластера. |
-| cluster_id | строка | Уникальный идентификатор для кластера, который может использоваться с источником данных `getClusterExpansionZoom`, `getClusterChildren`, и `getClusterLeaves` методы. |
-| point_count | number | Количество точек, которые содержит кластер. |
-| point_count_abbreviated | строка | Строка, которая сокращает point_count значение, если он имеет большую длину. (например, 4000 становится 4K) |
+| cluster_id | string | Уникальный идентификатор для кластера, который может использоваться с источником данных `getClusterExpansionZoom`, `getClusterChildren`, и `getClusterLeaves` методы. |
+| point_count | номер | Количество точек, которые содержит кластер. |
+| point_count_abbreviated | string | Строка, которая сокращает point_count значение, если он имеет большую длину. (например, 4000 становится 4K) |
 
 В этом примере принимает слоя пузырьков, который отображает точки кластера и добавит событие щелчка, при активации, вычисления и масштабировать карту на новый уровень масштабирования, по которому кластер приведет к разрыву друг от друга с помощью `getClusterExpansionZoom` метод `DataSource` класс и `cluster_id` нажатого свойство clustered точки данных. 
 

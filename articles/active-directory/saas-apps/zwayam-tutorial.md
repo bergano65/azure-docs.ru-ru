@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory со Zwayam | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory со Zwayam | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Zwayam.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/23/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 91d5bbe66c7eb74dbd3f9a441ffffdc9a0153f0f
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56192818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60868879"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zwayam"></a>Руководство. Интеграция Azure Active Directory со Zwayam
+# <a name="tutorial-azure-active-directory-integration-with-zwayam"></a>Руководство по Интеграция Azure Active Directory со Zwayam
 
 В этом руководстве описано, как интегрировать Zwayam с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56192818"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD со Zwayam, вам потребуются:
 
@@ -111,7 +111,7 @@ ms.locfileid: "56192818"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://sso.zwayam.com/zwayam-saml/zwayam-saml/saml/login?idp=<SAML Entity ID>`
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес `https://sso.zwayam.com/zwayam-saml/saml/metadata`.
+    2. В текстовом поле **Идентификатор** введите URL-адрес `https://sso.zwayam.com/zwayam-saml/saml/metadata`.
 
     > [!NOTE] 
     > Значение URL-адреса входа приведено для примера. Значение **SAML Entity ID** (Идентификатор сущности SAML) описано далее в этом руководстве.
@@ -164,7 +164,7 @@ ms.locfileid: "56192818"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-zwayam-test-user"></a>Создание тестового пользователя Zwayam
 
@@ -200,7 +200,7 @@ ms.locfileid: "56192818"
 
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Тест единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

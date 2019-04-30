@@ -17,11 +17,11 @@ ms.date: 03/13/2019
 ms.author: manayar
 ms.custom: na
 ms.openlocfilehash: 56a31770c374cdccaec4dbee751925a6da00fa59
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59683959"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60620249"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -69,10 +69,10 @@ ms.locfileid: "59683959"
 
 ### <a name="do-scale-sets-work-with-azure-availability-zones"></a>Работают ли масштабируемые наборы с зонами доступности Azure?
 
- Да! Дополнительные сведения см. в [документации по зонам масштабируемых наборов](./virtual-machine-scale-sets-use-availability-zones.md).
+Да. Дополнительные сведения см. в [документации по зонам масштабируемых наборов](./virtual-machine-scale-sets-use-availability-zones.md).
 
 
-## <a name="autoscale"></a>Autoscale
+## <a name="autoscale"></a>Автоматическое масштабирование
 
 ### <a name="what-are-best-practices-for-azure-autoscale"></a>Существуют ли рекомендации по автомасштабированию Azure?
 
@@ -233,11 +233,11 @@ az sf cluster create -h
 }
 ```
 
-Имя элемента конфигурации Linux | Обязательно для заполнения | type | ОПИСАНИЕ
+Имя элемента конфигурации Linux | Обязательно для заполнения | type | Описание
 --- | --- | --- | --- 
-ssh | Нет  | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
-path | Yes | Строка | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
-keyData | Yes | Строка | Указывает открытый ключ SSH в кодировке Base64.
+ssh | Нет | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
+путь | Да | String | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
+keyData | Да | String | Указывает открытый ключ SSH в кодировке Base64.
 
 Пример см. в [шаблоне быстрого запуска 101-vm-sshkey на сайте GitHub](https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-sshkey/azuredeploy.json).
 
@@ -309,7 +309,7 @@ Update-AzVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssName
 
 Метод | URL-адрес
 --- | ---
-ПОЛУЧЕНИЕ | <https://mykeyvault.vault.azure.net/secrets/{secret-name}/{secret-version}?api-version={api-version}>
+GET | <https://mykeyvault.vault.azure.net/secrets/{secret-name}/{secret-version}?api-version={api-version}>
 
 Замените параметры {*имя_секрета*} и {*версия_секрета*} именем и версией секрета, которую необходимо получить. Версию секрета можно не указывать. В этом случае извлекается текущая версия.
 
@@ -358,7 +358,7 @@ Update-AzVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssName
 Да. Некоторые примеры шаблонов MSI доступны в шаблонах быстрого запуска Azure. Для Linux — [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi). Для Windows — [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi).
 
 
-## <a name="extensions"></a>расширения.
+## <a name="extensions"></a>Расширения
 
 ### <a name="how-do-i-delete-a-virtual-machine-scale-set-extension"></a>Как удалить расширение масштабируемого набора виртуальных машин?
 
@@ -582,7 +582,7 @@ IP-адреса выбираются из указанной подсети.
 
 Да. Можно добавить идентификаторы ресурсов для нескольких серверных пулов адресов шлюза приложений в список _applicationGatewayBackendAddressPools_ в разделе _ipConfigurations_ сетевого профиля масштабируемого набора.
 
-## <a name="scale"></a>Масштаб
+## <a name="scale"></a>Масштабирование
 
 ### <a name="in-what-case-would-i-create-a-virtual-machine-scale-set-with-fewer-than-two-vms"></a>В каких случаях следует создавать масштабируемый набор с одной виртуальной машиной или без них?
 
@@ -707,7 +707,7 @@ az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.Ente
 
 Нет. Вы не можете передать разные аргументы расширения на разные виртуальные машины в масштабируемом наборе. Но расширения могут действовать на основе уникальных свойств виртуальной машины, на которых они выполняются, таких как имя машины. Кроме того, расширения могут запрашивать метаданные экземпляра на сайте http://169.254.169.254, чтобы получить дополнительные сведения о виртуальной машине.
 
-### <a name="why-are-there-gaps-between-my-virtual-machine-scale-set-vm-machine-names-and-vm-ids-for-example-0-1-3"></a>Почему между именами виртуальных машин в масштабируемом наборе и их идентификаторами существуют пропуски? Например:  0, 1, 3...
+### <a name="why-are-there-gaps-between-my-virtual-machine-scale-set-vm-machine-names-and-vm-ids-for-example-0-1-3"></a>Почему между именами виртуальных машин в масштабируемом наборе и их идентификаторами существуют пропуски? Пример. 0, 1, 3...
 
 Пропуски между именами виртуальных машин в масштабируемом наборе и их идентификаторами возникают, потому что для свойства **overprovision** масштабируемого набора задано стандартное значение **true**. Если значение избыточной подготовки — **true**, создается большее количество виртуальных машин, чем запрашивалось. Лишние виртуальные машины удаляются. Это позволит повысить надежность развертывания, но повлияет на связанные правила преобразования сетевых адресов и именования.
 

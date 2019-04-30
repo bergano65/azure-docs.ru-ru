@@ -2,23 +2,19 @@
 title: Управление Azure Key Vault с помощью интерфейса командной строки — Azure Key Vault | Документация Майкрософт
 description: Из этой статьи вы узнаете об автоматизации основных задач в Key Vault с использованием Azure CLI.
 services: key-vault
-documentationcenter: ''
 author: barclayn
 manager: barbkess
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: key-vault
-ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: barclayn
 ms.openlocfilehash: 1679fbe0dedc88ca3e8293512f9a79bb7da69790
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56115629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60641030"
 ---
 # <a name="manage-key-vault-using-the-azure-cli"></a>Управление Key Vault с помощью интерфейса командной строки Azure 
 
@@ -43,7 +39,7 @@ ms.locfileid: "56115629"
 Общие сведения об Azure Key Vault см. в статье [Что такое хранилище ключей Azure?](key-vault-whatis.md)
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы использовать команды Azure CLI из этой строки, вам необходимо следующее:
 
@@ -98,7 +94,7 @@ az account set --subscription <subscription name or ID>
 
 Дополнительные сведения о настройке кроссплатформенного интерфейса командной строки Azure см. в разделе [Установка Azure CLI 1.0](/cli/azure/install-azure-cli).
 
-### <a name="create-a-new-resource-group"></a>Создание новой группы ресурсов
+### <a name="create-a-new-resource-group"></a>Создать группу ресурсов
 
 При использовании диспетчера ресурсов Azure все связанные ресурсы создаются внутри группы ресурсов. Хранилище ключей можно создать в существующей группе ресурсов. Чтобы использовать новую группу ресурсов, создайте ее.
 
@@ -325,7 +321,7 @@ az keyvault key delete --vault-name "ContosoKeyVault" --name "ContosoFirstKey"
 az keyvault secret delete --vault-name "ContosoKeyVault" --name "SQLPassword"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Полное описание команд Azure CLI для хранилища ключей доступно в [справочнике по интерфейсу командной строки Key Vault](/cli/azure/keyvault).
 

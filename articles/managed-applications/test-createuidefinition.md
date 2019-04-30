@@ -11,17 +11,17 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/22/2018
 ms.author: tomfitz
-ms.openlocfilehash: c88bdce64e88f8639da2c4ebb01f4594fccff8a0
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
-ms.translationtype: HT
+ms.openlocfilehash: b1392c29881a9077e26baafc8972148800d03d3d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42747094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60746326"
 ---
 # <a name="test-azure-portal-interface-for-your-managed-application"></a>Тестирование интерфейса портала Azure для управляемого приложения
 После создания файла [createUiDefinition.json](create-uidefinition-overview.md) для Управляемого приложения Azure необходимо протестировать пользовательский интерфейс. Чтобы упростить тестирование, используйте сценарий, который загружает файл на портале. Вам не нужно развертывать управляемое приложение.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Файл **createUiDefinition.json**. Если у вас его нет, скопируйте [пример файла](https://github.com/Azure/azure-quickstart-templates/blob/master/100-marketplace-sample/createUiDefinition.json) и сохраните его локально.
 
@@ -86,7 +86,7 @@ ms.locfileid: "42747094"
 
 Укажите значения для полей. По завершении вы увидите значения, переданные в шаблон.
 
-![Отображение значений](./media/test-createuidefinition/show-json.png)
+![Показать значения](./media/test-createuidefinition/show-json.png)
 
 Эти значения можно использовать как файл параметров для тестирования шаблона развертывания.
 
@@ -104,6 +104,6 @@ ms.locfileid: "42747094"
 
 Теперь, когда вы проверили, что ваш интерфейс портала работает так, как ожидается, пришло время проверить, что ваш файл createUiDefinition правильно интегрирован с файлом mainTemplate.json. Можно запустить тестирование сценария проверки для проверки содержимого файлов решения, включая файл createUiDefinition. Сценарий проверяет синтаксис JSON, регулярные выражения в текстовых полях и обеспечивает соответствие выходных значений интерфейса портала параметрам шаблона. Со сведениями о запуске этого сценария можно ознакомиться в статье, посвященной [запуску статических проверок шаблонов](https://github.com/Azure/azure-quickstart-templates/tree/master/test/template-validation-tests).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После проверки интерфейса портала узнайте, как [обеспечить доступность управляемых приложений Azure в Marketplace](publish-marketplace-app.md).

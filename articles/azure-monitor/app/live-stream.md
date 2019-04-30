@@ -10,15 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 01/28/2019
+ms.date: 04/22/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: 588b8b11a02551a790145aafb013759699004267
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.openlocfilehash: bc85de0c8ec89ea88d2bae8e3f226da7d3163f53
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59009971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62115363"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: мониторинг и диагностика с задержкой в 1 секунду
 
@@ -50,10 +50,13 @@ ms.locfileid: "59009971"
 
 4. [Защитите канал управления](#secure-the-control-channel), если в фильтрах могут использоваться конфиденциальные данные, например имена клиентов.
 
-### <a name="no-data-check-your-server-firewall"></a>Данные отсутствуют? Проверьте брандмауэр сервера
+### <a name="nodejs"></a>Node.js
+
+Для использования Live Metrics с помощью Node.js, необходимо обновить до версии 1,30 или более поздней версии, пакета SDK. Live Metrics отключена по умолчанию в пакете SDK для Node.js. Чтобы включить Live Metrics добавьте `setSendLiveMetrics(true)` для вашей [методы конфигурации](https://github.com/Microsoft/ApplicationInsights-node.js#configuration) как инициализации пакета SDK.
+
+### <a name="no-data-check-your-server-firewall"></a>Нет данных? Проверьте брандмауэр сервера
 
 Убедитесь в том, что [исходящие порты для Live Metrics Stream](../../azure-monitor/app/ip-addresses.md#outgoing-ports) открыты в брандмауэре ваших серверов. 
-
 
 ## <a name="how-does-live-metrics-stream-differ-from-metrics-explorer-and-analytics"></a>Чем Live Metrics Stream отличается от обозревателя метрик и службы аналитики?
 
@@ -62,10 +65,9 @@ ms.locfileid: "59009971"
 |Задержка|Данные отображаются в течение одной секунды|Агрегирование выполняется в течение нескольких минут|
 |Нет сохранения|Данные сохраняются, только пока они отображаются на диаграмме, а затем удаляются.|[Данные сохраняются 90 дней](../../azure-monitor/app/data-retention-privacy.md#how-long-is-the-data-kept)|
 |По запросу|Данные передаются, пока открыта служба Live Metrics|Данные отправляются, когда пакет SDK установлен и включен|
-|Free|Плата за данные Live Stream не взимается|Действуют [расценки](../../azure-monitor/app/pricing.md)
+|Бесплатные|Плата за данные Live Stream не взимается|Действуют [расценки](../../azure-monitor/app/pricing.md)
 |Выборка|Передаются все выбранные метрики и счетчики. Производится выборка сбоев и трассировок стека. TelemetryProcessors не применяются.|Может производиться [выборка](../../azure-monitor/app/api-filtering-sampling.md) событий.|
 |Канал управления|В пакет SDK отправляются управляющие сигналы фильтрации. Мы советуем защитить этот канал.|Взаимодействие является односторонним (в сторону портала)|
-
 
 ## <a name="select-and-filter-your-metrics"></a>Выбор и фильтрация метрик
 
@@ -202,7 +204,7 @@ services.ConfigureTelemetryModule<QuickPulseTelemetryModule> ((module, o) => mod
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-Данные отсутствуют? Если приложение находится в защищенной сети, Live Metrics Stream использует не такие IP-адреса, как в телеметрии Application Insights. Убедитесь, что [эти IP-адреса](../../azure-monitor/app/ip-addresses.md) открыты в брандмауэре.
+Нет данных? Если приложение находится в защищенной сети, Live Metrics Stream использует не такие IP-адреса, как в телеметрии Application Insights. Убедитесь, что [эти IP-адреса](../../azure-monitor/app/ip-addresses.md) открыты в брандмауэре.
 
 
 

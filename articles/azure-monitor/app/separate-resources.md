@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: mbullwin
 ms.openlocfilehash: 2e9c599c12ed10327d352baee02500d2284d98d8
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54121487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60713475"
 ---
 # <a name="separating-telemetry-from-development-test-and-production"></a>Отделение телеметрии стадий разработки, тестирования и эксплуатации
 
@@ -156,7 +156,7 @@ ms.locfileid: "54121487"
 Если используется Azure DevOps, можно настроить [добавление маркера заметки](../../azure-monitor/app/annotations.md) к диаграммам при выпуске новой версии. На следующем рисунке показано, как появляется этот маркер.
 
 ![Снимок экрана, где показана диаграмма с примером заметки о новом выпуске](media/separate-resources/release-annotation.png)
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Monitor multi-component applications with Application Insights (preview)](../../azure-monitor/app/app-map.md) (Мониторинг приложений с несколькими компонентами с помощью Application Insights (предварительная версия))
 * [Добавление свойств: ITelemetryInitializer](../../azure-monitor/app/api-filtering-sampling.md#add-properties)

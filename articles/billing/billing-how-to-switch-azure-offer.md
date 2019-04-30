@@ -16,11 +16,11 @@ ms.topic: conceptual
 ms.date: 05/11/2018
 ms.author: banders
 ms.openlocfilehash: bbdcbdc7ef288eeeb279c7e5e59baee492e1f292
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57835281"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60918784"
 ---
 # <a name="change-your-azure-pay-as-you-go-subscription-to-a-different-offer"></a>Переход с подписки с оплатой по мере использования на другое предложение
 
@@ -30,7 +30,7 @@ ms.locfileid: "57835281"
 
 ## <a name="whats-supported"></a>Поддерживаемые функции
 
-| Из | Кому |
+| От | До |
 | --- | --- |
 | Оплата по мере использования |[Разработка и тестирование с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0023p/) |
 | Оплата по мере использования |[Visual Studio Professional](https://azure.microsoft.com/offers/ms-azr-0059p/) |
@@ -64,7 +64,7 @@ ms.locfileid: "57835281"
 1. Вы можете переименовать подписку. По умолчанию ей присваивается имя нового предложения. Чтобы завершить процедуру, щелкните **Переключить предложение** .
 
    ![Нажмите зеленую кнопку.](./media/billing-how-to-switch-azure-offer/confirmpage.png)
-1. Готово! Подписка переведена на новое предложение.
+1. Выполнено! Подписка переведена на новое предложение.
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -114,6 +114,6 @@ ms.locfileid: "57835281"
 * Вы можете перенести ресурсы в новую подписку напрямую. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/resource-group-move-resources.md).
 * Чтобы передать права собственности на подписку Azure и на все ресурсы в ней другому пользователю, см. [эту статью](billing-subscription-transfer.md)
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
+## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
 
 Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

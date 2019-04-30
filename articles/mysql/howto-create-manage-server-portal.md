@@ -7,11 +7,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/28/2018
 ms.openlocfilehash: 6d6f24475497382dd9e04d3335fb89d6f0bdd514
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57528684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61459564"
 ---
 # <a name="create-and-manage-azure-database-for-mysql-server-using-azure-portal"></a>Создание сервера базы данных Azure для MySQL и управление им с помощью портала Azure
 В этом разделе описывается, как быстро создать сервер базы данных Azure для MySQL. Он также содержит сведения о том, как управлять сервером с помощью портала Azure. Управление сервером включает в себя просмотр сведений о сервере и базах данных, сброс пароля, масштабирование ресурсов и удаление сервера.
@@ -34,7 +34,7 @@ ms.locfileid: "57528684"
 
     | **Поле формы** | **Описание поля** |
     |----------------|-----------------------|
-    | *Server name* (Имя сервера) | mydemoserver (глобально уникальное имя сервера) |
+    | *Имя сервера* | mydemoserver (глобально уникальное имя сервера) |
     | *Подписка* | mysubscription (выберите из раскрывающегося меню) |
     | *Группа ресурсов* | myresourcegroup (создайте новую группу ресурсов или используйте существующую) |
     | *Выбрать источник* | Blank (создайте пустой сервер MySQL) |
@@ -58,7 +58,7 @@ ms.locfileid: "57528684"
 ### <a name="change-the-administrator-user-password"></a>Изменение пароля администратора
 1. В области **Обзор** для сервера нажмите кнопку **сброс пароля** для отображения окна сброса пароля.
 
-   ![Обзор](./media/howto-create-manage-server-portal/overview.png)
+   ![обзор](./media/howto-create-manage-server-portal/overview.png)
 
 2. Введите новый пароль и подтвердите его в окне, как показано ниже:
 
@@ -110,4 +110,4 @@ ms.locfileid: "57528684"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Краткое руководство по созданию сервера Базы данных Azure для MySQL с помощью портала Azure](./quickstart-create-mysql-server-database-using-azure-portal.md)
+[Краткое руководство. по созданию сервера Базы данных Azure для MySQL с помощью портала Azure](./quickstart-create-mysql-server-database-using-azure-portal.md)

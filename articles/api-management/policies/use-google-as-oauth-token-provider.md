@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
 ms.openlocfilehash: 430f9e57df163ad345f0740e5bd5beca6e892a4c
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52869312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60859153"
 ---
 # <a name="authorize-access-using-google-oauth-token"></a>Авторизации доступа с помощью токена OAuth Google
 
@@ -30,7 +30,7 @@ ms.locfileid: "52869312"
 
 [!code-xml[Main](../../../api-management-policy-samples/examples/Simple Google OAuth validate-jwt.policy.xml)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее о политиках службы управления API:
 

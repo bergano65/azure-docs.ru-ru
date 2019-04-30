@@ -12,11 +12,11 @@ ms.date: 09/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: b0599317d09a1757b3c86372cb7ed8ea78d4cdd7
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55464489"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60804696"
 ---
 # <a name="azure-data-lake-data-science-walkthroughs-using-u-sql"></a>Пошаговые руководства по обработке и анализу данных в Azure Data Lake с помощью U-SQL
 
@@ -30,7 +30,7 @@ ms.locfileid: "55464489"
 В статье [Полное пошаговое руководство по масштабируемому анализу данных с помощью Azure Data Lake](data-lake-walkthrough.md) на примере набора данных такси Нью-Йорка показано, как использовать Azure Data Lake для выполнения задач по исследованию и двоичной классификации данных, чтобы спрогнозировать вероятность уплаты чаевых клиентом. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Описание ключевых компонентов, составляющих процесс обработки и анализа данных группы, см. в статье [Жизненный цикл процесса обработки и анализа данных группы](overview.md).
 

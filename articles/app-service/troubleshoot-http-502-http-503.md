@@ -18,11 +18,11 @@ ms.date: 07/06/2016
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: 5edd3e51e83b5ab324d1e110a1882b20d935a9b5
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57899134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60833073"
 ---
 # <a name="troubleshoot-http-errors-of-502-bad-gateway-and-503-service-unavailable-in-azure-app-service"></a>Устранение ошибок HTTP "502 — недопустимый шлюз" и "503 — служба недоступна" в Службе приложений Azure
 "502 — недопустимый шлюз" и "503 — служба недоступна" — распространенные ошибки, возникающие при работе приложения, размещенного в [Службе приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714). Эта статья поможет вам устранить эти ошибки.
@@ -59,10 +59,10 @@ Microsoft Azure информирует о каждом случае прерыв
 
 Некоторые из этих метрик помогут вам отслеживать работу приложения, например,
 
-* средний размер рабочего набора памяти;
+* Средний рабочий набор памяти
 * Среднее время ответа
 * время ЦП;
-* рабочий набор памяти;
+* Рабочий набор памяти
 * Requests
 
 ![Мониторинг приложения для устранения ошибок HTTP "502 — недопустимый шлюз" и "503 — служба недоступна"](./media/app-service-web-troubleshoot-HTTP-502-503/1-monitor-metrics.png)

@@ -9,13 +9,13 @@ ms.date: 12/07/2018
 ms.author: cherylmc
 ms.custom: seodec18
 ms.openlocfilehash: 3ffcc5ac2193e607573ceb93717258f5349d1f15
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53101693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60883204"
 ---
-# <a name="expressroute-workflows-for-circuit-provisioning-and-circuit-states"></a>Процедуры ExpressRoute для подготовки каналов и состояний каналов
+# <a name="expressroute-workflows-for-circuit-provisioning-and-circuit-states"></a>Рабочие процессы ExpressRoute для подготовки цепей и состояний цепей
 На этой странице описаны процедуры подготовки служб и настройки маршрутизации на высоком уровне.
 
 ![Рабочий процесс настройки канала](./media/expressroute-workflows/expressroute-circuit-workflow.png)
@@ -43,7 +43,7 @@ ms.locfileid: "53101693"
 У каждого канала ExpressRoute имеется два состояния.
 
 * Состояние подготовки поставщика услуг
-* Status
+* Статус
 
 Состояние указывает на состояние подготовки Майкрософт. При создании канала Expressroute это свойство имеет значение "Включен".
 
@@ -104,7 +104,7 @@ ms.locfileid: "53101693"
 > 
 > 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Настройте подключение ExpressRoute.
   
   * [Создайте канал ExpressRoute.](expressroute-howto-circuit-arm.md)

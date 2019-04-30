@@ -13,11 +13,11 @@ ms.reviewer: mbullwin
 ms.date: 08/06/2018
 ms.author: cweining
 ms.openlocfilehash: 6ab13e1ecd5f4825270f4b3a28251b959ad98f02
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59495402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60731062"
 ---
 # <a name="troubleshoot-problems-enabling-or-viewing-application-insights-profiler"></a>Устранение неполадок по включению и просмотру Application Insights Profiler
 
@@ -69,7 +69,7 @@ Profiler записывает сообщения трассировки и по�
 * Для веб-приложения нужно включить Application Insights.
 * Веб-приложения должен иметь следующие параметры приложения:
 
-    |Параметр приложения    | Значение    |
+    |Параметр приложения    | Value    |
     |---------------|----------|
     |APPINSIGHTS_INSTRUMENTATIONKEY         | ключ инструментирования ресурса Application Insights    |
     |APPINSIGHTS_PROFILERFEATURE_VERSION | 1.0.0 |
@@ -101,7 +101,7 @@ Profiler записывает сообщения трассировки и по�
 1. Установите для параметра **Всегда включено** значение **Включено**.
 1. Создайте эти параметры приложения:
 
-    |Параметр приложения    | Значение    |
+    |Параметр приложения    | Value    |
     |---------------|----------|
     |APPINSIGHTS_INSTRUMENTATIONKEY         | ключ инструментирования ресурса Application Insights    |
     |APPINSIGHTS_PROFILERFEATURE_VERSION | 1.0.0 |

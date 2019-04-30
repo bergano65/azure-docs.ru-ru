@@ -9,11 +9,11 @@ ms.date: 11/20/2017
 author: wmengmsft
 ms.author: wmeng
 ms.openlocfilehash: 724f0b9eb09b9eecad5b0a360d9301616d1494f1
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54035150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60576235"
 ---
 # <a name="azure-cosmos-db-table-api-for-java-release-notes-and-resources"></a>API таблиц Azure Cosmos DB для Java. Заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -44,7 +44,7 @@ ms.locfileid: "54035150"
 
 Новые функции, возможности и оптимизации добавляются только в текущую версию пакета SDK, поэтому рекомендуется как можно раньше обновлять пакет SDK до последней версии. 
 
-| Version (версия) | Дата выпуска | Дата вывода |
+| Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
 | [1.0.0](#1.0.0) |15 ноября 2017 г. |--- |
 

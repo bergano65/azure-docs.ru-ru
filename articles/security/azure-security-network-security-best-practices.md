@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/17/2018
 ms.author: TomSh
-ms.openlocfilehash: 86246d3d580737837ec07ccdc89ed82914cde209
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
+ms.openlocfilehash: b644a175814fb28563a2524e27f52d0285415d66
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56118417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60610959"
 ---
 # <a name="azure-network-security-best-practices"></a>Рекомендации по обеспечению безопасности в сети Azure
 [Виртуальные машины Azure](https://azure.microsoft.com/services/virtual-machines/) и устройства можно подключать к другим сетевым устройствам, размещая их в [виртуальных сетях Azure](https://azure.microsoft.com/documentation/services/virtual-network/). То есть вы можете подключать виртуальные сетевые карты к виртуальной сети для взаимодействия сетевых устройств по протоколу TCP/IP. Виртуальные машины, подключенные к виртуальной сети Azure, могут подключаться к устройствам в одной виртуальной сети, в разных виртуальных сетях, в Интернете или даже в локальных сетях.

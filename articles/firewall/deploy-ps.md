@@ -7,11 +7,11 @@ ms.service: firewall
 ms.date: 4/10/2019
 ms.author: victorh
 ms.openlocfilehash: c2d49defa2e0fbbd12c5403ccca74e91cf4ec981
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59502118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61071715"
 ---
 # <a name="deploy-and-configure-azure-firewall-using-azure-powershell"></a>Развертывание и настройка брандмауэра Azure, с помощью Azure PowerShell
 
@@ -54,7 +54,7 @@ ms.locfileid: "59502118"
 
 Сначала создайте группу ресурсов, необходимых для развертывания брандмауэра. Затем создайте виртуальную сеть, подсети и тестовые серверы.
 
-### <a name="create-a-resource-group"></a>Создание группы ресурсов
+### <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Группа ресурсов содержит все ресурсы для развертывания.
 
@@ -258,4 +258,4 @@ Remove-AzResourceGroup -Name Test-FW-RG
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Руководство Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)
+* [Учебник. Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)

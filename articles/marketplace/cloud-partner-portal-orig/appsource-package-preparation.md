@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
 ms.openlocfilehash: cc06ddf2fce93bef27e7aaee85b47179608e192b
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57837042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60625473"
 ---
 # <a name="appsource-package-preparation"></a>Подготовка пакета AppSource
 
@@ -86,7 +86,7 @@ ms.locfileid: "57837042"
 1. JPG (разрешение 32 x 32).
 2. HTML (файл форматирования HTML).
 3. **Content_Types.xml** (упомянутый выше).
-4. xml
+4. Xml
 
 Ниже приведен пример кода для файла input.xml. Определения см. в приведенной ниже таблице.
 
@@ -133,7 +133,7 @@ ms.locfileid: "57837042"
 
 1. ZIP-файл (созданный ранее).
 2. Файл **Content_Types.xml**.
-3. xml
+3. Xml
 4. png
 5. html
 

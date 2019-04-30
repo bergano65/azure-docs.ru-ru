@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2017
 ms.author: kumud
-ms.openlocfilehash: 30c4a6817272f7b5f1810873a93280b234ff6cc9
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: 47cc56aac7d3e0147ef8577aac19776c6cacf7a9
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59524316"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60884161"
 ---
 # <a name="configure-the-geographic-traffic-routing-method-using-traffic-manager"></a>Настройка метода маршрутизации трафика по географическому расположению с помощью диспетчера трафика
 
@@ -32,9 +32,9 @@ ms.locfileid: "59524316"
     4. Используйте существующую группу ресурсов или создайте группу ресурсов, в которую следует поместить этот профиль. Если вы решили создать группу ресурсов, используйте раскрывающийся список **Расположение группы ресурсов**, чтобы указать ее расположение. Этот параметр задает расположение группы ресурсов и не влияет на профиль диспетчера трафика, который развернут глобально.
     5. После нажатия кнопки **Создать** профиль диспетчера трафика будет создан и глобально развернут.
 
-![Создание профиля диспетчера трафика](./media/traffic-manager-geographic-routing-method/create-traffic-manager-profile.png)
+![Создать профиль диспетчера трафика](./media/traffic-manager-geographic-routing-method/create-traffic-manager-profile.png)
 
-## <a name="add-endpoints"></a>Добавление конечных точек
+## <a name="add-endpoints"></a>Добавить конечные точки
 
 1. Найдите имя созданного профиля диспетчера трафика, введя его в строке поиска портала, и щелкните результат, когда оно появится.
 2. В диспетчере трафика выберите **Параметры** -> **Конечные точки**.

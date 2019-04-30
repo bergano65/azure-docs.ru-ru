@@ -10,17 +10,17 @@ ms.date: 07/20/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: bc9f1feff6d8d45e52c8621d1ec4b36e0a4a4a76
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54434263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61303222"
 ---
 # <a name="use-the-azure-automation-graphical-runbook-sdk"></a>Использование пакета SDK графического модуля runbook службы автоматизации Azure
 
 [Графические модули runbook](automation-graphical-authoring-intro.md) — это модули runbook, которые позволяют выполнять сложные задачи с базовым кодом Windows PowerShell или рабочего процесса PowerShell. Пакет SDK для графической разработки службы автоматизации Microsoft Azure позволяет разработчикам создавать и изменять графические модули runbook для использования со службой автоматизации Azure. В следующих фрагментах кода показан базовый поток создания графического модуля runbook из кода.
 
-## <a name="pre-requisites"></a>Предварительные требования
+## <a name="pre-requisites"></a>Технические условия
 
 Для начала импортируйте пакет `Microsoft.Azure.Automation.GraphicalRunbook.Model` в проект.
 
@@ -143,7 +143,7 @@ var serialized = RunbookSerializer.Serialize(runbook);
 Эту строку можно сохранить в файл с расширением **.graphrunbook** и этот файл можно импортировать в службу автоматизации Azure.
 Сериализованный формат может измениться в будущих версиях `Orchestrator.GraphRunbook.Model.dll`. Мы гарантируем обратную совместимость: любой runbook, сериализованный с использованием более старой версии `Orchestrator.GraphRunbook.Model.dll`, может быть десериализован с использованием любой более поздней версии. Прямая совместимость не гарантируется: runbook, сериализованный с использованием более поздней версии, не может быть десериализован с использованием старых версий.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о графических модулях runbook в службе автоматизации Azure см. в статье [Графическая разработка в службе автоматизации Azure](automation-graphical-authoring-intro.md).
 

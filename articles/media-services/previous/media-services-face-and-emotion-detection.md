@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: milanga;juliako;
 ms.openlocfilehash: 46e60583da79006c133c8d9fac63e27f28bd699f
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58188192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61217264"
 ---
 # <a name="detect-face-and-emotion-with-azure-media-analytics"></a>Обнаружение лиц и определение эмоций с помощью медиа-аналитики Azure
 ## <a name="overview"></a>Обзор
@@ -75,9 +75,9 @@ API обнаружения и отслеживания лиц обеспечив
 ```
 
 #### <a name="attribute-descriptions"></a>Описания атрибутов
-| Имя атрибута | ОПИСАНИЕ |
+| Имя атрибута | Описание |
 | --- | --- |
-| Mode |Fast: быстрая скорость обработки, но с меньшей точностью (по умолчанию).|
+| Режим |Fast: быстрая скорость обработки, но с меньшей точностью (по умолчанию).|
 
 ### <a name="json-output"></a>Выходные данные JSON
 Следующий пример выходных данных JSON был сокращен.
@@ -150,9 +150,9 @@ API обнаружения и отслеживания лиц обеспечив
 
 
 #### <a name="attribute-descriptions"></a>Описания атрибутов
-| Имя атрибута | ОПИСАНИЕ |
+| Имя атрибута | Описание |
 | --- | --- |
-| Mode |Faces: только определение лиц.<br/>PerFaceEmotion: эмоции возвращаются отдельно для каждого определения лиц.<br/>AggregateEmotion: возвращаются средние значения эмоций для всех лиц в кадре. |
+| Режим |Faces: только определение лиц.<br/>PerFaceEmotion: эмоции возвращаются отдельно для каждого определения лиц.<br/>AggregateEmotion: возвращаются средние значения эмоций для всех лиц в кадре. |
 | AggregateEmotionWindowMs |Используется, если выбран режим AggregateEmotion. Указывает длину видео для получения каждого совокупного результата в миллисекундах. |
 | AggregateEmotionIntervalMs |Используется, если выбран режим AggregateEmotion. Указывает частоту для получения совокупных результатов. |
 

@@ -13,11 +13,11 @@ ms.workload: NA
 ms.date: 12/06/2017
 ms.author: mikhegn
 ms.openlocfilehash: d69e02126564388bf045693b9960e6e574307641
-ms.sourcegitcommit: 794bfae2ae34263772d1f214a5a62ac29dcec3d2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44391340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60720252"
 ---
 # <a name="how-to-specify-the-port-number-of-a-service-using-parameters-in-service-fabric"></a>Как указать номер порта службы с помощью параметров в Service Fabric
 
@@ -88,7 +88,7 @@ ms.locfileid: "44391340"
 
 При публикации приложения из Visual Studio с помощью профиля публикации Cloud.xml служба будет использовать порт 80. Если приложение развертывается без указания параметра MyWebAPI_PortNumber, то служба использует порт 8080.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы узнать больше о некоторых основных понятиях, рассмотренных в данной статье, ознакомьтесь с разделом [Управление параметрами приложения для нескольких сред](service-fabric-manage-multiple-environment-app-configuration.md).
 
 Сведения о других возможностях управления приложениями, доступными в Visual Studio, см. в статье [Использование Visual Studio для упрощения создания приложений Service Fabric и управления ими](service-fabric-manage-application-in-visual-studio.md).

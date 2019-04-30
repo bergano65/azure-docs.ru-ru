@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: zhshang
 ms.openlocfilehash: 15b0ff0bbb96e5fa96d81cfa265e83abf749cf85
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57556666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60688899"
 ---
 # <a name="how-to-rotate-access-key-for-azure-signalr-service"></a>Как сменить ключ доступа для службы Azure SignalR
 
@@ -33,7 +33,7 @@ ms.locfileid: "57556666"
 
    Отобразится новая строка ключа и соответствующего подключения.
 
-   ![Повторное создание ключей](media/signalr-howto-key-rotation/regenerate-keys.png)
+   ![Повторно создать ключи](media/signalr-howto-key-rotation/regenerate-keys.png)
 
 Вы также можете повторно создать ключи с помощью [Azure CLI](/cli/azure/ext/signalr/signalr/key?view=azure-cli-latest#ext-signalr-az-signalr-key-renew).
 

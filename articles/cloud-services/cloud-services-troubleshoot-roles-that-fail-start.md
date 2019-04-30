@@ -16,11 +16,11 @@ ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
 ms.openlocfilehash: d2daae2a3317d3b48748262d87ab8d7f7e13f2b0
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59792782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60653393"
 ---
 # <a name="troubleshoot-cloud-service-roles-that-fail-to-start"></a>Устранение неполадок, если роли облачной службы не запускаются
 Ниже приведены некоторые распространенные проблемы и решения на случай, если роли облачной службы Azure не запускаются.
@@ -78,7 +78,7 @@ ms.locfileid: "59792782"
 * Описание: Произошло необработанное исключение во время выполнения текущего веб-запроса. Чтобы получить дополнительную информацию об ошибке и ее источнике в коде, изучите трассировку стека.
 * Сведения об исключении: System.IO.FIleNotFoundException: Не удалось загрузить файл или сборку "Microsoft.WindowsAzure.StorageClient, Version = 1.1.0.0, Culture = neutral, PublicKeyToken = 31bf856ad364e35" или одну из ее зависимостей. Системе не удается найти указанный файл.
 
-Например: 
+Пример.
 
 ![Явная ошибка сервера в приложении «/».](./media/cloud-services-troubleshoot-roles-that-fail-start/ic503389.png)
 
@@ -114,7 +114,7 @@ ms.locfileid: "59792782"
 ## <a name="address-missing-dlls-and-assemblies"></a>Устранение ошибок из-за отсутствующих библиотек DLL и сборок
 Чтобы устранить ошибки отсутствующих библиотек DLL и сборок, выполните следующие действия.
 
-1. Откройте решение в Visual Studio.
+1. Откройте решение в среде Visual Studio.
 2. В **обозревателе решений** откройте папку **Ссылки**.
 3. Щелкните сборку, указанную в сообщении об ошибке.
 4. На панели **Свойства** найдите свойство **Copy Local** и задайте для него значение **True**.

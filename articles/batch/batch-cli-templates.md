@@ -12,12 +12,12 @@ ms.workload: big-compute
 ms.date: 12/07/2018
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: 5e592845f96cb0734daf3c9e07d60005de260386
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: 80d2e995a18a2d6dafbb8d92fdd5996b10eab17c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53547683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60783744"
 ---
 # <a name="use-azure-batch-cli-templates-and-file-transfer"></a>Использование шаблонов интерфейса командной строки для пакетной службы Azure и передачи файлов
 
@@ -144,7 +144,7 @@ az extension add --name azure-batch-cli-extensions
 az batch pool create --template pool-ffmpeg.json
 ```
 
-От CLI вы получите запрос ввести значения для параметров `poolId` и `nodeCount`. Можно также указать параметры в файле JSON. Например: 
+От CLI вы получите запрос ввести значения для параметров `poolId` и `nodeCount`. Можно также указать параметры в файле JSON. Пример.
 
 ```json
 {
@@ -291,7 +291,7 @@ az batch file download --file-group ffmpeg-output --local-path
 
 Попробуйте использовать расширение пакетной службы для Azure CLI и оставьте отзыв или предложения в комментариях к этой статье или в [репозитории по пакетной службе](https://github.com/Azure/Batch).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Подробная документация по установке и использованию, примеры и исходный код доступны в [репозитории GitHub Azure](https://github.com/Azure/azure-batch-cli-extensions).
 

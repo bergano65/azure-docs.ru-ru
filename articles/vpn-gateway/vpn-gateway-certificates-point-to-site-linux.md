@@ -2,17 +2,18 @@
 title: 'Создание и экспорт сертификатов для подключений "точка — сеть" — Linux: CLI: Azure | Документация Майкрософт'
 description: Создание самозаверяющего корневого сертификата, экспорт открытого ключа и создание сертификатов клиента с помощью Linux CLI и strongSwan.
 services: vpn-gateway
-author: cherylmc
+author: WenJason
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 01/31/2019
-ms.author: cherylmc
+origin.date: 01/31/2019
+ms.date: 03/04/2019
+ms.author: v-jay
 ms.openlocfilehash: b673be47d4951adab08f04efc56410095f549356
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55564802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60766180"
 ---
 # <a name="generate-and-export-certificates"></a>Создание и экспорт сертификатов
 
@@ -21,6 +22,6 @@ ms.locfileid: "55564802"
 ## <a name="generate-and-export"></a>Создание и экспорт
 [!INCLUDE [strongSwan certificates](../../includes/vpn-gateway-strongswan-certificates-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Продолжайте настраивать параметры конфигурации типа "точка — сеть", чтобы [создать и установить файлы конфигурации VPN-клиента](point-to-site-vpn-client-configuration-azure-cert.md#linuxinstallcli).

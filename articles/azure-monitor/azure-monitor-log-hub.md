@@ -11,11 +11,11 @@ ms.topic: hub-page
 ms.date: 01/29/2019
 ms.author: magoedte
 ms.openlocfilehash: ced88f973ff26f7c8990c1c80bf8532949ef9ae8
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56244782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60640112"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -99,7 +99,7 @@ ms.locfileid: "56244782"
                                                     <div class="cardText">
                                                     <h3>Мониторинг</h3>
                                                         <p>
-                                                            <a href="/azure/azure-monitor/platform/data-collection">Данные мониторинга, собираемые службой Azure Monitor</a><br/>
+                                                            <a href="/azure/azure-monitor/platform/data-collection">Метрики и журналы</a><br/>
                                                             <a href="/azure/azure-monitor/platform/data-ingestion-time">Время приема данных в Log Analytics</a><br/>
                                                         </p>
                                                         <br>

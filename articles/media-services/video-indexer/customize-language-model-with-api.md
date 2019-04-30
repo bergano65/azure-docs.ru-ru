@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 02/10/2019
 ms.author: anzaman
 ms.openlocfilehash: ca1e66d20b19c1a5b85a4f4ff1c433331116bee7
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60002040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60553748"
 ---
 # <a name="customize-a-language-model-with-the-video-indexer-apis"></a>Настройка языковой модели с помощью API Индексатора видео
 
@@ -31,7 +31,7 @@ ms.locfileid: "60002040"
 > [!NOTE]
 > По-прежнему следует провести обучение модели с поддержкой файлов для модели, чтобы освоить содержимое из файлов. Направления по обучению языку находятся в следующем разделе.
 
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
+### <a name="request-url"></a>URL-адрес запроса
 
 Это запрос POST.
 
@@ -53,11 +53,11 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
-|accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-|modelName|строка|Yes|Имя языковой модели|
-|Язык|строка|Yes|Язык языковой модели <br/>Параметру **язык** необходимо присвоить язык в формате BCP-47 "тег языка – регион" (например, en-US). Поддерживаемые языки: английский (en-US), немецкий (de-DE), испанский (es-SP), арабский (ar-EG), французский (fr-FR), хинди (hi-HI), итальянский (it-IT), японский (ja-JP), португальский (pt-BR), русский (ru-RU) и китайский (zh-CN).  |
+|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountId|string|Да|Глобальный уникальный идентификатор для учетной записи|
+|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|modelName|string|Да|Имя языковой модели|
+|Язык|string|Да|Язык языковой модели <br/>Параметру **язык** необходимо присвоить язык в формате BCP-47 "тег языка – регион" (например, en-US). Поддерживаемые языки: английский (en-US), немецкий (de-DE), испанский (es-SP), арабский (ar-EG), французский (fr-FR), хинди (hi-HI), итальянский (it-IT), японский (ja-JP), португальский (pt-BR), русский (ru-RU) и китайский (zh-CN).  |
 
 ### <a name="request-body"></a>Текст запроса
 
@@ -104,7 +104,7 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 > [!NOTE]
 > Сначала необходимо создать языковую модель и передать ее файлы. Передавать файлы можно либо при создании языковой модели, либо путем обновления языковой модели. 
 
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
+### <a name="request-url"></a>URL-адрес запроса
 
 Это запрос PUT.
 
@@ -124,10 +124,10 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|строка|Yes|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|строка|Yes|Идентификатор языковой модели (создается при создании языковой модели)|
-|accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountID|string|Да|Глобальный уникальный идентификатор этой учетной записи|
+|modelId|string|Да|Идентификатор языковой модели (создается при создании языковой модели)|
+|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Текст запроса
 
@@ -169,7 +169,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Следующая команда удаляет пользовательскую языковую модель из указанной учетной записи. Любое видео, в котором использовалась удаленная языковая модель, будет хранить тот же индекс, пока вы не выполните повторную индексацию. При повторной индексации вы можете назначить новую языковую модель для видео. В противном случае для повторной индексации видео Индексатор видео будет использовать модель по умолчанию.
 
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
+### <a name="request-url"></a>URL-адрес запроса
 
 Это запрос DELETE.
 
@@ -189,10 +189,10 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|строка|Yes|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|строка|Yes|Идентификатор языковой модели (создается при создании языковой модели)|
-|accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountID|string|Да|Глобальный уникальный идентификатор этой учетной записи|
+|modelId|string|Да|Идентификатор языковой модели (создается при создании языковой модели)|
+|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Текст запроса
 
@@ -209,7 +209,7 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 > [!NOTE]
 > Должна быть создана языковая модель. Этот вызов можно использовать, чтобы включить или отключить все файлы в модели, обновить имя языковой модели и передать файлы для добавления в языковую модель.
 
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
+### <a name="request-url"></a>URL-адрес запроса
 
 Это запрос PUT.
 
@@ -231,12 +231,12 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|строка|Yes|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|строка|Yes|Идентификатор языковой модели (создается при создании языковой модели)|
-|accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-|modelName|строка|Нет |Новое имя, которое можно предоставить к модели|
-|enable|Логическое|Нет |Выберите, все ли файлы этой модели включены (true) или отключены (false)|
+|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountID|string|Да|Глобальный уникальный идентификатор этой учетной записи|
+|modelId|string|Да|Идентификатор языковой модели (создается при создании языковой модели)|
+|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|modelName|string|Нет|Новое имя, которое можно предоставить к модели|
+|включить|Логическое|Нет|Выберите, все ли файлы этой модели включены (true) или отключены (false)|
 
 ### <a name="request-body"></a>Текст запроса
 
@@ -280,7 +280,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Следующая команда позволяет обновить имя и состояние **включения** файла пользовательской языковой модели в указанной учетной записи.
 
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
+### <a name="request-url"></a>URL-адрес запроса
 
 Это запрос PUT.
 
@@ -300,13 +300,13 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Yes|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|строка|Yes|Идентификатор языковой модели, содержащей файл (создается при создании языковой модели)|
-|fileId|строка|Yes|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
-|accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-|fileName|строка|Нет |Имя обновляемого файла|
-|enable|Логическое|Нет |Обновление, является ли этот файл включен (true) или отключен (false) в языковой модели|
+|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountId|string|Да|Глобальный уникальный идентификатор этой учетной записи|
+|modelId|string|Да|Идентификатор языковой модели, содержащей файл (создается при создании языковой модели)|
+|fileId|string|Да|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
+|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|fileName|string|Нет|Имя обновляемого файла|
+|включить|Логическое|Нет|Обновление, является ли этот файл включен (true) или отключен (false) в языковой модели|
 
 ### <a name="request-body"></a>Текст запроса
 
@@ -331,7 +331,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Следующая команда возвращает сведения об указанной языковой модели в указанной учетной записи, например язык и файлы, которые находятся в языковой модели. 
 
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
+### <a name="request-url"></a>URL-адрес запроса
 
 Это запрос GET.
 ```
@@ -350,10 +350,10 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|строка|Yes|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|строка|Yes|Идентификатор языковой модели (создается при создании языковой модели)|
-|accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountID|string|Да|Глобальный уникальный идентификатор этой учетной записи|
+|modelId|string|Да|Идентификатор языковой модели (создается при создании языковой модели)|
+|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Текст запроса
 
@@ -395,7 +395,7 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Следующая команда возвращает все пользовательские языковые модели в указанной учетной записи в списке.
 
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
+### <a name="request-url"></a>URL-адрес запроса
 
 Это запрос GET.
 
@@ -415,9 +415,9 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
-|accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountID|string|Да|Глобальный уникальный идентификатор для учетной записи|
+|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Текст запроса
 
@@ -467,7 +467,7 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Следующая команда удаляет указанный файл из указанной языковой модели в указанной учетной записи. 
 
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
+### <a name="request-url"></a>URL-адрес запроса
 
 Это запрос DELETE.
 ```
@@ -486,11 +486,11 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|строка|Yes|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|строка|Yes|Идентификатор языковой модели, содержащей файл (создается при создании языковой модели)|
-|fileId|строка|Yes|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
-|accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountID|string|Да|Глобальный уникальный идентификатор этой учетной записи|
+|modelId|string|Да|Идентификатор языковой модели, содержащей файл (создается при создании языковой модели)|
+|fileId|string|Да|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
+|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Текст запроса
 
@@ -504,7 +504,7 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 
 Это возвращает содержимое и метаданные указанного файла из выбранной языковой модели в вашей учетной записи.
 
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
+### <a name="request-url"></a>URL-адрес запроса
 
 Это запрос GET.
 
@@ -523,11 +523,11 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|строка|Yes|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|строка|Yes|Идентификатор языковой модели, содержащей файл (создается при создании языковой модели)|
-|fileId|строка|Yes|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
-|accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountID|string|Да|Глобальный уникальный идентификатор этой учетной записи|
+|modelId|string|Да|Идентификатор языковой модели, содержащей файл (создается при создании языковой модели)|
+|fileId|string|Да|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
+|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Текст запроса
 
@@ -555,7 +555,7 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Следующая команда загружает текстовый файл, содержащий содержимое указанного файла, из указанной языковой модели в указанной учетной записи. Этот текстовый файл должен соответствовать содержимому текстового файла, который был изначально передан.
 
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
+### <a name="request-url"></a>URL-адрес запроса
 ```
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Files/{fileId}/download?accessToken={accessToken}
 ```
@@ -572,11 +572,11 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|строка|Yes|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|строка|Yes|Идентификатор языковой модели, содержащей файл (создается при создании языковой модели)|
-|fileId|строка|Yes|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
-|accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountID|string|Да|Глобальный уникальный идентификатор этой учетной записи|
+|modelId|string|Да|Идентификатор языковой модели, содержащей файл (создается при создании языковой модели)|
+|fileId|string|Да|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
+|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Текст запроса 
 

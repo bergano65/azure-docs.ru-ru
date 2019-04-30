@@ -7,17 +7,18 @@ ms.subservice: development
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: bonova
-ms.author: bonova
+author: WenJason
+ms.author: v-jay
 ms.reviewer: carlrab
-manager: craigg
-ms.date: 09/25/2018
+manager: digimobile
+origin.date: 09/25/2018
+ms.date: 02/25/2019
 ms.openlocfilehash: 62e88d912c55015f87cc00f21527010ad01ee00c
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55560861"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60615667"
 ---
 # <a name="manage-historical-data-in-temporal-tables-with-retention-policy"></a>Управление историческими данными в темпоральных таблицах с политикой хранения
 
@@ -180,7 +181,7 @@ ALTER DATABASE <myDB>
 SET TEMPORAL_HISTORY_RETENTION  ON
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как использовать темпоральные таблицы в приложениях, ознакомьтесь со статьей [Приступая к работе с временными таблицами в базе данных SQL Azure](sql-database-temporal-tables.md).
 

@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 05/08/2018
 ms.author: jomolesk
 ms.openlocfilehash: 1ba5b813843ce2f5d31f337ab4d3d94e521b0e0c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57864479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60586140"
 ---
 # <a name="azure-security-and-compliance-blueprint-iaas-web-application-for-fedramp"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение IaaS для FedRAMP
 
@@ -59,7 +59,7 @@ ms.locfileid: "57864479"
     - (1) Виртуальные сети размером в /16.
     - (5) Подсети размером в /24.
     - Параметры DNS настроены на двух контроллерах доменов.
-- Azure Load Balancer
+- Балансировщик нагрузки Azure
 - Шлюз приложений Azure
     - (1) Включенный шлюз приложений с брандмауэром веб-приложения:
         - режим брандмауэра — предотвращение;
@@ -69,7 +69,7 @@ ms.locfileid: "57864479"
     - (7) Учетная запись хранения для геоизбыточного хранилища.
 - Облако-свидетель Azure.
 - Хранилище служб восстановления
-- Хранилище ключей Azure
+- Хранилище Azure Key Vault
 - Azure Active Directory (Azure AD)
 - Azure Resource Manager
 - Azure Monitor (журналы)
@@ -137,7 +137,7 @@ ms.locfileid: "57864479"
 - [брандмауэр веб-приложения](https://docs.microsoft.com/azure/application-gateway/application-gateway-web-application-firewall-overview) (режим WAF);
 - [режим предотвращения](https://docs.microsoft.com/azure/application-gateway/application-gateway-web-application-firewall-portal) с набором правил OWASP 3.0.
 
-### <a name="business-continuity"></a>Непрерывность бизнес-процессов
+### <a name="business-continuity"></a>Непрерывная работа
 
 **Высокий уровень доступности**. Во время планового или внепланового технического обслуживания доступна как минимум одна виртуальная машина, что соответствует соглашению об уровне обслуживания Azure, гарантирующему доступность в течение 99,95 % времени. Решение позволяет развернуть все виртуальные машины веб-уровня и уровня данных в [группе доступности](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-availability-sets). Группа доступности распределяет виртуальные машины между несколькими изолированными аппаратными кластерами, чтобы повысить уровень доступности. Более того, это решение позволяет развернуть виртуальные машины SQL Server в группе доступности в качестве [группы доступности AlwaysOn](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-availability-group-overview). Группа доступности Always On предоставляет возможности, обеспечивающие высокий уровень доступности, и возможности аварийного восстановления.
 
@@ -184,7 +184,7 @@ ms.locfileid: "57864479"
 > [!NOTE]
 > Это решение развертывается в Azure для государственных организаций.
 
-#### <a name="quickstart"></a>Быстрый запуск
+#### <a name="quickstart"></a>Краткое руководство
 1. Клонируйте или скачайте [этот](https://aka.ms/fedrampblueprintrepo) репозиторий GitHub на локальную рабочую станцию.
 
 2. Запустите сценарий PowerShell для предварительного развертывания: azure-blueprint/predeploy/Orchestration_InitialSetup.ps1.
@@ -203,7 +203,7 @@ ms.locfileid: "57864479"
 
 См. [рекомендации](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid) по реализации защищенной гибридной сети, расширяющей локальную сеть в Azure.
 
-## <a name="disclaimer"></a>Отказ от ответственности
+## <a name="disclaimer"></a>Заявление об отказе
 
 - Этот документ является исключительно информационным. МАЙКРОСОФТ НЕ ПРЕДОСТАВЛЯЕТ НИКАКИХ ГАРАНТИЙ, ЯВНЫХ, КОСВЕННЫХ ИЛИ ПРЕДУСМОТРЕННЫХ ЗАКОНОМ, В ОТНОШЕНИИ ИНФОРМАЦИИ В ЭТОМ ДОКУМЕНТЕ. Данный документ предоставляется "как есть". Сведения и мнения, представленные в данном документе, включая URL-адреса и ссылки на другие веб-сайты, могут быть изменены без предварительного уведомления. Клиенты, читающие этот документ, берут ответственность за его использование на себя.  
 - Настоящий документ не предоставляет клиентам юридических прав на интеллектуальную собственность в отношении продуктов или решений корпорации Майкрософт.  

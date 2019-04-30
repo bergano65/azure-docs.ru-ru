@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 10/12/2018
 ms.author: jonbeck
-ms.openlocfilehash: 70dca655d5300fcd34b4198093e136f6a971963b
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 44b965bd60d976d4d28dc5e31d78a1c838d4ee02
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49344495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60542360"
 ---
 # <a name="high-performance-compute-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для высокопроизводительных вычислений
 
@@ -33,8 +33,10 @@ ms.locfileid: "49344495"
 
 ### <a name="mpi"></a>MPI 
 
-Поддерживаются только версии Intel MPI 5.x. Более поздние версии библиотеки среды выполнения Intel MPI (2017, 2018) несовместимы с драйверами Azure Linux RDMA.
+Поддерживаются только версии Intel MPI 5.x.
 
+> [!NOTE]
+> Более поздние версии (2017, 2018) среды выполнения Intel MPI библиотеки могут или не могут быть совместимы с драйверами Azure Linux RDMA.
 
 ### <a name="distributions"></a>Дистрибутивы
  
@@ -88,7 +90,7 @@ Azure предоставляет несколько вариантов для с
 - [GPU](../windows/sizes-gpu.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
 

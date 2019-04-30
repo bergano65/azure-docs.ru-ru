@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 09/05/2018
 ms.author: aschhab
 ms.openlocfilehash: d6c2cd813e96b40fc9f95785a1fd28e324a0437b
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54850975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61315884"
 ---
 # <a name="service-bus-management-libraries"></a>Библиотеки управления служебной шины
 
@@ -32,7 +32,7 @@ ms.locfileid: "54850975"
 * Создание, обновление, удаление раздела.
 * Создание, обновление, удаление подписки.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы приступить к работе с библиотеками управления служебной шины, нужно пройти аутентификацию в службе Azure Active Directory (Azure AD). Azure AD требует выполнять аутентификацию в качестве субъекта-службы, который предоставляет доступ к вашим ресурсам Azure. Сведения о создании субъекта-службы см. в одной из приведенных ниже статей:  
 
@@ -76,7 +76,7 @@ ms.locfileid: "54850975"
    await sbClient.Queues.CreateOrUpdateAsync(resourceGroupName, namespaceName, QueueName, queueParams);
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Пример управления для .NET](https://github.com/Azure-Samples/service-bus-dotnet-management/)
 * [Справочник по API Microsoft.Azure.Management.ServiceBus](/dotnet/api/Microsoft.Azure.Management.ServiceBus)

@@ -1,7 +1,7 @@
 ---
 title: Преобразование шаблона масштабируемого набора Azure Resource Manager для использования управляемого диска | Документация Майкрософт
 description: Преобразование шаблона масштабируемого набора в соответствующий шаблон с управляемым диском.
-keywords: наборы масштабирования виртуальных машин
+keywords: масштабируемые наборы виртуальных машин
 services: virtual-machine-scale-sets
 documentationcenter: ''
 author: mayanknayar
@@ -17,11 +17,11 @@ ms.topic: article
 ms.date: 5/18/2017
 ms.author: manayar
 ms.openlocfilehash: b2d1738b85799079b3af7ab39c5cb1799a38d382
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53339881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60731743"
 ---
 # <a name="convert-a-scale-set-template-to-a-managed-disk-scale-set-template"></a>Преобразование шаблона масштабируемого набора в соответствующий шаблон с управляемым диском.
 
@@ -143,7 +143,7 @@ ms.locfileid: "53339881"
 Дополнительные сведения об использовании дисков данных с масштабируемыми наборами можно получить [в этой статье](./virtual-machine-scale-sets-attached-disks.md).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы найти примеры шаблонов Resource Manager с использованием наборов масштабирования, выполните поиск строки vmss в [репозитории GitHub с шаблонами быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates).
 
 Общие сведения см. на [главной целевой странице по наборам масштабирования](https://azure.microsoft.com/services/virtual-machine-scale-sets/).

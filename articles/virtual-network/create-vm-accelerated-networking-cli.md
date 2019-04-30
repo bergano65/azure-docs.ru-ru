@@ -17,11 +17,11 @@ ms.date: 01/10/2019
 ms.author: gsilva
 ms.custom: ''
 ms.openlocfilehash: 8ea17e5615c0256c084b0745a392fb49f8873f99
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58805369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60713744"
 ---
 # <a name="create-a-linux-virtual-machine-with-accelerated-networking"></a>Создание виртуальной машины Linux с ускоренной сетью
 
@@ -62,7 +62,7 @@ ms.locfileid: "58805369"
 
 Дополнительные сведения см. в статье [Размеры виртуальных машин Linux в Azure](../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
-### <a name="regions"></a>регионы
+### <a name="regions"></a>Регионы
 Доступно во всех общедоступных регионах Azure, а также в облаках Azure для государственных организаций.
 
 <!-- ### Network interface creation 
@@ -82,7 +82,7 @@ removed per issue https://github.com/MicrosoftDocs/azure-docs/issues/9772 -->
 После создания виртуальной машины, можно убедиться, повышения производительности сети включена, следуя инструкциям в [убедитесь, что ускоренная сеть включена](#confirm-that-accelerated-networking-is-enabled).
 
 ## <a name="cli-creation"></a>Создание интерфейса командной строки
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 Установите последнюю версию [Azure CLI](/cli/azure/install-azure-cli) и войдите в систему с учетной записью Azure, выполнив команду [az login](/cli/azure/reference-index). В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *myNic* и *myVm*.
 

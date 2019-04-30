@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 05/02/2018
 ms.author: spelluru
 ms.openlocfilehash: 05d7ac56d6c1c48125eb458d0eee852ba396b300
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55663100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60593341"
 ---
 # <a name="available-relay-apis"></a>Доступные интерфейсы API ретранслятора
 
@@ -31,11 +31,11 @@ ms.locfileid: "55663100"
 
 | Язык или платформа | Доступная функция | Пакет клиента | Репозиторий |
 | --- | --- | --- | --- |
-| .NET Standard | через гибридные подключения | [Microsoft.Azure.Relay](https://www.nuget.org/packages/Microsoft.Azure.Relay/) | [GitHub](https://github.com/azure/azure-relay-dotnet) |
-| .NET Framework | Ретранслятор WCF | [WindowsAzure.ServiceBus](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) | Недоступно |
-| Узел | через гибридные подключения | [Подключения Websocket: `hyco-ws`](https://www.npmjs.com/package/hyco-ws)<br/>[Подключения Websocket: `hyco-websocket`](https://www.npmjs.com/package/hyco-websocket)<br/>[HTTP-запросы: `hyco-https`](https://www.npmjs.com/package/hyco-https) | [GitHub](https://github.com/Azure/azure-relay-node) |
+| .NET Standard | Гибридные подключения | [Microsoft.Azure.Relay](https://www.nuget.org/packages/Microsoft.Azure.Relay/) | [GitHub](https://github.com/azure/azure-relay-dotnet) |
+| .NET Framework | Ретранслятор WCF | [WindowsAzure.ServiceBus](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) | Н/Д |
+| Узел | Гибридные подключения | [Подключения Websocket: `hyco-ws`](https://www.npmjs.com/package/hyco-ws)<br/>[Подключения Websocket: `hyco-websocket`](https://www.npmjs.com/package/hyco-websocket)<br/>[HTTP-запросы: `hyco-https`](https://www.npmjs.com/package/hyco-https) | [GitHub](https://github.com/Azure/azure-relay-node) |
 
-### <a name="additional-information"></a>Дополнительная информация
+### <a name="additional-information"></a>Дополнительные сведения
 
 #### <a name="net"></a>.NET
 
@@ -55,7 +55,7 @@ ms.locfileid: "55663100"
 
 Сведения об этих модулях можно найти в репозитории GitHub [azure-relay-node](https://github.com/Azure/azure-relay-node).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о ретрансляторе Azure доступны по следующим ссылкам:
 * [Что такое ретранслятор Azure?](relay-what-is-it.md)

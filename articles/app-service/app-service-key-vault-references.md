@@ -13,11 +13,11 @@ ms.date: 11/20/2018
 ms.author: mahender
 ms.custom: seodec18
 ms.openlocfilehash: 662260c3cf37f8f8a675c522f3d3dea41153e485
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55663577"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60853150"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions-preview"></a>Использование ссылок на Key Vault в Службе приложений и Функциях Azure (предварительная версия)
 
@@ -44,7 +44,7 @@ ms.locfileid: "55663577"
 Ссылка на Key Vault имеет вид `@Microsoft.KeyVault({referenceString})`, где `{referenceString}` заменяется одним из следующих значений.
 
 > [!div class="mx-tdBreakAll"]
-> | Строка ссылки                                                            | ОПИСАНИЕ                                                                                                                                                                                 |
+> | Строка ссылки                                                            | Описание                                                                                                                                                                                 |
 > |-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | SecretUri=_secretUri_                                                       | Здесь **SecretUri** является полным URI плоскости данных секрета в Key Vault, включая версию, например: https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931.  |
 > | VaultName=_vaultName_;SecretName=_secretName_;SecretVersion=_secretVersion_ | Здесь **VaultName** — имя ресурса Key Vault. **SecretName** — имя целевого секрета. **SecretVersion** — используемая версия секрета. |

@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 12/20/2018
 ms.author: absha
 ms.openlocfilehash: 4747d824dcf531ed883d476a0daad182ea081c39
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57314455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60715102"
 ---
 # <a name="tutorial-create-an-application-gateway-and-rewrite-http-headers"></a>Руководство по Создание шлюза приложений и перезапись заголовков HTTP
 
@@ -46,7 +46,7 @@ Connect-AzAccount
 Select-AzSubscription -Subscription "<sub name>"
 ```
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создать группу ресурсов
 Создайте группу ресурсов в одном из доступных расположений.
 
 ```azurepowershell
@@ -57,7 +57,7 @@ $rg = "<rg name>"
 New-AzResourceGroup -Name $rg -Location $location
 ```
 
-## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 Создайте виртуальную сеть с одной выделенной подсетью для автоматически масштабируемого шлюза приложений. В настоящее время в каждой выделенной подсети можно развернуть только один автоматически масштабируемый шлюз приложений.
 
@@ -162,7 +162,7 @@ $appgw = New-AzApplicationGateway -Name "AutoscalingAppGw" -Zone 1,2,3 -Resource
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-Используйте Get-AzPublicIPAddress, чтобы получить общедоступный IP-адрес шлюза приложений. Скопируйте общедоступный IP-адрес или DNS-имя и вставьте его в адресную строку браузера.
+Используйте командлет Get-AzPublicIPAddress, чтобы получить общедоступный IP-адрес шлюза приложений. Скопируйте общедоступный IP-адрес или DNS-имя и вставьте его в адресную строку браузера.
 
 ```azurepowershell
 Get-AzPublicIPAddress -ResourceGroupName $rg -Name AppGwVIP

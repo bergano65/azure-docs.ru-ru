@@ -12,11 +12,11 @@ ms.workload: infrastructure-services
 ms.date: 09/18/2018
 ms.author: sharadag
 ms.openlocfilehash: 16770ea0a320b3d9f081cc21a102ab050a6467f6
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60009758"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60736807"
 ---
 # <a name="monitoring-metrics-and-logs-in-azure-front-door-service"></a>Мониторинг метрик и журналов в службе Azure передовой линии
 
@@ -29,15 +29,15 @@ ms.locfileid: "60009758"
 
 Метрики — это функция определенных ресурсов Azure, которые дают возможность просмотреть счетчики производительности на портале. Ниже приведены доступные метрики двери.
 
-| Метрика | Отображаемое имя метрики | Единица измерения | Измерения | ОПИСАНИЕ |
+| Метрика | Отображаемое имя метрики | Единица | Размеры | Описание |
 | --- | --- | --- | --- | --- |
 | RequestCount | Число запросов | Количество | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Число клиентских запросов, обслуженных службой Front Door.  |
-| RequestSize | Размер запроса | Байты | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Число байт, отправленных в качестве запросов от клиентов в службу Front Door. |
-| ResponseSize | Размер ответа | Байты | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Число байт, отправленных клиентам в качестве ответов из службы Front Door. |
-| TotalLatency | Total Latency (Общая задержка) | Миллисекунды | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Время отсчитывается от запроса клиента, полученных двери, пока клиент подтверждено последнего байта ответа из входной двери. |
-| BackendRequestCount | Число запросов к серверному компоненту | Количество | HttpStatus</br>HttpStatusGroup</br>Серверная часть | Число запросов, отправленных из службы Front Door к серверным частям. |
-| BackendRequestLatency | Backend Request Latency (Задержка запросов к серверным частям) | Миллисекунды | Серверная часть | Время с момента отправки запроса службой Front Door к серверной части до получения Front Door последнего байта ответа от серверной части. |
-| BackendHealthPercentage | Работоспособность серверного компонента (в процентах) | Процент | Серверная часть</br>BackendPool | Процент успешных проб работоспособности от службы Front Door к серверным частям. |
+| RequestSize | Размер запроса | Байт | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Число байт, отправленных в качестве запросов от клиентов в службу Front Door. |
+| ResponseSize | Размер ответа | Байт | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Число байт, отправленных клиентам в качестве ответов из службы Front Door. |
+| TotalLatency | Total Latency (Общая задержка) | мс | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Время отсчитывается от запроса клиента, полученных двери, пока клиент подтверждено последнего байта ответа из входной двери. |
+| BackendRequestCount | Число запросов к серверному компоненту | Количество | HttpStatus</br>HttpStatusGroup</br>Сервер | Число запросов, отправленных из службы Front Door к серверным частям. |
+| BackendRequestLatency | Backend Request Latency (Задержка запросов к серверным частям) | мс | Сервер | Время с момента отправки запроса службой Front Door к серверной части до получения Front Door последнего байта ответа от серверной части. |
+| BackendHealthPercentage | Работоспособность серверного компонента (в процентах) | Процент | Сервер</br>BackendPool | Процент успешных проб работоспособности от службы Front Door к серверным частям. |
 | WebApplicationFirewallRequestCount | Web Application Firewall Request Count (Число запросов к брандмауэру веб-приложения) | Количество | PolicyName</br>RuleName</br>Действие | Количество клиентских запросов, обрабатываемых механизмом безопасности на прикладном уровне службы Front Door. |
 
 ## <a name="activity-log"></a>Журналы действий
@@ -73,7 +73,7 @@ ms.locfileid: "60009758"
 
 Служба двери в настоящее время предоставляет журналы диагностики (в пакетном режиме каждый час). Эти журналы содержат отдельных запросов API со следующей схемой каждой записи:
 
-| Свойство  | ОПИСАНИЕ |
+| Свойство  | Описание |
 | ------------- | ------------- |
 | ClientIp | IP-адрес отправившего запрос клиента. |
 | clientPort | Порт IP-адрес клиента, который отправил запрос. |

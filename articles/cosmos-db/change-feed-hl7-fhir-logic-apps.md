@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 02/08/2017
 ms.author: sngun
 ms.openlocfilehash: 765596500e3ac294dc79f0785b12b03370fa652a
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54354490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60893915"
 ---
 # <a name="notifying-patients-of-hl7-fhir-health-care-record-changes-using-logic-apps-and-azure-cosmos-db"></a>Уведомление пациентов об изменениях в медицинских картах HL7 FHIR с помощью Logic Apps и Azure Cosmos DB
 
@@ -76,7 +76,7 @@ Azure Cosmos DB выполняет роль репозитория для рес
 
 <a id="api-app"></a>
 
-#### <a name="api-app"></a>приложение API;
+#### <a name="api-app"></a>Приложение API
 Приложение API подключается к Azure Cosmos DB и запрашивает наличие новых или измененных документов FHIR по типу ресурса. Это приложение содержит один контроллер **FhirNotificationApi** с одной операцией **GetNewOrModifiedFhirDocuments** (см. раздел об [исходном коде для приложения API](#api-app-source)).
 
 Мы используем класс [`CreateDocumentChangeFeedQuery`](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.createdocumentchangefeedquery.aspx) из API-интерфейса .NET для SQL в Azure Cosmos DB. Дополнительные сведения см. в статье [Работа с поддержкой веб-канала изменений в Azure DocumentDB](change-feed.md). 
@@ -221,7 +221,7 @@ Azure Cosmos DB выполняет роль репозитория для рес
 - Используя приложения логики, вы можете создавать рабочие процессы даже без написания кода.
 - Также вы узнали, как использовать очереди служебной шины Azure для обработки распространения документов HL7 FHIR.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о базе данных Azure Cosmos DB см. на [ее главной странице](https://azure.microsoft.com/services/cosmos-db/). Подробную информацию о приложениях Azure Logic Apps см. [здесь](https://azure.microsoft.com/services/logic-apps/).
 
 

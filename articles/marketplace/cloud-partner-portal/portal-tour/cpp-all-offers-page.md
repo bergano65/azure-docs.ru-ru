@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 11/12/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 67ec9765e4334330da04739dd5daa3be0d7c7342
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52266625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60911105"
 ---
 # <a name="all-offers-page"></a>Страница "Все предложения"
 
@@ -33,6 +33,6 @@ ms.locfileid: "52266625"
 ![Страница "Все предложения"](./media/all-offers-page1.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следующий элемент в строке навигационного меню открывает страницу [Утверждения](./cpp-approvals-page.md), на которой перечислены утвержденные предложения.  Утвержденные предложения либо уже опубликованы, либо еще публикуются.

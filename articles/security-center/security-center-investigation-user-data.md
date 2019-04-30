@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/20/2018
 ms.author: rkarlin
 ms.openlocfilehash: bec9be627937913c268d65bb6cdadcf68c7a3fb4
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57244304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60909219"
 ---
 # <a name="manage-user-data-found-in-an-azure-security-center-investigation"></a>Управление данными пользователя, находящимися в анализе центра безопасности Azure
 В этой статье содержатся сведения об управлении данными пользователя, находящимися в анализе центра безопасности Azure. Исследование данных хранится в [журналы Azure Monitor](../log-analytics/log-analytics-overview.md) и доступны в центре безопасности. Управление данными пользователя включает в себя возможность удаления и экспорта данных.

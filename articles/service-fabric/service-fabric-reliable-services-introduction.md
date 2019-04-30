@@ -15,13 +15,13 @@ ms.workload: NA
 ms.date: 3/9/2018
 ms.author: masnider
 ms.openlocfilehash: 1789c7489e58df09dccfde3e7ab106ef54b5c1ae
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58666194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60727018"
 ---
-# <a name="reliable-services-overview"></a>Обзор надежных служб
+# <a name="reliable-services-overview"></a>Обзор Reliable Services
 Платформа Azure Service Fabric упрощает написание надежных служб с отслеживанием и без отслеживания состояния и управление такими службами. В этой статье рассматриваются следующие вопросы.
 
 * Модель программирования надежных служб для служб с отслеживанием состояния и без него.

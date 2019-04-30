@@ -15,18 +15,18 @@ ms.workload: multiple
 ms.date: 06/08/2018
 ms.author: pepogors
 ms.openlocfilehash: 622e6f7552d91cdb9ccf3668c302496c68a5920f
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58665990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60719249"
 ---
 # <a name="multi-container-application-and-service-manifest-examples"></a>Примеры манифестов многоконтейнерных приложений и служб
 Ниже приведены примеры манифестов приложений и служб для многоконтейнерного приложения Service Fabric. Цель этих примеров — показать, какие параметры являются доступными и как их использовать. Эти манифесты приложений и служб основаны на манифестах [контейнера Windows Server 2016](https://github.com/Azure-Samples/service-fabric-containers/tree/master/Windows).
 
 Показаны следующие функции:
 
-|Manifest|Функции|
+|Манифест|Компоненты|
 |---|---|
 |[Манифест приложения](#application-manifest)| [Переопределение переменных среды](service-fabric-get-started-containers.md#configure-and-set-environment-variables), [настройка сопоставления порта контейнера с узлом](service-fabric-get-started-containers.md#configure-container-port-to-host-port-mapping-and-container-to-container-discovery), [настройка проверки подлинности в реестре контейнеров](service-fabric-get-started-containers.md#configure-container-registry-authentication), [управление ресурсами](service-fabric-resource-governance.md), [установка режима изоляции](service-fabric-get-started-containers.md#configure-isolation-mode), [указание образов контейнеров конкретной сборки ОС](service-fabric-get-started-containers.md#specify-os-build-specific-container-images)| 
 |[Манифест службы FrontEndService](#frontendservice-service-manifest)| [Настройка переменных среды](service-fabric-get-started-containers.md#configure-and-set-environment-variables), [настройка конечной точки](service-fabric-get-started-containers.md#configure-communication), передача команд в контейнер, [импорт сертификата в контейнер](service-fabric-securing-containers.md)| 

@@ -10,18 +10,18 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/22/2018
 ms.openlocfilehash: 673f4935dce28b30c10e6abf4c7d22e00c1dd73a
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56343916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60762241"
 ---
 # <a name="install-azure-stream-analytics-tools-for-visual-studio"></a>Установка инструментов Azure Stream Analytics для Visual Studio
 Инструменты Azure Stream Analytics поддерживают Visual Studio 2017, Visual Studio 2015 и Visual Studio 2013. В этой статье показано, как устанавливать и удалять инструменты.
 
 Дополнительные сведения об использовании инструментов см. в статье [Использование инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md).
 
-## <a name="install"></a>Install
+## <a name="install"></a>Установка
 ### <a name="recommended-visual-studio-2019-and-2017"></a>Рекомендация: Visual Studio 2019 и 2017
 * Скачайте [Visual Studio 2019 (предварительная версия 2 или более поздняя) и Visual Studio 2017 (версия 15.3 или более поздняя)](https://www.visualstudio.com/). Поддерживаются выпуски Enterprise (Ultimate/Premium), Professional и Community. Выпуск Express не поддерживается. Visual Studio 2017 не поддерживается на компьютерах Mac. 
 * Инструменты Stream Analytics являются частью рабочей нагрузки **разработки Azure** и **хранилища и обработки данных** в Visual Studio 2017. Включите одну из этих рабочих нагрузок как часть установки Visual Studio.
@@ -43,7 +43,7 @@ ms.locfileid: "56343916"
 * Установите пакет SDK Microsoft Azure для .NET версии 2.7.1 или более поздней версии с помощью [установщика веб-платформы](https://www.microsoft.com/web/downloads/platform.aspx).
 * Установите [инструменты Azure Stream Analytics для Visual Studio](https://www.microsoft.com/en-us/download/details.aspx?id=49504).
 
-## <a name="update"></a>Блокировка изменений
+## <a name="update"></a>Обновить
 
 ### <a name="visual-studio-2019-and-2017"></a>Visual Studio 2019 и 2017
 Напоминание о новой версии отображается в уведомлении Visual Studio.

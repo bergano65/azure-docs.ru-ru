@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 12/04/2018
 ms.custom: seodec18
 ms.openlocfilehash: 6f2d71abeacee531b21a8276f621367dd39a39d9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58891673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60820401"
 ---
 # <a name="train-models-with-automated-machine-learning-in-the-cloud"></a>Обучение моделей с помощью автоматического машинного обучения в облаке
 
@@ -37,7 +37,7 @@ ms.locfileid: "58891673"
 ws = Workspace.from_config()
 ```
 
-## <a name="create-resource"></a>Создайте ресурс
+## <a name="create-resource"></a>Создать ресурс
 
 Создайте машину DSVM в рабочей области (`ws`), если она еще не существует. Если DSVM уже была создана, этот код пропускает процесс создания и загружает данные существующих ресурсов в объект `dsvm_compute`.  
 
@@ -242,7 +242,7 @@ RunDetails(remote_run).show()
 
 Мини-приложение показывает URL-адрес, который можно использовать для просмотра и изучения данных отдельного прогона.
  
-### <a name="view-logs"></a>Просмотр журналов
+### <a name="view-logs"></a>Просмотреть журналы
 
 Найдите журналы на DSVM в каталоге `/tmp/azureml_run/{iterationid}/azureml-logs`.
 

@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 09/25/2016
 ms.author: glenga
 ms.openlocfilehash: fd8fa690c508b8bf748490668c1e9aaa811ac247
-ms.sourcegitcommit: f863ed1ba25ef3ec32bd188c28153044124cacbc
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56300285"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60731299"
 ---
 # <a name="continuous-deployment-for-azure-functions"></a>Непрерывное развертывание для Функций Azure
 Функции Azure упрощают развертывание приложения-функции за счет непрерывной интеграции службы приложений. Функции интегрируются с BitBucket, Dropbox, GitHub и Azure DevOps. Это позволяет организовать работу так, чтобы изменения кода функций, вносимые одной из интегрированных служб, активировали развертывание в Azure. Если вы еще не работали с Функциями Azure, начните с [обзора](functions-overview.md).
@@ -41,7 +41,7 @@ ms.locfileid: "56300285"
 
 Чтобы иметь возможность выполнять развертывание из Azure DevOps, необходимо связать учетную запись организации Azure DevOps с подпиской Azure. Дополнительные сведения см. в разделе [Set up billing via the Azure Portal](https://docs.microsoft.com/azure/devops/organizations/billing/set-up-billing-for-your-organization-vs?view=vsts#set-up-billing-via-the-azure-portal) (Настройка выставления счетов через портал Azure).
 
-## <a name="set-up-continuous-deployment"></a>Непрерывное развертывание с использованием GIT в службе приложений Azure
+## <a name="set-up-continuous-deployment"></a>Настройка непрерывного развертывания
 Используйте эту процедуру, чтобы настроить непрерывное развертывание для имеющегося приложения-функции. Здесь показана интеграция с репозиторием GitHub, но аналогичные действия применяются и для Azure DevOps и других служб развертывания.
 
 1. В приложении-функции на [портале Azure](https://portal.azure.com) щелкните **Функции платформы** и **Параметры развертывания**. 
@@ -93,9 +93,9 @@ ms.locfileid: "56300285"
 > [!NOTE]
 > После настройки непрерывной интеграции исходные файлы больше нельзя изменять на портале функций.
 
-- [How to: Настройка учетных данных развертывания](#credentials)
-- [How to: Скачивание файлов с помощью FTP](#downftp)
-- [How to: Скачивание файлов с помощью локального репозитория Git](#downgit)
+- [Практическое руководство. Настройка учетных данных развертывания](#credentials)
+- [Практическое руководство. Скачивание файлов с помощью FTP](#downftp)
+- [Практическое руководство. Скачивание файлов с помощью локального репозитория Git](#downgit)
 
 <a name="credentials"></a>
 #### <a name="how-to-configure-deployment-credentials"></a>Практическое руководство: Настройка учетных данных развертывания
@@ -147,7 +147,7 @@ ms.locfileid: "56300285"
 
 [GitHub]: https://github.com/
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Best Practices for Azure Functions](functions-best-practices.md) (Рекомендации по Функциям Azure)

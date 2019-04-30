@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 03/11/2019
 ms.author: alkohli
 ms.openlocfilehash: 68f8ad903f967812c4a416c732b35fa1712404cd
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59998572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60756706"
 ---
 # <a name="use-the-azure-portal-to-manage-users-on-your-azure-data-box-edge"></a>Управление пользователями в Azure Data Box Edge с помощью портала Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "59998572"
 В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
-> * Добавление пользователей
+> * Добавление пользователя
 > * Изменение пользователя
 > * Удаление пользователя
 
@@ -36,7 +36,7 @@ ms.locfileid: "59998572"
 Сначала разрешения пользователя определяются при его создании во время создания общей папки. После определения разрешений, связанных с пользователем, их можно изменить с помощью проводника. 
 
 
-## <a name="add-a-user"></a>Добавление пользователей
+## <a name="add-a-user"></a>Добавление пользователя
 
 Выполните на портале Azure шаги ниже, чтобы добавить пользователя.
 
@@ -76,7 +76,7 @@ ms.locfileid: "59998572"
 
 3. При появлении запроса подтвердите удаление. 
 
-   ![Подтверждение удаления](media/data-box-edge-manage-users/delete-user-3.png)
+   ![Подтвердите удаление](media/data-box-edge-manage-users/delete-user-3.png)
 
 Список пользователей обновляется с учетом удаления.
 

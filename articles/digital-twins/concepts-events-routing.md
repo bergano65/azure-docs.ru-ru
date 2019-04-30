@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 12/14/2018
 ms.author: alinast
 ms.openlocfilehash: b7ace0718ea0fad0b746a40c90acff487ae314d5
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54035701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60926293"
 ---
 # <a name="routing-events-and-messages"></a>Маршрутизация событий и сообщений
 
@@ -55,14 +55,14 @@ Digital Twins в настоящее время поддерживает след
 
 |             | DeviceMessages | TopologyOperation | SpaceChange | SensorChange | UdfCustom |
 | ----------- | -------------- | ----------------- | ----------- | ------------ | --------- |
-| концентратор событий.|     X          |         X         |     X       |      X       |   X       |
+| EventHub|     X          |         X         |     X       |      X       |   X       |
 | Служебная шина|              |         X         |     X       |      X       |   X       |
 | Сетка событий|               |         X         |     X       |      X       |   X       |
 
 >[!NOTE]  
 >Дополнительные сведения о создании конечных точек и примеры использования схемы событий см. в статье, посвященной [конечным точкам и исходящему трафику](how-to-egress-endpoints.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы узнать об ограничениях общедоступной предварительной версии Azure Digital Twins, ознакомьтесь с [этой статьей](concepts-service-limits.md).
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Управление вычислениями с помощью службы "Функции Azure" в Хранилище данных SQL Azure | Документация Майкрософт
+title: Руководство по Управление вычислениями с помощью службы "Функции Azure" в Хранилище данных SQL Azure | Документация Майкрософт
 description: Инструкции по использованию службы "Функции Azure" для управления вычислениями в хранилище данных.
 services: sql-data-warehouse
 author: KavithaJonnakuti
@@ -11,11 +11,11 @@ ms.date: 04/27/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
 ms.openlocfilehash: b94e4c6f178119d6205c302cf35a9effaf2aa885
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57870936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61083881"
 ---
 # <a name="use-azure-functions-to-manage-compute-resources-in-azure-sql-data-warehouse"></a>Управление вычислительными ресурсами в хранилище данных Azure SQL с помощью службы "Функции Azure"
 
@@ -140,7 +140,7 @@ ms.locfileid: "57870936"
 
 В этом разделе кратко показано, что необходимо для более комплексного планирования возможностей паузы, возобновления и масштабирования.
 
-### <a name="example-1"></a>Пример 1
+### <a name="example-1"></a>Пример 1:
 
 Ежедневное увеличение масштаба до значения DW600 в 8:00 и уменьшение масштаба до DW200 в 20:00.
 
@@ -149,7 +149,7 @@ ms.locfileid: "57870936"
 | Функция 1 | 0 0 8 * * *  | `var operation = {"operationType": "ScaleDw",  "ServiceLevelObjective": "DW600"}` |
 | Функция 2 | 0 0 20 * * * | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW200"}` |
 
-### <a name="example-2"></a>Пример 2 
+### <a name="example-2"></a>Пример 2: 
 
 Ежедневное увеличение масштаба в 8:00 до DW1000, однократное уменьшение до DW600 в 16:00 и уменьшение масштаба в 22:00 до DW200.
 

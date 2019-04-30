@@ -1,20 +1,22 @@
 ---
 title: Секционирование данных в API Gremlin для Azure Cosmos DB | Документация Майкрософт
 description: Узнайте, как в Azure Cosmos DB можно использовать секционированный граф. В этой статье также описываются требования и рекомендации для секционированного графа.
-author: luisbosquez
-ms.author: lbosq
+author: rockboyfor
+ms.author: v-yeche
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: conceptual
-ms.date: 12/06/2018
+origin.date: 12/06/2018
+ms.date: 03/18/2019
 ms.custom: seodec18
 ms.openlocfilehash: f1e486a302b440d819e15ef86f8d76ea5e50d201
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54036330"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60888421"
 ---
+<!--Verify sucessfully-->
 # <a name="using-a-partitioned-graph-in-azure-cosmos-db"></a>Использование секционированного графа в Azure Cosmos DB
 
 Одной из ключевых функций API Gremlin в Azure Cosmos DB является способность обрабатывать крупномасштабные графы с помощью горизонтального масштабирования. Горизонтального масштабирования можно достичь с помощью [возможностей секционирования в Azure Cosmos DB](partition-data.md). С точки зрения хранилища и пропускной способности контейнеры можно масштабировать независимо друг от друга. В Azure Cosmos DB можно создавать контейнеры, которые можно автоматически масштабировать, чтобы хранить данные графа. Данные автоматически балансируются на основе указанного **ключа секции**.
@@ -37,27 +39,26 @@ ms.locfileid: "54036330"
 
     - `/id` и `/label` не поддерживаются в качестве ключей секции для контейнера в API Gremlin.
 
-
     - Выбор вершины по идентификатору, затем **использование шага `.has()` для указания свойства ключа секции**: 
-    
+
         ```
         g.V('vertex_id').has('partitionKey', 'partitionKey_value')
         ```
-    
+
     - Выбор вершины путем **указания кортежа, включая значение ключа секции и идентификатор**: 
-    
+
         ```
         g.V(['partitionKey_value', 'vertex_id'])
         ```
-        
+
     - Указание **массива кортежей значений ключей секций и идентификаторов**:
-    
+
         ```
         g.V(['partitionKey_value0', 'verted_id0'], ['partitionKey_value1', 'vertex_id1'], ...)
         ```
-        
+
     - Выбор набора вершин и **определение списка значений ключей секций**: 
-    
+
         ```
         g.V('vertex_id0', 'vertex_id1', 'vertex_id2', …).has('partitionKey', within('partitionKey_value0', 'partitionKey_value01', 'partitionKey_value02', …)
         ```
@@ -74,10 +75,13 @@ ms.locfileid: "54036330"
 
 - **Оптимизируйте запросы для получения данных в пределах секции**. Оптимальной стратегией секционирования является согласование с шаблонами запросов. Запросы для получения данных из одной секции обеспечивают наилучшую производительность.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Затем можно ознакомиться со следующими статьями:
 
 * Дополнительные сведения о [секционировании и масштабировании в Azure Cosmos DB](partition-data.md).
 * Дополнительные сведения о [поддержке Gremlin в API Gremlin](gremlin-support.md).
 * [Общие сведения об API Gremlin](graph-introduction.md).
+
+<!--Update_Description: new articles on  -->
+<!--ms.date: 03/18/2019-->

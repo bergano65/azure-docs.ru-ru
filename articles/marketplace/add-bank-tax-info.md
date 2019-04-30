@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
 ms.openlocfilehash: f194b02e5b92ca2de5b58a033c38d4f2e35f93f6
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57790922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60626151"
 ---
 # <a name="add-bank-and-tax-information"></a>Добавление налоговых и банковских сведений  
 Налоговые и банковские сведения являются обязательными для всех коммерческих предложений, использующих тип приложения "Транзакция".  

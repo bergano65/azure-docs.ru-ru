@@ -10,11 +10,11 @@ ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: ae47cba8f8e9a7cdf914c0b3ea5dfb9fa6c259a9
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54432903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60738219"
 ---
 # <a name="migrating-from-orchestrator-to-azure-automation-beta"></a>Миграция из Orchestrator в службу автоматизации Azure (бета-версия)
 Модули Runbook в [System Center Orchestrator](https://technet.microsoft.com/library/hh237242.aspx) основаны на действиях из пакетов интеграции, которые созданы специально для Orchestrator, а модули Runbook службы автоматизации Azure основаны на рабочих процессах Windows PowerShell.  [Графические модули Runbook](automation-runbook-types.md#graphical-runbooks) в службе автоматизации Azure имеют сходный вид с модулями Runbook в Orchestrator, при этом действия представляют собой командлеты PowerShell, зависимые модули Runbook и ресурсы-контейнеры.
@@ -34,7 +34,7 @@ ms.locfileid: "54432903"
 ## <a name="service-management-automation"></a>Автоматизация управления службами
 [Автоматизация управления службами](https://technet.microsoft.com/library/dn469260.aspx) (SMA) сохраняет и запускает модули Runbook в локальном центре обработки данных, как и Orchestrator, и использует те же модули интеграции в качестве службы автоматизации Azure. [Runbook Converter](#runbook-converter) преобразует модули Runbook для Orchestrator в графические модули Runbook, которые, однако, не поддерживаются в SMA.  Вы все еще сможете установить [модуль стандартных действий](#standard-activities-module) и [модули интеграции System Center Orchestrator](#system-center-orchestrator-integration-modules) в SMA, однако [модули Runbook придется перезаписать вручную](https://technet.microsoft.com/library/dn469262.aspx).
 
-## <a name="hybrid-runbook-worker"></a>гибридный компонент Runbook Worker
+## <a name="hybrid-runbook-worker"></a>Гибридная рабочая роль runbook
 Модули Runbook для Orchestrator сохраняются на сервере базы данных и работают на серверах модулей Runbook, которые оба размещаются в вашем локальном центре обработки данных.  Модули Runbook в службе автоматизации Azure сохраняются в облаке Azure и могут работать в локальном центре обработки данных при помощи [гибридного компонента Runbook Worker](automation-hybrid-runbook-worker.md).  Именно так вы обычно будете запускать модули Runbook, преобразованные из Orchestrator, поскольку они разработаны для запуска на локальных серверах.
 
 ## <a name="integration-pack-converter"></a>Преобразователь пакета интеграции
@@ -96,7 +96,7 @@ ConvertFrom-SCORunbook -RunbookPath "c:\runbooks\MyRunbooks.ois_export" -Module 
 ### <a name="log-files"></a>Файлы журналов
 В том же расположении, где находится преобразованный модуль Runbook, преобразователь модулей Runbook создаст указанные ниже файлы журналов.  Если файлы уже существуют, они будут перезаписаны данными из последнего преобразования.
 
-| Файл | Оглавление |
+| Файл | Контент |
 |:--- |:--- |
 | Преобразователь модулей Runbook — Progress.log |Подробные шаги преобразования, включая сведения о каждом успешно преобразованном действии и предупреждения о каждом непреобразованном действии. |
 | Преобразователь модулей Runbook — Summary.log |Результаты последнего преобразования, включая все предупреждения и дополнительные задачи, такие как создание переменной, необходимой для преобразованного модуля Runbook. |

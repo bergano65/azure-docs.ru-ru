@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: jingwang
 ms.openlocfilehash: eeab0311519d7e3410ddb625c1801101ad63ad18
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57550422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61400120"
 ---
 # <a name="copy-data-from-an-odata-source-by-using-azure-data-factory"></a>Копирование данных из источника OData с помощью Фабрики данных Azure
 
@@ -48,19 +48,19 @@ ms.locfileid: "57550422"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства **type** необходимо задать значение **OData**. |Yes |
-| URL-адрес | Корневой URL-адрес службы OData. |Yes |
-| authenticationType | Тип проверки подлинности, используемый для подключения к источнику OData. Допустимые значения: **Anonymous**, **Basic**, **Windows**, **AadServicePrincipal** и **ManagedServiceIdentity**. OAuth на основе пользователя не поддерживается. | Yes |
-| userName | Укажите **имя пользователя**, если вы используете проверку подлинности типа "Обычная" или "Windows". | Нет  |
-| password | Введите **пароль** для учетной записи пользователя, указанной для **имени пользователя**. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных. Вы можете также [указать секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет  |
-| servicePrincipalId | Укажите идентификатор клиента приложения Azure Active Directory. | Нет  |
-| aadServicePrincipalCredentialType | Укажите тип учетных данных для использования при аутентификации субъекта-службы. Допустимые значения: `ServicePrincipalKey` или `ServicePrincipalCert`. | Нет  |
-| servicePrincipalKey | Укажите ключ приложения Azure Active Directory. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет  |
-| servicePrincipalEmbeddedCert | Укажите сертификат в кодировке base64 приложения, зарегистрированного в Azure Active Directory. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет  |
-| servicePrincipalEmbeddedCertPassword | Если ваш сертификат защищен паролем, укажите пароль сертификата. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md).  | Нет |
-| tenant | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Его можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Нет  |
-| aadResourceId | Укажите ресурс AAD, для которого запрашивается авторизация.| Нет  |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете выбрать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная Azure Integration Runtime. |Нет  |
+| тип | Для свойства **type** необходимо задать значение **OData**. |Да |
+| url | Корневой URL-адрес службы OData. |Да |
+| authenticationType | Тип проверки подлинности, используемый для подключения к источнику OData. Допустимые значения: **Anonymous**, **Basic**, **Windows**, **AadServicePrincipal** и **ManagedServiceIdentity**. OAuth на основе пользователя не поддерживается. | Да |
+| userName | Укажите **имя пользователя**, если вы используете проверку подлинности типа "Обычная" или "Windows". | Нет |
+| password | Введите **пароль** для учетной записи пользователя, указанной для **имени пользователя**. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных. Вы можете также [указать секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет |
+| servicePrincipalId | Укажите идентификатор клиента приложения Azure Active Directory. | Нет |
+| aadServicePrincipalCredentialType | Укажите тип учетных данных для использования при аутентификации субъекта-службы. Допустимые значения: `ServicePrincipalKey` или `ServicePrincipalCert`. | Нет |
+| servicePrincipalKey | Укажите ключ приложения Azure Active Directory. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет |
+| servicePrincipalEmbeddedCert | Укажите сертификат в кодировке base64 приложения, зарегистрированного в Azure Active Directory. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет |
+| servicePrincipalEmbeddedCertPassword | Если ваш сертификат защищен паролем, укажите пароль сертификата. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md).  | Нет|
+| клиент | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Его можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Нет |
+| aadResourceId | Укажите ресурс AAD, для которого запрашивается авторизация.| Нет |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете выбрать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная Azure Integration Runtime. |Нет |
 
 **Пример 1. Использование анонимной аутентификации**
 
@@ -197,8 +197,8 @@ ms.locfileid: "57550422"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство **type** для набора данных должно иметь значение **ODataResource**. | Yes |
-| path | Путь к ресурсу OData. | Yes |
+| тип | Свойство **type** для набора данных должно иметь значение **ODataResource**. | Да |
+| путь | Путь к ресурсу OData. | Да |
 
 **Пример**
 
@@ -232,8 +232,8 @@ ms.locfileid: "57550422"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство **type** источника действия копирования должно иметь значение **RelationalSource**. | Yes |
-| query | Параметры запроса OData для фильтрации данных. Пример: `"?$select=Name,Description&$top=5"`.<br/><br/>**Примечание**. Соединитель OData копирует данные из объединенного URL-адреса: `[URL specified in linked service]/[path specified in dataset][query specified in copy activity source]`. Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет  |
+| тип | Свойство **type** источника действия копирования должно иметь значение **RelationalSource**. | Да |
+| query | Параметры запроса OData для фильтрации данных. Пример: `"?$select=Name,Description&$top=5"`.<br/><br/>**Примечание**. Соединитель OData копирует данные из объединенного URL-адреса: `[URL specified in linked service]/[path specified in dataset][query specified in copy activity source]`. Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |
 
 **Пример**
 
@@ -274,7 +274,7 @@ ms.locfileid: "57550422"
 | Тип данных OData | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | Edm.Binary | Byte[] |
-| Edm.Boolean | Bool |
+| Edm.Boolean | Логический |
 | Edm.Byte | Byte[] |
 | Edm.DateTime | DateTime |
 | Edm.Decimal | Decimal |

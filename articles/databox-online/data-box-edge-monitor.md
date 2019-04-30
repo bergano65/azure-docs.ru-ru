@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 04/15/2019
 ms.author: alkohli
 ms.openlocfilehash: 188f5c6cfbb4650ad1ff767955d064f8e0c3cb70
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60002652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60756754"
 ---
 # <a name="monitor-your-azure-data-box-edge"></a>Мониторинг Azure Data Box Edge
 
@@ -40,7 +40,7 @@ ms.locfileid: "60002652"
 
     ![Просмотр состояния оборудования](media/data-box-edge-monitor/view-hardware-status.png)
 
-## <a name="view-metrics"></a>Просмотр метрик
+## <a name="view-metrics"></a>Показать метрики
 
 [!INCLUDE [Supported OS for clients connected to device](../../includes/data-box-edge-gateway-view-metrics.md)]
 

@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: robb
-ms.subservice: autoscale
+ms.component: autoscale
 ms.openlocfilehash: 05f20aec536ebdb702caea37051a65af9bbc659f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58085649"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60787605"
 ---
 # <a name="overview-of-autoscale-in-microsoft-azure-virtual-machines-cloud-services-and-web-apps"></a>Обзор автомасштабирования в виртуальных машинах, облачных службах и веб-приложениях Microsoft Azure
 В этой статье объясняется, что такое автомасштабирование Microsoft Azure, каковы преимущества этой функции и как начать ее использовать.  
@@ -102,6 +102,7 @@ ms.locfileid: "58085649"
 * [Azure Monitor REST API](https://msdn.microsoft.com/library/azure/dn931953.aspx)
 
 ## <a name="supported-services-for-autoscale"></a>Службы, поддерживающие автомасштабирование
+
 | Service | Схемы и документы |
 | --- | --- |
 | Веб-приложения |[Scaling Web Apps (Масштабирование веб-приложения)](../../azure-monitor/platform/autoscale-get-started.md) |
@@ -120,4 +121,3 @@ ms.locfileid: "58085649"
 * [Использование действий автомасштабирования для отправки электронной почты и уведомлений об оповещениях веб-перехватчика в Azure Insights](../../azure-monitor/platform/autoscale-webhook-email.md)
 * [Create or update an autoscale setting in Azure Insights REST API (Создание и изменение параметров автомасштабирования в REST API Azure Insights)](https://msdn.microsoft.com/library/dn931953.aspx)
 * [Устранение неполадок при автомасштабировании масштабируемых наборов виртуальных машин](../../virtual-machine-scale-sets/virtual-machine-scale-sets-troubleshoot.md)
-

@@ -9,11 +9,11 @@ ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 7673b115a3ad2e6ca7aec34b1cfabfb38d2a16f4
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54191366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60859215"
 ---
 # <a name="authentication-and-user-permissions"></a>Аутентификация и разрешения пользователей
 
@@ -37,7 +37,7 @@ Power BI Desktop, SSDT и SSMS поддерживают универсальну
 
 Если при входе в Azure с помощью учетной записи Windows не выбрать универсальную проверку подлинности или она не доступна (Excel), потребуются [службы федерации Active Directory (AD FS)](../active-directory/hybrid/how-to-connect-fed-azure-adfs.md). При использовании служб федерации пользователи Azure AD и Office 365 проходят проверку подлинности с помощью локальных учетных данных и могут обращаться к ресурсам Azure.
 
-### <a name="sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS);
+### <a name="sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS)
 
 Серверы Azure Analysis Services поддерживают подключения [SSMS V17.1](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) и более поздних версий с помощью проверки подлинности Windows, проверки пароля Active Directory и универсальной проверки подлинности Active Directory. В целом мы рекомендуем использовать универсальную проверку подлинности Active Directory, так она предоставляет следующую поддержку:
 
@@ -77,7 +77,7 @@ Power BI Desktop подключается к Azure Analysis Services с помо
   
  По умолчанию при создании нового проекта табличной модели этот проект не содержит никакие роли. Роли можно определить с помощью диалогового окна диспетчера ролей в SSDT. При определении ролей во время разработки проекта модели они применяются только к базе данных рабочей области модели. Когда модель развернута, те же роли применяются к развернутой модели. После развертывания модели администраторы сервера и базы данных могут управлять ролями и участниками с помощью SSMS. Дополнительные сведения см. в статье [Управление ролями и пользователями базы данных](analysis-services-database-users.md).
   
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Управление доступом к ресурсам с помощью групп Azure Active Directory](../active-directory/fundamentals/active-directory-manage-groups.md)   
 [Управление ролями и пользователями базы данных](analysis-services-database-users.md)  

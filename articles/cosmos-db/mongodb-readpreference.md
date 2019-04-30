@@ -9,17 +9,17 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 02/26/2018
 ms.openlocfilehash: dfb1e0093893fadf22c7a92ef5f351ae8920a977
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54036466"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60929293"
 ---
 # <a name="how-to-globally-distribute-reads-using-azure-cosmos-dbs-api-for-mongodb"></a>Глобальное распространение операций чтения с помощью API Azure Cosmos DB для MongoDB
 
 В этой статье описывается, как глобально распространить операции чтения с применением [параметров чтения MongoDB](https://docs.mongodb.com/manual/core/read-preference/) с помощью API Azure Cosmos DB для MongoDB.
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Технические условия 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 [!INCLUDE [cosmos-db-emulator-mongodb](../../includes/cosmos-db-emulator-mongodb.md)]
 
@@ -75,7 +75,7 @@ readFromSecondaryfunc query completed!
 
 Протокол MongoDB предоставляет следующие режимы параметров чтения для клиентов.
 
-1. PRIMARY.
+1. ОСНОВНОЙ
 2. PRIMARY_PREFERRED.
 3. SECONDARY.
 4. SECONDARY_PREFERRED.
@@ -168,7 +168,7 @@ MongoClient.connect(url, function(err, client) {
 1. В меню слева на портале Azure щелкните **Группы ресурсов**, а затем выберите имя созданного ресурса. 
 2. На странице группы ресурсов щелкните **Удалить**, в текстовом поле введите имя ресурса для удаления и щелкните **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Перенос данных MongoDB в Azure Cosmos DB](mongodb-migrate.md)
 * [Настройка глобальной распределенной базы данных с помощью API Azure Cosmos DB для MongoDB](tutorial-global-distribution-mongodb.md)

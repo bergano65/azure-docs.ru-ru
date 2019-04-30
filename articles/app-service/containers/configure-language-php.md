@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
 ms.openlocfilehash: 11d0648ee5090f02cb96c2d42a8d90cc3ea0ed28
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59551342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60853309"
 ---
 # <a name="configure-a-linux-php-app-for-azure-app-service"></a>Настройка приложения Linux PHP для службы приложений Azure
 
@@ -105,7 +105,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 ## <a name="access-environment-variables"></a>Доступ к переменным среды
 
-В службе приложений, вы можете [задать параметры приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings) вне кода приложения. Вы сможете обращаться к их с использованием стандарта [getenv()](https://secure.php.net/manual/function.getenv.php) шаблон. Например, для доступа к параметру приложения с именем `DB_HOST` используйте следующий код:
+В Службе приложений можно [задать параметры приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings) вне кода приложения. Вы сможете обращаться к их с использованием стандарта [getenv()](https://secure.php.net/manual/function.getenv.php) шаблон. Например, для доступа к параметру приложения с именем `DB_HOST` используйте следующий код:
 
 ```php
 getenv("DB_HOST")
@@ -151,7 +151,7 @@ if (isset($_SERVER['X-Forwarded-Proto']) && $_SERVER['X-Forwarded-Proto'] === 'h
 
 Для настройки PHP_INI_USER PHP_INI_PERDIR и PHP_INI_ALL директивы (см. в разделе [директив php.ini](http://www.php.net/manual/ini.list.php)), добавьте *.htaccess* файл в корневой каталог приложения.
 
-В *.htaccess* добавьте с помощью директивы `php_value <directive-name> <value>` синтаксис. Например: 
+В *.htaccess* добавьте с помощью директивы `php_value <directive-name> <value>` синтаксис. Пример.
 
 ```
 php_value upload_max_filesize 1000M
@@ -232,8 +232,8 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
 
 При работающем приложении PHP работает по-разному, в службе приложений или содержит ошибки, попробуйте сделайте следующее:
 
-- [Получить доступ к потоку журнала](#access-diagnostic-logs).
-- Тестирование приложения локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому необходимо убедиться, что проект работает надлежащим образом в рабочем режиме локально. Например: 
+- [Получите доступ к потоку журнала](#access-diagnostic-logs).
+- Тестирование приложения локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому необходимо убедиться, что проект работает надлежащим образом в рабочем режиме локально. Пример.
     - В зависимости от вашей *composer.json*, разные пакеты могут быть установлены для рабочий режим (`require` и `require-dev`).
     - Некоторые веб-платформы может развернуть статические файлы по-разному в рабочем режиме.
     - Некоторые веб-платформы может использовать специальные сценарии, при выполнении в рабочем режиме.
@@ -252,7 +252,7 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство Приложение PHP с MySQL](tutorial-php-mysql-app.md)
+> [Учебник. по приложению PHP с MySQL](tutorial-php-mysql-app.md)
 
 > [!div class="nextstepaction"]
-> [Службы приложений Linux часто задаваемые вопросы](app-service-linux-faq.md)
+> [Служба приложений под управлением Linux: вопросы и ответы](app-service-linux-faq.md)

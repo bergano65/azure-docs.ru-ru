@@ -16,13 +16,13 @@ ms.date: 08/28/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3be3008367f5c405f65dfd37b4384726ab2456c5
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56209532"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60797240"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zephyrsso"></a>Руководство. Интеграция Azure Active Directory с ZephyrSSO
+# <a name="tutorial-azure-active-directory-integration-with-zephyrsso"></a>Руководство по Интеграция Azure Active Directory с ZephyrSSO
 
 В этом руководстве описано, как интегрировать ZephyrSSO с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56209532"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с ZephyrSSO, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "56209532"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.yourzephyr.com/Zephyrsso`
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.yourzephyr.com/flex/saml/sso`.
+    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.yourzephyr.com/flex/saml/sso`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки ZephyrSSO](https://support.getzephyr.com).
@@ -157,7 +157,7 @@ ms.locfileid: "56209532"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
   
 ### <a name="create-a-zephyrsso-test-user"></a>Создание тестового пользователя ZephyrSSO
 
@@ -193,7 +193,7 @@ ms.locfileid: "56209532"
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Тест единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

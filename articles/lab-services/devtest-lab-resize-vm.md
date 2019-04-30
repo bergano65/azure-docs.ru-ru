@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/11/2018
 ms.author: spelluru
-ms.openlocfilehash: 9b9a1839bf4b028aec13b764b4de66385de4189e
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
-ms.translationtype: HT
+ms.openlocfilehash: a0bc618a9c0a02aae884d8be359df6bdbf4c0d2a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47090757"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60868092"
 ---
 # <a name="resize-a-vm-in-a-lab-in-azure-devtest-labs"></a>Изменение размера виртуальной машины в лаборатории Azure DevTest Labs
 Одной из важных особенностей виртуальных машин Azure является возможность изменять размер на основе ваших потребностей в производительности ЦП, сети или диска. Теперь Azure DevTest Labs поддерживает эту функцию для виртуальных машин в лаборатории. Функция изменения размера соответствует политике лаборатории для разрешенных в нем размеров виртуальных машин. То есть размер виртуальной машины можно изменить только на тот, который является допустимым в лаборатории. 
@@ -49,7 +49,7 @@ ms.locfileid: "47090757"
 10. После успешной операции изменения размера закройте окно **Уведомления**. 
 11. Щелкните вкладку **Обзор** в меню слева и выберите **Перезапустить** на панели инструментов, чтобы перезапустить виртуальную машину. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Подробные сведения о функции изменения размера, поддерживаемой виртуальными машинами Azure, см. в [этой статье](https://azure.microsoft.com/blog/resize-virtual-machines/).
 
 

@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: mbullwin
 ms.openlocfilehash: 719cbe1ec8962b320aa2850053d44cdef7f56a8c
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58437822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60691690"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
@@ -29,8 +29,8 @@ ms.locfileid: "58437822"
 Чтобы добавить Application Insights для веб-сайта ASP.NET, сделайте следующее:
 
 - Установите [Visual Studio 2017 для Windows](https://www.visualstudio.com/downloads/) со следующими рабочими нагрузками:
-    - ASP.NET и веб-разработка.
-    - разработка Azure;
+    - ASP.NET и веб-разработка
+    - Разработка для Azure
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
@@ -63,7 +63,7 @@ ms.locfileid: "58437822"
 > [!NOTE]
 > Если вы не хотите отправлять данные телеметрии на портал во время отладки, просто добавьте пакет SDK Application Insights в приложение, но не настраивайте ресурс на портале. Во время отладки можно просмотреть данные телеметрии в Visual Studio. Позже вы сможете вернуться на эту страницу настроек или можете дождаться, когда приложение будет развернуто, и [переключиться на данные телеметрии во время выполнения](../../azure-monitor/app/monitor-performance-live-website-now.md).
 
-## <a name="run"></a> Шаг 2. Запуск приложения для Android
+## <a name="run"></a> Шаг 2. Запуск приложения
 Запустите приложение, нажав клавишу F5. Откройте разные страницы, чтобы создать некоторый объем данных телеметрии.
 
 В Visual Studio вы увидите число записанных в журнал событий.
@@ -127,7 +127,7 @@ ms.locfileid: "58437822"
 
 ## <a name="video"></a>Видео
 
-* Внешнее пошаговые видео о [Настройка Application Insights с помощью приложения .NET с нуля](https://www.youtube.com/watch?v=blnGAVgMAfA).
+* Пошаговые видеоинструкции о [настройке Application Insights с помощью приложения .NET](https://www.youtube.com/watch?v=blnGAVgMAfA).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -2,20 +2,21 @@
 title: Проверка параметров диспетчера трафика Azure
 description: Из этой статьи вы узнаете, как проверять параметры диспетчера трафика.
 services: traffic-manager
-author: kumudd
+author: rockboyfor
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/16/2017
-ms.author: kumud
+origin.date: 03/16/2017
+ms.date: 02/18/2019
+ms.author: v-yeche
 ms.openlocfilehash: 1e954e3c4ebba245d91cfb84ab583b314150e5b2
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54200791"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60771623"
 ---
 # <a name="verify-traffic-manager-settings"></a>Проверка параметров диспетчера трафика
 
@@ -35,7 +36,7 @@ ms.locfileid: "54200791"
 2. Введите `ipconfig /flushdns` для записи кэша сопоставителя DNS на диск.
 3. Введите `nslookup <your Traffic Manager domain name>`. Например, следующая команда проверяет доменное имя с префиксом *myapp.contoso*.
 
-        nslookup myapp.contoso.trafficmanager.net
+        nslookup myapp.contoso.trafficmanager.cn
 
     Типичный результат содержит следующие сведения:
 
@@ -66,8 +67,10 @@ ms.locfileid: "54200791"
 
 Кроме того, есть бесплатные веб-службы поиска и проверки DNS. Некоторые из этих инструментов предоставляют возможность проверить разрешение DNS-имен из различных расположений по всему миру. Например, выполните поиск по запросу "поиск DNS". Сторонние службы типа Gomez или Keynote можно использовать, чтобы убедиться в том, что ваши профили распределяют трафик надлежащим образом.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [О методах маршрутизации трафика в диспетчере трафика](traffic-manager-routing-methods.md)
 * [Рекомендации по безопасности для диспетчера трафика](traffic-manager-performance-considerations.md)
 * [Устранение неполадок, связанных со сбоем диспетчера трафика](traffic-manager-troubleshooting-degraded.md)
+
+<!-- Update_Description: update meta properties -->

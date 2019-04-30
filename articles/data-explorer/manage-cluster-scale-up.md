@@ -8,11 +8,11 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 04/05/2019
 ms.openlocfilehash: 1f130f79b6b6924559e1693e1eef8ced2972b3d5
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59783872"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60758709"
 ---
 # <a name="manage-cluster-scale-up-to-accommodate-changing-demand"></a>Управление вертикальным масштабированием кластера с учетом меняющихся потребностей
 
@@ -25,7 +25,7 @@ ms.locfileid: "59783872"
 
     Отобразится список доступных номеров SKU. Например на следующем рисунке, доступны только четыре номера SKU.
 
-    ![Увеличение масштаба](media/manage-cluster-scale-up/scale-up.png)
+    ![Увеличить масштаб](media/manage-cluster-scale-up/scale-up.png)
 
     Номера SKU будут отключены, так как они номера SKU или они недоступны в регионе, где расположен кластер.
 

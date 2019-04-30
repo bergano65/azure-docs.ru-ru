@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 10/05/2017
 ms.author: rkarlin
 ms.openlocfilehash: 01f6da4f5ad6b618c444949fce8d2b7aa3367e17
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58075771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60705179"
 ---
 # <a name="monitoring-and-processing-security-events-in-azure-security-center"></a>Мониторинг и обработка событий безопасности в центре безопасности Azure
 Панель мониторинга событий предоставляет обзор количества событий безопасности, собранных за определенный период времени, и список важных событий, требующих вашего внимания.  
@@ -69,7 +69,7 @@ ms.locfileid: "58075771"
 
 5. Откроется окно **Поиск по журналу**, которое содержит дополнительные сведения о типе событий.
 
-   ![Поиск по журналам][6]
+   ![Поиск по журналу][6]
 
 ## <a name="add-a-notable-event"></a>Добавление важных событий
 Центр безопасности предоставляет готовые важные события. Вы можете добавить важные события, исходя из собственных запросов с помощью [язык запросов Kusto](../log-analytics/log-analytics-search-reference.md). Вернемся к области **Информационная панель событий**, чтобы добавить важное событие.

@@ -8,11 +8,11 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 02/18/2019
 ms.openlocfilehash: 891d2acc42f8d6f03976f0553e2e3127bc6d16f7
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60011267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60759338"
 ---
 # <a name="azure-data-explorer-data-ingestion"></a>Прием данных в обозревателе данных Azure
 
@@ -88,7 +88,7 @@ Kusto предоставляет клиентский пакет SDK, с пом�
 
 **Задержка для различных методов**:
 
-| Метод | Latency |
+| Метод | Задержка |
 | --- | --- |
 | **Встроенный прием** | Немедленно |
 | **Прием из запроса** | Время запроса + время обработки |

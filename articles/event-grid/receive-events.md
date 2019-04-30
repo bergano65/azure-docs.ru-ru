@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 01/01/2019
 ms.author: babanisa
 ms.openlocfilehash: cb38fd17c0c1bfbe3e5957d8f432f0a43b285c93
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55728628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60803812"
 ---
 # <a name="receive-events-to-an-http-endpoint"></a>Получение событий через конечную точку HTTP
 
@@ -22,7 +22,7 @@ ms.locfileid: "55728628"
 > [!NOTE]
 > При активации службы "Функции Azure" с помощью Сетки событий **настоятельно** рекомендуется использовать [триггер Сетки событий](../azure-functions/functions-bindings-event-grid.md). Универсальный триггер веб-перехватчика используется для демонстрации.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Вам потребуется приложение-функция с функцией, активируемой HTTP.
 
@@ -366,7 +366,7 @@ module.exports = function (context, req) {
 
 Кроме того, эту функцию можно протестировать в реальном времени, [отправив пользовательское событие с помощью CURL с портала](./custom-event-quickstart-portal.md) или [опубликовав в пользовательском разделе](./post-to-custom-topic.md), используя любую службу или приложение, которое может выполнять оператор POST в конечной точке, например [Postman](https://www.getpostman.com/). Создайте пользовательский раздел и подписку событий с помощью конечной точки, заданной в качестве URL-адреса функции.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со статьей [Пакеты SDK для управления службой "Сетка событий Azure" и публикации в ней](./sdk-overview.md).
 * Дополнительные сведения см. в статье [Публикация в пользовательском разделе для службы "Сетка событий Azure"](./post-to-custom-topic.md).

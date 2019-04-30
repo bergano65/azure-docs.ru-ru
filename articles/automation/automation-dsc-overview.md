@@ -11,11 +11,11 @@ ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: da746d80e3ae1fa5cc02683a8bb0ff0402722b8e
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59524946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61071476"
 ---
 # <a name="azure-automation-state-configuration-overview"></a>Обзор службы "Настройка состояния службы автоматизации Azure"
 
@@ -62,7 +62,7 @@ ms.locfileid: "59524946"
 
 Расширение DSC Linux поддерживает все дистрибутивы Linux [рекомендованные в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros) за исключением:
 
-Дистрибутив | Version (версия)
+Дистрибуция | Version
 -|-
 Debian  | Все версии.
 Ubuntu  | 18,04
@@ -110,7 +110,7 @@ Ubuntu  | 18,04
 >
 > Скачивайте новый XML-файл каждую неделю и вносите соответствующие изменения на своем сайте, чтобы правильно определять службы, выполняемые в Azure. Пользователям Azure ExpressRoute следует обратить внимание, что этот файл используется для того, чтобы обновлять протокол BGP в пространстве Azure в первую неделю каждого месяца.
 
-## <a name="introduction-video"></a>Видео: общие сведения
+## <a name="introduction-video"></a>Видеоролик представления
 
 Предпочитаете смотреть, а не читать? Посмотрите следующий видеоролик, выпущенный в мае 2015 г., когда впервые было объявлено о создании службы "Настройка состояния службы автоматизации Azure".
 

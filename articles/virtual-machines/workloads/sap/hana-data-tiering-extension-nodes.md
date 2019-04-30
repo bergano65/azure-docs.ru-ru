@@ -14,17 +14,17 @@ ms.workload: infrastructure
 ms.date: 09/04/2018
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 87c2cb3e373b76685fca09eb0cfeefdc9216df77
-ms.sourcegitcommit: d211f1d24c669b459a3910761b5cacb4b4f46ac9
-ms.translationtype: HT
+ms.openlocfilehash: b5868aaf29d6b57ea608763840a08f1991a982e8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44031053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60628597"
 ---
 # <a name="use-sap-hana-data-tiering-and-extension-nodes"></a>Использование многоуровневого хранения данных и узлов расширения SAP HANA
 
 SAP поддерживает модель многоуровневого хранения данных для SAP BW различных выпусков SAP NetWeaver и SAP BW/4HANA. Сведения о модели многоуровневого хранения данных можно найти в этой документации [SAP BW/4HANA and SAP BW-on-HANA with SAP HANA Extension Nodes](https://www.sap.com/documents/2017/05/ac051285-bc7c-0010-82c7-eda71af511fa.html#) (SAP BW/4HANA и SAP BW в HANA с узлами расширения SAP HANA).
-Как описано в блоге SAP и документе с вопросами и ответами, вместе с крупными экземплярами HANA можно использовать конфигурацию варианта 1 узлов расширения SAP HANA. Конфигурацию варианта 2 можно настроить со следующими номерами SKU для крупных экземпляров HANA: S72m, S192, S192m, S384 и S384m. 
+Как описано в блоге SAP и документе с вопросами и ответами, вместе с крупными экземплярами HANA можно использовать конфигурацию варианта 1 узлов расширения SAP HANA. Конфигурацию варианта 2 можно настроить с помощью следующих SKU крупных экземпляров HANA: S72m, S192, S192m, S384 и S384m. 
 
 При просмотре документации преимущество может быть заметно не сразу. Однако, посмотрев рекомендации по размерам SAP, вы увидите преимущество использования вариантов 1 и 2 узлов расширения SAP HANA. Ниже приведены некоторые примеры.
 

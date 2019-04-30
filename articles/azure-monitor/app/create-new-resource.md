@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: mbullwin
 ms.openlocfilehash: 5daf0944212dc4b8040a39e6efbf5bb25f7f39f0
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54117237"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60901818"
 ---
 # <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 В Azure Application Insights данные о приложении отображаются в *ресурсе* Microsoft Azure. Таким образом, создание ресурса является частью [настройки Application Insights для мониторинга нового приложения][start]. Во многих случаях создать ресурс можно автоматически с помощью IDE. Однако в некоторых случаях создавать ресурс необходимо вручную. Например, чтобы иметь отдельные ресурсы для сборок разработки и производственных сборок приложения.
@@ -68,7 +68,7 @@ ms.locfileid: "54117237"
 ## <a name="creating-a-resource-automatically"></a>Автоматическое создание ресурса
 Вы можете написать [Сценарий PowerShell](../../azure-monitor/app/powershell.md) для автоматического создания ресурса.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Создание панели мониторинга](../../azure-monitor/app/app-insights-dashboards.md)
 * [Поиск по журналу диагностики](../../azure-monitor/app/diagnostic-search.md)
 * [Изучение метрик](../../azure-monitor/app/metrics-explorer.md)

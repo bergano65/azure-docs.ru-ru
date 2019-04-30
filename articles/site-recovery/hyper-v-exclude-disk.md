@@ -9,20 +9,20 @@ ms.topic: conceptual
 ms.date: 01/19/2019
 ms.author: mayg
 ms.openlocfilehash: f86ded99ef5280a4e6929c39a9fd323d1b61f6f0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57992340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60773935"
 ---
 # <a name="exclude-disks-from-replication"></a>Исключение дисков из репликации
 В этой статье описывается, как исключать диски из репликации. Благодаря этому можно оптимизировать использование пропускной способности при репликации или же ресурсы целевой стороны, используемые такими дисками.
 
 ## <a name="supported-scenarios"></a>Поддерживаемые сценарии использования.
 
-**Компонент** | **VMware в VMware** | **Hyper-V в Azure** | **Из Azure в Azure**| **Из Hyper-V в Hyper-V** 
+**Возможность** | **VMware в VMware** | **Hyper-V в Azure** | **Из Azure в Azure**| **Из Hyper-V в Hyper-V** 
 --|--|--|--|--
-Исключение диска | Yes | Да | Нет  | Нет 
+Исключение диска | Да | Да | Нет  | Нет
 
 ## <a name="why-exclude-disks-from-replication"></a>Зачем исключать диски из репликации
 Исключение дисков из репликации часто бывает необходимо:
@@ -60,7 +60,7 @@ ms.locfileid: "57992340"
 - Диск с файлом tempdb SQL Server.
 - Диск с файлом подкачки (pagefile.sys).
 
-## <a name="example-1-exclude-the-sql-server-tempdb-disk"></a>Пример 1 Исключение диска с файлом tempdb SQL Server
+## <a name="example-1-exclude-the-sql-server-tempdb-disk"></a>Пример 1: Исключение диска с файлом tempdb SQL Server
 Рассмотрим виртуальную машину SQL Server с диском tempdb, который может быть исключен из репликации.
 
 Имя виртуального диска — SalesDB.
@@ -163,7 +163,7 @@ DB-Disk2 (исключенный из репликации) | Диск 2 | E:\ 
 DB-Disk3 (исключенный из репликации) | Диск 3 | F:\ | База данных tempdb SQL (путь к папке — F:\MSSQL\Data\)
 DB-Disk4 | Диск 4 | G:\ | База данных пользователя Database2
 
-## <a name="example-2-exclude-the-paging-file-pagefilesys-disk"></a>Пример 2 Исключение диска с файлом подкачки (pagefile.sys)
+## <a name="example-2-exclude-the-paging-file-pagefilesys-disk"></a>Пример 2: Исключение диска с файлом подкачки (pagefile.sys)
 
 Рассмотрим виртуальную машину с диском с файлом подкачки, который можно исключить из репликации.
 Есть два способа.

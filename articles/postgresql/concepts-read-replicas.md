@@ -1,17 +1,18 @@
 ---
 title: Реплики чтения в Базе данных Azure для PostgreSQL
 description: В этой статье описывается компонент "Реплика чтения" в службе "База данных Azure для PostgreSQL".
-author: rachel-msft
-ms.author: raagyema
+author: WenJason
+ms.author: v-jay
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 04/01/2019
+origin.date: 04/01/2019
+ms.date: 04/22/2019
 ms.openlocfilehash: f340f1e42b6993a1f834ab05570c669d4241222b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59789980"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60564363"
 ---
 # <a name="read-replicas-in-azure-database-for-postgresql"></a>Реплики чтения в Базе данных Azure для PostgreSQL
 
@@ -50,7 +51,7 @@ ms.locfileid: "59789980"
 Вы можете подключиться к реплике, используя имя узла и действительную учетную запись, как к обычному серверу службы "База данных Azure для PostgreSQL". Например, для сервера с именем **myreplica** и именем пользователя с правами администратора **myadmin** подключение будет выполняться с помощью psql:
 
 ```
-psql -h myreplica.postgres.database.azure.com -U myadmin@myreplica -d postgres
+psql -h myreplica.postgres.database.chinacloudapi.cn -U myadmin@myreplica -d postgres
 ```
 
 При появлении запроса введите пароль для учетной записи пользователя.
@@ -89,7 +90,7 @@ AS total_log_delay_in_bytes from pg_stat_replication;
 > [!NOTE]
 > В случае перезапуска главного сервера или реплики чтения период, необходимый для перезапуска и наверстывания, будет отражаться в значении метрики задержки реплики.
 
-## <a name="stop-replication"></a>Остановка репликации
+## <a name="stop-replication"></a>Остановить репликацию
 Вы можете остановить репликацию между главным сервером и репликой. В этом случае реплика перезагрузится, чтобы удалить параметры репликации. После остановки репликации между главным сервером и репликой чтения реплика становится отдельным сервером. На отдельном сервере сохраняются все данные, которые существовали на нем на момент запуска команды "Остановить репликацию". Данные на изолированном сервере не синхронизируются с главным сервером.
 
 > [!IMPORTANT]

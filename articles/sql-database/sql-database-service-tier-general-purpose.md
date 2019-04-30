@@ -13,11 +13,11 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 02/07/2019
 ms.openlocfilehash: dc379f1ee67174cd806840e4244054701d18f0d4
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59784028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60709166"
 ---
 # <a name="general-purpose-service-tier---azure-sql-database"></a>База данных SQL Azure на уровне службы общего назначения
 
@@ -28,7 +28,7 @@ ms.locfileid: "59784028"
 
 - Универсальные
 - Критически важный для бизнеса
-- Уровень "Гипермасштабирование"
+- Гипермасштабирование
 
 Архитектурная модель для уровня службы общего назначения основана на разделении вычислений и хранилищ. Эта модель архитектуры зависит от высокого уровня доступности и надежности хранилища BLOB-объектов Azure, которое прозрачно реплицирует файлы базы данных и предотвращает потерю данных, если происходит сбой базовой инфраструктуры.
 

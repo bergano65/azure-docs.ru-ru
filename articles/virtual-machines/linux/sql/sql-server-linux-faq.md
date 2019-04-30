@@ -14,11 +14,11 @@ ms.date: 12/13/2017
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: fb1cafcf9405576749ea91aeea033c6ee783a026
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54330438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60739273"
 ---
 # <a name="frequently-asked-questions-for-sql-server-on-linux-azure-virtual-machines"></a>Часто задаваемые вопросы об SQL Server на виртуальных машинах Linux в Azure
 
@@ -95,7 +95,7 @@ ms.locfileid: "54330438"
 
 1. **Поддерживаются ли на виртуальных машинах Azure решения SQL Server для высокого уровня доступности?**
 
-   На данный момент нет. Группы доступности AlwaysOn и отказоустойчивая кластеризация работают только в кластерных решениях на базе Linux, таких как Pacemaker. Доступные дистрибутивы Linux для SQL Server не поддерживают надстройки высокого уровня доступности в облаке.
+   Пока нет. Группы доступности AlwaysOn и отказоустойчивая кластеризация работают только в кластерных решениях на базе Linux, таких как Pacemaker. Доступные дистрибутивы Linux для SQL Server не поддерживают надстройки высокого уровня доступности в облаке.
 
 ## <a name="resources"></a>Ресурсы
 

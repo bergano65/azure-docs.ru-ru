@@ -15,13 +15,13 @@ ms.topic: article
 ms.date: 09/22/2018
 ms.author: qianw211
 ms.openlocfilehash: f13d3f780e24d71babb1bda48a9b85d1208e3c4c
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54074603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60709304"
 ---
-# <a name="iot-edge-modules"></a>Модули Edge Интернета вещей
+# <a name="iot-edge-modules"></a>Модули IoT Edge
 
 Платформа [Azure IoT Edge](https://azure.microsoft.com/services/iot-edge/) поддерживается облачными службами Azure.  Эта платформа позволяет пользователям развертывать облачные рабочие нагрузки для непосредственного выполнения на устройствах Интернета вещей.  Модуль IoT Edge может выполнять автономные рабочие нагрузки и совершать анализ данных локально. Этот тип предложения помогает экономить пропускную способность, защищать локальные и конфиденциальные данные и обеспечивает малое время отклика.  Теперь вы можете воспользоваться этими заранее подготовленными рабочими нагрузками. До сих пор было доступно лишь несколько решений от корпорации Майкрософт.  Вам нужно было тратить время и ресурсы на создание своих собственных решений для Интернета вещей.
 
@@ -84,7 +84,7 @@ Marketplace в настоящее время поддерживает **бесп
 
 [Создание предложения модуля IoT Edge](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/iot-edge-module/cpp-create-offer) — шаги для публикации нового модуля IoT Edge с помощью Портала Cloud Partner.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если это еще не сделано:
 

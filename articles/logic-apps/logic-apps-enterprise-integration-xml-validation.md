@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: d700588f-2d8a-4c92-93eb-e1e6e250e760
 ms.date: 07/08/2016
-ms.openlocfilehash: e25f4e633b8cf9030bb0ce395f093f630db59f38
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
-ms.translationtype: HT
+ms.openlocfilehash: 8db0dbadd944007ff953f9ea69695bf988ffebb7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43121119"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60996342"
 ---
 # <a name="validate-xml-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Проверка XML для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
@@ -55,6 +55,6 @@ ms.locfileid: "43121119"
 
 Теперь можно протестировать действие проверки, выполнив запрос к конечной точке HTTP.
 
-## <a name="next-steps"></a>Дополнительная информация
-[Обзор пакета интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Обзор пакета интеграции Enterprise")   
+## <a name="next-steps"></a>Дальнейшие действия
+[Узнайте больше о пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Узнайте о пакете интеграции Enterprise.")   
 

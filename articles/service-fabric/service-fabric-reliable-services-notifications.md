@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 6/29/2017
 ms.author: mcoskun
 ms.openlocfilehash: a3df5f28475b03f1799dc1e245c3a7e904b49cb3
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58662675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60772930"
 ---
 # <a name="reliable-services-notifications"></a>Уведомления Reliable Services
 Уведомления позволяют клиентам отслеживать изменения, которые вносятся в интересующий их объект. Два типа объектов поддерживает уведомления: *Диспетчер надежных состояний* и *надежного словаря*.
@@ -34,7 +34,7 @@ ms.locfileid: "58662675"
 ## <a name="reliable-state-manager-notifications"></a>Уведомления диспетчера надежных состояний
 Диспетчер надежных состояний предоставляет уведомления для следующих событий:
 
-* транзакция:
+* Транзакция
   * Фиксация
 * Диспетчер состояний:
   * перестроение;

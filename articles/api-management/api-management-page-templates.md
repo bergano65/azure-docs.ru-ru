@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 01/09/2018
 ms.author: apimpm
 ms.openlocfilehash: 1fbafcdab938a0f8653df48631d7733cc58a3668
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52441916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60656819"
 ---
 # <a name="page-templates-in-azure-api-management"></a>Шаблоны страниц в службе управления API Azure
 Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью этих шаблонов вы можете гибко настраивать содержимое страниц, используя синтаксис [DotLiquid](http://dotliquidmarkup.org/), любой удобный текстовый редактор, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и предоставленный набор локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления страницы](api-management-page-controls.md).  
@@ -221,18 +221,18 @@ ms.locfileid: "52441916"
 </p>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  Этот шаблон не может использовать [элементы управления страницы](api-management-page-controls.md).  
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|type|ОПИСАНИЕ|  
+|Свойство|type|Описание|  
 |--------------|----------|-----------------|  
-|referenceCode|строка|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  
-|errorCode|строка|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  
-|emailBody|строка|Текст сообщения электронной почты формируется, если эта страница отобразилась в результате внутренней ошибки.|  
-|requestedUrl|строка|URL-адрес, запрашиваемый, если страница не найдена.|  
-|referrerUrl|строка|URL-адрес источника ссылки для запрошенного URL-адреса.|  
+|referenceCode|string|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  
+|errorCode|string|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  
+|emailBody|string|Текст сообщения электронной почты формируется, если эта страница отобразилась в результате внутренней ошибки.|  
+|requestedUrl|string|URL-адрес, запрашиваемый, если страница не найдена.|  
+|referrerUrl|string|URL-адрес источника ссылки для запрошенного URL-адреса.|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   
@@ -246,5 +246,5 @@ ms.locfileid: "52441916"
 }  
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 3/20/2019
 ms.author: rkarlin
 ms.openlocfilehash: e756a0a7af9ad89e3aad8b0dbe27a870a3f855c1
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58400931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60907486"
 ---
 # <a name="integrate-security-solutions-in-azure-security-center"></a>Интеграция решений по обеспечению безопасности в центре безопасности Azure
 В этом документе описана процедура управления решениями по обеспечению безопасности, подключенными к центру безопасности Azure, и добавления новых решений.
@@ -45,7 +45,7 @@ ms.locfileid: "58400931"
 ## <a name="how-security-solutions-are-integrated"></a>Как интегрируются решения по обеспечению безопасности
 Решения по обеспечению безопасности Azure, развертываемые из центра безопасности, подключены автоматически. Вы также можете подключить другие источники данных безопасности:
 
-- защиту идентификации Azure AD
+- Azure AD Identity Protection
 - Компьютеры, работающие локально или в других облаках.
 - Решения по обеспечению безопасности, поддерживающие общий формат событий (CEF).
 - Microsoft Advanced Threat Analytics.
@@ -220,7 +220,7 @@ ms.locfileid: "58400931"
 
 | **Описание запроса** | **Запрос** |
 |----|----|
-| Все оповещения.| index=main Microsoft.Security/locations/alerts|
+| Все предупреждения| index=main Microsoft.Security/locations/alerts|
 | Суммирование количества операций по имени.| index=main sourcetype="amal:security" \| table operationName \| stats count by operationName|
 | Получение сведений об оповещении: время, имя, состояние, идентификатор и подписка. | index=main Microsoft.Security/locations/alerts \| table \_time, properties.eventName, State, properties.operationId, am_subscriptionId |
 

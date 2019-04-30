@@ -7,11 +7,11 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: 69330e9d5a05fbcc892889f70a04f5eb4a4a2fb9
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53541427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60935557"
 ---
 # <a name="supported-azure-database-for-mariadb-server-versions"></a>Поддерживаемые версии сервера базы данных Azure для MariaDB
 База данных Azure для MariaDB была разработана с открытым исходным кодом [сервера MariaDB](https://downloads.mariadb.org/) с использованием подсистемы InnoDB. Сейчас база данных Azure для MySQL поддерживает перечисленные ниже версии:
@@ -25,5 +25,5 @@ ms.locfileid: "53541427"
 ## <a name="managing-updates-and-upgrades"></a>Управление обновлениями
 Служба автоматически управляет установкой исправлений для обновления дополнительного номера версии.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о квотах и ограничениях для конкретных ресурсов с учетом вашего **уровня служб** представлены в статье [Уровни служб в базе данных Azure для MySQL](./concepts-pricing-tiers.md).

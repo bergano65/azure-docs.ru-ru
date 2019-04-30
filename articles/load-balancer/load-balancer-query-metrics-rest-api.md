@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 06/06/2017
 ms.author: KumudD
 ms.openlocfilehash: 9f5206ef5348ee8fd7b3fe981a9cfe4afc1367fb
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60734547"
 ---
 # <a name="get-load-balancer-utilization-metrics-using-the-rest-api"></a>Получение метрик использования Load Balancer с помощью REST API
 
@@ -36,24 +36,24 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Ниже приведены обязательные заголовки. 
 
-|Заголовок запроса|ОПИСАНИЕ|  
+|Заголовок запроса|Описание|  
 |--------------------|-----------------|  
-|*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|  
-|*Authorization:*|Обязательный элемент. Задайте в качестве значения [допустимый токен доступа](/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |  
+|*Content-Type:*|Обязательный. Задайте значение `application/json`.|  
+|*Authorization:*|Обязательный. Задайте в качестве значения [допустимый токен доступа](/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |  
 
 ### <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 
-| ИМЯ | ОПИСАНИЕ |
+| ИМЯ | Описание |
 | :--- | :---------- |
 | subscriptionId | Идентификатор подписки Azure. Если у вас несколько подписок, см. раздел [Использование нескольких подписок](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
-| имя_группы_ресурсов | Имя группы ресурсов, к которой относится ресурс. Это значение можно получить с помощью API-интерфейса Azure Resource Manager, CLI или портала. |
+| resourceGroupName | Имя группы ресурсов, к которой относится ресурс. Это значение можно получить с помощью API-интерфейса Azure Resource Manager, CLI или портала. |
 | loadBalancerName | Имя Azure Load Balancer. |
 | metricnames | Разделенный запятыми список допустимых [метрик Load Balancer](/azure/load-balancer/load-balancer-standard-diagnostics). |
 | api-version | Версия API для использования в запросе.<br /><br /> В этом документе рассматривается API версии `2018-01-01`, которая включена в приведенный выше URL-адрес.  |
 | Интервал времени | Временной диапазон запроса. Это строка в формате `startDateTime_ISO/endDateTime_ISO`. Этот необязательный параметр имеет значение для возврата суточных данных в примере. |
 | &nbsp; | &nbsp; |
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Для этой операции текст запроса не требуется.
 

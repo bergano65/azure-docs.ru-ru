@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 07/07/2017
 ms.author: rajram
-ms.subservice: autoscale
+ms.component: autoscale
 ms.openlocfilehash: 0535c84a8ee0776c2c35a46d3c7510a2cd615cf6
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54469497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60788592"
 ---
 # <a name="get-started-with-autoscale-in-azure"></a>Начало работы с автомасштабированием в Azure
 В этой статье описывается, как настроить автомасштабирование для ресурса на портале Microsoft Azure.
@@ -50,7 +50,7 @@ Azure Monitor дает возможность обнаружить все рес
 
     a. Щелкните **Добавить правило**.
 
-    b. Для параметра **Оператор** установите значение **Меньше, чем**.
+    2. Для параметра **Оператор** установите значение **Меньше, чем**.
 
     c. Для параметра **Пороговое значение** задайте значение **20**.
 
@@ -88,7 +88,7 @@ Azure Monitor дает возможность обнаружить все рес
 ### <a name="view-the-scale-history-of-your-resource"></a>Просмотр журнала масштабирования ресурса
 Каждый раз, когда масштабируется ресурс, в журнале действий регистрируется событие. Вы можете просмотреть журнал масштабирования ресурса за последние 24 часа, открыв вкладку **Журнал запусков**.
 
-![Журнал выполнения][11]
+![Выполнения][11]
 
 Если вы хотите просмотреть полный журнал масштабирования (до 90 дней), выберите действие **Щелкните здесь, чтобы просмотреть дополнительные сведения**. Откроется журнал действий автомасштабирования, в котором уже выбраны нужный ресурс и категория.
 
@@ -114,7 +114,7 @@ Azure Monitor дает возможность обнаружить все рес
 
 Автомасштабирование можно возобновить в любой момент, щелкнув здесь же **Включить автомасштабирование**, а затем — **Сохранить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Создайте оповещение журнала действий, чтобы отслеживать все операции системы автомасштабирования в подписке](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-alert).
 - [Создайте оповещение журнала действий, чтобы отслеживать все сбои автомасштабирования в подписке](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-failed-alert).
 
@@ -133,4 +133,3 @@ Azure Monitor дает возможность обнаружить все рес
 [12]: ./media/autoscale-get-started/scale-definition-json.png
 [13]: ./media/autoscale-get-started/disable-autoscale.png
 [14]: ./media/autoscale-get-started/set-manualscale.png
-

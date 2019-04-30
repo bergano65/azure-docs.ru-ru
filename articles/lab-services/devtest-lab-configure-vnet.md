@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.author: spelluru
 ms.openlocfilehash: 8fb3b4ac748fcae2e3aad5b3bfb2a893340dc61a
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51256142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60694816"
 ---
 # <a name="configure-a-virtual-network-in-azure-devtest-labs"></a>Настройка виртуальной сети в Azure DevTest Labs
 Как описано в статье [Добавление виртуальной машины с артефактами в лабораторию](devtest-lab-add-vm.md), при создании виртуальной машины в лаборатории можно указать настроенную виртуальную сеть. Например, может потребоваться доступ к ресурсам корпоративной сети с виртуальных машин через виртуальную сеть, которая была настроена с помощью ExpressRoute или через VPN-подключение типа "сеть — сеть".
@@ -36,7 +36,7 @@ ms.locfileid: "51256142"
 
     ![Открытие области "Конфигурация и политики" лаборатории](./media/devtest-lab-configure-vnet/policies-menu.png)
 1. В разделе **Внешние ресурсы** выберите **Виртуальные сети**. Отобразится список виртуальных сетей, настроенных для текущей лаборатории, а также виртуальная сеть по умолчанию, созданная для этой лаборатории. 
-1. Щелкните **+ Добавить**.
+1. Выберите **+ добавить**.
    
     ![Добавление существующей виртуальной сети в лабораторию](./media/devtest-lab-configure-vnet/lab-settings-vnet-add.png)
 1. В области **Виртуальная сеть** выберите **[Выбрать виртуальную сеть]**.
@@ -65,6 +65,6 @@ ms.locfileid: "51256142"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 После добавления в лабораторию нужной виртуальной сети следует [добавить виртуальную машину в лабораторию](devtest-lab-add-vm.md).
 

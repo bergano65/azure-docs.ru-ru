@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Veracode | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Veracode | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Veracode.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 07/27/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e80a2e554d31ad85ddb1111f84a96e1814c3969f
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56194654"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60638826"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-veracode"></a>Руководство. Интеграция Azure Active Directory с Veracode
+# <a name="tutorial-azure-active-directory-integration-with-veracode"></a>Руководство по Интеграция Azure Active Directory с Veracode
 
 В этом руководстве описано, как интегрировать Veracode с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56194654"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с приложением Veracode, вам потребуется:
 
@@ -127,7 +127,7 @@ ms.locfileid: "56194654"
     |--- |--- |
     | firstname |User.givenname |
     | lastname |User.surname |
-    | email |User.mail |
+    | адрес электронной почты |User.mail |
     
     a. Для каждой строки данных в приведенной выше таблице нажмите кнопку **добавить атрибут пользователя**.
     
@@ -135,11 +135,11 @@ ms.locfileid: "56194654"
     
     ![Атрибуты](./media/veracode-tutorial/tutorial_veracode_addattr1.png "Атрибуты")
     
-    б) В текстовом поле **Имя атрибута** введите имя атрибута, отображаемое для этой строки.
+    2. В текстовом поле **Имя атрибута** введите имя атрибута, отображаемое для этой строки.
     
     c. В текстовом поле **Значение атрибута** выберите значение атрибута, отображаемое для этой строки.
     
-    4.3. Нажмите кнопку **ОК**.
+    d. Нажмите кнопку **ОК**.
 
 1. Нажмите кнопку **Сохранить** .
 
@@ -163,7 +163,7 @@ ms.locfileid: "56194654"
    
     a.  В текстовое поле **Issuer** (Издатель) вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
     
-    б) Чтобы загрузить сертификат, скачанный на портале Azure, нажмите кнопку **Choose File** (Выбрать файл).
+    2. Чтобы загрузить сертификат, скачанный на портале Azure, нажмите кнопку **Choose File** (Выбрать файл).
    
     c. Выберите параметр **Включить саморегистрацию**.
 
@@ -173,7 +173,7 @@ ms.locfileid: "56194654"
    
     a. Для параметра **New User Activation** (Активация нового пользователя) выберите значение **No Activation Required** (Активация не требуется).
    
-    б) Для параметра **User Data Updates** (Обновления пользовательских данных) выберите значение **Preference Veracode User Data** (Предпочтение пользовательских данных Veracode).
+    2. Для параметра **User Data Updates** (Обновления пользовательских данных) выберите значение **Preference Veracode User Data** (Предпочтение пользовательских данных Veracode).
    
     c. Для параметра **Сведения об атрибутах SAML**выберите следующие значения:
       * **роли пользователей;**
@@ -221,7 +221,7 @@ ms.locfileid: "56194654"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-veracode-test-user"></a>Создание тестового пользователя Veracode
 Чтобы пользователи Azure AD могли выполнять вход в Veracode, они должны быть подготовлены для Veracode. В случае Veracode подготовка выполняется автоматически. С вашей стороны никакие действия не требуются. В случае необходимости пользователи создаются автоматически при первой попытке входа в систему.
@@ -260,7 +260,7 @@ ms.locfileid: "56194654"
 
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Тест единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

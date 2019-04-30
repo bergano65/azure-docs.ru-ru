@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 01/19/2018
 ms.author: bwren
 ms.openlocfilehash: 06532369efb802606eb13a4b38a8579a3528f999
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54382952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60777039"
 ---
 # <a name="alert-management-solution-in-azure-log-analytics"></a>Решение "Управление оповещениями" в Azure Log Analytics
 
@@ -31,7 +31,7 @@ ms.locfileid: "54382952"
 
 Решение для управления оповещениями помогает анализировать все оповещения в репозитории Log Analytics.  Эти оповещения могут поступать из различных источников, например [созданных службой Log Analytics](../../azure-monitor/platform/alerts-overview.md) или [импортированных из Nagios или Zabbix](../../azure-monitor/learn/quick-collect-linux-computer.md). Это решение также импортирует оповещения из всех [подключенных групп управления System Center Operations Manager](../../azure-monitor/platform/om-agents.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Решение работает с любыми записями в репозитории Log Analytics, имеющими тип **Alert** (Оповещение), поэтому необходимо выполнить настройку, которая требуется для сбора этих записей.
 
 - Для оповещений Log Analytics [создайте правила генерации оповещений](../../azure-monitor/platform/alerts-overview.md), чтобы записи оповещений создавались непосредственно в репозитории.
@@ -52,11 +52,11 @@ ms.locfileid: "54382952"
 ### <a name="agents"></a>Агенты
 В следующей таблице описаны подключенные источники, которые поддерживаются этим решением.
 
-| Подключенный источник | Поддержка | ОПИСАНИЕ |
+| Подключенный источник | Поддержка | Описание |
 |:--- |:--- |:--- |
-| [Агенты Windows](agent-windows.md) | Нет  |Прямые агенты Windows не создают оповещения.  Оповещения Log Analytics могут создаваться на основании событий и данных о производительности, собранных из агентов Windows. |
-| [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет  |Прямые агенты Linux не создают оповещения.  Оповещения Log Analytics могут создаваться на основании событий и данных о производительности, собранных из агентов Linux.  Оповещения Nagios и Zabbix собираются с тех серверов, для которых требуется агент Linux. |
-| [Группа управления System Center Operations Manager](../../azure-monitor/platform/om-agents.md) |Yes |Оповещения, созданные в агентах System Center Operations Manager, поступают в группу управления и пересылаются в Log Analytics.<br><br>Прямое подключение агентов Operations Manager к Log Analytics не требуется. Данные об оповещениях пересылаются из группы управления в репозиторий Log Analytics. |
+| [Агенты Windows](agent-windows.md) | Нет |Прямые агенты Windows не создают оповещения.  Оповещения Log Analytics могут создаваться на основании событий и данных о производительности, собранных из агентов Windows. |
+| [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет |Прямые агенты Linux не создают оповещения.  Оповещения Log Analytics могут создаваться на основании событий и данных о производительности, собранных из агентов Linux.  Оповещения Nagios и Zabbix собираются с тех серверов, для которых требуется агент Linux. |
+| [Группа управления System Center Operations Manager](../../azure-monitor/platform/om-agents.md) |Да |Оповещения, созданные в агентах System Center Operations Manager, поступают в группу управления и пересылаются в Log Analytics.<br><br>Прямое подключение агентов Operations Manager к Log Analytics не требуется. Данные об оповещениях пересылаются из группы управления в репозиторий Log Analytics. |
 
 
 ### <a name="collection-frequency"></a>Частота сбора
@@ -70,7 +70,7 @@ ms.locfileid: "54382952"
 
 Щелкните плитку **Управление оповещениями**, чтобы открыть панель мониторинга **Управление оповещениями**.  Панель мониторинга содержит столбцы, перечисленные в приведенной ниже таблице.  Каждый столбец содержит десять самых частых оповещений, соответствующих выбранным критериям для данного столбца указанной области действия и за указанный период.  Можно выполнить поиск журналов, выводящий весь список, щелкнув элемент **Просмотреть все** внизу столбца или заголовок этого столбца.
 
-| столбец | ОПИСАНИЕ |
+| столбец | Описание |
 |:--- |:--- |
 | критические оповещения; |Все оповещения с уровнем серьезности "Критическое" группируются по имени.  Щелкните имя оповещения, чтобы выполнить поиск журналов, возвращающий все записи для данного оповещения. |
 | предупреждающие оповещения; |Все оповещения с уровнем серьезности "Предупреждение" группируются по имени.  Щелкните имя оповещения, чтобы выполнить поиск журналов, возвращающий все записи для данного оповещения. |
@@ -113,17 +113,17 @@ ms.locfileid: "54382952"
 ## <a name="sample-log-searches"></a>Пример поисков журналов
 Следующая таблица содержит примеры поисков по журналам для получения записей оповещений, собранных этим решением. 
 
-| Запрос | ОПИСАНИЕ |
+| Запрос | Описание |
 |:---|:---|
 | Alert &#124; where SourceSystem == "OpsManager" and AlertSeverity == "error" and TimeRaised > ago(24h) |Критические оповещения, созданные за последние 24 часа. |
 | Alert &#124; where AlertSeverity == "warning" and TimeRaised > ago(24h) |Предупредительные оповещения, созданные за последние 24 часа. |
-| Alert &#124; where SourceSystem == "OpsManager" and AlertState != "Closed" and TimeRaised > ago(24h) &#124; summarize Count = count() by SourceDisplayName |Источники с активными оповещениями, возникшие за последние 24 часа. |
+| Alert &#124; where SourceSystem == "OpsManager" and AlertState != "Closed" and TimeRaised > ago(24h) &#124; summarize Count = count() by SourceDisplayName |Источники с активными предупреждениями, вызванными за последние 24 часа |
 | Alert &#124; where SourceSystem == "OpsManager" and AlertSeverity == "error" and TimeRaised > ago(24h) and AlertState != "Closed" |Все критические оповещения, созданные за последние 24 часа и остающиеся активными. |
 | Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(24h) and AlertState == "Closed" |Все критические оповещения, созданные за последние 24 часа и уже закрытые. |
-| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; summarize Count = count() by AlertSeverity |Оповещения, созданные за последние 1 день и сгруппированные по уровню серьезности. |
-| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; sort by RepeatCount desc |Оповещения, созданные за последние 1 день и сгруппированные по числу повторений. |
+| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; summarize Count = count() by AlertSeverity |Предупреждения, вызванные за последний день, сгруппированные по серьезности |
+| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; sort by RepeatCount desc |Предупреждения, вызванные за последний день, отсортированные по повторяющемуся значению счетчика |
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о генерации оповещений из Log Analytics см. в статье [Оповещения в Log Analytics](../../azure-monitor/platform/alerts-overview.md).

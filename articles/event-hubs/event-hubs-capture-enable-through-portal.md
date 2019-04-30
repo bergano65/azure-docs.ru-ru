@@ -16,11 +16,11 @@ ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: shvija
 ms.openlocfilehash: 9108c52529319288fba48dbad3c6f8aa6cb5f725
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57850757"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60822543"
 ---
 # <a name="enable-capturing-of-events-streaming-through-azure-event-hubs"></a>Включение сбора событий, передающихся потоком из Центров событий Azure
 
@@ -66,11 +66,11 @@ ms.locfileid: "57850757"
 
 Функцию "Сбор" можно настроить в существующих концентраторах событий, расположенных в пространствах имен Центров событий. Чтобы включить запись в существующем концентраторе событий или изменить параметры записи, щелкните пространство имен. Появится экран обзора. Затем щелкните концентратор событий, для которого необходимо включить запись или изменить ее параметры. Наконец, на открывшейся странице слева щелкните параметр **записи** и измените параметры записи, как показано на следующих снимках экрана.
 
-### <a name="azure-blob-storage"></a>Хранилище больших двоичных объектов Azure
+### <a name="azure-blob-storage"></a>Хранилище BLOB-объектов Azure
 
 ![Настройка хранилища BLOB-объектов Azure][2]
 
-### <a name="azure-data-lake-store"></a>Хранилище озера данных Azure
+### <a name="azure-data-lake-store"></a>Azure Data Lake Store
 
 ![Настройка Azure Data Lake Storage][4]
 

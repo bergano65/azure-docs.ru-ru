@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 02/10/2019
 ms.author: anzaman
 ms.openlocfilehash: e5a34a75c73401c567a0e898a1ce9f85cde96586
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59360528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60553714"
 ---
 # <a name="customize-a-person-model-with-the-video-indexer-api"></a>Настройка модели пользователя с помощью API Индексатора видео
 
@@ -36,7 +36,7 @@ ms.locfileid: "59360528"
 
 Создайте новую модель пользователя в указанной учетной записи. 
 
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
+### <a name="request-url"></a>URL-адрес запроса
 
 Это запрос POST.
 
@@ -56,10 +56,10 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
-|name|строка|Yes|Имя для модели пользователя|
-|accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountId|string|Да|Глобальный уникальный идентификатор для учетной записи|
+|name|string|Да|Имя для модели пользователя|
+|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Текст запроса
 
@@ -84,7 +84,7 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 
 После успешного удаления модели пользователя, индекс ваших видео, который использовал удаленную модель, измениться только после переиндексации. После переиндексации лица, имена которых находились в удаленной модели, не будут распознаваться Индексатором видео в ваших видео индексированных с помощью этой модели. Тем не менее эти лица все же будут обнаруживаться. Ваши видео, индексирование с помощью удаленной модели, будут использовать модель пользователя вашей учетной записи по умолчанию. Если имена лиц с удаленной модели также подсоединены к вашей модели учетной записи по умолчанию, то они все же будут распознаваться в видео.
 
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
+### <a name="request-url"></a>URL-адрес запроса
 
 ```
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/PersonModels/{id}?accessToken={accessToken}
@@ -101,10 +101,10 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
-|id|строка|Yes|Идентификатор модели пользователя (создан вместе с моделью пользователя)|
-|accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountId|string|Да|Глобальный уникальный идентификатор для учетной записи|
+|идентификатор|string|Да|Идентификатор модели пользователя (создан вместе с моделью пользователя)|
+|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Текст запроса
 
@@ -138,9 +138,9 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
-|accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountId|string|Да|Глобальный уникальный идентификатор для учетной записи|
+|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Текст запроса
 
@@ -193,12 +193,12 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Vide
 
 |**Имя**|**Тип**|**Обязательный**|**Описание**|
 |---|---|---|---|
-|location|строка|Yes|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Yes|Глобальный уникальный идентификатор для учетной записи|
-|videoId|строка|Yes|Идентификатор для видео, в которых присутствует лицо, информацию о котором вы желаете обновить. Оно создается во время отправки и индексации.|
-|faceId|целое число|Yes|Идентификатор для лица, информацию о котором вы будете обновлять. Вы можете получить faceId в индексе видео|
-|accessToken|строка|Yes|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-|name|строка|Yes|Новое имя обновляемого лица.|
+|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
+|accountId|string|Да|Глобальный уникальный идентификатор для учетной записи|
+|videoId|string|Да|Идентификатор для видео, в которых присутствует лицо, информацию о котором вы желаете обновить. Оно создается во время отправки и индексации.|
+|faceId|integer|Да|Идентификатор для лица, информацию о котором вы будете обновлять. Вы можете получить faceId в индексе видео|
+|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
+|name|string|Да|Новое имя обновляемого лица.|
 
 Имена являются уникальными в моделях Person, поэтому если вы присваиваете одно **имя** двум разным лицам, Индексатор видео распознает эти лица как лица одного человека и объединит их при повторной индексации видео. 
 

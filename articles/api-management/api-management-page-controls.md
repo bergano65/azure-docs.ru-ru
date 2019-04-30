@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 11/20/2017
 ms.author: apimpm
 ms.openlocfilehash: d87293d89e4009512494bf47f9742ea5901f909a
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52445368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60656988"
 ---
 # <a name="azure-api-management-page-controls"></a>Элементы управления страницей в службе управления API Azure
 Служба управления API Azure предоставляет следующие элементы управления страницей для использования в шаблонах портала разработчика.  
@@ -59,7 +59,7 @@ ms.locfileid: "52445368"
   
 ### <a name="parameters"></a>Параметры  
   
-|Параметр|ОПИСАНИЕ|  
+|Параметр|Описание|  
 |---------------|-----------------|  
 |appId|Идентификатор приложения.|  
   
@@ -203,7 +203,7 @@ ms.locfileid: "52445368"
   
 ### <a name="parameters"></a>Параметры  
   
-|Параметр|ОПИСАНИЕ|  
+|Параметр|Описание|  
 |---------------|-----------------|  
 |subscriptionId|Идентификатор подписки, которую следует отменить.|  
 |cancelUrl|URL-адрес для отмены подписки.|  
@@ -213,5 +213,5 @@ ms.locfileid: "52445368"
   
 -   [Продукт](api-management-product-templates.md#Product)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

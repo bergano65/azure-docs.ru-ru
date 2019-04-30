@@ -8,11 +8,11 @@ ms.author: viviali
 ms.date: 02/15/2019
 ms.topic: conceptual
 ms.openlocfilehash: 322be1e13662d92a3cb0a805a9ccaacd05928f7d
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56328101"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60886814"
 ---
 # <a name="visualize-and-analyze-your-azure-iot-central-data-in-a-power-bi-dashboard"></a>Визуализация и анализ данных Azure IoT Central на панели мониторинга Power BI
 
@@ -31,7 +31,7 @@ ms.locfileid: "56328101"
 
 ## <a name="get-the-power-bi-solution-for-azure-iot-centralhttpsakamsiotcentralpowerbisolutiontemplate-from-microsoft-appsource"></a>Скачайте [решение Power BI для Azure IoT Central](https://aka.ms/iotcentralpowerbisolutiontemplate) с Microsoft AppSource.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для настройки решения требуется следующее:
 - Доступ к подписке Azure
 - Данные, экспортированные из вашего приложения IoT Central с использованием [непрерывного экспорта данных](howto-export-data.md). Рекомендуется включать измерения, устройства и потоки шаблонов устройств, чтобы максимально использовать панель мониторинга Power BI.
@@ -63,7 +63,7 @@ ms.locfileid: "56328101"
 ### <a name="azure-data-factory"></a>Фабрика данных Azure
 Фабрика данных Azure подключается к базе данных SQL как связанная служба. Она запускает операции хранимой процедуры, которые обрабатывают данные и сохраняют их в таблицах анализа.
 
-### <a name="azure-sql-database"></a>Базы данных SQL Azure
+### <a name="azure-sql-database"></a>База данных SQL Azure
 Эти таблицы создаются автоматически для заполнения стандартных отчетов. Изучив эти схемы в Power BI, вы сможете создавать собственные визуализации этих данных.
 
 | Имя таблицы |
@@ -93,7 +93,7 @@ ms.locfileid: "56328101"
 
 Перейдите в Microsoft AppSource и скачайте [решение Power BI для Azure IoT Central](https://aka.ms/iotcentralpowerbisolutiontemplate).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как визуализировать данные в Power BI, ознакомьтесь со следующей статьей.
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/02/2017
 ms.author: amsriva
-ms.openlocfilehash: 1164fc24355657af22b6befaad74685ebbc2b5cb
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: b65b47389611bcc0e5acb3c7ebff672f72a87581
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23127102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60761590"
 ---
 # <a name="vpn-gateway-classic-to-resource-manager-migration"></a>Перенос VPN-шлюза из классической модели развертывания в модель Resource Manager
 VPN-шлюзы теперь можно переносить из классической модели развертывания в модель развертывания Resource Manager. Вы можете узнать больше о [возможностях и преимуществах Azure Resource Manager](../azure-resource-manager/resource-group-overview.md). В этой статье подробно описан переход от классической модели развертывания к новой модели на основе Resource Manager. 
@@ -65,6 +65,6 @@ VPN-шлюзы в топологии можно настроить таким о
 * Включите BGP на VPN-шлюзах, подключенных друг к другу и к локальным ресурсам. Включение BGP восстанавливает подключение без изменения конфигурации, так как маршруты выясняются и объявляются между шлюзами виртуальной сети. Обратите внимание, что использование BGP доступно только в SKU "Стандартный" и выше.
 * Установите явное подключение между затронутой виртуальной сетью и шлюзом локальной сети, представляющим локальное расположение. Для этого также потребуется изменить конфигурацию локального маршрутизатора, чтобы создать и настроить туннель IPsec.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Изучив сведения о поддержке при переносе VPN-шлюза, ознакомьтесь со статьей [Перенос ресурсов IaaS из классической модели в модель Azure Resource Manager с помощью Azure PowerShell](../virtual-machines/windows/migration-classic-resource-manager-ps.md), чтобы приступить к работе.
 

@@ -8,14 +8,15 @@ manager: jeconnoc
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: reference
-ms.date: 02/18/2019
-ms.author: cshoe
+origin.date: 02/18/2019
+ms.date: 03/04/2019
+ms.author: v-junlch
 ms.openlocfilehash: 3865f748a9ca2fe09660d6454542d64f73a8e3c1
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58889844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61020968"
 ---
 # <a name="azure-functions-triggers-and-bindings-concepts"></a>Основные понятия триггеров и привязок в Функциях Azure
 
@@ -35,7 +36,7 @@ ms.locfileid: "58889844"
 |-------------|---------|---------------|----------------|
 | Приходит новое сообщение очереди, которая выполняет функцию для записи в другую очередь. | очереди<sup>*</sup> | *None* | очереди<sup>*</sup> |
 |Запланированное задание считывает содержимое хранилища BLOB-объектов и создает новый документ Cosmos DB. | Таймер | Хранилище BLOB-объектов | База данных Cosmos |
-|Сетка событий используется для чтения изображения из хранилища BLOB-объектов и документа из Cosmos DB, чтобы отправить сообщение электронной почты. | Сетка событий Azure | Хранилище BLOB-объектов и Cosmos DB | SendGrid |
+|Сетка событий используется для чтения изображения из хранилища BLOB-объектов и документа из Cosmos DB, чтобы отправить сообщение электронной почты. | Служба "Сетка событий Azure" | Хранилище BLOB-объектов и Cosmos DB | SendGrid |
 | Объект webhook, который использует Microsoft Graph, чтобы обновить лист Excel. | HTTP | *None* | Microsoft Graph |
 
 <sup>\*</sup> Представляет различные очереди
@@ -96,3 +97,5 @@ ms.locfileid: "58889844"
 ## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Регистрация расширений привязки функций Azure](./functions-bindings-register.md)
+
+<!-- Update_Description: wording update -->

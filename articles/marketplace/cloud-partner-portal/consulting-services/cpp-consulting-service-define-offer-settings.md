@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 590aa440f35f97e854fa827b0d8db1c3f9211faf
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54231943"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60749674"
 ---
 # <a name="offer-settings-tab"></a>Вкладка с параметрами предложения
 
@@ -27,7 +27,7 @@ ms.locfileid: "54231943"
 
 ![Создание нового предложения консультационных услуг. Вкладка "Параметры предложения"](media/consultingoffer-settings-tab.png)
 
-### <a name="offer-id"></a>Offer ID (Идентификатор предложения)
+### <a name="offer-id"></a>ИД предложения
 
 Этот идентификатор является уникальным именем, которое создается при первой отправке предложения. Оно должно содержать только строчные буквы, цифры, дефисы и символы подчеркивания. **Идентификатор предложения** будет отображаться в URL-адресе и влиять на результаты поисковой системы. Например, *yourcompanyname_exampleservice*.
 
@@ -74,6 +74,6 @@ ms.locfileid: "54231943"
 
 После заполнения вкладки **Offer Settings** (Параметры предложения) сохраните вашу отправку. Теперь имя предложения будет отображаться над областью редактора, и его можно будет найти в разделе **Все предложения**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучив [эту статью](./cpp-consulting-service-storefront-details.md), вы можете ввести сведения об онлайн-магазине и определить, где публиковать их — в Azure Marketplace или AppSource.

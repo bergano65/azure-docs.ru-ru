@@ -12,11 +12,11 @@ ms.topic: conceptual
 manager: carmonm
 ROBOTS: NOINDEX
 ms.openlocfilehash: 60175a5b9309c08d5fdab997469a9d0526afaefe
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54437969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60737029"
 ---
 # <a name="introduction-to-authentication-in-azure-automation"></a>Общие сведения о проверке подлинности в службе автоматизации Azure  
 С помощью службы автоматизации Azure можно автоматизировать задачи, выполняемые с ресурсами Azure (локально), а также с ресурсами других поставщиков облачных служб, например Amazon Web Services (AWS).  Для выполнения необходимых действий модуль Runbook должен иметь разрешения на безопасный доступ к ресурсам с минимальными правами, требуемыми в рамках подписки.

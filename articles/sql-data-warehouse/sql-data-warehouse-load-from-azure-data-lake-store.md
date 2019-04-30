@@ -1,5 +1,5 @@
 ---
-title: Руководство. Загрузка из Azure Data Lake Storage 1-го поколения в Хранилище данных SQL Azure | Документация Майкрософт
+title: Руководство по Загрузка из Azure Data Lake Storage 1-го поколения в Хранилище данных SQL Azure | Документация Майкрософт
 description: Используйте внешние таблицы PolyBase для загрузки данных из Azure Data Lake Storage 1-го поколения в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: ckarst
@@ -11,11 +11,11 @@ ms.date: 04/17/2018
 ms.author: cakarst
 ms.reviewer: igorstan
 ms.openlocfilehash: 32ac5b0841365acfc0a52e343eafc4f3760dffaa
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55472239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61476142"
 ---
 # <a name="load-data-from-azure-data-lake-storage-gen1-to-sql-data-warehouse"></a>Загрузка данных из Azure Data Lake Storage 1-го поколения в хранилище данных SQL
 Используйте внешние таблицы PolyBase для загрузки данных из Azure Data Lake Storage 1-го поколения в хранилище данных SQL Azure. Несмотря на то, что можно запускать специальные запросы данных, хранящихся в Data Lake Storage 1-го поколения, мы рекомендуем импортировать данные в хранилище данных SQL для обеспечения максимальной производительности.
@@ -191,7 +191,7 @@ ALTER INDEX ALL ON [dbo].[DimProduct] REBUILD;
 ## <a name="achievement-unlocked"></a>Победа!
 Данные успешно загружены в хранилище данных SQL Azure. Отличная работа!
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 В этом руководстве вы создали внешние таблицы для определения структуры данных, хранящихся в Data Lake Storage 1-го поколения, а затем использовали инструкцию PolyBase CREATE TABLE AS SELECT для загрузки данных в хранилище данных. 
 
 Вы выполнили такие действия:

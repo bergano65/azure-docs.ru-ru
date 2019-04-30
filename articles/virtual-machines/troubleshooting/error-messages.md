@@ -13,11 +13,11 @@ ms.workload: infrastructure
 ms.date: 5/22/2017
 ms.author: xujing
 ms.openlocfilehash: 5945be210812a6cbc24c9a3bb12414be5212be17
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57437604"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60711209"
 ---
 # <a name="understand-common-error-messages-when-you-manage-virtual-machines-in-azure"></a>Сведения о сообщениях об ошибках, часто возникающих при управлении виртуальными машинами в Azure
 
@@ -130,10 +130,10 @@ ms.locfileid: "57437604"
 |  NetworkingInternalOperationError  |  Неизвестная сетевая ошибка при выделении.  |
 |  NetworkingInternalOperationError  |  Неизвестная сетевая ошибка при выделении.  |
 |  NetworkingInternalOperationError  |  Произошла внутренняя ошибка при обработке сетевого профиля ВМ.  |
-|  NotFound  |  Не удается найти группу доступности {0}.  |
-|  NotFound  |  Исходная виртуальная машина "{0}", указанная в запросе, не существует в этом расположении Azure.  |
-|  NotFound  |  Клиент с идентификатором {0} не обнаружен.  |
-|  NotFound  |  Не удается найти образ {0}.  |
+|  Не найдено  |  Не удается найти группу доступности {0}.  |
+|  Не найдено  |  Исходная виртуальная машина "{0}", указанная в запросе, не существует в этом расположении Azure.  |
+|  Не найдено  |  Клиент с идентификатором {0} не обнаружен.  |
+|  Не найдено  |  Не удается найти образ {0}.  |
 |  NotSupported  |  Тип лицензии — {0}, но большой двоичный объект образа {1} не из локального источника.  |
 |  OperationNotAllowed  |  Не удается удалить группу доступности {0}. Перед удалением группы доступности убедитесь, что она не содержит никакие ВМ.  |
 |  OperationNotAllowed  |  Изменять SKU группы доступности с Aligned (Согласованный) на Classic (Классический) запрещено.  |

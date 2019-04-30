@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 02/17/2019
 ms.author: juliako
 ms.openlocfilehash: 4f8851248c395a1f03c46490c8eb5e71221dd133
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57549907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60733306"
 ---
 # <a name="clouds-and-regions-in-which-azure-media-services-v3-exists"></a>Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3
 
@@ -24,14 +24,14 @@ ms.locfileid: "57549907"
 
 ## <a name="feature-availability-in-azure-clouds"></a>Доступность функций в облаках Azure
 
-| Функция|Глобальные регионы Azure | Azure Government|Azure для Германии|Azure China 21Vianet|
+| Компонент|Глобальные регионы Azure | Azure Government|Azure для Германии|Azure China 21Vianet|
 | --- | --- | --- | --- | --- |
-| [Azure EventGrid](reacting-to-media-services-events.md) | Доступна | Недоступно | Недоступно | Недоступно |
-| [VideoAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступна | Недоступно | Недоступно | Недоступно |
-| [AudioAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступна | Недоступно | Недоступно | Недоступно |
-| [StandardEncoderPreset](encoding-concept.md) | Доступна | Доступна | Доступна | Доступна |
-| [LiveEvents](live-streaming-overview.md) | Доступна | Доступна | Доступна | Доступна |
-| [StreamingEndpoints](streaming-endpoint-concept.md) | Доступна | Доступна | Доступна | Доступна |
+| [Azure EventGrid](reacting-to-media-services-events.md) | Доступно | Недоступно | Недоступно | Недоступно |
+| [VideoAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступно | Недоступно | Недоступно | Недоступно |
+| [AudioAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступно | Недоступно | Недоступно | Недоступно |
+| [StandardEncoderPreset](encoding-concept.md) | Доступно | Доступно | Доступно | Доступно |
+| [LiveEvents](live-streaming-overview.md) | Доступно | Доступно | Доступно | Доступно |
+| [StreamingEndpoints](streaming-endpoint-concept.md) | Доступно | Доступно | Доступно | Доступно |
 
 ## <a name="regionsgeographieslocations"></a>Регионы, географические регионы или расположения
 

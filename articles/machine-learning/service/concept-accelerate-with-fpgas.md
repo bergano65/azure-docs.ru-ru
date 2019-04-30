@@ -12,11 +12,11 @@ ms.reviewer: jmartens
 ms.date: 1/10/2019
 ms.custom: seodec18
 ms.openlocfilehash: 716de6d491be753c5c32c0a2774404140010f72c
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56823320"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60821202"
 ---
 # <a name="what-are-fpgas-and-project-brainwave"></a>Что такое ППВМ и Project Brainwave?
 
@@ -30,7 +30,7 @@ ms.locfileid: "56823320"
 
 ![Схема сравнения ППВМ Службы машинного обучения Azure](./media/concept-accelerate-with-fpgas/azure-machine-learning-fpga-comparison.png)
 
-|Процессор||ОПИСАНИЕ|
+|Процессор||Описание|
 |---|:-------:|------|
 |Микросхемы приложений|ASIC|Пользовательские микросхемы, такие как процессор TensorFlow (TPU) от Google, предоставляют повышенную эффективность. Их нельзя настраивать повторно в случае изменения требований.|
 |Программируемые пользователем вентильные матрицы|FPGA|ППВМ (например те, что доступны в Azure) обеспечивают производительность, близкую к микросхемам ASIC. Они также гибкие и поддерживают перенастройку для реализации новой логики.|

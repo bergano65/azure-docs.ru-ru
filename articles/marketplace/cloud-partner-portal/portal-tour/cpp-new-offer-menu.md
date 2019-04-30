@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 11/12/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 04cac492fd044471a646444afc21bc70f92537d2
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55656857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60849239"
 ---
 # <a name="new-offer-menu"></a>Меню "Новое предложение"
 
@@ -43,6 +43,6 @@ ms.locfileid: "55656857"
 > Так как это меню периодически обновляется, чтобы отразить новые типы предложений и изменения имен, отображаемые элементы могут не совпадать с указанными в приведенной выше таблице.
 
 
-### <a name="next-steps"></a>Дополнительная информация
+### <a name="next-steps"></a>Дальнейшие действия
 
 Если вы создаете предложение, можно перейти к разделу предложения с помощью приведенной выше таблицы и получить рекомендации по его созданию и публикации.  В других случаях продолжайте работу с порталом на [странице "Все предложения"](./cpp-all-offers-page.md).

@@ -7,13 +7,13 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: raynew
 ms.openlocfilehash: 1b03cf648ad65960cce4ffc874cf32ad91ef7dc1
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59490643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60596723"
 ---
-# <a name="discover-and-assess-a-large-vmware-environment"></a>Обнаружение и оценка крупной среды VMware
+# <a name="discover-and-assess-a-large-vmware-environment"></a>Обнаружение и оценка крупных сред VMware
 
 Служба "Миграция Azure" имеет ограничение в 1500 виртуальных машин на один проект. В этой статье описывается, как оценить большое количество локальных виртуальных машин с помощью службы [Миграция Azure](migrate-overview.md).
 
@@ -58,9 +58,9 @@ ms.locfileid: "59490643"
 
 | **Сущность** | **Предельное число виртуальных машин** |
 | ---------- | ----------------- |
-| Project    | 1500             |
-| Обнаружение  | 1500             |
-| Оценка | 1500             |
+| Проект    | 1,500             |
+| Обнаружение  | 1,500             |
+| Оценка | 1,500             |
 
 При планировании учитывайте следующие особенности:
 
@@ -270,7 +270,7 @@ SHA256 | e5e997c003e29036f62bf3fdce96acd4a271799211a84b34b35dfd290e9bea9c
 1. Отображаемое имя виртуальной машины (на сервере vCenter).
 2. Путь инвентаризации виртуальной машины (узел или папка на сервере vCenter).
 3. IP-адрес
-4. MAC-адрес.
+4. MAC-адрес
 5. Операционная система
 5. Число ядер, дисков и сетевых адаптеров.
 6. Объем памяти, размеры диска.

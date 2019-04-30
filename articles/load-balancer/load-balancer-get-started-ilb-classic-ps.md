@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 01/23/2017
 ms.author: genli
 ms.openlocfilehash: ef6aac0d97c38798f826304475779ea8059875c7
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53097987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60848559"
 ---
 # <a name="get-started-creating-an-internal-load-balancer-classic-using-powershell"></a>Приступая к созданию внутреннего балансировщика нагрузки (классическая модель) с помощью PowerShell
 
@@ -183,7 +183,7 @@ Get-Help Get-AzureInternalLoadbalancer -full
 Get-Help Remove-AzureInternalLoadBalancer -full
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка режима распределения балансировщика нагрузки с помощью соответствия исходному IP-адресу](load-balancer-distribution-mode.md)
 

@@ -8,11 +8,11 @@ ms.custom: REST
 ms.topic: article
 ms.date: 06/06/2017
 ms.openlocfilehash: 6d83aed6910127ceb34b9a694f48ca9c19ab6d18
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55878397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60790918"
 ---
 # <a name="get-resource-health-using-the-rest-api"></a>Получение сведений о работоспособности ресурсов с помощью REST API 
 
@@ -32,21 +32,21 @@ https://management.azure.com/subscriptions/{subscription-id}/providers/microsoft
 
 Ниже приведены обязательные заголовки. 
 
-|Заголовок запроса|ОПИСАНИЕ|  
+|Заголовок запроса|Описание|  
 |--------------------|-----------------|  
-|*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|  
-|*Authorization:*|Обязательный элемент. Задайте в качестве значения [допустимый токен доступа](/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |  
+|*Content-Type:*|Обязательный. Задайте значение `application/json`.|  
+|*Authorization:*|Обязательный. Задайте в качестве значения [допустимый токен доступа](/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |  
 
 ### <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 
-| ИМЯ | ОПИСАНИЕ |
+| ИМЯ | Описание |
 | :--- | :---------- |
 | subscriptionId | Идентификатор подписки Azure. Если у вас несколько подписок, см. раздел [Использование нескольких подписок](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
 | api-version | Версия API для использования в запросе.<br /><br /> В этом документе рассматривается API версии `2015-04-01`, которая включена в приведенный выше URL-адрес.  |
 | $filter | Параметр фильтрации для уменьшения набора возвращаемых результатов. Допустимые шаблоны для этого параметра доступны [в справочнике по работе с журналами действий](/rest/api/monitor/activitylogs/list#uri-parameters). В примере ниже показана запись всех событий в диапазоне времени между 2018-05-16 и 2018-06-20. |
 | &nbsp; | &nbsp; |
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Для этой операции текст запроса не требуется.
 

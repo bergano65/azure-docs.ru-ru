@@ -12,11 +12,11 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
 ms.openlocfilehash: 784d8c9280aeff7224f90ecee0b16c9c30381aeb
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53087734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60746922"
 ---
 # <a name="managed-identities-for-azure-resources-with-event-hubs"></a>Использование управляемых удостоверений для ресурсов Azure с Центрами событий
 
@@ -74,7 +74,7 @@ ms.locfileid: "53087734"
  
 Управляемое удостоверение работает только в среде Azure и только в развертывании службы приложения, в котором оно было настроено. На данный момент управляемые удостоверения не работают со слотами развертывания Службы приложений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Центрах событий см. по следующим ссылкам:
 

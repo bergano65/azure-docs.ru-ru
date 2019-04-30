@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 04/19/2019
 ms.author: alkohli
 ms.openlocfilehash: ee2820d78e95924e09a0219753f87d6910c0e736
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60014638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60782963"
 ---
 # <a name="troubleshoot-issues-related-to-azure-data-box-blob-storage"></a>Устранение неполадок, относящиеся к хранилищу BLOB-объектов Azure Data Box
 
@@ -55,7 +55,7 @@ ms.locfileid: "60014638"
 |Сообщение об ошибке  |Рекомендуемое действие |
 |---------|---------|
 |Значение для одного из заголовков HTTP не в правильном формате. |Установленная версия библиотека хранилища Microsoft Azure для Python не поддерживается Data Box. См. в разделе Требования к хранилищу BLOB-объектов Azure Data Box для поддерживаемых версий.|
-|… [SSL: CERTIFICATE_VERIFY_FAILED]...|Прежде чем запускать Python, значение переменной среды REQUESTS_CA_BUNDLE путь к файлу сертификата SSL в кодировке base 64 (см. в разделе Практическое [Загрузите сертификат]()). <br>Например: <br>`export REQUESTS_CA_BUNDLE=/tmp/mycert.cer` <br>`python` <br>Можно также добавить сертификат в хранилище сертификатов компьютера и затем задать переменную среды для пути хранилища. <br> Например в Ubuntu: <br>`export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt` <br>`python`|
+|… [SSL: CERTIFICATE_VERIFY_FAILED]...|Прежде чем запускать Python, значение переменной среды REQUESTS_CA_BUNDLE путь к файлу сертификата SSL в кодировке base 64 (см. в разделе Практическое [Загрузите сертификат]()). <br>Пример.<br>`export REQUESTS_CA_BUNDLE=/tmp/mycert.cer` <br>`python` <br>Можно также добавить сертификат в хранилище сертификатов компьютера и затем задать переменную среды для пути хранилища. <br> Например в Ubuntu: <br>`export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt` <br>`python`|
 
 
 ## <a name="common-errors"></a>Распространенные ошибки

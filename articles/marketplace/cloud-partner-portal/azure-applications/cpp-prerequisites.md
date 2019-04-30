@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: pbutlerm
 ms.openlocfilehash: df127eec662f8598246f276ef9b1608ae3021512
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58007156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60744930"
 ---
 # <a name="azure-application-prerequisites"></a>Необходимые условия для приложения Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "58007156"
 *   Дополнительные сведения о шаблонах Azure Resource Manager см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates). В этой статье описана структура шаблона Azure Resource Manager. Статья содержит информацию о разных разделах шаблона и свойствах, которые доступны в этих разделах. Шаблон состоит из JSON и выражений, на основе которых можно создавать значения для развертывания. 
 * Шаблоны быстрого запуска Azure.<br> Дополнительные сведения можно найти в разделе 
 
-  * [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/). Развертывайте ресурсы Azure из Azure Resource Manager с помощью созданных сообществом шаблонов, которые позволяют выполнять больший объем работы. Диспетчер ресурсов Azure позволяет подготавливать приложения с помощью декларативного шаблона. В одном шаблоне можно развернуть несколько служб наряду с компонентами, от которых зависит их работа. Один шаблон используется для развертывания приложения на каждом этапе его жизненного цикла.
+  * [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/). Развертывайте ресурсы Azure из Azure Resource Manager с помощью созданных сообществом шаблонов, которые позволяют выполнять больший объем работы. Диспетчер ресурсов Azure позволяет подготавливать приложения с помощью декларативного шаблона. В одном шаблоне можно развернуть несколько служб наряду с компонентами, от которых зависит их работа. Вы используете один и тот же шаблон для многократного развертывания вашего приложения на каждой стадии его жизненного цикла.
   * [GitHub. Шаблоны быстрого запуска Azure Resource Manager](https://github.com/azure/azure-quickstart-templates). Этот репозиторий содержит все доступные на данный момент шаблоны Azure Resource Manager, предоставленные сообществом. Индекс для поиска шаблона поддерживается на https://azure.microsoft.com/en-us/documentation/templates/.
 * Создание определения пользовательского интерфейса<br>
 Подробнее см. статью [Создание пользовательского интерфейса на портале Azure для управляемого приложения](https://docs.microsoft.com/azure/azure-resource-manager/managed-application-createuidefinition-overview). В этой статье описывается файл createUiDefinition.json. На основе этого файла портал Azure создает пользовательский интерфейс для создания управляемого приложения.

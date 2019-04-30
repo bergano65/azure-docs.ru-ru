@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 08/14/2018
 ms.author: iainfou
 ms.openlocfilehash: a6a2fb246e407d6ea240ff40f4d2fa2b1b780931
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54054020"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61023744"
 ---
 # <a name="use-virtual-kubelet-with-azure-kubernetes-service-aks"></a>Использование Virtual Kubelet со службой Azure Kubernetes (AKS)
 
@@ -26,7 +26,7 @@ ms.locfileid: "54054020"
 >
 > Virtual Kubelet представляет собой экспериментальный открытый проект и должен использоваться таким образом. Чтобы внести свой вклад в проект, сообщить о проблемах и получить дополнительную информацию о Virtual Kubelet, зайдите на [страницу проекта Virtual Kubelet на GitHub][vk-github].
 
-## <a name="prerequisite"></a>Предварительные требования
+## <a name="prerequisite"></a>Необходимое условие
 
 Для выполнения этих инструкций у вас должен быть кластер AKS. Если вам необходим кластер AKS, обратитесь к [руководству по началу работы со службой Azure Kubernetes][aks-quick-start].
 
@@ -85,18 +85,18 @@ az aks install-connector --resource-group myAKSCluster --name myAKSCluster --con
 
 В команде `aks install-connector` могут использоваться следующие аргументы.
 
-| Аргумент: | ОПИСАНИЕ | Обязательно |
+| Аргумент: | Описание | Обязательно для заполнения |
 |---|---|:---:|
-| `--connector-name` | Имя соединителя ACI.| Yes |
-| `--name` `-n` | Имя управляемого кластера. | Yes |
-| `--resource-group` `-g` | Имя группы ресурсов. | Yes |
-| `--os-type` | Тип операционной системы экземпляров контейнера. Допустимые значения: Оба, Linux, Windows. Значение по умолчанию: Linux. | Нет  |
-| `--aci-resource-group` | Группа ресурсов, в которой будут созданы группы контейнеров ACI. | Нет  |
-| `--location` `-l` | Расположение для создания групп контейнеров ACI. | Нет  |
-| `--service-principal` | Субъект-служба, используемый для проверки подлинности в API-интерфейсах Azure. | Нет  |
-| `--client-secret` | Секрет, связанный с субъектом-службой. | Нет  |
-| `--chart-url` | URL-адрес диаграммы Helm для установки соединителя ACI. | Нет  |
-| `--image-tag` | Тег образа контейнера Virtual Kubelet. | Нет  |
+| `--connector-name` | Имя соединителя ACI.| Да |
+| `--name` `-n` | Имя управляемого кластера. | Да |
+| `--resource-group` `-g` | Имя группы ресурсов. | Да |
+| `--os-type` | Тип операционной системы экземпляров контейнера. Допустимые значения: Оба, Linux, Windows. Значение по умолчанию: Linux. | Нет |
+| `--aci-resource-group` | Группа ресурсов, в которой будут созданы группы контейнеров ACI. | Нет |
+| `--location` `-l` | Расположение для создания групп контейнеров ACI. | Нет |
+| `--service-principal` | Субъект-служба, используемый для проверки подлинности в API-интерфейсах Azure. | Нет |
+| `--client-secret` | Секрет, связанный с субъектом-службой. | Нет |
+| `--chart-url` | URL-адрес диаграммы Helm для установки соединителя ACI. | Нет |
+| `--image-tag` | Тег образа контейнера Virtual Kubelet. | Нет |
 
 ## <a name="validate-virtual-kubelet"></a>Проверка Virtual Kubelet
 
@@ -224,7 +224,7 @@ az aks remove-connector --resource-group myAKSCluster --name myAKSCluster --conn
 > [!NOTE]
 > Если возникают ошибки при удалении соединителей обоих ОС или вы хотите удалить только соединитель Windows или Linux, тип операционной системы можно указать вручную. Добавьте параметр `--os-type` к предыдущей команде `az aks remove-connector` и укажите ОС: `Windows` или `Linux`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Возможные причины этой проблемы с Virtual Kubelet см. в разделе [Known quirks and workarounds][vk-troubleshooting] (Известные особенности и обходные пути). Чтобы сообщить о проблемах с Virtual Kubelet, [откройте раздел репозитория GitHub "Проблемы"][vk-issues].
 

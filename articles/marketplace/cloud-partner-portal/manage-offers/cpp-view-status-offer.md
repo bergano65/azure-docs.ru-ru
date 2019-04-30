@@ -15,17 +15,17 @@ ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: pbutlerm
 ms.openlocfilehash: bdec2d699e8448c8e2303dfbabcb4d176a9ca389
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54430387"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60729787"
 ---
 # <a name="view-the-publishing-status-of-azure-marketplace-and-appsource-offers"></a>Просмотр состояния публикации предложений в Azure Marketplace и AppSource
 
 После создания предложения, в особенности во время публикации, вы можете просмотреть состояние предложения на Портале Cloud Partner.  Общее состояние публикации доступно на страницах портала [**Все предложения**](../portal-tour/cpp-all-offers-page.md) и [**Утверждения**](../portal-tour/cpp-approvals-page.md).  Для каждого предложения должен отображаться один из следующих индикаторов состояния.  
 
-|            Status              |   ОПИСАНИЕ                                                           |
+|            Статус              |   Описание                                                           |
 |            ------              |   -----------                                                           |
 | **-**                          | Предложение создано, но процесс публикации еще не начался.            |
 | **Publish in progress** (Публикация выполняется)        | Предложение проходит процесс публикации.   |
@@ -51,6 +51,6 @@ ms.locfileid: "54430387"
 ![Вкладка состояния приложения Azure с проблемой проверки](../azure-applications/media/status-tab-ms-review.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы исправить нерешенные проблемы или изменить параметры предложения, необходимо [обновить предложение](./cpp-update-offer.md). 

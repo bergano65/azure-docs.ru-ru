@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 11/27/2018
 ms.author: magoedte
 ms.openlocfilehash: 0ed6747573edf4c059eb29d28107a22706c52856
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59426195"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60759985"
 ---
 # <a name="collect-alerts-from-nagios-and-zabbix-in-azure-monitor-from-log-analytics-agent-for-linux"></a>Сбор оповещений Nagios и Zabbix с помощью агента Log Analytics для Linux в службу Azure Monitor 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
@@ -90,7 +90,7 @@ ms.locfileid: "59426195"
 
 Для записей оповещений Nagios параметр **Type** (тип) имеет значение **Alert** (оповещение), а параметр **SourceSystem** (источник) — значение **Nagios**.  У них есть свойства, приведенные в таблице ниже.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 |:--- |:--- |
 | `Type` |*Предупреждение* |
 | `SourceSystem` |*Nagios* |
@@ -106,12 +106,12 @@ ms.locfileid: "59426195"
 ### <a name="zabbix-alert-records"></a>Записи оповещений Zabbix
 Для записей оповещений Nagios параметр **Type** (тип) имеет значение **Alert** (оповещение), а параметр **SourceSystem** (источник) — значение **Zabbix**.  У них есть свойства, приведенные в таблице ниже.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 |:--- |:--- |
 | `Type` |*Предупреждение* |
 | `SourceSystem` |*Zabbix* |
 | `AlertName` | Имя оповещения. |
-| `AlertPriority` | Серьезность оповещения.<br><br>не определен<br>информационный.<br>Предупреждение<br>average<br>высокий<br>очень высокий  |
+| `AlertPriority` | Серьезность оповещения.<br><br>не определен<br>информационный.<br>предупреждение<br>average<br>высокий<br>очень высокий  |
 | `AlertState` | Состояние оповещения.<br><br>0 — актуальное состояние.<br>1 — состояние неизвестно.  |
 | `AlertTypeNumber` | Указывает, может ли оповещение создавать несколько событий, связанных с проблемой.<br><br>0 — актуальное состояние.<br>1 — состояние неизвестно.    |
 | `Comments` | Дополнительные комментарии для оповещения. |

@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: pbutlerm
 ms.openlocfilehash: ae01b0fb088035240e670c16d4d457d8abda1bfa
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58848930"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60847090"
 ---
 # <a name="create-a-self-test-client-to-pre-validate-an-azure-virtual-machine-image"></a>Создание клиента самопроверки для предварительной проверки образа виртуальной машины Azure
 
@@ -69,7 +69,7 @@ Request body:    The Request body parameters should use the following JSON forma
 В следующей таблице описаны поля API.
 
 
-|      Поле         |    ОПИСАНИЕ    |
+|      Поле         |    Описание    |
 |  ---------------   |  ---------------  |
 |  Авторизация     |  Строка "Bearer xxxx-xxxx-xxxx-xxxxx" содержит маркер клиента AAD, который можно создать с помощью PowerShell.          |
 |  DNSName           |  DNS-имя виртуальной машины, которую нужно проверить    |
@@ -300,7 +300,7 @@ https://isvapp.azurewebsites.net/selftest-vm
 
 Для создания и получения маркера через OAuth REST API вы можете использовать любую из следующих программ:
 
-- postman
+- Postman
 - cURL в Linux;
 - C&#35;
 - PowerShell

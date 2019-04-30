@@ -2,18 +2,19 @@
 title: включение файла
 description: включение файла
 services: virtual-network
-author: genlin
+author: rockboyfor
 ms.service: virtual-network
 ms.topic: include
-ms.date: 04/13/2018
-ms.author: genli
+origin.date: 04/13/2018
+ms.date: 06/11/2018
+ms.author: v-yeche
 ms.custom: include file
-ms.openlocfilehash: 873549442284ede2e9f020bd90879f721b9c1a18
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: 588aa260f2ece543445bfd4da7ef4682dab8334c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38760366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60309969"
 ---
 ## <a name="scenario"></a>Сценарий
 Чтобы лучше проиллюстрировать процесс создания групп безопасности сети, в этом документе будет использоваться представленный ниже сценарий.
@@ -30,4 +31,3 @@ ms.locfileid: "38760366"
   * **web-rule**. Запрещает весь трафик из подсети *BackEnd* в Интернет.
 
 Сочетание этих правил образует сценарий, подобный сети периметра, где внутренняя подсеть может получать только входящий трафик для SQL из интерфейсной подсети и не имеет доступа к Интернету, а интерфейсная подсеть может взаимодействовать с Интернетом и получать только входящие запросы HTTP.
-

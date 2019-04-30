@@ -10,11 +10,11 @@ services: azure-maps
 manager: ''
 ms.custom: codepen
 ms.openlocfilehash: f2c4c6b8655d5efb993a2dedf536000ac94328c2
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59281494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60769691"
 ---
 # <a name="add-a-bubble-layer-to-a-map"></a>Добавление слоя пузырьков на карту
 
@@ -76,4 +76,4 @@ ms.locfileid: "59281494"
 > [Добавление слоя символов](map-add-pin.md)
 
 > [!div class="nextstepaction"]
-> [Использование выражений стиль на основе данных](data-driven-style-expressions-web-sdk.md)
+> [Использование стилистических выражений на основе данных](data-driven-style-expressions-web-sdk.md)

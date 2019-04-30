@@ -15,11 +15,11 @@ ms.date: 06/12/2018
 ms.author: magattus
 ms.custom: mvc
 ms.openlocfilehash: 296f1df9175f4595274a57ed936282abb73da18b
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59525115"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60679578"
 ---
 # <a name="create-an-azure-cdn-endpoint"></a>Создание конечной точки сети CDN Azure
 В этой статье описываются все параметры для создания конечной точки [сети доставки содержимого Azure](cdn-overview.md) в существующем профиле CDN. Когда профиль и конечная точка будут созданы, можете приступить к доставке содержимого своим клиентам. Краткое руководство по созданию профиля и конечной точки, см. в разделе [краткое руководство: по созданию профиля и конечной точки Azure CDN](cdn-create-new-endpoint.md).
@@ -30,7 +30,7 @@ ms.locfileid: "59525115"
 ## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure.
 Войдите на [портал Azure](https://portal.azure.com) со своей учетной записью Azure.
 
-## <a name="create-a-new-cdn-endpoint"></a>Создание новой конечной точки сети CDN
+## <a name="create-a-new-cdn-endpoint"></a>Создание новой конечной точки сети доставки содержимого
 
 1. На [портале Azure](https://portal.azure.com)перейдите к профилю CDN. На предыдущем шаге вы могли прикрепить его к панели мониторинга. В противном случае профиль CDN можно найти, выбрав **Все службы**, а затем **Профили CDN**. Выберите профиль, к которому планируется добавить конечную точку, в области **Профили CDN**. 
    
@@ -92,7 +92,7 @@ ms.locfileid: "59525115"
    
     Созданная конечная точка отображается в списке конечных точек для профиля.
     
-    ![Конечная точка сети CDN](./media/cdn-create-new-endpoint/cdn-endpoint-success.png)
+    ![Конечная точка CDN](./media/cdn-create-new-endpoint/cdn-endpoint-success.png)
     
     Конечная точка станет доступна не сразу. Распространение регистрационных сведений может занять некоторое время. 
     - Для профилей **Azure CDN категории "Стандартный" от Майкрософт** распространение обычно выполняется в течение 10 минут. 

@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: f63087d107b9db30e2af6273afde7f51f1c72404
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58295119"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60817698"
 ---
 # <a name="upload-files-into-a-media-services-account-using-rest"></a>Передача файлов в учетную запись служб мультимедиа с помощью REST  
 > [!div class="op_single_selector"]
@@ -68,7 +68,7 @@ ms.locfileid: "58295119"
 
     Значения для первых пяти из этих переменных вы найдете в статье [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md). 
 
-    ![Отправка файла](./media/media-services-rest-upload-files/postman-import-env.png)
+    ![Отправить файл](./media/media-services-rest-upload-files/postman-import-env.png)
 2. Укажите значение для переменной среды **MediaFileName**.
 
     Укажите имя файла мультимедиа, который вы собираетесь передать. В нашем примере это файл BigBuckBunny.mp4. 
@@ -90,7 +90,7 @@ ms.locfileid: "58295119"
 
     Часть URL-адреса заполняется переменной среды **AzureADSTSEndpoint** (ранее в этом руководстве вы задали значения переменных среды, поддерживающих коллекции).
 
-    ![Отправка файла](./media/media-services-rest-upload-files/postment-get-token.png)
+    ![Отправить файл](./media/media-services-rest-upload-files/postment-get-token.png)
 
 5. Нажмите кнопку **Отправить**.
 
@@ -112,7 +112,7 @@ ms.locfileid: "58295119"
 1. Выберите **AccessPolicy** -> **Create AccessPolicy for Upload** (Создать AccessPolicy для отправки).
 2. Нажмите кнопку **Отправить**.
 
-    ![Отправка файла](./media/media-services-rest-upload-files/postman-access-policy.png)
+    ![Отправить файл](./media/media-services-rest-upload-files/postman-access-policy.png)
 
     Скрипт test получает идентификатор AccessPolicy и сохраняет его в соответствующей переменной среды.
 
@@ -133,7 +133,7 @@ ms.locfileid: "58295119"
 1. Выберите **Ресурсы** -> **Создать ресурс**.
 2. Нажмите кнопку **Отправить**.
 
-    ![Отправка файла](./media/media-services-rest-upload-files/postman-create-asset.png)
+    ![Отправить файл](./media/media-services-rest-upload-files/postman-create-asset.png)
 
     Скрипт test получает идентификатор ресурса и сохраняет его в соответствующей переменной среды.
 
@@ -166,7 +166,7 @@ ms.locfileid: "58295119"
 
     Скрипт test создает URL-адрес отправки, используя указанное вами имя файла мультимедиа и сведения о локаторе SAS, а затем сохраняет его в соответствующей переменной среды.
 
-    ![Отправка файла](./media/media-services-rest-upload-files/postman-create-sas-locator.png)
+    ![Отправить файл](./media/media-services-rest-upload-files/postman-create-sas-locator.png)
 
 ## <a name="upload-a-file-to-blob-storage-using-the-upload-url"></a>Отправка файла в хранилище больших двоичных объектов с помощью URL-адреса отправки.
 
@@ -193,7 +193,7 @@ ms.locfileid: "58295119"
 4. Выберите файл с именем, которое сохранено в переменной среды **MediaFileName**.
 5. Нажмите кнопку **Отправить**.
 
-    ![Отправка файла](./media/media-services-rest-upload-files/postman-upload-file.png)
+    ![Отправить файл](./media/media-services-rest-upload-files/postman-upload-file.png)
 
 ##  <a name="create-a-metadata-in-the-asset"></a>Создание метаданных в ресурсе
 
@@ -202,11 +202,11 @@ ms.locfileid: "58295119"
 1. Выберите **AssetFiles** -> **CreateFileInfos**.
 2. Нажмите кнопку **Отправить**.
 
-    ![Отправка файла](./media/media-services-rest-upload-files/postman-create-file-info.png)
+    ![Отправить файл](./media/media-services-rest-upload-files/postman-create-file-info.png)
 
 Это действие запускает отправку файла и создание метаданных.
 
-## <a name="validate"></a>Проверка
+## <a name="validate"></a>Проверить
 
 Чтобы убедиться, что файл успешно отправлен, получите значение [AssetFile](https://docs.microsoft.com/rest/api/media/operations/assetfile) и сравните его параметры (например, **ContentFileSize**) с теми значениями, которые соответствуют свойствам нового ресурса. 
 

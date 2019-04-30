@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 03/12/2019
 ms.author: roiyz
 ms.openlocfilehash: 538eb492829c8ad171d1d27b51405725f53f352a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57853228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60743604"
 ---
 # <a name="azure-monitor-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Azure Monitor для Linux
 
@@ -39,7 +39,7 @@ ms.locfileid: "57853228"
 
 Расширение агента Log Analytics можно выполнять с использованием указанных ниже дистрибутивов Linux.
 
-| Дистрибутив | Version (версия) |
+| Дистрибуция | Version |
 |---|---|
 | CentOS Linux | 6 (x86 или x64) и 7 (x64) |
 | Amazon Linux | 2017.09 (x64) | 
@@ -120,7 +120,7 @@ ms.locfileid: "57853228"
 | ---- | ---- |
 | версия_API | 2018-06-01 |
 | publisher | Microsoft.EnterpriseCloud.Monitoring |
-| Тип | OmsAgentForLinux |
+| тип | OmsAgentForLinux |
 | typeHandlerVersion | 1.7 |
 | workspaceID (пример) | 6f680a37-00c6-41c7-a93f-1437e3462574 |
 | workspaceKey (пример) | z4bU3p1/GrnWpQkky4gdabWXAhbWSTz70hm4m2Xt92XI+rSRgE8qVvRhsGo9TXffbrTahyrwv35W0pOqQAU7uQ== |

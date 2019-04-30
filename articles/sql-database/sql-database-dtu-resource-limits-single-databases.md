@@ -13,11 +13,11 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 03/20/2019
 ms.openlocfilehash: b3514eca8db5d5b68b3e5784ee95e8583813945c
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60008976"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61075244"
 ---
 # <a name="resource-limits-for-single-databases-using-the-dtu-based-purchasing-model"></a>Ограничения ресурсов для одиночных баз данных в модели приобретения на основе DTU
 
@@ -32,7 +32,7 @@ ms.locfileid: "60008976"
 > [!IMPORTANT]
 > Масштабирование, инструкции и рекомендации, см. в разделе [масштабирование отдельной базы данных](sql-database-single-database-scale.md)
 
-### <a name="basic-service-tier"></a>Уровень службы "Базовый"
+### <a name="basic-service-tier"></a>Уровень службы Basic
 
 | **Объем вычислительных ресурсов** | **базовая;** |
 | :--- | --: |
@@ -44,7 +44,7 @@ ms.locfileid: "60008976"
 | Максимальное количество параллельных сеансов | 300 |
 |||
 
-### <a name="standard-service-tier"></a>Уровень службы "Стандартный"
+### <a name="standard-service-tier"></a>Уровень службы Standard
 
 | **Объем вычислительных ресурсов** | **S0** | **S1** | **S2** | **S3** |
 | :--- |---:| ---:|---:|---:|
@@ -68,7 +68,7 @@ ms.locfileid: "60008976"
 | Максимальное количество параллельных сеансов |4800 | 9600 | 19 200 | 30 000 |30 000 |
 |||||||
 
-### <a name="premium-service-tier"></a>Уровень службы "Премиум"
+### <a name="premium-service-tier"></a>Уровень службы Premium
 
 | **Объем вычислительных ресурсов** | **P1** | **P2** | **P4** | **P6** | **P11** | **P15** |
 | :--- |---:|---:|---:|---:|---:|---:|
@@ -83,7 +83,7 @@ ms.locfileid: "60008976"
 \* От 1024 до 4096 ГБ с шагом в 256 ГБ
 
 > [!IMPORTANT]
-> В настоящее время на уровне Premium предоставляется более 1 ТБ хранилища, за исключением следующих регионов: Восточный Китай, Северный Китай, Центральная Германия, Северо-Восточная Германия, центрально-западная часть США, регионы US DoD и центральная часть для государственных организаций США. В этих регионах максимальный объем хранилища категории "Премиум" ограничен 1 ТБ.  Дополнительные сведения см. в разделе [о действующих ограничениях для P11-P15](sql-database-single-database-scale.md#p11-and-p15-constraints-when-max-size-greater-than-1-tb).  
+> В настоящее время на уровне Premium предоставляется более 1 ТБ хранилища, за исключением следующих регионов: Восточный Китай, Северный Китай, Центральная Германия, Северо-Восточная Германия, центрально-западная часть США, регионы US DoD и центральная часть для государственных организаций США. В этих регионах максимальный объем хранилища класса Premium ограничен 1 ТБ.  Дополнительные сведения см. в разделе [о действующих ограничениях для P11-P15](sql-database-single-database-scale.md#p11-and-p15-constraints-when-max-size-greater-than-1-tb).  
 > [!NOTE]
 > Для `tempdb` ограничения, см. в разделе [ограничения tempdb](https://docs.microsoft.com/sql/relational-databases/databases/tempdb-database?view=sql-server-2017#tempdb-database-in-sql-database).
 

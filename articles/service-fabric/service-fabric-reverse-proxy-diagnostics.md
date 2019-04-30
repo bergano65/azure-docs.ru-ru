@@ -14,11 +14,11 @@ ms.workload: required
 ms.date: 08/08/2017
 ms.author: kavyako
 ms.openlocfilehash: c9c8c649208cff95f4ee515d39cc8cca3e2c64bf
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58121491"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60726848"
 ---
 # <a name="monitor-and-diagnose-request-processing-at-the-reverse-proxy"></a>Мониторинг и диагностика обработки запросов на обратном прокси-сервере
 
@@ -198,7 +198,7 @@ ms.locfileid: "58121491"
 > В настоящее время не регистрируются события, относящиеся к обработке запросов WebSocket. Эта возможность будет добавлена в следующем выпуске.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Статистическая обработка и сбор событий с помощью системы диагностики Microsoft Azure](service-fabric-diagnostics-event-aggregation-wad.md) для обеспечения сбора журналов в кластерах Azure.
+* [Статистическая обработка и сбор событий с помощью Диагностики Azure для Windows](service-fabric-diagnostics-event-aggregation-wad.md) для обеспечения сбора журналов в кластерах Azure.
 * Чтобы просмотреть события Service Fabric в Visual Studio, ознакомьтесь с разделом [Мониторинг и диагностика состояния служб в локальной среде разработки](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md).
 * Примеры шаблонов Azure Resource Manager для настройки разных параметров проверки сертификата службы для защищенного обратного прокси-сервера см. в разделе [Configure reverse proxy to connect to secure services](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/ReverseProxySecureSample#configure-reverse-proxy-to-connect-to-secure-services).
 * Чтобы узнать больше, прочитайте раздел [Обратный прокси-сервер в Service Fabric](service-fabric-reverseproxy.md).

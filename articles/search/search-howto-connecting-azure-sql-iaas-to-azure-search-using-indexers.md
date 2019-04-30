@@ -10,11 +10,11 @@ ms.date: 02/04/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: 90e5a133bac519cbc5ab2d7b112d51a019e8f698
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55751384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60871286"
 ---
 # <a name="configure-a-connection-from-an-azure-search-indexer-to-sql-server-on-an-azure-vm"></a>Настройка подключения из индексатора Поиска Azure к SQL Server на виртуальной машине Azure
 Как было отмечено в статье [Подключение базы данных SQL Azure к Поиску Azure с помощью индексаторов](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md#faq), служба поиска Azure поддерживает создание индексаторов для **SQL Server на виртуальных машинах Azure** (или **виртуальных машинах SQL Azure** для краткости), но существует несколько требований безопасности, которые необходимо выполнить. 
@@ -87,6 +87,6 @@ ms.locfileid: "55751384"
 #### <a name="include-the-azure-search-portal-ip-addresses"></a>Включение IP-адресов портала Поиска Azure
 Если для создания индексатора используется портал Azure, то в процессе создания логике портала службы поиска Azure также необходим доступ к виртуальной машине SQL Azure. Чтобы найти IP-адреса портала службы поиска Azure, можно выполнить проверку связи с `stamp2.search.ext.azure.com`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Когда настройка выполнена, SQL Server на виртуальной машине Azure можно указать в качестве источника данных для индексатора службы поиска Azure. Дополнительные сведения см. в статье [Подключение базы данных SQL Azure к Поиску Azure с помощью индексаторов](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md).
 

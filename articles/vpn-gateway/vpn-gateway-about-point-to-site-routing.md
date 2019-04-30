@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 01/28/2019
 ms.author: anzaman
 ms.openlocfilehash: 486a910226db5dc7b36aaf873e7bb8115eb78805
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55189660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60653618"
 ---
 # <a name="about-point-to-site-vpn-routing"></a>Сведения о маршрутизации VPN-подключений типа "точка — сеть"
 
@@ -34,7 +34,7 @@ ms.locfileid: "55189660"
 
 ![Маршрутизация в изолированной виртуальной сети](./media/vpn-gateway-about-point-to-site-routing/1.jpg "isolated VNet routing")
 
-### <a name="address-space"></a>Пространство адресов
+### <a name="address-space"></a>Адресное пространство
 
 * VNet1: 10.1.0.0/16
 
@@ -44,7 +44,7 @@ ms.locfileid: "55189660"
 
 * Маршруты, добавленные в клиенты не под управлением Windows: 10.1.0.0/16, 192.168.0.0/24.
 
-### <a name="access"></a>Access
+### <a name="access"></a>Доступ
 
 * Клиенты Windows могут подключаться к сети VNet1.
 
@@ -74,7 +74,7 @@ ms.locfileid: "55189660"
 
 * Маршруты, добавленные в клиенты не под управлением Windows: 10.1.0.0/16, 10.2.0.0/16, 10.4.0.0/16, 192.168.0.0/24.
 
-### <a name="access"></a>Access
+### <a name="access"></a>Доступ
 
 * Клиенты Windows имеют доступ к сетям VNet1, VNet2 и VNet4, но чтобы какие-либо изменения топологии вступили в силу, нужно повторно скачать VPN-клиент.
 
@@ -88,7 +88,7 @@ ms.locfileid: "55189660"
 
 ![Несколько виртуальных сетей с подключениями типа "сеть — сеть"](./media/vpn-gateway-about-point-to-site-routing/3.jpg "multiple VNets and S2S")
 
-### <a name="address-space"></a>Пространство адресов
+### <a name="address-space"></a>Адресное пространство
 
 * VNet1: 10.1.0.0/16
 
@@ -102,7 +102,7 @@ ms.locfileid: "55189660"
 
 * Маршруты, добавленные в клиенты не под управлением Windows: 10.1.0.0/16, 10.2.0.0/16, 192.168.0.0/24.
 
-### <a name="access"></a>Access
+### <a name="access"></a>Доступ
 
 * Клиенты Windows могут подключаться только к сети VNet1.
 
@@ -116,7 +116,7 @@ ms.locfileid: "55189660"
 
 ![Несколько виртуальных сетей с подключениями типа "сеть — сеть" (BGP)](./media/vpn-gateway-about-point-to-site-routing/4.jpg "multiple VNets and S2S BGP")
 
-### <a name="address-space"></a>Пространство адресов
+### <a name="address-space"></a>Адресное пространство
 
 * VNet1: 10.1.0.0/16
 
@@ -130,7 +130,7 @@ ms.locfileid: "55189660"
 
 * Маршруты, добавленные в клиенты не под управлением Windows: 10.1.0.0/16, 10.2.0.0/16, 10.3.0.0/16, 192.168.0.0/24.
 
-### <a name="access"></a>Access
+### <a name="access"></a>Доступ
 
 * Клиенты Windows имеют доступ к сетям VNet1, VNet2 и VNet3, но маршруты к сетям VNet2 и VNet3 необходимо добавить вручную.
 
@@ -144,7 +144,7 @@ ms.locfileid: "55189660"
 
 ![Маршрутизация для виртуальной сети и филиала](./media/vpn-gateway-about-point-to-site-routing/5.jpg "routing with a VNet and a branch office")
 
-### <a name="address-space"></a>Пространство адресов
+### <a name="address-space"></a>Адресное пространство
 
 * VNet1: 10.1.0.0/16
 
@@ -156,7 +156,7 @@ ms.locfileid: "55189660"
 
 * Маршруты, добавленные в клиенты не под управлением Windows: 10.1.0.0/16, 192.168.0.0/24.
 
-### <a name="access"></a>Access
+### <a name="access"></a>Доступ
 
 * Клиенты Windows могут подключаться только к сети VNet1.
 
@@ -170,7 +170,7 @@ ms.locfileid: "55189660"
 
 ![Одна виртуальная сеть и филиал (BGP)](./media/vpn-gateway-about-point-to-site-routing/6.jpg "one VNet and a branch office")
 
-### <a name="address-space"></a>Пространство адресов
+### <a name="address-space"></a>Адресное пространство
 
 * VNet1: 10.1.0.0/16
 
@@ -182,7 +182,7 @@ ms.locfileid: "55189660"
 
 * Маршруты, добавленные в клиенты не под управлением Windows: 10.1.0.0/16, 10.101.0.0/16, 192.168.0.0/24.
 
-### <a name="access"></a>Access
+### <a name="access"></a>Доступ
 
 * Клиенты Windows имеют доступ к сети VNet1 и сайту Site1, но маршруты к сайту Site1 необходимо добавить вручную.
 
@@ -197,7 +197,7 @@ ms.locfileid: "55189660"
 
 ![Несколько виртуальных сетей, соединенных с помощью подключений типа "сеть — сеть", и филиал](./media/vpn-gateway-about-point-to-site-routing/7.jpg "multi-VNet S2S and branch office")
 
-### <a name="address-space"></a>Пространство адресов
+### <a name="address-space"></a>Адресное пространство
 
 * VNet1: 10.1.0.0/16
 
@@ -213,7 +213,7 @@ ms.locfileid: "55189660"
 
 * Маршруты, добавленные в клиенты не под управлением Windows: 10.1.0.0/16, 10.2.0.0/16, 10.3.0.0/16, 10.101.0.0/16, 192.168.0.0/24.
 
-### <a name="access"></a>Access
+### <a name="access"></a>Доступ
 
 * Клиенты Windows могут подключаться только к сети VNet1.
 
@@ -227,7 +227,7 @@ ms.locfileid: "55189660"
 
 ![Несколько виртуальных сетей, соединенных с помощью подключений типа "сеть — сеть", и филиал](./media/vpn-gateway-about-point-to-site-routing/8.jpg "multi-VNet S2S and branch office")
 
-### <a name="address-space"></a>Пространство адресов
+### <a name="address-space"></a>Адресное пространство
 
 * VNet1: 10.1.0.0/16
 
@@ -243,12 +243,12 @@ ms.locfileid: "55189660"
 
 * Маршруты, добавленные в клиенты не под управлением Windows: 10.1.0.0/16, 10.2.0.0/16, 10.3.0.0/16, 10.101.0.0/16, 192.168.0.0/24.
 
-### <a name="access"></a>Access
+### <a name="access"></a>Доступ
 
 * Клиенты Windows имеют доступ к сетям VNet1, VNet2, VNet3 и сайту Site1, но маршруты к сетям VNet2, VNet3 и сайту Site1 необходимо добавить в клиент вручную.
 
 * Клиенты не под управлением Windows имеют доступ к сетям VNet1, VNet2, VNet3 и сайту Site1.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Раздел [Настройка подключения "точка — сеть" к виртуальной сети с использованием собственной аутентификации Azure на основе сертификата и портала Azure](vpn-gateway-howto-point-to-site-resource-manager-portal.md) поможет приступить к созданию VPN-подключения типа "точка — сеть".

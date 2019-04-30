@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 08/24/2017
 ms.author: dekapur
 ms.openlocfilehash: 394ba3b3b8189bbe96137e920745f7b8cdd1cd95
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58666689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60863969"
 ---
 # <a name="secure-a-standalone-cluster-on-windows-by-using-windows-security"></a>Защита изолированного кластера под управлением Windows с помощью системы безопасности Windows
 Чтобы предотвратить несанкционированный доступ к кластеру Service Fabric, его необходимо защитить. Безопасность особенно важна при выполнении в кластере производственных рабочих нагрузок. В этой статье описывается, как настроить безопасность обмена данными между узлами или между клиентом и узлом с помощью системы безопасности Windows и файла *ClusterConfig.JSON*.  Описываемый процесс соответствует шагу по настройке безопасности из раздела [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md). Дополнительные сведения об использовании системы безопасности Windows в Service Fabric см. в статье [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md).

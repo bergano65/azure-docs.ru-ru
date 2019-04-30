@@ -9,11 +9,11 @@ ms.date: 03/25/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 72dec14dde47580313e57bb3b8d7315604929277
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59288431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60844565"
 ---
 # <a name="how-to-create-an-azure-premium-file-share"></a>Как создать файловый ресурс Azure уровня "премиум"
 
@@ -79,7 +79,7 @@ ms.locfileid: "59288431"
 
 Сначала установите последнюю версию модуля [PowerShellGet](https://docs.microsoft.com/powershell/gallery/installing-psget).
 
-Затем обновите модуль powershell, войдите подписку Azure, создайте группу ресурсов и создайте учетную запись хранения.
+Затем обновите модуль PowerShell, войдите в подписку Azure, создайте группу ресурсов и учетную запись хранения.
 
 ### <a name="upgrade-your-powershell-module"></a>Обновление модуля powershell
 
@@ -93,7 +93,7 @@ ms.locfileid: "59288431"
 Install-Module Az.Storage -Repository PSGallery -AllowPrerelease -AllowClobber -Force
 ```
 
-### <a name="sign-in-to-your-azure-subscription"></a>Войдите подписку Azure
+### <a name="sign-in-to-your-azure-subscription"></a>Вход в подписку Azure
 
 Чтобы выполнить проверку подлинности, используйте команду `Login-AzAccount` и следуйте инструкциям на экране.
 
@@ -101,7 +101,7 @@ Install-Module Az.Storage -Repository PSGallery -AllowPrerelease -AllowClobber -
 Login-AzAccount
 ```
 
-### <a name="create-a-resource-group"></a>Создание группы ресурсов
+### <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Чтобы создать группу ресурсов с помощью PowerShell, выполните команду [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup).
 
@@ -144,7 +144,7 @@ Remove-AzResourceGroup -Name $resourceGroup
 
 ## <a name="create-a-premium-file-share-using-azure-cli"></a>Создайте файловый ресурс уровня "премиум" с помощью Azure CLI
 
-Чтобы запустить Azure Cloud Shell, перейдите по адресу [портала Azure](https://portal.azure.com).
+Чтобы запустить Azure Cloud Shell, войдите на [портал Azure](https://portal.azure.com).
 
 Если вы хотите войти в локальную установку CLI, выполните команду входа:
 
@@ -158,7 +158,7 @@ az login
 
 Для этого с помощью Cloud Shell или локальный оболочки введите следующую команду: `az extension add --name storage-preview`
 
-### <a name="create-a-resource-group"></a>Создание группы ресурсов
+### <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Чтобы создать группу ресурсов с помощью Azure CLI, используйте команду [az group create](/cli/azure/group).
 

@@ -15,34 +15,34 @@ ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: e6b484dabd77a142961db2d97242896790fa3d8b
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58668472"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60836966"
 ---
 # <a name="sfctl-mesh-deployment"></a>sfctl mesh deployment
 Создание ресурсов службы "Сетка Service Fabric".
 
 ## <a name="commands"></a>Команды
 
-|Команда|ОПИСАНИЕ|
+|Команда|Описание|
 | --- | --- |
-| create | Создает развертывание ресурсов Сетки Service Fabric. |
+| Создать | Создает развертывание ресурсов Сетки Service Fabric. |
 
 ## <a name="sfctl-mesh-deployment-create"></a>sfctl mesh deployment create
 Создает развертывание ресурсов Сетки Service Fabric.
 
 ### <a name="arguments"></a>Аргументы
 
-|Аргумент|ОПИСАНИЕ|
+|Аргумент|Описание|
 | --- | --- |
 | --input-yaml-files [обязательный] | Разделенные запятыми относительные/абсолютные пути ко всем YAML-файлам или относительный/абсолютный путь к каталогу (рекурсивный), содержащему YAML-файлы. |
 | --parameters | Относительный или абсолютный путь к YAML-файлу или объекту JSON, содержащему параметры, которые необходимо переопределить. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|ОПИСАНИЕ|
+|Аргумент|Описание|
 | --- | --- |
 | --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |

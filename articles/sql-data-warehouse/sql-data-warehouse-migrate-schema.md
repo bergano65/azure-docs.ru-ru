@@ -2,20 +2,21 @@
 title: Перенос схемы в хранилище данных SQL | Документация Майкрософт
 description: Советы по переносу схемы в хранилище данных SQL Azure для разработки решений.
 services: sql-data-warehouse
-author: jrowlandjones
-manager: craigg
+author: WenJason
+manager: digimobile
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: implement
-ms.date: 04/17/2018
-ms.author: jrj
+ms.component: implement
+origin.date: 04/17/2018
+ms.date: 10/15/2018
+ms.author: v-jay
 ms.reviewer: igorstan
 ms.openlocfilehash: 4139ea776f6947eeacf4620c3676606d6535dd2b
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55461690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60748158"
 ---
 # <a name="migrate-your-schemas-to-sql-data-warehouse"></a>Перенос схем в хранилище данных SQL
 Рекомендации по переносу схем SQL в хранилище данных SQL. 
@@ -40,13 +41,6 @@ ms.locfileid: "55461690"
 
 Для ширины строки таблицы в PolyBase действует ограничение в 1 МБ.  Если планируется загружать данные в хранилище данных SQL с помощью PolyBase, обновите таблицы, обеспечив максимальную ширину строки меньше 1 МБ. 
 
-<!--
-- For example, this table uses variable length data but the largest possible size of the row is still less than 1 MB. PolyBase will load data into this table.
-
-- This table uses variable length data and the defined row width is less than one MB. When loading rows, PolyBase allocates the full length of the variable-length data. The full length of this row is greater than one MB.  PolyBase will not load data into this table.  
-
--->
-
 ## <a name="specify-the-distribution-option"></a>Указание параметра распределения
 Хранилище данных SQL — это система управления распределенными базами данных. Каждая таблица распределяется или реплицируется на вычислительные узлы. Доступен параметр таблицы, позволяющий указать способ распределения данных. Можно выбрать циклический перебор, репликацию или хэш-распределение. У каждого варианта есть преимущества и недостатки. Если не указать параметр распределения, по умолчанию хранилищем данных SQL будет использоваться циклический перебор.
 
@@ -56,8 +50,7 @@ ms.locfileid: "55461690"
 
 Чтобы выбрать оптимальный вариант распределения для каждой таблицы, ознакомьтесь с разделом [Распределение таблиц в хранилище данных SQL](sql-data-warehouse-tables-distribute.md).
 
-
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 После успешного переноса схемы базы данных в хранилище данных SQL вы можете перейти к одной из приведенных ниже статей.
 
 * [Перенос данных][Migrate your data]
@@ -78,5 +71,6 @@ ms.locfileid: "55461690"
 
 <!--MSDN references-->
 
-
 <!--Other Web references-->
+
+<!--Update_Description: update meta properties, add new content about Migrate schemas to SQL Data Warehouse -->

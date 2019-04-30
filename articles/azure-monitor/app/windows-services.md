@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: mbullwin
 ms.openlocfilehash: 85764c0ee5b8ed117fb191657d54abe5bd10a703
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54116557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60784492"
 ---
 # <a name="manually-configure-application-insights-for-net-applications"></a>Настройка Application Insights вручную для приложений .NET
 
@@ -111,13 +111,13 @@ ms.locfileid: "54116557"
 ## <a name="monitor"></a> Просмотр своих данных телеметрии
 Вернитесь на [портал Azure](https://portal.azure.com/) и перейдите к своему ресурсу Application Insights.
 
-Выполните поиск данных в диаграммах "Обзор". Сначала вы увидите только одну или две точки. Например: 
+Выполните поиск данных в диаграммах "Обзор". Сначала вы увидите только одну или две точки. Пример.
 
 ![Щелкните плитки, чтобы увидеть больше данных](./media/windows-services/12-first-perf.png)
 
 Щелкните любую диаграмму, чтобы увидеть более подробные метрики. [Дополнительные сведения о метриках.](../../azure-monitor/app/web-monitor-performance.md)
 
-### <a name="no-data"></a>Данные отсутствуют?
+### <a name="no-data"></a>Нет данных?
 * Используйте приложение, открывая различные страницы, чтобы создать некоторый объем данных телеметрии.
 * Откройте плитку [Поиск](../../azure-monitor/app/diagnostic-search.md) , чтобы просмотреть отдельные события. Иногда для прохождения событий через конвейер метрики требуется чуть больше времени.
 * Подождите несколько секунд и нажмите **Обновить**. Диаграмма периодически обновляется, однако ее можно обновить и вручную, если вы ждете появления каких-либо данных.
@@ -146,6 +146,6 @@ ms.locfileid: "54116557"
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [добавить дополнительную телеметрию](../../azure-monitor/app/asp-net-more.md) .
 

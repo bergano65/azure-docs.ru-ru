@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/28/2018
 ms.author: rkarlin
 ms.openlocfilehash: ba5ab7ce85933545a41f23e2ecd913acbb7e72d1
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56112739"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60703918"
 ---
 # <a name="azure-security-center-threat-intelligence-report"></a>Отчет об анализе угроз, предоставляемый центром безопасности Azure
 Здесь содержатся сведения о том, как отчет центра безопасности Azure об анализе угроз позволяет получить подробные сведения касательно угрозы, из-за которой было создано оповещение системы безопасности.

@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 01/12/2018
 ms.author: shlo
 ms.openlocfilehash: 66d79bc1597cd8f3c7e01eb8227eb7c91ba04d1d
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56807819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60764757"
 ---
 # <a name="execute-wait-activity-in-azure-data-factory"></a>Выполнить действие wait в фабрике данных Azure
 Если в конвейере используется действие Wait, он приостанавливает обработку на указанный период, прежде чем возобновить выполнение последующих действий. 
@@ -39,9 +39,9 @@ ms.locfileid: "56807819"
 
 Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения
 -------- | ----------- | -------------- | --------
-name | Имя действия `Wait`. | Строка | Yes
-Тип | Для этого свойства необходимо задать значение **Wait**. | Строка | Yes
-waitTimeInSeconds | Период ожидания в секундах перед возобновлением обработки в конвейере. | Целое число  | Yes
+name | Имя действия `Wait`. | String | Да
+тип | Для этого свойства необходимо задать значение **Wait**. | String | Да
+waitTimeInSeconds | Период ожидания в секундах перед возобновлением обработки в конвейере. | Целое число  | Да
 
 ## <a name="example"></a>Пример
 

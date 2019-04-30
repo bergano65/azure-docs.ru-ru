@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 04/19/2017
 ms.author: jdial
 ms.openlocfilehash: 02db9f2b8cb2ec71d23ad077b90eeacb905d2a16
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58445638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60565860"
 ---
 # <a name="azure-networking"></a>Сетевые подключения Azure
 
@@ -69,7 +69,7 @@ Azure предоставляет широкий набор сетевых воз
 
 **Подключение типа "сеть — сеть" (через VPN-туннель IPsec/IKE)**
 
-![Подключение типа "сайт — сайт"](./media/networking-overview/site-to-site.png)
+![Сеть-сеть](./media/networking-overview/site-to-site.png)
 
 Это подключение устанавливается между локальным VPN-устройством и VPN-шлюзом Azure. Используя этот тип подключения, авторизованные локальные ресурсы могут получить доступ к виртуальной сети. Это VPN-подключение по протоколу IPSec/IKE, благодаря которому локальные устройства и VPN-шлюз Azure могут взаимодействовать по зашифрованному каналу через Интернет. Вы можете подключить несколько локальных сайтов к одному VPN-шлюзу. Локальное VPN-устройство должно иметь на каждом сайте внешний общедоступный IP-адрес, который находится в пределах NAT. Задержку VPN типа "сеть — сеть" невозможно спрогнозировать, так как трафик проходит через Интернет.
 

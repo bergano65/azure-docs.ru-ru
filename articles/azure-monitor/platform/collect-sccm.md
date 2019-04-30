@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 03/22/2018
 ms.author: magoedte
 ms.openlocfilehash: e5cf89b7fe01946de9944a7026ec448cd55dd6dc
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58630670"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60741690"
 ---
 # <a name="connect-configuration-manager-to-azure-monitor"></a>Подключение Configuration Manager к Azure Monitor
 Можно подключить среду System Center Configuration Manager к Azure Monitor для синхронизации данных коллекций устройств и указания этих коллекций в Azure Monitor и службы автоматизации Azure.  

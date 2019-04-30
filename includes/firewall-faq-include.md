@@ -9,11 +9,11 @@ ms.date: 3/26/2019
 ms.author: victorh
 ms.custom: include file
 ms.openlocfilehash: b8842ab4bcaf16b7345b25fa9ac4998981d9c458
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60014595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60713596"
 ---
 ### <a name="what-is-azure-firewall"></a>Что такое брандмауэр Azure?
 
@@ -21,10 +21,10 @@ ms.locfileid: "60014595"
 
 ### <a name="what-capabilities-are-supported-in-azure-firewall"></a>Характеристики и функции Брандмауэра Azure:
 
-* Брандмауэр как услуга с отслеживанием состояния.
-* Встроенные функции обеспечения высокой доступности и неограниченная масштабируемость в облаке.
+* Брандмауэр как услуга с отслеживанием состояния
+* Встроенные функции высокой доступности и неограниченная масштабируемость в облаке.
 * фильтрацию FQDN;
-* теги FQDN;
+* Теги полных доменных имен
 * правила фильтрации трафика;
 * поддержку исходящих данных SNAT;
 * Поддержка DNAT для входящего трафика
@@ -90,7 +90,7 @@ ms.locfileid: "60014595"
 
 Вы можете использовать методы Azure PowerShell *deallocate* и *allocate*.
 
-Например: 
+Пример.
 
 ```azurepowershell
 # Stop an exisitng firewall

@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
 ms.openlocfilehash: 929a4e4366c9e94ed4e1915406914991624f6baa
-ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60149637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60565588"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
 
@@ -55,7 +55,7 @@ ms.locfileid: "60149637"
 
 ## <a name="install-mobility-agent-through-ui"></a>Установка агента mobility через пользовательский Интерфейс
 
-### <a name="prerequisite"></a>Предварительные требования
+### <a name="prerequisite"></a>Необходимое условие
 
 - Убедитесь, что все конфигурации серверов не попадает под [Матрица поддержки VMware к сценарию аварийного восстановления Azure](vmware-physical-azure-support-matrix.md).
 - [Найдите установщик](#locate-installer-files) зависимости от операционной системы сервера.
@@ -83,7 +83,7 @@ ms.locfileid: "60149637"
 
 ## <a name="install-mobility-agent-through-command-prompt"></a>Установка агента mobility с помощью командной строки
 
-### <a name="prerequisite"></a>Предварительные требования
+### <a name="prerequisite"></a>Необходимое условие
 
 - Убедитесь, что все конфигурации серверов не попадает под [Матрица поддержки VMware к сценарию аварийного восстановления Azure](vmware-physical-azure-support-matrix.md).
 - [Найдите установщик](#locate-installer-files) зависимости от операционной системы сервера.
@@ -113,7 +113,7 @@ ms.locfileid: "60149637"
     ```
 
 #### <a name="installation-settings"></a>Параметры установки
-**Параметр** | **Дополнительные сведения**
+**Параметр** | **Сведения**
 --- | ---
 Использование | UnifiedAgent.exe/Role < MS/MT > /InstallLocation  <Install Location> /silent «VmWare» / Platform
 журналы установки; | В разделе %ProgramData%\ASRSetupLogs\ASRUnifiedAgentInstaller.log.
@@ -123,7 +123,7 @@ ms.locfileid: "60149637"
 /Silent| Необязательный элемент. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
-**Параметр** | **Дополнительные сведения**
+**Параметр** | **Сведения**
 --- | ---
 Использование | UnifiedAgentConfigurator.exe /CSEndPoint \<CSIP > /PassphraseFilePath \<PassphraseFilePath >
 Журналы конфигурации агента | Журналы находятся в папке %ProgramData%\ASRSetupLogs\ASRUnifiedAgentConfigurator.log.
@@ -152,7 +152,7 @@ ms.locfileid: "60149637"
     ```
 
 #### <a name="installation-settings"></a>Параметры установки
-**Параметр** | **Дополнительные сведения**
+**Параметр** | **Сведения**
 --- | ---
 Использование | . / install -d <Install Location> - r < MS/MT > - v и VmWare - q
 -r | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
@@ -161,7 +161,7 @@ ms.locfileid: "60149637"
 -q | Необязательный элемент. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
-**Параметр** | **Дополнительные сведения**
+**Параметр** | **Сведения**
 --- | ---
 Использование | cd /usr/local/ASR/Vx/bin<br/><br/> UnifiedAgentConfigurator.sh -i \<CSIP> -P \<PassphraseFilePath>
 -i | Обязательный параметр. Указывает IP-адрес сервера конфигурации. Используйте любой допустимый IP-адрес.

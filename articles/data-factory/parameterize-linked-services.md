@@ -12,11 +12,11 @@ author: gauravmalhot
 ms.author: gamal
 manager: craigg
 ms.openlocfilehash: 0239c53f98fba201b6d70e1e2212eea36134e30d
-ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57574633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60635550"
 ---
 # <a name="parameterize-linked-services-in-azure-data-factory"></a>Параметризация связанных служб в Фабрике данных Azure
 
@@ -34,8 +34,8 @@ ms.locfileid: "57574633"
 ## <a name="supported-data-stores"></a>Поддерживаемые хранилища данных
 
 В настоящее время в пользовательском интерфейсе Фабрики данных на портале Azure связанной службы параметризация поддерживается для следующих хранилищ данных. Для всех других хранилищ данных можно параметризовать связанную службу, выбрав значок **Код** на вкладке **Подключения**, а также использовать редактор JSON.
-- Базы данных SQL Azure
-- Хранилище данных SQL Azure
+- База данных SQL Azure
+- Хранилище данных SQL Azure
 - SQL Server;
 - Oracle
 - База данных Cosmos

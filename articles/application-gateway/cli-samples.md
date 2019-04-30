@@ -11,15 +11,16 @@ ms.service: application-gateway
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
-ms.date: 01/30/2018
-ms.author: victorh
+origin.date: 01/30/2018
+ms.date: 07/02/2018
+ms.author: v-junlch
 ms.custom: mvc
-ms.openlocfilehash: 10857e248382156f7f65b343e3eedb65229f6639
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
-ms.translationtype: HT
+ms.openlocfilehash: 90e5c52c9efae7538308371a157b552d4e4d12ee
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33201017"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60831135"
 ---
 # <a name="azure-application-gateway-azure-cli-samples"></a>Образцы Azure CLI для шлюза приложений Azure
 
@@ -30,3 +31,4 @@ ms.locfileid: "33201017"
 | [Управление веб-трафиком с помощью Azure CLI](./scripts/create-vmss-cli.md) | Создание шлюза приложения и всех связанных ресурсов. |
 | [Ограничение веб-трафика с помощью Azure CLI](./scripts/create-vmss-waf-cli.md) | Создание шлюза приложений, который ограничивает трафик с помощью правил OWASP.|
 | | |
+

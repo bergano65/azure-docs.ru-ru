@@ -10,11 +10,11 @@ ms.date: 04/01/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: c95af40c3fa3f9dad2bfb5ea4a1b9f585c636928
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58807065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60881222"
 ---
 # <a name="source-control-integration-in-azure-automation---legacy"></a>Интеграция системы управления версиями со службой автоматизации Azure — старая версия
 
@@ -65,7 +65,7 @@ ms.locfileid: "58807065"
      | **Параметр** | **Значение** |
      |:--- |:--- |
      | `Name`  |Microsoft.Azure.Automation.SourceControl.Connection |
-     | `Type`  |Строка |
+     | `Type`  |String |
      | `Value` |{"Branch":\<*имя ветви*>,"RunbookFolderPath":\<*путь к папке с модулями Runbook*>,"ProviderType":\<*для GitHub значение равно 1*>,"Repository":\<*имя репозитория*>,"Username":\<*имя пользователя GitHub*>} |
 
    * Переменная **Microsoft.Azure.Automation.SourceControl.OAuthToken**содержит надежно зашифрованное значение OAuthToken.  

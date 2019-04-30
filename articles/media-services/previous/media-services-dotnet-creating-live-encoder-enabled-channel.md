@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: juliako;anilmur
 ms.openlocfilehash: b2ff6caa4c1b3626e4be1684976441be6ecbfe30
-ms.sourcegitcommit: 72cc94d92928c0354d9671172979759922865615
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58418590"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61231474"
 ---
 # <a name="how-to-perform-live-streaming-using-azure-media-services-to-create-multi-bitrate-streams-with-net"></a>Потоковая трансляция с использованием служб мультимедиа Azure для создания потоков с разными скоростями с помощью .NET
 > [!div class="op_single_selector"]

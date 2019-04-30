@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alkarche
 ms.openlocfilehash: 6d11961f06a75341e633c7a8963e6b83ed37cf13
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58076740"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61341721"
 ---
 # <a name="openapi-20-metadata-support-in-azure-functions-preview"></a>Поддержка метаданных OpenAPI 2.0 в Функциях Azure (предварительная версия)
 Поддержка метаданных OpenAPI 2.0 (прежнее название — Swagger) в Функциях Azure — это предварительная версия функции, которая предназначена для записи определения OpenAPI 2.0 в приложении-функции. Затем можно разместить этот файл с помощью приложения-функции.
@@ -45,7 +45,7 @@ ms.locfileid: "58076740"
 
 ### <a name="templates"></a>Доступные шаблоны
 
-|ИМЯ| ОПИСАНИЕ |
+|ИМЯ| Описание |
 |:-----|:-----|
 |Созданное определение|Определение OpenAPI с максимальным объемом информации, которую можно извлечь из имеющихся метаданных функции.|
 
@@ -56,7 +56,7 @@ ms.locfileid: "58076740"
 |Swagger.json|Пользовательский интерфейс портала|Function.json|
 |:----|:-----|:-----|
 |[Host](https://swagger.io/specification/#fixed-fields-15)|**Параметры приложения-функции** > **Параметры службы приложений** > **Обзор** > **URL-адрес**|*Отсутствует*
-|[Paths](https://swagger.io/specification/#paths-object-29)|**Интегрировать** > **Выбранные методы HTTP**|Привязки: Маршрутизация
+|[Paths](https://swagger.io/specification/#paths-object-29)|**Интегрировать** > **Выбранные методы HTTP**|Привязки: Маршрут
 |[Path Item](https://swagger.io/specification/#path-item-object-32)|**Интегрировать** > **Шаблон маршрута**|Привязки: Методы
 |[Безопасность](https://swagger.io/specification/#security-scheme-object-112)|**Ключи**|*Отсутствует*|
 |operationID*|**Маршрут + допустимые команды**|Маршрут + допустимые команды|

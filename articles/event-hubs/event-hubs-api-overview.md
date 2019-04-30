@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 07/02/2018
 ms.author: shvija
 ms.openlocfilehash: 80566b0246179064d2a479b8c9bf3c79a2a93aac
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59681290"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60822619"
 ---
 # <a name="available-event-hubs-apis"></a>Доступные интерфейсы API Центров событий
 
@@ -39,7 +39,7 @@ ms.locfileid: "59681290"
 | Узел | [NPM](https://www.npmjs.com/package/azure-event-hubs) | Н/Д | [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs) |
 | C | Н/Д | Н/Д | [GitHub](https://github.com/Azure/azure-event-hubs-c) |
 
-### <a name="additional-information"></a>Дополнительная информация
+### <a name="additional-information"></a>Дополнительные сведения
 
 #### <a name="net"></a>.NET
 

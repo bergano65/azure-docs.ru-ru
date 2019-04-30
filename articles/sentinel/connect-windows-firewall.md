@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
 ms.openlocfilehash: 27a82545f77fe15541ac598abadbfc8ffb6d3405
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59790966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60714597"
 ---
 # <a name="connect-windows-firewall"></a>Подключение брандмауэра Windows
 
@@ -37,7 +37,7 @@ ms.locfileid: "59790966"
 
 1. На портале Azure Sentinel выберите **соединители данных** и выберите команду **брандмауэра Windows** плитку. 
 1. Выберите типы данных для потоковой передачи.
-1. Щелкните **Install**(Установить).
+1. Нажмите кнопку **Установить**.
 6. Чтобы использовать соответствующей схемы в Log Analytics для брандмауэра Windows, найдите **SecurityEvent**.
 
 ## <a name="validate-connectivity"></a>Проверка подключения

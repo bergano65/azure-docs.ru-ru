@@ -11,11 +11,11 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: bahariri
 ms.openlocfilehash: 8bf381e7c66e06bbaa140ed865f0f7c9b4f001af
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54452349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60821695"
 ---
 # <a name="use-azure-event-hubs-from-apache-kafka-applications"></a>Использование Центров событий Azure из приложений Apache Kafka
 Центры событий предоставляют конечную точку Kafka, которую существующие приложения на основе Kafka могут использовать в качестве альтернативы запуска собственного кластера Kafka. Центры событий поддерживают [Apache Kafka 1.0](https://kafka.apache.org/documentation/) и более новые версии протокола и работают с имеющимися приложениями Kafka, в том числе с MirrorMaker.  
@@ -30,9 +30,9 @@ ms.locfileid: "54452349"
 
 | Понятия Kafka | Понятия Центров событий|
 | --- | --- |
-| HDInsight | Пространство имен |
+| Кластер | Пространство имен |
 | Раздел | Концентратор событий |
-| Секция | Секция|
+| Раздел | Раздел|
 | Группа потребителей | Группа потребителей |
 | Offset | Offset|
 
@@ -55,7 +55,7 @@ ms.locfileid: "54452349"
 Ниже приведен список функций Kafka, которые еще не поддерживаются:
 
 *   идемпотентный производитель;
-*   транзакция:
+*   Транзакция
 *   Сжатие
 *   хранение на основе размера;
 *   сжатие журнала;
@@ -63,7 +63,7 @@ ms.locfileid: "54452349"
 *   поддержка API HTTP Kafka;
 *   потоки Kafka.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье приведены ознакомительные сведения о Центрах событий для компонента Kafka. Дополнительные сведения см. по следующим ссылкам:
 

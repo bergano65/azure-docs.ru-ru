@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
 ms.openlocfilehash: 00d5e3df78e85d19a519786dad1a1b176ad7fa08
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55733065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60837237"
 ---
 # <a name="how-to-customize-the-azure-api-management-developer-portal-using-templates"></a>Настройка портала разработчика в службе управления API Azure с помощью шаблонов
 
@@ -132,7 +132,7 @@ ms.locfileid: "55733065"
 ## <a name="to-save-a-template"></a>Сохранение шаблона
 Чтобы сохранить шаблон, нажмите кнопку "Сохранить" в редакторе шаблона.
 
-![Сохранение шаблона][api-management-save-template]
+![Сохранить шаблон][api-management-save-template]
 
 Сохраненные изменения не отобразятся на портале разработчика, пока шаблон не будет опубликован.
 
@@ -162,7 +162,7 @@ ms.locfileid: "55733065"
 
 Нажмите кнопку **Да** для подтверждения.
 
-![Подтверждение][api-management-revert-template-confirm]
+![Подтвердить][api-management-revert-template-confirm]
 
 Ранее опубликованная версия шаблона станет активной на портале разработчика после завершения операции восстановления.
 
@@ -175,7 +175,7 @@ ms.locfileid: "55733065"
 
 Нажмите кнопку **Да** для подтверждения.
 
-![Подтверждение][api-management-reset-template-confirm]
+![Подтвердить][api-management-reset-template-confirm]
 
 Чтобы восстановить все шаблоны до версии по умолчанию, нажмите кнопку **Восстановить шаблоны по умолчанию** в списке шаблонов.
 
@@ -183,7 +183,7 @@ ms.locfileid: "55733065"
 
 Затем необходимо опубликовать восстановленные шаблоны вместе или по отдельности, выполнив действия, описанные в разделе [Публикация шаблона](#to-publish-a-template).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Справочную информацию о шаблонах портала разработчика, строковых ресурсах, значках и элементах управления страницы см. в разделе [Azure API Management Templates](api-management-developer-portal-templates-reference.md) (Шаблоны в службе управления API).
 
 [modify-content-layout]: api-management-modify-content-layout.md

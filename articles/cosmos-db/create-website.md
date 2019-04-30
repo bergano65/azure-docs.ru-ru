@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 02/23/2018
 ms.author: sngun
 ms.openlocfilehash: 1a63de4642850e425cc785e0d89197178ceec1a6
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54041022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60889850"
 ---
 # <a name="deploy-azure-cosmos-db-and-azure-app-service-web-apps-using-an-azure-resource-manager-template"></a>Развертывание Azure Cosmos DB и веб-приложений службы приложений Azure с помощью шаблона Azure Resource Manager
 В этом руководстве показано, как использовать шаблон Azure Resource Manager для развертывания и интеграции [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/), веб-приложения [службы приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714), а также примера веб-приложения.
@@ -25,7 +25,7 @@ ms.locfileid: "54041022"
 
 <a id="Prerequisites"></a>
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 > [!TIP]
 > Хотя это руководство не требует наличия опыта работы с шаблонами Azure Resource Manager или JSON, если возникнет необходимость изменить ссылки шаблонов или варианты развертывания, потребуются знания в каждой из этих областей.
 > 
@@ -114,18 +114,18 @@ ms.locfileid: "54041022"
 
 <a name="NextSteps"></a>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Поздравляем! Мы выполнили развертывание Azure Cosmos DB, веб-приложения службы приложений и примера веб-приложения с использованием шаблонов Azure Resource Manager.
 
 * Дополнительные сведения о базе данных Azure Cosmos DB см. [здесь](https://azure.microsoft.com/services/cosmos-db/).
 * Дополнительные сведения о веб-приложениях службы приложений Azure см. [здесь](https://go.microsoft.com/fwlink/?LinkId=325362).
 * Дополнительные сведения о шаблонах Azure Resource Manager см. [здесь](https://msdn.microsoft.com/library/azure/dn790549.aspx).
 
-## <a name="whats-changed"></a>Изменения
+## <a name="whats-changed"></a>Что изменилось
 * См. руководство по переходу с веб-сайтов на службу приложений: [Служба приложений Azure и ее влияние на существующие службы Azure](https://go.microsoft.com/fwlink/?LinkId=529714)
 
 > [!NOTE]
-> Чтобы приступить к работе со службой приложений Azure до создания учетной записи Azure, перейдите к разделу [Пробное использование службы приложений](https://go.microsoft.com/fwlink/?LinkId=523751), где вы можете быстро создать кратковременное веб-приложение начального уровня в службе приложений. Никаких кредитных карт и обязательств.
+> Чтобы приступить к работе со службой приложений Azure до создания учетной записи Azure, перейдите к разделу [Пробное использование службы приложений](https://go.microsoft.com/fwlink/?LinkId=523751), где вы можете быстро создать кратковременное веб-приложение начального уровня в службе приложений. Никаких кредитных карт и обязательств
 > 
 > 
 

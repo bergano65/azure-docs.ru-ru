@@ -9,12 +9,12 @@ ms.reviewer: jasonwhowell
 ms.assetid: dc9b21d8-c5f4-4f77-bcbc-eff458f48de2
 ms.topic: conceptual
 ms.date: 07/14/2017
-ms.openlocfilehash: 42982e3fa0a854109a6b887640604498ac68847c
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
-ms.translationtype: HT
+ms.openlocfilehash: 765bcaab0f91e097be827bfa6e8f505ef5330d57
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45632265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60814395"
 ---
 # <a name="run-u-sql-and-debug-locally-in-visual-studio-code"></a>Запуск и отладка заданий U-SQL локально в Visual Studio Code
 В этой статье описывается, как выполнять задания U-SQL на локальном компьютере для разработки, чтобы ускорить программирование на ранних этапах, и отлаживать код локально в Visual Studio Code. Инструкции по использованию средств Azure Data Lake для Visual Studio Code см. в статье [Использование средств Azure Data Lake для Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md).
@@ -23,7 +23,7 @@ ms.locfileid: "45632265"
 
 ## <a name="set-up-the-u-sql-local-run-environment"></a>Настройка среды для локального запуска U-SQL
 
-1. Откройте палитру команд, нажав клавиши CTRL+SHIFT+P, и введите **ADL: Download Local Run Package** (ADL: скачать пакет для локального запуска), чтобы скачать пакеты.  
+1. Выберите сочетание клавиш Ctrl + Shift + P, чтобы открыть палитру команд, а затем введите **ADL: Скачайте локальный запуск пакета** чтобы скачать пакеты.  
 
    ![Скачивание пакетов зависимостей для локального запуска ADL](./media/data-lake-analytics-data-lake-tools-for-vscode-local-run-and-debug/downloadtheadllocalrunpackage.png)
 
@@ -45,16 +45,16 @@ ms.locfileid: "45632265"
 
 
 ## <a name="start-the-local-run-service-and-submit-the-u-sql-job-to-a-local-account"></a>Локальный запуск службы и отправка задания U-SQL в локальную учетную запись 
-Новые пользователи должны ввести **ADL: Download Local Run Package** (ADL: скачать пакет для локального запуска), чтобы скачать пакеты для локального запуска, если вы еще не [настроили среду для локального запуска U-SQL](#set-up-the-u-sql-local-run-environment).
+Для новых пользователей, используйте **ADL: Скачайте локальный запуск пакета** для загрузки локального выполнения пакетов, если вы еще не [настроить среду для локального запуска U-SQL](#set-up-the-u-sql-local-run-environment).
 
-1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд, и введите **ADL: Start Local Run Service** (ADL: скачать зависимости для локального запуска).   
+1. Выберите сочетание клавиш Ctrl + Shift + P, чтобы открыть палитру команд, а затем введите **ADL: Запустите службу локально**.   
 2. Выберите **Принять**, чтобы принять условия лицензионного соглашения об использовании программного обеспечения Майкрософт в первый раз. 
 
    ![Принятие условий лицензионного соглашения об использовании программного обеспечения Майкрософт](./media/data-lake-analytics-data-lake-tools-for-vscode-local-run-and-debug/AcceptEULA.png)   
 3. Откроется консоль команд. Для новых пользователей введите **3**, а затем найдите локальную папку для входных и выходных данных. Для остальных параметров можно использовать значения по умолчанию. 
 
    ![Локальный запуск команд в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode-local-run-and-debug/data-lake-tools-for-vscode-local-run-cmd.png)
-4. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд, введите **ADL: Submit Job** (ADL: отправить задание) и выберите **Локальный**, чтобы отправить задание в локальную учетную запись.
+4. Выберите сочетание клавиш Ctrl + Shift + P, чтобы открыть палитру команд, введите **ADL: Отправка задания**, а затем выберите **локального** для отправки задания в вашей локальной учетной записи.
 
    ![Выбор локальной учетной записи в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode-local-run-and-debug/data-lake-tools-for-vscode-select-local.png)
 5. После отправки задания можно просмотреть сведения об отправке. Чтобы просмотреть сведения об отправке, выберите **jobUrl** в окне **вывода**. Вы также можете просмотреть состояние отправки задания в консоли команд. Для просмотра сведений о задании в консоли команд введите **7**.
@@ -66,24 +66,24 @@ ms.locfileid: "45632265"
 ## <a name="start-a-local-debug-for-the-u-sql-job"></a>Запуск локальной отладки для задания U-SQL  
 Для новых пользователей:
 
-1. Введите **ADL: Download Local Run Package** (ADL: скачать пакет для локального запуска), чтобы скачать пакеты для локального запуска, если вы еще не [настроили среду для локального запуска U-SQL](#set-up-the-u-sql-local-run-environment).
-2. Установите пакет SDK для .NET Core 2.0, как предложено в окне сообщения, если пакет еще не установлен.
- 
+1. Используйте **ADL: Скачайте локальный запуск пакета** для загрузки локального выполнения пакетов, если вы еще не [настроить среду для локального запуска U-SQL](#set-up-the-u-sql-local-run-environment).
+2. Установите .NET Core SDK 2.0 как предложено в окне сообщения, если не установлен.
+ 
   ![Напоминание об установке Dotnet](./media/data-lake-analytics-data-lake-tools-for-vscode-local-run-and-debug/remind-install-dotnet.png)
-3. Установите C# для Visual Studio Code, как предложено в окне сообщения, если вы еще не сделали этого. Нажмите кнопку **Установить** чтобы продолжить, а затем перезапустите VSCode.
+3. Установка C# для Visual Studio Code как предложено в окне сообщения, если не установлен. Нажмите кнопку **установить** чтобы продолжить, а затем перезапустите VSCode.
 
     ![Напоминание об установке C#](./media/data-lake-analytics-data-lake-tools-for-vscode-local-run-and-debug/install-csharp.png)
 
 Чтобы выполнить отладку локально, сделайте следующее:
   
-1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд, и введите **ADL: Start Local Run Service** (ADL: скачать зависимости для локального запуска). Откроется консоль команд. Убедитесь, что установлено значение параметра **DataRoot**.
+1. Выберите сочетание клавиш Ctrl + Shift + P, чтобы открыть палитру команд, а затем введите **ADL: Запустите службу локально**. Откроется консоль команд. Убедитесь, что установлено значение параметра **DataRoot**.
 2. Установите точку останова в коде программной части C#.
-3. Вернитесь в редактор скриптов, щелкните правой кнопкой мыши и выберите **ADL: Local Debug** (ADL: локальная отладка).
+3. К редактор скриптов, щелкните правой кнопкой мыши и выберите **ADL: Локальная отладка**.
     
    ![Результат локальной отладки в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode-local-run-and-debug/data-lake-tools-for-vscode-local-debug-result.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Использование средств Azure Data Lake для Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md)
 * [Разработка U-SQL с помощью Python, R, и CSharp для Azure Data Lake Analytics в VSCode](data-lake-analytics-u-sql-develop-with-python-r-csharp-in-vscode.md)
 * [Приступая к работе с аналитикой озера данных с помощью PowerShell](data-lake-analytics-get-started-powershell.md)

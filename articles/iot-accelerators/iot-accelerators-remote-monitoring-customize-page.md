@@ -1,5 +1,5 @@
 ---
-title: Добавление страницы в пользовательский интерфейс решения для удаленного мониторинга в Azure | Документация Майкрософт
+title: Добавьте страницу решением для удаленного мониторинга пользовательского интерфейса — Azure | Документация Майкрософт
 description: В этой статье показано, как добавить новую страницу в веб-интерфейс акселератора решения для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 10/02/2018
 ms.topic: conceptual
 ms.openlocfilehash: 95830cdffb232e16f9fbae51cfa11fbd18172c3c
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49094521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61447086"
 ---
 # <a name="add-a-custom-page-to-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательской страницы в веб-интерфейс акселератора решения для удаленного мониторинга
 
@@ -24,7 +24,7 @@ ms.locfileid: "49094521"
 
 Другие руководства расширяют этот сценарий и позволяют добавить дополнительные функции к новой странице.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этом руководстве, необходимо установить следующее ПО на локальный компьютер разработки:
 
@@ -154,7 +154,7 @@ npm start
 
 1. Разверните **базовый** экземпляр акселератора решений с помощью CLI **PCS**. Запишите имя развертывания и учетные данные, указанные для виртуальной машины. Дополнительные сведения см. в статье [Развертывание предварительно настроенного решения для удаленного мониторинга с помощью интерфейса командной строки](iot-accelerators-remote-monitoring-deploy-cli.md).
 
-1. Используя портал Azure или [командную строку Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), включите доступ по протоколу SSH к виртуальной машине, на которой размещаются микрослужбы в вашем решении. Например: 
+1. Используя портал Azure или [командную строку Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), включите доступ по протоколу SSH к виртуальной машине, на которой размещаются микрослужбы в вашем решении. Пример.
 
     ```sh
     az network nsg rule update --name SSH --nsg-name {your solution name}-nsg --resource-group {your solution name} --access Allow
@@ -162,7 +162,7 @@ npm start
 
     Включать доступ по протоколу SSH нужно только во время тестирования и разработки. Если доступ по протоколу SSH включен, [его нужно отключить при первой возможности](../security/azure-security-network-security-best-practices.md).
 
-1. Используя портал Azure или [командную строку Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), найдите имя и общедоступный IP-адрес виртуальной машины. Например: 
+1. Используя портал Azure или [командную строку Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), найдите имя и общедоступный IP-адрес виртуальной машины. Пример.
 
     ```sh
     az resource list --resource-group {your solution name} -o table
@@ -187,7 +187,7 @@ npm start
     REACT_APP_BASE_SERVICE_URL=https://{your solution name}.azurewebsites.net/
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке пользовательского веб-интерфейса в акселераторе решения для удаленного мониторинга.
 

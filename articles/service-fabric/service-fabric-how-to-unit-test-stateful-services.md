@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 09/04/2018
 ms.author: atsenthi
 ms.openlocfilehash: b066296ca52d3067f8985245161eb4fa7b484a07
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58669118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60720133"
 ---
 # <a name="create-unit-tests-for-stateful-services"></a>Создание модульных тестов для служб с отслеживанием состояния
 Модульное тестирование служб с отслеживанием состояния в Service Fabric помогает выявить некоторые распространенные ошибки, которые необязательно будут обнаружены обычным приложением или модульным тестированием домена. При разработке модульных тестов для служб с отслеживанием состояния существуют некоторые особенности, которые следует иметь в виду.

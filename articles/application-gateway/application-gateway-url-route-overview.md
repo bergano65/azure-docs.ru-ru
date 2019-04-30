@@ -8,11 +8,11 @@ ms.date: 1/8/2019
 ms.author: victorh
 ms.topic: conceptual
 ms.openlocfilehash: 2f0bd0a20b866d342802014f1034a7ed9d939d53
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57792248"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60831372"
 ---
 # <a name="url-path-based-routing-overview"></a>Общие сведения о маршрутизации на основе URL-путей
 
@@ -74,25 +74,25 @@ PathPattern — это список шаблонов пути для сопос
 
 |Шаблон пути версии 1  |Поддерживается?  |
 |---------|---------|
-|`/images/*`     |Да|
-|`/images*`     |Нет|
-|`/images/*.jpg`     |Нет|
-|`/*.jpg`     |Нет|
-|`/Repos/*/Comments/*`     |Нет|
-|`/CurrentUser/Comments/*`     |Да|
+|`/images/*`     |да|
+|`/images*`     |нет|
+|`/images/*.jpg`     |нет|
+|`/*.jpg`     |нет|
+|`/Repos/*/Comments/*`     |нет|
+|`/CurrentUser/Comments/*`     |да|
 
-#### <a name="v2"></a>версия 2
+#### <a name="v2"></a>v2
 
 В правилах для путей учитывается регистр.
 
 |Шаблон пути версии 2  |Поддерживается?  |
 |---------|---------|
-|`/images/*`     |Да|
-|`/images*`     |Да|
-|`/images/*.jpg`     |Нет|
-|`/*.jpg`     |Нет|
-|`/Repos/*/Comments/*`     |Нет|
-|`/CurrentUser/Comments/*`     |Да|
+|`/images/*`     |да|
+|`/images*`     |да|
+|`/images/*.jpg`     |нет|
+|`/*.jpg`     |нет|
+|`/Repos/*/Comments/*`     |нет|
+|`/CurrentUser/Comments/*`     |да|
 
 Дополнительные сведения см. в статье [Resource Manager template using URL-based routing](https://azure.microsoft.com/documentation/templates/201-application-gateway-url-path-based-routing) (Шаблон Resource Manager с использованием маршрутизации на основе URL-адресов).
 

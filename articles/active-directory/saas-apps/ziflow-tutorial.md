@@ -17,13 +17,13 @@ ms.date: 08/07/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 175e678365016bafd3d18f590a5434c32ac9fadd
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56176481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60798216"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ziflow"></a>Руководство. Интеграция Azure Active Directory с Ziflow
+# <a name="tutorial-azure-active-directory-integration-with-ziflow"></a>Руководство по Интеграция Azure Active Directory с Ziflow
 
 В этом руководстве описано, как интегрировать Ziflow с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56176481"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Ziflow, вам потребуется:
 
@@ -111,7 +111,7 @@ ms.locfileid: "56176481"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://ziflow-production.auth0.com/login/callback?connection=<UniqueID>`.
 
-    б) В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `urn:auth0:ziflow-production:<UniqueID>`
+    2. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `urn:auth0:ziflow-production:<UniqueID>`
 
     > [!NOTE]
     > Приведенные выше значения используются только для примера. Замените их на уникальные значения идентификатора и URL-адреса входа, которые описываются далее в этом руководстве.
@@ -144,11 +144,11 @@ ms.locfileid: "56176481"
 
     a. Выберите в качестве **типа** значение **SAML2.0**.
 
-    б) В текстовое поле **Sign-In URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    2. В текстовое поле **Sign-In URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. Отправьте сертификат в кодировке Base64, который был скачан с портала Azure, в поле **X509 Signing Certificate** (Сертификат для подписи X509).
 
-    4.3. В текстовое поле **Sign Out URL** (URL-адрес выхода) вставьте **URL-адрес выхода**, скопированный на портале Azure.
+    d. В текстовое поле **Sign Out URL** (URL-адрес выхода) вставьте **URL-адрес выхода**, скопированный на портале Azure.
 
     д. В разделе **Configuration Settings for your Identifier Provider** (Параметры конфигурации для поставщика удостоверений) скопируйте выделенное значение уникального идентификатора и добавьте его к идентификатору и URL-адрес для входа в разделе **Домены и URL-адреса приложения Ziflow** на портале Azure.
 
@@ -182,7 +182,7 @@ ms.locfileid: "56176481"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
   
 ### <a name="create-a-ziflow-test-user"></a>Создание тестового пользователя Ziflow
 
@@ -206,11 +206,11 @@ ms.locfileid: "56176481"
 
     a. В текстовое поле **E-mail** (Адрес электронной почты) введите адрес электронной почты пользователя, например brittasimon@contoso.com.
 
-    б) В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
+    2. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
 
-    4.3. Укажите свою роль Ziflow.
+    d. Укажите свою роль Ziflow.
 
     д. Нажмите кнопку **Add 1 user** (Добавить 1 пользователя).
 
@@ -247,7 +247,7 @@ ms.locfileid: "56176481"
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Тест единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

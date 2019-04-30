@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: mbullwin
 ms.openlocfilehash: 71e70962a8c55d397b6261571cfef4a126d3e8b4
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57307825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60899423"
 ---
 # <a name="export-telemetry-from-application-insights"></a>Экспорт данных телеметрии из Application Insights
 Хотите увеличить период удержания телеметрии или анализировать ее особым образом? Функция "Непрерывный экспорт" идеально подходит для этого. События, которые отображаются на портале Application Insights, можно экспортировать в хранилище Microsoft Azure в формате JSON. Отсюда можно загрузить данные; также вы можете написать любой код, необходимый для их обработки.  
@@ -107,7 +107,7 @@ ms.locfileid: "57307825"
 
     $"{applicationName}_{instrumentationKey}/{type}/{blobDeliveryTimeUtc:yyyy-MM-dd}/{ blobDeliveryTimeUtc:HH}/{blobId}_{blobCreationTimeUtc:yyyyMMdd_HHmmss}.blob"
 
-Where
+Где
 
 * `blobCreationTimeUtc` — время создания большого двоичного объекта во внутреннем промежуточном хранилище.
 * `blobDeliveryTimeUtc` — время копирования большого двоичного объекта в целевое хранилище экспорта.
@@ -128,7 +128,7 @@ Where
 [Подробный справочник по модели данных типов и значений свойств.](export-data-model.md)
 
 ## <a name="processing-the-data"></a>Обработка данных
-Для небольших объемов данных можно написать код, который будет выделять элементы данных, записывать их в электронную таблицу и т. д. Например: 
+Для небольших объемов данных можно написать код, который будет выделять элементы данных, записывать их в электронную таблицу и т. д. Пример.
 
     private IEnumerable<T> DeserializeMany<T>(string folderName)
     {
@@ -168,7 +168,7 @@ Where
 
 Для больших объемов данных рассмотрите возможность использования [HDInsight](https://azure.microsoft.com/services/hdinsight/) – кластеров Hadoop в облаке. HDInsight предусматривает широкий набор технологий для анализа больших объемов данных и управления ими. Кроме того, решение можно использовать для обработки данных, экспортированных из Application Insights.
 
-## <a name="q--a"></a>Вопросы и ответы
+## <a name="q--a"></a>Контроль качества
 * *Все, что мне требуется, – всего лишь один раз загрузить диаграмму.*  
 
     Да, это можно сделать. В верхней части колонки щелкните **Экспорт данных**.
