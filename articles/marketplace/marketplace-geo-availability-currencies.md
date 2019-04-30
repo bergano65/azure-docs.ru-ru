@@ -2,9 +2,7 @@
 title: Географическая доступность и поддержка валют | Azure
 description: Географическая доступность в Azure Marketplace и AppSource
 services: Azure, Marketplace, Compute, Storage, Networking
-documentationcenter: ''
 author: qianw211
-manager: Patrick.Butler
 ms.service: marketplace
 ms.topic: article
 ms.date: 02/28/2019

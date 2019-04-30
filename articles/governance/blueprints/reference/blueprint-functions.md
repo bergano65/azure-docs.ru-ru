@@ -110,10 +110,10 @@ ms.locfileid: "63769306"
 | Expression | type | Value |
 |:---|:---|:---|
 |`[artifacts("myTemplateArtifact").output.myArray]` | Массив, | \[«Первый», «second»\] |
-|`[artifacts("myTemplateArtifact").output.myArray[0]]` | String | «Первый» |
-|`[artifacts("myTemplateArtifact").output.myString]` | String | «Мой строковое значение» |
+|`[artifacts("myTemplateArtifact").output.myArray[0]]` | Строка | «Первый» |
+|`[artifacts("myTemplateArtifact").output.myString]` | Строка | «Мой строковое значение» |
 |`[artifacts("myTemplateArtifact").output.myObject]` | Object | { "myproperty": "my value", "anotherProperty": true } |
-|`[artifacts("myTemplateArtifact").output.myObject.myProperty]` | String | «Мой value» |
+|`[artifacts("myTemplateArtifact").output.myObject.myProperty]` | Строка | «Мой value» |
 |`[artifacts("myTemplateArtifact").output.myObject.anotherProperty]` | Bool | Истина |
 
 ## <a name="concat"></a>concat
