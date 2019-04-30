@@ -7,15 +7,16 @@ ms.reviewer: jasonh
 keywords: apache storm, пример apache storm, storm java, пример топологии storm
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 03/14/2019
-ms.author: hrasheed
+origin.date: 03/14/2019
+ms.date: 04/29/2019
+ms.author: v-yiso
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 32a8c81cd7b2078f4866d4c7311ea5ac0d0b3439
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
-ms.translationtype: MT
+ms.openlocfilehash: 43f68908c8549c2f1d8322b5c4ad3985618cfe6e
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58448291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62125176"
 ---
 # <a name="create-an-apache-storm-topology-in-java"></a>Создание топологии Apache Storm на языке Java
 
@@ -30,7 +31,7 @@ ms.locfileid: "58448291"
 
 * [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks)
 
-* [Apache Maven](https://maven.apache.org/download.cgi) правильно [установлен](https://maven.apache.org/install.html) в соответствии с Apache.  Maven — система сборки проектов Java.
+* Средство [Apache Maven](https://maven.apache.org/download.cgi), [установленное](https://maven.apache.org/install.html) согласно инструкций Apache.  Maven — система сборки проектов Java.
 
 ## <a name="test-environment"></a>Тестовая среда
 Среда, используемая для этой статьи была на компьютере под управлением Windows 10.  Команды, которые выполнялись в командной строке, и различные файлы были изменены в блокноте.

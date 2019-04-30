@@ -1,7 +1,6 @@
 ---
 title: Настройка репликации кластера HBase в виртуальных сетях Azure — Azure HDInsight
 description: Сведения о том, как настроить репликацию HBase с одной версии HDInsight на другую для балансировки нагрузки, обеспечения высокого уровня доступности, переноса или обновления без простоя и аварийного восстановления.
-services: hdinsight,virtual-network
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -9,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/15/2018
-ms.openlocfilehash: d50c3f4452dd00b5656b6cde5e671caebcb4bb7c
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.openlocfilehash: 95a1055df283765b24322f6f8efe3efcb9b19022
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58112540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62123088"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Настройка репликации кластера Apache HBase в виртуальных сетях Azure
 
@@ -67,9 +66,9 @@ ms.locfileid: "58112540"
 
 **VNet 1**
 
-| Свойство | Значение |
+| Свойство | Value |
 |----------|-------|
-| Расположение | Запад США |
+| Location | Запад США |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet1 |
 | Address space prefix | 10.1.0.0/16 |
 | Имя подсети | subnet 1 |
@@ -84,9 +83,9 @@ ms.locfileid: "58112540"
 
 **VNet 2**
 
-| Свойство | Значение |
+| Свойство | Value |
 |----------|-------|
-| Расположение | Восточная часть США |
+| Location | Восточная часть США |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet2 |
 | Address space prefix | 10.2.0.0/16 |
 | Имя подсети | subnet 1 |
@@ -261,7 +260,7 @@ sudo service bind9 status
 В каждой виртуальной сети создайте кластер [Apache HBase](https://hbase.apache.org/) со следующей конфигурацией:
 
 - **Имя группы ресурсов.** Используйте те же имена групп ресурсов, как при создании виртуальных сетей.
-- **Тип кластера.** hbase
+- **Тип кластера.** HBase
 - **Версия.** HBase 1.1.2 (HDI 3.6)
 - **Расположение.** Используйте расположение, в котором находится виртуальная сеть.  По умолчанию для виртуальной сети 1 указано расположение *западная часть США*, а для виртуальной сети 2 — *восточная часть США*.
 - **Хранилище** Создайте учетную запись хранения для кластера.
@@ -302,7 +301,7 @@ sudo service bind9 status
 
 Ниже приведены обязательные аргументы.
 
-|ИМЯ|ОПИСАНИЕ|
+|ИМЯ|Описание|
 |----|-----------|
 |-s, --src-cluster | Указывает DNS-имя исходного кластера HBase. например -s hbsrccluster, --src-cluster=hbsrccluster. |
 |-d, --dst-cluster | Указывает DNS-имя кластера назначения (реплики) HBase. например -s dsthbcluster, --src-cluster=dsthbcluster. |
@@ -311,7 +310,7 @@ sudo service bind9 status
 
 Необязательные аргументы для этой команды.
 
-|ИМЯ|ОПИСАНИЕ|
+|ИМЯ|Описание|
 |----|-----------|
 |-su, --src-ambari-user | Указывает имя пользователя-администратора для Ambari в исходном кластере HBase. Значение по умолчанию — **admin**. |
 |-du, --dst-ambari-user | Указывает имя пользователя-администратора для Ambari в целевом кластере HBase. Значение по умолчанию — **admin**. |

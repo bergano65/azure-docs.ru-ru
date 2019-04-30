@@ -14,11 +14,11 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
 ms.openlocfilehash: 54d7979f9fbe23e9372aa2702b46e42ca64496d2
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58621640"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60521959"
 ---
 # <a name="how-to-start-and-stop-azure-ssis-integration-runtime-on-a-schedule"></a>Запуск и остановка Azure-SSIS Integration Runtime по расписанию
 В этой статье описан процесс планирования запуска и остановки Azure-SSIS Integration Runtime (IR) с использованием Фабрики данных Azure (ADF). Azure-SSIS IR представляет собой вычислительный ресурс ADF, предназначенный для выполнения пакетов SQL Server Integration Services (SSIS). Выполнение Azure-SSIS IR сопряжено с определенными затратами. Поэтому среду выполнения интеграции обычно запускают только на тот период, когда требуется выполнение пакетов SSIS в Azure, а затем останавливают. С помощью пользовательского интерфейса (приложения) ADF или Azure PowerShell вы можете [запустить или остановить среду выполнения интеграции вручную](manage-azure-ssis-integration-runtime.md)).
@@ -177,7 +177,7 @@ ms.locfileid: "58621640"
 
 2. Чтобы просмотреть сведения о выполнении действий, связанных с запуском конвейера, щелкните первую ссылку (**View Activity Runs** (Просмотр запусков действий)) в столбце **Действия**. Для третьего конвейера отобразятся сведения о трех выполнениях действий: по одному для каждого действия в цепочке конвейера (веб-действие для запуска среды выполнения интеграции, действие "Хранимая процедура" для выполнения пакета и веб-действие для остановки IR). Чтобы вернуться к просмотру выполнений конвейера, выберите ссылку **Конвейеры** в верхней части окна.
 
-   ![Выполнение действия](./media/how-to-schedule-azure-ssis-integration-runtime/activity-runs.png)
+   ![Запуски операции](./media/how-to-schedule-azure-ssis-integration-runtime/activity-runs.png)
 
 3. Чтобы просмотреть сведения о запусках триггера, выберите **Trigger Runs** (Запуски триггера) в раскрывающемся списке под разделом **Pipeline Runs** (Запуски конвейера) в верхней части экрана. 
 

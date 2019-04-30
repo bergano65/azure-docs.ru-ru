@@ -1,7 +1,6 @@
 ---
 title: Устранение неполадок с кластером Apache Spark в Azure HDInsight
 description: Сведения о проблемах, связанных с кластерами Apache Spark в Azure HDInsight, и их решении.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: hrasheed
-ms.openlocfilehash: fd2e253d88d6cddddd35dc75c8b746e906407cb5
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
-ms.translationtype: MT
+ms.openlocfilehash: 51a0ee6f2d928d79e60ca9976d7651c70867a41f
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62097257"
 ---
 # <a name="known-issues-for-apache-spark-cluster-on-hdinsight"></a>Известные проблемы в работе кластера Apache Spark в HDInsight
 

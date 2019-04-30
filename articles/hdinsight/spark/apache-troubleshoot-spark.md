@@ -1,19 +1,18 @@
 ---
 title: Устранение неполадок со Spark в Azure HDInsight
 description: Получите ответы на распространенные вопросы о работе с Apache Spark и Azure HDInsight.
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: aad35aa7a958e8bdaf1479d1ffbbad5bf213d46a
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
-ms.translationtype: MT
+ms.openlocfilehash: a4dc7293c00097c7a5752e29bf7c9a203cbb31a5
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58339250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62107523"
 ---
 # <a name="troubleshoot-apache-spark-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Spark с помощью Azure HDInsight
 
@@ -83,7 +82,7 @@ ms.locfileid: "58339250"
 
 Эти изменения применяются на уровне кластера, но их можно переопределить при отправке задания Spark.
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 [Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/ https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
@@ -97,7 +96,7 @@ ms.locfileid: "58339250"
 
     ![Добавление конфигурации](./media/apache-troubleshoot-spark/add-configuration-cell.png)
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 [Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/ https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
@@ -114,7 +113,7 @@ ms.locfileid: "58339250"
     curl -k --user 'username:password' -v -H 'Content-Type: application/json' -X POST -d '{ "file":"wasb://container@storageaccountname.blob.core.windows.net/example/jars/sparkapplication.jar", "className":"com.microsoft.spark.application", "numExecutors":4, "executorMemory":"4g", "executorCores":2, "driverMemory":"8g", "driverCores":4}'  
     ```
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 [Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/ https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
@@ -130,7 +129,7 @@ ms.locfileid: "58339250"
     spark-submit --master yarn-cluster --class com.microsoft.spark.application --num-executors 4 --executor-memory 4g --executor-cores 2 --driver-memory 8g --driver-cores 4 /home/user/spark/sparkapplication.jar
     ```
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 [Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/ https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
@@ -214,7 +213,7 @@ java.lang.OutOfMemoryError
     spark.driver.memory + spark.yarn.driver.memoryOverhead
     ```
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Обзор управления памятью в Apache Spark](https://spark.apache.org/docs/latest/tuning.html#memory-management-overview)
 - [Отладка приложения Apache Spark в кластере HDInsight](https://web.archive.org/web/20190112152909/ https://blogs.msdn.microsoft.com/azuredatalake/2016/12/19/spark-debugging-101/)

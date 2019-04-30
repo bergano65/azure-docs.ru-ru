@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 08/06/2018
 ms.author: bwren
 ms.openlocfilehash: 2df4cf994e118fef9048504daf40fabc1625c375
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56267689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61425917"
 ---
 # <a name="search-queries-in-azure-monitor-logs"></a>Запросы поиска в журналах Azure Monitor
 
@@ -142,6 +142,6 @@ search in (Event) "win"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Руководства [на веб-сайте о языке запросов Kusto](/azure/kusto/query/).
