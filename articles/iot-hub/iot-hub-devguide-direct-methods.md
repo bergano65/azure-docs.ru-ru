@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/17/2018
 ms.author: nberdy
-ms.openlocfilehash: caccdcb0d90a817c82e8d7816f0770b09b4ea27a
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
-ms.translationtype: HT
+ms.openlocfilehash: d7c63ffe5a318507053f59bf3a18242ee8c327a0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55101028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61327760"
 ---
 # <a name="understand-and-invoke-direct-methods-from-iot-hub"></a>Общие сведения о прямых методах и информация о вызове этих методов из Центра Интернета вещей
 
@@ -94,7 +94,7 @@ curl -X POST \
 }'
 ```
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 Внутреннее приложение получает ответ, включающий в себя следующие элементы:
 
@@ -142,7 +142,7 @@ curl -X POST \
 
 Запросы метода имеют нулевой уровень качества обслуживания.
 
-#### <a name="response"></a>Ответ
+#### <a name="response"></a>Отклик
 
 Устройство отправляет ответы в `$iothub/methods/res/{status}/?$rid={request id}`, где:
 
@@ -168,7 +168,7 @@ curl -X POST \
 
 * текст сообщения AMQP с полезными данными метода в формате JSON.
 
-#### <a name="response"></a>Ответ
+#### <a name="response"></a>Отклик
 
 Устройство создает ссылку на отправку для возврата ответа метода по адресу `amqps://{hostname}:5671/devices/{deviceId}/methods/deviceBound`.
 
@@ -194,7 +194,7 @@ curl -X POST \
 
 * Статья [Взаимодействие с Центром Интернета вещей с помощью протокола MQTT](iot-hub-mqtt-support.md) содержит дополнительные сведения о поддержке протокола MQTT в Центре Интернета вещей.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как использовать прямые методы, вас может заинтересовать следующая статья в руководстве разработчика для Центра Интернета вещей:
 

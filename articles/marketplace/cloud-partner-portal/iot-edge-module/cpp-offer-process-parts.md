@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 5b4d4471d9c77b5d13dfd5f8c2e9394b1c2d2a87
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51242559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60910701"
 ---
 # <a name="iot-edge-module-offer-publishing-overview"></a>Общие сведения о публикации предложения модуля IoT Edge
 
@@ -46,6 +46,6 @@ ms.locfileid: "51242559"
 - [Создание предложения модуля IoT Edge](./cpp-create-offer.md) <br>В этой статье перечислены шаги, необходимые для создания записи предложения модуля IoT Edge с использованием [Портала Cloud Partner](https://cloudpartner.azure.com).
 - [Публикация предложения модуля IoT Edge](./cpp-publish-offer.md)<br> В этой статье описывается отправка предложения для публикации в Azure Marketplace.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с [техническими и бизнес-требованиями](./cpp-prerequisites.md), которые должны быть выполнены для публикации модуля IoT Edge в Microsoft Azure Marketplace.

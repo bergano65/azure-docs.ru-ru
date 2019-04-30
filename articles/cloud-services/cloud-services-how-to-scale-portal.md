@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/18/2017
 ms.author: jeconnoc
-ms.openlocfilehash: 29ee71e7946145e50cc875df96b674abec3e12df
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
-ms.translationtype: HT
+ms.openlocfilehash: f5597773b3127852481d5e14844bed889c4d6f83
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39004342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61435322"
 ---
 # <a name="how-to-configure-auto-scaling-for-a-cloud-service-in-the-portal"></a>Как настроить автомасштабирование для облачной службы на портале
 
@@ -41,14 +41,14 @@ ms.locfileid: "39004342"
 
 * В целях обеспечения высокой доступности приложения необходимо убедиться, что приложение развернуто с двумя и более экземплярами ролей. Дополнительные сведения см. в разделе [Соглашения об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/).
 
-* Автомасштабирование выполняется, только если все роли находятся в состоянии **Готово**.  
+* Автомасштабирование выполняется, только если все роли находятся в состоянии **Готово**.  
 
 
 ## <a name="where-scale-is-located"></a>Где находится функция масштабирования?
 После выбора облачной службы должна появиться колонка облачной службы.
 
 1. В колонке облачной службы в элементе **Roles and Instances** (Роли и экземпляры) выберите имя облачной службы.   
-   **ВАЖНО.** Щелкните роль облачной службы, а не экземпляр роли, который расположен под ней.
+   **ВАЖНО!** Убедитесь в том, что щелкните роль облачной службы, не экземпляр роли, который расположен под ней.
 
     ![](./media/cloud-services-how-to-scale-portal/roles-instances.png)
 2. Выберите элемент **scale** (масштаб).

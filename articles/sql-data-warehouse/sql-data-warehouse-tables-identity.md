@@ -11,11 +11,11 @@ ms.date: 04/17/2018
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.openlocfilehash: 5cb406a52cb8fa9b5e40d9b0775f4a616950f507
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55250863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60935676"
 ---
 # <a name="using-identity-to-create-surrogate-keys-in-azure-sql-data-warehouse"></a>Использование свойства IDENTITY для создания суррогатных ключей в хранилище данных SQL Azure
 Рекомендации и примеры использования свойства IDENTITY для создания суррогатных ключей для таблиц в хранилище данных SQL Azure.
@@ -227,7 +227,7 @@ AND     tb.name = 'T1'
 ;
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о разработке таблиц см. в разделе с [обзором таблиц][Обзор].  
 

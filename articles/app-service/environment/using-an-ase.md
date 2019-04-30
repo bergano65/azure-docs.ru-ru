@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 06/13/2017
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: a9a6c7c47a6ea81f682f453a85ee6f8e214a09a7
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: d536e9d14edfa17e890480c07951eccb70e9eb9a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59678094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61228370"
 ---
 # <a name="use-an-app-service-environment"></a>Использование среды службы приложений #
 
@@ -95,7 +95,7 @@ ms.locfileid: "59678094"
 
 ASE позволяет масштабировать до 100 экземпляров. Эти 100 экземпляров могут находиться в одном плане службы приложений или распределяться по разным планам.
 
-## <a name="ip-addresses"></a>IP-адреса; ##
+## <a name="ip-addresses"></a>IP-адреса ##
 
 Служба приложений имеет возможность предоставлять приложениям выделенные IP-адреса. Эта возможность реализуется после настройки SSL на основе IP-адреса, как описано в статье [Приобретение и настройка сертификата SSL для службы приложений Azure][ConfigureSSL]. В ASE явные исключения отсутствуют. В ASE с ILB невозможно добавить дополнительные IP-адреса для SSL на основе IP-адреса.
 

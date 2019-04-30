@@ -10,11 +10,11 @@ ms.date: 08/03/2017
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: 9ea4e4ec78e5613758bd9e5ff7a4fbd3273208c6
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53312822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61290454"
 ---
 # <a name="azure-search---frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Поиск Azure"
 
@@ -90,7 +90,7 @@ ms.locfileid: "53312822"
 
 Для поддержки разных языковых стандартов в одном индексе большинство пользователей выбирает выделенные поля в коллекции. Поля языкового стандарта позволяют назначить соответствующий анализатор. Например, можно назначить анализатору французского языка корпорации Майкрософт поля, содержащие строки на французском языке. Это также упрощает фильтрацию. Если известно, что запрос инициирован на странице с французским языковым стандартом (fr-fr), можно ограничить результаты поиска этим полем. Можно также создать [профиль оценки](https://docs.microsoft.com/rest/api/searchservice/add-scoring-profiles-to-a-search-index), чтобы присвоить этому полю больший относительный вес. В службе "Поиск Azure" на выбор предлагается более [50 поддерживаемых языковых анализаторов](https://docs.microsoft.com/azure/search/search-language-support).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 У вас есть вопрос об отсутствующей функции или компоненте? Отправьте запрос на [веб-сайте User Voice](https://feedback.azure.com/forums/263029-azure-search).
 

@@ -8,14 +8,15 @@ manager: jeconnoc
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: reference
-ms.date: 02/18/2019
-ms.author: cshoe
+origin.date: 02/18/2019
+ms.date: 04/26/2019
+ms.author: v-junlch
 ms.openlocfilehash: 5534086d5754691f650370e465fa2c63210e0dc7
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56740505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61437860"
 ---
 # <a name="register-azure-functions-binding-extensions"></a>Регистрация расширений привязки функций Azure
 
@@ -25,8 +26,8 @@ ms.locfileid: "56740505"
 
 | Среда разработки |Регистрация<br/> в службе "Функции" версии 1.x  |Регистрация<br/> в службе "Функции" версии 2.x  |
 |-------------------------|------------------------------------|------------------------------------|
-|Портал Azure|Автоматический|[Автоматически, с соответствующим запросом](#azure-portal-development)|
-|Языки, отличные от .NET или локальная разработка основных инструментов Azure|Автоматический|[С помощью команд CLI из основных инструментов](#local-development-azure-functions-core-tools)|
+|Портал Azure|Автоматически|[Автоматически, с соответствующим запросом](#azure-portal-development)|
+|Языки, отличные от .NET или локальная разработка основных инструментов Azure|Автоматически|[С помощью команд CLI из основных инструментов](#local-development-azure-functions-core-tools)|
 |Библиотека классов C# с использованием Visual Studio 2017|[С помощью средств NuGet](#c-class-library-with-visual-studio-2017)|[С помощью средств NuGet](#c-class-library-with-visual-studio-2017)|
 |Библиотека классов C# с использованием Visual Studio Code|Н/Д|[С помощью .NET Core CLI](#c-class-library-with-visual-studio-code)|
 
@@ -37,7 +38,7 @@ ms.locfileid: "56740505"
 
 ## <a name="azure-portal-development"></a>Разработка на портале Azure
 
-При создании функции или добавлении привязки вы увидите запрос, если нужно зарегистрировать расширение для триггера или привязки. Щелкните в этом запросе действие **Установить**, чтобы зарегистрировать расширение. В рамках плана потребления установка может занять до 10 минут.
+При создании функции или добавлении привязки вы увидите запрос, если нужно зарегистрировать расширение для триггера или привязки. Щелкните в этом запросе действие **Установить**, чтобы зарегистрировать расширение. В рамках плана потребления установка может занять до 10 минут. 
 
 Достаточно установить каждое расширение по одному разу для конкретного приложения-функции. В поддерживаемых привязках, которые недоступны на портале или при обновлении установленных расширений, также можно использовать сведения из статьи [Manually install or update Azure Functions binding extensions from the portal](install-update-binding-extensions-manual.md) (Установка или обновление расширения привязки Функции Azure вручную на портале).  
 
@@ -75,4 +76,5 @@ dotnet add package Microsoft.Azure.WebJobs.Extensions.ServiceBus --version <targ
 ## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Пример триггера и привязки для Azure функции](./functions-bindings-example.md)
+
 

@@ -15,11 +15,11 @@ ms.date: 06/28/2018
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: d7d451f3831309b4755170915b35a23da8910510
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56100760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60935642"
 ---
 # <a name="operating-system-upgrade"></a>Обновление операционной системы
 В этом документе описывается обновление операционной системы в HANA (крупные экземпляры).
@@ -50,6 +50,6 @@ ms.locfileid: "56100760"
 - Для категории номеров SKU класса II после установки новой версии операционной системы удаляется Software Foundation Server (SFS). После установки новой версии операционной системы необходимо переустановить совместимый компонент SFS.
 - Драйверы карт Ethernet (ENIC и FNIC) откатываются до предыдущей версии. После установки новой версии необходимо переустановить совместимые версии драйверов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Ознакомьтесь с [резервным копированием и восстановлением](hana-overview-high-availability-disaster-recovery.md) операционной системы для номеров SKU класса I.
 - Ознакомьтесь с [резервным копированием операционной системы для номеров SKU класса II](os-backup-type-ii-skus.md).

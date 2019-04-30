@@ -13,11 +13,11 @@ ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 04/19/2019
 ms.openlocfilehash: f382cc547640969f934b94405b635c9e84f10791
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60009078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61417364"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 
@@ -306,7 +306,7 @@ ms.locfileid: "60009078"
 
 ### <a name="powershell-manage-sql-database-failover-with-single-databases-and-elastic-pools"></a>PowerShell: Управление отработкой отказа баз данных SQL с отдельными базами данных и эластичными пулами
 
-| Командлет | ОПИСАНИЕ |
+| Командлет | Описание |
 | --- | --- |
 | [New-AzSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasefailovergroup) |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
 | [Remove-AzSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqldatabasefailovergroup) | Удаляет группу отработки отказа с сервера, а также удаляет все входящие в нее базы данных-получатели. |
@@ -341,7 +341,7 @@ ms.locfileid: "60009078"
 
 #### <a name="powershell-commandlets-to-create-an-instance-failover-group"></a>Командлеты PowerShell для создания экземпляра группы отработки отказа
 
-| API | ОПИСАНИЕ |
+| API | Описание |
 | --- | --- |
 | New-AzureRmSqlDatabaseInstanceFailoverGroup |Создает группу отработки отказа и регистрирует ее на основном сервере и сервере-получателе.|
 | Set-AzureRmSqlDatabaseInstanceFailoverGroup |Изменяет конфигурацию группы отработки отказа.|
@@ -351,7 +351,7 @@ ms.locfileid: "60009078"
 
 ### <a name="rest-api-manage-sql-database-failover-groups-with-single-and-pooled-databases"></a>REST API: Управление группами отработки отказа базы данных SQL с отдельными базами данных или с базами данных в составе пула
 
-| API | ОПИСАНИЕ |
+| API | Описание |
 | --- | --- |
 | [Создание или обновление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/createorupdate) | Создает или обновляет группу отработки отказа. |
 | [Удаление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups/delete) | Удаляет группу отработки отказа с сервера. |
@@ -364,7 +364,7 @@ ms.locfileid: "60009078"
 
 ### <a name="rest-api-manage-failover-groups-with-managed-instances-preview"></a>REST API: Управление группами отработки отказа с помощью Управляемого экземпляра (предварительная версия)
 
-| API | ОПИСАНИЕ |
+| API | Описание |
 | --- | --- |
 | [Создание или обновление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/createorupdate) | Создает или обновляет группу отработки отказа. |
 | [Удаление группы отработки отказа](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/delete) | Удаляет группу отработки отказа с сервера. |

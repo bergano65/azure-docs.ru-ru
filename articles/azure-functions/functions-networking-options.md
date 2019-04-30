@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 4/11/2019
 ms.author: alkarche
 ms.openlocfilehash: b7af0149a690e3cc3a357a5cb769751e3674d374
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59698207"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61437690"
 ---
 # <a name="azure-functions-networking-options"></a>Функции Azure, вариантах сетевого взаимодействия
 
@@ -78,7 +78,7 @@ ms.locfileid: "59698207"
 
 Дополнительные сведения об использовании предварительной версии интеграции виртуальной сети, см. в разделе [интегрировать приложение-функцию с виртуальной сетью Azure](functions-create-vnet.md).
 
-## <a name="hybrid-connections"></a>через гибридные подключения
+## <a name="hybrid-connections"></a>Гибридные подключения
 
 [Гибридные подключения](../service-bus-relay/relay-hybrid-connections-protocol.md) входит в состав ретранслятора Azure, можно использовать для доступа к ресурсам приложений в других сетях. Они обеспечивают доступ из вашего приложения к конечной точке приложения. Его нельзя использовать для доступа к приложению. Гибридные подключения доступен для функций, выполняемых в [план службы приложений](functions-scale.md#app-service-plan) и [среды службы приложений](../app-service/environment/intro.md).
 

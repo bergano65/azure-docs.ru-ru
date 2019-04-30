@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 10/20/2017
 ms.author: cynthn
 ms.openlocfilehash: 65d4326763ef9754159e94c9426f3aee69f80ffd
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51253369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61095666"
 ---
 # <a name="frequently-asked-question-about-windows-virtual-machines"></a>Часто задаваемые вопросы по виртуальным машинам Windows
 В этой статье содержатся ответы на некоторые распространенные вопросы о виртуальных машинах Windows, созданных в Azure с помощью модели развертывания Resource Manager. Версия этой статьи для Linux — [Часто задаваемые вопросы по виртуальным машинам Linux](../linux/faq.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
@@ -33,7 +33,7 @@ ms.locfileid: "51253369"
 ## <a name="how-much-storage-can-i-use-with-a-virtual-machine"></a>Какой объем памяти можно использовать с виртуальной машиной?
 Каждый диск данных может иметь объем до 4 ТБ (4095 ГБ). Количество дисков данных, которое можно использовать, зависит от размера виртуальной машины. Дополнительную информацию см. в статье [Размеры виртуальных машин](sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
-Управляемые диски Azure — это рекомендуемые предложения хранилища дисков, используемые с виртуальными машинами Azure и предназначенные для постоянного хранения данных. Можно использовать несколько управляемых дисков для каждой виртуальной машины. Есть два класса управляемых дисков с разными возможностями хранения: управляемые диски "Премиум" и "Стандартный". Сведения о ценах см. на [странице с расценками на управляемые диски](https://azure.microsoft.com/pricing/details/managed-disks).
+Управляемые диски Azure — это рекомендуемые предложения хранилища дисков, используемые с виртуальными машинами Azure и предназначенные для постоянного хранения данных. Можно использовать несколько управляемых дисков для каждой виртуальной машины. Существуют два класса управляемых дисков с разными возможностями долговременного хранения: управляемые диски ценовых категорий "Премиум" и "Стандартный". Сведения о ценах см. на [странице с расценками на управляемые диски](https://azure.microsoft.com/pricing/details/managed-disks).
 
 Учетная запись хранения Azure также предоставляет хранилище для диска операционной системы и любых дисков данных. Каждый из этих дисков представляет собой VHD-файл, хранящийся как страничный BLOB-объект. Информацию о ценах см. в статье [Информация о ценах на хранилища](https://azure.microsoft.com/pricing/details/storage/).
 
@@ -54,7 +54,7 @@ ms.locfileid: "51253369"
 Можно изменить букву диска, переместив файл подкачки и переназначив буквы дисков, но эти действия нужно выполнять в строго определенном порядке. Указания см. в статье [Изменение буквы диска для временного диска Windows](change-drive-letter.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
 
 ## <a name="can-i-add-an-existing-vm-to-an-availability-set"></a>Можно ли добавить существующую виртуальную машину в группу доступности?
-Нет. Чтобы виртуальная машина была частью группы доступности, ее необходимо создать в группе. Добавлять виртуальные машины в группу доступности после создания пока невозможно.
+№ Чтобы виртуальная машина была частью группы доступности, ее необходимо создать в группе. Добавлять виртуальные машины в группу доступности после создания пока невозможно.
 
 ## <a name="can-i-upload-a-virtual-machine-to-azure"></a>Можно ли передать виртуальную машину в Azure?
 Да. Инструкции см. здесь: [Миграция локальных виртуальных машин в Azure](on-prem-to-azure.md).
@@ -89,21 +89,21 @@ ms.locfileid: "51253369"
 Не допускаются следующие имена пользователей:
 <table>
     <tr>
-        <td style="text-align:center">1</td><td style="text-align:center">123</td><td style="text-align:center">a</td><td style="text-align:center">actuser</td>
+        <td style="text-align:center">1</td><td style="text-align:center">123</td><td style="text-align:center">а</td><td style="text-align:center">actuser</td>
     </tr>
     <tr>
         <td style="text-align:center">adm</td><td style="text-align:center">admin</td><td style="text-align:center">admin1</td><td style="text-align:center">admin2</td>
     </tr>   <tr>
-        <td style="text-align:center">administrator</td><td style="text-align:center">aspnet</td><td style="text-align:center">backup</td><td style="text-align:center">console</td>
+        <td style="text-align:center">Администратор</td><td style="text-align:center">aspnet</td><td style="text-align:center">backup</td><td style="text-align:center">console</td>
     </tr>
     <tr>
         <td style="text-align:center">david </td><td style="text-align:center">guest</td><td style="text-align:center">john</td><td style="text-align:center">владелец</td>
     </tr>
     <tr>
-        <td style="text-align:center">root</td><td style="text-align:center">server</td><td style="text-align:center">sql</td><td style="text-align:center">support</td>
+        <td style="text-align:center">root</td><td style="text-align:center">сервер</td><td style="text-align:center">sql</td><td style="text-align:center">службу поддержки</td>
     </tr>
     <tr>
-        <td style="text-align:center">support_388945a0</td><td style="text-align:center">sys</td><td style="text-align:center">Тестировать</td><td style="text-align:center">test1</td>
+        <td style="text-align:center">support_388945a0</td><td style="text-align:center">sys</td><td style="text-align:center">тест</td><td style="text-align:center">test1</td>
     </tr>
     <tr>
         <td style="text-align:center">test2</td><td style="text-align:center">test3</td><td style="text-align:center">user</td><td style="text-align:center">user1</td>

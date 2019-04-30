@@ -2,17 +2,18 @@
 title: Масштабирование кластера службы Azure Kubernetes
 description: Сведения о том, как масштабировать число узлов в кластере Службы Azure Kubernetes (AKS).
 services: container-service
-author: iainfoulds
+author: rockboyfor
 ms.service: container-service
 ms.topic: article
-ms.date: 01/10/2019
-ms.author: iainfoulds
+origin.date: 01/10/2019
+ms.date: 03/04/2019
+ms.author: v-yeche
 ms.openlocfilehash: 558a3b6dc15293ab9a0895aa4f9f709ba2d0a51f
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54214629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61032170"
 ---
 # <a name="scale-the-node-count-in-an-azure-kubernetes-service-aks-cluster"></a>Масштабирование числа узлов в кластере Службы Azure Kubernetes (AKS)
 
@@ -22,7 +23,7 @@ ms.locfileid: "54214629"
 
 Во-первых, получите значение *name* nodepool с помощью команды [az aks show][az-aks-show]. В следующем примере возвращается имя nodepool для кластера *myAKSCluster* в группе ресурсов *myResourceGroup*.
 
-```azurecli-interactive
+```azurecli
 az aks show --resource-group myResourceGroup --name myAKSCluster --query agentPoolProfiles
 ```
 
@@ -46,7 +47,7 @@ $ az aks show --resource-group myResourceGroup --name myAKSCluster --query agent
 
 Используйте команду `az aks scale`, чтобы масштабировать узлы кластера. В следующем примере кластер *myAKSCluster* масштабируется до одного узла. Укажите собственное значение *--nodepool-name* из предыдущей команды, например *nodepool1*.
 
-```azurecli-interactive
+```azurecli
 az aks scale --resource-group myResourceGroup --name myAKSCluster --node-count 1 --nodepool-name <your node pool name>
 ```
 
@@ -70,7 +71,7 @@ az aks scale --resource-group myResourceGroup --name myAKSCluster --node-count 1
   ],
   "dnsPrefix": "myAKSClust-myResourceGroup-19da35",
   "enableRbac": true,
-  "fqdn": "myaksclust-myresourcegroup-19da35-0d60b16a.hcp.eastus.azmk8s.io",
+  "fqdn": "myaksclust-myresourcegroup-19da35-0d60b16a.hcp.chinaeast2.azmk8s.io",
   "id": "/subscriptions/<guid>/resourcegroups/myResourceGroup/providers/Microsoft.ContainerService/managedClusters/myAKSCluster",
   "kubernetesVersion": "1.9.11",
   "linuxProfile": {
@@ -83,7 +84,7 @@ az aks scale --resource-group myResourceGroup --name myAKSCluster --node-count 1
       ]
     }
   },
-  "location": "eastus",
+  "location": "chinaeast2",
   "name": "myAKSCluster",
   "networkProfile": {
     "dnsServiceIp": "10.0.0.10",
@@ -93,7 +94,7 @@ az aks scale --resource-group myResourceGroup --name myAKSCluster --node-count 1
     "podCidr": "10.244.0.0/16",
     "serviceCidr": "10.0.0.0/16"
   },
-  "nodeResourceGroup": "MC_myResourceGroup_myAKSCluster_eastus",
+  "nodeResourceGroup": "MC_myResourceGroup_myAKSCluster_chinaeast2",
   "provisioningState": "Succeeded",
   "resourceGroup": "myResourceGroup",
   "servicePrincipalProfile": {
@@ -105,7 +106,7 @@ az aks scale --resource-group myResourceGroup --name myAKSCluster --node-count 1
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о развертывании AKS и управлении ею из руководств по AKS.
 
@@ -117,4 +118,4 @@ az aks scale --resource-group myResourceGroup --name myAKSCluster --node-count 1
 
 <!-- LINKS - internal -->
 [aks-tutorial]: ./tutorial-kubernetes-prepare-app.md
-[az-aks-show]: /cli/azure/aks#az-aks-show
+[az-aks-show]: https://docs.microsoft.com/cli/azure/aks?view=azure-cli-latest#az-aks-show

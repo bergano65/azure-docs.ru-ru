@@ -15,11 +15,11 @@ ms.topic: article
 ms.author: jowargo
 ms.date: 04/08/2019
 ms.openlocfilehash: 64c2cd0ed1572fdaaa42f4731519ba6d5c320f1c
-ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60149135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61457742"
 ---
 # <a name="registration-management"></a>Управление регистрацией
 
@@ -31,7 +31,7 @@ ms.locfileid: "60149135"
 
 Регистрация устройств в центре уведомлений осуществляется через **регистрацию** или **установку**.
 
-### <a name="registrations"></a>Регистрация
+### <a name="registrations"></a>Регистрации
 
 Регистрация связывает маркер службы отправки уведомлений платформы (PNS) для устройства с тегами и, возможно, шаблоном. Маркером PNS может быть ChannelURI, маркер устройства или регистрационный идентификатор FCM. Теги используются для направления уведомлений правильному набору маркеров устройств. Дополнительные сведения см. в статье [Маршрутизация и выражения тегов](notification-hubs-tags-segment-push-message.md). Шаблоны используются для преобразований в рамках регистрации. Дополнительные сведения см. в статье [Шаблоны](notification-hubs-templates-cross-platform-push-messages.md).
 
@@ -314,7 +314,7 @@ public async Task<HttpResponseMessage> Put(DeviceInstallation deviceUpdate)
 
 ### <a name="example-code-to-register-with-a-notification-hub-from-a-device-using-a-registration-id"></a>Пример кода регистрации в центре уведомлений с устройства, использующего идентификатор регистрации
 
-Из серверной части приложения с регистрациями можно выполнять основные операции CRUDS. Например: 
+Из серверной части приложения с регистрациями можно выполнять основные операции CRUDS. Пример.
 
 ```
 var hub = NotificationHubClient.CreateClientFromConnectionString("{connectionString}", "hubName");

@@ -9,11 +9,11 @@ ms.date: 11/06/2018
 ms.author: rimman
 ms.reviewer: sngun
 ms.openlocfilehash: cf03233c6a92b7fd1b782f8128787bfda5582f7d
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56243201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60893340"
 ---
 # <a name="change-feed-processor-in-azure-cosmos-db"></a>Обработчик канала изменений в Azure Cosmos DB 
 
@@ -69,7 +69,7 @@ ms.locfileid: "56243201"
 * [Пакет NuGet](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.ChangeFeedProcessor/)
 * [Дополнительные примеры на GitHub](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/ChangeFeedProcessor)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете продолжить знакомство с каналом изменений, перейдя к следующим статьям:
 

@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 01/15/2019
 ms.author: bwren
 ms.openlocfilehash: f6617a504bbda666ce9ece018ccb0cf02635c360
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54355209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61425840"
 ---
 # <a name="log-analytics-smart-analytics-examples"></a>Примеры смарт-аналитики Log Analytics
 Эта статья содержит примеры использования функций смарт-аналитики в Log Analytics для анализа активности пользователей. Вы можете использовать эти примеры для анализа приложений, отслеживаемых Application Insights, или применять общие сведения из этих запросов для выполнения аналогичного анализа других данных. 
@@ -219,7 +219,7 @@ traces
 | project PatternMatch = iff(RSquare2 > minRsquare and Slope>0, "Spike detected", "No Match")
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о языке можно получить в статье [Overview](/azure/kusto/query) (Обзор).
 - Изучите урок по [написанию запросов в Log Analytics](get-started-queries.md).

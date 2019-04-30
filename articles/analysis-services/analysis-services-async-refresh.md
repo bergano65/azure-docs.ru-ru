@@ -9,11 +9,11 @@ ms.date: 01/08/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 5e9558eae43b351aa198b64bb2a7903c756064c2
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58168023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61025315"
 ---
 # <a name="asynchronous-refresh-with-the-rest-api"></a>Асинхронное обновление с помощью REST API
 
@@ -104,7 +104,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 | `CommitMode`     | Перечисление.  | Определяет, будут объекты зафиксированы в пакетах или только после завершения. Режимы: default, transactional, partialBatch.  |  transactional       |
 | `MaxParallelism` | Int   | Это значение определяет максимальное количество потоков, над которыми можно параллельно выполнять команды обработки. Это значение согласуется со свойством MaxParallelism, которое можно задать, используя [команду sequence](https://docs.microsoft.com/sql/analysis-services/tabular-models-scripting-language-commands/sequence-command-tmsl) или другими способами.       | 10        |
 | `RetryCount`     | Int   | Указывает число попыток повторить операцию, по исчерпании которого будет определен сбой.      |     0    |
-| `Objects`        | Массив, | Массив объектов для обработки. Для каждого объекта указываются параметр table, если нужно обработать целую таблицу, или параметры table и partition для обработки секции. Если нет указанных объектов, обновляется вся модель. |   Обработка целой модели      |
+| `Objects`        | Массив | Массив объектов для обработки. Для каждого объекта указываются параметр table, если нужно обработать целую таблицу, или параметры table и partition для обработки секции. Если нет указанных объектов, обновляется вся модель. |   Обработка целой модели      |
 
 Значение CommitMode — partialBatch. Оно используется при начальной загрузке для больших наборов данных, что может занять несколько часов. Если обновление завершится сбоем после успешной фиксации одного или нескольких пакетов, эти пакеты останутся зафиксированными (т. е. для них не будет выполнен откат).
 
@@ -222,7 +222,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 4.  В разделе **Параметры** выберите **Необходимые разрешения** > **Добавить**.
 
-    ![Добавление параметров доступа через API](./media/analysis-services-async-refresh/aas-async-add.png)
+    ![Добавить доступ через API](./media/analysis-services-async-refresh/aas-async-add.png)
 
 5.  В разделе **Select an API** (Выбор API) введите в поле поиска **Azure Analysis Services**, а затем выберите эту службу.
 

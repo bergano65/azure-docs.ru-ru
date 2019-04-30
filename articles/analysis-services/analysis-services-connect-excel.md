@@ -9,13 +9,13 @@ ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 5c46d4e4d23744cf07ccf7857a33990bf405a6a1
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54189020"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61023278"
 ---
-# <a name="connect-with-excel"></a>Подключение с помощью Excel
+# <a name="connect-with-excel"></a>Подключиться с помощью Excel
 
 После создания сервера и развертывания на нем табличной модели клиенты смогут подключиться к нему для работы с данными. 
 

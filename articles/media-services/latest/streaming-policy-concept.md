@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 02/03/2019
 ms.author: juliako
 ms.openlocfilehash: 10600d8f3ff4e08b8d90f28ec15d3cb0c56bcae0
-ms.sourcegitcommit: 947b331c4d03f79adcb45f74d275ac160c4a2e83
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55746750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61230902"
 ---
 # <a name="streaming-policies"></a>Политики потоковой передачи
 
@@ -44,7 +44,7 @@ StreamingLocator locator = await client.StreamingLocators.CreateAsync(
     });
 ```
 
-### <a name="encrypted"></a>зашифрованные; 
+### <a name="encrypted"></a>Зашифрованный 
 
 Если нужно зашифровать содержимое с помощью шифрования конверта и CENC, установите политику Predefined_MultiDrmCencStreaming. Эта политика указывает, что для получения созданного и настроенного указателя требуются два ключа содержимого (конверт и CENC). Таким образом применяются шифрования типа конверт, PlayReady и Widevine (ключ доставляется клиенту воспроизведения на основе настроенных лицензий DRM).
 
@@ -67,7 +67,7 @@ StreamingLocator locator = await client.StreamingLocators.CreateAsync(
 
 Ознакомьтесь с разделом [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
 * [Использование динамического шифрования AES-128 и службы доставки ключей](protect-with-aes128.md)

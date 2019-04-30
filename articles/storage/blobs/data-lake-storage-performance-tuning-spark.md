@@ -9,17 +9,17 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: stewu
 ms.openlocfilehash: bfd6e715e907925a1ba3db3b60c0d3eccb637930
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55866106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61481995"
 ---
 # <a name="performance-tuning-guidance-for-spark-on-hdinsight-and-azure-data-lake-storage-gen2"></a>Рекомендации по настройке производительности для Spark в HDInsight и Azure Data Lake Storage 2-го поколения
 
 При настройке производительности для Spark необходимо учитывать количество приложений, которые будут выполняться в кластере.  По умолчанию в кластере HDI можно одновременно выполнять 4 приложения (настройку по умолчанию можно изменить).  Вам может понадобиться использовать меньшее количество приложений. В таком случае можно переопределить параметры по умолчанию и использовать больше ресурсов кластера для этих приложений.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 2-го поколения**. См. инструкции по [созданию. Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).

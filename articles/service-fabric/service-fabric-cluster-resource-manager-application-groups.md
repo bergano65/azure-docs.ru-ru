@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 7e90dc00a8e042e48d8016e25dda04c15ce9f619
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58670640"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62114079"
 ---
 # <a name="introduction-to-application-groups"></a>Введение в группы приложений
 Диспетчер кластерных ресурсов Service Fabric, который управляет ресурсами кластера, обычно равномерно распределяет нагрузку (представленную в [метриках](service-fabric-cluster-resource-manager-metrics.md)) по всему кластеру. Service Fabric управляет емкостью узлов в кластере и [емкостью](service-fabric-cluster-resource-manager-cluster-description.md) кластера в целом. Метрики и емкость отлично работают для большинства рабочих нагрузок, но для структур, активно использующих разные экземпляры приложений Service Fabric, иногда возникают дополнительные требования. Например, может потребоваться следующее.
@@ -186,7 +186,7 @@ foreach (ApplicationLoadMetricInformation metric in metrics)
 * Емкость приложения: Максимально допустимое значение нагрузки приложения.
 
 ## <a name="removing-application-capacity"></a>Удаление емкости приложения
-Когда для приложения будут установлены параметры емкости приложения, их можно будет удалить с помощью API-интерфейсов обновления приложения или командлетов PowerShell. Например: 
+Когда для приложения будут установлены параметры емкости приложения, их можно будет удалить с помощью API-интерфейсов обновления приложения или командлетов PowerShell. Пример.
 
 ``` posh
 Update-ServiceFabricApplication –Name fabric:/MyApplication1 –RemoveApplicationCapacity

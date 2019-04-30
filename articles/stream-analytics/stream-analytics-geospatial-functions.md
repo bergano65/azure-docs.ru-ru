@@ -9,11 +9,11 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.openlocfilehash: ad789a597da759b9a2d58138c7ed441389a12adb
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53103138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61479989"
 ---
 # <a name="introduction-to-stream-analytics-geospatial-functions"></a>Сведения о геопространственных функциях Azure Stream Analytics
 
@@ -23,7 +23,7 @@ ms.locfileid: "53103138"
 
 * Совместное использование в поездке
 * Управление автотранспортным парком
-* Отслеживание данных ресурсов
+* Отслеживание ресурсов
 * Установка геозон
 * Отслеживание телефона на сотовых веб-сайтах
 
@@ -197,7 +197,7 @@ FROM input
 
 Дополнительные сведения см. по ссылке [ST_WITHIN](https://msdn.microsoft.com/azure/stream-analytics/reference/st-within).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)

@@ -14,11 +14,11 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 1/24/2019
 ms.openlocfilehash: c89764d746f07e6100b1f250d4c107bb700fe014
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58445856"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61099080"
 ---
 # <a name="incrementally-copy-new-files-based-on-time-partitioned-file-name-by-using-the-copy-data-tool"></a>Добавочное копирование новых файлов, на основе времени секционированных имени файла с помощью средства копирования данных
 
@@ -54,7 +54,7 @@ ms.locfileid: "58445856"
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 
-1. В меню слева, выберите **создать ресурс** > **данные и аналитика** > **фабрики данных**: 
+1. В меню слева выберите **Создать ресурс** > **Данные и аналитика** > **Фабрика данных**. 
    
    ![Выбор фабрики данных в области "Создать"](./media/quickstart-create-data-factory-portal/new-azure-data-factory-menu.png)
 

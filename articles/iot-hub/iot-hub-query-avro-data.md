@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: asrastog
 ms.openlocfilehash: 69c890cfc3db04fe625ed7ad008f545c01844834
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53993490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61441636"
 ---
 # <a name="query-avro-data-by-using-azure-data-lake-analytics"></a>Запрос данных Avro с помощью Azure Data Lake Analytics
 
@@ -167,7 +167,7 @@ ms.locfileid: "53993490"
     
     ![Вывод со столбцами для каждого элемента](./media/iot-hub-query-avro-data/query-avro-data-8.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как запросить данные Avro, чтобы повысить эффективность маршрутизации сообщений из Центра Интернета вещей Azure в службы Azure.
 

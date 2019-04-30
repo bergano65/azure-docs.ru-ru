@@ -11,11 +11,11 @@ ms.date: 04/17/2018
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.openlocfilehash: dba6d49590cc4064155e58784a166d3abbb19b6f
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55468433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61439168"
 ---
 # <a name="views-in-azure-sql-data-warehouse"></a>Представления в хранилище данных SQL Azure
 Советы по использованию представлений T-SQL в хранилище данных SQL Azure для разработки решений. 
@@ -65,7 +65,7 @@ RENAME OBJECT DimDate_New TO DimDate;
 * Не поддерживаются указания для EXPAND и NOEXPAND.
 * В хранилище данных SQL нет индексированных представлений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md).
 
 

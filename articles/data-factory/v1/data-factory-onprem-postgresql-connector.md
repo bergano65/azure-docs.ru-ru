@@ -14,11 +14,11 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: bd39b0aae5b76f37e2153f8e4c4502be994fa5b5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58081837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61462009"
 ---
 # <a name="move-data-from-postgresql-using-azure-data-factory"></a>Перемещение данных из PostgreSQL с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -74,14 +74,14 @@ ms.locfileid: "58081837"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
-| Тип |Свойству type необходимо задать значение **OnPremisesPostgreSql** |Yes |
-| server |Имя сервера, PostgreSQL. |Yes |
-| database |Имя базы данных PostgreSQL. |Yes |
-| schema |Имя схемы в базе данных. Имя схемы чувствительно к регистру. |Нет  |
-| authenticationType |Тип проверки подлинности, используемый для подключения к базе данных PostgreSQL. Возможные значения: Anonymous, Basic и Windows. |Yes |
-| Имя пользователя |При использовании обычной проверки подлинности или проверки подлинности Windows укажите имя пользователя. |Нет  |
-| password |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. |Нет  |
-| gatewayName |Имя шлюза, который следует использовать службе фабрики данных для подключения к локальной базе данных PostgreSQL. |Yes |
+| type |Свойству type необходимо задать значение **OnPremisesPostgreSql** |Да |
+| сервер |Имя сервера, PostgreSQL. |Да |
+| database |Имя базы данных PostgreSQL. |Да |
+| schema |Имя схемы в базе данных. Имя схемы чувствительно к регистру. |Нет |
+| authenticationType |Тип проверки подлинности, используемый для подключения к базе данных PostgreSQL. Возможные значения: Anonymous, Basic и Windows. |Да |
+| имя пользователя |При использовании обычной проверки подлинности или проверки подлинности Windows укажите имя пользователя. |Нет |
+| password |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. |Нет |
+| gatewayName |Имя шлюза, который следует использовать службе фабрики данных для подключения к локальной базе данных PostgreSQL. |Да |
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 Полный список разделов и свойств, используемых для определения наборов данных, см. в статье [Наборы данных](data-factory-create-datasets.md). Разделы структуры, доступности и политики JSON набора данных одинаковы для всех типов наборов данных.
@@ -314,38 +314,38 @@ ms.locfileid: "58081837"
 | Логическое |bool |Логическое |
 | box | |Byte[], String |
 | bytea | |Byte[], String |
-| character [(n)] |char [(n)] |Строка |
-| character varying [(n)] |varchar [(n)] |Строка |
-| cid | |Строка |
-| cidr | |Строка |
+| character [(n)] |char [(n)] |String |
+| character varying [(n)] |varchar [(n)] |String |
+| cid | |String |
+| cidr | |String |
 | circle | |Byte[], String |
-| дата | |DateTime |
-| daterange | |Строка |
+| date | |DateTime |
+| daterange | |String |
 | double precision |float8 |Double |
 | inet | |Byte[], String |
-| intarry | |Строка |
-| int4range | |Строка |
-| int8range | |Строка |
-| целое число |int, int4 |Int32 |
-| interval [fields] [(p)] | |Timespan |
-| json | |Строка |
+| intarry | |String |
+| int4range | |String |
+| int8range | |String |
+| integer |int, int4 |Int32 |
+| interval [fields] [(p)] | |Временной диапазон |
+| json | |String |
 | jsonb | |Byte[] |
 | line | |Byte[], String |
 | lseg | |Byte[], String |
 | macaddr | |Byte[], String |
-| money; | |Decimal |
+| money | |Decimal |
 | numeric [(p, s)] |decimal [(p, s)] |Decimal |
-| numrange | |Строка |
+| numrange | |String |
 | oid | |Int32 |
-| path | |Byte[], String |
+| путь | |Byte[], String |
 | pg_lsn | |Int64 |
 | point | |Byte[], String |
 | polygon | |Byte[], String |
 | real; |float4 |Single |
-| smallint; |int2 |Int16 |
+| smallint |int2 |Int16 |
 | smallserial |serial2 |Int16 |
 | serial |serial4 |Int32 |
-| текст | |Строка |
+| Text | |String |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника
 Дополнительные сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в [этой статье](data-factory-map-columns.md).

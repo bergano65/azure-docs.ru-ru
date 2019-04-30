@@ -13,11 +13,11 @@ ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: ''
 ms.openlocfilehash: afb97c1c14422f15a3fc2c00b2101c4a36675556
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60002493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61026005"
 ---
 # <a name="call-a-function-from-powerapps"></a>Вызов функции из PowerApps
 Платформа [PowerApps](https://powerapps.microsoft.com) позволяет бизнес-экспертами создавать приложения без традиционного кода. Профессиональные разработчики могут расширить возможности PowerApps с помощью функций Azure, избавляя при этом разработчиков приложений PowerApps от технических деталей.

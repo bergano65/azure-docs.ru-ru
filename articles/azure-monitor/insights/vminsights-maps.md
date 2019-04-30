@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 10/25/2018
 ms.author: magoedte
 ms.openlocfilehash: 34e6ce7f3b38dfd583aa557d2f1d7340ea444da9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59798049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62115780"
 ---
 # <a name="using-azure-monitor-for-vms-preview-map-to-understand-application-components"></a>Использование сопоставления Azure Monitor для виртуальных машин (предварительная версия), чтобы получать сведения о компонентах приложения
 При просмотре обнаруженных компонентов приложений в виртуальных машинах с ОС Windows и Linux, работающих в Azure, за средой можно наблюдать двумя способами с помощью Azure Monitor для виртуальных машин: непосредственно из виртуальной машины либо в группах виртуальных машин в Azure Monitor. 
@@ -60,7 +60,7 @@ ms.locfileid: "59798049"
 
 ![Пример области диаграмм подключения к сети](./media/vminsights-maps/map-group-network-conn-pane-01.png)  
 
-### <a name="failed-connections"></a>Неудачные подключения
+### <a name="failed-connections"></a>Подключения со сбоями
 Неудачные подключения для процессов и компьютеров отображаются на схеме красными пунктирными линиями, которые указывают, что системе клиента не удалось связаться с процессом или портом. Сведения о неудачных подключениях поступают со всех систем, на которых имеется агент зависимостей и где попытка подключения завершилась сбоем. Служба "Схема" измеряет этот процесс, наблюдая за TCP-сокетами, которым не удается создать подключение. Ошибки подключения могут быть связаны с брандмауэром, неправильными настройками клиента или сервера, а также с недоступностью удаленной службы.
 
 ![Пример неудачного подключения на схеме](./media/vminsights-maps/map-group-failed-connection-01.png)

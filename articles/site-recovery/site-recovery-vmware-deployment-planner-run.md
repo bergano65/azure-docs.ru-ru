@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 4/15/2019
 ms.author: mayg
 ms.openlocfilehash: 3a6c9e50804db573395984b8ba38838eb15b0792
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59565433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61276742"
 ---
 # <a name="run-the-azure-site-recovery-deployment-planner-for-vmware-disaster-recovery-to-azure"></a>Запуск Планировщика развертывания Azure Site Recovery для аварийного восстановления VMware в Azure
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
@@ -65,7 +65,7 @@ ms.locfileid: "59565433"
 ASRDeploymentPlanner.exe -Operation StartProfiling /?
 ```
 
-| Имя параметра | ОПИСАНИЕ |
+| Имя параметра | Описание |
 |---|---|
 | -Operation | StartProfiling |
 | -Server | Полное доменное имя или IP-адрес сервера vCenter Server или узла vSphere ESXi, профилирование виртуальных машин которого необходимо выполнить.|
@@ -108,12 +108,12 @@ ASRDeploymentPlanner.exe -Operation StartProfiling /?
 
 Команда профилирования создает в каталоге профилирования несколько файлов. Не удаляйте их, так как это повлияет на создание отчетов.
 
-#### <a name="example-1-profile-vms-for-30-days-and-find-the-throughput-from-on-premises-to-azure"></a>Пример 1 Профилирование виртуальных машин, выполняемое в течение 30 дней, и определение пропускной способности, достигаемой при репликации данных из локальной среды в Azure
+#### <a name="example-1-profile-vms-for-30-days-and-find-the-throughput-from-on-premises-to-azure"></a>Пример 1: Профилирование виртуальных машин, выполняемое в течение 30 дней, и определение пропускной способности, достигаемой при репликации данных из локальной среды в Azure
 ```
 ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Directory “E:\vCenter1_ProfiledData” -Server vCenter1.contoso.com -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt”  -NoOfDaysToProfile  30  -User vCenterUser1 -StorageAccountName  asrspfarm1 -StorageAccountKey Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==
 ```
 
-#### <a name="example-2-profile-vms-for-15-days"></a>Пример 2 Профилирование виртуальных машин в течение 15 дней
+#### <a name="example-2-profile-vms-for-15-days"></a>Пример 2: Профилирование виртуальных машин в течение 15 дней
 
 ```
 ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Directory “E:\vCenter1_ProfiledData” -Server vCenter1.contoso.com -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt” -NoOfDaysToProfile  15  -User vCenterUser1
@@ -135,7 +135,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Direc
 >* Получив имя и ключ учетной записи хранения, программа измеряет пропускную способность на последнем этапе профилирования. Если она прерывает работу до завершения профилирования, пропускная способность не измеряется. Чтобы определить пропускную способность перед созданием отчета, вы можете выполнить операцию GetThroughput в консоли командной строки. В противном случае сведения о достигаемой пропускной способности не будут включены в отчет.
 
 
-## <a name="generate-report"></a>Создание отчета
+## <a name="generate-report"></a>Сформировать отчет
 Планировщик создает отчет в формате XLSM (файл Microsoft Excel с поддержкой макросов). В нем содержатся все рекомендации по развертыванию. Этот отчет называется `DeploymentPlannerReport_<unique numeric identifier>.xlsm` и помещается в указанный каталог.
 
 >[!NOTE]
@@ -145,7 +145,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Direc
 
 `ASRDeploymentPlanner.exe -Operation GenerateReport /?`
 
-|Имя параметра | ОПИСАНИЕ |
+|Имя параметра | Описание |
 |-|-|
 | -Operation | Создание отчета. |
 | -Server |  Полное доменное имя или IP-адрес сервера vCenter Server или сервера vSphere (имя или IP-адрес должны совпадать с используемыми во время профилирования), где расположены виртуальные машины, для которых необходимо создать отчет. Обратите внимание, если профилирование выполняется на сервере vCenter Server, вы не можете использовать для создания отчетов сервер vSphere (и наоборот).|
@@ -174,12 +174,12 @@ ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Direc
 <add key="MaxVmsSupported" value="1000"/>
 ```
 
-#### <a name="example-1-generate-a-report-with-default-values-when-the-profiled-data-is-on-the-local-drive"></a>Пример 1 Создание отчета со значениями по умолчанию, когда данные профилирования находятся на локальном диске
+#### <a name="example-1-generate-a-report-with-default-values-when-the-profiled-data-is-on-the-local-drive"></a>Пример 1: Создание отчета со значениями по умолчанию, когда данные профилирования находятся на локальном диске
 ```
 ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware -Server vCenter1.contoso.com -Directory “E:\vCenter1_ProfiledData” -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt”
 ```
 
-#### <a name="example-2-generate-a-report-when-the-profiled-data-is-on-a-remote-server"></a>Пример 2 Создание отчета, когда данные профилирования находятся на удаленном сервере
+#### <a name="example-2-generate-a-report-when-the-profiled-data-is-on-a-remote-server"></a>Пример 2: Создание отчета, когда данные профилирования находятся на удаленном сервере
 У вас должен быть доступ на чтение и запись к удаленному каталогу.
 ```
 ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware -Server vCenter1.contoso.com -Directory “\\PS1-W2K12R2\vCenter1_ProfiledData” -VMListFile “\\PS1-W2K12R2\vCenter1_ProfiledData\ProfileVMList1.txt”
@@ -257,7 +257,7 @@ ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware  -Dire
 
 `ASRDeploymentPlanner.exe -Operation GetThroughput /?`
 
-|Имя параметра | ОПИСАНИЕ |
+|Имя параметра | Описание |
 |-|-|
 | -Operation | Оценка пропускной способности. |
 |-Virtualization|Укажите тип виртуализации (VMware или Hyper-V).|

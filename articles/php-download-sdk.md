@@ -1,5 +1,5 @@
 ---
-title: Загрузка пакета Azure SDK для PHP
+title: загрузить Azure SDK для PHP?
 description: Узнайте, как скачать и установить пакет SDK для Azure для PHP.
 documentationcenter: php
 services: app-service\web
@@ -15,13 +15,13 @@ ms.topic: article
 ms.date: 06/01/2016
 ms.author: allclark;yaqiyang
 ms.openlocfilehash: 4f2c242e27d8a0ed6687eb4a3510bbce6e07694f
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52421493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61457640"
 ---
-# <a name="download-the-azure-sdk-for-php"></a>Загрузка пакета Azure SDK для PHP
+# <a name="download-the-azure-sdk-for-php"></a>загрузить Azure SDK для PHP?
 
 ## <a name="overview"></a>Обзор
 
@@ -77,7 +77,7 @@ Azure PowerShell — это набор командлетов PowerShell для 
 
 CLI Azure — это набор команд для развертывания и управления службами Azure, например веб-сайтами Azure и виртуальными машинами Azure. Сведения об установке Azure CLI см. [здесь](cli-install-nodejs.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительную информацию можно найти в [Центре разработчика PHP](https://azure.microsoft.com/develop/php/).
 

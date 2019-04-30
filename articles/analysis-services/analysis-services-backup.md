@@ -9,11 +9,11 @@ ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 31e8e65b382a3a6bcad2998a0babdf9605dc4968
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58539111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61023949"
 ---
 # <a name="backup-and-restore"></a>Архивация и восстановление
 
@@ -74,7 +74,7 @@ ms.locfileid: "58539111"
 ### <a name="powershell"></a>PowerShell
 Используйте командлет [Backup-ASDatabase](https://docs.microsoft.com/sql/analysis-services/powershell/backup-asdatabase-cmdlet).
 
-## <a name="restore"></a>восстановление;
+## <a name="restore"></a>Восстановление
 При восстановлении файл архивной копии должен находиться в учетной записи хранения, настроенной для вашего сервера. Если нужно переместить файл архивной копии из локального расположения в учетную запись хранилища, используйте [обозреватель хранилищ Microsoft Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer) или служебную программу командной строки [AzCopy](../storage/common/storage-use-azcopy.md). 
 
 

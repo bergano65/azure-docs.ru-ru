@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: kasinh
 ms.openlocfilehash: 26f25a0dcbeef0d5b7456d42caaca392c3ca6a1a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58075618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62098868"
 ---
 # <a name="install-and-upgrade-azure-backup-server"></a>Установка и обновление Azure Backup Server
 > [!div class="op_single_selector"]
@@ -51,8 +51,8 @@ Azure Backup Server наследует большую часть функцио�
 
 | Операционная система | платформа | SKU |
 |:--- | --- |:--- |
-| Windows Server 2019 |64-разрядная |Standard, Datacenter, Essentials (с версии MABS V3) |
-| Windows Server 2016 и последние пакеты обновления |64-разрядная |Standard, Datacenter, Essentials (с версии MABS V2) |
+| Windows Server 2019 |64-разрядная версия |Standard, Datacenter, Essentials (с версии MABS V3) |
+| Windows Server 2016 и последние пакеты обновления |64-разрядная версия |Standard, Datacenter, Essentials (с версии MABS V2) |
 | Windows Server 2012 R2 и последние пакеты обновления |64-разрядная |Standard, Datacenter, Foundation |
 | Windows Server 2012 и последние пакеты обновления |64-разрядная |Datacenter, Foundation, Standard |
 | Windows Storage Server 2012 R2 и последние пакеты обновления |64-разрядная |Standard, Workgroup |

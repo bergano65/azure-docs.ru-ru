@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 10/6/2018
 ms.author: victorh
 ms.openlocfilehash: 891adfacde6e46b1d8fe8e2f6b5fb39c90ce27a0
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48853714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61296472"
 ---
 # <a name="manage-dns-records-and-record-sets-by-using-the-azure-portal"></a>Управление записями и наборами записей DNS с помощью портала Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "48853714"
 
 После сохранения записи значения в колонке **Зона DNS** будут соответствовать новой записи.
 
-## <a name="update-a-record"></a>Изменение записи
+## <a name="update-a-record"></a>Обновить запись
 
 При обновлении записи в существующем наборе записей доступные для изменения поля зависят от типа используемой записи.
 
@@ -107,7 +107,7 @@ ms.locfileid: "48853714"
 
 Вы не можете удалять наборы записей типа SOA и NS на вершине зоны (имя = "\@"), которые создаются автоматически вместе с зоной. Они удаляются автоматически при удалении зоны.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об Azure DNS см. в статье [Обзор Azure DNS](dns-overview.md).
 * Дополнительные сведения об автоматизации DNS см. в статье [Создание зон и наборов записей DNS с помощью пакета SDK для .NET](dns-sdk.md).

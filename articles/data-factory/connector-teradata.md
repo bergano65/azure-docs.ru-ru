@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 02/07/2018
 ms.author: jingwang
 ms.openlocfilehash: e9fd818990c8a985a77c2e7eeea19bf63c440e4e
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54018999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61347757"
 ---
 # <a name="copy-data-from-teradata-using-azure-data-factory"></a>Копирование данных из Teradata с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -35,7 +35,7 @@ ms.locfileid: "54018999"
 - Teradata **версии 12 и выше**;
 - копирование данных с использованием **базовой** проверки подлинности или проверки подлинности **Windows**.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы использовать этот соединитель Teradata, вам нужно:
 
@@ -52,14 +52,14 @@ ms.locfileid: "54018999"
 
 Связанная служба Teradata поддерживает следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type необходимо задать значение **Teradata** | Yes |
-| server | Имя сервера Teradata. | Yes |
-| authenticationType | Тип проверки подлинности, используемый для подключения к базе данных Teradata.<br/>Допустимые значения: **Basic** и **Windows**. | Yes |
-| Имя пользователя | Укажите имя пользователя для подключения к базе данных Teradata. | Yes |
+| type | Свойству type необходимо задать значение **Teradata** | Да |
+| сервер | Имя сервера Teradata. | Да |
+| authenticationType | Тип проверки подлинности, используемый для подключения к базе данных Teradata.<br/>Допустимые значения: **Basic** и **Windows**. | Да |
+| имя пользователя | Укажите имя пользователя для подключения к базе данных Teradata. | Да |
 | password | Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Требуется локальная среда IR, как упоминалось в разделе [Предварительные требования](#prerequisites). |Yes |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Требуется локальная среда IR, как упоминалось в разделе [Предварительные требования](#prerequisites). |Да |
 
 **Пример.**
 
@@ -91,9 +91,9 @@ ms.locfileid: "54018999"
 
 Чтобы скопировать данные из Teradata, задайте для свойства type набора данных значение **RelationalTable**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для набора данных необходимо задать значение **RelationalTable**. | Yes |
+| type | Для набора данных необходимо задать значение **RelationalTable**. | Да |
 | tableName | Имя таблицы в базе данных Teradata. | Нет (если свойство query указано в источнике действия) |
 
 **Пример.**
@@ -120,9 +120,9 @@ ms.locfileid: "54018999"
 
 Чтобы копировать данные из Teradata, задайте тип источника **RelationalSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно |
+| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type источника действия копирования необходимо задать значение **RelationalSource**. | Yes |
+| type | Свойству type источника действия копирования необходимо задать значение **RelationalSource**. | Да |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
@@ -164,45 +164,45 @@ ms.locfileid: "54018999"
 | Типы данных Teradata | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | BigInt |Int64 |
-| BLOB-объект |Byte[] |
+| BLOB-объекты |Byte[] |
 | Byte |Byte[] |
 | ByteInt |Int16 |
-| Char |Строка |
-| Clob |Строка |
-| Дата |Datetime |
+| Char |String |
+| Clob |String |
+| Дата |DateTime |
 | Decimal |Decimal |
 | Double |Double |
-| Graphic |Строка |
+| Graphic |String |
 | Целое число  |Int32 |
-| Interval Day |Интервал времени |
-| Interval Day To Hour |Интервал времени |
-| Interval Day To Minute |Интервал времени |
-| Interval Day To Second |Интервал времени |
-| Interval Hour |Интервал времени |
-| Interval Hour To Minute |Интервал времени |
-| Interval Hour To Second |Интервал времени |
-| Interval Minute |Интервал времени |
-| Interval Minute To Second |Интервал времени |
-| Interval Month |Строка |
-| Interval Second |Интервал времени |
-| Interval Year |Строка |
-| Interval Year To Month |Строка |
-| Number |Double |
-| Period(Date) |Строка |
-| Period(Time) |Строка |
-| Period(Time With Time Zone) |Строка |
-| Period(Timestamp) |Строка |
-| Period(Timestamp With Time Zone) |Строка |
+| Interval Day |TimeSpan |
+| Interval Day To Hour |TimeSpan |
+| Interval Day To Minute |TimeSpan |
+| Interval Day To Second |TimeSpan |
+| Interval Hour |TimeSpan |
+| Interval Hour To Minute |TimeSpan |
+| Interval Hour To Second |TimeSpan |
+| Interval Minute |TimeSpan |
+| Interval Minute To Second |TimeSpan |
+| Interval Month |String |
+| Interval Second |TimeSpan |
+| Interval Year |String |
+| Interval Year To Month |String |
+| число |Double |
+| Period(Date) |String |
+| Period(Time) |String |
+| Period(Time With Time Zone) |String |
+| Period(Timestamp) |String |
+| Period(Timestamp With Time Zone) |String |
 | SmallInt |Int16 |
-| Время |Интервал времени |
-| Time With Time Zone |Строка |
-| Timestamp |Datetime |
+| Время |TimeSpan |
+| Time With Time Zone |String |
+| Timestamp |DateTime |
 | Timestamp With Time Zone |DateTimeOffset |
 | VarByte |Byte[] |
-| VarChar |Строка |
-| VarGraphic |Строка |
-| xml |Строка |
+| VarChar |String |
+| VarGraphic |String |
+| Xml |String |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

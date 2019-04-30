@@ -12,11 +12,11 @@ ms.date: 02/25/2019
 ms.author: luisca
 ms.custom: seodec2018
 ms.openlocfilehash: 605f4c639cfc8c0f9732f7347532e1bd7edc055f
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57404660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61341637"
 ---
 #   <a name="language-detection-cognitive-skill"></a>Когнитивный навык распознавания языка
 
@@ -41,13 +41,13 @@ Microsoft.Skills.Text.LanguageDetectionSkill
 
 Параметры зависят от регистра.
 
-| Входные данные     | ОПИСАНИЕ |
+| Входные данные     | Описание |
 |--------------------|-------------|
-| текст | Анализируемый текст.|
+| Text | Анализируемый текст.|
 
 ## <a name="skill-outputs"></a>Выходные данные навыка
 
-| Имя вывода    | ОПИСАНИЕ |
+| Имя вывода    | Описание |
 |--------------------|-------------|
 | languageCode | Код языка ISO 6391 для распознанного языка. Например, en. |
 | LanguageName | Имя языка. Например, английский. |

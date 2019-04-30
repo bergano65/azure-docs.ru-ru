@@ -9,22 +9,22 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 04/21/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 8f21374ae5da76c9954acc5227f593ab4be19ce9
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
-ms.translationtype: MT
+ms.openlocfilehash: 74a4ee03562963c8a50159f085e4b76b6d461ed9
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58630556"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62103860"
 ---
 # <a name="media-services-concepts"></a>Основные понятия служб мультимедиа
 
 В этом разделе дается краткий обзор понятий служб мультимедиа Azure и содержит ссылки на статьи с подробное разъяснение основные понятия служб мультимедиа v3 и функциональные возможности. Прежде чем приступать к разработке, необходимо ознакомиться со следующими основными понятиями.
 
 > [!NOTE]
-> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref), или одного из поддерживаемых [пакеты SDK](developers-guide.md).
+> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](developers-guide.md).
 
 ## <a name="cloud-upload-and-storage"></a>Передача в облако и хранение
 
@@ -33,13 +33,13 @@ ms.locfileid: "58630556"
 - [Cloud upload and storage](storage-account-concept.md) (Передача в облако и хранение)
 - [Концепция активы](assets-concept.md)
 
-## <a name="encoding"></a>Кодирование
+## <a name="encoding"></a>Сервис кодирования
 
 После отправки файлов мультимедиа высокого качества в активы, их можно закодировать в форматы, которые можно воспроизвести для широкого круга обозревателей и устройств. 
 
 Для кодирования с помощью Media Services v3, вам нужно создать **преобразует** и **заданий**.
 
-![Преобразования](./media/encoding/transforms-jobs.png)
+![Transform](./media/encoding/transforms-jobs.png)
 
 - [Преобразования и задания](transforms-jobs-concept.md)
 - [Кодирование с помощью служб мультимедиа](encoding-concept.md)
@@ -83,7 +83,7 @@ ms.locfileid: "58630556"
 - [Динамические манифесты](filters-dynamic-manifest-overview.md)
 - [Фильтры](filters-concept.md)
 
-## <a name="live-streaming"></a>Потоковая передача в реальном времени
+## <a name="live-streaming"></a>Потоковая трансляция
 
 Службы мультимедиа Azure дают возможность предоставлять клиентам события прямой трансляции в облаке Azure. **События потоковой трансляции** отвечают за прием и обработку видеопотоков. При создании **событие прямой трансляции**, создается входную конечную точку, можно использовать для отправки источник сигнала от удаленного кодировщика. При наличии передачу потока данных в **событие прямой трансляции**, вы можете начать потоковую передачу мероприятия, создав **активов**, **Live вывода**, и **указатель потоковой передачи** . **Выходные данные Live** будет архивирование потока в **активов** и предложить его зрителям через **конечной точки потоковой передачи**. Объект **событие прямой трансляции** может принимать одно из двух типов: **сквозной** и **кодирования в реальном времени**.
 
@@ -96,7 +96,7 @@ ms.locfileid: "58630556"
 
 ## <a name="monitoring"></a>Мониторинг
 
-### <a name="event-grid"></a>Сетка событий Azure
+### <a name="event-grid"></a>Служба "Сетка событий Azure"
 
 Чтобы просмотреть ход выполнения задания, следует использовать **"Сетка событий"**. Службы мультимедиа также выдает типы события прямой трансляции. С помощью службы "Сетка событий Azure" приложения могут ожидать передачи данных и реагировать на события, поступающие буквально из всех служб Azure и пользовательских источников. 
 
@@ -116,11 +116,15 @@ ms.locfileid: "58630556"
 
 - [Общие сведения о Проигрывателе мультимедиа Azure](use-azure-media-player.md)
 
+## <a name="provide-feedback"></a>Отзывы
+
+Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Кодирование удаленный файловый и потоковый видео — REST](stream-files-tutorial-with-rest.md)
-* [Кодирование отправленный файловый и потоковый видео - .NET](stream-files-tutorial-with-api.md)
-* [Stream live - .NET](stream-live-tutorial-with-api.md)
-* [Анализ видео - .NET](analyze-videos-tutorial-with-api.md)
-* [Динамическое шифрование AES-128 - .NET](protect-with-aes128.md)
-* [Динамическое шифрование с помощью мульти DRM - .NET](protect-with-drm.md) 
+* [Кодирование удаленных файлов и потокового видео — REST](stream-files-tutorial-with-rest.md)
+* [Кодирование отправленных файлов и потокового видео — .NET](stream-files-tutorial-with-api.md)
+* [Потоковая передача в реальном времени — .NET](stream-live-tutorial-with-api.md)
+* [Анализ видео — .NET](analyze-videos-tutorial-with-api.md)
+* [Динамическое шифрование AES-128 — .NET](protect-with-aes128.md)
+* [Encrypt dynamically with multi-DRM - .NET](protect-with-drm.md) (Динамическое шифрование с помощью DRM и службы доставки лицензий) 

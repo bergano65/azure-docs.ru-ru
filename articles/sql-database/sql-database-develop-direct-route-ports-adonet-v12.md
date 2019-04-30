@@ -13,11 +13,11 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 04/03/2019
 ms.openlocfilehash: ddb115370c62371e769ef98e0031f7e0379bafbf
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58916178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61075503"
 ---
 # <a name="ports-beyond-1433-for-adonet-45"></a>Порты для ADO.NET 4.5, отличные от порта 1433
 
@@ -84,6 +84,6 @@ ms.locfileid: "58916178"
 * [Список версий протокола TDS](http://www.freetds.org/userguide/tdshistory.htm)
 * [Общие сведения о разработке базы данных SQL](sql-database-develop-overview.md)
 * [Брандмауэр базы данных SQL Azure](sql-database-firewall-configure.md)
-* [How to: Настройка правил брандмауэра в Базе данных SQL](sql-database-configure-firewall-settings.md)
+* [Практическое руководство. Настройка правил брандмауэра в Базе данных SQL](sql-database-configure-firewall-settings.md)
 
 

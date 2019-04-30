@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 05/15/2018
 ms.topic: conceptual
 ms.openlocfilehash: b07e21131d9560a49d99644525835ac5ee3bac9e
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53606798"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61442245"
 ---
 # <a name="integrate-sim-data-in-the-remote-monitoring-solution"></a>Интеграция данных SIM-карты в решении для удаленного мониторинга
 
@@ -29,7 +29,7 @@ ms.locfileid: "53606798"
 
 ## <a name="telefnica-iot-integration-setup"></a>Настройка интеграции Интернета вещей Telefónica
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Эта дополнительная функция удаленного мониторинга в настоящее время находится в режиме предварительной версии. Чтобы синхронизировать данные о подключении в решение для удаленного мониторинга Azure, выполните такие задачи:
 
@@ -54,8 +54,8 @@ ms.locfileid: "53606798"
 
 Опубликованы следующие параметры подключения:
 
-* ICCID;
-* IP-адрес
+* ICCID
+* IP
 * наличие сети;
 * состояние SIM-карты;
 * сетевое расположение;
@@ -63,11 +63,11 @@ ms.locfileid: "53606798"
 
 ![панель мониторинга](./media/iot-accelerators-remote-monitoring-telefonica-sim/dashboard.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда у вас есть представление об интеграции данных SIM-карты в решение удаленного мониторинга Интернета вещей Azure, для ускорителей решений можно выполнить следующие шаги, описанные в руководствах ниже:
 
-* [Обзор возможностей предварительно настроенного решения удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
+* [Обзор возможностей предварительно настроенного решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
 * [Выполнение расширенного мониторинга](iot-accelerators-remote-monitoring-monitor.md)
 * [Управление устройствами](iot-accelerators-remote-monitoring-manage.md)
 * [Устранение неполадок с устройствами](iot-accelerators-remote-monitoring-maintain.md)

@@ -8,11 +8,11 @@ ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
 ms.openlocfilehash: 3e26365c4273611c81682a760695522575f3875d
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58225048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61483380"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Руководство по устранению неполадок обозреватель службы хранилища Azure
 
@@ -128,7 +128,7 @@ ms.locfileid: "58225048"
 3. Выберите цепочку ключей login.
 4. Щелкните значок замка, чтобы заблокировать цепочку ключей (по завершении замок на значке закроется, на что может потребоваться несколько секунд в зависимости от открытых приложений).
 
-    ![изображение](./media/storage-explorer-troubleshooting/unlockingkeychain.png)
+    ![image](./media/storage-explorer-troubleshooting/unlockingkeychain.png)
 
 5. Запустите Обозреватель службы хранилища.
 6. Откроется всплывающее окно с сообщением примерно такого содержания: "Центр обслуживания хочет получить доступ к цепочке ключей". Когда оно откроется, введите пароль учетной записи администратора Mac и щелкните **Всегда разрешать** (или **Разрешить**, если **Всегда разрешать** недоступно).
@@ -247,20 +247,20 @@ ms.locfileid: "58225048"
 
 1. Скачивание обозревателя службы хранилища
 2. Установить среду выполнения .NET Core, самой последней версии проверенных: [2.0.8](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/runtime-2.0.8) (Если вы уже установили более новой версии, может потребоваться исправление обозревателя службы хранилища, см. ниже)
-3. Запустите `sudo apt-get install libgconf-2-4`
-4. Запустите `sudo apt install libgnome-keyring-common libgnome-keyring-dev`
+3. Выполнить `sudo apt-get install libgconf-2-4`
+4. Выполнить `sudo apt install libgnome-keyring-common libgnome-keyring-dev`
 
 # <a name="ubuntu-1604tab1604"></a>[Ubuntu 16.04](#tab/1604)
 
 1. Скачивание обозревателя службы хранилища
 2. Установить среду выполнения .NET Core, самой последней версии проверенных: [2.0.8](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/runtime-2.0.8) (Если вы уже установили более новой версии, может потребоваться исправление обозревателя службы хранилища, см. ниже)
-3. Запустите `sudo apt install libgnome-keyring-dev`
+3. Выполнить `sudo apt install libgnome-keyring-dev`
 
 # <a name="ubuntu-1404tab1404"></a>[Ubuntu 14.04](#tab/1404)
 
 1. Скачивание обозревателя службы хранилища
 2. Установить среду выполнения .NET Core, самой последней версии проверенных: [2.0.8](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu14-04/runtime-2.0.8) (Если вы уже установили более новой версии, может потребоваться исправление обозревателя службы хранилища, см. ниже)
-3. Запустите `sudo apt install libgnome-keyring-dev`
+3. Выполнить `sudo apt install libgnome-keyring-dev`
 
 ---
 

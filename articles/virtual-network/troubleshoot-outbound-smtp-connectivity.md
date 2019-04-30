@@ -13,11 +13,11 @@ ms.workload: infrastructure-services
 ms.date: 11/20/2018
 ms.author: genli
 ms.openlocfilehash: 385163d791bff0c02a05ee1b27afd82c3afd0ac3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57997164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61401925"
 ---
 # <a name="troubleshoot-outbound-smtp-connectivity-issues-in-azure"></a>Устранение проблем с исходящими подключениями SMTP в Azure
 
@@ -52,6 +52,6 @@ ms.locfileid: "57997164"
 
 Если вы используете ресурсы Azure с помощью CSP, то можете создать обращение в службу поддержки через CSP и попросить CSP создать запрос на разблокировку от вашего имени, если нельзя использовать безопасную ретрансляцию SMTP.
 
-## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
+## <a name="need-help-contact-support"></a>Нужна помощь? Обращение в службу поддержки
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

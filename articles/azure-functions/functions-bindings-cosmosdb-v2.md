@@ -12,11 +12,11 @@ ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
 ms.openlocfilehash: 5762e934d7735dd9617cefc1f56105823d74312f
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57782196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61343037"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-2x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 2.х
 
@@ -256,7 +256,7 @@ namespace CosmosDBSamplesV2
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `CosmosDBTrigger`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type** || Нужно задать значение `cosmosDBTrigger`. |
 |**direction** || Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
@@ -289,7 +289,7 @@ namespace CosmosDBSamplesV2
 
 Триггер не указывает, был ли документ обновлен или вставлен. Вместо этого он представляет сам документ. Если операции обновления и вставки необходимо обрабатывать по-разному, это можно сделать, внедрив поля меток времени для операций обновления и вставки.
 
-## <a name="input"></a>Входные данные
+## <a name="input"></a>Вход
 
 Входная привязка Azure Cosmos DB извлекает один или несколько документов из Azure Cosmos DB и передает их входному параметру функции через API SQL. Идентификатор документа или параметры запроса можно определить по триггеру, который вызывает функцию.
 
@@ -1709,7 +1709,7 @@ public class DocsFromRouteSqlQuery {
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `CosmosDB`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type**     || Нужно задать значение `cosmosDB`.        |
 |**direction**     || Нужно задать значение `in`.         |
@@ -1729,7 +1729,7 @@ public class DocsFromRouteSqlQuery {
 
 В функциях JavaScript изменения не обрабатываются автоматически при выходе из функции. Для внесения изменений используйте `context.bindings.<documentName>In` и `context.bindings.<documentName>Out`. Ознакомьтесь с примером на языке JavaScript.
 
-## <a name="output"></a>Выходные данные
+## <a name="output"></a>Выход
 
 Выходная привязка Azure Cosmos DB позволяет записать новый документ в базу данных Azure Cosmos DB с помощью API SQL.
 
@@ -2294,7 +2294,7 @@ public String cosmosDbQueryById(
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `CosmosDB`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type**     || Нужно задать значение `cosmosDB`.        |
 |**direction**     || Нужно задать значение `out`.         |
@@ -2303,7 +2303,7 @@ public String cosmosDbQueryById(
 |**collectionName** |**CollectionName**  | Имя коллекции, в которой создается документ. |
 |**createIfNotExists**  |**CreateIfNotExists**    | Логическое значение, указывающее, будет ли создана коллекция при ее отсутствии. Значение по умолчанию — *false*, так как коллекции создаются с использованием зарезервированной пропускной способности, с которой связаны ценовые требования. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/cosmos-db/).  |
 |**partitionKey**|**PartitionKey** |Если для `CreateIfNotExists` задано значение true, определяется путь к ключу раздела для созданной коллекции.|
-|**collectionThroughput**|**CollectionThroughput**| Если для `CreateIfNotExists` задано значение true, определяется [пропускная способность](../cosmos-db/set-throughput.md) созданной коллекции.|
+|**CollectionThroughput**|**CollectionThroughput**| Если для `CreateIfNotExists` задано значение true, определяется [пропускная способность](../cosmos-db/set-throughput.md) созданной коллекции.|
 |**connectionStringSetting**    |**ConnectionStringSetting** |Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
@@ -2342,10 +2342,10 @@ public String cosmosDbQueryById(
 }
 ```  
 
-|Свойство  |значение по умолчанию | ОПИСАНИЕ |
+|Свойство  |значение по умолчанию | Описание |
 |---------|---------|---------| 
 |GatewayMode|Шлюз|Режим подключения, используемый функцией при подключении к службе Azure Cosmos DB. Возможные значения: `Direct` и `Gateway`.|
-|Protocol|Https|Протокол подключения, используемый функцией при подключении к службе Azure Cosmos DB.  [Описание обоих режимов](../cosmos-db/performance-tips.md#networking)| 
+|Протокол|HTTPS|Протокол подключения, используемый функцией при подключении к службе Azure Cosmos DB.  [Описание обоих режимов](../cosmos-db/performance-tips.md#networking)| 
 |leasePrefix|Недоступно|Префикс аренды для использования во всех функциях приложения.| 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -1,7 +1,6 @@
 ---
 title: Запись данных Apache Storm в службу хранилища или Data Lake Storage в Azure HDInsight
 description: Сведения об использовании Apache Storm для записи данных в HDFS-совместимое хранилище для HDInsight.
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/27/2018
-ms.openlocfilehash: 34056b3a562d3110569e05c5c50ae4d9dae2375a
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
-ms.translationtype: MT
+ms.openlocfilehash: 4ba0c861674eb2308cf1f96c33d0792f3e1a0f94
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56868142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62109469"
 ---
 # <a name="write-to-apache-hadoop-hdfs-from-apache-storm-on-hdinsight"></a>Запись данных в Apache Hadoop HDFS из Apache Storm в HDInsight
 
@@ -23,7 +22,7 @@ ms.locfileid: "56868142"
 > [!IMPORTANT]  
 > Пример топологии, используемый в этом документе, зависит от компонентов, которые входят в состав Storm в HDInsight. Может потребоваться изменить его для работы с Azure Data Lake Storage при использовании с другими кластерами Apache Storm.
 
-## <a name="get-the-code"></a>Получение кода
+## <a name="get-the-code"></a>Получить код
 
 Проект, содержащий эту топологию, можно загрузить отсюда: [https://github.com/Azure-Samples/hdinsight-storm-azure-data-lake-store](https://github.com/Azure-Samples/hdinsight-storm-azure-data-lake-store).
 
@@ -140,7 +139,7 @@ bolts:
 
 * URI-адрес сценария: `https://hdiconfigactions.blob.core.windows.net/linuxstormextlibv01/stormextlib.sh`
 * Узлы, к которым это применимо: Nimbus, Supervisor
-* Параметры Нет
+* Параметры: Нет
 
 Сведения об использовании этого скрипта с кластером см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](./../hdinsight-hadoop-customize-cluster-linux.md).
 

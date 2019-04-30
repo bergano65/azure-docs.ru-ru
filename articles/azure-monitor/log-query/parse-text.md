@@ -12,11 +12,11 @@ ms.workload: infrastructure-services
 ms.date: 12/04/2018
 ms.author: bwren
 ms.openlocfilehash: ad4839a1b9e951a2bb206518254826a066330000
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58620865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61426737"
 ---
 # <a name="parse-text-data-in-azure-monitor-logs"></a>Анализ текстовых данных в журналах Azure Monitor
 Некоторые данные журнала, собранные Azure Monitor, будут содержать несколько фрагментов информации в одном свойстве. Анализ этих данных в нескольких свойствах облегчает использование в запросах. Типичным примером является [особый журнал](../../log-analytics/log-analytics-data-sources-custom-logs.md), который собирает всю запись журнала с несколькими значениями в одно свойство. Создавая отдельные свойства для разных значений, вы можете выполнять поиск и вычисления в каждом из них.

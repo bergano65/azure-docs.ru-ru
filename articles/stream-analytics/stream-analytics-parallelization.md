@@ -10,11 +10,11 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/07/2018
 ms.openlocfilehash: 0b68819ba032d7655433aadd30fe2852941096ce
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54000552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61478884"
 ---
 # <a name="leverage-query-parallelization-in-azure-stream-analytics"></a>Использование параллелизации запросов в Azure Stream Analytics
 В этой статье показано, как воспользоваться преимуществами параллелизма в Azure Stream Analytics. Узнайте, как масштабировать задания Stream Analytics с помощью настройки входных разделов, настройки аналитики определения запроса.
@@ -34,12 +34,12 @@ ms.locfileid: "54000552"
 -   Концентратор событий (требуется явно задать ключ раздела с помощью ключевого слова PARTITION BY).
 -   Хранилище BLOB-объектов
 
-### <a name="outputs"></a>outputs
+### <a name="outputs"></a>Выходные данные
 
 При работе со Stream Analytics можно воспользоваться преимуществами секционирования в концентраторах событий и выходных данных:
--   Хранилище Azure Data Lake.
+-   Служба хранилища Azure Data Lake
 -   Функции Azure
--   таблице Azure
+-   Таблица Azure
 -   Хранилище BLOB-объектов (требуется явно задать ключ раздела).
 -   Cosmos DB (требуется явно задать ключ раздела).
 -   Центры событий (требуется явно задать ключ раздела).

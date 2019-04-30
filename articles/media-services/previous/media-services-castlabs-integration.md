@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: Mingfeiy;willzhan;Juliako
 ms.openlocfilehash: dfb82e91b0f65b85d34b7e20d57ed9929469321f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57863263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61232586"
 ---
 # <a name="using-castlabs-to-deliver-widevine-licenses-to-azure-media-services"></a>Использование castLabs для доставки лицензий Widevine для служб мультимедиа Azure 
 > [!div class="op_single_selector"]
@@ -58,7 +58,7 @@ CastLabs и AMS поддерживают формат маркера JWT (веб
 | Издатель | Строка издателя из выбранной службы маркеров безопасности |
 | --- | --- |
 | Аудитория |Строка аудитории из используемой службы маркеров безопасности |
-| Claims |Набор утверждений |
+| Претензии |Набор утверждений |
 | NotBefore |Начало действия маркера |
 | Expires |Конец действия маркера |
 | SigningCredentials |Общий ключ для сервера лицензирования PlayReady, castLabs и службы маркеров безопасности. Он может быть симметричным или асимметричным. |
@@ -67,7 +67,7 @@ CastLabs и AMS поддерживают формат маркера JWT (веб
 
 В приведенной ниже таблице описан маркер JWT в castLabs. 
 
-| ИМЯ | ОПИСАНИЕ |
+| ИМЯ | Описание |
 | --- | --- |
 | optData |Строка JSON со сведениями о вас. |
 | crt |Строка JSON со сведениями о файле, лицензии на него и правах на его воспроизведение. |

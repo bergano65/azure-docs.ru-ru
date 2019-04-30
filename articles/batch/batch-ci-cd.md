@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.custom: fasttrack-new
 services: batch
 ms.openlocfilehash: 5b7c44d3ea3394ff728adfb9d9fd72293138fb2e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59494650"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60880952"
 ---
 # <a name="use-azure-pipelines-to-build-and-deploy-hpc-solutions"></a>Используйте Azure конвейеры для создания и развертывания решения HPC
 
@@ -427,7 +427,7 @@ ms.locfileid: "59494650"
     * **Источник:** $(System.ArtifactsDirectory)/**{YourAzureRepoArtifactSourceAlias}**/arm-templates /
     * **Тип подключения к Azure**: Azure Resource Manager
     * **Подписка Azure:** Выберите соответствующую подписку Azure
-    * **Тип назначения**: Большой двоичный объект Azure
+    * **Тип назначения**: BLOB-объект Azure
     * **Учетная запись хранения диспетчера Ресурсов**: $(storageAccountName)
     * **Имя контейнера**: шаблоны
     * **URI контейнера хранилища**: templateContainerUri

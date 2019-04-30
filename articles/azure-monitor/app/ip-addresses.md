@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 01/22/2019
 ms.author: mbullwin
 ms.openlocfilehash: b383a4f85a039eb8eed87e2e78940aaf48b30a33
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59425922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60897774"
 ---
 # <a name="ip-addresses-used-by-application-insights-and-log-analytics"></a>IP-адреса, используемые Application Insights и Log Analytics
 Служба [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) использует несколько IP-адресов. Вам могут понадобиться эти адреса, если отслеживаемое приложение расположено за брандмауэром.
@@ -35,15 +35,15 @@ ms.locfileid: "59425922"
 ## <a name="outgoing-ports"></a>Порты для исходящего трафика
 Чтобы разрешить пакету SDK службы Application Insights и/или монитору состояния отправлять данные на портал, в брандмауэре сервера нужно открыть несколько портов для исходящего трафика.
 
-| Назначение | URL-адрес | IP-адрес | порты; |
+| Цель | URL-адрес | IP | порты; |
 | --- | --- | --- | --- |
 | Телеметрия |dc.services.visualstudio.com<br/>dc.applicationinsights.microsoft.com |40.114.241.141<br/>104.45.136.42<br/>40.84.189.107<br/>168.63.242.221<br/>52.167.221.184<br/>52.169.64.244<br/>40.85.218.175<br/>104.211.92.54<br/>52.175.198.74<br/>51.140.6.23<br/>40.71.12.231<br/>13.69.65.22<br/>13.78.108.165<br/>13.70.72.233<br/>20.44.8.7<br/>13.86.218.248<br/>40.79.138.41<br/>52.231.18.241<br/>13.75.38.7 | 443 |
-| Динамический поток метрик |rt.services.visualstudio.com<br/>rt.applicationinsights.microsoft.com |23.96.28.38<br/>13.92.40.198 |443 |
+| Live Metrics Stream |rt.services.visualstudio.com<br/>rt.applicationinsights.microsoft.com |23.96.28.38<br/>13.92.40.198 |443 |
 
 ## <a name="status-monitor"></a>Монитор состояния
 Настройка монитора состояния (требуется только для внесения изменений).
 
-| Назначение | URL-адрес | IP-адрес | порты; |
+| Цель | URL-адрес | IP | порты; |
 | --- | --- | --- | --- |
 | Параметр Configuration |`management.core.windows.net` | |`443` |
 | Параметр Configuration |`management.azure.com` | |`443` |
@@ -380,7 +380,7 @@ East US
 ```  
 
 ## <a name="application-insights-api"></a>API Application Insights
-| Назначение | URI | IP-адрес | порты; |
+| Цель | URI | IP | порты; |
 | --- | --- | --- | --- |
 | API |api.applicationinsights.io<br/>api1.applicationinsights.io<br/>api2.applicationinsights.io<br/>api3.applicationinsights.io<br/>api4.applicationinsights.io<br/>api5.applicationinsights.io |23.96.58.253<br/>13.78.151.158<br/>40.74.59.40<br/>40.70.42.246<br/>40.117.198.0<br/>137.116.226.91<br/>52.163.88.44<br/>52.189.210.240<br/>13.77.201.34<br/>13.78.149.206<br/>52.232.28.146<br/>52.175.241.170<br/>20.36.36.66<br/>52.147.29.101<br/>40.115.155.252<br/>20.188.34.152<br/>52.141.32.103 |80, 443 |
 | Документация по API |dev.applicationinsights.io<br/>dev.applicationinsights.microsoft.com<br/>dev.aisvc.visualstudio.com<br/>www.applicationinsights.io<br/>www.applicationinsights.microsoft.com<br/>www.aisvc.visualstudio.com |23.96.58.253<br/>13.78.151.158<br/>40.74.59.40<br/>40.70.42.246<br/>40.117.198.0<br/>137.116.226.91<br/>52.163.88.44<br/>52.189.210.240<br/>13.77.201.34<br/>13.78.149.206<br/>52.232.28.146<br/>52.175.241.170<br/>20.36.36.66<br/>52.147.29.101<br/>40.115.155.252<br/>20.188.34.152<br/>52.141.32.103 |80, 443 |
@@ -388,65 +388,65 @@ East US
 
 ## <a name="log-analytics-api"></a>API Log Analytics
 
-| Назначение | URI | IP-адрес | порты; |
+| Цель | URI | IP | порты; |
 | --- | --- | --- | --- |
 | API |api.loganalytics.io<br/>*.api.loganalytics.io |23.96.58.253<br/>13.78.151.158<br/>40.74.59.40<br/>40.70.42.246<br/>40.117.198.0<br/>137.116.226.91<br/>52.163.88.44<br/>52.189.210.240<br/>13.77.201.34<br/>13.78.149.206<br/>52.232.28.146<br/>52.175.241.170<br/>20.36.36.66<br/>52.147.29.101<br/>40.115.155.252<br/>20.188.34.152<br/>52.141.32.103 |80, 443 |
 | Документация по API |dev.loganalytics.io<br/>docs.loganalytics.io<br/>www.loganalytics.io |23.96.58.253<br/>13.78.151.158<br/>40.74.59.40<br/>40.70.42.246<br/>40.117.198.0<br/>137.116.226.91<br/>52.163.88.44<br/>52.189.210.240<br/>13.77.201.34<br/>13.78.149.206<br/>52.232.28.146<br/>52.175.241.170<br/>20.36.36.66<br/>52.147.29.101<br/>40.115.155.252<br/>20.188.34.152<br/>52.141.32.103 |80, 443 |
 
 ## <a name="application-insights-analytics"></a>Аналитика Application Insights
 
-| Назначение | URI | IP-адрес | порты; |
+| Цель | URI | IP | порты; |
 | --- | --- | --- | --- |
-| Портал аналитики | analytics.applicationinsights.io | Динамический | 80, 443 |
-| CDN | applicationanalytics.azureedge.net | Динамический | 80, 443 |
-| Мультимедиа CDN | applicationanalyticsmedia.azureedge.net | Динамический | 80, 443 |
+| Портал аналитики | analytics.applicationinsights.io | Динамические | 80, 443 |
+| CDN | applicationanalytics.azureedge.net | Динамические | 80, 443 |
+| Мультимедиа CDN | applicationanalyticsmedia.azureedge.net | Динамические | 80, 443 |
 
 Примечание. *Домен applicationinsights.io принадлежит команде Application Insights.
 
 ## <a name="log-analytics-portal"></a>Портал Log Analytics
 
-| Назначение | URI | IP-адрес | порты; |
+| Цель | URI | IP | порты; |
 | --- | --- | --- | --- |
-| Портал | portal.loganalytics.io | Динамический | 80, 443 |
-| CDN | applicationanalytics.azureedge.net | Динамический | 80, 443 |
+| Портал | portal.loganalytics.io | Динамические | 80, 443 |
+| CDN | applicationanalytics.azureedge.net | Динамические | 80, 443 |
 
 Примечание. Домен *.loganalytics.io принадлежит команде Log Analytics.
 
 ## <a name="application-insights-azure-portal-extension"></a>Расширение портала Azure для Application Insights
 
-| Назначение | URI | IP-адрес | порты; |
+| Цель | URI | IP | порты; |
 | --- | --- | --- | --- |
-| Расширение для Application Insights | stamp2.app.insightsportal.visualstudio.com | Динамический | 80, 443 |
-| Расширение CDN для Application Insights | insightsportal-prod2-cdn.aisvc.visualstudio.com<br/>insightsportal-prod2-asiae-cdn.aisvc.visualstudio.com<br/>insightsportal-cdn-aimon.applicationinsights.io | Динамический | 80, 443 |
+| Расширение для Application Insights | stamp2.app.insightsportal.visualstudio.com | Динамические | 80, 443 |
+| Расширение CDN для Application Insights | insightsportal-prod2-cdn.aisvc.visualstudio.com<br/>insightsportal-prod2-asiae-cdn.aisvc.visualstudio.com<br/>insightsportal-cdn-aimon.applicationinsights.io | Динамические | 80, 443 |
 
 ## <a name="application-insights-sdks"></a>Пакеты средств разработки Application Insights
 
-| Назначение | URI | IP-адрес | порты; |
+| Цель | URI | IP | порты; |
 | --- | --- | --- | --- |
-| Пакеты средств разработки CDN JS Application Insights | az416426.vo.msecnd.net | Динамический | 80, 443 |
-| Пакеты средств разработки Java Application Insights | aijavasdk.blob.core.windows.net | Динамический | 80, 443 |
+| Пакеты средств разработки CDN JS Application Insights | az416426.vo.msecnd.net | Динамические | 80, 443 |
+| Пакеты средств разработки Java Application Insights | aijavasdk.blob.core.windows.net | Динамические | 80, 443 |
 
 ## <a name="alert-webhooks"></a>Веб-перехватчик оповещений
 
-| Назначение | IP-адрес | порты;
+| Цель | IP | порты;
 | --- | --- | --- |
-| Оповещение | 23.96.11.4 | 443 |
+| Оповещения | 23.96.11.4 | 443 |
 
-## <a name="profiler"></a>Профилировщик
+## <a name="profiler"></a>Profiler
 
-| Назначение | URI | IP-адрес | порты; |
+| Цель | URI | IP | порты; |
 | --- | --- | --- | --- |
 | Агент | agent.azureserviceprofiler.net<br/>*.agent.azureserviceprofiler.net | 40.68.32.221<br/>40.85.246.0<br/>40.85.246.57<br/>40.117.252.0<br/>40.117.253.100<br/>51.140.140.162<br/>51.140.140.184<br/>51.143.96.206<br/>51.143.98.157<br/>52.161.8.88<br/>52.161.29.225<br/>52.178.147.66<br/>52.178.149.106<br/>52.230.122.9<br/>52.230.124.46<br/>104.40.217.71<br/>104.211.89.26<br/>104.211.90.232 | 443
-| Портал | gateway.azureserviceprofiler.net | Динамический | 443
-| Хранилище | *.core.windows.net | Динамический | 443
+| Портал | gateway.azureserviceprofiler.net | Динамические | 443
+| Хранилище | *.core.windows.net | Динамические | 443
 
 ## <a name="snapshot-debugger"></a>Отладчик моментальных снимков
 
 > [!NOTE]
 > Profiler и Snapshot Debugger используют один и тот же набор IP-адресов.
 
-| Назначение | URI | IP-адрес | порты; |
+| Цель | URI | IP | порты; |
 | --- | --- | --- | --- |
 | Агент | ppe.azureserviceprofiler.net<br/>*.ppe.azureserviceprofiler.net | 40.68.32.221<br/>40.85.246.0<br/>40.85.246.57<br/>40.117.252.0<br/>40.117.253.100<br/>51.140.140.162<br/>51.140.140.184<br/>51.143.96.206<br/>51.143.98.157<br/>52.161.8.88<br/>52.161.29.225<br/>52.178.147.66<br/>52.178.149.106<br/>52.230.122.9<br/>52.230.124.46<br/>104.40.217.71<br/>104.211.89.26<br/>104.211.90.232 | 443
-| Портал | ppe.gateway.azureserviceprofiler.net | Динамический | 443
-| Хранилище | *.core.windows.net | Динамический | 443
+| Портал | ppe.gateway.azureserviceprofiler.net | Динамические | 443
+| Хранилище | *.core.windows.net | Динамические | 443

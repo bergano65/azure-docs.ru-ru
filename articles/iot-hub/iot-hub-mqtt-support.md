@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/12/2018
 ms.author: rezas
-ms.openlocfilehash: 5c879b050fad0ac8c6467ffa29d9aee398f57aa2
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 1a0b6cf8ce272733c259283fdec9c215ac2b0fd8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59276865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61442568"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Взаимодействие с Центром Интернета вещей с помощью протокола MQTT
 
@@ -191,7 +191,7 @@ client.loop_forever()
 
 ### <a name="sending-device-to-cloud-messages"></a>Отправка сообщений из устройства в облако
 
-После успешного подключения устройство может отправлять сообщения в Центр Интернета вещей, используя `devices/{device_id}/messages/events/` или `devices/{device_id}/messages/events/{property_bag}` в качестве значения параметра **Имя раздела**. Элемент `{property_bag}` позволяет устройству отправлять сообщения с дополнительными свойствами в формате URL-адреса. Например: 
+После успешного подключения устройство может отправлять сообщения в Центр Интернета вещей, используя `devices/{device_id}/messages/events/` или `devices/{device_id}/messages/events/{property_bag}` в качестве значения параметра **Имя раздела**. Элемент `{property_bag}` позволяет устройству отправлять сообщения с дополнительными свойствами в формате URL-адреса. Пример.
 
 ```text
 RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-encoded(<PropertyName2>)=RFC 2396-encoded(<PropertyValue2>)…
@@ -244,7 +244,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 Возможны следующие коды состояний:
 
-|Статус | ОПИСАНИЕ |
+|Статус | Описание |
 | ----- | ----------- |
 | 204 | Успех (содержимое не возвращается) |
 | 429 | Слишком много запросов (регулирование), как указано в [регулирования центра Интернета вещей](iot-hub-devguide-quotas-throttling.md) |
@@ -264,7 +264,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 3. Затем служба отправляет ответное сообщение, содержащее новое значение ETag для коллекции сообщаемых свойств в разделе `$iothub/twin/res/{status}/?$rid={request id}`. В этом ответном сообщении используется то же значение **request ID**, что и в запросе.
 
-Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый элемент документа JSON обновляет или добавляет соответствующий компонент в документе двойника устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Например: 
+Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый элемент документа JSON обновляет или добавляет соответствующий компонент в документе двойника устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Пример.
 
 ```json
 {
@@ -275,7 +275,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 Возможны следующие коды состояний:
 
-|Статус | ОПИСАНИЕ |
+|Статус | Описание |
 | ----- | ----------- |
 | 200 | Успешно |
 | 400 | Недопустимый запрос. Неправильно сформированный JSON. |
@@ -301,7 +301,7 @@ client.publish("$iothub/twin/PATCH/properties/reported/?$rid=" + rid, twin_repor
 
 ### <a name="receiving-desired-properties-update-notifications"></a>Получение уведомлений об обновлении требуемых свойств
 
-При подключении устройства Центр Интернета вещей отправляет уведомления в раздел `$iothub/twin/PATCH/properties/desired/?$version={new version}`, в котором находится содержимое обновления, выполненного серверной частью решения. Например: 
+При подключении устройства Центр Интернета вещей отправляет уведомления в раздел `$iothub/twin/PATCH/properties/desired/?$version={new version}`, в котором находится содержимое обновления, выполненного серверной частью решения. Пример.
 
 ```json
 {

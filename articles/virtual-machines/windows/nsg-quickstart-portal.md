@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 09/27/2018
 ms.author: cynthn
 ms.openlocfilehash: cac17403425f53593d4f48692b4216a92c8624e3
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48884391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61481774"
 ---
 # <a name="how-to-open-ports-to-a-virtual-machine-with-the-azure-portal"></a>Как открыть порты для виртуальной машины Windows с помощью портала Azure
 [!INCLUDE [virtual-machines-common-nsg-quickstart](../../../includes/virtual-machines-common-nsg-quickstart.md)]
@@ -74,7 +74,7 @@ ms.locfileid: "48884391"
 
     Любые виртуальные машины, подключаемые к этой подсети, будут доступны через порт 80.
 
-## <a name="additional-information"></a>Дополнительная информация
+## <a name="additional-information"></a>Дополнительные сведения
 
 См. статью [Как открыть порты и конечные точки для виртуальной машины в Azure с помощью PowerShell](nsg-quickstart-powershell.md), чтобы выполнить эти действия.
 
@@ -82,7 +82,7 @@ ms.locfileid: "48884391"
 
 Для веб-приложений с высокой доступностью необходимо поместить виртуальную машину за подсистемой балансировки нагрузки Azure. Балансировщик нагрузки распределяет трафик между виртуальными машинами с группой безопасности сети, обеспечивающей фильтрацию трафика. Подробные сведения см. в статье [Руководство. Балансировка нагрузки виртуальных машин Windows в Azure для создания высокодоступного приложения с помощью Azure PowerShell](tutorial-load-balancer.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы создали группу безопасности сети, создали правило для входящих подключений, которое пропускает трафик HTTP через порт 80 и связали это правило с подсетью. 
 
 Информацию о создании более детализированных сред можно найти в следующих статьях.

@@ -10,11 +10,11 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 10/23/2018
 ms.openlocfilehash: 12799a308157c3c0e19de1f82c0fe3df44fad37e
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57195172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62106306"
 ---
 # <a name="monitor-b2b-messages-with-azure-monitor-logs-in-azure-logic-apps"></a>Мониторинг сообщений B2B с помощью журналов Azure Monitor в Azure Logic Apps
 
@@ -46,7 +46,7 @@ ms.locfileid: "57195172"
 1. Теперь найдите и выберите учетную запись интеграции. В списках фильтрации выберите значения, которые применимы к используемой учетной записи интеграции.
 Когда все будет готово, щелкните **Добавить параметр диагностики**.
 
-   | Свойство | Значение | ОПИСАНИЕ | 
+   | Свойство | Value | Описание | 
    |----------|-------|-------------|
    | **Подписка** | <*Azure-subscription-name*> | Подписка Azure, которая связана с используемой учетной записью интеграции. | 
    | **Группа ресурсов** | <*имя_группы_ресурсов_Azure*> | Группа ресурсов Azure для используемой учетной записи интеграции. | 
@@ -54,7 +54,7 @@ ms.locfileid: "57195172"
    | **Ресурс** | <*integration-account-name*> | Имя ресурса Azure, для которого нужно включить ведение журнала | 
    ||||  
 
-   Например: 
+   Пример.
 
    ![Настройка системы диагностики для учетной записи интеграции](media/logic-apps-monitor-b2b-message/turn-on-diagnostics-integration-account.png)
 
@@ -71,7 +71,7 @@ ms.locfileid: "57195172"
 
    1. В разделе **Журнал** выберите категорию **IntegrationAccountTrackingEvents** и щелкните **Сохранить**.
 
-   Например:  
+   Пример. 
 
    ![Настроить журналы Azure Monitor, поэтому вы отправляете данные диагностики, в журнал](media/logic-apps-monitor-b2b-message/send-diagnostics-data-log-analytics-workspace.png)
 
@@ -88,7 +88,7 @@ ms.locfileid: "57195172"
 1. Теперь найдите и выберите учетную запись интеграции. В списках фильтрации выберите значения, которые применимы к используемой учетной записи интеграции.
 Когда все будет готово, щелкните **Добавить параметр диагностики**.
 
-   | Свойство | Значение | ОПИСАНИЕ | 
+   | Свойство | Value | Описание | 
    |----------|-------|-------------|
    | **Подписка** | <*Azure-subscription-name*> | Подписка Azure, которая связана с используемой учетной записью интеграции. | 
    | **Группа ресурсов** | <*имя_группы_ресурсов_Azure*> | Группа ресурсов Azure для используемой учетной записи интеграции. | 
@@ -96,7 +96,7 @@ ms.locfileid: "57195172"
    | **Ресурс** | <*integration-account-name*> | Имя ресурса Azure, для которого нужно включить ведение журнала | 
    ||||  
 
-   Например: 
+   Пример.
 
    ![Настройка системы диагностики для учетной записи интеграции](media/logic-apps-monitor-b2b-message/turn-on-diagnostics-integration-account.png)
 
@@ -113,7 +113,7 @@ ms.locfileid: "57195172"
 
    1. В разделе **Журнал** выберите категорию **IntegrationAccountTrackingEvents** и щелкните **Сохранить**.
 
-   Например:  
+   Пример. 
 
    ![Настроить журналы Azure Monitor, поэтому вы отправляете данные диагностики, в журнал](media/logic-apps-monitor-b2b-message/send-diagnostics-data-log-analytics-workspace.png)
 
@@ -124,9 +124,9 @@ ms.locfileid: "57195172"
 Вместе с Azure Monitor журналы можно расширить, как использовать приложение логики диагностических данных с другими службами Azure, например: 
 
 * [Архивация журналов диагностики Azure в службе хранилища Azure](../azure-monitor/platform/archive-diagnostic-logs.md)
-* [Потоковая передача журналов диагностики в Центры событий Azure](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md) 
+* [Потоковая передача журналов Диагностики Azure в Центры событий Azure](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md) 
 
-После этого можно организовать мониторинг в режиме реального времени с помощью данных телеметрии и аналитики из других служб, таких как [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) и [Power BI](../azure-monitor/platform/powerbi.md). Например: 
+После этого можно организовать мониторинг в режиме реального времени с помощью данных телеметрии и аналитики из других служб, таких как [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) и [Power BI](../azure-monitor/platform/powerbi.md). Пример.
 
 * [Потоковая передача данных из Центров событий в Stream Analytics](../stream-analytics/stream-analytics-define-inputs.md)
 * [Анализ потоковой передачи данных с помощью Stream Analytics и создание панели мониторинга в Power BI для анализа данных в режиме реального времени](../stream-analytics/stream-analytics-power-bi-dashboard.md)

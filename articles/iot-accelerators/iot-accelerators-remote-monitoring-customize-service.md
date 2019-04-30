@@ -1,19 +1,20 @@
 ---
-title: Добавление службы в пользовательский интерфейс решения для удаленного мониторинга в Azure | Документация Майкрософт
+title: Добавить службу решением для удаленного мониторинга пользовательского интерфейса — Azure | Документация Майкрософт
 description: В этой статье показано, как добавить новую службу в веб-интерфейс акселератора решения для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
-ms.author: dobett
+ms.author: v-yiso
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.date: 10/02/2018
+origin.date: 10/02/2018
+ms.date: 11/26/2018
 ms.topic: conceptual
 ms.openlocfilehash: e44aa8ade512a6005959e795cb1d4ad861da1338
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49094541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61447052"
 ---
 # <a name="add-a-custom-service-to-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательской службы в веб-интерфейс акселератора решения для удаленного мониторинга
 
@@ -26,7 +27,7 @@ ms.locfileid: "49094541"
 
 В приложении реагирования служба обычно взаимодействует с внутренней службой. Примеры в акселераторе решения для удаленного мониторинга включают службы, взаимодействующие с диспетчером Центра Интернета вещей и микрослужбами конфигурации.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этом руководстве, необходимо установить следующее ПО на локальный компьютер разработки:
 
@@ -47,13 +48,13 @@ ms.locfileid: "49094541"
 
 **exampleService.js**
 
-[!code-javascript[Example service](~/remote-monitoring-webui/src/walkthrough/services/exampleService.js?name=service "Example service")]
+
 
 Дополнительные сведения о реализации службы см. в статье [о реактивном программировании](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754).
 
 **model/exampleModels.js**
 
-[!code-javascript[Example model](~/remote-monitoring-webui/src/walkthrough/services/models/exampleModels.js?name=models "Example model")]
+
 
 Скопируйте файл **exampleService.js** в папку **src/services** и файл **exampleModels.js** в папку **src/services/models**.
 
@@ -75,7 +76,7 @@ export * from './exampleModels';
 
 **exampleReducer.js**
 
-[!code-javascript[Example reducer](~/remote-monitoring-webui/src/walkthrough/store/reducers/exampleReducer.js?name=reducer "Example reducer")]
+
 
 Скопируйте **exampleReducer.js** в папку **src/store/reducers**.
 
@@ -112,7 +113,7 @@ const epics = [
 ];
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке или добавлении служб в пользовательском веб-интерфейсе в акселераторе решения для удаленного мониторинга.
 

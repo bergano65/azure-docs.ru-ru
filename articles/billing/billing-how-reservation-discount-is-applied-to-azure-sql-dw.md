@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 04/13/2019
 ms.author: banders
 ms.openlocfilehash: 10e19377d31489cd19465fe6171ffb530bd58c28
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60014728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60918409"
 ---
 # <a name="how-reservation-discounts-apply-to-azure-sql-data-warehouse"></a>Применение скидки резервирования для хранилища данных SQL Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "60014728"
 
 - **Пример 3**: Вы приобретаете 1 единица мощности 100 зарезервированных cDWU. Вы запустите два экземпляра хранилища данных SQL DW100c. Каждый выполняется в течение 30 минут. В этом случае оба события использования получите скидки на зарезервированный объем ресурсов. Нет плата за использование начисляется по ставкам оплаты по мере использования.
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
+## <a name="need-help-contact-us"></a>Нужна помощь? Свяжитесь с нами
 
 - Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 

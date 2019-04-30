@@ -1,15 +1,16 @@
 ---
-author: cynthn
+author: rockboyfor
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 10/26/2018
-ms.author: cynthn
+origin.date: 10/26/2018
+ms.date: 11/26/2018
+ms.author: v-yeche
 ms.openlocfilehash: 361d0ce5091d80198d47e4ad164f7cba8e21a55d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58115322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485296"
 ---
 *Пользовательская* виртуальная машина означает просто виртуальную машину, созданную с помощью **рекомендуемого приложения** из **Marketplace**, потому что большую часть работы она выполняет за вас. Кроме того, вы можете выбирать значения параметров, которые включают в себя следующие элементы:
 
@@ -28,9 +29,11 @@ ms.locfileid: "58115322"
 
 > [!IMPORTANT]
 > Если требуется использовать виртуальную машину в виртуальной сети, то при создании виртуальной машины обязательно укажите виртуальную сеть.
-> 
 > * Два преимущества использования виртуальной сети — это возможность напрямую подключаться к виртуальной машине и возможность создания распределенных подключений.
-> 
 > * Виртуальную машину можно настроить для подключения к виртуальной сети только при ее создании. Дополнительные сведения о виртуальных сетях см. в статье [Обзор виртуальных сетей Azure](../articles/virtual-network/virtual-networks-overview.md).
+>
+>
 
 ## <a name="to-create-the-virtual-machine"></a>Создание виртуальной машины
+
+<!-- Update_Description: update meta properties -->

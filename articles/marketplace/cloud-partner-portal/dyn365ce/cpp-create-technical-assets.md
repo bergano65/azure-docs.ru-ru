@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 12/29/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 50c4fd512206cdf17ebb555acb88de2a3f74c2bd
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54082155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61472674"
 ---
 # <a name="create-technical-assets-for-azure-application-offer"></a>Создание технических ресурсов для предложения приложения Azure
 
@@ -36,6 +36,6 @@ ms.locfileid: "54082155"
 - [Шаг 5. Хранение пакета AppSource в службе хранилища Azure и создание URL-адреса с помощью ключа SAS](https://docs.microsoft.com/dynamics365/customer-engagement/developer/store-appsource-package-azure-storage). На этом шаге объясняется, как сохранить файл пакета AppSource в учетную запись хранения больших двоичных объектов Microsoft Azure, а также как использовать ключ SAS для совместного использования файла пакета. Файл пакета будет извлечен из расположения службы хранилища Azure для сертификации и будет использоваться в пробных версиях и публикациях AppSource.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы еще не создали предложение для Dynamics 365 for Customer Engagement, изучите [эту статью](./cpp-create-offer.md).  См. [здесь](./cpp-publish-offer.md), чтобы опубликовать предложение.

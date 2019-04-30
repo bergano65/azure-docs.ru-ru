@@ -2,18 +2,18 @@
 title: Аутентификация и авторизация в коллекциях рабочих областей Power BI | Документация Майкрософт
 description: Аутентификация и авторизация в коллекциях рабочих областей Power BI.
 services: power-bi-workspace-collections
-author: markingmyname
-ms.author: maghan
+author: rkarlin
+ms.author: rkarlin
 ms.service: power-bi-workspace-collections
 ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
-ms.openlocfilehash: 5d7b5f2655fc94b9a060c30e11be66bd2eacdee8
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
-ms.translationtype: MT
+ms.openlocfilehash: 5fbe08bb9ebc355074a790f7732c9de10eaad859
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58520621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62110688"
 ---
 # <a name="authenticating-and-authorizing-with-power-bi-workspace-collections"></a>Аутентификация и авторизация в коллекциях рабочих областей Power BI
 
@@ -36,7 +36,7 @@ ms.locfileid: "58520621"
 
 Маркер приложения может содержать следующие утверждения:
 
-| Утверждение | ОПИСАНИЕ |    
+| Утверждение | Описание |    
 | --- | --- |
 | **ver** |Версия маркера приложения. Текущая версия — 0.2.0. |
 | **aud** |Целевой получатель маркера. Для коллекций рабочих областей Power BI используйте адрес *https:\//analysis.windows.net/powerbi/api*. |
@@ -86,13 +86,13 @@ Body
 
 Методы для пакета SDK для .NET см. в статье [Класс Scopes](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.scopes).
 
-## <a name="scopes"></a>Области действия
+## <a name="scopes"></a>Области
 
 При использовании маркеров внедрения может потребоваться ограничить использование ресурсов, к которым предоставляется доступ. Для этого можно создать маркер с заданной областью разрешений.
 
 Ниже приведены доступные области применения коллекций рабочих областей Power BI.
 
-|Область|ОПИСАНИЕ|
+|Область|Описание|
 |---|---|
 |Dataset.Read|Предоставляет разрешение на чтение указанного набора данных.|
 |Dataset.Write|Предоставляет разрешение на запись в указанном наборе данных.|
@@ -142,8 +142,8 @@ Body
 
 |Операция|Целевой ресурс|Разрешения для маркеров|
 |---|---|---|
-|Создайте (в памяти) новый отчет на основе набора данных.|Выборка|Dataset.Read|
-|Создайте (в памяти) новый отчет на основе набора данных и сохраните этот отчет.|Выборка|* Dataset.Read<br>* Workspace.Report.Create|
+|Создайте (в памяти) новый отчет на основе набора данных.|Набор данных|Dataset.Read|
+|Создайте (в памяти) новый отчет на основе набора данных и сохраните этот отчет.|Набор данных|* Dataset.Read<br>* Workspace.Report.Create|
 |Просмотр и изменение (в памяти) существующего отчета. Report.Read подразумевает наличие Dataset.Read. Report.Read не допускает сохранение изменений.|Отчет|Report.Read|
 |Изменение и сохранение существующего отчета.|Отчет|Report.ReadWrite|
 |Сохранение копии отчета ("Сохранить как").|Отчет|* Report.Read<br>* Workspace.Report.Copy|

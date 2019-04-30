@@ -1,7 +1,6 @@
 ---
 title: Создание кластеров HBase в виртуальной сети в Azure
 description: Приступите к работе с HBase в Azure HDInsight. Узнайте, как создать кластеры HDInsight HBase в виртуальной сети Azure.
-services: hdinsight,virtual-network
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/22/2018
 ms.author: hrasheed
-ms.openlocfilehash: 73ac2072a087f0931b6c9c776d3ad0bfedb4320b
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
-ms.translationtype: MT
+ms.openlocfilehash: 85eaa81a0cfd7ccfe8ad3ae818f89966280d279e
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58199534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62123116"
 ---
 # <a name="create-apache-hbase-clusters-on-hdinsight-in-azure-virtual-network"></a>Создание кластеров Apache HBase в HDInsight в виртуальной сети Azure
 Узнайте, как создавать кластеры Azure HDInsight Apache HBase в [виртуальной сети Azure][1].
@@ -35,7 +34,7 @@ ms.locfileid: "58199534"
 В этом разделе описывается, как создать кластер Apache HBase под управлением Linux с зависимой учетной записью службы хранилища Azure в виртуальной сети Azure c помощью [шаблона Azure Resource Manager](../../azure-resource-manager/resource-group-template-deploy.md). Сведения о других способах создания кластеров и их параметрах см. в статье [Создание кластеров Hadoop под управлением Linux в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md). Дополнительные сведения о создании в HDInsight кластеров Apache Hadoop с помощью шаблонов см. в [этой статье](../hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 
 > [!NOTE]  
-> Некоторые свойства жестко заданы в шаблоне. Например: 
+> Некоторые свойства жестко заданы в шаблоне. Пример.
 >
 > * **Расположение**: Восток США 2
 > * **Версия кластера**: 3.6
@@ -94,7 +93,7 @@ ms.locfileid: "58199534"
         curl -u <username>:<password> -k https://<clustername>.azurehdinsight.net/ambari/api/v1/clusters/<clustername>.azurehdinsight.net/services/hbase/components/hbrest
      ```
 
-     В возвращенных данных JSON найдите запись «host_name». Она содержит полные доменные имена узлов в кластере. Например: 
+     В возвращенных данных JSON найдите запись «host_name». Она содержит полные доменные имена узлов в кластере. Пример.
 
          ...
          "host_name": "wordkernode0.<clustername>.b1.cloudapp.net
@@ -223,7 +222,7 @@ ms.locfileid: "58199534"
 
 Чтобы проверить обмен данными между виртуальной машиной и кластером HBase, используйте следующую команду `ping headnode0.<dns suffix>` на виртуальной машине. Например, ping headnode0.mycluster.b1.cloudapp.net.
 
-Чтобы использовать эту информацию в Java-приложении, создайте приложение, выполнив шаги, представленные в статье [Создание приложений Java для Apache HBase](./apache-hbase-build-java-maven-linux.md). Чтобы приложение подключилось к удаленному серверу HBase, измените файл **hbase-site.xml** в этом примере, чтобы использовать полное доменное имя для ZooKeeper. Например: 
+Чтобы использовать эту информацию в Java-приложении, создайте приложение, выполнив шаги, представленные в статье [Создание приложений Java для Apache HBase](./apache-hbase-build-java-maven-linux.md). Чтобы приложение подключилось к удаленному серверу HBase, измените файл **hbase-site.xml** в этом примере, чтобы использовать полное доменное имя для ZooKeeper. Пример.
 
     <property>
         <name>hbase.zookeeper.quorum</name>

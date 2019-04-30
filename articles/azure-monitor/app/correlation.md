@@ -13,11 +13,11 @@ ms.date: 02/14/2019
 ms.reviewer: sergkanz
 ms.author: lagayhar
 ms.openlocfilehash: 565f08f0c69aef393a9296f3cce90570a3f0bc2c
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59683032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60901125"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -54,7 +54,7 @@ Application Insights определяет [модель данных](../../azur
 | itemType   | name                      | ИД           | operation_ParentId | operation_Id |
 |------------|---------------------------|--------------|--------------------|--------------|
 | pageView   | Stock page                |              | STYz               | STYz         |
-| dependency | GET /Home/Stock           | qJSXU        | STYz               | STYz         |
+| зависимость | GET /Home/Stock           | qJSXU        | STYz               | STYz         |
 | запрос    | GET Home/Stock            | KqKwlrSt9PA= | qJSXU              | STYz         |
 | dependency | GET /api/stock/value      | bBrf2L7mm2g= | KqKwlrSt9PA=       | STYz         |
 

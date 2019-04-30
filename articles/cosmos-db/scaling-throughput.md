@@ -8,17 +8,17 @@ ms.date: 03/24/2019
 ms.author: dharmas
 ms.reviewer: sngun
 ms.openlocfilehash: b645fe210e7eeb073380dcadefead3e1b4d7ccc0
-ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58407442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60926425"
 ---
 # <a name="globally-scale-provisioned-throughput"></a>Глобальное масштабирование подготовленной пропускной способности 
 
 В Azure Cosmos DB, подготовленной пропускной способности представлены в виде запроса единиц в секунду (ЕЗ/с или множественном RUs). Эти единицы запросов измеряют стоимость операций чтения и записи в контейнере Cosmos, как показано на рисунке ниже.
 
-![Единицы запросов](./media/scaling-throughput/request-unit-charge-of-read-and-write-operations.png)
+![Единицы запроса](./media/scaling-throughput/request-unit-charge-of-read-and-write-operations.png)
 
 Вы можете подготовить ЕЗ в контейнере Cosmos или базе данных Cosmos. Количество единиц в контейнере доступны исключительно для операций, выполняемых в этом контейнере. ЕЗ, подготовленные в базе данных, распределяются между всеми контейнерами в этой базе данных (за исключением контейнеров с отдельно назначенными ЕЗ).
 

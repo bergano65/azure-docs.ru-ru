@@ -13,11 +13,11 @@ ms.reviewer: billgib, sstein
 manager: craigg
 ms.date: 12/18/2018
 ms.openlocfilehash: c7c10608d90f7659b108d2d8c80038f59396de2d
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57878080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485254"
 ---
 # <a name="manage-schema-in-a-saas-application-that-uses-sharded-multi-tenant-sql-databases"></a>Управление схемой в приложении SaaS, использующем сегментированные мультитенантные базы данных SQL
 
@@ -82,7 +82,7 @@ ms.locfileid: "57878080"
 
 ## <a name="create-a-job-to-deploy-new-reference-data-to-all-tenants"></a>Создание задания и развертывание новых справочных данных на всех клиентах
 
-#### <a name="prepare"></a>Подготовка.
+#### <a name="prepare"></a>Подготовка
 
 В каждой базе данных клиента в таблице **VenueTypes** содержится набор типов мест проведения. Они определяют вид событий, проводимых в этом месте. Эти типы мест проведения соответствуют фоновому изображению, которое отображается в приложении событий клиента.  В этом упражнении вы развернете обновление во всех базах данных, чтобы добавить два дополнительных типа объектов: *Motorcycle Racing* (Мотоциклетные гонки) и *Swimming Club* (Плавательный клуб).
 

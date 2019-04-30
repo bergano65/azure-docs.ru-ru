@@ -1,7 +1,6 @@
 ---
 title: 'Действие скрипта: установка пакетов Python с Jupyter в Azure HDInsight'
 description: Пошаговые инструкции по использованию действия скрипта для настройки записных книжек Jupyter с кластерами Spark HDInsight для использования внешних пакетов Python.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: hrasheed
-ms.openlocfilehash: 8bc44949d804349de37796a2695edbdc64693edf
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
-ms.translationtype: MT
+ms.openlocfilehash: 876037e0e8e795ca98ddd3adf74dd0a304192a35
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58518683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62097918"
 ---
 # <a name="use-script-action-to-install-external-python-packages-for-jupyter-notebooks-in-apache-spark-clusters-on-hdinsight"></a>Использование действия сценария для установки внешних пакетов Python для записных книжек Jupyter в кластерах Apache Spark в HDInsight
 > [!div class="op_single_selector"]
@@ -65,7 +64,7 @@ ms.locfileid: "58518683"
 4. Введите следующие значения для **Отправка действия скрипта** окна:  
 
 
-    |Параметр | Значение |
+    |Параметр | Value |
     |---|---|
     |Тип скрипта | Выберите **— Настраиваемый** из раскрывающегося списка.|
     |ИМЯ |Введите `tensorflow` в текстовое поле.|

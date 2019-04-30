@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 01/03/2019
 ms.author: mavoge
 ms.openlocfilehash: 2b4f9bf87122f047e496dca1dbd425db8ad7c16c
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54119974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60926057"
 ---
 # <a name="enable-multitenant-applications-with-azure-digital-twins"></a>Включение мультитенантных приложений с помощью Azure Digital Twins
 
@@ -65,7 +65,7 @@ ms.locfileid: "54119974"
 
      ![Поставщики ресурсов Azure Active Directory][2]
   
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье [Создание определяемых пользователем функций в Azure Digital Twins](./how-to-user-defined-functions.md).
 

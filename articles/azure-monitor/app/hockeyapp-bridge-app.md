@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 03/30/2017
 ms.author: mbullwin
 ms.openlocfilehash: 79adfbfde25903bfe92c94507071c9d0fe303ef1
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57448396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60898753"
 ---
 # <a name="exploring-hockeyapp-data-in-application-insights"></a>Просмотр данных HockeyApp в Application Insights
 
@@ -55,14 +55,14 @@ ms.locfileid: "57448396"
 
 Рассмотрим подробнее каждый из этих доступных компонентов.
 
-## <a name="analytics"></a>Analytics
+## <a name="analytics"></a>Аналитика
 Аналитика — мощный инструмент для нерегламентированных запросов данных, что позволяет диагностировать и анализировать данные телеметрии, а также быстро находить основные причины и характерные.
 
-![Analytics](./media/hockeyapp-bridge-app/05.png)
+![Аналитика](./media/hockeyapp-bridge-app/05.png)
 
 * [Знакомство с аналитикой в Application Insights](../../azure-monitor/log-query/get-started-portal.md)
 
-## <a name="continuous-export"></a>непрерывный экспорт.
+## <a name="continuous-export"></a>Непрерывный экспорт
 Непрерывный экспорт позволяет экспортировать данные в контейнер хранилища BLOB-объектов Azure. Это очень полезно, если вам нужно хранить данные дольше, чем позволяет срок хранения, доступный в службе Application Insights. Вы можете хранить данные в хранилище BLOB-объектов, обрабатывать их в базе данных SQL или использовать другое удобное решение для хранения данных.
 
 [Экспорт данных телеметрии из Application Insights](export-telemetry.md)

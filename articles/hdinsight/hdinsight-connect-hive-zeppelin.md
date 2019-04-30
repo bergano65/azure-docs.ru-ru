@@ -2,7 +2,6 @@
 title: Выполнение запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin
 description: Сведения о выполнении запросов Apache Hive с помощью Apache Zeppelin.
 keywords: hdinsight hadoop, hive, interactive query, LLAP
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -10,18 +9,18 @@ ms.custom: hdinsightactive,
 ms.topic: conceptual
 ms.date: 11/05/2018
 ms.author: hrasheed
-ms.openlocfilehash: 035e70eef88d5d5dae08c329017430db25c20464
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 417e9f8ae78889374983bf77900ee00fa7fc6338
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52494829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62098766"
 ---
 # <a name="use-apache-zeppelin-to-run-apache-hive-queries-in-azure-hdinsight"></a>Выполнение запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin 
 
 Кластеры Interactive Query HDInsight включают записные книжки [Apache Zeppelin](https://zeppelin.apache.org/), которые можно использовать для выполнения интерактивных запросов Hive. Из этой статьи вы узнаете, как использовать Apache Zeppelin для выполнения запросов [Apache Hive](https://hive.apache.org/) в Azure HDInsight. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Чтобы выполнить действия, указанные в этой статье, вам потребуется:
 
 * **Кластер Interactive Query HDInsight**. Чтобы создать кластер HDInsight, обратитесь к разделу [Создание кластера](hadoop/apache-hadoop-linux-tutorial-get-started.md#create-cluster).  Выберите тип кластера Interactive Query. 
@@ -68,7 +67,7 @@ ms.locfileid: "52494829"
     По сравнению с обычным Hive, результаты запроса возвращаются намного быстрее.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этой статьи вы узнали, как визуализировать данные HDInsight с помощью [Microsoft Power BI](https://powerbi.microsoft.com/).  Для получения дополнительных сведений ознакомьтесь со следующими статьями:
 
 * [Визуализация данных Apache Hive с помощью Microsoft Power BI в Azure HDInsight](hadoop/apache-hadoop-connect-hive-power-bi.md)

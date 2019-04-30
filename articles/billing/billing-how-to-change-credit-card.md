@@ -16,11 +16,11 @@ ms.topic: conceptual
 ms.date: 3/13/2019
 ms.author: banders
 ms.openlocfilehash: b910cb3061b1451ea80b9843e2aa4047a784548f
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57876874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60918834"
 ---
 # <a name="add-update-or-remove-a-credit-or-debit-card-for-azure"></a>Добавление, обновление или удаление кредитной или дебетовой карты, используемой для оплаты в Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "57876874"
     ![Снимок экрана, показывающий поиска](./media/billing-how-to-change-credit-card/search.png)
 
 1. Выберите подписку, вы бы хотели добавить кредитную или дебетовую карту для.
-1. Выберите **способами оплаты**.
+1. Выберите **Методы оплаты**.
 
     ![Снимок экрана, отображающий выбранный параметр "Управление методами оплаты".](./media/billing-how-to-change-credit-card/payment-methods-blade-x.png)
 
@@ -64,7 +64,7 @@ ms.locfileid: "57876874"
 
     ![Снимок экрана, показывающий поиска](./media/billing-how-to-change-credit-card/search.png)
 
-1. Выберите **способами оплаты**.
+1. Выберите **Методы оплаты**.
 
     ![Снимок экрана, отображающий выбранный параметр "Управление методами оплаты".](./media/billing-how-to-change-credit-card/payment-methods-blade-x.png)
 
@@ -85,7 +85,7 @@ ms.locfileid: "57876874"
     ![Снимок экрана, показывающий поиска](./media/billing-how-to-change-credit-card/search.png)
 
 1. Выберите подписку, вы бы хотели добавить кредитную или дебетовую карту для.
-1. Выберите **способами оплаты**.
+1. Выберите **Методы оплаты**.
 
     ![Снимок экрана, отображающий выбранный параметр "Управление методами оплаты".](./media/billing-how-to-change-credit-card/payment-methods-blade-x.png)
 
@@ -187,6 +187,6 @@ If your credit card is associated with other active Microsoft subscriptions, you
 
 Чтобы добавить или обновить код налогоплательщика, перейдите в раздел [**Профиль** в Центре управления учетной записью Azure](https://account.azure.com/Profile), а затем выберите **Налоговая информация**. Этот код налогоплательщика используется для расчета налоговых льгот и отображается в счете.
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
+## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
 
 Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

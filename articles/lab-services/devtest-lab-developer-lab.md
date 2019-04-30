@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
-ms.openlocfilehash: 96432abe619ea23c1a06735567d00660e5430550
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: 5a293946e4672e7737f912f42511ad0907ba4a81
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38633287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61294005"
 ---
 # <a name="use-azure-devtest-labs-for-developers"></a>Использование Azure DevTest Labs для разработчиков
 Azure DevTest Labs можно использовать для реализации многих ключевых сценариев. Рассмотрим один из них, в котором DevTest Labs применяется для размещения виртуальных машин разработки. В этом сценарии DevTest Labs предоставляет следующие преимущества:
@@ -74,7 +74,7 @@ Azure DevTest Labs можно использовать для реализаци
 
    - Средства для установки на виртуальной машине, такие как агенты, Fiddler и Visual Studio.
    - Действия, которые должны выполняться на виртуальной машине, такие как клонирование репозитория.
-   - Приложения, которые требуется протестировать.
+   - приложения, которые необходимо протестировать.
 
    Многие артефакты уже встроены. Если для определенных целей вам нужны дополнительные настройки, можно создать пользовательские артефакты.
 

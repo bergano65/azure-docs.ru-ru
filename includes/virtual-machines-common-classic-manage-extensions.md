@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: d14cfb82ae74f85425dbd3e8a365e8b99969641d
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "58115323"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61485194"
 ---
 ## <a name="using-vm-extensions"></a>Использование расширений виртуальной машины
 Расширения VM Azure реализуют реакции на события или функции, которые помогают другим программам работать на виртуальных машинах Azure (например, расширение **WebDeployForVSDevTest** позволяет Visual Studio использовать веб-развертывание решений на VM Azure) или предоставляют возможность взаимодействия с виртуальной машиной для поддержки другой реакции на события (например, вы можете использовать расширения доступа к виртуальной машине через клиенты Powershell, Azure CLI или REST для сброса или изменения значений удаленного доступа на VM Azure).
@@ -86,7 +86,7 @@ ms.locfileid: "58115323"
 
 
 
-### <a name="service-management-rest-apis"></a>REST API управления службой
+### <a name="service-management-rest-apis"></a>API-интерфейсы REST управления службами
 Для получения сведений о доступных расширениях вы можете использовать следующие REST API:
 
 * Для экземпляров веб-ролей или рабочих ролей можно использовать операцию [List Available Extensions](https://msdn.microsoft.com/library/dn169559.aspx) . Чтобы вывести список доступных расширений, можно использовать операцию [List Extension Versions](https://msdn.microsoft.com/library/dn495437.aspx).

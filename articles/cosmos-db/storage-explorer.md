@@ -8,18 +8,18 @@ ms.date: 12/07/2018
 ms.author: dech
 ms.custom: seodec18
 ms.openlocfilehash: 8700d0988927b221ace82a492e9902f1f36a562b
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55731376"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60951263"
 ---
 # <a name="work-with-data-using-azure-storage-explorer"></a>Работа с данными с помощью Обозревателя службы хранилища Azure
 
 В Обозревателе службы хранилища Azure можно управлять объектами Azure Cosmos DB и работать с данными, хранимыми процедурами и триггерами, а также другими объектами Azure, такими как хранилища BLOB-объектов и очереди. Теперь это средство можно использовать для управления всеми объектами Azure в одном месте. Сейчас обозреватель службы хранилища Azure поддерживает учетные записи Cosmos, настроенные для SQL, MongoDB, Graph и API таблиц.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Учетная запись Cosmos с API SQL или API Azure Cosmos DB для MongoDB. Если у вас нет учетной записи, вы можете создать ее на портале Azure, как описано в разделе [Краткое руководство. Создание веб-приложения .NET при помощи Azure Cosmos DB с использованием API SQL и портала Azure](create-sql-api-dotnet.md).
 
@@ -106,7 +106,7 @@ ms.locfileid: "55731376"
 #### <a name="create-a-database"></a>Создание базы данных 
 -   Щелкните правой кнопкой мыши учетную запись Azure Cosmos DB, выберите **Создать базу данных**, введите имя базы данных и нажмите клавишу **ВВОД**.
        
-    ![Создание базы данных](./media/storage-explorer/create-database.png) 
+    ![Создать базу данных](./media/storage-explorer/create-database.png) 
 
 #### <a name="delete-a-database"></a>удаление базы данных.
 - Щелкните правой кнопкой мыши базу данных, выберите **Удалить базу данных**и нажмите кнопку **Да** во всплывающем окне. После удаления узла базы данных учетная запись Azure Cosmos DB будет обновлена автоматически.
@@ -158,7 +158,7 @@ ms.locfileid: "55731376"
 1. Чтобы создать новую вершину, откройте раздел **Graph** (Граф) в окне слева, выберите **New Vertex** (Создать вершину), отредактируйте содержимое, а затем нажмите кнопку **ОК**.    
 2. Чтобы изменить существующую вершину, щелкните значок карандаша справа.   
 
-    ![График](./media/storage-explorer/vertex.png)
+    ![Граф](./media/storage-explorer/vertex.png)
 
 #### <a name="delete-a-graph"></a>Удаление графа
 - Чтобы удалить вершину, щелкните значок корзины рядом с именем вершины.
@@ -246,7 +246,7 @@ ms.locfileid: "55731376"
   - extaccounts-файл.
 - При выполнении входа проверьте наличие сообщений об ошибках в консоли средств разработчика (F12).
 
-![console](./media/storage-explorer/console.png)
+![консоль](./media/storage-explorer/console.png)
 
 #### <a name="unable-to-see-the-authentication-page"></a>Не отображается страница аутентификации 
 
@@ -302,7 +302,7 @@ ms.locfileid: "55731376"
 
 Если ни одно из решений вам не помогло, то для устранения проблемы отправьте электронное письмо команде по инструментарию разработчика Azure Cosmos DB ([cosmosdbtooling@microsoft.com](mailto:cosmosdbtooling@microsoft.com)) со сведениями о ней.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Просмотрите следующее видео, чтобы узнать, как использовать Azure Cosmos DB в Обозревателе службы хранилища Azure. [Cosmos DB in Azure Storage Explorer](https://www.youtube.com/watch?v=iNIbg1DLgWo&feature=youtu.be) (Cosmos DB в Обозревателе службы хранилища Azure).
 * Дополнительные сведения об Обозревателе службы хранилища и подключении дополнительных служб см. в статье о [начале работы с Обозревателем службы хранилища](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).

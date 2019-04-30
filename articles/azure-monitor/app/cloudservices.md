@@ -14,18 +14,18 @@ ms.workload: tbd
 ms.date: 09/05/2018
 ms.author: mbullwin
 ms.openlocfilehash: d27c0e9570959e01267d83a768ead45b48b7cea1
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54267238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60903276"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Использование Application Insights для облачных служб Azure
 С помощью [Application Insights][start] можно отслеживать [приложения облачной службы Azure](https://azure.microsoft.com/services/cloud-services/) на предмет доступности, производительности, сбоев и использования, объединяя данные из пакета SDK Application Insights с данными [системы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) из облачных служб. Благодаря получаемым данным о производительности и эффективности работы приложения на практике вы можете принимать осознанные решения о направлении разработки в каждом жизненном цикле.
 
 ![Панель мониторинга с общими сведениями](./media/cloudservices/overview-graphs.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для этого потребуются следующие компоненты.
 
 * Подписка [Azure](https://azure.com). Войдите с помощью учетной записи Майкрософт для Windows, XBox Live или других облачных служб Майкрософт. 
@@ -48,7 +48,7 @@ ms.locfileid: "54267238"
 В следующих разделах обсуждаются дополнительные возможности:
 
 * отправка данных от разных компонентов и конфигураций сборки в отдельные ресурсы;
-* добавление пользовательских данных телеметрии из своего приложения.
+* добавить пользовательские данные телеметрии из своего приложения.
 
 ## <a name="sample-app-instrumented-with-application-insights"></a>Пример приложения, инструментированного с помощью Application Insights
 В этом [примере приложения](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService) служба Application Insights добавлена в облачную службу с двумя рабочими ролями, размещенными в Azure. 
@@ -89,7 +89,7 @@ ms.locfileid: "54267238"
 
 
 ## <a name="set-up-azure-diagnostics-for-each-role"></a>Настройка системы диагностики Azure для каждой роли
-Настройте мониторинг приложения с помощью Application Insights. Для веб-ролей этот вариант поддерживает мониторинг производительности, создание оповещений и диагностику, а также анализ сведений об использовании. Для других ролей можно искать и отслеживать Диагностику Azure, например о событиях перезапуска, показаниях счетчиков производительности и вызовах System.Diagnostics.Trace. 
+Настройте мониторинг приложения с помощью Application Insights. Для веб-ролей этот вариант поддерживает мониторинг производительности, создание оповещений и диагностику, а также анализ сведений об использовании. Для других ролей можно искать и отслеживать диагностические данные Azure, например о событиях перезапуска, показаниях счетчиков производительности и вызовах System.Diagnostics.Trace. 
 
 1. В обозревателе решений Visual Studio в разделе **\<Ваша_облачная_служба>** > **Роли** откройте свойства каждой роли.
 
@@ -114,7 +114,7 @@ ms.locfileid: "54267238"
 
     a. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами Nuget**.
 
-    b. Добавьте [Application Insights для Windows Servers](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/).
+    2. Добавьте [Application Insights для Windows Servers](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/).
 
     ![Поиск Application Insights](./media/cloudservices/04-ai-nuget.png)
 
@@ -127,7 +127,7 @@ ms.locfileid: "54267238"
      TelemetryConfiguration.Active.InstrumentationKey = RoleEnvironment.GetConfigurationSettingValue("APPINSIGHTS_INSTRUMENTATIONKEY");
     ```
    
-    b. Повторите предыдущий шаг (a) для каждой роли в приложении. См. указанные ниже примеры.
+    2. Повторите предыдущий шаг (a) для каждой роли в приложении. См. указанные ниже примеры.
    
     * [Веб-роль](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/Global.asax.cs#L27)
     * [Рабочая роль](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L232)
@@ -245,7 +245,7 @@ ms.locfileid: "54267238"
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Настройка системы диагностики Azure для отправки данных в Application Insights](../../azure-monitor/platform/diagnostics-extension-to-application-insights.md)
 * [Создание ресурсов Application Insights с помощью PowerShell](../../azure-monitor/app/powershell.md)
 * [Настройка Application Insights для веб-приложения Azure с помощью PowerShell](../../azure-monitor/app/powershell-azure-diagnostics.md)

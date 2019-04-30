@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 03/13/2019
 ms.author: aschhab
 ms.openlocfilehash: 2da6e46ad4866ad624ff6bc8aa61a96e41568ca2
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59006554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61472171"
 ---
 # <a name="service-bus-messaging-samples"></a>Примеры обмена сообщениями с помощью служебной шины
 В этих примерах демонстрируются ключевые возможности [обмена сообщениями служебной шины](https://azure.microsoft.com/services/service-bus/). В настоящее время примеры можно найти в следующих местах:
@@ -30,7 +30,7 @@ ms.locfileid: "59006554"
 | Node.js | https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/servicebus/service-bus/samples |
 | Python | https://github.com/Azure/azure-sdk-for-python/tree/master/azure-servicebus |
 
-## <a name="service-bus-explorer"></a>Service Bus Explorer
+## <a name="service-bus-explorer"></a>Обозреватель служебной шины
 
 Кроме того, можно использовать пример [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer), размещенный на сайте GitHub, который позволяет подключиться к пространству имен служебной шины и легко управлять сущностями обмена сообщениями. Это средство предоставляет такие дополнительные возможности, как импорт и экспорт, а также тестирование сущностей обмена сообщениями и служб ретрансляции. Полный исходный код и документацию для Service Bus Explorer можно найти на сайте [GitHub](https://github.com/paolosalvatori/ServiceBusExplorer).
 

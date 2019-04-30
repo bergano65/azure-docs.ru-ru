@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 12/15/2017
 ms.author: cynthn
 ms.openlocfilehash: da0e393dc2ae0d93ecc49745a42ffac4669ed74b
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56326312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61386944"
 ---
 # <a name="how-to-use-docker-machine-to-create-hosts-in-azure"></a>Создание узлов в Azure с помощью компьютера Docker | Документация Майкрософт
 В этой статье представлены сведения о том, как создать узел в Azure с использованием [компьютера Docker](https://docs.docker.com/machine/). Команда `docker-machine` создает виртуальную машину Linux в Azure, после чего устанавливает Docker. Затем можно управлять узлами Docker в Azure с помощью аналогичных локальных средств и рабочих процессов. Для работы с docker-machine в Windows 10 необходимо использовать Linux bash.
@@ -136,5 +136,5 @@ docker-machine ip myvm
 
 ![Запущенный контейнер nginx](./media/docker-machine/nginx.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Примеры использования Docker Compose см. в статье [Приступая к работе с Docker и Compose для определения и запуска многоконтейнерного приложения в Azure](docker-compose-quickstart.md).

@@ -9,11 +9,11 @@ ms.date: 04/05/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 334859aecf3a5f7a5678c0af656c6837d5661dac
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59270869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61023513"
 ---
 # <a name="client-libraries-for-connecting-to-azure-analysis-services"></a>Клиентские библиотеки для подключения к службам Azure Analysis Services
 
@@ -32,7 +32,7 @@ ms.locfileid: "59270869"
 
 Клиентские библиотеки AMO (объекты управления Analysis Services) и ADOMD доступны в качестве устанавливаемых пакетов на сайте [NuGet.org](https://www.nuget.org/). Мы рекомендуем использовать ссылки на пакеты NuGet вместо установщика Windows. 
 
-|Package  | Версия продукта  | 
+|Пакет  | Версия продукта  | 
 |---------|---------|
 |[Объекты AMO](https://www.nuget.org/packages/Microsoft.AnalysisServices.retail.amd64/)    |    15.17.1     |
 |[ADOMD](https://www.nuget.org/packages/Microsoft.AnalysisServices.AdomdClient.retail.amd64/)     |   15.17.1      |

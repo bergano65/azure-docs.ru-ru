@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 12/18/2018
 ms.topic: conceptual
 ms.openlocfilehash: 3c2bca45a7927689992cf44fb70199e246641760
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54445428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61446131"
 ---
 # <a name="understand-the-device-model-schema"></a>Общие сведения о схеме модели устройства
 
@@ -39,7 +39,7 @@ ms.locfileid: "54445428"
 
 [!INCLUDE [iot-accelerators-device-schema](../../includes/iot-accelerators-device-schema.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье описано, как создать пользовательскую модель имитированного устройства. Из этой статьи вы узнали, как выполнять следующие задачи:
 

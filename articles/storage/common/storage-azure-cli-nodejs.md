@@ -9,11 +9,11 @@ ms.date: 01/30/2017
 ms.author: seguler
 ms.subservice: common
 ms.openlocfilehash: 211051254e08d69c06afd4242599c909048e7e17
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55464846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61483747"
 ---
 # <a name="using-the-azure-classic-cli-with-azure-storage"></a>Использование классического интерфейса Azure CLI со службой хранилища Azure
 
@@ -124,7 +124,7 @@ export AZURE_STORAGE_CONNECTION_STRING=<connection_string>
 ## <a name="create-and-manage-blobs"></a>Создание больших двоичных объектов (BLOB-объектов) и управление ими
 Хранилище BLOB-объектов Azure — это служба хранения большого количества неструктурированных данных, таких как текстовые или бинарные файлы, к которым можно получить доступ практически из любой точки мира по протоколу HTTP или HTTPS. В этом разделе предполагается, что вы уже знакомы с понятиями службы хранилища BLOB-объектов Azure. Дополнительные сведения см. в статьях [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../blobs/storage-dotnet-how-to-use-blobs.md) и [Основные понятия службы BLOB-объектов](https://msdn.microsoft.com/library/azure/dd179376.aspx).
 
-### <a name="create-a-container"></a>Создание контейнера
+### <a name="create-a-container"></a>Создать контейнер
 Каждый BLOB-объект в хранилище Azure должен находиться в контейнере. Вы можете создать закрытый контейнер с помощью команды `azure storage container create` :
 
 ```azurecli
@@ -228,7 +228,7 @@ azure storage file copy start --source-container srcctn --source-blob hello2.txt
     --dest-path hellodir/hello2copy.txt --connection-string $srcConnectionString --dest-connection-string $destConnectionString
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Справочник по командам классического интерфейса CLI для работы с ресурсами службы хранилища можно найти здесь:
 

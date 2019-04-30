@@ -3,18 +3,19 @@ title: Автоматическая подготовка устройств Wind
 description: Использование имитированного устройства на компьютере Windows для тестирования автоматической подготовки устройств для Azure IoT Edge с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей
 author: kgremban
 manager: philmea
-ms.author: kgremban
-ms.date: 01/09/2019
+ms.author: v-yiso
+origin.date: 01/09/2019
+ms.date: 03/25/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: aa5e5fba3758fa3983924660b9b5f714d02613c6
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54158607"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61247561"
 ---
 # <a name="create-and-provision-a-simulated-tpm-edge-device-on-windows"></a>Создание и подготовка имитированного устройства IoT Edge TPM в Windows
 
@@ -27,7 +28,7 @@ ms.locfileid: "54158607"
 * Создание отдельной регистрации устройства.
 * Установка среды выполнения IoT Edge и подключение устройства к Центру Интернета вещей.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Компьютер для разработки Windows. В этой статье используется Windows 10.
 * Действующий Центр Интернета вещей.
@@ -99,6 +100,6 @@ Get-WinEvent -ea SilentlyContinue `
 iotedge list
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Процесс регистрации Службы подготовки устройств к добавлению в Центр Интернета вещей позволяет задать идентификатор устройства и теги двойников устройств параллельно с подготовкой нового устройства. Эти значения можно использовать для указания отдельных устройств или групп устройств с помощью автоматического управления устройствами. См. дополнительные сведения о развертывании и мониторинге модулей IoT Edge с поддержкой масштабирования с помощью [портала Azure](how-to-deploy-monitor.md) или [Azure CLI](how-to-deploy-monitor-cli.md).

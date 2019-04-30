@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 12/17/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 9189b7ce44f9808b245a99a42443e97a45d7ae75
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54082224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61227103"
 ---
 # <a name="dynamics-365-for-customer-engagement-offer"></a>Предложение Dynamics 365 for Customer Engagement
 
@@ -40,6 +40,6 @@ ms.locfileid: "54082224"
 В следующих статьях этого раздела описывается процесс создания и публикации приложения Dynamics 365 for Customer Engagement.  Мы рекомендуем ознакомиться с параллельными сведениями в разделе документации Dynamics 365 [Publish your app on AppSource](https://docs.microsoft.com/dynamics365/customer-engagement/developer/publish-app-appsource) (Публикация приложения в AppSource).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перед созданием нового предложения Dynamics 365 for Customer Engagement вы должны изучить статью [Dynamics 365 for Customer Engagement prerequisites](./cpp-prerequisites.md) (Предварительные требования для Dynamics 365 for Customer Engagement).  

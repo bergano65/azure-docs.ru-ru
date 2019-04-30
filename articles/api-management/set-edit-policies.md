@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 11/01/2018
 ms.author: apimpm
 ms.openlocfilehash: 3d1847b6001ef8e32f00a4e1cd9728d5ca0662f8
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51008272"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62097204"
 ---
 # <a name="how-to-set-or-edit-azure-api-management-policies"></a>Настройка или изменение политик службы управления API Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "51008272"
 2. Перейдите к экземпляру службы управления API Azure.
 3. Щелкните вкладку **Интерфейсы API**.
 
-    ![Изменение политики](./media/set-edit-policies/code-editor.png)
+    ![Изменить политику](./media/set-edit-policies/code-editor.png)
 
 4. Выберите один из API, которые вы импортировали ранее.
 5. Выберите вкладку **Конструктор**.
@@ -129,7 +129,7 @@ ms.locfileid: "51008272"
 5. Добавьте или измените политики.
 6. Нажмите кнопку **Save**(Сохранить). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Также ознакомьтесь со следующими материалами:
 

@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 03/15/2018
 ms.author: aljo
 ms.openlocfilehash: b7efeb1b4d83f6a6b372f73a7c0a5ca9bffdc052
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58670648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60946677"
 ---
 # <a name="deploy-an-existing-executable-to-service-fabric"></a>Развертывание существующего исполняемого файла вручную
 В Azure Service Fabric можно запустить как службу приложение любого типа, в том числе приложения Node.js, Java или C++. В Service Fabric такие типы служб называются гостевыми исполняемыми файлами.

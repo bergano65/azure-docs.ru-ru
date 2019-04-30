@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 12/21/2018
 ms.author: mbullwin
 ms.openlocfilehash: 24b0bc01b5cb4f1d2696a7c9526d586c9b42d0fc
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56674588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60899763"
 ---
 # <a name="deep-diagnostics-for-web-apps-and-services-with-application-insights"></a>Углубленная диагностика для веб-приложений и служб с помощью Application Insights
 ## <a name="why-do-i-need-application-insights"></a>Зачем мне Application Insights?
@@ -56,7 +56,7 @@ ms.locfileid: "56674588"
 * Что является основной причиной? Сбой произошел в моем компоненте или в зависимости? Это проблема связи?
 * Сколько пользователей было затронуто? Если необходимо решить несколько проблем, какая из них наиболее критична?
 
-## <a name="what-is-application-insights"></a>Что такое Azure Application Insights?
+## <a name="what-is-application-insights"></a>Что такое Application Insights?
 ![Базовый рабочий процесс Application Insights](./media/devops/020.png)
 
 1. Application Insights снабжает ваше приложение инструментами и отправляет данные телеметрии во время выполнения приложения. Либо встройте пакет SDK Application Insights в приложение, либо применяйте его инструменты во время выполнения. Первый метод является более гибким, так как вы можете добавлять собственную телеметрию в стандартные модули.

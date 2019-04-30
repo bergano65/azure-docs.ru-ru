@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: banders
 ms.openlocfilehash: 0a17821cc69900c7f24375cbf06a61811bbd52d1
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59786970"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60918843"
 ---
 # <a name="submit-a-request-to-pay-azure-subscription-by-invoice"></a>Отправка запроса на оплату подписки Azure по счету
 
@@ -72,6 +72,6 @@ ms.locfileid: "59786970"
 
 Если в связи с требуемой суммой кредита нужно выполнить проверку кредитоспособности, мы направим вам соответствующее заявление. После подачи заявки для ее обработки потребоваться 5–7 рабочих дней.
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
+## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
 
 Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

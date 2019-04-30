@@ -16,11 +16,11 @@ ms.topic: conceptual
 ms.date: 1/23/2019
 ms.author: banders
 ms.openlocfilehash: 374224663323e75a1d1413c47490bd3aacd00267
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57876822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60918571"
 ---
 # <a name="cancel-your-subscription-for-azure"></a>Отмена подписки в Azure
 
@@ -59,6 +59,6 @@ ms.locfileid: "57876822"
 
 Если у вас подписка не по мере использования, обратитесь в службу поддержки в течение 90 дней после отмены подписки для повторной активации.
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
+## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
 
 Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

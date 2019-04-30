@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 01/29/2018
 ms.topic: conceptual
 ms.openlocfilehash: c2151a4b1eb2a853ed343f6720b4f53af5e5e449
-ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54449526"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61446364"
 ---
 # <a name="implement-the-device-model-behavior"></a>Реализация поведения модели устройства
 
@@ -34,7 +34,7 @@ ms.locfileid: "54449526"
 
 [!INCLUDE [iot-accelerators-device-behavior](../../includes/iot-accelerators-device-behavior.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье описывается, как определить поведение собственной настраиваемой модели имитированного устройства. Из этой статьи вы узнали, как выполнять следующие задачи:
 

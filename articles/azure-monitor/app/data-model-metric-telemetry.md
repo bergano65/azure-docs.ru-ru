@@ -13,11 +13,11 @@ ms.date: 04/25/2017
 ms.reviewer: sergkanz
 ms.author: mbullwin
 ms.openlocfilehash: 0973c86d055ff4ebbe7e5a3c4a2ca4e3dcabc6a0
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54117696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60900466"
 ---
 # <a name="metric-telemetry-application-insights-data-model"></a>Телеметрия метрик. Модель данных Application Insights
 
@@ -45,11 +45,11 @@ ms.locfileid: "54117696"
 
 Имя метрики, которое нужно отобразить на портале Application Insights и в пользовательском интерфейсе. 
 
-## <a name="value"></a>Значение
+## <a name="value"></a>Value
 
 Отдельное значение для измерения. Сумма отдельных измерений для агрегата.
 
-## <a name="count"></a>Count
+## <a name="count"></a>Количество
 
 Вес вычисленной метрики. Не следует задавать для измерения.
 
@@ -71,7 +71,7 @@ ms.locfileid: "54117696"
 
 [!INCLUDE [application-insights-data-model-properties](../../../includes/application-insights-data-model-properties.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Вы можете узнать, как использовать [API Application Insights для пользовательских событий и метрик](../../azure-monitor/app/api-custom-events-metrics.md#trackmetric).
 - В [этой статье](data-model.md) представлены типы данных и модель данных для Application Insights.

@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 11/02/2018
 ms.author: pbutlerm
 ms.openlocfilehash: e40e83e16ab2bfd43c3bb5fa38e52a778694e90e
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50980427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61473116"
 ---
 # <a name="containers"></a>Контейнеры
 
@@ -47,6 +47,6 @@ ms.locfileid: "50980427"
 3. Создание номера SKU. Создайте номера SKU, связанные с предложением. Уникальный номер SKU нужен для каждого публикуемого образа.
 4. Сертификация и публикация предложения. Оформив предложение и выполнив технические требования, вы можете отправить предложение на публикацию. В ходе отправки начинается процесс публикации. Во время этого процесса решение тестируется, проверяется, сертифицируется и активируется в Azure Marketplace.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Прежде чем следовать этим действиям, необходимо выполнить [технические и бизнес-требования](./cpp-prerequisites.md) для публикации контейнера в Microsoft Azure Marketplace.

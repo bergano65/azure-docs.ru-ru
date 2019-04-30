@@ -11,16 +11,16 @@ ms.date: 04/02/2019
 ms.author: cakarst
 ms.reviewer: igorstan
 ms.openlocfilehash: 8a53a63b7425935e117d7af951717999bc9340b7
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59794834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61439723"
 ---
 # <a name="using-stored-procedures-in-sql-data-warehouse"></a>Использование хранимых процедур в хранилище данных SQL
 Советы по реализации хранимых процедур в хранилище данных SQL Azure для разработки решений.
 
-## <a name="what-to-expect"></a>Основные принципы
+## <a name="what-to-expect"></a>Чего ожидать
 
 Хранилище данных SQL Azure поддерживает многие функции T-SQL, которые используются в SQL Server. Что более важно, в нем есть специальные функции горизонтального масштабирования, с помощью которых можно максимально увеличить производительность решения.
 

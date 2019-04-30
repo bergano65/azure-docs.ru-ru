@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/13/2018
 ms.author: cfowler
 ms.custom: include file
-ms.openlocfilehash: 3b1b23924ea1f3f8a46c25df2737e4097ec96c44
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
-ms.translationtype: HT
+ms.openlocfilehash: bb1a1d76b8dad6f37fc624ff493e4aa1d817daac
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33814481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61061579"
 ---
 > [!IMPORTANT]
 > Эта функция доступна только для продуктов **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Премиум" от Verizon**. Недоступно в **Azure CDN из Akamai**. Сравнение возможностей CDN см. в статье [Характеристики продукта Azure CDN](../articles/cdn/cdn-features.md).

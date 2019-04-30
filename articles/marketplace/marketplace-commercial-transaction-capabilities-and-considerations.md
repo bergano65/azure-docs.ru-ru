@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/29/2018
 ms.author: yijenj
 ms.openlocfilehash: 3c07f7ac2b6407a3edf53fd5d3a4b402714fefbb
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59678910"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61065012"
 ---
 # <a name="azure-marketplace-commercial-transaction-capabilities-and-considerations"></a>Возможности коммерческих транзакций в Azure Marketplace и рекомендации по их использованию
 
@@ -165,7 +165,7 @@ ms.locfileid: "59678910"
 
 Например, если клиент приобретает решение с помощью кредитной карты:
 
-|ОПИСАНИЕ    |    Дата  |
+|Описание    |    Дата  |
 |----------|----------|
 |Период заказа   | 15 августа 2018 г. – 30 августа 2018 г. |
 |Окончание срока (месяц)   | 30 августа 2018 г. |
@@ -179,7 +179,7 @@ ms.locfileid: "59678910"
 
 Если клиент совершает покупку с помощью Соглашения Enterprise:
 
-| ОПИСАНИЕ |    Дата  |
+| Описание |    Дата  |
 |----------|----------|
 |Период заказа | 15 августа 2018 г. – 30 августа 2018 г. |
 |Окончание периода (квартал) | 30 сентября 2018 г. |

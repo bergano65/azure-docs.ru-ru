@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 01/04/2018
 ms.author: mbullwin
 ms.openlocfilehash: 58eaec32fee149c845dc77a83763f2fcd8133a06
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54120790"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60901468"
 ---
 # <a name="use-stream-analytics-to-process-exported-data-from-application-insights"></a>Обработка данных, экспортированных из Application Insights, при помощи Stream Analytics
 [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) — идеальное средство для обработки данных, [экспортированных из Application Insights](export-telemetry.md). Stream Analytics может извлекать данные из различных источников. Это средство может преобразовывать и фильтровать данные и затем отправлять их в различные приемники.
@@ -210,7 +210,7 @@ ms.locfileid: "54120790"
 
 ![Выбор набора данных и полей в Power BI.](./media/export-stream-analytics/210.png)
 
-## <a name="no-data"></a>Данные отсутствуют?
+## <a name="no-data"></a>Нет данных?
 * Проверьте правильность [формата даты](#set-path-prefix-pattern) — ГГГГ-ММ-ДД (с дефисами).
 
 ## <a name="video"></a>Видео
@@ -220,7 +220,7 @@ ms.locfileid: "54120790"
 > 
 > 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [непрерывный экспорт.](export-telemetry.md)
 * [Подробный справочник по модели данных типов и значений свойств.](export-data-model.md)
 * [Application Insights](../../azure-monitor/app/app-insights-overview.md)

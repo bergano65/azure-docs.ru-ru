@@ -9,11 +9,11 @@ ms.date: 06/27/2018
 ms.author: fryu
 ms.subservice: common
 ms.openlocfilehash: 1ad41b0b7391236a15b7c1be7d42ed81aaf5b51a
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55568589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61483440"
 ---
 # <a name="azure-storage-compliance-offerings"></a>Предложения для соответствия требованиям в службе хранилища Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "55568589"
 
 Ниже приводятся предложения для соответствия требованиям в службе хранилища Azure, чтобы гарантировать соответствие вашей службы при использовании службы хранилища Azure. Они используются в следующих предложениях службы хранилища Azure: большие двоичные объекты, файлы, очереди, таблицы, диски, холодное хранилище и хранилище класса Premium.
 
-## <a name="global"></a>Глобальные
+## <a name="global"></a>Глобальный
 
 * [Аттестация CSA STAR](https://www.microsoft.com/trustcenter/compliance/csa-star-attestation)
 * [Сертификация CSA Star](https://www.microsoft.com/trustcenter/compliance/csa-star-certification)
@@ -93,6 +93,6 @@ ms.locfileid: "55568589"
 * [TRUCS (Китай)](https://www.trustcenter.cn/compliance/default.html#TCS)
 * [UK G-Cloud](https://www.microsoft.com/trustcenter/compliance/uk-g-cloud)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Microsoft Azure и служба хранилища Azure лидируют в сфере предложений для соответствия требованиям. Последние новости и сведения вы найдете в [центре управления безопасностью Майкрософт](https://www.microsoft.com/TrustCenter/Compliance/default.aspx).

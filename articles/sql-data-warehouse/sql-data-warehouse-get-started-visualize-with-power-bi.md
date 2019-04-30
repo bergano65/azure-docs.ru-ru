@@ -11,11 +11,11 @@ ms.date: 04/17/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
 ms.openlocfilehash: b2377466ba830eed9fed0e9a4033b3eca3d351c4
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57834631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61474818"
 ---
 # <a name="visualize-data-with-power-bi"></a>Визуализация данных с помощью Power BI
 В этом руководстве показано, как использовать Power BI для подключения к хранилищу данных SQL и создания нескольких базовых визуализаций.
@@ -29,7 +29,7 @@ ms.locfileid: "57834631"
 
 * Хранилище данных SQL, в которое предварительно загружена база данных AdventureWorksDW. Для подготовки хранилища данных см. статью [Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md) и выберите загрузку демонстрационных данных. Если хранилище данных уже существует, но в нем нет демонстрационных данных, вы можете [загрузить WideWorldImportersDW](load-data-wideworldimportersdw.md).
 
-## <a name="1-connect-to-your-database"></a>1. Подключение к базе данных
+## <a name="1-connect-to-your-database"></a>1. Подключиться к базе данных
 Чтобы открыть Power BI и подключиться к базе данных AdventureWorksDW, выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).

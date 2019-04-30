@@ -9,11 +9,11 @@ ms.date: 03/09/2018
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: b0b5e817d5e39dd7800a1482d40c56db5f2be6ff
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58115417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61127148"
 ---
 1. Войдите на [портале Azure](https://portal.azure.com).
 
@@ -21,7 +21,7 @@ ms.locfileid: "58115417"
 
     ![Переход к образам виртуальных машин Azure на портале](./media/virtual-machines-common-portal-create-fqdn/marketplace-new.png)
 
-3. В Windows Server 2016 Datacenter выберите классическую модель развертывания. Щелкните Создать.
+3. В Windows Server 2016 Datacenter выберите классическую модель развертывания. Щелкните "Создать".
 
     ![Снимок экрана с доступными на портале образами виртуальных машин Azure](./media/virtual-machines-common-portal-create-fqdn/deployment-classic-model.png)
 

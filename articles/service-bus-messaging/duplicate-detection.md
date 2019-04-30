@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: c419ee1eec9e451cad835d8b4a56818101dc853a
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54856219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62120863"
 ---
 # <a name="duplicate-detection"></a>Обнаружение дубликатов
 
@@ -57,7 +57,7 @@ ms.locfileid: "54856219"
 
 Чем меньше этот интервал, тем меньше идентификаторов сообщений нужно хранить и сопоставлять, и тем меньше используется пропускной способности. Для сущностей с высоким потреблением пропускной способности, для которых требуется поиск повторяющихся сообщений, следует задавать как можно меньшее значение этого интервала.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 
