@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
-ms.openlocfilehash: 42a9c4f9983a68459351fc98fb8b757759e585bf
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
-ms.translationtype: HT
+ms.openlocfilehash: 6af5e7c7d8788dffa8f144b2ee77c291ceda86c6
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46964897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60736294"
 ---
 # <a name="routing-architecture-overview"></a>Общие сведения об архитектуре решений для маршрутизации
 
@@ -43,6 +43,6 @@ ms.locfileid: "46964897"
 ## <a name="forwarding-the-request-to-your-application-backend"></a>Перенаправление запроса в серверную часть приложения
 Наконец, при условии, что кэширование не настроено, запрос пользователя пересылается в "лучшую" серверную часть на основе конфигурации [метода маршрутизации Front Door](front-door-routing-methods.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [создании Front Door](quickstart-create-front-door.md).

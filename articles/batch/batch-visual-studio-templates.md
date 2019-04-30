@@ -16,11 +16,11 @@ ms.date: 02/27/2017
 ms.author: lahugh
 ms.custom: seodec18
 ms.openlocfilehash: 085bfa582b676f34a02e4c1c5ae7e69c49e5cb4e
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53538129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60550098"
 ---
 # <a name="use-visual-studio-project-templates-to-jump-start-batch-solutions"></a>Использование шаблонов проектов Visual Studio для быстрого начала работы с решениями пакетной службы
 
@@ -52,7 +52,7 @@ ms.locfileid: "53538129"
 
 ![Схема взаимодействия клиентского кода с пакетной службой][diagram01]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для использования шаблонов пакетной службы вам потребуется:
 
 * Компьютер, на который установлено программное обеспечение Visual Studio 2015. В настоящее время поддерживаются только шаблоны пакетной службы для Visual Studio 2015.
@@ -435,7 +435,7 @@ parameters.json. Если он найден, он загружается в ка
 > 
 > 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 ### <a name="persist-job-and-task-output-to-azure-storage"></a>Сохранение выходных данных заданий и задач в службе хранилища Azure
 Еще одно полезное средство в разработке решений пакетной службы — [Azure Batch File Conventions][nuget_package]. Эта библиотека классов .NET (сейчас доступна предварительная версия) позволяет приложениям .NET пакетной службы легко сохранять выходные данные задач в службе хранилища Azure и извлекать их из нее. [Сохранение выходных данных заданий и задач пакетной службы Azure](batch-task-output.md) содержится полное описание библиотеки и сведения о ее использовании.
 

@@ -15,17 +15,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/15/2016
 ms.author: genli
-ms.openlocfilehash: 1fca7f6165998b95254f841638cf8bcbc1fb352d
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
-ms.translationtype: HT
+ms.openlocfilehash: d3bb93d12a217e6d9066d037ff92f071b6139ab3
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31792160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60648641"
 ---
 # <a name="migrate-a-virtual-network-classic-from-an-affinity-group-to-a-region"></a>Перенос виртуальной сети (классической) из территориальной группы в регион
 
 > [!IMPORTANT]
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../resource-manager-deployment-model.md?toc=%2fazure%2fvirtual-network%2ftoc.json). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний корпорация Майкрософт рекомендует использовать модель развертывания с помощью Resource Manager.
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../resource-manager-deployment-model.md?toc=%2fazure%2fvirtual-network%2ftoc.json). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний корпорация Майкрософт рекомендует использовать модель развертывания с помощью Resource Manager.
 
 Ресурсы, созданные внутри одной территориальной группы, физически размещаются на серверах, расположенных в географической близости друг к другу. Это позволяет ресурсам взаимодействовать быстрее. В прошлом наличие территориальной группы было обязательным условием для создания виртуальной сети (классической). В то время служба диспетчера сети, которая управляла виртуальными сетями (классическими), могла работать только в пределах набора физических серверов или единицы масштабирования. Архитектурные усовершенствования позволили расширить масштабы управления сетью до региона.
 
@@ -50,9 +50,9 @@ ms.locfileid: "31792160"
    
     Измените следующие строки в файле конфигурации сети, заменив значения собственными. 
    
-    **Старое значение:** \<VirtualNetworkSitename="VNetUSWest" AffinityGroup="VNetDemoAG"\>. 
+    **Старое значение:** \<VirtualNetworkSitename = «VNetUSWest» AffinityGroup = «VNetDemoAG»\> 
    
-    **Новое значение:** \<VirtualNetworkSitename="VNetUSWest" Location="West US"\>.
+    **Новое значение:** \<VirtualNetworkSitename = «VNetUSWest» расположение «Запад США» =\>
 3. Сохраните изменения и [импортируйте](virtual-networks-using-network-configuration-file.md#import) конфигурацию сети в Azure.
 
 > [!NOTE]

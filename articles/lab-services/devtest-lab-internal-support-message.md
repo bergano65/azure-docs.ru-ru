@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
 ms.openlocfilehash: deb98c2c633200ab4be1d763a94fd2a04979a3b1
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51235706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60562344"
 ---
 # <a name="add-an-internal-support-statement-to-a-lab-in-azure-devtest-labs"></a>Добавление внутреннего заявления о поддержке в лабораторию в Azure DevTest Labs
 
@@ -68,6 +68,6 @@ Azure DevTest Labs позволяет добавить в лабораторию
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Внутренние заявления о поддержке обычно используются для предоставления сведений о поддержке, которые редко изменяются. Также вы можете узнать о том, как [размещать объявление в лаборатории](devtest-lab-announcements.md), чтобы информировать пользователей о временных изменениях или обновлениях в лаборатории.
 * Статья [Управление всеми политиками лаборатории в Azure DevTest Labs](devtest-lab-set-lab-policy.md) содержит сведения о применении ограничений и соглашений для всей подписки с помощью настраиваемых политик.

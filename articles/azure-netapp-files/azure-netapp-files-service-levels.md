@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 02/14/2019
 ms.author: b-juche
 ms.openlocfilehash: c2086eb0c5529d8e570a545e35fc716f70c7541f
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56668350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60691059"
 ---
 # <a name="service-levels-for-azure-netapp-files"></a>Уровни обслуживания для Azure NetApp Files
 Служба Azure NetApp Files поддерживает два уровня обслуживания: "Премиум" и "Стандартный". 

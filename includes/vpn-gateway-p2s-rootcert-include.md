@@ -2,18 +2,19 @@
 title: включение файла
 description: включение файла
 services: vpn-gateway
-author: cherylmc
+author: WenJason
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 12/11/2018
-ms.author: cherylmc
+origin.date: 12/11/2018
+ms.date: 12/24/2018
+ms.author: v-jay
 ms.custom: include file
 ms.openlocfilehash: 4c8e7e5272f180c482ca7fdd44302f49eb888b25
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53323853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60320239"
 ---
 Используйте либо корневой сертификат, созданный с помощью корпоративного решения (рекомендуется), либо создайте самозаверяющий сертификат. После создания корневого сертификата данные общедоступного сертификата (а не закрытый ключ) экспортируйте в виде CER-файла X.509 в кодировке Base64. Затем передайте данные общедоступного сертификата на сервер Azure.
 

@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 07/20/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: 82eb9c895f016efe569651dc89885d2e4850fd59
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
-ms.translationtype: HT
+ms.openlocfilehash: 2a9318317d5a01136a42b4fb6d580bafaf53ec4e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39159097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60685771"
 ---
 # <a name="handle-content-types-in-azure-logic-apps"></a>Обработка типов содержимого в Azure Logic Apps
 
@@ -140,14 +140,14 @@ ms.locfileid: "39159097"
 
 Ниже приводится список преобразований службой Logic Apps содержимого при использовании этих [функций](../logic-apps/workflow-definition-language-functions-reference.md).
 
-* `json()`: Приводит данные к `application/json`
-* `xml()`: Приводит данные к `application/xml`
-* `binary()`: Приводит данные к `application/octet-stream`
-* `string()`: Приводит данные к `text/plain`
-* `base64()`: Приводит содержимое к строке base64
-* `base64toString()`: Приводит строку в кодировке base64 к `text/plain`
-* `base64toBinary()`: Приводит строку в кодировке base64 к `application/octet-stream`
-* `encodeDataUri()`: Кодирует строку как массив байтов dataUri
+* `json()`: Приведение типов данных `application/json`
+* `xml()`: Приведение типов данных `application/xml`
+* `binary()`: Приведение типов данных `application/octet-stream`
+* `string()`: Приведение типов данных `text/plain`
+* `base64()`: Преобразует содержимое в строку base64
+* `base64toString()`: Преобразует строку в кодировке base64 `text/plain`
+* `base64toBinary()`: Преобразует строку в кодировке base64 `application/octet-stream`
+* `encodeDataUri()`: Кодирует строку в виде массива байтов dataUri
 * `decodeDataUri()`: Декодирует `dataUri` в массив байтов
 
 Например, при получении HTTP-запроса, где `Content-Type` установлено как `application/xml`, как в этом содержимом.

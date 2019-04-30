@@ -3,8 +3,8 @@ title: Требования к шифрованию и VPN-шлюзы Azure | Д
 description: В этой статье рассматриваются требования к шифрованию и VPN-шлюзы Azure
 services: vpn-gateway
 documentationcenter: na
-author: yushwang
-manager: rossort
+author: WenJason
+manager: digimobile
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 238cd9b3-f1ce-4341-b18e-7390935604fa
@@ -13,14 +13,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 05/22/2017
-ms.author: yushwang
+origin.date: 05/22/2017
+ms.date: 10/01/2018
+ms.author: v-jay
 ms.openlocfilehash: 060e647badcc3bad7b44d7cef3530c36b8ecdf57
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "23125182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60648691"
 ---
 # <a name="about-cryptographic-requirements-and-azure-vpn-gateways"></a>Требования к шифрованию и VPN-шлюзы Azure
 
@@ -56,7 +57,7 @@ VPN-шлюзы Azure теперь поддерживают настраивае�
 [!INCLUDE [vpn-gateway-ipsecikepolicy-faq-include](../../includes/vpn-gateway-faq-ipsecikepolicy-include.md)]
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Пошаговые инструкции по настройке пользовательской политики IPsec/IKE для подключения см. в статье о [настройке политики IPsec/IKE](vpn-gateway-ipsecikepolicy-rm-powershell.md).
 
 Дополнительные сведения о параметре UsePolicyBasedTrafficSelectors см. в статье [Connect multiple policy-based VPN devices](vpn-gateway-connect-multiple-policybased-rm-ps.md) (Подключение нескольких VPN-устройств на основе политик).

@@ -1,5 +1,5 @@
 ---
-title: Azure Backup. Создание политики резервного копирования с помощью REST API
+title: 'Azure Backup: Создание политики резервного копирования, с помощью REST API'
 description: Управление политиками архивации (планирование и хранение) с помощью REST API
 services: backup
 author: pvrk
@@ -11,11 +11,11 @@ ms.date: 08/21/2018
 ms.author: pullabhk
 ms.assetid: 5ffc4115-0ae5-4b85-a18c-8a942f6d4870
 ms.openlocfilehash: 657a777da0e984a145c1c617a6194bf4ef56306e
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51289651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60648811"
 ---
 # <a name="create-azure-recovery-services-backup-policies-using-rest-api"></a>Создание политик резервного копирования Служб восстановления Azure с помощью REST API
 
@@ -30,8 +30,8 @@ ms.locfileid: "51289651"
   - Общая папка Azure
 - Политики могут назначаться нескольким ресурсам. Политику резервного копирования виртуальной машины Azure можно использовать для защиты нескольких виртуальных машин Azure.
 - Политика состоит из двух компонентов
-  - Расписание. Когда следует создать резервную копию
-  - Хранение. Как долго следует хранить каждую резервную копию.
+  - Расписание: Когда следует создать резервную копию
+  - Хранение: Как долго должны храниться Каждая резервная копия.
 - Расписание может определяться как ежедневное или еженедельное с настройкой определенного момента времени.
 - Период хранения можно определить для ежедневных, еженедельных, ежемесячных и ежегодных точек резервного копирования.
 - "Еженедельно" относиться к резервному копированию в определенный день недели, "Ежемесячно" — к резервному копированию в определенный день месяца, а "Ежегодно" — к резервному копированию в определенный день года.
@@ -50,10 +50,10 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 Например, чтобы создать политику для восстановления диска из резервной копии виртуальной машины Azure, выполните компоненты текста запроса.
 
-|ИМЯ  |Обязательно  |type  |ОПИСАНИЕ  |
+|ИМЯ  |Обязательно для заполнения  |type  |ОПИСАНИЕ  |
 |---------|---------|---------|---------|
 |properties     |   Истина      |  ProtectionPolicy:[AzureIaaSVMProtectionPolicy](https://docs.microsoft.com/rest/api/backup/protectionpolicies/createorupdate#azureiaasvmprotectionpolicy)      | Свойства ProtectionPolicyResource        |
-|tags     |         | Объект.        |  Теги ресурсов       |
+|tags     |         | Object        |  Теги ресурсов       |
 
 Полный список определений в тексте запроса см. в [документе REST API о политике резервного копирования](https://docs.microsoft.com/rest/api/backup/protectionpolicies/createorupdate).
 
@@ -154,13 +154,13 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 ## <a name="responses"></a>Ответы
 
-Создание и обновление политики резервного копирования является [асинхронной операцией](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что эта операция создает другую операцию, которая должна отслеживаться отдельно.
+Создание и обновление политики резервного копирования является [асинхронной операцией](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
-Она возвращает два ответа: 202 (принято), когда создается другая операция, и затем 200 (ОК) после завершения этой операции.
+Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|ИМЯ  |type  |ОПИСАНИЕ  |
+|ИМЯ  |Тип  |ОПИСАНИЕ  |
 |---------|---------|---------|
-|200 ОК     |    [ProtectionPolicyResource](https://docs.microsoft.com/rest/api/backup/protectionpolicies/createorupdate#protectionpolicyresource)     |  ОК       |
+|200 ОК     |    [ProtectionPolicyResource](https://docs.microsoft.com/rest/api/backup/protectionpolicies/createorupdate#protectionpolicyresource)     |  OК       |
 |202 — принято     |         |     Принято    |
 
 ### <a name="example-responses"></a>Примеры ответов
@@ -281,7 +281,7 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Если политика уже используется для защиты элемента, любое обновление в политике приведет к [изменению защиты](backup-azure-arm-userestapi-backupazurevms.md#changing-the-policy-of-protection) всех связанных элементов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Включите защиту для незащищенной виртуальной машины Azure](backup-azure-arm-userestapi-backupazurevms.md).
 

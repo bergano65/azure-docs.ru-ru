@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 12/20/2018
 ms.author: jingwang
 ms.openlocfilehash: 99798b35419ec9574c99aaba42803fbeeb1555f1
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59267129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60615618"
 ---
 # <a name="schema-mapping-in-copy-activity"></a>Сопоставление схем в действии копирования
 Эта статья содержит сведения о том, как действие копирования фабрики данных Azure сопоставляет схемы и типы исходных данных с данными приемника во время выполнения копирования данных.
@@ -229,17 +229,17 @@ ms.locfileid: "59267129"
 Фабрика данных поддерживает следующие промежуточные типы форматов. При настройке информации о типе в конфигурации [структуры данных](concepts-datasets-linked-services.md#dataset-structure) можно указать следующие значения.
 
 * Byte[]
-* Логическое
+* Boolean
 * DateTime
 * Datetimeoffset
 * Decimal
-* Двойное с плавающей запятой
+* Double
 * Guid
 * Int16
 * Int32
 * Int64
 * Single
-* Строка
+* String
 * Timespan
 
 ### <a name="explicit-data-type-conversion"></a>Явное преобразование типов данных

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/27/2017
 ms.author: alkohli
-ms.openlocfilehash: d987a4ae170f21532a886552cbe1eb5a0d25fc3f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: c174f6ce0fb3d40af953be205a7bfcca60fbfeec
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23108212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60633150"
 ---
 # <a name="use-the-service-summary-blade-for-storsimple-8000-series-device"></a>Использование колонки сводки по службе для устройства StorSimple серии 8000
 
@@ -85,7 +85,7 @@ ms.locfileid: "23108212"
 Чтобы просмотреть различные операции, выполняемые в диспетчере устройств StorSimple, щелкните ссылку **Журналы действий** в левой части колонки сводных данных о службе StorSimple. Отобразится колонка **Журналы действий**, в которой можно просмотреть сводку по последним выполненным операциям.
 
 ![Журналы действий](./media/storsimple-8000-service-dashboard/activity-logs1.png)
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 08/01/2016
 ms.author: tomfitz
-ms.openlocfilehash: c07a9d92cac13d6325e66f44426f1a64e8ac53cb
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
-ms.translationtype: HT
+ms.openlocfilehash: fbbc8a4f636a95d18baa0dc5de541279ce36789b
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47096206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60551994"
 ---
 # <a name="share-azure-dashboards-by-using-role-based-access-control"></a>Предоставление общего доступа к панелям мониторинга Azure с помощью управления доступом на основе ролей
 После настройки панели мониторинга ее можно опубликовать и использовать совместно с другими пользователями в организации. Вы можете предоставить другим пользователям доступ к панели мониторинга Azure с помощью [управления доступом на основе ролей](../role-based-access-control/role-assignments-portal.md). Роль назначается пользователю или группе пользователей. Она определяет, можно ли пользователям просматривать или изменять опубликованную панель мониторинга. 
@@ -74,7 +74,7 @@ ms.locfileid: "47096206"
    
      ![назначенные роли](./media/azure-portal-dashboard-share-access/assigned-roles.png)
 
-## <a name="next-steps"></a>Дополнительная информация
-* Сведения о списке ролей см. в статье [RBAC: встроенные роли](../role-based-access-control/built-in-roles.md).
+## <a name="next-steps"></a>Дальнейшие действия
+* Список ролей, см. в разделе [RBAC: для управления доступом на основе ролей в Azure](../role-based-access-control/built-in-roles.md).
 * Сведения об управлении ресурсами см. в статье [Manage Azure resources through portal](resource-group-portal.md) (Управление ресурсами Azure через портал).
 

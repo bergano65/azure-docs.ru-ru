@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: bwren
 ms.openlocfilehash: 31a902302ba806889854330c6517d9f5745f1c0c
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56888352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60551744"
 ---
 # <a name="filters-in-azure-monitor-views"></a>Фильтры в представлениях Azure Monitor
 Объект **фильтра** в [представление мониторинга Azure](view-designer.md) позволяет пользователям фильтровать данные в представлении по значению конкретного свойства, не изменяя само представление.  Например, можно разрешить пользователям представления фильтровать это представление, чтобы просматривать данные только с определенного компьютера или набора компьютеров.  Можно создать несколько фильтров в одном представлении, чтобы разрешить пользователям выполнять фильтрацию по нескольким свойствам.  В этой статье описывается, как использовать фильтр и добавить его в настраиваемое представление.
@@ -56,7 +56,7 @@ ms.locfileid: "56888352"
 
 | Имя поля | Запрос значений | Тег |
 |:--|:--|:--|
-| Компьютер   | Heartbeat &#124; distinct Computer &#124; sort by Computer asc | Компьютеры |
+| Computer   | Heartbeat &#124; distinct Computer &#124; sort by Computer asc | Компьютеры |
 | EventLevelName | Event &#124; distinct EventLevelName | Уровень серьезности |
 | SeverityLevel | Syslog &#124; distinct SeverityLevel | Уровень серьезности |
 | SvcChangeType | ConfigurationChange &#124; distinct svcChangeType | ChangeType |

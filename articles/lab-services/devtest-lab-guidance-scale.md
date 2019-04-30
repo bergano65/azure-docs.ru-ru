@@ -14,11 +14,11 @@ ms.date: 02/11/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: 25a088686c739c53feadd6354baf75f3147bdc33
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57431204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60561495"
 ---
 # <a name="scale-up-your-azure-devtest-labs-infrastructure"></a>Увеличение масштаба инфраструктуры Azure DevTest Labs
 Прежде чем реализовать DevTest Labs на корпоративном уровне, нужно решить некоторые важные вопросы. Общее понимание этих вопросов поможет организации принимать решения относительно проектирования в будущем. Но эти вопросы не должны мешать организации приступить к подтверждению концепции. Ниже приведены три основных аспекта, с которых нужно начать планирование увеличения масштаба:

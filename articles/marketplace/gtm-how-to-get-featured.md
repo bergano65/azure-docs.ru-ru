@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 12/21/2018
 ms.author: ellacroi
 ms.openlocfilehash: bda94e648891ad5c4de810195e874a5774d6b498
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54355396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60736352"
 ---
 # <a name="how-to-get-featured-in-appsource-and-azure-marketplace"></a>Как разместить предложение в AppSource и Microsoft Azure Marketplace
 
@@ -49,7 +49,7 @@ ms.locfileid: "54355396"
 
 Служба поддержки GTM также содержит полную библиотеку шаблонов самостоятельного устранения неполадок, веб-содержимое, обучающие материалы и средства для дальнейшего продвижения ваших публикаций и бизнеса.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о службах выхода на рынок в marketplace, посетите [эту страницу](https://partner.microsoft.com/reach-customers/gtm).
 
