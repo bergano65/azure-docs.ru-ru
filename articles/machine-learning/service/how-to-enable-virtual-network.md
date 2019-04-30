@@ -11,11 +11,11 @@ ms.author: aashishb
 author: aashishb
 ms.date: 01/08/2019
 ms.openlocfilehash: a83661a63f784f62bf46ce75b8b4f47c57c87b19
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57840449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60819689"
 ---
 # <a name="securely-run-experiments-and-inferencing-inside-an-azure-virtual-network"></a>Безопасное выполнение экспериментов и формирование выводов в пределах виртуальной сети Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "57840449"
 
 * [Назначение IP-адресов](https://docs.microsoft.com/azure/virtual-network/virtual-network-ip-addresses-overview-arm)
 * [Группы безопасности](https://docs.microsoft.com/azure/virtual-network/security-overview)
-* [Краткое руководство Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+* [Краткое руководство. Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
 * [Фильтрация сетевого трафика](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
 
 ## <a name="storage-account-for-your-workspace"></a>Учетная запись хранения для рабочей области
@@ -205,11 +205,11 @@ except ComputeTargetException:
 
     - __Подсеть.__ Выберите подсеть.
 
-    - __Диапазон адресов службы Kubernetes.__ Выберите диапазон адресов службы Kubernetes. Для определения диапазона доступных IP-адресов используется нотация CIDR. Этот диапазон IP-адресов не должен пересекаться с диапазонами любой подсети. Например:  10.0.0.0/16.
+    - __Диапазон адресов службы Kubernetes.__ Выберите диапазон адресов службы Kubernetes. Для определения диапазона доступных IP-адресов используется нотация CIDR. Этот диапазон IP-адресов не должен пересекаться с диапазонами любой подсети. Пример. 10.0.0.0/16.
 
-    - __IP-адрес службы доменных имен (DNS) Kubernetes.__ Выберите IP-адрес службы доменных имен Kubernetes. Это IP-адрес, назначенный службе DNS Kubernetes. Он должен находиться в пределах диапазона адресов службы Kubernetes. Например:  10.0.0.10
+    - __IP-адрес службы доменных имен (DNS) Kubernetes.__ Выберите IP-адрес службы доменных имен Kubernetes. Это IP-адрес, назначенный службе DNS Kubernetes. Он должен находиться в пределах диапазона адресов службы Kubernetes. Пример. 10.0.0.10
 
-    - __Адрес моста Docker.__ Выберите адрес моста Docker. Этот IP-адрес, назначенный мосту Docker. Он не должен пересекаться с диапазоном IP-адресов, выделенным для любой подсети или службы Kubernetes. Например:  172.17.0.1/16.
+    - __Адрес моста Docker.__ Выберите адрес моста Docker. Этот IP-адрес, назначенный мосту Docker. Он не должен пересекаться с диапазоном IP-адресов, выделенным для любой подсети или службы Kubernetes. Пример. 172.17.0.1/16.
 
    ![Служба машинного обучения Azure. Параметры виртуальной сети для Вычислительной среды Машинного обучения](./media/how-to-enable-virtual-network/aks-virtual-network-screen.png)
 

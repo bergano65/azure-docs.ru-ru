@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/20/2017
 ms.author: spelluru
-ms.openlocfilehash: 0fe30fe95e77adceaa5013f89206b08daf2a58a2
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
-ms.translationtype: HT
+ms.openlocfilehash: fe8f057443b978e70e7cdd2591affd455fefdca8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43702101"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60749042"
 ---
 # <a name="azure-relay-exceptions"></a>Исключения ретранслятора Azure
 
@@ -29,18 +29,18 @@ ms.locfileid: "43702101"
 
 Интерфейсы API ретранслятора создают исключения, которые можно разделить на указанные ниже категории. Кроме того, здесь указаны предлагаемые действия, которые можно предпринять для их разрешения.
 
-*   **Ошибка в коде пользователя.** [System.ArgumentException](https://msdn.microsoft.com/library/system.argumentexception.aspx), [System.InvalidOperationException](https://msdn.microsoft.com/library/system.invalidoperationexception.aspx), [System.OperationCanceledException](https://msdn.microsoft.com/library/system.operationcanceledexception.aspx), [System.Runtime.Serialization.SerializationException](https://msdn.microsoft.com/library/system.runtime.serialization.serializationexception.aspx). 
+*   **Ошибка в коде пользователя**: System.ArgumentException, [System.InvalidOperationException](https://msdn.microsoft.com/library/system.argumentexception.aspx), [System.OperationCanceledException](https://msdn.microsoft.com/library/system.invalidoperationexception.aspx), [System.Runtime.Serialization.SerializationException](https://msdn.microsoft.com/library/system.runtime.serialization.serializationexception.aspx). 
 
-    **Общее действие.** Прежде чем продолжить, попытайтесь исправить код.
-*   **Ошибка настройки или конфигурации.** [System.UnauthorizedAccessException](https://msdn.microsoft.com/library/system.unauthorizedaccessexception.aspx). 
+    **Общее действие**: Попытайтесь исправить код, прежде чем продолжить.
+*   **Ошибка настройки или конфигурации**: [System.UnauthorizedAccessException](https://msdn.microsoft.com/library/system.unauthorizedaccessexception.aspx). 
 
-    **Общее действие.** Проверьте конфигурацию и измените ее при необходимости.
-*   **Временные исключения.** [Microsoft.ServiceBus.Messaging.MessagingException](/dotnet/api/microsoft.servicebus.messaging.messagingexception), [Microsoft.ServiceBus.Messaging.ServerBusyException](/dotnet/api/microsoft.servicebus.messaging.serverbusyexception), [Microsoft.ServiceBus.Messaging.MessagingCommunicationException](/dotnet/api/microsoft.servicebus.messaging.messagingcommunicationexception). 
+    **Общее действие**: Проверьте конфигурацию. и измените ее при необходимости.
+*   **Временные исключения**: [Microsoft.ServiceBus.Messaging.MessagingException](/dotnet/api/microsoft.servicebus.messaging.messagingexception), [Microsoft.ServiceBus.Messaging.ServerBusyException](/dotnet/api/microsoft.servicebus.messaging.serverbusyexception), [Microsoft.ServiceBus.Messaging.MessagingCommunicationException](/dotnet/api/microsoft.servicebus.messaging.messagingcommunicationexception). 
 
-    **Общее действие.** Повторите операцию или уведомите пользователей.
-*   **Другие исключения.** [System.Transactions.TransactionException](https://msdn.microsoft.com/library/system.transactions.transactionexception.aspx), [System.TimeoutException](https://msdn.microsoft.com/library/system.timeoutexception.aspx). 
+    **Общее действие**: Повторите операцию или уведомите пользователей.
+*   **Другие исключения**: [System.Transactions.TransactionException](https://msdn.microsoft.com/library/system.transactions.transactionexception.aspx), [System.TimeoutException](https://msdn.microsoft.com/library/system.timeoutexception.aspx). 
 
-    **Общее действие.** Связано с типом исключения. Ознакомьтесь с таблицей в следующем разделе. 
+    **Общее действие**: Зависящие от типа исключения. Ознакомьтесь с таблицей в следующем разделе. 
 
 ## <a name="exception-types"></a>Типы исключений
 
@@ -90,7 +90,7 @@ The time allotted to this operation may have been a portion of a longer timeout.
 
     Иногда в службе ретранслятора могут происходить задержки при обработке запросов. Например, это может произойти в период интенсивной нагрузки сети. В этом случае можно настроить повторную попытку выполнения операции через некоторое время до ее успешного завершения. Если же операцию по-прежнему не удается выполнить после нескольких попыток, посетите [сайт состояния служб Azure](https://azure.microsoft.com/status/), чтобы получить сведения об известных простоях служб.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Часто задаваемые вопросы о ретрансляторе Azure](relay-faq.md)
 * [Создание пространства имен ретранслятора с помощью портала Azure](relay-create-namespace-portal.md)
 * [Приступая к работе с гибридными подключениями к ретранслятору](relay-hybrid-connections-dotnet-get-started.md)

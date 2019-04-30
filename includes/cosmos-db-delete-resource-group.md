@@ -1,27 +1,27 @@
 ---
-author: SnehaGunda
+author: rockboyfor
 ms.service: cosmos-db
 ms.topic: include
-ms.date: 11/09/2018
-ms.author: sngun
-ms.openlocfilehash: 30efb963f34ff567c70d845a4a8891ead285b178
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+origin.date: 03/23/2019
+ms.date: 04/15/2019
+ms.author: v-yeche
+ms.openlocfilehash: e7fc8f57c0fe290809354ce19fe92337178a84b6
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51572626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60890387"
 ---
-Если вы не собираетесь использовать это приложение дальше, удалите все ресурсы, созданные в ходе работы с этим кратким руководством, чтобы не оплачивать их.
+После завершения работы с веб-приложением и учетной записью Azure Cosmos DB можно удалить созданные ресурсы Azure, чтобы не нести дополнительные расходы. Удаление ресурсов:
 
-1. На портале Azure выберите **Группа ресурсов** слева, а затем выберите созданную группу ресурсов.  
+1. На портале Azure выберите **Группы ресурсов** в левой части окна. Если меню слева свернуто, выберите ![кнопку "Развернуть"](./media/cosmos-db-delete-resource-group/expand.png), чтобы развернуть его.
 
-    Если меню слева свернуто, нажмите ![кнопку "Развернуть",](./media/cosmos-db-delete-resource-group/expand.png) чтобы развернуть его.
+2. Выберите группу ресурсов, созданную для этого краткого руководства.  
 
-   ![Метрики на портале Azure](./media/cosmos-db-delete-resource-group/delete-resources-select.png)
+    ![Метрики на портале Azure](./media/cosmos-db-delete-resource-group/delete-resources-select.png)
 
-2. В новом окне выберите группу ресурсов и щелкните **Удалить группу ресурсов**.
+2. В новом окне выберите **Удалить группу ресурсов**.
 
-   ![Метрики на портале Azure](./media/cosmos-db-delete-resource-group/delete-resources.png)   
+    ![Метрики на портале Azure](./media/cosmos-db-delete-resource-group/delete-resources.png)   
 
-3. В новом окне введите имя группы ресурсов, которую требуется удалить, и щелкните **Удалить**.
-
+3. В следующем окне введите имя группы ресурсов, которую требуется удалить, и выберите **Удалить**.

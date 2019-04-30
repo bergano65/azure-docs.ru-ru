@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 89cc8c4bffe910de0861d7f44925a10df3811fdb
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58097480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60745708"
 ---
 <a name="web-analytics"></a>Веб-аналитика
 =============
@@ -60,7 +60,7 @@ ms.locfileid: "58097480"
 
 Вы можете выбрать комбинацию из нескольких идентификаторов кампаний для дальнейшего определения нескольких источников, создающих трафик для кампании, например, откуда пришел клиент (электронная почта, блог, источник в социальных сетях и т. д.).
 
-Например: 
+Пример.
 
 1. Ссылка на информационный бюллетень: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign&src=newsletter>
 2. Ссылка на LinkedIn: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign&src=LinkedIn>
