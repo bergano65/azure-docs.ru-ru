@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako;dbgeorge
 ms.openlocfilehash: 058a1f964eb14d89628c92cbadd80511b7a27bae
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58014947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61230577"
 ---
 # <a name="use-the-haivision-kb-live-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика Haivision KB для отправки односкоростного обновляющегося потока  
 > [!div class="op_single_selector"]
@@ -44,7 +44,7 @@ ms.locfileid: "58014947"
 * Для получения необходимой пропускной способности рекомендуется удвоить скорость потоковой передачи. Это требование не является обязательным, но оно поможет уменьшить влияние перегрузки сети на пропускную способность.
 * При использовании программных кодировщиков закройте все ненужные программы.
 
-## <a name="create-a-channel"></a>Создание канала
+## <a name="create-a-channel"></a>Создать канал
 1. В средстве AMSE откройте вкладку **Live** (Передача) и щелкните правой кнопкой мыши в области канала. Выберите **Создать канал...**  в меню.
 [Haivision](./media/media-services-configure-kb-live-encoder/channel.png)
 2. Укажите имя канала, поле описания является необязательным. В разделе Channel Settings ("Параметры каналов") для параметра Live Encoding ("Кодирование в реальном времени") установите значение **Standard** ("Стандартное"), а для параметра Input Protocol ("Входной протокол") — значение **RTMP**. Остальные параметры можно оставить без изменений. Убедитесь, что флажок **Start the new channel now** (Сразу запустить новый канал) установлен.

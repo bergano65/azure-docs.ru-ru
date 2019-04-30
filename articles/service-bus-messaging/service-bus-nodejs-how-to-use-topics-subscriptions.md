@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 04/15/2019
 ms.author: aschhab
 ms.openlocfilehash: d3f71382a3f2b15ec0f9764b9913a95c0d32b21d
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59608883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60591811"
 ---
 # <a name="how-to-use-service-bus-topics-and-subscriptions-with-nodejs"></a>Как использовать разделы и подписки служебной шины с Node.js
 
@@ -82,7 +82,7 @@ var azure = require('azure');
 
 
 
-## <a name="create-a-topic"></a>Создание раздела
+## <a name="create-a-topic"></a>Создать раздел
 Объект **ServiceBusService** позволяет работать с разделами. Следующий код создает объект **ServiceBusService**. Добавьте его в начало файла **server.js** после оператора импорта модуля Аzure.
 
 ```javascript

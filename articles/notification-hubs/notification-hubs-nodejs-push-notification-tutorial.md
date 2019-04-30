@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
 ms.openlocfilehash: bdeba401e99ad16555b9f6ea00017fc525302983
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61457879"
 ---
 # <a name="sending-push-notifications-with-azure-notification-hubs-and-nodejs"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure и Node.js
 
@@ -37,10 +37,10 @@ ms.locfileid: "59995012"
 
 - Android
 - iOS
-- Универсальные приложения Windows
+- Универсальная платформа Windows
 - Windows Phone
 
-## <a name="notification-hubs"></a>Центры уведомлений
+## <a name="notification-hubs"></a>Концентраторы уведомлений
 
 Центры уведомлений Azure — это простая в использовании масштабируемая многоплатформенная инфраструктура для отправки push-уведомлений на мобильные устройства. Подробные сведения об инфраструктуре служб приведены на странице [Центры уведомлений Azure](https://msdn.microsoft.com/library/windowsazure/jj927170.aspx) .
 

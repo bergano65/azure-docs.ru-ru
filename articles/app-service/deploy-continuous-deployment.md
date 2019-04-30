@@ -15,11 +15,11 @@ ms.date: 12/03/2018
 ms.author: cephalin;dariagrigoriu
 ms.custom: seodec18
 ms.openlocfilehash: fcb2c270b36d5efbe7b799787cf2a123b51bea5c
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60765706"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Непрерывное развертывание в службе приложений Azure
 В этой статье показано, как настроить непрерывное развертывание для [службы приложений Azure](overview.md). Служба приложений обеспечивает непрерывное развертывание из BitBucket, GitHub и [Azure DevOps Services](https://www.visualstudio.com/team-services/), выбирая самые последние обновления из существующего репозитория в одной из этих служб.

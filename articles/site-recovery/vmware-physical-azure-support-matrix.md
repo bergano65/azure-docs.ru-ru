@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: raynew
 ms.openlocfilehash: dc455b5256f9c04e1e0af2c1ff3fea04af54d90b
-ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60149460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60565417"
 ---
 # <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов в Azure
 

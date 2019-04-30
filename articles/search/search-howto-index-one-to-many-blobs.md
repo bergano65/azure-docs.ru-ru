@@ -11,11 +11,11 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seofeb2018
 ms.openlocfilehash: e95eff015340659b642dff800a03f615e22c1577
-ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57220842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60871205"
 ---
 # <a name="indexing-blobs-producing-multiple-search-documents"></a>Индексирование BLOB-объектов, создания нескольких документов поиска
 По умолчанию индексатор больших двоичных объектов будет обрабатывать содержимое большого двоичного объекта как один документ. Определенные **parsingMode** значения поддержки сценариев, где отдельных больших двоичных объектов может привести к несколько документов поиска. Различные типы **parsingMode** , позволяющие индексатор для извлечения более поиска документа из большого двоичного объекта являются:
@@ -64,7 +64,7 @@ _Blob2.JSON_
 
 Эта конфигурация приведет к в индекс поиска Azure, содержащий следующие сведения (сокращены для краткости код в кодировке base64)
 
-| id | Температура | pressure |  timestamp |
+| идентификатор | Температура | pressure |  timestamp |
 |----|-------------|----------|-----------|
 | aHR0... YjEuanNvbjsx | 100 | 100 | 2019-02-13T00:00:00Z |
 | aHR0... YjEuanNvbjsy | 33 | 30 | 2019-02-14T00:00:00Z |

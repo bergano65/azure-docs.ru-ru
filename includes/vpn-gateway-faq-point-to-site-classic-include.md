@@ -2,18 +2,19 @@
 title: включение файла
 description: включение файла
 services: vpn-gateway
-author: cherylmc
+author: WenJason
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 12/06/2018
-ms.author: cherylmc
+origin.date: 12/06/2018
+ms.date: 12/24/2018
+ms.author: v-jay
 ms.custom: include file
 ms.openlocfilehash: 0c0ad6ea5a687d066c78533b45a7f531561661bf
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53323846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60845594"
 ---
 Эти вопросы и ответы применимы к подключениям P2S, использующих классическую модель развертывания.
 
@@ -31,7 +32,7 @@ ms.locfileid: "53323846"
 
 ### <a name="can-i-use-any-software-vpn-client-that-supports-sstp-for-point-to-site"></a>Можно ли использовать для подключения "точка — сеть" любой VPN-клиент, поддерживающий SSTP?
 
- Нет. Поддержка предоставляется только для перечисленных выше версий операционной системы Windows.
+№ Поддержка предоставляется только для перечисленных выше версий операционной системы Windows.
 
 ### <a name="how-many-vpn-client-endpoints-can-exist-in-my-point-to-site-configuration"></a>Сколько конечных точек VPN-клиента может существовать в конфигурации "точка — сеть"?
 
@@ -51,7 +52,7 @@ ms.locfileid: "53323846"
 
 ### <a name="does-point-to-site-support-auto-reconnect-and-ddns-on-the-vpn-clients"></a>Поддерживает ли подключение "точка — сеть" автоматическое повторное подключение и DDNS для VPN-клиентов?
 
- Нет. В конфигурациях VPN "точка — сеть" в настоящее время не поддерживаются автоматическое повторное подключение и DDNS.
+№ В конфигурациях VPN "точка — сеть" в настоящее время не поддерживаются автоматическое повторное подключение и DDNS.
 
 ### <a name="can-i-have-site-to-site-and-point-to-site-configurations-for-the-same-virtual-network"></a>Могут ли сосуществовать в одной виртуальной сети конфигурации "сеть — сеть" и "точка — сеть"?
 

@@ -1,15 +1,10 @@
 ---
-author: conceptdev
-ms.service: app-service-mobile
-ms.topic: include
-ms.date: 08/23/2018
-ms.author: crdun
 ms.openlocfilehash: b609a708a987194398c53bdf83f0d6e1f281808d
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50132964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62113549"
 ---
 По умолчанию API-интерфейсы в серверной части мобильных приложений могут вызываться анонимно. Далее необходимо ограничить доступ всем клиентам, не прошедшим проверку подлинности.  
 
@@ -20,13 +15,17 @@ ms.locfileid: "50132964"
 
     В серверном проекте выберите **Контроллеры** > **TodoItemController.cs**. Примените атрибут `[Authorize]` к классу **TodoItemController** следующим образом. Чтобы предоставить доступ только определенным методам, этот атрибут можно также применить именно к ним, а не к классу. Повторная публикация серверного проекта
 
-        [Authorize]
-        public class TodoItemController : TableController<TodoItem>
+    ```
+    [Authorize]
+    public class TodoItemController : TableController<TodoItem>
+    ```
 
 * **Серверная служба Node.js (через код Node.js)** :  
 
     Чтобы доступ к таблице предоставлялся только после проверки подлинности, добавьте в серверный скрипт Node.js следующую строку:
 
-        table.access = 'authenticated';
+    ```
+    table.access = 'authenticated';
+    ```
 
-    Дополнительные сведения см. в разделе [Практическое руководство. Обязательная аутентификация для доступа к таблицам](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#howto-tables-auth). Узнайте, как загрузить проект быстрого запуска кода с веб-узла, в разделе [Загрузка серверной части на основе Node.js в виде готового кода для быстрого запуска с помощью Git](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart).
+    Дополнительные сведения см. в разделе [как: Требовать проверку подлинности для доступа к таблицам](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#howto-tables-auth). Чтобы узнать, как загрузить проект быстрого запуска кода с веб-узла, см. в разделе [как: Загрузите проект код быстрого запуска серверной части Node.js, с помощью Git](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart).

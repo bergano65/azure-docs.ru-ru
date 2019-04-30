@@ -5,17 +5,17 @@ services: billing
 author: rothja
 ms.service: billing
 ms.topic: include
-ms.date: 04/02/2019
+ms.date: 04/22/2019
 ms.author: jroth
 ms.custom: include file
-ms.openlocfilehash: d490cab4d437c30fdb211ea27397777afc27e72e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 712b70960e09a9c2b0e7a998bc0bddbc28c1e112
+ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59804994"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63765875"
 ---
-| Ресурс | Ограничение по умолчанию | Максимальное ограничение |
+| Resource | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
 | Число ВМ на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |25 000<sup>1</sup> на регион. |25 000 на регион. |
 | Общее количество ядер виртуальных машин на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> на регион. | Обратитесь в службу поддержки. |
@@ -29,13 +29,15 @@ ms.locfileid: "59804994"
 | Уникальный тег вычисления для каждой подписки<sup>2</sup> | 10 000 | 10 000 |
 | [Облачные службы](../articles/cloud-services/cloud-services-choose-me.md) на подписку |Н/Д<sup>3</sup> |Н/Д<sup>3</sup> |
 | [Территориальные группы](../articles/virtual-network/virtual-networks-migrate-to-regional-vnet.md) на подписку |Н/Д<sup>3</sup> |Н/Д<sup>3</sup> |
-| [Уровень подписки развертываний](../articles/azure-resource-manager/deploy-to-subscription.md) каждом месте | 800 | 800 |
+| [Уровень подписки развертываний](../articles/azure-resource-manager/deploy-to-subscription.md) каждом месте | 800<sup>4</sup> | 800 |
 
 <sup>1</sup>ограничения по умолчанию различаются по типу категории предложения, например бесплатной пробной версии и оплаты по мере использования и ряда, например Dv2, F и G.
 
 <sup>2</sup>можно применять неограниченное число тегов для каждой подписки. Число тегов на ресурс или группу ресурсов ограничено значением 15. Resource Manager возвращает [список уникальное имя тега и значения](/rest/api/resources/tags) в подписке только в том случае, когда число тегов равно 10 000 или меньше. Вы по-прежнему можно найти ресурс по тегу Если это число превышает 10 000.  
 
 <sup>3</sup>эти возможности больше не требуются для групп ресурсов Azure и Resource Manager.
+
+<sup>4</sup>Если вы достигли предела в 800 развертываний, удалить развертывания из журнала, больше не требуются. Чтобы удалить развертывания уровня подписки, используйте [Remove-AzDeployment](/powershell/module/az.resources/Remove-AzDeployment) или [удаление развертывания az](/cli/azure/deployment?view=azure-cli-latest#az-deployment-delete).
 
 > [!NOTE]
 > Ядер виртуальных машин действует региональное общее ограничение. Они также имеют ограничение для региональных ряда на размер, например Dv2 и F. Эти ограничения применяются отдельно. Например, рассмотрим подписку с ограничением до 30 ядер виртуальных машин с восточной части США, 30 ядер серии A и 30 ядер серии D. Эту подписку можно развернуть 30 виртуальных машин A1 или 30 виртуальных машин D1 или сочетания этих двух не должно превышать 30 ядер. Пример сочетания — 10 виртуальных машин A1 и 20 виртуальных машин D1.  

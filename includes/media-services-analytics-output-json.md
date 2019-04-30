@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: juliako
 ms.openlocfilehash: 065cb4daa9501ee658d364dad43b9e03798e4083
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52272015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61217249"
 ---
 Задание создает выходной файл JSON c метаданными об обнаруженных и отслеживаемых лицах. Метаданные включают координаты, указывающие расположение лиц, а также идентификационный код лица, указывающий на отслеживание этого человека. Если лицо в анфас теряется или перекрывается в кадре, его идентификационный номер может быть сброшен, в результате чего нескольким людям назначаются несколько идентификаторов.
 

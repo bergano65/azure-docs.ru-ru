@@ -14,12 +14,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/17/2017
 ms.author: crdun
-ms.openlocfilehash: 557f6f6a6d4925ec167760455dfc67449582c05c
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
-ms.translationtype: HT
+ms.openlocfilehash: 352e64664e6796fb4e0a7941de91ef4045076aed
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42811676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62104611"
 ---
 # <a name="add-push-notifications-to-your-android-app"></a>Добавление push-уведомлений в приложение Android
 
@@ -31,7 +31,7 @@ ms.locfileid: "42811676"
 
 Если вы не используете скачанный проект сервера, необходимо добавить пакет расширений для push-уведомлений. Дополнительные сведения см. в статье [Работа с пакетом SDK для внутреннего сервера .NET для мобильных приложений Azure](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Кроме этого, вам потребуются:
 
@@ -58,7 +58,7 @@ ms.locfileid: "42811676"
 
 [!INCLUDE [app-service-mobile-dotnet-backend-configure-push-google](../../includes/app-service-mobile-dotnet-backend-configure-push-google.md)]
 
-## <a name="add-push-notifications-to-your-app"></a>Добавление push-уведомлений в приложение
+## <a name="add-push-notifications-to-your-app"></a>Добавьте в приложения возможность использования push-уведомлений
 
 В этом разделе мы обновим клиентское приложение Android для обработки push-уведомлений.
 
@@ -82,7 +82,7 @@ ms.locfileid: "42811676"
 
 Приложение можно проверить, подключив телефон Android напрямую с помощью USB-кабеля или используя виртуальное устройство в эмуляторе.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы изучили это руководство и теперь можете перейти к ознакомлению с одной из следующих тем.
 

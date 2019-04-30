@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: jingwang
 ms.openlocfilehash: 9cb3c028c14e6c47d47eafcf6279a918c0917442
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59272212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61093953"
 ---
 # <a name="copy-data-to-and-from-azure-sql-database-managed-instance-by-using-azure-data-factory"></a>Копирование данных в Управляемый экземпляр Базы данных SQL Azure и из него с помощью Фабрики данных Azure
 
@@ -511,27 +511,27 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 |:--- |:--- |
 | bigint |Int64 |
 | binary |Byte[] |
-| bit |Логическое |
+| bit |Boolean |
 | char |String, Char[] |
-| date |DateTime |
-| DateTime |DateTime |
-| datetime2; |DateTime |
+| date |Datetime |
+| Datetime |Datetime |
+| datetime2 |Datetime |
 | Datetimeoffset |DateTimeOffset |
 | Decimal |Decimal |
 | FILESTREAM attribute (varbinary(max)) |Byte[] |
 | Float |Double |
 | image |Byte[] |
 | int |Int32 |
-| money; |Decimal |
+| money |Decimal |
 | nchar |String, Char[] |
 | ntext |String, Char[] |
 | numeric |Decimal |
 | nvarchar |String, Char[] |
-| real; |Single |
+| real |Single |
 | rowversion |Byte[] |
-| smalldatetime; |DateTime |
+| smalldatetime |Datetime |
 | smallint |Int16 |
-| smallmoney; |Decimal |
+| smallmoney |Decimal |
 | sql_variant |Object |
 | text |String, Char[] |
 | time |TimeSpan |
@@ -540,7 +540,7 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 | uniqueidentifier |Guid |
 | varbinary |Byte[] |
 | varchar |String, Char[] |
-| xml |xml |
+| Xml |xml |
 
 >[!NOTE]
 > В настоящее время для типов данных, которые сопоставляются с промежуточными типом Decimal, Фабрика данных Azure поддерживает точность до 28. Если для ваших данных требуется точность больше 28, попробуйте преобразовать их в строковые данные в SQL-запросе.

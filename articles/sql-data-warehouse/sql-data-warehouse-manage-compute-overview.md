@@ -11,11 +11,11 @@ ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
 ms.openlocfilehash: 47be738a4e5dcec144d482c28e39cbe950bba3e7
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55460392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60748940"
 ---
 # <a name="manage-compute-in-azure-sql-data-warehouse"></a>Управление вычислительными ресурсами в хранилище данных SQL Azure
 Узнайте об управлении вычислительными ресурсами в хранилище данных SQL Azure. Сократите затраты, приостанавливая работу хранилища данных, или масштабируйте хранилище данных в соответствии потребностями в производительности. 
@@ -114,5 +114,5 @@ ms.locfileid: "55460392"
 Для масштабирования хранилища данных требуются разрешения, описанные в статье [ALTER DATABASE](/sql/t-sql/statements/alter-database-azure-sql-data-warehouse).  Чтобы приостановить и возобновить работу, нужны разрешения [Участник баз данных SQL](../role-based-access-control/built-in-roles.md#sql-db-contributor), в частности Microsoft.Sql/servers/databases/action.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Еще одним аспектом управления вычислительными ресурсами является выделение различных вычислительных ресурсов для обработки отдельных запросов. Дополнительные сведения см. в разделе [Классы ресурсов для управления рабочими нагрузками](resource-classes-for-workload-management.md).

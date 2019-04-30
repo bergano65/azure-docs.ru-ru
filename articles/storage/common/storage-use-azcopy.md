@@ -2,18 +2,18 @@
 title: Копирование или перемещение данных в службу хранилища Azure с помощью AzCopy для Windows | Документация Майкрософт
 description: Утилита AzCopy для Windows позволяет копировать и перемещать данные в содержимое BLOB-объектов, таблиц и файлов и из него. Копируйте данные в хранилище Azure из локальных файлов, а также внутри учетной записи хранения и из одной такой учетной записи в другую. Легко переносите данные в хранилище Azure.
 services: storage
-author: seguler
+author: tamram
 ms.service: storage
 ms.topic: article
 ms.date: 01/03/2019
-ms.author: seguler
+ms.author: tamram
 ms.subservice: common
 ms.openlocfilehash: 6ae3ec566c05d2460747439d61c87c995a90b19c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58881738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60728990"
 ---
 # <a name="transfer-data-with-the-azcopy-on-windows"></a>Перенос данных с помощью AzCopy для Windows
 AzCopy — это служебная программа командной строки. Она предназначена для копирования данных из хранилища BLOB-объектов, хранилища файлов и хранилища таблиц Microsoft Azure (и обратно) с помощью простых команд, обеспечивающих оптимальную производительность. Вы можете перемещать данные между файловой системой и учетной записью хранения или между разными учетными записями хранения.  

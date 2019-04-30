@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: alkohli
-ms.openlocfilehash: 849eccff114c2fd6d952e44d095d0cc89a238675
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
-ms.translationtype: HT
+ms.openlocfilehash: dd2f6fcc9b2f5d716566e91e89487969613d1005
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23109132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61482916"
 ---
 # <a name="replace-a-controller-module-on-your-storsimple-device"></a>Замена модуля контроллера на устройстве StorSimple
 ## <a name="overview"></a>Обзор
@@ -90,7 +90,7 @@ ms.locfileid: "23109132"
    
     **Рис. 1.** Задняя поверхность устройства StorSimple
    
-   | Метка | ОПИСАНИЕ |
+   | Метка | Описание |
    |:--- |:--- |
    | 1 |PCM 0 |
    | 2 |PCM 1 |
@@ -166,7 +166,7 @@ ms.locfileid: "23109132"
 1. Возьмитесь за защелку контроллера большим и указательным пальцем.
 2. Плавно сожмите большой и указательный палец для освобождения защелки контроллера.
    
-    ![Освобождение защелки контроллера](./media/storsimple-controller-replacement/IC741047.png)
+    ![ Освобождение защелки контроллера](./media/storsimple-controller-replacement/IC741047.png)
    
     **Рис. 2.** Освобождение защелки контроллера
 3. Используйте защелку в качестве рукоятки для извлечения контроллера из корпуса.
@@ -231,11 +231,11 @@ ms.locfileid: "23109132"
 
 **Рис. 8.** Задняя поверхность основного корпуса с портами данных и индикаторами
 
-| Метка | ОПИСАНИЕ |
+| Метка | Описание |
 |:--- |:--- |
 | 1–6 |сетевые порты ДАННЫЕ 0–5  |
 | 7 |Синий индикатор |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте подробнее о [замене компонентов оборудования StorSimple](storsimple-8000-hardware-component-replacement.md).
 
