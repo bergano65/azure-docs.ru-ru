@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 04/13/2018
 ms.author: chrisgre
 ms.openlocfilehash: 598bf82e375f472b2f723c3462ba7ba7b4d25fbe
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59012955"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61333657"
 ---
 # <a name="automatic-iot-device-management-at-scale-using-the-azure-portal"></a>Автоматическое управление устройствами Интернета вещей в нужном масштабе с помощью портала Azure
 
@@ -88,7 +88,7 @@ ms.locfileid: "59012955"
 
 2. Введите запрос для параметра **Metric Criteria** (Критерии метрики).  Запрос основан на сообщаемых свойствах двойников устройств.  Метрика представляет количество строк, возвращаемых запросом.
 
-Например: 
+Пример.
 
 ```sql
 SELECT deviceId FROM devices 
@@ -115,7 +115,7 @@ SELECT deviceId FROM devices
 
 3. Нажмите кнопку **Далее**, чтобы перейти к последнему шагу.
 
-### <a name="review-configuration"></a>Просмотр конфигурации
+### <a name="review-configuration"></a>Проверка конфигурации
 
 Просмотрите сведения о конфигурации, а затем выберите **Отправить**.
 

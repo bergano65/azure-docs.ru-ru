@@ -16,15 +16,15 @@ ms.workload: infrastructure
 ms.date: 04/19/2019
 ms.author: haroldw
 ms.openlocfilehash: fba29cd55f2d765faa107de3a8961032ef44deec
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59997408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60771369"
 ---
 # <a name="post-deployment-tasks"></a>Задачи, выполняемые после развертывания
 
-После развертывания кластера OpenShift можно настроить дополнительные элементы. В этой статье рассматриваются следующие вопросы:
+После развертывания кластера OpenShift можно настроить дополнительные элементы. В этой статье рассматриваются следующие действия:
 
 - Настройка единого входа с использованием Azure Active Directory (Azure AD).
 - Как настроить журналы Azure Monitor для мониторинга OpenShift

@@ -10,11 +10,11 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 10/09/2018
 ms.openlocfilehash: 9ee484971e217b0ca4dd7ad855e9e6dc3313e5d4
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50230341"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60684804"
 ---
 # <a name="create-conditional-statements-that-control-workflow-actions-in-azure-logic-apps"></a>Создание условных операторов, которые управляют действиями в рабочих процессах Azure Logic Apps
 
@@ -25,7 +25,7 @@ ms.locfileid: "50230341"
 > [!TIP]
 > Чтобы выполнять различные шаги на основе определенных значений, используйте [*оператор switch*](../logic-apps/logic-apps-control-flow-switch-statement.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -33,21 +33,21 @@ ms.locfileid: "50230341"
 
 * Чтобы выполнить действия, указанные в данной статье, [создайте этот пример приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md), используя учетную запись Outlook.com или Office 365 Outlook.
 
-## <a name="add-condition"></a>Добавьте условие
+## <a name="add-condition"></a>Добавить условие
 
 1. На <a href="https://portal.azure.com" target="_blank">портале Azure</a> откройте приложение логики в конструкторе приложений логики.
 
 1. Добавьте условие в нужное место. 
 
-   Чтобы добавить условие между шагами, наведите указатель мыши на стрелку, где его нужно добавить. Щелкните появившийся знак **плюс** (**+**), затем выберите **Добавить действие**. Например: 
+   Чтобы добавить условие между шагами, наведите указатель мыши на стрелку, где его нужно добавить. Щелкните появившийся знак **плюс** (**+**), затем выберите **Добавить действие**. Пример.
 
    ![Добавьте действие между шагами](./media/logic-apps-control-flow-conditional-statement/add-action.png)
 
    Если необходимо добавить условие в конце рабочего процесса, перейдите в нижнюю часть приложения логики и выберите **New step**(Новый шаг) > **Add a condition** (Добавить условие).
 
-1. В поле поиска в качестве фильтра введите слово "condition" (условие). Выберите действие: **Condition — Control** (Условие — Контроль)
+1. В поле поиска в качестве фильтра введите слово "condition" (условие). Выбор действия **Condition - элемент управления**
 
-   ![Добавьте условие](./media/logic-apps-control-flow-conditional-statement/add-condition.png)
+   ![Добавить условие](./media/logic-apps-control-flow-conditional-statement/add-condition.png)
 
 1. В поле **Условие** создайте ваше условие. 
 
@@ -62,7 +62,7 @@ ms.locfileid: "50230341"
    В этом примере выберите **содержит**. 
 
    1. В текстовом поле справа укажите в качестве критерия значение или поле. 
-   В этом примере укажите следующую строку: **Microsoft**.
+   В этом примере укажите следующую строку: **Майкрософт**
 
    Ниже приведено полное условие:
 
@@ -72,7 +72,7 @@ ms.locfileid: "50230341"
    Чтобы добавить группу второстепенных условий выберите **Добавить** > **Добавить группу**. 
    Чтобы сгруппировать существующие строки, установите флажки, нажмите на кнопку с многоточием (...) возле одной из строк, затем выберите **Make group** (Создать группу).
 
-1. В разделе **Если истинно** и **Если ложно** добавьте шаги, которые будут выполнены в зависимости от того, удовлетворяется ли условие. Например: 
+1. В разделе **Если истинно** и **Если ложно** добавьте шаги, которые будут выполнены в зависимости от того, удовлетворяется ли условие. Пример.
 
    ![Условие с путями "Если истинно" и "Если ложно"](./media/logic-apps-control-flow-conditional-statement/condition-yes-no-path.png)
 
@@ -116,7 +116,7 @@ ms.locfileid: "50230341"
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Оставить предложения по функциям или проголосовать за них вы можете на [сайте отзывов пользователей Azure Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Операторы switch. Выполнение различных шагов на основе различных значений в приложениях логики](../logic-apps/logic-apps-control-flow-switch-statement.md)
 * [Loops: Process arrays or repeat actions until a condition is met](../logic-apps/logic-apps-control-flow-loops.md) (Циклы. Обработка массивов или повторение действий до выполнения условия)

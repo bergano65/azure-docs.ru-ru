@@ -11,11 +11,11 @@ ms.date: 10/12/2018
 ms.author: elbutter
 ms.reviewer: craigg
 ms.openlocfilehash: a835fbd427408afae9ea6ae1b1bc2a84c18b0c34
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58540463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61475253"
 ---
 # <a name="striim-azure-sql-dw-marketplace-offering-install-guide"></a>Руководство по установке Striim для хранилища данных SQL Azure
 

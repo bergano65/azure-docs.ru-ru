@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: 3dbf0aea50f382a0b325bf068a200cde42098733
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59547603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60679876"
 ---
 # <a name="using-azure-cdn-with-cors"></a>Использование Azure CDN с CORS
 ## <a name="what-is-cors"></a>Что такое CORS?
@@ -36,7 +36,7 @@ CORS (общий доступ к ресурсам независимо от ис
 
 2. Сервер может отправить в ответ следующее:
 
-   * Ответ с заголовком **Access-Control-Allow-Origin**, который указывает, какие исходные сайты разрешены. Например: 
+   * Ответ с заголовком **Access-Control-Allow-Origin**, который указывает, какие исходные сайты разрешены. Пример.
 
      `Access-Control-Allow-Origin: https://www.contoso.com`
 

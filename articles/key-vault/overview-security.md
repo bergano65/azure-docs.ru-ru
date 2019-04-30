@@ -2,29 +2,26 @@
 title: Безопасность в Azure Key Vault | Документация Майкрософт
 description: Управление правами доступа для Azure Key Vault, ключей и секретов. Описание модели проверки подлинности и авторизации для Key Vault и обеспечения защиты вашего хранилища ключей.
 services: key-vault
-documentationcenter: ''
 author: barclayn
 manager: barbkess
 tags: azure-resource-manager
 ms.service: key-vault
-ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: barclayn
 Customer intent: As a key vault administrator, I want to learn the options available to secure my vaults
 ms.openlocfilehash: 43847b53fbf84fe42be3efdbd647767904a05fb8
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60014800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60777667"
 ---
 # <a name="azure-key-vault-security"></a>Безопасность в Azure Key Vault
 
 Требуется для защиты ключей шифрования и секретов, таких как сертификаты, строки соединения и пароли в облаке, поэтому при использовании Azure Key Vault. Так как вы храните конфиденциальные и важных бизнес-данных, которые необходимо выполнить шаги, чтобы повысить уровень безопасности, хранилищ и данные, хранящиеся в них. Здесь мы рассмотрим некоторые основные понятия, которые следует учитывать при разработке безопасности Azure Key Vault.
 
-## <a name="identity-and-access-management"></a>Управление удостоверениями и доступом
+## <a name="identity-and-access-management"></a>Управление идентификационной информацией и доступом
 
 При создании хранилища ключей в подписке Azure оно автоматически связывается с арендатором Azure AD этой подписки. Всякий, кто пытается управлять или получения содержимого из хранилища должен пройти проверку подлинности с помощью Azure AD.
 

@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 03/18/2019
 ms.author: tomfitz
 ms.openlocfilehash: d4ecccf8787e369b9a3270eab2d01a01ce7ae0c7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58174313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61363466"
 ---
 # <a name="using-linked-and-nested-templates-when-deploying-azure-resources"></a>Использование связанных и вложенных шаблонов при развертывании ресурсов Azure
 
@@ -337,7 +337,7 @@ ms.locfileid: "58174313"
 
 Resource Manager обрабатывает каждый шаблон как отдельное развертывание в журнале развертывания. Поэтому основной шаблон с тремя связанными и вложенными шаблонами отображается в журнале развертывания следующим образом.
 
-![Журнал развертывания](./media/resource-group-linked-templates/deployment-history.png)
+![История развертывания](./media/resource-group-linked-templates/deployment-history.png)
 
 С помощью этих отдельных записей в журнале можно извлечь выходные значения после развертывания. Следующий шаблон создает общедоступный IP-адрес и выводит IP-адрес:
 
@@ -508,7 +508,7 @@ az group deployment create --resource-group ExampleGroup --template-uri $url?$to
 
 В следующих примерах показаны наиболее частые способы использования связанных шаблонов.
 
-|Основной шаблон  |Связанный шаблон |ОПИСАНИЕ  |
+|Основной шаблон  |Связанный шаблон |Описание  |
 |---------|---------| ---------|
 |[Привет, мир!](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworldparent.json) |[связанный шаблон](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworld.json) | Возвращает строку из связанного шаблона. |
 |[Подсистема балансировки нагрузки с общедоступным IP-адресом](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) |[связанный шаблон](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip.json) |Возвращает общедоступный IP-адрес из связанного шаблона и задает это значение в подсистеме балансировки нагрузки. |

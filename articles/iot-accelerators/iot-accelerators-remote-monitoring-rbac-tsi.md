@@ -1,5 +1,5 @@
 ---
-title: Управление доступом к данным удаленного мониторинга в Azure | Документы Майкрософт
+title: Удаленный мониторинг доступа к данным элемент управления — Azure | Документация Майкрософт
 description: Эта статья содержит сведения о настройке управления доступом для обозревателя телеметрии Аналитики временных рядов в акселераторе решения для удаленного мониторинга
 author: dominicbetts
 manager: timlt
@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 08/06/2018
 ms.topic: conceptual
-ms.openlocfilehash: ecc3cb32a4bbacb92c875133bf72fc0374bc24df
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: 778637b7488b7c5c21b600673890da79a76b4997
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46370100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61443239"
 ---
 # <a name="configure-access-controls-for-the-time-series-insights-telemetry-explorer"></a>Настройка управления доступом для обозревателя телеметрии Аналитики временных рядов
 
@@ -23,11 +23,11 @@ ms.locfileid: "46370100"
 
 [!INCLUDE [iot-tsi-data-access](../../includes/iot-tsi-data-access.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как обеспечивается управление доступом для обозревателя Аналитики временных рядов в акселераторе решения для удаленного мониторинга.
 
 Более подробные сведения об акселераторе решения для удаленного мониторинга см. в статье [Архитектура предварительно настроенного решения для удаленного мониторинга](iot-accelerators-remote-monitoring-sample-walkthrough.md).
 
-Дополнительные сведения о настройке решения для удаленного мониторинга см. в статье [Настройка и повторное развертывание микрослужбы](iot-accelerators-microservices-example.md)
-<!-- Next tutorials in the sequence -->.
+Дополнительные сведения о настройке решения для удаленного мониторинга см. в статье [Настройка и повторное развертывание микрослужбы](iot-accelerators-microservices-example.md).
+<!-- Next tutorials in the sequence -->

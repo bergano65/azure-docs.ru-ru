@@ -7,11 +7,11 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 03/18/2019
 ms.openlocfilehash: 836d36cc6f220bb544e0c7723506c624c5f9fc39
-ms.sourcegitcommit: 280d9348b53b16e068cf8615a15b958fccad366a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58407306"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60896532"
 ---
 # <a name="consistency-levels-in-azure-cosmos-db"></a>Уровни согласованности в Azure Cosmos DB
 
@@ -73,7 +73,7 @@ ms.locfileid: "58407306"
 | **Постоянный префикс** | 0:0, 0:1, 1:1, 1:2, 1:3, 2:3, 2:4, 2:5 |
 | **Итоговая** | 0:0, 0:1, 0:2, 0:3, 0:4, 0:5, 1:0, 1:1, 1:2, 1:3, 1:4, 1:5, 2:0, 2:1, 2:2, 2:3, 2:4, 2:5 |
 
-## <a name="additional-reading"></a>Дополнительные материалы
+## <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 Дополнительные сведения об основных понятиях согласованности можно найти в следующих статьях.
 

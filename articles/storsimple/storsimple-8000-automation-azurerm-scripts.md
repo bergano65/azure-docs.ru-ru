@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 10/03/2017
 ms.author: alkohli
 ms.openlocfilehash: 646b862733e8727c9c8729f1ac038fa88cfa0580
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58443186"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60726423"
 ---
 # <a name="use-azure-resource-manager-sdk-based-scripts-to-manage-storsimple-devices"></a>Использование сценариев Azure Resource Manager для управления устройствами StorSimple на основе пакета SDK
 
@@ -33,7 +33,7 @@ ms.locfileid: "58443186"
 
 #### <a name="table-of-azure-resource-manager-sdk-based-sample-scripts"></a>Таблица сценариев на основе пакета SDK для Azure Resource Manager
 
-| Сценарии Azure Resource Manager                    | ОПИСАНИЕ                                                                                                                                                                                                       |
+| Сценарии Azure Resource Manager                    | Описание                                                                                                                                                                                                       |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Authorize-ServiceEncryptionRollover.ps1](https://raw.githubusercontent.com/anoobbacker/storsimpledevicemgmttools/master/Authorize-ServiceEncryptionRollover.ps1)          | Этот сценарий позволяет авторизовать устройство StorSimple для изменения ключей шифрования данных службы.                                                                                                           |
 | [Create-StorSimpleCloudAppliance.ps1](https://raw.githubusercontent.com/anoobbacker/storsimpledevicemgmttools/master/Create-StorSimpleCloudAppliance.ps1)              | В этом сценарии создается облачное устройство StorSimple 8010 или 8020. Затем можно настроить и зарегистрировать облачное устройство в службе диспетчера данных StorSimple.                                                       |

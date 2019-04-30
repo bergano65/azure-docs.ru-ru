@@ -1,20 +1,23 @@
 ---
 title: Операции удаления из API Cassandra для Azure Cosmos DB из Spark
 description: В этой статье рассказывается, как удалять данные из таблиц в API Cassandra для Azure Cosmos DB из Spark.
-author: kanshiG
-ms.author: govindk
+author: rockboyfor
+ms.author: v-yeche
 ms.reviewer: sngun
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
-ms.date: 09/24/2018
+origin.date: 09/24/2018
+ms.date: 03/18/2019
 ms.openlocfilehash: fc9e0dabd226952bea3bd14da0747c5b6292c2e2
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54036551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60893971"
 ---
+<!--Update_Description: new articles on  -->
+<!--ms.date: 03/18/2019-->
 # <a name="delete-data-in-azure-cosmos-db-cassandra-api-tables-from-spark"></a>Удаление данных из таблиц API Cassandra для Azure Cosmos DB из Spark
 
 В этой статье рассказывается, как удалять данные из таблиц в API Cassandra для Azure Cosmos DB из Spark.
@@ -31,7 +34,7 @@ import com.datastax.spark.connector.cql.CassandraConnector
 import com.microsoft.azure.cosmosdb.cassandra
 
 //Connection-related
-spark.conf.set("spark.cassandra.connection.host","YOUR_ACCOUNT_NAME.cassandra.cosmosdb.azure.com")
+spark.conf.set("spark.cassandra.connection.host","YOUR_ACCOUNT_NAME.cassandra.cosmosdb.azure.cn")
 spark.conf.set("spark.cassandra.connection.port","10350")
 spark.conf.set("spark.cassandra.connection.ssl.enabled","true")
 spark.conf.set("spark.cassandra.auth.username","YOUR_ACCOUNT_NAME")
@@ -356,9 +359,13 @@ CassandraRow{book_id: b00501, book_author: Arthur Conan Doyle, book_name: The me
 deleteBooksRDD: com.datastax.spark.connector.rdd.CassandraTableScanRDD[com.datastax.spark.connector.CassandraRow] = CassandraTableScanRDD[145] at RDD at CassandraRDD.scala:19
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы выполнить операции агрегирования и копирования данных, обратитесь к следующим статьям:
- 
+
 * [Операции агрегирования](cassandra-spark-aggregation-ops.md)
 * [Операции копирования таблиц](cassandra-spark-table-copy-ops.md)
+
+<!--Verify sucessfully-->
+<!--Update_Description: new articles on cassandra spark delete ops -->
+<!--ms.date: 03/18/2019-->

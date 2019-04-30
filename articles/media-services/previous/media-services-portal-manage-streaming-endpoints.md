@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 1775bbb2913f6b1a985ca7ec9e89bafed42fd0e6
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58258213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61129734"
 ---
 # <a name="manage-streaming-endpoints-with-the-azure-portal"></a>Управление конечными точками потоковой передачи с помощью портала Azure 
 
@@ -38,7 +38,7 @@ ms.locfileid: "58258213"
 1. Выберите учетную запись служб мультимедиа Azure на [портале Azure](https://portal.azure.com/).
 2. В колонке **Параметры** щелкните **Конечные точки потоковой передачи**.
    
-    ![конечная точка потоковой передачи](./media/media-services-portal-manage-streaming-endpoints/media-services-manage-streaming-endpoints1.png)
+    ![Конечная точка потоковой передачи](./media/media-services-portal-manage-streaming-endpoints/media-services-manage-streaming-endpoints1.png)
 
 > [!NOTE]
 > Плата взимается, только когда конечная точка потоковой передачи используется.
@@ -57,13 +57,13 @@ ms.locfileid: "58258213"
 2. Чтобы удалить конечную точку потоковой передачи, нажмите кнопку **Удалить** .      
 3. Нажмите кнопку **Запуск** для запуска конечной точки.
    
-    ![конечная точка потоковой передачи](./media/media-services-portal-manage-streaming-endpoints/media-services-manage-streaming-endpoints2.png)
+    ![Конечная точка потоковой передачи](./media/media-services-portal-manage-streaming-endpoints/media-services-manage-streaming-endpoints2.png)
 
 
 ## <a id="configure_streaming_endpoints"></a>Настройка конечной точки потоковой передачи
 Конечная точка потоковой передачи позволяет настроить следующие свойства:
 
-* управление доступом;
+* Контроль доступа
 * управление кэшем;
 * межсайтовые политики доступа.
 
@@ -113,7 +113,7 @@ ms.locfileid: "58258213"
 
 Вы можете настроить профиль CDN, нажав кнопку **Управление CDN** в верхней части страницы.
 
-![конечная точка потоковой передачи](./media/media-services-portal-manage-streaming-endpoints/media-services-manage-streaming-endpoints6.png)
+![Конечная точка потоковой передачи](./media/media-services-portal-manage-streaming-endpoints/media-services-manage-streaming-endpoints6.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.

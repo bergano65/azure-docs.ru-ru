@@ -11,15 +11,15 @@ ms.author: zarhoads
 ms.custom: mvc
 keywords: Cosmos DB, открытый компонент Service Broker, открытый компонент Service Broker для Azure
 ms.openlocfilehash: 46fa5564e5dd3429f812b263295044d867a8511c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57991978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61028422"
 ---
 # <a name="integrate-existing-mongodb-application-with-azure-cosmos-db-api-for-mongodb-and-open-service-broker-for-azure-osba"></a>Интеграция имеющихся приложений с MongoDB с помощью API для MongoDB в Azure Cosmos DB и открытого компонента Service Broker для Azure (OSBA)
 
-Azure Cosmos DB — это многомодельная глобально распределенная служба баз данных. Она также обеспечивает совместимость проводного протокола с несколькими API-интерфейсами NoSQL, в том числе для MongoDB. API-интерфейс Cosmos DB для MongoDB позволяет использовать Cosmos DB с имеющимся приложением MongoDB без необходимости изменения драйверов в целях реализации базы данных приложения. Кроме того, можно предоставить службу Cosmos DB с помощью открытого компонента Service Broker для Azure.
+Azure Cosmos DB — это многомодельная, глобально распределенная служба баз данных. Она также обеспечивает совместимость проводного протокола с несколькими API-интерфейсами NoSQL, в том числе для MongoDB. API-интерфейс Cosmos DB для MongoDB позволяет использовать Cosmos DB с имеющимся приложением MongoDB без необходимости изменения драйверов в целях реализации базы данных приложения. Кроме того, можно предоставить службу Cosmos DB с помощью открытого компонента Service Broker для Azure.
 
 В этой статье вам потребуется имеющееся приложение Java, которое использует базу данных MongoDB. Вы обновите его для использования базы данных Cosmos DB с помощью открытого компонента Service Broker для Azure.
 

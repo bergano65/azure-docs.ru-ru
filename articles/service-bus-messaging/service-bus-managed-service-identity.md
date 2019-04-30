@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 09/01/2018
 ms.author: aschhab
 ms.openlocfilehash: 5edeebd9698384785082e5a441c24e136ed22481
-ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54856894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61317081"
 ---
 # <a name="managed-identities-for-azure-resources-with-service-bus"></a>Управляемые удостоверения для ресурсов Azure со служебной шиной 
 
@@ -77,7 +77,7 @@ ms.locfileid: "54856894"
 > 
 > - Сейчас эти удостоверения не работают со слотами развертывания Службы приложений Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

@@ -12,11 +12,11 @@ ms.author: cakarst
 ms.reviewer: jrasnick
 ms.custom: seoapril2019
 ms.openlocfilehash: a8cb3714d11994b36991e56df7fc0f97d08c89ff
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59791377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61075288"
 ---
 # <a name="best-practices-for-loading-data-into-azure-sql-data-warehouse"></a>Рекомендации по загрузке данных в хранилище данных SQL Azure
 
@@ -134,7 +134,7 @@ CREATE DATABASE SCOPED CREDENTIAL my_credential WITH IDENTITY = 'my_identity', S
 ALTER DATABASE SCOPED CREDENTIAL my_credential WITH IDENTITY = 'my_identity', SECRET = 'key2' 
 ```
 
-Вносить изменения в базовые внешние источники данных больше не нужно.
+Больше никакие изменения в базовые внешние источники данных вносить не требуется.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

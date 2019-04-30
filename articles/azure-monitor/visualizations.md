@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 11/24/2018
 ms.author: bwren
 ms.openlocfilehash: 4e9bb9bd86e22efa5dd514e742481911b09c5e17
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59796058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61088296"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Визуализация данных из Azure Monitor
 В этой статье приводится обзор доступных методов для визуализации метрик и данных журналов, хранящихся в Azure Monitor.
@@ -71,7 +71,7 @@ ms.locfileid: "59796058"
 - Размер ответа запроса ограничен 8 МБ, а время выполнения запроса — 110 секундами.
 
 
-## <a name="workbooks"></a>Workbooks
+## <a name="workbooks"></a>Книги
 [Книги](../azure-monitor/app/usage-workbooks.md) — это интерактивные документы, которые дают полное представление о данных и позволяют проводить анализ и выполнять совместную работу в группе. Конкретными примерами, в которых книги могут оказаться весьма полезными источниками данных, являются руководства по устранению неполадок и инцидентов.
 
 ![Книга](media/visualizations/workbook.png)

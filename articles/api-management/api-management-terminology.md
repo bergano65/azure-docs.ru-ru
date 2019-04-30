@@ -11,14 +11,14 @@ ms.workload: integration
 ms.topic: article
 ms.date: 10/11/2017
 ms.author: apimpm
-ms.openlocfilehash: 81cf34cacdfe37e25d6b745304ab0879245fd8da
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
-ms.translationtype: HT
+ms.openlocfilehash: b99ca444532799d21850058eae0e3f40ed871135
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33934603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61074060"
 ---
-# <a name="terminology"></a>Терминология
+# <a name="terminology"></a>Термины
 
 В этой статье приведены определения терминов, относящихся к службе управления API.
 
@@ -32,7 +32,7 @@ ms.locfileid: "33934603"
 * **Редакция**. Когда API готов к работе и его начинают использовать разработчики, как правило, следует осторожно вносить изменения в этот API, чтобы одновременно не нарушить работу вызывающих его сторон. Полезно также сообщать разработчикам о внесенных изменениях. Дополнительные сведения см. в статье об [использовании редакций](api-management-get-started-revise-api.md).
 * **Портал разработчика**. Для доступа к вашим API-интерфейсам клиентам (разработчикам) следует использовать портал разработчика. Портал разработчика можно настроить. Дополнительные сведения см. в статье о [настройке портала разработчика](api-management-customize-styles.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание экземпляра](get-started-create-service-instance.md)

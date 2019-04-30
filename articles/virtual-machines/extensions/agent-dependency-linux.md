@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 03/29/2019
 ms.author: magoedte
 ms.openlocfilehash: 16491ccc8a9cdc24b82c4c4e27705fa30da61088
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58671520"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60800233"
 ---
 # <a name="azure-monitor-dependency-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Azure монитор зависимостей для Linux
 
@@ -78,8 +78,8 @@ ms.locfileid: "58671520"
 | ---- | ---- |
 | версия_API | 2015-01-01 |
 | publisher | Microsoft.Azure.Monitoring.DependencyAgent |
-| Тип | DependencyAgentLinux |
-| typeHandlerVersion | 9,5 |
+| тип | DependencyAgentLinux |
+| typeHandlerVersion | 9.5 |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 

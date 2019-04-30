@@ -10,11 +10,11 @@ ms.date: 09/10/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: f2c6f45081b78d330033570ff322f90cd06e50dd
-ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56594276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61074195"
 ---
 # <a name="compiling-dsc-configurations-in-azure-automation-state-configuration"></a>Компилирование конфигураций DSC в службе "Настройка состояния службы автоматизации Azure"
 
@@ -107,7 +107,7 @@ Configuration ParametersExample
 
 Вы можете компилировать конфигурации DSC, которые используют базовые параметры, на портале службы "Настройка состояния службы автоматизации Azure" или с помощью Azure PowerShell:
 
-### <a name="portal"></a>Microsoft Azure
+### <a name="portal"></a>Портал
 
 Чтобы ввести значения параметров на портале, нажмите кнопку **Компилировать**.
 
@@ -224,7 +224,7 @@ $ConfigData = @{
 Start-AzureRmAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -AutomationAccountName 'MyAutomationAccount' -ConfigurationName 'ConfigurationDataSample' -ConfigurationData $ConfigData
 ```
 
-## <a name="assets"></a>Активы
+## <a name="assets"></a>Ресурсы
 
 Ссылки на ресурсы одинаковы в конфигурациях и модулях Runbook службы "Настройка состояния службы автоматизации Azure". Дополнительную информацию см. в следующих статьях:
 

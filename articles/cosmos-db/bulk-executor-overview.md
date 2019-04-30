@@ -8,11 +8,11 @@ ms.date: 10/16/2018
 ms.author: ramkris
 ms.reviewer: sngun
 ms.openlocfilehash: e0176af0ce77e9306f6f0031122f8ba8a7b27e61
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54038286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60894474"
 ---
 # <a name="azure-cosmos-db-bulk-executor-library-overview"></a>Общие сведения о библиотеке массового исполнителя в Azure Cosmos DB
  
@@ -46,7 +46,7 @@ Azure Cosmos DB — это быстрая, гибкая и глобально р
 
 Библиотека BulkExecutor позволяет максимально использовать пропускную способность, выделенную для коллекции. Она использует  [механизм управления перегрузкой в стиле AIMD](https://tools.ietf.org/html/rfc5681) для каждого диапазона ключей разделов Azure Cosmos DB, чтобы эффективно обрабатывать ограничения частоты запросов и время ожидания. 
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
   
 * Ознакомьтесь с примерами приложений, использующими библиотеку BulkExecutor, в статьях для [.NET](bulk-executor-dot-net.md) и для [Java](bulk-executor-java.md).  
 * Ознакомьтесь со сведениями и заметками о выпуске пакета SDK для массового исполнителя в статьях для [.NET](sql-api-sdk-bulk-executor-dot-net.md) и для [Java](sql-api-sdk-bulk-executor-java.md).

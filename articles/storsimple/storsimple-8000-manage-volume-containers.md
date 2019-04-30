@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 07/19/2017
 ms.author: alkohli
-ms.openlocfilehash: 0f8e00d6d07224f56625482f339e612e68914be2
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: 7e1a5ac2c2b734c77fc3dbe788206f8c75044953
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38606595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60724739"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-manage-storsimple-volume-containers"></a>Использование службы диспетчера устройств StorSimple для управления контейнерами томов StorSimple
 
@@ -37,7 +37,7 @@ ms.locfileid: "38606595"
 
 Ниже рассказывается, как в колонке **Контейнеры томов** StorSimple выполнять указанные ниже стандартные операции.
 
-* Добавление контейнера томов
+* Добавить контейнер томов
 * Изменение контейнера томов
 * Удаление контейнера томов
 
@@ -56,7 +56,7 @@ ms.locfileid: "38606595"
 
 [!INCLUDE [storsimple-8000-delete-volume-container](../../includes/storsimple-8000-delete-volume-container.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше об [управлении томами StorSimple](storsimple-8000-manage-volumes-u2.md). 
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

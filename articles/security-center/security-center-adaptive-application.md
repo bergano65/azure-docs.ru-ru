@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 03/26/2019
 ms.author: monhaber
 ms.openlocfilehash: c4b2ed1269ef669def2b6f2036d34a40fb181c5d
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58517986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60910470"
 ---
 # <a name="adaptive-application-controls-in-azure-security-center"></a>Адаптивные элементы управления приложениями в Центре безопасности Azure
 В этом руководстве приведены сведения о настройке адаптивного элемента управления приложениями в центре безопасности Azure.
@@ -43,7 +43,7 @@ ms.locfileid: "58517986"
 1. Откройте панель мониторинга **центра безопасности**.
 2. На левой панели в разделе **Расширенная защита облака** выберите **Адаптивное управление приложениями**.
 
-    ![Защита](./media/security-center-adaptive-application/security-center-adaptive-application-fig1-new.png)
+    ![Оборона](./media/security-center-adaptive-application/security-center-adaptive-application-fig1-new.png)
 
 Откроется страница **Адаптивное управление приложениями**.
 
@@ -146,7 +146,7 @@ ms.locfileid: "58517986"
 
 Центр безопасности рекомендует применять политики разрешенных приложений только для виртуальных машин, где используется стабильный набор приложений. Если приложения на связанных виртуальных машинах постоянно изменяются, рекомендации не создаются.
 
-![Рекомендации](./media/security-center-adaptive-application/security-center-adaptive-application-fig11.png)
+![Рекомендация](./media/security-center-adaptive-application/security-center-adaptive-application-fig11.png)
 
 Этот список содержит следующие параметры:
 - **Имя группы**: имя подписки и группы

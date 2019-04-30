@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 06/14/2018
 ms.author: abnarain
 ms.openlocfilehash: d63ede800f7e60db44072234f5ec74910e4c70f2
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59275415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61262106"
 ---
 # <a name="integration-runtime-in-azure-data-factory"></a>Среда выполнения интеграции в фабрике данных Azure
 Среда выполнения интеграции (IR) — это инфраструктура вычислений, которую фабрика данных Azure использует для обеспечения перечисленных ниже возможностей интеграции данных в разных сетевых средах.
@@ -137,7 +137,7 @@ Azure SSIS IR — это полностью управляемый класте
 
 ## <a name="determining-which-ir-to-use"></a>Выбор IR для использования
 
-### <a name="copy-activity"></a>Действие копирования
+### <a name="copy-activity"></a>Копировать операцию
 
 Для действия копирования нужны связанные службы источника и приемника данных, которые определяют направление потока данных. Далее описан алгоритм выбора экземпляра среды выполнения интеграции, который будет выполнять копирование. 
 

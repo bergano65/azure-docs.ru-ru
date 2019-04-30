@@ -2,17 +2,18 @@
 title: Делегирование поддомена Azure DNS
 description: Узнайте, как делегировать поддомен Azure DNS.
 services: dns
-author: vhorne
+author: WenJason
 ms.service: dns
 ms.topic: article
-ms.date: 2/7/2019
-ms.author: victorh
+origin.date: 2/7/2019
+ms.date: 02/25/2019
+ms.author: v-jay
 ms.openlocfilehash: 31543db8e177701ddfe6beaaa3091d6465b0e9cd
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55895486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60790816"
 ---
 # <a name="delegate-an-azure-dns-subdomain"></a>Делегирование поддомена Azure DNS
 
@@ -20,7 +21,7 @@ ms.locfileid: "55895486"
 
 При необходимости вы можете делегировать поддомен с помощью [Azure PowerShell](delegate-subdomain-ps.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы делегировать поддомен Azure DNS, сначала вам следует делегировать общедоступный домен службе Azure DNS. Дополнительные сведения о настройке делегирования в серверах имен см. в статье [Руководство. Размещение домена в Azure DNS](./dns-delegate-domain-azure-dns.md). После делегирования домена в зону Azure DNS вы можете делегировать поддомен.
 
@@ -68,6 +69,6 @@ ms.locfileid: "55895486"
 2. В командной строке введите `nslookup www.engineering.contoso.com.`
 3. Вы должны получить ответ, исходящий не из полномочного источника и содержащий адрес **10.10.10.10**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [настроить обратный просмотр DNS для размещенных в Azure служб](dns-reverse-dns-for-azure-services.md).

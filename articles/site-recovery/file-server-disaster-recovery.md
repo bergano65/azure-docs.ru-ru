@@ -9,11 +9,11 @@ ms.date: 11/27/2018
 ms.author: rajanaki
 ms.custom: mvc
 ms.openlocfilehash: 51754021f5029a751be90bfc4194ac6347c1e278
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58005205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60772161"
 ---
 # <a name="protect-a-file-server-by-using-azure-site-recovery"></a>Защита файлового сервера с помощью Azure Site Recovery 
 
@@ -54,7 +54,7 @@ DFSR применяет алгоритм сжатия (известный как
 
 ### <a name="factors-to-consider-in-your-decisions-about-disaster-recovery-to-azure"></a>Факторы, на которые стоит обратить внимание при выборе решения для аварийного восстановления в Azure
 
-|Среда  |Рекомендации  |Что необходимо учесть |
+|Среда  |Рекомендация  |Что необходимо учесть |
 |---------|---------|---------|
 |Среда файлового сервера с или без DFSR|   [Для репликации используйте Site Recovery](#replicate-an-on-premises-file-server-by-using-site-recovery)   |    Site Recovery не поддерживает кластеры общих дисков или запоминающее устройство, подключаемое к сети (NAS). Если в вашей среде используются эти конфигурации, при необходимости используйте любой из других подходов. <br> Site Recovery не поддерживает SMB 3.0. Реплицируемая виртуальная машина внедряет изменения, только когда внесенные в файлы изменения обновлены в исходном расположении файлов.
 |Среда файлового сервера с DFSR     |  [Распространение DFSR на виртуальную машину IaaS Azure](#extend-dfsr-to-an-azure-iaas-virtual-machine)  |      DFSR хорошо работает в средах с очень сжатой пропускной способностью. Этот подход требует наличия виртуальной машины Azure, которая все время запущена. Необходимо учитывать стоимость виртуальной машины при планировании.         |
@@ -66,10 +66,10 @@ DFSR применяет алгоритм сжатия (известный как
 
 | Источник    |На дополнительный сайт    |В Azure
 |---------|---------|---------|
-|Таблицы Azure| -|Yes|
-|Hyper-V.|   Yes |Yes
-|VMware |Yes|   Yes
-|Физический сервер|   Yes |Yes
+|Таблицы Azure| -|Да|
+|Hyper-V.|   Да |Да
+|VMware |Да|   Да
+|Физический сервер|   Да |Да
  
 
 > [!IMPORTANT]

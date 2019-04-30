@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 07/16/2018
 ms.author: dech
 ms.openlocfilehash: d50bf7d865cb286f2a1421156b477dc92dc978d1
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55453609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60889452"
 ---
 # <a name="work-with-data-using-azure-cosmos-explorer"></a>Работа с данными с помощью обозревателя Azure Cosmos 
 
@@ -47,7 +47,7 @@ ms.locfileid: "55453609"
 
 В настоящее время функция **Открыть во весь экран**, которая позволяет использовать временный доступ для чтения и записи, еще не поддерживается для учетных записей Azure Cosmos DB Gremlin и API таблиц. Вы по-прежнему можете просматривать свои учетные записи Gremlin и API таблицы, передавая строку подключения обозревателю Azure Cosmos DB. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы узнали, как начать работу с обозревателем Azure Cosmos DB для управления данными, вы можете:
 
 * Начать определение [запросов](sql-api-query-reference.md) с помощью синтаксиса языка SQL и выполнить [программирование на стороне сервера](stored-procedures-triggers-udfs.md) с помощью хранимых процедур, UDF, триггеров. 

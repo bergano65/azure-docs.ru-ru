@@ -2,17 +2,18 @@
 title: Переход на сертификаты общедоступных ЦС для шлюзов P2S | VPN-шлюз Azure | Документация Майкрософт
 description: Эта статья поможет вам успешно перейти на новый сертификат общедоступного ЦС для шлюзов P2S.
 services: vpn-gateway
-author: cherylmc
+author: WenJason
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 03/12/2019
-ms.author: cherylmc
+origin.date: 03/12/2019
+ms.date: 04/29/2019
+ms.author: v-jay
 ms.openlocfilehash: 29f2aeee53e07adfeafb8017c489c0b830f24b36
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59521600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60859653"
 ---
 # <a name="transition-to-a-public-ca-gateway-certificate-for-p2s"></a>Переход на общедоступный сертификат шлюза от ЦС для P2S
 

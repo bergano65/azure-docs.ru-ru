@@ -13,11 +13,11 @@ ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: fff4aa947f878974d2d0f18f373b8c0917ed7d70
-ms.sourcegitcommit: 3f4ffc7477cff56a078c9640043836768f212a06
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57316062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60703511"
 ---
 # <a name="troubleshoot-azure-sql-database-performance-issues-with-intelligent-insights"></a>Устранение проблем с производительностью базы данных SQL Azure с помощью Intelligent Insights
 
@@ -111,7 +111,7 @@ Intelligent Insights автоматически обнаруживает про�
 
 Дополнительные рекомендации по устранению неполадок см. статье [Memory grants meditation: The mysterious SQL Server memory consumer with Many Names (Устранение проблем с памятью: загадочный потребитель памяти SQL Server со множеством имен)](https://blogs.msdn.microsoft.com/sqlmeditation/20../../memory-meditation-the-mysterious-sql-server-memory-consumer-with-many-names/).
 
-## <a name="locking"></a>Блокировка
+## <a name="locking"></a>Выполняется блокировка
 
 ### <a name="what-is-happening"></a>Что происходит
 
@@ -189,7 +189,7 @@ Intelligent Insights автоматически обнаруживает про�
 > Чтобы непрерывно оптимизировать производительность базы данных SQL, рекомендуется включить [автоматическую настройку базы данных SQL](sql-database-automatic-tuning.md). Это уникальная функция встроенного аналитического механизма SQL, которая постоянно отслеживает базу данных SQL и автоматически создает и настраивает индексы для баз данных.
 >
 
-## <a name="new-query"></a>Новый запрос
+## <a name="new-query"></a>Создать запрос
 
 ### <a name="what-is-happening"></a>Что происходит
 

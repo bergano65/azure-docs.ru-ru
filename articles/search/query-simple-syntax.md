@@ -20,11 +20,11 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 99729141e5e1478f45ad385cf671c44a8e08f21a
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58437498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61316903"
 ---
 # <a name="simple-query-syntax-in-azure-search"></a>Простой синтаксис запросов в службе "Поиск Azure"
 Поиск Azure реализует два языковых механизма запросов на основе Lucene: [простое средство синтаксического анализа запросов](https://lucene.apache.org/core/4_7_0/queryparser/org/apache/lucene/queryparser/simple/SimpleQueryParser.html) и [средство синтаксического анализа запросов Lucene](https://lucene.apache.org/core/4_10_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html). В Поиске Azure простой синтаксис запросов исключает поиск нечетких соответствий.  

@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: d3917f65d8be08d6355013393f6c6675ea6c7fc5
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58619447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61131817"
 ---
 # <a name="analyze-your-media-using-the-azure-portal"></a>Анализ данных мультимедиа с помощью портала Azure 
 > [!NOTE]
@@ -45,7 +45,7 @@ ms.locfileid: "58619447"
     В остальной части статьи объясняется, зачем и как использовать каждый обработчик. 
 5. Щелкните **Создать** для запуска задания.
 
-## <a name="azure-media-indexer"></a>Azure Media Indexer
+## <a name="azure-media-indexer"></a>Индексатор мультимедийных данных Azure
 Обработчик мультимедиа **индексатор службы мультимедиа Azure** позволяет сделать мультимедийные файлы и контент доступными для поиска, а также создавать дорожки для субтитров. В этом разделе подробно описываются некоторые сведения о параметрах, которые можно указать для обработчика мультимедиа.
 
 ![Анализ видео](./media/media-services-portal-analyze/media-services-portal-analyze003.png)
@@ -74,7 +74,7 @@ ms.locfileid: "58619447"
 ### <a name="output-file"></a>Выходной файл
 Понятное имя, идентифицирующее выводимый контент. 
 
-### <a name="speed"></a>Speed
+### <a name="speed"></a>Скорость
 Укажите скорость входного видео. Результатом является стабилизированное и замедленное представление входного видео.
 
 ### <a name="job-name"></a>Имя задания
@@ -136,10 +136,10 @@ ms.locfileid: "58619447"
 
 ![Модерация видео](./media/media-services-portal-analyze/media-services-portal-analyze-content-moderator.PNG)
 
-### <a name="version"></a>Version (версия) 
+### <a name="version"></a>Version 
 Используйте версию 2.0.
 
-### <a name="mode"></a>Mode
+### <a name="mode"></a>Режим
 Версия 2.0 игнорирует параметр `Mode`.
 
 ## <a name="next-steps"></a>Дальнейшие действия

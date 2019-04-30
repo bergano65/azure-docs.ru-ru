@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: mbaldwin
 ms.openlocfilehash: aa9b89b9afec069e97236b7652e0f1d37644f5cf
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58336083"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60640486"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-cli"></a>Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки
 
@@ -31,9 +31,9 @@ ms.locfileid: "58336083"
 
 Операции Key Vault контролируются отдельно, посредством разрешений управления доступом на основе ролей (RBAC). Это осуществляется следующим образом.
 
-| Операция | ОПИСАНИЕ | Разрешение пользователя |
+| Операция | Описание | Разрешение пользователя |
 |:--|:--|:--|
-|список|Выводит список удаленных хранилищ ключей.|Microsoft.KeyVault/deletedVaults/read|
+|Получение списков|Выводит список удаленных хранилищ ключей.|Microsoft.KeyVault/deletedVaults/read|
 |Recover|Восстанавливает удаленное хранилище ключей.|Microsoft.KeyVault/vaults/write|
 |Purge|Окончательно удаляет удаленное хранилище ключей и все его содержимое.|Microsoft.KeyVault/locations/deletedVaults/purge/action|
 
@@ -241,7 +241,7 @@ az keyvault create --name ContosoVault --resource-group ContosoRG --location wes
 az keyvault update --name ContosoVault --resource-group ContosoRG --enable-purge-protection true
 ```
 
-## <a name="other-resources"></a>Другие ресурсы:
+## <a name="other-resources"></a>Другие ресурсы
 
 - Обзор функции обратимого удаления Key Vault см. в разделе [Общие сведения об обратимом удалении в Azure Key Vault](key-vault-ovw-soft-delete.md).
 - Общие сведения об использовании Azure Key Vault см. в [этой статье](key-vault-overview.md).

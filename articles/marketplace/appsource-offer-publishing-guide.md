@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 07/09/2018
 ms.author: ellacroi
 ms.openlocfilehash: 943f3a4739e5dffb2a7d218bf3a82a4e882538a6
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54075674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60625505"
 ---
 # <a name="office-365-dynamics-365-power-apps-and-power-bi-offer-publishing-guide"></a>Руководство по публикации предложения, касающегося приложений Office 365, Dynamics 365, Power Apps и Power BI
 
@@ -53,7 +53,7 @@ ms.locfileid: "54075674"
 
 Сведения о публикации предложения на портале Cloud Partner см. в статье [Предложение Dynamics 365 for Customer Engagements](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cpp-customer-engagement-offer).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если это еще не сделано, 
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
-ms.openlocfilehash: 75d0bbc536c907e6530570b4d7568f39371cfced
-ms.sourcegitcommit: b07d06ea51a20e32fdc61980667e801cb5db7333
-ms.translationtype: HT
+ms.openlocfilehash: e2adccaf1371cf322b5a50b0e1f6ef64dde14b66
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2017
-ms.locfileid: "26367681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60628665"
 ---
 # <a name="what-is-storsimple-for-cloud-solutions-providers-program"></a>Что такое StorSimple для программы поставщиков облачных решений?
 
@@ -32,7 +32,7 @@ Microsoft Azure StorSimple — это уникальный подход к со�
 
 Дополнительные сведения о StorSimple по программе CSP вы можете найти в [Azure CSP overview](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-overview) (Обзор Azure CSP).
 
-Дополнительные сведения о выставлении счетов, ценообразовании, поощрениях и получении поддержки в CSP см. в статье [StorSimple in CSP: FAQ](storsimple-partner-csp-faq.md) (StorSimple в CSP: часто задаваемые вопросы). 
+Дополнительные сведения о выставлении счетов, ценообразовании, поощрениях и получении поддержки в CSP, см. в статье [StorSimple в CSP: ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ О](storsimple-partner-csp-faq.md). 
 
 ## <a name="deploy-and-manage-storsimple-for-csp"></a>Развертывание решений StorSimple и управление ими для CSP
 
@@ -40,7 +40,7 @@ StorSimple доступен по программе CSP в виде службы
 
 Дополнительные сведения см. в статье [Развертывание виртуального массива StorSimple для программы поставщика облачных решений](storsimple-partner-csp-deploy.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Если у вас есть дополнительные вопросы о StorSimple в CSP, перейдите к статье [StorSimple for CSP: Frequently asked questions](storsimple-partner-csp-faq.md) (StorSimple в CSP: часто задаваемые вопросы).
+- Если у вас есть дополнительные вопросы о StorSimple в CSP, перейдите к [StorSimple для CSP: простом едином входе Azure Active Directory](storsimple-partner-csp-faq.md).
 - Если вы уже готовы развернуть StorSimple, перейдите к статье [Развертывание виртуального массива StorSimple для программы поставщика облачных решений](storsimple-partner-csp-deploy.md).

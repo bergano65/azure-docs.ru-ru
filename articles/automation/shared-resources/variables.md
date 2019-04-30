@@ -10,11 +10,11 @@ ms.date: 04/01/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: fc26c0357dcb071c4c75e8684fe47144a04177e4
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58807042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60880270"
 ---
 # <a name="variable-assets-in-azure-automation"></a>Средства переменных в службе автоматизации Azure
 
@@ -41,17 +41,17 @@ ms.locfileid: "58807042"
 
 Ниже перечислены типы переменных, которые доступны в службе автоматизации.
 
-* Строка
+* String
 * Целое число 
 * DateTime
-* Логическое
-* Null
+* Boolean
+* NULL
 
 ## <a name="azurerm-powershell-cmdlets"></a>Командлеты PowerShell для AzureRM
 
 Для AzureRM командлеты, представленные в следующей таблице, используются для создания ресурсов учетных данных службы автоматизации и управления ими с помощью Windows PowerShell. Они поставляются как часть [модуля AzureRM.Automation](/powershell/azure/overview), которая доступна для использования в модулях Runbook службы автоматизации и конфигурации DSC.
 
-| Командлеты | ОПИСАНИЕ |
+| Командлеты | Описание |
 |:---|:---|
 |[Get-AzureRmAutomationVariable](/powershell/module/AzureRM.Automation/Get-AzureRmAutomationVariable)|Получает значение существующей переменной.|
 |[New-AzureRmAutomationVariable](/powershell/module/AzureRM.Automation/New-AzureRmAutomationVariable)|Создает новую переменную и устанавливает ее значение.|
@@ -62,7 +62,7 @@ ms.locfileid: "58807042"
 
 Действия в следующей таблице используются для доступа к учетным данным в модуле Runbook и конфигурациях DSC.
 
-| Действия | ОПИСАНИЕ |
+| Действия | Описание |
 |:---|:---|
 |Get-AutomationVariable|Получает значение существующей переменной.|
 |Set-AutomationVariable|Получает значение существующей переменной.|
@@ -72,7 +72,7 @@ ms.locfileid: "58807042"
 
 Функции, приведенные в следующей таблице, используются для доступа к переменным и их извлечения в модуле Runbook Python2.
 
-|Функции Python2|ОПИСАНИЕ|
+|Функции Python2|Описание|
 |:---|:---|
 |automationassets.get_automation_variable|Получает значение существующей переменной. |
 |automationassets.set_automation_variable|Получает значение существующей переменной. |

@@ -9,11 +9,11 @@ ms.date: 01/08/2019
 ms.author: yuemlu
 ms.custom: include file
 ms.openlocfilehash: ad57d373422e0fc310e51ac31f2a2e76999abf22
-ms.sourcegitcommit: d2329d88f5ecabbe3e6da8a820faba9b26cb8a02
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "58115209"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61127163"
 ---
 # <a name="cost-effective-standard-storage-and-unmanaged-and-managed-azure-vm-disks"></a>Экономичное хранилище класса Standard, а также управляемые и неуправляемые диски виртуальной машины Azure
 
@@ -124,7 +124,7 @@ ms.locfileid: "58115209"
 
 **Передача исходящих данных.**  [Передача исходящих данных](https://azure.microsoft.com/pricing/details/data-transfers/)  (данные, передаваемые из центров обработки данных Azure) учитывается при выставлении счетов за используемую пропускную способность.
 
-**Транзакция**. Для хранилища (цен. категория "Стандартный") в Azure взимается 0,0036 долл. США за каждые 100 000 транзакций. К транзакциям относятся операции чтения и записи в хранилище.
+**Транзакция**. Для хранилища (цен. категория "Стандартный") в Azure взимается 0,0036 долл. США за каждые 100 000 транзакций. Транзакции включают операции чтения и записи в хранилище.
 
 Подробные сведения о ценах на хранилище Standard, виртуальные машины и управляемые диски см. по следующим ссылкам:
 

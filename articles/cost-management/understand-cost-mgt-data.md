@@ -5,31 +5,33 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 04/11/2019
+ms.date: 04/22/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: 5c8f70ff76da458fcc1433226a51012fb7ccd18e
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.openlocfilehash: 81947baccf723ab759f2dc24df40b81af4502e09
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59544643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61004003"
 ---
 # <a name="understand-cost-management-data"></a>Интерпретация данных службы "Управление затратами"
 
 Эта статья поможет понять, какие данные включены в службу "Управление затратами Azure". Здесь объясняется, как часто данные обрабатываются, собираются, отображаются и закрываются. Плата за использование Azure будет выставляться ежемесячно. Тем не менее тип подписки Azure определяет окончание расчетного месяца. Частота получения данных об использовании в службе "Управление затратами" зависит от различных факторов, например время, необходимое для обработки данных, и как часто службы Azure отправляют данные о потреблении в систему выставления счетов.
 
+Управление затратами включает все об использовании и покупок, включая резервирование и сторонние предложения для учетных записей соглашения Enterprise (EA). Соглашение клиента Майкрософт (MCA) учетные записи и подписки по мере использования включают только флаг использования служб Azure и Marketplace. Другие расходы на поддержку и не включаются. Оценка затрат до создается счет и не влияют на счете в.
+
 ## <a name="supported-microsoft-offers"></a>Поддерживаемые предложения корпорации Майкрософт
 
 Ниже приведены поддерживаемые в настоящее время [предложения Microsoft Azure](https://azure.microsoft.com/support/legal/offer-details/) в службе "Управление затратами Azure".  Предложение Azure — это тип имеющейся подписки Azure.
 
-| Категория  | **Название предложения** | **Идентификатор квоты** | **Номер предложения** |
+| Category  | **Название предложения** | **Идентификатор квоты** | **Номер предложения** |
 | --- | --- | --- | --- |
 | **Azure для Германии** | [Azure для Германии с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-de-0003p)      | PayAsYouGo_2014-09-01 | MS-AZR-DE-0003P |
 | **Azure для государственных организаций** | Azure для государственных организаций                                                         | EnterpriseAgreement_2014-09-01 | MS-AZR-USGOV-0017P |
-| **Соглашение Enterprise (EA)** | Enterprise — разработка и тестирование                                                        | MSDNDevTest_2014-09-01 | MS-AZR-0148P |
+| **Соглашение Enterprise (EA)** | Разработка и тестирование Enterprise                                                        | MSDNDevTest_2014-09-01 | MS-AZR-0148P |
 | **Соглашение Enterprise (EA)** | [Microsoft Azure Enterprise](https://azure.microsoft.com/offers/enterprise-agreement-support-upgrade) | EnterpriseAgreement_2014-09-01 | MS-AZR-0017P |
 | **Соглашение Microsoft Customer** | [План Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0017g) | EnterpriseAgreement_2014-09-01 | Н/Д |
 | **Соглашение Microsoft Customer** | [План Microsoft Azure для разработки и тестирования](https://azure.microsoft.com/offers/ms-azr-0148g)  | MSDNDevTest_2014-09-01 | Н/Д |
@@ -49,14 +51,14 @@ ms.locfileid: "59544643"
 
 Неподдерживаемые предложения показаны в следующей таблице.
 
-| Категория  | **Название предложения** | **Идентификатор квоты** | **Номер предложения** |
+| Category  | **Название предложения** | **Идентификатор квоты** | **Номер предложения** |
 | --- | --- | --- | --- |
-| **Поставщик облачных решений (CSP)** | Microsoft Azure.                                    | CSP_2015-05-01 | MS-AZR-0145P |
+| **Поставщик облачных решений (CSP)** | Microsoft Azure                                    | CSP_2015-05-01 | MS-AZR-0145P |
 | **Поставщик облачных решений (CSP)** | Поставщик облачных решений Azure для государственных организаций                               | CSP_2015-05-01 | MS-AZR-USGOV-0145P |
 | **Поставщик облачных решений (CSP)** | Azure для Германии в CSP для Microsoft Cloud для Германии   | CSP_2015-05-01 | MS-AZR-DE-0145P |
-| **Оплата по мере использования**                 | Начальный набор Microsoft Azure для учащихся | DreamSpark_2015-02-01 | MS-AZR-0144P |
+| **Оплата по мере использования**                 | Azure Starter для учащихся | DreamSpark_2015-02-01 | MS-AZR-0144P |
 | **Оплата по мере использования**                 | [Спонсорское предложение Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/) | Sponsored_2016-01-01 | MS-AZR-0036P |
-| **Планы поддержки** | Поддержка уровня "Стандартный"                    | Default_2014-09-01 | MS-AZR-0041P |
+| **Планы поддержки** | Поддержка Standard                    | Default_2014-09-01 | MS-AZR-0041P |
 | **Планы поддержки** | Поддержка Professional Direct         | Default_2014-09-01 | MS-AZR-0042P |
 | **Планы поддержки** | Поддержка разработчика                   | Default_2014-09-01 | MS-AZR-0043P |
 | **Планы поддержки** | Планы поддержки для Германии                | Default_2014-09-01 | MS-AZR-DE-0043P |
@@ -86,6 +88,7 @@ ms.locfileid: "59544643"
 |   | Кредиты. Дополнительные сведения см. в статье [Значение терминов в счете Microsoft Azure](../billing/billing-understand-your-invoice.md). |
 
 <sup>1</sup> Потребление службы Azure основано на резервировании и согласованной цене.
+
 <sup>2</sup> предложения использования marketplace недоступен для оплаты по мере использования, MSDN, и в Visual Studio в данный момент.
 
 **Metadata**
@@ -113,7 +116,7 @@ ms.locfileid: "59544643"
 
 ### <a name="rerated-data"></a>Повторно оцененные данные
 
-При использовании [API службы "Управление затратами"](https://aka.ms/costmgmt/docs), PowerBI или портала Azure для извлечения данных, ожидайте повторной оценки платы за период выставления счетов и последовательного изменения до закрытия счета.
+Использование [API-интерфейсов управления стоимость](https://aka.ms/costmgmt/docs), Power BI или портала Azure для получения данных, ожидается, что плата за текущий расчетный период, повторно оцените, а следовательно изменить, пока не будет закрыт счета.
 
 ## <a name="usage-data-update-frequency-varies"></a>Частота обновления данных об использовании может различаться
 

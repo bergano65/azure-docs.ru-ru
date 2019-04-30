@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
 ms.openlocfilehash: 211cb32298b17bb9e4023bf8bc74233c3916f58d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58877675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60879112"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen1"></a>Контроль доступа в Azure Data Lake Storage 1-го поколения
 
@@ -59,7 +59,7 @@ ms.locfileid: "58877675"
 |--------------|------------|------------------------|
 | 7            | `RWX`        | чтение, запись и выполнение |
 | 5            | `R-X`        | Чтение + выполнение         |
-| 4.            | `R--`        | чтение                   |
+| 4.            | `R--`        | Чтение                   |
 | 0            | `---`        | Нет разрешений         |
 
 
@@ -71,15 +71,15 @@ ms.locfileid: "58877675"
 
 Ниже показано несколько типовых сценариев для наглядного представления того, какие разрешения требуются для выполнения отдельных операций в учетной записи Data Lake Storage 1-го поколения.
 
-| Операция | Объект.              |    /      | Seattle/   | Portland/   | Data.txt       |
+| Операция | Object              |    /      | Seattle/   | Portland/   | Data.txt       |
 |-----------|---------------------|-----------|------------|-------------|----------------|
-| чтение      | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `R--`          |
+| Чтение      | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `R--`          |
 | Добавление к | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `RW-`          |
-| Delete (Удалить)    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
+| Удалить    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
 | Создание    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
-| список      | /                   |   `R-X`   |   `---`    |  `---`      | `---`          |
-| список      | /Seattle/           |   `--X`   |   `R-X`    |  `---`      | `---`          |
-| список      | /Seattle/Portland/  |   `--X`   |   `--X`    |  `R-X`      | `---`          |
+| Получение списков      | /                   |   `R-X`   |   `---`    |  `---`      | `---`          |
+| Получение списков      | /Seattle/           |   `--X`   |   `R-X`    |  `---`      | `---`          |
+| Получение списков      | /Seattle/Portland/  |   `--X`   |   `--X`    |  `R-X`      | `---`          |
 
 
 > [!NOTE]
@@ -270,7 +270,7 @@ def set_default_acls_for_new_child(parent, child):
 
 Группа владельцев копируется из родительской папки, в которой создан файл или папка.
 
-### <a name="i-am-the-owning-user-of-a-file-but-i-dont-have-the-rwx-permissions-i-need-what-do-i-do"></a>Я являюсь владельцем файла, но у меня нет необходимых разрешений RWX. Что делать?
+### <a name="i-am-the-owning-user-of-a-file-but-i-dont-have-the-rwx-permissions-i-need-what-do-i-do"></a>Я являюсь владельцем файла, но у меня нет необходимых разрешений RWX. Что мне делать?
 
 Владелец может изменить разрешения на доступ к файлу на любое из требуемых RWX-разрешений.
 

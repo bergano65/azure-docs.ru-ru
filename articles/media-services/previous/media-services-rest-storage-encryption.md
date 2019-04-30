@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: a26388de85ff6293985fe23adac8ca4d04d0de61
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59525795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60952274"
 ---
 # <a name="encrypting-your-content-with-storage-encryption"></a>Шифрование содержимого с помощью шифрования хранилища 
 
@@ -109,7 +109,7 @@ ms.locfileid: "59525795"
 
     Для шифрования хранилища в текст запроса необходимо включить указанные ниже свойства.
 
-    Свойство текста запроса    | ОПИСАНИЕ
+    Свойство текста запроса    | Описание
     ---|---
     Идентификатор | Идентификатор ContentKey создается в следующем формате «nb:kid:UUID:\<новый GUID >».
     ContentKeyType | Тип ключа содержимого — это целое число, которое определяет ключ. Для формата шифрования хранилища установлено значение 1.

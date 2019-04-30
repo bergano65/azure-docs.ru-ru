@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 08/13/2018
 ms.author: asrastog
 ms.openlocfilehash: dc5bfe6b431659b7b99140eb29a0e64922a42275
-ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57576350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61364518"
 ---
 # <a name="use-iot-hub-message-routing-to-send-device-to-cloud-messages-to-different-endpoints"></a>Используйте маршрутизацию сообщений центра Интернета вещей для отправки сообщений с устройства в облако в разные конечные точки
 
@@ -37,9 +37,9 @@ ms.locfileid: "57576350"
 
 Вы можете использовать стандартную [интеграцию Центров событий и пакеты SDK](iot-hub-devguide-messages-read-builtin.md), чтобы отправлять сообщения с устройства в облако из встроенной конечной точки (**messages/events**). После создания маршрута данных перестает поступать на встроенный-в конечную точку, если маршрут не создано для этой конечной точки.
 
-### <a name="azure-blob-storage"></a>Хранилище больших двоичных объектов Azure
+### <a name="azure-blob-storage"></a>Хранилище BLOB-объектов Azure
 
-Центр Интернета вещей поддерживает запись данных в хранилище BLOB-объектов в [Apache Avro](https://avro.apache.org/) а также формат JSON. Функция для кодирования в формат JSON предоставляется в предварительной версии во всех регионах, которые Центр Интернета вещей доступен в, за исключением восточной части США, Западная часть США и Западной Европе. По умолчанию используется AVRO. Формат кодировки можно задать только при настройке конечной точки хранилища BLOB-объектов. Невозможно изменить формат для существующей конечной точки. При использовании кодирования в JSON, необходимо задать тип содержимого JSON и contentEncoding UTF-8 в сообщении [системные свойства](iot-hub-devguide-routing-query-syntax.md#system-properties). Можно выбрать формат кодирования с помощью IoT Hub Create или Update REST API, в частности [RoutingStorageContainerProperties](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate#routingstoragecontainerproperties), на портале Azure [Azure CLI](https://docs.microsoft.com/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest) или [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubroutingendpoint?view=azps-1.3.0). В примере ниже показан способ выбора формат кодирования на портале Azure.
+Центр Интернета вещей поддерживает запись данных в хранилище BLOB-объектов в [Apache Avro](https://avro.apache.org/) а также формат JSON. Возможность кодирования в формате JSON присутствует в предварительной версии для всех регионов, для которых доступен Центр Интернета вещей, за исключением Востока США, Запада США и Западной Европы. По умолчанию используется AVRO. Формат кодировки можно задать только при настройке конечной точки хранилища BLOB-объектов. Невозможно изменить формат для существующей конечной точки. При использовании кодирования в JSON, необходимо задать тип содержимого JSON и contentEncoding UTF-8 в сообщении [системные свойства](iot-hub-devguide-routing-query-syntax.md#system-properties). Можно выбрать формат кодирования с помощью IoT Hub Create или Update REST API, в частности [RoutingStorageContainerProperties](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate#routingstoragecontainerproperties), на портале Azure [Azure CLI](https://docs.microsoft.com/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest) или [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubroutingendpoint?view=azps-1.3.0). В примере ниже показан способ выбора формат кодирования на портале Azure.
 
 ![Кодирование конечной точки хранилища BLOB-объектов](./media/iot-hub-devguide-messages-d2c/blobencoding.png)
 
@@ -51,7 +51,7 @@ ms.locfileid: "57576350"
 
 Вы можете применять любое соглашение об именовании файлов, однако необходимо использовать все перечисленные токены. Центр Интернета вещей будет записывать пустой большой двоичный объект, если нет данных для записи.
 
-При маршрутизации, хранилище BLOB-объектов, рекомендуется создавать большие двоичные объекты и итерация по их, чтобы убедиться, что все контейнеры доступны для чтения без внесения каких-либо предположений секции. Диапазон секций потенциально могут измениться во время [Microsoft запуске отработки отказа](iot-hub-ha-dr.md#microsoft-initiated-failover) или центра Интернета вещей [на другой ресурс вручную](iot-hub-ha-dr.md#manual-failover-preview). Можно использовать [API списка больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/list-blobs) перечислить список больших двоичных объектов. См. следующий пример, как рекомендации.
+При маршрутизации к хранилищу BLOB-объектов мы рекомендуем включить большие двоичные объекты в список, а затем выполнять перебор по ним, чтобы обеспечить считывание всех контейнеров независимо от секции. Диапазон секций может измениться в процессе [инициированной корпорацией Майкрософт отработки отказа](iot-hub-ha-dr.md#microsoft-initiated-failover) или при [переходе на другой ресурс вручную](iot-hub-ha-dr.md#manual-failover-preview) с помощью Центра Интернета вещей. Можно использовать [API списка больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/list-blobs) перечислить список больших двоичных объектов. См. следующий пример, как рекомендации.
 
    ```csharp
         public void ListBlobsInContainer(string containerName, string iothub)
@@ -109,7 +109,7 @@ ms.locfileid: "57576350"
 
 При создании маршрута или изменении имеющегося маршрута необходимо проверить запрос маршрута, отправив пример сообщения. Вы можете протестировать отдельные маршруты или проверить все маршруты за один раз и не отправлять сообщения на конечные точки во время теста. Тестирование можно выполнить с помощью портала Azure, Azure Resource Manager, Azure PowerShell и Azure CLI. Результаты выявить пример сообщения соответствует запросу, сообщение не соответствовало запрос или тестирования не удалось выполнить, так как пример синтаксиса сообщения или запроса неверны. Дополнительные сведения см. в статьях о [проверке маршрута](/rest/api/iothub/iothubresource/testroute) и [проверке всех маршрутов](/rest/api/iothub/iothubresource/testallroutes).
 
-## <a name="latency"></a>Latency
+## <a name="latency"></a>Задержка
 
 При маршрутизации сообщений телеметрии, передаваемой с устройства в облако с помощью встроенных конечных точек наблюдается небольшое увеличение общей задержки после создания первого маршрута.
 

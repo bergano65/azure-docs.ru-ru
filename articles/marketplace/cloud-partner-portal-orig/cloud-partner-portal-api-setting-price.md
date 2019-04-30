@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
 ms.openlocfilehash: a029477dfd8046863ebfe34cd839562a0b1f3d87
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59607801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61094464"
 ---
 <a name="pricing-for-virtual-machine-offers"></a>Цены на предложения виртуальных машин
 ==================================
@@ -97,7 +97,7 @@ ms.locfileid: "59607801"
      }
 ```
 
-<a name="regions"></a>регионы
+<a name="regions"></a>Регионы
 -------
 
 В следующей таблице показаны разные регионы, которые можно указать для настраиваемых цен за ядро, и их соответствующие коды валют.
@@ -117,9 +117,9 @@ ms.locfileid: "59607801"
 | CL         | Чили                | CLP               |
 | CO         | Колумбия             | КОП               |
 | CR         | Коста-Рика           | CRC               |
-| HR         | Хорватия              | HRK               |
+| Управление персоналом         | Хорватия              | HRK               |
 | CY         | Кипр               | EUR               |
-| CZ         | Чешская Республика       | CZK               |
+| CZ         | Чехия       | CZK               |
 | DK         | Дания              | DKK               |
 | DO         | Доминиканская Республика   | USD               |
 | EC         | Эквадор              | USD               |
@@ -128,17 +128,17 @@ ms.locfileid: "59607801"
 | EE         | Эстония              | EUR               |
 | FI         | Финляндия              | EUR               |
 | СВ         | Франция               | EUR               |
-| DE         | Германия              | EUR               |
+| Германия         | Германия              | EUR               |
 | GR         | Греция               | EUR               |
 | GT         | Гватемала            | GTQ               |
-| HK         | Гонконг, САР        | HKD               |
+| HK         | Гонконг (ОАР)        | HKD               |
 | HU         | Венгрия              | HUF               |
 | IS         | Исландия              | ISK               |
 | IN         | Индия                | INR               |
 | ИД         | Индонезия            | IDR               |
 | IE         | Ирландия              | EUR               |
 | IL         | Израиль               | ILS               |
-| IT         | Италия                | EUR               |
+| ИТ         | Италия                | EUR               |
 | JP         | Япония                | JPY               |
 | JO         | Иордания               | JOD               |
 | KZ         | Казахстан           | KZT               |
@@ -176,7 +176,7 @@ ms.locfileid: "59607801"
 | SG         | Сингапур            | SGD               |
 | SK         | Словакия             | EUR               |
 | SI         | Словения             | EUR               |
-| ZA         | ЮАР         | ZAR               |
+| ZA         | Южная Африка         | ZAR               |
 | ES         | Испания                | EUR               |
 | LK         | Шри-Ланка            | USD               |
 | SE         | Швеция               | SEK               |
@@ -188,7 +188,7 @@ ms.locfileid: "59607801"
 | TR         | Турция               | TRY               |
 | UA         | Украина              | UAH               |
 | AE         | Объединенные Арабские Эмираты | EUR               |
-| GB         | Великобритания       | GBP               |
+| GB         | Соединенное королевство       | GBP               |
 | США         | США        | USD               |
 | UY         | Уругвай              | UYU               |
 | VE         | Венесуэла            | USD               |

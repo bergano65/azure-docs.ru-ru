@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/18/2017
 ms.author: glenga
 ms.openlocfilehash: dc44cfbd24bd04caeede03dcbcfc60da06f61135
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60011631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60921769"
 ---
 # <a name="get-started-guide-for-azure-developers"></a>Руководство по началу работы для разработчиков Azure
 
@@ -225,7 +225,7 @@ Azure предоставляет широкий набор функций для
 
 Портал Azure — это веб-приложение, которое можно использовать для создания и удаления ресурсов и служб Azure, а также для управления ими. Портал Azure расположен по адресу <https://portal.azure.com>. Он включает в себя настраиваемую панель мониторинга, инструменты управления ресурсами Azure и возможность настройки параметров подписки и данных для выставления счетов. Дополнительные сведения см. в [обзоре портала Azure](../../azure-portal-overview.md).
 
-### <a name="rest-apis"></a>Интерфейсы API REST
+### <a name="rest-apis"></a>API-интерфейсы REST
 
 В основе платформы Azure лежит набор интерфейсов REST API, которые поддерживают пользовательский интерфейс портала Azure. Большинство этих интерфейсов REST API поддерживается также для того, чтобы дать вам возможность программно подготавливать ресурсы и приложения Azure и управлять ими с любого устройства с подключением к Интернету. Полный набор документации по REST API приведен в [справочнике по пакету SDK REST для Azure](https://docs.microsoft.com/rest/api/).
 

@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
 ms.openlocfilehash: 4b2763629a3036551cb3d362e609c72737436f4a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58012218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61424709"
 ---
 # <a name="work-with-strings-in-azure-monitor-log-queries"></a>Работа со строками в запросах журнала Azure Monitor
 
@@ -49,39 +49,39 @@ print @"C:\backslash\not\escaped\with @ prefix"
 
 ## <a name="string-comparisons"></a>Сравнение строк
 
-operator       |ОПИСАНИЕ                         |С учетом регистра|Пример (при `true`)
+operator       |Описание                         |С учетом регистра|Пример (при `true`)
 ---------------|------------------------------------|--------------|-----------------------
-`==`           |Равно                              |Yes           |`"aBc" == "aBc"`
-`!=`           |Не равно                          |Yes           |`"abc" != "ABC"`
-`=~`           |Равно                              |Нет             |`"abc" =~ "ABC"`
-`!~`           |Не равно                          |Нет             |`"aBc" !~ "xyz"`
-`has`          |Правая часть представляет собой все слово в левой части |Нет |`"North America" has "america"`
-`!has`         |Правая часть не является всем словом в левой части       |Нет             |`"North America" !has "amer"` 
-`has_cs`       |Правая часть представляет собой все слово в левой части |Yes|`"North America" has_cs "America"`
-`!has_cs`      |Правая часть не является всем словом в левой части       |Yes            |`"North America" !has_cs "amer"` 
-`hasprefix`    |Правая часть представляет собой префикс слова в левой части         |Нет             |`"North America" hasprefix "ame"`
-`!hasprefix`   |Правая часть не является префиксом слова в левой части     |Нет             |`"North America" !hasprefix "mer"` 
-`hasprefix_cs`    |Правая часть представляет собой префикс слова в левой части         |Yes            |`"North America" hasprefix_cs "Ame"`
-`!hasprefix_cs`   |Правая часть не является префиксом слова в левой части     |Yes            |`"North America" !hasprefix_cs "CA"` 
-`hassuffix`    |Правая часть представляет собой суффикс слова в левой части         |Нет             |`"North America" hassuffix "ica"`
-`!hassuffix`   |Правая часть не является суффиксом слова в левой части     |Нет             |`"North America" !hassuffix "americ"`
-`hassuffix_cs`    |Правая часть представляет собой суффикс слова в левой части         |Yes            |`"North America" hassuffix_cs "ica"`
-`!hassuffix_cs`   |Правая часть не является суффиксом слова в левой части     |Yes            |`"North America" !hassuffix_cs "icA"`
-`contains`     |Правая часть является вхождением в левую часть  |Нет             |`"FabriKam" contains "BRik"`
-`!contains`    |Правая часть не входит в левую часть           |Нет             |`"Fabrikam" !contains "xyz"`
-`contains_cs`   |Правая часть является вхождением в левую часть  |Yes           |`"FabriKam" contains_cs "Kam"`
-`!contains_cs`  |Правая часть не входит в левую часть           |Yes           |`"Fabrikam" !contains_cs "Kam"`
-`startswith`   |Правая часть является начальным вхождением в левую часть|Нет             |`"Fabrikam" startswith "fab"`
-`!startswith`  |Правая часть не является начальным вхождением в левую часть|Нет         |`"Fabrikam" !startswith "kam"`
-`startswith_cs`   |Правая часть является начальным вхождением в левую часть|Yes            |`"Fabrikam" startswith_cs "Fab"`
-`!startswith_cs`  |Правая часть не является начальным вхождением в левую часть|Yes        |`"Fabrikam" !startswith_cs "fab"`
-`endswith`     |Правая часть является конечным вхождением в левую часть|Нет              |`"Fabrikam" endswith "Kam"`
-`!endswith`    |Правая часть не является конечным вхождением в левую часть|Нет          |`"Fabrikam" !endswith "brik"`
-`endswith_cs`     |Правая часть является конечным вхождением в левую часть|Yes             |`"Fabrikam" endswith "Kam"`
-`!endswith_cs`    |Правая часть не является конечным вхождением в левую часть|Yes         |`"Fabrikam" !endswith "brik"`
-`matches regex`|Левая часть содержит соответствие для правой части        |Yes           |`"Fabrikam" matches regex "b.*k"`
-`in`           |Соответствует одному из элементов       |Yes           |`"abc" in ("123", "345", "abc")`
-`!in`          |Не соответствует одному из элементов   |Yes           |`"bca" !in ("123", "345", "abc")`
+`==`           |Равно                              |Да           |`"aBc" == "aBc"`
+`!=`           |Не равно                          |Да           |`"abc" != "ABC"`
+`=~`           |Равно                              |Нет            |`"abc" =~ "ABC"`
+`!~`           |Не равно                          |Нет            |`"aBc" !~ "xyz"`
+`has`          |Правая часть представляет собой все слово в левой части |Нет|`"North America" has "america"`
+`!has`         |Правая часть не является всем словом в левой части       |Нет            |`"North America" !has "amer"` 
+`has_cs`       |Правая часть представляет собой все слово в левой части |Да|`"North America" has_cs "America"`
+`!has_cs`      |Правая часть не является всем словом в левой части       |Да            |`"North America" !has_cs "amer"` 
+`hasprefix`    |Правая часть представляет собой префикс слова в левой части         |Нет            |`"North America" hasprefix "ame"`
+`!hasprefix`   |Правая часть не является префиксом слова в левой части     |Нет            |`"North America" !hasprefix "mer"` 
+`hasprefix_cs`    |Правая часть представляет собой префикс слова в левой части         |Да            |`"North America" hasprefix_cs "Ame"`
+`!hasprefix_cs`   |Правая часть не является префиксом слова в левой части     |Да            |`"North America" !hasprefix_cs "CA"` 
+`hassuffix`    |Правая часть представляет собой суффикс слова в левой части         |Нет            |`"North America" hassuffix "ica"`
+`!hassuffix`   |Правая часть не является суффиксом слова в левой части     |Нет            |`"North America" !hassuffix "americ"`
+`hassuffix_cs`    |Правая часть представляет собой суффикс слова в левой части         |Да            |`"North America" hassuffix_cs "ica"`
+`!hassuffix_cs`   |Правая часть не является суффиксом слова в левой части     |Да            |`"North America" !hassuffix_cs "icA"`
+`contains`     |Правая часть является вхождением в левую часть  |Нет            |`"FabriKam" contains "BRik"`
+`!contains`    |Правая часть не входит в левую часть           |Нет            |`"Fabrikam" !contains "xyz"`
+`contains_cs`   |Правая часть является вхождением в левую часть  |Да           |`"FabriKam" contains_cs "Kam"`
+`!contains_cs`  |Правая часть не входит в левую часть           |Да           |`"Fabrikam" !contains_cs "Kam"`
+`startswith`   |Правая часть является начальным вхождением в левую часть|Нет            |`"Fabrikam" startswith "fab"`
+`!startswith`  |Правая часть не является начальным вхождением в левую часть|Нет        |`"Fabrikam" !startswith "kam"`
+`startswith_cs`   |Правая часть является начальным вхождением в левую часть|Да            |`"Fabrikam" startswith_cs "Fab"`
+`!startswith_cs`  |Правая часть не является начальным вхождением в левую часть|Да        |`"Fabrikam" !startswith_cs "fab"`
+`endswith`     |Правая часть является конечным вхождением в левую часть|Нет             |`"Fabrikam" endswith "Kam"`
+`!endswith`    |Правая часть не является конечным вхождением в левую часть|Нет         |`"Fabrikam" !endswith "brik"`
+`endswith_cs`     |Правая часть является конечным вхождением в левую часть|Да             |`"Fabrikam" endswith "Kam"`
+`!endswith_cs`    |Правая часть не является конечным вхождением в левую часть|Да         |`"Fabrikam" !endswith "brik"`
+`matches regex`|Левая часть содержит соответствие для правой части        |Да           |`"Fabrikam" matches regex "b.*k"`
+`in`           |Соответствует одному из элементов       |Да           |`"abc" in ("123", "345", "abc")`
+`!in`          |Не соответствует одному из элементов   |Да           |`"bca" !in ("123", "345", "abc")`
 
 
 ## <a name="countof"></a>countof
@@ -98,7 +98,7 @@ countof(text, search [, kind])
 - `search` — текстовая строка или регулярное выражение, которое проверяется на вхождение в text.
 - `kind` - _normal_ | _regex_ (по умолчанию: normal).
 
-### <a name="returns"></a>Результаты
+### <a name="returns"></a>Возвращает
 
 Количество совпадений для строки поиска в контейнере. Совпадения для текстовых строк могут перекрывать друг друга, при этом для регулярных выражений — не могут.
 
@@ -123,7 +123,7 @@ print countof("abcabc", "a.c", "regex");  // result: 2
 ```
 
 
-## <a name="extract"></a>extract
+## <a name="extract"></a>извлечь
 
 Получает соответствие регулярного выражения из указанной строки. При необходимости извлеченная подстрока также преобразуется в указанный тип.
 
@@ -140,7 +140,7 @@ extract(regex, captureGroup, text [, typeLiteral])
 - `text` — строка для поиска.
 - `typeLiteral` — необязательный литерал типа (например, typeof(long)). Если указан, то извлеченная подстрока преобразуется в этот тип.
 
-### <a name="returns"></a>Результаты
+### <a name="returns"></a>Возвращает
 Возвращается подстрока, которая сравнивалась с указанной в группе записи captureGroup, при необходимости преобразованная в тип typeLiteral.
 Если соответствия нет или не удается выполнить преобразование типа, возвращается NULL.
 

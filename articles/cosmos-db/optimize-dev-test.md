@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 11/20/2018
 ms.author: rimman
 ms.openlocfilehash: 3bb39fe99e612fb19f12fd049ebb8f600e48373e
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55457876"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60930223"
 ---
 # <a name="optimize-development-and-testing-cost-in-azure-cosmos-db"></a>Оптимизация затрат на разработку и тестирование в Azure Cosmos DB
 
@@ -29,7 +29,7 @@ ms.locfileid: "55457876"
 
 Служба Azure Cosmos DB включена в [бесплатную учетную запись Azure](https://azure.microsoft.com/free), которая предлагает деньги на счете в Azure и ресурсы бесплатно на определенный период времени. Специально для Azure Cosmos DB эта бесплатная учетная запись предоставляет хранилище размером 5 ГБ и 400 ЕЗ/c подготовленной пропускной способности на целый год. Благодаря этому любой разработчик может легко протестировать функции Azure Cosmos DB или интегрировать ее с другими службами Azure без каких-либо затрат. В рамках бесплатной учетной записи Azure вы получаете 200 долл. США на счете, которые можно потратить в течение первых 30 дней. Вы не будете ничего платить, даже если начнете использовать службы, пока не перейдете на более высокий уровень. Чтобы приступить к работе, посетите страницу [бесплатной учетной записи Azure](https://azure.microsoft.com/free).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете начать работу с использованием эмулятора или бесплатных учетных записей Azure Cosmos DB, ознакомившись со следующими ресурсами:
 

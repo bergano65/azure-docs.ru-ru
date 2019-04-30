@@ -14,17 +14,17 @@ ms.topic: article
 ms.date: 03/18/2018
 ms.author: apimpm
 ms.openlocfilehash: cfe2620801f743831f77fb76f344c156676966d3
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52635073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60657566"
 ---
 # <a name="protect-an-api-by-using-oauth-20-with-azure-active-directory-and-api-management"></a>Защита API с помощью протокола OAuth 2.0 и службы управления API в Azure Active Directory
 
 В этом руководстве показано, как настроить имеющийся экземпляр управления API Azure для защиты API с помощью протокола OAuth 2.0 в Azure Active Directory. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Чтобы выполнить шаги в этой статье, необходимо иметь следующее:
 * Экземпляр управления API.
 * Публикуемый API, использующий экземпляр управления API (APIM).
@@ -199,7 +199,7 @@ ms.locfileid: "52635073"
 
 В этом руководстве мы использовали консоль разработчика в APIM как пример клиентского приложения для вызова `Echo API`, защищенного OAuth 2.0. Чтобы узнать больше о том, как создать приложение и реализовать OAuth 2.0, изучите [примеры кода Azure Active Directory](../active-directory/develop/sample-v1-code.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше об [Azure Active Directory и OAuth 2.0](../active-directory/develop/authentication-scenarios.md).
 * См. другие [видео](https://azure.microsoft.com/documentation/videos/index/?services=api-management) об управлении API.
 * Другие способы защиты внутренней серверной службы см. в разделе [Взаимная проверка подлинности на основе сертификата](api-management-howto-mutual-certificates.md).

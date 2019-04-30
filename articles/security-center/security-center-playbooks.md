@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/28/2018
 ms.author: rkarlin
 ms.openlocfilehash: ec16e6daec099adbede625c5ec6fe6909059143b
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56116751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60907099"
 ---
 # <a name="security-playbook-in-azure-security-center-preview"></a>Сборник тренировочных заданий по обеспечению безопасности в центре безопасности Azure (предварительная версия)
 Этот документ поможет вам использовать сборники тренировочных заданий по обеспечению безопасности в центре безопасности Azure для реагирования на угрозы безопасности.
@@ -74,7 +74,7 @@ ms.locfileid: "56116751"
 
 5. На странице сборников тренировочных заданий выберите сборник, который требуется запустить, и нажмите кнопку **Запустить**. Если вы хотите увидеть сборник перед запуском, щелкните его, и откроется конструктор.
 
-    ![Сборники тренировочных заданий](./media/security-center-playbooks/security-center-playbooks-fig13.png)
+    ![Сборники схем](./media/security-center-playbooks/security-center-playbooks-fig13.png)
 
 ### <a name="history"></a>Журнал
 

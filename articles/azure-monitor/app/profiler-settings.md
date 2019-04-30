@@ -13,11 +13,11 @@ ms.reviewer: mbullwin
 ms.date: 08/06/2018
 ms.author: cweining
 ms.openlocfilehash: 9603c45443c6339a127f977600eeff2ba57a283f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58884165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61228238"
 ---
 # <a name="configure-application-insights-profiler"></a>Настройка Application Insights Profiler
 
@@ -96,7 +96,7 @@ ms.locfileid: "58884165"
   
 Перейдите на панель **Параметры приложений** служб приложений и проверьте, заданы ли следующие параметры:
 * **APPINSIGHTS_INSTRUMENTATIONKEY** — замените правильным ключом инструментирования для Application Insights.
-* **APPINSIGHTS_PORTALINFO** — ASP.NET:
+* **APPINSIGHTS_PORTALINFO** — ASP.NET
 * **APPINSIGHTS_PROFILERFEATURE_VERSION** — 1.0.0. 1.0.0
 
 Если установлены не все указанные выше параметры, установите последнее расширение сайта следующим образом:
@@ -115,7 +115,7 @@ ms.locfileid: "58884165"
 
 1. Вернитесь на панель **Параметры приложений** Службы приложений, чтобы убедиться, что заданы следующие значения:
    * **APPINSIGHTS_INSTRUMENTATIONKEY** — замените правильным ключом инструментирования для Application Insights.
-   * **APPINSIGHTS_PORTALINFO** — ASP.NET: 
+   * **APPINSIGHTS_PORTALINFO** — ASP.NET 
    * **APPINSIGHTS_PROFILERFEATURE_VERSION** — 1.0.0. 1.0.0
 
      ![Параметры приложений для Profiler][app-settings-for-profiler]

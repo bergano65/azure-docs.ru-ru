@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 03/26/2019
 ms.author: mlottner
 ms.openlocfilehash: d1f9d77d1f87e8d201e2cb034401bb3cae14f41b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58862919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61359077"
 ---
 # <a name="security-agent-authentication-methods"></a>Методы проверки подлинности агента безопасности 
 
@@ -61,13 +61,13 @@ ms.locfileid: "58862919"
 В следующей таблице описаны эти аргументы.
 
 
-|Параметр|ОПИСАНИЕ|Параметры|
+|Параметр|Описание|Параметры|
 |---------|---------------|---------------|
 |**identity**|Режим проверки подлинности| **Модуль** или **устройства**|
 |**type**|Authentication type (Тип проверки подлинности)|**SymmetricKey** или **SelfSignedCertificate**|
 |**filePath**|Абсолютный путь к файлу, содержащему сертификат или симметричный ключ| |
 |**gatewayHostname**|Полное ДОМЕННОЕ имя центра Интернета вещей|Пример: ContosoIotHub.azure-devices.net|
-|**deviceId**|Идентификатор устройства.|Пример: MyDevice1|
+|**deviceId**|Идентификатор устройства|Пример: MyDevice1|
 |**certificateLocationKind**|Расположение хранилища сертификатов|**Локальный_файл** или **Store**|
 
 

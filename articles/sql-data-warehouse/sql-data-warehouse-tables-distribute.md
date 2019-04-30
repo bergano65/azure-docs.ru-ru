@@ -11,11 +11,11 @@ ms.date: 04/17/2018
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.openlocfilehash: c3de7b46449b8075d17a19733eda88d692b1d876
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55243085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60935820"
 ---
 # <a name="guidance-for-designing-distributed-tables-in-azure-sql-data-warehouse"></a>Руководство по проектированию распределенных таблиц в хранилище данных SQL Azure
 Рекомендации по проектированию хэш-распределенных таблиц и таблиц с распределением методом циклического перебора в хранилище данных SQL Azure.
@@ -212,7 +212,7 @@ RENAME OBJECT [dbo].[FactInternetSales] TO [FactInternetSales_ProductKey];
 RENAME OBJECT [dbo].[FactInternetSales_CustomerKey] TO [FactInternetSales];
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы создать распределенную таблицу, воспользуйтесь одной из следующих инструкций:
 

@@ -9,11 +9,11 @@ ms.date: 03/12/2018
 ms.author: cherylmc
 ms.custom: seodec18
 ms.openlocfilehash: 6b2bce6b488698db0a72c9a17f67c2555c6afa5b
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53100027"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60883146"
 ---
 # <a name="move-a-public-peering-to-microsoft-peering"></a>Переход с общедоступного пиринга на пиринг Майкрософт
 
@@ -67,6 +67,6 @@ ms.locfileid: "53100027"
   
 На портале Azure вы можете просмотреть список всех каналов и пирингов ExpressRoute. Дополнительные сведения см. в разделе [Просмотр сведений о пиринге Майкрософт](expressroute-howto-routing-portal-resource-manager.md#getmsft).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

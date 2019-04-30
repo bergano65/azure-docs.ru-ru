@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 03/14/2017
 ms.author: roiyz
 ms.openlocfilehash: 7c56b54f2d5be2bd47644e07369120468bb6015e
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57533703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61468386"
 ---
 # <a name="azure-monitor-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Azure Monitor для Windows
 
@@ -74,7 +74,7 @@ ms.locfileid: "57533703"
 | ---- | ---- |
 | версия_API | 2015-06-15 |
 | publisher | Microsoft.EnterpriseCloud.Monitoring |
-| Тип | MicrosoftMonitoringAgent |
+| тип | MicrosoftMonitoringAgent |
 | typeHandlerVersion | 1.0 |
 | workspaceID (пример)* | 6f680a37-00c6-41c7-a93f-1437e3462574 |
 | workspaceKey (пример) | z4bU3p1/GrnWpQkky4gdabWXAhbWSTz70hm4m2Xt92XI+rSRgE8qVvRhsGo9TXffbrTahyrwv35W0pOqQAU7uQ== |

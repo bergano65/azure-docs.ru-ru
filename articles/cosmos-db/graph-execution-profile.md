@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: lbosq
 ms.openlocfilehash: 2f3967c64e79b2bc7b01b35eff26f5ac0d4e3db4
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59288611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60888419"
 ---
 # <a name="how-to-use-the-execution-profile-step-to-evaluate-your-gremlin-queries"></a>Как использовать шаг профиля выполнения для оценки запросов Gremlin
 
@@ -22,7 +22,7 @@ ms.locfileid: "59288611"
 
 Чтобы использовать этот шаг, просто добавьте `executionProfile()` вызов в конце запроса Gremlin функции. **Выполняется запрос Gremlin** и результат операции будет возвращать объект ответа JSON с профилем выполнения запроса.
 
-Например: 
+Пример.
 
 ```java
     // Basic traversal
@@ -148,7 +148,7 @@ ms.locfileid: "59288611"
     - `storeOps.count`: Представляет количество результатов, возврат из операции хранилища.
     - `storeOps.size`: Представляет размер в байтах результата операции заданного хранилища.
 
-Оператор среды выполнения Cosmos DB Gremlin|ОПИСАНИЕ
+Оператор среды выполнения Cosmos DB Gremlin|Описание
 ---|---
 `GetVertices`| Этот шаг получает набор объектов, сопоставление из уровня сохраняемости. 
 `GetEdges`| Этот шаг получает края, образующие располагаются по бокам набора вершин. Этот шаг может вызвать одну или несколько операций в хранилище.

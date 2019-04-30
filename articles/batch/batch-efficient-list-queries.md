@@ -16,11 +16,11 @@ ms.date: 12/07/2018
 ms.author: lahugh
 ms.custom: seodec18
 ms.openlocfilehash: ff3e95a603b8f9a188c7839578cd12287935de90
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58918541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60778260"
 ---
 # <a name="create-queries-to-list-batch-resources-efficiently"></a>Эффективное создание запросов на вывод списка ресурсов пакетной службы
 
@@ -74,7 +74,7 @@ IPagedEnumerable<CloudTask> completedTasks =
 * Несколько выражений можно объединить с помощью логических операторов `and` и `or`.
 * В этом примере строка фильтра выводит только запущенные задачи отрисовки: `(state eq 'running') and startswith(id, 'renderTask')`.
 
-### <a name="select"></a>Выберите пункт
+### <a name="select"></a>Выберите
 Строка выборки (select) позволяет ограничить значения свойств, которые требуется вернуть для каждого элемента. Вы указываете список имен свойств, после чего в результатах запроса возвращаются только значения указанных свойств для соответствующих элементов.
 
 * Строка выборки содержит список имен свойств, разделенных запятыми. Для запрашиваемого типа сущности можно указать любые свойства.

@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: pbutlerm
 ms.openlocfilehash: a1398d172a5c578ec3c0f16627eadd1da3fd1e45
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58437626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60778159"
 ---
 # <a name="configure-lead-management-for-dynamics-crm-online"></a>Настройка управления потенциальными клиентами в Dynamics CRM Online
 
@@ -110,7 +110,7 @@ ms.locfileid: "58437626"
 
 3. Нажмите **Добавить пользователя**.
 
-    ![Добавление пользователей](./media/cloud-partner-portal-lead-management-instructions-dynamics/crmonline4.png)
+    ![Добавление пользователя](./media/cloud-partner-portal-lead-management-instructions-dynamics/crmonline4.png)
 
 4. Создайте пользователя для службы модуля записи интересов. Настройте следующие параметры:
 
@@ -146,7 +146,7 @@ ms.locfileid: "58437626"
 
 ## <a name="wrap-up"></a>Заключение
 
-Завершите настройку Dynamics CRM для управления потенциальными клиентами, добавив сведения о созданной учетной записи на портале Cloud Partner. Например: 
+Завершите настройку Dynamics CRM для управления потенциальными клиентами, добавив сведения о созданной учетной записи на портале Cloud Partner. Пример.
 
 -   **Azure Active Directory** - **идентификатор приложения** (пример: *23456052-AAAA-bbbb-8662-1234df56788f*), **идентификатор каталога** (пример: *12345678-8af1-4asf-1234-12234d01db47*), и **ключ приложения** (пример: *1234ABCDEDFRZ/G/FdY0aUABCEDcqhbLn/ST122345nBc=*).
 -   **Office 365** - **URL-адрес** (пример: *https://contoso.crm4.dynamics.com*), **имя пользователя** (пример: *contoso\@ Contoso.onmicrosoft.com*), и **пароль** (пример: *P\@ssw0rd*).

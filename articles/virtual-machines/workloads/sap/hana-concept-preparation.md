@@ -15,11 +15,11 @@ ms.date: 09/10/2018
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 73643cd6954932f933e200baad09e4301300aac2
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55822550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60794902"
 ---
 # <a name="disaster-recovery-principles"></a>Принципы аварийного восстановления
 
@@ -105,6 +105,6 @@ ms.locfileid: "55822550"
 
 В случае отработки отказа вместо последнего моментального снимка хранилища вы также можете восстановить более старый моментальный снимок.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. статью о [процедуре отработки отказа при аварийном восстановлении](hana-failover-procedure.md).

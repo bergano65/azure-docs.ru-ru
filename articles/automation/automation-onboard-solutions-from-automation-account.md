@@ -10,11 +10,11 @@ ms.topic: conceptual
 manager: carmonm
 ms.custom: mvc
 ms.openlocfilehash: 41f0607908cde94ca08a4c4dfce0a47032eefbb3
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59578447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60739258"
 ---
 # <a name="onboard-update-management-change-tracking-and-inventory-solutions"></a>Подключение решений для управления обновлениями, отслеживания изменений и инвентаризации
 
@@ -32,7 +32,7 @@ ms.locfileid: "59578447"
 
 ![Подключение решения для инвентаризации](media/automation-onboard-solutions-from-automation-account/onboardsolutions.png)
 
-При включении решения, только в определенных регионах поддерживаются для связывания с рабочей областью Log Analytics и учетную запись службы автоматизации.
+При включении решений только определенные регионы поддерживают связывание рабочей области Log Analytics и учетной записи службы автоматизации.
 
 Поддерживаемое сопоставление показано в следующей таблице.
 

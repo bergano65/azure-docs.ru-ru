@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 02/23/2018
 ms.author: mikhegn
 ms.openlocfilehash: dac96ef6fce38a0557444e181fa6eccb649cfb9a
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44298341"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60719232"
 ---
 # <a name="manage-applications-for-multiple-environments"></a>Управление приложениями для использования в нескольких средах
 
@@ -53,7 +53,7 @@ Azure Service Fabric позволяет создавать кластеры, д�
   - При использовании sfctl команда [`sfctl application create`](https://docs.microsoft.com/azure/service-fabric/service-fabric-sfctl-application#sfctl-application-create) принимает параметры в виде строки JSON. Сценарий install.sh использует sfctl.
   - Visual Studio предоставляет набор файлов параметров в папке Parameters в проекте приложения. Эти файлы параметров используются при публикации из Visual Studio с помощью Azure DevOps Services или Team Foundation Server. В Visual Studio файлы параметров передаются в сценарий Deploy-FabricApplication.ps1.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В приведенных ниже статьях описывается, как использовать некоторые основные понятия, приведенные в этой статье:
 
 - [Как указать переменные среды для служб в Service Fabric](service-fabric-how-to-specify-environment-variables.md)

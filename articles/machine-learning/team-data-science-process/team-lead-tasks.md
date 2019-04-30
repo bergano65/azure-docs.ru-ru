@@ -11,11 +11,11 @@ ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 45be3d7f865c7b72ae62efbf99dbbb4594b1846f
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55465271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60812455"
 ---
 # <a name="tasks-for-the-team-lead-in-the-team-data-science-process-team"></a>Задачи руководителя команды по обработке и анализу данных команды
 
@@ -62,7 +62,7 @@ ms.locfileid: "55465271"
 В любом случае руководители команд должны сообщить участникам команд, какие репозитории программ и шаблонов выбирать при настройке и клонировании репозиториев проекта и программ. Чтобы создать репозитории проекта для отдельных проектов или единого проекта, руководители проектов должны выполнить [задачи руководителя проекта для команды обработки и анализа данных](project-lead-tasks.md). 
 
 
-## <a name="0-prerequisites"></a>0. Предварительные требования
+## <a name="0-prerequisites"></a>0. Технические условия
 
 Предварительные требования заключаются в выполнении задач, назначенных менеджеру группы. Они описаны в статье [Group Manager tasks](group-manager-tasks.md) (Задачи менеджера группы). Итак, прежде чем приступить к задачам руководителя команды, следует выполнить следующие требования: 
 
@@ -406,7 +406,7 @@ ms.locfileid: "55465271"
 
 ![44](./media/team-lead-tasks/team-leads-44-add-team-members.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены ссылки на подробные описания ролей и задач, определенных командным процессом обработки и анализа данных.
 

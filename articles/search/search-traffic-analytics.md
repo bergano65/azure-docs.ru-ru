@@ -10,11 +10,11 @@ ms.date: 01/25/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: c30c8bae3e76778a31cdd0695acde52b5b1c6b02
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55079670"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60749620"
 ---
 # <a name="implement-search-traffic-analytics-in-azure-search"></a>Реализация аналитики поискового трафика в Поиске Azure
 Аналитика поискового трафика — это модель реализации цикла обратной связи для службы поиска. Эта модель описывает необходимые данные и метод их сбора с помощью Application Insights, лидирующего решения для мониторинга служб на нескольких платформах.
@@ -194,7 +194,7 @@ ms.locfileid: "55079670"
 
 ![Панель мониторинга Power BI для Поиска Azure](./media/search-traffic-analytics/AzureSearch-PowerBI-Dashboard.png "Панель мониторинга Power BI для Поиска Azure")
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Выполните инструментирование приложения поиска для получения детальных и полезных сведений о службе поиска.
 
 Вы можете узнать больше об [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) и перейти на [страницу цен](https://azure.microsoft.com/pricing/details/application-insights/), чтобы получить дополнительные сведения о соответствующих уровнях служб.

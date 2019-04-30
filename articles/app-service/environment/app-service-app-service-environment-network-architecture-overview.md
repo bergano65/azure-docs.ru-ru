@@ -16,14 +16,14 @@ ms.date: 10/04/2016
 ms.author: stefsch
 ms.custom: seodec18
 ms.openlocfilehash: 0d7d4af46e54ad89e0d084cb15af13e56115e996
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53274179"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60765317"
 ---
 # <a name="network-architecture-overview-of-app-service-environments"></a>Общие сведения об архитектуре сетевых сред службы приложений
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Общие сведения
 Среда службы приложений всегда создается в подсети [виртуальной сети][virtualnetwork]. Приложения, работающие в среде службы приложений, могут взаимодействовать с частными конечными точками, расположенными в пределах той же топологии виртуальной сети.  Поскольку клиенты могут заблокировать части инфраструктуры виртуальной сети, важно понять типы потоков сетевой связи, которые возникают в среде службы приложений.
 
 ## <a name="general-network-flow"></a>Общий поток сетевого трафика

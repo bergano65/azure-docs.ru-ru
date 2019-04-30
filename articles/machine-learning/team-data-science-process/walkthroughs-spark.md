@@ -12,11 +12,11 @@ ms.date: 09/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: ce57c37791f9fcf353d08e177eb243f4939b52a8
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55455853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60805528"
 ---
 # <a name="hdinsight-spark-data-science-walkthroughs-using-pyspark-and-scala-on-azure"></a>Пошаговое руководство обработки и анализа данных HDInsight Spark с использованием PySpark и Scala в Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "55455853"
 В пошаговом руководстве [Обработка и анализ данных с использованием Scala и Spark в Azure](scala-walkthrough.md) используются данные такси Нью-Йорка, чтобы предсказать, будут ли оставлены чаевые, и определить диапазон ожидаемых сумм. В этом руководстве показано, как с помощью Scala выполнять контролируемые задачи машинного обучения, используя библиотеку машинного обучения Spark (MLlib) и пакеты SparkML в кластере Azure HDInsight со Spark. Здесь подробно расписаны задачи, которые образуют [процесс обработки и анализа данных](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/): прием и исследование данных, визуализация, проектирование признаков, моделирование и использование моделей. В моделях используются логистическая и линейная регрессия, случайные леса и градиентный бустинг деревьев.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Описание ключевых компонентов, составляющих процесс обработки и анализа данных группы, см. в статье [Жизненный цикл процесса обработки и анализа данных группы](overview.md).
 

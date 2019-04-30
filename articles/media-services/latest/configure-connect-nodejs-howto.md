@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: juliako
 ms.openlocfilehash: 40880a2c28ce28a671930ef8837082247e61e24b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59495094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60733136"
 ---
 # <a name="connect-to-media-services-v3-api---nodejs"></a>Подключение к API v3 служб мультимедиа - Node.js
 
@@ -51,7 +51,7 @@ ms.locfileid: "59495094"
 
 Необходимо указать следующие пакеты:
 
-|Package|ОПИСАНИЕ|
+|Пакет|Описание|
 |---|---|
 |`azure-arm-mediaservices`|Пакет SDK служб мультимедиа Azure. <br/>Чтобы убедиться, что вы используете последнюю версию пакета служб мультимедиа Azure, проверьте [NPM install azure-arm-mediaservices](https://www.npmjs.com/package/azure-arm-mediaservices/).|
 |`azure-storage`|Пакет SDK для хранилища. Используется при отправке файлов в активы.|
@@ -111,7 +111,7 @@ msRestAzure.loginWithServicePrincipalSecret(aadClientId, aadSecret, aadTenantId,
 });
 ```
 
-## <a name="run-your-app"></a>Запуск приложения для Android
+## <a name="run-your-app"></a>Запуск приложения
 
 Откройте окно командной строки. Перейдите в каталог образцов и выполните следующие команды:
 

@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 10/03/2018
 ms.author: sngun
 ms.openlocfilehash: 2c58b982e596c95aa47442c1897410fe9ab6b99a
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58137680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60929829"
 ---
 # <a name="visualize-azure-cosmos-db-data-by-using-the-power-bi-connector"></a>Визуализация данных Azure Cosmos DB с помощью соединителя Power BI
 
@@ -48,7 +48,7 @@ ms.locfileid: "58137680"
 
 Для совместного использования отчетов в службе PowerBI.com необходимо настроить учетную запись в PowerBI.com.  Дополнительные сведения о Power BI и Power BI Pro см. по ссылке [https://powerbi.microsoft.com/pricing](https://powerbi.microsoft.com/pricing).
 
-## <a name="lets-get-started"></a>Начало работы
+## <a name="lets-get-started"></a>Приступим
 Для работы с этим руководством представим, что вы геолог, изучающий вулканы по всему миру. Данные о вулканах хранятся в учетной записи Azure Cosmos DB, а формат документа JSON выглядит следующим образом.
 
     {
@@ -168,7 +168,7 @@ ms.locfileid: "58137680"
 Для совместного использования отчета необходимо иметь учетную запись в службе PowerBI.com.
 
 1. В средстве Power BI Desktop откройте ленту **Главная** .
-2. Щелкните **Опубликовать**.  Вы увидите запрос на ввод имени пользователя и пароля учетной записи PowerBI.com.
+2. Нажмите кнопку **Опубликовать**.  Вы увидите запрос на ввод имени пользователя и пароля учетной записи PowerBI.com.
 3. После аутентификации учетных данных отчет публикуется в указанном вами расположении.
 4. Для просмотра и совместного использования отчета на сайте PowerBI.com щелкните **Открыть PowerBITutorial.pbix в Power BI** .
    

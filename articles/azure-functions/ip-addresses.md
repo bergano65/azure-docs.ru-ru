@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 12/03/2018
 ms.author: glenga
 ms.openlocfilehash: 83e5a15d8a7f9c01f6a180ebceb715600b8a39db
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52849485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61035867"
 ---
 # <a name="ip-addresses-in-azure-functions"></a>IP-адреса в Функциях Azure
 
@@ -134,6 +134,6 @@ az webapp show --resource-group <group_name> --name <app_name> --query sku --out
 
 Номер `sku` среды службы приложений — `Isolated`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Распространенная причина изменения IP-адреса — изменение масштаба приложения-функции. [Узнайте больше о масштабировании приложений-функций](functions-scale.md).

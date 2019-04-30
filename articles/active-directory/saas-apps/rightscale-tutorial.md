@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с RightScale | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с RightScale | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Rightscale.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 07/08/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 416a98c5f9c5a2ec813206ea9ea7f311b23e86cb
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59525585"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61080742"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-rightscale"></a>Руководство. Интеграция Azure Active Directory с Rightscale
+# <a name="tutorial-azure-active-directory-integration-with-rightscale"></a>Руководство по Интеграция Azure Active Directory с Rightscale
 
 В этом руководстве описано, как интегрировать Rightscale с Azure Active Directory (Azure AD).
 
@@ -66,11 +66,11 @@ ms.locfileid: "59525585"
 
 1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
+    ![Приложения][2]
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![ПРИЛОЖЕНИЯ][3]
+    ![Приложения][3]
 
 1. В поле поиска введите **Rightscale**.
 

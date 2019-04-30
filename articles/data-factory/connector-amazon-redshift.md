@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 02/07/2018
 ms.author: jingwang
 ms.openlocfilehash: 9e1dde57dc1903e87704bd55fb0b942b7cc349e5
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58010573"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61262321"
 ---
 # <a name="copy-data-from-amazon-redshift-using-azure-data-factory"></a>Копирование данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -53,13 +53,13 @@ ms.locfileid: "58010573"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **AmazonRedshift**. | Yes |
-| server |IP-адрес или имя узла сервера Amazon Redshift. |Yes |
+| type | Для свойства type необходимо задать значение **AmazonRedshift**. | Да |
+| сервер |IP-адрес или имя узла сервера Amazon Redshift. |Да |
 | порт |Номер TCP-порта, используемого сервером Amazon Redshift для прослушивания клиентских подключений. |Нет, значение по умолчанию — 5439 |
-| database |Имя базы данных Amazon Redshift. |Yes |
-| Имя пользователя |Имя пользователя, имеющего доступ к базе данных. |Yes |
+| database |Имя базы данных Amazon Redshift. |Да |
+| имя пользователя |Имя пользователя, имеющего доступ к базе данных. |Да |
 | password |Пароль для учетной записи пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Yes |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
 **Пример.**
 
@@ -95,7 +95,7 @@ ms.locfileid: "58010573"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для набора данных необходимо задать значение **RelationalTable**. | Yes |
+| type | Для набора данных необходимо задать значение **RelationalTable**. | Да |
 | tableName | Имя таблицы в Amazon Redshift. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -125,9 +125,9 @@ ms.locfileid: "58010573"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type источника действия копирования необходимо задать значение **AmazonRedshiftSource**. | Yes |
+| type | Для свойства type источника действия копирования необходимо задать значение **AmazonRedshiftSource**. | Да |
 | query |Используйте пользовательский запрос для чтения данных. Например, select * from MyTable. |Нет (если для набора данных задано свойство tableName) |
-| redshiftUnloadSettings | Группа свойств при использовании Amazon Redshift UNLOAD. | Нет  |
+| redshiftUnloadSettings | Группа свойств при использовании Amazon Redshift UNLOAD. | Нет |
 | s3LinkedServiceName | Относится к службе Amazon S3, которую необходимо использовать в качестве промежуточного хранилища, указав имя связанной службы типа AmazonS3. | Да, если используется UNLOAD |
 | bucketName | Укажите контейнер S3 для хранения промежуточных данных. Если не указано иное, служба фабрики данных создает его автоматически.  | Да, если используется UNLOAD |
 
@@ -210,17 +210,17 @@ ms.locfileid: "58010573"
 | Тип данных Amazon Redshift | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | BIGINT |Int64 |
-| BOOLEAN |Строка |
-| CHAR |Строка |
-| DATE |DateTime |
+| BOOLEAN |String |
+| CHAR |String |
+| ДАТА |DateTime |
 | DECIMAL |Decimal |
 | DOUBLE PRECISION |Double |
 | INTEGER |Int32 |
 | REAL |Single |
 | SMALLINT |Int16 |
-| TEXT |Строка |
+| TEXT |String |
 | TIMESTAMP |DateTime |
-| VARCHAR |Строка |
+| VARCHAR |String |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

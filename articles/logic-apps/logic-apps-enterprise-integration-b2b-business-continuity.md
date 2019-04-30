@@ -11,11 +11,11 @@ ms.topic: article
 ms.assetid: cf44af18-1fe5-41d5-9e06-cc57a968207c
 ms.date: 04/10/2017
 ms.openlocfilehash: 8d024e0bc90724892bc53f8895b270716ad0cefc
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58099439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61001242"
 ---
 # <a name="cross-region-disaster-recovery-for-b2b-integration-accounts-in-azure-logic-apps"></a>Межрегиональное аварийное восстановление учетных записей интеграции B2B в Azure Logic Apps
 
@@ -112,7 +112,7 @@ ms.locfileid: "58099439"
 
 6. Выполните поиск **X12** и выберите **X12 — добавление или изменение контрольных номеров**.   
 
-   ![Добавление или обновление контрольных номеров](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn5.png)
+   ![Добавление или изменение контрольных номеров](./media/logic-apps-enterprise-integration-b2b-business-continuity/x12cn5.png)
 
 7. Для подключения действия к учетной записи интеграции для дополнительного региона выберите **Change connection** (Изменить подключение) > **Добавить новое подключение**, чтобы получить список доступных учетных записей интеграции. Введите имя для подключения, выберите из списка свою *учетную запись интеграции для дополнительного региона*, а затем выберите **Создать**. 
 

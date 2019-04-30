@@ -9,11 +9,11 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/29/2019
 ms.openlocfilehash: 3368be291770133cdfa10158f6e30540e17b8223
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58084316"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61363765"
 ---
 # <a name="use-reference-data-from-a-sql-database-for-an-azure-stream-analytics-job-preview"></a>Использование эталонных данных из Базы данных SQL для задания Azure Stream Analytics (предварительная версия)
 
@@ -53,7 +53,7 @@ Azure Stream Analytics поддерживает Базу данных SQL Azure 
 
 После того как вы настроите другие входные и выходные данные, а также запрос, можно запустить задание Stream Analytics.
 
-## <a name="tools-for-visual-studio"></a>Инструменты для Visual Studio
+## <a name="tools-for-visual-studio"></a>Средства для Visual Studio
 
 Чтобы добавить Базу данных SQL Azure в качестве источника эталонных входных данных с помощью Visual Studio, выполните приведенные ниже действия.
 
@@ -80,7 +80,7 @@ Azure Stream Analytics поддерживает Базу данных SQL Azure 
 create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
 ```
 
-### <a name="choose-your-subscription"></a>Выберите свою подписку
+### <a name="choose-your-subscription"></a>Выбрать подписку
 
 1. В Visual Studio в меню **Вид** выберите **Обозреватель серверов**.
 
@@ -205,5 +205,5 @@ Azure Stream Analytics будет работать с любым типом Ба
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование эталонных данных для уточняющих запросов в Stream Analytics](stream-analytics-use-reference-data.md)
-* [Краткое руководство по созданию задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
+* [Краткое руководство. по созданию задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
 * [Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)](stream-analytics-live-data-local-testing.md)

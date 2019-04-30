@@ -11,11 +11,11 @@ ms.workload: infrastructure-services
 ms.date: 04/08/2019
 ms.author: tyao;kumud
 ms.openlocfilehash: 2d16893420f27caf4f8b00dc32069e3296d7c236
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59795752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61459782"
 ---
 # <a name="configure-a-custom-response-for-azure-web-application-firewall"></a>Настройка ответ для брандмауэра Azure веб-приложения
 
@@ -42,7 +42,7 @@ Install-Module PowerShellGet -Force -AllowClobber
 Install-Module -Name Az.FrontDoor
 ```
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 В Azure выделите связанные ресурсы группе ресурсов. В этом примере создайте группу ресурсов с помощью [New AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup).
 

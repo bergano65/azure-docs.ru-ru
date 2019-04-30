@@ -12,11 +12,11 @@ ms.reviewer: jmartens
 ms.date: 12/04/2018
 ms.custom: seodec18
 ms.openlocfilehash: 815be7400e0a0560ace7e07b317aeb25c2feacd5
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57450980"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60817417"
 ---
 # <a name="troubleshooting-azure-machine-learning-service-aks-and-aci-deployments"></a>Устранение неполадок при развертывании AKS и ACI с помощью Службы машинного обучения Azure
 
@@ -252,7 +252,7 @@ print(Model.get_model_path(model_name='my-best-model'))
 При установке уровня ведения журнала DEBUG (для отладки) в журнале может регистрироваться дополнительная информация, которая может быть полезна для определения причины сбоя.
 
 ## <a name="function-fails-runinputdata"></a>Ошибка выполнения функции: run(input_data)
-Если служба успешно развернута, но аварийно завершает работу при публикации данных в конечную точку оценки, можно добавить оператор для перехвата ошибок в функцию `run(input_data)`, чтобы она возвращала подробное сообщение об ошибке. Например: 
+Если служба успешно развернута, но аварийно завершает работу при публикации данных в конечную точку оценки, можно добавить оператор для перехвата ошибок в функцию `run(input_data)`, чтобы она возвращала подробное сообщение об ошибке. Пример.
 
 ```python
 def run(input_data):

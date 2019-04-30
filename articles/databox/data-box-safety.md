@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 09/24/2018
 ms.author: alkohli
 ms.openlocfilehash: d0ef3e407fd256b4db351f86b51964cbcb16e819
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57905143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60747818"
 ---
 # <a name="safely-install-and-operate-your-azure-data-box"></a>Безопасная установка и эксплуатация устройства Azure Data Box
 ![Значок "Внимание!"](./media/data-box-safety/warning_icon.png)
@@ -24,7 +24,7 @@ ms.locfileid: "57905143"
 ## <a name="safety-icon-conventions"></a>Условные обозначения сведений о безопасности
 Ниже приведены условные обозначения, встречающиеся в описаниях мер предосторожности, которые нужно соблюдать при настройке и эксплуатации Azure Data Box.
 
-| Значок | ОПИСАНИЕ |
+| Значок | Описание |
 |:--- |:--- |
 | ![Значок "Опасность"](./media/data-box-safety/warning_icon.png) **ОПАСНОСТЬ!** |Указывает на опасную ситуацию, которая наверняка приведет к смерти или серьезной травме. Это условное обозначение применяется только к самым крайним случаям. |
 | ![Значок "Внимание!"](./media/data-box-safety/warning_icon.png) **ВНИМАНИЕ!** |Указывает на опасную ситуацию, которая может привести к смерти или серьезной травме. |

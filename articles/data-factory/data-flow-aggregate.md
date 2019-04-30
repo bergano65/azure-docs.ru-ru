@@ -8,11 +8,11 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.openlocfilehash: 7b488b243c0520befb6b5470598f460b5a759fed
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56730042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61467383"
 ---
 # <a name="azure-data-factory-mapping-data-flow-aggregate-transformation"></a>Статистическое преобразование сопоставления потоков данных Фабрики данных Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "56730042"
 
 ![Агрегатные преобразования](media/data-flow/agg.png "агрегат 1")
 
-## <a name="group-by"></a>Сгруппировать по
+## <a name="group-by"></a>Группировать по
 (Необязательно) Выберите предложение "Группировать по" для агрегации и используйте либо имя существующего столбца, либо новое имя. С помощью "Добавить столбец" добавьте предложения "Группировать по" и щелкните текстовое поле рядом с именем столбца, чтобы запустить построитель выражений, чтобы выбрать только существующий столбец, комбинацию столбцов или выражения для группировки.
 
 ## <a name="the-aggregate-column-tab"></a>Вкладка столбца статистического выражения 

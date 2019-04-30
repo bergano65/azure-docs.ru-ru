@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2018
 ms.author: genli
 ms.openlocfilehash: fc3d6ab1d7fdf05963d9ecd350deccd940a95b87
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55732521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036389"
 ---
 # <a name="troubleshooting-connectivity-problems-between-azure-vms"></a>Устранение проблем с подключением между виртуальными машинами Azure
 
@@ -109,5 +109,5 @@ ms.locfileid: "55732521"
 
 Возможности [проверки IP-потока с помощью Наблюдателя за сетями](../network-watcher/network-watcher-ip-flow-verify-overview.md) и [ведения журнала потоков NSG](../network-watcher/network-watcher-nsg-flow-logging-overview.md) позволяют определить наличие NSG или UDR, которые влияют на поток трафика. Вы также можете проверить подключение Inter-Vnet [здесь](https://support.microsoft.com/en-us/help/4032151/configuring-and-validating-vnet-or-vpn-connections).
 
-### <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
+### <a name="need-help-contact-support"></a>Нужна помощь? Обратитесь в службу поддержки.
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

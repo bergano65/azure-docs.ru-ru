@@ -7,13 +7,13 @@ ms.topic: reference
 ms.date: 03/01/2019
 ms.author: zhshang
 ms.openlocfilehash: 1fbe96d827bcf6bb39a6cf7a4e6811174b862d59
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57992183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61071082"
 ---
-# <a name="azure-cli-reference"></a>Справочник по Azure CLI
+# <a name="azure-cli-reference"></a>Справочник по Azure CLI
 
 В следующей таблице содержатся ссылки на скрипты Bash для службы Azure SignalR, созданные с помощью Azure CLI.
 

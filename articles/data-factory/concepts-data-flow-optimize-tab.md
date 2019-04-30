@@ -8,11 +8,11 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.openlocfilehash: 3802a8475d8a39a2f275dbc7fcf21ce69892a117
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56728783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61262294"
 ---
 # <a name="mapping-data-flow-transformation-optimize-tab"></a>Вкладка оптимизации сопоставления для потоков данных
 
@@ -32,7 +32,7 @@ ms.locfileid: "56728783"
 
 <img src="media/data-flow/opt002.png" width="600">
 
-### <a name="round-robin"></a>Циклический перебор,
+### <a name="round-robin"></a>Циклический перебор
 
 Циклический перебор — это простой вариант секционирования, который автоматически равномерно распределяет данные по секциям. Циклический перебор можно использовать, если у вас нет хороших вариантов для реализации надежной и интеллектуальной стратегии секционирования. Вы можете задать количество физических секций.
 

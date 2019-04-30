@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 04/25/2018
 ms.author: roiyz
 ms.openlocfilehash: 19637a1fe49550d0ed7aea7e3a596f1f77f5984b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58082047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60869883"
 ---
 # <a name="use-the-azure-custom-script-extension-version-2-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 2 на виртуальных машинах Linux
 Расширение настраиваемых скриптов версии 2 скачивает и выполняет скрипты на виртуальных машинах Azure. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления. Сценарии можно скачать из службы хранилища Azure или другого расположения, доступного из Интернета, или передать в среду выполнения расширения. 
@@ -50,7 +50,7 @@ ms.locfileid: "58082047"
 
 Если скрипт расположен на локальном сервере, вам по-прежнему может потребоваться открыть дополнительные порты брандмауэра или группы безопасности сети.
 
-### <a name="tips-and-tricks"></a>Советы и рекомендации
+### <a name="tips-and-tricks"></a>Советы и хитрости
 * Высокий процент сбоев этого расширения связан с синтаксическими ошибками в скрипте. Чтобы упростить поиск точки сбоя, протестируйте запуски скрипта без ошибок и включите в скрипт дополнительные возможности ведения журнала.
 * Пишите идемпотентные скрипты, чтобы их случайные повторные запуски не приводили к изменениям системы.
 * Выполняемые скрипты не должны запрашивать ввод данных пользователем.
@@ -109,17 +109,17 @@ ms.locfileid: "58082047"
 
 | ИМЯ | Значение и пример | Тип данных | 
 | ---- | ---- | ---- |
-| версия_API | 2015-06-15 | дата |
-| publisher | Microsoft.Compute.Extensions | строка |
-| Тип | CustomScript | строка |
-| typeHandlerVersion | 2,0 | int |
-| fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | array |
-| commandToExecute (пример) | python MyPythonScript.py <my-param1> | строка |
-| script | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | строка |
+| версия_API | 2015-06-15 | date |
+| publisher | Microsoft.Compute.Extensions | string |
+| тип | CustomScript | string |
+| typeHandlerVersion | 2.0 | int |
+| fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | массив |
+| commandToExecute (пример) | python MyPythonScript.py <my-param1> | string |
+| script | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | string |
 | skipDos2Unix (например) | false | Логическое |
 | метка времени (например) | 123456789 | 32-битное целое число |
-| storageAccountName (пример) | examplestorageacct | строка |
-| storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |
+| storageAccountName (пример) | examplestorageacct | string |
+| storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | string |
 
 ### <a name="property-value-details"></a>Сведения о значениях свойств
 * `skipDos2Unix` — (необязательное, логическое) пропустите преобразование dos2unix URL-адресов файла на основе сценария или скрипта.
@@ -258,7 +258,7 @@ az vm extension set \
   --protected-settings '{"fileUris": ["https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-linux/scripts/config-music.sh"],"commandToExecute": "./config-music.sh"}'
 ```
 
-### <a name="azure-cli-examples"></a>Примеры использования интерфейса командной строки Azure
+### <a name="azure-cli-examples"></a>Примеры с использованием интерфейса командной строки Azure
 
 #### <a name="public-configuration-with-script-file"></a>Открытая конфигурация с файлом сценария
 

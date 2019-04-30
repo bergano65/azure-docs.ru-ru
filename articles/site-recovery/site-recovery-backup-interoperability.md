@@ -9,17 +9,17 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: sideeksh
 ms.openlocfilehash: e902f70225ec0eb0caa98f7e19a16c87220cb6f9
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58312892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61035781"
 ---
 # <a name="support-for-using-site-recovery-with-azure-backup"></a>Поддержка использования Site Recovery с помощью службы архивации Azure
 
 В этой статье приводятся сведения о поддержке с помощью [службы Site Recovery](site-recovery-overview.md) вместе с [службы архивации Azure](https://docs.microsoft.com/azure/backup/backup-overview).
 
-**Действие** | **Поддержка Site Recovery** | **Дополнительные сведения**
+**Действие** | **Поддержка Site Recovery** | **Сведения**
 --- | --- | ---
 **Развертывание служб вместе** | Поддерживаются | Службы с возможностью взаимодействия и могут настраиваться друг с другом.
 **Файл резервного копирования и восстановления** | Поддерживаются | Когда резервного копирования и репликации включены для виртуальной Машины и резервные копии создаются, нет никаких проблем в восстановление файлов на стороне источника виртуальные машины или группы виртуальных машин. Репликация продолжается обычным образом без изменения в состояние работоспособности репликации.

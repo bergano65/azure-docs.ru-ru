@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 5db2cb983c0c3cd0e2194f7686964d9ec3828d6f
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59526611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61232281"
 ---
 # <a name="deliver-content-to-customers"></a>Доставка содержимого клиентам
 При доставке содержимого клиентам в виде потоковой трансляции или видео по запросу ваша задача — доставлять видео высокого качества для различных устройств в разных сетевых условиях.
@@ -155,7 +155,7 @@ http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46
 
 ## <a name="known-issues"></a>Известные проблемы
 ### <a name="changes-to-smooth-streaming-manifest-version"></a>Изменения в версии манифеста Smooth Streaming
-До выпуска набора исправлений в июле 2016 года дело обстояло так. Когда ресурсы-контейнеры, генерируемые стандартным кодировщиком мультимедиа, расширенным рабочим процессом кодировщика мультимедиа или устаревшим кодировщиком мультимедиа Azure, передавались в потоке с помощью динамической упаковки, выдавался манифест Smooth Streaming версии 2.0. В нем для длительностей фрагментов не использовались так называемые теги повтора (r-tag). Например: 
+До выпуска набора исправлений в июле 2016 года дело обстояло так. Когда ресурсы-контейнеры, генерируемые стандартным кодировщиком мультимедиа, расширенным рабочим процессом кодировщика мультимедиа или устаревшим кодировщиком мультимедиа Azure, передавались в потоке с помощью динамической упаковки, выдавался манифест Smooth Streaming версии 2.0. В нем для длительностей фрагментов не использовались так называемые теги повтора (r-tag). Пример.
 
 
     <?xml version="1.0" encoding="UTF-8"?>
@@ -169,7 +169,7 @@ http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46
         </StreamIndex>
     </SmoothStreamingMedia>
 
-После выпуска набора исправлений в июле 2016 года создаваемый манифест Smooth Streaming соответствует версии 2.2, в которой для длительностей фрагментов используются теги повтора. Например: 
+После выпуска набора исправлений в июле 2016 года создаваемый манифест Smooth Streaming соответствует версии 2.2, в которой для длительностей фрагментов используются теги повтора. Пример.
 
     <?xml version="1.0" encoding="UTF-8"?>
     <SmoothStreamingMedia MajorVersion="2" MinorVersion="2" Duration="8000" TimeScale="1000">
@@ -187,6 +187,6 @@ http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>См. также
 [Обновление указателей служб мультимедиа после отката ключей хранилища](media-services-roll-storage-access-keys.md)
 

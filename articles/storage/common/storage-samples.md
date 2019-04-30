@@ -9,11 +9,11 @@ ms.date: 06/03/2017
 ms.author: tamram
 ms.subservice: common
 ms.openlocfilehash: 411b43ec631c77246da1ee55f2532486f8b55ffc
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58006626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60730112"
 ---
 # <a name="azure-storage-samples"></a>Примеры для службы хранилища Azure
 
@@ -29,7 +29,7 @@ Had to remove this article, it refers to the VS quickstarts, and they've stopped
 * [Visual Studio Quick Starts for Azure Storage](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/VisualStudioQuickStarts)
 -->
 
-## <a name="net-samples"></a>Примеры для .NET
+## <a name="net-samples"></a>Примеры .NET
 Для просмотра примеров .NET загрузите [Клиентскую библиотеку хранилища .NET](https://www.nuget.org/packages/WindowsAzure.Storage/) на NuGet. Клиентская библиотека хранилища .NET также доступна в [пакете Azure SDK для .NET](https://azure.microsoft.com/downloads/).
 
 * [Примеры для службы хранилища Azure с использованием .NET](storage-samples-dotnet.md)
@@ -59,7 +59,7 @@ Had to remove this article, it refers to the VS quickstarts, and they've stopped
 
 ## <a name="api-reference-and-source-code"></a>Справочник по API и исходный код
 
-| Язык | Справочник по API | Исходный код |
+| Язык | Справочные материалы по API | Исходный код |
 |----------|---------------|-------------|
 | .NET | [Справочник по клиентской библиотеке .NET](https://msdn.microsoft.com/library/azure/mt347887.aspx) | [Исходный код для клиентской библиотеки хранилища .NET](https://github.com/Azure/azure-storage-net) |
 | Java | [Справочник по клиентской библиотеке Java](https://docs.microsoft.com/java/api/overview/azure/storage) | [Исходный код для клиентской библиотеки хранилища Java](https://github.com/azure/azure-storage-java) |

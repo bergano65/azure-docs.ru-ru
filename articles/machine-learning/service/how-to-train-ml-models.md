@@ -12,11 +12,11 @@ ms.reviewer: sgilley
 ms.date: 04/19/2019
 ms.custom: seodec18
 ms.openlocfilehash: 7b479556543c6a9dff88643fdc587dec3f832f39
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59548176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60818493"
 ---
 # <a name="train-models-with-azure-machine-learning-using-estimator"></a>Обучение моделей с помощью оценщика Машинного обучения Azure
 
@@ -56,7 +56,7 @@ sk_est = Estimator(source_directory='./my-sklearn-proj',
 
 Этот фрагмент кода определяет следующие параметры конструктора `Estimator`.
 
-Параметр | ОПИСАНИЕ
+Параметр | Описание
 --|--
 `source_directory`| Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка копируется с локального компьютера на удаленный вычислительный ресурс. 
 `script_params`| Словарь, указав аргументы командной строки в сценарий обучения `entry_script`, в виде < аргумент командной строки, значение > пары. Чтобы указать подробные флаг в `script_params`, используйте `<command-line argument, "">`.
@@ -107,7 +107,7 @@ estimator = Estimator(source_directory='./my-keras-proj',
 
 В приведенном выше коде показаны следующие новые параметры конструктора `Estimator`:
 
-Параметр | ОПИСАНИЕ | значение по умолчанию
+Параметр | Описание | значение по умолчанию
 --|--|--
 `custom_docker_base_image`| Имя используемого образа. Можно предоставлять только те образы, которые доступны в публичных хранилищах Docker (в данном случае в центре Docker). Чтобы выбрать образ из частного репозитория Docker, используйте параметр конструктора `environment_definition`. [Ознакомьтесь с примером ниже](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/how-to-use-estimator/how-to-use-estimator.ipynb). | `None`
 `node_count`| Количество узлов, которые будут использоваться для задания обучения. | `1`

@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 08/20/2018
 ms.author: mbullwin
 ms.openlocfilehash: a08a67a78362325e29b1002b44f390a94e78888a
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54028116"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60784883"
 ---
 # <a name="application-performance-monitoring-using-application-insights-for-scom"></a>Мониторинг производительности приложений с помощью Application Insights для SCOM
 Если для управления серверами вы используете System Center Operations Manager (SCOM), мониторинг производительности и диагностику проблем можно выполнять с помощью [Azure Application Insights](../../azure-monitor/app/asp-net.md). Application Insights отслеживает входящие запросы вашего веб-приложения, исходящие вызовы REST и SQL, а также исключения и трассировку журналов. Вы можете использовать панели мониторинга с диаграммами метрик и смарт-оповещениями, а также мощные средства диагностического поиска и аналитических запросов для работы с данными телеметрии. 
@@ -94,7 +94,7 @@ ms.locfileid: "54028116"
 ## <a name="view-telemetry-in-application-insights"></a>Просмотр данных телеметрии в Application Insights
 На [портале Azure](https://portal.azure.com)перейдите к ресурсу для вашего приложения. Вы увидите [диаграммы телеметрии](../../azure-monitor/app/app-insights-dashboards.md) для этого приложения. (Если они еще не отображаются на главной странице, щелкните "Live Metrics Stream" (Динамический поток метрик).)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Настройка панели мониторинга](../../azure-monitor/app/app-insights-dashboards.md) для объединения важнейших диаграмм мониторинга этого и других приложений.
 * [Дополнительная информация о метриках](../../azure-monitor/app/metrics-explorer.md)
 * [Настройка оповещений](../../azure-monitor/app/alerts.md)

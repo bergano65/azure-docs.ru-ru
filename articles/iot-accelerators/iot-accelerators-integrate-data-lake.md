@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.openlocfilehash: 021f18f588613817110539d408f9260fb9247895
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53603935"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61449500"
 ---
 # <a name="integrate-the-remote-monitoring-solution-with-azure-data-lake-store"></a>Интеграция решения для удаленного мониторинга с Azure Data Lake Store
 
@@ -21,7 +21,7 @@ ms.locfileid: "53603935"
 
 В этом практическом руководстве используется задание Azure Stream Analytics для потоковой передачи данных из Центра Интернета вещей в вашем решении для удаленного мониторинга в Azure Data Lake Store.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим практическим руководством необходимо следующее:
 
@@ -69,7 +69,7 @@ az iot hub consumer-group create --hub-name contoso-rm30263 --name streamanalyti
 
 1. Нажмите кнопку **Создать**.
 
-    ![Создание задания Stream Analytics](./media/iot-accelerators-integrate-data-lake/create-stream-analytics-job.png)
+    ![Создать задание Stream Analytics](./media/iot-accelerators-integrate-data-lake/create-stream-analytics-job.png)
 
 ## <a name="configure-the-stream-analytics-job"></a>Настройка задания Stream Analytics
 
@@ -178,6 +178,6 @@ Azure Stream Analytics использует SQL-подобный язык зап
 
     ![Анализ данных потоковой передачи](./media/iot-accelerators-integrate-data-lake/data-lake-store-file-preview.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Azure Data Lake Analytics можно использовать для выполнения анализа больших данных в наборах данных Data Lake Store. Дополнительные сведения см. в [документации по Data Lake Analytics](https://docs.microsoft.com/azure/data-lake-analytics).

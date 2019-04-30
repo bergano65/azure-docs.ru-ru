@@ -12,11 +12,11 @@ ms.topic: article
 ms.assetid: 90f5cfc4-46b2-4ef7-8ac4-486bb0e3f289
 ms.date: 02/06/2019
 ms.openlocfilehash: f6d778ddbce16c223945d4683bd7a950bd2a0cb0
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57455808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61468012"
 ---
 # <a name="transform-xml-with-maps-in-azure-logic-apps-with-enterprise-integration-pack"></a>Преобразование XML с помощью карт в Azure Logic Apps с использованием Пакета интеграции Enterprise
 
@@ -39,7 +39,7 @@ ms.locfileid: "57455808"
   * Для сборок необходим контейнер больших двоичных объектов Azure, в который можно отправить сборку, и расположение этого контейнера. Так вы сможете указать это расположение позже — при добавлении сборки в учетную запись интеграции. 
   Чтобы сделать это, вам понадобятся следующие элементы:
 
-    | Элемент | ОПИСАНИЕ |
+    | Элемент | Описание |
     |------|-------------|
     | [Учетная запись хранения Azure](../storage/common/storage-account-overview.md) | В этой учетной записи создайте контейнер больших двоичных объектов Azure для сборки. Узнайте, как [создать учетную запись хранения](../storage/common/storage-quickstart-create-account.md). |
     | Контейнер BLOB-объектов | В этот контейнер можно передать сборку. Расположение этого контейнера также требуется при добавлении сборки в учетную запись интеграции. Узнайте, как [создать контейнер больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-portal.md). |

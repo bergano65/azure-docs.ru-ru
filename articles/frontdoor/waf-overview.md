@@ -1,5 +1,5 @@
 ---
-title: Что такое брандмауэр Azure веб-приложения для входной двери Azure?  (предварительная версия)
+title: Что такое брандмауэр Azure веб-приложения для входной двери Azure? (предварительная версия)
 description: Узнайте как Azure брандмауэр веб-приложения для службы двери Azure защищает веб-приложений от атак злоумышленников.
 services: frontdoor
 documentationcenter: ''
@@ -12,13 +12,13 @@ ms.workload: infrastructure-services
 ms.date: 04/02/2019
 ms.author: kumud;tyao
 ms.openlocfilehash: 17cf6629aca6c73bc96e4cf0c172a2e87a7aafb8
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59799173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61459358"
 ---
-# <a name="what-is-azure-web-application-firewall-for-azure-front-door-preview"></a>Что такое брандмауэр Azure веб-приложения для входной двери Azure?  (предварительная версия)
+# <a name="what-is-azure-web-application-firewall-for-azure-front-door-preview"></a>Что такое брандмауэр Azure веб-приложения для входной двери Azure? (предварительная версия)
 
 Брандмауэр Azure веб-приложения (WAF) (Предварительная версия) предоставляет централизованную защиту веб-приложений, которые предоставляются глобально с помощью Azure входной двери. Он разработан и эксплуатироваться защищать веб-служб от распространенных эксплойтов и уязвимостей, а также защиту службы высокой доступности для ваших пользователей, помимо соблюдения нормативных требований.
 

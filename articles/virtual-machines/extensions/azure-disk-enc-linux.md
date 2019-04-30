@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: ejarvi
-ms.openlocfilehash: 36e8875e91e2f04dbb60bab3211f07b2053e78f5
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
-ms.translationtype: HT
+ms.openlocfilehash: 3ce881da4b683cf7034100d5044dd0f3c93edb52
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39414778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60800184"
 ---
 # <a name="azure-disk-encryption-for-linux-microsoftazuresecurityazurediskencryptionforlinux"></a>Шифрование дисков Azure для Linux (Microsoft.Azure.Security.AzureDiskEncryptionForLinux)
 
@@ -27,7 +27,7 @@ ms.locfileid: "39414778"
 
 Шифрование дисков Azure использует подсистему dm-crypt в Linux для шифрования всего диска в [выбранных дистрибутивах Azure Linux](https://aka.ms/adelinux).  Решение интегрируется с Azure Key Vault, обеспечивая управление секретами и ключами шифрования диска.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 См. полный список [необходимых компонентов для шифрования дисков Azure](
 ../../security/azure-security-disk-encryption-prerequisites.md).
@@ -74,21 +74,21 @@ ms.locfileid: "39414778"
 
 | ИМЯ | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| версия_API | 2015-06-15 | дата |
-| publisher | Microsoft.Azure.Security | строка |
-| Тип | AzureDiskEncryptionForLinux | строка |
+| версия_API | 2015-06-15 | date |
+| publisher | Microsoft.Azure.Security | string |
+| тип | AzureDiskEncryptionForLinux | string |
 | typeHandlerVersion | 0.1, 1.1 (VMSS) | int |
 | AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
-| AADClientSecret | password | строка |
-| AADClientCertificate | thumbprint | строка |
+| AADClientSecret | password | string |
+| AADClientCertificate | thumbprint | string |
 | DiskFormatQuery | {"dev_path":"","name":"","file_system":""} | Словарь JSON |
-| EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | строка | 
-| KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | строка |
-| KeyEncryptionKeyURL | URL-адрес | строка |
-| KeyVaultURL | URL-адрес | строка |
-| Парольная фраза | password | строка | 
-| SequenceVersion | uniqueidentifier | строка |
-| VolumeType | ОС, данные, все | строка |
+| EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | string | 
+| KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | string |
+| KeyEncryptionKeyURL | url | string |
+| KeyVaultURL | url | string |
+| Парольная фраза | password | string | 
+| SequenceVersion | uniqueidentifier | string |
+| VolumeType | ОС, данные, все | string |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 
@@ -108,6 +108,6 @@ ms.locfileid: "39414778"
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о расширениях виртуальных машин см. в обзоре [расширений и компонентов виртуальной машины для Linux](features-linux.md).

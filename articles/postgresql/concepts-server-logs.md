@@ -7,11 +7,11 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 02/28/2019
 ms.openlocfilehash: 99deef907818ffdb1ce858c8e988e26cbd53a1a1
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57195104"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60871535"
 ---
 # <a name="server-logs-in-azure-database-for-postgresql"></a>Журналы сервера в базе данных Azure для PostgreSQL 
 База данных Azure для PostgreSQL создает журналы запросов и ошибок. Журналы запросов и ошибок можно использовать для идентификации, устранения и исправления ошибок конфигурации, а также для повышения производительности. (Доступ к журналам транзакций не включен). 
@@ -45,14 +45,14 @@ ms.locfileid: "57195104"
 | ResourceGroup | Имя группы ресурсов, принадлежащей серверу |
 | ResourceProvider | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORPOSTGRESQL` |
 | ResourceType | `Servers` |
-| ResourceId | Универсальный код ресурса (URI) |
-| Ресурс | Имя сервера |
-| Категория | `PostgreSQLLogs` |
+| resourceId | Универсальный код ресурса (URI) |
+| Resource | Имя сервера |
+| Category | `PostgreSQLLogs` |
 | OperationName | `LogEvent` |
 | errorLevel | Пример уровня ведения журнала: LOG, ERROR, NOTICE |
 | Сообщение | Первичное сообщение журнала | 
 | Домен | Версия сервера, например: postgres 10 |
-| Описание | Второстепенное сообщение журнала (если применимо) |
+| Подробности | Второстепенное сообщение журнала (если применимо) |
 | ColumnName | Имя столбца (если применимо) |
 | SchemaName | Имя схемы (если применимо) |
 | DatatypeName | Имя типа данных (если применимо) |

@@ -10,11 +10,11 @@ ms.date: 08/21/2018
 ms.author: rimman
 ms.reviewer: sngun
 ms.openlocfilehash: 36b0a2f18cf2917251a87405456980811af1bc3d
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56242198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60894838"
 ---
 # <a name="secure-azure-cosmos-keys-using-azure-key-vault"></a>Защита ключей Azure Cosmos с помощью Azure Key Vault 
 
@@ -81,7 +81,7 @@ ms.locfileid: "56242198"
 
 2. Откройте **политики доступа**, выберите **+ Добавить**, найдите развернутое веб-приложение, выберите разрешения и нажмите кнопку **ОК**.  
 
-   ![Добавление политики доступа](./media/access-secrets-from-keyvault/add-access-policy.png)
+   ![Добавить политику доступа](./media/access-secrets-from-keyvault/add-access-policy.png)
 
 Теперь, запустив приложение, вы сможете прочитать секрет из Key Vault.
 
@@ -89,7 +89,7 @@ ms.locfileid: "56242198"
  
 Аналогичным образом вы можете предоставить пользователю доступ к Key Vault. Вам нужно добавить себя в Key Vault. Для этого выберите **Политики доступа**, а затем предоставьте все необходимые разрешения для запуска приложения из Visual Studio. Если это приложение запускается с вашего рабочего стола, оно использует ваш идентификатор.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы настроить брандмауэр для Azure Cosmos DB, см. статью [Поддерживаемые брандмауэры](firewall-support.md).
 * Чтобы настроить конечную точку службы виртуальной сети, перейдите к статье [Безопасный доступ к учетной записи Azure Cosmos DB с использованием конечной точки службы виртуальной сети Azure](vnet-service-endpoint.md).

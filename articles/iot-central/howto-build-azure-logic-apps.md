@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.service: iot-central
 manager: peterpr
 ms.openlocfilehash: 635c8d0f149895798eece8cf3b48712ab74374ea
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57759888"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60887138"
 ---
 # <a name="build-workflows-with-the-iot-central-connector-in-azure-logic-apps"></a>Создание рабочих процессов с помощью соединителя IoT Central в Azure Logic Apps
 
@@ -38,7 +38,7 @@ ms.locfileid: "57759888"
 
     ![Создание приложения логики на портале Azure](./media/howto-build-azure-logic-apps/createinazureportal.png)
 
-1. После успешного создания приложения логики, вы автоматически выйдете в конструкторе приложений логики. Выберите **пустое приложение логики**. 
+1. После успешного создания приложения логики, вы автоматически выйдете в конструкторе приложений логики. Выберите **Пустое приложение логики**. 
 
     ![Создание пустого приложения логики](./media/howto-build-azure-logic-apps/blanklogicapp.png)
 

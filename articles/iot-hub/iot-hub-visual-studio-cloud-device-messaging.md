@@ -5,14 +5,15 @@ author: shizn
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 01/07/2018
+origin.date: 01/07/2018
+ms.date: 05/06/2019
 ms.author: xshi
 ms.openlocfilehash: ab3c02d7207bca70a90df8aa08c73c1484cd635d
-ms.sourcegitcommit: e89b9a75e3710559a9d2c705801c306c4e3de16c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59571317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61440751"
 ---
 # <a name="use-cloud-explorer-for-visual-studio-to-send-and-receive-messages-between-your-device-and-iot-hub"></a>Использование Cloud Explorer для Visual Studio для обмена сообщениями между устройством и Центром Интернета вещей
 
@@ -48,14 +49,10 @@ ms.locfileid: "59571317"
 
     ![Выбор "Управление учетными записями"](media/iot-hub-visual-studio-cloud-device-messaging/click-account-management.png)
 
-
-2. Щелкните **Управление учетными записями** в Cloud Explorer.
-
-3. Выберите **Добавить учетную запись...** в новом окне при первом входе в Azure.
-
-4. После входа появится список подписок Azure. Выберите подписки Azure, которые вы хотите просмотреть, и нажмите кнопку **Применить**.
-
-5. Разверните узлы **Ваша подписка** > **IoT Hubs**(Центры Интернета вещей) > **Ваш Центр Интернета вещей**, после чего в узле Центра Интернета вещей появится список устройств.
+1. Щелкните **Управление учетными записями** в Cloud Explorer.
+1. Выберите **Добавить учетную запись...** в новом окне при первом входе в Azure.
+1. После входа появится список подписок Azure. Выберите подписки Azure, которые вы хотите просмотреть, и нажмите кнопку **Применить**.
+1. Разверните узлы **Ваша подписка** > **IoT Hubs**(Центры Интернета вещей) > **Ваш Центр Интернета вещей**, после чего в узле Центра Интернета вещей появится список устройств.
 
     ![Список устройств](media/iot-hub-visual-studio-cloud-device-messaging/device-list.png)
 
@@ -67,13 +64,13 @@ ms.locfileid: "59571317"
 
     ![Действие Start Monitoring D2C Message (Начать мониторинг сообщений D2C)](media/iot-hub-visual-studio-cloud-device-messaging/start-monitoring-d2c-message.png)
 
-2. Отслеживаемые сообщения будут отображаться в области вывода **Центра Интернета вещей**.
+1. Отслеживаемые сообщения будут отображаться в области вывода **Центра Интернета вещей**.
 
     ![Результаты мониторинга сообщений D2C](media/iot-hub-visual-studio-cloud-device-messaging/monitor-d2c-message-result.png)
 
-3. Чтобы остановить мониторинг, щелкните правой кнопкой мыши любой Центр Интернета вещей или любое устройство и выберите **Stop Monitoring D2C Message** (Остановить мониторинг сообщений D2C).
+1. Чтобы остановить мониторинг, щелкните правой кнопкой мыши любой Центр Интернета вещей или любое устройство и выберите **Stop Monitoring D2C Message** (Остановить мониторинг сообщений D2C).
 
-## <a name="send-cloud-to-device-messages"></a>Отправка сообщений из облака на устройство
+## <a name="send-cloud-to-device-messages"></a>Отправка сообщений между устройством и облаком
 
 Чтобы отправить сообщение из Центра Интернета вещей на устройство, выполните следующие действия.
 
@@ -81,9 +78,8 @@ ms.locfileid: "59571317"
 
     ![Действие Send C2D Message (Отправить сообщение C2D)](media/iot-hub-visual-studio-cloud-device-messaging/send-c2d-message.png)
 
-2. Введите сообщение в поле ввода.
-
-3. Результаты будут отображаться в области вывода **Центра Интернета вещей**.
+1. Введите сообщение в поле ввода.
+1. Результаты будут отображаться в области вывода **Центра Интернета вещей**.
 
     ![Результаты отправки сообщения C2D](media/iot-hub-visual-studio-cloud-device-messaging/send-c2d-message-result.png)
 

@@ -13,11 +13,11 @@ ms.workload: na
 ms.date: 04/09/2019
 ms.author: tomfitz
 ms.openlocfilehash: 4d5e6d20cb93c339d75c12ca1c0f56eaa5cc8cdd
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59490764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60783013"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Функции для работы с ресурсами в шаблонах Azure Resource Manager
 
@@ -43,11 +43,11 @@ ms.locfileid: "59490764"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| имя_ресурса или идентификатор_ресурса |Yes |строка |Уникальный идентификатор ресурса. |
-| версия_API |Yes |строка |Версия API для состояния среды выполнения ресурса. Как правило, указывается в формате **гггг-мм-дд**. |
-| functionValues |Нет  |object | Объект, содержащий значения для функции. Предоставляйте этот объект только для функций, которые поддерживают прием объекта с параметрами, например **listAccountSas** в учетной записи хранения. В этой статье показан пример передачи значения функции. | 
+| имя_ресурса или идентификатор_ресурса |Да |string |Уникальный идентификатор ресурса. |
+| версия_API |Да |string |Версия API для состояния среды выполнения ресурса. Как правило, указывается в формате **гггг-мм-дд**. |
+| functionValues |Нет |object | Объект, содержащий значения для функции. Предоставляйте этот объект только для функций, которые поддерживают прием объекта с параметрами, например **listAccountSas** в учетной записи хранения. В этой статье показан пример передачи значения функции. | 
 
 ### <a name="implementations"></a>Варианты реализации решения
 
@@ -254,10 +254,10 @@ ms.locfileid: "59490764"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| пространство_имен_поставщика |Yes |строка |Пространство имен поставщика. |
-| тип_ресурса |Нет  |строка |Тип ресурса в указанном пространстве имен. |
+| пространство_имен_поставщика |Да |string |Пространство имен поставщика. |
+| тип_ресурса |Нет |string |Тип ресурса в указанном пространстве имен. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -329,11 +329,11 @@ ms.locfileid: "59490764"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| имя_ресурса или идентификатор_ресурса |Yes |строка |Имя или уникальный идентификатор ресурса. |
-| версия_API |Нет  |строка |Версия API для указанного ресурса. Если ресурс не предоставляется в рамках того же шаблона, необходимо включить этот параметр. Как правило, указывается в формате **гггг-мм-дд**. |
-| Full |Нет  |строка |Значение, указывающее, следует ли возвращать полный объект ресурса. Если вы не укажете `'Full'`, возвращается только объект свойств ресурса. Полный объект включает такие значения, как идентификатор ресурса и расположение. |
+| имя_ресурса или идентификатор_ресурса |Да |string |Имя или уникальный идентификатор ресурса. |
+| версия_API |Нет |string |Версия API для указанного ресурса. Если ресурс не предоставляется в рамках того же шаблона, необходимо включить этот параметр. Как правило, указывается в формате **гггг-мм-дд**. |
+| Full |Нет |string |Значение, указывающее, следует ли возвращать полный объект ресурса. Если вы не укажете `'Full'`, возвращается только объект свойств ресурса. Полный объект включает такие значения, как идентификатор ресурса и расположение. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -584,7 +584,7 @@ ms.locfileid: "59490764"
 }
 ```
 
-## <a name="resourceid"></a>ResourceId
+## <a name="resourceid"></a>resourceId
 
 `resourceId([subscriptionId], [resourceGroupName], resourceType, resourceName1, [resourceName2]...)`
 
@@ -592,13 +592,13 @@ ms.locfileid: "59490764"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| subscriptionId |Нет  |строка (в формате GUID) |Значение по умолчанию — текущая подписка. Укажите это значение, если нужно получить ресурс из другой подписки. |
-| имя_группы_ресурсов |Нет  |строка |Значение по умолчанию — текущая группа ресурсов. Укажите это значение, если нужно получить ресурс из другой группы ресурсов. |
-| тип_ресурса |Yes |строка |Тип ресурса, включая пространство имен поставщика ресурсов. |
-| имя_ресурса1 |Yes |строка |Имя ресурса. |
-| имя_ресурса2 |Нет  |строка |Имя следующего ресурса, если ресурс является вложенным. |
+| subscriptionId |Нет |строка (в формате GUID) |Значение по умолчанию — текущая подписка. Укажите это значение, если нужно получить ресурс из другой подписки. |
+| resourceGroupName |Нет |string |Значение по умолчанию — текущая группа ресурсов. Укажите это значение, если нужно получить ресурс из другой группы ресурсов. |
+| тип_ресурса |Да |string |Тип ресурса, включая пространство имен поставщика ресурсов. |
+| имя_ресурса1 |Да |string |Имя ресурса. |
+| имя_ресурса2 |Нет |string |Имя следующего ресурса, если ресурс является вложенным. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -718,14 +718,14 @@ ms.locfileid: "59490764"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Значение |
+| ИМЯ | type | Value |
 | ---- | ---- | ----- |
-| sameRGOutput | Строка | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| differentRGOutput | Строка | /subscriptions/{ИД_текущей_подписки}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| differentSubOutput | Строка | /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| nestedResourceOutput | Строка | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.SQL/servers/serverName/databases/databaseName |
+| sameRGOutput | String | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| differentRGOutput | String | /subscriptions/{ИД_текущей_подписки}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| differentSubOutput | String | /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| nestedResourceOutput | String | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.SQL/servers/serverName/databases/databaseName |
 
-## <a name="subscription"></a>Подписка
+## <a name="subscription"></a>подписка
 
 `subscription()`
 

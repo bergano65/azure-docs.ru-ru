@@ -13,11 +13,11 @@ author: nabhishek
 ms.author: abnarain
 manager: craigg
 ms.openlocfilehash: d299a785d50657ef40c0c49cb2dce33b8939fd02
-ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57575874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60860994"
 ---
 # <a name="transform-data-by-running-a-jar-activity-in-azure-databricks"></a>Преобразование данных с помощью выполнения действий Jar в Azure Databricks
 
@@ -58,12 +58,12 @@ ms.locfileid: "57575874"
 
 |Свойство|ОПИСАНИЕ|Обязательно для заполнения|
 |:--|---|:-:|
-|name|Имя действия в конвейере.|Yes|
-|description|Описание действия.|Нет |
-|Тип|Тип действия Jar в Databricks — DatabricksSparkJar.|Yes|
-|linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Jar. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|Yes|
-|mainClassName|Полное имя класса, содержащего метод main, который будет выполнен. Этот класс должен содержаться в файле JAR, предоставляемом в виде библиотеки.|Yes|
-|parameters|Параметры, которые будут переданы в метод main.  Массив строк.|Нет |
+|name|Имя действия в конвейере.|Да|
+|description|Описание действия.|Нет|
+|тип|Тип действия Jar в Databricks — DatabricksSparkJar.|Да|
+|linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Jar. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|Да|
+|mainClassName|Полное имя класса, содержащего метод main, который будет выполнен. Этот класс должен содержаться в файле JAR, предоставляемом в виде библиотеки.|Да|
+|parameters|Параметры, которые будут переданы в метод main.  Массив строк.|Нет|
 |libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов <строка, объект>|Да (по крайней мере один метод, содержащий mainClassName)|
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Поддерживаемые библиотеки для действий Databricks

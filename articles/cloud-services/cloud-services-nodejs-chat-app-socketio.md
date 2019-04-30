@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 08/17/2017
 ms.author: jeconnoc
 ms.openlocfilehash: cd0bceae770182e778410d8065d34dfeed055acc
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57993257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61433201"
 ---
 # <a name="build-a-nodejs-chat-application-with-socketio-on-an-azure-cloud-service"></a>Создание приложения чата Node.js с помощью Socket.IO в облачной службе Azure
 
@@ -109,7 +109,7 @@ Socket.IO обеспечивает связь в режиме реального
        PS C:\node\chatapp\WorkerRole1> Start-AzureEmulator -Launch
    
    > [!NOTE]
-   > При возникновении проблем с запуском эмулятора, например.: Start-AzureEmulator: Произошла непредвиденная ошибка.  Сведения. Произошла непредвиденная ошибка Коммуникационный объект System.ServiceModel.Channels.ServiceChannel нельзя применить для обмена данными, так как он находится в состоянии Faulted.
+   > При возникновении проблем с запуском эмулятора, например.: Start-AzureEmulator: Произошла непредвиденная ошибка.  Сведения: Произошла непредвиденная ошибка Коммуникационный объект System.ServiceModel.Channels.ServiceChannel нельзя применить для обмена данными, так как он находится в состоянии Faulted.
    > 
    > Переустановите azureauthoringtools версии 2.7.1 и azurecomputeemulator версии 2.7 - убедитесь, что версии совпадают.
 
@@ -121,7 +121,7 @@ Socket.IO обеспечивает связь в режиме реального
 4. После проверки приложения остановите эмулятор, выполнив следующую команду:
    
        PS C:\node\chatapp\WorkerRole1> Stop-AzureEmulator
-5. Чтобы развернуть приложение в Azure, воспользуйтесь командлетом **Publish-AzureServiceProject** . Например: 
+5. Чтобы развернуть приложение в Azure, воспользуйтесь командлетом **Publish-AzureServiceProject** . Пример.
    
        PS C:\node\chatapp\WorkerRole1> Publish-AzureServiceProject -ServiceName mychatapp -Location "East US" -Launch
    

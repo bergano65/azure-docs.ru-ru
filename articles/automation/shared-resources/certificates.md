@@ -10,11 +10,11 @@ ms.date: 04/02/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: d230fa97d009f0ee2a3bc86a0b6b7c8d40687a46
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60010285"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61216085"
 ---
 # <a name="certificate-assets-in-azure-automation"></a>Сертификация активов в службе автоматизации Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "60010285"
 
 Для AzureRM командлеты, представленные в следующей таблице, используются для создания ресурсов учетных данных службы автоматизации и управления ими с помощью Windows PowerShell. Они поставляются как часть [модуля AzureRM.Automation](/powershell/azure/overview), которая доступна для использования в модулях Runbook службы автоматизации и конфигурации DSC.
 
-|Командлеты|ОПИСАНИЕ|
+|Командлеты|Описание|
 |:---|:---|
 |[Get-AzureRmAutomationCertificate](/powershell/module/azurerm.automation/get-azurermautomationcertificate)|Извлекает сведения о сертификате для использования в модуле Runbook или в конфигурации DSC. Сам сертификат можно извлечь только с помощью действия Get-AutomationCertificate.|
 |[New-AzureRmAutomationCertificate](/powershell/module/azurerm.automation/new-azurermautomationcertificate)|Создает сертификат в службе автоматизации Azure.|
@@ -39,7 +39,7 @@ ms.locfileid: "60010285"
 
 Действия в следующей таблице используются для доступа к сертификатам в модуле runbook и конфигурации DSC.
 
-| Действия | ОПИСАНИЕ |
+| Действия | Описание |
 |:---|:---|
 |Get-AutomationCertificate|Получает сертификат для использования в модуле Runbook или в конфигурации DSC. Возвращает объект [System.Security.Cryptography.X509Certificates.X509Certificate2](/dotnet/api/system.security.cryptography.x509certificates.x509certificate2).|
 
@@ -50,7 +50,7 @@ ms.locfileid: "60010285"
 
 Функция, приведенная в следующей таблице, используется для доступа к сертификатам в runbook Python2.
 
-| Функция | ОПИСАНИЕ |
+| Функция | Описание |
 |:---|:---|
 | automationassets.get_automation_certificate | Извлекает сведения о ресурсе сертификата. |
 

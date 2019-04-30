@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 04/30/2018
 ms.author: estfan
 ms.openlocfilehash: 43ecdafac4f0a5cdc9e619537cdbe2a42ff7fe1b
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57191924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60999685"
 ---
 # <a name="create-and-manage-integration-accounts-for-b2b-solutions-with-logic-apps"></a>Создание и администрирование учетных записей интеграции для решений B2B в приложениях логики
 
@@ -34,7 +34,7 @@ ms.locfileid: "57191924"
 
 Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>.
 
-## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
+## <a name="sign-in-to-the-azure-portal"></a>Войдите на портал Azure
 
 Войдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> с помощью учетных данных учетной записи Azure.
 
@@ -52,14 +52,14 @@ ms.locfileid: "57191924"
 
    ![Ввод сведений для учетной записи интеграции](./media/logic-apps-enterprise-integration-create-integration-account/integration-account-details.png)
 
-   | Свойство | Обязательно для заполнения | Пример значения | ОПИСАНИЕ | 
+   | Свойство | Обязательно для заполнения | Пример значения | Описание | 
    |----------|----------|---------------|-------------|
-   | Name | Yes | test-integration-account | Имя вашей учетной записи интеграции. В этом примере используйте указанное имя. | 
-   | Подписка | Yes | <*Azure-subscription-name*> | Имя подписки Azure, которую нужно использовать. | 
-   | Группа ресурсов | Yes | test-integration-account-rg | Имя [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md), используемой для упорядочения связанных ресурсов. В этом примере создайте группу ресурсов с указанным именем. | 
-   | Ценовая категория | Yes | Free | Ценовая категория, которую необходимо использовать. В этом примере выберите вариант **Free** (Бесплатный). Дополнительные сведения см. в разделе [Ограничения и настройка Logic Apps](../logic-apps/logic-apps-limits-and-config.md) и на странице с [ценами на приложения логики](https://azure.microsoft.com/pricing/details/logic-apps/). | 
-   | Расположение | Yes | Запад США | Регион для хранения сведений вашей учетной записи интеграции. Выберите то же расположение, что и для приложения логики, или создайте приложение логики в том же расположении, что и учетную запись интеграции. | 
-   | Рабочая область Log Analytics | Нет  | Отключить | Сохраните параметр **Выкл.** для журнала ведения диагностики. | 
+   | Name | Да | test-integration-account | Имя вашей учетной записи интеграции. В этом примере используйте указанное имя. | 
+   | Подписка | Да | <*Azure-subscription-name*> | Имя подписки Azure, которую нужно использовать. | 
+   | Группа ресурсов | Да | test-integration-account-rg | Имя [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md), используемой для упорядочения связанных ресурсов. В этом примере создайте группу ресурсов с указанным именем. | 
+   | Уровень цен | Да | Бесплатные | Ценовая категория, которую необходимо использовать. В этом примере выберите вариант **Free** (Бесплатный). Дополнительные сведения см. в разделе [Ограничения и настройка Logic Apps](../logic-apps/logic-apps-limits-and-config.md) и на странице с [ценами на приложения логики](https://azure.microsoft.com/pricing/details/logic-apps/). | 
+   | Location | Да | Запад США | Регион для хранения сведений вашей учетной записи интеграции. Выберите то же расположение, что и для приложения логики, или создайте приложение логики в том же расположении, что и учетную запись интеграции. | 
+   | Рабочая область Log Analytics | Нет | Выключено | Сохраните параметр **Выкл.** для журнала ведения диагностики. | 
    ||||| 
 
 4. По завершении установите флажок **Закрепить на панели мониторинга** и нажмите кнопку **Создать**.
@@ -125,7 +125,7 @@ ms.locfileid: "57191924"
    },
    ```
 
-   Например: 
+   Пример.
 
    ![Поиск определения свойства integrationAccount](./media/logic-apps-enterprise-integration-create-integration-account/resource-explorer-delete-integration-account.png)
 

@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: pbutlerm
 ms.openlocfilehash: f3d6466ced6efdb4047f9531329b70477911bf21
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56414770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60729170"
 ---
 # <a name="create-power-bi-app-offer-technical-assets"></a>Создание технических ресурсов предложения приложения Power BI
 
@@ -31,6 +31,6 @@ ms.locfileid: "56414770"
 Приложение Power BI можно создать только с помощью [службы Power BI](https://powerbi.microsoft.com/). Чтобы начать, вам необходимо выполнить вход с [лицензией Power BI Pro](https://docs.microsoft.com/power-bi/service-admin-purchasing-power-bi-pro). После создания и проверки приложения службы в Power BI сохраните созданный Power BI URL-адрес установки приложения. В конце этот адрес необходимо указать на [вкладке с техническими сведениями](./cpp-technical-info-tab.md) в форме отправки на Портале Cloud Partner.
  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания и проверки приложения Power BI, а также создания связанного предложения, вы можете [опубликовать предложение приложения Power BI](./cpp-publish-offer.md). 

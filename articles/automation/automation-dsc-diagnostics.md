@@ -10,11 +10,11 @@ ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 0dad74f75fd7b73e7dab0b2dddbdfda193d5b2ec
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58445797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61073945"
 ---
 # <a name="forward-azure-automation-state-configuration-reporting-data-to-azure-monitor-logs"></a>Пересылать настройки состояния службы автоматизации Azure, данные отчетов журналов Azure Monitor
 
@@ -125,7 +125,7 @@ Set-AzureRmDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Wo
 
 ### <a name="dscnodestatusdata"></a>DscNodeStatusData
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 | --- | --- |
 | TimeGenerated |Дата и время запуска проверки соответствия. |
 | OperationName |DscNodeStatusData |
@@ -156,7 +156,7 @@ Set-AzureRmDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Wo
 
 ### <a name="dscresourcestatusdata"></a>DscResourceStatusData
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 | --- | --- |
 | TimeGenerated |Дата и время запуска проверки соответствия. |
 | OperationName |DscResourceStatusData|

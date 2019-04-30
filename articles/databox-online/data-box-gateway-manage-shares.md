@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 9284400254860b47f3aea6de5c79ab4c2a77f199
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60005083"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60755838"
 ---
 # <a name="use-the-azure-portal-to-manage-shares-on-your-azure-data-box-gateway"></a>Управление общими папками в Шлюзе Azure Data Box с помощью портала Azure 
 
@@ -26,13 +26,13 @@ ms.locfileid: "60005083"
 В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
-> * Добавление общей папки
+> * Добавить общий файловый ресурс
 > * Удаление общей папки
 > * Обновление общих папок
 > * Синхронизация ключа хранилища
 
 
-## <a name="add-a-share"></a>Добавление общей папки
+## <a name="add-a-share"></a>Добавить общий файловый ресурс
 
 Чтобы создать общую папку, выполните следующие действия на портале Azure.
 
@@ -67,7 +67,7 @@ ms.locfileid: "60005083"
 
 1. В списке общих папок выберите и щелкните папку, которую требуется удалить.
 
-    ![Выбор общей папки](media/data-box-gateway-manage-shares/delete-1.png)
+    ![Выберите общую папку](media/data-box-gateway-manage-shares/delete-1.png)
 
 2. Нажмите кнопку **Delete**(Удалить). 
 
@@ -75,7 +75,7 @@ ms.locfileid: "60005083"
 
 3. При появлении запроса на подтверждение нажмите кнопку **Да**.
 
-    ![Подтверждение удаления](media/data-box-gateway-manage-shares/delete-3.png)
+    ![Подтвердите удаление](media/data-box-gateway-manage-shares/delete-3.png)
 
 Таблица общих папок обновляется с учетом удаления.
 

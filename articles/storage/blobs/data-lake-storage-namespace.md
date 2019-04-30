@@ -2,18 +2,19 @@
 title: Иерархическое пространство имен Azure Data Lake Storage 2-го поколения
 description: В этой статье описывается концепция иерархического пространства имен Azure Data Lake Storage 2-го поколения
 services: storage
-author: jamesbak
+author: WenJason
 ms.service: storage
 ms.topic: conceptual
-ms.date: 12/06/2018
-ms.author: jamesbak
+origin.date: 12/06/2018
+ms.date: 02/25/2019
+ms.author: v-jay
 ms.subservice: data-lake-storage-gen2
 ms.openlocfilehash: b423d40884dd9132312e79ba0cbff00b8771b207
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55877037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60747546"
 ---
 # <a name="azure-data-lake-storage-gen2-hierarchical-namespace"></a>Иерархическое пространство имен Azure Data Lake Storage 2-го поколения
 
@@ -41,6 +42,6 @@ ms.locfileid: "55877037"
 
 Включение иерархического пространства имен может не иметь никакого влияния на некоторые рабочие нагрузки хранилища объектов. Это такие рабочие нагрузки, как резервные копии, хранилище изображений и другие приложения, в которых хранится организация объекта отдельно от самих объектов (например, в отдельной базе данных).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание учетной записи хранения](./data-lake-storage-quickstart-create-account.md)

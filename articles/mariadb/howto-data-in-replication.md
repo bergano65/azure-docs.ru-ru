@@ -7,11 +7,11 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: 3897c402e45962836880ccebbeb252d189188d3c
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53548907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61038608"
 ---
 # <a name="how-to-configure-azure-database-for-mariadb-data-in-replication"></a>Настройка базы данных Azure для MariaDB для репликации входных данных
 
@@ -201,7 +201,7 @@ ms.locfileid: "53548907"
 
 ## <a name="other-stored-procedures"></a>Другие хранимые процедуры
 
-### <a name="stop-replication"></a>Остановка репликации
+### <a name="stop-replication"></a>Остановить репликацию
 
 Чтобы остановить репликацию между главным сервером и сервером-репликой, используйте следующую хранимую процедуру:
 
@@ -225,5 +225,5 @@ CALL mysql.az_replication_remove_master;
 CALL mysql.az_replication_skip_counter;
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - См. дополнительные сведения о [репликации входных данных](concepts-data-in-replication.md) в базе данных Azure для MariaDB.

@@ -17,11 +17,11 @@ ms.date: 04/10/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 5cbecdb39a35339bd0b3f4d3d29d7893cdab0ac6
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59496868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60835368"
 ---
 # <a name="ibm-db2-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Развертывание СУБД IBM DB2 на виртуальных машинах Azure для рабочей нагрузки SAP
 
@@ -360,7 +360,7 @@ SAP в IBM Db2 для LUW в службах виртуальных машин Mi
 
 <!-- sapdata and saptmp are terms in the SAP and DB2 world and now spelling errors -->
 
-Для дисков, содержащих пути к хранилищу Db2, для которых и (saptmp) SAP каталогов необходимо указать физический диск размером сектора 512 КБ. При использовании пулов носителей Windows эти пулы необходимо создать вручную с помощью интерфейса командной строки, используя параметр `-LogicalSectorSizeDefault`. Дополнительные сведения можно найти по адресу: <https://technet.microsoft.com/itpro/powershell/windows/storage/new-storagepool>.
+Для дисков, содержащих пути к хранилищу Db2, для которых и (saptmp) SAP каталогов необходимо указать физический диск размером сектора 512 КБ. При использовании пулов носителей Windows эти пулы необходимо создать вручную с помощью интерфейса командной строки, используя параметр `-LogicalSectorSizeDefault`. Дополнительные сведения см. в разделе <https://technet.microsoft.com/itpro/powershell/windows/storage/new-storagepool>.
 
 Для виртуальных машин Azure серии M задержку записи в журналы транзакций можно уменьшить с помощью ряда возможностей (по сравнению с производительностью хранилища Azure класса Premium), доступных при использовании ускорителя записи Azure. Таким образом следует развернуть ускорителя записи Azure для VHD(s), которые образуют том для журналов транзакций Db2. Дополнительные сведения см. в документе об [ускорителе записи](https://docs.microsoft.com/azure/virtual-machines/windows/how-to-enable-write-accelerator).
 

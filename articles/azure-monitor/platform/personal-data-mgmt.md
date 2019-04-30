@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 05/18/2018
 ms.author: magoedte
 ms.openlocfilehash: 0cf5a80e3eedbe7efb8463162b5b3ed489ac08c8
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59577904"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61087287"
 ---
 # <a name="guidance-for-personal-data-stored-in-log-analytics-and-application-insights"></a>Руководство по хранению персональных данных в Log Analytics и Application Insights
 
@@ -90,7 +90,7 @@ Log Analytics — это масштабируемое хранилище, опи
 > [!IMPORTANT]
 >  Хотя большинство операций очистки может завершиться гораздо быстрее, чем соглашение об уровне ОБСЛУЖИВАНИЯ, **формальным соглашение об уровне ОБСЛУЖИВАНИЯ для выполнения операций очистки составляет 30 дней** из-за их высокой влияние на платформы данных. Это автоматизированный процесс; нет способа для запроса, что операции обрабатываться быстрее.
 
-### <a name="delete"></a>Delete (Удалить)
+### <a name="delete"></a>Удалить
 
 > [!WARNING]
 > Операции удаления в Log Analytics являются разрушительными и необратимыми! Соблюдайте особую осторожность при их выполнении.
@@ -104,7 +104,7 @@ Log Analytics — это масштабируемое хранилище, опи
 #### <a name="log-data"></a>Данные журнала
 
 * [POST purge](https://docs.microsoft.com/rest/api/loganalytics/workspaces%202015-03-20/purge) — принимает объект с параметрами удаляемых данных и возвращает идентификатор GUID. 
-* GET purge status — вызов POST purge возвращает заголовок x-ms-status-location со значением URL-адреса, вызов которого позволяет определить состояние API очистки. Например: 
+* GET purge status — вызов POST purge возвращает заголовок x-ms-status-location со значением URL-адреса, вызов которого позволяет определить состояние API очистки. Пример.
 
     ```
     x-ms-status-location: https://management.azure.com/subscriptions/[SubscriptionId]/resourceGroups/[ResourceGroupName]/providers/Microsoft.OperatonalInsights/workspaces/[WorkspaceName]/operations/purge-[PurgeOperationId]?api-version=2015-03-20
@@ -116,7 +116,7 @@ Log Analytics — это масштабируемое хранилище, опи
 #### <a name="application-data"></a>Данные приложения
 
 * [POST purge](https://docs.microsoft.com/rest/api/application-insights/components/purge) — принимает объект с параметрами удаляемых данных и возвращает идентификатор GUID.
-* GET purge status — вызов POST purge возвращает заголовок x-ms-status-location со значением URL-адреса, вызов которого позволяет определить состояние API очистки. Например: 
+* GET purge status — вызов POST purge возвращает заголовок x-ms-status-location со значением URL-адреса, вызов которого позволяет определить состояние API очистки. Пример.
 
    ```
    x-ms-status-location: https://management.azure.com/subscriptions/[SubscriptionId]/resourceGroups/[ResourceGroupName]/providers/microsoft.insights/components/[ComponentName]/operations/purge-[PurgeOperationId]?api-version=2015-05-01

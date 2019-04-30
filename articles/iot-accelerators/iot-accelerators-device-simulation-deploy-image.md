@@ -10,11 +10,11 @@ ms.custom: mvc
 ms.date: 11/06/2018
 ms.author: dobett
 ms.openlocfilehash: c1f321f452b65016c11cb66d08ebab108509cc62
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51285326"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61448415"
 ---
 # <a name="deploy-a-custom-device-simulation-docker-image"></a>Развертывание пользовательского образа Docker для симулятора устройств
 
@@ -27,7 +27,7 @@ ms.locfileid: "51285326"
 1. Настройка симулятора устройства для использования нового образа Docker.
 1. Запуск симуляции с помощью нового образа.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для выполнения шагов из этого руководства вам понадобится следующее:
 
@@ -139,6 +139,6 @@ ms.locfileid: "51285326"
 
 1. Настройте и запустите симуляцию с помощью веб-интерфейса. Если вы ранее выполнили инструкции из руководства по [сериализации данных телеметрии с помощью буферов протокола](iot-accelerators-device-simulation-protobuf.md), вы можете использовать модель пользовательского устройства.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как развернуть пользовательский образ симулятора устройств. Теперь вам будет полезно узнать, как [использовать имеющийся центр Интернета вещей с акселератором решений "Симулятор устройств"](iot-accelerators-device-simulation-choose-hub.md).

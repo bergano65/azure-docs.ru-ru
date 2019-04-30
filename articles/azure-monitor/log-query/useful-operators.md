@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 08/21/2018
 ms.author: bwren
 ms.openlocfilehash: d11445c3f31f9aced6fdb9783575d10a026de1f0
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56000154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61424144"
 ---
 # <a name="useful-operators-in-azure-monitor-log-queries"></a>Полезные операторы в запросах журнала Azure Monitor
 
@@ -26,7 +26,7 @@ ms.locfileid: "56000154"
 
 ## <a name="useful-operators"></a>Полезные операторы
 
-Категория                                |Соответствующая аналитическая функция
+Category                                |Соответствующая аналитическая функция
 ----------------------------------------|----------------------------------------
 Псевдонимы выделений и столбцов            |`project`, `project-away`, `extend`
 Временные таблицы и константы          |`let scalar_alias_name = …;` <br> `let table_alias_name =  …  …  … ;`| 
@@ -44,6 +44,6 @@ ms.locfileid: "56000154"
 Машинное обучение                        |`evaluate autocluster`, `basket`, `diffpatterns`, `extractcolumns`
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Пройдите урок по [написанию запросов к журналу в Azure Monitor](get-started-queries.md).

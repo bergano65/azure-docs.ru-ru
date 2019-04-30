@@ -18,11 +18,11 @@ ms.date: 04/10/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: c22715434693abd5cebdc5ffd196a0e39b227d1b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59698519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60835333"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Используйте Azure для размещения и выполнения сценариев рабочей нагрузки SAP
 
@@ -49,7 +49,7 @@ ms.locfileid: "59698519"
 
 
 
-## <a name="sap-hana-on-azure-large-instances"></a>SAP HANA в Azure (большие экземпляры)
+## <a name="sap-hana-on-azure-large-instances"></a>SAP HANA в Azure (крупные экземпляры)
 
 Серии документов проведет вас через SAP HANA в Azure (крупные экземпляры), или сокращенно крупных экземпляров HANA. Сведения о следующих областях крупных экземпляров HANA см. в разделе:
 
@@ -115,7 +115,7 @@ ms.locfileid: "59698519"
 
 Дополнительные сведения об интеграции между Azure Active Directory (Azure AD) и службы SAP и единый вход см. в разделе:
 
-- [Руководство по интеграции Azure Active Directory с SAP Cloud for Customer](https://docs.microsoft.com/azure/active-directory/saas-apps/sap-customer-cloud-tutorial?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json)
+- [Учебник. по интеграции Azure Active Directory с SAP Cloud for Customer](https://docs.microsoft.com/azure/active-directory/saas-apps/sap-customer-cloud-tutorial?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json)
 - [Руководство по интеграции Azure Active Directory с приложением SAP Cloud Platform Identity Authentication](https://docs.microsoft.com/azure/active-directory/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json)
 - [Руководство по интеграции Azure Active Directory с SAP Cloud Platform](https://docs.microsoft.com/azure/active-directory/saas-apps/sap-hana-cloud-platform-tutorial?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json)
 - [Руководство. Интеграция Azure Active Directory с SAP NetWeaver](https://docs.microsoft.com/azure/active-directory/saas-apps/sap-netweaver-tutorial?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json)

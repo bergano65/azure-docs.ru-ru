@@ -1,19 +1,20 @@
 ---
-title: Добавление панели в пользовательский интерфейс решения для удаленного мониторинга в Azure | Документация Майкрософт
+title: Добавить элемент управления в решением для удаленного мониторинга пользовательского интерфейса — Azure | Документация Майкрософт
 description: В этой статье показано, как добавить новую панель на панель мониторинга в веб-интерфейсе акселератора решения для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
-ms.author: dobett
+ms.author: v-yiso
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.date: 10/05/2018
+origin.date: 10/05/2018
+ms.date: 11/26/2018
 ms.topic: conceptual
 ms.openlocfilehash: 3b855c3bed75945f44b55463bdacd049b7930aa7
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49165884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61447069"
 ---
 # <a name="add-a-custom-panel-to-the-dashboard-in-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательской панели на панель мониторинга в веб-интерфейсе акселератора решения для удаленного мониторинга
 
@@ -24,7 +25,7 @@ ms.locfileid: "49165884"
 
 Пример панели в этой статье отображается на имеющейся странице панели мониторинга.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этом руководстве, необходимо установить следующее ПО на локальный компьютер разработки:
 
@@ -45,7 +46,6 @@ ms.locfileid: "49165884"
 
 **examplePanel.js**
 
-[!code-javascript[Example panel](~/remote-monitoring-webui/src/walkthrough/components/pages/dashboard/panels/examplePanel/examplePanel.js?name=panel "Example panel")]
 
 Скопируйте папку **src/walkthrough/components/pages/dashboard/panels/examplePanel** в папку **src/components/pages/dashboard/panels**.
 
@@ -92,7 +92,7 @@ npm start
 
 Предыдущая команда запускает пользовательский интерфейс локально по адресу [http://localhost:3000/dashboard](http://localhost:3000/dashboard). Чтобы просмотреть новую панель, перейдите на страницу **панели мониторинга**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке или добавлении панелей мониторинга в пользовательском веб-интерфейсе в акселераторе решения для удаленного мониторинга.
 

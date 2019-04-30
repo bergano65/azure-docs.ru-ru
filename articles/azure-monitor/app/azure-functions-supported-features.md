@@ -13,11 +13,11 @@ ms.date: 10/05/2018
 ms.reviewer: mbullwin
 ms.author: tilee
 ms.openlocfilehash: 101c985178b8269b4ff542b94b057330d0c2652a
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59496067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60902253"
 ---
 # <a name="application-insights-for-azure-functions-supported-features"></a>Application Insights для функций, поддерживаемых в службе "Функции Azure"
 
@@ -30,27 +30,27 @@ ms.locfileid: "59496067"
 | **Пакет SDK Application Insights для .NET**   | **2.5.0**       | **2.9.1**         |
 | | | | 
 | **Автоматический сбор**        |                 |                   |               
-| &bull; Запросы                     | Yes             | Yes               | 
-| &bull; Исключения                   | Yes             | Yes               | 
-| &bull; Счетчики производительности         | Yes             | Yes               |
+| &bull; Запросы                     | Да             | Да               | 
+| &bull; Исключения                   | Да             | Да               | 
+| &bull; Счетчики производительности         | Да             | Да               |
 | &bull; Зависимости                   |                   |                   |               
-| &nbsp;&nbsp;&nbsp;&mdash; HTTP      |                 | Yes               | 
-| &nbsp;&nbsp;&nbsp;&mdash; Служебная шина|                 | Yes               | 
-| &nbsp;&nbsp;&nbsp;&mdash; EventHub  |                 | Yes               | 
-| &nbsp;&nbsp;&nbsp;&mdash; SQL       |                 | Yes               | 
+| &nbsp;&nbsp;&nbsp;&mdash; HTTP      |                 | Да               | 
+| &nbsp;&nbsp;&nbsp;&mdash; Служебная шина|                 | Да               | 
+| &nbsp;&nbsp;&nbsp;&mdash; EventHub  |                 | Да               | 
+| &nbsp;&nbsp;&nbsp;&mdash; SQL       |                 | Да               | 
 | | | | 
 | **Поддерживаемые функции**                |                   |                   |               
-| &bull; QuickPulse/LiveMetrics       | Yes             | Yes               | 
-| &nbsp;&nbsp;&nbsp;&mdash; Безопасный канал управления|                 | Yes               | 
-| &bull; Выборка                     | Yes             | Yes               | 
-| &bull; Пакет пульса                   |                 | Yes               | 
+| &bull; QuickPulse/LiveMetrics       | Да             | Да               | 
+| &nbsp;&nbsp;&nbsp;&mdash; Безопасный канал управления|                 | Да               | 
+| &bull; Выборка                     | Да             | Да               | 
+| &bull; Пакет пульса                   |                 | Да               | 
 | | | | 
 | **Корреляция**                       |                   |                   |               
-| &bull; Служебная шина                     |                   | Yes               | 
-| &bull; EventHub                       |                   | Yes               | 
+| &bull; Служебная шина                     |                   | Да               | 
+| &bull; EventHub                       |                   | Да               | 
 | | | | 
 | **Можно настроить**                      |                   |                   |           
-| &bull;Полностью настраивается.<br/>Инструкции см. в комментариях [в этой статье](https://github.com/Microsoft/ApplicationInsights-aspnetcore/issues/759#issuecomment-426687852).<br/>Сведения обо всех вариантах ASP.NET Core см. в статье [Custom Configuration](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Custom-Configuration) (Настраиваемая конфигурация).               |                   | Yes                   | 
+| &bull;Полностью настраивается.<br/>Инструкции см. в комментариях [в этой статье](https://github.com/Microsoft/ApplicationInsights-aspnetcore/issues/759#issuecomment-426687852).<br/>Сведения обо всех вариантах ASP.NET Core см. в статье [Custom Configuration](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Custom-Configuration) (Настраиваемая конфигурация).               |                   | Да                   | 
 
 
 ## <a name="performance-counters"></a>Счетчики производительности

@@ -13,11 +13,11 @@ ms.workload: NA
 ms.date: 07/31/2018
 ms.author: saysa
 ms.openlocfilehash: 3b1e6f769d5c65065d95ac96c4ab4ed10702e5cf
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58089902"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61038846"
 ---
 # <a name="use-jenkins-to-build-and-deploy-your-linux-applications"></a>Создание и развертывание приложений Linux с помощью Jenkins
 Jenkins — это популярное средство для непрерывной интеграции и развертывания приложений. В этой статье описывается создание и развертывание приложения Azure Service Fabric с помощью Jenkins.
@@ -259,7 +259,7 @@ Jenkins можно настроить внутри или за пределам�
         openssl pkcs12 -in clustercert.pfx -out clustercert.pem -nodes -passin pass:
         ``` 
 
-        Если PFX-файл защищен паролем, укажите его в параметре `-passin`. Например: 
+        Если PFX-файл защищен паролем, укажите его в параметре `-passin`. Пример.
 
         ```sh
         openssl pkcs12 -in clustercert.pfx -out clustercert.pem -nodes -passin pass:MyPassword1234!

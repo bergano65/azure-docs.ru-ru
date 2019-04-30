@@ -1,22 +1,24 @@
 ---
 title: Создание или добавление данных в API Cassandra для Azure Cosmos DB из Spark
 description: В этой статье рассказывается, как вставить образец данных в таблицы API Cassandra для Azure Cosmos DB.
-author: kanshiG
-ms.author: govindk
+author: rockboyfor
+ms.author: v-yeche
 ms.reviewer: sngun
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
-ms.date: 09/24/2018
+origin.date: 09/24/2018
+ms.date: 03/18/2019
 ms.openlocfilehash: aea646e7a390d5b53f0d4b388cfecd0c80fb19da
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54036619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60894051"
 ---
+<!--Verify sucessfully-->
 # <a name="createinsert-data-into-azure-cosmos-db-cassandra-api-from-spark"></a>Создание или добавление данных в API Cassandra для Azure Cosmos DB из Spark
- 
+
 В этой статье рассказывается, как вставлить образец данных в таблицу API Cassandra для Azure Cosmos DB из Spark.
 
 ## <a name="cassandra-api-configuration"></a>Конфигурация API Cassandra
@@ -31,7 +33,7 @@ import com.datastax.spark.connector.cql.CassandraConnector
 import com.microsoft.azure.cosmosdb.cassandra
 
 //Connection-related
-spark.conf.set("spark.cassandra.connection.host","YOUR_ACCOUNT_NAME.cassandra.cosmosdb.azure.com")
+spark.conf.set("spark.cassandra.connection.host","YOUR_ACCOUNT_NAME.cassandra.cosmosdb.azure.cn")
 spark.conf.set("spark.cassandra.connection.port","10350")
 spark.conf.set("spark.cassandra.connection.ssl.enabled","true")
 spark.conf.set("spark.cassandra.auth.username","YOUR_ACCOUNT_NAME")
@@ -134,13 +136,16 @@ use books_ks;
 select * from books;
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После того как данные вставлены в таблицу API Cassandra для Azure Cosmos DB, ознакомьтесь со следующими статьями, чтобы узнать, как выполнять другие операции над хранимыми данными в API Cassandra для Cosmos DB.
- 
+
 * [Операции чтения](cassandra-spark-read-ops.md)
 * [Операции upsert](cassandra-spark-upsert-ops.md)
 * [Операции удаления](cassandra-spark-delete-ops.md)
 * [Операции агрегирования](cassandra-spark-aggregation-ops.md)
 * [Операции копирования таблиц](cassandra-spark-table-copy-ops.md)
 
+<!--Verify sucessfully-->
+<!--Update_Description: new articles on  -->
+<!--ms.date: 03/18/2019-->

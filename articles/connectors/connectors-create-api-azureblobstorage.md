@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 05/21/2018
 tags: connectors
 ms.openlocfilehash: ea3e97db9ec560306788943d92a7670025f38bdc
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58310376"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60958644"
 ---
 # <a name="create-and-manage-blobs-in-azure-blob-storage-with-azure-logic-apps"></a>Создание и администрирование больших двоичных объектов в хранилище BLOB-объектов Azure с помощью Azure Logic Apps
 
@@ -55,7 +55,7 @@ ms.locfileid: "58310376"
 
    В этом примере использует этот триггер: **Хранилище BLOB-объектов — когда большой двоичный объект добавляется или изменяется (только свойства)**
 
-   ![Выбор триггера](./media/connectors-create-api-azureblobstorage/azure-blob-trigger.png)
+   ![Выбрать триггер](./media/connectors-create-api-azureblobstorage/azure-blob-trigger.png)
 
 3. Если вам будет предложено ввести сведения о подключении, [создайте подключение к хранилищу BLOB-объектов](#create-connection). Или, если подключение уже существует, введите необходимые сведения для триггера.
 
@@ -83,7 +83,7 @@ ms.locfileid: "58310376"
 
 2. В конструкторе Logic Apps выберите для триггера или действия пункты **Новый шаг** > **Добавить действие**.
 
-   ![Добавление действия](./media/connectors-create-api-azureblobstorage/add-action.png) 
+   ![Добавить действие](./media/connectors-create-api-azureblobstorage/add-action.png) 
 
    Чтобы добавить действие между существующими шагами, наведите указатель мыши на соединяющую стрелку. 
    Щелкните появившийся знак "плюс" (**+**), а затем выберите **Добавить действие**.

@@ -16,13 +16,13 @@ ms.topic: article
 ms.date: 11/17/2017
 ms.author: cynthn
 ms.openlocfilehash: 4ef0c09d2d2ea2ed06708342ab45abcaf149c23e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59798833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61075886"
 ---
-# <a name="download-the-template-for-a-vm"></a>Скачивание шаблона для виртуальной машины
+# <a name="download-the-template-for-a-vm"></a>Скачивание шаблона для ВМ
 При создании виртуальной машины в Azure с помощью портала или PowerShell автоматически создается шаблон Resource Manager. Этот шаблон можно использовать для быстрого дублирования развертывания. Шаблон содержит сведения обо всех ресурсах в группе ресурсов. Для виртуальной машины это означает, что шаблон содержит все, что создается для поддержки виртуальных машин в этой группе ресурсов, включая сетевые ресурсы.
 
 ## <a name="download-the-template-using-the-portal"></a>Скачивание шаблона с помощью портала

@@ -13,11 +13,11 @@ ms.workload: infrastructure-services
 ms.date: 05/18/2017
 ms.author: victorh
 ms.openlocfilehash: d0a20de8738e8c7b2719a9de85d5fd16aa5778cf
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48829688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60926344"
 ---
 # <a name="how-to-manage-dns-zones-in-the-azure-portal"></a>Как управлять зонами DNS с помощью портала Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "48829688"
 
 ## <a name="create-a-dns-zone"></a>Создание зоны DNS
 
-1. Вход на портал Azure
+1. Войдите на портал Azure
 2. В главном меню перейдите в **Создать ресурс > Сети > Зона DNS**, чтобы открыть колонку **Создание зоны DNS**.
 
     ![Зона DNS](./media/dns-operations-dnszones-portal/openzone650.png)
@@ -39,7 +39,7 @@ ms.locfileid: "48829688"
 4. В колонке **Создание зоны DNS** введите следующие значения, а затем щелкните **Создать**.
 
 
-   | **Параметр** | **Значение** | **Дополнительные сведения** |
+   | **Параметр** | **Значение** | **Сведения** |
    |---|---|---|
    |**Имя**|contoso.com|Имя зоны DNS.|
    |**Подписка**|[Ваша подписка]|Выберите подписку для создания зоны DNS.|
@@ -59,6 +59,6 @@ ms.locfileid: "48829688"
 
 Перейдите к зоне DNS на портале. В колонке **Зона DNS** щелкните **Удалить зону**. Затем отобразится запрос на подтверждение удаления зоны DNS. При удалении зоны DNS также удаляются все записи, которые содержатся в ней.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о работе с зоной и записями DNS см. в статье [Приступая к работе со службой DNS Azure с помощью портала Azure](dns-getstarted-portal.md).

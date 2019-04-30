@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
 ms.openlocfilehash: 43dc76e6d1e1ec2a6167f1d3e3cc7b8780f843db
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59551327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60850254"
 ---
 # <a name="configure-a-linux-nodejs-app-for-azure-app-service"></a>Настройка приложения Node.js в Linux для службы приложений Azure
 
@@ -71,7 +71,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 ### <a name="run-npm-start"></a>Запустите npm start
 
-Чтобы запустить приложение, нажав `npm start`, просто убедитесь, что `start` сценарий находится в *package.json* файла. Например: 
+Чтобы запустить приложение, нажав `npm start`, просто убедитесь, что `start` сценарий находится в *package.json* файла. Пример.
 
 ```json
 {
@@ -119,7 +119,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 Можно отлаживать приложения Node.js удаленно в среде [Visual Studio Code](https://code.visualstudio.com/) если его необходимо настроить для [работы PM2](#run-with-pm2), за исключением при запуске его с помощью *. config.js, *.yml, или *.yaml*.
 
-В большинстве случаев никакая дополнительная настройка не является обязательным для приложения. Если приложение выполняется с *process.json* файла (по умолчанию или пользовательский), он должен иметь `script` свойства в корне JSON. Например: 
+В большинстве случаев никакая дополнительная настройка не является обязательным для приложения. Если приложение выполняется с *process.json* файла (по умолчанию или пользовательский), он должен иметь `script` свойства в корне JSON. Пример.
 
 ```json
 {
@@ -137,7 +137,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 ## <a name="access-environment-variables"></a>Доступ к переменным среды
 
-В службе приложений, вы можете [задать параметры приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings) вне кода приложения. Затем они будут доступны с помощью стандартного шаблона Node.js. Например, для доступа к параметру приложения с именем `NODE_ENV` используйте следующий код:
+В Службе приложений можно [задать параметры приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings) вне кода приложения. Затем они будут доступны с помощью стандартного шаблона Node.js. Например, для доступа к параметру приложения с именем `NODE_ENV` используйте следующий код:
 
 ```javascript
 process.env.NODE_ENV
@@ -147,7 +147,7 @@ process.env.NODE_ENV
 
 По умолчанию выполняется Kudu `npm install --production` при обнаружении развертывается приложение Node.js. Если приложению требуются некоторые средства популярные службы автоматизации, например Grunt, Bower или Gulp, необходимо предоставить [пользовательский скрипт развертывания](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script) для его запуска.
 
-Чтобы включить репозиторий, чтобы запускать эти средства, необходимо добавить их к зависимостям в *package.json.* Например: 
+Чтобы включить репозиторий, чтобы запускать эти средства, необходимо добавить их к зависимостям в *package.json.* Пример.
 
 ```json
 "dependencies": {
@@ -226,7 +226,7 @@ fi
 
 В Службе приложений [завершение SSL-запросов](https://wikipedia.org/wiki/TLS_termination_proxy) происходит в подсистеме балансировки нагрузки сети, поэтому все HTTPS-запросы достигают вашего приложения в виде незашифрованных HTTP-запросов. Если логика вашего приложения проверяет, зашифрованы ли пользовательские запросы, проверяйте заголовок `X-Forwarded-Proto`.
 
-Популярные веб-платформы позволяют получить доступ к информации `X-Forwarded-*` в стандартном шаблоне приложения. В [Express](https://expressjs.com/), можно использовать [доверия прокси-серверы](http://expressjs.com/guide/behind-proxies.html). Например: 
+Популярные веб-платформы позволяют получить доступ к информации `X-Forwarded-*` в стандартном шаблоне приложения. В [Express](https://expressjs.com/), можно использовать [доверия прокси-серверы](http://expressjs.com/guide/behind-proxies.html). Пример.
 
 ```javascript
 app.set('trust proxy', 1)
@@ -248,8 +248,8 @@ if (req.secure) {
 
 Когда рабочее приложение Node.js работает по-разному, в службе приложений или содержит ошибки, попробуйте сделайте следующее:
 
-- [Получить доступ к потоку журнала](#access-diagnostic-logs).
-- Тестирование приложения локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому необходимо убедиться, что проект работает надлежащим образом в рабочем режиме локально. Например: 
+- [Получите доступ к потоку журнала](#access-diagnostic-logs).
+- Тестирование приложения локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому необходимо убедиться, что проект работает надлежащим образом в рабочем режиме локально. Пример.
     - В зависимости от вашей *package.json*, разные пакеты могут быть установлены для рабочий режим (`dependencies` и `devDependencies`).
     - Некоторые веб-платформы может развернуть статические файлы по-разному в рабочем режиме.
     - Некоторые веб-платформы может использовать специальные сценарии, при выполнении в рабочем режиме.
@@ -258,7 +258,7 @@ if (req.secure) {
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство Приложение node.js с MongoDB](tutorial-nodejs-mongodb-app.md)
+> [Учебник. Приложение Node.js с MongoDB](tutorial-nodejs-mongodb-app.md)
 
 > [!div class="nextstepaction"]
-> [Службы приложений Linux часто задаваемые вопросы](app-service-linux-faq.md)
+> [Служба приложений под управлением Linux: вопросы и ответы](app-service-linux-faq.md)

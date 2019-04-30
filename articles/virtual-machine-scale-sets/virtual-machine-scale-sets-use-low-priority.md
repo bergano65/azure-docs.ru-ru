@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 05/01/2018
 ms.author: memccror
 ms.openlocfilehash: 861c68ae8163e0ba8c2af2a3d96153ac3e84855f
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55978142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60803220"
 ---
 # <a name="low-priority-vms-on-scale-sets-preview"></a>Виртуальные машины низкого приоритета в масштабируемых наборах (предварительная версия)
 
@@ -143,7 +143,7 @@ $vmssConfig = New-AzVmssConfig `
 ### <a name="does-autoscale-work-with-both-eviction-policies-deallocate-and-delete"></a>Учитываются ли при автомасштабировании обе политики вытеснения (отмена распределения и удаление)?
 При использовании автомасштабирования рекомендуется установить для политики вытеснения действие удаления. Причина этого состоит в том, что экземпляры, распределение которых отменено, учитываются в емкости масштабируемого набора. При использовании автомасштабирования, скорее всего, вы быстро достигнете целевого количества из-за вытесненных экземпляров, распределение которых отменено. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы создали масштабируемый набор с виртуальными машинами низкого приоритета, попробуйте развернуть [автомасштабируемый шаблон с параметром низкого приоритета](https://github.com/Azure/vm-scale-sets/tree/master/preview/lowpri).
 
 Ознакомьтесь со сведениями о ценах на [странице для определения тарифа масштабируемых наборов виртуальных машин](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/).

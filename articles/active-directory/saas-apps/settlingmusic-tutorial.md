@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Settling music | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Settling music | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Settling music.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 06/07/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0b7dee41b226cdacea1d9c7f1cf581d9f095977e
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56190778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60865243"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-settling-music"></a>Руководство. Интеграция Azure Active Directory с Settling music
+# <a name="tutorial-azure-active-directory-integration-with-settling-music"></a>Руководство по Интеграция Azure Active Directory с Settling music
 
 В этом руководстве описано, как интегрировать Settling music с Azure Active Directory (Azure AD).
 
@@ -35,7 +35,7 @@ ms.locfileid: "56190778"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD со Settling music, вам потребуется:
 
@@ -148,13 +148,13 @@ ms.locfileid: "56190778"
 
     a. Щелкните **To enable** (Включение).
 
-    б) В текстовое поле **Login URL of the ID provider** (URL-адрес входа поставщика удостоверений) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    2. В текстовое поле **Login URL of the ID provider** (URL-адрес входа поставщика удостоверений) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. В текстовое поле **ID provider logout URL** (URL-адрес выхода поставщика удостоверений) вставьте значение **Sign-Out URL** (URL-адрес выхода), скопированное на портале Azure.
 
-    4.3. Нажмите кнопку **Choose File** (Выбрать файл), чтобы передать **сертификат в формате Base64**, скачанный с портала Azure.
+    d. Нажмите кнопку **Choose File** (Выбрать файл), чтобы передать **сертификат в формате Base64**, скачанный с портала Azure.
 
-    д. Нажмите кнопку **Сохранить** .
+    д. Нажмите кнопку **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -186,7 +186,7 @@ ms.locfileid: "56190778"
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="create-a-settling-music-test-user"></a>Создание тестового пользователя Settling music
 
@@ -222,7 +222,7 @@ ms.locfileid: "56190778"
 
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Тест единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

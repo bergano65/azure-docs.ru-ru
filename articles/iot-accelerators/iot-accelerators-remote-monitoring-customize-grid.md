@@ -3,17 +3,18 @@ title: Добавление сетки в пользовательский ин�
 description: В этой статье показано, как добавить сетку на страницу в веб-интерфейс акселератора решения для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
-ms.author: dobett
+ms.author: v-yiso
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.date: 10/04/2018
+origin.date: 10/04/2018
+ms.date: 11/26/2018
 ms.topic: conceptual
 ms.openlocfilehash: a24cb7f39ccb8ea07d4dde2869dc7c924b91983a
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52496440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61447103"
 ---
 # <a name="add-a-custom-grid-to-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательской сетки в веб-интерфейс акселератора решения для удаленного мониторинга
 
@@ -24,7 +25,7 @@ ms.locfileid: "52496440"
 
 Пример сетки в этой статье отображает данные из службы, добавление которой описано в статье [Add a custom service to the Remote Monitoring solution accelerator web UI](iot-accelerators-remote-monitoring-customize-service.md) (Добавление пользовательской службы в веб-интерфейс акселератора решения для удаленного мониторинга).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этом руководстве, необходимо установить следующее ПО на локальный компьютер разработки:
 
@@ -35,7 +36,7 @@ ms.locfileid: "52496440"
 
 Прежде чем продолжить, необходимо выполнить шаги, указанные в следующих статьях:
 
-- [Добавление пользовательской страницы в веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-page.md);
+- [Добавление пользовательской страницы в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-page.md);
 - [Добавление пользовательской службы в веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-service.md)
 
 ## <a name="add-a-grid"></a>Добавление сетки
@@ -48,11 +49,11 @@ ms.locfileid: "52496440"
 
 **exampleGrid.js**
 
-[!code-javascript[Example grid](~/remote-monitoring-webui/src/walkthrough/components/pages/pageWithGrid/exampleGrid/exampleGrid.js?name=grid "Example grid")]
+
 
 **exampleGridConfig.js**
 
-[!code-javascript[Example grid configuration](~/remote-monitoring-webui/src/walkthrough/components/pages/pageWithGrid/exampleGrid/exampleGridConfig.js?name=gridconfig "Example grid configuration")]
+
 
 Скопируйте папку **src/walkthrough/components/pages/pageWithGrid/exampleGrid** в папку **src/components/pages/example**.
 
@@ -239,7 +240,7 @@ npm start
     ```js
     doSomething = () => {
       //Just for demo purposes. Don't console log in a real grid.
-      console.log('Hard selected rows', this.gridApi.getSelectedRows());
+      console.log('hard selected rows', this.gridApi.getSelectedRows());
     };
     ```
 
@@ -263,21 +264,21 @@ npm start
 1. Если щелкнуть ссылку, созданную при помощи "мягкого" варианта, будет запущено событие **onSoftSelectChange**. Для этой строки можно выполнить любые описанные действия, например, открытие всплывающего элемента с подробной информацией. Данный пример просто будет записан в консоль.
 
     ```js
-    onSoftSelectChange = (rowId, rowData) => {
-      //Note: only the Id is reliable, rowData may be out of date
+    onSoftSelectChange = (rowId, rowEvent) => {
       const { onSoftSelectChange } = this.props;
-      if (rowId) {
+      const obj = (this.gridApi.getDisplayedRowAtIndex(rowId) || {}).data;
+      if (obj) {
         //Just for demo purposes. Don't console log a real grid.
-        console.log('Soft selected', rowId);
-        this.setState({ softSelectedId: rowId });
+        console.log('Soft selected', obj);
+        this.setState({ softSelectedObj: obj });
       }
       if (isFunc(onSoftSelectChange)) {
-        onSoftSelectChange(rowId, rowData);
+        onSoftSelectChange(obj, rowEvent);
       }
     }
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке или добавлении станицы в веб-интерфейсе в акселераторе решения для удаленного мониторинга.
 

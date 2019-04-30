@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 12/06/2018
 ms.author: spelluru
 ms.openlocfilehash: ccb2fa7b0805b332957513c52c0c1051d068d2cc
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55507541"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60821663"
 ---
 # <a name="use-firewall-rules"></a>Использование правил брандмауэра
 
@@ -54,7 +54,7 @@ ms.locfileid: "55507541"
 > - Обозреватель данных Azure
 >
 > В виртуальной сети должны присутствовать следующие службы Майкрософт:
-> - Веб-приложения Azure.
+> - Веб-приложения Azure
 > - Функции Azure
 
 ### <a name="creating-a-firewall-rule-with-azure-resource-manager-templates"></a>Создание правила брандмауэра с использованием шаблонов Azure Resource Manager
@@ -72,11 +72,11 @@ ms.locfileid: "55507541"
 > Хотя запрещающие правила отсутствуют, в шаблоне Azure Resource Manager для действия по умолчанию установлено значение **Allow**, которое не ограничивает подключения.
 > При создании правил виртуальной сети или брандмауэров необходимо изменить значение параметра ***defaultAction***.
 > 
-> from
+> От
 > ```json
 > "defaultAction": "Allow"
 > ```
-> значение
+> до
 > ```json
 > "defaultAction": "Deny"
 > ```
@@ -145,7 +145,7 @@ ms.locfileid: "55507541"
 
 Инструкции по развертыванию шаблона см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell][lnk-deploy].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Инструкции по ограничению доступа к Центрам событий из виртуальных сетей Azure, см. по следующей ссылке:
 

@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 05/15/2018
 ms.author: shlo
 ms.openlocfilehash: f2d780900a0cd24f2d70499573a4055dc836ae0b
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54013576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61466992"
 ---
 # <a name="how-to-read-or-write-partitioned-data-in-azure-data-factory"></a>Как выполнять чтение и запись секционированных данных в службе "Фабрика данных Azure"
 
@@ -177,7 +177,7 @@ ms.locfileid: "54013576"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Полное пошаговое руководство по созданию фабрики данных, имеющей конвейер см. в статье [ Создание фабрики данных Azure с помощью PowerShell](quickstart-create-data-factory-powershell.md). 
 

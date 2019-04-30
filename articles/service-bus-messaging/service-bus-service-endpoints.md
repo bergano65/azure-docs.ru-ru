@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 09/05/2018
 ms.author: aschhab
 ms.openlocfilehash: 0801469d586e6f2d6514927cdc7b894900a3aa35
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57843581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61471967"
 ---
 # <a name="use-virtual-network-service-endpoints-with-azure-service-bus"></a>Использование конечных точек службы виртуальной сети со Служебной шиной Azure
 
@@ -79,11 +79,11 @@ ms.locfileid: "57843581"
 > Хотя запрещающие правила отсутствуют, в шаблоне Azure Resource Manager для действия по умолчанию установлено значение **Разрешить**, которое не ограничивает подключения.
 > При создании правил виртуальной сети или брандмауэров необходимо изменить значение параметра ***defaultAction***.
 > 
-> from
+> От
 > ```json
 > "defaultAction": "Allow"
 > ```
-> значение
+> до
 > ```json
 > "defaultAction": "Deny"
 > ```

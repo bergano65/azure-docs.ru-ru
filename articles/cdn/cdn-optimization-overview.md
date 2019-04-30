@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: magattus
 ms.openlocfilehash: 954d19fb557540e4fdc6b17f313127e01eba97a7
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58435614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60636332"
 ---
 # <a name="optimize-azure-cdn-for-the-type-of-content-delivery"></a>Оптимизация Azure CDN для типа доставки содержимого
 
@@ -87,7 +87,7 @@ ms.locfileid: "58435614"
 > [!NOTE]
 > Если вы используете **Azure CDN уровня "Стандартный" от Akamai**, эта оптимизация полезна для файлов со средним размером не более 10 МБ. В противном случае, если средний размер файла превышает 10 МБ, выберите **Скачивание больших файлов** в раскрывающемся списке **Оптимизировано для**.
 
-### <a name="general-media-streaming"></a>Общая потоковая передача мультимедиа
+### <a name="general-media-streaming"></a>Потоковая передача мультимедиа в общем режиме
 
 Если необходимо использовать конечную точку для динамической потоковой передачи и потоковой передачи видео по запросу, рекомендуется использовать оптимизацию общей потоковой передачи мультимедиа.
 

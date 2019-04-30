@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 1/12/2018
 ms.author: anuragm
 ms.openlocfilehash: a81c0b9c87db85771fcecab87c6b9ac88dcbd472
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53581864"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60641132"
 ---
 # <a name="application-consistent-backup-of-azure-linux-vms"></a>Согласованное с приложениями резервное копирование виртуальных машин Linux в Azure
 
@@ -87,5 +87,5 @@ ms.locfileid: "53581864"
 | Pre-ScriptTimeout | Истекло время запуска скрипта предварительного выполнения для согласованного с приложениями резервного копирования. | Проверьте скрипт в файле **VMSnapshotScriptPluginConfig.json** (расположен в каталоге **/etc/azure**) и увеличьте время ожидания. |
 | Post-ScriptTimeout | Истекло время запуска скрипта последующего выполнения для согласованного с приложениями резервного копирования. | Проверьте скрипт в файле **VMSnapshotScriptPluginConfig.json** (расположен в каталоге **/etc/azure**) и увеличьте время ожидания. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Резервное копирование виртуальных машин Azure в хранилище служб восстановления](https://docs.microsoft.com/azure/backup/backup-azure-arm-vms)

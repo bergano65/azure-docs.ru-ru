@@ -13,11 +13,11 @@ ms.reviewer: douglas, carlrab
 manager: craigg
 ms.date: 02/11/2019
 ms.openlocfilehash: 1460b595e8887fc932d5be335ae51b07a000b9fb
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56098364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61315579"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-database-managed-instance"></a>Перенос экземпляра SQL Server в управляемый экземпляр Базы данных SQL Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "56098364"
 
 Используйте [Data Migration Assistant (DMA)](https://docs.microsoft.com/sql/dma/dma-overview) для выявления потенциальных проблем совместимости, влияющих на функциональность базы данных в службе "База данных SQL Azure". DMA еще не поддерживает управляемый экземпляр в качестве назначения миграции, однако мы рекомендуем выполнить оценку Базы данных SQL Azure, внимательно просмотреть список обнаруженных проблем равенства функций и совместимости, сравнивая с документацией по продукту. Большинство блокирующих проблем, препятствующих переносу в Базу данных SQL Azure, были устранены с помощью управляемого экземпляра. Сведения об этом см. в статье [Сравнение возможностей службы "База данных SQL Azure" и SQL Server](sql-database-features.md). Например, в управляемых экземплярах доступны такие функции, как запросы и транзакции между базами данных в одном экземпляре, связывание сервера с другими источниками SQL, поддержка общеязыковой среды выполнения (CLR), глобальные временные таблицы, представления уровня экземпляра и Service Broker.
 
-Если некоторые блокирующие проблемы не устранены с помощью варианта развертывания, рекомендуем рассмотреть альтернативный вариант, например [Использование SQL Server на виртуальных машинах](https://azure.microsoft.com/services/virtual-machines/sql-server/). Ниже приведены некоторые примеры:
+Если некоторые блокирующие проблемы не устранены с помощью варианта развертывания, рекомендуем рассмотреть альтернативный вариант, например [Использование SQL Server на виртуальных машинах](https://azure.microsoft.com/services/virtual-machines/sql-server/). Далее приводятся некоторые примеры.
 
 - Если вам необходим прямой доступ к ОС или файловой системе, например, для установки сторонних или настраиваемых агентов на одной и той же виртуальной машине с SQL Server.
 - Если у вас есть строгая зависимость от функций, которые все еще не поддерживаются, например FileStream или FileTable, PolyBase и транзакции между несколькими экземплярами.
@@ -78,7 +78,7 @@ ms.locfileid: "56098364"
 - Azure Database Migration Service — миграция выполняется практически без простоев.
 - Исходная `RESTORE DATABASE FROM URL` использует исходные резервные копии из SQL Server. Использование этого метода сопряжено с некоторым простоем.
 
-### <a name="azure-database-migration-service"></a>Azure Database Migration Service
+### <a name="azure-database-migration-service"></a>Служба миграции баз данных Azure
 
 [Azure Database Migration Service (DMS)](../dms/dms-overview.md) — это полностью управляемая служба, которая выполняет непрерывную миграцию из множества источников баз данных на платформы данных Azure с минимальным временем простоя. Эта служба упрощает выполнение задач, необходимых для перемещения имеющихся сторонних баз данных и баз данных SQL Server в Azure. Варианты развертывания в общедоступной предварительной версии включают базы данных SQL Azure и SQL Server на виртуальной машине Azure. DMS — это рекомендуемый метод переноса для корпоративных рабочих нагрузок.
 
@@ -124,7 +124,7 @@ ms.locfileid: "56098364"
 - проверка подлинности Azure Active Directory на уровне базы данных;
 - Используйте [расширенные функции безопасности](sql-database-security-overview.md) (например, [аудит](sql-database-managed-instance-auditing.md), [обнаружение угроз](sql-database-advanced-data-security.md), [безопасность на уровне строк](https://docs.microsoft.com/sql/relational-databases/security/row-level-security) и [динамическое маскирование данных](https://docs.microsoft.com/sql/relational-databases/security/dynamic-data-masking)) для защиты экземпляра.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об управляемом экземпляре см. в статье [Использование Управляемого экземпляра Базы данных SQL с виртуальными сетями и почти полной совместимостью](sql-database-managed-instance.md).
 - Руководство со сведениями о восстановлении из резервной копии см. в статье [Краткое руководство. Создание Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-get-started.md).

@@ -9,11 +9,11 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/10/2017
 ms.openlocfilehash: 5795cde35d53a64620c4fdb6c3af99a7f56b12d9
-ms.sourcegitcommit: e89b9a75e3710559a9d2c705801c306c4e3de16c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59571143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61440815"
 ---
 # <a name="set-up-x509-security-in-your-azure-iot-hub"></a>Настройка сертификата безопасности X.509 в Центре Интернета вещей Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "59571143"
 
 4. После получения уведомления об успешной отправке сертификата выберите **Сохранить**.
 
-    ![Передача сертификата](./media/iot-hub-security-x509-get-started/add-new-cert.png)  
+    ![Отправка сертификата](./media/iot-hub-security-x509-get-started/add-new-cert.png)  
 
    Вы увидите свой сертификат в списке **обозревателя сертификатов**. Обратите внимание, что этот сертификат имеет **состояние** *Не проверено*.
 

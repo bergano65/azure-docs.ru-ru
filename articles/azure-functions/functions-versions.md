@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 10/03/2018
 ms.author: glenga
 ms.openlocfilehash: 6988fb547b07f81891efea3caad8bf34f4c8a476
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58889759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036320"
 ---
 # <a name="azure-functions-runtime-versions-overview"></a>Обзор версий среды выполнения для решения "Функции Azure"
 
@@ -29,7 +29,7 @@ ms.locfileid: "58889759"
 
 Для сравнения, среда выполнения версии 1.x поддерживает разработку и размещение только на портале Azure или на компьютерах Windows.
 
-## <a name="languages"></a>Languages
+## <a name="languages"></a>Языки
 
 В среде выполнения 2.x используется новая модель расширяемости языка. В версии 2.x все функции в приложении-функции должны использовать один язык. Язык функций для приложения-функции выбирается один раз при создании приложения.
 

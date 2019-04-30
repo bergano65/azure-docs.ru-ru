@@ -9,11 +9,11 @@ ms.date: 09/26/2018
 ms.author: ganesr
 ms.custom: seodec18
 ms.openlocfilehash: 0515b5e85c3bcf56f1f238620d6036d1be0bec7e
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53104211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60839326"
 ---
 # <a name="configure-route-filters-for-microsoft-peering-azure-portal"></a>Настройка фильтров маршрутов для пиринга Майкрософт. Портал Azure
 > [!div class="op_single_selector"]
@@ -22,7 +22,7 @@ ms.locfileid: "53104211"
 > * [Интерфейс командной строки Azure](how-to-routefilter-cli.md)
 > 
 
-Фильтры маршрутов — это способ использовать подмножество поддерживаемых служб через пиринг Майкрософт. Действия, описанные в этой статье, помогут настроить фильтры маршрутов для каналов ExpressRoute и управлять ими.
+Фильтры маршрутов — это один из способ использовать целый ряд поддерживаемых служб через пиринг Майкрософт. Действия, описанные в этой статье, помогут настроить фильтры маршрутов для каналов ExpressRoute и управлять ими.
 
 Службы Dynamics 365 и службы Office 365, такие как Exchange Online, SharePoint Online и Skype для бизнеса, а также службы Azure, такие как служба хранилища и база данных SQL, доступны через пиринг Майкрософт. При настройке пиринга Майкрософт в канале ExpressRoute все префиксы, которые относятся к этим службам, объявляются через установленные сеансы BGP. Значение сообщества BGP подключается к каждому префиксу для идентификации службы, предлагаемой через него. Список значений сообщества BGP и служб, с которыми они сопоставляются, см. в разделе [Поддержка сообществ BGP](expressroute-routing.md#bgp).
 
@@ -148,6 +148,6 @@ ms.locfileid: "53104211"
 
 ![Создание фильтра маршрута](./media/how-to-routefilter-portal/DeleteRouteFilter.png) 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

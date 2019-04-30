@@ -20,11 +20,11 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: a8bc86c2d3511fa04e595b8b2988d9a98bf084b2
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58650467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60844445"
 ---
 # <a name="add-suggesters-to-an-index-for-typeahead-in-azure-search"></a>Добавление средств подбора в индекс для typeahead в службе поиска Azure
 
@@ -75,7 +75,7 @@ ms.locfileid: "58650467"
   ```
 После создания средств подбора, добавить [API предложений](https://docs.microsoft.com/rest/api/searchservice/suggestions) или [API автозаполнения](https://docs.microsoft.com/rest/api/searchservice/autocomplete) в логике запроса для вызова функции.
 
-### <a name="use-the-net-sdk"></a>Использование пакета SDK для .NET
+### <a name="use-the-net-sdk"></a>Использование пакета .NET SDK
 
 В C#, определить [объект средства подбора](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.suggester?view=azure-dotnet). `Suggesters` — Это коллекция, но он может принять только один элемент. 
 
@@ -98,13 +98,13 @@ private static void CreateHotelsIndex(SearchServiceClient serviceClient)
 }
 ```
 
-## <a name="property-reference"></a>Справочные данные по свойствам
+## <a name="property-reference"></a>Справочник по свойствам
 
 Ключевые моменты, которые уведомление об использовании средств подбора — это имя (средства подбора указываются по именам в запросе), searchMode (в настоящее время только один «analyzingInfixMatching») и список полей, для которых включен typeahead. 
 
 Для него задаются перечисленные ниже свойства.
 
-|Свойство      |ОПИСАНИЕ      |
+|Свойство      |Описание      |
 |--------------|-----------------|
 |`name`        |Имя средства подбора. Используйте имя средства подбора, при вызове [API REST предложений](https://docs.microsoft.com/rest/api/searchservice/suggestions) или [автозаполнения REST API (Предварительная версия)](https://docs.microsoft.com/rest/api/searchservice/autocomplete).|
 |`searchMode`  |Стратегия, используемая для поиска фраз кандидата. В настоящее время поддерживается только режим `analyzingInfixMatching`, в рамках которого выполняется гибкий поиск совпадений в начале и середине фраз.|

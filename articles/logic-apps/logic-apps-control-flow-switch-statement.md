@@ -10,11 +10,11 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 10/08/2018
 ms.openlocfilehash: 2a3f8ee5cba3110d392555fad78c1cb2513b5d4e
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50232449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60683180"
 ---
 # <a name="create-switch-statements-that-run-workflow-actions-based-on-specific-values-in-azure-logic-apps"></a>Создание операторов switch, которые запускают действия рабочего процесса на основе определенных значений в Azure Logic Apps
 
@@ -26,13 +26,13 @@ ms.locfileid: "50232449"
 > Как и в других языках программирования, операторы switch поддерживают только операторы равенства. Если вам нужны другие операторы отношения (к примеру, оператор greater than), используйте [условный оператор](../logic-apps/logic-apps-control-flow-conditional-statement.md).
 > Чтобы выполнение было детерминированным, варианты должны содержать уникальные статические значения, а не динамические маркеры или выражения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
 * Чтобы выполнить действия, указанные в данной статье, [создайте этот пример приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md), используя учетную запись Outlook.com или Office 365 Outlook.
 
-  1. Когда вы добавляете действие для отправки сообщения, найдите и выберите действие **Send an approval email** (Отправить сообщение с утверждением)
+  1. Когда вы добавляете действие для отправки электронной почты, найдите и выберите действие, вместо этого: **Отправить письмо с утверждением**
 
      ![Выбор Send an approval email (Отправить сообщение с утверждением)](./media/logic-apps-control-flow-switch-statement/send-approval-email-action.png)
 
@@ -47,7 +47,7 @@ ms.locfileid: "50232449"
 
    Если вы хотите добавить оператор switch между шагами, наведите указатель мыши на стрелку, где его нужно добавить. Щелкните появившийся знак **плюс** (**+**), затем выберите **Добавить действие**.
 
-1. В поле поиска введите слово "switch" в качестве фильтра. Выберите действие: **Switch — Элемент управления**
+1. В поле поиска введите слово "switch" в качестве фильтра. Выбор действия **Параметр — элемент управления**
 
    ![Добавление switch](./media/logic-apps-control-flow-switch-statement/add-switch-statement.png)
 
@@ -70,7 +70,7 @@ ms.locfileid: "50232449"
    |--------|--------------------|--------|
    | Вариант 1 | **Утвердить** | Добавьте действие Outlook **Send an email** (Отправить сообщение), чтобы отправить сведения об элементе RSS только после того, как утверждающий выбрал **Утвердить**. |
    | Вариант 2 | **Отклонить** | Добавьте действие Outlook **Send an email** (Отправить сообщение), чтобы уведомить других утверждающих о том, что элемент RSS был отклонен. |
-   | значение по умолчанию | None | Никаких действий не требуется. В этом примере вариант **По умолчанию** пуст, потому что для **SelectedOption** доступны только два варианта. |
+   | значение по умолчанию | Нет | Никаких действий не требуется. В этом примере вариант **По умолчанию** пуст, потому что для **SelectedOption** доступны только два варианта. |
    |||
 
    ![Оператор switch готов](./media/logic-apps-control-flow-switch-statement/finished-switch.png)
@@ -113,7 +113,7 @@ ms.locfileid: "50232449"
 }
 ```
 
-| Метка | ОПИСАНИЕ |
+| Метка | Описание |
 |-------|-------------|
 | `"Switch"`         | Имя оператора switch, которое можно изменить для большей удобочитаемости. |
 | `"type": "Switch"` | Указывает на то, что конструкция является оператором switch. |
@@ -127,7 +127,7 @@ ms.locfileid: "50232449"
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить предложения по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Azure Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Conditional statements: Run steps based on a condition in logic apps](../logic-apps/logic-apps-control-flow-conditional-statement.md) (Условные операторы. Выполнение шагов на основе условия в приложениях логики)
 * [Loops: Process arrays or repeat actions until a condition is met](../logic-apps/logic-apps-control-flow-loops.md) (Циклы. Обработка массивов или повторение действий до выполнения условия)

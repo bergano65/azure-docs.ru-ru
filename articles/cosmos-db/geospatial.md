@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 11/01/2017
 ms.author: sngun
 ms.openlocfilehash: 9c6ea982d9a605696dad0c943aa6dd2ae155d6bd
-ms.sourcegitcommit: 415742227ba5c3b089f7909aa16e0d8d5418f7fd
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55770743"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60888675"
 ---
 # <a name="use-geospatial-and-geojson-location-data-with-azure-cosmos-db-sql-api-account"></a>Использование геопространственных данных и данных о расположении GeoJSON в учетной записи API SQL Azure Cosmos DB
 
@@ -365,7 +365,7 @@ Azure Cosmos DB поддерживает также выполнение обр�
 > 
 > 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы ознакомились с предварительными сведениями о поддержке геопространственных данных в Azure Cosmos DB, вы можете сделать следующее:
 
 * Начните программировать с помощью [примеров кода для работы с геопространственными данными посредством .NET, доступных на GitHub](https://github.com/Azure/azure-documentdb-dotnet/blob/fcf23d134fc5019397dcf7ab97d8d6456cd94820/samples/code-samples/Geospatial/Program.cs).

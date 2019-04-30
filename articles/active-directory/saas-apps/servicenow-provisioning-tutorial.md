@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка ServiceNow для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по Настройка ServiceNow для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в ServiceNow.
 services: active-directory
 documentationCenter: na
@@ -17,20 +17,20 @@ ms.date: 01/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 19b3e4cc5ba4bc0173721947bd1e1a680ca7b3a3
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56217706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60869842"
 ---
-# <a name="tutorial-configure-servicenow-for-automatic-user-provisioning-with-azure-active-directory"></a>Руководство. Настройка ServiceNow для автоматической подготовки пользователей с помощью Azure Active Directory
+# <a name="tutorial-configure-servicenow-for-automatic-user-provisioning-with-azure-active-directory"></a>Руководство по Настройка ServiceNow для автоматической подготовки пользователей с помощью Azure Active Directory
 
 Цель этого руководства — показать, как в ServiceNow и Azure AD настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в ServiceNow.
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с приложением ServiceNow, вам потребуется:
 
@@ -75,13 +75,13 @@ ms.locfileid: "56217706"
 
 1. Для параметра **Режим подготовки** выберите значение **Автоматический**. 
 
-    ![Подготовка](./media/servicenow-provisioning-tutorial/provisioning.png)
+    ![Идет подготовка](./media/servicenow-provisioning-tutorial/provisioning.png)
 
 1. В разделе "Учетные данные администратора" выполните следующие действия:
    
     a. В текстовое поле **Имя экземпляра ServiceNow** введите имя экземпляра ServiceNow.
 
-    б) В текстовое поле **Имя пользователя администратора ServiceNow** введите имя пользователя администратора.
+    2. В текстовое поле **Имя пользователя администратора ServiceNow** введите имя пользователя администратора.
 
     c. В текстовое поле **Пароль администратора ServiceNow** введите пароль администратора.
 

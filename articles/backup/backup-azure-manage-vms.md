@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: sogup
 ms.openlocfilehash: aa953440f03137f3359276bc9e06cb0c73f0ab4a
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58295782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61219292"
 ---
 # <a name="manage-azure-vm-backups"></a>Управление резервными копиями виртуальных машин Azure
 
@@ -115,7 +115,7 @@ ms.locfileid: "58295782"
 1. На [мониторинга элемента хранилища](#view-vms-on-the-dashboard)выберите **остановить архивацию**.
 2. Выберите, следует ли сохранить или удалить данные архивации, и подтвердите свой выбор, при необходимости. Если нужно добавьте комментарий. Если вы не уверены в правильности имени элемента, наведите указатель мыши восклицательный знак, чтобы просмотреть имя.
 
-    ![остановка защиты;](./media/backup-azure-manage-vms/retain-or-delete-option.png)
+    ![Остановить защиту](./media/backup-azure-manage-vms/retain-or-delete-option.png)
 
      Уведомление позволяет узнать, что задания резервного копирования были остановлены.
 

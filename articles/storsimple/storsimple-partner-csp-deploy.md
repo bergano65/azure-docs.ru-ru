@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
 ms.openlocfilehash: 0dac86a696599a391cb243ad11e16931e00b8921
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51238936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60629988"
 ---
 # <a name="deploy-storsimple-virtual-array-for-cloud-solution-provider-program"></a>Развертывание виртуального массива StorSimple для программы поставщика облачных решений
 
@@ -29,7 +29,7 @@ ms.locfileid: "51238936"
 
 В этой статье описывается, как партнер CSP может добавить клиента или новую подписку имеющегося клиента, а затем создать службу для развертывания виртуального массива StorSimple в CSP.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы убедитесь, что выполнены следующие условия:
 
@@ -44,7 +44,7 @@ ms.locfileid: "51238936"
 
      ![Панель мониторинга в Центре партнеров](./media/storsimple-partner-csp-deploy/image1.png)
                               
-2. В левой области щелкните **Клиенты**. В правой области щелкните **Добавить клиентов**. Введите сведения о клиенте. Щелкните **Далее: подписки**, чтобы создать подписку клиента.
+2. В левой области щелкните **Клиенты**. В правой области щелкните **Добавить клиентов**. Введите сведения о клиенте. Щелкните **Далее: Подписки** для создания подписки клиента.
 
     ![Добавление клиента](./media/storsimple-partner-csp-deploy/image2.png)
 
@@ -101,7 +101,7 @@ ms.locfileid: "51238936"
 
     ![Создание службы диспетчера устройств StorSimple](./media/storsimple-partner-csp-deploy/image8.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Если у вас есть дополнительные вопросы о StorSimple в CSP, перейдите к статье [StorSimple in CSP: Frequently asked questions](storsimple-partner-csp-faq.md) (StorSimple в CSP: часто задаваемые вопросы).
-- Если вы уже готовы развернуть StorSimple, перейдите к статье [Развертывание виртуального массива StorSimple для программы поставщика облачных решений](storsimple-partner-csp-deploy.md).
+- Если у вас есть дополнительные вопросы о StorSimple в CSP, перейдите к [StorSimple в CSP: простом едином входе Azure Active Directory](storsimple-partner-csp-faq.md).
+- Если вы уже готовы развернуть StorSimple, перейдите к статье [Deploy your StorSimple in CSP](storsimple-partner-csp-deploy.md) (Развертывание StorSimple в рамках программы CSP).

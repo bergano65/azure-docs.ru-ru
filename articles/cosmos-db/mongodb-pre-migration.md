@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: roaror
 ms.openlocfilehash: 476a143555323bbb5058541000a5b1a26d23b71a
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60014418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61330869"
 ---
 # <a name="pre-migration-steps-for-data-migrations-from-mongodb-to-azure-cosmos-dbs-api-for-mongodb"></a>Шаги подготовки к миграции для перемещения данных из MongoDB для Azure Cosmos DB API для MongoDB
 
@@ -89,4 +89,4 @@ ms.locfileid: "60014418"
 * [Partitioning in Azure Cosmos DB](partition-data.md) (Секционирование в Azure Cosmos DB)
 * [Глобальное распределение в Azure Cosmos DB](distribute-data-globally.md)
 * [Индексирование в Azure Cosmos DB](index-overview.md)
-* [Единицы запросов в Azure Cosmos DB](request-units.md)
+* [Единицы запросов в Azure Cosmos DB](request-units.md)

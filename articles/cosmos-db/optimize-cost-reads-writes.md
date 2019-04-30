@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: rimman
 ms.openlocfilehash: b6c5722d5e096300f76f60dfaf8bab1e07d0c61c
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55455682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61330209"
 ---
 # <a name="optimize-reads-and-writes-cost-in-azure-cosmos-db"></a>Оптимизация затрат на выполнения операций чтения и записи в Azure Cosmos DB
 
@@ -46,7 +46,7 @@ Azure Cosmos DB гарантирует прогнозируемую произв
 
 Также вы можете применить в Azure Cosmos DB массовую вставку данных или копирование из любого поддерживаемого в Azure Cosmos DB источника данных с помощью [Фабрики данных Azure](../data-factory/connector-azure-cosmos-db.md). Фабрика данных Azure поддерживает интеграцию с библиотекой массовых операций для Azure Cosmos DB, что обеспечивает оптимальную производительность при операциях записи.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы можете перейти к подробным сведениям об оптимизации затрат в Azure Cosmos DB, которые представлены в следующих статьях.
 

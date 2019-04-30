@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 3/21/2019
 ms.author: victorh
 ms.openlocfilehash: 87ca7cae8e9170c8c437d0961cb1acb2e0dd0eb1
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60790544"
 ---
 # <a name="azure-dns-alias-records-overview"></a>Обзор записей псевдонимов Azure DNS
 
@@ -72,6 +72,6 @@ ms.locfileid: "58337652"
 
 Дополнительные сведения о записях псевдонима см. в следующих статьях:
 
-- [Руководство по настройке записи псевдонима для ссылки на общедоступный IP-адрес Azure](tutorial-alias-pip.md)
-- [Руководство Настройка записи псевдонима для поддержки вершинных доменных имен с помощью диспетчера трафика](tutorial-alias-tm.md)
+- [Учебник. по настройке записи псевдонима для ссылки на общедоступный IP-адрес Azure](tutorial-alias-pip.md)
+- [Учебник. Настройка записи псевдонима для поддержки вершинных доменных имен с помощью диспетчера трафика](tutorial-alias-tm.md)
 - [DNS: часто задаваемые вопросы](https://docs.microsoft.com/azure/dns/dns-faq#alias-records)

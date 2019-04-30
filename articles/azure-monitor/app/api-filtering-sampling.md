@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 11/23/2016
 ms.author: mbullwin
 ms.openlocfilehash: 1b55a2b053b86d3260fdca201357445d2556c444
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58082472"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60793971"
 ---
 # <a name="filtering-and-preprocessing-telemetry-in-the-application-insights-sdk"></a>Фильтрация и предварительная обработка данных телеметрии в пакете SDK для Application Insights
 
@@ -360,7 +360,7 @@ void initialize(Telemetry telemetry); }
 * Убедитесь, что полное имя типа и имя сборки указаны правильно.
 * Убедитесь, что файл applicationinsights.config находится в выходном каталоге и содержит все последние изменения.
 
-## <a name="reference-docs"></a>Справочная документация
+## <a name="reference-docs"></a>Справочные документы
 * [Обзор API](../../azure-monitor/app/api-custom-events-metrics.md)
 * [Справочник по ASP.NET](https://msdn.microsoft.com/library/dn817570.aspx)
 
@@ -370,6 +370,6 @@ void initialize(Telemetry telemetry); }
 * [Пакет SDK для JavaScript](https://github.com/Microsoft/ApplicationInsights-JS)
 
 ## <a name="next"></a>Дальнейшие действия
-* [Поиск в Application Insights](../../azure-monitor/app/diagnostic-search.md)
+* [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md)
 * [Выборка](../../azure-monitor/app/sampling.md)
 * [Устранение неполадок](../../azure-monitor/app/troubleshoot-faq.md)

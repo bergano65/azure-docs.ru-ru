@@ -10,11 +10,11 @@ ms.custom: mvc
 ms.date: 11/06/2018
 ms.author: dobett
 ms.openlocfilehash: 74bb2d181533f802e1428eaa8a855f60fb855193
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58258839"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61447987"
 ---
 # <a name="serialize-telemetry-using-protocol-buffers"></a>Сериализация данных телеметрии с помощью буферов протокола
 
@@ -174,7 +174,7 @@ ms.locfileid: "58258839"
 
 1. [Компилятор Protobuf можно скачать с GitHub](https://github.com/protocolbuffers/protobuf/releases/download/v3.4.0/protoc-3.4.0-win32.zip)
 
-1. Запустите компилятор, указав исходный каталог, целевой каталог и имя файла **proto**. Например: 
+1. Запустите компилятор, указав исходный каталог, целевой каталог и имя файла **proto**. Пример.
 
     ```cmd
     protoc -I c:\temp\device-simulation-dotnet-master\Services\Models\Protobuf\proto --csharp_out=C:\temp\device-simulation-dotnet-master\Services\Models\Protobuf assettracker.proto
@@ -206,7 +206,7 @@ ms.locfileid: "58258839"
 
 По умолчанию новые файлы модели устройства JSON и JS не будут копироваться в сборку решения. Необходимо явно включить их.
 
-Добавьте запись в файл **services\services.csproj** для каждого файла, который требуется включить. Например: 
+Добавьте запись в файл **services\services.csproj** для каждого файла, который требуется включить. Пример.
 
 ```xml
 <None Update="data\devicemodels\assettracker-01.json">
