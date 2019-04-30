@@ -5,17 +5,17 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
 ms.openlocfilehash: 6911e06dc023027ab32b99387b9f7d3f5e708f86
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50165777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62122740"
 ---
 ## <a name="configure-your-application-to-access-azure-storage"></a>Настройка приложения для доступа к хранилищу Azure
 Существует два способа проверки подлинности приложения при получении доступа к службам хранения:
 
-* Общий ключ — следует использовать только для тестирования.
-* Подписанный URL-адрес (SAS) — используется для рабочих приложений.
+* Общий ключ: Использование общего ключа только для целей тестирования
+* Подписанные URL-адреса (SAS): Использовать SAS для рабочих приложений
 
 ### <a name="shared-key"></a>Общий ключ
 Проверка подлинности с помощью общего ключа означает, что приложение будет использовать имя и ключ учетной записи для доступа к службам хранилища. Чтобы быстро показать, как использовать эту библиотеку, в данном руководстве по началу работы мы используем аутентификацию с общим ключом.
@@ -49,5 +49,5 @@ ms.locfileid: "50165777"
    
    `"SharedAccessSignature=sv=2015-04-05&ss=b&srt=sco&sp=rw&se=2016-07-21T18%3A00%3A00Z&sig=3ABdLOJZosCp0o491T%2BqZGKIhafF1nlM3MzESDDD3Gg%3D;BlobEndpoint=https://youraccount.blob.core.windows.net"`
 
-Как видите, при использовании SAS в приложении вам не нужно предоставлять ключ учетной записи. Дополнительные сведения и рекомендации по использованию SAS см. в статье [о подписанных URL-адресах и общих сведениях о модели SAS](../articles/storage/common/storage-dotnet-shared-access-signature-part-1.md).
+Как видите, при использовании SAS в приложении вам не нужно предоставлять ключ учетной записи. Дополнительные сведения о SAS и рекомендации по использованию SAS путем извлечения [подписей общего доступа: Общие сведения о модели SAS](../articles/storage/common/storage-dotnet-shared-access-signature-part-1.md).
 
