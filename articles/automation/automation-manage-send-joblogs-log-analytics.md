@@ -10,11 +10,11 @@ ms.date: 02/05/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 82baef7ce0d91713c8bef202ab0ea0925d290f3a
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59496596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60739136"
 ---
 # <a name="forward-job-status-and-job-streams-from-automation-to-azure-monitor-logs"></a>Пересылка состояния задания и потоков заданий из службы автоматизации для журналов Azure Monitor
 
@@ -103,7 +103,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 | SourceSystem | Как Azure Monitor журналы сбора данных. Всегда имеет значение *Azure* для системы диагностики Azure. |
 | ResultDescription |Описывает состояние результата задания Runbook. Возможные значения:<br>— Job is started;<br>— Job Failed;<br>- Job Completed. |
 | CorrelationId |GUID, представляющий собой идентификатор корреляции задания Runbook. |
-| ResourceId |Указывает идентификатор ресурса учетной записи службы автоматизации Azure для модуля Runbook. |
+| resourceId |Указывает идентификатор ресурса учетной записи службы автоматизации Azure для модуля Runbook. |
 | SubscriptionId | Идентификатор подписки Azure (GUID) для учетной записи службы автоматизации. |
 | ResourceGroup | Имя группы ресурсов для учетной записи службы автоматизации. |
 | ResourceProvider | MICROSOFT.AUTOMATION |
@@ -126,7 +126,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 | SourceSystem | Как Azure Monitor журналы сбора данных. Всегда имеет значение *Azure* для системы диагностики Azure. |
 | ResultDescription |Включает в себя выходной поток из Runbook. |
 | CorrelationId |GUID, представляющий собой идентификатор корреляции задания Runbook. |
-| ResourceId |Указывает идентификатор ресурса учетной записи службы автоматизации Azure для модуля Runbook. |
+| resourceId |Указывает идентификатор ресурса учетной записи службы автоматизации Azure для модуля Runbook. |
 | SubscriptionId | Идентификатор подписки Azure (GUID) для учетной записи службы автоматизации. |
 | ResourceGroup | Имя группы ресурсов для учетной записи службы автоматизации. |
 | ResourceProvider | MICROSOFT.AUTOMATION |

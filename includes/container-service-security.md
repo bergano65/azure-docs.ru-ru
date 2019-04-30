@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: danlep
 ms.openlocfilehash: 39bb75a6f834789f91cb590ffebb72f45624eb25
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56213176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60953178"
 ---
 # <a name="deprecated-securing-docker-containers-in-azure-container-service"></a>Защита контейнеров Docker в службе контейнеров Azure (не рекомендуется)
 
@@ -64,7 +64,7 @@ ms.locfileid: "56213176"
 
 * **Docker Swarm**: [Docker Security](https://www.docker.com/docker-security) (Безопасность в Docker)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об архитектуре Docker и защите контейнера см. в руководстве [Introduction to Container Security. Understanding the isolation properties of Docker](https://www.docker.com/sites/default/files/WP_IntrotoContainerSecurity_08.19.2016.pdf) (Обзор безопасности контейнеров. Свойства изоляции Docker).
 

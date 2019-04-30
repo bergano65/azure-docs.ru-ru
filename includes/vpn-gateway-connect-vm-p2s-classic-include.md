@@ -2,18 +2,19 @@
 title: включение файла
 description: включение файла
 services: vpn-gateway
-author: cherylmc
+author: WenJason
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 12/06/2018
-ms.author: cherylmc
+origin.date: 12/06/2018
+ms.date: 12/24/2018
+ms.author: v-jay
 ms.custom: include file
 ms.openlocfilehash: 6d0737a7300b2a6025f776c1ed65a05cacf2141a
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53323806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60845581"
 ---
 Создание подключения к удаленному рабочему столу для подключения к виртуальной машине, развернутой в вашей виртуальной сети. Лучший способ проверить, можете ли вы подключиться к своей виртуальной машине, — подключиться, используя ее частный IP-адрес, а не имя компьютера. Таким образом, вы проверяете, можете ли вы подключиться, а не правильно ли настроено разрешение имен. 
 

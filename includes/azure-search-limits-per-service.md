@@ -9,15 +9,15 @@ ms.date: 04/04/2018
 ms.author: heidist
 ms.custom: include file
 ms.openlocfilehash: 30c6fc189ebcd497a214828f65213a55cefdf03f
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58632971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61464742"
 ---
 Возможности хранилища ограничиваются дисковым пространством или аппаратным ограничением *максимального количества* индексов, документов или высокоуровневых ресурсов (в зависимости от того, какое из ограничений достигается первым). В приведенной ниже таблице указаны размеры хранилища. Максимальные значения для индексов, документов и других объектов см. в разделе [ограничениях по ресурсам](../articles/search/search-limits-quotas-capacity.md#index-limits).
 
-| Ресурс | Free | Основные<sup>1</sup> | S1 | S2 | S3 | S3&nbsp;HD<sup>2</sup> | L1 | L2 |
+| Resource | Free | Основные<sup>1</sup> | S1 | S2 | S3 | S3&nbsp;HD<sup>2</sup> | L1 | L2 |
 | -------- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Соглашение об уровне (SLA) обслуживания<sup>3</sup>  |Нет  |Да |Да |Да |Да |Да |Да |Yes |
 | Объем хранилища на секцию |50 MB |2 ГБ |25 ГБ |100 ГБ |200 ГБ |200 ГБ |1 TБ |2 ТБ |

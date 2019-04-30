@@ -5,15 +5,16 @@ services: functions
 author: nzthiago
 ms.service: azure-functions
 ms.topic: include
-ms.date: 02/21/2018
-ms.author: nzthiago
+origin.date: 02/21/2018
+ms.date: 03/25/2019
+ms.author: v-junlch
 ms.custom: include file
 ms.openlocfilehash: ffb29fc76313e8870b52cb0a63936da7853ea6ce
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58305109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036313"
 ---
 ## <a name="timeout"></a>Время ожидания функции приложения 
 
@@ -28,3 +29,4 @@ ms.locfileid: "58305109"
 
 > [!NOTE] 
 > Независимо от значения времени ожидания приложения функции, 230 секунд — это максимальный объем времени, который может принимать функция, активируемая HTTP для ответа на запрос. Это из-за [по умолчанию время ожидания простоя балансировщика нагрузки Azure](../articles/app-service/faq-availability-performance-application-issues.md#why-does-my-request-time-out-after-230-seconds). Для более длительное время обработки, рассмотрите возможность использования [асинхронный шаблон устойчивых функций](../articles/azure-functions/durable/durable-functions-concepts.md#async-http) или [отложить фактическую работу и сразу возвратить ответ](../articles/azure-functions/functions-best-practices.md#avoid-long-running-functions).
+

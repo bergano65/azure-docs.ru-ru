@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: eb6438271547348abef78dd8b35b577f2ac0ab8c
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55889406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61409975"
 ---
 #### <a name="to-install-regular-updates-via-the-azure-classic-portal"></a>Установка обычных обновлений через классический портал Azure
 1. На странице **Устройства** выберите устройство, на котором требуется установить обновления.

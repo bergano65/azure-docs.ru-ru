@@ -1,15 +1,16 @@
 ---
-author: cynthn
+author: rockboyfor
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 10/26/2018
-ms.author: cynthn
+origin.date: 10/26/2018
+ms.date: 11/26/2018
+ms.author: v-yeche
 ms.openlocfilehash: 8861396db6f6b680ddb55ce020e5579dc25b118e
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50227067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62097722"
 ---
 Важно понимать, что есть два способа настройки прослушивателя группы доступности в Azure. Они отличаются типом подсистемы балансировки нагрузки Azure, используемой при создании прослушивателя. Различия описаны в следующей таблице:
 
@@ -25,3 +26,4 @@ ms.locfileid: "50227067"
 
 Внутреннюю подсистему балансировки нагрузки можно настроить только в виртуальных сетях регионального масштаба. В имеющихся виртуальных сетях, настроенных для территориальной группы, невозможно использовать внутреннюю балансировку нагрузки. Дополнительные сведения см. в статье [Обзор внутренней подсистемы балансировки нагрузки](../articles/load-balancer/load-balancer-internal-overview.md).
 
+<!-- Update_Description: update meta properties -->
